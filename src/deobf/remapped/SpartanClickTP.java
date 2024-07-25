@@ -19,7 +19,7 @@ public class SpartanClickTP extends Module {
       class_314.method_1408(-0.08);
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3);
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen
@@ -68,7 +68,7 @@ public class SpartanClickTP extends Module {
                   class_314.method_1408(-0.08);
                   double var5 = class_8865.method_40775();
                   class_8865.method_40776(var5);
-                  mc.field_9616.field_32603 = 1.0F;
+                  mc.theTimer.timerSpeed = 1.0F;
                } else {
                   this.method_42017().method_41999();
                }
@@ -84,9 +84,9 @@ public class SpartanClickTP extends Module {
             var1.method_35235(0.01);
             this.field_12052++;
             if (this.field_12052 >= 20) {
-               mc.field_9616.field_32603 = 1.4F;
+               mc.theTimer.timerSpeed = 1.4F;
             } else {
-               mc.field_9616.field_32603 = 2.0F;
+               mc.theTimer.timerSpeed = 2.0F;
             }
 
             mc.method_8614()

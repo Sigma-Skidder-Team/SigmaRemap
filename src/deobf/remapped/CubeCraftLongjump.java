@@ -12,13 +12,13 @@ public class CubeCraftLongjump extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(class_8865.method_40775() * 0.8);
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @Override
    public void onEnable() {
       this.field_45277 = -1;
-      mc.field_9616.field_32603 = 0.3F;
+      mc.theTimer.timerSpeed = 0.3F;
    }
 
    @EventListen

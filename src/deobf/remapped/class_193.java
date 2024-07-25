@@ -7,9 +7,9 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 
 public class class_193 extends class_4833 {
-   private class_845 field_646;
+   private AgoraClient field_646;
 
-   public class_193(class_845 var1, String var2, HashMap<String, String> var3) throws URISyntaxException {
+   public class_193(AgoraClient var1, String var2, HashMap<String, String> var3) throws URISyntaxException {
       super(new URI(var2), var3);
       this.field_646 = var1;
    }

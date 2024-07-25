@@ -23,8 +23,8 @@ public class class_4233 {
                         try {
                            Screen var6 = var5.method_14559()
                               .getDeclaredConstructor(ITextComponent.class)
-                              .newInstance(new StringTextComponent(class_6763.field_34911.get(var5.method_14559())));
-                           if (SigmaMainClass.getInstance().method_3299().method_31008(var6)) {
+                              .newInstance(new StringTextComponent(GUIManager.field_34911.get(var5.method_14559())));
+                           if (SigmaMainClass.getInstance().getGUIManager().method_31008(var6)) {
                               field_20543.method_8609(var6);
                            }
                         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | InstantiationException var7) {

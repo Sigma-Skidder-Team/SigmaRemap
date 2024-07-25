@@ -14,17 +14,17 @@ public class class_434 extends class_7038 {
       this.method_32148(var11 = new class_8223(this, "openGui", var5 / 2, var6 - 80, 300, 38, var9, "Open Jello's Click GUI", class_5320.field_27150));
       class_8223 var12;
       this.method_32148(var12 = new class_8223(this, "credits", var5 / 2 - 100, var6 - 280, 200, 38, var9, "Credits", class_5320.field_27139));
-      var10.method_32100((var0, var1x) -> class_1643.method_7362(new class_9743(new StringTextComponent("Keybind Manager"))));
-      var11.method_32100((var0, var1x) -> class_1643.method_7362(new class_1046(new StringTextComponent("Click GUI"))));
-      var12.method_32100((var0, var1x) -> class_1643.method_7362(new class_786(new StringTextComponent("GuiCredits"))));
+      var10.method_32100((var0, var1x) -> JelloOptionsMenu.method_7362(new KeybindManagerScreen(new StringTextComponent("Keybind Manager"))));
+      var11.method_32100((var0, var1x) -> JelloOptionsMenu.method_7362(new ClassicClickGUI(new StringTextComponent("Click GUI"))));
+      var12.method_32100((var0, var1x) -> JelloOptionsMenu.method_7362(new CreditsAndLicensingScreen(new StringTextComponent("GuiCredits"))));
       class_7688 var13;
       this.method_32148(var13 = new class_7688(this, "guiBlurCheckBox", var5 / 2 - 70, var6 - 220, 25, 25));
-      var13.method_34833(SigmaMainClass.getInstance().method_3299().method_31000(), false);
-      var13.method_8236(var1x -> SigmaMainClass.getInstance().method_3299().method_30996(var13.method_34834()));
+      var13.method_34833(SigmaMainClass.getInstance().getGUIManager().method_31000(), false);
+      var13.method_8236(var1x -> SigmaMainClass.getInstance().getGUIManager().method_30996(var13.method_34834()));
       class_7688 var14;
       this.method_32148(var14 = new class_7688(this, "guiBlurIngameCheckBox", var5 / 2 + 130, var6 - 220, 25, 25));
-      var14.method_34833(SigmaMainClass.getInstance().method_3299().method_30987(), false);
-      var14.method_8236(var1x -> SigmaMainClass.getInstance().method_3299().method_30981(var14.method_34834()));
+      var14.method_34833(SigmaMainClass.getInstance().getGUIManager().method_30987(), false);
+      var14.method_8236(var1x -> SigmaMainClass.getInstance().getGUIManager().method_30981(var14.method_34834()));
    }
 
    @Override
@@ -32,7 +32,7 @@ public class class_434 extends class_7038 {
       this.method_2128(this.field_36270 + (this.method_32109() - 202) / 2, this.field_36261 + 10, var1);
       StringBuilder var10000 = new StringBuilder().append("You're currently using Sigma ");
       SigmaMainClass.getInstance();
-      String var4 = var10000.append(SigmaMainClass.field_3957).toString();
+      String var4 = var10000.append(SigmaMainClass.clientVersion).toString();
       class_73.method_87(
          class_5320.field_27152,
          (float)(this.field_36270 + (this.method_32109() - class_5320.field_27152.method_18547(var4)) / 2),
@@ -41,7 +41,7 @@ public class class_434 extends class_7038 {
          class_314.method_1444(class_1255.field_6918.field_6917, 0.4F * var1)
       );
       String var5 = "Click GUI is currently bound to: "
-         + class_314.method_1451(SigmaMainClass.getInstance().getModuleManager().method_835().method_380(class_1046.class))
+         + class_314.method_1451(SigmaMainClass.getInstance().getModuleManager().method_835().method_380(ClassicClickGUI.class))
          + " Key";
       class_73.method_87(
          class_5320.field_27152,

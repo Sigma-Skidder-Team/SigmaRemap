@@ -19,7 +19,7 @@ public class DebugSpeedModule extends Module {
          class_1343 var4 = new class_1343(mc.field_9632.method_37302(), 0.0, mc.field_9632.method_37156());
          if (mc.field_9632.field_41726 && this.field_49933 != null) {
             double var5 = var4.method_6195(this.field_49933) / (double)this.field_49934;
-            var5 *= (double) mc.field_9616.field_32603;
+            var5 *= (double) mc.theTimer.timerSpeed;
             boolean var7 = SigmaMainClass.getInstance().method_3310().method_25293() > 1 && mc.field_9632.field_29600 == 0;
             double var8 = !var7 ? 0.312948 : 0.280616;
             double var10 = var5 / var8;

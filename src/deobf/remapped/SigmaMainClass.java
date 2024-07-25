@@ -11,13 +11,13 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;
 
 public class SigmaMainClass {
-   public static String field_3966 = "Jello";
-   public static String field_3957 = "5.0.0b15";
-   public static String field_3964 = "Sigma Production";
+   public static String clientName = "Jello";
+   public static String clientVersion = "5.0.0b15";
+   public static String clientProd = "Sigma Production";
    public static final boolean field_3956 = false;
    private static SigmaMainClass instance;
    private static MinecraftClient field_3950 = MinecraftClient.getInstance();
-   private final File field_3975 = new File("sigma5");
+   private final File sigmaFolder = new File("sigma5");
    private JSONObjectImpl field_3974;
    private boolean field_3962 = true;
    private class_2827 field_3953;
@@ -25,7 +25,7 @@ public class SigmaMainClass {
    private EventManager eventManager;
    private ModuleManager moduleManager;
    private CommandManager commandManager;
-   private class_6763 field_3977;
+   private GUIManager guiManager;
    private class_3116 field_3958;
    private class_4400 field_3952;
    private class_1857 field_3963;
@@ -33,10 +33,10 @@ public class SigmaMainClass {
    private class_5571 field_3954;
    private class_8691 field_3981;
    private class_4746 field_3967;
-   private SigmaIRC field_3955;
+   private SigmaIRC sigmaIRC;
    private AccountManager accountManager;
-   private class_845 field_3970;
-   private class_4566 field_3980;
+   private AgoraClient agoraClient;
+   private SoundManager soundManager;
    private class_6080 notificationManager;
    private class_6645 field_3960;
    private class_4763 field_3973;
@@ -64,11 +64,11 @@ public class SigmaMainClass {
       this.field_3953.method_12863("Initializing...");
 
       try {
-         if (!this.field_3975.exists()) {
-            this.field_3975.mkdirs();
+         if (!this.sigmaFolder.exists()) {
+            this.sigmaFolder.mkdirs();
          }
 
-         this.field_3974 = class_357.method_1789(new File(this.field_3975 + "/config.json"));
+         this.field_3974 = class_357.method_1789(new File(this.sigmaFolder + "/config.json"));
       } catch (IOException var8) {
          var8.printStackTrace();
       }
@@ -76,13 +76,13 @@ public class SigmaMainClass {
       this.field_3961 = class_201.method_866();
       this.eventManager = new EventManager();
       this.commandManager = new CommandManager();
-      this.commandManager.method_22654();
-      NotificationIcons.method_10227();
+      this.commandManager.initList();
+      NotificationIcons.initList();
       this.accountManager = new AccountManager();
-      this.accountManager.method_23087();
-      this.field_3970 = new class_845();
-      this.field_3970.method_3693();
-      this.field_3977 = new class_6763();
+      this.accountManager.initAndRunIRC();
+      this.agoraClient = new AgoraClient();
+      this.agoraClient.setupClient();
+      this.guiManager = new GUIManager();
       this.field_3958 = new class_3116();
       this.field_3958.method_14473();
       this.field_3952 = new class_4400();
@@ -95,8 +95,8 @@ public class SigmaMainClass {
       this.field_3960.method_30524();
       this.field_3969 = new class_2026();
       this.field_3969.method_9478();
-      this.field_3980 = new class_4566();
-      this.field_3980.method_21204();
+      this.soundManager = new SoundManager();
+      this.soundManager.method_21204();
       this.notificationManager = new class_6080();
       this.notificationManager.method_27843();
       this.field_3981 = new class_8691();
@@ -150,8 +150,8 @@ public class SigmaMainClass {
       this.field_3953.method_12863("Shutting down...");
 
       try {
-         if (this.field_3977 != null) {
-            this.field_3977.method_31013(this.field_3974);
+         if (this.guiManager != null) {
+            this.guiManager.method_31013(this.field_3974);
          }
 
          if (this.moduleManager != null) {
@@ -163,7 +163,7 @@ public class SigmaMainClass {
             this.eventManager.call(var3);
          }
 
-         class_357.method_1791(var3.method_22870(), new File(this.field_3975 + "/config.json"));
+         class_357.method_1791(var3.method_22870(), new File(this.sigmaFolder + "/config.json"));
       } catch (IOException var4) {
          this.field_3953.method_12864("Unable to shutdown correctly. Config may be corrupt?");
          var4.printStackTrace();
@@ -174,21 +174,21 @@ public class SigmaMainClass {
 
    public void method_3318() {
       try {
-         class_357.method_1791(this.field_3974, new File(this.field_3975 + "/config.json"));
+         class_357.method_1791(this.field_3974, new File(this.sigmaFolder + "/config.json"));
       } catch (IOException var4) {
          var4.printStackTrace();
       }
    }
 
    public void method_3330() {
-      this.field_3977.method_31009();
+      this.guiManager.method_31009();
    }
 
    public void method_3333() {
       GL11.glPushMatrix();
       double var3 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
       GL11.glScaled(var3, var3, var3);
-      GL11.glScaled((double)class_6763.field_34898, (double)class_6763.field_34898, (double)class_6763.field_34898);
+      GL11.glScaled((double) GUIManager.field_34898, (double) GUIManager.field_34898, (double) GUIManager.field_34898);
       GL11.glDisable(2912);
       class_3542.method_16491();
       class_3542.method_16413(0.0F, 0.0F, 1000.0F);
@@ -226,11 +226,11 @@ public class SigmaMainClass {
       if (getInstance().method_3312() != class_6015.field_30642) {
          double var5 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
          GL11.glScaled(var5, var5, 1.0);
-         GL11.glScaled((double)class_6763.field_34898, (double)class_6763.field_34898, 1.0);
+         GL11.glScaled((double) GUIManager.field_34898, (double) GUIManager.field_34898, 1.0);
          class_3542.method_16491();
          class_3542.method_16438();
          class_3542.method_16413(0.0F, 0.0F, 1000.0F);
-         this.field_3977.method_30983();
+         this.guiManager.method_30983();
          class_3542.method_16489();
          class_3542.method_16428();
          class_3542.method_16374();
@@ -288,8 +288,8 @@ public class SigmaMainClass {
       return this.field_3963;
    }
 
-   public class_6763 method_3299() {
-      return this.field_3977;
+   public GUIManager getGUIManager() {
+      return this.guiManager;
    }
 
    public class_5571 method_3310() {
@@ -300,8 +300,8 @@ public class SigmaMainClass {
       return this.field_3960;
    }
 
-   public class_4566 method_3315() {
-      return this.field_3980;
+   public SoundManager getSoundManager() {
+      return this.soundManager;
    }
 
    public class_6080 getNotificationManager() {
@@ -328,8 +328,8 @@ public class SigmaMainClass {
       return this.field_3961;
    }
 
-   public class_845 method_3322() {
-      return this.field_3970;
+   public AgoraClient method_3322() {
+      return this.agoraClient;
    }
 
    public CommandManager getCommandManager() {
@@ -349,7 +349,7 @@ public class SigmaMainClass {
    }
 
    public File method_3334() {
-      return this.field_3975;
+      return this.sigmaFolder;
    }
 
    public class_6015 method_3312() {
@@ -365,7 +365,7 @@ public class SigmaMainClass {
          }
       } else {
          class_3054.method_13951();
-         getInstance().method_3299().method_31006();
+         getInstance().getGUIManager().method_31006();
          GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Classic Sigma 5.0");
       }
 

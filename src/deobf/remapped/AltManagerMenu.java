@@ -227,11 +227,11 @@ public class AltManagerMenu extends class_2596 {
       new Thread(() -> {
          if (!this.field_10615.method_39906(var1.field_2988)) {
             var1.method_2280(114);
-            SigmaMainClass.getInstance().method_3315().method_21206("error");
+            SigmaMainClass.getInstance().getSoundManager().method_21206("error");
          } else {
             this.method_9899();
             var1.method_2283(true);
-            SigmaMainClass.getInstance().method_3315().method_21206("connect");
+            SigmaMainClass.getInstance().getSoundManager().method_21206("connect");
             this.method_9903(false);
          }
 

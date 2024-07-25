@@ -15,7 +15,7 @@ public class BindCommand extends Command {
    public void run(String var1, class_5273[] var2, class_860 var3) throws CommandException {
       Object var6 = null;
       if (var2.length == 0) {
-         CommandManager.method_22657(() -> field_18219.method_8609(new class_9743(new StringTextComponent("GuiKeybinds"))));
+         CommandManager.method_22657(() -> field_18219.method_8609(new KeybindManagerScreen(new StringTextComponent("GuiKeybinds"))));
       }
 
       if (var2.length < 1) {

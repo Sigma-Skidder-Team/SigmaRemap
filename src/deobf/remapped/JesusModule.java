@@ -20,7 +20,7 @@ public class JesusModule extends Module {
 
    @EventListen
    public void method_32082(class_5243 var1) {
-      if (this.method_42015() && mc.field_9601 != null && !class_3588.method_16781()) {
+      if (this.method_42015() && mc.field_9601 != null && !AutoMLGModule.method_16781()) {
          if (mc.field_9601.method_28262(var1.method_23989()).method_8362() == class_5371.field_27410
             || mc.field_9601.method_28262(var1.method_23989()).method_8362() == class_5371.field_27439
             || mc.field_9601.method_28262(var1.method_23989()).method_8362() == class_5371.field_27413) {
@@ -77,7 +77,7 @@ public class JesusModule extends Module {
    @EventListen
    @class_7664
    public void method_32079(class_7767 var1) {
-      if (this.method_42015() && mc.field_9601 != null && !class_3588.method_16781()) {
+      if (this.method_42015() && mc.field_9601 != null && !AutoMLGModule.method_16781()) {
          if (this.method_32078(mc.field_9632.field_41712) && !mc.field_9632.method_37252()) {
             class_2522 var4 = mc.field_9601.method_28262(mc.field_9632.method_37075());
             if (var4 != null && !var4.method_8364().method_22001()) {

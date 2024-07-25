@@ -27,7 +27,7 @@ public class class_7628 extends class_446 {
       byte var5 = 20;
       if (this.field_38819 == class_3246.field_16133
          && Math.abs(MinecraftClient.getInstance().window.method_43163() - var2) < var5
-         && !this.field_36283.method_32116(((class_734)this.field_36283).field_4006)) {
+         && !this.field_36283.method_32116(((JelloMenu)this.field_36283).field_4006)) {
          this.field_38819 = class_3246.field_16135;
       }
 

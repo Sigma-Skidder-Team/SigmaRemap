@@ -8,161 +8,161 @@ import java.util.List;
 import java.util.Map;
 
 public class ModuleManager {
-   private Map<Class<? extends Module>, Module> field_637 = new LinkedHashMap<Class<? extends Module>, Module>();
+   private Map<Class<? extends Module>, Module> moduleMap = new LinkedHashMap<Class<? extends Module>, Module>();
    private class_986 field_638;
    private class_123 field_639;
-   private List<Module> field_641;
+   private List<Module> moduleList;
 
-   private void method_837() {
-      this.field_641 = new ArrayList<Module>();
+   private void initList() {
+      this.moduleList = new ArrayList<Module>();
    }
 
-   private void method_852(Module var1) {
-      this.field_641.add(var1);
+   private void addModule(Module var1) {
+      this.moduleList.add(var1);
    }
 
    private void method_841(Class<? extends Module> var1) {
       SigmaMainClass.getInstance().getEventManager().unsubscribe(var1);
-      this.field_637.remove(var1);
+      this.moduleMap.remove(var1);
    }
 
-   private void method_851() {
-      Collections.sort(this.field_641, new class_5309(this));
+   private void sortAndSub() {
+      this.moduleList.sort(new class_5309(this));
 
-      for (Module var4 : this.field_641) {
+      for (Module var4 : this.moduleList) {
          SigmaMainClass.getInstance().getEventManager().subscribe(var4);
-         this.field_637.put((Class<? extends Module>)var4.getClass(), var4);
+         this.moduleMap.put(var4.getClass(), var4);
       }
 
       class_890.field_4585 = true;
    }
 
    public void registerAllModules(class_6015 var1) {
-      this.method_837();
-      this.method_852(new BlockFlyModule());
-      this.method_852(new FlyModule());
-      this.method_852(new SpeedModule());
-      this.method_852(new EntitySpeedModule());
-      this.method_852(new LongJumpModule());
-      this.method_852(new JesusModule());
-      this.method_852(new ClickTPModule());
-      this.method_852(new NoSlowModule());
-      this.method_852(new SafeWalkModule());
-      this.method_852(new PhaseModule());
-      this.method_852(new StrafeModule());
-      this.method_852(new StepModule());
-      this.method_852(new BoatFlyModule());
-      this.method_852(new FastLadderModule());
-      this.method_852(new HighJumpModule());
-      this.method_852(new ElytraFlyModule());
-      this.method_852(new SpiderModule());
-      this.method_852(new KillauraModule());
-      this.method_852(new AntiKnockbackModule());
-      this.method_852(new CriticalsModule());
-      this.method_852(new InvMoveModule());
-      this.method_852(new AimbotModule());
-      this.method_852(new RegenModule());
-      this.method_852(new InfiniteAuraModule());
-      this.method_852(new FastBowModule());
-      this.method_852(new WTapModule());
-      this.method_852(new BowAimbotModule());
-      this.method_852(new AntiBotModule());
-      this.method_852(new TargetStrafeModule());
-      this.method_852(new InteractRangeModule());
-      this.method_852(new AutoLogModule());
-      this.method_852(new TeamsModule());
-      this.method_852(new AntiVoidModule());
-      this.method_852(new ServerCrashesModule());
-      this.method_852(new DisablerModule());
-      this.method_852(new FakeLagModule());
-      this.method_852(new DVDSimulatorModule());
-      this.method_852(new AutoArmorModule());
-      this.method_852(new AutoToolsModule());
-      this.method_852(new class_3588());
-      this.method_852(new ChestStealerModule());
-      this.method_852(new AutoPotionModule());
-      this.method_852(new class_5174());
-      this.method_852(new class_5870());
-      this.method_852(new class_7218());
-      this.method_852(new class_9459());
-      this.method_852(new NoViewResetModule());
-      this.method_852(new SneakModule());
-      this.method_852(new DerpModule());
-      this.method_852(new class_3095());
-      this.method_852(new ParkourModule());
-      this.method_852(new OldHittingModule());
-      this.method_852(new FastEatModule());
-      this.method_852(new BlinkModule());
-      this.method_852(new class_1958());
-      this.method_852(new class_6424());
-      this.method_852(new LowFireModule());
-      this.method_852(new NameProtectModule());
-      this.method_852(new FullbrightModule());
-      this.method_852(new FreeCamModule());
-      this.method_852(new NoHurtCamModule());
-      this.method_852(new BreadcrumbsModule());
-      this.method_852(new ChestESPModule());
-      this.method_852(new AntiBlindModule());
-      this.method_852(new XRayModule());
-      this.method_852(new TracersModule());
-      this.method_852(new class_2191());
-      this.method_852(new class_9366());
-      this.method_852(new class_597());
-      this.method_852(new class_6803());
-      this.method_852(new class_9437());
-      this.method_852(new FastPlaceModule());
-      this.method_852(new AutoFarmModule());
-      this.method_852(new class_2481());
-      this.method_852(new AntiCactusModule());
-      this.method_852(new class_9357());
-      this.method_852(new FastBreakModule());
-      this.method_852(new class_8444());
-      this.method_852(new InteractRangeModule());
-      this.method_852(new class_1355());
-      this.method_852(new class_2167());
-      this.method_852(new class_652());
-      this.method_852(new ChatCleanerModule());
-      this.method_852(new class_9604());
-      this.method_852(new GamePlayModule());
-      this.method_852(new Auto32KModule());
-      this.method_852(new CakeEaterModule());
-      this.method_852(new UnstuckModule());
-      this.method_852(new AntiLevitationModule());
-      this.method_852(new FakeForgeModule());
+      this.initList();
+      this.addModule(new BlockFlyModule());
+      this.addModule(new FlyModule());
+      this.addModule(new SpeedModule());
+      this.addModule(new EntitySpeedModule());
+      this.addModule(new LongJumpModule());
+      this.addModule(new JesusModule());
+      this.addModule(new ClickTPModule());
+      this.addModule(new NoSlowModule());
+      this.addModule(new SafeWalkModule());
+      this.addModule(new PhaseModule());
+      this.addModule(new StrafeModule());
+      this.addModule(new StepModule());
+      this.addModule(new BoatFlyModule());
+      this.addModule(new FastLadderModule());
+      this.addModule(new HighJumpModule());
+      this.addModule(new ElytraFlyModule());
+      this.addModule(new SpiderModule());
+      this.addModule(new KillauraModule());
+      this.addModule(new AntiKnockbackModule());
+      this.addModule(new CriticalsModule());
+      this.addModule(new InvMoveModule());
+      this.addModule(new AimbotModule());
+      this.addModule(new RegenModule());
+      this.addModule(new InfiniteAuraModule());
+      this.addModule(new FastBowModule());
+      this.addModule(new WTapModule());
+      this.addModule(new BowAimbotModule());
+      this.addModule(new AntiBotModule());
+      this.addModule(new TargetStrafeModule());
+      this.addModule(new InteractRangeModule());
+      this.addModule(new AutoLogModule());
+      this.addModule(new TeamsModule());
+      this.addModule(new AntiVoidModule());
+      this.addModule(new ServerCrashesModule());
+      this.addModule(new DisablerModule());
+      this.addModule(new FakeLagModule());
+      this.addModule(new DVDSimulatorModule());
+      this.addModule(new AutoArmorModule());
+      this.addModule(new AutoToolsModule());
+      this.addModule(new AutoMLGModule());
+      this.addModule(new ChestStealerModule());
+      this.addModule(new AutoPotionModule());
+      this.addModule(new InvManagerModule());
+      this.addModule(new AutoSoupModule());
+      this.addModule(new AutoSprintModule());
+      this.addModule(new AutoRespawnModule());
+      this.addModule(new NoViewResetModule());
+      this.addModule(new SneakModule());
+      this.addModule(new DerpModule());
+      this.addModule(new NoFallModule());
+      this.addModule(new ParkourModule());
+      this.addModule(new OldHittingModule());
+      this.addModule(new FastEatModule());
+      this.addModule(new BlinkModule());
+      this.addModule(new AutoWalkModule());
+      this.addModule(new AutoGapple());
+      this.addModule(new LowFireModule());
+      this.addModule(new NameProtectModule());
+      this.addModule(new FullbrightModule());
+      this.addModule(new FreeCamModule());
+      this.addModule(new NoHurtCamModule());
+      this.addModule(new BreadcrumbsModule());
+      this.addModule(new ChestESPModule());
+      this.addModule(new AntiBlindModule());
+      this.addModule(new XRayModule());
+      this.addModule(new TracersModule());
+      this.addModule(new CameraNoClipModule());
+      this.addModule(new SearchModule());
+      this.addModule(new FPSBoosterModule());
+      this.addModule(new TimerModule());
+      this.addModule(new NukerModule());
+      this.addModule(new FastPlaceModule());
+      this.addModule(new AutoFarmModule());
+      this.addModule(new NewChunksModule());
+      this.addModule(new AntiCactusModule());
+      this.addModule(new WeatherModule());
+      this.addModule(new FastBreakModule());
+      this.addModule(new AntiVanishModule());
+      this.addModule(new InteractRangeModule());
+      this.addModule(new SpammerModule());
+      this.addModule(new JargonModule());
+      this.addModule(new ChatFilterModule());
+      this.addModule(new ChatCleanerModule());
+      this.addModule(new GameIdlerModule());
+      this.addModule(new GamePlayModule());
+      this.addModule(new Auto32KModule());
+      this.addModule(new CakeEaterModule());
+      this.addModule(new UnstuckModule());
+      this.addModule(new AntiLevitationModule());
+      this.addModule(new FakeForgeModule());
       if (var1 != class_6015.field_30645) {
          if (var1 == class_6015.field_30644) {
-            this.method_852(new class_4221());
-            this.method_852(new class_268());
-            this.method_852(new class_3055());
-            this.method_852(new class_867());
-            this.method_852(new KeyStrokesModule());
+            this.addModule(new OtherActiveModsModule());
+            this.addModule(new OtherTabGUIModule());
+            this.addModule(new OtherNameTagsModule());
+            this.addModule(new OtherESPModule());
+            this.addModule(new OtherKeyStrokesModule());
          }
       } else {
-         this.method_852(new class_9024());
-         this.method_852(new class_9134());
-         this.method_852(new class_1964());
-         this.method_852(new ShulkerInfoModule());
-         this.method_852(new class_7693());
-         this.method_852(new class_4969());
-         this.method_852(new class_8438());
-         this.method_852(new class_9522());
-         this.method_852(new NameTagsModule());
-         this.method_852(new class_9137());
-         this.method_852(new class_3961());
-         this.method_852(new class_7723());
-         this.method_852(new Auto32KModule());
-         this.method_852(new PortalGUIModule());
-         this.method_852(new class_428());
-         this.method_852(new class_2590());
-         this.method_852(new ESPModule());
-         this.method_852(new AutoFishModule());
-         this.method_852(new class_9543());
-         this.method_852(new AutoTotemModule());
-         this.method_852(new class_8057());
+         this.addModule(new TabGUIModule());
+         this.addModule(new CompassModule());
+         this.addModule(new CordsModule());
+         this.addModule(new ShulkerInfoModule());
+         this.addModule(new KeyStrokesModule());
+         this.addModule(new MiniMapModule());
+         this.addModule(new ActiveModsModule());
+         this.addModule(new RearViewModule());
+         this.addModule(new NameTagsModule());
+         this.addModule(new WaypointsModule());
+         this.addModule(new ProjectilesModule());
+         this.addModule(new BrainFreezeModule());
+         this.addModule(new Auto32KModule());
+         this.addModule(new PortalGUIModule());
+         this.addModule(new PortalGodModeModule());
+         this.addModule(new MusicParticlesModule());
+         this.addModule(new ESPModule());
+         this.addModule(new AutoFishModule());
+         this.addModule(new AutoCrystalModule());
+         this.addModule(new AutoTotemModule());
+         this.addModule(new NoteblockPlayerModule());
       }
 
       new class_4292();
-      this.method_851();
+      this.sortAndSub();
    }
 
    public JSONObjectImpl method_838(JSONObjectImpl var1) {
@@ -173,7 +173,7 @@ public class ModuleManager {
       } catch (class_7584 var14) {
       }
 
-      for (Module var6 : this.field_637.values()) {
+      for (Module var6 : this.moduleMap.values()) {
          var6.method_42019();
       }
 
@@ -188,7 +188,7 @@ public class ModuleManager {
                SigmaMainClass.getInstance().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            for (Module var9 : this.field_637.values()) {
+            for (Module var9 : this.moduleMap.values()) {
                if (var9.getName().equals(var7)) {
                   try {
                      var9.saveToJson(var17);
@@ -205,7 +205,7 @@ public class ModuleManager {
          SigmaMainClass.getInstance().method_3326().method_12863("Mods array does not exist in config. Assuming a blank profile...");
       }
 
-      for (Module var18 : this.field_637.values()) {
+      for (Module var18 : this.moduleMap.values()) {
          if (var18.method_42015()) {
             SigmaMainClass.getInstance().getEventManager().method_7917(var18);
             if (var18 instanceof SecondModule) {
@@ -234,7 +234,7 @@ public class ModuleManager {
    public JSONObjectImpl method_839(JSONObjectImpl var1) {
       JSONArray var4 = new JSONArray();
 
-      for (Module var6 : this.field_637.values()) {
+      for (Module var6 : this.moduleMap.values()) {
          var4.method_6159(var6.loadFromJson(new JSONObjectImpl()));
       }
 
@@ -245,7 +245,7 @@ public class ModuleManager {
    public void method_846() {
       long var3 = (long)this.method_840();
 
-      for (Module var6 : this.field_637.values()) {
+      for (Module var6 : this.moduleMap.values()) {
          for (Setting var8 : var6.method_41996().values()) {
             if (var8.method_23043()) {
                var3++;
@@ -313,12 +313,12 @@ public class ModuleManager {
    }
 
    public Module method_847(Class<? extends Module> var1) {
-      return this.field_637.get(var1);
+      return this.moduleMap.get(var1);
    }
 
    public Module method_850(Class<? extends Module> var1) {
       if (var1.getSuperclass() == SecondModule.class) {
-         SecondModule var4 = (SecondModule)this.field_637.get(var1.getSuperclass());
+         SecondModule var4 = (SecondModule)this.moduleMap.get(var1.getSuperclass());
 
          for (Module var8 : var4.field_17661) {
             if (var8.getClass() == var1) {
@@ -327,17 +327,17 @@ public class ModuleManager {
          }
       }
 
-      return this.field_637.get(var1);
+      return this.moduleMap.get(var1);
    }
 
    public Map<Class<? extends Module>, Module> method_843() {
-      return this.field_637;
+      return this.moduleMap;
    }
 
    public List<Module> method_844(Category var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Module var6 : this.field_637.values()) {
+      for (Module var6 : this.moduleMap.values()) {
          if (var6.method_42004().equals(var1)) {
             var4.add(var6);
          }
@@ -349,7 +349,7 @@ public class ModuleManager {
    public List<Module> method_836() {
       ArrayList var3 = new ArrayList();
 
-      for (Module var5 : this.field_637.values()) {
+      for (Module var5 : this.moduleMap.values()) {
          if (var5.method_42015()) {
             var3.add(var5);
          }

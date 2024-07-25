@@ -203,7 +203,7 @@ public class EntityRenderDispatcher {
    public <E extends Entity> void method_28115(
       E var1, double var2, double var4, double var6, float var8, float var9, class_7966 var10, class_2565 var11, int var12
    ) {
-      if (!class_597.field_3439 || !(var1 instanceof class_9399) && !(var1 instanceof class_7549) && !(var1 instanceof class_7451)) {
+      if (!FPSBoosterModule.field_3439 || !(var1 instanceof class_9399) && !(var1 instanceof class_7549) && !(var1 instanceof class_7451)) {
          if (this.camera != null) {
             class_7067 var15 = this.<Entity>method_28131(var1);
 

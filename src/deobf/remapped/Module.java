@@ -258,12 +258,12 @@ public abstract class Module {
             SigmaMainClass.getInstance().getEventManager().subscribe(this);
             if (!(this instanceof SecondModule)) {
                if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
-                  && SigmaMainClass.getInstance().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
-                  SigmaMainClass.getInstance().method_3315().method_21206("deactivate");
+                  && SigmaMainClass.getInstance().getModuleManager().method_847(ActiveModsModule.class).getBooleanValueByName("Sound")) {
+                  SigmaMainClass.getInstance().getSoundManager().method_21206("deactivate");
                }
 
                if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
-                  && SigmaMainClass.getInstance().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
+                  && SigmaMainClass.getInstance().getModuleManager().method_847(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
                   MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
                }
             }
@@ -272,12 +272,12 @@ public abstract class Module {
          } else {
             SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
             if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
-               && SigmaMainClass.getInstance().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
-               SigmaMainClass.getInstance().method_3315().method_21206("activate");
+               && SigmaMainClass.getInstance().getModuleManager().method_847(ActiveModsModule.class).getBooleanValueByName("Sound")) {
+               SigmaMainClass.getInstance().getSoundManager().method_21206("activate");
             }
 
             if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
-               && SigmaMainClass.getInstance().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
+               && SigmaMainClass.getInstance().getModuleManager().method_847(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 

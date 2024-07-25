@@ -255,8 +255,8 @@ public class BlockFlyModule extends SecondModule {
    }
 
    public void method_17220(class_7767 var1) {
-      if (mc.field_9616.field_32603 == 0.8038576F) {
-         mc.field_9616.field_32603 = 1.0F;
+      if (mc.theTimer.timerSpeed == 0.8038576F) {
+         mc.theTimer.timerSpeed = 1.0F;
       }
 
       if (this.method_17219() != 0 && (!mc.field_9632.field_41774 || this.getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
@@ -315,7 +315,7 @@ public class BlockFlyModule extends SecondModule {
                         .method_37256(mc.field_9632.method_37302(), mc.field_9632.method_37309() + 1.0, mc.field_9632.method_37156());
                      var1.method_35235(0.0);
                      class_8865.method_40777(var1, 0.0);
-                     mc.field_9616.field_32603 = 0.8038576F;
+                     mc.theTimer.timerSpeed = 0.8038576F;
                   }
             }
          }

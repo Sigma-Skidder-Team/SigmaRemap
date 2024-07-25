@@ -38,7 +38,7 @@ public class AACBlockFly extends Module {
          ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen

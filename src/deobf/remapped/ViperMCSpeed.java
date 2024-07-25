@@ -15,7 +15,7 @@ public class ViperMCSpeed extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(0.28F);
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen

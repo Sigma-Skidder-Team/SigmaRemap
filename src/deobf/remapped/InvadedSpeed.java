@@ -15,7 +15,7 @@ public class InvadedSpeed extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(0.28F);
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen
@@ -26,15 +26,15 @@ public class InvadedSpeed extends Module {
             if (this.field_30487 != 2) {
                if (this.field_30487 >= 3) {
                   this.field_30487 = 0;
-                  mc.field_9616.field_32603 = 0.25F;
+                  mc.theTimer.timerSpeed = 0.25F;
                   class_8865.method_40777(var1, (double)this.getFloatValueByName("Speed"));
                }
             } else {
-               mc.field_9616.field_32603 = 2.0F;
+               mc.theTimer.timerSpeed = 2.0F;
                class_8865.method_40777(var1, class_8865.method_40775() + 0.05);
             }
          } else {
-            mc.field_9616.field_32603 = 2.0F;
+            mc.theTimer.timerSpeed = 2.0F;
             class_8865.method_40777(var1, class_8865.method_40775() + 0.05);
          }
       }

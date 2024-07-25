@@ -67,7 +67,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    private final DataFixer dataFixer;
    private final WindowProvider windowProvider;
    public final Window window;
-   public final RenderTickCounter field_9616 = new RenderTickCounter(20.0F, 0L);
+   public final RenderTickCounter theTimer = new RenderTickCounter(20.0F, 0L);
    private final Snooper field_9606 = new Snooper("client", this, Util.getMeasuringTimeMs());
    private final class_3017 field_9576;
    public final WorldRenderer worldRenderer;
@@ -637,7 +637,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       this.field_9623 = (Screen)var1;
-      SigmaMainClass.getInstance().method_3299().method_30988();
+      SigmaMainClass.getInstance().getGUIManager().method_30988();
       if (var1 != null) {
          this.field_9625.method_39844();
          class_5916.method_27064();
@@ -730,7 +730,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       if (var1) {
-         int var5 = this.field_9616.method_29172(Util.getMeasuringTimeMs());
+         int var5 = this.theTimer.method_29172(Util.getMeasuringTimeMs());
          this.field_9592.method_16056("scheduledExecutables");
          this.method_34454();
          this.field_9592.method_16054();
@@ -760,7 +760,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9592.method_16054();
       if (!this.field_9589) {
          this.field_9592.method_16050("gameRenderer");
-         this.gameRenderer.method_35945(this.field_9579 ? this.field_9621 : this.field_9616.field_32600, var2, var1);
+         this.gameRenderer.method_35945(this.field_9579 ? this.field_9621 : this.theTimer.field_32600, var2, var1);
          this.field_9592.method_16050("toasts");
          this.field_9627.method_42331(new class_7966());
          this.field_9592.method_16054();
@@ -795,9 +795,9 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          && !this.field_9646.method_1624();
       if (this.field_9579 != var11) {
          if (this.field_9579) {
-            this.field_9621 = this.field_9616.field_32600;
+            this.field_9621 = this.theTimer.field_32600;
          } else {
-            this.field_9616.field_32600 = this.field_9621;
+            this.theTimer.field_32600 = this.field_9621;
          }
 
          this.field_9579 = var11;
@@ -871,7 +871,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.window.method_43169((double)var1);
       if (this.field_9623 != null) {
          this.field_9623.method_1191(this, this.window.method_43165(), this.window.method_43177());
-         SigmaMainClass.getInstance().method_3299().method_30991();
+         SigmaMainClass.getInstance().getGUIManager().method_30991();
       }
 
       class_4230 var2 = this.method_8584();
@@ -2288,11 +2288,11 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    public float method_8554() {
-      return this.field_9616.field_32600;
+      return this.theTimer.field_32600;
    }
 
    public float method_8491() {
-      return this.field_9616.field_32599;
+      return this.theTimer.field_32599;
    }
 
    public class_4468 method_8569() {

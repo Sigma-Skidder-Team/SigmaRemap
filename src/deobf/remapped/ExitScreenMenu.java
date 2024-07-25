@@ -202,7 +202,7 @@ public class ExitScreenMenu extends class_2596 {
          class_8343 var26 = NotificationIcons.field_11032;
          int var28 = var26.method_38415();
          int var22 = var26.method_38421();
-         if (class_6763.field_34898 > 1.0F) {
+         if (GUIManager.field_34898 > 1.0F) {
             var26 = NotificationIcons.field_11058;
          }
 

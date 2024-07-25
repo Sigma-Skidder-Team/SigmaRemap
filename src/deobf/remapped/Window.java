@@ -75,7 +75,7 @@ public final class Window implements AutoCloseable {
       this.field_47720 = this.field_47736 = var3.field_49361 <= 0 ? 1 : var3.field_49361;
       this.field_47730 = this.field_47724 = var3.field_49356 <= 0 ? 1 : var3.field_49356;
       GLFW.glfwDefaultWindowHints();
-      class_6763.method_30993();
+      GUIManager.method_30993();
       if (class_3111.method_14248()) {
          GLFW.glfwWindowHint(135181, class_3111.method_14447());
       }
@@ -329,7 +329,7 @@ public final class Window implements AutoCloseable {
    private void method_43155(long var1, int var3, int var4) {
       this.field_47736 = var3;
       this.field_47724 = var4;
-      SigmaMainClass.getInstance().method_3299().method_30991();
+      SigmaMainClass.getInstance().getGUIManager().method_30991();
    }
 
    private void method_43173(long var1, boolean var3) {

@@ -610,7 +610,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                var13.method_29851("Overlay name", () -> this.field_40612.field_9610.getClass().getCanonicalName());
                throw new class_3297(var12);
             }
-         } else if (this.field_40612.field_9623 != null && SigmaMainClass.getInstance().method_3299().method_31001() == null) {
+         } else if (this.field_40612.field_9623 != null && SigmaMainClass.getInstance().getGUIManager().method_31001() == null) {
             try {
                if (class_7860.field_39933.method_3596()) {
                   class_7860.method_35547(class_7860.field_39933, this.field_40612.field_9623, var10, var7, var8, this.field_40612.method_8491());

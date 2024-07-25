@@ -3,7 +3,7 @@ package remapped;
 public class class_3452 implements Runnable {
    private static String[] field_16935;
 
-   public class_3452(class_8441 var1, class_8441 var2) {
+   public class_3452(KeybindManagerMenu var1, KeybindManagerMenu var2) {
       this.field_16936 = var1;
       this.field_16934 = var2;
    }

@@ -56,7 +56,7 @@ public class class_5673 extends class_446 {
       boolean var5 = this.method_32183() && this.method_32167().method_32167().method_32120(var1, var2);
       this.field_28754.method_11119(!var5 ? class_4043.field_19618 : class_4043.field_19620);
       if (var5) {
-         SigmaMainClass.getInstance().method_3299().method_30984(class_6763.field_34905);
+         SigmaMainClass.getInstance().getGUIManager().method_30984(GUIManager.field_34905);
       }
 
       super.method_32145(var1, var2);

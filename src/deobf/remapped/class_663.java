@@ -8,7 +8,7 @@ public class class_663 {
 
    public class_663(class_1331 var1) {
       this.field_3674 = var1;
-      this.field_3676 = class_617.method_2882(class_8057.method_36549().field_9601.method_28262(var1.method_6100()));
+      this.field_3676 = class_617.method_2882(NoteblockPlayerModule.method_36549().field_9601.method_28262(var1.method_6100()));
    }
 
    public int method_3033() {

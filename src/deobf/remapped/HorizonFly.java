@@ -12,7 +12,7 @@ public class HorizonFly extends Module {
    public void onEnable() {
       this.field_13555 = mc.field_9632.method_37309();
       this.field_13556 = 10;
-      mc.field_9616.field_32603 = 0.6F;
+      mc.theTimer.timerSpeed = 0.6F;
    }
 
    @Override
@@ -22,7 +22,7 @@ public class HorizonFly extends Module {
          class_314.method_1408(-0.0789);
       }
 
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen

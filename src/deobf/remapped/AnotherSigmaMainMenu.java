@@ -31,7 +31,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       String var20 = "© Sigma Prod";
       StringBuilder var10000 = new StringBuilder().append("Jello for Sigma ");
       SigmaMainClass.getInstance();
-      String var21 = var10000.append(SigmaMainClass.field_3957).append("  -  1.8 to ").append(class_3347.field_16514.method_2045()).toString();
+      String var21 = var10000.append(SigmaMainClass.clientVersion).append("  -  1.8 to ").append(class_3347.field_16514.method_2045()).toString();
       this.method_32148(
          this.field_8718 = new class_8443(
             this,
@@ -166,7 +166,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       });
       this.field_8722.method_32100((var1x, var2x) -> {
          if (this.field_8712++ > 8) {
-            SigmaMainClass.getInstance().method_3299().method_30990(new class_3829());
+            SigmaMainClass.getInstance().getGUIManager().method_30990(new class_3829());
          }
       });
    }
@@ -184,7 +184,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       class_8343 var4 = NotificationIcons.field_11032;
       int var5 = var4.method_38415();
       int var6 = var4.method_38421();
-      if (class_6763.field_34898 > 1.0F) {
+      if (GUIManager.field_34898 > 1.0F) {
          var4 = NotificationIcons.field_11058;
       }
 
@@ -210,7 +210,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
    }
 
    public void method_7598() {
-      SigmaMainClass.getInstance().method_3315().method_21206("clicksound");
+      SigmaMainClass.getInstance().getSoundManager().method_21206("clicksound");
    }
 
    public void method_7600(Screen var1) {
@@ -219,7 +219,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
    }
 
    public void method_7601(class_2596 var1) {
-      SigmaMainClass.getInstance().method_3299().method_30990(var1);
+      SigmaMainClass.getInstance().getGUIManager().method_30990(var1);
       this.method_7598();
    }
 

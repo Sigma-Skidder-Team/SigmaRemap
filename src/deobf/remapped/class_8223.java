@@ -15,7 +15,7 @@ public class class_8223 extends class_1859 {
       super.method_32145(var1, var2);
       this.field_42210.method_11119(!this.method_32183() ? class_4043.field_19618 : class_4043.field_19620);
       if (this.method_32183()) {
-         SigmaMainClass.getInstance().method_3299().method_30984(class_6763.field_34905);
+         SigmaMainClass.getInstance().getGUIManager().method_30984(GUIManager.field_34905);
       }
    }
 

@@ -13,7 +13,7 @@ public class class_1226 {
    }
 
    public String method_5460() {
-      return this.field_6787 == null ? class_6763.field_34911.get(this.field_6788) : this.field_6787.getName();
+      return this.field_6787 == null ? GUIManager.field_34911.get(this.field_6788) : this.field_6787.getName();
    }
 
    public String method_5461() {

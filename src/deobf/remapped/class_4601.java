@@ -47,10 +47,10 @@ public class class_4601 {
    }
 
    private boolean method_21316() {
-      class_2654 var3 = class_4969.method_22833()
+      class_2654 var3 = MiniMapModule.method_22833()
          .field_9601
          .method_29554(this.field_22373.method_27352().field_10328, this.field_22373.method_27352().field_10327 + 1);
-      class_2654 var4 = class_4969.method_22832()
+      class_2654 var4 = MiniMapModule.method_22832()
          .field_9601
          .method_29554(this.field_22373.method_27352().field_10328, this.field_22373.method_27352().field_10327 - 1);
       return var3 != null && var3.field_13081 && var4 != null && var4.field_13081;

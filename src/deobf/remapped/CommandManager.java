@@ -10,7 +10,7 @@ public class CommandManager {
    private boolean usePrefix = true;
    private static List<Runnable> field_25600 = new ArrayList<Runnable>();
 
-   public void method_22654() {
+   public void initList() {
       SigmaMainClass.getInstance().getEventManager().subscribe(this);
       this.addCommand(new VClipCommand());
       this.addCommand(new HClipCommand());

@@ -70,7 +70,7 @@ public class TestModule extends Module {
 
    @Override
    public void onDisable() {
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen

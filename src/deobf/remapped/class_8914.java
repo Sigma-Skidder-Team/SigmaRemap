@@ -43,7 +43,7 @@ public class class_8914 extends class_1859 {
       );
       int var11 = 10;
 
-      for (Entry var13 : class_6763.field_34911.entrySet()) {
+      for (Entry var13 : GUIManager.field_34911.entrySet()) {
          class_1226 var14 = new class_1226((Class<? extends Screen>)var13.getKey());
          class_590 var15 = new class_590(class_314.method_1444(class_1255.field_6929.field_6917, 0.02F), -986896)
             .method_2765(class_314.method_1444(class_1255.field_6929.field_6917, 0.5F))
@@ -54,7 +54,7 @@ public class class_8914 extends class_1859 {
                var16 = new class_6220(this.field_45699, var14.method_5460(), 0, var11++ * 55, this.field_45699.method_32109(), 55, var15, var14.method_5460())
             );
          var16.method_32100((var2x, var3x) -> {
-            for (Entry var7 : class_6763.field_34911.entrySet()) {
+            for (Entry var7 : GUIManager.field_34911.entrySet()) {
                class_1226 var8 = new class_1226((Class<? extends Screen>)var7.getKey());
                if (var8.method_5460().equals(var16.method_32176()) && !this.field_45702) {
                   this.field_45694 = var8;

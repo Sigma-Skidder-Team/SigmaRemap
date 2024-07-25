@@ -31,8 +31,8 @@ public class class_8671 {
    }
 
    private void method_39836(long var1, int var3, int var4, int var5) {
-      if (SigmaMainClass.getInstance().method_3299().method_31001() != null) {
-         SigmaMainClass.getInstance().method_3299().method_30982(var3, var4);
+      if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
+         SigmaMainClass.getInstance().getGUIManager().method_30982(var3, var4);
       } else {
          if (this.field_44499.field_9623 == null) {
             if (var4 != 1 && var4 != 2) {
@@ -142,7 +142,7 @@ public class class_8671 {
    }
 
    private void method_39841(long var1, double var3, double var5) {
-      if (SigmaMainClass.getInstance().method_3299().method_31001() == null) {
+      if (SigmaMainClass.getInstance().getGUIManager().method_31001() == null) {
          class_1523 var9 = new class_1523(var5);
          SigmaMainClass.getInstance().getEventManager().call(var9);
          if (!var9.method_29716()) {
@@ -184,7 +184,7 @@ public class class_8671 {
             }
          }
       } else {
-         SigmaMainClass.getInstance().method_3299().method_31011(var3, var5);
+         SigmaMainClass.getInstance().getGUIManager().method_31011(var3, var5);
       }
    }
 

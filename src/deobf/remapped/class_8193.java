@@ -37,7 +37,7 @@ public class class_8193 extends Module {
    public void onDisable() {
       class_314.method_1408(-0.078);
       class_8865.method_40776(0.2);
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
       if (this.field_41931) {
          mc.gameOptions.keySneak.pressed = true;
       }

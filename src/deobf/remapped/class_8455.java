@@ -266,8 +266,8 @@ public class class_8455 {
 
    public void method_38889(long var1, int var3, int var4, int var5, int var6) {
       if (var1 == this.field_43225.method_8552().method_43181()) {
-         if (SigmaMainClass.getInstance().method_3299().method_31001() != null) {
-            SigmaMainClass.getInstance().method_3299().method_30992(var3, var5);
+         if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
+            SigmaMainClass.getInstance().getGUIManager().method_30992(var3, var5);
             return;
          }
 
@@ -437,8 +437,8 @@ public class class_8455 {
 
    private void method_38884(long var1, int var3, int var4) {
       if (var1 == this.field_43225.method_8552().method_43181()) {
-         if (SigmaMainClass.getInstance().method_3299().method_31001() != null) {
-            SigmaMainClass.getInstance().method_3299().method_30986(var3, var4);
+         if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
+            SigmaMainClass.getInstance().getGUIManager().method_30986(var3, var4);
             return;
          }
 

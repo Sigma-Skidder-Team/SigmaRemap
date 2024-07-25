@@ -81,10 +81,10 @@ public class class_73 {
 
    public static void method_150(int var0, int var1, int var2, int var3, boolean var4) {
       if (!var4) {
-         var0 = (int)((float)var0 * class_6763.field_34898);
-         var1 = (int)((float)var1 * class_6763.field_34898);
-         var2 = (int)((float)var2 * class_6763.field_34898);
-         var3 = (int)((float)var3 * class_6763.field_34898);
+         var0 = (int)((float)var0 * GUIManager.field_34898);
+         var1 = (int)((float)var1 * GUIManager.field_34898);
+         var2 = (int)((float)var2 * GUIManager.field_34898);
+         var3 = (int)((float)var3 * GUIManager.field_34898);
       } else {
          float[] var7 = method_144(var0, var1);
          var0 = (int)var7[0];
@@ -401,7 +401,7 @@ public class class_73 {
       class_3542.method_16480(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
-      GL11.glPointSize(var2 * class_6763.field_34898);
+      GL11.glPointSize(var2 * GUIManager.field_34898);
       GL11.glBegin(0);
       GL11.glVertex2f(var0, var1);
       GL11.glEnd();
@@ -448,7 +448,7 @@ public class class_73 {
       float var15 = (float)(var4 & 0xFF) / 255.0F;
       GL11.glPushMatrix();
       boolean var16 = false;
-      if ((double)class_6763.field_34898 == 2.0) {
+      if ((double) GUIManager.field_34898 == 2.0) {
          if (var0 == class_5320.field_27152) {
             var0 = class_5320.field_27153;
          } else if (var0 == class_5320.field_27141) {
@@ -474,10 +474,10 @@ public class class_73 {
             int var18 = (int)var17[0];
             int var19 = (int)var17[1];
             GL11.glTranslatef(var1, var2, 0.0F);
-            GL11.glScalef(1.0F / class_6763.field_34898, 1.0F / class_6763.field_34898, 1.0F / class_6763.field_34898);
+            GL11.glScalef(1.0F / GUIManager.field_34898, 1.0F / GUIManager.field_34898, 1.0F / GUIManager.field_34898);
             GL11.glTranslatef(-var1, -var2, 0.0F);
-            var10 = (int)((float)var10 * class_6763.field_34898);
-            var11 = (int)((float)var11 * class_6763.field_34898);
+            var10 = (int)((float)var10 * GUIManager.field_34898);
+            var11 = (int)((float)var11 * GUIManager.field_34898);
          }
       }
 
@@ -811,7 +811,7 @@ public class class_73 {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * class_6763.field_34898);
+         GL11.glLineWidth(1.8F * GUIManager.field_34898);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(7);
@@ -904,7 +904,7 @@ public class class_73 {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * class_6763.field_34898);
+         GL11.glLineWidth(1.8F * GUIManager.field_34898);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(0);
@@ -1178,7 +1178,7 @@ public class class_73 {
       method_94(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
       method_94(var0 + var4, var1, var0 + var2 - var4, var1 + var4, var5);
       method_94(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
-      float var8 = var4 * class_6763.field_34898;
+      float var8 = var4 * GUIManager.field_34898;
       method_148(var0, var1, var0 + var4, var1 + var4);
       method_124(var0 + var4, var1 + var4, var4, var5);
       method_141();
@@ -1305,8 +1305,8 @@ public class class_73 {
    }
 
    public static Color method_114(int var0, int var1, Color var2) {
-      var0 = (int)((float)var0 * class_6763.field_34898);
-      var1 = (int)((float)var1 * class_6763.field_34898);
+      var0 = (int)((float)var0 * GUIManager.field_34898);
+      var1 = (int)((float)var1 * GUIManager.field_34898);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
       GL11.glReadPixels(var0, MinecraftClient.getInstance().window.method_43198() - var1, 1, 1, 6407, 5120, var5);
@@ -1325,8 +1325,8 @@ public class class_73 {
       return !var12
          ? null
          : new double[]{
-            (double)(var8.get(0) / class_6763.field_34898),
-            (double)(((float)field_108.field_9596.field_20534 - var8.get(1)) / class_6763.field_34898),
+            (double)(var8.get(0) / GUIManager.field_34898),
+            (double)(((float)field_108.field_9596.field_20534 - var8.get(1)) / GUIManager.field_34898),
             (double)var8.get(2)
          };
    }

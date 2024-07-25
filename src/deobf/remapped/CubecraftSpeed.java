@@ -20,7 +20,7 @@ public class CubecraftSpeed extends Module {
 
    @Override
    public void onDisable() {
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
       class_8865.method_40776(0.2);
       if (mc.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.078);
@@ -37,7 +37,7 @@ public class CubecraftSpeed extends Module {
             case "Basic":
                this.field_42613++;
                this.field_42614 = 0.27;
-               mc.field_9616.field_32603 = 0.7F;
+               mc.theTimer.timerSpeed = 0.7F;
                if (class_314.method_1413(mc.field_9632, 0.01F)) {
                   if (this.getBooleanValueByName("AutoJump")) {
                      mc.field_9632.method_26595();
@@ -48,15 +48,15 @@ public class CubecraftSpeed extends Module {
                   if (this.field_42613 == 1) {
                      this.field_42614 = (double)this.getFloatValueByName("Speed") * 2.4;
                   } else if (this.field_42613 == 2) {
-                     mc.field_9616.field_32603 = 1.0F;
+                     mc.theTimer.timerSpeed = 1.0F;
                      this.field_42614 = 0.26;
                   } else if (this.field_42613 >= 3) {
                      this.field_42613 = 0;
                      this.field_42614 = 0.26;
                   }
                } else {
-                  if (mc.field_9616.field_32603 == 0.7F) {
-                     mc.field_9616.field_32603 = 1.0F;
+                  if (mc.theTimer.timerSpeed == 0.7F) {
+                     mc.theTimer.timerSpeed = 1.0F;
                   }
 
                   if (this.field_42613 == 1) {
@@ -100,11 +100,11 @@ public class CubecraftSpeed extends Module {
                   }
 
                   this.field_42612 = mc.field_9632.method_37309();
-                  if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-                     mc.field_9616.field_32603 = 1.0F;
+                  if (!SigmaMainClass.getInstance().getModuleManager().method_847(TimerModule.class).method_42015()) {
+                     mc.theTimer.timerSpeed = 1.0F;
                   }
                } else {
-                  mc.field_9616.field_32603 = 1.0F - this.getFloatValueByName("Speed") * 0.13F;
+                  mc.theTimer.timerSpeed = 1.0F - this.getFloatValueByName("Speed") * 0.13F;
                   if (this.field_42613 == 0 && var1.method_35236() == 0.44100000858307864) {
                      this.field_42613 = 1;
                      class_8865.method_40777(var1, 0.286);

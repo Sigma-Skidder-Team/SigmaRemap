@@ -31,7 +31,7 @@ public class TestFly extends Module {
          class_314.method_1408(-0.0789);
       }
 
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen

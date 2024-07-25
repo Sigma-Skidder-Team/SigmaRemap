@@ -30,7 +30,7 @@ public class class_3969 {
 
    public List<String> method_18323() {
       try {
-         HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles.php?v=" + SigmaMainClass.field_3957);
+         HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles.php?v=" + SigmaMainClass.clientVersion);
          CloseableHttpResponse var4 = HttpClients.createDefault().execute(var3);
          HttpEntity var5 = var4.getEntity();
          if (var5 != null) {
@@ -66,7 +66,7 @@ public class class_3969 {
 
    public JSONObjectImpl method_18325(String var1) {
       try {
-         HttpGet var4 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles/" + this.method_18326(var1) + ".profile?v=" + SigmaMainClass.field_3957);
+         HttpGet var4 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles/" + this.method_18326(var1) + ".profile?v=" + SigmaMainClass.clientVersion);
          CloseableHttpResponse var5 = HttpClients.createDefault().execute(var4);
          HttpEntity var6 = var5.getEntity();
          if (var6 != null) {

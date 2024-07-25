@@ -36,7 +36,7 @@ public class MineplexFly extends PremiumModule {
          this.field_46846 = mc.field_9632.field_3853.field_36404;
       }
 
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen
@@ -144,7 +144,7 @@ public class MineplexFly extends PremiumModule {
                   this.field_46840++;
                   this.field_46845 += 0.5;
                } else {
-                  mc.field_9616.field_32603 = Math.min(1.0F, Math.max(0.1F, (float)(1.2 - this.field_46845 * 0.15)));
+                  mc.theTimer.timerSpeed = Math.min(1.0F, Math.max(0.1F, (float)(1.2 - this.field_46845 * 0.15)));
                   if (this.field_46840 > 2) {
                      this.field_46845 += 0.05;
                   }

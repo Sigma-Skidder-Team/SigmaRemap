@@ -76,7 +76,7 @@ public class NCPStep extends Module {
                   }
                }
 
-               mc.field_9616.field_32603 = this.field_49101;
+               mc.theTimer.timerSpeed = this.field_49101;
             }
          } else {
             var1.method_29715(true);
@@ -97,7 +97,7 @@ public class NCPStep extends Module {
             mc.field_9632.field_41733 = 0.5F;
             if (this.field_49101 != -1.0F) {
                this.field_49101 = -1.0F;
-               mc.field_9616.field_32603 = 1.0F;
+               mc.theTimer.timerSpeed = 1.0F;
             }
          }
       }

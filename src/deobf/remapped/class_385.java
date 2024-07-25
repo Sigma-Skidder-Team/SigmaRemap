@@ -7,8 +7,8 @@ public class class_385 {
    private static String[] field_1573;
    public final float field_1572 = (float)(0.1F + Math.random() * 0.9F);
    public final float field_1571 = (float)(0.5 + Math.random() * 0.5);
-   public final int field_1570 = (int)((double)class_2590.method_11763().field_9602.method_43166() * Math.random());
-   public final int field_1569 = (int)((double)class_2590.method_11765().field_9602.method_43163() * Math.random());
+   public final int field_1570 = (int)((double) MusicParticlesModule.method_11763().field_9602.method_43166() * Math.random());
+   public final int field_1569 = (int)((double) MusicParticlesModule.method_11765().field_9602.method_43163() * Math.random());
    public float field_1568;
 
    public void method_1876(float var1) {
@@ -28,11 +28,11 @@ public class class_385 {
 
       GL11.glPushMatrix();
       GL11.glTranslatef(
-         (float)(class_2590.method_11768().field_9602.method_43166() / 2), (float)(class_2590.method_11769().field_9602.method_43163() / 2), 0.0F
+         (float)(MusicParticlesModule.method_11768().field_9602.method_43166() / 2), (float)(MusicParticlesModule.method_11769().field_9602.method_43163() / 2), 0.0F
       );
       GL11.glScalef(var3, var3, 1.0F);
       GL11.glTranslatef(
-         (float)(-class_2590.method_11770().field_9602.method_43166() / 2), (float)(-class_2590.method_11762().field_9602.method_43163() / 2), 0.0F
+         (float)(-MusicParticlesModule.method_11770().field_9602.method_43166() / 2), (float)(-MusicParticlesModule.method_11762().field_9602.method_43163() / 2), 0.0F
       );
       int var5 = Color.getHSBColor((float)(System.currentTimeMillis() % 4000L) / 4000.0F, 0.3F, 1.0F).getRGB();
       float var6 = 60.0F * this.field_1571;

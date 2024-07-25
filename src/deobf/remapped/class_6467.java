@@ -57,7 +57,7 @@ public class class_6467 extends Module {
             class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
             class_3542.method_16488();
             mc.gameOptions.field_45568 = false;
-            this.method_29448(var9, var11, var13, var15, mc.field_9616.field_32600, var17, this.field_32955);
+            this.method_29448(var9, var11, var13, var15, mc.theTimer.field_32600, var17, this.field_32955);
             mc.gameOptions.field_45568 = var18;
             GL11.glPopMatrix();
          }

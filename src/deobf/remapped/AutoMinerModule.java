@@ -329,7 +329,7 @@ public class AutoMinerModule extends Module {
          GL11.glLineWidth(1.4F);
          GL11.glColor4d(1.0, 1.0, 1.0, 0.44F);
          GL11.glBegin(3);
-         float var3 = Math.min(1.0F, ((float)(mc.field_9632.field_41697 % 20) + mc.field_9616.field_32600) / 20.0F);
+         float var3 = Math.min(1.0F, ((float)(mc.field_9632.field_41697 % 20) + mc.theTimer.field_32600) / 20.0F);
 
          for (int var4 = 0; var4 < (int)((float)this.field_25752.size() * var3); var4++) {
             class_7047 var5 = this.field_25752.get(var4);

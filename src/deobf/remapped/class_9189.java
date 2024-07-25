@@ -20,9 +20,9 @@ public class class_9189 {
 
    public static class_8328 method_42357(Entity var0) {
       return new class_8328(
-         var0.field_41754 + (var0.method_37302() - var0.field_41754) * (double)field_47005.field_9616.field_32600,
-         var0.field_41713 + (var0.method_37309() - var0.field_41713) * (double)field_47005.field_9616.field_32600,
-         var0.field_41724 + (var0.method_37156() - var0.field_41724) * (double)field_47005.field_9616.field_32600
+         var0.field_41754 + (var0.method_37302() - var0.field_41754) * (double)field_47005.theTimer.field_32600,
+         var0.field_41713 + (var0.method_37309() - var0.field_41713) * (double)field_47005.theTimer.field_32600,
+         var0.field_41724 + (var0.method_37156() - var0.field_41724) * (double)field_47005.theTimer.field_32600
       );
    }
 

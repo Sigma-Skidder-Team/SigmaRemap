@@ -63,7 +63,7 @@ public class class_7868 extends class_1859 {
       this.method_32177(true);
       this.method_32161();
 
-      for (class_1226 var10 : class_8441.method_38833()) {
+      for (class_1226 var10 : KeybindManagerMenu.method_38833()) {
          int var7 = var10.method_5458();
          if (var7 == this.field_40279) {
             class_6738 var8;

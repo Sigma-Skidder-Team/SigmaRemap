@@ -11,7 +11,7 @@ public class class_7842 {
 
    @class_2378
    private void method_35493(boolean var1, class_1565 var2, boolean var3, boolean var4) {
-      class_845 var7 = SigmaMainClass.getInstance().method_3322();
+      AgoraClient var7 = SigmaMainClass.getInstance().method_3322();
       if (var7.field_4419 == null) {
          while (!class_890.field_4585) {
             try {

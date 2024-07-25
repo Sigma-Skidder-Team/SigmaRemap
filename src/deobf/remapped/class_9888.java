@@ -42,7 +42,7 @@ public class class_9888 extends class_4145 {
          0,
          0,
          MinecraftClient.getInstance().window.method_43166(),
-         (int)(30.0 * MinecraftClient.getInstance().window.method_43189() / (double)class_6763.field_34898)
+         (int)(30.0 * MinecraftClient.getInstance().window.method_43189() / (double) GUIManager.field_34898)
       );
       this.method_1183(var1);
       class_73.method_141();

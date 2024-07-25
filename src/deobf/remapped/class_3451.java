@@ -45,7 +45,7 @@ public class class_3451 extends class_1859 {
          var1 * 0.9F
       );
       float var5 = 0.88F;
-      if (!SigmaMainClass.getInstance().method_3299().method_31000()) {
+      if (!SigmaMainClass.getInstance().getGUIManager().method_31000()) {
          var5 = 0.95F;
       }
 

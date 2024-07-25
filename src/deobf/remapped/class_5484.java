@@ -166,7 +166,7 @@ public class class_5484 extends class_446 {
    }
 
    private void method_24920(class_8896 var1, class_7144 var2) {
-      if (!((class_734)this.method_32167()).method_3358()) {
+      if (!((JelloMenu)this.method_32167()).method_3358()) {
          this.field_27956.method_9489(var1, var2);
          field_27942 = var1;
       }
@@ -184,7 +184,7 @@ public class class_5484 extends class_446 {
       float var7 = Math.min(10.0F, Math.max(0.0F, (float)var5 / 1.810361E7F));
       field_27935 = System.nanoTime();
       super.method_32145(var1, var2);
-      if (this.field_36283 instanceof class_734) {
+      if (this.field_36283 instanceof JelloMenu) {
          if (!this.method_1535()) {
             if ((this.field_36267 || this.field_27933) && !this.method_1537() && !this.method_1535()) {
                this.field_27933 = true;

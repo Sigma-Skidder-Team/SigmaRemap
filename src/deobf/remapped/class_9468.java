@@ -202,7 +202,7 @@ public class class_9468 extends Module {
       double var7 = mc.gameRenderer.method_35949().method_41627().method_62();
       field_48289.clear();
       field_48288.clear();
-      float var9 = mc.field_9616.field_32600;
+      float var9 = mc.theTimer.field_32600;
 
       for (Object var11 : mc.field_9601.method_736()) {
          if (var11 instanceof class_704 && !(var11 instanceof class_5989)) {

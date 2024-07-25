@@ -34,7 +34,7 @@ public class class_3158 {
                      }
                   }
                case "screen":
-                  Class var8 = SigmaMainClass.getInstance().method_3299().method_31007(var1.method_5861("target"));
+                  Class var8 = SigmaMainClass.getInstance().getGUIManager().method_31007(var1.method_5861("target"));
                   if (var8 != null) {
                      this.field_15686 = var8;
                   }
@@ -54,7 +54,7 @@ public class class_3158 {
             break;
          case field_25373:
             var3.method_5820("type", "screen");
-            var3.method_5820("target", SigmaMainClass.getInstance().method_3299().method_31010((Class<? extends Screen>)this.field_15686));
+            var3.method_5820("target", SigmaMainClass.getInstance().getGUIManager().method_31010((Class<? extends Screen>)this.field_15686));
       }
 
       var3.method_5818("key", this.field_15688);

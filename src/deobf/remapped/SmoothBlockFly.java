@@ -51,7 +51,7 @@ public class SmoothBlockFly extends Module {
       }
 
       class_8865.method_40776(class_8865.method_40775() * 0.9);
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
       if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && this.field_41381 == 0) {
          class_314.method_1408(-0.0789);
       }
@@ -228,7 +228,7 @@ public class SmoothBlockFly extends Module {
                double var6 = 0.2;
                float var8 = this.method_36706(class_9299.method_42810(mc.field_9632.field_41701));
                if (mc.gameOptions.keyJump.isKeyDown()) {
-                  mc.field_9616.field_32603 = 1.0F;
+                  mc.theTimer.timerSpeed = 1.0F;
                } else if (mc.field_9632.field_41726) {
                   if (class_314.method_1434() && !mc.field_9632.method_37252() && !this.field_41374) {
                      var1.method_35235(1.00000000000001);
@@ -238,22 +238,22 @@ public class SmoothBlockFly extends Module {
                      this.field_41381 = -1;
                   } else {
                      var1.method_35235(0.122);
-                     mc.field_9616.field_32603 = 0.7F;
+                     mc.theTimer.timerSpeed = 0.7F;
                      var6 = 2.4;
                   }
                } else if (this.field_41381 == 2) {
                   if (var1.method_35236() > 0.05) {
                      this.field_41381 = -1;
                   } else {
-                     mc.field_9616.field_32603 = 0.7F;
+                     mc.theTimer.timerSpeed = 0.7F;
                      var6 = 0.28;
                   }
                } else if (this.field_41381 == 3) {
-                  mc.field_9616.field_32603 = 0.3F;
+                  mc.theTimer.timerSpeed = 0.3F;
                   var6 = 2.4;
                } else if (this.field_41381 == 4) {
                   var6 = 0.28;
-                  mc.field_9616.field_32603 = 1.0F;
+                  mc.theTimer.timerSpeed = 1.0F;
                } else if (this.field_41381 == 6) {
                   var1.method_35235(-1.023456987345906);
                }

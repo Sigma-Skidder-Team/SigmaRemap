@@ -77,7 +77,7 @@ public class class_299 extends class_446 {
             this.field_1084.method_11119(class_4043.field_19618);
             if (this.field_1084.method_11123() == 0.0F) {
                SigmaMainClass.getInstance().getModuleManager().method_848().method_4300(this.field_1090);
-               SigmaMainClass.getInstance().method_3315().method_21206("switch");
+               SigmaMainClass.getInstance().getSoundManager().method_21206("switch");
                class_2099 var5x = (class_2099)this.method_32167().method_32167().method_32167();
                var5x.method_32102(() -> var5x.method_9847());
 

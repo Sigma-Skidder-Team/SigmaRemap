@@ -111,7 +111,7 @@ public class class_2099 extends class_1859 {
          var4++;
       }
 
-      class_734 var9 = (class_734)this.method_32167();
+      JelloMenu var9 = (JelloMenu)this.method_32167();
       var9.method_3356();
    }
 

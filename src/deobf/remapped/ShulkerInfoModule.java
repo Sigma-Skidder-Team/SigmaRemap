@@ -161,8 +161,8 @@ public class ShulkerInfoModule extends Module {
                byte var10 = 1;
                byte var11 = 12;
                int var12 = class_5320.field_27141.method_15654();
-               int var13 = (int)(mc.field_9625.method_39835() * (double)class_6763.field_34898 - (double)(9 * (var9 + var10)) - (double)(var11 * 3));
-               int var14 = (int)(mc.field_9625.method_39832() * (double)class_6763.field_34898 - 33.0);
+               int var13 = (int)(mc.field_9625.method_39835() * (double) GUIManager.field_34898 - (double)(9 * (var9 + var10)) - (double)(var11 * 3));
+               int var14 = (int)(mc.field_9625.method_39832() * (double) GUIManager.field_34898 - 33.0);
                this.method_31549(var13, var14, var7, var6.method_28008().getString(), true);
                GL11.glPopMatrix();
                class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);

@@ -1,12 +1,12 @@
 package remapped;
 
 public enum class_6849 {
-   field_35314(0.0F, 1.0F, class_7693.method_34848().field_9577.field_45504),
-   field_35316(2.0F, 1.0F, class_7693.method_34860().field_9577.field_45411),
-   field_35324(1.0F, 0.0F, class_7693.method_34852().field_9577.field_45416),
-   field_35321(1.0F, 1.0F, class_7693.method_34851().field_9577.field_45434),
-   field_35323(0.0F, 2.0F, 74, class_7693.method_34854().field_9577.field_45530),
-   field_35322(1.02F, 2.0F, 73, class_7693.method_34859().field_9577.field_45559);
+   field_35314(0.0F, 1.0F, KeyStrokesModule.method_34848().field_9577.field_45504),
+   field_35316(2.0F, 1.0F, KeyStrokesModule.method_34860().field_9577.field_45411),
+   field_35324(1.0F, 0.0F, KeyStrokesModule.method_34852().field_9577.field_45416),
+   field_35321(1.0F, 1.0F, KeyStrokesModule.method_34851().field_9577.field_45434),
+   field_35323(0.0F, 2.0F, 74, KeyStrokesModule.method_34854().field_9577.field_45530),
+   field_35322(1.02F, 2.0F, 73, KeyStrokesModule.method_34859().field_9577.field_45559);
 
    public float field_35317;
    public float field_35327;
@@ -44,21 +44,21 @@ public enum class_6849 {
             if (this != field_35324) {
                if (this != field_35321) {
                   if (this != field_35323) {
-                     return this != field_35322 ? null : class_7693.method_34857().field_9577.field_45559;
+                     return this != field_35322 ? null : KeyStrokesModule.method_34857().field_9577.field_45559;
                   } else {
-                     return class_7693.method_34849().field_9577.field_45530;
+                     return KeyStrokesModule.method_34849().field_9577.field_45530;
                   }
                } else {
-                  return class_7693.method_34858().field_9577.field_45434;
+                  return KeyStrokesModule.method_34858().field_9577.field_45434;
                }
             } else {
-               return class_7693.method_34863().field_9577.field_45416;
+               return KeyStrokesModule.method_34863().field_9577.field_45416;
             }
          } else {
-            return class_7693.method_34856().field_9577.field_45411;
+            return KeyStrokesModule.method_34856().field_9577.field_45411;
          }
       } else {
-         return class_7693.method_34862().field_9577.field_45504;
+         return KeyStrokesModule.method_34862().field_9577.field_45504;
       }
    }
 }

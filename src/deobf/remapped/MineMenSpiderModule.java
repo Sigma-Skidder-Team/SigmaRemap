@@ -57,7 +57,7 @@ public class MineMenSpiderModule extends Module {
                );
             mc.gameOptions.keySneak.pressed = false;
             mc.field_9632.field_41726 = false;
-            mc.field_9616.field_32603 = 0.08F;
+            mc.theTimer.timerSpeed = 0.08F;
             var1.method_29715(true);
             this.field_27443 = true;
             var1.method_35235(1.0E-14);
@@ -71,7 +71,7 @@ public class MineMenSpiderModule extends Module {
          }
 
          if (this.field_27443) {
-            mc.field_9616.field_32603 = 1.0F;
+            mc.theTimer.timerSpeed = 1.0F;
             this.field_27443 = false;
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.28);

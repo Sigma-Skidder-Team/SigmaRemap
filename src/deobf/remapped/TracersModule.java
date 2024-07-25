@@ -17,7 +17,7 @@ public class TracersModule extends Module {
          GL11.glEnable(2848);
          GL11.glDisable(3553);
          GL11.glDisable(2929);
-         GL11.glLineWidth(2.0F * class_6763.field_34898);
+         GL11.glLineWidth(2.0F * GUIManager.field_34898);
          GL11.glDepthMask(false);
          GL11.glShadeModel(7425);
 

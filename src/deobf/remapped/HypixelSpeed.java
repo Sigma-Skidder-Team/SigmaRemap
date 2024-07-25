@@ -30,9 +30,9 @@ public class HypixelSpeed extends Module {
          class_314.method_1408(-class_8865.method_40786() - 1.0E-5 - 0.0625);
       }
 
-      if (Math.abs((double) mc.field_9616.field_32603 - 1.4123) < 0.001
-         && !SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-         mc.field_9616.field_32603 = 1.0F;
+      if (Math.abs((double) mc.theTimer.timerSpeed - 1.4123) < 0.001
+         && !SigmaMainClass.getInstance().getModuleManager().method_847(TimerModule.class).method_42015()) {
+         mc.theTimer.timerSpeed = 1.0F;
       }
    }
 
@@ -69,8 +69,8 @@ public class HypixelSpeed extends Module {
          mc.field_9632.field_29600 = 0;
          if (mc.field_9632.field_41726) {
             this.field_12324 = mc.field_9632.method_37309();
-            if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-               mc.field_9616.field_32603 = 1.0F;
+            if (!SigmaMainClass.getInstance().getModuleManager().method_847(TimerModule.class).method_42015()) {
+               mc.theTimer.timerSpeed = 1.0F;
             }
 
             if (this.field_12323 >= 0 && StepModule.field_20352 >= 2) {
@@ -78,8 +78,8 @@ public class HypixelSpeed extends Module {
                   mc.field_9632.method_26595();
                   var1.method_35235(class_8865.method_40786());
                   class_8865.method_40777(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double)class_8865.method_40770() * 0.13);
-                  if (this.getBooleanValueByName("Timer") && !SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-                     mc.field_9616.field_32603 = 1.4123F;
+                  if (this.getBooleanValueByName("Timer") && !SigmaMainClass.getInstance().getModuleManager().method_847(TimerModule.class).method_42015()) {
+                     mc.theTimer.timerSpeed = 1.4123F;
                   }
 
                   this.field_12323 = 0;
@@ -90,8 +90,8 @@ public class HypixelSpeed extends Module {
                   var1.method_35235(0.399 + (double)class_8865.method_40769() * 0.1 + 1.0E-14);
                   class_8865.method_40777(var1, 0.51 + Math.random() * 1.0E-6 + (double)class_8865.method_40770() * 0.098);
                   this.field_12323 = 0;
-                  if (this.getBooleanValueByName("Timer") && !SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-                     mc.field_9616.field_32603 = 1.1123F;
+                  if (this.getBooleanValueByName("Timer") && !SigmaMainClass.getInstance().getModuleManager().method_847(TimerModule.class).method_42015()) {
+                     mc.theTimer.timerSpeed = 1.1123F;
                   }
 
                   this.field_12321 = class_8988.field_46026;
@@ -106,8 +106,8 @@ public class HypixelSpeed extends Module {
             }
          } else if (this.field_12323 >= 0) {
             double var4 = class_8865.method_40775();
-            if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-               mc.field_9616.field_32603 = 1.0F;
+            if (!SigmaMainClass.getInstance().getModuleManager().method_847(TimerModule.class).method_42015()) {
+               mc.theTimer.timerSpeed = 1.0F;
             }
 
             switch (this.field_12321) {

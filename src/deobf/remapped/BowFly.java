@@ -10,8 +10,8 @@ public class BowFly extends Module {
 
    @Override
    public void onDisable() {
-      if (mc.field_9616.field_32603 == 0.1F) {
-         mc.field_9616.field_32603 = 1.0F;
+      if (mc.theTimer.timerSpeed == 0.1F) {
+         mc.theTimer.timerSpeed = 1.0F;
       }
    }
 
@@ -63,14 +63,14 @@ public class BowFly extends Module {
          int var4 = this.method_7736();
          if (var4 >= 0 || var4 <= 8) {
             if (mc.field_9632.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206) {
-               if (class_5174.method_23723(class_4897.field_25024) == 0) {
+               if (InvManagerModule.method_23723(class_4897.field_25024) == 0) {
                   if (this.field_8927.method_14772() > 5000L) {
                      SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("BowFly", "You have no arrows"));
                      this.field_8927.method_14773();
                   }
 
-                  if (mc.field_9616.field_32603 == 0.1F) {
-                     mc.field_9616.field_32603 = 1.0F;
+                  if (mc.theTimer.timerSpeed == 0.1F) {
+                     mc.theTimer.timerSpeed = 1.0F;
                   }
 
                   return;
@@ -95,11 +95,11 @@ public class BowFly extends Module {
                if (mc.field_9632.field_41726 && mc.field_9632.field_41774) {
                   mc.field_9632.method_26595();
                } else if (!(mc.field_9632.method_37098().field_7333 < 0.0)) {
-                  if (mc.field_9616.field_32603 == 0.1F) {
-                     mc.field_9616.field_32603 = 1.0F;
+                  if (mc.theTimer.timerSpeed == 0.1F) {
+                     mc.theTimer.timerSpeed = 1.0F;
                   }
                } else {
-                  mc.field_9616.field_32603 = 0.1F;
+                  mc.theTimer.timerSpeed = 0.1F;
                }
 
                this.field_8926++;

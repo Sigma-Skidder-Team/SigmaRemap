@@ -21,7 +21,7 @@ public class class_9573 extends class_4098 {
       this.method_32148(var14 = new class_4980(this, "exit", this.method_32109() - 47, 18));
       var14.method_32100((var1x, var2x) -> {
          if (this.field_48702 == null) {
-            ((class_4647)this.method_32167()).method_21496();
+            ((ClassicMenu)this.method_32167()).method_21496();
          } else {
             this.field_48702.method_24304();
          }

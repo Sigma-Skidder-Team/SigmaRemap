@@ -107,7 +107,7 @@ public class ShadowESP extends Module {
             boolean var21 = var10.method_37385(0);
             var10.method_37178(0);
             var10.method_37220(0, false);
-            this.method_6350(var10, var12, var14, var16, mc.field_9616.field_32600, var18, this.field_7447);
+            this.method_6350(var10, var12, var14, var16, mc.theTimer.field_32600, var18, this.field_7447);
             var10.method_37178(var20);
             var10.method_37220(0, var21);
             mc.gameOptions.field_45568 = var19;

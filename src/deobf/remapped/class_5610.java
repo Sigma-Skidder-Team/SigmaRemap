@@ -13,7 +13,7 @@ public class class_5610 extends class_1859 {
    }
 
    public void method_25466() {
-      for (class_1226 var4 : class_8441.method_38833()) {
+      for (class_1226 var4 : KeybindManagerMenu.method_38833()) {
          int var5 = var4.method_5458();
          if (var5 == this.field_28477) {
             this.field_28474 = true;

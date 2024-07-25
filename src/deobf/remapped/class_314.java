@@ -787,7 +787,7 @@ public class class_314 {
    }
 
    public static void method_1403() {
-      if (field_1158.method_8516() instanceof class_704 && SigmaMainClass.getInstance().method_3299().method_31000()) {
+      if (field_1158.method_8516() instanceof class_704 && SigmaMainClass.getInstance().getGUIManager().method_31000()) {
          if (field_1158.gameRenderer.field_40620 != null) {
             field_1158.gameRenderer.field_40620.close();
          }

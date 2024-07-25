@@ -102,11 +102,11 @@ public class class_7849 {
 
    public static BufferedImage method_35508(int var0, int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
       byte var10 = 4;
-      var1 = (int)((float)var1 * class_6763.field_34898);
-      var0 = (int)((float)var0 * class_6763.field_34898);
-      var2 = (int)((float)var2 * class_6763.field_34898);
-      var3 = (int)((float)var3 * class_6763.field_34898);
-      var4 = (int)((float)var4 * class_6763.field_34898);
+      var1 = (int)((float)var1 * GUIManager.field_34898);
+      var0 = (int)((float)var0 * GUIManager.field_34898);
+      var2 = (int)((float)var2 * GUIManager.field_34898);
+      var3 = (int)((float)var3 * GUIManager.field_34898);
+      var4 = (int)((float)var4 * GUIManager.field_34898);
       var1 = MinecraftClient.getInstance().window.method_43198() - var1 - var3;
       if (var4 <= 0) {
          var4 = 1;

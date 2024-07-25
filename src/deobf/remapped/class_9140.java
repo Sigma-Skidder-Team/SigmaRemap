@@ -34,7 +34,7 @@ public class class_9140 extends class_2794 {
                204,
                20,
                new StringTextComponent("Jello for Sigma Options"),
-               var1 -> this.field_943.method_8609(new class_4710())
+               var1 -> this.field_943.method_8609(new JelloOptionsScreen())
             )
          );
       }

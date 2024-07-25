@@ -59,7 +59,7 @@ public class HypixelFly extends Module {
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3 * 0.7);
       this.field_18794 = 1.0F;
-      mc.field_9616.field_32603 = 1.0F;
+      mc.theTimer.timerSpeed = 1.0F;
       this.field_18800 = -1;
    }
 
@@ -126,8 +126,8 @@ public class HypixelFly extends Module {
          this.field_18794 = 1.0F;
       }
 
-      if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-         mc.field_9616.field_32603 = this.field_18794;
+      if (!SigmaMainClass.getInstance().getModuleManager().method_847(TimerModule.class).method_42015()) {
+         mc.theTimer.timerSpeed = this.field_18794;
       }
 
       if (this.field_18798) {

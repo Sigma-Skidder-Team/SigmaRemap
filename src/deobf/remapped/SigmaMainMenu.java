@@ -47,7 +47,7 @@ public class SigmaMainMenu extends class_7038 {
    }
 
    public void method_7275(class_2596 var1) {
-      SigmaMainClass.getInstance().method_3299().method_30990(var1);
+      SigmaMainClass.getInstance().getGUIManager().method_30990(var1);
       this.method_7276();
    }
 

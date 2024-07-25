@@ -85,7 +85,7 @@ public class NotificationIcons {
    private static byte[] field_11002 = new byte[]{89, -73, -35, -84, 17, -87, -79, -44};
    public static final String field_11020 = "com/mentalfrostbyte/gui/resources/";
 
-   public static void method_10227() {
+   public static void initList() {
       field_11015 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/multiplayer.png");
       field_11029 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/options.png");
       field_11012 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/singleplayer.png");

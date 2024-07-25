@@ -44,11 +44,11 @@ public class class_5956 extends class_7038 {
       this.field_30367.method_32100((var1x, var2x) -> {
          class_9192 var5 = var10.method_9983();
          if (var5 != null) {
-            SigmaMainClass.getInstance().method_3299().method_30990(new class_7007(var5.field_47028));
+            SigmaMainClass.getInstance().getGUIManager().method_30990(new class_7007(var5.field_47028));
          }
       });
-      this.field_30368.method_32100((var0, var1x) -> SigmaMainClass.getInstance().method_3299().method_30990(new class_5527()));
-      this.field_30364.method_32100((var0, var1x) -> SigmaMainClass.getInstance().method_3299().method_30990(new class_965()));
+      this.field_30368.method_32100((var0, var1x) -> SigmaMainClass.getInstance().getGUIManager().method_30990(new class_5527()));
+      this.field_30364.method_32100((var0, var1x) -> SigmaMainClass.getInstance().getGUIManager().method_30990(new class_965()));
    }
 
    @Override

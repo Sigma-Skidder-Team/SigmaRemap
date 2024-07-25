@@ -19,7 +19,7 @@ public class class_3622 {
    }
 
    public int method_16873() {
-      return class_268.method_1195(this.field_17666);
+      return OtherTabGUIModule.method_1195(this.field_17666);
    }
 
    public int method_16871() {

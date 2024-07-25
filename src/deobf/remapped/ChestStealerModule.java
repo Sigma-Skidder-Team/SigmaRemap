@@ -266,16 +266,16 @@ public class ChestStealerModule extends Module {
          return false;
       } else if (!(var4 instanceof class_2235)) {
          if (var4 instanceof class_670) {
-            return !class_5174.method_23722(var1);
+            return !InvManagerModule.method_23722(var1);
          } else if (!(var4 instanceof class_7938)) {
             if (var4 instanceof class_9406) {
-               return !class_5174.method_23719(var1);
+               return !InvManagerModule.method_23719(var1);
             } else if (!(var4 instanceof class_5518)) {
                if (var4 instanceof class_6201) {
                   return !BlockFlyModule.method_17216(var4);
                } else if (!(var4 instanceof class_603)
-                  && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().method_847(class_5174.class).method_42007("Archery"))) {
-                  if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().method_847(class_3588.class).method_42015()) {
+                  && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().method_847(InvManagerModule.class).method_42007("Archery"))) {
+                  if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().method_847(AutoMLGModule.class).method_42015()) {
                      return false;
                   } else {
                      ArrayList var5 = new ArrayList<class_2451>(
@@ -316,10 +316,10 @@ public class ChestStealerModule extends Module {
                return class_2740.method_12360(var1);
             }
          } else {
-            return !class_5174.method_23711(var1);
+            return !InvManagerModule.method_23711(var1);
          }
       } else {
-         return !class_5174.method_23720(var1);
+         return !InvManagerModule.method_23720(var1);
       }
    }
 

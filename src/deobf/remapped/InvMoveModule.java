@@ -59,7 +59,7 @@ public class InvMoveModule extends Module {
                return;
             }
 
-            if (mc.field_9623 instanceof class_9743) {
+            if (mc.field_9623 instanceof KeybindManagerScreen) {
                return;
             }
 
@@ -70,7 +70,7 @@ public class InvMoveModule extends Module {
                }
             }
 
-            if (SigmaMainClass.getInstance().method_3299().method_31001() != null && SigmaMainClass.getInstance().method_3299().method_31001().method_32121()) {
+            if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null && SigmaMainClass.getInstance().getGUIManager().method_31001().method_32121()) {
                for (class_5916 var14 : MinecraftClient.getInstance().gameOptions.field_45395) {
                   var14.pressed = false;
                }

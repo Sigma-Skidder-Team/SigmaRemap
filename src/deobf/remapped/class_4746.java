@@ -36,7 +36,7 @@ public class class_4746 {
    @EventListen
    @class_4249
    public void method_21927(class_3368 var1) {
-      if (SigmaMainClass.getInstance().method_3299().method_30987() && field_22995 < field_23000 && field_22999 < field_23001) {
+      if (SigmaMainClass.getInstance().getGUIManager().method_30987() && field_22995 < field_23000 && field_22999 < field_23001) {
          if (field_22996 == null) {
             try {
                field_22994 = new class_4067(field_22998.method_8577(), new class_4660(), field_22998.method_8584(), new Identifier("jelloblur"));
@@ -76,13 +76,13 @@ public class class_4746 {
          class_3542.method_16476();
          class_3542.method_16413(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
-            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
+            1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
+            1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
             1.0
          );
          byte var4 = 35;
          class_73.method_149(field_22995, field_22999 - var4, field_23000, field_23001 + var4);
-         field_22994.method_18755(field_22998.field_9616.field_32600);
+         field_22994.method_18755(field_22998.theTimer.field_32600);
          class_73.method_141();
          GL11.glEnable(3008);
          field_22996.method_19717(true);
@@ -116,8 +116,8 @@ public class class_4746 {
          class_3542.method_16476();
          class_3542.method_16413(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
-            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
+            1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
+            1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
             1.0
          );
          field_22998.field_9596.method_19717(true);
