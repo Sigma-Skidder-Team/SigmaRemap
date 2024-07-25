@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class class_4857 extends class_2733 {
    public class_4857() {
-      super(class_6629.field_34281, "ghast", 0.5F);
+      super(EntityType.field_34281, "ghast", 0.5F);
    }
 
    @Override

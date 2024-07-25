@@ -12,7 +12,7 @@ public class class_9399 extends class_5834 {
    private static final class_1366 field_48061 = new class_1366(-1.0F, 0.0F, -1.0F);
    private static final class_1366 field_48043 = new class_1366(1.0F, 0.0F, 1.0F);
    private static final class_6097 field_48060 = new class_6097(0.0F, 0.0F, true);
-   private static final class_6097 field_48038 = class_6629.field_34289.method_30473().method_27942(0.5F);
+   private static final class_6097 field_48038 = EntityType.field_34289.method_30473().method_27942(0.5F);
    public static final class_7821<Byte> field_48042 = class_8073.<Byte>method_36641(class_9399.class, class_2734.field_13361);
    public static final class_7821<class_1366> field_48059 = class_8073.<class_1366>method_36641(class_9399.class, class_2734.field_13363);
    public static final class_7821<class_1366> field_48047 = class_8073.<class_1366>method_36641(class_9399.class, class_2734.field_13363);
@@ -33,13 +33,13 @@ public class class_9399 extends class_5834 {
    private class_1366 field_48055 = field_48061;
    private class_1366 field_48037 = field_48043;
 
-   public class_9399(class_6629<? extends class_9399> var1, World var2) {
+   public class_9399(EntityType<? extends class_9399> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 0.0F;
    }
 
    public class_9399(World var1, double var2, double var4, double var6) {
-      this(class_6629.field_34289, var1);
+      this(EntityType.field_34289, var1);
       this.method_37256(var2, var4, var6);
    }
 

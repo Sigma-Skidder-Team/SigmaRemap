@@ -8,14 +8,14 @@ public class class_3577 extends Entity {
    private static final class_7821<Boolean> field_17507 = class_8073.<Boolean>method_36641(class_3577.class, class_2734.field_13347);
    public int field_17510;
 
-   public class_3577(class_6629<? extends class_3577> var1, World var2) {
+   public class_3577(EntityType<? extends class_3577> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
       this.field_17510 = this.field_41717.nextInt(100000);
    }
 
    public class_3577(World var1, double var2, double var4, double var6) {
-      this(class_6629.field_34273, var1);
+      this(EntityType.field_34273, var1);
       this.method_37256(var2, var4, var6);
    }
 

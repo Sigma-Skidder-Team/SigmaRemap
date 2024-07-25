@@ -2,7 +2,7 @@ package remapped;
 
 public class class_7879 extends class_694 {
    public class_7879() {
-      super(class_6629.field_34209, "spawner_minecart", 0.5F);
+      super(EntityType.field_34209, "spawner_minecart", 0.5F);
    }
 
    @Override

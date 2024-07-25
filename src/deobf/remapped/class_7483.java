@@ -8,12 +8,12 @@ public class class_7483 extends Entity implements class_3713 {
    private int field_38201;
    private boolean field_38202;
 
-   public class_7483(class_6629<? extends class_7483> var1, World var2) {
+   public class_7483(EntityType<? extends class_7483> var1, World var2) {
       super(var1, var2);
    }
 
    public class_7483(World var1, double var2, double var4, double var6) {
-      this(class_6629.field_34323, var1);
+      this(EntityType.field_34323, var1);
       this.field_38201 = 0;
       this.method_37256(var2, var4, var6);
    }

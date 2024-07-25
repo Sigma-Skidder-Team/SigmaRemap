@@ -9,10 +9,10 @@ public class class_1179 extends class_2733 {
    private static Map<String, Integer> field_6643 = method_5218();
 
    public class_1179() {
-      super(class_6629.field_34286, "horse", 0.75F);
+      super(EntityType.field_34286, "horse", 0.75F);
    }
 
-   public class_1179(class_6629 var1, String var2, float var3) {
+   public class_1179(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 

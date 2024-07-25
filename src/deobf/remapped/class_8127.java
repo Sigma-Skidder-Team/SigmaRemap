@@ -10,7 +10,7 @@ public class class_8127 extends class_608 implements class_6250 {
    private int field_41635;
    private UUID field_41630;
 
-   public class_8127(class_6629<? extends class_8127> var1, World var2) {
+   public class_8127(EntityType<? extends class_8127> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
    }
@@ -98,11 +98,11 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public boolean method_26610(class_6629<?> var1) {
-      if (this.method_36974() && var1 == class_6629.field_34300) {
+   public boolean method_26610(EntityType<?> var1) {
+      if (this.method_36974() && var1 == EntityType.field_34300) {
          return false;
       } else {
-         return var1 != class_6629.field_34210 ? super.method_26610(var1) : false;
+         return var1 != EntityType.field_34210 ? super.method_26610(var1) : false;
       }
    }
 
@@ -283,12 +283,12 @@ public class class_8127 extends class_608 implements class_6250 {
          for (int var7 = 1; var7 < 3; var7++) {
             BlockPos var8 = var4.method_6082(var7);
             class_2522 var9 = var1.method_28262(var8);
-            if (!class_3815.method_17772(var1, var8, var9, var9.method_8364(), class_6629.field_34298)) {
+            if (!class_3815.method_17772(var1, var8, var9, var9.method_8364(), EntityType.field_34298)) {
                return false;
             }
          }
 
-         return class_3815.method_17772(var1, var4, var1.method_28262(var4), class_8532.field_43673.method_10710(), class_6629.field_34298)
+         return class_3815.method_17772(var1, var4, var1.method_28262(var4), class_8532.field_43673.method_10710(), EntityType.field_34298)
             && var1.method_6677(this);
       }
    }

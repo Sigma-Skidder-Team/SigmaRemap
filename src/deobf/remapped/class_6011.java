@@ -19,7 +19,7 @@ public class class_6011 extends class_1829 {
    private float field_30615;
    private float field_30617;
 
-   public class_6011(class_6629<? extends class_6011> var1, World var2) {
+   public class_6011(EntityType<? extends class_6011> var1, World var2) {
       super(var1, var2);
       this.field_41717.setSeed((long)this.method_37145());
       this.field_30620 = 1.0F / (this.field_41717.nextFloat() + 1.0F) * 0.2F;
@@ -171,7 +171,7 @@ public class class_6011 extends class_1829 {
       this.method_37226(class_7412.field_37839, this.method_37098());
    }
 
-   public static boolean method_27439(class_6629<class_6011> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_27439(EntityType<class_6011> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var3.method_12165() > 45 && var3.method_12165() < var1.method_22552();
    }
 

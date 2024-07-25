@@ -6,11 +6,11 @@ import java.util.Optional;
 
 public class class_3669 extends class_5920<class_5467> {
    private static String[] field_17886;
-   private final class_6629<? extends class_5467> field_17883;
+   private final EntityType<? extends class_5467> field_17883;
    private final float field_17885;
    private long field_17884;
 
-   public class_3669(class_6629<? extends class_5467> var1, float var2) {
+   public class_3669(EntityType<? extends class_5467> var1, float var2) {
       super(
          ImmutableMap.of(
             class_6044.field_30901,

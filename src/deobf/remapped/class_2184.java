@@ -20,12 +20,12 @@ public class class_2184 {
       return new class_2184();
    }
 
-   public class_2184 method_10134(class_6629<?> var1) {
+   public class_2184 method_10134(EntityType<?> var1) {
       this.field_10865 = class_6411.method_29248(var1);
       return this;
    }
 
-   public class_2184 method_10132(class_2307<class_6629<?>> var1) {
+   public class_2184 method_10132(class_2307<EntityType<?>> var1) {
       this.field_10865 = class_6411.method_29247(var1);
       return this;
    }

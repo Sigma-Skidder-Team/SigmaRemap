@@ -6,7 +6,7 @@ public class class_6174 extends class_1173 {
    private static String[] field_31580;
    private class_128 field_31581;
 
-   public class_6174(class_6629<? extends class_6174> var1, World var2) {
+   public class_6174(EntityType<? extends class_6174> var1, World var2) {
       super(var1, var2);
    }
 
@@ -93,7 +93,7 @@ public class class_6174 extends class_1173 {
       return !class_6598.method_30380(var2.method_28262(var1.method_6100())) ? super.method_21376(var1, var2) : 10.0F;
    }
 
-   public static boolean method_28293(class_6629<class_6174> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_28293(EntityType<class_6174> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (!method_5198(var0, var1, var2, var3, var4)) {
          return false;
       } else {

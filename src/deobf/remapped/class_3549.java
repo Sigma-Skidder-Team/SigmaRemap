@@ -80,7 +80,7 @@ public class class_3549 implements class_1517 {
                   return false;
                }
 
-               class_6862 var11 = class_6629.field_34303
+               class_6862 var11 = EntityType.field_34303
                   .method_30478(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var10, class_2417.field_12040, false, false);
                if (var11 != null) {
                   for (int var12 = 0; var12 < 2; var12++) {
@@ -105,7 +105,7 @@ public class class_3549 implements class_1517 {
    private void method_16515(class_6331 var1, class_6862 var2, int var3) {
       BlockPos var6 = this.method_16516(var1, var2.method_37075(), var3);
       if (var6 != null) {
-         class_9629 var7 = class_6629.field_34230
+         class_9629 var7 = EntityType.field_34230
             .method_30478(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var6, class_2417.field_12040, false, false);
          if (var7 != null) {
             var7.method_26901(var2, true);
@@ -122,7 +122,7 @@ public class class_3549 implements class_1517 {
          int var9 = var2.method_12185() + this.field_17366.nextInt(var3 * 2) - var3;
          int var10 = var1.method_22562(class_3801.field_18592, var8, var9);
          BlockPos var11 = new BlockPos(var8, var10, var9);
-         if (class_3815.method_17767(class_1257.field_6935, var1, var11, class_6629.field_34303)) {
+         if (class_3815.method_17767(class_1257.field_6935, var1, var11, EntityType.field_34303)) {
             var6 = var11;
             break;
          }

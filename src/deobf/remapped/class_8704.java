@@ -158,7 +158,7 @@ public abstract class class_8704 {
 
       if (var9 != null && var9.contains("RootVehicle", 10)) {
          CompoundNBT var26 = var9.getCompound("RootVehicle");
-         Entity var27 = class_6629.method_30455(var26.getCompound("Entity"), var12, var1x -> var12.method_28972(var1x) ? var1x : null);
+         Entity var27 = EntityType.method_30455(var26.getCompound("Entity"), var12, var1x -> var12.method_28972(var1x) ? var1x : null);
          if (var27 != null) {
             UUID var22;
             if (!var26.method_25954("Attach")) {

@@ -4,14 +4,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 
 public class class_8118 extends class_6411 {
-   private final class_2307<class_6629<?>> field_41610;
+   private final class_2307<EntityType<?>> field_41610;
 
-   public class_8118(class_2307<class_6629<?>> var1) {
+   public class_8118(class_2307<EntityType<?>> var1) {
       this.field_41610 = var1;
    }
 
    @Override
-   public boolean method_29249(class_6629<?> var1) {
+   public boolean method_29249(EntityType<?> var1) {
       return this.field_41610.method_10609(var1);
    }
 

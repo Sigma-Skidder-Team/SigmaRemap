@@ -4,25 +4,25 @@ import java.util.function.Consumer;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_8855 implements Consumer<Consumer<class_3139>> {
-   private static final class_6629<?>[] field_45271 = new class_6629[]{
-      class_6629.field_34286,
-      class_6629.field_34248,
-      class_6629.field_34218,
-      class_6629.field_34321,
-      class_6629.field_34325,
-      class_6629.field_34269,
-      class_6629.field_34252,
-      class_6629.field_34263,
-      class_6629.field_34225,
-      class_6629.field_34214,
-      class_6629.field_34251,
-      class_6629.field_34327,
-      class_6629.field_34249,
-      class_6629.field_34232,
-      class_6629.field_34250,
-      class_6629.field_34238,
-      class_6629.field_34306,
-      class_6629.field_34233
+   private static final EntityType<?>[] field_45271 = new EntityType[]{
+      EntityType.field_34286,
+      EntityType.field_34248,
+      EntityType.field_34218,
+      EntityType.field_34321,
+      EntityType.field_34325,
+      EntityType.field_34269,
+      EntityType.field_34252,
+      EntityType.field_34263,
+      EntityType.field_34225,
+      EntityType.field_34214,
+      EntityType.field_34251,
+      EntityType.field_34327,
+      EntityType.field_34249,
+      EntityType.field_34232,
+      EntityType.field_34250,
+      EntityType.field_34238,
+      EntityType.field_34306,
+      EntityType.field_34233
    };
    private static final class_2451[] field_45272 = new class_2451[]{
       class_4897.field_24814, class_4897.field_25284, class_4897.field_24728, class_4897.field_25201
@@ -271,15 +271,15 @@ public class class_8855 implements Consumer<Consumer<class_3139>> {
    }
 
    private class_3321 method_40725(class_3321 var1) {
-      for (class_6629 var7 : field_45271) {
-         var1.method_15272(class_6629.method_30472(var7).toString(), class_8553.method_39344(class_2184.method_10127().method_10134(var7)));
+      for (EntityType var7 : field_45271) {
+         var1.method_15272(EntityType.method_30472(var7).toString(), class_8553.method_39344(class_2184.method_10127().method_10134(var7)));
       }
 
       var1.method_15272(
-         class_6629.method_30472(class_6629.field_34283).toString(),
+         EntityType.method_30472(EntityType.field_34283).toString(),
          class_8553.method_39347(
-            class_2184.method_10127().method_10134(class_6629.field_34283).method_10139(),
-            class_2184.method_10127().method_10134(class_6629.field_34283).method_10139(),
+            class_2184.method_10127().method_10134(EntityType.field_34283).method_10139(),
+            class_2184.method_10127().method_10134(EntityType.field_34283).method_10139(),
             class_865.field_4485
          )
       );

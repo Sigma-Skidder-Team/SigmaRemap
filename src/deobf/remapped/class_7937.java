@@ -6,7 +6,7 @@ public class class_7937 extends class_1173 {
    private static String[] field_40596;
    private static final class_7821<Byte> field_40597 = class_8073.<Byte>method_36641(class_7937.class, class_2734.field_13361);
 
-   public class_7937(class_6629<? extends class_7937> var1, World var2) {
+   public class_7937(EntityType<? extends class_7937> var1, World var2) {
       super(var1, var2);
    }
 
@@ -113,7 +113,7 @@ public class class_7937 extends class_1173 {
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (var1.method_43360().nextInt(100) == 0) {
-         class_6778 var8 = class_6629.field_34241.method_30484(this.world);
+         class_6778 var8 = EntityType.field_34241.method_30484(this.world);
          var8.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, 0.0F);
          var8.method_26864(var1, var2, var3, (class_8733)null, (CompoundNBT)null);
          var8.method_37353(this);

@@ -27,7 +27,7 @@ public class class_496 extends class_5467 {
       return (var3 == class_4783.field_23886.method_10803() || var3 == class_4783.field_23770.method_10803()) && var0.method_37330() && !var0.method_258();
    };
 
-   public class_496(class_6629<? extends class_496> var1, World var2) {
+   public class_496(EntityType<? extends class_496> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_2648(this);
       if (!this.method_26449()) {
@@ -173,7 +173,7 @@ public class class_496 extends class_5467 {
    @Nullable
    @Override
    public class_1899 method_8638(class_6331 var1, class_1899 var2) {
-      class_496 var5 = class_6629.field_34232.method_30484(var1);
+      class_496 var5 = EntityType.field_34232.method_30484(var1);
       if (var2 instanceof class_496) {
          var5.method_2444(this, (class_496)var2);
       }

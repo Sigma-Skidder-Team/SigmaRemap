@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1357 extends class_6126 {
    public class_1357() {
-      super(class_6629.field_34255, "vindicator", 0.5F, new String[]{"vindication_illager"});
+      super(EntityType.field_34255, "vindicator", 0.5F, new String[]{"vindication_illager"});
    }
 
    @Override

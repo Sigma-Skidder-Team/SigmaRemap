@@ -3,7 +3,7 @@ package remapped;
 public abstract class class_7819 extends class_8990 {
    private int field_39665;
 
-   public class_7819(class_6629<? extends class_7819> var1, World var2) {
+   public class_7819(EntityType<? extends class_7819> var1, World var2) {
       super(var1, var2);
    }
 

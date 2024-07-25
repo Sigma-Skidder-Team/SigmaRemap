@@ -30,7 +30,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_5621<class_8669<class_1425>> field_44439 = method_39804("mob_effect");
    public static final class_5621<class_8669<class_6414>> field_44377 = method_39804("block");
    public static final class_5621<class_8669<class_4382>> field_44422 = method_39804("enchantment");
-   public static final class_5621<class_8669<class_6629<?>>> field_44395 = method_39804("entity_type");
+   public static final class_5621<class_8669<EntityType<?>>> field_44395 = method_39804("entity_type");
    public static final class_5621<class_8669<class_2451>> field_44440 = method_39804("item");
    public static final class_5621<class_8669<class_6004>> field_44465 = method_39804("potion");
    public static final class_5621<class_8669<class_8583<?>>> field_44455 = method_39804("particle_type");
@@ -63,7 +63,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_8669<class_1425> field_44436 = method_39812(field_44439, () -> Effects.field_19719);
    public static final class_3991<class_6414> field_44462 = method_39796(field_44377, "air", () -> class_4783.field_23184);
    public static final class_8669<class_4382> field_44445 = method_39812(field_44422, () -> class_3668.field_17876);
-   public static final class_3991<class_6629<?>> field_44400 = method_39796(field_44395, "pig", () -> class_6629.field_34252);
+   public static final class_3991<EntityType<?>> field_44400 = method_39796(field_44395, "pig", () -> EntityType.field_34252);
    public static final class_3991<class_2451> field_44382 = method_39796(field_44440, "air", () -> class_4897.field_25302);
    public static final class_3991<class_6004> field_44365 = method_39796(field_44465, "empty", () -> class_3697.field_18134);
    public static final class_8669<class_8583<?>> field_44387 = method_39812(field_44455, () -> class_3090.field_15325);

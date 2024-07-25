@@ -6,7 +6,7 @@ public class class_2806 extends class_1173 {
    private int field_13771;
    private static final class_7821<Byte> field_13773 = class_8073.<Byte>method_36641(class_2806.class, class_2734.field_13361);
 
-   public class_2806(class_6629<? extends class_2806> var1, World var2) {
+   public class_2806(EntityType<? extends class_2806> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6359, -1.0F);
       this.method_26895(class_1108.field_6360, 8.0F);

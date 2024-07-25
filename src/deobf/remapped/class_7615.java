@@ -2,10 +2,10 @@ package remapped;
 
 public class class_7615<T extends Entity & class_8190> extends class_2451 {
    private static String[] field_38752;
-   private final class_6629<T> field_38751;
+   private final EntityType<T> field_38751;
    private final int field_38750;
 
-   public class_7615(class_317 var1, class_6629<T> var2, int var3) {
+   public class_7615(class_317 var1, EntityType<T> var2, int var3) {
       super(var1);
       this.field_38751 = var2;
       this.field_38750 = var3;

@@ -18,7 +18,7 @@ public class class_912 extends class_1173 implements class_6250 {
    private int field_4682;
    private UUID field_4687;
 
-   public class_912(class_6629<? extends class_912> var1, World var2) {
+   public class_912(EntityType<? extends class_912> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.method_26895(class_1108.field_6359, -1.0F);

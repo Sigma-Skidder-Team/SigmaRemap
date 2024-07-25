@@ -69,7 +69,7 @@ public abstract class class_704 extends class_5834 {
    public class_3942 field_3841;
 
    public class_704(World var1, BlockPos var2, float var3, GameProfile var4) {
-      super(class_6629.field_34300, var1);
+      super(EntityType.field_34300, var1);
       this.method_37377(method_3242(var4));
       this.field_3872 = var4;
       this.field_3869 = new class_3683(this.inventory, !var1.field_33055, this);
@@ -464,8 +464,8 @@ public abstract class class_704 extends class_5834 {
    private void method_3222(CompoundNBT var1) {
       if (var1 != null && (!var1.method_25938("Silent") || !var1.getBoolean("Silent")) && this.world.field_33033.nextInt(200) == 0) {
          String var4 = var1.method_25965("id");
-         class_6629.method_30460(var4)
-            .filter(var0 -> var0 == class_6629.field_34228)
+         EntityType.method_30460(var4)
+            .filter(var0 -> var0 == EntityType.field_34228)
             .ifPresent(
                var1x -> {
                   if (!class_107.method_325(this.world, this)) {
@@ -1282,14 +1282,14 @@ public abstract class class_704 extends class_5834 {
       class_2522 var7 = var0.method_28262(var1);
       class_6414 var8 = var7.method_8360();
       if (var8 instanceof class_545 && var7.<Integer>method_10313(class_545.field_3268) > 0 && class_545.method_2640(var0)) {
-         Optional var11 = class_545.method_2633(class_6629.field_34300, var0, var1);
+         Optional var11 = class_545.method_2633(EntityType.field_34300, var0, var1);
          if (!var4 && var11.isPresent()) {
             var0.method_7513(var1, var7.method_10308(class_545.field_3268, Integer.valueOf(var7.<Integer>method_10313(class_545.field_3268) - 1)), 3);
          }
 
          return var11;
       } else if (var8 instanceof class_3633 && class_3633.method_16930(var0)) {
-         return class_3633.method_16932(class_6629.field_34300, var0, var1, var2);
+         return class_3633.method_16932(EntityType.field_34300, var0, var1, var2);
       } else if (!var3) {
          return Optional.<class_1343>empty();
       } else {
@@ -1761,7 +1761,7 @@ public abstract class class_704 extends class_5834 {
 
    private void method_3189(CompoundNBT var1) {
       if (!this.world.field_33055 && !var1.method_25940()) {
-         class_6629.method_30475(var1, this.world).ifPresent(var1x -> {
+         EntityType.method_30475(var1, this.world).ifPresent(var1x -> {
             if (var1x instanceof class_8990) {
                ((class_8990)var1x).method_41218(this.field_41738);
             }

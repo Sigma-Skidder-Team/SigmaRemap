@@ -9,11 +9,11 @@ public abstract class class_4641 extends Entity {
    public BlockPos field_22661;
    public Direction field_22663 = Direction.field_800;
 
-   public class_4641(class_6629<? extends class_4641> var1, World var2) {
+   public class_4641(EntityType<? extends class_4641> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_4641(class_6629<? extends class_4641> var1, World var2, BlockPos var3) {
+   public class_4641(EntityType<? extends class_4641> var1, World var2, BlockPos var3) {
       this(var1, var2);
       this.field_22661 = var3;
    }

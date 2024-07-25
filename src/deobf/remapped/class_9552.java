@@ -13,19 +13,19 @@ public class class_9552 extends class_5783 {
    private double field_48597;
    private UUID field_48603;
 
-   public class_9552(class_6629<? extends class_9552> var1, World var2) {
+   public class_9552(EntityType<? extends class_9552> var1, World var2) {
       super(var1, var2);
       this.field_41731 = true;
    }
 
    public class_9552(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      this(class_6629.field_34271, var1);
+      this(EntityType.field_34271, var1);
       this.method_37144(var2, var4, var6, this.rotationYaw, this.rotationPitch);
       this.method_37214(var8, var10, var12);
    }
 
    public class_9552(World var1, class_5834 var2, Entity var3, class_9249 var4) {
-      this(class_6629.field_34271, var1);
+      this(EntityType.field_34271, var1);
       this.method_26159(var2);
       BlockPos var7 = var2.method_37075();
       double var8 = (double)var7.method_12173() + 0.5;

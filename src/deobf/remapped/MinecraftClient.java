@@ -2233,7 +2233,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          || this.thePlayer != null
             && this.thePlayer.method_37221()
             && this.gameOptions.keySpectatorOutlines.isKeyDown()
-            && var1.method_37387() == class_6629.field_34300;
+            && var1.method_37387() == EntityType.field_34300;
    }
 
    @Override

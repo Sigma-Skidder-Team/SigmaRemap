@@ -12,7 +12,7 @@ public class class_1609 extends class_4040 implements class_2354 {
    private class_9625<class_4040> field_8348;
    private class_2978<class_704> field_8349;
 
-   public class_1609(class_6629<? extends class_1609> var1, World var2) {
+   public class_1609(EntityType<? extends class_1609> var1, World var2) {
       super(var1, var2);
    }
 
@@ -20,7 +20,7 @@ public class class_1609 extends class_4040 implements class_2354 {
    public void method_26851() {
       super.method_26851();
       this.field_8348 = new class_9625<class_4040>(
-         this, class_4040.class, true, var1 -> var1 != null && this.method_18600() && var1.method_37387() != class_6629.field_34220
+         this, class_4040.class, true, var1 -> var1 != null && this.method_18600() && var1.method_37387() != EntityType.field_34220
       );
       this.field_8349 = new class_2978<class_704>(this, class_704.class, 10, true, false, (Predicate<class_5834>)null);
       this.field_29916.method_3485(1, new class_787(this));

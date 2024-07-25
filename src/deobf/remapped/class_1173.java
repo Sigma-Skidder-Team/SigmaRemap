@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public abstract class class_1173 extends class_4612 implements class_1869 {
-   public class_1173(class_6629<? extends class_1173> var1, World var2) {
+   public class_1173(EntityType<? extends class_1173> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }
@@ -77,11 +77,11 @@ public abstract class class_1173 extends class_4612 implements class_1869 {
       }
    }
 
-   public static boolean method_5199(class_6629<? extends class_1173> var0, class_1556 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_5199(EntityType<? extends class_1173> var0, class_1556 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790 && method_5200(var1, var3, var4) && method_26908(var0, var1, var2, var3, var4);
    }
 
-   public static boolean method_5198(class_6629<? extends class_1173> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_5198(EntityType<? extends class_1173> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790 && method_26908(var0, var1, var2, var3, var4);
    }
 

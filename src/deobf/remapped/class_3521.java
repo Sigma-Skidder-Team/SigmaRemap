@@ -43,7 +43,7 @@ public abstract class class_3521 {
       }
    }
 
-   public void method_16253(class_6629<?> var1) {
+   public void method_16253(EntityType<?> var1) {
       this.field_17261.method_22391().method_25941("id", class_8669.field_44400.method_39797(var1).toString());
    }
 
@@ -71,7 +71,7 @@ public abstract class class_3521 {
 
             for (int var6 = 0; var6 < this.field_17260; var6++) {
                CompoundNBT var13 = this.field_17261.method_22391();
-               Optional var14 = class_6629.method_30474(var13);
+               Optional var14 = EntityType.method_30474(var13);
                if (!var14.isPresent()) {
                   this.method_16265();
                   return;
@@ -86,10 +86,10 @@ public abstract class class_3521 {
                double var21 = var16 < 3
                   ? (double)var4.method_12185() + (var3.field_33033.nextDouble() - var3.field_33033.nextDouble()) * (double)this.field_17263 + 0.5
                   : var15.method_15763(2);
-               if (var3.method_6681(((class_6629)var14.get()).method_30456(var17, var19, var21))) {
+               if (var3.method_6681(((EntityType)var14.get()).method_30456(var17, var19, var21))) {
                   class_6331 var23 = (class_6331)var3;
-                  if (class_1136.method_4983((class_6629)var14.get(), var23, class_2417.field_12024, new BlockPos(var17, var19, var21), var3.method_43360())) {
-                     Entity var24 = class_6629.method_30455(var13, var3, var6x -> {
+                  if (class_1136.method_4983((EntityType)var14.get(), var23, class_2417.field_12024, new BlockPos(var17, var19, var21), var3.method_43360())) {
+                     Entity var24 = EntityType.method_30455(var13, var3, var6x -> {
                         var6x.method_37144(var17, var19, var21, var6x.rotationYaw, var6x.rotationPitch);
                         return var6x;
                      });
@@ -249,7 +249,7 @@ public abstract class class_3521 {
    @Nullable
    public Entity method_16260() {
       if (this.field_17254 == null) {
-         this.field_17254 = class_6629.method_30455(this.field_17261.method_22391(), this.method_16252(), Function.<Entity>identity());
+         this.field_17254 = EntityType.method_30455(this.field_17261.method_22391(), this.method_16252(), Function.<Entity>identity());
          if (this.field_17261.method_22391().method_25924() == 1
             && this.field_17261.method_22391().contains("id", 8)
             && !(this.field_17254 instanceof class_5886)) {

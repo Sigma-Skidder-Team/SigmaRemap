@@ -81,9 +81,9 @@ public class class_7656 implements class_1517 {
 
    private boolean method_34656(class_6331 var1, BlockPos var2, Random var3, boolean var4) {
       class_2522 var7 = var1.method_28262(var2);
-      if (class_3815.method_17772(var1, var2, var7, var7.method_8364(), class_6629.field_34265)) {
-         if (class_4607.method_21355(class_6629.field_34265, var1, class_2417.field_12025, var2, var3)) {
-            class_4607 var8 = class_6629.field_34265.method_30484(var1);
+      if (class_3815.method_17772(var1, var2, var7, var7.method_8364(), EntityType.field_34265)) {
+         if (class_4607.method_21355(EntityType.field_34265, var1, class_2417.field_12025, var2, var3)) {
+            class_4607 var8 = EntityType.field_34265.method_30484(var1);
             if (var8 == null) {
                return false;
             } else {

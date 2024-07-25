@@ -15,13 +15,13 @@ public class class_91 extends Entity {
    private UUID field_179;
    public final float field_173;
 
-   public class_91(class_6629<? extends class_91> var1, World var2) {
+   public class_91(EntityType<? extends class_91> var1, World var2) {
       super(var1, var2);
       this.field_173 = (float)(Math.random() * Math.PI * 2.0);
    }
 
    public class_91(World var1, double var2, double var4, double var6) {
-      this(class_6629.field_34208, var1);
+      this(EntityType.field_34208, var1);
       this.method_37256(var2, var4, var6);
       this.rotationYaw = this.field_41717.nextFloat() * 360.0F;
       this.method_37214(this.field_41717.nextDouble() * 0.2 - 0.1, 0.2, this.field_41717.nextDouble() * 0.2 - 0.1);

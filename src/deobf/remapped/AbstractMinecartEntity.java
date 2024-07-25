@@ -52,12 +52,12 @@ public abstract class AbstractMinecartEntity extends Entity {
    private double field_5883;
    private double field_5897;
 
-   public AbstractMinecartEntity(class_6629<?> var1, World var2) {
+   public AbstractMinecartEntity(EntityType<?> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
    }
 
-   public AbstractMinecartEntity(class_6629<?> var1, World var2, double var3, double var5, double var7) {
+   public AbstractMinecartEntity(EntityType<?> var1, World var2, double var3, double var5, double var7) {
       this(var1, var2);
       this.method_37256(var3, var5, var7);
       this.method_37215(class_1343.field_7335);

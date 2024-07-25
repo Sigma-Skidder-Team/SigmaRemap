@@ -37,7 +37,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
       }
    );
 
-   public class_6704(class_6629<? extends class_6704> var1, World var2) {
+   public class_6704(EntityType<? extends class_6704> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }
@@ -142,7 +142,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
       }
    }
 
-   public static boolean method_30705(class_6629<class_6704> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_30705(EntityType<class_6704> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return !var1.method_28262(var3.method_6100()).method_8350(class_4783.field_23273);
    }
 
@@ -211,7 +211,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    private void method_30712(class_6331 var1) {
-      class_3895 var4 = this.<class_3895>method_26898(class_6629.field_34244, true);
+      class_3895 var4 = this.<class_3895>method_26898(EntityType.field_34244, true);
       if (var4 != null) {
          var4.method_26558(new class_2250(Effects.NAUSEA, 200, 0));
       }
@@ -276,7 +276,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    @Nullable
    @Override
    public class_1899 method_8638(class_6331 var1, class_1899 var2) {
-      class_6704 var5 = class_6629.field_34306.method_30484(var1);
+      class_6704 var5 = EntityType.field_34306.method_30484(var1);
       if (var5 != null) {
          var5.method_26883();
       }

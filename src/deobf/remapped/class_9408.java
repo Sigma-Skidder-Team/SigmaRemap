@@ -9,8 +9,8 @@ public class class_9408 extends class_8990 implements class_6250 {
    private static final class_7821<Integer> field_48111 = class_8073.<Integer>method_36641(class_9408.class, class_2734.field_13366);
    private static final class_7821<Integer> field_48105 = class_8073.<Integer>method_36641(class_9408.class, class_2734.field_13366);
    public static final Predicate<class_5834> field_48108 = var0 -> {
-      class_6629 var3 = var0.method_37387();
-      return var3 == class_6629.field_34321 || var3 == class_6629.field_34251 || var3 == class_6629.field_34250;
+      EntityType var3 = var0.method_37387();
+      return var3 == EntityType.field_34321 || var3 == EntityType.field_34251 || var3 == EntityType.field_34250;
    };
    private float field_48102;
    private float field_48104;
@@ -21,7 +21,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    private static final class_4376 field_48107 = class_5804.method_26295(20, 39);
    private UUID field_48109;
 
-   public class_9408(class_6629<? extends class_9408> var1, World var2) {
+   public class_9408(EntityType<? extends class_9408> var1, World var2) {
       super(var1, var2);
       this.method_41217(false);
    }
@@ -407,7 +407,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    public class_9408 method_43587(class_6331 var1, class_1899 var2) {
-      class_9408 var5 = class_6629.field_34225.method_30484(var1);
+      class_9408 var5 = EntityType.field_34225.method_30484(var1);
       UUID var6 = this.method_41211();
       if (var6 != null) {
          var5.method_41218(var6);

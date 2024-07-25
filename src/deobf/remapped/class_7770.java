@@ -67,10 +67,10 @@ public class class_7770 extends class_5920<class_7666> {
 
    private boolean method_35250(class_7666 var1) {
       class_1150 var4 = var1.method_26525();
-      Optional var5 = var4.<class_1899>method_5138(class_6044.field_30892).filter(var0 -> var0.method_37387() == class_6629.field_34276);
+      Optional var5 = var4.<class_1899>method_5138(class_6044.field_30892).filter(var0 -> var0.method_37387() == EntityType.field_34276);
       return !var5.isPresent()
          ? false
-         : class_1225.method_5450(var4, class_6044.field_30892, class_6629.field_34276) && var1.method_8636() && ((class_1899)var5.get()).method_8636();
+         : class_1225.method_5450(var4, class_6044.field_30892, EntityType.field_34276) && var1.method_8636() && ((class_1899)var5.get()).method_8636();
    }
 
    private Optional<BlockPos> method_35253(class_6331 var1, class_7666 var2) {

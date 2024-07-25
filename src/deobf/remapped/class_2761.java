@@ -2,7 +2,7 @@ package remapped;
 
 public class class_2761 extends class_2733 {
    public class_2761() {
-      super(class_6629.field_34217, "bat", 0.25F);
+      super(EntityType.field_34217, "bat", 0.25F);
    }
 
    @Override

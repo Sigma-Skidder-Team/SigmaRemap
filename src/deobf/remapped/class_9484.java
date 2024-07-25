@@ -80,7 +80,7 @@ public class class_9484 extends class_4285<class_4069> {
          }
       }
 
-      class_3577 var22 = class_6629.field_34273.method_30484(var1.method_7066());
+      class_3577 var22 = EntityType.field_34273.method_30484(var1.method_7066());
       var22.method_16625(var3.method_18768());
       var22.method_37289(var3.method_18767());
       var22.method_37144(

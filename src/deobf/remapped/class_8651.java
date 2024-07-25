@@ -124,7 +124,7 @@ public class class_8651 extends class_8549 {
             var1.method_7513(var27, class_4783.field_23617.method_29260(), 2);
             class_3757 var21 = var1.method_28260(var27);
             if (var21 instanceof class_1896) {
-               ((class_1896)var21).method_8621().method_16253(class_6629.field_34314);
+               ((class_1896)var21).method_8621().method_16253(EntityType.field_34314);
             }
          }
       }

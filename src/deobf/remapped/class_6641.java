@@ -2,10 +2,10 @@ package remapped;
 
 public class class_6641 extends class_2733 {
    public class_6641() {
-      super(class_6629.field_34276, "villager", 0.5F);
+      super(EntityType.field_34276, "villager", 0.5F);
    }
 
-   public class_6641(class_6629 var1, String var2, float var3) {
+   public class_6641(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 

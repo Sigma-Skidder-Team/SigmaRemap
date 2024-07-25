@@ -794,7 +794,7 @@ public class class_4783 {
             .method_14096(0.5F)
             .method_14061(class_4618.field_22446)
             .method_14054()
-            .method_14087((var0, var1, var2, var3) -> var3 == class_6629.field_34229)
+            .method_14087((var0, var1, var2, var3) -> var3 == EntityType.field_34229)
       )
    );
    public static final class_6414 field_23813 = method_22064(
@@ -2215,7 +2215,7 @@ public class class_4783 {
             .method_14096(0.5F)
             .method_14061(class_4618.field_22446)
             .method_14054()
-            .method_14087((var0, var1, var2, var3) -> var3 == class_6629.field_34229)
+            .method_14087((var0, var1, var2, var3) -> var3 == EntityType.field_34229)
       )
    );
    public static final class_6414 field_23215 = method_22064(
@@ -3314,16 +3314,16 @@ public class class_4783 {
       return var1 -> !var1.<Boolean>method_10313(class_6023.field_30732) ? 0 : var0;
    }
 
-   private static Boolean method_22061(class_2522 var0, class_6163 var1, BlockPos var2, class_6629<?> var3) {
+   private static Boolean method_22061(class_2522 var0, class_6163 var1, BlockPos var2, EntityType<?> var3) {
       return false;
    }
 
-   private static Boolean method_22065(class_2522 var0, class_6163 var1, BlockPos var2, class_6629<?> var3) {
+   private static Boolean method_22065(class_2522 var0, class_6163 var1, BlockPos var2, EntityType<?> var3) {
       return true;
    }
 
-   private static Boolean method_22073(class_2522 var0, class_6163 var1, BlockPos var2, class_6629<?> var3) {
-      return var3 == class_6629.field_34214 || var3 == class_6629.field_34228;
+   private static Boolean method_22073(class_2522 var0, class_6163 var1, BlockPos var2, EntityType<?> var3) {
+      return var3 == EntityType.field_34214 || var3 == EntityType.field_34228;
    }
 
    private static class_3633 method_22063(class_9077 var0) {

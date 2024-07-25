@@ -17,7 +17,7 @@ public class class_6092 extends class_608 implements class_1869 {
    private BlockPos field_31176 = null;
    private int field_31174;
 
-   public class_6092(class_6629<? extends class_6092> var1, World var2) {
+   public class_6092(EntityType<? extends class_6092> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }

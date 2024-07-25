@@ -11,7 +11,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    private class_9310 field_47541;
    private class_9310 field_47540;
 
-   public class_9310(class_6629<? extends class_9310> var1, World var2) {
+   public class_9310(EntityType<? extends class_9310> var1, World var2) {
       super(var1, var2);
    }
 
@@ -338,7 +338,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    public class_9310 method_42987() {
-      return class_6629.field_34327.method_30484(this.world);
+      return EntityType.field_34327.method_30484(this.world);
    }
 
    private void method_42985(class_5834 var1) {

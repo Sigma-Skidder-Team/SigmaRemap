@@ -7,12 +7,12 @@ public class class_9715 extends class_292 implements class_4511 {
    private int field_49379 = -1;
    private final BlockPos field_49378 = BlockPos.field_7306;
 
-   public class_9715(class_6629<? extends class_9715> var1, World var2) {
+   public class_9715(EntityType<? extends class_9715> var1, World var2) {
       super(var1, var2);
    }
 
    public class_9715(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34213, var2, var4, var6, var1);
+      super(EntityType.field_34213, var2, var4, var6, var1);
    }
 
    @Override

@@ -5,9 +5,9 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 public class class_6247<T extends class_5521> extends class_1762<T, class_4094<T>> {
-   private static final Map<class_6629<?>, Identifier> field_31962 = Maps.newHashMap(
+   private static final Map<EntityType<?>, Identifier> field_31962 = Maps.newHashMap(
       ImmutableMap.of(
-         class_6629.field_34248, new Identifier("textures/entity/horse/donkey.png"), class_6629.field_34218, new Identifier("textures/entity/horse/mule.png")
+         EntityType.field_34248, new Identifier("textures/entity/horse/donkey.png"), EntityType.field_34218, new Identifier("textures/entity/horse/mule.png")
       )
    );
 

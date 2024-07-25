@@ -7,12 +7,12 @@ public class class_7851 extends AbstractMinecartEntity {
    public double field_39786;
    private static final class_8137 field_39785 = class_8137.method_37019(class_4897.field_24917, class_4897.field_24862);
 
-   public class_7851(class_6629<? extends class_7851> var1, World var2) {
+   public class_7851(EntityType<? extends class_7851> var1, World var2) {
       super(var1, var2);
    }
 
    public class_7851(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34311, var1, var2, var4, var6);
+      super(EntityType.field_34311, var1, var2, var4, var6);
    }
 
    @Override

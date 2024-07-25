@@ -41,7 +41,7 @@ public class class_4888 extends class_380 implements class_9866 {
             }
 
             BlockPos var12 = var5.method_31795(1, 2, 0).method_41966();
-            class_8127 var15 = class_6629.field_34298.method_30484(var1);
+            class_8127 var15 = EntityType.field_34298.method_30484(var1);
             var15.method_36979(true);
             var15.method_37144((double)var12.method_12173() + 0.5, (double)var12.method_12165() + 0.05, (double)var12.method_12185() + 0.5, 0.0F, 0.0F);
             var1.method_7509(var15);
@@ -64,7 +64,7 @@ public class class_4888 extends class_380 implements class_9866 {
             var1.method_43364(2001, var16.method_41966(), class_6414.method_29285(var16.method_41968()));
          }
 
-         class_223 var14 = class_6629.field_34253.method_30484(var1);
+         class_223 var14 = EntityType.field_34253.method_30484(var1);
          BlockPos var17 = var5.method_31795(0, 2, 0).method_41966();
          var14.method_37144((double)var17.method_12173() + 0.5, (double)var17.method_12165() + 0.05, (double)var17.method_12185() + 0.5, 0.0F, 0.0F);
          var1.method_7509(var14);

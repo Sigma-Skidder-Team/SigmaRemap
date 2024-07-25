@@ -60,7 +60,7 @@ public class class_1477 extends class_6414 {
 
             for (int var8 = 0; var8 < var1.<Integer>method_10313(field_7918); var8++) {
                var2.method_43364(2001, var3, class_6414.method_29285(var1));
-               class_3845 var9 = class_6629.field_34283.method_30484(var2);
+               class_3845 var9 = EntityType.field_34283.method_30484(var2);
                var9.method_8635(-24000);
                var9.method_17859(var3);
                var9.method_37144(

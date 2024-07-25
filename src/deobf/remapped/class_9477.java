@@ -343,7 +343,7 @@ public class class_9477 {
 
       for (int var6 = 0; var6 < var4.size(); var6++) {
          CompoundNBT var7 = var4.method_15764(var6);
-         class_6629.method_30455(var7, var5, var1x -> {
+         EntityType.method_30455(var7, var5, var1x -> {
             var1.method_27342(var1x);
             return var1x;
          });

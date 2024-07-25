@@ -25,7 +25,7 @@ public class class_4550 {
    private final boolean field_22176;
    private final String field_22180;
    private final UUID field_22186;
-   private final class_6629<?> field_22177;
+   private final EntityType<?> field_22177;
    private final boolean field_22179;
 
    public class_4550(
@@ -40,7 +40,7 @@ public class class_4550 {
       boolean var9,
       String var10,
       UUID var11,
-      class_6629<?> var12,
+      EntityType<?> var12,
       boolean var13
    ) {
       this.field_22174 = var1;

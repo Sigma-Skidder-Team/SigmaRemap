@@ -2,7 +2,7 @@ package remapped;
 
 public class class_7757 extends class_2733 {
    public class_7757() {
-      super(class_6629.field_34278, "tropical_fish_a", 0.2F);
+      super(EntityType.field_34278, "tropical_fish_a", 0.2F);
    }
 
    @Override
@@ -44,7 +44,7 @@ public class class_7757 extends class_2733 {
    @Override
    public class_8599 method_12293(class_9873 var1, float var2) {
       EntityRenderDispatcher var5 = MinecraftClient.getInstance().method_8587();
-      Object var6 = var5.method_28130().get(class_6629.field_34278);
+      Object var6 = var5.method_28130().get(EntityType.field_34278);
       if (var6 instanceof class_5008) {
          if (((class_7067)var6).method_32557() == null) {
             class_5008 var7 = new class_5008(var5);

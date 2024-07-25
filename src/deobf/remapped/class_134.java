@@ -69,7 +69,7 @@ public class class_134 {
             method_535(),
             method_530(),
             method_525(),
-            new class_6198(class_6629.field_34300, 4)
+            new class_6198(EntityType.field_34300, 4)
          )
       );
    }
@@ -103,7 +103,7 @@ public class class_134 {
             new class_2214<class_2599>(class_2599::method_11795, new class_1149(4, 0.6F)),
             new class_5197(
                ImmutableList.of(
-                  Pair.of(new class_6109(class_6629.field_34240, 8.0F), 1), Pair.of(new class_1203(0.6F, 2, 1), 1), Pair.of(new class_102(10, 20), 1)
+                  Pair.of(new class_6109(EntityType.field_34240, 8.0F), 1), Pair.of(new class_1203(0.6F, 2, 1), 1), Pair.of(new class_102(10, 20), 1)
                )
             )
          ),
@@ -151,8 +151,8 @@ public class class_134 {
    private static class_5197<class_2599> method_530() {
       return new class_5197<class_2599>(
          ImmutableList.of(
-            Pair.of(new class_6109(class_6629.field_34300, 8.0F), 1),
-            Pair.of(new class_6109(class_6629.field_34240, 8.0F), 1),
+            Pair.of(new class_6109(EntityType.field_34300, 8.0F), 1),
+            Pair.of(new class_6109(EntityType.field_34240, 8.0F), 1),
             Pair.of(new class_6109(8.0F), 1),
             Pair.of(new class_102(30, 60), 1)
          )
@@ -163,7 +163,7 @@ public class class_134 {
       return new class_5197<class_2599>(
          ImmutableList.of(
             Pair.of(new class_1203(0.6F), 2),
-            Pair.of(class_4741.<class_5834>method_21905(class_6629.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
+            Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
             Pair.of(new class_2214<class_5834>(class_134::method_502, new class_324(0.6F, 3)), 2),
             Pair.of(new class_102(30, 60), 1)
          )
@@ -343,7 +343,7 @@ public class class_134 {
    }
 
    private static boolean method_477(class_5834 var0, class_5834 var1) {
-      return var1.method_37387() == class_6629.field_34306 ? new Random(var0.world.method_29546()).nextFloat() < 0.1F : false;
+      return var1.method_37387() == EntityType.field_34306 ? new Random(var0.world.method_29546()).nextFloat() < 0.1F : false;
    }
 
    public static boolean method_511(class_2599 var0, ItemStack var1) {
@@ -474,7 +474,7 @@ public class class_134 {
             }
          });
          if (!var0.method_26449()) {
-            if (var1.method_37387() == class_6629.field_34306 && method_510(var0)) {
+            if (var1.method_37387() == EntityType.field_34306 && method_510(var0)) {
                method_492(var0, var1);
                method_487(var0, var1);
             } else {
@@ -491,7 +491,7 @@ public class class_134 {
 
    public static void method_522(class_6993 var0, class_5834 var1) {
       if (!var0.method_26525().method_5134(class_6275.field_32068) && method_504(var1) && !class_1225.method_5452(var0, var1, 4.0)) {
-         if (var1.method_37387() == class_6629.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
+         if (var1.method_37387() == EntityType.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
             method_521(var0, var1);
             method_517(var0);
          } else {
@@ -571,7 +571,7 @@ public class class_134 {
 
    public static void method_540(class_6993 var0, class_5834 var1) {
       method_471(var0).forEach(var1x -> {
-         if (var1.method_37387() != class_6629.field_34306 || var1x.method_31988() && ((class_6704)var1).method_30707()) {
+         if (var1.method_37387() != EntityType.field_34306 || var1x.method_31988() && ((class_6704)var1).method_30707()) {
             method_536(var1x, var1);
          }
       });
@@ -589,11 +589,11 @@ public class class_134 {
       if (method_504(var1)) {
          var0.method_26525().method_5127(class_6044.field_30909);
          var0.method_26525().method_5107(class_6044.field_30866, var1.method_37328(), 600L);
-         if (var1.method_37387() == class_6629.field_34306 && var0.method_31988()) {
+         if (var1.method_37387() == EntityType.field_34306 && var0.method_31988()) {
             method_470(var0);
          }
 
-         if (var1.method_37387() == class_6629.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
+         if (var1.method_37387() == EntityType.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
             var0.method_26525().method_5107(class_6044.field_30880, true, 600L);
          }
       }
@@ -647,8 +647,8 @@ public class class_134 {
       class_1150 var3 = var0.method_26525();
       if (var3.method_5117(class_6044.field_30913)) {
          class_5834 var4 = var3.<class_5834>method_5138(class_6044.field_30913).get();
-         class_6629 var5 = var4.method_37387();
-         if (var5 != class_6629.field_34306) {
+         EntityType var5 = var4.method_37387();
+         if (var5 != EntityType.field_34306) {
             return !method_466(var5) ? false : !var3.method_5140(class_6044.field_30908, var4);
          } else {
             return method_505(var0);
@@ -734,7 +734,7 @@ public class class_134 {
    }
 
    public static boolean method_512(class_5834 var0) {
-      return var0.method_37387() == class_6629.field_34300 && var0.method_26564(class_134::method_491);
+      return var0.method_37387() == EntityType.field_34300 && var0.method_26564(class_134::method_491);
    }
 
    private static boolean method_484(class_2599 var0) {
@@ -753,7 +753,7 @@ public class class_134 {
       return var0.method_26568().method_28022() || !method_491(var0.method_26568().method_27960());
    }
 
-   public static boolean method_466(class_6629 var0) {
-      return var0 == class_6629.field_34234 || var0 == class_6629.field_34244;
+   public static boolean method_466(EntityType var0) {
+      return var0 == EntityType.field_34234 || var0 == EntityType.field_34244;
    }
 }

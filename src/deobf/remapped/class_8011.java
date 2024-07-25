@@ -6,16 +6,16 @@ import java.util.function.Predicate;
 public class class_8011 extends class_3429 implements class_3713 {
    public static final Predicate<class_5834> field_41037 = class_5834::method_26537;
 
-   public class_8011(class_6629<? extends class_8011> var1, World var2) {
+   public class_8011(EntityType<? extends class_8011> var1, World var2) {
       super(var1, var2);
    }
 
    public class_8011(World var1, class_5834 var2) {
-      super(class_6629.field_34312, var2, var1);
+      super(EntityType.field_34312, var2, var1);
    }
 
    public class_8011(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34312, var2, var4, var6, var1);
+      super(EntityType.field_34312, var2, var4, var6, var1);
    }
 
    @Override

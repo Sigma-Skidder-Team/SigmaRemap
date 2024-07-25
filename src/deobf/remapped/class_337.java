@@ -18,7 +18,7 @@ public class class_337 extends class_1173 {
    private boolean field_1251;
    public class_8285 field_1260;
 
-   public class_337(class_6629<? extends class_337> var1, World var2) {
+   public class_337(EntityType<? extends class_337> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 10;
       this.method_26895(class_1108.field_6359, 0.0F);
@@ -291,7 +291,7 @@ public class class_337 extends class_1173 {
       return var1.method_6677(this);
    }
 
-   public static boolean method_1551(class_6629<? extends class_337> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_1551(EntityType<? extends class_337> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method_22568(var3))
          && var1.method_43370() != class_423.field_1790
          && (var2 == class_2417.field_12024 || var1.method_28258(var3).method_22007(class_6503.field_33094));

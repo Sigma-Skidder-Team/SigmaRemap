@@ -17,7 +17,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    private class_7228 field_9093;
    private class_518 field_9087;
 
-   public class_1775(class_6629<? extends class_1775> var1, World var2) {
+   public class_1775(EntityType<? extends class_1775> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
       this.method_26895(class_1108.field_6359, -1.0F);
@@ -26,7 +26,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       this.method_26895(class_1108.field_6352, 0.0F);
    }
 
-   public static boolean method_7926(class_6629<class_1775> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_7926(EntityType<class_1775> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       class_2921 var7 = var3.method_6089();
 
       do {
@@ -323,7 +323,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    public class_1775 method_7930(class_6331 var1, class_1899 var2) {
-      return class_6629.field_34233.method_30484(var1);
+      return EntityType.field_34233.method_30484(var1);
    }
 
    @Override
@@ -387,12 +387,12 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
             if (this.field_41717.nextInt(10) != 0) {
                var8 = new class_1821(0.5F);
             } else {
-               class_1899 var9 = class_6629.field_34233.method_30484(var1.method_7066());
+               class_1899 var9 = EntityType.field_34233.method_30484(var1.method_7066());
                var9.method_8635(-24000);
                var8 = this.method_7927(var1, var2, var9, (class_8733)null);
             }
          } else {
-            class_5886 var10 = class_6629.field_34234.method_30484(var1.method_7066());
+            class_5886 var10 = EntityType.field_34234.method_30484(var1.method_7066());
             var8 = this.method_7927(var1, var2, var10, new class_2582(class_2811.method_12789(this.field_41717), false));
             var10.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24651));
             this.method_43358((class_562)null);

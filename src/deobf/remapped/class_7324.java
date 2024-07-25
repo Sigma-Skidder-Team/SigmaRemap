@@ -41,12 +41,12 @@ public class class_7324 implements class_1517 {
                                  .method_6074(-10 + var6.nextInt(21));
                               class_2522 var16 = var1.method_28262(var15);
                               class_4774 var17 = var1.method_28258(var15);
-                              if (class_3815.method_17772(var1, var15, var16, var17, class_6629.field_34246)) {
+                              if (class_3815.method_17772(var1, var15, var16, var17, EntityType.field_34246)) {
                                  class_8733 var18 = null;
                                  int var19 = 1 + var6.nextInt(var11.method_44287().method_2097() + 1);
 
                                  for (int var20 = 0; var20 < var19; var20++) {
-                                    class_9825 var21 = class_6629.field_34246.method_30484(var1);
+                                    class_9825 var21 = EntityType.field_34246.method_30484(var1);
                                     var21.method_37253(var15, 0.0F, 0.0F);
                                     var18 = var21.method_26864(var1, var11, class_2417.field_12031, var18, (CompoundNBT)null);
                                     var1.method_7065(var21);

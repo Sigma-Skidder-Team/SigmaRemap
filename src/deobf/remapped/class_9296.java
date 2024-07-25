@@ -17,6 +17,6 @@ public class class_9296<E extends class_2599> extends class_5920<E> {
 
    private boolean method_42774(E var1) {
       class_5834 var4 = var1.method_26525().<class_5834>method_5138(class_6044.field_30884).get();
-      return var4.method_37387() == class_6629.field_34306 && var4.method_26450();
+      return var4.method_37387() == EntityType.field_34306 && var4.method_26450();
    }
 }

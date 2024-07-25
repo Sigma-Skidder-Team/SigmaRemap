@@ -9,7 +9,7 @@ public class class_7617 extends class_5467 {
    private class_8836<class_704> field_38767;
    private class_9327 field_38766;
 
-   public class_7617(class_6629<? extends class_7617> var1, World var2) {
+   public class_7617(EntityType<? extends class_7617> var1, World var2) {
       super(var1, var2);
       this.method_34543();
    }
@@ -190,7 +190,7 @@ public class class_7617 extends class_5467 {
    }
 
    public class_7617 method_34546(class_6331 var1, class_1899 var2) {
-      return class_6629.field_34214.method_30484(var1);
+      return EntityType.field_34214.method_30484(var1);
    }
 
    @Override
@@ -198,7 +198,7 @@ public class class_7617 extends class_5467 {
       return field_38768.test(var1);
    }
 
-   public static boolean method_34538(class_6629<class_7617> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_34538(EntityType<class_7617> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var4.nextInt(3) != 0;
    }
 

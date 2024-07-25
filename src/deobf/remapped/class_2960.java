@@ -16,7 +16,7 @@ public class class_2960 extends class_3578 {
       }
    };
 
-   public class_2960(class_6629<? extends class_2960> var1, World var2) {
+   public class_2960(EntityType<? extends class_2960> var1, World var2) {
       super(var1, var2);
    }
 

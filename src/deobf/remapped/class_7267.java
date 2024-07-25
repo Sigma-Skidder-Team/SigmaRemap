@@ -32,7 +32,7 @@ public class class_7267 extends class_5920<class_5834> {
          && var6.isPresent()
          && var1.method_29545() == ((class_8150)var6.get()).method_37408()
          && ((class_8150)var6.get()).method_37409().method_12170(var2.method_37245(), 4.0)
-         && var5.<List<class_5834>>method_5138(class_6044.field_30901).get().stream().anyMatch(var0 -> class_6629.field_34276.equals(var0.method_37387()));
+         && var5.<List<class_5834>>method_5138(class_6044.field_30901).get().stream().anyMatch(var0 -> EntityType.field_34276.equals(var0.method_37387()));
    }
 
    @Override
@@ -41,7 +41,7 @@ public class class_7267 extends class_5920<class_5834> {
       var7.<List<class_5834>>method_5138(class_6044.field_30901)
          .ifPresent(
             var2x -> var2x.stream()
-                  .filter(var0x -> class_6629.field_34276.equals(var0x.method_37387()))
+                  .filter(var0x -> EntityType.field_34276.equals(var0x.method_37387()))
                   .filter(var1xx -> var1xx.method_37275(var2) <= 32.0)
                   .findFirst()
                   .ifPresent(var1xx -> {

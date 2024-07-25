@@ -2,7 +2,7 @@ package remapped;
 
 public class class_3179 extends class_7398 {
    public class_3179() {
-      super(class_6629.field_34232, "panda", 0.9F);
+      super(EntityType.field_34232, "panda", 0.9F);
    }
 
    @Override

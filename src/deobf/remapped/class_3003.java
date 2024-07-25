@@ -8,12 +8,12 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 public class class_3003 extends class_2451 {
-   private static final Map<class_6629<?>, class_3003> field_14733 = Maps.newIdentityHashMap();
+   private static final Map<EntityType<?>, class_3003> field_14733 = Maps.newIdentityHashMap();
    private final int field_14734;
    private final int field_14736;
-   private final class_6629<?> field_14737;
+   private final EntityType<?> field_14737;
 
-   public class_3003(class_6629<?> var1, int var2, int var3, class_317 var4) {
+   public class_3003(EntityType<?> var1, int var2, int var3, class_317 var4) {
       super(var4);
       this.field_14737 = var1;
       this.field_14734 = var2;
@@ -35,7 +35,7 @@ public class class_3003 extends class_2451 {
             class_3757 var9 = var4.method_28260(var6);
             if (var9 instanceof class_1896) {
                class_3521 var13 = ((class_1896)var9).method_8621();
-               class_6629 var11 = this.method_13719(var5.method_27990());
+               EntityType var11 = this.method_13719(var5.method_27990());
                var13.method_16253(var11);
                var9.method_17407();
                var4.method_29572(var6, var8, var8, 3);
@@ -51,7 +51,7 @@ public class class_3003 extends class_2451 {
             var12 = var6;
          }
 
-         class_6629 var10 = this.method_13719(var5.method_27990());
+         EntityType var10 = this.method_13719(var5.method_27990());
          if (var10.method_30479(
                (class_6331)var4, var5, var1.method_21868(), var12, class_2417.field_12030, true, !Objects.equals(var6, var12) && var7 == Direction.field_817
             )
@@ -73,7 +73,7 @@ public class class_3003 extends class_2451 {
             BlockPos var9 = var8.method_43955();
             if (var1.method_28262(var9).method_8360() instanceof class_7855) {
                if (var1.method_29538(var2, var9) && var2.method_3208(var9, var8.method_43956(), var6)) {
-                  class_6629 var10 = this.method_13719(var6.method_27990());
+                  EntityType var10 = this.method_13719(var6.method_27990());
                   if (var10.method_30479((class_6331)var1, var6, var2, var9, class_2417.field_12030, false, false) != null) {
                      if (!var2.playerAbilities.isCreativeMode) {
                         var6.method_27970(1);
@@ -98,7 +98,7 @@ public class class_3003 extends class_2451 {
       }
    }
 
-   public boolean method_13717(CompoundNBT var1, class_6629<?> var2) {
+   public boolean method_13717(CompoundNBT var1, EntityType<?> var2) {
       return Objects.equals(this.method_13719(var1), var2);
    }
 
@@ -107,7 +107,7 @@ public class class_3003 extends class_2451 {
    }
 
    @Nullable
-   public static class_3003 method_13715(class_6629<?> var0) {
+   public static class_3003 method_13715(EntityType<?> var0) {
       return field_14733.get(var0);
    }
 
@@ -115,11 +115,11 @@ public class class_3003 extends class_2451 {
       return Iterables.unmodifiableIterable(field_14733.values());
    }
 
-   public class_6629<?> method_13719(CompoundNBT var1) {
+   public EntityType<?> method_13719(CompoundNBT var1) {
       if (var1 != null && var1.contains("EntityTag", 10)) {
          CompoundNBT var4 = var1.getCompound("EntityTag");
          if (var4.contains("id", 8)) {
-            return class_6629.method_30460(var4.method_25965("id")).orElse(this.field_14737);
+            return EntityType.method_30460(var4.method_25965("id")).orElse(this.field_14737);
          }
       }
 
@@ -127,7 +127,7 @@ public class class_3003 extends class_2451 {
    }
 
    public Optional<class_5886> method_13714(
-      class_704 var1, class_5886 var2, class_6629<? extends class_5886> var3, class_6331 var4, class_1343 var5, ItemStack var6
+           class_704 var1, class_5886 var2, EntityType<? extends class_5886> var3, class_6331 var4, class_1343 var5, ItemStack var6
    ) {
       if (this.method_13717(var6.method_27990(), var3)) {
          Object var9;

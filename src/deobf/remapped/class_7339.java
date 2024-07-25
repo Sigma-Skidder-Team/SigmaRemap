@@ -4,12 +4,12 @@ public class class_7339 extends AbstractMinecartEntity {
    private static String[] field_37530;
    private final class_3521 field_37529 = new class_4070(this);
 
-   public class_7339(class_6629<? extends class_7339> var1, World var2) {
+   public class_7339(EntityType<? extends class_7339> var1, World var2) {
       super(var1, var2);
    }
 
    public class_7339(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34209, var1, var2, var4, var6);
+      super(EntityType.field_34209, var1, var2, var4, var6);
    }
 
    @Override

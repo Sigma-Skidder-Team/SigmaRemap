@@ -8,7 +8,7 @@ public abstract class class_8574 extends class_3578 {
    private class_8574 field_43947;
    private int field_43946 = 1;
 
-   public class_8574(class_6629<? extends class_8574> var1, World var2) {
+   public class_8574(EntityType<? extends class_8574> var1, World var2) {
       super(var1, var2);
    }
 

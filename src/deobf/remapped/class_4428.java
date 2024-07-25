@@ -10,7 +10,7 @@ public class class_4428 implements class_2231 {
    private final class_9639<class_6414> field_21633 = new class_9639<class_6414>(class_8669.field_44462::method_39794, "tags/blocks", "block");
    private final class_9639<class_2451> field_21630 = new class_9639<class_2451>(class_8669.field_44382::method_39794, "tags/items", "item");
    private final class_9639<class_2340> field_21634 = new class_9639<class_2340>(class_8669.field_44447::method_39794, "tags/fluids", "fluid");
-   private final class_9639<class_6629<?>> field_21632 = new class_9639<class_6629<?>>(class_8669.field_44400::method_39794, "tags/entity_types", "entity_type");
+   private final class_9639<EntityType<?>> field_21632 = new class_9639<EntityType<?>>(class_8669.field_44400::method_39794, "tags/entity_types", "entity_type");
    private class_6437 field_21631 = class_6437.field_32865;
 
    public class_6437 method_20577() {

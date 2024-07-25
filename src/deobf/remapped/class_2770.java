@@ -36,8 +36,8 @@ public class class_2770 extends class_5886 implements class_1869 {
    private final int[] field_13540 = new int[24];
    private final class_5424 field_13547 = new class_5424();
 
-   public class_2770(class_6629<? extends class_2770> var1, World var2) {
-      super(class_6629.field_34310, var2);
+   public class_2770(EntityType<? extends class_2770> var1, World var2) {
+      super(EntityType.field_34310, var2);
       this.field_13542 = new class_5708(this, "head", 1.0F, 1.0F);
       this.field_13543 = new class_5708(this, "neck", 3.0F, 3.0F);
       this.field_13532 = new class_5708(this, "body", 5.0F, 3.0F);

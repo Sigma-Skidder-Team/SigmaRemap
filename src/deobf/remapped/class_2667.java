@@ -6,7 +6,7 @@ public class class_2667 extends class_1173 {
    private int field_13118;
    private boolean field_13119;
 
-   public class_2667(class_6629<? extends class_2667> var1, World var2) {
+   public class_2667(EntityType<? extends class_2667> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 3;
    }
@@ -125,7 +125,7 @@ public class class_2667 extends class_1173 {
       }
    }
 
-   public static boolean method_12024(class_6629<class_2667> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_12024(EntityType<class_2667> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (!method_5198(var0, var1, var2, var3, var4)) {
          return false;
       } else {

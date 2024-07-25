@@ -15,13 +15,13 @@ public class class_6589 implements Packet<class_392> {
    private int field_33989;
    private int field_33986;
    private int field_33984;
-   private class_6629<?> field_33985;
+   private EntityType<?> field_33985;
    private int field_33990;
 
    public class_6589() {
    }
 
-   public class_6589(int var1, UUID var2, double var3, double var5, double var7, float var9, float var10, class_6629<?> var11, int var12, class_1343 var13) {
+   public class_6589(int var1, UUID var2, double var3, double var5, double var7, float var9, float var10, EntityType<?> var11, int var12, class_1343 var13) {
       this.field_33995 = var1;
       this.field_33992 = var2;
       this.field_33994 = var3;
@@ -55,7 +55,7 @@ public class class_6589 implements Packet<class_392> {
       );
    }
 
-   public class_6589(Entity var1, class_6629<?> var2, int var3, BlockPos var4) {
+   public class_6589(Entity var1, EntityType<?> var2, int var3, BlockPos var4) {
       this(
          var1.method_37145(),
          var1.method_37328(),
@@ -146,7 +146,7 @@ public class class_6589 implements Packet<class_392> {
       return this.field_33984;
    }
 
-   public class_6629<?> method_30334() {
+   public EntityType<?> method_30334() {
       return this.field_33985;
    }
 

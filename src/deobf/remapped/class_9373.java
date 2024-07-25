@@ -33,7 +33,7 @@ public class class_9373 extends class_3725 {
                   }
                }
 
-               class_4653 var13 = class_6629.field_34212.method_30484(var0);
+               class_4653 var13 = EntityType.field_34212.method_30484(var0);
                BlockPos var14 = var8.method_31795(1, 2, 0).method_41966();
                var13.method_37144(
                   (double)var14.method_12173() + 0.5,

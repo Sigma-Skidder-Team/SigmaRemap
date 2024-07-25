@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_9629 extends class_9310 {
    private int field_49042 = 47999;
 
-   public class_9629(class_6629<? extends class_9629> var1, World var2) {
+   public class_9629(EntityType<? extends class_9629> var1, World var2) {
       super(var1, var2);
    }
 
@@ -16,7 +16,7 @@ public class class_9629 extends class_9310 {
 
    @Override
    public class_9310 method_42987() {
-      return class_6629.field_34230.method_30484(this.world);
+      return EntityType.field_34230.method_30484(this.world);
    }
 
    @Override

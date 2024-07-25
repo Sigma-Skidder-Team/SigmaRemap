@@ -22,7 +22,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
    private static final Predicate<class_5834> field_22697 = var0 -> var0.method_26550() != class_2780.field_13579 && var0.method_26556();
    private static final class_4931 field_22696 = new class_4931().method_22607(20.0).method_22606(field_22697);
 
-   public class_4653(class_6629<? extends class_4653> var1, World var2) {
+   public class_4653(EntityType<? extends class_4653> var1, World var2) {
       super(var1, var2);
       this.method_26456(this.method_26465());
       this.method_26927().method_5611(true);

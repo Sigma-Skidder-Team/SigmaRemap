@@ -67,7 +67,7 @@ public class class_160 {
    }
 
    @Nullable
-   public static class_1343 method_650(class_6629<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
+   public static class_1343 method_650(EntityType<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
       if (var3 && var0.method_30481(var1.method_28262(var2))) {
          return null;
       } else {

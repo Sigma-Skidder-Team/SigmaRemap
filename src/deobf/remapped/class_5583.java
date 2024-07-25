@@ -33,7 +33,7 @@ public class class_5583 extends class_8990 {
    private float field_28354;
    private float field_28357;
 
-   public class_5583(class_6629<? extends class_5583> var1, World var2) {
+   public class_5583(EntityType<? extends class_5583> var1, World var2) {
       super(var1, var2);
    }
 
@@ -257,7 +257,7 @@ public class class_5583 extends class_8990 {
    }
 
    public class_5583 method_25369(class_6331 var1, class_1899 var2) {
-      class_5583 var5 = class_6629.field_34249.method_30484(var1);
+      class_5583 var5 = EntityType.field_34249.method_30484(var1);
       if (var2 instanceof class_5583) {
          if (!this.field_41717.nextBoolean()) {
             var5.method_25356(((class_5583)var2).method_25353());

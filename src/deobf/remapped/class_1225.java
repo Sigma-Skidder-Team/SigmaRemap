@@ -19,7 +19,7 @@ public class class_1225 {
       return var0.<List<class_5834>>method_5138(class_6044.field_30901).filter(var1x -> var1x.contains(var1)).isPresent();
    }
 
-   public static boolean method_5450(class_1150<?> var0, class_6044<? extends class_5834> var1, class_6629<?> var2) {
+   public static boolean method_5450(class_1150<?> var0, class_6044<? extends class_5834> var1, EntityType<?> var2) {
       return method_5441(var0, var1, var1x -> var1x.method_37387() == var2);
    }
 

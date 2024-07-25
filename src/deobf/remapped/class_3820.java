@@ -7,8 +7,8 @@ import org.apache.logging.log4j.Logger;
 
 public class class_3820 extends class_4285<class_1941> {
    private static final Logger field_18684 = LogManager.getLogger();
-   private static final class_6629<?>[] field_18683 = new class_6629[]{
-      class_6629.field_34241, class_6629.field_34297, class_6629.field_34297, class_6629.field_34223
+   private static final EntityType<?>[] field_18683 = new EntityType[]{
+      EntityType.field_34241, EntityType.field_34297, EntityType.field_34297, EntityType.field_34223
    };
    private static final class_2522 field_18685 = class_4783.field_23765.method_29260();
 
@@ -113,7 +113,7 @@ public class class_3820 extends class_4285<class_1941> {
       }
    }
 
-   private class_6629<?> method_17796(Random var1) {
-      return Util.<class_6629<?>>method_44697(field_18683, var1);
+   private EntityType<?> method_17796(Random var1) {
+      return Util.<EntityType<?>>method_44697(field_18683, var1);
    }
 }

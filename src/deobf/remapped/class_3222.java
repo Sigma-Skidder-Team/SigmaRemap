@@ -13,19 +13,19 @@ public class class_3222 extends class_1047 {
             )
             .apply(var0, class_3222::new)
    );
-   public final class_6629<?> field_16053;
+   public final EntityType<?> field_16053;
    public final int field_16055;
    public final int field_16056;
 
-   public class_3222(class_6629<?> var1, int var2, int var3, int var4) {
+   public class_3222(EntityType<?> var1, int var2, int var3, int var4) {
       super(var2);
-      this.field_16053 = var1.method_30476() != class_4565.field_22251 ? var1 : class_6629.field_34252;
+      this.field_16053 = var1.method_30476() != class_4565.field_22251 ? var1 : EntityType.field_34252;
       this.field_16055 = var3;
       this.field_16056 = var4;
    }
 
    @Override
    public String toString() {
-      return class_6629.method_30472(this.field_16053) + "*(" + this.field_16055 + "-" + this.field_16056 + "):" + this.field_5753;
+      return EntityType.method_30472(this.field_16053) + "*(" + this.field_16055 + "-" + this.field_16056 + "):" + this.field_5753;
    }
 }

@@ -430,18 +430,18 @@ public class class_2452 {
             }
 
             this.method_11275(var5, var15, var1, false);
-            if (class_5020.method_23117(var11) == class_6629.field_34318) {
+            if (class_5020.method_23117(var11) == EntityType.field_34318) {
                class_4040 var16 = null;
                if (var5 != this.method_11302(class_423.field_1789)) {
                   if (var5 >= this.method_11302(class_423.field_1782)) {
                      if (var13 != 0) {
-                        var16 = class_6629.field_34255.method_30484(this.field_12189);
+                        var16 = EntityType.field_34255.method_30484(this.field_12189);
                      } else {
-                        var16 = class_6629.field_34296.method_30484(this.field_12189);
+                        var16 = EntityType.field_34296.method_30484(this.field_12189);
                      }
                   }
                } else {
-                  var16 = class_6629.field_34265.method_30484(this.field_12189);
+                  var16 = EntityType.field_34265.method_30484(this.field_12189);
                }
 
                var13++;
@@ -572,7 +572,7 @@ public class class_2452 {
                )
             && this.field_12189.method_28945().method_14823(new class_2034(var6))
             && (
-               class_3815.method_17767(class_1257.field_6935, this.field_12189, var6, class_6629.field_34318)
+               class_3815.method_17767(class_1257.field_6935, this.field_12189, var6, EntityType.field_34318)
                   || this.field_12189.method_28262(var6.method_6100()).method_8350(class_4783.field_23552) && this.field_12189.method_28262(var6).method_8345()
             )) {
             return var6;

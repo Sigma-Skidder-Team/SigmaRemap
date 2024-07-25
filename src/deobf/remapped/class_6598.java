@@ -23,7 +23,7 @@ public class class_6598 extends class_6414 {
    }
 
    private void method_30379(class_6331 var1, BlockPos var2) {
-      class_6174 var5 = class_6629.field_34314.method_30484(var1);
+      class_6174 var5 = EntityType.field_34314.method_30484(var1);
       var5.method_37144((double)var2.method_12173() + 0.5, (double)var2.method_12165(), (double)var2.method_12185() + 0.5, 0.0F, 0.0F);
       var1.method_7509(var5);
       var5.method_26909();

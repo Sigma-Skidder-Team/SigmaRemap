@@ -37,7 +37,7 @@ public abstract class class_5886 extends class_5834 {
    private BlockPos field_29909 = BlockPos.field_7306;
    private float field_29907 = -1.0F;
 
-   public class_5886(class_6629<? extends class_5886> var1, World var2) {
+   public class_5886(EntityType<? extends class_5886> var1, World var2) {
       super(var1, var2);
       this.field_29916 = new class_782(var2.method_29559());
       this.field_29908 = new class_782(var2.method_29559());
@@ -134,8 +134,8 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public boolean method_26610(class_6629<?> var1) {
-      return var1 != class_6629.field_34281;
+   public boolean method_26610(EntityType<?> var1) {
+      return var1 != EntityType.field_34281;
    }
 
    public boolean method_26878(class_551 var1) {
@@ -709,7 +709,7 @@ public abstract class class_5886 extends class_5834 {
       return var1 + var6;
    }
 
-   public static boolean method_26908(class_6629<? extends class_5886> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_26908(EntityType<? extends class_5886> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.method_6100();
       return var2 == class_2417.field_12024 || var1.method_28262(var7).method_8305(var1, var7, var0);
    }
@@ -1058,7 +1058,7 @@ public abstract class class_5886 extends class_5834 {
          } else {
             class_3003 var8 = (class_3003)var5.method_27960();
             Optional var7 = var8.method_13714(
-               var1, this, (class_6629<? extends class_5886>)this.method_37387(), (class_6331)this.world, this.method_37245(), var5
+               var1, this, (EntityType<? extends class_5886>)this.method_37387(), (class_6331)this.world, this.method_37245(), var5
             );
             var7.ifPresent(var2x -> this.method_26874(var1, var2x));
             return !var7.isPresent() ? class_6910.field_35521 : class_6910.field_35520;
@@ -1099,7 +1099,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Nullable
-   public <T extends class_5886> T method_26898(class_6629<T> var1, boolean var2) {
+   public <T extends class_5886> T method_26898(EntityType<T> var1, boolean var2) {
       if (this.field_41751) {
          return null;
       } else {
@@ -1335,7 +1335,7 @@ public abstract class class_5886 extends class_5834 {
 
    @Override
    public boolean method_26608(class_5834 var1) {
-      return var1.method_37387() == class_6629.field_34300 && ((class_704)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
+      return var1.method_37387() == EntityType.field_34300 && ((class_704)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
    }
 
    @Override

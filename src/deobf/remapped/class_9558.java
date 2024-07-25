@@ -260,11 +260,11 @@ public class class_9558 {
 
                if (!var0.method_22774()) {
                   Identifier var5 = Identifier.method_21464(var0.method_22749());
-                  class_6629 var6 = class_8669.field_44400.method_39794(var5).orElseThrow(() -> {
+                  EntityType var6 = class_8669.field_44400.method_39794(var5).orElseThrow(() -> {
                      var0.method_22749().setCursor(var3);
                      return field_48633.createWithContext(var0.method_22749(), var5.toString());
                   });
-                  if (Objects.equals(class_6629.field_34300, var6) && !var4) {
+                  if (Objects.equals(EntityType.field_34300, var6) && !var4) {
                      var0.method_22768(false);
                   }
 

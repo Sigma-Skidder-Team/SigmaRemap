@@ -14,7 +14,7 @@ public class class_7961 {
    private static String[] field_40788;
    private final Map<class_4565, List<class_3222>> field_40791 = Stream.<class_4565>of(class_4565.values())
       .collect(ImmutableMap.toImmutableMap(var0 -> var0, var0 -> Lists.newArrayList()));
-   private final Map<class_6629<?>, class_2658> field_40789 = Maps.newLinkedHashMap();
+   private final Map<EntityType<?>, class_2658> field_40789 = Maps.newLinkedHashMap();
    private float field_40787 = 0.1F;
    private boolean field_40790;
 
@@ -23,7 +23,7 @@ public class class_7961 {
       return this;
    }
 
-   public class_7961 method_36015(class_6629<?> var1, double var2, double var4) {
+   public class_7961 method_36015(EntityType<?> var1, double var2, double var4) {
       this.field_40789.put(var1, new class_2658(var4, var2, null));
       return this;
    }

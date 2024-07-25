@@ -32,7 +32,7 @@ public class class_6902 {
          10,
          ImmutableList.of(
             new class_3631(class_6044.field_30905, 200),
-            new class_3669(class_6629.field_34306, 0.6F),
+            new class_3669(EntityType.field_34306, 0.6F),
             class_2300.method_10574(class_6044.field_30905, 1.0F, 8, true),
             new class_8962<class_6704>(class_6902::method_31610),
             new class_2214<class_4612>(
@@ -51,7 +51,7 @@ public class class_6902 {
          10,
          ImmutableList.of(
             new class_3631(class_6044.field_30905, 200),
-            new class_3669(class_6629.field_34306, 0.6F),
+            new class_3669(EntityType.field_34306, 0.6F),
             new class_1005(1.0F),
             new class_2214<class_5886>(class_6704::method_30714, new class_5488(40)),
             new class_2214<class_5886>(class_1899::method_26449, new class_5488(15)),
@@ -96,7 +96,7 @@ public class class_6902 {
 
    public static void method_31606(class_6704 var0, class_5834 var1) {
       if (!var0.method_26449()) {
-         if (var1.method_37387() == class_6629.field_34240 && method_31620(var0)) {
+         if (var1.method_37387() == EntityType.field_34240 && method_31620(var0)) {
             method_31629(var0, var1);
             method_31613(var0, var1);
          } else {
@@ -157,9 +157,9 @@ public class class_6902 {
    }
 
    private static void method_31612(class_6704 var0, class_5834 var1) {
-      if ((!var0.method_26525().method_5134(class_6275.field_32068) || var1.method_37387() != class_6629.field_34240)
+      if ((!var0.method_26525().method_5134(class_6275.field_32068) || var1.method_37387() != EntityType.field_34240)
          && class_3572.field_17480.test(var1)
-         && var1.method_37387() != class_6629.field_34306
+         && var1.method_37387() != EntityType.field_34306
          && !class_1225.method_5452(var0, var1, 4.0)) {
          method_31617(var0, var1);
          method_31608(var0, var1);

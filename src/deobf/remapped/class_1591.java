@@ -4,12 +4,12 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 public class class_1591 extends class_2160<class_5886, class_672<class_5886>> {
-   private static final Map<class_6629<?>, Identifier> field_8307 = ImmutableMap.of(
-      class_6629.field_34240,
+   private static final Map<EntityType<?>, Identifier> field_8307 = ImmutableMap.of(
+      EntityType.field_34240,
       new Identifier("textures/entity/piglin/piglin.png"),
-      class_6629.field_34234,
+      EntityType.field_34234,
       new Identifier("textures/entity/piglin/zombified_piglin.png"),
-      class_6629.field_34257,
+      EntityType.field_34257,
       new Identifier("textures/entity/piglin/piglin_brute.png")
    );
 

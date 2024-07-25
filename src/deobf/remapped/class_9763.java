@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class class_9763 {
    private static boolean field_49593 = false;
-   private static Map<class_6629, class_7067> field_49589 = null;
+   private static Map<EntityType, class_7067> field_49589 = null;
    private static Map<class_133, class_2255> field_49591 = null;
    private static Map<class_558, class_9873> field_49590 = null;
 
@@ -63,12 +63,12 @@ public class class_9763 {
       }
    }
 
-   private static Map<class_6629, class_7067> method_45054() {
+   private static Map<EntityType, class_7067> method_45054() {
       EntityRenderDispatcher var2 = MinecraftClient.getInstance().method_8587();
       Map var3 = var2.method_28130();
       if (var3 != null) {
          if (field_49589 == null) {
-            field_49589 = new HashMap<class_6629, class_7067>(var3);
+            field_49589 = new HashMap<EntityType, class_7067>(var3);
          }
 
          return var3;

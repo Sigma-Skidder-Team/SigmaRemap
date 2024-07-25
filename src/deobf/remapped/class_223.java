@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_223 extends class_608 implements class_9897, class_2354 {
    private static final class_7821<Byte> field_730 = class_8073.<Byte>method_36641(class_223.class, class_2734.field_13361);
 
-   public class_223(class_6629<? extends class_223> var1, World var2) {
+   public class_223(EntityType<? extends class_223> var1, World var2) {
       super(var1, var2);
    }
 

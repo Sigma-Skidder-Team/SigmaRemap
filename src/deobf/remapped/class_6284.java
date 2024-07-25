@@ -778,7 +778,7 @@ public class class_6284 {
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
          Identifier var8 = new Identifier(var7);
-         class_6629 var9 = class_3057.method_13956(var8);
+         EntityType var9 = class_3057.method_13956(var8);
          if (var9 != null) {
             int var10 = class_8669.field_44400.method_14041(var9);
             if (var10 >= 0) {

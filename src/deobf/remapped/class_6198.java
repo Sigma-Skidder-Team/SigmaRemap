@@ -6,12 +6,12 @@ import java.util.function.Predicate;
 
 public class class_6198 extends class_5920<class_5834> {
    private static String[] field_31660;
-   private final class_6629<?> field_31658;
+   private final EntityType<?> field_31658;
    private final int field_31661;
    private final Predicate<class_5834> field_31659;
    private final Predicate<class_5834> field_31662;
 
-   public class_6198(class_6629<?> var1, int var2, Predicate<class_5834> var3, Predicate<class_5834> var4) {
+   public class_6198(EntityType<?> var1, int var2, Predicate<class_5834> var3, Predicate<class_5834> var4) {
       super(
          ImmutableMap.of(
             class_6044.field_30874, class_561.field_3319, class_6044.field_30861, class_561.field_3318, class_6044.field_30901, class_561.field_3320
@@ -23,7 +23,7 @@ public class class_6198 extends class_5920<class_5834> {
       this.field_31662 = var3;
    }
 
-   public class_6198(class_6629<?> var1, int var2) {
+   public class_6198(EntityType<?> var1, int var2) {
       this(var1, var2, var0 -> true, var0 -> true);
    }
 

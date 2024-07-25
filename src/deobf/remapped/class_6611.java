@@ -2,7 +2,7 @@ package remapped;
 
 public class class_6611 extends class_2733 {
    public class_6611() {
-      super(class_6629.field_34210, "creeper", 0.5F);
+      super(EntityType.field_34210, "creeper", 0.5F);
    }
 
    @Override

@@ -156,7 +156,7 @@ public final class class_3815 {
    }
 
    private static boolean method_17775(class_6331 var0, class_4565 var1, class_2033 var2, class_6541 var3, class_3222 var4, class_2921 var5, double var6) {
-      class_6629 var10 = var4.field_16053;
+      EntityType var10 = var4.field_16053;
       if (var10.method_30476() != class_4565.field_22251) {
          if (!var10.method_30466() && var6 > (double)(var10.method_30476().method_21200() * var10.method_30476().method_21200())) {
             return false;
@@ -178,7 +178,7 @@ public final class class_3815 {
    }
 
    @Nullable
-   private static class_5886 method_17777(class_6331 var0, class_6629<?> var1) {
+   private static class_5886 method_17777(class_6331 var0, EntityType<?> var1) {
       try {
          Entity var4 = var1.method_30484(var0);
          if (!(var4 instanceof class_5886)) {
@@ -230,7 +230,7 @@ public final class class_3815 {
       return new BlockPos(var5, var8, var6);
    }
 
-   public static boolean method_17772(class_6163 var0, BlockPos var1, class_2522 var2, class_4774 var3, class_6629<?> var4) {
+   public static boolean method_17772(class_6163 var0, BlockPos var1, class_2522 var2, class_4774 var3, EntityType<?> var4) {
       if (!var2.method_8306(var0, var1)) {
          if (!var2.method_8355()) {
             if (var3.method_22001()) {
@@ -246,7 +246,7 @@ public final class class_3815 {
       }
    }
 
-   public static boolean method_17767(class_1257 var0, class_4924 var1, BlockPos var2, class_6629<?> var3) {
+   public static boolean method_17767(class_1257 var0, class_4924 var1, BlockPos var2, EntityType<?> var3) {
       if (var0 == class_1257.field_6939) {
          return true;
       } else if (var3 != null && var1.method_6673().method_9813(var2)) {
@@ -338,7 +338,7 @@ public final class class_3815 {
       }
    }
 
-   private static BlockPos method_17778(class_4924 var0, class_6629<?> var1, int var2, int var3) {
+   private static BlockPos method_17778(class_4924 var0, EntityType<?> var1, int var2, int var3) {
       int var6 = var0.method_22562(class_1136.method_4984(var1), var2, var3);
       class_2921 var7 = new class_2921(var2, var6, var3);
       if (var0.method_22572().method_40244()) {

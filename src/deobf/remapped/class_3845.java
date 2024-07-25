@@ -14,7 +14,7 @@ public class class_3845 extends class_5467 {
    private int field_18767;
    public static final Predicate<class_5834> field_18768 = var0 -> var0.method_26449() && !var0.method_37285();
 
-   public class_3845(class_6629<? extends class_3845> var1, World var2) {
+   public class_3845(EntityType<? extends class_3845> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6359, 0.0F);
       this.field_29900 = new class_2320(this);
@@ -115,7 +115,7 @@ public class class_3845 extends class_5467 {
       return super.method_26864(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method_17861(class_6629<class_3845> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_17861(EntityType<class_3845> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var3.method_12165() < var1.method_22552() + 4 && class_1477.method_6812(var1, var3) && var1.method_25261(var3, 0) > 8;
    }
 
@@ -213,7 +213,7 @@ public class class_3845 extends class_5467 {
    @Nullable
    @Override
    public class_1899 method_8638(class_6331 var1, class_1899 var2) {
-      return class_6629.field_34283.method_30484(var1);
+      return EntityType.field_34283.method_30484(var1);
    }
 
    @Override

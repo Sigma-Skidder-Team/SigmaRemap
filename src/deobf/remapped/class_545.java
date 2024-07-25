@@ -182,12 +182,12 @@ public class class_545 extends class_6414 {
       return method_2637(var1, 15);
    }
 
-   public static Optional<class_1343> method_2633(class_6629<?> var0, class_1449 var1, BlockPos var2) {
+   public static Optional<class_1343> method_2633(EntityType<?> var0, class_1449 var1, BlockPos var2) {
       Optional var5 = method_2635(var0, var1, var2, true);
       return !var5.isPresent() ? method_2635(var0, var1, var2, false) : var5;
    }
 
-   private static Optional<class_1343> method_2635(class_6629<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
+   private static Optional<class_1343> method_2635(EntityType<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
       class_2921 var6 = new class_2921();
       UnmodifiableIterator var7 = field_3270.iterator();
 

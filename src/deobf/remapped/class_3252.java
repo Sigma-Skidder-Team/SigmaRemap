@@ -5,7 +5,7 @@ import java.util.Random;
 public class class_3252 extends class_378 {
    private static String[] field_16146;
 
-   public class_3252(class_6629<? extends class_3252> var1, World var2) {
+   public class_3252(EntityType<? extends class_3252> var1, World var2) {
       super(var1, var2);
    }
 
@@ -13,7 +13,7 @@ public class class_3252 extends class_378 {
       return class_1173.method_5201().method_5984(class_7331.field_37465, 0.2F);
    }
 
-   public static boolean method_14865(class_6629<class_3252> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_14865(EntityType<class_3252> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790;
    }
 

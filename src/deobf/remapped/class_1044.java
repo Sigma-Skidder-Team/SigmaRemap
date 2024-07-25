@@ -4,16 +4,16 @@ public class class_1044 extends class_8388 {
    private static String[] field_5749;
    private static final class_7821<Boolean> field_5748 = class_8073.<Boolean>method_36641(class_1044.class, class_2734.field_13347);
 
-   public class_1044(class_6629<? extends class_1044> var1, World var2) {
+   public class_1044(EntityType<? extends class_1044> var1, World var2) {
       super(var1, var2);
    }
 
    public class_1044(World var1, class_5834 var2, double var3, double var5, double var7) {
-      super(class_6629.field_34329, var2, var3, var5, var7, var1);
+      super(EntityType.field_34329, var2, var3, var5, var7, var1);
    }
 
    public class_1044(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      super(class_6629.field_34329, var2, var4, var6, var8, var10, var12, var1);
+      super(EntityType.field_34329, var2, var4, var6, var8, var10, var12, var1);
    }
 
    @Override

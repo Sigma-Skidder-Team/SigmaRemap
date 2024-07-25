@@ -16,13 +16,13 @@ public class class_9668 extends class_5467 implements class_6250 {
    private int field_49239;
    private UUID field_49245;
 
-   public class_9668(class_6629<? extends class_9668> var1, World var2) {
+   public class_9668(EntityType<? extends class_9668> var1, World var2) {
       super(var1, var2);
    }
 
    @Override
    public class_1899 method_8638(class_6331 var1, class_1899 var2) {
-      return class_6629.field_34229.method_30484(var1);
+      return EntityType.field_34229.method_30484(var1);
    }
 
    @Override
@@ -55,7 +55,7 @@ public class class_9668 extends class_5467 implements class_6250 {
          .method_5984(class_7331.field_37462, 6.0);
    }
 
-   public static boolean method_44711(class_6629<class_9668> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_44711(EntityType<class_9668> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method_2754(var3);
       return !Objects.equals(var7, Optional.<class_5621<class_6325>>of(class_8606.field_44137))
             && !Objects.equals(var7, Optional.<class_5621<class_6325>>of(class_8606.field_44115))

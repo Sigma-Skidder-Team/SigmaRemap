@@ -33,8 +33,8 @@ public abstract class Entity implements class_9875, class_5801 {
    private static final AtomicInteger MAX_ENTITY_ID = new AtomicInteger();
    private static final List<ItemStack> EMPTY_STACK_LIST = Collections.<ItemStack>emptyList();
    private static final Box NULL_BOX = new Box(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
-   private static double field_41756 = 1.0;
-   private final class_6629<?> field_41719;
+   private static double renderDistanceMultiplier = 1.0;
+   private final EntityType<?> field_41719;
    private int field_41740 = MAX_ENTITY_ID.incrementAndGet();
    public boolean field_41759;
    private final List<Entity> field_41707 = Lists.newArrayList();
@@ -113,7 +113,7 @@ public abstract class Entity implements class_9875, class_5801 {
    private class_6097 field_41758;
    public float field_41710;
 
-   public Entity(class_6629<?> var1, World var2) {
+   public Entity(EntityType<?> var1, World var2) {
       this.field_41719 = var1;
       this.world = var2;
       this.field_41758 = var1.method_30473();
@@ -170,7 +170,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return this.field_41700;
    }
 
-   public class_6629<?> method_37387() {
+   public EntityType<?> method_37387() {
       return this.field_41719;
    }
 
@@ -1288,7 +1288,7 @@ public abstract class Entity implements class_9875, class_5801 {
          var5 = 1.0;
       }
 
-      var5 = var5 * 64.0 * field_41756;
+      var5 = var5 * 64.0 * renderDistanceMultiplier;
       return var1 < var5 * var5;
    }
 
@@ -1458,8 +1458,8 @@ public abstract class Entity implements class_9875, class_5801 {
 
    @Nullable
    public final String method_37271() {
-      class_6629 var3 = this.method_37387();
-      Identifier var4 = class_6629.method_30472(var3);
+      EntityType var3 = this.method_37387();
+      Identifier var4 = EntityType.method_30472(var3);
       return var3.method_30471() && var4 != null ? var4.toString() : null;
    }
 
@@ -2178,7 +2178,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37331(class_6544 var1) {
-      var1.method_29851("Entity Type", () -> class_6629.method_30472(this.method_37387()) + " (" + this.getClass().getCanonicalName() + ")");
+      var1.method_29851("Entity Type", () -> EntityType.method_30472(this.method_37387()) + " (" + this.getClass().getCanonicalName() + ")");
       var1.method_29850("Entity ID", this.field_41740);
       var1.method_29851("Entity Name", () -> this.method_45509().getString());
       var1.method_29850(
@@ -2222,11 +2222,11 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public static double method_37345() {
-      return field_41756;
+      return renderDistanceMultiplier;
    }
 
    public static void method_37327(double var0) {
-      field_41756 = var0;
+      renderDistanceMultiplier = var0;
    }
 
    @Override

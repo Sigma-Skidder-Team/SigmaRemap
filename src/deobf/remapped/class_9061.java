@@ -42,7 +42,7 @@ public class class_9061 extends class_6291 {
                   int var17 = 2 + var2.nextInt(2);
 
                   for (int var18 = 0; var18 < var17; var18++) {
-                     class_8829 var19 = new class_8829(class_6629.field_34238, var1.method_7066());
+                     class_8829 var19 = new class_8829(EntityType.field_34238, var1.method_7066());
                      var16.method_24443(var19, false, var2.nextInt(599));
                   }
                }

@@ -11,12 +11,12 @@ public class class_7451 extends class_4641 {
    private float field_37977 = 1.0F;
    private boolean field_37976;
 
-   public class_7451(class_6629<? extends class_7451> var1, World var2) {
+   public class_7451(EntityType<? extends class_7451> var1, World var2) {
       super(var1, var2);
    }
 
    public class_7451(World var1, BlockPos var2, Direction var3) {
-      super(class_6629.field_34319, var1, var2);
+      super(EntityType.field_34319, var1, var2);
       this.method_21468(var3);
    }
 

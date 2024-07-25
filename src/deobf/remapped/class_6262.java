@@ -315,7 +315,7 @@ public class class_6262 extends class_462 {
                   var1.method_7513(var22, class_4783.field_23617.method_29260(), 2);
                   class_3757 var23 = var1.method_28260(var22);
                   if (var23 instanceof class_1896) {
-                     ((class_1896)var23).method_8621().method_16253(class_6629.field_34272);
+                     ((class_1896)var23).method_8621().method_16253(EntityType.field_34272);
                   }
                }
             }

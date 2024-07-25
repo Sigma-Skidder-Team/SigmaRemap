@@ -1018,7 +1018,7 @@ public class class_9300 {
       if (field_47467 == null && field_47460 == null) {
          return var3;
       } else {
-         class_6629 var6 = var0.method_13719(var1.method_27990());
+         EntityType var6 = var0.method_13719(var1.method_27990());
          if (var6 != null) {
             int var7 = class_8669.field_44400.method_14041(var6);
             if (var7 >= 0) {

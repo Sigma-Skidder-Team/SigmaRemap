@@ -13,7 +13,7 @@ public class class_449 extends class_1829 {
    private static final class_4931 field_1873 = new class_4931().method_22607(10.0).method_22601().method_22603().method_22602();
    public static final Predicate<class_91> field_1874 = var0 -> !var0.method_258() && var0.method_37330() && var0.method_37285();
 
-   public class_449(class_6629<? extends class_449> var1, World var2) {
+   public class_449(EntityType<? extends class_449> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_4469(this);
       this.field_29919 = new class_4323(this, 10);
@@ -276,7 +276,7 @@ public class class_449 extends class_1829 {
       }
    }
 
-   public static boolean method_2156(class_6629<class_449> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_2156(EntityType<class_449> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (var3.method_12165() > 45 && var3.method_12165() < var1.method_22552()) {
          Optional var7 = var1.method_2754(var3);
          return (

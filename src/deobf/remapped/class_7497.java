@@ -26,7 +26,7 @@ public final class class_7497 implements class_6437 {
    }
 
    @Override
-   public class_9349<class_6629<?>> method_29389() {
+   public class_9349<EntityType<?>> method_29389() {
       return this.field_38251;
    }
 }

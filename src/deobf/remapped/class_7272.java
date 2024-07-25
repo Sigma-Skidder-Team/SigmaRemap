@@ -13,7 +13,7 @@ public class class_7272 extends class_5467 {
    private int field_37233;
    private int field_37234;
 
-   public class_7272(class_6629<? extends class_7272> var1, World var2) {
+   public class_7272(EntityType<? extends class_7272> var1, World var2) {
       super(var1, var2);
       this.field_29914 = new class_3143(this, this);
       this.field_29900 = new class_1830(this);
@@ -252,7 +252,7 @@ public class class_7272 extends class_5467 {
    }
 
    public class_7272 method_33244(class_6331 var1, class_1899 var2) {
-      class_7272 var5 = class_6629.field_34251.method_30484(var1);
+      class_7272 var5 = EntityType.field_34251.method_30484(var1);
       int var6 = this.method_33236(var1);
       if (this.field_41717.nextInt(20) != 0) {
          if (var2 instanceof class_7272 && this.field_41717.nextBoolean()) {
@@ -318,7 +318,7 @@ public class class_7272 extends class_5467 {
       }
    }
 
-   public static boolean method_33242(class_6629<class_7272> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_33242(EntityType<class_7272> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       class_2522 var7 = var1.method_28262(var3.method_6100());
       return (var7.method_8350(class_4783.field_23259) || var7.method_8350(class_4783.field_23552) || var7.method_8350(class_4783.field_23216))
          && var1.method_25261(var3, 0) > 8;

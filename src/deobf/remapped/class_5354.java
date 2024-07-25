@@ -136,7 +136,7 @@ public class class_5354 extends class_3757 implements class_3745 {
          if (var11 && var4 != class_8771.field_44900) {
             return false;
          } else {
-            Entity var12 = class_6629.method_30455(var8, this.field_18364, var0 -> var0);
+            Entity var12 = EntityType.method_30455(var8, this.field_18364, var0 -> var0);
             if (var12 == null) {
                return false;
             } else if (var12.method_37387().method_30453(class_5218.field_26789)) {

@@ -7,12 +7,12 @@ import java.util.Iterator;
 public class class_5490 extends class_4641 {
    public class_6933 field_27978;
 
-   public class_5490(class_6629<? extends class_5490> var1, World var2) {
+   public class_5490(EntityType<? extends class_5490> var1, World var2) {
       super(var1, var2);
    }
 
    public class_5490(World var1, BlockPos var2, Direction var3) {
-      super(class_6629.field_34313, var1, var2);
+      super(EntityType.field_34313, var1, var2);
       ArrayList var6 = Lists.newArrayList();
       int var7 = 0;
 

@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1554 extends class_6126 {
    public class_1554() {
-      super(class_6629.field_34296, "evoker", 0.5F, new String[]{"evocation_illager"});
+      super(EntityType.field_34296, "evoker", 0.5F, new String[]{"evocation_illager"});
    }
 
    @Override

@@ -7,7 +7,7 @@ public class class_3901 extends class_2733 {
    private static Map<String, Integer> field_18963 = null;
 
    public class_3901() {
-      super(class_6629.field_34250, "fox", 0.4F);
+      super(EntityType.field_34250, "fox", 0.4F);
    }
 
    @Override

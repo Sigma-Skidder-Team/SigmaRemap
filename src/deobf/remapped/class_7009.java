@@ -5,14 +5,14 @@ import com.google.gson.JsonPrimitive;
 
 public class class_7009 extends class_6411 {
    private static String[] field_35943;
-   private final class_6629<?> field_35944;
+   private final EntityType<?> field_35944;
 
-   public class_7009(class_6629<?> var1) {
+   public class_7009(EntityType<?> var1) {
       this.field_35944 = var1;
    }
 
    @Override
-   public boolean method_29249(class_6629<?> var1) {
+   public boolean method_29249(EntityType<?> var1) {
       return this.field_35944 == var1;
    }
 

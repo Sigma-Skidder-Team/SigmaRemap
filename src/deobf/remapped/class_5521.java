@@ -3,7 +3,7 @@ package remapped;
 public abstract class class_5521 extends class_4109 {
    private static final class_7821<Boolean> field_28096 = class_8073.<Boolean>method_36641(class_5521.class, class_2734.field_13347);
 
-   public class_5521(class_6629<? extends class_5521> var1, World var2) {
+   public class_5521(EntityType<? extends class_5521> var1, World var2) {
       super(var1, var2);
       this.field_20028 = false;
    }

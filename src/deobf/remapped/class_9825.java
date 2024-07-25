@@ -6,7 +6,7 @@ public class class_9825 extends class_516 implements class_1869 {
    private BlockPos field_49779 = BlockPos.field_7306;
    private class_55 field_49777 = class_55.field_38;
 
-   public class_9825(class_6629<? extends class_9825> var1, World var2) {
+   public class_9825(EntityType<? extends class_9825> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
       this.field_29900 = new class_9650(this, this);
@@ -187,7 +187,7 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public boolean method_26610(class_6629<?> var1) {
+   public boolean method_26610(EntityType<?> var1) {
       return true;
    }
 

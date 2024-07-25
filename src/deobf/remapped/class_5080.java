@@ -78,8 +78,8 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
          .method_15272(
             "killed_ghast",
             class_3780.method_17505(
-               class_2184.method_10127().method_10134(class_6629.field_34281),
-               class_9447.method_43695().method_43694(true).method_43696(class_2184.method_10127().method_10134(class_6629.field_34216))
+               class_2184.method_10127().method_10134(EntityType.field_34281),
+               class_9447.method_43695().method_43694(true).method_43696(class_2184.method_10127().method_10134(EntityType.field_34216))
             )
          )
          .method_15270(var1, "nether/return_to_sender");
@@ -128,7 +128,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
          .method_15272(
             "killed_ghast",
             class_3780.method_17504(
-               class_2184.method_10127().method_10134(class_6629.field_34281).method_10141(class_5093.method_23399(World.field_33048))
+               class_2184.method_10127().method_10134(EntityType.field_34281).method_10141(class_5093.method_23399(World.field_33048))
             )
          )
          .method_15270(var1, "nether/uneasy_alliance");
@@ -158,7 +158,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
             true,
             false
          )
-         .method_15272("summoned", class_146.method_566(class_2184.method_10127().method_10134(class_6629.field_34212)))
+         .method_15272("summoned", class_146.method_566(class_2184.method_10127().method_10134(EntityType.field_34212)))
          .method_15270(var1, "nether/summon_wither");
       class_3139 var9 = class_3321.method_15269()
          .method_15274(var6)
@@ -402,7 +402,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
             "used_warped_fungus_on_a_stick",
             class_9683.method_44772(
                class_8938.method_41064(
-                  class_2184.method_10127().method_10131(class_2184.method_10127().method_10134(class_6629.field_34233).method_10139()).method_10139()
+                  class_2184.method_10127().method_10131(class_2184.method_10127().method_10134(EntityType.field_34233).method_10139()).method_10139()
                ),
                class_9518.method_43918().method_43915(class_4897.field_24651).method_43921(),
                class_7781.field_39439
@@ -475,7 +475,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
                class_9518.method_43918().method_43919(class_391.field_1643),
                class_8938.method_41064(
                   class_2184.method_10127()
-                     .method_10134(class_6629.field_34240)
+                     .method_10134(EntityType.field_34240)
                      .method_10126(class_4097.method_18938().method_18937(false).method_18939())
                      .method_10139()
                )
@@ -488,7 +488,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
                class_9518.method_43918().method_43915(class_134.field_388),
                class_8938.method_41064(
                   class_2184.method_10127()
-                     .method_10134(class_6629.field_34240)
+                     .method_10134(EntityType.field_34240)
                      .method_10126(class_4097.method_18938().method_18937(false).method_18939())
                      .method_10139()
                )

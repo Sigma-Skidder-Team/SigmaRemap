@@ -23,7 +23,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    private class_3494 field_45163;
    private int field_45153;
 
-   public class_8829(class_6629<? extends class_8829> var1, World var2) {
+   public class_8829(EntityType<? extends class_8829> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_2112(this, 20, true);
       this.field_29919 = new class_7778(this, this);
@@ -468,7 +468,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    public class_8829 method_40623(class_6331 var1, class_1899 var2) {
-      return class_6629.field_34238.method_30484(var1);
+      return EntityType.field_34238.method_30484(var1);
    }
 
    @Override

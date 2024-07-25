@@ -33,7 +33,7 @@ public class class_5542 extends class_5467 {
    private float field_28237;
    private int field_28243;
 
-   public class_5542(class_6629<? extends class_5542> var1, World var2) {
+   public class_5542(EntityType<? extends class_5542> var1, World var2) {
       super(var1, var2);
       this.field_29919 = new class_3582(this);
       this.field_29900 = new class_6989(this);
@@ -209,7 +209,7 @@ public class class_5542 extends class_5467 {
    }
 
    public class_5542 method_25213(class_6331 var1, class_1899 var2) {
-      class_5542 var5 = class_6629.field_34250.method_30484(var1);
+      class_5542 var5 = EntityType.field_34250.method_30484(var1);
       var5.method_25174(!this.field_41717.nextBoolean() ? ((class_5542)var2).method_25199() : this.method_25199());
       return var5;
    }

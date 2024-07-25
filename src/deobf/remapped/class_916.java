@@ -890,7 +890,7 @@ public class class_916 extends class_4037 implements class_6510 {
 
    public void method_4021(Entity var1) {
       if (!(var1 instanceof class_5708)) {
-         class_6629 var4 = var1.method_37387();
+         EntityType var4 = var1.method_37387();
          int var5 = var4.method_30462() * 16;
          int var6 = var4.method_30463();
          if (this.field_4716.containsKey(var1.method_37145())) {

@@ -19,8 +19,8 @@ public class class_3078 extends class_3599 {
    public boolean method_16795() {
       if (!this.field_15140.method_26920() && !this.field_15140.method_42974()) {
          List var3 = this.field_15140.world.method_25867(this.field_15140, this.field_15140.method_37241().method_18899(9.0, 4.0, 9.0), var0 -> {
-            class_6629 var3x = var0.method_37387();
-            return var3x == class_6629.field_34327 || var3x == class_6629.field_34230;
+            EntityType var3x = var0.method_37387();
+            return var3x == EntityType.field_34327 || var3x == EntityType.field_34230;
          });
          class_9310 var4 = null;
          double var5 = Double.MAX_VALUE;

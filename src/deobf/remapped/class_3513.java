@@ -5,11 +5,11 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 public class class_3513 extends class_1762<class_4109, class_3192<class_4109>> {
-   private static final Map<class_6629<?>, Identifier> field_17229 = Maps.newHashMap(
+   private static final Map<EntityType<?>, Identifier> field_17229 = Maps.newHashMap(
       ImmutableMap.of(
-         class_6629.field_34268,
+         EntityType.field_34268,
          new Identifier("textures/entity/horse/horse_zombie.png"),
-         class_6629.field_34261,
+         EntityType.field_34261,
          new Identifier("textures/entity/horse/horse_skeleton.png")
       )
    );

@@ -15,11 +15,11 @@ public abstract class class_2255<T extends class_3757> {
       return false;
    }
 
-   public class_222<class_6629, class_133> method_10365() {
+   public class_222<EntityType, class_133> method_10365() {
       return this.field_11223 != null ? class_222.method_941(this.field_11223) : null;
    }
 
-   public void method_10370(class_222<class_6629, class_133> var1) {
+   public void method_10370(class_222<EntityType, class_133> var1) {
       this.field_11223 = (class_133)var1.method_942().get();
    }
 

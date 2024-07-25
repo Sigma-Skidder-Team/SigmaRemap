@@ -49,7 +49,7 @@ public class class_8031 extends class_5467 implements class_9897 {
       return field_41109.get(var0);
    }
 
-   public class_8031(class_6629<? extends class_8031> var1, World var2) {
+   public class_8031(EntityType<? extends class_8031> var1, World var2) {
       super(var1, var2);
    }
 
@@ -286,7 +286,7 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    public class_8031 method_36480(class_6331 var1, class_1899 var2) {
       class_8031 var5 = (class_8031)var2;
-      class_8031 var6 = class_6629.field_34321.method_30484(var1);
+      class_8031 var6 = EntityType.field_34321.method_30484(var1);
       var6.method_36471(this.method_36473(this, var5));
       return var6;
    }

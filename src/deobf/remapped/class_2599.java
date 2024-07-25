@@ -61,7 +61,7 @@ public class class_2599 extends class_6993 implements class_3832 {
       }
    );
 
-   public class_2599(class_6629<? extends class_6993> var1, World var2) {
+   public class_2599(EntityType<? extends class_6993> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }
@@ -125,7 +125,7 @@ public class class_2599 extends class_6993 implements class_3832 {
          .method_5984(class_7331.field_37462, 5.0);
    }
 
-   public static boolean method_11799(class_6629<class_2599> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_11799(EntityType<class_2599> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return !var1.method_28262(var3.method_6100()).method_8350(class_4783.field_23273);
    }
 
@@ -384,7 +384,7 @@ public class class_2599 extends class_6993 implements class_3832 {
 
    @Override
    public boolean startRiding(Entity var1, boolean var2) {
-      if (this.method_26449() && var1.method_37387() == class_6629.field_34306) {
+      if (this.method_26449() && var1.method_37387() == EntityType.field_34306) {
          var1 = this.method_11792(var1, 3);
       }
 

@@ -8,7 +8,7 @@ public abstract class class_4607 extends class_1173 {
    private boolean field_22414;
    private boolean field_22415;
 
-   public class_4607(class_6629<? extends class_4607> var1, World var2) {
+   public class_4607(EntityType<? extends class_4607> var1, World var2) {
       super(var1, var2);
    }
 
@@ -72,7 +72,7 @@ public abstract class class_4607 extends class_1173 {
       return super.method_26864(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method_21355(class_6629<? extends class_4607> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_21355(EntityType<? extends class_4607> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_25266(class_2957.field_14440, var3) <= 8 ? method_5198(var0, var1, var2, var3, var4) : false;
    }
 

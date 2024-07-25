@@ -39,7 +39,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    public boolean field_20028 = true;
    public int field_20023;
 
-   public class_4109(class_6629<? extends class_4109> var1, World var2) {
+   public class_4109(EntityType<? extends class_4109> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.method_19072();

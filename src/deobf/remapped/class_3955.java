@@ -8,18 +8,18 @@ import java.util.Set;
 
 public class class_3955 extends class_6127<class_5834> {
    private static String[] field_19178;
-   private static final ImmutableMap<class_6629<?>, Float> field_19177 = ImmutableMap.builder()
-      .put(class_6629.field_34211, 8.0F)
-      .put(class_6629.field_34296, 12.0F)
-      .put(class_6629.field_34266, 8.0F)
-      .put(class_6629.field_34270, 12.0F)
-      .put(class_6629.field_34265, 15.0F)
-      .put(class_6629.field_34318, 12.0F)
-      .put(class_6629.field_34277, 8.0F)
-      .put(class_6629.field_34255, 10.0F)
-      .put(class_6629.field_34244, 10.0F)
-      .put(class_6629.field_34297, 8.0F)
-      .put(class_6629.field_34227, 8.0F)
+   private static final ImmutableMap<EntityType<?>, Float> field_19177 = ImmutableMap.builder()
+      .put(EntityType.field_34211, 8.0F)
+      .put(EntityType.field_34296, 12.0F)
+      .put(EntityType.field_34266, 8.0F)
+      .put(EntityType.field_34270, 12.0F)
+      .put(EntityType.field_34265, 15.0F)
+      .put(EntityType.field_34318, 12.0F)
+      .put(EntityType.field_34277, 8.0F)
+      .put(EntityType.field_34255, 10.0F)
+      .put(EntityType.field_34244, 10.0F)
+      .put(EntityType.field_34297, 8.0F)
+      .put(EntityType.field_34227, 8.0F)
       .build();
 
    @Override

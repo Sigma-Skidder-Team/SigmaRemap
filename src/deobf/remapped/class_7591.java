@@ -24,7 +24,7 @@ public class class_7591 extends class_6127<class_5834> {
    }
 
    private boolean method_34494(class_5834 var1) {
-      return var1.method_37387() == class_6629.field_34276 && var1.method_26449();
+      return var1.method_37387() == EntityType.field_34276 && var1.method_26449();
    }
 
    private List<class_5834> method_34493(class_5834 var1) {

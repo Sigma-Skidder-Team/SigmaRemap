@@ -2,7 +2,7 @@ package remapped;
 
 public class class_5546 extends class_2733 {
    public class_5546() {
-      super(class_6629.field_34307, "guardian", 0.5F);
+      super(EntityType.field_34307, "guardian", 0.5F);
    }
 
    @Override

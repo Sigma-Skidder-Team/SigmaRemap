@@ -62,10 +62,10 @@ public class class_8600 extends class_8131 {
          class_7637 var11;
          switch (var1) {
             case "Mage":
-               var11 = class_6629.field_34296.method_30484(var3.method_7066());
+               var11 = EntityType.field_34296.method_30484(var3.method_7066());
                break;
             case "Warrior":
-               var11 = class_6629.field_34255.method_30484(var3.method_7066());
+               var11 = EntityType.field_34255.method_30484(var3.method_7066());
                break;
             default:
                return;

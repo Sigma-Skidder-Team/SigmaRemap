@@ -32,7 +32,7 @@ public class class_7263 extends class_6993 {
       }
    );
 
-   public class_7263(class_6629<? extends class_7263> var1, World var2) {
+   public class_7263(EntityType<? extends class_7263> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 20;
    }

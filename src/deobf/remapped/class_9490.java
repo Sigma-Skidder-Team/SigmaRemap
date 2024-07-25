@@ -12,7 +12,7 @@ public class class_9490 extends class_1173 implements class_7187 {
    private int field_48357 = 3;
    private int field_48359;
 
-   public class_9490(class_6629<? extends class_9490> var1, World var2) {
+   public class_9490(EntityType<? extends class_9490> var1, World var2) {
       super(var1, var2);
    }
 

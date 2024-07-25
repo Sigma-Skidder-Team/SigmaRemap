@@ -11,7 +11,7 @@ public class class_4393 extends class_2803 implements class_9897 {
    private int field_21515;
    private UUID field_21517;
 
-   public class_4393(class_6629<? extends class_4393> var1, World var2) {
+   public class_4393(EntityType<? extends class_4393> var1, World var2) {
       super(var1, var2);
    }
 
@@ -20,7 +20,7 @@ public class class_4393 extends class_2803 implements class_9897 {
       return !var2.method_28262(var1.method_6100()).method_8350(class_4783.field_23162) ? var2.method_22566(var1) - 0.5F : 10.0F;
    }
 
-   public static boolean method_20460(class_6629<class_4393> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_20460(EntityType<class_4393> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_28262(var3.method_6100()).method_8350(class_4783.field_23162) && var1.method_25261(var3, 0) > 8;
    }
 
@@ -130,7 +130,7 @@ public class class_4393 extends class_2803 implements class_9897 {
          ((class_6331)this.world)
             .method_28957(class_3090.field_15339, this.getPosX(), this.method_37080(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.method_37204();
-         class_2803 var4 = class_6629.field_34325.method_30484(this.world);
+         class_2803 var4 = EntityType.field_34325.method_30484(this.world);
          var4.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var4.method_26456(this.method_26551());
          var4.field_29605 = this.field_29605;
@@ -211,7 +211,7 @@ public class class_4393 extends class_2803 implements class_9897 {
    }
 
    public class_4393 method_20465(class_6331 var1, class_1899 var2) {
-      class_4393 var5 = class_6629.field_34269.method_30484(var1);
+      class_4393 var5 = EntityType.field_34269.method_30484(var1);
       var5.method_20464(this.method_20461((class_4393)var2));
       return var5;
    }

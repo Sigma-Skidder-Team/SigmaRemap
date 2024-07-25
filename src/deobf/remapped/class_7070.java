@@ -5,7 +5,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class class_7070 {
-   private static final Map<class_6629, Integer> field_36499 = new HashMap<class_6629, Integer>();
+   private static final Map<EntityType, Integer> field_36499 = new HashMap<EntityType, Integer>();
    private static final Map<String, Integer> field_36500 = new HashMap<String, Integer>();
    private static final Map<String, Integer> field_36501 = new HashMap<String, Integer>();
 
@@ -13,7 +13,7 @@ public class class_7070 {
       return var0 != null ? method_32562(var0.method_37387()) : -1;
    }
 
-   public static int method_32562(class_6629 var0) {
+   public static int method_32562(EntityType var0) {
       Integer var3 = field_36499.get(var0);
       return var3 != null ? var3 : -1;
    }
@@ -30,7 +30,7 @@ public class class_7070 {
    }
 
    static {
-      for (class_6629 var7 : class_8669.field_44400) {
+      for (EntityType var7 : class_8669.field_44400) {
          int var8 = class_8669.field_44400.method_14041(var7);
          Identifier var9 = class_8669.field_44400.method_39797(var7);
          String var10 = var9.toString();

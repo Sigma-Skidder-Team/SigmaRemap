@@ -634,7 +634,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return var6;
    }
 
-   public <T extends Entity> List<T> method_29583(class_6629<T> var1, Box var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_29583(EntityType<T> var1, Box var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getEntities");
       int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
       int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);

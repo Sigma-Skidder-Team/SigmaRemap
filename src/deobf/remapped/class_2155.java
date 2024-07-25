@@ -4,7 +4,7 @@ public class class_2155 extends class_2509 {
    private static String[] field_10767;
 
    public class_2155(class_317 var1) {
-      super(class_6629.field_34319, var1);
+      super(EntityType.field_34319, var1);
    }
 
    @Override

@@ -7,7 +7,7 @@ public class class_1190 extends class_2733 {
    private static Map<String, Integer> field_6671 = null;
 
    public class_1190() {
-      super(class_6629.field_34318, "ravager", 1.1F);
+      super(EntityType.field_34318, "ravager", 1.1F);
    }
 
    @Override

@@ -5,11 +5,11 @@ public abstract class class_8388 extends class_5783 {
    public double field_42910;
    public double field_42911;
 
-   public class_8388(class_6629<? extends class_8388> var1, World var2) {
+   public class_8388(EntityType<? extends class_8388> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_8388(class_6629<? extends class_8388> var1, double var2, double var4, double var6, double var8, double var10, double var12, World var14) {
+   public class_8388(EntityType<? extends class_8388> var1, double var2, double var4, double var6, double var8, double var10, double var12, World var14) {
       this(var1, var14);
       this.method_37144(var2, var4, var6, this.rotationYaw, this.rotationPitch);
       this.method_37351();
@@ -21,7 +21,7 @@ public abstract class class_8388 extends class_5783 {
       }
    }
 
-   public class_8388(class_6629<? extends class_8388> var1, class_5834 var2, double var3, double var5, double var7, World var9) {
+   public class_8388(EntityType<? extends class_8388> var1, class_5834 var2, double var3, double var5, double var7, World var9) {
       this(var1, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var3, var5, var7, var9);
       this.method_26159(var2);
       this.method_37395(var2.rotationYaw, var2.rotationPitch);

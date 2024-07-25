@@ -31,7 +31,7 @@ public class class_9544 {
       var1.method_5124(
          class_6275.field_32075,
          10,
-         ImmutableList.of(new class_8962<class_6993>(class_9544::method_44045), method_44050(), method_44047(), new class_6198(class_6629.field_34300, 4))
+         ImmutableList.of(new class_8962<class_6993>(class_9544::method_44045), method_44050(), method_44047(), new class_6198(EntityType.field_34300, 4))
       );
    }
 
@@ -47,9 +47,9 @@ public class class_9544 {
    private static class_5197<class_7263> method_44050() {
       return new class_5197<class_7263>(
          ImmutableList.of(
-            Pair.of(new class_6109(class_6629.field_34300, 8.0F), 1),
-            Pair.of(new class_6109(class_6629.field_34240, 8.0F), 1),
-            Pair.of(new class_6109(class_6629.field_34257, 8.0F), 1),
+            Pair.of(new class_6109(EntityType.field_34300, 8.0F), 1),
+            Pair.of(new class_6109(EntityType.field_34240, 8.0F), 1),
+            Pair.of(new class_6109(EntityType.field_34257, 8.0F), 1),
             Pair.of(new class_6109(8.0F), 1),
             Pair.of(new class_102(30, 60), 1)
          )
@@ -60,8 +60,8 @@ public class class_9544 {
       return new class_5197<class_7263>(
          ImmutableList.of(
             Pair.of(new class_1203(0.6F), 2),
-            Pair.of(class_4741.<class_5834>method_21905(class_6629.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
-            Pair.of(class_4741.<class_5834>method_21905(class_6629.field_34257, 8, class_6044.field_30861, 0.6F, 2), 2),
+            Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34240, 8, class_6044.field_30861, 0.6F, 2), 2),
+            Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34257, 8, class_6044.field_30861, 0.6F, 2), 2),
             Pair.of(new class_7375(class_6044.field_30854, 0.6F, 2, 100), 2),
             Pair.of(new class_5863(class_6044.field_30854, 0.6F, 5), 2),
             Pair.of(new class_102(30, 60), 1)

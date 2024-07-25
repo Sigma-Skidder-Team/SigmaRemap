@@ -8,7 +8,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    private final class_5479<class_1595> field_8312 = new class_5479<class_1595>(this, 1.0, 20, 15.0F);
    private final class_9037 field_8311 = new class_1054(this, this, 1.2, false);
 
-   public class_1595(class_6629<? extends class_1595> var1, World var2) {
+   public class_1595(EntityType<? extends class_1595> var1, World var2) {
       super(var1, var2);
       this.method_7153();
    }

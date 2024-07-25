@@ -11,12 +11,12 @@ public class class_1511 extends Entity {
    private class_5834 field_8005;
    private UUID field_8007;
 
-   public class_1511(class_6629<? extends class_1511> var1, World var2) {
+   public class_1511(EntityType<? extends class_1511> var1, World var2) {
       super(var1, var2);
    }
 
    public class_1511(World var1, double var2, double var4, double var6, float var8, int var9, class_5834 var10) {
-      this(class_6629.field_34309, var1);
+      this(EntityType.field_34309, var1);
       this.field_8003 = var9;
       this.method_6918(var10);
       this.rotationYaw = var8 * (180.0F / (float)Math.PI);

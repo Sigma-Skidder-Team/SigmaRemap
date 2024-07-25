@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class EntityRenderDispatcher {
    private static final RenderLayer SHADOW_LAYER = RenderLayer.getEntityShadow(new Identifier("textures/misc/shadow.png"));
-   private final Map<class_6629<?>, class_7067<?>> renderers = Maps.newHashMap();
+   private final Map<EntityType<?>, class_7067<?>> renderers = Maps.newHashMap();
    private final Map<String, class_6670> modelRenderers = Maps.newHashMap();
    private final class_6670 playerRenderer;
    private final TextRenderer textRenderer;
@@ -29,118 +29,118 @@ public class EntityRenderDispatcher {
       return var5;
    }
 
-   private <T extends Entity> void method_28118(class_6629<T> var1, class_7067<? super T> var2) {
+   private <T extends Entity> void method_28118(EntityType<T> var1, class_7067<? super T> var2) {
       this.renderers.put(var1, var2);
    }
 
    private void method_28138(ItemRenderer var1, class_550 var2) {
-      this.method_28118(class_6629.field_34279, new class_3600(this));
-      this.method_28118(class_6629.field_34289, new class_3927(this));
-      this.method_28118(class_6629.field_34290, new class_4262(this));
-      this.method_28118(class_6629.field_34217, new class_2759(this));
-      this.method_28118(class_6629.field_34238, new class_5903(this));
-      this.method_28118(class_6629.field_34301, new class_7531(this));
-      this.method_28118(class_6629.field_34330, new class_1133(this));
-      this.method_28118(class_6629.field_34249, new class_9652(this));
-      this.method_28118(class_6629.field_34272, new class_3722(this));
-      this.method_28118(class_6629.field_34221, new class_6906(this));
-      this.method_28118(class_6629.field_34263, new class_4782(this));
-      this.method_28118(class_6629.field_34262, new class_3277(this));
-      this.method_28118(class_6629.field_34254, new class_6906(this));
-      this.method_28118(class_6629.field_34325, new class_3264(this));
-      this.method_28118(class_6629.field_34210, new class_8317(this));
-      this.method_28118(class_6629.field_34320, new class_5539(this));
-      this.method_28118(class_6629.field_34248, new class_6247(this, 0.87F));
-      this.method_28118(class_6629.field_34267, new class_4881(this));
-      this.method_28118(class_6629.field_34211, new class_5347(this));
-      this.method_28118(class_6629.field_34274, new class_7608(this, var1));
-      this.method_28118(class_6629.field_34324, new class_643(this));
-      this.method_28118(class_6629.field_34273, new class_8205(this));
-      this.method_28118(class_6629.field_34310, new class_3867(this));
-      this.method_28118(class_6629.field_34308, new class_7310(this));
-      this.method_28118(class_6629.field_34264, new class_3594(this));
-      this.method_28118(class_6629.field_34259, new class_7608(this, var1));
-      this.method_28118(class_6629.field_34309, new class_1312(this));
-      this.method_28118(class_6629.field_34296, new class_6314(this));
-      this.method_28118(class_6629.field_34219, new class_7608(this, var1));
-      this.method_28118(class_6629.field_34299, new class_1060(this));
-      this.method_28118(class_6629.field_34323, new class_7608(this, var1, 1.0F, true));
-      this.method_28118(class_6629.field_34245, new class_4934(this));
-      this.method_28118(class_6629.field_34216, new class_7608(this, var1, 3.0F, true));
-      this.method_28118(class_6629.field_34280, new class_8061(this, var1));
-      this.method_28118(class_6629.field_34215, new class_6296(this));
-      this.method_28118(class_6629.field_34250, new class_326(this));
-      this.method_28118(class_6629.field_34311, new class_6906(this));
-      this.method_28118(class_6629.field_34281, new class_481(this));
-      this.method_28118(class_6629.field_34294, new class_8179(this, 6.0F));
-      this.method_28118(class_6629.field_34307, new class_763(this));
-      this.method_28118(class_6629.field_34306, new class_1824(this));
-      this.method_28118(class_6629.field_34213, new class_6906(this));
-      this.method_28118(class_6629.field_34286, new class_2511(this));
-      this.method_28118(class_6629.field_34266, new class_8263(this));
-      this.method_28118(class_6629.field_34270, new class_6339(this));
-      this.method_28118(class_6629.field_34298, new class_743(this));
-      this.method_28118(class_6629.field_34208, new class_1957(this, var1));
-      this.method_28118(class_6629.field_34319, new class_6823(this, var1));
-      this.method_28118(class_6629.field_34275, new class_6073(this));
-      this.method_28118(class_6629.field_34224, new class_3729(this));
-      this.method_28118(class_6629.field_34327, new class_5879(this));
-      this.method_28118(class_6629.field_34328, new class_1101(this));
-      this.method_28118(class_6629.field_34295, new class_5038(this));
-      this.method_28118(class_6629.field_34239, new class_6906(this));
-      this.method_28118(class_6629.field_34269, new class_1995(this));
-      this.method_28118(class_6629.field_34218, new class_6247(this, 0.92F));
-      this.method_28118(class_6629.field_34214, new class_615(this));
-      this.method_28118(class_6629.field_34313, new class_8768(this));
-      this.method_28118(class_6629.field_34232, new class_2102(this));
-      this.method_28118(class_6629.field_34228, new class_1677(this));
-      this.method_28118(class_6629.field_34246, new class_494(this));
-      this.method_28118(class_6629.field_34252, new class_2124(this));
-      this.method_28118(class_6629.field_34240, new class_1591(this, false));
-      this.method_28118(class_6629.field_34257, new class_1591(this, false));
-      this.method_28118(class_6629.field_34265, new class_564(this));
-      this.method_28118(class_6629.field_34229, new class_9872(this));
-      this.method_28118(class_6629.field_34312, new class_7608(this, var1));
-      this.method_28118(class_6629.field_34315, new class_2207(this));
-      this.method_28118(class_6629.field_34251, new class_1431(this));
-      this.method_28118(class_6629.field_34318, new class_7600(this));
-      this.method_28118(class_6629.field_34236, new class_4990(this));
-      this.method_28118(class_6629.field_34321, new class_5058(this));
-      this.method_28118(class_6629.field_34271, new class_6792(this));
-      this.method_28118(class_6629.field_34231, new class_5595(this));
-      this.method_28118(class_6629.field_34314, new class_5385(this));
-      this.method_28118(class_6629.field_34261, new class_3513(this));
-      this.method_28118(class_6629.field_34241, new class_5258(this));
-      this.method_28118(class_6629.field_34222, new class_5895(this));
-      this.method_28118(class_6629.field_34288, new class_7608(this, var1, 0.75F, true));
-      this.method_28118(class_6629.field_34247, new class_7608(this, var1));
-      this.method_28118(class_6629.field_34253, new class_437(this));
-      this.method_28118(class_6629.field_34209, new class_6906(this));
-      this.method_28118(class_6629.field_34260, new class_4806(this));
-      this.method_28118(class_6629.field_34223, new class_1815(this));
-      this.method_28118(class_6629.field_34292, new class_485(this));
-      this.method_28118(class_6629.field_34322, new class_7459(this));
-      this.method_28118(class_6629.field_34282, new class_9382(this));
-      this.method_28118(class_6629.field_34291, new class_7362(this));
-      this.method_28118(class_6629.field_34230, new class_5879(this));
-      this.method_28118(class_6629.field_34284, new class_9701(this));
-      this.method_28118(class_6629.field_34278, new class_5008(this));
-      this.method_28118(class_6629.field_34283, new class_9391(this));
-      this.method_28118(class_6629.field_34277, new class_7224(this));
-      this.method_28118(class_6629.field_34276, new class_9122(this, var2));
-      this.method_28118(class_6629.field_34255, new class_5117(this));
-      this.method_28118(class_6629.field_34303, new class_5757(this));
-      this.method_28118(class_6629.field_34220, new class_875(this));
-      this.method_28118(class_6629.field_34212, new class_6542(this));
-      this.method_28118(class_6629.field_34317, new class_9547(this));
-      this.method_28118(class_6629.field_34329, new class_9133(this));
-      this.method_28118(class_6629.field_34225, new class_5162(this));
-      this.method_28118(class_6629.field_34244, new class_3081(this));
-      this.method_28118(class_6629.field_34268, new class_3513(this));
-      this.method_28118(class_6629.field_34297, new class_1171(this));
-      this.method_28118(class_6629.field_34234, new class_1591(this, true));
-      this.method_28118(class_6629.field_34227, new class_9805(this, var2));
-      this.method_28118(class_6629.field_34233, new class_737(this));
+      this.method_28118(EntityType.field_34279, new class_3600(this));
+      this.method_28118(EntityType.field_34289, new class_3927(this));
+      this.method_28118(EntityType.field_34290, new class_4262(this));
+      this.method_28118(EntityType.field_34217, new class_2759(this));
+      this.method_28118(EntityType.field_34238, new class_5903(this));
+      this.method_28118(EntityType.field_34301, new class_7531(this));
+      this.method_28118(EntityType.field_34330, new class_1133(this));
+      this.method_28118(EntityType.field_34249, new class_9652(this));
+      this.method_28118(EntityType.field_34272, new class_3722(this));
+      this.method_28118(EntityType.field_34221, new class_6906(this));
+      this.method_28118(EntityType.field_34263, new class_4782(this));
+      this.method_28118(EntityType.field_34262, new class_3277(this));
+      this.method_28118(EntityType.field_34254, new class_6906(this));
+      this.method_28118(EntityType.field_34325, new class_3264(this));
+      this.method_28118(EntityType.field_34210, new class_8317(this));
+      this.method_28118(EntityType.field_34320, new class_5539(this));
+      this.method_28118(EntityType.field_34248, new class_6247(this, 0.87F));
+      this.method_28118(EntityType.field_34267, new class_4881(this));
+      this.method_28118(EntityType.field_34211, new class_5347(this));
+      this.method_28118(EntityType.field_34274, new class_7608(this, var1));
+      this.method_28118(EntityType.field_34324, new class_643(this));
+      this.method_28118(EntityType.field_34273, new class_8205(this));
+      this.method_28118(EntityType.field_34310, new class_3867(this));
+      this.method_28118(EntityType.field_34308, new class_7310(this));
+      this.method_28118(EntityType.field_34264, new class_3594(this));
+      this.method_28118(EntityType.field_34259, new class_7608(this, var1));
+      this.method_28118(EntityType.field_34309, new class_1312(this));
+      this.method_28118(EntityType.field_34296, new class_6314(this));
+      this.method_28118(EntityType.field_34219, new class_7608(this, var1));
+      this.method_28118(EntityType.field_34299, new class_1060(this));
+      this.method_28118(EntityType.field_34323, new class_7608(this, var1, 1.0F, true));
+      this.method_28118(EntityType.field_34245, new class_4934(this));
+      this.method_28118(EntityType.field_34216, new class_7608(this, var1, 3.0F, true));
+      this.method_28118(EntityType.field_34280, new class_8061(this, var1));
+      this.method_28118(EntityType.field_34215, new class_6296(this));
+      this.method_28118(EntityType.field_34250, new class_326(this));
+      this.method_28118(EntityType.field_34311, new class_6906(this));
+      this.method_28118(EntityType.field_34281, new class_481(this));
+      this.method_28118(EntityType.field_34294, new class_8179(this, 6.0F));
+      this.method_28118(EntityType.field_34307, new class_763(this));
+      this.method_28118(EntityType.field_34306, new class_1824(this));
+      this.method_28118(EntityType.field_34213, new class_6906(this));
+      this.method_28118(EntityType.field_34286, new class_2511(this));
+      this.method_28118(EntityType.field_34266, new class_8263(this));
+      this.method_28118(EntityType.field_34270, new class_6339(this));
+      this.method_28118(EntityType.field_34298, new class_743(this));
+      this.method_28118(EntityType.field_34208, new class_1957(this, var1));
+      this.method_28118(EntityType.field_34319, new class_6823(this, var1));
+      this.method_28118(EntityType.field_34275, new class_6073(this));
+      this.method_28118(EntityType.field_34224, new class_3729(this));
+      this.method_28118(EntityType.field_34327, new class_5879(this));
+      this.method_28118(EntityType.field_34328, new class_1101(this));
+      this.method_28118(EntityType.field_34295, new class_5038(this));
+      this.method_28118(EntityType.field_34239, new class_6906(this));
+      this.method_28118(EntityType.field_34269, new class_1995(this));
+      this.method_28118(EntityType.field_34218, new class_6247(this, 0.92F));
+      this.method_28118(EntityType.field_34214, new class_615(this));
+      this.method_28118(EntityType.field_34313, new class_8768(this));
+      this.method_28118(EntityType.field_34232, new class_2102(this));
+      this.method_28118(EntityType.field_34228, new class_1677(this));
+      this.method_28118(EntityType.field_34246, new class_494(this));
+      this.method_28118(EntityType.field_34252, new class_2124(this));
+      this.method_28118(EntityType.field_34240, new class_1591(this, false));
+      this.method_28118(EntityType.field_34257, new class_1591(this, false));
+      this.method_28118(EntityType.field_34265, new class_564(this));
+      this.method_28118(EntityType.field_34229, new class_9872(this));
+      this.method_28118(EntityType.field_34312, new class_7608(this, var1));
+      this.method_28118(EntityType.field_34315, new class_2207(this));
+      this.method_28118(EntityType.field_34251, new class_1431(this));
+      this.method_28118(EntityType.field_34318, new class_7600(this));
+      this.method_28118(EntityType.field_34236, new class_4990(this));
+      this.method_28118(EntityType.field_34321, new class_5058(this));
+      this.method_28118(EntityType.field_34271, new class_6792(this));
+      this.method_28118(EntityType.field_34231, new class_5595(this));
+      this.method_28118(EntityType.field_34314, new class_5385(this));
+      this.method_28118(EntityType.field_34261, new class_3513(this));
+      this.method_28118(EntityType.field_34241, new class_5258(this));
+      this.method_28118(EntityType.field_34222, new class_5895(this));
+      this.method_28118(EntityType.field_34288, new class_7608(this, var1, 0.75F, true));
+      this.method_28118(EntityType.field_34247, new class_7608(this, var1));
+      this.method_28118(EntityType.field_34253, new class_437(this));
+      this.method_28118(EntityType.field_34209, new class_6906(this));
+      this.method_28118(EntityType.field_34260, new class_4806(this));
+      this.method_28118(EntityType.field_34223, new class_1815(this));
+      this.method_28118(EntityType.field_34292, new class_485(this));
+      this.method_28118(EntityType.field_34322, new class_7459(this));
+      this.method_28118(EntityType.field_34282, new class_9382(this));
+      this.method_28118(EntityType.field_34291, new class_7362(this));
+      this.method_28118(EntityType.field_34230, new class_5879(this));
+      this.method_28118(EntityType.field_34284, new class_9701(this));
+      this.method_28118(EntityType.field_34278, new class_5008(this));
+      this.method_28118(EntityType.field_34283, new class_9391(this));
+      this.method_28118(EntityType.field_34277, new class_7224(this));
+      this.method_28118(EntityType.field_34276, new class_9122(this, var2));
+      this.method_28118(EntityType.field_34255, new class_5117(this));
+      this.method_28118(EntityType.field_34303, new class_5757(this));
+      this.method_28118(EntityType.field_34220, new class_875(this));
+      this.method_28118(EntityType.field_34212, new class_6542(this));
+      this.method_28118(EntityType.field_34317, new class_9547(this));
+      this.method_28118(EntityType.field_34329, new class_9133(this));
+      this.method_28118(EntityType.field_34225, new class_5162(this));
+      this.method_28118(EntityType.field_34244, new class_3081(this));
+      this.method_28118(EntityType.field_34268, new class_3513(this));
+      this.method_28118(EntityType.field_34297, new class_1171(this));
+      this.method_28118(EntityType.field_34234, new class_1591(this, true));
+      this.method_28118(EntityType.field_34227, new class_9805(this, var2));
+      this.method_28118(EntityType.field_34233, new class_737(this));
    }
 
    public EntityRenderDispatcher(TextureManager var1, ItemRenderer var2, class_550 var3, TextRenderer var4, GameOptions var5) {
@@ -155,8 +155,8 @@ public class EntityRenderDispatcher {
    }
 
    public void method_28126() {
-      for (class_6629 var4 : class_8669.field_44400) {
-         if (var4 != class_6629.field_34300 && !this.renderers.containsKey(var4)) {
+      for (EntityType var4 : class_8669.field_44400) {
+         if (var4 != EntityType.field_34300 && !this.renderers.containsKey(var4)) {
             throw new IllegalStateException("No renderer registered for " + class_8669.field_44400.method_39797(var4));
          }
       }
@@ -480,7 +480,7 @@ public class EntityRenderDispatcher {
       return this.textRenderer;
    }
 
-   public Map<class_6629<?>, class_7067<?>> method_28130() {
+   public Map<EntityType<?>, class_7067<?>> method_28130() {
       return this.renderers;
    }
 

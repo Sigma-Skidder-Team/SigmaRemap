@@ -12,7 +12,7 @@ public class class_5614 extends Entity {
    private int field_28512;
 
    public class_5614(World var1, double var2, double var4, double var6, int var8) {
-      this(class_6629.field_34299, var1);
+      this(EntityType.field_34299, var1);
       this.method_37256(var2, var4, var6);
       this.rotationYaw = (float)(this.field_41717.nextDouble() * 360.0);
       this.method_37214(
@@ -21,7 +21,7 @@ public class class_5614 extends Entity {
       this.field_28513 = var8;
    }
 
-   public class_5614(class_6629<? extends class_5614> var1, World var2) {
+   public class_5614(EntityType<? extends class_5614> var1, World var2) {
       super(var1, var2);
    }
 

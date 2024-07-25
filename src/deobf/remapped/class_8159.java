@@ -60,7 +60,7 @@ public class class_8159 {
             )
          ),
          Pair.of(10, new class_1665(400, 1600)),
-         Pair.of(10, new class_6198(class_6629.field_34300, 4)),
+         Pair.of(10, new class_6198(EntityType.field_34300, 4)),
          Pair.of(2, new class_377(class_6044.field_30883, var1, 9, 100, 1200)),
          Pair.of(3, new class_3340(100)),
          Pair.of(99, new class_7046())
@@ -77,8 +77,8 @@ public class class_8159 {
             new class_5197(
                ImmutableMap.of(class_6044.field_30875, class_561.field_3318),
                ImmutableList.of(
-                  Pair.of(class_4741.<class_5834>method_21905(class_6629.field_34276, 8, class_6044.field_30861, var0, 2), 2),
-                  Pair.of(class_4741.<class_5834>method_21905(class_6629.field_34249, 8, class_6044.field_30861, var0, 2), 1),
+                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34276, 8, class_6044.field_30861, var0, 2), 2),
+                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34249, 8, class_6044.field_30861, var0, 2), 1),
                   Pair.of(new class_4716(var0), 1),
                   Pair.of(new class_324(var0, 2), 1),
                   Pair.of(new class_8418(var0), 2),
@@ -113,7 +113,7 @@ public class class_8159 {
       return ImmutableList.of(
          Pair.of(2, new class_5197(ImmutableList.of(Pair.of(new class_5863(class_6044.field_30871, 0.4F, 40), 2), Pair.of(new class_7267(), 2)))),
          Pair.of(10, new class_1665(400, 1600)),
-         Pair.of(10, new class_6198(class_6629.field_34300, 4)),
+         Pair.of(10, new class_6198(EntityType.field_34300, 4)),
          Pair.of(2, new class_377(class_6044.field_30871, var1, 6, 100, 200)),
          Pair.of(3, new class_3340(100)),
          Pair.of(3, new class_5244(class_236.field_783, class_6044.field_30871)),
@@ -138,14 +138,14 @@ public class class_8159 {
             2,
             new class_5197(
                ImmutableList.of(
-                  Pair.of(class_4741.<class_5834>method_21905(class_6629.field_34276, 8, class_6044.field_30861, var1, 2), 2),
+                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34276, 8, class_6044.field_30861, var1, 2), 2),
                   Pair.of(
                      new class_4741<class_7666, class_1899>(
-                        class_6629.field_34276, 8, class_1899::method_8636, class_1899::method_8636, class_6044.field_30892, var1, 2
+                        EntityType.field_34276, 8, class_1899::method_8636, class_1899::method_8636, class_6044.field_30892, var1, 2
                      ),
                      1
                   ),
-                  Pair.of(class_4741.<class_5834>method_21905(class_6629.field_34249, 8, class_6044.field_30861, var1, 2), 1),
+                  Pair.of(class_4741.<class_5834>method_21905(EntityType.field_34249, 8, class_6044.field_30861, var1, 2), 1),
                   Pair.of(new class_4716(var1), 1),
                   Pair.of(new class_324(var1, 2), 1),
                   Pair.of(new class_8418(var1), 1),
@@ -154,7 +154,7 @@ public class class_8159 {
             )
          ),
          Pair.of(3, new class_3340(100)),
-         Pair.of(3, new class_6198(class_6629.field_34300, 4)),
+         Pair.of(3, new class_6198(EntityType.field_34300, 4)),
          Pair.of(3, new class_1665(400, 1600)),
          Pair.of(
             3,
@@ -226,9 +226,9 @@ public class class_8159 {
          5,
          new class_5197(
             ImmutableList.of(
-               Pair.of(new class_6109(class_6629.field_34249, 8.0F), 8),
-               Pair.of(new class_6109(class_6629.field_34276, 8.0F), 2),
-               Pair.of(new class_6109(class_6629.field_34300, 8.0F), 2),
+               Pair.of(new class_6109(EntityType.field_34249, 8.0F), 8),
+               Pair.of(new class_6109(EntityType.field_34276, 8.0F), 2),
+               Pair.of(new class_6109(EntityType.field_34300, 8.0F), 2),
                Pair.of(new class_6109(class_4565.field_22239, 8.0F), 1),
                Pair.of(new class_6109(class_4565.field_22250, 8.0F), 1),
                Pair.of(new class_6109(class_4565.field_22248, 8.0F), 1),
@@ -244,8 +244,8 @@ public class class_8159 {
          5,
          new class_5197(
             ImmutableList.of(
-               Pair.of(new class_6109(class_6629.field_34276, 8.0F), 2),
-               Pair.of(new class_6109(class_6629.field_34300, 8.0F), 2),
+               Pair.of(new class_6109(EntityType.field_34276, 8.0F), 2),
+               Pair.of(new class_6109(EntityType.field_34300, 8.0F), 2),
                Pair.of(new class_102(30, 60), 8)
             )
          )

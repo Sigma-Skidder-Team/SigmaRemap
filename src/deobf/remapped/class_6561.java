@@ -377,7 +377,7 @@ public class class_6561 {
 
    private static Optional<Entity> method_29991(class_1556 var0, CompoundNBT var1) {
       try {
-         return class_6629.method_30475(var1, var0.method_7066());
+         return EntityType.method_30475(var1, var0.method_7066());
       } catch (Exception var5) {
          return Optional.<Entity>empty();
       }

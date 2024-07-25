@@ -4,14 +4,14 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_1437 extends class_4785<class_1437> {
-   private final class_6629<?> field_7758;
+   private final EntityType<?> field_7758;
    private final ITextComponent field_7759;
    private final ITextComponent field_7754;
    private final boolean field_7756;
    private final ITextComponent field_7760;
    private final boolean field_7755;
 
-   public class_1437(class_6629<?> var1, class_6629 var2) {
+   public class_1437(EntityType<?> var1, EntityType var2) {
       this.field_7753 = var1;
       this.field_7758 = var2;
       this.field_7759 = var2.method_30464();

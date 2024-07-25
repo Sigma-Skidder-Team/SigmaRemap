@@ -3,16 +3,16 @@ package remapped;
 public class class_6093 extends class_3429 {
    private static String[] field_31181;
 
-   public class_6093(class_6629<? extends class_6093> var1, World var2) {
+   public class_6093(EntityType<? extends class_6093> var1, World var2) {
       super(var1, var2);
    }
 
    public class_6093(World var1, class_5834 var2) {
-      super(class_6629.field_34219, var2, var1);
+      super(EntityType.field_34219, var2, var1);
    }
 
    public class_6093(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34219, var2, var4, var6, var1);
+      super(EntityType.field_34219, var2, var4, var6, var1);
    }
 
    @Override

@@ -21,16 +21,16 @@ public abstract class class_6749 extends class_5783 {
    private IntOpenHashSet field_34837;
    private List<Entity> field_34841;
 
-   public class_6749(class_6629<? extends class_6749> var1, World var2) {
+   public class_6749(EntityType<? extends class_6749> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_6749(class_6629<? extends class_6749> var1, double var2, double var4, double var6, World var8) {
+   public class_6749(EntityType<? extends class_6749> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
       this.method_37256(var2, var4, var6);
    }
 
-   public class_6749(class_6629<? extends class_6749> var1, class_5834 var2, World var3) {
+   public class_6749(EntityType<? extends class_6749> var1, class_5834 var2, World var3) {
       this(var1, var2.getPosX(), var2.method_37388() - 0.1F, var2.getPosZ(), var3);
       this.method_26159(var2);
       if (var2 instanceof class_704) {
@@ -291,7 +291,7 @@ public abstract class class_6749 extends class_5783 {
          var8 = DamageSource.method_28379(this, this);
       }
 
-      boolean var11 = var4.method_37387() == class_6629.field_34308;
+      boolean var11 = var4.method_37387() == EntityType.field_34308;
       int var12 = var4.method_37230();
       if (this.method_37264() && !var11) {
          var4.method_37178(5);

@@ -7,8 +7,8 @@ public class class_6234 {
    public static final class_9478<class_2451> field_31879 = method_28480("broken", class_8669.field_44382);
    public static final class_9478<class_2451> field_31849 = method_28480("picked_up", class_8669.field_44382);
    public static final class_9478<class_2451> field_31850 = method_28480("dropped", class_8669.field_44382);
-   public static final class_9478<class_6629<?>> field_31832 = method_28480("killed", class_8669.field_44400);
-   public static final class_9478<class_6629<?>> field_31834 = method_28480("killed_by", class_8669.field_44400);
+   public static final class_9478<EntityType<?>> field_31832 = method_28480("killed", class_8669.field_44400);
+   public static final class_9478<EntityType<?>> field_31834 = method_28480("killed_by", class_8669.field_44400);
    public static final class_9478<Identifier> field_31829 = method_28480("custom", class_8669.field_44373);
    public static final Identifier field_31854 = method_28481("leave_game", class_5802.field_29298);
    public static final Identifier field_31835 = method_28481("play_one_minute", class_5802.field_29300);

@@ -55,7 +55,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       return this.field_9485;
    }
 
-   public boolean method_8305(class_6163 var1, BlockPos var2, class_6629<?> var3) {
+   public boolean method_8305(class_6163 var1, BlockPos var2, EntityType<?> var3) {
       return class_3073.method_14070(this.method_8360().field_11821).method_45136(this.method_8336(), var1, var2, var3);
    }
 

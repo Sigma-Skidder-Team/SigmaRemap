@@ -3,16 +3,16 @@ package remapped;
 public class class_7841 extends class_6749 {
    private int field_39755 = 200;
 
-   public class_7841(class_6629<? extends class_7841> var1, World var2) {
+   public class_7841(EntityType<? extends class_7841> var1, World var2) {
       super(var1, var2);
    }
 
    public class_7841(World var1, class_5834 var2) {
-      super(class_6629.field_34260, var2, var1);
+      super(EntityType.field_34260, var2, var1);
    }
 
    public class_7841(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34260, var2, var4, var6, var1);
+      super(EntityType.field_34260, var2, var4, var6, var1);
    }
 
    @Override

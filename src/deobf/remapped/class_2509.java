@@ -2,9 +2,9 @@ package remapped;
 
 public class class_2509 extends class_2451 {
    private static String[] field_12458;
-   private final class_6629<? extends class_4641> field_12457;
+   private final EntityType<? extends class_4641> field_12457;
 
-   public class_2509(class_6629<? extends class_4641> var1, class_317 var2) {
+   public class_2509(EntityType<? extends class_4641> var1, class_317 var2) {
       super(var2);
       this.field_12457 = var1;
    }
@@ -21,8 +21,8 @@ public class class_2509 extends class_2451 {
       } else {
          World var9 = var1.method_21862();
          Object var10;
-         if (this.field_12457 != class_6629.field_34313) {
-            if (this.field_12457 != class_6629.field_34319) {
+         if (this.field_12457 != EntityType.field_34313) {
+            if (this.field_12457 != EntityType.field_34319) {
                return class_6910.method_31659(var9.field_33055);
             }
 
@@ -33,7 +33,7 @@ public class class_2509 extends class_2451 {
 
          CompoundNBT var11 = var8.method_27990();
          if (var11 != null) {
-            class_6629.method_30458(var9, var7, (Entity)var10, var11);
+            EntityType.method_30458(var9, var7, (Entity)var10, var11);
          }
 
          if (!((class_4641)var10).method_21472()) {

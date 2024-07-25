@@ -25,7 +25,7 @@ public class class_1573 {
    }
 
    public static void method_7100(World var0, double var1, double var3, double var5, ItemStack var7) {
-      double var10 = (double)class_6629.field_34208.method_30459();
+      double var10 = (double) EntityType.field_34208.method_30459();
       double var12 = 1.0 - var10;
       double var14 = var10 / 2.0;
       double var16 = Math.floor(var1) + field_8268.nextDouble() * var12 + var14;

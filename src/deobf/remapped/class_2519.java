@@ -9,7 +9,7 @@ public class class_2519 extends class_1173 {
    private boolean field_12482;
    private int field_12484;
 
-   public class_2519(class_6629<? extends class_2519> var1, World var2) {
+   public class_2519(EntityType<? extends class_2519> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_8979(this, this);
       this.field_29915 = 3;

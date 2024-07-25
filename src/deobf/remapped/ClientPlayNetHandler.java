@@ -129,47 +129,47 @@ public class ClientPlayNetHandler implements class_392 {
       double var4 = var1.method_30329();
       double var6 = var1.method_30331();
       double var8 = var1.method_30339();
-      class_6629 var10 = var1.method_30334();
+      EntityType var10 = var1.method_30334();
       Object var11;
-      if (var10 != class_6629.field_34221) {
-         if (var10 != class_6629.field_34311) {
-            if (var10 != class_6629.field_34282) {
-               if (var10 != class_6629.field_34209) {
-                  if (var10 != class_6629.field_34213) {
-                     if (var10 != class_6629.field_34254) {
-                        if (var10 != class_6629.field_34239) {
-                           if (var10 != class_6629.field_34215) {
-                              if (var10 != class_6629.field_34290) {
-                                 if (var10 != class_6629.field_34260) {
-                                    if (var10 != class_6629.field_34284) {
-                                       if (var10 != class_6629.field_34247) {
-                                          if (var10 != class_6629.field_34328) {
-                                             if (var10 != class_6629.field_34319) {
-                                                if (var10 != class_6629.field_34275) {
-                                                   if (var10 != class_6629.field_34259) {
-                                                      if (var10 != class_6629.field_34323) {
-                                                         if (var10 != class_6629.field_34280) {
-                                                            if (var10 != class_6629.field_34216) {
-                                                               if (var10 != class_6629.field_34267) {
-                                                                  if (var10 != class_6629.field_34288) {
-                                                                     if (var10 != class_6629.field_34329) {
-                                                                        if (var10 != class_6629.field_34271) {
-                                                                           if (var10 != class_6629.field_34274) {
-                                                                              if (var10 != class_6629.field_34309) {
-                                                                                 if (var10 != class_6629.field_34312) {
-                                                                                    if (var10 != class_6629.field_34219) {
-                                                                                       if (var10 != class_6629.field_34330) {
-                                                                                          if (var10 != class_6629.field_34291) {
-                                                                                             if (var10 != class_6629.field_34289) {
-                                                                                                if (var10 != class_6629.field_34273) {
-                                                                                                   if (var10 != class_6629.field_34208) {
-                                                                                                      if (var10 != class_6629.field_34245) {
-                                                                                                         if (var10 != class_6629.field_34279) {
-                                                                                                            if (var10 != class_6629.field_34224) {
+      if (var10 != EntityType.field_34221) {
+         if (var10 != EntityType.field_34311) {
+            if (var10 != EntityType.field_34282) {
+               if (var10 != EntityType.field_34209) {
+                  if (var10 != EntityType.field_34213) {
+                     if (var10 != EntityType.field_34254) {
+                        if (var10 != EntityType.field_34239) {
+                           if (var10 != EntityType.field_34215) {
+                              if (var10 != EntityType.field_34290) {
+                                 if (var10 != EntityType.field_34260) {
+                                    if (var10 != EntityType.field_34284) {
+                                       if (var10 != EntityType.field_34247) {
+                                          if (var10 != EntityType.field_34328) {
+                                             if (var10 != EntityType.field_34319) {
+                                                if (var10 != EntityType.field_34275) {
+                                                   if (var10 != EntityType.field_34259) {
+                                                      if (var10 != EntityType.field_34323) {
+                                                         if (var10 != EntityType.field_34280) {
+                                                            if (var10 != EntityType.field_34216) {
+                                                               if (var10 != EntityType.field_34267) {
+                                                                  if (var10 != EntityType.field_34288) {
+                                                                     if (var10 != EntityType.field_34329) {
+                                                                        if (var10 != EntityType.field_34271) {
+                                                                           if (var10 != EntityType.field_34274) {
+                                                                              if (var10 != EntityType.field_34309) {
+                                                                                 if (var10 != EntityType.field_34312) {
+                                                                                    if (var10 != EntityType.field_34219) {
+                                                                                       if (var10 != EntityType.field_34330) {
+                                                                                          if (var10 != EntityType.field_34291) {
+                                                                                             if (var10 != EntityType.field_34289) {
+                                                                                                if (var10 != EntityType.field_34273) {
+                                                                                                   if (var10 != EntityType.field_34208) {
+                                                                                                      if (var10 != EntityType.field_34245) {
+                                                                                                         if (var10 != EntityType.field_34279) {
+                                                                                                            if (var10 != EntityType.field_34224) {
                                                                                                                var11 = null;
                                                                                                             } else {
                                                                                                                var11 = new class_900(
-                                                                                                                  class_6629.field_34224, this.field_6021
+                                                                                                                  EntityType.field_34224, this.field_6021
                                                                                                                );
                                                                                                             }
                                                                                                          } else {
@@ -743,7 +743,7 @@ public class ClientPlayNetHandler implements class_392 {
       double var8 = var1.method_19697();
       float var10 = (float)(var1.method_19700() * 360) / 256.0F;
       float var11 = (float)(var1.method_19696() * 360) / 256.0F;
-      class_5834 var12 = (class_5834)class_6629.method_30482(var1.method_19692(), this.field_6026.theWorld);
+      class_5834 var12 = (class_5834) EntityType.method_30482(var1.method_19692(), this.field_6026.theWorld);
       if (var12 == null) {
          field_6038.warn("Skipping Entity with id {}", var1.method_19692());
       } else {

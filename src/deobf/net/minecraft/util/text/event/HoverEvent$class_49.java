@@ -19,16 +19,16 @@ import remapped.class_2392;
 import remapped.Identifier;
 import remapped.CompoundNBT;
 import remapped.class_6539;
-import remapped.class_6629;
+import remapped.EntityType;
 import remapped.class_8669;
 
 public class HoverEvent$class_49 {
-   public final class_6629<?> type;
+   public final EntityType<?> type;
    public final UUID id;
    public final ITextComponent name;
    private List<ITextComponent> field_240680_d_;
 
-   public HoverEvent$class_49(class_6629<?> type, UUID id, ITextComponent name) {
+   public HoverEvent$class_49(EntityType<?> type, UUID id, ITextComponent name) {
       this.type = type;
       this.id = id;
       this.name = name;
@@ -40,7 +40,7 @@ public class HoverEvent$class_49 {
          return null;
       } else {
          JsonObject entitytype = element.getAsJsonObject();
-         class_6629 uuid = class_8669.field_44400.method_39806(new Identifier(class_6539.method_29796(entitytype, "type")));
+         EntityType uuid = class_8669.field_44400.method_39806(new Identifier(class_6539.method_29796(entitytype, "type")));
          UUID itextcomponent = UUID.fromString(class_6539.method_29796(entitytype, "id"));
          IFormattableTextComponent var6 = ITextComponent$class_40.func_240641_a_(entitytype.get("name"));
          return new HoverEvent$class_49(uuid, itextcomponent, var6);
@@ -52,7 +52,7 @@ public class HoverEvent$class_49 {
       try {
          CompoundNBT itextcomponent = class_2392.method_10916(component.getString());
          IFormattableTextComponent entitytype = ITextComponent$class_40.func_240643_a_(itextcomponent.method_25965("name"));
-         class_6629 uuid = class_8669.field_44400.method_39806(new Identifier(itextcomponent.method_25965("type")));
+         EntityType uuid = class_8669.field_44400.method_39806(new Identifier(itextcomponent.method_25965("type")));
          UUID var6 = UUID.fromString(itextcomponent.method_25965("id"));
          return new HoverEvent$class_49(uuid, var6, entitytype);
       } catch (JsonSyntaxException | CommandSyntaxException var7) {

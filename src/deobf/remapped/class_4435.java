@@ -2,7 +2,7 @@ package remapped;
 
 public class class_4435 extends class_6126 {
    public class_4435() {
-      super(class_6629.field_34270, "illusioner", 0.5F, new String[]{"illusion_illager"});
+      super(EntityType.field_34270, "illusioner", 0.5F, new String[]{"illusion_illager"});
    }
 
    @Override

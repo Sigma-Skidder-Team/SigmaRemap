@@ -30,7 +30,7 @@ public class class_3664 implements Consumer<Consumer<class_3139>> {
             true,
             false
          )
-         .method_15272("killed_dragon", class_3780.method_17504(class_2184.method_10127().method_10134(class_6629.field_34310)))
+         .method_15272("killed_dragon", class_3780.method_17504(class_2184.method_10127().method_10134(EntityType.field_34310)))
          .method_15270(var1, "end/kill_dragon");
       class_3139 var6 = class_3321.method_15269()
          .method_15274(var5)
@@ -58,7 +58,7 @@ public class class_3664 implements Consumer<Consumer<class_3139>> {
             true,
             false
          )
-         .method_15272("summoned_dragon", class_146.method_566(class_2184.method_10127().method_10134(class_6629.field_34310)))
+         .method_15272("summoned_dragon", class_146.method_566(class_2184.method_10127().method_10134(EntityType.field_34310)))
          .method_15270(var1, "end/respawn_dragon");
       class_3139 var7 = class_3321.method_15269()
          .method_15274(var6)

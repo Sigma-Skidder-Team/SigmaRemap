@@ -14,7 +14,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    private CompoundNBT field_47748;
    private int field_47751;
 
-   public class_9355(class_6629<? extends class_9355> var1, World var2) {
+   public class_9355(EntityType<? extends class_9355> var1, World var2) {
       super(var1, var2);
       this.method_43207(this.method_15891().method_13909(class_8669.field_44425.method_24525(this.field_41717)));
    }
@@ -150,7 +150,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    private void method_43204(class_6331 var1) {
-      class_7666 var4 = this.<class_7666>method_26898(class_6629.field_34276, false);
+      class_7666 var4 = this.<class_7666>method_26898(EntityType.field_34276, false);
 
       for (class_6943 var8 : class_6943.values()) {
          ItemStack var9 = this.method_26520(var8);

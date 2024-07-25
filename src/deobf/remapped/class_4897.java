@@ -845,7 +845,7 @@ public class class_4897 {
       "cooked_porkchop", new class_2451(new class_317().method_1474(class_8230.field_42274).method_1483(class_5465.field_27843))
    );
    public static final class_2451 field_24370 = method_22435(
-      "painting", new class_2509(class_6629.field_34313, new class_317().method_1474(class_8230.field_42277))
+      "painting", new class_2509(EntityType.field_34313, new class_317().method_1474(class_8230.field_42277))
    );
    public static final class_2451 field_25037 = method_22435(
       "golden_apple",
@@ -904,17 +904,17 @@ public class class_4897 {
       "milk_bucket", new class_3503(new class_317().method_1485(field_24548).method_1480(1).method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25174 = method_22435(
-      "pufferfish_bucket", new class_2988(class_6629.field_34315, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
+      "pufferfish_bucket", new class_2988(EntityType.field_34315, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25221 = method_22435(
-      "salmon_bucket", new class_2988(class_6629.field_34236, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
+      "salmon_bucket", new class_2988(EntityType.field_34236, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24757 = method_22435(
-      "cod_bucket", new class_2988(class_6629.field_34262, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
+      "cod_bucket", new class_2988(EntityType.field_34262, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25286 = method_22435(
       "tropical_fish_bucket",
-      new class_2988(class_6629.field_34278, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
+      new class_2988(EntityType.field_34278, class_8532.field_43674, new class_317().method_1480(1).method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24755 = method_22435("brick", new class_2451(new class_317().method_1474(class_8230.field_42260)));
    public static final class_2451 field_24789 = method_22435("clay_ball", new class_2451(new class_317().method_1474(class_8230.field_42260)));
@@ -1110,196 +1110,196 @@ public class class_4897 {
    public static final class_2451 field_24519 = method_22435("ender_eye", new class_7166(new class_317().method_1474(class_8230.field_42261)));
    public static final class_2451 field_24459 = method_22435("glistering_melon_slice", new class_2451(new class_317().method_1474(class_8230.field_42272)));
    public static final class_2451 field_24819 = method_22435(
-      "bat_spawn_egg", new class_3003(class_6629.field_34217, 4996656, 986895, new class_317().method_1474(class_8230.field_42261))
+      "bat_spawn_egg", new class_3003(EntityType.field_34217, 4996656, 986895, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24366 = method_22435(
-      "bee_spawn_egg", new class_3003(class_6629.field_34238, 15582019, 4400155, new class_317().method_1474(class_8230.field_42261))
+      "bee_spawn_egg", new class_3003(EntityType.field_34238, 15582019, 4400155, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24496 = method_22435(
-      "blaze_spawn_egg", new class_3003(class_6629.field_34301, 16167425, 16775294, new class_317().method_1474(class_8230.field_42261))
+      "blaze_spawn_egg", new class_3003(EntityType.field_34301, 16167425, 16775294, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25032 = method_22435(
-      "cat_spawn_egg", new class_3003(class_6629.field_34249, 15714446, 9794134, new class_317().method_1474(class_8230.field_42261))
+      "cat_spawn_egg", new class_3003(EntityType.field_34249, 15714446, 9794134, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25208 = method_22435(
-      "cave_spider_spawn_egg", new class_3003(class_6629.field_34272, 803406, 11013646, new class_317().method_1474(class_8230.field_42261))
+      "cave_spider_spawn_egg", new class_3003(EntityType.field_34272, 803406, 11013646, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24663 = method_22435(
-      "chicken_spawn_egg", new class_3003(class_6629.field_34263, 10592673, 16711680, new class_317().method_1474(class_8230.field_42261))
+      "chicken_spawn_egg", new class_3003(EntityType.field_34263, 10592673, 16711680, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24738 = method_22435(
-      "cod_spawn_egg", new class_3003(class_6629.field_34262, 12691306, 15058059, new class_317().method_1474(class_8230.field_42261))
+      "cod_spawn_egg", new class_3003(EntityType.field_34262, 12691306, 15058059, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24658 = method_22435(
-      "cow_spawn_egg", new class_3003(class_6629.field_34325, 4470310, 10592673, new class_317().method_1474(class_8230.field_42261))
+      "cow_spawn_egg", new class_3003(EntityType.field_34325, 4470310, 10592673, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24495 = method_22435(
-      "creeper_spawn_egg", new class_3003(class_6629.field_34210, 894731, 0, new class_317().method_1474(class_8230.field_42261))
+      "creeper_spawn_egg", new class_3003(EntityType.field_34210, 894731, 0, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24351 = method_22435(
-      "dolphin_spawn_egg", new class_3003(class_6629.field_34320, 2243405, 16382457, new class_317().method_1474(class_8230.field_42261))
+      "dolphin_spawn_egg", new class_3003(EntityType.field_34320, 2243405, 16382457, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24462 = method_22435(
-      "donkey_spawn_egg", new class_3003(class_6629.field_34248, 5457209, 8811878, new class_317().method_1474(class_8230.field_42261))
+      "donkey_spawn_egg", new class_3003(EntityType.field_34248, 5457209, 8811878, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24736 = method_22435(
-      "drowned_spawn_egg", new class_3003(class_6629.field_34211, 9433559, 7969893, new class_317().method_1474(class_8230.field_42261))
+      "drowned_spawn_egg", new class_3003(EntityType.field_34211, 9433559, 7969893, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24899 = method_22435(
-      "elder_guardian_spawn_egg", new class_3003(class_6629.field_34324, 13552826, 7632531, new class_317().method_1474(class_8230.field_42261))
+      "elder_guardian_spawn_egg", new class_3003(EntityType.field_34324, 13552826, 7632531, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25012 = method_22435(
-      "enderman_spawn_egg", new class_3003(class_6629.field_34308, 1447446, 0, new class_317().method_1474(class_8230.field_42261))
+      "enderman_spawn_egg", new class_3003(EntityType.field_34308, 1447446, 0, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25098 = method_22435(
-      "endermite_spawn_egg", new class_3003(class_6629.field_34264, 1447446, 7237230, new class_317().method_1474(class_8230.field_42261))
+      "endermite_spawn_egg", new class_3003(EntityType.field_34264, 1447446, 7237230, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24537 = method_22435(
-      "evoker_spawn_egg", new class_3003(class_6629.field_34296, 9804699, 1973274, new class_317().method_1474(class_8230.field_42261))
+      "evoker_spawn_egg", new class_3003(EntityType.field_34296, 9804699, 1973274, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24602 = method_22435(
-      "fox_spawn_egg", new class_3003(class_6629.field_34250, 14005919, 13396256, new class_317().method_1474(class_8230.field_42261))
+      "fox_spawn_egg", new class_3003(EntityType.field_34250, 14005919, 13396256, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24775 = method_22435(
-      "ghast_spawn_egg", new class_3003(class_6629.field_34281, 16382457, 12369084, new class_317().method_1474(class_8230.field_42261))
+      "ghast_spawn_egg", new class_3003(EntityType.field_34281, 16382457, 12369084, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24650 = method_22435(
-      "guardian_spawn_egg", new class_3003(class_6629.field_34307, 5931634, 15826224, new class_317().method_1474(class_8230.field_42261))
+      "guardian_spawn_egg", new class_3003(EntityType.field_34307, 5931634, 15826224, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25023 = method_22435(
-      "hoglin_spawn_egg", new class_3003(class_6629.field_34306, 13004373, 6251620, new class_317().method_1474(class_8230.field_42261))
+      "hoglin_spawn_egg", new class_3003(EntityType.field_34306, 13004373, 6251620, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24378 = method_22435(
-      "horse_spawn_egg", new class_3003(class_6629.field_34286, 12623485, 15656192, new class_317().method_1474(class_8230.field_42261))
+      "horse_spawn_egg", new class_3003(EntityType.field_34286, 12623485, 15656192, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24527 = method_22435(
-      "husk_spawn_egg", new class_3003(class_6629.field_34266, 7958625, 15125652, new class_317().method_1474(class_8230.field_42261))
+      "husk_spawn_egg", new class_3003(EntityType.field_34266, 7958625, 15125652, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24988 = method_22435(
-      "llama_spawn_egg", new class_3003(class_6629.field_34327, 12623485, 10051392, new class_317().method_1474(class_8230.field_42261))
+      "llama_spawn_egg", new class_3003(EntityType.field_34327, 12623485, 10051392, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25191 = method_22435(
-      "magma_cube_spawn_egg", new class_3003(class_6629.field_34295, 3407872, 16579584, new class_317().method_1474(class_8230.field_42261))
+      "magma_cube_spawn_egg", new class_3003(EntityType.field_34295, 3407872, 16579584, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24332 = method_22435(
-      "mooshroom_spawn_egg", new class_3003(class_6629.field_34269, 10489616, 12040119, new class_317().method_1474(class_8230.field_42261))
+      "mooshroom_spawn_egg", new class_3003(EntityType.field_34269, 10489616, 12040119, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24450 = method_22435(
-      "mule_spawn_egg", new class_3003(class_6629.field_34218, 1769984, 5321501, new class_317().method_1474(class_8230.field_42261))
+      "mule_spawn_egg", new class_3003(EntityType.field_34218, 1769984, 5321501, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24691 = method_22435(
-      "ocelot_spawn_egg", new class_3003(class_6629.field_34214, 15720061, 5653556, new class_317().method_1474(class_8230.field_42261))
+      "ocelot_spawn_egg", new class_3003(EntityType.field_34214, 15720061, 5653556, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24951 = method_22435(
-      "panda_spawn_egg", new class_3003(class_6629.field_34232, 15198183, 1776418, new class_317().method_1474(class_8230.field_42261))
+      "panda_spawn_egg", new class_3003(EntityType.field_34232, 15198183, 1776418, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25228 = method_22435(
-      "parrot_spawn_egg", new class_3003(class_6629.field_34228, 894731, 16711680, new class_317().method_1474(class_8230.field_42261))
+      "parrot_spawn_egg", new class_3003(EntityType.field_34228, 894731, 16711680, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24666 = method_22435(
-      "phantom_spawn_egg", new class_3003(class_6629.field_34246, 4411786, 8978176, new class_317().method_1474(class_8230.field_42261))
+      "phantom_spawn_egg", new class_3003(EntityType.field_34246, 4411786, 8978176, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24801 = method_22435(
-      "pig_spawn_egg", new class_3003(class_6629.field_34252, 15771042, 14377823, new class_317().method_1474(class_8230.field_42261))
+      "pig_spawn_egg", new class_3003(EntityType.field_34252, 15771042, 14377823, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24980 = method_22435(
-      "piglin_spawn_egg", new class_3003(class_6629.field_34240, 10051392, 16380836, new class_317().method_1474(class_8230.field_42261))
+      "piglin_spawn_egg", new class_3003(EntityType.field_34240, 10051392, 16380836, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24434 = method_22435(
-      "piglin_brute_spawn_egg", new class_3003(class_6629.field_34257, 5843472, 16380836, new class_317().method_1474(class_8230.field_42261))
+      "piglin_brute_spawn_egg", new class_3003(EntityType.field_34257, 5843472, 16380836, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24642 = method_22435(
-      "pillager_spawn_egg", new class_3003(class_6629.field_34265, 5451574, 9804699, new class_317().method_1474(class_8230.field_42261))
+      "pillager_spawn_egg", new class_3003(EntityType.field_34265, 5451574, 9804699, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25295 = method_22435(
-      "polar_bear_spawn_egg", new class_3003(class_6629.field_34229, 15921906, 9803152, new class_317().method_1474(class_8230.field_42261))
+      "polar_bear_spawn_egg", new class_3003(EntityType.field_34229, 15921906, 9803152, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24470 = method_22435(
-      "pufferfish_spawn_egg", new class_3003(class_6629.field_34315, 16167425, 3654642, new class_317().method_1474(class_8230.field_42261))
+      "pufferfish_spawn_egg", new class_3003(EntityType.field_34315, 16167425, 3654642, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24815 = method_22435(
-      "rabbit_spawn_egg", new class_3003(class_6629.field_34251, 10051392, 7555121, new class_317().method_1474(class_8230.field_42261))
+      "rabbit_spawn_egg", new class_3003(EntityType.field_34251, 10051392, 7555121, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24499 = method_22435(
-      "ravager_spawn_egg", new class_3003(class_6629.field_34318, 7697520, 5984329, new class_317().method_1474(class_8230.field_42261))
+      "ravager_spawn_egg", new class_3003(EntityType.field_34318, 7697520, 5984329, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25007 = method_22435(
-      "salmon_spawn_egg", new class_3003(class_6629.field_34236, 10489616, 951412, new class_317().method_1474(class_8230.field_42261))
+      "salmon_spawn_egg", new class_3003(EntityType.field_34236, 10489616, 951412, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25058 = method_22435(
-      "sheep_spawn_egg", new class_3003(class_6629.field_34321, 15198183, 16758197, new class_317().method_1474(class_8230.field_42261))
+      "sheep_spawn_egg", new class_3003(EntityType.field_34321, 15198183, 16758197, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24847 = method_22435(
-      "shulker_spawn_egg", new class_3003(class_6629.field_34231, 9725844, 5060690, new class_317().method_1474(class_8230.field_42261))
+      "shulker_spawn_egg", new class_3003(EntityType.field_34231, 9725844, 5060690, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25018 = method_22435(
-      "silverfish_spawn_egg", new class_3003(class_6629.field_34314, 7237230, 3158064, new class_317().method_1474(class_8230.field_42261))
+      "silverfish_spawn_egg", new class_3003(EntityType.field_34314, 7237230, 3158064, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25252 = method_22435(
-      "skeleton_spawn_egg", new class_3003(class_6629.field_34241, 12698049, 4802889, new class_317().method_1474(class_8230.field_42261))
+      "skeleton_spawn_egg", new class_3003(EntityType.field_34241, 12698049, 4802889, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25048 = method_22435(
-      "skeleton_horse_spawn_egg", new class_3003(class_6629.field_34261, 6842447, 15066584, new class_317().method_1474(class_8230.field_42261))
+      "skeleton_horse_spawn_egg", new class_3003(EntityType.field_34261, 6842447, 15066584, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24629 = method_22435(
-      "slime_spawn_egg", new class_3003(class_6629.field_34222, 5349438, 8306542, new class_317().method_1474(class_8230.field_42261))
+      "slime_spawn_egg", new class_3003(EntityType.field_34222, 5349438, 8306542, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24614 = method_22435(
-      "spider_spawn_egg", new class_3003(class_6629.field_34223, 3419431, 11013646, new class_317().method_1474(class_8230.field_42261))
+      "spider_spawn_egg", new class_3003(EntityType.field_34223, 3419431, 11013646, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25301 = method_22435(
-      "squid_spawn_egg", new class_3003(class_6629.field_34292, 2243405, 7375001, new class_317().method_1474(class_8230.field_42261))
+      "squid_spawn_egg", new class_3003(EntityType.field_34292, 2243405, 7375001, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24759 = method_22435(
-      "stray_spawn_egg", new class_3003(class_6629.field_34322, 6387319, 14543594, new class_317().method_1474(class_8230.field_42261))
+      "stray_spawn_egg", new class_3003(EntityType.field_34322, 6387319, 14543594, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24418 = method_22435(
-      "strider_spawn_egg", new class_3003(class_6629.field_34233, 10236982, 5065037, new class_317().method_1474(class_8230.field_42261))
+      "strider_spawn_egg", new class_3003(EntityType.field_34233, 10236982, 5065037, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24502 = method_22435(
-      "trader_llama_spawn_egg", new class_3003(class_6629.field_34230, 15377456, 4547222, new class_317().method_1474(class_8230.field_42261))
+      "trader_llama_spawn_egg", new class_3003(EntityType.field_34230, 15377456, 4547222, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24568 = method_22435(
-      "tropical_fish_spawn_egg", new class_3003(class_6629.field_34278, 15690005, 16775663, new class_317().method_1474(class_8230.field_42261))
+      "tropical_fish_spawn_egg", new class_3003(EntityType.field_34278, 15690005, 16775663, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25184 = method_22435(
-      "turtle_spawn_egg", new class_3003(class_6629.field_34283, 15198183, 44975, new class_317().method_1474(class_8230.field_42261))
+      "turtle_spawn_egg", new class_3003(EntityType.field_34283, 15198183, 44975, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24439 = method_22435(
-      "vex_spawn_egg", new class_3003(class_6629.field_34277, 8032420, 15265265, new class_317().method_1474(class_8230.field_42261))
+      "vex_spawn_egg", new class_3003(EntityType.field_34277, 8032420, 15265265, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25034 = method_22435(
-      "villager_spawn_egg", new class_3003(class_6629.field_34276, 5651507, 12422002, new class_317().method_1474(class_8230.field_42261))
+      "villager_spawn_egg", new class_3003(EntityType.field_34276, 5651507, 12422002, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24423 = method_22435(
-      "vindicator_spawn_egg", new class_3003(class_6629.field_34255, 9804699, 2580065, new class_317().method_1474(class_8230.field_42261))
+      "vindicator_spawn_egg", new class_3003(EntityType.field_34255, 9804699, 2580065, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24678 = method_22435(
-      "wandering_trader_spawn_egg", new class_3003(class_6629.field_34303, 4547222, 15377456, new class_317().method_1474(class_8230.field_42261))
+      "wandering_trader_spawn_egg", new class_3003(EntityType.field_34303, 4547222, 15377456, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_25105 = method_22435(
-      "witch_spawn_egg", new class_3003(class_6629.field_34220, 3407872, 5349438, new class_317().method_1474(class_8230.field_42261))
+      "witch_spawn_egg", new class_3003(EntityType.field_34220, 3407872, 5349438, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24904 = method_22435(
-      "wither_skeleton_spawn_egg", new class_3003(class_6629.field_34317, 1315860, 4672845, new class_317().method_1474(class_8230.field_42261))
+      "wither_skeleton_spawn_egg", new class_3003(EntityType.field_34317, 1315860, 4672845, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24770 = method_22435(
-      "wolf_spawn_egg", new class_3003(class_6629.field_34225, 14144467, 13545366, new class_317().method_1474(class_8230.field_42261))
+      "wolf_spawn_egg", new class_3003(EntityType.field_34225, 14144467, 13545366, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24964 = method_22435(
-      "zoglin_spawn_egg", new class_3003(class_6629.field_34244, 13004373, 15132390, new class_317().method_1474(class_8230.field_42261))
+      "zoglin_spawn_egg", new class_3003(EntityType.field_34244, 13004373, 15132390, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24493 = method_22435(
-      "zombie_spawn_egg", new class_3003(class_6629.field_34297, 44975, 7969893, new class_317().method_1474(class_8230.field_42261))
+      "zombie_spawn_egg", new class_3003(EntityType.field_34297, 44975, 7969893, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24677 = method_22435(
-      "zombie_horse_spawn_egg", new class_3003(class_6629.field_34268, 3232308, 9945732, new class_317().method_1474(class_8230.field_42261))
+      "zombie_horse_spawn_egg", new class_3003(EntityType.field_34268, 3232308, 9945732, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24558 = method_22435(
-      "zombie_villager_spawn_egg", new class_3003(class_6629.field_34227, 5651507, 7969893, new class_317().method_1474(class_8230.field_42261))
+      "zombie_villager_spawn_egg", new class_3003(EntityType.field_34227, 5651507, 7969893, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24868 = method_22435(
-      "zombified_piglin_spawn_egg", new class_3003(class_6629.field_34234, 15373203, 5009705, new class_317().method_1474(class_8230.field_42261))
+      "zombified_piglin_spawn_egg", new class_3003(EntityType.field_34234, 15373203, 5009705, new class_317().method_1474(class_8230.field_42261))
    );
    public static final class_2451 field_24623 = method_22435(
       "experience_bottle", new class_5229(new class_317().method_1474(class_8230.field_42261).method_1477(class_5053.field_26120))
@@ -1347,10 +1347,10 @@ public class class_4897 {
       new class_741(class_4783.field_23363, class_4783.field_23376, new class_317().method_1474(class_8230.field_42277).method_1477(class_5053.field_26120))
    );
    public static final class_2451 field_25186 = method_22435(
-      "carrot_on_a_stick", new class_7615<class_9405>(new class_317().method_1478(25).method_1474(class_8230.field_42265), class_6629.field_34252, 7)
+      "carrot_on_a_stick", new class_7615<class_9405>(new class_317().method_1478(25).method_1474(class_8230.field_42265), EntityType.field_34252, 7)
    );
    public static final class_2451 field_24651 = method_22435(
-      "warped_fungus_on_a_stick", new class_7615<class_1775>(new class_317().method_1478(100).method_1474(class_8230.field_42265), class_6629.field_34233, 1)
+      "warped_fungus_on_a_stick", new class_7615<class_1775>(new class_317().method_1478(100).method_1474(class_8230.field_42265), EntityType.field_34233, 1)
    );
    public static final class_2451 field_24381 = method_22435(
       "nether_star", new class_9467(new class_317().method_1474(class_8230.field_42260).method_1477(class_5053.field_26120))

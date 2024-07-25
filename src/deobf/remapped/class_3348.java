@@ -9,19 +9,19 @@ public class class_3348 extends class_6749 {
    private boolean field_16518;
    public int field_16517;
 
-   public class_3348(class_6629<? extends class_3348> var1, World var2) {
+   public class_3348(EntityType<? extends class_3348> var1, World var2) {
       super(var1, var2);
    }
 
    public class_3348(World var1, class_5834 var2, ItemStack var3) {
-      super(class_6629.field_34284, var2, var1);
+      super(EntityType.field_34284, var2, var1);
       this.field_16520 = var3.method_27973();
       this.field_41735.method_36633(field_16515, (byte)class_2931.method_13431(var3));
       this.field_41735.method_36633(field_16516, var3.method_27977());
    }
 
    public class_3348(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34284, var2, var4, var6, var1);
+      super(EntityType.field_34284, var2, var4, var6, var1);
    }
 
    @Override
@@ -103,7 +103,7 @@ public class class_3348 extends class_6749 {
       this.field_16518 = true;
       class_8461 var8 = class_463.field_2442;
       if (var4.attackEntityFrom(var7, var5)) {
-         if (var4.method_37387() == class_6629.field_34308) {
+         if (var4.method_37387() == EntityType.field_34308) {
             return;
          }
 
@@ -123,7 +123,7 @@ public class class_3348 extends class_6749 {
       if (this.world instanceof class_6331 && this.world.method_29570() && class_2931.method_13424(this.field_16520)) {
          BlockPos var10 = var4.method_37075();
          if (this.world.method_25263(var10)) {
-            class_900 var11 = class_6629.field_34224.method_30484(this.world);
+            class_900 var11 = EntityType.field_34224.method_30484(this.world);
             var11.method_37196(class_1343.method_6200(var10));
             var11.method_3857(!(var12 instanceof class_9359) ? null : (class_9359)var12);
             this.world.method_7509(var11);

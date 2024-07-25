@@ -10,7 +10,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    private static final class_8137 field_48085 = class_8137.method_37019(class_4897.field_25136, class_4897.field_25273, class_4897.field_24362);
    private final class_686 field_48087 = new class_686(this.field_41735, field_48089, field_48088);
 
-   public class_9405(class_6629<? extends class_9405> var1, World var2) {
+   public class_9405(EntityType<? extends class_9405> var1, World var2) {
       super(var1, var2);
    }
 
@@ -179,7 +179,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
       if (var1.method_43370() == class_423.field_1790) {
          super.method_37384(var1, var2);
       } else {
-         class_1918 var5 = class_6629.field_34234.method_30484(var1);
+         class_1918 var5 = EntityType.field_34234.method_30484(var1);
          var5.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25057));
          var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method_26888(this.method_26859());
@@ -216,7 +216,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    public class_9405 method_43572(class_6331 var1, class_1899 var2) {
-      return class_6629.field_34252.method_30484(var1);
+      return EntityType.field_34252.method_30484(var1);
    }
 
    @Override

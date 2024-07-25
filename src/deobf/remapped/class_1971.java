@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1971 extends class_2733 {
    public class_1971() {
-      super(class_6629.field_34301, "blaze", 0.5F);
+      super(EntityType.field_34301, "blaze", 0.5F);
    }
 
    @Override

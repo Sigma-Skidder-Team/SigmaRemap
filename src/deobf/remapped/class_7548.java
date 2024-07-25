@@ -3,12 +3,12 @@ package remapped;
 public class class_7548 extends class_5783 {
    private static String[] field_38497;
 
-   public class_7548(class_6629<? extends class_7548> var1, World var2) {
+   public class_7548(EntityType<? extends class_7548> var1, World var2) {
       super(var1, var2);
    }
 
    public class_7548(World var1, class_9310 var2) {
-      this(class_6629.field_34328, var1);
+      this(EntityType.field_34328, var1);
       super.method_26159(var2);
       this.method_37256(
          var2.getPosX() - (double)(var2.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(var2.field_29605 * (float) (Math.PI / 180.0)),
@@ -18,7 +18,7 @@ public class class_7548 extends class_5783 {
    }
 
    public class_7548(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      this(class_6629.field_34328, var1);
+      this(EntityType.field_34328, var1);
       this.method_37256(var2, var4, var6);
 
       for (int var16 = 0; var16 < 7; var16++) {

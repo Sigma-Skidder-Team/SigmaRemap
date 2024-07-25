@@ -6,7 +6,7 @@ public abstract class class_7067<T extends Entity> {
    public final EntityRenderDispatcher field_36493;
    public float field_36492;
    public float field_36494 = 1.0F;
-   private class_6629 field_36490 = null;
+   private EntityType field_36490 = null;
    private Identifier field_36491 = null;
 
    public class_7067(EntityRenderDispatcher var1) {
@@ -111,12 +111,12 @@ public abstract class class_7067<T extends Entity> {
       return this.field_36493;
    }
 
-   public class_222<class_6629, class_133> method_32557() {
-      return this.field_36490 != null ? class_222.<class_6629, class_133>method_939(this.field_36490) : null;
+   public class_222<EntityType, class_133> method_32557() {
+      return this.field_36490 != null ? class_222.<EntityType, class_133>method_939(this.field_36490) : null;
    }
 
-   public void method_32547(class_222<class_6629, class_133> var1) {
-      this.field_36490 = (class_6629)var1.method_940().get();
+   public void method_32547(class_222<EntityType, class_133> var1) {
+      this.field_36490 = (EntityType)var1.method_940().get();
    }
 
    public Identifier method_32556() {

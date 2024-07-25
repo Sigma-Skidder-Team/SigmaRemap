@@ -10,7 +10,7 @@ public class class_900 extends Entity {
    private boolean field_4620;
    private class_9359 field_4621;
 
-   public class_900(class_6629<? extends class_900> var1, World var2) {
+   public class_900(EntityType<? extends class_900> var1, World var2) {
       super(var1, var2);
       this.field_41750 = true;
       this.field_4622 = 2;

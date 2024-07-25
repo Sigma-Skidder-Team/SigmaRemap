@@ -8,11 +8,11 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
    private Identifier field_1063;
    private long field_1064;
 
-   public class_292(class_6629<?> var1, World var2) {
+   public class_292(EntityType<?> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_292(class_6629<?> var1, double var2, double var4, double var6, World var8) {
+   public class_292(EntityType<?> var1, double var2, double var4, double var6, World var8) {
       super(var1, var8, var2, var4, var6);
    }
 
@@ -23,7 +23,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
          class_1573.method_7105(this.world, this, this);
          if (!this.world.field_33055) {
             Entity var4 = var1.method_28353();
-            if (var4 != null && var4.method_37387() == class_6629.field_34300) {
+            if (var4 != null && var4.method_37387() == EntityType.field_34300) {
                class_134.method_474((class_704)var4, true);
             }
          }

@@ -5,12 +5,12 @@ import java.util.List;
 public class class_8008 extends class_4641 {
    private static String[] field_41028;
 
-   public class_8008(class_6629<? extends class_8008> var1, World var2) {
+   public class_8008(EntityType<? extends class_8008> var1, World var2) {
       super(var1, var2);
    }
 
    public class_8008(World var1, BlockPos var2) {
-      super(class_6629.field_34275, var1, var2);
+      super(EntityType.field_34275, var1, var2);
       this.method_37256((double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5);
       float var5 = 0.125F;
       float var6 = 0.1875F;

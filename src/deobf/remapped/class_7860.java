@@ -94,7 +94,7 @@ public class class_7860 {
    public static class_817 field_40084 = new class_817(field_39975, "shouldRiderSit");
    public static class_9859 field_40051 = new class_9859("net.minecraftforge.fluids.FluidAttributes");
    public static class_817 field_40042 = new class_817(field_40051, "getColor", new Class[]{class_5561.class, BlockPos.class});
-   public static class_9859 field_39872 = new class_9859(class_6629.class);
+   public static class_9859 field_39872 = new class_9859(EntityType.class);
    public static class_817 field_39843 = new class_817(field_39872, "getTags");
    public static class_9859 field_40117 = new class_9859("net.minecraftforge.event.ForgeEventFactory");
    public static class_817 field_39867 = new class_817(field_40117, "canEntityDespawn");

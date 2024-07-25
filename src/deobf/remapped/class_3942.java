@@ -24,7 +24,7 @@ public class class_3942 extends class_5783 {
    private final int field_19138;
 
    private class_3942(World var1, class_704 var2, int var3, int var4) {
-      super(class_6629.field_34215, var1);
+      super(EntityType.field_34215, var1);
       this.field_41750 = true;
       this.method_26159(var2);
       var2.field_3841 = this;

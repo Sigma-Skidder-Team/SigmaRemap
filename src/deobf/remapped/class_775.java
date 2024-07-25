@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 
 public class class_775 extends class_2733 {
    public class_775() {
-      super(class_6629.field_34330, "boat", 0.5F);
+      super(EntityType.field_34330, "boat", 0.5F);
    }
 
    @Override

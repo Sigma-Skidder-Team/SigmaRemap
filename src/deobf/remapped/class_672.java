@@ -47,7 +47,7 @@ public class class_672<T extends class_5886> extends class_3169<T> {
       this.field_3734.field_8185 = (float) (-Math.PI / 6) - class_9299.method_42840(var10 * 1.2F) * var11;
       this.field_3733.field_8185 = (float) (Math.PI / 6) + class_9299.method_42840(var10) * var11;
       if (!(var1 instanceof class_6993)) {
-         if (var1.method_37387() == class_6629.field_34234) {
+         if (var1.method_37387() == EntityType.field_34234) {
             class_3191.method_14688(this.field_11701, this.field_11705, var1.method_26892(), this.field_33202, var4);
          }
       } else {

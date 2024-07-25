@@ -74,7 +74,7 @@ public class class_9726 extends class_7896 {
             int var16 = this.method_32523(2, 5);
             if (var5.method_44395(new BlockPos(var18, var19, var16))) {
                this.field_49438 = true;
-               class_1609 var17 = class_6629.field_34220.method_30484(var1.method_7066());
+               class_1609 var17 = EntityType.field_34220.method_30484(var1.method_7066());
                var17.method_26883();
                var17.method_37144((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
                var17.method_26864(var1, var1.method_43368(new BlockPos(var18, var19, var16)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
@@ -94,7 +94,7 @@ public class class_9726 extends class_7896 {
          int var7 = this.method_32523(2, 5);
          if (var2.method_44395(new BlockPos(var5, var6, var7))) {
             this.field_49439 = true;
-            class_5583 var8 = class_6629.field_34249.method_30484(var1.method_7066());
+            class_5583 var8 = EntityType.field_34249.method_30484(var1.method_7066());
             var8.method_26883();
             var8.method_37144((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
             var8.method_26864(var1, var1.method_43368(new BlockPos(var5, var6, var7)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);

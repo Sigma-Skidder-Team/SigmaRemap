@@ -26,10 +26,10 @@ public class class_7510 {
    public static final SuggestionProvider<class_9155> field_38354 = method_34235(
       new Identifier("summonable_entities"),
       (var0, var1) -> class_8773.method_40318(
-            class_8669.field_44400.method_39801().filter(class_6629::method_30465),
+            class_8669.field_44400.method_39801().filter(EntityType::method_30465),
             var1,
-            class_6629::method_30472,
-            var0x -> new TranslationTextComponent(Util.createTranslationKey("entity", class_6629.method_30472(var0x)))
+            EntityType::method_30472,
+            var0x -> new TranslationTextComponent(Util.createTranslationKey("entity", EntityType.method_30472(var0x)))
          )
    );
 

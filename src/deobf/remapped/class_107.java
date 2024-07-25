@@ -18,40 +18,40 @@ public class class_107 extends class_7819 implements class_674 {
    private static final Set<class_2451> field_273 = Sets.newHashSet(
       new class_2451[]{class_4897.field_24621, class_4897.field_24435, class_4897.field_24480, class_4897.field_24883}
    );
-   private static final Map<class_6629<?>, class_8461> field_265 = Util.<Map<class_6629<?>, class_8461>>method_44659(Maps.newHashMap(), var0 -> {
-      var0.put(class_6629.field_34301, class_463.field_1989);
-      var0.put(class_6629.field_34272, class_463.field_2315);
-      var0.put(class_6629.field_34210, class_463.field_2407);
-      var0.put(class_6629.field_34211, class_463.field_2230);
-      var0.put(class_6629.field_34324, class_463.field_2130);
-      var0.put(class_6629.field_34310, class_463.field_1929);
-      var0.put(class_6629.field_34264, class_463.field_2349);
-      var0.put(class_6629.field_34296, class_463.field_2468);
-      var0.put(class_6629.field_34281, class_463.field_2116);
-      var0.put(class_6629.field_34307, class_463.field_2812);
-      var0.put(class_6629.field_34306, class_463.field_2123);
-      var0.put(class_6629.field_34266, class_463.field_2256);
-      var0.put(class_6629.field_34270, class_463.field_2540);
-      var0.put(class_6629.field_34295, class_463.field_2799);
-      var0.put(class_6629.field_34246, class_463.field_1959);
-      var0.put(class_6629.field_34240, class_463.field_2774);
-      var0.put(class_6629.field_34257, class_463.field_2387);
-      var0.put(class_6629.field_34265, class_463.field_2516);
-      var0.put(class_6629.field_34318, class_463.field_2618);
-      var0.put(class_6629.field_34231, class_463.field_1946);
-      var0.put(class_6629.field_34314, class_463.field_2866);
-      var0.put(class_6629.field_34241, class_463.field_2649);
-      var0.put(class_6629.field_34222, class_463.field_2260);
-      var0.put(class_6629.field_34223, class_463.field_2315);
-      var0.put(class_6629.field_34322, class_463.field_2616);
-      var0.put(class_6629.field_34277, class_463.field_2746);
-      var0.put(class_6629.field_34255, class_463.field_2007);
-      var0.put(class_6629.field_34220, class_463.field_2760);
-      var0.put(class_6629.field_34212, class_463.field_2722);
-      var0.put(class_6629.field_34317, class_463.field_2373);
-      var0.put(class_6629.field_34244, class_463.field_2352);
-      var0.put(class_6629.field_34297, class_463.field_2860);
-      var0.put(class_6629.field_34227, class_463.field_2002);
+   private static final Map<EntityType<?>, class_8461> field_265 = Util.<Map<EntityType<?>, class_8461>>method_44659(Maps.newHashMap(), var0 -> {
+      var0.put(EntityType.field_34301, class_463.field_1989);
+      var0.put(EntityType.field_34272, class_463.field_2315);
+      var0.put(EntityType.field_34210, class_463.field_2407);
+      var0.put(EntityType.field_34211, class_463.field_2230);
+      var0.put(EntityType.field_34324, class_463.field_2130);
+      var0.put(EntityType.field_34310, class_463.field_1929);
+      var0.put(EntityType.field_34264, class_463.field_2349);
+      var0.put(EntityType.field_34296, class_463.field_2468);
+      var0.put(EntityType.field_34281, class_463.field_2116);
+      var0.put(EntityType.field_34307, class_463.field_2812);
+      var0.put(EntityType.field_34306, class_463.field_2123);
+      var0.put(EntityType.field_34266, class_463.field_2256);
+      var0.put(EntityType.field_34270, class_463.field_2540);
+      var0.put(EntityType.field_34295, class_463.field_2799);
+      var0.put(EntityType.field_34246, class_463.field_1959);
+      var0.put(EntityType.field_34240, class_463.field_2774);
+      var0.put(EntityType.field_34257, class_463.field_2387);
+      var0.put(EntityType.field_34265, class_463.field_2516);
+      var0.put(EntityType.field_34318, class_463.field_2618);
+      var0.put(EntityType.field_34231, class_463.field_1946);
+      var0.put(EntityType.field_34314, class_463.field_2866);
+      var0.put(EntityType.field_34241, class_463.field_2649);
+      var0.put(EntityType.field_34222, class_463.field_2260);
+      var0.put(EntityType.field_34223, class_463.field_2315);
+      var0.put(EntityType.field_34322, class_463.field_2616);
+      var0.put(EntityType.field_34277, class_463.field_2746);
+      var0.put(EntityType.field_34255, class_463.field_2007);
+      var0.put(EntityType.field_34220, class_463.field_2760);
+      var0.put(EntityType.field_34212, class_463.field_2722);
+      var0.put(EntityType.field_34317, class_463.field_2373);
+      var0.put(EntityType.field_34244, class_463.field_2352);
+      var0.put(EntityType.field_34297, class_463.field_2860);
+      var0.put(EntityType.field_34227, class_463.field_2002);
    });
    public float field_262;
    public float field_270;
@@ -61,7 +61,7 @@ public class class_107 extends class_7819 implements class_674 {
    private boolean field_268;
    private BlockPos field_266;
 
-   public class_107(class_6629<? extends class_107> var1, World var2) {
+   public class_107(EntityType<? extends class_107> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_2112(this, 10, false);
       this.method_26895(class_1108.field_6357, -1.0F);
@@ -244,7 +244,7 @@ public class class_107 extends class_7819 implements class_674 {
       return false;
    }
 
-   public static boolean method_321(class_6629<class_107> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_321(EntityType<class_107> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       class_2522 var7 = var1.method_28262(var3.method_6100());
       return (
             var7.method_8349(class_2351.field_11737)
@@ -289,13 +289,13 @@ public class class_107 extends class_7819 implements class_674 {
    public static class_8461 method_322(World var0, Random var1) {
       if (var0.method_43370() != class_423.field_1790 && var1.nextInt(1000) == 0) {
          ArrayList var4 = Lists.newArrayList(field_265.keySet());
-         return method_326((class_6629<?>)var4.get(var1.nextInt(var4.size())));
+         return method_326((EntityType<?>)var4.get(var1.nextInt(var4.size())));
       } else {
          return class_463.field_2583;
       }
    }
 
-   private static class_8461 method_326(class_6629<?> var0) {
+   private static class_8461 method_326(EntityType<?> var0) {
       return field_265.getOrDefault(var0, class_463.field_2583);
    }
 

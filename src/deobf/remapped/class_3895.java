@@ -26,7 +26,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
       class_6044.field_30865
    );
 
-   public class_3895(class_6629<? extends class_3895> var1, World var2) {
+   public class_3895(EntityType<? extends class_3895> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }
@@ -88,8 +88,8 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    private static boolean method_18035(class_5834 var0) {
-      class_6629 var3 = var0.method_37387();
-      return var3 != class_6629.field_34244 && var3 != class_6629.field_34210 && class_3572.field_17480.test(var0);
+      EntityType var3 = var0.method_37387();
+      return var3 != EntityType.field_34244 && var3 != EntityType.field_34210 && class_3572.field_17480.test(var0);
    }
 
    @Override

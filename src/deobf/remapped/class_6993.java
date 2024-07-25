@@ -6,7 +6,7 @@ public abstract class class_6993 extends class_1173 {
    public static final class_7821<Boolean> field_35907 = class_8073.<Boolean>method_36641(class_6993.class, class_2734.field_13347);
    public int field_35908 = 0;
 
-   public class_6993(class_6629<? extends class_6993> var1, World var2) {
+   public class_6993(EntityType<? extends class_6993> var1, World var2) {
       super(var1, var2);
       this.method_26871(true);
       this.method_31994();
@@ -78,7 +78,7 @@ public abstract class class_6993 extends class_1173 {
    }
 
    public void method_31992(class_6331 var1) {
-      class_1918 var4 = this.<class_1918>method_26898(class_6629.field_34234, true);
+      class_1918 var4 = this.<class_1918>method_26898(EntityType.field_34234, true);
       if (var4 != null) {
          var4.method_26558(new class_2250(Effects.NAUSEA, 200, 0));
       }

@@ -14,8 +14,8 @@ public class class_8410 {
       class_9349.<class_2340>method_43138(
          class_6503.method_29650().stream().collect(Collectors.toMap(class_8813::method_40487, var0 -> (class_2307<class_2340>)var0))
       ),
-      class_9349.<class_6629<?>>method_43138(
-         class_5218.method_23901().stream().collect(Collectors.toMap(class_8813::method_40487, var0 -> (class_2307<class_6629<?>>)var0))
+      class_9349.<EntityType<?>>method_43138(
+         class_5218.method_23901().stream().collect(Collectors.toMap(class_8813::method_40487, var0 -> (class_2307<EntityType<?>>)var0))
       )
    );
 

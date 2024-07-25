@@ -10,12 +10,12 @@ public class class_8612 extends class_5783 implements class_3713 {
    private int field_44172;
    public class_5834 field_44173;
 
-   public class_8612(class_6629<? extends class_8612> var1, World var2) {
+   public class_8612(EntityType<? extends class_8612> var1, World var2) {
       super(var1, var2);
    }
 
    public class_8612(World var1, double var2, double var4, double var6, ItemStack var8) {
-      super(class_6629.field_34280, var1);
+      super(EntityType.field_34280, var1);
       this.field_44170 = 0;
       this.method_37256(var2, var4, var6);
       byte var11 = 1;

@@ -36,10 +36,10 @@ public class class_6068 {
    );
    private final float field_31037;
    private final Map<class_4565, List<class_3222>> field_31041;
-   private final Map<class_6629<?>, class_2658> field_31036;
+   private final Map<EntityType<?>, class_2658> field_31036;
    private final boolean field_31040;
 
-   private class_6068(float var1, Map<class_4565, List<class_3222>> var2, Map<class_6629<?>, class_2658> var3, boolean var4) {
+   private class_6068(float var1, Map<class_4565, List<class_3222>> var2, Map<EntityType<?>, class_2658> var3, boolean var4) {
       this.field_31037 = var1;
       this.field_31041 = var2;
       this.field_31036 = var3;
@@ -51,7 +51,7 @@ public class class_6068 {
    }
 
    @Nullable
-   public class_2658 method_27798(class_6629<?> var1) {
+   public class_2658 method_27798(EntityType<?> var1) {
       return this.field_31036.get(var1);
    }
 

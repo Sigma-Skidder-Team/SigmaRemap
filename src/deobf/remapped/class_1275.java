@@ -104,7 +104,7 @@ public class class_1275 implements class_1517 {
          int var7 = var2.method_12185() + var1.field_33033.nextInt(16) - 8;
          int var8 = var1.method_22562(class_3801.field_18592, var6, var7);
          BlockPos var9 = new BlockPos(var6, var8, var7);
-         if (var1.method_28994(var9) && class_1173.method_5199(class_6629.field_34297, var1, class_2417.field_12040, var9, var1.field_33033)) {
+         if (var1.method_28994(var9) && class_1173.method_5199(EntityType.field_34297, var1, class_2417.field_12040, var9, var1.field_33033)) {
             return class_1343.method_6200(var9);
          }
       }

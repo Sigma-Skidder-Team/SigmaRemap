@@ -356,7 +356,7 @@ public class class_2810 {
 
    private class_2770 method_12776() {
       this.field_13790.method_29542(new BlockPos(0, 128, 0));
-      class_2770 var3 = class_6629.field_34310.method_30484(this.field_13790);
+      class_2770 var3 = EntityType.field_34310.method_30484(this.field_13790);
       var3.method_12611().method_29422(class_8978.field_46006);
       var3.method_37144(0.0, 128.0, 0.0, this.field_13790.field_33033.nextFloat() * 360.0F, 0.0F);
       this.field_13790.method_7509(var3);

@@ -10,7 +10,7 @@ public class class_2022 extends class_1944 {
    private static final class_4931 field_10249 = new class_4931().method_22607(4.0).method_22601();
    private BlockPos field_10246;
 
-   public class_2022(class_6629<? extends class_2022> var1, World var2) {
+   public class_2022(EntityType<? extends class_2022> var1, World var2) {
       super(var1, var2);
       this.method_9395(true);
    }
@@ -189,7 +189,7 @@ public class class_2022 extends class_1944 {
       var1.method_25921("BatFlags", this.field_41735.<Byte>method_36640(field_10248));
    }
 
-   public static boolean method_9393(class_6629<class_2022> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_9393(EntityType<class_2022> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (var3.method_12165() < var1.method_22552()) {
          int var7 = var1.method_22573(var3);
          byte var8 = 4;

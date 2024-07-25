@@ -61,7 +61,7 @@ public class class_3338 {
          CompoundNBT var8 = var3.method_25944();
          var8.method_25941("id", var1.toString());
          class_6331 var9 = var0.method_42198();
-         Entity var10 = class_6629.method_30455(var8, var9, var1x -> {
+         Entity var10 = EntityType.method_30455(var8, var9, var1x -> {
             var1x.method_37144(var2.field_7336, var2.field_7333, var2.field_7334, var1x.rotationYaw, var1x.rotationPitch);
             return var1x;
          });

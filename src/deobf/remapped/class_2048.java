@@ -3,12 +3,12 @@ package remapped;
 public class class_2048 extends AbstractMinecartEntity {
    private int field_10361 = -1;
 
-   public class_2048(class_6629<? extends class_2048> var1, World var2) {
+   public class_2048(EntityType<? extends class_2048> var1, World var2) {
       super(var1, var2);
    }
 
    public class_2048(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34282, var1, var2, var4, var6);
+      super(EntityType.field_34282, var1, var2, var4, var6);
    }
 
    @Override

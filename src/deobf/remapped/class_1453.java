@@ -14,12 +14,12 @@ public class class_1453 extends Entity {
    public CompoundNBT field_7819;
    public static final class_7821<BlockPos> field_7821 = class_8073.<BlockPos>method_36641(class_1453.class, class_2734.field_13353);
 
-   public class_1453(class_6629<? extends class_1453> var1, World var2) {
+   public class_1453(EntityType<? extends class_1453> var1, World var2) {
       super(var1, var2);
    }
 
    public class_1453(World var1, double var2, double var4, double var6, class_2522 var8) {
-      this(class_6629.field_34245, var1);
+      this(EntityType.field_34245, var1);
       this.field_7822 = var8;
       this.field_41759 = true;
       this.method_37256(var2, var4 + (double)((1.0F - this.method_37074()) / 2.0F), var6);

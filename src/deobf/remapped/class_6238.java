@@ -69,12 +69,12 @@ public class class_6238<T extends Entity> {
       return this;
    }
 
-   public class_6629<T> method_28496(String var1) {
+   public EntityType<T> method_28496(String var1) {
       if (this.field_31920) {
          Util.getChoiceType(class_4002.field_19451, var1);
       }
 
-      return new class_6629<T>(
+      return new EntityType<T>(
          this.field_31922,
          this.field_31925,
          this.field_31920,

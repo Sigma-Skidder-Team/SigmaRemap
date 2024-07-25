@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class class_9064 extends class_1179 {
    public class_9064() {
-      super(class_6629.field_34218, "mule", 0.75F);
+      super(EntityType.field_34218, "mule", 0.75F);
    }
 
    @Override

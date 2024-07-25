@@ -7,10 +7,10 @@ public class class_2272 extends class_2733 {
    private static Map<String, Integer> field_11287 = null;
 
    public class_2272() {
-      super(class_6629.field_34214, "ocelot", 0.4F);
+      super(EntityType.field_34214, "ocelot", 0.4F);
    }
 
-   public class_2272(class_6629 var1, String var2, float var3) {
+   public class_2272(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 

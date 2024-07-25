@@ -12,7 +12,7 @@ public class class_3024 extends class_5467 {
    public int field_14824 = this.field_41717.nextInt(6000) + 6000;
    public boolean field_14828;
 
-   public class_3024(class_6629<? extends class_3024> var1, World var2) {
+   public class_3024(EntityType<? extends class_3024> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6359, 0.0F);
    }
@@ -89,7 +89,7 @@ public class class_3024 extends class_5467 {
    }
 
    public class_3024 method_13810(class_6331 var1, class_1899 var2) {
-      return class_6629.field_34263.method_30484(var1);
+      return EntityType.field_34263.method_30484(var1);
    }
 
    @Override

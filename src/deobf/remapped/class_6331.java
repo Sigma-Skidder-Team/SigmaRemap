@@ -358,14 +358,14 @@ public class class_6331 extends World implements class_700 {
             class_9589 var11 = this.method_43368(var10);
             boolean var12 = this.method_29537().method_1285(class_291.field_1028) && this.field_33033.nextDouble() < (double)var11.method_44283() * 0.01;
             if (var12) {
-               class_5948 var13 = class_6629.field_34261.method_30484(this);
+               class_5948 var13 = EntityType.field_34261.method_30484(this);
                var13.method_27190(true);
                var13.method_8635(0);
                var13.method_37256((double)var10.method_12173(), (double)var10.method_12165(), (double)var10.method_12185());
                this.method_7509(var13);
             }
 
-            class_900 var25 = class_6629.field_34224.method_30484(this);
+            class_900 var25 = EntityType.field_34224.method_30484(this);
             var25.method_37196(class_1343.method_6200(var10));
             var25.method_3858(var12);
             this.method_7509(var25);
@@ -593,7 +593,7 @@ public class class_6331 extends World implements class_700 {
       this.method_28945().method_10182().method_18705();
    }
 
-   public List<Entity> method_28926(class_6629<?> var1, Predicate<? super Entity> var2) {
+   public List<Entity> method_28926(EntityType<?> var1, Predicate<? super Entity> var2) {
       ArrayList var5 = Lists.newArrayList();
       class_2206 var6 = this.method_28945();
       ObjectIterator var7 = this.field_32326.values().iterator();
@@ -717,7 +717,7 @@ public class class_6331 extends World implements class_700 {
             return false;
          }
       } else {
-         field_32339.warn("Tried to add entity {} but it was marked as removed already", class_6629.method_30472(var1.method_37387()));
+         field_32339.warn("Tried to add entity {} but it was marked as removed already", EntityType.method_30472(var1.method_37387()));
          return false;
       }
    }
@@ -738,9 +738,9 @@ public class class_6331 extends World implements class_700 {
          field_32339.warn(
             "Trying to add entity with duplicated UUID {}. Existing {}#{}, new: {}#{}",
             var4,
-            class_6629.method_30472(var5.method_37387()),
+            EntityType.method_30472(var5.method_37387()),
             var5.method_37145(),
-            class_6629.method_30472(var1.method_37387()),
+            EntityType.method_30472(var1.method_37387()),
             var1.method_37145()
          );
          return true;

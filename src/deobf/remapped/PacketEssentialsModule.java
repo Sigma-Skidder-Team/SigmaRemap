@@ -35,11 +35,11 @@ public class PacketEssentialsModule extends Module {
             }
          } else {
             class_6589 var6 = (class_6589)var1.method_557();
-            if (var6.method_30334() == class_6629.field_34289) {
+            if (var6.method_30334() == EntityType.field_34289) {
                var1.method_29715(true);
             }
 
-            if (var6.method_30334() == class_6629.field_34294) {
+            if (var6.method_30334() == EntityType.field_34294) {
                var1.method_29715(true);
             }
          }

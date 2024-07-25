@@ -14,7 +14,7 @@ public class class_1847 extends class_5920<class_7666> {
    }
 
    public boolean method_8168(class_6331 var1, class_7666 var2) {
-      return class_1225.method_5450(var2.method_26525(), class_6044.field_30861, class_6629.field_34276);
+      return class_1225.method_5450(var2.method_26525(), class_6044.field_30861, EntityType.field_34276);
    }
 
    public boolean method_8167(class_6331 var1, class_7666 var2, long var3) {

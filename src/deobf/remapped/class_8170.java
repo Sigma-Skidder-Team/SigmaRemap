@@ -5,11 +5,11 @@ import java.util.Random;
 public class class_8170 extends class_2811 {
    private static String[] field_41837;
 
-   public class_8170(class_6629<? extends class_8170> var1, World var2) {
+   public class_8170(EntityType<? extends class_8170> var1, World var2) {
       super(var1, var2);
    }
 
-   public static boolean method_37471(class_6629<class_8170> var0, class_1556 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_37471(EntityType<class_8170> var0, class_1556 var1, class_2417 var2, BlockPos var3, Random var4) {
       return method_5199(var0, var1, var2, var3, var4) && (var2 == class_2417.field_12024 || var1.method_25263(var3));
    }
 
@@ -56,7 +56,7 @@ public class class_8170 extends class_2811 {
 
    @Override
    public void method_12798() {
-      this.method_12791(class_6629.field_34297);
+      this.method_12791(EntityType.field_34297);
       if (!this.method_37378()) {
          this.world.method_43365((class_704)null, 1041, this.method_37075(), 0);
       }

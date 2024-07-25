@@ -19,7 +19,7 @@ public class class_2065 extends class_3599 {
       this.field_10424.method_27190(false);
       this.field_10424.method_19041(true);
       this.field_10424.method_8635(0);
-      class_900 var5 = class_6629.field_34224.method_30484(var3);
+      class_900 var5 = EntityType.field_34224.method_30484(var3);
       var5.method_37195(this.field_10424.getPosX(), this.field_10424.method_37309(), this.field_10424.getPosZ());
       var5.method_3858(true);
       var3.method_7509(var5);
@@ -37,7 +37,7 @@ public class class_2065 extends class_3599 {
    }
 
    private class_4109 method_9647(class_9589 var1) {
-      class_5948 var4 = class_6629.field_34261.method_30484(this.field_10424.world);
+      class_5948 var4 = EntityType.field_34261.method_30484(this.field_10424.world);
       var4.method_26864((class_6331)this.field_10424.world, var1, class_2417.field_12032, (class_8733)null, (CompoundNBT)null);
       var4.method_37256(this.field_10424.getPosX(), this.field_10424.method_37309(), this.field_10424.getPosZ());
       var4.field_41749 = 60;
@@ -48,7 +48,7 @@ public class class_2065 extends class_3599 {
    }
 
    private class_6778 method_9646(class_9589 var1, class_4109 var2) {
-      class_6778 var5 = class_6629.field_34241.method_30484(var2.world);
+      class_6778 var5 = EntityType.field_34241.method_30484(var2.world);
       var5.method_26864((class_6331)var2.world, var1, class_2417.field_12032, (class_8733)null, (CompoundNBT)null);
       var5.method_37256(var2.getPosX(), var2.method_37309(), var2.getPosZ());
       var5.field_41749 = 60;

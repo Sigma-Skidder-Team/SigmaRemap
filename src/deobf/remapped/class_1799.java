@@ -6,7 +6,7 @@ public class class_1799 extends class_7429 {
    private static String[] field_9169;
    private class_8031 field_9170;
 
-   public class_1799(class_6629<? extends class_1799> var1, World var2) {
+   public class_1799(EntityType<? extends class_1799> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 10;
    }

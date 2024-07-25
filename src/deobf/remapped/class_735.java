@@ -5,7 +5,7 @@ import java.util.List;
 
 public class class_735 extends class_7398 {
    public class_735() {
-      super(class_6629.field_34321, "sheep_wool", 0.7F);
+      super(EntityType.field_34321, "sheep_wool", 0.7F);
    }
 
    @Override
@@ -16,7 +16,7 @@ public class class_735 extends class_7398 {
    @Override
    public class_8599 method_12293(class_9873 var1, float var2) {
       EntityRenderDispatcher var5 = MinecraftClient.getInstance().method_8587();
-      Object var6 = var5.method_28130().get(class_6629.field_34321);
+      Object var6 = var5.method_28130().get(EntityType.field_34321);
       if (var6 instanceof class_5058) {
          if (((class_7067)var6).method_32557() == null) {
             class_5058 var7 = new class_5058(var5);

@@ -22,7 +22,7 @@ public class class_2819 implements ArgumentType<Identifier> {
    }
 
    private static Identifier method_12844(Identifier var0) throws CommandSyntaxException {
-      class_8669.field_44400.method_39794(var0).filter(class_6629::method_30465).orElseThrow(() -> field_13842.create(var0));
+      class_8669.field_44400.method_39794(var0).filter(EntityType::method_30465).orElseThrow(() -> field_13842.create(var0));
       return var0;
    }
 

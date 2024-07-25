@@ -2,7 +2,7 @@ package remapped;
 
 public class class_5288 extends class_2733 {
    public class_5288() {
-      super(class_6629.field_34275, "lead_knot", 0.0F);
+      super(EntityType.field_34275, "lead_knot", 0.0F);
    }
 
    @Override

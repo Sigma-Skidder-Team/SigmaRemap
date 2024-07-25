@@ -22,7 +22,7 @@ public class class_2557 {
 
          class_1878.method_8405();
          class_7689.method_34842();
-         if (class_6629.method_30472(class_6629.field_34300) == null) {
+         if (EntityType.method_30472(EntityType.field_34300) == null) {
             throw new IllegalStateException("Failed loading EntityTypes");
          }
 
@@ -53,7 +53,7 @@ public class class_2557 {
    public static Set<String> method_11614() {
       TreeSet var2 = new TreeSet();
       method_11613(class_8669.field_44403, class_225::method_952, var2);
-      method_11613(class_8669.field_44400, class_6629::method_30469, var2);
+      method_11613(class_8669.field_44400, EntityType::method_30469, var2);
       method_11613(class_8669.field_44436, class_1425::method_6540, var2);
       method_11613(class_8669.field_44382, class_2451::method_11216, var2);
       method_11613(class_8669.field_44445, class_4382::method_20418, var2);

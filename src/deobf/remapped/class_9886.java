@@ -29,7 +29,7 @@ public class class_9886 extends class_6127<class_5834> {
    public static void method_45544(class_5834 var0) {
       Optional var3 = var0.method_26525().<List<class_5834>>method_5138(class_6044.field_30907);
       if (var3.isPresent()) {
-         boolean var4 = ((List)var3.get()).stream().anyMatch(var0x -> var0x.method_37387().equals(class_6629.field_34298));
+         boolean var4 = ((List)var3.get()).stream().anyMatch(var0x -> var0x.method_37387().equals(EntityType.field_34298));
          if (var4) {
             method_45543(var0);
          }

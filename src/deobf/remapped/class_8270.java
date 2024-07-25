@@ -27,7 +27,7 @@ public class class_8270 implements class_1517 {
                   var10.method_12165() + 10,
                   var10.method_12185() + 10
                )) {
-                  if (class_3815.method_17767(class_1257.field_6935, var1, var10, class_6629.field_34249)) {
+                  if (class_3815.method_17767(class_1257.field_6935, var1, var10, EntityType.field_34249)) {
                      if (var1.method_28981(var10, 2)) {
                         return this.method_38122(var1, var10);
                      }
@@ -71,7 +71,7 @@ public class class_8270 implements class_1517 {
    }
 
    private int method_38124(BlockPos var1, class_6331 var2) {
-      class_5583 var5 = class_6629.field_34249.method_30484(var2);
+      class_5583 var5 = EntityType.field_34249.method_30484(var2);
       if (var5 != null) {
          var5.method_26864(var2, var2.method_43368(var1), class_2417.field_12031, (class_8733)null, (CompoundNBT)null);
          var5.method_37253(var1, 0.0F, 0.0F);

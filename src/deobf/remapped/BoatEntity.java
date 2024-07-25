@@ -37,13 +37,13 @@ public class BoatEntity extends Entity {
    private float field_46792;
    private float field_46815;
 
-   public BoatEntity(class_6629<? extends BoatEntity> var1, World var2) {
+   public BoatEntity(EntityType<? extends BoatEntity> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
    }
 
    public BoatEntity(World var1, double var2, double var4, double var6) {
-      this(class_6629.field_34330, var1);
+      this(EntityType.field_34330, var1);
       this.method_37256(var2, var4, var6);
       this.method_37215(class_1343.field_7335);
       this.field_41767 = var2;

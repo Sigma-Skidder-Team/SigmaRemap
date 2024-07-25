@@ -20,12 +20,12 @@ public class class_2811 extends class_1173 {
    private int field_13809;
    private int field_13808;
 
-   public class_2811(class_6629<? extends class_2811> var1, World var2) {
+   public class_2811(EntityType<? extends class_2811> var1, World var2) {
       super(var1, var2);
    }
 
    public class_2811(World var1) {
-      this(class_6629.field_34297, var1);
+      this(EntityType.field_34297, var1);
    }
 
    @Override
@@ -190,13 +190,13 @@ public class class_2811 extends class_1173 {
    }
 
    public void method_12798() {
-      this.method_12791(class_6629.field_34211);
+      this.method_12791(EntityType.field_34211);
       if (!this.method_37378()) {
          this.world.method_43365((class_704)null, 1040, this.method_37075(), 0);
       }
    }
 
-   public void method_12791(class_6629<? extends class_2811> var1) {
+   public void method_12791(EntityType<? extends class_2811> var1) {
       class_2811 var4 = this.<class_2811>method_26898(var1, true);
       if (var4 != null) {
          var4.method_12790(var4.world.method_43368(var4.method_37075()).method_44284());
@@ -233,7 +233,7 @@ public class class_2811 extends class_1173 {
                int var13 = var8 + class_9299.method_42824(this.field_41717, 7, 40) * class_9299.method_42824(this.field_41717, -1, 1);
                int var14 = var9 + class_9299.method_42824(this.field_41717, 7, 40) * class_9299.method_42824(this.field_41717, -1, 1);
                BlockPos var15 = new BlockPos(var12, var13, var14);
-               class_6629 var16 = var10.method_37387();
+               EntityType var16 = var10.method_37387();
                class_1257 var17 = class_1136.method_4980(var16);
                if (class_3815.method_17767(var17, this.world, var15, var16)
                   && class_1136.method_4983(var16, var5, class_2417.field_12039, var15, this.world.field_33033)) {
@@ -345,7 +345,7 @@ public class class_2811 extends class_1173 {
          }
 
          class_7666 var5 = (class_7666)var2;
-         class_9355 var6 = var5.<class_9355>method_26898(class_6629.field_34227, false);
+         class_9355 var6 = var5.<class_9355>method_26898(EntityType.field_34227, false);
          var6.method_26864(var1, var1.method_43368(var6.method_37075()), class_2417.field_12041, new class_2582(false, true), (CompoundNBT)null);
          var6.method_43207(var5.method_15891());
          var6.method_43205((class_8406)var5.method_34709().method_11515(class_3504.field_17178).getValue());
@@ -384,7 +384,7 @@ public class class_2811 extends class_1173 {
             if (var9.field_12782) {
                if (!((double)var1.method_43360().nextFloat() < 0.05)) {
                   if ((double)var1.method_43360().nextFloat() < 0.05) {
-                     class_3024 var10 = class_6629.field_34263.method_30484(this.world);
+                     class_3024 var10 = EntityType.field_34263.method_30484(this.world);
                      var10.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, 0.0F);
                      var10.method_26864(var1, var2, class_2417.field_12037, (class_8733)null, (CompoundNBT)null);
                      var10.method_13808(true);

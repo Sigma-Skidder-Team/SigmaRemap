@@ -11,8 +11,8 @@ import java.util.function.Consumer;
 
 public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
    private static final class_2184 field_4163 = class_2184.method_10127().method_10126(class_4097.method_18938().method_18935(true).method_18939());
-   private static final Set<class_6629<?>> field_4161 = ImmutableSet.of(
-      class_6629.field_34300, class_6629.field_34289, class_6629.field_34298, class_6629.field_34253, class_6629.field_34276
+   private static final Set<EntityType<?>> field_4161 = ImmutableSet.of(
+      EntityType.field_34300, EntityType.field_34289, EntityType.field_34298, EntityType.field_34253, EntityType.field_34276
    );
    private final Map<Identifier, class_8843> field_4160 = Maps.newHashMap();
 
@@ -20,16 +20,16 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
       return class_1758.method_7864()
          .method_40676(class_6282.method_28631().method_1777(class_2728.method_12260(1)).method_1773(class_3399.method_15699(var0)))
          .method_40676(
-            class_6282.method_28631().method_1777(class_2728.method_12260(1)).method_1773(class_4889.method_22426(class_6629.field_34321.method_30480()))
+            class_6282.method_28631().method_1777(class_2728.method_12260(1)).method_1773(class_4889.method_22426(EntityType.field_34321.method_30480()))
          );
    }
 
    public void accept(BiConsumer<Identifier, class_8843> var1) {
-      this.method_3462(class_6629.field_34289, class_1758.method_7864());
-      this.method_3462(class_6629.field_34217, class_1758.method_7864());
-      this.method_3462(class_6629.field_34238, class_1758.method_7864());
+      this.method_3462(EntityType.field_34289, class_1758.method_7864());
+      this.method_3462(EntityType.field_34217, class_1758.method_7864());
+      this.method_3462(EntityType.field_34238, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34301,
+         EntityType.field_34301,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -43,7 +43,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34249,
+         EntityType.field_34249,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -52,7 +52,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34272,
+         EntityType.field_34272,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -75,7 +75,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34263,
+         EntityType.field_34263,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -97,7 +97,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34262,
+         EntityType.field_34262,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -115,7 +115,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34325,
+         EntityType.field_34325,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -138,7 +138,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34210,
+         EntityType.field_34210,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -156,7 +156,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34320,
+         EntityType.field_34320,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -170,7 +170,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34248,
+         EntityType.field_34248,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -183,7 +183,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34211,
+         EntityType.field_34211,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -203,7 +203,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34324,
+         EntityType.field_34324,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -242,9 +242,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   .method_1774(class_5458.method_24848(0.025F, 0.01F))
             )
       );
-      this.method_3462(class_6629.field_34310, class_1758.method_7864());
+      this.method_3462(EntityType.field_34310, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34308,
+         EntityType.field_34308,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -256,9 +256,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   )
             )
       );
-      this.method_3462(class_6629.field_34264, class_1758.method_7864());
+      this.method_3462(EntityType.field_34264, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34296,
+         EntityType.field_34296,
          class_1758.method_7864()
             .method_40676(class_6282.method_28631().method_1777(class_2728.method_12260(1)).method_1773(class_3399.method_15699(class_4897.field_24472)))
             .method_40676(
@@ -272,9 +272,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   .method_1774(class_2200.method_10159())
             )
       );
-      this.method_3462(class_6629.field_34250, class_1758.method_7864());
+      this.method_3462(EntityType.field_34250, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34281,
+         EntityType.field_34281,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -295,9 +295,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   )
             )
       );
-      this.method_3462(class_6629.field_34294, class_1758.method_7864());
+      this.method_3462(EntityType.field_34294, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34307,
+         EntityType.field_34307,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -331,7 +331,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34286,
+         EntityType.field_34286,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -344,7 +344,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34266,
+         EntityType.field_34266,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -366,7 +366,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34318,
+         EntityType.field_34318,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -374,9 +374,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   .method_1773(class_3399.method_15699(class_4897.field_24836).method_34360(class_6520.method_29699(class_2728.method_12260(1))))
             )
       );
-      this.method_3462(class_6629.field_34270, class_1758.method_7864());
+      this.method_3462(EntityType.field_34270, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34298,
+         EntityType.field_34298,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -390,7 +390,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34327,
+         EntityType.field_34327,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -403,7 +403,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34295,
+         EntityType.field_34295,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -416,7 +416,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34218,
+         EntityType.field_34218,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -429,7 +429,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34269,
+         EntityType.field_34269,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -451,9 +451,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   )
             )
       );
-      this.method_3462(class_6629.field_34214, class_1758.method_7864());
+      this.method_3462(EntityType.field_34214, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34232,
+         EntityType.field_34232,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -462,7 +462,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34228,
+         EntityType.field_34228,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -475,7 +475,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34246,
+         EntityType.field_34246,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -489,7 +489,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34252,
+         EntityType.field_34252,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -502,10 +502,10 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   )
             )
       );
-      this.method_3462(class_6629.field_34265, class_1758.method_7864());
-      this.method_3462(class_6629.field_34300, class_1758.method_7864());
+      this.method_3462(EntityType.field_34265, class_1758.method_7864());
+      this.method_3462(EntityType.field_34300, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34229,
+         EntityType.field_34229,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -524,7 +524,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34315,
+         EntityType.field_34315,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -539,7 +539,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34251,
+         EntityType.field_34251,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -569,7 +569,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34236,
+         EntityType.field_34236,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -587,7 +587,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34321,
+         EntityType.field_34321,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -617,7 +617,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
       this.method_3461(class_5931.field_30124, method_3459(class_4783.field_23300));
       this.method_3461(class_5931.field_30125, method_3459(class_4783.field_23640));
       this.method_3462(
-         class_6629.field_34231,
+         EntityType.field_34231,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -626,9 +626,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   .method_1774(class_5458.method_24848(0.5F, 0.0625F))
             )
       );
-      this.method_3462(class_6629.field_34314, class_1758.method_7864());
+      this.method_3462(EntityType.field_34314, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34241,
+         EntityType.field_34241,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -650,7 +650,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34261,
+         EntityType.field_34261,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -663,7 +663,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34222,
+         EntityType.field_34222,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -676,7 +676,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34253,
+         EntityType.field_34253,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -685,7 +685,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34223,
+         EntityType.field_34223,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -708,7 +708,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34292,
+         EntityType.field_34292,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -721,7 +721,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34322,
+         EntityType.field_34322,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -758,7 +758,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34233,
+         EntityType.field_34233,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -771,7 +771,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34230,
+         EntityType.field_34230,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -784,7 +784,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34278,
+         EntityType.field_34278,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -799,7 +799,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34283,
+         EntityType.field_34283,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -818,11 +818,11 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   .method_1774(class_5310.method_24240(class_9447.method_43695().method_43691(true)))
             )
       );
-      this.method_3462(class_6629.field_34277, class_1758.method_7864());
-      this.method_3462(class_6629.field_34276, class_1758.method_7864());
-      this.method_3462(class_6629.field_34303, class_1758.method_7864());
+      this.method_3462(EntityType.field_34277, class_1758.method_7864());
+      this.method_3462(EntityType.field_34276, class_1758.method_7864());
+      this.method_3462(EntityType.field_34303, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34255,
+         EntityType.field_34255,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -836,7 +836,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34220,
+         EntityType.field_34220,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -879,9 +879,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   )
             )
       );
-      this.method_3462(class_6629.field_34212, class_1758.method_7864());
+      this.method_3462(EntityType.field_34212, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34317,
+         EntityType.field_34317,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -909,9 +909,9 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   .method_1774(class_5458.method_24848(0.025F, 0.01F))
             )
       );
-      this.method_3462(class_6629.field_34225, class_1758.method_7864());
+      this.method_3462(EntityType.field_34225, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34244,
+         EntityType.field_34244,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -924,7 +924,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34297,
+         EntityType.field_34297,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -946,7 +946,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34268,
+         EntityType.field_34268,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -959,7 +959,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34234,
+         EntityType.field_34234,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -988,7 +988,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
             )
       );
       this.method_3462(
-         class_6629.field_34306,
+         EntityType.field_34306,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -1010,10 +1010,10 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                   )
             )
       );
-      this.method_3462(class_6629.field_34240, class_1758.method_7864());
-      this.method_3462(class_6629.field_34257, class_1758.method_7864());
+      this.method_3462(EntityType.field_34240, class_1758.method_7864());
+      this.method_3462(EntityType.field_34257, class_1758.method_7864());
       this.method_3462(
-         class_6629.field_34227,
+         EntityType.field_34227,
          class_1758.method_7864()
             .method_40676(
                class_6282.method_28631()
@@ -1036,7 +1036,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
       );
       HashSet var4 = Sets.newHashSet();
 
-      for (class_6629 var6 : class_8669.field_44400) {
+      for (EntityType var6 : class_8669.field_44400) {
          Identifier var7 = var6.method_30480();
          if (!field_4161.contains(var6) && var6.method_30476() == class_4565.field_22251) {
             if (var7 != class_5931.field_30157 && this.field_4160.remove(var7) != null) {
@@ -1057,7 +1057,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
       this.field_4160.forEach(var1::accept);
    }
 
-   private void method_3462(class_6629<?> var1, class_8843 var2) {
+   private void method_3462(EntityType<?> var1, class_8843 var2) {
       this.method_3461(var1.method_30480(), var2);
    }
 

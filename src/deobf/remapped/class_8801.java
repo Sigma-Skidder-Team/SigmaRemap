@@ -41,7 +41,7 @@ public class class_8801 extends class_3558 {
          BlockPos var5 = this.field_45024
             .method_37075()
             .method_6104(-2 + class_1799.method_8005(this.field_45024).nextInt(5), 1, -2 + class_1799.method_8003(this.field_45024).nextInt(5));
-         class_2519 var6 = class_6629.field_34277.method_30484(this.field_45024.field_41768);
+         class_2519 var6 = EntityType.field_34277.method_30484(this.field_45024.field_41768);
          var6.method_37253(var5, 0.0F, 0.0F);
          var6.method_26864(var3, this.field_45024.field_41768.method_43368(var5), class_2417.field_12027, (class_8733)null, (CompoundNBT)null);
          var6.method_11469(this.field_45024);

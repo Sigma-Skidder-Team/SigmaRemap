@@ -52,41 +52,41 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
          class_8606.field_44148
       }
    );
-   private static final class_6629<?>[] field_13226 = new class_6629[]{
-      class_6629.field_34301,
-      class_6629.field_34272,
-      class_6629.field_34210,
-      class_6629.field_34211,
-      class_6629.field_34324,
-      class_6629.field_34310,
-      class_6629.field_34308,
-      class_6629.field_34264,
-      class_6629.field_34296,
-      class_6629.field_34281,
-      class_6629.field_34307,
-      class_6629.field_34306,
-      class_6629.field_34266,
-      class_6629.field_34295,
-      class_6629.field_34246,
-      class_6629.field_34240,
-      class_6629.field_34257,
-      class_6629.field_34265,
-      class_6629.field_34318,
-      class_6629.field_34231,
-      class_6629.field_34314,
-      class_6629.field_34241,
-      class_6629.field_34222,
-      class_6629.field_34223,
-      class_6629.field_34322,
-      class_6629.field_34277,
-      class_6629.field_34255,
-      class_6629.field_34220,
-      class_6629.field_34317,
-      class_6629.field_34212,
-      class_6629.field_34244,
-      class_6629.field_34227,
-      class_6629.field_34297,
-      class_6629.field_34234
+   private static final EntityType<?>[] field_13226 = new EntityType[]{
+      EntityType.field_34301,
+      EntityType.field_34272,
+      EntityType.field_34210,
+      EntityType.field_34211,
+      EntityType.field_34324,
+      EntityType.field_34310,
+      EntityType.field_34308,
+      EntityType.field_34264,
+      EntityType.field_34296,
+      EntityType.field_34281,
+      EntityType.field_34307,
+      EntityType.field_34306,
+      EntityType.field_34266,
+      EntityType.field_34295,
+      EntityType.field_34246,
+      EntityType.field_34240,
+      EntityType.field_34257,
+      EntityType.field_34265,
+      EntityType.field_34318,
+      EntityType.field_34231,
+      EntityType.field_34314,
+      EntityType.field_34241,
+      EntityType.field_34222,
+      EntityType.field_34223,
+      EntityType.field_34322,
+      EntityType.field_34277,
+      EntityType.field_34255,
+      EntityType.field_34220,
+      EntityType.field_34317,
+      EntityType.field_34212,
+      EntityType.field_34244,
+      EntityType.field_34227,
+      EntityType.field_34297,
+      EntityType.field_34234
    };
 
    public void accept(Consumer<class_3139> var1) {
@@ -211,7 +211,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
             "shot_trident",
             class_3324.method_15278(
                class_6724.method_30857()
-                  .method_30855(class_9447.method_43695().method_43694(true).method_43696(class_2184.method_10127().method_10134(class_6629.field_34284)))
+                  .method_30855(class_9447.method_43695().method_43694(true).method_43696(class_2184.method_10127().method_10134(EntityType.field_34284)))
             )
          )
          .method_15270(var1, "adventure/throw_trident");
@@ -227,7 +227,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
             true,
             false
          )
-         .method_15272("struck_villager", class_6047.method_27614(class_2184.method_10127().method_10134(class_6629.field_34276).method_10139()))
+         .method_15272("struck_villager", class_6047.method_27614(class_2184.method_10127().method_10134(EntityType.field_34276).method_10139()))
          .method_15270(var1, "adventure/very_very_frightening");
       class_3321.method_15269()
          .method_15274(var6)
@@ -241,7 +241,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
             true,
             false
          )
-         .method_15272("summoned_golem", class_146.method_566(class_2184.method_10127().method_10134(class_6629.field_34298)))
+         .method_15272("summoned_golem", class_146.method_566(class_2184.method_10127().method_10134(EntityType.field_34298)))
          .method_15270(var1, "adventure/summon_iron_golem");
       class_3321.method_15269()
          .method_15274(var8)
@@ -259,7 +259,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
          .method_15272(
             "killed_skeleton",
             class_3780.method_17505(
-               class_2184.method_10127().method_10134(class_6629.field_34241).method_10128(class_6254.method_28550(class_6115.method_28094(50.0F))),
+               class_2184.method_10127().method_10134(EntityType.field_34241).method_10128(class_6254.method_28550(class_6115.method_28094(50.0F))),
                class_9447.method_43695().method_43694(true)
             )
          )
@@ -304,7 +304,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
             true,
             false
          )
-         .method_15272("kill_pillager", class_9370.method_43337(class_2184.method_10127().method_10134(class_6629.field_34265)))
+         .method_15272("kill_pillager", class_9370.method_43337(class_2184.method_10127().method_10134(EntityType.field_34265)))
          .method_15270(var1, "adventure/whos_the_pillager_now");
       class_3321.method_15269()
          .method_15274(var10)
@@ -322,7 +322,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
          .method_15272(
             "two_birds",
             class_9370.method_43337(
-               class_2184.method_10127().method_10134(class_6629.field_34246), class_2184.method_10127().method_10134(class_6629.field_34246)
+               class_2184.method_10127().method_10134(EntityType.field_34246), class_2184.method_10127().method_10134(EntityType.field_34246)
             )
          )
          .method_15270(var1, "adventure/two_birds_one_arrow");
@@ -410,7 +410,7 @@ public class class_2699 implements Consumer<Consumer<class_3139>> {
    }
 
    private class_3321 method_12160(class_3321 var1) {
-      for (class_6629 var7 : field_13226) {
+      for (EntityType var7 : field_13226) {
          var1.method_15272(class_8669.field_44400.method_39797(var7).toString(), class_3780.method_17504(class_2184.method_10127().method_10134(var7)));
       }
 

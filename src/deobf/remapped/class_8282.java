@@ -12,9 +12,9 @@ public class class_8282 {
    public static class_6325 method_38196(float var0, float var1, float var2, boolean var3) {
       class_7961 var6 = new class_7961();
       class_4705.method_21758(var6);
-      var6.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34225, 8, 4, 4));
-      var6.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34251, 4, 2, 3));
-      var6.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34250, 8, 2, 4));
+      var6.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34225, 8, 4, 4));
+      var6.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34251, 4, 2, 3));
+      var6.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34250, 8, 2, 4));
       if (!var3) {
          class_4705.method_21689(var6);
          class_4705.method_21686(var6, 100, 25, 100);
@@ -128,8 +128,8 @@ public class class_8282 {
    public static class_6325 method_38181() {
       class_7961 var2 = new class_7961();
       class_4705.method_21759(var2);
-      var2.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34228, 10, 1, 1))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34214, 2, 1, 1));
+      var2.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34228, 10, 1, 1))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34214, 2, 1, 1));
       return method_38173(0.2F, 0.4F, 0.9F, false, false, true, var2);
    }
 
@@ -148,9 +148,9 @@ public class class_8282 {
    private static class_6325 method_38178(float var0, float var1, int var2, int var3, int var4) {
       class_7961 var7 = new class_7961();
       class_4705.method_21759(var7);
-      var7.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34228, var2, 1, var3))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34214, 2, 1, var4))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34232, 1, 1, 2));
+      var7.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34228, var2, 1, var3))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34214, 2, 1, var4))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34232, 1, 1, 2));
       var7.method_36018();
       return method_38173(var0, var1, 0.9F, false, false, false, var7);
    }
@@ -158,9 +158,9 @@ public class class_8282 {
    private static class_6325 method_38193(float var0, float var1, int var2, int var3) {
       class_7961 var6 = new class_7961();
       class_4705.method_21759(var6);
-      var6.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34228, var2, 1, var3))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34232, 80, 1, 2))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34214, 2, 1, 1));
+      var6.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34228, var2, 1, var3))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34232, 80, 1, 2))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34214, 2, 1, 1));
       return method_38173(var0, var1, 0.9F, true, false, false, var6);
    }
 
@@ -223,7 +223,7 @@ public class class_8282 {
    public static class_6325 method_38184(float var0, float var1, class_7929<class_5194> var2, boolean var3) {
       class_7961 var6 = new class_7961();
       class_4705.method_21758(var6);
-      var6.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34327, 5, 4, 6));
+      var6.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34327, 5, 4, 6));
       class_4705.method_21747(var6);
       class_3082 var7 = new class_3082().method_14125(var2);
       class_4705.method_21720(var7);
@@ -535,15 +535,15 @@ public class class_8282 {
    private static class_7961 method_38170() {
       class_7961 var2 = new class_7961();
       class_4705.method_21758(var2);
-      var2.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34286, 1, 2, 6))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34248, 1, 1, 1));
+      var2.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34286, 1, 2, 6))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34248, 1, 1, 1));
       class_4705.method_21747(var2);
       return var2;
    }
 
    public static class_6325 method_38183() {
       class_7961 var2 = method_38170();
-      var2.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34327, 8, 4, 4));
+      var2.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34327, 8, 4, 4));
       return method_38206(1.5F, 0.025F, 1.0F, true, false, var2);
    }
 
@@ -664,7 +664,7 @@ public class class_8282 {
    public static class_6325 method_38192(boolean var0) {
       class_7961 var3 = new class_7961();
       class_4705.method_21680(var3, 3, 4, 15);
-      var3.method_36017(class_4565.field_22248, new class_3222(class_6629.field_34236, 15, 1, 5));
+      var3.method_36017(class_4565.field_22248, new class_3222(EntityType.field_34236, 15, 1, 5));
       boolean var4 = !var0;
       class_3082 var5 = method_38197(class_7036.field_36243, var0, false, var4);
       var5.method_14130(class_1841.field_9345, !var0 ? class_7024.field_36029 : class_7024.field_36039);
@@ -677,7 +677,7 @@ public class class_8282 {
    public static class_6325 method_38179(boolean var0) {
       class_7961 var3 = new class_7961();
       class_4705.method_21680(var3, 1, 4, 10);
-      var3.method_36017(class_4565.field_22250, new class_3222(class_6629.field_34320, 1, 1, 2));
+      var3.method_36017(class_4565.field_22250, new class_3222(EntityType.field_34320, 1, 1, 2));
       class_3082 var4 = method_38197(class_7036.field_36243, var0, false, true);
       var4.method_14130(class_1841.field_9345, !var0 ? class_7024.field_36108 : class_7024.field_36177);
       class_4705.method_21696(var4);
@@ -694,9 +694,9 @@ public class class_8282 {
          class_4705.method_21680(var3, 8, 4, 8);
       }
 
-      var3.method_36017(class_4565.field_22248, new class_3222(class_6629.field_34315, 5, 1, 3))
-         .method_36017(class_4565.field_22248, new class_3222(class_6629.field_34278, 25, 8, 8))
-         .method_36017(class_4565.field_22250, new class_3222(class_6629.field_34320, 2, 1, 2));
+      var3.method_36017(class_4565.field_22248, new class_3222(EntityType.field_34315, 5, 1, 3))
+         .method_36017(class_4565.field_22248, new class_3222(EntityType.field_34278, 25, 8, 8))
+         .method_36017(class_4565.field_22250, new class_3222(EntityType.field_34320, 2, 1, 2));
       class_3082 var4 = method_38197(class_7036.field_36224, var0, true, false);
       var4.method_14130(class_1841.field_9345, !var0 ? class_7024.field_36053 : class_7024.field_36042);
       if (var0) {
@@ -709,7 +709,7 @@ public class class_8282 {
    }
 
    public static class_6325 method_38172() {
-      class_7961 var2 = new class_7961().method_36017(class_4565.field_22248, new class_3222(class_6629.field_34315, 15, 1, 3));
+      class_7961 var2 = new class_7961().method_36017(class_4565.field_22248, new class_3222(EntityType.field_34315, 15, 1, 3));
       class_4705.method_21695(var2, 10, 4);
       class_3082 var3 = method_38197(class_7036.field_36228, false, true, false)
          .method_14130(class_1841.field_9345, class_7024.field_36169)
@@ -722,7 +722,7 @@ public class class_8282 {
    public static class_6325 method_38217() {
       class_7961 var2 = new class_7961();
       class_4705.method_21695(var2, 5, 1);
-      var2.method_36017(class_4565.field_22247, new class_3222(class_6629.field_34211, 5, 1, 1));
+      var2.method_36017(class_4565.field_22247, new class_3222(EntityType.field_34211, 5, 1, 1));
       class_3082 var3 = method_38197(class_7036.field_36228, true, true, false).method_14130(class_1841.field_9345, class_7024.field_36042);
       class_4705.method_21696(var3);
       class_4705.method_21729(var3);
@@ -731,11 +731,11 @@ public class class_8282 {
 
    public static class_6325 method_38198(boolean var0) {
       class_7961 var3 = new class_7961()
-         .method_36017(class_4565.field_22250, new class_3222(class_6629.field_34292, 1, 1, 4))
-         .method_36017(class_4565.field_22248, new class_3222(class_6629.field_34236, 15, 1, 5))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34229, 1, 1, 2));
+         .method_36017(class_4565.field_22250, new class_3222(EntityType.field_34292, 1, 1, 4))
+         .method_36017(class_4565.field_22248, new class_3222(EntityType.field_34236, 15, 1, 5))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34229, 1, 1, 2));
       class_4705.method_21747(var3);
-      var3.method_36017(class_4565.field_22247, new class_3222(class_6629.field_34211, 5, 1, 1));
+      var3.method_36017(class_4565.field_22247, new class_3222(EntityType.field_34211, 5, 1, 1));
       float var4 = !var0 ? 0.0F : 0.5F;
       class_3082 var5 = new class_3082().method_14125(class_7036.field_36241);
       var5.method_14126(class_8390.field_42944);
@@ -841,21 +841,21 @@ public class class_8282 {
    }
 
    public static class_6325 method_38215(float var0, float var1) {
-      class_7961 var4 = method_38187().method_36017(class_4565.field_22239, new class_3222(class_6629.field_34225, 5, 4, 4)).method_36018();
+      class_7961 var4 = method_38187().method_36017(class_4565.field_22239, new class_3222(EntityType.field_34225, 5, 4, 4)).method_36018();
       return method_38176(var0, var1, false, var4);
    }
 
    public static class_6325 method_38194() {
-      class_7961 var2 = method_38187().method_36017(class_4565.field_22239, new class_3222(class_6629.field_34251, 4, 2, 3));
+      class_7961 var2 = method_38187().method_36017(class_4565.field_22239, new class_3222(EntityType.field_34251, 4, 2, 3));
       return method_38176(0.1F, 0.4F, true, var2);
    }
 
    public static class_6325 method_38171(float var0, float var1, boolean var2, boolean var3, boolean var4, boolean var5) {
       class_7961 var8 = new class_7961();
       class_4705.method_21758(var8);
-      var8.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34225, 8, 4, 4))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34251, 4, 2, 3))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34250, 8, 2, 4));
+      var8.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34225, 8, 4, 4))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34251, 4, 2, 3))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34250, 8, 2, 4));
       if (!var2 && !var3) {
          var8.method_36018();
       }
@@ -963,7 +963,7 @@ public class class_8282 {
       class_7961 var5 = new class_7961();
       class_4705.method_21758(var5);
       class_4705.method_21747(var5);
-      var5.method_36017(class_4565.field_22247, new class_3222(class_6629.field_34222, 1, 1, 1));
+      var5.method_36017(class_4565.field_22247, new class_3222(EntityType.field_34222, 1, 1, 1));
       class_3082 var6 = new class_3082().method_14125(class_7036.field_36239);
       if (!var2) {
          var6.method_14126(class_8390.field_42940);
@@ -1070,10 +1070,10 @@ public class class_8282 {
 
    public static class_6325 method_38182(float var0, float var1, float var2, int var3, boolean var4) {
       class_7961 var7 = new class_7961()
-         .method_36017(class_4565.field_22250, new class_3222(class_6629.field_34292, 2, 1, 4))
-         .method_36017(class_4565.field_22248, new class_3222(class_6629.field_34236, 5, 1, 5));
+         .method_36017(class_4565.field_22250, new class_3222(EntityType.field_34292, 2, 1, 4))
+         .method_36017(class_4565.field_22248, new class_3222(EntityType.field_34236, 5, 1, 5));
       class_4705.method_21747(var7);
-      var7.method_36017(class_4565.field_22247, new class_3222(class_6629.field_34211, !var4 ? 100 : 1, 1, 1));
+      var7.method_36017(class_4565.field_22247, new class_3222(EntityType.field_34211, !var4 ? 100 : 1, 1, 1));
       class_3082 var8 = new class_3082().method_14125(class_7036.field_36243);
       var8.method_14126(class_8390.field_42923);
       var8.method_14126(class_8390.field_42933);
@@ -1118,7 +1118,7 @@ public class class_8282 {
    public static class_6325 method_38204(float var0, float var1, float var2, float var3, int var4, boolean var5, boolean var6) {
       class_7961 var9 = new class_7961();
       if (!var6 && !var5) {
-         var9.method_36017(class_4565.field_22239, new class_3222(class_6629.field_34283, 5, 2, 5));
+         var9.method_36017(class_4565.field_22239, new class_3222(EntityType.field_34283, 5, 2, 5));
       }
 
       class_4705.method_21747(var9);
@@ -1191,12 +1191,12 @@ public class class_8282 {
 
    public static class_6325 method_38169() {
       class_6068 var2 = new class_7961()
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34281, 50, 4, 4))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34234, 100, 4, 4))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34295, 2, 4, 4))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34308, 1, 4, 4))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34240, 15, 4, 4))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34233, 60, 1, 2))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34281, 50, 4, 4))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34234, 100, 4, 4))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34295, 2, 4, 4))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34308, 1, 4, 4))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34240, 15, 4, 4))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34233, 60, 1, 2))
          .method_36014();
       class_3082 var3 = new class_3082()
          .method_14125(class_7036.field_36237)
@@ -1244,14 +1244,14 @@ public class class_8282 {
       double var2 = 0.7;
       double var4 = 0.15;
       class_6068 var6 = new class_7961()
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34241, 20, 5, 5))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34281, 50, 4, 4))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34308, 1, 4, 4))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34233, 60, 1, 2))
-         .method_36015(class_6629.field_34241, 0.7, 0.15)
-         .method_36015(class_6629.field_34281, 0.7, 0.15)
-         .method_36015(class_6629.field_34308, 0.7, 0.15)
-         .method_36015(class_6629.field_34233, 0.7, 0.15)
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34241, 20, 5, 5))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34281, 50, 4, 4))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34308, 1, 4, 4))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34233, 60, 1, 2))
+         .method_36015(EntityType.field_34241, 0.7, 0.15)
+         .method_36015(EntityType.field_34281, 0.7, 0.15)
+         .method_36015(EntityType.field_34308, 0.7, 0.15)
+         .method_36015(EntityType.field_34233, 0.7, 0.15)
          .method_36014();
       class_3082 var7 = new class_3082()
          .method_14125(class_7036.field_36233)
@@ -1299,9 +1299,9 @@ public class class_8282 {
 
    public static class_6325 method_38205() {
       class_6068 var2 = new class_7961()
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34281, 40, 1, 1))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34295, 100, 2, 5))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34233, 60, 1, 2))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34281, 40, 1, 1))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34295, 100, 2, 5))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34233, 60, 1, 2))
          .method_36014();
       class_3082 var3 = new class_3082()
          .method_14125(class_7036.field_36234)
@@ -1353,10 +1353,10 @@ public class class_8282 {
 
    public static class_6325 method_38167() {
       class_6068 var2 = new class_7961()
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34234, 1, 2, 4))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34306, 9, 3, 4))
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34240, 5, 3, 4))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34233, 60, 1, 2))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34234, 1, 2, 4))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34306, 9, 3, 4))
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34240, 5, 3, 4))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34233, 60, 1, 2))
          .method_36014();
       class_3082 var3 = new class_3082()
          .method_14125(class_7036.field_36225)
@@ -1403,9 +1403,9 @@ public class class_8282 {
 
    public static class_6325 method_38166() {
       class_6068 var2 = new class_7961()
-         .method_36017(class_4565.field_22247, new class_3222(class_6629.field_34308, 1, 4, 4))
-         .method_36017(class_4565.field_22239, new class_3222(class_6629.field_34233, 60, 1, 2))
-         .method_36015(class_6629.field_34308, 1.0, 0.12)
+         .method_36017(class_4565.field_22247, new class_3222(EntityType.field_34308, 1, 4, 4))
+         .method_36017(class_4565.field_22239, new class_3222(EntityType.field_34233, 60, 1, 2))
+         .method_36015(EntityType.field_34308, 1.0, 0.12)
          .method_36014();
       class_3082 var3 = new class_3082()
          .method_14125(class_7036.field_36223)

@@ -98,11 +98,11 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       (BiPredicate<class_7666, class_236>)(var0, var1) -> var1 == class_236.field_783
    );
 
-   public class_7666(class_6629<? extends class_7666> var1, World var2) {
+   public class_7666(EntityType<? extends class_7666> var1, World var2) {
       this(var1, var2, class_8853.field_45268);
    }
 
-   public class_7666(class_6629<? extends class_7666> var1, World var2, class_8853 var3) {
+   public class_7666(EntityType<? extends class_7666> var1, World var2, class_8853 var3) {
       super(var1, var2);
       ((class_8985)this.method_26927()).method_41199(true);
       this.method_26927().method_5611(true);
@@ -678,7 +678,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          var7 = class_8853.method_40719(var1.method_2754(this.method_37075()));
       }
 
-      class_7666 var8 = new class_7666(class_6629.field_34276, var1, var7);
+      class_7666 var8 = new class_7666(EntityType.field_34276, var1, var7);
       var8.method_26864(var1, var1.method_43368(var8.method_37075()), class_2417.field_12038, (class_8733)null, (CompoundNBT)null);
       return var8;
    }
@@ -689,7 +689,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          super.method_37384(var1, var2);
       } else {
          LOGGER.info("Villager {} was struck by lightning {}.", this, var2);
-         class_1609 var5 = class_6629.field_34220.method_30484(var1);
+         class_1609 var5 = EntityType.field_34220.method_30484(var1);
          var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12041, (class_8733)null, (CompoundNBT)null);
          var5.method_26888(this.method_26859());
@@ -810,7 +810,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          double var8 = (double)(var1.field_33033.nextInt(16) - 8);
          BlockPos var10 = this.method_34701(var4, var6, var8);
          if (var10 != null) {
-            class_8127 var11 = class_6629.field_34298
+            class_8127 var11 = EntityType.field_34298
                .method_30483(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var10, class_2417.field_12027, false, false);
             if (var11 != null) {
                if (var11.method_26889(var1, class_2417.field_12027) && var11.method_26855(var1)) {

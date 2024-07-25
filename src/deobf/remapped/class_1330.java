@@ -19,11 +19,11 @@ public class class_1330 extends class_2451 {
          BlockPos var7 = var6.method_21858();
          ItemStack var8 = var1.method_21867();
          class_1343 var9 = class_1343.method_6200(var7);
-         Box var10 = class_6629.field_34289.method_30473().method_27940(var9.method_61(), var9.method_60(), var9.method_62());
+         Box var10 = EntityType.field_34289.method_30473().method_27940(var9.method_61(), var9.method_60(), var9.method_62());
          if (var5.method_6672((Entity)null, var10, var0 -> true) && var5.method_25870((Entity)null, var10).isEmpty()) {
             if (var5 instanceof class_6331) {
                class_6331 var11 = (class_6331)var5;
-               class_9399 var12 = class_6629.field_34289
+               class_9399 var12 = EntityType.field_34289
                   .method_30483(var11, var8.method_27990(), (ITextComponent)null, var1.method_21868(), var7, class_2417.field_12030, true, true);
                if (var12 == null) {
                   return class_6910.field_35517;

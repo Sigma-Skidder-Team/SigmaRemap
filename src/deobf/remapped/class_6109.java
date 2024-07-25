@@ -13,7 +13,7 @@ public class class_6109 extends class_5920<class_5834> {
       this(var1x -> var1.equals(var1x.method_37387().method_30476()), var2);
    }
 
-   public class_6109(class_6629<?> var1, float var2) {
+   public class_6109(EntityType<?> var1, float var2) {
       this(var1x -> var1.equals(var1x.method_37387()), var2);
    }
 

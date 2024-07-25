@@ -75,7 +75,7 @@ public class class_4964 {
    private boolean field_25687;
    private boolean field_25708;
    private boolean field_25686;
-   private class_6629<?> field_25699;
+   private EntityType<?> field_25699;
    private boolean field_25672;
    private boolean field_25702;
    private boolean field_25698;
@@ -199,19 +199,19 @@ public class class_4964 {
                   this.field_25692 = 1;
                   this.field_25681 = false;
                   this.field_25701 = field_25696;
-                  this.method_22751(class_6629.field_34300);
+                  this.method_22751(EntityType.field_34300);
                }
             } else {
                this.field_25692 = Integer.MAX_VALUE;
                this.field_25681 = false;
                this.field_25701 = field_25668;
-               this.method_22751(class_6629.field_34300);
+               this.method_22751(EntityType.field_34300);
             }
          } else {
             this.field_25692 = 1;
             this.field_25681 = false;
             this.field_25701 = field_25697;
-            this.method_22751(class_6629.field_34300);
+            this.method_22751(EntityType.field_34300);
          }
 
          this.field_25709 = this::method_22802;
@@ -565,7 +565,7 @@ public class class_4964 {
       this.field_25686 = var1;
    }
 
-   public void method_22751(class_6629<?> var1) {
+   public void method_22751(EntityType<?> var1) {
       this.field_25699 = var1;
    }
 

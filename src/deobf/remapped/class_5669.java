@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class class_5669 extends class_2733 {
    public class_5669() {
-      super(class_6629.field_34320, "dolphin", 0.7F);
+      super(EntityType.field_34320, "dolphin", 0.7F);
    }
 
    @Override

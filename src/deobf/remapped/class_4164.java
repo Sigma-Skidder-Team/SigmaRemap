@@ -2,7 +2,7 @@ package remapped;
 
 public class class_4164 extends class_2733 {
    public class_4164() {
-      super(class_6629.field_34309, "evoker_fangs", 0.0F, new String[]{"evocation_fangs"});
+      super(EntityType.field_34309, "evoker_fangs", 0.0F, new String[]{"evocation_fangs"});
    }
 
    @Override

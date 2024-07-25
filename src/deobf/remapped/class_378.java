@@ -13,7 +13,7 @@ public class class_378 extends class_5886 implements class_1869 {
    public float field_1533;
    private boolean field_1535;
 
-   public class_378(class_6629<? extends class_378> var1, World var2) {
+   public class_378(EntityType<? extends class_378> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_8509(this);
    }
@@ -144,8 +144,8 @@ public class class_378 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public class_6629<? extends class_378> method_37387() {
-      return (class_6629<? extends class_378>)super.method_37387();
+   public EntityType<? extends class_378> method_37387() {
+      return (EntityType<? extends class_378>)super.method_37387();
    }
 
    @Override
@@ -239,7 +239,7 @@ public class class_378 extends class_5886 implements class_1869 {
       return this.method_1860() != 1 ? class_5931.field_30157 : this.method_37387().method_30480();
    }
 
-   public static boolean method_1853(class_6629<class_378> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_1853(EntityType<class_378> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (var1.method_43370() != class_423.field_1790) {
          if (Objects.equals(var1.method_2754(var3), Optional.<class_5621<class_6325>>of(class_8606.field_44089))
             && var3.method_12165() > 50

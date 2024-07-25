@@ -1,7 +1,7 @@
 package remapped;
 
 public abstract class class_1829 extends class_4612 {
-   public class_1829(class_6629<? extends class_1829> var1, World var2) {
+   public class_1829(EntityType<? extends class_1829> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6359, 0.0F);
    }

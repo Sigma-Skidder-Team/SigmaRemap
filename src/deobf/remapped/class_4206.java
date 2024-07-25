@@ -6,7 +6,7 @@ public class class_4206 extends class_516 implements class_1869 {
    private static final class_7821<Boolean> field_20448 = class_8073.<Boolean>method_36641(class_4206.class, class_2734.field_13347);
    private int field_20450 = 1;
 
-   public class_4206(class_6629<? extends class_4206> var1, World var2) {
+   public class_4206(EntityType<? extends class_4206> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
       this.field_29900 = new class_9851(this);
@@ -87,7 +87,7 @@ public class class_4206 extends class_516 implements class_1869 {
       return 5.0F;
    }
 
-   public static boolean method_19574(class_6629<class_4206> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_19574(EntityType<class_4206> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790 && var4.nextInt(20) == 0 && method_26908(var0, var1, var2, var3, var4);
    }
 

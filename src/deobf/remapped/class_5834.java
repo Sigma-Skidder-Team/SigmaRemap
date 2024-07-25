@@ -104,7 +104,7 @@ public abstract class class_5834 extends Entity {
    private float field_29624;
    public class_1150<?> field_29675;
 
-   public class_5834(class_6629<? extends class_5834> var1, World var2) {
+   public class_5834(EntityType<? extends class_5834> var1, World var2) {
       super(var1, var2);
       this.field_29603 = new class_6711(class_9030.method_41423(var1));
       this.method_26456(this.method_26465());
@@ -136,7 +136,7 @@ public abstract class class_5834 extends Entity {
       this.attackEntityFrom(DamageSource.field_31685, Float.MAX_VALUE);
    }
 
-   public boolean method_26610(class_6629<?> var1) {
+   public boolean method_26610(EntityType<?> var1) {
       return true;
    }
 
@@ -689,10 +689,10 @@ public abstract class class_5834 extends Entity {
       if (var1 != null) {
          ItemStack var9 = this.method_26520(class_6943.field_35704);
          class_2451 var7 = var9.method_27960();
-         class_6629 var8 = var1.method_37387();
-         if (var8 == class_6629.field_34241 && var7 == class_4897.field_24880
-            || var8 == class_6629.field_34297 && var7 == class_4897.field_24349
-            || var8 == class_6629.field_34210 && var7 == class_4897.field_25069) {
+         EntityType var8 = var1.method_37387();
+         if (var8 == EntityType.field_34241 && var7 == class_4897.field_24880
+            || var8 == EntityType.field_34297 && var7 == class_4897.field_24349
+            || var8 == EntityType.field_34210 && var7 == class_4897.field_25069) {
             var4 *= 0.5;
          }
       }
@@ -928,7 +928,7 @@ public abstract class class_5834 extends Entity {
                      if (var10.method_41215()) {
                         this.field_29665 = 100;
                         class_5834 var11 = var10.method_41207();
-                        if (var11 != null && var11.method_37387() == class_6629.field_34300) {
+                        if (var11 != null && var11.method_37387() == EntityType.field_34300) {
                            this.field_29634 = (class_704)var11;
                         } else {
                            this.field_29634 = null;

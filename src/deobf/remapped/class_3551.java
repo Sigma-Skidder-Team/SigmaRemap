@@ -7,7 +7,7 @@ public class class_3551 extends class_4109 {
    private static final UUID field_17373 = UUID.fromString("556E1665-8B10-40C8-8F9D-CF9B1667F295");
    private static final class_7821<Integer> field_17374 = class_8073.<Integer>method_36641(class_3551.class, class_2734.field_13366);
 
-   public class_3551(class_6629<? extends class_3551> var1, World var2) {
+   public class_3551(EntityType<? extends class_3551> var1, World var2) {
       super(var1, var2);
    }
 
@@ -204,7 +204,7 @@ public class class_3551 extends class_4109 {
       class_4109 var6;
       if (!(var2 instanceof class_141)) {
          class_3551 var5 = (class_3551)var2;
-         var6 = class_6629.field_34286.method_30484(var1);
+         var6 = EntityType.field_34286.method_30484(var1);
          int var7 = this.field_41717.nextInt(9);
          class_2185 var8;
          if (var7 >= 4) {
@@ -231,7 +231,7 @@ public class class_3551 extends class_4109 {
 
          ((class_3551)var6).method_16528(var8, var10);
       } else {
-         var6 = class_6629.field_34218.method_30484(var1);
+         var6 = EntityType.field_34218.method_30484(var1);
       }
 
       this.method_19055(var2, var6);

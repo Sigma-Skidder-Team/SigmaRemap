@@ -1,7 +1,7 @@
 package remapped;
 
 public abstract class class_7398 extends class_2733 {
-   public class_7398(class_6629 var1, String var2, float var3) {
+   public class_7398(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 

@@ -5,10 +5,10 @@ import java.util.Arrays;
 
 public class class_5236 extends class_2520 {
    public class_5236() {
-      super(class_6629.field_34240, "piglin", 0.5F);
+      super(EntityType.field_34240, "piglin", 0.5F);
    }
 
-   public class_5236(class_6629 var1, String var2, float var3) {
+   public class_5236(EntityType var1, String var2, float var3) {
       super(var1, var2, var3);
    }
 

@@ -50,7 +50,7 @@ public class class_4664 extends class_8131 {
    public void method_36999(String var1, BlockPos var2, class_1556 var3, Random var4, class_9616 var5) {
       if (!"chest".equals(var1)) {
          if ("drowned".equals(var1)) {
-            class_4359 var8 = class_6629.field_34211.method_30484(var3.method_7066());
+            class_4359 var8 = EntityType.field_34211.method_30484(var3.method_7066());
             var8.method_26883();
             var8.method_37253(var2, 0.0F, 0.0F);
             var8.method_26864(var3, var3.method_43368(var2), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);

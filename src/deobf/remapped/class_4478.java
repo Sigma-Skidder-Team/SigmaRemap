@@ -33,14 +33,14 @@ public class class_4478 extends Entity {
    private class_5834 field_21825;
    private UUID field_21837;
 
-   public class_4478(class_6629<? extends class_4478> var1, World var2) {
+   public class_4478(EntityType<? extends class_4478> var1, World var2) {
       super(var1, var2);
       this.field_41731 = true;
       this.method_20781(3.0F);
    }
 
    public class_4478(World var1, double var2, double var4, double var6) {
-      this(class_6629.field_34279, var1);
+      this(EntityType.field_34279, var1);
       this.method_37256(var2, var4, var6);
    }
 

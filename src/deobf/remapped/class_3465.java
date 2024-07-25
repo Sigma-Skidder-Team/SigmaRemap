@@ -36,8 +36,8 @@ public class class_3465 extends class_6414 {
             var3 = var3.method_6100();
          }
 
-         if (var2.method_28262(var3).method_8305(var2, var3, class_6629.field_34234)) {
-            Entity var7 = class_6629.field_34234
+         if (var2.method_28262(var3).method_8305(var2, var3, EntityType.field_34234)) {
+            Entity var7 = EntityType.field_34234
                .method_30478(var2, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var3.method_6081(), class_2417.field_12033, false, false);
             if (var7 != null) {
                var7.method_37157();

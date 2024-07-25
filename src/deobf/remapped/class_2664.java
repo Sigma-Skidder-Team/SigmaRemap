@@ -5,8 +5,8 @@ import com.mojang.serialization.Codec;
 import java.util.List;
 
 public class class_2664 extends class_5390<class_1941> {
-   private static final List<class_3222> field_13106 = ImmutableList.of(new class_3222(class_6629.field_34220, 1, 1, 1));
-   private static final List<class_3222> field_13107 = ImmutableList.of(new class_3222(class_6629.field_34249, 1, 1, 1));
+   private static final List<class_3222> field_13106 = ImmutableList.of(new class_3222(EntityType.field_34220, 1, 1, 1));
+   private static final List<class_3222> field_13107 = ImmutableList.of(new class_3222(EntityType.field_34249, 1, 1, 1));
 
    public class_2664(Codec<class_1941> var1) {
       super(var1);

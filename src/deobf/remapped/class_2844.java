@@ -5,16 +5,16 @@ import java.util.List;
 public class class_2844 extends class_8388 {
    private static String[] field_13945;
 
-   public class_2844(class_6629<? extends class_2844> var1, World var2) {
+   public class_2844(EntityType<? extends class_2844> var1, World var2) {
       super(var1, var2);
    }
 
    public class_2844(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
-      super(class_6629.field_34267, var2, var4, var6, var8, var10, var12, var1);
+      super(EntityType.field_34267, var2, var4, var6, var8, var10, var12, var1);
    }
 
    public class_2844(World var1, class_5834 var2, double var3, double var5, double var7) {
-      super(class_6629.field_34267, var2, var3, var5, var7, var1);
+      super(EntityType.field_34267, var2, var3, var5, var7, var1);
    }
 
    @Override

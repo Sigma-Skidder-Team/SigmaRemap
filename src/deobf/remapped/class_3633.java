@@ -191,7 +191,7 @@ public class class_3633 extends class_380 implements class_724 {
       return var0.method_28262(var1.method_6100()).method_8360() instanceof class_3633;
    }
 
-   public static Optional<class_1343> method_16932(class_6629<?> var0, class_1449 var1, BlockPos var2, float var3) {
+   public static Optional<class_1343> method_16932(EntityType<?> var0, class_1449 var1, BlockPos var2, float var3) {
       Direction var6 = var1.method_28262(var2).<Direction>method_10313(field_1543);
       Direction var7 = var6.method_1042();
       Direction var8 = !var7.method_1052(var3) ? var7 : var7.method_1046();
@@ -204,7 +204,7 @@ public class class_3633 extends class_380 implements class_724 {
       }
    }
 
-   private static Optional<class_1343> method_16937(class_6629<?> var0, class_1449 var1, BlockPos var2, Direction var3, Direction var4) {
+   private static Optional<class_1343> method_16937(EntityType<?> var0, class_1449 var1, BlockPos var2, Direction var3, Direction var4) {
       int[][] var7 = method_16933(var3, var4);
       Optional var8 = method_16924(var0, var1, var2, var7, true);
       if (!var8.isPresent()) {
@@ -232,7 +232,7 @@ public class class_3633 extends class_380 implements class_724 {
       }
    }
 
-   private static Optional<class_1343> method_16924(class_6629<?> var0, class_1449 var1, BlockPos var2, int[][] var3, boolean var4) {
+   private static Optional<class_1343> method_16924(EntityType<?> var0, class_1449 var1, BlockPos var2, int[][] var3, boolean var4) {
       class_2921 var7 = new class_2921();
 
       for (int[] var11 : var3) {

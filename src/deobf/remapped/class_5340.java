@@ -3,12 +3,12 @@ package remapped;
 public class class_5340 extends class_292 {
    private static String[] field_27230;
 
-   public class_5340(class_6629<? extends class_5340> var1, World var2) {
+   public class_5340(EntityType<? extends class_5340> var1, World var2) {
       super(var1, var2);
    }
 
    public class_5340(World var1, double var2, double var4, double var6) {
-      super(class_6629.field_34221, var2, var4, var6, var1);
+      super(EntityType.field_34221, var2, var4, var6, var1);
    }
 
    @Override
