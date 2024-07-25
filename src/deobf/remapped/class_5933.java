@@ -12,7 +12,7 @@ public class class_5933 {
       this.field_30161 = var2;
    }
 
-   public class_5933(class_1293 var1) {
+   public class_5933(JSONObjectImpl var1) {
       Calendar var4 = Calendar.getInstance();
       long var5 = 0L;
       if (!(var1.method_5805("until") instanceof Integer)) {
@@ -30,8 +30,8 @@ public class class_5933 {
       this.field_30161 = var4.getTime();
    }
 
-   public class_1293 method_27124() {
-      class_1293 var3 = new class_1293();
+   public JSONObjectImpl method_27124() {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       var3.method_5820("server", this.field_30162);
       var3.method_5819("until", this.field_30161.getTime());
       return var3;

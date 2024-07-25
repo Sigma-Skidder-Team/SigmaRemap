@@ -8,7 +8,7 @@ public class class_5442 {
    private static final int field_27714 = 200;
    private boolean field_27712 = false;
    public char field_27713 = 'i';
-   private final class_1293[] field_27716 = new class_1293[200];
+   private final JSONObjectImpl[] field_27716 = new JSONObjectImpl[200];
    private int field_27717 = 0;
    public Writer field_27715;
 
@@ -87,7 +87,7 @@ public class class_5442 {
                this.field_27715.write(44);
             }
 
-            this.field_27715.write(class_1293.method_5859(var1));
+            this.field_27715.write(JSONObjectImpl.method_5859(var1));
             this.field_27715.write(58);
             this.field_27712 = false;
             this.field_27713 = 'o';
@@ -109,7 +109,7 @@ public class class_5442 {
          throw new class_7584("Misplaced object.");
       } else {
          this.method_24784("{");
-         this.method_24794(new class_1293());
+         this.method_24794(new JSONObjectImpl());
          this.field_27712 = false;
          return this;
       }
@@ -129,7 +129,7 @@ public class class_5442 {
       }
    }
 
-   private void method_24794(class_1293 var1) throws JSONException {
+   private void method_24794(JSONObjectImpl var1) throws JSONException {
       if (this.field_27717 < 200) {
          this.field_27716[this.field_27717] = var1;
          this.field_27713 = (char)(var1 != null ? 107 : 97);
@@ -152,6 +152,6 @@ public class class_5442 {
    }
 
    public class_5442 method_24789(Object var1) throws JSONException {
-      return this.method_24784(class_1293.method_5827(var1));
+      return this.method_24784(JSONObjectImpl.method_5827(var1));
    }
 }

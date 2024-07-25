@@ -255,7 +255,7 @@ public class class_314 {
       }
 
       var4.close();
-      class_1293 var7 = new class_1293(var5);
+      JSONObjectImpl var7 = new JSONObjectImpl(var5);
       return var7.method_5861("id");
    }
 
@@ -272,10 +272,10 @@ public class class_314 {
       }
 
       String var9 = "";
-      class_1293 var10 = new class_1293(var7);
+      JSONObjectImpl var10 = new JSONObjectImpl(var7);
 
       for (Object var13 : var10.method_5849("properties")) {
-         class_1293 var14 = (class_1293)var13;
+         JSONObjectImpl var14 = (JSONObjectImpl)var13;
          if (var14.method_5850("value") && var14.method_5850("name")) {
             var9 = var14.method_5861("value");
          }
@@ -283,9 +283,9 @@ public class class_314 {
 
       if (Base64.isBase64(var9)) {
          String var15 = new String(Base64.decodeBase64(var9));
-         class_1293 var16 = new class_1293(var15);
+         JSONObjectImpl var16 = new JSONObjectImpl(var15);
          if (var16.method_5850("textures")) {
-            class_1293 var17 = var16.method_5848("textures");
+            JSONObjectImpl var17 = var16.method_5848("textures");
             if (var17.method_5850("SKIN")) {
                var3 = var17.method_5848("SKIN").method_5861("url");
             }
@@ -309,10 +309,10 @@ public class class_314 {
       }
 
       String var8 = "";
-      class_1293 var9 = new class_1293(var6);
+      JSONObjectImpl var9 = new JSONObjectImpl(var6);
 
       for (Object var12 : var9.method_5849("properties")) {
-         class_1293 var13 = (class_1293)var12;
+         JSONObjectImpl var13 = (JSONObjectImpl)var12;
          if (var13.method_5850("value") && var13.method_5850("name")) {
             var8 = var13.method_5861("value");
          }
@@ -320,9 +320,9 @@ public class class_314 {
 
       if (Base64.isBase64(var8)) {
          String var14 = new String(Base64.decodeBase64(var8));
-         class_1293 var15 = new class_1293(var14);
+         JSONObjectImpl var15 = new JSONObjectImpl(var14);
          if (var15.method_5850("textures")) {
-            class_1293 var16 = var15.method_5848("textures");
+            JSONObjectImpl var16 = var15.method_5848("textures");
             System.out.println("tex");
             if (var16.method_5850("SKIN")) {
                var3 = var16.method_5848("SKIN").method_5861("url");
@@ -358,7 +358,7 @@ public class class_314 {
          class_1336 var9 = new class_1336(var4);
 
          for (int var10 = 0; var10 < var9.method_6142(); var10++) {
-            class_1293 var11 = new class_1293(var9.method_6130(var10).toString());
+            JSONObjectImpl var11 = new JSONObjectImpl(var9.method_6130(var10).toString());
             var3.add(var11.method_5861("name"));
          }
 

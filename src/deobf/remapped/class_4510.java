@@ -7,7 +7,7 @@ public class class_4510 {
    private static Object method_20970(class_2021 var0, boolean var1, class_1336 var2) throws JSONException {
       Object var5 = null;
       class_1336 var6 = null;
-      class_1293 var7 = null;
+      JSONObjectImpl var7 = null;
       Object var8 = null;
 
       while (var0.method_17294()) {
@@ -21,7 +21,7 @@ public class class_4510 {
 
                var8 = (String)var9;
                var6 = new class_1336();
-               var7 = new class_1293();
+               var7 = new JSONObjectImpl();
                if (!var1) {
                   var7.method_5820("tagName", var8);
                   if (var2 != null) {
@@ -185,11 +185,11 @@ public class class_4510 {
       return (class_1336)method_20970(var0, true, null);
    }
 
-   public static class_1293 method_20967(class_2021 var0) throws JSONException {
-      return (class_1293)method_20970(var0, false, null);
+   public static JSONObjectImpl method_20967(class_2021 var0) throws JSONException {
+      return (JSONObjectImpl)method_20970(var0, false, null);
    }
 
-   public static class_1293 method_20966(String var0) throws JSONException {
+   public static JSONObjectImpl method_20966(String var0) throws JSONException {
       return method_20967(new class_2021(var0));
    }
 
@@ -202,11 +202,11 @@ public class class_4510 {
       var3.append(var4);
       Object var5 = var0.method_6135(1);
       int var6;
-      if (!(var5 instanceof class_1293)) {
+      if (!(var5 instanceof JSONObjectImpl)) {
          var6 = 1;
       } else {
          var6 = 2;
-         class_1293 var7 = (class_1293)var5;
+         JSONObjectImpl var7 = (JSONObjectImpl)var5;
          Iterator var8 = var7.method_5841();
 
          while (var8.hasNext()) {
@@ -233,14 +233,14 @@ public class class_4510 {
             var6++;
             if (var5 != null) {
                if (!(var5 instanceof String)) {
-                  if (!(var5 instanceof class_1293)) {
+                  if (!(var5 instanceof JSONObjectImpl)) {
                      if (!(var5 instanceof class_1336)) {
                         var3.append(var5.toString());
                      } else {
                         var3.append(toString((class_1336)var5));
                      }
                   } else {
-                     var3.append(toString((class_1293)var5));
+                     var3.append(toString((JSONObjectImpl)var5));
                   }
                } else {
                   var3.append(class_6745.method_30891(var5.toString()));
@@ -260,7 +260,7 @@ public class class_4510 {
       return var3.toString();
    }
 
-   public static String toString(class_1293 var0) throws JSONException {
+   public static String toString(JSONObjectImpl var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
       String var4 = var0.method_5851("tagName");
       if (var4 == null) {
@@ -297,14 +297,14 @@ public class class_4510 {
                Object var11 = var6.method_6130(var8);
                if (var11 != null) {
                   if (!(var11 instanceof String)) {
-                     if (!(var11 instanceof class_1293)) {
+                     if (!(var11 instanceof JSONObjectImpl)) {
                         if (!(var11 instanceof class_1336)) {
                            var3.append(var11.toString());
                         } else {
                            var3.append(toString((class_1336)var11));
                         }
                      } else {
-                        var3.append(toString((class_1293)var11));
+                        var3.append(toString((JSONObjectImpl)var11));
                      }
                   } else {
                      var3.append(class_6745.method_30891(var11.toString()));

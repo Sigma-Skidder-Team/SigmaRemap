@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_3559 extends class_1293 {
+public class class_3559 extends JSONObjectImpl {
    public class_3559(String var1) {
       super(var1);
    }

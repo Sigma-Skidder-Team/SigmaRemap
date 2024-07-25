@@ -6,13 +6,13 @@ public class SomeWeirdMultiFloatSetting extends Setting<class_7928> {
    }
 
    @Override
-   public class_1293 method_23042(class_1293 var1) {
+   public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
       this.field_25890 = new class_7928(class_3332.method_15293(var1, "value"));
       return var1;
    }
 
    @Override
-   public class_1293 method_23035(class_1293 var1) {
+   public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
       var1.method_5820("name", this.method_23032());
       var1.method_5820("value", this.method_23031().method_35842());
       return var1;

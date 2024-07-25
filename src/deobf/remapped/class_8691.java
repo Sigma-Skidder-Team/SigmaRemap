@@ -105,7 +105,7 @@ public class class_8691 {
          var3.method_6159(var5.method_33323());
       }
 
-      class_1293 var7 = new class_1293();
+      JSONObjectImpl var7 = new JSONObjectImpl();
       var7.method_5820("alts", var3);
 
       try {
@@ -117,13 +117,13 @@ public class class_8691 {
 
    private void method_39904() {
       try {
-         class_1293 var3 = class_357.method_1789(this.field_44579);
+         JSONObjectImpl var3 = class_357.method_1789(this.field_44579);
          if (!var3.method_5850("alts")) {
             var3.method_5820("alts", new class_1336());
          }
 
          for (Object var5 : var3.method_5849("alts")) {
-            this.field_44583.add(new class_7309((class_1293)var5));
+            this.field_44583.add(new class_7309((JSONObjectImpl)var5));
          }
       } catch (IOException var6) {
          SigmaMainClass.method_3328().method_3326().method_12864(var6.getMessage());

@@ -475,7 +475,7 @@ public class class_7038 implements class_6482 {
       this.field_36274.clear();
    }
 
-   public class_1293 method_32180(class_1293 var1) {
+   public JSONObjectImpl method_32180(JSONObjectImpl var1) {
       if (this.method_32166()) {
          var1.method_5820("id", this.method_32176());
          var1.method_5818("x", this.method_32132());
@@ -492,12 +492,12 @@ public class class_7038 implements class_6482 {
       }
    }
 
-   public final class_1293 method_32125(class_1293 var1) {
+   public final JSONObjectImpl method_32125(JSONObjectImpl var1) {
       class_1336 var4 = new class_1336();
 
       for (class_7038 var6 : this.field_36274) {
          if (var6.method_32166()) {
-            class_1293 var7 = var6.method_32180(new class_1293());
+            JSONObjectImpl var7 = var6.method_32180(new JSONObjectImpl());
             if (var7.method_5806() > 0) {
                var4.method_6159(var7);
             }
@@ -508,7 +508,7 @@ public class class_7038 implements class_6482 {
       return var1;
    }
 
-   public void method_32159(class_1293 var1) {
+   public void method_32159(JSONObjectImpl var1) {
       if (this.method_32166()) {
          this.field_36270 = class_3332.method_15289(var1, "x", this.field_36270);
          this.field_36261 = class_3332.method_15289(var1, "y", this.field_36261);
@@ -523,7 +523,7 @@ public class class_7038 implements class_6482 {
             ArrayList var6 = new ArrayList<class_7038>(this.field_36274);
 
             for (int var7 = 0; var7 < var4.method_6142(); var7++) {
-               class_1293 var8 = var4.method_6143(var7);
+               JSONObjectImpl var8 = var4.method_6143(var7);
                String var9 = class_3332.method_15291(var8, "id", null);
                int var10 = class_3332.method_15289(var8, "index", -1);
 

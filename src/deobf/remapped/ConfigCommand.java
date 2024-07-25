@@ -56,7 +56,7 @@ public class ConfigCommand extends Command {
                } else if (var2.length != 1) {
                   String var11 = var2[1].method_24060().toLowerCase();
                   class_1675 var13 = SigmaMainClass.method_3328().method_3298().method_848().method_4301();
-                  var13.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new class_1293());
+                  var13.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
                   SigmaMainClass.method_3328().method_3298().method_848().method_4302(var11);
                   SigmaMainClass.method_3328().method_3298().method_848().method_4298(new class_1675(var11, var13.field_8678));
                   var3.method_3731("Saved " + this.method_8240());
@@ -86,7 +86,7 @@ public class ConfigCommand extends Command {
    }
 
    public void method_8239(String var1) {
-      class_1293 var4 = SigmaMainClass.method_3328().method_3298().method_839(new class_1293());
+      JSONObjectImpl var4 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
       File var5 = new File(SigmaMainClass.method_3328().method_3334() + "/configs/");
       if (!var5.exists()) {
          var5.mkdirs();
@@ -102,7 +102,7 @@ public class ConfigCommand extends Command {
       }
 
       try {
-         IOUtils.write(new class_1293().toString(0), new FileOutputStream(var6));
+         IOUtils.write(new JSONObjectImpl().toString(0), new FileOutputStream(var6));
       } catch (IOException | class_7584 var8) {
          var8.printStackTrace();
       }

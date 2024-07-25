@@ -37,8 +37,8 @@ public class class_1741 {
                   return true;
                }
             }
-         } else if (var0 instanceof class_1293) {
-            class_1293 var10 = (class_1293)var0;
+         } else if (var0 instanceof JSONObjectImpl) {
+            JSONObjectImpl var10 = (JSONObjectImpl)var0;
             Iterator var11 = var10.method_5841();
 
             while (var11.hasNext()) {

@@ -18,7 +18,7 @@ public class SigmaMainClass {
    private static SigmaMainClass field_3982;
    private static MinecraftClient field_3950 = MinecraftClient.getInstance();
    private final File field_3975 = new File("sigma5");
-   private class_1293 field_3974;
+   private JSONObjectImpl field_3974;
    private boolean field_3962 = true;
    private class_2827 field_3953;
    private class_201 field_3961;
@@ -340,12 +340,12 @@ public class SigmaMainClass {
       return this.field_3979;
    }
 
-   public class_1293 method_3304() {
+   public JSONObjectImpl method_3304() {
       return this.field_3974;
    }
 
    public void method_3314() {
-      this.field_3974 = new class_1293();
+      this.field_3974 = new JSONObjectImpl();
    }
 
    public File method_3334() {

@@ -69,7 +69,7 @@ public class class_4763 {
             var4.method_6159(var6.method_20159());
          }
 
-         class_1293 var8 = new class_1293();
+         JSONObjectImpl var8 = new JSONObjectImpl();
          var8.method_5820("waypoints", var4);
 
          try {
@@ -84,13 +84,13 @@ public class class_4763 {
       File var3 = new File(this.field_23065 + "/waypoints.json");
 
       try {
-         class_1293 var4 = class_357.method_1789(var3);
+         JSONObjectImpl var4 = class_357.method_1789(var3);
          if (!var4.method_5850("waypoints")) {
             var4.method_5820("waypoints", new class_1336());
          }
 
          for (Object var6 : var4.method_5849("waypoints")) {
-            this.field_23053.add(new class_4333((class_1293)var6));
+            this.field_23053.add(new class_4333((JSONObjectImpl)var6));
          }
 
          this.field_23054 = true;

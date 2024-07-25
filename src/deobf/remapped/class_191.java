@@ -165,7 +165,7 @@ public class class_191 {
       this.method_851();
    }
 
-   public class_1293 method_838(class_1293 var1) {
+   public JSONObjectImpl method_838(JSONObjectImpl var1) {
       class_1336 var4 = null;
 
       try {
@@ -179,7 +179,7 @@ public class class_191 {
 
       if (var4 != null) {
          for (int var15 = 0; var15 < var4.method_6142(); var15++) {
-            class_1293 var17 = var4.method_6143(var15);
+            JSONObjectImpl var17 = var4.method_6143(var15);
             String var7 = null;
 
             try {
@@ -231,11 +231,11 @@ public class class_191 {
       return var1;
    }
 
-   public class_1293 method_839(class_1293 var1) {
+   public JSONObjectImpl method_839(JSONObjectImpl var1) {
       class_1336 var4 = new class_1336();
 
       for (Module var6 : this.field_637.values()) {
-         var4.method_6159(var6.method_42014(new class_1293()));
+         var4.method_6159(var6.method_42014(new JSONObjectImpl()));
       }
 
       var1.method_5820("mods", var4);
@@ -264,7 +264,7 @@ public class class_191 {
       }
    }
 
-   public void method_842(class_1293 var1) {
+   public void method_842(JSONObjectImpl var1) {
       String var4 = null;
 
       try {
@@ -291,9 +291,9 @@ public class class_191 {
       this.field_639.method_378();
    }
 
-   public void method_849(class_1293 var1) {
+   public void method_849(JSONObjectImpl var1) {
       var1.method_5820("profile", this.field_638.method_4301().field_8677);
-      this.field_638.method_4301().field_8678 = this.method_839(new class_1293());
+      this.field_638.method_4301().field_8678 = this.method_839(new JSONObjectImpl());
 
       try {
          this.field_638.method_4306();

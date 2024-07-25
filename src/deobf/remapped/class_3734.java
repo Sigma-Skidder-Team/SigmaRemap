@@ -233,7 +233,7 @@ public class class_3734 {
             return new class_1336(this);
          case '{':
             this.method_17299();
-            return new class_1293(this);
+            return new JSONObjectImpl(this);
          default:
             StringBuilder var4;
             for (var4 = new StringBuilder(); var3 >= ' ' && ",:]}/\\\"[{;=#".indexOf(var3) < 0; var3 = this.method_17289()) {
@@ -245,7 +245,7 @@ public class class_3734 {
             if ("".equals(var5)) {
                throw this.method_17292("Missing value");
             } else {
-               return class_1293.method_5836(var5);
+               return JSONObjectImpl.method_5836(var5);
             }
       }
    }

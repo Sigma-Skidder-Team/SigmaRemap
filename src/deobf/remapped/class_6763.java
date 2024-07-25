@@ -242,9 +242,9 @@ public class class_6763 {
       }
    }
 
-   public class_1293 method_31013(class_1293 var1) {
+   public JSONObjectImpl method_31013(JSONObjectImpl var1) {
       if (this.field_34904 != null) {
-         class_1293 var4 = this.field_34904.method_32180(new class_1293());
+         JSONObjectImpl var4 = this.field_34904.method_32180(new JSONObjectImpl());
          if (var4.method_5806() != 0) {
             var1.method_5820(this.field_34904.method_32176(), var4);
          }
@@ -284,7 +284,7 @@ public class class_6763 {
       MinecraftClient.getInstance();
       if (MinecraftClient.IS_SYSTEM_MAC) {
          try {
-            class_1293 var2 = class_357.method_1789(new File(SigmaMainClass.method_3328().method_3334() + "/config.json"));
+            JSONObjectImpl var2 = class_357.method_1789(new File(SigmaMainClass.method_3328().method_3334() + "/config.json"));
             if (var2.method_5850("hidpicocoa")) {
                field_34914 = var2.method_5826("hidpicocoa");
             }
@@ -296,14 +296,14 @@ public class class_6763 {
       }
    }
 
-   public void method_30994(class_1293 var1) {
+   public void method_30994(JSONObjectImpl var1) {
       if (this.field_34904 != null) {
-         class_1293 var4 = null;
+         JSONObjectImpl var4 = null;
 
          try {
             var4 = SigmaMainClass.method_3328().method_3304().method_5848(this.field_34904.method_32176());
          } catch (Exception var9) {
-            var4 = new class_1293();
+            var4 = new JSONObjectImpl();
          } finally {
             this.field_34904.method_32159(var4);
          }

@@ -18,7 +18,7 @@ public class class_4828 {
       this.field_24104.put(new Date(var1), var2);
    }
 
-   public class_1293 method_22218() {
-      return new class_1293(this.field_24104);
+   public JSONObjectImpl method_22218() {
+      return new JSONObjectImpl(this.field_24104);
    }
 }

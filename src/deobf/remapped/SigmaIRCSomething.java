@@ -9,7 +9,7 @@ public class SigmaIRCSomething implements class_6224 {
 
    @Override
    public void method_28452(Object... var1) {
-      class_1293 var4 = (class_1293)var1[0];
+      JSONObjectImpl var4 = (JSONObjectImpl)var1[0];
       System.out.println(var4);
    }
 }

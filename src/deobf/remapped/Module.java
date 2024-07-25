@@ -117,7 +117,7 @@ public abstract class Module {
       }
    }
 
-   public class_1293 method_42021(class_1293 var1) {
+   public JSONObjectImpl method_42021(JSONObjectImpl var1) {
       class_1336 var4 = class_3332.method_15293(var1, "options");
 
       try {
@@ -132,7 +132,7 @@ public abstract class Module {
 
       if (var4 != null) {
          for (int var5 = 0; var5 < var4.method_6142(); var5++) {
-            class_1293 var6 = var4.method_6143(var5);
+            JSONObjectImpl var6 = var4.method_6143(var5);
             String var7 = null;
 
             try {
@@ -143,7 +143,7 @@ public abstract class Module {
             for (Setting var9 : this.settingMap.values()) {
                if (var9.method_23032().equals(var7)) {
                   try {
-                     var9.method_23042(var6);
+                     var9.saveDataToJson(var6);
                   } catch (class_7584 var11) {
                      SigmaMainClass.method_3328()
                         .method_3326()
@@ -162,14 +162,14 @@ public abstract class Module {
       return var1;
    }
 
-   public class_1293 method_42014(class_1293 var1) {
+   public JSONObjectImpl method_42014(JSONObjectImpl var1) {
       var1.method_5820("name", this.method_41992());
       var1.method_5823("enabled", this.field_46700);
       var1.method_5823("allowed", this.method_41994());
       class_1336 var4 = new class_1336();
 
       for (Setting var6 : this.settingMap.values()) {
-         var4.method_6159(var6.method_23035(new class_1293()));
+         var4.method_6159(var6.loadDataFromJson(new JSONObjectImpl()));
       }
 
       var1.method_5820("options", var4);

@@ -173,14 +173,14 @@ public class class_734 extends class_2596 {
    }
 
    @Override
-   public class_1293 method_32180(class_1293 var1) {
+   public JSONObjectImpl method_32180(JSONObjectImpl var1) {
       class_314.method_1430();
       this.method_32101(this.field_4006);
       return super.method_32180(var1);
    }
 
    @Override
-   public void method_32159(class_1293 var1) {
+   public void method_32159(JSONObjectImpl var1) {
       super.method_32159(var1);
    }
 

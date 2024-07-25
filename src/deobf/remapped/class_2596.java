@@ -12,7 +12,7 @@ public abstract class class_2596 extends class_7038 {
    }
 
    @Override
-   public void method_32159(class_1293 var1) {
+   public void method_32159(JSONObjectImpl var1) {
       super.method_32159(var1);
       this.method_32142(MinecraftClient.getInstance().window.method_43166());
       this.method_32158(MinecraftClient.getInstance().window.method_43163());

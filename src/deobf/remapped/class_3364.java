@@ -25,7 +25,7 @@ public class class_3364 {
       if (var0 == null) {
          return null;
       } else if (var0 instanceof byte[]) {
-         class_1293 var13 = new class_1293();
+         JSONObjectImpl var13 = new JSONObjectImpl();
 
          try {
             var13.method_5823("_placeholder", true);
@@ -52,11 +52,11 @@ public class class_3364 {
          }
 
          return var12;
-      } else if (!(var0 instanceof class_1293)) {
+      } else if (!(var0 instanceof JSONObjectImpl)) {
          return var0;
       } else {
-         class_1293 var4 = new class_1293();
-         class_1293 var5 = (class_1293)var0;
+         JSONObjectImpl var4 = new JSONObjectImpl();
+         JSONObjectImpl var5 = (JSONObjectImpl)var0;
          Iterator var6 = var5.method_5841();
 
          while (var6.hasNext()) {
@@ -95,10 +95,10 @@ public class class_3364 {
          }
 
          return var10;
-      } else if (!(var0 instanceof class_1293)) {
+      } else if (!(var0 instanceof JSONObjectImpl)) {
          return var0;
       } else {
-         class_1293 var4 = (class_1293)var0;
+         JSONObjectImpl var4 = (JSONObjectImpl)var0;
          if (var4.method_5867("_placeholder")) {
             int var11 = var4.method_5825("num", -1);
             return var11 >= 0 && var11 < var1.length ? var1[var11] : null;

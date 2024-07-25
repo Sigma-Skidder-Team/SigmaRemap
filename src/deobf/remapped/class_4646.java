@@ -16,7 +16,7 @@ public class class_4646 {
    public static URL method_21489(String var0, String var1, String var2) {
       try {
          URL var5 = new URL(var2);
-         class_1293 var6 = method_21492(var0, var1);
+         JSONObjectImpl var6 = method_21492(var0, var1);
          if (!var6.method_5850("releases")) {
             return var5;
          } else {
@@ -24,11 +24,11 @@ public class class_4646 {
             if (var7.method_6163(0)) {
                return var5;
             } else {
-               class_1293 var8 = var7.method_6143(0).method_5848("release-group");
+               JSONObjectImpl var8 = var7.method_6143(0).method_5848("release-group");
                if (!var8.method_5850("id")) {
                   return var5;
                } else {
-                  class_1293 var9 = class_7763.method_35221(class_7763.method_35224("http://coverartarchive.org/release-group/" + var8.method_5861("id"), true));
+                  JSONObjectImpl var9 = class_7763.method_35221(class_7763.method_35224("http://coverartarchive.org/release-group/" + var8.method_5861("id"), true));
                   System.out.println(var9);
                   return !var9.method_5850("images") ? var5 : new URL(var9.method_5849("images").method_6143(0).method_5848("thumbnails").method_5861("small"));
                }
@@ -40,7 +40,7 @@ public class class_4646 {
       }
    }
 
-   public static class_1293 method_21492(String var0, String var1) throws JSONException, IOException {
+   public static JSONObjectImpl method_21492(String var0, String var1) throws JSONException, IOException {
       StringBuffer var4 = new StringBuffer();
       var4.append("http://musicbrainz.org/ws/2/");
       var4.append("release/?query=");

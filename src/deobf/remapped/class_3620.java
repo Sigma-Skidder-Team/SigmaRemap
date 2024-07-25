@@ -81,14 +81,14 @@ public class class_3620 extends Module {
    }
 
    @Override
-   public class_1293 method_42021(class_1293 var1) {
-      class_1293 var4 = class_3332.method_15287(var1, "sub-options");
+   public JSONObjectImpl method_42021(JSONObjectImpl var1) {
+      JSONObjectImpl var4 = class_3332.method_15287(var1, "sub-options");
       if (var4 != null) {
          for (Module var8 : this.field_17661) {
             class_1336 var9 = class_3332.method_15293(var4, var8.method_41992());
             if (var9 != null) {
                for (int var10 = 0; var10 < var9.method_6142(); var10++) {
-                  class_1293 var11 = var9.method_6143(var10);
+                  JSONObjectImpl var11 = var9.method_6143(var10);
                   String var12 = null;
 
                   try {
@@ -99,7 +99,7 @@ public class class_3620 extends Module {
                   for (Setting var14 : var8.settingMap.values()) {
                      if (var14.method_23032().equals(var12)) {
                         try {
-                           var14.method_23042(var11);
+                           var14.saveDataToJson(var11);
                         } catch (class_7584 var16) {
                            SigmaMainClass.method_3328()
                               .method_3326()
@@ -113,7 +113,7 @@ public class class_3620 extends Module {
          }
       }
 
-      class_1293 var18 = super.method_42021(var1);
+      JSONObjectImpl var18 = super.method_42021(var1);
       if (this.field_46700) {
          this.method_16866();
       }
@@ -122,14 +122,14 @@ public class class_3620 extends Module {
    }
 
    @Override
-   public class_1293 method_42014(class_1293 var1) {
-      class_1293 var4 = new class_1293();
+   public JSONObjectImpl method_42014(JSONObjectImpl var1) {
+      JSONObjectImpl var4 = new JSONObjectImpl();
 
       for (Module var8 : this.field_17661) {
          class_1336 var9 = new class_1336();
 
          for (Setting var11 : var8.settingMap.values()) {
-            var9.method_6159(var11.method_23035(new class_1293()));
+            var9.method_6159(var11.loadDataFromJson(new JSONObjectImpl()));
          }
 
          var4.method_5820(var8.method_41992(), var9);

@@ -70,7 +70,7 @@ public class class_2026 {
    }
 
    public void method_9488() {
-      class_1293 var3 = new class_1293();
+      JSONObjectImpl var3 = new JSONObjectImpl();
       var3.method_5818("volume", this.field_10285);
       var3.method_5823("spectrum", this.field_10279);
       var3.method_5818("repeat", this.field_10282.field_33115);
@@ -79,7 +79,7 @@ public class class_2026 {
 
    private void method_9507() {
       if (SigmaMainClass.method_3328().method_3304().method_5850("music")) {
-         class_1293 var3 = SigmaMainClass.method_3328().method_3304().method_5848("music");
+         JSONObjectImpl var3 = SigmaMainClass.method_3328().method_3304().method_5848("music");
          if (var3 != null) {
             if (var3.method_5850("volume")) {
                this.field_10285 = Math.max(0, Math.min(100, var3.method_5813("volume")));

@@ -64,7 +64,7 @@ public class class_882 {
       }
    }
 
-   public static class_1293 method_3796(class_1336 var0, class_3734 var1) throws JSONException {
+   public static JSONObjectImpl method_3796(class_1336 var0, class_3734 var1) throws JSONException {
       class_1336 var4 = method_3793(var1);
       return var4 == null ? null : var4.method_6132(var0);
    }
@@ -121,7 +121,7 @@ public class class_882 {
          class_1336 var4 = new class_1336();
 
          while (true) {
-            class_1293 var5 = method_3796(var0, var1);
+            JSONObjectImpl var5 = method_3796(var0, var1);
             if (var5 == null) {
                return var4.method_6142() != 0 ? var4 : null;
             }
@@ -134,7 +134,7 @@ public class class_882 {
    }
 
    public static String toString(class_1336 var0) throws JSONException {
-      class_1293 var3 = var0.method_6164(0);
+      JSONObjectImpl var3 = var0.method_6164(0);
       if (var3 != null) {
          class_1336 var4 = var3.method_5815();
          if (var4 != null) {
@@ -150,7 +150,7 @@ public class class_882 {
          StringBuffer var4 = new StringBuffer();
 
          for (int var5 = 0; var5 < var1.method_6142(); var5++) {
-            class_1293 var6 = var1.method_6164(var5);
+            JSONObjectImpl var6 = var1.method_6164(var5);
             if (var6 != null) {
                var4.append(method_3794(var6.method_5864(var0)));
             }

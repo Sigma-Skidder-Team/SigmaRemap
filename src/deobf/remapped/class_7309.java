@@ -81,7 +81,7 @@ public class class_7309 {
       this(var1, var2, null, null);
    }
 
-   public class_7309(class_1293 var1) {
+   public class_7309(JSONObjectImpl var1) {
       if (var1.method_5850("email")) {
          this.field_37381 = var1.method_5861("email");
       }
@@ -92,7 +92,7 @@ public class class_7309 {
 
       if (var1.method_5850("bans")) {
          for (Object var5 : var1.method_5849("bans")) {
-            this.field_37370.add(new class_5933((class_1293)var5));
+            this.field_37370.add(new class_5933((JSONObjectImpl)var5));
          }
       }
 
@@ -273,8 +273,8 @@ public class class_7309 {
       }
    }
 
-   public class_1293 method_33323() {
-      class_1293 var3 = new class_1293();
+   public JSONObjectImpl method_33323() {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       var3.method_5820("bans", this.method_33325());
       var3.method_5820("email", this.field_37381);
       var3.method_5820("password", method_33329(this.field_37373));

@@ -254,7 +254,7 @@ public class class_3484 extends class_4167 {
             var6 = null;
          }
 
-         var4[var5] = class_1293.field_7112.equals(var6) ? null : var6;
+         var4[var5] = JSONObjectImpl.field_7112.equals(var6) ? null : var6;
       }
 
       return var4;

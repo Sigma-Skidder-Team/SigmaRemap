@@ -26,7 +26,7 @@ public class PanicCommand extends Command {
             }
          }
 
-         class_1675 var10 = new class_1675("Panic", new class_1293());
+         class_1675 var10 = new class_1675("Panic", new JSONObjectImpl());
          var6.method_4298(var10);
          var6.method_4300(var10);
          var3.method_3731("All modules disabled.");

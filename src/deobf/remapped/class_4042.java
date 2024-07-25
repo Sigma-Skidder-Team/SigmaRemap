@@ -30,7 +30,7 @@ public class class_4042 {
       try {
          Cipher var7 = Cipher.getInstance("AES/CBC/PKCS5PADDING");
          var7.init(2, var6, new IvParameterSpec(var5));
-         class_1293 var8 = new class_1293(new String(var7.doFinal(var1)));
+         JSONObjectImpl var8 = new JSONObjectImpl(new String(var7.doFinal(var1)));
          if (var8.method_5850("username")) {
             this.field_19615 = var8.method_5861("username");
          }
@@ -61,8 +61,8 @@ public class class_4042 {
       }
    }
 
-   public class_1293 method_18605() {
-      class_1293 var3 = new class_1293();
+   public JSONObjectImpl method_18605() {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       var3.method_5820("username", this.field_19615);
       var3.method_5820("authToken", this.field_19613);
       var3.method_5820("agoraToken", this.field_19614);

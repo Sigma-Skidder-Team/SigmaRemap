@@ -4,7 +4,7 @@ public class class_3158 {
    private int field_15688 = -1;
    private Object field_15686;
 
-   public class_3158(class_1293 var1) {
+   public class_3158(JSONObjectImpl var1) {
       this.method_14558(var1);
    }
 
@@ -18,7 +18,7 @@ public class class_3158 {
       this.field_15686 = var2;
    }
 
-   public void method_14558(class_1293 var1) {
+   public void method_14558(JSONObjectImpl var1) {
       if (var1.method_5850("target")) {
          if (var1.method_5850("key")) {
             this.field_15688 = var1.method_5813("key");
@@ -45,8 +45,8 @@ public class class_3158 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public class_1293 method_14564() {
-      class_1293 var3 = new class_1293();
+   public JSONObjectImpl method_14564() {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       switch (this.method_14566()) {
          case field_25372:
             var3.method_5820("type", "mod");

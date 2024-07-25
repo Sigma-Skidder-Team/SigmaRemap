@@ -278,7 +278,7 @@ public class SigmaLoginStuff {
       }
    }
 
-   public void method_23091(class_1293 var1) {
+   public void method_23091(JSONObjectImpl var1) {
       String var4 = null;
       String var5 = null;
       String var6 = null;

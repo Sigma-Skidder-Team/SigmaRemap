@@ -4,8 +4,8 @@ import java.util.Iterator;
 import org.json.JSONException;
 
 public class class_821 {
-   public static class_1293 method_3601(String var0) throws JSONException {
-      class_1293 var3 = new class_1293();
+   public static JSONObjectImpl method_3601(String var0) throws JSONException {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       class_3734 var4 = new class_3734(var0);
 
       while (var4.method_17294()) {
@@ -18,7 +18,7 @@ public class class_821 {
       return var3;
    }
 
-   public static String toString(class_1293 var0) throws JSONException {
+   public static String toString(JSONObjectImpl var0) throws JSONException {
       boolean var3 = false;
       Iterator var4 = var0.method_5841();
       StringBuilder var5 = new StringBuilder();

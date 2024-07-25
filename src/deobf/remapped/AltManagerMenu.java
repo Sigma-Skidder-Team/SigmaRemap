@@ -441,13 +441,13 @@ public class AltManagerMenu extends class_2596 {
    }
 
    @Override
-   public class_1293 method_32180(class_1293 var1) {
+   public JSONObjectImpl method_32180(JSONObjectImpl var1) {
       this.field_10615.method_39909();
       return var1;
    }
 
    @Override
-   public void method_32159(class_1293 var1) {
+   public void method_32159(JSONObjectImpl var1) {
       for (class_7038 var5 : this.field_10605.method_32134()) {
          if (!(var5 instanceof class_9568)) {
             for (class_7038 var7 : var5.method_32134()) {

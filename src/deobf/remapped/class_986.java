@@ -66,7 +66,7 @@ public class class_986 {
 
       for (File var9 : var5) {
          try {
-            class_1293 var10 = new class_1293(IOUtils.toString(new FileInputStream(var9)));
+            JSONObjectImpl var10 = new JSONObjectImpl(IOUtils.toString(new FileInputStream(var9)));
             class_1675 var11 = new class_1675().method_7504(var10);
             var11.field_8677 = var9.getName().substring(0, var9.getName().length() - ".profile".length());
             this.field_5025.add(var11);
@@ -83,7 +83,7 @@ public class class_986 {
             var1 = "Default";
          }
 
-         this.field_5025.add(this.field_5020 = new class_1675(var1, new class_1293()));
+         this.field_5025.add(this.field_5020 = new class_1675(var1, new JSONObjectImpl()));
       }
 
       SigmaMainClass.method_3328().method_3298().method_838(this.field_5020.field_8678);
@@ -100,7 +100,7 @@ public class class_986 {
    }
 
    public void method_4306() throws IOException {
-      this.field_5020.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new class_1293());
+      this.field_5020.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
       File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/profiles/");
       if (!var3.exists()) {
          var3.mkdirs();
@@ -118,7 +118,7 @@ public class class_986 {
             var11.createNewFile();
          }
 
-         IOUtils.write(var10.method_7500(new class_1293()).toString(0), new FileOutputStream(var11));
+         IOUtils.write(var10.method_7500(new JSONObjectImpl()).toString(0), new FileOutputStream(var11));
       }
    }
 
@@ -130,7 +130,7 @@ public class class_986 {
       SigmaMainClass.method_3328().method_3318();
       class_1235.field_6813 = new HashMap<Object, Integer>();
       if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30644) {
-         this.field_5020.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new class_1293());
+         this.field_5020.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new JSONObjectImpl());
          this.field_5020 = var1;
          SigmaMainClass.method_3328().method_3304().method_5820("profile", var1.field_8677);
          SigmaMainClass.method_3328().method_3298().method_838(var1.field_8678);

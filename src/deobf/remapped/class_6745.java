@@ -57,8 +57,8 @@ public class class_6745 {
       }
    }
 
-   private static boolean method_30895(class_2021 var0, class_1293 var1, String var2) throws JSONException {
-      class_1293 var5 = null;
+   private static boolean method_30895(class_2021 var0, JSONObjectImpl var1, String var2) throws JSONException {
+      JSONObjectImpl var5 = null;
       Object var6 = var0.method_9391();
       if (var6 == field_34819) {
          char var8 = var0.method_17289();
@@ -126,7 +126,7 @@ public class class_6745 {
       } else {
          String var7 = (String)var6;
          var6 = null;
-         var5 = new class_1293();
+         var5 = new JSONObjectImpl();
 
          while (true) {
             if (var6 == null) {
@@ -208,7 +208,7 @@ public class class_6745 {
       } else if ("false".equalsIgnoreCase(var0)) {
          return Boolean.FALSE;
       } else if ("null".equalsIgnoreCase(var0)) {
-         return class_1293.field_7112;
+         return JSONObjectImpl.field_7112;
       } else {
          try {
             char var3 = var0.charAt(0);
@@ -232,8 +232,8 @@ public class class_6745 {
       }
    }
 
-   public static class_1293 method_30896(String var0) throws JSONException {
-      class_1293 var3 = new class_1293();
+   public static JSONObjectImpl method_30896(String var0) throws JSONException {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       class_2021 var4 = new class_2021(var0);
 
       while (var4.method_17294() && var4.method_9386("<")) {
@@ -249,7 +249,7 @@ public class class_6745 {
 
    public static String toString(Object var0, String var1) throws JSONException {
       StringBuilder var4 = new StringBuilder();
-      if (!(var0 instanceof class_1293)) {
+      if (!(var0 instanceof JSONObjectImpl)) {
          if (var0 != null) {
             if (var0.getClass().isArray()) {
                var0 = new class_1336(var0);
@@ -276,7 +276,7 @@ public class class_6745 {
             var4.append('>');
          }
 
-         class_1293 var5 = (class_1293)var0;
+         JSONObjectImpl var5 = (JSONObjectImpl)var0;
          Iterator var6 = var5.method_5841();
 
          while (var6.hasNext()) {

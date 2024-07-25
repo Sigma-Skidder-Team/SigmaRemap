@@ -18,9 +18,9 @@ public abstract class Setting<T> {
       this.field_25892 = var2;
    }
 
-   public abstract class_1293 method_23042(class_1293 var1);
+   public abstract JSONObjectImpl saveDataToJson(JSONObjectImpl var1);
 
-   public class_1293 method_23035(class_1293 var1) {
+   public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
       var1.method_5820("name", this.method_23032());
       var1.method_5820("value", this.field_25890);
       return var1;

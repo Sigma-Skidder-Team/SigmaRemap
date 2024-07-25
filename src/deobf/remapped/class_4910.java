@@ -11,7 +11,7 @@ public class class_4910 implements Runnable {
       int var3 = 75;
 
       for (int var4 = 0; var4 < this.field_25415.method_6142(); var4++) {
-         class_1293 var5 = this.field_25415.method_6143(var4);
+         JSONObjectImpl var5 = this.field_25415.method_6143(var4);
          class_4113 var6 = null;
          if (var5.method_5850("url")) {
             Util.getOperatingSystem().method_37581(var5.method_5861("url"));

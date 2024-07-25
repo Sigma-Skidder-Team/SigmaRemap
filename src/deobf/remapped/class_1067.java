@@ -22,8 +22,8 @@ public class class_1067 {
       return var5.toString();
    }
 
-   public static class_1293 method_4685(String var0) throws JSONException {
-      class_1293 var3 = new class_1293();
+   public static JSONObjectImpl method_4685(String var0) throws JSONException {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       class_3734 var4 = new class_3734(var0);
       var3.method_5820("name", var4.method_17297('='));
       var4.method_17290('=');
@@ -50,7 +50,7 @@ public class class_1067 {
       return var3;
    }
 
-   public static String toString(class_1293 var0) throws JSONException {
+   public static String toString(JSONObjectImpl var0) throws JSONException {
       StringBuilder var3 = new StringBuilder();
       var3.append(method_4682(var0.method_5861("name")));
       var3.append("=");

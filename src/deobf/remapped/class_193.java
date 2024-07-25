@@ -21,7 +21,7 @@ public class class_193 extends class_4833 {
 
    @Override
    public void method_22249(String var1) {
-      class_1293 var4 = new class_1293(var1);
+      JSONObjectImpl var4 = new JSONObjectImpl(var1);
       if (var4.method_5850("action")) {
          switch (var4.method_5813("action")) {
             case 1:

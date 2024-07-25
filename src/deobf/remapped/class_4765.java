@@ -17,7 +17,7 @@ public class class_4765 {
    private static final int field_23068 = 15000;
    private static final String field_23076 = class_4765.class.getName();
 
-   public static class_1293 method_21980(String var0, String var1) throws IOException {
+   public static JSONObjectImpl method_21980(String var0, String var1) throws IOException {
       URL var4 = new URL(var0);
       HttpURLConnection var5 = (HttpURLConnection)var4.openConnection();
       String var6 = "Set-Cookie";

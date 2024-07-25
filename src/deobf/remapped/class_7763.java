@@ -37,14 +37,14 @@ public class class_7763 {
       return var3.toString();
    }
 
-   public static class_1293 method_35219(String var0) throws IOException, JSONException {
+   public static JSONObjectImpl method_35219(String var0) throws IOException, JSONException {
       InputStream var3 = new URL(var0).openStream();
 
-      class_1293 var7;
+      JSONObjectImpl var7;
       try {
          BufferedReader var4 = new BufferedReader(new InputStreamReader(var3, Charset.forName("UTF-8")));
          String var5 = method_35215(var4);
-         class_1293 var6 = new class_1293(var5);
+         JSONObjectImpl var6 = new JSONObjectImpl(var5);
          var7 = var6;
       } finally {
          var3.close();
@@ -53,8 +53,8 @@ public class class_7763 {
       return var7;
    }
 
-   public static class_1293 method_35221(String var0) {
-      return new class_1293(var0);
+   public static JSONObjectImpl method_35221(String var0) {
+      return new JSONObjectImpl(var0);
    }
 
    public static String method_35224(String var0, boolean var1) throws IOException {

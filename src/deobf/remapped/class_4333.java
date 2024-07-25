@@ -25,7 +25,7 @@ public class class_4333 {
       this.field_21076 = false;
    }
 
-   public class_4333(class_1293 var1) {
+   public class_4333(JSONObjectImpl var1) {
       if (var1.method_5850("name")) {
          this.field_21072 = var1.method_5861("name");
       }
@@ -45,8 +45,8 @@ public class class_4333 {
       this.field_21076 = true;
    }
 
-   public class_1293 method_20159() {
-      class_1293 var3 = new class_1293();
+   public JSONObjectImpl method_20159() {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       var3.method_5820("name", this.field_21072);
       var3.method_5818("color", this.field_21075);
       var3.method_5818("x", this.field_21071);

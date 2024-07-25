@@ -117,13 +117,13 @@ public class class_9568 extends class_446 implements class_475 {
    }
 
    @Override
-   public class_1293 method_32180(class_1293 var1) {
+   public JSONObjectImpl method_32180(JSONObjectImpl var1) {
       var1.method_5818("offset", this.field_48684);
       return super.method_32180(var1);
    }
 
    @Override
-   public void method_32159(class_1293 var1) {
+   public void method_32159(JSONObjectImpl var1) {
       super.method_32159(var1);
       this.field_48684 = class_3332.method_15289(var1, "offset", this.field_48684);
    }

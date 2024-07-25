@@ -66,7 +66,7 @@ public class class_2099 extends class_1859 {
          var4++;
       }
 
-      var3.method_4298(new class_1675("New Profile " + var4, new class_1293()));
+      var3.method_4298(new class_1675("New Profile " + var4, new JSONObjectImpl()));
       this.method_32102(() -> this.method_9847());
       this.field_10538.method_15155(false);
    }

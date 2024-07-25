@@ -25,7 +25,7 @@ public class FloatSetting<T extends Number> extends Setting<Float> {
    }
 
    @Override
-   public class_1293 method_23042(class_1293 var1) {
+   public JSONObjectImpl saveDataToJson(JSONObjectImpl var1) {
       this.field_25890 = class_3332.method_15288(var1, "value", this.method_23039());
       return var1;
    }

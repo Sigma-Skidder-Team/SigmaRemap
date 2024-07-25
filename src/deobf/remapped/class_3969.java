@@ -64,16 +64,16 @@ public class class_3969 {
       }
    }
 
-   public class_1293 method_18325(String var1) {
+   public JSONObjectImpl method_18325(String var1) {
       try {
          HttpGet var4 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles/" + this.method_18326(var1) + ".profile?v=" + SigmaMainClass.field_3957);
          CloseableHttpResponse var5 = HttpClients.createDefault().execute(var4);
          HttpEntity var6 = var5.getEntity();
          if (var6 != null) {
-            class_1293 var10;
+            JSONObjectImpl var10;
             try (InputStream var7 = var6.getContent()) {
                String var9 = IOUtils.toString(var7, "UTF-8");
-               var10 = new class_1293(var9);
+               var10 = new JSONObjectImpl(var9);
             }
 
             return var10;
@@ -82,7 +82,7 @@ public class class_3969 {
          var22.printStackTrace();
       }
 
-      return new class_1293();
+      return new JSONObjectImpl();
    }
 
    public class_1675 method_18327(class_1675 var1, String var2) {
@@ -91,7 +91,7 @@ public class class_3969 {
       class_1675 var6 = new class_1675("settings", this.method_18325(var2).method_5848("modConfig"));
 
       for (Module var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
-         class_1293 var9 = var6.method_7501(var8);
+         JSONObjectImpl var9 = var6.method_7501(var8);
          if (var9 != null) {
             var5.method_7502(var9, var8);
          }

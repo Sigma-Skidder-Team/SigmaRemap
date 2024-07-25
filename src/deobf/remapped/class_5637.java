@@ -39,7 +39,7 @@ public class class_5637 extends Module {
          String var5 = mcInstance.session.method_5367().replaceAll("-", "");
          if (this.method_25528() && this.method_25530("CREEPAKILLER987@S0NY.IGG.BIZ", "3Qs-Cnt-Dec-Tee")) {
             this.method_25533();
-            class_1293 var6 = this.method_25532(var3, var5);
+            JSONObjectImpl var6 = this.method_25532(var3, var5);
             System.out.println(var6);
             var6.method_5820("duration", "Permanent");
             var6.method_5820("subType", "COMPROMISED_ACCOUNT");
@@ -71,7 +71,7 @@ public class class_5637 extends Module {
       }
    }
 
-   private boolean method_25531(class_1293 var1, String var2) throws IOException {
+   private boolean method_25531(JSONObjectImpl var1, String var2) throws IOException {
       HttpPost var5 = new HttpPost("https://hypixel.net/appeals/api/submit");
       ArrayList var6 = new ArrayList(2);
       var5.setHeader(":authority", "hypixel.net");
@@ -125,7 +125,7 @@ public class class_5637 extends Module {
       }
    }
 
-   private class_1293 method_25532(String var1, String var2) throws IOException {
+   private JSONObjectImpl method_25532(String var1, String var2) throws IOException {
       HttpGet var5 = new HttpGet("https://hypixel.net/api/account/punishment?type=ban&id=" + var1 + "&player_uuid=" + var2.replaceAll("-", ""));
       var5.setHeader(":authority", "hypixel.net");
       var5.setHeader("accept", "application/json, text/plain, */*");
@@ -140,7 +140,7 @@ public class class_5637 extends Module {
          String var9 = IOUtils.toString(var8, "UTF-8");
          System.out.println(var9);
          var8.close();
-         return new class_1293(var9);
+         return new JSONObjectImpl(var9);
       }
    }
 

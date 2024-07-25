@@ -28,7 +28,7 @@ public class class_1336 implements Iterable<Object> {
          while (true) {
             if (var1.method_17301() == ',') {
                var1.method_17299();
-               this.field_7324.add(class_1293.field_7112);
+               this.field_7324.add(JSONObjectImpl.field_7112);
             } else {
                var1.method_17299();
                this.field_7324.add(var1.method_17288());
@@ -58,7 +58,7 @@ public class class_1336 implements Iterable<Object> {
    public class_1336(Collection<?> var1) {
       if (var1 != null) {
          for (Object var5 : var1) {
-            this.field_7324.add(class_1293.method_5856(var5));
+            this.field_7324.add(JSONObjectImpl.method_5856(var5));
          }
       }
    }
@@ -71,7 +71,7 @@ public class class_1336 implements Iterable<Object> {
          int var4 = Array.getLength(var1);
 
          for (int var5 = 0; var5 < var4; var5++) {
-            this.method_6159(class_1293.method_5856(Array.get(var1, var5)));
+            this.method_6159(JSONObjectImpl.method_5856(Array.get(var1, var5)));
          }
       }
    }
@@ -119,7 +119,7 @@ public class class_1336 implements Iterable<Object> {
          return (E)var5;
       } else {
          throw new class_7584(
-            "JSONObject[" + class_1293.method_5859(Integer.toString(var2)) + "] is not an enum of type " + class_1293.method_5859(var1.getSimpleName()) + "."
+            "JSONObject[" + JSONObjectImpl.method_5859(Integer.toString(var2)) + "] is not an enum of type " + JSONObjectImpl.method_5859(var1.getSimpleName()) + "."
          );
       }
    }
@@ -163,12 +163,12 @@ public class class_1336 implements Iterable<Object> {
       }
    }
 
-   public class_1293 method_6143(int var1) throws JSONException {
+   public JSONObjectImpl method_6143(int var1) throws JSONException {
       Object var4 = this.method_6130(var1);
-      if (!(var4 instanceof class_1293)) {
+      if (!(var4 instanceof JSONObjectImpl)) {
          throw new class_7584("JSONArray[" + var1 + "] is not a JSONObject.");
       } else {
-         return (class_1293)var4;
+         return (JSONObjectImpl)var4;
       }
    }
 
@@ -192,7 +192,7 @@ public class class_1336 implements Iterable<Object> {
    }
 
    public boolean method_6163(int var1) {
-      return class_1293.field_7112.equals(this.method_6135(var1));
+      return JSONObjectImpl.field_7112.equals(this.method_6135(var1));
    }
 
    public String method_6169(String var1) throws JSONException {
@@ -204,7 +204,7 @@ public class class_1336 implements Iterable<Object> {
             var5.append(var1);
          }
 
-         var5.append(class_1293.method_5827(this.field_7324.get(var6)));
+         var5.append(JSONObjectImpl.method_5827(this.field_7324.get(var6)));
       }
 
       return var5.toString();
@@ -261,7 +261,7 @@ public class class_1336 implements Iterable<Object> {
    public <E extends Enum<E>> E method_6137(Class<E> var1, int var2, E var3) {
       try {
          Object var6 = this.method_6135(var2);
-         if (class_1293.field_7112.equals(var6)) {
+         if (JSONObjectImpl.field_7112.equals(var6)) {
             return (E)var3;
          } else {
             return (E)(var1.isAssignableFrom(var6.getClass()) ? var6 : Enum.<E>valueOf(var1, var6.toString()));
@@ -292,9 +292,9 @@ public class class_1336 implements Iterable<Object> {
       return !(var4 instanceof class_1336) ? null : (class_1336)var4;
    }
 
-   public class_1293 method_6164(int var1) {
+   public JSONObjectImpl method_6164(int var1) {
       Object var4 = this.method_6135(var1);
-      return !(var4 instanceof class_1293) ? null : (class_1293)var4;
+      return !(var4 instanceof JSONObjectImpl) ? null : (JSONObjectImpl)var4;
    }
 
    public long method_6173(int var1) {
@@ -315,7 +315,7 @@ public class class_1336 implements Iterable<Object> {
 
    public String method_6167(int var1, String var2) {
       Object var5 = this.method_6135(var1);
-      return !class_1293.field_7112.equals(var5) ? var5.toString() : var2;
+      return !JSONObjectImpl.field_7112.equals(var5) ? var5.toString() : var2;
    }
 
    public class_1336 method_6162(boolean var1) {
@@ -330,7 +330,7 @@ public class class_1336 implements Iterable<Object> {
 
    public class_1336 method_6149(double var1) throws JSONException {
       Double var5 = new Double(var1);
-      class_1293.method_5862(var5);
+      JSONObjectImpl.method_5862(var5);
       this.method_6159(var5);
       return this;
    }
@@ -346,7 +346,7 @@ public class class_1336 implements Iterable<Object> {
    }
 
    public class_1336 method_6161(Map<?, ?> var1) {
-      this.method_6159(new class_1293(var1));
+      this.method_6159(new JSONObjectImpl(var1));
       return this;
    }
 
@@ -381,12 +381,12 @@ public class class_1336 implements Iterable<Object> {
    }
 
    public class_1336 method_6156(int var1, Map<?, ?> var2) throws JSONException {
-      this.method_6154(var1, new class_1293(var2));
+      this.method_6154(var1, new JSONObjectImpl(var2));
       return this;
    }
 
    public class_1336 method_6154(int var1, Object var2) throws JSONException {
-      class_1293.method_5862(var2);
+      JSONObjectImpl.method_5862(var2);
       if (var1 < 0) {
          throw new class_7584("JSONArray[" + var1 + "] not found.");
       } else {
@@ -394,7 +394,7 @@ public class class_1336 implements Iterable<Object> {
             this.field_7324.set(var1, var2);
          } else {
             while (var1 != this.method_6142()) {
-               this.method_6159(class_1293.field_7112);
+               this.method_6159(JSONObjectImpl.field_7112);
             }
 
             this.method_6159(var2);
@@ -415,7 +415,7 @@ public class class_1336 implements Iterable<Object> {
             for (int var5 = 0; var5 < var4; var5++) {
                Object var6 = this.method_6130(var5);
                Object var7 = ((class_1336)var1).method_6130(var5);
-               if (!(var6 instanceof class_1293)) {
+               if (!(var6 instanceof JSONObjectImpl)) {
                   if (!(var6 instanceof class_1336)) {
                      if (!var6.equals(var7)) {
                         return false;
@@ -423,7 +423,7 @@ public class class_1336 implements Iterable<Object> {
                   } else if (!((class_1336)var6).method_6145(var7)) {
                      return false;
                   }
-               } else if (!((class_1293)var6).method_5833(var7)) {
+               } else if (!((JSONObjectImpl)var6).method_5833(var7)) {
                   return false;
                }
             }
@@ -437,9 +437,9 @@ public class class_1336 implements Iterable<Object> {
       }
    }
 
-   public class_1293 method_6132(class_1336 var1) throws JSONException {
+   public JSONObjectImpl method_6132(class_1336 var1) throws JSONException {
       if (var1 != null && var1.method_6142() != 0 && this.method_6142() != 0) {
-         class_1293 var4 = new class_1293();
+         JSONObjectImpl var4 = new JSONObjectImpl();
 
          for (int var5 = 0; var5 < var1.method_6142(); var5++) {
             var4.method_5820(var1.method_6133(var5), this.method_6135(var5));
@@ -477,7 +477,7 @@ public class class_1336 implements Iterable<Object> {
          int var7 = this.method_6142();
          var1.write(91);
          if (var7 == 1) {
-            class_1293.method_5804(var1, this.field_7324.get(0), var2, var3);
+            JSONObjectImpl.method_5804(var1, this.field_7324.get(0), var2, var3);
          } else if (var7 != 0) {
             int var8 = var3 + var2;
 
@@ -490,8 +490,8 @@ public class class_1336 implements Iterable<Object> {
                   var1.write(10);
                }
 
-               class_1293.method_5845(var1, var8);
-               class_1293.method_5804(var1, this.field_7324.get(var9), var2, var8);
+               JSONObjectImpl.method_5845(var1, var8);
+               JSONObjectImpl.method_5804(var1, this.field_7324.get(var9), var2, var8);
                var6 = true;
             }
 
@@ -499,7 +499,7 @@ public class class_1336 implements Iterable<Object> {
                var1.write(10);
             }
 
-            class_1293.method_5845(var1, var3);
+            JSONObjectImpl.method_5845(var1, var3);
          }
 
          var1.write(93);

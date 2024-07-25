@@ -104,7 +104,7 @@ public class SigmaIRC {
    }
 
    public void method_20856(String var1, String var2) {
-      class_1293 var5 = new class_1293();
+      JSONObjectImpl var5 = new JSONObjectImpl();
       var5.method_5820("target", var1);
       var5.method_5820("message", var2);
       if (this.field_21933 != null) {

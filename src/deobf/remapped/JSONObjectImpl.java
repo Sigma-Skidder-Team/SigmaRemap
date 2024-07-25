@@ -19,14 +19,14 @@ import java.util.Set;
 import java.util.Map.Entry;
 import org.json.JSONException;
 
-public class class_1293 {
+public class JSONObjectImpl {
    private final Map<String, Object> field_7113 = new HashMap<String, Object>();
    public static final Object field_7112 = new class_8731(null);
 
-   public class_1293() {
+   public JSONObjectImpl() {
    }
 
-   public class_1293(class_1293 var1, String[] var2) {
+   public JSONObjectImpl(JSONObjectImpl var1, String[] var2) {
       this();
 
       for (int var5 = 0; var5 < var2.length; var5++) {
@@ -37,7 +37,7 @@ public class class_1293 {
       }
    }
 
-   public class_1293(class_3734 var1) throws JSONException {
+   public JSONObjectImpl(class_3734 var1) throws JSONException {
       this();
       if (var1.method_17301() != '{') {
          throw var1.method_17292("A JSONObject text must begin with '{'");
@@ -77,7 +77,7 @@ public class class_1293 {
       }
    }
 
-   public class_1293(Map<?, ?> var1) {
+   public JSONObjectImpl(Map<?, ?> var1) {
       if (var1 != null) {
          for (Entry var5 : var1.entrySet()) {
             Object var6 = var5.getValue();
@@ -88,12 +88,12 @@ public class class_1293 {
       }
    }
 
-   public class_1293(Object var1) {
+   public JSONObjectImpl(Object var1) {
       this();
       this.method_5830(var1);
    }
 
-   public class_1293(Object var1, String[] var2) {
+   public JSONObjectImpl(Object var1, String[] var2) {
       this();
       Class var5 = var1.getClass();
 
@@ -107,11 +107,11 @@ public class class_1293 {
       }
    }
 
-   public class_1293(String var1) throws JSONException {
+   public JSONObjectImpl(String var1) throws JSONException {
       this(new class_3734(var1));
    }
 
-   public class_1293(String var1, Locale var2) throws JSONException {
+   public JSONObjectImpl(String var1, Locale var2) throws JSONException {
       this();
       ResourceBundle var5 = ResourceBundle.getBundle(var1, var2, Thread.currentThread().getContextClassLoader());
       Enumeration var6 = var5.getKeys();
@@ -121,13 +121,13 @@ public class class_1293 {
          if (var7 != null) {
             String[] var8 = ((String)var7).split("\\.");
             int var9 = var8.length - 1;
-            class_1293 var10 = this;
+            JSONObjectImpl var10 = this;
 
             for (int var11 = 0; var11 < var9; var11++) {
                String var12 = var8[var11];
-               class_1293 var13 = var10.method_5858(var12);
+               JSONObjectImpl var13 = var10.method_5858(var12);
                if (var13 == null) {
-                  var13 = new class_1293();
+                  var13 = new JSONObjectImpl();
                   var10.method_5820(var12, var13);
                }
 
@@ -139,7 +139,7 @@ public class class_1293 {
       }
    }
 
-   public class_1293 method_5842(String var1, Object var2) throws JSONException {
+   public JSONObjectImpl method_5842(String var1, Object var2) throws JSONException {
       method_5862(var2);
       Object var5 = this.method_5865(var1);
       if (var5 != null) {
@@ -155,7 +155,7 @@ public class class_1293 {
       return this;
    }
 
-   public class_1293 method_5837(String var1, Object var2) throws JSONException {
+   public JSONObjectImpl method_5837(String var1, Object var2) throws JSONException {
       method_5862(var2);
       Object var5 = this.method_5865(var1);
       if (var5 != null) {
@@ -274,12 +274,12 @@ public class class_1293 {
       }
    }
 
-   public class_1293 method_5848(String var1) throws JSONException {
+   public JSONObjectImpl method_5848(String var1) throws JSONException {
       Object var4 = this.method_5805(var1);
-      if (!(var4 instanceof class_1293)) {
+      if (!(var4 instanceof JSONObjectImpl)) {
          throw new class_7584("JSONObject[" + method_5859(var1) + "] is not a JSONObject.");
       } else {
-         return (class_1293)var4;
+         return (JSONObjectImpl)var4;
       }
    }
 
@@ -293,7 +293,7 @@ public class class_1293 {
       }
    }
 
-   public static String[] method_5854(class_1293 var0) {
+   public static String[] method_5854(JSONObjectImpl var0) {
       int var3 = var0.method_5806();
       if (var3 == 0) {
          return null;
@@ -343,7 +343,7 @@ public class class_1293 {
       return this.field_7113.containsKey(var1);
    }
 
-   public class_1293 method_5807(String var1) throws JSONException {
+   public JSONObjectImpl method_5807(String var1) throws JSONException {
       Object var4 = this.method_5865(var1);
       if (var4 != null) {
          if (!(var4 instanceof BigInteger)) {
@@ -503,9 +503,9 @@ public class class_1293 {
       return !(var4 instanceof class_1336) ? null : (class_1336)var4;
    }
 
-   public class_1293 method_5858(String var1) {
+   public JSONObjectImpl method_5858(String var1) {
       Object var4 = this.method_5865(var1);
-      return !(var4 instanceof class_1293) ? null : (class_1293)var4;
+      return !(var4 instanceof JSONObjectImpl) ? null : (JSONObjectImpl)var4;
    }
 
    public long method_5843(String var1) {
@@ -568,37 +568,37 @@ public class class_1293 {
       }
    }
 
-   public class_1293 method_5823(String var1, boolean var2) throws JSONException {
+   public JSONObjectImpl method_5823(String var1, boolean var2) throws JSONException {
       this.method_5820(var1, !var2 ? Boolean.FALSE : Boolean.TRUE);
       return this;
    }
 
-   public class_1293 method_5821(String var1, Collection<?> var2) throws JSONException {
+   public JSONObjectImpl method_5821(String var1, Collection<?> var2) throws JSONException {
       this.method_5820(var1, new class_1336(var2));
       return this;
    }
 
-   public class_1293 method_5817(String var1, double var2) throws JSONException {
+   public JSONObjectImpl method_5817(String var1, double var2) throws JSONException {
       this.method_5820(var1, new Double(var2));
       return this;
    }
 
-   public class_1293 method_5818(String var1, int var2) throws JSONException {
+   public JSONObjectImpl method_5818(String var1, int var2) throws JSONException {
       this.method_5820(var1, new Integer(var2));
       return this;
    }
 
-   public class_1293 method_5819(String var1, long var2) throws JSONException {
+   public JSONObjectImpl method_5819(String var1, long var2) throws JSONException {
       this.method_5820(var1, new Long(var2));
       return this;
    }
 
-   public class_1293 method_5822(String var1, Map<?, ?> var2) throws JSONException {
-      this.method_5820(var1, new class_1293(var2));
+   public JSONObjectImpl method_5822(String var1, Map<?, ?> var2) throws JSONException {
+      this.method_5820(var1, new JSONObjectImpl(var2));
       return this;
    }
 
-   public class_1293 method_5820(String var1, Object var2) throws JSONException {
+   public JSONObjectImpl method_5820(String var1, Object var2) throws JSONException {
       if (var1 != null) {
          if (var2 == null) {
             this.method_5816(var1);
@@ -613,7 +613,7 @@ public class class_1293 {
       }
    }
 
-   public class_1293 method_5811(String var1, Object var2) throws JSONException {
+   public JSONObjectImpl method_5811(String var1, Object var2) throws JSONException {
       if (var1 != null && var2 != null) {
          if (this.method_5865(var1) != null) {
             throw new class_7584("Duplicate key \"" + var1 + "\"");
@@ -625,7 +625,7 @@ public class class_1293 {
       return this;
    }
 
-   public class_1293 method_5863(String var1, Object var2) throws JSONException {
+   public JSONObjectImpl method_5863(String var1, Object var2) throws JSONException {
       if (var1 != null && var2 != null) {
          this.method_5820(var1, var2);
       }
@@ -710,18 +710,18 @@ public class class_1293 {
 
    public boolean method_5833(Object var1) {
       try {
-         if (!(var1 instanceof class_1293)) {
+         if (!(var1 instanceof JSONObjectImpl)) {
             return false;
          } else {
             Set var4 = this.method_5831();
-            if (!var4.equals(((class_1293)var1).method_5831())) {
+            if (!var4.equals(((JSONObjectImpl)var1).method_5831())) {
                return false;
             } else {
                for (String var6 : var4) {
                   Object var7 = this.method_5805(var6);
-                  Object var8 = ((class_1293)var1).method_5805(var6);
-                  if (var7 instanceof class_1293) {
-                     if (!((class_1293)var7).method_5833(var8)) {
+                  Object var8 = ((JSONObjectImpl)var1).method_5805(var6);
+                  if (var7 instanceof JSONObjectImpl) {
+                     if (!((JSONObjectImpl)var7).method_5833(var8)) {
                         return false;
                      }
                   } else if (var7 instanceof class_1336) {
@@ -837,11 +837,11 @@ public class class_1293 {
          }
       } else if (var0 instanceof Number) {
          return method_5866((Number)var0);
-      } else if (var0 instanceof Boolean || var0 instanceof class_1293 || var0 instanceof class_1336) {
+      } else if (var0 instanceof Boolean || var0 instanceof JSONObjectImpl || var0 instanceof class_1336) {
          return var0.toString();
       } else if (var0 instanceof Map) {
          Map var6 = (Map)var0;
-         return new class_1293(var6).toString();
+         return new JSONObjectImpl(var6).toString();
       } else if (var0 instanceof Collection) {
          Collection var3 = (Collection)var0;
          return new class_1336(var3).toString();
@@ -854,7 +854,7 @@ public class class_1293 {
       try {
          if (var0 == null) {
             return field_7112;
-         } else if (var0 instanceof class_1293
+         } else if (var0 instanceof JSONObjectImpl
             || var0 instanceof class_1336
             || field_7112.equals(var0)
             || var0 instanceof class_6981
@@ -877,11 +877,11 @@ public class class_1293 {
             return new class_1336(var0);
          } else if (var0 instanceof Map) {
             Map var6 = (Map)var0;
-            return new class_1293(var6);
+            return new JSONObjectImpl(var6);
          } else {
             Package var3 = var0.getClass().getPackage();
             String var4 = var3 != null ? var3.getName() : "";
-            return !var4.startsWith("java.") && !var4.startsWith("javax.") && var0.getClass().getClassLoader() != null ? new class_1293(var0) : var0.toString();
+            return !var4.startsWith("java.") && !var4.startsWith("javax.") && var0.getClass().getClassLoader() != null ? new JSONObjectImpl(var0) : var0.toString();
          }
       } catch (Exception var5) {
          return null;
@@ -895,13 +895,13 @@ public class class_1293 {
    public static final Writer method_5804(Writer var0, Object var1, int var2, int var3) throws JSONException, IOException {
       if (var1 == null || var1.equals(null)) {
          var0.write("null");
-      } else if (var1 instanceof class_1293) {
-         ((class_1293)var1).method_5829(var0, var2, var3);
+      } else if (var1 instanceof JSONObjectImpl) {
+         ((JSONObjectImpl)var1).method_5829(var0, var2, var3);
       } else if (var1 instanceof class_1336) {
          ((class_1336)var1).method_6128(var0, var2, var3);
       } else if (var1 instanceof Map) {
          Map var6 = (Map)var1;
-         new class_1293(var6).method_5829(var0, var2, var3);
+         new JSONObjectImpl(var6).method_5829(var0, var2, var3);
       } else if (var1 instanceof Collection) {
          Collection var9 = (Collection)var1;
          new class_1336(var9).method_6128(var0, var2, var3);

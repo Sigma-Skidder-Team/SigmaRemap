@@ -9,10 +9,10 @@ public class class_8548 {
    public long field_43748;
 
    public class_8548(String var1) throws JSONException {
-      this(new class_1293(var1));
+      this(new JSONObjectImpl(var1));
    }
 
-   public class_8548(class_1293 var1) throws JSONException {
+   public class_8548(JSONObjectImpl var1) throws JSONException {
       class_1336 var4 = var1.method_5849("upgrades");
       int var5 = var4.method_6142();
       String[] var6 = new String[var5];

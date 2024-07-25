@@ -89,7 +89,7 @@ public class class_123 {
       }
    }
 
-   public class_1293 method_369(class_1293 var1) {
+   public JSONObjectImpl method_369(JSONObjectImpl var1) {
       class_1336 var4 = new class_1336();
 
       for (class_3158 var6 : this.field_297) {
@@ -102,12 +102,12 @@ public class class_123 {
       return var1;
    }
 
-   public void method_376(class_1293 var1) {
+   public void method_376(JSONObjectImpl var1) {
       if (var1.method_5850("keybinds")) {
          class_1336 var4 = var1.method_5849("keybinds");
 
          for (int var5 = 0; var5 < var4.method_6142(); var5++) {
-            class_1293 var6 = var4.method_6143(var5);
+            JSONObjectImpl var6 = var4.method_6143(var5);
             class_3158 var7 = new class_3158(var6);
             if (var7.method_14561()) {
                this.field_297.add(var7);

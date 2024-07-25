@@ -6,8 +6,8 @@ import org.json.JSONException;
 public class class_1114 {
    public static final String field_6387 = "\r\n";
 
-   public static class_1293 method_4932(String var0) throws JSONException {
-      class_1293 var3 = new class_1293();
+   public static JSONObjectImpl method_4932(String var0) throws JSONException {
+      JSONObjectImpl var3 = new JSONObjectImpl();
       class_9895 var4 = new class_9895(var0);
       String var5 = var4.method_45581();
       if (!var5.toUpperCase().startsWith("HTTP")) {
@@ -31,7 +31,7 @@ public class class_1114 {
       return var3;
    }
 
-   public static String toString(class_1293 var0) throws JSONException {
+   public static String toString(JSONObjectImpl var0) throws JSONException {
       Iterator var3 = var0.method_5841();
       StringBuilder var4 = new StringBuilder();
       if (var0.method_5850("Status-Code") && var0.method_5850("Reason-Phrase")) {

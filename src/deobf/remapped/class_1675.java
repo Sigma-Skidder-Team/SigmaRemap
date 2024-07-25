@@ -3,14 +3,14 @@ package remapped;
 import org.json.JSONException;
 
 public class class_1675 {
-   private class_1293 field_8675;
-   public class_1293 field_8678;
+   private JSONObjectImpl field_8675;
+   public JSONObjectImpl field_8678;
    public String field_8677;
 
    public class_1675() {
    }
 
-   public class_1675(String var1, class_1293 var2) {
+   public class_1675(String var1, JSONObjectImpl var2) {
       this.field_8677 = var1;
       this.field_8678 = var2;
    }
@@ -20,19 +20,19 @@ public class class_1675 {
       this.field_8678 = var2.field_8678;
    }
 
-   public class_1675 method_7504(class_1293 var1) throws JSONException {
+   public class_1675 method_7504(JSONObjectImpl var1) throws JSONException {
       this.field_8678 = var1.method_5848("modConfig");
       this.field_8677 = var1.method_5861("name");
       return this;
    }
 
-   public class_1293 method_7500(class_1293 var1) {
+   public JSONObjectImpl method_7500(JSONObjectImpl var1) {
       var1.method_5820("modConfig", this.field_8678);
       var1.method_5820("name", this.field_8677);
       return var1;
    }
 
-   public class_1293 method_7499() {
+   public JSONObjectImpl method_7499() {
       return this.field_8675;
    }
 
@@ -50,7 +50,7 @@ public class class_1675 {
 
       if (var3 != null) {
          for (int var4 = 0; var4 < var3.method_6142(); var4++) {
-            class_1293 var5 = var3.method_6143(var4);
+            JSONObjectImpl var5 = var3.method_6143(var4);
             String var6 = null;
 
             try {
@@ -68,7 +68,7 @@ public class class_1675 {
       }
    }
 
-   public void method_7502(class_1293 var1, Module var2) {
+   public void method_7502(JSONObjectImpl var1, Module var2) {
       class_1336 var5 = null;
 
       try {
@@ -79,7 +79,7 @@ public class class_1675 {
       boolean var6 = false;
       if (var5 != null) {
          for (int var7 = 0; var7 < var5.method_6142(); var7++) {
-            class_1293 var8 = var5.method_6143(var7);
+            JSONObjectImpl var8 = var5.method_6143(var7);
             String var9 = null;
 
             try {
@@ -103,7 +103,7 @@ public class class_1675 {
       }
    }
 
-   public class_1293 method_7501(Module var1) {
+   public JSONObjectImpl method_7501(Module var1) {
       class_1336 var4 = null;
 
       try {
@@ -113,7 +113,7 @@ public class class_1675 {
 
       if (var4 != null) {
          for (int var5 = 0; var5 < var4.method_6142(); var5++) {
-            class_1293 var6 = var4.method_6143(var5);
+            JSONObjectImpl var6 = var4.method_6143(var5);
             String var7 = null;
 
             try {

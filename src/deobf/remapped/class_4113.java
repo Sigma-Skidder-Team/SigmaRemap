@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 public class class_4113 extends class_7038 {
    public class_2440 field_20042 = new class_2440(370, 150, class_4043.field_19618);
 
-   public class_4113(class_7038 var1, String var2, class_1293 var3) {
+   public class_4113(class_7038 var1, String var2, JSONObjectImpl var3) {
       super(var1, var2);
       this.method_32142(this.method_32167().method_32109());
       int var6 = 0;
