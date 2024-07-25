@@ -10,7 +10,7 @@ public class class_7366 extends class_9128 {
 
    @Override
    public void method_42006() {
-      field_46692.field_9657.method_19998();
+      field_46692.worldRenderer.method_19998();
       class_914 var3 = (class_914) SigmaMainClass.method_3328().method_3298().method_847(class_914.class);
       if (!var3.method_42015()) {
          var3.method_42023(true);
@@ -19,7 +19,7 @@ public class class_7366 extends class_9128 {
 
    @Override
    public void method_42020() {
-      field_46692.field_9657.method_19998();
+      field_46692.worldRenderer.method_19998();
    }
 
    @class_9148

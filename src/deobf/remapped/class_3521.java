@@ -18,7 +18,7 @@ public abstract class class_3521 {
    private int field_17262 = 200;
    private int field_17255 = 800;
    private int field_17260 = 4;
-   private class_8145 field_17254;
+   private Entity field_17254;
    private int field_17253 = 6;
    private int field_17256 = 16;
    private int field_17263 = 4;
@@ -55,7 +55,7 @@ public abstract class class_3521 {
 
    public void method_16267() {
       if (this.method_16259()) {
-         class_6486 var3 = this.method_16252();
+         World var3 = this.method_16252();
          class_1331 var4 = this.method_16261();
          if (var3 instanceof class_6331) {
             if (this.field_17251 == -1) {
@@ -89,7 +89,7 @@ public abstract class class_3521 {
                if (var3.method_6681(((class_6629)var14.get()).method_30456(var17, var19, var21))) {
                   class_6331 var23 = (class_6331)var3;
                   if (class_1136.method_4983((class_6629)var14.get(), var23, class_2417.field_12024, new class_1331(var17, var19, var21), var3.method_43360())) {
-                     class_8145 var24 = class_6629.method_30455(var13, var3, var6x -> {
+                     Entity var24 = class_6629.method_30455(var13, var3, var6x -> {
                         var6x.method_37144(var17, var19, var21, var6x.field_41701, var6x.field_41755);
                         return var6x;
                      });
@@ -247,9 +247,9 @@ public abstract class class_3521 {
    }
 
    @Nullable
-   public class_8145 method_16260() {
+   public Entity method_16260() {
       if (this.field_17254 == null) {
-         this.field_17254 = class_6629.method_30455(this.field_17261.method_22391(), this.method_16252(), Function.<class_8145>identity());
+         this.field_17254 = class_6629.method_30455(this.field_17261.method_22391(), this.method_16252(), Function.<Entity>identity());
          if (this.field_17261.method_22391().method_25924() == 1
             && this.field_17261.method_22391().method_25939("id", 8)
             && !(this.field_17254 instanceof class_5886)) {
@@ -274,7 +274,7 @@ public abstract class class_3521 {
 
    public abstract void method_16254(int var1);
 
-   public abstract class_6486 method_16252();
+   public abstract World method_16252();
 
    public abstract class_1331 method_16261();
 

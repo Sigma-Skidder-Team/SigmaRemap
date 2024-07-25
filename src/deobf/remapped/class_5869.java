@@ -4,14 +4,14 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class class_5869<T extends class_8145> extends class_6353<class_9716, class_3169<class_9716>> {
+public class class_5869<T extends Entity> extends class_6353<class_9716, class_3169<class_9716>> {
    public static HashMap<UUID, Identifier> field_29802 = new HashMap<UUID, Identifier>();
 
-   public class_5869(class_6122 var1) {
+   public class_5869(EntityRenderDispatcher var1) {
       this(var1, false);
    }
 
-   public class_5869(class_6122 var1, boolean var2) {
+   public class_5869(EntityRenderDispatcher var1, boolean var2) {
       super(var1, new class_3169<class_9716>(0.0F, var2), 0.5F);
       this.method_29100(new class_8386<class_9716, class_3169<class_9716>>(this));
    }

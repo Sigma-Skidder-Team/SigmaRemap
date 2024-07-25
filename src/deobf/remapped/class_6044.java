@@ -25,7 +25,7 @@ public class class_6044<U> {
    public static final class_6044<Boolean> field_30865 = method_27596("attack_cooling_down");
    public static final class_6044<class_5834> field_30861 = method_27596("interaction_target");
    public static final class_6044<class_1899> field_30892 = method_27596("breed_target");
-   public static final class_6044<class_8145> field_30903 = method_27596("ride_target");
+   public static final class_6044<Entity> field_30903 = method_27596("ride_target");
    public static final class_6044<class_3998> field_30888 = method_27596("path");
    public static final class_6044<List<class_8150>> field_30900 = method_27596("interactable_doors");
    public static final class_6044<Set<class_8150>> field_30872 = method_27596("doors_to_close");

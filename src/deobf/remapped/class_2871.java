@@ -28,7 +28,7 @@ public class class_2871 extends class_9883 {
                if (this.field_14067.field_41697 % 20 == 0) {
                   List var4 = this.field_14067
                      .field_41768
-                     .<class_8145>method_25869(class_5583.class, this.field_14067.method_37241().method_18898(16.0), class_3572.field_17481);
+                     .<Entity>method_25869(class_5583.class, this.field_14067.method_37241().method_18898(16.0), class_3572.field_17481);
                   if (!var4.isEmpty()) {
                      for (class_5583 var6 : var4) {
                         var6.method_25363();

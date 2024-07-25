@@ -5,26 +5,26 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class class_9552 extends class_5783 {
-   private class_8145 field_48601;
-   private class_240 field_48599;
+   private Entity field_48601;
+   private Direction field_48599;
    private int field_48600;
    private double field_48604;
    private double field_48598;
    private double field_48597;
    private UUID field_48603;
 
-   public class_9552(class_6629<? extends class_9552> var1, class_6486 var2) {
+   public class_9552(class_6629<? extends class_9552> var1, World var2) {
       super(var1, var2);
       this.field_41731 = true;
    }
 
-   public class_9552(class_6486 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public class_9552(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this(class_6629.field_34271, var1);
       this.method_37144(var2, var4, var6, this.field_41701, this.field_41755);
       this.method_37214(var8, var10, var12);
    }
 
-   public class_9552(class_6486 var1, class_5834 var2, class_8145 var3, class_9249 var4) {
+   public class_9552(World var1, class_5834 var2, Entity var3, class_9249 var4) {
       this(class_6629.field_34271, var1);
       this.method_26159(var2);
       class_1331 var7 = var2.method_37075();
@@ -33,7 +33,7 @@ public class class_9552 extends class_5783 {
       double var12 = (double)var7.method_12185() + 0.5;
       this.method_37144(var8, var10, var12, this.field_41701, this.field_41755);
       this.field_48601 = var3;
-      this.field_48599 = class_240.field_817;
+      this.field_48599 = Direction.field_817;
       this.method_44070(var4);
    }
 
@@ -67,7 +67,7 @@ public class class_9552 extends class_5783 {
       this.field_48598 = var1.method_25932("TYD");
       this.field_48597 = var1.method_25932("TZD");
       if (var1.method_25939("Dir", 99)) {
-         this.field_48599 = class_240.method_1033(var1.method_25947("Dir"));
+         this.field_48599 = Direction.method_1033(var1.method_25947("Dir"));
       }
 
       if (var1.method_25954("Target")) {
@@ -79,7 +79,7 @@ public class class_9552 extends class_5783 {
    public void method_37329() {
    }
 
-   private void method_44069(class_240 var1) {
+   private void method_44069(Direction var1) {
       this.field_48599 = var1;
    }
 
@@ -96,40 +96,40 @@ public class class_9552 extends class_5783 {
       double var7 = (double)var6.method_12173() + 0.5;
       double var9 = (double)var6.method_12165() + var4;
       double var11 = (double)var6.method_12185() + 0.5;
-      class_240 var13 = null;
+      Direction var13 = null;
       if (!var6.method_12170(this.method_37245(), 2.0)) {
          class_1331 var22 = this.method_37075();
          ArrayList var23 = Lists.newArrayList();
          if (var1 != class_9249.field_47215) {
             if (var22.method_12173() < var6.method_12173() && this.field_41768.method_22548(var22.method_6090())) {
-               var23.add(class_240.field_804);
+               var23.add(Direction.field_804);
             } else if (var22.method_12173() > var6.method_12173() && this.field_41768.method_22548(var22.method_6108())) {
-               var23.add(class_240.field_809);
+               var23.add(Direction.field_809);
             }
          }
 
          if (var1 != class_9249.field_47216) {
             if (var22.method_12165() < var6.method_12165() && this.field_41768.method_22548(var22.method_6081())) {
-               var23.add(class_240.field_817);
+               var23.add(Direction.field_817);
             } else if (var22.method_12165() > var6.method_12165() && this.field_41768.method_22548(var22.method_6100())) {
-               var23.add(class_240.field_802);
+               var23.add(Direction.field_802);
             }
          }
 
          if (var1 != class_9249.field_47219) {
             if (var22.method_12185() < var6.method_12185() && this.field_41768.method_22548(var22.method_6073())) {
-               var23.add(class_240.field_800);
+               var23.add(Direction.field_800);
             } else if (var22.method_12185() > var6.method_12185() && this.field_41768.method_22548(var22.method_6094())) {
-               var23.add(class_240.field_818);
+               var23.add(Direction.field_818);
             }
          }
 
-         var13 = class_240.method_1039(this.field_41717);
+         var13 = Direction.method_1039(this.field_41717);
          if (!var23.isEmpty()) {
-            var13 = (class_240)var23.get(this.field_41717.nextInt(var23.size()));
+            var13 = (Direction)var23.get(this.field_41717.nextInt(var23.size()));
          } else {
             for (int var24 = 5; !this.field_41768.method_22548(var22.method_6098(var13)) && var24 > 0; var24--) {
-               var13 = class_240.method_1039(this.field_41717);
+               var13 = Direction.method_1039(this.field_41717);
             }
          }
 
@@ -242,7 +242,7 @@ public class class_9552 extends class_5783 {
    }
 
    @Override
-   public boolean method_26164(class_8145 var1) {
+   public boolean method_26164(Entity var1) {
       return super.method_26164(var1) && !var1.field_41731;
    }
 
@@ -264,8 +264,8 @@ public class class_9552 extends class_5783 {
    @Override
    public void method_26163(class_5631 var1) {
       super.method_26163(var1);
-      class_8145 var4 = var1.method_25524();
-      class_8145 var5 = this.method_26166();
+      Entity var4 = var1.method_25524();
+      Entity var5 = this.method_26166();
       class_5834 var6 = !(var5 instanceof class_5834) ? null : (class_5834)var5;
       boolean var7 = var4.method_37181(class_6199.method_28358(this, var6).method_28359(), 4.0F);
       if (var7) {

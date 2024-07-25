@@ -22,7 +22,7 @@ public class class_6766 extends class_3599 {
    @Override
    public void method_16794() {
       Random var3 = this.field_34923.method_26594();
-      class_6486 var4 = this.field_34923.field_41768;
+      World var4 = this.field_34923.field_41768;
       int var5 = class_9299.method_42847(this.field_34923.method_37302() - 1.0 + var3.nextDouble() * 2.0);
       int var6 = class_9299.method_42847(this.field_34923.method_37309() + var3.nextDouble() * 2.0);
       int var7 = class_9299.method_42847(this.field_34923.method_37156() - 1.0 + var3.nextDouble() * 2.0);
@@ -40,7 +40,7 @@ public class class_6766 extends class_3599 {
       }
    }
 
-   private boolean method_31020(class_6486 var1, class_1331 var2, class_2522 var3, class_2522 var4, class_2522 var5, class_1331 var6) {
+   private boolean method_31020(World var1, class_1331 var2, class_2522 var3, class_2522 var4, class_2522 var5, class_1331 var6) {
       return var4.method_8345()
          && !var5.method_8345()
          && !var5.method_8350(class_4783.field_23433)

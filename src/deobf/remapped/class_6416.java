@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class class_6416 {
    private static String[] field_32768;
-   private static final Map<class_6414, class_3581> field_32766 = Util.<Map<class_6414, class_3581>>method_44659(Maps.newHashMap(), var0 -> {
-      class_3581 var3 = class_3581.method_16765();
+   private static final Map<class_6414, RenderLayer> field_32766 = Util.<Map<class_6414, RenderLayer>>method_44659(Maps.newHashMap(), var0 -> {
+      RenderLayer var3 = RenderLayer.method_16765();
       var0.put(class_4783.field_23460, var3);
-      class_3581 var4 = class_3581.method_16756();
+      RenderLayer var4 = RenderLayer.method_16756();
       var0.put(class_4783.field_23259, var4);
       var0.put(class_4783.field_23817, var4);
       var0.put(class_4783.field_23786, var4);
@@ -21,7 +21,7 @@ public class class_6416 {
       var0.put(class_4783.field_23756, var4);
       var0.put(class_4783.field_23467, var4);
       var0.put(class_4783.field_23268, var4);
-      class_3581 var5 = class_3581.method_16771();
+      RenderLayer var5 = RenderLayer.method_16771();
       var0.put(class_4783.field_23890, var5);
       var0.put(class_4783.field_23483, var5);
       var0.put(class_4783.field_23256, var5);
@@ -209,7 +209,7 @@ public class class_6416 {
       var0.put(class_4783.field_23704, var5);
       var0.put(class_4783.field_23345, var5);
       var0.put(class_4783.field_23253, var5);
-      class_3581 var6 = class_3581.method_16762();
+      RenderLayer var6 = RenderLayer.method_16762();
       var0.put(class_4783.field_23496, var6);
       var0.put(class_4783.field_23588, var6);
       var0.put(class_4783.field_23627, var6);
@@ -249,40 +249,40 @@ public class class_6416 {
       var0.put(class_4783.field_23320, var6);
       var0.put(class_4783.field_23269, var6);
    });
-   private static final Map<class_2340, class_3581> field_32765 = Util.<Map<class_2340, class_3581>>method_44659(Maps.newHashMap(), var0 -> {
-      class_3581 var3 = class_3581.method_16762();
+   private static final Map<class_2340, RenderLayer> field_32765 = Util.<Map<class_2340, RenderLayer>>method_44659(Maps.newHashMap(), var0 -> {
+      RenderLayer var3 = RenderLayer.method_16762();
       var0.put(class_8532.field_43676, var3);
       var0.put(class_8532.field_43674, var3);
    });
    private static boolean field_32767;
 
-   public static class_3581 method_29330(class_2522 var0) {
+   public static RenderLayer method_29330(class_2522 var0) {
       class_6414 var3 = var0.method_8360();
       if (!(var3 instanceof class_4423)) {
-         class_3581 var4 = field_32766.get(var3);
-         return var4 == null ? class_3581.method_16751() : var4;
+         RenderLayer var4 = field_32766.get(var3);
+         return var4 == null ? RenderLayer.method_16751() : var4;
       } else {
-         return !field_32767 ? class_3581.method_16751() : class_3581.method_16756();
+         return !field_32767 ? RenderLayer.method_16751() : RenderLayer.method_16756();
       }
    }
 
-   public static class_3581 method_29331(class_2522 var0) {
+   public static RenderLayer method_29331(class_2522 var0) {
       class_6414 var3 = var0.method_8360();
       if (!(var3 instanceof class_4423)) {
-         class_3581 var4 = field_32766.get(var3);
+         RenderLayer var4 = field_32766.get(var3);
          if (var4 == null) {
-            return class_3581.method_16751();
+            return RenderLayer.method_16751();
          } else {
-            return var4 != class_3581.method_16762() ? var4 : class_3581.method_16746();
+            return var4 != RenderLayer.method_16762() ? var4 : RenderLayer.method_16746();
          }
       } else {
-         return !field_32767 ? class_3581.method_16751() : class_3581.method_16756();
+         return !field_32767 ? RenderLayer.method_16751() : RenderLayer.method_16756();
       }
    }
 
-   public static class_3581 method_29327(class_2522 var0, boolean var1) {
-      class_3581 var4 = method_29330(var0);
-      if (var4 != class_3581.method_16762()) {
+   public static RenderLayer method_29327(class_2522 var0, boolean var1) {
+      RenderLayer var4 = method_29330(var0);
+      if (var4 != RenderLayer.method_16762()) {
          return class_5276.method_24083();
       } else if (MinecraftClient.method_8497()) {
          return !var1 ? class_5276.method_24076() : class_5276.method_24072();
@@ -291,7 +291,7 @@ public class class_6416 {
       }
    }
 
-   public static class_3581 method_29332(class_6098 var0, boolean var1) {
+   public static RenderLayer method_29332(class_6098 var0, boolean var1) {
       class_2451 var4 = var0.method_27960();
       if (!(var4 instanceof class_6201)) {
          return !var1 ? class_5276.method_24076() : class_5276.method_24072();
@@ -301,9 +301,9 @@ public class class_6416 {
       }
    }
 
-   public static class_3581 method_29333(class_4774 var0) {
-      class_3581 var3 = field_32765.get(var0.method_22005());
-      return var3 == null ? class_3581.method_16751() : var3;
+   public static RenderLayer method_29333(class_4774 var0) {
+      RenderLayer var3 = field_32765.get(var0.method_22005());
+      return var3 == null ? RenderLayer.method_16751() : var3;
    }
 
    public static void method_29328(boolean var0) {

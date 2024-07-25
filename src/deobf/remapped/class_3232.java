@@ -41,7 +41,7 @@ public abstract class class_3232 implements class_5002, AutoCloseable {
    public void method_14817(class_2034 var1, boolean var2) {
    }
 
-   public boolean method_14824(class_8145 var1) {
+   public boolean method_14824(Entity var1) {
       return true;
    }
 

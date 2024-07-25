@@ -10,8 +10,8 @@ public class class_1244 implements Comparator<class_3357> {
    }
 
    public int compare(class_3357 var1, class_3357 var2) {
-      class_8145 var5 = var1.method_15377();
-      class_8145 var6 = var2.method_15377();
+      Entity var5 = var1.method_15377();
+      Entity var6 = var2.method_15377();
       float var7 = ((class_5834)var5).method_26551();
       float var8 = ((class_5834)var6).method_26551();
       if (!(var7 - var8 < 0.0F)) {

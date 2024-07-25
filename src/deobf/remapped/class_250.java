@@ -13,7 +13,7 @@ public abstract class class_250 extends class_2985 {
       if (var6.method_8350(class_4783.field_23552) && var6.<Integer>method_10313(class_163.field_493) == 1) {
          return true;
       } else if (var6.method_8364().method_21996() != 8) {
-         int var7 = class_2309.method_10626(var1, var0, var2, var6, var5, class_240.field_817, var6.method_8320(var1, var5));
+         int var7 = class_2309.method_10626(var1, var0, var2, var6, var5, Direction.field_817, var6.method_8320(var1, var5));
          return var7 < var1.method_28255();
       } else {
          return false;

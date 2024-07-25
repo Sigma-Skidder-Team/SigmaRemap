@@ -5,7 +5,7 @@ public interface class_214 {
       return class_1048.field_5758;
    }
 
-   static class_214 method_926(class_8145 var0) {
+   static class_214 method_926(Entity var0) {
       return new class_1048(var0);
    }
 

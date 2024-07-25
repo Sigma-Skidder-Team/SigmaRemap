@@ -53,7 +53,7 @@ public class class_6560 {
    public static final List<Identifier> field_33451 = field_33432.stream()
       .<Identifier>map(var0 -> new Identifier("textures/" + var0.method_21456() + ".png"))
       .collect(Collectors.<Identifier>toList());
-   public static final List<class_3581> field_33452 = field_33451.stream().<class_3581>map(class_3581::method_16719).collect(Collectors.<class_3581>toList());
+   public static final List<RenderLayer> field_33452 = field_33451.stream().<RenderLayer>map(RenderLayer::method_16719).collect(Collectors.<RenderLayer>toList());
    private static final Set<class_2843> field_33456 = Util.<Set<class_2843>>method_44659(Sets.newHashSet(), var0 -> {
       var0.add(field_33450);
       var0.add(field_33438);

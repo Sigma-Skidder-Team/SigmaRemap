@@ -107,7 +107,7 @@ public class class_793 implements class_8773 {
    }
 
    @Override
-   public Set<class_5621<class_6486>> method_40317() {
+   public Set<class_5621<World>> method_40317() {
       return this.field_4260.method_4817();
    }
 

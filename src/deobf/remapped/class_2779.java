@@ -18,15 +18,15 @@ public class class_2779 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      class_9071 var11 = this.field_13571.gameRenderer.method_35949();
+      Camera var11 = this.field_13571.gameRenderer.method_35949();
       class_174 var12 = this.field_13571.field_9601;
       class_8760 var13 = var12.method_22572();
       class_1331 var14 = new class_1331(var11.method_41627().field_7336, 0.0, var11.method_41627().field_7334);
-      class_7907 var15 = var2.method_11645(class_3581.method_16744());
+      class_7907 var15 = var2.method_11645(RenderLayer.method_16744());
       if (this.field_13570.containsKey(var13)) {
          for (class_9616 var17 : this.field_13570.get(var13).values()) {
             if (var14.method_12171(var17.method_44396(), 500.0)) {
-               class_4316.method_20013(
+               WorldRenderer.method_20013(
                   var1,
                   var15,
                   (double)var17.field_48996 - var3,
@@ -54,7 +54,7 @@ public class class_2779 implements class_2995 {
             Boolean var20 = this.field_13572.get(var13).get(var18);
             if (var14.method_12171(var19.method_44396(), 500.0)) {
                if (!var20) {
-                  class_4316.method_20013(
+                  WorldRenderer.method_20013(
                      var1,
                      var15,
                      (double)var19.field_48996 - var3,
@@ -72,7 +72,7 @@ public class class_2779 implements class_2995 {
                      1.0F
                   );
                } else {
-                  class_4316.method_20013(
+                  WorldRenderer.method_20013(
                      var1,
                      var15,
                      (double)var19.field_48996 - var3,

@@ -49,7 +49,7 @@ public class class_948 implements class_1243 {
    private double field_4859;
    private double field_4863;
    private double field_4855;
-   private class_8145 field_4854;
+   private Entity field_4854;
    private double field_4865;
    private double field_4875;
    private double field_4871;
@@ -228,7 +228,7 @@ public class class_948 implements class_1243 {
    public void method_5539(class_4148 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (!method_4173(var1)) {
-         class_8145 var4 = this.field_4880.method_37240();
+         Entity var4 = this.field_4880.method_37240();
          if (var4 != this.field_4880 && var4.method_37259() == this.field_4880 && var4 == this.field_4854) {
             class_6331 var5 = this.field_4880.method_43235();
             double var6 = var4.method_37302();
@@ -298,7 +298,7 @@ public class class_948 implements class_1243 {
       }
    }
 
-   private boolean method_4166(class_8145 var1) {
+   private boolean method_4166(Entity var1) {
       return var1.field_41768.method_28256(var1.method_37241().method_18898(0.0625).method_18928(0.0, -0.55, 0.0)).allMatch(class_1873::method_8345);
    }
 
@@ -382,7 +382,7 @@ public class class_948 implements class_1243 {
          boolean var9 = var1.method_27784();
          if (var4 != null) {
             class_9776 var10 = var5.method_33927();
-            class_240 var11 = this.field_4880.field_41768.method_28262(var6).<class_240>method_10313(class_8151.field_41791);
+            Direction var11 = this.field_4880.field_41768.method_28262(var6).<Direction>method_10313(class_8151.field_41791);
             switch (var1.method_27780()) {
                case field_49629:
                   class_2522 var12 = class_4783.field_23601.method_29260();
@@ -654,7 +654,7 @@ public class class_948 implements class_1243 {
    public void method_5562(class_6187 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (this.field_4880.method_37163(2)) {
-         class_8145 var4 = this.field_4880.method_43235().method_29534(var1.method_28315());
+         Entity var4 = this.field_4880.method_43235().method_29534(var1.method_28315());
          if (var4 != null) {
             class_5734 var5 = var4.method_37258(new class_5734());
             this.field_4880.field_47794.method_4156(new class_4798(var1.method_28314(), var5));
@@ -895,7 +895,7 @@ public class class_948 implements class_1243 {
       class_6098 var6 = this.field_4880.method_26617(var5);
       class_9529 var7 = var1.method_39484();
       class_1331 var8 = var7.method_43955();
-      class_240 var9 = var7.method_43956();
+      Direction var9 = var7.method_43956();
       this.field_4880.method_43237();
       if (var8.method_12165() >= this.field_4877.method_1671()) {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.field_4877.method_1671()).mergeStyle(TextFormatting.RED);
@@ -904,7 +904,7 @@ public class class_948 implements class_1243 {
          && this.field_4880.method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5) < 64.0
          && var4.method_29538(this.field_4880, var8)) {
          class_6910 var12 = this.field_4880.field_47807.method_39528(this.field_4880, var4, var6, var5, var7);
-         if (var9 == class_240.field_817
+         if (var9 == Direction.field_817
             && !var12.method_31662()
             && var8.method_12165() >= this.field_4877.method_1671() - 1
             && method_4162(this.field_4880, var6)) {
@@ -939,7 +939,7 @@ public class class_948 implements class_1243 {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (this.field_4880.method_37221()) {
          for (class_6331 var5 : this.field_4877.method_1719()) {
-            class_8145 var6 = var1.method_29233(var5);
+            Entity var6 = var1.method_29233(var5);
             if (var6 != null) {
                this.field_4880.method_43274(var5, var6.method_37302(), var6.method_37309(), var6.method_37156(), var6.field_41701, var6.field_41755);
                return;
@@ -955,7 +955,7 @@ public class class_948 implements class_1243 {
    @Override
    public void method_5553(class_8125 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
-      class_8145 var4 = this.field_4880.method_37243();
+      Entity var4 = this.field_4880.method_37243();
       if (var4 instanceof class_9149) {
          ((class_9149)var4).method_42087(var1.method_36966(), var1.method_36965());
       }
@@ -1135,7 +1135,7 @@ public class class_948 implements class_1243 {
    public void method_5551(class_3398 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       class_6331 var4 = this.field_4880.method_43235();
-      class_8145 var5 = var1.method_15695(var4);
+      Entity var5 = var1.method_15695(var4);
       this.field_4880.method_43237();
       this.field_4880.method_37234(var1.method_15692());
       if (var5 != null) {
@@ -1182,7 +1182,7 @@ public class class_948 implements class_1243 {
             if (this.field_4880.field_47777) {
                this.field_4880.field_47777 = false;
                this.field_4880 = this.field_4877.method_1600().method_39984(this.field_4880, true);
-               class_8807.field_45058.method_38905(this.field_4880, class_6486.field_33038, class_6486.field_33048);
+               class_8807.field_45058.method_38905(this.field_4880, World.field_33038, World.field_33048);
             } else {
                if (this.field_4880.method_26551() > 0.0F) {
                   return;

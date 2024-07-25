@@ -7,7 +7,7 @@ public class class_2207 extends class_7164<class_2960, class_6521<class_2960>> {
    private final class_1652<class_2960> field_10951 = new class_1652<class_2960>();
    private final class_1085<class_2960> field_10948 = new class_1085<class_2960>();
 
-   public class_2207(class_6122 var1) {
+   public class_2207(EntityRenderDispatcher var1) {
       super(var1, new class_1085<class_2960>(), 0.2F);
       this.field_10950 = 3;
    }

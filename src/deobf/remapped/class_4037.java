@@ -16,7 +16,7 @@ public class class_4037 implements AutoCloseable {
       this.field_19599 = new class_1983(var1, var3, "chunk");
    }
 
-   public class_5734 method_18573(class_5621<class_6486> var1, Supplier<class_4050> var2, class_5734 var3) {
+   public class_5734 method_18573(class_5621<World> var1, Supplier<class_4050> var2, class_5734 var3) {
       int var6 = method_18574(var3);
       short var7 = 1493;
       if (var6 < 1493) {

@@ -32,7 +32,7 @@ public class class_766 {
       this.field_4149 = var6;
    }
 
-   public boolean method_3453(class_8145 var1) {
+   public boolean method_3453(Entity var1) {
       if (this != field_4155) {
          if (var1 instanceof class_5834) {
             class_5834 var4 = (class_5834)var1;

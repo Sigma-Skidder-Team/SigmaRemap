@@ -1,7 +1,7 @@
 package remapped;
 
 public abstract class class_516 extends class_5886 {
-   public class_516(class_6629<? extends class_516> var1, class_6486 var2) {
+   public class_516(class_6629<? extends class_516> var1, World var2) {
       super(var1, var2);
    }
 

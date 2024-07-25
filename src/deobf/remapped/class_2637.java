@@ -112,10 +112,10 @@ public class class_2637 {
       this.field_13001 = var1.field_41524 * var4 + var1.field_41526 * var5 + var1.field_41530 * var6 + var1.field_41527 * var7;
    }
 
-   public void method_11928(class_5422 var1) {
-      class_5422 var4 = new class_5422(var1);
-      var4.method_24658(new class_5422(this.method_11923(), this.method_11922(), this.method_11927(), 0.0F));
-      class_5422 var5 = new class_5422(var1);
+   public void method_11928(Quaternion var1) {
+      Quaternion var4 = new Quaternion(var1);
+      var4.method_24658(new Quaternion(this.method_11923(), this.method_11922(), this.method_11927(), 0.0F));
+      Quaternion var5 = new Quaternion(var1);
       var5.method_24652();
       var4.method_24658(var5);
       this.method_11925(var4.method_24653(), var4.method_24647(), var4.method_24648(), this.method_11924());

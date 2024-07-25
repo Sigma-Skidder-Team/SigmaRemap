@@ -5,7 +5,7 @@ public interface class_4688 {
 
    void method_21649(int var1);
 
-   void method_21648(class_240 var1);
+   void method_21648(Direction var1);
 
    void method_21650();
 

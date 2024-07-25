@@ -23,7 +23,7 @@ public abstract class class_8131 extends class_7060 {
 
    public void method_36998(class_6561 var1, class_1331 var2, class_8478 var3) {
       this.field_41647 = var1;
-      this.method_32519(class_240.field_818);
+      this.method_32519(Direction.field_818);
       this.field_41648 = var2;
       this.field_41650 = var3;
       this.field_36435 = var1.method_29986(var3, var2);

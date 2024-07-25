@@ -10,7 +10,7 @@ public class class_6377 {
    private static long field_32580 = -1L;
    public static boolean field_32581 = false;
 
-   public static void method_29157(class_9071 var0, float var1, class_174 var2, int var3, float var4) {
+   public static void method_29157(Camera var0, float var1, class_174 var2, int var3, float var4) {
       class_4774 var7 = var0.method_41626();
       if (!var7.method_22007(class_6503.field_33094)) {
          if (!var7.method_22007(class_6503.field_33095)) {
@@ -165,7 +165,7 @@ public class class_6377 {
 
       if (!var7.method_22007(class_6503.field_33094)) {
          if (var7.method_22007(class_6503.field_33095)) {
-            class_8145 var29 = var0.method_41633();
+            Entity var29 = var0.method_41633();
             class_1343 var36 = class_9300.method_42928(var2, var29.method_37302(), var29.method_37309() + 1.0, var29.method_37156());
             if (var36 != null) {
                field_32578 = (float)var36.field_7336;
@@ -174,7 +174,7 @@ public class class_6377 {
             }
          }
       } else {
-         class_8145 var30 = var0.method_41633();
+         Entity var30 = var0.method_41633();
          class_1343 var37 = class_9300.method_42917(var2, var30.method_37302(), var30.method_37309() + 1.0, var30.method_37156());
          if (var37 != null) {
             field_32578 = (float)var37.field_7336;
@@ -200,14 +200,14 @@ public class class_6377 {
       class_3542.method_16365(class_5084.field_26251);
    }
 
-   public static void method_29159(class_9071 var0, class_1026 var1, float var2, boolean var3) {
+   public static void method_29159(Camera var0, class_1026 var1, float var2, boolean var3) {
       method_29160(var0, var1, var2, var3, 0.0F);
    }
 
-   public static void method_29160(class_9071 var0, class_1026 var1, float var2, boolean var3, float var4) {
+   public static void method_29160(Camera var0, class_1026 var1, float var2, boolean var3, float var4) {
       field_32581 = false;
       class_4774 var7 = var0.method_41626();
-      class_8145 var8 = var0.method_41633();
+      Entity var8 = var0.method_41633();
       float var9 = -1.0F;
       if (class_7860.field_39889.method_3596()) {
          var9 = class_7860.method_35586(class_7860.field_39889, var1, var0, var4, 0.1F);

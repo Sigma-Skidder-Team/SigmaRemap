@@ -24,7 +24,7 @@ public class class_5458 implements class_7279 {
    }
 
    public boolean test(class_2792 var1) {
-      class_8145 var4 = var1.<class_8145>method_12698(class_8712.field_44678);
+      Entity var4 = var1.<Entity>method_12698(class_8712.field_44678);
       int var5 = 0;
       if (var4 instanceof class_5834) {
          var5 = class_2931.method_13397((class_5834)var4);

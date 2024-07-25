@@ -8,7 +8,7 @@ public class class_6612 extends class_6249 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = class_2143.method_10014(
          var1, class_9299.method_42847(var2.method_37302()), class_9299.method_42847(var2.method_37156()), (byte)0, true, false
       );

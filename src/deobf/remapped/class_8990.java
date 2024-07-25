@@ -9,7 +9,7 @@ public abstract class class_8990 extends class_5467 {
    public static final class_7821<Optional<UUID>> field_46033 = class_8073.<Optional<UUID>>method_36641(class_8990.class, class_2734.field_13348);
    private boolean field_46034;
 
-   public class_8990(class_6629<? extends class_8990> var1, class_6486 var2) {
+   public class_8990(class_6629<? extends class_8990> var1, World var2) {
       super(var1, var2);
       this.method_41210();
    }
@@ -171,7 +171,7 @@ public abstract class class_8990 extends class_5467 {
    }
 
    @Override
-   public boolean method_37344(class_8145 var1) {
+   public boolean method_37344(Entity var1) {
       if (this.method_41215()) {
          class_5834 var4 = this.method_41207();
          if (var1 == var4) {

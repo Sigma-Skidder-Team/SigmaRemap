@@ -10,7 +10,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    private static final class_8137 field_48085 = class_8137.method_37019(class_4897.field_25136, class_4897.field_25273, class_4897.field_24362);
    private final class_686 field_48087 = new class_686(this.field_41735, field_48089, field_48088);
 
-   public class_9405(class_6629<? extends class_9405> var1, class_6486 var2) {
+   public class_9405(class_6629<? extends class_9405> var1, World var2) {
       super(var1, var2);
    }
 
@@ -33,13 +33,13 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
 
    @Nullable
    @Override
-   public class_8145 method_37259() {
+   public Entity method_37259() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 
    @Override
    public boolean method_26863() {
-      class_8145 var3 = this.method_37259();
+      Entity var3 = this.method_37259();
       if (!(var3 instanceof class_704)) {
          return false;
       } else {
@@ -144,7 +144,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
 
    @Override
    public class_1343 method_37282(class_5834 var1) {
-      class_240 var4 = this.method_37235();
+      Direction var4 = this.method_37235();
       if (var4.method_1029() == class_9249.field_47216) {
          return super.method_37282(var1);
       } else {

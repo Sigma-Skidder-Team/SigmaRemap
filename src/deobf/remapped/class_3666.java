@@ -1,6 +1,6 @@
 package remapped;
 
-public abstract class class_3666<E extends class_8145> extends class_1498<E> {
+public abstract class class_3666<E extends Entity> extends class_1498<E> {
    private float field_17839 = 1.0F;
    private float field_17838 = 1.0F;
    private float field_17840 = 1.0F;

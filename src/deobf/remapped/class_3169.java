@@ -19,7 +19,7 @@ public class class_3169<T extends class_5834> extends class_2344<T> {
    private final boolean field_15848;
 
    public class_3169(float var1, boolean var2) {
-      super(class_3581::method_16705, var1, 0.0F, 64, 64);
+      super(RenderLayer::method_16705, var1, 0.0F, 64, 64);
       this.field_15848 = var2;
       this.field_15852 = new class_1549(this, 24, 0);
       this.field_15852.method_7049(-3.0F, -6.0F, -1.0F, 6.0F, 6.0F, 1.0F, var1);

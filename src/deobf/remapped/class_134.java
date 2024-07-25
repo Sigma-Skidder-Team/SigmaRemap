@@ -141,7 +141,7 @@ public class class_134 {
          ImmutableList.of(
             new class_5007(0.8F),
             new class_6109(class_134::method_512, 8.0F),
-            new class_2214<class_2599>(class_8145::method_37070, method_530()),
+            new class_2214<class_2599>(Entity::method_37070, method_530()),
             new class_5674(8, class_134::method_503)
          ),
          class_6044.field_30903
@@ -211,7 +211,7 @@ public class class_134 {
       if (!var0.method_26449()) {
          return false;
       } else {
-         class_8145 var3 = var0.method_37243();
+         Entity var3 = var0.method_37243();
          return var3 instanceof class_2599 && ((class_2599)var3).method_26449() || var3 instanceof class_6704 && ((class_6704)var3).method_26449();
       }
    }
@@ -372,7 +372,7 @@ public class class_134 {
       return var0.method_11250(class_391.field_1643);
    }
 
-   private static boolean method_503(class_2599 var0, class_8145 var1) {
+   private static boolean method_503(class_2599 var0, Entity var1) {
       if (!(var1 instanceof class_5886)) {
          return false;
       } else {

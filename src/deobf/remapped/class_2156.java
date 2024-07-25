@@ -4,12 +4,12 @@ import java.util.Optional;
 import java.util.Random;
 
 public abstract class class_2156 extends class_8844 implements class_3978 {
-   public class_2156(class_3073 var1, class_240 var2, class_4190 var3, boolean var4) {
+   public class_2156(class_3073 var1, Direction var2, class_4190 var3, boolean var4) {
       super(var1, var2, var3, var4);
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var2 == this.field_45228.method_1046() && !var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
@@ -41,7 +41,7 @@ public abstract class class_2156 extends class_8844 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(class_6486 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
       return true;
    }
 

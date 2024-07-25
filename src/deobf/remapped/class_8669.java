@@ -56,7 +56,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_5621<class_8669<class_1404>> field_44416 = method_39804("loot_function_type");
    public static final class_5621<class_8669<class_2190>> field_44421 = method_39804("loot_condition_type");
    public static final class_5621<class_8669<class_8760>> field_44415 = method_39804("dimension_type");
-   public static final class_5621<class_8669<class_6486>> field_44372 = method_39804("dimension");
+   public static final class_5621<class_8669<World>> field_44372 = method_39804("dimension");
    public static final class_5621<class_8669<class_8472>> field_44420 = method_39804("dimension");
    public static final class_8669<class_8461> field_44369 = method_39812(field_44362, () -> class_463.field_2732);
    public static final class_3991<class_2340> field_44447 = method_39796(field_44458, "empty", () -> class_8532.field_43673);

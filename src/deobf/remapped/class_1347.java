@@ -44,7 +44,7 @@ public class class_1347 {
       for (int var10 = 0; var10 < this.field_7357.length; var10++) {
          class_3142 var11 = this.field_7357[var10];
          var3.method_36063();
-         class_3581 var12 = class_3581.method_16755(var9);
+         RenderLayer var12 = RenderLayer.method_16755(var9);
          class_7907 var13 = var4.method_11645(var12);
          var11.method_14530(var1, var3, var13, var5, var6);
          var3.method_36064();

@@ -324,7 +324,7 @@ public class class_1097 {
       return field_6059;
    }
 
-   public void method_4866(class_8145 var1) {
+   public void method_4866(Entity var1) {
       if (var1 != null && !(var1 instanceof class_704) && !var1.method_37330()) {
          String var4 = var1.method_37225();
          this.method_4869(var4, (class_4399)null);

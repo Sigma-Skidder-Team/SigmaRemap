@@ -13,7 +13,7 @@ public class class_7914 {
       this.field_40452 = var1;
    }
 
-   public void method_35814(class_240 var1, class_7914 var2) {
+   public void method_35814(Direction var1, class_7914 var2) {
       this.field_40456[var1.method_1050()] = var2;
       var2.field_40456[var1.method_1046().method_1050()] = this;
    }

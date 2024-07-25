@@ -3,7 +3,7 @@ package remapped;
 public class class_5024 {
    public int[] field_25993;
    public final int field_25989;
-   public class_240 field_25994;
+   public Direction field_25994;
    public class_5155 field_25992;
    private final boolean field_25987;
    private int[] field_25986 = null;
@@ -11,7 +11,7 @@ public class class_5024 {
    private boolean field_25995;
    private class_5024 field_25990;
 
-   public class_5024(int[] var1, int var2, class_240 var3, class_5155 var4, boolean var5) {
+   public class_5024(int[] var1, int var2, Direction var3, class_5155 var4, boolean var5) {
       this.field_25993 = var1;
       this.field_25989 = var2;
       this.field_25994 = var3;
@@ -33,7 +33,7 @@ public class class_5024 {
       return this.field_25989;
    }
 
-   public class_240 method_23150() {
+   public Direction method_23150() {
       if (this.field_25994 == null) {
          this.field_25994 = class_7265.method_33195(this.method_23155());
       }

@@ -22,8 +22,8 @@ public class class_2300<T> extends class_5920<class_4612> {
       return new class_2300<class_1331>(var0, var1, var2, var3, class_1343::method_6200);
    }
 
-   public static class_2300<? extends class_8145> method_10577(class_6044<? extends class_8145> var0, float var1, int var2, boolean var3) {
-      return new class_2300(var0, var1, var2, var3, class_8145::method_37245);
+   public static class_2300<? extends Entity> method_10577(class_6044<? extends Entity> var0, float var1, int var2, boolean var3) {
+      return new class_2300(var0, var1, var2, var3, Entity::method_37245);
    }
 
    public boolean method_10579(class_6331 var1, class_4612 var2) {

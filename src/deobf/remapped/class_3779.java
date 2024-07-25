@@ -24,7 +24,7 @@ public class class_3779 extends class_5766 {
             if (!var1.equals("/reloadChunks")) {
                return false;
             } else {
-               this.field_943.field_9657.method_19998();
+               this.field_943.worldRenderer.method_19998();
                return true;
             }
          } else {

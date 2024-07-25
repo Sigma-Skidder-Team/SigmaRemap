@@ -5,8 +5,8 @@ import java.util.List;
 
 public class class_8091 {
    private final class_5886 field_41441;
-   private final List<class_8145> field_41442 = Lists.newArrayList();
-   private final List<class_8145> field_41439 = Lists.newArrayList();
+   private final List<Entity> field_41442 = Lists.newArrayList();
+   private final List<Entity> field_41439 = Lists.newArrayList();
 
    public class_8091(class_5886 var1) {
       this.field_41441 = var1;
@@ -17,7 +17,7 @@ public class class_8091 {
       this.field_41439.clear();
    }
 
-   public boolean method_36736(class_8145 var1) {
+   public boolean method_36736(Entity var1) {
       if (!this.field_41442.contains(var1)) {
          if (!this.field_41439.contains(var1)) {
             this.field_41441.field_41768.method_29599().method_16056("canSee");

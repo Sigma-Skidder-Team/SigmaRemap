@@ -11,7 +11,7 @@ public class class_4393 extends class_2803 implements class_9897 {
    private int field_21515;
    private UUID field_21517;
 
-   public class_4393(class_6629<? extends class_4393> var1, class_6486 var2) {
+   public class_4393(class_6629<? extends class_4393> var1, World var2) {
       super(var1, var2);
    }
 

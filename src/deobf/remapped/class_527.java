@@ -60,7 +60,7 @@ public class class_527 implements class_6310<class_392> {
    }
 
    @Nullable
-   public class_8145 method_2564(class_6486 var1) {
+   public Entity method_2564(World var1) {
       return var1.method_29534(this.field_3206);
    }
 

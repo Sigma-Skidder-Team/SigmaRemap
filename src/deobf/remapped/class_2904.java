@@ -136,11 +136,11 @@ public class class_2904 {
       }
    }
 
-   public ImmutableSet<class_5621<class_6486>> method_13297() {
+   public ImmutableSet<class_5621<World>> method_13297() {
       return this.method_13296()
          .method_39808()
          .stream()
-         .<class_5621<class_6486>>map(var0 -> class_5621.<class_6486>method_25497(class_8669.field_44372, var0.getKey().method_25499()))
+         .<class_5621<World>>map(var0 -> class_5621.<World>method_25497(class_8669.field_44372, var0.getKey().method_25499()))
          .collect(ImmutableSet.toImmutableSet());
    }
 

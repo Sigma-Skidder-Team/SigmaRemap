@@ -31,7 +31,7 @@ public class class_5792 extends class_4171<class_3551, class_3192<class_3551>> {
             var17 = (float)(var18 & 0xFF) / 255.0F;
          }
 
-         class_7907 var19 = var2.method_11645(class_3581.method_16755(var14.method_12199()));
+         class_7907 var19 = var2.method_11645(RenderLayer.method_16755(var14.method_12199()));
          this.field_29270.method_45499(var1, var19, var3, class_5367.field_27381, var15, var16, var17, 1.0F);
       }
    }

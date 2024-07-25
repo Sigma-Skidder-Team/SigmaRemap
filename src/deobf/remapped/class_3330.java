@@ -10,8 +10,8 @@ public class class_3330 implements Comparator<class_3357> {
    }
 
    public int compare(class_3357 var1, class_3357 var2) {
-      class_8145 var5 = var1.method_15377();
-      class_8145 var6 = var2.method_15377();
+      Entity var5 = var1.method_15377();
+      Entity var6 = var2.method_15377();
       boolean var7 = SigmaMainClass.method_3328().method_3307().method_14469(var5);
       boolean var8 = SigmaMainClass.method_3328().method_3307().method_14469(var6);
       if (var7 && !var8) {

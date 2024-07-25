@@ -11,7 +11,7 @@ public class class_8526 extends class_2654 {
       new class_6325[class_546.field_3277], var0 -> Arrays.fill(var0, class_6297.field_32176)
    );
 
-   public class_8526(class_6486 var1, class_2034 var2) {
+   public class_8526(World var1, class_2034 var2) {
       super(var1, var2, new class_546(var1.method_2755().<class_6325>method_28813(class_8669.field_44359), field_43628));
    }
 
@@ -43,15 +43,15 @@ public class class_8526 extends class_2654 {
    }
 
    @Override
-   public void method_27342(class_8145 var1) {
+   public void method_27342(Entity var1) {
    }
 
    @Override
-   public void method_11995(class_8145 var1) {
+   public void method_11995(Entity var1) {
    }
 
    @Override
-   public void method_12000(class_8145 var1, int var2) {
+   public void method_12000(Entity var1, int var2) {
    }
 
    @Nullable
@@ -77,11 +77,11 @@ public class class_8526 extends class_2654 {
    }
 
    @Override
-   public void method_11990(class_8145 var1, class_4092 var2, List<class_8145> var3, Predicate<? super class_8145> var4) {
+   public void method_11990(Entity var1, class_4092 var2, List<Entity> var3, Predicate<? super Entity> var4) {
    }
 
    @Override
-   public <T extends class_8145> void method_11994(Class<? extends T> var1, class_4092 var2, List<T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method_11994(Class<? extends T> var1, class_4092 var2, List<T> var3, Predicate<? super T> var4) {
    }
 
    @Override

@@ -35,7 +35,7 @@ public class class_7897 implements class_2995 {
          class_1331 var14 = this.field_40382.get(var13);
          Float var15 = this.field_40385.get(var13);
          float var16 = var15 / 2.0F;
-         class_4316.method_20064(
+         WorldRenderer.method_20064(
             var12,
             (double)((float)var14.method_12173() + 0.5F - var16) - var3,
             (double)((float)var14.method_12165() + 0.5F - var16) - var5,

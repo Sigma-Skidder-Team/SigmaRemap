@@ -6,7 +6,7 @@ public class class_5809 extends class_3599 {
    private static String[] field_29321;
    private final class_9408 field_29320;
    private class_704 field_29325;
-   private final class_6486 field_29324;
+   private final World field_29324;
    private final float field_29323;
    private int field_29322;
    private final class_4931 field_29319;

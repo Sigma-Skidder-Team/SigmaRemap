@@ -35,15 +35,15 @@ public class class_4964 {
    public static final DynamicCommandExceptionType field_25675 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("argument.entity.options.valueless", var0)
    );
-   public static final BiConsumer<class_1343, List<? extends class_8145>> field_25668 = (var0, var1) -> {
+   public static final BiConsumer<class_1343, List<? extends Entity>> field_25668 = (var0, var1) -> {
    };
-   public static final BiConsumer<class_1343, List<? extends class_8145>> field_25697 = (var0, var1) -> var1.sort(
+   public static final BiConsumer<class_1343, List<? extends Entity>> field_25697 = (var0, var1) -> var1.sort(
          (var1x, var2) -> Doubles.compare(var1x.method_37274(var0), var2.method_37274(var0))
       );
-   public static final BiConsumer<class_1343, List<? extends class_8145>> field_25703 = (var0, var1) -> var1.sort(
+   public static final BiConsumer<class_1343, List<? extends Entity>> field_25703 = (var0, var1) -> var1.sort(
          (var1x, var2) -> Doubles.compare(var2.method_37274(var0), var1x.method_37274(var0))
       );
-   public static final BiConsumer<class_1343, List<? extends class_8145>> field_25696 = (var0, var1) -> Collections.shuffle(var1);
+   public static final BiConsumer<class_1343, List<? extends Entity>> field_25696 = (var0, var1) -> Collections.shuffle(var1);
    public static final BiFunction<SuggestionsBuilder, Consumer<SuggestionsBuilder>, CompletableFuture<Suggestions>> field_25676 = (var0, var1) -> var0.buildFuture();
    private final StringReader field_25677;
    private final boolean field_25671;
@@ -60,8 +60,8 @@ public class class_4964 {
    private Double field_25689;
    private class_9721 field_25693 = class_9721.field_49421;
    private class_9721 field_25673 = class_9721.field_49421;
-   private Predicate<class_8145> field_25665 = var0 -> true;
-   private BiConsumer<class_1343, List<? extends class_8145>> field_25701 = field_25668;
+   private Predicate<Entity> field_25665 = var0 -> true;
+   private BiConsumer<class_1343, List<? extends Entity>> field_25701 = field_25668;
    private boolean field_25691;
    private String field_25711;
    private int field_25679;
@@ -162,7 +162,7 @@ public class class_4964 {
       }
    }
 
-   private Predicate<class_8145> method_22738(class_9721 var1, ToDoubleFunction<class_8145> var2) {
+   private Predicate<Entity> method_22738(class_9721 var1, ToDoubleFunction<Entity> var2) {
       double var5 = (double)class_9299.method_42810(var1.method_44916() != null ? var1.method_44916() : 0.0F);
       double var7 = (double)class_9299.method_42810(var1.method_44921() != null ? var1.method_44921() : 359.0F);
       return var5x -> {
@@ -189,7 +189,7 @@ public class class_4964 {
                      this.field_25692 = Integer.MAX_VALUE;
                      this.field_25681 = true;
                      this.field_25701 = field_25668;
-                     this.field_25665 = class_8145::method_37330;
+                     this.field_25665 = Entity::method_37330;
                   } else {
                      this.field_25692 = 1;
                      this.field_25681 = true;
@@ -317,7 +317,7 @@ public class class_4964 {
       return this.field_25677;
    }
 
-   public void method_22758(Predicate<class_8145> var1) {
+   public void method_22758(Predicate<Entity> var1) {
       this.field_25665 = this.field_25665.and(var1);
    }
 
@@ -419,7 +419,7 @@ public class class_4964 {
       this.field_25681 = var1;
    }
 
-   public void method_22806(BiConsumer<class_1343, List<? extends class_8145>> var1) {
+   public void method_22806(BiConsumer<class_1343, List<? extends Entity>> var1) {
       this.field_25701 = var1;
    }
 

@@ -205,7 +205,7 @@ public class class_1239 {
       );
    }
 
-   private static class_9747 method_5527(class_8145 var0, class_225 var1) throws CommandSyntaxException {
+   private static class_9747 method_5527(Entity var0, class_225 var1) throws CommandSyntaxException {
       class_9747 var4 = method_5522(var0).method_26590().method_30808(var1);
       if (var4 != null) {
          return var4;
@@ -214,7 +214,7 @@ public class class_1239 {
       }
    }
 
-   private static class_5834 method_5522(class_8145 var0) throws CommandSyntaxException {
+   private static class_5834 method_5522(Entity var0) throws CommandSyntaxException {
       if (var0 instanceof class_5834) {
          return (class_5834)var0;
       } else {
@@ -222,7 +222,7 @@ public class class_1239 {
       }
    }
 
-   private static class_5834 method_5521(class_8145 var0, class_225 var1) throws CommandSyntaxException {
+   private static class_5834 method_5521(Entity var0, class_225 var1) throws CommandSyntaxException {
       class_5834 var4 = method_5522(var0);
       if (var4.method_26590().method_30801(var1)) {
          return var4;
@@ -231,7 +231,7 @@ public class class_1239 {
       }
    }
 
-   private static int method_5530(class_9155 var0, class_8145 var1, class_225 var2, double var3) throws CommandSyntaxException {
+   private static int method_5530(class_9155 var0, Entity var1, class_225 var2, double var3) throws CommandSyntaxException {
       class_5834 var7 = method_5521(var1, var2);
       double var8 = var7.method_26575(var2);
       var0.method_42196(
@@ -241,7 +241,7 @@ public class class_1239 {
       return (int)(var8 * var3);
    }
 
-   private static int method_5524(class_9155 var0, class_8145 var1, class_225 var2, double var3) throws CommandSyntaxException {
+   private static int method_5524(class_9155 var0, Entity var1, class_225 var2, double var3) throws CommandSyntaxException {
       class_5834 var7 = method_5521(var1, var2);
       double var8 = var7.method_26419(var2);
       var0.method_42196(
@@ -251,7 +251,7 @@ public class class_1239 {
       return (int)(var8 * var3);
    }
 
-   private static int method_5523(class_9155 var0, class_8145 var1, class_225 var2, UUID var3, double var4) throws CommandSyntaxException {
+   private static int method_5523(class_9155 var0, Entity var1, class_225 var2, UUID var3, double var4) throws CommandSyntaxException {
       class_5834 var8 = method_5521(var1, var2);
       class_6711 var9 = var8.method_26590();
       if (var9.method_30810(var2, var3)) {
@@ -268,7 +268,7 @@ public class class_1239 {
       }
    }
 
-   private static int method_5525(class_9155 var0, class_8145 var1, class_225 var2, double var3) throws CommandSyntaxException {
+   private static int method_5525(class_9155 var0, Entity var1, class_225 var2, double var3) throws CommandSyntaxException {
       method_5527(var1, var2).method_45006(var3);
       var0.method_42196(
          new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.method_952()), var1.method_45509(), var3),
@@ -277,7 +277,7 @@ public class class_1239 {
       return 1;
    }
 
-   private static int method_5520(class_9155 var0, class_8145 var1, class_225 var2, UUID var3, String var4, double var5, class_9342 var7) throws CommandSyntaxException {
+   private static int method_5520(class_9155 var0, Entity var1, class_225 var2, UUID var3, String var4, double var5, class_9342 var7) throws CommandSyntaxException {
       class_9747 var10 = method_5527(var1, var2);
       class_9343 var11 = new class_9343(var3, var4, var5, var7);
       if (!var10.method_45007(var11)) {
@@ -292,7 +292,7 @@ public class class_1239 {
       }
    }
 
-   private static int method_5529(class_9155 var0, class_8145 var1, class_225 var2, UUID var3) throws CommandSyntaxException {
+   private static int method_5529(class_9155 var0, Entity var1, class_225 var2, UUID var3) throws CommandSyntaxException {
       class_9747 var6 = method_5527(var1, var2);
       if (!var6.method_45008(var3)) {
          throw field_6841.create(var1.method_45509(), new TranslationTextComponent(var2.method_952()), var3);

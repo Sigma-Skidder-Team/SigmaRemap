@@ -69,7 +69,7 @@ public class class_1322 {
                      }
                   }
 
-                  class_8145 var6 = field_7283.method_21814();
+                  Entity var6 = field_7283.method_21814();
                   if (var6 != null) {
                      if (var3 instanceof class_4401) {
                         return method_6044(class_1614.field_8386, var6, var4, var0);
@@ -111,7 +111,7 @@ public class class_1322 {
       }
    }
 
-   private static Identifier method_6044(class_1614 var0, class_8145 var1, class_4924 var2, Identifier var3) {
+   private static Identifier method_6044(class_1614 var0, Entity var1, class_4924 var2, Identifier var3) {
       class_3739[] var6 = field_7281[var0.ordinal()];
       if (var6 == null) {
          return var3;

@@ -41,7 +41,7 @@ public class class_3197 implements class_1504 {
       return this.field_15966;
    }
 
-   public boolean method_14714(class_6946 var1, class_6486 var2) {
+   public boolean method_14714(class_6946 var1, World var2) {
       class_534 var5 = new class_534();
       int var6 = 0;
 

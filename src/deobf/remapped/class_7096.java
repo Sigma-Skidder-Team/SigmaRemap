@@ -23,7 +23,7 @@ public class class_7096 implements class_4904 {
    }
 
    @Override
-   public class_8014 method_22451(class_8145 var1, Random var2) {
+   public class_8014 method_22451(Entity var1, Random var2) {
       int var5 = 5 + var2.nextInt(15);
       class_6098 var6 = class_2931.method_13426(var2, new class_6098(this.field_36607.method_27960()), var5, false);
       int var7 = Math.min(this.field_36609 + var5, 64);

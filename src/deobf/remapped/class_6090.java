@@ -1,7 +1,7 @@
 package remapped;
 
 public abstract class class_6090<T extends class_6749> extends class_7067<T> {
-   public class_6090(class_6122 var1) {
+   public class_6090(EntityRenderDispatcher var1) {
       super(var1);
    }
 
@@ -28,7 +28,7 @@ public abstract class class_6090<T extends class_6749> extends class_7067<T> {
       var4.method_36060(class_2426.field_12080.method_11074(45.0F));
       var4.method_36062(0.05625F, 0.05625F, 0.05625F);
       var4.method_36065(-4.0, 0.0, 0.0);
-      class_7907 var25 = var5.method_11645(class_3581.method_16747(this.method_11446((T)var1)));
+      class_7907 var25 = var5.method_11645(RenderLayer.method_16747(this.method_11446((T)var1)));
       class_6279 var21 = var4.method_36058();
       class_8107 var22 = var21.method_28620();
       class_6555 var23 = var21.method_28618();

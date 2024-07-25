@@ -10,7 +10,7 @@ public class class_8329 implements class_6310<class_392> {
    public class_8329() {
    }
 
-   public class_8329(class_8145 var1, int var2) {
+   public class_8329(Entity var1, int var2) {
       this.field_42651 = var1.method_37145();
       this.field_42650 = var2;
    }

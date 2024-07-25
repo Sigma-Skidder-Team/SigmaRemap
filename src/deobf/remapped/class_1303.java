@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Properties;
 
 public class class_1303 {
-   private static class_3581[] field_7220 = null;
+   private static RenderLayer[] field_7220 = null;
    public static boolean field_7218 = false;
 
-   public static class_3581 method_5950(class_6163 var0, class_2522 var1, class_1331 var2) {
+   public static RenderLayer method_5950(class_6163 var0, class_2522 var1, class_1331 var2) {
       if (field_7220 != null) {
          if (var1.method_8321(var0, var2)) {
             return null;
@@ -40,12 +40,12 @@ public class class_1303 {
       }
 
       if (!var2.isEmpty()) {
-         field_7220 = var2.<class_3581>toArray(new class_3581[var2.size()]);
+         field_7220 = var2.<RenderLayer>toArray(new RenderLayer[var2.size()]);
          field_7218 = true;
       }
    }
 
-   private static void method_5949(String var0, Properties var1, List<class_3581> var2) {
+   private static void method_5949(String var0, Properties var1, List<RenderLayer> var2) {
       class_3111.method_14277("CustomBlockLayers: " + var0);
       method_5947("solid", class_6727.field_34745, var1, var2);
       method_5947("cutout", class_6727.field_34743, var1, var2);
@@ -53,7 +53,7 @@ public class class_1303 {
       method_5947("translucent", class_6727.field_34740, var1, var2);
    }
 
-   private static void method_5947(String var0, class_3581 var1, Properties var2, List<class_3581> var3) {
+   private static void method_5947(String var0, RenderLayer var1, Properties var2, List<RenderLayer> var3) {
       String var6 = "layer." + var0;
       String var7 = var2.getProperty(var6);
       if (var7 != null) {
@@ -65,7 +65,7 @@ public class class_1303 {
                int var12 = var11.method_43838();
                if (var12 > 0) {
                   while (var3.size() < var12 + 1) {
-                     var3.add((class_3581)null);
+                     var3.add((RenderLayer)null);
                   }
 
                   if (var3.get(var12) != null) {

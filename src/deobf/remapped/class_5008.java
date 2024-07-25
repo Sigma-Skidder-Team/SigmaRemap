@@ -5,7 +5,7 @@ public class class_5008 extends class_7164<class_8477, class_6521<class_8477>> {
    private final class_1818<class_8477> field_25908 = new class_1818<class_8477>(0.0F);
    private final class_2313<class_8477> field_25907 = new class_2313<class_8477>(0.0F);
 
-   public class_5008(class_6122 var1) {
+   public class_5008(EntityRenderDispatcher var1) {
       super(var1, new class_1818<class_8477>(0.0F), 0.15F);
       this.method_29100(new class_6175(this));
    }

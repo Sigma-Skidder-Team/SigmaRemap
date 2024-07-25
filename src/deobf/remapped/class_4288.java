@@ -11,9 +11,9 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_4288 implements class_1429 {
    private static final SimpleCommandExceptionType field_20808 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.data.entity.invalid"));
    public static final Function<String, class_5098> field_20810 = var0 -> new class_3870(var0);
-   private final class_8145 field_20811;
+   private final Entity field_20811;
 
-   public class_4288(class_8145 var1) {
+   public class_4288(Entity var1) {
       this.field_20811 = var1;
    }
 

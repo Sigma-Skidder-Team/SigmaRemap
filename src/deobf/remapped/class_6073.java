@@ -4,7 +4,7 @@ public class class_6073 extends class_7067<class_8008> {
    private static final Identifier field_31085 = new Identifier("textures/entity/lead_knot.png");
    private final class_2743<class_8008> field_31086 = new class_2743<class_8008>();
 
-   public class_6073(class_6122 var1) {
+   public class_6073(EntityRenderDispatcher var1) {
       super(var1);
    }
 

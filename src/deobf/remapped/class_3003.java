@@ -23,13 +23,13 @@ public class class_3003 extends class_2451 {
 
    @Override
    public class_6910 method_11237(class_4734 var1) {
-      class_6486 var4 = var1.method_21862();
+      World var4 = var1.method_21862();
       if (!(var4 instanceof class_6331)) {
          return class_6910.field_35520;
       } else {
          class_6098 var5 = var1.method_21867();
          class_1331 var6 = var1.method_21858();
-         class_240 var7 = var1.method_21857();
+         Direction var7 = var1.method_21857();
          class_2522 var8 = var4.method_28262(var6);
          if (var8.method_8350(class_4783.field_23617)) {
             class_3757 var9 = var4.method_28260(var6);
@@ -53,7 +53,7 @@ public class class_3003 extends class_2451 {
 
          class_6629 var10 = this.method_13719(var5.method_27990());
          if (var10.method_30479(
-               (class_6331)var4, var5, var1.method_21868(), var12, class_2417.field_12030, true, !Objects.equals(var6, var12) && var7 == class_240.field_817
+               (class_6331)var4, var5, var1.method_21868(), var12, class_2417.field_12030, true, !Objects.equals(var6, var12) && var7 == Direction.field_817
             )
             != null) {
             var5.method_27970(1);
@@ -64,7 +64,7 @@ public class class_3003 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48749);
       if (var7.method_33990() == class_1430.field_7717) {
@@ -141,7 +141,7 @@ public class class_3003 extends class_2451 {
             ((class_5886)var9).method_26910(true);
             if (((class_5886)var9).method_26449()) {
                ((class_5886)var9).method_37144(var5.method_61(), var5.method_60(), var5.method_62(), 0.0F, 0.0F);
-               var4.method_7065((class_8145)var9);
+               var4.method_7065((Entity)var9);
                if (var6.method_28018()) {
                   ((class_5886)var9).method_37303(var6.method_28008());
                }

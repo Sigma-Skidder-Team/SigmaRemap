@@ -34,7 +34,7 @@ public class class_1703 extends class_1546 {
    public int method_7002(class_5851[] var1, class_5851 var2) {
       int var5 = 0;
 
-      for (class_240 var9 : class_240.values()) {
+      for (Direction var9 : Direction.values()) {
          class_5851 var10 = this.method_7642(
             var2.field_29731 + var9.method_1041(), var2.field_29735 + var9.method_1054(), var2.field_29736 + var9.method_1034()
          );

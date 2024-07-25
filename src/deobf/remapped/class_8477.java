@@ -53,7 +53,7 @@ public class class_8477 extends class_8574 {
       return var0.method_41025() & 0xFF | (var0.method_41028() & 0xFF) << 8 | (var1.method_41794() & 0xFF) << 16 | (var2.method_41794() & 0xFF) << 24;
    }
 
-   public class_8477(class_6629<? extends class_8477> var1, class_6486 var2) {
+   public class_8477(class_6629<? extends class_8477> var1, World var2) {
       super(var1, var2);
    }
 

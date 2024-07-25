@@ -12,7 +12,7 @@ public class class_7509 implements class_3753 {
 
    @Override
    public void method_17366() {
-      class_6486 var3 = this.field_38350.field_41768;
+      World var3 = this.field_38350.field_41768;
       class_2522 var4 = var3.method_22549(this.field_38350.method_37241().method_18899(0.0, -0.4F, 0.0).method_18924(0.001))
          .filter(var0 -> var0.method_8350(class_4783.field_23269))
          .findFirst()

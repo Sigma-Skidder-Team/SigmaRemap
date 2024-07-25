@@ -60,7 +60,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
             false,
             false
          )
-         .method_15272("entered_nether", class_7888.method_35667(class_6486.field_33029))
+         .method_15272("entered_nether", class_7888.method_35667(World.field_33029))
          .method_15270(var1, "nether/root");
       class_3139 var5 = class_3321.method_15269()
          .method_15274(var4)
@@ -128,7 +128,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
          .method_15272(
             "killed_ghast",
             class_3780.method_17504(
-               class_2184.method_10127().method_10134(class_6629.field_34281).method_10141(class_5093.method_23399(class_6486.field_33048))
+               class_2184.method_10127().method_10134(class_6629.field_34281).method_10141(class_5093.method_23399(World.field_33048))
             )
          )
          .method_15270(var1, "nether/uneasy_alliance");

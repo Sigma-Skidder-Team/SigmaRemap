@@ -435,55 +435,55 @@ public class class_6284 {
       if (var1 == null) {
          return var2;
       } else {
-         EnumSet var5 = EnumSet.<class_240>allOf(class_240.class);
+         EnumSet var5 = EnumSet.<Direction>allOf(Direction.class);
          String[] var6 = class_3111.method_14302(var1, " ,");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
             if (!var8.equals("sides")) {
                if (!var8.equals("all")) {
-                  class_240 var9 = this.method_28658(var8);
+                  Direction var9 = this.method_28658(var8);
                   if (var9 != null) {
                      var5.add(var9);
                   }
                } else {
-                  var5.addAll(Arrays.asList(class_240.field_803));
+                  var5.addAll(Arrays.asList(Direction.field_803));
                }
             } else {
-               var5.add(class_240.field_818);
-               var5.add(class_240.field_800);
-               var5.add(class_240.field_809);
-               var5.add(class_240.field_804);
+               var5.add(Direction.field_818);
+               var5.add(Direction.field_800);
+               var5.add(Direction.field_809);
+               var5.add(Direction.field_804);
             }
          }
 
-         boolean[] var10 = new boolean[class_240.field_803.length];
+         boolean[] var10 = new boolean[Direction.field_803.length];
 
          for (int var11 = 0; var11 < var10.length; var11++) {
-            var10[var11] = var5.contains(class_240.field_803[var11]);
+            var10[var11] = var5.contains(Direction.field_803[var11]);
          }
 
          return var10;
       }
    }
 
-   public class_240 method_28658(String var1) {
+   public Direction method_28658(String var1) {
       var1 = var1.toLowerCase();
       if (var1.equals("bottom") || var1.equals("down")) {
-         return class_240.field_802;
+         return Direction.field_802;
       } else if (var1.equals("top") || var1.equals("up")) {
-         return class_240.field_817;
+         return Direction.field_817;
       } else if (var1.equals("north")) {
-         return class_240.field_818;
+         return Direction.field_818;
       } else if (var1.equals("south")) {
-         return class_240.field_800;
+         return Direction.field_800;
       } else if (var1.equals("east")) {
-         return class_240.field_804;
+         return Direction.field_804;
       } else if (!var1.equals("west")) {
          class_3111.method_14317("Unknown face: " + var1);
          return null;
       } else {
-         return class_240.field_809;
+         return Direction.field_809;
       }
    }
 
@@ -611,15 +611,15 @@ public class class_6284 {
       }
    }
 
-   public class_3581 method_28672(String var1, class_3581 var2) {
+   public RenderLayer method_28672(String var1, RenderLayer var2) {
       if (var1 == null) {
          return var2;
       } else {
          var1 = var1.toLowerCase().trim();
-         class_3581[] var5 = class_3581.field_17580;
+         RenderLayer[] var5 = RenderLayer.field_17580;
 
          for (int var6 = 0; var6 < var5.length; var6++) {
-            class_3581 var7 = var5[var6];
+            RenderLayer var7 = var5[var6];
             if (var1.equals(var7.method_24421().toLowerCase())) {
                return var7;
             }

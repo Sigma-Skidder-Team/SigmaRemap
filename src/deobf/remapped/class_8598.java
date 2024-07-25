@@ -99,7 +99,7 @@ public class class_8598 {
       return var7;
    }
 
-   public void method_39523(class_1331 var1, class_7500 var2, class_240 var3, int var4) {
+   public void method_39523(class_1331 var1, class_7500 var2, Direction var3, int var4) {
       double var7 = this.field_44036.method_37302() - ((double)var1.method_12173() + 0.5);
       double var9 = this.field_44036.method_37309() - ((double)var1.method_12165() + 0.5) + 1.5;
       double var11 = this.field_44036.method_37156() - ((double)var1.method_12185() + 0.5);
@@ -248,7 +248,7 @@ public class class_8598 {
       }
    }
 
-   public class_6910 method_39520(class_9359 var1, class_6486 var2, class_6098 var3, class_2584 var4) {
+   public class_6910 method_39520(class_9359 var1, World var2, class_6098 var3, class_2584 var4) {
       if (this.field_44033 != class_4666.field_22756) {
          if (!var1.method_3173().method_32954(var3.method_27960())) {
             int var7 = var3.method_27997();
@@ -286,7 +286,7 @@ public class class_8598 {
       }
    }
 
-   public class_6910 method_39528(class_9359 var1, class_6486 var2, class_6098 var3, class_2584 var4, class_9529 var5) {
+   public class_6910 method_39528(class_9359 var1, World var2, class_6098 var3, class_2584 var4, class_9529 var5) {
       class_1331 var8 = var5.method_43955();
       class_2522 var9 = var2.method_28262(var8);
       if (this.field_44033 == class_4666.field_22756) {

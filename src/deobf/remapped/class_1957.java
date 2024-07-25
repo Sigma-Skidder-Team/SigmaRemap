@@ -7,7 +7,7 @@ public class class_1957 extends class_7067<class_91> {
    private final class_8765 field_9971;
    private final Random field_9970 = new Random();
 
-   public class_1957(class_6122 var1, class_8765 var2) {
+   public class_1957(EntityRenderDispatcher var1, class_8765 var2) {
       super(var1);
       this.field_9971 = var2;
       this.field_36492 = 0.15F;

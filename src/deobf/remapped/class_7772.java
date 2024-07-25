@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 public class class_7772 {
    private static final Logger field_39399 = LogManager.getLogger();
    private final class_6331 field_39389;
-   private final class_8145 field_39387;
+   private final Entity field_39387;
    private final int field_39395;
    private final boolean field_39384;
    private final Consumer<class_6310<?>> field_39396;
@@ -27,11 +27,11 @@ public class class_7772 {
    private class_1343 field_39382 = class_1343.field_7335;
    private int field_39397;
    private int field_39388;
-   private List<class_8145> field_39385 = Collections.<class_8145>emptyList();
+   private List<Entity> field_39385 = Collections.<Entity>emptyList();
    private boolean field_39394;
    private boolean field_39390;
 
-   public class_7772(class_6331 var1, class_8145 var2, int var3, boolean var4, Consumer<class_6310<?>> var5) {
+   public class_7772(class_6331 var1, Entity var2, int var3, boolean var4, Consumer<class_6310<?>> var5) {
       this.field_39389 = var1;
       this.field_39396 = var5;
       this.field_39387 = var2;

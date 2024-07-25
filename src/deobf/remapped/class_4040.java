@@ -13,7 +13,7 @@ public abstract class class_4040 extends class_4607 {
    private boolean field_19608;
    private int field_19609;
 
-   public class_4040(class_6629<? extends class_4040> var1, class_6486 var2) {
+   public class_4040(class_6629<? extends class_4040> var1, World var2) {
       super(var1, var2);
    }
 
@@ -72,7 +72,7 @@ public abstract class class_4040 extends class_4607 {
    @Override
    public void method_26452(class_6199 var1) {
       if (this.field_41768 instanceof class_6331) {
-         class_8145 var4 = var1.method_28372();
+         Entity var4 = var1.method_28372();
          class_2452 var5 = this.method_18589();
          if (var5 != null) {
             if (this.method_21359()) {

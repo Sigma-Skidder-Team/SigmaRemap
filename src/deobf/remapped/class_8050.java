@@ -87,7 +87,7 @@ public class class_8050 extends class_9335 {
          if (var4.field_7333 * var4.field_7333 < 0.03F && this.field_41216.field_41755 != 0.0F) {
             this.field_41216.field_41755 = class_9299.method_42833(this.field_41216.field_41755, 0.0F, 0.2F);
          } else {
-            double var5 = Math.sqrt(class_8145.method_37266(var4));
+            double var5 = Math.sqrt(Entity.method_37266(var4));
             double var7 = Math.signum(-var4.field_7333) * Math.acos(var5 / var4.method_6217()) * 180.0F / (float)Math.PI;
             this.field_41216.field_41755 = (float)var7;
          }

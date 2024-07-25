@@ -80,7 +80,7 @@ public class class_7744 {
       );
    }
 
-   private static int method_35065(class_9155 var0, class_4895 var1, float var2, float var3, int var4, boolean var5, Collection<? extends class_8145> var6) throws CommandSyntaxException {
+   private static int method_35065(class_9155 var0, class_4895 var1, float var2, float var3, int var4, boolean var5, Collection<? extends Entity> var6) throws CommandSyntaxException {
       Random var9 = new Random();
       double var10 = (double)(var1.field_24326 - var3);
       double var12 = (double)(var1.field_24329 - var3);
@@ -102,10 +102,10 @@ public class class_7744 {
       return var18.length;
    }
 
-   private static int method_35063(Collection<? extends class_8145> var0) {
+   private static int method_35063(Collection<? extends Entity> var0) {
       HashSet var3 = Sets.newHashSet();
 
-      for (class_8145 var5 : var0) {
+      for (Entity var5 : var0) {
          if (!(var5 instanceof class_704)) {
             var3.add((class_5086)null);
          } else {
@@ -197,12 +197,12 @@ public class class_7744 {
       }
    }
 
-   private static double method_35068(Collection<? extends class_8145> var0, class_6331 var1, class_7321[] var2, int var3, boolean var4) {
+   private static double method_35068(Collection<? extends Entity> var0, class_6331 var1, class_7321[] var2, int var3, boolean var4) {
       double var7 = 0.0;
       int var9 = 0;
       HashMap var10 = Maps.newHashMap();
 
-      for (class_8145 var12 : var0) {
+      for (Entity var12 : var0) {
          class_7321 var13;
          if (!var4) {
             var13 = var2[var9++];

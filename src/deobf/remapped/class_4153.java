@@ -7,7 +7,7 @@ public final class class_4153 extends class_8085 {
    public class_6098 method_43688(class_8743 var1, class_6098 var2) {
       class_6331 var5 = var1.method_40140();
       this.method_36717(true);
-      class_240 var6 = var1.method_40141().<class_240>method_10313(class_6451.field_32900);
+      Direction var6 = var1.method_40141().<Direction>method_10313(class_6451.field_32900);
       class_1331 var7 = var1.method_40142().method_6098(var6);
       class_2522 var8 = var5.method_28262(var7);
       if (!class_9476.method_43769(var5, var7, var6)) {

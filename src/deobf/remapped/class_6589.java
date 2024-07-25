@@ -36,11 +36,11 @@ public class class_6589 implements class_6310<class_392> {
       this.field_33989 = (int)(class_9299.method_42827(var13.field_7334, -3.9, 3.9) * 8000.0);
    }
 
-   public class_6589(class_8145 var1) {
+   public class_6589(Entity var1) {
       this(var1, 0);
    }
 
-   public class_6589(class_8145 var1, int var2) {
+   public class_6589(Entity var1, int var2) {
       this(
          var1.method_37145(),
          var1.method_37328(),
@@ -55,7 +55,7 @@ public class class_6589 implements class_6310<class_392> {
       );
    }
 
-   public class_6589(class_8145 var1, class_6629<?> var2, int var3, class_1331 var4) {
+   public class_6589(Entity var1, class_6629<?> var2, int var3, class_1331 var4) {
       this(
          var1.method_37145(),
          var1.method_37328(),

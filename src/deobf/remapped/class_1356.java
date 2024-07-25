@@ -2,17 +2,17 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public class class_1356 extends class_8145 {
+public class class_1356 extends Entity {
    private static final class_7821<Integer> field_7387 = class_8073.<Integer>method_36641(class_1356.class, class_2734.field_13366);
    private class_5834 field_7388;
    private int field_7390 = 80;
 
-   public class_1356(class_6629<? extends class_1356> var1, class_6486 var2) {
+   public class_1356(class_6629<? extends class_1356> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
    }
 
-   public class_1356(class_6486 var1, double var2, double var4, double var6, class_5834 var8) {
+   public class_1356(World var1, double var2, double var4, double var6, class_5834 var8) {
       this(class_6629.field_34291, var1);
       this.method_37256(var2, var4, var6);
       double var11 = var1.field_33033.nextDouble() * (float) (Math.PI * 2);

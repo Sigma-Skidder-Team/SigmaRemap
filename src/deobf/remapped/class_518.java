@@ -70,7 +70,7 @@ public class class_518 extends class_3599 {
    }
 
    @Nullable
-   public class_1331 method_2534(class_6163 var1, class_8145 var2, int var3, int var4) {
+   public class_1331 method_2534(class_6163 var1, Entity var2, int var3, int var4) {
       class_1331 var7 = var2.method_37075();
       int var8 = var7.method_12173();
       int var9 = var7.method_12165();

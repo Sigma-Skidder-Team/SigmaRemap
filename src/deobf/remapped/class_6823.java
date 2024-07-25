@@ -9,7 +9,7 @@ public class class_6823 extends class_7067<class_7451> {
    private final class_8765 field_35172;
    private static double field_35171 = 4096.0;
 
-   public class_6823(class_6122 var1, class_8765 var2) {
+   public class_6823(EntityRenderDispatcher var1, class_8765 var2) {
       super(var1);
       this.field_35172 = var2;
    }
@@ -17,7 +17,7 @@ public class class_6823 extends class_7067<class_7451> {
    public void method_31302(class_7451 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       super.method_32551(var1, var2, var3, var4, var5, var6);
       var4.method_36063();
-      class_240 var9 = var1.method_37365();
+      Direction var9 = var1.method_37365();
       class_1343 var10 = this.method_31305(var1, var3);
       var4.method_36065(-var10.method_61(), -var10.method_60(), -var10.method_62());
       double var11 = 0.46875;
@@ -89,7 +89,7 @@ public class class_6823 extends class_7067<class_7451> {
    }
 
    public boolean method_31300(class_7451 var1) {
-      if (MinecraftClient.method_8616() && !var1.method_33905().method_28022() && var1.method_33905().method_28018() && this.field_36493.field_31313 == var1) {
+      if (MinecraftClient.method_8616() && !var1.method_33905().method_28022() && var1.method_33905().method_28018() && this.field_36493.targetEntity == var1) {
          double var4 = this.field_36493.method_28129(var1);
          float var6 = !var1.method_37073() ? 64.0F : 32.0F;
          return var4 < (double)(var6 * var6);
@@ -105,7 +105,7 @@ public class class_6823 extends class_7067<class_7451> {
    private boolean method_31304(class_7451 var1) {
       if (!class_6588.field_33945) {
          if (!class_3111.field_15481) {
-            class_8145 var4 = this.field_35169.method_8516();
+            Entity var4 = this.field_35169.method_8516();
             double var5 = var1.method_37273(var4.method_37302(), var4.method_37309(), var4.method_37156());
             if (var5 > field_35171) {
                return false;

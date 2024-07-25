@@ -16,7 +16,7 @@ public interface class_5990 extends class_6163, class_3287 {
 
    void method_27346(class_1331 var1, class_3757 var2);
 
-   void method_27342(class_8145 var1);
+   void method_27342(Entity var1);
 
    @Nullable
    default class_1315 method_27338() {

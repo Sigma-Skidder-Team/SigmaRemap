@@ -14,7 +14,7 @@ public class class_5518 extends class_2451 {
    }
 
    @Override
-   public class_6098 method_11242(class_6098 var1, class_6486 var2, class_5834 var3) {
+   public class_6098 method_11242(class_6098 var1, World var2, class_5834 var3) {
       class_704 var6 = !(var3 instanceof class_704) ? null : (class_704)var3;
       if (var6 instanceof class_9359) {
          class_8807.field_45081.method_43401((class_9359)var6, var1);
@@ -61,7 +61,7 @@ public class class_5518 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       return class_4754.method_21939(var1, var2, var3);
    }
 
@@ -71,7 +71,7 @@ public class class_5518 extends class_2451 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       class_9541.method_43988(var1, var3, 1.0F);
    }
 

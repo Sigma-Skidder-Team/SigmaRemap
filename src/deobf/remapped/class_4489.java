@@ -43,11 +43,11 @@ public class class_4489 {
       return this.field_21927;
    }
 
-   public boolean method_20846(class_8145 var1) {
+   public boolean method_20846(Entity var1) {
       return var1 != null && this.field_21927.containsKey(var1.method_37328());
    }
 
-   public class_4567 method_20845(class_8145 var1) {
+   public class_4567 method_20845(Entity var1) {
       return this.field_21927.get(var1.method_37328());
    }
 
@@ -73,7 +73,7 @@ public class class_4489 {
             JsonArray var8 = new JsonArray();
 
             while (var10.hasNext() && var7++ < 70) {
-               class_8145 var9 = (class_8145)var10.next();
+               Entity var9 = (Entity)var10.next();
                var8.add(var9.method_45509().getUnformattedComponentText());
                this.field_21928.add(var9.method_37328());
             }

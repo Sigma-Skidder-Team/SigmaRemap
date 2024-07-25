@@ -9,7 +9,7 @@ public class class_1118 extends class_8549 {
    private final boolean field_6399;
    private final boolean field_6397;
 
-   public class_1118(int var1, Random var2, class_9616 var3, class_240 var4) {
+   public class_1118(int var1, Random var2, class_9616 var3, Direction var4) {
       super(class_2746.field_13394, var1);
       this.method_32519(var4);
       this.field_43750 = this.method_39333(var2);
@@ -41,8 +41,8 @@ public class class_1118 extends class_8549 {
    public void method_32527(class_7060 var1, List<class_7060> var2, Random var3) {
       int var6 = 3;
       int var7 = 5;
-      class_240 var8 = this.method_32518();
-      if (var8 == class_240.field_809 || var8 == class_240.field_818) {
+      Direction var8 = this.method_32518();
+      if (var8 == Direction.field_809 || var8 == Direction.field_818) {
          var6 = 8 - var6;
          var7 = 8 - var7;
       }
@@ -65,7 +65,7 @@ public class class_1118 extends class_8549 {
       }
    }
 
-   public static class_1118 method_4934(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5, int var6) {
+   public static class_1118 method_4934(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
       class_9616 var9 = class_9616.method_44386(var2, var3, var4, -4, -3, 0, 10, 9, 11, var5);
       return method_39332(var9) && class_7060.method_32502(var0, var9) == null ? new class_1118(var6, var1, var9, var5) : null;
    }
@@ -116,7 +116,7 @@ public class class_1118 extends class_8549 {
          class_4783.field_23547.method_29260().method_10308(class_6344.field_32395, class_6666.field_34469),
          false
       );
-      this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_800), 6, 5, 6, var5);
+      this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_800), 6, 5, 6, var5);
       return true;
    }
 }

@@ -6,7 +6,7 @@ public class class_5903 extends class_7164<class_8829, class_618<class_8829>> {
    private static final Identifier field_29964 = new Identifier("textures/entity/bee/bee.png");
    private static final Identifier field_29962 = new Identifier("textures/entity/bee/bee_nectar.png");
 
-   public class_5903(class_6122 var1) {
+   public class_5903(EntityRenderDispatcher var1) {
       super(var1, new class_618<class_8829>(), 0.4F);
    }
 

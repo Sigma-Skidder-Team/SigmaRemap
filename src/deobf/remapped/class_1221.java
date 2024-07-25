@@ -10,9 +10,9 @@ public final class class_1221 {
    private final class_8107 field_6772;
    private boolean field_6768;
    private class_2426 field_6767;
-   private class_5422 field_6773;
+   private Quaternion field_6773;
    private class_2426 field_6770;
-   private class_5422 field_6766;
+   private Quaternion field_6766;
    private static final class_1221 field_6771 = Util.<class_1221>method_44660(() -> {
       class_8107 var2 = new class_8107();
       var2.method_36817();
@@ -29,12 +29,12 @@ public final class class_1221 {
       }
    }
 
-   public class_1221(class_2426 var1, class_5422 var2, class_2426 var3, class_5422 var4) {
+   public class_1221(class_2426 var1, Quaternion var2, class_2426 var3, Quaternion var4) {
       this.field_6772 = method_5405(var1, var2, var3, var4);
       this.field_6767 = var1 == null ? new class_2426() : var1;
-      this.field_6773 = var2 == null ? class_5422.field_27621.method_24651() : var2;
+      this.field_6773 = var2 == null ? Quaternion.IDENTITY.method_24651() : var2;
       this.field_6770 = var3 == null ? new class_2426(1.0F, 1.0F, 1.0F) : var3;
-      this.field_6766 = var4 == null ? class_5422.field_27621.method_24651() : var4;
+      this.field_6766 = var4 == null ? Quaternion.IDENTITY.method_24651() : var4;
       this.field_6768 = true;
    }
 
@@ -63,14 +63,14 @@ public final class class_1221 {
          Pair var3 = method_5407(this.field_6772);
          Triple var4 = ((class_6555)var3.getFirst()).method_29894();
          this.field_6767 = (class_2426)var3.getSecond();
-         this.field_6773 = (class_5422)var4.getLeft();
+         this.field_6773 = (Quaternion)var4.getLeft();
          this.field_6770 = (class_2426)var4.getMiddle();
-         this.field_6766 = (class_5422)var4.getRight();
+         this.field_6766 = (Quaternion)var4.getRight();
          this.field_6768 = true;
       }
    }
 
-   private static class_8107 method_5405(class_2426 var0, class_5422 var1, class_2426 var2, class_5422 var3) {
+   private static class_8107 method_5405(class_2426 var0, Quaternion var1, class_2426 var2, Quaternion var3) {
       class_8107 var6 = new class_8107();
       var6.method_36817();
       if (var1 != null) {
@@ -105,7 +105,7 @@ public final class class_1221 {
       return this.field_6772.method_36824();
    }
 
-   public class_5422 method_5408() {
+   public Quaternion method_5408() {
       this.method_5409();
       return this.field_6773.method_24651();
    }

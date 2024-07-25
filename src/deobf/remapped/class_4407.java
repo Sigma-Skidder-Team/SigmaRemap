@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public class class_4407 extends class_3599 {
    private static String[] field_21570;
    public final class_5886 field_21568;
-   public class_8145 field_21563;
+   public Entity field_21563;
    public final float field_21566;
    private int field_21564;
    public final float field_21565;

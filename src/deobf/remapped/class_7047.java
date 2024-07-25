@@ -73,7 +73,7 @@ public class class_7047 {
       return (double)class_9299.method_42842(var4 * var4 + var6 * var6);
    }
 
-   public float method_32373(class_8145 var1) {
+   public float method_32373(Entity var1) {
       double var4 = var1.method_37302() - this.method_32381();
       double var6 = var1.method_37309() - this.method_32375();
       double var8 = var1.method_37156() - this.method_32382();

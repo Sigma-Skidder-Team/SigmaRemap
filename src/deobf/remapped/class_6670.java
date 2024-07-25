@@ -4,11 +4,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
-   public class_6670(class_6122 var1) {
+   public class_6670(EntityRenderDispatcher var1) {
       this(var1, false);
    }
 
-   public class_6670(class_6122 var1, boolean var2) {
+   public class_6670(EntityRenderDispatcher var1, boolean var2) {
       super(var1, new class_3169<class_9716>(0.0F, var2), 0.5F);
       this.method_29100(new class_3035(this, new class_2344(0.5F), new class_2344(1.0F)));
       this.method_29100(new class_6329<class_9716, class_3169<class_9716>>(this));
@@ -136,9 +136,9 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
       var9.field_11699 = 0.0F;
       var9.method_10738(var4, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
       var5.field_8191 = 0.0F;
-      var5.method_7060(var1, var2.method_11645(class_3581.method_16734(var4.method_44889())), var3, class_5367.field_27381);
+      var5.method_7060(var1, var2.method_11645(RenderLayer.method_16734(var4.method_44889())), var3, class_5367.field_27381);
       var6.field_8191 = 0.0F;
-      var6.method_7060(var1, var2.method_11645(class_3581.method_16705(var4.method_44889())), var3, class_5367.field_27381);
+      var6.method_7060(var1, var2.method_11645(RenderLayer.method_16705(var4.method_44889())), var3, class_5367.field_27381);
    }
 
    public void method_30604(class_9716 var1, class_7966 var2, float var3, float var4, float var5) {
@@ -165,8 +165,8 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
 
          class_1343 var11 = var1.method_37307(var5);
          class_1343 var12 = var1.method_37098();
-         double var13 = class_8145.method_37266(var12);
-         double var15 = class_8145.method_37266(var11);
+         double var13 = Entity.method_37266(var12);
+         double var15 = Entity.method_37266(var11);
          if (var13 > 0.0 && var15 > 0.0) {
             double var17 = (var12.field_7336 * var11.field_7336 + var12.field_7334 * var11.field_7334) / Math.sqrt(var13 * var15);
             double var19 = var12.field_7336 * var11.field_7334 - var12.field_7334 * var11.field_7336;

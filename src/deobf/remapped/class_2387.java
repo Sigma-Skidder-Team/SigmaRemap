@@ -13,11 +13,11 @@ import org.apache.logging.log4j.Logger;
 
 public class class_2387 extends class_266 {
    private static final Logger field_11903 = LogManager.getLogger();
-   private static final Object2IntMap<class_5621<class_6486>> field_11904 = Util.<Object2IntMap<class_5621<class_6486>>>method_44659(
+   private static final Object2IntMap<class_5621<World>> field_11904 = Util.<Object2IntMap<class_5621<World>>>method_44659(
       new Object2IntOpenCustomHashMap(Util.method_44698()), var0 -> {
-         var0.put(class_6486.field_33048, -13408734);
-         var0.put(class_6486.field_33029, -10075085);
-         var0.put(class_6486.field_33038, -8943531);
+         var0.put(World.field_33048, -13408734);
+         var0.put(World.field_33029, -10075085);
+         var0.put(World.field_33038, -8943531);
          var0.defaultReturnValue(-2236963);
       }
    );
@@ -39,7 +39,7 @@ public class class_2387 extends class_266 {
       }
    }
 
-   private class_2387(BooleanConsumer var1, DataFixer var2, class_3676 var3, class_6292 var4, boolean var5, ImmutableSet<class_5621<class_6486>> var6) {
+   private class_2387(BooleanConsumer var1, DataFixer var2, class_3676 var3, class_6292 var4, boolean var5, ImmutableSet<class_5621<World>> var6) {
       super(new TranslationTextComponent("optimizeWorld.title", var4.method_28716()));
       this.field_11906 = var1;
       this.field_11905 = new class_3160(var3, var2, var6, var5);

@@ -9,7 +9,7 @@ import java.util.List;
 public class class_9451 {
    private static String[] field_48235;
    private static final ThreadLocal<class_879> field_48236 = ThreadLocal.<class_879>withInitial(
-      () -> new class_879((class_2522)null, (class_2522)null, (class_240)null, null)
+      () -> new class_879((class_2522)null, (class_2522)null, (Direction)null, null)
    );
    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<class_879>> field_48234 = ThreadLocal.<Object2ByteLinkedOpenHashMap<class_879>>withInitial(
       () -> {
@@ -19,7 +19,7 @@ public class class_9451 {
       }
    );
 
-   public static boolean method_43714(class_2522 var0, class_6163 var1, class_1331 var2, class_240 var3, class_4460 var4) {
+   public static boolean method_43714(class_2522 var0, class_6163 var1, class_1331 var2, Direction var3, class_4460 var4) {
       class_3310 var7 = new class_3310(var0);
       SigmaMainClass.method_3328().method_3302().method_7914(var7);
       if (!var7.method_15184()) {
@@ -43,7 +43,7 @@ public class class_9451 {
       }
    }
 
-   public static boolean method_43711(class_2522 var0, class_6163 var1, class_1331 var2, class_240 var3, class_4460 var4, class_2522 var5, class_1331 var6) {
+   public static boolean method_43711(class_2522 var0, class_6163 var1, class_1331 var2, Direction var3, class_4460 var4, class_2522 var5, class_1331 var6) {
       long var9 = (long)var0.method_11472() << 36 | (long)var5.method_11472() << 4 | (long)var3.ordinal();
       Long2ByteLinkedOpenHashMap var11 = var4.method_20677();
       byte var12 = var11.getAndMoveToFirst(var9);

@@ -16,13 +16,13 @@ public class class_1477 extends class_6414 {
    }
 
    @Override
-   public void method_29286(class_6486 var1, class_1331 var2, class_8145 var3) {
+   public void method_29286(World var1, class_1331 var2, Entity var3) {
       this.method_6808(var1, var2, var3, 100);
       super.method_29286(var1, var2, var3);
    }
 
    @Override
-   public void method_29263(class_6486 var1, class_1331 var2, class_8145 var3, float var4) {
+   public void method_29263(World var1, class_1331 var2, Entity var3, float var4) {
       if (!(var3 instanceof class_2811)) {
          this.method_6808(var1, var2, var3, 3);
       }
@@ -30,7 +30,7 @@ public class class_1477 extends class_6414 {
       super.method_29263(var1, var2, var3, var4);
    }
 
-   private void method_6808(class_6486 var1, class_1331 var2, class_8145 var3, int var4) {
+   private void method_6808(World var1, class_1331 var2, Entity var3, int var4) {
       if (this.method_6811(var1, var3) && !var1.field_33055 && var1.field_33033.nextInt(var4) == 0) {
          class_2522 var7 = var1.method_28262(var2);
          if (var7.method_8350(class_4783.field_23741)) {
@@ -39,7 +39,7 @@ public class class_1477 extends class_6414 {
       }
    }
 
-   private void method_6809(class_6486 var1, class_1331 var2, class_2522 var3) {
+   private void method_6809(World var1, class_1331 var2, class_2522 var3) {
       var1.method_43359((class_704)null, var2, class_463.field_2455, class_562.field_3322, 0.7F, 0.9F + var1.field_33033.nextFloat() * 0.2F);
       int var6 = var3.<Integer>method_10313(field_7918);
       if (var6 > 1) {
@@ -84,19 +84,19 @@ public class class_1477 extends class_6414 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (method_6812(var2, var3) && !var2.field_33055) {
          var2.method_43364(2005, var3, 0);
       }
    }
 
-   private boolean method_6813(class_6486 var1) {
+   private boolean method_6813(World var1) {
       float var4 = var1.method_13578(1.0F);
       return (double)var4 < 0.69 && (double)var4 > 0.65 ? true : var1.field_33033.nextInt(500) == 0;
    }
 
    @Override
-   public void method_29298(class_6486 var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, class_6098 var6) {
+   public void method_29298(World var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, class_6098 var6) {
       super.method_29298(var1, var2, var3, var4, var5, var6);
       this.method_6809(var1, var3, var4);
    }
@@ -125,7 +125,7 @@ public class class_1477 extends class_6414 {
       var1.method_10162(field_7916, field_7918);
    }
 
-   private boolean method_6811(class_6486 var1, class_8145 var2) {
+   private boolean method_6811(World var1, Entity var2) {
       if (var2 instanceof class_3845 || var2 instanceof class_2022) {
          return false;
       } else {

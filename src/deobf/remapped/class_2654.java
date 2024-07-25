@@ -29,11 +29,11 @@ public class class_2654 implements class_5990 {
    private class_546 field_13076;
    private final Map<class_1331, class_5734> field_13082 = Maps.newHashMap();
    public boolean field_13081;
-   private final class_6486 field_13074;
+   private final World field_13074;
    private final Map<class_3801, class_2131> field_13066 = Maps.newEnumMap(class_3801.class);
    private final class_6397 field_13069;
    private final Map<class_1331, class_3757> field_13088 = Maps.newHashMap();
-   private final class_4722<class_8145>[] field_13083;
+   private final class_4722<Entity>[] field_13083;
    private final Map<class_5390<?>, class_3200<?>> field_13070 = Maps.newHashMap();
    private final Map<class_5390<?>, LongSet> field_13079 = Maps.newHashMap();
    private final ShortList[] field_13078 = new ShortList[16];
@@ -48,7 +48,7 @@ public class class_2654 implements class_5990 {
    private final class_2034 field_13067;
    private volatile boolean field_13084;
 
-   public class_2654(class_6486 var1, class_2034 var2, class_546 var3) {
+   public class_2654(World var1, class_2034 var2, class_546 var3) {
       this(
          var1,
          var2,
@@ -63,7 +63,7 @@ public class class_2654 implements class_5990 {
    }
 
    public class_2654(
-      class_6486 var1,
+      World var1,
       class_2034 var2,
       class_546 var3,
       class_6397 var4,
@@ -85,7 +85,7 @@ public class class_2654 implements class_5990 {
       }
 
       for (int var17 = 0; var17 < this.field_13083.length; var17++) {
-         this.field_13083[var17] = new class_4722<class_8145>(class_8145.class);
+         this.field_13083[var17] = new class_4722<Entity>(Entity.class);
       }
 
       this.field_13076 = var3;
@@ -102,7 +102,7 @@ public class class_2654 implements class_5990 {
       }
    }
 
-   public class_2654(class_6486 var1, class_7481 var2) {
+   public class_2654(World var1, class_7481 var2) {
       this(
          var1,
          var2.method_27352(),
@@ -296,7 +296,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public void method_27342(class_8145 var1) {
+   public void method_27342(Entity var1) {
       this.field_13087 = true;
       int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
       int var5 = class_9299.method_42847(var1.method_37156() / 16.0);
@@ -326,11 +326,11 @@ public class class_2654 implements class_5990 {
       this.field_13066.get(var1).method_9955(var2);
    }
 
-   public void method_11995(class_8145 var1) {
+   public void method_11995(Entity var1) {
       this.method_12000(var1, var1.field_41747);
    }
 
-   public void method_12000(class_8145 var1, int var2) {
+   public void method_12000(Entity var1, int var2) {
       if (var2 < 0) {
          var2 = 0;
       }
@@ -450,7 +450,7 @@ public class class_2654 implements class_5990 {
       this.field_13065 = true;
    }
 
-   public void method_11990(class_8145 var1, class_4092 var2, List<class_8145> var3, Predicate<? super class_8145> var4) {
+   public void method_11990(Entity var1, class_4092 var2, List<Entity> var3, Predicate<? super Entity> var4) {
       int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
       int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
       var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
@@ -462,7 +462,7 @@ public class class_2654 implements class_5990 {
          int var12 = var11.size();
 
          for (int var13 = 0; var13 < var12; var13++) {
-            class_8145 var14 = (class_8145)var11.get(var13);
+            Entity var14 = (Entity)var11.get(var13);
             if (var14.method_37241().method_18909(var2) && var14 != var1) {
                if (var4 == null || var4.test(var14)) {
                   var3.add(var14);
@@ -480,14 +480,14 @@ public class class_2654 implements class_5990 {
       }
    }
 
-   public <T extends class_8145> void method_11998(class_6629<?> var1, class_4092 var2, List<? super T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method_11998(class_6629<?> var1, class_4092 var2, List<? super T> var3, Predicate<? super T> var4) {
       int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
       int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
       var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
       var8 = class_9299.method_42829(var8, 0, this.field_13083.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
-         for (class_8145 var11 : this.field_13083[var9].<class_8145>method_21835(class_8145.class)) {
+         for (Entity var11 : this.field_13083[var9].<Entity>method_21835(Entity.class)) {
             if ((var1 == null || var11.method_37387() == var1) && var11.method_37241().method_18909(var2) && var4.test(var11)) {
                var3.add(var11);
             }
@@ -495,14 +495,14 @@ public class class_2654 implements class_5990 {
       }
    }
 
-   public <T extends class_8145> void method_11994(Class<? extends T> var1, class_4092 var2, List<T> var3, Predicate<? super T> var4) {
+   public <T extends Entity> void method_11994(Class<? extends T> var1, class_4092 var2, List<T> var3, Predicate<? super T> var4) {
       int var7 = class_9299.method_42847((var2.field_19937 - 2.0) / 16.0);
       int var8 = class_9299.method_42847((var2.field_19939 + 2.0) / 16.0);
       var7 = class_9299.method_42829(var7, 0, this.field_13083.length - 1);
       var8 = class_9299.method_42829(var8, 0, this.field_13083.length - 1);
 
       for (int var9 = var7; var9 <= var8; var9++) {
-         for (class_8145 var11 : this.field_13083[var9].method_21835(var1)) {
+         for (Entity var11 : this.field_13083[var9].method_21835(var1)) {
             if (var11.method_37241().method_18909(var2) && (var4 == null || var4.test(var11))) {
                var3.add(var11);
             }
@@ -563,7 +563,7 @@ public class class_2654 implements class_5990 {
       this.field_13081 = var1;
    }
 
-   public class_6486 method_11997() {
+   public World method_11997() {
       return this.field_13074;
    }
 
@@ -576,7 +576,7 @@ public class class_2654 implements class_5990 {
       return this.field_13088;
    }
 
-   public class_4722<class_8145>[] method_11979() {
+   public class_4722<Entity>[] method_11979() {
       return this.field_13083;
    }
 

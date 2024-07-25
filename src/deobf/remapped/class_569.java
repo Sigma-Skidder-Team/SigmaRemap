@@ -2,13 +2,13 @@ package remapped;
 
 public class class_569 extends class_6165 {
    private static String[] field_3355;
-   private final class_8145 field_3354;
+   private final Entity field_3354;
 
-   public class_569(class_8461 var1, class_562 var2, class_8145 var3) {
+   public class_569(class_8461 var1, class_562 var2, Entity var3) {
       this(var1, var2, 1.0F, 1.0F, var3);
    }
 
-   public class_569(class_8461 var1, class_562 var2, float var3, float var4, class_8145 var5) {
+   public class_569(class_8461 var1, class_562 var2, float var3, float var4, Entity var5) {
       super(var1, var2);
       this.field_5766 = var3;
       this.field_5773 = var4;

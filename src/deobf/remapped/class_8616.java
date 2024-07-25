@@ -161,7 +161,7 @@ public class class_8616 {
       if (class_3111.equals(var4, "ModelBox")) {
          String var5 = class_9235.method_42595(var0, "attachTo");
          int var6 = method_39601(var5);
-         class_4409 var7 = new class_4409(class_3581::method_16755);
+         class_4409 var7 = new class_4409(RenderLayer::method_16755);
          var7.field_49928 = var1.width;
          var7.field_49927 = var1.height;
          class_1549 var8 = method_39597(var0, var7, (int[])null, (String)null);

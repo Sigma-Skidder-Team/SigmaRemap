@@ -10,7 +10,7 @@ public class class_8101 implements class_6310<class_392> {
    public class_8101() {
    }
 
-   public class_8101(class_8145 var1) {
+   public class_8101(Entity var1) {
       this.field_41494 = var1.method_37145();
    }
 
@@ -29,7 +29,7 @@ public class class_8101 implements class_6310<class_392> {
    }
 
    @Nullable
-   public class_8145 method_36787(class_6486 var1) {
+   public Entity method_36787(World var1) {
       return var1.method_29534(this.field_41494);
    }
 }

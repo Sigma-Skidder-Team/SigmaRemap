@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public abstract class class_6486 implements class_9379, AutoCloseable {
+public abstract class World implements class_9379, AutoCloseable {
    public static final Logger field_33046 = LogManager.getLogger();
-   public static final Codec<class_5621<class_6486>> field_33043 = Identifier.field_22655
-      .xmap(class_5621.<class_6486>method_25495(class_8669.field_44372), class_5621::method_25499);
-   public static final class_5621<class_6486> field_33048 = class_5621.<class_6486>method_25497(class_8669.field_44372, new Identifier("overworld"));
-   public static final class_5621<class_6486> field_33029 = class_5621.<class_6486>method_25497(class_8669.field_44372, new Identifier("the_nether"));
-   public static final class_5621<class_6486> field_33038 = class_5621.<class_6486>method_25497(class_8669.field_44372, new Identifier("the_end"));
-   private static final class_240[] field_33052 = class_240.values();
+   public static final Codec<class_5621<World>> field_33043 = Identifier.field_22655
+      .xmap(class_5621.<World>method_25495(class_8669.field_44372), class_5621::method_25499);
+   public static final class_5621<World> field_33048 = class_5621.<World>method_25497(class_8669.field_44372, new Identifier("overworld"));
+   public static final class_5621<World> field_33029 = class_5621.<World>method_25497(class_8669.field_44372, new Identifier("the_nether"));
+   public static final class_5621<World> field_33038 = class_5621.<World>method_25497(class_8669.field_44372, new Identifier("the_end"));
+   private static final Direction[] field_33052 = Direction.values();
    public final List<class_3757> field_33053 = Lists.newArrayList();
    public final List<class_3757> field_33031 = Lists.newArrayList();
    public final List<class_3757> field_33030 = Lists.newArrayList();
@@ -44,9 +44,9 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    public boolean field_33054;
    private final class_2098 field_33032;
    private final class_859 field_33042;
-   private final class_5621<class_6486> field_33044;
+   private final class_5621<World> field_33044;
 
-   public class_6486(class_1137 var1, class_5621<class_6486> var2, class_8760 var3, Supplier<class_3492> var4, boolean var5, boolean var6, long var7) {
+   public World(class_1137 var1, class_5621<World> var2, class_8760 var3, Supplier<class_3492> var4, boolean var5, boolean var6, long var7) {
       this.field_33041 = var4;
       this.field_33035 = var1;
       this.field_33047 = var3;
@@ -190,7 +190,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    }
 
    @Override
-   public boolean method_7512(class_1331 var1, boolean var2, class_8145 var3, int var4) {
+   public boolean method_7512(class_1331 var1, boolean var2, Entity var3, int var4) {
       class_2522 var7 = this.method_28262(var1);
       if (!var7.method_8345()) {
          class_4774 var8 = this.method_28258(var1);
@@ -227,28 +227,28 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       this.method_29520(var1.method_6073(), var2, var1);
    }
 
-   public void method_29526(class_1331 var1, class_6414 var2, class_240 var3) {
-      if (var3 != class_240.field_809) {
+   public void method_29526(class_1331 var1, class_6414 var2, Direction var3) {
+      if (var3 != Direction.field_809) {
          this.method_29520(var1.method_6108(), var2, var1);
       }
 
-      if (var3 != class_240.field_804) {
+      if (var3 != Direction.field_804) {
          this.method_29520(var1.method_6090(), var2, var1);
       }
 
-      if (var3 != class_240.field_802) {
+      if (var3 != Direction.field_802) {
          this.method_29520(var1.method_6100(), var2, var1);
       }
 
-      if (var3 != class_240.field_817) {
+      if (var3 != Direction.field_817) {
          this.method_29520(var1.method_6081(), var2, var1);
       }
 
-      if (var3 != class_240.field_818) {
+      if (var3 != Direction.field_818) {
          this.method_29520(var1.method_6094(), var2, var1);
       }
 
-      if (var3 != class_240.field_800) {
+      if (var3 != Direction.field_800) {
          this.method_29520(var1.method_6073(), var2, var1);
       }
    }
@@ -331,7 +331,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
 
    public abstract void method_29528(class_704 var1, double var2, double var4, double var6, class_8461 var8, class_562 var9, float var10, float var11);
 
-   public abstract void method_29540(class_704 var1, class_8145 var2, class_8461 var3, class_562 var4, float var5, float var6);
+   public abstract void method_29540(class_704 var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6);
 
    public void method_29527(double var1, double var3, double var5, class_8461 var7, class_562 var8, float var9, float var10, boolean var11) {
    }
@@ -455,7 +455,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       var3.method_16054();
    }
 
-   public void method_29532(Consumer<class_8145> var1, class_8145 var2) {
+   public void method_29532(Consumer<Entity> var1, Entity var2) {
       try {
          var1.accept(var2);
       } catch (Throwable var8) {
@@ -466,16 +466,16 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       }
    }
 
-   public class_2730 method_29573(class_8145 var1, double var2, double var4, double var6, float var8, class_7298 var9) {
+   public class_2730 method_29573(Entity var1, double var2, double var4, double var6, float var8, class_7298 var9) {
       return this.method_29575(var1, (class_6199)null, (class_7571)null, var2, var4, var6, var8, false, var9);
    }
 
-   public class_2730 method_29574(class_8145 var1, double var2, double var4, double var6, float var8, boolean var9, class_7298 var10) {
+   public class_2730 method_29574(Entity var1, double var2, double var4, double var6, float var8, boolean var9, class_7298 var10) {
       return this.method_29575(var1, (class_6199)null, (class_7571)null, var2, var4, var6, var8, var9, var10);
    }
 
    public class_2730 method_29575(
-      class_8145 var1, class_6199 var2, class_7571 var3, double var4, double var6, double var8, float var10, boolean var11, class_7298 var12
+           Entity var1, class_6199 var2, class_7571 var3, double var4, double var6, double var8, float var10, boolean var11, class_7298 var12
    ) {
       class_2730 var15 = new class_2730(this, var1, var2, var3, var4, var6, var8, var10, var11, var12);
       var15.method_12266();
@@ -568,7 +568,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       return !method_29556(var1) ? this.method_43363().method_14816(var1.method_12173() >> 4, var1.method_12185() >> 4) : false;
    }
 
-   public boolean method_29566(class_1331 var1, class_8145 var2, class_240 var3) {
+   public boolean method_29566(class_1331 var1, Entity var2, Direction var3) {
       if (!method_29556(var1)) {
          class_5990 var6 = this.method_22555(var1.method_12173() >> 4, var1.method_12185() >> 4, class_7335.field_37514, false);
          return var6 != null ? var6.method_28262(var1).method_8338(this, var1, var2, var3) : false;
@@ -577,8 +577,8 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       }
    }
 
-   public boolean method_29518(class_1331 var1, class_8145 var2) {
-      return this.method_29566(var1, var2, class_240.field_817);
+   public boolean method_29518(class_1331 var1, Entity var2) {
+      return this.method_29566(var1, var2, Direction.field_817);
    }
 
    public void method_29541() {
@@ -613,7 +613,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    }
 
    @Override
-   public List<class_8145> method_25867(class_8145 var1, class_4092 var2, Predicate<? super class_8145> var3) {
+   public List<Entity> method_25867(Entity var1, class_4092 var2, Predicate<? super Entity> var3) {
       this.method_29599().method_16055("getEntities");
       ArrayList var6 = Lists.newArrayList();
       int var7 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
@@ -634,7 +634,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       return var6;
    }
 
-   public <T extends class_8145> List<T> method_29583(class_6629<T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_29583(class_6629<T> var1, class_4092 var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getEntities");
       int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
       int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
@@ -655,7 +655,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    }
 
    @Override
-   public <T extends class_8145> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getEntities");
       int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
       int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
@@ -677,7 +677,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    }
 
    @Override
-   public <T extends class_8145> List<T> method_25875(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_25875(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
       this.method_29599().method_16055("getLoadedEntities");
       int var6 = class_9299.method_42847((var2.field_19941 - 2.0) / 16.0);
       int var7 = class_9299.method_42815((var2.field_19940 + 2.0) / 16.0);
@@ -699,7 +699,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    }
 
    @Nullable
-   public abstract class_8145 method_29534(int var1);
+   public abstract Entity method_29534(int var1);
 
    public void method_29557(class_1331 var1, class_3757 var2) {
       if (this.method_22559(var1)) {
@@ -714,17 +714,17 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
 
    public int method_29530(class_1331 var1) {
       int var4 = 0;
-      var4 = Math.max(var4, this.method_22551(var1.method_6100(), class_240.field_802));
+      var4 = Math.max(var4, this.method_22551(var1.method_6100(), Direction.field_802));
       if (var4 < 15) {
-         var4 = Math.max(var4, this.method_22551(var1.method_6081(), class_240.field_817));
+         var4 = Math.max(var4, this.method_22551(var1.method_6081(), Direction.field_817));
          if (var4 < 15) {
-            var4 = Math.max(var4, this.method_22551(var1.method_6094(), class_240.field_818));
+            var4 = Math.max(var4, this.method_22551(var1.method_6094(), Direction.field_818));
             if (var4 < 15) {
-               var4 = Math.max(var4, this.method_22551(var1.method_6073(), class_240.field_800));
+               var4 = Math.max(var4, this.method_22551(var1.method_6073(), Direction.field_800));
                if (var4 < 15) {
-                  var4 = Math.max(var4, this.method_22551(var1.method_6108(), class_240.field_809));
+                  var4 = Math.max(var4, this.method_22551(var1.method_6108(), Direction.field_809));
                   if (var4 < 15) {
-                     var4 = Math.max(var4, this.method_22551(var1.method_6090(), class_240.field_804));
+                     var4 = Math.max(var4, this.method_22551(var1.method_6090(), Direction.field_804));
                      return var4 < 15 ? var4 : var4;
                   } else {
                      return var4;
@@ -743,23 +743,23 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       }
    }
 
-   public boolean method_29588(class_1331 var1, class_240 var2) {
+   public boolean method_29588(class_1331 var1, Direction var2) {
       return this.method_29577(var1, var2) > 0;
    }
 
-   public int method_29577(class_1331 var1, class_240 var2) {
+   public int method_29577(class_1331 var1, Direction var2) {
       class_2522 var5 = this.method_28262(var1);
       int var6 = var5.method_8327(this, var1, var2);
       return !var5.method_8356(this, var1) ? var6 : Math.max(var6, this.method_29530(var1));
    }
 
    public boolean method_29576(class_1331 var1) {
-      if (this.method_29577(var1.method_6100(), class_240.field_802) <= 0) {
-         if (this.method_29577(var1.method_6081(), class_240.field_817) <= 0) {
-            if (this.method_29577(var1.method_6094(), class_240.field_818) <= 0) {
-               if (this.method_29577(var1.method_6073(), class_240.field_800) <= 0) {
-                  return this.method_29577(var1.method_6108(), class_240.field_809) <= 0
-                     ? this.method_29577(var1.method_6090(), class_240.field_804) > 0
+      if (this.method_29577(var1.method_6100(), Direction.field_802) <= 0) {
+         if (this.method_29577(var1.method_6081(), Direction.field_817) <= 0) {
+            if (this.method_29577(var1.method_6094(), Direction.field_818) <= 0) {
+               if (this.method_29577(var1.method_6073(), Direction.field_800) <= 0) {
+                  return this.method_29577(var1.method_6108(), Direction.field_809) <= 0
+                     ? this.method_29577(var1.method_6090(), Direction.field_804) > 0
                      : true;
                } else {
                   return true;
@@ -778,7 +778,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    public int method_29565(class_1331 var1) {
       int var4 = 0;
 
-      for (class_240 var8 : field_33052) {
+      for (Direction var8 : field_33052) {
          int var9 = this.method_29577(var1.method_6098(var8), var8);
          if (var9 >= 15) {
             return 15;
@@ -807,7 +807,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       return true;
    }
 
-   public void method_29587(class_8145 var1, byte var2) {
+   public void method_29587(Entity var1, byte var2) {
    }
 
    public void method_29521(class_1331 var1, class_6414 var2, int var3, int var4) {
@@ -902,7 +902,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
    public abstract class_1097 method_29562();
 
    public void method_29523(class_1331 var1, class_6414 var2) {
-      for (class_240 var6 : class_9594.field_48893) {
+      for (Direction var6 : class_9594.field_48893) {
          class_1331 var7 = var1.method_6098(var6);
          if (this.method_22559(var7)) {
             class_2522 var8 = this.method_28262(var7);
@@ -955,7 +955,7 @@ public abstract class class_6486 implements class_9379, AutoCloseable {
       return this.field_33047;
    }
 
-   public class_5621<class_6486> method_29545() {
+   public class_5621<World> method_29545() {
       return this.field_33044;
    }
 

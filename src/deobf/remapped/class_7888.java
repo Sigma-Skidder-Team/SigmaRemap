@@ -3,20 +3,20 @@ package remapped;
 import com.google.gson.JsonObject;
 
 public class class_7888 extends class_4569 {
-   private final class_5621<class_6486> field_40356;
-   private final class_5621<class_6486> field_40355;
+   private final class_5621<World> field_40356;
+   private final class_5621<World> field_40355;
 
-   public class_7888(class_8938 var1, class_5621<class_6486> var2, class_5621<class_6486> var3) {
+   public class_7888(class_8938 var1, class_5621<World> var2, class_5621<World> var3) {
       super(class_8459.method_38906(), var1);
       this.field_40356 = var2;
       this.field_40355 = var3;
    }
 
-   public static class_7888 method_35667(class_5621<class_6486> var0) {
-      return new class_7888(class_8938.field_45798, (class_5621<class_6486>)null, var0);
+   public static class_7888 method_35667(class_5621<World> var0) {
+      return new class_7888(class_8938.field_45798, (class_5621<World>)null, var0);
    }
 
-   public boolean method_35666(class_5621<class_6486> var1, class_5621<class_6486> var2) {
+   public boolean method_35666(class_5621<World> var1, class_5621<World> var2) {
       return this.field_40356 != null && this.field_40356 != var1 ? false : this.field_40355 == null || this.field_40355 == var2;
    }
 

@@ -10,15 +10,15 @@ public class class_581 extends class_6749 {
    private final Set<class_2250> field_3395 = Sets.newHashSet();
    private boolean field_3392;
 
-   public class_581(class_6629<? extends class_581> var1, class_6486 var2) {
+   public class_581(class_6629<? extends class_581> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_581(class_6486 var1, double var2, double var4, double var6) {
+   public class_581(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34290, var2, var4, var6, var1);
    }
 
-   public class_581(class_6486 var1, class_5834 var2) {
+   public class_581(World var1, class_5834 var2) {
       super(class_6629.field_34290, var2, var1);
    }
 

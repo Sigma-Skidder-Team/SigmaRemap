@@ -18,7 +18,7 @@ public class class_3236 extends class_8549 {
       }
    }
 
-   public class_3236(int var1, Random var2, class_9616 var3, class_240 var4) {
+   public class_3236(int var1, Random var2, class_9616 var3, Direction var4) {
       super(class_2746.field_13417, var1);
       this.field_16095 = false;
       this.method_32519(var4);
@@ -50,7 +50,7 @@ public class class_3236 extends class_8549 {
       this.method_39334((class_4960)var1, var2, var3, 1, 1);
    }
 
-   public static class_3236 method_14829(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5, int var6) {
+   public static class_3236 method_14829(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
       class_9616 var9 = class_9616.method_44386(var2, var3, var4, -1, -7, 0, 5, 11, 5, var5);
       return method_39332(var9) && class_7060.method_32502(var0, var9) == null ? new class_3236(var6, var1, var9, var5) : null;
    }

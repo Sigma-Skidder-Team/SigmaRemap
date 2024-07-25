@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class class_9782 {
    public class_3223 field_49649;
    public int field_49646;
-   public class_8145 field_49648;
+   public Entity field_49648;
    public MinecraftClient field_49645 = MinecraftClient.getInstance();
 
    public class_9782() {
@@ -23,9 +23,9 @@ public class class_9782 {
                if (var4) {
                   class_964 var5 = new class_964();
                   var5.field_4942 = true;
-                  class_8145 var6 = null;
+                  Entity var6 = null;
 
-                  for (class_8145 var8 : class_314.method_1440()) {
+                  for (Entity var8 : class_314.method_1440()) {
                      if (var8 instanceof class_704
                         && var8 != this.field_49645.field_9632
                         && (var6 == null || var6.method_37175(this.field_49645.field_9632) > var8.method_37175(this.field_49645.field_9632))) {
@@ -51,7 +51,7 @@ public class class_9782 {
                         );
                         ArrayList var6x = class_6306.method_28770(var5x, var4x);
                         SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Teleport", "Successfully teleported !"));
-                        class_8145 var7 = this.field_49645.field_9632.method_37243();
+                        Entity var7 = this.field_49645.field_9632.method_37243();
 
                         for (class_4714 var9x : var6x) {
                            if (var7 != null) {

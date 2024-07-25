@@ -48,7 +48,7 @@ public enum class_4188 {
    });
    private final class_9829[] field_20389;
 
-   public static class_4188 method_19472(class_240 var0) {
+   public static class_4188 method_19472(Direction var0) {
       return field_20388[var0.method_1050()];
    }
 

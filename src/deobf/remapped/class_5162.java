@@ -5,7 +5,7 @@ public class class_5162 extends class_7164<class_9408, class_8875<class_9408>> {
    private static final Identifier field_26585 = new Identifier("textures/entity/wolf/wolf_tame.png");
    private static final Identifier field_26584 = new Identifier("textures/entity/wolf/wolf_angry.png");
 
-   public class_5162(class_6122 var1) {
+   public class_5162(EntityRenderDispatcher var1) {
       super(var1, new class_8875<class_9408>(), 0.5F);
       this.method_29100(new class_2682(this));
    }

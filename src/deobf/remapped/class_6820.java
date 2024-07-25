@@ -24,7 +24,7 @@ public class class_6820 extends class_644 {
    }
 
    @Override
-   public boolean method_2959(class_6946 var1, class_6486 var2) {
+   public boolean method_2959(class_6946 var1, World var2) {
       if (!super.method_2959(var1, var2)) {
          return false;
       } else {

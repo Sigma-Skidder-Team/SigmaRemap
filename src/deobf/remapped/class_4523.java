@@ -6,7 +6,7 @@ public class class_4523 extends class_9873 {
    private final class_1549 field_22085;
 
    public class_4523() {
-      super(class_3581::method_16734);
+      super(RenderLayer::method_16734);
       this.field_49928 = 64;
       this.field_49927 = 64;
       this.field_22083 = new class_1549(this, 0, 0);

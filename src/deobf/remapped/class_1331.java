@@ -51,7 +51,7 @@ public class class_1331 extends class_2700 {
       this(var1.method_12173(), var1.method_12165(), var1.method_12185());
    }
 
-   public static long method_6097(long var0, class_240 var2) {
+   public static long method_6097(long var0, Direction var2) {
       return method_6096(var0, var2.method_1041(), var2.method_1054(), var2.method_1034());
    }
 
@@ -109,58 +109,58 @@ public class class_1331 extends class_2700 {
    }
 
    public class_1331 method_6081() {
-      return this.method_6098(class_240.field_817);
+      return this.method_6098(Direction.field_817);
    }
 
    public class_1331 method_6082(int var1) {
-      return this.method_6099(class_240.field_817, var1);
+      return this.method_6099(Direction.field_817, var1);
    }
 
    public class_1331 method_6100() {
-      return this.method_6098(class_240.field_802);
+      return this.method_6098(Direction.field_802);
    }
 
    public class_1331 method_6101(int var1) {
-      return this.method_6099(class_240.field_802, var1);
+      return this.method_6099(Direction.field_802, var1);
    }
 
    public class_1331 method_6094() {
-      return this.method_6098(class_240.field_818);
+      return this.method_6098(Direction.field_818);
    }
 
    public class_1331 method_6095(int var1) {
-      return this.method_6099(class_240.field_818, var1);
+      return this.method_6099(Direction.field_818, var1);
    }
 
    public class_1331 method_6073() {
-      return this.method_6098(class_240.field_800);
+      return this.method_6098(Direction.field_800);
    }
 
    public class_1331 method_6074(int var1) {
-      return this.method_6099(class_240.field_800, var1);
+      return this.method_6099(Direction.field_800, var1);
    }
 
    public class_1331 method_6108() {
-      return this.method_6098(class_240.field_809);
+      return this.method_6098(Direction.field_809);
    }
 
    public class_1331 method_6109(int var1) {
-      return this.method_6099(class_240.field_809, var1);
+      return this.method_6099(Direction.field_809, var1);
    }
 
    public class_1331 method_6090() {
-      return this.method_6098(class_240.field_804);
+      return this.method_6098(Direction.field_804);
    }
 
    public class_1331 method_6091(int var1) {
-      return this.method_6099(class_240.field_804, var1);
+      return this.method_6099(Direction.field_804, var1);
    }
 
-   public class_1331 method_6098(class_240 var1) {
+   public class_1331 method_6098(Direction var1) {
       return new class_1331(this.method_12173() + var1.method_1041(), this.method_12165() + var1.method_1054(), this.method_12185() + var1.method_1034());
    }
 
-   public class_1331 method_6099(class_240 var1, int var2) {
+   public class_1331 method_6099(Direction var1, int var2) {
       return var2 != 0
          ? new class_1331(
             this.method_12173() + var1.method_1041() * var2, this.method_12165() + var1.method_1054() * var2, this.method_12185() + var1.method_1034() * var2
@@ -281,7 +281,7 @@ public class class_1331 extends class_2700 {
       return () -> new class_7662(var11, var8, var9, var0, var1, var2);
    }
 
-   public static Iterable<class_2921> method_6070(class_1331 var0, int var1, class_240 var2, class_240 var3) {
+   public static Iterable<class_2921> method_6070(class_1331 var0, int var1, Direction var2, Direction var3) {
       Validate.validState(var2.method_1029() != var3.method_1029(), "The two directions cannot be on the same axis", new Object[0]);
       return () -> new class_1698(var2, var3, var0, var1);
    }

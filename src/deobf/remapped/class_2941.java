@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class class_2941 extends class_9128 {
-   private List<class_8145> field_14300 = new ArrayList<class_8145>();
+   private List<Entity> field_14300 = new ArrayList<Entity>();
 
    public class_2941() {
       super(class_5664.field_28714, "BowAimbot", "Automatically aims at players while using a bow");
@@ -53,12 +53,12 @@ public class class_2941 extends class_9128 {
       }
    }
 
-   public List<class_8145> method_13451(float var1) {
+   public List<Entity> method_13451(float var1) {
       List var4 = class_314.method_1440();
       Iterator var5 = var4.iterator();
 
       while (var5.hasNext()) {
-         class_8145 var6 = (class_8145)var5.next();
+         Entity var6 = (Entity)var5.next();
          if (var6 == field_46692.field_9632) {
             var5.remove();
          } else if (SigmaMainClass.method_3328().method_3307().method_14460(var6)) {

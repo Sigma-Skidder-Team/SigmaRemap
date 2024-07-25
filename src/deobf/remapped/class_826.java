@@ -32,7 +32,7 @@ public class class_826 extends class_6165 {
          this.field_5761 = (double)((float)this.field_4360.method_37302());
          this.field_5765 = (double)((float)this.field_4360.method_37309());
          this.field_5762 = (double)((float)this.field_4360.method_37156());
-         float var3 = class_9299.method_42842(class_8145.method_37266(this.field_4360.method_37098()));
+         float var3 = class_9299.method_42842(Entity.method_37266(this.field_4360.method_37098()));
          if (!((double)var3 >= 0.01)) {
             this.field_4358 = 0.0F;
             this.field_5766 = 0.0F;

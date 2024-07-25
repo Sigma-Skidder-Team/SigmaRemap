@@ -33,7 +33,7 @@ public class class_7211 {
       return new float[]{var18, var19};
    }
 
-   public static float[] method_33013(class_8145 var0) {
+   public static float[] method_33013(Entity var0) {
       double var3 = field_37040.field_9632.method_37302()
          + (field_37040.field_9632.method_37302() - field_37040.field_9632.field_41754) * (double)field_37040.method_8554();
       double var5 = field_37040.field_9632.method_37156()
@@ -43,7 +43,7 @@ public class class_7211 {
       return method_33014(var0, var3, var7, var5);
    }
 
-   public static float[] method_33014(class_8145 var0, double var1, double var3, double var5) {
+   public static float[] method_33014(Entity var0, double var1, double var3, double var5) {
       double var9 = var0.method_37302() + (var0.method_37302() - var0.field_41754) * (double)field_37040.method_8554();
       double var11 = var0.method_37156() + (var0.method_37156() - var0.field_41724) * (double)field_37040.method_8554();
       double var13 = var0.method_37309() + (var0.method_37309() - var0.field_41713) * (double)field_37040.method_8554();
@@ -80,7 +80,7 @@ public class class_7211 {
    }
 
    public static float[] method_32995(class_5834 var0, double var1, double var3, double var5, float var7) {
-      class_8145 var10 = class_314.method_1458(field_37037, field_37039, var7, 0.0);
+      Entity var10 = class_314.method_1458(field_37037, field_37039, var7, 0.0);
       if (var10 == null) {
          if (field_37036 <= new Date().getTime() - 500L) {
             double var11 = Math.sin((double)(System.currentTimeMillis() - 500L) / 521.0) * 0.2;
@@ -167,7 +167,7 @@ public class class_7211 {
       return new float[]{var34, -var37};
    }
 
-   public static class_1988 method_32999(class_8145 var0) {
+   public static class_1988 method_32999(Entity var0) {
       float[] var3 = method_33014(var0, field_37040.field_9632.method_37302(), field_37040.field_9632.method_37309(), field_37040.field_9632.method_37156());
       return new class_1988(var3[0], var3[1]);
    }
@@ -190,7 +190,7 @@ public class class_7211 {
       return var6;
    }
 
-   public static class_1988 method_33010(class_8145 var0, boolean var1) {
+   public static class_1988 method_33010(Entity var0, boolean var1) {
       class_1343 var4 = class_314.method_1429(var0);
       if (var1 && !method_32997(var4)) {
          for (int var5 = -1; var5 < 2; var5++) {
@@ -295,7 +295,7 @@ public class class_7211 {
       return var1 + Math.random() * (var3 - var1);
    }
 
-   public static float method_33003(float var0, class_8145 var1, double var2) {
+   public static float method_33003(float var0, Entity var1, double var2) {
       double var6 = var1.method_37302() - field_37040.field_9632.method_37302();
       double var8 = var1.method_37156() - field_37040.field_9632.method_37156();
       double var10 = var2 - 2.2 + (double)var1.method_37277() - field_37040.field_9632.method_37309();

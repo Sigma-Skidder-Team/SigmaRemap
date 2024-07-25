@@ -12,7 +12,7 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       class_2522 var7 = var2.method_28262(var3.method_6081());
       if (!var7.method_8345()) {
          var4.method_37188(var1.<Boolean>method_10313(field_34381));
@@ -50,7 +50,7 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       method_30519(var2, var3.method_6081(), method_30521(var2, var3.method_6100()));
    }
 
@@ -81,7 +81,7 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       double var7 = (double)var3.method_12173();
       double var9 = (double)var3.method_12165();
       double var11 = (double)var3.method_12185();
@@ -106,10 +106,10 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.method_8309(var4, var5)) {
-         if (var2 != class_240.field_802) {
-            if (var2 == class_240.field_817 && !var3.method_8350(class_4783.field_23269) && method_30520(var4, var6)) {
+         if (var2 != Direction.field_802) {
+            if (var2 == Direction.field_817 && !var3.method_8350(class_4783.field_23269) && method_30520(var4, var6)) {
                var4.method_43367().method_14011(var5, this, 5);
             }
          } else {

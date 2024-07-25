@@ -14,7 +14,7 @@ public class class_3845 extends class_5467 {
    private int field_18767;
    public static final Predicate<class_5834> field_18768 = var0 -> var0.method_26449() && !var0.method_37285();
 
-   public class_3845(class_6629<? extends class_3845> var1, class_6486 var2) {
+   public class_3845(class_6629<? extends class_3845> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6359, 0.0F);
       this.field_29900 = new class_2320(this);
@@ -206,7 +206,7 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       return new class_4704(this, var1);
    }
 

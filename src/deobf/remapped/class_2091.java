@@ -7,7 +7,7 @@ public class class_2091 extends class_8549 {
    private final boolean field_10511;
    private final boolean field_10509;
 
-   public class_2091(int var1, Random var2, class_9616 var3, class_240 var4) {
+   public class_2091(int var1, Random var2, class_9616 var3, Direction var4) {
       super(class_2746.field_13407, var1);
       this.method_32519(var4);
       this.field_43750 = this.method_39333(var2);
@@ -41,7 +41,7 @@ public class class_2091 extends class_8549 {
       }
    }
 
-   public static class_2091 method_9792(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5, int var6) {
+   public static class_2091 method_9792(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
       class_9616 var9 = class_9616.method_44386(var2, var3, var4, -1, -1, 0, 5, 5, 7, var5);
       return method_39332(var9) && class_7060.method_32502(var0, var9) == null ? new class_2091(var6, var1, var9, var5) : null;
    }
@@ -51,8 +51,8 @@ public class class_2091 extends class_8549 {
       this.method_32511(var1, var5, 0, 0, 0, 4, 4, 6, true, var4, class_7965.method_36051());
       this.method_39330(var1, var4, var5, this.field_43750, 1, 1, 0);
       this.method_39330(var1, var4, var5, class_4030.field_19578, 1, 1, 6);
-      class_2522 var10 = class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_804);
-      class_2522 var11 = class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_809);
+      class_2522 var10 = class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_804);
+      class_2522 var11 = class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_809);
       this.method_32524(var1, var5, var4, 0.1F, 1, 2, 1, var10);
       this.method_32524(var1, var5, var4, 0.1F, 3, 2, 1, var11);
       this.method_32524(var1, var5, var4, 0.1F, 1, 2, 5, var10);

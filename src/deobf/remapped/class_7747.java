@@ -34,7 +34,7 @@ public class class_7747 extends class_4285<class_8342> {
    private boolean method_35074(class_9379 var1, class_1331 var2, Random var3) {
       class_1331 var6 = var2.method_6100();
       class_2522 var7 = var1.method_28262(var6);
-      return !var7.method_8350(class_4783.field_23608) ? var7.method_8308(var1, var6, class_240.field_817) : var3.nextBoolean();
+      return !var7.method_8350(class_4783.field_23608) ? var7.method_8308(var1, var6, Direction.field_817) : var3.nextBoolean();
    }
 
    private void method_35076(class_9379 var1, class_1331 var2, Random var3, class_8342 var4) {

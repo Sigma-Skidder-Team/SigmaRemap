@@ -1,7 +1,7 @@
 package remapped;
 
 public interface class_5561 extends class_6163 {
-   float method_25265(class_240 var1, boolean var2);
+   float method_25265(Direction var1, boolean var2);
 
    class_4663 method_25264();
 

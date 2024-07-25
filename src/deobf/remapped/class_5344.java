@@ -141,7 +141,7 @@ public class class_5344 {
 
    public void method_24342(class_2654 var1) {
       if (this.field_27241 || this.field_27262 != 0 || this.field_27247 != 0) {
-         class_6486 var4 = var1.method_11997();
+         World var4 = var1.method_11997();
          int var5 = 0;
 
          for (int var6 = 0; var6 < this.field_27263.length; var6++) {
@@ -179,13 +179,13 @@ public class class_5344 {
       }
    }
 
-   private void method_24341(class_6486 var1, class_1331 var2, class_2522 var3) {
+   private void method_24341(World var1, class_1331 var2, class_2522 var3) {
       if (var3.method_8360().method_10802()) {
          this.method_24359(var1, var2);
       }
    }
 
-   private void method_24359(class_6486 var1, class_1331 var2) {
+   private void method_24359(World var1, class_1331 var2) {
       class_3757 var5 = var1.method_28260(var2);
       if (var5 != null) {
          class_5029 var6 = var5.method_17413();

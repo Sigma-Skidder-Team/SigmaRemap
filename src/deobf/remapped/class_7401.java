@@ -61,7 +61,7 @@ public class class_7401 extends class_9128 {
                      int var5x = 0;
 
                      for (class_3357 var7 : var4) {
-                        class_8145 var8 = var7.method_15377();
+                        Entity var8 = var7.method_15377();
                         if ((int)this.method_42002("Targets") < ++var5x) {
                            break;
                         }
@@ -92,7 +92,7 @@ public class class_7401 extends class_9128 {
    }
 
    public void method_33701(List<class_4714> var1, boolean var2) {
-      class_8145 var5 = field_46692.field_9632.method_37243();
+      Entity var5 = field_46692.field_9632.method_37243();
       class_4714 var6 = null;
 
       for (class_4714 var8 : var1) {
@@ -163,14 +163,14 @@ public class class_7401 extends class_9128 {
    public List<class_3357> method_33696(float var1) {
       ArrayList var4 = new ArrayList();
 
-      for (class_8145 var6 : class_314.method_1440()) {
+      for (Entity var6 : class_314.method_1440()) {
          var4.add(new class_3357(var6));
       }
 
       Iterator var7 = var4.iterator();
 
       while (var7.hasNext()) {
-         class_8145 var8 = ((class_3357)var7.next()).method_15377();
+         Entity var8 = ((class_3357)var7.next()).method_15377();
          if (var8 != field_46692.field_9632) {
             if (!SigmaMainClass.method_3328().method_3307().method_14460(var8)) {
                if (var8 instanceof class_5834) {

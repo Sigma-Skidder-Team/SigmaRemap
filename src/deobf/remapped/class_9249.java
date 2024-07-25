@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-public enum class_9249 implements class_4530, Predicate<class_240> {
+public enum class_9249 implements class_4530, Predicate<Direction> {
    field_47215("x"),
    field_47216("y"),
    field_47219("z");
@@ -50,7 +50,7 @@ public enum class_9249 implements class_4530, Predicate<class_240> {
       return Util.<class_9249>method_44697(field_47218, var0);
    }
 
-   public boolean test(class_240 var1) {
+   public boolean test(Direction var1) {
       return var1 != null && var1.method_1029() == this;
    }
 

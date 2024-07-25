@@ -6,7 +6,7 @@ public class class_9794 extends class_1279 {
    private static String[] field_49684;
    private int field_49683;
 
-   public class_9794(class_240 var1, class_9616 var2, int var3) {
+   public class_9794(Direction var1, class_9616 var2, int var3) {
       super(class_2746.field_13420, var1, var2);
       this.field_49683 = var3 & 1;
    }

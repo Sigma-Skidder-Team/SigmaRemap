@@ -4,14 +4,14 @@ public class class_4717 extends class_9153 {
    private static String[] field_22887;
    private boolean field_22886 = false;
    private class_1331 field_22889 = null;
-   private class_8145 field_22888 = null;
+   private Entity field_22888 = null;
 
    public class_4717(MinecraftClient var1, class_1092 var2) {
       super(var1, var2);
    }
 
    @Override
-   public boolean method_42142(class_1331 var1, class_240 var2) {
+   public boolean method_42142(class_1331 var1, Direction var2) {
       this.field_22886 = true;
       this.field_22889 = var1;
       boolean var5 = super.method_42142(var1, var2);
@@ -20,7 +20,7 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public boolean method_42163(class_1331 var1, class_240 var2) {
+   public boolean method_42163(class_1331 var1, Direction var2) {
       this.field_22886 = true;
       this.field_22889 = var1;
       boolean var5 = super.method_42163(var1, var2);
@@ -29,7 +29,7 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42155(class_704 var1, class_6486 var2, class_2584 var3) {
+   public class_6910 method_42155(class_704 var1, World var2, class_2584 var3) {
       this.field_22886 = true;
       class_6910 var6 = super.method_42155(var1, var2, var3);
       this.field_22886 = false;
@@ -46,13 +46,13 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42144(class_704 var1, class_8145 var2, class_2584 var3) {
+   public class_6910 method_42144(class_704 var1, Entity var2, class_2584 var3) {
       this.field_22888 = var2;
       return super.method_42144(var1, var2, var3);
    }
 
    @Override
-   public class_6910 method_42145(class_704 var1, class_8145 var2, class_5631 var3, class_2584 var4) {
+   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, class_2584 var4) {
       this.field_22888 = var2;
       return super.method_42145(var1, var2, var3, var4);
    }
@@ -65,7 +65,7 @@ public class class_4717 extends class_9153 {
       return this.field_22889;
    }
 
-   public class_8145 method_21814() {
+   public Entity method_21814() {
       return this.field_22888;
    }
 }

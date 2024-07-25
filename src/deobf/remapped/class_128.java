@@ -26,7 +26,7 @@ public class class_128 extends class_3599 {
    public void method_16794() {
       this.field_316--;
       if (this.field_316 <= 0) {
-         class_6486 var3 = this.field_318.field_41768;
+         World var3 = this.field_318.field_41768;
          Random var4 = this.field_318.method_26594();
          class_1331 var5 = this.field_318.method_37075();
 

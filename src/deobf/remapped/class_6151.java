@@ -6,7 +6,7 @@ import java.util.List;
 public class class_6151 {
    private static String[] field_31517;
    private static boolean field_31518;
-   private static final class_5348[] field_31519 = new class_5348[class_3581.method_16729()];
+   private static final class_5348[] field_31519 = new class_5348[RenderLayer.method_16729()];
 
    public static void method_28221(List<class_5348> var0) {
       if (!field_31518) {

@@ -44,13 +44,13 @@ public class class_6511 extends class_4285<class_4080> {
 
             for (int var17 = 0; var17 < var11 && var1.method_22548(var9); var17++) {
                var1.method_7513(var9, field_33111, 2);
-               var9.method_13369(class_240.field_817, 1);
+               var9.method_13369(Direction.field_817, 1);
             }
 
             if (var9.method_12165() - var4.method_12165() >= 3) {
                var1.method_7513(var9, field_33108, 2);
-               var1.method_7513(var9.method_13369(class_240.field_802, 1), field_33109, 2);
-               var1.method_7513(var9.method_13369(class_240.field_802, 1), field_33110, 2);
+               var1.method_7513(var9.method_13369(Direction.field_802, 1), field_33109, 2);
+               var1.method_7513(var9.method_13369(Direction.field_802, 1), field_33110, 2);
             }
          }
 

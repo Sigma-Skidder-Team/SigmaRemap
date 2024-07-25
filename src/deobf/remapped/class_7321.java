@@ -56,11 +56,11 @@ public class class_7321 {
    public int method_33384(class_6163 var1, int var2) {
       class_2921 var5 = new class_2921(this.field_37430, (double)(var2 + 1), this.field_37432);
       boolean var6 = var1.method_28262(var5).method_8345();
-      var5.method_13368(class_240.field_802);
+      var5.method_13368(Direction.field_802);
       boolean var7 = var1.method_28262(var5).method_8345();
 
       while (var5.method_12165() > 0) {
-         var5.method_13368(class_240.field_802);
+         var5.method_13368(Direction.field_802);
          boolean var8 = var1.method_28262(var5).method_8345();
          if (!var8 && var7 && var6) {
             return var5.method_12165() + 1;

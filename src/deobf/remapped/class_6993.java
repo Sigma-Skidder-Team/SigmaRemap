@@ -6,7 +6,7 @@ public abstract class class_6993 extends class_1173 {
    public static final class_7821<Boolean> field_35907 = class_8073.<Boolean>method_36641(class_6993.class, class_2734.field_13347);
    public int field_35908 = 0;
 
-   public class_6993(class_6629<? extends class_6993> var1, class_6486 var2) {
+   public class_6993(class_6629<? extends class_6993> var1, World var2) {
       super(var1, var2);
       this.method_26871(true);
       this.method_31994();

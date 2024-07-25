@@ -68,7 +68,7 @@ public class class_3998 {
       this.field_19420 = var1;
    }
 
-   public class_1343 method_18432(class_8145 var1, int var2) {
+   public class_1343 method_18432(Entity var1, int var2) {
       class_5851 var5 = this.field_19422.get(var2);
       double var6 = (double)var5.field_29731 + (double)((int)(var1.method_37086() + 1.0F)) * 0.5;
       double var8 = (double)var5.field_29735;
@@ -80,7 +80,7 @@ public class class_3998 {
       return this.field_19422.get(var1).method_26686();
    }
 
-   public class_1343 method_18439(class_8145 var1) {
+   public class_1343 method_18439(Entity var1) {
       return this.method_18432(var1, this.field_19420);
    }
 

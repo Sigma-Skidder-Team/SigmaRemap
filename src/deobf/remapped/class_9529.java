@@ -2,20 +2,20 @@ package remapped;
 
 public class class_9529 extends class_7474 {
    private static String[] field_48503;
-   private final class_240 field_48502;
+   private final Direction field_48502;
    private final class_1331 field_48499;
    private final boolean field_48500;
    private final boolean field_48501;
 
-   public static class_9529 method_43958(class_1343 var0, class_240 var1, class_1331 var2) {
+   public static class_9529 method_43958(class_1343 var0, Direction var1, class_1331 var2) {
       return new class_9529(true, var0, var1, var2, false);
    }
 
-   public class_9529(class_1343 var1, class_240 var2, class_1331 var3, boolean var4) {
+   public class_9529(class_1343 var1, Direction var2, class_1331 var3, boolean var4) {
       this(false, var1, var2, var3, var4);
    }
 
-   private class_9529(boolean var1, class_1343 var2, class_240 var3, class_1331 var4, boolean var5) {
+   private class_9529(boolean var1, class_1343 var2, Direction var3, class_1331 var4, boolean var5) {
       super(var2);
       this.field_48500 = var1;
       this.field_48502 = var3;
@@ -23,7 +23,7 @@ public class class_9529 extends class_7474 {
       this.field_48501 = var5;
    }
 
-   public class_9529 method_43954(class_240 var1) {
+   public class_9529 method_43954(Direction var1) {
       return new class_9529(this.field_48500, this.field_38155, var1, this.field_48499, this.field_48501);
    }
 
@@ -35,7 +35,7 @@ public class class_9529 extends class_7474 {
       return this.field_48499;
    }
 
-   public class_240 method_43956() {
+   public Direction method_43956() {
       return this.field_48502;
    }
 

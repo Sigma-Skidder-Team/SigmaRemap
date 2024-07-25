@@ -4,8 +4,8 @@ import com.google.common.base.MoreObjects;
 import java.util.Objects;
 
 public class class_9164 {
-   private static final class_3581 field_46903 = class_3581.method_16732(new Identifier("textures/map/map_background.png"));
-   private static final class_3581 field_46896 = class_3581.method_16732(new Identifier("textures/map/map_background_checkerboard.png"));
+   private static final RenderLayer field_46903 = RenderLayer.method_16732(new Identifier("textures/map/map_background.png"));
+   private static final RenderLayer field_46896 = RenderLayer.method_16732(new Identifier("textures/map/map_background_checkerboard.png"));
    private final MinecraftClient field_46897;
    private class_6098 field_46899 = class_6098.field_31203;
    private class_6098 field_46898 = class_6098.field_31203;
@@ -13,7 +13,7 @@ public class class_9164 {
    private float field_46902;
    private float field_46900;
    private float field_46906;
-   private final class_6122 field_46904;
+   private final EntityRenderDispatcher field_46904;
    private final class_8765 field_46901;
 
    public class_9164(MinecraftClient var1) {

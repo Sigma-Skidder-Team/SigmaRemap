@@ -5,20 +5,20 @@ import java.util.Map;
 
 public class class_6169 extends class_6414 {
    private static String[] field_31572;
-   private static final class_240[] field_31565 = class_240.values();
+   private static final Direction[] field_31565 = Direction.values();
    public static final class_6720 field_31564 = class_6023.field_30734;
    public static final class_6720 field_31567 = class_6023.field_30669;
    public static final class_6720 field_31569 = class_6023.field_30730;
    public static final class_6720 field_31566 = class_6023.field_30675;
    public static final class_6720 field_31563 = class_6023.field_30711;
    public static final class_6720 field_31568 = class_6023.field_30740;
-   public static final Map<class_240, class_6720> field_31571 = Util.<Map<class_240, class_6720>>method_44659(Maps.newEnumMap(class_240.class), var0 -> {
-      var0.put(class_240.field_818, field_31564);
-      var0.put(class_240.field_804, field_31567);
-      var0.put(class_240.field_800, field_31569);
-      var0.put(class_240.field_809, field_31566);
-      var0.put(class_240.field_817, field_31563);
-      var0.put(class_240.field_802, field_31568);
+   public static final Map<Direction, class_6720> field_31571 = Util.<Map<Direction, class_6720>>method_44659(Maps.newEnumMap(Direction.class), var0 -> {
+      var0.put(Direction.field_818, field_31564);
+      var0.put(Direction.field_804, field_31567);
+      var0.put(Direction.field_800, field_31569);
+      var0.put(Direction.field_809, field_31566);
+      var0.put(Direction.field_817, field_31563);
+      var0.put(Direction.field_802, field_31568);
    });
    public final class_4190[] field_31570;
 
@@ -36,7 +36,7 @@ public class class_6169 extends class_6414 {
       class_4190[] var7 = new class_4190[field_31565.length];
 
       for (int var8 = 0; var8 < field_31565.length; var8++) {
-         class_240 var9 = field_31565[var8];
+         Direction var9 = field_31565[var8];
          var7[var8] = class_3370.method_15522(
             0.5 + Math.min((double)(-var1), (double)var9.method_1041() * 0.5),
             0.5 + Math.min((double)(-var1), (double)var9.method_1054() * 0.5),

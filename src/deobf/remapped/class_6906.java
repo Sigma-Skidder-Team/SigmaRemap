@@ -4,7 +4,7 @@ public class class_6906<T extends class_1080> extends class_7067<T> {
    private static final Identifier field_35502 = new Identifier("textures/entity/minecart.png");
    public final class_6521<T> field_35503 = new class_1921<T>();
 
-   public class_6906(class_6122 var1) {
+   public class_6906(EntityRenderDispatcher var1) {
       super(var1);
       this.field_36492 = 0.7F;
    }

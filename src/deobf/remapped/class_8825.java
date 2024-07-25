@@ -5,7 +5,7 @@ public class class_8825 extends class_9873 {
    private final class_1549 field_45138 = new class_1549(32, 32, 0, 6);
 
    public class_8825() {
-      super(class_3581::method_16734);
+      super(RenderLayer::method_16734);
       this.field_45138.method_7049(-0.5F, 2.0F, -0.5F, 1.0F, 25.0F, 1.0F, 0.0F);
       class_1549 var3 = new class_1549(32, 32, 4, 0);
       var3.method_7048(-1.5F, 0.0F, -0.5F, 3.0F, 2.0F, 1.0F);

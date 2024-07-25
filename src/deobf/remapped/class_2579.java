@@ -41,7 +41,7 @@ public class class_2579 extends class_4285<class_1941> {
 
          var1.method_7513(var4, this.field_12772, 2);
 
-         for (class_240 var18 : class_9594.field_48893) {
+         for (Direction var18 : class_9594.field_48893) {
             var1.method_7513(var4.method_6098(var18), this.field_12772, 2);
          }
 

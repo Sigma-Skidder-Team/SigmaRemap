@@ -87,7 +87,7 @@ public class class_2700 implements Comparable<class_2700> {
    }
 
    public class_2700 method_12169(int var1) {
-      return this.method_12177(class_240.field_817, var1);
+      return this.method_12177(Direction.field_817, var1);
    }
 
    public class_2700 method_12181() {
@@ -95,10 +95,10 @@ public class class_2700 implements Comparable<class_2700> {
    }
 
    public class_2700 method_12182(int var1) {
-      return this.method_12177(class_240.field_802, var1);
+      return this.method_12177(Direction.field_802, var1);
    }
 
-   public class_2700 method_12177(class_240 var1, int var2) {
+   public class_2700 method_12177(Direction var1, int var2) {
       return var2 != 0
          ? new class_2700(
             this.method_12173() + var1.method_1041() * var2, this.method_12165() + var1.method_1054() * var2, this.method_12185() + var1.method_1034() * var2

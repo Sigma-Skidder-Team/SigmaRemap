@@ -9,7 +9,7 @@ public class class_2018 {
    private static final class_5199 field_10222 = (var0, var1, var2) -> var0.method_8350(class_4783.field_23881);
    private final class_9379 field_10229;
    private final class_9249 field_10223;
-   private final class_240 field_10226;
+   private final Direction field_10226;
    private int field_10227;
    private class_1331 field_10224;
    private int field_10230;
@@ -32,7 +32,7 @@ public class class_2018 {
    public class_2018(class_9379 var1, class_1331 var2, class_9249 var3) {
       this.field_10229 = var1;
       this.field_10223 = var3;
-      this.field_10226 = var3 != class_9249.field_47215 ? class_240.field_800 : class_240.field_809;
+      this.field_10226 = var3 != class_9249.field_47215 ? Direction.field_800 : Direction.field_809;
       this.field_10224 = this.method_9380(var2);
       if (this.field_10224 != null) {
          this.field_10225 = this.method_9376();
@@ -54,7 +54,7 @@ public class class_2018 {
          var1 = var1.method_6100();
       }
 
-      class_240 var6 = this.field_10226.method_1046();
+      Direction var6 = this.field_10226.method_1046();
       int var5 = this.method_9374(var1, var6) - 1;
       return var5 >= 0 ? var1.method_6099(var6, var5) : null;
    }
@@ -64,7 +64,7 @@ public class class_2018 {
       return var3 >= 2 && var3 <= 21 ? var3 : 0;
    }
 
-   private int method_9374(class_1331 var1, class_240 var2) {
+   private int method_9374(class_1331 var1, Direction var2) {
       class_2921 var5 = new class_2921();
 
       for (int var6 = 0; var6 <= 21; var6++) {
@@ -77,7 +77,7 @@ public class class_2018 {
             break;
          }
 
-         class_2522 var8 = this.field_10229.method_28262(var5.method_13368(class_240.field_802));
+         class_2522 var8 = this.field_10229.method_28262(var5.method_13368(Direction.field_802));
          if (!field_10222.method_23862(var8, this.field_10229, var5)) {
             break;
          }
@@ -94,7 +94,7 @@ public class class_2018 {
 
    private boolean method_9384(class_2921 var1, int var2) {
       for (int var5 = 0; var5 < this.field_10225; var5++) {
-         class_2921 var6 = var1.method_13364(this.field_10224).method_13369(class_240.field_817, var2).method_13369(this.field_10226, var5);
+         class_2921 var6 = var1.method_13364(this.field_10224).method_13369(Direction.field_817, var2).method_13369(this.field_10226, var5);
          if (!field_10222.method_23862(this.field_10229.method_28262(var6), this.field_10229, var6)) {
             return false;
          }
@@ -105,18 +105,18 @@ public class class_2018 {
 
    private int method_9375(class_2921 var1) {
       for (int var4 = 0; var4 < 21; var4++) {
-         var1.method_13364(this.field_10224).method_13369(class_240.field_817, var4).method_13369(this.field_10226, -1);
+         var1.method_13364(this.field_10224).method_13369(Direction.field_817, var4).method_13369(this.field_10226, -1);
          if (!field_10222.method_23862(this.field_10229.method_28262(var1), this.field_10229, var1)) {
             return var4;
          }
 
-         var1.method_13364(this.field_10224).method_13369(class_240.field_817, var4).method_13369(this.field_10226, this.field_10225);
+         var1.method_13364(this.field_10224).method_13369(Direction.field_817, var4).method_13369(this.field_10226, this.field_10225);
          if (!field_10222.method_23862(this.field_10229.method_28262(var1), this.field_10229, var1)) {
             return var4;
          }
 
          for (int var5 = 0; var5 < this.field_10225; var5++) {
-            var1.method_13364(this.field_10224).method_13369(class_240.field_817, var4).method_13369(this.field_10226, var5);
+            var1.method_13364(this.field_10224).method_13369(Direction.field_817, var4).method_13369(this.field_10226, var5);
             class_2522 var6 = this.field_10229.method_28262(var1);
             if (!method_9371(var6)) {
                return var4;
@@ -142,7 +142,7 @@ public class class_2018 {
    public void method_9377() {
       class_2522 var3 = class_4783.field_23588.method_29260().method_10308(class_3465.field_16975, this.field_10223);
       class_1331.method_6076(
-            this.field_10224, this.field_10224.method_6099(class_240.field_817, this.field_10230 - 1).method_6099(this.field_10226, this.field_10225 - 1)
+            this.field_10224, this.field_10224.method_6099(Direction.field_817, this.field_10230 - 1).method_6099(this.field_10226, this.field_10225 - 1)
          )
          .forEach(var2 -> this.field_10229.method_7513(var2, var3, 18));
    }

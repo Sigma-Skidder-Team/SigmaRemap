@@ -27,7 +27,7 @@ public class class_5050 extends class_4382 {
       return 2;
    }
 
-   public static void method_23231(class_5834 var0, class_6486 var1, class_1331 var2, int var3) {
+   public static void method_23231(class_5834 var0, World var1, class_1331 var2, int var3) {
       if (var0.method_37360()) {
          class_2522 var6 = class_4783.field_23320.method_29260();
          float var7 = (float)Math.min(16, 2 + var3);

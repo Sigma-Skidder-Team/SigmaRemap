@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableList;
 
-public class class_4995<T extends class_8145> extends class_5272<T> {
+public class class_4995<T extends Entity> extends class_5272<T> {
    private static String[] field_25851;
    private final class_1549 field_25850;
    private final class_1549 field_25853;
@@ -61,7 +61,7 @@ public class class_4995<T extends class_8145> extends class_5272<T> {
    public void method_29700(T var1, float var2, float var3, float var4, float var5, float var6) {
       this.field_25850.field_8191 = var6 * (float) (Math.PI / 180.0);
       this.field_25850.field_8190 = var5 * (float) (Math.PI / 180.0);
-      if (class_8145.method_37266(var1.method_37098()) > 1.0E-7) {
+      if (Entity.method_37266(var1.method_37098()) > 1.0E-7) {
          this.field_25850.field_8191 = this.field_25850.field_8191 + -0.05F + -0.05F * class_9299.method_42840(var4 * 0.3F);
          this.field_25853.field_8191 = -0.1F * class_9299.method_42840(var4 * 0.3F);
          this.field_25852.field_8191 = -0.2F * class_9299.method_42840(var4 * 0.3F);

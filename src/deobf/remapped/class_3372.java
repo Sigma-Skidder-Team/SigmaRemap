@@ -79,7 +79,7 @@ public class class_3372 {
       this.field_16635.method_13698(var1, var2, var3, var5, var7);
    }
 
-   public static Optional<class_8145> method_15558(class_8145 var0, int var1) {
+   public static Optional<Entity> method_15558(Entity var0, int var1) {
       if (var0 != null) {
          class_1343 var4 = var0.method_37335(1.0F);
          class_1343 var5 = var0.method_37307(1.0F).method_6209((double)var1);
@@ -89,17 +89,17 @@ public class class_3372 {
          Predicate var9 = var0x -> !var0x.method_37221() && var0x.method_37167();
          class_5631 var10 = class_8462.method_38932(var0, var4, var6, var7, var9, (double)var8);
          if (var10 != null) {
-            return !(var4.method_6204(var10.method_33993()) > (double)var8) ? Optional.<class_8145>of(var10.method_25524()) : Optional.<class_8145>empty();
+            return !(var4.method_6204(var10.method_33993()) > (double)var8) ? Optional.<Entity>of(var10.method_25524()) : Optional.<Entity>empty();
          } else {
-            return Optional.<class_8145>empty();
+            return Optional.<Entity>empty();
          }
       } else {
-         return Optional.<class_8145>empty();
+         return Optional.<Entity>empty();
       }
    }
 
    public static void method_15561(class_1331 var0, class_1331 var1, float var2, float var3, float var4, float var5) {
-      class_9071 var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
+      Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
          class_4092 var10 = new class_4092(var0, var1).method_18920(var9);
@@ -108,7 +108,7 @@ public class class_3372 {
    }
 
    public static void method_15560(class_1331 var0, float var1, float var2, float var3, float var4, float var5) {
-      class_9071 var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
+      Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
          class_4092 var10 = new class_4092(var0).method_18920(var9).method_18898((double)var1);
@@ -126,7 +126,7 @@ public class class_3372 {
       class_8042 var18 = class_8042.method_36499();
       class_9633 var19 = var18.method_36501();
       var19.method_44471(5, class_7985.field_40903);
-      class_4316.method_20064(var19, var0, var2, var4, var6, var8, var10, var12, var13, var14, var15);
+      WorldRenderer.method_20064(var19, var0, var2, var4, var6, var8, var10, var12, var13, var14, var15);
       var18.method_36500();
    }
 
@@ -144,8 +144,8 @@ public class class_3372 {
 
    public static void method_15555(String var0, double var1, double var3, double var5, int var7, float var8, boolean var9, float var10, boolean var11) {
       MinecraftClient var14 = MinecraftClient.getInstance();
-      class_9071 var15 = var14.gameRenderer.method_35949();
-      if (var15.method_41642() && var14.method_8587().field_31304 != null) {
+      Camera var15 = var14.gameRenderer.method_35949();
+      if (var15.method_41642() && var14.method_8587().gameOptions != null) {
          TextRenderer var16 = var14.textRenderer;
          double var17 = var15.method_41627().field_7336;
          double var19 = var15.method_41627().field_7333;

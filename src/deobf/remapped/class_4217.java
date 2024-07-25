@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
 import java.util.Arrays;
 
-public class class_4217<T extends class_8145> extends class_5272<T> {
+public class class_4217<T extends Entity> extends class_5272<T> {
    private static String[] field_20479;
    private final class_1549 field_20477;
    private final class_1549[] field_20476 = new class_1549[8];

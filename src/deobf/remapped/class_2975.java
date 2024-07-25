@@ -4,7 +4,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class class_2975 extends class_2309<class_2271, class_9322> {
    private static String[] field_14624;
-   private static final class_240[] field_14623 = class_240.values();
+   private static final Direction[] field_14623 = Direction.values();
    private final class_2921 field_14622 = new class_2921();
 
    public class_2975(class_5002 var1) {
@@ -27,7 +27,7 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
                int var8 = Integer.signum(class_1331.method_6080(var3) - class_1331.method_6080(var1));
                int var9 = Integer.signum(class_1331.method_6067(var3) - class_1331.method_6067(var1));
                int var10 = Integer.signum(class_1331.method_6092(var3) - class_1331.method_6092(var1));
-               class_240 var11 = class_240.method_1032(var8, var9, var10);
+               Direction var11 = Direction.method_1032(var8, var9, var10);
                if (var11 != null) {
                   MutableInt var12 = new MutableInt();
                   class_2522 var13 = this.method_10615(var3, var12);
@@ -57,7 +57,7 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
    public void method_27701(long var1, int var3, boolean var4) {
       long var7 = class_6979.method_31903(var1);
 
-      for (class_240 var12 : field_14623) {
+      for (Direction var12 : field_14623) {
          long var13 = class_1331.method_6097(var1, var12);
          long var15 = class_6979.method_31903(var13);
          if (var7 == var15 || this.field_11554.method_17749(var15)) {
@@ -83,7 +83,7 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
       long var9 = class_6979.method_31903(var1);
       class_1201 var11 = this.field_11554.method_17744(var9, true);
 
-      for (class_240 var16 : field_14623) {
+      for (Direction var16 : field_14623) {
          long var17 = class_1331.method_6097(var1, var16);
          if (var17 != var3) {
             long var19 = class_6979.method_31903(var17);

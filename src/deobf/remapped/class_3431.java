@@ -91,8 +91,8 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
       class_7966 var10 = new class_7966();
       var10.method_36065(0.0, 0.0, 1000.0);
       var10.method_36062((float)var2, (float)var2, (float)var2);
-      class_5422 var11 = class_2426.field_12076.method_11074(180.0F);
-      class_5422 var12 = class_2426.field_12080.method_11074(var9 * 20.0F);
+      Quaternion var11 = class_2426.field_12076.method_11074(180.0F);
+      Quaternion var12 = class_2426.field_12080.method_11074(var9 * 20.0F);
       var11.method_24658(var12);
       var10.method_36060(var11);
       float var13 = var5.field_29605;
@@ -105,7 +105,7 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
       var5.field_41755 = -var9 * 20.0F;
       var5.field_29618 = var5.field_41701;
       var5.field_29657 = var5.field_41701;
-      class_6122 var18 = MinecraftClient.getInstance().method_8587();
+      EntityRenderDispatcher var18 = MinecraftClient.getInstance().method_8587();
       var12.method_24652();
       var18.method_28123(var12);
       var18.method_28136(false);

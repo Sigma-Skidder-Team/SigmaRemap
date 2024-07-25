@@ -5,8 +5,8 @@ import javax.annotation.Nullable;
 public class class_7079 extends class_8143 {
    private static String[] field_36558;
    private final Identifier field_36557;
-   private final class_3581 field_36559;
-   private final class_3581 field_36556;
+   private final RenderLayer field_36559;
+   private final RenderLayer field_36556;
    private final boolean field_36560;
    private final class_4673 field_36555;
 
@@ -15,8 +15,8 @@ public class class_7079 extends class_8143 {
       this.field_36560 = var2;
       this.field_36555 = new class_4673(0, 0, 256, 256, null);
       class_4970.method_22842(!var2 ? class_2757.field_13479 : class_2757.field_13482, this.method_37055(), 256, 256);
-      this.field_36559 = class_3581.method_16732(var1);
-      this.field_36556 = class_3581.method_16752(var1);
+      this.field_36559 = RenderLayer.method_16732(var1);
+      this.field_36556 = RenderLayer.method_16752(var1);
    }
 
    @Override

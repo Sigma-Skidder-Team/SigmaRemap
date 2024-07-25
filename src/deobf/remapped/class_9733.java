@@ -105,7 +105,7 @@ public abstract class class_9733 {
       }
    }
 
-   public abstract void method_44951(class_7907 var1, class_9071 var2, float var3);
+   public abstract void method_44951(class_7907 var1, Camera var2, float var3);
 
    public abstract class_7154 method_44957();
 
@@ -164,8 +164,8 @@ public abstract class class_9733 {
          double var11 = var3;
          double var13 = var5;
          if (this.field_49474 && (var1 != 0.0 || var3 != 0.0 || var5 != 0.0) && this.method_44954(var1, var3, var5)) {
-            class_1343 var15 = class_8145.method_37301(
-               (class_8145)null,
+            class_1343 var15 = Entity.method_37301(
+               (Entity)null,
                new class_1343(var1, var3, var5),
                this.method_44945(),
                this.field_49469,
@@ -206,7 +206,7 @@ public abstract class class_9733 {
 
    public int method_44952(float var1) {
       class_1331 var4 = new class_1331(this.field_49462, this.field_49473, this.field_49465);
-      return !this.field_49469.method_22559(var4) ? 0 : class_4316.method_20002(this.field_49469, var4);
+      return !this.field_49469.method_22559(var4) ? 0 : WorldRenderer.method_20002(this.field_49469, var4);
    }
 
    public boolean method_44946() {

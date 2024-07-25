@@ -99,10 +99,10 @@ public abstract class class_8549 extends class_7060 {
                var1, class_4783.field_23847.method_29260().method_10308(class_4115.field_20045, class_7422.field_37874), var5 + 1, var6 + 1, var7, var3
             );
             this.method_32529(
-               var1, class_4783.field_23448.method_29260().method_10308(class_7812.field_1543, class_240.field_818), var5 + 2, var6 + 1, var7 + 1, var3
+               var1, class_4783.field_23448.method_29260().method_10308(class_7812.field_1543, Direction.field_818), var5 + 2, var6 + 1, var7 + 1, var3
             );
             this.method_32529(
-               var1, class_4783.field_23448.method_29260().method_10308(class_7812.field_1543, class_240.field_800), var5 + 2, var6 + 1, var7 - 1, var3
+               var1, class_4783.field_23448.method_29260().method_10308(class_7812.field_1543, Direction.field_800), var5 + 2, var6 + 1, var7 - 1, var3
             );
       }
    }
@@ -125,7 +125,7 @@ public abstract class class_8549 extends class_7060 {
 
    @Nullable
    public class_7060 method_39334(class_4960 var1, List<class_7060> var2, Random var3, int var4, int var5) {
-      class_240 var8 = this.method_32518();
+      Direction var8 = this.method_32518();
       if (var8 != null) {
          switch (var8) {
             case field_818:
@@ -180,7 +180,7 @@ public abstract class class_8549 extends class_7060 {
 
    @Nullable
    public class_7060 method_39331(class_4960 var1, List<class_7060> var2, Random var3, int var4, int var5) {
-      class_240 var8 = this.method_32518();
+      Direction var8 = this.method_32518();
       if (var8 != null) {
          switch (var8) {
             case field_818:
@@ -191,7 +191,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48996 - 1,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48992 + var5,
-                  class_240.field_809,
+                  Direction.field_809,
                   this.method_32515()
                );
             case field_800:
@@ -202,7 +202,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48996 - 1,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48992 + var5,
-                  class_240.field_809,
+                  Direction.field_809,
                   this.method_32515()
                );
             case field_809:
@@ -213,7 +213,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48996 + var5,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48992 - 1,
-                  class_240.field_818,
+                  Direction.field_818,
                   this.method_32515()
                );
             case field_804:
@@ -224,7 +224,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48996 + var5,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48992 - 1,
-                  class_240.field_818,
+                  Direction.field_818,
                   this.method_32515()
                );
          }
@@ -235,7 +235,7 @@ public abstract class class_8549 extends class_7060 {
 
    @Nullable
    public class_7060 method_39335(class_4960 var1, List<class_7060> var2, Random var3, int var4, int var5) {
-      class_240 var8 = this.method_32518();
+      Direction var8 = this.method_32518();
       if (var8 != null) {
          switch (var8) {
             case field_818:
@@ -246,7 +246,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48991 + 1,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48992 + var5,
-                  class_240.field_804,
+                  Direction.field_804,
                   this.method_32515()
                );
             case field_800:
@@ -257,7 +257,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48991 + 1,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48992 + var5,
-                  class_240.field_804,
+                  Direction.field_804,
                   this.method_32515()
                );
             case field_809:
@@ -268,7 +268,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48996 + var5,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48994 + 1,
-                  class_240.field_800,
+                  Direction.field_800,
                   this.method_32515()
                );
             case field_804:
@@ -279,7 +279,7 @@ public abstract class class_8549 extends class_7060 {
                   this.field_36435.field_48996 + var5,
                   this.field_36435.field_48995 + var4,
                   this.field_36435.field_48994 + 1,
-                  class_240.field_800,
+                  Direction.field_800,
                   this.method_32515()
                );
          }

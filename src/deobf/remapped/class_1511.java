@@ -3,7 +3,7 @@ package remapped;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
-public class class_1511 extends class_8145 {
+public class class_1511 extends Entity {
    private int field_8003;
    private boolean field_8002;
    private int field_8001 = 22;
@@ -11,11 +11,11 @@ public class class_1511 extends class_8145 {
    private class_5834 field_8005;
    private UUID field_8007;
 
-   public class_1511(class_6629<? extends class_1511> var1, class_6486 var2) {
+   public class_1511(class_6629<? extends class_1511> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_1511(class_6486 var1, double var2, double var4, double var6, float var8, int var9, class_5834 var10) {
+   public class_1511(World var1, double var2, double var4, double var6, float var8, int var9, class_5834 var10) {
       this(class_6629.field_34309, var1);
       this.field_8003 = var9;
       this.method_6918(var10);
@@ -35,7 +35,7 @@ public class class_1511 extends class_8145 {
    @Nullable
    public class_5834 method_6916() {
       if (this.field_8005 == null && this.field_8007 != null && this.field_41768 instanceof class_6331) {
-         class_8145 var3 = ((class_6331)this.field_41768).method_28925(this.field_8007);
+         Entity var3 = ((class_6331)this.field_41768).method_28925(this.field_8007);
          if (var3 instanceof class_5834) {
             this.field_8005 = (class_5834)var3;
          }

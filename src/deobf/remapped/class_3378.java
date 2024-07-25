@@ -6,32 +6,32 @@ public class class_3378 {
 
    static {
       try {
-         field_16646[class_240.field_804.ordinal()] = 1;
+         field_16646[Direction.field_804.ordinal()] = 1;
       } catch (NoSuchFieldError var11) {
       }
 
       try {
-         field_16646[class_240.field_809.ordinal()] = 2;
+         field_16646[Direction.field_809.ordinal()] = 2;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field_16646[class_240.field_817.ordinal()] = 3;
+         field_16646[Direction.field_817.ordinal()] = 3;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field_16646[class_240.field_802.ordinal()] = 4;
+         field_16646[Direction.field_802.ordinal()] = 4;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field_16646[class_240.field_800.ordinal()] = 5;
+         field_16646[Direction.field_800.ordinal()] = 5;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field_16646[class_240.field_818.ordinal()] = 6;
+         field_16646[Direction.field_818.ordinal()] = 6;
       } catch (NoSuchFieldError var6) {
       }
 

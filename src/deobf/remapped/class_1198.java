@@ -22,7 +22,7 @@ public class class_1198 extends class_3599 {
    @Override
    public void method_16794() {
       Random var3 = this.field_6704.method_26594();
-      class_6486 var4 = this.field_6704.field_41768;
+      World var4 = this.field_6704.field_41768;
       int var5 = class_9299.method_42847(this.field_6704.method_37302() - 2.0 + var3.nextDouble() * 4.0);
       int var6 = class_9299.method_42847(this.field_6704.method_37309() + var3.nextDouble() * 3.0);
       int var7 = class_9299.method_42847(this.field_6704.method_37156() - 2.0 + var3.nextDouble() * 4.0);

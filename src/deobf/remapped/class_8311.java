@@ -51,7 +51,7 @@ public class class_8311 extends class_4382 {
    }
 
    @Override
-   public void method_20421(class_5834 var1, class_8145 var2, int var3) {
+   public void method_20421(class_5834 var1, Entity var2, int var3) {
       if (var2 instanceof class_5834) {
          class_5834 var6 = (class_5834)var2;
          if (this.field_42566 == 2 && var6.method_26550() == class_2780.field_13575) {

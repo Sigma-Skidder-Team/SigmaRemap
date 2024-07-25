@@ -366,7 +366,7 @@ public class class_3739 {
       }
    }
 
-   public boolean method_17317(class_1614 var1, class_8145 var2, class_4924 var3) {
+   public boolean method_17317(class_1614 var1, Entity var2, class_4924 var3) {
       if (!this.method_17332(var1, var2.method_37075(), var3)) {
          return false;
       } else {
@@ -388,7 +388,7 @@ public class class_3739 {
       }
    }
 
-   private boolean method_17326(class_8145 var1, class_5561 var2) {
+   private boolean method_17326(Entity var1, class_5561 var2) {
       if (var1 instanceof class_7666) {
          class_7666 var5 = (class_7666)var1;
          if (this.field_18303 != null) {
@@ -406,7 +406,7 @@ public class class_3739 {
       }
    }
 
-   private boolean method_17333(class_8145 var1, class_5561 var2) {
+   private boolean method_17333(Entity var1, class_5561 var2) {
       if (var1 instanceof class_4109) {
          class_4109 var5 = (class_4109)var1;
          if (this.field_18287 != null) {

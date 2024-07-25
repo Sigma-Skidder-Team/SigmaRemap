@@ -38,7 +38,7 @@ public class class_7966 {
       class_6279.method_28619(var6).method_29891(class_6555.method_29884(var10 * var7, var10 * var8, var10 * var9));
    }
 
-   public void method_36060(class_5422 var1) {
+   public void method_36060(Quaternion var1) {
       class_6279 var4 = this.field_40812.getLast();
       class_6279.method_28617(var4).method_36831(var1);
       class_6279.method_28619(var4).method_29890(var1);

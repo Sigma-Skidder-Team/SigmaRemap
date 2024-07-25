@@ -6,10 +6,10 @@ import javax.annotation.Nullable;
 public class class_160 {
    private static String[] field_483;
 
-   public static int[][] method_645(class_240 var0) {
-      class_240 var3 = var0.method_1042();
-      class_240 var4 = var3.method_1046();
-      class_240 var5 = var0.method_1046();
+   public static int[][] method_645(Direction var0) {
+      Direction var3 = var0.method_1042();
+      Direction var4 = var3.method_1046();
+      Direction var5 = var0.method_1046();
       return new int[][]{
          {var3.method_1041(), var3.method_1034()},
          {var4.method_1041(), var4.method_1034()},
@@ -60,7 +60,7 @@ public class class_160 {
          }
 
          var6++;
-         var5.method_13368(class_240.field_817);
+         var5.method_13368(Direction.field_817);
       }
 
       return Double.POSITIVE_INFINITY;
@@ -77,7 +77,7 @@ public class class_160 {
                return null;
             } else {
                class_1343 var8 = class_1343.method_6219(var2, var6);
-               return !var1.method_6680((class_8145)null, var0.method_30473().method_27939(var8)).allMatch(class_4190::method_19485) ? null : var8;
+               return !var1.method_6680((Entity)null, var0.method_30473().method_27939(var8)).allMatch(class_4190::method_19485) ? null : var8;
             }
          } else {
             return null;

@@ -941,7 +941,7 @@ public class class_9300 {
       }
    }
 
-   public static class_1343 method_42860(class_1343 var0, class_6486 var1, class_8145 var2, float var3) {
+   public static class_1343 method_42860(class_1343 var0, World var1, Entity var2, float var3) {
       MinecraftClient var6 = MinecraftClient.getInstance();
       if (!class_4869.method_22377(var1)) {
          if (!class_4869.method_22376(var1)) {
@@ -954,7 +954,7 @@ public class class_9300 {
       }
    }
 
-   public static class_1343 method_42927(class_1343 var0, class_6486 var1, class_8145 var2, float var3) {
+   public static class_1343 method_42927(class_1343 var0, World var1, Entity var2, float var3) {
       MinecraftClient var6 = MinecraftClient.getInstance();
       if (!class_4869.method_22376(var1)) {
          return !class_4869.method_22378(var1) ? var0 : method_42884(var0);

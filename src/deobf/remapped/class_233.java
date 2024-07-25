@@ -18,7 +18,7 @@ public interface class_233 {
 
    void method_979(class_6098 var1);
 
-   class_6486 method_972();
+   World method_972();
 
    int method_973();
 

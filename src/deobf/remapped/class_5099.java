@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_5099 {
    private static MinecraftClient field_26314;
-   private static class_8881 field_26299;
+   private static GameOptions field_26299;
    private static class_3492 field_26295;
    public static boolean field_26310 = false;
    public static class_5334 field_26306 = new class_5334();

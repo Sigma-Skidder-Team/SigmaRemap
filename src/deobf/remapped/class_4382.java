@@ -105,10 +105,10 @@ public abstract class class_4382 {
       return this.field_21496.method_40057(var1.method_27960());
    }
 
-   public void method_20421(class_5834 var1, class_8145 var2, int var3) {
+   public void method_20421(class_5834 var1, Entity var2, int var3) {
    }
 
-   public void method_20427(class_5834 var1, class_8145 var2, int var3) {
+   public void method_20427(class_5834 var1, Entity var2, int var3) {
    }
 
    public boolean method_20429() {

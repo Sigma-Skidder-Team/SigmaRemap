@@ -12,11 +12,11 @@ public class class_5928 extends class_8218<class_9180> implements class_2593 {
 
    public class_5928(class_3073 var1) {
       super(var1, () -> class_133.field_371);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_30070, class_240.field_818).method_10308(field_30071, Boolean.valueOf(false)));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_30070, Direction.field_818).method_10308(field_30071, Boolean.valueOf(false)));
    }
 
    @Override
-   public class_7892<? extends class_7099> method_37624(class_2522 var1, class_6486 var2, class_1331 var3, boolean var4) {
+   public class_7892<? extends class_7099> method_37624(class_2522 var1, World var2, class_1331 var3, boolean var4) {
       return class_3606::method_16828;
    }
 
@@ -39,7 +39,7 @@ public class class_5928 extends class_8218<class_9180> implements class_2593 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       class_1031 var9 = var4.method_3237();
       class_3757 var10 = var2.method_28260(var3);
       if (var9 != null && var10 instanceof class_9180) {
@@ -67,7 +67,7 @@ public class class_5928 extends class_8218<class_9180> implements class_2593 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       for (int var7 = 0; var7 < 3; var7++) {
          int var8 = var4.nextInt(2) * 2 - 1;
          int var9 = var4.nextInt(2) * 2 - 1;
@@ -83,12 +83,12 @@ public class class_5928 extends class_8218<class_9180> implements class_2593 {
 
    @Override
    public class_2522 method_10785(class_2522 var1, class_6631 var2) {
-      return var1.method_10308(field_30070, var2.method_30489(var1.<class_240>method_10313(field_30070)));
+      return var1.method_10308(field_30070, var2.method_30489(var1.<Direction>method_10313(field_30070)));
    }
 
    @Override
    public class_2522 method_10773(class_2522 var1, class_9022 var2) {
-      return var1.method_8318(var2.method_41390(var1.<class_240>method_10313(field_30070)));
+      return var1.method_8318(var2.method_41390(var1.<Direction>method_10313(field_30070)));
    }
 
    @Override
@@ -102,7 +102,7 @@ public class class_5928 extends class_8218<class_9180> implements class_2593 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.<Boolean>method_10313(field_30071)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }

@@ -88,7 +88,7 @@ public abstract class class_8116 implements class_5801 {
       return this.field_41599;
    }
 
-   public boolean method_36922(class_6486 var1) {
+   public boolean method_36922(World var1) {
       if (var1.field_33055 || var1.method_29546() == this.field_41600) {
          return false;
       } else if ("Searge".equalsIgnoreCase(this.field_41599)) {

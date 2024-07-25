@@ -71,7 +71,7 @@ public class class_7481 implements class_5990 {
    @Override
    public class_2522 method_28262(class_1331 var1) {
       int var4 = var1.method_12165();
-      if (!class_6486.method_29571(var4)) {
+      if (!World.method_29571(var4)) {
          class_1315 var5 = this.method_27349()[var4 >> 4];
          return !class_1315.method_6003(var5)
             ? var5.method_5999(var1.method_12173() & 15, var4 & 15, var1.method_12185() & 15)
@@ -84,7 +84,7 @@ public class class_7481 implements class_5990 {
    @Override
    public class_4774 method_28258(class_1331 var1) {
       int var4 = var1.method_12165();
-      if (!class_6486.method_29571(var4)) {
+      if (!World.method_29571(var4)) {
          class_1315 var5 = this.method_27349()[var4 >> 4];
          return !class_1315.method_6003(var5)
             ? var5.method_5986(var1.method_12173() & 15, var4 & 15, var1.method_12185() & 15)
@@ -210,7 +210,7 @@ public class class_7481 implements class_5990 {
    }
 
    @Override
-   public void method_27342(class_8145 var1) {
+   public void method_27342(Entity var1) {
       if (!var1.method_37070()) {
          class_5734 var4 = new class_5734();
          var1.method_37350(var4);
@@ -363,7 +363,7 @@ public class class_7481 implements class_5990 {
 
    @Override
    public void method_27365(class_1331 var1) {
-      if (!class_6486.method_29556(var1)) {
+      if (!World.method_29556(var1)) {
          class_5990.method_27337(this.field_38178, var1.method_12165() >> 4).add(method_34024(var1));
       }
    }

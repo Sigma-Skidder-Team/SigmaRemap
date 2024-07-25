@@ -38,7 +38,7 @@ public class class_6323 implements class_2995 {
       class_3372.method_15555(var0, var5, var7, var9, var2, 0.04F, true, 0.0F, true);
    }
 
-   private class_9071 method_28820() {
+   private Camera method_28820() {
       return this.field_32283.gameRenderer.method_35949();
    }
 }

@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class class_5836 extends class_4285<class_1941> {
-   private static final class_240[] field_29681 = class_240.values();
+   private static final Direction[] field_29681 = Direction.values();
 
    public class_5836(Codec<class_1941> var1) {
       super(var1);
@@ -35,7 +35,7 @@ public class class_5836 extends class_4285<class_1941> {
          if (var1.method_22548(var6)) {
             int var9 = 0;
 
-            for (class_240 var13 : field_29681) {
+            for (Direction var13 : field_29681) {
                class_2522 var14 = var1.method_28262(var7.method_13371(var6, var13));
                if (var14.method_8350(class_4783.field_23700) || var14.method_8350(class_4783.field_23273)) {
                   var9++;
@@ -93,7 +93,7 @@ public class class_5836 extends class_4285<class_1941> {
             var0.method_7513(var2, class_4783.field_23288.method_29260(), 2);
          }
 
-         var2.method_13368(class_240.field_802);
+         var2.method_13368(Direction.field_802);
       }
    }
 }

@@ -6,7 +6,7 @@ public class class_6907 extends class_2654 {
    private boolean field_35507;
    private boolean field_35506;
 
-   public class_6907(class_6486 var1, class_2034 var2, class_546 var3) {
+   public class_6907(World var1, class_2034 var2, class_546 var3) {
       super(var1, var2, var3);
    }
 
@@ -41,7 +41,7 @@ public class class_6907 extends class_2654 {
    }
 
    @Override
-   public void method_27342(class_8145 var1) {
+   public void method_27342(Entity var1) {
       this.field_35507 = true;
       super.method_27342(var1);
    }

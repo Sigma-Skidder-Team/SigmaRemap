@@ -3,7 +3,7 @@ package remapped;
 public class class_5895 extends class_7164<class_378, class_1290<class_378>> {
    private static final Identifier field_29940 = new Identifier("textures/entity/slime/slime.png");
 
-   public class_5895(class_6122 var1) {
+   public class_5895(EntityRenderDispatcher var1) {
       super(var1, new class_1290<class_378>(16), 0.25F);
       this.method_29100(new class_3860<class_378>(this));
    }

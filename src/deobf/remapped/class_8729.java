@@ -14,7 +14,7 @@ public class class_8729 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       class_5734 var7 = var6.method_27990();
       if (!var2.field_3876.field_4944) {

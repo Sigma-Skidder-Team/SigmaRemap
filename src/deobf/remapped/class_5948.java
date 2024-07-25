@@ -7,7 +7,7 @@ public class class_5948 extends class_4109 {
    private boolean field_30330;
    private int field_30331;
 
-   public class_5948(class_6629<? extends class_5948> var1, class_6486 var2) {
+   public class_5948(class_6629<? extends class_5948> var1, World var2) {
       super(var1, var2);
    }
 

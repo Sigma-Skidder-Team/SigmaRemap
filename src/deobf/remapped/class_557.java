@@ -54,7 +54,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
    }
 
    private void method_2676() {
-      class_6486 var3 = this.method_17402();
+      World var3 = this.method_17402();
       if (var3 != null) {
          class_1331 var4 = this.method_17399();
          Random var5 = var3.field_33033;
@@ -64,11 +64,11 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
             }
          }
 
-         int var17 = this.method_17403().<class_240>method_10313(class_8474.field_43419).method_1031();
+         int var17 = this.method_17403().<Direction>method_10313(class_8474.field_43419).method_1031();
 
          for (int var7 = 0; var7 < this.field_3312.size(); var7++) {
             if (!this.field_3312.get(var7).method_28022() && var5.nextFloat() < 0.2F) {
-               class_240 var8 = class_240.method_1040(Math.floorMod(var7 + var17, 4));
+               Direction var8 = Direction.method_1040(Math.floorMod(var7 + var17, 4));
                float var9 = 0.3125F;
                double var10 = (double)var4.method_12173()
                   + 0.5

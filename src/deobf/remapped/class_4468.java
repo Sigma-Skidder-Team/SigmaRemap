@@ -59,7 +59,7 @@ public class class_4468 {
       return var2;
    }
 
-   public int method_20744(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_20744(class_2522 var1, World var2, class_1331 var3) {
       class_3440 var6 = this.field_21791.method_14040(class_8669.field_44462.method_14041(var1.method_8360()));
       if (var6 == null) {
          class_1513 var7 = var1.method_8323(var2, var3);

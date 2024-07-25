@@ -30,7 +30,7 @@ public enum class_2407 {
                }
 
                var1.method_29573(
-                  (class_8145)null,
+                  (Entity)null,
                   (double)((float)var13.method_42371() + 0.5F),
                   (double)var13.method_42370(),
                   (double)((float)var13.method_42373() + 0.5F),

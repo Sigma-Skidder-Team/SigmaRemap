@@ -27,7 +27,7 @@ public class class_6800 implements class_4904 {
    }
 
    @Override
-   public class_8014 method_22451(class_8145 var1, Random var2) {
+   public class_8014 method_22451(Entity var1, Random var2) {
       class_6098 var5 = new class_6098(class_4897.field_24997, this.field_35047);
       List var6 = class_8669.field_44365
          .method_39801()

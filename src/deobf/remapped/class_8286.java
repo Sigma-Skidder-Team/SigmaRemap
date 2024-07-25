@@ -27,7 +27,7 @@ public class class_8286 {
       return this;
    }
 
-   public boolean method_38241(class_8145 var1) {
+   public boolean method_38241(Entity var1) {
       if (this != field_42476) {
          return !(var1 instanceof class_5834) ? false : this.method_38239(((class_5834)var1).method_26491());
       } else {

@@ -26,7 +26,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
       class_6044.field_30865
    );
 
-   public class_3895(class_6629<? extends class_3895> var1, class_6486 var2) {
+   public class_3895(class_6629<? extends class_3895> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }
@@ -120,7 +120,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       if (var1 instanceof class_5834) {
          this.field_18950 = 10;
          this.field_41768.method_29587(this, (byte)4);

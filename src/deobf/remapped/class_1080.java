@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public abstract class class_1080 extends class_8145 {
+public abstract class class_1080 extends Entity {
    private static final class_7821<Integer> field_5894 = class_8073.<Integer>method_36641(class_1080.class, class_2734.field_13366);
    private static final class_7821<Integer> field_5880 = class_8073.<Integer>method_36641(class_1080.class, class_2734.field_13366);
    private static final class_7821<Float> field_5886 = class_8073.<Float>method_36641(class_1080.class, class_2734.field_13350);
@@ -22,10 +22,10 @@ public abstract class class_1080 extends class_8145 {
    private boolean field_5893;
    private static final Map<class_3665, Pair<class_2700, class_2700>> field_5890 = Util.<Map<class_3665, Pair<class_2700, class_2700>>>method_44659(
       Maps.newEnumMap(class_3665.class), var0 -> {
-         class_2700 var3 = class_240.field_809.method_1037();
-         class_2700 var4 = class_240.field_804.method_1037();
-         class_2700 var5 = class_240.field_818.method_1037();
-         class_2700 var6 = class_240.field_800.method_1037();
+         class_2700 var3 = Direction.field_809.method_1037();
+         class_2700 var4 = Direction.field_804.method_1037();
+         class_2700 var5 = Direction.field_818.method_1037();
+         class_2700 var6 = Direction.field_800.method_1037();
          class_2700 var7 = var3.method_12181();
          class_2700 var8 = var4.method_12181();
          class_2700 var9 = var5.method_12181();
@@ -52,12 +52,12 @@ public abstract class class_1080 extends class_8145 {
    private double field_5883;
    private double field_5897;
 
-   public class_1080(class_6629<?> var1, class_6486 var2) {
+   public class_1080(class_6629<?> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
    }
 
-   public class_1080(class_6629<?> var1, class_6486 var2, double var3, double var5, double var7) {
+   public class_1080(class_6629<?> var1, World var2, double var3, double var5, double var7) {
       this(var1, var2);
       this.method_37256(var3, var5, var7);
       this.method_37215(class_1343.field_7335);
@@ -66,7 +66,7 @@ public abstract class class_1080 extends class_8145 {
       this.field_41725 = var7;
    }
 
-   public static class_1080 method_4759(class_6486 var0, double var1, double var3, double var5, class_3481 var7) {
+   public static class_1080 method_4759(World var0, double var1, double var3, double var5, class_3481 var7) {
       if (var7 != class_3481.field_17064) {
          if (var7 != class_3481.field_17068) {
             if (var7 != class_3481.field_17067) {
@@ -106,7 +106,7 @@ public abstract class class_1080 extends class_8145 {
    }
 
    @Override
-   public boolean method_37325(class_8145 var1) {
+   public boolean method_37325(Entity var1) {
       return class_9149.method_42092(this, var1);
    }
 
@@ -127,7 +127,7 @@ public abstract class class_1080 extends class_8145 {
 
    @Override
    public class_1343 method_37282(class_5834 var1) {
-      class_240 var4 = this.method_37235();
+      Direction var4 = this.method_37235();
       if (var4.method_1029() == class_9249.field_47216) {
          return super.method_37282(var1);
       } else {
@@ -241,7 +241,7 @@ public abstract class class_1080 extends class_8145 {
    }
 
    @Override
-   public class_240 method_37235() {
+   public Direction method_37235() {
       return !this.field_5893 ? this.method_37365().method_1042() : this.method_37365().method_1046().method_1042();
    }
 
@@ -305,7 +305,7 @@ public abstract class class_1080 extends class_8145 {
             List var25 = this.field_41768.method_25867(this, this.method_37241().method_18899(0.2F, 0.0, 0.2F), class_3572.method_16616(this));
             if (!var25.isEmpty()) {
                for (int var26 = 0; var26 < var25.size(); var26++) {
-                  class_8145 var24 = (class_8145)var25.get(var26);
+                  Entity var24 = (Entity)var25.get(var26);
                   if (!(var24 instanceof class_704)
                      && !(var24 instanceof class_8127)
                      && !(var24 instanceof class_1080)
@@ -318,7 +318,7 @@ public abstract class class_1080 extends class_8145 {
                }
             }
          } else {
-            for (class_8145 var23 : this.field_41768.method_25870(this, this.method_37241().method_18899(0.2F, 0.0, 0.2F))) {
+            for (Entity var23 : this.field_41768.method_25870(this, this.method_37241().method_18899(0.2F, 0.0, 0.2F))) {
                if (!this.method_37072(var23) && var23.method_37177() && var23 instanceof class_1080) {
                   var23.method_37183(this);
                }
@@ -423,7 +423,7 @@ public abstract class class_1080 extends class_8145 {
       double var30 = Math.min(2.0, Math.sqrt(method_37266(var17)));
       var17 = new class_1343(var30 * var22 / var26, var17.field_7333, var30 * var24 / var26);
       this.method_37215(var17);
-      class_8145 var32 = this.method_37114().isEmpty() ? null : this.method_37114().get(0);
+      Entity var32 = this.method_37114().isEmpty() ? null : this.method_37114().get(0);
       if (var32 instanceof class_704) {
          class_1343 var33 = var32.method_37098();
          double var34 = method_37266(var33);
@@ -664,7 +664,7 @@ public abstract class class_1080 extends class_8145 {
    }
 
    @Override
-   public void method_37183(class_8145 var1) {
+   public void method_37183(Entity var1) {
       if (!this.field_41768.field_33055 && !var1.field_41731 && !this.field_41731 && !this.method_37072(var1)) {
          double var4 = var1.method_37302() - this.method_37302();
          double var6 = var1.method_37156() - this.method_37156();

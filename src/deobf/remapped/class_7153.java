@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_7153 extends class_8549 {
    private static String[] field_36841;
 
-   public class_7153(int var1, Random var2, class_9616 var3, class_240 var4) {
+   public class_7153(int var1, Random var2, class_9616 var3, Direction var4) {
       super(class_2746.field_13433, var1);
       this.method_32519(var4);
       this.field_43750 = this.method_39333(var2);
@@ -22,7 +22,7 @@ public class class_7153 extends class_8549 {
       this.method_39334((class_4960)var1, var2, var3, 1, 1);
    }
 
-   public static class_7153 method_32844(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5, int var6) {
+   public static class_7153 method_32844(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
       class_9616 var9 = class_9616.method_44386(var2, var3, var4, -1, -1, 0, 9, 5, 11, var5);
       return method_39332(var9) && class_7060.method_32502(var0, var9) == null ? new class_7153(var6, var1, var9, var5) : null;
    }
@@ -129,10 +129,10 @@ public class class_7153 extends class_8549 {
          8,
          var5
       );
-      class_2522 var12 = class_4783.field_23847.method_29260().method_10308(class_4115.field_20050, class_240.field_809);
+      class_2522 var12 = class_4783.field_23847.method_29260().method_10308(class_4115.field_20050, Direction.field_809);
       class_2522 var11 = class_4783.field_23847
          .method_29260()
-         .method_10308(class_4115.field_20050, class_240.field_809)
+         .method_10308(class_4115.field_20050, Direction.field_809)
          .method_10308(class_4115.field_20045, class_7422.field_37874);
       this.method_32529(var1, var12, 4, 1, 2, var5);
       this.method_32529(var1, var11, 4, 2, 2, var5);

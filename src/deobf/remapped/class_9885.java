@@ -22,15 +22,15 @@ public class class_9885 {
                + ", particle: "
                + var0.method_33587()
          );
-         class_240[] var3 = class_240.field_803;
+         Direction[] var3 = Direction.field_803;
 
          for (int var4 = 0; var4 < var3.length; var4++) {
-            class_240 var5 = var3[var4];
+            Direction var5 = var3[var4];
             List var6 = var0.method_33580((class_2522)null, var5, field_50136);
             method_45534(var5.method_21049(), var6, "  ");
          }
 
-         List var7 = var0.method_33580((class_2522)null, (class_240)null, field_50136);
+         List var7 = var0.method_33580((class_2522)null, (Direction)null, field_50136);
          method_45534("General", var7, "  ");
       }
    }
@@ -75,12 +75,12 @@ public class class_9885 {
    }
 
    public static class_7373 method_45535(class_7373 var0) {
-      List var3 = method_45541(var0.method_33580((class_2522)null, (class_240)null, field_50136));
-      class_240[] var4 = class_240.field_803;
+      List var3 = method_45541(var0.method_33580((class_2522)null, (Direction)null, field_50136));
+      Direction[] var4 = Direction.field_803;
       HashMap var5 = new HashMap();
 
       for (int var6 = 0; var6 < var4.length; var6++) {
-         class_240 var7 = var4[var6];
+         Direction var7 = var4[var6];
          List var8 = var0.method_33580((class_2522)null, var7, field_50136);
          List var9 = method_45541(var8);
          var5.put(var7, var9);

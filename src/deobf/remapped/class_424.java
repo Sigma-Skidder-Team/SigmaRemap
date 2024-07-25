@@ -78,10 +78,10 @@ public class class_424 extends class_4285<class_9431> {
                      break;
                   }
 
-                  var14.method_13368(class_240.field_817);
+                  var14.method_13368(Direction.field_817);
                } else {
                   this.method_19906(var1, var14, class_4783.field_23788.method_29260());
-                  var14.method_13368(class_240.field_817);
+                  var14.method_13368(Direction.field_817);
                   var8 = true;
                }
             }
@@ -99,7 +99,7 @@ public class class_424 extends class_4285<class_9431> {
             return var2;
          }
 
-         var2.method_13368(class_240.field_802);
+         var2.method_13368(Direction.field_802);
       }
 
       return null;
@@ -109,8 +109,8 @@ public class class_424 extends class_4285<class_9431> {
       if (!method_2103(var0, var1, var2)) {
          return false;
       } else {
-         class_2522 var5 = var0.method_28262(var2.method_13368(class_240.field_802));
-         var2.method_13368(class_240.field_817);
+         class_2522 var5 = var0.method_28262(var2.method_13368(Direction.field_802));
+         var2.method_13368(Direction.field_817);
          return !var5.method_8345() && !field_1791.contains(var5.method_8360());
       }
    }
@@ -122,7 +122,7 @@ public class class_424 extends class_4285<class_9431> {
          class_2522 var5 = var0.method_28262(var1);
          if (!field_1791.contains(var5.method_8360())) {
             if (!var5.method_8345()) {
-               var1.method_13368(class_240.field_817);
+               var1.method_13368(Direction.field_817);
                continue;
             }
 

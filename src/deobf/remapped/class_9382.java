@@ -3,7 +3,7 @@ package remapped;
 public class class_9382 extends class_6906<class_2048> {
    private static String[] field_47951;
 
-   public class_9382(class_6122 var1) {
+   public class_9382(EntityRenderDispatcher var1) {
       super(var1);
    }
 

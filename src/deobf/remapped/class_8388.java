@@ -5,11 +5,11 @@ public abstract class class_8388 extends class_5783 {
    public double field_42910;
    public double field_42911;
 
-   public class_8388(class_6629<? extends class_8388> var1, class_6486 var2) {
+   public class_8388(class_6629<? extends class_8388> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_8388(class_6629<? extends class_8388> var1, double var2, double var4, double var6, double var8, double var10, double var12, class_6486 var14) {
+   public class_8388(class_6629<? extends class_8388> var1, double var2, double var4, double var6, double var8, double var10, double var12, World var14) {
       this(var1, var14);
       this.method_37144(var2, var4, var6, this.field_41701, this.field_41755);
       this.method_37351();
@@ -21,7 +21,7 @@ public abstract class class_8388 extends class_5783 {
       }
    }
 
-   public class_8388(class_6629<? extends class_8388> var1, class_5834 var2, double var3, double var5, double var7, class_6486 var9) {
+   public class_8388(class_6629<? extends class_8388> var1, class_5834 var2, double var3, double var5, double var7, World var9) {
       this(var1, var2.method_37302(), var2.method_37309(), var2.method_37156(), var3, var5, var7, var9);
       this.method_26159(var2);
       this.method_37395(var2.field_41701, var2.field_41755);
@@ -44,7 +44,7 @@ public abstract class class_8388 extends class_5783 {
 
    @Override
    public void method_37123() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       if (this.field_41768.field_33055 || (var3 == null || !var3.field_41751) && this.field_41768.method_22559(this.method_37075())) {
          super.method_37123();
          if (this.method_38646()) {
@@ -90,7 +90,7 @@ public abstract class class_8388 extends class_5783 {
    }
 
    @Override
-   public boolean method_26164(class_8145 var1) {
+   public boolean method_26164(Entity var1) {
       return super.method_26164(var1) && !var1.field_41731;
    }
 
@@ -139,7 +139,7 @@ public abstract class class_8388 extends class_5783 {
    public boolean method_37181(class_6199 var1, float var2) {
       if (!this.method_37180(var1)) {
          this.method_37138();
-         class_8145 var5 = var1.method_28372();
+         Entity var5 = var1.method_28372();
          if (var5 == null) {
             return false;
          } else {
@@ -163,7 +163,7 @@ public abstract class class_8388 extends class_5783 {
 
    @Override
    public class_6310<?> method_37142() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       int var4 = var3 != null ? var3.method_37145() : 0;
       return new class_6589(
          this.method_37145(),

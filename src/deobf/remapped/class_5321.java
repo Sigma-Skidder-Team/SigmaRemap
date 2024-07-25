@@ -6,17 +6,17 @@ public class class_5321 {
 
    static {
       try {
-         field_27162[class_240.field_818.ordinal()] = 1;
+         field_27162[Direction.field_818.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field_27162[class_240.field_800.ordinal()] = 2;
+         field_27162[Direction.field_800.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field_27162[class_240.field_809.ordinal()] = 3;
+         field_27162[Direction.field_809.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

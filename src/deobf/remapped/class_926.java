@@ -15,7 +15,7 @@ public enum class_926 {
    }
 
    @Override
-   public class_2522 method_43653(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_43653(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       class_2522 var9 = var1.method_8359(var2, var4.method_28262(var6), var4, var5, var6);
       if (var1 != var9) {
          int var10 = var9.<Integer>method_10313(class_6023.field_30689);
@@ -49,7 +49,7 @@ public enum class_926 {
             if (var12.<Integer>method_10313(class_6023.field_30689) >= var7) {
                var1.method_7513(var11, var12.method_10308(class_6023.field_30689, Integer.valueOf(var7)), 18);
                if (var6 != 7) {
-                  for (class_240 var16 : field_18694) {
+                  for (Direction var16 : field_18694) {
                      var4.method_13371(var11, var16);
                      class_2522 var17 = var1.method_28262(var4);
                      if (var17.method_10307(class_6023.field_30689) && var12.<Integer>method_10313(class_6023.field_30689) > var6) {

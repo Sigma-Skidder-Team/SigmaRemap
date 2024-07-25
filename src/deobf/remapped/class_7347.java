@@ -9,7 +9,7 @@ public class class_7347 extends class_7157 {
       super(var1);
    }
 
-   public boolean method_33488(class_6946 var1, class_6486 var2) {
+   public boolean method_33488(class_6946 var1, World var2) {
       boolean var5 = false;
       int var6 = 0;
 

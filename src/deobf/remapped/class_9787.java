@@ -12,11 +12,11 @@ public class class_9787 extends class_6414 implements class_2593 {
    public static final class_6720 field_49670 = class_6169.field_31569;
    public static final class_6720 field_49664 = class_6169.field_31566;
    public static final class_6720 field_49673 = class_6023.field_30719;
-   public static final Map<class_240, class_6720> field_49665 = class_6169.field_31571
+   public static final Map<Direction, class_6720> field_49665 = class_6169.field_31571
       .entrySet()
       .stream()
       .filter(var0 -> var0.getKey().method_1029().method_42629())
-      .collect(Util.<class_240, class_6720>toMap());
+      .collect(Util.<Direction, class_6720>toMap());
    public final class_4190[] field_49672;
    public final class_4190[] field_49666;
    private final Object2IntMap<class_2522> field_49669 = new Object2IntOpenHashMap();
@@ -86,7 +86,7 @@ public class class_9787 extends class_6414 implements class_2593 {
       return this.field_49672[this.method_45184(var1)];
    }
 
-   private static int method_45183(class_240 var0) {
+   private static int method_45183(Direction var0) {
       return 1 << var0.method_1031();
    }
 
@@ -94,19 +94,19 @@ public class class_9787 extends class_6414 implements class_2593 {
       return this.field_49669.computeIntIfAbsent(var1, var0 -> {
          int var3 = 0;
          if (var0.<Boolean>method_10313(field_49671)) {
-            var3 |= method_45183(class_240.field_818);
+            var3 |= method_45183(Direction.field_818);
          }
 
          if (var0.<Boolean>method_10313(field_49667)) {
-            var3 |= method_45183(class_240.field_804);
+            var3 |= method_45183(Direction.field_804);
          }
 
          if (var0.<Boolean>method_10313(field_49670)) {
-            var3 |= method_45183(class_240.field_800);
+            var3 |= method_45183(Direction.field_800);
          }
 
          if (var0.<Boolean>method_10313(field_49664)) {
-            var3 |= method_45183(class_240.field_809);
+            var3 |= method_45183(Direction.field_809);
          }
 
          return var3;

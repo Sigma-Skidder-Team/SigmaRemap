@@ -8,7 +8,7 @@ public interface class_3644 {
       return (class_7373)this;
    }
 
-   default List<class_5024> method_16965(class_2522 var1, class_240 var2, Random var3, class_1488 var4) {
+   default List<class_5024> method_16965(class_2522 var1, Direction var2, Random var3, class_1488 var4) {
       return this.method_16968().method_33580(var1, var2, var3);
    }
 

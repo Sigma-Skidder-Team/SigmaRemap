@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class class_9396 {
-   private class_8145 field_48018 = null;
+   private Entity field_48018 = null;
    private double field_48010 = 0.0;
    private double field_48016 = -2.1474836E9F;
    private double field_48015 = -2.1474836E9F;
@@ -14,12 +14,12 @@ public class class_9396 {
    private Set<class_1331> field_48013 = new HashSet<class_1331>();
    private class_2921 field_48014 = new class_2921();
 
-   public class_9396(class_8145 var1) {
+   public class_9396(Entity var1) {
       this.field_48018 = var1;
       this.field_48010 = (double)var1.method_37277();
    }
 
-   public void method_43470(class_4316 var1) {
+   public void method_43470(WorldRenderer var1) {
       if (class_3111.method_14278()) {
          long var4 = System.currentTimeMillis();
          if (var4 < this.field_48017 + 500L) {
@@ -44,9 +44,9 @@ public class class_9396 {
          this.field_48011 = var10;
          HashSet var19 = new HashSet();
          if (var10 > 0) {
-            class_240 var20 = (class_9299.method_42847(var39) & 15) < 8 ? class_240.field_809 : class_240.field_804;
-            class_240 var21 = (class_9299.method_42847(var6) & 15) < 8 ? class_240.field_802 : class_240.field_817;
-            class_240 var22 = (class_9299.method_42847(var8) & 15) < 8 ? class_240.field_818 : class_240.field_800;
+            Direction var20 = (class_9299.method_42847(var39) & 15) < 8 ? Direction.field_809 : Direction.field_804;
+            Direction var21 = (class_9299.method_42847(var6) & 15) < 8 ? Direction.field_802 : Direction.field_817;
+            Direction var22 = (class_9299.method_42847(var8) & 15) < 8 ? Direction.field_818 : Direction.field_800;
             class_1331 var23 = new class_1331(var39, var6, var8);
             class_3511 var24 = var1.method_20068(var23);
             class_1331 var25 = this.method_43477(var24, var23, var20);
@@ -78,7 +78,7 @@ public class class_9396 {
       }
    }
 
-   private class_1331 method_43477(class_3511 var1, class_1331 var2, class_240 var3) {
+   private class_1331 method_43477(class_3511 var1, class_1331 var2, Direction var3) {
       return var1 == null ? var2.method_6099(var3, 16) : var1.method_16143(var3);
    }
 
@@ -100,14 +100,14 @@ public class class_9396 {
       }
    }
 
-   public void method_43473(class_4316 var1) {
+   public void method_43473(WorldRenderer var1) {
       for (class_1331 var5 : this.field_48013) {
          class_3511 var6 = var1.method_20068(var5);
          this.method_43469(var6, (Set<class_1331>)null, (Set<class_1331>)null);
       }
    }
 
-   public class_8145 method_43471() {
+   public Entity method_43471() {
       return this.field_48018;
    }
 

@@ -4,7 +4,7 @@ public class class_481 extends class_7164<class_4206, class_1898<class_4206>> {
    private static final Identifier field_2983 = new Identifier("textures/entity/ghast/ghast.png");
    private static final Identifier field_2984 = new Identifier("textures/entity/ghast/ghast_shooting.png");
 
-   public class_481(class_6122 var1) {
+   public class_481(EntityRenderDispatcher var1) {
       super(var1, new class_1898<class_4206>(), 1.5F);
    }
 

@@ -5,10 +5,10 @@ import java.util.List;
 
 public class class_3420 extends class_3757 implements class_3745 {
    private class_2522 field_16829;
-   private class_240 field_16834;
+   private Direction field_16834;
    private boolean field_16827;
    private boolean field_16836;
-   private static final ThreadLocal<class_240> field_16831 = ThreadLocal.<class_240>withInitial(() -> null);
+   private static final ThreadLocal<Direction> field_16831 = ThreadLocal.<Direction>withInitial(() -> null);
    private float field_16835;
    private float field_16833;
    private long field_16832;
@@ -18,7 +18,7 @@ public class class_3420 extends class_3757 implements class_3745 {
       super(class_133.field_364);
    }
 
-   public class_3420(class_2522 var1, class_240 var2, boolean var3, boolean var4) {
+   public class_3420(class_2522 var1, Direction var2, boolean var3, boolean var4) {
       this();
       this.field_16829 = var1;
       this.field_16834 = var2;
@@ -35,7 +35,7 @@ public class class_3420 extends class_3757 implements class_3745 {
       return this.field_16827;
    }
 
-   public class_240 method_15787() {
+   public Direction method_15787() {
       return this.field_16834;
    }
 
@@ -73,32 +73,32 @@ public class class_3420 extends class_3757 implements class_3745 {
             .method_29260()
             .method_10308(class_1166.field_6610, Boolean.valueOf(this.field_16835 > 0.25F))
             .method_10308(class_1166.field_6616, !this.field_16829.method_8350(class_4783.field_23861) ? class_989.field_5039 : class_989.field_5035)
-            .method_10308(class_1166.field_16180, this.field_16829.<class_240>method_10313(class_1990.field_16180))
+            .method_10308(class_1166.field_16180, this.field_16829.<Direction>method_10313(class_1990.field_16180))
          : this.field_16829;
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_15783(float var1) {
-      class_240 var4 = this.method_15800();
+      Direction var4 = this.method_15800();
       double var5 = (double)(var1 - this.field_16835);
       class_4190 var7 = this.method_15794().method_8324(this.field_18364, this.method_17399());
       if (!var7.method_19485()) {
          class_4092 var8 = this.method_15797(var7.method_19483());
-         List var9 = this.field_18364.method_25870((class_8145)null, class_2686.method_12066(var8, var4, var5).method_18905(var8));
+         List var9 = this.field_18364.method_25870((Entity)null, class_2686.method_12066(var8, var4, var5).method_18905(var8));
          if (!var9.isEmpty()) {
             List var10 = var7.method_19492();
             boolean var11 = this.field_16829.method_8350(class_4783.field_23498);
             Iterator var12 = var9.iterator();
 
             while (true) {
-               class_8145 var13;
+               Entity var13;
                while (true) {
                   if (!var12.hasNext()) {
                      return;
                   }
 
-                  var13 = (class_8145)var12.next();
+                  var13 = (Entity)var12.next();
                   if (var13.method_37132() != class_718.field_3914) {
                      if (!var11) {
                         break;
@@ -151,30 +151,30 @@ public class class_3420 extends class_3757 implements class_3745 {
       }
    }
 
-   private static void method_15782(class_240 var0, class_8145 var1, double var2, class_240 var4) {
+   private static void method_15782(Direction var0, Entity var1, double var2, Direction var4) {
       field_16831.set(var0);
       var1.method_37226(
          class_7412.field_37838, new class_1343(var2 * (double)var4.method_1041(), var2 * (double)var4.method_1054(), var2 * (double)var4.method_1034())
       );
-      field_16831.set((class_240)null);
+      field_16831.set((Direction)null);
    }
 
    private void method_15802(float var1) {
       if (this.method_15793()) {
-         class_240 var4 = this.method_15800();
+         Direction var4 = this.method_15800();
          if (var4.method_1029().method_42629()) {
             double var5 = this.field_16829.method_8324(this.field_18364, this.field_18358).method_19495(class_9249.field_47216);
             class_4092 var7 = this.method_15797(new class_4092(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field_16835);
 
-            for (class_8145 var11 : this.field_18364.method_25867((class_8145)null, var7, var1x -> method_15790(var7, var1x))) {
+            for (Entity var11 : this.field_18364.method_25867((Entity)null, var7, var1x -> method_15790(var7, var1x))) {
                method_15782(var4, var11, var8, var4);
             }
          }
       }
    }
 
-   private static boolean method_15790(class_4092 var0, class_8145 var1) {
+   private static boolean method_15790(class_4092 var0, Entity var1) {
       return var1.method_37132() == class_718.field_3913
          && var1.method_37360()
          && var1.method_37302() >= var0.field_19941
@@ -187,13 +187,13 @@ public class class_3420 extends class_3757 implements class_3745 {
       return this.field_16829.method_8350(class_4783.field_23899);
    }
 
-   public class_240 method_15800() {
+   public Direction method_15800() {
       return !this.field_16827 ? this.field_16834.method_1046() : this.field_16834;
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   private static double method_15781(class_4092 var0, class_240 var1, class_4092 var2) {
+   private static double method_15781(class_4092 var0, Direction var1, class_4092 var2) {
       switch (var1) {
          case field_804:
             return var0.field_19940 - var2.field_19941;
@@ -220,11 +220,11 @@ public class class_3420 extends class_3757 implements class_3745 {
       );
    }
 
-   private void method_15788(class_8145 var1, class_240 var2, double var3) {
+   private void method_15788(Entity var1, Direction var2, double var3) {
       class_4092 var7 = var1.method_37241();
       class_4092 var8 = class_3370.method_15524().method_19483().method_18919(this.field_18358);
       if (var7.method_18909(var8)) {
-         class_240 var9 = var2.method_1046();
+         Direction var9 = var2.method_1046();
          double var10 = method_15781(var8, var9, var7) + 0.01;
          double var12 = method_15781(var8, var9, var7.method_18914(var8)) + 0.01;
          if (Math.abs(var10 - var12) < 0.01) {
@@ -296,7 +296,7 @@ public class class_3420 extends class_3757 implements class_3745 {
    public void method_17394(class_2522 var1, class_5734 var2) {
       super.method_17394(var1, var2);
       this.field_16829 = class_4338.method_20185(var2.method_25937("blockState"));
-      this.field_16834 = class_240.method_1033(var2.method_25947("facing"));
+      this.field_16834 = Direction.method_1033(var2.method_25947("facing"));
       this.field_16835 = var2.method_25955("progress");
       this.field_16833 = this.field_16835;
       this.field_16827 = var2.method_25933("extending");
@@ -322,7 +322,7 @@ public class class_3420 extends class_3757 implements class_3745 {
          var5 = class_3370.method_15536();
       }
 
-      class_240 var6 = field_16831.get();
+      Direction var6 = field_16831.get();
       if ((double)this.field_16835 < 1.0 && var6 == this.method_15800()) {
          return var5;
       } else {

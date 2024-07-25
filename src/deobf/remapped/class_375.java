@@ -33,7 +33,7 @@ public class class_375 extends class_4314 implements class_2593 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.<Boolean>method_10313(field_1524)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }
@@ -47,7 +47,7 @@ public class class_375 extends class_4314 implements class_2593 {
    }
 
    @Override
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
       if (var5.method_28018()) {
          class_3757 var8 = var1.method_28260(var2);
          if (var8 instanceof class_1100) {

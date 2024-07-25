@@ -4,11 +4,11 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public abstract class class_8844 extends class_6414 {
-   public final class_240 field_45228;
+   public final Direction field_45228;
    public final boolean field_45227;
    public final class_4190 field_45229;
 
-   public class_8844(class_3073 var1, class_240 var2, class_4190 var3, boolean var4) {
+   public class_8844(class_3073 var1, Direction var2, class_4190 var3, boolean var4) {
       super(var1);
       this.field_45228 = var2;
       this.field_45229 = var3;

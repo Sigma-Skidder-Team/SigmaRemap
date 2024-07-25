@@ -53,7 +53,7 @@ public class class_4770 extends class_446 {
          if (field_23116 == null) {
             class_784 var9 = new class_784(class_423.field_1789, false, false);
             field_23116 = new class_174(
-               this.field_23121.method_8614(), var9, class_6486.field_33048, class_8760.field_44823, 1, this::method_21986, null, false, 0L
+               this.field_23121.method_8614(), var9, World.field_33048, class_8760.field_44823, 1, this::method_21986, null, false, 0L
             );
          }
 
@@ -80,8 +80,8 @@ public class class_4770 extends class_446 {
          class_3542.method_16389();
          class_3542.method_16428();
          GL11.glLightModelfv(2899, new float[]{0.7F, 0.7F, 0.7F, 1.0F});
-         if (this.field_23121.method_8587().field_31311 == null) {
-            this.field_23121.method_8587().field_31311 = new class_9071();
+         if (this.field_23121.method_8587().camera == null) {
+            this.field_23121.method_8587().camera = new Camera();
          }
 
          this.field_23115.field_29643 = var10 * 0.5F;

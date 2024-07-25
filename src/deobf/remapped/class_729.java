@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_729 extends class_462 {
    private static String[] field_3986;
 
-   public class_729(int var1, class_9616 var2, class_240 var3, class_1143 var4) {
+   public class_729(int var1, class_9616 var2, Direction var3, class_1143 var4) {
       super(class_2746.field_13409, var1, var4);
       this.method_32519(var3);
       this.field_36435 = var2;
@@ -16,7 +16,7 @@ public class class_729 extends class_462 {
       super(class_2746.field_13409, var2);
    }
 
-   public static class_9616 method_3338(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5) {
+   public static class_9616 method_3338(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5) {
       class_9616 var8 = new class_9616(var2, var3 - 5, var4, var2, var3 + 3 - 1, var4);
       switch (var5) {
          case field_818:
@@ -43,28 +43,28 @@ public class class_729 extends class_462 {
    @Override
    public void method_32527(class_7060 var1, List<class_7060> var2, Random var3) {
       int var6 = this.method_32515();
-      class_240 var7 = this.method_32518();
+      Direction var7 = this.method_32518();
       if (var7 != null) {
          switch (var7) {
             case field_818:
             default:
                class_1087.method_4766(
-                  var1, var2, var3, this.field_36435.field_48996, this.field_36435.field_48995, this.field_36435.field_48992 - 1, class_240.field_818, var6
+                  var1, var2, var3, this.field_36435.field_48996, this.field_36435.field_48995, this.field_36435.field_48992 - 1, Direction.field_818, var6
                );
                break;
             case field_800:
                class_1087.method_4766(
-                  var1, var2, var3, this.field_36435.field_48996, this.field_36435.field_48995, this.field_36435.field_48994 + 1, class_240.field_800, var6
+                  var1, var2, var3, this.field_36435.field_48996, this.field_36435.field_48995, this.field_36435.field_48994 + 1, Direction.field_800, var6
                );
                break;
             case field_809:
                class_1087.method_4766(
-                  var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992, class_240.field_809, var6
+                  var1, var2, var3, this.field_36435.field_48996 - 1, this.field_36435.field_48995, this.field_36435.field_48992, Direction.field_809, var6
                );
                break;
             case field_804:
                class_1087.method_4766(
-                  var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992, class_240.field_804, var6
+                  var1, var2, var3, this.field_36435.field_48991 + 1, this.field_36435.field_48995, this.field_36435.field_48992, Direction.field_804, var6
                );
          }
       }

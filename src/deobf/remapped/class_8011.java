@@ -6,15 +6,15 @@ import java.util.function.Predicate;
 public class class_8011 extends class_3429 implements class_3713 {
    public static final Predicate<class_5834> field_41037 = class_5834::method_26537;
 
-   public class_8011(class_6629<? extends class_8011> var1, class_6486 var2) {
+   public class_8011(class_6629<? extends class_8011> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_8011(class_6486 var1, class_5834 var2) {
+   public class_8011(World var1, class_5834 var2) {
       super(class_6629.field_34312, var2, var1);
    }
 
-   public class_8011(class_6486 var1, double var2, double var4, double var6) {
+   public class_8011(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34312, var2, var4, var6, var1);
    }
 
@@ -36,14 +36,14 @@ public class class_8011 extends class_3429 implements class_3713 {
          class_6004 var5 = class_9541.method_43990(var4);
          List var6 = class_9541.method_43993(var4);
          boolean var7 = var5 == class_3697.field_18108 && var6.isEmpty();
-         class_240 var8 = var1.method_43956();
+         Direction var8 = var1.method_43956();
          class_1331 var9 = var1.method_43955();
          class_1331 var10 = var9.method_6098(var8);
          if (var7) {
             this.method_36348(var10, var8);
             this.method_36348(var10.method_6098(var8.method_1046()), var8);
 
-            for (class_240 var12 : class_9594.field_48893) {
+            for (Direction var12 : class_9594.field_48893) {
                this.method_36348(var10.method_6098(var12), var12);
             }
          }
@@ -89,7 +89,7 @@ public class class_8011 extends class_3429 implements class_3713 {
       }
    }
 
-   private void method_36350(List<class_2250> var1, class_8145 var2) {
+   private void method_36350(List<class_2250> var1, Entity var2) {
       class_4092 var5 = this.method_37241().method_18899(4.0, 2.0, 4.0);
       List var6 = this.field_41768.<class_5834>method_25868(class_5834.class, var5);
       if (!var6.isEmpty()) {
@@ -121,7 +121,7 @@ public class class_8011 extends class_3429 implements class_3713 {
 
    private void method_36347(class_6098 var1, class_6004 var2) {
       class_4478 var5 = new class_4478(this.field_41768, this.method_37302(), this.method_37309(), this.method_37156());
-      class_8145 var6 = this.method_26166();
+      Entity var6 = this.method_26166();
       if (var6 instanceof class_5834) {
          var5.method_20782((class_5834)var6);
       }
@@ -148,7 +148,7 @@ public class class_8011 extends class_3429 implements class_3713 {
       return this.method_17246().method_27960() == class_4897.field_24444;
    }
 
-   private void method_36348(class_1331 var1, class_240 var2) {
+   private void method_36348(class_1331 var1, Direction var2) {
       class_2522 var5 = this.field_41768.method_28262(var1);
       if (!var5.method_8349(class_2351.field_11771)) {
          if (class_8474.method_39004(var5)) {

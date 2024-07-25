@@ -19,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_2810 {
    private static final Logger field_13789 = LogManager.getLogger();
-   private static final Predicate<class_8145> field_13800 = class_3572.field_17481.and(class_3572.method_16617(0.0, 128.0, 0.0, 192.0));
+   private static final Predicate<Entity> field_13800 = class_3572.field_17481.and(class_3572.method_16617(0.0, 128.0, 0.0, 192.0));
    private final class_495 field_13802 = (class_495)new class_495(
          new TranslationTextComponent("entity.minecraft.ender_dragon"), class_1062.field_5825, class_2976.field_14631
       )
@@ -387,7 +387,7 @@ public class class_2810 {
          this.method_12782(true);
       } else {
          this.method_12767();
-         class_8145 var5 = this.field_13790.method_28925(this.field_13804);
+         Entity var5 = this.field_13790.method_28925(this.field_13804);
          if (var5 instanceof class_2770) {
             ((class_2770)var5).method_12617(var1, var1.method_37075(), var2);
          }
@@ -417,7 +417,7 @@ public class class_2810 {
          ArrayList var9 = Lists.newArrayList();
          class_1331 var5 = var3.method_6082(1);
 
-         for (class_240 var7 : class_9594.field_48893) {
+         for (Direction var7 : class_9594.field_48893) {
             List var8 = this.field_13790.<class_3577>method_25868(class_3577.class, new class_4092(var5.method_6099(var7, 2)));
             if (var8.isEmpty()) {
                return;

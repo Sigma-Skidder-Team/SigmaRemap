@@ -1,7 +1,7 @@
 package remapped;
 
 public interface class_8932<C extends class_6867> {
-   boolean method_41052(C var1, class_6486 var2);
+   boolean method_41052(C var1, World var2);
 
    class_6098 method_41042(C var1);
 

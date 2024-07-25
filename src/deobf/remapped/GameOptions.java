@@ -28,7 +28,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_8881 {
+public class GameOptions {
    private static final Logger field_45573 = LogManager.getLogger();
    private static final Gson field_45429 = new Gson();
    private static final TypeToken<List<String>> field_45525 = new class_4451();
@@ -264,7 +264,7 @@ public class class_8881 {
    public class_5916 field_45548;
    private File field_45457;
 
-   public class_8881(MinecraftClient var1, File var2) {
+   public GameOptions(MinecraftClient var1, File var2) {
       this.method_40876();
       this.field_45495 = var1;
       this.field_45579 = new File(var2, "options.txt");
@@ -888,7 +888,7 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5260) {
          this.field_45438 = var2;
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5293) {
@@ -999,7 +999,7 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5257) {
          this.field_45553 = method_40889(this.field_45553, field_45436);
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5229) {
@@ -1121,7 +1121,7 @@ public class class_8881 {
             this.field_45449 = 1;
          }
 
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5212) {
@@ -1131,7 +1131,7 @@ public class class_8881 {
          }
 
          if (this.field_45529 == 2) {
-            this.field_45495.field_9657.method_19998();
+            this.field_45495.worldRenderer.method_19998();
          } else {
             this.field_45495.reloadResourcesConcurrently();
          }
@@ -1184,13 +1184,13 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5209) {
          this.field_45468 = !this.field_45468;
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5220) {
          this.field_45531 = !this.field_45531;
          class_9300.method_42896();
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5283) {
@@ -1206,7 +1206,7 @@ public class class_8881 {
       if (var1 == class_1013.field_5261) {
          this.field_45408 = !this.field_45408;
          class_9300.method_42905();
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5249) {
@@ -1226,7 +1226,7 @@ public class class_8881 {
       if (var1 == class_1013.field_5206) {
          this.field_45507 = !this.field_45507;
          class_3475.method_15968();
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5247) {
@@ -1254,7 +1254,7 @@ public class class_8881 {
             this.field_45532 = 0;
          }
 
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5218) {
@@ -1263,12 +1263,12 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5223) {
          this.field_45538 = !this.field_45538;
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5255) {
          this.field_45478 = !this.field_45478;
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5311) {
@@ -1277,12 +1277,12 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5278) {
          this.field_45506 = !this.field_45506;
-         this.field_45495.field_9657.method_19998();
+         this.field_45495.worldRenderer.method_19998();
       }
 
       if (var1 == class_1013.field_5282) {
          this.field_45571 = method_40889(this.field_45571, field_45423);
-         class_8421.method_38769(this.field_45495.field_9657);
+         class_8421.method_38769(this.field_45495.worldRenderer);
       }
 
       if (var1 == class_1013.field_5248) {
@@ -2107,7 +2107,7 @@ public class class_8881 {
       }
 
       if (this.field_45397 == class_4615.field_22433) {
-         class_4316 var1 = MinecraftClient.getInstance().field_9657;
+         WorldRenderer var1 = MinecraftClient.getInstance().worldRenderer;
          if (var1 != null) {
             class_4230 var2 = var1.method_20091();
             if (var2 != null) {

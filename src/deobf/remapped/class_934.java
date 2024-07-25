@@ -19,14 +19,14 @@ public class class_934 implements class_2995 {
       double var11 = (double) Util.getMeasuringTimeNano();
       if (var11 - this.field_4776 > 1.0E8) {
          this.field_4776 = var11;
-         class_8145 var13 = this.field_4779.gameRenderer.method_35949().method_41633();
+         Entity var13 = this.field_4779.gameRenderer.method_35949().method_41633();
          this.field_4777 = var13.field_41768.method_6676(var13, var13.method_37241().method_18898(6.0), var0 -> true).collect(Collectors.<class_4190>toList());
       }
 
-      class_7907 var16 = var2.method_11645(class_3581.method_16744());
+      class_7907 var16 = var2.method_11645(RenderLayer.method_16744());
 
       for (class_4190 var15 : this.field_4777) {
-         class_4316.method_20051(var1, var16, var15, -var3, -var5, -var7, 1.0F, 1.0F, 1.0F, 1.0F);
+         WorldRenderer.method_20051(var1, var16, var15, -var3, -var5, -var7, 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }
 }

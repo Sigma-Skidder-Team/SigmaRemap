@@ -36,7 +36,7 @@ public class class_1016 implements class_2995 {
                      int var25 = var21.field_10328 * 16 + var23;
                      int var26 = var21.field_10327 * 16 + var24;
                      float var27 = (float)((double)((float)var11.method_22562(var20, var25, var26) + (float)var20.ordinal() * 0.09375F) - var5);
-                     class_4316.method_20064(
+                     WorldRenderer.method_20064(
                         var14,
                         (double)((float)var25 + 0.25F) - var3,
                         (double)var27,

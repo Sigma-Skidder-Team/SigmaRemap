@@ -5,7 +5,7 @@ import java.util.Random;
 public class class_4180 extends class_1595 {
    private static String[] field_20350;
 
-   public class_4180(class_6629<? extends class_4180> var1, class_6486 var2) {
+   public class_4180(class_6629<? extends class_4180> var1, World var2) {
       super(var1, var2);
    }
 

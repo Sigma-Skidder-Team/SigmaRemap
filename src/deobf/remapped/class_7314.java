@@ -3,16 +3,16 @@ package remapped;
 public class class_7314 extends class_9733 {
    private static String[] field_37397;
    private final class_3017 field_37396;
-   private final class_8145 field_37398;
-   private final class_8145 field_37395;
+   private final Entity field_37398;
+   private final Entity field_37395;
    private int field_37399;
-   private final class_6122 field_37400;
+   private final EntityRenderDispatcher field_37400;
 
-   public class_7314(class_6122 var1, class_3017 var2, class_174 var3, class_8145 var4, class_8145 var5) {
+   public class_7314(EntityRenderDispatcher var1, class_3017 var2, class_174 var3, Entity var4, Entity var5) {
       this(var1, var2, var3, var4, var5, var4.method_37098());
    }
 
-   private class_7314(class_6122 var1, class_3017 var2, class_174 var3, class_8145 var4, class_8145 var5, class_1343 var6) {
+   private class_7314(EntityRenderDispatcher var1, class_3017 var2, class_174 var3, Entity var4, Entity var5, class_1343 var6) {
       super(var3, var4.method_37302(), var4.method_37309(), var4.method_37156(), var6.field_7336, var6.field_7333, var6.field_7334);
       this.field_37396 = var2;
       this.field_37398 = this.method_33357(var4);
@@ -20,8 +20,8 @@ public class class_7314 extends class_9733 {
       this.field_37400 = var1;
    }
 
-   private class_8145 method_33357(class_8145 var1) {
-      return (class_8145)(var1 instanceof class_91 ? ((class_91)var1).method_259() : var1);
+   private Entity method_33357(Entity var1) {
+      return (Entity)(var1 instanceof class_91 ? ((class_91)var1).method_259() : var1);
    }
 
    @Override
@@ -30,7 +30,7 @@ public class class_7314 extends class_9733 {
    }
 
    @Override
-   public void method_44951(class_7907 var1, class_9071 var2, float var3) {
+   public void method_44951(class_7907 var1, Camera var2, float var3) {
       class_3009 var6 = null;
       if (class_3111.method_14424()) {
          var6 = class_6588.field_33770;
@@ -61,7 +61,7 @@ public class class_7314 extends class_9733 {
          );
       var20.method_17415();
       if (class_3111.method_14424()) {
-         class_6588.method_30261((class_8145)null);
+         class_6588.method_30261((Entity)null);
          class_6588.method_30236(var6);
       }
    }

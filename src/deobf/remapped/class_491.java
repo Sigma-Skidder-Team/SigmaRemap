@@ -8,8 +8,8 @@ public class class_491<S extends class_3757> implements class_3606<S, Int2IntFun
    public Int2IntFunction method_2395(S var1, S var2) {
       return var2x -> {
          if (!class_5052.method_23276()) {
-            int var5 = class_4316.method_20002(var1.method_17402(), var1.method_17399());
-            int var6 = class_4316.method_20002(var2.method_17402(), var2.method_17399());
+            int var5 = WorldRenderer.method_20002(var1.method_17402(), var1.method_17399());
+            int var6 = WorldRenderer.method_20002(var2.method_17402(), var2.method_17399());
             int var7 = class_5778.method_26134(var5);
             int var8 = class_5778.method_26134(var6);
             int var9 = class_5778.method_26131(var5);

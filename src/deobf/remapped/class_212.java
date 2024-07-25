@@ -14,13 +14,13 @@ public class class_212 {
       this.field_709 = class_6560.field_33464.method_12947();
    }
 
-   private static boolean method_906(class_6163 var0, class_1331 var1, class_240 var2, class_4774 var3) {
+   private static boolean method_906(class_6163 var0, class_1331 var1, Direction var2, class_4774 var3) {
       class_1331 var6 = var1.method_6098(var2);
       class_4774 var7 = var0.method_28258(var6);
       return var7.method_22005().method_10723(var3.method_22005());
    }
 
-   private static boolean method_901(class_6163 var0, class_240 var1, float var2, class_1331 var3, class_2522 var4) {
+   private static boolean method_901(class_6163 var0, Direction var1, float var2, class_1331 var3, class_2522 var4) {
       if (!var4.method_8302()) {
          return false;
       } else {
@@ -30,17 +30,17 @@ public class class_212 {
       }
    }
 
-   private static boolean method_898(class_6163 var0, class_1331 var1, class_240 var2, float var3) {
+   private static boolean method_898(class_6163 var0, class_1331 var1, Direction var2, float var3) {
       class_1331 var6 = var1.method_6098(var2);
       class_2522 var7 = var0.method_28262(var6);
       return method_901(var0, var2, var3, var6, var7);
    }
 
-   private static boolean method_897(class_6163 var0, class_1331 var1, class_2522 var2, class_240 var3) {
+   private static boolean method_897(class_6163 var0, class_1331 var1, class_2522 var2, Direction var3) {
       return method_901(var0, var3.method_1046(), 1.0F, var1, var2);
    }
 
-   public static boolean method_895(class_5561 var0, class_1331 var1, class_4774 var2, class_2522 var3, class_240 var4) {
+   public static boolean method_895(class_5561 var0, class_1331 var1, class_4774 var2, class_2522 var3, Direction var4) {
       return !method_897(var0, var1, var3, var4) && !method_906(var0, var1, var4, var2);
    }
 
@@ -74,12 +74,12 @@ public class class_212 {
             }
          }
 
-         boolean var82 = !method_906(var1, var2, class_240.field_817, var4);
-         boolean var15 = method_895(var1, var2, var4, var10, class_240.field_802) && !method_898(var1, var2, class_240.field_802, 0.8888889F);
-         boolean var16 = method_895(var1, var2, var4, var10, class_240.field_818);
-         boolean var17 = method_895(var1, var2, var4, var10, class_240.field_800);
-         boolean var18 = method_895(var1, var2, var4, var10, class_240.field_809);
-         boolean var19 = method_895(var1, var2, var4, var10, class_240.field_804);
+         boolean var82 = !method_906(var1, var2, Direction.field_817, var4);
+         boolean var15 = method_895(var1, var2, var4, var10, Direction.field_802) && !method_898(var1, var2, Direction.field_802, 0.8888889F);
+         boolean var16 = method_895(var1, var2, var4, var10, Direction.field_818);
+         boolean var17 = method_895(var1, var2, var4, var10, Direction.field_800);
+         boolean var18 = method_895(var1, var2, var4, var10, Direction.field_809);
+         boolean var19 = method_895(var1, var2, var4, var10, Direction.field_804);
          if (var82 || var15 || var19 || var18 || var16 || var17) {
             if (var12 < 0) {
                var12 = class_9300.method_42889(var1, var7, var2, var81);
@@ -89,10 +89,10 @@ public class class_212 {
             float var21 = (float)(var12 >> 8 & 0xFF) / 255.0F;
             float var22 = (float)(var12 & 0xFF) / 255.0F;
             var23 = false;
-            float var24 = var1.method_25265(class_240.field_802, true);
-            float var25 = var1.method_25265(class_240.field_817, true);
-            float var26 = var1.method_25265(class_240.field_818, true);
-            float var27 = var1.method_25265(class_240.field_809, true);
+            float var24 = var1.method_25265(Direction.field_802, true);
+            float var25 = var1.method_25265(Direction.field_817, true);
+            float var26 = var1.method_25265(Direction.field_818, true);
+            float var27 = var1.method_25265(Direction.field_809, true);
             float var28 = this.method_899(var1, var2, var4.method_22005());
             float var29 = this.method_899(var1, var2.method_6073(), var4.method_22005());
             float var30 = this.method_899(var1, var2.method_6090().method_6073(), var4.method_22005());
@@ -116,7 +116,7 @@ public class class_212 {
 
             float var84 = 0.001F;
             float var85 = var15 ? 0.001F : 0.0F;
-            if (var82 && !method_898(var1, var2, class_240.field_817, Math.min(Math.min(var28, var29), Math.min(var30, var31)))) {
+            if (var82 && !method_898(var1, var2, Direction.field_817, Math.min(Math.min(var28, var29), Math.min(var30, var31)))) {
                var23 = true;
                var28 -= 0.001F;
                var29 -= 0.001F;
@@ -195,7 +195,7 @@ public class class_212 {
                float var96 = var9[0].method_23642();
                float var100 = var9[0].method_23640();
                int var103 = this.method_904(var1, var2.method_6100());
-               float var106 = var1.method_25265(class_240.field_802, true);
+               float var106 = var1.method_25265(Direction.field_802, true);
                float var112 = var106 * var20;
                float var114 = var106 * var21;
                float var110 = var106 * var22;
@@ -213,7 +213,7 @@ public class class_212 {
                double var64;
                float var93;
                float var97;
-               class_240 var117;
+               Direction var117;
                boolean var119;
                if (var88 == 0) {
                   var93 = var28;
@@ -222,7 +222,7 @@ public class class_212 {
                   var60 = var32 + 1.0;
                   var62 = var36 + 0.001F;
                   var64 = var36 + 0.001F;
-                  var117 = class_240.field_818;
+                  var117 = Direction.field_818;
                   var119 = var16;
                } else if (var88 == 1) {
                   var93 = var30;
@@ -231,7 +231,7 @@ public class class_212 {
                   var60 = var32;
                   var62 = var36 + 1.0 - 0.001F;
                   var64 = var36 + 1.0 - 0.001F;
-                  var117 = class_240.field_800;
+                  var117 = Direction.field_800;
                   var119 = var17;
                } else if (var88 == 2) {
                   var93 = var29;
@@ -240,7 +240,7 @@ public class class_212 {
                   var60 = var32 + 0.001F;
                   var62 = var36 + 1.0;
                   var64 = var36;
-                  var117 = class_240.field_809;
+                  var117 = Direction.field_809;
                   var119 = var18;
                } else {
                   var93 = var31;
@@ -249,7 +249,7 @@ public class class_212 {
                   var60 = var32 + 1.0 - 0.001F;
                   var62 = var36;
                   var64 = var36 + 1.0;
-                  var117 = class_240.field_804;
+                  var117 = Direction.field_804;
                   var119 = var19;
                }
 
@@ -310,7 +310,7 @@ public class class_212 {
                      float var71 = var122.method_23639((double)((1.0F - var97) * 16.0F * 0.5F));
                      float var72 = var122.method_23639(8.0);
                      int var73 = this.method_904(var1, var121);
-                     float var74 = var88 < 2 ? var1.method_25265(class_240.field_818, true) : var1.method_25265(class_240.field_809, true);
+                     float var74 = var88 < 2 ? var1.method_25265(Direction.field_818, true) : var1.method_25265(Direction.field_809, true);
                      float var75 = 1.0F * var74 * var20;
                      float var76 = 1.0F * var74 * var21;
                      float var77 = 1.0F * var74 * var22;
@@ -363,8 +363,8 @@ public class class_212 {
    }
 
    private int method_904(class_5561 var1, class_1331 var2) {
-      int var5 = class_4316.method_20002(var1, var2);
-      int var6 = class_4316.method_20002(var1, var2.method_6081());
+      int var5 = WorldRenderer.method_20002(var1, var2);
+      int var6 = WorldRenderer.method_20002(var1, var2.method_6081());
       int var7 = var5 & 0xFF;
       int var8 = var6 & 0xFF;
       int var9 = var5 >> 16 & 0xFF;

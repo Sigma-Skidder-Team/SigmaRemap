@@ -23,7 +23,7 @@ public class class_8927 extends class_3403 {
       String var5 = var1.method_31378();
       String var6 = class_3111.method_14305(var1.method_31392()).trim();
       String[] var7 = this.method_41033(var6);
-      class_8881 var8 = class_3111.method_14310();
+      GameOptions var8 = class_3111.method_14310();
       String var9 = null;
       if (!var5.equals(var1.method_31405()) && var8.field_45482) {
          var9 = "§8" + class_3458.method_15912("of.general.id") + ": " + var1.method_31405();

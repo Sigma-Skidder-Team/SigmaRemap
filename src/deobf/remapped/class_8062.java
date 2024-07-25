@@ -35,7 +35,7 @@ public class class_8062<T extends class_5834, M extends class_6521<T>> extends c
          var1.method_36065(0.0, 0.0, 0.125);
          this.method_19347().method_29701(this.field_41262);
          this.field_41262.method_35240((T)var4, var5, var6, var8, var9, var10);
-         class_7907 var16 = class_8765.method_40282(var2, class_3581.method_16749(var14), false, var13.method_27977());
+         class_7907 var16 = class_8765.method_40282(var2, RenderLayer.method_16749(var14), false, var13.method_27977());
          this.field_41262.method_45499(var1, var16, var3, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
          var1.method_36064();
       }

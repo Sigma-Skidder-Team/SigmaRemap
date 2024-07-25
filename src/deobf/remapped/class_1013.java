@@ -10,7 +10,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public abstract class class_1013 {
    public static final class_8369 field_5305 = new class_8369("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.field_45526, (var0, var1) -> {
       var0.field_45526 = class_9299.method_42829((int)var1.doubleValue(), 0, 7);
-      MinecraftClient.getInstance().field_9657.method_19998();
+      MinecraftClient.getInstance().worldRenderer.method_19998();
    }, (var0, var1) -> {
       double var4 = var1.method_38570(var0);
       int var6 = (int)var4 * 2 + 1;
@@ -171,7 +171,7 @@ public abstract class class_1013 {
    });
    public static final class_8369 field_5250 = new class_8369("options.renderDistance", 2.0, 16.0, 1.0F, var0 -> (double)var0.field_45537, (var0, var1) -> {
       var0.field_45537 = (int)var1.doubleValue();
-      MinecraftClient.getInstance().field_9657.method_20018();
+      MinecraftClient.getInstance().worldRenderer.method_20018();
    }, (var0, var1) -> {
       double var4 = var1.method_38570(var0);
       return var1.method_4492(new TranslationTextComponent("options.chunks", (int)var4));
@@ -206,7 +206,7 @@ public abstract class class_1013 {
    );
    public static final class_4001 field_5267 = new class_4001("options.ao", (var0, var1) -> {
       var0.field_45533 = class_6168.method_28279(var0.field_45533.method_28277() + var1);
-      MinecraftClient.getInstance().field_9657.method_19998();
+      MinecraftClient.getInstance().worldRenderer.method_19998();
    }, (var0, var1) -> var1.method_4492(new TranslationTextComponent(var0.field_45533.method_28278())));
    public static final class_4001 field_5195 = new class_4001(
       "options.attackIndicator",
@@ -235,7 +235,7 @@ public abstract class class_1013 {
          }
 
          var0.method_40878();
-         var4.field_9657.method_19998();
+         var4.worldRenderer.method_19998();
       }
    }, (var0, var1) -> {
       switch (var0.field_45397) {
@@ -285,7 +285,7 @@ public abstract class class_1013 {
    public static final class_4001 field_5288 = new class_4001("options.renderClouds", (var0, var1) -> {
       var0.field_45551 = class_9655.method_44551(var0.field_45551.method_44549() + var1);
       if (MinecraftClient.method_8497()) {
-         class_4230 var4 = MinecraftClient.getInstance().field_9657.method_20091();
+         class_4230 var4 = MinecraftClient.getInstance().worldRenderer.method_20091();
          if (var4 != null) {
             var4.method_19712(MinecraftClient.IS_SYSTEM_MAC);
          }
@@ -435,7 +435,7 @@ public abstract class class_1013 {
       this.field_5265 = var1;
    }
 
-   public abstract class_7114 method_4482(class_8881 var1, int var2, int var3, int var4);
+   public abstract class_7114 method_4482(GameOptions var1, int var2, int var3, int var4);
 
    public ITextComponent method_4483() {
       return this.field_5319;

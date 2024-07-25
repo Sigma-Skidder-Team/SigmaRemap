@@ -18,7 +18,7 @@ public class class_8271 {
                   .executes(
                      var0x -> {
                         String var3 = StringArgumentType.getString(var0x, "action");
-                        class_8145 var4 = ((class_9155)var0x.getSource()).method_42200();
+                        Entity var4 = ((class_9155)var0x.getSource()).method_42200();
                         class_341 var5 = ((class_9155)var0x.getSource()).method_42177();
                         if (var4 == null) {
                            var5.method_1600().method_39983(method_38130(var0x, var3), ChatType.SYSTEM, Util.NIL_UUID);

@@ -41,7 +41,7 @@ public class class_8138 extends class_2830 implements class_3978 {
          if (var4.nextInt((int)(25.0F / var7) + 1) == 0) {
             int var8 = var1.<Integer>method_10313(field_41679);
             if (var8 >= 7) {
-               class_240 var9 = class_9594.field_48893.method_44313(var4);
+               Direction var9 = class_9594.field_48893.method_44313(var4);
                class_1331 var10 = var3.method_6098(var9);
                class_2522 var11 = var2.method_28262(var10.method_6100());
                if (var2.method_28262(var10).method_8345()
@@ -84,7 +84,7 @@ public class class_8138 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(class_6486 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
       return true;
    }
 

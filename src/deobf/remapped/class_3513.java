@@ -14,7 +14,7 @@ public class class_3513 extends class_1762<class_4109, class_3192<class_4109>> {
       )
    );
 
-   public class_3513(class_6122 var1) {
+   public class_3513(EntityRenderDispatcher var1) {
       super(var1, new class_3192<class_4109>(0.0F), 1.0F);
    }
 

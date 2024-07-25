@@ -20,25 +20,25 @@ public class class_613 {
       } catch (NoSuchFieldError var7) {
       }
 
-      field_3492 = new int[class_240.values().length];
+      field_3492 = new int[Direction.values().length];
 
       try {
-         field_3492[class_240.field_804.ordinal()] = 1;
+         field_3492[Direction.field_804.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field_3492[class_240.field_809.ordinal()] = 2;
+         field_3492[Direction.field_809.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field_3492[class_240.field_800.ordinal()] = 3;
+         field_3492[Direction.field_800.ordinal()] = 3;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field_3492[class_240.field_818.ordinal()] = 4;
+         field_3492[Direction.field_818.ordinal()] = 4;
       } catch (NoSuchFieldError var3) {
       }
    }

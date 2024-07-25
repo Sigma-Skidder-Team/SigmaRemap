@@ -13,11 +13,11 @@ public class class_4888 extends class_380 implements class_9866 {
 
    public class_4888(class_3073 var1) {
       super(var1);
-      this.method_29284(this.field_32751.method_36446().method_10308(field_24302, class_240.field_818));
+      this.method_29284(this.field_32751.method_36446().method_10308(field_24302, Direction.field_818));
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360())) {
          this.method_22423(var2, var3);
       }
@@ -27,7 +27,7 @@ public class class_4888 extends class_380 implements class_9866 {
       return this.method_22422().method_44981(var1, var2) != null || this.method_22419().method_44981(var1, var2) != null;
    }
 
-   private void method_22423(class_6486 var1, class_1331 var2) {
+   private void method_22423(World var1, class_1331 var2) {
       class_6953 var5 = this.method_22421().method_44981(var1, var2);
       if (var5 == null) {
          var5 = this.method_22424().method_44981(var1, var2);

@@ -56,7 +56,7 @@ public class class_1425 {
       }
    }
 
-   public void method_6539(class_8145 var1, class_8145 var2, class_5834 var3, int var4, double var5) {
+   public void method_6539(Entity var1, Entity var2, class_5834 var3, int var4, double var5) {
       if ((this != class_4054.field_19749 || var3.method_26563()) && (this != class_4054.field_19723 || !var3.method_26563())) {
          if (this == class_4054.field_19723 && !var3.method_26563() || this == class_4054.field_19749 && var3.method_26563()) {
             int var10 = (int)(var5 * (double)(6 << var4) + 0.5);

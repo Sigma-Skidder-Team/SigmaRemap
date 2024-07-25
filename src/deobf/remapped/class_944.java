@@ -27,7 +27,7 @@ public class class_944 {
          var2.method_36065(
             (double)((float)var8 * this.field_4825.method_11057()), (double)this.field_4825.method_11061(), (double)this.field_4825.method_11055()
          );
-         var2.method_36060(new class_5422(var5, var6, var7, true));
+         var2.method_36060(new Quaternion(var5, var6, var7, true));
          var2.method_36062(this.field_4822.method_11057(), this.field_4822.method_11061(), this.field_4822.method_11055());
       }
    }

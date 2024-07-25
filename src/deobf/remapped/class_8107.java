@@ -43,7 +43,7 @@ public final class class_8107 {
       this.field_41527 = var1.field_41527;
    }
 
-   public class_8107(class_5422 var1) {
+   public class_8107(Quaternion var1) {
       float var4 = var1.method_24653();
       float var5 = var1.method_24647();
       float var6 = var1.method_24648();
@@ -378,7 +378,7 @@ public final class class_8107 {
       this.field_41527 = var19;
    }
 
-   public void method_36831(class_5422 var1) {
+   public void method_36831(Quaternion var1) {
       float var4 = var1.method_24653();
       float var5 = var1.method_24647();
       float var6 = var1.method_24648();

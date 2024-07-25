@@ -41,7 +41,7 @@ public class class_4423 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       int var9 = method_20561(var3) + 1;
       if (var9 != 1 || var1.<Integer>method_10313(field_21618) != var9) {
          var4.method_43367().method_14011(var5, this, 1);
@@ -54,7 +54,7 @@ public class class_4423 extends class_6414 {
       int var5 = 7;
       class_2921 var6 = new class_2921();
 
-      for (class_240 var10 : class_240.values()) {
+      for (Direction var10 : Direction.values()) {
          var6.method_13371(var2, var10);
          var5 = Math.min(var5, method_20561(var1.method_28262(var6)) + 1);
          if (var5 == 1) {
@@ -74,11 +74,11 @@ public class class_4423 extends class_6414 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       if (var2.method_29569(var3.method_6081()) && var4.nextInt(15) == 1) {
          class_1331 var7 = var3.method_6100();
          class_2522 var8 = var2.method_28262(var7);
-         if (!var8.method_8302() || !var8.method_8308(var2, var7, class_240.field_817)) {
+         if (!var8.method_8302() || !var8.method_8308(var2, var7, Direction.field_817)) {
             double var9 = (double)var3.method_12173() + var4.nextDouble();
             double var11 = (double)var3.method_12165() - 0.05;
             double var13 = (double)var3.method_12185() + var4.nextDouble();

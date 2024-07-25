@@ -95,7 +95,7 @@ public class class_1662 implements class_7907 {
    }
 
    @Override
-   public void method_35736(class_3581 var1) {
+   public void method_35736(RenderLayer var1) {
       this.field_8618.method_35736(var1);
       this.field_8617.method_35736(var1);
    }

@@ -3,7 +3,7 @@ package remapped;
 public class class_6778 extends class_1595 {
    private static String[] field_34971;
 
-   public class_6778(class_6629<? extends class_6778> var1, class_6486 var2) {
+   public class_6778(class_6629<? extends class_6778> var1, World var2) {
       super(var1, var2);
    }
 
@@ -30,7 +30,7 @@ public class class_6778 extends class_1595 {
    @Override
    public void method_26614(class_6199 var1, int var2, boolean var3) {
       super.method_26614(var1, var2, var3);
-      class_8145 var6 = var1.method_28372();
+      Entity var6 = var1.method_28372();
       if (var6 instanceof class_9490) {
          class_9490 var7 = (class_9490)var6;
          if (var7.method_43837()) {

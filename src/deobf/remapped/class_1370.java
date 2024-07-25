@@ -89,7 +89,7 @@ public class class_1370 extends class_9128 {
          GL11.glEnable(2896);
       }
 
-      for (class_8145 var10 : field_46692.field_9601.method_736()) {
+      for (Entity var10 : field_46692.field_9601.method_736()) {
          if (this.method_6344(var10)) {
             GL11.glPushMatrix();
             class_1343 var11 = field_46692.gameRenderer.method_35949().method_41627();
@@ -115,11 +115,11 @@ public class class_1370 extends class_9128 {
          }
       }
 
-      this.field_7447.method_17416(class_3581.method_16734(class_8359.field_42824));
-      this.field_7447.method_17416(class_3581.method_16747(class_8359.field_42824));
-      this.field_7447.method_17416(class_3581.method_16755(class_8359.field_42824));
-      this.field_7447.method_17416(class_3581.method_16730(class_8359.field_42824));
-      this.field_7447.method_17416(class_3581.method_16744());
+      this.field_7447.method_17416(RenderLayer.method_16734(class_8359.field_42824));
+      this.field_7447.method_17416(RenderLayer.method_16747(class_8359.field_42824));
+      this.field_7447.method_17416(RenderLayer.method_16755(class_8359.field_42824));
+      this.field_7447.method_17416(RenderLayer.method_16730(class_8359.field_42824));
+      this.field_7447.method_17416(RenderLayer.method_16744());
       this.field_7447.method_17415();
       if (field_7448 == class_4719.field_22894) {
          GL11.glPolygonMode(1032, 6914);
@@ -130,12 +130,12 @@ public class class_1370 extends class_9128 {
       GL11.glDepthFunc(515);
    }
 
-   public void method_6350(class_8145 var1, double var2, double var4, double var6, float var8, class_7966 var9, class_2565 var10) {
+   public void method_6350(Entity var1, double var2, double var4, double var6, float var8, class_7966 var9, class_2565 var10) {
       double var13 = class_9299.method_42794((double)var8, var1.field_41754, var1.method_37302());
       double var15 = class_9299.method_42794((double)var8, var1.field_41713, var1.method_37309());
       double var17 = class_9299.method_42794((double)var8, var1.field_41724, var1.method_37156());
       float var19 = class_9299.method_42795(var8, var1.field_41711, var1.field_41701);
-      field_46692.field_9657.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
+      field_46692.worldRenderer.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
    }
 
    @class_9148
@@ -154,7 +154,7 @@ public class class_1370 extends class_9128 {
       }
    }
 
-   private boolean method_6344(class_8145 var1) {
+   private boolean method_6344(Entity var1) {
       if (var1 instanceof class_5834) {
          if (var1 instanceof class_704) {
             if (!(var1 instanceof class_5989)) {

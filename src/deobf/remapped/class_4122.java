@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_4122 extends class_8549 {
    private final boolean field_20084;
 
-   public class_4122(int var1, Random var2, class_9616 var3, class_240 var4) {
+   public class_4122(int var1, Random var2, class_9616 var3, Direction var4) {
       super(class_2746.field_13426, var1);
       this.method_32519(var4);
       this.field_43750 = this.method_39333(var2);
@@ -25,7 +25,7 @@ public class class_4122 extends class_8549 {
       var1.method_25934("Tall", this.field_20084);
    }
 
-   public static class_4122 method_19137(List<class_7060> var0, Random var1, int var2, int var3, int var4, class_240 var5, int var6) {
+   public static class_4122 method_19137(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
       class_9616 var9 = class_9616.method_44386(var2, var3, var4, -4, -1, 0, 14, 11, 15, var5);
       if (!method_39332(var9) || class_7060.method_32502(var0, var9) != null) {
          var9 = class_9616.method_44386(var2, var3, var4, -4, -1, 0, 14, 6, 15, var5);
@@ -61,8 +61,8 @@ public class class_4122 extends class_8549 {
          } else {
             this.method_32500(var1, var5, 1, 1, var13, 1, 4, var13, class_4783.field_23893.method_29260(), class_4783.field_23893.method_29260(), false);
             this.method_32500(var1, var5, 12, 1, var13, 12, 4, var13, class_4783.field_23893.method_29260(), class_4783.field_23893.method_29260(), false);
-            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_804), 2, 3, var13, var5);
-            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, class_240.field_809), 11, 3, var13, var5);
+            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_804), 2, 3, var13, var5);
+            this.method_32529(var1, class_4783.field_23740.method_29260().method_10308(class_2634.field_12970, Direction.field_809), 11, 3, var13, var5);
             if (this.field_20084) {
                this.method_32500(var1, var5, 1, 6, var13, 1, 9, var13, class_4783.field_23893.method_29260(), class_4783.field_23893.method_29260(), false);
                this.method_32500(var1, var5, 12, 6, var13, 12, 9, var13, class_4783.field_23893.method_29260(), class_4783.field_23893.method_29260(), false);
@@ -157,7 +157,7 @@ public class class_4122 extends class_8549 {
             }
          }
 
-         class_2522 var24 = class_4783.field_23748.method_29260().method_10308(class_5613.field_28506, class_240.field_800);
+         class_2522 var24 = class_4783.field_23748.method_29260().method_10308(class_5613.field_28506, Direction.field_800);
          this.method_32529(var1, var24, 10, 1, 13, var5);
          this.method_32529(var1, var24, 10, 2, 13, var5);
          this.method_32529(var1, var24, 10, 3, 13, var5);

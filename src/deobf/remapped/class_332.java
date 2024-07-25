@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_332<T extends class_8145> extends class_6484<T> {
+public class class_332<T extends Entity> extends class_6484<T> {
    private static String[] field_1243;
 
    public class_332() {

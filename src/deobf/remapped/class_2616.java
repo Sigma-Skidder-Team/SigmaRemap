@@ -1,7 +1,7 @@
 package remapped;
 
 public final class class_2616 extends class_7582<Runnable> {
-   private class_2616(class_2206 var1, class_6486 var2) {
+   private class_2616(class_2206 var1, World var2) {
       super("Chunk source main thread executor for " + var2.method_29545().method_25499());
       this.field_12908 = var1;
    }

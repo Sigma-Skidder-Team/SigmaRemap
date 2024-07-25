@@ -10,7 +10,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    public class_2795 field_1687;
    private final class_4657 field_1685 = new class_4657(8);
 
-   public class_405(class_6629<? extends class_405> var1, class_6486 var2) {
+   public class_405(class_6629<? extends class_405> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6357, 16.0F);
       this.method_26895(class_1108.field_6352, -1.0F);
@@ -143,7 +143,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
 
    @Nullable
    @Override
-   public class_8145 method_37326(class_6331 var1) {
+   public Entity method_37326(class_6331 var1) {
       this.method_2025();
       return super.method_37326(var1);
    }
@@ -192,7 +192,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public class_6486 method_972() {
+   public World method_972() {
       return this.field_41768;
    }
 

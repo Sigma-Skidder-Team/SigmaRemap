@@ -28,7 +28,7 @@ public class class_7416<T extends class_4393> extends class_4171<T, class_2611<T
          Identifier var15 = this.method_33784(var14);
          class_7907 var16 = null;
          if (var15 != null) {
-            var16 = var2.method_11645(class_3581.method_16747(var15));
+            var16 = var2.method_11645(RenderLayer.method_16747(var15));
          }
 
          int var17 = class_6353.method_29110(var4, 0.0F);

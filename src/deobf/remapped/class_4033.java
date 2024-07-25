@@ -71,7 +71,7 @@ public class class_4033 extends class_9128 {
    }
 
    private void method_18558(boolean var1) {
-      for (class_8145 var5 : field_46692.field_9601.method_736()) {
+      for (Entity var5 : field_46692.field_9601.method_736()) {
          if (!SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
             boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().method_42007("Show Players");
             boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().method_42007("Show Mobs");

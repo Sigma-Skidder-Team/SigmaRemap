@@ -132,7 +132,7 @@ public class class_2461 extends class_9128 {
          }
 
          if (this.method_42007("Haphe (AACAP)") && !field_46692.field_9632.field_29654 && !field_46692.field_9632.field_41726) {
-            if (var3.method_43956() == class_240.field_817) {
+            if (var3.method_43956() == Direction.field_817) {
                return false;
             }
 
@@ -141,7 +141,7 @@ public class class_2461 extends class_9128 {
             }
          }
 
-         if (var3.method_43956() == class_240.field_817
+         if (var3.method_43956() == Direction.field_817
             && (double)(var3.method_43955().method_12165() + 2) > field_46692.field_9632.method_37309()
             && class_7494.method_34090(var3.method_43955())) {
             return false;
@@ -169,7 +169,7 @@ public class class_2461 extends class_9128 {
                field_46692.method_8614().method_4813(new class_3195(class_2584.field_12791));
             }
 
-            if (var3.method_43956() == class_240.field_817) {
+            if (var3.method_43956() == Direction.field_817) {
                this.field_12316 = var3.method_43955().method_12165() + 2;
             }
 

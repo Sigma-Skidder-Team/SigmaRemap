@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Arrays;
 
-public class class_1921<T extends class_8145> extends class_5272<T> {
+public class class_1921<T extends Entity> extends class_5272<T> {
    private static String[] field_9841;
    private final class_1549[] field_9842 = new class_1549[6];
 

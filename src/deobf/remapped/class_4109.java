@@ -39,7 +39,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    public boolean field_20028 = true;
    public int field_20023;
 
-   public class_4109(class_6629<? extends class_4109> var1, class_6486 var2) {
+   public class_4109(class_6629<? extends class_4109> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.method_19072();
@@ -198,7 +198,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       } else {
          this.method_37181(class_6199.field_31684, (float)var5);
          if (this.method_37151()) {
-            for (class_8145 var7 : this.method_37379()) {
+            for (Entity var7 : this.method_37379()) {
                var7.method_37181(class_6199.field_31684, (float)var5);
             }
          }
@@ -861,7 +861,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public void method_37340(class_8145 var1) {
+   public void method_37340(Entity var1) {
       super.method_37340(var1);
       if (var1 instanceof class_5886) {
          class_5886 var4 = (class_5886)var1;
@@ -944,7 +944,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Nullable
    @Override
-   public class_8145 method_37259() {
+   public Entity method_37259() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 
@@ -976,7 +976,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
                }
             }
 
-            var11.method_13368(class_240.field_817);
+            var11.method_13368(Direction.field_817);
          } while (!((double)var11.method_12165() < var14));
       }
 

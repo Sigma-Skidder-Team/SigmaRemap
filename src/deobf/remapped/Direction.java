@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
-public enum class_240 implements class_4530 {
+public enum Direction implements class_4530 {
    field_802(0, 1, -1, "down", class_137.field_403, class_9249.field_47216, new class_2700(0, -1, 0)),
    field_817(1, 0, -1, "up", class_137.field_405, class_9249.field_47216, new class_2700(0, 1, 0)),
    field_818(2, 3, 2, "north", class_137.field_403, class_9249.field_47219, new class_2700(0, 0, -1)),
@@ -25,22 +25,22 @@ public enum class_240 implements class_4530 {
    private final class_9249 field_812;
    private final class_137 field_806;
    private final class_2700 field_814;
-   public static final class_240[] field_803 = values();
-   private static final Map<String, class_240> field_810 = Arrays.<class_240>stream(field_803)
-      .collect(Collectors.toMap(class_240::method_1047, var0 -> (class_240)var0));
-   public static final class_240[] field_816 = Arrays.<class_240>stream(field_803)
+   public static final Direction[] field_803 = values();
+   private static final Map<String, Direction> field_810 = Arrays.<Direction>stream(field_803)
+      .collect(Collectors.toMap(Direction::method_1047, var0 -> (Direction)var0));
+   public static final Direction[] field_816 = Arrays.<Direction>stream(field_803)
       .sorted(Comparator.comparingInt(var0 -> var0.field_811))
-      .<class_240>toArray(class_240[]::new);
-   private static final class_240[] field_807 = Arrays.<class_240>stream(field_803)
+      .<Direction>toArray(Direction[]::new);
+   private static final Direction[] field_807 = Arrays.<Direction>stream(field_803)
       .filter(var0 -> var0.method_1029().method_42629())
       .sorted(Comparator.comparingInt(var0 -> var0.field_813))
-      .<class_240>toArray(class_240[]::new);
-   private static final Long2ObjectMap<class_240> field_801 = Arrays.<class_240>stream(field_803)
-      .collect(Collectors.toMap(var0 -> new class_1331(var0.method_1037()).method_6077(), var0 -> (class_240)var0, (var0, var1) -> {
+      .<Direction>toArray(Direction[]::new);
+   private static final Long2ObjectMap<Direction> field_801 = Arrays.<Direction>stream(field_803)
+      .collect(Collectors.toMap(var0 -> new class_1331(var0.method_1037()).method_6077(), var0 -> (Direction)var0, (var0, var1) -> {
          throw new IllegalArgumentException("Duplicate keys");
       }, Long2ObjectOpenHashMap::new));
 
-   private class_240(int var3, int var4, int var5, String var6, class_137 var7, class_9249 var8, class_2700 var9) {
+   private Direction(int var3, int var4, int var5, String var6, class_137 var7, class_9249 var8, class_2700 var9) {
       this.field_811 = var3;
       this.field_813 = var5;
       this.field_808 = var4;
@@ -50,7 +50,7 @@ public enum class_240 implements class_4530 {
       this.field_814 = var9;
    }
 
-   public static class_240[] method_1051(class_8145 var0) {
+   public static Direction[] method_1051(Entity var0) {
       float var3 = var0.method_37184(1.0F) * (float) (Math.PI / 180.0);
       float var4 = -var0.method_37291(1.0F) * (float) (Math.PI / 180.0);
       float var5 = class_9299.method_42818(var3);
@@ -65,9 +65,9 @@ public enum class_240 implements class_4530 {
       float var14 = !var11 ? -var8 : var8;
       float var15 = var12 * var6;
       float var16 = var14 * var6;
-      class_240 var17 = !var9 ? field_809 : field_804;
-      class_240 var18 = !var10 ? field_802 : field_817;
-      class_240 var19 = !var11 ? field_818 : field_800;
+      Direction var17 = !var9 ? field_809 : field_804;
+      Direction var18 = !var10 ? field_802 : field_817;
+      Direction var19 = !var11 ? field_818 : field_800;
       if (!(var12 > var14)) {
          if (!(var13 > var16)) {
             return !(var15 > var13) ? method_1030(var19, var18, var17) : method_1030(var19, var17, var18);
@@ -81,11 +81,11 @@ public enum class_240 implements class_4530 {
       }
    }
 
-   private static class_240[] method_1030(class_240 var0, class_240 var1, class_240 var2) {
-      return new class_240[]{var0, var1, var2, var2.method_1046(), var1.method_1046(), var0.method_1046()};
+   private static Direction[] method_1030(Direction var0, Direction var1, Direction var2) {
+      return new Direction[]{var0, var1, var2, var2.method_1046(), var1.method_1046(), var0.method_1046()};
    }
 
-   public static class_240 method_1048(class_8107 var0, class_240 var1) {
+   public static Direction method_1048(class_8107 var0, Direction var1) {
       class_2700 var4 = var1.method_1037();
       class_2637 var5 = new class_2637((float)var4.method_12173(), (float)var4.method_12165(), (float)var4.method_12185(), 0.0F);
       var5.method_11929(var0);
@@ -94,13 +94,13 @@ public enum class_240 implements class_4530 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public class_5422 method_1026() {
-      class_5422 var3 = class_2426.field_12080.method_11074(90.0F);
+   public Quaternion method_1026() {
+      Quaternion var3 = class_2426.field_12080.method_11074(90.0F);
       switch (this) {
          case field_802:
             return class_2426.field_12080.method_11074(180.0F);
          case field_817:
-            return class_5422.field_27621.method_24651();
+            return Quaternion.IDENTITY.method_24651();
          case field_818:
             var3.method_24658(class_2426.field_12076.method_11074(180.0F));
             return var3;
@@ -128,13 +128,13 @@ public enum class_240 implements class_4530 {
       return this.field_806;
    }
 
-   public class_240 method_1046() {
+   public Direction method_1046() {
       return field_803[this.field_808];
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public class_240 method_1042() {
+   public Direction method_1042() {
       switch (this) {
          case field_818:
             return field_804;
@@ -151,7 +151,7 @@ public enum class_240 implements class_4530 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public class_240 method_1053() {
+   public Direction method_1053() {
       switch (this) {
          case field_818:
             return field_809;
@@ -191,30 +191,30 @@ public enum class_240 implements class_4530 {
    }
 
    @Nullable
-   public static class_240 method_1035(String var0) {
+   public static Direction method_1035(String var0) {
       return var0 != null ? field_810.get(var0.toLowerCase(Locale.ROOT)) : null;
    }
 
-   public static class_240 method_1033(int var0) {
+   public static Direction method_1033(int var0) {
       return field_816[class_9299.method_42805(var0 % field_816.length)];
    }
 
-   public static class_240 method_1040(int var0) {
+   public static Direction method_1040(int var0) {
       return field_807[class_9299.method_42805(var0 % field_807.length)];
    }
 
    @Nullable
-   public static class_240 method_1032(int var0, int var1, int var2) {
-      return (class_240)field_801.get(class_1331.method_6107(var0, var1, var2));
+   public static Direction method_1032(int var0, int var1, int var2) {
+      return (Direction)field_801.get(class_1331.method_6107(var0, var1, var2));
    }
 
-   public static class_240 method_1036(double var0) {
+   public static Direction method_1036(double var0) {
       return method_1040(class_9299.method_42847(var0 / 90.0 + 0.5) & 3);
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public static class_240 method_1055(class_9249 var0, class_137 var1) {
+   public static Direction method_1055(class_9249 var0, class_137 var1) {
       switch (var0) {
          case field_47215:
             return var1 == class_137.field_405 ? field_804 : field_809;
@@ -230,19 +230,19 @@ public enum class_240 implements class_4530 {
       return (float)((this.field_813 & 3) * 90);
    }
 
-   public static class_240 method_1039(Random var0) {
-      return Util.<class_240>method_44697(field_803, var0);
+   public static Direction method_1039(Random var0) {
+      return Util.<Direction>method_44697(field_803, var0);
    }
 
-   public static class_240 method_1044(double var0, double var2, double var4) {
+   public static Direction method_1044(double var0, double var2, double var4) {
       return method_1045((float)var0, (float)var2, (float)var4);
    }
 
-   public static class_240 method_1045(float var0, float var1, float var2) {
-      class_240 var5 = field_818;
+   public static Direction method_1045(float var0, float var1, float var2) {
+      Direction var5 = field_818;
       float var6 = Float.MIN_VALUE;
 
-      for (class_240 var10 : field_803) {
+      for (Direction var10 : field_803) {
          float var11 = var0 * (float)var10.field_814.method_12173()
             + var1 * (float)var10.field_814.method_12165()
             + var2 * (float)var10.field_814.method_12185();
@@ -265,8 +265,8 @@ public enum class_240 implements class_4530 {
       return this.field_815;
    }
 
-   public static class_240 method_1043(class_137 var0, class_9249 var1) {
-      for (class_240 var7 : field_803) {
+   public static Direction method_1043(class_137 var0, class_9249 var1) {
+      for (Direction var7 : field_803) {
          if (var7.method_1049() == var0 && var7.method_1029() == var1) {
             return var7;
          }

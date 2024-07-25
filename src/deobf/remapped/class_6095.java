@@ -57,7 +57,7 @@ public class class_6095 {
       class_8107 var2 = new class_8107();
       var2.method_36818(field_31190);
       class_8107 var3 = var2.method_36824();
-      class_5422 var4 = new class_5422(field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat());
+      Quaternion var4 = new Quaternion(field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat());
       var2.method_36832(new class_8107(var4));
       var3.method_36831(var4);
       if (!var3.equals(var2)) {
@@ -71,7 +71,7 @@ public class class_6095 {
       class_6555 var2 = new class_6555();
       var2.method_29895(field_31190);
       class_6555 var3 = var2.method_29882();
-      class_5422 var4 = new class_5422(field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat());
+      Quaternion var4 = new Quaternion(field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat(), field_31190.nextFloat());
       var2.method_29891(new class_6555(var4));
       var3.method_29890(var4);
       if (!var3.equals(var2)) {

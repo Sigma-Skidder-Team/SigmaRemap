@@ -279,7 +279,7 @@ public class class_9477 {
          var28.method_11996(false);
 
          for (int var32 = 0; var32 < var28.method_11979().length; var32++) {
-            for (class_8145 var37 : var28.method_11979()[var32]) {
+            for (Entity var37 : var28.method_11979()[var32]) {
                class_5734 var39 = new class_5734();
                if (var37.method_37350(var39)) {
                   var28.method_11996(true);
@@ -339,7 +339,7 @@ public class class_9477 {
 
    private static void method_43780(class_5734 var0, class_2654 var1) {
       class_3416 var4 = var0.method_25927("Entities", 10);
-      class_6486 var5 = var1.method_11997();
+      World var5 = var1.method_11997();
 
       for (int var6 = 0; var6 < var4.size(); var6++) {
          class_5734 var7 = var4.method_15764(var6);

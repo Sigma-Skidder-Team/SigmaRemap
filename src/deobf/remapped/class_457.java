@@ -10,7 +10,7 @@ public class class_457 implements class_6310<class_392> {
    public class_457() {
    }
 
-   public class_457(class_8145 var1, byte var2) {
+   public class_457(Entity var1, byte var2) {
       this.field_1902 = var1.method_37145();
       this.field_1904 = var2;
    }
@@ -31,7 +31,7 @@ public class class_457 implements class_6310<class_392> {
       var1.method_1981(this);
    }
 
-   public class_8145 method_2192(class_6486 var1) {
+   public Entity method_2192(World var1) {
       return var1.method_29534(this.field_1902);
    }
 

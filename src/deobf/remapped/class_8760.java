@@ -204,24 +204,24 @@ public class class_8760 {
    }
 
    @Deprecated
-   public static DataResult<class_5621<class_6486>> method_40243(Dynamic<?> var0) {
+   public static DataResult<class_5621<World>> method_40243(Dynamic<?> var0) {
       Optional var3 = var0.asNumber().result();
       if (var3.isPresent()) {
          int var4 = ((Number)var3.get()).intValue();
          if (var4 == -1) {
-            return DataResult.success(class_6486.field_33029);
+            return DataResult.success(World.field_33029);
          }
 
          if (var4 == 0) {
-            return DataResult.success(class_6486.field_33048);
+            return DataResult.success(World.field_33048);
          }
 
          if (var4 == 1) {
-            return DataResult.success(class_6486.field_33038);
+            return DataResult.success(World.field_33038);
          }
       }
 
-      return class_6486.field_33043.parse(var0);
+      return World.field_33043.parse(var0);
    }
 
    public static class_7522 method_40235(class_7522 var0) {
@@ -263,10 +263,10 @@ public class class_8760 {
       return !this.method_40222(field_44822) ? "" : "_end";
    }
 
-   public static File method_40231(class_5621<class_6486> var0, File var1) {
-      if (var0 != class_6486.field_33048) {
-         if (var0 != class_6486.field_33038) {
-            return var0 != class_6486.field_33029
+   public static File method_40231(class_5621<World> var0, File var1) {
+      if (var0 != World.field_33048) {
+         if (var0 != World.field_33038) {
+            return var0 != World.field_33029
                ? new File(var1, "dimensions/" + var0.method_25499().method_21461() + "/" + var0.method_25499().method_21456())
                : new File(var1, "DIM-1");
          } else {

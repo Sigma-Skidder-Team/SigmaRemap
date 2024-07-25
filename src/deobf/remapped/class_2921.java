@@ -24,7 +24,7 @@ public class class_2921 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6099(class_240 var1, int var2) {
+   public class_1331 method_6099(Direction var1, int var2) {
       return super.method_6099(var1, var2).method_6072();
    }
 
@@ -65,7 +65,7 @@ public class class_2921 extends class_1331 {
       );
    }
 
-   public class_2921 method_13371(class_2700 var1, class_240 var2) {
+   public class_2921 method_13371(class_2700 var1, Direction var2) {
       return this.method_13362(var1.method_12173() + var2.method_1041(), var1.method_12165() + var2.method_1054(), var1.method_12185() + var2.method_1034());
    }
 
@@ -73,11 +73,11 @@ public class class_2921 extends class_1331 {
       return this.method_13362(var1.method_12173() + var2, var1.method_12165() + var3, var1.method_12185() + var4);
    }
 
-   public class_2921 method_13368(class_240 var1) {
+   public class_2921 method_13368(Direction var1) {
       return this.method_13369(var1, 1);
    }
 
-   public class_2921 method_13369(class_240 var1, int var2) {
+   public class_2921 method_13369(Direction var1, int var2) {
       return this.method_13362(
          this.method_12173() + var1.method_1041() * var2, this.method_12165() + var1.method_1054() * var2, this.method_12185() + var1.method_1034() * var2
       );

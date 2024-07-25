@@ -13,7 +13,7 @@ public class class_5339 extends class_6261 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       this.method_28562(var1, var2, var3);
    }
 
@@ -25,8 +25,8 @@ public class class_5339 extends class_6261 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
-      if (var2 == class_240.field_802 && !var1.method_8309(var4, var5)) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+      if (var2 == Direction.field_802 && !var1.method_8309(var4, var5)) {
          return class_4783.field_23184.method_29260();
       } else {
          this.method_28562(var1, var4, var5);

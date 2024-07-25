@@ -5,10 +5,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_5405 extends class_6199 {
-   public final class_8145 field_27576;
+   public final Entity field_27576;
    private boolean field_27578;
 
-   public class_5405(String var1, class_8145 var2) {
+   public class_5405(String var1, Entity var2) {
       super(var1);
       this.field_27576 = var2;
    }
@@ -24,7 +24,7 @@ public class class_5405 extends class_6199 {
 
    @Nullable
    @Override
-   public class_8145 method_28372() {
+   public Entity method_28372() {
       return this.field_27576;
    }
 

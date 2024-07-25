@@ -34,9 +34,9 @@ public class class_8537 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.method_8309(var4, var5)) {
-         if (var2 == class_240.field_817 && var3.method_8350(class_4783.field_23886)) {
+         if (var2 == Direction.field_817 && var3.method_8350(class_4783.field_23886)) {
             var4.method_7513(var5, class_4783.field_23886.method_29260(), 2);
          }
 
@@ -57,7 +57,7 @@ public class class_8537 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(class_6486 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
       return true;
    }
 
@@ -71,7 +71,7 @@ public class class_8537 extends class_6414 implements class_3978 {
       return !(var2.method_26446().method_27960() instanceof class_2235) ? super.method_10799(var1, var2, var3, var4) : 1.0F;
    }
 
-   public void method_39309(class_6486 var1, class_1331 var2) {
+   public void method_39309(World var1, class_1331 var2) {
       var1.method_7513(var2.method_6081(), class_4783.field_23886.method_29260().method_10308(class_747.field_4059, class_6546.field_33277), 3);
    }
 }

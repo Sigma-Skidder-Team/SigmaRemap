@@ -36,7 +36,7 @@ public class class_1385 {
    public class_5155[] field_7532 = null;
    public int field_7523 = -1;
    public class_2522 field_7561 = class_4783.field_23184.method_29260();
-   public class_3581 field_7502 = null;
+   public RenderLayer field_7502 = null;
    public static final int field_7537 = 0;
    public static final int field_7521 = 1;
    public static final int field_7527 = 2;

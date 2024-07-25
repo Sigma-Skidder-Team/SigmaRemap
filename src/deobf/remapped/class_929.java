@@ -259,7 +259,7 @@ public class class_929 extends class_2266 {
 
          return var8;
       } else {
-         for (class_240 var12 : class_240.values()) {
+         for (Direction var12 : Direction.values()) {
             class_1108 var13 = method_10461(var1, var7.method_13362(var2, var3, var4).method_13368(var12));
             if (var13 == class_1108.field_6365) {
                return class_1108.field_6356;

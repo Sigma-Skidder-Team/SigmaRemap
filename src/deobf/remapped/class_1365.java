@@ -34,10 +34,10 @@ public class class_1365 extends class_2255<class_1578> {
 
    public void method_6278(class_1578 var1, float var2, class_7966 var3, class_2565 var4, int var5, int var6) {
       class_2843 var9 = class_5276.field_26956[var1.method_7117().method_41794()];
-      class_6486 var10 = var1.method_17402();
+      World var10 = var1.method_17402();
       if (var10 == null) {
-         this.method_6279(var3, var4, true, class_240.field_800, var9, var5, var6, false);
-         this.method_6279(var3, var4, false, class_240.field_800, var9, var5, var6, true);
+         this.method_6279(var3, var4, true, Direction.field_800, var9, var5, var6, false);
+         this.method_6279(var3, var4, false, Direction.field_800, var9, var5, var6, true);
       } else {
          class_2522 var11 = var1.method_17403();
          class_7892 var12 = class_7951.<class_1578>method_35989(
@@ -55,7 +55,7 @@ public class class_1365 extends class_2255<class_1578> {
             var3,
             var4,
             var11.<class_7095>method_10313(class_3633.field_17729) == class_7095.field_36603,
-            var11.<class_240>method_10313(class_3633.field_1543),
+            var11.<Direction>method_10313(class_3633.field_1543),
             var9,
             var13,
             var6,
@@ -64,7 +64,7 @@ public class class_1365 extends class_2255<class_1578> {
       }
    }
 
-   private void method_6279(class_7966 var1, class_2565 var2, boolean var3, class_240 var4, class_2843 var5, int var6, int var7, boolean var8) {
+   private void method_6279(class_7966 var1, class_2565 var2, boolean var3, Direction var4, class_2843 var5, int var6, int var7, boolean var8) {
       this.field_7422.field_8200 = var3;
       this.field_7421.field_8200 = !var3;
       this.field_7419[0].field_8200 = !var3;
@@ -77,7 +77,7 @@ public class class_1365 extends class_2255<class_1578> {
       var1.method_36065(0.5, 0.5, 0.5);
       var1.method_36060(class_2426.field_12076.method_11074(180.0F + var4.method_1028()));
       var1.method_36065(-0.5, -0.5, -0.5);
-      class_7907 var11 = var5.method_12943(var2, class_3581::method_16734);
+      class_7907 var11 = var5.method_12943(var2, RenderLayer::method_16734);
       this.field_7422.method_7060(var1, var11, var6, var7);
       this.field_7421.method_7060(var1, var11, var6, var7);
       this.field_7419[0].method_7060(var1, var11, var6, var7);

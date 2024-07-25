@@ -22,7 +22,7 @@ public class class_2734 {
    public static final class_1720<class_1366> field_13363 = new class_8361();
    public static final class_1720<class_1331> field_13353 = new class_1238();
    public static final class_1720<Optional<class_1331>> field_13352 = new class_1187();
-   public static final class_1720<class_240> field_13364 = new class_4425();
+   public static final class_1720<Direction> field_13364 = new class_4425();
    public static final class_1720<Optional<UUID>> field_13348 = new class_7180();
    public static final class_1720<class_5734> field_13346 = new class_6387();
    public static final class_1720<class_3047> field_13360 = new class_5094();

@@ -11,7 +11,7 @@ public class class_9795 extends class_3757 {
       this(class_133.field_362);
    }
 
-   public boolean method_45197(class_240 var1) {
-      return var1 == class_240.field_817;
+   public boolean method_45197(Direction var1) {
+      return var1 == Direction.field_817;
    }
 }

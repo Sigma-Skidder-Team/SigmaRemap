@@ -15,11 +15,11 @@ public class class_1557 extends class_2451 {
 
    @Override
    public class_6910 method_11237(class_4734 var1) {
-      class_6486 var4 = var1.method_21862();
+      World var4 = var1.method_21862();
       if (!var4.field_33055) {
          class_6098 var5 = var1.method_21867();
          class_1343 var6 = var1.method_21865();
-         class_240 var7 = var1.method_21857();
+         Direction var7 = var1.method_21857();
          class_8612 var8 = new class_8612(
             var4,
             var1.method_21868(),
@@ -36,7 +36,7 @@ public class class_1557 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       if (!var2.method_26618()) {
          return class_954.<class_6098>method_4207(var2.method_26617(var3));
       } else {
@@ -53,7 +53,7 @@ public class class_1557 extends class_2451 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, class_6486 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       class_5734 var7 = var1.method_28021("Fireworks");
       if (var7 != null) {
          if (var7.method_25939("Flight", 99)) {

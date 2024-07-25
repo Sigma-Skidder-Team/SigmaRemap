@@ -8,8 +8,8 @@ import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.function.Supplier;
 
-public abstract class class_3581 extends class_5348 {
-   private static final class_3581 field_17571 = method_16761(
+public abstract class RenderLayer extends class_5348 {
+   private static final RenderLayer field_17571 = method_16761(
       "solid",
       class_7985.field_40918,
       7,
@@ -18,7 +18,7 @@ public abstract class class_3581 extends class_5348 {
       false,
       class_8570.method_39411().method_25434(field_27297).method_25438(field_27280).method_25435(field_27324).method_25436(true)
    );
-   private static final class_3581 field_17560 = method_16761(
+   private static final RenderLayer field_17560 = method_16761(
       "cutout_mipped",
       class_7985.field_40918,
       7,
@@ -27,7 +27,7 @@ public abstract class class_3581 extends class_5348 {
       false,
       class_8570.method_39411().method_25434(field_27297).method_25438(field_27280).method_25435(field_27324).method_25433(field_27316).method_25436(true)
    );
-   private static final class_3581 field_17561 = method_16761(
+   private static final RenderLayer field_17561 = method_16761(
       "cutout",
       class_7985.field_40918,
       7,
@@ -36,20 +36,20 @@ public abstract class class_3581 extends class_5348 {
       false,
       class_8570.method_39411().method_25434(field_27297).method_25438(field_27280).method_25435(field_27315).method_25433(field_27316).method_25436(true)
    );
-   private static final class_3581 field_17562 = method_16761("translucent", class_7985.field_40918, 7, 262144, true, true, method_16759());
-   private static final class_3581 field_17565 = method_16761("translucent_moving_block", class_7985.field_40918, 7, 262144, false, true, method_16706());
-   private static final class_3581 field_17574 = method_16761("translucent_no_crumbling", class_7985.field_40918, 7, 262144, false, true, method_16759());
-   private static final class_3581 field_17563 = method_16760(
+   private static final RenderLayer field_17562 = method_16761("translucent", class_7985.field_40918, 7, 262144, true, true, method_16759());
+   private static final RenderLayer field_17565 = method_16761("translucent_moving_block", class_7985.field_40918, 7, 262144, false, true, method_16706());
+   private static final RenderLayer field_17574 = method_16761("translucent_no_crumbling", class_7985.field_40918, 7, 262144, false, true, method_16759());
+   private static final RenderLayer field_17563 = method_16760(
       "leash",
       class_7985.field_40908,
       7,
       256,
       class_8570.method_39411().method_25435(field_27302).method_25432(field_27319).method_25438(field_27280).method_25436(false)
    );
-   private static final class_3581 field_17570 = method_16760(
+   private static final RenderLayer field_17570 = method_16760(
       "water_mask", class_7985.field_40915, 7, 256, class_8570.method_39411().method_25435(field_27302).method_25428(field_27286).method_25436(false)
    );
-   private static final class_3581 field_17564 = method_16760(
+   private static final RenderLayer field_17564 = method_16760(
       "armor_glint",
       class_7985.field_40912,
       7,
@@ -64,7 +64,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25430(field_27293)
          .method_25436(false)
    );
-   private static final class_3581 field_17569 = method_16760(
+   private static final RenderLayer field_17569 = method_16760(
       "armor_entity_glint",
       class_7985.field_40912,
       7,
@@ -79,7 +79,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25430(field_27293)
          .method_25436(false)
    );
-   private static final class_3581 field_17581 = method_16760(
+   private static final RenderLayer field_17581 = method_16760(
       "glint_translucent",
       class_7985.field_40912,
       7,
@@ -94,7 +94,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25427(field_27317)
          .method_25436(false)
    );
-   private static final class_3581 field_17559 = method_16760(
+   private static final RenderLayer field_17559 = method_16760(
       "glint",
       class_7985.field_40912,
       7,
@@ -108,7 +108,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25440(field_27301)
          .method_25436(false)
    );
-   private static final class_3581 field_17575 = method_16760(
+   private static final RenderLayer field_17575 = method_16760(
       "glint_direct",
       class_7985.field_40912,
       7,
@@ -122,7 +122,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25440(field_27301)
          .method_25436(false)
    );
-   private static final class_3581 field_17556 = method_16760(
+   private static final RenderLayer field_17556 = method_16760(
       "entity_glint",
       class_7985.field_40912,
       7,
@@ -137,7 +137,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25440(field_27314)
          .method_25436(false)
    );
-   private static final class_3581 field_17568 = method_16760(
+   private static final RenderLayer field_17568 = method_16760(
       "entity_glint_direct",
       class_7985.field_40912,
       7,
@@ -151,7 +151,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25440(field_27314)
          .method_25436(false)
    );
-   private static final class_3581 field_17577 = method_16761(
+   private static final RenderLayer field_17577 = method_16761(
       "lightning",
       class_7985.field_40903,
       7,
@@ -160,7 +160,7 @@ public abstract class class_3581 extends class_5348 {
       true,
       class_8570.method_39411().method_25428(field_27327).method_25431(field_27288).method_25427(field_27313).method_25434(field_27297).method_25436(false)
    );
-   private static final class_3581 field_17582 = method_16761("tripwire", class_7985.field_40918, 7, 262144, true, true, method_16726());
+   private static final RenderLayer field_17582 = method_16761("tripwire", class_7985.field_40918, 7, 262144, true, true, method_16726());
    public static final class_7634 field_17558 = method_16760(
       "lines",
       class_7985.field_40903,
@@ -179,10 +179,10 @@ public abstract class class_3581 extends class_5348 {
    private final int field_17557;
    private final boolean field_17579;
    private final boolean field_17573;
-   private final Optional<class_3581> field_17578;
+   private final Optional<RenderLayer> field_17578;
    private int field_17567 = -1;
-   public static final class_3581[] field_17580 = method_16708();
-   private static Map<class_6998, class_3581> field_17566;
+   public static final RenderLayer[] field_17580 = method_16708();
+   private static Map<class_6998, RenderLayer> field_17566;
 
    public int method_16704() {
       return this.field_17567;
@@ -192,27 +192,27 @@ public abstract class class_3581 extends class_5348 {
       return this.field_17573;
    }
 
-   private static class_3581[] method_16708() {
-      class_3581[] var2 = method_16770().<class_3581>toArray(new class_3581[0]);
+   private static RenderLayer[] method_16708() {
+      RenderLayer[] var2 = method_16770().<RenderLayer>toArray(new RenderLayer[0]);
       int var3 = 0;
 
       while (var3 < var2.length) {
-         class_3581 var4 = var2[var3];
+         RenderLayer var4 = var2[var3];
          var4.field_17567 = var3++;
       }
 
       return var2;
    }
 
-   public static class_3581 method_16751() {
+   public static RenderLayer method_16751() {
       return field_17571;
    }
 
-   public static class_3581 method_16756() {
+   public static RenderLayer method_16756() {
       return field_17560;
    }
 
-   public static class_3581 method_16771() {
+   public static RenderLayer method_16771() {
       return field_17561;
    }
 
@@ -226,7 +226,7 @@ public abstract class class_3581 extends class_5348 {
          .method_25436(true);
    }
 
-   public static class_3581 method_16762() {
+   public static RenderLayer method_16762() {
       return field_17562;
    }
 
@@ -240,15 +240,15 @@ public abstract class class_3581 extends class_5348 {
          .method_25436(true);
    }
 
-   public static class_3581 method_16746() {
+   public static RenderLayer method_16746() {
       return field_17565;
    }
 
-   public static class_3581 method_16767() {
+   public static RenderLayer method_16767() {
       return field_17574;
    }
 
-   public static class_3581 method_16749(Identifier var0) {
+   public static RenderLayer method_16749(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "armor_cutout_no_cull",
@@ -269,7 +269,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16734(Identifier var0) {
+   public static RenderLayer method_16734(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_solid",
@@ -287,7 +287,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16747(Identifier var0) {
+   public static RenderLayer method_16747(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_cutout",
@@ -306,7 +306,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16737(Identifier var0, boolean var1) {
+   public static RenderLayer method_16737(Identifier var0, boolean var1) {
       Identifier var4 = method_16768(var0);
       return method_16724(
          "entity_cutout_no_cull",
@@ -327,11 +327,11 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16755(Identifier var0) {
+   public static RenderLayer method_16755(Identifier var0) {
       return method_16737(var0, true);
    }
 
-   public static class_3581 method_16748(Identifier var0, boolean var1) {
+   public static RenderLayer method_16748(Identifier var0, boolean var1) {
       Identifier var4 = method_16768(var0);
       return method_16724(
          "entity_cutout_no_cull_z_offset",
@@ -353,11 +353,11 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16753(Identifier var0) {
+   public static RenderLayer method_16753(Identifier var0) {
       return method_16748(var0, true);
    }
 
-   public static class_3581 method_16766(Identifier var0) {
+   public static RenderLayer method_16766(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "item_entity_translucent_cull",
@@ -378,7 +378,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16735(Identifier var0) {
+   public static RenderLayer method_16735(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_translucent_cull",
@@ -397,7 +397,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16754(Identifier var0, boolean var1) {
+   public static RenderLayer method_16754(Identifier var0, boolean var1) {
       Identifier var4 = method_16768(var0);
       return method_16724(
          "entity_translucent",
@@ -418,11 +418,11 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16705(Identifier var0) {
+   public static RenderLayer method_16705(Identifier var0) {
       return method_16754(var0, true);
    }
 
-   public static class_3581 method_16730(Identifier var0) {
+   public static RenderLayer method_16730(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_smooth_cutout",
@@ -441,7 +441,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16731(Identifier var0, boolean var1) {
+   public static RenderLayer method_16731(Identifier var0, boolean var1) {
       Identifier var4 = method_16768(var0);
       return method_16724(
          "beacon_beam",
@@ -459,7 +459,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16727(Identifier var0) {
+   public static RenderLayer method_16727(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_decal",
@@ -479,7 +479,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16750(Identifier var0) {
+   public static RenderLayer method_16750(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_no_outline",
@@ -500,7 +500,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16740(Identifier var0) {
+   public static RenderLayer getEntityShadow(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "entity_shadow",
@@ -523,7 +523,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16703(Identifier var0, float var1) {
+   public static RenderLayer method_16703(Identifier var0, float var1) {
       Identifier var4 = method_16768(var0);
       return method_16722(
          "entity_alpha",
@@ -540,7 +540,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16769(Identifier var0) {
+   public static RenderLayer method_16769(Identifier var0) {
       Identifier var3 = method_16768(var0);
       return method_16723(
          "eyes",
@@ -560,7 +560,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16738(Identifier var0, float var1, float var2) {
+   public static RenderLayer method_16738(Identifier var0, float var1, float var2) {
       Identifier var5 = method_16768(var0);
       return method_16721(
          "energy_swirl",
@@ -589,19 +589,19 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16743() {
+   public static RenderLayer method_16743() {
       return field_17563;
    }
 
-   public static class_3581 method_16728() {
+   public static RenderLayer method_16728() {
       return field_17570;
    }
 
-   public static class_3581 method_16773(Identifier var0) {
+   public static RenderLayer method_16773(Identifier var0) {
       return method_16741(var0, field_27319);
    }
 
-   public static class_3581 method_16741(Identifier var0, class_3754 var1) {
+   public static RenderLayer method_16741(Identifier var0, class_3754 var1) {
       return method_16724(
          "outline",
          var0,
@@ -624,35 +624,35 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16707() {
+   public static RenderLayer method_16707() {
       return field_17564;
    }
 
-   public static class_3581 method_16711() {
+   public static RenderLayer method_16711() {
       return field_17569;
    }
 
-   public static class_3581 method_16739() {
+   public static RenderLayer method_16739() {
       return field_17581;
    }
 
-   public static class_3581 method_16716() {
+   public static RenderLayer method_16716() {
       return field_17559;
    }
 
-   public static class_3581 method_16715() {
+   public static RenderLayer method_16715() {
       return field_17575;
    }
 
-   public static class_3581 method_16757() {
+   public static RenderLayer method_16757() {
       return field_17556;
    }
 
-   public static class_3581 method_16763() {
+   public static RenderLayer method_16763() {
       return field_17568;
    }
 
-   public static class_3581 method_16719(Identifier var0) {
+   public static RenderLayer method_16719(Identifier var0) {
       return method_16723(
          "crumbling",
          var0,
@@ -677,7 +677,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16732(Identifier var0) {
+   public static RenderLayer method_16732(Identifier var0) {
       return method_16723(
          "text",
          var0,
@@ -698,7 +698,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16752(Identifier var0) {
+   public static RenderLayer method_16752(Identifier var0) {
       return method_16723(
          "text_see_through",
          var0,
@@ -721,7 +721,7 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16714() {
+   public static RenderLayer method_16714() {
       return field_17577;
    }
 
@@ -735,11 +735,11 @@ public abstract class class_3581 extends class_5348 {
          .method_25436(true);
    }
 
-   public static class_3581 method_16765() {
+   public static RenderLayer method_16765() {
       return field_17582;
    }
 
-   public static class_3581 method_16712(int var0) {
+   public static RenderLayer method_16712(int var0) {
       return method_16720(
          "end_portal",
          var0,
@@ -767,18 +767,18 @@ public abstract class class_3581 extends class_5348 {
       );
    }
 
-   public static class_3581 method_16744() {
+   public static RenderLayer method_16744() {
       return field_17558;
    }
 
-   public class_3581(String var1, class_2868 var2, int var3, int var4, boolean var5, boolean var6, Runnable var7, Runnable var8) {
+   public RenderLayer(String var1, class_2868 var2, int var3, int var4, boolean var5, boolean var6, Runnable var7, Runnable var8) {
       super(var1, var7, var8);
       this.field_17572 = var2;
       this.field_17576 = var3;
       this.field_17557 = var4;
       this.field_17579 = var5;
       this.field_17573 = var6;
-      this.field_17578 = Optional.<class_3581>of(this);
+      this.field_17578 = Optional.<RenderLayer>of(this);
    }
 
    public static class_7634 method_16760(String var0, class_2868 var1, int var2, int var3, class_8570 var4) {
@@ -823,7 +823,7 @@ public abstract class class_3581 extends class_5348 {
       return this.field_27283;
    }
 
-   public static List<class_3581> method_16770() {
+   public static List<RenderLayer> method_16770() {
       return ImmutableList.of(method_16751(), method_16756(), method_16771(), method_16762(), method_16765());
    }
 
@@ -839,8 +839,8 @@ public abstract class class_3581 extends class_5348 {
       return this.field_17576;
    }
 
-   public Optional<class_3581> method_16772() {
-      return Optional.<class_3581>empty();
+   public Optional<RenderLayer> method_16772() {
+      return Optional.<RenderLayer>empty();
    }
 
    public boolean method_16709() {
@@ -851,43 +851,43 @@ public abstract class class_3581 extends class_5348 {
       return this.field_17579;
    }
 
-   public Optional<class_3581> method_16736() {
+   public Optional<RenderLayer> method_16736() {
       return this.field_17578;
    }
 
-   private static class_3581 method_16723(String var0, Identifier var1, Supplier<class_3581> var2) {
+   private static RenderLayer method_16723(String var0, Identifier var1, Supplier<RenderLayer> var2) {
       class_6998 var5 = new class_6998(var0, var1);
       return method_16725(var5, var2);
    }
 
-   private static class_3581 method_16724(String var0, Identifier var1, boolean var2, Supplier<class_3581> var3) {
+   private static RenderLayer method_16724(String var0, Identifier var1, boolean var2, Supplier<RenderLayer> var3) {
       class_6998 var6 = new class_6998(var0, var1, var2);
       return method_16725(var6, var3);
    }
 
-   private static class_3581 method_16722(String var0, Identifier var1, float var2, Supplier<class_3581> var3) {
+   private static RenderLayer method_16722(String var0, Identifier var1, float var2, Supplier<RenderLayer> var3) {
       class_6998 var6 = new class_6998(var0, var1, var2);
       return method_16725(var6, var3);
    }
 
-   private static class_3581 method_16721(String var0, Identifier var1, float var2, float var3, Supplier<class_3581> var4) {
+   private static RenderLayer method_16721(String var0, Identifier var1, float var2, float var3, Supplier<RenderLayer> var4) {
       class_6998 var7 = new class_6998(var0, var1, var2, var3);
       return method_16725(var7, var4);
    }
 
-   private static class_3581 method_16720(String var0, int var1, Supplier<class_3581> var2) {
+   private static RenderLayer method_16720(String var0, int var1, Supplier<RenderLayer> var2) {
       class_6998 var5 = new class_6998(var0, var1);
       return method_16725(var5, var2);
    }
 
-   private static class_3581 method_16725(class_6998 var0, Supplier<class_3581> var1) {
+   private static RenderLayer method_16725(class_6998 var0, Supplier<RenderLayer> var1) {
       if (field_17566 == null) {
-         field_17566 = new HashMap<class_6998, class_3581>();
+         field_17566 = new HashMap<class_6998, RenderLayer>();
       }
 
-      class_3581 var4 = field_17566.get(var0);
+      RenderLayer var4 = field_17566.get(var0);
       if (var4 == null) {
-         var4 = (class_3581)var1.get();
+         var4 = (RenderLayer)var1.get();
          field_17566.put(var0, var4);
          return var4;
       } else {

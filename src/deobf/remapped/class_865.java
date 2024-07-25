@@ -90,11 +90,11 @@ public class class_865 {
       this.field_4483 = var13;
    }
 
-   public boolean method_3737(class_9359 var1, class_8145 var2) {
+   public boolean method_3737(class_9359 var1, Entity var2) {
       return this.method_3736(var1.method_43235(), var1.method_37245(), var2);
    }
 
-   public boolean method_3736(class_6331 var1, class_1343 var2, class_8145 var3) {
+   public boolean method_3736(class_6331 var1, class_1343 var2, Entity var3) {
       if (this != field_4485) {
          if (var3 == null) {
             return false;
@@ -213,7 +213,7 @@ public class class_865 {
       }
    }
 
-   public static class_2792 method_3739(class_9359 var0, class_8145 var1) {
+   public static class_2792 method_3739(class_9359 var0, Entity var1) {
       return new class_8480(var0.method_43235())
          .method_39065(class_8712.field_44676, var1)
          .method_39065(class_8712.field_44671, var0.method_37245())

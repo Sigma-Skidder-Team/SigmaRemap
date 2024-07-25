@@ -23,7 +23,7 @@ public enum class_3336 {
    public float field_16445;
    public float field_16456;
    public class_7474 field_16463;
-   public class_8145 field_16449;
+   public Entity field_16449;
 
    private class_3336(class_2451 var3, float var4, float var5, float var6) {
       this.field_16454 = var3;
@@ -110,7 +110,7 @@ public enum class_3336 {
                class_3572.field_17483.and(new class_8528(this, var15, var13, var14))
             );
          if (var17.size() > 0) {
-            for (class_8145 var22 : var17) {
+            for (Entity var22 : var17) {
                this.field_16449 = var22;
             }
             break;

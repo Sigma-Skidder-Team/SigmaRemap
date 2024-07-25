@@ -44,7 +44,7 @@ public class class_1374 extends class_2103 {
          class_2522 var10 = var5.field_19967;
          class_2522 var11 = var9.method_29260();
          if (var10.method_10307(class_3049.field_14946)) {
-            var11 = var11.method_10308(class_3049.field_14946, var10.<class_240>method_10313(class_3049.field_14946));
+            var11 = var11.method_10308(class_3049.field_14946, var10.<Direction>method_10313(class_3049.field_14946));
          }
 
          if (var10.method_10307(class_3049.field_14955)) {

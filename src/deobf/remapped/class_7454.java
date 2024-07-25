@@ -96,7 +96,7 @@ public class class_7454 extends class_3757 {
       this.field_37991 = true;
       if (this.method_33930()) {
          class_1331 var3 = this.field_18358
-            .method_6098(this.field_18364.method_28262(this.field_18358).<class_240>method_10313(class_8151.field_41791).method_1046());
+            .method_6098(this.field_18364.method_28262(this.field_18358).<Direction>method_10313(class_8151.field_41791).method_1046());
          if (!(this.field_18364.method_28262(var3).method_8360() instanceof class_8151)) {
             this.field_37991 = false;
          } else {

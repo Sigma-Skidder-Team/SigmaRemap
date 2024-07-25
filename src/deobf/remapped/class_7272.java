@@ -13,7 +13,7 @@ public class class_7272 extends class_5467 {
    private int field_37233;
    private int field_37234;
 
-   public class_7272(class_6629<? extends class_7272> var1, class_6486 var2) {
+   public class_7272(class_6629<? extends class_7272> var1, World var2) {
       super(var1, var2);
       this.field_29914 = new class_3143(this, this);
       this.field_29900 = new class_1830(this);
@@ -228,7 +228,7 @@ public class class_7272 extends class_5467 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       if (this.method_33239() != 99) {
          return var1.method_37181(class_6199.method_28345(this), 3.0F);
       } else {

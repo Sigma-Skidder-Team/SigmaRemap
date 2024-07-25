@@ -48,7 +48,7 @@ public class class_2256 extends class_3599 {
          .field_41768
          .<class_91>method_25869(class_91.class, this.field_11227.method_37241().method_18899(8.0, 8.0, 8.0), class_496.method_2437());
       if (!var3.isEmpty() && this.field_11227.method_26520(class_6943.field_35707).method_28022()) {
-         this.field_11227.method_26927().method_5616((class_8145)var3.get(0), 1.2F);
+         this.field_11227.method_26927().method_5616((Entity)var3.get(0), 1.2F);
       } else if (!this.field_11227.method_26520(class_6943.field_35707).method_28022()) {
          class_496.method_2459(this.field_11227);
       }

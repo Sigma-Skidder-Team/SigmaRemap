@@ -45,7 +45,7 @@ public class class_823 extends class_462 {
             this.field_36435.field_48996 + var8,
             this.field_36435.field_48995 + var3.nextInt(var7) + 1,
             this.field_36435.field_48992 - 1,
-            class_240.field_818,
+            Direction.field_818,
             var6
          );
          if (var9 != null) {
@@ -76,7 +76,7 @@ public class class_823 extends class_462 {
             this.field_36435.field_48996 + var8,
             this.field_36435.field_48995 + var3.nextInt(var7) + 1,
             this.field_36435.field_48994 + 1,
-            class_240.field_800,
+            Direction.field_800,
             var6
          );
          if (var18 != null) {
@@ -107,7 +107,7 @@ public class class_823 extends class_462 {
             this.field_36435.field_48996 - 1,
             this.field_36435.field_48995 + var3.nextInt(var7) + 1,
             this.field_36435.field_48992 + var8,
-            class_240.field_809,
+            Direction.field_809,
             var6
          );
          if (var19 != null) {
@@ -138,7 +138,7 @@ public class class_823 extends class_462 {
             this.field_36435.field_48991 + 1,
             this.field_36435.field_48995 + var3.nextInt(var7) + 1,
             this.field_36435.field_48992 + var8,
-            class_240.field_804,
+            Direction.field_804,
             var6
          );
          if (var20 != null) {

@@ -3,11 +3,11 @@ package remapped;
 public class class_1601 extends class_1080 {
    private static String[] field_8332;
 
-   public class_1601(class_6629<?> var1, class_6486 var2) {
+   public class_1601(class_6629<?> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_1601(class_6486 var1, double var2, double var4, double var6) {
+   public class_1601(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34239, var1, var2, var4, var6);
    }
 

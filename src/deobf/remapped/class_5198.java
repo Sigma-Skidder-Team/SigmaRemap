@@ -21,7 +21,7 @@ public class class_5198 extends class_4314 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       if (var2 instanceof class_6331
          && !var4.method_37070()
          && !var4.method_37151()
@@ -33,7 +33,7 @@ public class class_5198 extends class_4314 {
             var1.method_8334(var2, var3),
             class_8529.field_43655
          )) {
-         class_5621 var7 = var2.method_29545() != class_6486.field_33038 ? class_6486.field_33038 : class_6486.field_33048;
+         class_5621 var7 = var2.method_29545() != World.field_33038 ? World.field_33038 : World.field_33048;
          class_6331 var8 = ((class_6331)var2).method_29522().method_1697(var7);
          if (var8 == null) {
             return;
@@ -44,7 +44,7 @@ public class class_5198 extends class_4314 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       double var7 = (double)var3.method_12173() + var4.nextDouble();
       double var9 = (double)var3.method_12165() + 0.8;
       double var11 = (double)var3.method_12185() + var4.nextDouble();

@@ -54,37 +54,37 @@ public class class_8261 {
    }
 
    private static class_121 method_37994() {
-      return class_121.<class_240>method_360(class_6023.field_30701)
-         .method_45275(class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
-         .method_45275(class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
-         .method_45275(class_240.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
-         .method_45275(class_240.field_818, class_265.method_1150());
+      return class_121.<Direction>method_360(class_6023.field_30701)
+         .method_45275(Direction.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
+         .method_45275(Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+         .method_45275(Direction.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
+         .method_45275(Direction.field_818, class_265.method_1150());
    }
 
    private static class_121 method_38015() {
-      return class_121.<class_240>method_360(class_6023.field_30701)
-         .method_45275(class_240.field_800, class_265.method_1150())
-         .method_45275(class_240.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
-         .method_45275(class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
-         .method_45275(class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950));
+      return class_121.<Direction>method_360(class_6023.field_30701)
+         .method_45275(Direction.field_800, class_265.method_1150())
+         .method_45275(Direction.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
+         .method_45275(Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+         .method_45275(Direction.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950));
    }
 
    private static class_121 method_38034() {
-      return class_121.<class_240>method_360(class_6023.field_30701)
-         .method_45275(class_240.field_804, class_265.method_1150())
-         .method_45275(class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
-         .method_45275(class_240.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
-         .method_45275(class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950));
+      return class_121.<Direction>method_360(class_6023.field_30701)
+         .method_45275(Direction.field_804, class_265.method_1150())
+         .method_45275(Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
+         .method_45275(Direction.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+         .method_45275(Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950));
    }
 
    private static class_121 method_37913() {
-      return class_121.<class_240>method_360(class_6023.field_30674)
-         .method_45275(class_240.field_802, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
-         .method_45275(class_240.field_817, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32950))
-         .method_45275(class_240.field_818, class_265.method_1150())
-         .method_45275(class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
-         .method_45275(class_240.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
-         .method_45275(class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954));
+      return class_121.<Direction>method_360(class_6023.field_30674)
+         .method_45275(Direction.field_802, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
+         .method_45275(Direction.field_817, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32950))
+         .method_45275(Direction.field_818, class_265.method_1150())
+         .method_45275(Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+         .method_45275(Direction.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
+         .method_45275(Direction.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954));
    }
 
    private static class_6065 method_38071(class_6414 var0, Identifier var1) {
@@ -135,14 +135,14 @@ public class class_8261 {
                .method_45275(true, class_265.method_1150().method_1151(class_1120.field_6404, var2))
          )
          .method_27775(
-            class_121.<class_1895, class_240>method_357(class_6023.field_30757, class_6023.field_30701)
-               .method_231(class_1895.field_9677, class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
-               .method_231(class_1895.field_9677, class_240.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
-               .method_231(class_1895.field_9677, class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
-               .method_231(class_1895.field_9677, class_240.field_818, class_265.method_1150())
+            class_121.<class_1895, Direction>method_357(class_6023.field_30757, class_6023.field_30701)
+               .method_231(class_1895.field_9677, Direction.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
+               .method_231(class_1895.field_9677, Direction.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
+               .method_231(class_1895.field_9677, Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+               .method_231(class_1895.field_9677, Direction.field_818, class_265.method_1150())
                .method_231(
                   class_1895.field_9680,
-                  class_240.field_804,
+                  Direction.field_804,
                   class_265.method_1150()
                      .method_1151(class_1120.field_6402, class_6466.field_32954)
                      .method_1151(class_1120.field_6400, class_6466.field_32954)
@@ -150,7 +150,7 @@ public class class_8261 {
                )
                .method_231(
                   class_1895.field_9680,
-                  class_240.field_809,
+                  Direction.field_809,
                   class_265.method_1150()
                      .method_1151(class_1120.field_6402, class_6466.field_32950)
                      .method_1151(class_1120.field_6400, class_6466.field_32954)
@@ -158,7 +158,7 @@ public class class_8261 {
                )
                .method_231(
                   class_1895.field_9680,
-                  class_240.field_800,
+                  Direction.field_800,
                   class_265.method_1150()
                      .method_1151(class_1120.field_6402, class_6466.field_32953)
                      .method_1151(class_1120.field_6400, class_6466.field_32954)
@@ -166,114 +166,114 @@ public class class_8261 {
                )
                .method_231(
                   class_1895.field_9680,
-                  class_240.field_818,
+                  Direction.field_818,
                   class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954).method_1151(class_1120.field_6403, true)
                )
                .method_231(
                   class_1895.field_9679,
-                  class_240.field_804,
+                  Direction.field_804,
                   class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950).method_1151(class_1120.field_6400, class_6466.field_32953)
                )
                .method_231(
                   class_1895.field_9679,
-                  class_240.field_809,
+                  Direction.field_809,
                   class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954).method_1151(class_1120.field_6400, class_6466.field_32953)
                )
-               .method_231(class_1895.field_9679, class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
+               .method_231(class_1895.field_9679, Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
                .method_231(
                   class_1895.field_9679,
-                  class_240.field_818,
+                  Direction.field_818,
                   class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953).method_1151(class_1120.field_6400, class_6466.field_32953)
                )
          );
    }
 
-   private static class_544<class_240, class_7422, class_4340, Boolean> method_38054(
-           class_544<class_240, class_7422, class_4340, Boolean> var0, class_7422 var1, Identifier var2, Identifier var3
+   private static class_544<Direction, class_7422, class_4340, Boolean> method_38054(
+           class_544<Direction, class_7422, class_4340, Boolean> var0, class_7422 var1, Identifier var2, Identifier var3
    ) {
-      return var0.method_2630(class_240.field_804, var1, class_4340.field_21090, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
+      return var0.method_2630(Direction.field_804, var1, class_4340.field_21090, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
          .method_2630(
-            class_240.field_800,
+            Direction.field_800,
             var1,
             class_4340.field_21090,
             false,
             class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32954)
          )
          .method_2630(
-            class_240.field_809,
+            Direction.field_809,
             var1,
             class_4340.field_21090,
             false,
             class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32953)
          )
          .method_2630(
-            class_240.field_818,
+            Direction.field_818,
             var1,
             class_4340.field_21090,
             false,
             class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32950)
          )
-         .method_2630(class_240.field_804, var1, class_4340.field_21091, false, class_265.method_1150().method_1151(class_1120.field_6404, var3))
+         .method_2630(Direction.field_804, var1, class_4340.field_21091, false, class_265.method_1150().method_1151(class_1120.field_6404, var3))
          .method_2630(
-            class_240.field_800,
+            Direction.field_800,
             var1,
             class_4340.field_21091,
             false,
             class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32954)
          )
          .method_2630(
-            class_240.field_809,
+            Direction.field_809,
             var1,
             class_4340.field_21091,
             false,
             class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32953)
          )
          .method_2630(
-            class_240.field_818,
+            Direction.field_818,
             var1,
             class_4340.field_21091,
             false,
             class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32950)
          )
          .method_2630(
-            class_240.field_804,
+            Direction.field_804,
             var1,
             class_4340.field_21090,
             true,
             class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32954)
          )
          .method_2630(
-            class_240.field_800,
+            Direction.field_800,
             var1,
             class_4340.field_21090,
             true,
             class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32953)
          )
          .method_2630(
-            class_240.field_809,
+            Direction.field_809,
             var1,
             class_4340.field_21090,
             true,
             class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32950)
          )
-         .method_2630(class_240.field_818, var1, class_4340.field_21090, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
+         .method_2630(Direction.field_818, var1, class_4340.field_21090, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
          .method_2630(
-            class_240.field_804,
+            Direction.field_804,
             var1,
             class_4340.field_21091,
             true,
             class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32950)
          )
-         .method_2630(class_240.field_800, var1, class_4340.field_21091, true, class_265.method_1150().method_1151(class_1120.field_6404, var2))
+         .method_2630(Direction.field_800, var1, class_4340.field_21091, true, class_265.method_1150().method_1151(class_1120.field_6404, var2))
          .method_2630(
-            class_240.field_809,
+            Direction.field_809,
             var1,
             class_4340.field_21091,
             true,
             class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32954)
          )
          .method_2630(
-            class_240.field_818,
+            Direction.field_818,
             var1,
             class_4340.field_21091,
             true,
@@ -286,7 +286,7 @@ public class class_8261 {
          .method_27775(
             method_38054(
                method_38054(
-                  class_121.<class_240, class_7422, class_4340, Boolean>method_359(
+                  class_121.<Direction, class_7422, class_4340, Boolean>method_359(
                      class_6023.field_30701, class_6023.field_30754, class_6023.field_30721, class_6023.field_30688
                   ),
                   class_7422.field_37876,
@@ -400,12 +400,12 @@ public class class_8261 {
    private static class_8740 method_37922(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_6065.method_27776(var0)
          .method_27775(
-            class_121.<class_240, class_5122, class_476>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30756)
+            class_121.<Direction, class_5122, class_476>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30756)
                .method_24325(
-                  class_240.field_804, class_5122.field_26439, class_476.field_2961, class_265.method_1150().method_1151(class_1120.field_6404, var2)
+                  Direction.field_804, class_5122.field_26439, class_476.field_2961, class_265.method_1150().method_1151(class_1120.field_6404, var2)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   class_476.field_2961,
                   class_265.method_1150()
@@ -414,7 +414,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26439,
                   class_476.field_2961,
                   class_265.method_1150()
@@ -423,7 +423,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26439,
                   class_476.field_2961,
                   class_265.method_1150()
@@ -432,10 +432,10 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804, class_5122.field_26439, class_476.field_2960, class_265.method_1150().method_1151(class_1120.field_6404, var3)
+                  Direction.field_804, class_5122.field_26439, class_476.field_2960, class_265.method_1150().method_1151(class_1120.field_6404, var3)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   class_476.field_2960,
                   class_265.method_1150()
@@ -444,7 +444,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26439,
                   class_476.field_2960,
                   class_265.method_1150()
@@ -453,7 +453,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26439,
                   class_476.field_2960,
                   class_265.method_1150()
@@ -462,7 +462,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26439,
                   class_476.field_2964,
                   class_265.method_1150()
@@ -471,7 +471,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   class_476.field_2964,
                   class_265.method_1150()
@@ -480,10 +480,10 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800, class_5122.field_26439, class_476.field_2964, class_265.method_1150().method_1151(class_1120.field_6404, var3)
+                  Direction.field_800, class_5122.field_26439, class_476.field_2964, class_265.method_1150().method_1151(class_1120.field_6404, var3)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26439,
                   class_476.field_2964,
                   class_265.method_1150()
@@ -492,10 +492,10 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804, class_5122.field_26439, class_476.field_2963, class_265.method_1150().method_1151(class_1120.field_6404, var1)
+                  Direction.field_804, class_5122.field_26439, class_476.field_2963, class_265.method_1150().method_1151(class_1120.field_6404, var1)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   class_476.field_2963,
                   class_265.method_1150()
@@ -504,7 +504,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26439,
                   class_476.field_2963,
                   class_265.method_1150()
@@ -513,7 +513,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26439,
                   class_476.field_2963,
                   class_265.method_1150()
@@ -522,7 +522,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26439,
                   class_476.field_2962,
                   class_265.method_1150()
@@ -531,7 +531,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   class_476.field_2962,
                   class_265.method_1150()
@@ -540,10 +540,10 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800, class_5122.field_26439, class_476.field_2962, class_265.method_1150().method_1151(class_1120.field_6404, var1)
+                  Direction.field_800, class_5122.field_26439, class_476.field_2962, class_265.method_1150().method_1151(class_1120.field_6404, var1)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26439,
                   class_476.field_2962,
                   class_265.method_1150()
@@ -552,7 +552,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   class_476.field_2961,
                   class_265.method_1150()
@@ -561,7 +561,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   class_476.field_2961,
                   class_265.method_1150()
@@ -571,7 +571,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   class_476.field_2961,
                   class_265.method_1150()
@@ -581,7 +581,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26440,
                   class_476.field_2961,
                   class_265.method_1150()
@@ -591,7 +591,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   class_476.field_2960,
                   class_265.method_1150()
@@ -601,7 +601,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   class_476.field_2960,
                   class_265.method_1150()
@@ -611,7 +611,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   class_476.field_2960,
                   class_265.method_1150()
@@ -621,7 +621,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26440,
                   class_476.field_2960,
                   class_265.method_1150()
@@ -630,7 +630,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   class_476.field_2964,
                   class_265.method_1150()
@@ -639,7 +639,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   class_476.field_2964,
                   class_265.method_1150()
@@ -649,7 +649,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   class_476.field_2964,
                   class_265.method_1150()
@@ -659,7 +659,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26440,
                   class_476.field_2964,
                   class_265.method_1150()
@@ -669,7 +669,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   class_476.field_2963,
                   class_265.method_1150()
@@ -679,7 +679,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   class_476.field_2963,
                   class_265.method_1150()
@@ -689,7 +689,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   class_476.field_2963,
                   class_265.method_1150()
@@ -699,7 +699,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26440,
                   class_476.field_2963,
                   class_265.method_1150()
@@ -708,7 +708,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   class_476.field_2962,
                   class_265.method_1150()
@@ -717,7 +717,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   class_476.field_2962,
                   class_265.method_1150()
@@ -727,7 +727,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   class_476.field_2962,
                   class_265.method_1150()
@@ -737,7 +737,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6403, true)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26440,
                   class_476.field_2962,
                   class_265.method_1150()
@@ -752,66 +752,66 @@ public class class_8261 {
    private static class_8740 method_38044(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_6065.method_27776(var0)
          .method_27775(
-            class_121.<class_240, class_5122, Boolean>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30688)
-               .method_24325(class_240.field_818, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
+            class_121.<Direction, class_5122, Boolean>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30688)
+               .method_24325(Direction.field_818, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26439,
                   false,
                   class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32953)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26439,
                   false,
                   class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32954)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   false,
                   class_265.method_1150().method_1151(class_1120.field_6404, var2).method_1151(class_1120.field_6402, class_6466.field_32950)
                )
-               .method_24325(class_240.field_818, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
+               .method_24325(Direction.field_818, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   false,
                   class_265.method_1150().method_1151(class_1120.field_6404, var1).method_1151(class_1120.field_6402, class_6466.field_32953)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   false,
                   class_265.method_1150().method_1151(class_1120.field_6404, var1).method_1151(class_1120.field_6402, class_6466.field_32954)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   false,
                   class_265.method_1150().method_1151(class_1120.field_6404, var1).method_1151(class_1120.field_6402, class_6466.field_32950)
                )
-               .method_24325(class_240.field_818, class_5122.field_26439, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
+               .method_24325(Direction.field_818, class_5122.field_26439, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26439,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32953)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26439,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32954)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32950)
                )
                .method_24325(
-                  class_240.field_818,
+                  Direction.field_818,
                   class_5122.field_26440,
                   true,
                   class_265.method_1150()
@@ -820,7 +820,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6402, class_6466.field_32953)
                )
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   true,
                   class_265.method_1150()
@@ -829,7 +829,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6402, class_6466.field_32948)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   true,
                   class_265.method_1150()
@@ -838,7 +838,7 @@ public class class_8261 {
                      .method_1151(class_1120.field_6402, class_6466.field_32950)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   true,
                   class_265.method_1150()
@@ -852,49 +852,49 @@ public class class_8261 {
    private static class_8740 method_37927(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_6065.method_27776(var0)
          .method_27775(
-            class_121.<class_240, class_5122, Boolean>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30688)
-               .method_24325(class_240.field_818, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
-               .method_24325(class_240.field_800, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
-               .method_24325(class_240.field_804, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
-               .method_24325(class_240.field_809, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
-               .method_24325(class_240.field_818, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
-               .method_24325(class_240.field_800, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
-               .method_24325(class_240.field_804, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
-               .method_24325(class_240.field_809, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
-               .method_24325(class_240.field_818, class_5122.field_26439, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
+            class_121.<Direction, class_5122, Boolean>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30688)
+               .method_24325(Direction.field_818, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
+               .method_24325(Direction.field_800, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
+               .method_24325(Direction.field_804, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
+               .method_24325(Direction.field_809, class_5122.field_26439, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
+               .method_24325(Direction.field_818, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
+               .method_24325(Direction.field_800, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
+               .method_24325(Direction.field_804, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
+               .method_24325(Direction.field_809, class_5122.field_26440, false, class_265.method_1150().method_1151(class_1120.field_6404, var1))
+               .method_24325(Direction.field_818, class_5122.field_26439, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26439,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32953)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26439,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32954)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26439,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32950)
                )
-               .method_24325(class_240.field_818, class_5122.field_26440, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
+               .method_24325(Direction.field_818, class_5122.field_26440, true, class_265.method_1150().method_1151(class_1120.field_6404, var3))
                .method_24325(
-                  class_240.field_800,
+                  Direction.field_800,
                   class_5122.field_26440,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32953)
                )
                .method_24325(
-                  class_240.field_804,
+                  Direction.field_804,
                   class_5122.field_26440,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32954)
                )
                .method_24325(
-                  class_240.field_809,
+                  Direction.field_809,
                   class_5122.field_26440,
                   true,
                   class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32950)
@@ -1092,11 +1092,11 @@ public class class_8261 {
          .accept(
             class_6065.method_27778(var2, class_265.method_1150().method_1151(class_1120.field_6404, var7))
                .method_27775(
-                  class_121.<class_240>method_360(class_6023.field_30701)
-                     .method_45275(class_240.field_809, class_265.method_1150())
-                     .method_45275(class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
-                     .method_45275(class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
-                     .method_45275(class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+                  class_121.<Direction>method_360(class_6023.field_30701)
+                     .method_45275(Direction.field_809, class_265.method_1150())
+                     .method_45275(Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
+                     .method_45275(Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
+                     .method_45275(Direction.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
                )
          );
       this.field_42380
@@ -1361,20 +1361,20 @@ public class class_8261 {
    }
 
    private class_121 method_37977() {
-      return class_121.<class_240>method_360(class_6023.field_30674)
-         .method_45275(class_240.field_802, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
-         .method_45275(class_240.field_817, class_265.method_1150())
-         .method_45275(class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
+      return class_121.<Direction>method_360(class_6023.field_30674)
+         .method_45275(Direction.field_802, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
+         .method_45275(Direction.field_817, class_265.method_1150())
+         .method_45275(Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
          .method_45275(
-            class_240.field_800,
+            Direction.field_800,
             class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954).method_1151(class_1120.field_6402, class_6466.field_32953)
          )
          .method_45275(
-            class_240.field_809,
+            Direction.field_809,
             class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954).method_1151(class_1120.field_6402, class_6466.field_32950)
          )
          .method_45275(
-            class_240.field_804,
+            Direction.field_804,
             class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954).method_1151(class_1120.field_6402, class_6466.field_32954)
          );
    }
@@ -1454,68 +1454,68 @@ public class class_8261 {
          .accept(
             class_6065.method_27776(class_4783.field_23870)
                .method_27775(
-                  class_121.<class_240, class_7048>method_357(class_6023.field_30701, class_6023.field_30710)
-                     .method_231(class_240.field_818, class_7048.field_36394, class_265.method_1150().method_1151(class_1120.field_6404, var3))
+                  class_121.<Direction, class_7048>method_357(class_6023.field_30701, class_6023.field_30710)
+                     .method_231(Direction.field_818, class_7048.field_36394, class_265.method_1150().method_1151(class_1120.field_6404, var3))
                      .method_231(
-                        class_240.field_800,
+                        Direction.field_800,
                         class_7048.field_36394,
                         class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_231(
-                        class_240.field_804,
+                        Direction.field_804,
                         class_7048.field_36394,
                         class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_231(
-                        class_240.field_809,
+                        Direction.field_809,
                         class_7048.field_36394,
                         class_265.method_1150().method_1151(class_1120.field_6404, var3).method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
-                     .method_231(class_240.field_818, class_7048.field_36399, class_265.method_1150().method_1151(class_1120.field_6404, var4))
+                     .method_231(Direction.field_818, class_7048.field_36399, class_265.method_1150().method_1151(class_1120.field_6404, var4))
                      .method_231(
-                        class_240.field_800,
+                        Direction.field_800,
                         class_7048.field_36399,
                         class_265.method_1150().method_1151(class_1120.field_6404, var4).method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_231(
-                        class_240.field_804,
+                        Direction.field_804,
                         class_7048.field_36399,
                         class_265.method_1150().method_1151(class_1120.field_6404, var4).method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_231(
-                        class_240.field_809,
+                        Direction.field_809,
                         class_7048.field_36399,
                         class_265.method_1150().method_1151(class_1120.field_6404, var4).method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
                      .method_231(
-                        class_240.field_818,
+                        Direction.field_818,
                         class_7048.field_36397,
                         class_265.method_1150().method_1151(class_1120.field_6404, var5).method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
                      .method_231(
-                        class_240.field_800,
+                        Direction.field_800,
                         class_7048.field_36397,
                         class_265.method_1150().method_1151(class_1120.field_6404, var5).method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
-                     .method_231(class_240.field_804, class_7048.field_36397, class_265.method_1150().method_1151(class_1120.field_6404, var5))
+                     .method_231(Direction.field_804, class_7048.field_36397, class_265.method_1150().method_1151(class_1120.field_6404, var5))
                      .method_231(
-                        class_240.field_809,
+                        Direction.field_809,
                         class_7048.field_36397,
                         class_265.method_1150().method_1151(class_1120.field_6404, var5).method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_231(
-                        class_240.field_800,
+                        Direction.field_800,
                         class_7048.field_36395,
                         class_265.method_1150().method_1151(class_1120.field_6404, var6).method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_231(
-                        class_240.field_818,
+                        Direction.field_818,
                         class_7048.field_36395,
                         class_265.method_1150().method_1151(class_1120.field_6404, var6).method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
-                     .method_231(class_240.field_804, class_7048.field_36395, class_265.method_1150().method_1151(class_1120.field_6404, var6))
+                     .method_231(Direction.field_804, class_7048.field_36395, class_265.method_1150().method_1151(class_1120.field_6404, var6))
                      .method_231(
-                        class_240.field_809,
+                        Direction.field_809,
                         class_7048.field_36395,
                         class_265.method_1150().method_1151(class_1120.field_6404, var6).method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
@@ -1530,51 +1530,51 @@ public class class_8261 {
                   class_4783.field_23461, class_265.method_1150().method_1151(class_1120.field_6404, class_6856.method_31446(class_4783.field_23461))
                )
                .method_27775(
-                  class_121.<class_1895, class_240>method_357(class_6023.field_30757, class_6023.field_30701)
-                     .method_231(class_1895.field_9677, class_240.field_818, class_265.method_1150())
-                     .method_231(class_1895.field_9677, class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
-                     .method_231(class_1895.field_9677, class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
-                     .method_231(class_1895.field_9677, class_240.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
-                     .method_231(class_1895.field_9680, class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
+                  class_121.<class_1895, Direction>method_357(class_6023.field_30757, class_6023.field_30701)
+                     .method_231(class_1895.field_9677, Direction.field_818, class_265.method_1150())
+                     .method_231(class_1895.field_9677, Direction.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
+                     .method_231(class_1895.field_9677, Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+                     .method_231(class_1895.field_9677, Direction.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
+                     .method_231(class_1895.field_9680, Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
                      .method_231(
                         class_1895.field_9680,
-                        class_240.field_804,
+                        Direction.field_804,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32954)
                            .method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_231(
                         class_1895.field_9680,
-                        class_240.field_800,
+                        Direction.field_800,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32954)
                            .method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_231(
                         class_1895.field_9680,
-                        class_240.field_809,
+                        Direction.field_809,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32954)
                            .method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
-                     .method_231(class_1895.field_9679, class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
+                     .method_231(class_1895.field_9679, Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
                      .method_231(
                         class_1895.field_9679,
-                        class_240.field_809,
+                        Direction.field_809,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32953)
                            .method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_231(
                         class_1895.field_9679,
-                        class_240.field_818,
+                        Direction.field_818,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32953)
                            .method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_231(
                         class_1895.field_9679,
-                        class_240.field_804,
+                        Direction.field_804,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32953)
                            .method_1151(class_1120.field_6402, class_6466.field_32950)
@@ -1943,23 +1943,23 @@ public class class_8261 {
          .accept(
             class_6065.method_27776(var1)
                .method_27775(
-                  class_121.<class_240>method_360(class_6023.field_30674)
+                  class_121.<Direction>method_360(class_6023.field_30674)
                      .method_45275(
-                        class_240.field_802,
+                        Direction.field_802,
                         class_265.method_1150().method_1151(class_1120.field_6404, var7).method_1151(class_1120.field_6400, class_6466.field_32953)
                      )
-                     .method_45275(class_240.field_817, class_265.method_1150().method_1151(class_1120.field_6404, var7))
-                     .method_45275(class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6404, var6))
+                     .method_45275(Direction.field_817, class_265.method_1150().method_1151(class_1120.field_6404, var7))
+                     .method_45275(Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6404, var6))
                      .method_45275(
-                        class_240.field_804,
+                        Direction.field_804,
                         class_265.method_1150().method_1151(class_1120.field_6404, var6).method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_45275(
-                        class_240.field_800,
+                        Direction.field_800,
                         class_265.method_1150().method_1151(class_1120.field_6404, var6).method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_45275(
-                        class_240.field_809,
+                        Direction.field_809,
                         class_265.method_1150().method_1151(class_1120.field_6404, var6).method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
                )
@@ -2414,19 +2414,19 @@ public class class_8261 {
          .accept(
             class_6065.method_27776(class_4783.field_23698)
                .method_27775(
-                  class_121.<class_240>method_360(class_6023.field_30743)
-                     .method_45275(class_240.field_802, class_265.method_1150().method_1151(class_1120.field_6404, var3))
-                     .method_45275(class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6404, var4))
+                  class_121.<Direction>method_360(class_6023.field_30743)
+                     .method_45275(Direction.field_802, class_265.method_1150().method_1151(class_1120.field_6404, var3))
+                     .method_45275(Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6404, var4))
                      .method_45275(
-                        class_240.field_804,
+                        Direction.field_804,
                         class_265.method_1150().method_1151(class_1120.field_6404, var4).method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_45275(
-                        class_240.field_800,
+                        Direction.field_800,
                         class_265.method_1150().method_1151(class_1120.field_6404, var4).method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_45275(
-                        class_240.field_809,
+                        Direction.field_809,
                         class_265.method_1150().method_1151(class_1120.field_6404, var4).method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
                )
@@ -2525,51 +2525,51 @@ public class class_8261 {
             class_6065.method_27776(class_4783.field_23806)
                .method_27775(method_37981(class_6023.field_30696, var3, var4))
                .method_27775(
-                  class_121.<class_1895, class_240>method_357(class_6023.field_30757, class_6023.field_30701)
+                  class_121.<class_1895, Direction>method_357(class_6023.field_30757, class_6023.field_30701)
                      .method_231(
                         class_1895.field_9679,
-                        class_240.field_818,
+                        Direction.field_818,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32953)
                            .method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_231(
                         class_1895.field_9679,
-                        class_240.field_804,
+                        Direction.field_804,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32953)
                            .method_1151(class_1120.field_6402, class_6466.field_32950)
                      )
-                     .method_231(class_1895.field_9679, class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
+                     .method_231(class_1895.field_9679, Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32953))
                      .method_231(
                         class_1895.field_9679,
-                        class_240.field_809,
+                        Direction.field_809,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32953)
                            .method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
-                     .method_231(class_1895.field_9677, class_240.field_818, class_265.method_1150())
-                     .method_231(class_1895.field_9677, class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
-                     .method_231(class_1895.field_9677, class_240.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
-                     .method_231(class_1895.field_9677, class_240.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
-                     .method_231(class_1895.field_9680, class_240.field_818, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
+                     .method_231(class_1895.field_9677, Direction.field_818, class_265.method_1150())
+                     .method_231(class_1895.field_9677, Direction.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954))
+                     .method_231(class_1895.field_9677, Direction.field_800, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32953))
+                     .method_231(class_1895.field_9677, Direction.field_809, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32950))
+                     .method_231(class_1895.field_9680, Direction.field_818, class_265.method_1150().method_1151(class_1120.field_6400, class_6466.field_32954))
                      .method_231(
                         class_1895.field_9680,
-                        class_240.field_804,
+                        Direction.field_804,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32954)
                            .method_1151(class_1120.field_6402, class_6466.field_32954)
                      )
                      .method_231(
                         class_1895.field_9680,
-                        class_240.field_800,
+                        Direction.field_800,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32954)
                            .method_1151(class_1120.field_6402, class_6466.field_32953)
                      )
                      .method_231(
                         class_1895.field_9680,
-                        class_240.field_809,
+                        Direction.field_809,
                         class_265.method_1150()
                            .method_1151(class_1120.field_6400, class_6466.field_32954)
                            .method_1151(class_1120.field_6402, class_6466.field_32950)

@@ -19,18 +19,18 @@ public abstract class class_6749 extends class_5783 {
    private int field_34832;
    private class_8461 field_34843 = this.method_30933();
    private IntOpenHashSet field_34837;
-   private List<class_8145> field_34841;
+   private List<Entity> field_34841;
 
-   public class_6749(class_6629<? extends class_6749> var1, class_6486 var2) {
+   public class_6749(class_6629<? extends class_6749> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_6749(class_6629<? extends class_6749> var1, double var2, double var4, double var6, class_6486 var8) {
+   public class_6749(class_6629<? extends class_6749> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
       this.method_37256(var2, var4, var6);
    }
 
-   public class_6749(class_6629<? extends class_6749> var1, class_5834 var2, class_6486 var3) {
+   public class_6749(class_6629<? extends class_6749> var1, class_5834 var2, World var3) {
       this(var1, var2.method_37302(), var2.method_37388() - 0.1F, var2.method_37156(), var3);
       this.method_26159(var2);
       if (var2 instanceof class_704) {
@@ -138,8 +138,8 @@ public abstract class class_6749 extends class_5783 {
             }
 
             if (var35 != null && ((class_7474)var35).method_33990() == class_1430.field_7718) {
-               class_8145 var24 = ((class_5631)var35).method_25524();
-               class_8145 var25 = this.method_26166();
+               Entity var24 = ((class_5631)var35).method_25524();
+               Entity var25 = this.method_26166();
                if (var24 instanceof class_704 && var25 instanceof class_704 && !((class_704)var25).method_3213((class_704)var24)) {
                   var35 = null;
                   var36 = null;
@@ -255,7 +255,7 @@ public abstract class class_6749 extends class_5783 {
    @Override
    public void method_26163(class_5631 var1) {
       super.method_26163(var1);
-      class_8145 var4 = var1.method_25524();
+      Entity var4 = var1.method_25524();
       float var5 = (float)this.method_37098().method_6217();
       int var6 = class_9299.method_42815(class_9299.method_42827((double)var5 * this.field_34838, 0.0, 2.147483647E9));
       if (this.method_30936() > 0) {
@@ -280,7 +280,7 @@ public abstract class class_6749 extends class_5783 {
          var6 = (int)Math.min(var9 + (long)var6, 2147483647L);
       }
 
-      class_8145 var7 = this.method_26166();
+      Entity var7 = this.method_26166();
       class_6199 var8;
       if (var7 != null) {
          var8 = class_6199.method_28379(this, var7);
@@ -346,7 +346,7 @@ public abstract class class_6749 extends class_5783 {
                if (this.field_34841 != null && this.method_30927()) {
                   class_8807.field_45057.method_21226(var15, this.field_34841);
                } else if (!var4.method_37330() && this.method_30927()) {
-                  class_8807.field_45057.method_21226(var15, Arrays.<class_8145>asList(var4));
+                  class_8807.field_45057.method_21226(var15, Arrays.<Entity>asList(var4));
                }
             }
          }
@@ -395,7 +395,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    @Override
-   public boolean method_26164(class_8145 var1) {
+   public boolean method_26164(Entity var1) {
       return super.method_26164(var1) && (this.field_34837 == null || !this.field_34837.contains(var1.method_37145()));
    }
 
@@ -449,7 +449,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    @Override
-   public void method_26159(class_8145 var1) {
+   public void method_26159(Entity var1) {
       super.method_26159(var1);
       if (var1 instanceof class_704) {
          this.field_34835 = !((class_704)var1).field_3876.field_4944 ? class_4237.field_20563 : class_4237.field_20565;
@@ -569,7 +569,7 @@ public abstract class class_6749 extends class_5783 {
 
    @Override
    public class_6310<?> method_37142() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       return new class_6589(this, var3 != null ? var3.method_37145() : 0);
    }
 }

@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public class class_4491 extends AbstractSpliterator<class_4190> {
    private static String[] field_21960;
-   private final class_8145 field_21953;
+   private final Entity field_21953;
    private final class_4092 field_21958;
    private final class_214 field_21955;
    private final class_6281 field_21959;
@@ -18,11 +18,11 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
    private boolean field_21951;
    private final BiPredicate<class_2522, class_1331> field_21956;
 
-   public class_4491(class_1449 var1, class_8145 var2, class_4092 var3) {
+   public class_4491(class_1449 var1, Entity var2, class_4092 var3) {
       this(var1, var2, var3, (var0, var1x) -> true);
    }
 
-   public class_4491(class_1449 var1, class_8145 var2, class_4092 var3, BiPredicate<class_2522, class_1331> var4) {
+   public class_4491(class_1449 var1, Entity var2, class_4092 var3, BiPredicate<class_2522, class_1331> var4) {
       super(Long.MAX_VALUE, 1280);
       this.field_21955 = var2 != null ? class_214.method_926(var2) : class_214.method_928();
       this.field_21957 = new class_2921();
@@ -97,7 +97,7 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
    }
 
    public boolean method_20872(Consumer<? super class_4190> var1) {
-      Objects.<class_8145>requireNonNull(this.field_21953);
+      Objects.<Entity>requireNonNull(this.field_21953);
       this.field_21951 = false;
       class_2098 var4 = this.field_21952.method_6673();
       class_4092 var5 = this.field_21953.method_37241();

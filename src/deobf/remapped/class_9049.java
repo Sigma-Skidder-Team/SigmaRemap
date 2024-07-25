@@ -78,7 +78,7 @@ public class class_9049 {
          var3 = method_41553(field_46349, var3);
          return var4.method_20683(var3);
       } else {
-         class_240 var6 = var3.method_23150();
+         Direction var6 = var3.method_23150();
          return method_41556(var0, var1, var2, var6, var3, var4);
       }
    }
@@ -86,8 +86,8 @@ public class class_9049 {
    private static boolean method_41575(class_6163 var0, class_2522 var1, class_1331 var2, class_5024 var3, class_4460 var4) {
       class_6414 var5 = var1.method_8360();
       if (var5 instanceof class_6498) {
-         class_240 var6 = var3.method_23150();
-         if (var6 != class_240.field_817 && var6 != class_240.field_802) {
+         Direction var6 = var3.method_23150();
+         if (var6 != Direction.field_817 && var6 != Direction.field_802) {
             return false;
          }
 
@@ -186,11 +186,11 @@ public class class_9049 {
          if (var3 >= 0 && var3 < field_46342.length) {
             Object var4 = field_46342[var3];
             if (var4 == null) {
-               var4 = new EnumMap(class_240.class);
+               var4 = new EnumMap(Direction.class);
                field_46342[var3] = (Map)var4;
             }
 
-            class_240 var5 = var1.method_23150();
+            Direction var5 = var1.method_23150();
             class_5024 var6 = (class_5024)var4.get(var5);
             if (var6 == null) {
                var6 = class_2870.method_13184(var5, var0, var2);
@@ -226,7 +226,7 @@ public class class_9049 {
       var0[var5 + 4 + 1] = Float.floatToRawIntBits(var3.method_23639(var10));
    }
 
-   private static class_5024[] method_41556(class_5561 var0, class_2522 var1, class_1331 var2, class_240 var3, class_5024 var4, class_4460 var5) {
+   private static class_5024[] method_41556(class_5561 var0, class_2522 var1, class_1331 var2, Direction var3, class_5024 var4, class_4460 var5) {
       class_5024[] var6 = method_41572(var0, var1, var2, var3, var4, true, 0, var5);
       if (!field_46352) {
          return var6;
@@ -260,7 +260,7 @@ public class class_9049 {
    }
 
    public static class_5024[] method_41572(
-      class_5561 var0, class_2522 var1, class_1331 var2, class_240 var3, class_5024 var4, boolean var5, int var6, class_4460 var7
+           class_5561 var0, class_2522 var1, class_1331 var2, Direction var3, class_5024 var4, boolean var5, int var6, class_4460 var7
    ) {
       class_6414 var8 = var1.method_8360();
       class_5155 var9 = var4.method_23148();
@@ -307,7 +307,7 @@ public class class_9049 {
       return var7.method_20683(var4);
    }
 
-   public static int method_41540(class_240 var0) {
+   public static int method_41540(Direction var0) {
       if (var0 == null) {
          return -1;
       } else {
@@ -330,22 +330,22 @@ public class class_9049 {
       }
    }
 
-   private static class_240 method_41557(int var0) {
+   private static Direction method_41557(int var0) {
       switch (var0) {
          case 0:
-            return class_240.field_802;
+            return Direction.field_802;
          case 1:
-            return class_240.field_817;
+            return Direction.field_817;
          case 2:
-            return class_240.field_818;
+            return Direction.field_818;
          case 3:
-            return class_240.field_800;
+            return Direction.field_800;
          case 4:
-            return class_240.field_809;
+            return Direction.field_809;
          case 5:
-            return class_240.field_804;
+            return Direction.field_804;
          default:
-            return class_240.field_817;
+            return Direction.field_817;
       }
    }
 
@@ -1233,7 +1233,7 @@ public class class_9049 {
       if (var5 == null) {
          return null;
       } else {
-         class_240 var6 = method_41557(var4);
+         Direction var6 = method_41557(var4);
          List var7 = var5.method_33580(var3, var6, field_46331);
          if (var7 == null) {
             return null;
@@ -1246,7 +1246,7 @@ public class class_9049 {
                class_5024 var11 = (class_5024)var7.get(0);
                return var11.method_23148();
             } else {
-               List var8 = var5.method_33580(var3, (class_240)null, field_46331);
+               List var8 = var5.method_33580(var3, (Direction)null, field_46331);
                if (var8 == null) {
                   return null;
                } else {

@@ -5,15 +5,15 @@ import javax.annotation.Nullable;
 public class class_1537 extends class_3429 {
    private static String[] field_8140;
 
-   public class_1537(class_6629<? extends class_1537> var1, class_6486 var2) {
+   public class_1537(class_6629<? extends class_1537> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_1537(class_6486 var1, class_5834 var2) {
+   public class_1537(World var1, class_5834 var2) {
       super(class_6629.field_34259, var2, var1);
    }
 
-   public class_1537(class_6486 var1, double var2, double var4, double var6) {
+   public class_1537(World var1, double var2, double var4, double var6) {
       super(class_6629.field_34259, var2, var4, var6, var1);
    }
 
@@ -31,7 +31,7 @@ public class class_1537 extends class_3429 {
    @Override
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
-      class_8145 var4 = this.method_26166();
+      Entity var4 = this.method_26166();
 
       for (int var5 = 0; var5 < 32; var5++) {
          this.field_41768
@@ -78,7 +78,7 @@ public class class_1537 extends class_3429 {
 
    @Override
    public void method_37123() {
-      class_8145 var3 = this.method_26166();
+      Entity var3 = this.method_26166();
       if (var3 instanceof class_704 && !var3.method_37330()) {
          this.method_37204();
       } else {
@@ -88,10 +88,10 @@ public class class_1537 extends class_3429 {
 
    @Nullable
    @Override
-   public class_8145 method_37326(class_6331 var1) {
-      class_8145 var4 = this.method_26166();
+   public Entity method_37326(class_6331 var1) {
+      Entity var4 = this.method_26166();
       if (var4 != null && var4.field_41768.method_29545() != var1.method_29545()) {
-         this.method_26159((class_8145)null);
+         this.method_26159((Entity)null);
       }
 
       return super.method_37326(var1);

@@ -4,7 +4,7 @@ public class class_6278 extends class_2156 implements class_4582 {
    private static String[] field_32089;
 
    public class_6278(class_3073 var1) {
-      super(var1, class_240.field_817, class_3370.method_15524(), true);
+      super(var1, Direction.field_817, class_3370.method_15524(), true);
    }
 
    @Override

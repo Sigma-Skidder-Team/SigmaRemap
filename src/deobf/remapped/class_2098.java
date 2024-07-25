@@ -37,7 +37,7 @@ public class class_2098 {
          && var1.field_19938 < this.method_9816();
    }
 
-   public double method_9809(class_8145 var1) {
+   public double method_9809(Entity var1) {
       return this.method_9808(var1.method_37302(), var1.method_37156());
    }
 

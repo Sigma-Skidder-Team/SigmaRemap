@@ -16,10 +16,10 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_174 extends class_6486 {
-   public final Int2ObjectMap<class_8145> field_568 = new Int2ObjectOpenHashMap();
+public class class_174 extends World {
+   public final Int2ObjectMap<Entity> field_568 = new Int2ObjectOpenHashMap();
    private final class_1092 field_576;
-   private final class_4316 field_567;
+   private final WorldRenderer field_567;
    private final class_784 field_572;
    private class_7513 field_579;
    private final MinecraftClient field_578 = MinecraftClient.getInstance();
@@ -40,11 +40,11 @@ public class class_174 extends class_6486 {
    public class_174(
       class_1092 var1,
       class_784 var2,
-      class_5621<class_6486> var3,
+      class_5621<World> var3,
       class_8760 var4,
       int var5,
       Supplier<class_3492> var6,
-      class_4316 var7,
+      WorldRenderer var7,
       boolean var8,
       long var9
    ) {
@@ -105,7 +105,7 @@ public class class_174 extends class_6486 {
       this.field_572.method_3498(var1);
    }
 
-   public Iterable<class_8145> method_736() {
+   public Iterable<Entity> method_736() {
       return this.field_568.values();
    }
 
@@ -116,7 +116,7 @@ public class class_174 extends class_6486 {
 
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
-         class_8145 var6 = (class_8145)var5.getValue();
+         Entity var6 = (Entity)var5.getValue();
          if (!var6.method_37070()) {
             var3.method_16056("tick");
             if (!var6.field_41751) {
@@ -138,7 +138,7 @@ public class class_174 extends class_6486 {
       var3.method_16054();
    }
 
-   public void method_755(class_8145 var1) {
+   public void method_755(Entity var1) {
       if (!(var1 instanceof class_704) && !this.method_745().method_14824(var1)) {
          this.method_728(var1);
       } else {
@@ -157,14 +157,14 @@ public class class_174 extends class_6486 {
 
          this.method_728(var1);
          if (var1.field_41727) {
-            for (class_8145 var5 : var1.method_37114()) {
+            for (Entity var5 : var1.method_37114()) {
                this.method_730(var1, var5);
             }
          }
       }
    }
 
-   public void method_730(class_8145 var1, class_8145 var2) {
+   public void method_730(Entity var1, Entity var2) {
       if (var2.field_41751 || var2.method_37243() != var1) {
          var2.method_37390();
       } else if (var2 instanceof class_704 || this.method_745().method_14824(var2)) {
@@ -178,14 +178,14 @@ public class class_174 extends class_6486 {
 
          this.method_728(var2);
          if (var2.field_41727) {
-            for (class_8145 var6 : var2.method_37114()) {
+            for (Entity var6 : var2.method_37114()) {
                this.method_730(var2, var6);
             }
          }
       }
    }
 
-   private void method_728(class_8145 var1) {
+   private void method_728(Entity var1) {
       if (var1.method_37251()) {
          this.method_29599().method_16056("chunkCheck");
          int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
@@ -245,11 +245,11 @@ public class class_174 extends class_6486 {
       this.field_566.add(var2);
    }
 
-   public void method_725(int var1, class_8145 var2) {
+   public void method_725(int var1, Entity var2) {
       this.method_724(var1, var2);
    }
 
-   private void method_724(int var1, class_8145 var2) {
+   private void method_724(int var1, Entity var2) {
       if (!class_7860.field_40165.method_22501() || !class_7860.method_35568(class_7860.field_40165, var2, this)) {
          this.method_754(var1);
          this.field_568.put(var1, var2);
@@ -267,14 +267,14 @@ public class class_174 extends class_6486 {
    }
 
    public void method_754(int var1) {
-      class_8145 var4 = (class_8145)this.field_568.remove(var1);
+      Entity var4 = (Entity)this.field_568.remove(var1);
       if (var4 != null) {
          var4.method_37204();
          this.method_757(var4);
       }
    }
 
-   private void method_757(class_8145 var1) {
+   private void method_757(Entity var1) {
       var1.method_37269();
       if (var1.field_41727) {
          this.method_29554(var1.field_41742, var1.field_41714).method_11995(var1);
@@ -297,7 +297,7 @@ public class class_174 extends class_6486 {
 
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
-         class_8145 var6 = (class_8145)var5.getValue();
+         Entity var6 = (Entity)var5.getValue();
          int var7 = class_9299.method_42847(var6.method_37302() / 16.0);
          int var8 = class_9299.method_42847(var6.method_37156() / 16.0);
          if (var7 == var1.method_27352().field_10328 && var8 == var1.method_27352().field_10327) {
@@ -308,8 +308,8 @@ public class class_174 extends class_6486 {
 
    @Nullable
    @Override
-   public class_8145 method_29534(int var1) {
-      return (class_8145)this.field_568.get(var1);
+   public Entity method_29534(int var1) {
+      return (Entity)this.field_568.get(var1);
    }
 
    public void method_743(class_1331 var1, class_2522 var2) {
@@ -354,7 +354,7 @@ public class class_174 extends class_6486 {
          var14.method_22002(this, var7, var5);
          class_5079 var15 = var14.method_22010();
          if (var15 != null && this.field_33033.nextInt(10) == 0) {
-            boolean var16 = var13.method_8308(this, var7, class_240.field_802);
+            boolean var16 = var13.method_8308(this, var7, Direction.field_802);
             class_1331 var17 = var7.method_6100();
             this.method_746(var17, this.method_28262(var17), var15, var16);
          }
@@ -445,7 +445,7 @@ public class class_174 extends class_6486 {
 
       while (var3.hasNext()) {
          Entry var4 = (Entry)var3.next();
-         class_8145 var5 = (class_8145)var4.getValue();
+         Entity var5 = (Entity)var4.getValue();
          if (var5.field_41751) {
             var3.remove();
             this.method_757(var5);
@@ -480,7 +480,7 @@ public class class_174 extends class_6486 {
    }
 
    @Override
-   public void method_29540(class_704 var1, class_8145 var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_29540(class_704 var1, Entity var2, class_8461 var3, class_562 var4, float var5, float var6) {
       if (class_7860.field_39943.method_3596()) {
          Object var9 = class_7860.field_39943.method_3582(var1, var3, var4, var5, var6);
          if (class_7860.method_35565(var9, class_7860.field_40233) || class_7860.method_35555(var9, class_7860.field_39895) == null) {
@@ -567,14 +567,14 @@ public class class_174 extends class_6486 {
       return this.field_574;
    }
 
-   public void method_748(class_8145 var1) {
+   public void method_748(Entity var1) {
       class_8192.method_37536(var1, this);
       if (class_3111.method_14326()) {
          class_8421.method_38758(var1, class_3111.method_14387());
       }
    }
 
-   public void method_739(class_8145 var1) {
+   public void method_739(Entity var1) {
       class_8192.method_37534(var1, this);
       if (class_3111.method_14326()) {
          class_8421.method_38775(var1, class_3111.method_14387());
@@ -784,7 +784,7 @@ public class class_174 extends class_6486 {
    }
 
    @Override
-   public float method_25265(class_240 var1, boolean var2) {
+   public float method_25265(Direction var1, boolean var2) {
       boolean var5 = this.method_738().method_34245();
       boolean var6 = class_3111.method_14424();
       if (!var2) {

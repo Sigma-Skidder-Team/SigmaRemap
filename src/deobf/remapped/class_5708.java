@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5708 extends class_8145 {
+public class class_5708 extends Entity {
    private static String[] field_28885;
    public final class_2770 field_28882;
    public final String field_28884;
@@ -37,7 +37,7 @@ public class class_5708 extends class_8145 {
    }
 
    @Override
-   public boolean method_37171(class_8145 var1) {
+   public boolean method_37171(Entity var1) {
       return this == var1 || this.field_28882 == var1;
    }
 

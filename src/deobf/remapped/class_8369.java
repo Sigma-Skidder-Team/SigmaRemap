@@ -9,18 +9,18 @@ public class class_8369 extends class_1013 {
    public final float field_42847;
    public final double field_42850;
    public double field_42849;
-   public Function<class_8881, Double> field_42846;
-   public BiConsumer<class_8881, Double> field_42848;
-   public BiFunction<class_8881, class_8369, ITextComponent> field_42851;
+   public Function<GameOptions, Double> field_42846;
+   public BiConsumer<GameOptions, Double> field_42848;
+   public BiFunction<GameOptions, class_8369, ITextComponent> field_42851;
 
    public class_8369(
       String var1,
       double var2,
       double var4,
       float var6,
-      Function<class_8881, Double> var7,
-      BiConsumer<class_8881, Double> var8,
-      BiFunction<class_8881, class_8369, ITextComponent> var9
+      Function<GameOptions, Double> var7,
+      BiConsumer<GameOptions, Double> var8,
+      BiFunction<GameOptions, class_8369, ITextComponent> var9
    ) {
       super(var1);
       this.field_42850 = var2;
@@ -32,7 +32,7 @@ public class class_8369 extends class_1013 {
    }
 
    @Override
-   public class_7114 method_4482(class_8881 var1, int var2, int var3, int var4) {
+   public class_7114 method_4482(GameOptions var1, int var2, int var3, int var4) {
       return new class_2180(var1, var2, var3, var4, 20, this);
    }
 
@@ -64,15 +64,15 @@ public class class_8369 extends class_1013 {
       this.field_42849 = (double)var1;
    }
 
-   public void method_38567(class_8881 var1, double var2) {
+   public void method_38567(GameOptions var1, double var2) {
       this.field_42848.accept(var1, var2);
    }
 
-   public double method_38570(class_8881 var1) {
+   public double method_38570(GameOptions var1) {
       return this.field_42846.apply(var1);
    }
 
-   public ITextComponent method_38572(class_8881 var1) {
+   public ITextComponent method_38572(GameOptions var1) {
       return this.field_42851.apply(var1, this);
    }
 }

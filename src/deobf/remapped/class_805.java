@@ -44,7 +44,7 @@ public class class_805 extends class_6967 {
             (float)this.field_4300.method_26862()
          );
       if (this.method_31860()) {
-         class_6486 var3 = this.field_4300.field_41768;
+         World var3 = this.field_4300.field_41768;
          class_1331 var4 = this.field_35802.method_6081();
          class_2522 var5 = var3.method_28262(var4);
          class_6414 var6 = var5.method_8360();

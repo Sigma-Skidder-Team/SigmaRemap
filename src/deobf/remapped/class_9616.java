@@ -34,7 +34,7 @@ public class class_9616 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public static class_9616 method_44386(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, class_240 var9) {
+   public static class_9616 method_44386(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, Direction var9) {
       switch (var9) {
          case field_818:
             return new class_9616(var0 + var3, var1 + var4, var2 - var8 + 1 + var5, var0 + var6 - 1 + var3, var1 + var7 - 1 + var4, var2 + var5);

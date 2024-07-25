@@ -17,7 +17,7 @@ public class class_5741 extends class_9128 {
                field_46692.method_8614().method_4813(new class_4609(true));
             }
 
-            field_46692.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, class_240.field_802));
+            field_46692.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
          }
       }
    }

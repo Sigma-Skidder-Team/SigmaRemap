@@ -19,7 +19,7 @@ public class class_9475 {
          }
 
          method_43766(var1);
-         class_8881 var5 = class_3111.method_14310();
+         GameOptions var5 = class_3111.method_14310();
          if (var5 == null) {
             return;
          }

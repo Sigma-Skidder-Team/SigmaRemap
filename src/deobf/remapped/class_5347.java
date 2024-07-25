@@ -3,7 +3,7 @@ package remapped;
 public class class_5347 extends class_1793<class_4359, class_62<class_4359>> {
    private static final Identifier field_27276 = new Identifier("textures/entity/zombie/drowned.png");
 
-   public class_5347(class_6122 var1) {
+   public class_5347(EntityRenderDispatcher var1) {
       super(var1, new class_62<class_4359>(0.0F, 0.0F, 64, 64), new class_62<class_4359>(0.5F, true), new class_62<class_4359>(1.0F, true));
       this.method_29100(new class_82<class_4359>(this));
    }

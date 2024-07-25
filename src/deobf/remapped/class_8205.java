@@ -2,13 +2,13 @@ package remapped;
 
 public class class_8205 extends class_7067<class_3577> {
    private static final Identifier field_41973 = new Identifier("textures/entity/end_crystal/end_crystal.png");
-   private static final class_3581 field_41970 = class_3581.method_16755(field_41973);
+   private static final RenderLayer field_41970 = RenderLayer.method_16755(field_41973);
    private static final float field_41974 = (float)Math.sin(Math.PI / 4);
    private final class_1549 field_41972;
    private final class_1549 field_41975;
    private final class_1549 field_41971;
 
-   public class_8205(class_6122 var1) {
+   public class_8205(EntityRenderDispatcher var1) {
       super(var1);
       this.field_36492 = 0.5F;
       this.field_41975 = new class_1549(64, 32, 0, 0);
@@ -34,15 +34,15 @@ public class class_8205 extends class_7067<class_3577> {
 
       var4.method_36060(class_2426.field_12074.method_11074(var10));
       var4.method_36065(0.0, (double)(1.5F + var9 / 2.0F), 0.0);
-      var4.method_36060(new class_5422(new class_2426(field_41974, 0.0F, field_41974), 60.0F, true));
+      var4.method_36060(new Quaternion(new class_2426(field_41974, 0.0F, field_41974), 60.0F, true));
       this.field_41975.method_7060(var4, var11, var6, var12);
       float var13 = 0.875F;
       var4.method_36062(0.875F, 0.875F, 0.875F);
-      var4.method_36060(new class_5422(new class_2426(field_41974, 0.0F, field_41974), 60.0F, true));
+      var4.method_36060(new Quaternion(new class_2426(field_41974, 0.0F, field_41974), 60.0F, true));
       var4.method_36060(class_2426.field_12074.method_11074(var10));
       this.field_41975.method_7060(var4, var11, var6, var12);
       var4.method_36062(0.875F, 0.875F, 0.875F);
-      var4.method_36060(new class_5422(new class_2426(field_41974, 0.0F, field_41974), 60.0F, true));
+      var4.method_36060(new Quaternion(new class_2426(field_41974, 0.0F, field_41974), 60.0F, true));
       var4.method_36060(class_2426.field_12074.method_11074(var10));
       this.field_41972.method_7060(var4, var11, var6, var12);
       var4.method_36064();

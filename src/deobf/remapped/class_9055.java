@@ -9,7 +9,7 @@ public class class_9055 extends class_2340 {
    }
 
    @Override
-   public boolean method_10709(class_4774 var1, class_6163 var2, class_1331 var3, class_2340 var4, class_240 var5) {
+   public boolean method_10709(class_4774 var1, class_6163 var2, class_1331 var3, class_2340 var4, Direction var5) {
       return true;
    }
 

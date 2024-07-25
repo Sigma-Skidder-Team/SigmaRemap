@@ -3,7 +3,7 @@ package remapped;
 public class class_743 extends class_7164<class_8127, class_7946<class_8127>> {
    private static final Identifier field_4046 = new Identifier("textures/entity/iron_golem/iron_golem.png");
 
-   public class_743(class_6122 var1) {
+   public class_743(EntityRenderDispatcher var1) {
       super(var1, new class_7946<class_8127>(), 0.7F);
       this.method_29100(new class_1650(this));
       this.method_29100(new class_2322(this));

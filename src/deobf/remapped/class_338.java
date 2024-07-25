@@ -7,7 +7,7 @@ public class class_338 extends class_4088 {
    private static String[] field_1270;
    private final class_9210 field_1268;
    private final class_9332 field_1264 = class_9332.method_43089();
-   private final class_6486 field_1273;
+   private final World field_1273;
    private List<class_5638> field_1269 = Lists.newArrayList();
    private class_6098 field_1265 = class_6098.field_31203;
    private long field_1272;

@@ -55,16 +55,16 @@ public class class_4732<T extends class_3757 & class_3848> extends class_2255<T>
 
    @Override
    public void method_10364(T var1, float var2, class_7966 var3, class_2565 var4, int var5, int var6) {
-      class_6486 var9 = var1.method_17402();
+      World var9 = var1.method_17402();
       boolean var10 = var9 != null;
-      class_2522 var11 = !var10 ? class_4783.field_23471.method_29260().method_10308(class_6942.field_35692, class_240.field_800) : var1.method_17403();
+      class_2522 var11 = !var10 ? class_4783.field_23471.method_29260().method_10308(class_6942.field_35692, Direction.field_800) : var1.method_17403();
       class_9264 var12 = !var11.method_10307(class_6942.field_35695) ? class_9264.field_47274 : var11.<class_9264>method_10313(class_6942.field_35695);
       class_6414 var13 = var11.method_8360();
       if (var13 instanceof class_8218) {
          class_8218 var14 = (class_8218)var13;
          boolean var15 = var12 != class_9264.field_47274;
          var3.method_36063();
-         float var16 = var11.<class_240>method_10313(class_6942.field_35692).method_1028();
+         float var16 = var11.<Direction>method_10313(class_6942.field_35692).method_1028();
          var3.method_36065(0.5, 0.5, 0.5);
          var3.method_36060(class_2426.field_12074.method_11074(-var16));
          var3.method_36065(-0.5, -0.5, -0.5);
@@ -80,7 +80,7 @@ public class class_4732<T extends class_3757 & class_3848> extends class_2255<T>
          var18 = 1.0F - var18 * var18 * var18;
          int var19 = var17.<Int2IntFunction>method_35688(new class_491()).applyAsInt(var5);
          class_2843 var20 = class_5276.method_24078(var1, var12, this.field_22932);
-         class_7907 var21 = var20.method_12943(var4, class_3581::method_16747);
+         class_7907 var21 = var20.method_12943(var4, RenderLayer::method_16747);
          if (!var15) {
             this.method_21855(var3, var21, this.field_22931, this.field_22936, this.field_22933, var18, var19, var6);
          } else if (var12 != class_9264.field_47279) {

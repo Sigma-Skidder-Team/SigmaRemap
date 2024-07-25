@@ -7,16 +7,16 @@ import java.util.Map;
 public class class_5161 {
    private static String[] field_26581;
    public static final int field_26580 = 63;
-   public static final class_240[][] field_26577 = method_23655(false);
-   public static final class_240[][] field_26579 = method_23655(true);
+   public static final Direction[][] field_26577 = method_23655(false);
+   public static final Direction[][] field_26579 = method_23655(true);
    private static int field_26582 = 0;
    private static int field_26578 = -1;
    private static int field_26573 = 16;
-   private static class_6486 field_26575 = null;
+   private static World field_26575 = null;
    private static int field_26576 = Integer.MIN_VALUE;
    private static int field_26574 = Integer.MIN_VALUE;
 
-   public static int method_23653(class_6486 var0, class_8145 var1, int var2) {
+   public static int method_23653(World var0, Entity var1, int var2) {
       int var5 = class_9299.method_42847(var1.method_37302()) >> 4;
       int var6 = class_9299.method_42847(var1.method_37309()) >> 4;
       int var7 = class_9299.method_42847(var1.method_37156()) >> 4;
@@ -117,30 +117,30 @@ public class class_5161 {
       return field_26582 == 0;
    }
 
-   private static class_240[][] method_23655(boolean var0) {
+   private static Direction[][] method_23655(boolean var0) {
       byte var3 = 64;
-      class_240[][] var4 = new class_240[var3][];
+      Direction[][] var4 = new Direction[var3][];
 
       for (int var5 = 0; var5 < var3; var5++) {
          ArrayList var6 = new ArrayList();
 
-         for (int var7 = 0; var7 < class_240.field_803.length; var7++) {
-            class_240 var8 = class_240.field_803[var7];
-            class_240 var9 = !var0 ? var8 : var8.method_1046();
+         for (int var7 = 0; var7 < Direction.field_803.length; var7++) {
+            Direction var8 = Direction.field_803[var7];
+            Direction var9 = !var0 ? var8 : var8.method_1046();
             int var10 = 1 << var9.ordinal();
             if ((var5 & var10) != 0) {
                var6.add(var8);
             }
          }
 
-         class_240[] var11 = var6.<class_240>toArray(new class_240[var6.size()]);
+         Direction[] var11 = var6.<Direction>toArray(new Direction[var6.size()]);
          var4[var5] = var11;
       }
 
       return var4;
    }
 
-   public static class_240[] method_23651(int var0) {
+   public static Direction[] method_23651(int var0) {
       int var3 = ~var0 & 63;
       return field_26579[var3];
    }

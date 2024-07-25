@@ -7,11 +7,11 @@ import java.util.Iterator;
 public class class_5490 extends class_4641 {
    public class_6933 field_27978;
 
-   public class_5490(class_6629<? extends class_5490> var1, class_6486 var2) {
+   public class_5490(class_6629<? extends class_5490> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_5490(class_6486 var1, class_1331 var2, class_240 var3) {
+   public class_5490(World var1, class_1331 var2, Direction var3) {
       super(class_6629.field_34313, var1, var2);
       ArrayList var6 = Lists.newArrayList();
       int var7 = 0;
@@ -44,7 +44,7 @@ public class class_5490 extends class_4641 {
       this.method_21468(var3);
    }
 
-   public class_5490(class_6486 var1, class_1331 var2, class_240 var3, class_6933 var4) {
+   public class_5490(World var1, class_1331 var2, Direction var3, class_6933 var4) {
       this(var1, var2, var3);
       this.field_27978 = var4;
       this.method_21468(var3);
@@ -60,7 +60,7 @@ public class class_5490 extends class_4641 {
    @Override
    public void method_37314(class_5734 var1) {
       this.field_27978 = class_8669.field_44450.method_39806(Identifier.method_21455(var1.method_25965("Motive")));
-      this.field_22663 = class_240.method_1040(var1.method_25950("Facing"));
+      this.field_22663 = Direction.method_1040(var1.method_25950("Facing"));
       super.method_37314(var1);
       this.method_21468(this.field_22663);
    }
@@ -76,7 +76,7 @@ public class class_5490 extends class_4641 {
    }
 
    @Override
-   public void method_21475(class_8145 var1) {
+   public void method_21475(Entity var1) {
       if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
          this.method_37155(class_463.field_2198, 1.0F, 1.0F);
          if (var1 instanceof class_704) {

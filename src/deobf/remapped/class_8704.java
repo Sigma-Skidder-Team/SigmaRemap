@@ -63,10 +63,10 @@ public abstract class class_8704 {
       var6.method_27258(var5);
       class_5734 var9 = this.method_39975(var2);
       class_5621 var10 = var9 == null
-         ? class_6486.field_33048
+         ? World.field_33048
          : class_8760.method_40243(new Dynamic(class_3504.field_17178, var9.method_25929("Dimension")))
             .resultOrPartial(field_44623::error)
-            .orElse(class_6486.field_33048);
+            .orElse(World.field_33048);
       class_6331 var11 = this.field_44631.method_1697(var10);
       class_6331 var12;
       if (var11 != null) {
@@ -158,7 +158,7 @@ public abstract class class_8704 {
 
       if (var9 != null && var9.method_25939("RootVehicle", 10)) {
          class_5734 var26 = var9.method_25937("RootVehicle");
-         class_8145 var27 = class_6629.method_30455(var26.method_25937("Entity"), var12, var1x -> var12.method_28972(var1x) ? var1x : null);
+         Entity var27 = class_6629.method_30455(var26.method_25937("Entity"), var12, var1x -> var12.method_28972(var1x) ? var1x : null);
          if (var27 != null) {
             UUID var22;
             if (!var26.method_25954("Attach")) {
@@ -168,7 +168,7 @@ public abstract class class_8704 {
             }
 
             if (!var27.method_37328().equals(var22)) {
-               for (class_8145 var24 : var27.method_37379()) {
+               for (Entity var24 : var27.method_37379()) {
                   if (var24.method_37328().equals(var22)) {
                      var2.method_37354(var24, true);
                      break;
@@ -182,7 +182,7 @@ public abstract class class_8704 {
                field_44623.warn("Couldn't reattach entity to player");
                var12.method_28977(var27);
 
-               for (class_8145 var29 : var27.method_37379()) {
+               for (Entity var29 : var27.method_37379()) {
                   var12.method_28977(var29);
                }
             }
@@ -248,14 +248,14 @@ public abstract class class_8704 {
       var1.method_3209(class_6234.field_31854);
       this.method_39967(var1);
       if (var1.method_37070()) {
-         class_8145 var5 = var1.method_37240();
+         Entity var5 = var1.method_37240();
          if (var5.method_37172()) {
             field_44623.debug("Removing player mount");
             var1.method_37390();
             var4.method_28977(var5);
             var5.field_41751 = true;
 
-            for (class_8145 var7 : var5.method_37379()) {
+            for (Entity var7 : var5.method_37379()) {
                var4.method_28977(var7);
                var7.field_41751 = true;
             }
@@ -455,7 +455,7 @@ public abstract class class_8704 {
       }
    }
 
-   public void method_39958(class_6310<?> var1, class_5621<class_6486> var2) {
+   public void method_39958(class_6310<?> var1, class_5621<World> var2) {
       for (int var5 = 0; var5 < this.field_44632.size(); var5++) {
          class_9359 var6 = this.field_44632.get(var5);
          if (var6.field_41768.method_29545() == var2) {
@@ -562,7 +562,7 @@ public abstract class class_8704 {
       return null;
    }
 
-   public void method_39996(class_704 var1, double var2, double var4, double var6, double var8, class_5621<class_6486> var10, class_6310<?> var11) {
+   public void method_39996(class_704 var1, double var2, double var4, double var6, double var8, class_5621<World> var10, class_6310<?> var11) {
       for (int var14 = 0; var14 < this.field_44632.size(); var14++) {
          class_9359 var15 = this.field_44632.get(var14);
          if (var15 != var1 && var15.field_41768.method_29545() == var10) {

@@ -16,7 +16,7 @@ public final class class_2511 extends class_1762<class_3551, class_3192<class_35
       }
    );
 
-   public class_2511(class_6122 var1) {
+   public class_2511(EntityRenderDispatcher var1) {
       super(var1, new class_3192<class_3551>(0.0F), 1.1F);
       this.method_29100(new class_6601(this));
       this.method_29100(new class_5792(this));

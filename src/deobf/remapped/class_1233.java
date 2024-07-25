@@ -11,7 +11,7 @@ public class class_1233 extends class_2255<class_1896> {
       var3.method_36063();
       var3.method_36065(0.5, 0.0, 0.5);
       class_3521 var9 = var1.method_8621();
-      class_8145 var10 = var9.method_16260();
+      Entity var10 = var9.method_16260();
       if (var10 != null) {
          float var11 = 0.53125F;
          float var12 = Math.max(var10.method_37086(), var10.method_37074());

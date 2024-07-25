@@ -18,7 +18,7 @@ public class class_3949 extends class_956 {
    @Override
    public boolean method_16795() {
       if (this.field_19167.method_26920()) {
-         class_8145 var3 = this.field_19167.method_26922();
+         Entity var3 = this.field_19167.method_26922();
          if (!(var3 instanceof class_6862)) {
             return false;
          } else {
@@ -35,7 +35,7 @@ public class class_3949 extends class_956 {
    @Override
    public void method_16796() {
       this.field_4915.method_26860(this.field_19169);
-      class_8145 var3 = this.field_19167.method_26922();
+      Entity var3 = this.field_19167.method_26922();
       if (var3 instanceof class_6862) {
          this.field_19170 = ((class_6862)var3).method_26577();
       }

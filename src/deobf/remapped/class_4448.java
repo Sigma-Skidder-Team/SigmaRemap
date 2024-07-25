@@ -8,7 +8,7 @@ public class class_4448 implements class_6310<class_392> {
    private int field_21683;
    private UUID field_21681;
    private class_1331 field_21682;
-   private class_240 field_21685;
+   private Direction field_21685;
    private int field_21684;
 
    public class_4448() {
@@ -28,7 +28,7 @@ public class class_4448 implements class_6310<class_392> {
       this.field_21681 = var1.method_37753();
       this.field_21684 = var1.method_37778();
       this.field_21682 = var1.method_37748();
-      this.field_21685 = class_240.method_1040(var1.readUnsignedByte());
+      this.field_21685 = Direction.method_1040(var1.readUnsignedByte());
    }
 
    @Override
@@ -56,7 +56,7 @@ public class class_4448 implements class_6310<class_392> {
       return this.field_21682;
    }
 
-   public class_240 method_20626() {
+   public Direction method_20626() {
       return this.field_21685;
    }
 

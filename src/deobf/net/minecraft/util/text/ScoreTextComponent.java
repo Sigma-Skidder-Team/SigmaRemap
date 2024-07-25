@@ -10,7 +10,7 @@ import remapped.class_4399;
 import remapped.class_4550;
 import remapped.class_4964;
 import remapped.class_5601;
-import remapped.class_8145;
+import remapped.Entity;
 import remapped.class_8274;
 import remapped.class_9155;
 
@@ -54,7 +54,7 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
                throw class_5601.field_28402.create();
             }
 
-            return ((class_8145)var4.get(0)).method_37206();
+            return ((Entity)var4.get(0)).method_37206();
          }
       }
 
@@ -80,7 +80,7 @@ public class ScoreTextComponent extends TextComponent implements ITargetedTextCo
    }
 
    @Override
-   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, class_8145 p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
+   public IFormattableTextComponent func_230535_a_(class_9155 p_230535_1_, Entity p_230535_2_, int p_230535_3_) throws CommandSyntaxException {
       if (p_230535_1_ == null) {
          return new StringTextComponent("");
       } else {

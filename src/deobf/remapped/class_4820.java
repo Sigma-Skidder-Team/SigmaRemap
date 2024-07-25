@@ -56,7 +56,7 @@ public class class_4820 extends class_9128 {
                      (double)field_24090.method_12165() + 0.5,
                      (double)field_24090.method_12185() + 0.4 + Math.random() * 0.2
                   ),
-                  class_240.field_817,
+                  Direction.field_817,
                   field_24090,
                   false
                );

@@ -16,24 +16,24 @@ public class class_6125 extends class_8369 {
          var2,
          var4,
          var6,
-         (Function<class_8881, Double>)null,
-         (BiConsumer<class_8881, Double>)null,
-         (BiFunction<class_8881, class_8369, ITextComponent>)null
+         (Function<GameOptions, Double>)null,
+         (BiConsumer<GameOptions, Double>)null,
+         (BiFunction<GameOptions, class_8369, ITextComponent>)null
       );
       super.field_42846 = this::method_28147;
       super.field_42848 = this::method_28149;
       super.field_42851 = this::method_28148;
    }
 
-   private double method_28147(class_8881 var1) {
+   private double method_28147(GameOptions var1) {
       return var1.method_40895(this);
    }
 
-   private void method_28149(class_8881 var1, double var2) {
+   private void method_28149(GameOptions var1, double var2) {
       var1.method_40893(this, var2);
    }
 
-   private ITextComponent method_28148(class_8881 var1, class_8369 var2) {
+   private ITextComponent method_28148(GameOptions var1, class_8369 var2) {
       return var1.method_40882(var2);
    }
 }

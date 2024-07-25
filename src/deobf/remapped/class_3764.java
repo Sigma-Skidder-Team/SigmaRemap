@@ -40,7 +40,7 @@ public class class_3764 extends class_7690 {
    public void method_35735() {
       class_2426 var3 = new class_2426(this.field_18408, this.field_18415, this.field_18414);
       var3.method_11059(this.field_18411);
-      class_240 var4 = class_240.method_1045(var3.method_11057(), var3.method_11061(), var3.method_11055());
+      Direction var4 = Direction.method_1045(var3.method_11057(), var3.method_11061(), var3.method_11055());
       class_2637 var5 = new class_2637(this.field_18413, this.field_18412, this.field_18407, 1.0F);
       var5.method_11929(this.field_18405);
       var5.method_11928(class_2426.field_12074.method_11074(180.0F));

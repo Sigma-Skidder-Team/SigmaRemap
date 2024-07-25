@@ -133,8 +133,8 @@ public class class_9202 {
       var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)class_465.method_2231("tp").requires(var0x -> var0x.method_40314(2))).redirect(var3));
    }
 
-   private static int method_42460(class_9155 var0, Collection<? extends class_8145> var1, class_8145 var2) throws CommandSyntaxException {
-      for (class_8145 var6 : var1) {
+   private static int method_42460(class_9155 var0, Collection<? extends Entity> var1, Entity var2) throws CommandSyntaxException {
+      for (Entity var6 : var1) {
          method_42461(
             var0,
             var6,
@@ -153,7 +153,7 @@ public class class_9202 {
          var0.method_42196(new TranslationTextComponent("commands.teleport.success.entity.multiple", var1.size(), var2.method_19839()), true);
       } else {
          var0.method_42196(
-            new TranslationTextComponent("commands.teleport.success.entity.single", ((class_8145)var1.iterator().next()).method_19839(), var2.method_19839()),
+            new TranslationTextComponent("commands.teleport.success.entity.single", ((Entity)var1.iterator().next()).method_19839(), var2.method_19839()),
             true
          );
       }
@@ -161,7 +161,7 @@ public class class_9202 {
       return var1.size();
    }
 
-   private static int method_42459(class_9155 var0, Collection<? extends class_8145> var1, class_6331 var2, class_1808 var3, class_1808 var4, class_4839 var5) throws CommandSyntaxException {
+   private static int method_42459(class_9155 var0, Collection<? extends Entity> var1, class_6331 var2, class_1808 var3, class_1808 var4, class_4839 var5) throws CommandSyntaxException {
       class_1343 var8 = var3.method_8027(var0);
       class_4895 var9 = var4 != null ? var4.method_8025(var0) : null;
       EnumSet var10 = EnumSet.<class_8089>noneOf(class_8089.class);
@@ -190,7 +190,7 @@ public class class_9202 {
          var10.add(class_8089.field_41428);
       }
 
-      for (class_8145 var12 : var1) {
+      for (Entity var12 : var1) {
          if (var4 != null) {
             method_42461(var0, var12, var2, var8.field_7336, var8.field_7333, var8.field_7334, var10, var9.field_24329, var9.field_24326, var5);
          } else {
@@ -206,7 +206,7 @@ public class class_9202 {
          var0.method_42196(
             new TranslationTextComponent(
                "commands.teleport.success.location.single",
-               ((class_8145)var1.iterator().next()).method_19839(),
+               ((Entity)var1.iterator().next()).method_19839(),
                var8.field_7336,
                var8.field_7333,
                var8.field_7334
@@ -220,7 +220,7 @@ public class class_9202 {
 
    private static void method_42461(
       class_9155 var0,
-      class_8145 var1,
+      Entity var1,
       class_6331 var2,
       double var3,
       double var5,
@@ -231,14 +231,14 @@ public class class_9202 {
       class_4839 var12
    ) throws CommandSyntaxException {
       class_1331 var15 = new class_1331(var3, var5, var7);
-      if (class_6486.method_29593(var15)) {
+      if (World.method_29593(var15)) {
          if (!(var1 instanceof class_9359)) {
             float var16 = class_9299.method_42810(var10);
             float var17 = class_9299.method_42810(var11);
             var17 = class_9299.method_42828(var17, -90.0F, 90.0F);
             if (var2 != var1.field_41768) {
                var1.method_37269();
-               class_8145 var18 = var1;
+               Entity var18 = var1;
                var1 = var1.method_37387().method_30484(var2);
                if (var1 == null) {
                   return;

@@ -38,7 +38,7 @@ public class class_7410 extends class_3599 {
          .<class_91>method_25869(class_91.class, this.field_37836.method_37241().method_18899(8.0, 8.0, 8.0), class_5542.method_25175());
       class_6098 var4 = this.field_37836.method_26520(class_6943.field_35707);
       if (var4.method_28022() && !var3.isEmpty()) {
-         this.field_37836.method_26927().method_5616((class_8145)var3.get(0), 1.2F);
+         this.field_37836.method_26927().method_5616((Entity)var3.get(0), 1.2F);
       }
    }
 
@@ -48,7 +48,7 @@ public class class_7410 extends class_3599 {
          .field_41768
          .<class_91>method_25869(class_91.class, this.field_37836.method_37241().method_18899(8.0, 8.0, 8.0), class_5542.method_25175());
       if (!var3.isEmpty()) {
-         this.field_37836.method_26927().method_5616((class_8145)var3.get(0), 1.2F);
+         this.field_37836.method_26927().method_5616((Entity)var3.get(0), 1.2F);
       }
    }
 }

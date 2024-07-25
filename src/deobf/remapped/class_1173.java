@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 public abstract class class_1173 extends class_4612 implements class_1869 {
-   public class_1173(class_6629<? extends class_1173> var1, class_6486 var2) {
+   public class_1173(class_6629<? extends class_1173> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }

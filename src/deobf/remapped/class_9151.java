@@ -5,7 +5,7 @@ import java.util.function.Function;
 public class class_9151 extends class_9873 {
    private static String[] field_46822;
 
-   public class_9151(Function<Identifier, class_3581> var1) {
+   public class_9151(Function<Identifier, RenderLayer> var1) {
       super(var1);
    }
 

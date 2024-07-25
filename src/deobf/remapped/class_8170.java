@@ -5,7 +5,7 @@ import java.util.Random;
 public class class_8170 extends class_2811 {
    private static String[] field_41837;
 
-   public class_8170(class_6629<? extends class_8170> var1, class_6486 var2) {
+   public class_8170(class_6629<? extends class_8170> var1, World var2) {
       super(var1, var2);
    }
 
@@ -39,7 +39,7 @@ public class class_8170 extends class_2811 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       boolean var4 = super.method_26442(var1);
       if (var4 && this.method_26446().method_28022() && var1 instanceof class_5834) {
          float var5 = this.field_41768.method_43368(this.method_37075()).method_44283();

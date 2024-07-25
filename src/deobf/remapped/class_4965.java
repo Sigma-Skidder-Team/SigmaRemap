@@ -6,7 +6,7 @@ public class class_4965 extends class_337 {
    private static String[] field_25712;
    public static final float field_25713 = class_6629.field_34324.method_30459() / class_6629.field_34307.method_30459();
 
-   public class_4965(class_6629<? extends class_4965> var1, class_6486 var2) {
+   public class_4965(class_6629<? extends class_4965> var1, World var2) {
       super(var1, var2);
       this.method_26883();
       if (this.field_1260 != null) {

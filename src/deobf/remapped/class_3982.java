@@ -10,7 +10,7 @@ public abstract class class_3982 extends class_4285<class_1926> {
 
    public void method_18372(class_9379 var1, Random var2, class_1331 var3, class_1926 var4, int var5, class_2921 var6) {
       for (int var9 = 0; var9 < var5; var9++) {
-         var6.method_13364(var3).method_13369(class_240.field_817, var9);
+         var6.method_13364(var3).method_13369(Direction.field_817, var9);
          if (!var1.method_28262(var6).method_8321(var1, var6)) {
             this.method_19906(var1, var6, var4.field_9857.method_35002(var2, var3));
          }

@@ -23,7 +23,7 @@ public class class_1588 {
       new class_1608(class_235.class, 5, 2)
    };
 
-   private static class_6315 method_7132(class_1608 var0, List<class_7060> var1, Random var2, int var3, int var4, int var5, class_240 var6, int var7) {
+   private static class_6315 method_7132(class_1608 var0, List<class_7060> var1, Random var2, int var3, int var4, int var5, Direction var6, int var7) {
       Class var10 = var0.field_8344;
       Object var11 = null;
       if (var10 != class_2349.class) {

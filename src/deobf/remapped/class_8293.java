@@ -14,7 +14,7 @@ public class class_8293 extends class_8715 {
    }
 
    @Override
-   public void method_44951(class_7907 var1, class_9071 var2, float var3) {
+   public void method_44951(class_7907 var1, Camera var2, float var3) {
       this.method_44956(0.6F - ((float)this.field_49475 + var3 - 1.0F) * 0.25F * 0.5F);
       super.method_44951(var1, var2, var3);
    }

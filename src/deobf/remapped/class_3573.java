@@ -31,7 +31,7 @@ public class class_3573 implements class_4904 {
 
    @Nullable
    @Override
-   public class_8014 method_22451(class_8145 var1, Random var2) {
+   public class_8014 method_22451(Entity var1, Random var2) {
       return new class_8014(
          new class_6098(class_4897.field_24997, this.field_17494),
          new class_6098(this.field_17490.method_27960(), this.field_17493),

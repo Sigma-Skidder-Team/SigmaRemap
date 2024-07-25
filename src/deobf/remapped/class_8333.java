@@ -69,7 +69,7 @@ public class class_8333 extends class_3599 {
 
    @Override
    public void method_16794() {
-      class_6486 var3 = this.field_42658.field_41768;
+      World var3 = this.field_42658.field_41768;
       if (this.field_42658.method_2162() || this.field_42658.method_26927().method_5591()) {
          class_1343 var4 = class_1343.method_6216(this.field_42658.method_2163());
          class_1343 var5 = class_3425.method_15841(this.field_42658, 16, 1, var4, (float) (Math.PI / 8));

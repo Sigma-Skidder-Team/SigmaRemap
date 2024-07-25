@@ -2,9 +2,9 @@ package remapped;
 
 public class class_4265 extends class_2932 {
    private static String[] field_20671;
-   public final class_8145 field_20670;
+   public final Entity field_20670;
 
-   public class_4265(class_8145 var1) {
+   public class_4265(Entity var1) {
       this.field_20670 = var1;
    }
 

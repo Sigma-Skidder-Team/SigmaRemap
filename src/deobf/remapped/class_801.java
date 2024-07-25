@@ -17,7 +17,7 @@ public class class_801 extends class_3200<class_1941> {
    private void method_3544(int var1, int var2) {
       int var5 = var1 * 16 - 29;
       int var6 = var2 * 16 - 29;
-      class_240 var7 = class_9594.field_48893.method_44313(this.field_15989);
+      Direction var7 = class_9594.field_48893.method_44313(this.field_15989);
       this.field_15986.add(new class_9362(this.field_15989, var5, var6, var7));
       this.method_14720();
       this.field_4292 = true;

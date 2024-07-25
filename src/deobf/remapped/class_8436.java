@@ -18,15 +18,15 @@ public class class_8436 {
       );
    }
 
-   private static int method_38814(class_9155 var0, Collection<? extends class_8145> var1) {
-      for (class_8145 var5 : var1) {
+   private static int method_38814(class_9155 var0, Collection<? extends Entity> var1) {
+      for (Entity var5 : var1) {
          var5.method_37250();
       }
 
       if (var1.size() != 1) {
          var0.method_42196(new TranslationTextComponent("commands.kill.success.multiple", var1.size()), true);
       } else {
-         var0.method_42196(new TranslationTextComponent("commands.kill.success.single", ((class_8145)var1.iterator().next()).method_19839()), true);
+         var0.method_42196(new TranslationTextComponent("commands.kill.success.single", ((Entity)var1.iterator().next()).method_19839()), true);
       }
 
       return var1.size();

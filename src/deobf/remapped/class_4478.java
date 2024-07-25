@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_4478 extends class_8145 {
+public class class_4478 extends Entity {
    private static final Logger field_21835 = LogManager.getLogger();
    private static final class_7821<Float> field_21838 = class_8073.<Float>method_36641(class_4478.class, class_2734.field_13350);
    private static final class_7821<Integer> field_21834 = class_8073.<Integer>method_36641(class_4478.class, class_2734.field_13366);
@@ -22,7 +22,7 @@ public class class_4478 extends class_8145 {
    private static final class_7821<class_5079> field_21830 = class_8073.<class_5079>method_36641(class_4478.class, class_2734.field_13351);
    private class_6004 field_21822 = class_3697.field_18134;
    private final List<class_2250> field_21833 = Lists.newArrayList();
-   private final Map<class_8145, Integer> field_21829 = Maps.newHashMap();
+   private final Map<Entity, Integer> field_21829 = Maps.newHashMap();
    private int field_21826 = 600;
    private int field_21824 = 20;
    private int field_21828 = 20;
@@ -33,13 +33,13 @@ public class class_4478 extends class_8145 {
    private class_5834 field_21825;
    private UUID field_21837;
 
-   public class_4478(class_6629<? extends class_4478> var1, class_6486 var2) {
+   public class_4478(class_6629<? extends class_4478> var1, World var2) {
       super(var1, var2);
       this.field_41731 = true;
       this.method_20781(3.0F);
    }
 
-   public class_4478(class_6486 var1, double var2, double var4, double var6) {
+   public class_4478(World var1, double var2, double var4, double var6) {
       this(class_6629.field_34279, var1);
       this.method_37256(var2, var4, var6);
    }
@@ -305,7 +305,7 @@ public class class_4478 extends class_8145 {
    @Nullable
    public class_5834 method_20795() {
       if (this.field_21825 == null && this.field_21837 != null && this.field_41768 instanceof class_6331) {
-         class_8145 var3 = ((class_6331)this.field_41768).method_28925(this.field_21837);
+         Entity var3 = ((class_6331)this.field_41768).method_28925(this.field_21837);
          if (var3 instanceof class_5834) {
             this.field_21825 = (class_5834)var3;
          }

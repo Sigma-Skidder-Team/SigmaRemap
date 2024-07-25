@@ -297,7 +297,7 @@ public class class_5937 {
                   this.field_30285 = (class_1331)var4.get(0);
                }
 
-               class_240 var13 = class_7494.method_34113(this.field_30285);
+               Direction var13 = class_7494.method_34113(this.field_30285);
                float[] var11 = class_7494.method_34077(this.field_30285, var13);
                var1.method_6441(var11[0]);
                var1.method_6448(var11[1]);
@@ -305,7 +305,7 @@ public class class_5937 {
                this.field_30282.field_9647.method_42163(this.field_30285, class_7494.method_34113(this.field_30285));
             } else {
                this.field_30285 = (class_1331)var4.get(0);
-               class_240 var14 = class_7494.method_34113(this.field_30285);
+               Direction var14 = class_7494.method_34113(this.field_30285);
                float[] var15 = class_7494.method_34077(this.field_30285, var14);
                var1.method_6441(var15[0]);
                var1.method_6448(var15[1]);

@@ -33,7 +33,7 @@ public class class_5583 extends class_8990 {
    private float field_28354;
    private float field_28357;
 
-   public class_5583(class_6629<? extends class_5583> var1, class_6486 var2) {
+   public class_5583(class_6629<? extends class_5583> var1, World var2) {
       super(var1, var2);
    }
 
@@ -200,7 +200,7 @@ public class class_5583 extends class_8990 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       return var1.method_37181(class_6199.method_28345(this), this.method_25359());
    }
 

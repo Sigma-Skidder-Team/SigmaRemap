@@ -1,6 +1,6 @@
 package remapped;
 
-public abstract class class_4556<T extends class_8145 & class_7187, M extends class_6521<T>> extends class_4171<T, M> {
+public abstract class class_4556<T extends Entity & class_7187, M extends class_6521<T>> extends class_4171<T, M> {
    public class_4556(class_2514<T, M> var1) {
       super(var1);
    }
@@ -12,7 +12,7 @@ public abstract class class_4556<T extends class_8145 & class_7187, M extends cl
          class_6521 var14 = this.method_21122();
          var14.method_29702(var4, var5, var6, var7);
          this.method_19347().method_29701(var14);
-         class_7907 var15 = var2.method_11645(class_3581.method_16738(this.method_21124(), this.method_21123(var13), var13 * 0.01F));
+         class_7907 var15 = var2.method_11645(RenderLayer.method_16738(this.method_21124(), this.method_21123(var13), var13 * 0.01F));
          var14.method_29700(var4, var5, var6, var8, var9, var10);
          var14.method_45499(var1, var15, var3, class_5367.field_27381, 0.5F, 0.5F, 0.5F, 1.0F);
       }

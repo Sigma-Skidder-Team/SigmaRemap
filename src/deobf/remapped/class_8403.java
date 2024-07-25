@@ -59,7 +59,7 @@ public abstract class class_8403 extends class_3133<class_5194> {
          class_2522 var30 = var2.method_28262(var27);
          if (var28.method_8350(var9.method_8360()) && (var30.method_8345() || var30 == var10)) {
             for (int var31 = 0; var31 < var20; var31++) {
-               var27.method_13368(class_240.field_817);
+               var27.method_13368(Direction.field_817);
                if (!var2.method_28262(var27).method_8350(var9.method_8360())) {
                   break;
                }
@@ -78,7 +78,7 @@ public abstract class class_8403 extends class_3133<class_5194> {
                   var2.method_27348(var27, var26, false);
                }
 
-               var27.method_13368(class_240.field_802);
+               var27.method_13368(Direction.field_802);
             }
          }
 

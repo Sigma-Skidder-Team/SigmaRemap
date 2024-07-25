@@ -13,7 +13,7 @@ public class class_8641 {
             .then(class_465.method_2236("message", class_1282.method_5728()).executes(var0x -> {
                ITextComponent var3 = class_1282.method_5729(var0x, "message");
                TranslationTextComponent var4 = new TranslationTextComponent("chat.type.announcement", ((class_9155)var0x.getSource()).method_42189(), var3);
-               class_8145 var5 = ((class_9155)var0x.getSource()).method_42200();
+               Entity var5 = ((class_9155)var0x.getSource()).method_42200();
                if (var5 == null) {
                   ((class_9155)var0x.getSource()).method_42177().method_1600().method_39983(var4, ChatType.SYSTEM, Util.NIL_UUID);
                } else {

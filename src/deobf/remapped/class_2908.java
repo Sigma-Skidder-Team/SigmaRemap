@@ -4,7 +4,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class class_2908 extends class_4232 {
    private class_266 field_14185;
-   private class_8881 field_14184;
+   private GameOptions field_14184;
    private static class_1013[] field_14186 = new class_1013[]{
       class_1013.field_5284,
       class_1013.field_5297,
@@ -27,7 +27,7 @@ public class class_2908 extends class_4232 {
    };
    private class_6809 field_14182 = new class_6809(this, new class_3403());
 
-   public class_2908(class_266 var1, class_8881 var2) {
+   public class_2908(class_266 var1, GameOptions var2) {
       super(new StringTextComponent(class_6956.method_31803("of.options.qualityTitle")));
       this.field_14185 = var1;
       this.field_14184 = var2;

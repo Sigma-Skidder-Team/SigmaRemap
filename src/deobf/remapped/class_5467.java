@@ -8,7 +8,7 @@ public abstract class class_5467 extends class_1899 {
    private int field_27875;
    private UUID field_27876;
 
-   public class_5467(class_6629<? extends class_5467> var1, class_6486 var2) {
+   public class_5467(class_6629<? extends class_5467> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6357, 16.0F);
       this.method_26895(class_1108.field_6352, -1.0F);

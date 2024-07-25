@@ -9,7 +9,7 @@ public class class_7166 extends class_2451 {
 
    @Override
    public class_6910 method_11237(class_4734 var1) {
-      class_6486 var4 = var1.method_21862();
+      World var4 = var1.method_21862();
       class_1331 var5 = var1.method_21858();
       class_2522 var6 = var4.method_28262(var5);
       if (!var6.method_8350(class_4783.field_23491) || var6.<Boolean>method_10313(class_7863.field_40260)) {
@@ -41,7 +41,7 @@ public class class_7166 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
       class_6098 var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48747);
       if (var7.method_33990() == class_1430.field_7717 && var1.method_28262(var7.method_43955()).method_8350(class_4783.field_23491)) {

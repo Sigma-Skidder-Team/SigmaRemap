@@ -12,12 +12,12 @@ public class class_7829 {
       } else {
          class_1331 var3 = ((class_7606)var0.get(0)).field_38725;
          class_7606[] var4 = new class_7606[]{
-            new class_7606(var3.method_6094(), class_240.field_800),
-            new class_7606(var3.method_6090(), class_240.field_809),
-            new class_7606(var3.method_6073(), class_240.field_818),
-            new class_7606(var3.method_6108(), class_240.field_804),
-            new class_7606(var3.method_6100(), class_240.field_817),
-            new class_7606(var3.method_6081(), class_240.field_802)
+            new class_7606(var3.method_6094(), Direction.field_800),
+            new class_7606(var3.method_6090(), Direction.field_809),
+            new class_7606(var3.method_6073(), Direction.field_818),
+            new class_7606(var3.method_6108(), Direction.field_804),
+            new class_7606(var3.method_6100(), Direction.field_817),
+            new class_7606(var3.method_6081(), Direction.field_802)
          };
 
          for (class_7606 var8 : var4) {
@@ -47,12 +47,12 @@ public class class_7829 {
             return var5;
          } else {
             class_7606[] var6 = new class_7606[]{
-               new class_7606(var1.method_6081(), class_240.field_802),
-               new class_7606(var1.method_6094(), class_240.field_800),
-               new class_7606(var1.method_6090(), class_240.field_809),
-               new class_7606(var1.method_6073(), class_240.field_818),
-               new class_7606(var1.method_6108(), class_240.field_804),
-               new class_7606(var1.method_6100(), class_240.field_817)
+               new class_7606(var1.method_6081(), Direction.field_802),
+               new class_7606(var1.method_6094(), Direction.field_800),
+               new class_7606(var1.method_6090(), Direction.field_809),
+               new class_7606(var1.method_6073(), Direction.field_818),
+               new class_7606(var1.method_6108(), Direction.field_804),
+               new class_7606(var1.method_6100(), Direction.field_817)
             };
 
             for (class_7606 var10 : var6) {

@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_5881 extends class_6315 {
    private static String[] field_29864;
 
-   public class_5881(int var1, class_9616 var2, class_240 var3) {
+   public class_5881(int var1, class_9616 var2, Direction var3) {
       super(class_2746.field_13444, var1);
       this.method_32519(var3);
       this.field_36435 = var2;
@@ -19,8 +19,8 @@ public class class_5881 extends class_6315 {
    @Override
    public void method_32527(class_7060 var1, List<class_7060> var2, Random var3) {
       byte var6 = 1;
-      class_240 var7 = this.method_32518();
-      if (var7 == class_240.field_809 || var7 == class_240.field_818) {
+      Direction var7 = this.method_32518();
+      if (var7 == Direction.field_809 || var7 == Direction.field_818) {
          var6 = 5;
       }
 
@@ -28,7 +28,7 @@ public class class_5881 extends class_6315 {
       this.method_28786((class_1695)var1, var2, var3, 0, var6, var3.nextInt(8) > 0);
    }
 
-   public static class_5881 method_26822(List<class_7060> var0, int var1, int var2, int var3, class_240 var4, int var5) {
+   public static class_5881 method_26822(List<class_7060> var0, int var1, int var2, int var3, Direction var4, int var5) {
       class_9616 var8 = class_9616.method_44386(var1, var2, var3, -3, 0, 0, 9, 7, 9, var4);
       return method_28781(var8) && class_7060.method_32502(var0, var8) == null ? new class_5881(var5, var8, var4) : null;
    }

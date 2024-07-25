@@ -1,42 +1,42 @@
 package remapped;
 
 public enum class_4536 {
-   field_22134(class_240.field_802),
-   field_22124(class_240.field_817),
-   field_22133(class_240.field_818),
-   field_22120(class_240.field_800),
-   field_22117(class_240.field_809),
-   field_22131(class_240.field_804),
-   field_22136(class_240.field_818, class_240.field_809),
-   field_22132(class_240.field_818, class_240.field_804),
-   field_22130(class_240.field_800, class_240.field_809),
-   field_22118(class_240.field_800, class_240.field_804),
-   field_22122(class_240.field_802, class_240.field_818),
-   field_22116(class_240.field_802, class_240.field_800),
-   field_22128(class_240.field_817, class_240.field_818),
-   field_22135(class_240.field_817, class_240.field_800),
-   field_22123(class_240.field_802, class_240.field_809),
-   field_22129(class_240.field_802, class_240.field_804),
-   field_22126(class_240.field_817, class_240.field_809),
-   field_22125(class_240.field_817, class_240.field_804);
+   field_22134(Direction.field_802),
+   field_22124(Direction.field_817),
+   field_22133(Direction.field_818),
+   field_22120(Direction.field_800),
+   field_22117(Direction.field_809),
+   field_22131(Direction.field_804),
+   field_22136(Direction.field_818, Direction.field_809),
+   field_22132(Direction.field_818, Direction.field_804),
+   field_22130(Direction.field_800, Direction.field_809),
+   field_22118(Direction.field_800, Direction.field_804),
+   field_22122(Direction.field_802, Direction.field_818),
+   field_22116(Direction.field_802, Direction.field_800),
+   field_22128(Direction.field_817, Direction.field_818),
+   field_22135(Direction.field_817, Direction.field_800),
+   field_22123(Direction.field_802, Direction.field_809),
+   field_22129(Direction.field_802, Direction.field_804),
+   field_22126(Direction.field_817, Direction.field_809),
+   field_22125(Direction.field_817, Direction.field_804);
 
-   private class_240 field_22121;
-   private class_240 field_22137;
+   private Direction field_22121;
+   private Direction field_22137;
 
-   private class_4536(class_240 var3) {
+   private class_4536(Direction var3) {
       this.field_22121 = var3;
    }
 
-   private class_4536(class_240 var3, class_240 var4) {
+   private class_4536(Direction var3, Direction var4) {
       this.field_22121 = var3;
       this.field_22137 = var4;
    }
 
-   public class_240 method_21063() {
+   public Direction method_21063() {
       return this.field_22121;
    }
 
-   public class_240 method_21058() {
+   public Direction method_21058() {
       return this.field_22137;
    }
 

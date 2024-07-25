@@ -3,7 +3,7 @@ package remapped;
 public class class_8768 extends class_7067<class_5490> {
    private static String[] field_44889;
 
-   public class_8768(class_6122 var1) {
+   public class_8768(EntityRenderDispatcher var1) {
       super(var1);
    }
 
@@ -13,7 +13,7 @@ public class class_8768 extends class_7067<class_5490> {
       class_6933 var9 = var1.field_27978;
       float var10 = 0.0625F;
       var4.method_36062(0.0625F, 0.0625F, 0.0625F);
-      class_7907 var11 = var5.method_11645(class_3581.method_16734(this.method_40288(var1)));
+      class_7907 var11 = var5.method_11645(RenderLayer.method_16734(this.method_40288(var1)));
       class_4642 var12 = MinecraftClient.getInstance().method_8581();
       this.method_40287(var4, var11, var1, var9.method_31700(), var9.method_31699(), var12.method_21477(var9), var12.method_21478());
       var4.method_36064();
@@ -57,24 +57,24 @@ public class class_8768 extends class_7067<class_5490> {
             int var40 = class_9299.method_42847(var3.method_37302());
             int var41 = class_9299.method_42847(var3.method_37309() + (double)((var38 + var39) / 2.0F / 16.0F));
             int var42 = class_9299.method_42847(var3.method_37156());
-            class_240 var43 = var3.method_37365();
-            if (var43 == class_240.field_818) {
+            Direction var43 = var3.method_37365();
+            if (var43 == Direction.field_818) {
                var40 = class_9299.method_42847(var3.method_37302() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
-            if (var43 == class_240.field_809) {
+            if (var43 == Direction.field_809) {
                var42 = class_9299.method_42847(var3.method_37156() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
-            if (var43 == class_240.field_800) {
+            if (var43 == Direction.field_800) {
                var40 = class_9299.method_42847(var3.method_37302() - (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
-            if (var43 == class_240.field_804) {
+            if (var43 == Direction.field_804) {
                var42 = class_9299.method_42847(var3.method_37156() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
-            int var44 = class_4316.method_20002(var3.field_41768, new class_1331(var40, var41, var42));
+            int var44 = WorldRenderer.method_20002(var3.field_41768, new class_1331(var40, var41, var42));
             float var45 = var6.method_23602(var30 * (double)(var28 - var34));
             float var46 = var6.method_23602(var30 * (double)(var28 - (var34 + 1)));
             float var47 = var6.method_23639(var32 * (double)(var29 - var35));

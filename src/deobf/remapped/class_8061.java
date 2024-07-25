@@ -4,7 +4,7 @@ public class class_8061 extends class_7067<class_8612> {
    private static String[] field_41260;
    private final class_8765 field_41261;
 
-   public class_8061(class_6122 var1, class_8765 var2) {
+   public class_8061(EntityRenderDispatcher var1, class_8765 var2) {
       super(var1);
       this.field_41261 = var2;
    }

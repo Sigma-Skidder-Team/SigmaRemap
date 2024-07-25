@@ -24,7 +24,7 @@ public class class_6726 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (var2.field_33055) {
          class_6098 var9 = var4.method_26617(var5);
          if (this.method_30861(var2, var3, var1, var4).method_31662()) {
@@ -57,8 +57,8 @@ public class class_6726 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
-      return var2 == class_240.field_802 && !var1.method_8309(var4, var5)
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+      return var2 == Direction.field_802 && !var1.method_8309(var4, var5)
          ? class_4783.field_23184.method_29260()
          : super.method_10763(var1, var2, var3, var4, var5, var6);
    }
@@ -74,7 +74,7 @@ public class class_6726 extends class_6414 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, class_6486 var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
       return (7 - var1.<Integer>method_10313(field_34736)) * 2;
    }
 

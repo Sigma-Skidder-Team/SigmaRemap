@@ -39,19 +39,19 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;
 
-public class class_4316 implements class_6491, AutoCloseable {
-   private static final Logger field_21017 = LogManager.getLogger();
-   private static final Identifier field_20928 = new Identifier("textures/environment/moon_phases.png");
-   private static final Identifier field_20977 = new Identifier("textures/environment/sun.png");
-   private static final Identifier field_20935 = new Identifier("textures/environment/clouds.png");
-   private static final Identifier field_20938 = new Identifier("textures/environment/end_sky.png");
-   private static final Identifier field_20936 = new Identifier("textures/misc/forcefield.png");
-   private static final Identifier field_20990 = new Identifier("textures/environment/rain.png");
-   private static final Identifier field_21008 = new Identifier("textures/environment/snow.png");
-   public static final class_240[] field_20942 = class_240.values();
-   private final MinecraftClient field_20994;
-   private final TextureManager field_20951;
-   public final class_6122 field_20988;
+public class WorldRenderer implements class_6491, AutoCloseable {
+   private static final Logger LOGGER = LogManager.getLogger();
+   private static final Identifier MOON_PHASES = new Identifier("textures/environment/moon_phases.png");
+   private static final Identifier SUN = new Identifier("textures/environment/sun.png");
+   private static final Identifier CLOUDS = new Identifier("textures/environment/clouds.png");
+   private static final Identifier END_SKY = new Identifier("textures/environment/end_sky.png");
+   private static final Identifier FORCEFIELD = new Identifier("textures/misc/forcefield.png");
+   private static final Identifier RAIN = new Identifier("textures/environment/rain.png");
+   private static final Identifier SNOW = new Identifier("textures/environment/snow.png");
+   public static final Direction[] DIRECTIONS = Direction.values();
+   private final MinecraftClient client;
+   private final TextureManager textureManager;
+   public final EntityRenderDispatcher field_20988;
    private final class_3017 field_20973;
    private class_174 field_20970;
    private Set<class_3511> field_20924 = new ObjectLinkedOpenHashSet();
@@ -110,7 +110,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    private int field_20965;
    private final float[] field_20931 = new float[1024];
    private final float[] field_21014 = new float[1024];
-   public class_8145 field_21016;
+   public Entity field_21016;
    public Set field_20941 = new LinkedHashSet();
    public Set field_20921 = new LinkedHashSet();
    private Set<class_3511> field_20983 = new ObjectLinkedOpenHashSet();
@@ -125,7 +125,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    private List field_20950 = new ArrayList(1024);
    private int field_20927 = 0;
    private int field_20981 = 0;
-   private static final Set field_21003 = Collections.<class_240>unmodifiableSet(new HashSet(Arrays.asList(class_240.field_803)));
+   private static final Set field_21003 = Collections.<Direction>unmodifiableSet(new HashSet(Arrays.asList(Direction.field_803)));
    private int field_20920;
    private int field_20963 = 0;
    private class_4460 field_20960 = new class_4460(class_4783.field_23184.method_29260(), new class_1331(0, 0, 0));
@@ -136,11 +136,11 @@ public class class_4316 implements class_6491, AutoCloseable {
    public int field_20956 = -1;
    public static final int field_20998 = 201435902;
    private static boolean field_21005 = false;
-   private Map<String, List<class_8145>> field_20974 = new HashMap<String, List<class_8145>>();
-   private Map<class_3581, Map> field_20967 = new LinkedHashMap<class_3581, Map>();
+   private Map<String, List<Entity>> field_20974 = new HashMap<String, List<Entity>>();
+   private Map<RenderLayer, Map> field_20967 = new LinkedHashMap<class_3581, Map>();
 
    @Nullable
-   private class_3511 method_20003(class_1331 var1, class_3511 var2, class_240 var3) {
+   private class_3511 method_20003(class_1331 var1, class_3511 var2, Direction var3) {
       class_1331 var4 = var2.method_16143(var3);
       if (class_9299.method_42805(var1.method_12173() - var4.method_12173()) > this.field_20922 * 16) {
          return null;
@@ -151,11 +151,11 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   public class_4316(MinecraftClient var1, class_3017 var2) {
-      this.field_20994 = var1;
+   public WorldRenderer(MinecraftClient var1, class_3017 var2) {
+      this.client = var1;
       this.field_20988 = var1.method_8587();
       this.field_20973 = var2;
-      this.field_20951 = var1.method_8577();
+      this.textureManager = var1.method_8577();
 
       for (int var3 = 0; var3 < 32; var3++) {
          for (int var4 = 0; var4 < 32; var4++) {
@@ -176,19 +176,19 @@ public class class_4316 implements class_6491, AutoCloseable {
       if (class_7860.field_40157.method_3596()) {
          class_4159 var9 = (class_4159)class_7860.method_35555(this.field_20970.method_738(), class_7860.field_40157);
          if (var9 != null) {
-            var9.method_19298(this.field_20997, var2, this.field_20970, this.field_20994, var1, var3, var5, var7);
+            var9.method_19298(this.field_20997, var2, this.field_20970, this.client, var1, var3, var5, var7);
             return;
          }
       }
 
-      float var48 = this.field_20994.field_9601.method_29578(var2);
+      float var48 = this.client.field_9601.method_29578(var2);
       if (!(var48 <= 0.0F)) {
          if (class_3111.method_14421()) {
             return;
          }
 
          var1.method_26126();
-         class_174 var10 = this.field_20994.field_9601;
+         class_174 var10 = this.client.field_9601;
          int var11 = class_9299.method_42847(var3);
          int var12 = class_9299.method_42847(var5);
          int var13 = class_9299.method_42847(var7);
@@ -247,7 +247,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                            }
 
                            var17 = 0;
-                           this.field_20994.method_8577().method_35674(field_20990);
+                           this.client.method_8577().method_35674(RAIN);
                            var15.method_44471(7, class_7985.field_40902);
                         }
 
@@ -286,7 +286,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                            }
 
                            var17 = 1;
-                           this.field_20994.method_8577().method_35674(field_21008);
+                           this.client.method_8577().method_35674(SNOW);
                            var15.method_44471(7, class_7985.field_40902);
                         }
 
@@ -341,18 +341,18 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20011(class_9071 var1) {
-      float var2 = this.field_20994.field_9601.method_29578(1.0F) / (MinecraftClient.method_8528() ? 1.0F : 2.0F);
+   public void method_20011(Camera var1) {
+      float var2 = this.client.field_9601.method_29578(1.0F) / (MinecraftClient.method_8528() ? 1.0F : 2.0F);
       if (!class_3111.method_14283()) {
          var2 /= 2.0F;
       }
 
       if (!(var2 <= 0.0F) && class_3111.method_14356()) {
          Random var3 = new Random((long)this.field_20997 * 312987231L);
-         class_174 var4 = this.field_20994.field_9601;
+         class_174 var4 = this.client.field_9601;
          class_1331 var5 = new class_1331(var1.method_41627());
          class_1331 var6 = null;
-         int var7 = (int)(100.0F * var2 * var2) / (this.field_20994.field_9577.field_45505 == class_9761.field_49576 ? 2 : 1);
+         int var7 = (int)(100.0F * var2 * var2) / (this.client.field_9577.field_45505 == class_9761.field_49576 ? 2 : 1);
 
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
@@ -365,7 +365,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                && var12.method_28866() == class_6750.field_34844
                && var12.method_28865(var11) >= 0.15F) {
                var6 = var11;
-               if (this.field_20994.field_9577.field_45505 == class_9761.field_49573) {
+               if (this.client.field_9577.field_45505 == class_9761.field_49573) {
                   break;
                }
 
@@ -380,7 +380,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                class_2427 var26 = !var18.method_22007(class_6503.field_33095) && !var17.method_8350(class_4783.field_23215) && !class_8474.method_39004(var17)
                   ? class_3090.field_15386
                   : class_3090.field_15376;
-               this.field_20994
+               this.client
                   .field_9601
                   .method_43361(
                      var26, (double)var11.method_12173() + var13, (double)var11.method_12165() + var24, (double)var11.method_12185() + var15, 0.0, 0.0, 0.0
@@ -392,9 +392,9 @@ public class class_4316 implements class_6491, AutoCloseable {
             this.field_20965 = 0;
             if (var6.method_12165() > var5.method_12165() + 1
                && var4.method_22563(class_3801.field_18595, var5).method_12165() > class_9299.method_42848((float)var5.method_12165())) {
-               this.field_20994.field_9601.method_721(var6, class_463.field_2554, class_562.field_3330, 0.1F, 0.5F, false);
+               this.client.field_9601.method_721(var6, class_463.field_2554, class_562.field_3330, 0.1F, 0.5F, false);
             } else {
-               this.field_20994.field_9601.method_721(var6, class_463.field_2741, class_562.field_3330, 0.2F, 1.0F, false);
+               this.client.field_9601.method_721(var6, class_463.field_2741, class_562.field_3330, 0.2F, 1.0F, false);
             }
          }
       }
@@ -413,7 +413,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
    @Override
    public void method_29609(class_7832 var1) {
-      this.field_20951.method_35674(field_20936);
+      this.textureManager.method_35674(FORCEFIELD);
       class_3542.method_16490(3553, 10242, 10497);
       class_3542.method_16490(3553, 10243, 10497);
       class_3542.method_16446(0);
@@ -431,15 +431,15 @@ public class class_4316 implements class_6491, AutoCloseable {
       Identifier var1 = new Identifier("shaders/post/entity_outline.json");
 
       try {
-         this.field_20926 = new class_4067(this.field_20994.method_8577(), this.field_20994.method_8498(), this.field_20994.method_8584(), var1);
-         this.field_20926.method_18750(this.field_20994.method_8552().method_43178(), this.field_20994.method_8552().method_43198());
+         this.field_20926 = new class_4067(this.client.method_8577(), this.client.method_8498(), this.client.method_8584(), var1);
+         this.field_20926.method_18750(this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
          this.field_21000 = this.field_20926.method_18758("final");
       } catch (IOException var3) {
-         field_21017.warn("Failed to load shader: {}", var1, var3);
+         LOGGER.warn("Failed to load shader: {}", var1, var3);
          this.field_20926 = null;
          this.field_21000 = null;
       } catch (JsonSyntaxException var4) {
-         field_21017.warn("Failed to parse shader: {}", var1, var4);
+         LOGGER.warn("Failed to parse shader: {}", var1, var4);
          this.field_20926 = null;
          this.field_21000 = null;
       }
@@ -450,8 +450,8 @@ public class class_4316 implements class_6491, AutoCloseable {
       Identifier var1 = new Identifier("shaders/post/transparency.json");
 
       try {
-         class_4067 var2 = new class_4067(this.field_20994.method_8577(), this.field_20994.method_8498(), this.field_20994.method_8584(), var1);
-         var2.method_18750(this.field_20994.method_8552().method_43178(), this.field_20994.method_8552().method_43198());
+         class_4067 var2 = new class_4067(this.client.method_8577(), this.client.method_8498(), this.client.method_8584(), var1);
+         var2.method_18750(this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
          class_4230 var10 = var2.method_18758("translucent");
          class_4230 var11 = var2.method_18758("itemEntity");
          class_4230 var12 = var2.method_18758("particles");
@@ -467,22 +467,22 @@ public class class_4316 implements class_6491, AutoCloseable {
          String var3 = var9 instanceof JsonSyntaxException ? "parse" : "load";
          String var4 = "Failed to " + var3 + " shader: " + var1;
          class_7320 var5 = new class_7320(var4, var9);
-         if (this.field_20994.method_8521().method_29123().size() > 1) {
+         if (this.client.method_8521().method_29123().size() > 1) {
             StringTextComponent var6;
             try {
-               var6 = new StringTextComponent(this.field_20994.method_8498().method_35458(var1).method_18579());
+               var6 = new StringTextComponent(this.client.method_8498().method_35458(var1).method_18579());
             } catch (IOException var8) {
                var6 = null;
             }
 
-            this.field_20994.field_9577.field_45397 = class_4615.field_22437;
-            this.field_20994.method_8615(var5, var6);
+            this.client.field_9577.field_45397 = class_4615.field_22437;
+            this.client.method_8615(var5, var6);
          } else {
-            class_159 var13 = this.field_20994.method_8546(new class_159(var4, var5));
-            this.field_20994.field_9577.field_45397 = class_4615.field_22437;
-            this.field_20994.field_9577.method_40873();
-            field_21017.fatal(var4, var5);
-            this.field_20994.method_8593();
+            class_159 var13 = this.client.method_8546(new class_159(var4, var5));
+            this.client.field_9577.field_45397 = class_4615.field_22437;
+            this.client.field_9577.method_40873();
+            LOGGER.fatal(var4, var5);
+            this.client.method_8593();
             MinecraftClient.method_8608(var13);
          }
       }
@@ -509,14 +509,14 @@ public class class_4316 implements class_6491, AutoCloseable {
       if (this.method_20036()) {
          class_3542.method_16488();
          class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
-         this.field_21000.method_19714(this.field_20994.method_8552().method_43178(), this.field_20994.method_8552().method_43198(), false);
+         this.field_21000.method_19714(this.client.method_8552().method_43178(), this.client.method_8552().method_43198(), false);
          class_3542.method_16448();
       }
    }
 
    public boolean method_20036() {
       return !class_3111.method_14424() && !class_3111.method_14248()
-         ? this.field_21000 != null && this.field_20926 != null && this.field_20994.field_9632 != null
+         ? this.field_21000 != null && this.field_20926 != null && this.client.field_9632 != null
          : false;
    }
 
@@ -675,7 +675,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          this.field_20970.method_753();
          if (this.field_20968 == null) {
             this.field_20968 = new class_6705(
-               this.field_20970, this, Util.getMainWorkerExecutor(), this.field_20994.method_8533(), this.field_20973.method_13792()
+               this.field_20970, this, Util.getMainWorkerExecutor(), this.client.method_8533(), this.field_20973.method_13792()
             );
          } else {
             this.field_20968.method_30736(this.field_20970);
@@ -691,7 +691,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
          class_153.method_613();
          field_21005 = MinecraftClient.method_8541();
-         this.field_20922 = this.field_20994.field_9577.field_45537;
+         this.field_20922 = this.client.field_9577.field_45537;
          this.field_20927 = this.field_20922 * 16;
          this.field_20981 = this.field_20927 * this.field_20927;
          this.method_20039();
@@ -706,16 +706,16 @@ public class class_4316 implements class_6491, AutoCloseable {
             this.field_20972.clear();
          }
 
-         this.field_20966 = new class_7626(this.field_20968, this.field_20970, this.field_20994.field_9577.field_45537, this);
+         this.field_20966 = new class_7626(this.field_20968, this.field_20970, this.client.field_9577.field_45537, this);
          if (this.field_20970 != null) {
-            class_8145 var4 = this.field_20994.method_8516();
+            Entity var4 = this.client.method_8516();
             if (var4 != null) {
                this.field_20966.method_34566(var4.method_37302(), var4.method_37156());
             }
          }
       }
 
-      if (this.field_20994.field_9632 == null) {
+      if (this.client.field_9632 == null) {
          this.field_21009 = true;
       }
    }
@@ -743,7 +743,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          "C: %d/%d %sD: %d, %s",
          var2,
          var1,
-         this.field_20994.field_9631 ? "(s) " : "",
+         this.client.field_9631 ? "(s) " : "",
          this.field_20922,
          this.field_20968 == null ? "null" : this.field_20968.method_30724()
       );
@@ -767,27 +767,27 @@ public class class_4316 implements class_6491, AutoCloseable {
       return "E: " + this.field_20937 + "/" + this.field_20970.method_741() + ", B: " + this.field_20979 + ", " + class_3111.method_14244();
    }
 
-   public void method_20016(class_9071 var1, class_2359 var2, boolean var3, int var4, boolean var5) {
+   public void method_20016(Camera var1, class_2359 var2, boolean var3, int var4, boolean var5) {
       class_1343 var6 = var1.method_41627();
-      if (this.field_20994.field_9577.field_45537 != this.field_20922) {
+      if (this.client.field_9577.field_45537 != this.field_20922) {
          this.method_19998();
       }
 
       this.field_20970.method_29599().method_16056("camera");
-      double var7 = this.field_20994.field_9632.method_37302() - this.field_20964;
-      double var9 = this.field_20994.field_9632.method_37309() - this.field_21002;
-      double var11 = this.field_20994.field_9632.method_37156() - this.field_20954;
-      if (this.field_20933 != this.field_20994.field_9632.field_41742
-         || this.field_21007 != this.field_20994.field_9632.field_41747
-         || this.field_21013 != this.field_20994.field_9632.field_41714
+      double var7 = this.client.field_9632.method_37302() - this.field_20964;
+      double var9 = this.client.field_9632.method_37309() - this.field_21002;
+      double var11 = this.client.field_9632.method_37156() - this.field_20954;
+      if (this.field_20933 != this.client.field_9632.field_41742
+         || this.field_21007 != this.client.field_9632.field_41747
+         || this.field_21013 != this.client.field_9632.field_41714
          || var7 * var7 + var9 * var9 + var11 * var11 > 16.0) {
-         this.field_20964 = this.field_20994.field_9632.method_37302();
-         this.field_21002 = this.field_20994.field_9632.method_37309();
-         this.field_20954 = this.field_20994.field_9632.method_37156();
-         this.field_20933 = this.field_20994.field_9632.field_41742;
-         this.field_21007 = this.field_20994.field_9632.field_41747;
-         this.field_21013 = this.field_20994.field_9632.field_41714;
-         this.field_20966.method_34566(this.field_20994.field_9632.method_37302(), this.field_20994.field_9632.method_37156());
+         this.field_20964 = this.client.field_9632.method_37302();
+         this.field_21002 = this.client.field_9632.method_37309();
+         this.field_20954 = this.client.field_9632.method_37156();
+         this.field_20933 = this.client.field_9632.field_41742;
+         this.field_21007 = this.client.field_9632.field_41747;
+         this.field_21013 = this.client.field_9632.field_41714;
+         this.field_20966.method_34566(this.client.field_9632.method_37302(), this.client.field_9632.method_37156());
       }
 
       if (class_3111.method_14326()) {
@@ -796,7 +796,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
       this.field_20968.method_30739(var6);
       this.field_20970.method_29599().method_16050("cull");
-      this.field_20994.method_8562().method_16050("culling");
+      this.client.method_8562().method_16050("culling");
       class_1331 var13 = var1.method_41630();
       class_3511 var14 = this.field_20966.method_34563(var13);
       byte var15 = 16;
@@ -819,7 +819,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       this.field_20978 = var6.field_7334;
       this.field_20993 = (double)var17;
       this.field_20995 = (double)var18;
-      this.field_20994.method_8562().method_16050("update");
+      this.client.method_8562().method_16050("update");
       class_5099.field_26297.method_24314();
       int var19 = this.method_20027();
       if (var19 != this.field_20963) {
@@ -827,7 +827,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          this.field_20985 = true;
       }
 
-      class_8145 var20 = var1.method_41633();
+      Entity var20 = var1.method_41633();
       int var21 = 256;
       if (!class_5161.method_23654()) {
          this.field_20985 = true;
@@ -879,10 +879,10 @@ public class class_4316 implements class_6491, AutoCloseable {
          this.method_20055();
          this.field_20980.clear();
          Deque var41 = this.field_20980;
-         class_8145.method_37327(
-            class_9299.method_42827((double)this.field_20994.field_9577.field_45537 / 8.0, 1.0, 2.5) * (double)this.field_20994.field_9577.field_45475
+         Entity.method_37327(
+            class_9299.method_42827((double)this.client.field_9577.field_45537 / 8.0, 1.0, 2.5) * (double)this.client.field_9577.field_45475
          );
-         boolean var43 = this.field_20994.field_9631;
+         boolean var43 = this.client.field_9631;
          class_1331 var45 = var1.method_41630();
          int var26 = var45.method_12165();
          int var27 = var26 >> 4 << 4;
@@ -913,7 +913,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
                   if (var2.method_10824(var40.field_17221)) {
                      var40.method_16187(var4);
-                     var41.add(new class_1261(var40, (class_240)null, 0));
+                     var41.add(new class_1261(var40, (Direction)null, 0));
                      break;
                   }
                }
@@ -927,7 +927,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                }
 
                var14.method_16187(var4);
-               var41.add(new class_1261(var14, (class_240)null, 0));
+               var41.add(new class_1261(var14, (Direction)null, 0));
             } else {
                int var49 = var16.method_12165() > 0 ? Math.min(var21, 248) : 8;
                if (var22 != null) {
@@ -944,7 +944,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                      if (var61 != null && var2.method_10824(var61.field_17221)) {
                         var61.method_16187(var4);
                         class_1261 var35 = var61.method_16166();
-                        class_1261.method_5680(var35, (class_240)null, 0, 0);
+                        class_1261.method_5680(var35, (Direction)null, 0, 0);
                         var56.add(var35);
                      }
                   }
@@ -955,13 +955,13 @@ public class class_4316 implements class_6491, AutoCloseable {
             }
          }
 
-         this.field_20994.method_8562().method_16056("iteration");
+         this.client.method_8562().method_16056("iteration");
          boolean var50 = class_3111.method_14420();
 
          while (!var41.isEmpty()) {
             class_1261 var53 = (class_1261)var41.poll();
             class_3511 var55 = var53.field_6947;
-            class_240 var57 = class_1261.method_5679(var53);
+            Direction var57 = class_1261.method_5679(var53);
             class_8845 var59 = var55.field_17205.get();
             if (!var59.method_40691() || var55.method_16181()) {
                this.field_20982.add(var53);
@@ -975,9 +975,9 @@ public class class_4316 implements class_6491, AutoCloseable {
                this.field_21011.add(var53);
             }
 
-            class_240[] var60 = var43 ? class_5161.method_23651(class_1261.method_5677(var53)) : class_240.field_803;
+            Direction[] var60 = var43 ? class_5161.method_23651(class_1261.method_5677(var53)) : Direction.field_803;
 
-            for (class_240 var37 : var60) {
+            for (Direction var37 : var60) {
                if (!var43 || var57 == null || var59.method_40688(var57.method_1046(), var37)) {
                   class_3511 var65 = this.method_20004(var16, var55, var37, var50, var21);
                   if (var65 != null && var65.method_16187(var4) && var2.method_10824(var65.field_17221)) {
@@ -990,14 +990,14 @@ public class class_4316 implements class_6491, AutoCloseable {
             }
          }
 
-         this.field_20994.method_8562().method_16054();
+         this.client.method_8562().method_16054();
       }
 
       class_5099.field_26297.method_24313();
       if (class_6588.field_33945) {
          class_6588.method_30205();
       } else {
-         this.field_20994.method_8562().method_16050("rebuildNear");
+         this.client.method_8562().method_16050("rebuildNear");
          Set var42 = this.field_20924;
          this.field_20924 = this.field_20983;
          this.field_20983 = var42;
@@ -1020,22 +1020,22 @@ public class class_4316 implements class_6491, AutoCloseable {
                } else if (!var47.method_16160()) {
                   this.field_20921.add(var47);
                } else {
-                  this.field_20994.method_8562().method_16056("build near");
+                  this.client.method_8562().method_16056("build near");
                   this.field_20968.method_30726(var47);
                   var47.method_16135();
-                  this.field_20994.method_8562().method_16054();
+                  this.client.method_8562().method_16054();
                }
             }
          }
 
          class_5099.field_26292.method_24313();
          this.field_20924.addAll(var42);
-         this.field_20994.method_8562().method_16054();
+         this.client.method_8562().method_16054();
       }
    }
 
    @Nullable
-   private class_3511 method_20004(class_1331 var1, class_3511 var2, class_240 var3, boolean var4, int var5) {
+   private class_3511 method_20004(class_1331 var1, class_3511 var2, Direction var3, boolean var4, int var5) {
       class_3511 var6 = var2.method_16165(var3);
       if (var6 == null) {
          return null;
@@ -1079,12 +1079,12 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20059(class_7966 var1, float var2, long var3, boolean var5, class_9071 var6, GameRenderer var7, class_5778 var8, class_8107 var9) {
-      class_3569.field_17468.method_16590(this.field_20970, this.field_20994.method_8577(), this.field_20994.textRenderer, var6, this.field_20994.field_9587);
-      this.field_20988.method_28116(this.field_20970, var6, this.field_20994.field_9662);
+   public void method_20059(class_7966 var1, float var2, long var3, boolean var5, Camera var6, GameRenderer var7, class_5778 var8, class_8107 var9) {
+      class_3569.field_17468.method_16590(this.field_20970, this.client.method_8577(), this.client.textRenderer, var6, this.client.field_9587);
+      this.field_20988.method_28116(this.field_20970, var6, this.client.field_9662);
       class_3492 var10 = this.field_20970.method_29599();
       var10.method_16050("light_updates");
-      this.field_20994.field_9601.method_745().method_14813().method_21571(Integer.MAX_VALUE, true, true);
+      this.client.field_9601.method_745().method_14813().method_21571(Integer.MAX_VALUE, true, true);
       class_1343 var11 = var6.method_41627();
       double var12 = var11.method_61();
       double var14 = var11.method_60();
@@ -1101,7 +1101,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          var20.method_10820(var12, var14, var16);
       }
 
-      this.field_20994.method_8562().method_16050("captureFrustum");
+      this.client.method_8562().method_16050("captureFrustum");
       if (this.field_20987) {
          this.method_20067(var18, var9, var11.field_7336, var11.field_7333, var11.field_7334, var19 ? new class_2359(var18, var9) : var20);
          this.field_20987 = false;
@@ -1109,12 +1109,12 @@ public class class_4316 implements class_6491, AutoCloseable {
 
       var10.method_16050("clear");
       if (class_3111.method_14424()) {
-         class_6588.method_30316(0, 0, this.field_20994.method_8552().method_43178(), this.field_20994.method_8552().method_43198());
+         class_6588.method_30316(0, 0, this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
       } else {
-         class_3542.method_16392(0, 0, this.field_20994.method_8552().method_43178(), this.field_20994.method_8552().method_43198());
+         class_3542.method_16392(0, 0, this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
       }
 
-      class_6377.method_29157(var6, var2, this.field_20994.field_9601, this.field_20994.field_9577.field_45537, var7.method_35956(var2));
+      class_6377.method_29157(var6, var2, this.client.field_9601, this.client.field_9577.field_45537, var7.method_35956(var2));
       class_3542.method_16402(16640, MinecraftClient.IS_SYSTEM_MAC);
       boolean var21 = class_3111.method_14424();
       if (var21) {
@@ -1127,8 +1127,8 @@ public class class_4316 implements class_6491, AutoCloseable {
 
       var20.field_11841 = class_3111.method_14424() && !class_6588.method_30227();
       float var22 = var7.method_35955();
-      boolean var23 = this.field_20994.field_9601.method_738().method_34252(class_9299.method_42847(var12), class_9299.method_42847(var14))
-         || this.field_20994.field_9614.method_13972().method_21877();
+      boolean var23 = this.client.field_9601.method_738().method_34252(class_9299.method_42847(var12), class_9299.method_42847(var14))
+         || this.client.field_9614.method_13972().method_21877();
       if ((class_3111.method_14391() || class_3111.method_14282() || class_3111.method_14417()) && !class_6588.field_33945) {
          class_6377.method_29160(var6, class_1026.field_5679, var22, var23, var2);
          var10.method_16050("sky");
@@ -1147,11 +1147,11 @@ public class class_4316 implements class_6491, AutoCloseable {
       var10.method_16050("fog");
       class_6377.method_29160(var6, class_1026.field_5676, Math.max(var22 - 16.0F, 32.0F), var23, var2);
       var10.method_16050("terrain_setup");
-      this.method_20090(var6, var20, this.field_20994.field_9632.method_37221());
-      this.method_20016(var6, var20, var19, this.field_20959++, this.field_20994.field_9632.method_37221());
+      this.method_20090(var6, var20, this.client.field_9632.method_37221());
+      this.method_20016(var6, var20, var19, this.field_20959++, this.client.field_9632.method_37221());
       var10.method_16050("updatechunks");
       byte var24 = 30;
-      int var25 = this.field_20994.field_9577.field_45439;
+      int var25 = this.client.field_9577.field_45439;
       long var26 = 33333333L;
       long var28;
       if ((double)var25 == class_1013.field_5277.method_38573()) {
@@ -1169,10 +1169,10 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_5099.field_26308.method_24313();
       var10.method_16050("terrain");
       class_5099.field_26298.method_24314();
-      if (this.field_20994.field_9577.field_45432) {
-         this.field_20994.method_8562().method_16050("finish");
+      if (this.client.field_9577.field_45432) {
+         this.client.method_8562().method_16050("finish");
          GL11.glFinish();
-         this.field_20994.method_8562().method_16050("terrain");
+         this.client.method_8562().method_16050("terrain");
       }
 
       if (class_3111.method_14365() && class_6377.field_32581) {
@@ -1180,9 +1180,9 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
 
       this.method_20045(class_3581.method_16751(), var1, var12, var14, var16);
-      this.field_20994.method_8577().method_35679(class_8359.field_42824).method_37049(false, this.field_20994.field_9577.field_45577 > 0);
+      this.client.method_8577().method_35679(class_8359.field_42824).method_37049(false, this.client.field_9577.field_45577 > 0);
       this.method_20045(class_3581.method_16756(), var1, var12, var14, var16);
-      this.field_20994.method_8577().method_35679(class_8359.field_42824).method_37057();
+      this.client.method_8577().method_35679(class_8359.field_42824).method_37057();
       this.method_20045(class_3581.method_16771(), var1, var12, var14, var16);
       if (var21) {
          class_293.method_1324();
@@ -1207,8 +1207,8 @@ public class class_4316 implements class_6491, AutoCloseable {
       this.field_20920 = 0;
       if (this.field_20929 != null) {
          this.field_20929.method_19712(MinecraftClient.IS_SYSTEM_MAC);
-         this.field_20929.method_19710(this.field_20994.method_8584());
-         this.field_20994.method_8584().method_19717(false);
+         this.field_20929.method_19710(this.client.method_8584());
+         this.client.method_8584().method_19717(false);
       }
 
       if (this.field_20958 != null) {
@@ -1217,7 +1217,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
       if (this.method_20036()) {
          this.field_21000.method_19712(MinecraftClient.IS_SYSTEM_MAC);
-         this.field_20994.method_8584().method_19717(false);
+         this.client.method_8584().method_19717(false);
       }
 
       boolean var38 = false;
@@ -1230,8 +1230,8 @@ public class class_4316 implements class_6491, AutoCloseable {
          class_3511 var42 = var41.field_6947;
          class_2654 var43 = var42.method_16174();
 
-         for (class_8145 var45 : var43.method_11979()[var42.method_16189().method_12165() / 16]) {
-            if ((this.field_20988.method_28135(var45, var20, var12, var14, var16) || var45.method_37315(this.field_20994.field_9632))
+         for (Entity var45 : var43.method_11979()[var42.method_16189().method_12165() / 16]) {
+            if ((this.field_20988.method_28135(var45, var20, var12, var14, var16) || var45.method_37315(this.client.field_9632))
                && (
                   var45 != var6.method_41633()
                      || var6.method_41648()
@@ -1242,7 +1242,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                Object var47 = this.field_20974.get(var46);
                if (var47 == null) {
                   var47 = new ArrayList();
-                  this.field_20974.put(var46, (List<class_8145>)var47);
+                  this.field_20974.put(var46, (List<Entity>)var47);
                }
 
                var47.add(var45);
@@ -1251,7 +1251,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
 
       for (List var58 : this.field_20974.values()) {
-         for (class_8145 var65 : var58) {
+         for (Entity var65 : var58) {
             this.field_20937++;
             if (var65.field_41697 == 0) {
                var65.field_41754 = var65.method_37302();
@@ -1260,7 +1260,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             }
 
             Object var71;
-            if (this.method_20036() && this.field_20994.method_8563(var65)) {
+            if (this.method_20036() && this.client.method_8563(var65)) {
                var38 = true;
                class_3643 var76 = this.field_20973.method_13791();
                var71 = var76;
@@ -1383,7 +1383,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
       if (var38) {
          this.field_20926.method_18755(var2);
-         this.field_20994.method_8584().method_19717(false);
+         this.client.method_8584().method_19717(false);
       }
 
       if (var21) {
@@ -1410,7 +1410,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                class_3764 var54 = new class_3764(
                   this.field_20973.method_13793().method_11645(class_6560.field_33452.get(var93)), var94.method_28620(), var94.method_28618()
                );
-               this.field_20994.method_8505().method_3711(this.field_20970.method_28262(var74), var74, this.field_20970, var1, var54);
+               this.client.method_8505().method_3711(this.field_20970.method_28262(var74), var74, this.field_20970, var1, var54);
                var1.method_36064();
             }
          }
@@ -1419,7 +1419,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       this.field_20932 = false;
       field_20953--;
       this.method_20032(var1);
-      class_7474 var64 = this.field_20994.field_9587;
+      class_7474 var64 = this.client.field_9587;
       if (var5 && var64 != null && var64.method_33990() == class_1430.field_7717) {
          var10.method_16050("outline");
          class_1331 var69 = ((class_9529)var64).method_43955();
@@ -1449,7 +1449,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_3542.method_16358(var1.method_36058().method_28620());
       boolean var70 = class_1920.method_8779();
       class_1920.method_8804();
-      this.field_20994.field_9612.method_15550(var1, var39, var12, var14, var16);
+      this.client.field_9612.method_15550(var1, var39, var12, var14, var16);
       class_1920.method_8840(var70);
       class_3542.method_16489();
       var39.method_17416(class_5276.method_24072());
@@ -1475,16 +1475,16 @@ public class class_4316 implements class_6491, AutoCloseable {
          var39.method_17416(class_3581.method_16744());
          var39.method_17415();
          this.field_21001.method_19712(MinecraftClient.IS_SYSTEM_MAC);
-         this.field_21001.method_19710(this.field_20994.method_8584());
+         this.field_21001.method_19710(this.client.method_8584());
          var10.method_16050("translucent");
          this.method_20045(class_3581.method_16762(), var1, var12, var14, var16);
          var10.method_16050("string");
          this.method_20045(class_3581.method_16765(), var1, var12, var14, var16);
          this.field_20996.method_19712(MinecraftClient.IS_SYSTEM_MAC);
-         this.field_20996.method_19710(this.field_20994.method_8584());
+         this.field_20996.method_19710(this.client.method_8584());
          class_5348.field_27312.method_24420();
          var10.method_16050("particles");
-         this.field_20994.field_9572.method_43046(var1, var39, var8, var6, var2, var20);
+         this.client.field_9572.method_43046(var1, var39, var8, var6, var2, var20);
          class_5348.field_27312.method_24422();
       } else {
          var10.method_16050("translucent");
@@ -1506,7 +1506,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             class_6588.method_30163();
          }
 
-         this.field_20994.field_9572.method_43046(var1, var39, var8, var6, var2, var20);
+         this.client.field_9572.method_43046(var1, var39, var8, var6, var2, var20);
          if (var21) {
             class_6588.method_30192();
          }
@@ -1515,7 +1515,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_1920.method_8856(true);
       class_3542.method_16438();
       class_3542.method_16358(var1.method_36058().method_28620());
-      if (this.field_20994.field_9577.method_40860() != class_9655.field_49168) {
+      if (this.client.field_9577.method_40860() != class_9655.field_49168) {
          if (this.field_20930 != null) {
             this.field_21006.method_19712(MinecraftClient.IS_SYSTEM_MAC);
             class_5348.field_27300.method_24420();
@@ -1535,7 +1535,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          this.method_20079(var6);
          class_5348.field_27313.method_24422();
          this.field_20930.method_18755(var2);
-         this.field_20994.method_8584().method_19717(false);
+         this.client.method_8584().method_19717(false);
       } else {
          class_3542.method_16387(false);
          if (class_3111.method_14424()) {
@@ -1570,7 +1570,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20009(class_8145 var1, double var2, double var4, double var6, float var8, class_7966 var9, class_2565 var10) {
+   public void method_20009(Entity var1, double var2, double var4, double var6, float var8, class_7966 var9, class_2565 var10) {
       double var11 = class_9299.method_42794((double)var8, var1.field_41754, var1.method_37302());
       double var13 = class_9299.method_42794((double)var8, var1.field_41713, var1.method_37309());
       double var15 = class_9299.method_42794((double)var8, var1.field_41724, var1.method_37156());
@@ -1582,7 +1582,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       var1.method_24420();
       boolean var9 = class_3111.method_14424();
       if (var1 == class_3581.method_16762() && !class_6588.field_33945) {
-         this.field_20994.method_8562().method_16056("translucent_sort");
+         this.client.method_8562().method_16056("translucent_sort");
          double var10 = var3 - this.field_20952;
          double var12 = var5 - this.field_20991;
          double var14 = var7 - this.field_20939;
@@ -1603,10 +1603,10 @@ public class class_4316 implements class_6491, AutoCloseable {
             }
          }
 
-         this.field_20994.method_8562().method_16054();
+         this.client.method_8562().method_16054();
       }
 
-      this.field_20994.method_8562().method_16056("filterempty");
+      this.client.method_8562().method_16056("filterempty");
       if (var9) {
          class_293.method_1326(var1);
       }
@@ -1615,7 +1615,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_3542.method_16438();
       class_3542.method_16476();
       class_3542.method_16358(var2.method_36058().method_28620());
-      this.field_20994.method_8562().method_16051(() -> "render_" + var1);
+      this.client.method_8562().method_16051(() -> "render_" + var1);
       boolean var11 = var1 != class_3581.method_16762();
       ObjectListIterator var30 = this.field_20982.listIterator(var11 ? 0 : this.field_20982.size());
       if (class_3111.method_14351()) {
@@ -1704,7 +1704,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_7995.method_36279();
       class_3542.method_16473();
       class_7985.field_40918.method_13173();
-      this.field_20994.method_8562().method_16054();
+      this.client.method_8562().method_16054();
       if (var9) {
          class_293.method_1323(var1);
       }
@@ -1720,10 +1720,10 @@ public class class_4316 implements class_6491, AutoCloseable {
       class_1920.method_8761();
    }
 
-   private void method_20035(class_9071 var1) {
+   private void method_20035(Camera var1) {
       class_8042 var2 = class_8042.method_36499();
       class_9633 var3 = var2.method_36501();
-      if (this.field_20994.field_9569 || this.field_20994.field_9605) {
+      if (this.client.field_9569 || this.client.field_9605) {
          double var4 = var1.method_41627().method_61();
          double var6 = var1.method_41627().method_60();
          double var8 = var1.method_41627().method_62();
@@ -1739,14 +1739,14 @@ public class class_4316 implements class_6491, AutoCloseable {
             class_3542.method_16438();
             class_1331 var13 = var12.method_16189();
             class_3542.method_16483((double)var13.method_12173() - var4, (double)var13.method_12165() - var6, (double)var13.method_12185() - var8);
-            if (this.field_20994.field_9569) {
+            if (this.client.field_9569) {
                var3.method_44471(1, class_7985.field_40903);
                class_3542.method_16484(10.0F);
                int var14 = class_1261.method_5674(var11) == 0 ? 0 : class_9299.method_42792((float)class_1261.method_5674(var11) / 50.0F, 0.9F, 0.9F);
                int var15 = var14 >> 16 & 0xFF;
                int var16 = var14 >> 8 & 0xFF;
                int var17 = var14 & 0xFF;
-               class_240 var18 = class_1261.method_5679(var11);
+               Direction var18 = class_1261.method_5679(var11);
                if (var18 != null) {
                   var3.method_35761(8.0, 8.0, 8.0).method_35743(var15, var16, var17, 255).method_35735();
                   var3.method_35761((double)(8 - 16 * var18.method_1041()), (double)(8 - 16 * var18.method_1054()), (double)(8 - 16 * var18.method_1034()))
@@ -1758,13 +1758,13 @@ public class class_4316 implements class_6491, AutoCloseable {
                class_3542.method_16484(1.0F);
             }
 
-            if (this.field_20994.field_9605 && !var12.method_16150().method_40691()) {
+            if (this.client.field_9605 && !var12.method_16150().method_40691()) {
                var3.method_44471(1, class_7985.field_40903);
                class_3542.method_16484(10.0F);
                int var24 = 0;
 
-               for (class_240 var30 : field_20942) {
-                  for (class_240 var22 : field_20942) {
+               for (Direction var30 : DIRECTIONS) {
+                  for (Direction var22 : DIRECTIONS) {
                      boolean var23 = var12.method_16150().method_40688(var30, var22);
                      if (!var23) {
                         var24++;
@@ -1943,7 +1943,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          class_3542.method_16488();
          class_3542.method_16437();
          class_3542.method_16387(false);
-         this.field_20951.method_35674(field_20938);
+         this.textureManager.method_35674(END_SKY);
          class_8042 var2 = class_8042.method_36499();
          class_9633 var3 = var2.method_36501();
 
@@ -1976,7 +1976,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             int var8 = 40;
             if (class_3111.method_14438()) {
                class_1343 var9 = new class_1343((double)var6 / 255.0, (double)var7 / 255.0, (double)var8 / 255.0);
-               var9 = class_9300.method_42927(var9, this.field_20970, this.field_20994.method_8516(), 0.0F);
+               var9 = class_9300.method_42927(var9, this.field_20970, this.client.method_8516(), 0.0F);
                var6 = (int)(var9.field_7336 * 255.0);
                var7 = (int)(var9.field_7333 * 255.0);
                var8 = (int)(var9.field_7334 * 255.0);
@@ -2001,27 +2001,27 @@ public class class_4316 implements class_6491, AutoCloseable {
       if (class_7860.field_40239.method_3596()) {
          class_9731 var3 = (class_9731)class_7860.method_35555(this.field_20970.method_738(), class_7860.field_40239);
          if (var3 != null) {
-            var3.method_44933(this.field_20997, var2, var1, this.field_20970, this.field_20994);
+            var3.method_44933(this.field_20997, var2, var1, this.field_20970, this.client);
             return;
          }
       }
 
-      if (this.field_20994.field_9601.method_738().method_34244() == class_9571.field_48695) {
+      if (this.client.field_9601.method_738().method_34244() == class_9571.field_48695) {
          this.method_20087(var1);
-      } else if (this.field_20994.field_9601.method_738().method_34244() == class_9571.field_48694) {
+      } else if (this.client.field_9601.method_738().method_34244() == class_9571.field_48694) {
          class_3542.method_16354();
          boolean var20 = class_3111.method_14424();
          if (var20) {
             class_6588.method_30299();
          }
 
-         class_1343 var4 = this.field_20970.method_750(this.field_20994.gameRenderer.method_35949().method_41630(), var2);
+         class_1343 var4 = this.field_20970.method_750(this.client.gameRenderer.method_35949().method_41630(), var2);
          var4 = class_9300.method_42885(
             var4,
-            this.field_20994.field_9601,
-            this.field_20994.method_8516().method_37302(),
-            this.field_20994.method_8516().method_37309() + 1.0,
-            this.field_20994.method_8516().method_37156()
+            this.client.field_9601,
+            this.client.method_8516().method_37302(),
+            this.client.method_8516().method_37309() + 1.0,
+            this.client.method_8516().method_37156()
          );
          if (var20) {
             class_6588.method_30238(var4);
@@ -2103,7 +2103,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          float var22 = 1.0F - this.field_20970.method_29578(var2);
          class_3542.method_16480(1.0F, 1.0F, 1.0F, var22);
          var1.method_36060(class_2426.field_12074.method_11074(-90.0F));
-         class_6167.method_28272(this.field_20970, this.field_20951, var1, var2);
+         class_6167.method_28272(this.field_20970, this.textureManager, var1, var2);
          if (var20) {
             class_6588.method_30212(var1);
          }
@@ -2116,7 +2116,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          class_8107 var23 = var1.method_36058().method_28620();
          float var24 = 30.0F;
          if (class_3111.method_14448()) {
-            this.field_20951.method_35674(field_20977);
+            this.textureManager.method_35674(SUN);
             var8.method_44471(7, class_7985.field_40912);
             var8.method_35762(var23, -var24, 100.0F, -var24).method_35745(0.0F, 0.0F).method_35735();
             var8.method_35762(var23, var24, 100.0F, -var24).method_35745(1.0F, 0.0F).method_35735();
@@ -2128,7 +2128,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
          var24 = 20.0F;
          if (class_3111.method_14241()) {
-            this.field_20951.method_35674(field_20928);
+            this.textureManager.method_35674(MOON_PHASES);
             int var26 = this.field_20970.method_13575();
             int var28 = var26 % 4;
             int var30 = var26 / 4 % 2;
@@ -2175,7 +2175,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          }
 
          class_3542.method_16404(0.0F, 0.0F, 0.0F);
-         double var29 = this.field_20994.field_9632.method_37335(var2).field_7333 - this.field_20970.method_749().method_3496();
+         double var29 = this.client.field_9632.method_37335(var2).field_7333 - this.field_20970.method_749().method_3496();
          boolean var32 = false;
          if (var29 < 0.0) {
             var1.method_36063();
@@ -2206,7 +2206,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          if (class_7860.field_39862.method_3596()) {
             class_3597 var9 = (class_3597)class_7860.method_35555(this.field_20970.method_738(), class_7860.field_39862);
             if (var9 != null) {
-               var9.method_16791(this.field_20997, var2, var1, this.field_20970, this.field_20994, var3, var5, var7);
+               var9.method_16791(this.field_20997, var2, var1, this.field_20970, this.client, var3, var5, var7);
                return;
             }
          }
@@ -2231,7 +2231,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             double var14 = (double)(((float)this.field_20997 + var2) * 0.03F);
             double var16 = (var3 + var14) / 12.0;
             double var18 = (double)(var31 - (float)var5 + 0.33F);
-            var18 += this.field_20994.field_9577.field_45398 * 128.0;
+            var18 += this.client.field_9577.field_45398 * 128.0;
             double var20 = var7 / 12.0 + 0.33F;
             var16 -= (double)(class_9299.method_42847(var16 / 2048.0) * 2048);
             var20 -= (double)(class_9299.method_42847(var20 / 2048.0) * 2048);
@@ -2245,13 +2245,13 @@ public class class_4316 implements class_6491, AutoCloseable {
             if (var26 != this.field_20944
                || var27 != this.field_20919
                || var28 != this.field_20957
-               || this.field_20994.field_9577.method_40860() != this.field_20992
+               || this.client.field_9577.method_40860() != this.field_20992
                || this.field_20975.method_6204(var25) > 2.0E-4) {
                this.field_20944 = var26;
                this.field_20919 = var27;
                this.field_20957 = var28;
                this.field_20975 = var25;
-               this.field_20992 = this.field_20994.field_9577.method_40860();
+               this.field_20992 = this.client.field_9577.method_40860();
                this.field_20986 = true;
             }
 
@@ -2268,7 +2268,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                this.field_20947.method_36285(var29);
             }
 
-            this.field_20951.method_35674(field_20935);
+            this.textureManager.method_35674(CLOUDS);
             var1.method_36063();
             var1.method_36062(12.0F, 1.0F, 12.0F);
             var1.method_36065((double)(-var22), (double)var23, (double)(-var24));
@@ -2572,10 +2572,10 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   private void method_20079(class_9071 var1) {
+   private void method_20079(Camera var1) {
       class_9633 var2 = class_8042.method_36499().method_36501();
       class_2098 var3 = this.field_20970.method_6673();
-      double var4 = (double)(this.field_20994.field_9577.field_45537 * 16);
+      double var4 = (double)(this.client.field_9577.field_45537 * 16);
       if (!(var1.method_41627().field_7336 < var3.method_9828() - var4)
          || !(var1.method_41627().field_7336 > var3.method_9821() + var4)
          || !(var1.method_41627().field_7334 < var3.method_9816() - var4)
@@ -2593,7 +2593,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          class_3542.method_16488();
          class_3542.method_16428();
          class_3542.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
-         this.field_20951.method_35674(field_20936);
+         this.textureManager.method_35674(FORCEFIELD);
          class_3542.method_16387(MinecraftClient.method_8497());
          class_3542.method_16438();
          int var14 = var3.method_9839().method_18609();
@@ -2692,7 +2692,7 @@ public class class_4316 implements class_6491, AutoCloseable {
       var1.method_35761(var8 - var2, (double)var10 - var4, var11 - var6).method_35745(var13, var14).method_35735();
    }
 
-   private void method_20053(class_7966 var1, class_7907 var2, class_8145 var3, double var4, double var6, double var8, class_1331 var10, class_2522 var11) {
+   private void method_20053(class_7966 var1, class_7907 var2, Entity var3, double var4, double var6, double var8, class_1331 var10, class_2522 var11) {
       method_20046(
          var1,
          var2,
@@ -2881,7 +2881,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    }
 
    public void method_20094(class_1331 var1, class_2522 var2, class_2522 var3) {
-      if (this.field_20994.method_8535().method_33944(var2, var3)) {
+      if (this.client.method_8535().method_33944(var2, var3)) {
          this.method_20093(var1.method_12173(), var1.method_12165(), var1.method_12185(), var1.method_12173(), var1.method_12165(), var1.method_12185());
       }
    }
@@ -2911,7 +2911,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    public void method_20089(class_8461 var1, class_1331 var2, class_7738 var3) {
       class_3560 var4 = this.field_20971.get(var2);
       if (var4 != null) {
-         this.field_20994.method_8590().method_16336(var4);
+         this.client.method_8590().method_16336(var4);
          this.field_20971.remove(var2);
       }
 
@@ -2922,18 +2922,18 @@ public class class_4316 implements class_6491, AutoCloseable {
          }
 
          if (var5 != null) {
-            this.field_20994.field_9614.method_13974(var5.method_35029());
+            this.client.field_9614.method_13974(var5.method_35029());
          }
 
          class_4949 var6 = class_4949.method_22679(var1, (double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
          this.field_20971.put(var2, var6);
-         this.field_20994.method_8590().method_16345(var6);
+         this.client.method_8590().method_16345(var6);
       }
 
       this.method_20080(this.field_20970, var2, var1 != null);
    }
 
-   private void method_20080(class_6486 var1, class_1331 var2, boolean var3) {
+   private void method_20080(World var1, class_1331 var2, boolean var3) {
       for (class_5834 var5 : var1.<class_5834>method_25868(class_5834.class, new class_4092(var2).method_18898(3.0))) {
          var5.method_26424(var2, var3);
       }
@@ -2967,8 +2967,8 @@ public class class_4316 implements class_6491, AutoCloseable {
 
    @Nullable
    private class_9733 method_20063(class_5079 var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
-      class_9071 var16 = this.field_20994.gameRenderer.method_35949();
-      if (this.field_20994 != null && var16.method_41642() && this.field_20994.field_9572 != null) {
+      Camera var16 = this.client.gameRenderer.method_35949();
+      if (this.client != null && var16.method_41642() && this.client.field_9572 != null) {
          class_9761 var17 = this.method_20020(var3);
          if (var1 == class_3090.field_15377 && !class_3111.method_14418()) {
             return null;
@@ -3022,7 +3022,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                }
             }
 
-            class_9733 var20 = this.field_20994.field_9572.method_43062(var1, var4, var6, var8, var10, var12, var14);
+            class_9733 var20 = this.client.field_9572.method_43062(var1, var4, var6, var8, var10, var12, var14);
             if (var1 == class_3090.field_15340) {
                class_9300.method_42921(var20, this.field_20970, var4, var6, var8, this.field_20960);
             }
@@ -3055,7 +3055,7 @@ public class class_4316 implements class_6491, AutoCloseable {
    }
 
    private class_9761 method_20020(boolean var1) {
-      class_9761 var2 = this.field_20994.field_9577.field_45505;
+      class_9761 var2 = this.client.field_9577.field_45505;
       if (var1 && var2 == class_9761.field_49573 && this.field_20970.field_33033.nextInt(10) == 0) {
          var2 = class_9761.field_49576;
       }
@@ -3075,7 +3075,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          case 1023:
          case 1028:
          case 1038:
-            class_9071 var4 = this.field_20994.gameRenderer.method_35949();
+            Camera var4 = this.client.gameRenderer.method_35949();
             if (var4.method_41642()) {
                double var5 = (double)var2.method_12173() - var4.method_41627().field_7336;
                double var7 = (double)var2.method_12165() - var4.method_41627().field_7333;
@@ -3203,7 +3203,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             this.field_20970.method_721(var3, class_463.field_2802, class_562.field_3322, 0.3F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1032:
-            this.field_20994.method_8590().method_16345(class_4949.method_22680(class_463.field_2294, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.client.method_8590().method_16345(class_4949.method_22680(class_463.field_2294, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
             break;
          case 1033:
             this.field_20970.method_721(var3, class_463.field_2280, class_562.field_3322, 1.0F, 1.0F, false);
@@ -3278,7 +3278,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             }
             break;
          case 2000:
-            class_240 var6 = class_240.method_1033(var4);
+            Direction var6 = Direction.method_1033(var4);
             int var7 = var6.method_1041();
             int var8 = var6.method_1054();
             int var9 = var6.method_1034();
@@ -3309,7 +3309,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                   .method_721(var3, var47.method_21390(), class_562.field_3322, (var47.method_21395() + 1.0F) / 2.0F, var47.method_21393() * 0.8F, false);
             }
 
-            this.field_20994.field_9572.method_43048(var3, var16);
+            this.client.field_9572.method_43048(var3, var16);
             break;
          case 2002:
          case 2007:
@@ -3609,10 +3609,10 @@ public class class_4316 implements class_6491, AutoCloseable {
       return this.field_21011;
    }
 
-   private void method_20090(class_9071 var1, class_2359 var2, boolean var3) {
+   private void method_20090(Camera var1, class_2359 var2, boolean var3) {
       if (this.field_20956 == 0) {
          this.method_20015(var1, var2, var3);
-         this.field_20994.field_9614.method_13991().method_18692(201435902);
+         this.client.field_9614.method_13991().method_18692(201435902);
       }
 
       if (this.field_20956 > -1) {
@@ -3620,14 +3620,14 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   private void method_20015(class_9071 var1, class_2359 var2, boolean var3) {
-      int var4 = this.field_20994.field_9577.field_45536;
-      boolean var5 = this.field_20994.field_9577.field_45406;
+   private void method_20015(Camera var1, class_2359 var2, boolean var3) {
+      int var4 = this.client.field_9577.field_45536;
+      boolean var5 = this.client.field_9577.field_45406;
 
       try {
-         this.field_20994.field_9577.field_45536 = 1000;
-         this.field_20994.field_9577.field_45406 = false;
-         class_4316 var6 = class_3111.method_14387();
+         this.client.field_9577.field_45536 = 1000;
+         this.client.field_9577.field_45406 = false;
+         WorldRenderer var6 = class_3111.method_14387();
          int var7 = var6.method_20027();
          long var8 = System.currentTimeMillis();
          class_3111.method_14277("Loading visible chunks");
@@ -3672,8 +3672,8 @@ public class class_4316 implements class_6491, AutoCloseable {
          class_3111.method_14280("Finished loading visible chunks");
          class_6705.field_34625 = 0;
       } finally {
-         this.field_20994.field_9577.field_45536 = var4;
-         this.field_20994.field_9577.field_45406 = var5;
+         this.client.field_9577.field_45536 = var4;
+         this.client.field_9577.field_45406 = var5;
       }
    }
 

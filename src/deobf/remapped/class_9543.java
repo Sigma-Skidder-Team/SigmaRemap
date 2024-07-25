@@ -14,7 +14,7 @@ public class class_9543 extends class_367 {
    private static float field_48549;
    private static boolean field_48558;
    private class_1331 field_48552;
-   private class_8145 field_48550;
+   private Entity field_48550;
    private static boolean field_48555 = false;
    private Runnable field_48554 = null;
    private int field_48557;
@@ -52,11 +52,11 @@ public class class_9543 extends class_367 {
             return;
          }
 
-         this.field_48550 = (class_8145)var4.get(0);
+         this.field_48550 = (Entity)var4.get(0);
          if ((float)this.field_48557 >= 20.0F / this.method_42002("CPS")) {
             class_3577 var5 = field_46692.field_9601
-               .<class_8145>method_25869(
-                  class_8145.class, this.field_48550.field_41712.method_18928(2.0, 4.0, 2.0).method_18928(-2.0, -3.0, -2.0), var0 -> var0 instanceof class_3577
+               .<Entity>method_25869(
+                  Entity.class, this.field_48550.field_41712.method_18928(2.0, 4.0, 2.0).method_18928(-2.0, -3.0, -2.0), var0 -> var0 instanceof class_3577
                )
                .stream()
                .<class_3577>map(var0 -> (class_3577)var0)
@@ -154,7 +154,7 @@ public class class_9543 extends class_367 {
          )
          && field_46692.field_9601.method_28262(var4).method_8360() == class_4783.field_23184
          && field_46692.field_9601.method_28262(var5).method_8360() == class_4783.field_23184
-         && field_46692.field_9601.<class_8145>method_25868(class_8145.class, new class_4092(var4)).isEmpty();
+         && field_46692.field_9601.<Entity>method_25868(Entity.class, new class_4092(var4)).isEmpty();
    }
 
    public List<class_1331> method_44015(class_1331 var1, float var2, int var3, boolean var4, boolean var5, int var6) {
@@ -178,7 +178,7 @@ public class class_9543 extends class_367 {
       return var9;
    }
 
-   public static float method_44033(double var0, double var2, double var4, class_8145 var6) {
+   public static float method_44033(double var0, double var2, double var4, Entity var6) {
       float var9 = 12.0F;
       double var10 = Math.sqrt(var6.method_37273(var0, var2, var4)) / (double)var9;
       class_1343 var12 = new class_1343(var0, var2, var4);
@@ -235,12 +235,12 @@ public class class_9543 extends class_367 {
       field_48558 = true;
    }
 
-   public List<class_8145> method_44031(float var1) {
+   public List<Entity> method_44031(float var1) {
       List var4 = class_314.method_1440();
       Iterator var5 = var4.iterator();
 
       while (var5.hasNext()) {
-         class_8145 var6 = (class_8145)var5.next();
+         Entity var6 = (Entity)var5.next();
          if (var6 != field_46692.field_9632) {
             if (!SigmaMainClass.method_3328().method_3307().method_14460(var6)) {
                if (var6 instanceof class_5834) {

@@ -3,7 +3,7 @@ package remapped;
 public class class_4754 {
    private static String[] field_23027;
 
-   public static class_954<class_6098> method_21939(class_6486 var0, class_704 var1, class_2584 var2) {
+   public static class_954<class_6098> method_21939(World var0, class_704 var1, class_2584 var2) {
       var1.method_26462(var2);
       return class_954.<class_6098>method_4206(var1.method_26617(var2));
    }

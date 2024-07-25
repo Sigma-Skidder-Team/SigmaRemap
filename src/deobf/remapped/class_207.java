@@ -26,7 +26,7 @@ public class class_207 extends class_266 {
             this.field_943.field_9625.method_39834();
          })
       );
-      class_8881 var4 = this.field_943.field_9577;
+      GameOptions var4 = this.field_943.field_9577;
       this.field_692 = class_416.method_2073(
          this.field_948,
          new TranslationTextComponent(

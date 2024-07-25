@@ -21,7 +21,7 @@ public class class_2108 extends class_9448 {
             var6.add(
                new class_3841(
                   var1.method_6081(),
-                  var7.method_10308(class_4115.field_20050, var8.<class_240>method_10313(class_4115.field_20050))
+                  var7.method_10308(class_4115.field_20050, var8.<Direction>method_10313(class_4115.field_20050))
                      .method_10308(class_4115.field_20051, var8.<Boolean>method_10313(class_4115.field_20051))
                )
             );
@@ -31,7 +31,7 @@ public class class_2108 extends class_9448 {
       if (var2.<class_7422>method_10313(class_4115.field_20045) == class_7422.field_37874) {
          class_2522 var9 = var3.method_30352(var1.method_6100());
          if (var9.method_8360() instanceof class_4115) {
-            class_2522 var10 = var2.method_10308(class_4115.field_20050, var9.<class_240>method_10313(class_4115.field_20050))
+            class_2522 var10 = var2.method_10308(class_4115.field_20050, var9.<Direction>method_10313(class_4115.field_20050))
                .method_10308(class_4115.field_20051, var9.<Boolean>method_10313(class_4115.field_20051));
             var6.add(new class_3841(var1, var10));
             var6.add(new class_3841(var1.method_6100(), var9.method_10308(class_4115.field_20047, var10.<class_4340>method_10313(class_4115.field_20047))));

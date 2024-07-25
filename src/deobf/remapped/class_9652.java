@@ -3,7 +3,7 @@ package remapped;
 public class class_9652 extends class_7164<class_5583, class_6399<class_5583>> {
    private static String[] field_49158;
 
-   public class_9652(class_6122 var1) {
+   public class_9652(EntityRenderDispatcher var1) {
       super(var1, new class_6399<class_5583>(0.0F), 0.4F);
       this.method_29100(new class_6835(this));
    }

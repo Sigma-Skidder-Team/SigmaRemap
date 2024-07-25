@@ -3,7 +3,7 @@ package remapped;
 import com.mentalfrostbyte.jello.commands.CommandException;
 
 public class class_7870 extends class_3720 {
-   private class_8145 field_40286 = null;
+   private Entity field_40286 = null;
 
    public class_7870() {
       super("entitydesync", "Forces a client side entity dismount", "vanish", "riderdesync");
@@ -31,7 +31,7 @@ public class class_7870 extends class_3720 {
                   var3.method_3731("Remounted entity " + this.field_40286.method_37387().method_30464().getUnformattedComponentText());
                   this.field_40286 = null;
                } else {
-                  class_8145 var6 = field_18219.field_9632.method_37243();
+                  Entity var6 = field_18219.field_9632.method_37243();
                   if (var6 == null) {
                      throw new class_2900("You must be riding an entity to use this command");
                   }

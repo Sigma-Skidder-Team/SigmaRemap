@@ -10,8 +10,8 @@ public final class class_6180 implements class_3825 {
    public float method_17802(class_6098 var1, class_174 var2, class_5834 var3) {
       Object var6 = var3 == null ? var1.method_27993() : var3;
       if (var6 != null) {
-         if (var2 == null && ((class_8145)var6).field_41768 instanceof class_174) {
-            var2 = (class_174)((class_8145)var6).field_41768;
+         if (var2 == null && ((Entity)var6).field_41768 instanceof class_174) {
+            var2 = (class_174)((Entity)var6).field_41768;
          }
 
          if (var2 != null) {
@@ -32,7 +32,7 @@ public final class class_6180 implements class_3825 {
       }
    }
 
-   private double method_28299(class_6486 var1, double var2) {
+   private double method_28299(World var1, double var2) {
       if (var1.method_29546() != this.field_31592) {
          this.field_31592 = var1.method_29546();
          double var6 = var2 - this.field_31594;

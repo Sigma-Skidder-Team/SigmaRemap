@@ -10,10 +10,10 @@ public class class_1535 {
 
    public static class_8623 method_6972(class_1331 var0, class_9249 var1, int var2, class_9249 var3, int var4, Predicate<class_1331> var5) {
       class_2921 var8 = var0.method_6089();
-      class_240 var9 = class_240.method_1043(class_137.field_403, var1);
-      class_240 var10 = var9.method_1046();
-      class_240 var11 = class_240.method_1043(class_137.field_403, var3);
-      class_240 var12 = var11.method_1046();
+      Direction var9 = Direction.method_1043(class_137.field_403, var1);
+      Direction var10 = var9.method_1046();
+      Direction var11 = Direction.method_1043(class_137.field_403, var3);
+      Direction var12 = var11.method_1046();
       int var13 = method_6973(var5, var8.method_13364(var0), var9, var2);
       int var14 = method_6973(var5, var8.method_13364(var0), var10, var2);
       int var15 = var13;
@@ -66,7 +66,7 @@ public class class_1535 {
       return new class_8623(var0.method_6068(var1, var29 - var15).method_6068(var3, var31 - var17), var20, var21);
    }
 
-   private static int method_6973(Predicate<class_1331> var0, class_2921 var1, class_240 var2, int var3) {
+   private static int method_6973(Predicate<class_1331> var0, class_2921 var1, Direction var2, int var3) {
       int var6 = 0;
 
       while (var6 < var3 && var0.test(var1.method_13368(var2))) {

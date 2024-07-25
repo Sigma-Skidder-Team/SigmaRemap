@@ -11,26 +11,26 @@ public class class_7172 extends class_6414 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360())) {
          this.method_32875(var2, var3);
       }
    }
 
    @Override
-   public void method_10801(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
       this.method_32875(var2, var3);
       super.method_10801(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method_32875(class_6486 var1, class_1331 var2) {
+   public void method_32875(World var1, class_1331 var2) {
       if (this.method_32874(var1, var2)) {
          var1.method_7513(var2, class_4783.field_23172.method_29260(), 2);
          var1.method_43364(2001, var2, class_6414.method_29285(class_4783.field_23900.method_29260()));
       }
    }
 
-   private boolean method_32874(class_6486 var1, class_1331 var2) {
+   private boolean method_32874(World var1, class_1331 var2) {
       LinkedList var5 = Lists.newLinkedList();
       var5.add(new class_947<class_1331, Integer>(var2, 0));
       int var6 = 0;
@@ -40,7 +40,7 @@ public class class_7172 extends class_6414 {
          class_1331 var8 = (class_1331)var7.method_4141();
          int var9 = (Integer)var7.method_4142();
 
-         for (class_240 var13 : class_240.values()) {
+         for (Direction var13 : Direction.values()) {
             class_1331 var14 = var8.method_6098(var13);
             class_2522 var15 = var1.method_28262(var14);
             class_4774 var16 = var1.method_28258(var14);

@@ -6,14 +6,14 @@ import javax.annotation.Nullable;
 
 public class class_8360 {
    private static String[] field_42827;
-   private final class_6486 field_42830;
+   private final World field_42830;
    private final class_1331 field_42828;
    private final class_6788 field_42831;
    private class_2522 field_42826;
    private final boolean field_42829;
    private final List<class_1331> field_42832 = Lists.newArrayList();
 
-   public class_8360(class_6486 var1, class_1331 var2, class_2522 var3) {
+   public class_8360(World var1, class_1331 var2, class_2522 var3) {
       this.field_42830 = var1;
       this.field_42828 = var2;
       this.field_42826 = var3;
@@ -127,7 +127,7 @@ public class class_8360 {
    public int method_38538() {
       int var3 = 0;
 
-      for (class_240 var5 : class_9594.field_48893) {
+      for (Direction var5 : class_9594.field_48893) {
          if (this.method_38537(this.field_42828.method_6098(var5))) {
             var3++;
          }

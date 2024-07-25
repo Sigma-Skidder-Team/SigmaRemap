@@ -9,7 +9,7 @@ public class class_7916<T extends class_6092> extends class_5272<T> {
    private final class_1549 field_40463;
 
    public class_7916() {
-      super(class_3581::method_16753);
+      super(RenderLayer::method_16753);
       this.field_40465 = new class_1549(64, 64, 0, 28);
       this.field_40463 = new class_1549(64, 64, 0, 52);
       this.field_40466.method_7048(-8.0F, -16.0F, -8.0F, 16.0F, 12.0F, 16.0F);

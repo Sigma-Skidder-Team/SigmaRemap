@@ -2,9 +2,9 @@ package remapped;
 
 public class class_1060 extends class_7067<class_5614> {
    private static final Identifier field_5816 = new Identifier("textures/entity/experience_orb.png");
-   private static final class_3581 field_5818 = class_3581.method_16766(field_5816);
+   private static final RenderLayer field_5818 = RenderLayer.method_16766(field_5816);
 
-   public class_1060(class_6122 var1) {
+   public class_1060(EntityRenderDispatcher var1) {
       super(var1);
       this.field_36492 = 0.15F;
       this.field_36494 = 0.75F;

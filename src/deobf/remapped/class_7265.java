@@ -5,7 +5,7 @@ public class class_7265 {
    private static final float field_37215 = 1.0F / (float)Math.cos((float) (Math.PI / 4)) - 1.0F;
 
    public class_5024 method_33202(
-      class_2426 var1, class_2426 var2, class_7300 var3, class_5155 var4, class_240 var5, class_5598 var6, class_1868 var7, boolean var8, Identifier var9
+           class_2426 var1, class_2426 var2, class_7300 var3, class_5155 var4, Direction var5, class_5598 var6, class_1868 var7, boolean var8, Identifier var9
    ) {
       class_9874 var12 = var3.field_37314;
       if (var6.method_25404()) {
@@ -23,7 +23,7 @@ public class class_7265 {
       var12.field_49930[3] = class_9299.method_42795(var14, var12.field_49930[3], var16);
       boolean var17 = !class_7860.field_39996.method_3596() ? var8 : false;
       int[] var18 = this.method_33200(var12, var4, var5, this.method_33192(var1, var2), var6.method_25403(), var7, var17);
-      class_240 var19 = method_33195(var18);
+      Direction var19 = method_33195(var18);
       System.arraycopy(var13, 0, var12.field_49930, 0, var13.length);
       if (var7 == null) {
          this.method_33196(var18, var19);
@@ -37,7 +37,7 @@ public class class_7265 {
       }
    }
 
-   public static class_9874 method_33203(class_9874 var0, class_240 var1, class_1221 var2, Identifier var3) {
+   public static class_9874 method_33203(class_9874 var0, Direction var1, class_1221 var2, Identifier var3) {
       class_8107 var6 = class_4977.method_22874(var2, var1, () -> "Unable to resolve UVLock for model: " + var3).method_5410();
       float var7 = var0.method_45503(var0.method_45505(0));
       float var8 = var0.method_45501(var0.method_45505(0));
@@ -79,7 +79,7 @@ public class class_7265 {
       return new class_9874(new float[]{var17, var19, var18, var20}, var24);
    }
 
-   private int[] method_33200(class_9874 var1, class_5155 var2, class_240 var3, float[] var4, class_1221 var5, class_1868 var6, boolean var7) {
+   private int[] method_33200(class_9874 var1, class_5155 var2, Direction var3, float[] var4, class_1221 var5, class_1868 var6, boolean var7) {
       int var10 = !class_3111.method_14424() ? class_7985.field_40895 : class_7985.field_40899;
       int[] var11 = new int[var10];
 
@@ -91,7 +91,7 @@ public class class_7265 {
    }
 
    private float[] method_33192(class_2426 var1, class_2426 var2) {
-      float[] var5 = new float[class_240.values().length];
+      float[] var5 = new float[Direction.values().length];
       var5[class_6636.field_34355] = var1.method_11057() / 16.0F;
       var5[class_6636.field_34356] = var1.method_11061() / 16.0F;
       var5[class_6636.field_34354] = var1.method_11055() / 16.0F;
@@ -102,7 +102,7 @@ public class class_7265 {
    }
 
    private void method_33197(
-      int[] var1, int var2, class_240 var3, class_9874 var4, float[] var5, class_5155 var6, class_1221 var7, class_1868 var8, boolean var9
+           int[] var1, int var2, Direction var3, class_9874 var4, float[] var5, class_5155 var6, class_1221 var7, class_1868 var8, boolean var9
    ) {
       class_9829 var12 = class_4188.method_19472(var3).method_19474(var2);
       class_2426 var13 = new class_2426(var5[var12.field_49786], var5[var12.field_49789], var5[var12.field_49787]);
@@ -144,7 +144,7 @@ public class class_7265 {
                throw new IllegalArgumentException("There are only 3 axes");
          }
 
-         class_5422 var7 = new class_5422(var5, var2.field_9477, true);
+         Quaternion var7 = new Quaternion(var5, var2.field_9477, true);
          if (var2.field_9476) {
             if (Math.abs(var2.field_9477) == 22.5F) {
                var6.method_11068(field_37214);
@@ -176,7 +176,7 @@ public class class_7265 {
       var1.method_11065(var7.method_11923() + var2.method_11057(), var7.method_11922() + var2.method_11061(), var7.method_11927() + var2.method_11055());
    }
 
-   public static class_240 method_33195(int[] var0) {
+   public static Direction method_33195(int[] var0) {
       int var3 = var0.length / 4;
       int var4 = var3 * 2;
       class_2426 var5 = new class_2426(Float.intBitsToFloat(var0[0]), Float.intBitsToFloat(var0[1]), Float.intBitsToFloat(var0[2]));
@@ -189,10 +189,10 @@ public class class_7265 {
       class_2426 var10 = var9.method_11060();
       var10.method_11054(var8);
       var10.method_11066();
-      class_240 var11 = null;
+      Direction var11 = null;
       float var12 = 0.0F;
 
-      for (class_240 var16 : class_240.values()) {
+      for (Direction var16 : Direction.values()) {
          class_2700 var17 = var16.method_1037();
          class_2426 var18 = new class_2426((float)var17.method_12173(), (float)var17.method_12165(), (float)var17.method_12185());
          float var19 = var10.method_11067(var18);
@@ -202,13 +202,13 @@ public class class_7265 {
          }
       }
 
-      return var11 != null ? var11 : class_240.field_817;
+      return var11 != null ? var11 : Direction.field_817;
    }
 
-   private void method_33196(int[] var1, class_240 var2) {
+   private void method_33196(int[] var1, Direction var2) {
       int[] var5 = new int[var1.length];
       System.arraycopy(var1, 0, var5, 0, var1.length);
-      float[] var6 = new float[class_240.values().length];
+      float[] var6 = new float[Direction.values().length];
       var6[class_6636.field_34355] = 999.0F;
       var6[class_6636.field_34356] = 999.0F;
       var6[class_6636.field_34354] = 999.0F;

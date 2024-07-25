@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class class_7905 extends class_8285 {
    private static String[] field_40422;
-   private class_240 field_40421;
+   private Direction field_40421;
    private boolean field_40423;
 
    public class_7905(class_6174 var1) {
@@ -19,7 +19,7 @@ public class class_7905 extends class_8285 {
          if (this.field_42465.method_26927().method_5591()) {
             Random var3 = this.field_42465.method_26594();
             if (this.field_42465.field_41768.method_29537().method_1285(class_291.field_1047) && var3.nextInt(10) == 0) {
-               this.field_40421 = class_240.method_1039(var3);
+               this.field_40421 = Direction.method_1039(var3);
                class_1331 var4 = new class_1331(this.field_42465.method_37302(), this.field_42465.method_37309() + 0.5, this.field_42465.method_37156())
                   .method_6098(this.field_40421);
                class_2522 var5 = this.field_42465.field_41768.method_28262(var4);
@@ -47,7 +47,7 @@ public class class_7905 extends class_8285 {
    @Override
    public void method_16796() {
       if (this.field_40423) {
-         class_6486 var3 = this.field_42465.field_41768;
+         World var3 = this.field_42465.field_41768;
          class_1331 var4 = new class_1331(this.field_42465.method_37302(), this.field_42465.method_37309() + 0.5, this.field_42465.method_37156())
             .method_6098(this.field_40421);
          class_2522 var5 = var3.method_28262(var4);

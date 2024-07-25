@@ -47,11 +47,11 @@ public class class_6414 extends class_2353 implements class_8525 {
       return !(var0 instanceof class_6201) ? class_4783.field_23184 : ((class_6201)var0).method_28392();
    }
 
-   public static class_2522 method_29277(class_2522 var0, class_2522 var1, class_6486 var2, class_1331 var3) {
+   public static class_2522 method_29277(class_2522 var0, class_2522 var1, World var2, class_1331 var3) {
       class_4190 var6 = class_3370.method_15529(var0.method_8324(var2, var3), var1.method_8324(var2, var3), class_8529.field_43654)
          .method_19496((double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
 
-      for (class_8145 var8 : var2.method_25870((class_8145)null, var6.method_19483())) {
+      for (Entity var8 : var2.method_25870((Entity)null, var6.method_19483())) {
          double var9 = class_3370.method_15520(class_9249.field_47216, var8.method_37241().method_18918(0.0, 1.0, 0.0), Stream.<class_4190>of(var6), -1.0);
          var8.method_37254(var8.method_37302(), var8.method_37309() + 1.0 + var9, var8.method_37156());
       }
@@ -75,7 +75,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       class_2522 var5 = var0;
       class_2921 var6 = new class_2921();
 
-      for (class_240 var10 : field_11817) {
+      for (Direction var10 : field_11817) {
          var6.method_13371(var2, var10);
          var5 = var5.method_8359(var10, var1.method_28262(var6), var1, var2, var6);
       }
@@ -92,7 +92,7 @@ public class class_6414 extends class_2353 implements class_8525 {
          if (!var1.method_8345()) {
             var2.method_7514(var3, var1, var4 & -33, var5);
          } else if (!var2.method_22567()) {
-            var2.method_7512(var3, (var4 & 32) == 0, (class_8145)null, var5);
+            var2.method_7512(var3, (var4 & 32) == 0, (Entity)null, var5);
          }
       }
    }
@@ -119,7 +119,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.field_11818;
    }
 
-   public static boolean method_29283(class_2522 var0, class_6163 var1, class_1331 var2, class_240 var3) {
+   public static boolean method_29283(class_2522 var0, class_6163 var1, class_1331 var2, Direction var3) {
       class_1331 var6 = var2.method_6098(var3);
       class_2522 var7 = var1.method_28262(var6);
       class_3310 var8 = new class_3310(var0);
@@ -159,15 +159,15 @@ public class class_6414 extends class_2353 implements class_8525 {
    }
 
    public static boolean method_29273(class_6163 var0, class_1331 var1) {
-      return var0.method_28262(var1).method_8312(var0, var1, class_240.field_817, class_3397.field_16731);
+      return var0.method_28262(var1).method_8312(var0, var1, Direction.field_817, class_3397.field_16731);
    }
 
-   public static boolean method_29266(class_4924 var0, class_1331 var1, class_240 var2) {
+   public static boolean method_29266(class_4924 var0, class_1331 var1, Direction var2) {
       class_2522 var5 = var0.method_28262(var1);
-      return var2 == class_240.field_802 && var5.method_8349(class_2351.field_11773) ? false : var5.method_8312(var0, var1, var2, class_3397.field_16730);
+      return var2 == Direction.field_802 && var5.method_8349(class_2351.field_11773) ? false : var5.method_8312(var0, var1, var2, class_3397.field_16730);
    }
 
-   public static boolean method_29303(class_4190 var0, class_240 var1) {
+   public static boolean method_29303(class_4190 var0, Direction var1) {
       class_4190 var4 = var0.method_19494(var1);
       return method_29301(var4);
    }
@@ -180,7 +180,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       return !method_29301(var1.method_8334(var2, var3)) && var1.method_8364().method_22001();
    }
 
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
    }
 
    public void method_29290(class_9379 var1, class_1331 var2, class_2522 var3) {
@@ -195,7 +195,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       return var0.method_8333(var6);
    }
 
-   public static List<class_6098> method_29289(class_2522 var0, class_6331 var1, class_1331 var2, class_3757 var3, class_8145 var4, class_6098 var5) {
+   public static List<class_6098> method_29289(class_2522 var0, class_6331 var1, class_1331 var2, class_3757 var3, Entity var4, class_6098 var5) {
       class_8480 var8 = new class_8480(var1)
          .method_39068(var1.field_33033)
          .method_39065(class_8712.field_44671, class_1343.method_6216(var2))
@@ -205,7 +205,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       return var0.method_8333(var8);
    }
 
-   public static void method_29294(class_2522 var0, class_6486 var1, class_1331 var2) {
+   public static void method_29294(class_2522 var0, World var1, class_1331 var2) {
       if (var1 instanceof class_6331) {
          method_29288(var0, (class_6331)var1, var2, (class_3757)null).forEach(var2x -> method_29267(var1, var2, var2x));
          var0.method_8310((class_6331)var1, var2, class_6098.field_31203);
@@ -219,14 +219,14 @@ public class class_6414 extends class_2353 implements class_8525 {
       }
    }
 
-   public static void method_29295(class_2522 var0, class_6486 var1, class_1331 var2, class_3757 var3, class_8145 var4, class_6098 var5) {
+   public static void method_29295(class_2522 var0, World var1, class_1331 var2, class_3757 var3, Entity var4, class_6098 var5) {
       if (var1 instanceof class_6331) {
          method_29289(var0, (class_6331)var1, var2, var3, var4, var5).forEach(var2x -> method_29267(var1, var2, var2x));
          var0.method_8310((class_6331)var1, var2, var5);
       }
    }
 
-   public static void method_29267(class_6486 var0, class_1331 var1, class_6098 var2) {
+   public static void method_29267(World var0, class_1331 var1, class_6098 var2) {
       if (!var0.field_33055 && !var2.method_28022() && var0.method_29537().method_1285(class_291.field_1058)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.field_33033.nextFloat() * 0.5F) + 0.25;
@@ -254,10 +254,10 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.field_11824;
    }
 
-   public void method_29279(class_6486 var1, class_1331 var2, class_2730 var3) {
+   public void method_29279(World var1, class_1331 var2, class_2730 var3) {
    }
 
-   public void method_29286(class_6486 var1, class_1331 var2, class_8145 var3) {
+   public void method_29286(World var1, class_1331 var2, Entity var3) {
    }
 
    @Nullable
@@ -265,13 +265,13 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.method_29260();
    }
 
-   public void method_29298(class_6486 var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, class_6098 var6) {
+   public void method_29298(World var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, class_6098 var6) {
       var2.method_3211(class_6234.field_31905.method_43790(this));
       var2.method_3170(0.005F);
       method_29295(var4, var1, var3, var5, var2, var6);
    }
 
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
    }
 
    public boolean method_29278() {
@@ -290,11 +290,11 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.field_32757;
    }
 
-   public void method_29263(class_6486 var1, class_1331 var2, class_8145 var3, float var4) {
+   public void method_29263(World var1, class_1331 var2, Entity var3, float var4) {
       var3.method_37270(var4, 1.0F);
    }
 
-   public void method_29297(class_6163 var1, class_8145 var2) {
+   public void method_29297(class_6163 var1, Entity var2) {
       var2.method_37215(var2.method_37098().method_6210(1.0, 0.0, 1.0));
    }
 
@@ -318,14 +318,14 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.field_11825;
    }
 
-   public void method_29265(class_6486 var1, class_1331 var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, class_1331 var2, class_2522 var3, class_704 var4) {
       var1.method_43365(var4, 2001, var2, method_29285(var3));
       if (this.method_29299(class_2351.field_11792)) {
          class_134.method_474(var4, false);
       }
    }
 
-   public void method_29259(class_6486 var1, class_1331 var2) {
+   public void method_29259(World var1, class_1331 var2) {
    }
 
    public boolean method_29256(class_2730 var1) {

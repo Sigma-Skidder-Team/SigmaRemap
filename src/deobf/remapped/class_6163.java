@@ -49,7 +49,7 @@ public interface class_6163 {
          var0 -> {
             class_1343 var3 = var0.method_4255().method_6194(var0.method_4256());
             return class_9529.method_43958(
-               var0.method_4256(), class_240.method_1044(var3.field_7336, var3.field_7333, var3.field_7334), new class_1331(var0.method_4256())
+               var0.method_4256(), Direction.method_1044(var3.field_7336, var3.field_7333, var3.field_7334), new class_1331(var0.method_4256())
             );
          }
       );

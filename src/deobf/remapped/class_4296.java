@@ -156,7 +156,7 @@ public class class_4296 {
       String var5 = class_9235.method_42595(var0, "part");
       method_19957(var5, "Model part not specified, missing \"replace\" or \"attachTo\".");
       boolean var6 = class_9235.method_42600(var0, "attach", false);
-      class_9151 var7 = new class_9151(class_3581::method_16755);
+      class_9151 var7 = new class_9151(RenderLayer::method_16755);
       if (var1 != null) {
          var7.field_49928 = var1[0];
          var7.field_49927 = var1[1];

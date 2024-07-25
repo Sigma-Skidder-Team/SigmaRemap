@@ -19,7 +19,7 @@ public class class_1936 extends class_6414 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
       if (!var2.field_33055) {
          boolean var9 = var1.<Boolean>method_10313(field_9896);
          if (var9 != var2.method_29576(var3)) {

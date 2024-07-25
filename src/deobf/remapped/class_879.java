@@ -4,16 +4,16 @@ public final class class_879 {
    private static String[] field_4531;
    private class_2522 field_4529;
    private class_2522 field_4533;
-   private class_240 field_4530;
+   private Direction field_4530;
    private int field_4532;
 
-   private class_879(class_2522 var1, class_2522 var2, class_240 var3) {
+   private class_879(class_2522 var1, class_2522 var2, Direction var3) {
       this.field_4529 = var1;
       this.field_4533 = var2;
       this.field_4530 = var3;
    }
 
-   private void method_3784(class_2522 var1, class_2522 var2, class_240 var3) {
+   private void method_3784(class_2522 var1, class_2522 var2, Direction var3) {
       this.field_4529 = var1;
       this.field_4533 = var2;
       this.field_4530 = var3;

@@ -8,7 +8,7 @@ public class class_4260 implements class_9434<String> {
       return var4 != null ? var4.method_30469() : null;
    }
 
-   public static String method_19842(class_8145 var0) {
+   public static String method_19842(Entity var0) {
       return var0.method_37387().method_30469();
    }
 }

@@ -12,7 +12,7 @@ public class class_3289 extends class_9733 {
    }
 
    @Override
-   public final void method_44951(class_7907 var1, class_9071 var2, float var3) {
+   public final void method_44951(class_7907 var1, Camera var2, float var3) {
    }
 
    @Override

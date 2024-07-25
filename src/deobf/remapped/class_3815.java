@@ -16,11 +16,11 @@ public final class class_3815 {
       .filter(var0 -> var0 != class_4565.field_22251)
       .<class_4565>toArray(class_4565[]::new);
 
-   public static class_1728 method_17773(int var0, Iterable<class_8145> var1, class_5294 var2) {
+   public static class_1728 method_17773(int var0, Iterable<Entity> var1, class_5294 var2) {
       class_2393 var5 = new class_2393();
       Object2IntOpenHashMap var6 = new Object2IntOpenHashMap();
 
-      for (class_8145 var8 : var1) {
+      for (Entity var8 : var1) {
          if (var8 instanceof class_5886) {
             class_5886 var9 = (class_5886)var8;
             if (var9.method_26925() || var9.method_26915()) {
@@ -180,7 +180,7 @@ public final class class_3815 {
    @Nullable
    private static class_5886 method_17777(class_6331 var0, class_6629<?> var1) {
       try {
-         class_8145 var4 = var1.method_30484(var0);
+         Entity var4 = var1.method_30484(var0);
          if (!(var4 instanceof class_5886)) {
             throw new IllegalStateException("Trying to spawn a non-mob: " + class_8669.field_44400.method_39797(var1));
          } else {
@@ -221,7 +221,7 @@ public final class class_3815 {
          : var2.method_29836(var5 == null ? var0.method_22561(var4) : var5, var1, var3, var4);
    }
 
-   private static class_1331 method_17766(class_6486 var0, class_2654 var1) {
+   private static class_1331 method_17766(World var0, class_2654 var1) {
       class_2034 var4 = var1.method_27352();
       int var5 = var4.method_9535() + var0.field_33033.nextInt(16);
       int var6 = var4.method_9545() + var0.field_33033.nextInt(16);
@@ -305,7 +305,7 @@ public final class class_3815 {
                         continue;
                      }
 
-                     class_8145 var27;
+                     Entity var27;
                      try {
                         var27 = var11.field_16053.method_30484(var0.method_7066());
                      } catch (Exception var29) {
@@ -343,11 +343,11 @@ public final class class_3815 {
       class_2921 var7 = new class_2921(var2, var6, var3);
       if (var0.method_22572().method_40244()) {
          do {
-            var7.method_13368(class_240.field_802);
+            var7.method_13368(Direction.field_802);
          } while (!var0.method_28262(var7).method_8345());
 
          do {
-            var7.method_13368(class_240.field_802);
+            var7.method_13368(Direction.field_802);
          } while (var0.method_28262(var7).method_8345() && var7.method_12165() > 0);
       }
 

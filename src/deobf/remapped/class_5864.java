@@ -8,7 +8,7 @@ public class class_5864 extends class_3333 {
       super(var1);
    }
 
-   private static boolean method_26718(class_8145 var0) {
+   private static boolean method_26718(Entity var0) {
       return var0 instanceof class_5834 || var0 instanceof class_1080 || var0 instanceof class_1356 || var0 instanceof class_9149;
    }
 
@@ -18,7 +18,7 @@ public class class_5864 extends class_3333 {
    }
 
    @Override
-   public void method_29263(class_6486 var1, class_1331 var2, class_8145 var3, float var4) {
+   public void method_29263(World var1, class_1331 var2, Entity var3, float var4) {
       var3.method_37155(class_463.field_2469, 1.0F, 1.0F);
       if (!var1.field_33055) {
          var1.method_29587(var3, (byte)54);
@@ -30,7 +30,7 @@ public class class_5864 extends class_3333 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       if (this.method_26719(var3, var4)) {
          this.method_26717(var4, var3);
          this.method_26721(var4);
@@ -40,7 +40,7 @@ public class class_5864 extends class_3333 {
       super.method_10784(var1, var2, var3, var4);
    }
 
-   private boolean method_26719(class_1331 var1, class_8145 var2) {
+   private boolean method_26719(class_1331 var1, Entity var2) {
       if (var2.method_37360()) {
          return false;
       } else if (!(var2.method_37309() > (double)var1.method_12165() + 0.9375 - 1.0E-7)) {
@@ -57,13 +57,13 @@ public class class_5864 extends class_3333 {
       }
    }
 
-   private void method_26717(class_8145 var1, class_1331 var2) {
+   private void method_26717(Entity var1, class_1331 var2) {
       if (var1 instanceof class_9359 && var1.field_41768.method_29546() % 20L == 0L) {
          class_8807.field_45061.method_33534((class_9359)var1, var1.field_41768.method_28262(var2));
       }
    }
 
-   private void method_26721(class_8145 var1) {
+   private void method_26721(Entity var1) {
       class_1343 var4 = var1.method_37098();
       if (!(var4.field_7333 < -0.13)) {
          var1.method_37215(new class_1343(var4.field_7336, -0.05, var4.field_7334));
@@ -75,7 +75,7 @@ public class class_5864 extends class_3333 {
       var1.field_41706 = 0.0F;
    }
 
-   private void method_26716(class_6486 var1, class_8145 var2) {
+   private void method_26716(World var1, Entity var2) {
       if (method_26718(var2)) {
          if (var1.field_33033.nextInt(5) == 0) {
             var2.method_37155(class_463.field_2469, 1.0F, 1.0F);
@@ -87,15 +87,15 @@ public class class_5864 extends class_3333 {
       }
    }
 
-   public static void method_26720(class_8145 var0) {
+   public static void method_26720(Entity var0) {
       method_26723(var0, 5);
    }
 
-   public static void method_26722(class_8145 var0) {
+   public static void method_26722(Entity var0) {
       method_26723(var0, 10);
    }
 
-   private static void method_26723(class_8145 var0, int var1) {
+   private static void method_26723(Entity var0, int var1) {
       if (var0.field_41768.field_33055) {
          class_2522 var4 = class_4783.field_23899.method_29260();
 

@@ -18,7 +18,7 @@ public class class_3279 extends class_8273<class_6047> {
       return new class_6047(var2, var6);
    }
 
-   public void method_14972(class_9359 var1, Collection<? extends class_8145> var2) {
+   public void method_14972(class_9359 var1, Collection<? extends Entity> var2) {
       List var5 = var2.stream().<class_2792>map(var1x -> class_865.method_3739(var1, var1x)).collect(Collectors.toList());
       this.method_38137(var1, var1x -> var1x.method_27613(var5));
    }

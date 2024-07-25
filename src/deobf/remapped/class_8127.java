@@ -10,7 +10,7 @@ public class class_8127 extends class_608 implements class_6250 {
    private int field_41635;
    private UUID field_41630;
 
-   public class_8127(class_6629<? extends class_8127> var1, class_6486 var2) {
+   public class_8127(class_6629<? extends class_8127> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
    }
@@ -54,7 +54,7 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public void method_26596(class_8145 var1) {
+   public void method_26596(Entity var1) {
       if (var1 instanceof class_1869 && !(var1 instanceof class_9490) && this.method_26594().nextInt(20) == 0) {
          this.method_26860((class_5834)var1);
       }
@@ -150,7 +150,7 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       this.field_41632 = 10;
       this.field_41768.method_29587(this, (byte)4);
       float var4 = this.method_36975();

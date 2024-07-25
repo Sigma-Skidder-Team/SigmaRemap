@@ -98,11 +98,11 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       (BiPredicate<class_7666, class_236>)(var0, var1) -> var1 == class_236.field_783
    );
 
-   public class_7666(class_6629<? extends class_7666> var1, class_6486 var2) {
+   public class_7666(class_6629<? extends class_7666> var1, World var2) {
       this(var1, var2, class_8853.field_45268);
    }
 
-   public class_7666(class_6629<? extends class_7666> var1, class_6486 var2, class_8853 var3) {
+   public class_7666(class_6629<? extends class_7666> var1, World var2, class_8853 var3) {
       super(var1, var2);
       ((class_8985)this.method_26927()).method_41199(true);
       this.method_26927().method_5611(true);
@@ -514,7 +514,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    @Override
    public void method_26452(class_6199 var1) {
       field_41741.info("Villager {} died, message: '{}'", this, var1.method_28362(this).getString());
-      class_8145 var4 = var1.method_28372();
+      Entity var4 = var1.method_28372();
       if (var4 != null) {
          this.method_34729(var4);
       }
@@ -530,7 +530,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       this.method_34704(class_6044.field_30871);
    }
 
-   private void method_34729(class_8145 var1) {
+   private void method_34729(Entity var1) {
       if (this.field_41768 instanceof class_6331) {
          Optional var4 = this.field_29675.<List<class_5834>>method_5138(class_6044.field_30901);
          if (var4.isPresent()) {
@@ -846,7 +846,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    }
 
    @Override
-   public void method_25223(class_3894 var1, class_8145 var2) {
+   public void method_25223(class_3894 var1, Entity var2) {
       if (var1 != class_3894.field_18945) {
          if (var1 != class_3894.field_18946) {
             if (var1 != class_3894.field_18943) {

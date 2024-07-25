@@ -13,7 +13,7 @@ public class class_7478 implements class_4904 {
    }
 
    @Override
-   public class_8014 method_22451(class_8145 var1, Random var2) {
+   public class_8014 method_22451(Entity var1, Random var2) {
       List var5 = class_8669.field_44445.method_39801().filter(class_4382::method_20436).collect(Collectors.toList());
       class_4382 var6 = (class_4382)var5.get(var2.nextInt(var5.size()));
       int var7 = class_9299.method_42824(var2, var6.method_20425(), var6.method_20417());

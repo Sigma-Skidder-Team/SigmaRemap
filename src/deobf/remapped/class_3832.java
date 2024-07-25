@@ -45,10 +45,10 @@ public interface class_3832 extends class_2354 {
          var7 = var6.method_6196(var1.method_37371(1.0F));
       }
 
-      class_5422 var8 = new class_5422(new class_2426(var7), 90.0F, true);
+      Quaternion var8 = new Quaternion(new class_2426(var7), 90.0F, true);
       class_2426 var9 = new class_2426(var6);
       var9.method_11058(var8);
-      class_5422 var10 = new class_5422(var9, var3, true);
+      Quaternion var10 = new Quaternion(var9, var3, true);
       class_2426 var11 = new class_2426(var6);
       var11.method_11058(var10);
       return var11;

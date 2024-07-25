@@ -24,7 +24,7 @@ public class class_2338 implements class_7279 {
    }
 
    public boolean test(class_2792 var1) {
-      class_8145 var4 = var1.<class_8145>method_12698(this.field_11670.method_26666());
+      Entity var4 = var1.<Entity>method_12698(this.field_11670.method_26666());
       class_1343 var5 = var1.<class_1343>method_12698(class_8712.field_44671);
       return this.field_11672.method_3736(var1.method_12694(), var5, var4);
    }

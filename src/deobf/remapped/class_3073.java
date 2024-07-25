@@ -20,7 +20,7 @@ public class class_3073 {
    private Identifier field_15108;
    private boolean field_15110 = true;
    private boolean field_15111;
-   private class_9778<class_6629<?>> field_15101 = (var0, var1x, var2x, var3) -> var0.method_8308(var1x, var2x, class_240.field_817) && var0.method_8339() < 14;
+   private class_9778<class_6629<?>> field_15101 = (var0, var1x, var2x, var3) -> var0.method_8308(var1x, var2x, Direction.field_817) && var0.method_8339() < 14;
    private class_5199 field_15107 = (var0, var1x, var2x) -> var0.method_8362().method_24498() && var0.method_8306(var1x, var2x);
    private class_5199 field_15097 = (var1x, var2x, var3) -> this.field_15103.method_24502() && var1x.method_8306(var2x, var3);
    private class_5199 field_15094 = this.field_15097;

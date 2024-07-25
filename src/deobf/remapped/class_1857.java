@@ -11,7 +11,7 @@ public class class_1857 {
    private static String[] field_9423;
    public MinecraftClient field_9415 = MinecraftClient.getInstance();
    public List<class_1331> field_9420 = new ArrayList<class_1331>();
-   public static List<class_8145> field_9416 = new ArrayList<class_8145>();
+   public static List<Entity> field_9416 = new ArrayList<Entity>();
    public static int field_9414 = 0;
    public final class_6590 field_9417;
    public class_6248 field_9421;
@@ -99,7 +99,7 @@ public class class_1857 {
          int var4 = field_9416.size();
 
          for (int var5 = 0; var5 < var4; var5++) {
-            class_8145 var6 = field_9416.get(var5);
+            Entity var6 = field_9416.get(var5);
             if (!class_314.method_1440().contains(var6)) {
                field_9416.remove(var6);
                var4--;
@@ -189,12 +189,12 @@ public class class_1857 {
                      || class_3347.method_15349() == class_412.field_1747.method_2055()
                )) {
                if (!(((class_6098)var6.getSecond()).method_27960() instanceof class_8440)) {
-                  class_8145 var7 = this.field_9415.field_9601.method_29534(var4.method_41364());
+                  Entity var7 = this.field_9415.field_9601.method_29534(var4.method_41364());
                   if (field_9416.contains(var7)) {
                      field_9416.remove(var7);
                   }
                } else {
-                  class_8145 var14 = this.field_9415.field_9601.method_29534(var4.method_41364());
+                  Entity var14 = this.field_9415.field_9601.method_29534(var4.method_41364());
                   if (!field_9416.contains(var14) && !class_314.method_1381()) {
                      field_9416.add(var14);
                   }
@@ -237,7 +237,7 @@ public class class_1857 {
                }
             } else {
                class_8329 var11 = (class_8329)var1.method_557();
-               class_8145 var13 = this.field_9415.field_9601.method_29534(var11.method_38366());
+               Entity var13 = this.field_9415.field_9601.method_29534(var11.method_38366());
                if (var13 != null && var11.method_38365() == 3 && class_3347.method_15349() == class_412.field_1747.method_2055()) {
                   var1.method_29715(true);
                }

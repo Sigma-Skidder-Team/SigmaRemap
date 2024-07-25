@@ -23,7 +23,7 @@ public class class_8774 extends class_4285<class_1941> {
                if (var1.method_28262(var10).method_8345()) {
                   int var11 = 0;
 
-                  for (class_240 var15 : class_240.values()) {
+                  for (Direction var15 : Direction.values()) {
                      if (var1.method_28262(var10.method_6098(var15)).method_8350(class_4783.field_23368)) {
                         var11++;
                      }

@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 public class class_3160 {
    private static final Logger field_15702 = LogManager.getLogger();
    private static final ThreadFactory field_15695 = new ThreadFactoryBuilder().setDaemon(true).build();
-   private final ImmutableSet<class_5621<class_6486>> field_15700;
+   private final ImmutableSet<class_5621<World>> field_15700;
    private final boolean field_15703;
    private final class_3676 field_15697;
    private final Thread field_15692;
@@ -38,19 +38,19 @@ public class class_3160 {
    private volatile int field_15705;
    private volatile int field_15693;
    private volatile int field_15706;
-   private final Object2FloatMap<class_5621<class_6486>> field_15698 = Object2FloatMaps.synchronize(
+   private final Object2FloatMap<class_5621<World>> field_15698 = Object2FloatMaps.synchronize(
       new Object2FloatOpenCustomHashMap(Util.method_44698())
    );
    private volatile ITextComponent field_15704 = new TranslationTextComponent("optimizeWorld.stage.counting");
    private static final Pattern field_15691 = Pattern.compile("^r\\.(-?[0-9]+)\\.(-?[0-9]+)\\.mca$");
    private final class_4050 field_15694;
 
-   public class_3160(class_3676 var1, DataFixer var2, ImmutableSet<class_5621<class_6486>> var3, boolean var4) {
+   public class_3160(class_3676 var1, DataFixer var2, ImmutableSet<class_5621<World>> var3, boolean var4) {
       this.field_15700 = var3;
       this.field_15703 = var4;
       this.field_15707 = var2;
       this.field_15697 = var1;
-      this.field_15694 = new class_4050(new File(this.field_15697.method_17068(class_6486.field_33048), "data"), var2);
+      this.field_15694 = new class_4050(new File(this.field_15697.method_17068(World.field_33048), "data"), var2);
       this.field_15692 = field_15695.newThread(this::method_14583);
       this.field_15692.setUncaughtExceptionHandler((var1x, var2x) -> {
          field_15702.error("Error upgrading world", var2x);
@@ -187,7 +187,7 @@ public class class_3160 {
       }
    }
 
-   private List<class_2034> method_14579(class_5621<class_6486> var1) {
+   private List<class_2034> method_14579(class_5621<World> var1) {
       File var4 = this.field_15697.method_17068(var1);
       File var5 = new File(var4, "region");
       File[] var6 = var5.listFiles((var0, var1x) -> var1x.endsWith(".mca"));
@@ -224,11 +224,11 @@ public class class_3160 {
       return this.field_15708;
    }
 
-   public ImmutableSet<class_5621<class_6486>> method_14573() {
+   public ImmutableSet<class_5621<World>> method_14573() {
       return this.field_15700;
    }
 
-   public float method_14577(class_5621<class_6486> var1) {
+   public float method_14577(class_5621<World> var1) {
       return this.field_15698.getFloat(var1);
    }
 

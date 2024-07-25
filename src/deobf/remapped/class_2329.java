@@ -11,13 +11,13 @@ public class class_2329 extends class_3620 {
       this.method_42010(new class_8563("Invisible", "Aim at invisible entites", true));
    }
 
-   public class_8145 method_10678(float var1) {
+   public Entity method_10678(float var1) {
       List var4 = class_314.method_1440();
-      class_8145 var5 = null;
+      Entity var5 = null;
       Iterator var6 = var4.iterator();
 
       while (var6.hasNext()) {
-         class_8145 var7 = (class_8145)var6.next();
+         Entity var7 = (Entity)var6.next();
          if (var7 != field_46692.field_9632) {
             if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {
                if (var7 instanceof class_5834) {

@@ -13,14 +13,14 @@ public class class_4460 {
    private int field_21738 = -1;
    private int field_21725 = -1;
    private int field_21735 = -1;
-   private float[] field_21728 = new float[class_240.field_803.length * 2];
+   private float[] field_21728 = new float[Direction.field_803.length * 2];
    private BitSet field_21731 = new BitSet(3);
    private class_8742 field_21745 = new class_8742();
    private class_523 field_21746 = null;
    private boolean[] field_21726 = null;
    private boolean[] field_21734 = null;
    private boolean[] field_21747 = null;
-   private class_240[] field_21748 = null;
+   private Direction[] field_21748 = null;
    private List<class_5024> field_21732 = new ArrayList<class_5024>();
    private List<class_5024> field_21727 = new ArrayList<class_5024>();
    private class_5024[] field_21722 = new class_5024[1];
@@ -28,7 +28,7 @@ public class class_4460 {
    private class_5024[] field_21739 = new class_5024[3];
    private class_5024[] field_21723 = new class_5024[4];
    private class_2848 field_21742 = null;
-   private class_8910[] field_21737 = new class_8910[class_3581.field_17580.length];
+   private class_8910[] field_21737 = new class_8910[RenderLayer.field_17580.length];
    private boolean field_21744 = false;
    private Long2ByteLinkedOpenHashMap field_21724 = new Long2ByteLinkedOpenHashMap();
    private static final int field_21733 = -1;
@@ -144,16 +144,16 @@ public class class_4460 {
       return this.field_21747;
    }
 
-   public class_240[] method_20674() {
+   public Direction[] method_20674() {
       if (this.field_21748 == null) {
-         this.field_21748 = new class_240[4];
+         this.field_21748 = new Direction[4];
       }
 
       return this.field_21748;
    }
 
-   public class_240[] method_20675(class_240 var1, class_240 var2, class_240 var3, class_240 var4) {
-      class_240[] var7 = this.method_20674();
+   public Direction[] method_20675(Direction var1, Direction var2, Direction var3, Direction var4) {
+      Direction[] var7 = this.method_20674();
       var7[0] = var1;
       var7[1] = var2;
       var7[2] = var3;
@@ -223,7 +223,7 @@ public class class_4460 {
       this.field_21742 = var1;
    }
 
-   public class_8910 method_20695(class_3581 var1) {
+   public class_8910 method_20695(RenderLayer var1) {
       class_8910 var4 = this.field_21737[var1.method_16704()];
       if (var4 == null) {
          var4 = new class_8910();

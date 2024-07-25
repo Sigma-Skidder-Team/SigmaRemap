@@ -33,8 +33,8 @@ public class class_5611 extends class_2255<class_3756> {
          var3.method_36065(0.5, (double)(0.3F + var11 * 0.2F), 0.5);
          class_2426 var12 = new class_2426(0.5F, 1.0F, 0.5F);
          var12.method_11066();
-         var3.method_36060(new class_5422(var12, var10, true));
-         this.field_28484.method_7060(var3, field_28487.method_12943(var4, class_3581::method_16755), var5, var6);
+         var3.method_36060(new Quaternion(var12, var10, true));
+         this.field_28484.method_7060(var3, field_28487.method_12943(var4, RenderLayer::method_16755), var5, var6);
          var3.method_36064();
          int var13 = var1.field_18349 / 66 % 3;
          var3.method_36063();
@@ -47,7 +47,7 @@ public class class_5611 extends class_2255<class_3756> {
             var3.method_36060(class_2426.field_12080.method_11074(90.0F));
          }
 
-         class_7907 var14 = (var13 != 1 ? field_28480 : field_28479).method_12943(var4, class_3581::method_16755);
+         class_7907 var14 = (var13 != 1 ? field_28480 : field_28479).method_12943(var4, RenderLayer::method_16755);
          this.field_28483.method_7060(var3, var14, var5, var6);
          var3.method_36064();
          var3.method_36063();
@@ -57,7 +57,7 @@ public class class_5611 extends class_2255<class_3756> {
          var3.method_36060(class_2426.field_12076.method_11074(180.0F));
          this.field_28483.method_7060(var3, var14, var5, var6);
          var3.method_36064();
-         class_9071 var15 = this.field_11222.field_17463;
+         Camera var15 = this.field_11222.field_17463;
          var3.method_36063();
          var3.method_36065(0.5, (double)(0.3F + var11 * 0.2F), 0.5);
          var3.method_36062(0.5F, 0.5F, 0.5F);
@@ -67,11 +67,11 @@ public class class_5611 extends class_2255<class_3756> {
          var3.method_36060(class_2426.field_12076.method_11074(180.0F));
          float var17 = 1.3333334F;
          var3.method_36062(1.3333334F, 1.3333334F, 1.3333334F);
-         this.field_28481.method_7060(var3, (!var1.method_17375() ? field_28478 : field_28482).method_12943(var4, class_3581::method_16755), var5, var6);
+         this.field_28481.method_7060(var3, (!var1.method_17375() ? field_28478 : field_28482).method_12943(var4, RenderLayer::method_16755), var5, var6);
          var3.method_36064();
       } else {
          float var18 = var1.method_17376(0.0F);
-         class_7907 var20 = field_28488.method_12943(var4, class_3581::method_16734);
+         class_7907 var20 = field_28488.method_12943(var4, RenderLayer::method_16734);
          var3.method_36063();
          var3.method_36065(0.5, 0.5, 0.5);
          var3.method_36060(class_2426.field_12074.method_11074(var18));

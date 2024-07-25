@@ -31,7 +31,7 @@ public class class_5973 extends class_3599 {
                class_1331 var4 = this.field_30424.method_37075();
                class_2522 var5 = this.field_30422.field_41768.method_28262(var4);
                if (var5.method_8360().method_29299(class_2351.field_11784)) {
-                  this.field_30423 = var5.<class_240>method_10309(class_3633.field_1543)
+                  this.field_30423 = var5.<Direction>method_10309(class_3633.field_1543)
                      .<class_1331>map(var1 -> var4.method_6098(var1.method_1046()))
                      .orElseGet(() -> new class_1331(var4));
                   return !this.method_27274();

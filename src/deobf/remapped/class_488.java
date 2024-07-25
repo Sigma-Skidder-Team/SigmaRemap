@@ -57,7 +57,7 @@ public class class_488 {
                                     .then(class_465.method_2231("as").then(class_465.method_2236("targets", class_5601.method_25407()).fork(var3, var0x -> {
                                        ArrayList var3x = Lists.newArrayList();
 
-                                       for (class_8145 var5 : class_5601.method_25417(var0x, "targets")) {
+                                       for (Entity var5 : class_5601.method_25417(var0x, "targets")) {
                                           var3x.add(((class_9155)var0x.getSource()).method_42193(var5));
                                        }
 
@@ -72,7 +72,7 @@ public class class_488 {
                                                 var0x -> {
                                                    ArrayList var3x = Lists.newArrayList();
 
-                                                   for (class_8145 var5 : class_5601.method_25417(var0x, "targets")) {
+                                                   for (Entity var5 : class_5601.method_25417(var0x, "targets")) {
                                                       var3x.add(
                                                          ((class_9155)var0x.getSource())
                                                             .method_42195((class_6331)var5.field_41768)
@@ -104,7 +104,7 @@ public class class_488 {
                                  .then(class_465.method_2231("as").then(class_465.method_2236("targets", class_5601.method_25407()).fork(var3, var0x -> {
                                     ArrayList var3x = Lists.newArrayList();
 
-                                    for (class_8145 var5 : class_5601.method_25417(var0x, "targets")) {
+                                    for (Entity var5 : class_5601.method_25417(var0x, "targets")) {
                                        var3x.add(((class_9155)var0x.getSource()).method_42180(var5.method_37245()));
                                     }
 
@@ -124,7 +124,7 @@ public class class_488 {
                               .then(class_465.method_2231("as").then(class_465.method_2236("targets", class_5601.method_25407()).fork(var3, var0x -> {
                                  ArrayList var3x = Lists.newArrayList();
 
-                                 for (class_8145 var5 : class_5601.method_25417(var0x, "targets")) {
+                                 for (Entity var5 : class_5601.method_25417(var0x, "targets")) {
                                     var3x.add(((class_9155)var0x.getSource()).method_42183(var5.method_37366()));
                                  }
 
@@ -141,7 +141,7 @@ public class class_488 {
                                              ArrayList var3x = Lists.newArrayList();
                                              class_6139 var4 = class_7386.method_33645(var0x, "anchor");
 
-                                             for (class_8145 var6 : class_5601.method_25417(var0x, "targets")) {
+                                             for (Entity var6 : class_5601.method_25417(var0x, "targets")) {
                                                 var3x.add(((class_9155)var0x.getSource()).method_42184(var6, var4));
                                              }
 

@@ -8,7 +8,7 @@ public abstract class class_8446 extends class_3259 {
    private class_7114 field_43200;
    private class_2825 field_43199;
 
-   public class_8446(class_266 var1, class_8881 var2, ITextComponent var3, class_1013[] var4) {
+   public class_8446(class_266 var1, GameOptions var2, ITextComponent var3, class_1013[] var4) {
       super(var1, var2, var3);
       this.field_43201 = var4;
    }

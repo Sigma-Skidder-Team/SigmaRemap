@@ -21,7 +21,7 @@ public final class class_8925 extends class_8085 {
    public class_6098 method_43688(class_8743 var1, class_6098 var2) {
       this.method_36717(false);
       class_6331 var5 = var1.method_40140();
-      class_1331 var6 = var1.method_40142().method_6098(var1.method_40141().<class_240>method_10313(class_6451.field_32900));
+      class_1331 var6 = var1.method_40142().method_6098(var1.method_40141().<Direction>method_10313(class_6451.field_32900));
       class_2522 var7 = var5.method_28262(var6);
       if (var7.method_8329(class_2351.field_11727, var0 -> var0.method_10307(class_4745.field_22992))
          && var7.<Integer>method_10313(class_4745.field_22992) >= 5) {

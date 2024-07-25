@@ -31,7 +31,7 @@ public class class_419 {
       }
    }
 
-   public static class_8145 method_2085(UUID var0) {
+   public static Entity method_2085(UUID var0) {
       class_6331 var3 = method_2086();
       return var3 != null ? var3.method_28925(var0) : null;
    }

@@ -30,13 +30,13 @@ public class class_9155 implements class_8773 {
    private final ITextComponent field_46853;
    private final class_341 field_46856;
    private final boolean field_46859;
-   private final class_8145 field_46848;
+   private final Entity field_46848;
    private final ResultConsumer<class_9155> field_46852;
    private final class_6139 field_46850;
    private final class_4895 field_46858;
 
    public class_9155(
-      class_5801 var1, class_1343 var2, class_4895 var3, class_6331 var4, int var5, String var6, ITextComponent var7, class_341 var8, class_8145 var9
+      class_5801 var1, class_1343 var2, class_4895 var3, class_6331 var4, int var5, String var6, ITextComponent var7, class_341 var8, Entity var9
    ) {
       this(var1, var2, var3, var4, var5, var6, var7, var8, var9, false, (var0, var1x, var2x) -> {
       }, class_6139.field_31493);
@@ -51,7 +51,7 @@ public class class_9155 implements class_8773 {
       String var6,
       ITextComponent var7,
       class_341 var8,
-      class_8145 var9,
+      Entity var9,
       boolean var10,
       ResultConsumer<class_9155> var11,
       class_6139 var12
@@ -70,7 +70,7 @@ public class class_9155 implements class_8773 {
       this.field_46858 = var3;
    }
 
-   public class_9155 method_42193(class_8145 var1) {
+   public class_9155 method_42193(Entity var1) {
       return this.field_46848 != var1
          ? new class_9155(
             this.field_46849,
@@ -250,7 +250,7 @@ public class class_9155 implements class_8773 {
       }
    }
 
-   public class_9155 method_42184(class_8145 var1, class_6139 var2) throws CommandSyntaxException {
+   public class_9155 method_42184(Entity var1, class_6139 var2) throws CommandSyntaxException {
       return this.method_42182(var2.method_28187(var1));
    }
 
@@ -287,11 +287,11 @@ public class class_9155 implements class_8773 {
    }
 
    @Nullable
-   public class_8145 method_42200() {
+   public Entity method_42200() {
       return this.field_46848;
    }
 
-   public class_8145 method_42178() throws CommandSyntaxException {
+   public Entity method_42178() throws CommandSyntaxException {
       if (this.field_46848 != null) {
          return this.field_46848;
       } else {
@@ -383,7 +383,7 @@ public class class_9155 implements class_8773 {
    }
 
    @Override
-   public Set<class_5621<class_6486>> method_40317() {
+   public Set<class_5621<World>> method_40317() {
       return this.field_46856.method_1659();
    }
 

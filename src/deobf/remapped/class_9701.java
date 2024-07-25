@@ -4,7 +4,7 @@ public class class_9701 extends class_7067<class_3348> {
    public static final Identifier field_49344 = new Identifier("textures/entity/trident.png");
    private final class_8825 field_49346 = new class_8825();
 
-   public class_9701(class_6122 var1) {
+   public class_9701(EntityRenderDispatcher var1) {
       super(var1);
    }
 

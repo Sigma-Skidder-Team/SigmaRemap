@@ -194,10 +194,10 @@ public class class_9522 extends class_367 {
                field_46692.field_9577.field_45543 = 114.0;
                field_46692.gameRenderer.field_40627 = false;
                SigmaMainClass.field_3951 = true;
-               class_4230 var11 = field_46692.field_9657.field_21000;
-               field_46692.field_9657.field_21000 = null;
+               class_4230 var11 = field_46692.worldRenderer.field_21000;
+               field_46692.worldRenderer.field_21000 = null;
                field_46692.gameRenderer.method_35950(var1.field_8848, Util.getMeasuringTimeNano(), new class_7966());
-               field_46692.field_9657.field_21000 = var11;
+               field_46692.worldRenderer.field_21000 = var11;
                SigmaMainClass.field_3951 = false;
                field_46692.gameRenderer.field_40627 = true;
                field_46692.field_9577.field_45543 = var9;

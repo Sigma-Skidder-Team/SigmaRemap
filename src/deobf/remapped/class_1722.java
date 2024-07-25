@@ -36,7 +36,7 @@ public class class_1722 extends class_3954<class_6946> {
       }
    }
 
-   public static void method_7714(int var0, class_6486 var1, class_704 var2, class_6946 var3, class_7143 var4) {
+   public static void method_7714(int var0, World var1, class_704 var2, class_6946 var3, class_7143 var4) {
       if (!var1.field_33055) {
          class_9359 var7 = (class_9359)var2;
          class_6098 var8 = class_6098.field_31203;

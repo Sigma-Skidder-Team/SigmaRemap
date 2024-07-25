@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 public class class_8451 implements AutoCloseable {
    private static final Identifier field_43215 = new Identifier("textures/map/map_icons.png");
-   private static final class_3581 field_43216 = class_3581.method_16732(field_43215);
+   private static final RenderLayer field_43216 = RenderLayer.method_16732(field_43215);
    private final TextureManager field_43212;
    private final Map<String, class_5962> field_43213 = Maps.newHashMap();
 

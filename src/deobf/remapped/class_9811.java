@@ -4,7 +4,7 @@ public class class_9811 extends class_1249 {
    private static String[] field_49732;
    private boolean field_49733;
 
-   public class_9811(class_5886 var1, class_6486 var2) {
+   public class_9811(class_5886 var1, World var2) {
       super(var1, var2);
    }
 

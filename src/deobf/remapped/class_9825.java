@@ -6,7 +6,7 @@ public class class_9825 extends class_516 implements class_1869 {
    private class_1331 field_49779 = class_1331.field_7306;
    private class_55 field_49777 = class_55.field_38;
 
-   public class_9825(class_6629<? extends class_9825> var1, class_6486 var2) {
+   public class_9825(class_6629<? extends class_9825> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
       this.field_29900 = new class_9650(this, this);

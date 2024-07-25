@@ -7,7 +7,7 @@ public class class_1984 extends class_6408 {
    public static final class_4190 field_10053 = class_6414.method_29292(4.0, 9.0, 4.0, 12.0, 16.0, 12.0);
 
    public class_1984(class_3073 var1) {
-      super(var1, class_240.field_802, field_10053, false, 0.1);
+      super(var1, Direction.field_802, field_10053, false, 0.1);
    }
 
    @Override

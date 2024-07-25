@@ -12,7 +12,7 @@ public class class_3511 {
    private class_7886 field_17204;
    private class_7240 field_17217;
    private final Set<class_3757> field_17216;
-   private final Map<class_3581, class_7995> field_17199;
+   private final Map<RenderLayer, class_7995> field_17199;
    public class_4092 field_17221;
    private int field_17213;
    private boolean field_17210;
@@ -41,7 +41,7 @@ public class class_3511 {
       this.field_17225 = var1;
       this.field_17205 = new AtomicReference<class_8845>(class_8845.field_45235);
       this.field_17216 = Sets.newHashSet();
-      this.field_17199 = class_3581.method_16770().stream().collect(Collectors.toMap(var0 -> (class_3581)var0, var0 -> new class_7995(class_7985.field_40918)));
+      this.field_17199 = RenderLayer.method_16770().stream().collect(Collectors.toMap(var0 -> (RenderLayer)var0, var0 -> new class_7995(class_7985.field_40918)));
       this.field_17213 = -1;
       this.field_17210 = true;
       this.field_17223 = new class_2921(-1, -1, -1);
@@ -56,10 +56,10 @@ public class class_3511 {
       this.field_17212 = class_3111.method_14351();
       this.field_17219 = new class_3511[6];
       this.field_17200 = false;
-      this.field_17224 = new class_3511[class_240.field_803.length];
-      this.field_17215 = new class_3511[class_240.field_803.length];
+      this.field_17224 = new class_3511[Direction.field_803.length];
+      this.field_17215 = new class_3511[Direction.field_803.length];
       this.field_17220 = false;
-      this.field_17208 = new class_1261(this, (class_240)null, 0);
+      this.field_17208 = new class_1261(this, (Direction)null, 0);
    }
 
    private boolean method_16158(class_1331 var1) {
@@ -74,10 +74,10 @@ public class class_3511 {
       } else {
          return !(this.method_16184() > 576.0)
             ? true
-            : this.method_16158(this.field_17209[class_240.field_809.ordinal()])
-               && this.method_16158(this.field_17209[class_240.field_818.ordinal()])
-               && this.method_16158(this.field_17209[class_240.field_804.ordinal()])
-               && this.method_16158(this.field_17209[class_240.field_800.ordinal()]);
+            : this.method_16158(this.field_17209[Direction.field_809.ordinal()])
+               && this.method_16158(this.field_17209[Direction.field_818.ordinal()])
+               && this.method_16158(this.field_17209[Direction.field_804.ordinal()])
+               && this.method_16158(this.field_17209[Direction.field_800.ordinal()]);
       }
    }
 
@@ -90,7 +90,7 @@ public class class_3511 {
       }
    }
 
-   public class_7995 method_16180(class_3581 var1) {
+   public class_7995 method_16180(RenderLayer var1) {
       return this.field_17199.get(var1);
    }
 
@@ -109,7 +109,7 @@ public class class_3511 {
 
          this.field_17221 = new class_4092((double)var1, (double)var2, (double)var3, (double)(var1 + 16), (double)(var2 + 16), (double)(var3 + 16));
 
-         for (class_240 var9 : class_240.field_803) {
+         for (Direction var9 : Direction.field_803) {
             this.field_17209[var9.ordinal()].method_13364(this.field_17223).method_13369(var9, 16);
          }
 
@@ -129,7 +129,7 @@ public class class_3511 {
    }
 
    public double method_16184() {
-      class_9071 var3 = MinecraftClient.getInstance().gameRenderer.method_35949();
+      Camera var3 = MinecraftClient.getInstance().gameRenderer.method_35949();
       double var4 = this.field_17221.field_19941 + 8.0 - var3.method_41627().field_7336;
       double var6 = this.field_17221.field_19937 + 8.0 - var3.method_41627().field_7333;
       double var8 = this.field_17221.field_19938 + 8.0 - var3.method_41627().field_7334;
@@ -182,11 +182,11 @@ public class class_3511 {
       return this.field_17210 && this.field_17227;
    }
 
-   public class_1331 method_16143(class_240 var1) {
+   public class_1331 method_16143(Direction var1) {
       return this.field_17209[var1.ordinal()];
    }
 
-   public boolean method_16157(class_3581 var1, class_6705 var2) {
+   public boolean method_16157(RenderLayer var1, class_6705 var2) {
       class_8845 var5 = this.method_16150();
       if (this.field_17217 != null) {
          this.field_17217.method_19131();
@@ -265,7 +265,7 @@ public class class_3511 {
       return this.field_17218;
    }
 
-   private class_3581[] method_16141(class_4774 var1, class_3581[] var2) {
+   private RenderLayer[] method_16141(class_4774 var1, RenderLayer[] var2) {
       if (!class_6705.method_30746()) {
          var2[0] = class_6416.method_29333(var1);
          return var2;
@@ -274,7 +274,7 @@ public class class_3511 {
       }
    }
 
-   private class_3581[] method_16146(class_2522 var1, class_3581[] var2) {
+   private RenderLayer[] method_16146(class_2522 var1, RenderLayer[] var2) {
       if (!class_6705.method_30734()) {
          var2[0] = class_6416.method_29330(var1);
          return var2;
@@ -283,9 +283,9 @@ public class class_3511 {
       }
    }
 
-   private class_3581 method_16164(class_6163 var1, class_2522 var2, class_1331 var3, class_3581 var4) {
+   private RenderLayer method_16164(class_6163 var1, class_2522 var2, class_1331 var3, RenderLayer var4) {
       if (class_1303.method_5952()) {
-         class_3581 var7 = class_1303.method_5950(var1, var2, var3);
+         RenderLayer var7 = class_1303.method_5950(var1, var2, var3);
          if (var7 != null) {
             return var7;
          }
@@ -321,7 +321,7 @@ public class class_3511 {
       this.method_16171(class_6727.field_34740, var1, var2);
    }
 
-   private void method_16171(class_3581 var1, class_2848 var2, class_8845 var3) {
+   private void method_16171(RenderLayer var1, class_2848 var2, class_8845 var3) {
       class_9633 var6 = var2.method_12956(var1);
       if (var6.method_44474()) {
          var3.method_40689(var1);
@@ -338,14 +338,14 @@ public class class_3511 {
       return new class_1680(var6, var4, var5, 1);
    }
 
-   public class_7850 method_16173(class_6486 var1, class_1331 var2, class_1331 var3, int var4) {
+   public class_7850 method_16173(World var1, class_1331 var2, class_1331 var3, int var4) {
       return class_7850.method_35516(var1, var2, var3, var4, false);
    }
 
-   public class_3511 method_16138(class_7626 var1, class_240 var2) {
+   public class_3511 method_16138(class_7626 var1, Direction var2) {
       if (!this.field_17200) {
-         for (int var5 = 0; var5 < class_240.field_803.length; var5++) {
-            class_240 var6 = class_240.field_803[var5];
+         for (int var5 = 0; var5 < Direction.field_803.length; var5++) {
+            Direction var6 = Direction.field_803[var5];
             class_1331 var7 = this.method_16143(var6);
             this.field_17219[var5] = var1.method_34563(var7);
          }
@@ -381,12 +381,12 @@ public class class_3511 {
       return this.method_16175(var1).method_27368(var4, var5);
    }
 
-   public void method_16139(class_240 var1, class_3511 var2) {
+   public void method_16139(Direction var1, class_3511 var2) {
       this.field_17224[var1.ordinal()] = var2;
       this.field_17215[var1.ordinal()] = var2;
    }
 
-   public class_3511 method_16165(class_240 var1) {
+   public class_3511 method_16165(Direction var1) {
       if (!this.field_17220) {
          this.method_16186();
       }
@@ -401,10 +401,10 @@ public class class_3511 {
    private void method_16186() {
       int var3 = this.method_16189().method_12173();
       int var4 = this.method_16189().method_12185();
-      int var5 = class_240.field_818.ordinal();
-      int var6 = class_240.field_800.ordinal();
-      int var7 = class_240.field_809.ordinal();
-      int var8 = class_240.field_804.ordinal();
+      int var5 = Direction.field_818.ordinal();
+      int var6 = Direction.field_800.ordinal();
+      int var7 = Direction.field_809.ordinal();
+      int var8 = Direction.field_804.ordinal();
       this.field_17215[var5] = this.field_17224[var5].method_16189().method_12185() != var4 - 16 ? null : this.field_17224[var5];
       this.field_17215[var6] = this.field_17224[var6].method_16189().method_12185() != var4 + 16 ? null : this.field_17224[var6];
       this.field_17215[var7] = this.field_17224[var7].method_16189().method_12173() != var3 - 16 ? null : this.field_17224[var7];

@@ -20,7 +20,7 @@ public abstract class class_3151 implements class_8932<class_6867> {
    }
 
    @Override
-   public boolean method_41052(class_6867 var1, class_6486 var2) {
+   public boolean method_41052(class_6867 var1, World var2) {
       return this.field_15675.test(var1.method_31498(0));
    }
 

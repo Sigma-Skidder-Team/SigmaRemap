@@ -3,7 +3,7 @@ package remapped;
 public abstract class class_1762<T extends class_4109, M extends class_3192<T>> extends class_7164<T, M> {
    private final float field_9042;
 
-   public class_1762(class_6122 var1, M var2, float var3) {
+   public class_1762(EntityRenderDispatcher var1, M var2, float var3) {
       super(var1, (M)var2, 0.75F);
       this.field_9042 = var3;
    }

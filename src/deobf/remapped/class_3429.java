@@ -3,15 +3,15 @@ package remapped;
 public abstract class class_3429 extends class_9506 implements class_3713 {
    private static final class_7821<class_6098> field_16861 = class_8073.<class_6098>method_36641(class_3429.class, class_2734.field_13357);
 
-   public class_3429(class_6629<? extends class_3429> var1, class_6486 var2) {
+   public class_3429(class_6629<? extends class_3429> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_3429(class_6629<? extends class_3429> var1, double var2, double var4, double var6, class_6486 var8) {
+   public class_3429(class_6629<? extends class_3429> var1, double var2, double var4, double var6, World var8) {
       super(var1, var2, var4, var6, var8);
    }
 
-   public class_3429(class_6629<? extends class_3429> var1, class_5834 var2, class_6486 var3) {
+   public class_3429(class_6629<? extends class_3429> var1, class_5834 var2, World var3) {
       super(var1, var2, var3);
    }
 

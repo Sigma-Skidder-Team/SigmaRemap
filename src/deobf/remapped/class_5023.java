@@ -52,7 +52,7 @@ public class class_5023 extends class_7648 {
       field_25981.info("Loaded {} recipes", var6.size());
    }
 
-   public <C extends class_6867, T extends class_8932<C>> Optional<T> method_23138(class_1510<T> var1, C var2, class_6486 var3) {
+   public <C extends class_6867, T extends class_8932<C>> Optional<T> method_23138(class_1510<T> var1, C var2, World var3) {
       return this.method_23142(var1)
          .values()
          .stream()
@@ -64,7 +64,7 @@ public class class_5023 extends class_7648 {
       return this.method_23142(var1).values().stream().<class_8932>map(var0 -> (class_8932)var0).collect(Collectors.<T>toList());
    }
 
-   public <C extends class_6867, T extends class_8932<C>> List<T> method_23143(class_1510<T> var1, C var2, class_6486 var3) {
+   public <C extends class_6867, T extends class_8932<C>> List<T> method_23143(class_1510<T> var1, C var2, World var3) {
       return this.method_23142(var1)
          .values()
          .stream()
@@ -77,7 +77,7 @@ public class class_5023 extends class_7648 {
       return (Map<Identifier, class_8932<C>>)this.field_25982.getOrDefault(var1, Collections.<Identifier, class_8932<?>>emptyMap());
    }
 
-   public <C extends class_6867, T extends class_8932<C>> class_2831<class_6098> method_23147(class_1510<T> var1, C var2, class_6486 var3) {
+   public <C extends class_6867, T extends class_8932<C>> class_2831<class_6098> method_23147(class_1510<T> var1, C var2, World var3) {
       Optional var6 = this.method_23138(var1, var2, var3);
       if (var6.isPresent()) {
          return ((class_8932)var6.get()).method_41046(var2);

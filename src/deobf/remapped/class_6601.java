@@ -23,7 +23,7 @@ public class class_6601 extends class_4171<class_3551, class_3192<class_3551>> {
    ) {
       Identifier var13 = field_34040.get(var4.method_16526());
       if (var13 != null && !var4.method_37109()) {
-         class_7907 var14 = var2.method_11645(class_3581.method_16705(var13));
+         class_7907 var14 = var2.method_11645(RenderLayer.method_16705(var13));
          this.method_19347().method_45499(var1, var14, var3, class_6353.method_29110(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }

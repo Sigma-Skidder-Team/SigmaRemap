@@ -141,7 +141,7 @@ public abstract class class_4190 {
                   var7.field_7336 - (double)var3.method_12173(), var7.field_7333 - (double)var3.method_12165(), var7.field_7334 - (double)var3.method_12185()
                )
                ? class_4092.method_18922(this.method_19492(), var1, var2, var3)
-               : new class_9529(var7, class_240.method_1044(var6.field_7336, var6.field_7333, var6.field_7334).method_1046(), var3, true);
+               : new class_9529(var7, Direction.method_1044(var6.field_7336, var6.field_7333, var6.field_7334).method_1046(), var3, true);
          } else {
             return null;
          }
@@ -150,7 +150,7 @@ public abstract class class_4190 {
       }
    }
 
-   public class_4190 method_19494(class_240 var1) {
+   public class_4190 method_19494(Direction var1) {
       if (!this.method_19485() && this != class_3370.method_15524()) {
          if (this.field_20394 == null) {
             this.field_20394 = new class_4190[6];
@@ -169,7 +169,7 @@ public abstract class class_4190 {
       }
    }
 
-   private class_4190 method_19498(class_240 var1) {
+   private class_4190 method_19498(Direction var1) {
       class_9249 var4 = var1.method_1029();
       class_137 var5 = var1.method_1049();
       DoubleList var6 = this.method_19486(var4);

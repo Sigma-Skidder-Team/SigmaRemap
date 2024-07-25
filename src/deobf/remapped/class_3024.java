@@ -12,7 +12,7 @@ public class class_3024 extends class_5467 {
    public int field_14824 = this.field_41717.nextInt(6000) + 6000;
    public boolean field_14828;
 
-   public class_3024(class_6629<? extends class_3024> var1, class_6486 var2) {
+   public class_3024(class_6629<? extends class_3024> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6359, 0.0F);
    }
@@ -124,7 +124,7 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public void method_37340(class_8145 var1) {
+   public void method_37340(Entity var1) {
       super.method_37340(var1);
       float var4 = class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0));
       float var5 = class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0));

@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class class_5936 extends class_3808<class_8759> {
    private static String[] field_30279;
-   private static final class_240[] field_30280 = new class_240[]{class_240.field_818, class_240.field_800, class_240.field_809, class_240.field_804};
+   private static final Direction[] field_30280 = new Direction[]{Direction.field_818, Direction.field_800, Direction.field_809, Direction.field_804};
    private final LongSet field_30278 = new LongOpenHashSet();
    private final LongSet field_30275 = new LongOpenHashSet();
    private final LongSet field_30277 = new LongOpenHashSet();
@@ -30,7 +30,7 @@ public class class_5936 extends class_3808<class_8759> {
          class_1201 var10 = this.method_17745(var8, var5);
          if (var10 == null) {
             for (var1 = class_1331.method_6087(var1); var10 == null; var10 = this.method_17745(var8, var5)) {
-               var5 = class_6979.method_31928(var5, class_240.field_817);
+               var5 = class_6979.method_31928(var5, Direction.field_817);
                if (++var7 >= var9) {
                   return 15;
                }
@@ -98,7 +98,7 @@ public class class_5936 extends class_3808<class_8759> {
       int var8 = class_6979.method_31929(var1);
       if (class_8759.method_40206(this.field_18648).get(var5) == var8 + 1) {
          long var9;
-         for (var9 = var1; !this.method_17749(var9) && this.method_27138(var8); var9 = class_6979.method_31928(var9, class_240.field_802)) {
+         for (var9 = var1; !this.method_17749(var9) && this.method_27138(var8); var9 = class_6979.method_31928(var9, Direction.field_802)) {
             var8--;
          }
 
@@ -143,12 +143,12 @@ public class class_5936 extends class_3808<class_8759> {
       if (var5 != null) {
          return var5;
       } else {
-         long var6 = class_6979.method_31928(var1, class_240.field_817);
+         long var6 = class_6979.method_31928(var1, Direction.field_817);
          int var8 = class_8759.method_40206(this.field_18648).get(class_6979.method_31910(var1));
          if (var8 != class_8759.method_40203(this.field_18648) && class_6979.method_31929(var6) < var8) {
             class_1201 var9;
             while ((var9 = this.method_17744(var6, true)) == null) {
-               var6 = class_6979.method_31928(var6, class_240.field_817);
+               var6 = class_6979.method_31928(var6, Direction.field_817);
             }
 
             return new class_1201(new class_935(var9, 0).method_5317());
@@ -182,7 +182,7 @@ public class class_5936 extends class_3808<class_8759> {
                      int var36 = class_6979.method_31908(class_6979.method_31929(var7));
                      int var12 = class_6979.method_31908(class_6979.method_31916(var7));
 
-                     for (class_240 var16 : field_30280) {
+                     for (Direction var16 : field_30280) {
                         long var17 = class_6979.method_31928(var7, var16);
                         if ((this.field_30277.contains(var17) || !this.field_30278.contains(var17) && !this.field_30275.contains(var17))
                            && this.method_17749(var17)) {

@@ -11,9 +11,9 @@ public class class_1687 extends class_8369 {
       double var2,
       double var4,
       float var6,
-      Function<class_8881, Double> var7,
-      BiConsumer<class_8881, Double> var8,
-      BiFunction<class_8881, class_8369, ITextComponent> var9
+      Function<GameOptions, Double> var7,
+      BiConsumer<GameOptions, Double> var8,
+      BiFunction<GameOptions, class_8369, ITextComponent> var9
    ) {
       super(var1, var2, var4, var6, var7, var8, var9);
    }

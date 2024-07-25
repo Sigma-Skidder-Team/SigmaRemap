@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_8651 extends class_8549 {
    private boolean field_44315;
 
-   public class_8651(int var1, class_9616 var2, class_240 var3) {
+   public class_8651(int var1, class_9616 var2, Direction var3) {
       super(class_2746.field_13439, var1);
       this.method_32519(var3);
       this.field_36435 = var2;
@@ -30,7 +30,7 @@ public class class_8651 extends class_8549 {
       }
    }
 
-   public static class_8651 method_39669(List<class_7060> var0, int var1, int var2, int var3, class_240 var4, int var5) {
+   public static class_8651 method_39669(List<class_7060> var0, int var1, int var2, int var3, Direction var4, int var5) {
       class_9616 var8 = class_9616.method_44386(var1, var2, var3, -4, -1, 0, 11, 8, 16, var4);
       return method_39332(var8) && class_7060.method_32502(var0, var8) == null ? new class_8651(var5, var8, var4) : null;
    }
@@ -68,7 +68,7 @@ public class class_8651 extends class_8549 {
          this.method_32500(var1, var5, var23, 3, 15, var23, 4, 15, var12, var12, false);
       }
 
-      class_2522 var24 = class_4783.field_23712.method_29260().method_10308(class_3049.field_14946, class_240.field_818);
+      class_2522 var24 = class_4783.field_23712.method_29260().method_10308(class_3049.field_14946, Direction.field_818);
       this.method_32511(var1, var5, 4, 1, 5, 6, 1, 7, false, var4, class_7965.method_36051());
       this.method_32511(var1, var5, 4, 2, 6, 6, 2, 7, false, var4, class_7965.method_36051());
       this.method_32511(var1, var5, 4, 3, 7, 6, 3, 7, false, var4, class_7965.method_36051());
@@ -79,10 +79,10 @@ public class class_8651 extends class_8549 {
          this.method_32529(var1, var24, var14, 3, 6, var5);
       }
 
-      class_2522 var25 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, class_240.field_818);
-      class_2522 var15 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, class_240.field_800);
-      class_2522 var16 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, class_240.field_804);
-      class_2522 var17 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, class_240.field_809);
+      class_2522 var25 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, Direction.field_818);
+      class_2522 var15 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, Direction.field_800);
+      class_2522 var16 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, Direction.field_804);
+      class_2522 var17 = class_4783.field_23491.method_29260().method_10308(class_7863.field_40261, Direction.field_809);
       boolean var18 = true;
       boolean[] var19 = new boolean[12];
 

@@ -70,8 +70,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    public final RenderTickCounter field_9616 = new RenderTickCounter(20.0F, 0L);
    private final Snooper field_9606 = new Snooper("client", this, Util.getMeasuringTimeMs());
    private final class_3017 field_9576;
-   public final class_4316 field_9657;
-   private final class_6122 field_9586;
+   public final WorldRenderer worldRenderer;
+   private final EntityRenderDispatcher field_9586;
    private final class_8765 field_9667;
    private final class_9164 field_9604;
    public final class_9326 field_9572;
@@ -82,7 +82,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    public final class_3372 field_9612;
    private final AtomicReference<class_6730> field_9594 = new AtomicReference<class_6730>();
    public final class_3062 field_9614;
-   public final class_8881 field_9577;
+   public final GameOptions field_9577;
    private final class_3459 field_9593;
    public final class_8671 field_9625;
    public final class_8455 field_9600;
@@ -127,8 +127,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    private class_2560 field_9598;
    private class_5121 field_9670;
    private boolean field_9672;
-   public class_8145 field_9669;
-   public class_8145 field_9662;
+   public Entity field_9669;
+   public Entity field_9662;
    public class_7474 field_9587;
    public int field_9570;
    public int field_9582;
@@ -203,7 +203,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9627 = new class_9184(this);
       this.field_9578 = new class_8827(this);
       this.field_9644 = Thread.currentThread();
-      this.field_9577 = new class_8881(this, this.runDirectory);
+      this.field_9577 = new GameOptions(this, this.runDirectory);
       this.field_9593 = new class_3459(this.runDirectory, this.dataFixer);
       LOGGER.info("Backend library: {}", class_3542.method_16385());
       class_9706 var6;
@@ -264,7 +264,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9639 = new class_7458(this.textureManager, this.field_9624, this.field_9577.field_45577);
       this.field_9656.method_2649(this.field_9639);
       this.field_9667 = new class_8765(this.textureManager, this.field_9639, this.field_9640);
-      this.field_9586 = new class_6122(this.textureManager, this.field_9667, this.field_9656, this.textRenderer, this.field_9577);
+      this.field_9586 = new EntityRenderDispatcher(this.textureManager, this.field_9667, this.field_9656, this.textRenderer, this.field_9577);
       this.field_9604 = new class_9164(this);
       this.field_9656.method_2649(this.field_9667);
       this.field_9576 = new class_3017();
@@ -273,8 +273,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9613 = new class_9186(this, this.field_9648);
       this.field_9642 = new class_856(this.field_9639.method_33946(), this.field_9624);
       this.field_9656.method_2649(this.field_9642);
-      this.field_9657 = new class_4316(this, this.field_9576);
-      this.field_9656.method_2649(this.field_9657);
+      this.worldRenderer = new WorldRenderer(this, this.field_9576);
+      this.field_9656.method_2649(this.worldRenderer);
       this.method_8495();
       this.field_9656.method_2649(this.field_9615);
       this.field_9572 = new class_9326(this.field_9601, this.textureManager);
@@ -537,7 +537,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   this,
                   this.field_9656.method_2650(Util.getMainWorkerExecutor(), this, COMPLETED_UNIT_FUTURE, var2),
                   var2x -> Util.method_44691(var2x, this::method_8573, () -> {
-                        this.field_9657.method_19998();
+                        this.worldRenderer.method_19998();
                         var1.complete((Void)null);
                      }),
                   true
@@ -693,7 +693,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.field_9639.close();
          this.field_9637.close();
          this.gameRenderer.close();
-         this.field_9657.close();
+         this.worldRenderer.close();
          this.field_9611.method_16329();
          this.field_9653.close();
          this.field_9572.method_43060();
@@ -894,7 +894,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    public void method_8593() {
       try {
          field_9608 = new byte[0];
-         this.field_9657.method_20034();
+         this.worldRenderer.method_20034();
       } catch (Throwable var3) {
       }
 
@@ -1075,7 +1075,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             class_9529 var2 = (class_9529)this.field_9587;
             class_1331 var3 = var2.method_43955();
             if (!this.field_9601.method_28262(var3).method_8345()) {
-               class_240 var4 = var2.method_43956();
+               Direction var4 = var2.method_43956();
                if (this.field_9647.method_42163(var3, var4)) {
                   this.field_9572.method_43058(var3, var4);
                   this.field_9632.method_26597(class_2584.field_12791);
@@ -1164,7 +1164,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                      switch (this.field_9587.method_33990()) {
                         case field_7718:
                            class_5631 var7 = (class_5631)this.field_9587;
-                           class_8145 var8 = var7.method_25524();
+                           Entity var8 = var7.method_25524();
                            class_6910 var9 = this.field_9647.method_42145(this.field_9632, var8, var7, var5);
                            if (!var9.method_31662()) {
                               var9 = this.field_9647.method_42144(this.field_9632, var8, var5);
@@ -1281,7 +1281,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
          this.field_9592.method_16050("levelRenderer");
          if (!this.field_9579) {
-            this.field_9657.method_20084();
+            this.worldRenderer.method_20084();
          }
 
          this.field_9592.method_16050("level");
@@ -1367,7 +1367,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             this.gameRenderer.method_35951(this.field_9577.method_40867().method_42383() ? this.method_8516() : null);
          }
 
-         this.field_9657.method_20018();
+         this.worldRenderer.method_20018();
       }
 
       while (this.field_9577.field_45556.method_27074()) {
@@ -1417,7 +1417,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
       while (this.field_9577.field_45415.method_27074()) {
          if (!this.field_9632.method_37221()) {
-            this.method_8614().method_4813(new class_1586(class_7500.field_38260, class_1331.field_7306, class_240.field_802));
+            this.method_8614().method_4813(new class_1586(class_7500.field_38260, class_1331.field_7306, Direction.field_802));
          }
       }
 
@@ -1776,7 +1776,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    private void method_8594(class_174 var1) {
-      this.field_9657.method_20092(var1);
+      this.worldRenderer.method_20092(var1);
       this.field_9572.method_43041(var1);
       class_3569.field_17468.method_16588(var1);
       this.method_8545();
@@ -1853,7 +1853,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   return;
                }
 
-               class_8145 var9 = ((class_5631)this.field_9587).method_25524();
+               Entity var9 = ((class_5631)this.field_9587).method_25524();
                if (var9 instanceof class_5490) {
                   var5 = new class_6098(class_4897.field_24370);
                } else if (var9 instanceof class_8008) {
@@ -1965,7 +1965,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       return var1;
    }
 
-   public static void method_8489(class_2435 var0, String var1, class_8881 var2, class_159 var3) {
+   public static void method_8489(class_2435 var0, String var1, GameOptions var2, class_159 var3) {
       class_6544 var4 = var3.method_629();
       var4.method_29851("Launched Version", () -> var1);
       var4.method_29851("Backend library", class_3542::method_16385);
@@ -2190,13 +2190,13 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       if (this.field_9623 instanceof class_3129) {
          return class_2623.field_12931;
       } else if (this.field_9632 != null) {
-         if (this.field_9632.field_41768.method_29545() == class_6486.field_33038) {
+         if (this.field_9632.field_41768.method_29545() == World.field_33038) {
             return this.field_9614.method_13972().method_21876() ? class_2623.field_12932 : class_2623.field_12929;
          } else {
             class_8862 var1 = this.field_9632.field_41768.method_22561(this.field_9632.method_37075()).method_28887();
             if (!this.field_9568.method_31308(class_2623.field_12930)
                && (!this.field_9632.method_37179() || var1 != class_8862.field_45309 && var1 != class_8862.field_45297)) {
-               return this.field_9632.field_41768.method_29545() != class_6486.field_33029
+               return this.field_9632.field_41768.method_29545() != World.field_33029
                      && this.field_9632.field_3876.field_4944
                      && this.field_9632.field_3876.field_4941
                   ? class_2623.field_12925
@@ -2219,16 +2219,16 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    @Nullable
-   public class_8145 method_8516() {
+   public Entity method_8516() {
       return this.field_9669;
    }
 
-   public void method_8550(class_8145 var1) {
+   public void method_8550(Entity var1) {
       this.field_9669 = var1;
       this.gameRenderer.method_35951(var1);
    }
 
-   public boolean method_8563(class_8145 var1) {
+   public boolean method_8563(Entity var1) {
       return var1.method_37116()
          || this.field_9632 != null
             && this.field_9632.method_37221()
@@ -2255,7 +2255,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       return this.field_9642;
    }
 
-   public class_6122 method_8587() {
+   public EntityRenderDispatcher method_8587() {
       return this.field_9586;
    }
 

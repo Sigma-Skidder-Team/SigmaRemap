@@ -18,7 +18,7 @@ public class class_3711 {
       this.method_17230(var1.field_7336, var1.field_7333, var1.field_7334);
    }
 
-   public void method_17240(class_8145 var1, float var2, float var3) {
+   public void method_17240(Entity var1, float var2, float var3) {
       this.method_17231(var1.method_37302(), method_17238(var1), var1.method_37156(), var2, var3);
    }
 
@@ -95,7 +95,7 @@ public class class_3711 {
       return var1 + var7;
    }
 
-   private static double method_17238(class_8145 var0) {
+   private static double method_17238(Entity var0) {
       return !(var0 instanceof class_5834) ? (var0.method_37241().field_19937 + var0.method_37241().field_19939) / 2.0 : var0.method_37388();
    }
 }

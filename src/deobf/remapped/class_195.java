@@ -27,10 +27,10 @@ public class class_195 extends class_6414 implements class_724 {
 
    @Override
    public class_2522 method_29302(class_353 var1) {
-      class_240 var4 = var1.method_21857();
-      class_240 var5;
+      Direction var4 = var1.method_21857();
+      Direction var5;
       if (var4.method_1029() != class_9249.field_47216) {
-         var5 = class_240.field_817;
+         var5 = Direction.field_817;
       } else {
          var5 = var1.method_21863().method_1046();
       }
@@ -45,7 +45,7 @@ public class class_195 extends class_6414 implements class_724 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       class_3757 var9 = var2.method_28260(var3);
       if (var9 instanceof class_6786 && var4.method_3184()) {
          var4.method_3201((class_6786)var9);
@@ -56,21 +56,21 @@ public class class_195 extends class_6414 implements class_724 {
    }
 
    public static boolean method_862(class_4099 var0, class_4099 var1) {
-      class_240 var4 = method_860(var0.field_19967);
-      class_240 var5 = method_860(var1.field_19967);
-      class_240 var6 = method_861(var0.field_19967);
-      class_240 var7 = method_861(var1.field_19967);
+      Direction var4 = method_860(var0.field_19967);
+      Direction var5 = method_860(var1.field_19967);
+      Direction var6 = method_861(var0.field_19967);
+      Direction var7 = method_861(var1.field_19967);
       class_1252 var8 = class_1252.method_5640(var0.field_19968.method_25965("joint"))
          .orElseGet(() -> !var4.method_1029().method_42629() ? class_1252.field_6897 : class_1252.field_6898);
       boolean var9 = var8 == class_1252.field_6897;
       return var4 == var5.method_1046() && (var9 || var6 == var7) && var0.field_19968.method_25965("target").equals(var1.field_19968.method_25965("name"));
    }
 
-   public static class_240 method_860(class_2522 var0) {
+   public static Direction method_860(class_2522 var0) {
       return var0.<class_7660>method_10313(field_655).method_34671();
    }
 
-   public static class_240 method_861(class_2522 var0) {
+   public static Direction method_861(class_2522 var0) {
       return var0.<class_7660>method_10313(field_655).method_34670();
    }
 }

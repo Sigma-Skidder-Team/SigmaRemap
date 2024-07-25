@@ -23,7 +23,7 @@ public class class_6021 extends class_4749 {
          && this.method_27459(var1, var2, var3)) {
          class_2921 var7 = new class_2921();
 
-         for (class_240 var11 : class_240.values()) {
+         for (Direction var11 : Direction.values()) {
             var7.method_13371(var3, var11);
             class_2522 var12 = var2.method_28262(var7);
             if (var12.method_8350(this) && !this.method_27459(var12, var2, var7)) {
@@ -35,7 +35,7 @@ public class class_6021 extends class_4749 {
       }
    }
 
-   private boolean method_27459(class_2522 var1, class_6486 var2, class_1331 var3) {
+   private boolean method_27459(class_2522 var1, World var2, class_1331 var3) {
       int var6 = var1.<Integer>method_10313(field_30661);
       if (var6 >= 3) {
          this.method_21930(var1, var2, var3);
@@ -47,7 +47,7 @@ public class class_6021 extends class_4749 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, class_6486 var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
       if (var4 == this && this.method_27460(var2, var3, 2)) {
          this.method_21930(var1, var2, var3);
       }
@@ -59,7 +59,7 @@ public class class_6021 extends class_4749 {
       int var6 = 0;
       class_2921 var7 = new class_2921();
 
-      for (class_240 var11 : class_240.values()) {
+      for (Direction var11 : Direction.values()) {
          var7.method_13371(var2, var11);
          if (var1.method_28262(var7).method_8350(this)) {
             if (++var6 >= var3) {

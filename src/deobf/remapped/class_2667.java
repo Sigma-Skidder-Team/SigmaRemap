@@ -6,7 +6,7 @@ public class class_2667 extends class_1173 {
    private int field_13118;
    private boolean field_13119;
 
-   public class_2667(class_6629<? extends class_2667> var1, class_6486 var2) {
+   public class_2667(class_6629<? extends class_2667> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 3;
    }

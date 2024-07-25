@@ -12,7 +12,7 @@ public class class_242 extends class_6414 implements class_3978 {
    private static boolean method_1057(class_2522 var0, class_4924 var1, class_1331 var2) {
       class_1331 var5 = var2.method_6081();
       class_2522 var6 = var1.method_28262(var5);
-      int var7 = class_2309.method_10626(var1, var0, var2, var6, var5, class_240.field_817, var6.method_8320(var1, var5));
+      int var7 = class_2309.method_10626(var1, var0, var2, var6, var5, Direction.field_817, var6.method_8320(var1, var5));
       return var7 < var1.method_28255();
    }
 
@@ -29,7 +29,7 @@ public class class_242 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(class_6486 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
       return true;
    }
 

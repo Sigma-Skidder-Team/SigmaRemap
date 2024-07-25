@@ -47,7 +47,7 @@ public enum class_3823 implements class_9433 {
    ),
    field_18695(class_4783.field_23212, class_4783.field_23301);
 
-   public static final class_240[] field_18694 = class_240.values();
+   public static final Direction[] field_18694 = Direction.values();
 
    private class_3823(class_6414... var3) {
       this(false, var3);

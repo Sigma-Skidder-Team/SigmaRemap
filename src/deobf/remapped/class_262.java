@@ -10,7 +10,7 @@ public class class_262 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      class_6486 var11 = this.field_921.field_9632.field_41768;
+      World var11 = this.field_921.field_9632.field_41768;
       class_3542.method_16488();
       class_3542.method_16437();
       class_3542.method_16484(2.0F);
@@ -35,7 +35,7 @@ public class class_262 implements class_2995 {
                float var33 = 0.0F;
                float var34 = 0.0F;
                float var35 = 0.5F;
-               if (var15.method_8308(var11, var14, class_240.field_809)) {
+               if (var15.method_8308(var11, var14, Direction.field_809)) {
                   class_8042 var36 = class_8042.method_36499();
                   class_9633 var37 = var36.method_36501();
                   var37.method_44471(5, class_7985.field_40903);
@@ -46,7 +46,7 @@ public class class_262 implements class_2995 {
                   var36.method_36500();
                }
 
-               if (var15.method_8308(var11, var14, class_240.field_800)) {
+               if (var15.method_8308(var11, var14, Direction.field_800)) {
                   class_8042 var38 = class_8042.method_36499();
                   class_9633 var43 = var38.method_36501();
                   var43.method_44471(5, class_7985.field_40903);
@@ -57,7 +57,7 @@ public class class_262 implements class_2995 {
                   var38.method_36500();
                }
 
-               if (var15.method_8308(var11, var14, class_240.field_804)) {
+               if (var15.method_8308(var11, var14, Direction.field_804)) {
                   class_8042 var39 = class_8042.method_36499();
                   class_9633 var44 = var39.method_36501();
                   var44.method_44471(5, class_7985.field_40903);
@@ -68,7 +68,7 @@ public class class_262 implements class_2995 {
                   var39.method_36500();
                }
 
-               if (var15.method_8308(var11, var14, class_240.field_818)) {
+               if (var15.method_8308(var11, var14, Direction.field_818)) {
                   class_8042 var40 = class_8042.method_36499();
                   class_9633 var45 = var40.method_36501();
                   var45.method_44471(5, class_7985.field_40903);
@@ -79,7 +79,7 @@ public class class_262 implements class_2995 {
                   var40.method_36500();
                }
 
-               if (var15.method_8308(var11, var14, class_240.field_802)) {
+               if (var15.method_8308(var11, var14, Direction.field_802)) {
                   class_8042 var41 = class_8042.method_36499();
                   class_9633 var46 = var41.method_36501();
                   var46.method_44471(5, class_7985.field_40903);
@@ -90,7 +90,7 @@ public class class_262 implements class_2995 {
                   var41.method_36500();
                }
 
-               if (var15.method_8308(var11, var14, class_240.field_817)) {
+               if (var15.method_8308(var11, var14, Direction.field_817)) {
                   class_8042 var42 = class_8042.method_36499();
                   class_9633 var47 = var42.method_36501();
                   var47.method_44471(5, class_7985.field_40903);

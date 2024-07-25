@@ -129,7 +129,7 @@ public class class_6415 extends class_4088 {
 
    private void method_29310() {
       if (!this.field_32763.method_972().field_33055) {
-         class_8145 var3 = (class_8145)this.field_32763;
+         Entity var3 = (Entity)this.field_32763;
          this.field_32763
             .method_972()
             .method_29527(var3.method_37302(), var3.method_37309(), var3.method_37156(), this.field_32763.method_976(), class_562.field_3328, 1.0F, 1.0F, false);

@@ -50,7 +50,7 @@ public class class_4372 extends class_6414 implements class_2593 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       class_1331 var4 = var1.method_21858();
-      class_6486 var5 = var1.method_21862();
+      World var5 = var1.method_21862();
       int var6 = method_20372(var5, var4);
       return this.method_29260()
          .method_10308(field_21452, Boolean.valueOf(var5.method_28258(var4).method_22005() == class_8532.field_43674))
@@ -59,14 +59,14 @@ public class class_4372 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, class_6486 var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
       if (!var2.field_33055) {
          var2.method_43367().method_14011(var3, this, 1);
       }
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (var1.<Boolean>method_10313(field_21452)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }
@@ -127,18 +127,18 @@ public class class_4372 extends class_6414 implements class_2593 {
    }
 
    public static int method_20372(class_6163 var0, class_1331 var1) {
-      class_2921 var4 = var1.method_6089().method_13368(class_240.field_802);
+      class_2921 var4 = var1.method_6089().method_13368(Direction.field_802);
       class_2522 var5 = var0.method_28262(var4);
       int var6 = 7;
       if (!var5.method_8350(class_4783.field_23348)) {
-         if (var5.method_8308(var0, var4, class_240.field_817)) {
+         if (var5.method_8308(var0, var4, Direction.field_817)) {
             return 0;
          }
       } else {
          var6 = var5.<Integer>method_10313(field_21457);
       }
 
-      for (class_240 var8 : class_9594.field_48893) {
+      for (Direction var8 : class_9594.field_48893) {
          class_2522 var9 = var0.method_28262(var4.method_13371(var1, var8));
          if (var9.method_8350(class_4783.field_23348)) {
             var6 = Math.min(var6, var9.<Integer>method_10313(field_21457) + 1);

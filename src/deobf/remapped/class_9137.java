@@ -49,7 +49,7 @@ public class class_9137 extends class_9128 {
             class_3985 var12 = (class_3985)var1.method_557();
 
             for (int var8 : var12.method_18381()) {
-               class_8145 var9 = field_46692.field_9601.method_29534(var8);
+               Entity var9 = field_46692.field_9601.method_29534(var8);
                if (var9 != null && var9 instanceof class_704) {
                   if (this.field_46733.containsKey(var9.method_37328())) {
                      this.field_46733.remove(var9.method_37328());

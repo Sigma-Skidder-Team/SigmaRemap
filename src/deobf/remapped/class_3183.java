@@ -6,22 +6,22 @@ public class class_3183 {
 
    static {
       try {
-         field_15904[class_240.field_818.ordinal()] = 1;
+         field_15904[Direction.field_818.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field_15904[class_240.field_800.ordinal()] = 2;
+         field_15904[Direction.field_800.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field_15904[class_240.field_809.ordinal()] = 3;
+         field_15904[Direction.field_809.ordinal()] = 3;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field_15904[class_240.field_804.ordinal()] = 4;
+         field_15904[Direction.field_804.ordinal()] = 4;
       } catch (NoSuchFieldError var3) {
       }
    }

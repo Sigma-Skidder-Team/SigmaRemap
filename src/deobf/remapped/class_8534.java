@@ -7,12 +7,12 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_8534 extends class_266 {
    private static final class_1013[] field_43685 = new class_1013[]{class_1013.field_5300};
    private final class_266 field_43683;
-   private final class_8881 field_43684;
+   private final GameOptions field_43684;
    private class_9521 field_43679;
    private class_1180 field_43681;
    private class_423 field_43680;
 
-   public class_8534(class_266 var1, class_8881 var2) {
+   public class_8534(class_266 var1, GameOptions var2) {
       super(new TranslationTextComponent("options.title"));
       this.field_43683 = var1;
       this.field_43684 = var2;

@@ -116,7 +116,7 @@ public class class_702 implements class_700 {
 
    @Nullable
    @Override
-   public class_704 method_25856(double var1, double var3, double var5, double var7, Predicate<class_8145> var9) {
+   public class_704 method_25856(double var1, double var3, double var5, double var7, Predicate<Entity> var9) {
       return null;
    }
 
@@ -136,7 +136,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public float method_25265(class_240 var1, boolean var2) {
+   public float method_25265(Direction var1, boolean var2) {
       return 1.0F;
    }
 
@@ -146,7 +146,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public boolean method_7512(class_1331 var1, boolean var2, class_8145 var3, int var4) {
+   public boolean method_7512(class_1331 var1, boolean var2, Entity var3, int var4) {
       class_2522 var7 = this.method_28262(var1);
       if (!var7.method_8345()) {
          if (var2) {
@@ -232,7 +232,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public boolean method_7509(class_8145 var1) {
+   public boolean method_7509(Entity var1) {
       int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
       int var5 = class_9299.method_42847(var1.method_37156() / 16.0);
       this.method_22553(var4, var5).method_27342(var1);
@@ -337,13 +337,13 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public <T extends class_8145> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> method_25869(Class<? extends T> var1, class_4092 var2, Predicate<? super T> var3) {
       return Collections.<T>emptyList();
    }
 
    @Override
-   public List<class_8145> method_25867(class_8145 var1, class_4092 var2, Predicate<? super class_8145> var3) {
-      return Collections.<class_8145>emptyList();
+   public List<Entity> method_25867(Entity var1, class_4092 var2, Predicate<? super Entity> var3) {
+      return Collections.<Entity>emptyList();
    }
 
    @Override

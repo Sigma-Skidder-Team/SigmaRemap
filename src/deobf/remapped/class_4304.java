@@ -34,9 +34,9 @@ public class class_4304 extends class_9128 {
             GL11.glLineWidth(2.0F);
             GL11.glColor4f((float)(var5.getRed() / 255), (float)(var5.getGreen() / 255), (float)(var5.getBlue() / 255), 1.0F);
             class_4714 var7 = this.method_19975(var1, var2);
-            double var8 = var7.method_21803() - field_46692.method_8587().field_31311.method_41627().field_7336;
-            double var10 = var7.method_21801() - field_46692.method_8587().field_31311.method_41627().field_7333;
-            double var12 = var7.method_21799() - field_46692.method_8587().field_31311.method_41627().field_7334;
+            double var8 = var7.method_21803() - field_46692.method_8587().camera.method_41627().field_7336;
+            double var10 = var7.method_21801() - field_46692.method_8587().camera.method_41627().field_7333;
+            double var12 = var7.method_21799() - field_46692.method_8587().camera.method_41627().field_7334;
             GL11.glTranslated(var8, var10, var12);
             float var14 = var2.field_29611 + (var2.field_29605 - var2.field_29611) * field_46692.method_8554();
             GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);

@@ -455,7 +455,7 @@ public class class_8359 extends class_8143 implements class_72 {
       }
 
       if (this.field_42811) {
-         int var12 = class_3111.method_14327().field_9657.method_20022();
+         int var12 = class_3111.method_14327().worldRenderer.method_20022();
          if (var12 != this.field_42818) {
             this.field_42809 = var5;
             this.field_42818 = var12;

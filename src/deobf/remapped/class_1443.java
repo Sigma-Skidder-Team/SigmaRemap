@@ -6,7 +6,7 @@ import java.util.Random;
 public class class_1443 extends class_6315 {
    private boolean field_7772;
 
-   public class_1443(int var1, class_9616 var2, class_240 var3) {
+   public class_1443(int var1, class_9616 var2, Direction var3) {
       super(class_2746.field_13421, var1);
       this.method_32519(var3);
       this.field_36435 = var2;
@@ -23,7 +23,7 @@ public class class_1443 extends class_6315 {
       var1.method_25934("Mob", this.field_7772);
    }
 
-   public static class_1443 method_6618(List<class_7060> var0, int var1, int var2, int var3, int var4, class_240 var5) {
+   public static class_1443 method_6618(List<class_7060> var0, int var1, int var2, int var3, int var4, Direction var5) {
       class_9616 var8 = class_9616.method_44386(var1, var2, var3, -2, 0, 0, 7, 8, 9, var5);
       return method_28781(var8) && class_7060.method_32502(var0, var8) == null ? new class_1443(var4, var8, var5) : null;
    }

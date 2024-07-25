@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.List;
 
-public class class_900 extends class_8145 {
+public class class_900 extends Entity {
    private static String[] field_4623;
    private int field_4622;
    public long field_4618;
@@ -10,7 +10,7 @@ public class class_900 extends class_8145 {
    private boolean field_4620;
    private class_9359 field_4621;
 
-   public class_900(class_6629<? extends class_900> var1, class_6486 var2) {
+   public class_900(class_6629<? extends class_900> var1, World var2) {
       super(var1, var2);
       this.field_41750 = true;
       this.field_4622 = 2;
@@ -93,10 +93,10 @@ public class class_900 extends class_8145 {
                         this.method_37309() + 6.0 + 3.0,
                         this.method_37156() + 3.0
                      ),
-                     class_8145::method_37330
+                     Entity::method_37330
                   );
 
-               for (class_8145 var8 : var6) {
+               for (Entity var8 : var6) {
                   var8.method_37384((class_6331)this.field_41768, this);
                }
 

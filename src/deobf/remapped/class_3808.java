@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 
 public abstract class class_3808<M extends class_8666<M>> extends class_4938 {
    public static final class_1201 field_18647 = new class_1201();
-   private static final class_240[] field_18640 = class_240.values();
+   private static final Direction[] field_18640 = Direction.values();
    private final class_2957 field_18642;
    private final class_5002 field_18636;
    public final LongSet field_18644 = new LongOpenHashSet();
@@ -261,7 +261,7 @@ public abstract class class_3808<M extends class_8666<M>> extends class_4938 {
          int var7 = class_6979.method_31908(class_6979.method_31929(var2));
          int var8 = class_6979.method_31908(class_6979.method_31916(var2));
 
-         for (class_240 var12 : field_18640) {
+         for (Direction var12 : field_18640) {
             long var13 = class_6979.method_31928(var2, var12);
             if (!this.field_18649.containsKey(var13) && this.method_17749(var13)) {
                for (int var15 = 0; var15 < 16; var15++) {

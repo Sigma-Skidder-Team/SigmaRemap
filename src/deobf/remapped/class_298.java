@@ -10,7 +10,7 @@ public class class_298 extends class_7637 {
    private static final Predicate<class_423> field_1082 = var0 -> var0 == class_423.field_1789 || var0 == class_423.field_1782;
    private boolean field_1083;
 
-   public class_298(class_6629<? extends class_298> var1, class_6486 var2) {
+   public class_298(class_6629<? extends class_298> var1, World var2) {
       super(var1, var2);
    }
 
@@ -98,7 +98,7 @@ public class class_298 extends class_7637 {
    }
 
    @Override
-   public boolean method_37344(class_8145 var1) {
+   public boolean method_37344(Entity var1) {
       if (super.method_37344(var1)) {
          return true;
       } else {

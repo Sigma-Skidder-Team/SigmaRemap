@@ -4,7 +4,7 @@ public class class_737 extends class_7164<class_1775, class_2210<class_1775>> {
    private static final Identifier field_4017 = new Identifier("textures/entity/strider/strider.png");
    private static final Identifier field_4016 = new Identifier("textures/entity/strider/strider_cold.png");
 
-   public class_737(class_6122 var1) {
+   public class_737(EntityRenderDispatcher var1) {
       super(var1, new class_2210<class_1775>(), 0.5F);
       this.method_29100(
          new class_4551<class_1775, class_2210<class_1775>>(this, new class_2210<class_1775>(), new Identifier("textures/entity/strider/strider_saddle.png"))

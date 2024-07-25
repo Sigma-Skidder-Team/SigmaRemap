@@ -13,7 +13,7 @@ public class class_3931 implements class_6310<class_392> {
    public class_3931() {
    }
 
-   public class_3931(class_8145 var1) {
+   public class_3931(Entity var1) {
       this.field_19108 = var1.method_37302();
       this.field_19105 = var1.method_37309();
       this.field_19107 = var1.method_37156();

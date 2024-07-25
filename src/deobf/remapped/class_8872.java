@@ -19,7 +19,7 @@ public class class_8872 extends class_6127<class_5834> {
          var5.method_5127(class_6044.field_30867);
       } else {
          var5.method_5105(class_6044.field_30867, var2.method_26429());
-         class_8145 var7 = var6.method_28372();
+         Entity var7 = var6.method_28372();
          if (var7 instanceof class_5834) {
             var5.method_5105(class_6044.field_30859, (class_5834)var7);
          }

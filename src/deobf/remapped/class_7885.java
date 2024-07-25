@@ -4,12 +4,12 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 public class class_7885 extends class_4040 {
-   private static final Predicate<class_8145> field_40350 = var0 -> var0.method_37330() && !(var0 instanceof class_7885);
+   private static final Predicate<Entity> field_40350 = var0 -> var0.method_37330() && !(var0 instanceof class_7885);
    private int field_40349;
    private int field_40351;
    private int field_40347;
 
-   public class_7885(class_6629<? extends class_7885> var1, class_6486 var2) {
+   public class_7885(class_6629<? extends class_7885> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.field_29915 = 20;
@@ -71,7 +71,7 @@ public class class_7885 extends class_4040 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       return new class_9052(this, var1);
    }
 
@@ -92,7 +92,7 @@ public class class_7885 extends class_4040 {
 
    @Nullable
    @Override
-   public class_8145 method_37259() {
+   public Entity method_37259() {
       return !this.method_37114().isEmpty() ? this.method_37114().get(0) : null;
    }
 
@@ -173,7 +173,7 @@ public class class_7885 extends class_4040 {
    }
 
    @Override
-   public boolean method_26420(class_8145 var1) {
+   public boolean method_26420(Entity var1) {
       return this.field_40351 <= 0 && this.field_40347 <= 0 ? super.method_26420(var1) : false;
    }
 
@@ -195,7 +195,7 @@ public class class_7885 extends class_4040 {
 
    private void method_35657() {
       if (this.method_37330()) {
-         for (class_8145 var4 : this.field_41768.<class_8145>method_25869(class_5834.class, this.method_37241().method_18898(4.0), field_40350)) {
+         for (Entity var4 : this.field_41768.<Entity>method_25869(class_5834.class, this.method_37241().method_18898(4.0), field_40350)) {
             if (!(var4 instanceof class_7637)) {
                var4.method_37181(class_6199.method_28345(this), 6.0F);
             }
@@ -214,7 +214,7 @@ public class class_7885 extends class_4040 {
       }
    }
 
-   private void method_35658(class_8145 var1) {
+   private void method_35658(Entity var1) {
       double var4 = var1.method_37302() - this.method_37302();
       double var6 = var1.method_37156() - this.method_37156();
       double var8 = Math.max(var4 * var4 + var6 * var6, 0.001);
@@ -248,7 +248,7 @@ public class class_7885 extends class_4040 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       this.field_40349 = 10;
       this.field_41768.method_29587(this, (byte)4);
       this.method_37155(class_463.field_2738, 1.0F, 1.0F);

@@ -241,7 +241,7 @@ public class class_2206 extends class_3232 {
       }
    }
 
-   public class_6486 method_10205() {
+   public World method_10205() {
       return this.field_10944;
    }
 
@@ -261,7 +261,7 @@ public class class_2206 extends class_3232 {
    }
 
    @Override
-   public boolean method_14824(class_8145 var1) {
+   public boolean method_14824(Entity var1) {
       long var4 = class_2034.method_9540(class_9299.method_42847(var1.method_37302()) >> 4, class_9299.method_42847(var1.method_37156()) >> 4);
       return this.method_10208(var4, class_5344::method_24353);
    }
@@ -423,19 +423,19 @@ public class class_2206 extends class_3232 {
       this.field_10934.method_4017(var1);
    }
 
-   public void method_10203(class_8145 var1) {
+   public void method_10203(Entity var1) {
       this.field_10934.method_3990(var1);
    }
 
-   public void method_10180(class_8145 var1) {
+   public void method_10180(Entity var1) {
       this.field_10934.method_4021(var1);
    }
 
-   public void method_10209(class_8145 var1, class_6310<?> var2) {
+   public void method_10209(Entity var1, class_6310<?> var2) {
       this.field_10934.method_3974(var1, var2);
    }
 
-   public void method_10200(class_8145 var1, class_6310<?> var2) {
+   public void method_10200(Entity var1, class_6310<?> var2) {
       this.field_10934.method_3973(var1, var2);
    }
 

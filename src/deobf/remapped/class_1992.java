@@ -12,10 +12,10 @@ public class class_1992 implements class_6310<class_392> {
    private boolean field_10117;
    private class_4666 field_10115;
    private class_4666 field_10109;
-   private Set<class_5621<class_6486>> field_10112;
+   private Set<class_5621<World>> field_10112;
    private class_7522 field_10119;
    private class_8760 field_10114;
-   private class_5621<class_6486> field_10118;
+   private class_5621<World> field_10118;
    private int field_10110;
    private int field_10113;
    private boolean field_10121;
@@ -32,10 +32,10 @@ public class class_1992 implements class_6310<class_392> {
       class_4666 var3,
       long var4,
       boolean var6,
-      Set<class_5621<class_6486>> var7,
+      Set<class_5621<World>> var7,
       class_7522 var8,
       class_8760 var9,
-      class_5621<class_6486> var10,
+      class_5621<World> var10,
       int var11,
       int var12,
       boolean var13,
@@ -70,12 +70,12 @@ public class class_1992 implements class_6310<class_392> {
       this.field_10112 = Sets.newHashSet();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.field_10112.add(class_5621.<class_6486>method_25497(class_8669.field_44372, var1.method_37768()));
+         this.field_10112.add(class_5621.<World>method_25497(class_8669.field_44372, var1.method_37768()));
       }
 
       this.field_10119 = var1.<class_7522>method_37771(class_7522.field_38395);
       this.field_10114 = var1.<Supplier<class_8760>>method_37771(class_8760.field_44831).get();
-      this.field_10118 = class_5621.<class_6486>method_25497(class_8669.field_44372, var1.method_37768());
+      this.field_10118 = class_5621.<World>method_25497(class_8669.field_44372, var1.method_37768());
       this.field_10120 = var1.readLong();
       this.field_10110 = var1.method_37778();
       this.field_10113 = var1.method_37778();
@@ -133,7 +133,7 @@ public class class_1992 implements class_6310<class_392> {
       return this.field_10109;
    }
 
-   public Set<class_5621<class_6486>> method_9233() {
+   public Set<class_5621<World>> method_9233() {
       return this.field_10112;
    }
 
@@ -145,7 +145,7 @@ public class class_1992 implements class_6310<class_392> {
       return this.field_10114;
    }
 
-   public class_5621<class_6486> method_9234() {
+   public class_5621<World> method_9234() {
       return this.field_10118;
    }
 

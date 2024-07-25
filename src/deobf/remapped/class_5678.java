@@ -216,21 +216,21 @@ public class class_5678 extends class_8346 implements class_372, class_3745 {
    }
 
    @Override
-   public int[] method_1832(class_240 var1) {
-      if (var1 != class_240.field_817) {
-         return var1 != class_240.field_802 ? field_28781 : field_28782;
+   public int[] method_1832(Direction var1) {
+      if (var1 != Direction.field_817) {
+         return var1 != Direction.field_802 ? field_28781 : field_28782;
       } else {
          return field_28778;
       }
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
       return this.method_31500(var1, var2);
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, class_240 var3) {
+   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
       return var1 != 3 ? true : var2.method_27960() == class_4897.field_24812;
    }
 

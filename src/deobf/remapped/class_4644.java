@@ -35,8 +35,8 @@ public class class_4644 {
 
    private List<class_9487> method_21485(int var1, String var2, class_5155 var3) {
       HashMap var6 = Maps.newHashMap();
-      var6.put(class_240.field_800, new class_7300((class_240)null, var1, var2, new class_9874(new float[]{0.0F, 0.0F, 16.0F, 16.0F}, 0)));
-      var6.put(class_240.field_818, new class_7300((class_240)null, var1, var2, new class_9874(new float[]{16.0F, 0.0F, 0.0F, 16.0F}, 0)));
+      var6.put(Direction.field_800, new class_7300((Direction)null, var1, var2, new class_9874(new float[]{0.0F, 0.0F, 16.0F, 16.0F}, 0)));
+      var6.put(Direction.field_818, new class_7300((Direction)null, var1, var2, new class_9874(new float[]{16.0F, 0.0F, 0.0F, 16.0F}, 0)));
       ArrayList var7 = Lists.newArrayList();
       var7.add(new class_9487(new class_2426(0.0F, 0.0F, 7.5F), new class_2426(16.0F, 16.0F, 8.5F), var6, (class_1868)null, true));
       var7.addAll(this.method_21486(var3, var2, var1));
@@ -114,7 +114,7 @@ public class class_4644 {
          var17 *= var20;
          var18 *= var20;
          HashMap var25 = Maps.newHashMap();
-         var25.put(var24.method_12568(), new class_7300((class_240)null, var3, var2, new class_9874(new float[]{var15, var17, var16, var18}, 0)));
+         var25.put(var24.method_12568(), new class_7300((Direction)null, var3, var2, new class_9874(new float[]{var15, var17, var16, var18}, 0)));
          switch (var24) {
             case field_13500:
                var8.add(new class_9487(new class_2426(var11, var12, 7.5F), new class_2426(var13, var12, 8.5F), var25, (class_1868)null, true));

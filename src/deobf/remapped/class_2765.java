@@ -126,8 +126,8 @@ public class class_2765 {
          (double)var5.field_48993,
          (double)var5.field_48994
       );
-      List var7 = var2.<class_8145>method_25869(class_8145.class, var6, var0x -> !(var0x instanceof class_704));
-      var7.forEach(class_8145::method_37204);
+      List var7 = var2.<Entity>method_25869(Entity.class, var6, var0x -> !(var0x instanceof class_704));
+      var7.forEach(Entity::method_37204);
    }
 
    public static class_9616 method_12589(class_1331 var0, class_1331 var1, class_6631 var2) {

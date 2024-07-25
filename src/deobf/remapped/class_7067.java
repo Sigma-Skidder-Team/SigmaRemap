@@ -2,14 +2,14 @@ package remapped;
 
 import net.minecraft.util.text.ITextComponent;
 
-public abstract class class_7067<T extends class_8145> {
-   public final class_6122 field_36493;
+public abstract class class_7067<T extends Entity> {
+   public final EntityRenderDispatcher field_36493;
    public float field_36492;
    public float field_36494 = 1.0F;
    private class_6629 field_36490 = null;
    private Identifier field_36491 = null;
 
-   public class_7067(class_6122 var1) {
+   public class_7067(EntityRenderDispatcher var1) {
       this.field_36493 = var1;
    }
 
@@ -107,7 +107,7 @@ public abstract class class_7067<T extends class_8145> {
       }
    }
 
-   public class_6122 method_32558() {
+   public EntityRenderDispatcher method_32558() {
       return this.field_36493;
    }
 

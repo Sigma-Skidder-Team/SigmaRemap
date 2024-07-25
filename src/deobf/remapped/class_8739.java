@@ -173,7 +173,7 @@ public class class_8739 extends class_4285<class_1297> {
             );
          }
 
-         for (class_240 var16 : class_240.values()) {
+         for (Direction var16 : Direction.values()) {
             var23.method_13371(var26, var16);
             if (!var3.contains(var23)) {
                class_2522 var17 = var1.method_28262(var23);
@@ -201,7 +201,7 @@ public class class_8739 extends class_4285<class_1297> {
                );
             }
 
-            for (class_240 var19 : class_240.values()) {
+            for (Direction var19 : Direction.values()) {
                var23.method_13371(var30, var19);
                if (!var27.contains(var23) && !var28.contains(var23)) {
                   class_2522 var20 = var1.method_28262(var23);

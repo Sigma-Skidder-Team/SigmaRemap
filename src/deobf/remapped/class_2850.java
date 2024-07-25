@@ -71,7 +71,7 @@ public class class_2850 extends class_9128 {
                      if (var6 && (var5 >= 0 || field_46692.field_9632.method_26617(class_2584.field_12791).method_27960() instanceof class_6201)) {
                         class_9529 var7 = new class_9529(
                            field_46692.field_9632.method_37245().method_6214(0.0, -2.0, 0.0),
-                           class_240.field_817,
+                           Direction.field_817,
                            field_46692.field_9632.method_37075().method_6104(0, -2, 0),
                            false
                         );

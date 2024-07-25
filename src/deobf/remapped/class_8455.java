@@ -48,7 +48,7 @@ public class class_8455 {
       } else {
          switch (var1) {
             case 65:
-               this.field_43225.field_9657.method_19998();
+               this.field_43225.worldRenderer.method_19998();
                this.method_38881("debug.reload_chunks.message");
                return true;
             case 66:
@@ -115,7 +115,7 @@ public class class_8455 {
                return true;
             case 76:
                MinecraftClient var6 = class_3111.method_14327();
-               var6.field_9657.field_20956 = 1;
+               var6.worldRenderer.field_20956 = 1;
                StringTextComponent var7 = new StringTextComponent(class_6956.method_31803("of.message.loadingVisibleChunks"));
                var6.field_9614.method_13991().method_18684(var7, 201435902);
                return true;
@@ -211,7 +211,7 @@ public class class_8455 {
                }
                break;
             case field_7718:
-               class_8145 var8 = ((class_5631)var5).method_25524();
+               Entity var8 = ((class_5631)var5).method_25524();
                Identifier var9 = class_8669.field_44400.method_39797(var8.method_37387());
                if (var1) {
                   if (var2) {

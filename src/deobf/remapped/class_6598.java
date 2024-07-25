@@ -38,7 +38,7 @@ public class class_6598 extends class_6414 {
    }
 
    @Override
-   public void method_29279(class_6486 var1, class_1331 var2, class_2730 var3) {
+   public void method_29279(World var1, class_1331 var2, class_2730 var3) {
       if (var1 instanceof class_6331) {
          this.method_30379((class_6331)var1, var2);
       }

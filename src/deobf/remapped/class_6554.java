@@ -20,7 +20,7 @@ public class class_6554 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       if (!this.method_29880(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 60 + var4.method_43360().nextInt(40));
       }
@@ -29,7 +29,7 @@ public class class_6554 extends class_6414 {
    }
 
    public boolean method_29880(class_6163 var1, class_1331 var2) {
-      for (class_240 var8 : class_240.values()) {
+      for (Direction var8 : Direction.values()) {
          class_4774 var9 = var1.method_28258(var2.method_6098(var8));
          if (var9.method_22007(class_6503.field_33094)) {
             return true;

@@ -13,7 +13,7 @@ public class class_2248 extends class_3521 {
    }
 
    @Override
-   public class_6486 method_16252() {
+   public World method_16252() {
       return this.field_11183.field_18364;
    }
 

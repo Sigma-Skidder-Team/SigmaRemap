@@ -14,7 +14,7 @@ public class class_756 implements class_5225 {
    }
 
    @Override
-   public class_1279 method_23913(class_240 var1, class_7914 var2, Random var3) {
+   public class_1279 method_23913(Direction var1, class_7914 var2, Random var3) {
       class_7914.method_35804(var2, true);
       return new class_9136(var1, var2, var3);
    }

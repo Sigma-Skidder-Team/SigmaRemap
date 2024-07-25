@@ -21,7 +21,7 @@ public class class_132 {
    private static final Logger field_330 = LogManager.getLogger();
    private static final Set<Identifier> field_342 = Sets.newHashSet();
    private final class_3541 field_341;
-   private final class_8881 field_334;
+   private final GameOptions field_334;
    private boolean field_329;
    private final class_3301 field_337 = new class_3301();
    private final class_9285 field_340 = this.field_337.method_15139();
@@ -38,7 +38,7 @@ public class class_132 {
    private final List<class_6483> field_345 = Lists.newArrayList();
    private final List<class_2049> field_338 = Lists.newArrayList();
 
-   public class_132(class_3541 var1, class_8881 var2, class_7832 var3) {
+   public class_132(class_3541 var1, GameOptions var2, class_7832 var3) {
       this.field_341 = var1;
       this.field_334 = var2;
       this.field_335 = new class_866(var3);
@@ -357,7 +357,7 @@ public class class_132 {
       this.field_333.put(var1, this.field_346 + var2);
    }
 
-   public void method_437(class_9071 var1) {
+   public void method_437(Camera var1) {
       if (this.field_329 && var1.method_41642()) {
          class_1343 var4 = var1.method_41627();
          class_2426 var5 = var1.method_41634();

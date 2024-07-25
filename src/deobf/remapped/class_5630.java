@@ -13,14 +13,14 @@ public class class_5630 {
    public static class_6325 field_28566 = field_28565.method_39807(class_8606.field_44089);
    public static class_6325 field_28569 = field_28565.method_39807(class_8606.field_44147);
 
-   public static void method_25517(class_6486 var0) {
+   public static void method_25517(World var0) {
       field_28565 = method_25512(var0);
       field_28568 = field_28565.method_39807(class_8606.field_44136);
       field_28566 = field_28565.method_39807(class_8606.field_44089);
       field_28569 = field_28565.method_39807(class_8606.field_44147);
    }
 
-   public static class_8669<class_6325> method_25512(class_6486 var0) {
+   public static class_8669<class_6325> method_25512(World var0) {
       return var0 == null
          ? class_6322.method_28810().<class_6325>method_28813(class_8669.field_44359)
          : var0.method_2755().<class_6325>method_28813(class_8669.field_44359);

@@ -1,16 +1,16 @@
 package remapped;
 
 public abstract class class_9506 extends class_5783 {
-   public class_9506(class_6629<? extends class_9506> var1, class_6486 var2) {
+   public class_9506(class_6629<? extends class_9506> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_9506(class_6629<? extends class_9506> var1, double var2, double var4, double var6, class_6486 var8) {
+   public class_9506(class_6629<? extends class_9506> var1, double var2, double var4, double var6, World var8) {
       this(var1, var8);
       this.method_37256(var2, var4, var6);
    }
 
-   public class_9506(class_6629<? extends class_9506> var1, class_5834 var2, class_6486 var3) {
+   public class_9506(class_6629<? extends class_9506> var1, class_5834 var2, World var3) {
       this(var1, var2.method_37302(), var2.method_37388() - 0.1F, var2.method_37156(), var3);
       this.method_26159(var2);
    }

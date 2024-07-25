@@ -16,14 +16,14 @@ public class class_3643 implements class_2565 {
    }
 
    @Override
-   public class_7907 method_11645(class_3581 var1) {
+   public class_7907 method_11645(RenderLayer var1) {
       if (!var1.method_16709()) {
          class_7907 var8 = this.field_17768.method_11645(var1);
          Optional var5 = var1.method_16772();
          if (!var5.isPresent()) {
             return var8;
          } else {
-            class_7907 var6 = this.field_17773.method_11645((class_3581)var5.get());
+            class_7907 var6 = this.field_17773.method_11645((RenderLayer)var5.get());
             class_7873 var7 = new class_7873(var6, this.field_17772, this.field_17770, this.field_17767, this.field_17771, null);
             return class_2764.method_12575(var7, var8);
          }

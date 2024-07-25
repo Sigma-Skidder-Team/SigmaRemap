@@ -57,7 +57,7 @@ public final class class_6098 {
    private final class_2451 field_31210;
    private class_5734 field_31204;
    private boolean field_31214;
-   private class_8145 field_31207;
+   private Entity field_31207;
    private class_9115 field_31211;
    private boolean field_31213;
    private class_9115 field_31212;
@@ -152,11 +152,11 @@ public final class class_6098 {
       return this.method_27960().method_11235(this, var1);
    }
 
-   public class_954<class_6098> method_28006(class_6486 var1, class_704 var2, class_2584 var3) {
+   public class_954<class_6098> method_28006(World var1, class_704 var2, class_2584 var3) {
       return this.method_27960().method_11231(var1, var2, var3);
    }
 
-   public class_6098 method_27971(class_6486 var1, class_5834 var2) {
+   public class_6098 method_27971(World var1, class_5834 var2) {
       return this.method_27960().method_11242(this, var1, var2);
    }
 
@@ -257,7 +257,7 @@ public final class class_6098 {
       }
    }
 
-   public void method_27987(class_6486 var1, class_2522 var2, class_1331 var3, class_704 var4) {
+   public void method_27987(World var1, class_2522 var2, class_1331 var3, class_704 var4) {
       class_2451 var7 = this.method_27960();
       if (var7.method_11209(this, var1, var2, var3, var4)) {
          var4.method_3211(class_6234.field_31907.method_43790(var7));
@@ -347,7 +347,7 @@ public final class class_6098 {
       return this.field_31206 + " " + this.method_27960();
    }
 
-   public void method_28007(class_6486 var1, class_8145 var2, int var3, boolean var4) {
+   public void method_28007(World var1, Entity var2, int var3, boolean var4) {
       if (this.field_31208 > 0) {
          this.field_31208--;
       }
@@ -357,7 +357,7 @@ public final class class_6098 {
       }
    }
 
-   public void method_27964(class_6486 var1, class_704 var2, int var3) {
+   public void method_27964(World var1, class_704 var2, int var3) {
       var2.method_3212(class_6234.field_31839.method_43790(this.method_27960()), var3);
       this.method_27960().method_11236(this, var1, var2);
    }
@@ -370,7 +370,7 @@ public final class class_6098 {
       return this.method_27960().method_11233(this);
    }
 
-   public void method_27989(class_6486 var1, class_5834 var2, int var3) {
+   public void method_27989(World var1, class_5834 var2, int var3) {
       this.method_27960().method_11206(this, var1, var2, var3);
    }
 
@@ -731,7 +731,7 @@ public final class class_6098 {
       return this.field_31207 instanceof class_7451;
    }
 
-   public void method_27992(class_8145 var1) {
+   public void method_27992(Entity var1) {
       this.field_31207 = var1;
    }
 
@@ -741,7 +741,7 @@ public final class class_6098 {
    }
 
    @Nullable
-   public class_8145 method_27993() {
+   public Entity method_27993() {
       return this.field_31214 ? null : this.field_31207;
    }
 
@@ -900,7 +900,7 @@ public final class class_6098 {
       this.method_28030(-var1);
    }
 
-   public void method_28033(class_6486 var1, class_5834 var2, int var3) {
+   public void method_28033(World var1, class_5834 var2, int var3) {
       this.method_27960().method_11228(var1, var2, this, var3);
    }
 

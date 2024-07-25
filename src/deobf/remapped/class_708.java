@@ -4,7 +4,7 @@ import net.minecraft.util.text.StringTextComponent;
 
 public class class_708 extends class_4232 {
    private class_266 field_3892;
-   private class_8881 field_3894;
+   private GameOptions field_3894;
    private class_6809 field_3886 = new class_6809(this, new class_8927());
    private String field_3887 = null;
    private String field_3890 = null;
@@ -13,13 +13,13 @@ public class class_708 extends class_4232 {
    public static final String field_3889 = "<empty>";
    public static final String field_3895 = "*";
 
-   public class_708(class_266 var1, class_8881 var2) {
+   public class_708(class_266 var1, GameOptions var2) {
       super(new StringTextComponent(class_6956.method_31803("of.options.shaderOptionsTitle")));
       this.field_3892 = var1;
       this.field_3894 = var2;
    }
 
-   public class_708(class_266 var1, class_8881 var2, String var3) {
+   public class_708(class_266 var1, GameOptions var2, String var3) {
       this(var1, var2);
       this.field_3887 = var3;
       if (var3 != null) {

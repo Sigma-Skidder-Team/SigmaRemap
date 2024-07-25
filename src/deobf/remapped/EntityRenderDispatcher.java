@@ -4,24 +4,24 @@ import com.google.common.collect.Maps;
 import java.util.Collections;
 import java.util.Map;
 
-public class class_6122 {
-   private static final class_3581 field_31310 = class_3581.method_16740(new Identifier("textures/misc/shadow.png"));
-   private final Map<class_6629<?>, class_7067<?>> field_31308 = Maps.newHashMap();
-   private final Map<String, class_6670> field_31301 = Maps.newHashMap();
-   private final class_6670 field_31307;
-   private final TextRenderer field_31302;
-   public final TextureManager field_31309;
-   private class_6486 field_31314;
-   public class_9071 field_31311;
-   private class_5422 field_31312;
-   public class_8145 field_31313;
-   public final class_8881 field_31304;
+public class EntityRenderDispatcher {
+   private static final RenderLayer SHADOW_LAYER = RenderLayer.getEntityShadow(new Identifier("textures/misc/shadow.png"));
+   private final Map<class_6629<?>, class_7067<?>> renderers = Maps.newHashMap();
+   private final Map<String, class_6670> modelRenderers = Maps.newHashMap();
+   private final class_6670 playerRenderer;
+   private final TextRenderer textRenderer;
+   public final TextureManager textureManager;
+   private World world;
+   public Camera camera;
+   private Quaternion rotation;
+   public Entity targetEntity;
+   public final GameOptions gameOptions;
    private boolean field_31303 = true;
    private boolean field_31305;
    public class_7067 field_31300 = null;
 
-   public <E extends class_8145> int method_28120(E var1, float var2) {
-      int var5 = this.<class_8145>method_28131(var1).method_32554(var1, var2);
+   public <E extends Entity> int method_28120(E var1, float var2) {
+      int var5 = this.<Entity>method_28131(var1).method_32554(var1, var2);
       if (class_3111.method_14326()) {
          var5 = class_8421.method_38766(var1, var5);
       }
@@ -29,8 +29,8 @@ public class class_6122 {
       return var5;
    }
 
-   private <T extends class_8145> void method_28118(class_6629<T> var1, class_7067<? super T> var2) {
-      this.field_31308.put(var1, var2);
+   private <T extends Entity> void method_28118(class_6629<T> var1, class_7067<? super T> var2) {
+      this.renderers.put(var1, var2);
    }
 
    private void method_28138(class_8765 var1, class_550 var2) {
@@ -143,44 +143,44 @@ public class class_6122 {
       this.method_28118(class_6629.field_34233, new class_737(this));
    }
 
-   public class_6122(TextureManager var1, class_8765 var2, class_550 var3, TextRenderer var4, class_8881 var5) {
-      this.field_31309 = var1;
-      this.field_31302 = var4;
-      this.field_31304 = var5;
+   public EntityRenderDispatcher(TextureManager var1, class_8765 var2, class_550 var3, TextRenderer var4, GameOptions var5) {
+      this.textureManager = var1;
+      this.textRenderer = var4;
+      this.gameOptions = var5;
       this.method_28138(var2, var3);
-      this.field_31307 = new class_6670(this);
-      this.field_31301.put("default", this.field_31307);
-      this.field_31301.put("slim", new class_6670(this, true));
-      class_3060.method_13967(this.field_31301);
+      this.playerRenderer = new class_6670(this);
+      this.modelRenderers.put("default", this.playerRenderer);
+      this.modelRenderers.put("slim", new class_6670(this, true));
+      class_3060.method_13967(this.modelRenderers);
    }
 
    public void method_28126() {
       for (class_6629 var4 : class_8669.field_44400) {
-         if (var4 != class_6629.field_34300 && !this.field_31308.containsKey(var4)) {
+         if (var4 != class_6629.field_34300 && !this.renderers.containsKey(var4)) {
             throw new IllegalStateException("No renderer registered for " + class_8669.field_44400.method_39797(var4));
          }
       }
    }
 
-   public <T extends class_8145> class_7067<? super T> method_28131(T var1) {
+   public <T extends Entity> class_7067<? super T> method_28131(T var1) {
       if (!(var1 instanceof class_9716)) {
-         return (class_7067<? super T>)this.field_31308.get(var1.method_37387());
+         return (class_7067<? super T>)this.renderers.get(var1.method_37387());
       } else {
          String var4 = ((class_9716)var1).method_44874();
-         class_6670 var5 = this.field_31301.get(var4);
-         return var5 == null ? this.field_31307 : var5;
+         class_6670 var5 = this.modelRenderers.get(var4);
+         return var5 == null ? this.playerRenderer : var5;
       }
    }
 
-   public void method_28116(class_6486 var1, class_9071 var2, class_8145 var3) {
-      this.field_31314 = var1;
-      this.field_31311 = var2;
-      this.field_31312 = var2.method_41644();
-      this.field_31313 = var3;
+   public void method_28116(World var1, Camera var2, Entity var3) {
+      this.world = var1;
+      this.camera = var2;
+      this.rotation = var2.method_41644();
+      this.targetEntity = var3;
    }
 
-   public void method_28123(class_5422 var1) {
-      this.field_31312 = var1;
+   public void method_28123(Quaternion var1) {
+      this.rotation = var1;
    }
 
    public void method_28136(boolean var1) {
@@ -195,17 +195,17 @@ public class class_6122 {
       return this.field_31305;
    }
 
-   public <E extends class_8145> boolean method_28135(E var1, class_2359 var2, double var3, double var5, double var7) {
-      class_7067 var11 = this.<class_8145>method_28131(var1);
+   public <E extends Entity> boolean method_28135(E var1, class_2359 var2, double var3, double var5, double var7) {
+      class_7067 var11 = this.<Entity>method_28131(var1);
       return var11.method_32548(var1, var2, var3, var5, var7);
    }
 
-   public <E extends class_8145> void method_28115(
+   public <E extends Entity> void method_28115(
       E var1, double var2, double var4, double var6, float var8, float var9, class_7966 var10, class_2565 var11, int var12
    ) {
       if (!class_597.field_3439 || !(var1 instanceof class_9399) && !(var1 instanceof class_7549) && !(var1 instanceof class_7451)) {
-         if (this.field_31311 != null) {
-            class_7067 var15 = this.<class_8145>method_28131(var1);
+         if (this.camera != null) {
+            class_7067 var15 = this.<Entity>method_28131(var1);
 
             try {
                class_1343 var16 = var15.method_32555(var1, var9);
@@ -238,16 +238,16 @@ public class class_6122 {
                }
 
                var10.method_36065(-var16.method_61(), -var16.method_60(), -var16.method_62());
-               if (this.field_31304.field_45568 && this.field_31303 && var15.field_36492 > 0.0F && !var1.method_37109()) {
+               if (this.gameOptions.field_45568 && this.field_31303 && var15.field_36492 > 0.0F && !var1.method_37109()) {
                   double var23 = this.method_28139(var1.method_37302(), var1.method_37309(), var1.method_37156());
                   float var25 = (float)((1.0 - var23 / 256.0) * (double)var15.field_36494);
                   if (var25 > 0.0F) {
-                     method_28137(var10, var11, var1, var25, var9, this.field_31314, var15.field_36492);
+                     method_28137(var10, var11, var1, var25, var9, this.world, var15.field_36492);
                   }
                }
 
                if (this.field_31305 && !var1.method_37109() && !MinecraftClient.getInstance().method_8503()) {
-                  this.method_28114(var10, var11.method_11645(class_3581.method_16744()), var1, var9);
+                  this.method_28114(var10, var11.method_11645(RenderLayer.method_16744()), var1, var9);
                }
 
                var10.method_36064();
@@ -266,7 +266,7 @@ public class class_6122 {
       }
    }
 
-   private void method_28114(class_7966 var1, class_7907 var2, class_8145 var3, float var4) {
+   private void method_28114(class_7966 var1, class_7907 var2, Entity var3, float var4) {
       if (!class_6588.field_33945) {
          float var7 = var3.method_37086() / 2.0F;
          this.method_28132(var1, var2, var3, 1.0F, 1.0F, 1.0F);
@@ -288,7 +288,7 @@ public class class_6122 {
 
          if (var3 instanceof class_5834) {
             float var8 = 0.01F;
-            class_4316.method_20012(
+            WorldRenderer.method_20012(
                var1,
                var2,
                (double)(-var7),
@@ -315,12 +315,12 @@ public class class_6122 {
       }
    }
 
-   private void method_28132(class_7966 var1, class_7907 var2, class_8145 var3, float var4, float var5, float var6) {
+   private void method_28132(class_7966 var1, class_7907 var2, Entity var3, float var4, float var5, float var6) {
       class_4092 var9 = var3.method_37241().method_18918(-var3.method_37302(), -var3.method_37309(), -var3.method_37156());
-      class_4316.method_20014(var1, var2, var9, var4, var5, var6, 1.0F);
+      WorldRenderer.method_20014(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
-   private void method_28133(class_7966 var1, class_2565 var2, class_8145 var3) {
+   private void method_28133(class_7966 var1, class_2565 var2, Entity var3) {
       class_5155 var6 = class_6560.field_33455.method_12947();
       class_5155 var7 = class_6560.field_33441.method_12947();
       var1.method_36063();
@@ -330,7 +330,7 @@ public class class_6122 {
       float var10 = 0.0F;
       float var11 = var3.method_37074() / var8;
       float var12 = 0.0F;
-      var1.method_36060(class_2426.field_12074.method_11074(-this.field_31311.method_41640()));
+      var1.method_36060(class_2426.field_12074.method_11074(-this.camera.method_41640()));
       var1.method_36065(0.0, 0.0, (double)(-0.3F + (float)((int)var11) * 0.02F));
       float var13 = 0.0F;
       int var14 = 0;
@@ -364,7 +364,7 @@ public class class_6122 {
       }
 
       if (var16) {
-         var15.method_35736((class_3581)null);
+         var15.method_35736((RenderLayer)null);
          class_1920.method_8797();
       }
 
@@ -381,7 +381,7 @@ public class class_6122 {
          .method_35735();
    }
 
-   private static void method_28137(class_7966 var0, class_2565 var1, class_8145 var2, float var3, float var4, class_4924 var5, float var6) {
+   private static void method_28137(class_7966 var0, class_2565 var1, Entity var2, float var3, float var4, class_4924 var5, float var6) {
       if (!class_3111.method_14424() || !class_6588.field_33671) {
          float var9 = var6;
          if (var2 instanceof class_5886) {
@@ -401,7 +401,7 @@ public class class_6122 {
          int var20 = class_9299.method_42847(var14 - (double)var9);
          int var21 = class_9299.method_42847(var14 + (double)var9);
          class_6279 var22 = var0.method_36058();
-         class_7907 var23 = var1.method_11645(field_31310);
+         class_7907 var23 = var1.method_11645(SHADOW_LAYER);
 
          for (class_1331 var26 : class_1331.method_6076(new class_1331(var16, var18, var20), new class_1331(var17, var19, var21))) {
             method_28124(var22, var23, var5, var26, var10, var12, var14, var9, var3);
@@ -457,34 +457,34 @@ public class class_6122 {
          .method_35735();
    }
 
-   public void method_28140(class_6486 var1) {
-      this.field_31314 = var1;
+   public void method_28140(World var1) {
+      this.world = var1;
       if (var1 == null) {
-         this.field_31311 = null;
+         this.camera = null;
       }
    }
 
-   public double method_28129(class_8145 var1) {
-      return this.field_31311.method_41627().method_6204(var1.method_37245());
+   public double method_28129(Entity var1) {
+      return this.camera.method_41627().method_6204(var1.method_37245());
    }
 
    public double method_28139(double var1, double var3, double var5) {
-      return this.field_31311.method_41627().method_6203(var1, var3, var5);
+      return this.camera.method_41627().method_6203(var1, var3, var5);
    }
 
-   public class_5422 method_28121() {
-      return this.field_31312;
+   public Quaternion method_28121() {
+      return this.rotation;
    }
 
    public TextRenderer method_28134() {
-      return this.field_31302;
+      return this.textRenderer;
    }
 
    public Map<class_6629<?>, class_7067<?>> method_28130() {
-      return this.field_31308;
+      return this.renderers;
    }
 
    public Map<String, class_6670> method_28128() {
-      return Collections.<String, class_6670>unmodifiableMap(this.field_31301);
+      return Collections.<String, class_6670>unmodifiableMap(this.modelRenderers);
    }
 }

@@ -7,8 +7,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class class_1590 extends class_5676 {
    public List<Integer> field_8306 = new CopyOnWriteArrayList<Integer>();
-   public HashMap<class_8145, Integer> field_8305 = new HashMap<class_8145, Integer>();
-   public HashMap<class_8145, ArrayList<Integer>> field_8302 = new HashMap<class_8145, ArrayList<Integer>>();
+   public HashMap<Entity, Integer> field_8305 = new HashMap<Entity, Integer>();
+   public HashMap<Entity, ArrayList<Integer>> field_8302 = new HashMap<Entity, ArrayList<Integer>>();
    public int field_8303 = 30;
 
    public class_1590() {
@@ -16,7 +16,7 @@ public class class_1590 extends class_5676 {
    }
 
    @Override
-   public boolean method_7183(class_8145 var1) {
+   public boolean method_7183(Entity var1) {
       return this.field_8305.getOrDefault(var1, 0) < this.field_8303;
    }
 
@@ -56,7 +56,7 @@ public class class_1590 extends class_5676 {
                return;
             }
 
-            class_8145 var5 = var4.method_2564(field_28769.field_9601);
+            Entity var5 = var4.method_2564(field_28769.field_9601);
             boolean var6 = class_314.method_1413(var5, 0.5F);
             short var7 = var4.field_3213;
             if (!this.field_8302.containsKey(var5)) {
@@ -114,7 +114,7 @@ public class class_1590 extends class_5676 {
       return var4;
    }
 
-   public boolean method_7141(class_8145 var1) {
+   public boolean method_7141(Entity var1) {
       if (!field_28769.field_9601.method_28262(var1.method_37075()).method_8302()) {
          class_4092 var4 = new class_4092(
             var1.field_41712.field_19941,
@@ -138,7 +138,7 @@ public class class_1590 extends class_5676 {
       }
    }
 
-   public static List<class_1331> method_7142(class_8145 var0) {
+   public static List<class_1331> method_7142(Entity var0) {
       ArrayList var3 = new ArrayList();
       byte var4 = 1;
 
@@ -153,7 +153,7 @@ public class class_1590 extends class_5676 {
    }
 
    @Override
-   public boolean method_7182(class_8145 var1) {
+   public boolean method_7182(Entity var1) {
       return this.field_8305.getOrDefault(var1, 0) >= this.field_8303;
    }
 }

@@ -16,14 +16,14 @@ public class class_4624 extends class_9128 {
                      class_6098 var14 = field_46692.field_9632.method_26617(class_2584.field_12791);
                      if (var14 != null && var14.method_27960() instanceof class_239) {
                         if (var6.<Integer>method_10313(class_6023.field_30676) != 7) {
-                           float[] var18 = class_7494.method_34077(var5, class_240.field_802);
+                           float[] var18 = class_7494.method_34077(var5, Direction.field_802);
                            var1.method_6441(var18[0]);
                            var1.method_6448(var18[1]);
                            var1.method_6445(new class_113(this, var18));
                            return;
                         }
                      } else if (var6.<Integer>method_10313(class_6023.field_30676) == 7) {
-                        float[] var17 = class_7494.method_34077(var5, class_240.field_802);
+                        float[] var17 = class_7494.method_34077(var5, Direction.field_802);
                         var1.method_6441(var17[0]);
                         var1.method_6448(var17[1]);
                         var1.method_6445(new class_6490(this, var5));
@@ -78,7 +78,7 @@ public class class_4624 extends class_9128 {
                      }
 
                      if (var16 != -1 && var13.method_8360() instanceof class_3512) {
-                        float[] var20 = class_7494.method_34077(var5, class_240.field_817);
+                        float[] var20 = class_7494.method_34077(var5, Direction.field_817);
                         var1.method_6441(var20[0]);
                         var1.method_6448(var20[1]);
                         var1.method_6445(new class_2146(this, var16, var20));

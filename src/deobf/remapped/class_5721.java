@@ -66,7 +66,7 @@ public class class_5721 {
    private class_5024 method_25880(class_5024 var1, int var2, boolean var3) {
       int[] var6 = var1.method_23155();
       int var7 = var1.method_23160();
-      class_240 var8 = var1.method_23150();
+      Direction var8 = var1.method_23150();
       class_5155 var9 = var1.method_23148();
       boolean var10 = var1.method_23168();
       if (!this.method_25876(var1)) {

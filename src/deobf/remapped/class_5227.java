@@ -51,20 +51,20 @@ public class class_5227 {
       );
    }
 
-   private static Collection<String> method_23920(Collection<? extends class_8145> var0) {
+   private static Collection<String> method_23920(Collection<? extends Entity> var0) {
       HashSet var3 = Sets.newHashSet();
 
-      for (class_8145 var5 : var0) {
+      for (Entity var5 : var0) {
          var3.addAll(var5.method_37293());
       }
 
       return var3;
    }
 
-   private static int method_23921(class_9155 var0, Collection<? extends class_8145> var1, String var2) throws CommandSyntaxException {
+   private static int method_23921(class_9155 var0, Collection<? extends Entity> var1, String var2) throws CommandSyntaxException {
       int var5 = 0;
 
-      for (class_8145 var7 : var1) {
+      for (Entity var7 : var1) {
          if (var7.method_37292(var2)) {
             var5++;
          }
@@ -74,7 +74,7 @@ public class class_5227 {
          if (var1.size() != 1) {
             var0.method_42196(new TranslationTextComponent("commands.tag.add.success.multiple", var2, var1.size()), true);
          } else {
-            var0.method_42196(new TranslationTextComponent("commands.tag.add.success.single", var2, ((class_8145)var1.iterator().next()).method_19839()), true);
+            var0.method_42196(new TranslationTextComponent("commands.tag.add.success.single", var2, ((Entity)var1.iterator().next()).method_19839()), true);
          }
 
          return var5;
@@ -83,10 +83,10 @@ public class class_5227 {
       }
    }
 
-   private static int method_23925(class_9155 var0, Collection<? extends class_8145> var1, String var2) throws CommandSyntaxException {
+   private static int method_23925(class_9155 var0, Collection<? extends Entity> var1, String var2) throws CommandSyntaxException {
       int var5 = 0;
 
-      for (class_8145 var7 : var1) {
+      for (Entity var7 : var1) {
          if (var7.method_37238(var2)) {
             var5++;
          }
@@ -97,7 +97,7 @@ public class class_5227 {
             var0.method_42196(new TranslationTextComponent("commands.tag.remove.success.multiple", var2, var1.size()), true);
          } else {
             var0.method_42196(
-               new TranslationTextComponent("commands.tag.remove.success.single", var2, ((class_8145)var1.iterator().next()).method_19839()), true
+               new TranslationTextComponent("commands.tag.remove.success.single", var2, ((Entity)var1.iterator().next()).method_19839()), true
             );
          }
 
@@ -107,10 +107,10 @@ public class class_5227 {
       }
    }
 
-   private static int method_23923(class_9155 var0, Collection<? extends class_8145> var1) {
+   private static int method_23923(class_9155 var0, Collection<? extends Entity> var1) {
       HashSet var4 = Sets.newHashSet();
 
-      for (class_8145 var6 : var1) {
+      for (Entity var6 : var1) {
          var4.addAll(var6.method_37293());
       }
 
@@ -124,7 +124,7 @@ public class class_5227 {
             var0.method_42196(new TranslationTextComponent("commands.tag.list.multiple.empty", var1.size()), false);
          }
       } else {
-         class_8145 var7 = (class_8145)var1.iterator().next();
+         Entity var7 = (Entity)var1.iterator().next();
          if (!var4.isEmpty()) {
             var0.method_42196(
                new TranslationTextComponent("commands.tag.list.single.success", var7.method_19839(), var4.size(), TextComponentUtils.makeGreenSortedList(var4)),

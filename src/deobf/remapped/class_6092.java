@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 public class class_6092 extends class_608 implements class_1869 {
    private static final UUID field_31175 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
    private static final class_9343 field_31180 = new class_9343(field_31175, "Covered armor bonus", 20.0, class_9342.field_47679);
-   public static final class_7821<class_240> field_31172 = class_8073.<class_240>method_36641(class_6092.class, class_2734.field_13364);
+   public static final class_7821<Direction> field_31172 = class_8073.<Direction>method_36641(class_6092.class, class_2734.field_13364);
    public static final class_7821<Optional<class_1331>> field_31171 = class_8073.<Optional<class_1331>>method_36641(class_6092.class, class_2734.field_13352);
    public static final class_7821<Byte> field_31170 = class_8073.<Byte>method_36641(class_6092.class, class_2734.field_13361);
    public static final class_7821<Byte> field_31177 = class_8073.<Byte>method_36641(class_6092.class, class_2734.field_13361);
@@ -17,7 +17,7 @@ public class class_6092 extends class_608 implements class_1869 {
    private class_1331 field_31176 = null;
    private int field_31174;
 
-   public class_6092(class_6629<? extends class_6092> var1, class_6486 var2) {
+   public class_6092(class_6629<? extends class_6092> var1, World var2) {
       super(var1, var2);
       this.field_29915 = 5;
    }
@@ -68,7 +68,7 @@ public class class_6092 extends class_608 implements class_1869 {
    @Override
    public void method_37329() {
       super.method_37329();
-      this.field_41735.method_36634(field_31172, class_240.field_802);
+      this.field_41735.method_36634(field_31172, Direction.field_802);
       this.field_41735.method_36634(field_31171, Optional.<class_1331>empty());
       this.field_41735.method_36634(field_31170, (byte)0);
       this.field_41735.method_36634(field_31177, (byte)16);
@@ -86,7 +86,7 @@ public class class_6092 extends class_608 implements class_1869 {
    @Override
    public void method_37314(class_5734 var1) {
       super.method_37314(var1);
-      this.field_41735.method_36633(field_31172, class_240.method_1033(var1.method_25950("AttachFace")));
+      this.field_41735.method_36633(field_31172, Direction.method_1033(var1.method_25950("AttachFace")));
       this.field_41735.method_36633(field_31170, var1.method_25950("Peek"));
       this.field_41735.method_36633(field_31177, var1.method_25950("Color"));
       if (!var1.method_25938("APX")) {
@@ -102,7 +102,7 @@ public class class_6092 extends class_608 implements class_1869 {
    @Override
    public void method_37376(class_5734 var1) {
       super.method_37376(var1);
-      var1.method_25921("AttachFace", (byte)this.field_41735.<class_240>method_36640(field_31172).method_1050());
+      var1.method_25921("AttachFace", (byte)this.field_41735.<Direction>method_36640(field_31172).method_1050());
       var1.method_25921("Peek", this.field_41735.<Byte>method_36640(field_31170));
       var1.method_25921("Color", this.field_41735.<Byte>method_36640(field_31177));
       class_1331 var4 = this.method_27906();
@@ -130,7 +130,7 @@ public class class_6092 extends class_608 implements class_1869 {
                   if (!var4.method_8350(class_4783.field_23336)) {
                      this.method_27920();
                   } else {
-                     class_240 var5 = var4.<class_240>method_10313(class_1166.field_16180);
+                     Direction var5 = var4.<Direction>method_10313(class_1166.field_16180);
                      if (!this.field_41768.method_22548(var3.method_6098(var5))) {
                         this.method_27920();
                      } else {
@@ -139,7 +139,7 @@ public class class_6092 extends class_608 implements class_1869 {
                      }
                   }
                } else {
-                  class_240 var19 = var4.<class_240>method_10313(class_1990.field_16180);
+                  Direction var19 = var4.<Direction>method_10313(class_1990.field_16180);
                   if (!this.field_41768.method_22548(var3.method_6098(var19))) {
                      this.method_27920();
                   } else {
@@ -149,9 +149,9 @@ public class class_6092 extends class_608 implements class_1869 {
                }
             }
 
-            class_240 var20 = this.method_27914();
+            Direction var20 = this.method_27914();
             if (!this.method_27916(var3, var20)) {
-               class_240 var6 = this.method_27907(var3);
+               Direction var6 = this.method_27907(var3);
                if (var6 == null) {
                   this.method_27920();
                } else {
@@ -190,7 +190,7 @@ public class class_6092 extends class_608 implements class_1869 {
          this.method_37306((double)var3.method_12173() + 0.5, (double)var3.method_12165(), (double)var3.method_12185() + 0.5);
          double var7 = 0.5 - (double)class_9299.method_42818((0.5F + this.field_31178) * (float) Math.PI) * 0.5;
          double var9 = 0.5 - (double)class_9299.method_42818((0.5F + this.field_31173) * (float) Math.PI) * 0.5;
-         class_240 var11 = this.method_27914().method_1046();
+         Direction var11 = this.method_27914().method_1046();
          this.method_37094(
             new class_4092(
                   this.method_37302() - 0.5,
@@ -206,7 +206,7 @@ public class class_6092 extends class_608 implements class_1869 {
          if (var12 > 0.0) {
             List var14 = this.field_41768.method_25870(this, this.method_37241());
             if (!var14.isEmpty()) {
-               for (class_8145 var16 : var14) {
+               for (Entity var16 : var14) {
                   if (!(var16 instanceof class_6092) && !var16.field_41731) {
                      var16.method_37226(
                         class_7412.field_37841,
@@ -243,8 +243,8 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Nullable
-   public class_240 method_27907(class_1331 var1) {
-      for (class_240 var7 : class_240.values()) {
+   public Direction method_27907(class_1331 var1) {
+      for (Direction var7 : Direction.values()) {
          if (this.method_27916(var1, var7)) {
             return var7;
          }
@@ -253,7 +253,7 @@ public class class_6092 extends class_608 implements class_1869 {
       return null;
    }
 
-   private boolean method_27916(class_1331 var1, class_240 var2) {
+   private boolean method_27916(class_1331 var1, Direction var2) {
       return this.field_41768.method_29566(var1.method_6098(var2), this, var2.method_1046())
          && this.field_41768.method_6683(this, class_6392.method_29191(var1, var2.method_1046()));
    }
@@ -268,7 +268,7 @@ public class class_6092 extends class_608 implements class_1869 {
                && this.field_41768.method_22548(var5)
                && this.field_41768.method_6673().method_9813(var5)
                && this.field_41768.method_6683(this, new class_4092(var5))) {
-               class_240 var6 = this.method_27907(var5);
+               Direction var6 = this.method_27907(var5);
                if (var6 != null) {
                   this.field_41735.method_36633(field_31172, var6);
                   this.method_37155(class_463.field_2780, 1.0F, 1.0F);
@@ -322,7 +322,7 @@ public class class_6092 extends class_608 implements class_1869 {
    @Override
    public boolean method_37181(class_6199 var1, float var2) {
       if (this.method_27924()) {
-         class_8145 var5 = var1.method_28353();
+         Entity var5 = var1.method_28353();
          if (var5 instanceof class_6749) {
             return false;
          }
@@ -348,8 +348,8 @@ public class class_6092 extends class_608 implements class_1869 {
       return this.method_37330();
    }
 
-   public class_240 method_27914() {
-      return this.field_41735.<class_240>method_36640(field_31172);
+   public Direction method_27914() {
+      return this.field_41735.<Direction>method_36640(field_31172);
    }
 
    @Nullable
@@ -407,7 +407,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_37183(class_8145 var1) {
+   public void method_37183(Entity var1) {
    }
 
    @Override

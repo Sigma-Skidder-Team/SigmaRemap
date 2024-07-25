@@ -11,11 +11,11 @@ public class class_803 extends class_7807<class_803> {
       this.field_4296 = var1;
    }
 
-   public static class_803 method_3548(class_8881 var0, int var1, class_1013 var2) {
+   public static class_803 method_3548(GameOptions var0, int var1, class_1013 var2) {
       return new class_803(ImmutableList.of(var2.method_4482(var0, var1 / 2 - 155, 0, 310)));
    }
 
-   public static class_803 method_3549(class_8881 var0, int var1, class_1013 var2, class_1013 var3) {
+   public static class_803 method_3549(GameOptions var0, int var1, class_1013 var2, class_1013 var3) {
       class_7114 var6 = var2.method_4482(var0, var1 / 2 - 155, 0, 150);
       return var3 != null ? new class_803(ImmutableList.of(var6, var3.method_4482(var0, var1 / 2 - 155 + 160, 0, 150))) : new class_803(ImmutableList.of(var6));
    }

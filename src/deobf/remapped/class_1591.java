@@ -13,7 +13,7 @@ public class class_1591 extends class_2160<class_5886, class_672<class_5886>> {
       new Identifier("textures/entity/piglin/piglin_brute.png")
    );
 
-   public class_1591(class_6122 var1, boolean var2) {
+   public class_1591(EntityRenderDispatcher var1, boolean var2) {
       super(var1, method_7145(var2), 0.5F, 1.0019531F, 1.0F, 1.0019531F);
       this.method_29100(new class_3035(this, new class_2344(0.5F), new class_2344(1.02F)));
    }

@@ -18,14 +18,14 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
    public float field_11699;
 
    public class_2344(float var1) {
-      this(class_3581::method_16755, var1, 0.0F, 64, 32);
+      this(RenderLayer::method_16755, var1, 0.0F, 64, 32);
    }
 
    public class_2344(float var1, float var2, int var3, int var4) {
-      this(class_3581::method_16755, var1, var2, var3, var4);
+      this(RenderLayer::method_16755, var1, var2, var3, var4);
    }
 
-   public class_2344(Function<Identifier, class_3581> var1, float var2, float var3, int var4, int var5) {
+   public class_2344(Function<Identifier, RenderLayer> var1, float var2, float var3, int var4, int var5) {
       super(var1, true, 16.0F, 0.0F, 2.0F, 2.0F, 24.0F);
       this.field_49928 = var4;
       this.field_49927 = var5;
@@ -206,7 +206,7 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
          );
       }
 
-      if (var1 instanceof class_8145 && class_1857.field_9416.contains(var1)) {
+      if (var1 instanceof Entity && class_1857.field_9416.contains(var1)) {
          this.field_11705.field_8191 = this.field_11705.field_8191 * 0.5F - (float) (Math.PI * 3.0 / 10.0);
          this.field_11705.field_8190 = (float) (-Math.PI / 6);
       }

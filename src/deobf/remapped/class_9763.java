@@ -64,7 +64,7 @@ public class class_9763 {
    }
 
    private static Map<class_6629, class_7067> method_45054() {
-      class_6122 var2 = MinecraftClient.getInstance().method_8587();
+      EntityRenderDispatcher var2 = MinecraftClient.getInstance().method_8587();
       Map var3 = var2.method_28130();
       if (var3 != null) {
          if (field_49589 == null) {

@@ -70,7 +70,7 @@ public class class_5989 extends class_9716 {
    }
 
    @Override
-   public boolean method_37354(class_8145 var1, boolean var2) {
+   public boolean method_37354(Entity var1, boolean var2) {
       if (super.method_37354(var1, var2)) {
          if (var1 instanceof class_1080) {
             this.field_30523.method_8590().method_16345(new class_8946(this, (class_1080)var1));
@@ -113,7 +113,7 @@ public class class_5989 extends class_9716 {
          } else {
             this.field_30532.method_4813(new class_3616(this.field_41701, this.field_41755, this.field_41726));
             this.field_30532.method_4813(new class_758(this.field_29676, this.field_29673, this.field_30533.field_45284, this.field_30533.field_45289));
-            class_8145 var3 = this.method_37240();
+            Entity var3 = this.method_37240();
             if (var3 != this && var3.method_37069()) {
                this.field_30532.method_4813(new class_4148(var3));
             }
@@ -217,7 +217,7 @@ public class class_5989 extends class_9716 {
    @Override
    public boolean method_3235(boolean var1) {
       class_7500 var4 = !var1 ? class_7500.field_38266 : class_7500.field_38265;
-      this.field_30532.method_4813(new class_1586(var4, class_1331.field_7306, class_240.field_802));
+      this.field_30532.method_4813(new class_1586(var4, class_1331.field_7306, Direction.field_802));
       return this.field_3853
             .method_31497(
                this.field_3853.field_36404, var1 && !this.field_3853.method_32403().method_28022() ? this.field_3853.method_32403().method_27997() : 1
@@ -360,11 +360,11 @@ public class class_5989 extends class_9716 {
       if (this.method_27312(var7)) {
          double var8 = var1 - (double)var7.method_12173();
          double var10 = var3 - (double)var7.method_12185();
-         class_240 var12 = null;
+         Direction var12 = null;
          double var13 = Double.MAX_VALUE;
-         class_240[] var15 = new class_240[]{class_240.field_809, class_240.field_804, class_240.field_818, class_240.field_800};
+         Direction[] var15 = new Direction[]{Direction.field_809, Direction.field_804, Direction.field_818, Direction.field_800};
 
-         for (class_240 var19 : var15) {
+         for (Direction var19 : var15) {
             double var20 = var19.method_1029().method_42630(var8, 0.0, var10);
             double var22 = var19.method_1049() != class_137.field_405 ? var20 : 1.0 - var20;
             if (var22 < var13 && !this.method_27312(var7.method_6098(var19))) {
@@ -492,7 +492,7 @@ public class class_5989 extends class_9716 {
    }
 
    public boolean method_27317() {
-      class_8145 var3 = this.method_37243();
+      Entity var3 = this.method_37243();
       return this.method_37070() && var3 instanceof class_9766 && ((class_9766)var3).method_45066();
    }
 
@@ -534,12 +534,12 @@ public class class_5989 extends class_9716 {
    }
 
    @Override
-   public void method_3233(class_8145 var1) {
+   public void method_3233(Entity var1) {
       this.field_30523.field_9572.method_43051(var1, class_3090.field_15322);
    }
 
    @Override
-   public void method_3226(class_8145 var1) {
+   public void method_3226(Entity var1) {
       this.field_30523.field_9572.method_43051(var1, class_3090.field_15360);
    }
 

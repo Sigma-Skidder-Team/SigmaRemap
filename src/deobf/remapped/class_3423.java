@@ -116,7 +116,7 @@ public class class_3423 extends class_2358 {
    }
 
    private void method_15824(class_2522 var1, class_8461 var2) {
-      class_2700 var5 = var1.<class_240>method_10313(class_7574.field_38593).method_1037();
+      class_2700 var5 = var1.<Direction>method_10313(class_7574.field_38593).method_1037();
       double var6 = (double)this.field_18358.method_12173() + 0.5 + (double)var5.method_12173() / 2.0;
       double var8 = (double)this.field_18358.method_12165() + 0.5 + (double)var5.method_12165() / 2.0;
       double var10 = (double)this.field_18358.method_12185() + 0.5 + (double)var5.method_12185() / 2.0;

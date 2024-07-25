@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7483 extends class_8145 implements class_3713 {
+public class class_7483 extends Entity implements class_3713 {
    private static final class_7821<class_6098> field_38200 = class_8073.<class_6098>method_36641(class_7483.class, class_2734.field_13357);
    private double field_38206;
    private double field_38204;
@@ -8,11 +8,11 @@ public class class_7483 extends class_8145 implements class_3713 {
    private int field_38201;
    private boolean field_38202;
 
-   public class_7483(class_6629<? extends class_7483> var1, class_6486 var2) {
+   public class_7483(class_6629<? extends class_7483> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_7483(class_6486 var1, double var2, double var4, double var6) {
+   public class_7483(World var1, double var2, double var4, double var6) {
       this(class_6629.field_34323, var1);
       this.field_38201 = 0;
       this.method_37256(var2, var4, var6);

@@ -105,7 +105,7 @@ public class class_2452 {
       return this.field_12198 == class_4264.field_20668;
    }
 
-   public class_6486 method_11267() {
+   public World method_11267() {
       return this.field_12189;
    }
 
@@ -298,7 +298,7 @@ public class class_2452 {
                   this.field_12198 = class_4264.field_20666;
 
                   for (UUID var8 : this.field_12190) {
-                     class_8145 var9 = this.field_12189.method_28925(var8);
+                     Entity var9 = this.field_12189.method_28925(var8);
                      if (var9 instanceof class_5834 && !var9.method_37221()) {
                         class_5834 var10 = (class_5834)var9;
                         var10.method_26558(new class_2250(class_4054.field_19741, 48000, this.field_12202 - 1, false, false, true));
@@ -731,7 +731,7 @@ public class class_2452 {
       }
    }
 
-   public void method_11304(class_8145 var1) {
+   public void method_11304(Entity var1) {
       this.field_12190.add(var1.method_37328());
    }
 }

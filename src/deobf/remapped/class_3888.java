@@ -58,7 +58,7 @@ public class class_3888 extends class_2089 {
    public void method_17982(class_7966 var1) {
       this.field_18930.method_8562().method_16056("debug");
       class_3542.method_16438();
-      class_8145 var4 = this.field_18930.method_8516();
+      Entity var4 = this.field_18930.method_8516();
       this.field_18928 = var4.method_37201(20.0, 0.0F, false);
       this.field_18929 = var4.method_37201(20.0, 0.0F, true);
       this.method_17993(var1);
@@ -231,8 +231,8 @@ public class class_3888 extends class_2089 {
                "Minecraft " + var9 + " (" + this.field_18930.method_8559() + "/" + class_6489.method_29605() + ")",
                this.field_18930.field_9584,
                var7,
-               this.field_18930.field_9657.method_20005(),
-               this.field_18930.field_9657.method_20056(),
+               this.field_18930.worldRenderer.method_20005(),
+               this.field_18930.worldRenderer.method_20056(),
                "P: " + this.field_18930.field_9572.method_43053() + ". T: " + this.field_18930.field_9601.method_741(),
                this.field_18930.field_9601.method_29580(),
                "",
@@ -240,8 +240,8 @@ public class class_3888 extends class_2089 {
             }
          );
       } else {
-         class_8145 var10 = this.field_18930.method_8516();
-         class_240 var11 = var10.method_37365();
+         Entity var10 = this.field_18930.method_8516();
+         Direction var11 = var10.method_37365();
          String var12;
          switch (var11) {
             case field_818:
@@ -266,7 +266,7 @@ public class class_3888 extends class_2089 {
             this.method_17995();
          }
 
-         class_6486 var14 = this.method_17981();
+         World var14 = this.method_17981();
          Object var15 = var14 instanceof class_6331 ? ((class_6331)var14).method_28923() : LongSets.EMPTY_SET;
          ArrayList var16 = Lists.newArrayList(
             new String[]{
@@ -280,8 +280,8 @@ public class class_3888 extends class_2089 {
                   + ")",
                this.field_18930.field_9584,
                var7,
-               this.field_18930.field_9657.method_20005(),
-               this.field_18930.field_9657.method_20056(),
+               this.field_18930.worldRenderer.method_20005(),
+               this.field_18930.worldRenderer.method_20056(),
                "P: " + this.field_18930.field_9572.method_43053() + ". T: " + this.field_18930.field_9601.method_741(),
                this.field_18930.field_9601.method_29580()
             }
@@ -453,8 +453,8 @@ public class class_3888 extends class_2089 {
       return var3 == null ? null : var3.method_29580();
    }
 
-   private class_6486 method_17981() {
-      return (class_6486)DataFixUtils.orElse(
+   private World method_17981() {
+      return (World)DataFixUtils.orElse(
          Optional.<class_7762>ofNullable(this.field_18930.method_8515())
             .<class_6331>flatMap(var1 -> Optional.ofNullable(var1.method_1697(this.field_18930.field_9601.method_29545()))),
          this.field_18930.field_9601
@@ -579,7 +579,7 @@ public class class_3888 extends class_2089 {
             }
          }
 
-         class_8145 var26 = this.field_18930.field_9662;
+         Entity var26 = this.field_18930.field_9662;
          if (var26 != null) {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Entity");

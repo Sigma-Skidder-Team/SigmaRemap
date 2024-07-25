@@ -25,7 +25,7 @@ public class class_3078 extends class_3599 {
          class_9310 var4 = null;
          double var5 = Double.MAX_VALUE;
 
-         for (class_8145 var8 : var3) {
+         for (Entity var8 : var3) {
             class_9310 var9 = (class_9310)var8;
             if (var9.method_42974() && !var9.method_42971()) {
                double var10 = this.field_15140.method_37275(var9);
@@ -37,7 +37,7 @@ public class class_3078 extends class_3599 {
          }
 
          if (var4 == null) {
-            for (class_8145 var13 : var3) {
+            for (Entity var13 : var3) {
                class_9310 var14 = (class_9310)var13;
                if (var14.method_26920() && !var14.method_42971()) {
                   double var15 = this.field_15140.method_37275(var14);

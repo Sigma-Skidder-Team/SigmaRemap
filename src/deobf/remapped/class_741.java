@@ -17,12 +17,12 @@ public class class_741 extends class_6201 {
    public class_2522 method_28385(class_353 var1) {
       class_2522 var4 = this.field_4040.method_29302(var1);
       class_2522 var5 = null;
-      class_6486 var6 = var1.method_21862();
+      World var6 = var1.method_21862();
       class_1331 var7 = var1.method_21858();
 
-      for (class_240 var11 : var1.method_1786()) {
-         if (var11 != class_240.field_817) {
-            class_2522 var12 = var11 != class_240.field_802 ? var4 : this.method_28392().method_29302(var1);
+      for (Direction var11 : var1.method_1786()) {
+         if (var11 != Direction.field_817) {
+            class_2522 var12 = var11 != Direction.field_802 ? var4 : this.method_28392().method_29302(var1);
             if (var12 != null && var12.method_8309(var6, var7)) {
                var5 = var12;
                break;

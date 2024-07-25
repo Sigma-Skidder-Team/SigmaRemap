@@ -11,7 +11,7 @@ public class class_7072 extends class_9128 {
    @class_9148
    public void method_32570(class_3368 var1) {
       if (this.method_42015()) {
-         for (class_8145 var5 : class_7494.method_34088(class_314.method_1435())) {
+         for (Entity var5 : class_7494.method_34088(class_314.method_1435())) {
             if (var5 != field_46692.field_9632 && !SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
                method_32571(
                   var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double) MinecraftClient.getInstance().field_9616.field_32600,
@@ -73,7 +73,7 @@ public class class_7072 extends class_9128 {
       GL11.glEnd();
    }
 
-   public static void method_32571(double var0, double var2, double var4, class_8145 var6) {
+   public static void method_32571(double var0, double var2, double var4, Entity var6) {
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);

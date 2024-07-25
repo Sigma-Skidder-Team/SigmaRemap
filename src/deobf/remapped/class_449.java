@@ -13,7 +13,7 @@ public class class_449 extends class_1829 {
    private static final class_4931 field_1873 = new class_4931().method_22607(10.0).method_22601().method_22603().method_22602();
    public static final Predicate<class_91> field_1874 = var0 -> !var0.method_258() && var0.method_37330() && var0.method_37285();
 
-   public class_449(class_6629<? extends class_449> var1, class_6486 var2) {
+   public class_449(class_6629<? extends class_449> var1, World var2) {
       super(var1, var2);
       this.field_29900 = new class_4469(this);
       this.field_29919 = new class_4323(this, 10);
@@ -115,12 +115,12 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public class_1249 method_26933(class_6486 var1) {
+   public class_1249 method_26933(World var1) {
       return new class_9811(this, var1);
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       boolean var4 = var1.method_37181(class_6199.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
       if (var4) {
          this.method_37096(this, var1);
@@ -156,7 +156,7 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public boolean method_37158(class_8145 var1) {
+   public boolean method_37158(Entity var1) {
       return true;
    }
 

@@ -21,27 +21,27 @@ public class class_6705 {
    private final class_2848 field_34615;
    private final class_2696<Runnable> field_34618;
    private final Executor field_34623;
-   private class_6486 field_34634;
-   private final class_4316 field_34619;
+   private World field_34634;
+   private final WorldRenderer field_34619;
    private class_1343 field_34617 = class_1343.field_7335;
    private int field_34624;
    private List<class_2848> field_34630 = new ArrayList<class_2848>();
-   public static final class_3581[] field_34622 = class_3581.method_16770().<class_3581>toArray(new class_3581[0]);
+   public static final RenderLayer[] field_34622 = RenderLayer.method_16770().<RenderLayer>toArray(new RenderLayer[0]);
    private static final boolean field_34629 = class_7860.field_40161.method_45472();
    private static final boolean field_34633 = class_7860.field_40075.method_3596();
    private static final boolean field_34632 = class_7860.field_40075.method_3596();
    private static final boolean field_34626 = class_7860.field_40031.method_3596();
    public static int field_34625;
 
-   public class_6705(class_6486 var1, class_4316 var2, Executor var3, boolean var4, class_2848 var5) {
+   public class_6705(World var1, WorldRenderer var2, Executor var3, boolean var4, class_2848 var5) {
       this(var1, var2, var3, var4, var5, -1);
    }
 
-   public class_6705(class_6486 var1, class_4316 var2, Executor var3, boolean var4, class_2848 var5, int var6) {
+   public class_6705(World var1, WorldRenderer var2, Executor var3, boolean var4, class_2848 var5, int var6) {
       this.field_34634 = var1;
       this.field_34619 = var2;
       int var9 = Math.max(
-         1, (int)((double)Runtime.getRuntime().maxMemory() * 0.3) / (class_3581.method_16770().stream().mapToInt(class_3581::method_16742).sum() * 4) - 1
+         1, (int)((double)Runtime.getRuntime().maxMemory() * 0.3) / (RenderLayer.method_16770().stream().mapToInt(RenderLayer::method_16742).sum() * 4) - 1
       );
       int var10 = Runtime.getRuntime().availableProcessors();
       int var11 = var4 ? var10 : Math.min(var10, 4);
@@ -76,7 +76,7 @@ public class class_6705 {
       this.field_34618.method_40495(this::method_30737);
    }
 
-   public void method_30736(class_6486 var1) {
+   public void method_30736(World var1) {
       this.field_34634 = var1;
    }
 

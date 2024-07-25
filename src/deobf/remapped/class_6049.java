@@ -383,7 +383,7 @@ public class class_6049 extends class_9128 {
       return new double[]{var13, var15};
    }
 
-   public static class_1343 method_27625(class_1331 var0, class_240 var1) {
+   public static class_1343 method_27625(class_1331 var0, Direction var1) {
       double var4 = (double)var0.method_12173() + 0.5;
       double var6 = (double)var0.method_12165() + 0.5;
       double var8 = (double)var0.method_12185() + 0.5;
@@ -391,18 +391,18 @@ public class class_6049 extends class_9128 {
       var8 += (double)var1.method_1034() / 2.0;
       var6 += (double)var1.method_1054() / 2.0;
       double var10 = 0.2;
-      if (var1 != class_240.field_817 && var1 != class_240.field_802) {
+      if (var1 != Direction.field_817 && var1 != Direction.field_802) {
          var6 += method_27617(var10, -var10);
       } else {
          var4 += method_27617(var10, -var10);
          var8 += method_27617(var10, -var10);
       }
 
-      if (var1 == class_240.field_809 || var1 == class_240.field_804) {
+      if (var1 == Direction.field_809 || var1 == Direction.field_804) {
          var8 += method_27617(var10, -var10);
       }
 
-      if (var1 == class_240.field_800 || var1 == class_240.field_818) {
+      if (var1 == Direction.field_800 || var1 == Direction.field_818) {
          var4 += method_27617(var10, -var10);
       }
 

@@ -96,7 +96,7 @@ public class class_3055 extends class_9128 {
       if (this.method_42015()) {
          this.field_15013.clear();
 
-         for (class_8145 var5 : field_46692.field_9601.method_736()) {
+         for (Entity var5 : field_46692.field_9601.method_736()) {
             if (var5 instanceof class_704 && !(var5 instanceof class_5989)) {
                class_704 var6 = (class_704)var5;
                class_8328 var7 = class_9189.method_42353(var6);

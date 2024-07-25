@@ -11,7 +11,7 @@ public class class_7589 implements Runnable {
 
    @Override
    public void run() {
-      class_9529 var3 = new class_9529(class_6049.method_27625(this.field_38655, class_240.field_817), class_240.field_817, this.field_38655, false);
+      class_9529 var3 = new class_9529(class_6049.method_27625(this.field_38655, Direction.field_817), Direction.field_817, this.field_38655, false);
       int var4 = class_9543.method_44032().field_9632.field_3853.field_36404;
       class_9543.method_44029().field_9632.field_3853.field_36404 = this.field_38652;
       class_9543.method_44019().field_9647.method_42129();

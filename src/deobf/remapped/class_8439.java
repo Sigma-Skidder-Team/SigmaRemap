@@ -2,9 +2,9 @@ package remapped;
 
 public class class_8439 extends class_8859 {
    private static String[] field_43175;
-   private final class_8881 field_43174;
+   private final GameOptions field_43174;
 
-   public class_8439(class_8881 var1) {
+   public class_8439(GameOptions var1) {
       this.field_43174 = var1;
    }
 

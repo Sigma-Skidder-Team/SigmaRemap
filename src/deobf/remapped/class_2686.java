@@ -3,7 +3,7 @@ package remapped;
 public class class_2686 {
    private static String[] field_13161;
 
-   public static class_4092 method_12066(class_4092 var0, class_240 var1, double var2) {
+   public static class_4092 method_12066(class_4092 var0, Direction var1, double var2) {
       double var6 = var2 * (double)var1.method_1049().method_549();
       double var8 = Math.min(var6, 0.0);
       double var10 = Math.max(var6, 0.0);

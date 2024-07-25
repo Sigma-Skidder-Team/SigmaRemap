@@ -37,7 +37,7 @@ public class class_3465 extends class_6414 {
          }
 
          if (var2.method_28262(var3).method_8305(var2, var3, class_6629.field_34234)) {
-            class_8145 var7 = class_6629.field_34234
+            Entity var7 = class_6629.field_34234
                .method_30478(var2, (class_5734)null, (ITextComponent)null, (class_704)null, var3.method_6081(), class_2417.field_12033, false, false);
             if (var7 != null) {
                var7.method_37157();
@@ -47,7 +47,7 @@ public class class_3465 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, class_240 var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
       class_9249 var9 = var2.method_1029();
       class_9249 var10 = var1.<class_9249>method_10313(field_16975);
       boolean var11 = var10 != var9 && var9.method_42629();
@@ -57,14 +57,14 @@ public class class_3465 extends class_6414 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, class_6486 var2, class_1331 var3, class_8145 var4) {
+   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
       if (!var4.method_37070() && !var4.method_37151() && var4.method_37148()) {
          var4.method_37213(var3);
       }
    }
 
    @Override
-   public void method_29280(class_2522 var1, class_6486 var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
       if (var4.nextInt(100) == 0) {
          var2.method_29527(
             (double)var3.method_12173() + 0.5,

@@ -2,12 +2,12 @@ package remapped;
 
 import java.util.function.Function;
 
-public abstract class class_5272<E extends class_8145> extends class_6521<E> {
+public abstract class class_5272<E extends Entity> extends class_6521<E> {
    public class_5272() {
-      this(class_3581::method_16755);
+      this(RenderLayer::method_16755);
    }
 
-   public class_5272(Function<Identifier, class_3581> var1) {
+   public class_5272(Function<Identifier, RenderLayer> var1) {
       super(var1);
    }
 

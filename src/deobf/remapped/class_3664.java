@@ -16,7 +16,7 @@ public class class_3664 implements Consumer<Consumer<class_3139>> {
             false,
             false
          )
-         .method_15272("entered_end", class_7888.method_35667(class_6486.field_33038))
+         .method_15272("entered_end", class_7888.method_35667(World.field_33038))
          .method_15270(var1, "end/root");
       class_3139 var5 = class_3321.method_15269()
          .method_15274(var4)

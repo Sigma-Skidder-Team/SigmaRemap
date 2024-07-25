@@ -5,7 +5,7 @@ public abstract class class_7429 extends class_7637 {
    public int field_37904;
    private class_248 field_37903 = class_248.field_877;
 
-   public class_7429(class_6629<? extends class_7429> var1, class_6486 var2) {
+   public class_7429(class_6629<? extends class_7429> var1, World var2) {
       super(var1, var2);
    }
 

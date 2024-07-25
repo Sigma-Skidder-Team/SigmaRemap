@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableSet;
 
-public class class_6238<T extends class_8145> {
+public class class_6238<T extends Entity> {
    private static String[] field_31918;
    private final class_7792<T> field_31922;
    private final class_4565 field_31925;
@@ -21,12 +21,12 @@ public class class_6238<T extends class_8145> {
       this.field_31923 = var2 == class_4565.field_22239 || var2 == class_4565.field_22251;
    }
 
-   public static <T extends class_8145> class_6238<T> method_28492(class_7792<T> var0, class_4565 var1) {
+   public static <T extends Entity> class_6238<T> method_28492(class_7792<T> var0, class_4565 var1) {
       return new class_6238<T>(var0, var1);
    }
 
-   public static <T extends class_8145> class_6238<T> method_28491(class_4565 var0) {
-      return new class_6238<T>((var0x, var1) -> (class_8145)null, var0);
+   public static <T extends Entity> class_6238<T> method_28491(class_4565 var0) {
+      return new class_6238<T>((var0x, var1) -> (Entity)null, var0);
    }
 
    public class_6238<T> method_28489(float var1, float var2) {

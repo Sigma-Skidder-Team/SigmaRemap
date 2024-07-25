@@ -79,15 +79,15 @@ public class class_8136 extends class_9128 {
                }
             }
 
-            if (((class_240)var4.method_41933()).method_1029() == class_9249.field_47215) {
+            if (((Direction)var4.method_41933()).method_1029() == class_9249.field_47215) {
                var1.method_6443(
                   (double)Math.round((((class_1343)var4.method_41934()).field_7336 + 1.1921022E-8) * 10000.0) / 10000.0
-                     + (double)((class_240)var4.method_41933()).method_1041() * var6
+                     + (double)((Direction)var4.method_41933()).method_1041() * var6
                );
             } else {
                var1.method_6453(
                   (double)Math.round((((class_1343)var4.method_41934()).field_7334 + 1.1921022E-8) * 10000.0) / 10000.0
-                     + (double)((class_240)var4.method_41933()).method_1034() * var6
+                     + (double)((Direction)var4.method_41933()).method_1034() * var6
                );
             }
          }

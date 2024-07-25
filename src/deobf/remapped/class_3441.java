@@ -18,7 +18,7 @@ public class class_3441 extends class_4314 implements class_7431 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, class_6486 var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (!var2.field_33055) {
          class_3757 var9 = var2.method_28260(var3);
          if (var9 instanceof class_1100) {
@@ -38,7 +38,7 @@ public class class_3441 extends class_4314 implements class_7431 {
    }
 
    @Override
-   public void method_29257(class_6486 var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
       if (var5.method_28018()) {
          class_3757 var8 = var1.method_28260(var2);
          if (var8 instanceof class_1100) {

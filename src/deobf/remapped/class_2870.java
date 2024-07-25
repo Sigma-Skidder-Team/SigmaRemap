@@ -16,11 +16,11 @@ public class class_2870 {
 
    public static class_7373 method_13191(class_5155 var0, int var1) {
       ArrayList var4 = new ArrayList();
-      class_240[] var5 = class_240.field_803;
+      Direction[] var5 = Direction.field_803;
       HashMap var6 = new HashMap();
 
       for (int var7 = 0; var7 < var5.length; var7++) {
-         class_240 var8 = var5[var7];
+         Direction var8 = var5[var7];
          ArrayList var9 = new ArrayList();
          var9.add(method_13184(var8, var0, var1));
          var6.put(var8, var9);
@@ -32,13 +32,13 @@ public class class_2870 {
 
    public static class_7373 method_13186(class_7373 var0, class_7373 var1) {
       ArrayList var4 = new ArrayList();
-      var4.addAll(var0.method_33580((class_2522)null, (class_240)null, field_14066));
-      var4.addAll(var1.method_33580((class_2522)null, (class_240)null, field_14066));
-      class_240[] var5 = class_240.field_803;
+      var4.addAll(var0.method_33580((class_2522)null, (Direction)null, field_14066));
+      var4.addAll(var1.method_33580((class_2522)null, (Direction)null, field_14066));
+      Direction[] var5 = Direction.field_803;
       HashMap var6 = new HashMap();
 
       for (int var7 = 0; var7 < var5.length; var7++) {
-         class_240 var8 = var5[var7];
+         Direction var8 = var5[var7];
          ArrayList var9 = new ArrayList();
          var9.addAll(var0.method_33580((class_2522)null, var8, field_14066));
          var9.addAll(var1.method_33580((class_2522)null, var8, field_14066));
@@ -53,7 +53,7 @@ public class class_2870 {
       return new class_6221(var4, var6, var13, var14, true, var15, var10, var11);
    }
 
-   public static class_5024 method_13184(class_240 var0, class_5155 var1, int var2) {
+   public static class_5024 method_13184(Direction var0, class_5155 var1, int var2) {
       class_2426 var5 = new class_2426(0.0F, 0.0F, 0.0F);
       class_2426 var6 = new class_2426(16.0F, 16.0F, 16.0F);
       class_9874 var7 = new class_9874(new float[]{0.0F, 0.0F, 16.0F, 16.0F}, 0);
@@ -83,15 +83,15 @@ public class class_2870 {
             class_7373 var7 = var5.method_33943(var6);
             if (var7 != null && var7 != var5.method_33942()) {
                class_7373 var8 = class_9885.method_45535(var7);
-               class_240[] var9 = class_240.field_803;
+               Direction[] var9 = Direction.field_803;
 
                for (int var10 = 0; var10 < var9.length; var10++) {
-                  class_240 var11 = var9[var10];
+                  Direction var11 = var9[var10];
                   List var12 = var8.method_33580((class_2522)null, var11, field_14066);
                   method_13189(var12, var1, var2);
                }
 
-               List var13 = var8.method_33580((class_2522)null, (class_240)null, field_14066);
+               List var13 = var8.method_33580((class_2522)null, (Direction)null, field_14066);
                method_13189(var13, var1, var2);
                return var8;
             } else {

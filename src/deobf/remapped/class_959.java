@@ -54,13 +54,13 @@ public class class_959 {
       );
    }
 
-   private static int method_4222(class_9155 var0, Collection<? extends class_8145> var1, class_4382 var2, int var3) throws CommandSyntaxException {
+   private static int method_4222(class_9155 var0, Collection<? extends Entity> var1, class_4382 var2, int var3) throws CommandSyntaxException {
       if (var3 > var2.method_20417()) {
          throw field_4931.create(var3, var2.method_20417());
       } else {
          int var6 = 0;
 
-         for (class_8145 var8 : var1) {
+         for (Entity var8 : var1) {
             if (!(var8 instanceof class_5834)) {
                if (var1.size() == 1) {
                   throw field_4928.create(var8.method_45509().getString());
@@ -86,7 +86,7 @@ public class class_959 {
                var0.method_42196(new TranslationTextComponent("commands.enchant.success.multiple", var2.method_20423(var3), var1.size()), true);
             } else {
                var0.method_42196(
-                  new TranslationTextComponent("commands.enchant.success.single", var2.method_20423(var3), ((class_8145)var1.iterator().next()).method_19839()),
+                  new TranslationTextComponent("commands.enchant.success.single", var2.method_20423(var3), ((Entity)var1.iterator().next()).method_19839()),
                   true
                );
             }

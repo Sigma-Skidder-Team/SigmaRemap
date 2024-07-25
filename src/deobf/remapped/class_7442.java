@@ -6,16 +6,16 @@ import java.util.List;
 
 public class class_7442 {
    private static String[] field_37933;
-   private final class_6486 field_37939;
+   private final World field_37939;
    private final class_1331 field_37935;
    private final boolean field_37936;
    private final class_1331 field_37932;
-   private final class_240 field_37937;
+   private final Direction field_37937;
    private final List<class_1331> field_37934 = Lists.newArrayList();
    private final List<class_1331> field_37940 = Lists.newArrayList();
-   private final class_240 field_37938;
+   private final Direction field_37938;
 
-   public class_7442(class_6486 var1, class_1331 var2, class_240 var3, boolean var4) {
+   public class_7442(World var1, class_1331 var2, Direction var3, boolean var4) {
       this.field_37939 = var1;
       this.field_37935 = var2;
       this.field_37938 = var3;
@@ -66,7 +66,7 @@ public class class_7442 {
       }
    }
 
-   private boolean method_33861(class_1331 var1, class_240 var2) {
+   private boolean method_33861(class_1331 var1, Direction var2) {
       class_2522 var5 = this.field_37939.method_28262(var1);
       class_6414 var6 = var5.method_8360();
       if (var5.method_8345()) {
@@ -166,7 +166,7 @@ public class class_7442 {
    private boolean method_33868(class_1331 var1) {
       class_2522 var4 = this.field_37939.method_28262(var1);
 
-      for (class_240 var8 : class_240.values()) {
+      for (Direction var8 : Direction.values()) {
          if (var8.method_1029() != this.field_37937.method_1029()) {
             class_1331 var9 = var1.method_6098(var8);
             class_2522 var10 = this.field_37939.method_28262(var9);

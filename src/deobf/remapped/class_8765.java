@@ -47,15 +47,15 @@ public class class_8765 implements class_6491 {
       Random var11 = new Random();
       long var12 = 42L;
 
-      for (class_240 var17 : class_240.field_803) {
+      for (Direction var17 : Direction.field_803) {
          var11.setSeed(42L);
          this.method_40271(var5, var6, var1.method_33580((class_2522)null, var17, var11), var2, var3, var4);
       }
 
       var11.setSeed(42L);
-      this.method_40271(var5, var6, var1.method_33580((class_2522)null, (class_240)null, var11), var2, var3, var4);
+      this.method_40271(var5, var6, var1.method_33580((class_2522)null, (Direction)null, var11), var2, var3, var4);
       if (var10) {
-         var6.method_35736((class_3581)null);
+         var6.method_35736((RenderLayer)null);
          class_1920.method_8797();
       }
    }
@@ -87,7 +87,7 @@ public class class_8765 implements class_6491 {
             if (var8.method_16967()) {
                class_7860.field_39839.method_3582(this, var8, var1, var4, var5, var6, var7, var16);
             } else {
-               class_3581 var17 = class_6416.method_29332(var1, var16);
+               RenderLayer var17 = class_6416.method_29332(var1, var16);
                class_7907 var14;
                if (var1.method_27960() == class_4897.field_24830 && var1.method_27977()) {
                   var4.method_36063();
@@ -145,7 +145,7 @@ public class class_8765 implements class_6491 {
       }
    }
 
-   public static class_7907 method_40282(class_2565 var0, class_3581 var1, boolean var2, boolean var3) {
+   public static class_7907 method_40282(class_2565 var0, RenderLayer var1, boolean var2, boolean var3) {
       if (class_6588.field_33945) {
          var3 = false;
       }
@@ -156,22 +156,22 @@ public class class_8765 implements class_6491 {
 
       return !var3
          ? var0.method_11645(var1)
-         : class_2764.method_12575(var0.method_11645(!var2 ? class_3581.method_16711() : class_3581.method_16707()), var0.method_11645(var1));
+         : class_2764.method_12575(var0.method_11645(!var2 ? RenderLayer.method_16711() : RenderLayer.method_16707()), var0.method_11645(var1));
    }
 
-   public static class_7907 method_40272(class_2565 var0, class_3581 var1, class_6279 var2) {
+   public static class_7907 method_40272(class_2565 var0, RenderLayer var1, class_6279 var2) {
       return class_2764.method_12575(
-         new class_3764(var0.method_11645(class_3581.method_16716()), var2.method_28620(), var2.method_28618()), var0.method_11645(var1)
+         new class_3764(var0.method_11645(RenderLayer.method_16716()), var2.method_28620(), var2.method_28618()), var0.method_11645(var1)
       );
    }
 
-   public static class_7907 method_40277(class_2565 var0, class_3581 var1, class_6279 var2) {
+   public static class_7907 method_40277(class_2565 var0, RenderLayer var1, class_6279 var2) {
       return class_2764.method_12575(
-         new class_3764(var0.method_11645(class_3581.method_16715()), var2.method_28620(), var2.method_28618()), var0.method_11645(var1)
+         new class_3764(var0.method_11645(RenderLayer.method_16715()), var2.method_28620(), var2.method_28618()), var0.method_11645(var1)
       );
    }
 
-   public static class_7907 method_40280(class_2565 var0, class_3581 var1, boolean var2, boolean var3) {
+   public static class_7907 method_40280(class_2565 var0, RenderLayer var1, boolean var2, boolean var3) {
       if (class_6588.field_33945) {
          var3 = false;
       }
@@ -184,12 +184,12 @@ public class class_8765 implements class_6491 {
          return var0.method_11645(var1);
       } else {
          return MinecraftClient.method_8497() && var1 == class_5276.method_24076()
-            ? class_2764.method_12575(var0.method_11645(class_3581.method_16739()), var0.method_11645(var1))
-            : class_2764.method_12575(var0.method_11645(!var2 ? class_3581.method_16757() : class_3581.method_16716()), var0.method_11645(var1));
+            ? class_2764.method_12575(var0.method_11645(RenderLayer.method_16739()), var0.method_11645(var1))
+            : class_2764.method_12575(var0.method_11645(!var2 ? RenderLayer.method_16757() : RenderLayer.method_16716()), var0.method_11645(var1));
       }
    }
 
-   public static class_7907 method_40275(class_2565 var0, class_3581 var1, boolean var2, boolean var3) {
+   public static class_7907 method_40275(class_2565 var0, RenderLayer var1, boolean var2, boolean var3) {
       if (class_6588.field_33945) {
          var3 = false;
       }
@@ -200,7 +200,7 @@ public class class_8765 implements class_6491 {
 
       return !var3
          ? var0.method_11645(var1)
-         : class_2764.method_12575(var0.method_11645(!var2 ? class_3581.method_16763() : class_3581.method_16715()), var0.method_11645(var1));
+         : class_2764.method_12575(var0.method_11645(!var2 ? RenderLayer.method_16763() : RenderLayer.method_16715()), var0.method_11645(var1));
    }
 
    private void method_40271(class_7966 var1, class_7907 var2, List<class_5024> var3, class_6098 var4, int var5, int var6) {
@@ -234,7 +234,7 @@ public class class_8765 implements class_6491 {
       }
    }
 
-   public class_7373 method_40278(class_6098 var1, class_6486 var2, class_5834 var3) {
+   public class_7373 method_40278(class_6098 var1, World var2, class_5834 var3) {
       class_2451 var6 = var1.method_27960();
       class_7373 var7;
       if (var6 != class_4897.field_25086) {
@@ -254,11 +254,11 @@ public class class_8765 implements class_6491 {
    }
 
    public void method_40269(class_6098 var1, class_5612 var2, int var3, int var4, class_7966 var5, class_2565 var6) {
-      this.method_40268((class_5834)null, var1, var2, false, var5, var6, (class_6486)null, var3, var4);
+      this.method_40268((class_5834)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
    public void method_40268(
-      class_5834 var1, class_6098 var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, class_6486 var7, int var8, int var9
+           class_5834 var1, class_6098 var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, World var7, int var8, int var9
    ) {
       if (!var2.method_28022()) {
          class_7373 var12 = this.method_40278(var2, var7, var1);
@@ -267,7 +267,7 @@ public class class_8765 implements class_6491 {
    }
 
    public void method_40264(class_6098 var1, int var2, int var3) {
-      this.method_40266(var1, var2, var3, this.method_40278(var1, (class_6486)null, (class_5834)null));
+      this.method_40266(var1, var2, var3, this.method_40278(var1, (World)null, (class_5834)null));
    }
 
    public void method_40266(class_6098 var1, int var2, int var3, class_7373 var4) {
@@ -322,7 +322,7 @@ public class class_8765 implements class_6491 {
          this.field_44875 += 50.0F;
 
          try {
-            this.method_40266(var2, var3, var4, this.method_40278(var2, (class_6486)null, var1));
+            this.method_40266(var2, var3, var4, this.method_40278(var2, (World)null, var1));
          } catch (Throwable var10) {
             class_159 var8 = class_159.method_643(var10, "Rendering item");
             class_6544 var9 = var8.method_639("Item being rendered");

@@ -81,7 +81,7 @@ public class class_9844 extends class_9128 {
       if (this.method_42015()) {
          if (field_46692.field_9632 != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
-            class_8145 var5 = field_46692.field_9601.method_29534(var4.method_21093());
+            Entity var5 = field_46692.field_9601.method_29534(var4.method_21093());
             if (var5 instanceof class_8612) {
                class_8612 var6 = (class_8612)var5;
                if (var6.field_44173 != null && var6.field_44173.method_37145() == field_46692.field_9632.method_37145()) {

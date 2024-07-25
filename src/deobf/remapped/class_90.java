@@ -40,7 +40,7 @@ public class class_90 {
    }
 
    public Optional<class_8623> method_242(class_1331 var1, class_9249 var2) {
-      class_240 var5 = class_240.method_1043(class_137.field_405, var2);
+      Direction var5 = Direction.method_1043(class_137.field_405, var2);
       double var6 = -1.0;
       class_1331 var8 = null;
       double var9 = -1.0;
@@ -49,7 +49,7 @@ public class class_90 {
       int var13 = this.field_172.method_43371() - 1;
       class_2921 var14 = var1.method_6089();
 
-      for (class_2921 var16 : class_1331.method_6070(var1, 16, class_240.field_804, class_240.field_800)) {
+      for (class_2921 var16 : class_1331.method_6070(var1, 16, Direction.field_804, Direction.field_800)) {
          int var17 = Math.min(var13, this.field_172.method_22562(class_3801.field_18595, var16.method_12173(), var16.method_12185()));
          boolean var18 = true;
          if (var12.method_9813(var16) && var12.method_9813(var16.method_13369(var5, 1))) {
@@ -60,7 +60,7 @@ public class class_90 {
                if (this.field_172.method_22548(var16)) {
                   int var20 = var19;
 
-                  while (var19 > 0 && this.field_172.method_22548(var16.method_13368(class_240.field_802))) {
+                  while (var19 > 0 && this.field_172.method_22548(var16.method_13368(Direction.field_802))) {
                      var19--;
                   }
 
@@ -95,7 +95,7 @@ public class class_90 {
       if (var6 == -1.0) {
          var8 = new class_1331(var1.method_12173(), class_9299.method_42829(var1.method_12165(), 70, this.field_172.method_43371() - 10), var1.method_12185())
             .method_6072();
-         class_240 var24 = var5.method_1042();
+         Direction var24 = var5.method_1042();
          if (!var12.method_9813(var8)) {
             return Optional.<class_8623>empty();
          }
@@ -134,8 +134,8 @@ public class class_90 {
       return Optional.<class_8623>of(new class_8623(var8.method_6072(), 2, 3));
    }
 
-   private boolean method_239(class_1331 var1, class_2921 var2, class_240 var3, int var4) {
-      class_240 var7 = var3.method_1042();
+   private boolean method_239(class_1331 var1, class_2921 var2, Direction var3, int var4) {
+      Direction var7 = var3.method_1042();
 
       for (int var8 = -1; var8 < 3; var8++) {
          for (int var9 = -1; var9 < 4; var9++) {

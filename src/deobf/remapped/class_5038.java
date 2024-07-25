@@ -3,7 +3,7 @@ package remapped;
 public class class_5038 extends class_7164<class_3252, class_7307<class_3252>> {
    private static final Identifier field_26063 = new Identifier("textures/entity/slime/magmacube.png");
 
-   public class_5038(class_6122 var1) {
+   public class_5038(EntityRenderDispatcher var1) {
       super(var1, new class_7307<class_3252>(), 0.25F);
    }
 

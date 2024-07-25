@@ -23,10 +23,10 @@ public class class_8421 {
    private static final class_7821<class_6098> field_43074 = (class_7821<class_6098>)class_7860.field_40217.method_7979();
    private static boolean field_43059;
 
-   public static void method_38758(class_8145 var0, class_4316 var1) {
+   public static void method_38758(Entity var0, WorldRenderer var1) {
    }
 
-   public static void method_38775(class_8145 var0, class_4316 var1) {
+   public static void method_38775(Entity var0, WorldRenderer var1) {
       synchronized (field_43070) {
          class_9396 var5 = field_43070.method_17187(var0.method_37145());
          if (var5 != null) {
@@ -35,7 +35,7 @@ public class class_8421 {
       }
    }
 
-   public static void method_38763(class_4316 var0) {
+   public static void method_38763(WorldRenderer var0) {
       long var3 = System.currentTimeMillis();
       if (var3 >= field_43062 + 50L) {
          field_43062 = var3;
@@ -129,10 +129,10 @@ public class class_8421 {
       }
    }
 
-   private static void method_38760(class_4316 var0) {
+   private static void method_38760(WorldRenderer var0) {
       class_174 var3 = var0.method_20043();
       if (var3 != null) {
-         for (class_8145 var5 : var3.method_736()) {
+         for (Entity var5 : var3.method_736()) {
             int var6 = method_38772(var5);
             if (var6 <= 0) {
                int var7 = var5.method_37145();
@@ -157,7 +157,7 @@ public class class_8421 {
       return method_38764(var4, var1);
    }
 
-   public static int method_38766(class_8145 var0, int var1) {
+   public static int method_38766(Entity var0, int var1) {
       double var4 = method_38770(var0.method_37075());
       if (var0 == class_3111.method_14327().field_9632) {
          double var6 = (double)method_38772(var0);
@@ -252,7 +252,7 @@ public class class_8421 {
       }
    }
 
-   public static int method_38772(class_8145 var0) {
+   public static int method_38772(Entity var0) {
       if (var0 == class_3111.method_14327().method_8516() && !class_3111.method_14451()) {
          return 0;
       } else {
@@ -322,7 +322,7 @@ public class class_8421 {
       }
    }
 
-   public static void method_38769(class_4316 var0) {
+   public static void method_38769(WorldRenderer var0) {
       synchronized (field_43070) {
          List var4 = field_43070.method_17191();
 

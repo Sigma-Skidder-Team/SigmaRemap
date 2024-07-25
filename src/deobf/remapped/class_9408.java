@@ -21,7 +21,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    private static final class_4376 field_48107 = class_5804.method_26295(20, 39);
    private UUID field_48109;
 
-   public class_9408(class_6629<? extends class_9408> var1, class_6486 var2) {
+   public class_9408(class_6629<? extends class_9408> var1, World var2) {
       super(var1, var2);
       this.method_41217(false);
    }
@@ -239,7 +239,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    @Override
    public boolean method_37181(class_6199 var1, float var2) {
       if (!this.method_37180(var1)) {
-         class_8145 var5 = var1.method_28372();
+         Entity var5 = var1.method_28372();
          this.method_41208(false);
          if (var5 != null && !(var5 instanceof class_704) && !(var5 instanceof class_6749)) {
             var2 = (var2 + 1.0F) / 2.0F;
@@ -252,7 +252,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public boolean method_26442(class_8145 var1) {
+   public boolean method_26442(Entity var1) {
       boolean var4 = var1.method_37181(class_6199.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
       if (var4) {
          this.method_37096(this, var1);

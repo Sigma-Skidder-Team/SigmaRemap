@@ -11,11 +11,11 @@ public class class_7451 extends class_4641 {
    private float field_37977 = 1.0F;
    private boolean field_37976;
 
-   public class_7451(class_6629<? extends class_7451> var1, class_6486 var2) {
+   public class_7451(class_6629<? extends class_7451> var1, World var2) {
       super(var1, var2);
    }
 
-   public class_7451(class_6486 var1, class_1331 var2, class_240 var3) {
+   public class_7451(World var1, class_1331 var2, Direction var3) {
       super(class_6629.field_34319, var1, var2);
       this.method_21468(var3);
    }
@@ -32,7 +32,7 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public void method_21468(class_240 var1) {
+   public void method_21468(Direction var1) {
       Validate.notNull(var1);
       this.field_22663 = var1;
       if (!var1.method_1029().method_42629()) {
@@ -159,7 +159,7 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public void method_21475(class_8145 var1) {
+   public void method_21475(Entity var1) {
       this.method_37155(class_463.field_2425, 1.0F, 1.0F);
       this.method_33908(var1, true);
    }
@@ -169,7 +169,7 @@ public class class_7451 extends class_4641 {
       this.method_37155(class_463.field_2052, 1.0F, 1.0F);
    }
 
-   private void method_33908(class_8145 var1, boolean var2) {
+   private void method_33908(Entity var1, boolean var2) {
       if (!this.field_37976) {
          class_6098 var5 = this.method_33905();
          this.method_33912(class_6098.field_31203);
@@ -206,7 +206,7 @@ public class class_7451 extends class_4641 {
          var4.method_32922(true);
       }
 
-      var1.method_27992((class_8145)null);
+      var1.method_27992((Entity)null);
    }
 
    public class_6098 method_33905() {
@@ -305,7 +305,7 @@ public class class_7451 extends class_4641 {
          }
       }
 
-      this.method_21468(class_240.method_1033(var1.method_25950("Facing")));
+      this.method_21468(Direction.method_1033(var1.method_25950("Facing")));
       this.method_37333(var1.method_25933("Invisible"));
       this.field_37976 = var1.method_25933("Fixed");
    }
