@@ -73,7 +73,7 @@ public class class_7166 extends class_2451 {
                   0.4F / (field_12172.nextFloat() * 0.4F + 0.8F)
                );
                var1.method_43365((class_704)null, 1003, var2.method_37075(), 0);
-               if (!var2.field_3876.isCreativeMode) {
+               if (!var2.playerAbilities.isCreativeMode) {
                   var6.method_27970(1);
                }
 

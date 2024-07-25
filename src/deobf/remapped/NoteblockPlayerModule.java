@@ -286,7 +286,7 @@ public class NoteblockPlayerModule extends PremiumModule {
          this.field_41248.clear();
 
          for (class_1331 var4 : class_7494.method_34110(client.playerController.method_42146())) {
-            class_2522 var5 = client.field_9601.method_28262(var4);
+            class_2522 var5 = client.theWorld.method_28262(var4);
             if (var5.method_8360() instanceof class_5128) {
                class_663 var6 = new class_663(var4);
                if (this.method_36553(var6) <= 24) {

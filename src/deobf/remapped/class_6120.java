@@ -2,9 +2,9 @@ package remapped;
 
 public class class_6120 extends class_6165 {
    private static String[] field_31279;
-   private final class_5989 field_31278;
+   private final ClientPlayerEntity field_31278;
 
-   public class_6120(class_5989 var1, class_8461 var2) {
+   public class_6120(ClientPlayerEntity var1, class_8461 var2) {
       super(var2, class_562.field_3325);
       this.field_31278 = var1;
       this.field_5768 = false;

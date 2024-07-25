@@ -43,7 +43,7 @@ public class class_1557 extends class_2451 {
          ItemStack var6 = var2.method_26617(var3);
          if (!var1.field_33055) {
             var1.method_7509(new class_8612(var1, var6, var2));
-            if (!var2.field_3876.isCreativeMode) {
+            if (!var2.playerAbilities.isCreativeMode) {
                var6.method_27970(1);
             }
          }
@@ -56,7 +56,7 @@ public class class_1557 extends class_2451 {
    public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       CompoundNBT var7 = var1.method_28021("Fireworks");
       if (var7 != null) {
-         if (var7.method_25939("Flight", 99)) {
+         if (var7.contains("Flight", 99)) {
             var3.add(
                new TranslationTextComponent("item.minecraft.firework_rocket.flight")
                   .appendString(" ")

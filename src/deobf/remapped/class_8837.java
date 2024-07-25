@@ -30,7 +30,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    public static class_3416 method_40656(ItemStack var0) {
       class_3416 var3 = null;
       CompoundNBT var4 = var0.method_28021("BlockEntityTag");
-      if (var4 != null && var4.method_25939("Patterns", 9)) {
+      if (var4 != null && var4.contains("Patterns", 9)) {
          var3 = var4.method_25927("Patterns", 10).method_15768();
       }
 
@@ -64,7 +64,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (this.field_45199 != null) {
-         var1.method_25946("Patterns", this.field_45199);
+         var1.put("Patterns", this.field_45199);
       }
 
       if (this.field_45198 != null) {
@@ -77,7 +77,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    @Override
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
-      if (var2.method_25939("CustomName", 8)) {
+      if (var2.contains("CustomName", 8)) {
          this.field_45198 = ITextComponent$class_40.func_240643_a_(var2.method_25965("CustomName"));
       }
 
@@ -135,7 +135,7 @@ public class class_8837 extends class_3757 implements class_9875 {
 
    public static void method_40661(ItemStack var0) {
       CompoundNBT var3 = var0.method_28021("BlockEntityTag");
-      if (var3 != null && var3.method_25939("Patterns", 9)) {
+      if (var3 != null && var3.contains("Patterns", 9)) {
          class_3416 var4 = var3.method_25927("Patterns", 10);
          if (!var4.isEmpty()) {
             var4.remove(var4.size() - 1);
@@ -149,7 +149,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    public ItemStack method_40662(class_2522 var1) {
       ItemStack var4 = new ItemStack(class_9815.method_45242(this.method_40659(() -> var1)));
       if (this.field_45199 != null && !this.field_45199.isEmpty()) {
-         var4.method_27978("BlockEntityTag").method_25946("Patterns", this.field_45199.method_15768());
+         var4.method_27978("BlockEntityTag").put("Patterns", this.field_45199.method_15768());
       }
 
       if (this.field_45198 != null) {

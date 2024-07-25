@@ -17,9 +17,9 @@ public class class_7454 extends class_3757 {
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       this.field_37990.method_36938(var1);
-      var1.method_25934("powered", this.method_33935());
-      var1.method_25934("conditionMet", this.method_33934());
-      var1.method_25934("auto", this.method_33926());
+      var1.putBoolean("powered", this.method_33935());
+      var1.putBoolean("conditionMet", this.method_33934());
+      var1.putBoolean("auto", this.method_33926());
       return var1;
    }
 
@@ -27,9 +27,9 @@ public class class_7454 extends class_3757 {
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_37990.method_36924(var2);
-      this.field_37993 = var2.method_25933("powered");
-      this.field_37991 = var2.method_25933("conditionMet");
-      this.method_33932(var2.method_25933("auto"));
+      this.field_37993 = var2.getBoolean("powered");
+      this.field_37991 = var2.getBoolean("conditionMet");
+      this.method_33932(var2.getBoolean("auto"));
    }
 
    @Nullable

@@ -34,7 +34,7 @@ public class class_4061 extends class_2208<class_3973> {
       if (var13.method_27960() != class_4897.field_25262) {
          var15 = null;
       } else {
-         var15 = class_2143.method_10012(var13, this.field_943.field_9601);
+         var15 = class_2143.method_10012(var13, this.field_943.theWorld);
          if (var15 != null) {
             if (var15.field_10686) {
                var14 = true;

@@ -99,11 +99,11 @@ public class class_7682 {
                      continue;
                   }
 
-                  CompoundNBT var117 = var20.method_25937("Level");
+                  CompoundNBT var117 = var20.getCompound("Level");
                   class_6744 var118 = class_2371.method_10851(var117);
                   CompoundNBT var19 = new CompoundNBT();
                   CompoundNBT var21 = new CompoundNBT();
-                  var19.method_25946("Level", var21);
+                  var19.put("Level", var21);
                   class_2371.method_10849(var0, var118, var21, var3);
 
                   try (DataOutputStream var22 = var12.method_5353(var16)) {

@@ -55,13 +55,13 @@ public abstract class class_3578 extends class_1829 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("FromBucket", this.method_16636());
+      var1.putBoolean("FromBucket", this.method_16636());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_16631(var1.method_25933("FromBucket"));
+      this.method_16631(var1.getBoolean("FromBucket"));
    }
 
    @Override

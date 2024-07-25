@@ -54,7 +54,7 @@ public class class_7597 extends class_2451 {
          var4.add(var10);
       }
 
-      var0.method_27994().method_25946("StoredEnchantments", var4);
+      var0.method_27994().put("StoredEnchantments", var4);
    }
 
    public static ItemStack method_34502(class_9693 var0) {

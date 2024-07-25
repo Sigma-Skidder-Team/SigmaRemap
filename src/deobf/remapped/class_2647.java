@@ -19,7 +19,7 @@ public class class_2647 implements class_2274 {
       this.field_13038++;
       if (this.field_13033.method_40539() == GameType.SURVIVAL) {
          if (this.field_13038 == 1) {
-            class_5989 var3 = this.field_13033.method_40530().thePlayer;
+            ClientPlayerEntity var3 = this.field_13033.method_40530().thePlayer;
             if (var3 != null) {
                if (var3.inventory.method_32418(class_391.field_1638)) {
                   this.field_13033.method_40538(class_6240.field_31934);
@@ -49,7 +49,7 @@ public class class_2647 implements class_2274 {
       }
    }
 
-   public void 樽햖콵侃值ᙽ(class_174 var1, class_1331 var2, class_2522 var3, float var4) {
+   public void 樽햖콵侃值ᙽ(ClientWorld var1, class_1331 var2, class_2522 var3, float var4) {
       boolean var7 = var3.method_8349(class_2351.field_11730);
       if (var7 && var4 > 0.0F) {
          if (this.field_13036 != null) {

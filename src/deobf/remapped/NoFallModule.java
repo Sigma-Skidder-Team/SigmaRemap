@@ -48,7 +48,7 @@ public class NoFallModule extends Module {
                   class_4092 var19 = client.thePlayer
                      .field_41712
                      .method_18918(var1.method_35234(), var1.method_35236() + var13 + var17, var1.method_35231());
-                  if (client.field_9601.method_6680(client.thePlayer, var19).count() != 0L) {
+                  if (client.theWorld.method_6680(client.thePlayer, var19).count() != 0L) {
                      var13 -= 1.0E-5;
                      var1.method_35235(var1.method_35236() + var13);
                      class_314.method_1408(var1.method_35236());

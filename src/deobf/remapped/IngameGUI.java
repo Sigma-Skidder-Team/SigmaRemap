@@ -253,7 +253,7 @@ public class IngameGUI extends AbstractGui {
          }
 
          this.overlaySubtitle.method_20416(matrixStack);
-         class_1097 var17 = this.mc.field_9601.method_29562();
+         class_1097 var17 = this.mc.theWorld.method_29562();
          class_4399 var21 = null;
          class_3903 var25 = var17.method_4848(this.mc.thePlayer.method_37206());
          if (var25 != null) {
@@ -355,7 +355,7 @@ public class IngameGUI extends AbstractGui {
                return false;
             } else {
                class_1331 var4 = ((class_9529)var1).method_43955();
-               class_174 var5 = this.mc.field_9601;
+               ClientWorld var5 = this.mc.theWorld;
                return var5.method_28262(var4).method_8317(var5, var4) != null;
             }
          } else {
@@ -607,8 +607,8 @@ public class IngameGUI extends AbstractGui {
    public void method_13971(class_7966 var1) {
       this.mc.getProfiler().startSection("demo");
       Object var4;
-      if (this.mc.field_9601.method_29546() < 120500L) {
-         var4 = new TranslationTextComponent("demo.remainingTime", class_6660.method_30575((int)(120500L - this.mc.field_9601.method_29546())));
+      if (this.mc.theWorld.method_29546() < 120500L) {
+         var4 = new TranslationTextComponent("demo.remainingTime", class_6660.method_30575((int)(120500L - this.mc.theWorld.method_29546())));
       } else {
          var4 = field_243249_e;
       }
@@ -946,7 +946,7 @@ public class IngameGUI extends AbstractGui {
 
    private void renderVignette(Entity var1) {
       if (Config.isVignetteEnabled()) {
-         class_2098 var4 = this.mc.field_9601.method_6673();
+         class_2098 var4 = this.mc.theWorld.method_6673();
          float var5 = (float)var4.method_9809(var1);
          double var6 = Math.min(var4.method_9806() * (double)var4.method_9812() * 1000.0, Math.abs(var4.method_9817() - var4.method_9824()));
          double var8 = Math.max((double)var4.method_9819(), var6);
@@ -1037,7 +1037,7 @@ public class IngameGUI extends AbstractGui {
    }
 
    public void method_13990() {
-      if (this.mc.field_9601 == null) {
+      if (this.mc.theWorld == null) {
          class_4454.method_20652();
       }
 

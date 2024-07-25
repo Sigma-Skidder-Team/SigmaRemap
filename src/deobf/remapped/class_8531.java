@@ -301,8 +301,8 @@ public class class_8531 {
    private static void method_39276(File var0) {
       if (var0.exists()) {
          try {
-            class_5734 var3 = class_5957.method_27227(var0);
-            class_5734 var4 = var3.method_25937("Data");
+            CompoundNBT var3 = class_5957.method_27227(var0);
+            CompoundNBT var4 = var3.getCompound("Data");
             var4.method_25959("Player");
             class_5957.method_27218(var3, var0);
          } catch (Exception var5) {

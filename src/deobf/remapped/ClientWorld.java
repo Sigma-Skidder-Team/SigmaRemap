@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_174 extends World {
+public class ClientWorld extends World {
    public final Int2ObjectMap<Entity> field_568 = new Int2ObjectOpenHashMap();
    private final class_1092 field_576;
    private final WorldRenderer field_567;
@@ -37,7 +37,7 @@ public class class_174 extends World {
    private class_5360 field_577;
    private boolean field_574 = false;
 
-   public class_174(
+   public ClientWorld(
       class_1092 var1,
       class_784 var2,
       class_5621<World> var3,

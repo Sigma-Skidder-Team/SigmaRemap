@@ -123,7 +123,7 @@ public class class_912 extends class_1173 implements class_6250 {
       super.method_37376(var1);
       class_2522 var4 = this.method_3913();
       if (var4 != null) {
-         var1.method_25946("carriedBlockState", class_4338.method_20187(var4));
+         var1.put("carriedBlockState", class_4338.method_20187(var4));
       }
 
       this.method_28528(var1);
@@ -133,8 +133,8 @@ public class class_912 extends class_1173 implements class_6250 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       class_2522 var4 = null;
-      if (var1.method_25939("carriedBlockState", 10)) {
-         var4 = class_4338.method_20185(var1.method_25937("carriedBlockState"));
+      if (var1.contains("carriedBlockState", 10)) {
+         var4 = class_4338.method_20185(var1.getCompound("carriedBlockState"));
          if (var4.method_8345()) {
             var4 = null;
          }

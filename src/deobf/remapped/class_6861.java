@@ -37,7 +37,7 @@ public class class_6861 implements class_4885 {
             }
          } else {
             CompoundNBT var8 = this.field_35353.method_25944();
-            var6.method_25946(this.field_35354, var8);
+            var6.put(this.field_35354, var8);
             var3.add(var8);
          }
       }
@@ -56,7 +56,7 @@ public class class_6861 implements class_4885 {
          if (this.field_35356.test(var6)) {
             class_8406 var7 = (class_8406)var2.get();
             if (!var7.equals(var6)) {
-               var5.method_25946(this.field_35354, var7);
+               var5.put(this.field_35354, var7);
                return 1;
             }
          }

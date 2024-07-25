@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class class_6776 implements class_3753 {
    private static String[] field_34966;
-   private final class_5989 field_34963;
+   private final ClientPlayerEntity field_34963;
    private final class_3541 field_34964;
    private final class_859 field_34960;
    private final Random field_34961;
@@ -16,7 +16,7 @@ public class class_6776 implements class_3753 {
    private float field_34959;
    private class_6325 field_34958;
 
-   public class_6776(class_5989 var1, class_3541 var2, class_859 var3) {
+   public class_6776(ClientPlayerEntity var1, class_3541 var2, class_859 var3) {
       this.field_34961 = var1.field_41768.method_43360();
       this.field_34963 = var1;
       this.field_34964 = var2;

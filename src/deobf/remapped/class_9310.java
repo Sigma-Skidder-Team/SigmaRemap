@@ -33,22 +33,22 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Variant", this.method_42977());
       var1.method_25931("Strength", this.method_42988());
       if (!this.field_20021.method_31498(1).method_28022()) {
-         var1.method_25946("DecorItem", this.field_20021.method_31498(1).method_27998(new class_5734()));
+         var1.put("DecorItem", this.field_20021.method_31498(1).method_27998(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.method_42983(var1.method_25947("Strength"));
       super.method_37314(var1);
       this.method_42972(var1.method_25947("Variant"));
-      if (var1.method_25939("DecorItem", 10)) {
-         this.field_20021.method_31503(1, ItemStack.method_28015(var1.method_25937("DecorItem")));
+      if (var1.contains("DecorItem", 10)) {
+         this.field_20021.method_31503(1, ItemStack.method_28015(var1.getCompound("DecorItem")));
       }
 
       this.method_19070();
@@ -195,7 +195,7 @@ public class class_9310 extends class_5521 implements class_2354 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       this.method_42980();
       int var8;
       if (!(var4 instanceof class_5404)) {

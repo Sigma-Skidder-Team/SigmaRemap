@@ -242,22 +242,22 @@ public class class_5354 extends class_3757 implements class_3745 {
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          CompoundNBT var7 = var5.method_15764(var6);
-         class_7955 var8 = new class_7955(var7.method_25937("EntityData"), var7.method_25947("TicksInHive"), var7.method_25947("MinOccupationTicks"), null);
+         class_7955 var8 = new class_7955(var7.getCompound("EntityData"), var7.method_25947("TicksInHive"), var7.method_25947("MinOccupationTicks"), null);
          this.field_27341.add(var8);
       }
 
       this.field_27340 = null;
       if (var2.method_25938("FlowerPos")) {
-         this.field_27340 = class_4338.method_20189(var2.method_25937("FlowerPos"));
+         this.field_27340 = class_4338.method_20189(var2.getCompound("FlowerPos"));
       }
    }
 
    @Override
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
-      var1.method_25946("Bees", this.method_24439());
+      var1.put("Bees", this.method_24439());
       if (this.method_24440()) {
-         var1.method_25946("FlowerPos", class_4338.method_20190(this.field_27340));
+         var1.put("FlowerPos", class_4338.method_20190(this.field_27340));
       }
 
       return var1;
@@ -269,7 +269,7 @@ public class class_5354 extends class_3757 implements class_3745 {
       for (class_7955 var5 : this.field_27341) {
          class_7955.method_35994(var5).method_25959("UUID");
          CompoundNBT var6 = new CompoundNBT();
-         var6.method_25946("EntityData", class_7955.method_35994(var5));
+         var6.put("EntityData", class_7955.method_35994(var5));
          var6.method_25931("TicksInHive", class_7955.method_35996(var5));
          var6.method_25931("MinOccupationTicks", class_7955.method_35993(var5));
          var3.add(var6);

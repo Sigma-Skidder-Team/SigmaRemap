@@ -24,7 +24,7 @@ public class class_3148 extends class_5837 {
          CompoundNBT var6 = new CompoundNBT();
          class_3037.method_13878(var6, var5);
          CompoundNBT var7 = var1.method_27994();
-         var7.method_25946("BlockEntityTag", var6.method_25925(var7.method_25937("BlockEntityTag")));
+         var7.put("BlockEntityTag", var6.method_25925(var7.getCompound("BlockEntityTag")));
          return var1;
       } else {
          return var1;

@@ -37,7 +37,7 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
    @Override
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
-      if (var2.method_25939("CustomName", 8)) {
+      if (var2.contains("CustomName", 8)) {
          this.field_40576 = ITextComponent$class_40.func_240643_a_(var2.method_25965("CustomName"));
       }
    }

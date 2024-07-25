@@ -95,9 +95,9 @@ public class Auto32KModule extends Module {
    }
 
    public boolean method_40074(class_1331 var1) {
-      class_2522 var4 = client.field_9601.method_28262(var1);
-      class_2522 var5 = client.field_9601.method_28262(var1.method_6081());
-      class_2522 var6 = client.field_9601.method_28262(var1.method_6082(2));
+      class_2522 var4 = client.theWorld.method_28262(var1);
+      class_2522 var5 = client.theWorld.method_28262(var1.method_6081());
+      class_2522 var6 = client.theWorld.method_28262(var1.method_6082(2));
       return var4.method_8302() && var5.method_8345() && var6.method_8345();
    }
 
@@ -208,7 +208,7 @@ public class Auto32KModule extends Module {
                         client.thePlayer.inventory.field_36404 = this.field_44718;
                         class_1343 var7 = class_7494.method_34098(Direction.field_817, this.field_44720);
                         class_9529 var8 = new class_9529(var7, Direction.field_817, this.field_44720, false);
-                        class_6910 var9 = client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var8);
+                        class_6910 var9 = client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var8);
                         client.thePlayer.method_26597(class_2584.field_12791);
                         if (var9 == class_6910.field_35520) {
                            this.field_44724++;
@@ -217,11 +217,11 @@ public class Auto32KModule extends Module {
                            client.thePlayer.inventory.field_36404 = this.field_44721;
                            class_1343 var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
                            class_9529 var11 = new class_9529(var10, Direction.field_817, this.field_44720.method_6081(), false);
-                           client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var11);
+                           client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var11);
                            client.thePlayer.method_26597(class_2584.field_12791);
                            client.thePlayer.field_30533.field_45289 = false;
                            client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20097));
-                           client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var11);
+                           client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var11);
                         }
                      }
                   } else {

@@ -44,20 +44,20 @@ public class class_3577 extends Entity {
    @Override
    public void method_37376(CompoundNBT var1) {
       if (this.method_16624() != null) {
-         var1.method_25946("BeamTarget", class_4338.method_20190(this.method_16624()));
+         var1.put("BeamTarget", class_4338.method_20190(this.method_16624()));
       }
 
-      var1.method_25934("ShowBottom", this.method_16626());
+      var1.putBoolean("ShowBottom", this.method_16626());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
-      if (var1.method_25939("BeamTarget", 10)) {
-         this.method_16625(class_4338.method_20189(var1.method_25937("BeamTarget")));
+      if (var1.contains("BeamTarget", 10)) {
+         this.method_16625(class_4338.method_20189(var1.getCompound("BeamTarget")));
       }
 
-      if (var1.method_25939("ShowBottom", 1)) {
-         this.method_16627(var1.method_25933("ShowBottom"));
+      if (var1.contains("ShowBottom", 1)) {
+         this.method_16627(var1.getBoolean("ShowBottom"));
       }
    }
 

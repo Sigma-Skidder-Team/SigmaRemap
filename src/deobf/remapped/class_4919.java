@@ -7,7 +7,7 @@ public class class_4919 extends class_8715 {
    private final float field_25460;
    private final float field_25457;
 
-   public class_4919(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12, class_2522 var14) {
+   public class_4919(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, class_2522 var14) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.field_25458 = var14;
       this.method_40055(MinecraftClient.getInstance().method_8505().method_3716().method_43938(var14));

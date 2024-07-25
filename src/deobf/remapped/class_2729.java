@@ -17,7 +17,7 @@ public class class_2729 {
       return this.field_13320;
    }
 
-   public boolean method_12261(ItemStack var1, class_174 var2, class_5834 var3) {
+   public boolean method_12261(ItemStack var1, ClientWorld var2, class_5834 var3) {
       class_2451 var6 = var1.method_27960();
 
       for (Entry var8 : this.field_13321.entrySet()) {

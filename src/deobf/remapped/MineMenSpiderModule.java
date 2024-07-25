@@ -18,7 +18,7 @@ public class MineMenSpiderModule extends Module {
    @EventListen
    private void method_24505(class_7767 var1) {
       double var4 = 1.0E-5;
-      boolean var6 = client.field_9601
+      boolean var6 = client.theWorld
             .method_6680(client.thePlayer, client.thePlayer.field_41712.method_18928(var4, 0.0, var4).method_18928(-var4, 0.0, -var4))
             .count()
          > 0L;
@@ -39,7 +39,7 @@ public class MineMenSpiderModule extends Module {
       if (class_314.method_1413(client.thePlayer, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
          if (client.gameOptions.keySneak.isKeyDown()
             && !this.field_27443
-            && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
             client.method_8614()
                .method_4813(
                   new class_9515(
@@ -65,7 +65,7 @@ public class MineMenSpiderModule extends Module {
       } else {
          if (this.getBooleanValueByName("Ceiling")
             && !client.gameOptions.keySneak.isKeyDown()
-            && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);
          }
@@ -87,13 +87,13 @@ public class MineMenSpiderModule extends Module {
          class_9097 var4 = class_314.method_1462(1.0E-4);
          if (this.getBooleanValueByName("Ceiling")
             && !client.thePlayer.field_41726
-            && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }
 
          double var5 = 1.0E-5;
          if (var4 != null
-            && client.field_9601
+            && client.theWorld
                   .method_6680(client.thePlayer, client.thePlayer.field_41712.method_18928(var5, 0.0, var5).method_18928(-var5, 0.0, -var5))
                   .count()
                > 0L) {

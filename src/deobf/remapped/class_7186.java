@@ -14,9 +14,9 @@ public abstract class class_7186 {
       this.field_36963 = var1;
    }
 
-   public abstract void method_32924(class_5734 var1);
+   public abstract void method_32924(CompoundNBT var1);
 
-   public abstract class_5734 method_32920(class_5734 var1);
+   public abstract CompoundNBT method_32920(CompoundNBT var1);
 
    public void method_32923() {
       this.method_32922(true);
@@ -36,8 +36,8 @@ public abstract class class_7186 {
 
    public void method_32927(File var1) {
       if (this.method_32925()) {
-         class_5734 var4 = new class_5734();
-         var4.method_25946("data", this.method_32920(new class_5734()));
+         CompoundNBT var4 = new CompoundNBT();
+         var4.put("data", this.method_32920(new CompoundNBT()));
          var4.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
 
          try {

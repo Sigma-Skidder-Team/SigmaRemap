@@ -49,7 +49,7 @@ public class class_1598 extends class_8131 {
       class_4168.field_20275
          .encodeStart(class_3504.field_17178, this.field_8321)
          .resultOrPartial(field_8320::error)
-         .ifPresent(var1x -> var1.method_25946("Properties", var1x));
+         .ifPresent(var1x -> var1.put("Properties", var1x));
    }
 
    private void method_7168(class_6561 var1, class_1331 var2) {

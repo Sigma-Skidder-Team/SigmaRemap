@@ -19,7 +19,7 @@ public class class_2576 extends class_8131 {
    public class_2576(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13423, var2);
       this.field_12751 = new Identifier(var2.method_25965("Template"));
-      this.field_12753 = var2.method_25933("isBeached");
+      this.field_12753 = var2.getBoolean("isBeached");
       this.field_12750 = class_6631.valueOf(var2.method_25965("Rot"));
       this.method_11701(var1);
    }
@@ -28,7 +28,7 @@ public class class_2576 extends class_8131 {
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25941("Template", this.field_12751.toString());
-      var1.method_25934("isBeached", this.field_12753);
+      var1.putBoolean("isBeached", this.field_12753);
       var1.method_25941("Rot", this.field_12750.name());
    }
 

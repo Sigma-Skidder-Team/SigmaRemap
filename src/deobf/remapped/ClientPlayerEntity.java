@@ -7,7 +7,7 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_5989 extends class_9716 {
+public class ClientPlayerEntity extends class_9716 {
    private static String[] field_30536;
    public final class_1092 field_30532;
    private final class_4156 field_30519;
@@ -47,7 +47,7 @@ public class class_5989 extends class_9716 {
    private int field_30534;
    private boolean field_30512 = true;
 
-   public class_5989(MinecraftClient var1, class_174 var2, class_1092 var3, class_4156 var4, class_2716 var5, boolean var6, boolean var7) {
+   public ClientPlayerEntity(MinecraftClient var1, ClientWorld var2, class_1092 var3, class_4156 var4, class_2716 var5, boolean var6, boolean var7) {
       super(var2, var3.method_4810());
       this.field_30523 = var1;
       this.field_30532 = var3;
@@ -283,7 +283,7 @@ public class class_5989 extends class_9716 {
 
    @Override
    public void method_3216() {
-      this.field_30532.method_4813(new class_9808(this.field_3876));
+      this.field_30532.method_4813(new class_9808(this.playerAbilities));
    }
 
    @Override
@@ -293,17 +293,17 @@ public class class_5989 extends class_9716 {
 
    @Override
    public boolean method_26492() {
-      return !this.field_3876.isFlying && super.method_26492();
+      return !this.playerAbilities.isFlying && super.method_26492();
    }
 
    @Override
    public boolean method_37374() {
-      return !this.field_3876.isFlying && super.method_37374();
+      return !this.playerAbilities.isFlying && super.method_37374();
    }
 
    @Override
    public boolean method_26412() {
-      return !this.field_3876.isFlying && super.method_26412();
+      return !this.playerAbilities.isFlying && super.method_26412();
    }
 
    public void method_27321() {
@@ -586,7 +586,7 @@ public class class_5989 extends class_9716 {
       boolean var3 = this.field_30533.field_45284;
       boolean var4 = this.field_30533.field_45289;
       boolean var5 = this.method_27319();
-      this.field_30517 = !this.field_3876.isFlying
+      this.field_30517 = !this.playerAbilities.isFlying
          && !this.method_37113()
          && this.method_37115(class_7653.field_38881)
          && (this.method_37252() || !this.method_26507() && !this.method_37115(class_7653.field_38885));
@@ -620,7 +620,7 @@ public class class_5989 extends class_9716 {
          this.field_30526 = 0;
       }
 
-      boolean var7 = (float)this.method_3161().method_42238() > 6.0F || this.field_3876.allowFlying;
+      boolean var7 = (float)this.method_3161().method_42238() > 6.0F || this.playerAbilities.allowFlying;
       if ((this.field_41726 || this.method_37179())
          && !var4
          && !var5
@@ -659,12 +659,12 @@ public class class_5989 extends class_9716 {
       }
 
       boolean var11 = false;
-      if (this.field_3876.allowFlying) {
+      if (this.playerAbilities.allowFlying) {
          if (!this.field_30523.playerController.method_42153()) {
             if (!var3 && this.field_30533.field_45284 && !var10) {
                if (this.field_3877 != 0) {
                   if (!this.method_37113()) {
-                     this.field_3876.isFlying = !this.field_3876.isFlying;
+                     this.playerAbilities.isFlying = !this.playerAbilities.isFlying;
                      var11 = true;
                      this.method_3216();
                      this.field_3877 = 0;
@@ -673,14 +673,14 @@ public class class_5989 extends class_9716 {
                   this.field_3877 = 7;
                }
             }
-         } else if (!this.field_3876.isFlying) {
-            this.field_3876.isFlying = true;
+         } else if (!this.playerAbilities.isFlying) {
+            this.playerAbilities.isFlying = true;
             var11 = true;
             this.method_3216();
          }
       }
 
-      if (this.field_30533.field_45284 && !var11 && !var3 && !this.field_3876.isFlying && !this.method_37070() && !this.method_26505()) {
+      if (this.field_30533.field_45284 && !var11 && !var3 && !this.playerAbilities.isFlying && !this.method_37070() && !this.method_26505()) {
          ItemStack var12 = this.method_26520(class_6943.field_35708);
          if (var12.method_27960() == class_4897.field_24503 && class_3286.method_15061(var12) && this.method_3190()) {
             this.field_30532.method_4813(new class_2317(this, class_4127.field_20093));
@@ -702,7 +702,7 @@ public class class_5989 extends class_9716 {
          this.field_30534 = class_9299.method_42829(this.field_30534 + var13, 0, 600);
       }
 
-      if (this.field_3876.isFlying && this.method_27308()) {
+      if (this.playerAbilities.isFlying && this.method_27308()) {
          int var14 = 0;
          if (this.field_30533.field_45289) {
             var14--;
@@ -713,7 +713,7 @@ public class class_5989 extends class_9716 {
          }
 
          if (var14 != 0) {
-            this.method_37215(this.method_37098().method_6214(0.0, (double)((float)var14 * this.field_3876.method_4230() * 3.0F), 0.0));
+            this.method_37215(this.method_37098().method_6214(0.0, (double)((float)var14 * this.playerAbilities.getFlySpeed() * 3.0F), 0.0));
          }
       }
 
@@ -746,8 +746,8 @@ public class class_5989 extends class_9716 {
       }
 
       super.method_26606();
-      if (this.field_41726 && this.field_3876.isFlying && !this.field_30523.playerController.method_42153()) {
-         this.field_3876.isFlying = false;
+      if (this.field_41726 && this.playerAbilities.isFlying && !this.field_30523.playerController.method_42153()) {
+         this.playerAbilities.isFlying = false;
          this.method_3216();
       }
    }

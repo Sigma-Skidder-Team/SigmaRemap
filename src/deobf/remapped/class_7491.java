@@ -10,7 +10,7 @@ public class class_7491 implements GameSession {
    private final String field_38226;
    private final UUID field_38225;
 
-   public class_7491(class_174 var1, class_5989 var2, class_1092 var3) {
+   public class_7491(ClientWorld var1, ClientPlayerEntity var2, class_1092 var3) {
       this.field_38223 = var3.method_4798().size();
       this.field_38222 = !var3.method_9091().method_23500();
       this.field_38227 = var1.method_43370().method_2098();

@@ -2,13 +2,13 @@ package remapped;
 
 public class class_4859 {
    private final Identifier field_24200;
-   private class_174 field_24199;
+   private ClientWorld field_24199;
    private class_6325 field_24201;
    private static MinecraftClient field_24202 = MinecraftClient.getInstance();
 
    private class_4859(Identifier var1) {
       this.field_24200 = var1;
-      this.field_24199 = field_24202.field_9601;
+      this.field_24199 = field_24202.theWorld;
       this.method_22351();
    }
 
@@ -21,8 +21,8 @@ public class class_4859 {
    }
 
    public class_6325 method_22350() {
-      if (this.field_24199 != field_24202.field_9601) {
-         this.field_24199 = field_24202.field_9601;
+      if (this.field_24199 != field_24202.theWorld) {
+         this.field_24199 = field_24202.theWorld;
          this.method_22351();
       }
 

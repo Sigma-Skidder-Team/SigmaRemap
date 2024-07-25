@@ -79,7 +79,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("CollarColor", 99)) {
+      if (var1.contains("CollarColor", 99)) {
          this.method_43582(class_9077.method_41789(var1.method_25947("CollarColor")));
       }
 
@@ -281,7 +281,7 @@ public class class_9408 extends class_8990 implements class_6250 {
       if (!this.field_41768.field_33055) {
          if (!this.method_41215()) {
             if (var6 == class_4897.field_24384 && !this.method_28537()) {
-               if (!var1.field_3876.isCreativeMode) {
+               if (!var1.playerAbilities.isCreativeMode) {
                   var5.method_27970(1);
                }
 
@@ -299,7 +299,7 @@ public class class_9408 extends class_8990 implements class_6250 {
             }
          } else {
             if (this.method_24866(var5) && this.method_26551() < this.method_26465()) {
-               if (!var1.field_3876.isCreativeMode) {
+               if (!var1.playerAbilities.isCreativeMode) {
                   var5.method_27970(1);
                }
 
@@ -323,7 +323,7 @@ public class class_9408 extends class_8990 implements class_6250 {
             class_9077 var8 = ((class_239)var6).method_1015();
             if (var8 != this.method_43584()) {
                this.method_43582(var8);
-               if (!var1.field_3876.isCreativeMode) {
+               if (!var1.playerAbilities.isCreativeMode) {
                   var5.method_27970(1);
                }
 

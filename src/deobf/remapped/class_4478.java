@@ -321,14 +321,14 @@ public class class_4478 extends Entity {
       this.field_21824 = var1.method_25947("WaitTime");
       this.field_21828 = var1.method_25947("ReapplicationDelay");
       this.field_21821 = var1.method_25947("DurationOnUse");
-      this.field_21831 = var1.method_25955("RadiusOnUse");
-      this.field_21823 = var1.method_25955("RadiusPerTick");
-      this.method_20781(var1.method_25955("Radius"));
+      this.field_21831 = var1.getFloat("RadiusOnUse");
+      this.field_21823 = var1.getFloat("RadiusPerTick");
+      this.method_20781(var1.getFloat("Radius"));
       if (var1.method_25954("Owner")) {
          this.field_21837 = var1.method_25926("Owner");
       }
 
-      if (var1.method_25939("Particle", 8)) {
+      if (var1.contains("Particle", 8)) {
          try {
             this.method_20789(class_3469.method_15950(new StringReader(var1.method_25965("Particle"))));
          } catch (CommandSyntaxException var7) {
@@ -336,15 +336,15 @@ public class class_4478 extends Entity {
          }
       }
 
-      if (var1.method_25939("Color", 99)) {
+      if (var1.contains("Color", 99)) {
          this.method_20785(var1.method_25947("Color"));
       }
 
-      if (var1.method_25939("Potion", 8)) {
+      if (var1.contains("Potion", 8)) {
          this.method_20793(class_9541.method_43989(var1));
       }
 
-      if (var1.method_25939("Effects", 9)) {
+      if (var1.contains("Effects", 9)) {
          class_3416 var4 = var1.method_25927("Effects", 10);
          this.field_21833.clear();
 
@@ -364,9 +364,9 @@ public class class_4478 extends Entity {
       var1.method_25931("WaitTime", this.field_21824);
       var1.method_25931("ReapplicationDelay", this.field_21828);
       var1.method_25931("DurationOnUse", this.field_21821);
-      var1.method_25920("RadiusOnUse", this.field_21831);
-      var1.method_25920("RadiusPerTick", this.field_21823);
-      var1.method_25920("Radius", this.method_20783());
+      var1.putFloat("RadiusOnUse", this.field_21831);
+      var1.putFloat("RadiusPerTick", this.field_21823);
+      var1.putFloat("Radius", this.method_20783());
       var1.method_25941("Particle", this.method_20792().method_23358());
       if (this.field_21837 != null) {
          var1.method_25964("Owner", this.field_21837);
@@ -387,7 +387,7 @@ public class class_4478 extends Entity {
             var4.add(var6.method_10345(new CompoundNBT()));
          }
 
-         var1.method_25946("Effects", var4);
+         var1.put("Effects", var4);
       }
    }
 

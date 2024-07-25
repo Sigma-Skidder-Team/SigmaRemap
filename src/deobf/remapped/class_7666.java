@@ -390,37 +390,37 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
          .resultOrPartial(field_41741::error)
-         .ifPresent(var1x -> var1.method_25946("VillagerData", var1x));
+         .ifPresent(var1x -> var1.put("VillagerData", var1x));
       var1.method_25921("FoodLevel", this.field_38969);
-      var1.method_25946("Gossips", (class_8406)this.field_38977.method_11515(class_3504.field_17178).getValue());
+      var1.put("Gossips", (class_8406)this.field_38977.method_11515(class_3504.field_17178).getValue());
       var1.method_25931("Xp", this.field_38965);
       var1.method_25949("LastRestock", this.field_38971);
       var1.method_25949("LastGossipDecay", this.field_38960);
       var1.method_25931("RestocksToday", this.field_38962);
       if (this.field_38966) {
-         var1.method_25934("AssignProfessionWhenSpawned", true);
+         var1.putBoolean("AssignProfessionWhenSpawned", true);
       }
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("VillagerData", 10)) {
+      if (var1.contains("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
          var4.resultOrPartial(field_41741::error).ifPresent(this::method_34716);
       }
 
-      if (var1.method_25939("Offers", 10)) {
-         this.field_1687 = new class_2795(var1.method_25937("Offers"));
+      if (var1.contains("Offers", 10)) {
+         this.field_1687 = new class_2795(var1.getCompound("Offers"));
       }
 
-      if (var1.method_25939("FoodLevel", 1)) {
+      if (var1.contains("FoodLevel", 1)) {
          this.field_38969 = var1.method_25950("FoodLevel");
       }
 
       class_3416 var5 = var1.method_25927("Gossips", 10);
       this.field_38977.method_11506(new Dynamic(class_3504.field_17178, var5));
-      if (var1.method_25939("Xp", 3)) {
+      if (var1.contains("Xp", 3)) {
          this.field_38965 = var1.method_25947("Xp");
       }
 
@@ -433,7 +433,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
       this.field_38962 = var1.method_25947("RestocksToday");
       if (var1.method_25938("AssignProfessionWhenSpawned")) {
-         this.field_38966 = var1.method_25933("AssignProfessionWhenSpawned");
+         this.field_38966 = var1.getBoolean("AssignProfessionWhenSpawned");
       }
    }
 

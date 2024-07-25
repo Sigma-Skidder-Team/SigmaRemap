@@ -18,8 +18,8 @@ public abstract class class_2358 extends class_8346 {
       }
    }
 
-   public boolean method_10811(class_5734 var1) {
-      if (!var1.method_25939("LootTable", 8)) {
+   public boolean method_10811(CompoundNBT var1) {
+      if (!var1.contains("LootTable", 8)) {
          return false;
       } else {
          this.field_11837 = new Identifier(var1.method_25965("LootTable"));
@@ -28,7 +28,7 @@ public abstract class class_2358 extends class_8346 {
       }
    }
 
-   public boolean method_10815(class_5734 var1) {
+   public boolean method_10815(CompoundNBT var1) {
       if (this.field_11837 != null) {
          var1.method_25941("LootTable", this.field_11837.toString());
          if (this.field_11836 != 0L) {

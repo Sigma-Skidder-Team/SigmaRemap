@@ -45,11 +45,11 @@ public abstract class class_5676 implements class_1602 {
    }
 
    public List<class_9716> method_25665() {
-      return field_28769.field_9601.method_25873();
+      return field_28769.theWorld.method_25873();
    }
 
    public List<class_9716> method_25661() {
-      return field_28769.field_9601.method_25873();
+      return field_28769.theWorld.method_25873();
    }
 
    public class_704 method_25662(String var1) {

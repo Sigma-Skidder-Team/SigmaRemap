@@ -260,7 +260,7 @@ public class class_974 {
          }
 
          if (this.field_4978 != null) {
-            class_174 var15 = Config.method_14327().field_9601;
+            ClientWorld var15 = Config.method_14327().theWorld;
             if (var15 != null) {
                int var21 = var15.method_13575();
                if (!this.field_4978.method_40164(var21)) {
@@ -270,7 +270,7 @@ public class class_974 {
          }
 
          if (this.field_4987 != null) {
-            class_174 var16 = Config.method_14327().field_9601;
+            ClientWorld var16 = Config.method_14327().theWorld;
             if (var16 != null) {
                int var22 = (int)var16.method_29584();
                if (!this.field_4987.method_40164(var22)) {
@@ -280,7 +280,7 @@ public class class_974 {
          }
 
          if (this.field_4984 != null) {
-            class_174 var17 = Config.method_14327().field_9601;
+            ClientWorld var17 = Config.method_14327().theWorld;
             if (var17 != null) {
                class_9614 var23 = class_9614.method_44381(var17, 0.0F);
                if (!class_5657.method_25605(this.field_4984, var23)) {

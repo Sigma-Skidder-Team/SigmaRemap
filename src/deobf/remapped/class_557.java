@@ -97,12 +97,12 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
       super.method_17394(var1, var2);
       this.field_3312.clear();
       class_3037.method_13882(var2, this.field_3312);
-      if (var2.method_25939("CookingTimes", 11)) {
+      if (var2.contains("CookingTimes", 11)) {
          int[] var5 = var2.method_25922("CookingTimes");
          System.arraycopy(var5, 0, this.field_3311, 0, Math.min(this.field_3310.length, var5.length));
       }
 
-      if (var2.method_25939("CookingTotalTimes", 11)) {
+      if (var2.contains("CookingTotalTimes", 11)) {
          int[] var6 = var2.method_25922("CookingTotalTimes");
          System.arraycopy(var6, 0, this.field_3310, 0, Math.min(this.field_3310.length, var6.length));
       }

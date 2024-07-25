@@ -122,12 +122,12 @@ public class class_4763 {
 
    @EventListen
    private void method_21961(class_5596 var1) {
-      if (this.field_23056.field_9601 != null) {
+      if (this.field_23056.theWorld != null) {
          if (this.field_23065 != null) {
             boolean var4 = false;
             if (!var4) {
                if (this.field_23056.thePlayer.field_41697 % 140 == 0) {
-                  class_4985 var5 = class_3058.method_13961(this.field_23056.field_9601.method_22556(this.field_23056.thePlayer.method_37075()).method_27352());
+                  class_4985 var5 = class_3058.method_13961(this.field_23056.theWorld.method_22556(this.field_23056.thePlayer.method_37075()).method_27352());
                   Iterator var6 = this.field_23061.entrySet().iterator();
 
                   while (var6.hasNext()) {
@@ -157,15 +157,15 @@ public class class_4763 {
                String var23 = this.field_23065;
                int var24 = 0;
 
-               for (int var25 = 0; var25 < this.field_23056.field_9601.method_745().field_27356.field_30586.length(); var25++) {
-                  class_2654 var17 = this.field_23056.field_9601.method_745().field_27356.field_30586.get(var25);
+               for (int var25 = 0; var25 < this.field_23056.theWorld.method_745().field_27356.field_30586.length(); var25++) {
+                  class_2654 var17 = this.field_23056.theWorld.method_745().field_27356.field_30586.get(var25);
                   if (var17 != null) {
                      boolean var18 = this.field_23063.contains(var17.method_27352());
                      boolean var19 = this.field_23062.contains(var17.method_27352());
                      if ((!var18 || var19)
                         && !var17.method_12003()
-                        && this.field_23056.field_9601.method_745().method_14823(var17.method_27352())
-                        && this.field_23056.field_9601.method_29545() == World.field_33048) {
+                        && this.field_23056.theWorld.method_745().method_14823(var17.method_27352())
+                        && this.field_23056.theWorld.method_29545() == World.field_33048) {
                         if (!var18) {
                            this.field_23063.add(var17.method_27352());
                         }
@@ -363,8 +363,8 @@ public class class_4763 {
    }
 
    private boolean method_21969(class_2654 var1) {
-      class_2654 var4 = this.field_23056.field_9601.method_29554(var1.method_27352().field_10328, var1.method_27352().field_10327 + 1);
-      class_2654 var5 = this.field_23056.field_9601.method_29554(var1.method_27352().field_10328, var1.method_27352().field_10327 - 1);
+      class_2654 var4 = this.field_23056.theWorld.method_29554(var1.method_27352().field_10328, var1.method_27352().field_10327 + 1);
+      class_2654 var5 = this.field_23056.theWorld.method_29554(var1.method_27352().field_10328, var1.method_27352().field_10327 - 1);
       return var4 != null && !var4.method_12003() && var5 != null && !var5.method_12003();
    }
 
@@ -390,13 +390,13 @@ public class class_4763 {
    }
 
    public int method_21975(class_1331 var1, boolean var2) {
-      if (this.field_23056.field_9601.method_28262(var1).method_8360() == class_4783.field_23184) {
+      if (this.field_23056.theWorld.method_28262(var1).method_8360() == class_4783.field_23184) {
          var1 = var1.method_6100();
       }
 
-      class_1513 var5 = this.field_23056.field_9601.method_28262(var1).method_8362().method_24501();
+      class_1513 var5 = this.field_23056.theWorld.method_28262(var1).method_8362().method_24501();
       int var6 = var5.field_8060;
-      class_5371 var7 = this.field_23056.field_9601.method_28262(var1.method_6081()).method_8362();
+      class_5371 var7 = this.field_23056.theWorld.method_28262(var1.method_6081()).method_8362();
       if (var7 != class_5371.field_27415) {
          if (var7 == class_5371.field_27413) {
             var6 = var7.method_24501().field_8060;
@@ -405,7 +405,7 @@ public class class_4763 {
          var6 = -1;
       }
 
-      if (this.field_23056.field_9601.method_28262(var1).method_10307(class_6023.field_30719)) {
+      if (this.field_23056.theWorld.method_28262(var1).method_10307(class_6023.field_30719)) {
          var6 = class_5371.field_27439.method_24501().field_8060;
       }
 
@@ -419,8 +419,8 @@ public class class_4763 {
       }
 
       if (var2 || var11) {
-         class_5371 var12 = this.field_23056.field_9601.method_28262(var1.method_6094()).method_8362();
-         class_5371 var13 = this.field_23056.field_9601.method_28262(var1.method_6073()).method_8362();
+         class_5371 var12 = this.field_23056.theWorld.method_28262(var1.method_6094()).method_8362();
+         class_5371 var13 = this.field_23056.theWorld.method_28262(var1.method_6073()).method_8362();
          if (var12 == class_5371.field_27403 || var12 == class_5371.field_27415) {
             var6 = class_314.method_1388(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
          } else if (var13 == class_5371.field_27403 || var13 == class_5371.field_27415) {

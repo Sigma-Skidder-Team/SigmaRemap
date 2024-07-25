@@ -95,7 +95,7 @@ public class class_7851 extends class_1080 {
    public class_6910 method_37128(class_704 var1, class_2584 var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (field_39785.test(var5) && this.field_39789 + 3600 <= 32000) {
-         if (!var1.field_3876.isCreativeMode) {
+         if (!var1.playerAbilities.isCreativeMode) {
             var5.method_27970(1);
          }
 

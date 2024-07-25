@@ -62,27 +62,27 @@ public class class_9490 extends class_1173 implements class_7187 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.field_41735.<Boolean>method_36640(field_48363)) {
-         var1.method_25934("powered", true);
+         var1.putBoolean("powered", true);
       }
 
       var1.method_25958("Fuse", (short)this.field_48361);
       var1.method_25921("ExplosionRadius", (byte)this.field_48357);
-      var1.method_25934("ignited", this.method_43835());
+      var1.putBoolean("ignited", this.method_43835());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.field_41735.method_36633(field_48363, var1.method_25933("powered"));
-      if (var1.method_25939("Fuse", 99)) {
+      this.field_41735.method_36633(field_48363, var1.getBoolean("powered"));
+      if (var1.contains("Fuse", 99)) {
          this.field_48361 = var1.method_25956("Fuse");
       }
 
-      if (var1.method_25939("ExplosionRadius", 99)) {
+      if (var1.contains("ExplosionRadius", 99)) {
          this.field_48357 = var1.method_25950("ExplosionRadius");
       }
 
-      if (var1.method_25933("ignited")) {
+      if (var1.getBoolean("ignited")) {
          this.method_43829();
       }
    }

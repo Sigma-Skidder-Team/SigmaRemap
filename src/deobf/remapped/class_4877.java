@@ -10,7 +10,7 @@ public class class_4877 extends class_1047 {
    }
 
    public class_4877(CompoundNBT var1) {
-      this(!var1.method_25939("Weight", 99) ? 1 : var1.method_25947("Weight"), var1.method_25937("Entity"));
+      this(!var1.contains("Weight", 99) ? 1 : var1.method_25947("Weight"), var1.getCompound("Entity"));
    }
 
    public class_4877(int var1, CompoundNBT var2) {
@@ -26,7 +26,7 @@ public class class_4877 extends class_1047 {
 
    public CompoundNBT method_22390() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method_25946("Entity", this.field_24267);
+      var3.put("Entity", this.field_24267);
       var3.method_25931("Weight", this.field_5753);
       return var3;
    }

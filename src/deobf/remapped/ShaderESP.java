@@ -8,7 +8,7 @@ public class ShaderESP extends Module {
    @EventListen
    public void method_2176(class_5596 var1) {
       if (this.method_42015()) {
-         for (Entity var5 : client.field_9601.method_736()) {
+         for (Entity var5 : client.theWorld.method_736()) {
             if (!SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().method_42007("Show Players");
                boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().method_42007("Show Mobs");
@@ -26,7 +26,7 @@ public class ShaderESP extends Module {
 
    @Override
    public void onDisable() {
-      for (Entity var4 : client.field_9601.method_736()) {
+      for (Entity var4 : client.theWorld.method_736()) {
          var4.method_37200(false);
       }
    }

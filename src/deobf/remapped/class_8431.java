@@ -34,7 +34,7 @@ public class class_8431 {
          } else {
             if (this.field_43148 != class_6000.field_30559) {
                class_3757 var7 = var1.method_28260(var2);
-               if (var7 == null || !this.field_43148.method_27393(var7.method_17396(new class_5734()))) {
+               if (var7 == null || !this.field_43148.method_27393(var7.method_17396(new CompoundNBT()))) {
                   return false;
                }
             }

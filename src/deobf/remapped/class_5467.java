@@ -126,7 +126,7 @@ public abstract class class_5467 extends class_1899 {
    }
 
    public void method_24867(class_704 var1, ItemStack var2) {
-      if (!var1.field_3876.isCreativeMode) {
+      if (!var1.playerAbilities.isCreativeMode) {
          var2.method_27970(1);
       }
    }

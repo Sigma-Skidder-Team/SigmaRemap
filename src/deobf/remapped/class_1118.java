@@ -22,19 +22,19 @@ public class class_1118 extends class_8549 {
 
    public class_1118(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13394, var2);
-      this.field_6396 = var2.method_25933("leftLow");
-      this.field_6395 = var2.method_25933("leftHigh");
-      this.field_6399 = var2.method_25933("rightLow");
-      this.field_6397 = var2.method_25933("rightHigh");
+      this.field_6396 = var2.getBoolean("leftLow");
+      this.field_6395 = var2.getBoolean("leftHigh");
+      this.field_6399 = var2.getBoolean("rightLow");
+      this.field_6397 = var2.getBoolean("rightHigh");
    }
 
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("leftLow", this.field_6396);
-      var1.method_25934("leftHigh", this.field_6395);
-      var1.method_25934("rightLow", this.field_6399);
-      var1.method_25934("rightHigh", this.field_6397);
+      var1.putBoolean("leftLow", this.field_6396);
+      var1.putBoolean("leftHigh", this.field_6395);
+      var1.putBoolean("rightLow", this.field_6399);
+      var1.putBoolean("rightHigh", this.field_6397);
    }
 
    @Override

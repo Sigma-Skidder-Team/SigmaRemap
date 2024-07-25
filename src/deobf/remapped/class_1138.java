@@ -15,9 +15,9 @@ public class class_1138 extends class_2451 {
 
    public static boolean method_4990(CompoundNBT var0) {
       if (class_7702.method_34884(var0)) {
-         if (var0.method_25939("title", 8)) {
+         if (var0.contains("title", 8)) {
             String var3 = var0.method_25965("title");
-            return var3.length() <= 32 ? var0.method_25939("author", 8) : false;
+            return var3.length() <= 32 ? var0.contains("author", 8) : false;
          } else {
             return false;
          }
@@ -83,8 +83,8 @@ public class class_1138 extends class_2451 {
 
    public static boolean method_4993(ItemStack var0, class_9155 var1, class_704 var2) {
       CompoundNBT var5 = var0.method_27990();
-      if (var5 != null && !var5.method_25933("resolved")) {
-         var5.method_25934("resolved", true);
+      if (var5 != null && !var5.getBoolean("resolved")) {
+         var5.putBoolean("resolved", true);
          if (!method_4990(var5)) {
             return false;
          } else {
@@ -104,7 +104,7 @@ public class class_1138 extends class_2451 {
                var6.set(var7, (class_8406)class_473.method_2261(ITextComponent$class_40.toJson((ITextComponent)var9)));
             }
 
-            var5.method_25946("pages", var6);
+            var5.put("pages", var6);
             return true;
          }
       } else {

@@ -119,7 +119,7 @@ public abstract class class_8704 {
       );
       var15.method_4156(new class_6197(class_6197.field_31656, new class_8248(Unpooled.buffer()).method_37760(this.method_39974().method_1728())));
       var15.method_4156(new class_9275(var14.method_8661(), var14.method_8662()));
-      var15.method_4156(new class_3727(var2.field_3876));
+      var15.method_4156(new class_3727(var2.playerAbilities));
       var15.method_4156(new class_4020(var2.inventory.field_36404));
       var15.method_4156(new class_6621(this.field_44631.method_1705().method_23141()));
       var15.method_4156(new class_5042(this.field_44631.method_1754()));
@@ -156,9 +156,9 @@ public abstract class class_8704 {
          var15.method_4156(new class_1661(var2.method_37145(), var21));
       }
 
-      if (var9 != null && var9.method_25939("RootVehicle", 10)) {
-         CompoundNBT var26 = var9.method_25937("RootVehicle");
-         Entity var27 = class_6629.method_30455(var26.method_25937("Entity"), var12, var1x -> var12.method_28972(var1x) ? var1x : null);
+      if (var9 != null && var9.contains("RootVehicle", 10)) {
+         CompoundNBT var26 = var9.getCompound("RootVehicle");
+         Entity var27 = class_6629.method_30455(var26.getCompound("Entity"), var12, var1x -> var12.method_28972(var1x) ? var1x : null);
          if (var27 != null) {
             UUID var22;
             if (!var26.method_25954("Attach")) {

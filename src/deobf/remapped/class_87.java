@@ -132,34 +132,34 @@ public class class_87 extends class_495 {
    public CompoundNBT method_223() {
       CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("Name", ITextComponent$class_40.toJson(this.field_48006));
-      var3.method_25934("Visible", this.method_2409());
+      var3.putBoolean("Visible", this.method_2409());
       var3.method_25931("Value", this.field_163);
       var3.method_25931("Max", this.field_164);
       var3.method_25941("Color", this.method_43456().method_4665());
       var3.method_25941("Overlay", this.method_43462().method_13618());
-      var3.method_25934("DarkenScreen", this.method_43460());
-      var3.method_25934("PlayBossMusic", this.method_43464());
-      var3.method_25934("CreateWorldFog", this.method_43455());
+      var3.putBoolean("DarkenScreen", this.method_43460());
+      var3.putBoolean("PlayBossMusic", this.method_43464());
+      var3.putBoolean("CreateWorldFog", this.method_43455());
       class_3416 var4 = new class_3416();
 
       for (UUID var6 : this.field_162) {
          var4.add(class_4338.method_20181(var6));
       }
 
-      var3.method_25946("Players", var4);
+      var3.put("Players", var4);
       return var3;
    }
 
    public static class_87 method_220(CompoundNBT var0, Identifier var1) {
       class_87 var4 = new class_87(var1, ITextComponent$class_40.func_240643_a_(var0.method_25965("Name")));
-      var4.method_2404(var0.method_25933("Visible"));
+      var4.method_2404(var0.getBoolean("Visible"));
       var4.method_212(var0.method_25947("Value"));
       var4.method_219(var0.method_25947("Max"));
       var4.method_43452(class_1062.method_4664(var0.method_25965("Color")));
       var4.method_43458(class_2976.method_13620(var0.method_25965("Overlay")));
-      var4.method_43461(var0.method_25933("DarkenScreen"));
-      var4.method_43457(var0.method_25933("PlayBossMusic"));
-      var4.method_43463(var0.method_25933("CreateWorldFog"));
+      var4.method_43461(var0.getBoolean("DarkenScreen"));
+      var4.method_43457(var0.getBoolean("PlayBossMusic"));
+      var4.method_43463(var0.getBoolean("CreateWorldFog"));
       class_3416 var5 = var0.method_25927("Players", 11);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {

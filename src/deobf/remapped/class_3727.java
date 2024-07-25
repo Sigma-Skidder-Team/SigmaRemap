@@ -19,8 +19,8 @@ public class class_3727 implements Packet<class_392> {
       this.field_18237 = var1.isFlying;
       this.field_18236 = var1.allowFlying;
       this.field_18238 = var1.isCreativeMode;
-      this.field_18233 = var1.method_4230();
-      this.field_18235 = var1.method_4229();
+      this.field_18233 = var1.getFlySpeed();
+      this.field_18235 = var1.getWalkSpeed();
    }
 
    @Override

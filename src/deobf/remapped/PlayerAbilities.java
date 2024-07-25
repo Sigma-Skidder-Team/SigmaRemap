@@ -9,49 +9,49 @@ public class PlayerAbilities {
    private float flySpeed = 0.05F;
    private float walkSpeed = 0.1F;
 
-   public void method_4234(class_5734 var1) {
-      class_5734 var4 = new class_5734();
-      var4.method_25934("invulnerable", this.disableDamage);
-      var4.method_25934("flying", this.isFlying);
-      var4.method_25934("mayfly", this.allowFlying);
-      var4.method_25934("instabuild", this.isCreativeMode);
-      var4.method_25934("mayBuild", this.allowEdit);
-      var4.method_25920("flySpeed", this.flySpeed);
-      var4.method_25920("walkSpeed", this.walkSpeed);
-      var1.method_25946("abilities", var4);
+   public void write(CompoundNBT tagCompound) {
+      CompoundNBT compoundnbt = new CompoundNBT();
+      compoundnbt.putBoolean("invulnerable", this.disableDamage);
+      compoundnbt.putBoolean("flying", this.isFlying);
+      compoundnbt.putBoolean("mayfly", this.allowFlying);
+      compoundnbt.putBoolean("instabuild", this.isCreativeMode);
+      compoundnbt.putBoolean("mayBuild", this.allowEdit);
+      compoundnbt.putFloat("flySpeed", this.flySpeed);
+      compoundnbt.putFloat("walkSpeed", this.walkSpeed);
+      tagCompound.put("abilities", compoundnbt);
    }
 
-   public void method_4232(class_5734 var1) {
-      if (var1.method_25939("abilities", 10)) {
-         class_5734 var4 = var1.method_25937("abilities");
-         this.disableDamage = var4.method_25933("invulnerable");
-         this.isFlying = var4.method_25933("flying");
-         this.allowFlying = var4.method_25933("mayfly");
-         this.isCreativeMode = var4.method_25933("instabuild");
-         if (var4.method_25939("flySpeed", 99)) {
-            this.flySpeed = var4.method_25955("flySpeed");
-            this.walkSpeed = var4.method_25955("walkSpeed");
+   public void read(CompoundNBT tagCompound) {
+      if (tagCompound.contains("abilities", 10)) {
+         CompoundNBT compoundnbt = tagCompound.getCompound("abilities");
+         this.disableDamage = compoundnbt.getBoolean("invulnerable");
+         this.isFlying = compoundnbt.getBoolean("flying");
+         this.allowFlying = compoundnbt.getBoolean("mayfly");
+         this.isCreativeMode = compoundnbt.getBoolean("instabuild");
+         if (compoundnbt.contains("flySpeed", 99)) {
+            this.flySpeed = compoundnbt.getFloat("flySpeed");
+            this.walkSpeed = compoundnbt.getFloat("walkSpeed");
          }
 
-         if (var4.method_25939("mayBuild", 1)) {
-            this.allowEdit = var4.method_25933("mayBuild");
+         if (compoundnbt.contains("mayBuild", 1)) {
+            this.allowEdit = compoundnbt.getBoolean("mayBuild");
          }
       }
    }
 
-   public float method_4230() {
+   public float getFlySpeed() {
       return this.flySpeed;
    }
 
-   public void method_4233(float var1) {
+   public void setFlySpeed(float var1) {
       this.flySpeed = var1;
    }
 
-   public float method_4229() {
+   public float getWalkSpeed() {
       return this.walkSpeed;
    }
 
-   public void method_4231(float var1) {
+   public void setWalkSpeed(float var1) {
       this.walkSpeed = var1;
    }
 }

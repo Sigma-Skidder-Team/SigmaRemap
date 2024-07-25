@@ -103,18 +103,18 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.field_14828 = var1.method_25933("IsChickenJockey");
+      this.field_14828 = var1.getBoolean("IsChickenJockey");
       if (var1.method_25938("EggLayTime")) {
          this.field_14824 = var1.method_25947("EggLayTime");
       }
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("IsChickenJockey", this.field_14828);
+      var1.putBoolean("IsChickenJockey", this.field_14828);
       var1.method_25931("EggLayTime", this.field_14824);
    }
 

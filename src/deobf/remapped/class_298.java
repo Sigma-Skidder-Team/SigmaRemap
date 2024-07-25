@@ -54,7 +54,7 @@ public class class_298 extends class_7637 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.field_1083) {
-         var1.method_25934("Johnny", true);
+         var1.putBoolean("Johnny", true);
       }
    }
 
@@ -70,8 +70,8 @@ public class class_298 extends class_7637 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("Johnny", 99)) {
-         this.field_1083 = var1.method_25933("Johnny");
+      if (var1.contains("Johnny", 99)) {
+         this.field_1083 = var1.getBoolean("Johnny");
       }
    }
 

@@ -136,7 +136,7 @@ public class AutoMLGModule extends PremiumModule {
       double var5 = client.thePlayer.method_37098().field_7333;
       double var7 = client.thePlayer.method_37098().field_7334;
       class_4092 var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
-      Stream var10 = client.field_9601.method_6680(client.thePlayer, var9);
+      Stream var10 = client.theWorld.method_6680(client.thePlayer, var9);
       Iterator var11 = var10.iterator();
       class_1331 var12 = null;
 
@@ -162,7 +162,7 @@ public class AutoMLGModule extends PremiumModule {
       } else {
          var5 = client.thePlayer.method_37098().field_7333 - 1.0;
          var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
-         var10 = client.field_9601.method_6680(client.thePlayer, var9);
+         var10 = client.theWorld.method_6680(client.thePlayer, var9);
          var11 = var10.iterator();
 
          while (var11.hasNext()) {

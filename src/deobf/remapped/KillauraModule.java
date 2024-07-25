@@ -282,8 +282,8 @@ public class KillauraModule extends Module {
       if (!(var4 instanceof class_527)) {
          if (var4 instanceof class_295) {
             class_295 var5 = (class_295)var4;
-            if (var5.method_1329() == 3 && this.field_12561.field_44743.containsKey(var5.method_1331(client.field_9601))) {
-               this.field_12561.field_44743.remove(var5.method_1331(client.field_9601));
+            if (var5.method_1329() == 3 && this.field_12561.field_44743.containsKey(var5.method_1331(client.theWorld))) {
+               this.field_12561.field_44743.remove(var5.method_1331(client.theWorld));
             }
          }
       } else {
@@ -292,7 +292,7 @@ public class KillauraModule extends Module {
             for (Entry var7 : this.field_12561.field_44743.entrySet()) {
                Entity var8 = (Entity)var7.getKey();
                List var9 = (List)var7.getValue();
-               if (var11.method_2564(client.field_9601) == var8) {
+               if (var11.method_2564(client.theWorld) == var8) {
                   class_1343 var10 = var8.field_41700.method_6209(2.4414062E-4F);
                   var9.add(new class_9097<class_1343, Long>(var10, System.currentTimeMillis()));
                }

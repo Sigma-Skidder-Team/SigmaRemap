@@ -43,7 +43,7 @@ public class class_2810 {
 
    public class_2810(class_6331 var1, long var2, CompoundNBT var4) {
       this.field_13790 = var1;
-      if (!var4.method_25939("DragonKilled", 99)) {
+      if (!var4.contains("DragonKilled", 99)) {
          this.field_13796 = true;
          this.field_13803 = true;
       } else {
@@ -51,18 +51,18 @@ public class class_2810 {
             this.field_13804 = var4.method_25926("Dragon");
          }
 
-         this.field_13796 = var4.method_25933("DragonKilled");
-         this.field_13803 = var4.method_25933("PreviouslyKilled");
-         if (var4.method_25933("IsRespawning")) {
+         this.field_13796 = var4.getBoolean("DragonKilled");
+         this.field_13803 = var4.getBoolean("PreviouslyKilled");
+         if (var4.getBoolean("IsRespawning")) {
             this.field_13792 = class_3486.field_17113;
          }
 
-         if (var4.method_25939("ExitPortalLocation", 10)) {
-            this.field_13797 = class_4338.method_20189(var4.method_25937("ExitPortalLocation"));
+         if (var4.contains("ExitPortalLocation", 10)) {
+            this.field_13797 = class_4338.method_20189(var4.getCompound("ExitPortalLocation"));
          }
       }
 
-      if (!var4.method_25939("Gateways", 9)) {
+      if (!var4.contains("Gateways", 9)) {
          this.field_13787.addAll(ContiguousSet.create(Range.closedOpen(0, 20), DiscreteDomain.integers()));
          Collections.shuffle(this.field_13787, new Random(var2));
       } else {
@@ -89,10 +89,10 @@ public class class_2810 {
          var3.method_25964("Dragon", this.field_13804);
       }
 
-      var3.method_25934("DragonKilled", this.field_13796);
-      var3.method_25934("PreviouslyKilled", this.field_13803);
+      var3.putBoolean("DragonKilled", this.field_13796);
+      var3.putBoolean("PreviouslyKilled", this.field_13803);
       if (this.field_13797 != null) {
-         var3.method_25946("ExitPortalLocation", class_4338.method_20190(this.field_13797));
+         var3.put("ExitPortalLocation", class_4338.method_20190(this.field_13797));
       }
 
       class_3416 var4 = new class_3416();
@@ -101,7 +101,7 @@ public class class_2810 {
          var4.add(class_9413.method_43597(var6));
       }
 
-      var3.method_25946("Gateways", var4);
+      var3.put("Gateways", var4);
       return var3;
    }
 

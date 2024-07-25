@@ -110,7 +110,7 @@ public class class_9149 extends Entity {
          this.method_42098(10);
          this.method_42099(this.method_42109() + var2 * 10.0F);
          this.method_37138();
-         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).field_3876.isCreativeMode;
+         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).playerAbilities.isCreativeMode;
          if (var5 || this.method_42109() > 40.0F) {
             if (!var5 && this.field_41768.method_29537().method_1285(class_291.field_1024)) {
                this.method_37312(this.method_42090());
@@ -714,13 +714,13 @@ public class class_9149 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       var1.method_25941("Type", this.method_42112().method_17824());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
-      if (var1.method_25939("Type", 8)) {
+   public void method_37314(CompoundNBT var1) {
+      if (var1.contains("Type", 8)) {
          this.method_42101(class_3837.method_17825(var1.method_25965("Type")));
       }
    }

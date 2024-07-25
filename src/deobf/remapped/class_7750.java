@@ -106,7 +106,7 @@ public class class_7750 {
             ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
-                  class_5734 var5 = class_2392.method_10916(class_6539.method_29795(var0.get("nbt"), "nbt"));
+                  CompoundNBT var5 = class_2392.method_10916(class_6539.method_29795(var0.get("nbt"), "nbt"));
                   var4.method_27965(var5);
                } catch (CommandSyntaxException var6) {
                   throw new JsonSyntaxException("Invalid nbt tag: " + var6.getMessage());

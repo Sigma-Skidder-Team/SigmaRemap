@@ -37,7 +37,7 @@ public class class_8474 extends class_4314 implements class_2593 {
          ItemStack var11 = var4.method_26617(var5);
          Optional var12 = var10.method_2672(var11);
          if (var12.isPresent()) {
-            if (!var2.field_33055 && var10.method_2675(!var4.field_3876.isCreativeMode ? var11 : var11.method_27973(), ((class_5917)var12.get()).method_14546())) {
+            if (!var2.field_33055 && var10.method_2675(!var4.playerAbilities.isCreativeMode ? var11 : var11.method_27973(), ((class_5917)var12.get()).method_14546())) {
                var4.method_3209(class_6234.field_31878);
                return class_6910.field_35520;
             }

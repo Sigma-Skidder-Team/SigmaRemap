@@ -9,7 +9,7 @@ public class WeatherModule extends Module {
       this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
       this.addSetting(new FloatSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).setModeClass(var1 -> {
          if (this.getBooleanValueByName("Custom time") && this.method_42015()) {
-            client.field_9601.method_719(-((long)this.getFloatValueByName("Time")));
+            client.theWorld.method_719(-((long)this.getFloatValueByName("Time")));
          }
       }));
       this.addSetting(new BooleanSetting("Disable rain", "Disable rain", true));
@@ -17,16 +17,16 @@ public class WeatherModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_47767 = client.field_9601.method_29578(1.0F);
-      if (client.field_9601.method_29578(1.0F) != 1.0F) {
-         if (client.field_9601.method_29578(1.0F) == 0.0F) {
+      this.field_47767 = client.theWorld.method_29578(1.0F);
+      if (client.theWorld.method_29578(1.0F) != 1.0F) {
+         if (client.theWorld.method_29578(1.0F) == 0.0F) {
             this.field_47768 = false;
          }
       } else {
          this.field_47768 = true;
       }
 
-      client.field_9601.method_719((long)this.getFloatValueByName("Time"));
+      client.theWorld.method_719((long)this.getFloatValueByName("Time"));
    }
 
    @EventListen
@@ -50,8 +50,8 @@ public class WeatherModule extends Module {
             this.field_47767 = (float)((double)this.field_47767 - 0.05);
          }
 
-         client.field_9601.method_29582(this.field_47767);
-         client.field_9601.method_29560(this.field_47767);
+         client.theWorld.method_29582(this.field_47767);
+         client.theWorld.method_29560(this.field_47767);
       }
    }
 

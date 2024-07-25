@@ -61,7 +61,7 @@ public class class_7347 extends class_7157 {
 
       var5.method_25921("Flight", (byte)var7);
       if (!var6.isEmpty()) {
-         var5.method_25946("Explosions", var6);
+         var5.put("Explosions", var6);
       }
 
       return var4;

@@ -49,7 +49,7 @@ public class class_581 extends class_6749 {
 
    public static int method_2749(ItemStack var0) {
       CompoundNBT var3 = var0.method_27990();
-      return var3 != null && var3.method_25939("CustomPotionColor", 99) ? var3.method_25947("CustomPotionColor") : -1;
+      return var3 != null && var3.contains("CustomPotionColor", 99) ? var3.method_25947("CustomPotionColor") : -1;
    }
 
    private void method_2747() {
@@ -129,14 +129,14 @@ public class class_581 extends class_6749 {
             var4.add(var6.method_10345(new CompoundNBT()));
          }
 
-         var1.method_25946("CustomPotionEffects", var4);
+         var1.put("CustomPotionEffects", var4);
       }
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("Potion", 8)) {
+      if (var1.contains("Potion", 8)) {
          this.field_3394 = class_9541.method_43989(var1);
       }
 
@@ -144,7 +144,7 @@ public class class_581 extends class_6749 {
          this.method_2752(var5);
       }
 
-      if (!var1.method_25939("Color", 99)) {
+      if (!var1.contains("Color", 99)) {
          this.method_2747();
       } else {
          this.method_2751(var1.method_25947("Color"));

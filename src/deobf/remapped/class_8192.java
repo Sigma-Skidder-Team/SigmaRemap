@@ -89,8 +89,8 @@ public class class_8192 {
    }
 
    public static void method_37524(World var0, World var1) {
-      if (var1 instanceof class_174) {
-         class_174 var4 = (class_174)var1;
+      if (var1 instanceof ClientWorld) {
+         ClientWorld var4 = (ClientWorld)var1;
 
          for (Entity var6 : var4.method_736()) {
             method_37536(var6, var1);

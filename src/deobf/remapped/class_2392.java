@@ -155,7 +155,7 @@ public class class_2392 {
          }
 
          this.method_10912(':');
-         var3.method_25946(var5, this.method_10917());
+         var3.put(var5, this.method_10917());
          if (!this.method_10908()) {
             break;
          }

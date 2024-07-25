@@ -359,7 +359,7 @@ public class class_6561 {
             var16.add(class_9708.method_44846(var15.field_7336));
             var16.add(class_9708.method_44846(var15.field_7333));
             var16.add(class_9708.method_44846(var15.field_7334));
-            var13.method_25946("Pos", var16);
+            var13.put("Pos", var16);
             var13.method_25959("UUID");
             method_29991(var1, var13).ifPresent(var6x -> {
                float var9 = var6x.method_37152(var3);
@@ -548,11 +548,11 @@ public class class_6561 {
          for (int var8 = 0; var8 < var7.size(); var8++) {
             class_4099 var9 = (class_4099)var7.get(var8);
             CompoundNBT var10 = new CompoundNBT();
-            var10.method_25946("pos", this.method_29983(var9.field_19965.method_12173(), var9.field_19965.method_12165(), var9.field_19965.method_12185()));
+            var10.put("pos", this.method_29983(var9.field_19965.method_12173(), var9.field_19965.method_12165(), var9.field_19965.method_12185()));
             int var11 = var5.method_13475(var9.field_19967);
             var10.method_25931("state", var11);
             if (var9.field_19968 != null) {
-               var10.method_25946("nbt", var9.field_19968);
+               var10.put("nbt", var9.field_19968);
             }
 
             var16.add(var10);
@@ -563,7 +563,7 @@ public class class_6561 {
             }
          }
 
-         var1.method_25946("blocks", var16);
+         var1.put("blocks", var16);
          if (var4.size() != 1) {
             class_3416 var19 = new class_3416();
 
@@ -577,7 +577,7 @@ public class class_6561 {
                var19.add(var25);
             }
 
-            var1.method_25946("palettes", var19);
+            var1.put("palettes", var19);
          } else {
             class_3416 var20 = new class_3416();
 
@@ -585,28 +585,28 @@ public class class_6561 {
                var20.add(class_4338.method_20187(var24));
             }
 
-            var1.method_25946("palette", var20);
+            var1.put("palette", var20);
          }
       } else {
-         var1.method_25946("blocks", new class_3416());
-         var1.method_25946("palette", new class_3416());
+         var1.put("blocks", new class_3416());
+         var1.put("palette", new class_3416());
       }
 
       class_3416 var14 = new class_3416();
 
       for (class_8833 var17 : this.field_33470) {
          CompoundNBT var18 = new CompoundNBT();
-         var18.method_25946("pos", this.method_29972(var17.field_45180.field_7336, var17.field_45180.field_7333, var17.field_45180.field_7334));
-         var18.method_25946("blockPos", this.method_29983(var17.field_45183.method_12173(), var17.field_45183.method_12165(), var17.field_45183.method_12185()));
+         var18.put("pos", this.method_29972(var17.field_45180.field_7336, var17.field_45180.field_7333, var17.field_45180.field_7334));
+         var18.put("blockPos", this.method_29983(var17.field_45183.method_12173(), var17.field_45183.method_12165(), var17.field_45183.method_12185()));
          if (var17.field_45182 != null) {
-            var18.method_25946("nbt", var17.field_45182);
+            var18.put("nbt", var17.field_45182);
          }
 
          var14.add(var18);
       }
 
-      var1.method_25946("entities", var14);
-      var1.method_25946("size", this.method_29983(this.field_33472.method_12173(), this.field_33472.method_12165(), this.field_33472.method_12185()));
+      var1.put("entities", var14);
+      var1.put("size", this.method_29983(this.field_33472.method_12173(), this.field_33472.method_12165(), this.field_33472.method_12185()));
       var1.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
       return var1;
    }
@@ -617,7 +617,7 @@ public class class_6561 {
       class_3416 var4 = var1.method_25927("size", 3);
       this.field_33472 = new class_1331(var4.method_15762(0), var4.method_15762(1), var4.method_15762(2));
       class_3416 var5 = var1.method_25927("blocks", 10);
-      if (!var1.method_25939("palettes", 9)) {
+      if (!var1.contains("palettes", 9)) {
          this.method_29980(var1.method_25927("palette", 10), var5);
       } else {
          class_3416 var6 = var1.method_25927("palettes", 9);
@@ -636,7 +636,7 @@ public class class_6561 {
          class_3416 var11 = var8.method_25927("blockPos", 3);
          class_1331 var12 = new class_1331(var11.method_15762(0), var11.method_15762(1), var11.method_15762(2));
          if (var8.method_25938("nbt")) {
-            CompoundNBT var13 = var8.method_25937("nbt");
+            CompoundNBT var13 = var8.getCompound("nbt");
             this.field_33470.add(new class_8833(var10, var12, var13));
          }
       }
@@ -662,7 +662,7 @@ public class class_6561 {
          if (!var10.method_25938("nbt")) {
             var14 = null;
          } else {
-            var14 = var10.method_25937("nbt");
+            var14 = var10.getCompound("nbt");
          }
 
          class_4099 var15 = new class_4099(var12, var13, var14);

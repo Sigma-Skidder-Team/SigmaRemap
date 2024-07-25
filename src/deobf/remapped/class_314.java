@@ -59,7 +59,7 @@ public class class_314 {
 
    public static List<class_704> method_1435() {
       ArrayList var2 = new ArrayList();
-      field_1158.field_9601.field_568.forEach((var1, var2x) -> {
+      field_1158.theWorld.field_568.forEach((var1, var2x) -> {
          if (var2x instanceof class_704) {
             var2.add((class_704)var2x);
          }
@@ -121,7 +121,7 @@ public class class_314 {
    }
 
    public static final boolean method_1437(Entity var0) {
-      class_174 var3 = field_1158.field_9601;
+      ClientWorld var3 = field_1158.theWorld;
       class_4092 var4 = var0.field_41712;
       return var3.method_22550(var4);
    }
@@ -439,7 +439,7 @@ public class class_314 {
 
    public static List<Entity> method_1440() {
       ArrayList var2 = new ArrayList();
-      field_1158.field_9601.field_568.forEach((var1, var2x) -> var2.add(var2x));
+      field_1158.theWorld.field_568.forEach((var1, var2x) -> var2.add(var2x));
       return var2;
    }
 
@@ -467,7 +467,7 @@ public class class_314 {
          field_1158.thePlayer.method_37156()
       );
       Entity var8 = field_1158.getRenderViewEntity();
-      if (var8 != null && field_1158.field_9601 != null) {
+      if (var8 != null && field_1158.theWorld != null) {
          double var9 = (double)field_1158.playerController.method_42146();
          if (var2 != 0.0F) {
             var9 = (double)var2;
@@ -478,7 +478,7 @@ public class class_314 {
          float var13 = 1.0F;
          class_4092 var14 = var8.method_37241().method_18929(var11.method_6209(var9)).method_18899(1.0, 1.0, 1.0);
          return method_1433(
-            field_1158.field_9601, var8, var7, var12, var14, var0x -> var0x instanceof class_5834 || var0x instanceof class_1453, (double)(var2 * var2), var3
+            field_1158.theWorld, var8, var7, var12, var14, var0x -> var0x instanceof class_5834 || var0x instanceof class_1453, (double)(var2 * var2), var3
          );
       } else {
          return null;
@@ -523,7 +523,7 @@ public class class_314 {
       class_1343 var13 = method_1449(var2, var1);
       class_1343 var14 = var12.method_6214(var13.field_7336 * var8, var13.field_7333 * var8, var13.field_7334 * var8);
 
-      for (Entity var16 : field_1158.field_9601
+      for (Entity var16 : field_1158.theWorld
          .method_25867(field_1158.thePlayer, field_1158.thePlayer.method_37241().method_18929(var13.method_6209(var8)).method_18899(1.0, 1.0, 1.0), var3)) {
          class_4092 var17 = var16.method_37241();
          Optional var18 = var17.method_18923(var12, var14);
@@ -621,7 +621,7 @@ public class class_314 {
       class_4092 var8 = new class_4092(
          var7.field_19941 + var0, var7.field_19937 - 1.5, var7.field_19938 + var2, var7.field_19940 + var0, var7.field_19939, var7.field_19942 + var2
       );
-      Stream var9 = field_1158.field_9601.method_6680(field_1158.thePlayer, var8);
+      Stream var9 = field_1158.theWorld.method_6680(field_1158.thePlayer, var8);
       return var9.count() != 0L;
    }
 
@@ -637,7 +637,7 @@ public class class_314 {
          var2 = field_1158.thePlayer.method_37243().field_41712.method_18928(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
-      Stream var3 = field_1158.field_9601.method_6680(field_1158.thePlayer, var2);
+      Stream var3 = field_1158.theWorld.method_6680(field_1158.thePlayer, var2);
       return var3.count() != 0L;
    }
 
@@ -650,7 +650,7 @@ public class class_314 {
          var0.field_41712.field_19939,
          var0.field_41712.field_19942
       );
-      Stream var5 = field_1158.field_9601.method_6680(field_1158.thePlayer, var4);
+      Stream var5 = field_1158.theWorld.method_6680(field_1158.thePlayer, var4);
       return var5.count() != 0L;
    }
 
@@ -1202,7 +1202,7 @@ public class class_314 {
       Direction[] var5 = new Direction[]{Direction.field_804, Direction.field_809, Direction.field_800, Direction.field_818};
 
       for (Direction var9 : var5) {
-         if (field_1158.field_9601
+         if (field_1158.theWorld
                .method_6680(field_1158.thePlayer, var4.method_18928(var0 * (double)var9.method_1041(), 0.0, var0 * (double)var9.method_1034()))
                .count()
             > 0L) {
@@ -1218,7 +1218,7 @@ public class class_314 {
       Direction[] var5 = new Direction[]{Direction.field_804, Direction.field_809, Direction.field_800, Direction.field_818};
 
       for (Direction var9 : var5) {
-         Iterator var10 = field_1158.field_9601
+         Iterator var10 = field_1158.theWorld
             .method_6680(field_1158.thePlayer, var4.method_18928(var0 * (double)var9.method_1041(), 0.0, var0 * (double)var9.method_1034()))
             .iterator();
          if (var10.hasNext()) {
@@ -1234,7 +1234,7 @@ public class class_314 {
 
    public static boolean method_1383() {
       double var2 = 1.0E-7;
-      return field_1158.field_9601
+      return field_1158.theWorld
             .method_6680(field_1158.thePlayer, field_1158.thePlayer.field_41712.method_18928(var2, 0.0, var2).method_18928(-var2, 0.0, -var2))
             .count()
          > 0L;
@@ -1252,7 +1252,7 @@ public class class_314 {
          if (!var0.field_41726) {
             class_4092 var3 = var0.method_37241();
             var3 = var3.method_18928(0.0, -var0.method_37309(), 0.0);
-            return field_1158.field_9601.method_6680(field_1158.thePlayer, var3).count() == 0L;
+            return field_1158.theWorld.method_6680(field_1158.thePlayer, var3).count() == 0L;
          } else {
             return false;
          }

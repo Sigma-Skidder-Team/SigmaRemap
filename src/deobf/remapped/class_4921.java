@@ -26,7 +26,7 @@ public class class_4921 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      long var11 = this.field_25469.field_9601.method_29546();
+      long var11 = this.field_25469.theWorld.method_29546();
       short var13 = 200;
       double var14 = 0.0025;
       HashSet var16 = Sets.newHashSet();

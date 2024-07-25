@@ -11,7 +11,7 @@ public class class_6721 implements class_5256<class_7110> {
    }
 
    @Nullable
-   public class_9733 method_30848(class_7110 var1, class_174 var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public class_9733 method_30848(class_7110 var1, ClientWorld var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       class_2522 var17 = var1.method_32671();
       if (!var17.method_8345() && var17.method_8352() == class_7537.field_38470) {
          return null;

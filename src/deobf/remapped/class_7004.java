@@ -33,11 +33,11 @@ public class class_7004 extends class_2451 {
          var1.add(method_32016(new TranslationTextComponent("item.minecraft.firework_star.fade_to").appendString(" ").mergeStyle(TextFormatting.GRAY), var6));
       }
 
-      if (var0.method_25933("Trail")) {
+      if (var0.getBoolean("Trail")) {
          var1.add(new TranslationTextComponent("item.minecraft.firework_star.trail").mergeStyle(TextFormatting.GRAY));
       }
 
-      if (var0.method_25933("Flicker")) {
+      if (var0.getBoolean("Flicker")) {
          var1.add(new TranslationTextComponent("item.minecraft.firework_star.flicker").mergeStyle(TextFormatting.GRAY));
       }
    }

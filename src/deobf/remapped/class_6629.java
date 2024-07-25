@@ -436,7 +436,7 @@ public class class_6629<T extends Entity> {
    }
 
    @Nullable
-   public T method_30478(class_6331 var1, class_5734 var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
+   public T method_30478(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
       Entity var11 = this.method_30483(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11 != null) {
          var1.method_7065(var11);
@@ -446,7 +446,7 @@ public class class_6629<T extends Entity> {
    }
 
    @Nullable
-   public T method_30483(class_6331 var1, class_5734 var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
+   public T method_30483(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
       Entity var11 = this.method_30484(var1);
       if (var11 != null) {
          double var12;
@@ -493,13 +493,13 @@ public class class_6629<T extends Entity> {
       return 1.0 + class_3370.method_15520(class_9249.field_47216, var3, var7, !var2 ? -1.0 : -2.0);
    }
 
-   public static void method_30458(World var0, class_704 var1, Entity var2, class_5734 var3) {
-      if (var3 != null && var3.method_25939("EntityTag", 10)) {
+   public static void method_30458(World var0, class_704 var1, Entity var2, CompoundNBT var3) {
+      if (var3 != null && var3.contains("EntityTag", 10)) {
          class_341 var6 = var0.method_29522();
          if (var6 != null && var2 != null && (var0.field_33055 || !var2.method_37131() || var1 != null && var6.method_1600().method_39962(var1.method_3247()))) {
-            class_5734 var7 = var2.method_37258(new class_5734());
+            CompoundNBT var7 = var2.method_37258(new CompoundNBT());
             UUID var8 = var2.method_37328();
-            var7.method_25925(var3.method_25937("EntityTag"));
+            var7.method_25925(var3.getCompound("EntityTag"));
             var2.method_37377(var8);
             var2.method_37393(var7);
          }
@@ -574,7 +574,7 @@ public class class_6629<T extends Entity> {
       return method_30485(var1, class_8669.field_44400.method_14040(var0));
    }
 
-   public static Optional<Entity> method_30475(class_5734 var0, World var1) {
+   public static Optional<Entity> method_30475(CompoundNBT var0, World var1) {
       return Util.<Entity>method_44691(
          method_30474(var0).<Entity>map(var1x -> var1x.method_30484(var1)),
          var1x -> var1x.method_37393(var0),
@@ -610,14 +610,14 @@ public class class_6629<T extends Entity> {
       return this.field_34235;
    }
 
-   public static Optional<class_6629<?>> method_30474(class_5734 var0) {
+   public static Optional<class_6629<?>> method_30474(CompoundNBT var0) {
       return class_8669.field_44400.method_39794(new Identifier(var0.method_25965("id")));
    }
 
    @Nullable
-   public static Entity method_30455(class_5734 var0, World var1, Function<Entity, Entity> var2) {
+   public static Entity method_30455(CompoundNBT var0, World var1, Function<Entity, Entity> var2) {
       return method_30454(var0, var1).<Entity>map(var2).<Entity>map(var3 -> {
-         if (var0.method_25939("Passengers", 9)) {
+         if (var0.contains("Passengers", 9)) {
             class_3416 var6 = var0.method_25927("Passengers", 10);
 
             for (int var7 = 0; var7 < var6.size(); var7++) {
@@ -632,7 +632,7 @@ public class class_6629<T extends Entity> {
       }).orElse((Entity)null);
    }
 
-   private static Optional<Entity> method_30454(class_5734 var0, World var1) {
+   private static Optional<Entity> method_30454(CompoundNBT var0, World var1) {
       try {
          return method_30475(var0, var1);
       } catch (RuntimeException var5) {

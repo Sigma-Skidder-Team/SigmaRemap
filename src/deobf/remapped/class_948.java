@@ -760,7 +760,7 @@ public class class_948 implements class_1243 {
                         this.field_4861 = var23 >= -0.03125
                            && this.field_4880.field_47807.method_39517() != GameType.SPECTATOR
                            && !this.field_4877.method_1632()
-                           && !this.field_4880.field_3876.allowFlying
+                           && !this.field_4880.playerAbilities.allowFlying
                            && !this.field_4880.isPotionActive(Effects.LevitationEffect)
                            && !this.field_4880.method_26618()
                            && this.method_4166(this.field_4880);
@@ -1366,7 +1366,7 @@ public class class_948 implements class_1243 {
    @Override
    public void method_5542(class_9808 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
-      this.field_4880.field_3876.isFlying = var1.method_45232() && this.field_4880.field_3876.allowFlying;
+      this.field_4880.playerAbilities.isFlying = var1.method_45232() && this.field_4880.playerAbilities.allowFlying;
    }
 
    @Override

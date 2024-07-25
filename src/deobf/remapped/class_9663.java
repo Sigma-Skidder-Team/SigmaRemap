@@ -164,9 +164,9 @@ public class class_9663 {
    private static class_2805 method_44624(File var0, DataFixer var1) {
       try {
          CompoundNBT var4 = class_5957.method_27227(var0);
-         CompoundNBT var5 = var4.method_25937("Data");
+         CompoundNBT var5 = var4.getCompound("Data");
          var5.method_25959("Player");
-         int var6 = var5.method_25939("DataVersion", 99) ? var5.method_25947("DataVersion") : -1;
+         int var6 = var5.contains("DataVersion", 99) ? var5.method_25947("DataVersion") : -1;
          Dynamic var7 = var1.update(
             class_5397.field_27548.method_24571(), new Dynamic(class_3504.field_17178, var5), var6, class_7665.method_34674().getWorldVersion()
          );
@@ -181,10 +181,10 @@ public class class_9663 {
       return (var2, var3) -> {
          try {
             CompoundNBT var6 = class_5957.method_27227(var2);
-            CompoundNBT var7 = var6.method_25937("Data");
-            CompoundNBT var8 = var7.method_25939("Player", 10) ? var7.method_25937("Player") : null;
+            CompoundNBT var7 = var6.getCompound("Data");
+            CompoundNBT var8 = var7.contains("Player", 10) ? var7.getCompound("Player") : null;
             var7.method_25959("Player");
-            int var9 = var7.method_25939("DataVersion", 99) ? var7.method_25947("DataVersion") : -1;
+            int var9 = var7.contains("DataVersion", 99) ? var7.method_25947("DataVersion") : -1;
             Dynamic var10 = var3.update(class_5397.field_27548.method_24571(), new Dynamic(var0, var7), var9, class_7665.method_34674().getWorldVersion());
             Pair var11 = method_44635(var10, var3, var9);
             class_4922 var12 = class_4922.method_22546(var10);
@@ -201,9 +201,9 @@ public class class_9663 {
       return (var3, var4) -> {
          try {
             CompoundNBT var7 = class_5957.method_27227(var3);
-            CompoundNBT var8 = var7.method_25937("Data");
+            CompoundNBT var8 = var7.getCompound("Data");
             var8.method_25959("Player");
-            int var9 = var8.method_25939("DataVersion", 99) ? var8.method_25947("DataVersion") : -1;
+            int var9 = var8.contains("DataVersion", 99) ? var8.method_25947("DataVersion") : -1;
             Dynamic var10 = var4.update(
                class_5397.field_27548.method_24571(), new Dynamic(class_3504.field_17178, var8), var9, class_7665.method_34674().getWorldVersion()
             );

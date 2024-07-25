@@ -72,15 +72,15 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.method_40588()) {
-         var1.method_25946("HivePos", class_4338.method_20190(this.method_40605()));
+         var1.put("HivePos", class_4338.method_20190(this.method_40605()));
       }
 
       if (this.method_40603()) {
-         var1.method_25946("FlowerPos", class_4338.method_20190(this.method_40558()));
+         var1.put("FlowerPos", class_4338.method_20190(this.method_40558()));
       }
 
-      var1.method_25934("HasNectar", this.method_40592());
-      var1.method_25934("HasStung", this.method_40610());
+      var1.putBoolean("HasNectar", this.method_40592());
+      var1.putBoolean("HasStung", this.method_40610());
       var1.method_25931("TicksSincePollination", this.field_45165);
       var1.method_25931("CannotEnterHiveTicks", this.field_45159);
       var1.method_25931("CropsGrownSincePollination", this.field_45158);
@@ -91,17 +91,17 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    public void method_37314(CompoundNBT var1) {
       this.field_45160 = null;
       if (var1.method_25938("HivePos")) {
-         this.field_45160 = class_4338.method_20189(var1.method_25937("HivePos"));
+         this.field_45160 = class_4338.method_20189(var1.getCompound("HivePos"));
       }
 
       this.field_45156 = null;
       if (var1.method_25938("FlowerPos")) {
-         this.field_45156 = class_4338.method_20189(var1.method_25937("FlowerPos"));
+         this.field_45156 = class_4338.method_20189(var1.getCompound("FlowerPos"));
       }
 
       super.method_37314(var1);
-      this.method_40598(var1.method_25933("HasNectar"));
-      this.method_40624(var1.method_25933("HasStung"));
+      this.method_40598(var1.getBoolean("HasNectar"));
+      this.method_40624(var1.getBoolean("HasStung"));
       this.field_45165 = var1.method_25947("TicksSincePollination");
       this.field_45159 = var1.method_25947("CannotEnterHiveTicks");
       this.field_45158 = var1.method_25947("CropsGrownSincePollination");

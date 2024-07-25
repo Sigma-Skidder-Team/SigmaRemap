@@ -29,7 +29,7 @@ public class OptionsScreen extends Screen {
          var3++;
       }
 
-      if (this.field_943.field_9601 == null) {
+      if (this.field_943.theWorld == null) {
          this.<class_2116>method_1186(
             new class_2116(
                this.field_941 / 2 - 155 + var3 % 2 * 160,
@@ -46,7 +46,7 @@ public class OptionsScreen extends Screen {
             )
          );
       } else {
-         this.field_43680 = this.field_943.field_9601.method_43370();
+         this.field_43680 = this.field_943.theWorld.method_43370();
          this.field_43679 = this.<class_9521>method_1186(
             new class_9521(
                this.field_941 / 2 - 155 + var3 % 2 * 160, this.field_940 / 6 - 12 + 24 * (var3 >> 1), 150, 20, this.method_39304(this.field_43680), var1 -> {
@@ -56,7 +56,7 @@ public class OptionsScreen extends Screen {
                }
             )
          );
-         if (this.field_943.method_8520() && !this.field_943.field_9601.method_749().method_8659()) {
+         if (this.field_943.method_8520() && !this.field_943.theWorld.method_749().method_8659()) {
             this.field_43679.method_32688(this.field_43679.method_32699() - 20);
             this.field_43681 = this.<class_1180>method_1186(
                new class_1180(
@@ -69,13 +69,13 @@ public class OptionsScreen extends Screen {
                               new TranslationTextComponent("difficulty.lock.title"),
                               new TranslationTextComponent(
                                  "difficulty.lock.question",
-                                 new TranslationTextComponent("options.difficulty." + this.field_943.field_9601.method_749().method_8661().method_2098())
+                                 new TranslationTextComponent("options.difficulty." + this.field_943.theWorld.method_749().method_8661().method_2098())
                               )
                            )
                         )
                )
             );
-            this.field_43681.method_5222(this.field_943.field_9601.method_749().method_8662());
+            this.field_43681.method_5222(this.field_943.theWorld.method_749().method_8662());
             this.field_43681.field_36675 = !this.field_43681.method_5221();
             this.field_43679.field_36675 = !this.field_43681.method_5221();
          } else {
@@ -206,7 +206,7 @@ public class OptionsScreen extends Screen {
 
    private void method_39305(boolean var1) {
       this.field_943.method_8609(this);
-      if (var1 && this.field_943.field_9601 != null) {
+      if (var1 && this.field_943.theWorld != null) {
          this.field_943.method_8614().method_4813(new class_3196(true));
          this.field_43681.method_5222(true);
          this.field_43681.field_36675 = false;

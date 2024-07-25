@@ -44,7 +44,7 @@ public class class_5645 {
       }
 
       if (var4 != null) {
-         int var7 = var4.method_25939("DataVersion", 3) ? var4.method_25947("DataVersion") : -1;
+         int var7 = var4.contains("DataVersion", 3) ? var4.method_25947("DataVersion") : -1;
          var1.method_37393(class_4338.method_20179(this.field_28616, class_5397.field_27553, var4, var7));
       }
 

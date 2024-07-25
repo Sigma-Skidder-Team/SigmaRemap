@@ -190,7 +190,7 @@ public class GUIManager {
 
    public void method_30983() {
       NotificationIcons.field_11030.method_38419();
-      if (MinecraftClient.getInstance().field_9601 != null) {
+      if (MinecraftClient.getInstance().theWorld != null) {
          GL11.glDisable(2896);
          int var3 = 0;
          byte var4 = 0;

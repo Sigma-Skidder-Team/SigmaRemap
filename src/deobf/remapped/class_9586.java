@@ -13,7 +13,7 @@ public class class_9586 implements class_4439, class_7912 {
    public class_9586() {
       MinecraftClient var3 = MinecraftClient.getInstance();
 
-      for (class_3903 var5 : var3.field_9601.method_29562().method_4841()) {
+      for (class_3903 var5 : var3.theWorld.method_29562().method_4841()) {
          this.field_48756.add(new class_7100(this, var5));
       }
    }

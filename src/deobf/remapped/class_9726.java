@@ -12,15 +12,15 @@ public class class_9726 extends class_7896 {
 
    public class_9726(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13404, var2);
-      this.field_49438 = var2.method_25933("Witch");
-      this.field_49439 = var2.method_25933("Cat");
+      this.field_49438 = var2.getBoolean("Witch");
+      this.field_49439 = var2.getBoolean("Cat");
    }
 
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("Witch", this.field_49438);
-      var1.method_25934("Cat", this.field_49439);
+      var1.putBoolean("Witch", this.field_49438);
+      var1.putBoolean("Cat", this.field_49439);
    }
 
    @Override

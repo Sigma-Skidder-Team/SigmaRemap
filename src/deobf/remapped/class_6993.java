@@ -40,7 +40,7 @@ public abstract class class_6993 extends class_1173 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.method_31991()) {
-         var1.method_25934("IsImmuneToZombification", true);
+         var1.putBoolean("IsImmuneToZombification", true);
       }
 
       var1.method_25931("TimeInOverworld", this.field_35908);
@@ -54,7 +54,7 @@ public abstract class class_6993 extends class_1173 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_31989(var1.method_25933("IsImmuneToZombification"));
+      this.method_31989(var1.getBoolean("IsImmuneToZombification"));
       this.field_35908 = var1.method_25947("TimeInOverworld");
    }
 

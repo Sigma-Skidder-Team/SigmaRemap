@@ -71,7 +71,7 @@ public class class_2973 implements class_2995 {
 
    private void method_13605() {
       this.field_14617.entrySet().removeIf(var1 -> {
-         Entity var4 = this.field_14620.field_9601.method_29534(var1.getValue().field_32622);
+         Entity var4 = this.field_14620.theWorld.method_29534(var1.getValue().field_32622);
          return var4 == null || var4.field_41751;
       });
    }
@@ -249,7 +249,7 @@ public class class_2973 implements class_2995 {
    }
 
    private boolean method_13612(class_6388 var1) {
-      class_5989 var4 = this.field_14620.thePlayer;
+      ClientPlayerEntity var4 = this.field_14620.thePlayer;
       class_1331 var5 = new class_1331(var4.method_37302(), var1.field_32616.method_60(), var4.method_37156());
       class_1331 var6 = new class_1331(var1.field_32616);
       return var5.method_12171(var6, 30.0);

@@ -4,7 +4,7 @@ public class class_4278 extends class_8715 {
    private static String[] field_20717;
    private final class_6571 field_20718;
 
-   private class_4278(class_174 var1, double var2, double var4, double var6, double var8, class_6571 var10) {
+   private class_4278(ClientWorld var1, double var2, double var4, double var6, double var8, class_6571 var10) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
       this.field_20718 = var10;
       this.field_49476 = 4;

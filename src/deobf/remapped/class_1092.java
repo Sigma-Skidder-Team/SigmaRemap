@@ -37,7 +37,7 @@ public class class_1092 implements class_392 {
    private final GameProfile field_6022;
    private final Screen field_6041;
    private MinecraftClient field_6026;
-   private class_174 field_6021;
+   private ClientWorld field_6021;
    private class_784 field_6025;
    private boolean field_6030;
    private final Map<UUID, class_753> field_6034 = Maps.newHashMap();
@@ -93,7 +93,7 @@ public class class_1092 implements class_392 {
       boolean var8 = var1.method_9240();
       class_784 var9 = new class_784(class_423.field_1789, var1.method_9231(), var8);
       this.field_6025 = var9;
-      this.field_6021 = new class_174(
+      this.field_6021 = new ClientWorld(
          this, var9, var5, var6, this.field_6023, this.field_6026::getProfiler, this.field_6026.worldRenderer, var7, var1.method_9235()
       );
       this.field_6026.method_8508(this.field_6021);
@@ -414,7 +414,7 @@ public class class_1092 implements class_392 {
       float var11 = (float)(var1.method_23015() * 360) / 256.0F;
       if (this.method_4800(var1.method_23019()) != null) {
          int var12 = var1.method_23017();
-         class_9745 var13 = new class_9745(this.field_6026.field_9601, this.method_4800(var1.method_23019()).method_3392());
+         class_9745 var13 = new class_9745(this.field_6026.theWorld, this.method_4800(var1.method_23019()).method_3392());
          var13.method_37091(var12);
          var13.method_37306(var4, var6, var8);
          var13.method_37223(var4, var6, var8);
@@ -495,7 +495,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1894(class_509 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_5989 var4 = this.field_6026.thePlayer;
+      ClientPlayerEntity var4 = this.field_6026.thePlayer;
       class_1343 var5 = var4.method_37098();
       boolean var6 = var1.method_2518().contains(class_8089.field_41423);
       boolean var7 = var1.method_2518().contains(class_8089.field_41427);
@@ -743,7 +743,7 @@ public class class_1092 implements class_392 {
       double var8 = var1.method_19697();
       float var10 = (float)(var1.method_19700() * 360) / 256.0F;
       float var11 = (float)(var1.method_19696() * 360) / 256.0F;
-      class_5834 var12 = (class_5834)class_6629.method_30482(var1.method_19692(), this.field_6026.field_9601);
+      class_5834 var12 = (class_5834)class_6629.method_30482(var1.method_19692(), this.field_6026.theWorld);
       if (var12 == null) {
          field_6038.warn("Skipping Entity with id {}", var1.method_19692());
       } else {
@@ -782,14 +782,14 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1971(class_8508 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      this.field_6026.field_9601.method_735(var1.method_39180());
-      this.field_6026.field_9601.method_719(var1.method_39179());
+      this.field_6026.theWorld.method_735(var1.method_39180());
+      this.field_6026.theWorld.method_719(var1.method_39179());
    }
 
    @Override
    public void method_1893(class_2073 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      this.field_6026.field_9601.method_752(var1.method_9676(), var1.method_9679());
+      this.field_6026.theWorld.method_752(var1.method_9676(), var1.method_9679());
    }
 
    @Override
@@ -878,7 +878,7 @@ public class class_1092 implements class_392 {
       class_5965.method_27246(var1, this, this.field_6026);
       class_5621 var4 = var1.method_35339();
       class_8760 var5 = var1.method_35335();
-      class_5989 var6 = this.field_6026.thePlayer;
+      ClientPlayerEntity var6 = this.field_6026.thePlayer;
       int var7 = var6.method_37145();
       this.field_6030 = false;
       if (var4 != var6.field_41768.method_29545()) {
@@ -887,7 +887,7 @@ public class class_1092 implements class_392 {
          boolean var10 = var1.method_35338();
          class_784 var11 = new class_784(this.field_6025.method_8661(), this.field_6025.method_8659(), var10);
          this.field_6025 = var11;
-         this.field_6021 = new class_174(
+         this.field_6021 = new ClientWorld(
             this, var11, var4, var5, this.field_6023, this.field_6026::getProfiler, this.field_6026.worldRenderer, var9, var1.method_35332()
          );
          this.field_6021.method_756(var8);
@@ -898,7 +898,7 @@ public class class_1092 implements class_392 {
       this.field_6021.method_718();
       String var12 = var6.method_27309();
       this.field_6026.field_9669 = null;
-      class_5989 var13 = this.field_6026
+      ClientPlayerEntity var13 = this.field_6026
          .playerController
          .method_42130(this.field_6021, var6.method_27331(), var6.method_27334(), var6.method_37252(), var6.method_37321());
       var13.method_37091(var7);
@@ -933,7 +933,7 @@ public class class_1092 implements class_392 {
    public void method_1931(class_1897 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       class_2730 var4 = new class_2730(
-         this.field_6026.field_9601, (Entity)null, var1.method_8624(), var1.method_8622(), var1.method_8623(), var1.method_8630(), var1.method_8629()
+         this.field_6026.theWorld, (Entity)null, var1.method_8624(), var1.method_8622(), var1.method_8623(), var1.method_8630(), var1.method_8629()
       );
       var4.method_12272(true);
       this.field_6026
@@ -948,7 +948,7 @@ public class class_1092 implements class_392 {
       class_5965.method_27246(var1, this, this.field_6026);
       Entity var4 = this.field_6021.method_29534(var1.method_29185());
       if (var4 instanceof class_4109) {
-         class_5989 var5 = this.field_6026.thePlayer;
+         ClientPlayerEntity var5 = this.field_6026.thePlayer;
          class_4109 var6 = (class_4109)var4;
          class_4657 var7 = new class_4657(var1.method_29186());
          class_7741 var8 = new class_7741(var1.method_29189(), var5.inventory, var7, var6);
@@ -966,7 +966,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1935(class_5491 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_5989 var4 = this.field_6026.thePlayer;
+      ClientPlayerEntity var4 = this.field_6026.thePlayer;
       ItemStack var5 = var1.method_24953();
       int var6 = var1.method_24956();
       this.field_6026.method_8531().method_40531(var5);
@@ -1002,7 +1002,7 @@ public class class_1092 implements class_392 {
    public void method_1970(class_8913 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       Object var4 = null;
-      class_5989 var5 = this.field_6026.thePlayer;
+      ClientPlayerEntity var5 = this.field_6026.thePlayer;
       if (var1.method_40994() != 0) {
          if (var1.method_40994() == var5.field_3874.field_19925) {
             var4 = var5.field_3874;
@@ -1019,7 +1019,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1921(class_9860 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_5989 var4 = this.field_6026.thePlayer;
+      ClientPlayerEntity var4 = this.field_6026.thePlayer;
       if (var1.method_45476() != 0) {
          if (var1.method_45476() == var4.field_3874.field_19925) {
             var4.field_3874.method_18854(var1.method_45478());
@@ -1045,7 +1045,7 @@ public class class_1092 implements class_392 {
    public void method_1903(class_5029 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       class_1331 var4 = var1.method_23192();
-      class_3757 var5 = this.field_6026.field_9601.method_28260(var4);
+      class_3757 var5 = this.field_6026.theWorld.method_28260(var4);
       int var6 = var1.method_23195();
       boolean var7 = var6 == 2 && var5 instanceof class_7454;
       if (var6 == 1 && var5 instanceof class_1896
@@ -1061,7 +1061,7 @@ public class class_1092 implements class_392 {
          || var6 == 12 && var5 instanceof class_6786
          || var6 == 13 && var5 instanceof class_557
          || var6 == 14 && var5 instanceof class_5354) {
-         var5.method_17394(this.field_6026.field_9601.method_28262(var4), var1.method_23191());
+         var5.method_17394(this.field_6026.theWorld.method_28262(var4), var1.method_23191());
       }
 
       if (var7 && this.field_6026.field_9623 instanceof class_7808) {
@@ -1072,7 +1072,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1977(class_5403 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_5989 var4 = this.field_6026.thePlayer;
+      ClientPlayerEntity var4 = this.field_6026.thePlayer;
       if (var4.field_3874 != null && var4.field_3874.field_19925 == var1.method_24598()) {
          var4.field_3874.method_18869(var1.method_24595(), var1.method_24594());
       }
@@ -1096,19 +1096,19 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1939(class_6944 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      this.field_6026.field_9601.method_29521(var1.method_31774(), var1.method_31777(), var1.method_31775(), var1.method_31776());
+      this.field_6026.theWorld.method_29521(var1.method_31774(), var1.method_31777(), var1.method_31775(), var1.method_31776());
    }
 
    @Override
    public void method_1908(class_4729 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      this.field_6026.field_9601.method_29568(var1.method_21845(), var1.method_21847(), var1.method_21844());
+      this.field_6026.theWorld.method_29568(var1.method_21845(), var1.method_21847(), var1.method_21844());
    }
 
    @Override
    public void method_1909(class_2161 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_5989 var4 = this.field_6026.thePlayer;
+      ClientPlayerEntity var4 = this.field_6026.thePlayer;
       class_8183 var5 = var1.method_10056();
       float var6 = var1.method_10055();
       int var7 = class_9299.method_42848(var6 + 0.5F);
@@ -1240,7 +1240,7 @@ public class class_1092 implements class_392 {
       class_5965.method_27246(var1, this, this.field_6026);
       class_8451 var4 = this.field_6026.gameRenderer.method_35928();
       String var5 = class_2143.method_10015(var1.method_4633());
-      class_2134 var6 = this.field_6026.field_9601.method_29533(var5);
+      class_2134 var6 = this.field_6026.theWorld.method_29533(var5);
       if (var6 == null) {
          var6 = new class_2134(var5);
          if (var4.method_38865(var5) != null) {
@@ -1250,7 +1250,7 @@ public class class_1092 implements class_392 {
             }
          }
 
-         this.field_6026.field_9601.method_29524(var6);
+         this.field_6026.theWorld.method_29524(var6);
       }
 
       var1.method_4632(var6);
@@ -1261,9 +1261,9 @@ public class class_1092 implements class_392 {
    public void method_1974(class_6639 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       if (!var1.method_30509()) {
-         this.field_6026.field_9601.method_43364(var1.method_30508(), var1.method_30506(), var1.method_30507());
+         this.field_6026.theWorld.method_43364(var1.method_30508(), var1.method_30506(), var1.method_30507());
       } else {
-         this.field_6026.field_9601.method_29589(var1.method_30508(), var1.method_30506(), var1.method_30507());
+         this.field_6026.theWorld.method_29589(var1.method_30508(), var1.method_30506(), var1.method_30507());
       }
    }
 
@@ -1539,20 +1539,20 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1969(class_3727 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_5989 var4 = this.field_6026.thePlayer;
-      var4.field_3876.isFlying = var1.method_17271();
-      var4.field_3876.isCreativeMode = var1.method_17274();
-      var4.field_3876.disableDamage = var1.method_17273();
-      var4.field_3876.allowFlying = var1.method_17272();
-      var4.field_3876.method_4233(var1.method_17275());
-      var4.field_3876.method_4231(var1.method_17276());
+      ClientPlayerEntity var4 = this.field_6026.thePlayer;
+      var4.playerAbilities.isFlying = var1.method_17271();
+      var4.playerAbilities.isCreativeMode = var1.method_17274();
+      var4.playerAbilities.disableDamage = var1.method_17273();
+      var4.playerAbilities.allowFlying = var1.method_17272();
+      var4.playerAbilities.setFlySpeed(var1.method_17275());
+      var4.playerAbilities.setWalkSpeed(var1.method_17276());
    }
 
    @Override
    public void method_1958(class_3740 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       this.field_6026
-         .field_9601
+         .theWorld
          .method_29528(
             this.field_6026.thePlayer,
             var1.method_17347(),
@@ -1571,7 +1571,7 @@ public class class_1092 implements class_392 {
       Entity var4 = this.field_6021.method_29534(var1.method_10932());
       if (var4 != null) {
          this.field_6026
-            .field_9601
+            .theWorld
             .method_29540(this.field_6026.thePlayer, var4, var1.method_10931(), var1.method_10936(), var1.method_10933(), var1.method_10930());
       }
    }
@@ -2224,7 +2224,7 @@ public class class_1092 implements class_392 {
       return this.field_6040;
    }
 
-   public class_174 method_4805() {
+   public ClientWorld method_4805() {
       return this.field_6021;
    }
 

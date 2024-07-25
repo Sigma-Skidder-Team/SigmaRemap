@@ -10,7 +10,7 @@ public class RegenModule extends Module {
    @EventListen
    private void method_19790(class_5596 var1) {
       if (this.method_42015()) {
-         if (!client.thePlayer.field_3876.isCreativeMode
+         if (!client.thePlayer.playerAbilities.isCreativeMode
             && client.thePlayer.method_3161().method_42238() > 17
             && client.thePlayer.method_26551() < 20.0F
             && client.thePlayer.method_26551() != 0.0F

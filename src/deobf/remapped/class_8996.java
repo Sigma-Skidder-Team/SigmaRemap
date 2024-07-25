@@ -147,7 +147,7 @@ public class class_8996 extends class_7186 {
          var4.add(var7);
       }
 
-      var1.method_25946("Raids", var4);
+      var1.put("Raids", var4);
       return var1;
    }
 

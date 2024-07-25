@@ -111,7 +111,7 @@ public class AACBlockFly extends Module {
 
    @EventListen
    private void method_11341(class_8128 var1) {
-      if (this.method_42015() && client.field_9601 != null && client.thePlayer != null) {
+      if (this.method_42015() && client.theWorld != null && client.thePlayer != null) {
          if (this.getBooleanValueByName("Haphe (AACAP)") && class_8865.method_40772() && !client.thePlayer.method_37321()) {
             var1.field_41637 *= 1.14F;
          }
@@ -157,7 +157,7 @@ public class AACBlockFly extends Module {
             ((BlockFlyModule)this.method_42017()).method_17211();
          }
 
-         class_6910 var6 = client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var3);
+         class_6910 var6 = client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var3);
          if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
             client.thePlayer.inventory.field_36404 = var5;
          }

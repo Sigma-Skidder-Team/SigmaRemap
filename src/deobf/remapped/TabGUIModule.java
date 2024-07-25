@@ -66,7 +66,7 @@ public class TabGUIModule extends Module {
    @EventListen
    @class_5355
    private void method_41401(class_3278 var1) {
-      if (this.method_42015() && client.thePlayer != null && client.field_9601 != null) {
+      if (this.method_42015() && client.thePlayer != null && client.theWorld != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
             if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                this.field_46178 = 5 * this.field_46159 + this.field_46163;

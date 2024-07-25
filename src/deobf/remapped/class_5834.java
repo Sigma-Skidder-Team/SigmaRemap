@@ -228,7 +228,7 @@ public abstract class class_5834 extends Entity {
          this.method_37136();
       }
 
-      boolean var8 = var3 && ((class_704)this).field_3876.disableDamage;
+      boolean var8 = var3 && ((class_704)this).playerAbilities.disableDamage;
       if (this.method_37330()) {
          if (this.method_37261(class_6503.field_33094)
             && !this.field_41768
@@ -521,12 +521,12 @@ public abstract class class_5834 extends Entity {
 
    @Override
    public void method_37376(CompoundNBT var1) {
-      var1.method_25920("Health", this.method_26551());
+      var1.putFloat("Health", this.method_26551());
       var1.method_25958("HurtTime", (short)this.field_29645);
       var1.method_25931("HurtByTimestamp", this.field_29636);
       var1.method_25958("DeathTime", (short)this.field_29677);
-      var1.method_25920("AbsorptionAmount", this.method_26493());
-      var1.method_25946("Attributes", this.method_26590().method_30807());
+      var1.putFloat("AbsorptionAmount", this.method_26493());
+      var1.put("Attributes", this.method_26590().method_30807());
       if (!this.field_29642.isEmpty()) {
          class_3416 var4 = new class_3416();
 
@@ -534,27 +534,27 @@ public abstract class class_5834 extends Entity {
             var4.add(var6.method_10345(new CompoundNBT()));
          }
 
-         var1.method_25946("ActiveEffects", var4);
+         var1.put("ActiveEffects", var4);
       }
 
-      var1.method_25934("FallFlying", this.method_26618());
+      var1.putBoolean("FallFlying", this.method_26618());
       this.method_26518().ifPresent(var1x -> {
          var1.method_25931("SleepingX", var1x.method_12173());
          var1.method_25931("SleepingY", var1x.method_12165());
          var1.method_25931("SleepingZ", var1x.method_12185());
       });
       DataResult var7 = this.field_29675.method_5131(class_3504.field_17178);
-      var7.resultOrPartial(field_41741::error).ifPresent(var1x -> var1.method_25946("Brain", var1x));
+      var7.resultOrPartial(field_41741::error).ifPresent(var1x -> var1.put("Brain", var1x));
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
-      this.method_26460(var1.method_25955("AbsorptionAmount"));
-      if (var1.method_25939("Attributes", 9) && this.field_41768 != null && !this.field_41768.field_33055) {
+      this.method_26460(var1.getFloat("AbsorptionAmount"));
+      if (var1.contains("Attributes", 9) && this.field_41768 != null && !this.field_41768.field_33055) {
          this.method_26590().method_30812(var1.method_25927("Attributes", 10));
       }
 
-      if (var1.method_25939("ActiveEffects", 9)) {
+      if (var1.contains("ActiveEffects", 9)) {
          class_3416 var4 = var1.method_25927("ActiveEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -566,14 +566,14 @@ public abstract class class_5834 extends Entity {
          }
       }
 
-      if (var1.method_25939("Health", 99)) {
-         this.method_26456(var1.method_25955("Health"));
+      if (var1.contains("Health", 99)) {
+         this.method_26456(var1.getFloat("Health"));
       }
 
       this.field_29645 = var1.method_25956("HurtTime");
       this.field_29677 = var1.method_25956("DeathTime");
       this.field_29636 = var1.method_25947("HurtByTimestamp");
-      if (var1.method_25939("Team", 8)) {
+      if (var1.contains("Team", 8)) {
          String var8 = var1.method_25965("Team");
          class_3903 var10 = this.field_41768.method_29562().method_4850(var8);
          boolean var11 = var10 != null && this.field_41768.method_29562().method_4842(this.method_37225(), var10);
@@ -582,11 +582,11 @@ public abstract class class_5834 extends Entity {
          }
       }
 
-      if (var1.method_25933("FallFlying")) {
+      if (var1.getBoolean("FallFlying")) {
          this.method_37220(7, true);
       }
 
-      if (var1.method_25939("SleepingX", 99) && var1.method_25939("SleepingY", 99) && var1.method_25939("SleepingZ", 99)) {
+      if (var1.contains("SleepingX", 99) && var1.contains("SleepingY", 99) && var1.contains("SleepingZ", 99)) {
          class_1331 var9 = new class_1331(var1.method_25947("SleepingX"), var1.method_25947("SleepingY"), var1.method_25947("SleepingZ"));
          this.method_26601(var9);
          this.field_41735.method_36633(field_41734, class_7653.field_38886);
@@ -595,7 +595,7 @@ public abstract class class_5834 extends Entity {
          }
       }
 
-      if (var1.method_25939("Brain", 10)) {
+      if (var1.contains("Brain", 10)) {
          this.field_29675 = this.method_26585(new Dynamic(class_3504.field_17178, var1.method_25929("Brain")));
       }
    }
@@ -1830,7 +1830,7 @@ public abstract class class_5834 extends Entity {
 
       class_1343 var4 = this.method_37098();
       class_2911 var5 = new class_2911(new class_1343(var4.field_7336, (double)var3, var4.field_7334));
-      if (this instanceof class_5989) {
+      if (this instanceof ClientPlayerEntity) {
          SigmaMainClass.getInstance().getEventManager().call(var5);
       }
 
@@ -3060,7 +3060,7 @@ public abstract class class_5834 extends Entity {
             1.0F + (var1.field_33033.nextFloat() - var1.field_33033.nextFloat()) * 0.4F
          );
          this.method_26497(var2, var1, this);
-         if (!(this instanceof class_704) || !((class_704)this).field_3876.isCreativeMode) {
+         if (!(this instanceof class_704) || !((class_704)this).playerAbilities.isCreativeMode) {
             var2.method_27970(1);
          }
       }

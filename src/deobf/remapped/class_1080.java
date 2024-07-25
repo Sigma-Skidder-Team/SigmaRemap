@@ -192,7 +192,7 @@ public abstract class class_1080 extends Entity {
          this.method_4749(10);
          this.method_37138();
          this.method_4742(this.method_4736() + var2 * 10.0F);
-         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).field_3876.isCreativeMode;
+         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).playerAbilities.isCreativeMode;
          if (var5 || this.method_4736() > 40.0F) {
             this.method_37305();
             if (var5 && !this.method_45507()) {
@@ -648,8 +648,8 @@ public abstract class class_1080 extends Entity {
 
    @Override
    public void method_37314(CompoundNBT var1) {
-      if (var1.method_25933("CustomDisplayTile")) {
-         this.method_4753(class_4338.method_20185(var1.method_25937("DisplayState")));
+      if (var1.getBoolean("CustomDisplayTile")) {
+         this.method_4753(class_4338.method_20185(var1.getCompound("DisplayState")));
          this.method_4738(var1.method_25947("DisplayOffset"));
       }
    }
@@ -657,8 +657,8 @@ public abstract class class_1080 extends Entity {
    @Override
    public void method_37376(CompoundNBT var1) {
       if (this.method_4754()) {
-         var1.method_25934("CustomDisplayTile", true);
-         var1.method_25946("DisplayState", class_4338.method_20187(this.method_4739()));
+         var1.putBoolean("CustomDisplayTile", true);
+         var1.put("DisplayState", class_4338.method_20187(this.method_4739()));
          var1.method_25931("DisplayOffset", this.method_4741());
       }
    }

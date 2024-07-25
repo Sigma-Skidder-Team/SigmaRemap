@@ -123,7 +123,7 @@ public abstract class class_3521 {
                            continue;
                         }
 
-                        if (this.field_17261.method_22391().method_25924() == 1 && this.field_17261.method_22391().method_25939("id", 8)) {
+                        if (this.field_17261.method_22391().method_25924() == 1 && this.field_17261.method_22391().contains("id", 8)) {
                            ((class_5886)var24)
                               .method_26864(var23, var3.method_43368(var24.method_37075()), class_2417.field_12024, (class_8733)null, (CompoundNBT)null);
                         }
@@ -183,7 +183,7 @@ public abstract class class_3521 {
    public void method_16255(CompoundNBT var1) {
       this.field_17251 = var1.method_25956("Delay");
       this.field_17258.clear();
-      if (var1.method_25939("SpawnPotentials", 9)) {
+      if (var1.contains("SpawnPotentials", 9)) {
          class_3416 var4 = var1.method_25927("SpawnPotentials", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -191,26 +191,26 @@ public abstract class class_3521 {
          }
       }
 
-      if (!var1.method_25939("SpawnData", 10)) {
+      if (!var1.contains("SpawnData", 10)) {
          if (!this.field_17258.isEmpty()) {
             this.method_16266(class_6242.<class_4877>method_28510(this.method_16252().field_33033, this.field_17258));
          }
       } else {
-         this.method_16266(new class_4877(1, var1.method_25937("SpawnData")));
+         this.method_16266(new class_4877(1, var1.getCompound("SpawnData")));
       }
 
-      if (var1.method_25939("MinSpawnDelay", 99)) {
+      if (var1.contains("MinSpawnDelay", 99)) {
          this.field_17262 = var1.method_25956("MinSpawnDelay");
          this.field_17255 = var1.method_25956("MaxSpawnDelay");
          this.field_17260 = var1.method_25956("SpawnCount");
       }
 
-      if (var1.method_25939("MaxNearbyEntities", 99)) {
+      if (var1.contains("MaxNearbyEntities", 99)) {
          this.field_17253 = var1.method_25956("MaxNearbyEntities");
          this.field_17256 = var1.method_25956("RequiredPlayerRange");
       }
 
-      if (var1.method_25939("SpawnRange", 99)) {
+      if (var1.contains("SpawnRange", 99)) {
          this.field_17263 = var1.method_25956("SpawnRange");
       }
 
@@ -231,7 +231,7 @@ public abstract class class_3521 {
          var1.method_25958("MaxNearbyEntities", (short)this.field_17253);
          var1.method_25958("RequiredPlayerRange", (short)this.field_17256);
          var1.method_25958("SpawnRange", (short)this.field_17263);
-         var1.method_25946("SpawnData", this.field_17261.method_22391().method_25944());
+         var1.put("SpawnData", this.field_17261.method_22391().method_25944());
          class_3416 var5 = new class_3416();
          if (!this.field_17258.isEmpty()) {
             for (class_4877 var7 : this.field_17258) {
@@ -241,7 +241,7 @@ public abstract class class_3521 {
             var5.add(this.field_17261.method_22390());
          }
 
-         var1.method_25946("SpawnPotentials", var5);
+         var1.put("SpawnPotentials", var5);
          return var1;
       }
    }
@@ -251,7 +251,7 @@ public abstract class class_3521 {
       if (this.field_17254 == null) {
          this.field_17254 = class_6629.method_30455(this.field_17261.method_22391(), this.method_16252(), Function.<Entity>identity());
          if (this.field_17261.method_22391().method_25924() == 1
-            && this.field_17261.method_22391().method_25939("id", 8)
+            && this.field_17261.method_22391().contains("id", 8)
             && !(this.field_17254 instanceof class_5886)) {
          }
       }

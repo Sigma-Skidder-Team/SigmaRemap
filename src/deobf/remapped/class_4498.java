@@ -6,7 +6,7 @@ public class class_4498 extends class_3289 {
    private class_3416 field_21996;
    private boolean field_21997;
 
-   public class_4498(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12, class_9326 var14, CompoundNBT var15) {
+   public class_4498(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, class_9326 var14, CompoundNBT var15) {
       super(var1, var2, var4, var6);
       this.field_49481 = var8;
       this.field_49486 = var10;
@@ -20,7 +20,7 @@ public class class_4498 extends class_3289 {
 
             for (int var18 = 0; var18 < this.field_21996.size(); var18++) {
                CompoundNBT var19 = this.field_21996.method_15764(var18);
-               if (var19.method_25933("Flicker")) {
+               if (var19.getBoolean("Flicker")) {
                   this.field_21997 = true;
                   this.field_49476 += 15;
                   break;
@@ -68,8 +68,8 @@ public class class_4498 extends class_3289 {
          int var15 = this.field_21999 / 2;
          CompoundNBT var17 = this.field_21996.method_15764(var15);
          class_3917 var20 = class_3917.method_18129(var17.method_25950("Type"));
-         boolean var21 = var17.method_25933("Trail");
-         boolean var7 = var17.method_25933("Flicker");
+         boolean var21 = var17.getBoolean("Trail");
+         boolean var7 = var17.getBoolean("Flicker");
          int[] var8 = var17.method_25922("Colors");
          int[] var9 = var17.method_25922("FadeColors");
          if (var8.length == 0) {

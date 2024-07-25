@@ -96,8 +96,8 @@ public class OtherNameTagsModule extends Module {
       if (this.method_42015()) {
          this.field_15013.clear();
 
-         for (Entity var5 : client.field_9601.method_736()) {
-            if (var5 instanceof class_704 && !(var5 instanceof class_5989)) {
+         for (Entity var5 : client.theWorld.method_736()) {
+            if (var5 instanceof class_704 && !(var5 instanceof ClientPlayerEntity)) {
                class_704 var6 = (class_704)var5;
                class_8328 var7 = class_9189.method_42353(var6);
                double[] var8 = class_73.method_143(var7.field_42648, var7.field_42646 + (double)var6.method_37074() + 0.3F, var7.field_42649);

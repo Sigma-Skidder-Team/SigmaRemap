@@ -222,7 +222,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
    public void method_35938(float var1) {
       Entity var4 = this.field_40612.getRenderViewEntity();
-      if (var4 != null && this.field_40612.field_9601 != null) {
+      if (var4 != null && this.field_40612.theWorld != null) {
          this.field_40612.getProfiler().startSection("pick");
          this.field_40612.field_9662 = null;
          double var5 = (double)this.field_40612.playerController.method_42146();
@@ -514,7 +514,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                * (double)this.field_40612.getMainWindow().getScaledHeight()
                / (double)this.field_40612.getMainWindow().method_43163()
          );
-         if (var4 && this.field_40612.field_9601 != null && !Config.method_14350()) {
+         if (var4 && this.field_40612.theWorld != null && !Config.method_14350()) {
             this.field_40612.getProfiler().startSection("level");
             SigmaMainClass.getInstance().getEventManager().call(new class_1711(var1, var2));
             this.method_35950(var1, var2, new class_7966());
@@ -558,7 +558,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             this.field_40623.method_26125(false);
          }
 
-         if (var4 && this.field_40612.field_9601 != null) {
+         if (var4 && this.field_40612.theWorld != null) {
             this.field_40612.getProfiler().method_16050("gui");
             if (this.field_40612.thePlayer != null) {
                float var11 = class_9299.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal);
@@ -697,21 +697,21 @@ public class GameRenderer implements class_6491, AutoCloseable {
       } else {
          Entity var3 = this.field_40612.getRenderViewEntity();
          boolean var4 = var3 instanceof class_704 && !this.field_40612.gameOptions.hideGUI;
-         if (var4 && !((class_704)var3).field_3876.allowEdit) {
+         if (var4 && !((class_704)var3).playerAbilities.allowEdit) {
             ItemStack var5 = ((class_5834)var3).method_26446();
             class_7474 var6 = this.field_40612.field_9587;
             if (var6 != null && var6.method_33990() == class_1430.field_7717) {
                class_1331 var7 = ((class_9529)var6).method_43955();
-               class_2522 var8 = this.field_40612.field_9601.method_28262(var7);
+               class_2522 var8 = this.field_40612.theWorld.method_28262(var7);
                if (this.field_40612.playerController.getCurrentGameType() != GameType.SPECTATOR) {
-                  class_9115 var9 = new class_9115(this.field_40612.field_9601, var7, false);
+                  class_9115 var9 = new class_9115(this.field_40612.theWorld, var7, false);
                   var4 = !var5.method_28022()
                      && (
-                        var5.method_28009(this.field_40612.field_9601.method_29600(), var9)
-                           || var5.method_28027(this.field_40612.field_9601.method_29600(), var9)
+                        var5.method_28009(this.field_40612.theWorld.method_29600(), var9)
+                           || var5.method_28027(this.field_40612.theWorld.method_29600(), var9)
                      );
                } else {
-                  var4 = var8.method_8317(this.field_40612.field_9601, var7) != null;
+                  var4 = var8.method_8317(this.field_40612.theWorld, var7) != null;
                }
             }
          }
@@ -782,7 +782,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       class_8107 var18 = var10.method_36058().method_28620();
       this.method_35947(var18);
       var9.method_41643(
-         this.field_40612.field_9601,
+         this.field_40612.theWorld,
          (Entity)(this.field_40612.getRenderViewEntity() != null ? this.field_40612.getRenderViewEntity() : this.field_40612.thePlayer),
          !this.field_40612.gameOptions.getPointOfView().method_42383(),
          this.field_40612.gameOptions.getPointOfView().method_42384(),
@@ -915,7 +915,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.field_40618 = true;
       }
 
-      class_174 var3 = this.field_40612.field_9601;
+      ClientWorld var3 = this.field_40612.theWorld;
       if (var3 != null) {
          if (Config.method_14239() != null) {
             String var4 = "HD_U".replace("HD_U", "HD Ultra").replace("L", "Light");
@@ -955,7 +955,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_35929() {
-      if (this.field_40612.field_9601 != null && Config.method_14294() && class_124.method_386("CheckGlErrorFrameFinish", 10000L)) {
+      if (this.field_40612.theWorld != null && Config.method_14294() && class_124.method_386("CheckGlErrorFrameFinish", 10000L)) {
          int var3 = GlStateManager.method_8925();
          if (var3 != 0 && class_6941.method_31754(var3)) {
             String var4 = Config.method_14316(var3);
@@ -1003,7 +1003,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             }
          } else if (this.field_40620 != null && this.field_40620 == this.field_40609[var1]) {
             return true;
-         } else if (this.field_40612.field_9601 != null) {
+         } else if (this.field_40612.theWorld != null) {
             this.method_35934(new Identifier("shaders/post/fxaa_of_" + var1 + "x.json"));
             this.field_40609[var1] = this.field_40620;
             return this.field_40610;

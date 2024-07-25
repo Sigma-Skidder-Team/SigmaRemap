@@ -61,7 +61,7 @@ public class HypixelGamePlay extends Module {
                   || var6.toLowerCase().contains("was thrown off a cliff by " + var7 + ".")
                   || var6.toLowerCase().contains("was struck down by " + var7 + ".")
                   || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
-                  class_1097 var34 = client.field_9601.method_29562();
+                  class_1097 var34 = client.theWorld.method_29562();
                   class_4399 var11 = null;
                   class_3903 var12 = var34.method_4848(client.thePlayer.method_37206());
                   if (var12 != null) {

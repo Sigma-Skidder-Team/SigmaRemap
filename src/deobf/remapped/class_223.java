@@ -31,14 +31,14 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("Pumpkin", this.method_947());
+      var1.putBoolean("Pumpkin", this.method_947());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25938("Pumpkin")) {
-         this.method_948(var1.method_25933("Pumpkin"));
+         this.method_948(var1.getBoolean("Pumpkin"));
       }
    }
 

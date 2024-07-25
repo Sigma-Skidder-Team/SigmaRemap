@@ -7,7 +7,7 @@ public class class_419 {
 
    public static class_6331 method_2086() {
       MinecraftClient var2 = Config.method_14327();
-      class_174 var3 = var2.field_9601;
+      ClientWorld var3 = var2.theWorld;
       if (var3 == null) {
          return null;
       } else if (!var2.method_8566()) {

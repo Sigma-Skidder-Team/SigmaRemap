@@ -6,8 +6,8 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.UUID;
 
-public class class_6729 implements class_8332<class_5989> {
-   public int method_30867(class_5989 var1) {
+public class class_6729 implements class_8332<ClientPlayerEntity> {
+   public int method_30867(ClientPlayerEntity var1) {
       if (var1 != null) {
          return class_3347.method_15346();
       } else {
@@ -45,7 +45,7 @@ public class class_6729 implements class_8332<class_5989> {
       }
    }
 
-   public void method_30866(class_5989 var1, ByteBuf var2) throws IllegalArgumentException {
+   public void method_30866(ClientPlayerEntity var1, ByteBuf var2) throws IllegalArgumentException {
       System.out.println("sendRawPacket");
       this.method_38376(var1.method_37328(), var2);
    }

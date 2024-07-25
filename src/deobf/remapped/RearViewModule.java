@@ -29,7 +29,7 @@ public class RearViewModule extends PremiumModule {
          }
 
          if (this.getBooleanValueByName("Smart Visibility")) {
-            List var4 = client.field_9601
+            List var4 = client.theWorld
                .<class_704>method_25869(
                   class_704.class,
                   client.thePlayer.method_37241().method_18898(14.0),

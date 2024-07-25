@@ -26,14 +26,14 @@ public class FullbrightModule extends Module {
    public void method_3924(class_5596 var1) {
       if (this.method_42015()) {
          client.gameOptions.brightnessGamma = 999.0;
-         if (client.field_9601 != null) {
+         if (client.theWorld != null) {
             if (!this.getStringValueByName("Type").equals("Normal")) {
                int var4 = 16;
                class_1331 var5 = new class_1331(
                      client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156()
                   )
                   .method_6081();
-               class_5990 var6 = client.field_9601.method_22556(var5);
+               class_5990 var6 = client.theWorld.method_22556(var5);
                if (var6 != null && var5.method_12165() >= 0 && var5.method_12165() < 256 && !var6.method_27339()) {
                   var4 -= var6.method_28263(var5);
                }

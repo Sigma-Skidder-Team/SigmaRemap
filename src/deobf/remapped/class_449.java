@@ -75,7 +75,7 @@ public class class_449 extends class_1829 {
       var1.method_25931("TreasurePosX", this.method_2163().method_12173());
       var1.method_25931("TreasurePosY", this.method_2163().method_12165());
       var1.method_25931("TreasurePosZ", this.method_2163().method_12185());
-      var1.method_25934("GotFish", this.method_2161());
+      var1.putBoolean("GotFish", this.method_2161());
       var1.method_25931("Moistness", this.method_2159());
    }
 
@@ -86,7 +86,7 @@ public class class_449 extends class_1829 {
       int var6 = var1.method_25947("TreasurePosZ");
       this.method_2155(new class_1331(var4, var5, var6));
       super.method_37314(var1);
-      this.method_2153(var1.method_25933("GotFish"));
+      this.method_2153(var1.getBoolean("GotFish"));
       this.method_2157(var1.method_25947("Moistness"));
    }
 
@@ -266,7 +266,7 @@ public class class_449 extends class_1829 {
          }
 
          this.method_2153(true);
-         if (!var1.field_3876.isCreativeMode) {
+         if (!var1.playerAbilities.isCreativeMode) {
             var5.method_27970(1);
          }
 

@@ -121,8 +121,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    private final class_9186 field_9613;
    public static byte[] field_9608 = new byte[10485760];
    public class_9153 playerController;
-   public class_174 field_9601;
-   public class_5989 thePlayer;
+   public ClientWorld theWorld;
+   public ClientPlayerEntity thePlayer;
    private class_7762 field_9646;
    private class_2560 field_9598;
    private class_5121 field_9670;
@@ -277,7 +277,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9656.method_2649(this.worldRenderer);
       this.method_8495();
       this.field_9656.method_2649(this.field_9615);
-      this.field_9572 = new class_9326(this.field_9601, this.textureManager);
+      this.field_9572 = new class_9326(this.theWorld, this.textureManager);
       this.field_9656.method_2649(this.field_9572);
       this.field_9665 = new class_4642(this.textureManager);
       this.field_9656.method_2649(this.field_9665);
@@ -621,11 +621,11 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.field_9623.method_1162();
       }
 
-      if (var1 == null && this.field_9601 == null) {
+      if (var1 == null && this.theWorld == null) {
          var1 = new class_1876();
       } else if (var1 == null && this.thePlayer.method_26450()) {
          if (this.thePlayer.method_27329()) {
-            var1 = new class_7696((ITextComponent)null, this.field_9601.method_749().method_8659());
+            var1 = new class_7696((ITextComponent)null, this.theWorld.method_749().method_8659());
          } else {
             this.thePlayer.method_3205();
          }
@@ -666,8 +666,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          }
 
          try {
-            if (this.field_9601 != null) {
-               this.field_9601.method_29519();
+            if (this.theWorld != null) {
+               this.theWorld.method_29519();
             }
 
             this.method_8499();
@@ -886,7 +886,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    private int method_8507() {
-      return this.field_9601 == null && (this.field_9623 != null || this.field_9610 != null)
+      return this.theWorld == null && (this.field_9623 != null || this.field_9610 != null)
          ? Math.min(120, Math.max(this.window.method_43186(), 60))
          : this.window.method_43186();
    }
@@ -1074,7 +1074,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          if (var1 && this.field_9587 != null && this.field_9587.method_33990() == class_1430.field_7717) {
             class_9529 var2 = (class_9529)this.field_9587;
             class_1331 var3 = var2.method_43955();
-            if (!this.field_9601.method_28262(var3).method_8345()) {
+            if (!this.theWorld.method_28262(var3).method_8345()) {
                Direction var4 = var2.method_43956();
                if (this.playerController.method_42163(var3, var4)) {
                   this.field_9572.method_43058(var3, var4);
@@ -1125,7 +1125,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   case field_7717:
                      class_9529 var4 = (class_9529)this.field_9587;
                      class_1331 var5 = var4.method_43955();
-                     if (!this.field_9601.method_28262(var5).method_8345()) {
+                     if (!this.theWorld.method_28262(var5).method_8345()) {
                         this.playerController.method_42142(var5, var4.method_43956());
                         break;
                      }
@@ -1181,7 +1181,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                         case field_7717:
                            class_9529 var10 = (class_9529)this.field_9587;
                            int var11 = var6.method_27997();
-                           class_6910 var12 = this.playerController.method_42147(this.thePlayer, this.field_9601, var5, var10);
+                           class_6910 var12 = this.playerController.method_42147(this.thePlayer, this.theWorld, var5, var10);
                            if (var12.method_31662()) {
                               if (var12.method_31661()) {
                                  this.thePlayer.method_26597(var5);
@@ -1200,7 +1200,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   }
 
                   if (!var6.method_28022()) {
-                     class_6910 var13 = this.playerController.method_42155(this.thePlayer, this.field_9601, var5);
+                     class_6910 var13 = this.playerController.method_42155(this.thePlayer, this.theWorld, var5);
                      if (var13.method_31662()) {
                         if (var13.method_31661()) {
                            this.thePlayer.method_26597(var5);
@@ -1232,21 +1232,21 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
       this.field_9592.endSection();
       this.gameRenderer.method_35938(1.0F);
-      this.field_9578.method_40534(this.field_9601, this.field_9587);
+      this.field_9578.method_40534(this.theWorld, this.field_9587);
       this.field_9592.startSection("gameMode");
-      if (!this.field_9579 && this.field_9601 != null) {
+      if (!this.field_9579 && this.theWorld != null) {
          this.playerController.method_42137();
       }
 
       this.field_9592.method_16050("textures");
-      if (this.field_9601 != null) {
+      if (this.theWorld != null) {
          this.textureManager.method_80();
       }
 
       if (this.field_9623 == null && this.thePlayer != null) {
          if (this.thePlayer.method_26450() && !(this.field_9623 instanceof class_7696)) {
             this.method_8609((Screen)null);
-         } else if (this.thePlayer.method_26507() && this.field_9601 != null) {
+         } else if (this.thePlayer.method_26507() && this.theWorld != null) {
             this.method_8609(new class_1086());
          }
       } else if (this.field_9623 != null && this.field_9623 instanceof class_1086 && !this.thePlayer.method_26507()) {
@@ -1273,7 +1273,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          }
       }
 
-      if (this.field_9601 != null) {
+      if (this.theWorld != null) {
          this.field_9592.method_16050("gameRenderer");
          if (!this.field_9579) {
             this.gameRenderer.method_35958();
@@ -1286,11 +1286,11 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
          this.field_9592.method_16050("level");
          if (!this.field_9579) {
-            if (this.field_9601.method_744() > 0) {
-               this.field_9601.method_29591(this.field_9601.method_744() - 1);
+            if (this.theWorld.method_744() > 0) {
+               this.theWorld.method_29591(this.theWorld.method_744() - 1);
             }
 
-            this.field_9601.method_737();
+            this.theWorld.method_737();
          }
       } else if (this.gameRenderer.method_35930() != null) {
          this.gameRenderer.method_35922();
@@ -1301,7 +1301,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       this.field_9611.method_16330(this.field_9579);
-      if (this.field_9601 != null) {
+      if (this.theWorld != null) {
          if (!this.field_9579) {
             if (!this.gameOptions.field_45519 && this.method_8612()) {
                TranslationTextComponent var1 = new TranslationTextComponent("tutorial.socialInteractions.title");
@@ -1317,14 +1317,14 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             this.field_9578.method_40536();
 
             try {
-               this.field_9601.method_751(() -> true);
+               this.theWorld.method_751(() -> true);
             } catch (Throwable var4) {
                class_159 var5 = class_159.method_643(var4, "Exception in world tick");
-               if (this.field_9601 == null) {
+               if (this.theWorld == null) {
                   class_6544 var3 = var5.method_639("Affected level");
                   var3.method_29850("Problem", "Level is null!");
                } else {
-                  this.field_9601.method_29548(var5);
+                  this.theWorld.method_29548(var5);
                }
 
                throw new class_3297(var5);
@@ -1332,8 +1332,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          }
 
          this.field_9592.method_16050("animateTick");
-         if (!this.field_9579 && this.field_9601 != null) {
-            this.field_9601
+         if (!this.field_9579 && this.theWorld != null) {
+            this.theWorld
                .method_732(
                   class_9299.method_42847(this.thePlayer.method_37302()),
                   class_9299.method_42847(this.thePlayer.method_37309()),
@@ -1700,11 +1700,11 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
    }
 
-   public void method_8508(class_174 var1) {
+   public void method_8508(ClientWorld var1) {
       class_7152 var2 = new class_7152();
       var2.樽鱀ၝ藸鶲轐(new TranslationTextComponent("connect.joining"));
       this.method_8600(var2);
-      this.field_9601 = var1;
+      this.theWorld = var1;
       this.method_8594(var1);
       SigmaMainClass.getInstance().getEventManager().call(new class_717());
       if (!this.field_9672) {
@@ -1735,7 +1735,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.playerController = null;
       NarratorChatListener.INSTANCE.method_34347();
       this.method_8600(var1);
-      if (this.field_9601 != null) {
+      if (this.theWorld != null) {
          if (var3 != null) {
             this.field_9592.startSection("waitForServer");
 
@@ -1753,8 +1753,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.field_9645.method_19172();
       }
 
-      this.field_9601 = null;
-      this.method_8594((class_174)null);
+      this.theWorld = null;
+      this.method_8594((ClientWorld)null);
       this.thePlayer = null;
    }
 
@@ -1775,7 +1775,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9592.endSection();
    }
 
-   private void method_8594(class_174 var1) {
+   private void method_8594(ClientWorld var1) {
       this.worldRenderer.method_20092(var1);
       this.field_9572.method_43041(var1);
       class_3569.field_17468.method_16588(var1);
@@ -1828,25 +1828,25 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       SigmaMainClass.getInstance().getEventManager().call(var1);
       if (!var1.method_29716()) {
          if (this.field_9587 != null && this.field_9587.method_33990() != class_1430.field_7721) {
-            boolean var2 = this.thePlayer.field_3876.isCreativeMode;
+            boolean var2 = this.thePlayer.playerAbilities.isCreativeMode;
             class_3757 var3 = null;
             class_1430 var4 = this.field_9587.method_33990();
             ItemStack var5;
             if (var4 == class_1430.field_7717) {
                class_1331 var6 = ((class_9529)this.field_9587).method_43955();
-               class_2522 var7 = this.field_9601.method_28262(var6);
+               class_2522 var7 = this.theWorld.method_28262(var6);
                class_6414 var8 = var7.method_8360();
                if (var7.method_8345()) {
                   return;
                }
 
-               var5 = var8.method_29276(this.field_9601, var6, var7);
+               var5 = var8.method_29276(this.theWorld, var6, var7);
                if (var5.method_28022()) {
                   return;
                }
 
                if (var2 && Screen.method_1185() && var8.method_10802()) {
-                  var3 = this.field_9601.method_28260(var6);
+                  var3 = this.theWorld.method_28260(var6);
                }
             } else {
                if (var4 != class_1430.field_7718 || !var2) {
@@ -1910,7 +1910,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                String var10 = "";
                if (var4 == class_1430.field_7717) {
                   var10 = class_8669.field_44462
-                     .method_39797(this.field_9601.method_28262(((class_9529)this.field_9587).method_43955()).method_8360())
+                     .method_39797(this.theWorld.method_28262(((class_9529)this.field_9587).method_43955()).method_8360())
                      .toString();
                } else if (var4 == class_1430.field_7718) {
                   var10 = class_8669.field_44400.method_39797(((class_5631)this.field_9587).method_25524().method_37387()).toString();
@@ -1940,17 +1940,17 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    private ItemStack method_8568(ItemStack var1, class_3757 var2) {
-      class_5734 var3 = var2.method_17396(new class_5734());
+      CompoundNBT var3 = var2.method_17396(new CompoundNBT());
       if (var1.method_27960() instanceof class_3571 && var3.method_25938("SkullOwner")) {
-         class_5734 var6 = var3.method_25937("SkullOwner");
-         var1.method_27994().method_25946("SkullOwner", var6);
+         CompoundNBT var6 = var3.getCompound("SkullOwner");
+         var1.method_27994().put("SkullOwner", var6);
          return var1;
       } else {
          var1.method_27954("BlockEntityTag", var3);
-         class_5734 var4 = new class_5734();
+         CompoundNBT var4 = new CompoundNBT();
          class_3416 var5 = new class_3416();
          var5.add(class_473.method_2261("\"(+NBT)\""));
-         var4.method_25946("Lore", var5);
+         var4.put("Lore", var5);
          var1.method_27954("display", var4);
          return var1;
       }
@@ -1958,8 +1958,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
    public class_159 method_8546(class_159 var1) {
       method_8489(this.field_9585, this.field_9597, this.gameOptions, var1);
-      if (this.field_9601 != null) {
-         this.field_9601.method_29548(var1);
+      if (this.theWorld != null) {
+         this.theWorld.method_29548(var1);
       }
 
       return var1;
@@ -2197,10 +2197,10 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             if (!this.field_9568.method_31308(class_2623.field_12930)
                && (!this.thePlayer.method_37179() || var1 != class_8862.field_45309 && var1 != class_8862.field_45297)) {
                return this.thePlayer.field_41768.method_29545() != World.field_33029
-                     && this.thePlayer.field_3876.isCreativeMode
-                     && this.thePlayer.field_3876.allowFlying
+                     && this.thePlayer.playerAbilities.isCreativeMode
+                     && this.thePlayer.playerAbilities.allowFlying
                   ? class_2623.field_12925
-                  : this.field_9601.method_22564().method_3725(this.thePlayer.method_37075()).method_28879().orElse(class_2623.field_12928);
+                  : this.theWorld.method_22564().method_3725(this.thePlayer.method_37075()).method_28879().orElse(class_2623.field_12928);
             } else {
                return class_2623.field_12930;
             }

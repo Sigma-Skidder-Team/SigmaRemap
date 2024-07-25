@@ -30,7 +30,7 @@ public class SearchModule extends Module {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();
-            this.method_43310(client.field_9601.method_29542(var4.method_19867()).method_27352());
+            this.method_43310(client.theWorld.method_29542(var4.method_19867()).method_27352());
          }
 
          if (var1.method_557() instanceof class_4467) {
@@ -38,7 +38,7 @@ public class SearchModule extends Module {
             this.method_43310(new class_2034(var5.field_21788.field_13231, var5.field_21788.field_13229));
          }
 
-         if (var1.method_557() instanceof class_4808 && MinecraftClient.getInstance().field_9601 != null) {
+         if (var1.method_557() instanceof class_4808 && MinecraftClient.getInstance().theWorld != null) {
             class_4808 var6 = (class_4808)var1.method_557();
             this.method_43310(new class_2034(var6.method_22149(), var6.method_22151()));
          }
@@ -88,7 +88,7 @@ public class SearchModule extends Module {
          List var5 = (List)this.getSettingValueByName("Blocks");
 
          for (class_1331 var7 : this.method_43317(var1)) {
-            String var8 = class_8669.field_44462.method_39797(client.field_9601.method_28262(var7).method_8360()).toString();
+            String var8 = class_8669.field_44462.method_39797(client.theWorld.method_28262(var7).method_8360()).toString();
             if (var5.contains(var8)) {
                var4.add(var7);
             }
@@ -97,11 +97,11 @@ public class SearchModule extends Module {
          if (this.getBooleanValueByName("Holes")) {
             label57:
             for (class_1331 var13 : this.method_43317(var1)) {
-               if (client.field_9601.method_28262(var13).method_8360() == class_4783.field_23184) {
+               if (client.theWorld.method_28262(var13).method_8360() == class_4783.field_23184) {
                   for (Direction var11 : Direction.values()) {
                      if (var11 != Direction.field_817
-                        && client.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23881
-                        && client.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23433) {
+                        && client.theWorld.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23881
+                        && client.theWorld.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23433) {
                         continue label57;
                      }
                   }

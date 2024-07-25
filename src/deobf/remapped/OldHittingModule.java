@@ -29,7 +29,7 @@ public class OldHittingModule extends Module {
                && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(KillauraModule.class).method_42003()) {
                class_9529 var7 = (class_9529) client.field_9587;
                class_1331 var8 = var7.method_43955();
-               class_6414 var9 = client.field_9601.method_28262(var8).method_8360();
+               class_6414 var9 = client.theWorld.method_28262(var8).method_8360();
                ArrayList var10 = new ArrayList<class_6414>(
                   Arrays.asList(
                      class_4783.field_23471,

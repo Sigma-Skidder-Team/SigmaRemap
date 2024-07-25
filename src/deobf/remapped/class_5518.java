@@ -32,12 +32,12 @@ public class class_5518 extends class_2451 {
 
       if (var6 != null) {
          var6.method_3211(class_6234.field_31907.method_43790(this));
-         if (!var6.field_3876.isCreativeMode) {
+         if (!var6.playerAbilities.isCreativeMode) {
             var1.method_27970(1);
          }
       }
 
-      if (var6 == null || !var6.field_3876.isCreativeMode) {
+      if (var6 == null || !var6.playerAbilities.isCreativeMode) {
          if (var1.method_28022()) {
             return new ItemStack(class_4897.field_24812);
          }

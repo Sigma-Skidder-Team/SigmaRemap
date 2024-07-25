@@ -54,13 +54,13 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       this.field_9086.method_3111(var1);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_9086.method_3106(var1);
    }
@@ -380,7 +380,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (!this.method_26449()) {
          Object var8;
          if (this.field_41717.nextInt(30) != 0) {
@@ -406,7 +406,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    private class_8733 method_7927(class_1556 var1, class_9589 var2, class_5886 var3, class_8733 var4) {
       var3.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, 0.0F);
-      var3.method_26864(var1, var2, class_2417.field_12037, var4, (class_5734)null);
+      var3.method_26864(var1, var2, class_2417.field_12037, var4, (CompoundNBT)null);
       var3.method_37354(this, true);
       return new class_1821(0.0F);
    }

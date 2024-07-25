@@ -319,8 +319,8 @@ public class class_2811 extends class_1173 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("IsBaby", this.method_26449());
-      var1.method_25934("CanBreakDoors", this.method_12793());
+      var1.putBoolean("IsBaby", this.method_26449());
+      var1.putBoolean("CanBreakDoors", this.method_12793());
       var1.method_25931("InWaterTime", !this.method_37285() ? -1 : this.field_13809);
       var1.method_25931("DrownedConversionTime", !this.method_12797() ? -1 : this.field_13808);
    }
@@ -328,10 +328,10 @@ public class class_2811 extends class_1173 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_26910(var1.method_25933("IsBaby"));
-      this.method_12799(var1.method_25933("CanBreakDoors"));
+      this.method_26910(var1.getBoolean("IsBaby"));
+      this.method_12799(var1.getBoolean("CanBreakDoors"));
       this.field_13809 = var1.method_25947("InWaterTime");
-      if (var1.method_25939("DrownedConversionTime", 99) && var1.method_25947("DrownedConversionTime") > -1) {
+      if (var1.contains("DrownedConversionTime", 99) && var1.method_25947("DrownedConversionTime") > -1) {
          this.method_12794(var1.method_25947("DrownedConversionTime"));
       }
    }

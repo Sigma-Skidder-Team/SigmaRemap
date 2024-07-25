@@ -23,7 +23,7 @@ public class WaypointsModule extends Module {
 
    @EventListen
    public void method_42048(PacketEvent var1) {
-      if (client.field_9601 != null) {
+      if (client.theWorld != null) {
          if (!(var1.method_557() instanceof class_3985)) {
             if (!(var1.method_557() instanceof class_6589)) {
                if (!(var1.method_557() instanceof class_4228)) {
@@ -49,7 +49,7 @@ public class WaypointsModule extends Module {
             class_3985 var12 = (class_3985)var1.method_557();
 
             for (int var8 : var12.method_18381()) {
-               Entity var9 = client.field_9601.method_29534(var8);
+               Entity var9 = client.theWorld.method_29534(var8);
                if (var9 != null && var9 instanceof class_704) {
                   if (this.field_46733.containsKey(var9.method_37328())) {
                      this.field_46733.remove(var9.method_37328());
@@ -109,7 +109,7 @@ public class WaypointsModule extends Module {
             );
             double var7 = Math.sqrt(class_9189.method_42355(var6));
             if (!(var7 > 300.0)) {
-               if (client.field_9601.method_22556(var6) != null && var5.field_21076) {
+               if (client.theWorld.method_22556(var6) != null && var5.field_21076) {
                   int var9 = var6.method_12173() % 16;
                   int var10 = var6.method_12185() % 16;
                   if (var10 < 0) {
@@ -120,7 +120,7 @@ public class WaypointsModule extends Module {
                      var9 += 16;
                   }
 
-                  int var11 = client.field_9601.method_22556(var6).method_27353(class_3801.field_18592).method_9957(var9, var10);
+                  int var11 = client.theWorld.method_22556(var6).method_27353(class_3801.field_18592).method_9957(var9, var10);
                   if (var11 == 0) {
                      var11 = 64;
                   }

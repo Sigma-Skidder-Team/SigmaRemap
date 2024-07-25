@@ -72,7 +72,7 @@ public class BasicAutoGapple extends Module {
                   this.field_49493 = client.thePlayer.inventory.field_36404;
                   client.thePlayer.inventory.field_36404 = var4;
                   client.playerController.method_42129();
-                  client.playerController.method_42155(client.thePlayer, client.field_9601, class_2584.field_12791);
+                  client.playerController.method_42155(client.thePlayer, client.theWorld, class_2584.field_12791);
                }
             }
          }

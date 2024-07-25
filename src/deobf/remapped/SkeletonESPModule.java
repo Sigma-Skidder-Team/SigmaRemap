@@ -191,7 +191,7 @@ public class SkeletonESPModule extends Module {
    }
 
    private boolean method_19979(class_704 var1) {
-      return !client.field_9601.method_25873().contains(var1);
+      return !client.theWorld.method_25873().contains(var1);
    }
 
    private void method_19980(boolean var1) {

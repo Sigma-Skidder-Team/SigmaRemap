@@ -21,7 +21,7 @@ public class class_4037 implements AutoCloseable {
       short var7 = 1493;
       if (var6 < 1493) {
          var3 = class_4338.method_20180(this.field_19601, class_5397.field_27558, var3, var6, 1493);
-         if (var3.method_25937("Level").method_25933("hasLegacyStructureData")) {
+         if (var3.getCompound("Level").getBoolean("hasLegacyStructureData")) {
             if (this.field_19600 == null) {
                this.field_19600 = class_4527.method_21032(var1, (class_4050)var2.get());
             }
@@ -39,7 +39,7 @@ public class class_4037 implements AutoCloseable {
    }
 
    public static int method_18574(CompoundNBT var0) {
-      return !var0.method_25939("DataVersion", 99) ? -1 : var0.method_25947("DataVersion");
+      return !var0.contains("DataVersion", 99) ? -1 : var0.method_25947("DataVersion");
    }
 
    @Nullable

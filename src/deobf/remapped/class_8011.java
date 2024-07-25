@@ -137,7 +137,7 @@ public class class_8011 extends class_3429 implements class_3713 {
       }
 
       CompoundNBT var9 = var1.method_27990();
-      if (var9 != null && var9.method_25939("CustomPotionColor", 99)) {
+      if (var9 != null && var9.contains("CustomPotionColor", 99)) {
          var5.method_20785(var9.method_25947("CustomPotionColor"));
       }
 

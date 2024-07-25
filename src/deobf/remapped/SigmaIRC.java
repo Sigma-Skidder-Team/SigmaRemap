@@ -55,7 +55,7 @@ public class SigmaIRC {
    private void method_20858(class_5596 var1) {
       if (this.field_21934.thePlayer.field_41697 % 100 == 0) {
          this.method_20857();
-         List var4 = this.field_21934.field_9601.method_25873();
+         List var4 = this.field_21934.theWorld.method_25873();
          Iterator var5 = var4.iterator();
 
          while (var5.hasNext()) {
@@ -89,7 +89,7 @@ public class SigmaIRC {
       Iterator var3 = this.field_21928.iterator();
 
       while (var3.hasNext()) {
-         if (this.field_21934.field_9601.method_25862((UUID)var3.next()) == null) {
+         if (this.field_21934.theWorld.method_25862((UUID)var3.next()) == null) {
             var3.remove();
          }
       }
@@ -97,7 +97,7 @@ public class SigmaIRC {
       Iterator var4 = this.field_21927.keySet().iterator();
 
       while (var3.hasNext()) {
-         if (this.field_21934.field_9601.method_25862((UUID)var4.next()) == null) {
+         if (this.field_21934.theWorld.method_25862((UUID)var4.next()) == null) {
             var4.remove();
          }
       }

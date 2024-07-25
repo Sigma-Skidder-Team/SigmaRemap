@@ -7,7 +7,7 @@ import java.util.List;
 public class class_7685 {
    private static String[] field_39045;
 
-   public static Iterator<class_3511> method_34827(class_174 var0, double var1, Entity var3, int var4, class_7626 var5) {
+   public static Iterator<class_3511> method_34827(ClientWorld var0, double var1, Entity var3, int var4, class_7626 var5) {
       float var8 = class_6588.method_30251();
       if (!(var8 <= 0.0F) && !(var8 >= (float)((var4 - 1) * 16))) {
          int var19 = class_9299.method_42816(var8 / 16.0F) + 1;

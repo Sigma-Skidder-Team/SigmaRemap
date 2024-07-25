@@ -149,7 +149,7 @@ public class class_6306 {
          (double)var1 + var6.method_18901(),
          (double)((float)var2 + 0.5F) + var6.method_18921() / 2.0
       );
-      return field_32228.field_9601.method_6680(field_32228.thePlayer, var7).count() == 0L;
+      return field_32228.theWorld.method_6680(field_32228.thePlayer, var7).count() == 0L;
    }
 
    public class_4967 method_28769(class_4714 var1) {

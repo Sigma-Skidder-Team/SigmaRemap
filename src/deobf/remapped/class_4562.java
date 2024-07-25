@@ -55,11 +55,11 @@ public class class_4562 implements class_2995 {
    }
 
    private void method_21171() {
-      this.field_22222.entrySet().removeIf(var1 -> this.field_22226.field_9601.method_29534(var1.getValue().field_6815) == null);
+      this.field_22222.entrySet().removeIf(var1 -> this.field_22226.theWorld.method_29534(var1.getValue().field_6815) == null);
    }
 
    private void method_21179() {
-      long var3 = this.field_22226.field_9601.method_29546() - 20L;
+      long var3 = this.field_22226.theWorld.method_29546() - 20L;
       this.field_22223.entrySet().removeIf(var2 -> var2.getValue().field_33508 < var3);
    }
 
@@ -250,7 +250,7 @@ public class class_4562 implements class_2995 {
    }
 
    private boolean method_21174(class_1236 var1) {
-      class_5989 var4 = this.field_22226.thePlayer;
+      ClientPlayerEntity var4 = this.field_22226.thePlayer;
       class_1331 var5 = new class_1331(var4.method_37302(), var1.field_6819.method_60(), var4.method_37156());
       class_1331 var6 = new class_1331(var1.field_6819);
       return var5.method_12171(var6, 30.0);

@@ -45,7 +45,7 @@ public class class_4104 {
    private Identifier field_19980 = new Identifier("");
    private class_8021<class_6414, class_2522> field_19978;
    private class_2522 field_19988;
-   private class_5734 field_19983;
+   private CompoundNBT field_19983;
    private Identifier field_19976 = new Identifier("");
    private int field_19991;
    private BiFunction<SuggestionsBuilder, class_9349<class_6414>, CompletableFuture<Suggestions>> field_19990 = field_19987;
@@ -65,7 +65,7 @@ public class class_4104 {
    }
 
    @Nullable
-   public class_5734 method_18958() {
+   public CompoundNBT method_18958() {
       return this.field_19983;
    }
 

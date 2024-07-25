@@ -143,13 +143,13 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       this.method_28528(var1);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_28533((class_6331)this.field_41768, var1);
    }

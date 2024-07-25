@@ -28,7 +28,7 @@ public class AutoMinerModule extends Module {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();
-            this.method_22854(client.field_9601.method_29542(var4.method_19867()).method_27352());
+            this.method_22854(client.theWorld.method_29542(var4.method_19867()).method_27352());
          }
 
          if (var1.method_557() instanceof class_4467) {
@@ -36,7 +36,7 @@ public class AutoMinerModule extends Module {
             this.method_22854(new class_2034(var5.field_21788.field_13231, var5.field_21788.field_13229));
          }
 
-         if (var1.method_557() instanceof class_4808 && MinecraftClient.getInstance().field_9601 != null) {
+         if (var1.method_557() instanceof class_4808 && MinecraftClient.getInstance().theWorld != null) {
             class_4808 var6 = (class_4808)var1.method_557();
             this.method_22854(new class_2034(var6.method_22149(), var6.method_22151()));
          }
@@ -70,7 +70,7 @@ public class AutoMinerModule extends Module {
          for (float var12 = (float)var5; var12 <= (float)var8; var12++) {
             for (float var13 = (float)var6; var13 <= (float)var9; var13++) {
                class_1331 var14 = new class_1331((double)var12, (double)var11, (double)var13);
-               if (client.field_9601.method_28262(var14).method_8360() == class_4783.field_23681) {
+               if (client.theWorld.method_28262(var14).method_8360() == class_4783.field_23681) {
                   var4.add(var14);
                }
             }

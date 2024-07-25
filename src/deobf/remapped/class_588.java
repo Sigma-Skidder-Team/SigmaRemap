@@ -18,12 +18,12 @@ public class class_588 extends class_3725 {
          GameProfile var10 = null;
          if (var5.method_28002()) {
             CompoundNBT var11 = var5.method_27990();
-            if (!var11.method_25939("SkullOwner", 10)) {
-               if (var11.method_25939("SkullOwner", 8) && !StringUtils.isBlank(var11.method_25965("SkullOwner"))) {
+            if (!var11.contains("SkullOwner", 10)) {
+               if (var11.contains("SkullOwner", 8) && !StringUtils.isBlank(var11.method_25965("SkullOwner"))) {
                   var10 = new GameProfile((UUID)null, var11.method_25965("SkullOwner"));
                }
             } else {
-               var10 = class_4338.method_20184(var11.method_25937("SkullOwner"));
+               var10 = class_4338.method_20184(var11.getCompound("SkullOwner"));
             }
          }
 

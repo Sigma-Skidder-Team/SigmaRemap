@@ -227,13 +227,13 @@ public class class_2250 implements Comparable<class_2250> {
    private void method_10344(CompoundNBT var1) {
       var1.method_25921("Amplifier", (byte)this.method_10333());
       var1.method_25931("Duration", this.method_10347());
-      var1.method_25934("Ambient", this.method_10338());
-      var1.method_25934("ShowParticles", this.method_10336());
-      var1.method_25934("ShowIcon", this.method_10342());
+      var1.putBoolean("Ambient", this.method_10338());
+      var1.putBoolean("ShowParticles", this.method_10336());
+      var1.putBoolean("ShowIcon", this.method_10342());
       if (this.field_11196 != null) {
          CompoundNBT var4 = new CompoundNBT();
          this.field_11196.method_10345(var4);
-         var1.method_25946("HiddenEffect", var4);
+         var1.put("HiddenEffect", var4);
       }
    }
 
@@ -246,20 +246,20 @@ public class class_2250 implements Comparable<class_2250> {
    private static class_2250 method_10334(class_1425 var0, CompoundNBT var1) {
       byte var4 = var1.method_25950("Amplifier");
       int var5 = var1.method_25947("Duration");
-      boolean var6 = var1.method_25933("Ambient");
+      boolean var6 = var1.getBoolean("Ambient");
       boolean var7 = true;
-      if (var1.method_25939("ShowParticles", 1)) {
-         var7 = var1.method_25933("ShowParticles");
+      if (var1.contains("ShowParticles", 1)) {
+         var7 = var1.getBoolean("ShowParticles");
       }
 
       boolean var8 = var7;
-      if (var1.method_25939("ShowIcon", 1)) {
-         var8 = var1.method_25933("ShowIcon");
+      if (var1.contains("ShowIcon", 1)) {
+         var8 = var1.getBoolean("ShowIcon");
       }
 
       class_2250 var9 = null;
-      if (var1.method_25939("HiddenEffect", 10)) {
-         var9 = method_10334(var0, var1.method_25937("HiddenEffect"));
+      if (var1.contains("HiddenEffect", 10)) {
+         var9 = method_10334(var0, var1.getCompound("HiddenEffect"));
       }
 
       return new class_2250(var0, var5, var4 >= 0 ? var4 : 0, var6, var7, var8, var9);

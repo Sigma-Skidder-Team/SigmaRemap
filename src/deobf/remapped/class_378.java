@@ -57,7 +57,7 @@ public class class_378 extends class_5886 implements class_1869 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Size", this.method_1860() - 1);
-      var1.method_25934("wasOnGround", this.field_1535);
+      var1.putBoolean("wasOnGround", this.field_1535);
    }
 
    @Override
@@ -69,7 +69,7 @@ public class class_378 extends class_5886 implements class_1869 {
 
       this.method_1861(var4 + 1, false);
       super.method_37314(var1);
-      this.field_1535 = var1.method_25933("wasOnGround");
+      this.field_1535 = var1.getBoolean("wasOnGround");
    }
 
    public boolean method_1859() {

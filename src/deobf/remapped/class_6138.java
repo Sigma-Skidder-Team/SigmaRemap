@@ -9,14 +9,14 @@ public class class_6138 extends class_462 {
 
    public class_6138(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13397, var2);
-      this.field_31485 = var2.method_25933("tf");
+      this.field_31485 = var2.getBoolean("tf");
       this.field_31486 = Direction.method_1040(var2.method_25947("D"));
    }
 
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("tf", this.field_31485);
+      var1.putBoolean("tf", this.field_31485);
       var1.method_25931("D", this.field_31486.method_1031());
    }
 

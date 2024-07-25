@@ -66,23 +66,23 @@ public class class_2649 extends class_5837 {
       }
 
       CompoundNBT var6;
-      if (!var5.method_25939("display", 10)) {
+      if (!var5.contains("display", 10)) {
          if (!var2) {
             return null;
          }
 
          var6 = new CompoundNBT();
-         var5.method_25946("display", var6);
+         var5.put("display", var6);
       } else {
-         var6 = var5.method_25937("display");
+         var6 = var5.getCompound("display");
       }
 
-      if (!var6.method_25939("Lore", 9)) {
+      if (!var6.contains("Lore", 9)) {
          if (!var2) {
             return null;
          } else {
             class_3416 var7 = new class_3416();
-            var6.method_25946("Lore", var7);
+            var6.put("Lore", var7);
             return var7;
          }
       } else {

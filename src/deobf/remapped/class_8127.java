@@ -109,14 +109,14 @@ public class class_8127 extends class_608 implements class_6250 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("PlayerCreated", this.method_36974());
+      var1.putBoolean("PlayerCreated", this.method_36974());
       this.method_28528(var1);
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_36979(var1.method_25933("PlayerCreated"));
+      this.method_36979(var1.getBoolean("PlayerCreated"));
       this.method_28533((class_6331)this.field_41768, var1);
    }
 
@@ -232,7 +232,7 @@ public class class_8127 extends class_608 implements class_6250 {
          if (this.method_26551() != var7) {
             float var8 = 1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F;
             this.method_37155(class_463.field_1936, 1.0F, var8);
-            if (!var1.field_3876.isCreativeMode) {
+            if (!var1.playerAbilities.isCreativeMode) {
                var5.method_27970(1);
             }
 

@@ -152,7 +152,7 @@ public class class_2048 extends class_1080 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("TNTFuse", 99)) {
+      if (var1.contains("TNTFuse", 99)) {
          this.field_10361 = var1.method_25947("TNTFuse");
       }
    }

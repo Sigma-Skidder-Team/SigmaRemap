@@ -30,7 +30,7 @@ public class ShulkerPeekCommand extends Command {
 
       class_2831 var4 = class_2831.<ItemStack>method_12872(27, new ItemStack(class_4897.field_25302));
       if (var3 != null && var3.method_25938("BlockEntityTag")) {
-         CompoundNBT var5 = var3.method_25937("BlockEntityTag");
+         CompoundNBT var5 = var3.getCompound("BlockEntityTag");
          method_30371(var5);
          if (var5.method_25938("Items")) {
             class_3037.method_13882(var5, var4);
@@ -51,7 +51,7 @@ public class ShulkerPeekCommand extends Command {
 
          for (int var4 = 0; var4 < var3.size(); var4++) {
             CompoundNBT var5 = var3.method_15764(var4);
-            CompoundNBT var6 = var5.method_25937("tag");
+            CompoundNBT var6 = var5.getCompound("tag");
             if (var6.method_25938("ench")) {
                class_3416 var7 = var6.method_25927("ench", 10);
                class_3416 var8 = new class_3416();
@@ -69,7 +69,7 @@ public class ShulkerPeekCommand extends Command {
                   }
                }
 
-               var6.method_25946("Enchantments", var8);
+               var6.put("Enchantments", var8);
             }
          }
       }

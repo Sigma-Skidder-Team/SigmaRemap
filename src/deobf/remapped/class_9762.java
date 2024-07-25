@@ -114,15 +114,15 @@ public class class_9762 {
             GameProfile var18 = null;
             if (var1.method_28002()) {
                CompoundNBT var16 = var1.method_27990();
-               if (!var16.method_25939("SkullOwner", 10)) {
-                  if (var16.method_25939("SkullOwner", 8) && !StringUtils.isBlank(var16.method_25965("SkullOwner"))) {
+               if (!var16.contains("SkullOwner", 10)) {
+                  if (var16.contains("SkullOwner", 8) && !StringUtils.isBlank(var16.method_25965("SkullOwner"))) {
                      GameProfile var19 = new GameProfile((UUID)null, var16.method_25965("SkullOwner"));
                      var18 = class_4797.method_22108(var19);
                      var16.method_25959("SkullOwner");
-                     var16.method_25946("SkullOwner", class_4338.method_20177(new CompoundNBT(), var18));
+                     var16.put("SkullOwner", class_4338.method_20177(new CompoundNBT(), var18));
                   }
                } else {
-                  var18 = class_4338.method_20184(var16.method_25937("SkullOwner"));
+                  var18 = class_4338.method_20184(var16.getCompound("SkullOwner"));
                }
             }
 

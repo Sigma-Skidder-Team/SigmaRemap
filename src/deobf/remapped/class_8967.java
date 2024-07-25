@@ -10,7 +10,7 @@ public class class_8967 implements class_5256<class_2427> {
       this.field_45938 = var1;
    }
 
-   public class_9733 method_41135(class_2427 var1, class_174 var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public class_9733 method_41135(class_2427 var1, ClientWorld var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       Random var17 = var2.field_33033;
       double var18 = var17.nextGaussian() * 1.0E-6F;
       double var20 = var17.nextGaussian() * 1.0E-4F;

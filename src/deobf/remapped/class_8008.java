@@ -106,7 +106,7 @@ public class class_8008 extends class_4641 {
 
          if (!var5) {
             this.method_37204();
-            if (var1.field_3876.isCreativeMode) {
+            if (var1.playerAbilities.isCreativeMode) {
                for (class_5886 var12 : var8) {
                   if (var12.method_26920() && var12.method_26922() == this) {
                      var12.method_26916(true, false);

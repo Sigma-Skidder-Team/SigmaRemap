@@ -165,8 +165,8 @@ public class class_8671 {
                         if (!this.field_44499.thePlayer.method_37221()) {
                            this.field_44499.thePlayer.inventory.method_32415((double)var16);
                         } else if (!this.field_44499.field_9614.method_14004().method_38557()) {
-                           float var17 = class_9299.method_42828(this.field_44499.thePlayer.field_3876.method_4230() + var16 * 0.005F, 0.0F, 0.2F);
-                           this.field_44499.thePlayer.field_3876.method_4233(var17);
+                           float var17 = class_9299.method_42828(this.field_44499.thePlayer.playerAbilities.getFlySpeed() + var16 * 0.005F, 0.0F, 0.2F);
+                           this.field_44499.thePlayer.playerAbilities.setFlySpeed(var17);
                         } else {
                            this.field_44499.field_9614.method_14004().method_38564((double)(-var16));
                         }

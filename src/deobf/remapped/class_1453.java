@@ -148,7 +148,7 @@ public class class_1453 extends Entity {
                                  for (String var16 : this.field_7819.method_25952()) {
                                     class_8406 var17 = this.field_7819.method_25929(var16);
                                     if (!"x".equals(var16) && !"y".equals(var16) && !"z".equals(var16)) {
-                                       var14.method_25946(var16, var17.method_38708());
+                                       var14.put(var16, var17.method_38708());
                                     }
                                  }
 
@@ -200,37 +200,37 @@ public class class_1453 extends Entity {
 
    @Override
    public void method_37376(CompoundNBT var1) {
-      var1.method_25946("BlockState", class_4338.method_20187(this.field_7822));
+      var1.put("BlockState", class_4338.method_20187(this.field_7822));
       var1.method_25931("Time", this.field_7827);
-      var1.method_25934("DropItem", this.field_7818);
-      var1.method_25934("HurtEntities", this.field_7825);
-      var1.method_25920("FallHurtAmount", this.field_7826);
+      var1.putBoolean("DropItem", this.field_7818);
+      var1.putBoolean("HurtEntities", this.field_7825);
+      var1.putFloat("FallHurtAmount", this.field_7826);
       var1.method_25931("FallHurtMax", this.field_7823);
       if (this.field_7819 != null) {
-         var1.method_25946("TileEntityData", this.field_7819);
+         var1.put("TileEntityData", this.field_7819);
       }
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
-      this.field_7822 = class_4338.method_20185(var1.method_25937("BlockState"));
+      this.field_7822 = class_4338.method_20185(var1.getCompound("BlockState"));
       this.field_7827 = var1.method_25947("Time");
-      if (!var1.method_25939("HurtEntities", 99)) {
+      if (!var1.contains("HurtEntities", 99)) {
          if (this.field_7822.method_8349(class_2351.field_11799)) {
             this.field_7825 = true;
          }
       } else {
-         this.field_7825 = var1.method_25933("HurtEntities");
-         this.field_7826 = var1.method_25955("FallHurtAmount");
+         this.field_7825 = var1.getBoolean("HurtEntities");
+         this.field_7826 = var1.getFloat("FallHurtAmount");
          this.field_7823 = var1.method_25947("FallHurtMax");
       }
 
-      if (var1.method_25939("DropItem", 99)) {
-         this.field_7818 = var1.method_25933("DropItem");
+      if (var1.contains("DropItem", 99)) {
+         this.field_7818 = var1.getBoolean("DropItem");
       }
 
-      if (var1.method_25939("TileEntityData", 10)) {
-         this.field_7819 = var1.method_25937("TileEntityData");
+      if (var1.contains("TileEntityData", 10)) {
+         this.field_7819 = var1.getCompound("TileEntityData");
       }
 
       if (this.field_7822.method_8345()) {

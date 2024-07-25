@@ -10,7 +10,7 @@ public class BoxESP extends Module {
    @EventListen
    private void method_17266(class_3368 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer != null && client.field_9601 != null) {
+         if (client.thePlayer != null && client.theWorld != null) {
             this.method_17267();
             this.method_17268();
             this.method_17265();
@@ -23,7 +23,7 @@ public class BoxESP extends Module {
       int var4 = class_314.method_1444(this.method_42017().getIntValueByName("Ender Color"), 0.14F);
       int var5 = class_314.method_1444(this.method_42017().getIntValueByName("Trapped Color"), 0.14F);
 
-      for (class_3757 var7 : client.field_9601.field_33053) {
+      for (class_3757 var7 : client.theWorld.field_33053) {
          boolean var8 = var7 instanceof class_7099 && !(var7 instanceof class_1962) && this.method_42017().getBooleanValueByName("Show Regular Chests");
          boolean var9 = var7 instanceof class_9180 && this.method_42017().getBooleanValueByName("Show Ender Chests");
          boolean var10 = var7 instanceof class_1962 && this.method_42017().getBooleanValueByName("Show Trapped Chests");
@@ -43,7 +43,7 @@ public class BoxESP extends Module {
             }
 
             class_8194 var18 = new class_8194(
-               var7.method_17403().method_8334(client.field_9601, var7.method_17399()).method_19483().method_18918(var11, var13, var15)
+               var7.method_17403().method_8334(client.theWorld, var7.method_17399()).method_19483().method_18918(var11, var13, var15)
             );
             GL11.glAlphaFunc(519, 0.0F);
             class_73.method_83(var18, var17);

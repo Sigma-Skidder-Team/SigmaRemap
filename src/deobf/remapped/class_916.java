@@ -412,7 +412,7 @@ public class class_916 extends class_4037 implements class_6510 {
             this.field_4703.method_29599().method_16055("chunkLoad");
             CompoundNBT var4 = this.method_4027(var1);
             if (var4 != null) {
-               boolean var9 = var4.method_25939("Level", 10) && var4.method_25937("Level").method_25939("Status", 8);
+               boolean var9 = var4.contains("Level", 10) && var4.getCompound("Level").contains("Status", 8);
                if (var9) {
                   class_7481 var6 = class_9477.method_43781(this.field_4703, this.field_4719, this.field_4706, var1, var4);
                   var6.method_27344(this.field_4703.method_29546());

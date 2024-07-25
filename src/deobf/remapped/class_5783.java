@@ -35,7 +35,7 @@ public abstract class class_5783 extends Entity {
       }
 
       if (this.field_29206) {
-         var1.method_25934("LeftOwner", true);
+         var1.putBoolean("LeftOwner", true);
       }
    }
 
@@ -45,7 +45,7 @@ public abstract class class_5783 extends Entity {
          this.field_29207 = var1.method_25926("Owner");
       }
 
-      this.field_29206 = var1.method_25933("LeftOwner");
+      this.field_29206 = var1.getBoolean("LeftOwner");
    }
 
    @Override

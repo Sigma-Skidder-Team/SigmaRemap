@@ -63,14 +63,14 @@ public class class_2667 extends class_1173 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_13118 = var1.method_25947("Lifetime");
-      this.field_13119 = var1.method_25933("PlayerSpawned");
+      this.field_13119 = var1.getBoolean("PlayerSpawned");
    }
 
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Lifetime", this.field_13118);
-      var1.method_25934("PlayerSpawned", this.field_13119);
+      var1.putBoolean("PlayerSpawned", this.field_13119);
    }
 
    @Override

@@ -79,7 +79,7 @@ public class class_2713 extends class_1280<class_6600> {
       if (var6 > 0) {
          int var7 = 8453920;
          Object var8;
-         if (var6 >= 40 && !this.field_943.thePlayer.field_3876.isCreativeMode) {
+         if (var6 >= 40 && !this.field_943.thePlayer.playerAbilities.isCreativeMode) {
             var8 = field_13263;
             var7 = 16736352;
          } else if (this.field_10956.method_18878(2).method_35884()) {

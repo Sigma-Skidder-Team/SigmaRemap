@@ -133,9 +133,9 @@ public class JelloTouch {
 
    @EventListen
    public void method_384(class_5596 var1) {
-      if (MinecraftClient.getInstance().field_9601 == null && this.field_298) {
+      if (MinecraftClient.getInstance().theWorld == null && this.field_298) {
          this.method_378();
-      } else if (MinecraftClient.getInstance().field_9601 != null && !this.field_298) {
+      } else if (MinecraftClient.getInstance().theWorld != null && !this.field_298) {
          this.method_375();
       }
    }

@@ -16,10 +16,10 @@ public class class_3571 extends class_741 {
       if (var1.method_27960() == class_4897.field_24749 && var1.method_28002()) {
          String var4 = null;
          CompoundNBT var5 = var1.method_27990();
-         if (!var5.method_25939("SkullOwner", 8)) {
-            if (var5.method_25939("SkullOwner", 10)) {
-               CompoundNBT var6 = var5.method_25937("SkullOwner");
-               if (var6.method_25939("Name", 8)) {
+         if (!var5.contains("SkullOwner", 8)) {
+            if (var5.contains("SkullOwner", 10)) {
+               CompoundNBT var6 = var5.getCompound("SkullOwner");
+               if (var6.contains("Name", 8)) {
                   var4 = var6.method_25965("Name");
                }
             }
@@ -38,10 +38,10 @@ public class class_3571 extends class_741 {
    @Override
    public boolean method_11215(CompoundNBT var1) {
       super.method_11215(var1);
-      if (var1.method_25939("SkullOwner", 8) && !StringUtils.isBlank(var1.method_25965("SkullOwner"))) {
+      if (var1.contains("SkullOwner", 8) && !StringUtils.isBlank(var1.method_25965("SkullOwner"))) {
          GameProfile var4 = new GameProfile((UUID)null, var1.method_25965("SkullOwner"));
          var4 = class_4797.method_22108(var4);
-         var1.method_25946("SkullOwner", class_4338.method_20177(new CompoundNBT(), var4));
+         var1.put("SkullOwner", class_4338.method_20177(new CompoundNBT(), var4));
          return true;
       } else {
          return false;

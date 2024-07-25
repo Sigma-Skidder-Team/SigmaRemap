@@ -49,7 +49,7 @@ public class class_6201 extends class_2451 {
 
                class_4618 var12 = var10.method_8316();
                var7.method_43359(var8, var6, this.method_28393(var10), class_562.field_3322, (var12.method_21395() + 1.0F) / 2.0F, var12.method_21393() * 0.8F);
-               if (var8 == null || !var8.field_3876.isCreativeMode) {
+               if (var8 == null || !var8.playerAbilities.isCreativeMode) {
                   var9.method_27970(1);
                }
 
@@ -86,7 +86,7 @@ public class class_6201 extends class_2451 {
       class_2522 var7 = var4;
       CompoundNBT var8 = var3.method_27990();
       if (var8 != null) {
-         CompoundNBT var9 = var8.method_25937("BlockStateTag");
+         CompoundNBT var9 = var8.getCompound("BlockStateTag");
          class_8021 var10 = var4.method_8360().method_29306();
 
          for (String var12 : var9.method_25952()) {

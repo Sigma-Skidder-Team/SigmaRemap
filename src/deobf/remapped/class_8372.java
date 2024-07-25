@@ -124,11 +124,11 @@ public class class_8372 extends class_4088 {
       ItemStack var5 = this.field_42869.method_31498(0);
       ItemStack var6 = this.field_42869.method_31498(1);
       int var7 = var2 + 1;
-      if ((var6.method_28022() || var6.method_27997() < var7) && !var1.field_3876.isCreativeMode) {
+      if ((var6.method_28022() || var6.method_27997() < var7) && !var1.playerAbilities.isCreativeMode) {
          return false;
       } else if (this.field_42870[var2] > 0
          && !var5.method_28022()
-         && (var1.field_3840 >= var7 && var1.field_3840 >= this.field_42870[var2] || var1.field_3876.isCreativeMode)) {
+         && (var1.field_3840 >= var7 && var1.field_3840 >= this.field_42870[var2] || var1.playerAbilities.isCreativeMode)) {
          this.field_42865.method_42533((var6x, var7x) -> {
             ItemStack var10 = var5;
             List var11 = this.method_38580(var5, var2, this.field_42870[var2]);
@@ -137,7 +137,7 @@ public class class_8372 extends class_4088 {
                boolean var12 = var5.method_27960() == class_4897.field_24551;
                if (var12) {
                   var10 = new ItemStack(class_4897.field_24879);
-                  class_5734 var13 = var5.method_27990();
+                  CompoundNBT var13 = var5.method_27990();
                   if (var13 != null) {
                      var10.method_27965(var13.method_25944());
                   }
@@ -154,7 +154,7 @@ public class class_8372 extends class_4088 {
                   }
                }
 
-               if (!var1.field_3876.isCreativeMode) {
+               if (!var1.playerAbilities.isCreativeMode) {
                   var6.method_27970(var7);
                   if (var6.method_28022()) {
                      this.field_42869.method_31503(1, ItemStack.EMPTY);

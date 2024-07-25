@@ -18,7 +18,7 @@ public class class_1700 implements class_2274 {
       this.field_8791++;
       if (this.field_8787.method_40539() == GameType.SURVIVAL) {
          if (this.field_8791 == 1) {
-            class_5989 var3 = this.field_8787.method_40530().thePlayer;
+            ClientPlayerEntity var3 = this.field_8787.method_40530().thePlayer;
             if (var3 != null) {
                if (var3.inventory.method_32418(class_391.field_1605)) {
                   this.field_8787.method_40538(class_6240.field_31929);
@@ -55,7 +55,7 @@ public class class_1700 implements class_2274 {
       }
    }
 
-   public static boolean method_7631(class_5989 var0, class_2307<class_2451> var1) {
+   public static boolean method_7631(ClientPlayerEntity var0, class_2307<class_2451> var1) {
       for (class_2451 var5 : var1.method_10608()) {
          if (var0.method_27331().method_19276(class_6234.field_31839.method_43790(var5)) > 0) {
             return true;

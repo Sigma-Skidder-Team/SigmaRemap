@@ -19,7 +19,7 @@ public class class_3282 extends class_3599 {
          if (!var3.method_37330()) {
             return false;
          } else {
-            return var3 instanceof class_704 && ((class_704)var3).field_3876.disableDamage ? false : this.field_16255.method_26905() instanceof class_8509;
+            return var3 instanceof class_704 && ((class_704)var3).playerAbilities.disableDamage ? false : this.field_16255.method_26905() instanceof class_8509;
          }
       } else {
          return false;
@@ -37,7 +37,7 @@ public class class_3282 extends class_3599 {
       class_5834 var3 = this.field_16255.method_17809();
       if (var3 != null) {
          if (var3.method_37330()) {
-            return var3 instanceof class_704 && ((class_704)var3).field_3876.disableDamage ? false : --this.field_16256 > 0;
+            return var3 instanceof class_704 && ((class_704)var3).playerAbilities.disableDamage ? false : --this.field_16256 > 0;
          } else {
             return false;
          }

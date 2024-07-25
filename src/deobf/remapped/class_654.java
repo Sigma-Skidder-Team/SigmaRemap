@@ -241,14 +241,14 @@ public class class_654 {
                            class_3757 var25 = var12.method_28260(var21);
                            if (var25 == null) {
                               if (!var24.method_8321(var12, var21) && !var24.method_8306(var12, var21)) {
-                                 var15.add(new class_519(var22, var24, (class_5734)null));
+                                 var15.add(new class_519(var22, var24, (CompoundNBT)null));
                                  var16.addFirst(var21);
                               } else {
-                                 var13.add(new class_519(var22, var24, (class_5734)null));
+                                 var13.add(new class_519(var22, var24, (CompoundNBT)null));
                                  var16.addLast(var21);
                               }
                            } else {
-                              class_5734 var26 = var25.method_17396(new class_5734());
+                              CompoundNBT var26 = var25.method_17396(new CompoundNBT());
                               var14.add(new class_519(var22, var24, var26));
                               var16.addLast(var21);
                            }

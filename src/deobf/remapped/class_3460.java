@@ -23,12 +23,12 @@ public class class_3460 implements class_1429 {
    }
 
    @Override
-   public void method_6572(class_5734 var1) {
+   public void method_6572(CompoundNBT var1) {
       this.field_16957.method_29743(this.field_16956, var1);
    }
 
    @Override
-   public class_5734 method_6573() {
+   public CompoundNBT method_6573() {
       return this.field_16957.method_29742(this.field_16956);
    }
 

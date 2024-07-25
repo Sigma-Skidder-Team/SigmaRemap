@@ -216,7 +216,7 @@ public class class_5542 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       Optional var8 = var1.method_2754(this.method_37075());
       class_2715 var9 = class_2715.method_12223(var8);
       boolean var10 = false;
@@ -292,7 +292,7 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       List var4 = this.method_25215();
       class_3416 var5 = new class_3416();
@@ -303,15 +303,15 @@ public class class_5542 extends class_5467 {
          }
       }
 
-      var1.method_25946("Trusted", var5);
-      var1.method_25934("Sleeping", this.method_26507());
+      var1.put("Trusted", var5);
+      var1.putBoolean("Sleeping", this.method_26507());
       var1.method_25941("Type", this.method_25199().method_12224());
-      var1.method_25934("Sitting", this.method_25205());
-      var1.method_25934("Crouching", this.method_37382());
+      var1.putBoolean("Sitting", this.method_25205());
+      var1.putBoolean("Crouching", this.method_37382());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       class_3416 var4 = var1.method_25927("Trusted", 11);
 
@@ -319,10 +319,10 @@ public class class_5542 extends class_5467 {
          this.method_25189(class_4338.method_20183(var4.get(var5)));
       }
 
-      this.method_25194(var1.method_25933("Sleeping"));
+      this.method_25194(var1.getBoolean("Sleeping"));
       this.method_25174(class_2715.method_12222(var1.method_25965("Type")));
-      this.method_25196(var1.method_25933("Sitting"));
-      this.method_25168(var1.method_25933("Crouching"));
+      this.method_25196(var1.getBoolean("Sitting"));
+      this.method_25168(var1.getBoolean("Crouching"));
       if (this.field_41768 instanceof class_6331) {
          this.method_25169();
       }

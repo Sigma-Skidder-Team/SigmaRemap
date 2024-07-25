@@ -354,7 +354,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    public class_6910 method_19079(class_704 var1, ItemStack var2) {
       boolean var5 = this.method_19060(var1, var2);
-      if (!var1.field_3876.isCreativeMode) {
+      if (!var1.playerAbilities.isCreativeMode) {
          var2.method_27970(1);
       }
 
@@ -714,26 +714,26 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("EatingHaystack", this.method_19086());
-      var1.method_25934("Bred", this.method_19044());
+      var1.putBoolean("EatingHaystack", this.method_19086());
+      var1.putBoolean("Bred", this.method_19044());
       var1.method_25931("Temper", this.method_19062());
-      var1.method_25934("Tame", this.method_19043());
+      var1.putBoolean("Tame", this.method_19043());
       if (this.method_19081() != null) {
          var1.method_25964("Owner", this.method_19081());
       }
 
       if (!this.field_20021.method_31498(0).method_28022()) {
-         var1.method_25946("SaddleItem", this.field_20021.method_31498(0).method_27998(new CompoundNBT()));
+         var1.put("SaddleItem", this.field_20021.method_31498(0).method_27998(new CompoundNBT()));
       }
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_19054(var1.method_25933("EatingHaystack"));
-      this.method_19066(var1.method_25933("Bred"));
+      this.method_19054(var1.getBoolean("EatingHaystack"));
+      this.method_19066(var1.getBoolean("Bred"));
       this.method_19071(var1.method_25947("Temper"));
-      this.method_19041(var1.method_25933("Tame"));
+      this.method_19041(var1.getBoolean("Tame"));
       UUID var5;
       if (!var1.method_25954("Owner")) {
          String var4 = var1.method_25965("Owner");
@@ -746,8 +746,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
          this.method_19051(var5);
       }
 
-      if (var1.method_25939("SaddleItem", 10)) {
-         ItemStack var6 = ItemStack.method_28015(var1.method_25937("SaddleItem"));
+      if (var1.contains("SaddleItem", 10)) {
+         ItemStack var6 = ItemStack.method_28015(var1.getCompound("SaddleItem"));
          if (var6.method_27960() == class_4897.field_24836) {
             this.field_20021.method_31503(0, var6);
          }

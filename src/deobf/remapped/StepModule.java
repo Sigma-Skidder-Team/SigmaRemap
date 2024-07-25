@@ -42,7 +42,7 @@ public class StepModule extends SecondModule {
          client.thePlayer.field_41712.field_19937 + var10,
          var6 + var8
       );
-      Object[] var13 = client.field_9601.method_6680(client.thePlayer, var12).toArray();
+      Object[] var13 = client.theWorld.method_6680(client.thePlayer, var12).toArray();
       int var14 = var13.length;
       class_2522 var15 = null;
       class_1331 var16 = null;
@@ -53,7 +53,7 @@ public class StepModule extends SecondModule {
          class_1331 var21 = new class_1331(
             var20.method_19491(class_9249.field_47215), var20.method_19491(class_9249.field_47216), var20.method_19491(class_9249.field_47219)
          );
-         class_2522 var22 = client.field_9601.method_28262(var21);
+         class_2522 var22 = client.theWorld.method_28262(var21);
          if (var15 == null || var20.method_19483().field_19939 > var17) {
             var15 = var22;
             var16 = var21;
@@ -65,7 +65,7 @@ public class StepModule extends SecondModule {
          if (var15 != null) {
             if (!client.thePlayer.field_41726) {
                if (var15.method_8360() instanceof class_6344) {
-                  class_4190 var24 = var15.method_8334(client.field_9601, var16);
+                  class_4190 var24 = var15.method_8334(client.theWorld, var16);
                   if (var24.method_19483().field_19939 == 1.0) {
                      return class_1380.field_7487;
                   }
@@ -84,7 +84,7 @@ public class StepModule extends SecondModule {
                      return class_1380.field_7484;
                   }
                } else {
-                  class_4190 var23 = var15.method_8334(client.field_9601, var16);
+                  class_4190 var23 = var15.method_8334(client.theWorld, var16);
                   if (var23.method_19483().field_19939 == 1.0) {
                      return class_1380.field_7485;
                   }

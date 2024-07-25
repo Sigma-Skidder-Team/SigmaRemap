@@ -91,7 +91,7 @@ public class class_9821<R> implements AutoCloseable {
    }
 
    @Nullable
-   private class_5734 method_45271(class_2034 var1) {
+   private CompoundNBT method_45271(class_2034 var1) {
       try {
          return this.field_49764.method_9148(var1);
       } catch (IOException var5) {
@@ -132,10 +132,10 @@ public class class_9821<R> implements AutoCloseable {
    private void method_45258(class_2034 var1) {
       Dynamic var4 = this.method_45264(var1, class_3504.field_17178);
       class_8406 var5 = (class_8406)var4.getValue();
-      if (!(var5 instanceof class_5734)) {
+      if (!(var5 instanceof CompoundNBT)) {
          field_49768.error("Expected compound tag, got {}", var5);
       } else {
-         this.field_49764.method_9152(var1, (class_5734)var5);
+         this.field_49764.method_9152(var1, (CompoundNBT)var5);
       }
    }
 

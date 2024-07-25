@@ -66,7 +66,7 @@ public class class_9552 extends class_5783 {
       this.field_48604 = var1.method_25932("TXD");
       this.field_48598 = var1.method_25932("TYD");
       this.field_48597 = var1.method_25932("TZD");
-      if (var1.method_25939("Dir", 99)) {
+      if (var1.contains("Dir", 99)) {
          this.field_48599 = Direction.method_1033(var1.method_25947("Dir"));
       }
 

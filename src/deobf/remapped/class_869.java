@@ -12,7 +12,7 @@ public class class_869 {
    }
 
    public static class_869 method_3760(CompoundNBT var0) {
-      class_1331 var3 = class_4338.method_20189(var0.method_25937("Pos"));
+      class_1331 var3 = class_4338.method_20189(var0.getCompound("Pos"));
       int var4 = var0.method_25947("Rotation");
       int var5 = var0.method_25947("EntityId");
       return new class_869(var3, var4, var5);
@@ -20,7 +20,7 @@ public class class_869 {
 
    public CompoundNBT method_3761() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method_25946("Pos", class_4338.method_20190(this.field_4509));
+      var3.put("Pos", class_4338.method_20190(this.field_4509));
       var3.method_25931("Rotation", this.field_4508);
       var3.method_25931("EntityId", this.field_4507);
       return var3;

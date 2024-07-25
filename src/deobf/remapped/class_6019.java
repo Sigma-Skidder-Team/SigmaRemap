@@ -3,7 +3,7 @@ package remapped;
 public class class_6019 extends class_8715 {
    private static String[] field_30651;
 
-   private class_6019(class_174 var1, double var2, double var4, double var6) {
+   private class_6019(ClientWorld var1, double var2, double var4, double var6) {
       super(var1, var2, var4 - 0.125, var6);
       this.field_49485 = 0.4F;
       this.field_49468 = 0.4F;
@@ -14,7 +14,7 @@ public class class_6019 extends class_8715 {
       this.field_49474 = false;
    }
 
-   private class_6019(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   private class_6019(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4 - 0.125, var6, var8, var10, var12);
       this.method_44955(0.01F, 0.01F);
       this.field_10503 = this.field_10503 * (this.field_49466.nextFloat() * 0.6F + 0.6F);

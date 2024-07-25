@@ -125,17 +125,17 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
       super.method_37376(var1);
       class_2795 var4 = this.method_974();
       if (!var4.isEmpty()) {
-         var1.method_25946("Offers", var4.method_12711());
+         var1.put("Offers", var4.method_12711());
       }
 
-      var1.method_25946("Inventory", this.field_1685.method_21552());
+      var1.put("Inventory", this.field_1685.method_21552());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("Offers", 10)) {
-         this.field_1687 = new class_2795(var1.method_25937("Offers"));
+      if (var1.contains("Offers", 10)) {
+         this.field_1687 = new class_2795(var1.getCompound("Offers"));
       }
 
       this.field_1685.method_21549(var1.method_25927("Inventory", 10));

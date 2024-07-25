@@ -10,9 +10,9 @@ public class class_5360 extends class_3232 {
    private final class_2654 field_27355;
    private final class_4663 field_27354;
    public volatile class_6007 field_27356;
-   private final class_174 field_27352;
+   private final ClientWorld field_27352;
 
-   public class_5360(class_174 var1, int var2) {
+   public class_5360(ClientWorld var1, int var2) {
       this.field_27352 = var1;
       this.field_27355 = new class_8526(var1, new class_2034(0, 0));
       this.field_27354 = new class_4663(this, true, var1.method_22572().method_40229());

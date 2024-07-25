@@ -20,7 +20,7 @@ public class class_9185 extends class_8131 {
       super(class_2746.field_13441, var2);
       this.field_46997 = var2.method_25965("Template");
       this.field_46996 = class_6631.valueOf(var2.method_25965("Rot"));
-      this.field_46995 = var2.method_25933("OW");
+      this.field_46995 = var2.getBoolean("OW");
       this.method_42333(var1);
    }
 
@@ -35,7 +35,7 @@ public class class_9185 extends class_8131 {
       super.method_32517(var1);
       var1.method_25941("Template", this.field_46997);
       var1.method_25941("Rot", this.field_46996.name());
-      var1.method_25934("OW", this.field_46995);
+      var1.putBoolean("OW", this.field_46995);
    }
 
    @Override

@@ -75,7 +75,7 @@ public class class_3003 extends class_2451 {
                if (var1.method_29538(var2, var9) && var2.method_3208(var9, var8.method_43956(), var6)) {
                   class_6629 var10 = this.method_13719(var6.method_27990());
                   if (var10.method_30479((class_6331)var1, var6, var2, var9, class_2417.field_12030, false, false) != null) {
-                     if (!var2.field_3876.isCreativeMode) {
+                     if (!var2.playerAbilities.isCreativeMode) {
                         var6.method_27970(1);
                      }
 
@@ -116,9 +116,9 @@ public class class_3003 extends class_2451 {
    }
 
    public class_6629<?> method_13719(CompoundNBT var1) {
-      if (var1 != null && var1.method_25939("EntityTag", 10)) {
-         CompoundNBT var4 = var1.method_25937("EntityTag");
-         if (var4.method_25939("id", 8)) {
+      if (var1 != null && var1.contains("EntityTag", 10)) {
+         CompoundNBT var4 = var1.getCompound("EntityTag");
+         if (var4.contains("id", 8)) {
             return class_6629.method_30460(var4.method_25965("id")).orElse(this.field_14737);
          }
       }
@@ -146,7 +146,7 @@ public class class_3003 extends class_2451 {
                   ((class_5886)var9).method_37303(var6.method_28008());
                }
 
-               if (!var1.field_3876.isCreativeMode) {
+               if (!var1.playerAbilities.isCreativeMode) {
                   var6.method_27970(1);
                }
 

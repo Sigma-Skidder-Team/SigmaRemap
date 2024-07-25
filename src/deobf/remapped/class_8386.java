@@ -46,16 +46,16 @@ public class class_8386<T extends class_5834, M extends class_6521<T> & class_86
             GameProfile var22 = null;
             if (var13.method_28002()) {
                CompoundNBT var18 = var13.method_27990();
-               if (!var18.method_25939("SkullOwner", 10)) {
-                  if (var18.method_25939("SkullOwner", 8)) {
+               if (!var18.contains("SkullOwner", 10)) {
+                  if (var18.contains("SkullOwner", 8)) {
                      String var19 = var18.method_25965("SkullOwner");
                      if (!StringUtils.isBlank(var19)) {
                         var22 = class_4797.method_22108(new GameProfile((UUID)null, var19));
-                        var18.method_25946("SkullOwner", class_4338.method_20177(new CompoundNBT(), var22));
+                        var18.put("SkullOwner", class_4338.method_20177(new CompoundNBT(), var22));
                      }
                   }
                } else {
-                  var22 = class_4338.method_20184(var18.method_25937("SkullOwner"));
+                  var22 = class_4338.method_20184(var18.getCompound("SkullOwner"));
                }
             }
 

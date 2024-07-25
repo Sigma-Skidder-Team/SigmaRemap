@@ -10,7 +10,7 @@ public abstract class class_9716 extends class_704 {
    public float field_49391;
    public float field_49394;
    public float field_49384;
-   public final class_174 field_49392;
+   public final ClientWorld field_49392;
    private Identifier field_49387 = null;
    private long field_49390 = 0L;
    private boolean field_49382 = false;
@@ -22,7 +22,7 @@ public abstract class class_9716 extends class_704 {
    public float field_49386;
    private static final Identifier field_49388 = new Identifier("textures/entity/elytra.png");
 
-   public class_9716(class_174 var1, GameProfile var2) {
+   public class_9716(ClientWorld var1, GameProfile var2) {
       super(var1, var1.method_758(), var1.method_734(), var2);
       this.field_49392 = var1;
       this.field_49389 = var2.getName();
@@ -125,12 +125,12 @@ public abstract class class_9716 extends class_704 {
 
    public float method_44876() {
       float var3 = 1.0F;
-      if (this.field_3876.isFlying) {
+      if (this.playerAbilities.isFlying) {
          var3 *= 1.1F;
       }
 
-      var3 = (float)((double)var3 * ((this.method_26575(class_7331.field_37465) / (double)this.field_3876.method_4229() + 1.0) / 2.0));
-      if (this.field_3876.method_4229() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
+      var3 = (float)((double)var3 * ((this.method_26575(class_7331.field_37465) / (double)this.playerAbilities.getWalkSpeed() + 1.0) / 2.0));
+      if (this.playerAbilities.getWalkSpeed() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
          var3 = 1.0F;
       }
 

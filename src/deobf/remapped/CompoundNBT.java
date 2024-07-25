@@ -73,7 +73,7 @@ public class CompoundNBT implements class_8406 {
    }
 
    @Nullable
-   public class_8406 method_25946(String var1, class_8406 var2) {
+   public class_8406 put(String var1, class_8406 var2) {
       return this.field_28975.put(var1, var2);
    }
 
@@ -106,7 +106,7 @@ public class CompoundNBT implements class_8406 {
       return var4 != null && var4.method_38709() == class_6222.field_31787 && ((class_6222)var4).method_28446().length == 4;
    }
 
-   public void method_25920(String var1, float var2) {
+   public void putFloat(String var1, float var2) {
       this.field_28975.put(var1, class_5718.method_25854(var2));
    }
 
@@ -138,7 +138,7 @@ public class CompoundNBT implements class_8406 {
       this.field_28975.put(var1, new class_1129(var2));
    }
 
-   public void method_25934(String var1, boolean var2) {
+   public void putBoolean(String var1, boolean var2) {
       this.field_28975.put(var1, class_5284.method_24121(var2));
    }
 
@@ -156,7 +156,7 @@ public class CompoundNBT implements class_8406 {
       return this.field_28975.containsKey(var1);
    }
 
-   public boolean method_25939(String var1, int var2) {
+   public boolean contains(String var1, int var2) {
       byte var5 = this.method_25943(var1);
       if (var5 != var2) {
          return var2 != 99 ? false : var5 == 1 || var5 == 2 || var5 == 3 || var5 == 4 || var5 == 5 || var5 == 6;
@@ -167,7 +167,7 @@ public class CompoundNBT implements class_8406 {
 
    public byte method_25950(String var1) {
       try {
-         if (this.method_25939(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((class_5841)this.field_28975.get(var1)).method_26641();
          }
       } catch (ClassCastException var5) {
@@ -178,7 +178,7 @@ public class CompoundNBT implements class_8406 {
 
    public short method_25956(String var1) {
       try {
-         if (this.method_25939(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((class_5841)this.field_28975.get(var1)).method_26640();
          }
       } catch (ClassCastException var5) {
@@ -189,7 +189,7 @@ public class CompoundNBT implements class_8406 {
 
    public int method_25947(String var1) {
       try {
-         if (this.method_25939(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((class_5841)this.field_28975.get(var1)).method_26636();
          }
       } catch (ClassCastException var5) {
@@ -200,7 +200,7 @@ public class CompoundNBT implements class_8406 {
 
    public long method_25948(String var1) {
       try {
-         if (this.method_25939(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((class_5841)this.field_28975.get(var1)).method_26635();
          }
       } catch (ClassCastException var5) {
@@ -209,9 +209,9 @@ public class CompoundNBT implements class_8406 {
       return 0L;
    }
 
-   public float method_25955(String var1) {
+   public float getFloat(String var1) {
       try {
-         if (this.method_25939(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((class_5841)this.field_28975.get(var1)).method_26639();
          }
       } catch (ClassCastException var5) {
@@ -222,7 +222,7 @@ public class CompoundNBT implements class_8406 {
 
    public double method_25932(String var1) {
       try {
-         if (this.method_25939(var1, 99)) {
+         if (this.contains(var1, 99)) {
             return ((class_5841)this.field_28975.get(var1)).method_26642();
          }
       } catch (ClassCastException var5) {
@@ -233,7 +233,7 @@ public class CompoundNBT implements class_8406 {
 
    public String method_25965(String var1) {
       try {
-         if (this.method_25939(var1, 8)) {
+         if (this.contains(var1, 8)) {
             return this.field_28975.get(var1).method_38710();
          }
       } catch (ClassCastException var5) {
@@ -244,7 +244,7 @@ public class CompoundNBT implements class_8406 {
 
    public byte[] method_25930(String var1) {
       try {
-         if (this.method_25939(var1, 7)) {
+         if (this.contains(var1, 7)) {
             return ((class_5064)this.field_28975.get(var1)).method_23327();
          }
       } catch (ClassCastException var5) {
@@ -256,7 +256,7 @@ public class CompoundNBT implements class_8406 {
 
    public int[] method_25922(String var1) {
       try {
-         if (this.method_25939(var1, 11)) {
+         if (this.contains(var1, 11)) {
             return ((class_6222)this.field_28975.get(var1)).method_28446();
          }
       } catch (ClassCastException var5) {
@@ -268,7 +268,7 @@ public class CompoundNBT implements class_8406 {
 
    public long[] method_25942(String var1) {
       try {
-         if (this.method_25939(var1, 12)) {
+         if (this.contains(var1, 12)) {
             return ((class_1129)this.field_28975.get(var1)).method_4959();
          }
       } catch (ClassCastException var5) {
@@ -278,9 +278,9 @@ public class CompoundNBT implements class_8406 {
       return new long[0];
    }
 
-   public CompoundNBT method_25937(String var1) {
+   public CompoundNBT getCompound(String var1) {
       try {
-         if (this.method_25939(var1, 10)) {
+         if (this.contains(var1, 10)) {
             return (CompoundNBT)this.field_28975.get(var1);
          }
       } catch (ClassCastException var5) {
@@ -307,7 +307,7 @@ public class CompoundNBT implements class_8406 {
       return new class_3416();
    }
 
-   public boolean method_25933(String var1) {
+   public boolean getBoolean(String var1) {
       return this.method_25950(var1) != 0;
    }
 
@@ -396,11 +396,11 @@ public class CompoundNBT implements class_8406 {
       for (String var5 : var1.field_28975.keySet()) {
          class_8406 var6 = var1.field_28975.get(var5);
          if (var6.method_38706() != 10) {
-            this.method_25946(var5, var6.method_38708());
-         } else if (!this.method_25939(var5, 10)) {
-            this.method_25946(var5, var6.method_38708());
+            this.put(var5, var6.method_38708());
+         } else if (!this.contains(var5, 10)) {
+            this.put(var5, var6.method_38708());
          } else {
-            CompoundNBT var7 = this.method_25937(var5);
+            CompoundNBT var7 = this.getCompound(var5);
             var7.method_25925((CompoundNBT)var6);
          }
       }

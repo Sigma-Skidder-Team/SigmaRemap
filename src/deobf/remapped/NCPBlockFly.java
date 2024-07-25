@@ -72,7 +72,7 @@ public class NCPBlockFly extends Module {
    public void method_27618(class_7982 var1) {
       if (this.method_42015()) {
          if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
-            if (client.field_9601
+            if (client.theWorld
                      .method_6680(
                         client.thePlayer,
                         client.thePlayer.field_41712.method_18928(0.0, -1.5, 0.0).method_18900(0.05, 0.0, 0.05).method_18900(-0.05, 0.0, -0.05)
@@ -125,7 +125,7 @@ public class NCPBlockFly extends Module {
                   this.field_30936.method_17211();
                }
 
-               client.playerController.method_42147(client.thePlayer, client.field_9601, this.field_30940, var13);
+               client.playerController.method_42147(client.thePlayer, client.theWorld, this.field_30940, var13);
                if (!this.method_42017().getBooleanValueByName("NoSwing")) {
                   client.thePlayer.method_26597(this.field_30940);
                } else {

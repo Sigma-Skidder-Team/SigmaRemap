@@ -25,7 +25,7 @@ public class class_8775 {
       this.field_44916 = var3;
    }
 
-   public boolean method_40335(class_174 var1, float var2, class_5797 var3, boolean var4, float var5) {
+   public boolean method_40335(ClientWorld var1, float var2, class_5797 var3, boolean var4, float var5) {
       int var8 = var3.method_26228() * var3.method_26253();
       if (this.field_44920.length != var8) {
          this.field_44920 = new int[var8];
@@ -40,7 +40,7 @@ public class class_8775 {
       return var9;
    }
 
-   public boolean method_40336(class_174 var1, float var2, int[] var3, boolean var4, float var5) {
+   public boolean method_40336(ClientWorld var1, float var2, int[] var3, boolean var4, float var5) {
       if (this.field_44915 == null && this.field_44916 == null) {
          return this.field_44918.method_23695(var1, var2, var3, var4);
       } else if (!class_4869.method_22378(var1) && !class_4869.method_22377(var1)) {

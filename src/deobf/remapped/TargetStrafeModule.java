@@ -120,13 +120,13 @@ public class TargetStrafeModule extends Module {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
          class_4092 var4 = new class_4092(var1.method_6214(-0.15, 0.0, -0.15), var1.method_6214(0.15, (double) client.thePlayer.method_37074(), 0.15));
          var4 = var4.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
-         return client.field_9601.method_6680(client.thePlayer, var4).count() == 0L;
+         return client.theWorld.method_6680(client.thePlayer, var4).count() == 0L;
       } else {
          return true;
       }
    }
 
    private boolean method_45279(double var1, double var3, double var5) {
-      return client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(var1, var3, var5)).count() == 0L;
+      return client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(var1, var3, var5)).count() == 0L;
    }
 }

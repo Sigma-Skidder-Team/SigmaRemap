@@ -17,7 +17,7 @@ public abstract class class_5923<T, C extends class_7803<T>> {
       return this.field_30050;
    }
 
-   public abstract void method_27093(class_5734 var1, C var2);
+   public abstract void method_27093(CompoundNBT var1, C var2);
 
-   public abstract C method_27094(class_5734 var1);
+   public abstract C method_27094(CompoundNBT var1);
 }

@@ -30,7 +30,7 @@ public class class_6394 {
          var0.method_29715(true);
       }
 
-      if (var0.method_557() instanceof class_4808 && MinecraftClient.getInstance().field_9601 != null) {
+      if (var0.method_557() instanceof class_4808 && MinecraftClient.getInstance().theWorld != null) {
          class_4808 var18 = (class_4808)var0.method_557();
 
          try {
@@ -43,7 +43,7 @@ public class class_6394 {
          class_546 var19 = var18.method_22144() == null
             ? null
             : new class_546(MinecraftClient.getInstance().method_8614().field_6037.<class_6325>method_28813(class_8669.field_44359), var18.method_22144());
-         class_2654 var20 = new class_2654(MinecraftClient.getInstance().field_9601, new class_2034(var18.method_22149(), var18.method_22151()), null);
+         class_2654 var20 = new class_2654(MinecraftClient.getInstance().theWorld, new class_2034(var18.method_22149(), var18.method_22151()), null);
          var20.method_11984(var19, new class_8248(var18.method_22147().copy()), var18.method_22146(), var18.method_22152());
          if (var20 != null) {
             int var7 = 0;

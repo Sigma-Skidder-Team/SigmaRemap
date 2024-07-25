@@ -116,7 +116,7 @@ public class class_5583 extends class_8990 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_25356(var1.method_25947("CatType"));
-      if (var1.method_25939("CollarColor", 99)) {
+      if (var1.contains("CollarColor", 99)) {
          this.method_25351(class_9077.method_41789(var1.method_25947("CollarColor")));
       }
    }
@@ -350,7 +350,7 @@ public class class_5583 extends class_8990 {
             class_9077 var7 = ((class_239)var6).method_1015();
             if (var7 != this.method_25360()) {
                this.method_25351(var7);
-               if (!var1.field_3876.isCreativeMode) {
+               if (!var1.playerAbilities.isCreativeMode) {
                   var5.method_27970(1);
                }
 

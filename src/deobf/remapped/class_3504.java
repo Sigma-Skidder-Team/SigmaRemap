@@ -168,10 +168,10 @@ public class class_3504 implements DynamicOps<class_8406> {
          CompoundNBT var6 = new CompoundNBT();
          if (var1 instanceof CompoundNBT) {
             CompoundNBT var7 = (CompoundNBT)var1;
-            var7.method_25952().forEach(var2x -> var6.method_25946(var2x, var7.method_25929(var2x)));
+            var7.method_25952().forEach(var2x -> var6.put(var2x, var7.method_25929(var2x)));
          }
 
-         var6.method_25946(var2.method_38710(), var3);
+         var6.put(var2.method_38710(), var3);
          return DataResult.success(var6);
       } else {
          return DataResult.error("key is not a string: " + var2, var1);
@@ -185,14 +185,14 @@ public class class_3504 implements DynamicOps<class_8406> {
          CompoundNBT var5 = new CompoundNBT();
          if (var1 instanceof CompoundNBT) {
             CompoundNBT var6 = (CompoundNBT)var1;
-            var6.method_25952().forEach(var2x -> var5.method_25946(var2x, var6.method_25929(var2x)));
+            var6.method_25952().forEach(var2x -> var5.put(var2x, var6.method_25929(var2x)));
          }
 
          ArrayList var7 = Lists.newArrayList();
          var2.entries().forEach(var2x -> {
             class_8406 var5x = (class_8406)var2x.getFirst();
             if (var5x instanceof class_473) {
-               var5.method_25946(var5x.method_38710(), (class_8406)var2x.getSecond());
+               var5.put(var5x.method_38710(), (class_8406)var2x.getSecond());
             } else {
                var7.add(var5x);
             }
@@ -232,7 +232,7 @@ public class class_3504 implements DynamicOps<class_8406> {
 
    public class_8406 createMap(Stream<Pair<class_8406, class_8406>> var1) {
       CompoundNBT var4 = new CompoundNBT();
-      var1.forEach(var1x -> var4.method_25946(((class_8406)var1x.getFirst()).method_38710(), (class_8406)var1x.getSecond()));
+      var1.forEach(var1x -> var4.put(((class_8406)var1x.getFirst()).method_38710(), (class_8406)var1x.getSecond()));
       return var4;
    }
 
@@ -313,7 +313,7 @@ public class class_3504 implements DynamicOps<class_8406> {
       } else {
          CompoundNBT var5 = (CompoundNBT)var1;
          CompoundNBT var6 = new CompoundNBT();
-         var5.method_25952().stream().filter(var1x -> !Objects.equals(var1x, var2)).forEach(var2x -> var6.method_25946(var2x, var5.method_25929(var2x)));
+         var5.method_25952().stream().filter(var1x -> !Objects.equals(var1x, var2)).forEach(var2x -> var6.put(var2x, var5.method_25929(var2x)));
          return var6;
       }
    }

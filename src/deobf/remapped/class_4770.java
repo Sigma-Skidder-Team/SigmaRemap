@@ -17,7 +17,7 @@ public class class_4770 extends class_446 {
    public String field_23120 = null;
    private class_9716 field_23122;
    private MinecraftClient field_23121 = MinecraftClient.getInstance();
-   private static class_174 field_23116;
+   private static ClientWorld field_23116;
    public class_7309 field_23119;
    private class_7884 field_23118;
    private class_9298 field_23115;
@@ -52,7 +52,7 @@ public class class_4770 extends class_446 {
          UUID var8 = UUID.fromString(this.field_23119.method_33322().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.field_23119.method_33322());
          if (field_23116 == null) {
             class_784 var9 = new class_784(class_423.field_1789, false, false);
-            field_23116 = new class_174(
+            field_23116 = new ClientWorld(
                this.field_23121.method_8614(), var9, World.field_33048, class_8760.field_44823, 1, this::method_21986, null, false, 0L
             );
          }

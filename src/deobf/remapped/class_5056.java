@@ -201,24 +201,24 @@ public class class_5056 implements class_7203, class_5684 {
    private void method_23312(class_6322 var1, CompoundNBT var2, CompoundNBT var3) {
       class_3416 var6 = new class_3416();
       this.field_26144.stream().<class_473>map(class_473::method_2261).forEach(var6::add);
-      var2.method_25946("ServerBrands", var6);
-      var2.method_25934("WasModded", this.field_26161);
+      var2.put("ServerBrands", var6);
+      var2.putBoolean("WasModded", this.field_26161);
       CompoundNBT var7 = new CompoundNBT();
       var7.method_25941("Name", class_7665.method_34674().getName());
       var7.method_25931("Id", class_7665.method_34674().getWorldVersion());
-      var7.method_25934("Snapshot", !class_7665.method_34674().isStable());
-      var2.method_25946("Version", var7);
+      var7.putBoolean("Snapshot", !class_7665.method_34674().isStable());
+      var2.put("Version", var7);
       var2.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
       class_8876 var8 = class_8876.method_40843(class_3504.field_17178, var1);
       class_2904.field_14169
          .encodeStart(var8, this.field_26134)
          .resultOrPartial(Util.method_44690("WorldGenSettings: ", field_26153::error))
-         .ifPresent(var1x -> var2.method_25946("WorldGenSettings", var1x));
+         .ifPresent(var1x -> var2.put("WorldGenSettings", var1x));
       var2.method_25931("GameType", this.field_26154.method_28720().getID());
       var2.method_25931("SpawnX", this.field_26152);
       var2.method_25931("SpawnY", this.field_26135);
       var2.method_25931("SpawnZ", this.field_26138);
-      var2.method_25920("SpawnAngle", this.field_26137);
+      var2.putFloat("SpawnAngle", this.field_26137);
       var2.method_25949("Time", this.field_26142);
       var2.method_25949("DayTime", this.field_26160);
       var2.method_25949("LastPlayed", Util.getEpochTimeMs());
@@ -226,30 +226,30 @@ public class class_5056 implements class_7203, class_5684 {
       var2.method_25931("version", 19133);
       var2.method_25931("clearWeatherTime", this.field_26143);
       var2.method_25931("rainTime", this.field_26159);
-      var2.method_25934("raining", this.field_26133);
+      var2.putBoolean("raining", this.field_26133);
       var2.method_25931("thunderTime", this.field_26132);
-      var2.method_25934("thundering", this.field_26150);
-      var2.method_25934("hardcore", this.field_26154.method_28712());
-      var2.method_25934("allowCommands", this.field_26154.method_28719());
-      var2.method_25934("initialized", this.field_26139);
+      var2.putBoolean("thundering", this.field_26150);
+      var2.putBoolean("hardcore", this.field_26154.method_28712());
+      var2.putBoolean("allowCommands", this.field_26154.method_28719());
+      var2.putBoolean("initialized", this.field_26139);
       this.field_26162.method_7093(var2);
       var2.method_25921("Difficulty", (byte)this.field_26154.method_28710().method_2097());
-      var2.method_25934("DifficultyLocked", this.field_26149);
-      var2.method_25946("GameRules", this.field_26154.method_28709().method_1284());
-      var2.method_25946("DragonFight", this.field_26157);
+      var2.putBoolean("DifficultyLocked", this.field_26149);
+      var2.put("GameRules", this.field_26154.method_28709().method_1284());
+      var2.put("DragonFight", this.field_26157);
       if (var3 != null) {
-         var2.method_25946("Player", var3);
+         var2.put("Player", var3);
       }
 
       class_2805.field_13767
          .encodeStart(class_3504.field_17178, this.field_26154.method_28713())
          .result()
-         .ifPresent(var1x -> var2.method_25946("DataPacks", var1x));
+         .ifPresent(var1x -> var2.put("DataPacks", var1x));
       if (this.field_26163 != null) {
-         var2.method_25946("CustomBossEvents", this.field_26163);
+         var2.put("CustomBossEvents", this.field_26163);
       }
 
-      var2.method_25946("ScheduledEvents", this.field_26141.method_23181());
+      var2.put("ScheduledEvents", this.field_26141.method_23181());
       var2.method_25931("WanderingTraderSpawnDelay", this.field_26151);
       var2.method_25931("WanderingTraderSpawnChance", this.field_26146);
       if (this.field_26145 != null) {

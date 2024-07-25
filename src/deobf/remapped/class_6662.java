@@ -19,7 +19,7 @@ public class class_6662 {
             return -1;
          } else {
             CompoundNBT var4 = var0x.method_28021("Explosion");
-            int[] var5x = var4 != null && var4.method_25939("Colors", 11) ? var4.method_25922("Colors") : null;
+            int[] var5x = var4 != null && var4.contains("Colors", 11) ? var4.method_25922("Colors") : null;
             if (var5x != null && var5x.length != 0) {
                if (var5x.length == 1) {
                   return var5x[0];

@@ -82,7 +82,7 @@ public class class_4393 extends class_2803 implements class_9897 {
             }
 
             Pair var7 = (Pair)var6.get();
-            if (!var1.field_3876.isCreativeMode) {
+            if (!var1.playerAbilities.isCreativeMode) {
                var5.method_27970(1);
             }
 
@@ -167,7 +167,7 @@ public class class_4393 extends class_2803 implements class_9897 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25941("Type", class_2066.method_9651(this.method_20463()));
       if (this.field_21516 != null) {
@@ -177,14 +177,14 @@ public class class_4393 extends class_2803 implements class_9897 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_20464(class_2066.method_9654(var1.method_25965("Type")));
-      if (var1.method_25939("EffectId", 1)) {
+      if (var1.contains("EffectId", 1)) {
          this.field_21516 = class_1425.method_6538(var1.method_25950("EffectId"));
       }
 
-      if (var1.method_25939("EffectDuration", 3)) {
+      if (var1.contains("EffectDuration", 3)) {
          this.field_21515 = var1.method_25947("EffectDuration");
       }
    }

@@ -126,7 +126,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_1062 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
-      if (!var1.method_25939("LootTable", 8)) {
+      if (!var1.contains("LootTable", 8)) {
          class_3037.method_13882(var1, this.field_1062);
       } else {
          this.field_1063 = new Identifier(var1.method_25965("LootTable"));

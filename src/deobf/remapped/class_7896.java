@@ -21,7 +21,7 @@ public abstract class class_7896 extends class_7060 {
       }
    }
 
-   public class_7896(class_2746 var1, class_5734 var2) {
+   public class_7896(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field_40379 = var2.method_25947("Width");
       this.field_40378 = var2.method_25947("Height");
@@ -30,7 +30,7 @@ public abstract class class_7896 extends class_7060 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       var1.method_25931("Width", this.field_40379);
       var1.method_25931("Height", this.field_40378);
       var1.method_25931("Depth", this.field_40376);

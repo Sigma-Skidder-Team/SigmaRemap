@@ -79,8 +79,8 @@ public class class_9343 {
          + '}';
    }
 
-   public class_5734 method_43119() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_43119() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("Name", this.method_43125());
       var3.method_25923("Amount", this.field_47682);
       var3.method_25931("Operation", this.field_47681.method_43115());
@@ -89,7 +89,7 @@ public class class_9343 {
    }
 
    @Nullable
-   public static class_9343 method_43120(class_5734 var0) {
+   public static class_9343 method_43120(CompoundNBT var0) {
       try {
          UUID var3 = var0.method_25926("UUID");
          class_9342 var4 = class_9342.method_43116(var0.method_25947("Operation"));

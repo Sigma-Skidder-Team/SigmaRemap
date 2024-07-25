@@ -23,7 +23,7 @@ public class class_2244 extends Module {
    }
 
    public Entity method_10319() {
-      ArrayList var3 = Lists.newArrayList(client.field_9601.method_736());
+      ArrayList var3 = Lists.newArrayList(client.theWorld.method_736());
       var3.remove(client.thePlayer);
       Iterator var4 = var3.iterator();
 

@@ -62,14 +62,14 @@ public class class_3071 extends class_1147 {
          var4.add(class_473.method_2261(var6.toString()));
       }
 
-      var3.method_25946("recipes", var4);
+      var3.put("recipes", var4);
       class_3416 var8 = new class_3416();
 
       for (Identifier var7 : this.field_6531) {
          var8.add(class_473.method_2261(var7.toString()));
       }
 
-      var3.method_25946("toBeDisplayed", var8);
+      var3.put("toBeDisplayed", var8);
       return var3;
    }
 

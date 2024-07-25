@@ -12,7 +12,7 @@ public class class_4874 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      class_174 var11 = this.field_24262.field_9601;
+      ClientWorld var11 = this.field_24262.theWorld;
       RenderSystem.method_16438();
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();

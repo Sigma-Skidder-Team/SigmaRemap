@@ -14,10 +14,10 @@ public class class_4808 implements Packet<class_392> {
    private int field_24062;
    private int field_24058;
    private int field_24057;
-   private class_5734 field_24059;
+   private CompoundNBT field_24059;
    private int[] field_24055;
    private byte[] field_24060;
-   public List<class_5734> field_24064;
+   public List<CompoundNBT> field_24064;
    public boolean field_24063;
    private Map<String, Object> field_24056;
 
@@ -29,11 +29,11 @@ public class class_4808 implements Packet<class_392> {
       this.field_24062 = var5.field_10328;
       this.field_24058 = var5.field_10327;
       this.field_24063 = var2 == 65535;
-      this.field_24059 = new class_5734();
+      this.field_24059 = new CompoundNBT();
 
       for (Entry var7 : var1.method_27354()) {
          if (((class_3801)var7.getKey()).method_17677()) {
-            this.field_24059.method_25946(((class_3801)var7.getKey()).method_17676(), new class_1129(((class_2131)var7.getValue()).method_9954()));
+            this.field_24059.put(((class_3801)var7.getKey()).method_17676(), new class_1129(((class_2131)var7.getValue()).method_9954()));
          }
       }
 
@@ -50,7 +50,7 @@ public class class_4808 implements Packet<class_392> {
          class_3757 var9 = (class_3757)var14.getValue();
          int var10 = var8.method_12165() >> 4;
          if (this.method_22141() || (var2 & 1 << var10) != 0) {
-            class_5734 var11 = var9.method_17414();
+            CompoundNBT var11 = var9.method_17414();
             this.field_24064.add(var11);
          }
       }
@@ -101,7 +101,7 @@ public class class_4808 implements Packet<class_392> {
       var1.writeBytes(this.field_24060);
       var1.method_37743(this.field_24064.size());
 
-      for (class_5734 var5 : this.field_24064) {
+      for (CompoundNBT var5 : this.field_24064) {
          var1.method_37749(var5);
       }
    }
@@ -167,11 +167,11 @@ public class class_4808 implements Packet<class_392> {
       return this.field_24063;
    }
 
-   public class_5734 method_22146() {
+   public CompoundNBT method_22146() {
       return this.field_24059;
    }
 
-   public List<class_5734> method_22143() {
+   public List<CompoundNBT> method_22143() {
       return this.field_24064;
    }
 

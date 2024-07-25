@@ -7,15 +7,15 @@ public class class_3705 extends class_3289 {
    private final int field_18185;
    private final class_5079 field_18183;
 
-   public class_3705(class_174 var1, Entity var2, class_5079 var3) {
+   public class_3705(ClientWorld var1, Entity var2, class_5079 var3) {
       this(var1, var2, var3, 3);
    }
 
-   public class_3705(class_174 var1, Entity var2, class_5079 var3, int var4) {
+   public class_3705(ClientWorld var1, Entity var2, class_5079 var3, int var4) {
       this(var1, var2, var3, var4, var2.method_37098());
    }
 
-   private class_3705(class_174 var1, Entity var2, class_5079 var3, int var4, class_1343 var5) {
+   private class_3705(ClientWorld var1, Entity var2, class_5079 var3, int var4, class_1343 var5) {
       super(var1, var2.method_37302(), var2.method_37080(0.5), var2.method_37156(), var5.field_7336, var5.field_7333, var5.field_7334);
       this.field_18186 = var2;
       this.field_18185 = var4;

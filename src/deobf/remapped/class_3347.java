@@ -10,7 +10,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
-public class class_3347 implements class_7642<class_5989> {
+public class class_3347 implements class_7642<ClientPlayerEntity> {
    public static Channel field_16511;
    public static class_412 field_16509 = class_3347.field_16514;
    public static final class_412 field_16514 = class_412.field_1732;
@@ -83,7 +83,7 @@ public class class_3347 implements class_7642<class_5989> {
 
    @Override
    public class_6536 method_34634(Runnable var1, Long var2) {
-      if (MinecraftClient.getInstance().field_9601 != null) {
+      if (MinecraftClient.getInstance().theWorld != null) {
          class_4507 var5 = new class_4507(this.field_16505.츚鶲뎫ꈍ쥡괠(this, var1).method_36944(var2 * 50L, TimeUnit.MILLISECONDS).method_36945());
          this.field_16508.add(var5);
          return var5;
@@ -154,7 +154,7 @@ public class class_3347 implements class_7642<class_5989> {
    }
 
    @Override
-   public class_8332<class_5989> method_34632() {
+   public class_8332<ClientPlayerEntity> method_34632() {
       return this.field_16502;
    }
 

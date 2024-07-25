@@ -562,7 +562,7 @@ public class class_496 extends class_5467 {
                   this.method_2432();
                   this.method_2456(true);
                   ItemStack var6 = this.method_26520(class_6943.field_35707);
-                  if (!var6.method_28022() && !var1.field_3876.isCreativeMode) {
+                  if (!var6.method_28022() && !var1.playerAbilities.isCreativeMode) {
                      this.method_37310(var6);
                   }
 

@@ -295,22 +295,22 @@ public class class_3420 extends class_3757 implements class_3745 {
    @Override
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
-      this.field_16829 = class_4338.method_20185(var2.method_25937("blockState"));
+      this.field_16829 = class_4338.method_20185(var2.getCompound("blockState"));
       this.field_16834 = Direction.method_1033(var2.method_25947("facing"));
-      this.field_16835 = var2.method_25955("progress");
+      this.field_16835 = var2.getFloat("progress");
       this.field_16833 = this.field_16835;
-      this.field_16827 = var2.method_25933("extending");
-      this.field_16836 = var2.method_25933("source");
+      this.field_16827 = var2.getBoolean("extending");
+      this.field_16836 = var2.getBoolean("source");
    }
 
    @Override
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
-      var1.method_25946("blockState", class_4338.method_20187(this.field_16829));
+      var1.put("blockState", class_4338.method_20187(this.field_16829));
       var1.method_25931("facing", this.field_16834.method_1050());
-      var1.method_25920("progress", this.field_16833);
-      var1.method_25934("extending", this.field_16827);
-      var1.method_25934("source", this.field_16836);
+      var1.putFloat("progress", this.field_16833);
+      var1.putBoolean("extending", this.field_16827);
+      var1.putBoolean("source", this.field_16836);
       return var1;
    }
 

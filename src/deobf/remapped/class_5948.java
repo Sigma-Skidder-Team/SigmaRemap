@@ -101,14 +101,14 @@ public class class_5948 extends class_4109 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("SkeletonTrap", this.method_27191());
+      var1.putBoolean("SkeletonTrap", this.method_27191());
       var1.method_25931("SkeletonTrapTime", this.field_30331);
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_27190(var1.method_25933("SkeletonTrap"));
+      this.method_27190(var1.getBoolean("SkeletonTrap"));
       this.field_30331 = var1.method_25947("SkeletonTrapTime");
    }
 

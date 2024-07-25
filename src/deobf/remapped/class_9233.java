@@ -78,7 +78,7 @@ public class class_9233 extends Module {
             double var19 = var6
                + (var10 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F))) - var12 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F)))) * var15;
             class_4092 var21 = new class_4092(var17 - 0.3, var8 - 1.0, var19 - 0.3, var17 + 0.3, var8 + 2.0, var19 + 0.3);
-            if (client.field_9601.method_6680(client.thePlayer, var21).count() == 0L) {
+            if (client.theWorld.method_6680(client.thePlayer, var21).count() == 0L) {
                double var22 = this.method_42591(var21);
                if (var22 != 11.0) {
                   double var24 = client.thePlayer.method_37309();
@@ -126,12 +126,12 @@ public class class_9233 extends Module {
 
       do {
          var6 = var1.method_18918(0.0, -var4, 0.0);
-         if (client.field_9601.method_6680(client.thePlayer, var6).count() == 0L) {
+         if (client.theWorld.method_6680(client.thePlayer, var6).count() == 0L) {
             return var4;
          }
 
          var4 -= 0.5;
-      } while (client.field_9601.method_6680(client.thePlayer, var6).count() != 0L && var4 > 3.0);
+      } while (client.theWorld.method_6680(client.thePlayer, var6).count() != 0L && var4 > 3.0);
 
       return 11.0;
    }

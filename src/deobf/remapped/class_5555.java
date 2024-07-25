@@ -22,11 +22,11 @@ public class class_5555 extends class_9795 implements class_3745 {
       super.method_17396(var1);
       var1.method_25949("Age", this.field_28273);
       if (this.field_28268 != null) {
-         var1.method_25946("ExitPortal", class_4338.method_20190(this.field_28268));
+         var1.put("ExitPortal", class_4338.method_20190(this.field_28268));
       }
 
       if (this.field_28269) {
-         var1.method_25934("ExactTeleport", this.field_28269);
+         var1.putBoolean("ExactTeleport", this.field_28269);
       }
 
       return var1;
@@ -36,11 +36,11 @@ public class class_5555 extends class_9795 implements class_3745 {
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_28273 = var2.method_25948("Age");
-      if (var2.method_25939("ExitPortal", 10)) {
-         this.field_28268 = class_4338.method_20189(var2.method_25937("ExitPortal"));
+      if (var2.contains("ExitPortal", 10)) {
+         this.field_28268 = class_4338.method_20189(var2.getCompound("ExitPortal"));
       }
 
-      this.field_28269 = var2.method_25933("ExactTeleport");
+      this.field_28269 = var2.getBoolean("ExactTeleport");
    }
 
    @Override

@@ -151,19 +151,19 @@ public class class_3348 extends class_6749 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("Trident", 10)) {
-         this.field_16520 = ItemStack.method_28015(var1.method_25937("Trident"));
+      if (var1.contains("Trident", 10)) {
+         this.field_16520 = ItemStack.method_28015(var1.getCompound("Trident"));
       }
 
-      this.field_16518 = var1.method_25933("DealtDamage");
+      this.field_16518 = var1.getBoolean("DealtDamage");
       this.field_41735.method_36633(field_16515, (byte)class_2931.method_13431(this.field_16520));
    }
 
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25946("Trident", this.field_16520.method_27998(new CompoundNBT()));
-      var1.method_25934("DealtDamage", this.field_16518);
+      var1.put("Trident", this.field_16520.method_27998(new CompoundNBT()));
+      var1.putBoolean("DealtDamage", this.field_16518);
    }
 
    @Override

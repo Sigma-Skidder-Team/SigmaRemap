@@ -11,19 +11,19 @@ public class class_543 extends class_7896 {
 
    public class_543(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13428, var2);
-      this.field_3261[0] = var2.method_25933("hasPlacedChest0");
-      this.field_3261[1] = var2.method_25933("hasPlacedChest1");
-      this.field_3261[2] = var2.method_25933("hasPlacedChest2");
-      this.field_3261[3] = var2.method_25933("hasPlacedChest3");
+      this.field_3261[0] = var2.getBoolean("hasPlacedChest0");
+      this.field_3261[1] = var2.getBoolean("hasPlacedChest1");
+      this.field_3261[2] = var2.getBoolean("hasPlacedChest2");
+      this.field_3261[3] = var2.getBoolean("hasPlacedChest3");
    }
 
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("hasPlacedChest0", this.field_3261[0]);
-      var1.method_25934("hasPlacedChest1", this.field_3261[1]);
-      var1.method_25934("hasPlacedChest2", this.field_3261[2]);
-      var1.method_25934("hasPlacedChest3", this.field_3261[3]);
+      var1.putBoolean("hasPlacedChest0", this.field_3261[0]);
+      var1.putBoolean("hasPlacedChest1", this.field_3261[1]);
+      var1.putBoolean("hasPlacedChest2", this.field_3261[2]);
+      var1.putBoolean("hasPlacedChest3", this.field_3261[3]);
    }
 
    @Override

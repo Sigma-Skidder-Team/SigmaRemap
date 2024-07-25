@@ -7,7 +7,7 @@ public class class_2795 extends ArrayList<class_8014> {
    public class_2795() {
    }
 
-   public class_2795(class_5734 var1) {
+   public class_2795(CompoundNBT var1) {
       class_3416 var4 = var1.method_25927("Recipes", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -86,8 +86,8 @@ public class class_2795 extends ArrayList<class_8014> {
       return var3;
    }
 
-   public class_5734 method_12711() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_12711() {
+      CompoundNBT var3 = new CompoundNBT();
       class_3416 var4 = new class_3416();
 
       for (int var5 = 0; var5 < this.size(); var5++) {
@@ -95,7 +95,7 @@ public class class_2795 extends ArrayList<class_8014> {
          var4.add(var6.method_36383());
       }
 
-      var3.method_25946("Recipes", var4);
+      var3.put("Recipes", var4);
       return var3;
    }
 }

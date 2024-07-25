@@ -17,7 +17,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import remapped.class_2392;
 import remapped.Identifier;
-import remapped.class_5734;
+import remapped.CompoundNBT;
 import remapped.class_6539;
 import remapped.class_6629;
 import remapped.class_8669;
@@ -50,7 +50,7 @@ public class HoverEvent$class_49 {
    @Nullable
    public static HoverEvent$class_49 deserialize(ITextComponent component) {
       try {
-         class_5734 itextcomponent = class_2392.method_10916(component.getString());
+         CompoundNBT itextcomponent = class_2392.method_10916(component.getString());
          IFormattableTextComponent entitytype = ITextComponent$class_40.func_240643_a_(itextcomponent.method_25965("name"));
          class_6629 uuid = class_8669.field_44400.method_39806(new Identifier(itextcomponent.method_25965("type")));
          UUID var6 = UUID.fromString(itextcomponent.method_25965("id"));

@@ -45,7 +45,7 @@ public class class_7152 extends Screen implements class_1215 {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       if (!this.field_36840) {
-         if (this.field_36838 != null && this.field_943.field_9601 == null) {
+         if (this.field_36838 != null && this.field_943.theWorld == null) {
             this.field_36838.method_6579(this.field_941, this.field_940);
          } else {
             this.method_1183(var1);

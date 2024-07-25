@@ -27,11 +27,11 @@ public class class_7385 extends class_7186 {
       if (this.field_37713 != null) {
          this.method_33641(var1.method_25927("Objectives", 10));
          this.field_37713.method_4856(var1.method_25927("PlayerScores", 10));
-         if (var1.method_25939("DisplaySlots", 10)) {
-            this.method_33635(var1.method_25937("DisplaySlots"));
+         if (var1.contains("DisplaySlots", 10)) {
+            this.method_33635(var1.getCompound("DisplaySlots"));
          }
 
-         if (var1.method_25939("Teams", 9)) {
+         if (var1.contains("Teams", 9)) {
             this.method_33637(var1.method_25927("Teams", 10));
          }
       } else {
@@ -53,47 +53,47 @@ public class class_7385 extends class_7186 {
             var7.method_18059(var8);
          }
 
-         if (var5.method_25939("TeamColor", 8)) {
+         if (var5.contains("TeamColor", 8)) {
             var7.method_18060(TextFormatting.getValueByName(var5.method_25965("TeamColor")));
          }
 
-         if (var5.method_25939("AllowFriendlyFire", 99)) {
-            var7.method_18062(var5.method_25933("AllowFriendlyFire"));
+         if (var5.contains("AllowFriendlyFire", 99)) {
+            var7.method_18062(var5.getBoolean("AllowFriendlyFire"));
          }
 
-         if (var5.method_25939("SeeFriendlyInvisibles", 99)) {
-            var7.method_18070(var5.method_25933("SeeFriendlyInvisibles"));
+         if (var5.contains("SeeFriendlyInvisibles", 99)) {
+            var7.method_18070(var5.getBoolean("SeeFriendlyInvisibles"));
          }
 
-         if (var5.method_25939("MemberNamePrefix", 8)) {
+         if (var5.contains("MemberNamePrefix", 8)) {
             IFormattableTextComponent var9 = ITextComponent$class_40.func_240643_a_(var5.method_25965("MemberNamePrefix"));
             if (var9 != null) {
                var7.method_18064(var9);
             }
          }
 
-         if (var5.method_25939("MemberNameSuffix", 8)) {
+         if (var5.contains("MemberNameSuffix", 8)) {
             IFormattableTextComponent var10 = ITextComponent$class_40.func_240643_a_(var5.method_25965("MemberNameSuffix"));
             if (var10 != null) {
                var7.method_18068(var10);
             }
          }
 
-         if (var5.method_25939("NameTagVisibility", 8)) {
+         if (var5.contains("NameTagVisibility", 8)) {
             class_1014 var11 = class_1014.method_4496(var5.method_25965("NameTagVisibility"));
             if (var11 != null) {
                var7.method_18061(var11);
             }
          }
 
-         if (var5.method_25939("DeathMessageVisibility", 8)) {
+         if (var5.contains("DeathMessageVisibility", 8)) {
             class_1014 var12 = class_1014.method_4496(var5.method_25965("DeathMessageVisibility"));
             if (var12 != null) {
                var7.method_18057(var12);
             }
          }
 
-         if (var5.method_25939("CollisionRule", 8)) {
+         if (var5.contains("CollisionRule", 8)) {
             class_5006 var13 = class_5006.method_23049(var5.method_25965("CollisionRule"));
             if (var13 != null) {
                var7.method_18071(var13);
@@ -112,7 +112,7 @@ public class class_7385 extends class_7186 {
 
    public void method_33635(CompoundNBT var1) {
       for (int var4 = 0; var4 < 19; var4++) {
-         if (var1.method_25939("slot_" + var4, 8)) {
+         if (var1.contains("slot_" + var4, 8)) {
             String var5 = var1.method_25965("slot_" + var4);
             class_4399 var6 = this.field_37713.method_4858(var5);
             this.field_37713.method_4831(var4, var6);
@@ -139,9 +139,9 @@ public class class_7385 extends class_7186 {
    @Override
    public CompoundNBT method_32920(CompoundNBT var1) {
       if (this.field_37713 != null) {
-         var1.method_25946("Objectives", this.method_33638());
-         var1.method_25946("PlayerScores", this.field_37713.method_4837());
-         var1.method_25946("Teams", this.method_33640());
+         var1.put("Objectives", this.method_33638());
+         var1.put("PlayerScores", this.field_37713.method_4837());
+         var1.put("Teams", this.method_33640());
          this.method_33636(var1);
          return var1;
       } else {
@@ -161,8 +161,8 @@ public class class_7385 extends class_7186 {
             var6.method_25941("TeamColor", var5.method_23381().getFriendlyName());
          }
 
-         var6.method_25934("AllowFriendlyFire", var5.method_23376());
-         var6.method_25934("SeeFriendlyInvisibles", var5.method_23377());
+         var6.putBoolean("AllowFriendlyFire", var5.method_23376());
+         var6.putBoolean("SeeFriendlyInvisibles", var5.method_23377());
          var6.method_25941("MemberNamePrefix", ITextComponent$class_40.toJson(var5.method_18058()));
          var6.method_25941("MemberNameSuffix", ITextComponent$class_40.toJson(var5.method_18065()));
          var6.method_25941("NameTagVisibility", var5.method_23379().field_5324);
@@ -174,7 +174,7 @@ public class class_7385 extends class_7186 {
             var7.add(class_473.method_2261(var9));
          }
 
-         var6.method_25946("Players", var7);
+         var6.put("Players", var7);
          var3.add(var6);
       }
 
@@ -194,7 +194,7 @@ public class class_7385 extends class_7186 {
       }
 
       if (var5) {
-         var1.method_25946("DisplaySlots", var4);
+         var1.put("DisplaySlots", var4);
       }
    }
 

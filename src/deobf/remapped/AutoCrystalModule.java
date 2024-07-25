@@ -54,7 +54,7 @@ public class AutoCrystalModule extends PremiumModule {
 
          this.field_48550 = (Entity)var4.get(0);
          if ((float)this.field_48557 >= 20.0F / this.getFloatValueByName("CPS")) {
-            class_3577 var5 = client.field_9601
+            class_3577 var5 = client.theWorld
                .<Entity>method_25869(
                   Entity.class, this.field_48550.field_41712.method_18928(2.0, 4.0, 2.0).method_18928(-2.0, -3.0, -2.0), var0 -> var0 instanceof class_3577
                )
@@ -149,12 +149,12 @@ public class AutoCrystalModule extends PremiumModule {
       class_1331 var4 = var1.method_6104(0, 1, 0);
       class_1331 var5 = var1.method_6104(0, 2, 0);
       return (
-            client.field_9601.method_28262(var1).method_8360() == class_4783.field_23433
-               || client.field_9601.method_28262(var1).method_8360() == class_4783.field_23881
+            client.theWorld.method_28262(var1).method_8360() == class_4783.field_23433
+               || client.theWorld.method_28262(var1).method_8360() == class_4783.field_23881
          )
-         && client.field_9601.method_28262(var4).method_8360() == class_4783.field_23184
-         && client.field_9601.method_28262(var5).method_8360() == class_4783.field_23184
-         && client.field_9601.<Entity>method_25868(Entity.class, new class_4092(var4)).isEmpty();
+         && client.theWorld.method_28262(var4).method_8360() == class_4783.field_23184
+         && client.theWorld.method_28262(var5).method_8360() == class_4783.field_23184
+         && client.theWorld.<Entity>method_25868(Entity.class, new class_4092(var4)).isEmpty();
    }
 
    public List<class_1331> method_44015(class_1331 var1, float var2, int var3, boolean var4, boolean var5, int var6) {
@@ -190,7 +190,7 @@ public class AutoCrystalModule extends PremiumModule {
          var18 = (double)method_44023(
             (class_5834)var6,
             method_44028(var17),
-            new class_2730(client.field_9601, null, null, null, var0, var2, var4, 6.0F, false, class_7298.field_37309)
+            new class_2730(client.theWorld, null, null, null, var0, var2, var4, 6.0F, false, class_7298.field_37309)
          );
       }
 
@@ -198,7 +198,7 @@ public class AutoCrystalModule extends PremiumModule {
    }
 
    private static float method_44028(float var0) {
-      int var3 = client.field_9601.method_43370().method_2097();
+      int var3 = client.theWorld.method_43370().method_2097();
       return var0 * (var3 != 0 ? (var3 != 2 ? (var3 != 1 ? 1.5F : 0.5F) : 1.0F) : 0.0F);
    }
 

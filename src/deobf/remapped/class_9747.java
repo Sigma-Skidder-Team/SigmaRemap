@@ -159,8 +159,8 @@ public class class_9747 {
       this.method_44999();
    }
 
-   public class_5734 method_45012() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_45012() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("Name", class_8669.field_44403.method_39797(this.field_49516).toString());
       var3.method_25923("Base", this.field_49514);
       if (!this.field_49513.isEmpty()) {
@@ -170,15 +170,15 @@ public class class_9747 {
             var4.add(var6.method_43119());
          }
 
-         var3.method_25946("Modifiers", var4);
+         var3.put("Modifiers", var4);
       }
 
       return var3;
    }
 
-   public void method_45014(class_5734 var1) {
+   public void method_45014(CompoundNBT var1) {
       this.field_49514 = var1.method_25932("Base");
-      if (var1.method_25939("Modifiers", 9)) {
+      if (var1.contains("Modifiers", 9)) {
          class_3416 var4 = var1.method_25927("Modifiers", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {

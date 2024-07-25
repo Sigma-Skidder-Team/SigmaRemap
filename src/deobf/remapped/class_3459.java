@@ -28,7 +28,7 @@ public class class_3459 {
             return;
          }
 
-         if (!var3.method_25939("DataVersion", 99)) {
+         if (!var3.contains("DataVersion", 99)) {
             var3.method_25931("DataVersion", 1343);
          }
 
@@ -48,7 +48,7 @@ public class class_3459 {
          var3.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
 
          for (int var4 = 0; var4 < 9; var4++) {
-            var3.method_25946(String.valueOf(var4), this.method_15915(var4).method_9442());
+            var3.put(String.valueOf(var4), this.method_15915(var4).method_9442());
          }
 
          class_5957.method_27225(var3, this.field_16952);

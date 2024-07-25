@@ -82,7 +82,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1301(class_9164 var0, float var1, class_7966 var2, class_3758 var3, class_5989 var4, int var5, boolean var6) {
+   public static void method_1301(class_9164 var0, float var1, class_7966 var2, class_3758 var3, ClientPlayerEntity var4, int var5, boolean var6) {
       GlStateManager.method_8867(true);
       if (var6) {
          GlStateManager.method_8862(519);
@@ -217,7 +217,7 @@ public class class_293 {
                         || var1.method_41648()
                         || var1.method_41633() instanceof class_5834 && ((class_5834)var1.method_41633()).method_26507()
                   )
-                  && (!(var29 instanceof class_5989) || var1.method_41633() == var29)) {
+                  && (!(var29 instanceof ClientPlayerEntity) || var1.method_41633() == var29)) {
                   var20.field_21016 = var29;
                   class_6588.method_30181(var29);
                   var20.method_20009(var29, var14, var16, var18, var3, var10, var22);
@@ -363,7 +363,7 @@ public class class_293 {
 
    public static void method_1309(Camera var0, MinecraftClient var1, float var2) {
       var0.method_41643(
-         var1.field_9601,
+         var1.theWorld,
          (Entity)(var1.getRenderViewEntity() != null ? var1.getRenderViewEntity() : var1.thePlayer),
          !var1.gameOptions.getPointOfView().method_42383(),
          var1.gameOptions.getPointOfView().method_42384(),

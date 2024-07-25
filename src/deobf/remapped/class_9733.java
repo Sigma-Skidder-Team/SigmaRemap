@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public abstract class class_9733 {
    private static final class_4092 field_49483 = new class_4092(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
-   public final class_174 field_49469;
+   public final ClientWorld field_49469;
    public double field_49459;
    public double field_49480;
    public double field_49479;
@@ -34,7 +34,7 @@ public abstract class class_9733 {
    public float field_49467;
    private class_523 field_49472 = new class_523();
 
-   public class_9733(class_174 var1, double var2, double var4, double var6) {
+   public class_9733(ClientWorld var1, double var2, double var4, double var6) {
       this.field_49469 = var1;
       this.method_44955(0.2F, 0.2F);
       this.method_44960(var2, var4, var6);
@@ -44,7 +44,7 @@ public abstract class class_9733 {
       this.field_49476 = (int)(4.0F / (this.field_49466.nextFloat() * 0.9F + 0.1F));
    }
 
-   public class_9733(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public class_9733(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this(var1, var2, var4, var6);
       this.field_49481 = var8 + (Math.random() * 2.0 - 1.0) * 0.4F;
       this.field_49486 = var10 + (Math.random() * 2.0 - 1.0) * 0.4F;

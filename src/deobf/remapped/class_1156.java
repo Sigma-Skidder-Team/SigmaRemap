@@ -6,7 +6,7 @@ public class class_1156 extends class_8715 {
    private final double field_6567;
 
    public class_1156(
-      class_174 var1,
+      ClientWorld var1,
       double var2,
       double var4,
       double var6,

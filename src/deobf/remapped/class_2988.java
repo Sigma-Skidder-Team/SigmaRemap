@@ -35,8 +35,8 @@ public class class_2988 extends class_3997 {
    @Override
    public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       if (this.field_14691 == class_6629.field_34278) {
-         class_5734 var7 = var1.method_27990();
-         if (var7 != null && var7.method_25939("BucketVariantTag", 3)) {
+         CompoundNBT var7 = var1.method_27990();
+         if (var7 != null && var7.contains("BucketVariantTag", 3)) {
             int var8 = var7.method_25947("BucketVariantTag");
             TextFormatting[] var9 = new TextFormatting[]{TextFormatting.ITALIC, TextFormatting.GRAY};
             String var10 = "color.minecraft." + class_8477.method_39026(var8);

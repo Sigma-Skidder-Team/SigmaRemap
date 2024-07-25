@@ -22,12 +22,12 @@ public class class_6397 {
 
    public class_6397(CompoundNBT var1) {
       this();
-      if (var1.method_25939("Indices", 10)) {
-         CompoundNBT var4 = var1.method_25937("Indices");
+      if (var1.contains("Indices", 10)) {
+         CompoundNBT var4 = var1.getCompound("Indices");
 
          for (int var5 = 0; var5 < this.field_32663.length; var5++) {
             String var6 = String.valueOf(var5);
-            if (var4.method_25939(var6, 11)) {
+            if (var4.contains(var6, 11)) {
                this.field_32663[var5] = var4.method_25922(var6);
             }
          }
@@ -155,7 +155,7 @@ public class class_6397 {
       }
 
       if (!var4.method_25940()) {
-         var3.method_25946("Indices", var4);
+         var3.put("Indices", var4);
       }
 
       int var8 = 0;

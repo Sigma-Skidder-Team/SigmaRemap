@@ -45,21 +45,21 @@ public class class_6267 extends class_5920<class_7666> {
    private ItemStack method_28581(class_9077 var1, int var2) {
       ItemStack var5 = new ItemStack(class_4897.field_24479, 1);
       ItemStack var6 = new ItemStack(class_4897.field_24554);
-      class_5734 var7 = var6.method_27978("Explosion");
+      CompoundNBT var7 = var6.method_27978("Explosion");
       ArrayList var8 = Lists.newArrayList();
       var8.add(var1.method_41793());
       var7.method_25968("Colors", var8);
       var7.method_25921("Type", (byte)class_3917.field_19027.method_18131());
-      class_5734 var9 = var5.method_27978("Fireworks");
+      CompoundNBT var9 = var5.method_27978("Fireworks");
       class_3416 var10 = new class_3416();
-      class_5734 var11 = var6.method_28021("Explosion");
+      CompoundNBT var11 = var6.method_28021("Explosion");
       if (var11 != null) {
          var10.add(var11);
       }
 
       var9.method_25921("Flight", (byte)var2);
       if (!var10.isEmpty()) {
-         var9.method_25946("Explosions", var10);
+         var9.put("Explosions", var10);
       }
 
       return var5;

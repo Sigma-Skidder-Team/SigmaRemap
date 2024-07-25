@@ -45,7 +45,7 @@ public class class_9541 {
    }
 
    public static void method_43986(CompoundNBT var0, List<class_2250> var1) {
-      if (var0 != null && var0.method_25939("CustomPotionEffects", 9)) {
+      if (var0 != null && var0.contains("CustomPotionEffects", 9)) {
          class_3416 var4 = var0.method_25927("CustomPotionEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -60,7 +60,7 @@ public class class_9541 {
 
    public static int method_43987(ItemStack var0) {
       CompoundNBT var3 = var0.method_27990();
-      if (var3 != null && var3.method_25939("CustomPotionColor", 99)) {
+      if (var3 != null && var3.contains("CustomPotionColor", 99)) {
          return var3.method_25947("CustomPotionColor");
       } else {
          return method_43990(var0) != class_3697.field_18134 ? method_43997(method_43993(var0)) : 16253176;
@@ -137,7 +137,7 @@ public class class_9541 {
             var5.add(var7.method_10345(new CompoundNBT()));
          }
 
-         var4.method_25946("CustomPotionEffects", var5);
+         var4.put("CustomPotionEffects", var5);
          return var0;
       }
    }

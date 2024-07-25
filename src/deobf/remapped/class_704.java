@@ -55,7 +55,7 @@ public abstract class class_704 extends class_5834 {
    public double field_3858;
    private int field_3848;
    public boolean field_3850;
-   public final PlayerAbilities field_3876 = new PlayerAbilities();
+   public final PlayerAbilities playerAbilities = new PlayerAbilities();
    public int field_3840;
    public int field_3862;
    public float field_3842;
@@ -264,7 +264,7 @@ public abstract class class_704 extends class_5834 {
             if (!this.method_26507()) {
                if (!this.method_37113()) {
                   if (!this.method_26600()) {
-                     if (this.method_37252() && !this.field_3876.isFlying) {
+                     if (this.method_37252() && !this.playerAbilities.isFlying) {
                         var3 = class_7653.field_38881;
                      } else {
                         var3 = class_7653.field_38885;
@@ -297,7 +297,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public int method_37244() {
-      return !this.field_3876.disableDamage ? 80 : 1;
+      return !this.playerAbilities.disableDamage ? 80 : 1;
    }
 
    @Override
@@ -456,13 +456,13 @@ public abstract class class_704 extends class_5834 {
 
       this.method_3222(this.method_3160());
       this.method_3222(this.method_3171());
-      if (!this.field_41768.field_33055 && (this.field_41706 > 0.5F || this.method_37285()) || this.field_3876.isFlying || this.method_26507()) {
+      if (!this.field_41768.field_33055 && (this.field_41706 > 0.5F || this.method_37285()) || this.playerAbilities.isFlying || this.method_26507()) {
          this.method_3157();
       }
    }
 
    private void method_3222(CompoundNBT var1) {
-      if (var1 != null && (!var1.method_25938("Silent") || !var1.method_25933("Silent")) && this.field_41768.field_33033.nextInt(200) == 0) {
+      if (var1 != null && (!var1.method_25938("Silent") || !var1.getBoolean("Silent")) && this.field_41768.field_33033.nextInt(200) == 0) {
          String var4 = var1.method_25965("id");
          class_6629.method_30460(var4)
             .filter(var0 -> var0 == class_6629.field_34228)
@@ -677,7 +677,7 @@ public abstract class class_704 extends class_5834 {
       this.inventory.method_32423(var4);
       this.inventory.field_36404 = var1.method_25947("SelectedItemSlot");
       this.field_3848 = var1.method_25956("SleepTimer");
-      this.field_3842 = var1.method_25955("XpP");
+      this.field_3842 = var1.getFloat("XpP");
       this.field_3840 = var1.method_25947("XpLevel");
       this.field_3862 = var1.method_25947("XpTotal");
       this.field_3847 = var1.method_25947("XpSeed");
@@ -687,18 +687,18 @@ public abstract class class_704 extends class_5834 {
 
       this.method_3215(var1.method_25947("Score"));
       this.field_3867.method_42230(var1);
-      this.field_3876.method_4232(var1);
-      this.method_26561(class_7331.field_37465).method_45006((double)this.field_3876.method_4229());
-      if (var1.method_25939("EnderItems", 9)) {
+      this.playerAbilities.read(var1);
+      this.method_26561(class_7331.field_37465).method_45006((double)this.playerAbilities.getWalkSpeed());
+      if (var1.contains("EnderItems", 9)) {
          this.field_3860.method_21549(var1.method_25927("EnderItems", 10));
       }
 
-      if (var1.method_25939("ShoulderEntityLeft", 10)) {
-         this.method_3241(var1.method_25937("ShoulderEntityLeft"));
+      if (var1.contains("ShoulderEntityLeft", 10)) {
+         this.method_3241(var1.getCompound("ShoulderEntityLeft"));
       }
 
-      if (var1.method_25939("ShoulderEntityRight", 10)) {
-         this.method_3165(var1.method_25937("ShoulderEntityRight"));
+      if (var1.contains("ShoulderEntityRight", 10)) {
+         this.method_3165(var1.getCompound("ShoulderEntityRight"));
       }
    }
 
@@ -706,23 +706,23 @@ public abstract class class_704 extends class_5834 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
-      var1.method_25946("Inventory", this.inventory.method_32396(new class_3416()));
+      var1.put("Inventory", this.inventory.method_32396(new class_3416()));
       var1.method_25931("SelectedItemSlot", this.inventory.field_36404);
       var1.method_25958("SleepTimer", (short)this.field_3848);
-      var1.method_25920("XpP", this.field_3842);
+      var1.putFloat("XpP", this.field_3842);
       var1.method_25931("XpLevel", this.field_3840);
       var1.method_25931("XpTotal", this.field_3862);
       var1.method_25931("XpSeed", this.field_3847);
       var1.method_25931("Score", this.method_3227());
       this.field_3867.method_42233(var1);
-      this.field_3876.write(var1);
-      var1.method_25946("EnderItems", this.field_3860.method_21552());
+      this.playerAbilities.write(var1);
+      var1.put("EnderItems", this.field_3860.method_21552());
       if (!this.method_3160().method_25940()) {
-         var1.method_25946("ShoulderEntityLeft", this.method_3160());
+         var1.put("ShoulderEntityLeft", this.method_3160());
       }
 
       if (!this.method_3171().method_25940()) {
-         var1.method_25946("ShoulderEntityRight", this.method_3171());
+         var1.put("ShoulderEntityRight", this.method_3171());
       }
    }
 
@@ -746,7 +746,7 @@ public abstract class class_704 extends class_5834 {
    @Override
    public boolean method_37181(class_6199 var1, float var2) {
       if (!this.method_37180(var1)) {
-         if (this.field_3876.disableDamage && !var1.method_28346()) {
+         if (this.playerAbilities.disableDamage && !var1.method_28346()) {
             return false;
          } else {
             this.field_29658 = 0;
@@ -850,7 +850,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_26444() {
-      return !this.field_3876.isFlying && super.method_26444();
+      return !this.playerAbilities.isFlying && super.method_26444();
    }
 
    public void method_3244(class_8398 var1) {
@@ -888,13 +888,13 @@ public abstract class class_704 extends class_5834 {
          class_6910 var7 = var1.method_37128(this, var2);
          if (!var7.method_31662()) {
             if (!var5.method_28022() && var1 instanceof class_5834) {
-               if (this.field_3876.isCreativeMode) {
+               if (this.playerAbilities.isCreativeMode) {
                   var5 = var6;
                }
 
                class_6910 var8 = var5.method_28000(this, (class_5834)var1, var2);
                if (var8.method_31662()) {
-                  if (var5.method_28022() && !this.field_3876.isCreativeMode) {
+                  if (var5.method_28022() && !this.playerAbilities.isCreativeMode) {
                      this.method_26615(var2, ItemStack.EMPTY);
                   }
 
@@ -904,7 +904,7 @@ public abstract class class_704 extends class_5834 {
 
             return class_6910.field_35521;
          } else {
-            if (this.field_3876.isCreativeMode && var5 == this.method_26617(var2) && var5.method_27997() < var6.method_27997()) {
+            if (this.playerAbilities.isCreativeMode && var5 == this.method_26617(var2) && var5.method_27997() < var6.method_27997()) {
                var5.method_28017(var6.method_27997());
             }
 
@@ -937,7 +937,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_26498() {
-      return !this.field_3876.isFlying;
+      return !this.playerAbilities.isFlying;
    }
 
    @Override
@@ -945,7 +945,7 @@ public abstract class class_704 extends class_5834 {
       class_7982 var5 = new class_7982(true);
       SigmaMainClass.getInstance().getEventManager().call(var5);
       if (var5.method_36185() == class_9528.field_48495
-         || !this.field_3876.isFlying && (var2 == class_7412.field_37839 || var2 == class_7412.field_37842) && this.method_3178() && this.method_3217()) {
+         || !this.playerAbilities.isFlying && (var2 == class_7412.field_37839 || var2 == class_7412.field_37842) && this.method_3178() && this.method_3217()) {
          double var6 = var1.field_7336;
          double var8 = var1.field_7334;
          double var10 = 0.05;
@@ -1371,10 +1371,10 @@ public abstract class class_704 extends class_5834 {
          }
       }
 
-      if (this.field_3876.isFlying && !this.method_37070()) {
+      if (this.playerAbilities.isFlying && !this.method_37070()) {
          double var17 = this.method_37098().field_7333;
          float var15 = this.field_29674;
-         this.field_29674 = this.field_3876.method_4230() * (float)(!this.method_37321() ? 1 : 2);
+         this.field_29674 = this.playerAbilities.getFlySpeed() * (float)(!this.method_37321() ? 1 : 2);
          super.method_26431(var1);
          class_1343 var16 = this.method_37098();
          this.method_37214(var16.field_7336, var17 * 0.6, var16.field_7334);
@@ -1390,7 +1390,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public void method_37337() {
-      if (!this.field_3876.isFlying) {
+      if (!this.playerAbilities.isFlying) {
          super.method_37337();
       } else {
          this.method_37260(false);
@@ -1496,7 +1496,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_37270(float var1, float var2) {
-      if (!this.field_3876.allowFlying) {
+      if (!this.playerAbilities.allowFlying) {
          if (var1 >= 2.0F) {
             this.method_3210(class_6234.field_31902, (int)Math.round((double)var1 * 100.0));
          }
@@ -1547,7 +1547,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public void method_37130(class_2522 var1, class_1343 var2) {
-      if (!this.field_3876.isFlying) {
+      if (!this.playerAbilities.isFlying) {
          super.method_37130(var1, var2);
       }
    }
@@ -1617,7 +1617,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    public void method_3170(float var1) {
-      if (!this.field_3876.disableDamage && !this.field_41768.field_33055) {
+      if (!this.playerAbilities.disableDamage && !this.field_41768.field_33055) {
          this.field_3867.method_42229(var1);
       }
    }
@@ -1627,7 +1627,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    public boolean method_3231(boolean var1) {
-      return this.field_3876.disableDamage || var1 || this.field_3867.method_42227();
+      return this.playerAbilities.disableDamage || var1 || this.field_3867.method_42227();
    }
 
    public boolean method_3246() {
@@ -1635,11 +1635,11 @@ public abstract class class_704 extends class_5834 {
    }
 
    public boolean method_3181() {
-      return this.field_3876.allowEdit;
+      return this.playerAbilities.allowEdit;
    }
 
    public boolean method_3208(class_1331 var1, Direction var2, ItemStack var3) {
-      if (!this.field_3876.allowEdit) {
+      if (!this.playerAbilities.allowEdit) {
          class_1331 var6 = var1.method_6098(var2.method_1046());
          class_9115 var7 = new class_9115(this.field_41768, var6, false);
          return var3.method_28027(this.field_41768.method_29600(), var7);
@@ -1670,7 +1670,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_37126() {
-      return !this.field_3876.isFlying && (!this.field_41726 || !this.method_37073());
+      return !this.playerAbilities.isFlying && (!this.field_41726 || !this.method_37073());
    }
 
    public void method_3216() {
@@ -1777,14 +1777,14 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_37113() {
-      return !this.field_3876.isFlying && !this.method_37221() && super.method_37113();
+      return !this.playerAbilities.isFlying && !this.method_37221() && super.method_37113();
    }
 
    public abstract boolean method_3186();
 
    @Override
    public boolean method_37107() {
-      return !this.field_3876.isFlying;
+      return !this.playerAbilities.isFlying;
    }
 
    public class_1097 method_3219() {
@@ -1924,7 +1924,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public void method_37164(int var1) {
-      super.method_37164(!this.field_3876.disableDamage ? var1 : Math.min(var1, 1));
+      super.method_37164(!this.playerAbilities.disableDamage ? var1 : Math.min(var1, 1));
    }
 
    @Override
@@ -1970,7 +1970,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public float method_37364() {
-      return !this.field_3876.isFlying && !this.method_26618() ? super.method_37364() : 1.0F;
+      return !this.playerAbilities.isFlying && !this.method_26618() ? super.method_37364() : 1.0F;
    }
 
    public float method_3234() {
@@ -1978,7 +1978,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    public boolean method_3184() {
-      return this.field_3876.isCreativeMode && this.method_37352() >= 2;
+      return this.playerAbilities.isCreativeMode && this.method_37352() >= 2;
    }
 
    @Override
@@ -2016,7 +2016,7 @@ public abstract class class_704 extends class_5834 {
                }
             }
 
-            return !this.field_3876.isCreativeMode ? ItemStack.EMPTY : new ItemStack(class_4897.field_25024);
+            return !this.playerAbilities.isCreativeMode ? ItemStack.EMPTY : new ItemStack(class_4897.field_25024);
          }
       }
    }
@@ -2044,7 +2044,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_26485(class_2522 var1) {
-      return this.field_3876.isFlying || super.method_26485(var1);
+      return this.playerAbilities.isFlying || super.method_26485(var1);
    }
 
    @Override

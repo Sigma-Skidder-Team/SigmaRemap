@@ -16,7 +16,7 @@ public class class_188 extends AbstractStringBuilder<class_8406, CompoundNBT> {
    }
 
    public CompoundNBT append(String var1, class_8406 var2, CompoundNBT var3) {
-      var3.method_25946(var1, var2);
+      var3.put(var1, var2);
       return var3;
    }
 
@@ -29,7 +29,7 @@ public class class_188 extends AbstractStringBuilder<class_8406, CompoundNBT> {
          CompoundNBT var5 = new CompoundNBT(Maps.newHashMap(((CompoundNBT)var2).method_25967()));
 
          for (Entry var7 : var1.method_25967().entrySet()) {
-            var5.method_25946((String)var7.getKey(), (class_8406)var7.getValue());
+            var5.put((String)var7.getKey(), (class_8406)var7.getValue());
          }
 
          return DataResult.success(var5);

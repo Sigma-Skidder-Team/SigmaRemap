@@ -189,7 +189,7 @@ public enum class_2966 {
             return var6 - var7 * (float)class_9299.method_42848(var6 / var7);
          case field_14541:
             MinecraftClient var8 = MinecraftClient.getInstance();
-            class_174 var9 = var8.field_9601;
+            ClientWorld var9 = var8.theWorld;
             if (var9 == null) {
                return 0.0F;
             }

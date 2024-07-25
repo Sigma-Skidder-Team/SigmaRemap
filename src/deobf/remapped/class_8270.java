@@ -73,7 +73,7 @@ public class class_8270 implements class_1517 {
    private int method_38124(class_1331 var1, class_6331 var2) {
       class_5583 var5 = class_6629.field_34249.method_30484(var2);
       if (var5 != null) {
-         var5.method_26864(var2, var2.method_43368(var1), class_2417.field_12031, (class_8733)null, (class_5734)null);
+         var5.method_26864(var2, var2.method_43368(var1), class_2417.field_12031, (class_8733)null, (CompoundNBT)null);
          var5.method_37253(var1, 0.0F, 0.0F);
          var2.method_7065(var5);
          return 1;

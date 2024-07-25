@@ -176,7 +176,7 @@ public class class_2730 {
                   var35.method_37215(var35.method_37098().method_6214(var38 * var50, var40 * var50, var42 * var50));
                   if (var35 instanceof class_704) {
                      class_704 var52 = (class_704)var35;
-                     if (!var52.method_37221() && (!var52.method_3186() || !var52.field_3876.isFlying)) {
+                     if (!var52.method_37221() && (!var52.method_3186() || !var52.playerAbilities.isFlying)) {
                         this.field_13331.put(var52, new class_1343(var38 * var48, var40 * var48, var42 * var48));
                      }
                   }

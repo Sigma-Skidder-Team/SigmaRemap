@@ -2,11 +2,11 @@ package remapped;
 
 public class class_3554 implements class_3753 {
    private static String[] field_17424;
-   private final class_5989 field_17425;
+   private final ClientPlayerEntity field_17425;
    private final class_3541 field_17422;
    private int field_17423 = 0;
 
-   public class_3554(class_5989 var1, class_3541 var2) {
+   public class_3554(ClientPlayerEntity var1, class_3541 var2) {
       this.field_17425 = var1;
       this.field_17422 = var2;
    }

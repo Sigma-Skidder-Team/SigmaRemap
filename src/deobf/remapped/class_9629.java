@@ -28,7 +28,7 @@ public class class_9629 extends class_9310 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("DespawnDelay", 99)) {
+      if (var1.contains("DespawnDelay", 99)) {
          this.field_49042 = var1.method_25947("DespawnDelay");
       }
    }

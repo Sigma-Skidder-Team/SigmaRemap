@@ -13,21 +13,21 @@ public class class_6164 extends class_7896 {
       super(class_2746.field_13403, var1, var2, 64, var3, 12, 10, 15);
    }
 
-   public class_6164(class_5799 var1, class_5734 var2) {
+   public class_6164(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13403, var2);
-      this.field_31546 = var2.method_25933("placedMainChest");
-      this.field_31551 = var2.method_25933("placedHiddenChest");
-      this.field_31550 = var2.method_25933("placedTrap1");
-      this.field_31549 = var2.method_25933("placedTrap2");
+      this.field_31546 = var2.getBoolean("placedMainChest");
+      this.field_31551 = var2.getBoolean("placedHiddenChest");
+      this.field_31550 = var2.getBoolean("placedTrap1");
+      this.field_31549 = var2.getBoolean("placedTrap2");
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("placedMainChest", this.field_31546);
-      var1.method_25934("placedHiddenChest", this.field_31551);
-      var1.method_25934("placedTrap1", this.field_31550);
-      var1.method_25934("placedTrap2", this.field_31549);
+      var1.putBoolean("placedMainChest", this.field_31546);
+      var1.putBoolean("placedHiddenChest", this.field_31551);
+      var1.putBoolean("placedTrap1", this.field_31550);
+      var1.putBoolean("placedTrap2", this.field_31549);
    }
 
    @Override

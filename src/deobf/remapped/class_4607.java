@@ -22,22 +22,22 @@ public abstract class class_4607 extends class_1173 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.field_22413 != null) {
-         var1.method_25946("PatrolTarget", class_4338.method_20190(this.field_22413));
+         var1.put("PatrolTarget", class_4338.method_20190(this.field_22413));
       }
 
-      var1.method_25934("PatrolLeader", this.field_22414);
-      var1.method_25934("Patrolling", this.field_22415);
+      var1.putBoolean("PatrolLeader", this.field_22414);
+      var1.putBoolean("Patrolling", this.field_22415);
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25938("PatrolTarget")) {
-         this.field_22413 = class_4338.method_20189(var1.method_25937("PatrolTarget"));
+         this.field_22413 = class_4338.method_20189(var1.getCompound("PatrolTarget"));
       }
 
-      this.field_22414 = var1.method_25933("PatrolLeader");
-      this.field_22415 = var1.method_25933("Patrolling");
+      this.field_22414 = var1.getBoolean("PatrolLeader");
+      this.field_22415 = var1.getBoolean("Patrolling");
    }
 
    @Override

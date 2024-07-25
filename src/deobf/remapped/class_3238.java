@@ -10,9 +10,9 @@ public class class_3238 implements Predicate<ItemStack> {
       (var0, var1) -> new TranslationTextComponent("arguments.item.overstacked", var0, var1)
    );
    private final class_2451 field_16103;
-   private final class_5734 field_16105;
+   private final CompoundNBT field_16105;
 
-   public class_3238(class_2451 var1, class_5734 var2) {
+   public class_3238(class_2451 var1, CompoundNBT var2) {
       this.field_16103 = var1;
       this.field_16105 = var2;
    }

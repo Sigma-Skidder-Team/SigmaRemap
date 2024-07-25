@@ -9,7 +9,7 @@ public class class_2361 extends class_1279 {
       super(class_2746.field_13412, 1, var1, var2, 2, 1, 1);
    }
 
-   public class_2361(class_5799 var1, class_5734 var2) {
+   public class_2361(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13412, var2);
    }
 

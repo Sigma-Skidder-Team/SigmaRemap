@@ -88,8 +88,8 @@ public class class_7696 extends Screen {
    }
 
    private void method_34868() {
-      if (this.field_943.field_9601 != null) {
-         this.field_943.field_9601.method_29519();
+      if (this.field_943.theWorld != null) {
+         this.field_943.theWorld.method_29519();
       }
 
       this.field_943.method_8500(new class_6476(new TranslationTextComponent("menu.savingLevel")));

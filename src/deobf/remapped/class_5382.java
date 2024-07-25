@@ -5,7 +5,7 @@ public class class_5382 extends class_8715 {
    private boolean field_27466;
    private final class_6571 field_27467;
 
-   private class_5382(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12, class_6571 var14) {
+   private class_5382(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, class_6571 var14) {
       super(var1, var2, var4, var6);
       this.field_49481 = var8;
       this.field_49486 = var10;

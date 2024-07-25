@@ -60,19 +60,19 @@ public class class_2452 {
    public class_2452(class_6331 var1, CompoundNBT var2) {
       this.field_12189 = var1;
       this.field_12180 = var2.method_25947("Id");
-      this.field_12188 = var2.method_25933("Started");
-      this.field_12200 = var2.method_25933("Active");
+      this.field_12188 = var2.getBoolean("Started");
+      this.field_12200 = var2.getBoolean("Active");
       this.field_12183 = var2.method_25948("TicksActive");
       this.field_12202 = var2.method_25947("BadOmenLevel");
       this.field_12182 = var2.method_25947("GroupsSpawned");
       this.field_12197 = var2.method_25947("PreRaidTicks");
       this.field_12178 = var2.method_25947("PostRaidTicks");
-      this.field_12201 = var2.method_25955("TotalHealth");
+      this.field_12201 = var2.getFloat("TotalHealth");
       this.field_12185 = new class_1331(var2.method_25947("CX"), var2.method_25947("CY"), var2.method_25947("CZ"));
       this.field_12195 = var2.method_25947("NumGroups");
       this.field_12198 = class_4264.method_19861(var2.method_25965("Status"));
       this.field_12190.clear();
-      if (var2.method_25939("HeroesOfTheVillage", 9)) {
+      if (var2.contains("HeroesOfTheVillage", 9)) {
          class_3416 var5 = var2.method_25927("HeroesOfTheVillage", 11);
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
@@ -534,7 +534,7 @@ public class class_2452 {
          .method_7624(class_8427.field_43116, class_9077.field_46503)
          .method_7624(class_8427.field_43114, class_9077.field_46496)
          .method_7625();
-      var3.method_25946("Patterns", var4);
+      var3.put("Patterns", var4);
       var2.method_27980(class_8749.field_44785);
       var2.method_28032(new TranslationTextComponent("block.minecraft.ominous_banner").mergeStyle(TextFormatting.GOLD));
       return var2;
@@ -678,14 +678,14 @@ public class class_2452 {
 
    public CompoundNBT method_11279(CompoundNBT var1) {
       var1.method_25931("Id", this.field_12180);
-      var1.method_25934("Started", this.field_12188);
-      var1.method_25934("Active", this.field_12200);
+      var1.putBoolean("Started", this.field_12188);
+      var1.putBoolean("Active", this.field_12200);
       var1.method_25949("TicksActive", this.field_12183);
       var1.method_25931("BadOmenLevel", this.field_12202);
       var1.method_25931("GroupsSpawned", this.field_12182);
       var1.method_25931("PreRaidTicks", this.field_12197);
       var1.method_25931("PostRaidTicks", this.field_12178);
-      var1.method_25920("TotalHealth", this.field_12201);
+      var1.putFloat("TotalHealth", this.field_12201);
       var1.method_25931("NumGroups", this.field_12195);
       var1.method_25941("Status", this.field_12198.method_19860());
       var1.method_25931("CX", this.field_12185.method_12173());
@@ -697,7 +697,7 @@ public class class_2452 {
          var4.add(class_4338.method_20181(var6));
       }
 
-      var1.method_25946("HeroesOfTheVillage", var4);
+      var1.put("HeroesOfTheVillage", var4);
       return var1;
    }
 

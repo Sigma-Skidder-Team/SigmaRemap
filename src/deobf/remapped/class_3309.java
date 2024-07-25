@@ -22,7 +22,7 @@ public class class_3309 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34357(8)
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<class_5734>method_44659(new class_5734(), var0 -> var0.method_25941("Potion", "minecraft:fire_resistance"))
+                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:fire_resistance"))
                            )
                         )
                   )
@@ -31,7 +31,7 @@ public class class_3309 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34357(8)
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<class_5734>method_44659(new class_5734(), var0 -> var0.method_25941("Potion", "minecraft:fire_resistance"))
+                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:fire_resistance"))
                            )
                         )
                   )
@@ -40,7 +40,7 @@ public class class_3309 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34357(10)
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<class_5734>method_44659(new class_5734(), var0 -> var0.method_25941("Potion", "minecraft:water"))
+                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:water"))
                            )
                         )
                   )

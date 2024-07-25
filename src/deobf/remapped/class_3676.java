@@ -81,14 +81,14 @@ public class class_3676 implements AutoCloseable {
    }
 
    public void method_17065(class_6322 var1, class_5684 var2) {
-      this.method_17066(var1, var2, (class_5734)null);
+      this.method_17066(var1, var2, (CompoundNBT)null);
    }
 
-   public void method_17066(class_6322 var1, class_5684 var2, class_5734 var3) {
+   public void method_17066(class_6322 var1, class_5684 var2, CompoundNBT var3) {
       File var6 = this.field_17928.toFile();
-      class_5734 var7 = var2.method_25713(var1, var3);
-      class_5734 var8 = new class_5734();
-      var8.method_25946("Data", var7);
+      CompoundNBT var7 = var2.method_25713(var1, var3);
+      CompoundNBT var8 = new CompoundNBT();
+      var8.put("Data", var7);
 
       try {
          File var9 = File.createTempFile("level", ".dat", var6);
@@ -137,8 +137,8 @@ public class class_3676 implements AutoCloseable {
       if (var4.exists()) {
          File var5 = new File(var4, "level.dat");
          if (var5.exists()) {
-            class_5734 var6 = class_5957.method_27227(var5);
-            class_5734 var7 = var6.method_25937("Data");
+            CompoundNBT var6 = class_5957.method_27227(var5);
+            CompoundNBT var7 = var6.getCompound("Data");
             var7.method_25941("LevelName", var1);
             class_5957.method_27218(var6, var5);
          }

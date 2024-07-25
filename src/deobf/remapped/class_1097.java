@@ -343,7 +343,7 @@ public class class_1097 {
                var4.method_25941("Name", var1x.method_38147());
                var4.method_25941("Objective", var1x.method_38149().method_20490());
                var4.method_25931("Score", var1x.method_38146());
-               var4.method_25934("Locked", var1x.method_38148());
+               var4.putBoolean("Locked", var1x.method_38148());
                var3.add(var4);
             }));
       return var3;
@@ -361,7 +361,7 @@ public class class_1097 {
          class_8274 var8 = this.method_4855(var7, var6);
          var8.method_38140(var5.method_25947("Score"));
          if (var5.method_25938("Locked")) {
-            var8.method_38141(var5.method_25933("Locked"));
+            var8.method_38141(var5.getBoolean("Locked"));
          }
       }
    }

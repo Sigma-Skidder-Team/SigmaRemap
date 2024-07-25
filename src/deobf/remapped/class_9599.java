@@ -23,7 +23,7 @@ public class class_9599 {
    private final boolean field_48933;
    private final Map<class_5019<?>, Comparable<?>> field_48932 = Maps.newHashMap();
    private class_2451 field_48935;
-   private class_5734 field_48938;
+   private CompoundNBT field_48938;
    private Identifier field_48930 = new Identifier("");
    private int field_48940;
    private BiFunction<SuggestionsBuilder, class_9349<class_2451>, CompletableFuture<Suggestions>> field_48937 = field_48941;
@@ -38,7 +38,7 @@ public class class_9599 {
    }
 
    @Nullable
-   public class_5734 method_44338() {
+   public CompoundNBT method_44338() {
       return this.field_48938;
    }
 

@@ -8,7 +8,7 @@ public class class_450 {
 
    public static void method_2171(MinecraftClient var0, class_7966 var1) {
       RenderSystem.method_16458();
-      class_5989 var4 = var0.thePlayer;
+      ClientPlayerEntity var4 = var0.thePlayer;
       if (!var4.field_41731) {
          if (class_7860.field_40092.method_3596() && class_7860.field_40137.method_3596()) {
             Pair var8 = method_2172(var4);
@@ -16,7 +16,7 @@ public class class_450 {
                Object var6 = class_7860.method_35559(class_7860.field_40055);
                if (!class_7860.field_40092.method_3592(var4, var1, var6, var8.getLeft(), var8.getRight())) {
                   class_5155 var7 = (class_5155)class_7860.method_35555(
-                     var0.method_8505().method_3716(), class_7860.field_40137, var8.getLeft(), var0.field_9601, var8.getRight()
+                     var0.method_8505().method_3716(), class_7860.field_40137, var8.getLeft(), var0.theWorld, var8.getRight()
                   );
                   method_2168(var0, var7, var1);
                }

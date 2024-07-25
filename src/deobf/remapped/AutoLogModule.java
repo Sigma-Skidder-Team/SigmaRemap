@@ -17,7 +17,7 @@ public class AutoLogModule extends Module {
          float var4 = client.thePlayer.method_26551() / client.thePlayer.method_26465() * 10.0F;
          if (var4 < this.getFloatValueByName("Min Health") || class_2740.method_12345(class_4897.field_24472) == 0) {
             boolean var5 = this.method_42007("One Time Use");
-            client.field_9601.method_29519();
+            client.theWorld.method_29519();
             client.method_8499();
             client.method_8609(
                new class_7773(

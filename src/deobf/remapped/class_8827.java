@@ -27,13 +27,13 @@ public class class_8827 {
       }
    }
 
-   public void method_40534(class_174 var1, class_7474 var2) {
+   public void method_40534(ClientWorld var1, class_7474 var2) {
       if (this.field_45149 != null && var2 != null && var1 != null) {
          this.field_45149.method_10479(var1, var2);
       }
    }
 
-   public void method_40533(class_174 var1, class_1331 var2, class_2522 var3, float var4) {
+   public void method_40533(ClientWorld var1, class_1331 var2, class_2522 var3, float var4) {
       if (this.field_45149 != null) {
          this.field_45149.method_10480(var1, var2, var3, var4);
       }
@@ -79,10 +79,10 @@ public class class_8827 {
    public void method_40536() {
       this.field_45150.removeIf(var0 -> class_8426.method_38779(var0));
       if (this.field_45149 == null) {
-         if (this.field_45147.field_9601 != null) {
+         if (this.field_45147.theWorld != null) {
             this.method_40543();
          }
-      } else if (this.field_45147.field_9601 == null) {
+      } else if (this.field_45147.theWorld == null) {
          this.method_40542();
       } else {
          this.field_45149.method_10483();

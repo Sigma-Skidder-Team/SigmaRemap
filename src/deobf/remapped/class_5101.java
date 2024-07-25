@@ -43,7 +43,7 @@ public class class_5101 extends class_2451 {
             if (var1.method_6683(var16, var16.method_37241().method_18898(-0.1))) {
                if (!var1.field_33055) {
                   var1.method_7509(var16);
-                  if (!var2.field_3876.isCreativeMode) {
+                  if (!var2.playerAbilities.isCreativeMode) {
                      var6.method_27970(1);
                   }
                }

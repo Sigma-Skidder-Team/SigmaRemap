@@ -105,7 +105,7 @@ public class class_4206 extends class_516 implements class_1869 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("ExplosionPower", 99)) {
+      if (var1.contains("ExplosionPower", 99)) {
          this.field_20450 = var1.method_25947("ExplosionPower");
       }
    }

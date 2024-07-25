@@ -5,7 +5,7 @@ public class class_3105 extends class_3289 {
    private int field_15441;
    private final int field_15440 = 8;
 
-   private class_3105(class_174 var1, double var2, double var4, double var6) {
+   private class_3105(ClientWorld var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
    }
 

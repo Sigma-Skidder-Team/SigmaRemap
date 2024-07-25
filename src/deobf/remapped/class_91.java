@@ -247,7 +247,7 @@ public class class_91 extends Entity {
       }
 
       if (!this.method_264().method_28022()) {
-         var1.method_25946("Item", this.method_264().method_27998(new CompoundNBT()));
+         var1.put("Item", this.method_264().method_27998(new CompoundNBT()));
       }
    }
 
@@ -267,7 +267,7 @@ public class class_91 extends Entity {
          this.field_176 = var1.method_25926("Thrower");
       }
 
-      CompoundNBT var4 = var1.method_25937("Item");
+      CompoundNBT var4 = var1.getCompound("Item");
       this.method_248(ItemStack.method_28015(var4));
       if (this.method_264().method_28022()) {
          this.method_37204();

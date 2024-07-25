@@ -73,7 +73,7 @@ public class class_4134 extends class_7637 implements class_3832 {
          }
       }
 
-      var1.method_25946("Inventory", var4);
+      var1.put("Inventory", var4);
    }
 
    @Override

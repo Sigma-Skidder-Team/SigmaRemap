@@ -101,7 +101,7 @@ public class class_5937 {
                }
             }
 
-            if (var9 == class_4748.field_23009 && this.field_30282.field_9601.method_28262(var8.field_44468.method_32355().method_6100()).method_8345()) {
+            if (var9 == class_4748.field_23009 && this.field_30282.theWorld.method_28262(var8.field_44468.method_32355().method_6100()).method_8345()) {
                var16 = false;
             }
 
@@ -166,7 +166,7 @@ public class class_5937 {
             double var31 = Math.sin(Math.toRadians((double)(var43 + 90.0F))) * var4;
             boolean var33 = class_5286.method_24125();
             boolean var34 = this.field_30282
-                  .field_9601
+                  .theWorld
                   .method_6680(this.field_30282.thePlayer, this.field_30282.thePlayer.method_37241().method_18918(var29, -1.0, var31))
                   .count()
                == 0L;
@@ -185,7 +185,7 @@ public class class_5937 {
                   }
 
                   if (var25 && var33 && var10 > 0.75 && var38) {
-                     if (this.field_30282.field_9601.method_28262(var8.field_44468.method_32355().method_6100()).method_8360() instanceof class_3049
+                     if (this.field_30282.theWorld.method_28262(var8.field_44468.method_32355().method_6100()).method_8360() instanceof class_3049
                         && var10 < 1.1) {
                         class_314.method_1443("YA" + var10);
                      } else {
@@ -274,7 +274,7 @@ public class class_5937 {
                         .method_6203((double)var10.method_12173(), (double)var10.method_12165(), (double)var10.method_12185())
                      < 9.0
                   && !class_7047.method_32366(var10)
-                  && !this.field_30282.field_9601.method_28262(var10).method_8345()) {
+                  && !this.field_30282.theWorld.method_28262(var10).method_8345()) {
                   var4.add(var10);
                }
             }
@@ -283,7 +283,7 @@ public class class_5937 {
             if (var4.isEmpty()) {
                this.field_30285 = null;
             } else if (this.field_30285 != null) {
-               if (this.field_30282.field_9601.method_28262(this.field_30285).method_8345()
+               if (this.field_30282.theWorld.method_28262(this.field_30285).method_8345()
                   || Math.sqrt(
                         this.field_30282
                            .thePlayer
@@ -374,7 +374,7 @@ public class class_5937 {
 
                for (Long var8 : this.field_30284.get(0).field_44466) {
                   class_1331 var9 = class_1331.method_6088(var8);
-                  if (!this.field_30282.field_9601.method_28262(var9).method_8345()) {
+                  if (!this.field_30282.theWorld.method_28262(var9).method_8345()) {
                      double var10 = (double)var9.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
                      double var12 = (double)var9.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
                      double var14 = (double)var9.method_12185() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();
@@ -385,7 +385,7 @@ public class class_5937 {
 
                for (Long var20 : this.field_30284.get(0).field_44470) {
                   class_1331 var21 = class_1331.method_6088(var20);
-                  if (this.field_30282.field_9601.method_28262(var21).method_8345()) {
+                  if (this.field_30282.theWorld.method_28262(var21).method_8345()) {
                      double var22 = (double)var21.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
                      double var23 = (double)var21.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
                      double var24 = (double)var21.method_12185() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();

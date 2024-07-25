@@ -152,7 +152,7 @@ public abstract class Module {
          }
       }
 
-      if (this.enabled && client.field_9601 != null) {
+      if (this.enabled && client.theWorld != null) {
          this.onEnable();
       }
 

@@ -167,7 +167,7 @@ public class class_8193 extends Module {
 
    @EventListen
    public void method_37541(PacketEvent var1) {
-      if (client.field_9601 != null && client.method_8614() != null && class_314.method_1392()) {
+      if (client.theWorld != null && client.method_8614() != null && class_314.method_1392()) {
          Packet var4 = var1.method_557();
          if (!(var4 instanceof class_509)) {
             if (var4 instanceof class_4548) {

@@ -28,7 +28,7 @@ public abstract class class_8990 extends class_5467 {
          var1.method_25964("Owner", this.method_41211());
       }
 
-      var1.method_25934("Sitting", this.field_46034);
+      var1.putBoolean("Sitting", this.field_46034);
    }
 
    @Override
@@ -51,7 +51,7 @@ public abstract class class_8990 extends class_5467 {
          }
       }
 
-      this.field_46034 = var1.method_25933("Sitting");
+      this.field_46034 = var1.getBoolean("Sitting");
       this.method_41214(this.field_46034);
    }
 

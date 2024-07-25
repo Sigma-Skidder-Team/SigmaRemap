@@ -14,7 +14,7 @@ public class ShadowESP extends Module {
    @EventListen
    private void method_6348(class_3368 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer != null && client.field_9601 != null) {
+         if (client.thePlayer != null && client.theWorld != null) {
             this.method_6345();
             class_73.method_107();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -38,7 +38,7 @@ public class ShadowESP extends Module {
 
    private void method_6343() {
       int var3 = class_314.method_1444(class_1255.field_6918.field_6917, 0.8F);
-      client.field_9601
+      client.theWorld
          .field_568
          .forEach(
             (var2, var3x) -> {
@@ -89,7 +89,7 @@ public class ShadowESP extends Module {
          GL11.glEnable(2896);
       }
 
-      for (Entity var10 : client.field_9601.method_736()) {
+      for (Entity var10 : client.theWorld.method_736()) {
          if (this.method_6344(var10)) {
             GL11.glPushMatrix();
             class_1343 var11 = client.gameRenderer.method_35949().method_41627();
@@ -157,7 +157,7 @@ public class ShadowESP extends Module {
    private boolean method_6344(Entity var1) {
       if (var1 instanceof class_5834) {
          if (var1 instanceof class_704) {
-            if (!(var1 instanceof class_5989)) {
+            if (!(var1 instanceof ClientPlayerEntity)) {
                return !var1.method_37109() ? !SigmaMainClass.getInstance().method_3331().method_20495(var1) : false;
             } else {
                return false;

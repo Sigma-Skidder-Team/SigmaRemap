@@ -29,7 +29,7 @@ public class class_3551 extends class_4109 {
       super.method_37376(var1);
       var1.method_25931("Variant", this.method_16529());
       if (!this.field_20021.method_31498(1).method_28022()) {
-         var1.method_25946("ArmorItem", this.field_20021.method_31498(1).method_27998(new CompoundNBT()));
+         var1.put("ArmorItem", this.field_20021.method_31498(1).method_27998(new CompoundNBT()));
       }
    }
 
@@ -46,8 +46,8 @@ public class class_3551 extends class_4109 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_16525(var1.method_25947("Variant"));
-      if (var1.method_25939("ArmorItem", 10)) {
-         ItemStack var4 = ItemStack.method_28015(var1.method_25937("ArmorItem"));
+      if (var1.contains("ArmorItem", 10)) {
+         ItemStack var4 = ItemStack.method_28015(var1.getCompound("ArmorItem"));
          if (!var4.method_28022() && this.method_19069(var4)) {
             this.field_20021.method_31503(1, var4);
          }

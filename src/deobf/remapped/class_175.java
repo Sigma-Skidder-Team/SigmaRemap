@@ -4,7 +4,7 @@ public class class_175 extends class_8715 {
    private static String[] field_580;
    private final class_6571 field_581;
 
-   private class_175(class_174 var1, double var2, double var4, double var6, double var8, class_6571 var10) {
+   private class_175(ClientWorld var1, double var2, double var4, double var6, double var8, class_6571 var10) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
       this.field_49476 = 6 + this.field_49466.nextInt(4);
       float var13 = this.field_49466.nextFloat() * 0.6F + 0.4F;

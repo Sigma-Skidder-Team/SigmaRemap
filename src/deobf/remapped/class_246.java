@@ -10,7 +10,7 @@ public class class_246 extends class_8715 {
    private float field_868;
    private boolean field_869;
 
-   public class_246(class_174 var1, double var2, double var4, double var6, class_6571 var8, float var9) {
+   public class_246(ClientWorld var1, double var2, double var4, double var6, class_6571 var8, float var9) {
       super(var1, var2, var4, var6);
       this.field_864 = var8;
       this.field_865 = var9;

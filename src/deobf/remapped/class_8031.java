@@ -210,14 +210,14 @@ public class class_8031 extends class_5467 implements class_9897 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("Sheared", this.method_36478());
+      var1.putBoolean("Sheared", this.method_36478());
       var1.method_25921("Color", (byte)this.method_36474().method_41794());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_36469(var1.method_25933("Sheared"));
+      this.method_36469(var1.getBoolean("Sheared"));
       this.method_36471(class_9077.method_41789(var1.method_25950("Color")));
    }
 

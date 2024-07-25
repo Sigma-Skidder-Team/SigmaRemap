@@ -176,7 +176,7 @@ public class class_7451 extends class_4641 {
          if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
             if (var1 instanceof class_704) {
                class_704 var6 = (class_704)var1;
-               if (var6.field_3876.isCreativeMode) {
+               if (var6.playerAbilities.isCreativeMode) {
                   this.method_33911(var5);
                   return;
                }
@@ -273,20 +273,20 @@ public class class_7451 extends class_4641 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (!this.method_33905().method_28022()) {
-         var1.method_25946("Item", this.method_33905().method_27998(new CompoundNBT()));
+         var1.put("Item", this.method_33905().method_27998(new CompoundNBT()));
          var1.method_25921("ItemRotation", (byte)this.method_33907());
-         var1.method_25920("ItemDropChance", this.field_37977);
+         var1.putFloat("ItemDropChance", this.field_37977);
       }
 
       var1.method_25921("Facing", (byte)this.field_22663.method_1050());
-      var1.method_25934("Invisible", this.method_37109());
-      var1.method_25934("Fixed", this.field_37976);
+      var1.putBoolean("Invisible", this.method_37109());
+      var1.putBoolean("Fixed", this.field_37976);
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      CompoundNBT var4 = var1.method_25937("Item");
+      CompoundNBT var4 = var1.getCompound("Item");
       if (var4 != null && !var4.method_25940()) {
          ItemStack var5 = ItemStack.method_28015(var4);
          if (var5.method_28022()) {
@@ -300,14 +300,14 @@ public class class_7451 extends class_4641 {
 
          this.method_33906(var5, false);
          this.method_33913(var1.method_25950("ItemRotation"), false);
-         if (var1.method_25939("ItemDropChance", 99)) {
-            this.field_37977 = var1.method_25955("ItemDropChance");
+         if (var1.contains("ItemDropChance", 99)) {
+            this.field_37977 = var1.getFloat("ItemDropChance");
          }
       }
 
       this.method_21468(Direction.method_1033(var1.method_25950("Facing")));
-      this.method_37333(var1.method_25933("Invisible"));
-      this.field_37976 = var1.method_25933("Fixed");
+      this.method_37333(var1.getBoolean("Invisible"));
+      this.field_37976 = var1.getBoolean("Fixed");
    }
 
    @Override
@@ -322,7 +322,7 @@ public class class_7451 extends class_4641 {
                this.method_33910(this.method_33907() + 1);
             } else if (var7 && !this.field_41751) {
                this.method_33912(var5);
-               if (!var1.field_3876.isCreativeMode) {
+               if (!var1.playerAbilities.isCreativeMode) {
                   var5.method_27970(1);
                }
             }

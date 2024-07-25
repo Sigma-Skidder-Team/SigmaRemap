@@ -99,23 +99,23 @@ public class class_6862 extends class_405 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("DespawnDelay", this.field_35359);
       if (this.field_35357 != null) {
-         var1.method_25946("WanderTarget", class_4338.method_20190(this.field_35357));
+         var1.put("WanderTarget", class_4338.method_20190(this.field_35357));
       }
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("DespawnDelay", 99)) {
+      if (var1.contains("DespawnDelay", 99)) {
          this.field_35359 = var1.method_25947("DespawnDelay");
       }
 
       if (var1.method_25938("WanderTarget")) {
-         this.field_35357 = class_4338.method_20189(var1.method_25937("WanderTarget"));
+         this.field_35357 = class_4338.method_20189(var1.getCompound("WanderTarget"));
       }
 
       this.method_8635(Math.max(0, this.method_8634()));

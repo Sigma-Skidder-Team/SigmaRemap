@@ -58,7 +58,7 @@ public class class_793 implements class_8773 {
 
    @Override
    public boolean method_40314(int var1) {
-      class_5989 var4 = this.field_4259.thePlayer;
+      ClientPlayerEntity var4 = this.field_4259.thePlayer;
       return var4 == null ? var1 == 0 : var4.method_37163(var1);
    }
 

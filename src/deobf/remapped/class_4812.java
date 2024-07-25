@@ -11,7 +11,7 @@ public final class class_4812 {
 
    private class_4812(class_4537 var1, class_7762 var2, double var3, double var5) {
       this.field_24070 = var1;
-      class_174 var9 = class_4537.method_21065(var1).field_9601;
+      ClientWorld var9 = class_4537.method_21065(var1).field_9601;
       class_5621 var10 = var9.method_29545();
       int var11 = (int)var3 >> 4;
       int var12 = (int)var5 >> 4;

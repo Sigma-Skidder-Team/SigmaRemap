@@ -4,7 +4,7 @@ public class class_5926 extends class_8715 {
    private static String[] field_30060;
    private final class_6571 field_30059;
 
-   public class_5926(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12, class_6571 var14) {
+   public class_5926(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, class_6571 var14) {
       super(var1, var2, var4, var6);
       this.field_30059 = var14;
       this.field_49481 = var8 + (Math.random() * 2.0 - 1.0) * 0.05F;

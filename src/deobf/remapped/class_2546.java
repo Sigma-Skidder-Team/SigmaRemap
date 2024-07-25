@@ -732,7 +732,7 @@ public class class_2546 extends class_9331<class_7333> {
    }
 
    public static void method_11590(MinecraftClient var0, int var1, boolean var2, boolean var3) {
-      class_5989 var6 = var0.thePlayer;
+      ClientPlayerEntity var6 = var0.thePlayer;
       class_3459 var7 = var0.method_8598();
       class_2024 var8 = var7.method_15915(var1);
       if (!var2) {

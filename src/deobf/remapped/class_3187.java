@@ -43,7 +43,7 @@ public class class_3187 {
          }
 
          CompoundNBT var9 = new CompoundNBT();
-         var9.method_25946("servers", var3);
+         var9.put("servers", var3);
          File var10 = File.createTempFile("servers", ".dat", this.field_15915.runDirectory);
          class_5957.method_27225(var9, var10);
          File var6 = new File(this.field_15915.runDirectory, "servers.dat_old");

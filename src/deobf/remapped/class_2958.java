@@ -13,7 +13,7 @@ public class class_2958 {
                class_2710.field_13257.fieldOf("location_predicate").forGetter(var0x -> var0x.field_14441),
                class_5892.field_29930.optionalFieldOf("position_predicate", class_7607.field_38728).forGetter(var0x -> var0x.field_14445),
                class_2522.field_12489.fieldOf("output_state").forGetter(var0x -> var0x.field_14446),
-               class_5734.field_28974.optionalFieldOf("output_nbt").forGetter(var0x -> Optional.<class_5734>ofNullable(var0x.field_14442))
+               CompoundNBT.field_28974.optionalFieldOf("output_nbt").forGetter(var0x -> Optional.<CompoundNBT>ofNullable(var0x.field_14442))
             )
             .apply(var0, class_2958::new)
    );
@@ -21,22 +21,22 @@ public class class_2958 {
    private final class_2710 field_14441;
    private final class_5892 field_14445;
    private final class_2522 field_14446;
-   private final class_5734 field_14442;
+   private final CompoundNBT field_14442;
 
    public class_2958(class_2710 var1, class_2710 var2, class_2522 var3) {
-      this(var1, var2, class_7607.field_38728, var3, Optional.<class_5734>empty());
+      this(var1, var2, class_7607.field_38728, var3, Optional.<CompoundNBT>empty());
    }
 
    public class_2958(class_2710 var1, class_2710 var2, class_5892 var3, class_2522 var4) {
-      this(var1, var2, var3, var4, Optional.<class_5734>empty());
+      this(var1, var2, var3, var4, Optional.<CompoundNBT>empty());
    }
 
-   public class_2958(class_2710 var1, class_2710 var2, class_5892 var3, class_2522 var4, Optional<class_5734> var5) {
+   public class_2958(class_2710 var1, class_2710 var2, class_5892 var3, class_2522 var4, Optional<CompoundNBT> var5) {
       this.field_14444 = var1;
       this.field_14441 = var2;
       this.field_14445 = var3;
       this.field_14446 = var4;
-      this.field_14442 = (class_5734)var5.orElse((class_5734)null);
+      this.field_14442 = (CompoundNBT)var5.orElse((CompoundNBT)null);
    }
 
    public boolean method_13531(class_2522 var1, class_2522 var2, class_1331 var3, class_1331 var4, class_1331 var5, Random var6) {
@@ -48,7 +48,7 @@ public class class_2958 {
    }
 
    @Nullable
-   public class_5734 method_13530() {
+   public CompoundNBT method_13530() {
       return this.field_14442;
    }
 }

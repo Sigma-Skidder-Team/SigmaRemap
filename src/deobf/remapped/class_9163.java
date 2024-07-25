@@ -68,19 +68,19 @@ public class class_9163 {
    }
 
    public void method_42230(CompoundNBT var1) {
-      if (var1.method_25939("foodLevel", 99)) {
+      if (var1.contains("foodLevel", 99)) {
          this.field_46890 = var1.method_25947("foodLevel");
          this.field_46894 = var1.method_25947("foodTickTimer");
-         this.field_46891 = var1.method_25955("foodSaturationLevel");
-         this.field_46892 = var1.method_25955("foodExhaustionLevel");
+         this.field_46891 = var1.getFloat("foodSaturationLevel");
+         this.field_46892 = var1.getFloat("foodExhaustionLevel");
       }
    }
 
    public void method_42233(CompoundNBT var1) {
       var1.method_25931("foodLevel", this.field_46890);
       var1.method_25931("foodTickTimer", this.field_46894);
-      var1.method_25920("foodSaturationLevel", this.field_46891);
-      var1.method_25920("foodExhaustionLevel", this.field_46892);
+      var1.putFloat("foodSaturationLevel", this.field_46891);
+      var1.putFloat("foodExhaustionLevel", this.field_46892);
    }
 
    public int method_42238() {

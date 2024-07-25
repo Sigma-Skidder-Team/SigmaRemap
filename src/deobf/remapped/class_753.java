@@ -77,7 +77,7 @@ public class class_753 {
 
    @Nullable
    public class_3903 method_3403() {
-      return MinecraftClient.getInstance().field_9601.method_29562().method_4848(this.method_3392().getName());
+      return MinecraftClient.getInstance().theWorld.method_29562().method_4848(this.method_3392().getName());
    }
 
    public void method_3412() {

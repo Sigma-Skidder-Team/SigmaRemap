@@ -26,7 +26,7 @@ public class class_8398 extends class_3757 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
 
       for (int var4 = 0; var4 < 4; var4++) {
@@ -39,7 +39,7 @@ public class class_8398 extends class_3757 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       this.field_42973 = false;
       super.method_17394(var1, var2);
       this.field_42970 = class_9077.method_41788(var2.method_25965("Color"), class_9077.field_46496);
@@ -86,8 +86,8 @@ public class class_8398 extends class_3757 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    @Override

@@ -3,7 +3,7 @@ package remapped;
 public class class_7782 extends class_8715 {
    private static String[] field_39443;
 
-   private class_7782(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12, boolean var14) {
+   private class_7782(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, boolean var14) {
       super(var1, var2, var4, var6);
       this.method_44947(3.0F);
       this.method_44955(0.25F, 0.25F);

@@ -49,7 +49,7 @@ public class class_8136 extends Module {
          String var5 = this.getStringValueByName("Mode");
          if (this.getBooleanValueByName("Ceiling")
             && !client.thePlayer.field_41726
-            && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
+            && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }
 

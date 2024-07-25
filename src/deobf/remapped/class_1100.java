@@ -197,8 +197,8 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    @Override
@@ -213,11 +213,11 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_6322 = method_4886(var2.method_25947("Primary"));
       this.field_6323 = method_4886(var2.method_25947("Secondary"));
-      if (var2.method_25939("CustomName", 8)) {
+      if (var2.contains("CustomName", 8)) {
          this.field_6320 = ITextComponent$class_40.func_240643_a_(var2.method_25965("CustomName"));
       }
 
@@ -225,7 +225,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25931("Primary", class_1425.method_6536(this.field_6322));
       var1.method_25931("Secondary", class_1425.method_6536(this.field_6323));

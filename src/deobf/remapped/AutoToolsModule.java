@@ -37,7 +37,7 @@ public class AutoToolsModule extends Module {
          ? (client.field_9587.method_33990() != class_1430.field_7717 ? null : ((class_9529) client.field_9587).method_43955())
          : var1;
       if (var4 != null) {
-         int var5 = class_2740.method_12348(client.field_9601.method_28262(var4));
+         int var5 = class_2740.method_12348(client.theWorld.method_28262(var4));
          if (var5 != -1) {
             if (client.thePlayer.inventory.field_36404 != var5 % 9 && this.field_33089 == -1) {
                this.field_33089 = client.thePlayer.inventory.field_36404;

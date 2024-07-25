@@ -130,7 +130,7 @@ public class class_8421 {
    }
 
    private static void method_38760(WorldRenderer var0) {
-      class_174 var3 = var0.method_20043();
+      ClientWorld var3 = var0.method_20043();
       if (var3 != null) {
          for (Entity var5 : var3.method_736()) {
             int var6 = method_38772(var5);

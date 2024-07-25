@@ -22,6 +22,6 @@ public class class_3186 {
    }
 
    public static class_3186 method_14664(CompoundNBT var0) {
-      return !var0.method_25939("Lock", 8) ? field_15912 : new class_3186(var0.method_25965("Lock"));
+      return !var0.contains("Lock", 8) ? field_15912 : new class_3186(var0.method_25965("Lock"));
    }
 }

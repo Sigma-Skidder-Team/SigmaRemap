@@ -30,7 +30,7 @@ public class class_8598 {
    public void method_39516(GameType var1, GameType var2) {
       this.field_44030 = var2;
       this.field_44033 = var1;
-      var1.configurePlayerCapabilities(this.field_44036.field_3876);
+      var1.configurePlayerCapabilities(this.field_44036.playerAbilities);
       this.field_44036.method_3216();
       this.field_44036.field_47801.method_1600().method_39972(new class_7867(class_2236.field_11147, this.field_44036));
       this.field_44037.method_28928();

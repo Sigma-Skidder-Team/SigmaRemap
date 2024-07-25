@@ -242,7 +242,7 @@ public class SigmaMainClass {
    }
 
    public void method_3316() {
-      if (field_3950 != null && field_3950.field_9601 != null && field_3950.thePlayer != null && !field_3951) {
+      if (field_3950 != null && field_3950.theWorld != null && field_3950.thePlayer != null && !field_3951) {
          GL11.glTranslatef(0.0F, 0.0F, 0.0F);
          RenderSystem.method_16491();
          RenderSystem.method_16387(false);

@@ -78,7 +78,7 @@ public class class_5026<T> {
    }
 
    private void method_23178(CompoundNBT var1) {
-      CompoundNBT var4 = var1.method_25937("Callback");
+      CompoundNBT var4 = var1.getCompound("Callback");
       class_7803 var5 = this.field_25997.method_2185(var4);
       if (var5 != null) {
          String var6 = var1.method_25965("Name");
@@ -91,7 +91,7 @@ public class class_5026<T> {
       CompoundNBT var4 = new CompoundNBT();
       var4.method_25941("Name", var1.field_33222);
       var4.method_25949("TriggerTime", var1.field_33220);
-      var4.method_25946("Callback", this.field_25997.method_2187(var1.field_33223));
+      var4.put("Callback", this.field_25997.method_2187(var1.field_33223));
       return var4;
    }
 

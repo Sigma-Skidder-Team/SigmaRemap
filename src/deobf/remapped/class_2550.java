@@ -41,14 +41,14 @@ public abstract class class_2550 extends class_8388 implements class_3713 {
       super.method_37376(var1);
       ItemStack var4 = this.method_11600();
       if (!var4.method_28022()) {
-         var1.method_25946("Item", var4.method_27998(new CompoundNBT()));
+         var1.put("Item", var4.method_27998(new CompoundNBT()));
       }
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      ItemStack var4 = ItemStack.method_28015(var1.method_25937("Item"));
+      ItemStack var4 = ItemStack.method_28015(var1.getCompound("Item"));
       this.method_11601(var4);
    }
 }

@@ -13,7 +13,7 @@ public class class_3995 extends class_4314 {
       super.method_29257(var1, var2, var3, var4, var5);
       CompoundNBT var8 = var5.method_27994();
       if (var8.method_25938("BlockEntityTag")) {
-         CompoundNBT var9 = var8.method_25937("BlockEntityTag");
+         CompoundNBT var9 = var8.getCompound("BlockEntityTag");
          if (var9.method_25938("RecordItem")) {
             var1.method_7513(var2, var3.method_10308(field_19411, Boolean.valueOf(true)), 2);
          }

@@ -33,7 +33,7 @@ public class class_5229 extends class_2451 {
       }
 
       var2.method_3211(class_6234.field_31907.method_43790(this));
-      if (!var2.field_3876.isCreativeMode) {
+      if (!var2.playerAbilities.isCreativeMode) {
          var6.method_27970(1);
       }
 

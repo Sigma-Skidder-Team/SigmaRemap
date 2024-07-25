@@ -184,9 +184,9 @@ public class class_7211 {
          field_37040.thePlayer.method_37156()
       );
       class_972 var4 = new class_972(var3, var0, class_3132.field_15549, class_9583.field_48747, field_37040.thePlayer);
-      class_9529 var5 = field_37040.field_9601.method_28265(var4);
+      class_9529 var5 = field_37040.theWorld.method_28265(var4);
       boolean var6 = var5.method_33990() == class_1430.field_7721 || var5.method_33990() == class_1430.field_7718;
-      class_6414 var7 = field_37040.field_9601.method_28262(var5.method_43955()).method_8360();
+      class_6414 var7 = field_37040.theWorld.method_28262(var5.method_43955()).method_8360();
       return var6;
    }
 

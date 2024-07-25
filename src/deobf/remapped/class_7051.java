@@ -244,7 +244,7 @@ public class class_7051 implements class_6867, class_9875 {
                   this.field_36401.get(var1).method_27968(5);
                   var2.method_28017(0);
                   return true;
-               } else if (this.field_36409.field_3876.isCreativeMode) {
+               } else if (this.field_36409.playerAbilities.isCreativeMode) {
                   var2.method_28017(0);
                   return true;
                } else {
@@ -261,7 +261,7 @@ public class class_7051 implements class_6867, class_9875 {
                   }
                } while (!var2.method_28022() && var2.method_27997() < var5);
 
-               if (var2.method_27997() == var5 && this.field_36409.field_3876.isCreativeMode) {
+               if (var2.method_27997() == var5 && this.field_36409.playerAbilities.isCreativeMode) {
                   var2.method_28017(0);
                   return true;
                } else {

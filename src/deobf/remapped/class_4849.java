@@ -29,11 +29,11 @@ public class class_4849 extends class_5837 {
       if (var5 != null) {
          CompoundNBT var6 = var1.method_27994();
          CompoundNBT var7;
-         if (!var6.method_25939("BlockStateTag", 10)) {
+         if (!var6.contains("BlockStateTag", 10)) {
             var7 = new CompoundNBT();
-            var6.method_25946("BlockStateTag", var7);
+            var6.put("BlockStateTag", var7);
          } else {
-            var7 = var6.method_25937("BlockStateTag");
+            var7 = var6.getCompound("BlockStateTag");
          }
 
          this.field_24182

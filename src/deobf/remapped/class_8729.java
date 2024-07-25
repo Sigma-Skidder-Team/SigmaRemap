@@ -17,11 +17,11 @@ public class class_8729 extends class_2451 {
    public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
       ItemStack var6 = var2.method_26617(var3);
       CompoundNBT var7 = var6.method_27990();
-      if (!var2.field_3876.isCreativeMode) {
+      if (!var2.playerAbilities.isCreativeMode) {
          var2.method_26615(var3, ItemStack.EMPTY);
       }
 
-      if (var7 != null && var7.method_25939("Recipes", 9)) {
+      if (var7 != null && var7.contains("Recipes", 9)) {
          if (!var1.field_33055) {
             class_3416 var8 = var7.method_25927("Recipes", 8);
             ArrayList var9 = Lists.newArrayList();

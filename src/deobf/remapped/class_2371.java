@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_2371 {
-   public static class_6744 method_10851(class_5734 var0) {
+   public static class_6744 method_10851(CompoundNBT var0) {
       int var3 = var0.method_25947("xPos");
       int var4 = var0.method_25947("zPos");
       class_6744 var5 = new class_6744(var3, var4);
@@ -10,7 +10,7 @@ public class class_2371 {
       var5.field_34806 = new class_6916(var0.method_25930("SkyLight"), 7);
       var5.field_34810 = new class_6916(var0.method_25930("BlockLight"), 7);
       var5.field_34803 = var0.method_25930("HeightMap");
-      var5.field_34800 = var0.method_25933("TerrainPopulated");
+      var5.field_34800 = var0.getBoolean("TerrainPopulated");
       var5.field_34801 = var0.method_25927("Entities", 10);
       var5.field_34799 = var0.method_25927("TileEntities", 10);
       var5.field_34807 = var0.method_25927("TileTicks", 10);
@@ -24,7 +24,7 @@ public class class_2371 {
       return var5;
    }
 
-   public static void method_10849(class_7522 var0, class_6744 var1, class_5734 var2, class_3498 var3) {
+   public static void method_10849(class_7522 var0, class_6744 var1, CompoundNBT var2, class_3498 var3) {
       var2.method_25931("xPos", var1.field_34808);
       var2.method_25931("zPos", var1.field_34804);
       var2.method_25949("LastUpdate", var1.field_34805);
@@ -35,7 +35,7 @@ public class class_2371 {
       }
 
       var2.method_25969("HeightMap", var6);
-      var2.method_25934("TerrainPopulated", var1.field_34800);
+      var2.putBoolean("TerrainPopulated", var1.field_34800);
       class_3416 var19 = new class_3416();
 
       for (int var8 = 0; var8 < 8; var8++) {
@@ -73,7 +73,7 @@ public class class_2371 {
                }
             }
 
-            class_5734 var25 = new class_5734();
+            CompoundNBT var25 = new CompoundNBT();
             var25.method_25921("Y", (byte)(var8 & 0xFF));
             var25.method_25953("Blocks", var20);
             var25.method_25953("Data", var21.method_5317());
@@ -83,16 +83,16 @@ public class class_2371 {
          }
       }
 
-      var2.method_25946("Sections", var19);
+      var2.put("Sections", var19);
       var2.method_25969(
          "Biomes", new class_546(var0.<class_6325>method_28813(class_8669.field_44359), new class_2034(var1.field_34808, var1.field_34804), var3).method_2643()
       );
-      var2.method_25946("Entities", var1.field_34801);
-      var2.method_25946("TileEntities", var1.field_34799);
+      var2.put("Entities", var1.field_34801);
+      var2.put("TileEntities", var1.field_34799);
       if (var1.field_34807 != null) {
-         var2.method_25946("TileTicks", var1.field_34807);
+         var2.put("TileTicks", var1.field_34807);
       }
 
-      var2.method_25934("convertedFromAlphaFormat", true);
+      var2.putBoolean("convertedFromAlphaFormat", true);
    }
 }

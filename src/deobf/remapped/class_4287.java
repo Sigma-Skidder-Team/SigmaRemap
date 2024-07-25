@@ -6,7 +6,7 @@ public class class_4287 extends class_8715 {
    private final double field_20807;
    private final double field_20804;
 
-   public class_4287(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public class_4287(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6);
       this.field_49481 = var8;
       this.field_49486 = var10;

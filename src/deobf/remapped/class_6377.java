@@ -10,7 +10,7 @@ public class class_6377 {
    private static long field_32580 = -1L;
    public static boolean field_32581 = false;
 
-   public static void method_29157(Camera var0, float var1, class_174 var2, int var3, float var4) {
+   public static void method_29157(Camera var0, float var1, ClientWorld var2, int var3, float var4) {
       class_4774 var7 = var0.method_41626();
       if (!var7.method_22007(class_6503.field_33094)) {
          if (!var7.method_22007(class_6503.field_33095)) {
@@ -148,8 +148,8 @@ public class class_6377 {
          }
       } else {
          float var28 = 0.0F;
-         if (var0.method_41633() instanceof class_5989) {
-            class_5989 var34 = (class_5989)var0.method_41633();
+         if (var0.method_41633() instanceof ClientPlayerEntity) {
+            ClientPlayerEntity var34 = (ClientPlayerEntity)var0.method_41633();
             var28 = var34.method_27328();
          }
 
@@ -261,8 +261,8 @@ public class class_6377 {
          } else {
             float var14 = 1.0F;
             var14 = 0.05F;
-            if (var8 instanceof class_5989) {
-               class_5989 var16 = (class_5989)var8;
+            if (var8 instanceof ClientPlayerEntity) {
+               ClientPlayerEntity var16 = (ClientPlayerEntity)var8;
                var14 -= var16.method_27328() * var16.method_27328() * 0.03F;
                class_6325 var17 = var16.field_41768.method_22561(var16.method_37075());
                if (var17.method_28887() == class_8862.field_45306) {

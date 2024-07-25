@@ -3,7 +3,7 @@ package remapped;
 public class class_3102 extends class_4287 {
    private static String[] field_15435;
 
-   private class_3102(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   private class_3102(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.field_10503 = (float)((double)this.field_10503 * 1.5);
       this.field_49476 = (int)(Math.random() * 2.0) + 60;

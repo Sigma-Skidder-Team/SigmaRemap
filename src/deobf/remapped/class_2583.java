@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.UUID;
 
 public class class_2583 extends class_1174 {
-   private class_5989 field_12785;
+   private ClientPlayerEntity field_12785;
    private String field_12784;
    private List<UUID> field_12786;
    private static Method field_12790;
    private static Class<?> field_12789;
    private static Method field_12788;
 
-   public class_2583(class_1455 var1, class_5989 var2) {
+   public class_2583(class_1455 var1, ClientPlayerEntity var2) {
       super(var1);
       this.field_12785 = var2;
       this.field_12784 = "";

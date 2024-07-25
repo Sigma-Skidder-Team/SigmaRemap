@@ -35,7 +35,7 @@ public class class_9468 extends Module {
             double[] var9 = field_48288.get(var7);
             if (var8[3] > 0.0 || var8[3] <= 1.0) {
                RenderSystem.method_16438();
-               if ((var4 || !var7.method_37109()) && var7 instanceof class_704 && !(var7 instanceof class_5989)) {
+               if ((var4 || !var7.method_37109()) && var7 instanceof class_704 && !(var7 instanceof ClientPlayerEntity)) {
                   this.method_43744(var7);
 
                   try {
@@ -204,8 +204,8 @@ public class class_9468 extends Module {
       field_48288.clear();
       float var9 = client.theTimer.field_32600;
 
-      for (Object var11 : client.field_9601.method_736()) {
-         if (var11 instanceof class_704 && !(var11 instanceof class_5989)) {
+      for (Object var11 : client.theWorld.method_736()) {
+         if (var11 instanceof class_704 && !(var11 instanceof ClientPlayerEntity)) {
             class_704 var12 = (class_704)var11;
             double var13 = var12.field_41713 + (var12.method_37309() - var12.field_41713) * (double)var9 - var5;
             double var15 = var12.field_41754 + (var12.method_37302() + 10.0 - (var12.field_41754 + 10.0)) * (double)var9 - var3;

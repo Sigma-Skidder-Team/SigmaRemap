@@ -253,10 +253,10 @@ public class class_3511 {
    }
 
    private boolean method_16168() {
-      if (!(class_6705.method_30723(this.field_17225) instanceof class_174)) {
+      if (!(class_6705.method_30723(this.field_17225) instanceof ClientWorld)) {
          return false;
       } else {
-         class_174 var3 = (class_174)class_6705.method_30723(this.field_17225);
+         ClientWorld var3 = (ClientWorld)class_6705.method_30723(this.field_17225);
          return var3.method_747();
       }
    }

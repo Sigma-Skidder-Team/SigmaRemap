@@ -13,7 +13,7 @@ public class class_6612 extends class_6249 {
          var1, class_9299.method_42847(var2.method_37302()), class_9299.method_42847(var2.method_37156()), (byte)0, true, false
       );
       ItemStack var7 = var2.method_26617(var3);
-      if (!var2.field_3876.isCreativeMode) {
+      if (!var2.playerAbilities.isCreativeMode) {
          var7.method_27970(1);
       }
 

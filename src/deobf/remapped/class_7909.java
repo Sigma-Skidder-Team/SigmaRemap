@@ -74,23 +74,23 @@ public class class_7909 extends class_4156 {
             JsonElement var7 = Streams.parse(var5);
             if (!var7.isJsonNull()) {
                CompoundNBT var8 = method_35776(var7.getAsJsonObject());
-               if (!var8.method_25939("DataVersion", 99)) {
+               if (!var8.contains("DataVersion", 99)) {
                   var8.method_25931("DataVersion", 1343);
                }
 
                var8 = class_4338.method_20179(var1, class_5397.field_27552, var8, var8.method_25947("DataVersion"));
-               if (var8.method_25939("stats", 10)) {
-                  CompoundNBT var9 = var8.method_25937("stats");
+               if (var8.contains("stats", 10)) {
+                  CompoundNBT var9 = var8.getCompound("stats");
 
                   for (String var11 : var9.method_25952()) {
-                     if (var9.method_25939(var11, 10)) {
+                     if (var9.contains(var11, 10)) {
                         Util.<class_9478<?>>method_44691(
                            class_8669.field_44376.method_39794(new Identifier(var11)),
                            var3 -> {
-                              CompoundNBT var6x = var9.method_25937(var11);
+                              CompoundNBT var6x = var9.getCompound(var11);
 
                               for (String var8x : var6x.method_25952()) {
-                                 if (!var6x.method_25939(var8x, 99)) {
+                                 if (!var6x.contains(var8x, 99)) {
                                     field_40431.warn(
                                        "Invalid statistic value in {}: Don't know what {} is for key {}", this.field_40432, var6x.method_25929(var8x), var8x
                                     );
@@ -153,7 +153,7 @@ public class class_7909 extends class_4156 {
                }
             }
          } else {
-            var3.method_25946((String)var5.getKey(), method_35776(var6.getAsJsonObject()));
+            var3.put((String)var5.getKey(), method_35776(var6.getAsJsonObject()));
          }
       }
 

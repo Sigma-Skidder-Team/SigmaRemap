@@ -14,15 +14,15 @@ public class class_4122 extends class_8549 {
       this.field_20084 = var3.method_44398() > 6;
    }
 
-   public class_4122(class_5799 var1, class_5734 var2) {
+   public class_4122(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13426, var2);
-      this.field_20084 = var2.method_25933("Tall");
+      this.field_20084 = var2.getBoolean("Tall");
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("Tall", this.field_20084);
+      var1.putBoolean("Tall", this.field_20084);
    }
 
    public static class_4122 method_19137(List<class_7060> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {

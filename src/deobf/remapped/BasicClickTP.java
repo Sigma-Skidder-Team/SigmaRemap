@@ -62,7 +62,7 @@ public class BasicClickTP extends Module {
                var34 -= var28;
                double var37 = 0.3;
                class_4092 var39 = new class_4092(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
-               if (client.field_9601.method_6680(client.thePlayer, var39).count() == 0L) {
+               if (client.theWorld.method_6680(client.thePlayer, var39).count() == 0L) {
                   client.method_8614().method_4813(new class_9515(var30, var34, var32, true));
                }
 

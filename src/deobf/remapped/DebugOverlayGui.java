@@ -233,8 +233,8 @@ public class DebugOverlayGui extends AbstractGui {
                var7,
                this.field_18930.worldRenderer.method_20005(),
                this.field_18930.worldRenderer.method_20056(),
-               "P: " + this.field_18930.field_9572.method_43053() + ". T: " + this.field_18930.field_9601.method_741(),
-               this.field_18930.field_9601.method_29580(),
+               "P: " + this.field_18930.field_9572.method_43053() + ". T: " + this.field_18930.theWorld.method_741(),
+               this.field_18930.theWorld.method_29580(),
                "",
                String.format("Chunk-relative: %d %d %d", var8.method_12173() & 15, var8.method_12165() & 15, var8.method_12185() & 15)
             }
@@ -282,8 +282,8 @@ public class DebugOverlayGui extends AbstractGui {
                var7,
                this.field_18930.worldRenderer.method_20005(),
                this.field_18930.worldRenderer.method_20056(),
-               "P: " + this.field_18930.field_9572.method_43053() + ". T: " + this.field_18930.field_9601.method_741(),
-               this.field_18930.field_9601.method_29580()
+               "P: " + this.field_18930.field_9572.method_43053() + ". T: " + this.field_18930.theWorld.method_741(),
+               this.field_18930.theWorld.method_29580()
             }
          );
          String var17 = this.method_17983();
@@ -291,7 +291,7 @@ public class DebugOverlayGui extends AbstractGui {
             var16.add(var17);
          }
 
-         var16.add(this.field_18930.field_9601.method_29545().method_25499() + " FC: " + var15.size());
+         var16.add(this.field_18930.theWorld.method_29545().method_25499() + " FC: " + var15.size());
          var16.add("");
          var16.add(
             String.format(
@@ -324,15 +324,15 @@ public class DebugOverlayGui extends AbstractGui {
                class_9299.method_42810(var10.field_41755)
             )
          );
-         if (this.field_18930.field_9601 != null) {
-            if (this.field_18930.field_9601.method_22559(var8)) {
+         if (this.field_18930.theWorld != null) {
+            if (this.field_18930.theWorld.method_22559(var8)) {
                class_2654 var18 = this.method_17990();
                if (var18.method_12003()) {
                   var16.add("Waiting for chunk...");
                } else {
-                  int var19 = this.field_18930.field_9601.method_745().method_14813().method_21565(var8, 0);
-                  int var20 = this.field_18930.field_9601.method_25266(class_2957.field_14437, var8);
-                  int var21 = this.field_18930.field_9601.method_25266(class_2957.field_14440, var8);
+                  int var19 = this.field_18930.theWorld.method_745().method_14813().method_21565(var8, 0);
+                  int var20 = this.field_18930.theWorld.method_25266(class_2957.field_14437, var8);
+                  int var21 = this.field_18930.theWorld.method_25266(class_2957.field_14440, var8);
                   var16.add("Client Light: " + var19 + " (" + var20 + " sky, " + var21 + " block)");
                   class_2654 var22 = this.method_17991();
                   if (var22 != null) {
@@ -379,10 +379,10 @@ public class DebugOverlayGui extends AbstractGui {
                      var16.add(
                         "Biome: "
                            + this.field_18930
-                              .field_9601
+                              .theWorld
                               .method_2755()
                               .<class_6325>method_28813(class_8669.field_44359)
-                              .method_39797(this.field_18930.field_9601.method_22561(var8))
+                              .method_39797(this.field_18930.theWorld.method_22561(var8))
                      );
                      long var28 = 0L;
                      float var39 = 0.0F;
@@ -398,7 +398,7 @@ public class DebugOverlayGui extends AbstractGui {
                            "Local Difficulty: %.2f // %.2f (Day %d)",
                            var41.method_44283(),
                            var41.method_44284(),
-                           this.field_18930.field_9601.method_29584() / 24000L
+                           this.field_18930.theWorld.method_29584() / 24000L
                         )
                      );
                   }
@@ -444,7 +444,7 @@ public class DebugOverlayGui extends AbstractGui {
    @Nullable
    private class_6331 method_17992() {
       class_7762 var3 = this.field_18930.method_8515();
-      return var3 == null ? null : var3.method_1697(this.field_18930.field_9601.method_29545());
+      return var3 == null ? null : var3.method_1697(this.field_18930.theWorld.method_29545());
    }
 
    @Nullable
@@ -456,8 +456,8 @@ public class DebugOverlayGui extends AbstractGui {
    private World method_17981() {
       return (World)DataFixUtils.orElse(
          Optional.<class_7762>ofNullable(this.field_18930.method_8515())
-            .<class_6331>flatMap(var1 -> Optional.ofNullable(var1.method_1697(this.field_18930.field_9601.method_29545()))),
-         this.field_18930.field_9601
+            .<class_6331>flatMap(var1 -> Optional.ofNullable(var1.method_1697(this.field_18930.theWorld.method_29545()))),
+         this.field_18930.theWorld
       );
    }
 
@@ -481,7 +481,7 @@ public class DebugOverlayGui extends AbstractGui {
 
    private class_2654 method_17990() {
       if (this.field_18920 == null) {
-         this.field_18920 = this.field_18930.field_9601.method_29554(this.field_18921.field_10328, this.field_18921.field_10327);
+         this.field_18920 = this.field_18930.theWorld.method_29554(this.field_18921.field_10328, this.field_18921.field_10327);
       }
 
       return this.field_18920;
@@ -531,7 +531,7 @@ public class DebugOverlayGui extends AbstractGui {
       } else {
          if (this.field_18928.method_33990() == class_1430.field_7717) {
             class_1331 var24 = ((class_9529)this.field_18928).method_43955();
-            class_2522 var27 = this.field_18930.field_9601.method_28262(var24);
+            class_2522 var27 = this.field_18930.theWorld.method_28262(var24);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.method_12173() + ", " + var24.method_12165() + ", " + var24.method_12185());
             var11.add(String.valueOf(class_8669.field_44462.method_39797(var27.method_8360())));
@@ -556,7 +556,7 @@ public class DebugOverlayGui extends AbstractGui {
 
          if (this.field_18929.method_33990() == class_1430.field_7717) {
             class_1331 var25 = ((class_9529)this.field_18929).method_43955();
-            class_4774 var28 = this.field_18930.field_9601.method_28258(var25);
+            class_4774 var28 = this.field_18930.theWorld.method_28258(var25);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.method_12173() + ", " + var25.method_12165() + ", " + var25.method_12185());
             var11.add(String.valueOf(class_8669.field_44447.method_39797(var28.method_22005())));

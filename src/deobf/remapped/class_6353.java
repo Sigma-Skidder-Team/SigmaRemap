@@ -303,7 +303,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
             return false;
          } else {
             MinecraftClient var8 = MinecraftClient.getInstance();
-            class_5989 var9 = var8.thePlayer;
+            ClientPlayerEntity var9 = var8.thePlayer;
             boolean var10 = !var1.method_37077(var9);
             if (var1 != var9) {
                class_5086 var11 = var1.method_37095();

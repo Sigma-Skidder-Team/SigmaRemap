@@ -70,8 +70,8 @@ public class class_3682 extends class_4088 {
             && this.field_18044.method_43085() > 0
             && (this.field_18044.method_43085() < class_8427.field_43117 - class_8427.field_43108 || !var6.method_28022())) {
          if (!var6.method_28022() && var6.method_27960() instanceof class_7174) {
-            class_5734 var8 = var4.method_27978("BlockEntityTag");
-            boolean var9 = var8.method_25939("Patterns", 9) && !var4.method_28022() && var8.method_25927("Patterns", 10).size() >= 6;
+            CompoundNBT var8 = var4.method_27978("BlockEntityTag");
+            boolean var9 = var8.contains("Patterns", 9) && !var4.method_28022() && var8.method_25927("Patterns", 10).size() >= 6;
             if (!var9) {
                this.field_18044.method_43087(((class_7174)var6.method_27960()).method_32877().ordinal());
             } else {
@@ -162,16 +162,16 @@ public class class_3682 extends class_4088 {
             var5.method_28017(1);
             class_8427 var6 = class_8427.values()[this.field_18044.method_43085()];
             class_9077 var7 = ((class_239)var4.method_27960()).method_1015();
-            class_5734 var8 = var5.method_27978("BlockEntityTag");
+            CompoundNBT var8 = var5.method_27978("BlockEntityTag");
             class_3416 var9;
-            if (!var8.method_25939("Patterns", 9)) {
+            if (!var8.contains("Patterns", 9)) {
                var9 = new class_3416();
-               var8.method_25946("Patterns", var9);
+               var8.put("Patterns", var9);
             } else {
                var9 = var8.method_25927("Patterns", 10);
             }
 
-            class_5734 var10 = new class_5734();
+            CompoundNBT var10 = new CompoundNBT();
             var10.method_25941("Pattern", var6.method_38789());
             var10.method_25931("Color", var7.method_41794());
             var9.add(var10);

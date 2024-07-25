@@ -27,29 +27,29 @@ public class class_4797 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (this.field_23978 != null) {
-         class_5734 var4 = new class_5734();
+         CompoundNBT var4 = new CompoundNBT();
          class_4338.method_20177(var4, this.field_23978);
-         var1.method_25946("SkullOwner", var4);
+         var1.put("SkullOwner", var4);
       }
 
       return var1;
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
-      if (!var2.method_25939("SkullOwner", 10)) {
-         if (var2.method_25939("ExtraType", 8)) {
+      if (!var2.contains("SkullOwner", 10)) {
+         if (var2.contains("ExtraType", 8)) {
             String var5 = var2.method_25965("ExtraType");
             if (!class_6660.method_30576(var5)) {
                this.method_22109(new GameProfile((UUID)null, var5));
             }
          }
       } else {
-         this.method_22109(class_4338.method_20184(var2.method_25937("SkullOwner")));
+         this.method_22109(class_4338.method_20184(var2.getCompound("SkullOwner")));
       }
    }
 
@@ -82,8 +82,8 @@ public class class_4797 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    public void method_22109(GameProfile var1) {

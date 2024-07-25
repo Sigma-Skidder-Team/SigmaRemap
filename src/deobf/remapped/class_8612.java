@@ -256,10 +256,10 @@ public class class_8612 extends class_5783 implements class_3713 {
       var1.method_25931("LifeTime", this.field_44172);
       ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
       if (!var4.method_28022()) {
-         var1.method_25946("FireworksItem", var4.method_27998(new CompoundNBT()));
+         var1.put("FireworksItem", var4.method_27998(new CompoundNBT()));
       }
 
-      var1.method_25934("ShotAtAngle", this.field_41735.<Boolean>method_36640(field_44176));
+      var1.putBoolean("ShotAtAngle", this.field_41735.<Boolean>method_36640(field_44176));
    }
 
    @Override
@@ -267,13 +267,13 @@ public class class_8612 extends class_5783 implements class_3713 {
       super.method_37314(var1);
       this.field_44170 = var1.method_25947("Life");
       this.field_44172 = var1.method_25947("LifeTime");
-      ItemStack var4 = ItemStack.method_28015(var1.method_25937("FireworksItem"));
+      ItemStack var4 = ItemStack.method_28015(var1.getCompound("FireworksItem"));
       if (!var4.method_28022()) {
          this.field_41735.method_36633(field_44174, var4);
       }
 
       if (var1.method_25938("ShotAtAngle")) {
-         this.field_41735.method_36633(field_44176, var1.method_25933("ShotAtAngle"));
+         this.field_41735.method_36633(field_44176, var1.getBoolean("ShotAtAngle"));
       }
    }
 

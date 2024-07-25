@@ -60,7 +60,7 @@ public interface class_2746 {
    class_2746 field_13419 = method_12377(class_8370::new, "NeFos");
    class_2746 field_13430 = method_12377(class_7624::new, "jigsaw");
 
-   class_7060 method_12378(class_5799 var1, class_5734 var2);
+   class_7060 method_12378(class_5799 var1, CompoundNBT var2);
 
    static class_2746 method_12377(class_2746 var0, String var1) {
       return class_8669.<class_2746>method_39791(class_8669.field_44364, var1.toLowerCase(Locale.ROOT), var0);

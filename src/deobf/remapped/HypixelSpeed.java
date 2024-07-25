@@ -132,7 +132,7 @@ public class HypixelSpeed extends Module {
                   if (this.field_12323 == 0) {
                      double var6 = 0.399 + (double)class_8865.method_40769() * 0.1 + 1.0E-5;
                      if (this.getBooleanValueByName("BorderJump")
-                        && client.field_9601
+                        && client.theWorld
                               .method_6680(client.thePlayer, client.thePlayer.field_41712.method_18928(0.0, -var6 - 0.0625, 0.0))
                               .count()
                            == 0L) {

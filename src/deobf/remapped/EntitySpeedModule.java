@@ -25,7 +25,7 @@ public class EntitySpeedModule extends Module {
             && !client.thePlayer.method_37243().field_41726
             && class_314.method_1413(client.thePlayer.method_37243(), 5.0F)
             && !client.thePlayer.method_37243().method_37285()
-            && client.field_9601.method_28262(client.thePlayer.method_37243().method_37075()).method_8360() != class_4783.field_23900) {
+            && client.theWorld.method_28262(client.thePlayer.method_37243().method_37075()).method_8360() != class_4783.field_23900) {
             var1.method_23388(-2.0);
          }
 

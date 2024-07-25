@@ -100,10 +100,10 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
    @Override
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
-      if (!var2.method_25939("Book", 10)) {
+      if (!var2.contains("Book", 10)) {
          this.field_9134 = ItemStack.EMPTY;
       } else {
-         this.field_9134 = this.method_7953(ItemStack.method_28015(var2.method_25937("Book")), (class_704)null);
+         this.field_9134 = this.method_7953(ItemStack.method_28015(var2.getCompound("Book")), (class_704)null);
       }
 
       this.field_9136 = class_1138.method_4991(this.field_9134);
@@ -114,7 +114,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (!this.method_7958().method_28022()) {
-         var1.method_25946("Book", this.method_7958().method_27998(new CompoundNBT()));
+         var1.put("Book", this.method_7958().method_27998(new CompoundNBT()));
          var1.method_25931("Page", this.field_9135);
       }
 

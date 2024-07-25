@@ -46,7 +46,7 @@ public abstract class class_956 extends class_3599 {
                      }
                   }
 
-                  if (var3 instanceof class_704 && ((class_704)var3).field_3876.disableDamage) {
+                  if (var3 instanceof class_704 && ((class_704)var3).playerAbilities.disableDamage) {
                      return false;
                   } else {
                      this.field_4915.method_26860(var3);

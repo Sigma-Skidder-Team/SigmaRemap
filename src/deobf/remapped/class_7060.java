@@ -33,7 +33,7 @@ public abstract class class_7060 {
       this.field_36441 = var2;
    }
 
-   public class_7060(class_2746 var1, class_5734 var2) {
+   public class_7060(class_2746 var1, CompoundNBT var2) {
       this(var1, var2.method_25947("GD"));
       if (var2.method_25938("BB")) {
          this.field_36435 = new class_9616(var2.method_25922("BB"));
@@ -43,10 +43,10 @@ public abstract class class_7060 {
       this.method_32519(var5 != -1 ? Direction.method_1040(var5) : null);
    }
 
-   public final class_5734 method_32520() {
-      class_5734 var3 = new class_5734();
+   public final CompoundNBT method_32520() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("id", class_8669.field_44364.method_39797(this.method_32521()).toString());
-      var3.method_25946("BB", this.field_36435.method_44388());
+      var3.put("BB", this.field_36435.method_44388());
       Direction var4 = this.method_32518();
       var3.method_25931("O", var4 != null ? var4.method_1031() : -1);
       var3.method_25931("GD", this.field_36441);
@@ -54,7 +54,7 @@ public abstract class class_7060 {
       return var3;
    }
 
-   public abstract void method_32517(class_5734 var1);
+   public abstract void method_32517(CompoundNBT var1);
 
    public void method_32527(class_7060 var1, List<class_7060> var2, Random var3) {
    }

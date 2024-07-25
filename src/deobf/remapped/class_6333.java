@@ -28,7 +28,7 @@ public class class_6333 implements class_4885 {
          class_8406 var7;
          if (!var6.method_25938(this.field_32352)) {
             var7 = (class_8406)var2.get();
-            var6.method_25946(this.field_32352, var7);
+            var6.put(this.field_32352, var7);
          } else {
             var7 = var6.method_25929(this.field_32352);
          }
@@ -47,7 +47,7 @@ public class class_6333 implements class_4885 {
       if (var1 instanceof CompoundNBT) {
          CompoundNBT var5 = (CompoundNBT)var1;
          class_8406 var6 = (class_8406)var2.get();
-         class_8406 var7 = var5.method_25946(this.field_32352, var6);
+         class_8406 var7 = var5.put(this.field_32352, var6);
          if (!var6.equals(var7)) {
             return 1;
          }

@@ -404,55 +404,55 @@ public abstract class class_6749 extends class_5783 {
       super.method_37376(var1);
       var1.method_25958("life", (short)this.field_34833);
       if (this.field_34836 != null) {
-         var1.method_25946("inBlockState", class_4338.method_20187(this.field_34836));
+         var1.put("inBlockState", class_4338.method_20187(this.field_34836));
       }
 
       var1.method_25921("shake", (byte)this.field_34831);
-      var1.method_25934("inGround", this.field_34834);
+      var1.putBoolean("inGround", this.field_34834);
       var1.method_25921("pickup", (byte)this.field_34835.ordinal());
       var1.method_25923("damage", this.field_34838);
-      var1.method_25934("crit", this.method_30931());
+      var1.putBoolean("crit", this.method_30931());
       var1.method_25921("PierceLevel", this.method_30936());
       var1.method_25941("SoundEvent", class_8669.field_44369.method_39797(this.field_34843).toString());
-      var1.method_25934("ShotFromCrossbow", this.method_30927());
+      var1.putBoolean("ShotFromCrossbow", this.method_30927());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_34833 = var1.method_25956("life");
-      if (var1.method_25939("inBlockState", 10)) {
-         this.field_34836 = class_4338.method_20185(var1.method_25937("inBlockState"));
+      if (var1.contains("inBlockState", 10)) {
+         this.field_34836 = class_4338.method_20185(var1.getCompound("inBlockState"));
       }
 
       this.field_34831 = var1.method_25950("shake") & 255;
-      this.field_34834 = var1.method_25933("inGround");
-      if (var1.method_25939("damage", 99)) {
+      this.field_34834 = var1.getBoolean("inGround");
+      if (var1.contains("damage", 99)) {
          this.field_34838 = var1.method_25932("damage");
       }
 
-      if (!var1.method_25939("pickup", 99)) {
-         if (var1.method_25939("player", 99)) {
-            this.field_34835 = !var1.method_25933("player") ? class_4237.field_20564 : class_4237.field_20563;
+      if (!var1.contains("pickup", 99)) {
+         if (var1.contains("player", 99)) {
+            this.field_34835 = !var1.getBoolean("player") ? class_4237.field_20564 : class_4237.field_20563;
          }
       } else {
          this.field_34835 = class_4237.method_19761(var1.method_25950("pickup"));
       }
 
-      this.method_30918(var1.method_25933("crit"));
+      this.method_30918(var1.getBoolean("crit"));
       this.method_30922(var1.method_25950("PierceLevel"));
-      if (var1.method_25939("SoundEvent", 8)) {
+      if (var1.contains("SoundEvent", 8)) {
          this.field_34843 = class_8669.field_44369.method_39794(new Identifier(var1.method_25965("SoundEvent"))).orElse(this.method_30933());
       }
 
-      this.method_30934(var1.method_25933("ShotFromCrossbow"));
+      this.method_30934(var1.getBoolean("ShotFromCrossbow"));
    }
 
    @Override
    public void method_26159(Entity var1) {
       super.method_26159(var1);
       if (var1 instanceof class_704) {
-         this.field_34835 = !((class_704)var1).field_3876.isCreativeMode ? class_4237.field_20563 : class_4237.field_20565;
+         this.field_34835 = !((class_704)var1).playerAbilities.isCreativeMode ? class_4237.field_20563 : class_4237.field_20565;
       }
    }
 
@@ -460,7 +460,7 @@ public abstract class class_6749 extends class_5783 {
    public void method_37347(class_704 var1) {
       if (!this.field_41768.field_33055 && (this.field_34834 || this.method_30926()) && this.field_34831 <= 0) {
          boolean var4 = this.field_34835 == class_4237.field_20563
-            || this.field_34835 == class_4237.field_20565 && var1.field_3876.isCreativeMode
+            || this.field_34835 == class_4237.field_20565 && var1.playerAbilities.isCreativeMode
             || this.method_30926() && this.method_26166().method_37328() == var1.method_37328();
          if (this.field_34835 == class_4237.field_20563 && !var1.inventory.method_32414(this.method_30925())) {
             var4 = false;

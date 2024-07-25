@@ -107,7 +107,7 @@ public class class_9164 {
       var1.method_36062(0.38F, 0.38F, 0.38F);
       var1.method_36065(-0.5, -0.5, 0.0);
       var1.method_36062(0.0078125F, 0.0078125F, 0.0078125F);
-      class_2134 var7 = class_2143.method_10005(var4, this.field_46897.field_9601);
+      class_2134 var7 = class_2143.method_10005(var4, this.field_46897.theWorld);
       class_7907 var8 = var2.method_11645(var7 != null ? field_46896 : field_46903);
       class_8107 var9 = var1.method_36058().method_28620();
       var8.method_35762(var9, -7.0F, 135.0F, 0.0F).method_35743(255, 255, 255, 255).method_35745(0.0F, 1.0F).method_35747(var3).method_35735();
@@ -132,7 +132,7 @@ public class class_9164 {
       float var16 = class_9299.method_42818(var11 * (float) Math.PI);
       var1.method_36060(class_2426.field_12074.method_11074(var10 * var16 * 70.0F));
       var1.method_36060(class_2426.field_12076.method_11074(var10 * var15 * -20.0F));
-      class_5989 var17 = this.field_46897.thePlayer;
+      ClientPlayerEntity var17 = this.field_46897.thePlayer;
       this.field_46897.getTextureManager().bindTexture(var17.method_44889());
       var1.method_36065((double)(var10 * -1.0F), 3.6F, 3.5);
       var1.method_36060(class_2426.field_12076.method_11074(var10 * 120.0F));
@@ -178,7 +178,7 @@ public class class_9164 {
       var1.method_36065((double)((float)var6 * 0.56F), (double)(-0.52F + var3 * -0.6F), -0.72F);
    }
 
-   public void method_42243(float var1, class_7966 var2, class_3758 var3, class_5989 var4, int var5) {
+   public void method_42243(float var1, class_7966 var2, class_3758 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method_26533(var1);
       class_2584 var9 = (class_2584)MoreObjects.firstNonNull(var4.field_29616, class_2584.field_12791);
       float var10 = class_9299.method_42795(var1, var4.field_41762, var4.field_41755);
@@ -391,7 +391,7 @@ public class class_9164 {
    public void method_42246() {
       this.field_46902 = this.field_46907;
       this.field_46906 = this.field_46900;
-      class_5989 var3 = this.field_46897.thePlayer;
+      ClientPlayerEntity var3 = this.field_46897.thePlayer;
       ItemStack var4 = var3.method_26446();
       ItemStack var5 = var3.method_26568();
       if (ItemStack.method_27982(this.field_46899, var4)) {

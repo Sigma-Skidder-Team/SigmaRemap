@@ -37,7 +37,7 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42147(class_5989 var1, class_174 var2, class_2584 var3, class_9529 var4) {
+   public class_6910 method_42147(ClientPlayerEntity var1, ClientWorld var2, class_2584 var3, class_9529 var4) {
       this.field_22886 = true;
       this.field_22889 = var4.method_43955();
       class_6910 var7 = super.method_42147(var1, var2, var3, var4);

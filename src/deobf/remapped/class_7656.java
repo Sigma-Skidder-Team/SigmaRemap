@@ -93,7 +93,7 @@ public class class_7656 implements class_1517 {
                }
 
                var8.method_37256((double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
-               var8.method_26864(var1, var1.method_43368(var2), class_2417.field_12025, (class_8733)null, (class_5734)null);
+               var8.method_26864(var1, var1.method_43368(var2), class_2417.field_12025, (class_8733)null, (CompoundNBT)null);
                var1.method_7065(var8);
                return true;
             }

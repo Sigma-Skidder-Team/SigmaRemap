@@ -71,7 +71,7 @@ public class class_2013 extends class_4314 {
       class_704 var7 = var1.method_21868();
       boolean var8 = false;
       if (!var4.field_33055 && var7 != null && var6 != null && var7.method_3184() && var6.method_25938("BlockEntityTag")) {
-         CompoundNBT var9 = var6.method_25937("BlockEntityTag");
+         CompoundNBT var9 = var6.getCompound("BlockEntityTag");
          if (var9.method_25938("Book")) {
             var8 = true;
          }

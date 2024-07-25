@@ -8,7 +8,7 @@ public class class_7681 implements class_5256<class_2427> {
       this.field_39038 = var1;
    }
 
-   public class_9733 method_34814(class_2427 var1, class_174 var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public class_9733 method_34814(class_2427 var1, ClientWorld var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       class_196 var17 = new class_196(var2, var3, var5, var7);
       var17.method_40053(this.field_39038);
       return var17;

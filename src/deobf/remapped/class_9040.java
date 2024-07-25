@@ -58,7 +58,7 @@ public class class_9040 extends class_1871 {
          }
 
          if (var7 != null
-            && !var7.field_3876.disableDamage
+            && !var7.playerAbilities.disableDamage
             && (this.field_9479.method_26594().nextInt(class_9299.method_42805((int)var5) + 2) == 0 || this.field_9479.method_26594().nextInt(var4 + 2) == 0)) {
             this.method_41500(var7);
             return;
@@ -122,7 +122,7 @@ public class class_9040 extends class_1871 {
 
    @Override
    public void method_23468(class_3577 var1, class_1331 var2, class_6199 var3, class_704 var4) {
-      if (var4 != null && !var4.field_3876.disableDamage) {
+      if (var4 != null && !var4.playerAbilities.disableDamage) {
          this.method_41500(var4);
       }
    }

@@ -199,7 +199,7 @@ public class class_5427<T> implements class_5021<T> {
 
       class_3416 var14 = new class_3416();
       var6.method_20371(var14);
-      var1.method_25946(var2, var14);
+      var1.put(var2, var14);
       int var15 = Math.max(4, class_9299.method_42820(var14.size()));
       class_2721 var12 = new class_2721(var15, 4096);
 

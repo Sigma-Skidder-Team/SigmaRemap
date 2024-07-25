@@ -29,7 +29,7 @@ public class class_993 extends class_1859 {
       int var11 = var5 - var10 - 10;
       int var12 = var6 - var9 - 10;
       this.method_32148(this.field_5052 = new class_6409(this, "zoom", var11, var12, var10, var9));
-      this.field_5050 = MinecraftClient.getInstance().field_9601.method_22556(MinecraftClient.getInstance().thePlayer.method_37075()).method_27352();
+      this.field_5050 = MinecraftClient.getInstance().theWorld.method_22556(MinecraftClient.getInstance().thePlayer.method_37075()).method_27352();
       this.method_32105(false);
    }
 

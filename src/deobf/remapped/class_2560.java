@@ -36,10 +36,10 @@ public class class_2560 {
 
       if (this.field_12669 != class_6931.field_35608) {
          if (this.field_12669 == class_6931.field_35604) {
-            var3.method_25934("acceptTextures", false);
+            var3.putBoolean("acceptTextures", false);
          }
       } else {
-         var3.method_25934("acceptTextures", true);
+         var3.putBoolean("acceptTextures", true);
       }
 
       return var3;
@@ -55,13 +55,13 @@ public class class_2560 {
 
    public static class_2560 method_11625(CompoundNBT var0) {
       class_2560 var3 = new class_2560(var0.method_25965("name"), var0.method_25965("ip"), false);
-      if (var0.method_25939("icon", 8)) {
+      if (var0.contains("icon", 8)) {
          var3.method_11623(var0.method_25965("icon"));
       }
 
-      if (!var0.method_25939("acceptTextures", 1)) {
+      if (!var0.contains("acceptTextures", 1)) {
          var3.method_11624(class_6931.field_35609);
-      } else if (!var0.method_25933("acceptTextures")) {
+      } else if (!var0.getBoolean("acceptTextures")) {
          var3.method_11624(class_6931.field_35604);
       } else {
          var3.method_11624(class_6931.field_35608);

@@ -28,7 +28,7 @@ public class class_1695 extends class_8757 {
       }
    }
 
-   public class_1695(class_5799 var1, class_5734 var2) {
+   public class_1695(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13440, var2);
    }
 }

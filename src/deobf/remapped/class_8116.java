@@ -34,12 +34,12 @@ public abstract class class_8116 implements class_5801 {
       var1.method_25941("Command", this.field_41599);
       var1.method_25931("SuccessCount", this.field_41602);
       var1.method_25941("CustomName", ITextComponent$class_40.toJson(this.field_41603));
-      var1.method_25934("TrackOutput", this.field_41601);
+      var1.putBoolean("TrackOutput", this.field_41601);
       if (this.field_41597 != null && this.field_41601) {
          var1.method_25941("LastOutput", ITextComponent$class_40.toJson(this.field_41597));
       }
 
-      var1.method_25934("UpdateLastExecution", this.field_41598);
+      var1.putBoolean("UpdateLastExecution", this.field_41598);
       if (this.field_41598 && this.field_41600 > 0L) {
          var1.method_25949("LastExecution", this.field_41600);
       }
@@ -50,15 +50,15 @@ public abstract class class_8116 implements class_5801 {
    public void method_36924(CompoundNBT var1) {
       this.field_41599 = var1.method_25965("Command");
       this.field_41602 = var1.method_25947("SuccessCount");
-      if (var1.method_25939("CustomName", 8)) {
+      if (var1.contains("CustomName", 8)) {
          this.method_36921(ITextComponent$class_40.func_240643_a_(var1.method_25965("CustomName")));
       }
 
-      if (var1.method_25939("TrackOutput", 1)) {
-         this.field_41601 = var1.method_25933("TrackOutput");
+      if (var1.contains("TrackOutput", 1)) {
+         this.field_41601 = var1.getBoolean("TrackOutput");
       }
 
-      if (var1.method_25939("LastOutput", 8) && this.field_41601) {
+      if (var1.contains("LastOutput", 8) && this.field_41601) {
          try {
             this.field_41597 = ITextComponent$class_40.func_240643_a_(var1.method_25965("LastOutput"));
          } catch (Throwable var5) {
@@ -69,7 +69,7 @@ public abstract class class_8116 implements class_5801 {
       }
 
       if (var1.method_25938("UpdateLastExecution")) {
-         this.field_41598 = var1.method_25933("UpdateLastExecution");
+         this.field_41598 = var1.getBoolean("UpdateLastExecution");
       }
 
       if (this.field_41598 && var1.method_25938("LastExecution")) {

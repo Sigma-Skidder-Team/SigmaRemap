@@ -169,7 +169,7 @@ public class class_9399 extends class_5834 {
          var4.add(var7);
       }
 
-      var1.method_25946("ArmorItems", var4);
+      var1.put("ArmorItems", var4);
       class_3416 var9 = new class_3416();
 
       for (ItemStack var11 : this.field_48058) {
@@ -181,23 +181,23 @@ public class class_9399 extends class_5834 {
          var9.add(var8);
       }
 
-      var1.method_25946("HandItems", var9);
-      var1.method_25934("Invisible", this.method_37109());
-      var1.method_25934("Small", this.method_43503());
-      var1.method_25934("ShowArms", this.method_43499());
+      var1.put("HandItems", var9);
+      var1.putBoolean("Invisible", this.method_37109());
+      var1.putBoolean("Small", this.method_43503());
+      var1.putBoolean("ShowArms", this.method_43499());
       var1.method_25931("DisabledSlots", this.field_48051);
-      var1.method_25934("NoBasePlate", this.method_43495());
+      var1.putBoolean("NoBasePlate", this.method_43495());
       if (this.method_43493()) {
-         var1.method_25934("Marker", this.method_43493());
+         var1.putBoolean("Marker", this.method_43493());
       }
 
-      var1.method_25946("Pose", this.method_43518());
+      var1.put("Pose", this.method_43518());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("ArmorItems", 9)) {
+      if (var1.contains("ArmorItems", 9)) {
          class_3416 var4 = var1.method_25927("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field_48054.size(); var5++) {
@@ -205,7 +205,7 @@ public class class_9399 extends class_5834 {
          }
       }
 
-      if (var1.method_25939("HandItems", 9)) {
+      if (var1.contains("HandItems", 9)) {
          class_3416 var6 = var1.method_25927("HandItems", 10);
 
          for (int var8 = 0; var8 < this.field_48058.size(); var8++) {
@@ -213,14 +213,14 @@ public class class_9399 extends class_5834 {
          }
       }
 
-      this.method_37333(var1.method_25933("Invisible"));
-      this.method_43490(var1.method_25933("Small"));
-      this.method_43511(var1.method_25933("ShowArms"));
+      this.method_37333(var1.getBoolean("Invisible"));
+      this.method_43490(var1.getBoolean("Small"));
+      this.method_43511(var1.getBoolean("ShowArms"));
       this.field_48051 = var1.method_25947("DisabledSlots");
-      this.method_43519(var1.method_25933("NoBasePlate"));
-      this.method_43515(var1.method_25933("Marker"));
+      this.method_43519(var1.getBoolean("NoBasePlate"));
+      this.method_43515(var1.getBoolean("Marker"));
       this.field_41731 = !this.method_43497();
-      CompoundNBT var7 = var1.method_25937("Pose");
+      CompoundNBT var7 = var1.getCompound("Pose");
       this.method_43506(var7);
    }
 
@@ -242,27 +242,27 @@ public class class_9399 extends class_5834 {
    private CompoundNBT method_43518() {
       CompoundNBT var3 = new CompoundNBT();
       if (!field_48039.equals(this.field_48044)) {
-         var3.method_25946("Head", this.field_48044.method_6282());
+         var3.put("Head", this.field_48044.method_6282());
       }
 
       if (!field_48053.equals(this.field_48040)) {
-         var3.method_25946("Body", this.field_48040.method_6282());
+         var3.put("Body", this.field_48040.method_6282());
       }
 
       if (!field_48034.equals(this.field_48041)) {
-         var3.method_25946("LeftArm", this.field_48041.method_6282());
+         var3.put("LeftArm", this.field_48041.method_6282());
       }
 
       if (!field_48056.equals(this.field_48035)) {
-         var3.method_25946("RightArm", this.field_48035.method_6282());
+         var3.put("RightArm", this.field_48035.method_6282());
       }
 
       if (!field_48061.equals(this.field_48055)) {
-         var3.method_25946("LeftLeg", this.field_48055.method_6282());
+         var3.put("LeftLeg", this.field_48055.method_6282());
       }
 
       if (!field_48043.equals(this.field_48037)) {
-         var3.method_25946("RightLeg", this.field_48037.method_6282());
+         var3.put("RightLeg", this.field_48037.method_6282());
       }
 
       return var3;
@@ -354,7 +354,7 @@ public class class_9399 extends class_5834 {
          return false;
       } else if (var7.method_28022() && (this.field_48051 & 1 << var2.method_31773() + 16) != 0) {
          return false;
-      } else if (var1.field_3876.isCreativeMode && var7.method_28022() && !var3.method_28022()) {
+      } else if (var1.playerAbilities.isCreativeMode && var7.method_28022() && !var3.method_28022()) {
          ItemStack var9 = var3.method_27973();
          var9.method_28017(1);
          this.method_37349(var2, var9);
@@ -397,7 +397,7 @@ public class class_9399 extends class_5834 {
             boolean var7 = "player".equals(var1.method_28347());
             if (!var7 && !var5) {
                return false;
-            } else if (var1.method_28372() instanceof class_704 && !((class_704)var1.method_28372()).field_3876.allowEdit) {
+            } else if (var1.method_28372() instanceof class_704 && !((class_704)var1.method_28372()).playerAbilities.allowEdit) {
                return false;
             } else if (var1.method_28349()) {
                this.method_43496();

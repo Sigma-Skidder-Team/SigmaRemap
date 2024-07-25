@@ -369,7 +369,7 @@ public class class_6588 {
    public static class_3350 field_33614 = new class_3350("separateAo", "Separate AO", 0);
    public static class_3350 field_33791 = new class_3350("frustum.culling", "Frustum Culling", 0);
    private static Map<String, String> field_33749 = new HashMap<String, String>();
-   private static class_174 field_33680 = null;
+   private static ClientWorld field_33680 = null;
    private static List<Integer> field_33591 = new ArrayList<Integer>();
    private static class_8147[] field_33886 = null;
    private static class_8147[] field_33980 = null;
@@ -3192,7 +3192,7 @@ public class class_6588 {
 
    public static void method_30311(MinecraftClient var0, Camera var1, float var2, long var3) {
       method_30273("pre beginRender");
-      method_30223(field_33837.field_9601);
+      method_30223(field_33837.theWorld);
       field_33837 = var0;
       field_33837.getProfiler().startSection("init");
       field_33681 = field_33837.gameRenderer;
@@ -3235,7 +3235,7 @@ public class class_6588 {
       GlStateManager.method_8757();
       class_293.method_1309(var1, var0, var2);
       GlStateManager.method_8761();
-      class_174 var5 = field_33837.field_9601;
+      ClientWorld var5 = field_33837.theWorld;
       if (var5 != null) {
          field_33773 = var5.method_29584();
          field_33937 = (field_33773 - field_33875) % 24000L;
@@ -3376,9 +3376,9 @@ public class class_6588 {
       GlStateManager.method_8899(33984);
    }
 
-   public static void method_30223(class_174 var0) {
+   public static void method_30223(ClientWorld var0) {
       if (field_33680 != var0) {
-         class_174 var1 = field_33680;
+         ClientWorld var1 = field_33680;
          field_33680 = var0;
          method_30130(field_33837.getRenderViewEntity());
          int var2 = class_4869.method_22375(var1);
@@ -3581,7 +3581,7 @@ public class class_6588 {
 
       var0.method_36065(0.0, 0.0, -100.0);
       var0.method_36060(class_2426.field_12080.method_11074(90.0F));
-      field_33974 = field_33837.field_9601.method_13578(var2);
+      field_33974 = field_33837.theWorld.method_13578(var2);
       field_33808 = field_33974 < 0.75F ? field_33974 + 0.25F : field_33974 - 0.75F;
       float var11 = field_33974 * -360.0F;
       float var12 = field_33981 > 0.0F ? var11 % field_33981 - field_33981 * 0.5F : 0.0F;
@@ -4694,7 +4694,7 @@ public class class_6588 {
       }
    }
 
-   public static class_174 method_30215() {
+   public static ClientWorld method_30215() {
       return field_33680;
    }
 

@@ -13,7 +13,7 @@ public class BoxOutlineESP extends Module {
    @EventListen
    private void method_18562(class_3368 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer != null && client.field_9601 != null) {
+         if (client.thePlayer != null && client.theWorld != null) {
             this.method_18559();
             class_73.method_107();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -36,7 +36,7 @@ public class BoxOutlineESP extends Module {
 
    private void method_18561() {
       if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645) {
-         client.field_9601
+         client.theWorld
             .field_568
             .forEach(
                (var1, var2) -> {
@@ -71,7 +71,7 @@ public class BoxOutlineESP extends Module {
    }
 
    private void method_18558(boolean var1) {
-      for (Entity var5 : client.field_9601.method_736()) {
+      for (Entity var5 : client.theWorld.method_736()) {
          if (!SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
             boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().getBooleanValueByName("Show Players");
             boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().getBooleanValueByName("Show Mobs");

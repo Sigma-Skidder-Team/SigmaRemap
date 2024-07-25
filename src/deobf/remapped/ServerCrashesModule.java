@@ -50,7 +50,7 @@ public class ServerCrashesModule extends PremiumModule {
                case "Book":
                   ItemStack var16 = new ItemStack(class_4897.field_24805);
                   class_3416 var17 = new class_3416();
-                  class_5734 var18 = new class_5734();
+                  CompoundNBT var18 = new CompoundNBT();
                   String var19 = "";
 
                   for (int var20 = 0; var20 < 5000; var20++) {
@@ -65,7 +65,7 @@ public class ServerCrashesModule extends PremiumModule {
 
                   var18.method_25941("author", "LeakedPvP");
                   var18.method_25941("title", "Sigma");
-                  var18.method_25946("pages", var17);
+                  var18.put("pages", var17);
                   var16.method_27954("pages", var17);
                   var16.method_27965(var18);
 

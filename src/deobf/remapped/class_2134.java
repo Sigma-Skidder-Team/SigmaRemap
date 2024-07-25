@@ -49,16 +49,16 @@ public class class_2134 extends class_7186 {
    }
 
    @Override
-   public void method_32924(class_5734 var1) {
+   public void method_32924(CompoundNBT var1) {
       this.field_10685 = (class_5621<World>)class_8760.method_40243(new Dynamic(class_3504.field_17178, var1.method_25929("dimension")))
          .resultOrPartial(field_10679::error)
          .orElseThrow(() -> new IllegalArgumentException("Invalid map dimension: " + var1.method_25929("dimension")));
       this.field_10689 = var1.method_25947("xCenter");
       this.field_10677 = var1.method_25947("zCenter");
       this.field_10678 = (byte)class_9299.method_42829(var1.method_25950("scale"), 0, 4);
-      this.field_10681 = !var1.method_25939("trackingPosition", 1) || var1.method_25933("trackingPosition");
-      this.field_10688 = var1.method_25933("unlimitedTracking");
-      this.field_10686 = var1.method_25933("locked");
+      this.field_10681 = !var1.contains("trackingPosition", 1) || var1.getBoolean("trackingPosition");
+      this.field_10688 = var1.getBoolean("unlimitedTracking");
+      this.field_10686 = var1.getBoolean("locked");
       this.field_10691 = var1.method_25930("colors");
       if (this.field_10691.length != 16384) {
          this.field_10691 = new byte[16384];
@@ -98,32 +98,32 @@ public class class_2134 extends class_7186 {
    }
 
    @Override
-   public class_5734 method_32920(class_5734 var1) {
+   public CompoundNBT method_32920(CompoundNBT var1) {
       Identifier.field_22655
          .encodeStart(class_3504.field_17178, this.field_10685.method_25499())
          .resultOrPartial(field_10679::error)
-         .ifPresent(var1x -> var1.method_25946("dimension", var1x));
+         .ifPresent(var1x -> var1.put("dimension", var1x));
       var1.method_25931("xCenter", this.field_10689);
       var1.method_25931("zCenter", this.field_10677);
       var1.method_25921("scale", this.field_10678);
       var1.method_25953("colors", this.field_10691);
-      var1.method_25934("trackingPosition", this.field_10681);
-      var1.method_25934("unlimitedTracking", this.field_10688);
-      var1.method_25934("locked", this.field_10686);
+      var1.putBoolean("trackingPosition", this.field_10681);
+      var1.putBoolean("unlimitedTracking", this.field_10688);
+      var1.putBoolean("locked", this.field_10686);
       class_3416 var4 = new class_3416();
 
       for (class_2001 var6 : this.field_10682.values()) {
          var4.add(var6.method_9290());
       }
 
-      var1.method_25946("banners", var4);
+      var1.put("banners", var4);
       class_3416 var8 = new class_3416();
 
       for (class_869 var7 : this.field_10687.values()) {
          var8.add(var7.method_3761());
       }
 
-      var1.method_25946("frames", var8);
+      var1.put("frames", var8);
       return var1;
    }
 
@@ -191,12 +191,12 @@ public class class_2134 extends class_7186 {
          this.field_10687.put(var8.method_3759(), var8);
       }
 
-      class_5734 var11 = var2.method_27990();
-      if (var11 != null && var11.method_25939("Decorations", 9)) {
+      CompoundNBT var11 = var2.method_27990();
+      if (var11 != null && var11.contains("Decorations", 9)) {
          class_3416 var13 = var11.method_25927("Decorations", 10);
 
          for (int var15 = 0; var15 < var13.size(); var15++) {
-            class_5734 var16 = var13.method_15764(var15);
+            CompoundNBT var16 = var13.method_15764(var15);
             if (!this.field_10683.containsKey(var16.method_25965("id"))) {
                this.method_9972(
                   class_8086.method_36718(var16.method_25950("type")),
@@ -214,14 +214,14 @@ public class class_2134 extends class_7186 {
 
    public static void method_9969(ItemStack var0, class_1331 var1, String var2, class_8086 var3) {
       class_3416 var6;
-      if (var0.method_28002() && var0.method_27990().method_25939("Decorations", 9)) {
+      if (var0.method_28002() && var0.method_27990().contains("Decorations", 9)) {
          var6 = var0.method_27990().method_25927("Decorations", 10);
       } else {
          var6 = new class_3416();
          var0.method_27954("Decorations", var6);
       }
 
-      class_5734 var7 = new class_5734();
+      CompoundNBT var7 = new CompoundNBT();
       var7.method_25921("type", var3.method_36723());
       var7.method_25941("id", var2);
       var7.method_25923("x", (double)var1.method_12173());
@@ -229,7 +229,7 @@ public class class_2134 extends class_7186 {
       var7.method_25923("rot", 180.0);
       var6.add(var7);
       if (var3.method_36722()) {
-         class_5734 var8 = var0.method_27978("display");
+         CompoundNBT var8 = var0.method_27978("display");
          var8.method_25931("MapColor", var3.method_36720());
       }
    }

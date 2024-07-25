@@ -291,7 +291,7 @@ public class class_9558 {
                if (var2 instanceof class_9359) {
                   ItemStack var6 = ((class_9359)var2).inventory.method_32403();
                   if (!var6.method_28022()) {
-                     var5.method_25946("SelectedItem", var6.method_27998(new CompoundNBT()));
+                     var5.put("SelectedItem", var6.method_27998(new CompoundNBT()));
                   }
                }
 

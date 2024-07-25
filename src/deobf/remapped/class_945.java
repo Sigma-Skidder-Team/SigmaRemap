@@ -49,11 +49,11 @@ public class class_945 extends class_3757 {
       var1.method_25941("rotation", this.field_4831.toString());
       var1.method_25941("mirror", this.field_4840.toString());
       var1.method_25941("mode", this.field_4830.toString());
-      var1.method_25934("ignoreEntities", this.field_4839);
-      var1.method_25934("powered", this.field_4832);
-      var1.method_25934("showair", this.field_4834);
-      var1.method_25934("showboundingbox", this.field_4837);
-      var1.method_25920("integrity", this.field_4826);
+      var1.putBoolean("ignoreEntities", this.field_4839);
+      var1.putBoolean("powered", this.field_4832);
+      var1.putBoolean("showair", this.field_4834);
+      var1.putBoolean("showboundingbox", this.field_4837);
+      var1.putFloat("integrity", this.field_4826);
       var1.method_25949("seed", this.field_4829);
       return var1;
    }
@@ -91,12 +91,12 @@ public class class_945 extends class_3757 {
          this.field_4830 = class_589.field_3411;
       }
 
-      this.field_4839 = var2.method_25933("ignoreEntities");
-      this.field_4832 = var2.method_25933("powered");
-      this.field_4834 = var2.method_25933("showair");
-      this.field_4837 = var2.method_25933("showboundingbox");
+      this.field_4839 = var2.getBoolean("ignoreEntities");
+      this.field_4832 = var2.getBoolean("powered");
+      this.field_4834 = var2.getBoolean("showair");
+      this.field_4837 = var2.getBoolean("showboundingbox");
       if (var2.method_25938("integrity")) {
-         this.field_4826 = var2.method_25955("integrity");
+         this.field_4826 = var2.getFloat("integrity");
       } else {
          this.field_4826 = 1.0F;
       }

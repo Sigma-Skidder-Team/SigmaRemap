@@ -56,7 +56,7 @@ public abstract class class_5521 extends class_4109 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("ChestedHorse", this.method_25017());
+      var1.putBoolean("ChestedHorse", this.method_25017());
       if (this.method_25017()) {
          class_3416 var4 = new class_3416();
 
@@ -70,14 +70,14 @@ public abstract class class_5521 extends class_4109 {
             }
          }
 
-         var1.method_25946("Items", var4);
+         var1.put("Items", var4);
       }
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_25016(var1.method_25933("ChestedHorse"));
+      this.method_25016(var1.getBoolean("ChestedHorse"));
       if (this.method_25017()) {
          class_3416 var4 = var1.method_25927("Items", 10);
          this.method_19072();
@@ -140,7 +140,7 @@ public abstract class class_5521 extends class_4109 {
          if (!this.method_25017() && var5.method_27960() == class_4783.field_23471.method_10803()) {
             this.method_25016(true);
             this.method_25020();
-            if (!var1.field_3876.isCreativeMode) {
+            if (!var1.playerAbilities.isCreativeMode) {
                var5.method_27970(1);
             }
 

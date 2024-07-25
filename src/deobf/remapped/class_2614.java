@@ -17,7 +17,7 @@ public class class_2614 {
 
    public static synchronized class_2697 method_11857(class_9716 var0) {
       if (field_12905 && System.currentTimeMillis() > field_12906 + 5000L) {
-         class_5989 var3 = MinecraftClient.getInstance().thePlayer;
+         ClientPlayerEntity var3 = MinecraftClient.getInstance().thePlayer;
          if (var3 != null) {
             method_11860(var3.method_44878(), (class_2697)null);
             field_12906 = System.currentTimeMillis();

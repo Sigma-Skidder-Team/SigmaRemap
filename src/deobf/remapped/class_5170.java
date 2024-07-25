@@ -13,7 +13,7 @@ public class class_5170 {
       return this.field_26615;
    }
 
-   public boolean method_23695(class_174 var1, float var2, int[] var3, boolean var4) {
+   public boolean method_23695(ClientWorld var1, float var2, int[] var3, boolean var4) {
       if (this.field_26615 == null) {
          return false;
       } else {

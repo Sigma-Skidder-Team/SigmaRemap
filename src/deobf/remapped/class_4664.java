@@ -24,9 +24,9 @@ public class class_4664 extends class_8131 {
       super(class_2746.field_13429, var2);
       this.field_22750 = new Identifier(var2.method_25965("Template"));
       this.field_22745 = class_6631.valueOf(var2.method_25965("Rot"));
-      this.field_22749 = var2.method_25955("Integrity");
+      this.field_22749 = var2.getFloat("Integrity");
       this.field_22747 = class_4161.valueOf(var2.method_25965("BiomeType"));
-      this.field_22748 = var2.method_25933("IsLarge");
+      this.field_22748 = var2.getBoolean("IsLarge");
       this.method_21572(var1);
    }
 
@@ -41,9 +41,9 @@ public class class_4664 extends class_8131 {
       super.method_32517(var1);
       var1.method_25941("Template", this.field_22750.toString());
       var1.method_25941("Rot", this.field_22745.name());
-      var1.method_25920("Integrity", this.field_22749);
+      var1.putFloat("Integrity", this.field_22749);
       var1.method_25941("BiomeType", this.field_22747.toString());
-      var1.method_25934("IsLarge", this.field_22748);
+      var1.putBoolean("IsLarge", this.field_22748);
    }
 
    @Override

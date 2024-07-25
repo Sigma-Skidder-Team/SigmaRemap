@@ -18,19 +18,19 @@ public class class_2469 {
       this.field_12340 = var1;
    }
 
-   public Integer method_11357(ItemStack var1, class_174 var2, class_5834 var3) {
+   public Integer method_11357(ItemStack var1, ClientWorld var2, class_5834 var3) {
       class_6998 var6 = this.method_11361(var1, var2, var3);
       return var6 != null ? this.field_12341.get(var6) : null;
    }
 
-   public void method_11360(ItemStack var1, class_174 var2, class_5834 var3, Integer var4) {
+   public void method_11360(ItemStack var1, ClientWorld var2, class_5834 var3, Integer var4) {
       class_6998 var7 = this.method_11361(var1, var2, var3);
       if (var7 != null) {
          this.field_12341.put(var7, var4);
       }
    }
 
-   private class_6998 method_11361(ItemStack var1, class_174 var2, class_5834 var3) {
+   private class_6998 method_11361(ItemStack var1, ClientWorld var2, class_5834 var3) {
       Integer[] var6 = new Integer[this.field_12340.length];
 
       for (int var7 = 0; var7 < var6.length; var7++) {

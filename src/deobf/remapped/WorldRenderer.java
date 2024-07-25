@@ -53,7 +53,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    private final TextureManager textureManager;
    public final EntityRenderDispatcher field_20988;
    private final class_3017 field_20973;
-   private class_174 field_20970;
+   private ClientWorld field_20970;
    private Set<class_3511> field_20924 = new ObjectLinkedOpenHashSet();
    private ObjectList<class_1261> field_20982 = new ObjectArrayList(69696);
    private final Set<class_3757> field_20972 = Sets.newHashSet();
@@ -181,14 +181,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
       }
 
-      float var48 = this.client.field_9601.method_29578(var2);
+      float var48 = this.client.theWorld.method_29578(var2);
       if (!(var48 <= 0.0F)) {
          if (Config.method_14421()) {
             return;
          }
 
          var1.method_26126();
-         class_174 var10 = this.client.field_9601;
+         ClientWorld var10 = this.client.theWorld;
          int var11 = class_9299.method_42847(var3);
          int var12 = class_9299.method_42847(var5);
          int var13 = class_9299.method_42847(var7);
@@ -342,14 +342,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    public void method_20011(Camera var1) {
-      float var2 = this.client.field_9601.method_29578(1.0F) / (MinecraftClient.method_8528() ? 1.0F : 2.0F);
+      float var2 = this.client.theWorld.method_29578(1.0F) / (MinecraftClient.method_8528() ? 1.0F : 2.0F);
       if (!Config.method_14283()) {
          var2 /= 2.0F;
       }
 
       if (!(var2 <= 0.0F) && Config.method_14356()) {
          Random var3 = new Random((long)this.field_20997 * 312987231L);
-         class_174 var4 = this.client.field_9601;
+         ClientWorld var4 = this.client.theWorld;
          class_1331 var5 = new class_1331(var1.method_41627());
          class_1331 var6 = null;
          int var7 = (int)(100.0F * var2 * var2) / (this.client.gameOptions.field_45505 == class_9761.field_49576 ? 2 : 1);
@@ -381,7 +381,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   ? class_3090.field_15386
                   : class_3090.field_15376;
                this.client
-                  .field_9601
+                  .theWorld
                   .method_43361(
                      var26, (double)var11.method_12173() + var13, (double)var11.method_12165() + var24, (double)var11.method_12185() + var15, 0.0, 0.0, 0.0
                   );
@@ -392,9 +392,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.field_20965 = 0;
             if (var6.method_12165() > var5.method_12165() + 1
                && var4.method_22563(class_3801.field_18595, var5).method_12165() > class_9299.method_42848((float)var5.method_12165())) {
-               this.client.field_9601.method_721(var6, class_463.field_2554, class_562.field_3330, 0.1F, 0.5F, false);
+               this.client.theWorld.method_721(var6, class_463.field_2554, class_562.field_3330, 0.1F, 0.5F, false);
             } else {
-               this.client.field_9601.method_721(var6, class_463.field_2741, class_562.field_3330, 0.2F, 1.0F, false);
+               this.client.theWorld.method_721(var6, class_463.field_2741, class_562.field_3330, 0.2F, 1.0F, false);
             }
          }
       }
@@ -627,7 +627,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20092(class_174 var1) {
+   public void method_20092(ClientWorld var1) {
       this.field_20964 = Double.MIN_VALUE;
       this.field_21002 = Double.MIN_VALUE;
       this.field_20954 = Double.MIN_VALUE;
@@ -1084,7 +1084,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.field_20988.method_28116(this.field_20970, var6, this.client.field_9662);
       class_3492 var10 = this.field_20970.method_29599();
       var10.method_16050("light_updates");
-      this.client.field_9601.method_745().method_14813().method_21571(Integer.MAX_VALUE, true, true);
+      this.client.theWorld.method_745().method_14813().method_21571(Integer.MAX_VALUE, true, true);
       class_1343 var11 = var6.method_41627();
       double var12 = var11.method_61();
       double var14 = var11.method_60();
@@ -1114,7 +1114,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          RenderSystem.method_16392(0, 0, this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
       }
 
-      class_6377.method_29157(var6, var2, this.client.field_9601, this.client.gameOptions.field_45537, var7.method_35956(var2));
+      class_6377.method_29157(var6, var2, this.client.theWorld, this.client.gameOptions.field_45537, var7.method_35956(var2));
       RenderSystem.method_16402(16640, MinecraftClient.IS_SYSTEM_MAC);
       boolean var21 = Config.method_14424();
       if (var21) {
@@ -1127,7 +1127,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       var20.field_11841 = Config.method_14424() && !class_6588.method_30227();
       float var22 = var7.method_35955();
-      boolean var23 = this.client.field_9601.method_738().method_34252(class_9299.method_42847(var12), class_9299.method_42847(var14))
+      boolean var23 = this.client.theWorld.method_738().method_34252(class_9299.method_42847(var12), class_9299.method_42847(var14))
          || this.client.field_9614.method_13972().method_21877();
       if ((Config.method_14391() || Config.method_14282() || Config.method_14417()) && !class_6588.field_33945) {
          class_6377.method_29160(var6, class_1026.field_5679, var22, var23, var2);
@@ -1237,7 +1237,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                      || var6.method_41648()
                      || var6.method_41633() instanceof class_5834 && ((class_5834)var6.method_41633()).method_26507()
                )
-               && (!(var45 instanceof class_5989) || var6.method_41633() == var45)) {
+               && (!(var45 instanceof ClientPlayerEntity) || var6.method_41633() == var45)) {
                String var46 = var45.getClass().getName();
                Object var47 = this.field_20974.get(var46);
                if (var47 == null) {
@@ -2006,9 +2006,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
       }
 
-      if (this.client.field_9601.method_738().method_34244() == class_9571.field_48695) {
+      if (this.client.theWorld.method_738().method_34244() == class_9571.field_48695) {
          this.method_20087(var1);
-      } else if (this.client.field_9601.method_738().method_34244() == class_9571.field_48694) {
+      } else if (this.client.theWorld.method_738().method_34244() == class_9571.field_48694) {
          RenderSystem.method_16354();
          boolean var20 = Config.method_14424();
          if (var20) {
@@ -2018,7 +2018,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_1343 var4 = this.field_20970.method_750(this.client.gameRenderer.method_35949().method_41630(), var2);
          var4 = class_9300.method_42885(
             var4,
-            this.client.field_9601,
+            this.client.theWorld,
             this.client.getRenderViewEntity().method_37302(),
             this.client.getRenderViewEntity().method_37309() + 1.0,
             this.client.getRenderViewEntity().method_37156()
@@ -3554,7 +3554,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       return this.field_20966.method_34563(var1);
    }
 
-   public class_174 method_20043() {
+   public ClientWorld method_20043() {
       return this.field_20970;
    }
 

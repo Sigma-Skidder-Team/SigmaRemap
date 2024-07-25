@@ -32,7 +32,7 @@ public class class_7624 extends class_7060 {
       this.field_38792 = new class_1331(var2.method_25947("PosX"), var2.method_25947("PosY"), var2.method_25947("PosZ"));
       this.field_38795 = var2.method_25947("ground_level_delta");
       this.field_38789 = class_2609.field_12888
-         .parse(class_3504.field_17178, var2.method_25937("pool_element"))
+         .parse(class_3504.field_17178, var2.getCompound("pool_element"))
          .resultOrPartial(field_38788::error)
          .orElse(class_2044.field_10352);
       this.field_38790 = class_6631.valueOf(var2.method_25965("rotation"));
@@ -51,7 +51,7 @@ public class class_7624 extends class_7060 {
       class_2609.field_12888
          .encodeStart(class_3504.field_17178, this.field_38789)
          .resultOrPartial(field_38788::error)
-         .ifPresent(var1x -> var1.method_25946("pool_element", var1x));
+         .ifPresent(var1x -> var1.put("pool_element", var1x));
       var1.method_25941("rotation", this.field_38790.name());
       class_3416 var4 = new class_3416();
 
@@ -59,7 +59,7 @@ public class class_7624 extends class_7060 {
          var4.add((class_8406)var6.method_289(class_3504.field_17178).getValue());
       }
 
-      var1.method_25946("junctions", var4);
+      var1.put("junctions", var4);
    }
 
    @Override

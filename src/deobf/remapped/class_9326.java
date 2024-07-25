@@ -26,7 +26,7 @@ public class class_9326 implements class_2231 {
    private static final List<class_7154> field_47626 = ImmutableList.of(
       class_7154.field_36845, class_7154.field_36843, class_7154.field_36846, class_7154.field_36847, class_7154.field_36844
    );
-   public class_174 field_47617;
+   public ClientWorld field_47617;
    private final Map<class_7154, Queue<class_9733>> field_47619 = Maps.newIdentityHashMap();
    private final Queue<class_3705> field_47621 = Queues.newArrayDeque();
    private final TextureManager field_47623;
@@ -36,7 +36,7 @@ public class class_9326 implements class_2231 {
    private final Map<Identifier, class_9838> field_47622 = Maps.newHashMap();
    private final class_8359 field_47616 = new class_8359(class_8359.field_42805);
 
-   public class_9326(class_174 var1, TextureManager var2) {
+   public class_9326(ClientWorld var1, TextureManager var2) {
       var2.method_35682(this.field_47616.method_38519(), this.field_47616);
       this.field_47617 = var1;
       this.field_47623 = var2;
@@ -373,7 +373,7 @@ public class class_9326 implements class_2231 {
       RenderSystem.enableDepthTest();
    }
 
-   public void method_43041(class_174 var1) {
+   public void method_43041(ClientWorld var1) {
       this.field_47617 = var1;
       this.field_47619.clear();
       this.field_47621.clear();

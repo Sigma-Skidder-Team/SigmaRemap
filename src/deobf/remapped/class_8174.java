@@ -48,7 +48,7 @@ public class class_8174 implements class_2274 {
       this.field_41848++;
       if (this.field_41851.method_40539() == GameType.SURVIVAL) {
          if (this.field_41848 == 1) {
-            class_5989 var3 = this.field_41851.method_40530().thePlayer;
+            ClientPlayerEntity var3 = this.field_41851.method_40530().thePlayer;
             if (var3 != null) {
                for (class_6414 var5 : field_41850) {
                   if (var3.inventory.method_32405(new ItemStack(var5))) {
@@ -80,7 +80,7 @@ public class class_8174 implements class_2274 {
       }
    }
 
-   public void Ꮤ釒掬㼜塱㨳(class_174 var1, class_7474 var2) {
+   public void Ꮤ釒掬㼜塱㨳(ClientWorld var1, class_7474 var2) {
       if (var2.method_33990() == class_1430.field_7717) {
          class_2522 var5 = var1.method_28262(((class_9529)var2).method_43955());
          if (field_41850.contains(var5.method_8360())) {
@@ -98,7 +98,7 @@ public class class_8174 implements class_2274 {
       }
    }
 
-   public static boolean method_37476(class_5989 var0) {
+   public static boolean method_37476(ClientPlayerEntity var0) {
       for (class_6414 var4 : field_41850) {
          if (var0.method_27331().method_19276(class_6234.field_31905.method_43790(var4)) > 0) {
             return true;

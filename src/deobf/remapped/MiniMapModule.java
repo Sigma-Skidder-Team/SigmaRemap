@@ -44,7 +44,7 @@ public class MiniMapModule extends Module {
 
    @EventListen
    private void method_22829(class_5596 var1) {
-      if (this.method_42015() && client.thePlayer != null && client.field_9601 != null) {
+      if (this.method_42015() && client.thePlayer != null && client.theWorld != null) {
          this.field_25741++;
          if ((double)field_25738 < client.thePlayer.method_37309() && client.thePlayer.field_41726) {
             field_25738 += 0.5F;
@@ -59,7 +59,7 @@ public class MiniMapModule extends Module {
 
             for (int var5 = -this.field_25729 / 2; var5 < this.field_25729 / 2; var5++) {
                for (int var6 = -this.field_25729 / 2; var6 < this.field_25729 / 2; var6++) {
-                  var4.add(client.field_9601.method_29554(client.thePlayer.field_41742 + var5, client.thePlayer.field_41714 + var6));
+                  var4.add(client.theWorld.method_29554(client.thePlayer.field_41742 + var5, client.thePlayer.field_41714 + var6));
                }
             }
 
@@ -109,7 +109,7 @@ public class MiniMapModule extends Module {
    @EventListen
    @class_315
    private void method_22828(class_3278 var1) throws IOException {
-      if (this.method_42015() && client.thePlayer != null && client.field_9601 != null) {
+      if (this.method_42015() && client.thePlayer != null && client.theWorld != null) {
          if (this.field_25730 != null) {
             if (!MinecraftClient.getInstance().gameOptions.field_45470) {
                if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
@@ -187,7 +187,7 @@ public class MiniMapModule extends Module {
 
       for (int var5 = -this.field_25729 / 2; var5 < this.field_25729 / 2; var5++) {
          for (int var6 = -this.field_25729 / 2; var6 < this.field_25729 / 2; var6++) {
-            var4.add(client.field_9601.method_29554(client.thePlayer.field_41742 + var5, client.thePlayer.field_41714 + var6));
+            var4.add(client.theWorld.method_29554(client.thePlayer.field_41742 + var5, client.thePlayer.field_41714 + var6));
          }
       }
 

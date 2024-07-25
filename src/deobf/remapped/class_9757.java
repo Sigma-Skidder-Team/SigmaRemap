@@ -8,13 +8,13 @@ public final class class_9757 implements class_3825 {
    private final class_5885 field_49562 = new class_5885(null);
 
    @Override
-   public float method_17802(ItemStack var1, class_174 var2, class_5834 var3) {
+   public float method_17802(ItemStack var1, ClientWorld var2, class_5834 var3) {
       Object var6 = var3 == null ? var1.method_27993() : var3;
       if (var6 == null) {
          return 0.0F;
       } else {
-         if (var2 == null && ((Entity)var6).field_41768 instanceof class_174) {
-            var2 = (class_174)((Entity)var6).field_41768;
+         if (var2 == null && ((Entity)var6).field_41768 instanceof ClientWorld) {
+            var2 = (ClientWorld)((Entity)var6).field_41768;
          }
 
          class_1331 var7 = !class_8036.method_36487(var1) ? this.method_45037(var2) : this.method_45036(var2, var1.method_27994());
@@ -69,7 +69,7 @@ public final class class_9757 implements class_3825 {
    }
 
    @Nullable
-   private class_1331 method_45037(class_174 var1) {
+   private class_1331 method_45037(ClientWorld var1) {
       return !var1.method_22572().method_40233() ? null : var1.method_758();
    }
 
@@ -80,7 +80,7 @@ public final class class_9757 implements class_3825 {
       if (var5 && var6) {
          Optional var7 = class_8036.method_36488(var2);
          if (var7.isPresent() && var1.method_29545() == var7.get()) {
-            return class_4338.method_20189(var2.method_25937("LodestonePos"));
+            return class_4338.method_20189(var2.getCompound("LodestonePos"));
          }
       }
 

@@ -237,6 +237,6 @@ public class class_823 extends class_462 {
          var4.add(var6.method_44388());
       }
 
-      var1.method_25946("Entrances", var4);
+      var1.put("Entrances", var4);
    }
 }

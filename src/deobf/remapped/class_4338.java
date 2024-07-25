@@ -21,7 +21,7 @@ public final class class_4338 {
    public static GameProfile method_20184(CompoundNBT var0) {
       String var3 = null;
       UUID var4 = null;
-      if (var0.method_25939("Name", 8)) {
+      if (var0.contains("Name", 8)) {
          var3 = var0.method_25965("Name");
       }
 
@@ -31,8 +31,8 @@ public final class class_4338 {
 
       try {
          GameProfile var5 = new GameProfile(var4, var3);
-         if (var0.method_25939("Properties", 10)) {
-            CompoundNBT var6 = var0.method_25937("Properties");
+         if (var0.contains("Properties", 10)) {
+            CompoundNBT var6 = var0.getCompound("Properties");
 
             for (String var8 : var6.method_25952()) {
                class_3416 var9 = var6.method_25927(var8, 10);
@@ -40,7 +40,7 @@ public final class class_4338 {
                for (int var10 = 0; var10 < var9.size(); var10++) {
                   CompoundNBT var11 = var9.method_15764(var10);
                   String var12 = var11.method_25965("Value");
-                  if (var11.method_25939("Signature", 8)) {
+                  if (var11.contains("Signature", 8)) {
                      var5.getProperties().put(var8, new Property(var8, var12, var11.method_25965("Signature")));
                   } else {
                      var5.getProperties().put(var8, new Property(var8, var12));
@@ -80,10 +80,10 @@ public final class class_4338 {
                var7.add(var10);
             }
 
-            var4.method_25946(var6, var7);
+            var4.put(var6, var7);
          }
 
-         var0.method_25946("Properties", var4);
+         var0.put("Properties", var4);
       }
 
       return var0;
@@ -174,13 +174,13 @@ public final class class_4338 {
    }
 
    public static class_2522 method_20185(CompoundNBT var0) {
-      if (!var0.method_25939("Name", 8)) {
+      if (!var0.contains("Name", 8)) {
          return class_4783.field_23184.method_29260();
       } else {
          class_6414 var3 = class_8669.field_44462.method_39806(new Identifier(var0.method_25965("Name")));
          class_2522 var4 = var3.method_29260();
-         if (var0.method_25939("Properties", 10)) {
-            CompoundNBT var5 = var0.method_25937("Properties");
+         if (var0.contains("Properties", 10)) {
+            CompoundNBT var5 = var0.getCompound("Properties");
             class_8021 var6 = var3.method_29306();
 
             for (String var8 : var5.method_25952()) {
@@ -221,7 +221,7 @@ public final class class_4338 {
             var5.method_25941(var8.method_23109(), method_20188(var8, (Comparable<?>)var7.getValue()));
          }
 
-         var3.method_25946("Properties", var5);
+         var3.put("Properties", var5);
       }
 
       return var3;

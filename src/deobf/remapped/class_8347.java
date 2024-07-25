@@ -105,10 +105,10 @@ public class class_8347 extends class_7157 {
                         var7.add(((class_239)var9.method_27960()).method_1015().method_41793());
                      }
                   } else {
-                     var5.method_25934("Trail", true);
+                     var5.putBoolean("Trail", true);
                   }
                } else {
-                  var5.method_25934("Flicker", true);
+                  var5.putBoolean("Flicker", true);
                }
             } else {
                var6 = field_42755.get(var9.method_27960());

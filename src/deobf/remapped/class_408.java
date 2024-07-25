@@ -118,7 +118,7 @@ public class class_408 extends class_2208<class_3682> {
          .method_7624(class_8427.field_43111, class_9077.field_46498)
          .method_7624(class_8427.values()[var1], class_9077.field_46493)
          .method_7625();
-      var7.method_25946("Patterns", var8);
+      var7.put("Patterns", var8);
       class_7966 var9 = new class_7966();
       var9.method_36063();
       var9.method_36065((double)((float)var2 + 0.5F), (double)(var3 + 16), 0.0);
@@ -214,7 +214,7 @@ public class class_408 extends class_2208<class_3682> {
       ItemStack var5 = this.field_10956.method_17096().method_35898();
       ItemStack var6 = this.field_10956.method_17094().method_35898();
       CompoundNBT var7 = var4.method_27978("BlockEntityTag");
-      this.field_1714 = var7.method_25939("Patterns", 9) && !var4.method_28022() && var7.method_25927("Patterns", 10).size() >= 6;
+      this.field_1714 = var7.contains("Patterns", 9) && !var4.method_28022() && var7.method_25927("Patterns", 10).size() >= 6;
       if (this.field_1714) {
          this.field_1702 = null;
       }

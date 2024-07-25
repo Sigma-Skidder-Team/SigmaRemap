@@ -7,11 +7,11 @@ public final class class_6180 implements class_3825 {
    private long field_31592;
 
    @Override
-   public float method_17802(ItemStack var1, class_174 var2, class_5834 var3) {
+   public float method_17802(ItemStack var1, ClientWorld var2, class_5834 var3) {
       Object var6 = var3 == null ? var1.method_27993() : var3;
       if (var6 != null) {
-         if (var2 == null && ((Entity)var6).field_41768 instanceof class_174) {
-            var2 = (class_174)((Entity)var6).field_41768;
+         if (var2 == null && ((Entity)var6).field_41768 instanceof ClientWorld) {
+            var2 = (ClientWorld)((Entity)var6).field_41768;
          }
 
          if (var2 != null) {

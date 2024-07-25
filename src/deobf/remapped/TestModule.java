@@ -202,7 +202,7 @@ public class TestModule extends Module {
             }
          } else {
             class_3398 var18 = (class_3398)var4;
-            Entity var6 = var18.method_15695(client.field_9601);
+            Entity var6 = var18.method_15695(client.theWorld);
             if (var6 != null) {
                var6.method_45509().getString();
             } else {

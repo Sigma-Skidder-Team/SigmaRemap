@@ -15,7 +15,7 @@ public class class_7494 {
    }
 
    public static final class_6414 method_34120(class_1331 var0) {
-      return field_38239.field_9601.method_28262(var0).method_8360();
+      return field_38239.theWorld.method_28262(var0).method_8360();
    }
 
    public static final class_6414 method_34119(double var0, double var2, double var4) {
@@ -23,9 +23,9 @@ public class class_7494 {
    }
 
    public static boolean method_34117(class_6414 var0, class_1331 var1) {
-      class_4190 var4 = var0.method_29260().method_8324(field_38239.field_9601, var1);
+      class_4190 var4 = var0.method_29260().method_8324(field_38239.theWorld, var1);
       return !method_34090(var1)
-         && field_38239.field_9601.method_6678(field_38239.thePlayer, var4)
+         && field_38239.theWorld.method_6678(field_38239.thePlayer, var4)
          && var1.method_12165() <= field_38239.thePlayer.method_37075().method_12165();
    }
 
@@ -351,7 +351,7 @@ public class class_7494 {
                   field_38239.thePlayer.method_37309() + (double)var5,
                   field_38239.thePlayer.method_37156() + (double)var7
                );
-               if (field_38239.field_9601.method_28262(var8).method_8360() instanceof class_285) {
+               if (field_38239.theWorld.method_28262(var8).method_8360() instanceof class_285) {
                   var2.add(var8);
                }
             }
@@ -402,7 +402,7 @@ public class class_7494 {
          field_38239.thePlayer.field_30507 + (double)(var6 * var7)
       );
       Entity var9 = field_38239.getRenderViewEntity();
-      return field_38239.field_9601.method_28265(new class_972(var3, var8, class_3132.field_15549, class_9583.field_48747, var9));
+      return field_38239.theWorld.method_28265(new class_972(var3, var8, class_3132.field_15549, class_9583.field_48747, var9));
    }
 
    public static class_9529 method_34079(float var0, float var1, float var2) {
@@ -426,7 +426,7 @@ public class class_7494 {
          field_38239.thePlayer.field_30507 + (double)(var8 * var2)
       );
       Entity var10 = field_38239.getRenderViewEntity();
-      return field_38239.field_9601.method_28265(new class_972(var5, var9, class_3132.field_15549, class_9583.field_48747, var10));
+      return field_38239.theWorld.method_28265(new class_972(var5, var9, class_3132.field_15549, class_9583.field_48747, var10));
    }
 
    public static class_9529 method_34080(float var0, float var1, float var2, class_1393 var3) {
@@ -446,7 +446,7 @@ public class class_7494 {
          field_38239.thePlayer.field_30507 + (double)(var9 * var2)
       );
       Entity var11 = field_38239.getRenderViewEntity();
-      return field_38239.field_9601.method_28265(new class_972(var6, var10, class_3132.field_15549, class_9583.field_48747, var11));
+      return field_38239.theWorld.method_28265(new class_972(var6, var10, class_3132.field_15549, class_9583.field_48747, var11));
    }
 
    public static class_7474 method_34115(float var0, float var1, float var2, float var3) {
@@ -472,7 +472,7 @@ public class class_7494 {
          field_38239.thePlayer.field_30507 + (double)(var13 * var2)
       );
       Entity var15 = field_38239.getRenderViewEntity();
-      return field_38239.field_9601.method_28265(new class_972(var10, var14, class_3132.field_15549, class_9583.field_48747, var15));
+      return field_38239.theWorld.method_28265(new class_972(var10, var14, class_3132.field_15549, class_9583.field_48747, var15));
    }
 
    public static class_7474 method_34100(class_1331 var0) {
@@ -486,7 +486,7 @@ public class class_7494 {
          (double)var0.method_12165(),
          (double)var0.method_12185() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)
       );
-      return field_38239.field_9601.method_28265(new class_972(var3, var4, class_3132.field_15549, class_9583.field_48747, field_38239.getRenderViewEntity()));
+      return field_38239.theWorld.method_28265(new class_972(var3, var4, class_3132.field_15549, class_9583.field_48747, field_38239.getRenderViewEntity()));
    }
 
    private boolean method_34093(class_7606 var1, float var2, float var3) {
@@ -507,7 +507,7 @@ public class class_7494 {
          field_38239.thePlayer.method_37156() + (double)(var9 * var10)
       );
       Entity var12 = field_38239.getRenderViewEntity();
-      class_9529 var13 = field_38239.field_9601.method_28265(new class_972(var6, var11, class_3132.field_15549, class_9583.field_48752, var12));
+      class_9529 var13 = field_38239.theWorld.method_28265(new class_972(var6, var11, class_3132.field_15549, class_9583.field_48752, var12));
       return var13 == null ? false : var13.method_43955().equals(var1.field_38725) && var13.method_43956() == var1.field_38724;
    }
 
@@ -598,10 +598,10 @@ public class class_7494 {
 
    public static boolean method_34090(class_1331 var0) {
       if (var0 != null) {
-         class_6414 var3 = field_38239.field_9601.method_28262(var0).method_8360();
+         class_6414 var3 = field_38239.theWorld.method_28262(var0).method_8360();
          return !var3.method_29260().method_8302() && var3.method_29260().method_8362().method_24497()
             ? false
-            : !(var3 instanceof class_163) || method_34075(field_38239.field_9601.method_28262(var0)) != 0;
+            : !(var3 instanceof class_163) || method_34075(field_38239.theWorld.method_28262(var0)) != 0;
       } else {
          return false;
       }

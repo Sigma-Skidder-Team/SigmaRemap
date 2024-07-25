@@ -105,7 +105,7 @@ public class class_2794 extends Screen {
             boolean var4x = this.field_943.method_8566();
             boolean var5x = this.field_943.method_8534();
             var1.field_36675 = false;
-            this.field_943.field_9601.method_29519();
+            this.field_943.theWorld.method_29519();
             if (!var4x) {
                this.field_943.method_8499();
             } else {

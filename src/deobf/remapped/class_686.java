@@ -35,11 +35,11 @@ public class class_686 {
    }
 
    public void method_3111(CompoundNBT var1) {
-      var1.method_25934("Saddle", this.method_3110());
+      var1.putBoolean("Saddle", this.method_3110());
    }
 
    public void method_3106(CompoundNBT var1) {
-      this.method_3112(var1.method_25933("Saddle"));
+      this.method_3112(var1.getBoolean("Saddle"));
    }
 
    public void method_3112(boolean var1) {

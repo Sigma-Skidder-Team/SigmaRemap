@@ -40,7 +40,7 @@ public class NameTagsModule extends Module {
 
             while (var4.hasNext()) {
                Entry var5 = (Entry)var4.next();
-               if (!(client.field_9601.method_28262((class_1331)var5.getKey()).method_8360() instanceof class_3744)) {
+               if (!(client.theWorld.method_28262((class_1331)var5.getKey()).method_8360() instanceof class_3744)) {
                   var4.remove();
                }
 
@@ -67,7 +67,7 @@ public class NameTagsModule extends Module {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_8585) {
             class_8585 var4 = (class_8585)var1.method_10047();
-            if (client.field_9601.method_28262(var4.method_39484().method_43955()).method_8360() instanceof class_3744) {
+            if (client.theWorld.method_28262(var4.method_39484().method_43955()).method_8360() instanceof class_3744) {
                this.field_6694 = var4.method_39484().method_43955();
             }
          }
@@ -188,7 +188,7 @@ public class NameTagsModule extends Module {
          }
 
          if (this.method_42007("Mob Owners")) {
-            for (Entity var12 : client.field_9601.method_736()) {
+            for (Entity var12 : client.theWorld.method_736()) {
                if (var12 == client.thePlayer && (var12 instanceof class_8990 || var12 instanceof class_3551)) {
                   UUID var14 = !(var12 instanceof class_8990) ? ((class_3551)var12).method_19081() : ((class_8990)var12).method_41211();
                   if (var14 != null) {

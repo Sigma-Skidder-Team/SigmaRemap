@@ -51,7 +51,7 @@ public class class_8248 extends ByteBuf {
    }
 
    public <T> T method_37771(Codec<T> var1) throws IOException {
-      class_5734 var4 = this.method_37742();
+      CompoundNBT var4 = this.method_37742();
       DataResult var5 = var1.parse(class_3504.field_17178, var4);
       if (!var5.error().isPresent()) {
          return (T)var5.result().get();
@@ -63,7 +63,7 @@ public class class_8248 extends ByteBuf {
    public <T> void method_37786(Codec<T> var1, T var2) throws IOException {
       DataResult var5 = var1.encodeStart(class_3504.field_17178, var2);
       if (!var5.error().isPresent()) {
-         this.method_37749((class_5734)var5.result().get());
+         this.method_37749((CompoundNBT)var5.result().get());
       } else {
          throw new IOException("Failed to encode: " + ((PartialResult)var5.error().get()).message() + " " + var2);
       }
@@ -236,7 +236,7 @@ public class class_8248 extends ByteBuf {
       return this;
    }
 
-   public class_8248 method_37749(class_5734 var1) {
+   public class_8248 method_37749(CompoundNBT var1) {
       if (var1 == null) {
          this.writeByte(0);
       } else {
@@ -251,17 +251,17 @@ public class class_8248 extends ByteBuf {
    }
 
    @Nullable
-   public class_5734 method_37775() {
+   public CompoundNBT method_37775() {
       return this.method_37756(new class_4694(2097152L));
    }
 
    @Nullable
-   public class_5734 method_37742() {
+   public CompoundNBT method_37742() {
       return this.method_37756(class_4694.field_22844);
    }
 
    @Nullable
-   public class_5734 method_37756(class_4694 var1) {
+   public CompoundNBT method_37756(class_4694 var1) {
       int var4 = this.readerIndex();
       byte var5 = this.readByte();
       if (var5 == 0) {
@@ -287,10 +287,10 @@ public class class_8248 extends ByteBuf {
          class_2451 var5 = var1.method_27960();
          this.method_37743(class_2451.method_11244(var5));
          this.writeByte(var1.method_27997());
-         class_5734 var6 = null;
+         CompoundNBT var6 = null;
          if (class_8835.method_40644(var5, var1) || var5.method_11251()) {
             if (var2 && class_7860.field_40139.method_3596()) {
-               var6 = (class_5734)class_7860.method_35555(var1, class_7860.field_40139);
+               var6 = (CompoundNBT)class_7860.method_35555(var1, class_7860.field_40139);
             } else {
                var6 = var1.method_27990();
             }

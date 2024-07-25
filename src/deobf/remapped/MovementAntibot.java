@@ -52,11 +52,11 @@ public class MovementAntibot extends class_5676 {
 
          if (var1.method_557() instanceof class_8650) {
             class_8650 var4 = (class_8650)var1.method_557();
-            if (!(var4.method_2564(field_28769.field_9601) instanceof class_704)) {
+            if (!(var4.method_2564(field_28769.theWorld) instanceof class_704)) {
                return;
             }
 
-            Entity var5 = var4.method_2564(field_28769.field_9601);
+            Entity var5 = var4.method_2564(field_28769.theWorld);
             boolean var6 = class_314.method_1413(var5, 0.5F);
             short var7 = var4.field_3213;
             if (!this.field_8302.containsKey(var5)) {
@@ -115,7 +115,7 @@ public class MovementAntibot extends class_5676 {
    }
 
    public boolean method_7141(Entity var1) {
-      if (!field_28769.field_9601.method_28262(var1.method_37075()).method_8302()) {
+      if (!field_28769.theWorld.method_28262(var1.method_37075()).method_8302()) {
          class_4092 var4 = new class_4092(
             var1.field_41712.field_19941,
             var1.field_41712.field_19937 - 0.5,
@@ -126,7 +126,7 @@ public class MovementAntibot extends class_5676 {
          );
 
          for (class_1331 var6 : method_7142(var1)) {
-            class_4190 var7 = field_28769.field_9601.method_28262(var6).method_8334(field_28769.field_9601, var6);
+            class_4190 var7 = field_28769.theWorld.method_28262(var6).method_8334(field_28769.theWorld, var6);
             if (!var7.method_19485() && var4.method_18909(var7.method_19483().method_18919(var6))) {
                return true;
             }

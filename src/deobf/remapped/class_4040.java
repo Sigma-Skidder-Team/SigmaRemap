@@ -161,7 +161,7 @@ public abstract class class_4040 extends class_4607 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Wave", this.field_19611);
-      var1.method_25934("CanJoinRaid", this.field_19608);
+      var1.putBoolean("CanJoinRaid", this.field_19608);
       if (this.field_19610 != null) {
          var1.method_25931("RaidId", this.field_19610.method_11288());
       }
@@ -171,8 +171,8 @@ public abstract class class_4040 extends class_4607 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_19611 = var1.method_25947("Wave");
-      this.field_19608 = var1.method_25933("CanJoinRaid");
-      if (var1.method_25939("RaidId", 3)) {
+      this.field_19608 = var1.getBoolean("CanJoinRaid");
+      if (var1.contains("RaidId", 3)) {
          if (this.field_41768 instanceof class_6331) {
             this.field_19610 = ((class_6331)this.field_41768).method_28985().method_41269(var1.method_25947("RaidId"));
          }

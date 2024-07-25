@@ -25,7 +25,7 @@ public class NukerModule extends Module {
             this.field_48181 = null;
          } else if (client.playerController.getCurrentGameType() != GameType.CREATIVE) {
             if (this.field_48181 != null) {
-               if (client.field_9601.method_28262(this.field_48181).method_8345()
+               if (client.theWorld.method_28262(this.field_48181).method_8345()
                   || Math.sqrt(
                         client.thePlayer
                            .method_37273(
@@ -82,14 +82,14 @@ public class NukerModule extends Module {
 
    @EventListen
    public void method_43659(class_3368 var1) {
-      if (this.field_48181 != null && !client.field_9601.method_28262(this.field_48181).method_8345()) {
+      if (this.field_48181 != null && !client.theWorld.method_28262(this.field_48181).method_8345()) {
          int var4 = class_314.method_1444(this.getIntValueByName("Color"), 0.4F);
          GL11.glPushMatrix();
          GL11.glDisable(2929);
          double var5 = (double)this.field_48181.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
          double var7 = (double)this.field_48181.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
          double var9 = (double)this.field_48181.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
-         class_4092 var11 = client.field_9601.method_28262(this.field_48181).method_8324(client.field_9601, this.field_48181).method_19483();
+         class_4092 var11 = client.theWorld.method_28262(this.field_48181).method_8324(client.theWorld, this.field_48181).method_19483();
          class_8194 var12 = new class_8194(
             var5 + var11.field_19941,
             var7 + var11.field_19937,
@@ -107,12 +107,12 @@ public class NukerModule extends Module {
    public static void method_43657(class_1331 var0) {
       client.method_8614().method_4813(new class_1586(class_7500.field_38263, var0, Direction.field_817));
       client.method_8614().method_4813(new class_1586(class_7500.field_38258, var0, Direction.field_817));
-      client.field_9601.method_29594(var0, class_4783.field_23184.method_29260());
+      client.theWorld.method_29594(var0, class_4783.field_23184.method_29260());
    }
 
    private boolean method_43658(class_1331 var1) {
-      class_6414 var4 = client.field_9601.method_28262(var1).method_8360();
-      return client.field_9601.method_28262(var1).method_8362().method_24497() || var4 instanceof class_2830;
+      class_6414 var4 = client.theWorld.method_28262(var1).method_8360();
+      return client.theWorld.method_28262(var1).method_8362().method_24497() || var4 instanceof class_2830;
    }
 
    private List<class_1331> method_43660(float var1) {
@@ -126,8 +126,8 @@ public class NukerModule extends Module {
                   client.thePlayer.method_37309() + (double)var5,
                   client.thePlayer.method_37156() + (double)var7
                );
-               if (!client.field_9601.method_28262(var8).method_8345()
-                  && client.field_9601.method_28262(var8).method_8364().method_22001()
+               if (!client.theWorld.method_28262(var8).method_8345()
+                  && client.theWorld.method_28262(var8).method_8364().method_22001()
                   && Math.sqrt(
                         client.thePlayer
                            .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
@@ -141,12 +141,12 @@ public class NukerModule extends Module {
                         }
                         break;
                      case "Bed":
-                        if (!(client.field_9601.method_28262(var8).method_8360() instanceof class_3633)) {
+                        if (!(client.theWorld.method_28262(var8).method_8360() instanceof class_3633)) {
                            continue;
                         }
                         break;
                      case "Egg":
-                        if (!(client.field_9601.method_28262(var8).method_8360() instanceof class_5730)) {
+                        if (!(client.theWorld.method_28262(var8).method_8360() instanceof class_5730)) {
                            continue;
                         }
                   }

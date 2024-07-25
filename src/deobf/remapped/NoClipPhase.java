@@ -14,7 +14,7 @@ public class NoClipPhase extends Module {
 
    @EventListen
    public void method_23582(class_5243 var1) {
-      if (this.method_42015() && client.field_9601 != null) {
+      if (this.method_42015() && client.theWorld != null) {
          if ((double)var1.method_23989().method_12165() >= client.thePlayer.method_37309()) {
             var1.method_23986(class_3370.method_15536());
          }

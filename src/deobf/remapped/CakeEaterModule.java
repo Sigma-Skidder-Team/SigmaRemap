@@ -92,7 +92,7 @@ public class CakeEaterModule extends Module {
                   client.thePlayer.method_37309() + (double)var5,
                   client.thePlayer.method_37156() + (double)var7
                );
-               if (client.field_9601.method_28262(var8).method_8360() instanceof class_6726
+               if (client.theWorld.method_28262(var8).method_8360() instanceof class_6726
                   && Math.sqrt(
                         client.thePlayer
                            .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)

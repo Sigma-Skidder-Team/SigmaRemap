@@ -57,7 +57,7 @@ public class class_4050 {
          if (var5.exists()) {
             class_7186 var6 = (class_7186)var1.get();
             CompoundNBT var7 = this.method_18704(var2, class_7665.method_34674().getWorldVersion());
-            var6.method_32924(var7.method_25937("data"));
+            var6.method_32924(var7.getCompound("data"));
             return (T)var6;
          }
       } catch (Exception var8) {
@@ -88,7 +88,7 @@ public class class_4050 {
             }
          }
 
-         int var63 = var10.method_25939("DataVersion", 99) ? var10.method_25947("DataVersion") : 1343;
+         int var63 = var10.contains("DataVersion", 99) ? var10.method_25947("DataVersion") : 1343;
          var16 = class_4338.method_20180(this.field_19699, class_5397.field_27555, var10, var63, var2);
       }
 

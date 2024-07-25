@@ -76,7 +76,7 @@ public class class_5778 implements AutoCloseable {
       if (this.field_29190) {
          this.field_29190 = false;
          this.field_29184.getProfiler().startSection("lightTex");
-         class_174 var4 = this.field_29184.field_9601;
+         ClientWorld var4 = this.field_29184.theWorld;
          if (var4 != null) {
             this.field_29183 = false;
             if (Config.method_14438()) {

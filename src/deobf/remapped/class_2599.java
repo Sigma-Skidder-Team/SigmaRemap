@@ -70,21 +70,21 @@ public class class_2599 extends class_6993 implements class_3832 {
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.method_26449()) {
-         var1.method_25934("IsBaby", true);
+         var1.putBoolean("IsBaby", true);
       }
 
       if (this.field_12847) {
-         var1.method_25934("CannotHunt", true);
+         var1.putBoolean("CannotHunt", true);
       }
 
-      var1.method_25946("Inventory", this.field_12846.method_21552());
+      var1.put("Inventory", this.field_12846.method_21552());
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_26910(var1.method_25933("IsBaby"));
-      this.method_11791(var1.method_25933("CannotHunt"));
+      this.method_26910(var1.getBoolean("IsBaby"));
+      this.method_11791(var1.getBoolean("CannotHunt"));
       this.field_12846.method_21549(var1.method_25927("Inventory", 10));
    }
 

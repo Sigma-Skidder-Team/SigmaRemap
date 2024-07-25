@@ -18,7 +18,7 @@ public class class_5265 extends class_7186 {
       this.field_26920.clear();
 
       for (String var5 : var1.method_25952()) {
-         if (var1.method_25939(var5, 99)) {
+         if (var1.contains(var5, 99)) {
             this.field_26920.put(var5, var1.method_25947(var5));
          }
       }

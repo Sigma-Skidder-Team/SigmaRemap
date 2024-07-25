@@ -70,7 +70,7 @@ public abstract class class_3200<C extends class_6157> {
          var5.method_25931("ChunkX", var1);
          var5.method_25931("ChunkZ", var2);
          var5.method_25931("references", this.field_15990);
-         var5.method_25946("BB", this.field_15988.method_44388());
+         var5.put("BB", this.field_15988.method_44388());
          class_3416 var6 = new class_3416();
          synchronized (this.field_15986) {
             for (class_7060 var9 : this.field_15986) {
@@ -78,7 +78,7 @@ public abstract class class_3200<C extends class_6157> {
             }
          }
 
-         var5.method_25946("Children", var6);
+         var5.put("Children", var6);
          return var5;
       } else {
          var5.method_25941("id", "INVALID");

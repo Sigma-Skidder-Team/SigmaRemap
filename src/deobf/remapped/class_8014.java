@@ -13,26 +13,26 @@ public class class_8014 {
    private int field_41049 = 1;
 
    public class_8014(CompoundNBT var1) {
-      this.field_41051 = ItemStack.method_28015(var1.method_25937("buy"));
-      this.field_41050 = ItemStack.method_28015(var1.method_25937("buyB"));
-      this.field_41052 = ItemStack.method_28015(var1.method_25937("sell"));
+      this.field_41051 = ItemStack.method_28015(var1.getCompound("buy"));
+      this.field_41050 = ItemStack.method_28015(var1.getCompound("buyB"));
+      this.field_41052 = ItemStack.method_28015(var1.getCompound("sell"));
       this.field_41048 = var1.method_25947("uses");
-      if (!var1.method_25939("maxUses", 99)) {
+      if (!var1.contains("maxUses", 99)) {
          this.field_41047 = 4;
       } else {
          this.field_41047 = var1.method_25947("maxUses");
       }
 
-      if (var1.method_25939("rewardExp", 1)) {
-         this.field_41053 = var1.method_25933("rewardExp");
+      if (var1.contains("rewardExp", 1)) {
+         this.field_41053 = var1.getBoolean("rewardExp");
       }
 
-      if (var1.method_25939("xp", 3)) {
+      if (var1.contains("xp", 3)) {
          this.field_41049 = var1.method_25947("xp");
       }
 
-      if (var1.method_25939("priceMultiplier", 5)) {
-         this.field_41044 = var1.method_25955("priceMultiplier");
+      if (var1.contains("priceMultiplier", 5)) {
+         this.field_41044 = var1.getFloat("priceMultiplier");
       }
 
       this.field_41045 = var1.method_25947("specialPrice");
@@ -152,14 +152,14 @@ public class class_8014 {
 
    public CompoundNBT method_36383() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method_25946("buy", this.field_41051.method_27998(new CompoundNBT()));
-      var3.method_25946("sell", this.field_41052.method_27998(new CompoundNBT()));
-      var3.method_25946("buyB", this.field_41050.method_27998(new CompoundNBT()));
+      var3.put("buy", this.field_41051.method_27998(new CompoundNBT()));
+      var3.put("sell", this.field_41052.method_27998(new CompoundNBT()));
+      var3.put("buyB", this.field_41050.method_27998(new CompoundNBT()));
       var3.method_25931("uses", this.field_41048);
       var3.method_25931("maxUses", this.field_41047);
-      var3.method_25934("rewardExp", this.field_41053);
+      var3.putBoolean("rewardExp", this.field_41053);
       var3.method_25931("xp", this.field_41049);
-      var3.method_25920("priceMultiplier", this.field_41044);
+      var3.putFloat("priceMultiplier", this.field_41044);
       var3.method_25931("specialPrice", this.field_41045);
       var3.method_25931("demand", this.field_41046);
       return var3;

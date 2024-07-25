@@ -637,7 +637,7 @@ public abstract class Entity implements class_9875, class_5801 {
             }
          }
 
-         double var18 = !(this instanceof class_5989)
+         double var18 = !(this instanceof ClientPlayerEntity)
             ? 0.0
             : method_37301(this, new class_1343(0.0, -var15.field_7333, 0.0), var4.method_18920(var15), this.field_41768, var5, var9).field_7333
                + var15.field_7333;
@@ -667,7 +667,7 @@ public abstract class Entity implements class_9875, class_5801 {
       boolean var9 = var1.field_7333 == 0.0;
       boolean var10 = var1.field_7334 == 0.0;
       if (var8 && var9 || var8 && var10 || var9 && var10) {
-         boolean var12 = var0 != null && var0 instanceof class_5989;
+         boolean var12 = var0 != null && var0 instanceof ClientPlayerEntity;
          return method_37288(var1, var2, var3, var4, var5, var12);
       } else {
          class_4997 var11 = new class_4997<class_4190>(Stream.<class_4190>concat(var5.method_23007(), var3.method_6680(var0, var2.method_18929(var1))));
@@ -1292,7 +1292,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return var1 < var5 * var5;
    }
 
-   public boolean method_37216(class_5734 var1) {
+   public boolean method_37216(CompoundNBT var1) {
       String var4 = this.method_37271();
       if (!this.field_41751 && var4 != null) {
          var1.method_25941("id", var4);
@@ -1303,26 +1303,26 @@ public abstract class Entity implements class_9875, class_5801 {
       }
    }
 
-   public boolean method_37350(class_5734 var1) {
+   public boolean method_37350(CompoundNBT var1) {
       return !this.method_37070() ? this.method_37216(var1) : false;
    }
 
-   public class_5734 method_37258(class_5734 var1) {
+   public CompoundNBT method_37258(CompoundNBT var1) {
       try {
          if (this.field_41739 != null) {
-            var1.method_25946("Pos", this.method_37272(this.field_41739.method_37302(), this.method_37309(), this.field_41739.method_37156()));
+            var1.put("Pos", this.method_37272(this.field_41739.method_37302(), this.method_37309(), this.field_41739.method_37156()));
          } else {
-            var1.method_25946("Pos", this.method_37272(this.method_37302(), this.method_37309(), this.method_37156()));
+            var1.put("Pos", this.method_37272(this.method_37302(), this.method_37309(), this.method_37156()));
          }
 
          class_1343 var4 = this.method_37098();
-         var1.method_25946("Motion", this.method_37272(var4.field_7336, var4.field_7333, var4.field_7334));
-         var1.method_25946("Rotation", this.method_37088(this.field_41701, this.field_41755));
-         var1.method_25920("FallDistance", this.field_41706);
+         var1.put("Motion", this.method_37272(var4.field_7336, var4.field_7333, var4.field_7334));
+         var1.put("Rotation", this.method_37088(this.field_41701, this.field_41755));
+         var1.putFloat("FallDistance", this.field_41706);
          var1.method_25958("Fire", (short)this.field_41728);
          var1.method_25958("Air", (short)this.method_37229());
-         var1.method_25934("OnGround", this.field_41726);
-         var1.method_25934("Invulnerable", this.field_41704);
+         var1.putBoolean("OnGround", this.field_41726);
+         var1.putBoolean("Invulnerable", this.field_41704);
          var1.method_25931("PortalCooldown", this.field_41771);
          var1.method_25964("UUID", this.method_37328());
          ITextComponent var11 = this.method_45508();
@@ -1331,19 +1331,19 @@ public abstract class Entity implements class_9875, class_5801 {
          }
 
          if (this.method_37135()) {
-            var1.method_25934("CustomNameVisible", this.method_37135());
+            var1.putBoolean("CustomNameVisible", this.method_37135());
          }
 
          if (this.method_37378()) {
-            var1.method_25934("Silent", this.method_37378());
+            var1.putBoolean("Silent", this.method_37378());
          }
 
          if (this.method_37078()) {
-            var1.method_25934("NoGravity", this.method_37078());
+            var1.putBoolean("NoGravity", this.method_37078());
          }
 
          if (this.field_41760) {
-            var1.method_25934("Glowing", this.field_41760);
+            var1.putBoolean("Glowing", this.field_41760);
          }
 
          if (!this.field_41757.isEmpty()) {
@@ -1353,7 +1353,7 @@ public abstract class Entity implements class_9875, class_5801 {
                var12.add(class_473.method_2261(var8));
             }
 
-            var1.method_25946("Tags", var12);
+            var1.put("Tags", var12);
          }
 
          this.method_37376(var1);
@@ -1361,14 +1361,14 @@ public abstract class Entity implements class_9875, class_5801 {
             class_3416 var13 = new class_3416();
 
             for (Entity var15 : this.method_37114()) {
-               class_5734 var9 = new class_5734();
+               CompoundNBT var9 = new CompoundNBT();
                if (var15.method_37216(var9)) {
                   var13.add(var9);
                }
             }
 
             if (!var13.isEmpty()) {
-               var1.method_25946("Passengers", var13);
+               var1.put("Passengers", var13);
             }
          }
 
@@ -1381,7 +1381,7 @@ public abstract class Entity implements class_9875, class_5801 {
       }
    }
 
-   public void method_37393(class_5734 var1) {
+   public void method_37393(CompoundNBT var1) {
       try {
          class_3416 var4 = var1.method_25927("Pos", 6);
          class_3416 var18 = var1.method_25927("Motion", 6);
@@ -1397,11 +1397,11 @@ public abstract class Entity implements class_9875, class_5801 {
          this.field_41762 = this.field_41755;
          this.method_37161(this.field_41701);
          this.method_37090(this.field_41701);
-         this.field_41706 = var1.method_25955("FallDistance");
+         this.field_41706 = var1.getFloat("FallDistance");
          this.field_41728 = var1.method_25956("Fire");
          this.method_37192(var1.method_25956("Air"));
-         this.field_41726 = var1.method_25933("OnGround");
-         this.field_41704 = var1.method_25933("Invulnerable");
+         this.field_41726 = var1.getBoolean("OnGround");
+         this.field_41704 = var1.getBoolean("Invulnerable");
          this.field_41771 = var1.method_25947("PortalCooldown");
          if (var1.method_25954("UUID")) {
             this.field_41738 = var1.method_25926("UUID");
@@ -1413,7 +1413,7 @@ public abstract class Entity implements class_9875, class_5801 {
          } else if (Double.isFinite((double)this.field_41701) && Double.isFinite((double)this.field_41755)) {
             this.method_37351();
             this.method_37395(this.field_41701, this.field_41755);
-            if (var1.method_25939("CustomName", 8)) {
+            if (var1.contains("CustomName", 8)) {
                String var13 = var1.method_25965("CustomName");
 
                try {
@@ -1423,11 +1423,11 @@ public abstract class Entity implements class_9875, class_5801 {
                }
             }
 
-            this.method_37319(var1.method_25933("CustomNameVisible"));
-            this.method_37338(var1.method_25933("Silent"));
-            this.method_37182(var1.method_25933("NoGravity"));
-            this.method_37200(var1.method_25933("Glowing"));
-            if (var1.method_25939("Tags", 9)) {
+            this.method_37319(var1.getBoolean("CustomNameVisible"));
+            this.method_37338(var1.getBoolean("Silent"));
+            this.method_37182(var1.getBoolean("NoGravity"));
+            this.method_37200(var1.getBoolean("Glowing"));
+            if (var1.contains("Tags", 9)) {
                this.field_41757.clear();
                class_3416 var20 = var1.method_25927("Tags", 8);
                int var14 = Math.min(var20.size(), 1024);
@@ -1463,9 +1463,9 @@ public abstract class Entity implements class_9875, class_5801 {
       return var3.method_30471() && var4 != null ? var4.toString() : null;
    }
 
-   public abstract void method_37314(class_5734 var1);
+   public abstract void method_37314(CompoundNBT var1);
 
-   public abstract void method_37376(class_5734 var1);
+   public abstract void method_37376(CompoundNBT var1);
 
    public class_3416 method_37272(double... var1) {
       class_3416 var4 = new class_3416();
@@ -2043,7 +2043,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37199(Entity var1) {
-      class_5734 var4 = var1.method_37258(new class_5734());
+      CompoundNBT var4 = var1.method_37258(new CompoundNBT());
       var4.method_25959("Dimension");
       this.method_37393(var4);
       this.field_41771 = var1.field_41771;

@@ -26,7 +26,7 @@ public class class_9153 {
    }
 
    public void method_42136(class_704 var1) {
-      this.field_46833.configurePlayerCapabilities(var1.field_3876);
+      this.field_46833.configurePlayerCapabilities(var1.playerAbilities);
    }
 
    public void method_42141(GameType var1) {
@@ -39,7 +39,7 @@ public class class_9153 {
       }
 
       this.field_46833 = var1;
-      this.field_46833.configurePlayerCapabilities(this.field_46835.thePlayer.field_3876);
+      this.field_46833.configurePlayerCapabilities(this.field_46835.thePlayer.playerAbilities);
    }
 
    public boolean shouldDrawHUD() {
@@ -47,8 +47,8 @@ public class class_9153 {
    }
 
    public boolean method_42152(class_1331 var1) {
-      if (!this.field_46835.thePlayer.method_3228(this.field_46835.field_9601, var1, this.field_46833)) {
-         class_174 var4 = this.field_46835.field_9601;
+      if (!this.field_46835.thePlayer.method_3228(this.field_46835.theWorld, var1, this.field_46833)) {
+         ClientWorld var4 = this.field_46835.theWorld;
          class_2522 var5 = var4.method_28262(var1);
          if (!this.field_46835.thePlayer.method_26446().method_27960().method_11203(var5, var4, var1, this.field_46835.thePlayer)) {
             return false;
@@ -75,8 +75,8 @@ public class class_9153 {
    }
 
    public boolean method_42142(class_1331 var1, Direction var2) {
-      if (!this.field_46835.thePlayer.method_3228(this.field_46835.field_9601, var1, this.field_46833)) {
-         if (!this.field_46835.field_9601.method_6673().method_9813(var1)) {
+      if (!this.field_46835.thePlayer.method_3228(this.field_46835.theWorld, var1, this.field_46833)) {
+         if (!this.field_46835.theWorld.method_6673().method_9813(var1)) {
             return false;
          } else {
             if (!this.field_46833.method_21587()) {
@@ -85,12 +85,12 @@ public class class_9153 {
                      this.method_42127(class_7500.field_38264, this.field_46836, var2);
                   }
 
-                  class_2522 var5 = this.field_46835.field_9601.method_28262(var1);
-                  this.field_46835.method_8531().method_40533(this.field_46835.field_9601, var1, var5, 0.0F);
+                  class_2522 var5 = this.field_46835.theWorld.method_28262(var1);
+                  this.field_46835.method_8531().method_40533(this.field_46835.theWorld, var1, var5, 0.0F);
                   this.method_42127(class_7500.field_38263, var1, var2);
                   boolean var6 = !var5.method_8345();
                   if (var6 && this.field_46832 == 0.0F) {
-                     var5.method_8307(this.field_46835.field_9601, var1, this.field_46835.thePlayer);
+                     var5.method_8307(this.field_46835.theWorld, var1, this.field_46835.thePlayer);
                   }
 
                   if (var6 && var5.method_8311(this.field_46835.thePlayer, this.field_46835.thePlayer.field_41768, var1) >= 1.0F) {
@@ -102,13 +102,13 @@ public class class_9153 {
                      this.field_46832 = 0.0F;
                      this.field_46825 = 0.0F;
                      this.field_46835
-                        .field_9601
+                        .theWorld
                         .method_29568(this.field_46835.thePlayer.method_37145(), this.field_46836, (int)(this.field_46832 * 10.0F) - 1);
                   }
                }
             } else {
-               class_2522 var7 = this.field_46835.field_9601.method_28262(var1);
-               this.field_46835.method_8531().method_40533(this.field_46835.field_9601, var1, var7, 1.0F);
+               class_2522 var7 = this.field_46835.theWorld.method_28262(var1);
+               this.field_46835.method_8531().method_40533(this.field_46835.theWorld, var1, var7, 1.0F);
                this.method_42127(class_7500.field_38263, var1, var2);
                this.method_42152(var1);
                this.field_46831 = 5;
@@ -123,12 +123,12 @@ public class class_9153 {
 
    public void method_42135() {
       if (this.field_46829) {
-         class_2522 var3 = this.field_46835.field_9601.method_28262(this.field_46836);
-         this.field_46835.method_8531().method_40533(this.field_46835.field_9601, this.field_46836, var3, -1.0F);
+         class_2522 var3 = this.field_46835.theWorld.method_28262(this.field_46836);
+         this.field_46835.method_8531().method_40533(this.field_46835.theWorld, this.field_46836, var3, -1.0F);
          this.method_42127(class_7500.field_38264, this.field_46836, Direction.field_802);
          this.field_46829 = false;
          this.field_46832 = 0.0F;
-         this.field_46835.field_9601.method_29568(this.field_46835.thePlayer.method_37145(), this.field_46836, -1);
+         this.field_46835.theWorld.method_29568(this.field_46835.thePlayer.method_37145(), this.field_46836, -1);
          this.field_46835.thePlayer.method_3164();
       }
    }
@@ -136,17 +136,17 @@ public class class_9153 {
    public boolean method_42163(class_1331 var1, Direction var2) {
       this.method_42129();
       if (this.field_46831 <= 0) {
-         if (this.field_46833.method_21587() && this.field_46835.field_9601.method_6673().method_9813(var1)) {
+         if (this.field_46833.method_21587() && this.field_46835.theWorld.method_6673().method_9813(var1)) {
             this.field_46831 = 5;
-            class_2522 var7 = this.field_46835.field_9601.method_28262(var1);
-            this.field_46835.method_8531().method_40533(this.field_46835.field_9601, var1, var7, 1.0F);
+            class_2522 var7 = this.field_46835.theWorld.method_28262(var1);
+            this.field_46835.method_8531().method_40533(this.field_46835.theWorld, var1, var7, 1.0F);
             this.method_42127(class_7500.field_38263, var1, var2);
             this.method_42152(var1);
             return true;
          } else if (!this.method_42160(var1)) {
             return this.method_42142(var1, var2);
          } else {
-            class_2522 var5 = this.field_46835.field_9601.method_28262(var1);
+            class_2522 var5 = this.field_46835.theWorld.method_28262(var1);
             if (!var5.method_8345()) {
                this.field_46832 = this.field_46832 + var5.method_8311(this.field_46835.thePlayer, this.field_46835.thePlayer.field_41768, var1);
                if (this.field_46825 % 4.0F == 0.0F) {
@@ -159,7 +159,7 @@ public class class_9153 {
                }
 
                this.field_46825++;
-               this.field_46835.method_8531().method_40533(this.field_46835.field_9601, var1, var5, class_9299.method_42828(this.field_46832, 0.0F, 1.0F));
+               this.field_46835.method_8531().method_40533(this.field_46835.theWorld, var1, var5, class_9299.method_42828(this.field_46832, 0.0F, 1.0F));
                if (this.field_46832 >= 1.0F) {
                   this.field_46829 = false;
                   this.method_42127(class_7500.field_38258, var1, var2);
@@ -169,7 +169,7 @@ public class class_9153 {
                   this.field_46831 = 5;
                }
 
-               this.field_46835.field_9601.method_29568(this.field_46835.thePlayer.method_37145(), this.field_46836, (int)(this.field_46832 * 10.0F) - 1);
+               this.field_46835.theWorld.method_29568(this.field_46835.thePlayer.method_37145(), this.field_46836, (int)(this.field_46832 * 10.0F) - 1);
                return true;
             } else {
                this.field_46829 = false;
@@ -215,10 +215,10 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42147(class_5989 var1, class_174 var2, class_2584 var3, class_9529 var4) {
+   public class_6910 method_42147(ClientPlayerEntity var1, ClientWorld var2, class_2584 var3, class_9529 var4) {
       this.method_42129();
       class_1331 var7 = var4.method_43955();
-      if (this.field_46835.field_9601.method_6673().method_9813(var7)) {
+      if (this.field_46835.theWorld.method_6673().method_9813(var7)) {
          ItemStack var8 = var1.method_26617(var3);
          if (this.field_46833 == GameType.SPECTATOR) {
             this.field_46837.method_4813(new class_8585(var3, var4));
@@ -278,12 +278,12 @@ public class class_9153 {
       }
    }
 
-   public class_5989 method_42131(class_174 var1, class_4156 var2, class_2716 var3) {
+   public ClientPlayerEntity method_42131(ClientWorld var1, class_4156 var2, class_2716 var3) {
       return this.method_42130(var1, var2, var3, false, false);
    }
 
-   public class_5989 method_42130(class_174 var1, class_4156 var2, class_2716 var3, boolean var4, boolean var5) {
-      return new class_5989(this.field_46835, var1, this.field_46837, var2, var3, var4, var5);
+   public ClientPlayerEntity method_42130(ClientWorld var1, class_4156 var2, class_2716 var3, boolean var4, boolean var5) {
+      return new ClientPlayerEntity(this.field_46835, var1, this.field_46837, var2, var3, var4, var5);
    }
 
    public void method_42138(class_704 var1, Entity var2) {
@@ -379,17 +379,17 @@ public class class_9153 {
    }
 
    private void method_42127(class_7500 var1, class_1331 var2, Direction var3) {
-      class_5989 var6 = this.field_46835.thePlayer;
+      ClientPlayerEntity var6 = this.field_46835.thePlayer;
       this.field_46830.put(Pair.of(var2, var1), var6.method_37245());
       this.field_46837.method_4813(new class_1586(var1, var2, var3));
    }
 
-   public void method_42159(class_174 var1, class_1331 var2, class_2522 var3, class_7500 var4, boolean var5) {
+   public void method_42159(ClientWorld var1, class_1331 var2, class_2522 var3, class_7500 var4, boolean var5) {
       class_1343 var8 = (class_1343)this.field_46830.remove(Pair.of(var2, var4));
       class_2522 var9 = var1.method_28262(var2);
       if ((var8 == null || !var5 || var4 != class_7500.field_38263 && var9 != var3) && var9 != var3) {
          var1.method_743(var2, var3);
-         class_5989 var10 = this.field_46835.thePlayer;
+         ClientPlayerEntity var10 = this.field_46835.thePlayer;
          if (var8 != null && var1 == var10.field_41768 && var10.method_37381(var2, var3)) {
             var10.method_37165(var8.field_7336, var8.field_7333, var8.field_7334);
          }

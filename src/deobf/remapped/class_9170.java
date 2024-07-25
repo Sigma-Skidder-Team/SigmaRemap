@@ -24,7 +24,7 @@ public class class_9170 extends class_5837 {
             var5.method_25949("LootTableSeed", this.field_46927);
          }
 
-         var1.method_27994().method_25946("BlockEntityTag", var5);
+         var1.method_27994().put("BlockEntityTag", var5);
          return var1;
       } else {
          return var1;

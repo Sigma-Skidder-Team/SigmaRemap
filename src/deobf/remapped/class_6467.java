@@ -14,7 +14,7 @@ public class class_6467 extends Module {
    @EventListen
    private void method_29452(class_3368 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer != null && client.field_9601 != null) {
+         if (client.thePlayer != null && client.theWorld != null) {
             this.method_29455();
             this.method_29453();
             this.method_29450();
@@ -43,7 +43,7 @@ public class class_6467 extends Module {
       GL11.glEnable(2896);
       GL11.glPolygonOffset(-30000.0F, 1.0F);
 
-      for (Entity var9 : client.field_9601.method_736()) {
+      for (Entity var9 : client.theWorld.method_736()) {
          if (this.method_29451(var9)) {
             GL11.glPushMatrix();
             class_1343 var10 = client.gameRenderer.method_35949().method_41627();
@@ -102,7 +102,7 @@ public class class_6467 extends Module {
    private boolean method_29451(Entity var1) {
       if (var1 instanceof class_5834) {
          if (var1 instanceof class_704) {
-            return !(var1 instanceof class_5989) ? !SigmaMainClass.getInstance().method_3331().method_20495(var1) : false;
+            return !(var1 instanceof ClientPlayerEntity) ? !SigmaMainClass.getInstance().method_3331().method_20495(var1) : false;
          } else {
             return false;
          }

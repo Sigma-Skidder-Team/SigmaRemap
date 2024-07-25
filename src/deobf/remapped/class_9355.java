@@ -32,13 +32,13 @@ public class class_9355 extends class_2811 implements class_3449 {
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
          .resultOrPartial(field_41741::error)
-         .ifPresent(var1x -> var1.method_25946("VillagerData", var1x));
+         .ifPresent(var1x -> var1.put("VillagerData", var1x));
       if (this.field_47748 != null) {
-         var1.method_25946("Offers", this.field_47748);
+         var1.put("Offers", this.field_47748);
       }
 
       if (this.field_47744 != null) {
-         var1.method_25946("Gossips", this.field_47744);
+         var1.put("Gossips", this.field_47744);
       }
 
       var1.method_25931("ConversionTime", !this.method_43208() ? -1 : this.field_47746);
@@ -52,24 +52,24 @@ public class class_9355 extends class_2811 implements class_3449 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("VillagerData", 10)) {
+      if (var1.contains("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
          var4.resultOrPartial(field_41741::error).ifPresent(this::method_43207);
       }
 
-      if (var1.method_25939("Offers", 10)) {
-         this.field_47748 = var1.method_25937("Offers");
+      if (var1.contains("Offers", 10)) {
+         this.field_47748 = var1.getCompound("Offers");
       }
 
-      if (var1.method_25939("Gossips", 10)) {
+      if (var1.contains("Gossips", 10)) {
          this.field_47744 = var1.method_25927("Gossips", 10);
       }
 
-      if (var1.method_25939("ConversionTime", 99) && var1.method_25947("ConversionTime") > -1) {
+      if (var1.contains("ConversionTime", 99) && var1.method_25947("ConversionTime") > -1) {
          this.method_43201(!var1.method_25954("ConversionPlayer") ? null : var1.method_25926("ConversionPlayer"), var1.method_25947("ConversionTime"));
       }
 
-      if (var1.method_25939("Xp", 3)) {
+      if (var1.contains("Xp", 3)) {
          this.field_47751 = var1.method_25947("Xp");
       }
    }
@@ -95,7 +95,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       } else if (!this.isPotionActive(Effects.field_19737)) {
          return class_6910.field_35518;
       } else {
-         if (!var1.field_3876.isCreativeMode) {
+         if (!var1.playerAbilities.isCreativeMode) {
             var5.method_27970(1);
          }
 

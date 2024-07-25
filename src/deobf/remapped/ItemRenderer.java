@@ -243,7 +243,7 @@ public class ItemRenderer implements class_6491 {
          var7 = this.field_44876.method_20803().method_33943(new class_454("minecraft:trident_in_hand#inventory"));
       }
 
-      class_174 var8 = !(var2 instanceof class_174) ? null : (class_174)var2;
+      ClientWorld var8 = !(var2 instanceof ClientWorld) ? null : (ClientWorld)var2;
       class_602.field_3456 = null;
       class_7373 var9 = var7.method_33584().method_2816(var7, var1, var8, var3);
       if (Config.method_14390()) {
@@ -395,7 +395,7 @@ public class ItemRenderer implements class_6491 {
             RenderSystem.enableDepthTest();
          }
 
-         class_5989 var20 = MinecraftClient.getInstance().thePlayer;
+         ClientPlayerEntity var20 = MinecraftClient.getInstance().thePlayer;
          float var22 = var20 != null ? var20.method_3173().method_32960(var2.method_27960(), MinecraftClient.getInstance().method_8554()) : 0.0F;
          if (var22 > 0.0F) {
             RenderSystem.method_16491();

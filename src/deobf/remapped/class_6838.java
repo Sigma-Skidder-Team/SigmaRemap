@@ -10,8 +10,8 @@ public class class_6838 extends class_3757 implements class_5507 {
    @Override
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
-      if (var2.method_25939("RecordItem", 10)) {
-         this.method_31352(ItemStack.method_28015(var2.method_25937("RecordItem")));
+      if (var2.contains("RecordItem", 10)) {
+         this.method_31352(ItemStack.method_28015(var2.getCompound("RecordItem")));
       }
    }
 
@@ -19,7 +19,7 @@ public class class_6838 extends class_3757 implements class_5507 {
    public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (!this.method_31351().method_28022()) {
-         var1.method_25946("RecordItem", this.method_31351().method_27998(new CompoundNBT()));
+         var1.put("RecordItem", this.method_31351().method_27998(new CompoundNBT()));
       }
 
       return var1;

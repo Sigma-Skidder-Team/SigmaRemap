@@ -124,12 +124,12 @@ public class class_9359 extends class_704 implements class_117 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("playerGameType", 99)) {
+      if (var1.contains("playerGameType", 99)) {
          if (!this.method_37268().method_1621()) {
             this.field_47807
                .method_39516(
                   GameType.method_21590(var1.method_25947("playerGameType")),
-                  !var1.method_25939("previousPlayerGameType", 3)
+                  !var1.contains("previousPlayerGameType", 3)
                      ? GameType.NOT_SET
                      : GameType.method_21590(var1.method_25947("previousPlayerGameType"))
                );
@@ -138,24 +138,24 @@ public class class_9359 extends class_704 implements class_117 {
          }
       }
 
-      if (var1.method_25939("enteredNetherPosition", 10)) {
-         CompoundNBT var4 = var1.method_25937("enteredNetherPosition");
+      if (var1.contains("enteredNetherPosition", 10)) {
+         CompoundNBT var4 = var1.getCompound("enteredNetherPosition");
          this.field_47793 = new class_1343(var4.method_25932("x"), var4.method_25932("y"), var4.method_25932("z"));
       }
 
-      this.field_47783 = var1.method_25933("seenCredits");
-      if (var1.method_25939("recipeBook", 10)) {
-         this.field_47805.method_14034(var1.method_25937("recipeBook"), this.field_47801.method_1705());
+      this.field_47783 = var1.getBoolean("seenCredits");
+      if (var1.contains("recipeBook", 10)) {
+         this.field_47805.method_14034(var1.getCompound("recipeBook"), this.field_47801.method_1705());
       }
 
       if (this.method_26507()) {
          this.method_26557();
       }
 
-      if (var1.method_25939("SpawnX", 99) && var1.method_25939("SpawnY", 99) && var1.method_25939("SpawnZ", 99)) {
+      if (var1.contains("SpawnX", 99) && var1.contains("SpawnY", 99) && var1.contains("SpawnZ", 99)) {
          this.field_47779 = new class_1331(var1.method_25947("SpawnX"), var1.method_25947("SpawnY"), var1.method_25947("SpawnZ"));
-         this.field_47787 = var1.method_25933("SpawnForced");
-         this.field_47808 = var1.method_25955("SpawnAngle");
+         this.field_47787 = var1.getBoolean("SpawnForced");
+         this.field_47808 = var1.getFloat("SpawnAngle");
          if (var1.method_25938("SpawnDimension")) {
             this.field_47782 = World.field_33043
                .parse(class_3504.field_17178, var1.method_25929("SpawnDimension"))
@@ -170,13 +170,13 @@ public class class_9359 extends class_704 implements class_117 {
       super.method_37376(var1);
       var1.method_25931("playerGameType", this.field_47807.method_39517().getID());
       var1.method_25931("previousPlayerGameType", this.field_47807.method_39524().getID());
-      var1.method_25934("seenCredits", this.field_47783);
+      var1.putBoolean("seenCredits", this.field_47783);
       if (this.field_47793 != null) {
          CompoundNBT var4 = new CompoundNBT();
          var4.method_25923("x", this.field_47793.field_7336);
          var4.method_25923("y", this.field_47793.field_7333);
          var4.method_25923("z", this.field_47793.field_7334);
-         var1.method_25946("enteredNetherPosition", var4);
+         var1.put("enteredNetherPosition", var4);
       }
 
       Entity var8 = this.method_37240();
@@ -186,22 +186,22 @@ public class class_9359 extends class_704 implements class_117 {
          CompoundNBT var7 = new CompoundNBT();
          var8.method_37350(var7);
          var6.method_25964("Attach", var5.method_37328());
-         var6.method_25946("Entity", var7);
-         var1.method_25946("RootVehicle", var6);
+         var6.put("Entity", var7);
+         var1.put("RootVehicle", var6);
       }
 
-      var1.method_25946("recipeBook", this.field_47805.method_14033());
+      var1.put("recipeBook", this.field_47805.method_14033());
       var1.method_25941("Dimension", this.field_41768.method_29545().method_25499().toString());
       if (this.field_47779 != null) {
          var1.method_25931("SpawnX", this.field_47779.method_12173());
          var1.method_25931("SpawnY", this.field_47779.method_12165());
          var1.method_25931("SpawnZ", this.field_47779.method_12185());
-         var1.method_25934("SpawnForced", this.field_47787);
-         var1.method_25920("SpawnAngle", this.field_47808);
+         var1.putBoolean("SpawnForced", this.field_47787);
+         var1.putFloat("SpawnAngle", this.field_47808);
          Identifier.field_22655
             .encodeStart(class_3504.field_17178, this.field_47782.method_25499())
             .resultOrPartial(field_47780::error)
-            .ifPresent(var1x -> var1.method_25946("SpawnDimension", var1x));
+            .ifPresent(var1x -> var1.put("SpawnDimension", var1x));
       }
    }
 
@@ -584,7 +584,7 @@ public class class_9359 extends class_704 implements class_117 {
             var4.method_29599().endSection();
             this.method_43269(var4);
             this.field_47807.method_39527(var1);
-            this.field_47794.method_4156(new class_3727(this.field_3876));
+            this.field_47794.method_4156(new class_3727(this.playerAbilities));
             var7.method_39955(this, var1);
             var7.method_39971(this);
 
@@ -777,7 +777,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public boolean method_37180(class_6199 var1) {
-      return super.method_37180(var1) || this.method_43262() || this.field_3876.disableDamage && var1 == class_6199.field_31669;
+      return super.method_37180(var1) || this.method_43262() || this.playerAbilities.disableDamage && var1 == class_6199.field_31669;
    }
 
    @Override
@@ -1097,7 +1097,7 @@ public class class_9359 extends class_704 implements class_117 {
    @Override
    public void method_3216() {
       if (this.field_47794 != null) {
-         this.field_47794.method_4156(new class_3727(this.field_3876));
+         this.field_47794.method_4156(new class_3727(this.playerAbilities));
          this.method_26414();
       }
    }

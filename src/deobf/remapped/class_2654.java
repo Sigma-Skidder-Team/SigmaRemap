@@ -416,13 +416,13 @@ public class class_2654 implements class_5990 {
       class_3757 var4 = this.method_28260(var1);
       if (var4 != null && !var4.method_17395()) {
          CompoundNBT var6 = var4.method_17396(new CompoundNBT());
-         var6.method_25934("keepPacked", false);
+         var6.putBoolean("keepPacked", false);
          return var6;
       } else {
          CompoundNBT var5 = this.field_13082.get(var1);
          if (var5 != null) {
             var5 = var5.method_25944();
-            var5.method_25934("keepPacked", true);
+            var5.putBoolean("keepPacked", true);
          }
 
          return var5;
@@ -544,7 +544,7 @@ public class class_2654 implements class_5990 {
 
       for (class_3801 var12 : class_3801.values()) {
          String var13 = var12.method_17676();
-         if (var3.method_25939(var13, 12)) {
+         if (var3.contains(var13, 12)) {
             this.method_27357(var12, var3.method_25942(var13));
          }
       }

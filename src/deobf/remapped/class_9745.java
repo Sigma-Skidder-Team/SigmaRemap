@@ -5,7 +5,7 @@ import java.util.UUID;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_9745 extends class_9716 {
-   public class_9745(class_174 var1, GameProfile var2) {
+   public class_9745(ClientWorld var1, GameProfile var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
       this.field_41731 = true;

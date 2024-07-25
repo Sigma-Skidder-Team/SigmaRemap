@@ -324,7 +324,7 @@ public class ChestStealerModule extends Module {
    }
 
    private void method_14638() {
-      List var3 = client.field_9601.field_33053;
+      List var3 = client.theWorld.field_33053;
       var3.removeIf(var0 -> !(var0 instanceof class_7099));
 
       for (Object var5 : var3) {

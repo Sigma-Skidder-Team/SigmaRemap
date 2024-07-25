@@ -67,7 +67,7 @@ public class ActiveModsModule extends Module {
          if (!var1.method_20668()) {
             GlStateManager.method_8897(0.0F, (float)(-this.field_43170), 0.0F);
          } else {
-            class_1097 var4 = client.field_9601.method_29562();
+            class_1097 var4 = client.theWorld.method_29562();
             class_4399 var5 = null;
             class_3903 var6 = var4.method_4848(client.thePlayer.method_37206());
             if (var6 != null) {

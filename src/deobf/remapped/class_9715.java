@@ -114,17 +114,17 @@ public class class_9715 extends class_292 implements class_4511 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("TransferCooldown", this.field_49379);
-      var1.method_25934("Enabled", this.field_49380);
+      var1.putBoolean("Enabled", this.field_49380);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_49379 = var1.method_25947("TransferCooldown");
-      this.field_49380 = !var1.method_25938("Enabled") ? true : var1.method_25933("Enabled");
+      this.field_49380 = !var1.method_25938("Enabled") ? true : var1.getBoolean("Enabled");
    }
 
    public void method_44869(int var1) {

@@ -276,8 +276,8 @@ public abstract class class_5886 extends class_5834 {
    @Override
    public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("CanPickUpLoot", this.method_26930());
-      var1.method_25934("PersistenceRequired", this.field_29920);
+      var1.putBoolean("CanPickUpLoot", this.method_26930());
+      var1.putBoolean("PersistenceRequired", this.field_29920);
       class_3416 var4 = new class_3416();
 
       for (ItemStack var6 : this.field_29922) {
@@ -289,7 +289,7 @@ public abstract class class_5886 extends class_5834 {
          var4.add(var7);
       }
 
-      var1.method_25946("ArmorItems", var4);
+      var1.put("ArmorItems", var4);
       class_3416 var12 = new class_3416();
 
       for (ItemStack var15 : this.field_29903) {
@@ -301,24 +301,24 @@ public abstract class class_5886 extends class_5834 {
          var12.add(var8);
       }
 
-      var1.method_25946("HandItems", var12);
+      var1.put("HandItems", var12);
       class_3416 var14 = new class_3416();
 
       for (float var10 : this.field_29918) {
          var14.add(class_5718.method_25854(var10));
       }
 
-      var1.method_25946("ArmorDropChances", var14);
+      var1.put("ArmorDropChances", var14);
       class_3416 var17 = new class_3416();
 
       for (float var11 : this.field_29923) {
          var17.add(class_5718.method_25854(var11));
       }
 
-      var1.method_25946("HandDropChances", var17);
+      var1.put("HandDropChances", var17);
       if (this.field_29911 == null) {
          if (this.field_29899 != null) {
-            var1.method_25946("Leash", this.field_29899.method_25944());
+            var1.put("Leash", this.field_29899.method_25944());
          }
       } else {
          CompoundNBT var20 = new CompoundNBT();
@@ -334,10 +334,10 @@ public abstract class class_5886 extends class_5834 {
             var20.method_25964("UUID", var23);
          }
 
-         var1.method_25946("Leash", var20);
+         var1.put("Leash", var20);
       }
 
-      var1.method_25934("LeftHanded", this.method_26849());
+      var1.putBoolean("LeftHanded", this.method_26849());
       if (this.field_29906 != null) {
          var1.method_25941("DeathLootTable", this.field_29906.toString());
          if (this.field_29910 != 0L) {
@@ -346,19 +346,19 @@ public abstract class class_5886 extends class_5834 {
       }
 
       if (this.method_26859()) {
-         var1.method_25934("NoAI", this.method_26859());
+         var1.putBoolean("NoAI", this.method_26859());
       }
    }
 
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      if (var1.method_25939("CanPickUpLoot", 1)) {
-         this.method_26871(var1.method_25933("CanPickUpLoot"));
+      if (var1.contains("CanPickUpLoot", 1)) {
+         this.method_26871(var1.getBoolean("CanPickUpLoot"));
       }
 
-      this.field_29920 = var1.method_25933("PersistenceRequired");
-      if (var1.method_25939("ArmorItems", 9)) {
+      this.field_29920 = var1.getBoolean("PersistenceRequired");
+      if (var1.contains("ArmorItems", 9)) {
          class_3416 var4 = var1.method_25927("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field_29922.size(); var5++) {
@@ -366,7 +366,7 @@ public abstract class class_5886 extends class_5834 {
          }
       }
 
-      if (var1.method_25939("HandItems", 9)) {
+      if (var1.contains("HandItems", 9)) {
          class_3416 var6 = var1.method_25927("HandItems", 10);
 
          for (int var9 = 0; var9 < this.field_29903.size(); var9++) {
@@ -374,7 +374,7 @@ public abstract class class_5886 extends class_5834 {
          }
       }
 
-      if (var1.method_25939("ArmorDropChances", 9)) {
+      if (var1.contains("ArmorDropChances", 9)) {
          class_3416 var7 = var1.method_25927("ArmorDropChances", 5);
 
          for (int var10 = 0; var10 < var7.size(); var10++) {
@@ -382,7 +382,7 @@ public abstract class class_5886 extends class_5834 {
          }
       }
 
-      if (var1.method_25939("HandDropChances", 9)) {
+      if (var1.contains("HandDropChances", 9)) {
          class_3416 var8 = var1.method_25927("HandDropChances", 5);
 
          for (int var11 = 0; var11 < var8.size(); var11++) {
@@ -390,17 +390,17 @@ public abstract class class_5886 extends class_5834 {
          }
       }
 
-      if (var1.method_25939("Leash", 10)) {
-         this.field_29899 = var1.method_25937("Leash");
+      if (var1.contains("Leash", 10)) {
+         this.field_29899 = var1.getCompound("Leash");
       }
 
-      this.method_26932(var1.method_25933("LeftHanded"));
-      if (var1.method_25939("DeathLootTable", 8)) {
+      this.method_26932(var1.getBoolean("LeftHanded"));
+      if (var1.contains("DeathLootTable", 8)) {
          this.field_29906 = new Identifier(var1.method_25965("DeathLootTable"));
          this.field_29910 = var1.method_25948("DeathLootTableSeed");
       }
 
-      this.method_26888(var1.method_25933("NoAI"));
+      this.method_26888(var1.getBoolean("NoAI"));
    }
 
    @Override
@@ -1029,7 +1029,7 @@ public abstract class class_5886 extends class_5834 {
                return var5;
             }
          } else {
-            this.method_26916(true, !var1.field_3876.isCreativeMode);
+            this.method_26916(true, !var1.playerAbilities.isCreativeMode);
             return class_6910.method_31659(this.field_41768.field_33055);
          }
       } else {
@@ -1223,7 +1223,7 @@ public abstract class class_5886 extends class_5834 {
    private void method_26844() {
       if (this.field_29899 != null && this.field_41768 instanceof class_6331) {
          if (!this.field_29899.method_25954("UUID")) {
-            if (this.field_29899.method_25939("X", 99) && this.field_29899.method_25939("Y", 99) && this.field_29899.method_25939("Z", 99)) {
+            if (this.field_29899.contains("X", 99) && this.field_29899.contains("Y", 99) && this.field_29899.contains("Z", 99)) {
                class_1331 var3 = new class_1331(this.field_29899.method_25947("X"), this.field_29899.method_25947("Y"), this.field_29899.method_25947("Z"));
                this.method_26901(class_8008.method_36331(this.field_41768, var3), true);
                return;
@@ -1335,7 +1335,7 @@ public abstract class class_5886 extends class_5834 {
 
    @Override
    public boolean method_26608(class_5834 var1) {
-      return var1.method_37387() == class_6629.field_34300 && ((class_704)var1).field_3876.disableDamage ? false : super.method_26608(var1);
+      return var1.method_37387() == class_6629.field_34300 && ((class_704)var1).playerAbilities.disableDamage ? false : super.method_26608(var1);
    }
 
    @Override
@@ -1446,7 +1446,7 @@ public abstract class class_5886 extends class_5834 {
 
    private List method_26923(World var1) {
       World var4 = this.method_37084();
-      if (!(var4 instanceof class_174)) {
+      if (!(var4 instanceof ClientWorld)) {
          if (!(var4 instanceof class_6331)) {
             return null;
          } else {
@@ -1454,7 +1454,7 @@ public abstract class class_5886 extends class_5834 {
             return var6.method_25873();
          }
       } else {
-         class_174 var5 = (class_174)var4;
+         ClientWorld var5 = (ClientWorld)var4;
          return var5.method_25873();
       }
    }

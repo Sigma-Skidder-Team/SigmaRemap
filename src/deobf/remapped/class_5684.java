@@ -36,15 +36,15 @@ public interface class_5684 {
    }
 
    @Nullable
-   class_5734 method_25708();
+   CompoundNBT method_25708();
 
-   void method_25698(class_5734 var1);
+   void method_25698(CompoundNBT var1);
 
    class_7203 method_25706();
 
    class_6292 method_25699();
 
-   class_5734 method_25713(class_6322 var1, class_5734 var2);
+   CompoundNBT method_25713(class_6322 var1, CompoundNBT var2);
 
    boolean method_8659();
 
@@ -68,11 +68,11 @@ public interface class_5684 {
 
    class_291 method_8653();
 
-   class_5734 method_25712();
+   CompoundNBT method_25712();
 
-   class_5734 method_25717();
+   CompoundNBT method_25717();
 
-   void method_25705(class_5734 var1);
+   void method_25705(CompoundNBT var1);
 
    class_2904 method_25703();
 

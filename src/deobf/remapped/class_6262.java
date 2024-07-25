@@ -11,18 +11,18 @@ public class class_6262 extends class_462 {
 
    public class_6262(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13447, var2);
-      this.field_32003 = var2.method_25933("hr");
-      this.field_32000 = var2.method_25933("sc");
-      this.field_32004 = var2.method_25933("hps");
+      this.field_32003 = var2.getBoolean("hr");
+      this.field_32000 = var2.getBoolean("sc");
+      this.field_32004 = var2.getBoolean("hps");
       this.field_32001 = var2.method_25947("Num");
    }
 
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("hr", this.field_32003);
-      var1.method_25934("sc", this.field_32000);
-      var1.method_25934("hps", this.field_32004);
+      var1.putBoolean("hr", this.field_32003);
+      var1.putBoolean("sc", this.field_32000);
+      var1.putBoolean("hps", this.field_32004);
       var1.method_25931("Num", this.field_32001);
    }
 

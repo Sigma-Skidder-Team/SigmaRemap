@@ -31,11 +31,11 @@ public class HypixelVClipPhase extends Module {
          if (var1.method_23988() != null && var1.method_23989().method_12165() == this.field_7607 - 1
             || var1.method_23989().method_12165() == this.field_7607
             || var1.method_23989().method_12165() == this.field_7607 + 1
-               && client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_6344
-            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_4423
-            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_3049
-            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_5177
-            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_4749) {
+               && client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_6344
+            || client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_4423
+            || client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_3049
+            || client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_5177
+            || client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_4749) {
             var1.method_23986(null);
          }
       }

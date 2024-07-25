@@ -84,13 +84,13 @@ public class class_7194 {
       int var7 = class_9299.method_42815(var0.field_19939);
       int var8 = class_9299.method_42847(var0.field_19938);
       int var9 = class_9299.method_42815(var0.field_19942);
-      if (!field_36996.field_9601.method_22569(var4, var6, var8, var5, var7, var9)) {
+      if (!field_36996.theWorld.method_22569(var4, var6, var8, var5, var7, var9)) {
          return false;
       } else {
          for (int var10 = var4; var10 < var5; var10++) {
             for (int var11 = var6; var11 < var7; var11++) {
                for (int var12 = var8; var12 < var9; var12++) {
-                  class_2522 var13 = field_36996.field_9601.method_28262(new class_1331(var10, var11, var12));
+                  class_2522 var13 = field_36996.theWorld.method_28262(new class_1331(var10, var11, var12));
                   class_6414 var14 = var13.method_8360();
                   if (var13.method_8362() == var1) {
                      return true;

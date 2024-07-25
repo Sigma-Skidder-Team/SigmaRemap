@@ -81,7 +81,7 @@ public class ElytraFlyModule extends Module {
       if (this.method_42015()) {
          if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
-            Entity var5 = client.field_9601.method_29534(var4.method_21093());
+            Entity var5 = client.theWorld.method_29534(var4.method_21093());
             if (var5 instanceof class_8612) {
                class_8612 var6 = (class_8612)var5;
                if (var6.field_44173 != null && var6.field_44173.method_37145() == client.thePlayer.method_37145()) {

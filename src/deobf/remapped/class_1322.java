@@ -20,7 +20,7 @@ public class class_1322 {
             if (!var0.method_21461().equals("minecraft") || !var0.method_21456().startsWith("textures/gui/")) {
                return var0;
             } else if (field_7283 != null) {
-               class_174 var4 = field_7279.field_9601;
+               ClientWorld var4 = field_7279.theWorld;
                if (var4 == null) {
                   return var0;
                } else if (var3 instanceof class_2546) {

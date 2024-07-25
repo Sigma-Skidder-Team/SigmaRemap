@@ -21,7 +21,7 @@ public class class_1235 implements Runnable {
                break;
             }
 
-            if (MinecraftClient.getInstance().field_9601 != null) {
+            if (MinecraftClient.getInstance().theWorld != null) {
                boolean var3 = false;
                boolean var4 = false;
                if (SigmaMainClass.getInstance().getModuleManager() != null) {

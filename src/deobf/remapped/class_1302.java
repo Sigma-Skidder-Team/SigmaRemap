@@ -43,13 +43,13 @@ public class class_1302 extends class_2451 implements class_1538 {
                   if (var9 == 0) {
                      class_3348 var10 = new class_3348(var2, var7, var1);
                      var10.method_26158(var7, var7.field_41755, var7.field_41701, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
-                     if (var7.field_3876.isCreativeMode) {
+                     if (var7.playerAbilities.isCreativeMode) {
                         var10.field_34835 = class_4237.field_20565;
                      }
 
                      var2.method_7509(var10);
                      var2.method_29540((class_704)null, var10, class_463.field_2050, class_562.field_3335, 1.0F, 1.0F);
-                     if (!var7.field_3876.isCreativeMode) {
+                     if (!var7.playerAbilities.isCreativeMode) {
                         var7.inventory.method_32419(var1);
                      }
                   }

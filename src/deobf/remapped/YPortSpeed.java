@@ -83,7 +83,7 @@ public class YPortSpeed extends Module {
                      double var6 = 0.66 * (this.field_13514 - class_8865.method_40775());
                      this.field_13511 = this.field_13514 - var6;
                   } else {
-                     if (client.field_9601
+                     if (client.theWorld
                               .method_6680(
                                  client.thePlayer,
                                  client.thePlayer.field_41712.method_18918(0.0, client.thePlayer.method_37098().field_7333, 0.0)

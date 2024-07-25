@@ -34,7 +34,7 @@ public class class_4128 implements RunningGame {
 
    @Nullable
    public GameSession getCurrentSession() {
-      class_174 var3 = this.field_20105.field_9601;
+      ClientWorld var3 = this.field_20105.theWorld;
       return var3 != null ? new class_7491(var3, this.field_20105.thePlayer, this.field_20105.thePlayer.field_30532) : null;
    }
 

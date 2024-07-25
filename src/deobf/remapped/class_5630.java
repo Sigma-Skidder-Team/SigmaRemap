@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class class_5630 {
    private static String[] field_28567;
-   private static class_8669<class_6325> field_28565 = method_25512(MinecraftClient.getInstance().field_9601);
+   private static class_8669<class_6325> field_28565 = method_25512(MinecraftClient.getInstance().theWorld);
    public static class_6325 field_28568 = field_28565.method_39807(class_8606.field_44136);
    public static class_6325 field_28566 = field_28565.method_39807(class_8606.field_44089);
    public static class_6325 field_28569 = field_28565.method_39807(class_8606.field_44147);

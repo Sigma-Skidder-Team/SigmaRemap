@@ -30,7 +30,7 @@ public class FreeCamModule extends Module {
    @EventListen
    public void method_44323(class_5278 var1) {
       if (this.method_42015()) {
-         if (var1.method_24098() instanceof class_5989 && var1.method_24098() != field_48917) {
+         if (var1.method_24098() instanceof ClientPlayerEntity && var1.method_24098() != field_48917) {
             var1.method_29715(true);
          }
       }
@@ -84,7 +84,7 @@ public class FreeCamModule extends Module {
       this.field_48920 = client.thePlayer.field_41755;
       String var3 = client.thePlayer.method_45509().getString();
       GameProfile var4 = new GameProfile(client.thePlayer.method_3247().getId(), var3);
-      field_48917 = new class_9745(client.field_9601, var4);
+      field_48917 = new class_9745(client.theWorld, var4);
       field_48917.inventory = client.thePlayer.inventory;
       field_48917.method_37249(this.field_48921, this.field_48927, this.field_48914, this.field_48915, this.field_48920);
       field_48917.field_41731 = true;
@@ -93,7 +93,7 @@ public class FreeCamModule extends Module {
       field_48917.field_29657 = this.field_48915;
       field_48917.field_29605 = this.field_48915;
       field_48917.field_29611 = this.field_48915;
-      client.field_9601.method_725(this.field_48925 = (int)(Math.random() * -10000.0), field_48917);
+      client.theWorld.method_725(this.field_48925 = (int)(Math.random() * -10000.0), field_48917);
       this.field_48929 = client.gameOptions.keyForward.isKeyDown();
       this.field_48924 = client.gameOptions.keyBack.isKeyDown();
       this.field_48913 = client.gameOptions.keyLeft.isKeyDown();
@@ -118,7 +118,7 @@ public class FreeCamModule extends Module {
       client.gameOptions.keyRight.pressed = this.field_48923;
       client.gameOptions.keyJump.pressed = this.field_48919;
       client.gameOptions.keySneak.pressed = this.field_48911;
-      client.field_9601.method_754(this.field_48925);
+      client.theWorld.method_754(this.field_48925);
       client.thePlayer.method_37298();
       if (field_48917 != null) {
          client.thePlayer.field_41721 = field_48917.field_41721;
@@ -281,7 +281,7 @@ public class FreeCamModule extends Module {
 
          if (var1.method_10047() instanceof class_3398) {
             class_3398 var4 = (class_3398)var1.method_10047();
-            if (var4.method_15695(client.field_9601) == null) {
+            if (var4.method_15695(client.theWorld) == null) {
                var1.method_29715(true);
             }
          }

@@ -59,12 +59,12 @@ public class class_777 extends Module {
          class_1331 var6 = new class_1331(
             client.thePlayer.method_37302(), client.thePlayer.method_37309() - (double)var5, client.thePlayer.method_37156()
          );
-         if (client.field_9601.method_28262(var6).method_8302() && var3) {
+         if (client.theWorld.method_28262(var6).method_8302() && var3) {
             var4 = -var5;
             break;
          }
 
-         var3 = client.field_9601.method_28262(var6).method_8302();
+         var3 = client.theWorld.method_28262(var6).method_8302();
       }
 
       return var4;
@@ -78,12 +78,12 @@ public class class_777 extends Module {
          class_1331 var6 = new class_1331(
             client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var5, client.thePlayer.method_37156()
          );
-         if (client.field_9601.method_28262(var6).method_8302() && var3 && !client.field_9601.method_28262(var6.method_6100()).method_8302()) {
+         if (client.theWorld.method_28262(var6).method_8302() && var3 && !client.theWorld.method_28262(var6.method_6100()).method_8302()) {
             var4 = var5;
             break;
          }
 
-         var3 = client.field_9601.method_28262(var6).method_8302();
+         var3 = client.theWorld.method_28262(var6).method_8302();
       }
 
       return var4;

@@ -17,8 +17,8 @@ import java.util.zip.GZIPOutputStream;
 import javax.annotation.Nullable;
 
 public class class_5957 {
-   public static class_5734 method_27227(File var0) throws IOException {
-      class_5734 var5;
+   public static CompoundNBT method_27227(File var0) throws IOException {
+      CompoundNBT var5;
       try (FileInputStream var3 = new FileInputStream(var0)) {
          var5 = method_27219(var3);
       }
@@ -26,8 +26,8 @@ public class class_5957 {
       return var5;
    }
 
-   public static class_5734 method_27219(InputStream var0) throws IOException {
-      class_5734 var5;
+   public static CompoundNBT method_27219(InputStream var0) throws IOException {
+      CompoundNBT var5;
       try (DataInputStream var3 = new DataInputStream(new BufferedInputStream(new GZIPInputStream(var0)))) {
          var5 = method_27222(var3, class_4694.field_22844);
       }
@@ -35,19 +35,19 @@ public class class_5957 {
       return var5;
    }
 
-   public static void method_27218(class_5734 var0, File var1) throws IOException {
+   public static void method_27218(CompoundNBT var0, File var1) throws IOException {
       try (FileOutputStream var4 = new FileOutputStream(var1)) {
          method_27217(var0, var4);
       }
    }
 
-   public static void method_27217(class_5734 var0, OutputStream var1) throws IOException {
+   public static void method_27217(CompoundNBT var0, OutputStream var1) throws IOException {
       try (DataOutputStream var4 = new DataOutputStream(new BufferedOutputStream(new GZIPOutputStream(var1)))) {
          method_27224(var0, var4);
       }
    }
 
-   public static void method_27225(class_5734 var0, File var1) throws IOException {
+   public static void method_27225(CompoundNBT var0, File var1) throws IOException {
       try (
          FileOutputStream var4 = new FileOutputStream(var1);
          DataOutputStream var6 = new DataOutputStream(var4);
@@ -57,11 +57,11 @@ public class class_5957 {
    }
 
    @Nullable
-   public static class_5734 method_27223(File var0) throws IOException {
+   public static CompoundNBT method_27223(File var0) throws IOException {
       if (!var0.exists()) {
          return null;
       } else {
-         class_5734 var7;
+         CompoundNBT var7;
          try (
             FileInputStream var3 = new FileInputStream(var0);
             DataInputStream var5 = new DataInputStream(var3);
@@ -73,20 +73,20 @@ public class class_5957 {
       }
    }
 
-   public static class_5734 method_27220(DataInput var0) throws IOException {
+   public static CompoundNBT method_27220(DataInput var0) throws IOException {
       return method_27222(var0, class_4694.field_22844);
    }
 
-   public static class_5734 method_27222(DataInput var0, class_4694 var1) throws IOException {
+   public static CompoundNBT method_27222(DataInput var0, class_4694 var1) throws IOException {
       class_8406 var4 = method_27221(var0, 0, var1);
-      if (!(var4 instanceof class_5734)) {
+      if (!(var4 instanceof CompoundNBT)) {
          throw new IOException("Root tag must be a named compound tag");
       } else {
-         return (class_5734)var4;
+         return (CompoundNBT)var4;
       }
    }
 
-   public static void method_27224(class_5734 var0, DataOutput var1) throws IOException {
+   public static void method_27224(CompoundNBT var0, DataOutput var1) throws IOException {
       method_27226(var0, var1);
    }
 

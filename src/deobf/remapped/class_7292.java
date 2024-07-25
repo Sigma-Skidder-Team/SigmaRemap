@@ -5,7 +5,7 @@ public class class_7292 extends class_8715 {
    private final float field_37295;
    private final float field_37297;
 
-   private class_7292(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12, ItemStack var14) {
+   private class_7292(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12, ItemStack var14) {
       this(var1, var2, var4, var6, var14);
       this.field_49481 *= 0.1F;
       this.field_49486 *= 0.1F;
@@ -20,7 +20,7 @@ public class class_7292 extends class_8715 {
       return class_7154.field_36845;
    }
 
-   public class_7292(class_174 var1, double var2, double var4, double var6, ItemStack var8) {
+   public class_7292(ClientWorld var1, double var2, double var4, double var6, ItemStack var8) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
       this.method_40055(MinecraftClient.getInstance().method_8511().method_40278(var8, var1, (class_5834)null).method_33587());
       this.field_49477 = 1.0F;

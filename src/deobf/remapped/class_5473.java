@@ -12,12 +12,12 @@ public class class_5473 extends class_7060 {
       );
    }
 
-   public class_5473(class_5799 var1, class_5734 var2) {
+   public class_5473(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13416, var2);
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
    }
 
    @Override

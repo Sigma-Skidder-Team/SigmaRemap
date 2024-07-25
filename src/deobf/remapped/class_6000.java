@@ -7,10 +7,10 @@ import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 public class class_6000 {
-   public static final class_6000 field_30559 = new class_6000((class_5734)null);
-   private final class_5734 field_30561;
+   public static final class_6000 field_30559 = new class_6000((CompoundNBT)null);
+   private final CompoundNBT field_30561;
 
-   public class_6000(class_5734 var1) {
+   public class_6000(CompoundNBT var1) {
       this.field_30561 = var1;
    }
 
@@ -32,7 +32,7 @@ public class class_6000 {
 
    public static class_6000 method_27395(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
-         class_5734 var3;
+         CompoundNBT var3;
          try {
             var3 = class_2392.method_10916(class_6539.method_29795(var0, "nbt"));
          } catch (CommandSyntaxException var5) {
@@ -45,12 +45,12 @@ public class class_6000 {
       }
    }
 
-   public static class_5734 method_27394(Entity var0) {
-      class_5734 var3 = var0.method_37258(new class_5734());
+   public static CompoundNBT method_27394(Entity var0) {
+      CompoundNBT var3 = var0.method_37258(new CompoundNBT());
       if (var0 instanceof class_704) {
          ItemStack var4 = ((class_704)var0).inventory.method_32403();
          if (!var4.method_28022()) {
-            var3.method_25946("SelectedItem", var4.method_27998(new class_5734()));
+            var3.put("SelectedItem", var4.method_27998(new CompoundNBT()));
          }
       }
 

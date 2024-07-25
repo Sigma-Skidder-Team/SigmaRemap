@@ -15,13 +15,13 @@ public class class_2372 extends class_8549 {
 
    public class_2372(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13431, var2);
-      this.field_11872 = var2.method_25933("Chest");
+      this.field_11872 = var2.getBoolean("Chest");
    }
 
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("Chest", this.field_11872);
+      var1.putBoolean("Chest", this.field_11872);
    }
 
    @Override

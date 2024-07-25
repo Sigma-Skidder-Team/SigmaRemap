@@ -28,7 +28,7 @@ public class class_3236 extends class_8549 {
 
    public class_3236(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
-      this.field_16095 = var2.method_25933("Source");
+      this.field_16095 = var2.getBoolean("Source");
    }
 
    public class_3236(class_5799 var1, CompoundNBT var2) {
@@ -38,7 +38,7 @@ public class class_3236 extends class_8549 {
    @Override
    public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
-      var1.method_25934("Source", this.field_16095);
+      var1.putBoolean("Source", this.field_16095);
    }
 
    @Override

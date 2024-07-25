@@ -117,7 +117,7 @@ public class class_3160 {
                      if (var20 != null) {
                         int var37 = class_4037.method_18574(var20);
                         CompoundNBT var22 = var17.method_18573(var15, () -> this.field_15694, var20);
-                        CompoundNBT var23 = var22.method_25937("Level");
+                        CompoundNBT var23 = var22.getCompound("Level");
                         class_2034 var24 = new class_2034(var23.method_25947("xPos"), var23.method_25947("zPos"));
                         if (!var24.equals(var18)) {
                            field_15702.warn("Chunk {} has invalid position {}", var18, var24);

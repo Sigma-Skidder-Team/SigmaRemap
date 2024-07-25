@@ -13,18 +13,18 @@ public class class_7711 extends class_7186 {
 
    @Override
    public void method_32924(CompoundNBT var1) {
-      CompoundNBT var4 = var1.method_25937("contents");
+      CompoundNBT var4 = var1.getCompound("contents");
 
       for (String var6 : var4.method_25952()) {
-         this.field_39117.put(var6, var4.method_25937(var6));
+         this.field_39117.put(var6, var4.getCompound(var6));
       }
    }
 
    @Override
    public CompoundNBT method_32920(CompoundNBT var1) {
       CompoundNBT var4 = new CompoundNBT();
-      this.field_39117.forEach((var1x, var2) -> var4.method_25946(var1x, var2.method_25944()));
-      var1.method_25946("contents", var4);
+      this.field_39117.forEach((var1x, var2) -> var4.put(var1x, var2.method_25944()));
+      var1.put("contents", var4);
       return var1;
    }
 

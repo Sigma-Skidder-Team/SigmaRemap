@@ -88,15 +88,15 @@ public class class_3416 extends class_6850<class_8406> {
       return this.field_16814.isEmpty();
    }
 
-   public class_5734 method_15764(int var1) {
+   public CompoundNBT method_15764(int var1) {
       if (var1 >= 0 && var1 < this.field_16814.size()) {
          class_8406 var4 = this.field_16814.get(var1);
          if (var4.method_38706() == 10) {
-            return (class_5734)var4;
+            return (CompoundNBT)var4;
          }
       }
 
-      return new class_5734();
+      return new CompoundNBT();
    }
 
    public class_3416 method_15760(int var1) {

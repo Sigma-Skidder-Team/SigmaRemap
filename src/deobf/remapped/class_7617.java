@@ -24,15 +24,15 @@ public class class_7617 extends class_5467 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
-      var1.method_25934("Trusting", this.method_34544());
+      var1.putBoolean("Trusting", this.method_34544());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_34540(var1.method_25933("Trusting"));
+      this.method_34540(var1.getBoolean("Trusting"));
    }
 
    @Override
@@ -221,7 +221,7 @@ public class class_7617 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new class_1821(1.0F);
       }

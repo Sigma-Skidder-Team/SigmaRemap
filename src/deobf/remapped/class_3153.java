@@ -141,11 +141,11 @@ public class class_3153 extends class_4314 {
       super.method_29272(var1, var2, var3, var4);
       CompoundNBT var7 = var1.method_28021("BlockEntityTag");
       if (var7 != null) {
-         if (var7.method_25939("LootTable", 8)) {
+         if (var7.contains("LootTable", 8)) {
             var3.add(new StringTextComponent("???????"));
          }
 
-         if (var7.method_25939("Items", 9)) {
+         if (var7.contains("Items", 9)) {
             class_2831 var8 = class_2831.<ItemStack>method_12872(27, ItemStack.EMPTY);
             class_3037.method_13882(var7, var8);
             int var9 = 0;

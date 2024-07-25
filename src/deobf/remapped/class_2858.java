@@ -156,7 +156,7 @@ public class class_2858<T> implements class_3065<T> {
       class_3416 var6 = new class_3416();
 
       for (class_4110 var8 : var1) {
-         class_5734 var9 = new class_5734();
+         CompoundNBT var9 = new CompoundNBT();
          var9.method_25941("i", ((Identifier)var0.apply(var8.method_19096())).toString());
          var9.method_25931("x", var8.field_20034.method_12173());
          var9.method_25931("y", var8.field_20034.method_12165());

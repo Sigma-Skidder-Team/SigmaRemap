@@ -148,7 +148,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var1.method_43360().nextFloat() < 0.2F) {
          this.method_26910(true);
       }
@@ -233,24 +233,24 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.method_30709()) {
-         var1.method_25934("IsImmuneToZombification", true);
+         var1.putBoolean("IsImmuneToZombification", true);
       }
 
       var1.method_25931("TimeInOverworld", this.field_34612);
       if (this.field_34613) {
-         var1.method_25934("CannotBeHunted", true);
+         var1.putBoolean("CannotBeHunted", true);
       }
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_30711(var1.method_25933("IsImmuneToZombification"));
+      this.method_30711(var1.getBoolean("IsImmuneToZombification"));
       this.field_34612 = var1.method_25947("TimeInOverworld");
-      this.method_30708(var1.method_25933("CannotBeHunted"));
+      this.method_30708(var1.getBoolean("CannotBeHunted"));
    }
 
    public void method_30711(boolean var1) {

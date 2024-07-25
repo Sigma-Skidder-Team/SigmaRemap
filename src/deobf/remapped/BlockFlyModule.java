@@ -309,7 +309,7 @@ public class BlockFlyModule extends SecondModule {
                case "Vanilla":
                   if (client.gameOptions.keyJump.pressed
                      && class_314.method_1413(client.thePlayer, 0.001F)
-                     && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0, 0.0)).count()
+                     && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0, 0.0)).count()
                         == 0L) {
                      client.thePlayer
                         .method_37256(client.thePlayer.method_37302(), client.thePlayer.method_37309() + 1.0, client.thePlayer.method_37156());

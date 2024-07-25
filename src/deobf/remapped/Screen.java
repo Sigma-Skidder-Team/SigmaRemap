@@ -300,7 +300,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
    }
 
    public void method_1184(class_7966 var1, int var2) {
-      if (this.field_943.field_9601 == null) {
+      if (this.field_943.theWorld == null) {
          this.method_1170(var2);
       } else {
          this.method_9772(var1, 0, 0, this.field_941, this.field_940, -1072689136, -804253680);

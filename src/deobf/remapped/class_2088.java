@@ -3,11 +3,11 @@ package remapped;
 public abstract class class_2088 extends class_9733 {
    public float field_10503 = 0.1F * (this.field_49466.nextFloat() * 0.5F + 0.5F) * 2.0F;
 
-   public class_2088(class_174 var1, double var2, double var4, double var6) {
+   public class_2088(ClientWorld var1, double var2, double var4, double var6) {
       super(var1, var2, var4, var6);
    }
 
-   public class_2088(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public class_2088(ClientWorld var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       super(var1, var2, var4, var6, var8, var10, var12);
    }
 

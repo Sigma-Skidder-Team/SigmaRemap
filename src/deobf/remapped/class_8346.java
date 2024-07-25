@@ -17,7 +17,7 @@ public abstract class class_8346 extends class_3757 implements class_6867, class
    public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_42749 = class_3186.method_14664(var2);
-      if (var2.method_25939("CustomName", 8)) {
+      if (var2.contains("CustomName", 8)) {
          this.field_42748 = ITextComponent$class_40.func_240643_a_(var2.method_25965("CustomName"));
       }
    }

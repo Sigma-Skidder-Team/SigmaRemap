@@ -90,8 +90,8 @@ public final class ItemStack {
    private ItemStack(CompoundNBT var1) {
       this.field_31210 = class_8669.field_44382.method_39806(new Identifier(var1.method_25965("id")));
       this.field_31206 = var1.method_25950("Count");
-      if (var1.method_25939("tag", 10)) {
-         this.field_31204 = var1.method_25937("tag");
+      if (var1.contains("tag", 10)) {
+         this.field_31204 = var1.getCompound("tag");
          this.method_27960().method_11215(var1);
       }
 
@@ -135,7 +135,7 @@ public final class ItemStack {
       class_704 var4 = var1.method_21868();
       class_1331 var5 = var1.method_21858();
       class_9115 var6 = new class_9115(var1.method_21862(), var5, false);
-      if (var4 != null && !var4.field_3876.allowEdit && !this.method_28027(var1.method_21862().method_29600(), var6)) {
+      if (var4 != null && !var4.playerAbilities.allowEdit && !this.method_28027(var1.method_21862().method_29600(), var6)) {
          return class_6910.field_35521;
       } else {
          class_2451 var7 = this.method_27960();
@@ -165,7 +165,7 @@ public final class ItemStack {
       var1.method_25941("id", var4 != null ? var4.toString() : "minecraft:air");
       var1.method_25921("Count", (byte)this.field_31206);
       if (this.field_31204 != null) {
-         var1.method_25946("tag", this.field_31204.method_25944());
+         var1.put("tag", this.field_31204.method_25944());
       }
 
       return var1;
@@ -182,7 +182,7 @@ public final class ItemStack {
    public boolean method_27959() {
       if (!this.field_31214 && this.method_27960().method_11234() > 0) {
          CompoundNBT var3 = this.method_27990();
-         return var3 == null || !var3.method_25933("Unbreakable");
+         return var3 == null || !var3.getBoolean("Unbreakable");
       } else {
          return false;
       }
@@ -236,7 +236,7 @@ public final class ItemStack {
 
    public <T extends class_5834> void method_28003(int var1, T var2, Consumer<T> var3) {
       if (!var2.field_41768.field_33055
-         && (!(var2 instanceof class_704) || !((class_704)var2).field_3876.isCreativeMode)
+         && (!(var2 instanceof class_704) || !((class_704)var2).playerAbilities.isCreativeMode)
          && this.method_27959()
          && this.method_27996(var1, var2.method_26594(), !(var2 instanceof class_9359) ? null : (class_9359)var2)) {
          var3.accept(var2);
@@ -396,8 +396,8 @@ public final class ItemStack {
    }
 
    public CompoundNBT method_27978(String var1) {
-      if (this.field_31204 != null && this.field_31204.method_25939(var1, 10)) {
-         return this.field_31204.method_25937(var1);
+      if (this.field_31204 != null && this.field_31204.contains(var1, 10)) {
+         return this.field_31204.getCompound(var1);
       } else {
          CompoundNBT var4 = new CompoundNBT();
          this.method_27954(var1, var4);
@@ -407,7 +407,7 @@ public final class ItemStack {
 
    @Nullable
    public CompoundNBT method_28021(String var1) {
-      return this.field_31204 != null && this.field_31204.method_25939(var1, 10) ? this.field_31204.method_25937(var1) : null;
+      return this.field_31204 != null && this.field_31204.contains(var1, 10) ? this.field_31204.getCompound(var1) : null;
    }
 
    public void method_27976(String var1) {
@@ -432,7 +432,7 @@ public final class ItemStack {
 
    public ITextComponent method_28008() {
       CompoundNBT var3 = this.method_28021("display");
-      if (var3 != null && var3.method_25939("Name", 8)) {
+      if (var3 != null && var3.contains("Name", 8)) {
          try {
             IFormattableTextComponent var4 = ITextComponent$class_40.func_240643_a_(var3.method_25965("Name"));
             if (var4 != null) {
@@ -475,7 +475,7 @@ public final class ItemStack {
 
    public boolean method_28018() {
       CompoundNBT var3 = this.method_28021("display");
-      return var3 != null && var3.method_25939("Name", 8);
+      return var3 != null && var3.contains("Name", 8);
    }
 
    public List<ITextComponent> method_28012(class_704 var1, class_4605 var2) {
@@ -500,9 +500,9 @@ public final class ItemStack {
             method_28029(var5, this.method_27983());
          }
 
-         if (this.field_31204.method_25939("display", 10)) {
-            CompoundNBT var8 = this.field_31204.method_25937("display");
-            if (method_27955(var7, class_8749.field_44784) && var8.method_25939("color", 99)) {
+         if (this.field_31204.contains("display", 10)) {
+            CompoundNBT var8 = this.field_31204.getCompound("display");
+            if (method_27955(var7, class_8749.field_44784) && var8.contains("color", 99)) {
                if (var2.method_21347()) {
                   var5.add(new TranslationTextComponent("item.color", String.format("#%06X", var8.method_25947("color"))).mergeStyle(TextFormatting.GRAY));
                } else {
@@ -598,11 +598,11 @@ public final class ItemStack {
       }
 
       if (this.method_28002()) {
-         if (method_27955(var7, class_8749.field_44789) && this.field_31204.method_25933("Unbreakable")) {
+         if (method_27955(var7, class_8749.field_44789) && this.field_31204.getBoolean("Unbreakable")) {
             var5.add(new TranslationTextComponent("item.unbreakable").mergeStyle(TextFormatting.BLUE));
          }
 
-         if (method_27955(var7, class_8749.field_44791) && this.field_31204.method_25939("CanDestroy", 9)) {
+         if (method_27955(var7, class_8749.field_44791) && this.field_31204.contains("CanDestroy", 9)) {
             class_3416 var23 = this.field_31204.method_25927("CanDestroy", 8);
             if (!var23.isEmpty()) {
                var5.add(StringTextComponent.EMPTY);
@@ -614,7 +614,7 @@ public final class ItemStack {
             }
          }
 
-         if (method_27955(var7, class_8749.field_44790) && this.field_31204.method_25939("CanPlaceOn", 9)) {
+         if (method_27955(var7, class_8749.field_44790) && this.field_31204.contains("CanPlaceOn", 9)) {
             class_3416 var24 = this.field_31204.method_25927("CanPlaceOn", 8);
             if (!var24.isEmpty()) {
                var5.add(StringTextComponent.EMPTY);
@@ -646,7 +646,7 @@ public final class ItemStack {
    }
 
    private int method_28023() {
-      return this.method_28002() && this.field_31204.method_25939("HideFlags", 99) ? this.field_31204.method_25947("HideFlags") : 0;
+      return this.method_28002() && this.field_31204.contains("HideFlags", 99) ? this.field_31204.method_25947("HideFlags") : 0;
    }
 
    public void method_27980(class_8749 var1) {
@@ -706,8 +706,8 @@ public final class ItemStack {
 
    public void method_28031(class_4382 var1, int var2) {
       this.method_27994();
-      if (!this.field_31204.method_25939("Enchantments", 9)) {
-         this.field_31204.method_25946("Enchantments", new class_3416());
+      if (!this.field_31204.contains("Enchantments", 9)) {
+         this.field_31204.put("Enchantments", new class_3416());
       }
 
       class_3416 var5 = this.field_31204.method_25927("Enchantments", 10);
@@ -718,13 +718,13 @@ public final class ItemStack {
    }
 
    public boolean method_28020() {
-      return this.field_31204 != null && this.field_31204.method_25939("Enchantments", 9)
+      return this.field_31204 != null && this.field_31204.contains("Enchantments", 9)
          ? !this.field_31204.method_25927("Enchantments", 10).isEmpty()
          : false;
    }
 
    public void method_27954(String var1, class_8406 var2) {
-      this.method_27994().method_25946(var1, var2);
+      this.method_27994().put(var1, var2);
    }
 
    public boolean method_27966() {
@@ -746,7 +746,7 @@ public final class ItemStack {
    }
 
    public int method_27969() {
-      return this.method_28002() && this.field_31204.method_25939("RepairCost", 3) ? this.field_31204.method_25947("RepairCost") : 0;
+      return this.method_28002() && this.field_31204.contains("RepairCost", 3) ? this.field_31204.method_25947("RepairCost") : 0;
    }
 
    public void method_27986(int var1) {
@@ -755,13 +755,13 @@ public final class ItemStack {
 
    public Multimap<class_225, class_9343> method_28034(class_6943 var1) {
       Object var4;
-      if (this.method_28002() && this.field_31204.method_25939("AttributeModifiers", 9)) {
+      if (this.method_28002() && this.field_31204.contains("AttributeModifiers", 9)) {
          var4 = HashMultimap.create();
          class_3416 var5 = this.field_31204.method_25927("AttributeModifiers", 10);
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
             CompoundNBT var7 = var5.method_15764(var6);
-            if (!var7.method_25939("Slot", 8) || var7.method_25965("Slot").equals(var1.method_31769())) {
+            if (!var7.contains("Slot", 8) || var7.method_25965("Slot").equals(var1.method_31769())) {
                Optional var8 = class_8669.field_44403.method_39794(Identifier.method_21455(var7.method_25965("AttributeName")));
                if (var8.isPresent()) {
                   class_9343 var9 = class_9343.method_43120(var7);
@@ -780,8 +780,8 @@ public final class ItemStack {
 
    public void method_27962(class_225 var1, class_9343 var2, class_6943 var3) {
       this.method_27994();
-      if (!this.field_31204.method_25939("AttributeModifiers", 9)) {
-         this.field_31204.method_25946("AttributeModifiers", new class_3416());
+      if (!this.field_31204.contains("AttributeModifiers", 9)) {
+         this.field_31204.put("AttributeModifiers", new class_3416());
       }
 
       class_3416 var6 = this.field_31204.method_25927("AttributeModifiers", 10);
@@ -826,7 +826,7 @@ public final class ItemStack {
          return this.field_31213;
       } else {
          this.field_31211 = var2;
-         if (this.method_28002() && this.field_31204.method_25939("CanDestroy", 9)) {
+         if (this.method_28002() && this.field_31204.contains("CanDestroy", 9)) {
             class_3416 var5 = this.field_31204.method_25927("CanDestroy", 8);
 
             for (int var6 = 0; var6 < var5.size(); var6++) {
@@ -853,7 +853,7 @@ public final class ItemStack {
          return this.field_31205;
       } else {
          this.field_31212 = var2;
-         if (this.method_28002() && this.field_31204.method_25939("CanPlaceOn", 9)) {
+         if (this.method_28002() && this.field_31204.contains("CanPlaceOn", 9)) {
             class_3416 var5 = this.field_31204.method_25927("CanPlaceOn", 8);
 
             for (int var6 = 0; var6 < var5.size(); var6++) {

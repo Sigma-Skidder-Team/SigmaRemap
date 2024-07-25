@@ -128,7 +128,7 @@ public class class_8226 extends class_2208<class_8372> {
             int var24 = 86 - this.field_948.method_45395(var23);
             ITextProperties var25 = class_726.method_3294().method_3295(this.field_948, var24);
             int var26 = 6839882;
-            if ((var18 < var19 + 1 || this.field_943.thePlayer.field_3840 < var22) && !this.field_943.thePlayer.field_3876.isCreativeMode) {
+            if ((var18 < var19 + 1 || this.field_943.thePlayer.field_3840 < var22) && !this.field_943.thePlayer.playerAbilities.isCreativeMode) {
                this.method_9781(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
                this.method_9781(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 239, 16, 16);
                this.field_948.method_45407(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
@@ -161,7 +161,7 @@ public class class_8226 extends class_2208<class_8372> {
       this.method_1183(var1);
       super.method_6767(var1, var2, var3, var4);
       this.method_10214(var1, var2, var3);
-      boolean var7 = this.field_943.thePlayer.field_3876.isCreativeMode;
+      boolean var7 = this.field_943.thePlayer.playerAbilities.isCreativeMode;
       int var8 = this.field_10956.method_38582();
 
       for (int var9 = 0; var9 < 3; var9++) {

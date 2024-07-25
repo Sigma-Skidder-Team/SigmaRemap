@@ -28,7 +28,7 @@ public class class_7702 extends class_2451 {
    public static boolean method_34884(CompoundNBT var0) {
       if (var0 == null) {
          return false;
-      } else if (!var0.method_25939("pages", 9)) {
+      } else if (!var0.contains("pages", 9)) {
          return false;
       } else {
          class_3416 var3 = var0.method_25927("pages", 8);

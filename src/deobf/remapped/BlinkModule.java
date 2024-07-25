@@ -19,11 +19,11 @@ public class BlinkModule extends Module {
       this.field_27899 = new class_1343(client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156());
       this.field_27900 = client.thePlayer.field_41701;
       this.field_27901 = client.thePlayer.field_41755;
-      field_27898 = new class_9745(client.field_9601, client.thePlayer.method_3247());
+      field_27898 = new class_9745(client.theWorld, client.thePlayer.method_3247());
       field_27898.inventory = client.thePlayer.inventory;
       field_27898.method_37249(this.field_27899.field_7336, this.field_27899.field_7333, this.field_27899.field_7334, this.field_27900, this.field_27901);
       field_27898.field_29618 = client.thePlayer.field_29618;
-      client.field_9601.method_725(-1, field_27898);
+      client.theWorld.method_725(-1, field_27898);
    }
 
    @Override
@@ -35,7 +35,7 @@ public class BlinkModule extends Module {
       }
 
       this.packetList.clear();
-      client.field_9601.method_754(-1);
+      client.theWorld.method_754(-1);
    }
 
    @EventListen
