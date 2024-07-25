@@ -1,0 +1,85 @@
+package remapped;
+
+import java.util.List;
+import net.minecraft.util.text.StringTextComponent;
+
+public class class_9495 extends class_9128 {
+   public class_9495() {
+      super(class_5664.field_28709, "NameProtect", "Useful for recording/streaming");
+      this.method_42010(new class_8246("Username", "The name which your username is replaced with", "Me"));
+   }
+
+   @class_9148
+   public void method_43855(class_4981 var1) {
+      if (this.method_42015()) {
+         var1.method_22940(var1.method_22941().replaceAll(field_46692.method_8502().method_5366(), this.method_42016("Username")));
+      }
+   }
+
+   @class_9148
+   public void method_43854(class_139 var1) {
+      if (this.method_42015()) {
+         class_6310 var4 = var1.method_557();
+         if (var4 instanceof class_1625) {
+            class_1625 var5 = (class_1625)var4;
+            if (var5.method_7241() == class_9120.field_46678) {
+               String var6 = var5.method_7240();
+               if (var6.contains(field_46692.method_8502().method_5366())) {
+                  var6 = var6.replaceAll(field_46692.method_8502().method_5366(), this.method_42016("Username"));
+                  var1.method_556(new class_1625(var5.method_7241(), var5.method_7243(), var6, var5.method_7238()));
+               }
+            }
+         }
+
+         if (var4 instanceof class_5182) {
+            class_5182 var10 = (class_5182)var4;
+         }
+
+         if (var4 instanceof class_7867) {
+            class_7867 var11 = (class_7867)var4;
+            List var15 = var11.method_35609();
+
+            for (int var7 = 0; var7 < var15.size(); var7++) {
+               class_5902 var8 = (class_5902)var15.get(var7);
+               if (var8.method_27001() != null) {
+                  String var9 = var8.method_27001().getString();
+                  if (var9.contains(field_46692.method_8502().method_5366())) {
+                     var9 = var9.replaceAll(field_46692.method_8502().method_5366(), this.method_42016("Username"));
+                     var8.field_29961 = new StringTextComponent(var9);
+                  }
+               }
+            }
+
+            var11.field_40274 = var15;
+         }
+
+         if (var4 instanceof class_9889) {
+            class_9889 var12 = (class_9889)var4;
+            if (var12.method_45562() == null) {
+               return;
+            }
+
+            String var16 = var12.method_45562().getString();
+            if (var16.contains(field_46692.method_8502().method_5366())) {
+               var16 = var16.replaceAll(field_46692.method_8502().method_5366(), this.method_42016("Username"));
+               StringTextComponent var20 = new StringTextComponent(var16);
+               var12.field_50151 = var20;
+            }
+         }
+
+         if (var4 instanceof class_3299) {
+            class_3299 var13 = (class_3299)var4;
+            if (var13.method_15124() == null) {
+               return;
+            }
+
+            String var18 = var13.method_15124().getString();
+            if (var18.contains(field_46692.method_8502().method_5366())) {
+               var18 = var18.replaceAll(field_46692.method_8502().method_5366(), this.method_42016("Username"));
+               StringTextComponent var21 = new StringTextComponent(var18);
+               var1.method_556(new class_3299(var13.method_15125(), var21, var13.method_15123(), var13.method_15121(), var13.method_15127()));
+            }
+         }
+      }
+   }
+}

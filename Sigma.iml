@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="minecraft" name="Minecraft">
+      <configuration>
+        <projectReimportVersion>1</projectReimportVersion>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/clean" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/deobf" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/run" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="natives" level="project" />
+    <orderEntry type="library" name="libraries" level="project" />
+  </component>
+</module>

@@ -1,0 +1,34 @@
+package remapped;
+
+import com.mojang.datafixers.DSL;
+import com.mojang.datafixers.schemas.Schema;
+import com.mojang.datafixers.types.templates.TypeTemplate;
+import java.util.Map;
+import java.util.function.Supplier;
+
+public class class_7541 extends class_5178 {
+   public class_7541(int var1, Schema var2) {
+      super(var1, var2);
+   }
+
+   private static void method_34340(Schema var0, Map<String, Supplier<TypeTemplate>> var1, String var2) {
+      var0.register(
+         var1,
+         var2,
+         () -> DSL.optionalFields(
+               "Items",
+               DSL.list(class_4002.field_19433.in(var0)),
+               "RecipesUsed",
+               DSL.compoundList(class_4002.field_19437.in(var0), DSL.constType(DSL.intType()))
+            )
+      );
+   }
+
+   public Map<String, Supplier<TypeTemplate>> registerBlockEntities(Schema var1) {
+      Map var4 = super.registerBlockEntities(var1);
+      method_34340(var1, var4, "minecraft:furnace");
+      method_34340(var1, var4, "minecraft:smoker");
+      method_34340(var1, var4, "minecraft:blast_furnace");
+      return var4;
+   }
+}

@@ -1,0 +1,44 @@
+package remapped;
+
+public class class_4246 extends class_9128 {
+   private int field_20590;
+   private double field_20589;
+
+   public class_4246() {
+      super(class_5664.field_28714, "Gomme", "AntiKB for GommeHD");
+      this.method_42010(new class_2748<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.method_42010(new class_2748<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
+   }
+
+   @class_9148
+   private void method_19787(class_717 var1) {
+      this.field_20590 = 0;
+   }
+
+   @class_9148
+   private void method_19788(class_7767 var1) {
+      double var4 = this.field_20589 * (double)(1.0F - this.method_42002("Delay")) - this.field_20589 / 2.0;
+      if (field_46692.field_9632.field_41726 && this.field_20590 <= 0) {
+      }
+
+      if (this.field_20590 == 1 && var1.method_35236() < var4) {
+         this.field_20590++;
+         var1.method_35232(var1.method_35234() * 0.5);
+         var1.method_35229(var1.method_35231() * 0.5);
+      } else if (this.field_20590 == 2) {
+         this.field_20590++;
+         class_8865.method_40777(var1, (double)this.method_42002("Boost"));
+      }
+   }
+
+   @class_9148
+   private void method_19786(class_139 var1) {
+      if (var1.method_557() instanceof class_4548) {
+         class_4548 var4 = (class_4548)var1.method_557();
+         if (var4.method_21093() == field_46692.field_9632.method_37145()) {
+            this.field_20590 = 1;
+            this.field_20589 = (double)var4.method_21095() / 8000.0;
+         }
+      }
+   }
+}

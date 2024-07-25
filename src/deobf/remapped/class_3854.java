@@ -1,0 +1,240 @@
+package remapped;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class class_3854 extends class_9128 {
+   private short field_18796;
+   private double field_18795;
+   private float field_18794;
+   private boolean field_18798;
+   private int field_18800;
+   private class_3223 field_18799;
+   private List<Short> field_18793 = new ArrayList<Short>();
+
+   public class_3854() {
+      super(class_5664.field_28716, "Hypixel", "Fly for Hypixel");
+      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method_12861("Fast"));
+      this.method_42010(new class_2748<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));
+      this.method_42010(new class_8563("No Collision", "Prevents block collison.", true));
+      this.method_42010(new class_2748<Float>("Timer Boost", "Boost strength", 2.5F, Float.class, 1.0F, 3.0F, 0.1F));
+      this.method_42010(new class_2748<Float>("Timer Duration", "Boost duration", 0.3F, Float.class, 0.1F, 1.0F, 0.01F));
+   }
+
+   @Override
+   public void method_42006() {
+      String var3 = this.method_42016("Mode");
+      this.field_18794 = 1.0F;
+      this.field_18800 = -1;
+      if (field_46692.field_9632.field_41726 || class_314.method_1413(field_46692.field_9632, 0.001F)) {
+         this.field_18794 = this.method_42002("Timer Boost");
+      }
+
+      if (field_46692.field_9632.field_41726) {
+         switch (var3) {
+            case "Basic":
+               this.field_18795 = 0.0;
+               this.field_18798 = true;
+               break;
+            case "Fast":
+               class_314.method_1450(false);
+               this.field_18798 = true;
+               break;
+            case "NoDmg":
+               this.field_18798 = true;
+               break;
+            case "Funcraft":
+               this.field_18798 = true;
+         }
+
+         this.field_18800 = 0;
+      } else {
+         this.field_18795 = 0.0;
+         this.field_18798 = false;
+      }
+   }
+
+   @Override
+   public void method_42020() {
+      double var3 = class_8865.method_40775();
+      class_8865.method_40776(var3 * 0.7);
+      this.field_18794 = 1.0F;
+      field_46692.field_9616.field_32603 = 1.0F;
+      this.field_18800 = -1;
+   }
+
+   @class_9148
+   @class_3932
+   public void method_17885(class_717 var1) {
+      this.field_18796 = 0;
+      this.field_18799 = new class_3223();
+      this.field_18793 = null;
+   }
+
+   @class_9148
+   @class_4249
+   @class_3932
+   public void method_17886(class_2157 var1) {
+      if (class_314.method_1387()) {
+         class_6310 var4 = var1.method_10047();
+         if (var4 instanceof class_5955) {
+            class_5955 var5 = (class_5955)var4;
+            this.field_18796 = var5.method_27203();
+         }
+      }
+   }
+
+   @class_9148
+   @class_3932
+   @class_5355
+   public void method_17884(class_139 var1) {
+      if (field_46692.method_8614() != null && class_314.method_1387()) {
+         class_6310 var4 = var1.method_557();
+         if (this.method_42015()) {
+            if (var4 instanceof class_509) {
+               this.method_42017().method_41999();
+            }
+         }
+      }
+   }
+
+   @class_9148
+   @class_3932
+   public void method_17887(class_5596 var1) {
+   }
+
+   @class_9148
+   public void method_17888(class_1393 var1) {
+      if (var1.method_6449()) {
+         for (double var7 : class_314.method_1466()) {
+            if ((double)((int)var1.method_6454()) - var1.method_6454() + var7 == 0.0) {
+               var1.method_6451(true);
+               break;
+            }
+         }
+
+         var1.method_6444(true);
+      }
+   }
+
+   @class_9148
+   public void method_17889(class_7767 var1) {
+      String var4 = this.method_42016("Mode");
+      float var5 = this.method_42002("Timer Boost");
+      this.field_18794 = (float)((double)this.field_18794 - 0.01);
+      if (this.field_18794 < var5 - this.method_42002("Timer Duration") || this.field_18794 < 1.0F) {
+         this.field_18794 = 1.0F;
+      }
+
+      if (!class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+         field_46692.field_9616.field_32603 = this.field_18794;
+      }
+
+      if (this.field_18798) {
+         double var28 = 0.64 - Math.random() * 1.0E-10;
+         if (var4.equals("Funcraft")) {
+            var28 -= 0.04;
+         }
+
+         switch (var4) {
+            case "Basic":
+               this.field_18798 = !this.field_18798;
+               break;
+            case "Fast":
+               var1.method_35235(class_8865.method_40786());
+               class_8865.method_40777(var1, var28);
+               this.field_18798 = !this.field_18798;
+               this.field_18795 = 0.51 + (double)this.method_42002("Speed") + 0.015 * (double)class_8865.method_40770();
+               break;
+            case "NoDmg":
+               var1.method_35235(class_8865.method_40786());
+               class_8865.method_40777(var1, var28);
+               this.field_18798 = !this.field_18798;
+               this.field_18795 = var28 * 0.987;
+               break;
+            case "Funcraft":
+               var1.method_35235(class_8865.method_40786());
+               class_8865.method_40777(var1, var28);
+               this.field_18798 = !this.field_18798;
+               this.field_18795 = 0.51 + (double)this.method_42002("Speed");
+         }
+      } else {
+         if (var4.equals("NoDmg") && this.field_18800 > 20) {
+            this.field_18795 = 0.0;
+         }
+
+         double var6 = 0.99375 - (double)this.field_18800 * 1.0E-13;
+         this.field_18795 *= var6;
+         if (field_46692.field_9632.field_41744 || field_46692.field_9632.field_41774) {
+            this.field_18795 = 0.0;
+         }
+
+         double var10 = var4.equals("Basic") ? class_8865.method_40767() : class_8865.method_40767() - 0.008;
+         if (this.field_18795 < var10) {
+            this.field_18795 = var10;
+         } else if (!class_314.method_1434()) {
+            this.field_18795 = var10;
+         }
+
+         class_8865.method_40777(var1, this.field_18795);
+         if (!field_46692.field_9632.field_41726 || !class_314.method_1413(field_46692.field_9632, 0.001F)) {
+            this.field_18800++;
+            var1.method_35235(0.0);
+            class_314.method_1408(0.0);
+            if (this.field_18800 % 5 < 4) {
+               double var12 = field_46692.field_9632.method_37302();
+               double var14 = field_46692.field_9632.method_37309();
+               double var16 = field_46692.field_9632.method_37156();
+               field_46692.field_9632.method_37256(var12, var14 + 1.0E-14, var16);
+            }
+         }
+
+         class_1343 var18 = field_46692.field_9632.method_37287(var1.method_35233().method_6214(0.0, -var1.method_35233().method_60(), 0.0));
+         double var19 = Math.abs(Math.sqrt(var18.method_6221()) - this.field_18795);
+         boolean var21 = var19 < 1.0E-4;
+         if (this.method_42007("No Collision") && this.field_18795 > var10) {
+            ArrayList var22 = new ArrayList();
+            float var23 = class_9299.method_42810(class_8865.method_40785());
+            if (var23 > 0.0F && var23 < 90.0F) {
+               var22.add(new class_1343(1.0, 0.0, 0.0));
+               var22.add(new class_1343(0.0, 0.0, 1.0));
+               var22.add(new class_1343(0.0, 0.0, -1.0));
+               var22.add(new class_1343(-1.0, 0.0, 0.0));
+            } else if (var23 > 90.0F && var23 < 180.0F) {
+               var22.add(new class_1343(0.0, 0.0, 1.0));
+               var22.add(new class_1343(-1.0, 0.0, 0.0));
+               var22.add(new class_1343(0.0, 0.0, -1.0));
+               var22.add(new class_1343(1.0, 0.0, 0.0));
+            } else if (var23 > -180.0F && var23 < -90.0F) {
+               var22.add(new class_1343(0.0, 0.0, -1.0));
+               var22.add(new class_1343(-1.0, 0.0, 0.0));
+               var22.add(new class_1343(1.0, 0.0, 0.0));
+               var22.add(new class_1343(0.0, 0.0, 1.0));
+            } else {
+               var22.add(new class_1343(0.0, 0.0, -1.0));
+               var22.add(new class_1343(1.0, 0.0, 0.0));
+               var22.add(new class_1343(0.0, 0.0, 1.0));
+               var22.add(new class_1343(-1.0, 0.0, 0.0));
+            }
+
+            var1.method_35230(var18);
+            if (!var21 && field_46692.field_9632.method_37309() % 1.0 > 0.1F && class_8865.method_40772()) {
+               for (class_1343 var25 : var22) {
+                  var25.field_7336 = var25.field_7336 * this.field_18795;
+                  var25.field_7334 = var25.field_7334 * this.field_18795;
+                  double var26 = Math.abs(Math.sqrt(field_46692.field_9632.method_37287(var25).method_6221()) - this.field_18795);
+                  var21 = var26 < 1.0E-4;
+                  if (var21) {
+                     var1.method_35230(var25);
+                     break;
+                  }
+               }
+            }
+         }
+
+         if (field_46692.field_9577.field_45450.field_30024) {
+            var1.method_35235(0.25);
+         }
+      }
+   }
+}
