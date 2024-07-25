@@ -122,7 +122,7 @@ public class class_8193 extends class_9128 {
             } else if (!class_314.method_1413(field_46692.field_9632, 0.001F)) {
                var1.method_35235(0.0);
                this.field_41932 = -2;
-               class_727.method_3328().method_3335().method_27841(new class_8235("Cubecraft Fly", "Please start on the ground."));
+               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Cubecraft Fly", "Please start on the ground."));
             } else {
                class_8865.method_40777(var1, 0.0);
                var1.method_35235(0.0);

@@ -50,7 +50,7 @@ public class class_5787 extends class_9128 {
             }
          }
 
-         if (field_46692.field_9623 instanceof class_2208 || class_727.method_3328().method_3310().method_25291() <= 1) {
+         if (field_46692.field_9623 instanceof class_2208 || SigmaMainClass.method_3328().method_3310().method_25291() <= 1) {
             if (field_46692.field_9623 instanceof class_5766) {
                return;
             }
@@ -70,7 +70,7 @@ public class class_5787 extends class_9128 {
                }
             }
 
-            if (class_727.method_3328().method_3299().method_31001() != null && class_727.method_3328().method_3299().method_31001().method_32121()) {
+            if (SigmaMainClass.method_3328().method_3299().method_31001() != null && SigmaMainClass.method_3328().method_3299().method_31001().method_32121()) {
                for (class_5916 var14 : class_1893.method_8510().field_9577.field_45395) {
                   var14.field_30024 = false;
                }

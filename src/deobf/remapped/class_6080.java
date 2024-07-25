@@ -140,6 +140,6 @@ public class class_6080 {
    }
 
    public void method_27843() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 }

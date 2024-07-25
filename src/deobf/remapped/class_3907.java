@@ -31,7 +31,7 @@ public class class_3907 extends class_9128 {
    @class_9148
    @class_315
    private void method_18092(class_1393 var1) {
-      if (!this.method_42015() || class_727.method_3328().method_3298().method_847(class_6908.class).method_42015()) {
+      if (!this.method_42015() || SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42015()) {
          field_18992 = 0;
       } else if (var1.method_6449()) {
          if (field_46692.field_9647.method_42156()) {

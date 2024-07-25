@@ -28,8 +28,8 @@ public class class_2099 extends class_1859 {
    }
 
    public void method_9846() {
-      class_727.method_3328();
-      class_986 var3 = class_727.method_3328().method_3298().method_848();
+      SigmaMainClass.method_3328();
+      class_986 var3 = SigmaMainClass.method_3328().method_3298().method_848();
       class_1675 var4 = var3.method_4301();
       int var5 = 1;
 
@@ -43,8 +43,8 @@ public class class_2099 extends class_1859 {
    }
 
    public void method_9849(class_1675 var1) {
-      class_727.method_3328();
-      class_986 var4 = class_727.method_3328().method_3298().method_848();
+      SigmaMainClass.method_3328();
+      class_986 var4 = SigmaMainClass.method_3328().method_3298().method_848();
       class_1675 var5 = var4.method_4301();
       int var6 = 1;
 
@@ -58,8 +58,8 @@ public class class_2099 extends class_1859 {
    }
 
    public void method_9848() {
-      class_727.method_3328();
-      class_986 var3 = class_727.method_3328().method_3298().method_848();
+      SigmaMainClass.method_3328();
+      class_986 var3 = SigmaMainClass.method_3328().method_3298().method_848();
       int var4 = 1;
 
       while (var3.method_4299("New Profile " + var4)) {
@@ -104,7 +104,7 @@ public class class_2099 extends class_1859 {
       int var4 = 0;
       byte var5 = 70;
 
-      for (class_1675 var7 : class_727.method_3328().method_3298().method_848().method_4305()) {
+      for (class_1675 var7 : SigmaMainClass.method_3328().method_3298().method_848().method_4305()) {
          class_299 var8 = new class_299(this, "profile" + var4, 0, var5 * var4, this.field_10537.method_32109(), var5, var7, var4);
          this.field_10537.method_32148(var8);
          this.field_10533.add(var8);

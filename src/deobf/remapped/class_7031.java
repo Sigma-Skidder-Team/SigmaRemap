@@ -27,9 +27,9 @@ public class class_7031 extends class_9128 {
          this.field_36204.method_14773();
          this.field_36204.method_14776();
          if (!this.method_42007("Instant")) {
-            class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
          } else {
-            class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
          }
       }
    }
@@ -45,7 +45,7 @@ public class class_7031 extends class_9128 {
             field_46692.method_8614().method_4813(this.field_36206.get(var4));
          }
 
-         class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Disabler canceled"));
+         SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Disabler canceled"));
       }
 
       this.field_36206.clear();
@@ -56,9 +56,9 @@ public class class_7031 extends class_9128 {
       if (field_46692.field_9632 != null) {
          if (!this.field_36207 && field_46692.field_9632.field_41726) {
             if (!this.method_42007("Instant")) {
-               class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
+               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
             } else {
-               class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
+               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
             }
 
             this.field_36204.method_14773();
@@ -89,7 +89,7 @@ public class class_7031 extends class_9128 {
             this.field_36204.method_14773();
             this.field_36204.method_14774();
             this.method_42017().method_41999();
-            class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Disabler failed"));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Disabler failed"));
          }
       }
    }
@@ -120,7 +120,7 @@ public class class_7031 extends class_9128 {
             if (var1.method_557() instanceof class_509) {
                this.method_42017().method_41999();
                if (!this.method_42007("Instant")) {
-                  class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "You can do what you want for 5s"));
+                  SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "You can do what you want for 5s"));
                } else {
                   class_509 var4 = (class_509)var1.method_557();
                   var1.method_29715(true);
@@ -133,7 +133,7 @@ public class class_7031 extends class_9128 {
                   }
 
                   this.field_36206.clear();
-                  class_727.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Successfully sent packets"));
+                  SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Successfully sent packets"));
                }
 
                this.field_36207 = false;

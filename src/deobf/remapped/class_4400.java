@@ -9,7 +9,7 @@ public class class_4400 {
    public List<class_8145> field_21536 = new CopyOnWriteArrayList<class_8145>();
 
    public void method_20492() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
    public boolean method_20495(class_8145 var1) {

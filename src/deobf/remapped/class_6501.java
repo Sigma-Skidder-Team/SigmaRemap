@@ -45,7 +45,7 @@ public class class_6501 extends class_9128 {
 
             if (var5 >= 36 && var5 <= 44) {
                field_46692.field_9632.field_3853.field_36404 = var5 % 9;
-            } else if (class_727.method_3328().method_3310().method_25303() > 1) {
+            } else if (SigmaMainClass.method_3328().method_3310().method_25303() > 1) {
                String var6 = this.method_42016("Inv Mode");
                if (var6.equals("OpenInv") && !(field_46692.field_9623 instanceof class_3431)) {
                   return;

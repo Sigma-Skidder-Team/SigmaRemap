@@ -36,7 +36,7 @@ public class class_9522 extends class_367 {
                   var1x -> var1x.method_37175(field_46692.field_9632) < 12.0F
                         && !this.method_43929(var1x)
                         && field_46692.field_9632 != var1x
-                        && !class_727.method_3328().method_3331().method_20495(var1x)
+                        && !SigmaMainClass.method_3328().method_3331().method_20495(var1x)
                );
             if (var4.isEmpty()) {
                if (this.field_48467 > 0) {
@@ -193,12 +193,12 @@ public class class_9522 extends class_367 {
                double var9 = field_46692.field_9577.field_45543;
                field_46692.field_9577.field_45543 = 114.0;
                field_46692.field_9590.field_40627 = false;
-               class_727.field_3951 = true;
+               SigmaMainClass.field_3951 = true;
                class_4230 var11 = field_46692.field_9657.field_21000;
                field_46692.field_9657.field_21000 = null;
                field_46692.field_9590.method_35950(var1.field_8848, class_9665.method_44657(), new class_7966());
                field_46692.field_9657.field_21000 = var11;
-               class_727.field_3951 = false;
+               SigmaMainClass.field_3951 = false;
                field_46692.field_9590.field_40627 = true;
                field_46692.field_9577.field_45543 = var9;
                field_46692.field_9632.field_41701 = var8;

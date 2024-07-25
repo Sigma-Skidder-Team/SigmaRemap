@@ -24,7 +24,7 @@ public class class_8563 extends class_5004<Boolean> {
 
    public void method_39399(Boolean var1, boolean var2) {
       if (this.field_43797 && var2) {
-         class_727.method_3328().method_3335().method_27841(new class_8235("Premium", "Not yet available for free version"));
+         SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Premium", "Not yet available for free version"));
       }
 
       super.method_23038(var1, var2);

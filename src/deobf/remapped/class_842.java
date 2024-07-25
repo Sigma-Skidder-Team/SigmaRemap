@@ -38,10 +38,10 @@ public class class_842 extends class_3720 {
                }
 
                if (var14 != -1) {
-                  class_727.method_3328().method_3298().method_835().method_368(var14, (class_9128)var6);
+                  SigmaMainClass.method_3328().method_3298().method_835().method_368(var14, (class_9128)var6);
                   var3.method_3731("Key " + var2[1].method_24060() + " was set for module " + ((class_9128)var6).method_41987());
                } else {
-                  class_727.method_3328().method_3298().method_835().method_383(var6);
+                  SigmaMainClass.method_3328().method_3298().method_835().method_383(var6);
                   var3.method_3731("Keybind was reset for module " + ((class_9128)var6).method_41987());
                }
             }
@@ -52,7 +52,7 @@ public class class_842 extends class_3720 {
             }
 
             String var7 = "key.keyboard.";
-            int var8 = class_727.method_3328().method_3298().method_835().method_381((class_9128)var6);
+            int var8 = SigmaMainClass.method_3328().method_3298().method_835().method_381((class_9128)var6);
             String var9 = null;
 
             for (Entry var11 : class_3654.field_17801.entrySet()) {
@@ -92,7 +92,7 @@ public class class_842 extends class_3720 {
    }
 
    public class_9128 method_3683(String var1) {
-      for (class_9128 var5 : class_727.method_3328().method_3298().method_843().values()) {
+      for (class_9128 var5 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          if (var5.method_41992().replace(" ", "").equalsIgnoreCase(var1)) {
             return var5;
          }

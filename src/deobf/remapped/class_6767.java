@@ -6,6 +6,6 @@ public class class_6767 implements class_5987 {
    }
 
    public void ኞ쬫鷏ᜄ哺(byte[] var1, int var2, int var3) {
-      class_727.method_3306().method_12865("DONE");
+      SigmaMainClass.method_3306().method_12865("DONE");
    }
 }

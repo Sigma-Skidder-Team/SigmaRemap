@@ -27,7 +27,7 @@ public class class_1325 {
          && this.field_7291 != null
          && this.field_7291.field_31206 < 64;
       if (this.field_7292 < this.field_7290 && var4 && var5 && this.field_7294 > 0) {
-         this.field_7292 = this.field_7292 + class_727.method_3328().method_3310().method_25300();
+         this.field_7292 = this.field_7292 + SigmaMainClass.method_3328().method_3310().method_25300();
       }
 
       if (this.field_7294 > 0) {

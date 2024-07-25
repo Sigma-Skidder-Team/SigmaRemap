@@ -29,11 +29,11 @@ public class class_4356 extends class_446 {
    public void finalize() throws Throwable {
       try {
          if (this.field_21338 != null) {
-            class_727.method_3328().method_3329(this.field_21338);
+            SigmaMainClass.method_3328().method_3329(this.field_21338);
          }
 
          if (this.field_21333 != null) {
-            class_727.method_3328().method_3329(this.field_21333);
+            SigmaMainClass.method_3328().method_3329(this.field_21333);
          }
       } finally {
          super.finalize();

@@ -14,7 +14,7 @@ public abstract class class_5676 implements class_1602 {
       this.field_28768 = var1;
       this.field_28767 = var2;
       this.field_28765 = var3;
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
    public String method_25668() {

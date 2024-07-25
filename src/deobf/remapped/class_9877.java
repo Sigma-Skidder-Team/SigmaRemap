@@ -20,7 +20,7 @@ public class class_9877 extends class_9128 {
          if (field_46692.field_9632.field_41726 && this.field_49933 != null) {
             double var5 = var4.method_6195(this.field_49933) / (double)this.field_49934;
             var5 *= (double)field_46692.field_9616.field_32603;
-            boolean var7 = class_727.method_3328().method_3310().method_25293() > 1 && field_46692.field_9632.field_29600 == 0;
+            boolean var7 = SigmaMainClass.method_3328().method_3310().method_25293() > 1 && field_46692.field_9632.field_29600 == 0;
             double var8 = !var7 ? 0.312948 : 0.280616;
             double var10 = var5 / var8;
             BigDecimal var12 = new BigDecimal(var10);
@@ -41,7 +41,7 @@ public class class_9877 extends class_9128 {
             }
 
             class_314.method_1443(
-               class_727.method_3328().method_3325().method_22662() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
+               SigmaMainClass.method_3328().method_3325().method_22662() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
             );
          }
 

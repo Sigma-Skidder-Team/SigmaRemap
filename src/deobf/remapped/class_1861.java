@@ -35,17 +35,17 @@ public class class_1861 extends class_3720 {
                         throw new class_2900();
                      }
 
-                     var3.method_3731("§l" + class_727.method_3328().method_3298().method_848().method_4305().size() + " " + this.method_8240() + " :");
+                     var3.method_3731("§l" + SigmaMainClass.method_3328().method_3298().method_848().method_4305().size() + " " + this.method_8240() + " :");
 
-                     for (class_1675 var8 : class_727.method_3328().method_3298().method_848().method_4305()) {
-                        boolean var9 = class_727.method_3328().method_3298().method_848().method_4301() == var8;
-                        if (class_727.method_3328().method_3312() != class_6015.field_30644 || !var9) {
+                     for (class_1675 var8 : SigmaMainClass.method_3328().method_3298().method_848().method_4305()) {
+                        boolean var9 = SigmaMainClass.method_3328().method_3298().method_848().method_4301() == var8;
+                        if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30644 || !var9) {
                            var3.method_3731((!var9 ? "" : "§n") + var8.field_8677);
                         }
                      }
                   } else if (var2.length != 1) {
                      String var10 = var2[1].method_24060().toLowerCase();
-                     if (!class_727.method_3328().method_3298().method_848().method_4302(var10)) {
+                     if (!SigmaMainClass.method_3328().method_3298().method_848().method_4302(var10)) {
                         var3.method_3731(this.method_8240() + " not found!");
                      } else {
                         var3.method_3731("Removed " + this.method_8240());
@@ -55,21 +55,21 @@ public class class_1861 extends class_3720 {
                   }
                } else if (var2.length != 1) {
                   String var11 = var2[1].method_24060().toLowerCase();
-                  class_1675 var13 = class_727.method_3328().method_3298().method_848().method_4301();
-                  var13.field_8678 = class_727.method_3328().method_3298().method_839(new class_1293());
-                  class_727.method_3328().method_3298().method_848().method_4302(var11);
-                  class_727.method_3328().method_3298().method_848().method_4298(new class_1675(var11, var13.field_8678));
+                  class_1675 var13 = SigmaMainClass.method_3328().method_3298().method_848().method_4301();
+                  var13.field_8678 = SigmaMainClass.method_3328().method_3298().method_839(new class_1293());
+                  SigmaMainClass.method_3328().method_3298().method_848().method_4302(var11);
+                  SigmaMainClass.method_3328().method_3298().method_848().method_4298(new class_1675(var11, var13.field_8678));
                   var3.method_3731("Saved " + this.method_8240());
                } else {
                   var3.method_3731("Usage : .config save <name>");
                }
             } else if (var2.length != 1) {
                String var12 = var2[1].method_24060().toLowerCase();
-               class_1675 var14 = class_727.method_3328().method_3298().method_848().method_4307(var12);
+               class_1675 var14 = SigmaMainClass.method_3328().method_3298().method_848().method_4307(var12);
                if (var14 == null) {
                   var3.method_3731(this.method_8240() + " not found!");
                } else {
-                  class_727.method_3328().method_3298().method_848().method_4300(var14);
+                  SigmaMainClass.method_3328().method_3298().method_848().method_4300(var14);
                   var3.method_3731(this.method_8240() + " was loaded!");
                }
             } else {
@@ -82,17 +82,17 @@ public class class_1861 extends class_3720 {
    }
 
    public String method_8240() {
-      return class_727.method_3328().method_3312() != class_6015.field_30644 ? "Profile" : "Config";
+      return SigmaMainClass.method_3328().method_3312() != class_6015.field_30644 ? "Profile" : "Config";
    }
 
    public void method_8239(String var1) {
-      class_1293 var4 = class_727.method_3328().method_3298().method_839(new class_1293());
-      File var5 = new File(class_727.method_3328().method_3334() + "/configs/");
+      class_1293 var4 = SigmaMainClass.method_3328().method_3298().method_839(new class_1293());
+      File var5 = new File(SigmaMainClass.method_3328().method_3334() + "/configs/");
       if (!var5.exists()) {
          var5.mkdirs();
       }
 
-      File var6 = new File(class_727.method_3328().method_3334() + "/configs/" + var1 + ".config");
+      File var6 = new File(SigmaMainClass.method_3328().method_3334() + "/configs/" + var1 + ".config");
       if (!var6.exists()) {
          try {
             var6.createNewFile();

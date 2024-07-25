@@ -21,7 +21,7 @@ public class class_9451 {
 
    public static boolean method_43714(class_2522 var0, class_6163 var1, class_1331 var2, class_240 var3, class_4460 var4) {
       class_3310 var7 = new class_3310(var0);
-      class_727.method_3328().method_3302().method_7914(var7);
+      SigmaMainClass.method_3328().method_3302().method_7914(var7);
       if (!var7.method_15184()) {
          if (!var7.method_29716()) {
             class_1331 var8 = var2.method_6098(var3);

@@ -695,7 +695,7 @@ public class class_314 {
    public static void method_1431(class_8145 var0, boolean var1) {
       boolean var4 = class_3347.method_15348().equals(class_412.field_1747);
       class_3645 var5 = new class_3645(var0, true);
-      class_727.method_3328().method_3302().method_7914(var5);
+      SigmaMainClass.method_3328().method_3302().method_7914(var5);
       if (!var5.method_29716()) {
          if (var4 && var1) {
             field_1158.field_9632.method_26597(class_2584.field_12791);
@@ -714,7 +714,7 @@ public class class_314 {
             && !field_1158.field_9632.method_37285()
             && !field_1158.field_9632.method_26480(class_4054.field_19736)
             && !field_1158.field_9632.method_37070();
-         if (var7 || field_1158.field_9632.field_41726 && class_727.method_3328().method_3298().method_847(class_9801.class).method_42015()) {
+         if (var7 || field_1158.field_9632.field_41726 && SigmaMainClass.method_3328().method_3298().method_847(class_9801.class).method_42015()) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15322);
          }
 
@@ -724,7 +724,7 @@ public class class_314 {
          }
 
          var5.method_16974();
-         class_727.method_3328().method_3302().method_7914(var5);
+         SigmaMainClass.method_3328().method_3302().method_7914(var5);
       }
    }
 
@@ -787,7 +787,7 @@ public class class_314 {
    }
 
    public static void method_1403() {
-      if (field_1158.method_8516() instanceof class_704 && class_727.method_3328().method_3299().method_31000()) {
+      if (field_1158.method_8516() instanceof class_704 && SigmaMainClass.method_3328().method_3299().method_31000()) {
          if (field_1158.field_9590.field_40620 != null) {
             field_1158.field_9590.field_40620.close();
          }
@@ -1025,7 +1025,7 @@ public class class_314 {
 
    public static boolean method_1402(class_8145 var0, boolean var1, boolean var2, boolean var3) {
       if (var0 != field_1158.field_9632 && var0 != class_5477.field_27898) {
-         if (class_727.method_3328().method_3307().method_14460(var0)) {
+         if (SigmaMainClass.method_3328().method_3307().method_14460(var0)) {
             return false;
          } else if (var0 instanceof class_5834) {
             if (((class_5834)var0).method_26551() == 0.0F) {
@@ -1036,7 +1036,7 @@ public class class_314 {
                return false;
             } else if (!var1 && var0 instanceof class_704) {
                return false;
-            } else if (var0 instanceof class_704 && class_727.method_3328().method_3331().method_20495(var0)) {
+            } else if (var0 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var0)) {
                return false;
             } else if (!var3 && var0.method_37109()) {
                return false;
@@ -1048,7 +1048,7 @@ public class class_314 {
                return !var0.method_37367()
                   ? !(var0 instanceof class_704)
                      || !class_5876.method_26760((class_704)var0)
-                     || !class_727.method_3328().method_3298().method_847(class_3595.class).method_42015()
+                     || !SigmaMainClass.method_3328().method_3298().method_847(class_3595.class).method_42015()
                   : false;
             }
          } else {

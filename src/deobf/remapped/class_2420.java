@@ -61,7 +61,7 @@ public class class_2420 extends class_9128 {
             if (var4.field_3139 == (double)this.field_12051.method_12173() + 0.5
                && var4.field_3144 == (double)(this.field_12051.method_12165() + 1)
                && var4.field_3141 == (double)this.field_12051.method_12185() + 0.5) {
-               class_727.method_3328().method_3335().method_27841(new class_8235("ClickTP", "Successfully teleported"));
+               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("ClickTP", "Successfully teleported"));
                if (!this.method_42017().method_42007("Auto Disable")) {
                   this.field_12052 = -1;
                   this.field_12051 = null;

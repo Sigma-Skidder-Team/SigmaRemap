@@ -31,10 +31,10 @@ public class class_5956 extends class_7038 {
       this.field_30365
          .method_32100(
             (var1x, var2x) -> {
-               class_7309 var5 = class_727.method_3328()
+               class_7309 var5 = SigmaMainClass.method_3328()
                   .method_3303()
                   .method_39908()
-                  .get(new Random().nextInt(class_727.method_3328().method_3303().method_39908().size()));
+                  .get(new Random().nextInt(SigmaMainClass.method_3328().method_3303().method_39908().size()));
                var10.method_9987(var5);
             }
          );
@@ -44,11 +44,11 @@ public class class_5956 extends class_7038 {
       this.field_30367.method_32100((var1x, var2x) -> {
          class_9192 var5 = var10.method_9983();
          if (var5 != null) {
-            class_727.method_3328().method_3299().method_30990(new class_7007(var5.field_47028));
+            SigmaMainClass.method_3328().method_3299().method_30990(new class_7007(var5.field_47028));
          }
       });
-      this.field_30368.method_32100((var0, var1x) -> class_727.method_3328().method_3299().method_30990(new class_5527()));
-      this.field_30364.method_32100((var0, var1x) -> class_727.method_3328().method_3299().method_30990(new class_965()));
+      this.field_30368.method_32100((var0, var1x) -> SigmaMainClass.method_3328().method_3299().method_30990(new class_5527()));
+      this.field_30364.method_32100((var0, var1x) -> SigmaMainClass.method_3328().method_3299().method_30990(new class_965()));
    }
 
    @Override

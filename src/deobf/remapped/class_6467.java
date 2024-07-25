@@ -102,7 +102,7 @@ public class class_6467 extends class_9128 {
    private boolean method_29451(class_8145 var1) {
       if (var1 instanceof class_5834) {
          if (var1 instanceof class_704) {
-            return !(var1 instanceof class_5989) ? !class_727.method_3328().method_3331().method_20495(var1) : false;
+            return !(var1 instanceof class_5989) ? !SigmaMainClass.method_3328().method_3331().method_20495(var1) : false;
          } else {
             return false;
          }

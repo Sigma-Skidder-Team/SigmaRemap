@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class class_8691 {
    public ArrayList<class_7309> field_44583 = new ArrayList<class_7309>();
-   public File field_44579 = new File(class_727.method_3328().method_3334() + "/alts.json");
+   public File field_44579 = new File(SigmaMainClass.method_3328().method_3334() + "/alts.json");
    private String field_44581;
    private class_5190 field_44580 = new class_5190();
 
@@ -16,8 +16,8 @@ public class class_8691 {
    }
 
    public void method_39914() {
-      class_727.method_3328().method_3302().method_7908(this);
-      class_727.method_3328().method_3302().method_7908(this.field_44580);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this.field_44580);
    }
 
    @Deprecated
@@ -109,9 +109,9 @@ public class class_8691 {
       var7.method_5820("alts", var3);
 
       try {
-         class_357.method_1791(var7, new File(class_727.method_3328().method_3334() + "/alts.json"));
+         class_357.method_1791(var7, new File(SigmaMainClass.method_3328().method_3334() + "/alts.json"));
       } catch (IOException | class_7584 var6) {
-         class_727.method_3328().method_3326().method_12864(var6.getMessage());
+         SigmaMainClass.method_3328().method_3326().method_12864(var6.getMessage());
       }
    }
 
@@ -126,7 +126,7 @@ public class class_8691 {
             this.field_44583.add(new class_7309((class_1293)var5));
          }
       } catch (IOException var6) {
-         class_727.method_3328().method_3326().method_12864(var6.getMessage());
+         SigmaMainClass.method_3328().method_3326().method_12864(var6.getMessage());
       }
    }
 

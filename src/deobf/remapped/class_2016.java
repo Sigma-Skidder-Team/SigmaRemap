@@ -22,11 +22,11 @@ public class class_2016 extends class_9128 {
       if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
          if (var1.method_6449()) {
             boolean var4 = field_46692.field_9632.method_26446() != null && field_46692.field_9632.method_26446().method_27960() instanceof class_2235;
-            boolean var5 = class_727.method_3328().method_3298().method_847(class_2534.class).method_42003();
+            boolean var5 = SigmaMainClass.method_3328().method_3298().method_847(class_2534.class).method_42003();
             boolean var6 = true;
             if (!field_46692.field_9632.method_37252()
                && field_46692.field_9587.method_33990() == class_1430.field_7717
-               && !class_727.method_3328().method_3298().method_847(class_2534.class).method_42003()) {
+               && !SigmaMainClass.method_3328().method_3298().method_847(class_2534.class).method_42003()) {
                class_9529 var7 = (class_9529)field_46692.field_9587;
                class_1331 var8 = var7.method_43955();
                class_6414 var9 = field_46692.field_9601.method_28262(var8).method_8360();

@@ -17,7 +17,7 @@ public class class_3451 extends class_1859 {
       this.field_16930 = 260;
       this.method_32148(this.field_16931 = new class_5940(this, "waypointList", 0, 65, this.field_16930, this.field_36257 - 65));
 
-      for (class_4333 var10 : class_727.method_3328().method_3309().method_21960()) {
+      for (class_4333 var10 : SigmaMainClass.method_3328().method_3309().method_21960()) {
          this.field_16931.method_27166(var10.field_21072, new class_2700(var10.field_21071, 64, var10.field_21073), var10.field_21075);
       }
 
@@ -29,7 +29,7 @@ public class class_3451 extends class_1859 {
    public void method_32145(int var1, int var2) {
       super.method_32145(var1, var2);
       if (this.field_36267) {
-         class_727.method_3328().method_3309().field_23058.clear();
+         SigmaMainClass.method_3328().method_3309().field_23058.clear();
       }
    }
 
@@ -45,7 +45,7 @@ public class class_3451 extends class_1859 {
          var1 * 0.9F
       );
       float var5 = 0.88F;
-      if (!class_727.method_3328().method_3299().method_31000()) {
+      if (!SigmaMainClass.method_3328().method_3299().method_31000()) {
          var5 = 0.95F;
       }
 
@@ -96,7 +96,7 @@ public class class_3451 extends class_1859 {
          "Jello Maps",
          class_1255.field_6918.field_6917
       );
-      String var7 = class_727.method_3328().method_3309().method_21978().replace("/", " - ");
+      String var7 = SigmaMainClass.method_3328().method_3309().method_21978().replace("/", " - ");
       class_73.method_87(
          class_5320.field_27150,
          (float)(this.field_36270 + this.field_36278 - class_5320.field_27150.method_18547(var7) - 10),

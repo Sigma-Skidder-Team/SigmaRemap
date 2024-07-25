@@ -260,7 +260,7 @@ public class class_9618 extends class_1859 {
                "blur", class_7849.method_35508(0, 0, this.method_32109(), this.method_32137(), 5, 10, class_1255.field_6918.field_6917, true)
             );
          } catch (IOException var5) {
-            class_727.method_3328().method_3326().method_12864(var5.getMessage());
+            SigmaMainClass.method_3328().method_3326().method_12864(var5.getMessage());
          }
       }
 
@@ -280,7 +280,7 @@ public class class_9618 extends class_1859 {
    public void finalize() throws Throwable {
       try {
          if (this.field_49007 != null) {
-            class_727.method_3328().method_3329(this.field_49007);
+            SigmaMainClass.method_3328().method_3329(this.field_49007);
          }
       } finally {
          super.finalize();

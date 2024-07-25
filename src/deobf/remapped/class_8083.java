@@ -60,7 +60,7 @@ public class class_8083 extends class_9128 {
    @class_9148
    public void method_36707(class_7982 var1) {
       if (this.method_42015()) {
-         if (this.method_42016("Speed Mode").equals("Cubecraft") && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         if (this.method_42016("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
             if (field_46692.field_9601
                      .method_6680(
                         field_46692.field_9632,
@@ -71,7 +71,7 @@ public class class_8083 extends class_9128 {
                && field_46692.field_9632.field_41706 < 1.0F) {
                var1.method_36186(true);
             }
-         } else if (field_46692.field_9632.field_41726 && class_727.method_3328().method_3298().method_847(class_1396.class).method_42015()) {
+         } else if (field_46692.field_9632.field_41726 && SigmaMainClass.method_3328().method_3298().method_847(class_1396.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -212,7 +212,7 @@ public class class_8083 extends class_9128 {
                if (field_46692.field_9632.field_41726 && class_314.method_1434() && !field_46692.field_9632.method_37252() && !this.field_41374) {
                   this.field_41377 = false;
                   field_46692.field_9632.method_26595();
-                  ((class_6908)class_727.method_3328().method_3298().method_847(class_6908.class)).method_31653();
+                  ((class_6908) SigmaMainClass.method_3328().method_3298().method_847(class_6908.class)).method_31653();
                   this.field_41377 = true;
                   var1.method_35235(field_46692.field_9632.method_37098().field_7333);
                   var1.method_35232(field_46692.field_9632.method_37098().field_7336);

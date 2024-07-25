@@ -10,7 +10,7 @@ public class class_9782 {
 
    public class_9782() {
       this.field_49649 = new class_3223();
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
    @class_9148
@@ -50,7 +50,7 @@ public class class_9782 {
                            this.field_49645.field_9632.method_37302(), this.field_49645.field_9632.method_37309(), this.field_49645.field_9632.method_37156()
                         );
                         ArrayList var6x = class_6306.method_28770(var5x, var4x);
-                        class_727.method_3328().method_3335().method_27841(new class_8235("Teleport", "Successfully teleported !"));
+                        SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Teleport", "Successfully teleported !"));
                         class_8145 var7 = this.field_49645.field_9632.method_37243();
 
                         for (class_4714 var9x : var6x) {
@@ -113,7 +113,7 @@ public class class_9782 {
          var1.method_35235(0.0);
          var1.method_35229(0.0);
          if (this.field_49648 == null || !this.field_49648.method_37330() || !class_314.method_1440().contains(this.field_49648)) {
-            class_727.method_3328().method_3335().method_27841(new class_8235("Teleport", "Target lost"));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Teleport", "Target lost"));
             this.field_49646 = 0;
             this.field_49648 = null;
          } else if (!this.field_49645.field_9632.method_37252()) {
@@ -121,18 +121,18 @@ public class class_9782 {
             if (var4 < -2.0 && class_314.method_1432(this.field_49648) && this.field_49648.method_37309() - this.field_49645.field_9632.method_37309() < -10.0) {
                this.field_49646 = 0;
                this.field_49648 = null;
-               class_727.method_3328().method_3335().method_27841(new class_8235("Teleport", "Target seems to be falling in void"));
+               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Teleport", "Target seems to be falling in void"));
             }
          } else {
             this.field_49646 = 0;
             this.field_49648 = null;
-            class_727.method_3328().method_3335().method_27841(new class_8235("Teleport", "Teleport canceled"));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Teleport", "Teleport canceled"));
          }
 
          if (this.field_49649.method_14772() > 7000L) {
             this.field_49646 = 0;
             this.field_49648 = null;
-            class_727.method_3328().method_3335().method_27841(new class_8235("Teleport", "Failed teleport !"));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Teleport", "Failed teleport !"));
          }
       }
    }

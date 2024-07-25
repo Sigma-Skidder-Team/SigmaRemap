@@ -22,7 +22,7 @@ public class class_6370 extends class_9128 {
    public void method_29149(class_5596 var1) {
       this.field_32562 = class_7494.method_34079(field_46692.field_9632.field_41701, field_46692.field_9632.field_41755, 200.0F);
       if (this.field_32558 != null && this.field_32566 != null) {
-         class_727.method_3328()
+         SigmaMainClass.method_3328()
             .method_3335()
             .method_27841(new class_8235("AutoMiner", "Computing... (" + this.field_32566.field_49718 + ")", class_2209.field_10993));
       }

@@ -174,7 +174,7 @@ public class class_1772 {
                }
             } catch (Exception var8) {
                var8.printStackTrace();
-               class_727.method_3328().method_3326().method_12864("An unhandled exception occured in an event handler's function");
+               SigmaMainClass.method_3328().method_3326().method_12864("An unhandled exception occured in an event handler's function");
             } catch (Throwable var9) {
                var9.printStackTrace();
             }

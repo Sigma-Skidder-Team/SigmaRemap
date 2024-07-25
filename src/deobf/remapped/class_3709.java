@@ -343,7 +343,7 @@ public class class_3709 extends class_3620 {
 
    @Override
    public String method_41987() {
-      return class_727.method_3328().method_3312() != class_6015.field_30644 ? super.method_41987() : "Scaffold";
+      return SigmaMainClass.method_3328().method_3312() != class_6015.field_30644 ? super.method_41987() : "Scaffold";
    }
 
    @class_9148
@@ -366,7 +366,7 @@ public class class_3709 extends class_3620 {
       this.field_18194.method_11119(class_4043.field_19620);
       if (this.field_18194.method_11123() != 0.0F) {
          if (this.method_42007("Show Block Amount")) {
-            if (class_727.method_3328().method_3312() != class_6015.field_30645) {
+            if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
                this.method_17222(
                   field_46692.field_9602.method_43166() / 2,
                   field_46692.field_9602.method_43163() / 2 + 15 - (int)(10.0F * this.field_18194.method_11123()),

@@ -16,7 +16,7 @@ public class class_4746 {
    public static int field_22997 = 0;
 
    public void method_21923() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
    public static void method_21925(int var0, int var1, int var2, int var3) {
@@ -36,7 +36,7 @@ public class class_4746 {
    @class_9148
    @class_4249
    public void method_21927(class_3368 var1) {
-      if (class_727.method_3328().method_3299().method_30987() && field_22995 < field_23000 && field_22999 < field_23001) {
+      if (SigmaMainClass.method_3328().method_3299().method_30987() && field_22995 < field_23000 && field_22999 < field_23001) {
          if (field_22996 == null) {
             try {
                field_22994 = new class_4067(field_22998.method_8577(), new class_4660(), field_22998.method_8584(), new class_4639("jelloblur"));

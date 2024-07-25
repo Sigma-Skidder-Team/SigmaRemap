@@ -1831,7 +1831,7 @@ public abstract class class_5834 extends class_8145 {
       class_1343 var4 = this.method_37098();
       class_2911 var5 = new class_2911(new class_1343(var4.field_7336, (double)var3, var4.field_7334));
       if (this instanceof class_5989) {
-         class_727.method_3328().method_3302().method_7914(var5);
+         SigmaMainClass.method_3328().method_3302().method_7914(var5);
       }
 
       if (!var5.method_29716()) {

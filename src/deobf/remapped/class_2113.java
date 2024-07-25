@@ -20,7 +20,7 @@ public class class_2113 extends class_2596 {
    private int field_10608 = 30;
    private class_4770 field_10612;
    private class_3937 field_10614;
-   public class_8691 field_10615 = class_727.method_3328().method_3303();
+   public class_8691 field_10615 = SigmaMainClass.method_3328().method_3303();
    private class_8343 field_10617;
    private float field_10598;
    private class_8223 field_10599;
@@ -215,7 +215,7 @@ public class class_2113 extends class_2596 {
             var5.method_2281(true);
          }
       });
-      if (class_727.method_3328().method_3303().method_39907(var1)) {
+      if (SigmaMainClass.method_3328().method_3303().method_39907(var1)) {
          this.field_10612.method_21985(var5.field_2988);
          this.field_10614.method_18204(var5.field_2988);
          var5.method_2282(true, true);
@@ -227,11 +227,11 @@ public class class_2113 extends class_2596 {
       new Thread(() -> {
          if (!this.field_10615.method_39906(var1.field_2988)) {
             var1.method_2280(114);
-            class_727.method_3328().method_3315().method_21206("error");
+            SigmaMainClass.method_3328().method_3315().method_21206("error");
          } else {
             this.method_9899();
             var1.method_2283(true);
-            class_727.method_3328().method_3315().method_21206("connect");
+            SigmaMainClass.method_3328().method_3315().method_21206("connect");
             this.method_9903(false);
          }
 

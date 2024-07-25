@@ -119,7 +119,7 @@ public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
    public void channelRead0(ChannelHandlerContext var1, class_6310<?> var2) throws Exception {
       if (this.field_26419.isOpen()) {
          class_139 var5 = new class_139(var2);
-         class_727.method_3328().method_3302().method_7914(var5);
+         SigmaMainClass.method_3328().method_3302().method_7914(var5);
          if (var5.method_29716()) {
             return;
          }
@@ -148,7 +148,7 @@ public class class_5121 extends SimpleChannelInboundHandler<class_6310<?>> {
 
    public void method_23486(class_6310<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
       class_2157 var5 = new class_2157(var1);
-      class_727.method_3328().method_3302().method_7914(var5);
+      SigmaMainClass.method_3328().method_3302().method_7914(var5);
       var1 = var5.method_10047();
       if (!var5.method_29716()) {
          if (!this.method_23493()) {

@@ -47,7 +47,7 @@ public class class_1633 extends class_7038 {
    }
 
    public void method_7275(class_2596 var1) {
-      class_727.method_3328().method_3299().method_30990(var1);
+      SigmaMainClass.method_3328().method_3299().method_30990(var1);
       this.method_7276();
    }
 

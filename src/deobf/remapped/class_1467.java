@@ -23,7 +23,7 @@ public class class_1467 extends class_9128 {
       if (this.method_42015()
          && field_46692.field_9632 != null
          && !class_7033.method_32081()
-         && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
          if (var1.method_6449() && class_6908.field_35509 > 1) {
             double var4 = field_46692.field_9632.method_37302() - field_46692.field_9632.field_30525;
             double var6 = field_46692.field_9632.method_37156() - field_46692.field_9632.field_30507;
@@ -80,7 +80,7 @@ public class class_1467 extends class_9128 {
             var1.method_29715(true);
          }
 
-         if (!field_46692.field_9577.field_45450.method_27060() || !class_727.method_3328().method_3298().method_847(class_3709.class).method_42015()) {
+         if (!field_46692.field_9577.field_45450.method_27060() || !SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42015()) {
             double var4 = 0.56 + (double)class_8865.method_40770() * 0.1;
             var1.method_13313(0.407 + (double)class_8865.method_40769() * 0.1 + Math.random() * 1.0E-5);
             if (class_6908.field_35509 < 2) {

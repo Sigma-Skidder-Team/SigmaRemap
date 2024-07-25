@@ -32,11 +32,11 @@ public class class_4489 {
    public class_6427 field_21936;
 
    public class_4489(class_5014 var1) {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
       this.field_21931 = HttpClients.createDefault();
       this.field_21930 = var1;
       this.field_21936 = new class_6427(this);
-      class_1235.field_6811 = class_1235.field_6811 | class_727.method_3328().method_3332().field_25929 != null;
+      class_1235.field_6811 = class_1235.field_6811 | SigmaMainClass.method_3328().method_3332().field_25929 != null;
    }
 
    public HashMap<UUID, class_4567> method_20859() {
@@ -61,7 +61,7 @@ public class class_4489 {
          while (var5.hasNext()) {
             class_9716 var6 = (class_9716)var5.next();
             if (this.field_21928.contains(var6.method_37328())
-               || class_727.method_3328().method_3331().method_20495(var6)
+               || SigmaMainClass.method_3328().method_3331().method_20495(var6)
                || var6.method_45509().getUnformattedComponentText().equals("")) {
                var5.remove();
             }
@@ -116,7 +116,7 @@ public class class_4489 {
    private void method_20855(class_139 var1) {
       if (var1.method_557() instanceof class_1490) {
          class_1490 var4 = (class_1490)var1.method_557();
-         class_727.method_3306().method_12863("Connecting...");
+         SigmaMainClass.method_3306().method_12863("Connecting...");
 
          try {
             this.field_21933 = class_6508.method_29656("http://localhost:3000");
@@ -135,7 +135,7 @@ public class class_4489 {
    }
 
    public static void method_20850() {
-      class_727.method_3328().method_3332().method_23092();
+      SigmaMainClass.method_3328().method_3332().method_23092();
    }
 
    public static String method_20853(String var0) {
@@ -158,8 +158,8 @@ public class class_4489 {
       YggdrasilAuthenticationService var6 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, var5);
       YggdrasilMinecraftSessionService var7 = (YggdrasilMinecraftSessionService)var6.createMinecraftSessionService();
       var7.joinServer(var1, var5, var2);
-      class_727.method_3328();
-      class_727.method_3306().method_12863("Jello Connect: successfully reached out mojangs servers " + var2);
+      SigmaMainClass.method_3328();
+      SigmaMainClass.method_3306().method_12863("Jello Connect: successfully reached out mojangs servers " + var2);
       System.out
          .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field_21934.field_9603.method_5366());
    }

@@ -17,7 +17,7 @@ public class class_3620 extends class_9128 {
       this.field_17661 = var4;
 
       for (class_9128 var10 : this.field_17661) {
-         class_727.method_3328().method_3302().method_7908(var10);
+         SigmaMainClass.method_3328().method_3302().method_7908(var10);
          this.field_17660.add(var10.method_41992());
          var10.method_41995(this);
       }
@@ -101,7 +101,7 @@ public class class_3620 extends class_9128 {
                         try {
                            var14.method_23042(var11);
                         } catch (class_7584 var16) {
-                           class_727.method_3328()
+                           SigmaMainClass.method_3328()
                               .method_3326()
                               .method_12862("Could not initialize settings of " + var8.method_41992() + "." + var14.method_23032() + " from config.");
                         }
@@ -142,7 +142,7 @@ public class class_3620 extends class_9128 {
    @Override
    public void method_42006() {
       this.method_16866();
-      if (this.field_17664 instanceof class_367 && !class_727.method_3328().method_3332().method_23084()) {
+      if (this.field_17664 instanceof class_367 && !SigmaMainClass.method_3328().method_3332().method_23084()) {
          this.method_42018(false);
       }
    }

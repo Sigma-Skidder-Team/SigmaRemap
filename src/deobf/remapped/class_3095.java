@@ -174,7 +174,7 @@ public class class_3095 extends class_9128 {
                         this.field_15405 = true;
                      }
 
-                     if (this.field_15405 && class_727.method_3328().method_3310().method_25293() == 0 && field_46692.field_9632.field_41726) {
+                     if (this.field_15405 && SigmaMainClass.method_3328().method_3310().method_25293() == 0 && field_46692.field_9632.field_41726) {
                         var1.method_6455(var1.method_6454() - 11.0);
                         this.field_15405 = false;
                      }

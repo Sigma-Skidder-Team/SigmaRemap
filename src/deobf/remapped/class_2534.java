@@ -116,7 +116,7 @@ public class class_2534 extends class_9128 {
    @class_9148
    public void method_11541(class_717 var1) {
       if (this.method_42015() && this.method_42007("Disable on death")) {
-         class_727.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
+         SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
          this.method_41999();
       }
    }
@@ -131,7 +131,7 @@ public class class_2534 extends class_9128 {
          if (this.method_42007("Disable on death")) {
             if (!field_46692.field_9632.method_37330()) {
                this.method_41999();
-               class_727.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
+               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
             }
          }
       }
@@ -185,7 +185,7 @@ public class class_2534 extends class_9128 {
             if (this.field_12560 != null && !this.field_12560.isEmpty()) {
                this.field_12546++;
                float var4 = this.method_42002("Hit box expand");
-               class_3620 var5 = (class_3620)class_727.method_3328().method_3298().method_847(class_9801.class);
+               class_3620 var5 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_9801.class);
                if (var5.method_42015() && var5.method_42016("Type").equalsIgnoreCase("Minis")) {
                   this.method_11542(var1, var5.method_16864().method_42016("Mode"), var5.method_16864().method_42007("Avoid Fall Damage"));
                }
@@ -431,9 +431,9 @@ public class class_2534 extends class_9128 {
       } else {
          this.field_12545++;
          if ((
-               !class_727.method_3328().method_3298().method_847(class_6908.class).method_42015()
-                  || class_727.method_3328().method_3298().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Cubecraft")
-                  || class_727.method_3328().method_3298().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Vanilla")
+               !SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42015()
+                  || SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Cubecraft")
+                  || SigmaMainClass.method_3328().method_3298().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Vanilla")
             )
             && field_46692.field_9632.field_41774
             && var9
@@ -533,7 +533,7 @@ public class class_2534 extends class_9128 {
                )
                && this.field_12560.size() > 0) {
                if (this.field_12570 + 1 < this.field_12560.size()) {
-                  if (field_12556 != null && !class_727.method_3328().method_3307().method_14469(this.field_12560.get(this.field_12570).method_15377())) {
+                  if (field_12556 != null && !SigmaMainClass.method_3328().method_3307().method_14469(this.field_12560.get(this.field_12570).method_15377())) {
                      this.field_12570++;
                   }
                } else {

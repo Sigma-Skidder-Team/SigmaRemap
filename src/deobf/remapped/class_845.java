@@ -19,7 +19,7 @@ public class class_845 {
       var3.put("X-Forwarded-For", "1.1.1.1");
       var3.put("User-Agent", "Agora client");
       var3.put("Referer", "https://agora.sigmaclient.info");
-      String var4 = class_727.method_3328().method_3332().method_23077().replaceAll("-", "");
+      String var4 = SigmaMainClass.method_3328().method_3332().method_23077().replaceAll("-", "");
 
       try {
          this.field_4416 = new class_193(this, "wss://wsprg.sigmaclient.info/ws/agora/" + var4, var3);

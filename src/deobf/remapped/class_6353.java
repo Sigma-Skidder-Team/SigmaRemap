@@ -78,7 +78,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
 
          float var31 = class_9299.method_42795(var3, var1.field_41762, var1.field_41755);
          class_5278 var33 = new class_5278(var9, var10, var11, var31, var3, var1);
-         class_727.method_3328().method_3302().method_7914(var33);
+         SigmaMainClass.method_3328().method_3302().method_7914(var33);
          if (var33.method_29716()) {
             var4.method_36064();
             return;
@@ -116,7 +116,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          }
 
          var33.method_24089(class_8817.field_45103);
-         class_727.method_3328().method_3302().method_7914(var33);
+         SigmaMainClass.method_3328().method_3302().method_7914(var33);
          this.field_32487.method_29702((T)var1, var16, var35, var3);
          this.field_32487.method_29700((T)var1, var16, var35, var34, var11, var31);
          if (class_9763.method_45055()) {
@@ -167,7 +167,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          }
 
          var33.method_24089(class_8817.field_45102);
-         class_727.method_3328().method_3302().method_7914(var33);
+         SigmaMainClass.method_3328().method_3302().method_7914(var33);
          var4.method_36064();
          super.method_32551((T)var1, var2, var3, var4, var5, var6);
          if (class_7860.field_40037.method_22501()) {
@@ -293,7 +293,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public boolean method_29103(T var1) {
       class_2563 var4 = new class_2563(var1);
-      class_727.method_3328().method_3302().method_7914(var4);
+      SigmaMainClass.method_3328().method_3302().method_7914(var4);
       if (var4.method_29716()) {
          return false;
       } else {

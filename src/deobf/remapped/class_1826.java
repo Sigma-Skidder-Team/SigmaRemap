@@ -38,7 +38,7 @@ public class class_1826 extends class_9128 {
          if (!field_46692.field_9632.field_41726 && !class_314.method_1413(field_46692.field_9632, 0.001F)) {
             if ((float)this.field_9265 >= this.method_42002("Flags") && this.field_9264 == 0) {
                this.field_9264 = 60;
-               class_727.method_3328().method_3335().method_27841(new class_8235("Unstuck", "Trying to unstuck you.."));
+               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Unstuck", "Trying to unstuck you.."));
             }
 
             if (this.field_9264 > 0) {

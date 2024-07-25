@@ -48,7 +48,7 @@ public class class_5694 extends class_9128 {
       class_314.method_1443(var12);
 
       try {
-         File var13 = new File(class_727.method_3328().method_3334() + "/plugin_and_command_dump.txt");
+         File var13 = new File(SigmaMainClass.method_3328().method_3334() + "/plugin_and_command_dump.txt");
          if (!var13.exists()) {
             var13.createNewFile();
          }

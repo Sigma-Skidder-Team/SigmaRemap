@@ -126,7 +126,7 @@ public class class_3854 extends class_9128 {
          this.field_18794 = 1.0F;
       }
 
-      if (!class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+      if (!SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
          field_46692.field_9616.field_32603 = this.field_18794;
       }
 

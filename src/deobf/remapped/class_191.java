@@ -22,7 +22,7 @@ public class class_191 {
    }
 
    private void method_841(Class<? extends class_9128> var1) {
-      class_727.method_3328().method_3302().method_7911(var1);
+      SigmaMainClass.method_3328().method_3302().method_7911(var1);
       this.field_637.remove(var1);
    }
 
@@ -30,7 +30,7 @@ public class class_191 {
       Collections.sort(this.field_641, new class_5309(this));
 
       for (class_9128 var4 : this.field_641) {
-         class_727.method_3328().method_3302().method_7908(var4);
+         SigmaMainClass.method_3328().method_3302().method_7908(var4);
          this.field_637.put((Class<? extends class_9128>)var4.getClass(), var4);
       }
 
@@ -185,7 +185,7 @@ public class class_191 {
             try {
                var7 = class_3332.method_15291(var17, "name", null);
             } catch (class_7584 var13) {
-               class_727.method_3328().method_3326().method_12862("Invalid name in mod list config");
+               SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }
 
             for (class_9128 var9 : this.field_637.values()) {
@@ -193,7 +193,7 @@ public class class_191 {
                   try {
                      var9.method_42021(var17);
                   } catch (class_7584 var12) {
-                     class_727.method_3328()
+                     SigmaMainClass.method_3328()
                         .method_3326()
                         .method_12862("Could not initialize mod " + var9.method_41992() + " from config. All settings for this mod have been erased.");
                   }
@@ -202,25 +202,25 @@ public class class_191 {
             }
          }
       } else {
-         class_727.method_3328().method_3326().method_12863("Mods array does not exist in config. Assuming a blank profile...");
+         SigmaMainClass.method_3328().method_3326().method_12863("Mods array does not exist in config. Assuming a blank profile...");
       }
 
       for (class_9128 var18 : this.field_637.values()) {
          if (var18.method_42015()) {
-            class_727.method_3328().method_3302().method_7917(var18);
+            SigmaMainClass.method_3328().method_3302().method_7917(var18);
             if (var18 instanceof class_3620) {
                class_3620 var20 = (class_3620)var18;
                if (var20.field_17664 != null) {
-                  class_727.method_3328().method_3302().method_7917(var20.field_17664);
+                  SigmaMainClass.method_3328().method_3302().method_7917(var20.field_17664);
                }
             }
          } else {
-            class_727.method_3328().method_3302().method_7915(var18);
+            SigmaMainClass.method_3328().method_3302().method_7915(var18);
             if (var18 instanceof class_3620) {
                class_3620 var19 = (class_3620)var18;
 
                for (class_9128 var11 : var19.field_17661) {
-                  class_727.method_3328().method_3302().method_7915(var11);
+                  SigmaMainClass.method_3328().method_3302().method_7915(var11);
                }
             }
          }
@@ -272,7 +272,7 @@ public class class_191 {
       } catch (class_7584 var7) {
       }
 
-      if (class_727.method_3328().method_3312() == class_6015.field_30644) {
+      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644) {
          var4 = "Classic";
       }
 
@@ -283,7 +283,7 @@ public class class_191 {
          this.field_638.method_4304(var4);
          this.field_639.method_376(var1);
       } catch (IOException var6) {
-         class_727.method_3328().method_3326().method_12864("Could not load profiles!");
+         SigmaMainClass.method_3328().method_3326().method_12864("Could not load profiles!");
          var6.printStackTrace();
          throw new RuntimeException("sorry m8");
       }
@@ -300,7 +300,7 @@ public class class_191 {
          this.field_639.method_369(var1);
       } catch (IOException var5) {
          var5.printStackTrace();
-         class_727.method_3328().method_3326().method_12862("Unable to save mod profiles...");
+         SigmaMainClass.method_3328().method_3326().method_12862("Unable to save mod profiles...");
       }
    }
 

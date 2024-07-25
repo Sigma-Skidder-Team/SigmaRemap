@@ -48,7 +48,7 @@ public class class_9661 extends class_9128 {
       if (this.method_42015() && field_46692.field_9632 != null && var1.method_6449()) {
          if (this.field_49203 != 1) {
             if (this.field_49203 == 3) {
-               class_9128 var4 = class_727.method_3328().method_3298().method_847(class_9801.class);
+               class_9128 var4 = SigmaMainClass.method_3328().method_3298().method_847(class_9801.class);
                if (var4.method_42015() && var4.method_42016("Type").equals("NoGround")) {
                   var1.method_6455(var1.method_6454() + 1.0E-14);
                } else {

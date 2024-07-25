@@ -63,9 +63,9 @@ public class class_996 extends class_7038 {
       class_73.method_87(class_5320.field_27140, 100.0F, 100.0F, "Changelog", class_314.method_1444(class_1255.field_6918.field_6917, var1));
       class_3384 var10000 = class_5320.field_27141;
       StringBuilder var10003 = new StringBuilder().append("You're currently using Sigma ");
-      class_727.method_3328();
+      SigmaMainClass.method_3328();
       class_73.method_87(
-         var10000, 100.0F, 150.0F, var10003.append(class_727.field_3957).toString(), class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1)
+         var10000, 100.0F, 150.0F, var10003.append(SigmaMainClass.field_3957).toString(), class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1)
       );
       super.method_32178(var1);
    }
@@ -75,7 +75,7 @@ public class class_996 extends class_7038 {
          return field_5071;
       } else {
          try {
-            HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/changelog.php?v=" + class_727.field_3957);
+            HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/changelog.php?v=" + SigmaMainClass.field_3957);
             CloseableHttpResponse var4 = HttpClients.createDefault().execute(var3);
             HttpEntity var5 = var4.getEntity();
             if (var5 != null) {

@@ -69,7 +69,7 @@ public class class_3511 {
    public boolean method_16154() {
       byte var3 = 24;
       if (Math.sqrt(this.method_16184()) <= (double)(class_1893.method_8510().field_9577.field_45537 * 16)
-         && class_727.method_3328().method_3313().method_8231()) {
+         && SigmaMainClass.method_3328().method_3313().method_8231()) {
          return true;
       } else {
          return !(this.method_16184() > 576.0)

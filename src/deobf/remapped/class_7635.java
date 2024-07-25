@@ -81,7 +81,7 @@ public class class_7635 extends class_7671 {
             this.field_38844.invoke(this.field_38845, var5);
          }
       } catch (IllegalArgumentException | InvocationTargetException | IllegalAccessException var7) {
-         class_727.method_3328().method_3326().method_12864("Unable to invoke " + this.field_38845.getClass().getName() + "::" + this.field_38844.getName());
+         SigmaMainClass.method_3328().method_3326().method_12864("Unable to invoke " + this.field_38845.getClass().getName() + "::" + this.field_38844.getName());
          var7.printStackTrace();
       }
    }

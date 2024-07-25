@@ -152,7 +152,7 @@ public class class_7038 implements class_6482 {
          }
       } catch (ConcurrentModificationException var7) {
          var7.printStackTrace();
-         class_727.method_3306().method_12864("FUCK! Why does this shit happen");
+         SigmaMainClass.method_3306().method_12864("FUCK! Why does this shit happen");
       }
 
       this.field_36267 = this.field_36267 & this.field_36279;

@@ -55,7 +55,7 @@ public class class_1196 extends class_9128 {
                && var7 != class_9598.field_48917
                && var7 != class_5477.field_27898
                && !var7.method_37109()
-               && !class_727.method_3328().method_3331().method_20495(var7)) {
+               && !SigmaMainClass.method_3328().method_3331().method_20495(var7)) {
                this.field_6696.add(var7);
             }
          }
@@ -324,8 +324,8 @@ public class class_1196 extends class_9128 {
    public void method_5289(double var1, double var3, double var5, class_8145 var7, float var8, String var9) {
       class_3384 var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
-      if (class_727.method_3328().method_3298().method_847(class_9495.class).method_42015() && var13.equals(field_46692.method_8502().method_5366())) {
-         var13 = class_727.method_3328().method_3298().method_847(class_9495.class).method_42016("Username");
+      if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015() && var13.equals(field_46692.method_8502().method_5366())) {
+         var13 = SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42016("Username");
       }
 
       if (var13.length() != 0) {
@@ -347,8 +347,8 @@ public class class_1196 extends class_9128 {
          GL11.glRotatef(field_46692.field_9590.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
          GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
          int var19 = this.field_6702;
-         if (!class_727.method_3328().method_3307().method_14460(var7)) {
-            if (class_727.method_3328().method_3307().method_14469(var7)) {
+         if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {
+            if (SigmaMainClass.method_3328().method_3307().method_14469(var7)) {
                var19 = class_314.method_1444(-6750208, 0.5F);
             }
          } else {
@@ -402,7 +402,7 @@ public class class_1196 extends class_9128 {
 
          class_73.method_87(var12, 0.0F, -20.0F, var13, class_1255.field_6918.field_6917);
          class_73.method_87(class_5320.field_27138, 0.0F, 10.0F, var23 + var17, class_1255.field_6918.field_6917);
-         class_4567 var25 = class_727.method_3328().method_3332().field_25933.method_20845(var7);
+         class_4567 var25 = SigmaMainClass.method_3328().method_3332().field_25933.method_20845(var7);
          if (var25 != null) {
             class_73.method_87(class_5320.field_27138, 0.0F, -30.0F, var25.field_22258, class_1255.field_6918.field_6917);
          }

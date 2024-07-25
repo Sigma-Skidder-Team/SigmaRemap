@@ -21,7 +21,7 @@ public class class_1287 extends class_9128 {
 
                   field_46692.method_8614().method_4813(new class_1022(class_2584.field_12791));
                   field_46692.method_8614().method_4813(new class_1022(class_2584.field_12791));
-                  class_727.method_3328().method_3335().method_27841(new class_8235("AutoFish", "We catched something!", class_2209.field_11004));
+                  SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("AutoFish", "We catched something!", class_2209.field_11004));
                }
             }
          }

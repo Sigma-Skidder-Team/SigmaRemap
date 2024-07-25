@@ -76,7 +76,7 @@ public final class class_1068 {
    }
 
    static {
-      if (class_727.method_3328().method_3312() == class_6015.field_30645) {
+      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645) {
          field_5846.add("It's not Scaffold it's BlockFly in Jello for Sigma!");
       }
 

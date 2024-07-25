@@ -9,7 +9,7 @@ public class class_6645 {
    private HashMap<Integer, Date> field_34384 = new HashMap<Integer, Date>();
 
    public void method_30524() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
    @class_9148

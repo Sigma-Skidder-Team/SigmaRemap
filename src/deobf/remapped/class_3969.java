@@ -30,7 +30,7 @@ public class class_3969 {
 
    public List<String> method_18323() {
       try {
-         HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles.php?v=" + class_727.field_3957);
+         HttpGet var3 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles.php?v=" + SigmaMainClass.field_3957);
          CloseableHttpResponse var4 = HttpClients.createDefault().execute(var3);
          HttpEntity var5 = var4.getEntity();
          if (var5 != null) {
@@ -66,7 +66,7 @@ public class class_3969 {
 
    public class_1293 method_18325(String var1) {
       try {
-         HttpGet var4 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles/" + this.method_18326(var1) + ".profile?v=" + class_727.field_3957);
+         HttpGet var4 = new HttpGet("https://jelloconnect.sigmaclient.info/profiles/" + this.method_18326(var1) + ".profile?v=" + SigmaMainClass.field_3957);
          CloseableHttpResponse var5 = HttpClients.createDefault().execute(var4);
          HttpEntity var6 = var5.getEntity();
          if (var6 != null) {
@@ -90,7 +90,7 @@ public class class_3969 {
       var5.method_7503();
       class_1675 var6 = new class_1675("settings", this.method_18325(var2).method_5848("modConfig"));
 
-      for (class_9128 var8 : class_727.method_3328().method_3298().method_843().values()) {
+      for (class_9128 var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          class_1293 var9 = var6.method_7501(var8);
          if (var9 != null) {
             var5.method_7502(var9, var8);

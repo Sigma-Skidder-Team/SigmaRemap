@@ -44,7 +44,7 @@ public class class_9437 extends class_9128 {
                var1.method_6441(var4[0]);
                var1.method_6448(var4[1]);
                class_6435 var5 = new class_6435(0, false, this.field_48181);
-               class_727.method_3328().method_3302().method_7914(var5);
+               SigmaMainClass.method_3328().method_3302().method_7914(var5);
                field_46692.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.method_42007("NoSwing")) {
                   field_46692.field_9632.method_26597(class_2584.field_12791);
@@ -59,7 +59,7 @@ public class class_9437 extends class_9128 {
                var1.method_6441(var6[0]);
                var1.method_6448(var6[1]);
                class_6435 var8 = new class_6435(0, false, this.field_48181);
-               class_727.method_3328().method_3302().method_7914(var8);
+               SigmaMainClass.method_3328().method_3302().method_7914(var8);
                field_46692.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.method_42007("NoSwing")) {
                   field_46692.field_9632.method_26597(class_2584.field_12791);

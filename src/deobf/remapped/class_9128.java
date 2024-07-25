@@ -145,7 +145,7 @@ public abstract class class_9128 {
                   try {
                      var9.method_23042(var6);
                   } catch (class_7584 var11) {
-                     class_727.method_3328()
+                     SigmaMainClass.method_3328()
                         .method_3326()
                         .method_12862("Could not initialize settings of " + this.method_41992() + "." + var9.method_23032() + " from config.");
                   }
@@ -178,7 +178,7 @@ public abstract class class_9128 {
 
    public void method_42006() {
       if (this.getClass().isAnnotationPresent(class_1748.class) && !field_46693.contains(this.getClass())) {
-         class_727.method_3328().method_3326().method_12862("This mod is still in development. Be careful!");
+         SigmaMainClass.method_3328().method_3326().method_12862("This mod is still in development. Be careful!");
          field_46693.add((Class<? extends class_9128>)this.getClass());
       }
    }
@@ -207,10 +207,10 @@ public abstract class class_9128 {
    }
 
    public class_5664 method_42004() {
-      if (class_727.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == class_5664.field_28712) {
+      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == class_5664.field_28712) {
          return class_5664.field_28710;
       } else {
-         return class_727.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == class_5664.field_28717
+         return SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == class_5664.field_28717
             ? class_5664.field_28711
             : this.field_46696;
       }
@@ -225,8 +225,8 @@ public abstract class class_9128 {
    }
 
    public boolean method_42015() {
-      if (class_727.method_3328().method_3312() != class_6015.field_30642) {
-         return class_727.method_3328().method_3312() == class_6015.field_30644 && !this.method_42013() ? false : this.field_46700;
+      if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30642) {
+         return SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && !this.method_42013() ? false : this.field_46700;
       } else {
          return false;
       }
@@ -235,52 +235,52 @@ public abstract class class_9128 {
    public void method_42023(boolean var1) {
       if (this.field_46700 != var1) {
          if (!(this.field_46700 = var1)) {
-            class_727.method_3328().method_3302().method_7915(this);
+            SigmaMainClass.method_3328().method_3302().method_7915(this);
             this.method_42020();
          } else {
-            class_727.method_3328().method_3302().method_7917(this);
+            SigmaMainClass.method_3328().method_3302().method_7917(this);
             this.method_42006();
          }
       }
 
-      class_727.method_3328().method_3298().method_835().method_370(this);
+      SigmaMainClass.method_3328().method_3298().method_835().method_370(this);
    }
 
    public void method_42018(boolean var1) {
       this.field_46700 = var1;
       if (!this.field_46700) {
-         class_727.method_3328().method_3302().method_7915(this);
+         SigmaMainClass.method_3328().method_3302().method_7915(this);
       } else {
-         class_727.method_3328().method_3302().method_7917(this);
+         SigmaMainClass.method_3328().method_3302().method_7917(this);
       }
    }
 
    public void method_41991(boolean var1) {
       if (this.field_46700 != var1) {
          if (!(this.field_46700 = var1)) {
-            class_727.method_3328().method_3302().method_7915(this);
+            SigmaMainClass.method_3328().method_3302().method_7915(this);
             if (!(this instanceof class_3620)) {
-               if (class_727.method_3328().method_3312() == class_6015.field_30645
-                  && class_727.method_3328().method_3298().method_847(class_8438.class).method_42007("Sound")) {
-                  class_727.method_3328().method_3315().method_21206("deactivate");
+               if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
+                  && SigmaMainClass.method_3328().method_3298().method_847(class_8438.class).method_42007("Sound")) {
+                  SigmaMainClass.method_3328().method_3315().method_21206("deactivate");
                }
 
-               if (class_727.method_3328().method_3312() == class_6015.field_30644
-                  && class_727.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
+               if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
+                  && SigmaMainClass.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
                   class_1893.method_8510().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
                }
             }
 
             this.method_42020();
          } else {
-            class_727.method_3328().method_3302().method_7917(this);
-            if (class_727.method_3328().method_3312() == class_6015.field_30645
-               && class_727.method_3328().method_3298().method_847(class_8438.class).method_42007("Sound")) {
-               class_727.method_3328().method_3315().method_21206("activate");
+            SigmaMainClass.method_3328().method_3302().method_7917(this);
+            if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
+               && SigmaMainClass.method_3328().method_3298().method_847(class_8438.class).method_42007("Sound")) {
+               SigmaMainClass.method_3328().method_3315().method_21206("activate");
             }
 
-            if (class_727.method_3328().method_3312() == class_6015.field_30644
-               && class_727.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
+            if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
+               && SigmaMainClass.method_3328().method_3298().method_847(class_4221.class).method_42007("Sound")) {
                class_1893.method_8510().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 
@@ -289,7 +289,7 @@ public abstract class class_9128 {
          }
       }
 
-      class_727.method_3328().method_3298().method_835().method_370(this);
+      SigmaMainClass.method_3328().method_3298().method_835().method_370(this);
    }
 
    public void method_41999() {

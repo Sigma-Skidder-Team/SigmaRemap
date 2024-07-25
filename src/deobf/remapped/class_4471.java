@@ -28,7 +28,7 @@ public class class_4471 extends class_367 {
 
       while (var4.hasNext()) {
          class_8145 var5 = (class_8145)var4.next();
-         if (!(var5 instanceof class_704) || class_727.method_3328().method_3331().method_20495(var5)) {
+         if (!(var5 instanceof class_704) || SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
             var4.remove();
          }
       }

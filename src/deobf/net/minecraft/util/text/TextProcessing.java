@@ -4,7 +4,7 @@ import java.util.Optional;
 import remapped.class_3256;
 import remapped.class_4981;
 import remapped.class_5255;
-import remapped.class_727;
+import remapped.SigmaMainClass;
 
 public class TextProcessing {
    private static final Optional<Object> field_238336_a_ = Optional.<Object>of(class_3256.field_16155);
@@ -85,7 +85,7 @@ public class TextProcessing {
 
    public static boolean func_238340_a_(String p_238340_0_, int p_238340_1_, Style p_238340_2_, Style p_238340_3_, class_5255 p_238340_4_) {
       class_4981 i = new class_4981(p_238340_0_);
-      class_727.method_3328().method_3302().method_7914(i);
+      SigmaMainClass.method_3328().method_3302().method_7914(i);
       p_238340_0_ = i.method_22941();
       int style = p_238340_0_.length();
       Style j = p_238340_2_;

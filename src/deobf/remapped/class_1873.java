@@ -87,7 +87,7 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
 
    public int method_8339() {
       class_3310 var3 = new class_3310(this);
-      class_727.method_3328().method_3302().method_7914(var3);
+      SigmaMainClass.method_3328().method_3302().method_7914(var3);
       return !var3.method_15184() ? this.field_9488 : 1;
    }
 

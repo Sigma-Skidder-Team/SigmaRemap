@@ -34,7 +34,7 @@ public class class_5761 extends class_9128 {
    @class_315
    public void method_26048(class_7767 var1) {
       if (this.method_42015()
-         && !class_727.method_3328().method_3298().method_847(class_3709.class).method_42015()
+         && !SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42015()
          && !class_314.method_1437(field_46692.field_9632)) {
          double var4 = (double)this.method_42002("OnGround Speed");
          if (!field_46692.field_9632.field_41726) {

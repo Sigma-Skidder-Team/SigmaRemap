@@ -32,15 +32,15 @@ public class class_1704 extends class_9128 {
       this.method_42010(new class_426("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
       this.method_42010(
          new class_8563("Test Checkbox", "A test checkbox", true)
-            .method_23029(var0 -> class_727.method_3328().method_3326().method_12863("Changed checkbox: " + var0.method_23031()))
+            .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed checkbox: " + var0.method_23031()))
       );
       this.method_42010(
          new class_2748<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
-            .method_23029(var0 -> class_727.method_3328().method_3326().method_12863("Changed slider: " + var0.method_23031()))
+            .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed slider: " + var0.method_23031()))
       );
       this.method_42010(
          new class_7209("Test Type", "A test type button", 0, "hello", "goodbye")
-            .method_23029(var0 -> class_727.method_3328().method_3326().method_12863("Changed type: " + var0.method_23031()))
+            .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed type: " + var0.method_23031()))
       );
       this.method_42010(
          new class_7131(
@@ -294,13 +294,13 @@ public class class_1704 extends class_9128 {
       while (var5.hasNext()) {
          class_8145 var6 = (class_8145)var5.next();
          if (var6 != field_46692.field_9632) {
-            if (!class_727.method_3328().method_3307().method_14460(var6)) {
+            if (!SigmaMainClass.method_3328().method_3307().method_14460(var6)) {
                if (var6 instanceof class_5834) {
                   if (((class_5834)var6).method_26551() != 0.0F) {
                      if (!(field_46692.field_9632.method_37175(var6) > var1)) {
                         if (field_46692.field_9632.method_26608((class_5834)var6)) {
                            if (!(var6 instanceof class_9399) && !(var6 instanceof class_704)) {
-                              if (var6 instanceof class_704 && class_727.method_3328().method_3331().method_20495(var6)) {
+                              if (var6 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var6)) {
                                  var5.remove();
                               } else if (field_46692.field_9632.method_37243() != null && field_46692.field_9632.method_37243().equals(var6)) {
                                  var5.remove();
@@ -346,13 +346,13 @@ public class class_1704 extends class_9128 {
       while (var6.hasNext()) {
          class_8145 var7 = (class_8145)var6.next();
          if (var7 != field_46692.field_9632) {
-            if (!class_727.method_3328().method_3307().method_14460(var7)) {
+            if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {
                if (var7 instanceof class_5834) {
                   if (((class_5834)var7).method_26551() != 0.0F) {
                      if (!(field_46692.field_9632.method_37175(var7) > var1)) {
                         if (field_46692.field_9632.method_26608((class_5834)var7)) {
                            if (!(var7 instanceof class_9399)) {
-                              if (var7 instanceof class_704 && class_727.method_3328().method_3331().method_20495(var7)) {
+                              if (var7 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var7)) {
                                  var6.remove();
                               } else if (field_46692.field_9632.method_37243() != null && field_46692.field_9632.method_37243().equals(var7)) {
                                  var6.remove();

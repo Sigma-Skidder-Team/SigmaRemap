@@ -50,7 +50,7 @@ public class class_5320 {
          return new class_3384(var6, true);
       } catch (Exception var7) {
          var7.printStackTrace();
-         return new class_3384(new Font("Arial", 0, (int)var2), class_727.method_3328().method_3312() != class_6015.field_30644);
+         return new class_3384(new Font("Arial", 0, (int)var2), SigmaMainClass.method_3328().method_3312() != class_6015.field_30644);
       }
    }
 }

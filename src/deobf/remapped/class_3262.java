@@ -36,7 +36,7 @@ public class class_3262 extends class_9128 {
             }
 
             String var7 = field_46692.field_9632.method_45509().getString().toLowerCase();
-            if (class_727.method_3328().method_3298().method_847(class_9495.class).method_42015()) {
+            if (SigmaMainClass.method_3328().method_3298().method_847(class_9495.class).method_42015()) {
             }
 
             if (this.field_16172.method_42007("AutoL")) {

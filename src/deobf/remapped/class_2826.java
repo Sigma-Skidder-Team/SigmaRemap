@@ -56,7 +56,7 @@ public class class_2826 extends class_5004<String> {
       if (var1 <= this.field_13860.size()) {
          String var4 = this.field_13860.get(var1);
          if (this.field_13859.contains(var4) && class_1893.method_8510() != null) {
-            class_727.method_3328().method_3335().method_27841(new class_8235("Premium", "Not yet available for free version"));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Premium", "Not yet available for free version"));
          } else {
             this.method_23037(this.field_13860.get(var1));
          }

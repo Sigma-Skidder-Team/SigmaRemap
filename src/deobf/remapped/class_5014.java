@@ -38,7 +38,7 @@ public class class_5014 {
    }
 
    public void method_23087() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
       this.field_25933 = new class_4489(this);
    }
 

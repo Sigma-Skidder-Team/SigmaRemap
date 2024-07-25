@@ -131,7 +131,7 @@ public class class_4221 extends class_9128 {
       if (this.field_20487.isEmpty()) {
          this.field_20487.clear();
 
-         for (class_9128 var4 : class_727.method_3328().method_3298().method_843().values()) {
+         for (class_9128 var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
             if (var4 != this && var4.method_41998() != class_5664.field_28708) {
                class_2440 var5 = new class_2440(200, 200, !var4.method_42015() ? class_4043.field_19620 : class_4043.field_19618);
                var5.method_11122(!var4.method_42015() ? 1.0F : 0.0F);

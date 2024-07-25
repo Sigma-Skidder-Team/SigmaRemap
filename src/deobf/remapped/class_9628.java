@@ -13,7 +13,7 @@ public class class_9628 extends class_9128 {
       super(class_5664.field_28711, "Packet dumper", "Dumps packets sent to and fro from the client and server");
 
       try {
-         File var3 = new File(class_727.method_3328().method_3334() + "/latest_packets.txt");
+         File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/latest_packets.txt");
          if (!var3.exists()) {
             var3.createNewFile();
          }

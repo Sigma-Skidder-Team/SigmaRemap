@@ -30,7 +30,7 @@ public class class_8318 extends class_9128 {
    @class_9148
    public void method_38349(class_7767 var1) {
       if (this.method_42015()
-         && !class_727.method_3328().method_3298().method_847(class_3709.class).method_42015()
+         && !SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42015()
          && !class_314.method_1437(field_46692.field_9632)) {
          String var4 = this.method_42016("Mode");
          switch (var4) {
@@ -100,7 +100,7 @@ public class class_8318 extends class_9128 {
                   }
 
                   this.field_42612 = field_46692.field_9632.method_37309();
-                  if (!class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+                  if (!SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
                      field_46692.field_9616.field_32603 = 1.0F;
                   }
                } else {

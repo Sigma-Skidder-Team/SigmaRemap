@@ -48,7 +48,7 @@ public class class_5174 extends class_367 {
                this.field_26630 = false;
             }
 
-            if (this.field_26637 && (long)class_727.method_3328().method_3310().method_25303() >= var5) {
+            if (this.field_26637 && (long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5) {
                this.field_26637 = !this.field_26637;
                this.method_23712(this.field_26630);
                class_2740.method_12356(field_46692.field_9632.field_3869.field_19925, 45, 0, class_6269.field_32027, field_46692.field_9632, true);
@@ -66,23 +66,23 @@ public class class_5174 extends class_367 {
                   }
 
                   boolean var7 = this.method_42016("Tools").equals("Organize");
-                  if ((long)class_727.method_3328().method_3310().method_25303() >= var5 && field_26635 >= 36 && var7) {
+                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && field_26635 >= 36 && var7) {
                      this.method_23716(field_26635, var4.equals("FakeInv"));
                   }
 
-                  if ((long)class_727.method_3328().method_3310().method_25303() >= var5 && field_26634 >= 36 && var7) {
+                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && field_26634 >= 36 && var7) {
                      this.method_23724(field_26634, var4.equals("FakeInv"));
                   }
 
-                  if ((long)class_727.method_3328().method_3310().method_25303() >= var5 && field_26631 >= 36 && var7) {
+                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && field_26631 >= 36 && var7) {
                      this.method_23714(field_26631, var4.equals("FakeInv"));
                   }
 
-                  if ((long)class_727.method_3328().method_3310().method_25303() >= var5 && this.method_42007("Auto Shield")) {
+                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && this.method_42007("Auto Shield")) {
                      this.method_23717(var4.equals("FakeInv"));
                   }
 
-                  if ((long)class_727.method_3328().method_3310().method_25303() >= var5 && this.method_42007("Cleaner")) {
+                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && this.method_42007("Cleaner")) {
                      for (int var8 = 9; var8 < 45; var8++) {
                         if (field_46692.field_9632.field_3869.method_18878(var8).method_35884()) {
                            class_6098 var9 = field_46692.field_9632.field_3869.method_18878(var8).method_35898();
@@ -110,7 +110,7 @@ public class class_5174 extends class_367 {
 
    public static boolean method_23720(class_6098 var0) {
       float var3 = method_23718(var0);
-      class_9128 var4 = class_727.method_3328().method_3298().method_847(class_5174.class);
+      class_9128 var4 = SigmaMainClass.method_3328().method_3298().method_847(class_5174.class);
 
       for (int var5 = 9; var5 < 45; var5++) {
          if (field_46692.field_9632.field_3869.method_18878(var5).method_35884()) {
@@ -199,9 +199,9 @@ public class class_5174 extends class_367 {
          if (var5 instanceof class_6201
             && (this.method_23721() > (int)this.method_42002("Block Cap") || class_3709.field_18195.contains(((class_6201)var5).method_28392()))) {
             return true;
-         } else if (var5 == class_4897.field_24999 && class_727.method_3328().method_3298().method_847(class_3588.class).method_42015()) {
+         } else if (var5 == class_4897.field_24999 && SigmaMainClass.method_3328().method_3298().method_847(class_3588.class).method_42015()) {
             return method_23723(class_4897.field_24999) > 1;
-         } else if (var5 == class_4897.field_24548 && class_727.method_3328().method_3298().method_847(class_3588.class).method_42015()) {
+         } else if (var5 == class_4897.field_24548 && SigmaMainClass.method_3328().method_3298().method_847(class_3588.class).method_42015()) {
             return method_23723(class_4897.field_24548) > 1;
          } else if (var5 instanceof class_5518 && class_2740.method_12360(var1)) {
             return true;

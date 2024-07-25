@@ -12,7 +12,7 @@ public class class_5571 {
    private class_1893 field_28312 = class_1893.method_8510();
 
    public void method_25292() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
    @class_9148

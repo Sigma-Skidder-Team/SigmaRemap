@@ -10,12 +10,12 @@ import java.util.ConcurrentModificationException;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;
 
-public class class_727 {
+public class SigmaMainClass {
    public static String field_3966 = "Jello";
    public static String field_3957 = "5.0.0b15";
    public static String field_3964 = "Sigma Production";
    public static final boolean field_3956 = false;
-   private static class_727 field_3982;
+   private static SigmaMainClass field_3982;
    private static class_1893 field_3950 = class_1893.method_8510();
    private final File field_3975 = new File("sigma5");
    private class_1293 field_3974;
@@ -46,15 +46,15 @@ public class class_727 {
    public static ArrayList<class_8343> field_3959 = new ArrayList<class_8343>();
    public static boolean field_3951 = false;
 
-   public static class_727 method_3328() {
-      return field_3982 != null ? field_3982 : (field_3982 = new class_727());
+   public static SigmaMainClass method_3328() {
+      return field_3982 != null ? field_3982 : (field_3982 = new SigmaMainClass());
    }
 
    public static class_2827 method_3306() {
       return method_3328().method_3326();
    }
 
-   private class_727() {
+   private SigmaMainClass() {
    }
 
    public void method_3317() {

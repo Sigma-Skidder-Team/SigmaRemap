@@ -12,7 +12,7 @@ public class class_7072 extends class_9128 {
    public void method_32570(class_3368 var1) {
       if (this.method_42015()) {
          for (class_8145 var5 : class_7494.method_34088(class_314.method_1435())) {
-            if (var5 != field_46692.field_9632 && !class_727.method_3328().method_3331().method_20495(var5)) {
+            if (var5 != field_46692.field_9632 && !SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
                method_32571(
                   var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double)class_1893.method_8510().field_9616.field_32600,
                   var5.field_41713

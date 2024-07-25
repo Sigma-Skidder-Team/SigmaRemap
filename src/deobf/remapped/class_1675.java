@@ -56,10 +56,10 @@ public class class_1675 {
             try {
                var6 = class_3332.method_15291(var5, "name", null);
             } catch (class_7584 var9) {
-               class_727.method_3328().method_3326().method_12862("Invalid name in mod list config");
+               SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            for (class_9128 var8 : class_727.method_3328().method_3298().method_843().values()) {
+            for (class_9128 var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
                if (var8.method_41992().equals(var6) && var8.method_42004() != class_5664.field_28708 && var8.method_42004() != class_5664.field_28709) {
                   var5.method_5820("enabled", "false");
                }
@@ -85,7 +85,7 @@ public class class_1675 {
             try {
                var9 = class_3332.method_15291(var8, "name", null);
             } catch (class_7584 var11) {
-               class_727.method_3328().method_3326().method_12862("Invalid name in mod list config");
+               SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }
 
             if (var2.method_41992().equals(var9)) {
@@ -119,7 +119,7 @@ public class class_1675 {
             try {
                var7 = class_3332.method_15291(var6, "name", null);
             } catch (class_7584 var9) {
-               class_727.method_3328().method_3326().method_12862("Invalid name in mod list config");
+               SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }
 
             if (var1.method_41992().equals(var7)) {

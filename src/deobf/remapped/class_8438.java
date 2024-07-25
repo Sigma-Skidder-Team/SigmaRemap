@@ -48,7 +48,7 @@ public class class_8438 extends class_9128 {
    public void method_42012() {
       this.field_43173.clear();
 
-      for (class_9128 var4 : class_727.method_3328().method_3298().method_843().values()) {
+      for (class_9128 var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          if (var4.method_42004() != class_5664.field_28708) {
             this.field_43173.add(var4);
             this.field_43168.put(var4, new class_2440(150, 150, class_4043.field_19618));

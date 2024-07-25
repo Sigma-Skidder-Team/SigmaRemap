@@ -16,6 +16,6 @@ public class class_9758 extends class_3620 {
 
    @Override
    public String method_41987() {
-      return class_727.method_3328().method_3312() != class_6015.field_30644 ? super.method_41987() : "AntiVelocity";
+      return SigmaMainClass.method_3328().method_3312() != class_6015.field_30644 ? super.method_41987() : "AntiVelocity";
    }
 }

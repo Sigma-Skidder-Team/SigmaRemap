@@ -63,7 +63,7 @@ public class class_1853 extends class_9128 {
 
             if ((field_46692.field_9623 == null || field_46692.field_9623 instanceof class_3431 || field_46692.field_9623 instanceof class_5766)
                && this.field_9397.method_14772() > var4
-               && (float)class_727.method_3328().method_3310().method_25303() > (float)var4 / 50.0F) {
+               && (float) SigmaMainClass.method_3328().method_3310().method_25303() > (float)var4 / 50.0F) {
                field_9392 = false;
                this.method_8193(this.method_42016("Mode").equalsIgnoreCase("FakeInv"));
             }
@@ -104,8 +104,8 @@ public class class_1853 extends class_9128 {
                   class_3286 var13 = (class_3286)var9.method_27960();
                   if (class_6943.field_35708 == var7
                      && (
-                        !class_727.method_3328().method_3298().method_847(class_1853.class).method_42007("Fake Items")
-                           || class_727.method_3328().method_3319().method_30523(var12) >= 1500L
+                        !SigmaMainClass.method_3328().method_3298().method_847(class_1853.class).method_42007("Fake Items")
+                           || SigmaMainClass.method_3328().method_3319().method_30523(var12) >= 1500L
                      )) {
                      this.method_8196(var1);
                      if (!(field_46692.field_9632.field_3853.method_31498(36 + var7.method_31767()).method_27960() instanceof class_221)) {
@@ -120,7 +120,7 @@ public class class_1853 extends class_9128 {
                         field_46692.field_9632.method_37220(7, true);
                      }
 
-                     if (class_727.method_3328().method_3298().method_847(class_1853.class).method_42002("Delay") > 0.0F) {
+                     if (SigmaMainClass.method_3328().method_3298().method_847(class_1853.class).method_42002("Delay") > 0.0F) {
                         return;
                      }
                   }
@@ -130,8 +130,8 @@ public class class_1853 extends class_9128 {
                      && class_2740.method_12364(var9)
                      && class_2740.method_12323(var9) > 0
                      && (
-                        !class_727.method_3328().method_3298().method_847(class_1853.class).method_42007("Fake Items")
-                           || class_727.method_3328().method_3319().method_30523(var12) >= 1500L
+                        !SigmaMainClass.method_3328().method_3298().method_847(class_1853.class).method_42007("Fake Items")
+                           || SigmaMainClass.method_3328().method_3319().method_30523(var12) >= 1500L
                      )) {
                      this.method_8196(var1);
                      class_2451 var11 = field_46692.field_9632.field_3853.method_31498(36 + var10.method_37669().method_31767()).method_27960();
@@ -146,7 +146,7 @@ public class class_1853 extends class_9128 {
                      class_2740.method_12356(field_46692.field_9632.field_3869.field_19925, var12, 0, class_6269.field_32019, field_46692.field_9632, true);
                      this.field_9397.method_14773();
                      field_9392 = true;
-                     if (class_727.method_3328().method_3298().method_847(class_1853.class).method_42002("Delay") > 0.0F) {
+                     if (SigmaMainClass.method_3328().method_3298().method_847(class_1853.class).method_42002("Delay") > 0.0F) {
                         return;
                      }
                   }

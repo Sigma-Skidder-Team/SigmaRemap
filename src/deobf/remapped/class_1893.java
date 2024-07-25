@@ -284,7 +284,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       this.field_9656.method_2649(this.field_9618);
       this.field_9636 = new class_5180();
       this.field_9656.method_2649(this.field_9636);
-      class_727.method_3328().method_3317();
+      SigmaMainClass.method_3328().method_3317();
       this.field_9614 = new class_3062(this);
       this.field_9612 = new class_3372(this);
       class_3542.method_16416(this::method_8547);
@@ -324,7 +324,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    }
 
    private String method_8504() {
-      StringBuilder var1 = new StringBuilder(class_727.method_3328().method_3312() == class_6015.field_30645 ? "Jello for Sigma 5.0" : "Sigma 5.0");
+      StringBuilder var1 = new StringBuilder(SigmaMainClass.method_3328().method_3312() == class_6015.field_30645 ? "Jello for Sigma 5.0" : "Sigma 5.0");
       var1.append(" ");
       var1.append(class_7665.method_34674().getName());
       class_1092 var2 = this.method_8614();
@@ -402,7 +402,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
                this.method_8576(var3, var7);
                this.field_9592.method_16059();
                this.method_8544(!var1);
-               class_727.method_3328().method_3330();
+               SigmaMainClass.method_3328().method_3330();
                this.field_9592.method_16052();
                this.method_8603(var3, var7);
             } catch (OutOfMemoryError var4) {
@@ -636,7 +636,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       }
 
       this.field_9623 = (class_266)var1;
-      class_727.method_3328().method_3299().method_30988();
+      SigmaMainClass.method_3328().method_3299().method_30988();
       if (var1 != null) {
          this.field_9625.method_39844();
          class_5916.method_27064();
@@ -870,7 +870,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       this.field_9602.method_43169((double)var1);
       if (this.field_9623 != null) {
          this.field_9623.method_1191(this, this.field_9602.method_43165(), this.field_9602.method_43177());
-         class_727.method_3328().method_3299().method_30991();
+         SigmaMainClass.method_3328().method_3299().method_30991();
       }
 
       class_4230 var2 = this.method_8584();
@@ -1042,7 +1042,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
 
    public void method_8512() {
       if (this.field_9619) {
-         class_727.method_3328().method_3324();
+         SigmaMainClass.method_3328().method_3324();
       }
 
       this.field_9619 = false;
@@ -1090,7 +1090,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_8610() {
       class_8706 var1 = new class_8706(class_3237.field_16098);
-      class_727.method_3328().method_3302().method_7914(var1);
+      SigmaMainClass.method_3328().method_3302().method_7914(var1);
       if (!var1.method_29716()) {
          if (this.field_9582 <= 0) {
             if (this.field_9587 == null) {
@@ -1102,7 +1102,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
                class_3645 var2 = null;
                if (this.field_9587.method_33990() == class_1430.field_7718) {
                   var2 = new class_3645(((class_5631)this.field_9587).method_25524(), true);
-                  class_727.method_3328().method_3302().method_7914(var2);
+                  SigmaMainClass.method_3328().method_3302().method_7914(var2);
                   if (var2.method_29716()) {
                      return;
                   }
@@ -1118,7 +1118,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
                      this.field_9647.method_42138(this.field_9632, ((class_5631)this.field_9587).method_25524());
                      if (var2 != null) {
                         var2.method_16974();
-                        class_727.method_3328().method_3302().method_7914(var2);
+                        SigmaMainClass.method_3328().method_3302().method_7914(var2);
                      }
                      break;
                   case field_7717:
@@ -1148,7 +1148,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_8565() {
       class_8706 var1 = new class_8706(class_3237.field_16101);
-      class_727.method_3328().method_3302().method_7914(var1);
+      SigmaMainClass.method_3328().method_3302().method_7914(var1);
       if (!var1.method_29716()) {
          if (!this.field_9647.method_42156()) {
             this.field_9570 = 4;
@@ -1440,7 +1440,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       if (this.field_9632.method_26554()) {
          if (!this.field_9577.field_45559.method_27060()) {
             class_4996 var6 = new class_4996();
-            class_727.method_3328().method_3302().method_7914(var6);
+            SigmaMainClass.method_3328().method_3302().method_7914(var6);
             if (!var6.method_29716()) {
                this.field_9647.method_42139(this.field_9632);
             }
@@ -1705,7 +1705,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
       this.method_8600(var2);
       this.field_9601 = var1;
       this.method_8594(var1);
-      class_727.method_3328().method_3302().method_7914(new class_717());
+      SigmaMainClass.method_3328().method_3302().method_7914(new class_717());
       if (!this.field_9672) {
          YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field_9660);
          MinecraftSessionService var4 = var3.createMinecraftSessionService();
@@ -1824,7 +1824,7 @@ public class class_1893 extends class_7760<Runnable> implements class_4252, clas
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_8543() {
       class_8706 var1 = new class_8706(class_3237.field_16097);
-      class_727.method_3328().method_3302().method_7914(var1);
+      SigmaMainClass.method_3328().method_3302().method_7914(var1);
       if (!var1.method_29716()) {
          if (this.field_9587 != null && this.field_9587.method_33990() != class_1430.field_7721) {
             boolean var2 = this.field_9632.field_3876.field_4944;

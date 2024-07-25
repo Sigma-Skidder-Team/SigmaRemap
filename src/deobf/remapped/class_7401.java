@@ -71,7 +71,7 @@ public class class_7401 extends class_9128 {
                         ArrayList var11 = class_6306.method_28770(var10, var9);
                         this.field_37777.add(var11);
                         Collections.reverse(var11);
-                        this.method_33701(var11, class_727.method_3328().method_3298().method_847(class_9801.class).method_42015());
+                        this.method_33701(var11, SigmaMainClass.method_3328().method_3298().method_847(class_9801.class).method_42015());
                         class_314.method_1431(var8, !this.method_42007("No Swing"));
                         Collections.reverse(var11);
                         this.method_33701(var11, false);
@@ -172,7 +172,7 @@ public class class_7401 extends class_9128 {
       while (var7.hasNext()) {
          class_8145 var8 = ((class_3357)var7.next()).method_15377();
          if (var8 != field_46692.field_9632) {
-            if (!class_727.method_3328().method_3307().method_14460(var8)) {
+            if (!SigmaMainClass.method_3328().method_3307().method_14460(var8)) {
                if (var8 instanceof class_5834) {
                   if (((class_5834)var8).method_26551() != 0.0F) {
                      if (!(field_46692.field_9632.method_37175(var8) > var1)) {
@@ -180,7 +180,7 @@ public class class_7401 extends class_9128 {
                            if (!(var8 instanceof class_9399)) {
                               if (!this.method_42007("Players") && var8 instanceof class_704) {
                                  var7.remove();
-                              } else if (var8 instanceof class_704 && class_727.method_3328().method_3331().method_20495(var8)) {
+                              } else if (var8 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var8)) {
                                  var7.remove();
                               } else if (!this.method_42007("Invisible") && var8.method_37109()) {
                                  var7.remove();
@@ -191,7 +191,7 @@ public class class_7401 extends class_9128 {
                               } else if (!var8.method_37367()) {
                                  if (var8 instanceof class_704
                                     && class_5876.method_26760((class_704)var8)
-                                    && class_727.method_3328().method_3298().method_847(class_3595.class).method_42015()) {
+                                    && SigmaMainClass.method_3328().method_3298().method_847(class_3595.class).method_42015()) {
                                     var7.remove();
                                  }
                               } else {
@@ -232,6 +232,6 @@ public class class_7401 extends class_9128 {
 
    @Override
    public boolean method_42003() {
-      return this.method_42015() && this.method_33702() && class_727.method_3328().method_3310().method_25294();
+      return this.method_42015() && this.method_33702() && SigmaMainClass.method_3328().method_3310().method_25294();
    }
 }

@@ -65,7 +65,7 @@ public class class_8737 extends class_446 {
       var1 *= !this.field_20339 ? (!this.field_36279 ? 0.3F : 0.7F) : 0.75F;
       int var5 = this.field_36270;
       int var6 = this.field_36278;
-      if (class_727.method_3328().method_3312() != class_6015.field_30645) {
+      if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
          var4 = 0;
          var6 -= 7;
          var5 += 7;

@@ -101,7 +101,7 @@ public class class_777 extends class_9128 {
             );
          field_46692.field_9632
             .method_37256(field_46692.field_9632.method_37302(), field_46692.field_9632.method_37309() + (double)var1, field_46692.field_9632.method_37156());
-         class_727.method_3328().method_3335().method_27841(new class_8235("Successfuly VCliped", var1 + " Blocks", 2000, class_2209.field_10993));
+         SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Successfuly VCliped", var1 + " Blocks", 2000, class_2209.field_10993));
       }
    }
 }

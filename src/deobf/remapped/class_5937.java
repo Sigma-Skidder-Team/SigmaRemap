@@ -14,15 +14,15 @@ public class class_5937 {
    public class_8670 field_30286 = null;
 
    public void method_27158() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
    public void method_27144() {
       this.field_30284.clear();
       this.field_30289 = -999.0F;
       this.field_30287 = -999.0F;
-      class_727.method_3328().method_3298().method_847(class_3709.class).method_42023(false);
-      class_727.method_3328().method_3298().method_847(class_2368.class).method_42023(false);
+      SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42023(false);
+      SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42023(false);
    }
 
    public void method_27153(List<class_8670> var1) {
@@ -211,17 +211,17 @@ public class class_5937 {
             }
 
             this.field_30282.field_9632.field_41701 = var37;
-            if (var36 && !this.field_30282.field_9632.field_41726 && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+            if (var36 && !this.field_30282.field_9632.field_41726 && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
                class_314.method_1463(0.0);
                class_314.method_1405(0.0);
             } else {
-               if (class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()
+               if (SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()
                   && !class_314.method_1413(this.field_30282.field_9632, 5.0F)) {
                   var36 = true;
                }
 
-               class_727.method_3328().method_3298().method_847(class_3709.class).method_42023(var35);
-               class_727.method_3328().method_3298().method_847(class_2368.class).method_42023(var36);
+               SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42023(var35);
+               SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42023(var36);
                if (!var17 || !var16) {
                   if (var8.field_44468.method_32363().method_6195(this.field_30282.field_9632.method_37245()) > 10.0) {
                      this.method_27144();
@@ -310,7 +310,7 @@ public class class_5937 {
                var1.method_6441(var15[0]);
                var1.method_6448(var15[1]);
                class_6435 var12 = new class_6435(0, false, this.field_30285);
-               class_727.method_3328().method_3302().method_7914(var12);
+               SigmaMainClass.method_3328().method_3302().method_7914(var12);
             }
 
             if (var6.field_44477 != class_4748.field_23009) {

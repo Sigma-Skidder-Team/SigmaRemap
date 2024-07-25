@@ -65,7 +65,7 @@ public class class_1731 extends class_9128 {
             if (field_46692.field_9632.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206) {
                if (class_5174.method_23723(class_4897.field_25024) == 0) {
                   if (this.field_8927.method_14772() > 5000L) {
-                     class_727.method_3328().method_3335().method_27841(new class_8235("BowFly", "You have no arrows"));
+                     SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("BowFly", "You have no arrows"));
                      this.field_8927.method_14773();
                   }
 

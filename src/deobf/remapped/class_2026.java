@@ -60,7 +60,7 @@ public class class_2026 {
    private double field_10286 = 0.0;
 
    public void method_9478() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
       this.method_9507();
       if (!this.method_9468()) {
          this.method_9477();
@@ -74,12 +74,12 @@ public class class_2026 {
       var3.method_5818("volume", this.field_10285);
       var3.method_5823("spectrum", this.field_10279);
       var3.method_5818("repeat", this.field_10282.field_33115);
-      class_727.method_3328().method_3304().method_5820("music", var3);
+      SigmaMainClass.method_3328().method_3304().method_5820("music", var3);
    }
 
    private void method_9507() {
-      if (class_727.method_3328().method_3304().method_5850("music")) {
-         class_1293 var3 = class_727.method_3328().method_3304().method_5848("music");
+      if (SigmaMainClass.method_3328().method_3304().method_5850("music")) {
+         class_1293 var3 = SigmaMainClass.method_3328().method_3304().method_5848("music");
          if (var3 != null) {
             if (var3.method_5850("volume")) {
                this.field_10285 = Math.max(0, Math.min(100, var3.method_5813("volume")));
@@ -98,7 +98,7 @@ public class class_2026 {
 
    @class_9148
    private void method_9493(class_3278 var1) {
-      if (class_727.method_3328().method_3312() == class_6015.field_30645) {
+      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645) {
          if (this.field_10295 && this.field_10297.size() != 0) {
             double[] var4 = this.field_10297.get(0);
             if (this.field_10293.isEmpty()) {
@@ -256,7 +256,7 @@ public class class_2026 {
 
             this.field_10292 = class_6568.method_30015("picture", this.field_10274);
             this.field_10271 = class_6568.method_30015("picture", this.field_10273);
-            class_727.method_3328().method_3335().method_27841(new class_8235("Now Playing", this.field_10291, 7000, this.field_10271));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Now Playing", this.field_10291, 7000, this.field_10271));
             this.field_10290 = false;
          }
       } catch (IOException var5) {
@@ -296,7 +296,7 @@ public class class_2026 {
 
                for (int var4 = this.field_10284; var4 < this.field_10298.field_45627.size(); var4++) {
                   URL var5 = class_7763.method_35220(this.field_10298.field_45627.get(var4).field_36800);
-                  class_727.method_3306().method_12865(var5.toString());
+                  SigmaMainClass.method_3306().method_12865(var5.toString());
                   this.field_10294 = var4;
                   this.field_10275 = this.field_10298.field_45627.get(var4);
                   this.field_10297.clear();
@@ -320,7 +320,7 @@ public class class_2026 {
 
                   try {
                      URL var28 = this.method_9482(var5);
-                     class_727.method_3306().method_12865(var28 == null ? "No stream" : var28.toString());
+                     SigmaMainClass.method_3306().method_12865(var28 == null ? "No stream" : var28.toString());
                      if (var28 != null) {
                         URLConnection var7 = var28.openConnection();
                         var7.setConnectTimeout(14000);
@@ -334,7 +334,7 @@ public class class_2026 {
                         class_5111 var11 = var10.method_22093();
                         List var12 = var11.method_23445();
                         if (var12.isEmpty()) {
-                           class_727.method_3306().method_12865("No content");
+                           SigmaMainClass.method_3306().method_12865("No content");
                         }
 
                         class_5043 var13 = (class_5043)var11.method_23445().get(1);
@@ -345,7 +345,7 @@ public class class_2026 {
                         this.field_10283 = (long)var11.method_23440();
                         if (this.field_10283 > 1300L) {
                            var9.close();
-                           class_727.method_3328().method_3335().method_27841(new class_8235("Now Playing", "Music is too long."));
+                           SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Now Playing", "Music is too long."));
                         }
 
                         class_8405 var15 = new class_8405(var13.method_8200());
@@ -616,7 +616,7 @@ public class class_2026 {
          if (var9.getMessage() != null
             && var9.getMessage().contains("ERROR: This video contains content from")
             && var9.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-            class_727.method_3328().method_3335().method_27841(new class_8235("Now Playing", "Not available in your region."));
+            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Now Playing", "Not available in your region."));
          } else {
             var9.printStackTrace();
             this.method_9504();
@@ -666,27 +666,27 @@ public class class_2026 {
    }
 
    public boolean method_9468() {
-      File var3 = new File(class_727.method_3328().method_3334() + "/music/youtube-dl");
+      File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/music/youtube-dl");
       if (class_9665.method_44667() == class_8208.field_41987) {
-         var3 = new File(class_727.method_3328().method_3334() + "/music/youtube-dl.exe");
+         var3 = new File(SigmaMainClass.method_3328().method_3334() + "/music/youtube-dl.exe");
       }
 
       return var3.exists();
    }
 
    public void method_9477() {
-      class_727.method_3328().method_3326().method_12865("Updating dependencies threaded");
+      SigmaMainClass.method_3328().method_3326().method_12865("Updating dependencies threaded");
       new Thread(() -> this.method_9504()).start();
    }
 
    public void method_9504() {
       if (!this.field_10272) {
-         File var3 = new File(class_727.method_3328().method_3334() + "/music/");
+         File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/music/");
          var3.mkdirs();
-         class_727.method_3328().method_3326().method_12865("Updating dependencies");
+         SigmaMainClass.method_3328().method_3326().method_12865("Updating dependencies");
          if (class_9665.method_44667() == class_8208.field_41987) {
             try {
-               File var4 = new File(class_727.method_3328().method_3334() + "/music/youtube-dl.exe");
+               File var4 = new File(SigmaMainClass.method_3328().method_3334() + "/music/youtube-dl.exe");
                CloseableHttpClient var5 = HttpClients.createDefault();
                CloseableHttpResponse var6 = var5.execute(new HttpGet("https://youtube-dl.org/downloads/latest/youtube-dl.exe"));
                Throwable var7 = null;
@@ -719,7 +719,7 @@ public class class_2026 {
             }
          } else {
             try {
-               File var100 = new File(class_727.method_3328().method_3334() + "/music/youtube-dl");
+               File var100 = new File(SigmaMainClass.method_3328().method_3334() + "/music/youtube-dl");
                CloseableHttpClient var101 = HttpClients.createDefault();
                CloseableHttpResponse var102 = var101.execute(new HttpGet("http://youtube-dl.org/downloads/latest/youtube-dl"));
                Throwable var103 = null;
@@ -758,7 +758,7 @@ public class class_2026 {
    }
 
    public String method_9491() {
-      String var3 = class_727.method_3328().method_3334().getAbsolutePath() + "/music/youtube-dl";
+      String var3 = SigmaMainClass.method_3328().method_3334().getAbsolutePath() + "/music/youtube-dl";
       if (class_9665.method_44667() != class_8208.field_41987) {
          File var4 = new File(var3);
          var4.setExecutable(true);

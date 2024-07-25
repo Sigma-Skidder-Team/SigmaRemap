@@ -56,8 +56,8 @@ public class class_9289 extends class_2596 {
       boolean var10 = false;
       String var11 = "© Sigma Prod";
       StringBuilder var10000 = new StringBuilder().append("Sigma ");
-      class_727.method_3328();
-      String var12 = var10000.append(class_727.field_3957).append(" for Minecraft 1.8 to ").append(class_3347.field_16514.method_2045()).toString();
+      SigmaMainClass.method_3328();
+      String var12 = var10000.append(SigmaMainClass.field_3957).append(" for Minecraft 1.8 to ").append(class_3347.field_16514.method_2045()).toString();
       this.method_32148(this.field_47382 = new class_4879(this, "particles"));
       short var13 = 480;
       short var14 = 480;
@@ -104,7 +104,7 @@ public class class_9289 extends class_2596 {
    }
 
    public void method_42762(class_2596 var1) {
-      class_727.method_3328().method_3299().method_30990(var1);
+      SigmaMainClass.method_3328().method_3299().method_30990(var1);
       this.method_42758();
    }
 

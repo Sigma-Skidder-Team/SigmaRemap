@@ -25,7 +25,7 @@ public class class_2629 extends class_3720 {
                   Pattern var14 = Pattern.compile("[a-zA-Z0-9_]{2,16}");
                   boolean var15 = var14.matcher(var2[1].method_24060()).matches();
                   if (var15) {
-                     boolean var16 = class_727.method_3328().method_3307().method_14464(var2[1].method_24060());
+                     boolean var16 = SigmaMainClass.method_3328().method_3307().method_14464(var2[1].method_24060());
                      if (!var16) {
                         var3.method_3731("\"" + var2[1].method_24060() + "\" is already your friend.");
                      } else {
@@ -40,7 +40,7 @@ public class class_2629 extends class_3720 {
                if (var2.length != 2) {
                   var3.method_3731("Usage : .friend remove <name>");
                } else {
-                  boolean var13 = class_727.method_3328().method_3307().method_14467(var2[1].method_24060());
+                  boolean var13 = SigmaMainClass.method_3328().method_3307().method_14467(var2[1].method_24060());
                   if (!var13) {
                      var3.method_3731("\"" + var2[1].method_24060() + "\" is not your friend :(.");
                   } else {
@@ -49,7 +49,7 @@ public class class_2629 extends class_3720 {
                }
                break;
             case "list":
-               List var9 = class_727.method_3328().method_3307().method_14465();
+               List var9 = SigmaMainClass.method_3328().method_3307().method_14465();
                if (var9.isEmpty()) {
                   var3.method_3731("You have no friends :(");
                } else {
@@ -68,7 +68,7 @@ public class class_2629 extends class_3720 {
                }
                break;
             case "clear":
-               if (class_727.method_3328().method_3307().method_14472()) {
+               if (SigmaMainClass.method_3328().method_3307().method_14472()) {
                   var3.method_3731("Cleared all your friends.");
                } else {
                   var3.method_3731("You have no friends :(.");

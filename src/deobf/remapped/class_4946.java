@@ -11,7 +11,7 @@ public class class_4946 {
    private static List<Runnable> field_25600 = new ArrayList<Runnable>();
 
    public void method_22654() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
       this.method_22660(new class_5627());
       this.method_22660(new class_836());
       this.method_22660(new class_1110());
@@ -97,7 +97,7 @@ public class class_4946 {
 
    @class_9148
    private void method_22659(class_2157 var1) {
-      if (class_727.method_3328().method_3312() != class_6015.field_30642) {
+      if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30642) {
          if (var1.method_10047() instanceof class_3211) {
             class_3211 var4 = (class_3211)var1.method_10047();
             String var5 = var4.method_14751();

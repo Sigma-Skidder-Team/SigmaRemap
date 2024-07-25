@@ -24,10 +24,10 @@ public class class_1235 implements Runnable {
             if (class_1893.method_8510().field_9601 != null) {
                boolean var3 = false;
                boolean var4 = false;
-               if (class_727.method_3328().method_3298() != null) {
-                  ArrayList var5 = new ArrayList<class_9128>(class_727.method_3328().method_3298().method_843().values());
+               if (SigmaMainClass.method_3328().method_3298() != null) {
+                  ArrayList var5 = new ArrayList<class_9128>(SigmaMainClass.method_3328().method_3298().method_843().values());
 
-                  for (class_9128 var7 : class_727.method_3328().method_3298().method_843().values()) {
+                  for (class_9128 var7 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
                      if (var7 instanceof class_3620) {
                         var5.addAll(Arrays.asList(((class_3620)var7).field_17661));
                      }

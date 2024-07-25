@@ -40,6 +40,6 @@ public class class_3114 implements class_2827 {
    }
 
    public void 躚뫤댠樽骰(String var1) {
-      class_727.method_3328();
+      SigmaMainClass.method_3328();
    }
 }

@@ -31,7 +31,7 @@ public class class_2462 extends class_9128 {
       }
 
       if (Math.abs((double)field_46692.field_9616.field_32603 - 1.4123) < 0.001
-         && !class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+         && !SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
          field_46692.field_9616.field_32603 = 1.0F;
       }
    }
@@ -40,7 +40,7 @@ public class class_2462 extends class_9128 {
    @class_7664
    public void method_11348(class_1393 var1) {
       if (field_46692.field_9632.field_41726) {
-         if (!class_727.method_3328().method_3298().method_847(class_9801.class).method_42003()
+         if (!SigmaMainClass.method_3328().method_3298().method_847(class_9801.class).method_42003()
             || class_2534.field_12558 == null && class_2534.field_12556 == null
             || this.field_12321 != class_8988.field_46026) {
             this.field_12319 = 0.0;
@@ -69,7 +69,7 @@ public class class_2462 extends class_9128 {
          field_46692.field_9632.field_29600 = 0;
          if (field_46692.field_9632.field_41726) {
             this.field_12324 = field_46692.field_9632.method_37309();
-            if (!class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+            if (!SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
                field_46692.field_9616.field_32603 = 1.0F;
             }
 
@@ -78,7 +78,7 @@ public class class_2462 extends class_9128 {
                   field_46692.field_9632.method_26595();
                   var1.method_35235(class_8865.method_40786());
                   class_8865.method_40777(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double)class_8865.method_40770() * 0.13);
-                  if (this.method_42007("Timer") && !class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+                  if (this.method_42007("Timer") && !SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
                      field_46692.field_9616.field_32603 = 1.4123F;
                   }
 
@@ -90,7 +90,7 @@ public class class_2462 extends class_9128 {
                   var1.method_35235(0.399 + (double)class_8865.method_40769() * 0.1 + 1.0E-14);
                   class_8865.method_40777(var1, 0.51 + Math.random() * 1.0E-6 + (double)class_8865.method_40770() * 0.098);
                   this.field_12323 = 0;
-                  if (this.method_42007("Timer") && !class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+                  if (this.method_42007("Timer") && !SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
                      field_46692.field_9616.field_32603 = 1.1123F;
                   }
 
@@ -106,7 +106,7 @@ public class class_2462 extends class_9128 {
             }
          } else if (this.field_12323 >= 0) {
             double var4 = class_8865.method_40775();
-            if (!class_727.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
+            if (!SigmaMainClass.method_3328().method_3298().method_847(class_6803.class).method_42015()) {
                field_46692.field_9616.field_32603 = 1.0F;
             }
 
@@ -119,7 +119,7 @@ public class class_2462 extends class_9128 {
                      this.field_12322 *= var8;
                   }
 
-                  if (class_8865.method_40769() == 0 && !class_727.method_3328().method_3298().method_847(class_3709.class).method_42015()) {
+                  if (class_8865.method_40769() == 0 && !SigmaMainClass.method_3328().method_3298().method_847(class_3709.class).method_42015()) {
                      this.method_11344(var1, this.field_12323);
                   }
 
@@ -163,7 +163,7 @@ public class class_2462 extends class_9128 {
    @class_9148
    @class_7664
    public void method_11346(class_2911 var1) {
-      if (!class_7033.method_32081() && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+      if (!class_7033.method_32081() && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
          if (this.method_42007("Auto Jump") || field_46692.field_9632.field_29654) {
             if (this.field_12323 < 0) {
                var1.method_29715(true);

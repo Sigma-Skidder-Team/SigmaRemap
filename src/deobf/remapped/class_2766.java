@@ -15,7 +15,7 @@ public class class_2766 extends class_9128 {
 
    @class_9148
    public void method_12600(class_1393 var1) {
-      if (this.method_42015() && field_46692.field_9632 != null && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+      if (this.method_42015() && field_46692.field_9632 != null && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
          if (field_46692.field_9632.field_41726 && var1.method_6449() && class_314.method_1387()) {
             var1.method_6455(var1.method_6454() + 1.0E-14);
          }
@@ -41,7 +41,7 @@ public class class_2766 extends class_9128 {
 
    @class_9148
    public void method_12598(class_7767 var1) {
-      if (this.method_42015() && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+      if (this.method_42015() && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
          if (!field_46692.field_9632.field_29654) {
             String var4 = this.method_42016("Mode");
             switch (var4) {
@@ -110,7 +110,7 @@ public class class_2766 extends class_9128 {
    private void method_12602(class_4868 var1) {
       if (this.method_42015()
          && !this.method_42016("Mode").equalsIgnoreCase("NCP")
-         && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
          if (!field_46692.field_9632.method_37285() && !field_46692.field_9632.method_37370() && !field_46692.field_9632.method_26505()) {
             if (!field_46692.field_9577.field_45450.field_30024
                && !field_46692.field_9632.method_26505()
@@ -136,7 +136,7 @@ public class class_2766 extends class_9128 {
          && !((double)field_46692.field_9632.field_41706 > 0.09)
          && this.method_42007("OnGround")
          && !field_46692.field_9577.field_45450.field_30024
-         && !class_727.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
+         && !SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_42015()) {
          if (field_46692.field_9632.field_41726 && class_314.method_1413(field_46692.field_9632, 0.001F)) {
             this.field_13513 = field_46692.field_9632.method_37309();
          }

@@ -205,7 +205,7 @@ public class class_7309 {
    public void finalize() throws Throwable {
       try {
          if (this.field_37382 != null) {
-            class_727.method_3328().method_3329(this.field_37382);
+            SigmaMainClass.method_3328().method_3329(this.field_37382);
          }
       } finally {
          super.finalize();

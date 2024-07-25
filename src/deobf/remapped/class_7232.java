@@ -36,9 +36,9 @@ public class class_7232 extends class_9128 {
          }
 
          if (this.field_37110 <= 0) {
-            class_9128 var4 = class_727.method_3328().method_3298().method_847(class_2368.class);
+            class_9128 var4 = SigmaMainClass.method_3328().method_3298().method_847(class_2368.class);
             String var5 = var4.method_42016("Type");
-            class_9128 var6 = class_727.method_3328().method_3298().method_847(class_5838.class);
+            class_9128 var6 = SigmaMainClass.method_3328().method_3298().method_847(class_5838.class);
             String var7 = var6.method_42016("Type");
             boolean var8 = var4.method_42015();
             if (var5.equals("Cubecraft") && var1.method_35236() < -0.4) {
@@ -122,7 +122,7 @@ public class class_7232 extends class_9128 {
          case "Cubecraft":
             double var13 = 3.2E7;
             field_46692.method_8614().method_4813(new class_9515(var5, var13, var9, false));
-            class_727.method_3328().method_3298().method_847(class_2368.class).method_41991(false);
+            SigmaMainClass.method_3328().method_3298().method_847(class_2368.class).method_41991(false);
             break;
          case "Legit":
             this.field_37110 = 200;

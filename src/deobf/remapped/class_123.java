@@ -21,7 +21,7 @@ public class class_123 {
    public HashMap<class_9128, TouchBarButton> field_301 = new HashMap<class_9128, TouchBarButton>();
 
    public class_123() {
-      class_727.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.method_3328().method_3302().method_7908(this);
       if (class_357.field_1386) {
          this.field_297.add(new class_3158(344, class_1046.class));
       }
@@ -142,7 +142,7 @@ public class class_123 {
 
    public boolean method_374() {
       return class_1893.field_9574
-         && class_727.method_3328().method_3312() == class_6015.field_30645
+         && SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
          && (
             System.getProperty("os.version").startsWith("10.14")
                || System.getProperty("os.version").startsWith("10.15")

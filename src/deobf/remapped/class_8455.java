@@ -266,15 +266,15 @@ public class class_8455 {
 
    public void method_38889(long var1, int var3, int var4, int var5, int var6) {
       if (var1 == this.field_43225.method_8552().method_43181()) {
-         if (class_727.method_3328().method_3299().method_31001() != null) {
-            class_727.method_3328().method_3299().method_30992(var3, var5);
+         if (SigmaMainClass.method_3328().method_3299().method_31001() != null) {
+            SigmaMainClass.method_3328().method_3299().method_30992(var3, var5);
             return;
          }
 
          if (this.field_43225.field_9623 != null) {
             if (this.field_43225.field_9623 instanceof class_5766 && var3 == 258) {
                class_6435 var14 = new class_6435(var3, var5 == 2, null);
-               class_727.method_3328().method_3302().method_7914(var14);
+               SigmaMainClass.method_3328().method_3302().method_7914(var14);
                if (var14.method_29716()) {
                   return;
                }
@@ -282,7 +282,7 @@ public class class_8455 {
          } else if (var5 == 1 || var5 == 2) {
             class_4233.method_19731(var3);
             class_6435 var9 = new class_6435(var3, var5 == 2, null);
-            class_727.method_3328().method_3302().method_7914(var9);
+            SigmaMainClass.method_3328().method_3302().method_7914(var9);
             if (var9.method_29716()) {
                return;
             }
@@ -437,8 +437,8 @@ public class class_8455 {
 
    private void method_38884(long var1, int var3, int var4) {
       if (var1 == this.field_43225.method_8552().method_43181()) {
-         if (class_727.method_3328().method_3299().method_31001() != null) {
-            class_727.method_3328().method_3299().method_30986(var3, var4);
+         if (SigmaMainClass.method_3328().method_3299().method_31001() != null) {
+            SigmaMainClass.method_3328().method_3299().method_30986(var3, var4);
             return;
          }
 
