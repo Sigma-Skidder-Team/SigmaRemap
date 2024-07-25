@@ -76,7 +76,7 @@ public class class_3204 extends class_1595 {
    public boolean method_26442(Entity var1) {
       if (super.method_26442(var1)) {
          if (var1 instanceof class_5834) {
-            ((class_5834)var1).method_26558(new class_2250(class_4054.field_19725, 200));
+            ((class_5834)var1).method_26558(new class_2250(Effects.field_19725, 200));
          }
 
          return true;
@@ -94,6 +94,6 @@ public class class_3204 extends class_1595 {
 
    @Override
    public boolean method_26495(class_2250 var1) {
-      return var1.method_10339() != class_4054.field_19725 ? super.method_26495(var1) : false;
+      return var1.method_10339() != Effects.field_19725 ? super.method_26495(var1) : false;
    }
 }

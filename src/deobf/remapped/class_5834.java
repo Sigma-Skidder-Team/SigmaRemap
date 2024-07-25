@@ -664,7 +664,7 @@ public abstract class class_5834 extends Entity {
          Collection var3 = this.field_29642.values();
          this.field_41735.method_36633(field_29626, method_26486(var3));
          this.field_41735.method_36633(field_29640, class_9541.method_43997(var3));
-         this.method_37333(this.method_26480(class_4054.field_19740));
+         this.method_37333(this.method_26480(Effects.field_19740));
       } else {
          this.method_26517();
          this.method_37333(false);
@@ -779,7 +779,7 @@ public abstract class class_5834 extends Entity {
    public boolean method_26495(class_2250 var1) {
       if (this.method_26550() == class_2780.field_13579) {
          class_1425 var4 = var1.method_10339();
-         if (var4 == class_4054.field_19742 || var4 == class_4054.field_19718) {
+         if (var4 == Effects.field_19742 || var4 == Effects.field_19718) {
             return false;
          }
       }
@@ -807,7 +807,7 @@ public abstract class class_5834 extends Entity {
       return this.field_29642.remove(var1);
    }
 
-   public boolean method_26607(class_1425 var1) {
+   public boolean removeEffect(class_1425 var1) {
       class_2250 var4 = this.method_26421(var1);
       if (var4 == null) {
          return false;
@@ -866,7 +866,7 @@ public abstract class class_5834 extends Entity {
       } else if (!this.field_41768.field_33055) {
          if (this.method_26450()) {
             return false;
-         } else if (var1.method_28360() && this.method_26480(class_4054.field_19745)) {
+         } else if (var1.method_28360() && this.method_26480(Effects.field_19745)) {
             return false;
          } else {
             if (this.method_26507() && !this.field_41768.field_33055) {
@@ -1058,9 +1058,9 @@ public abstract class class_5834 extends Entity {
 
             this.method_26456(1.0F);
             this.method_26523();
-            this.method_26558(new class_2250(class_4054.field_19742, 900, 1));
-            this.method_26558(new class_2250(class_4054.field_19731, 100, 1));
-            this.method_26558(new class_2250(class_4054.field_19745, 800, 0));
+            this.method_26558(new class_2250(Effects.field_19742, 900, 1));
+            this.method_26558(new class_2250(Effects.field_19731, 100, 1));
+            this.method_26558(new class_2250(Effects.field_19745, 800, 0));
             this.field_41768.method_29587(this, (byte)35);
          }
 
@@ -1349,7 +1349,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public int method_26490(float var1, float var2) {
-      class_2250 var5 = this.method_26553(class_4054.field_19730);
+      class_2250 var5 = this.method_26553(Effects.field_19730);
       float var6 = var5 != null ? (float)(var5.method_10333() + 1) : 0.0F;
       return class_9299.method_42816((var1 - 3.0F - var6) * var2);
    }
@@ -1395,8 +1395,8 @@ public abstract class class_5834 extends Entity {
 
    public float method_26477(class_6199 var1, float var2) {
       if (!var1.method_28348()) {
-         if (this.method_26480(class_4054.field_19727) && var1 != class_6199.field_31685) {
-            int var5 = (this.method_26553(class_4054.field_19727).method_10333() + 1) * 5;
+         if (this.method_26480(Effects.field_19727) && var1 != class_6199.field_31685) {
+            int var5 = (this.method_26553(Effects.field_19727).method_10333() + 1) * 5;
             int var6 = 25 - var5;
             float var7 = var2 * (float)var6;
             float var8 = var2;
@@ -1487,7 +1487,7 @@ public abstract class class_5834 extends Entity {
 
    private int method_26473() {
       if (!class_1493.method_6892(this)) {
-         return !this.method_26480(class_4054.field_19748) ? 6 : 6 + (1 + this.method_26553(class_4054.field_19748).method_10333()) * 2;
+         return !this.method_26480(Effects.field_19748) ? 6 : 6 + (1 + this.method_26553(Effects.field_19748).method_10333()) * 2;
       } else {
          return 6 - (1 + class_1493.method_6888(this));
       }
@@ -1824,8 +1824,8 @@ public abstract class class_5834 extends Entity {
 
    public void method_26595() {
       float var3 = this.method_26538();
-      if (this.method_26480(class_4054.field_19730)) {
-         var3 += 0.1F * (float)(this.method_26553(class_4054.field_19730).method_10333() + 1);
+      if (this.method_26480(Effects.field_19730)) {
+         var3 += 0.1F * (float)(this.method_26553(Effects.field_19730).method_10333() + 1);
       }
 
       class_1343 var4 = this.method_37098();
@@ -1867,7 +1867,7 @@ public abstract class class_5834 extends Entity {
       if (this.method_26530() || this.method_37069()) {
          double var4 = 0.08;
          boolean var6 = this.method_37098().field_7333 <= 0.0;
-         if (var6 && this.method_26480(class_4054.field_19750)) {
+         if (var6 && this.method_26480(Effects.field_19750)) {
             var4 = 0.01;
             this.field_41706 = 0.0F;
          }
@@ -1891,7 +1891,7 @@ public abstract class class_5834 extends Entity {
                var39 += (this.method_26423() - var39) * var14 / 3.0F;
             }
 
-            if (this.method_26480(class_4054.field_19724)) {
+            if (this.method_26480(Effects.field_19724)) {
                var38 = 0.96F;
             }
 
@@ -1934,7 +1934,7 @@ public abstract class class_5834 extends Entity {
             float var12 = !this.field_41726 ? 0.91F : var9 * 0.91F;
             class_1343 var13 = this.method_26588(var1, var9);
             double var29 = var13.field_7333;
-            if (!this.method_26480(class_4054.field_19726)) {
+            if (!this.method_26480(Effects.LevitationEffect)) {
                if (this.field_41768.field_33055 && !this.field_41768.method_22559(var8)) {
                   if (!(this.method_37309() > 0.0)) {
                      var29 = 0.0;
@@ -1945,7 +1945,7 @@ public abstract class class_5834 extends Entity {
                   var29 -= var4;
                }
             } else {
-               var29 += (0.05 * (double)(this.method_26553(class_4054.field_19726).method_10333() + 1) - var13.field_7333) * 0.2;
+               var29 += (0.05 * (double)(this.method_26553(Effects.LevitationEffect).method_10333() + 1) - var13.field_7333) * 0.2;
                this.field_41706 = 0.0F;
             }
 
@@ -2112,7 +2112,7 @@ public abstract class class_5834 extends Entity {
          }
 
          if (!this.field_41760) {
-            boolean var13 = this.method_26480(class_4054.field_19722);
+            boolean var13 = this.method_26480(Effects.field_19722);
             if (this.method_37385(6) != var13) {
                this.method_37220(6, var13);
             }
@@ -2437,7 +2437,7 @@ public abstract class class_5834 extends Entity {
 
    private void method_26571() {
       boolean var3 = this.method_37385(7);
-      if (var3 && !this.field_41726 && !this.method_37070() && !this.method_26480(class_4054.field_19726)) {
+      if (var3 && !this.field_41726 && !this.method_37070() && !this.method_26480(Effects.LevitationEffect)) {
          class_6098 var4 = this.method_26520(class_6943.field_35708);
          if (var4.method_27960() == class_4897.field_24503 && class_3286.method_15061(var4)) {
             var3 = true;

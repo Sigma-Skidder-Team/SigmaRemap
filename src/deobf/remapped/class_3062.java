@@ -105,7 +105,7 @@ public class class_3062 extends class_2089 {
       }
 
       float var7 = class_9299.method_42795(var2, this.field_15040.field_9632.field_30505, this.field_15040.field_9632.field_30510);
-      if (var7 > 0.0F && !this.field_15040.field_9632.method_26480(class_4054.field_19732)) {
+      if (var7 > 0.0F && !this.field_15040.field_9632.method_26480(Effects.field_19732)) {
          this.method_13973(var7);
       }
 
@@ -741,7 +741,7 @@ public class class_3062 extends class_2089 {
          int var21 = var16;
          int var22 = var4.method_26565();
          int var23 = -1;
-         if (var4.method_26480(class_4054.field_19742)) {
+         if (var4.method_26480(Effects.field_19742)) {
             var23 = this.field_15042 % class_9299.method_42816(var15 + 5.0F);
          }
 
@@ -768,8 +768,8 @@ public class class_3062 extends class_2089 {
 
          for (int var33 = class_9299.method_42816((var15 + (float)var16) / 2.0F) - 1; var33 >= 0; var33--) {
             byte var35 = 16;
-            if (!var4.method_26480(class_4054.field_19718)) {
-               if (var4.method_26480(class_4054.field_19725)) {
+            if (!var4.method_26480(Effects.field_19718)) {
+               if (var4.method_26480(Effects.field_19725)) {
                   var35 += 72;
                }
             } else {
@@ -834,7 +834,7 @@ public class class_3062 extends class_2089 {
                int var39 = var14;
                byte var41 = 16;
                byte var43 = 0;
-               if (var4.method_26480(class_4054.field_19747)) {
+               if (var4.method_26480(Effects.field_19747)) {
                   var41 += 36;
                   var43 = 13;
                }

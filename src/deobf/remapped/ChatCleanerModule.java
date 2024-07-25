@@ -10,7 +10,7 @@ public class ChatCleanerModule extends Module {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_5182) {
             class_5182 var4 = (class_5182)var1.method_557();
-            if (this.method_21555(this.method_21554(var4.method_23768().getString()))) {
+            if (this.contains(this.method_21554(var4.method_23768().getString()))) {
                var1.method_29715(true);
             }
          }
@@ -27,7 +27,7 @@ public class ChatCleanerModule extends Module {
       return var1.toLowerCase();
    }
 
-   private boolean method_21555(String var1) {
+   private boolean contains(String var1) {
       if (!var1.startsWith("> ")) {
          if (!var1.contains("http://")) {
             if (!var1.contains("https://")) {

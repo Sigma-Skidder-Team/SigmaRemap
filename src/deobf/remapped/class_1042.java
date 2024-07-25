@@ -42,7 +42,7 @@ public class class_1042 extends class_3558 {
 
    @Override
    public void method_16543() {
-      this.field_5743.method_17809().method_26558(new class_2250(class_4054.field_19736, 400));
+      this.field_5743.method_17809().method_26558(new class_2250(Effects.field_19736, 400));
    }
 
    @Override

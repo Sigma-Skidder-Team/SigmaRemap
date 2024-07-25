@@ -868,12 +868,12 @@ public class class_1531 implements Consumer<BiConsumer<Identifier, class_8843>> 
                         .method_34357(10)
                         .method_34360(
                            class_797.method_3537()
-                              .method_41386(class_4054.field_19746, class_7986.method_36238(7.0F, 10.0F))
-                              .method_41386(class_4054.field_19730, class_7986.method_36238(7.0F, 10.0F))
-                              .method_41386(class_4054.field_19737, class_7986.method_36238(6.0F, 8.0F))
-                              .method_41386(class_4054.field_19736, class_7986.method_36238(5.0F, 7.0F))
-                              .method_41386(class_4054.field_19718, class_7986.method_36238(10.0F, 20.0F))
-                              .method_41386(class_4054.field_19734, class_7986.method_36238(7.0F, 10.0F))
+                              .method_41386(Effects.field_19746, class_7986.method_36238(7.0F, 10.0F))
+                              .method_41386(Effects.field_19730, class_7986.method_36238(7.0F, 10.0F))
+                              .method_41386(Effects.field_19737, class_7986.method_36238(6.0F, 8.0F))
+                              .method_41386(Effects.field_19736, class_7986.method_36238(5.0F, 7.0F))
+                              .method_41386(Effects.field_19718, class_7986.method_36238(10.0F, 20.0F))
+                              .method_41386(Effects.field_19734, class_7986.method_36238(7.0F, 10.0F))
                         )
                   )
                   .method_1773(

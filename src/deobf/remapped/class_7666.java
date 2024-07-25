@@ -191,7 +191,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
                this.field_38967 = false;
             }
 
-            this.method_26558(new class_2250(class_4054.field_19742, 200, 0));
+            this.method_26558(new class_2250(Effects.field_19742, 200, 0));
          }
       }
 
@@ -366,8 +366,8 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          }
       }
 
-      if (var1.method_26480(class_4054.field_19741)) {
-         class_2250 var12 = var1.method_26553(class_4054.field_19741);
+      if (var1.method_26480(Effects.field_19741)) {
+         class_2250 var12 = var1.method_26553(Effects.field_19741);
          int var13 = var12.method_10333();
 
          for (class_8014 var8 : this.method_974()) {

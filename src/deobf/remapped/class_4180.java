@@ -37,7 +37,7 @@ public class class_4180 extends class_1595 {
    public class_6749 method_7152(class_6098 var1, float var2) {
       class_6749 var5 = super.method_7152(var1, var2);
       if (var5 instanceof class_581) {
-         ((class_581)var5).method_2752(new class_2250(class_4054.field_19743, 600));
+         ((class_581)var5).method_2752(new class_2250(Effects.field_19743, 600));
       }
 
       return var5;

@@ -21,7 +21,7 @@ public class class_6424 extends SecondModule {
                   List var6 = class_2740.method_12313(var5);
                   if (var6 != null) {
                      for (class_2250 var8 : var6) {
-                        if (var8.method_10339() == class_4054.field_19745) {
+                        if (var8.method_10339() == Effects.field_19745) {
                            return var4 - 36;
                         }
                      }
@@ -43,7 +43,7 @@ public class class_6424 extends SecondModule {
                List var11 = class_2740.method_12313(var10);
                if (var11 != null) {
                   for (class_2250 var13 : var11) {
-                     if (var13.method_10339() == class_4054.field_19745) {
+                     if (var13.method_10339() == Effects.field_19745) {
                         class_2740.method_12312(var9, 4);
                         return -1;
                      }

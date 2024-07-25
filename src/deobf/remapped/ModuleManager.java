@@ -127,7 +127,7 @@ public class ModuleManager {
       this.method_852(new class_8726());
       this.method_852(new class_4820());
       this.method_852(new class_1826());
-      this.method_852(new class_7342());
+      this.method_852(new AntiLevitationModule());
       this.method_852(new FakeForgeModule());
       if (var1 != class_6015.field_30645) {
          if (var1 == class_6015.field_30644) {

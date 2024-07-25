@@ -125,7 +125,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
             }
 
             if (var5 > 0) {
-               ((class_5834)var1).method_26558(new class_2250(class_4054.field_19718, var5 * 20, 0));
+               ((class_5834)var1).method_26558(new class_2250(Effects.field_19718, var5 * 20, 0));
             }
          }
 

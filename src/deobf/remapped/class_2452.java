@@ -150,12 +150,12 @@ public class class_2452 {
    }
 
    public void method_11258(class_704 var1) {
-      if (var1.method_26480(class_4054.field_19721)) {
-         this.field_12202 = this.field_12202 + var1.method_26553(class_4054.field_19721).method_10333() + 1;
+      if (var1.method_26480(Effects.field_19721)) {
+         this.field_12202 = this.field_12202 + var1.method_26553(Effects.field_19721).method_10333() + 1;
          this.field_12202 = class_9299.method_42829(this.field_12202, 0, this.method_11294());
       }
 
-      var1.method_26607(class_4054.field_19721);
+      var1.removeEffect(Effects.field_19721);
    }
 
    public void method_11271() {
@@ -301,7 +301,7 @@ public class class_2452 {
                      Entity var9 = this.field_12189.method_28925(var8);
                      if (var9 instanceof class_5834 && !var9.method_37221()) {
                         class_5834 var10 = (class_5834)var9;
-                        var10.method_26558(new class_2250(class_4054.field_19741, 48000, this.field_12202 - 1, false, false, true));
+                        var10.method_26558(new class_2250(Effects.field_19741, 48000, this.field_12202 - 1, false, false, true));
                         if (var10 instanceof class_9359) {
                            class_9359 var11 = (class_9359)var10;
                            var11.method_3209(class_6234.field_31861);

@@ -761,7 +761,7 @@ public class class_948 implements class_1243 {
                            && this.field_4880.field_47807.method_39517() != class_4666.field_22756
                            && !this.field_4877.method_1632()
                            && !this.field_4880.field_3876.field_4941
-                           && !this.field_4880.method_26480(class_4054.field_19726)
+                           && !this.field_4880.method_26480(Effects.LevitationEffect)
                            && !this.field_4880.method_26618()
                            && this.method_4166(this.field_4880);
                         this.field_4880.method_43235().method_28945().method_10186(this.field_4880);

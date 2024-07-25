@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4054 {
+public class Effects {
    public static final class_1425 field_19739 = method_18712(
       1,
       "speed",
@@ -58,7 +58,7 @@ public class class_4054 {
    public static final class_1425 field_19731 = method_18712(22, "absorption", new class_4170(class_7822.field_39674, 2445989));
    public static final class_1425 field_19734 = method_18712(23, "saturation", new class_2181(class_7822.field_39674, 16262179));
    public static final class_1425 field_19722 = method_18712(24, "glowing", new class_1425(class_7822.field_39676, 9740385));
-   public static final class_1425 field_19726 = method_18712(25, "levitation", new class_1425(class_7822.field_39673, 13565951));
+   public static final class_1425 LevitationEffect = method_18712(25, "levitation", new class_1425(class_7822.field_39673, 13565951));
    public static final class_1425 field_19719 = method_18712(
       26,
       "luck",

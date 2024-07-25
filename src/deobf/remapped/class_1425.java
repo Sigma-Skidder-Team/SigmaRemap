@@ -29,17 +29,17 @@ public class class_1425 {
    }
 
    public void method_6537(class_5834 var1, int var2) {
-      if (this != class_4054.field_19742) {
-         if (this != class_4054.field_19718) {
-            if (this != class_4054.field_19725) {
-               if (this == class_4054.field_19747 && var1 instanceof class_704) {
+      if (this != Effects.field_19742) {
+         if (this != Effects.field_19718) {
+            if (this != Effects.field_19725) {
+               if (this == Effects.field_19747 && var1 instanceof class_704) {
                   ((class_704)var1).method_3170(0.005F * (float)(var2 + 1));
-               } else if (this == class_4054.field_19734 && var1 instanceof class_704) {
+               } else if (this == Effects.field_19734 && var1 instanceof class_704) {
                   if (!var1.field_41768.field_33055) {
                      ((class_704)var1).method_3161().method_42236(var2 + 1, 1.0F);
                   }
-               } else if ((this != class_4054.field_19749 || var1.method_26563()) && (this != class_4054.field_19723 || !var1.method_26563())) {
-                  if (this == class_4054.field_19723 && !var1.method_26563() || this == class_4054.field_19749 && var1.method_26563()) {
+               } else if ((this != Effects.field_19749 || var1.method_26563()) && (this != Effects.field_19723 || !var1.method_26563())) {
+                  if (this == Effects.field_19723 && !var1.method_26563() || this == Effects.field_19749 && var1.method_26563()) {
                      var1.method_37181(class_6199.field_31686, (float)(6 << var2));
                   }
                } else {
@@ -57,8 +57,8 @@ public class class_1425 {
    }
 
    public void method_6539(Entity var1, Entity var2, class_5834 var3, int var4, double var5) {
-      if ((this != class_4054.field_19749 || var3.method_26563()) && (this != class_4054.field_19723 || !var3.method_26563())) {
-         if (this == class_4054.field_19723 && !var3.method_26563() || this == class_4054.field_19749 && var3.method_26563()) {
+      if ((this != Effects.field_19749 || var3.method_26563()) && (this != Effects.field_19723 || !var3.method_26563())) {
+         if (this == Effects.field_19723 && !var3.method_26563() || this == Effects.field_19749 && var3.method_26563()) {
             int var10 = (int)(var5 * (double)(6 << var4) + 0.5);
             if (var1 != null) {
                var3.method_37181(class_6199.method_28369(var1, var2), (float)var10);
@@ -75,10 +75,10 @@ public class class_1425 {
    }
 
    public boolean method_6549(int var1, int var2) {
-      if (this != class_4054.field_19742) {
-         if (this != class_4054.field_19718) {
-            if (this != class_4054.field_19725) {
-               return this == class_4054.field_19747;
+      if (this != Effects.field_19742) {
+         if (this != Effects.field_19718) {
+            if (this != Effects.field_19725) {
+               return this == Effects.field_19747;
             } else {
                int var7 = 40 >> var2;
                return var7 <= 0 ? true : var1 % var7 == 0;

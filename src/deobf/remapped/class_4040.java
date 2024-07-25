@@ -102,17 +102,17 @@ public abstract class class_4040 extends class_4607 {
             }
 
             if (!var6.method_28022() && class_6098.method_27982(var6, class_2452.method_11292()) && var7 != null) {
-               class_2250 var11 = var7.method_26553(class_4054.field_19721);
+               class_2250 var11 = var7.method_26553(Effects.field_19721);
                int var12 = 1;
                if (var11 == null) {
                   var12--;
                } else {
                   var12 += var11.method_10333();
-                  var7.method_26421(class_4054.field_19721);
+                  var7.method_26421(Effects.field_19721);
                }
 
                var12 = class_9299.method_42829(var12, 0, 4);
-               class_2250 var10 = new class_2250(class_4054.field_19721, 120000, var12, false, false, true);
+               class_2250 var10 = new class_2250(Effects.field_19721, 120000, var12, false, false, true);
                if (!this.field_41768.method_29537().method_1285(class_291.field_1045)) {
                   var7.method_26558(var10);
                }

@@ -151,6 +151,6 @@ public class class_9317 extends class_3757 implements class_3745 {
    }
 
    private void method_43014(class_5834 var1) {
-      var1.method_26558(new class_2250(class_4054.field_19722, 60));
+      var1.method_26558(new class_2250(Effects.field_19722, 60));
    }
 }

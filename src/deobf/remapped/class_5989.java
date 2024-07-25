@@ -628,7 +628,7 @@ public class class_5989 extends class_9716 {
          && !this.method_37321()
          && var7
          && !this.method_26554()
-         && !this.method_26480(class_4054.field_19736)) {
+         && !this.method_26480(Effects.field_19736)) {
          if (this.field_30526 <= 0 && !this.field_30523.field_9577.field_45444.method_27060()) {
             this.field_30526 = 7;
          } else {
@@ -641,7 +641,7 @@ public class class_5989 extends class_9716 {
          && this.method_27319()
          && var7
          && !this.method_26554()
-         && !this.method_26480(class_4054.field_19736)
+         && !this.method_26480(Effects.field_19736)
          && this.field_30523.field_9577.field_45444.method_27060()) {
          this.method_37140(true);
       }
@@ -755,7 +755,7 @@ public class class_5989 extends class_9716 {
    private void method_27318() {
       this.field_30505 = this.field_30510;
       if (!this.field_41772) {
-         if (this.method_26480(class_4054.field_19732) && this.method_26553(class_4054.field_19732).method_10347() > 60) {
+         if (this.method_26480(Effects.field_19732) && this.method_26553(Effects.field_19732).method_10347() > 60) {
             this.field_30510 += 0.006666667F;
             if (this.field_30510 > 1.0F) {
                this.field_30510 = 1.0F;
@@ -812,7 +812,7 @@ public class class_5989 extends class_9716 {
    @Nullable
    @Override
    public class_2250 method_26421(class_1425 var1) {
-      if (var1 == class_4054.field_19732) {
+      if (var1 == Effects.field_19732) {
          this.field_30505 = 0.0F;
          this.field_30510 = 0.0F;
       }
@@ -866,8 +866,8 @@ public class class_5989 extends class_9716 {
                if (var17.method_8325(this.field_41768, var15, var46).method_19485()) {
                   float var18 = 7.0F;
                   float var19 = 1.2F;
-                  if (this.method_26480(class_4054.field_19730)) {
-                     var19 += (float)(this.method_26553(class_4054.field_19730).method_10333() + 1) * 0.75F;
+                  if (this.method_26480(Effects.field_19730)) {
+                     var19 += (float)(this.method_26553(Effects.field_19730).method_10333() + 1) * 0.75F;
                   }
 
                   float var20 = Math.max(var8 * 7.0F, 1.0F / var42);

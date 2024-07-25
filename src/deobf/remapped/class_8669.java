@@ -60,7 +60,7 @@ public abstract class class_8669<T> implements Codec<T>, Keyable, class_3072<T> 
    public static final class_5621<class_8669<class_8472>> field_44420 = method_39804("dimension");
    public static final class_8669<class_8461> field_44369 = method_39812(field_44362, () -> class_463.field_2732);
    public static final class_3991<class_2340> field_44447 = method_39796(field_44458, "empty", () -> class_8532.field_43673);
-   public static final class_8669<class_1425> field_44436 = method_39812(field_44439, () -> class_4054.field_19719);
+   public static final class_8669<class_1425> field_44436 = method_39812(field_44439, () -> Effects.field_19719);
    public static final class_3991<class_6414> field_44462 = method_39796(field_44377, "air", () -> class_4783.field_23184);
    public static final class_8669<class_4382> field_44445 = method_39812(field_44422, () -> class_3668.field_17876);
    public static final class_3991<class_6629<?>> field_44400 = method_39796(field_44395, "pig", () -> class_6629.field_34252);

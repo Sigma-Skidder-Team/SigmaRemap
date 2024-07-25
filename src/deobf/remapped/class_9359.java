@@ -1047,7 +1047,7 @@ public class class_9359 extends class_704 implements class_117 {
    public void method_26494(class_2250 var1) {
       super.method_26494(var1);
       this.field_47794.method_4156(new class_1661(this.method_37145(), var1));
-      if (var1.method_10339() == class_4054.field_19726) {
+      if (var1.method_10339() == Effects.LevitationEffect) {
          this.field_47795 = this.field_41697;
          this.field_47797 = this.method_37245();
       }
@@ -1066,7 +1066,7 @@ public class class_9359 extends class_704 implements class_117 {
    public void method_26616(class_2250 var1) {
       super.method_26616(var1);
       this.field_47794.method_4156(new class_4671(this.method_37145(), var1.method_10339()));
-      if (var1.method_10339() == class_4054.field_19726) {
+      if (var1.method_10339() == Effects.LevitationEffect) {
          this.field_47797 = null;
       }
 

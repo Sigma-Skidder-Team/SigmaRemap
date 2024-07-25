@@ -1,9 +1,9 @@
 package remapped;
 
-public class class_5372 extends Module {
+public class MineMenSpiderModule extends Module {
    private boolean field_27443 = false;
 
-   public class_5372() {
+   public MineMenSpiderModule() {
       super(Category.MOVEMENT, "Minemen", "Minemen spider");
       this.addSetting(new BooleanSetting("AutoClimb", "Automatically climbs for you", true));
       this.addSetting(new BooleanSetting("Ceiling", "Allows you to fly under ceiling", true));

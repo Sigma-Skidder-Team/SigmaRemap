@@ -712,7 +712,7 @@ public class class_314 {
             && !field_1158.field_9632.field_41726
             && !field_1158.field_9632.method_26505()
             && !field_1158.field_9632.method_37285()
-            && !field_1158.field_9632.method_26480(class_4054.field_19736)
+            && !field_1158.field_9632.method_26480(Effects.field_19736)
             && !field_1158.field_9632.method_37070();
          if (var7 || field_1158.field_9632.field_41726 && SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42015()) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15322);

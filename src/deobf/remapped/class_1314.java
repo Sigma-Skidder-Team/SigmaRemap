@@ -12,7 +12,7 @@ public class class_1314 extends class_3558 {
 
    @Override
    public boolean method_16795() {
-      return super.method_16795() ? !this.field_7253.method_26480(class_4054.field_19740) : false;
+      return super.method_16795() ? !this.field_7253.method_26480(Effects.field_19740) : false;
    }
 
    @Override
@@ -27,7 +27,7 @@ public class class_1314 extends class_3558 {
 
    @Override
    public void method_16543() {
-      this.field_7253.method_26558(new class_2250(class_4054.field_19740, 1200));
+      this.field_7253.method_26558(new class_2250(Effects.field_19740, 1200));
    }
 
    @Nullable

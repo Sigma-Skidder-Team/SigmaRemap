@@ -665,10 +665,10 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             if (this.field_20019 > 0.0F && !this.method_19047() && this.field_41726) {
                double var7 = this.method_19078() * (double)this.field_20019 * (double)this.method_37281();
                double var9;
-               if (!this.method_26480(class_4054.field_19730)) {
+               if (!this.method_26480(Effects.field_19730)) {
                   var9 = var7;
                } else {
-                  var9 = var7 + (double)((float)(this.method_26553(class_4054.field_19730).method_10333() + 1) * 0.1F);
+                  var9 = var7 + (double)((float)(this.method_26553(Effects.field_19730).method_10333() + 1) * 0.1F);
                }
 
                class_1343 var11 = this.method_37098();

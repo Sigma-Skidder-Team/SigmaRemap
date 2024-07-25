@@ -17,7 +17,7 @@ public class class_6318 extends class_2451 {
       }
 
       if (!var2.field_33055) {
-         var3.method_26607(class_4054.field_19718);
+         var3.removeEffect(Effects.field_19718);
       }
 
       if (!var1.method_28022()) {

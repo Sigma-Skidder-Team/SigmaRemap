@@ -13,7 +13,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_1100 extends class_3757 implements class_4259, class_3745 {
    public static final class_1425[][] field_6316 = new class_1425[][]{
-      {class_4054.field_19739, class_4054.field_19735}, {class_4054.field_19727, class_4054.field_19730}, {class_4054.field_19733}, {class_4054.field_19742}
+      {Effects.field_19739, Effects.field_19735}, {Effects.field_19727, Effects.field_19730}, {Effects.field_19733}, {Effects.field_19742}
    };
    private static final Set<class_1425> field_6324 = Arrays.<class_1425[]>stream(field_6316)
       .<class_1425>flatMap(Arrays::stream)

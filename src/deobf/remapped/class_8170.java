@@ -43,7 +43,7 @@ public class class_8170 extends class_2811 {
       boolean var4 = super.method_26442(var1);
       if (var4 && this.method_26446().method_28022() && var1 instanceof class_5834) {
          float var5 = this.field_41768.method_43368(this.method_37075()).method_44283();
-         ((class_5834)var1).method_26558(new class_2250(class_4054.field_19747, 140 * (int)var5));
+         ((class_5834)var1).method_26558(new class_2250(Effects.field_19747, 140 * (int)var5));
       }
 
       return var4;

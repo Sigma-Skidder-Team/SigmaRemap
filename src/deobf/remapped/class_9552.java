@@ -271,7 +271,7 @@ public class class_9552 extends class_5783 {
       if (var7) {
          this.method_37096(var6, var4);
          if (var4 instanceof class_5834) {
-            ((class_5834)var4).method_26558(new class_2250(class_4054.field_19726, 200));
+            ((class_5834)var4).method_26558(new class_2250(Effects.LevitationEffect, 200));
          }
       }
    }

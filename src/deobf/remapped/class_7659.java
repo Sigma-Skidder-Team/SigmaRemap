@@ -77,7 +77,7 @@ public class class_7659 extends class_6017 {
             this.field_38905.method_20781(5.0F);
             this.field_38905.method_20787(200);
             this.field_38905.method_20789(class_3090.field_15315);
-            this.field_38905.method_20788(new class_2250(class_4054.field_19723));
+            this.field_38905.method_20788(new class_2250(Effects.field_19723));
             this.field_9479.field_41768.method_7509(this.field_38905);
          }
       } else if (this.field_38906 < 4) {

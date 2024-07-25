@@ -376,77 +376,77 @@ public class class_4783 {
    public static final class_6414 field_23410 = method_22064(
       "dandelion",
       new class_8543(
-         class_4054.field_19734, 7, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19734, 7, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23762 = method_22064(
       "poppy",
       new class_8543(
-         class_4054.field_19746, 5, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19746, 5, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23379 = method_22064(
       "blue_orchid",
       new class_8543(
-         class_4054.field_19734, 7, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19734, 7, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23275 = method_22064(
       "allium",
       new class_8543(
-         class_4054.field_19745, 4, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19745, 4, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23797 = method_22064(
       "azure_bluet",
       new class_8543(
-         class_4054.field_19736, 8, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19736, 8, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23181 = method_22064(
       "red_tulip",
       new class_8543(
-         class_4054.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23260 = method_22064(
       "orange_tulip",
       new class_8543(
-         class_4054.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23528 = method_22064(
       "white_tulip",
       new class_8543(
-         class_4054.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23390 = method_22064(
       "pink_tulip",
       new class_8543(
-         class_4054.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19737, 9, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23282 = method_22064(
       "oxeye_daisy",
       new class_8543(
-         class_4054.field_19742, 8, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19742, 8, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23892 = method_22064(
       "cornflower",
       new class_8543(
-         class_4054.field_19730, 6, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19730, 6, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23401 = method_22064(
       "wither_rose",
-      new class_8890(class_4054.field_19725, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483))
+      new class_8890(Effects.field_19725, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483))
    );
    public static final class_6414 field_23553 = method_22064(
       "lily_of_the_valley",
       new class_8543(
-         class_4054.field_19718, 12, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
+         Effects.field_19718, 12, class_3073.method_14056(class_5371.field_27440).method_14077().method_14060().method_14061(class_4618.field_22483)
       )
    );
    public static final class_6414 field_23729 = method_22064(

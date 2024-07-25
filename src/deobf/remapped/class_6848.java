@@ -20,7 +20,7 @@ public class class_6848 extends class_1340 {
 
    private ITextComponent method_31421(class_1425 var1, boolean var2) {
       TranslationTextComponent var5 = new TranslationTextComponent(var1.method_6540());
-      if (!var2 && var1 != class_4054.field_19742) {
+      if (!var2 && var1 != Effects.field_19742) {
          var5.appendString(" II");
       }
 

@@ -90,12 +90,12 @@ public class class_6011 extends class_1829 {
          this.field_30609 = class_9299.method_42804(class_9299.method_42818(this.field_30612)) * (float) Math.PI * 0.25F;
          if (!this.field_41768.field_33055) {
             double var5 = this.method_37098().field_7333;
-            if (!this.method_26480(class_4054.field_19726)) {
+            if (!this.method_26480(Effects.LevitationEffect)) {
                if (!this.method_37078()) {
                   var5 -= 0.08;
                }
             } else {
-               var5 = 0.05 * (double)(this.method_26553(class_4054.field_19726).method_10333() + 1);
+               var5 = 0.05 * (double)(this.method_26553(Effects.LevitationEffect).method_10333() + 1);
             }
 
             this.method_37214(0.0, var5 * 0.98F, 0.0);

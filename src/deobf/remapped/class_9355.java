@@ -92,7 +92,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       class_6098 var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25037) {
          return super.method_26857(var1, var2);
-      } else if (!this.method_26480(class_4054.field_19737)) {
+      } else if (!this.method_26480(Effects.field_19737)) {
          return class_6910.field_35518;
       } else {
          if (!var1.field_3876.field_4944) {
@@ -125,8 +125,8 @@ public class class_9355 extends class_2811 implements class_3449 {
       this.field_47750 = var1;
       this.field_47746 = var2;
       this.method_37372().method_36633(field_47749, true);
-      this.method_26607(class_4054.field_19737);
-      this.method_26558(new class_2250(class_4054.field_19733, var2, Math.min(this.field_41768.method_43370().method_2097() - 1, 0)));
+      this.removeEffect(Effects.field_19737);
+      this.method_26558(new class_2250(Effects.field_19733, var2, Math.min(this.field_41768.method_43370().method_2097() - 1, 0)));
       this.field_41768.method_29587(this, (byte)16);
    }
 
@@ -185,7 +185,7 @@ public class class_9355 extends class_2811 implements class_3449 {
          }
       }
 
-      var4.method_26558(new class_2250(class_4054.field_19732, 200, 0));
+      var4.method_26558(new class_2250(Effects.field_19732, 200, 0));
       if (!this.method_37378()) {
          var1.method_43365((class_704)null, 1027, this.method_37075(), 0);
       }

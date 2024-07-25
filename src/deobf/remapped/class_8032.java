@@ -29,7 +29,7 @@ public class class_8032 extends class_7937 {
             }
 
             if (var4 > 0) {
-               ((class_5834)var1).method_26558(new class_2250(class_4054.field_19718, var4 * 20, 0));
+               ((class_5834)var1).method_26558(new class_2250(Effects.field_19718, var4 * 20, 0));
             }
          }
 

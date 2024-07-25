@@ -487,7 +487,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    public static float method_35954(class_5834 var0, float var1) {
-      int var4 = var0.method_26553(class_4054.field_19746).method_10347();
+      int var4 = var0.method_26553(Effects.field_19746).method_10347();
       return var4 <= 200 ? 0.7F + class_9299.method_42818(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
    }
 
@@ -562,7 +562,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             this.field_40612.method_8562().method_16050("gui");
             if (this.field_40612.field_9632 != null) {
                float var11 = class_9299.method_42795(var1, this.field_40612.field_9632.field_30505, this.field_40612.field_9632.field_30510);
-               if (var11 > 0.0F && this.field_40612.field_9632.method_26480(class_4054.field_19732) && this.field_40612.field_9577.field_45469 < 1.0F) {
+               if (var11 > 0.0F && this.field_40612.field_9632.method_26480(Effects.field_19732) && this.field_40612.field_9577.field_45469 < 1.0F) {
                   this.method_35941(var11 * (1.0F - this.field_40612.field_9577.field_45469));
                }
             }
@@ -765,7 +765,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          * this.field_40612.field_9577.field_45469
          * this.field_40612.field_9577.field_45469;
       if (var12 > 0.0F) {
-         int var13 = !this.field_40612.field_9632.method_26480(class_4054.field_19732) ? 20 : 7;
+         int var13 = !this.field_40612.field_9632.method_26480(Effects.field_19732) ? 20 : 7;
          float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
          var14 *= var14;
          class_2426 var15 = new class_2426(0.0F, class_9299.field_47448 / 2.0F, class_9299.field_47448 / 2.0F);

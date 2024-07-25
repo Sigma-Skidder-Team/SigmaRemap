@@ -89,7 +89,7 @@ public class class_8996 extends class_7186 {
             boolean var15 = false;
             if (var14.method_11301()) {
                if (var14.method_11296() >= var14.method_11294()) {
-                  var1.method_26607(class_4054.field_19721);
+                  var1.removeEffect(Effects.field_19721);
                   var1.field_47794.method_4156(new class_295(var1, (byte)43));
                } else {
                   var15 = true;

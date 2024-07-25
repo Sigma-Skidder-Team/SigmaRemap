@@ -44,7 +44,7 @@ public class class_8890 extends class_8543 {
       if (!var2.field_33055 && var2.method_43370() != class_423.field_1790 && var4 instanceof class_5834) {
          class_5834 var7 = (class_5834)var4;
          if (!var7.method_37180(class_6199.field_31669)) {
-            var7.method_26558(new class_2250(class_4054.field_19725, 40));
+            var7.method_26558(new class_2250(Effects.field_19725, 40));
          }
       }
    }

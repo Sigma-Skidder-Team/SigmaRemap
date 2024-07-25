@@ -90,7 +90,7 @@ public class class_7937 extends class_1173 {
 
    @Override
    public boolean method_26495(class_2250 var1) {
-      return var1.method_10339() != class_4054.field_19718 ? super.method_26495(var1) : false;
+      return var1.method_10339() != Effects.field_19718 ? super.method_26495(var1) : false;
    }
 
    public boolean method_35903() {

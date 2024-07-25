@@ -230,7 +230,7 @@ public class class_107 extends class_7819 implements class_674 {
             var5.method_27970(1);
          }
 
-         this.method_26558(new class_2250(class_4054.field_19718, 900));
+         this.method_26558(new class_2250(Effects.field_19718, 900));
          if (var1.method_3186() || !this.method_37367()) {
             this.method_37181(class_6199.method_28344(var1), Float.MAX_VALUE);
          }

@@ -20,7 +20,7 @@ public class class_4574 extends class_3599 {
             this.field_22274.field_41726
                || this.field_22274.method_37285()
                || this.field_22274.method_37370()
-               || this.field_22274.method_26480(class_4054.field_19726)
+               || this.field_22274.method_26480(Effects.LevitationEffect)
          )
          && this.field_22274.method_26905() instanceof class_8509;
    }

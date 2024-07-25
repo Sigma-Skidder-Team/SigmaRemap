@@ -56,7 +56,7 @@ public class class_8311 extends class_4382 {
          class_5834 var6 = (class_5834)var2;
          if (this.field_42566 == 2 && var6.method_26550() == class_2780.field_13575) {
             int var7 = 20 + var1.method_26594().nextInt(10 * var3);
-            var6.method_26558(new class_2250(class_4054.field_19743, var7, 3));
+            var6.method_26558(new class_2250(Effects.field_19743, var7, 3));
          }
       }
    }

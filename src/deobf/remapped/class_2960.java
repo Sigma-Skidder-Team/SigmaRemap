@@ -114,7 +114,7 @@ public class class_2960 extends class_3578 {
    private void method_13536(class_5886 var1) {
       int var4 = this.method_13537();
       if (var1.method_37181(class_6199.method_28345(this), (float)(1 + var4))) {
-         var1.method_26558(new class_2250(class_4054.field_19718, 60 * var4, 0));
+         var1.method_26558(new class_2250(Effects.field_19718, 60 * var4, 0));
          this.method_37155(class_463.field_1961, 1.0F, 1.0F);
       }
    }
@@ -127,7 +127,7 @@ public class class_2960 extends class_3578 {
             ((class_9359)var1).field_47794.method_4156(new class_2161(class_2161.field_10787, 0.0F));
          }
 
-         var1.method_26558(new class_2250(class_4054.field_19718, 60 * var4, 0));
+         var1.method_26558(new class_2250(Effects.field_19718, 60 * var4, 0));
       }
    }
 

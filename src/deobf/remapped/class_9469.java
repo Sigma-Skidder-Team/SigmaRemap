@@ -34,12 +34,12 @@ public class class_9469 {
                   4,
                   new class_4904[]{
                      new class_8762(class_4783.field_23770, 1, 1, 12, 15),
-                     new class_9843(class_4054.field_19746, 100, 15),
-                     new class_9843(class_4054.field_19730, 160, 15),
-                     new class_9843(class_4054.field_19737, 140, 15),
-                     new class_9843(class_4054.field_19736, 120, 15),
-                     new class_9843(class_4054.field_19718, 280, 15),
-                     new class_9843(class_4054.field_19734, 7, 15)
+                     new class_9843(Effects.field_19746, 100, 15),
+                     new class_9843(Effects.field_19730, 160, 15),
+                     new class_9843(Effects.field_19737, 140, 15),
+                     new class_9843(Effects.field_19736, 120, 15),
+                     new class_9843(Effects.field_19718, 280, 15),
+                     new class_9843(Effects.field_19734, 7, 15)
                   },
                   5,
                   new class_4904[]{new class_8762(class_4897.field_25070, 3, 3, 30), new class_8762(class_4897.field_24459, 4, 3, 30)}

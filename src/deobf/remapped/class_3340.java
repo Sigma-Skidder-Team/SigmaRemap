@@ -120,7 +120,7 @@ public class class_3340 extends class_5920<class_7666> {
    }
 
    private boolean method_15334(class_704 var1) {
-      return var1.method_26480(class_4054.field_19741);
+      return var1.method_26480(Effects.field_19741);
    }
 
    private boolean method_15336(class_7666 var1, class_704 var2) {

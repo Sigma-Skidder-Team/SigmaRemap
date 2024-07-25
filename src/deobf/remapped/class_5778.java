@@ -80,8 +80,8 @@ public class class_5778 implements AutoCloseable {
          if (var4 != null) {
             this.field_29183 = false;
             if (class_3111.method_14438()) {
-               boolean var5 = this.field_29184.field_9632.method_26480(class_4054.field_19746)
-                  || this.field_29184.field_9632.method_26480(class_4054.field_19744);
+               boolean var5 = this.field_29184.field_9632.method_26480(Effects.field_19746)
+                  || this.field_29184.field_9632.method_26480(Effects.field_19744);
                if (class_9300.method_42873(var4, this.field_29182, this.field_29188, var5, var1)) {
                   this.field_29181.method_35650();
                   this.field_29190 = false;
@@ -101,8 +101,8 @@ public class class_5778 implements AutoCloseable {
 
             float var7 = this.field_29184.field_9632.method_27328();
             float var8;
-            if (!this.field_29184.field_9632.method_26480(class_4054.field_19746)) {
-               if (var7 > 0.0F && this.field_29184.field_9632.method_26480(class_4054.field_19744)) {
+            if (!this.field_29184.field_9632.method_26480(Effects.field_19746)) {
+               if (var7 > 0.0F && this.field_29184.field_9632.method_26480(Effects.field_19744)) {
                   var8 = var7;
                } else {
                   var8 = 0.0F;

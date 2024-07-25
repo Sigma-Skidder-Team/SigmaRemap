@@ -140,7 +140,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       if (!var9.isEmpty()) {
          for (class_704 var11 : var9) {
             if (this.field_18358.method_12171(var11.method_37075(), (double)var4) && var11.method_37363()) {
-               var11.method_26558(new class_2250(class_4054.field_19744, 260, 0, true, true));
+               var11.method_26558(new class_2250(Effects.field_19744, 260, 0, true, true));
             }
          }
       }

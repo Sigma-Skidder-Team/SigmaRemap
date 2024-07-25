@@ -51,7 +51,7 @@ public class class_4965 extends class_337 {
       super.method_26919();
       short var3 = 1200;
       if ((this.field_41697 + this.method_37145()) % 1200 == 0) {
-         class_1425 var4 = class_4054.field_19748;
+         class_1425 var4 = Effects.field_19748;
          List var5 = ((class_6331)this.field_41768).method_28990(var1 -> this.method_37275(var1) < 2500.0 && var1.field_47807.method_39515());
          byte var6 = 2;
          short var7 = 6000;

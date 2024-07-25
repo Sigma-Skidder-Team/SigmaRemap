@@ -12,16 +12,16 @@ public class class_258 implements class_8733 {
          if (var4 > 2) {
             if (var4 > 3) {
                if (var4 <= 4) {
-                  this.field_907 = class_4054.field_19740;
+                  this.field_907 = Effects.field_19740;
                }
             } else {
-               this.field_907 = class_4054.field_19742;
+               this.field_907 = Effects.field_19742;
             }
          } else {
-            this.field_907 = class_4054.field_19733;
+            this.field_907 = Effects.field_19733;
          }
       } else {
-         this.field_907 = class_4054.field_19739;
+         this.field_907 = Effects.field_19739;
       }
    }
 }

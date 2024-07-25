@@ -63,7 +63,7 @@ public class class_1044 extends class_8388 {
             }
 
             if (var8 > 0) {
-               ((class_5834)var4).method_26558(new class_2250(class_4054.field_19725, 20 * var8, 1));
+               ((class_5834)var4).method_26558(new class_2250(Effects.field_19725, 20 * var8, 1));
             }
          }
       }

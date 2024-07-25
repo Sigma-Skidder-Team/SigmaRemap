@@ -170,7 +170,7 @@ public class class_8803 {
       int var5 = 0;
 
       for (Entity var7 : var1) {
-         if (var7 instanceof class_5834 && ((class_5834)var7).method_26607(var2)) {
+         if (var7 instanceof class_5834 && ((class_5834)var7).removeEffect(var2)) {
             var5++;
          }
       }

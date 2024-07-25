@@ -13,8 +13,8 @@ public class class_8865 {
          var4 = (float)((double)var4 - 0.15);
       }
 
-      if (field_45329.field_9632.method_26480(class_4054.field_19739) && field_45329.field_9632.method_37321()) {
-         var4 = (float)((double)var4 - 0.03000002 * (double)(field_45329.field_9632.method_26553(class_4054.field_19739).method_10333() + 1));
+      if (field_45329.field_9632.method_26480(Effects.field_19739) && field_45329.field_9632.method_37321()) {
+         var4 = (float)((double)var4 - 0.03000002 * (double)(field_45329.field_9632.method_26553(Effects.field_19739).method_10333() + 1));
       }
 
       if (field_45329.field_9632.method_37252()) {
@@ -51,11 +51,11 @@ public class class_8865 {
    }
 
    public static int method_40770() {
-      return !field_45329.field_9632.method_26480(class_4054.field_19739) ? 0 : field_45329.field_9632.method_26553(class_4054.field_19739).method_10333() + 1;
+      return !field_45329.field_9632.method_26480(Effects.field_19739) ? 0 : field_45329.field_9632.method_26553(Effects.field_19739).method_10333() + 1;
    }
 
    public static int method_40769() {
-      return !field_45329.field_9632.method_26480(class_4054.field_19730) ? 0 : field_45329.field_9632.method_26553(class_4054.field_19730).method_10333() + 1;
+      return !field_45329.field_9632.method_26480(Effects.field_19730) ? 0 : field_45329.field_9632.method_26553(Effects.field_19730).method_10333() + 1;
    }
 
    public static double method_40786() {

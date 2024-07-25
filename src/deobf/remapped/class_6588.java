@@ -3270,14 +3270,14 @@ public class class_6588 {
             if (var8 instanceof class_5834) {
                class_5834 var12 = (class_5834)var8;
                field_33933 = 0.0F;
-               if (var12.method_26480(class_4054.field_19746)) {
+               if (var12.method_26480(Effects.field_19746)) {
                   GameRenderer var13 = field_33681;
                   field_33933 = GameRenderer.method_35954(var12, var2);
                }
 
                field_33718 = 0.0F;
-               if (var12.method_26480(class_4054.field_19736)) {
-                  int var18 = var12.method_26553(class_4054.field_19736).method_10347();
+               if (var12.method_26480(Effects.field_19736)) {
+                  int var18 = var12.method_26553(Effects.field_19736).method_10347();
                   field_33718 = class_3111.method_14262((float)var18 / 20.0F, 0.0F, 1.0F);
                }
             }

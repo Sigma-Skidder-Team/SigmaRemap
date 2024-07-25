@@ -206,7 +206,7 @@ public abstract class class_704 extends class_5834 {
    private void method_3182() {
       class_6098 var3 = this.method_26520(class_6943.field_35704);
       if (var3.method_27960() == class_4897.field_25139 && !this.method_37261(class_6503.field_33094)) {
-         this.method_26558(new class_2250(class_4054.field_19720, 200, 0, false, false, true));
+         this.method_26558(new class_2250(Effects.field_19720, 200, 0, false, false, true));
       }
    }
 
@@ -634,9 +634,9 @@ public abstract class class_704 extends class_5834 {
          var4 *= 1.0F + (float)(class_1493.method_6888(this) + 1) * 0.2F;
       }
 
-      if (this.method_26480(class_4054.field_19748)) {
+      if (this.method_26480(Effects.field_19748)) {
          float var7;
-         switch (this.method_26553(class_4054.field_19748).method_10333()) {
+         switch (this.method_26553(Effects.field_19748).method_10333()) {
             case 0:
                var7 = 0.3F;
                break;
@@ -1035,7 +1035,7 @@ public abstract class class_704 extends class_5834 {
                && !this.field_41726
                && !this.method_26505()
                && !this.method_37285()
-               && !this.method_26480(class_4054.field_19736)
+               && !this.method_26480(Effects.field_19736)
                && !this.method_37070()
                && var1 instanceof class_5834;
             var10 = var10 && !this.method_37321();
@@ -1508,7 +1508,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    public boolean method_3190() {
-      if (!this.field_41726 && !this.method_26618() && !this.method_37285() && !this.method_26480(class_4054.field_19726)) {
+      if (!this.field_41726 && !this.method_26618() && !this.method_37285() && !this.method_26480(Effects.LevitationEffect)) {
          class_6098 var3 = this.method_26520(class_6943.field_35708);
          if (var3.method_27960() == class_4897.field_24503 && class_3286.method_15061(var3)) {
             this.method_3180();

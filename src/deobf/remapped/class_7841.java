@@ -31,7 +31,7 @@ public class class_7841 extends class_6749 {
    @Override
    public void method_30935(class_5834 var1) {
       super.method_30935(var1);
-      class_2250 var4 = new class_2250(class_4054.field_19722, this.field_39755, 0);
+      class_2250 var4 = new class_2250(Effects.field_19722, this.field_39755, 0);
       var1.method_26558(var4);
    }
 

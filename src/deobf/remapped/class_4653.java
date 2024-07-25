@@ -514,6 +514,6 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
 
    @Override
    public boolean method_26495(class_2250 var1) {
-      return var1.method_10339() != class_4054.field_19725 ? super.method_26495(var1) : false;
+      return var1.method_10339() != Effects.field_19725 ? super.method_26495(var1) : false;
    }
 }

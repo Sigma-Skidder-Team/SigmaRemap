@@ -27,7 +27,7 @@ public class class_8214 extends class_3599 {
 
    @Override
    public void method_16796() {
-      this.field_42021.method_26558(new class_2250(class_4054.field_19724, 100));
+      this.field_42021.method_26558(new class_2250(Effects.field_19724, 100));
    }
 
    @Override
@@ -46,7 +46,7 @@ public class class_8214 extends class_3599 {
       }
 
       if (this.field_42021.method_37113() && this.field_42021.field_41768.field_33033.nextInt(6) == 0) {
-         this.field_42021.method_26558(new class_2250(class_4054.field_19724, 100));
+         this.field_42021.method_26558(new class_2250(Effects.field_19724, 100));
       }
    }
 }

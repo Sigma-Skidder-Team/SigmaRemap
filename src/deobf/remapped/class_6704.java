@@ -213,7 +213,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    private void method_30712(class_6331 var1) {
       class_3895 var4 = this.<class_3895>method_26898(class_6629.field_34244, true);
       if (var4 != null) {
-         var4.method_26558(new class_2250(class_4054.field_19732, 200, 0));
+         var4.method_26558(new class_2250(Effects.field_19732, 200, 0));
       }
    }
 

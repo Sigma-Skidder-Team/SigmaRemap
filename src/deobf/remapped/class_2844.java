@@ -32,7 +32,7 @@ public class class_2844 extends class_8388 {
          var6.method_20781(3.0F);
          var6.method_20787(600);
          var6.method_20780((7.0F - var6.method_20783()) / (float)var6.method_20791());
-         var6.method_20788(new class_2250(class_4054.field_19723, 1, 1));
+         var6.method_20788(new class_2250(Effects.field_19723, 1, 1));
          if (!var5.isEmpty()) {
             for (class_5834 var8 : var5) {
                double var9 = this.method_37275(var8);
