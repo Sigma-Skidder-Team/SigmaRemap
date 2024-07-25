@@ -16,7 +16,7 @@ public class MineMenCriticalsModule extends Module {
    @class_315
    private void method_25379(class_1393 var1) {
       if (var1.method_6449()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_9758.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(AntiKnockbackModule.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("Minemen")) {
             if (!mc.field_9632.field_41726) {
                this.field_28365 = 0;

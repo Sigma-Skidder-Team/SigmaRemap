@@ -1,16 +1,16 @@
 package remapped;
 
-public class class_9758 extends SecondModule {
-   public class_9758() {
+public class AntiKnockbackModule extends SecondModule {
+   public AntiKnockbackModule() {
       super(
          Category.COMBAT,
          "AntiKnockBack",
          "Prevents you from taking knockback",
-         new class_7244(),
-         new class_7722(),
-         new DelayModule(),
-         new SpartanAntiKBModule(),
-         new class_4246()
+         new BasicAntiKB(),
+         new AACAntiKB(),
+         new DelayAntiKB(),
+         new SpartanAntiKB(),
+         new GommeAntiKB()
       );
    }
 

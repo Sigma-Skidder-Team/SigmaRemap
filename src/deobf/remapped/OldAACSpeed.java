@@ -26,7 +26,7 @@ public class OldAACSpeed extends Module {
    public void method_33889(class_7767 var1) {
       if (this.method_42015()) {
          if (!mc.field_9632.field_41726) {
-            if (class_314.method_1434() && class_7722.field_39147 >= 7) {
+            if (class_314.method_1434() && AACAntiKB.field_39147 >= 7) {
                this.field_37948++;
                if (this.field_37948 == 1) {
                   if (this.field_37951 != 1) {

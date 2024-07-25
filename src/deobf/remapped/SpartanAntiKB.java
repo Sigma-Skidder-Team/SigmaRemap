@@ -1,9 +1,9 @@
 package remapped;
 
-public class SpartanAntiKBModule extends Module {
+public class SpartanAntiKB extends Module {
    private int field_49568;
 
-   public SpartanAntiKBModule() {
+   public SpartanAntiKB() {
       super(Category.COMBAT, "Spartan", "AntiKB for spartan antichet");
       this.addSetting(new FloatSetting<Float>("Ticks", "Ticks delay", 1.0F, Float.class, 1.0F, 6.0F, 1.0F));
    }

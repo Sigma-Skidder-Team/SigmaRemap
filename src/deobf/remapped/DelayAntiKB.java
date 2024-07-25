@@ -3,11 +3,11 @@ package remapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DelayModule extends Module {
+public class DelayAntiKB extends Module {
    private List<Packet<?>> field_32171 = new ArrayList<Packet<?>>();
    public int field_32172 = 0;
 
-   public DelayModule() {
+   public DelayAntiKB() {
       super(Category.COMBAT, "Delay", "For anticheats with \"good\" velocity checks");
       this.addSetting(new FloatSetting<Float>("Delay", "Ticks delay", 7.0F, Float.class, 1.0F, 20.0F, 1.0F));
       this.addSetting(new FloatSetting<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));

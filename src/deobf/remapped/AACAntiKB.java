@@ -1,11 +1,11 @@
 package remapped;
 
-public class class_7722 extends Module {
+public class AACAntiKB extends Module {
    public static int field_39147;
    public float field_39149;
    public float field_39148;
 
-   public class_7722() {
+   public AACAntiKB() {
       super(Category.COMBAT, "AAC", "Places block underneath");
       this.addSetting(new FloatSetting<Float>("Strengh", "Boost strengh", 0.7F, Float.class, 0.0F, 1.0F, 0.01F));
       field_39147 = 20;

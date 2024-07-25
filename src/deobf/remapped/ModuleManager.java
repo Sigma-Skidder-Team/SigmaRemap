@@ -57,7 +57,7 @@ public class ModuleManager {
       this.method_852(new ElytraFlyModule());
       this.method_852(new SpiderModule());
       this.method_852(new KillauraModule());
-      this.method_852(new class_9758());
+      this.method_852(new AntiKnockbackModule());
       this.method_852(new class_9801());
       this.method_852(new class_5787());
       this.method_852(new class_2329());
