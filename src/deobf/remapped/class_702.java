@@ -106,7 +106,7 @@ public class class_702 implements class_700 {
 
    @Override
    public class_2522 method_28262(BlockPos var1) {
-      return this.method_22553(var1.getX() >> 4, var1.method_12185() >> 4).method_28262(var1);
+      return this.method_22553(var1.getX() >> 4, var1.getZ() >> 4).method_28262(var1);
    }
 
    @Override
@@ -212,8 +212,8 @@ public class class_702 implements class_700 {
       } else if (var7.method_27364().method_33446() != class_5592.field_28385) {
          CompoundNBT var10 = new CompoundNBT();
          var10.putInt("x", var1.getX());
-         var10.putInt("y", var1.method_12165());
-         var10.putInt("z", var1.method_12185());
+         var10.putInt("y", var1.getY());
+         var10.putInt("z", var1.getZ());
          var10.method_25941("id", "DUMMY");
          var7.method_27347(var10);
       } else {
@@ -272,7 +272,7 @@ public class class_702 implements class_700 {
 
    @Override
    public class_9589 method_43368(BlockPos var1) {
-      if (this.method_22560(var1.getX() >> 4, var1.method_12185() >> 4)) {
+      if (this.method_22560(var1.getX() >> 4, var1.getZ() >> 4)) {
          return new class_9589(this.field_3827.method_43370(), this.field_3827.method_29584(), 0L, this.field_3827.method_13576());
       } else {
          throw new RuntimeException("We are asking a region for a chunk out of bound");

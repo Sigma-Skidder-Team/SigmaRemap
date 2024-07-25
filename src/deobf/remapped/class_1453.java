@@ -103,7 +103,7 @@ public class class_1453 extends Entity {
 
             if (!this.onGround && !var6) {
                if (!this.world.field_33055
-                  && (this.field_7827 > 100 && (var18.method_12165() < 1 || var18.method_12165() > 256) || this.field_7827 > 600)) {
+                  && (this.field_7827 > 100 && (var18.getY() < 1 || var18.getY() > 256) || this.field_7827 > 600)) {
                   if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
                      this.method_37312(var3);
                   }

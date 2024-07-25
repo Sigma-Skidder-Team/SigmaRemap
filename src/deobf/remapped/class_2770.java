@@ -182,7 +182,7 @@ public class class_2770 extends MobEntity implements class_1869 {
                   this.method_37215(this.method_37098().method_6214(0.0, var11 * 0.01, 0.0));
                   this.rotationYaw = MathHelper.wrapDegrees(this.rotationYaw);
                   double var20 = MathHelper.clamp(
-                     MathHelper.wrapDegrees(180.0 - MathHelper.method_42821(var9, var13) * 180.0F / (float)Math.PI - (double)this.rotationYaw), -50.0, 50.0
+                     MathHelper.wrapDegrees(180.0 - MathHelper.atan2(var9, var13) * 180.0F / (float)Math.PI - (double)this.rotationYaw), -50.0, 50.0
                   );
                   class_1343 var22 = var6.method_6193(this.getPosX(), this.method_37309(), this.getPosZ()).method_6213();
                   class_1343 var23 = new class_1343(
@@ -581,7 +581,7 @@ public class class_2770 extends MobEntity implements class_1869 {
             }
 
             int var9 = Math.max(
-               this.world.method_22552() + 10, this.world.method_22563(class_3801.field_18590, new BlockPos(var6, 0, var7)).method_12165() + var4
+               this.world.method_22552() + 10, this.world.method_22563(class_3801.field_18590, new BlockPos(var6, 0, var7)).getY() + var4
             );
             this.field_13521[var3] = new class_5851(var6, var9, var7);
          }
@@ -831,7 +831,7 @@ public class class_2770 extends MobEntity implements class_1869 {
    public void method_12617(class_3577 var1, BlockPos var2, DamageSource var3) {
       PlayerEntity var6;
       if (!(var3.method_28372() instanceof PlayerEntity)) {
-         var6 = this.world.method_25858(field_13522, (double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185());
+         var6 = this.world.method_25858(field_13522, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
       } else {
          var6 = (PlayerEntity)var3.method_28372();
       }

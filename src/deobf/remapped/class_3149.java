@@ -59,7 +59,7 @@ public class class_3149 extends class_3599 {
             class_1343 var7 = var4.method_6194(var5).method_6213().method_6209(10.0).method_6215(var5);
             BlockPos var8 = new BlockPos(var7);
             var8 = this.field_15662.world.method_22563(class_3801.field_18590, var8);
-            if (!var3.method_5595((double)var8.getX(), (double)var8.method_12165(), (double)var8.method_12185(), 1.0)) {
+            if (!var3.method_5595((double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), 1.0)) {
                this.method_14544();
             }
          }
@@ -71,6 +71,6 @@ public class class_3149 extends class_3599 {
       BlockPos var4 = this.field_15662
          .world
          .method_22563(class_3801.field_18590, this.field_15662.method_37075().method_6104(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
-      this.field_15662.method_26927().method_5595((double)var4.getX(), (double)var4.method_12165(), (double)var4.method_12185(), 1.0);
+      this.field_15662.method_26927().method_5595((double)var4.getX(), (double)var4.getY(), (double)var4.getZ(), 1.0);
    }
 }

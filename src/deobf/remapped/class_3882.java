@@ -68,7 +68,7 @@ public class class_3882 extends class_3599 {
       this.field_18898
          .method_26927()
          .method_5595(
-            (double)this.field_18897.getX(), (double)this.field_18897.method_12165(), (double)this.field_18897.method_12185(), this.field_18893
+            (double)this.field_18897.getX(), (double)this.field_18897.getY(), (double)this.field_18897.getZ(), this.field_18893
          );
       this.field_18895 = false;
    }

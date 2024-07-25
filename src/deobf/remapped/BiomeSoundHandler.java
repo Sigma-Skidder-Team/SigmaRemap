@@ -75,8 +75,8 @@ public class BiomeSoundHandler implements IAmbientSoundHandler {
                   this.field_34959 = Math.max(this.field_34959, 0.0F);
                } else {
                   double var8 = (double)var6.getX() + 0.5;
-                  double var10 = (double)var6.method_12165() + 0.5;
-                  double var12 = (double)var6.method_12185() + 0.5;
+                  double var10 = (double)var6.getY() + 0.5;
+                  double var12 = (double)var6.getZ() + 0.5;
                   double var14 = var8 - this.field_34963.getPosX();
                   double var16 = var10 - this.field_34963.method_37388();
                   double var18 = var12 - this.field_34963.getPosZ();

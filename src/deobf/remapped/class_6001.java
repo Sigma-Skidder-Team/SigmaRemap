@@ -110,10 +110,10 @@ public class class_6001 extends class_2830 implements class_3978, class_2593 {
 
          for (int var13 = 0; var13 < 5; var13++) {
             for (int var14 = 0; var14 < var8; var14++) {
-               int var15 = 2 + var3.method_12165() - 1;
+               int var15 = 2 + var3.getY() - 1;
 
                for (int var16 = var15 - 2; var16 < var15; var16++) {
-                  BlockPos var17 = new BlockPos(var11 + var13, var16, var3.method_12185() - var12 + var14);
+                  BlockPos var17 = new BlockPos(var11 + var13, var16, var3.getZ() - var12 + var14);
                   if (var17 != var3 && var2.nextInt(6) == 0 && var1.method_28262(var17).method_8350(class_4783.field_23900)) {
                      class_2522 var18 = var1.method_28262(var17.method_6100());
                      if (var18.method_8349(class_2351.field_11725)) {

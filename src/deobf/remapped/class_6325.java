@@ -89,11 +89,11 @@ public final class class_6325 {
 
    private float method_28863(BlockPos var1) {
       float var4 = class_1310.method_5970(this.field_32295).method_297(var1, this.method_28861());
-      if (var1.method_12165() <= 64) {
+      if (var1.getY() <= 64) {
          return var4;
       } else {
-         float var5 = (float)(field_32300.method_31321((double)((float)var1.getX() / 8.0F), (double)((float)var1.method_12185() / 8.0F), false) * 4.0);
-         return var4 - (var5 + (float)var1.method_12165() - 64.0F) * 0.05F / 30.0F;
+         float var5 = (float)(field_32300.method_31321((double)((float)var1.getX() / 8.0F), (double)((float)var1.getZ() / 8.0F), false) * 4.0);
+         return var4 - (var5 + (float)var1.getY() - 64.0F) * 0.05F / 30.0F;
       }
    }
 
@@ -122,7 +122,7 @@ public final class class_6325 {
       if (this.method_28865(var2) >= 0.15F) {
          return false;
       } else {
-         if (var2.method_12165() >= 0 && var2.method_12165() < 256 && var1.method_25266(class_2957.field_14440, var2) < 10) {
+         if (var2.getY() >= 0 && var2.getY() < 256 && var1.method_25266(class_2957.field_14440, var2) < 10) {
             class_2522 var6 = var1.method_28262(var2);
             class_4774 var7 = var1.method_28258(var2);
             if (var7.method_22005() == class_8532.field_43674 && var6.method_8360() instanceof class_7855) {
@@ -146,7 +146,7 @@ public final class class_6325 {
 
    public boolean method_28882(class_4924 var1, BlockPos var2) {
       if (!(this.method_28865(var2) >= 0.15F)) {
-         if (var2.method_12165() >= 0 && var2.method_12165() < 256 && var1.method_25266(class_2957.field_14440, var2) < 10) {
+         if (var2.getY() >= 0 && var2.getY() < 256 && var1.method_25266(class_2957.field_14440, var2) < 10) {
             class_2522 var5 = var1.method_28262(var2);
             if (var5.method_8345() && class_4783.field_23552.method_29260().method_8309(var1, var2)) {
                return true;
@@ -173,7 +173,7 @@ public final class class_6325 {
             for (class_5390 var15 : this.field_32305.getOrDefault(var12, Collections.<class_5390<?>>emptyList())) {
                var6.method_39866(var4, var13, var12);
                int var16 = var7.getX() >> 4;
-               int var17 = var7.method_12185() >> 4;
+               int var17 = var7.getZ() >> 4;
                int var18 = var16 << 4;
                int var19 = var17 << 4;
 

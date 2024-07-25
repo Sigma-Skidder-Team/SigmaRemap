@@ -791,15 +791,15 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    public float method_19045(float var1) {
-      return MathHelper.method_42795(var1, this.field_20017, this.field_20008);
+      return MathHelper.lerp(var1, this.field_20017, this.field_20008);
    }
 
    public float method_19040(float var1) {
-      return MathHelper.method_42795(var1, this.field_20010, this.field_20018);
+      return MathHelper.lerp(var1, this.field_20010, this.field_20018);
    }
 
    public float method_19073(float var1) {
-      return MathHelper.method_42795(var1, this.field_20022, this.field_20027);
+      return MathHelper.lerp(var1, this.field_20022, this.field_20027);
    }
 
    @Override
@@ -963,13 +963,13 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
          do {
             double var16 = this.world.method_28259(var11);
-            if ((double)var11.method_12165() + var16 > var14) {
+            if ((double)var11.getY() + var16 > var14) {
                break;
             }
 
             if (class_160.method_648(var16)) {
                Box var18 = var2.method_26549(var13);
-               class_1343 var19 = new class_1343(var5, (double)var11.method_12165() + var16, var9);
+               class_1343 var19 = new class_1343(var5, (double)var11.getY() + var16, var9);
                if (class_160.method_647(this.world, var2, var18.method_18920(var19))) {
                   var2.method_37356(var13);
                   return var19;
@@ -977,7 +977,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             }
 
             var11.method_13368(Direction.field_817);
-         } while (!((double)var11.method_12165() < var14));
+         } while (!((double)var11.getY() < var14));
       }
 
       return null;

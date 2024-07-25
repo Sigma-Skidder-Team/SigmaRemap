@@ -48,7 +48,7 @@ public class class_3420 extends class_3757 implements class_3745 {
          var1 = 1.0F;
       }
 
-      return MathHelper.method_42795(var1, this.field_16833, this.field_16835);
+      return MathHelper.lerp(var1, this.field_16833, this.field_16835);
    }
 
    public float method_15784(float var1) {
@@ -215,8 +215,8 @@ public class class_3420 extends class_3757 implements class_3745 {
       double var4 = (double)this.method_15799(this.field_16835);
       return var1.method_18918(
          (double)this.field_18358.getX() + var4 * (double)this.field_16834.method_1041(),
-         (double)this.field_18358.method_12165() + var4 * (double)this.field_16834.method_1054(),
-         (double)this.field_18358.method_12185() + var4 * (double)this.field_16834.method_1034()
+         (double)this.field_18358.getY() + var4 * (double)this.field_16834.method_1054(),
+         (double)this.field_18358.getZ() + var4 * (double)this.field_16834.method_1034()
       );
    }
 

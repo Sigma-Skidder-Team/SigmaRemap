@@ -21,7 +21,7 @@ public class class_4469 extends class_2833 {
          double var7 = this.field_13880 - this.field_21792.getPosZ();
          double var9 = var3 * var3 + var5 * var5 + var7 * var7;
          if (!(var9 < 2.5000003E-7F)) {
-            float var11 = (float)(MathHelper.method_42821(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
+            float var11 = (float)(MathHelper.atan2(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
             this.field_21792.rotationYaw = this.method_12882(this.field_21792.rotationYaw, var11, 10.0F);
             this.field_21792.field_29605 = this.field_21792.rotationYaw;
             this.field_21792.field_29618 = this.field_21792.rotationYaw;
@@ -30,7 +30,7 @@ public class class_4469 extends class_2833 {
                this.field_21792.method_26461(var12 * 0.1F);
             } else {
                this.field_21792.method_26461(var12 * 0.02F);
-               float var13 = -((float)(MathHelper.method_42821(var5, (double) MathHelper.sqrt(var3 * var3 + var7 * var7)) * 180.0F / (float)Math.PI));
+               float var13 = -((float)(MathHelper.atan2(var5, (double) MathHelper.sqrt(var3 * var3 + var7 * var7)) * 180.0F / (float)Math.PI));
                var13 = MathHelper.clamp(MathHelper.wrapDegrees(var13), -85.0F, 85.0F);
                this.field_21792.rotationPitch = this.method_12882(this.field_21792.rotationPitch, var13, 5.0F);
                float var14 = MathHelper.cos(this.field_21792.rotationPitch * (float) (Math.PI / 180.0));

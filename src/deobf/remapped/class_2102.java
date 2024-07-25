@@ -71,7 +71,7 @@ public class class_2102 extends class_7164<class_496, class_1253<class_496>> {
       float var16 = var1.method_2411(var5);
       if (var16 > 0.0F) {
          var2.method_36065(0.0, (double)(0.8F * var16), 0.0);
-         var2.method_36060(class_2426.field_12080.method_11074(MathHelper.method_42795(var16, var1.rotationPitch, var1.rotationPitch + 90.0F)));
+         var2.method_36060(class_2426.field_12080.method_11074(MathHelper.lerp(var16, var1.rotationPitch, var1.rotationPitch + 90.0F)));
          var2.method_36065(0.0, (double)(-1.0F * var16), 0.0);
          if (var1.method_2421()) {
             float var17 = (float)(Math.cos((double)var1.field_41697 * 1.25) * Math.PI * 0.05F);
@@ -86,11 +86,11 @@ public class class_2102 extends class_7164<class_496, class_1253<class_496>> {
       if (var18 > 0.0F) {
          float var19 = !var1.method_26449() ? 1.3F : 0.5F;
          var2.method_36065(0.0, (double)(var19 * var18), 0.0);
-         var2.method_36060(class_2426.field_12080.method_11074(MathHelper.method_42795(var18, var1.rotationPitch, var1.rotationPitch + 180.0F)));
+         var2.method_36060(class_2426.field_12080.method_11074(MathHelper.lerp(var18, var1.rotationPitch, var1.rotationPitch + 180.0F)));
       }
    }
 
    private float method_9856(float var1, float var2, int var3, float var4, float var5) {
-      return !((float)var3 < var5) ? var1 : MathHelper.method_42795(var4, var1, var2);
+      return !((float)var3 < var5) ? var1 : MathHelper.lerp(var4, var1, var2);
    }
 }

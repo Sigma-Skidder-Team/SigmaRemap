@@ -34,7 +34,7 @@ public class FullbrightModule extends Module {
                   )
                   .method_6081();
                class_5990 var6 = client.theWorld.method_22556(var5);
-               if (var6 != null && var5.method_12165() >= 0 && var5.method_12165() < 256 && !var6.method_27339()) {
+               if (var6 != null && var5.getY() >= 0 && var5.getY() < 256 && !var6.method_27339()) {
                   var4 -= var6.method_28263(var5);
                }
 

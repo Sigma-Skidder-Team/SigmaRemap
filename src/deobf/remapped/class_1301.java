@@ -84,8 +84,8 @@ public class class_1301 extends class_6414 {
             var0.method_43361(
                class_5727.field_28937,
                (double)var1.getX() + var13,
-               (double)var1.method_12165() + var15,
-               (double)var1.method_12185() + var17,
+               (double)var1.getY() + var15,
+               (double)var1.getZ() + var17,
                0.0,
                0.0,
                0.0

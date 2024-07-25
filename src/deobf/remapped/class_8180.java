@@ -34,12 +34,12 @@ public class class_8180 extends class_3599 {
       if (var3 != null && class_6862.method_31480(this.field_41874).method_5591()) {
          if (!this.method_37498(var3, 10.0)) {
             class_6862.method_31486(this.field_41874)
-               .method_5595((double)var3.getX(), (double)var3.method_12165(), (double)var3.method_12185(), this.field_41875);
+               .method_5595((double)var3.getX(), (double)var3.getY(), (double)var3.getZ(), this.field_41875);
          } else {
             class_1343 var4 = new class_1343(
                   (double)var3.getX() - this.field_41876.getPosX(),
-                  (double)var3.method_12165() - this.field_41876.method_37309(),
-                  (double)var3.method_12185() - this.field_41876.getPosZ()
+                  (double)var3.getY() - this.field_41876.method_37309(),
+                  (double)var3.getZ() - this.field_41876.getPosZ()
                )
                .method_6213();
             class_1343 var5 = var4.method_6209(10.0)

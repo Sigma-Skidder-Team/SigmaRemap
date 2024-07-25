@@ -245,7 +245,7 @@ public class class_8455 {
          var6.append(var3);
       }
 
-      String var7 = String.format(Locale.ROOT, "/setblock %d %d %d %s", var2.getX(), var2.method_12165(), var2.method_12185(), var6);
+      String var7 = String.format(Locale.ROOT, "/setblock %d %d %d %s", var2.getX(), var2.getY(), var2.getZ(), var6);
       this.method_38891(var7);
    }
 

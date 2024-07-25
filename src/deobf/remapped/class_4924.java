@@ -32,7 +32,7 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
 
    @Override
    default int method_25262(BlockPos var1, class_6581 var2) {
-      return var2.method_30079(this.method_22561(var1), (double)var1.getX(), (double)var1.method_12185());
+      return var2.method_30079(this.method_22561(var1), (double)var1.getX(), (double)var1.getZ());
    }
 
    @Override
@@ -51,7 +51,7 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
    class_8760 method_22572();
 
    default BlockPos method_22563(class_3801 var1, BlockPos var2) {
-      return new BlockPos(var2.getX(), this.method_22562(var1, var2.getX(), var2.method_12185()), var2.method_12185());
+      return new BlockPos(var2.getX(), this.method_22562(var1, var2.getX(), var2.getZ()), var2.getZ());
    }
 
    default boolean method_22548(BlockPos var1) {
@@ -59,10 +59,10 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
    }
 
    default boolean method_22568(BlockPos var1) {
-      if (var1.method_12165() < this.method_22552()) {
-         BlockPos var4 = new BlockPos(var1.getX(), this.method_22552(), var1.method_12185());
+      if (var1.getY() < this.method_22552()) {
+         BlockPos var4 = new BlockPos(var1.getX(), this.method_22552(), var1.getZ());
          if (this.method_25263(var4)) {
-            for (BlockPos var5 = var4.method_6100(); var5.method_12165() > var1.method_12165(); var5 = var5.method_6100()) {
+            for (BlockPos var5 = var4.method_6100(); var5.getY() > var1.getY(); var5 = var5.method_6100()) {
                class_2522 var6 = this.method_28262(var5);
                if (var6.method_8320(this, var5) > 0 && !var6.method_8362().method_24494()) {
                   return false;
@@ -88,7 +88,7 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
    }
 
    default class_5990 method_22556(BlockPos var1) {
-      return this.method_22553(var1.getX() >> 4, var1.method_12185() >> 4);
+      return this.method_22553(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    default class_5990 method_22553(int var1, int var2) {
@@ -137,19 +137,19 @@ public interface class_4924 extends class_5561, class_1449, class_6142 {
    }
 
    default int method_22571(BlockPos var1, int var2) {
-      return var1.getX() >= -30000000 && var1.method_12185() >= -30000000 && var1.getX() < 30000000 && var1.method_12185() < 30000000
+      return var1.getX() >= -30000000 && var1.getZ() >= -30000000 && var1.getX() < 30000000 && var1.getZ() < 30000000
          ? this.method_25261(var1, var2)
          : 15;
    }
 
    @Deprecated
    default boolean isBlockLoaded(BlockPos var1) {
-      return this.method_22560(var1.getX() >> 4, var1.method_12185() >> 4);
+      return this.method_22560(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    @Deprecated
    default boolean method_22570(BlockPos var1, BlockPos var2) {
-      return this.method_22569(var1.getX(), var1.method_12165(), var1.method_12185(), var2.getX(), var2.method_12165(), var2.method_12185());
+      return this.method_22569(var1.getX(), var1.getY(), var1.getZ(), var2.getX(), var2.getY(), var2.getZ());
    }
 
    @Deprecated

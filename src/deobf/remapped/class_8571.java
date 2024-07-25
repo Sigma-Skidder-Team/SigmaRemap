@@ -13,8 +13,8 @@ public class class_8571 {
 
    public class_8571(BlockPos var1) {
       this.field_43941 = (double)var1.getX();
-      this.field_43940 = (double)var1.method_12165();
-      this.field_43942 = (double)var1.method_12185();
+      this.field_43940 = (double)var1.getY();
+      this.field_43942 = (double)var1.getZ();
    }
 
    public double method_39427() {

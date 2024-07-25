@@ -308,7 +308,7 @@ public class MathHelper {
    }
 
    public static long getPositionRandom(Vector3i var0) {
-      return getCoordinateRandom(var0.getX(), var0.method_12165(), var0.method_12185());
+      return getCoordinateRandom(var0.getX(), var0.getY(), var0.getZ());
    }
 
    public static long getCoordinateRandom(int var0, int var1, int var2) {
@@ -317,21 +317,21 @@ public class MathHelper {
       return var5 >> 16;
    }
 
-   public static UUID method_42791(Random var0) {
+   public static UUID getRandomUUID(Random var0) {
       long var3 = var0.nextLong() & -61441L | 16384L;
       long var5 = var0.nextLong() & 4611686018427387903L | Long.MIN_VALUE;
       return new UUID(var3, var5);
    }
 
-   public static UUID method_42790() {
-      return method_42791(RANDOM);
+   public static UUID getRandomUUID() {
+      return getRandomUUID(RANDOM);
    }
 
-   public static double method_42851(double var0, double var2, double var4) {
+   public static double func_233020_c_(double var0, double var2, double var4) {
       return (var0 - var2) / (var4 - var2);
    }
 
-   public static double method_42821(double var0, double var2) {
+   public static double atan2(double var0, double var2) {
       double var6 = var2 * var2 + var0 * var0;
       if (!Double.isNaN(var6)) {
          boolean var8 = var0 < 0.0;
@@ -351,7 +351,7 @@ public class MathHelper {
             var0 = var11;
          }
 
-         double var30 = method_42835(var6);
+         double var30 = fastInvSqrt(var6);
          var2 *= var30;
          var0 *= var30;
          double var13 = FRAC_BIAS + var0;
@@ -380,7 +380,7 @@ public class MathHelper {
       }
    }
 
-   public static float method_42836(float var0) {
+   public static float fastInvSqrt(float var0) {
       float var3 = 0.5F * var0;
       int var4 = Float.floatToIntBits(var0);
       var4 = 1597463007 - (var4 >> 1);
@@ -388,7 +388,7 @@ public class MathHelper {
       return var0 * (1.5F - var3 * var0 * var0);
    }
 
-   public static double method_42835(double var0) {
+   public static double fastInvSqrt(double var0) {
       double var4 = 0.5 * var0;
       long var6 = Double.doubleToRawLongBits(var0);
       var6 = 6910469410427058090L - (var6 >> 1);
@@ -396,7 +396,7 @@ public class MathHelper {
       return var0 * (1.5 - var4 * var0 * var0);
    }
 
-   public static float method_42817(float var0) {
+   public static float fastInvCubeRoot(float var0) {
       int var3 = Float.floatToIntBits(var0);
       var3 = 1419967116 - var3 / 3;
       float var4 = Float.intBitsToFloat(var3);
@@ -404,7 +404,7 @@ public class MathHelper {
       return 0.6666667F * var4 + 1.0F / (3.0F * var4 * var4 * var0);
    }
 
-   public static int method_42792(float var0, float var1, float var2) {
+   public static int hsvToRGB(float var0, float var1, float var2) {
       int var5 = (int)(var0 * 6.0F) % 6;
       float var6 = var0 * 6.0F - (float)var5;
       float var7 = var2 * (1.0F - var1);
@@ -454,7 +454,7 @@ public class MathHelper {
       return var13 << 16 | var14 << 8 | var15;
    }
 
-   public static int method_42849(int var0) {
+   public static int hash(int var0) {
       var0 ^= var0 >>> 16;
       var0 *= -2048144789;
       var0 ^= var0 >>> 13;
@@ -462,7 +462,7 @@ public class MathHelper {
       return var0 ^ var0 >>> 16;
    }
 
-   public static int method_42803(int var0, int var1, IntPredicate var2) {
+   public static int binarySearch(int var0, int var1, IntPredicate var2) {
       int var5 = var1 - var0;
 
       while (var5 > 0) {
@@ -479,7 +479,7 @@ public class MathHelper {
       return var0;
    }
 
-   public static float method_42795(float var0, float var1, float var2) {
+   public static float lerp(float var0, float var1, float var2) {
       return var1 + var0 * (var2 - var1);
    }
 
@@ -487,21 +487,21 @@ public class MathHelper {
       return var2 + var0 * (var4 - var2);
    }
 
-   public static double method_42850(double var0, double var2, double var4, double var6, double var8, double var10) {
+   public static double lerp2(double var0, double var2, double var4, double var6, double var8, double var10) {
       return lerp(var2, lerp(var0, var4, var6), lerp(var0, var8, var10));
    }
 
-   public static double method_42807(
+   public static double lerp3(
       double var0, double var2, double var4, double var6, double var8, double var10, double var12, double var14, double var16, double var18, double var20
    ) {
-      return lerp(var4, method_42850(var0, var2, var6, var8, var10, var12), method_42850(var0, var2, var14, var16, var18, var20));
+      return lerp(var4, lerp2(var0, var2, var6, var8, var10, var12), lerp2(var0, var2, var14, var16, var18, var20));
    }
 
-   public static double method_42845(double var0) {
+   public static double perlinFade(double var0) {
       return var0 * var0 * var0 * (var0 * (var0 * 6.0 - 15.0) + 10.0);
    }
 
-   public static int method_42793(double var0) {
+   public static int signum(double var0) {
       if (var0 != 0.0) {
          return !(var0 > 0.0) ? -1 : 1;
       } else {
@@ -509,12 +509,12 @@ public class MathHelper {
       }
    }
 
-   public static float method_42837(float var0, float var1, float var2) {
+   public static float interpolateAngle(float var0, float var1, float var2) {
       return var1 + var0 * wrapDegrees(var2 - var1);
    }
 
    @Deprecated
-   public static float method_42833(float var0, float var1, float var2) {
+   public static float rotLerp(float var0, float var1, float var2) {
       float var5 = var1 - var0;
 
       while (var5 < -180.0F) {
@@ -529,7 +529,7 @@ public class MathHelper {
    }
 
    @Deprecated
-   public static float method_42838(double var0) {
+   public static float rotWrap(double var0) {
       while (var0 >= 180.0) {
          var0 -= 360.0;
       }
@@ -541,11 +541,11 @@ public class MathHelper {
       return (float)var0;
    }
 
-   public static float method_42852(float var0, float var1) {
+   public static float func_233021_e_(float var0, float var1) {
       return (Math.abs(var0 % var1 - var1 * 0.5F) - var1 * 0.25F) / (var1 * 0.25F);
    }
 
-   public static float method_42806(float var0) {
+   public static float squareFloat(float var0) {
       return var0 * var0;
    }
 

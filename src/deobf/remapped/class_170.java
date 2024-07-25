@@ -127,7 +127,7 @@ public class class_170 extends class_6521<class_2770> {
    @Override
    public void method_45499(class_7966 var1, class_7907 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       var1.method_36063();
-      float var11 = MathHelper.method_42795(this.field_544, this.field_556.field_13544, this.field_556.field_13526);
+      float var11 = MathHelper.lerp(this.field_544, this.field_556.field_13544, this.field_556.field_13526);
       this.field_545.field_8191 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2))) + 1.0) * 0.2F;
       float var12 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2) - 1.0F)) + 1.0);
       var12 = (var12 * var12 + var12 * 2.0F) * 0.05F;
@@ -138,16 +138,16 @@ public class class_170 extends class_6521<class_2770> {
       float var15 = -12.0F;
       float var16 = 1.5F;
       double[] var17 = this.field_556.method_12613(6, this.field_544);
-      float var18 = MathHelper.method_42838(this.field_556.method_12613(5, this.field_544)[0] - this.field_556.method_12613(10, this.field_544)[0]);
-      float var19 = MathHelper.method_42838(this.field_556.method_12613(5, this.field_544)[0] + (double)(var18 / 2.0F));
+      float var18 = MathHelper.rotWrap(this.field_556.method_12613(5, this.field_544)[0] - this.field_556.method_12613(10, this.field_544)[0]);
+      float var19 = MathHelper.rotWrap(this.field_556.method_12613(5, this.field_544)[0] + (double)(var18 / 2.0F));
       float var20 = var11 * (float) (Math.PI * 2);
 
       for (int var21 = 0; var21 < 5; var21++) {
          double[] var22 = this.field_556.method_12613(5 - var21, this.field_544);
          float var23 = (float)Math.cos((double)((float)var21 * 0.45F + var20)) * 0.15F;
-         this.field_548.field_8190 = MathHelper.method_42838(var22[0] - var17[0]) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field_548.field_8190 = MathHelper.rotWrap(var22[0] - var17[0]) * (float) (Math.PI / 180.0) * 1.5F;
          this.field_548.field_8191 = var23 + this.field_556.method_12616(var21, var17, var22) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-         this.field_548.field_8185 = -MathHelper.method_42838(var22[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field_548.field_8185 = -MathHelper.rotWrap(var22[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
          this.field_548.field_8181 = var14;
          this.field_548.field_8187 = var15;
          this.field_548.field_8183 = var13;
@@ -161,9 +161,9 @@ public class class_170 extends class_6521<class_2770> {
       this.field_542.field_8187 = var15;
       this.field_542.field_8183 = var13;
       double[] var31 = this.field_556.method_12613(0, this.field_544);
-      this.field_542.field_8190 = MathHelper.method_42838(var31[0] - var17[0]) * (float) (Math.PI / 180.0);
-      this.field_542.field_8191 = MathHelper.method_42838((double)this.field_556.method_12616(6, var17, var31)) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-      this.field_542.field_8185 = -MathHelper.method_42838(var31[0] - (double)var19) * (float) (Math.PI / 180.0);
+      this.field_542.field_8190 = MathHelper.rotWrap(var31[0] - var17[0]) * (float) (Math.PI / 180.0);
+      this.field_542.field_8191 = MathHelper.rotWrap((double)this.field_556.method_12616(6, var17, var31)) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
+      this.field_542.field_8185 = -MathHelper.rotWrap(var31[0] - (double)var19) * (float) (Math.PI / 180.0);
       this.field_542.method_7060(var1, var2, var3, var4);
       var1.method_36063();
       var1.method_36065(0.0, 1.0, 0.0);
@@ -197,9 +197,9 @@ public class class_170 extends class_6521<class_2770> {
       for (int var24 = 0; var24 < 12; var24++) {
          var31 = this.field_556.method_12613(12 + var24, this.field_544);
          var34 = (float)((double)var34 + Math.sin((double)((float)var24 * 0.45F + var20)) * 0.05F);
-         this.field_548.field_8190 = (MathHelper.method_42838(var31[0] - var17[0]) * 1.5F + 180.0F) * (float) (Math.PI / 180.0);
+         this.field_548.field_8190 = (MathHelper.rotWrap(var31[0] - var17[0]) * 1.5F + 180.0F) * (float) (Math.PI / 180.0);
          this.field_548.field_8191 = var34 + (float)(var31[1] - var17[1]) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-         this.field_548.field_8185 = MathHelper.method_42838(var31[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field_548.field_8185 = MathHelper.rotWrap(var31[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
          this.field_548.field_8181 = var14;
          this.field_548.field_8187 = var15;
          this.field_548.field_8183 = var13;

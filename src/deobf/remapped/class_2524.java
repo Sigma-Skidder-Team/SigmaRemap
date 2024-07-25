@@ -296,7 +296,7 @@ public class class_2524 {
             }
          }
 
-         return this.field_12503 != null && !this.field_12503.method_40164(var5.method_12165()) ? 0.0F : 1.0F;
+         return this.field_12503 != null && !this.field_12503.method_40164(var5.getY()) ? 0.0F : 1.0F;
       } else {
          return 0.0F;
       }

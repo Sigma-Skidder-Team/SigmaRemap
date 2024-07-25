@@ -15,9 +15,9 @@ public class class_9525 implements class_6163, class_1449 {
    public class_9525(World var1, BlockPos var2, BlockPos var3) {
       this.field_48479 = var1;
       this.field_48480 = var2.getX() >> 4;
-      this.field_48478 = var2.method_12185() >> 4;
+      this.field_48478 = var2.getZ() >> 4;
       int var6 = var3.getX() >> 4;
-      int var7 = var3.method_12185() >> 4;
+      int var7 = var3.getZ() >> 4;
       this.field_48481 = new class_5990[var6 - this.field_48480 + 1][var7 - this.field_48478 + 1];
       class_3232 var8 = var1.method_43363();
       this.field_48482 = true;
@@ -29,9 +29,9 @@ public class class_9525 implements class_6163, class_1449 {
       }
 
       for (int var12 = var2.getX() >> 4; var12 <= var3.getX() >> 4; var12++) {
-         for (int var13 = var2.method_12185() >> 4; var13 <= var3.method_12185() >> 4; var13++) {
+         for (int var13 = var2.getZ() >> 4; var13 <= var3.getZ() >> 4; var13++) {
             class_5990 var11 = this.field_48481[var12 - this.field_48480][var13 - this.field_48478];
-            if (var11 != null && !var11.method_27368(var2.method_12165(), var3.method_12165())) {
+            if (var11 != null && !var11.method_27368(var2.getY(), var3.getY())) {
                this.field_48482 = false;
                return;
             }
@@ -40,7 +40,7 @@ public class class_9525 implements class_6163, class_1449 {
    }
 
    private class_5990 method_43949(BlockPos var1) {
-      return this.method_43948(var1.getX() >> 4, var1.method_12185() >> 4);
+      return this.method_43948(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    private class_5990 method_43948(int var1, int var2) {

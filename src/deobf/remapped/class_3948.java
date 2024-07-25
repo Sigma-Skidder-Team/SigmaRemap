@@ -46,7 +46,7 @@ public class class_3948 extends class_6017 {
             double var8 = var3.getPosX() - this.field_9479.field_13542.getPosX();
             double var10 = var3.getPosZ() - this.field_9479.field_13542.getPosZ();
             double var12 = MathHelper.clamp(
-               MathHelper.wrapDegrees(180.0 - MathHelper.method_42821(var8, var10) * 180.0F / (float)Math.PI - (double)this.field_9479.rotationYaw),
+               MathHelper.wrapDegrees(180.0 - MathHelper.atan2(var8, var10) * 180.0F / (float)Math.PI - (double)this.field_9479.rotationYaw),
                -100.0,
                100.0
             );

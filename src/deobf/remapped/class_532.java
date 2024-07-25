@@ -23,7 +23,7 @@ public class class_532 extends class_3558 {
       LivingEntity var3 = this.field_3238.method_17809();
       double var4 = Math.min(var3.method_37309(), this.field_3238.method_37309());
       double var6 = Math.max(var3.method_37309(), this.field_3238.method_37309()) + 1.0;
-      float var8 = (float) MathHelper.method_42821(var3.getPosZ() - this.field_3238.method_37156(), var3.getPosX() - this.field_3238.method_37302());
+      float var8 = (float) MathHelper.atan2(var3.getPosZ() - this.field_3238.method_37156(), var3.getPosX() - this.field_3238.method_37302());
       if (!(this.field_3238.method_37275(var3) < 9.0)) {
          for (int var9 = 0; var9 < 16; var9++) {
             double var11 = 1.25 * (double)(var9 + 1);
@@ -74,7 +74,7 @@ public class class_532 extends class_3558 {
          class_2522 var18 = this.field_3238.field_41768.method_28262(var17);
          if (!var18.method_8308(this.field_3238.field_41768, var17, Direction.field_817)) {
             var13 = var13.method_6100();
-            if (var13.method_12165() >= MathHelper.floor(var5) - 1) {
+            if (var13.getY() >= MathHelper.floor(var5) - 1) {
                continue;
             }
             break;
@@ -95,7 +95,7 @@ public class class_532 extends class_3558 {
       if (var14) {
          this.field_3238
             .field_41768
-            .method_7509(new class_1511(this.field_3238.field_41768, var1, (double)var13.method_12165() + var15, var3, var9, var10, this.field_3238));
+            .method_7509(new class_1511(this.field_3238.field_41768, var1, (double)var13.getY() + var15, var3, var9, var10, this.field_3238));
       }
    }
 

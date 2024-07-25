@@ -43,10 +43,10 @@ public class class_196 extends class_8715 {
             this.field_49469
                .method_28262(var3)
                .method_8324(this.field_49469, var3)
-               .method_19499(class_9249.field_47216, this.field_49462 - (double)var3.getX(), this.field_49465 - (double)var3.method_12185()),
+               .method_19499(class_9249.field_47216, this.field_49462 - (double)var3.getX(), this.field_49465 - (double)var3.getZ()),
             (double)this.field_49469.method_28258(var3).method_22008(this.field_49469, var3)
          );
-         if (var4 > 0.0 && this.field_49473 < (double)var3.method_12165() + var4) {
+         if (var4 > 0.0 && this.field_49473 < (double)var3.getY() + var4) {
             this.method_44948();
          }
       } else {

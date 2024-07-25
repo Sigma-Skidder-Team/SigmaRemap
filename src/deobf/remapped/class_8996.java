@@ -73,7 +73,7 @@ public class class_8996 extends class_7186 {
 
             for (class_8009 var10 : var6) {
                BlockPos var11 = var10.method_36337();
-               var8 = var8.method_6214((double)var11.getX(), (double)var11.method_12165(), (double)var11.method_12185());
+               var8 = var8.method_6214((double)var11.getX(), (double)var11.getY(), (double)var11.getZ());
                var7++;
             }
 

@@ -113,8 +113,8 @@ public class class_4492 extends class_5920<class_7666> {
                      var1.method_29528(
                         (PlayerEntity)null,
                         (double)this.field_21963.getX(),
-                        (double)this.field_21963.method_12165(),
-                        (double)this.field_21963.method_12185(),
+                        (double)this.field_21963.getY(),
+                        (double)this.field_21963.getZ(),
                         SoundEvents.field_2518,
                         class_562.field_3322,
                         1.0F,

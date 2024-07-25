@@ -111,11 +111,11 @@ public class class_929 extends class_2266 {
 
    private double method_4049(BlockPos var1) {
       if (this.field_8166.method_37285()) {
-         return (double)var1.method_12165() + 0.5;
+         return (double)var1.getY() + 0.5;
       } else {
          BlockPos var4 = var1.method_6100();
          class_4190 var5 = this.field_8165.method_28262(var4).method_8324(this.field_8165, var4);
-         return (double)var4.method_12165() + (!var5.method_19485() ? var5.method_19495(class_9249.field_47216) : 0.0);
+         return (double)var4.getY() + (!var5.method_19485() ? var5.method_19495(class_9249.field_47216) : 0.0);
       }
    }
 

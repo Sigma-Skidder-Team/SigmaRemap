@@ -42,9 +42,9 @@ public class CordsModule extends Module {
                   float var4 = Math.min(1.0F, 0.6F + this.field_9983.method_11123() * 4.0F);
                   String var5 = client.thePlayer.method_37075().getX()
                      + " "
-                     + client.thePlayer.method_37075().method_12165()
+                     + client.thePlayer.method_37075().getY()
                      + " "
-                     + client.thePlayer.method_37075().method_12185();
+                     + client.thePlayer.method_37075().getZ();
                   byte var6 = 85;
                   int var7 = var1.method_14966();
                   short var8 = 150;

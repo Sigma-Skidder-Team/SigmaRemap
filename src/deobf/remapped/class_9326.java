@@ -414,8 +414,8 @@ public class class_9326 implements class_2231 {
                            new class_4919(
                                  this.field_47617,
                                  (double)var1.getX() + var35,
-                                 (double)var1.method_12165() + var37,
-                                 (double)var1.method_12185() + var39,
+                                 (double)var1.getY() + var37,
+                                 (double)var1.getZ() + var39,
                                  var29 - 0.5,
                                  var31 - 0.5,
                                  var33 - 0.5,
@@ -435,8 +435,8 @@ public class class_9326 implements class_2231 {
       class_2522 var5 = this.field_47617.method_28262(var1);
       if (var5.method_8352() != class_7537.field_38470) {
          int var6 = var1.getX();
-         int var7 = var1.method_12165();
-         int var8 = var1.method_12185();
+         int var7 = var1.getY();
+         int var8 = var1.getZ();
          float var9 = 0.1F;
          Box var10 = var5.method_8334(this.field_47617, var1).method_19483();
          double var11 = (double)var6 + this.field_47620.nextDouble() * (var10.field_19940 - var10.field_19941 - 0.2F) + 0.1F + var10.field_19941;

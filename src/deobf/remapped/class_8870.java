@@ -14,13 +14,13 @@ public class class_8870 extends class_4285<class_1941> {
 
    public boolean method_40805(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       for (BlockPos var9 : BlockPos.method_6076(
-         new BlockPos(var4.getX() - 4, var4.method_12165() - 1, var4.method_12185() - 4),
-         new BlockPos(var4.getX() + 4, var4.method_12165() + 32, var4.method_12185() + 4)
+         new BlockPos(var4.getX() - 4, var4.getY() - 1, var4.getZ() - 4),
+         new BlockPos(var4.getX() + 4, var4.getY() + 32, var4.getZ() + 4)
       )) {
          boolean var10 = var9.method_12171(var4, 2.5);
          if (var10 || var9.method_12171(var4, 3.5)) {
-            if (var9.method_12165() >= var4.method_12165()) {
-               if (var9.method_12165() <= var4.method_12165()) {
+            if (var9.getY() >= var4.getY()) {
+               if (var9.getY() <= var4.getY()) {
                   if (var10) {
                      if (!this.field_45350) {
                         this.method_19906(var1, new BlockPos(var9), class_4783.field_23184.method_29260());
@@ -34,7 +34,7 @@ public class class_8870 extends class_4285<class_1941> {
                   this.method_19906(var1, var9, class_4783.field_23184.method_29260());
                }
             } else if (!var10) {
-               if (var9.method_12165() < var4.method_12165()) {
+               if (var9.getY() < var4.getY()) {
                   this.method_19906(var1, var9, class_4783.field_23894.method_29260());
                }
             } else {

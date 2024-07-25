@@ -407,8 +407,8 @@ public class class_9301 extends class_6414 {
          var1.method_43361(
             new class_5727(var4.method_11057(), var4.method_11061(), var4.method_11055(), 1.0F),
             (double)var3.getX() + var14,
-            (double)var3.method_12165() + var16,
-            (double)var3.method_12185() + var18,
+            (double)var3.getY() + var16,
+            (double)var3.getZ() + var18,
             0.0,
             0.0,
             0.0

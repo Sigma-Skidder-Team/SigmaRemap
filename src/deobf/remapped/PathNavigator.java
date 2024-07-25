@@ -210,8 +210,8 @@ public abstract class PathNavigator {
       this.field_6889 = !(this.field_6877.method_37086() > 0.75F) ? 0.75F - this.field_6877.method_37086() / 2.0F : this.field_6877.method_37086() / 2.0F;
       BlockPos var4 = this.field_6887.method_18449();
       double var5 = Math.abs(this.field_6877.getPosX() - ((double)var4.getX() + 0.5));
-      double var7 = Math.abs(this.field_6877.method_37309() - (double)var4.method_12165());
-      double var9 = Math.abs(this.field_6877.getPosZ() - ((double)var4.method_12185() + 0.5));
+      double var7 = Math.abs(this.field_6877.method_37309() - (double)var4.getY());
+      double var9 = Math.abs(this.field_6877.getPosZ() - ((double)var4.getZ() + 0.5));
       boolean var11 = var5 < (double)this.field_6889 && var9 < (double)this.field_6889 && var7 < 1.0;
       if (var11 || this.field_6877.method_26854(this.field_6887.method_18438().field_29730) && this.method_5593(var3)) {
          this.field_6887.method_18434();

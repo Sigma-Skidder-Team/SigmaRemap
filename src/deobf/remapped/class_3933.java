@@ -47,8 +47,8 @@ public class class_3933 extends class_6414 {
          var2.method_28957(
             class_3090.field_15319,
             (double)var7.getX() + 0.5,
-            (double)var7.method_12165() + 0.25,
-            (double)var7.method_12185() + 0.5,
+            (double)var7.getY() + 0.25,
+            (double)var7.getZ() + 0.5,
             8,
             0.5,
             0.25,

@@ -57,7 +57,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    private static boolean method_20221(class_9379 var0, BlockPos var1) {
-      return var1.method_12165() < var0.method_22552() - 5;
+      return var1.getY() < var0.method_22552() - 5;
    }
 
    @Override
@@ -177,7 +177,7 @@ public class class_4359 extends class_2811 implements class_2354 {
       if (var3 != null) {
          BlockPos var4 = var3.method_18426();
          if (var4 != null) {
-            double var5 = this.method_37273((double)var4.getX(), (double)var4.method_12165(), (double)var4.method_12185());
+            double var5 = this.method_37273((double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
             if (var5 < 4.0) {
                return true;
             }

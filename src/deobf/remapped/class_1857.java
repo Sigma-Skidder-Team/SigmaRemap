@@ -352,9 +352,9 @@ public class class_1857 {
          if (var1.method_24094() != 1.0F) {
             if (class_1393.field_7595 - this.field_9415.thePlayer.field_29618 == 0.0F) {
                if (this.field_9422) {
-                  var1.method_24096(MathHelper.method_42837(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29605));
-                  var1.method_24090(MathHelper.method_42837(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29618));
-                  var1.method_24086(MathHelper.method_42795(var1.method_24094(), class_1393.field_7602, var1.method_24098().rotationPitch));
+                  var1.method_24096(MathHelper.interpolateAngle(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29605));
+                  var1.method_24090(MathHelper.interpolateAngle(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29618));
+                  var1.method_24086(MathHelper.lerp(var1.method_24094(), class_1393.field_7602, var1.method_24098().rotationPitch));
                   var1.method_24099(var1.method_24092() - var1.method_24091());
                   var1.method_24098().field_41762 = class_1393.field_7602;
                   var1.method_24098().prevRotationYaw = class_1393.field_7593;
@@ -363,9 +363,9 @@ public class class_1857 {
                   this.field_9422 = !this.field_9422;
                }
             } else {
-               var1.method_24096(MathHelper.method_42837(var1.method_24094(), class_1393.field_7593, class_1393.field_7595));
-               var1.method_24090(MathHelper.method_42837(var1.method_24094(), class_1393.field_7593, class_1393.field_7595));
-               var1.method_24086(MathHelper.method_42795(var1.method_24094(), class_1393.field_7602, class_1393.field_7605));
+               var1.method_24096(MathHelper.interpolateAngle(var1.method_24094(), class_1393.field_7593, class_1393.field_7595));
+               var1.method_24090(MathHelper.interpolateAngle(var1.method_24094(), class_1393.field_7593, class_1393.field_7595));
+               var1.method_24086(MathHelper.lerp(var1.method_24094(), class_1393.field_7602, class_1393.field_7605));
                var1.method_24099(var1.method_24092() - var1.method_24091());
                this.field_9422 = true;
             }

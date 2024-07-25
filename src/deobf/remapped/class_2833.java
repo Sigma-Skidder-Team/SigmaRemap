@@ -62,7 +62,7 @@ public class class_2833 {
                return;
             }
 
-            float var11 = (float)(MathHelper.method_42821(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
+            float var11 = (float)(MathHelper.atan2(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
             this.field_13879.rotationYaw = this.method_12882(this.field_13879.rotationYaw, var11, 90.0F);
             this.field_13879.method_26461((float)(this.field_13885 * this.field_13879.method_26575(Attributes.MOVEMENT_SPEED)));
             BlockPos var20 = this.field_13879.method_37075();
@@ -71,7 +71,7 @@ public class class_2833 {
             class_4190 var23 = var21.method_8324(this.field_13879.world, var20);
             if (var16 > (double)this.field_13879.field_41733 && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field_13879.method_37086())
                || !var23.method_19485()
-                  && this.field_13879.method_37309() < var23.method_19495(class_9249.field_47216) + (double)var20.method_12165()
+                  && this.field_13879.method_37309() < var23.method_19495(class_9249.field_47216) + (double)var20.getY()
                   && !var22.method_29299(class_2351.field_11780)
                   && !var22.method_29299(class_2351.field_11728)) {
                this.field_13879.method_26886().method_18772();

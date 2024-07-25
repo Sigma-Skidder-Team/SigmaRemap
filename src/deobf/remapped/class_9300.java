@@ -659,8 +659,8 @@ public class class_9300 {
       int var8 = 0;
       int var9 = 0;
       int var10 = var2.getX();
-      int var11 = var2.method_12165();
-      int var12 = var2.method_12185();
+      int var11 = var2.getY();
+      int var12 = var2.getZ();
       class_523 var13 = var4;
       int var14 = Config.method_14235();
       int var15 = var14 * 2 + 1;

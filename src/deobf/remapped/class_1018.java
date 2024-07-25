@@ -21,7 +21,7 @@ public class class_1018 extends class_5788<class_611> {
 
          for (int var10 = 0; var10 < var3.method_2873().method_15936(var2); var10++) {
             int var11 = var2.nextInt(16) + var4.getX();
-            int var12 = var2.nextInt(16) + var4.method_12185();
+            int var12 = var2.nextInt(16) + var4.getZ();
             int var13 = var1.method_30648(class_3801.field_18595, var11, var12);
             int var14 = method_4505(var1, var11, var13, var12, var8);
             if (var14 != Integer.MAX_VALUE) {
@@ -46,7 +46,7 @@ public class class_1018 extends class_5788<class_611> {
          class_2522 var11 = var0.method_30650(var7);
          if (!method_4506(var11) && method_4506(var9) && !var11.method_8350(class_4783.field_23433)) {
             if (var8 == var4) {
-               return var7.method_12165() + 1;
+               return var7.getY() + 1;
             }
 
             var8++;

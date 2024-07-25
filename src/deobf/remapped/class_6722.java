@@ -58,7 +58,7 @@ public class class_6722 extends class_4314 {
    public boolean method_30852(World var1, class_2522 var2, class_9529 var3, PlayerEntity var4, boolean var5) {
       Direction var8 = var3.method_43956();
       BlockPos var9 = var3.method_43955();
-      boolean var10 = !var5 || this.method_30853(var2, var8, var3.method_33993().field_7333 - (double)var9.method_12165());
+      boolean var10 = !var5 || this.method_30853(var2, var8, var3.method_33993().field_7333 - (double)var9.getY());
       if (!var10) {
          return false;
       } else {

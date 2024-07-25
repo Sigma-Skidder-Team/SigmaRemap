@@ -43,8 +43,8 @@ public class SpartanClickTP extends Module {
                .sendPacket(
                   new class_9515(
                      (double)this.field_12051.getX() + 0.5,
-                     (double)(this.field_12051.method_12165() + 1),
-                     (double)this.field_12051.method_12185() + 0.5,
+                     (double)(this.field_12051.getY() + 1),
+                     (double)this.field_12051.getZ() + 0.5,
                      true
                   )
                );
@@ -59,8 +59,8 @@ public class SpartanClickTP extends Module {
          if (var1.method_557() instanceof class_509) {
             class_509 var4 = (class_509)var1.method_557();
             if (var4.field_3139 == (double)this.field_12051.getX() + 0.5
-               && var4.field_3144 == (double)(this.field_12051.method_12165() + 1)
-               && var4.field_3141 == (double)this.field_12051.method_12185() + 0.5) {
+               && var4.field_3144 == (double)(this.field_12051.getY() + 1)
+               && var4.field_3141 == (double)this.field_12051.getZ() + 0.5) {
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("ClickTP", "Successfully teleported"));
                if (!this.getModule().getBooleanValueByName("Auto Disable")) {
                   this.field_12052 = -1;
@@ -97,8 +97,8 @@ public class SpartanClickTP extends Module {
                .sendPacket(
                   new class_9515(
                      (double)this.field_12051.getX() + 0.5,
-                     (double)(this.field_12051.method_12165() + 1),
-                     (double)this.field_12051.method_12185() + 0.5,
+                     (double)(this.field_12051.getY() + 1),
+                     (double)this.field_12051.getZ() + 0.5,
                      true
                   )
                );

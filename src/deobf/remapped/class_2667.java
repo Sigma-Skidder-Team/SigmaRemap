@@ -129,7 +129,7 @@ public class class_2667 extends MonsterEntity {
       if (!method_5198(var0, var1, var2, var3, var4)) {
          return false;
       } else {
-         PlayerEntity var7 = var1.method_25857((double)var3.getX() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, 5.0, true);
+         PlayerEntity var7 = var1.method_25857((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 5.0, true);
          return var7 == null;
       }
    }

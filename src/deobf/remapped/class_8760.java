@@ -197,7 +197,7 @@ public class class_8760 {
       for (int var4 = 0; var4 <= 15; var4++) {
          float var5 = (float)var4 / 15.0F;
          float var6 = var5 / (4.0F - 3.0F * var5);
-         var3[var4] = MathHelper.method_42795(var0, var6, 1.0F);
+         var3[var4] = MathHelper.lerp(var0, var6, 1.0F);
       }
 
       return var3;

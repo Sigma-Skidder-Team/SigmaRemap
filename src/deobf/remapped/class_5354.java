@@ -108,8 +108,8 @@ public class class_5354 extends class_3757 implements class_3745 {
                .method_29528(
                   (PlayerEntity)null,
                   (double)var8.getX(),
-                  (double)var8.method_12165(),
-                  (double)var8.method_12185(),
+                  (double)var8.getY(),
+                  (double)var8.getZ(),
                   SoundEvents.field_2714,
                   class_562.field_3322,
                   1.0F,
@@ -169,8 +169,8 @@ public class class_5354 extends class_3757 implements class_3745 {
                   float var24 = var12.method_37086();
                   double var16 = !var11 ? 0.55 + (double)(var24 / 2.0F) : 0.0;
                   double var18 = (double)var7.getX() + 0.5 + var16 * (double)var9.method_1041();
-                  double var20 = (double)var7.method_12165() + 0.5 - (double)(var12.method_37074() / 2.0F);
-                  double var22 = (double)var7.method_12185() + 0.5 + var16 * (double)var9.method_1034();
+                  double var20 = (double)var7.getY() + 0.5 - (double)(var12.method_37074() / 2.0F);
+                  double var22 = (double)var7.getZ() + 0.5 + var16 * (double)var9.method_1034();
                   var12.method_37144(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 
@@ -225,8 +225,8 @@ public class class_5354 extends class_3757 implements class_3745 {
          BlockPos var3 = this.method_17399();
          if (this.field_27341.size() > 0 && this.field_18364.method_43360().nextDouble() < 0.005) {
             double var4 = (double)var3.getX() + 0.5;
-            double var6 = (double)var3.method_12165();
-            double var8 = (double)var3.method_12185() + 0.5;
+            double var6 = (double)var3.getY();
+            double var8 = (double)var3.getZ() + 0.5;
             this.field_18364.method_29528((PlayerEntity)null, var4, var6, var8, SoundEvents.field_2340, class_562.field_3322, 1.0F, 1.0F);
          }
 

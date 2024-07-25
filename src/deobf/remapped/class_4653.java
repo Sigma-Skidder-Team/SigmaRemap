@@ -108,7 +108,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
 
       this.method_37215(var3);
       if (method_37266(var3) > 0.05) {
-         this.rotationYaw = (float) MathHelper.method_42821(var3.field_7334, var3.field_7336) * (180.0F / (float)Math.PI) - 90.0F;
+         this.rotationYaw = (float) MathHelper.atan2(var3.field_7334, var3.field_7336) * (180.0F / (float)Math.PI) - 90.0F;
       }
 
       super.livingTick();
@@ -135,8 +135,8 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
             double var19 = var10.method_37388() - var13;
             double var21 = var10.getPosZ() - var15;
             double var23 = (double) MathHelper.sqrt(var17 * var17 + var21 * var21);
-            float var25 = (float)(MathHelper.method_42821(var21, var17) * 180.0F / (float)Math.PI) - 90.0F;
-            float var26 = (float)(-(MathHelper.method_42821(var19, var23) * 180.0F / (float)Math.PI));
+            float var25 = (float)(MathHelper.atan2(var21, var17) * 180.0F / (float)Math.PI) - 90.0F;
+            float var26 = (float)(-(MathHelper.atan2(var19, var23) * 180.0F / (float)Math.PI));
             this.field_22695[var34] = this.method_21516(this.field_22695[var34], var26, 40.0F);
             this.field_22693[var34] = this.method_21516(this.field_22693[var34], var25, 10.0F);
          }

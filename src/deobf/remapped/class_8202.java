@@ -11,9 +11,9 @@ public class class_8202 extends class_4285<class_3043> {
    public boolean method_37565(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_3043 var5) {
       for (BlockPos var9 : BlockPos.method_6076(var4.method_6104(-1, -2, -1), var4.method_6104(1, 2, 1))) {
          boolean var10 = var9.getX() == var4.getX();
-         boolean var11 = var9.method_12165() == var4.method_12165();
-         boolean var12 = var9.method_12185() == var4.method_12185();
-         boolean var13 = Math.abs(var9.method_12165() - var4.method_12165()) == 2;
+         boolean var11 = var9.getY() == var4.getY();
+         boolean var12 = var9.getZ() == var4.getZ();
+         boolean var13 = Math.abs(var9.getY() - var4.getY()) == 2;
          if (var10 && var11 && var12) {
             BlockPos var14 = var9.method_6072();
             this.method_19906(var1, var14, class_4783.field_23824.method_29260());

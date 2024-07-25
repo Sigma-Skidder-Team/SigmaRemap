@@ -173,7 +173,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
       class_1343 var4 = class_1343.method_6200(var1);
       byte var5 = 0;
       BlockPos var6 = this.method_37075();
-      int var7 = (int)var4.field_7333 - var6.method_12165();
+      int var7 = (int)var4.field_7333 - var6.getY();
       if (var7 <= 2) {
          if (var7 < -2) {
             var5 = -4;
@@ -228,7 +228,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    public float method_40549(float var1) {
-      return MathHelper.method_42795(var1, this.field_45162, this.field_45166);
+      return MathHelper.lerp(var1, this.field_45162, this.field_45166);
    }
 
    private void method_40548() {

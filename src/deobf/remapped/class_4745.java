@@ -146,10 +146,10 @@ public class class_4745 extends class_4314 {
                class_4190 var13 = var12.method_8324(var1, var11);
                double var14 = var13.method_19495(class_9249.field_47216);
                if ((var14 < 1.0 || !var12.method_8306(var1, var11)) && var12.method_8364().method_22001()) {
-                  this.method_21916(var1, var2, var6, (double)var2.method_12165() - 0.05);
+                  this.method_21916(var1, var2, var6, (double)var2.getY() - 0.05);
                }
             } else {
-               this.method_21916(var1, var2, var6, (double)var2.method_12165() + var9 - 0.05);
+               this.method_21916(var1, var2, var6, (double)var2.getY() + var9 - 0.05);
             }
          }
       }
@@ -160,8 +160,8 @@ public class class_4745 extends class_4314 {
          var1,
          (double)var2.getX() + var3.method_19491(class_9249.field_47215),
          (double)var2.getX() + var3.method_19495(class_9249.field_47215),
-         (double)var2.method_12185() + var3.method_19491(class_9249.field_47219),
-         (double)var2.method_12185() + var3.method_19495(class_9249.field_47219),
+         (double)var2.getZ() + var3.method_19491(class_9249.field_47219),
+         (double)var2.getZ() + var3.method_19495(class_9249.field_47219),
          var4
       );
    }
@@ -221,7 +221,7 @@ public class class_4745 extends class_4314 {
             CompoundNBT var14 = new CompoundNBT();
             var14.putInt("honey_level", var10);
             var9.method_27954("BlockStateTag", var14);
-            class_91 var13 = new class_91(var1, (double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185(), var9);
+            class_91 var13 = new class_91(var1, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ(), var9);
             var13.method_257();
             var1.method_7509(var13);
          }

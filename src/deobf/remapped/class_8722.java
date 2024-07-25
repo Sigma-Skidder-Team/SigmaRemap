@@ -25,8 +25,8 @@ public abstract class class_8722 extends class_3798 {
       if (var1.method_28262(var7).method_8345() && !var1.method_28262(var7).method_8321(var1, var7)) {
          if (var4.nextInt(100) == 0) {
             double var8 = (double)var2.getX() + var4.nextDouble();
-            double var10 = (double)var2.method_12165() + 1.0;
-            double var12 = (double)var2.method_12185() + var4.nextDouble();
+            double var10 = (double)var2.getY() + 1.0;
+            double var12 = (double)var2.getZ() + var4.nextDouble();
             var1.method_43361(class_3090.field_15372, var8, var10, var12, 0.0, 0.0, 0.0);
             var1.method_29527(
                var8, var10, var12, SoundEvents.field_2511, class_562.field_3322, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
@@ -36,8 +36,8 @@ public abstract class class_8722 extends class_3798 {
          if (var4.nextInt(200) == 0) {
             var1.method_29527(
                (double)var2.getX(),
-               (double)var2.method_12165(),
-               (double)var2.method_12185(),
+               (double)var2.getY(),
+               (double)var2.getZ(),
                SoundEvents.field_2339,
                class_562.field_3322,
                0.2F + var4.nextFloat() * 0.2F,
@@ -97,7 +97,7 @@ public abstract class class_8722 extends class_3798 {
    }
 
    private boolean method_40068(class_4924 var1, BlockPos var2) {
-      return var2.method_12165() >= 0 && var2.method_12165() < 256 && !var1.isBlockLoaded(var2) ? false : var1.method_28262(var2).method_8362().method_24495();
+      return var2.getY() >= 0 && var2.getY() < 256 && !var1.isBlockLoaded(var2) ? false : var1.method_28262(var2).method_8362().method_24495();
    }
 
    @Nullable

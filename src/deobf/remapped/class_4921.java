@@ -47,7 +47,7 @@ public class class_4921 implements class_2995 {
                   Box var29 = new Box(BlockPos.field_7306)
                      .grow(0.002)
                      .method_18924(0.0025 * (double)var23)
-                     .method_18918((double)var27.getX(), (double)var27.method_12165(), (double)var27.method_12185())
+                     .method_18918((double)var27.getX(), (double)var27.getY(), (double)var27.getZ())
                      .method_18918(-var3, -var5, -var7);
                   WorldRenderer.method_20012(
                      var1,
@@ -74,7 +74,7 @@ public class class_4921 implements class_2995 {
       for (Entry var32 : var17.entrySet()) {
          BlockPos var33 = (BlockPos)var32.getKey();
          Integer var30 = (Integer)var32.getValue();
-         class_3372.method_15556(String.valueOf(var30), var33.getX(), var33.method_12165(), var33.method_12185(), -1);
+         class_3372.method_15556(String.valueOf(var30), var33.getX(), var33.getY(), var33.getZ(), -1);
       }
    }
 }

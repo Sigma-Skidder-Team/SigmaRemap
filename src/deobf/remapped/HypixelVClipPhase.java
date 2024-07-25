@@ -28,9 +28,9 @@ public class HypixelVClipPhase extends Module {
    @EventListen
    private void method_6458(class_5243 var1) {
       if (this.method_42015()) {
-         if (var1.method_23988() != null && var1.method_23989().method_12165() == this.field_7607 - 1
-            || var1.method_23989().method_12165() == this.field_7607
-            || var1.method_23989().method_12165() == this.field_7607 + 1
+         if (var1.method_23988() != null && var1.method_23989().getY() == this.field_7607 - 1
+            || var1.method_23989().getY() == this.field_7607
+            || var1.method_23989().getY() == this.field_7607 + 1
                && client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_6344
             || client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_4423
             || client.theWorld.method_28262(var1.method_23989()).method_8360() instanceof class_3049

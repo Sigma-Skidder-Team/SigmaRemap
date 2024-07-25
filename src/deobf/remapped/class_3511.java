@@ -63,7 +63,7 @@ public class class_3511 {
    }
 
    private boolean method_16158(BlockPos var1) {
-      return class_6705.method_30723(this.field_17225).method_22555(var1.getX() >> 4, var1.method_12185() >> 4, class_7335.field_37514, false) != null;
+      return class_6705.method_30723(this.field_17225).method_22555(var1.getX() >> 4, var1.getZ() >> 4, class_7335.field_37514, false) != null;
    }
 
    public boolean method_16154() {
@@ -95,7 +95,7 @@ public class class_3511 {
    }
 
    public void method_16163(int var1, int var2, int var3) {
-      if (var1 != this.field_17223.getX() || var2 != this.field_17223.method_12165() || var3 != this.field_17223.method_12185()) {
+      if (var1 != this.field_17223.getX() || var2 != this.field_17223.getY() || var3 != this.field_17223.getZ()) {
          this.method_16176();
          this.field_17223.method_13362(var1, var2, var3);
          if (this.field_17212) {
@@ -376,7 +376,7 @@ public class class_3511 {
    }
 
    private boolean method_16183(BlockPos var1) {
-      int var4 = var1.method_12165();
+      int var4 = var1.getY();
       int var5 = var4 + 15;
       return this.method_16175(var1).method_27368(var4, var5);
    }
@@ -400,13 +400,13 @@ public class class_3511 {
 
    private void method_16186() {
       int var3 = this.method_16189().getX();
-      int var4 = this.method_16189().method_12185();
+      int var4 = this.method_16189().getZ();
       int var5 = Direction.field_818.ordinal();
       int var6 = Direction.field_800.ordinal();
       int var7 = Direction.field_809.ordinal();
       int var8 = Direction.field_804.ordinal();
-      this.field_17215[var5] = this.field_17224[var5].method_16189().method_12185() != var4 - 16 ? null : this.field_17224[var5];
-      this.field_17215[var6] = this.field_17224[var6].method_16189().method_12185() != var4 + 16 ? null : this.field_17224[var6];
+      this.field_17215[var5] = this.field_17224[var5].method_16189().getZ() != var4 - 16 ? null : this.field_17224[var5];
+      this.field_17215[var6] = this.field_17224[var6].method_16189().getZ() != var4 + 16 ? null : this.field_17224[var6];
       this.field_17215[var7] = this.field_17224[var7].method_16189().getX() != var3 - 16 ? null : this.field_17224[var7];
       this.field_17215[var8] = this.field_17224[var8].method_16189().getX() != var3 + 16 ? null : this.field_17224[var8];
       this.field_17220 = true;
@@ -420,8 +420,8 @@ public class class_3511 {
       if (this.field_17201 == null) {
          BlockPos var3 = this.method_16189();
          int var4 = var3.getX();
-         int var5 = var3.method_12165();
-         int var6 = var3.method_12185();
+         int var5 = var3.getY();
+         int var6 = var3.getZ();
          byte var7 = 5;
          int var8 = var4 >> var7 << var7;
          int var9 = var5 >> var7 << var7;

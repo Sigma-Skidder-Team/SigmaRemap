@@ -39,7 +39,7 @@ public class class_419 {
    public static class_3757 method_2088(BlockPos var0) {
       class_6331 var3 = method_2086();
       if (var3 != null) {
-         class_5990 var4 = var3.method_28945().method_14819(var0.getX() >> 4, var0.method_12185() >> 4, class_7335.field_37514, false);
+         class_5990 var4 = var3.method_28945().method_14819(var0.getX() >> 4, var0.getZ() >> 4, class_7335.field_37514, false);
          return var4 != null ? var4.method_28260(var0) : null;
       } else {
          return null;

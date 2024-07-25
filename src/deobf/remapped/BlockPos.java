@@ -17,7 +17,7 @@ public class BlockPos extends Vector3i {
    public static final Codec<BlockPos> field_7305 = Codec.INT_STREAM
       .comapFlatMap(
          var0 -> Util.method_44654(var0, 3).map(var0x -> new BlockPos(var0x[0], var0x[1], var0x[2])),
-         var0 -> IntStream.of(var0.getX(), var0.method_12165(), var0.method_12185())
+         var0 -> IntStream.of(var0.getX(), var0.getY(), var0.getZ())
       )
       .stable();
    private static final Logger field_7307 = LogManager.getLogger();
@@ -48,7 +48,7 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos(Vector3i var1) {
-      this(var1.getX(), var1.method_12165(), var1.method_12185());
+      this(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public static long method_6097(long var0, Direction var2) {
@@ -76,7 +76,7 @@ public class BlockPos extends Vector3i {
    }
 
    public long method_6077() {
-      return method_6107(this.getX(), this.method_12165(), this.method_12185());
+      return method_6107(this.getX(), this.getY(), this.getZ());
    }
 
    public static long method_6107(int var0, int var1, int var2) {
@@ -93,19 +93,19 @@ public class BlockPos extends Vector3i {
    public BlockPos method_6103(double var1, double var3, double var5) {
       return var1 == 0.0 && var3 == 0.0 && var5 == 0.0
          ? this
-         : new BlockPos((double)this.getX() + var1, (double)this.method_12165() + var3, (double)this.method_12185() + var5);
+         : new BlockPos((double)this.getX() + var1, (double)this.getY() + var3, (double)this.getZ() + var5);
    }
 
    public BlockPos method_6104(int var1, int var2, int var3) {
-      return var1 == 0 && var2 == 0 && var3 == 0 ? this : new BlockPos(this.getX() + var1, this.method_12165() + var2, this.method_12185() + var3);
+      return var1 == 0 && var2 == 0 && var3 == 0 ? this : new BlockPos(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
    }
 
    public BlockPos method_6105(Vector3i var1) {
-      return this.method_6104(var1.getX(), var1.method_12165(), var1.method_12185());
+      return this.method_6104(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public BlockPos method_6093(Vector3i var1) {
-      return this.method_6104(-var1.getX(), -var1.method_12165(), -var1.method_12185());
+      return this.method_6104(-var1.getX(), -var1.getY(), -var1.getZ());
    }
 
    public BlockPos method_6081() {
@@ -157,13 +157,13 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos method_6098(Direction var1) {
-      return new BlockPos(this.getX() + var1.method_1041(), this.method_12165() + var1.method_1054(), this.method_12185() + var1.method_1034());
+      return new BlockPos(this.getX() + var1.method_1041(), this.getY() + var1.method_1054(), this.getZ() + var1.method_1034());
    }
 
    public BlockPos method_6099(Direction var1, int var2) {
       return var2 != 0
          ? new BlockPos(
-            this.getX() + var1.method_1041() * var2, this.method_12165() + var1.method_1054() * var2, this.method_12185() + var1.method_1034() * var2
+            this.getX() + var1.method_1041() * var2, this.getY() + var1.method_1054() * var2, this.getZ() + var1.method_1034() * var2
          )
          : this;
    }
@@ -173,7 +173,7 @@ public class BlockPos extends Vector3i {
          int var5 = var1 != class_9249.field_47215 ? 0 : var2;
          int var6 = var1 != class_9249.field_47216 ? 0 : var2;
          int var7 = var1 != class_9249.field_47219 ? 0 : var2;
-         return new BlockPos(this.getX() + var5, this.method_12165() + var6, this.method_12185() + var7);
+         return new BlockPos(this.getX() + var5, this.getY() + var6, this.getZ() + var7);
       } else {
          return this;
       }
@@ -185,19 +185,19 @@ public class BlockPos extends Vector3i {
          default:
             return this;
          case field_34334:
-            return new BlockPos(-this.method_12185(), this.method_12165(), this.getX());
+            return new BlockPos(-this.getZ(), this.getY(), this.getX());
          case field_34338:
-            return new BlockPos(-this.getX(), this.method_12165(), -this.method_12185());
+            return new BlockPos(-this.getX(), this.getY(), -this.getZ());
          case field_34335:
-            return new BlockPos(this.method_12185(), this.method_12165(), -this.getX());
+            return new BlockPos(this.getZ(), this.getY(), -this.getX());
       }
    }
 
    public BlockPos method_6071(Vector3i var1) {
       return new BlockPos(
-         this.method_12165() * var1.method_12185() - this.method_12185() * var1.method_12165(),
-         this.method_12185() * var1.getX() - this.getX() * var1.method_12185(),
-         this.getX() * var1.method_12165() - this.method_12165() * var1.getX()
+         this.getY() * var1.getZ() - this.getZ() * var1.getY(),
+         this.getZ() * var1.getX() - this.getX() * var1.getZ(),
+         this.getX() * var1.getY() - this.getY() * var1.getX()
       );
    }
 
@@ -206,7 +206,7 @@ public class BlockPos extends Vector3i {
    }
 
    public class_2921 method_6089() {
-      return new class_2921(this.getX(), this.method_12165(), this.method_12185());
+      return new class_2921(this.getX(), this.getY(), this.getZ());
    }
 
    public static Iterable<BlockPos> method_6079(Random var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
@@ -219,8 +219,8 @@ public class BlockPos extends Vector3i {
    public static Iterable<BlockPos> method_6106(BlockPos var0, int var1, int var2, int var3) {
       int var6 = var1 + var2 + var3;
       int var7 = var0.getX();
-      int var8 = var0.method_12165();
-      int var9 = var0.method_12185();
+      int var8 = var0.getY();
+      int var9 = var0.getZ();
       return () -> new class_5606(var9, var6, var1, var2, var3, var7, var8);
    }
 
@@ -235,11 +235,11 @@ public class BlockPos extends Vector3i {
    public static Iterable<BlockPos> method_6076(BlockPos var0, BlockPos var1) {
       return method_6075(
          Math.min(var0.getX(), var1.getX()),
-         Math.min(var0.method_12165(), var1.method_12165()),
-         Math.min(var0.method_12185(), var1.method_12185()),
+         Math.min(var0.getY(), var1.getY()),
+         Math.min(var0.getZ(), var1.getZ()),
          Math.max(var0.getX(), var1.getX()),
-         Math.max(var0.method_12165(), var1.method_12165()),
-         Math.max(var0.method_12185(), var1.method_12185())
+         Math.max(var0.getY(), var1.getY()),
+         Math.max(var0.getZ(), var1.getZ())
       );
    }
 

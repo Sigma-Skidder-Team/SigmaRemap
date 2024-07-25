@@ -103,9 +103,9 @@ public interface class_6163 {
             double var24 = var7 - var13;
             double var26 = var9 - var15;
             double var28 = var11 - var17;
-            int var30 = MathHelper.method_42793(var24);
-            int var31 = MathHelper.method_42793(var26);
-            int var32 = MathHelper.method_42793(var28);
+            int var30 = MathHelper.signum(var24);
+            int var31 = MathHelper.signum(var26);
+            int var32 = MathHelper.signum(var28);
             double var33 = var30 != 0 ? (double)var30 / var24 : Double.MAX_VALUE;
             double var35 = var31 != 0 ? (double)var31 / var26 : Double.MAX_VALUE;
             double var37 = var32 != 0 ? (double)var32 / var28 : Double.MAX_VALUE;

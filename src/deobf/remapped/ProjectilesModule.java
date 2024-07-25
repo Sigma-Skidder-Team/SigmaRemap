@@ -110,13 +110,13 @@ public class ProjectilesModule extends Module {
                   GL11.glRotatef(
                      45.0F,
                      this.field_19188.method_8982((float)var33.getX()),
-                     this.field_19188.method_8981((float)(-var33.method_12165())),
-                     this.field_19188.method_8983((float)var33.method_12185())
+                     this.field_19188.method_8981((float)(-var33.getY())),
+                     this.field_19188.method_8983((float)var33.getZ())
                   );
                   GL11.glRotatef(
                      90.0F,
-                     this.field_19186.method_8982((float)var33.method_12185()),
-                     this.field_19186.method_8981((float)var33.method_12165()),
+                     this.field_19186.method_8982((float)var33.getZ()),
+                     this.field_19186.method_8981((float)var33.getY()),
                      this.field_19186.method_8983((float)(-var33.getX()))
                   );
                   GL11.glTranslatef(-0.5F, 0.0F, -0.5F);

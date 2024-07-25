@@ -15,14 +15,14 @@ public class class_3627 extends class_4285<class_9253> {
       int var10 = MathHelper.ceil(((float)var5.field_47236 / 16.0F * 2.0F + 1.0F) / 2.0F);
       double var11 = (double)var4.getX() + Math.sin((double)var8) * (double)var9;
       double var13 = (double)var4.getX() - Math.sin((double)var8) * (double)var9;
-      double var15 = (double)var4.method_12185() + Math.cos((double)var8) * (double)var9;
-      double var17 = (double)var4.method_12185() - Math.cos((double)var8) * (double)var9;
+      double var15 = (double)var4.getZ() + Math.cos((double)var8) * (double)var9;
+      double var17 = (double)var4.getZ() - Math.cos((double)var8) * (double)var9;
       byte var19 = 2;
-      double var20 = (double)(var4.method_12165() + var3.nextInt(3) - 2);
-      double var22 = (double)(var4.method_12165() + var3.nextInt(3) - 2);
+      double var20 = (double)(var4.getY() + var3.nextInt(3) - 2);
+      double var22 = (double)(var4.getY() + var3.nextInt(3) - 2);
       int var24 = var4.getX() - MathHelper.ceil(var9) - var10;
-      int var25 = var4.method_12165() - 2 - var10;
-      int var26 = var4.method_12185() - MathHelper.ceil(var9) - var10;
+      int var25 = var4.getY() - 2 - var10;
+      int var26 = var4.getZ() - MathHelper.ceil(var9) - var10;
       int var27 = 2 * (MathHelper.ceil(var9) + var10);
       int var28 = 2 * (2 + var10);
 

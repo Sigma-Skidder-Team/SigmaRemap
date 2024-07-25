@@ -266,7 +266,7 @@ public final class class_3370 {
                         }
 
                         var2 = var32.method_19482(
-                           var13, var0.method_18918((double)(-var14.getX()), (double)(-var14.method_12165()), (double)(-var14.method_12185())), var2
+                           var13, var0.method_18918((double)(-var14.getX()), (double)(-var14.getY()), (double)(-var14.getZ())), var2
                         );
                         if (Math.abs(var2) < 1.0E-7) {
                            return 0.0;

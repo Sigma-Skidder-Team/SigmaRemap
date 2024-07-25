@@ -87,7 +87,7 @@ public class AutoCrystalModule extends PremiumModule {
                .stream()
                .max(
                   Comparator.comparing(
-                     var1x -> method_44033((double)var1x.getX(), (double)var1x.method_12165(), (double)var1x.method_12185(), this.field_48550)
+                     var1x -> method_44033((double)var1x.getX(), (double)var1x.getY(), (double)var1x.getZ(), this.field_48550)
                   )
                )
                .orElse(null);
@@ -111,8 +111,8 @@ public class AutoCrystalModule extends PremiumModule {
 
       for (BlockPos var6 : this.field_48551) {
          double var7 = (double)var6.getX() - client.gameRenderer.method_35949().method_41627().method_61();
-         double var9 = (double)var6.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
-         double var11 = (double)var6.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
+         double var9 = (double)var6.getY() - client.gameRenderer.method_35949().method_41627().method_60();
+         double var11 = (double)var6.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
          class_8194 var13 = new class_8194(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
          class_73.method_83(var13, var4);
       }
@@ -160,8 +160,8 @@ public class AutoCrystalModule extends PremiumModule {
    public List<BlockPos> method_44015(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {
       ArrayList var9 = new ArrayList();
       int var10 = var1.getX();
-      int var11 = var1.method_12165();
-      int var12 = var1.method_12185();
+      int var11 = var1.getY();
+      int var12 = var1.getZ();
 
       for (int var13 = var10 - (int)var2; (float)var13 <= (float)var10 + var2; var13++) {
          for (int var14 = var12 - (int)var2; (float)var14 <= (float)var12 + var2; var14++) {

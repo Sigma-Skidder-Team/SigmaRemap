@@ -68,8 +68,8 @@ public class class_1897 implements Packet<class_392> {
 
       for (BlockPos var8 : this.field_9690) {
          int var9 = var8.getX() - var4;
-         int var10 = var8.method_12165() - var5;
-         int var11 = var8.method_12185() - var6;
+         int var10 = var8.getY() - var5;
+         int var11 = var8.getZ() - var6;
          var1.writeByte(var9);
          var1.writeByte(var10);
          var1.writeByte(var11);

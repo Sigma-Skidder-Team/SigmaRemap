@@ -27,7 +27,7 @@ public class class_4601 {
             int var8 = SigmaMainClass.getInstance()
                .method_3309()
                .method_21975(
-                  new BlockPos(var7.getX(), this.field_22373.method_27353(class_3801.field_18592).method_9957(var5, var6) - 1, var7.method_12185()),
+                  new BlockPos(var7.getX(), this.field_22373.method_27353(class_3801.field_18592).method_9957(var5, var6) - 1, var7.getZ()),
                   true
                );
             this.field_22374.put((byte)(var8 >> 16 & 0xFF));

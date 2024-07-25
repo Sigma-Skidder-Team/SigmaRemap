@@ -73,8 +73,8 @@ public class class_449 extends class_1829 {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       var1.putInt("TreasurePosX", this.method_2163().getX());
-      var1.putInt("TreasurePosY", this.method_2163().method_12165());
-      var1.putInt("TreasurePosZ", this.method_2163().method_12185());
+      var1.putInt("TreasurePosY", this.method_2163().getY());
+      var1.putInt("TreasurePosZ", this.method_2163().getZ());
       var1.putBoolean("GotFish", this.method_2161());
       var1.putInt("Moistness", this.method_2159());
    }
@@ -277,7 +277,7 @@ public class class_449 extends class_1829 {
    }
 
    public static boolean method_2156(EntityType<class_449> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
-      if (var3.method_12165() > 45 && var3.method_12165() < var1.method_22552()) {
+      if (var3.getY() > 45 && var3.getY() < var1.method_22552()) {
          Optional var7 = var1.method_2754(var3);
          return (
                !Objects.equals(var7, Optional.<class_5621<class_6325>>of(class_8606.field_44104))

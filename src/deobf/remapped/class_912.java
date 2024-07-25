@@ -234,7 +234,7 @@ public class class_912 extends MonsterEntity implements class_6250 {
    private boolean method_3912(double var1, double var3, double var5) {
       class_2921 var9 = new class_2921(var1, var3, var5);
 
-      while (var9.method_12165() > 0 && !this.world.method_28262(var9).method_8362().method_24502()) {
+      while (var9.getY() > 0 && !this.world.method_28262(var9).method_8362().method_24502()) {
          var9.method_13368(Direction.field_802);
       }
 

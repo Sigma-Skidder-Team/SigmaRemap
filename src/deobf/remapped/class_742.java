@@ -28,7 +28,7 @@ public class class_742 extends class_2451 {
             }
 
             AbstractMinecartEntity var11 = AbstractMinecartEntity.method_4759(
-               var4, (double)var5.getX() + 0.5, (double)var5.method_12165() + 0.0625 + var9, (double)var5.method_12185() + 0.5, this.field_4043
+               var4, (double)var5.getX() + 0.5, (double)var5.getY() + 0.0625 + var9, (double)var5.getZ() + 0.5, this.field_4043
             );
             if (var7.method_28018()) {
                var11.method_37303(var7.method_28008());

@@ -38,7 +38,7 @@ public class class_9190 extends class_8715 {
             this.field_49471 *= 0.98F;
             BlockPos var3 = new BlockPos(this.field_49462, this.field_49473, this.field_49465);
             class_4774 var4 = this.field_49469.method_28258(var3);
-            if (var4.method_22005() == this.field_47008 && this.field_49473 < (double)((float)var3.method_12165() + var4.method_22008(this.field_49469, var3))) {
+            if (var4.method_22005() == this.field_47008 && this.field_49473 < (double)((float)var3.getY() + var4.method_22008(this.field_49469, var3))) {
                this.method_44948();
             }
          }

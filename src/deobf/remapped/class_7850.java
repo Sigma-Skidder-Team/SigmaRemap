@@ -22,9 +22,9 @@ public class class_7850 implements class_5561 {
 
    public static class_7850 method_35516(World var0, BlockPos var1, BlockPos var2, int var3, boolean var4) {
       int var7 = var1.getX() - var3 >> 4;
-      int var8 = var1.method_12185() - var3 >> 4;
+      int var8 = var1.getZ() - var3 >> 4;
       int var9 = var2.getX() + var3 >> 4;
-      int var10 = var2.method_12185() + var3 >> 4;
+      int var10 = var2.getZ() + var3 >> 4;
       class_2654[][] var11 = new class_2654[var9 - var7 + 1][var10 - var8 + 1];
 
       for (int var12 = var7; var12 <= var9; var12++) {
@@ -45,9 +45,9 @@ public class class_7850 implements class_5561 {
 
    public static boolean method_35521(BlockPos var0, BlockPos var1, int var2, int var3, class_2654[][] var4) {
       for (int var7 = var0.getX() >> 4; var7 <= var1.getX() >> 4; var7++) {
-         for (int var8 = var0.method_12185() >> 4; var8 <= var1.method_12185() >> 4; var8++) {
+         for (int var8 = var0.getZ() >> 4; var8 <= var1.getZ() >> 4; var8++) {
             class_2654 var9 = var4[var7 - var2][var8 - var3];
-            if (!var9.method_27368(var0.method_12165(), var1.method_12165())) {
+            if (!var9.method_27368(var0.getY(), var1.getY())) {
                return false;
             }
          }
@@ -63,34 +63,34 @@ public class class_7850 implements class_5561 {
       this.field_39774 = var4;
       this.field_39784 = var5;
       this.field_39776 = var6.getX() - var5.getX() + 1;
-      this.field_39781 = var6.method_12165() - var5.method_12165() + 1;
-      this.field_39780 = var6.method_12185() - var5.method_12185() + 1;
+      this.field_39781 = var6.getY() - var5.getY() + 1;
+      this.field_39780 = var6.getZ() - var5.getZ() + 1;
       this.field_39778 = null;
       this.field_39777 = null;
    }
 
    public final int method_35520(BlockPos var1) {
-      return this.method_35519(var1.getX(), var1.method_12165(), var1.method_12185());
+      return this.method_35519(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public int method_35519(int var1, int var2, int var3) {
       int var6 = var1 - this.field_39784.getX();
-      int var7 = var2 - this.field_39784.method_12165();
-      int var8 = var3 - this.field_39784.method_12185();
+      int var7 = var2 - this.field_39784.getY();
+      int var8 = var3 - this.field_39784.getZ();
       return var8 * this.field_39776 * this.field_39781 + var7 * this.field_39776 + var6;
    }
 
    @Override
    public class_2522 method_28262(BlockPos var1) {
       int var4 = (var1.getX() >> 4) - this.field_39775;
-      int var5 = (var1.method_12185() >> 4) - this.field_39783;
+      int var5 = (var1.getZ() >> 4) - this.field_39783;
       return this.field_39774[var4][var5].method_28262(var1);
    }
 
    @Override
    public class_4774 method_28258(BlockPos var1) {
       int var4 = (var1.getX() >> 4) - this.field_39775;
-      int var5 = (var1.method_12185() >> 4) - this.field_39783;
+      int var5 = (var1.getZ() >> 4) - this.field_39783;
       return this.field_39774[var4][var5].method_28258(var1);
    }
 
@@ -113,7 +113,7 @@ public class class_7850 implements class_5561 {
    @Nullable
    public class_3757 method_35518(BlockPos var1, class_1628 var2) {
       int var5 = (var1.getX() >> 4) - this.field_39775;
-      int var6 = (var1.method_12185() >> 4) - this.field_39783;
+      int var6 = (var1.getZ() >> 4) - this.field_39783;
       return this.field_39774[var5][var6].method_11988(var1, var2);
    }
 

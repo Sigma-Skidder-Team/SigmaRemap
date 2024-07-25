@@ -48,9 +48,9 @@ public class class_2018 {
 
    @Nullable
    private BlockPos method_9380(BlockPos var1) {
-      int var4 = Math.max(0, var1.method_12165() - 21);
+      int var4 = Math.max(0, var1.getY() - 21);
 
-      while (var1.method_12165() > var4 && method_9371(this.field_10229.method_28262(var1.method_6100()))) {
+      while (var1.getY() > var4 && method_9371(this.field_10229.method_28262(var1.method_6100()))) {
          var1 = var1.method_6100();
       }
 
@@ -160,7 +160,7 @@ public class class_2018 {
          var11 = 0.5;
       } else {
          float var13 = (float)var10.method_12174(var1) + var3.field_31199 / 2.0F;
-         var11 = MathHelper.clamp(MathHelper.method_42851(var2.method_6197(var1) - (double)var13, 0.0, var6), 0.0, 1.0);
+         var11 = MathHelper.clamp(MathHelper.func_233020_c_(var2.method_6197(var1) - (double)var13, 0.0, var6), 0.0, 1.0);
       }
 
       double var14;
@@ -168,7 +168,7 @@ public class class_2018 {
          var14 = 0.0;
       } else {
          class_9249 var16 = class_9249.field_47216;
-         var14 = MathHelper.clamp(MathHelper.method_42851(var2.method_6197(var16) - (double)var10.method_12174(var16), 0.0, var8), 0.0, 1.0);
+         var14 = MathHelper.clamp(MathHelper.func_233020_c_(var2.method_6197(var16) - (double)var10.method_12174(var16), 0.0, var8), 0.0, 1.0);
       }
 
       class_9249 var19 = var1 != class_9249.field_47215 ? class_9249.field_47215 : class_9249.field_47219;
@@ -191,7 +191,7 @@ public class class_2018 {
       double var23 = 0.5 + var3.method_62();
       boolean var25 = var12 == class_9249.field_47215;
       class_1343 var26 = new class_1343(
-         (double)var10.getX() + (!var25 ? var23 : var19), (double)var10.method_12165() + var21, (double)var10.method_12185() + (!var25 ? var19 : var23)
+         (double)var10.getX() + (!var25 ? var23 : var19), (double)var10.getY() + var21, (double)var10.getZ() + (!var25 ? var19 : var23)
       );
       return new class_9606(var26, var18, var6 + (float)var17, var7);
    }

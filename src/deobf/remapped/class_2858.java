@@ -120,8 +120,8 @@ public class class_2858<T> implements class_3065<T> {
          BlockPos var9 = var8.field_20034;
          if (var9.getX() >= var3.field_48996
             && var9.getX() < var3.field_48991
-            && var9.method_12185() >= var3.field_48992
-            && var9.method_12185() < var3.field_48994) {
+            && var9.getZ() >= var3.field_48992
+            && var9.getZ() < var3.field_48994) {
             if (var4) {
                var7.remove();
             }
@@ -159,8 +159,8 @@ public class class_2858<T> implements class_3065<T> {
          CompoundNBT var9 = new CompoundNBT();
          var9.method_25941("i", ((Identifier)var0.apply(var8.method_19096())).toString());
          var9.putInt("x", var8.field_20034.getX());
-         var9.putInt("y", var8.field_20034.method_12165());
-         var9.putInt("z", var8.field_20034.method_12185());
+         var9.putInt("y", var8.field_20034.getY());
+         var9.putInt("z", var8.field_20034.getZ());
          var9.putInt("t", (int)(var8.field_20036 - var2));
          var9.putInt("p", var8.field_20035.method_7693());
          var6.add(var9);

@@ -26,7 +26,7 @@ public class class_1427 extends class_4285<class_8541> {
 
          if (!var5.field_43718) {
             int var12 = var2.method_29826();
-            if (var9.method_12165() + var11 + 1 >= var12) {
+            if (var9.getY() + var11 + 1 >= var12) {
                return false;
             }
          }

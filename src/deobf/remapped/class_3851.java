@@ -54,7 +54,7 @@ public class class_3851 extends class_8108 {
 
    public void method_17876(class_9399 var1, float var2, float var3, float var4) {
       this.field_18786.field_8191 = 0.0F;
-      this.field_18786.field_8190 = (float) (Math.PI / 180.0) * -MathHelper.method_42837(var4, var1.prevRotationYaw, var1.rotationYaw);
+      this.field_18786.field_8190 = (float) (Math.PI / 180.0) * -MathHelper.interpolateAngle(var4, var1.prevRotationYaw, var1.rotationYaw);
       this.field_18786.field_8185 = 0.0F;
    }
 

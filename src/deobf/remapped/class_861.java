@@ -10,7 +10,7 @@ public class class_861 extends class_8131 {
       super(class_2746.field_13438, 0);
       this.field_4464 = var2;
       BlockPos var8 = (BlockPos)class_71.method_77().get(var2);
-      this.field_41648 = var3.method_6104(var8.getX(), var8.method_12165() - var5, var8.method_12185());
+      this.field_41648 = var3.method_6104(var8.getX(), var8.getY() - var5, var8.getZ());
       this.field_4465 = var4;
       this.method_3732(var1);
    }
@@ -58,8 +58,8 @@ public class class_861 extends class_8131 {
          .method_39037((BlockPos)class_71.method_76().get(this.field_4464))
          .method_39048(class_2010.field_10194);
       BlockPos var11 = (BlockPos)class_71.method_77().get(this.field_4464);
-      BlockPos var12 = this.field_41648.method_6105(class_6561.method_29968(var10, new BlockPos(3 - var11.getX(), 0, 0 - var11.method_12185())));
-      int var13 = var1.method_22562(class_3801.field_18598, var12.getX(), var12.method_12185());
+      BlockPos var12 = this.field_41648.method_6105(class_6561.method_29968(var10, new BlockPos(3 - var11.getX(), 0, 0 - var11.getZ())));
+      int var13 = var1.method_22562(class_3801.field_18598, var12.getX(), var12.getZ());
       BlockPos var14 = this.field_41648;
       this.field_41648 = this.field_41648.method_6104(0, var13 - 90 - 1, 0);
       boolean var15 = super.method_32501(var1, var2, var3, var4, var5, var6, var7);

@@ -45,7 +45,7 @@ public class class_2087 extends class_4663 implements AutoCloseable {
       BlockPos var4 = var1.method_6072();
       this.method_9763(
          var1.getX() >> 4,
-         var1.method_12185() >> 4,
+         var1.getZ() >> 4,
          class_6380.field_32590,
          Util.method_44687(() -> super.method_21566(var4), () -> "checkBlock " + var4)
       );

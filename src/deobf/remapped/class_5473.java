@@ -8,7 +8,7 @@ public class class_5473 extends class_7060 {
    public class_5473(BlockPos var1) {
       super(class_2746.field_13416, 0);
       this.field_36435 = new class_9616(
-         var1.getX(), var1.method_12165(), var1.method_12185(), var1.getX(), var1.method_12165(), var1.method_12185()
+         var1.getX(), var1.getY(), var1.getZ(), var1.getX(), var1.getY(), var1.getZ()
       );
    }
 
@@ -25,7 +25,7 @@ public class class_5473 extends class_7060 {
       int var10 = var1.method_22562(class_3801.field_18591, this.field_36435.field_48996, this.field_36435.field_48992);
       class_2921 var11 = new class_2921(this.field_36435.field_48996, var10, this.field_36435.field_48992);
 
-      while (var11.method_12165() > 0) {
+      while (var11.getY() > 0) {
          class_2522 var12 = var1.method_28262(var11);
          class_2522 var13 = var1.method_28262(var11.method_6100());
          if (var13 == class_4783.field_23459.method_29260()
@@ -50,7 +50,7 @@ public class class_5473 extends class_7060 {
             }
 
             this.field_36435 = new class_9616(
-               var11.getX(), var11.method_12165(), var11.method_12185(), var11.getX(), var11.method_12165(), var11.method_12185()
+               var11.getX(), var11.getY(), var11.getZ(), var11.getX(), var11.getY(), var11.getZ()
             );
             return this.method_32526(var1, var5, var4, var11, class_5931.field_30082, (class_2522)null);
          }

@@ -23,8 +23,8 @@ public class Auto32KModule extends Module {
       for (BlockPos var4 : class_7494.method_34085(class_7494.method_34110(client.playerController.method_42146()))) {
          if (!(class_7494.method_34108(client.thePlayer, var4) < 2.0F)
             && class_7494.method_34116(client.thePlayer, var4)
-            && (double)var4.method_12165() >= client.thePlayer.method_37309() - 2.0
-            && (double)var4.method_12165() <= client.thePlayer.method_37309() - 1.0
+            && (double)var4.getY() >= client.thePlayer.method_37309() - 2.0
+            && (double)var4.getY() <= client.thePlayer.method_37309() - 1.0
             && this.method_40074(var4)) {
             this.field_44720 = var4;
             break;
@@ -112,8 +112,8 @@ public class Auto32KModule extends Module {
             GL11.glAlphaFunc(516, 0.0F);
             BlockPos var4 = this.field_44720;
             double var5 = (double)var4.getX() - client.gameRenderer.method_35949().method_41627().method_61();
-            double var7 = (double)var4.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
-            double var9 = (double)var4.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
+            double var7 = (double)var4.getY() - client.gameRenderer.method_35949().method_41627().method_60();
+            double var9 = (double)var4.getZ() - client.gameRenderer.method_35949().method_41627().method_62();
             class_73.method_83(
                new class_8194(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), class_314.method_1444(class_1255.field_6922.field_6917, 0.3F)
             );

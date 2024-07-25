@@ -22,14 +22,14 @@ public class class_8890 extends class_8543 {
       class_4190 var7 = this.method_10769(var1, var2, var3, class_214.method_928());
       class_1343 var8 = var7.method_19483().method_18926();
       double var9 = (double)var3.getX() + var8.field_7336;
-      double var11 = (double)var3.method_12185() + var8.field_7334;
+      double var11 = (double)var3.getZ() + var8.field_7334;
 
       for (int var13 = 0; var13 < 3; var13++) {
          if (var4.nextBoolean()) {
             var2.method_43361(
                class_3090.field_15376,
                var9 + var4.nextDouble() / 5.0,
-               (double)var3.method_12165() + (0.5 - var4.nextDouble()),
+               (double)var3.getY() + (0.5 - var4.nextDouble()),
                var11 + var4.nextDouble() / 5.0,
                0.0,
                0.0,

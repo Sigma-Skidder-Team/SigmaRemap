@@ -223,11 +223,11 @@ public class class_6971 implements Packet<class_1243> {
       var1.method_37750(this.field_35832);
       var1.method_37760(this.field_35825);
       var1.writeByte(this.field_35820.getX());
-      var1.writeByte(this.field_35820.method_12165());
-      var1.writeByte(this.field_35820.method_12185());
+      var1.writeByte(this.field_35820.getY());
+      var1.writeByte(this.field_35820.getZ());
       var1.writeByte(this.field_35829.getX());
-      var1.writeByte(this.field_35829.method_12165());
-      var1.writeByte(this.field_35829.method_12185());
+      var1.writeByte(this.field_35829.getY());
+      var1.writeByte(this.field_35829.getZ());
       var1.method_37750(this.field_35824);
       var1.method_37750(this.field_35831);
       var1.method_37760(this.field_35828);

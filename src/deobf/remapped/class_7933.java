@@ -354,7 +354,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    public boolean method_31502(PlayerEntity var1) {
       return this.field_18364.method_28260(this.field_18358) == this
          ? var1.method_37273(
-               (double)this.field_18358.getX() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
+               (double)this.field_18358.getX() + 0.5, (double)this.field_18358.getY() + 0.5, (double)this.field_18358.getZ() + 0.5
             )
             <= 64.0
          : false;

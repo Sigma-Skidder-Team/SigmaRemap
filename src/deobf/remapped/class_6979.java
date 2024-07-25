@@ -15,7 +15,7 @@ public class class_6979 extends Vector3i {
    }
 
    public static class_6979 method_31921(BlockPos var0) {
-      return new class_6979(method_31915(var0.getX()), method_31915(var0.method_12165()), method_31915(var0.method_12185()));
+      return new class_6979(method_31915(var0.getX()), method_31915(var0.getY()), method_31915(var0.getZ()));
    }
 
    public static class_6979 method_31922(class_2034 var0, int var1) {
@@ -52,8 +52,8 @@ public class class_6979 extends Vector3i {
 
    public static short method_31909(BlockPos var0) {
       int var3 = method_31913(var0.getX());
-      int var4 = method_31913(var0.method_12165());
-      int var5 = method_31913(var0.method_12185());
+      int var4 = method_31913(var0.getY());
+      int var5 = method_31913(var0.getZ());
       return (short)(var3 << 8 | var5 << 4 | var4 << 0);
    }
 
@@ -106,11 +106,11 @@ public class class_6979 extends Vector3i {
    }
 
    public int method_31918() {
-      return this.method_12165();
+      return this.getY();
    }
 
    public int method_31900() {
-      return this.method_12185();
+      return this.getZ();
    }
 
    public int method_31898() {

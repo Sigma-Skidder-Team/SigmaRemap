@@ -260,8 +260,8 @@ public class class_9155 implements class_8773 {
       double var7 = var1.field_7333 - var4.field_7333;
       double var9 = var1.field_7334 - var4.field_7334;
       double var11 = (double) MathHelper.sqrt(var5 * var5 + var9 * var9);
-      float var13 = MathHelper.wrapDegrees((float)(-(MathHelper.method_42821(var7, var11) * 180.0F / (float)Math.PI)));
-      float var14 = MathHelper.wrapDegrees((float)(MathHelper.method_42821(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
+      float var13 = MathHelper.wrapDegrees((float)(-(MathHelper.atan2(var7, var11) * 180.0F / (float)Math.PI)));
+      float var14 = MathHelper.wrapDegrees((float)(MathHelper.atan2(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
       return this.method_42183(new class_4895(var13, var14));
    }
 

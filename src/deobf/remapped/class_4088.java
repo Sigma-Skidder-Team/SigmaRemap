@@ -26,7 +26,7 @@ public abstract class class_4088 {
    public static boolean method_18872(class_9210 var0, PlayerEntity var1, class_6414 var2) {
       return var0.<Boolean>method_42532(
          (var2x, var3) -> var2x.method_28262(var3).method_8350(var2)
-               ? var1.method_37273((double)var3.getX() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5) <= 64.0
+               ? var1.method_37273((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5) <= 64.0
                : false,
          true
       );

@@ -72,8 +72,8 @@ public class class_5928 extends class_8218<class_9180> implements class_2593 {
          int var8 = var4.nextInt(2) * 2 - 1;
          int var9 = var4.nextInt(2) * 2 - 1;
          double var10 = (double)var3.getX() + 0.5 + 0.25 * (double)var8;
-         double var12 = (double)((float)var3.method_12165() + var4.nextFloat());
-         double var14 = (double)var3.method_12185() + 0.5 + 0.25 * (double)var9;
+         double var12 = (double)((float)var3.getY() + var4.nextFloat());
+         double var14 = (double)var3.getZ() + 0.5 + 0.25 * (double)var9;
          double var16 = (double)(var4.nextFloat() * (float)var8);
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.125;
          double var20 = (double)(var4.nextFloat() * (float)var9);

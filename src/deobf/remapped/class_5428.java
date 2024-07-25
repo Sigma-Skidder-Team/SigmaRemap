@@ -26,7 +26,7 @@ public class class_5428 implements Comparator<class_2034> {
       int var4 = var1.field_10328 - this.field_27652;
       int var5 = var1.field_10327 - this.field_27653;
       int var6 = var4 * var4 + var5 * var5;
-      double var7 = MathHelper.method_42821((double)var5, (double)var4);
+      double var7 = MathHelper.atan2((double)var5, (double)var4);
       double var9 = Math.abs(var7 - this.field_27651);
       if (var9 > Math.PI) {
          var9 = (Math.PI * 2) - var9;

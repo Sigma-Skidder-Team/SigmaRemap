@@ -9,7 +9,7 @@ public class class_7243 extends class_4285<class_1941> {
    }
 
    public boolean method_33140(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
-      if (var4.method_12165() > var1.method_22552() - 1) {
+      if (var4.getY() > var1.method_22552() - 1) {
          return false;
       } else if (!var1.method_28262(var4).method_8350(class_4783.field_23900) && !var1.method_28262(var4.method_6100()).method_8350(class_4783.field_23900)) {
          return false;

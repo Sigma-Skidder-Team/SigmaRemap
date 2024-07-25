@@ -133,11 +133,11 @@ public class class_2380 extends class_6788 {
       double var4 = 0.2;
       return new Box(
          (double)var1.getX() + 0.2,
-         (double)var1.method_12165(),
-         (double)var1.method_12185() + 0.2,
+         (double)var1.getY(),
+         (double)var1.getZ() + 0.2,
          (double)(var1.getX() + 1) - 0.2,
-         (double)(var1.method_12165() + 1) - 0.2,
-         (double)(var1.method_12185() + 1) - 0.2
+         (double)(var1.getY() + 1) - 0.2,
+         (double)(var1.getZ() + 1) - 0.2
       );
    }
 

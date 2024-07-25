@@ -150,7 +150,7 @@ public enum class_2966 {
          case field_14565:
             return (float)Math.atan((double)method_13561(var1, 0));
          case field_14553:
-            return (float) MathHelper.method_42821((double)method_13561(var1, 0), (double)method_13561(var1, 1));
+            return (float) MathHelper.atan2((double)method_13561(var1, 0), (double)method_13561(var1, 1));
          case field_14579:
             return MathUtils.method_7798(method_13561(var1, 0));
          case field_14584:

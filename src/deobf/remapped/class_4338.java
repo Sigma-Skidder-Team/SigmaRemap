@@ -168,8 +168,8 @@ public final class class_4338 {
    public static CompoundNBT method_20190(BlockPos var0) {
       CompoundNBT var3 = new CompoundNBT();
       var3.putInt("X", var0.getX());
-      var3.putInt("Y", var0.method_12165());
-      var3.putInt("Z", var0.method_12185());
+      var3.putInt("Y", var0.getY());
+      var3.putInt("Z", var0.getZ());
       return var3;
    }
 

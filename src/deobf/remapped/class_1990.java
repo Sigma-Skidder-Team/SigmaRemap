@@ -201,15 +201,15 @@ public class class_1990 extends class_3266 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public static boolean method_9171(class_2522 var0, World var1, BlockPos var2, Direction var3, boolean var4, Direction var5) {
-      if (var2.method_12165() < 0 || var2.method_12165() > var1.method_28261() - 1 || !var1.method_6673().method_9813(var2)) {
+      if (var2.getY() < 0 || var2.getY() > var1.method_28261() - 1 || !var1.method_6673().method_9813(var2)) {
          return false;
       } else if (var0.method_8345()) {
          return true;
       } else if (var0.method_8350(class_4783.field_23881) || var0.method_8350(class_4783.field_23222) || var0.method_8350(class_4783.field_23807)) {
          return false;
-      } else if (var3 == Direction.field_802 && var2.method_12165() == 0) {
+      } else if (var3 == Direction.field_802 && var2.getY() == 0) {
          return false;
-      } else if (var3 == Direction.field_817 && var2.method_12165() == var1.method_28261() - 1) {
+      } else if (var3 == Direction.field_817 && var2.getY() == var1.method_28261() - 1) {
          return false;
       } else {
          if (!var0.method_8350(class_4783.field_23649) && !var0.method_8350(class_4783.field_23861)) {

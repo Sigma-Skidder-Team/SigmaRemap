@@ -42,17 +42,17 @@ public class class_9284 extends class_4171<AbstractClientPlayerEntity, class_316
                var25 = -5.0F;
             }
 
-            float var28 = MathHelper.method_42795(var7, var4.field_3857, var4.field_3859);
-            var25 += MathHelper.sin(MathHelper.method_42795(var7, var4.field_41705, var4.field_41695) * 6.0F) * 32.0F * var28;
+            float var28 = MathHelper.lerp(var7, var4.field_3857, var4.field_3859);
+            var25 += MathHelper.sin(MathHelper.lerp(var7, var4.field_41705, var4.field_41695) * 6.0F) * 32.0F * var28;
             if (var4.method_37382()) {
                var25 += 25.0F;
             }
 
             float var29 = Config.method_14403() * 20.0F;
             var29 = Config.method_14262(var29, 0.02F, 1.0F);
-            var4.field_49393 = MathHelper.method_42795(var29, var4.field_49393, 6.0F + var26 / 2.0F + var25);
-            var4.field_49386 = MathHelper.method_42795(var29, var4.field_49386, var27 / 2.0F);
-            var4.field_49381 = MathHelper.method_42795(var29, var4.field_49381, 180.0F - var27 / 2.0F);
+            var4.field_49393 = MathHelper.lerp(var29, var4.field_49393, 6.0F + var26 / 2.0F + var25);
+            var4.field_49386 = MathHelper.lerp(var29, var4.field_49386, var27 / 2.0F);
+            var4.field_49381 = MathHelper.lerp(var29, var4.field_49381, 180.0F - var27 / 2.0F);
             var1.method_36060(class_2426.field_12080.method_11074(var4.field_49393));
             var1.method_36060(class_2426.field_12076.method_11074(var4.field_49386));
             var1.method_36060(class_2426.field_12074.method_11074(var4.field_49381));

@@ -259,8 +259,8 @@ public class NameTagsModule extends Module {
       }
 
       float var8 = (float)((double)var1.getX() - client.gameRenderer.method_35949().method_41627().method_61() + 0.5);
-      float var9 = (float)((double)var1.method_12165() - client.gameRenderer.method_35949().method_41627().method_60() + 1.0);
-      float var10 = (float)((double)var1.method_12185() - client.gameRenderer.method_35949().method_41627().method_62() + 0.5);
+      float var9 = (float)((double)var1.getY() - client.gameRenderer.method_35949().method_41627().method_60() + 1.0);
+      float var10 = (float)((double)var1.getZ() - client.gameRenderer.method_35949().method_41627().method_62() + 0.5);
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);

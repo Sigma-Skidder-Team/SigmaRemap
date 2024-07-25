@@ -385,7 +385,7 @@ public class class_8248 extends ByteBuf {
       float var7 = this.readFloat();
       boolean var8 = this.readBoolean();
       return new class_9529(
-         new class_1343((double)var3.getX() + (double)var5, (double)var3.method_12165() + (double)var6, (double)var3.method_12185() + (double)var7),
+         new class_1343((double)var3.getX() + (double)var5, (double)var3.getY() + (double)var6, (double)var3.getZ() + (double)var7),
          var4,
          var3,
          var8
@@ -398,8 +398,8 @@ public class class_8248 extends ByteBuf {
       this.method_37750(var1.method_43956());
       class_1343 var5 = var1.method_33993();
       this.writeFloat((float)(var5.field_7336 - (double)var4.getX()));
-      this.writeFloat((float)(var5.field_7333 - (double)var4.method_12165()));
-      this.writeFloat((float)(var5.field_7334 - (double)var4.method_12185()));
+      this.writeFloat((float)(var5.field_7333 - (double)var4.getY()));
+      this.writeFloat((float)(var5.field_7334 - (double)var4.getZ()));
       this.writeBoolean(var1.method_43953());
    }
 

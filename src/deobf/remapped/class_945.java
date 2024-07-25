@@ -41,11 +41,11 @@ public class class_945 extends class_3757 {
       var1.method_25941("author", this.field_4827);
       var1.method_25941("metadata", this.field_4838);
       var1.putInt("posX", this.field_4836.getX());
-      var1.putInt("posY", this.field_4836.method_12165());
-      var1.putInt("posZ", this.field_4836.method_12185());
+      var1.putInt("posY", this.field_4836.getY());
+      var1.putInt("posZ", this.field_4836.getZ());
       var1.putInt("sizeX", this.field_4833.getX());
-      var1.putInt("sizeY", this.field_4833.method_12165());
-      var1.putInt("sizeZ", this.field_4833.method_12185());
+      var1.putInt("sizeY", this.field_4833.getY());
+      var1.putInt("sizeZ", this.field_4833.getZ());
       var1.method_25941("rotation", this.field_4831.toString());
       var1.method_25941("mirror", this.field_4840.toString());
       var1.method_25941("mode", this.field_4830.toString());
@@ -260,15 +260,15 @@ public class class_945 extends class_3757 {
       if (this.field_4830 == class_589.field_3417) {
          BlockPos var3 = this.method_17399();
          byte var4 = 80;
-         BlockPos var5 = new BlockPos(var3.getX() - 80, 0, var3.method_12185() - 80);
-         BlockPos var6 = new BlockPos(var3.getX() + 80, 255, var3.method_12185() + 80);
+         BlockPos var5 = new BlockPos(var3.getX() - 80, 0, var3.getZ() - 80);
+         BlockPos var6 = new BlockPos(var3.getX() + 80, 255, var3.getZ() + 80);
          List var7 = this.method_4093(var5, var6);
          List var8 = this.method_4105(var7);
          if (var8.size() >= 1) {
             class_9616 var9 = this.method_4104(var3, var8);
             if (var9.field_48991 - var9.field_48996 > 1 && var9.field_48993 - var9.field_48995 > 1 && var9.field_48994 - var9.field_48992 > 1) {
                this.field_4836 = new BlockPos(
-                  var9.field_48996 - var3.getX() + 1, var9.field_48995 - var3.method_12165() + 1, var9.field_48992 - var3.method_12185() + 1
+                  var9.field_48996 - var3.getX() + 1, var9.field_48995 - var3.getY() + 1, var9.field_48992 - var3.getZ() + 1
                );
                this.field_4833 = new BlockPos(
                   var9.field_48991 - var9.field_48996 - 1, var9.field_48993 - var9.field_48995 - 1, var9.field_48994 - var9.field_48992 - 1
@@ -328,20 +328,20 @@ public class class_945 extends class_3757 {
             var5.field_48996 = var8.getX();
          }
 
-         if (var8.method_12165() >= var5.field_48995) {
-            if (var8.method_12165() > var5.field_48993) {
-               var5.field_48993 = var8.method_12165();
+         if (var8.getY() >= var5.field_48995) {
+            if (var8.getY() > var5.field_48993) {
+               var5.field_48993 = var8.getY();
             }
          } else {
-            var5.field_48995 = var8.method_12165();
+            var5.field_48995 = var8.getY();
          }
 
-         if (var8.method_12185() >= var5.field_48992) {
-            if (var8.method_12185() > var5.field_48994) {
-               var5.field_48994 = var8.method_12185();
+         if (var8.getZ() >= var5.field_48992) {
+            if (var8.getZ() > var5.field_48994) {
+               var5.field_48994 = var8.getZ();
             }
          } else {
-            var5.field_48992 = var8.method_12185();
+            var5.field_48992 = var8.getZ();
          }
       }
 

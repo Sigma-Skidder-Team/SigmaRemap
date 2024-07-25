@@ -387,7 +387,7 @@ public abstract class class_8704 {
             var18 = var6;
          } else {
             class_1343 var17 = class_1343.method_6200(var5).method_6194(var16).method_6213();
-            var18 = (float) MathHelper.wrapDegrees(MathHelper.method_42821(var17.field_7334, var17.field_7336) * 180.0F / (float)Math.PI - 90.0);
+            var18 = (float) MathHelper.wrapDegrees(MathHelper.atan2(var17.field_7334, var17.field_7336) * 180.0F / (float)Math.PI - 90.0);
          }
 
          var12.method_37144(var16.field_7336, var16.field_7333, var16.field_7334, var18, 0.0F);
@@ -428,7 +428,7 @@ public abstract class class_8704 {
          var12.field_47794
             .method_4156(
                new class_3740(
-                  SoundEvents.field_2464, class_562.field_3322, (double)var5.getX(), (double)var5.method_12165(), (double)var5.method_12185(), 1.0F, 1.0F
+                  SoundEvents.field_2464, class_562.field_3322, (double)var5.getX(), (double)var5.getY(), (double)var5.getZ(), 1.0F, 1.0F
                )
             );
       }

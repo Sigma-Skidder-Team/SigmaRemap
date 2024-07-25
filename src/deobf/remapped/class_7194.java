@@ -18,8 +18,8 @@ public class class_7194 {
 
    public static long method_32944(BlockPos var0) {
       return ((long)var0.getX() & field_36995) << field_36986
-         | ((long)var0.method_12165() & field_36993) << field_36983
-         | ((long)var0.method_12185() & field_36994) << 0;
+         | ((long)var0.getY() & field_36993) << field_36983
+         | ((long)var0.getZ() & field_36994) << 0;
    }
 
    public static void method_32939(float var0, float var1, float var2, float var3) {

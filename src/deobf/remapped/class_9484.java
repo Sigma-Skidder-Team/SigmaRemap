@@ -44,10 +44,10 @@ public class class_9484 extends class_4285<class_4069> {
          new BlockPos(var4.method_42371() - var7, 0, var4.method_42373() - var7),
          new BlockPos(var4.method_42371() + var7, var4.method_42370() + 10, var4.method_42373() + var7)
       )) {
-         if (var9.method_12178((double)var4.method_42371(), (double)var9.method_12165(), (double)var4.method_42373(), false) <= (double)(var7 * var7 + 1)
-            && var9.method_12165() < var4.method_42370()) {
+         if (var9.method_12178((double)var4.method_42371(), (double)var9.getY(), (double)var4.method_42373(), false) <= (double)(var7 * var7 + 1)
+            && var9.getY() < var4.method_42370()) {
             this.method_19906(var1, var9, class_4783.field_23881.method_29260());
-         } else if (var9.method_12165() > 65) {
+         } else if (var9.getY() > 65) {
             this.method_19906(var1, var9, class_4783.field_23184.method_29260());
          }
       }

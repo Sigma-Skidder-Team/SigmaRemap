@@ -28,7 +28,7 @@ public class class_5198 extends class_4314 {
          && var4.method_37148()
          && class_3370.method_15537(
             class_3370.method_15523(
-               var4.getBoundingBox().method_18918((double)(-var3.getX()), (double)(-var3.method_12165()), (double)(-var3.method_12185()))
+               var4.getBoundingBox().method_18918((double)(-var3.getX()), (double)(-var3.getY()), (double)(-var3.getZ()))
             ),
             var1.method_8334(var2, var3),
             class_8529.field_43655
@@ -46,8 +46,8 @@ public class class_5198 extends class_4314 {
    @Override
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.getX() + var4.nextDouble();
-      double var9 = (double)var3.method_12165() + 0.8;
-      double var11 = (double)var3.method_12185() + var4.nextDouble();
+      double var9 = (double)var3.getY() + 0.8;
+      double var11 = (double)var3.getZ() + var4.nextDouble();
       var2.method_43361(class_3090.field_15376, var7, var9, var11, 0.0, 0.0, 0.0);
    }
 

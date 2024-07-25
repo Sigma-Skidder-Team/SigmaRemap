@@ -48,7 +48,7 @@ public class class_1489 extends class_9821<class_4402> {
       int var7 = Math.floorDiv(var3, 16) + 1;
       return class_2034.method_9542(new class_2034(var2), var7).<class_8009>flatMap(var3x -> this.method_6872(var1, var3x, var4)).filter(var2x -> {
          BlockPos var5 = var2x.method_36337();
-         return Math.abs(var5.getX() - var2.getX()) <= var3 && Math.abs(var5.method_12185() - var2.method_12185()) <= var3;
+         return Math.abs(var5.getX() - var2.getX()) <= var3 && Math.abs(var5.getZ() - var2.getZ()) <= var3;
       });
    }
 
@@ -159,7 +159,7 @@ public class class_1489 extends class_9821<class_4402> {
          .forEach(
             var2x -> {
                class_2522 var5 = var1.method_5999(
-                  class_6979.method_31913(var2x.getX()), class_6979.method_31913(var2x.method_12165()), class_6979.method_31913(var2x.method_12185())
+                  class_6979.method_31913(var2x.getX()), class_6979.method_31913(var2x.getY()), class_6979.method_31913(var2x.getZ())
                );
                class_236.method_1004(var5).ifPresent(var2xx -> var3.accept(var2x, var2xx));
             }

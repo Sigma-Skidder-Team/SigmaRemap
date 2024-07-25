@@ -15,8 +15,8 @@ public class class_1298 extends class_6788 {
          return false;
       } else {
          int var8 = var2.getX();
-         int var9 = var2.method_12165();
-         int var10 = var2.method_12185();
+         int var9 = var2.getY();
+         int var10 = var2.getZ();
          boolean var11 = true;
          class_3665 var12 = var3.<class_3665>method_10313(field_7159);
          switch (var12) {

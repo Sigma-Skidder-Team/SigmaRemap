@@ -46,8 +46,8 @@ public class class_968<T> implements class_3065<T> {
          CompoundNBT var6 = new CompoundNBT();
          var6.method_25941("i", this.field_4961.apply((T)class_723.method_3280(var5)).toString());
          var6.putInt("x", var5.field_3928.getX());
-         var6.putInt("y", var5.field_3928.method_12165());
-         var6.putInt("z", var5.field_3928.method_12185());
+         var6.putInt("y", var5.field_3928.getY());
+         var6.putInt("z", var5.field_3928.getZ());
          var6.putInt("t", var5.field_3930);
          var6.putInt("p", var5.field_3932.method_7693());
          var3.add(var6);

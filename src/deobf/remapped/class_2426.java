@@ -112,7 +112,7 @@ public final class class_2426 {
    public boolean method_11066() {
       float var3 = this.field_12075 * this.field_12075 + this.field_12078 * this.field_12078 + this.field_12079 * this.field_12079;
       if (!((double)var3 < 1.0E-5)) {
-         float var4 = MathHelper.method_42836(var3);
+         float var4 = MathHelper.fastInvSqrt(var3);
          this.field_12075 *= var4;
          this.field_12078 *= var4;
          this.field_12079 *= var4;

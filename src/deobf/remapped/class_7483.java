@@ -52,8 +52,8 @@ public class class_7483 extends Entity implements class_3713 {
 
    public void method_34037(BlockPos var1) {
       double var4 = (double)var1.getX();
-      int var6 = var1.method_12165();
-      double var7 = (double)var1.method_12185();
+      int var6 = var1.getY();
+      double var7 = (double)var1.getZ();
       double var9 = var4 - this.getPosX();
       double var11 = var7 - this.getPosZ();
       float var13 = MathHelper.sqrt(var9 * var9 + var11 * var11);
@@ -76,8 +76,8 @@ public class class_7483 extends Entity implements class_3713 {
       this.method_37214(var1, var3, var5);
       if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
          float var9 = MathHelper.sqrt(var1 * var1 + var5 * var5);
-         this.rotationYaw = (float)(MathHelper.method_42821(var1, var5) * 180.0F / (float)Math.PI);
-         this.rotationPitch = (float)(MathHelper.method_42821(var3, (double)var9) * 180.0F / (float)Math.PI);
+         this.rotationYaw = (float)(MathHelper.atan2(var1, var5) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.atan2(var3, (double)var9) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
          this.field_41762 = this.rotationPitch;
       }
@@ -91,13 +91,13 @@ public class class_7483 extends Entity implements class_3713 {
       double var6 = this.method_37309() + var3.field_7333;
       double var8 = this.getPosZ() + var3.field_7334;
       float var10 = MathHelper.sqrt(method_37266(var3));
-      this.rotationPitch = class_5783.method_26168(this.field_41762, (float)(MathHelper.method_42821(var3.field_7333, (double)var10) * 180.0F / (float)Math.PI));
-      this.rotationYaw = class_5783.method_26168(this.prevRotationYaw, (float)(MathHelper.method_42821(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
+      this.rotationPitch = class_5783.method_26168(this.field_41762, (float)(MathHelper.atan2(var3.field_7333, (double)var10) * 180.0F / (float)Math.PI));
+      this.rotationYaw = class_5783.method_26168(this.prevRotationYaw, (float)(MathHelper.atan2(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
       if (!this.world.field_33055) {
          double var12 = this.field_38206 - var4;
          double var14 = this.field_38205 - var8;
          float var16 = (float)Math.sqrt(var12 * var12 + var14 * var14);
-         float var17 = (float) MathHelper.method_42821(var14, var12);
+         float var17 = (float) MathHelper.atan2(var14, var12);
          double var18 = MathHelper.lerp(0.0025, (double)var10, (double)var16);
          double var20 = var3.field_7333;
          if (var16 < 1.0F) {

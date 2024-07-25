@@ -262,7 +262,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    public float method_22199(float var1) {
-      return MathHelper.method_42795(var1, this.field_24078, this.field_24081);
+      return MathHelper.lerp(var1, this.field_24078, this.field_24081);
    }
 
    @Nullable

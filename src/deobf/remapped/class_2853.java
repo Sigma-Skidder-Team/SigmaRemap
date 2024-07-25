@@ -21,8 +21,8 @@ public class class_2853 extends class_8497 {
             class_91 var12 = new class_91(
                var2,
                (double)var3.getX() + 0.5 + (double)var11.method_1041() * 0.65,
-               (double)var3.method_12165() + 0.1,
-               (double)var3.method_12185() + 0.5 + (double)var11.method_1034() * 0.65,
+               (double)var3.getY() + 0.1,
+               (double)var3.getZ() + 0.5 + (double)var11.method_1034() * 0.65,
                new ItemStack(class_4897.field_24480, 4)
             );
             var12.method_37214(

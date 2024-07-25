@@ -23,7 +23,7 @@ public class class_859 {
    }
 
    public class_6325 method_3726(BlockPos var1) {
-      return this.field_4463.method_28268(this.field_4461, var1.getX(), var1.method_12165(), var1.method_12185(), this.field_4462);
+      return this.field_4463.method_28268(this.field_4461, var1.getX(), var1.getY(), var1.getZ(), this.field_4462);
    }
 
    public class_6325 method_3724(double var1, double var3, double var5) {
@@ -35,8 +35,8 @@ public class class_859 {
 
    public class_6325 method_3725(BlockPos var1) {
       int var4 = var1.getX() >> 2;
-      int var5 = var1.method_12165() >> 2;
-      int var6 = var1.method_12185() >> 2;
+      int var5 = var1.getY() >> 2;
+      int var6 = var1.getZ() >> 2;
       return this.method_3727(var4, var5, var6);
    }
 

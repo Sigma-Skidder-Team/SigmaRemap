@@ -23,8 +23,8 @@ public class class_4032 extends class_6414 {
                var2.method_43361(
                   class_3090.field_15369,
                   (double)var3.getX() + var10,
-                  (double)var3.method_12165() + var12,
-                  (double)var3.method_12185() + var14,
+                  (double)var3.getY() + var12,
+                  (double)var3.getZ() + var14,
                   0.0,
                   0.0,
                   0.0

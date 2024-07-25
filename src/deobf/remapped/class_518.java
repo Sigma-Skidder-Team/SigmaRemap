@@ -27,8 +27,8 @@ public class class_518 extends class_3599 {
             BlockPos var3 = this.method_2534(this.field_3169.world, this.field_3169, 5, 4);
             if (var3 != null) {
                this.field_3166 = (double)var3.getX();
-               this.field_3172 = (double)var3.method_12165();
-               this.field_3170 = (double)var3.method_12185();
+               this.field_3172 = (double)var3.getY();
+               this.field_3170 = (double)var3.getZ();
                return true;
             }
          }
@@ -73,8 +73,8 @@ public class class_518 extends class_3599 {
    public BlockPos method_2534(class_6163 var1, Entity var2, int var3, int var4) {
       BlockPos var7 = var2.method_37075();
       int var8 = var7.getX();
-      int var9 = var7.method_12165();
-      int var10 = var7.method_12185();
+      int var9 = var7.getY();
+      int var10 = var7.getZ();
       float var11 = (float)(var3 * var3 * var4 * 2);
       BlockPos var12 = null;
       class_2921 var13 = new class_2921();

@@ -33,7 +33,7 @@ public class class_5506 extends class_3599 {
       }
 
       if (var3 != null) {
-         this.field_28048.method_26905().method_12879((double)var3.getX(), (double)var3.method_12165(), (double)var3.method_12185(), 1.0);
+         this.field_28048.method_26905().method_12879((double)var3.getX(), (double)var3.getY(), (double)var3.getZ(), 1.0);
       }
    }
 }

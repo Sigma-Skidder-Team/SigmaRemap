@@ -45,7 +45,7 @@ public class class_5456 extends class_5920<LivingEntity> {
       } else {
          BlockPos var8 = ((class_8150)var7.get()).method_37409();
          return var2.method_26525().method_5134(class_6275.field_32079)
-            && var2.method_37309() > (double)var8.method_12165() + 0.4
+            && var2.method_37309() > (double)var8.getY() + 0.4
             && var8.method_12170(var2.method_37245(), 1.14);
       }
    }

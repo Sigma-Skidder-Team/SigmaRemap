@@ -80,8 +80,8 @@ public class class_3997 extends class_2451 {
          if (var11) {
             if (var2.method_22572().method_40242() && this.field_19414.method_10724(class_6503.field_33094)) {
                int var12 = var3.getX();
-               int var13 = var3.method_12165();
-               int var14 = var3.method_12185();
+               int var13 = var3.getY();
+               int var14 = var3.getZ();
                var2.method_43359(
                   var1, var3, SoundEvents.field_2472, class_562.field_3322, 0.5F, 2.6F + (var2.field_33033.nextFloat() - var2.field_33033.nextFloat()) * 0.8F
                );

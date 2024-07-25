@@ -25,8 +25,8 @@ public abstract class class_4759 extends class_3798 {
          if (var4.nextInt(64) == 0) {
             var1.method_29527(
                (double)var2.getX() + 0.5,
-               (double)var2.method_12165() + 0.5,
-               (double)var2.method_12185() + 0.5,
+               (double)var2.getY() + 0.5,
+               (double)var2.getZ() + 0.5,
                SoundEvents.field_2220,
                class_562.field_3322,
                var4.nextFloat() * 0.25F + 0.75F,
@@ -38,8 +38,8 @@ public abstract class class_4759 extends class_3798 {
          var1.method_43361(
             class_3090.field_15350,
             (double)var2.getX() + var4.nextDouble(),
-            (double)var2.method_12165() + var4.nextDouble(),
-            (double)var2.method_12185() + var4.nextDouble(),
+            (double)var2.getY() + var4.nextDouble(),
+            (double)var2.getZ() + var4.nextDouble(),
             0.0,
             0.0,
             0.0

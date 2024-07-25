@@ -29,7 +29,7 @@ public class class_3064 extends class_2830 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       BlockPos var4 = var1.method_21858();
-      return var4.method_12165() < 255 && var1.method_21862().method_28262(var4.method_6081()).method_8374(var1) ? super.method_29302(var1) : null;
+      return var4.getY() < 255 && var1.method_21862().method_28262(var4.method_6081()).method_8374(var1) ? super.method_29302(var1) : null;
    }
 
    @Override
@@ -95,7 +95,7 @@ public class class_3064 extends class_2830 {
    @Override
    public long method_10759(class_2522 var1, BlockPos var2) {
       return MathHelper.getCoordinateRandom(
-         var2.getX(), var2.method_6101(var1.method_10313(field_15063) != class_7422.field_37876 ? 1 : 0).method_12165(), var2.method_12185()
+         var2.getX(), var2.method_6101(var1.method_10313(field_15063) != class_7422.field_37876 ? 1 : 0).getY(), var2.getZ()
       );
    }
 }

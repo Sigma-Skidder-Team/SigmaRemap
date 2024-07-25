@@ -15,8 +15,8 @@ public class class_732 extends AbstractIterator {
       if (this.field_3992 != null) {
          if (!this.field_3992.equals(this.field_3994.field_27526)) {
             int var3 = this.field_3992.getX();
-            int var4 = this.field_3992.method_12165();
-            int var5 = this.field_3992.method_12185();
+            int var4 = this.field_3992.getY();
+            int var5 = this.field_3992.getZ();
             if (var3 >= this.field_3994.field_27526.method_12173()) {
                if (var5 >= this.field_3994.field_27526.method_12185()) {
                   if (var4 < this.field_3994.field_27526.method_12165()) {

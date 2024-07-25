@@ -63,7 +63,7 @@ public class class_7277 {
       if (var1.size() != 1) {
          var0.method_42196(
             new TranslationTextComponent(
-               "commands.spawnpoint.success.multiple", var2.getX(), var2.method_12165(), var2.method_12185(), var3, var9, var1.size()
+               "commands.spawnpoint.success.multiple", var2.getX(), var2.getY(), var2.getZ(), var3, var9, var1.size()
             ),
             true
          );
@@ -72,8 +72,8 @@ public class class_7277 {
             new TranslationTextComponent(
                "commands.spawnpoint.success.single",
                var2.getX(),
-               var2.method_12165(),
-               var2.method_12185(),
+               var2.getY(),
+               var2.getZ(),
                var3,
                var9,
                ((class_9359)var1.iterator().next()).method_19839()

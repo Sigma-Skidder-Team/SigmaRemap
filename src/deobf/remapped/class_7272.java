@@ -152,7 +152,7 @@ public class class_7272 extends class_5467 {
    }
 
    private void method_33243(double var1, double var3) {
-      this.rotationYaw = (float)(MathHelper.method_42821(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
+      this.rotationYaw = (float)(MathHelper.atan2(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    private void method_33228() {

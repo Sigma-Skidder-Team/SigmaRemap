@@ -36,11 +36,11 @@ public class class_424 extends class_4285<class_9431> {
             var3,
             var12,
             var4.getX() - var11,
-            var4.method_12165(),
-            var4.method_12185() - var11,
+            var4.getY(),
+            var4.getZ() - var11,
             var4.getX() + var11,
-            var4.method_12165(),
-            var4.method_12185() + var11
+            var4.getY(),
+            var4.getZ() + var11
          )) {
             int var16 = var9 - var15.method_12176(var4);
             if (var16 >= 0) {
@@ -59,11 +59,11 @@ public class class_424 extends class_4285<class_9431> {
 
       for (BlockPos var10 : BlockPos.method_6075(
          var3.getX() - var5,
-         var3.method_12165(),
-         var3.method_12185() - var5,
+         var3.getY(),
+         var3.getZ() - var5,
          var3.getX() + var5,
-         var3.method_12165(),
-         var3.method_12185() + var5
+         var3.getY(),
+         var3.getZ() + var5
       )) {
          int var11 = var10.method_12176(var3);
          BlockPos var12 = !method_2103(var1, var2, var10)
@@ -93,7 +93,7 @@ public class class_424 extends class_4285<class_9431> {
 
    @Nullable
    private static BlockPos method_2102(class_9379 var0, int var1, class_2921 var2, int var3) {
-      while (var2.method_12165() > 1 && var3 > 0) {
+      while (var2.getY() > 1 && var3 > 0) {
          var3--;
          if (method_2107(var0, var1, var2)) {
             return var2;
@@ -117,7 +117,7 @@ public class class_424 extends class_4285<class_9431> {
 
    @Nullable
    private static BlockPos method_2106(class_9379 var0, class_2921 var1, int var2) {
-      while (var1.method_12165() < var0.method_28261() && var2 > 0) {
+      while (var1.getY() < var0.method_28261() && var2 > 0) {
          var2--;
          class_2522 var5 = var0.method_28262(var1);
          if (!field_1791.contains(var5.method_8360())) {
@@ -137,6 +137,6 @@ public class class_424 extends class_4285<class_9431> {
 
    private static boolean method_2103(class_9379 var0, int var1, BlockPos var2) {
       class_2522 var5 = var0.method_28262(var2);
-      return var5.method_8345() || var5.method_8350(class_4783.field_23811) && var2.method_12165() <= var1;
+      return var5.method_8345() || var5.method_8350(class_4783.field_23811) && var2.getY() <= var1;
    }
 }

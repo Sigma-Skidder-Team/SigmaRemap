@@ -35,8 +35,8 @@ public class class_6742 implements class_2995 {
             class_118 var6 = var2x.get(var5x);
             if (var12.method_12171(var6.field_290, 160.0)) {
                double var7x = (double)var6.field_290.getX() + 0.5;
-               double var9 = (double)var6.field_290.method_12165() + 2.0 + (double)var5x * 0.25;
-               double var11x = (double)var6.field_290.method_12185() + 0.5;
+               double var9 = (double)var6.field_290.getY() + 2.0 + (double)var5x * 0.25;
+               double var11x = (double)var6.field_290.getZ() + 0.5;
                int var13 = !var6.field_287 ? -3355444 : -16711936;
                class_3372.method_15553(var6.field_289, var7x, var9, var11x, var13);
             }

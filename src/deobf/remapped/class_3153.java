@@ -88,7 +88,7 @@ public class class_3153 extends class_4314 {
                var9.method_28032(var8.method_45508());
             }
 
-            class_91 var11 = new class_91(var1, (double)var2.getX() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5, var9);
+            class_91 var11 = new class_91(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var9);
             var11.method_257();
             var1.method_7509(var11);
          } else {

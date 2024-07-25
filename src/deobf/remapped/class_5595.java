@@ -20,8 +20,8 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
          double var8 = (double)((float)var5 - var2) / 6.0;
          var8 *= var8;
          double var10 = (double)(var6.getX() - var7.getX()) * var8;
-         double var12 = (double)(var6.method_12165() - var7.method_12165()) * var8;
-         double var14 = (double)(var6.method_12185() - var7.method_12185()) * var8;
+         double var12 = (double)(var6.getY() - var7.getY()) * var8;
+         double var14 = (double)(var6.getZ() - var7.getZ()) * var8;
          return new class_1343(-var10, -var12, -var14);
       } else {
          return super.method_32555(var1, var2);

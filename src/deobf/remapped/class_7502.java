@@ -112,7 +112,7 @@ public class class_7502 extends class_380 implements class_2593 {
          var4 = var4.method_10308(field_1543, var6)
             .method_10308(
                field_38296,
-               !(var1.method_21865().field_7333 - (double)var1.method_21858().method_12165() > 0.5) ? class_5122.field_26439 : class_5122.field_26440
+               !(var1.method_21865().field_7333 - (double)var1.method_21858().getY() > 0.5) ? class_5122.field_26439 : class_5122.field_26440
             );
       } else {
          var4 = var4.method_10308(field_1543, var1.method_21863().method_1046())

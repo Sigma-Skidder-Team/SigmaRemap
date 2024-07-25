@@ -60,8 +60,8 @@ public class class_3942 extends class_5783 {
          0.6 / var20 + 0.5 + this.field_41717.nextGaussian() * 0.0045
       );
       this.method_37215(var19);
-      this.rotationYaw = (float)(MathHelper.method_42821(var19.field_7336, var19.field_7334) * 180.0F / (float)Math.PI);
-      this.rotationPitch = (float)(MathHelper.method_42821(var19.field_7333, (double) MathHelper.sqrt(method_37266(var19))) * 180.0F / (float)Math.PI);
+      this.rotationYaw = (float)(MathHelper.atan2(var19.field_7336, var19.field_7334) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(MathHelper.atan2(var19.field_7333, (double) MathHelper.sqrt(method_37266(var19))) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
       this.field_41762 = this.rotationPitch;
    }
@@ -142,7 +142,7 @@ public class class_3942 extends class_5783 {
 
                if (this.field_19135 == class_2753.field_13475) {
                   class_1343 var10 = this.method_37098();
-                  double var11 = this.method_37309() + var10.field_7333 - (double)var5.method_12165() - (double)var4;
+                  double var11 = this.method_37309() + var10.field_7333 - (double)var5.getY() - (double)var4;
                   if (Math.abs(var11) < 0.01) {
                      var11 += Math.signum(var11) * 0.1;
                   }

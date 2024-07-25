@@ -27,9 +27,9 @@ public class class_9061 extends class_6291 {
       if (!(var2.nextFloat() >= this.field_46376)) {
          Direction var9 = class_4745.method_21912(var2);
          int var10 = var4.isEmpty()
-            ? Math.min(((BlockPos)var3.get(0)).method_12165() + 1 + var2.nextInt(3), ((BlockPos)var3.get(var3.size() - 1)).method_12165())
-            : Math.max(((BlockPos)var4.get(0)).method_12165() - 1, ((BlockPos)var3.get(0)).method_12165());
-         List var11 = var3.stream().filter(var1x -> var1x.method_12165() == var10).collect(Collectors.toList());
+            ? Math.min(((BlockPos)var3.get(0)).getY() + 1 + var2.nextInt(3), ((BlockPos)var3.get(var3.size() - 1)).getY())
+            : Math.max(((BlockPos)var4.get(0)).getY() - 1, ((BlockPos)var3.get(0)).getY());
+         List var11 = var3.stream().filter(var1x -> var1x.getY() == var10).collect(Collectors.toList());
          if (!var11.isEmpty()) {
             BlockPos var12 = (BlockPos)var11.get(var2.nextInt(var11.size()));
             BlockPos var13 = var12.method_6098(var9);

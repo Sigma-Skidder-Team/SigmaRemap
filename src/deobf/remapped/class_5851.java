@@ -63,8 +63,8 @@ public class class_5851 {
 
    public float method_26691(BlockPos var1) {
       float var4 = (float)Math.abs(var1.getX() - this.field_29731);
-      float var5 = (float)Math.abs(var1.method_12165() - this.field_29735);
-      float var6 = (float)Math.abs(var1.method_12185() - this.field_29736);
+      float var5 = (float)Math.abs(var1.getY() - this.field_29735);
+      float var6 = (float)Math.abs(var1.getZ() - this.field_29736);
       return var4 + var5 + var6;
    }
 

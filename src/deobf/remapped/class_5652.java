@@ -37,9 +37,9 @@ public final class class_5652 {
       double var22 = var13 - (double)var19;
       double var24 = var15 - (double)var20;
       double var26 = var17 - (double)var21;
-      double var28 = MathHelper.method_42845(var22);
-      double var30 = MathHelper.method_42845(var24);
-      double var32 = MathHelper.method_42845(var26);
+      double var28 = MathHelper.perlinFade(var22);
+      double var30 = MathHelper.perlinFade(var24);
+      double var32 = MathHelper.perlinFade(var26);
       double var34;
       if (var7 == 0.0) {
          var34 = 0.0;
@@ -75,6 +75,6 @@ public final class class_5652 {
       double var34 = method_25571(this.method_25570(var22 + 1), var4 - 1.0, var6, var8 - 1.0);
       double var36 = method_25571(this.method_25570(var20 + 1), var4, var6 - 1.0, var8 - 1.0);
       double var38 = method_25571(this.method_25570(var23 + 1), var4 - 1.0, var6 - 1.0, var8 - 1.0);
-      return MathHelper.method_42807(var10, var12, var14, var24, var26, var28, var30, var32, var34, var36, var38);
+      return MathHelper.lerp3(var10, var12, var14, var24, var26, var28, var30, var32, var34, var36, var38);
    }
 }

@@ -73,11 +73,11 @@ public class class_9616 {
 
    public class_9616(Vector3i var1, Vector3i var2) {
       this.field_48996 = Math.min(var1.getX(), var2.getX());
-      this.field_48995 = Math.min(var1.method_12165(), var2.method_12165());
-      this.field_48992 = Math.min(var1.method_12185(), var2.method_12185());
+      this.field_48995 = Math.min(var1.getY(), var2.getY());
+      this.field_48992 = Math.min(var1.getZ(), var2.getZ());
       this.field_48991 = Math.max(var1.getX(), var2.getX());
-      this.field_48993 = Math.max(var1.method_12165(), var2.method_12165());
-      this.field_48994 = Math.max(var1.method_12185(), var2.method_12185());
+      this.field_48993 = Math.max(var1.getY(), var2.getY());
+      this.field_48994 = Math.max(var1.getZ(), var2.getZ());
    }
 
    public class_9616(int var1, int var2, int var3, int var4) {
@@ -127,16 +127,16 @@ public class class_9616 {
    }
 
    public void method_44385(Vector3i var1) {
-      this.method_44391(var1.getX(), var1.method_12165(), var1.method_12185());
+      this.method_44391(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public boolean method_44395(Vector3i var1) {
       return var1.getX() >= this.field_48996
          && var1.getX() <= this.field_48991
-         && var1.method_12185() >= this.field_48992
-         && var1.method_12185() <= this.field_48994
-         && var1.method_12165() >= this.field_48995
-         && var1.method_12165() <= this.field_48993;
+         && var1.getZ() >= this.field_48992
+         && var1.getZ() <= this.field_48994
+         && var1.getY() >= this.field_48995
+         && var1.getY() <= this.field_48993;
    }
 
    public Vector3i method_44394() {

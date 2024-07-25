@@ -144,8 +144,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       BlockPos var4 = var2.method_16143(var3);
       if (MathHelper.abs(var1.getX() - var4.getX()) > this.field_20922 * 16) {
          return null;
-      } else if (var4.method_12165() >= 0 && var4.method_12165() < 256) {
-         return MathHelper.abs(var1.method_12185() - var4.method_12185()) > this.field_20922 * 16 ? null : this.field_20966.method_34563(var4);
+      } else if (var4.getY() >= 0 && var4.getY() < 256) {
+         return MathHelper.abs(var1.getZ() - var4.getZ()) > this.field_20922 * 16 ? null : this.field_20966.method_34563(var4);
       } else {
          return null;
       }
@@ -220,7 +220,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                var19.method_13362(var21, 0, var20);
                class_6325 var27 = var10.method_22561(var19);
                if (var27.method_28866() != class_6750.field_34851) {
-                  int var28 = var10.method_22563(class_3801.field_18595, var19).method_12165();
+                  int var28 = var10.method_22563(class_3801.field_18595, var19).getY();
                   int var29 = var12 - var16;
                   int var30 = var12 + var16;
                   if (var29 < var28) {
@@ -359,9 +359,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             int var10 = var3.nextInt(21) - 10;
             BlockPos var11 = var4.method_22563(class_3801.field_18595, var5.method_6104(var9, 0, var10)).method_6100();
             class_6325 var12 = var4.method_22561(var11);
-            if (var11.method_12165() > 0
-               && var11.method_12165() <= var5.method_12165() + 10
-               && var11.method_12165() >= var5.method_12165() - 10
+            if (var11.getY() > 0
+               && var11.getY() <= var5.getY() + 10
+               && var11.getY() >= var5.getY() - 10
                && var12.method_28866() == class_6750.field_34844
                && var12.method_28865(var11) >= 0.15F) {
                var6 = var11;
@@ -383,15 +383,15 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                this.client
                   .theWorld
                   .method_43361(
-                     var26, (double)var11.getX() + var13, (double)var11.method_12165() + var24, (double)var11.method_12185() + var15, 0.0, 0.0, 0.0
+                     var26, (double)var11.getX() + var13, (double)var11.getY() + var24, (double)var11.getZ() + var15, 0.0, 0.0, 0.0
                   );
             }
          }
 
          if (var6 != null && var3.nextInt(3) < this.field_20965++) {
             this.field_20965 = 0;
-            if (var6.method_12165() > var5.method_12165() + 1
-               && var4.method_22563(class_3801.field_18595, var5).method_12165() > MathHelper.floor((float)var5.method_12165())) {
+            if (var6.getY() > var5.getY() + 1
+               && var4.method_22563(class_3801.field_18595, var5).getY() > MathHelper.floor((float)var5.getY())) {
                this.client.theWorld.method_721(var6, SoundEvents.field_2554, class_562.field_3330, 0.1F, 0.5F, false);
             } else {
                this.client.theWorld.method_721(var6, SoundEvents.field_2741, class_562.field_3330, 0.2F, 1.0F, false);
@@ -844,7 +844,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.field_21011 = this.field_20950;
          if (!var3 && this.field_20985) {
             this.method_20055();
-            if (var22 != null && var22.method_16189().method_12165() > var21) {
+            if (var22 != null && var22.method_16189().getY() > var21) {
                this.field_20961.add(var22.method_16166());
             }
 
@@ -852,7 +852,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             while (var23.hasNext()) {
                class_3511 var24 = (class_3511)var23.next();
-               if (var24 != null && var24.method_16189().method_12165() <= var21) {
+               if (var24 != null && var24.method_16189().getY() <= var21) {
                   class_1261 var25 = var24.method_16166();
                   if (!var24.field_17205.get().method_40691()) {
                      this.field_20982.add(var25);
@@ -884,7 +884,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          );
          boolean var43 = this.client.field_9631;
          BlockPos var45 = var1.method_41630();
-         int var26 = var45.method_12165();
+         int var26 = var45.getY();
          int var27 = var26 >> 4 << 4;
          if (var27 > var21) {
             var21 += 16;
@@ -893,7 +893,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   this.field_20961.add(var22.method_16166());
                }
 
-               class_1343 var28 = new class_1343((double)var45.getX(), (double)var21, (double)var45.method_12185());
+               class_1343 var28 = new class_1343((double)var45.getX(), (double)var21, (double)var45.getZ());
                class_1343 var29 = new class_1343(var28.method_61(), var28.method_60(), var28.method_62());
                class_2426 var30 = var1.method_41634();
                class_2426 var31 = new class_2426(var30.method_11057(), 0.0F, var30.method_11055());
@@ -921,7 +921,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          if (var41.isEmpty()) {
-            if (var14 != null && var14.method_16189().method_12165() <= var21) {
+            if (var14 != null && var14.method_16189().getY() <= var21) {
                if (var5 && this.field_20970.method_28262(var13).method_8321(this.field_20970, var13)) {
                   var43 = false;
                }
@@ -929,7 +929,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                var14.method_16187(var4);
                var41.add(new class_1261(var14, (Direction)null, 0));
             } else {
-               int var49 = var16.method_12165() > 0 ? Math.min(var21, 248) : 8;
+               int var49 = var16.getY() > 0 ? Math.min(var21, 248) : 8;
                if (var22 != null) {
                   this.field_20961.add(var22.method_16166());
                }
@@ -1012,7 +1012,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                this.field_20985 = true;
                BlockPos var48 = var47.method_16189();
                boolean var51 = (double) MathUtils.method_7807(
-                     var16, (float)(var48.getX() + 8), (float)(var48.method_12165() + 8), (float)(var48.method_12185() + 8)
+                     var16, (float)(var48.getX() + 8), (float)(var48.getY() + 8), (float)(var48.getZ() + 8)
                   )
                   < 768.0;
                if (!var47.method_16137() && !var51) {
@@ -1039,13 +1039,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_3511 var6 = var2.method_16165(var3);
       if (var6 == null) {
          return null;
-      } else if (var6.method_16189().method_12165() > var5) {
+      } else if (var6.method_16189().getY() > var5) {
          return null;
       } else {
          if (var4) {
             BlockPos var7 = var6.method_16189();
             int var8 = var1.getX() - var7.getX();
-            int var9 = var1.method_12185() - var7.method_12185();
+            int var9 = var1.getZ() - var7.getZ();
             int var10 = var8 * var8 + var9 * var9;
             if (var10 > this.field_20981) {
                return null;
@@ -1230,7 +1230,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_3511 var42 = var41.field_6947;
          class_2654 var43 = var42.method_16174();
 
-         for (Entity var45 : var43.method_11979()[var42.method_16189().method_12165() / 16]) {
+         for (Entity var45 : var43.method_11979()[var42.method_16189().getY() / 16]) {
             if ((this.field_20988.method_28135(var45, var20, var12, var14, var16) || var45.method_37315(this.client.thePlayer))
                && (
                   var45 != var6.method_41633()
@@ -1320,7 +1320,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                Object var89 = var39;
                var1.method_36063();
                if (MinecraftClient.getInstance().field_9591) {
-                  var1.method_36065((double)var88.getX() - var12, (double)var88.method_12165() - var14, (double)var88.method_12185() - var16);
+                  var1.method_36065((double)var88.getX() - var12, (double)var88.getY() - var14, (double)var88.getZ() - var16);
                }
 
                SortedSet var91 = (SortedSet)this.field_20948.get(var88.method_6077());
@@ -1360,7 +1360,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             BlockPos var83 = var73.method_17399();
             var1.method_36063();
-            var1.method_36065((double)var83.getX() - var12, (double)var83.method_12165() - var14, (double)var83.method_12185() - var16);
+            var1.method_36065((double)var83.getX() - var12, (double)var83.getY() - var14, (double)var83.getZ() - var16);
             class_3569.field_17468.method_16586(var73, var2, var1, var39);
             var1.method_36064();
             this.field_20920++;
@@ -1398,14 +1398,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          Entry var68 = (Entry)var63.next();
          BlockPos var74 = BlockPos.method_6088(var68.getLongKey());
          double var79 = (double)var74.getX() - var12;
-         double var87 = (double)var74.method_12165() - var14;
-         double var90 = (double)var74.method_12185() - var16;
+         double var87 = (double)var74.getY() - var14;
+         double var90 = (double)var74.getZ() - var16;
          if (!(var79 * var79 + var87 * var87 + var90 * var90 > 1024.0)) {
             SortedSet var92 = (SortedSet)var68.getValue();
             if (var92 != null && !var92.isEmpty()) {
                int var93 = ((class_9259)var92.last()).method_42656();
                var1.method_36063();
-               var1.method_36065((double)var74.getX() - var12, (double)var74.method_12165() - var14, (double)var74.method_12185() - var16);
+               var1.method_36065((double)var74.getX() - var12, (double)var74.getY() - var14, (double)var74.getZ() - var16);
                class_6279 var94 = var1.method_36058();
                class_3764 var54 = new class_3764(
                   this.field_20973.method_13793().method_11645(class_6560.field_33452.get(var93)), var94.method_28620(), var94.method_28618()
@@ -1574,7 +1574,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       double var11 = MathHelper.lerp((double)var8, var1.field_41754, var1.getPosX());
       double var13 = MathHelper.lerp((double)var8, var1.field_41713, var1.method_37309());
       double var15 = MathHelper.lerp((double)var8, var1.field_41724, var1.getPosZ());
-      float var17 = MathHelper.method_42795(var8, var1.prevRotationYaw, var1.rotationYaw);
+      float var17 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
       this.field_20988.method_28115(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field_20988.method_28120(var1, var8));
    }
 
@@ -1679,7 +1679,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                class_7995 var15 = var32.method_16180(var1);
                GlStateManager.method_8757();
                BlockPos var35 = var32.method_16189();
-               GlStateManager.method_8876((double)var35.getX() - var3, (double)var35.method_12165() - var5, (double)var35.method_12185() - var7);
+               GlStateManager.method_8876((double)var35.getX() - var3, (double)var35.getY() - var5, (double)var35.getZ() - var7);
                var15.method_36280();
                class_7985.field_40918.method_13179(0L);
                GlStateManager.method_8780();
@@ -1738,11 +1738,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_3511 var12 = var11.field_6947;
             RenderSystem.method_16438();
             BlockPos var13 = var12.method_16189();
-            RenderSystem.method_16483((double)var13.getX() - var4, (double)var13.method_12165() - var6, (double)var13.method_12185() - var8);
+            RenderSystem.method_16483((double)var13.getX() - var4, (double)var13.getY() - var6, (double)var13.getZ() - var8);
             if (this.client.field_9569) {
                var3.method_44471(1, class_7985.field_40903);
                RenderSystem.method_16484(10.0F);
-               int var14 = class_1261.method_5674(var11) == 0 ? 0 : MathHelper.method_42792((float)class_1261.method_5674(var11) / 50.0F, 0.9F, 0.9F);
+               int var14 = class_1261.method_5674(var11) == 0 ? 0 : MathHelper.hsvToRGB((float)class_1261.method_5674(var11) / 50.0F, 0.9F, 0.9F);
                int var15 = var14 >> 16 & 0xFF;
                int var16 = var14 >> 8 & 0xFF;
                int var17 = var14 & 0xFF;
@@ -2698,8 +2698,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var2,
          var11.method_8335(this.field_20970, var10, class_214.method_926(var3)),
          (double)var10.getX() - var4,
-         (double)var10.method_12165() - var6,
-         (double)var10.method_12185() - var8,
+         (double)var10.getY() - var6,
+         (double)var10.getZ() - var8,
          0.0F,
          0.0F,
          0.0F,
@@ -2861,9 +2861,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_20065(BlockPos var1, boolean var2) {
-      for (int var3 = var1.method_12185() - 1; var3 <= var1.method_12185() + 1; var3++) {
+      for (int var3 = var1.getZ() - 1; var3 <= var1.getZ() + 1; var3++) {
          for (int var4 = var1.getX() - 1; var4 <= var1.getX() + 1; var4++) {
-            for (int var5 = var1.method_12165() - 1; var5 <= var1.method_12165() + 1; var5++) {
+            for (int var5 = var1.getY() - 1; var5 <= var1.getY() + 1; var5++) {
                this.method_20071(var4 >> 4, var5 >> 4, var3 >> 4, var2);
             }
          }
@@ -2882,7 +2882,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    public void method_20094(BlockPos var1, class_2522 var2, class_2522 var3) {
       if (this.client.method_8535().method_33944(var2, var3)) {
-         this.method_20093(var1.getX(), var1.method_12165(), var1.method_12185(), var1.getX(), var1.method_12165(), var1.method_12185());
+         this.method_20093(var1.getX(), var1.getY(), var1.getZ(), var1.getX(), var1.getY(), var1.getZ());
       }
    }
 
@@ -2925,7 +2925,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.client.field_9614.method_13974(var5.method_35029());
          }
 
-         class_4949 var6 = class_4949.method_22679(var1, (double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185());
+         class_4949 var6 = class_4949.method_22679(var1, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
          this.field_20971.put(var2, var6);
          this.client.getSoundHandler().play(var6);
       }
@@ -3078,8 +3078,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             Camera var4 = this.client.gameRenderer.method_35949();
             if (var4.method_41642()) {
                double var5 = (double)var2.getX() - var4.method_41627().field_7336;
-               double var7 = (double)var2.method_12165() - var4.method_41627().field_7333;
-               double var9 = (double)var2.method_12185() - var4.method_41627().field_7334;
+               double var7 = (double)var2.getY() - var4.method_41627().field_7333;
+               double var9 = (double)var2.getZ() - var4.method_41627().field_7334;
                double var11 = Math.sqrt(var5 * var5 + var7 * var7 + var9 * var9);
                double var13 = var4.method_41627().field_7336;
                double var15 = var4.method_41627().field_7333;
@@ -3249,8 +3249,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   .method_43361(
                      class_3090.field_15319,
                      (double)var3.getX() + var5.nextDouble(),
-                     (double)var3.method_12165() + 1.2,
-                     (double)var3.method_12185() + var5.nextDouble(),
+                     (double)var3.getY() + 1.2,
+                     (double)var3.getZ() + var5.nextDouble(),
                      0.0,
                      0.0,
                      0.0
@@ -3262,8 +3262,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             for (int var39 = 0; var39 < 5; var39++) {
                double var42 = (double)var3.getX() + var5.nextDouble() * 0.6 + 0.2;
-               double var44 = (double)var3.method_12165() + var5.nextDouble() * 0.6 + 0.2;
-               double var45 = (double)var3.method_12185() + var5.nextDouble() * 0.6 + 0.2;
+               double var44 = (double)var3.getY() + var5.nextDouble() * 0.6 + 0.2;
+               double var45 = (double)var3.getZ() + var5.nextDouble() * 0.6 + 0.2;
                this.field_20970.method_43361(class_3090.field_15376, var42, var44, var45, 0.0, 0.0, 0.0);
             }
             break;
@@ -3272,8 +3272,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             for (int var38 = 0; var38 < 16; var38++) {
                double var41 = (double)var3.getX() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
-               double var43 = (double)var3.method_12165() + 0.8125;
-               double var11 = (double)var3.method_12185() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
+               double var43 = (double)var3.getY() + 0.8125;
+               double var11 = (double)var3.getZ() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
                this.field_20970.method_43361(class_3090.field_15376, var41, var43, var11, 0.0, 0.0, 0.0);
             }
             break;
@@ -3283,8 +3283,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             int var8 = var6.method_1054();
             int var9 = var6.method_1034();
             double var10 = (double)var3.getX() + (double)var7 * 0.6 + 0.5;
-            double var12 = (double)var3.method_12165() + (double)var8 * 0.6 + 0.5;
-            double var14 = (double)var3.method_12185() + (double)var9 * 0.6 + 0.5;
+            double var12 = (double)var3.getY() + (double)var8 * 0.6 + 0.5;
+            double var14 = (double)var3.getZ() + (double)var9 * 0.6 + 0.5;
 
             for (int var46 = 0; var46 < 10; var46++) {
                double var48 = var5.nextDouble() * 0.2 + 0.01;
@@ -3359,8 +3359,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             break;
          case 2003:
             double var22 = (double)var3.getX() + 0.5;
-            double var24 = (double)var3.method_12165();
-            double var26 = (double)var3.method_12185() + 0.5;
+            double var24 = (double)var3.getY();
+            double var26 = (double)var3.getZ() + 0.5;
 
             for (int var58 = 0; var58 < 8; var58++) {
                this.method_20061(
@@ -3398,8 +3398,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          case 2004:
             for (int var57 = 0; var57 < 20; var57++) {
                double var60 = (double)var3.getX() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
-               double var63 = (double)var3.method_12165() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
-               double var65 = (double)var3.method_12185() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
+               double var63 = (double)var3.getY() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
+               double var65 = (double)var3.getZ() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                this.field_20970.method_43361(class_3090.field_15376, var60, var63, var65, 0.0, 0.0, 0.0);
                this.field_20970.method_43361(class_3090.field_15321, var60, var63, var65, 0.0, 0.0, 0.0);
             }
@@ -3418,8 +3418,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   class_3090.field_15315,
                   false,
                   (double)var3.getX() + var31 * 0.1,
-                  (double)var3.method_12165() + 0.3,
-                  (double)var3.method_12185() + var35 * 0.1,
+                  (double)var3.getY() + 0.3,
+                  (double)var3.getZ() + var35 * 0.1,
                   var31,
                   var33,
                   var35
@@ -3438,8 +3438,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                .method_43361(
                   class_3090.field_15339,
                   (double)var3.getX() + 0.5,
-                  (double)var3.method_12165() + 0.5,
-                  (double)var3.method_12185() + 0.5,
+                  (double)var3.getY() + 0.5,
+                  (double)var3.getZ() + 0.5,
                   0.0,
                   0.0,
                   0.0
@@ -3451,8 +3451,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   .method_43361(
                      class_3090.field_15385,
                      (double)var3.getX() + var5.nextDouble(),
-                     (double)var3.method_12165() + 1.2,
-                     (double)var3.method_12185() + var5.nextDouble(),
+                     (double)var3.getY() + 1.2,
+                     (double)var3.getZ() + var5.nextDouble(),
                      0.0,
                      0.0,
                      0.0
@@ -3465,8 +3465,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   class_3090.field_15377,
                   true,
                   (double)var3.getX() + 0.5,
-                  (double)var3.method_12165() + 0.5,
-                  (double)var3.method_12185() + 0.5,
+                  (double)var3.getY() + 0.5,
+                  (double)var3.getZ() + 0.5,
                   0.0,
                   0.0,
                   0.0
@@ -3495,8 +3495,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          if (var5 == null
             || var5.method_42661().getX() != var2.getX()
-            || var5.method_42661().method_12165() != var2.method_12165()
-            || var5.method_42661().method_12185() != var2.method_12185()) {
+            || var5.method_42661().getY() != var2.getY()
+            || var5.method_42661().getZ() != var2.getZ()) {
             var5 = new class_9259(var1, var2);
             this.field_20945.put(var1, var5);
          }

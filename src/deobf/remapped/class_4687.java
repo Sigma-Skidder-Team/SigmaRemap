@@ -30,6 +30,6 @@ public class class_4687 extends class_2540 {
 
    @Override
    public boolean method_9634(Random var1, int var2, int var3, int var4, int var5, boolean var6) {
-      return MathHelper.method_42806((float)var2 + 0.5F) + MathHelper.method_42806((float)var4 + 0.5F) > (float)(var5 * var5);
+      return MathHelper.squareFloat((float)var2 + 0.5F) + MathHelper.squareFloat((float)var4 + 0.5F) > (float)(var5 * var5);
    }
 }

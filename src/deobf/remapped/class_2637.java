@@ -90,7 +90,7 @@ public class class_2637 {
          + this.field_13002 * this.field_13002
          + this.field_13001 * this.field_13001;
       if (!((double)var3 < 1.0E-5)) {
-         float var4 = MathHelper.method_42836(var3);
+         float var4 = MathHelper.fastInvSqrt(var3);
          this.field_12999 *= var4;
          this.field_13003 *= var4;
          this.field_13002 *= var4;

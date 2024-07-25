@@ -15,11 +15,11 @@ public class class_9270 extends class_4285<class_8351> {
       int var9 = var5.field_42764.method_15936(var3);
 
       for (int var10 = var4.getX() - var9; var10 <= var4.getX() + var9; var10++) {
-         for (int var11 = var4.method_12185() - var9; var11 <= var4.method_12185() + var9; var11++) {
+         for (int var11 = var4.getZ() - var9; var11 <= var4.getZ() + var9; var11++) {
             int var12 = var10 - var4.getX();
-            int var13 = var11 - var4.method_12185();
+            int var13 = var11 - var4.getZ();
             if (var12 * var12 + var13 * var13 <= var9 * var9) {
-               for (int var14 = var4.method_12165() - var5.field_42766; var14 <= var4.method_12165() + var5.field_42766; var14++) {
+               for (int var14 = var4.getY() - var5.field_42766; var14 <= var4.getY() + var5.field_42766; var14++) {
                   BlockPos var15 = new BlockPos(var10, var14, var11);
                   class_6414 var16 = var1.method_28262(var15).method_8360();
 

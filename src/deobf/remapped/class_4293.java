@@ -26,10 +26,10 @@ public class class_4293 extends class_2255<class_7932> {
       float var11 = var1.field_40567 + var10 * var2;
       var3.method_36060(class_2426.field_12074.method_11062(-var11));
       var3.method_36060(class_2426.field_12076.method_11074(80.0F));
-      float var12 = MathHelper.method_42795(var2, var1.field_40574, var1.field_40575);
+      float var12 = MathHelper.lerp(var2, var1.field_40574, var1.field_40575);
       float var13 = MathHelper.frac(var12 + 0.25F) * 1.6F - 0.3F;
       float var14 = MathHelper.frac(var12 + 0.75F) * 1.6F - 0.3F;
-      float var15 = MathHelper.method_42795(var2, var1.field_40573, var1.field_40572);
+      float var15 = MathHelper.lerp(var2, var1.field_40573, var1.field_40572);
       this.field_20828.method_37551(var9, MathHelper.clamp(var13, 0.0F, 1.0F), MathHelper.clamp(var14, 0.0F, 1.0F), var15);
       class_7907 var16 = field_20829.method_12943(var4, RenderLayer::method_16734);
       this.field_20828.method_37552(var3, var16, var5, var6, 1.0F, 1.0F, 1.0F, 1.0F);

@@ -74,7 +74,7 @@ public class class_2134 extends class_7186 {
             (class_9379)null,
             var6.method_9294(),
             (double)var6.method_9287().getX(),
-            (double)var6.method_9287().method_12185(),
+            (double)var6.method_9287().getZ(),
             180.0,
             var6.method_9291()
          );
@@ -90,7 +90,7 @@ public class class_2134 extends class_7186 {
             (class_9379)null,
             "frame-" + var7.method_3764(),
             (double)var7.method_3765().getX(),
-            (double)var7.method_3765().method_12185(),
+            (double)var7.method_3765().getZ(),
             (double)var7.method_3763(),
             (ITextComponent)null
          );
@@ -184,7 +184,7 @@ public class class_2134 extends class_7186 {
             var1.world,
             "frame-" + var10.method_37145(),
             (double)var12.getX(),
-            (double)var12.method_12185(),
+            (double)var12.getZ(),
             (double)(var10.method_37365().method_1031() * 90),
             (ITextComponent)null
          );
@@ -225,7 +225,7 @@ public class class_2134 extends class_7186 {
       var7.method_25921("type", var3.method_36723());
       var7.method_25941("id", var2);
       var7.method_25923("x", (double)var1.getX());
-      var7.method_25923("z", (double)var1.method_12185());
+      var7.method_25923("z", (double)var1.getZ());
       var7.method_25923("rot", 180.0);
       var6.add(var7);
       if (var3.method_36722()) {
@@ -315,7 +315,7 @@ public class class_2134 extends class_7186 {
 
    public void method_9971(class_9379 var1, BlockPos var2) {
       double var5 = (double)var2.getX() + 0.5;
-      double var7 = (double)var2.method_12185() + 0.5;
+      double var7 = (double)var2.getZ() + 0.5;
       int var9 = 1 << this.field_10678;
       double var10 = (var5 - (double)this.field_10689) / (double)var9;
       double var12 = (var7 - (double)this.field_10677) / (double)var9;
@@ -352,7 +352,7 @@ public class class_2134 extends class_7186 {
 
       while (var6.hasNext()) {
          class_2001 var7 = (class_2001)var6.next();
-         if (var7.method_9287().getX() == var2 && var7.method_9287().method_12185() == var3) {
+         if (var7.method_9287().getX() == var2 && var7.method_9287().getZ() == var3) {
             class_2001 var8 = class_2001.method_9293(var1, var7.method_9287());
             if (!var7.equals(var8)) {
                var6.remove();

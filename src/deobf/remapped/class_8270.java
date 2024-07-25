@@ -21,11 +21,11 @@ public class class_8270 implements class_1517 {
                BlockPos var10 = var6.method_37075().method_6104(var8, 0, var9);
                if (var1.method_22569(
                   var10.getX() - 10,
-                  var10.method_12165() - 10,
-                  var10.method_12185() - 10,
+                  var10.getY() - 10,
+                  var10.getZ() - 10,
                   var10.getX() + 10,
-                  var10.method_12165() + 10,
-                  var10.method_12185() + 10
+                  var10.getY() + 10,
+                  var10.getZ() + 10
                )) {
                   if (class_3815.method_17767(class_1257.field_6935, var1, var10, EntityType.field_34249)) {
                      if (var1.method_28981(var10, 2)) {

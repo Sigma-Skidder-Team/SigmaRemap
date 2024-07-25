@@ -29,7 +29,7 @@ public abstract class class_1546 {
    }
 
    public class_5851 method_7017(BlockPos var1) {
-      return this.method_7016(var1.getX(), var1.method_12165(), var1.method_12185());
+      return this.method_7016(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public class_5851 method_7016(int var1, int var2, int var3) {

@@ -33,7 +33,7 @@ public class class_8976 {
       Map var10 = var3.stream()
          .collect(
             Collectors.toMap(
-               var1x -> this.field_45989.method_7013((double)var1x.getX(), (double)var1x.method_12165(), (double)var1x.method_12185()),
+               var1x -> this.field_45989.method_7013((double)var1x.getX(), (double)var1x.getY(), (double)var1x.getZ()),
                Function.<BlockPos>identity()
             )
          );

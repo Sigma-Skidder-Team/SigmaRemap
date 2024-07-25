@@ -131,8 +131,8 @@ public class class_3756 extends class_3757 implements class_3745 {
       int var3 = this.field_18352.size();
       int var4 = var3 / 7 * 16;
       int var5 = this.field_18358.getX();
-      int var6 = this.field_18358.method_12165();
-      int var7 = this.field_18358.method_12185();
+      int var6 = this.field_18358.getY();
+      int var7 = this.field_18358.getZ();
       Box var8 = new Box((double)var5, (double)var6, (double)var7, (double)(var5 + 1), (double)(var6 + 1), (double)(var7 + 1))
          .grow((double)var4)
          .method_18928(0.0, (double)this.field_18364.method_28261(), 0.0);
@@ -204,8 +204,8 @@ public class class_3756 extends class_3757 implements class_3745 {
 
    private Box method_17371() {
       int var3 = this.field_18358.getX();
-      int var4 = this.field_18358.method_12165();
-      int var5 = this.field_18358.method_12185();
+      int var4 = this.field_18358.getY();
+      int var5 = this.field_18358.getZ();
       return new Box((double)var3, (double)var4, (double)var5, (double)(var3 + 1), (double)(var4 + 1), (double)(var5 + 1)).grow(8.0);
    }
 
@@ -220,7 +220,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       double var4 = (double)(MathHelper.sin((float)(this.field_18349 + 35) * 0.1F) / 2.0F + 0.5F);
       var4 = (var4 * var4 + var4) * 0.3F;
       class_1343 var6 = new class_1343(
-         (double)this.field_18358.getX() + 0.5, (double)this.field_18358.method_12165() + 1.5 + var4, (double)this.field_18358.method_12185() + 0.5
+         (double)this.field_18358.getX() + 0.5, (double)this.field_18358.getY() + 1.5 + var4, (double)this.field_18358.getZ() + 0.5
       );
 
       for (BlockPos var8 : this.field_18352) {
@@ -230,7 +230,7 @@ public class class_3756 extends class_3757 implements class_3745 {
             float var11 = -0.5F + var3.nextFloat();
             BlockPos var12 = var8.method_6093(this.field_18358);
             class_1343 var13 = new class_1343((double)var9, (double)var10, (double)var11)
-               .method_6214((double)var12.getX(), (double)var12.method_12165(), (double)var12.method_12185());
+               .method_6214((double)var12.getX(), (double)var12.getY(), (double)var12.getZ());
             this.field_18364
                .method_43361(class_3090.field_15357, var6.field_7336, var6.field_7333, var6.field_7334, var13.field_7336, var13.field_7333, var13.field_7334);
          }

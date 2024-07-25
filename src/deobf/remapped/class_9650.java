@@ -27,7 +27,7 @@ public class class_9650 extends class_2833 {
       var6 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5);
       double var10 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5 + var4 * var4);
       float var12 = this.field_49154.field_41701;
-      float var13 = (float) MathHelper.method_42821((double)var5, (double)var3);
+      float var13 = (float) MathHelper.atan2((double)var5, (double)var3);
       float var14 = MathHelper.wrapDegrees(this.field_49154.field_41701 + 90.0F);
       float var15 = MathHelper.wrapDegrees(var13 * (180.0F / (float)Math.PI));
       this.field_49154.field_41701 = MathHelper.approachDegrees(var14, var15, 4.0F) - 90.0F;
@@ -38,7 +38,7 @@ public class class_9650 extends class_2833 {
          this.field_49156 = MathHelper.approach(this.field_49156, 1.8F, 0.005F * (1.8F / this.field_49156));
       }
 
-      float var16 = (float)(-(MathHelper.method_42821((double)(-var4), var6) * 180.0F / (float)Math.PI));
+      float var16 = (float)(-(MathHelper.atan2((double)(-var4), var6) * 180.0F / (float)Math.PI));
       this.field_49154.field_41755 = var16;
       float var17 = this.field_49154.field_41701 + 90.0F;
       double var18 = (double)(this.field_49156 * MathHelper.cos(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);

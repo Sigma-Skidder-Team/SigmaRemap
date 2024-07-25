@@ -333,9 +333,9 @@ public class class_9561 implements class_9538 {
 
    private int method_44190(class_6325 var1, BlockPos var2) {
       int var5 = class_5630.method_25522(var1);
-      int var6 = var2.method_12165() - this.field_48651;
+      int var6 = var2.getY() - this.field_48651;
       if (this.field_48665 > 0) {
-         int var7 = var2.getX() << 16 + var2.method_12185();
+         int var7 = var2.getX() << 16 + var2.getZ();
          int var8 = Config.method_14419(var7);
          int var9 = this.field_48665 * 2 + 1;
          int var10 = (var8 & 0xFF) % var9 - this.field_48665;

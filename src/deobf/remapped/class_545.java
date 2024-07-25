@@ -58,8 +58,8 @@ public class class_545 extends class_6414 {
                   var2.method_29528(
                      (PlayerEntity)null,
                      (double)var3.getX() + 0.5,
-                     (double)var3.method_12165() + 0.5,
-                     (double)var3.method_12185() + 0.5,
+                     (double)var3.getY() + 0.5,
+                     (double)var3.getZ() + 0.5,
                      SoundEvents.field_2541,
                      class_562.field_3322,
                      1.0F,
@@ -113,8 +113,8 @@ public class class_545 extends class_6414 {
          DamageSource.method_28378(),
          var8,
          (double)var3.getX() + 0.5,
-         (double)var3.method_12165() + 0.5,
-         (double)var3.method_12185() + 0.5,
+         (double)var3.getY() + 0.5,
+         (double)var3.getZ() + 0.5,
          5.0F,
          true,
          class_7298.field_37311
@@ -130,8 +130,8 @@ public class class_545 extends class_6414 {
       var0.method_29528(
          (PlayerEntity)null,
          (double)var1.getX() + 0.5,
-         (double)var1.method_12165() + 0.5,
-         (double)var1.method_12185() + 0.5,
+         (double)var1.getY() + 0.5,
+         (double)var1.getZ() + 0.5,
          SoundEvents.field_2008,
          class_562.field_3322,
          1.0F,
@@ -146,8 +146,8 @@ public class class_545 extends class_6414 {
             var2.method_29528(
                (PlayerEntity)null,
                (double)var3.getX() + 0.5,
-               (double)var3.method_12165() + 0.5,
-               (double)var3.method_12185() + 0.5,
+               (double)var3.getY() + 0.5,
+               (double)var3.getZ() + 0.5,
                SoundEvents.field_2893,
                class_562.field_3322,
                1.0F,
@@ -156,8 +156,8 @@ public class class_545 extends class_6414 {
          }
 
          double var7 = (double)var3.getX() + 0.5 + (0.5 - var4.nextDouble());
-         double var9 = (double)var3.method_12165() + 1.0;
-         double var11 = (double)var3.method_12185() + 0.5 + (0.5 - var4.nextDouble());
+         double var9 = (double)var3.getY() + 1.0;
+         double var11 = (double)var3.getZ() + 0.5 + (0.5 - var4.nextDouble());
          double var13 = (double)var4.nextFloat() * 0.04;
          var2.method_43361(class_3090.field_15381, var7, var9, var11, 0.0, var13, 0.0);
       }

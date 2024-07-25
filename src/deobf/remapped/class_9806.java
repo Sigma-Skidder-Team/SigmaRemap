@@ -195,9 +195,9 @@ public class class_9806 {
       } else {
          while (var8.hasNext()) {
             this.field_49717 = ((class_8104)var8.next()).field_41508;
-            class_7047 var12 = this.method_45223(1.0F, this.field_49717.method_12165());
+            class_7047 var12 = this.method_45223(1.0F, this.field_49717.getY());
             if (var12.method_32356()) {
-               var6.add(new class_8670(var12, Math.abs(this.field_49717.method_12165())));
+               var6.add(new class_8670(var12, Math.abs(this.field_49717.getY())));
             }
          }
       }
@@ -206,17 +206,17 @@ public class class_9806 {
    }
 
    private class_7047 method_45223(float var1, int var2) {
-      return this.field_49713.method_32377((float)this.field_49717.getX() * var1, (float)var2, (float)this.field_49717.method_12185() * var1);
+      return this.field_49713.method_32377((float)this.field_49717.getX() * var1, (float)var2, (float)this.field_49717.getZ() * var1);
    }
 
    private class_7047 method_45222(float var1, float var2, int var3) {
       class_7047 var6 = this.field_49713
-         .method_32377((float)this.field_49717.getX() * var1, (float)var3, (float)this.field_49717.method_12185() * var1);
+         .method_32377((float)this.field_49717.getX() * var1, (float)var3, (float)this.field_49717.getZ() * var1);
       if (this.field_49717.getX() > 0) {
          var6 = var6.method_32377(0.0F, 0.0F, -var2);
       }
 
-      if (this.field_49717.method_12185() > 0) {
+      if (this.field_49717.getZ() > 0) {
          var6 = var6.method_32377(var2, 0.0F, 0.0F);
       }
 
@@ -224,7 +224,7 @@ public class class_9806 {
          var6 = var6.method_32377(0.0F, 0.0F, var2);
       }
 
-      if (this.field_49717.method_12185() < 0) {
+      if (this.field_49717.getZ() < 0) {
          var6 = var6.method_32377(-var2, 0.0F, 0.0F);
       }
 
@@ -440,7 +440,7 @@ public class class_9806 {
 
    public static double method_45228(BlockPos var0, BlockPos var1) {
       double var4 = (double)var0.getX() - (double)var1.getX();
-      double var6 = (double)var0.method_12185() - (double)var1.method_12185();
+      double var6 = (double)var0.getZ() - (double)var1.getZ();
       return Math.sqrt(var4 * var6);
    }
 

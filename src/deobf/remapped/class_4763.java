@@ -377,7 +377,7 @@ public class class_4763 {
          for (int var9 = 0; var9 < 16; var9++) {
             BlockPos var10 = new BlockPos(var6 + var8, 64, var7 + var9);
             int var11 = this.method_21975(
-               new BlockPos(var10.getX(), var1.method_27353(class_3801.field_18592).method_9957(var8, var9) - 1, var10.method_12185()), var2
+               new BlockPos(var10.getX(), var1.method_27353(class_3801.field_18592).method_9957(var8, var9) - 1, var10.getZ()), var2
             );
             var5.put((byte)(var11 >> 16 & 0xFF));
             var5.put((byte)(var11 >> 8 & 0xFF));
@@ -413,9 +413,9 @@ public class class_4763 {
       int var9 = (var6 & 0xFF00) >> 8;
       int var10 = var6 & 0xFF;
       var6 = new Color(var8, var9, var10).getRGB();
-      boolean var11 = Math.abs(var1.method_12185() % 16) != 15 && Math.abs(var1.method_12185() % 16) != 0;
-      if (var1.method_12185() < 0) {
-         var11 = Math.abs(var1.method_12185() % 16) != 16 && Math.abs(var1.method_12185() % 16) != 0;
+      boolean var11 = Math.abs(var1.getZ() % 16) != 15 && Math.abs(var1.getZ() % 16) != 0;
+      if (var1.getZ() < 0) {
+         var11 = Math.abs(var1.getZ() % 16) != 16 && Math.abs(var1.getZ() % 16) != 0;
       }
 
       if (var2 || var11) {

@@ -52,7 +52,7 @@ public class class_9040 extends class_1871 {
          double var5 = 64.0;
          PlayerEntity var7 = this.field_9479
             .world
-            .method_25858(field_46257, (double)var3.getX(), (double)var3.method_12165(), (double)var3.method_12185());
+            .method_25858(field_46257, (double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
          if (var7 != null) {
             var5 = var3.method_12179(var7.method_37245(), true) / 512.0;
          }
@@ -109,12 +109,12 @@ public class class_9040 extends class_1871 {
          BlockPos var3 = this.field_46258.method_18449();
          this.field_46258.method_18434();
          double var4 = (double)var3.getX();
-         double var6 = (double)var3.method_12185();
+         double var6 = (double)var3.getZ();
 
          double var8;
          do {
-            var8 = (double)((float)var3.method_12165() + this.field_9479.method_26594().nextFloat() * 20.0F);
-         } while (var8 < (double)var3.method_12165());
+            var8 = (double)((float)var3.getY() + this.field_9479.method_26594().nextFloat() * 20.0F);
+         } while (var8 < (double)var3.getY());
 
          this.field_46259 = new class_1343(var4, var8, var6);
       }

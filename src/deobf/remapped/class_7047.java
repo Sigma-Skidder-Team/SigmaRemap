@@ -26,7 +26,7 @@ public class class_7047 {
    }
 
    public class_7047(BlockPos var1) {
-      this.method_32358((double)var1.getX(), (double)var1.method_12165(), (double)var1.method_12185());
+      this.method_32358((double)var1.getX(), (double)var1.getY(), (double)var1.getZ());
    }
 
    public void method_32358(double var1, double var3, double var5) {

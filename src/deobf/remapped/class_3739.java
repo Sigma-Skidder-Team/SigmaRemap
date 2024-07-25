@@ -235,7 +235,7 @@ public class class_3739 {
             }
          }
 
-         return this.field_18284 == null || this.field_18284.method_40164(var2.method_12165());
+         return this.field_18284 == null || this.field_18284.method_40164(var2.getY());
       } else {
          return false;
       }

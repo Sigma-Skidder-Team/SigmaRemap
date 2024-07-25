@@ -90,11 +90,11 @@ public class class_9834 {
 
    private static void method_45327(class_5799 var0, Random var1, class_6631 var2, BlockPos var3, class_8401 var4, List<class_7060> var5) {
       int var8 = var3.getX();
-      int var9 = var3.method_12185();
+      int var9 = var3.getZ();
       BlockPos var10 = class_6561.method_29966(new BlockPos(15, 0, 15), class_9022.field_46145, var2, BlockPos.field_7306).method_6104(var8, 0, var9);
-      class_9616 var11 = class_9616.method_44400(var8, 0, var9, var10.getX(), 0, var10.method_12185());
-      BlockPos var12 = new BlockPos(Math.min(var8, var10.getX()), 0, Math.min(var9, var10.method_12185()));
-      List var13 = method_45323(var1, var12.getX(), var12.method_12185());
+      class_9616 var11 = class_9616.method_44400(var8, 0, var9, var10.getX(), 0, var10.getZ());
+      BlockPos var12 = new BlockPos(Math.min(var8, var10.getX()), 0, Math.min(var9, var10.getZ()));
+      List var13 = method_45323(var1, var12.getX(), var12.getZ());
       int var14 = MathHelper.nextInt(var1, 4, 8);
 
       for (int var15 = 0; var15 < var14; var15++) {
@@ -102,11 +102,11 @@ public class class_9834 {
             int var16 = var1.nextInt(var13.size());
             BlockPos var17 = (BlockPos)var13.remove(var16);
             int var18 = var17.getX();
-            int var19 = var17.method_12185();
+            int var19 = var17.getZ();
             class_6631 var20 = class_6631.method_30492(var1);
             BlockPos var21 = class_6561.method_29966(new BlockPos(5, 0, 6), class_9022.field_46145, var20, BlockPos.field_7306)
                .method_6104(var18, 0, var19);
-            class_9616 var22 = class_9616.method_44400(var18, 0, var19, var21.getX(), 0, var21.method_12185());
+            class_9616 var22 = class_9616.method_44400(var18, 0, var19, var21.getX(), 0, var21.getZ());
             if (!var22.method_44402(var11)) {
                method_45326(var0, var17, var20, var5, var1, var4, false, 0.8F);
             }

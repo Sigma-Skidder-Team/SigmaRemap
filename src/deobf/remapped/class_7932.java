@@ -49,8 +49,8 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
       PlayerEntity var3 = this.field_18364
          .method_25857(
             (double)this.field_18358.getX() + 0.5,
-            (double)this.field_18358.method_12165() + 0.5,
-            (double)this.field_18358.method_12185() + 0.5,
+            (double)this.field_18358.getY() + 0.5,
+            (double)this.field_18358.getZ() + 0.5,
             3.0,
             false
          );
@@ -59,8 +59,8 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
          this.field_40572 -= 0.1F;
       } else {
          double var4 = var3.getPosX() - ((double)this.field_18358.getX() + 0.5);
-         double var6 = var3.getPosZ() - ((double)this.field_18358.method_12185() + 0.5);
-         this.field_40564 = (float) MathHelper.method_42821(var6, var4);
+         double var6 = var3.getPosZ() - ((double)this.field_18358.getZ() + 0.5);
+         this.field_40564 = (float) MathHelper.atan2(var6, var4);
          this.field_40572 += 0.1F;
          if (this.field_40572 < 0.5F || field_40566.nextInt(40) == 0) {
             float var8 = this.field_40565;

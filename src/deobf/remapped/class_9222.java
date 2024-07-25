@@ -29,7 +29,7 @@ public class class_9222 implements class_4904 {
          if (var6 == null) {
             return null;
          } else {
-            ItemStack var7 = class_2143.method_10014(var5, var6.getX(), var6.method_12185(), (byte)2, true, true);
+            ItemStack var7 = class_2143.method_10014(var5, var6.getX(), var6.getZ(), (byte)2, true, true);
             class_2143.method_10013(var5, var7);
             class_2134.method_9969(var7, var6, "+", this.field_47150);
             var7.method_28032(new TranslationTextComponent("filled_map." + this.field_47149.method_24556().toLowerCase(Locale.ROOT)));

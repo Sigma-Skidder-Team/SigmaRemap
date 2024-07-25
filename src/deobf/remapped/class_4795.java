@@ -18,7 +18,7 @@ public final class class_4795 implements class_6163 {
 
    @Override
    public class_2522 method_28262(BlockPos var1) {
-      int var4 = var1.method_12165();
+      int var4 = var1.getY();
       return var4 >= 0 && var4 < this.field_23975.length ? this.field_23975[var4] : class_4783.field_23184.method_29260();
    }
 

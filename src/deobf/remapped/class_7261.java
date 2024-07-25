@@ -53,7 +53,7 @@ public class class_7261 extends class_3599 {
          var4 = new BlockPos(this.field_37201.getPosX(), this.field_37201.method_37309() + 8.0, this.field_37201.getPosZ());
       }
 
-      this.field_37201.method_26927().method_5595((double)var4.getX(), (double)(var4.method_12165() + 1), (double)var4.method_12185(), 1.0);
+      this.field_37201.method_26927().method_5595((double)var4.getX(), (double)(var4.getY() + 1), (double)var4.getZ(), 1.0);
    }
 
    @Override

@@ -35,21 +35,21 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
    @Override
    public void method_17353() {
       int var3 = this.field_18358.getX();
-      int var4 = this.field_18358.method_12165();
-      int var5 = this.field_18358.method_12185();
+      int var4 = this.field_18358.getY();
+      int var5 = this.field_18358.getZ();
       BlockPos var6;
       if (this.field_6325 >= var4) {
          var6 = new BlockPos(var3, this.field_6325 + 1, var5);
       } else {
          var6 = this.field_18358;
          this.field_6317 = Lists.newArrayList();
-         this.field_6325 = var6.method_12165() - 1;
+         this.field_6325 = var6.getY() - 1;
       }
 
       class_3080 var7 = !this.field_6317.isEmpty() ? this.field_6317.get(this.field_6317.size() - 1) : null;
       int var8 = this.field_18364.method_22562(class_3801.field_18592, var3, var5);
 
-      for (int var9 = 0; var9 < 10 && var6.method_12165() <= var8; var9++) {
+      for (int var9 = 0; var9 < 10 && var6.getY() <= var8; var9++) {
          class_2522 var10 = this.field_18364.method_28262(var6);
          class_6414 var11 = var10.method_8360();
          if (!(var11 instanceof class_7431)) {

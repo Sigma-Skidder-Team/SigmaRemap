@@ -181,7 +181,7 @@ public class class_9164 {
    public void method_42243(float var1, class_7966 var2, class_3758 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method_26533(var1);
       Hand var9 = (Hand)MoreObjects.firstNonNull(var4.field_29616, Hand.MAIN_HAND);
-      float var10 = MathHelper.method_42795(var1, var4.field_41762, var4.rotationPitch);
+      float var10 = MathHelper.lerp(var1, var4.field_41762, var4.rotationPitch);
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.method_26554()) {
@@ -211,13 +211,13 @@ public class class_9164 {
          }
       }
 
-      float var18 = MathHelper.method_42795(var1, var4.prevRenderArmPitch, var4.renderArmPitch);
-      float var20 = MathHelper.method_42795(var1, var4.prevRenderArmYaw, var4.renderArmYaw);
+      float var18 = MathHelper.lerp(var1, var4.prevRenderArmPitch, var4.renderArmPitch);
+      float var20 = MathHelper.lerp(var1, var4.prevRenderArmYaw, var4.renderArmYaw);
       var2.method_36060(class_2426.field_12080.method_11074((var4.getPitch(var1) - var18) * 0.1F));
       var2.method_36060(class_2426.field_12074.method_11074((var4.getYaw(var1) - var20) * 0.1F));
       if (var11) {
          float var21 = var9 != Hand.MAIN_HAND ? 0.0F : var8;
-         float var16 = 1.0F - MathHelper.method_42795(var1, this.field_46902, this.field_46907);
+         float var16 = 1.0F - MathHelper.lerp(var1, this.field_46902, this.field_46907);
          if (!class_7860.field_40073.method_3596()
             || !class_7860.method_35566(class_7860.field_40073, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field_46899)) {
             this.method_42244(var4, var1, var10, Hand.MAIN_HAND, var21, this.field_46899, var16, var2, var3, var5);
@@ -226,7 +226,7 @@ public class class_9164 {
 
       if (var12) {
          float var22 = var9 != Hand.OFF_HAND ? 0.0F : var8;
-         float var23 = 1.0F - MathHelper.method_42795(var1, this.field_46906, this.field_46900);
+         float var23 = 1.0F - MathHelper.lerp(var1, this.field_46906, this.field_46900);
          if (!class_7860.field_40073.method_3596()
             || !class_7860.method_35566(class_7860.field_40073, Hand.OFF_HAND, var2, var3, var5, var1, var10, var22, var23, this.field_46898)) {
             this.method_42244(var4, var1, var10, Hand.OFF_HAND, var22, this.field_46898, var23, var2, var3, var5);

@@ -56,7 +56,7 @@ public class class_646<T extends class_4607> extends class_3599 {
             BlockPos var10 = new BlockPos(var9);
             var10 = this.field_3618.world.method_22563(class_3801.field_18590, var10);
             if (var4.method_5595(
-               (double)var10.getX(), (double)var10.method_12165(), (double)var10.method_12185(), !var3 ? this.field_3616 : this.field_3617
+               (double)var10.getX(), (double)var10.getY(), (double)var10.getZ(), !var3 ? this.field_3616 : this.field_3617
             )) {
                if (var3) {
                   for (class_4607 var12 : var5) {
@@ -84,6 +84,6 @@ public class class_646<T extends class_4607> extends class_3599 {
       BlockPos var4 = this.field_3618
          .world
          .method_22563(class_3801.field_18590, this.field_3618.method_37075().method_6104(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));
-      return this.field_3618.method_26927().method_5595((double)var4.getX(), (double)var4.method_12165(), (double)var4.method_12185(), this.field_3616);
+      return this.field_3618.method_26927().method_5595((double)var4.getX(), (double)var4.getY(), (double)var4.getZ(), this.field_3616);
    }
 }

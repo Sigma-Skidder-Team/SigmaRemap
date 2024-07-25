@@ -35,11 +35,11 @@ public class class_2940 extends class_3599 {
          );
          if (this.field_14298.field_41768.method_22548(var5)) {
             class_2519.method_11464(this.field_14298)
-               .method_12879((double)var5.getX() + 0.5, (double)var5.method_12165() + 0.5, (double)var5.method_12185() + 0.5, 0.25);
+               .method_12879((double)var5.getX() + 0.5, (double)var5.getY() + 0.5, (double)var5.getZ() + 0.5, 0.25);
             if (this.field_14298.method_17809() == null) {
                this.field_14298
                   .method_26865()
-                  .method_17231((double)var5.getX() + 0.5, (double)var5.method_12165() + 0.5, (double)var5.method_12185() + 0.5, 180.0F, 20.0F);
+                  .method_17231((double)var5.getX() + 0.5, (double)var5.getY() + 0.5, (double)var5.getZ() + 0.5, 180.0F, 20.0F);
             }
             break;
          }

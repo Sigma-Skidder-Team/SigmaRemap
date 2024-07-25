@@ -84,8 +84,8 @@ public final class class_8462 {
       class_1343 var4 = var0.method_37098();
       if (var4.method_6221() != 0.0) {
          float var5 = MathHelper.sqrt(Entity.method_37266(var4));
-         var0.rotationYaw = (float)(MathHelper.method_42821(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
-         var0.rotationPitch = (float)(MathHelper.method_42821((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
+         var0.rotationYaw = (float)(MathHelper.atan2(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
+         var0.rotationPitch = (float)(MathHelper.atan2((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
 
          while (var0.rotationPitch - var0.field_41762 < -180.0F) {
             var0.field_41762 -= 360.0F;
@@ -103,8 +103,8 @@ public final class class_8462 {
             var0.prevRotationYaw += 360.0F;
          }
 
-         var0.rotationPitch = MathHelper.method_42795(var1, var0.field_41762, var0.rotationPitch);
-         var0.rotationYaw = MathHelper.method_42795(var1, var0.prevRotationYaw, var0.rotationYaw);
+         var0.rotationPitch = MathHelper.lerp(var1, var0.field_41762, var0.rotationPitch);
+         var0.rotationYaw = MathHelper.lerp(var1, var0.prevRotationYaw, var0.rotationYaw);
       }
    }
 

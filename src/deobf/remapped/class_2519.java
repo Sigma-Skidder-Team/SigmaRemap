@@ -73,8 +73,8 @@ public class class_2519 extends MonsterEntity {
       super.writeAdditional(var1);
       if (this.field_12486 != null) {
          var1.putInt("BoundX", this.field_12486.getX());
-         var1.putInt("BoundY", this.field_12486.method_12165());
-         var1.putInt("BoundZ", this.field_12486.method_12185());
+         var1.putInt("BoundY", this.field_12486.getY());
+         var1.putInt("BoundZ", this.field_12486.getZ());
       }
 
       if (this.field_12482) {

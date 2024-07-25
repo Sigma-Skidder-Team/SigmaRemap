@@ -15,7 +15,7 @@ public class class_1759 extends class_4285<class_1941> {
       for (int var10 = 0; var10 < 16; var10++) {
          for (int var11 = 0; var11 < 16; var11++) {
             int var12 = var4.getX() + var10;
-            int var13 = var4.method_12185() + var11;
+            int var13 = var4.getZ() + var11;
             int var14 = var1.method_22562(class_3801.field_18595, var12, var13);
             var8.method_13362(var12, var14, var13);
             var9.method_13364(var8).method_13369(Direction.field_802, 1);

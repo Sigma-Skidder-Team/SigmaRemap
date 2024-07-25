@@ -20,7 +20,7 @@ public abstract class class_2088 extends class_9733 {
       Quaternion var10;
       if (this.field_49478 != 0.0F) {
          var10 = new Quaternion(var2.method_41644());
-         float var11 = MathHelper.method_42795(var3, this.field_49467, this.field_49478);
+         float var11 = MathHelper.lerp(var3, this.field_49467, this.field_49478);
          var10.method_24658(class_2426.field_12076.method_11062(var11));
       } else {
          var10 = var2.method_41644();

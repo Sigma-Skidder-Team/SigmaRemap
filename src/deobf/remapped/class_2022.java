@@ -94,7 +94,7 @@ public class class_2022 extends class_1944 {
       BlockPos var3 = this.method_37075();
       BlockPos var4 = var3.method_6081();
       if (!this.method_9392()) {
-         if (this.field_10246 != null && (!this.world.method_22548(this.field_10246) || this.field_10246.method_12165() < 1)) {
+         if (this.field_10246 != null && (!this.world.method_22548(this.field_10246) || this.field_10246.getY() < 1)) {
             this.field_10246 = null;
          }
 
@@ -107,8 +107,8 @@ public class class_2022 extends class_1944 {
          }
 
          double var6 = (double)this.field_10246.getX() + 0.5 - this.getPosX();
-         double var8 = (double)this.field_10246.method_12165() + 0.1 - this.method_37309();
-         double var10 = (double)this.field_10246.method_12185() + 0.5 - this.getPosZ();
+         double var8 = (double)this.field_10246.getY() + 0.1 - this.method_37309();
+         double var10 = (double)this.field_10246.getZ() + 0.5 - this.getPosZ();
          class_1343 var12 = this.method_37098();
          class_1343 var13 = var12.method_6214(
             (Math.signum(var6) * 0.5 - var12.field_7336) * 0.1F,
@@ -116,7 +116,7 @@ public class class_2022 extends class_1944 {
             (Math.signum(var10) * 0.5 - var12.field_7334) * 0.1F
          );
          this.method_37215(var13);
-         float var14 = (float)(MathHelper.method_42821(var13.field_7334, var13.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
+         float var14 = (float)(MathHelper.atan2(var13.field_7334, var13.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
          float var15 = MathHelper.wrapDegrees(var14 - this.rotationYaw);
          this.field_29673 = 0.5F;
          this.rotationYaw += var15;
@@ -190,7 +190,7 @@ public class class_2022 extends class_1944 {
    }
 
    public static boolean method_9393(EntityType<class_2022> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
-      if (var3.method_12165() < var1.method_22552()) {
+      if (var3.getY() < var1.method_22552()) {
          int var7 = var1.method_22573(var3);
          byte var8 = 4;
          if (!method_9396()) {

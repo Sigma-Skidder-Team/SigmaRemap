@@ -342,8 +342,8 @@ public class class_5056 implements class_7203, class_5684 {
    @Override
    public void method_4988(BlockPos var1, float var2) {
       this.field_26152 = var1.getX();
-      this.field_26135 = var1.method_12165();
-      this.field_26138 = var1.method_12185();
+      this.field_26135 = var1.getY();
+      this.field_26138 = var1.getZ();
       this.field_26137 = var2;
    }
 

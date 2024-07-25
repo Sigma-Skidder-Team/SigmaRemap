@@ -165,8 +165,8 @@ public class class_2654 implements class_5990 {
    @Override
    public class_2522 method_28262(BlockPos var1) {
       int var4 = var1.getX();
-      int var5 = var1.method_12165();
-      int var6 = var1.method_12185();
+      int var5 = var1.getY();
+      int var6 = var1.getZ();
       if (this.field_13074.method_29581()) {
          class_2522 var11 = null;
          if (var5 == 60) {
@@ -199,7 +199,7 @@ public class class_2654 implements class_5990 {
 
    @Override
    public class_4774 method_28258(BlockPos var1) {
-      return this.method_11985(var1.getX(), var1.method_12165(), var1.method_12185());
+      return this.method_11985(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public class_4774 method_11985(int var1, int var2, int var3) {
@@ -224,8 +224,8 @@ public class class_2654 implements class_5990 {
    @Override
    public class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3) {
       int var6 = var1.getX() & 15;
-      int var7 = var1.method_12165();
-      int var8 = var1.method_12185() & 15;
+      int var7 = var1.getY();
+      int var8 = var1.getZ() & 15;
       class_1315 var9 = this.field_13068[var7 >> 4];
       if (var9 == field_13073) {
          if (var2.method_8345()) {

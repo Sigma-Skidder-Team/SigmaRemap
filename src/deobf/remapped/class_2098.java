@@ -19,8 +19,8 @@ public class class_2098 {
    public boolean method_9813(BlockPos var1) {
       return (double)(var1.getX() + 1) > this.method_9821()
          && (double)var1.getX() < this.method_9828()
-         && (double)(var1.method_12185() + 1) > this.method_9825()
-         && (double)var1.method_12185() < this.method_9816();
+         && (double)(var1.getZ() + 1) > this.method_9825()
+         && (double)var1.getZ() < this.method_9816();
    }
 
    public boolean method_9814(class_2034 var1) {

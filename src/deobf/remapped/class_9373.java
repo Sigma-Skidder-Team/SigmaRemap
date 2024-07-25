@@ -21,7 +21,7 @@ public class class_9373 extends class_3725 {
       if (!var0.field_33055) {
          class_2522 var5 = var2.method_17403();
          boolean var6 = var5.method_8350(class_4783.field_23444) || var5.method_8350(class_4783.field_23279);
-         if (var6 && var1.method_12165() >= 0 && var0.method_43370() != class_423.field_1790) {
+         if (var6 && var1.getY() >= 0 && var0.method_43370() != class_423.field_1790) {
             class_9741 var7 = method_43347();
             class_6953 var8 = var7.method_44981(var0, var1);
             if (var8 != null) {
@@ -37,8 +37,8 @@ public class class_9373 extends class_3725 {
                BlockPos var14 = var8.method_31795(1, 2, 0).method_41966();
                var13.method_37144(
                   (double)var14.getX() + 0.5,
-                  (double)var14.method_12165() + 0.55,
-                  (double)var14.method_12185() + 0.5,
+                  (double)var14.getY() + 0.55,
+                  (double)var14.getZ() + 0.5,
                   var8.method_31796().method_1029() != class_9249.field_47215 ? 90.0F : 0.0F,
                   0.0F
                );
@@ -62,7 +62,7 @@ public class class_9373 extends class_3725 {
    }
 
    public static boolean method_43349(World var0, BlockPos var1, ItemStack var2) {
-      return var2.method_27960() == class_4897.field_24563 && var1.method_12165() >= 2 && var0.method_43370() != class_423.field_1790 && !var0.field_33055
+      return var2.method_27960() == class_4897.field_24563 && var1.getY() >= 2 && var0.method_43370() != class_423.field_1790 && !var0.field_33055
          ? method_43350().method_44981(var0, var1) != null
          : false;
    }

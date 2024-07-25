@@ -103,7 +103,7 @@ public abstract class Entity implements class_9875, class_5801 {
    public int field_41709;
    public BlockPos field_41764;
    private boolean field_41704;
-   public UUID field_41738 = MathHelper.method_42791(this.field_41717);
+   public UUID field_41738 = MathHelper.getRandomUUID(this.field_41717);
    public String field_41730 = this.field_41738.toString();
    public boolean field_41760;
    private final Set<String> field_41757 = Sets.newHashSet();
@@ -135,7 +135,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public boolean method_37381(BlockPos var1, class_2522 var2) {
       class_4190 var5 = var2.method_8325(this.world, var1, class_214.method_926(this));
-      class_4190 var6 = var5.method_19496((double)var1.getX(), (double)var1.method_12165(), (double)var1.method_12185());
+      class_4190 var6 = var5.method_19496((double)var1.getX(), (double)var1.getY(), (double)var1.getZ());
       return class_3370.method_15537(var6, class_3370.method_15523(this.getBoundingBox()), class_8529.field_43655);
    }
 
@@ -769,8 +769,8 @@ public abstract class Entity implements class_9875, class_5801 {
       class_2921 var6 = new class_2921();
       if (this.world.method_22570(var4, var5)) {
          for (int var7 = var4.getX(); var7 <= var5.getX(); var7++) {
-            for (int var8 = var4.method_12165(); var8 <= var5.method_12165(); var8++) {
-               for (int var9 = var4.method_12185(); var9 <= var5.method_12185(); var9++) {
+            for (int var8 = var4.getY(); var8 <= var5.getY(); var8++) {
+               for (int var9 = var4.getZ(); var9 <= var5.getZ(); var9++) {
                   var6.method_13362(var7, var8, var9);
                   class_2522 var10 = this.world.method_28262(var6);
 
@@ -873,7 +873,7 @@ public abstract class Entity implements class_9875, class_5801 {
    private boolean method_37127() {
       BlockPos var3 = this.method_37075();
       return this.world.method_29569(var3)
-         || this.world.method_29569(new BlockPos((double)var3.getX(), this.getBoundingBox().field_19939, (double)var3.method_12185()));
+         || this.world.method_29569(new BlockPos((double)var3.getX(), this.getBoundingBox().field_19939, (double)var3.getZ()));
    }
 
    private boolean method_37369() {
@@ -947,7 +947,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
       for (class_2307 var9 : class_6503.method_29650()) {
          if (var7.method_22007(var9)) {
-            double var10 = (double)((float)var12.method_12165() + var7.method_22008(this.world, var12));
+            double var10 = (double)((float)var12.getY() + var7.method_22008(this.world, var12));
             if (var10 > var3) {
                this.field_41720 = var9;
             }
@@ -1104,7 +1104,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37253(BlockPos var1, float var2, float var3) {
-      this.method_37144((double)var1.getX() + 0.5, (double)var1.method_12165(), (double)var1.method_12185() + 0.5, var2, var3);
+      this.method_37144((double)var1.getX() + 0.5, (double)var1.getY(), (double)var1.getZ() + 0.5, var2, var3);
    }
 
    public void method_37144(double var1, double var3, double var5, float var7, float var8) {
@@ -1206,11 +1206,11 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public float getPitch(float var1) {
-      return var1 != 1.0F ? MathHelper.method_42795(var1, this.field_41762, this.rotationPitch) : this.rotationPitch;
+      return var1 != 1.0F ? MathHelper.lerp(var1, this.field_41762, this.rotationPitch) : this.rotationPitch;
    }
 
    public float getYaw(float var1) {
-      return var1 != 1.0F ? MathHelper.method_42795(var1, this.prevRotationYaw, this.rotationYaw) : this.rotationYaw;
+      return var1 != 1.0F ? MathHelper.lerp(var1, this.prevRotationYaw, this.rotationYaw) : this.rotationYaw;
    }
 
    public final class_1343 method_37076(float var1, float var2) {
@@ -1931,7 +1931,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public void method_37160(double var1, double var3, double var5) {
       BlockPos var9 = new BlockPos(var1, var3, var5);
-      class_1343 var10 = new class_1343(var1 - (double)var9.getX(), var3 - (double)var9.method_12165(), var5 - (double)var9.method_12185());
+      class_1343 var10 = new class_1343(var1 - (double)var9.getX(), var3 - (double)var9.getY(), var5 - (double)var9.getZ());
       class_2921 var11 = new class_2921();
       Direction var12 = Direction.field_817;
       double var13 = Double.MAX_VALUE;
@@ -2141,7 +2141,7 @@ public abstract class Entity implements class_9875, class_5801 {
          }
 
          return new class_9606(
-            new class_1343((double)var6.getX() + 0.5, (double)var6.method_12165(), (double)var6.method_12185() + 0.5),
+            new class_1343((double)var6.getX() + 0.5, (double)var6.getY(), (double)var6.getZ() + 0.5),
             this.method_37098(),
             this.rotationYaw,
             this.rotationPitch
@@ -2631,8 +2631,8 @@ public abstract class Entity implements class_9875, class_5801 {
       double var8 = var2.field_7333 - var5.field_7333;
       double var10 = var2.field_7334 - var5.field_7334;
       double var12 = (double) MathHelper.sqrt(var6 * var6 + var10 * var10);
-      this.rotationPitch = MathHelper.wrapDegrees((float)(-(MathHelper.method_42821(var8, var12) * 180.0F / (float)Math.PI)));
-      this.rotationYaw = MathHelper.wrapDegrees((float)(MathHelper.method_42821(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
+      this.rotationPitch = MathHelper.wrapDegrees((float)(-(MathHelper.atan2(var8, var12) * 180.0F / (float)Math.PI)));
+      this.rotationYaw = MathHelper.wrapDegrees((float)(MathHelper.atan2(var10, var6) * 180.0F / (float)Math.PI) - 90.0F);
       this.setRotationYawHead(this.rotationYaw);
       this.field_41762 = this.rotationPitch;
       this.prevRotationYaw = this.rotationYaw;
@@ -2793,7 +2793,7 @@ public abstract class Entity implements class_9875, class_5801 {
          int var9 = MathHelper.floor(var1);
          int var10 = MathHelper.floor(var3);
          int var11 = MathHelper.floor(var5);
-         if (var9 != this.field_41702.getX() || var10 != this.field_41702.method_12165() || var11 != this.field_41702.method_12185()) {
+         if (var9 != this.field_41702.getX() || var10 != this.field_41702.getY() || var11 != this.field_41702.getZ()) {
             this.field_41702 = new BlockPos(var9, var10, var11);
          }
 

@@ -34,7 +34,7 @@ public class class_7966 {
       float var7 = 1.0F / var1;
       float var8 = 1.0F / var2;
       float var9 = 1.0F / var3;
-      float var10 = MathHelper.method_42817(var7 * var8 * var9);
+      float var10 = MathHelper.fastInvCubeRoot(var7 * var8 * var9);
       class_6279.method_28619(var6).method_29891(class_6555.method_29884(var10 * var7, var10 * var8, var10 * var9));
    }
 

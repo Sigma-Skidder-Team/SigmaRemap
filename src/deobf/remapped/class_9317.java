@@ -125,10 +125,10 @@ public class class_9317 extends class_3757 implements class_3745 {
                   float var7 = 1.0F;
                   float var8 = MathHelper.sqrt(
                      (var4x.getPosX() - (double)var4.getX()) * (var4x.getPosX() - (double)var4.getX())
-                        + (var4x.getPosZ() - (double)var4.method_12185()) * (var4x.getPosZ() - (double)var4.method_12185())
+                        + (var4x.getPosZ() - (double)var4.getZ()) * (var4x.getPosZ() - (double)var4.getZ())
                   );
                   double var9 = (double)((float)var4.getX() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosX() - (double)var4.getX());
-                  double var11 = (double)((float)var4.method_12185() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosZ() - (double)var4.method_12185());
+                  double var11 = (double)((float)var4.getZ() + 0.5F) + (double)(1.0F / var8) * (var4x.getPosZ() - (double)var4.getZ());
                   int var13 = MathHelper.clamp((var6 - 21) / -2, 3, 15);
 
                   for (int var14 = 0; var14 < var13; var14++) {
@@ -136,7 +136,7 @@ public class class_9317 extends class_3757 implements class_3745 {
                      double var16 = (double)class_8496.method_39151(var15) / 255.0;
                      double var18 = (double)class_8496.method_39152(var15) / 255.0;
                      double var20 = (double)class_8496.method_39157(var15) / 255.0;
-                     var1.method_43361(class_3090.field_15353, var9, (double)((float)var4.method_12165() + 0.5F), var11, var16, var18, var20);
+                     var1.method_43361(class_3090.field_15353, var9, (double)((float)var4.getY() + 0.5F), var11, var16, var18, var20);
                   }
                }
             );

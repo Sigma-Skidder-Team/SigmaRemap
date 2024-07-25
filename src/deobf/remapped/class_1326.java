@@ -12,8 +12,8 @@ public class class_1326 extends class_4285<class_4080> {
       boolean var8 = false;
       int var9 = var3.nextInt(8) - var3.nextInt(8);
       int var10 = var3.nextInt(8) - var3.nextInt(8);
-      int var11 = var1.method_22562(class_3801.field_18599, var4.getX() + var9, var4.method_12185() + var10);
-      BlockPos var12 = new BlockPos(var4.getX() + var9, var11, var4.method_12185() + var10);
+      int var11 = var1.method_22562(class_3801.field_18599, var4.getX() + var9, var4.getZ() + var10);
+      BlockPos var12 = new BlockPos(var4.getX() + var9, var11, var4.getZ() + var10);
       if (var1.method_28262(var12).method_8350(class_4783.field_23900)) {
          boolean var13 = var3.nextDouble() < (double)var5.field_19859;
          class_2522 var14 = !var13 ? class_4783.field_23563.method_29260() : class_4783.field_23535.method_29260();

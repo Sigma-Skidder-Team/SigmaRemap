@@ -57,8 +57,8 @@ public class class_556 extends class_1859 {
             this.field_36278 - 100,
             20,
             class_3004.field_14738,
-            var5.getX() + " " + var5.method_12185(),
-            var5.getX() + " " + var5.method_12185()
+            var5.getX() + " " + var5.getZ(),
+            var5.getX() + " " + var5.getZ()
          )
       );
       this.field_3304.method_13724(false);

@@ -88,7 +88,7 @@ public class class_793 implements class_8773 {
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
          BlockPos var4 = ((class_9529)var3).method_43955();
          return Collections.<class_7461>singleton(
-            new class_7461(method_3523(var4.getX()), method_3523(var4.method_12165()), method_3523(var4.method_12185()))
+            new class_7461(method_3523(var4.getX()), method_3523(var4.getY()), method_3523(var4.getZ()))
          );
       } else {
          return class_8773.super.method_40322();

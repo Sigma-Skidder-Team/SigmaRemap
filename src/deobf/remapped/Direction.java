@@ -87,7 +87,7 @@ public enum Direction implements class_4530 {
 
    public static Direction method_1048(class_8107 var0, Direction var1) {
       Vector3i var4 = var1.method_1037();
-      class_2637 var5 = new class_2637((float)var4.getX(), (float)var4.method_12165(), (float)var4.method_12185(), 0.0F);
+      class_2637 var5 = new class_2637((float)var4.getX(), (float)var4.getY(), (float)var4.getZ(), 0.0F);
       var5.method_11929(var0);
       return method_1045(var5.method_11923(), var5.method_11922(), var5.method_11927());
    }
@@ -171,11 +171,11 @@ public enum Direction implements class_4530 {
    }
 
    public int method_1054() {
-      return this.field_814.method_12165();
+      return this.field_814.getY();
    }
 
    public int method_1034() {
-      return this.field_814.method_12185();
+      return this.field_814.getZ();
    }
 
    public class_2426 method_1038() {
@@ -244,8 +244,8 @@ public enum Direction implements class_4530 {
 
       for (Direction var10 : field_803) {
          float var11 = var0 * (float)var10.field_814.getX()
-            + var1 * (float)var10.field_814.method_12165()
-            + var2 * (float)var10.field_814.method_12185();
+            + var1 * (float)var10.field_814.getY()
+            + var2 * (float)var10.field_814.getZ();
          if (var11 > var6) {
             var6 = var11;
             var5 = var10;
@@ -283,6 +283,6 @@ public enum Direction implements class_4530 {
       float var4 = var1 * (float) (Math.PI / 180.0);
       float var5 = -MathHelper.sin(var4);
       float var6 = MathHelper.cos(var4);
-      return (float)this.field_814.getX() * var5 + (float)this.field_814.method_12185() * var6 > 0.0F;
+      return (float)this.field_814.getX() * var5 + (float)this.field_814.getZ() * var6 > 0.0F;
    }
 }

@@ -30,15 +30,15 @@ public class class_8985 extends PathNavigator {
       if (this.field_6882.method_28262(var1).method_8345()) {
          BlockPos var5 = var1.method_6100();
 
-         while (var5.method_12165() > 0 && this.field_6882.method_28262(var5).method_8345()) {
+         while (var5.getY() > 0 && this.field_6882.method_28262(var5).method_8345()) {
             var5 = var5.method_6100();
          }
 
-         if (var5.method_12165() > 0) {
+         if (var5.getY() > 0) {
             return super.method_5615(var5.method_6081(), var2);
          }
 
-         while (var5.method_12165() < this.field_6882.method_28261() && this.field_6882.method_28262(var5).method_8345()) {
+         while (var5.getY() < this.field_6882.method_28261() && this.field_6882.method_28262(var5).method_8345()) {
             var5 = var5.method_6081();
          }
 
@@ -50,7 +50,7 @@ public class class_8985 extends PathNavigator {
       } else {
          BlockPos var6 = var1.method_6081();
 
-         while (var6.method_12165() < this.field_6882.method_28261() && this.field_6882.method_28262(var6).method_8362().method_24499()) {
+         while (var6.getY() < this.field_6882.method_28261() && this.field_6882.method_28262(var6).method_8362().method_24499()) {
             var6 = var6.method_6081();
          }
 
@@ -212,7 +212,7 @@ public class class_8985 extends PathNavigator {
    private boolean method_41195(int var1, int var2, int var3, int var4, int var5, int var6, class_1343 var7, double var8, double var10) {
       for (BlockPos var15 : BlockPos.method_6076(new BlockPos(var1, var2, var3), new BlockPos(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
          double var16 = (double)var15.getX() + 0.5 - var7.field_7336;
-         double var18 = (double)var15.method_12185() + 0.5 - var7.field_7334;
+         double var18 = (double)var15.getZ() + 0.5 - var7.field_7334;
          if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field_6882.method_28262(var15).method_8319(this.field_6882, var15, class_2929.field_14271)) {
             return false;
          }

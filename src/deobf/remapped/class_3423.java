@@ -84,8 +84,8 @@ public class class_3423 extends class_2358 {
 
    public void method_15821() {
       int var3 = this.field_18358.getX();
-      int var4 = this.field_18358.method_12165();
-      int var5 = this.field_18358.method_12185();
+      int var4 = this.field_18358.getY();
+      int var5 = this.field_18358.getZ();
       this.field_16854 = class_7099.method_32633(this.field_18364, this, var3, var4, var5);
       if (this.field_16854 <= 0) {
          class_2522 var6 = this.method_17403();
@@ -118,8 +118,8 @@ public class class_3423 extends class_2358 {
    private void method_15824(class_2522 var1, SoundEvent var2) {
       Vector3i var5 = var1.<Direction>method_10313(class_7574.field_38593).method_1037();
       double var6 = (double)this.field_18358.getX() + 0.5 + (double)var5.getX() / 2.0;
-      double var8 = (double)this.field_18358.method_12165() + 0.5 + (double)var5.method_12165() / 2.0;
-      double var10 = (double)this.field_18358.method_12185() + 0.5 + (double)var5.method_12185() / 2.0;
+      double var8 = (double)this.field_18358.getY() + 0.5 + (double)var5.getY() / 2.0;
+      double var10 = (double)this.field_18358.getZ() + 0.5 + (double)var5.getZ() / 2.0;
       this.field_18364
          .method_29528((PlayerEntity)null, var6, var8, var10, var2, class_562.field_3322, 0.5F, this.field_18364.field_33033.nextFloat() * 0.1F + 0.9F);
    }

@@ -84,8 +84,8 @@ public abstract class class_6749 extends class_5783 {
       class_1343 var4 = this.method_37098();
       if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
          float var5 = MathHelper.sqrt(method_37266(var4));
-         this.rotationYaw = (float)(MathHelper.method_42821(var4.field_7336, var4.field_7334) * 180.0F / (float)Math.PI);
-         this.rotationPitch = (float)(MathHelper.method_42821(var4.field_7333, (double)var5) * 180.0F / (float)Math.PI);
+         this.rotationYaw = (float)(MathHelper.atan2(var4.field_7336, var4.field_7334) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.atan2(var4.field_7333, (double)var5) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
          this.field_41762 = this.rotationPitch;
       }
@@ -182,12 +182,12 @@ public abstract class class_6749 extends class_5783 {
          double var20 = this.getPosZ() + var14;
          float var22 = MathHelper.sqrt(method_37266(var4));
          if (!var3) {
-            this.rotationYaw = (float)(MathHelper.method_42821(var10, var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(MathHelper.atan2(var10, var14) * 180.0F / (float)Math.PI);
          } else {
-            this.rotationYaw = (float)(MathHelper.method_42821(-var10, -var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(MathHelper.atan2(-var10, -var14) * 180.0F / (float)Math.PI);
          }
 
-         this.rotationPitch = (float)(MathHelper.method_42821(var12, (double)var22) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.atan2(var12, (double)var22) * 180.0F / (float)Math.PI);
          this.rotationPitch = method_26168(this.field_41762, this.rotationPitch);
          this.rotationYaw = method_26168(this.prevRotationYaw, this.rotationYaw);
          float var27 = 0.99F;

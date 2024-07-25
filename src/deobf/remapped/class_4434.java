@@ -30,8 +30,8 @@ public class class_4434 extends class_2062 {
       BlockPos var13 = var5.method_36623();
       int var14 = 0;
 
-      for (int var15 = var13.method_12165() - var6 + var9; var15 <= var13.method_12165() + var9; var15++) {
-         int var16 = var13.method_12165() - var15;
+      for (int var15 = var13.getY() - var6 + var9; var15 <= var13.getY() + var9; var15++) {
+         int var16 = var13.getY() - var15;
          int var17 = var7 + var5.method_36624() + MathHelper.floor((float)var16 / (float)var6 * 3.5F);
          int var18;
          if (var16 > 0 && var17 == var14 && (var15 & 1) == 0) {
@@ -40,7 +40,7 @@ public class class_4434 extends class_2062 {
             var18 = var17;
          }
 
-         this.method_9625(var1, var2, var3, new BlockPos(var13.getX(), var15, var13.method_12185()), var18, var8, 0, var5.method_36625(), var10);
+         this.method_9625(var1, var2, var3, new BlockPos(var13.getX(), var15, var13.getZ()), var18, var8, 0, var5.method_36625(), var10);
          var14 = var17;
       }
    }

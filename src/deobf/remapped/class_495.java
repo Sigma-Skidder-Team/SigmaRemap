@@ -15,7 +15,7 @@ public class class_495 extends class_9394 {
    private boolean field_3076 = true;
 
    public class_495(ITextComponent var1, class_1062 var2, class_2976 var3) {
-      super(MathHelper.method_42790(), var1, var2, var3);
+      super(MathHelper.getRandomUUID(), var1, var2, var3);
    }
 
    @Override

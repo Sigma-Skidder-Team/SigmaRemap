@@ -19,7 +19,7 @@ public interface class_1449 extends class_6163 {
    default boolean method_6671(class_2522 var1, BlockPos var2, class_214 var3) {
       class_4190 var6 = var1.method_8325(this, var2, var3);
       return var6.method_19485()
-         || this.method_6678((Entity)null, var6.method_19496((double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185()));
+         || this.method_6678((Entity)null, var6.method_19496((double)var2.getX(), (double)var2.getY(), (double)var2.getZ()));
    }
 
    default boolean method_6677(Entity var1) {

@@ -504,11 +504,11 @@ public class class_5542 extends class_5467 {
    }
 
    public float method_25190(float var1) {
-      return MathHelper.method_42795(var1, this.field_28242, this.field_28244) * 0.11F * (float) Math.PI;
+      return MathHelper.lerp(var1, this.field_28242, this.field_28244) * 0.11F * (float) Math.PI;
    }
 
    public float method_25191(float var1) {
-      return MathHelper.method_42795(var1, this.field_28237, this.field_28247);
+      return MathHelper.lerp(var1, this.field_28237, this.field_28247);
    }
 
    @Override

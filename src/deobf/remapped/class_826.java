@@ -38,7 +38,7 @@ public class class_826 extends class_6165 {
             this.field_5766 = 0.0F;
          } else {
             this.field_4358 = MathHelper.clamp(this.field_4358 + 0.0025F, 0.0F, 1.0F);
-            this.field_5766 = MathHelper.method_42795(MathHelper.clamp(var3, 0.0F, 0.5F), 0.0F, 0.7F);
+            this.field_5766 = MathHelper.lerp(MathHelper.clamp(var3, 0.0F, 0.5F), 0.0F, 0.7F);
          }
       } else {
          this.method_28267();

@@ -79,8 +79,8 @@ public class class_2634 extends class_3956 {
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>method_10313(field_12970);
       double var8 = (double)var3.getX() + 0.5;
-      double var10 = (double)var3.method_12165() + 0.7;
-      double var12 = (double)var3.method_12185() + 0.5;
+      double var10 = (double)var3.getY() + 0.7;
+      double var12 = (double)var3.getZ() + 0.5;
       double var14 = 0.22;
       double var16 = 0.27;
       Direction var18 = var7.method_1046();

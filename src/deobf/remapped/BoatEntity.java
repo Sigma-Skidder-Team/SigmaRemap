@@ -447,7 +447,7 @@ public class BoatEntity extends Entity {
          }
 
          if (var12 < 1.0F) {
-            return (float)var10.method_12165() + var12;
+            return (float)var10.getY() + var12;
          }
       }
 
@@ -539,7 +539,7 @@ public class BoatEntity extends Entity {
             for (int var16 = var10; var16 < var11; var16++) {
                var13.method_13362(var14, var15, var16);
                class_4774 var17 = this.world.method_28258(var13);
-               if (var17.method_22007(class_6503.field_33094) && var4 < (double)((float)var13.method_12165() + var17.method_22008(this.world, var13))) {
+               if (var17.method_22007(class_6503.field_33094) && var4 < (double)((float)var13.getY() + var17.method_22008(this.world, var13))) {
                   if (!var17.method_21993()) {
                      return class_1038.field_5733;
                   }
@@ -676,8 +676,8 @@ public class BoatEntity extends Entity {
       BlockPos var9 = new BlockPos(var5, this.getBoundingBox().field_19939, var7);
       BlockPos var10 = var9.method_6100();
       if (!this.world.method_22565(var10)) {
-         double var11 = (double)var9.method_12165() + this.world.method_28259(var9);
-         double var13 = (double)var9.method_12165() + this.world.method_28259(var10);
+         double var11 = (double)var9.getY() + this.world.method_28259(var9);
+         double var13 = (double)var9.getY() + this.world.method_28259(var10);
          UnmodifiableIterator var15 = var1.method_26454().iterator();
 
          while (var15.hasNext()) {
@@ -804,7 +804,7 @@ public class BoatEntity extends Entity {
    }
 
    public float method_42086(float var1) {
-      return MathHelper.method_42795(var1, this.field_46815, this.field_46792);
+      return MathHelper.lerp(var1, this.field_46815, this.field_46792);
    }
 
    public void method_42106(int var1) {

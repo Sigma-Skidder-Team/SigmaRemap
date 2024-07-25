@@ -14,7 +14,7 @@ public class class_4194 extends class_5788<class_3966> {
          return Stream.<BlockPos>empty();
       } else {
          int var7 = var2.nextInt(16) + var4.getX();
-         int var8 = var2.nextInt(16) + var4.method_12185();
+         int var8 = var2.nextInt(16) + var4.getZ();
          int var9 = var2.nextInt(var1.method_30645());
          return Stream.<BlockPos>of(new BlockPos(var7, var9, var8));
       }

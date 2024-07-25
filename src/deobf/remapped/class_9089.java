@@ -53,11 +53,11 @@ public class class_9089 extends class_2609 {
       BlockPos var6 = this.method_41855(var1, var3);
       return new class_9616(
          var2.getX(),
-         var2.method_12165(),
-         var2.method_12185(),
+         var2.getY(),
+         var2.getZ(),
          var2.getX() + var6.getX(),
-         var2.method_12165() + var6.method_12165(),
-         var2.method_12185() + var6.method_12185()
+         var2.getY() + var6.getY(),
+         var2.getZ() + var6.getZ()
       );
    }
 

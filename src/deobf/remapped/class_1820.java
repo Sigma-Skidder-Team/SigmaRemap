@@ -50,7 +50,7 @@ public abstract class class_1820 extends class_3599 {
                   this.field_9240 = new BlockPos(var6.field_29731, var6.field_29735 + 1, var6.field_29736);
                   if (!(
                      this.field_9241
-                           .method_37273((double)this.field_9240.getX(), this.field_9241.method_37309(), (double)this.field_9240.method_12185())
+                           .method_37273((double)this.field_9240.getX(), this.field_9241.method_37309(), (double)this.field_9240.getZ())
                         > 2.25
                   )) {
                      this.field_9242 = class_4115.method_19107(this.field_9241.world, this.field_9240);
@@ -83,13 +83,13 @@ public abstract class class_1820 extends class_3599 {
    public void method_16796() {
       this.field_9239 = false;
       this.field_9238 = (float)((double)this.field_9240.getX() + 0.5 - this.field_9241.getPosX());
-      this.field_9237 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.getPosZ());
+      this.field_9237 = (float)((double)this.field_9240.getZ() + 0.5 - this.field_9241.getPosZ());
    }
 
    @Override
    public void method_16794() {
       float var3 = (float)((double)this.field_9240.getX() + 0.5 - this.field_9241.getPosX());
-      float var4 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.getPosZ());
+      float var4 = (float)((double)this.field_9240.getZ() + 0.5 - this.field_9241.getPosZ());
       float var5 = this.field_9238 * var3 + this.field_9237 * var4;
       if (var5 < 0.0F) {
          this.field_9239 = true;

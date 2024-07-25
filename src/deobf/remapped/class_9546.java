@@ -38,7 +38,7 @@ public class class_9546 extends class_2266 {
       }
 
       BlockPos var10 = this.field_8166.method_37075();
-      class_1108 var11 = this.method_44059(this.field_8166, var10.getX(), var3, var10.method_12185());
+      class_1108 var11 = this.method_44059(this.field_8166, var10.getX(), var3, var10.getZ());
       if (this.field_8166.method_26931(var11) < 0.0F) {
          HashSet var6 = Sets.newHashSet();
          var6.add(new BlockPos(this.field_8166.getBoundingBox().field_19941, (double)var3, this.field_8166.getBoundingBox().field_19938));
@@ -49,12 +49,12 @@ public class class_9546 extends class_2266 {
          for (BlockPos var8 : var6) {
             class_1108 var9 = this.method_44060(this.field_8166, var8);
             if (this.field_8166.method_26931(var9) >= 0.0F) {
-               return super.method_7016(var8.getX(), var8.method_12165(), var8.method_12185());
+               return super.method_7016(var8.getX(), var8.getY(), var8.getZ());
             }
          }
       }
 
-      return super.method_7016(var10.getX(), var3, var10.method_12185());
+      return super.method_7016(var10.getX(), var3, var10.getZ());
    }
 
    @Override
@@ -336,7 +336,7 @@ public class class_9546 extends class_2266 {
    }
 
    private class_1108 method_44060(MobEntity var1, BlockPos var2) {
-      return this.method_44059(var1, var2.getX(), var2.method_12165(), var2.method_12185());
+      return this.method_44059(var1, var2.getX(), var2.getY(), var2.getZ());
    }
 
    private class_1108 method_44059(MobEntity var1, int var2, int var3, int var4) {

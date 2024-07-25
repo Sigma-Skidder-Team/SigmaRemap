@@ -61,11 +61,11 @@ public class MathUtils {
    }
 
    public static double method_7806(BlockPos var0, double var1, double var3, double var5) {
-      return method_7804((double)var0.getX(), (double)var0.method_12165(), (double)var0.method_12185(), var1, var3, var5);
+      return method_7804((double)var0.getX(), (double)var0.getY(), (double)var0.getZ(), var1, var3, var5);
    }
 
    public static float method_7807(BlockPos var0, float var1, float var2, float var3) {
-      return method_7805((float)var0.getX(), (float)var0.method_12165(), (float)var0.method_12185(), var1, var2, var3);
+      return method_7805((float)var0.getX(), (float)var0.getY(), (float)var0.getZ(), var1, var2, var3);
    }
 
    public static double method_7804(double var0, double var2, double var4, double var6, double var8, double var10) {

@@ -189,7 +189,7 @@ public class class_4196 extends class_6414 {
                }
             }
          } else {
-            if (var7 == Direction.field_817 && var3.method_12165() < 255) {
+            if (var7 == Direction.field_817 && var3.getY() < 255) {
                if (this.method_19526(var2, var3, var7)) {
                   var2.method_7513(var3, var1.method_10308(field_20407, Boolean.valueOf(true)), 2);
                   return;
@@ -216,7 +216,7 @@ public class class_4196 extends class_6414 {
                }
             }
 
-            if (var3.method_12165() > 0) {
+            if (var3.getY() > 0) {
                BlockPos var9 = var3.method_6100();
                class_2522 var10 = var2.method_28262(var9);
                if (var10.method_8345() || var10.method_8350(this)) {
@@ -254,7 +254,7 @@ public class class_4196 extends class_6414 {
    private boolean method_19523(class_6163 var1, BlockPos var2) {
       byte var5 = 4;
       Iterable var6 = BlockPos.method_6075(
-         var2.getX() - 4, var2.method_12165() - 1, var2.method_12185() - 4, var2.getX() + 4, var2.method_12165() + 1, var2.method_12185() + 4
+         var2.getX() - 4, var2.getY() - 1, var2.getZ() - 4, var2.getX() + 4, var2.getY() + 1, var2.getZ() + 4
       );
       int var7 = 5;
 

@@ -62,7 +62,7 @@ public class class_3820 extends class_4285<class_1941> {
                      if (!var36.method_8350(class_4783.field_23471) && !var36.method_8350(class_4783.field_23617)) {
                         var1.method_7513(var34, field_18685, 2);
                      }
-                  } else if (var34.method_12165() >= 0 && !var1.method_28262(var34.method_6100()).method_8362().method_24499()) {
+                  } else if (var34.getY() >= 0 && !var1.method_28262(var34.method_6100()).method_8362().method_24499()) {
                      var1.method_7513(var34, field_18685, 2);
                   } else if (var36.method_8362().method_24499() && !var36.method_8350(class_4783.field_23471)) {
                      if (var30 == -1 && var3.nextInt(4) != 0) {
@@ -78,8 +78,8 @@ public class class_3820 extends class_4285<class_1941> {
          for (int var28 = 0; var28 < 2; var28++) {
             for (int var31 = 0; var31 < 3; var31++) {
                int var33 = var4.getX() + var3.nextInt(var9 * 2 + 1) - var9;
-               int var35 = var4.method_12165();
-               int var37 = var4.method_12185() + var3.nextInt(var14 * 2 + 1) - var14;
+               int var35 = var4.getY();
+               int var37 = var4.getZ() + var3.nextInt(var14 * 2 + 1) - var14;
                BlockPos var38 = new BlockPos(var33, var35, var37);
                if (var1.method_22548(var38)) {
                   int var24 = 0;
@@ -102,7 +102,7 @@ public class class_3820 extends class_4285<class_1941> {
          var1.method_7513(var4, class_4783.field_23617.method_29260(), 2);
          class_3757 var29 = var1.method_28260(var4);
          if (!(var29 instanceof class_1896)) {
-            field_18684.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.getX(), var4.method_12165(), var4.method_12185());
+            field_18684.error("Failed to fetch mob spawner entity at ({}, {}, {})", var4.getX(), var4.getY(), var4.getZ());
          } else {
             ((class_1896)var29).method_8621().method_16253(this.method_17796(var3));
          }

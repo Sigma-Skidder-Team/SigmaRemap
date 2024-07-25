@@ -56,7 +56,7 @@ public class class_160 {
       while (var6 < var1) {
          class_4190 var7 = (class_4190)var2.apply(var5);
          if (!var7.method_19485()) {
-            return (double)(var0.method_12165() + var6) + var7.method_19491(class_9249.field_47216);
+            return (double)(var0.getY() + var6) + var7.method_19491(class_9249.field_47216);
          }
 
          var6++;

@@ -50,8 +50,8 @@ public class class_6986 implements Predicate<class_9115> {
             if (var7 != null) {
                CompoundNBT var8 = this.field_35871.method_25944();
                var8.putInt("x", var2.getX());
-               var8.putInt("y", var2.method_12165());
-               var8.putInt("z", var2.method_12185());
+               var8.putInt("y", var2.getY());
+               var8.putInt("z", var2.getZ());
                var7.method_17394(var6, var8);
             }
          }

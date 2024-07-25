@@ -86,8 +86,8 @@ public class class_9741 {
          Vector3i var10 = var8.method_12166(var9);
          return var0.method_6104(
             var9.getX() * -var4 + var10.getX() * var3 + var8.getX() * var5,
-            var9.method_12165() * -var4 + var10.method_12165() * var3 + var8.method_12165() * var5,
-            var9.method_12185() * -var4 + var10.method_12185() * var3 + var8.method_12185() * var5
+            var9.getY() * -var4 + var10.getY() * var3 + var8.getY() * var5,
+            var9.getZ() * -var4 + var10.getZ() * var3 + var8.getZ() * var5
          );
       } else {
          throw new IllegalArgumentException("Invalid forwards & up combination");

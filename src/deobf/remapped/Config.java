@@ -1293,8 +1293,8 @@ public class Config {
    public static int method_14242(BlockPos var0, int var1) {
       int var4 = method_14419(var1 + 37);
       var4 = method_14419(var4 + var0.getX());
-      var4 = method_14419(var4 + var0.method_12185());
-      return method_14419(var4 + var0.method_12165());
+      var4 = method_14419(var4 + var0.getZ());
+      return method_14419(var4 + var0.getY());
    }
 
    public static int method_14308() {

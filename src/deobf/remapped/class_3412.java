@@ -36,7 +36,7 @@ public class class_3412 extends class_5892 {
       float var8 = var4.nextFloat();
       return (double)var8
          <= MathHelper.clampedLerp(
-            (double)this.field_16797, (double)this.field_16798, MathHelper.method_42851((double)var7, (double)this.field_16799, (double)this.field_16801)
+            (double)this.field_16797, (double)this.field_16798, MathHelper.func_233020_c_((double)var7, (double)this.field_16799, (double)this.field_16801)
          );
    }
 

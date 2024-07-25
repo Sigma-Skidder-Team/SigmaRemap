@@ -127,11 +127,11 @@ public class class_6011 extends class_1829 {
          class_1343 var7 = this.method_37098();
          float var4 = MathHelper.sqrt(method_37266(var7));
          this.field_29605 = this.field_29605
-            + (-((float) MathHelper.method_42821(var7.field_7336, var7.field_7334)) * (180.0F / (float)Math.PI) - this.field_29605) * 0.1F;
+            + (-((float) MathHelper.atan2(var7.field_7336, var7.field_7334)) * (180.0F / (float)Math.PI) - this.field_29605) * 0.1F;
          this.rotationYaw = this.field_29605;
          this.field_30618 = (float)((double)this.field_30618 + Math.PI * (double)this.field_30606 * 1.5);
          this.field_30616 = this.field_30616
-            + (-((float) MathHelper.method_42821((double)var4, var7.field_7333)) * (180.0F / (float)Math.PI) - this.field_30616) * 0.1F;
+            + (-((float) MathHelper.atan2((double)var4, var7.field_7333)) * (180.0F / (float)Math.PI) - this.field_30616) * 0.1F;
       }
    }
 
@@ -172,7 +172,7 @@ public class class_6011 extends class_1829 {
    }
 
    public static boolean method_27439(EntityType<class_6011> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
-      return var3.method_12165() > 45 && var3.method_12165() < var1.method_22552();
+      return var3.getY() > 45 && var3.getY() < var1.method_22552();
    }
 
    @Override

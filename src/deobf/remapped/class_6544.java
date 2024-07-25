@@ -20,7 +20,7 @@ public class class_6544 {
    }
 
    public static String method_29846(BlockPos var0) {
-      return method_29845(var0.getX(), var0.method_12165(), var0.method_12185());
+      return method_29845(var0.getX(), var0.getY(), var0.getZ());
    }
 
    public static String method_29845(int var0, int var1, int var2) {

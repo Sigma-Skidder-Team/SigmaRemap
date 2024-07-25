@@ -99,8 +99,8 @@ public class class_3425 {
          BlockPos var23 = method_15840(var16, var1, var2, var3, var4, var6);
          if (var23 != null) {
             int var24 = var23.getX();
-            int var25 = var23.method_12165();
-            int var26 = var23.method_12185();
+            int var25 = var23.getY();
+            int var26 = var23.getZ();
             if (var0.method_26848() && var1 > 1) {
                BlockPos var27 = var0.method_26885();
                if (!(var0.getPosX() > (double)var27.getX())) {
@@ -109,7 +109,7 @@ public class class_3425 {
                   var24 -= var16.nextInt(var1 / 2);
                }
 
-               if (!(var0.getPosZ() > (double)var27.method_12185())) {
+               if (!(var0.getPosZ() > (double)var27.getZ())) {
                   var26 += var16.nextInt(var1 / 2);
                } else {
                   var26 -= var16.nextInt(var1 / 2);
@@ -117,8 +117,8 @@ public class class_3425 {
             }
 
             BlockPos var31 = new BlockPos((double)var24 + var0.getPosX(), (double)var25 + var0.method_37309(), (double)var26 + var0.getPosZ());
-            if (var31.method_12165() >= 0
-               && var31.method_12165() <= var0.world.method_28261()
+            if (var31.getY() >= 0
+               && var31.getY() <= var0.world.method_28261()
                && (!var17 || var0.method_26880(var31))
                && (!var12 || var15.method_5609(var31))) {
                if (var9) {
@@ -151,7 +151,7 @@ public class class_3425 {
    @Nullable
    private static BlockPos method_15840(Random var0, int var1, int var2, int var3, class_1343 var4, double var5) {
       if (var4 != null && !(var5 >= Math.PI)) {
-         double var12 = MathHelper.method_42821(var4.field_7334, var4.field_7336) - (float) (Math.PI / 2);
+         double var12 = MathHelper.atan2(var4.field_7334, var4.field_7336) - (float) (Math.PI / 2);
          double var14 = var12 + (double)(2.0F * var0.nextFloat() - 1.0F) * var5;
          double var16 = Math.sqrt(var0.nextDouble()) * (double) MathHelper.SQRT_2 * (double)var1;
          double var18 = -var16 * Math.sin(var14);
@@ -178,13 +178,13 @@ public class class_3425 {
       } else {
          BlockPos var6 = var0.method_6081();
 
-         while (var6.method_12165() < var2 && var3.test(var6)) {
+         while (var6.getY() < var2 && var3.test(var6)) {
             var6 = var6.method_6081();
          }
 
          BlockPos var7 = var6;
 
-         while (var7.method_12165() < var2 && var7.method_12165() - var6.method_12165() < var1) {
+         while (var7.getY() < var2 && var7.getY() - var6.getY() < var1) {
             BlockPos var8 = var7.method_6081();
             if (var3.test(var8)) {
                break;

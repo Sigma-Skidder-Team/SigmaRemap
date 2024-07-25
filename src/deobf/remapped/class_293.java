@@ -209,7 +209,7 @@ public class class_293 {
             class_3511 var26 = var25.field_6947;
             class_2654 var27 = var26.method_16174();
 
-            for (Entity var29 : var27.method_11979()[var26.method_16189().method_12165() / 16]) {
+            for (Entity var29 : var27.method_11979()[var26.method_16189().getY() / 16]) {
                if ((var21.method_28135(var29, var11, var14, var16, var18) || var29.method_37315(var8.thePlayer))
                   && (
                      var29 != var1.method_41633()
@@ -251,7 +251,7 @@ public class class_293 {
                   class_6588.method_30117(var30);
                   BlockPos var32 = var30.method_17399();
                   var10.method_36063();
-                  var10.method_36065((double)var32.getX() - var14, (double)var32.method_12165() - var16, (double)var32.method_12185() - var18);
+                  var10.method_36065((double)var32.getX() - var14, (double)var32.getY() - var16, (double)var32.getZ() - var18);
                   class_3569.field_17468.method_16586(var30, var3, var10, var22);
                   var10.method_36064();
                }
@@ -511,8 +511,8 @@ public class class_293 {
          if (var0.method_45197(Direction.field_800)) {
             Vector3i var23 = Direction.field_800.method_1037();
             float var24 = (float)var23.getX();
-            float var25 = (float)var23.method_12165();
-            float var26 = (float)var23.method_12185();
+            float var25 = (float)var23.getY();
+            float var26 = (float)var23.getZ();
             float var27 = var11.method_29896(var24, var25, var26);
             float var28 = var11.method_29897(var24, var25, var26);
             float var29 = var11.method_29887(var24, var25, var26);
@@ -549,8 +549,8 @@ public class class_293 {
          if (var0.method_45197(Direction.field_818)) {
             Vector3i var30 = Direction.field_818.method_1037();
             float var35 = (float)var30.getX();
-            float var40 = (float)var30.method_12165();
-            float var45 = (float)var30.method_12185();
+            float var40 = (float)var30.getY();
+            float var45 = (float)var30.getZ();
             float var50 = var11.method_29896(var35, var40, var45);
             float var55 = var11.method_29897(var35, var40, var45);
             float var60 = var11.method_29887(var35, var40, var45);
@@ -587,8 +587,8 @@ public class class_293 {
          if (var0.method_45197(Direction.field_804)) {
             Vector3i var31 = Direction.field_804.method_1037();
             float var36 = (float)var31.getX();
-            float var41 = (float)var31.method_12165();
-            float var46 = (float)var31.method_12185();
+            float var41 = (float)var31.getY();
+            float var46 = (float)var31.getZ();
             float var51 = var11.method_29896(var36, var41, var46);
             float var56 = var11.method_29897(var36, var41, var46);
             float var61 = var11.method_29887(var36, var41, var46);
@@ -625,8 +625,8 @@ public class class_293 {
          if (var0.method_45197(Direction.field_809)) {
             Vector3i var32 = Direction.field_809.method_1037();
             float var37 = (float)var32.getX();
-            float var42 = (float)var32.method_12165();
-            float var47 = (float)var32.method_12185();
+            float var42 = (float)var32.getY();
+            float var47 = (float)var32.getZ();
             float var52 = var11.method_29896(var37, var42, var47);
             float var57 = var11.method_29897(var37, var42, var47);
             float var62 = var11.method_29887(var37, var42, var47);
@@ -663,8 +663,8 @@ public class class_293 {
          if (var0.method_45197(Direction.field_802)) {
             Vector3i var33 = Direction.field_802.method_1037();
             float var38 = (float)var33.getX();
-            float var43 = (float)var33.method_12165();
-            float var48 = (float)var33.method_12185();
+            float var43 = (float)var33.getY();
+            float var48 = (float)var33.getZ();
             float var53 = var11.method_29896(var38, var43, var48);
             float var58 = var11.method_29897(var38, var43, var48);
             float var63 = var11.method_29887(var38, var43, var48);
@@ -701,8 +701,8 @@ public class class_293 {
          if (var0.method_45197(Direction.field_817)) {
             Vector3i var34 = Direction.field_817.method_1037();
             float var39 = (float)var34.getX();
-            float var44 = (float)var34.method_12165();
-            float var49 = (float)var34.method_12185();
+            float var44 = (float)var34.getY();
+            float var49 = (float)var34.getZ();
             float var54 = var11.method_29896(var39, var44, var49);
             float var59 = var11.method_29897(var39, var44, var49);
             float var64 = var11.method_29887(var39, var44, var49);

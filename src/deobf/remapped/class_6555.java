@@ -84,7 +84,7 @@ public final class class_6555 {
       if (!(field_33412 * var1 * var1 < var5 * var5)) {
          return Pair.of(field_33407, field_33405);
       } else {
-         float var6 = MathHelper.method_42836(var1 * var1 + var5 * var5);
+         float var6 = MathHelper.fastInvSqrt(var1 * var1 + var5 * var5);
          return Pair.of(var6 * var1, var6 * var5);
       }
    }
@@ -99,7 +99,7 @@ public final class class_6555 {
          var6 = var7;
       }
 
-      float var10 = MathHelper.method_42836(var6 * var6 + var5 * var5);
+      float var10 = MathHelper.fastInvSqrt(var6 * var6 + var5 * var5);
       var6 *= var10;
       var5 *= var10;
       return Pair.of(var5, var6);

@@ -139,7 +139,7 @@ public class class_5678 extends class_8346 implements class_372, class_3745 {
          ItemStack var5 = new ItemStack(var3.method_27960().method_11241());
          if (!var3.method_28022()) {
             if (!this.field_18364.field_33055) {
-               class_1573.method_7100(this.field_18364, (double)var6.getX(), (double)var6.method_12165(), (double)var6.method_12185(), var5);
+               class_1573.method_7100(this.field_18364, (double)var6.getX(), (double)var6.getY(), (double)var6.getZ(), var5);
             }
          } else {
             var3 = var5;
@@ -195,7 +195,7 @@ public class class_5678 extends class_8346 implements class_372, class_3745 {
       return this.field_18364.method_28260(this.field_18358) == this
          ? !(
             var1.method_37273(
-                  (double)this.field_18358.getX() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
+                  (double)this.field_18358.getX() + 0.5, (double)this.field_18358.getY() + 0.5, (double)this.field_18358.getZ() + 0.5
                )
                > 64.0
          )

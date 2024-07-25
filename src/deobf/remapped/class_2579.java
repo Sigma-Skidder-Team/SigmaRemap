@@ -16,7 +16,7 @@ public class class_2579 extends class_4285<class_1941> {
    public boolean method_11743(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       var4 = var4.method_6081();
 
-      while (var1.method_22548(var4) && var4.method_12165() > 2) {
+      while (var1.method_22548(var4) && var4.getY() > 2) {
          var4 = var4.method_6100();
       }
 

@@ -79,12 +79,12 @@ public class class_7019<T extends MobEntity & class_9479> extends class_1498<T> 
       this.field_35982.field_8190 = var5 * (float) (Math.PI / 180.0);
       int var9 = ((class_9479)var1).method_43795();
       float var10 = 1.0F - (float) MathHelper.abs(10 - 2 * var9) / 10.0F;
-      this.field_35982.field_8191 = MathHelper.method_42795(var10, 0.87266463F, (float) (-Math.PI / 9));
+      this.field_35982.field_8191 = MathHelper.lerp(var10, 0.87266463F, (float) (-Math.PI / 9));
       if (!var1.method_26449()) {
          this.field_35982.field_8181 = 2.0F;
          this.field_35979.field_8187 = -7.0F;
       } else {
-         this.field_35982.field_8181 = MathHelper.method_42795(var10, 2.0F, 5.0F);
+         this.field_35982.field_8181 = MathHelper.lerp(var10, 2.0F, 5.0F);
          this.field_35979.field_8187 = -3.0F;
       }
 

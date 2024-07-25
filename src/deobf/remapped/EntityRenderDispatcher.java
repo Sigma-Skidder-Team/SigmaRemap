@@ -417,7 +417,7 @@ public class EntityRenderDispatcher {
       if (var15.method_8352() != class_7537.field_38470 && var2.method_22573(var3) > 3 && var15.method_8306(var2, var14)) {
          class_4190 var16 = var15.method_8334(var2, var3.method_6100());
          if (!var16.method_19485()) {
-            float var17 = (float)(((double)var11 - (var6 - (double)var3.method_12165()) / 2.0) * 0.5 * (double)var2.method_22566(var3));
+            float var17 = (float)(((double)var11 - (var6 - (double)var3.getY()) / 2.0) * 0.5 * (double)var2.method_22566(var3));
             if (var17 >= 0.0F) {
                if (var17 > 1.0F) {
                   var17 = 1.0F;
@@ -426,9 +426,9 @@ public class EntityRenderDispatcher {
                Box var18 = var16.method_19483();
                double var19 = (double)var3.getX() + var18.field_19941;
                double var21 = (double)var3.getX() + var18.field_19940;
-               double var23 = (double)var3.method_12165() + var18.field_19937;
-               double var25 = (double)var3.method_12185() + var18.field_19938;
-               double var27 = (double)var3.method_12185() + var18.field_19942;
+               double var23 = (double)var3.getY() + var18.field_19937;
+               double var25 = (double)var3.getZ() + var18.field_19938;
+               double var27 = (double)var3.getZ() + var18.field_19942;
                float var29 = (float)(var19 - var4);
                float var30 = (float)(var21 - var4);
                float var31 = (float)(var23 - var6);

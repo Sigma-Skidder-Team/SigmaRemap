@@ -145,9 +145,9 @@ public class class_3192<T extends class_4109> extends class_1498<T> {
 
    public void method_14692(T var1, float var2, float var3, float var4) {
       super.method_29702(var1, var2, var3, var4);
-      float var7 = MathHelper.method_42833(var1.field_29611, var1.field_29605, var4);
-      float var8 = MathHelper.method_42833(var1.field_29657, var1.field_29618, var4);
-      float var9 = MathHelper.method_42795(var4, var1.field_41762, var1.rotationPitch);
+      float var7 = MathHelper.rotLerp(var1.field_29611, var1.field_29605, var4);
+      float var8 = MathHelper.rotLerp(var1.field_29657, var1.field_29618, var4);
+      float var9 = MathHelper.lerp(var4, var1.field_41762, var1.rotationPitch);
       float var10 = var8 - var7;
       float var11 = var9 * (float) (Math.PI / 180.0);
       if (var10 > 20.0F) {

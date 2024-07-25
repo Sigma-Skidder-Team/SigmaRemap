@@ -147,7 +147,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                int var16 = (Integer)var15.next();
 
                for (int[] var20 : var5) {
-                  var7.method_13362(var6.getX() + var20[0], var6.method_12165() + var16, var6.method_12185() + var20[1]);
+                  var7.method_13362(var6.getX() + var20[0], var6.getY() + var16, var6.getZ() + var20[1]);
                   double var21 = this.world
                      .method_28264(class_160.method_646(this.world, var7), () -> class_160.method_646(this.world, var7.method_6100()));
                   if (class_160.method_648(var21)) {
@@ -163,13 +163,13 @@ public abstract class AbstractMinecartEntity extends Entity {
          }
 
          double var10 = this.getBoundingBox().field_19939;
-         var7.method_13361((double)var6.getX(), var10, (double)var6.method_12185());
+         var7.method_13361((double)var6.getX(), var10, (double)var6.getZ());
          UnmodifiableIterator var29 = var8.iterator();
 
          while (var29.hasNext()) {
             class_7653 var30 = (class_7653)var29.next();
             double var25 = (double)var1.method_37190(var30).field_31200;
-            int var31 = MathHelper.ceil(var10 - (double)var7.method_12165() + var25);
+            int var31 = MathHelper.ceil(var10 - (double)var7.getY() + var25);
             double var27 = class_160.method_652(var7, var31, var1x -> this.world.method_28262(var1x).method_8324(this.world, var1x));
             if (var10 + var25 <= var27) {
                var1.method_37356(var30);
@@ -288,7 +288,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          double var16 = this.field_41767 - this.getPosX();
          double var18 = this.field_41725 - this.getPosZ();
          if (var16 * var16 + var18 * var18 > 0.001) {
-            this.rotationYaw = (float)(MathHelper.method_42821(var18, var16) * 180.0 / Math.PI);
+            this.rotationYaw = (float)(MathHelper.atan2(var18, var16) * 180.0 / Math.PI);
             if (this.field_5893) {
                this.rotationYaw += 180.0F;
             }
@@ -377,7 +377,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       double var7 = this.method_37309();
       double var9 = this.getPosZ();
       class_1343 var11 = this.method_4748(var5, var7, var9);
-      var7 = (double)var1.method_12165();
+      var7 = (double)var1.getY();
       boolean var12 = false;
       boolean var13 = false;
       class_6788 var14 = (class_6788)var2.method_8360();
@@ -412,7 +412,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       Vector3i var20 = (Vector3i)var19.getFirst();
       Vector3i var21 = (Vector3i)var19.getSecond();
       double var22 = (double)(var21.getX() - var20.getX());
-      double var24 = (double)(var21.method_12185() - var20.method_12185());
+      double var24 = (double)(var21.getZ() - var20.getZ());
       double var26 = Math.sqrt(var22 * var22 + var24 * var24);
       double var28 = var17.field_7336 * var22 + var17.field_7334 * var24;
       if (var28 < 0.0) {
@@ -444,14 +444,14 @@ public abstract class AbstractMinecartEntity extends Entity {
       }
 
       double var75 = (double)var1.getX() + 0.5 + (double)var20.getX() * 0.5;
-      double var40 = (double)var1.method_12185() + 0.5 + (double)var20.method_12185() * 0.5;
+      double var40 = (double)var1.getZ() + 0.5 + (double)var20.getZ() * 0.5;
       double var42 = (double)var1.getX() + 0.5 + (double)var21.getX() * 0.5;
-      double var44 = (double)var1.method_12185() + 0.5 + (double)var21.method_12185() * 0.5;
+      double var44 = (double)var1.getZ() + 0.5 + (double)var21.getZ() * 0.5;
       var22 = var42 - var75;
       var24 = var44 - var40;
       double var46;
       if (var22 == 0.0) {
-         var46 = var9 - (double)var1.method_12185();
+         var46 = var9 - (double)var1.getZ();
       } else if (var24 == 0.0) {
          var46 = var5 - (double)var1.getX();
       } else {
@@ -470,14 +470,14 @@ public abstract class AbstractMinecartEntity extends Entity {
          class_7412.field_37839,
          new class_1343(MathHelper.clamp(var76 * var17.field_7336, -var77, var77), 0.0, MathHelper.clamp(var76 * var17.field_7334, -var77, var77))
       );
-      if (var20.method_12165() != 0
+      if (var20.getY() != 0
          && MathHelper.floor(this.getPosX()) - var1.getX() == var20.getX()
-         && MathHelper.floor(this.getPosZ()) - var1.method_12185() == var20.method_12185()) {
-         this.method_37256(this.getPosX(), this.method_37309() + (double)var20.method_12165(), this.getPosZ());
-      } else if (var21.method_12165() != 0
+         && MathHelper.floor(this.getPosZ()) - var1.getZ() == var20.getZ()) {
+         this.method_37256(this.getPosX(), this.method_37309() + (double)var20.getY(), this.getPosZ());
+      } else if (var21.getY() != 0
          && MathHelper.floor(this.getPosX()) - var1.getX() == var21.getX()
-         && MathHelper.floor(this.getPosZ()) - var1.method_12185() == var21.method_12185()) {
-         this.method_37256(this.getPosX(), this.method_37309() + (double)var21.method_12165(), this.getPosZ());
+         && MathHelper.floor(this.getPosZ()) - var1.getZ() == var21.getZ()) {
+         this.method_37256(this.getPosX(), this.method_37309() + (double)var21.getY(), this.getPosZ());
       }
 
       this.method_4755();
@@ -495,10 +495,10 @@ public abstract class AbstractMinecartEntity extends Entity {
 
       int var58 = MathHelper.floor(this.getPosX());
       int var59 = MathHelper.floor(this.getPosZ());
-      if (var58 != var1.getX() || var59 != var1.method_12185()) {
+      if (var58 != var1.getX() || var59 != var1.getZ()) {
          class_1343 var78 = this.method_37098();
          double var80 = Math.sqrt(method_37266(var78));
-         this.method_37214(var80 * (double)(var58 - var1.getX()), var78.field_7333, var80 * (double)(var59 - var1.method_12185()));
+         this.method_37214(var80 * (double)(var58 - var1.getX()), var78.field_7333, var80 * (double)(var59 - var1.getZ()));
       }
 
       if (var12) {
@@ -566,20 +566,20 @@ public abstract class AbstractMinecartEntity extends Entity {
          Vector3i var17 = (Vector3i)var16.getFirst();
          Vector3i var18 = (Vector3i)var16.getSecond();
          double var19 = (double)(var18.getX() - var17.getX());
-         double var21 = (double)(var18.method_12185() - var17.method_12185());
+         double var21 = (double)(var18.getZ() - var17.getZ());
          double var23 = Math.sqrt(var19 * var19 + var21 * var21);
          var19 /= var23;
          var21 /= var23;
          var1 += var19 * var7;
          var5 += var21 * var7;
-         if (var17.method_12165() != 0
+         if (var17.getY() != 0
             && MathHelper.floor(var1) - var11 == var17.getX()
-            && MathHelper.floor(var5) - var13 == var17.method_12185()) {
-            var3 += (double)var17.method_12165();
-         } else if (var18.method_12165() != 0
+            && MathHelper.floor(var5) - var13 == var17.getZ()) {
+            var3 += (double)var17.getY();
+         } else if (var18.getY() != 0
             && MathHelper.floor(var1) - var11 == var18.getX()
-            && MathHelper.floor(var5) - var13 == var18.method_12185()) {
-            var3 += (double)var18.method_12165();
+            && MathHelper.floor(var5) - var13 == var18.getZ()) {
+            var3 += (double)var18.getY();
          }
 
          return this.method_4748(var1, var3, var5);
@@ -604,11 +604,11 @@ public abstract class AbstractMinecartEntity extends Entity {
          Vector3i var15 = (Vector3i)var14.getFirst();
          Vector3i var16 = (Vector3i)var14.getSecond();
          double var17 = (double)var9 + 0.5 + (double)var15.getX() * 0.5;
-         double var19 = (double)var10 + 0.0625 + (double)var15.method_12165() * 0.5;
-         double var21 = (double)var11 + 0.5 + (double)var15.method_12185() * 0.5;
+         double var19 = (double)var10 + 0.0625 + (double)var15.getY() * 0.5;
+         double var21 = (double)var11 + 0.5 + (double)var15.getZ() * 0.5;
          double var23 = (double)var9 + 0.5 + (double)var16.getX() * 0.5;
-         double var25 = (double)var10 + 0.0625 + (double)var16.method_12165() * 0.5;
-         double var27 = (double)var11 + 0.5 + (double)var16.method_12185() * 0.5;
+         double var25 = (double)var10 + 0.0625 + (double)var16.getY() * 0.5;
+         double var27 = (double)var11 + 0.5 + (double)var16.getZ() * 0.5;
          double var29 = var23 - var17;
          double var31 = (var25 - var19) * 2.0;
          double var33 = var27 - var21;

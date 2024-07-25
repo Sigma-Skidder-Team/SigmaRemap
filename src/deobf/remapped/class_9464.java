@@ -78,11 +78,11 @@ public class class_9464 extends class_5877 implements class_724 {
          class_7451.class,
          new Box(
             (double)var3.getX(),
-            (double)var3.method_12165(),
-            (double)var3.method_12185(),
+            (double)var3.getY(),
+            (double)var3.getZ(),
             (double)(var3.getX() + 1),
-            (double)(var3.method_12165() + 1),
-            (double)(var3.method_12185() + 1)
+            (double)(var3.getY() + 1),
+            (double)(var3.getZ() + 1)
          ),
          var1x -> var1x != null && var1x.method_37365() == var2
       );

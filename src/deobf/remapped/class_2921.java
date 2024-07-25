@@ -50,7 +50,7 @@ public class class_2921 extends BlockPos {
    }
 
    public class_2921 method_13364(Vector3i var1) {
-      return this.method_13362(var1.getX(), var1.method_12165(), var1.method_12185());
+      return this.method_13362(var1.getX(), var1.getY(), var1.getZ());
    }
 
    public class_2921 method_13363(long var1) {
@@ -66,11 +66,11 @@ public class class_2921 extends BlockPos {
    }
 
    public class_2921 method_13371(Vector3i var1, Direction var2) {
-      return this.method_13362(var1.getX() + var2.method_1041(), var1.method_12165() + var2.method_1054(), var1.method_12185() + var2.method_1034());
+      return this.method_13362(var1.getX() + var2.method_1041(), var1.getY() + var2.method_1054(), var1.getZ() + var2.method_1034());
    }
 
    public class_2921 method_13360(Vector3i var1, int var2, int var3, int var4) {
-      return this.method_13362(var1.getX() + var2, var1.method_12165() + var3, var1.method_12185() + var4);
+      return this.method_13362(var1.getX() + var2, var1.getY() + var3, var1.getZ() + var4);
    }
 
    public class_2921 method_13368(Direction var1) {
@@ -79,16 +79,16 @@ public class class_2921 extends BlockPos {
 
    public class_2921 method_13369(Direction var1, int var2) {
       return this.method_13362(
-         this.getX() + var1.method_1041() * var2, this.method_12165() + var1.method_1054() * var2, this.method_12185() + var1.method_1034() * var2
+         this.getX() + var1.method_1041() * var2, this.getY() + var1.method_1054() * var2, this.getZ() + var1.method_1034() * var2
       );
    }
 
    public class_2921 method_13367(int var1, int var2, int var3) {
-      return this.method_13362(this.getX() + var1, this.method_12165() + var2, this.method_12185() + var3);
+      return this.method_13362(this.getX() + var1, this.getY() + var2, this.getZ() + var3);
    }
 
    public class_2921 method_13366(Vector3i var1) {
-      return this.method_13362(this.getX() + var1.getX(), this.method_12165() + var1.method_12165(), this.method_12185() + var1.method_12185());
+      return this.method_13362(this.getX() + var1.getX(), this.getY() + var1.getY(), this.getZ() + var1.getZ());
    }
 
    // $VF: Unable to simplify switch on enum
@@ -96,11 +96,11 @@ public class class_2921 extends BlockPos {
    public class_2921 method_13370(class_9249 var1, int var2, int var3) {
       switch (var1) {
          case field_47215:
-            return this.method_13362(MathHelper.clamp(this.getX(), var2, var3), this.method_12165(), this.method_12185());
+            return this.method_13362(MathHelper.clamp(this.getX(), var2, var3), this.getY(), this.getZ());
          case field_47216:
-            return this.method_13362(this.getX(), MathHelper.clamp(this.method_12165(), var2, var3), this.method_12185());
+            return this.method_13362(this.getX(), MathHelper.clamp(this.getY(), var2, var3), this.getZ());
          case field_47219:
-            return this.method_13362(this.getX(), this.method_12165(), MathHelper.clamp(this.method_12185(), var2, var3));
+            return this.method_13362(this.getX(), this.getY(), MathHelper.clamp(this.getZ(), var2, var3));
          default:
             throw new IllegalStateException("Unable to clamp axis " + var1);
       }

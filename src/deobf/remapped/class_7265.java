@@ -17,10 +17,10 @@ public class class_7265 {
       float var14 = var4.method_23632();
       float var15 = (var12.field_49930[0] + var12.field_49930[0] + var12.field_49930[2] + var12.field_49930[2]) / 4.0F;
       float var16 = (var12.field_49930[1] + var12.field_49930[1] + var12.field_49930[3] + var12.field_49930[3]) / 4.0F;
-      var12.field_49930[0] = MathHelper.method_42795(var14, var12.field_49930[0], var15);
-      var12.field_49930[2] = MathHelper.method_42795(var14, var12.field_49930[2], var15);
-      var12.field_49930[1] = MathHelper.method_42795(var14, var12.field_49930[1], var16);
-      var12.field_49930[3] = MathHelper.method_42795(var14, var12.field_49930[3], var16);
+      var12.field_49930[0] = MathHelper.lerp(var14, var12.field_49930[0], var15);
+      var12.field_49930[2] = MathHelper.lerp(var14, var12.field_49930[2], var15);
+      var12.field_49930[1] = MathHelper.lerp(var14, var12.field_49930[1], var16);
+      var12.field_49930[3] = MathHelper.lerp(var14, var12.field_49930[3], var16);
       boolean var17 = !class_7860.field_39996.method_3596() ? var8 : false;
       int[] var18 = this.method_33200(var12, var4, var5, this.method_33192(var1, var2), var6.method_25403(), var7, var17);
       Direction var19 = method_33195(var18);
@@ -194,7 +194,7 @@ public class class_7265 {
 
       for (Direction var16 : Direction.values()) {
          Vector3i var17 = var16.method_1037();
-         class_2426 var18 = new class_2426((float)var17.getX(), (float)var17.method_12165(), (float)var17.method_12185());
+         class_2426 var18 = new class_2426((float)var17.getX(), (float)var17.getY(), (float)var17.getZ());
          float var19 = var10.method_11067(var18);
          if (var19 >= 0.0F && var19 > var12) {
             var12 = var19;

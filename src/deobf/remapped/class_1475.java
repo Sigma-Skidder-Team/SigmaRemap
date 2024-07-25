@@ -88,8 +88,8 @@ public class class_1475 extends class_2620 {
       Direction var6 = var0.<Direction>method_10313(field_1543).method_1046();
       Direction var7 = method_11868(var0).method_1046();
       double var8 = (double)var2.getX() + 0.5 + 0.1 * (double)var6.method_1041() + 0.2 * (double)var7.method_1041();
-      double var10 = (double)var2.method_12165() + 0.5 + 0.1 * (double)var6.method_1054() + 0.2 * (double)var7.method_1054();
-      double var12 = (double)var2.method_12185() + 0.5 + 0.1 * (double)var6.method_1034() + 0.2 * (double)var7.method_1034();
+      double var10 = (double)var2.getY() + 0.5 + 0.1 * (double)var6.method_1054() + 0.2 * (double)var7.method_1054();
+      double var12 = (double)var2.getZ() + 0.5 + 0.1 * (double)var6.method_1034() + 0.2 * (double)var7.method_1034();
       var1.method_43361(new class_5727(1.0F, 0.0F, 0.0F, var3), var8, var10, var12, 0.0, 0.0, 0.0);
    }
 

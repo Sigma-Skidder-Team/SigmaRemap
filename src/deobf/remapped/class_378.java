@@ -242,8 +242,8 @@ public class class_378 extends MobEntity implements class_1869 {
    public static boolean method_1853(EntityType<class_378> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (var1.method_43370() != class_423.field_1790) {
          if (Objects.equals(var1.method_2754(var3), Optional.<class_5621<class_6325>>of(class_8606.field_44089))
-            && var3.method_12165() > 50
-            && var3.method_12165() < 70
+            && var3.getY() > 50
+            && var3.getY() < 70
             && var4.nextFloat() < 0.5F
             && var4.nextFloat() < var1.method_13576()
             && var1.method_22573(var3) <= var4.nextInt(8)) {
@@ -256,7 +256,7 @@ public class class_378 extends MobEntity implements class_1869 {
 
          class_2034 var7 = new class_2034(var3);
          boolean var8 = class_8679.method_39862(var7.field_10328, var7.field_10327, ((class_700)var1).method_3133(), 987234911L).nextInt(10) == 0;
-         if (var4.nextInt(10) == 0 && var8 && var3.method_12165() < 40) {
+         if (var4.nextInt(10) == 0 && var8 && var3.getY() < 40) {
             return method_26908(var0, var1, var2, var3, var4);
          }
       }

@@ -84,7 +84,7 @@ public class class_949 extends class_958 {
 
    private boolean method_4178(BlockPos var1) {
       class_8829.method_40571(this.field_4884).method_5613(10.0F);
-      class_8829.method_40555(this.field_4884).method_5595((double)var1.getX(), (double)var1.method_12165(), (double)var1.method_12185(), 1.0);
+      class_8829.method_40555(this.field_4884).method_5595((double)var1.getX(), (double)var1.getY(), (double)var1.getZ(), 1.0);
       return class_8829.method_40613(this.field_4884).method_5594() != null && class_8829.method_40577(this.field_4884).method_5594().method_18433();
    }
 

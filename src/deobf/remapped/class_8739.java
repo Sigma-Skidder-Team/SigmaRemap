@@ -63,8 +63,8 @@ public class class_8739 extends class_4285<class_1297> {
       if (var7.field_7153) {
          var14 = var3;
       } else {
-         int var15 = var1.method_22563(class_3801.field_18599, var3).method_12165();
-         int var16 = var1.method_22563(class_3801.field_18592, var3).method_12165();
+         int var15 = var1.method_22563(class_3801.field_18599, var3).getY();
+         int var16 = var1.method_22563(class_3801.field_18592, var3).getY();
          if (var16 - var15 > var7.field_7149) {
             return false;
          }
@@ -72,7 +72,7 @@ public class class_8739 extends class_4285<class_1297> {
          int var17;
          if (var7.field_7150 != class_3801.field_18599) {
             if (var7.field_7150 != class_3801.field_18592) {
-               var17 = var1.method_22563(var7.field_7150, var3).method_12165();
+               var17 = var1.method_22563(var7.field_7150, var3).getY();
             } else {
                var17 = var16;
             }
@@ -80,10 +80,10 @@ public class class_8739 extends class_4285<class_1297> {
             var17 = var15;
          }
 
-         var14 = new BlockPos(var3.getX(), var17, var3.method_12185());
+         var14 = new BlockPos(var3.getX(), var17, var3.getZ());
       }
 
-      if (var14.method_12165() < 1 || var14.method_12165() + var10 + 1 > 256) {
+      if (var14.getY() < 1 || var14.getY() + var10 + 1 > 256) {
          return false;
       } else if (!method_40129(var1, var14.method_6100())) {
          return false;
@@ -134,8 +134,8 @@ public class class_8739 extends class_4285<class_1297> {
          if (!var5.field_7156.isEmpty()) {
             ArrayList var13 = Lists.newArrayList(var8);
             ArrayList var14 = Lists.newArrayList(var9);
-            var13.sort(Comparator.comparingInt(Vector3i::method_12165));
-            var14.sort(Comparator.comparingInt(Vector3i::method_12165));
+            var13.sort(Comparator.comparingInt(Vector3i::getY));
+            var14.sort(Comparator.comparingInt(Vector3i::getY));
             var5.field_7156.forEach(var6 -> var6.method_28703(var1, var3, var13, var14, var10, var11));
          }
 
@@ -161,7 +161,7 @@ public class class_8739 extends class_4285<class_1297> {
       for (BlockPos var12 : Lists.newArrayList(var4)) {
          if (var2.method_44395(var12)) {
             var8.method_26202(
-               var12.getX() - var2.field_48996, var12.method_12165() - var2.field_48995, var12.method_12185() - var2.field_48992, true, true
+               var12.getX() - var2.field_48996, var12.getY() - var2.field_48995, var12.getZ() - var2.field_48992, true, true
             );
          }
       }
@@ -169,7 +169,7 @@ public class class_8739 extends class_4285<class_1297> {
       for (BlockPos var26 : Lists.newArrayList(var3)) {
          if (var2.method_44395(var26)) {
             var8.method_26202(
-               var26.getX() - var2.field_48996, var26.method_12165() - var2.field_48995, var26.method_12185() - var2.field_48992, true, true
+               var26.getX() - var2.field_48996, var26.getY() - var2.field_48995, var26.getZ() - var2.field_48992, true, true
             );
          }
 
@@ -182,7 +182,7 @@ public class class_8739 extends class_4285<class_1297> {
                   method_40128(var1, var23, var17.method_10308(class_6023.field_30689, Integer.valueOf(1)));
                   if (var2.method_44395(var23)) {
                      var8.method_26202(
-                        var23.getX() - var2.field_48996, var23.method_12165() - var2.field_48995, var23.method_12185() - var2.field_48992, true, true
+                        var23.getX() - var2.field_48996, var23.getY() - var2.field_48995, var23.getZ() - var2.field_48992, true, true
                      );
                   }
                }
@@ -197,7 +197,7 @@ public class class_8739 extends class_4285<class_1297> {
          for (BlockPos var30 : var27) {
             if (var2.method_44395(var30)) {
                var8.method_26202(
-                  var30.getX() - var2.field_48996, var30.method_12165() - var2.field_48995, var30.method_12185() - var2.field_48992, true, true
+                  var30.getX() - var2.field_48996, var30.getY() - var2.field_48995, var30.getZ() - var2.field_48992, true, true
                );
             }
 
@@ -213,8 +213,8 @@ public class class_8739 extends class_4285<class_1297> {
                         if (var2.method_44395(var23)) {
                            var8.method_26202(
                               var23.getX() - var2.field_48996,
-                              var23.method_12165() - var2.field_48995,
-                              var23.method_12185() - var2.field_48992,
+                              var23.getY() - var2.field_48995,
+                              var23.getZ() - var2.field_48992,
                               true,
                               true
                            );

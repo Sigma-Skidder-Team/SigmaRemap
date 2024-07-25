@@ -373,7 +373,7 @@ public class class_9049 {
             }
          }
 
-         int var13 = var3.method_12165();
+         int var13 = var3.getY();
          if (var0.field_7517 != null && !var0.field_7517.method_40164(var13)) {
             return null;
          } else {
@@ -492,7 +492,7 @@ public class class_9049 {
             for (class_2522 var7 = var1.method_28262(var6); var7.method_8360() == var2.method_8360(); var7 = var1.method_28262(var6)) {
                var3 = var6;
                var6 = var6.method_6100();
-               if (var6.method_12165() < 0) {
+               if (var6.getY() < 0) {
                   break;
                }
             }
@@ -532,8 +532,8 @@ public class class_9049 {
          return var0.field_7503[0];
       } else {
          int var3 = var1.getX();
-         int var4 = var1.method_12165();
-         int var5 = var1.method_12185();
+         int var4 = var1.getY();
+         int var5 = var1.getZ();
          int var6 = 0;
          int var7 = 0;
          switch (var2) {

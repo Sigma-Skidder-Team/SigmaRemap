@@ -108,8 +108,8 @@ public class class_6092 extends class_608 implements class_1869 {
       BlockPos var4 = this.method_27906();
       if (var4 != null) {
          var1.putInt("APX", var4.getX());
-         var1.putInt("APY", var4.method_12165());
-         var1.putInt("APZ", var4.method_12185());
+         var1.putInt("APY", var4.getY());
+         var1.putInt("APZ", var4.getZ());
       }
    }
 
@@ -187,7 +187,7 @@ public class class_6092 extends class_608 implements class_1869 {
             }
          }
 
-         this.method_37306((double)var3.getX() + 0.5, (double)var3.method_12165(), (double)var3.method_12185() + 0.5);
+         this.method_37306((double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5);
          double var7 = 0.5 - (double) MathHelper.sin((0.5F + this.field_31178) * (float) Math.PI) * 0.5;
          double var9 = 0.5 - (double) MathHelper.sin((0.5F + this.field_31173) * (float) Math.PI) * 0.5;
          Direction var11 = this.method_27914().method_1046();
@@ -264,7 +264,7 @@ public class class_6092 extends class_608 implements class_1869 {
 
          for (int var4 = 0; var4 < 5; var4++) {
             BlockPos var5 = var3.method_6104(8 - this.field_41717.nextInt(17), 8 - this.field_41717.nextInt(17), 8 - this.field_41717.nextInt(17));
-            if (var5.method_12165() > 0
+            if (var5.getY() > 0
                && this.world.method_22548(var5)
                && this.world.method_6673().method_9813(var5)
                && this.world.method_6683(this, new Box(var5))) {
@@ -307,7 +307,7 @@ public class class_6092 extends class_608 implements class_1869 {
                this.field_31176 = var4;
             }
 
-            this.method_37306((double)var4.getX() + 0.5, (double)var4.method_12165(), (double)var4.method_12185() + 0.5);
+            this.method_37306((double)var4.getX() + 0.5, (double)var4.getY(), (double)var4.getZ() + 0.5);
          }
       }
 
@@ -380,7 +380,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    public float method_27923(float var1) {
-      return MathHelper.method_42795(var1, this.field_31173, this.field_31178);
+      return MathHelper.lerp(var1, this.field_31173, this.field_31178);
    }
 
    public int method_27925() {

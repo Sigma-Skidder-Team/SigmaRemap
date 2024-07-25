@@ -53,8 +53,8 @@ public class class_7451 extends class_4641 {
       if (this.field_22663 != null) {
          double var3 = 0.46875;
          double var5 = (double)this.field_22661.getX() + 0.5 - (double)this.field_22663.method_1041() * 0.46875;
-         double var7 = (double)this.field_22661.method_12165() + 0.5 - (double)this.field_22663.method_1054() * 0.46875;
-         double var9 = (double)this.field_22661.method_12185() + 0.5 - (double)this.field_22663.method_1034() * 0.46875;
+         double var7 = (double)this.field_22661.getY() + 0.5 - (double)this.field_22663.method_1054() * 0.46875;
+         double var9 = (double)this.field_22661.getZ() + 0.5 - (double)this.field_22663.method_1034() * 0.46875;
          this.method_37222(var5, var7, var9);
          double var11 = (double)this.method_21470();
          double var13 = (double)this.method_21473();

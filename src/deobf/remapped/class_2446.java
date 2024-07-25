@@ -15,7 +15,7 @@ public abstract class class_2446<U extends class_6157> extends class_4285<U> {
 
       for (int var10 = 0; var10 < this.method_11183((U)var5); var10++) {
          BlockPos var11 = this.method_11182(var3, var4, (U)var5);
-         if (var1.method_22548(var11) && var11.method_12165() < 255 && var8.method_8309(var1, var11) && this.method_11184(var1, var11, (U)var5)) {
+         if (var1.method_22548(var11) && var11.getY() < 255 && var8.method_8309(var1, var11) && this.method_11184(var1, var11, (U)var5)) {
             var1.method_7513(var11, var8, 2);
             var9++;
          }

@@ -117,7 +117,7 @@ public class class_5344 {
    public void method_24357(BlockPos var1) {
       class_2654 var4 = this.method_24349();
       if (var4 != null) {
-         byte var5 = (byte)class_6979.method_31915(var1.method_12165());
+         byte var5 = (byte)class_6979.method_31915(var1.getY());
          if (this.field_27263[var5] == null) {
             this.field_27241 = true;
             this.field_27263[var5] = new ShortArraySet();
@@ -160,7 +160,7 @@ public class class_5344 {
             if (var7 != null) {
                class_6979 var8 = class_6979.method_31922(var1.method_27352(), var11);
                if (var7.size() != 1) {
-                  class_1315 var9 = var1.method_27349()[var8.method_12165()];
+                  class_1315 var9 = var1.method_27349()[var8.getY()];
                   class_4467 var10 = new class_4467(var8, var7, var9, this.field_27244);
                   this.method_24348(var10, false);
                   var10.method_20730((var2, var3) -> this.method_24341(var4, var2, var3));

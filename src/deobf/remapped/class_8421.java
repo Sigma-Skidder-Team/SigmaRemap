@@ -194,8 +194,8 @@ public class class_8421 {
                double var13 = var9.method_43475();
                double var15 = var9.method_43468();
                double var17 = (double)var0.getX() - var11;
-               double var19 = (double)var0.method_12165() - var13;
-               double var21 = (double)var0.method_12185() - var15;
+               double var19 = (double)var0.getY() - var13;
+               double var21 = (double)var0.getZ() - var15;
                double var23 = var17 * var17 + var19 * var19 + var21 * var21;
                if (!(var23 > 56.25)) {
                   double var25 = Math.sqrt(var23);

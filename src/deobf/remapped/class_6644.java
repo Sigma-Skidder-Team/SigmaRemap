@@ -25,8 +25,8 @@ public class class_6644 extends class_6414 implements class_5978 {
                var8.method_28957(
                   class_3090.field_15346,
                   (double)var3.getX() + var2.field_33033.nextDouble(),
-                  (double)(var3.method_12165() + 1),
-                  (double)var3.method_12185() + var2.field_33033.nextDouble(),
+                  (double)(var3.getY() + 1),
+                  (double)var3.getZ() + var2.field_33033.nextDouble(),
                   1,
                   0.0,
                   0.0,
@@ -36,8 +36,8 @@ public class class_6644 extends class_6414 implements class_5978 {
                var8.method_28957(
                   class_3090.field_15340,
                   (double)var3.getX() + var2.field_33033.nextDouble(),
-                  (double)(var3.method_12165() + 1),
-                  (double)var3.method_12185() + var2.field_33033.nextDouble(),
+                  (double)(var3.getY() + 1),
+                  (double)var3.getZ() + var2.field_33033.nextDouble(),
                   1,
                   0.0,
                   0.01,
@@ -83,8 +83,8 @@ public class class_6644 extends class_6414 implements class_5978 {
    @Override
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.getX();
-      double var9 = (double)var3.method_12165();
-      double var11 = (double)var3.method_12185();
+      double var9 = (double)var3.getY();
+      double var11 = (double)var3.getZ();
       if (!var1.<Boolean>method_10313(field_34381)) {
          var2.method_29551(class_3090.field_15382, var7 + 0.5, var9, var11 + 0.5, 0.0, 0.04, 0.0);
          var2.method_29551(

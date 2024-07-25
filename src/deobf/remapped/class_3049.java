@@ -158,7 +158,7 @@ public class class_3049 extends class_6414 implements class_2593 {
          .method_10308(field_14946, var1.method_21863())
          .method_10308(
             field_14955,
-            var4 != Direction.field_802 && (var4 == Direction.field_817 || !(var1.method_21865().field_7333 - (double)var5.method_12165() > 0.5))
+            var4 != Direction.field_802 && (var4 == Direction.field_817 || !(var1.method_21865().field_7333 - (double)var5.getY() > 0.5))
                ? class_5122.field_26439
                : class_5122.field_26440
          )

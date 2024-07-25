@@ -206,7 +206,7 @@ public class class_7617 extends class_5467 {
    public boolean method_26855(class_4924 var1) {
       if (var1.method_6677(this) && !var1.method_22550(this.getBoundingBox())) {
          BlockPos var4 = this.method_37075();
-         if (var4.method_12165() < var1.method_22552()) {
+         if (var4.getY() < var1.method_22552()) {
             return false;
          }
 

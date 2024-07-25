@@ -132,12 +132,12 @@ public class class_3394 extends class_1871 {
          BlockPos var3 = this.field_16719.method_18449();
          this.field_16719.method_18434();
          double var4 = (double)var3.getX();
-         double var6 = (double)var3.method_12185();
+         double var6 = (double)var3.getZ();
 
          double var8;
          do {
-            var8 = (double)((float)var3.method_12165() + this.field_9479.method_26594().nextFloat() * 20.0F);
-         } while (var8 < (double)var3.method_12165());
+            var8 = (double)((float)var3.getY() + this.field_9479.method_26594().nextFloat() * 20.0F);
+         } while (var8 < (double)var3.getY());
 
          this.field_16718 = new class_1343(var4, var8, var6);
       }

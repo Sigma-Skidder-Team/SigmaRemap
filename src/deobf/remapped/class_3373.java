@@ -26,8 +26,8 @@ public class class_3373 extends class_6414 {
          class_2522 var9 = var2.method_28262(var8);
          if (!var1.method_8302() || !var9.method_8308(var2, var8, var7.method_1046())) {
             double var10 = (double)var3.getX();
-            double var12 = (double)var3.method_12165();
-            double var14 = (double)var3.method_12185();
+            double var12 = (double)var3.getY();
+            double var14 = (double)var3.getZ();
             if (var7 != Direction.field_802) {
                var12 += var4.nextDouble() * 0.8;
                if (var7.method_1029() != class_9249.field_47215) {

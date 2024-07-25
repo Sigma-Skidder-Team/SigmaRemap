@@ -12,8 +12,8 @@ public class class_4782 extends class_7164<class_3024, class_472<class_3024>> {
    }
 
    public float method_22019(class_3024 var1, float var2) {
-      float var5 = MathHelper.method_42795(var2, var1.field_14829, var1.field_14831);
-      float var6 = MathHelper.method_42795(var2, var1.field_14830, var1.field_14827);
+      float var5 = MathHelper.lerp(var2, var1.field_14829, var1.field_14831);
+      float var6 = MathHelper.lerp(var2, var1.field_14830, var1.field_14827);
       return (MathHelper.sin(var5) + 1.0F) * var6;
    }
 }

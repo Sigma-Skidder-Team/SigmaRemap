@@ -23,10 +23,10 @@ public class class_739 implements Iterator<BlockPos> {
       this.field_4036 = var5;
       this.field_4025 = var1.getX();
       this.field_4035 = var2.getX();
-      this.field_4030 = (double)var1.method_12165();
-      this.field_4027 = (double)var2.method_12165() - 0.5;
-      this.field_4033 = (double)var1.method_12185();
-      this.field_4024 = (double)var2.method_12185() - 0.5;
+      this.field_4030 = (double)var1.getY();
+      this.field_4027 = (double)var2.getY() - 0.5;
+      this.field_4033 = (double)var1.getZ();
+      this.field_4024 = (double)var2.getZ() - 0.5;
       this.field_4032 = this.field_4025;
       this.field_4034 = this.field_4030;
       this.field_4026 = this.field_4033;

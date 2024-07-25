@@ -19,7 +19,7 @@ public class class_2004 extends class_5557<class_9504> {
          int var8 = var5 / 4;
          int var9 = var5 % 4;
          int var10 = var8 * 4 + 1 + var2.nextInt(3) + var4.getX();
-         int var11 = var9 * 4 + 1 + var2.nextInt(3) + var4.method_12185();
+         int var11 = var9 * 4 + 1 + var2.nextInt(3) + var4.getZ();
          int var12 = var1.method_30648(this.method_9313(var3), var10, var11);
          return new BlockPos(var10, var12, var11);
       });

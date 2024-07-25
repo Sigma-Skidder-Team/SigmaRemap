@@ -21,8 +21,8 @@ public class class_3191 {
       float var8 = (float)class_4380.method_20403(var2.method_26576());
       float var9 = MathHelper.clamp((float)var2.method_26613(), 0.0F, var8);
       float var10 = var9 / var8;
-      var7.field_8190 = MathHelper.method_42795(var10, 0.4F, 0.85F) * (float)(!var3 ? -1 : 1);
-      var7.field_8191 = MathHelper.method_42795(var10, var7.field_8191, (float) (-Math.PI / 2));
+      var7.field_8190 = MathHelper.lerp(var10, 0.4F, 0.85F) * (float)(!var3 ? -1 : 1);
+      var7.field_8191 = MathHelper.lerp(var10, var7.field_8191, (float) (-Math.PI / 2));
    }
 
    public static <T extends MobEntity> void method_14684(class_1549 var0, class_1549 var1, T var2, float var3, float var4) {

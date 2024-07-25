@@ -221,11 +221,11 @@ public class class_6942 extends class_8218<class_7099> implements class_2593 {
          class_5583.class,
          new Box(
             (double)var1.getX(),
-            (double)(var1.method_12165() + 1),
-            (double)var1.method_12185(),
+            (double)(var1.getY() + 1),
+            (double)var1.getZ(),
             (double)(var1.getX() + 1),
-            (double)(var1.method_12165() + 2),
-            (double)(var1.method_12185() + 1)
+            (double)(var1.getY() + 2),
+            (double)(var1.getZ() + 1)
          )
       );
       if (!var4.isEmpty()) {

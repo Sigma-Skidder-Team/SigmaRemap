@@ -6,7 +6,7 @@ public class class_8282 {
    private static int method_38216(float var0) {
       float var3 = var0 / 3.0F;
       var3 = MathHelper.clamp(var3, -1.0F, 1.0F);
-      return MathHelper.method_42792(0.62222224F - var3 * 0.05F, 0.5F + var3 * 0.1F, 1.0F);
+      return MathHelper.hsvToRGB(0.62222224F - var3 * 0.05F, 0.5F + var3 * 0.1F, 1.0F);
    }
 
    public static class_6325 method_38196(float var0, float var1, float var2, boolean var3) {

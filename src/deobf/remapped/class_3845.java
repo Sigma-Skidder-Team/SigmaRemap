@@ -85,12 +85,12 @@ public class class_3845 extends class_5467 {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       var1.putInt("HomePosX", this.method_17868().getX());
-      var1.putInt("HomePosY", this.method_17868().method_12165());
-      var1.putInt("HomePosZ", this.method_17868().method_12185());
+      var1.putInt("HomePosY", this.method_17868().getY());
+      var1.putInt("HomePosZ", this.method_17868().getZ());
       var1.putBoolean("HasEgg", this.method_17856());
       var1.putInt("TravelPosX", this.method_17852().getX());
-      var1.putInt("TravelPosY", this.method_17852().method_12165());
-      var1.putInt("TravelPosZ", this.method_17852().method_12185());
+      var1.putInt("TravelPosY", this.method_17852().getY());
+      var1.putInt("TravelPosZ", this.method_17852().getZ());
    }
 
    @Override
@@ -116,7 +116,7 @@ public class class_3845 extends class_5467 {
    }
 
    public static boolean method_17861(EntityType<class_3845> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
-      return var3.method_12165() < var1.method_22552() + 4 && class_1477.method_6812(var1, var3) && var1.method_25261(var3, 0) > 8;
+      return var3.getY() < var1.method_22552() + 4 && class_1477.method_6812(var1, var3) && var1.method_25261(var3, 0) > 8;
    }
 
    @Override

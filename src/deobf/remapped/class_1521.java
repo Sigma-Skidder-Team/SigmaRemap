@@ -35,7 +35,7 @@ public class class_1521 {
    }
 
    private static int method_6948(BlockPos var0) {
-      return method_6947(var0.getX() & 15, var0.method_12165() & 15, var0.method_12185() & 15);
+      return method_6947(var0.getX() & 15, var0.getY() & 15, var0.getZ() & 15);
    }
 
    private static int method_6947(int var0, int var1, int var2) {

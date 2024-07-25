@@ -64,7 +64,7 @@ public class class_1477 extends class_6414 {
                var9.method_8635(-24000);
                var9.method_17859(var3);
                var9.method_37144(
-                  (double)var3.getX() + 0.3 + (double)var8 * 0.2, (double)var3.method_12165(), (double)var3.method_12185() + 0.3, 0.0F, 0.0F
+                  (double)var3.getX() + 0.3 + (double)var8 * 0.2, (double)var3.getY(), (double)var3.getZ() + 0.3, 0.0F, 0.0F
                );
                var2.method_7509(var9);
             }

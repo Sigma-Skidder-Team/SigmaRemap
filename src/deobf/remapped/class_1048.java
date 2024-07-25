@@ -44,6 +44,6 @@ public class class_1048 implements class_214 {
 
    @Override
    public boolean method_927(class_4190 var1, BlockPos var2, boolean var3) {
-      return this.field_5759 > (double)var2.method_12165() + var1.method_19495(class_9249.field_47216) - 1.0E-5F;
+      return this.field_5759 > (double)var2.getY() + var1.method_19495(class_9249.field_47216) - 1.0E-5F;
    }
 }

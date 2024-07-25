@@ -48,7 +48,7 @@ public class class_6344 extends class_6414 implements class_2593 {
             .method_10308(field_32395, class_6666.field_34465)
             .method_10308(field_32398, Boolean.valueOf(var6.method_22005() == class_8532.field_43674));
          Direction var8 = var1.method_21857();
-         return var8 != Direction.field_802 && (var8 == Direction.field_817 || !(var1.method_21865().field_7333 - (double)var4.method_12165() > 0.5))
+         return var8 != Direction.field_802 && (var8 == Direction.field_817 || !(var1.method_21865().field_7333 - (double)var4.getY() > 0.5))
             ? var7
             : var7.method_10308(field_32395, class_6666.field_34466);
       } else {
@@ -65,7 +65,7 @@ public class class_6344 extends class_6414 implements class_2593 {
       } else if (!var2.method_1783()) {
          return true;
       } else {
-         boolean var7 = var2.method_21865().field_7333 - (double)var2.method_21858().method_12165() > 0.5;
+         boolean var7 = var2.method_21865().field_7333 - (double)var2.method_21858().getY() > 0.5;
          Direction var8 = var2.method_21857();
          return var6 != class_6666.field_34465
             ? var8 == Direction.field_802 || !var7 && var8.method_1029().method_42629()

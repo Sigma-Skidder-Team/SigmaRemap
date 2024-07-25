@@ -97,7 +97,7 @@ public class class_4115 extends class_6414 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       BlockPos var4 = var1.method_21858();
-      if (var4.method_12165() < 255 && var1.method_21862().method_28262(var4.method_6081()).method_8374(var1)) {
+      if (var4.getY() < 255 && var1.method_21862().method_28262(var4.method_6081()).method_8374(var1)) {
          World var5 = var1.method_21862();
          boolean var6 = var5.method_29576(var4) || var5.method_29576(var4.method_6081());
          return this.method_29260()
@@ -143,7 +143,7 @@ public class class_4115 extends class_6414 {
             int var22 = var6.method_1034();
             class_1343 var23 = var1.method_21865();
             double var24 = var23.field_7336 - (double)var5.getX();
-            double var26 = var23.field_7334 - (double)var5.method_12185();
+            double var26 = var23.field_7334 - (double)var5.getZ();
             return var21 < 0 && var26 < 0.5 || var21 > 0 && var26 > 0.5 || var22 < 0 && var24 > 0.5 || var22 > 0 && var24 < 0.5
                ? class_4340.field_21091
                : class_4340.field_21090;
@@ -220,7 +220,7 @@ public class class_4115 extends class_6414 {
    @Override
    public long method_10759(class_2522 var1, BlockPos var2) {
       return MathHelper.getCoordinateRandom(
-         var2.getX(), var2.method_6101(var1.method_10313(field_20045) != class_7422.field_37876 ? 1 : 0).method_12165(), var2.method_12185()
+         var2.getX(), var2.method_6101(var1.method_10313(field_20045) != class_7422.field_37876 ? 1 : 0).getY(), var2.getZ()
       );
    }
 

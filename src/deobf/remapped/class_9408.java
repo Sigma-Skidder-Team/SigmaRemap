@@ -206,11 +206,11 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    public float method_43581(float var1) {
-      return Math.min(0.5F + MathHelper.method_42795(var1, this.field_48113, this.field_48110) / 2.0F * 0.5F, 1.0F);
+      return Math.min(0.5F + MathHelper.lerp(var1, this.field_48113, this.field_48110) / 2.0F * 0.5F, 1.0F);
    }
 
    public float method_43586(float var1, float var2) {
-      float var5 = (MathHelper.method_42795(var1, this.field_48113, this.field_48110) + var2) / 1.8F;
+      float var5 = (MathHelper.lerp(var1, this.field_48113, this.field_48110) + var2) / 1.8F;
       if (!(var5 < 0.0F)) {
          if (var5 > 1.0F) {
             var5 = 1.0F;
@@ -223,7 +223,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    public float method_43578(float var1) {
-      return MathHelper.method_42795(var1, this.field_48104, this.field_48102) * 0.15F * (float) Math.PI;
+      return MathHelper.lerp(var1, this.field_48104, this.field_48102) * 0.15F * (float) Math.PI;
    }
 
    @Override

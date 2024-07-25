@@ -27,7 +27,7 @@ public class class_7324 implements class_1517 {
                for (PlayerEntity var9 : var1.method_25873()) {
                   if (!var9.method_37221()) {
                      BlockPos var10 = var9.method_37075();
-                     if (!var1.method_22572().method_40229() || var10.method_12165() >= var1.method_22552() && var1.method_25263(var10)) {
+                     if (!var1.method_22572().method_40229() || var10.getY() >= var1.method_22552() && var1.method_25263(var10)) {
                         class_9589 var11 = var1.method_43368(var10);
                         if (var11.method_44286(var6.nextFloat() * 3.0F)) {
                            class_7909 var12 = ((class_9359)var9).method_43271();

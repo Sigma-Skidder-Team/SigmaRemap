@@ -28,7 +28,7 @@ public class class_9176 extends class_6414 {
    @Override
    public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.method_6081();
-      if (var2.method_22548(var7) && var7.method_12165() < 256) {
+      if (var2.method_22548(var7) && var7.getY() < 256) {
          int var8 = var1.<Integer>method_10313(field_46944);
          if (var8 < 5) {
             boolean var9 = false;
@@ -191,7 +191,7 @@ public class class_9176 extends class_6414 {
             Direction var13 = class_9594.field_48893.method_44313(var2);
             BlockPos var14 = var1.method_6082(var9).method_6098(var13);
             if (Math.abs(var14.getX() - var3.getX()) < var4
-               && Math.abs(var14.method_12185() - var3.method_12185()) < var4
+               && Math.abs(var14.getZ() - var3.getZ()) < var4
                && var0.method_22548(var14)
                && var0.method_22548(var14.method_6100())
                && method_42287(var0, var14, var13.method_1046())) {

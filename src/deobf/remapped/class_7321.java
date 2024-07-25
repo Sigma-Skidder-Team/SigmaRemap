@@ -59,11 +59,11 @@ public class class_7321 {
       var5.method_13368(Direction.field_802);
       boolean var7 = var1.method_28262(var5).method_8345();
 
-      while (var5.method_12165() > 0) {
+      while (var5.getY() > 0) {
          var5.method_13368(Direction.field_802);
          boolean var8 = var1.method_28262(var5).method_8345();
          if (!var8 && var7 && var6) {
-            return var5.method_12165() + 1;
+            return var5.getY() + 1;
          }
 
          var6 = var7;
@@ -77,7 +77,7 @@ public class class_7321 {
       BlockPos var5 = new BlockPos(this.field_37430, (double)(this.method_33384(var1, var2) - 1), this.field_37432);
       class_2522 var6 = var1.method_28262(var5);
       class_5371 var7 = var6.method_8362();
-      return var5.method_12165() < var2 && !var7.method_24494() && var7 != class_5371.field_27434;
+      return var5.getY() < var2 && !var7.method_24494() && var7 != class_5371.field_27434;
    }
 
    public void method_33383(Random var1, double var2, double var4, double var6, double var8) {

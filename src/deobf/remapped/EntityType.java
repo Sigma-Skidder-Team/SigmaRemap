@@ -453,14 +453,14 @@ public class EntityType<T extends Entity> {
          if (!var7) {
             var12 = 0.0;
          } else {
-            var11.method_37256((double)var5.getX() + 0.5, (double)(var5.method_12165() + 1), (double)var5.method_12185() + 0.5);
+            var11.method_37256((double)var5.getX() + 0.5, (double)(var5.getY() + 1), (double)var5.getZ() + 0.5);
             var12 = method_30461(var1, var5, var8, var11.getBoundingBox());
          }
 
          var11.method_37144(
             (double)var5.getX() + 0.5,
-            (double)var5.method_12165() + var12,
-            (double)var5.method_12185() + 0.5,
+            (double)var5.getY() + var12,
+            (double)var5.getZ() + 0.5,
             MathHelper.wrapDegrees(var1.field_33033.nextFloat() * 360.0F),
             0.0F
          );

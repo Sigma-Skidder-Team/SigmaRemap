@@ -50,8 +50,8 @@ public class class_8205 extends class_7067<class_3577> {
       BlockPos var14 = var1.method_16624();
       if (var14 != null) {
          float var15 = (float)var14.getX() + 0.5F;
-         float var16 = (float)var14.method_12165() + 0.5F;
-         float var17 = (float)var14.method_12185() + 0.5F;
+         float var16 = (float)var14.getY() + 0.5F;
+         float var17 = (float)var14.getZ() + 0.5F;
          float var18 = (float)((double)var15 - var1.getPosX());
          float var19 = (float)((double)var16 - var1.method_37309());
          float var20 = (float)((double)var17 - var1.getPosZ());

@@ -45,7 +45,7 @@ public class AutoMLGModule extends PremiumModule {
          if (var1.method_6449() && field_17597 >= 0) {
             field_17597++;
             float[] var4 = class_7211.method_33006(
-               (double)this.field_17596.getX() + 0.5, (double)this.field_17596.method_12185() + 0.5, (double)this.field_17596.method_12165() + 0.5
+               (double)this.field_17596.getX() + 0.5, (double)this.field_17596.getZ() + 0.5, (double)this.field_17596.getY() + 0.5
             );
             var1.method_6441(var4[0]);
             var1.method_6448(var4[1]);
@@ -74,7 +74,7 @@ public class AutoMLGModule extends PremiumModule {
             if (var5 != null) {
                if (var1.method_6449() && field_17597 == -1) {
                   float[] var6 = class_7211.method_33006(
-                     (double)var5.getX() + 0.5, (double)var5.method_12185() + 0.5, (double)var5.method_12165() + 0.5
+                     (double)var5.getX() + 0.5, (double)var5.getZ() + 0.5, (double)var5.getY() + 0.5
                   );
                   var1.method_6441(var6[0]);
                   var1.method_6448(var6[1]);
@@ -145,13 +145,13 @@ public class AutoMLGModule extends PremiumModule {
          Box var14 = var13.method_19483();
          BlockPos var15 = new BlockPos(var14.method_18926());
          if (class_7494.method_34090(var15)
-            && (double)(var15.method_12165() + 1) < client.thePlayer.method_37309()
+            && (double)(var15.getY() + 1) < client.thePlayer.method_37309()
             && (
                var12 == null
                   || client.thePlayer
-                        .method_37273((double)var12.getX() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7)
+                        .method_37273((double)var12.getX() + 0.5 - var3, (double)(var12.getY() + 1), (double)var12.getZ() + 0.5 - var7)
                      > client.thePlayer
-                        .method_37273((double)var15.getX() + 0.5 - var3, (double)(var15.method_12165() + 1), (double)var15.method_12185() + 0.5 - var7)
+                        .method_37273((double)var15.getX() + 0.5 - var3, (double)(var15.getY() + 1), (double)var15.getZ() + 0.5 - var7)
             )) {
             var12 = var15;
          }
@@ -170,16 +170,16 @@ public class AutoMLGModule extends PremiumModule {
             Box var21 = var20.method_19483();
             BlockPos var22 = new BlockPos(var21.method_18926());
             if (class_7494.method_34090(var22)
-               && (double)(var22.method_12165() + 1) < client.thePlayer.method_37309()
+               && (double)(var22.getY() + 1) < client.thePlayer.method_37309()
                && (
                   var12 == null
                      || client.thePlayer
                            .method_37273(
-                              (double)var12.getX() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7
+                              (double)var12.getX() + 0.5 - var3, (double)(var12.getY() + 1), (double)var12.getZ() + 0.5 - var7
                            )
                         > client.thePlayer
                            .method_37273(
-                              (double)var22.getX() + 0.5 - var3, (double)(var22.method_12165() + 1), (double)var22.method_12185() + 0.5 - var7
+                              (double)var22.getX() + 0.5 - var3, (double)(var22.getY() + 1), (double)var22.getZ() + 0.5 - var7
                            )
                )) {
                var12 = var22;

@@ -361,7 +361,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       BlockPos var7 = new BlockPos(var1, this.method_37309(), var3);
       if (this.method_27312(var7)) {
          double var8 = var1 - (double)var7.getX();
-         double var10 = var3 - (double)var7.method_12185();
+         double var10 = var3 - (double)var7.getZ();
          Direction var12 = null;
          double var13 = Double.MAX_VALUE;
          Direction[] var15 = new Direction[]{Direction.field_809, Direction.field_804, Direction.field_818, Direction.field_800};
@@ -391,10 +391,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       Box var5 = new Box(
             (double)var1.getX(),
             var4.field_19937,
-            (double)var1.method_12185(),
+            (double)var1.getZ(),
             (double)var1.getX() + 1.0,
             var4.field_19939,
-            (double)var1.method_12185() + 1.0
+            (double)var1.getZ() + 1.0
          )
          .method_18924(1.0E-7);
       return !this.world.method_6670(this, var5, (var1x, var2) -> var1x.method_8313(this.world, var2));
@@ -854,7 +854,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             }
          }
 
-         float var42 = MathHelper.method_42836(var9);
+         float var42 = MathHelper.fastInvSqrt(var9);
          class_1343 var43 = var7.method_6209((double)var42);
          class_1343 var44 = this.method_37129();
          float var45 = (float)(var44.field_7336 * var43.field_7336 + var44.field_7334 * var43.field_7334);
@@ -900,7 +900,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                            class_2522 var39 = this.world.method_28262(var38);
                            class_4190 var40;
                            if (!(var40 = var39.method_8325(this.world, var38, var46)).method_19485()) {
-                              var33 = (float)var40.method_19495(class_9249.field_47216) + (float)var38.method_12165();
+                              var33 = (float)var40.method_19495(class_9249.field_47216) + (float)var38.getY();
                               if ((double)var33 - this.method_37309() > (double)var19) {
                                  return;
                               }
@@ -998,8 +998,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.client.gameOptions.getPointOfView().method_42383()) {
          return super.method_37202(var1);
       } else {
-         float var4 = MathHelper.method_42795(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);
-         float var5 = MathHelper.method_42795(var1 * 0.5F, this.rotationPitch, this.field_41762) * (float) (Math.PI / 180.0);
+         float var4 = MathHelper.lerp(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);
+         float var5 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.field_41762) * (float) (Math.PI / 180.0);
          double var6 = this.method_26432() != class_1736.field_8943 ? 1.0 : -1.0;
          class_1343 var8 = new class_1343(0.39 * var6, -0.6, 0.3);
          return var8.method_6212(-var5).method_6192(-var4).method_6215(this.method_37335(var1));

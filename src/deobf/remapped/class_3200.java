@@ -40,7 +40,7 @@ public abstract class class_3200<C extends class_6157> {
          if (!this.field_15986.isEmpty()) {
             class_9616 var10 = this.field_15986.get(0).field_36435;
             Vector3i var11 = var10.method_44396();
-            BlockPos var12 = new BlockPos(var11.getX(), var10.field_48995, var11.method_12185());
+            BlockPos var12 = new BlockPos(var11.getX(), var10.field_48995, var11.getZ());
             Iterator var13 = this.field_15986.iterator();
 
             while (var13.hasNext()) {

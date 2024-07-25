@@ -296,7 +296,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          if (var3) {
             var6 = this.field_40612.gameOptions.field_45543;
             if (Config.method_14313()) {
-               var6 *= (double) MathHelper.method_42795(var2, this.field_40641, this.field_40607);
+               var6 *= (double) MathHelper.lerp(var2, this.field_40641, this.field_40607);
             }
          }
 
@@ -367,7 +367,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          PlayerEntity var5 = (PlayerEntity)this.field_40612.getRenderViewEntity();
          float var6 = var5.field_41695 - var5.field_41705;
          float var7 = -(var5.field_41695 + var6 * var2);
-         float var8 = MathHelper.method_42795(var2, var5.field_3857, var5.field_3859);
+         float var8 = MathHelper.lerp(var2, var5.field_3857, var5.field_3859);
          var1.method_36065(
             (double)(MathHelper.sin(var7 * (float) Math.PI) * var8 * 0.5F),
             (double)(-Math.abs(MathHelper.cos(var7 * (float) Math.PI) * var8)),
@@ -561,7 +561,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          if (var4 && this.field_40612.theWorld != null) {
             this.field_40612.getProfiler().method_16050("gui");
             if (this.field_40612.thePlayer != null) {
-               float var11 = MathHelper.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal);
+               float var11 = MathHelper.lerp(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal);
                if (var11 > 0.0F && this.field_40612.thePlayer.isPotionActive(Effects.NAUSEA) && this.field_40612.gameOptions.field_45469 < 1.0F) {
                   this.method_35941(var11 * (1.0F - this.field_40612.gameOptions.field_45469));
                }
@@ -761,7 +761,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.method_35935(var10, var1);
       }
 
-      float var12 = MathHelper.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal)
+      float var12 = MathHelper.lerp(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal)
          * this.field_40612.gameOptions.field_45469
          * this.field_40612.gameOptions.field_45469;
       if (var12 > 0.0F) {
@@ -1097,7 +1097,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    public float method_35956(float var1) {
-      return MathHelper.method_42795(var1, this.field_40632, this.field_40621);
+      return MathHelper.lerp(var1, this.field_40632, this.field_40621);
    }
 
    public float method_35955() {

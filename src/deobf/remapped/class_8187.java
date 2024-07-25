@@ -29,8 +29,8 @@ public class class_8187 extends class_2451 {
       boolean var6 = false;
       double var7 = 7.0;
       int var9 = var2.getX();
-      int var10 = var2.method_12165();
-      int var11 = var2.method_12185();
+      int var10 = var2.getY();
+      int var11 = var2.getZ();
 
       for (MobEntity var13 : var1.<MobEntity>method_25868(
          MobEntity.class,

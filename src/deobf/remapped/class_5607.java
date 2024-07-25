@@ -26,7 +26,7 @@ public class class_5607 extends class_9394 {
    public float method_43450() {
       long var3 = Util.getMeasuringTimeMs() - this.field_28468;
       float var5 = MathHelper.clamp((float)var3 / 100.0F, 0.0F, 1.0F);
-      return MathHelper.method_42795(var5, this.field_48004, this.field_28466);
+      return MathHelper.lerp(var5, this.field_48004, this.field_28466);
    }
 
    // $VF: Unable to simplify switch on enum

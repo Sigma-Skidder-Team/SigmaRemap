@@ -30,7 +30,7 @@ public class class_939 extends class_6414 {
    @Override
    public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
       int var7 = var1.<Integer>method_10313(field_4787);
-      float var8 = (float)var3.method_12165() + (6.0F + (float)(3 * var7)) / 16.0F;
+      float var8 = (float)var3.getY() + (6.0F + (float)(3 * var7)) / 16.0F;
       if (!var2.field_33055 && var4.method_37264() && var7 > 0 && var4.method_37309() <= (double)var8) {
          var4.method_37136();
          this.method_4060(var2, var3, var1, var7 - 1);

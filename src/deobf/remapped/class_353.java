@@ -28,8 +28,8 @@ public class class_353 extends class_4734 {
          new class_9529(
             new class_1343(
                (double)var1.getX() + 0.5 + (double)var2.method_1041() * 0.5,
-               (double)var1.method_12165() + 0.5 + (double)var2.method_1054() * 0.5,
-               (double)var1.method_12185() + 0.5 + (double)var2.method_1034() * 0.5
+               (double)var1.getY() + 0.5 + (double)var2.method_1054() * 0.5,
+               (double)var1.getZ() + 0.5 + (double)var2.method_1034() * 0.5
             ),
             var2,
             var1,

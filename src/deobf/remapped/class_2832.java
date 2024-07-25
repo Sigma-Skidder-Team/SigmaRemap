@@ -12,15 +12,15 @@ public class class_2832 extends class_699 {
       String var3 = ""
          + this.field_13874.getX()
          + ","
-         + this.field_13874.method_12165()
+         + this.field_13874.getY()
          + ","
-         + this.field_13874.method_12185()
+         + this.field_13874.getZ()
          + " (relative: "
          + this.field_13876.getX()
          + ","
-         + this.field_13876.method_12165()
+         + this.field_13876.getY()
          + ","
-         + this.field_13876.method_12185()
+         + this.field_13876.getZ()
          + ")";
       return super.getMessage() + " at " + var3 + " (t=" + 0L + ")";
    }

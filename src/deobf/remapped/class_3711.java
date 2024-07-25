@@ -80,13 +80,13 @@ public class class_3711 {
       double var5 = this.field_18203 - this.field_18205.method_37388();
       double var7 = this.field_18206 - this.field_18205.getPosZ();
       double var9 = (double) MathHelper.sqrt(var3 * var3 + var7 * var7);
-      return (float)(-(MathHelper.method_42821(var5, var9) * 180.0F / (float)Math.PI));
+      return (float)(-(MathHelper.atan2(var5, var9) * 180.0F / (float)Math.PI));
    }
 
    public float method_17243() {
       double var3 = this.field_18209 - this.field_18205.getPosX();
       double var5 = this.field_18206 - this.field_18205.getPosZ();
-      return (float)(MathHelper.method_42821(var5, var3) * 180.0F / (float)Math.PI) - 90.0F;
+      return (float)(MathHelper.atan2(var5, var3) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    public float method_17239(float var1, float var2, float var3) {

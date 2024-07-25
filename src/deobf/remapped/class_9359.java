@@ -81,7 +81,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
       BlockPos var4 = var1.method_28998();
       if (var1.method_22572().method_40229() && var1.method_29522().method_1601().method_25709() != GameType.ADVENTURE) {
          int var5 = Math.max(0, this.field_47801.method_1720(var1));
-         int var6 = MathHelper.floor(var1.method_6673().method_9808((double)var4.getX(), (double)var4.method_12185()));
+         int var6 = MathHelper.floor(var1.method_6673().method_9808((double)var4.getX(), (double)var4.getZ()));
          if (var6 < var5) {
             var5 = var6;
          }
@@ -100,7 +100,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
             int var15 = (var13 + var12 * var14) % var11;
             int var16 = var15 % (var5 * 2 + 1);
             int var17 = var15 / (var5 * 2 + 1);
-            BlockPos var18 = class_1077.method_4714(var1, var4.getX() + var16 - var5, var4.method_12185() + var17 - var5, false);
+            BlockPos var18 = class_1077.method_4714(var1, var4.getX() + var16 - var5, var4.getZ() + var17 - var5, false);
             if (var18 != null) {
                this.method_37253(var18, 0.0F, 0.0F);
                if (var1.method_6682(this)) {
@@ -194,8 +194,8 @@ public class class_9359 extends PlayerEntity implements class_117 {
       var1.method_25941("Dimension", this.world.method_29545().method_25499().toString());
       if (this.field_47779 != null) {
          var1.putInt("SpawnX", this.field_47779.getX());
-         var1.putInt("SpawnY", this.field_47779.method_12165());
-         var1.putInt("SpawnZ", this.field_47779.method_12185());
+         var1.putInt("SpawnY", this.field_47779.getY());
+         var1.putInt("SpawnZ", this.field_47779.getZ());
          var1.putBoolean("SpawnForced", this.field_47787);
          var1.putFloat("SpawnAngle", this.field_47808);
          Identifier.field_22655

@@ -356,7 +356,7 @@ public class class_4497 extends class_341 implements class_8685 {
                if (this.method_1680() > 0) {
                   BlockPos var6 = var1.method_28998();
                   int var7 = MathHelper.abs(var2.getX() - var6.getX());
-                  int var8 = MathHelper.abs(var2.method_12185() - var6.method_12185());
+                  int var8 = MathHelper.abs(var2.getZ() - var6.getZ());
                   int var9 = Math.max(var7, var8);
                   return var9 <= this.method_1680();
                } else {

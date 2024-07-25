@@ -22,8 +22,8 @@ public class ClickTPModule extends SecondModule {
          this.method_41141(
             this.method_41136(),
             (double)var5.getX() + 0.5 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61(),
-            (double)(var5.method_12165() + 1) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60(),
-            (double)var5.method_12185() + 0.5 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62()
+            (double)(var5.getY() + 1) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60(),
+            (double)var5.getZ() + 0.5 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62()
          );
       }
    }

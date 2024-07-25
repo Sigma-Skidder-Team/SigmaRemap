@@ -18,7 +18,7 @@ public class class_90 {
       Optional var7 = var5.method_6863(var0 -> var0 == class_236.field_782, var1, var6, class_8122.field_41615)
          .sorted(
             Comparator.<class_8009>comparingDouble(var1x -> var1x.method_36337().method_12180(var1))
-               .thenComparingInt(var0 -> var0.method_36337().method_12165())
+               .thenComparingInt(var0 -> var0.method_36337().getY())
          )
          .filter(var1x -> this.field_172.method_28262(var1x.method_36337()).method_10307(class_6023.field_30670))
          .findFirst();
@@ -50,7 +50,7 @@ public class class_90 {
       class_2921 var14 = var1.method_6089();
 
       for (class_2921 var16 : BlockPos.method_6070(var1, 16, Direction.field_804, Direction.field_800)) {
-         int var17 = Math.min(var13, this.field_172.method_22562(class_3801.field_18595, var16.getX(), var16.method_12185()));
+         int var17 = Math.min(var13, this.field_172.method_22562(class_3801.field_18595, var16.getX(), var16.getZ()));
          boolean var18 = true;
          if (var12.method_9813(var16) && var12.method_9813(var16.method_13369(var5, 1))) {
             var16.method_13369(var5.method_1046(), 1);
@@ -93,7 +93,7 @@ public class class_90 {
       }
 
       if (var6 == -1.0) {
-         var8 = new BlockPos(var1.getX(), MathHelper.clamp(var1.method_12165(), 70, this.field_172.method_43371() - 10), var1.method_12185())
+         var8 = new BlockPos(var1.getX(), MathHelper.clamp(var1.getY(), 70, this.field_172.method_43371() - 10), var1.getZ())
             .method_6072();
          Direction var24 = var5.method_1042();
          if (!var12.method_9813(var8)) {

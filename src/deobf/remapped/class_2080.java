@@ -55,7 +55,7 @@ public class class_2080<T> implements class_3065<T> {
 
    @Override
    public void method_14012(BlockPos var1, T var2, int var3, class_1716 var4) {
-      class_5990.method_27337(this.field_10471, var1.method_12165() >> 4).add(class_7481.method_34024(var1));
+      class_5990.method_27337(this.field_10471, var1.getY() >> 4).add(class_7481.method_34024(var1));
    }
 
    @Override

@@ -373,8 +373,8 @@ public class ClientWorld extends World {
                      this.method_43361(
                         var2x.method_11682(),
                         (double)var7.getX() + this.field_33033.nextDouble(),
-                        (double)var7.method_12165() + this.field_33033.nextDouble(),
-                        (double)var7.method_12185() + this.field_33033.nextDouble(),
+                        (double)var7.getY() + this.field_33033.nextDouble(),
+                        (double)var7.getZ() + this.field_33033.nextDouble(),
                         0.0,
                         0.0,
                         0.0
@@ -398,19 +398,19 @@ public class ClientWorld extends World {
                   class_4190 var14 = var13.method_8324(this, var12);
                   double var15 = var14.method_19495(class_9249.field_47216);
                   if (var15 < 1.0 && var13.method_8364().method_22001()) {
-                     this.method_727(var1, var3, var7, (double)var1.method_12165() - 0.05);
+                     this.method_727(var1, var3, var7, (double)var1.getY() - 0.05);
                   }
                } else {
-                  this.method_727(var1, var3, var7, (double)var1.method_12165() + var10 - 0.05);
+                  this.method_727(var1, var3, var7, (double)var1.getY() + var10 - 0.05);
                }
             }
          } else if (var4) {
             this.method_726(
                (double)var1.getX(),
                (double)(var1.getX() + 1),
-               (double)var1.method_12185(),
-               (double)(var1.method_12185() + 1),
-               (double)(var1.method_12165() + 1) - 0.05,
+               (double)var1.getZ(),
+               (double)(var1.getZ() + 1),
+               (double)(var1.getY() + 1) - 0.05,
                var3
             );
          }
@@ -421,8 +421,8 @@ public class ClientWorld extends World {
       this.method_726(
          (double)var1.getX() + var3.method_19491(class_9249.field_47215),
          (double)var1.getX() + var3.method_19495(class_9249.field_47215),
-         (double)var1.method_12185() + var3.method_19491(class_9249.field_47219),
-         (double)var1.method_12185() + var3.method_19495(class_9249.field_47219),
+         (double)var1.getZ() + var3.method_19491(class_9249.field_47219),
+         (double)var1.getZ() + var3.method_19495(class_9249.field_47219),
          var4,
          var2
       );
@@ -498,7 +498,7 @@ public class ClientWorld extends World {
    }
 
    public void method_721(BlockPos var1, SoundEvent var2, class_562 var3, float var4, float var5, boolean var6) {
-      this.method_29527((double)var1.getX() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5, var2, var3, var4, var5, var6);
+      this.method_29527((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, var2, var3, var4, var5, var6);
    }
 
    @Override
@@ -824,7 +824,7 @@ public class ClientWorld extends World {
    public int method_759(BlockPos var1, class_6581 var2) {
       int var5 = MinecraftClient.getInstance().gameOptions.field_45526;
       if (var5 == 0) {
-         return var2.method_30079(this.method_22561(var1), (double)var1.getX(), (double)var1.method_12185());
+         return var2.method_30079(this.method_22561(var1), (double)var1.getX(), (double)var1.getZ());
       } else {
          int var6 = (var5 * 2 + 1) * (var5 * 2 + 1);
          int var7 = 0;
@@ -832,17 +832,17 @@ public class ClientWorld extends World {
          int var9 = 0;
          class_6281 var10 = new class_6281(
             var1.getX() - var5,
-            var1.method_12165(),
-            var1.method_12185() - var5,
+            var1.getY(),
+            var1.getZ() - var5,
             var1.getX() + var5,
-            var1.method_12165(),
-            var1.method_12185() + var5
+            var1.getY(),
+            var1.getZ() + var5
          );
          class_2921 var11 = new class_2921();
 
          while (var10.method_28626()) {
             var11.method_13362(var10.method_28624(), var10.method_28628(), var10.method_28623());
-            int var12 = var2.method_30079(this.method_22561(var11), (double)var11.getX(), (double)var11.method_12185());
+            int var12 = var2.method_30079(this.method_22561(var11), (double)var11.getX(), (double)var11.getZ());
             var7 += (var12 & 0xFF0000) >> 16;
             var8 += (var12 & 0xFF00) >> 8;
             var9 += var12 & 0xFF;

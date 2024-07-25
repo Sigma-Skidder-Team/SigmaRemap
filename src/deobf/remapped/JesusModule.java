@@ -25,7 +25,7 @@ public class JesusModule extends Module {
             || client.theWorld.method_28262(var1.method_23989()).method_8362() == class_5371.field_27439
             || client.theWorld.method_28262(var1.method_23989()).method_8362() == class_5371.field_27413) {
             if (!(
-               (double)var1.method_23989().method_12165()
+               (double)var1.method_23989().getY()
                   >= client.thePlayer.method_37309() - (double)(client.thePlayer.method_37309() % 0.5 != 0.0 ? 0.0F : 0.5F)
             )) {
                if (!this.method_32078(client.thePlayer.field_41712)) {

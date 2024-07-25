@@ -134,7 +134,7 @@ public class ShadowESP extends Module {
       double var13 = MathHelper.lerp((double)var8, var1.field_41754, var1.getPosX());
       double var15 = MathHelper.lerp((double)var8, var1.field_41713, var1.method_37309());
       double var17 = MathHelper.lerp((double)var8, var1.field_41724, var1.getPosZ());
-      float var19 = MathHelper.method_42795(var8, var1.prevRotationYaw, var1.rotationYaw);
+      float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
       client.worldRenderer.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
    }
 

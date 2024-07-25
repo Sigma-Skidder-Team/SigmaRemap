@@ -114,8 +114,8 @@ public class class_8474 extends class_4314 implements class_2593 {
          if (var4.nextInt(10) == 0) {
             var2.method_29527(
                (double)var3.getX() + 0.5,
-               (double)var3.method_12165() + 0.5,
-               (double)var3.method_12185() + 0.5,
+               (double)var3.getY() + 0.5,
+               (double)var3.getZ() + 0.5,
                SoundEvents.field_2740,
                class_562.field_3322,
                0.5F + var4.nextFloat(),
@@ -129,8 +129,8 @@ public class class_8474 extends class_4314 implements class_2593 {
                var2.method_43361(
                   class_3090.field_15372,
                   (double)var3.getX() + 0.5,
-                  (double)var3.method_12165() + 0.5,
-                  (double)var3.method_12185() + 0.5,
+                  (double)var3.getY() + 0.5,
+                  (double)var3.getZ() + 0.5,
                   (double)(var4.nextFloat() / 2.0F),
                   5.0E-5,
                   (double)(var4.nextFloat() / 2.0F)
@@ -192,8 +192,8 @@ public class class_8474 extends class_4314 implements class_2593 {
          var7,
          true,
          (double)var1.getX() + 0.5 + var6.nextDouble() / 3.0 * (double)(!var6.nextBoolean() ? -1 : 1),
-         (double)var1.method_12165() + var6.nextDouble() + var6.nextDouble(),
-         (double)var1.method_12185() + 0.5 + var6.nextDouble() / 3.0 * (double)(!var6.nextBoolean() ? -1 : 1),
+         (double)var1.getY() + var6.nextDouble() + var6.nextDouble(),
+         (double)var1.getZ() + 0.5 + var6.nextDouble() / 3.0 * (double)(!var6.nextBoolean() ? -1 : 1),
          0.0,
          0.07,
          0.0
@@ -202,8 +202,8 @@ public class class_8474 extends class_4314 implements class_2593 {
          var0.method_43361(
             class_3090.field_15376,
             (double)var1.getX() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
-            (double)var1.method_12165() + 0.4,
-            (double)var1.method_12185() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
+            (double)var1.getY() + 0.4,
+            (double)var1.getZ() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
             0.0,
             0.005,
             0.0

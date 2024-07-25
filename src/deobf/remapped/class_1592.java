@@ -14,7 +14,7 @@ public class class_1592 extends class_1710<class_9504> {
       int var6 = 3 + var1.nextInt(6);
       return IntStream.range(0, var6).<BlockPos>mapToObj(var2x -> {
          int var5 = var1.nextInt(16) + var3.getX();
-         int var6x = var1.nextInt(16) + var3.method_12185();
+         int var6x = var1.nextInt(16) + var3.getZ();
          int var7 = var1.nextInt(28) + 4;
          return new BlockPos(var5, var7, var6x);
       });

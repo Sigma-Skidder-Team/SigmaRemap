@@ -87,7 +87,7 @@ public class class_5534 {
             throw field_28212.create();
          } else {
             var7.method_43369(var1, var2.method_31963().method_8360());
-            var0.method_42196(new TranslationTextComponent("commands.setblock.success", var1.getX(), var1.method_12165(), var1.method_12185()), true);
+            var0.method_42196(new TranslationTextComponent("commands.setblock.success", var1.getX(), var1.getY(), var1.getZ()), true);
             return 1;
          }
       }

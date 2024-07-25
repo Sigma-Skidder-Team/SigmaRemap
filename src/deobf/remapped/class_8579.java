@@ -132,7 +132,7 @@ public class class_8579 extends class_2451 {
          }
 
          var0.method_43361(
-            class_3090.field_15361, (double)var1.getX() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5, 0.0, 0.0, 0.0
+            class_3090.field_15361, (double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5, 0.0, 0.0, 0.0
          );
 
          for (int var10 = 0; var10 < var2; var10++) {
@@ -141,8 +141,8 @@ public class class_8579 extends class_2451 {
             double var15 = field_12172.nextGaussian() * 0.02;
             double var17 = 0.5 - var6;
             double var19 = (double)var1.getX() + var17 + field_12172.nextDouble() * var6 * 2.0;
-            double var21 = (double)var1.method_12165() + field_12172.nextDouble() * var8;
-            double var23 = (double)var1.method_12185() + var17 + field_12172.nextDouble() * var6 * 2.0;
+            double var21 = (double)var1.getY() + field_12172.nextDouble() * var8;
+            double var23 = (double)var1.getZ() + var17 + field_12172.nextDouble() * var6 * 2.0;
             if (!var0.method_28262(new BlockPos(var19, var21, var23).method_6100()).method_8345()) {
                var0.method_43361(class_3090.field_15361, var19, var21, var23, var11, var13, var15);
             }

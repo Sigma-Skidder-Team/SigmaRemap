@@ -49,7 +49,7 @@ public abstract class class_7896 extends class_7060 {
             for (int var10 = this.field_36435.field_48996; var10 <= this.field_36435.field_48991; var10++) {
                var8.method_13362(var10, 64, var9);
                if (var2.method_44395(var8)) {
-                  var6 += var1.method_22563(class_3801.field_18590, var8).method_12165();
+                  var6 += var1.method_22563(class_3801.field_18590, var8).getY();
                   var7++;
                }
             }

@@ -98,12 +98,12 @@ public class class_212 {
             float var30 = this.method_899(var1, var2.method_6090().method_6073(), var4.method_22005());
             float var31 = this.method_899(var1, var2.method_6090(), var4.method_22005());
             double var32 = (double)(var2.getX() & 15);
-            double var34 = (double)(var2.method_12165() & 15);
-            double var36 = (double)(var2.method_12185() & 15);
+            double var34 = (double)(var2.getY() & 15);
+            double var36 = (double)(var2.getZ() & 15);
             if (Config.method_14351()) {
                int var38 = var2.getX() >> 4 << 4;
-               int var39 = var2.method_12165() >> 4 << 4;
-               int var40 = var2.method_12185() >> 4 << 4;
+               int var39 = var2.getY() >> 4 << 4;
+               int var40 = var2.getZ() >> 4 << 4;
                byte var41 = 8;
                int var42 = var38 >> var41 << var41;
                int var43 = var40 >> var41 << var41;
@@ -145,7 +145,7 @@ public class class_212 {
                } else {
                   class_5155 var46 = var9[1];
                   var3.method_35752(var46);
-                  float var50 = (float) MathHelper.method_42821(var86.field_7334, var86.field_7336) - (float) (Math.PI / 2);
+                  float var50 = (float) MathHelper.atan2(var86.field_7334, var86.field_7336) - (float) (Math.PI / 2);
                   float var51 = MathHelper.sin(var50) * 0.25F;
                   float var52 = MathHelper.cos(var50) * 0.25F;
                   float var53 = 8.0F;
@@ -164,14 +164,14 @@ public class class_212 {
                float var116 = (float)var9[0].method_23625() / (var9[0].method_23619() - var9[0].method_23630());
                float var118 = (float)var9[0].method_23615() / (var9[0].method_23640() - var9[0].method_23642());
                float var120 = 4.0F / Math.max(var118, var116);
-               var101 = MathHelper.method_42795(var120, var101, var108);
-               var104 = MathHelper.method_42795(var120, var104, var108);
-               var48 = MathHelper.method_42795(var120, var48, var108);
-               var49 = MathHelper.method_42795(var120, var49, var108);
-               var90 = MathHelper.method_42795(var120, var90, var115);
-               var47 = MathHelper.method_42795(var120, var47, var115);
-               var94 = MathHelper.method_42795(var120, var94, var115);
-               var98 = MathHelper.method_42795(var120, var98, var115);
+               var101 = MathHelper.lerp(var120, var101, var108);
+               var104 = MathHelper.lerp(var120, var104, var108);
+               var48 = MathHelper.lerp(var120, var48, var108);
+               var49 = MathHelper.lerp(var120, var49, var108);
+               var90 = MathHelper.lerp(var120, var90, var115);
+               var47 = MathHelper.lerp(var120, var47, var115);
+               var94 = MathHelper.lerp(var120, var94, var115);
+               var98 = MathHelper.lerp(var120, var98, var115);
                int var54 = this.method_904(var1, var2);
                float var55 = var25 * var20;
                float var56 = var25 * var21;

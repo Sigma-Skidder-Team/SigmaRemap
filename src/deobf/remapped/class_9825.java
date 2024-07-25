@@ -146,8 +146,8 @@ public class class_9825 extends class_516 implements class_1869 {
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
       var1.putInt("AX", this.field_49779.getX());
-      var1.putInt("AY", this.field_49779.method_12165());
-      var1.putInt("AZ", this.field_49779.method_12185());
+      var1.putInt("AY", this.field_49779.getY());
+      var1.putInt("AZ", this.field_49779.getZ());
       var1.putInt("Size", this.method_45296());
    }
 

@@ -77,7 +77,7 @@ public class class_5161 {
                   Map var24 = var16.method_12004();
                   if (!var24.isEmpty()) {
                      for (BlockPos var20 : var24.keySet()) {
-                        int var21 = var20.method_12165() >> 4;
+                        int var21 = var20.getY() >> 4;
                         if (var21 > var13) {
                            var13 = var21;
                         }

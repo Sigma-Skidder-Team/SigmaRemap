@@ -55,7 +55,7 @@ public class class_3995 extends class_4314 {
                double var13 = (double)(var1.field_33033.nextFloat() * 0.7F) + 0.15F;
                ItemStack var15 = var7.method_27973();
                class_91 var16 = new class_91(
-                  var1, (double)var2.getX() + var9, (double)var2.method_12165() + var11, (double)var2.method_12185() + var13, var15
+                  var1, (double)var2.getX() + var9, (double)var2.getY() + var11, (double)var2.getZ() + var13, var15
                );
                var16.method_257();
                var1.method_7509(var16);

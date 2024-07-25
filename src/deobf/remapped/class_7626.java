@@ -105,8 +105,8 @@ public class class_7626 {
    @Nullable
    public class_3511 method_34563(BlockPos var1) {
       int var4 = var1.getX() >> 4;
-      int var5 = var1.method_12165() >> 4;
-      int var6 = var1.method_12185() >> 4;
+      int var5 = var1.getY() >> 4;
+      int var6 = var1.getZ() >> 4;
       if (var5 >= 0 && var5 < this.field_38812) {
          var4 = MathHelper.normalizeAngle(var4, this.field_38810);
          var6 = MathHelper.normalizeAngle(var6, this.field_38813);
@@ -119,7 +119,7 @@ public class class_7626 {
    private void method_34562(class_3511 var1) {
       BlockPos var4 = var1.method_16189();
       int var5 = var4.getX() >> 8 << 8;
-      int var6 = var4.method_12185() >> 8 << 8;
+      int var6 = var4.getZ() >> 8 << 8;
       class_2034 var7 = new class_2034(var5, var6);
       RenderLayer[] var8 = RenderLayer.field_17580;
       class_6076[] var9 = this.field_38806.get(var7);

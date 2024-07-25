@@ -275,11 +275,11 @@ public class class_337 extends MonsterEntity {
    }
 
    public float method_1547(float var1) {
-      return MathHelper.method_42795(var1, this.field_1256, this.field_1253);
+      return MathHelper.lerp(var1, this.field_1256, this.field_1253);
    }
 
    public float method_1549(float var1) {
-      return MathHelper.method_42795(var1, this.field_1259, this.field_1250);
+      return MathHelper.lerp(var1, this.field_1259, this.field_1250);
    }
 
    public float method_1546(float var1) {

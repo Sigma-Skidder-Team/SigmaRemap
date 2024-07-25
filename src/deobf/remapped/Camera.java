@@ -28,7 +28,7 @@ public class Camera {
       this.method_41628(
          MathHelper.lerp((double)var5, var2.field_41767, var2.getPosX()),
          MathHelper.lerp((double)var5, var2.field_41698, var2.method_37309())
-            + (double) MathHelper.method_42795(var5, this.field_46420, this.field_46413),
+            + (double) MathHelper.lerp(var5, this.field_46420, this.field_46413),
          MathHelper.lerp((double)var5, var2.field_41725, var2.getPosZ())
       );
       if (!var3) {
@@ -153,7 +153,7 @@ public class Camera {
       } else {
          class_4774 var3 = this.field_46410.method_28258(this.field_46414);
          return !var3.method_22001()
-               && this.field_46411.field_7333 >= (double)((float)this.field_46414.method_12165() + var3.method_22008(this.field_46410, this.field_46414))
+               && this.field_46411.field_7333 >= (double)((float)this.field_46414.getY() + var3.method_22008(this.field_46410, this.field_46414))
             ? class_8532.field_43673.method_10710()
             : var3;
       }

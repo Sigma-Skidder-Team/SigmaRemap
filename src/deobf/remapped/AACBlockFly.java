@@ -136,18 +136,18 @@ public class AACBlockFly extends Module {
                return false;
             }
 
-            if (var3.method_43955().method_12165() != this.field_12316 - 1) {
+            if (var3.method_43955().getY() != this.field_12316 - 1) {
                return false;
             }
          }
 
          if (var3.method_43956() == Direction.field_817
-            && (double)(var3.method_43955().method_12165() + 2) > client.thePlayer.method_37309()
+            && (double)(var3.method_43955().getY() + 2) > client.thePlayer.method_37309()
             && class_7494.method_34090(var3.method_43955())) {
             return false;
          }
 
-         if ((double)var3.method_43955().method_12165() == client.thePlayer.method_37309()) {
+         if ((double)var3.method_43955().getY() == client.thePlayer.method_37309()) {
             return false;
          }
 
@@ -170,7 +170,7 @@ public class AACBlockFly extends Module {
             }
 
             if (var3.method_43956() == Direction.field_817) {
-               this.field_12316 = var3.method_43955().method_12165() + 2;
+               this.field_12316 = var3.method_43955().getY() + 2;
             }
 
             var4 = true;

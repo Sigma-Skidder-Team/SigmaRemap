@@ -20,8 +20,8 @@ public class class_5749 implements class_1429 {
    @Override
    public void method_6572(CompoundNBT var1) {
       var1.putInt("x", this.field_29107.getX());
-      var1.putInt("y", this.field_29107.method_12165());
-      var1.putInt("z", this.field_29107.method_12185());
+      var1.putInt("y", this.field_29107.getY());
+      var1.putInt("z", this.field_29107.getZ());
       class_2522 var4 = this.field_29110.method_17402().method_28262(this.field_29107);
       this.field_29110.method_17394(var4, var1);
       this.field_29110.method_17407();
@@ -36,14 +36,14 @@ public class class_5749 implements class_1429 {
    @Override
    public ITextComponent method_6570() {
       return new TranslationTextComponent(
-         "commands.data.block.modified", this.field_29107.getX(), this.field_29107.method_12165(), this.field_29107.method_12185()
+         "commands.data.block.modified", this.field_29107.getX(), this.field_29107.getY(), this.field_29107.getZ()
       );
    }
 
    @Override
    public ITextComponent method_6574(class_8406 var1) {
       return new TranslationTextComponent(
-         "commands.data.block.query", this.field_29107.getX(), this.field_29107.method_12165(), this.field_29107.method_12185(), var1.method_38711()
+         "commands.data.block.query", this.field_29107.getX(), this.field_29107.getY(), this.field_29107.getZ(), var1.method_38711()
       );
    }
 
@@ -53,8 +53,8 @@ public class class_5749 implements class_1429 {
          "commands.data.block.get",
          var1,
          this.field_29107.getX(),
-         this.field_29107.method_12165(),
-         this.field_29107.method_12185(),
+         this.field_29107.getY(),
+         this.field_29107.getZ(),
          String.format(Locale.ROOT, "%.2f", var2),
          var4
       );

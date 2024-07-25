@@ -23,22 +23,22 @@ public class Box {
    public Box(BlockPos var1) {
       this(
          (double)var1.getX(),
-         (double)var1.method_12165(),
-         (double)var1.method_12185(),
+         (double)var1.getY(),
+         (double)var1.getZ(),
          (double)(var1.getX() + 1),
-         (double)(var1.method_12165() + 1),
-         (double)(var1.method_12185() + 1)
+         (double)(var1.getY() + 1),
+         (double)(var1.getZ() + 1)
       );
    }
 
    public Box(BlockPos var1, BlockPos var2) {
       this(
          (double)var1.getX(),
-         (double)var1.method_12165(),
-         (double)var1.method_12185(),
+         (double)var1.getY(),
+         (double)var1.getZ(),
          (double)var2.getX(),
-         (double)var2.method_12165(),
-         (double)var2.method_12185()
+         (double)var2.getY(),
+         (double)var2.getZ()
       );
    }
 
@@ -230,11 +230,11 @@ public class Box {
    public Box method_18919(BlockPos var1) {
       return new Box(
          this.field_19941 + (double)var1.getX(),
-         this.field_19937 + (double)var1.method_12165(),
-         this.field_19938 + (double)var1.method_12185(),
+         this.field_19937 + (double)var1.getY(),
+         this.field_19938 + (double)var1.getZ(),
          this.field_19940 + (double)var1.getX(),
-         this.field_19939 + (double)var1.method_12165(),
-         this.field_19942 + (double)var1.method_12185()
+         this.field_19939 + (double)var1.getY(),
+         this.field_19942 + (double)var1.getZ()
       );
    }
 

@@ -14,12 +14,12 @@ public class class_9688 implements Comparator<BlockPos> {
             Math.sqrt(
                   CakeEaterModule.method_22208()
                      .field_9632
-                     .method_37273((double)var1.getX() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5)
+                     .method_37273((double)var1.getX() + 0.5, (double)var1.getY() + 0.5, (double)var1.getZ() + 0.5)
                )
                > Math.sqrt(
                   CakeEaterModule.method_22210()
                      .field_9632
-                     .method_37273((double)var2.getX() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5)
+                     .method_37273((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5)
                )
          )
          ? -1

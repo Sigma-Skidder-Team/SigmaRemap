@@ -326,8 +326,8 @@ public abstract class MobEntity extends LivingEntity {
             if (this.field_29911 instanceof class_4641) {
                BlockPos var22 = ((class_4641)this.field_29911).method_21469();
                var20.putInt("X", var22.getX());
-               var20.putInt("Y", var22.method_12165());
-               var20.putInt("Z", var22.method_12185());
+               var20.putInt("Y", var22.getY());
+               var20.putInt("Z", var22.getZ());
             }
          } else {
             UUID var23 = this.field_29911.method_37328();
@@ -690,8 +690,8 @@ public abstract class MobEntity extends LivingEntity {
       }
 
       double var13 = (double) MathHelper.sqrt(var6 * var6 + var8 * var8);
-      float var15 = (float)(MathHelper.method_42821(var8, var6) * 180.0F / (float)Math.PI) - 90.0F;
-      float var16 = (float)(-(MathHelper.method_42821(var10, var13) * 180.0F / (float)Math.PI));
+      float var15 = (float)(MathHelper.atan2(var8, var6) * 180.0F / (float)Math.PI) - 90.0F;
+      float var16 = (float)(-(MathHelper.atan2(var10, var13) * 180.0F / (float)Math.PI));
       this.rotationPitch = this.method_26906(this.rotationPitch, var16, var3);
       this.rotationYaw = this.method_26906(this.rotationYaw, var15, var2);
    }

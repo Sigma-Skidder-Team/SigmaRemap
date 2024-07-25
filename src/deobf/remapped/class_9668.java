@@ -188,7 +188,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    public float method_44710(float var1) {
-      return MathHelper.method_42795(var1, this.field_49241, this.field_49243) / 6.0F;
+      return MathHelper.lerp(var1, this.field_49241, this.field_49243) / 6.0F;
    }
 
    @Override

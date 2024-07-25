@@ -6,7 +6,7 @@ public class class_7967 {
    public static int method_36067(class_3511 var0) {
       class_1315[] var3 = var0.method_16174().method_27349();
       if (var3 != null) {
-         int var4 = var0.method_16189().method_12165() >> 4;
+         int var4 = var0.method_16189().getY() >> 4;
          class_1315 var5 = var3[var4];
          return var5 != null ? var5.method_5991() : 0;
       } else {

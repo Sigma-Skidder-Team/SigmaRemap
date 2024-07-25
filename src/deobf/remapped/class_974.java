@@ -180,7 +180,7 @@ public class class_974 {
       } else {
          if (this.field_4988 != null) {
             BlockPos var4 = var1.method_9092();
-            if (var4 != null && !this.field_4988.method_40164(var4.method_12165())) {
+            if (var4 != null && !this.field_4988.method_40164(var4.getY())) {
                return false;
             }
          }

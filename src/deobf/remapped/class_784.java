@@ -83,8 +83,8 @@ public class class_784 implements class_1137 {
    @Override
    public void method_4988(BlockPos var1, float var2) {
       this.field_4216 = var1.getX();
-      this.field_4214 = var1.method_12165();
-      this.field_4220 = var1.method_12185();
+      this.field_4214 = var1.getY();
+      this.field_4220 = var1.getZ();
       this.field_4222 = var2;
    }
 

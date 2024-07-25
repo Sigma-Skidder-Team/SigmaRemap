@@ -24,9 +24,9 @@ public class class_1424 extends class_6291 {
    @Override
    public void method_28703(class_700 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, class_9616 var6) {
       if (!(var2.nextFloat() >= this.field_7704)) {
-         int var9 = ((BlockPos)var3.get(0)).method_12165();
+         int var9 = ((BlockPos)var3.get(0)).getY();
          var3.stream()
-            .filter(var1x -> var1x.method_12165() - var9 <= 2)
+            .filter(var1x -> var1x.getY() - var9 <= 2)
             .forEach(
                var5x -> {
                   for (Direction var9x : class_9594.field_48893) {

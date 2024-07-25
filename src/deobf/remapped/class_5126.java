@@ -19,7 +19,7 @@ public class class_5126 implements Iterator<class_3511> {
 
    public class_3511 next() {
       BlockPos var3 = this.field_26454.next();
-      this.field_26455.method_2548(var3.getX() << 4, var3.method_12165() << 4, var3.method_12185() << 4);
+      this.field_26455.method_2548(var3.getX() << 4, var3.getY() << 4, var3.getZ() << 4);
       return this.field_26453.method_34563(this.field_26455);
    }
 

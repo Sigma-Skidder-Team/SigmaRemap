@@ -152,8 +152,8 @@ public class class_7886 extends class_4117 {
                         var13.method_36063();
                         var13.method_36065(
                            (double)class_3511.method_16145(this.field_40354) + (double)(var19.getX() & 15),
-                           (double)class_3511.method_16144(this.field_40354) + (double)(var19.method_12165() & 15),
-                           (double)class_3511.method_16153(this.field_40354) + (double)(var19.method_12185() & 15)
+                           (double)class_3511.method_16144(this.field_40354) + (double)(var19.getY() & 15),
+                           (double)class_3511.method_16153(this.field_40354) + (double)(var19.getZ() & 15)
                         );
                         if (var17.method_3720(var20, var19, var14, var13, var42, true, var16, var23)) {
                            class_8845.method_40696(var4, false);
@@ -179,8 +179,8 @@ public class class_7886 extends class_4117 {
             class_9633 var29 = var5.method_12956(RenderLayer.method_16762());
             var29.method_44482(
                (float)class_3511.method_16145(this.field_40354) + var1 - (float)var9.getX(),
-               (float)class_3511.method_16144(this.field_40354) + var2 - (float)var9.method_12165(),
-               (float)class_3511.method_16153(this.field_40354) + var3 - (float)var9.method_12185()
+               (float)class_3511.method_16144(this.field_40354) + var2 - (float)var9.getY(),
+               (float)class_3511.method_16153(this.field_40354) + var3 - (float)var9.getZ()
             );
             class_8845.method_40692(var4, var29.method_44484());
          }

@@ -48,7 +48,7 @@ public class class_4808 implements Packet<class_392> {
       for (Entry var14 : var1.method_12004().entrySet()) {
          BlockPos var8 = (BlockPos)var14.getKey();
          class_3757 var9 = (class_3757)var14.getValue();
-         int var10 = var8.method_12165() >> 4;
+         int var10 = var8.getY() >> 4;
          if (this.method_22141() || (var2 & 1 << var10) != 0) {
             CompoundNBT var11 = var9.method_17414();
             this.field_24064.add(var11);

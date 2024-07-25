@@ -191,7 +191,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public float method_26602(float var1) {
-      return MathHelper.method_42795(var1, this.field_29624, this.field_29670);
+      return MathHelper.lerp(var1, this.field_29624, this.field_29670);
    }
 
    @Override
@@ -540,8 +540,8 @@ public abstract class LivingEntity extends Entity {
       var1.putBoolean("FallFlying", this.method_26618());
       this.method_26518().ifPresent(var1x -> {
          var1.putInt("SleepingX", var1x.getX());
-         var1.putInt("SleepingY", var1x.method_12165());
-         var1.putInt("SleepingZ", var1x.method_12185());
+         var1.putInt("SleepingY", var1x.getY());
+         var1.putInt("SleepingZ", var1x.getZ());
       });
       DataResult var7 = this.field_29675.method_5131(class_3504.field_17178);
       var7.resultOrPartial(LOGGER::error).ifPresent(var1x -> var1.put("Brain", var1x));
@@ -984,7 +984,7 @@ public abstract class LivingEntity extends Entity {
                      var12 = (Math.random() - Math.random()) * 0.01;
                   }
 
-                  this.field_29608 = (float)(MathHelper.method_42821(var14, var12) * 180.0F / (float)Math.PI - (double)this.rotationYaw);
+                  this.field_29608 = (float)(MathHelper.atan2(var14, var12) * 180.0F / (float)Math.PI - (double)this.rotationYaw);
                   this.method_26567(0.4F, var12, var14);
                }
             }
@@ -2134,7 +2134,7 @@ public abstract class LivingEntity extends Entity {
       if (var7 > 0.0025000002F) {
          var10 = 1.0F;
          var9 = (float)Math.sqrt((double)var7) * 3.0F;
-         float var14 = (float) MathHelper.method_42821(var5, var3) * (180.0F / (float)Math.PI) - 90.0F;
+         float var14 = (float) MathHelper.atan2(var5, var3) * (180.0F / (float)Math.PI) - 90.0F;
          float var15 = MathHelper.abs(MathHelper.wrapDegrees(this.rotationYaw) - var14);
          if (95.0F < var15 && var15 < 265.0F) {
             var8 = var14 - 180.0F;
@@ -2585,7 +2585,7 @@ public abstract class LivingEntity extends Entity {
 
    @Override
    public float getYaw(float var1) {
-      return var1 != 1.0F ? MathHelper.method_42795(var1, this.field_29657, this.field_29618) : this.field_29618;
+      return var1 != 1.0F ? MathHelper.lerp(var1, this.field_29657, this.field_29618) : this.field_29618;
    }
 
    public float method_26533(float var1) {
@@ -2884,7 +2884,7 @@ public abstract class LivingEntity extends Entity {
       if (var20.isBlockLoaded(var19)) {
          boolean var21 = false;
 
-         while (!var21 && var19.method_12165() > 0) {
+         while (!var21 && var19.getY() > 0) {
             BlockPos var22 = var19.method_6100();
             class_2522 var23 = var20.method_28262(var22);
             if (!var23.method_8362().method_24502()) {
@@ -2994,7 +2994,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    private void method_26584(BlockPos var1) {
-      this.method_37256((double)var1.getX() + 0.5, (double)var1.method_12165() + 0.6875, (double)var1.method_12185() + 0.5);
+      this.method_37256((double)var1.getX() + 0.5, (double)var1.getY() + 0.6875, (double)var1.getZ() + 0.5);
    }
 
    private boolean method_26415() {
@@ -3008,10 +3008,10 @@ public abstract class LivingEntity extends Entity {
             this.world.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(false)), 3);
             class_1343 var5 = class_3633.method_16932(this.getType(), this.world, var1, this.rotationYaw).orElseGet(() -> {
                BlockPos var3x = var1.method_6081();
-               return new class_1343((double)var3x.getX() + 0.5, (double)var3x.method_12165() + 0.1, (double)var3x.method_12185() + 0.5);
+               return new class_1343((double)var3x.getX() + 0.5, (double)var3x.getY() + 0.1, (double)var3x.getZ() + 0.5);
             });
             class_1343 var6 = class_1343.method_6200(var1).method_6194(var5).method_6213();
-            float var7 = (float) MathHelper.wrapDegrees(MathHelper.method_42821(var6.field_7334, var6.field_7336) * 180.0F / (float)Math.PI - 90.0);
+            float var7 = (float) MathHelper.wrapDegrees(MathHelper.atan2(var6.field_7334, var6.field_7336) * 180.0F / (float)Math.PI - 90.0);
             this.method_37256(var5.field_7336, var5.field_7333, var5.field_7334);
             this.rotationYaw = var7;
             this.rotationPitch = 0.0F;

@@ -61,7 +61,7 @@ public class class_8046 extends class_1859 {
          class_5320.field_27138,
          (float)(this.field_36270 + 68),
          (float)(this.field_36261 + 38),
-         "x:" + this.field_41210.getX() + " z:" + this.field_41210.method_12185(),
+         "x:" + this.field_41210.getX() + " z:" + this.field_41210.getZ(),
          class_314.method_1444(class_1255.field_6929.field_6917, 0.5F)
       );
       byte var4 = 27;

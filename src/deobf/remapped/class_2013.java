@@ -195,7 +195,7 @@ public class class_2013 extends class_4314 {
          float var10 = 0.25F * (float)var8.method_1041();
          float var11 = 0.25F * (float)var8.method_1034();
          class_91 var12 = new class_91(
-            var2, (double)var3.getX() + 0.5 + (double)var10, (double)(var3.method_12165() + 1), (double)var3.method_12185() + 0.5 + (double)var11, var9
+            var2, (double)var3.getX() + 0.5 + (double)var10, (double)(var3.getY() + 1), (double)var3.getZ() + 0.5 + (double)var11, var9
          );
          var12.method_257();
          var2.method_7509(var12);

@@ -290,7 +290,7 @@ public final class class_322 extends class_6541 {
 
          for (int var33 = this.field_1196 - 1; var33 >= 0; var33--) {
             double var34 = (double)var33 / (double)this.field_1196;
-            double var36 = MathHelper.method_42807(var34, var11, var13, var17, var25, var21, var29, var19, var27, var23, var31);
+            double var36 = MathHelper.lerp3(var34, var11, var13, var17, var25, var21, var29, var19, var27, var23, var31);
             int var38 = var16 * this.field_1196 + var33;
             class_2522 var39 = this.method_1509(var36, var38);
             if (var3 != null) {
@@ -364,7 +364,7 @@ public final class class_322 extends class_6541 {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
                      var1.method_27348(
-                        var5.method_13362(var15.getX(), var10 - var16, var15.method_12185()), class_4783.field_23433.method_29260(), false
+                        var5.method_13362(var15.getX(), var10 - var16, var15.getZ()), class_4783.field_23433.method_29260(), false
                      );
                   }
                }
@@ -374,7 +374,7 @@ public final class class_322 extends class_6541 {
                for (int var17 = 4; var17 >= 0; var17--) {
                   if (var17 <= var2.nextInt(5)) {
                      var1.method_27348(
-                        var5.method_13362(var15.getX(), var9 + var17, var15.method_12185()), class_4783.field_23433.method_29260(), false
+                        var5.method_13362(var15.getX(), var9 + var17, var15.getZ()), class_4783.field_23433.method_29260(), false
                      );
                   }
                }
@@ -547,7 +547,7 @@ public final class class_322 extends class_6541 {
       double var7 = (double)var1 + 0.5;
       double var9 = var7 * var7;
       double var11 = Math.pow(Math.E, -(var9 / 16.0 + var5 / 16.0));
-      double var13 = -var7 * MathHelper.method_42835(var9 / 2.0 + var5 / 2.0) / 2.0;
+      double var13 = -var7 * MathHelper.fastInvSqrt(var9 / 2.0 + var5 / 2.0) / 2.0;
       return var13 * var11;
    }
 

@@ -27,7 +27,7 @@ public abstract class class_3982 extends class_4285<class_1926> {
    }
 
    public boolean method_18369(class_9379 var1, BlockPos var2, int var3, class_2921 var4, class_1926 var5) {
-      int var8 = var2.method_12165();
+      int var8 = var2.getY();
       if (var8 >= 1 && var8 + var3 + 1 < 256) {
          class_6414 var9 = var1.method_28262(var2.method_6100()).method_8360();
          if (!method_19910(var9) && !var9.method_29299(class_2351.field_11782)) {

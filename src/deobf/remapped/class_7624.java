@@ -45,8 +45,8 @@ public class class_7624 extends class_7060 {
    @Override
    public void method_32517(CompoundNBT var1) {
       var1.putInt("PosX", this.field_38792.getX());
-      var1.putInt("PosY", this.field_38792.method_12165());
-      var1.putInt("PosZ", this.field_38792.method_12185());
+      var1.putInt("PosY", this.field_38792.getY());
+      var1.putInt("PosZ", this.field_38792.getZ());
       var1.putInt("ground_level_delta", this.field_38795);
       class_2609.field_12888
          .encodeStart(class_3504.field_17178, this.field_38789)

@@ -897,16 +897,16 @@ public class class_948 implements class_1243 {
       BlockPos var8 = var7.method_43955();
       Direction var9 = var7.method_43956();
       this.field_4880.method_43237();
-      if (var8.method_12165() >= this.field_4877.method_1671()) {
+      if (var8.getY() >= this.field_4877.method_1671()) {
          IFormattableTextComponent var10 = new TranslationTextComponent("build.tooHigh", this.field_4877.method_1671()).mergeStyle(TextFormatting.RED);
          this.field_4880.field_47794.method_4156(new class_5182(var10, ChatType.GAME_INFO, Util.NIL_UUID));
       } else if (this.field_4874 == null
-         && this.field_4880.method_37273((double)var8.getX() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5) < 64.0
+         && this.field_4880.method_37273((double)var8.getX() + 0.5, (double)var8.getY() + 0.5, (double)var8.getZ() + 0.5) < 64.0
          && var4.method_29538(this.field_4880, var8)) {
          class_6910 var12 = this.field_4880.field_47807.method_39528(this.field_4880, var4, var6, var5, var7);
          if (var9 == Direction.field_817
             && !var12.method_31662()
-            && var8.method_12165() >= this.field_4877.method_1671() - 1
+            && var8.getY() >= this.field_4877.method_1671() - 1
             && method_4162(this.field_4880, var6)) {
             IFormattableTextComponent var11 = new TranslationTextComponent("build.tooHigh", this.field_4877.method_1671()).mergeStyle(TextFormatting.RED);
             this.field_4880.field_47794.method_4156(new class_5182(var11, ChatType.GAME_INFO, Util.NIL_UUID));

@@ -38,11 +38,11 @@ public class class_7656 implements class_1517 {
                      class_2921 var13 = var10.method_37075().method_6089().method_13367(var11, 0, var12);
                      if (!var1.method_22569(
                         var13.getX() - 10,
-                        var13.method_12165() - 10,
-                        var13.method_12185() - 10,
+                        var13.getY() - 10,
+                        var13.getZ() - 10,
                         var13.getX() + 10,
-                        var13.method_12165() + 10,
-                        var13.method_12185() + 10
+                        var13.getY() + 10,
+                        var13.getZ() + 10
                      )) {
                         return 0;
                      } else {
@@ -56,7 +56,7 @@ public class class_7656 implements class_1517 {
 
                            for (int var18 = 0; var18 < var17; var18++) {
                               var16++;
-                              var13.method_12184(var1.method_22563(class_3801.field_18590, var13).method_12165());
+                              var13.method_12184(var1.method_22563(class_3801.field_18590, var13).getY());
                               if (var18 != 0) {
                                  this.method_34656(var1, var13, var6, false);
                               } else if (!this.method_34656(var1, var13, var6, true)) {
@@ -64,7 +64,7 @@ public class class_7656 implements class_1517 {
                               }
 
                               var13.method_12167(var13.getX() + var6.nextInt(5) - var6.nextInt(5));
-                              var13.method_12172(var13.method_12185() + var6.nextInt(5) - var6.nextInt(5));
+                              var13.method_12172(var13.getZ() + var6.nextInt(5) - var6.nextInt(5));
                            }
 
                            return var16;
@@ -92,7 +92,7 @@ public class class_7656 implements class_1517 {
                   var8.method_21356();
                }
 
-               var8.method_37256((double)var2.getX(), (double)var2.method_12165(), (double)var2.method_12185());
+               var8.method_37256((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
                var8.method_26864(var1, var1.method_43368(var2), class_2417.field_12025, (class_8733)null, (CompoundNBT)null);
                var1.method_7065(var8);
                return true;

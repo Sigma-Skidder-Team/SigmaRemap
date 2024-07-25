@@ -233,7 +233,7 @@ public abstract class class_3798 extends class_2340 {
 
    private static short method_17650(BlockPos var0, BlockPos var1) {
       int var4 = var1.getX() - var0.getX();
-      int var5 = var1.method_12185() - var0.method_12185();
+      int var5 = var1.getZ() - var0.getZ();
       return (short)((var4 + 128 & 0xFF) << 8 | var5 + 128 & 0xFF);
    }
 

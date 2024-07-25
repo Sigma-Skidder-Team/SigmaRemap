@@ -94,9 +94,9 @@ public class class_6377 {
          int var41 = field_32579 >> 8 & 0xFF;
          int var43 = field_32579 & 0xFF;
          float var45 = MathHelper.clamp((float)(var19 - field_32580) / 5000.0F, 0.0F, 1.0F);
-         float var48 = MathHelper.method_42795(var45, (float)var40, (float)var32);
-         float var54 = MathHelper.method_42795(var45, (float)var41, (float)var38);
-         float var55 = MathHelper.method_42795(var45, (float)var43, (float)var39);
+         float var48 = MathHelper.lerp(var45, (float)var40, (float)var32);
+         float var54 = MathHelper.lerp(var45, (float)var41, (float)var38);
+         float var55 = MathHelper.lerp(var45, (float)var43, (float)var39);
          field_32578 = var48 / 255.0F;
          field_32585 = var54 / 255.0F;
          field_32584 = var55 / 255.0F;
@@ -220,7 +220,7 @@ public class class_6377 {
             if (!var7.method_22007(class_6503.field_33095)) {
                if (var8 instanceof LivingEntity && ((LivingEntity)var8).isPotionActive(Effects.field_19736)) {
                   int var12 = ((LivingEntity)var8).method_26553(Effects.field_19736).method_10347();
-                  float var13 = MathHelper.method_42795(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
+                  float var13 = MathHelper.lerp(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != class_1026.field_5679) {
                      var10 = var13 * 0.25F;
                      var11 = var13;

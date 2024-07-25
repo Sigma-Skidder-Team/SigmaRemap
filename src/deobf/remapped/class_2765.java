@@ -59,7 +59,7 @@ public class class_2765 {
 
    public static void method_12588(String var0, BlockPos var1, BlockPos var2, class_6631 var3, class_6331 var4) {
       class_9616 var7 = method_12589(var1, var2, var3);
-      method_12583(var7, var1.method_12165(), var4);
+      method_12583(var7, var1.getY(), var4);
       var4.method_29594(var1, class_4783.field_23846.method_29260());
       class_945 var8 = (class_945)var4.method_28260(var1);
       var8.method_4110(false);
@@ -82,17 +82,17 @@ public class class_2765 {
 
                var10 = var1.method_6104(0, 0, var8.getX() - 1);
             } else {
-               var10 = var1.method_6104(var8.getX() - 1, 0, var8.method_12185() - 1);
+               var10 = var1.method_6104(var8.getX() - 1, 0, var8.getZ() - 1);
             }
          } else {
-            var10 = var1.method_6104(var8.method_12185() - 1, 0, 0);
+            var10 = var1.method_6104(var8.getZ() - 1, 0, 0);
          }
       } else {
          var10 = var1;
       }
 
       method_12580(var1, var4);
-      method_12583(var9, var1.method_12165(), var4);
+      method_12583(var9, var1.getY(), var4);
       class_945 var11 = method_12586(var0, var10, var2, var4, var5);
       var4.method_28968().method_13096(var9, true, false);
       var4.method_28937(var9);
@@ -134,11 +134,11 @@ public class class_2765 {
       BlockPos var5 = var0.method_6105(var1).method_6104(-1, -1, -1);
       BlockPos var6 = class_6561.method_29966(var5, class_9022.field_46145, var2, var0);
       class_9616 var7 = class_9616.method_44400(
-         var0.getX(), var0.method_12165(), var0.method_12185(), var6.getX(), var6.method_12165(), var6.method_12185()
+         var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ()
       );
       int var8 = Math.min(var7.field_48996, var7.field_48991);
       int var9 = Math.min(var7.field_48992, var7.field_48994);
-      BlockPos var10 = new BlockPos(var0.getX() - var8, 0, var0.method_12185() - var9);
+      BlockPos var10 = new BlockPos(var0.getX() - var8, 0, var0.getZ() - var9);
       var7.method_44385(var10);
       return var7;
    }
@@ -230,8 +230,8 @@ public class class_2765 {
       class_2522 var5 = null;
       class_9512 var6 = class_9512.method_43900(var2.method_2755().<class_6325>method_28813(class_8669.field_44359));
       if (!(var6 instanceof class_9512)) {
-         if (var1.method_12165() != var0 - 1) {
-            if (var1.method_12165() < var0 - 1) {
+         if (var1.getY() != var0 - 1) {
+            if (var1.getY() < var0 - 1) {
                var5 = var2.method_22561(var1).method_28875().method_9460().method_19216();
             }
          } else {
@@ -239,8 +239,8 @@ public class class_2765 {
          }
       } else {
          class_2522[] var7 = var6.method_43902();
-         if (var1.method_12165() < var0 && var1.method_12165() <= var7.length) {
-            var5 = var7[var1.method_12165() - 1];
+         if (var1.getY() < var0 && var1.getY() <= var7.length) {
+            var5 = var7[var1.getY() - 1];
          }
       }
 

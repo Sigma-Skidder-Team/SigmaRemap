@@ -22,7 +22,7 @@ public final class class_9757 implements class_3825 {
          if (var7 != null
             && !(
                ((Entity)var6).method_37245()
-                     .method_6203((double)var7.getX() + 0.5, ((Entity)var6).method_37245().method_60(), (double)var7.method_12185() + 0.5)
+                     .method_6203((double)var7.getX() + 0.5, ((Entity)var6).method_37245().method_60(), (double)var7.getZ() + 0.5)
                   < 1.0E-5F
             )) {
             boolean var12 = var3 instanceof PlayerEntity && ((PlayerEntity)var3).method_3183();

@@ -180,11 +180,11 @@ public class class_5445 extends Screen {
       this.field_942.add(this.field_27731);
       this.field_27762 = new class_1863(this.field_948, this.field_941 / 2 - 72, 80, 80, 20, new TranslationTextComponent("structure_block.position.y"));
       this.field_27762.method_8255(15);
-      this.field_27762.method_8281(Integer.toString(var3.method_12165()));
+      this.field_27762.method_8281(Integer.toString(var3.getY()));
       this.field_942.add(this.field_27762);
       this.field_27756 = new class_1863(this.field_948, this.field_941 / 2 + 8, 80, 80, 20, new TranslationTextComponent("structure_block.position.z"));
       this.field_27756.method_8255(15);
-      this.field_27756.method_8281(Integer.toString(var3.method_12185()));
+      this.field_27756.method_8281(Integer.toString(var3.getZ()));
       this.field_942.add(this.field_27756);
       BlockPos var4 = this.field_27753.method_4096();
       this.field_27741 = new class_1863(this.field_948, this.field_941 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
@@ -193,11 +193,11 @@ public class class_5445 extends Screen {
       this.field_942.add(this.field_27741);
       this.field_27754 = new class_1863(this.field_948, this.field_941 / 2 - 72, 120, 80, 20, new TranslationTextComponent("structure_block.size.y"));
       this.field_27754.method_8255(15);
-      this.field_27754.method_8281(Integer.toString(var4.method_12165()));
+      this.field_27754.method_8281(Integer.toString(var4.getY()));
       this.field_942.add(this.field_27754);
       this.field_27759 = new class_1863(this.field_948, this.field_941 / 2 + 8, 120, 80, 20, new TranslationTextComponent("structure_block.size.z"));
       this.field_27759.method_8255(15);
-      this.field_27759.method_8281(Integer.toString(var4.method_12185()));
+      this.field_27759.method_8281(Integer.toString(var4.getZ()));
       this.field_942.add(this.field_27759);
       this.field_27724 = new class_1863(
          this.field_948, this.field_941 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.integrity.integrity")

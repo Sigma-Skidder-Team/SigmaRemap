@@ -29,8 +29,8 @@ public class class_9552 extends class_5783 {
       this.method_26159(var2);
       BlockPos var7 = var2.method_37075();
       double var8 = (double)var7.getX() + 0.5;
-      double var10 = (double)var7.method_12165() + 0.5;
-      double var12 = (double)var7.method_12185() + 0.5;
+      double var10 = (double)var7.getY() + 0.5;
+      double var12 = (double)var7.getZ() + 0.5;
       this.method_37144(var8, var10, var12, this.rotationYaw, this.rotationPitch);
       this.field_48601 = var3;
       this.field_48599 = Direction.field_817;
@@ -94,8 +94,8 @@ public class class_9552 extends class_5783 {
       }
 
       double var7 = (double)var6.getX() + 0.5;
-      double var9 = (double)var6.method_12165() + var4;
-      double var11 = (double)var6.method_12185() + 0.5;
+      double var9 = (double)var6.getY() + var4;
+      double var11 = (double)var6.getZ() + 0.5;
       Direction var13 = null;
       if (!var6.method_12170(this.method_37245(), 2.0)) {
          BlockPos var22 = this.method_37075();
@@ -109,17 +109,17 @@ public class class_9552 extends class_5783 {
          }
 
          if (var1 != class_9249.field_47216) {
-            if (var22.method_12165() < var6.method_12165() && this.world.method_22548(var22.method_6081())) {
+            if (var22.getY() < var6.getY() && this.world.method_22548(var22.method_6081())) {
                var23.add(Direction.field_817);
-            } else if (var22.method_12165() > var6.method_12165() && this.world.method_22548(var22.method_6100())) {
+            } else if (var22.getY() > var6.getY() && this.world.method_22548(var22.method_6100())) {
                var23.add(Direction.field_802);
             }
          }
 
          if (var1 != class_9249.field_47219) {
-            if (var22.method_12185() < var6.method_12185() && this.world.method_22548(var22.method_6073())) {
+            if (var22.getZ() < var6.getZ() && this.world.method_22548(var22.method_6073())) {
                var23.add(Direction.field_800);
-            } else if (var22.method_12185() > var6.method_12185() && this.world.method_22548(var22.method_6094())) {
+            } else if (var22.getZ() > var6.getZ() && this.world.method_22548(var22.method_6094())) {
                var23.add(Direction.field_818);
             }
          }
@@ -218,8 +218,8 @@ public class class_9552 extends class_5783 {
                if (!this.world.method_29518(var4.method_6098(this.field_48599), this)) {
                   BlockPos var6 = this.field_48601.method_37075();
                   if (var5 == class_9249.field_47215 && var4.getX() == var6.getX()
-                     || var5 == class_9249.field_47219 && var4.method_12185() == var6.method_12185()
-                     || var5 == class_9249.field_47216 && var4.method_12165() == var6.method_12165()) {
+                     || var5 == class_9249.field_47219 && var4.getZ() == var6.getZ()
+                     || var5 == class_9249.field_47216 && var4.getY() == var6.getY()) {
                      this.method_44070(var5);
                   }
                } else {

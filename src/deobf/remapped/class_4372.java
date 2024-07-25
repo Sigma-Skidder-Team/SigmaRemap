@@ -93,8 +93,8 @@ public class class_4372 extends class_6414 implements class_2593 {
             new class_1453(
                var2,
                (double)var3.getX() + 0.5,
-               (double)var3.method_12165(),
-               (double)var3.method_12185() + 0.5,
+               (double)var3.getY(),
+               (double)var3.getZ() + 0.5,
                var8.method_10308(field_21452, Boolean.valueOf(false))
             )
          );

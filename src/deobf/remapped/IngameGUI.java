@@ -105,7 +105,7 @@ public class IngameGUI extends AbstractGui {
          this.renderPumpkinOverlay();
       }
 
-      float var7 = MathHelper.method_42795(partialTicks, this.mc.thePlayer.prevTimeInPortal, this.mc.thePlayer.timeInPortal);
+      float var7 = MathHelper.lerp(partialTicks, this.mc.thePlayer.prevTimeInPortal, this.mc.thePlayer.timeInPortal);
       if (var7 > 0.0F && !this.mc.thePlayer.isPotionActive(Effects.NAUSEA)) {
          this.renderPortal(var7);
       }
@@ -196,7 +196,7 @@ public class IngameGUI extends AbstractGui {
                RenderSystem.defaultBlendFunc();
                int var22 = 16777215;
                if (this.animateOverlayMessageColor) {
-                  var22 = MathHelper.method_42792(var15 / 50.0F, 0.7F, 0.6F) & 16777215;
+                  var22 = MathHelper.hsvToRGB(var15 / 50.0F, 0.7F, 0.6F) & 16777215;
                }
 
                int var11 = var18 << 24 & 0xFF000000;

@@ -16,19 +16,19 @@ public class class_1343 implements class_66 {
    }
 
    public static class_1343 method_6216(Vector3i var0) {
-      return new class_1343((double)var0.getX() + 0.5, (double)var0.method_12165() + 0.5, (double)var0.method_12185() + 0.5);
+      return new class_1343((double)var0.getX() + 0.5, (double)var0.getY() + 0.5, (double)var0.getZ() + 0.5);
    }
 
    public static class_1343 method_6205(Vector3i var0) {
-      return new class_1343((double)var0.getX(), (double)var0.method_12165(), (double)var0.method_12185());
+      return new class_1343((double)var0.getX(), (double)var0.getY(), (double)var0.getZ());
    }
 
    public static class_1343 method_6200(Vector3i var0) {
-      return new class_1343((double)var0.getX() + 0.5, (double)var0.method_12165(), (double)var0.method_12185() + 0.5);
+      return new class_1343((double)var0.getX() + 0.5, (double)var0.getY(), (double)var0.getZ() + 0.5);
    }
 
    public static class_1343 method_6219(Vector3i var0, double var1) {
-      return new class_1343((double)var0.getX() + 0.5, (double)var0.method_12165() + var1, (double)var0.method_12185() + 0.5);
+      return new class_1343((double)var0.getX() + 0.5, (double)var0.getY() + var1, (double)var0.getZ() + 0.5);
    }
 
    public class_1343(double var1, double var3, double var5) {

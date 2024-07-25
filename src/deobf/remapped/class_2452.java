@@ -468,7 +468,7 @@ public class class_2452 {
          var2.method_18585(true);
          var2.method_18588(0);
          if (!var4 && var3 != null) {
-            var2.method_37256((double)var3.getX() + 0.5, (double)var3.method_12165() + 1.0, (double)var3.method_12185() + 0.5);
+            var2.method_37256((double)var3.getX() + 0.5, (double)var3.getY() + 1.0, (double)var3.getZ() + 0.5);
             var2.method_26864(this.field_12189, this.field_12189.method_43368(var3), class_2417.field_12040, (class_8733)null, (CompoundNBT)null);
             var2.method_18602(var1, false);
             var2.method_37386(true);
@@ -555,7 +555,7 @@ public class class_2452 {
          int var9 = this.field_12185.getX()
             + MathHelper.floor(MathHelper.cos(var8) * 32.0F * (float)var5)
             + this.field_12189.field_33033.nextInt(5);
-         int var10 = this.field_12185.method_12185()
+         int var10 = this.field_12185.getZ()
             + MathHelper.floor(MathHelper.sin(var8) * 32.0F * (float)var5)
             + this.field_12189.field_33033.nextInt(5);
          int var11 = this.field_12189.method_22562(class_3801.field_18592, var9, var10);
@@ -564,11 +564,11 @@ public class class_2452 {
             && this.field_12189
                .method_22569(
                   var6.getX() - 10,
-                  var6.method_12165() - 10,
-                  var6.method_12185() - 10,
+                  var6.getY() - 10,
+                  var6.getZ() - 10,
                   var6.getX() + 10,
-                  var6.method_12165() + 10,
-                  var6.method_12185() + 10
+                  var6.getY() + 10,
+                  var6.getZ() + 10
                )
             && this.field_12189.method_28945().method_14823(new class_2034(var6))
             && (
@@ -689,8 +689,8 @@ public class class_2452 {
       var1.putInt("NumGroups", this.field_12195);
       var1.method_25941("Status", this.field_12198.method_19860());
       var1.putInt("CX", this.field_12185.getX());
-      var1.putInt("CY", this.field_12185.method_12165());
-      var1.putInt("CZ", this.field_12185.method_12185());
+      var1.putInt("CY", this.field_12185.getY());
+      var1.putInt("CZ", this.field_12185.getZ());
       class_3416 var4 = new class_3416();
 
       for (UUID var6 : this.field_12190) {

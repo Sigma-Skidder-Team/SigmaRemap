@@ -43,12 +43,12 @@ public class class_5864 extends class_3333 {
    private boolean method_26719(BlockPos var1, Entity var2) {
       if (var2.method_37360()) {
          return false;
-      } else if (!(var2.method_37309() > (double)var1.method_12165() + 0.9375 - 1.0E-7)) {
+      } else if (!(var2.method_37309() > (double)var1.getY() + 0.9375 - 1.0E-7)) {
          if (var2.method_37098().field_7333 >= -0.08) {
             return false;
          } else {
             double var5 = Math.abs((double)var1.getX() + 0.5 - var2.getPosX());
-            double var7 = Math.abs((double)var1.method_12185() + 0.5 - var2.getPosZ());
+            double var7 = Math.abs((double)var1.getZ() + 0.5 - var2.getPosZ());
             double var9 = 0.4375 + (double)(var2.method_37086() / 2.0F);
             return var5 + 1.0E-7 > var9 || var7 + 1.0E-7 > var9;
          }

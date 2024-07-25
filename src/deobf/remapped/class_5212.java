@@ -43,6 +43,6 @@ public class class_5212 extends class_5920<LivingEntity> {
    }
 
    public static boolean method_23890(class_6331 var0, LivingEntity var1, BlockPos var2) {
-      return var0.method_25263(var2) && (double)var0.method_22563(class_3801.field_18595, var2).method_12165() <= var1.method_37309();
+      return var0.method_25263(var2) && (double)var0.method_22563(class_3801.field_18595, var2).getY() <= var1.method_37309();
    }
 }

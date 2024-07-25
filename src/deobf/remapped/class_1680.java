@@ -24,11 +24,11 @@ public class class_1680 implements class_5561 {
    public class_1680(class_7850 var1, BlockPos var2, BlockPos var3, int var4) {
       this.field_8703 = var1;
       int var7 = var2.getX() - var4 >> 4;
-      int var8 = var2.method_12165() - var4 >> 4;
-      int var9 = var2.method_12185() - var4 >> 4;
+      int var8 = var2.getY() - var4 >> 4;
+      int var9 = var2.getZ() - var4 >> 4;
       int var10 = var3.getX() + var4 >> 4;
-      int var11 = var3.method_12165() + var4 >> 4;
-      int var12 = var3.method_12185() + var4 >> 4;
+      int var11 = var3.getY() + var4 >> 4;
+      int var12 = var3.getZ() + var4 >> 4;
       this.field_8689 = var10 - var7 + 1 << 4;
       this.field_8700 = var11 - var8 + 1 << 4;
       this.field_8695 = var12 - var9 + 1 << 4;
@@ -42,9 +42,9 @@ public class class_1680 implements class_5561 {
    public int method_7523(BlockPos var1) {
       int var4 = var1.getX() - this.field_8702;
       if (var4 >= 0 && var4 < this.field_8689) {
-         int var5 = var1.method_12165() - this.field_8691;
+         int var5 = var1.getY() - this.field_8691;
          if (var5 >= 0 && var5 < this.field_8700) {
-            int var6 = var1.method_12185() - this.field_8692;
+            int var6 = var1.getZ() - this.field_8692;
             return var6 >= 0 && var6 < this.field_8695 ? var5 * this.field_8698 + var6 * this.field_8689 + var4 : -1;
          } else {
             return -1;

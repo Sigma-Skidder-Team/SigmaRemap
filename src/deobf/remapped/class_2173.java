@@ -60,10 +60,10 @@ public class class_2173 extends class_1871 {
 
             double var4;
             do {
-               var4 = (double)((float)var3.method_12165() + this.field_9479.method_26594().nextFloat() * 20.0F);
-            } while (var4 < (double)var3.method_12165());
+               var4 = (double)((float)var3.getY() + this.field_9479.method_26594().nextFloat() * 20.0F);
+            } while (var4 < (double)var3.getY());
 
-            this.field_10828 = new class_1343((double)var3.getX(), var4, (double)var3.method_12185());
+            this.field_10828 = new class_1343((double)var3.getX(), var4, (double)var3.getZ());
          }
       }
    }

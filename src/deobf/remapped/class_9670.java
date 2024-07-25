@@ -45,7 +45,7 @@ public final class class_9670 {
          Direction var18 = class_195.method_860(var17.field_19967);
          BlockPos var19 = var17.field_19965;
          BlockPos var20 = var19.method_6098(var18);
-         int var21 = var19.method_12165() - var15;
+         int var21 = var19.getY() - var15;
          int var22 = -1;
          Identifier var23 = new Identifier(var17.field_19968.method_25965("pool"));
          Optional var24 = this.field_49258.method_39794(var23);
@@ -107,21 +107,21 @@ public final class class_9670 {
                            BlockPos var40 = var39.field_19965;
                            BlockPos var41 = new BlockPos(
                               var20.getX() - var40.getX(),
-                              var20.method_12165() - var40.method_12165(),
-                              var20.method_12185() - var40.method_12185()
+                              var20.getY() - var40.getY(),
+                              var20.getZ() - var40.getZ()
                            );
                            class_9616 var42 = var32.method_11832(this.field_49254, var41, var34);
                            int var43 = var42.field_48995;
                            class_7599 var44 = var32.method_11834();
                            boolean var45 = var44 == class_7599.field_38708;
-                           int var46 = var40.method_12165();
+                           int var46 = var40.getY();
                            int var47 = var21 - var46 + class_195.method_860(var17.field_19967).method_1054();
                            int var48;
                            if (var12 && var45) {
                               var48 = var15 + var47;
                            } else {
                               if (var22 == -1) {
-                                 var22 = this.field_49259.method_29831(var19.getX(), var19.method_12185(), class_3801.field_18598);
+                                 var22 = this.field_49259.method_29831(var19.getX(), var19.getZ(), class_3801.field_18598);
                               }
 
                               var48 = var22 - var46;
@@ -156,7 +156,7 @@ public final class class_9670 {
                               if (!var12) {
                                  if (!var45) {
                                     if (var22 == -1) {
-                                       var22 = this.field_49259.method_29831(var19.getX(), var19.method_12185(), class_3801.field_18598);
+                                       var22 = this.field_49259.method_29831(var19.getX(), var19.getZ(), class_3801.field_18598);
                                     }
 
                                     var55 = var22 + var47 / 2;
@@ -167,8 +167,8 @@ public final class class_9670 {
                                  var55 = var15 + var21;
                               }
 
-                              var1.method_34556(new class_98(var20.getX(), var55 - var21 + var56, var20.method_12185(), var47, var44));
-                              var54.method_34556(new class_98(var19.getX(), var55 - var46 + var53, var19.method_12185(), -var47, var11));
+                              var1.method_34556(new class_98(var20.getX(), var55 - var21 + var56, var20.getZ(), var47, var44));
+                              var54.method_34556(new class_98(var19.getX(), var55 - var46 + var53, var19.getZ(), -var47, var11));
                               this.field_49261.add(var54);
                               if (var4 + 1 <= this.field_49260) {
                                  this.field_49257.addLast(new class_1522(var54, var28, var29, var4 + 1, null));

@@ -361,7 +361,7 @@ public class class_6331 extends World implements class_700 {
                class_5948 var13 = EntityType.field_34261.method_30484(this);
                var13.method_27190(true);
                var13.method_8635(0);
-               var13.method_37256((double)var10.getX(), (double)var10.method_12165(), (double)var10.method_12185());
+               var13.method_37256((double)var10.getX(), (double)var10.getY(), (double)var10.getZ());
                this.method_7509(var13);
             }
 
@@ -399,7 +399,7 @@ public class class_6331 extends World implements class_700 {
                for (int var15 = 0; var15 < var2; var15++) {
                   BlockPos var16 = this.method_29596(var7, var14, var8, 15);
                   var9.startSection("randomTick");
-                  class_2522 var17 = var26.method_5999(var16.getX() - var7, var16.method_12165() - var14, var16.method_12185() - var8);
+                  class_2522 var17 = var26.method_5999(var16.getX() - var7, var16.getY() - var14, var16.getZ() - var8);
                   if (var17.method_8331()) {
                      var17.method_8373(this, var16, this.field_33033);
                   }
@@ -420,12 +420,12 @@ public class class_6331 extends World implements class_700 {
 
    public BlockPos method_28993(BlockPos var1) {
       BlockPos var4 = this.method_22563(class_3801.field_18595, var1);
-      Box var5 = new Box(var4, new BlockPos(var4.getX(), this.method_28261(), var4.method_12185())).grow(3.0);
+      Box var5 = new Box(var4, new BlockPos(var4.getX(), this.method_28261(), var4.getZ())).grow(3.0);
       List var6 = this.<LivingEntity>method_25869(
          LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method_25263(var1x.method_37075())
       );
       if (var6.isEmpty()) {
-         if (var4.method_12165() == -1) {
+         if (var4.getY() == -1) {
             var4 = var4.method_6082(2);
          }
 
@@ -862,8 +862,8 @@ public class class_6331 extends World implements class_700 {
       for (class_9359 var7 : this.field_32343.method_1600().method_39951()) {
          if (var7 != null && var7.world == this && var7.method_37145() != var1) {
             double var8 = (double)var2.getX() - var7.getPosX();
-            double var10 = (double)var2.method_12165() - var7.method_37309();
-            double var12 = (double)var2.method_12185() - var7.getPosZ();
+            double var10 = (double)var2.getY() - var7.method_37309();
+            double var12 = (double)var2.getZ() - var7.getPosZ();
             if (var8 * var8 + var10 * var10 + var12 * var12 < 1024.0) {
                var7.field_47794.method_4156(new class_4729(var1, var2, var3));
             }
@@ -913,8 +913,8 @@ public class class_6331 extends World implements class_700 {
          .method_39996(
             var1,
             (double)var3.getX(),
-            (double)var3.method_12165(),
-            (double)var3.method_12185(),
+            (double)var3.getY(),
+            (double)var3.getZ(),
             64.0,
             this.method_29545(),
             new class_6639(var2, var3, var4, false)
@@ -978,8 +978,8 @@ public class class_6331 extends World implements class_700 {
                .method_39996(
                   (PlayerEntity)null,
                   (double)var3.method_4248().getX(),
-                  (double)var3.method_4248().method_12165(),
-                  (double)var3.method_4248().method_12185(),
+                  (double)var3.method_4248().getY(),
+                  (double)var3.method_4248().getZ(),
                   64.0,
                   this.method_29545(),
                   new class_6944(var3.method_4248(), var3.method_4252(), var3.method_4251(), var3.method_4250())
@@ -1075,7 +1075,7 @@ public class class_6331 extends World implements class_700 {
       return this.method_28945()
          .method_10189()
          .method_29817()
-         .method_16084(var2.getX(), var2.method_12165(), var2.method_12185(), var3, var4, var1x -> var1x == var1, this.field_33033, true);
+         .method_16084(var2.getX(), var2.getY(), var2.getZ(), var3, var4, var1x -> var1x == var1, this.field_33033, true);
    }
 
    @Override
@@ -1307,7 +1307,7 @@ public class class_6331 extends World implements class_700 {
 
       for (class_3757 var6 : this.field_33053) {
          BlockPos var7 = var6.method_17399();
-         var4.method_32024(var7.getX(), var7.method_12165(), var7.method_12185(), class_8669.field_44426.method_39797(var6.method_17405()));
+         var4.method_32024(var7.getX(), var7.getY(), var7.getZ(), class_8669.field_44426.method_39797(var6.method_17405()));
       }
    }
 
@@ -1399,8 +1399,8 @@ public class class_6331 extends World implements class_700 {
    public static void method_28936(class_6331 var0) {
       BlockPos var3 = field_32327;
       int var4 = var3.getX();
-      int var5 = var3.method_12165() - 2;
-      int var6 = var3.method_12185();
+      int var5 = var3.getY() - 2;
+      int var6 = var3.getZ();
       BlockPos.method_6075(var4 - 2, var5 + 1, var6 - 2, var4 + 2, var5 + 3, var6 + 2)
          .forEach(var1 -> var0.method_29594(var1, class_4783.field_23184.method_29260()));
       BlockPos.method_6075(var4 - 2, var5, var6 - 2, var4 + 2, var5, var6 + 2)

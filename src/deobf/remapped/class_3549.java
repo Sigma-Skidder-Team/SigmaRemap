@@ -119,7 +119,7 @@ public class class_3549 implements class_1517 {
 
       for (int var7 = 0; var7 < 10; var7++) {
          int var8 = var2.getX() + this.field_17366.nextInt(var3 * 2) - var3;
-         int var9 = var2.method_12185() + this.field_17366.nextInt(var3 * 2) - var3;
+         int var9 = var2.getZ() + this.field_17366.nextInt(var3 * 2) - var3;
          int var10 = var1.method_22562(class_3801.field_18592, var8, var9);
          BlockPos var11 = new BlockPos(var8, var10, var9);
          if (class_3815.method_17767(class_1257.field_6935, var1, var11, EntityType.field_34303)) {

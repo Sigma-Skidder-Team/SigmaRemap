@@ -14,27 +14,27 @@ public class class_373 extends class_2255<class_945> {
          BlockPos var9 = var1.method_4116();
          BlockPos var10 = var1.method_4096();
          if (var10.getX() >= 1
-            && var10.method_12165() >= 1
-            && var10.method_12185() >= 1
+            && var10.getY() >= 1
+            && var10.getZ() >= 1
             && (var1.method_4085() == class_589.field_3417 || var1.method_4085() == class_589.field_3414)) {
             double var11 = (double)var9.getX();
-            double var13 = (double)var9.method_12185();
-            double var15 = (double)var9.method_12165();
-            double var17 = var15 + (double)var10.method_12165();
+            double var13 = (double)var9.getZ();
+            double var15 = (double)var9.getY();
+            double var17 = var15 + (double)var10.getY();
             double var19;
             double var21;
             switch (var1.method_4089()) {
                case field_46148:
                   var19 = (double)var10.getX();
-                  var21 = (double)(-var10.method_12185());
+                  var21 = (double)(-var10.getZ());
                   break;
                case field_46144:
                   var19 = (double)(-var10.getX());
-                  var21 = (double)var10.method_12185();
+                  var21 = (double)var10.getZ();
                   break;
                default:
                   var19 = (double)var10.getX();
-                  var21 = (double)var10.method_12185();
+                  var21 = (double)var10.getZ();
             }
 
             double var23;
@@ -95,11 +95,11 @@ public class class_373 extends class_2255<class_945> {
          if (var14 || var15) {
             float var16 = !var14 ? 0.0F : 0.05F;
             double var17 = (double)((float)(var12.getX() - var9.getX()) + 0.45F - var16);
-            double var19 = (double)((float)(var12.method_12165() - var9.method_12165()) + 0.45F - var16);
-            double var21 = (double)((float)(var12.method_12185() - var9.method_12185()) + 0.45F - var16);
+            double var19 = (double)((float)(var12.getY() - var9.getY()) + 0.45F - var16);
+            double var21 = (double)((float)(var12.getZ() - var9.getZ()) + 0.45F - var16);
             double var23 = (double)((float)(var12.getX() - var9.getX()) + 0.55F + var16);
-            double var25 = (double)((float)(var12.method_12165() - var9.method_12165()) + 0.55F + var16);
-            double var27 = (double)((float)(var12.method_12185() - var9.method_12185()) + 0.55F + var16);
+            double var25 = (double)((float)(var12.getY() - var9.getY()) + 0.55F + var16);
+            double var27 = (double)((float)(var12.getZ() - var9.getZ()) + 0.55F + var16);
             if (!var4) {
                if (!var14) {
                   WorldRenderer.method_20013(var5, var2, var17, var19, var21, var23, var25, var27, 1.0F, 0.25F, 0.25F, 1.0F, 1.0F, 0.25F, 0.25F);

@@ -82,8 +82,8 @@ public abstract class class_5783 extends Entity {
          .method_6209((double)var7);
       this.method_37215(var11);
       float var12 = MathHelper.sqrt(method_37266(var11));
-      this.rotationYaw = (float)(MathHelper.method_42821(var11.field_7336, var11.field_7334) * 180.0F / (float)Math.PI);
-      this.rotationPitch = (float)(MathHelper.method_42821(var11.field_7333, (double)var12) * 180.0F / (float)Math.PI);
+      this.rotationYaw = (float)(MathHelper.atan2(var11.field_7336, var11.field_7334) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(MathHelper.atan2(var11.field_7333, (double)var12) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
       this.field_41762 = this.rotationPitch;
    }
@@ -121,8 +121,8 @@ public abstract class class_5783 extends Entity {
       this.method_37214(var1, var3, var5);
       if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
          float var9 = MathHelper.sqrt(var1 * var1 + var5 * var5);
-         this.rotationPitch = (float)(MathHelper.method_42821(var3, (double)var9) * 180.0F / (float)Math.PI);
-         this.rotationYaw = (float)(MathHelper.method_42821(var1, var5) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(MathHelper.atan2(var3, (double)var9) * 180.0F / (float)Math.PI);
+         this.rotationYaw = (float)(MathHelper.atan2(var1, var5) * 180.0F / (float)Math.PI);
          this.field_41762 = this.rotationPitch;
          this.prevRotationYaw = this.rotationYaw;
          this.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
@@ -141,8 +141,8 @@ public abstract class class_5783 extends Entity {
    public void method_26167() {
       class_1343 var3 = this.method_37098();
       float var4 = MathHelper.sqrt(method_37266(var3));
-      this.rotationPitch = method_26168(this.field_41762, (float)(MathHelper.method_42821(var3.field_7333, (double)var4) * 180.0F / (float)Math.PI));
-      this.rotationYaw = method_26168(this.prevRotationYaw, (float)(MathHelper.method_42821(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
+      this.rotationPitch = method_26168(this.field_41762, (float)(MathHelper.atan2(var3.field_7333, (double)var4) * 180.0F / (float)Math.PI));
+      this.rotationYaw = method_26168(this.prevRotationYaw, (float)(MathHelper.atan2(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
    }
 
    public static float method_26168(float var0, float var1) {
@@ -154,6 +154,6 @@ public abstract class class_5783 extends Entity {
          var0 += 360.0F;
       }
 
-      return MathHelper.method_42795(0.2F, var0, var1);
+      return MathHelper.lerp(0.2F, var0, var1);
    }
 }

@@ -24,7 +24,7 @@ public class class_5972 extends class_4569 {
       if (this.field_30418 != null && !var1.method_8350(this.field_30418)) {
          return false;
       } else if (this.field_30419.method_8076(var1)) {
-         return this.field_30421.method_23402(var3, (float)var2.getX(), (float)var2.method_12165(), (float)var2.method_12185())
+         return this.field_30421.method_23402(var3, (float)var2.getX(), (float)var2.getY(), (float)var2.getZ())
             ? this.field_30420.method_24266(var4)
             : false;
       } else {

@@ -149,7 +149,7 @@ public class class_6670 extends class_6353<AbstractClientPlayerEntity, class_316
          } else {
             super.method_29099(var1, var2, var3, var4, var5);
             float var9 = !var1.method_37285() ? -90.0F : -90.0F - var1.rotationPitch;
-            float var10 = MathHelper.method_42795(var8, 0.0F, var9);
+            float var10 = MathHelper.lerp(var8, 0.0F, var9);
             var2.method_36060(class_2426.field_12080.method_11074(var10));
             if (var1.method_37297()) {
                var2.method_36065(0.0, -1.0, 0.3F);

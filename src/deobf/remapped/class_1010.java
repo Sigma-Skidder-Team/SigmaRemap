@@ -22,12 +22,12 @@ public class class_1010 implements class_8743 {
 
    @Override
    public double method_60() {
-      return (double)this.field_5185.method_12165() + 0.5;
+      return (double)this.field_5185.getY() + 0.5;
    }
 
    @Override
    public double method_62() {
-      return (double)this.field_5185.method_12185() + 0.5;
+      return (double)this.field_5185.getZ() + 0.5;
    }
 
    @Override

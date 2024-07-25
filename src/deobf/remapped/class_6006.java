@@ -33,9 +33,9 @@ public class class_6006 {
       int var19 = (var17.field_48994 + var17.field_48992) / 2;
       int var20;
       if (!var9) {
-         var20 = var5.method_12165();
+         var20 = var5.getY();
       } else {
-         var20 = var5.method_12165() + var3.method_29831(var18, var19, class_3801.field_18598);
+         var20 = var5.getY() + var3.method_29831(var18, var19, class_3801.field_18598);
       }
 
       int var21 = var17.field_48995 + var16.method_34558();

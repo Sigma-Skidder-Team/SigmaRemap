@@ -4,7 +4,7 @@ public class class_4949 extends class_1050 {
    private static String[] field_25611;
 
    public class_4949(SoundEvent var1, class_562 var2, float var3, float var4, BlockPos var5) {
-      this(var1, var2, var3, var4, (double)var5.getX() + 0.5, (double)var5.method_12165() + 0.5, (double)var5.method_12185() + 0.5);
+      this(var1, var2, var3, var4, (double)var5.getX() + 0.5, (double)var5.getY() + 0.5, (double)var5.getZ() + 0.5);
    }
 
    public static class_4949 method_22675(SoundEvent var0, float var1) {

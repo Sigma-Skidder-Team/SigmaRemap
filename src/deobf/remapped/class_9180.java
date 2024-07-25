@@ -19,8 +19,8 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
 
       this.field_46970 = this.field_46971;
       int var3 = this.field_18358.getX();
-      int var4 = this.field_18358.method_12165();
-      int var5 = this.field_18358.method_12185();
+      int var4 = this.field_18358.getY();
+      int var5 = this.field_18358.getZ();
       float var6 = 0.1F;
       if (this.field_46974 > 0 && this.field_46971 == 0.0F) {
          double var7 = (double)var3 + 0.5;
@@ -103,7 +103,7 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
       return this.field_18364.method_28260(this.field_18358) == this
          ? !(
             var1.method_37273(
-                  (double)this.field_18358.getX() + 0.5, (double)this.field_18358.method_12165() + 0.5, (double)this.field_18358.method_12185() + 0.5
+                  (double)this.field_18358.getX() + 0.5, (double)this.field_18358.getY() + 0.5, (double)this.field_18358.getZ() + 0.5
                )
                > 64.0
          )
@@ -112,6 +112,6 @@ public class class_9180 extends class_3757 implements class_3848, class_3745 {
 
    @Override
    public float method_17874(float var1) {
-      return MathHelper.method_42795(var1, this.field_46970, this.field_46971);
+      return MathHelper.lerp(var1, this.field_46970, this.field_46971);
    }
 }

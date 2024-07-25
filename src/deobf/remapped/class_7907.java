@@ -97,8 +97,8 @@ public interface class_7907 extends class_275 {
       boolean var14 = class_2174.method_10097();
       Vector3i var15 = var2.method_23150().method_1037();
       float var16 = (float)var15.getX();
-      float var17 = (float)var15.method_12165();
-      float var18 = (float)var15.method_12185();
+      float var17 = (float)var15.getY();
+      float var18 = (float)var15.getZ();
       class_8107 var19 = var1.method_28620();
       class_6555 var20 = var1.method_28618();
       float var21 = var20.method_29896(var16, var17, var18);

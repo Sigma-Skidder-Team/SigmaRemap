@@ -74,7 +74,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.field_3872 = var4;
       this.field_3869 = new class_3683(this.inventory, !var1.field_33055, this);
       this.field_3874 = this.field_3869;
-      this.method_37144((double)var2.getX() + 0.5, (double)(var2.method_12165() + 1), (double)var2.method_12185() + 0.5, var3, 0.0F);
+      this.method_37144((double)var2.getX() + 0.5, (double)(var2.getY() + 1), (double)var2.getZ() + 0.5, var3, 0.0F);
       this.field_29648 = 180.0F;
    }
 
@@ -1296,7 +1296,7 @@ public abstract class PlayerEntity extends LivingEntity {
          boolean var9 = var8.method_29278();
          boolean var10 = var0.method_28262(var1.method_6081()).method_8360().method_29278();
          return var9 && var10
-            ? Optional.<class_1343>of(new class_1343((double)var1.getX() + 0.5, (double)var1.method_12165() + 0.1, (double)var1.method_12185() + 0.5))
+            ? Optional.<class_1343>of(new class_1343((double)var1.getX() + 0.5, (double)var1.getY() + 0.1, (double)var1.getZ() + 0.5))
             : Optional.<class_1343>empty();
       }
    }
@@ -2050,8 +2050,8 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public class_1343 method_37202(float var1) {
       double var4 = 0.22 * (this.method_26432() != class_1736.field_8943 ? 1.0 : -1.0);
-      float var6 = MathHelper.method_42795(var1 * 0.5F, this.rotationPitch, this.field_41762) * (float) (Math.PI / 180.0);
-      float var7 = MathHelper.method_42795(var1, this.field_29611, this.field_29605) * (float) (Math.PI / 180.0);
+      float var6 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.field_41762) * (float) (Math.PI / 180.0);
+      float var7 = MathHelper.lerp(var1, this.field_29611, this.field_29605) * (float) (Math.PI / 180.0);
       if (this.method_26618() || this.method_26600()) {
          class_1343 var8 = this.method_37307(var1);
          class_1343 var9 = this.method_37098();

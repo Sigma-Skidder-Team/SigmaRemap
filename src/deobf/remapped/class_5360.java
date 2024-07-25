@@ -174,7 +174,7 @@ public class class_5360 extends class_3232 {
 
    @Override
    public boolean method_14815(BlockPos var1) {
-      return this.method_14816(var1.getX() >> 4, var1.method_12185() >> 4);
+      return this.method_14816(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
    @Override

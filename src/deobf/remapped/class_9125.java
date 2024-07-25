@@ -33,8 +33,8 @@ public class class_9125 extends class_1131 {
       int var13 = var3 - var2.nextInt(4);
       int var14 = 2 - var2.nextInt(3);
       int var15 = var4.getX();
-      int var16 = var4.method_12165();
-      int var17 = var4.method_12185();
+      int var16 = var4.getY();
+      int var17 = var4.getZ();
       int var18 = var15;
       int var19 = var17;
       int var20 = var16 + var3 - 1;

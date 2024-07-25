@@ -32,8 +32,8 @@ public class class_3956 extends class_6414 {
    @Override
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.getX() + 0.5;
-      double var9 = (double)var3.method_12165() + 0.7;
-      double var11 = (double)var3.method_12185() + 0.5;
+      double var9 = (double)var3.getY() + 0.7;
+      double var11 = (double)var3.getZ() + 0.5;
       var2.method_43361(class_3090.field_15376, var7, var9, var11, 0.0, 0.0, 0.0);
       var2.method_43361(this.field_19181, var7, var9, var11, 0.0, 0.0, 0.0);
    }

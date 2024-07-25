@@ -103,7 +103,7 @@ public class class_8575 extends class_5272<RavagerEntity> {
             this.field_43948.field_8183 = (float)Math.sin(var17 * 10.0) * 3.0F;
          }
       } else {
-         float var19 = MathHelper.method_42852((float)var10 - var4, 10.0F);
+         float var19 = MathHelper.func_233021_e_((float)var10 - var4, 10.0F);
          float var20 = (1.0F + var19) * 0.5F;
          float var21 = var20 * var20 * var20 * 12.0F;
          float var22 = var21 * MathHelper.sin(this.field_43948.field_8191);

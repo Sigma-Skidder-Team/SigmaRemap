@@ -52,7 +52,7 @@ public abstract class class_2875 extends class_4088 {
       return this.field_14086
          .<Boolean>method_42532(
             (var2, var3) -> this.method_13212(var2.method_28262(var3))
-                  ? var1.method_37273((double)var3.getX() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5) <= 64.0
+                  ? var1.method_37273((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5) <= 64.0
                   : false,
             true
          );

@@ -11,11 +11,11 @@ public class class_4695 extends class_4285<class_2045> {
    }
 
    public boolean method_21669(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_2045 var5) {
-      while (var4.method_12165() > 5 && var1.method_22548(var4)) {
+      while (var4.getY() > 5 && var1.method_22548(var4)) {
          var4 = var4.method_6100();
       }
 
-      if (var4.method_12165() <= 4) {
+      if (var4.getY() <= 4) {
          return false;
       } else {
          var4 = var4.method_6101(4);

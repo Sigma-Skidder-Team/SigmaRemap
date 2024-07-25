@@ -42,12 +42,12 @@ public class class_9283 extends class_4285<class_1941> {
       class_8478 var15 = new class_8478().method_39053(var8).method_39051(var14).method_39041(var3).method_39048(class_2010.field_10193);
       BlockPos var16 = var11.method_29970(var8);
       int var17 = var3.nextInt(16 - var16.getX());
-      int var18 = var3.nextInt(16 - var16.method_12185());
+      int var18 = var3.nextInt(16 - var16.getZ());
       int var19 = 256;
 
       for (int var20 = 0; var20 < var16.getX(); var20++) {
-         for (int var21 = 0; var21 < var16.method_12185(); var21++) {
-            var19 = Math.min(var19, var1.method_22562(class_3801.field_18591, var4.getX() + var20 + var17, var4.method_12185() + var21 + var18));
+         for (int var21 = 0; var21 < var16.getZ(); var21++) {
+            var19 = Math.min(var19, var1.method_22562(class_3801.field_18591, var4.getX() + var20 + var17, var4.getZ() + var21 + var18));
          }
       }
 

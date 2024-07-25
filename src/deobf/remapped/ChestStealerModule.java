@@ -50,8 +50,8 @@ public class ChestStealerModule extends Module {
             if (this.field_15892 != null && client.field_9623 == null && this.field_15893.method_14772() > 1000L) {
                class_9529 var4 = (class_9529)class_7494.method_34100(this.field_15892.method_17399());
                if (var4.method_43955().getX() == this.field_15892.method_17399().getX()
-                  && var4.method_43955().method_12165() == this.field_15892.method_17399().method_12165()
-                  && var4.method_43955().method_12185() == this.field_15892.method_17399().method_12185()) {
+                  && var4.method_43955().getY() == this.field_15892.method_17399().getY()
+                  && var4.method_43955().getZ() == this.field_15892.method_17399().getZ()) {
                   this.field_15894 = true;
                   client.method_8614().sendPacket(new class_8585(Hand.MAIN_HAND, var4));
                   client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
@@ -65,8 +65,8 @@ public class ChestStealerModule extends Module {
                class_7099 var7 = (class_7099)var6.getKey();
                boolean var8 = (Boolean)var6.getValue();
                float var9 = (float)var7.method_17399().getX();
-               float var10 = (float)var7.method_17399().method_12165() + 0.1F;
-               float var11 = (float)var7.method_17399().method_12185();
+               float var10 = (float)var7.method_17399().getY() + 0.1F;
+               float var11 = (float)var7.method_17399().getZ();
                if (!this.field_15894
                   && (
                      this.field_15892 == null
@@ -79,8 +79,8 @@ public class ChestStealerModule extends Module {
                   && client.field_9623 == null) {
                   class_9529 var12 = (class_9529)class_7494.method_34100(var7.method_17399());
                   if (var12.method_43955().getX() == var7.method_17399().getX()
-                     && var12.method_43955().method_12165() == var7.method_17399().method_12165()
-                     && var12.method_43955().method_12185() == var7.method_17399().method_12185()) {
+                     && var12.method_43955().getY() == var7.method_17399().getY()
+                     && var12.method_43955().getZ() == var7.method_17399().getZ()) {
                      this.field_15892 = var7;
                      float[] var13 = class_7211.method_33006((double)var9 + 0.5, (double)var11 + 0.5, (double)var10 + 0.35);
                      var1.method_6441(var13[0]);

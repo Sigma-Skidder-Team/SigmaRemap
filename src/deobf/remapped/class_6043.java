@@ -32,10 +32,10 @@ public abstract class class_6043 extends class_6165 {
             this.field_5773 = 0.0F;
             this.field_5766 = 0.0F;
          } else {
-            this.field_5773 = MathHelper.method_42795(
+            this.field_5773 = MathHelper.lerp(
                MathHelper.clamp(var4, this.method_27591(), this.method_27590()), this.method_27591(), this.method_27590()
             );
-            this.field_5766 = MathHelper.method_42795(MathHelper.clamp(var4, 0.0F, 0.5F), 0.0F, 1.2F);
+            this.field_5766 = MathHelper.lerp(MathHelper.clamp(var4, 0.0F, 0.5F), 0.0F, 1.2F);
          }
       } else {
          this.method_28267();

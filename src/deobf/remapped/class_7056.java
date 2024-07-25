@@ -15,7 +15,7 @@ public class class_7056 extends class_4285<class_8342> {
    public static boolean method_32447(class_9379 var0, Random var1, BlockPos var2, class_8342 var3, int var4, int var5) {
       class_6414 var8 = var0.method_28262(var2.method_6100()).method_8360();
       if (var8.method_29299(class_2351.field_11769)) {
-         int var9 = var2.method_12165();
+         int var9 = var2.getY();
          if (var9 >= 1 && var9 + 1 < 256) {
             int var10 = 0;
 
@@ -24,7 +24,7 @@ public class class_7056 extends class_4285<class_8342> {
                   var1.nextInt(var4) - var1.nextInt(var4), var1.nextInt(var5) - var1.nextInt(var5), var1.nextInt(var4) - var1.nextInt(var4)
                );
                class_2522 var13 = var3.field_42743.method_35002(var1, var12);
-               if (var0.method_22548(var12) && var12.method_12165() > 0 && var13.method_8309(var0, var12)) {
+               if (var0.method_22548(var12) && var12.getY() > 0 && var13.method_8309(var0, var12)) {
                   var0.method_7513(var12, var13, 2);
                   var10++;
                }

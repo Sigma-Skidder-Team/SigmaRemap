@@ -74,8 +74,8 @@ public class class_5661 extends class_6967 {
                   .method_28957(
                      new class_8661(class_3090.field_15351, new ItemStack(class_4897.field_24962)),
                      (double)var5.getX() + 0.5,
-                     (double)var5.method_12165() + 0.7,
-                     (double)var5.method_12185() + 0.5,
+                     (double)var5.getY() + 0.7,
+                     (double)var5.getZ() + 0.5,
                      3,
                      ((double)var6.nextFloat() - 0.5) * 0.08,
                      ((double)var6.nextFloat() - 0.5) * 0.08,
@@ -104,8 +104,8 @@ public class class_5661 extends class_6967 {
                      .method_28957(
                         class_3090.field_15343,
                         (double)var5.getX() + 0.5,
-                        (double)var5.method_12165(),
-                        (double)var5.method_12185() + 0.5,
+                        (double)var5.getY(),
+                        (double)var5.getZ() + 0.5,
                         1,
                         var16,
                         var10,
@@ -143,7 +143,7 @@ public class class_5661 extends class_6967 {
 
    @Override
    public boolean method_31855(class_4924 var1, BlockPos var2) {
-      class_5990 var5 = var1.method_22555(var2.getX() >> 4, var2.method_12185() >> 4, class_7335.field_37514, false);
+      class_5990 var5 = var1.method_22555(var2.getX() >> 4, var2.getZ() >> 4, class_7335.field_37514, false);
       return var5 == null
          ? false
          : var5.method_28262(var2).method_8350(this.field_28701)

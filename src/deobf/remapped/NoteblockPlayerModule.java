@@ -64,7 +64,7 @@ public class NoteblockPlayerModule extends PremiumModule {
                                  && Math.sqrt(client.thePlayer.method_37075().method_12180(var8.field_3674))
                                     < (double) client.playerController.method_42146()) {
                                  float[] var9 = class_7494.method_34077(var8.field_3674, Direction.field_817);
-                                 if ((double)var8.field_3674.method_12165() > client.thePlayer.method_37309() + 1.0) {
+                                 if ((double)var8.field_3674.getY() > client.thePlayer.method_37309() + 1.0) {
                                     var9 = class_7494.method_34077(var8.field_3674, Direction.field_802);
                                  }
 
@@ -150,8 +150,8 @@ public class NoteblockPlayerModule extends PremiumModule {
 
    public static void method_36547(BlockPos var0) {
       double var3 = (double)((float)var0.getX() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61();
-      double var5 = (double)((float)var0.method_12165() + 1.0F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60();
-      double var7 = (double)((float)var0.method_12185() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62();
+      double var5 = (double)((float)var0.getY() + 1.0F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60();
+      double var7 = (double)((float)var0.getZ() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62();
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);

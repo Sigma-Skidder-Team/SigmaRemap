@@ -17,7 +17,7 @@ public class class_9239 extends class_2833 {
 
       if (this.field_13878 == class_1737.field_8946 && !this.field_47202.method_26927().method_5591()) {
          float var3 = (float)(this.field_13885 * this.field_47202.method_26575(Attributes.MOVEMENT_SPEED));
-         this.field_47202.method_26461(MathHelper.method_42795(0.125F, this.field_47202.method_26423(), var3));
+         this.field_47202.method_26461(MathHelper.lerp(0.125F, this.field_47202.method_26423(), var3));
          double var4 = this.field_13884 - this.field_47202.getPosX();
          double var6 = this.field_13886 - this.field_47202.method_37309();
          double var8 = this.field_13880 - this.field_47202.getPosZ();
@@ -28,7 +28,7 @@ public class class_9239 extends class_2833 {
          }
 
          if (var4 != 0.0 || var8 != 0.0) {
-            float var10 = (float)(MathHelper.method_42821(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
+            float var10 = (float)(MathHelper.atan2(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
             this.field_47202.rotationYaw = this.method_12882(this.field_47202.rotationYaw, var10, 90.0F);
             this.field_47202.field_29605 = this.field_47202.rotationYaw;
          }

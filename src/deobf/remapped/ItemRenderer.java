@@ -375,7 +375,7 @@ public class ItemRenderer implements class_6491 {
             float var12 = (float)var2.method_27957();
             float var13 = Math.max(0.0F, (var12 - var11) / var12);
             int var14 = Math.round(13.0F - var11 * 13.0F / var12);
-            int var15 = MathHelper.method_42792(var13 / 3.0F, 1.0F, 1.0F);
+            int var15 = MathHelper.hsvToRGB(var13 / 3.0F, 1.0F, 1.0F);
             if (class_7860.field_39914.method_3596() && class_7860.field_39876.method_3596()) {
                double var16 = class_7860.method_35578(var2.method_27960(), class_7860.field_39914, var2);
                int var18 = class_7860.method_35569(var2.method_27960(), class_7860.field_39876, var2);

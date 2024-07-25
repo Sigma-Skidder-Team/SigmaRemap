@@ -49,8 +49,8 @@ public class class_2677 extends class_3266 {
    public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>method_10313(field_16180);
       double var8 = (double)var3.getX() + 0.55 - (double)(var4.nextFloat() * 0.1F);
-      double var10 = (double)var3.method_12165() + 0.55 - (double)(var4.nextFloat() * 0.1F);
-      double var12 = (double)var3.method_12185() + 0.55 - (double)(var4.nextFloat() * 0.1F);
+      double var10 = (double)var3.getY() + 0.55 - (double)(var4.nextFloat() * 0.1F);
+      double var12 = (double)var3.getZ() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var14 = (double)(0.4F - (var4.nextFloat() + var4.nextFloat()) * 0.4F);
       if (var4.nextInt(5) == 0) {
          var2.method_43361(

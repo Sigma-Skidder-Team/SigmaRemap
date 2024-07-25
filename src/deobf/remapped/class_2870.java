@@ -132,7 +132,7 @@ public class class_2870 {
 
    public static Box method_13192(Box var0, class_7971 var1, BlockPos var2) {
       int var5 = var2.getX();
-      int var6 = var2.method_12185();
+      int var6 = var2.getZ();
       long var7 = (long)(var5 * 3129871) ^ (long)var6 * 116129781L;
       var7 = var7 * var7 * 42317861L + var7 * 11L;
       double var9 = ((double)((float)(var7 >> 16 & 15L) / 15.0F) - 0.5) * 0.5;

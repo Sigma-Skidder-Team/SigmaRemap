@@ -149,7 +149,7 @@ public class class_5555 extends class_9795 implements class_3745 {
             }
 
             var5.method_37157();
-            var5.method_37079((double)var4.getX() + 0.5, (double)var4.method_12165(), (double)var4.method_12185() + 0.5);
+            var5.method_37079((double)var4.getX() + 0.5, (double)var4.getY(), (double)var4.getZ() + 0.5);
          }
 
          this.method_25242();
@@ -163,7 +163,7 @@ public class class_5555 extends class_9795 implements class_3745 {
    }
 
    private void method_25251(class_6331 var1) {
-      class_1343 var4 = new class_1343((double)this.method_17399().getX(), 0.0, (double)this.method_17399().method_12185()).method_6213();
+      class_1343 var4 = new class_1343((double)this.method_17399().getX(), 0.0, (double)this.method_17399().getZ()).method_6213();
       class_1343 var5 = var4.method_6209(1024.0);
 
       for (int var6 = 16; method_25243(var1, var5).method_27350() > 0 && var6-- > 0; var5 = var5.method_6215(var4.method_6209(-16.0))) {
@@ -198,8 +198,8 @@ public class class_5555 extends class_9795 implements class_3745 {
       for (int var7 = -var2; var7 <= var2; var7++) {
          for (int var8 = -var2; var8 <= var2; var8++) {
             if (var7 != 0 || var8 != 0 || var3) {
-               for (int var9 = 255; var9 > (var6 != null ? var6.method_12165() : 0); var9--) {
-                  BlockPos var10 = new BlockPos(var1.getX() + var7, var9, var1.method_12185() + var8);
+               for (int var9 = 255; var9 > (var6 != null ? var6.getY() : 0); var9--) {
+                  BlockPos var10 = new BlockPos(var1.getX() + var7, var9, var1.getZ() + var8);
                   class_2522 var11 = var0.method_28262(var10);
                   if (var11.method_8306(var0, var10) && (var3 || !var11.method_8350(class_4783.field_23433))) {
                      var6 = var10;

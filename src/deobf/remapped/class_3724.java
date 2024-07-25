@@ -16,8 +16,8 @@ public class class_3724 extends class_250 {
          var2.method_43361(
             class_3090.field_15328,
             (double)var3.getX() + var4.nextDouble(),
-            (double)var3.method_12165() + 1.1,
-            (double)var3.method_12185() + var4.nextDouble(),
+            (double)var3.getY() + 1.1,
+            (double)var3.getZ() + var4.nextDouble(),
             0.0,
             0.0,
             0.0

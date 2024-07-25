@@ -34,7 +34,7 @@ public class class_6615 extends class_6201 {
             if (!var5.field_33055 && !World.method_29586(var10)) {
                PlayerEntity var11 = var1.method_21868();
                int var12 = var5.method_28261();
-               if (var11 instanceof class_9359 && var10.method_12165() >= var12) {
+               if (var11 instanceof class_9359 && var10.getY() >= var12) {
                   class_5182 var13 = new class_5182(
                      new TranslationTextComponent("build.tooHigh", var12).mergeStyle(TextFormatting.RED), ChatType.GAME_INFO, Util.NIL_UUID
                   );

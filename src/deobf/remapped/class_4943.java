@@ -36,9 +36,9 @@ public class class_4943 extends class_2103 {
          var9 = class_3801.field_18592;
       }
 
-      int var10 = var1.method_22562(var9, var5.field_19965.getX(), var5.field_19965.method_12185()) + this.field_25595;
-      int var11 = var4.field_19965.method_12165();
-      return new class_4099(new BlockPos(var5.field_19965.getX(), var10 + var11, var5.field_19965.method_12185()), var5.field_19967, var5.field_19968);
+      int var10 = var1.method_22562(var9, var5.field_19965.getX(), var5.field_19965.getZ()) + this.field_25595;
+      int var11 = var4.field_19965.getY();
+      return new class_4099(new BlockPos(var5.field_19965.getX(), var10 + var11, var5.field_19965.getZ()), var5.field_19967, var5.field_19968);
    }
 
    @Override

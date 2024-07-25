@@ -123,7 +123,7 @@ public class class_1954 {
          class_945 var4 = (class_945)var0.method_28260(var1x);
          BlockPos var5 = var4.method_17399();
          class_9616 var6x = class_2765.method_12591(var4);
-         class_2765.method_12583(var6x, var5.method_12165(), var0);
+         class_2765.method_12583(var6x, var5.getY(), var0);
       });
    }
 }

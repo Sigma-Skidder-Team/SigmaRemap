@@ -9,7 +9,7 @@ public class class_6464 extends class_4285<class_1941> {
    }
 
    public boolean method_29444(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
-      while (var1.method_22548(var4) && var4.method_12165() > 2) {
+      while (var1.method_22548(var4) && var4.getY() > 2) {
          var4 = var4.method_6100();
       }
 
@@ -69,7 +69,7 @@ public class class_6464 extends class_4285<class_1941> {
                   var24 = var3.nextInt(5);
                }
 
-               while (var23.method_12165() > 50) {
+               while (var23.getY() > 50) {
                   class_2522 var25 = var1.method_28262(var23);
                   class_6414 var26 = var25.method_8360();
                   if (!var25.method_8345()

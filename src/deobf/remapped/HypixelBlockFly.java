@@ -365,8 +365,8 @@ public class HypixelBlockFly extends Module {
 
    public static class_1343 method_28403(BlockPos var0, Direction var1) {
       double var4 = (double)var0.getX() + 0.5;
-      double var6 = (double)var0.method_12165() + 0.5;
-      double var8 = (double)var0.method_12185() + 0.5;
+      double var6 = (double)var0.getY() + 0.5;
+      double var8 = (double)var0.getZ() + 0.5;
       var4 += (double)var1.method_1041() / 2.0;
       var8 += (double)var1.method_1034() / 2.0;
       var6 += (double)var1.method_1054() / 2.0;

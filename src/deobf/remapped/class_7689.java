@@ -123,8 +123,8 @@ public class class_7689 extends class_6414 implements class_8660 {
       class_2522 var5 = var0.method_28262(var1);
       var0.method_29527(
          (double)var1.getX(),
-         (double)var1.method_12165(),
-         (double)var1.method_12185(),
+         (double)var1.getY(),
+         (double)var1.getZ(),
          !var2 ? SoundEvents.field_2700 : SoundEvents.field_2286,
          class_562.field_3322,
          1.0F,
@@ -143,8 +143,8 @@ public class class_7689 extends class_6414 implements class_8660 {
          var0.method_43361(
             class_3090.field_15384,
             (double)var1.getX() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
-            (double)var1.method_12165() + var6 + (double)var12.nextFloat() * (1.0 - var6),
-            (double)var1.method_12185() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
+            (double)var1.getY() + var6 + (double)var12.nextFloat() * (1.0 - var6),
+            (double)var1.getZ() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
             var14,
             var16,
             var18
@@ -216,8 +216,8 @@ public class class_7689 extends class_6414 implements class_8660 {
          class_91 var12 = new class_91(
             var1,
             (double)var2.getX() + var6,
-            (double)var2.method_12165() + var8,
-            (double)var2.method_12185() + var10,
+            (double)var2.getY() + var8,
+            (double)var2.getZ() + var10,
             new ItemStack(class_4897.field_24640)
          );
          var12.method_257();

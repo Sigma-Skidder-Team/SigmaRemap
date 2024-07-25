@@ -44,7 +44,7 @@ public class class_2882 extends class_5837 {
             class_6331 var6 = var2.method_12694();
             BlockPos var7 = var6.method_29000(this.field_14118, new BlockPos(var5), this.field_14114, this.field_14117);
             if (var7 != null) {
-               ItemStack var8 = class_2143.method_10014(var6, var7.getX(), var7.method_12185(), this.field_14115, true, true);
+               ItemStack var8 = class_2143.method_10014(var6, var7.getX(), var7.getZ(), this.field_14115, true, true);
                class_2143.method_10013(var6, var8);
                class_2134.method_9969(var8, var7, "+", this.field_14111);
                var8.method_28032(new TranslationTextComponent("filled_map." + this.field_14118.method_24556().toLowerCase(Locale.ROOT)));

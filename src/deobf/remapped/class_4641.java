@@ -34,8 +34,8 @@ public abstract class class_4641 extends Entity {
    public void method_21474() {
       if (this.field_22663 != null) {
          double var3 = (double)this.field_22661.getX() + 0.5;
-         double var5 = (double)this.field_22661.method_12165() + 0.5;
-         double var7 = (double)this.field_22661.method_12185() + 0.5;
+         double var5 = (double)this.field_22661.getY() + 0.5;
+         double var7 = (double)this.field_22661.getZ() + 0.5;
          double var9 = 0.46875;
          double var11 = this.method_21476(this.method_21470());
          double var13 = this.method_21476(this.method_21473());
@@ -164,8 +164,8 @@ public abstract class class_4641 extends Entity {
    public void writeAdditional(CompoundNBT var1) {
       BlockPos var4 = this.method_21469();
       var1.putInt("TileX", var4.getX());
-      var1.putInt("TileY", var4.method_12165());
-      var1.putInt("TileZ", var4.method_12185());
+      var1.putInt("TileY", var4.getY());
+      var1.putInt("TileZ", var4.getZ());
    }
 
    @Override

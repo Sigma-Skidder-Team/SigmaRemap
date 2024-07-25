@@ -236,7 +236,7 @@ public class class_2810 {
                   class_6953 var8 = this.field_13794.method_44981(this.field_13790, var7.method_17399());
                   if (var8 != null) {
                      BlockPos var9 = var8.method_31795(3, 3, 3).method_41966();
-                     if (this.field_13797 == null && var9.getX() == 0 && var9.method_12185() == 0) {
+                     if (this.field_13797 == null && var9.getX() == 0 && var9.getZ() == 0) {
                         this.field_13797 = var9;
                      }
 
@@ -247,11 +247,11 @@ public class class_2810 {
          }
       }
 
-      int var10 = this.field_13790.method_22563(class_3801.field_18595, class_8870.field_45348).method_12165();
+      int var10 = this.field_13790.method_22563(class_3801.field_18595, class_8870.field_45348).getY();
 
       for (int var11 = var10; var11 >= 0; var11--) {
          class_6953 var12 = this.field_13794
-            .method_44981(this.field_13790, new BlockPos(class_8870.field_45348.getX(), var11, class_8870.field_45348.method_12185()));
+            .method_44981(this.field_13790, new BlockPos(class_8870.field_45348.getX(), var11, class_8870.field_45348.getZ()));
          if (var12 != null) {
             if (this.field_13797 == null) {
                this.field_13797 = var12.method_31795(3, 3, 3).method_41966();
@@ -345,7 +345,7 @@ public class class_2810 {
 
          while (
             this.field_13790.method_28262(this.field_13797).method_8350(class_4783.field_23433)
-               && this.field_13797.method_12165() > this.field_13790.method_22552()
+               && this.field_13797.getY() > this.field_13790.method_22552()
          ) {
             this.field_13797 = this.field_13797.method_6100();
          }

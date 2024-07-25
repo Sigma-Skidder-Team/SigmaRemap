@@ -86,7 +86,7 @@ public class class_5131 extends class_9335 {
 
       class_1343 var9 = this.field_26468.method_37098();
       if (var9.field_7333 * var9.field_7333 < 0.03F && this.field_26468.rotationPitch != 0.0F) {
-         this.field_26468.rotationPitch = MathHelper.method_42833(this.field_26468.rotationPitch, 0.0F, 0.2F);
+         this.field_26468.rotationPitch = MathHelper.rotLerp(this.field_26468.rotationPitch, 0.0F, 0.2F);
       } else {
          double var5 = Math.sqrt(Entity.method_37266(var9));
          double var7 = Math.signum(-var9.field_7333) * Math.acos(var5 / var9.method_6217()) * 180.0F / (float)Math.PI;

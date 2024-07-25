@@ -45,8 +45,8 @@ public class class_7946<T extends IronGolemEntity> extends class_5272<T> {
    public void method_35976(T var1, float var2, float var3, float var4, float var5, float var6) {
       this.field_40665.field_8190 = var5 * (float) (Math.PI / 180.0);
       this.field_40665.field_8191 = var6 * (float) (Math.PI / 180.0);
-      this.field_40667.field_8191 = -1.5F * MathHelper.method_42852(var2, 13.0F) * var3;
-      this.field_40664.field_8191 = 1.5F * MathHelper.method_42852(var2, 13.0F) * var3;
+      this.field_40667.field_8191 = -1.5F * MathHelper.func_233021_e_(var2, 13.0F) * var3;
+      this.field_40664.field_8191 = 1.5F * MathHelper.func_233021_e_(var2, 13.0F) * var3;
       this.field_40667.field_8190 = 0.0F;
       this.field_40664.field_8190 = 0.0F;
    }
@@ -56,15 +56,15 @@ public class class_7946<T extends IronGolemEntity> extends class_5272<T> {
       if (var7 <= 0) {
          int var8 = var1.method_36978();
          if (var8 <= 0) {
-            this.field_40669.field_8191 = (-0.2F + 1.5F * MathHelper.method_42852(var2, 13.0F)) * var3;
-            this.field_40668.field_8191 = (-0.2F - 1.5F * MathHelper.method_42852(var2, 13.0F)) * var3;
+            this.field_40669.field_8191 = (-0.2F + 1.5F * MathHelper.func_233021_e_(var2, 13.0F)) * var3;
+            this.field_40668.field_8191 = (-0.2F - 1.5F * MathHelper.func_233021_e_(var2, 13.0F)) * var3;
          } else {
-            this.field_40669.field_8191 = -0.8F + 0.025F * MathHelper.method_42852((float)var8, 70.0F);
+            this.field_40669.field_8191 = -0.8F + 0.025F * MathHelper.func_233021_e_((float)var8, 70.0F);
             this.field_40668.field_8191 = 0.0F;
          }
       } else {
-         this.field_40669.field_8191 = -2.0F + 1.5F * MathHelper.method_42852((float)var7 - var4, 10.0F);
-         this.field_40668.field_8191 = -2.0F + 1.5F * MathHelper.method_42852((float)var7 - var4, 10.0F);
+         this.field_40669.field_8191 = -2.0F + 1.5F * MathHelper.func_233021_e_((float)var7 - var4, 10.0F);
+         this.field_40668.field_8191 = -2.0F + 1.5F * MathHelper.func_233021_e_((float)var7 - var4, 10.0F);
       }
    }
 

@@ -45,7 +45,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
                   .<ItemStack>map(var1 -> var1.method_41042(var6))
                   .orElse(var4);
                BlockPos var8 = this.method_17399();
-               class_1573.method_7100(this.field_18364, (double)var8.getX(), (double)var8.method_12165(), (double)var8.method_12185(), var7);
+               class_1573.method_7100(this.field_18364, (double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), var7);
                this.field_3312.set(var3, ItemStack.EMPTY);
                this.method_2669();
             }
@@ -74,8 +74,8 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
                   + 0.5
                   - (double)((float)var8.method_1041() * 0.3125F)
                   + (double)((float)var8.method_1042().method_1041() * 0.3125F);
-               double var12 = (double)var4.method_12165() + 0.5;
-               double var14 = (double)var4.method_12185()
+               double var12 = (double)var4.getY() + 0.5;
+               double var14 = (double)var4.getZ()
                   + 0.5
                   - (double)((float)var8.method_1034() * 0.3125F)
                   + (double)((float)var8.method_1042().method_1034() * 0.3125F);

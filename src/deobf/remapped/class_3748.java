@@ -21,15 +21,15 @@ public class class_3748 implements class_2995 {
       for (BlockPos var14 : BlockPos.method_6076(var11.method_6104(-10, -10, -10), var11.method_6104(10, 10, 10))) {
          class_4774 var15 = var12.method_28258(var14);
          if (var15.method_22007(class_6503.field_33094)) {
-            double var16 = (double)((float)var14.method_12165() + var15.method_22008(var12, var14));
+            double var16 = (double)((float)var14.getY() + var15.method_22008(var12, var14));
             class_3372.method_15562(
                new Box(
                      (double)((float)var14.getX() + 0.01F),
-                     (double)((float)var14.method_12165() + 0.01F),
-                     (double)((float)var14.method_12185() + 0.01F),
+                     (double)((float)var14.getY() + 0.01F),
+                     (double)((float)var14.getZ() + 0.01F),
                      (double)((float)var14.getX() + 0.99F),
                      var16,
-                     (double)((float)var14.method_12185() + 0.99F)
+                     (double)((float)var14.getZ() + 0.99F)
                   )
                   .method_18918(-var3, -var5, -var7),
                1.0F,
@@ -46,8 +46,8 @@ public class class_3748 implements class_2995 {
             class_3372.method_15553(
                String.valueOf(var20.method_21996()),
                (double)var19.getX() + 0.5,
-               (double)((float)var19.method_12165() + var20.method_22008(var12, var19)),
-               (double)var19.method_12185() + 0.5,
+               (double)((float)var19.getY() + var20.method_22008(var12, var19)),
+               (double)var19.getZ() + 0.5,
                -16777216
             );
          }

@@ -45,16 +45,16 @@ public class class_4341 extends class_1871 {
          BlockPos var4 = this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348);
          PlayerEntity var5 = this.field_9479
             .world
-            .method_25858(field_21092, (double)var4.getX(), (double)var4.method_12165(), (double)var4.method_12185());
+            .method_25858(field_21092, (double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
          int var6;
          if (var5 == null) {
-            var6 = this.field_9479.method_12614(40.0, (double)var4.method_12165(), 0.0);
+            var6 = this.field_9479.method_12614(40.0, (double)var4.getY(), 0.0);
          } else {
             class_1343 var7 = new class_1343(var5.getPosX(), 0.0, var5.getPosZ()).method_6213();
             var6 = this.field_9479.method_12614(-var7.field_7336 * 40.0, 105.0, -var7.field_7334 * 40.0);
          }
 
-         class_5851 var8 = new class_5851(var4.getX(), var4.method_12165(), var4.method_12185());
+         class_5851 var8 = new class_5851(var4.getX(), var4.getY(), var4.getZ());
          this.field_21093 = this.field_9479.method_12612(var3, var6, var8);
          if (this.field_21093 != null) {
             this.field_21093.method_18434();
@@ -72,12 +72,12 @@ public class class_4341 extends class_1871 {
          BlockPos var3 = this.field_21093.method_18449();
          this.field_21093.method_18434();
          double var4 = (double)var3.getX();
-         double var6 = (double)var3.method_12185();
+         double var6 = (double)var3.getZ();
 
          double var8;
          do {
-            var8 = (double)((float)var3.method_12165() + this.field_9479.method_26594().nextFloat() * 20.0F);
-         } while (var8 < (double)var3.method_12165());
+            var8 = (double)((float)var3.getY() + this.field_9479.method_26594().nextFloat() * 20.0F);
+         } while (var8 < (double)var3.getY());
 
          this.field_21095 = new class_1343(var4, var8, var6);
       }

@@ -245,15 +245,15 @@ public class class_5583 extends class_8990 {
    }
 
    public float method_25362(float var1) {
-      return MathHelper.method_42795(var1, this.field_28347, this.field_28343);
+      return MathHelper.lerp(var1, this.field_28347, this.field_28343);
    }
 
    public float method_25361(float var1) {
-      return MathHelper.method_42795(var1, this.field_28355, this.field_28351);
+      return MathHelper.lerp(var1, this.field_28355, this.field_28351);
    }
 
    public float method_25367(float var1) {
-      return MathHelper.method_42795(var1, this.field_28357, this.field_28354);
+      return MathHelper.lerp(var1, this.field_28357, this.field_28354);
    }
 
    public class_5583 method_25369(class_6331 var1, class_1899 var2) {

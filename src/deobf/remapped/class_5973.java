@@ -73,7 +73,7 @@ public class class_5973 extends class_3599 {
          this.field_30422.method_41214(false);
          this.field_30422
             .method_26927()
-            .method_5595((double)this.field_30423.getX(), (double)this.field_30423.method_12165(), (double)this.field_30423.method_12185(), 1.1F);
+            .method_5595((double)this.field_30423.getX(), (double)this.field_30423.getY(), (double)this.field_30423.getZ(), 1.1F);
       }
    }
 
@@ -100,8 +100,8 @@ public class class_5973 extends class_3599 {
       this.field_30422
          .method_26499(
             (double)(var4.getX() + var3.nextInt(11) - 5),
-            (double)(var4.method_12165() + var3.nextInt(5) - 2),
-            (double)(var4.method_12185() + var3.nextInt(11) - 5),
+            (double)(var4.getY() + var3.nextInt(5) - 2),
+            (double)(var4.getZ() + var3.nextInt(11) - 5),
             false
          );
       var4.method_13364(this.field_30422.method_37075());
@@ -118,8 +118,8 @@ public class class_5973 extends class_3599 {
                new class_91(
                   this.field_30422.world,
                   (double)var4.getX() - (double) MathHelper.sin(this.field_30422.field_29605 * (float) (Math.PI / 180.0)),
-                  (double)var4.method_12165(),
-                  (double)var4.method_12185() + (double) MathHelper.cos(this.field_30422.field_29605 * (float) (Math.PI / 180.0)),
+                  (double)var4.getY(),
+                  (double)var4.getZ() + (double) MathHelper.cos(this.field_30422.field_29605 * (float) (Math.PI / 180.0)),
                   var8
                )
             );
@@ -132,7 +132,7 @@ public class class_5973 extends class_3599 {
          this.field_30422.method_41214(false);
          this.field_30422
             .method_26927()
-            .method_5595((double)this.field_30423.getX(), (double)this.field_30423.method_12165(), (double)this.field_30423.method_12185(), 1.1F);
+            .method_5595((double)this.field_30423.getX(), (double)this.field_30423.getY(), (double)this.field_30423.getZ(), 1.1F);
          if (!(this.field_30422.method_37275(this.field_30424) < 2.5)) {
             this.field_30422.method_25358(false);
          } else {

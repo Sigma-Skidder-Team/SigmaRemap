@@ -32,7 +32,7 @@ public class class_8582 {
    private static class_9185 method_39466(class_5799 var0, class_9185 var1, BlockPos var2, String var3, class_6631 var4, boolean var5) {
       class_9185 var8 = new class_9185(var0, var3, var1.field_41648, var4, var5);
       BlockPos var9 = var1.field_41647.method_29981(var1.field_41650, var2, var8.field_41650, BlockPos.field_7306);
-      var8.method_32508(var9.getX(), var9.method_12165(), var9.method_12185());
+      var8.method_32508(var9.getX(), var9.getY(), var9.getZ());
       return var8;
    }
 

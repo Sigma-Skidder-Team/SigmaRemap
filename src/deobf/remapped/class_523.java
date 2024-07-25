@@ -35,12 +35,12 @@ public class class_523 extends BlockPos {
    }
 
    @Override
-   public int method_12165() {
+   public int getY() {
       return this.field_3191;
    }
 
    @Override
-   public int method_12185() {
+   public int getZ() {
       return this.field_3194;
    }
 
@@ -89,14 +89,14 @@ public class class_523 extends BlockPos {
 
    public void method_2549(BlockPos var1, Direction var2) {
       this.field_3189 = var1.getX() + var2.method_1041();
-      this.field_3191 = var1.method_12165() + var2.method_1054();
-      this.field_3194 = var1.method_12185() + var2.method_1034();
+      this.field_3191 = var1.getY() + var2.method_1054();
+      this.field_3194 = var1.getZ() + var2.method_1034();
    }
 
    public void method_2550(BlockPos var1, Direction var2, Direction var3) {
       this.field_3189 = var1.getX() + var2.method_1041() + var3.method_1041();
-      this.field_3191 = var1.method_12165() + var2.method_1054() + var3.method_1054();
-      this.field_3194 = var1.method_12185() + var2.method_1034() + var3.method_1034();
+      this.field_3191 = var1.getY() + var2.method_1054() + var3.method_1054();
+      this.field_3194 = var1.getZ() + var2.method_1034() + var3.method_1034();
    }
 
    private void method_2545() {
@@ -122,13 +122,13 @@ public class class_523 extends BlockPos {
    public static Iterable method_2546(BlockPos var0, BlockPos var1) {
       BlockPos var4 = new BlockPos(
          Math.min(var0.getX(), var1.getX()),
-         Math.min(var0.method_12165(), var1.method_12165()),
-         Math.min(var0.method_12185(), var1.method_12185())
+         Math.min(var0.getY(), var1.getY()),
+         Math.min(var0.getZ(), var1.getZ())
       );
       BlockPos var5 = new BlockPos(
          Math.max(var0.getX(), var1.getX()),
-         Math.max(var0.method_12165(), var1.method_12165()),
-         Math.max(var0.method_12185(), var1.method_12185())
+         Math.max(var0.getY(), var1.getY()),
+         Math.max(var0.getZ(), var1.getZ())
       );
       return new class_5393(var4, var5);
    }

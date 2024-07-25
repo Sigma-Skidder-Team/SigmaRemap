@@ -9,7 +9,7 @@ public class class_5012 extends class_4285<class_2045> {
    }
 
    public boolean method_23067(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_2045 var5) {
-      var4 = new BlockPos(var4.getX(), var2.method_29816(), var4.method_12185());
+      var4 = new BlockPos(var4.getX(), var2.method_29816(), var4.getZ());
       boolean var8 = var3.nextDouble() > 0.7;
       class_2522 var9 = var5.field_10356;
       double var10 = var3.nextDouble() * 2.0 * Math.PI;
@@ -181,13 +181,13 @@ public class class_5012 extends class_4285<class_2045> {
       float var8 = 10.0F * MathHelper.clamp(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
       return (double)var8
          + Math.pow((double)(var1 - var3.getX()), 2.0)
-         + Math.pow((double)(var2 - var3.method_12185()), 2.0)
+         + Math.pow((double)(var2 - var3.getZ()), 2.0)
          - Math.pow((double)var4, 2.0);
    }
 
    private double method_23071(int var1, int var2, BlockPos var3, int var4, int var5, double var6) {
-      return Math.pow(((double)(var1 - var3.getX()) * Math.cos(var6) - (double)(var2 - var3.method_12185()) * Math.sin(var6)) / (double)var4, 2.0)
-         + Math.pow(((double)(var1 - var3.getX()) * Math.sin(var6) + (double)(var2 - var3.method_12185()) * Math.cos(var6)) / (double)var5, 2.0)
+      return Math.pow(((double)(var1 - var3.getX()) * Math.cos(var6) - (double)(var2 - var3.getZ()) * Math.sin(var6)) / (double)var4, 2.0)
+         + Math.pow(((double)(var1 - var3.getX()) * Math.sin(var6) + (double)(var2 - var3.getZ()) * Math.cos(var6)) / (double)var5, 2.0)
          - 1.0;
    }
 

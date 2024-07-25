@@ -38,8 +38,8 @@ public class class_805 extends class_6967 {
          .method_26865()
          .method_17231(
             (double)this.field_35802.getX() + 0.5,
-            (double)(this.field_35802.method_12165() + 1),
-            (double)this.field_35802.method_12185() + 0.5,
+            (double)(this.field_35802.getY() + 1),
+            (double)this.field_35802.getZ() + 0.5,
             10.0F,
             (float)this.field_4300.method_26862()
          );

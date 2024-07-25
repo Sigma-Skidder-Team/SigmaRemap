@@ -9,7 +9,7 @@ public class class_4559 extends class_4285<class_2045> {
    }
 
    public boolean method_21127(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_2045 var5) {
-      while (var4.method_12165() > 3) {
+      while (var4.getY() > 3) {
          if (!var1.method_22548(var4.method_6100())) {
             class_6414 var8 = var1.method_28262(var4.method_6100()).method_8360();
             if (method_19910(var8) || method_19913(var8)) {
@@ -20,7 +20,7 @@ public class class_4559 extends class_4285<class_2045> {
          var4 = var4.method_6100();
       }
 
-      if (var4.method_12165() <= 3) {
+      if (var4.getY() <= 3) {
          return false;
       } else {
          for (int var15 = 0; var15 < 3; var15++) {

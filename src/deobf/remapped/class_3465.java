@@ -68,8 +68,8 @@ public class class_3465 extends class_6414 {
       if (var4.nextInt(100) == 0) {
          var2.method_29527(
             (double)var3.getX() + 0.5,
-            (double)var3.method_12165() + 0.5,
-            (double)var3.method_12185() + 0.5,
+            (double)var3.getY() + 0.5,
+            (double)var3.getZ() + 0.5,
             SoundEvents.field_2758,
             class_562.field_3322,
             0.5F,
@@ -80,8 +80,8 @@ public class class_3465 extends class_6414 {
 
       for (int var7 = 0; var7 < 4; var7++) {
          double var8 = (double)var3.getX() + var4.nextDouble();
-         double var10 = (double)var3.method_12165() + var4.nextDouble();
-         double var12 = (double)var3.method_12185() + var4.nextDouble();
+         double var10 = (double)var3.getY() + var4.nextDouble();
+         double var12 = (double)var3.getZ() + var4.nextDouble();
          double var14 = ((double)var4.nextFloat() - 0.5) * 0.5;
          double var16 = ((double)var4.nextFloat() - 0.5) * 0.5;
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.5;
@@ -90,7 +90,7 @@ public class class_3465 extends class_6414 {
             var8 = (double)var3.getX() + 0.5 + 0.25 * (double)var20;
             var14 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          } else {
-            var12 = (double)var3.method_12185() + 0.5 + 0.25 * (double)var20;
+            var12 = (double)var3.getZ() + 0.5 + 0.25 * (double)var20;
             var18 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          }
 

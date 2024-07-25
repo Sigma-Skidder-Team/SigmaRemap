@@ -96,7 +96,7 @@ public class class_5591 extends class_3599 {
          int var5 = this.method_25393(-3, 3);
          int var6 = this.method_25393(-1, 1);
          int var7 = this.method_25393(-3, 3);
-         boolean var8 = this.method_25394(var3.getX() + var5, var3.method_12165() + var6, var3.method_12185() + var7);
+         boolean var8 = this.method_25394(var3.getX() + var5, var3.getY() + var6, var3.getZ() + var7);
          if (var8) {
             return;
          }

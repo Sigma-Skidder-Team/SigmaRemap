@@ -24,7 +24,7 @@ public class class_5940 extends class_2612 {
    }
 
    public void method_27166(String var1, Vector3i var2, int var3) {
-      String var6 = "waypoint x" + var2.getX() + " z" + var2.method_12185();
+      String var6 = "waypoint x" + var2.getX() + " z" + var2.getZ();
       if (this.field_12901.method_32094(var6) == null) {
          class_8046 var7 = new class_8046(
             this,
@@ -42,13 +42,13 @@ public class class_5940 extends class_2612 {
          this.method_32148(var7);
          var7.method_32100((var2x, var3x) -> {
             class_3451 var6x = (class_3451)this.method_32167();
-            var6x.field_16933.method_4324(var7.field_41210.getX(), var7.field_41210.method_12185());
+            var6x.field_16933.method_4324(var7.field_41210.getX(), var7.field_41210.getZ());
          });
          var7.method_8236(
             var3x -> {
                SigmaMainClass.getInstance()
                   .method_3309()
-                  .method_21972(new class_4333(var7.field_41209, var7.field_41210.getX(), var7.field_41210.method_12185(), var7.field_41206));
+                  .method_21972(new class_4333(var7.field_41209, var7.field_41210.getX(), var7.field_41210.getZ(), var7.field_41206));
                this.field_12901.method_32106(var7);
                this.field_30296.remove(var3x);
             }
@@ -100,7 +100,7 @@ public class class_5940 extends class_2612 {
                SigmaMainClass.getInstance()
                   .method_3309()
                   .method_21960()
-                  .add(new class_4333(var9.field_41209, var9.field_41210.getX(), var9.field_41210.method_12185(), var9.field_41206));
+                  .add(new class_4333(var9.field_41209, var9.field_41210.getX(), var9.field_41210.getZ(), var9.field_41206));
             }
 
             Collections.reverse(SigmaMainClass.getInstance().method_3309().method_21960());

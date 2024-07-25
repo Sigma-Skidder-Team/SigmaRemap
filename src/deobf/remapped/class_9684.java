@@ -36,7 +36,7 @@ public class class_9684 extends class_4285<class_4436> {
 
    @Nullable
    private static BlockPos method_44774(class_9379 var0, class_2921 var1, class_6414 var2) {
-      while (var1.method_12165() > 1) {
+      while (var1.getY() > 1) {
          class_2522 var5 = var0.method_28262(var1);
          if (var5.method_8350(var2)) {
             return var1;

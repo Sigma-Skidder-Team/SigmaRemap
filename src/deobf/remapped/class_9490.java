@@ -148,7 +148,7 @@ public class class_9490 extends MonsterEntity implements class_7187 {
    }
 
    public float method_43830(float var1) {
-      return MathHelper.method_42795(var1, (float)this.field_48360, (float)this.field_48356) / (float)(this.field_48361 - 2);
+      return MathHelper.lerp(var1, (float)this.field_48360, (float)this.field_48356) / (float)(this.field_48361 - 2);
    }
 
    public int method_43833() {
