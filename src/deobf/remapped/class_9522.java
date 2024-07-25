@@ -65,7 +65,7 @@ public class class_9522 extends class_367 {
    public void method_43926(class_3278 var1) {
       if (field_48470 != null) {
          if (this.method_42015()) {
-            if (!MinecraftClient.method_8510().field_9577.field_45567) {
+            if (!MinecraftClient.getInstance().field_9577.field_45567) {
                if (!this.method_42007("Smart Visibility")) {
                   this.field_48469
                      .method_11119(field_46692.field_9623 != null && !this.method_42007("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);

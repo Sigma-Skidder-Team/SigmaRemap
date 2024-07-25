@@ -64,8 +64,8 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
 
    private static Map<String, String> method_25053() {
       HashMap var2 = Maps.newHashMap();
-      var2.put("X-Minecraft-Username", MinecraftClient.method_8510().method_8502().method_5366());
-      var2.put("X-Minecraft-UUID", MinecraftClient.method_8510().method_8502().method_5367());
+      var2.put("X-Minecraft-Username", MinecraftClient.getInstance().method_8502().method_5366());
+      var2.put("X-Minecraft-UUID", MinecraftClient.getInstance().method_8502().method_5367());
       var2.put("X-Minecraft-Version", class_7665.method_34674().getName());
       var2.put("X-Minecraft-Version-ID", class_7665.method_34674().getId());
       var2.put("X-Minecraft-Pack-Format", String.valueOf(class_7665.method_34674().getPackVersion()));
@@ -89,7 +89,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
          } else {
             class_7152 var9 = new class_7152();
             Map var10 = method_25053();
-            MinecraftClient var11 = MinecraftClient.method_8510();
+            MinecraftClient var11 = MinecraftClient.getInstance();
             var11.method_34465(() -> var11.method_8609(var9));
             var8 = class_828.method_3612(var7, var1, var10, 104857600, var9, var11.method_8607());
          }
@@ -132,7 +132,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
          this.field_28113 = null;
          if (this.field_28118 != null) {
             this.field_28118 = null;
-            MinecraftClient.method_8510().method_8488();
+            MinecraftClient.getInstance().method_8488();
          }
       } finally {
          this.field_28119.unlock();
@@ -195,7 +195,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
          true,
          var2
       );
-      return MinecraftClient.method_8510().method_8488();
+      return MinecraftClient.getInstance().method_8488();
    }
 
    @Nullable

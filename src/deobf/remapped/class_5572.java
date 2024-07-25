@@ -10,7 +10,7 @@ public class class_5572 extends class_446 {
    public class_5794 field_28319 = new class_5794();
 
    public class_5572(class_7038 var1, String var2) {
-      super(var1, var2, 0, 0, MinecraftClient.method_8510().field_9602.method_43166(), MinecraftClient.method_8510().field_9602.method_43163(), false);
+      super(var1, var2, 0, 0, MinecraftClient.getInstance().field_9602.method_43166(), MinecraftClient.getInstance().field_9602.method_43163(), false);
       this.method_32177(false);
       this.method_32119(false);
       this.method_32187(false);
@@ -30,8 +30,8 @@ public class class_5572 extends class_446 {
 
    @Override
    public void method_32178(float var1) {
-      int var4 = MinecraftClient.method_8510().field_9602.method_43165();
-      int var5 = MinecraftClient.method_8510().field_9602.method_43177();
+      int var4 = MinecraftClient.getInstance().field_9602.method_43165();
+      int var5 = MinecraftClient.getInstance().field_9602.method_43177();
       int var6 = var4 / 2;
 
       boolean var7;

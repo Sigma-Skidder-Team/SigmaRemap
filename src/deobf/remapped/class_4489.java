@@ -21,7 +21,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 public class class_4489 {
-   private MinecraftClient field_21934 = MinecraftClient.method_8510();
+   private MinecraftClient field_21934 = MinecraftClient.getInstance();
    private String field_21935;
    public Thread field_21932;
    private List<UUID> field_21928 = new ArrayList<UUID>();

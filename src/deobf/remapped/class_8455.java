@@ -291,15 +291,15 @@ public class class_8455 {
          }
 
          if (this.field_43229 <= 0L) {
-            if (class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 67)
-               && class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 292)) {
+            if (class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 67)
+               && class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292)) {
                this.field_43227 = true;
                this.field_43229 = class_9665.method_44650();
                this.field_43224 = class_9665.method_44650();
                this.field_43230 = 0L;
             }
-         } else if (!class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 67)
-            || !class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 292)) {
+         } else if (!class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 67)
+            || !class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292)) {
             this.field_43229 = -1L;
          }
 
@@ -387,11 +387,11 @@ public class class_8455 {
                boolean var12 = false;
                if (this.field_43225.field_9623 == null) {
                   if (var3 == 256) {
-                     boolean var13 = class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 292);
+                     boolean var13 = class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292);
                      this.field_43225.method_8597(var13);
                   }
 
-                  var12 = class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 292) && this.method_38886(var3);
+                  var12 = class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292) && this.method_38886(var3);
                   this.field_43227 |= var12;
                   if (var3 == 290) {
                      this.field_43225.field_9577.field_45567 = !this.field_43225.field_9577.field_45567;

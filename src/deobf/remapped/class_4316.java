@@ -1319,7 +1319,7 @@ public class class_4316 implements class_6491, AutoCloseable {
                class_1331 var88 = var82.method_17399();
                Object var89 = var39;
                var1.method_36063();
-               if (MinecraftClient.method_8510().field_9591) {
+               if (MinecraftClient.getInstance().field_9591) {
                   var1.method_36065((double)var88.method_12173() - var12, (double)var88.method_12165() - var14, (double)var88.method_12185() - var16);
                }
 

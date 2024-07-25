@@ -1,9 +1,9 @@
 package remapped;
 
-public abstract class class_7760<R extends Runnable> extends class_7582<R> {
+public abstract class ReentrantThreadExecutor<R extends Runnable> extends class_7582<R> {
    private int field_39343;
 
-   public class_7760(String var1) {
+   public ReentrantThreadExecutor(String var1) {
       super(var1);
    }
 

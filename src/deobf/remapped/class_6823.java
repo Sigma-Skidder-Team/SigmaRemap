@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextComponent;
 public class class_6823 extends class_7067<class_7451> {
    private static final class_454 field_35174 = new class_454("item_frame", "map=false");
    private static final class_454 field_35170 = new class_454("item_frame", "map=true");
-   private final MinecraftClient field_35169 = MinecraftClient.method_8510();
+   private final MinecraftClient field_35169 = MinecraftClient.getInstance();
    private final class_8765 field_35172;
    private static double field_35171 = 4096.0;
 
@@ -119,7 +119,7 @@ public class class_6823 extends class_7067<class_7451> {
    }
 
    public static void method_31303() {
-      MinecraftClient var2 = MinecraftClient.method_8510();
+      MinecraftClient var2 = MinecraftClient.getInstance();
       double var3 = class_3111.method_14261(var2.field_9577.field_45543, 1.0, 120.0);
       double var5 = Math.max(6.0 * (double)var2.method_8552().method_43163() / var3, 16.0);
       field_35171 = var5 * var5;

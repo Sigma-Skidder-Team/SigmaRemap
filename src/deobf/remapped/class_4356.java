@@ -51,7 +51,7 @@ public class class_4356 extends class_446 {
          this.field_21337.method_11119(class_4043.field_19618);
       }
 
-      if (this.method_32093() + this.method_32164() < MinecraftClient.method_8510().field_9602.method_43163() - 36 && this.method_32093() + this.method_32164() > 52
+      if (this.method_32093() + this.method_32164() < MinecraftClient.getInstance().field_9602.method_43163() - 36 && this.method_32093() + this.method_32164() > 52
          )
        {
          if (this.field_21335 != null && this.field_21338 == null) {
@@ -133,7 +133,7 @@ public class class_4356 extends class_446 {
       GL11.glScaled(1.0 + 0.1 * (double)var5, 1.0 + 0.1 * (double)var5, 0.0);
       GL11.glTranslatef((float)(-this.method_32132() - 44), (float)(-this.method_32173() - 44), 0.0F);
       if (this.field_21333 == null) {
-         MinecraftClient.method_8510().method_8577().method_35674(new class_4639("textures/misc/unknown_server.png"));
+         MinecraftClient.getInstance().method_8577().method_35674(new class_4639("textures/misc/unknown_server.png"));
          class_73.method_137(
             (float)(this.field_36270 + 12), (float)(this.field_36261 + 12), 64.0F, 64.0F, class_1255.field_6918.field_6917, 0.0F, 0.0F, 64.0F, 64.0F
          );

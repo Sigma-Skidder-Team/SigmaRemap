@@ -4,7 +4,7 @@ public class class_4859 {
    private final class_4639 field_24200;
    private class_174 field_24199;
    private class_6325 field_24201;
-   private static MinecraftClient field_24202 = MinecraftClient.method_8510();
+   private static MinecraftClient field_24202 = MinecraftClient.getInstance();
 
    private class_4859(class_4639 var1) {
       this.field_24200 = var1;

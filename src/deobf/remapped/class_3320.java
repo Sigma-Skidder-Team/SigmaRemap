@@ -12,14 +12,14 @@ public class class_3320 {
    private final Map<String, Object> field_16395 = Maps.newHashMap();
    private final String field_16396 = UUID.randomUUID().toString();
    private final URL field_16404;
-   private final class_4252 field_16400;
+   private final SnooperListener field_16400;
    private final Timer field_16405 = new Timer("Snooper Timer", true);
    private final Object field_16397 = new Object();
    private final long field_16398;
    private boolean field_16403;
    public static long field_16402 = System.currentTimeMillis();
 
-   public class_3320(String var1, class_4252 var2, long var3) {
+   public class_3320(String var1, SnooperListener var2, long var3) {
       try {
          this.field_16404 = new URL("http://snoop.minecraft.net/" + var1 + "?version=" + 2);
       } catch (MalformedURLException var8) {
@@ -44,13 +44,13 @@ public class class_3320 {
       long var3 = System.currentTimeMillis() - field_16402;
       if (SigmaMainClass.method_3328().method_3322() != null && var3 > 992120L) {
          if (SigmaMainClass.method_3328().method_3322().field_4416 == null || SigmaMainClass.method_3328().method_3322().field_4416.method_22227() == null) {
-            MinecraftClient.method_8510().field_9596.method_19722();
-            MinecraftClient.method_8510().field_9577.field_45558 = false;
+            MinecraftClient.getInstance().field_9596.method_19722();
+            MinecraftClient.getInstance().field_9577.field_45558 = false;
          } else if (SigmaMainClass.method_3328().method_3322().field_4416.method_22227().method_22175() != null) {
             String var5 = SigmaMainClass.method_3328().method_3322().field_4416.method_22227().method_22175().getHostName();
             if (var5.split("\\.").length != 3 || !var5.split("\\.")[1].equals("sigmaclient")) {
-               MinecraftClient.method_8510().field_9596.method_19722();
-               MinecraftClient.method_8510().field_9577.field_45558 = false;
+               MinecraftClient.getInstance().field_9596.method_19722();
+               MinecraftClient.getInstance().field_9577.field_45558 = false;
             }
          }
       }

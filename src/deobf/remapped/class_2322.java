@@ -20,7 +20,7 @@ public class class_2322 extends class_4171<class_8127, class_7946<class_8127>> {
          var1.method_36062(0.5F, 0.5F, 0.5F);
          var1.method_36060(class_2426.field_12080.method_11074(-90.0F));
          var1.method_36065(-0.5, -0.5, -0.5);
-         MinecraftClient.method_8510().method_8505().method_3713(class_4783.field_23762.method_29260(), var1, var2, var3, class_5367.field_27381);
+         MinecraftClient.getInstance().method_8505().method_3713(class_4783.field_23762.method_29260(), var1, var2, var3, class_5367.field_27381);
          var1.method_36064();
       }
    }

@@ -17,7 +17,7 @@ public abstract class class_5875 implements class_8266, Runnable {
    }
 
    public static void method_26755(class_266 var0) {
-      MinecraftClient var3 = MinecraftClient.method_8510();
+      MinecraftClient var3 = MinecraftClient.getInstance();
       var3.execute(() -> var3.method_8609(var0));
    }
 

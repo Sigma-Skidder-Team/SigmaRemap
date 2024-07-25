@@ -41,7 +41,7 @@ public class class_765 extends class_4232 {
    private class_6809 field_4144 = new class_6809(this, new class_3403());
    private List<class_7114> field_4146 = this.field_950;
    private class_7114 field_4135;
-   private class_8881 field_4145 = MinecraftClient.method_8510().field_9577;
+   private class_8881 field_4145 = MinecraftClient.getInstance().field_9577;
 
    @Override
    public boolean method_26940(double var1, double var3, int var5) {
@@ -75,7 +75,7 @@ public class class_765 extends class_4232 {
 
             this.field_943.method_8609(new class_8889(field_4139, var9, ImmutableList.of(new class_3337(field_4137, var1x -> {
                this.field_4145.field_45397 = class_4615.field_22433;
-               MinecraftClient.method_8510().field_9657.method_19998();
+               MinecraftClient.getInstance().field_9657.method_19998();
                this.field_4138.method_23750();
                this.field_943.method_8609(this);
             }), new class_3337(field_4134, var1x -> {
@@ -176,7 +176,7 @@ public class class_765 extends class_4232 {
 
          this.field_943.method_8609(new class_8889(field_4139, var3, ImmutableList.of(new class_3337(field_4137, var1 -> {
             this.field_4133.field_45397 = class_4615.field_22433;
-            MinecraftClient.method_8510().field_9657.method_19998();
+            MinecraftClient.getInstance().field_9657.method_19998();
             this.field_4138.method_23750();
             this.field_943.method_8609(this);
          }), new class_3337(field_4134, var1 -> {

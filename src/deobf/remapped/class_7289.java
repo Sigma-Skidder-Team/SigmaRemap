@@ -12,7 +12,7 @@ public class class_7289 extends class_1809 {
 
    @Override
    public class_4150 method_8032(class_7832 var1) {
-      MinecraftClient var4 = MinecraftClient.method_8510();
+      MinecraftClient var4 = MinecraftClient.getInstance();
       class_599 var5 = var4.method_8606().method_25060();
 
       try (InputStream var6 = method_33283(var1, var5)) {

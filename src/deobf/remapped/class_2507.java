@@ -12,7 +12,7 @@ public class class_2507 {
    private ArrayList<class_3027> field_12446 = new ArrayList<class_3027>();
    private double field_12451 = 9.0;
    private boolean field_12454 = true;
-   private static MinecraftClient field_12447 = MinecraftClient.method_8510();
+   private static MinecraftClient field_12447 = MinecraftClient.getInstance();
    private static class_8571[] field_12450 = new class_8571[]{
       new class_8571(1.0, 0.0, 0.0),
       new class_8571(-1.0, 0.0, 0.0),

@@ -35,13 +35,13 @@ public abstract class class_9716 extends class_704 {
 
    @Override
    public boolean method_37221() {
-      class_753 var3 = MinecraftClient.method_8510().method_8614().method_4800(this.method_3247().getId());
+      class_753 var3 = MinecraftClient.getInstance().method_8614().method_4800(this.method_3247().getId());
       return var3 != null && var3.method_3393() == class_4666.field_22756;
    }
 
    @Override
    public boolean method_3186() {
-      class_753 var3 = MinecraftClient.method_8510().method_8614().method_4800(this.method_3247().getId());
+      class_753 var3 = MinecraftClient.getInstance().method_8614().method_4800(this.method_3247().getId());
       return var3 != null && var3.method_3393() == class_4666.field_22761;
    }
 
@@ -52,7 +52,7 @@ public abstract class class_9716 extends class_704 {
    @Nullable
    public class_753 method_44881() {
       if (this.field_49385 == null) {
-         this.field_49385 = MinecraftClient.method_8510().method_8614().method_4800(this.method_37328());
+         this.field_49385 = MinecraftClient.getInstance().method_8614().method_4800(this.method_37328());
       }
 
       return this.field_49385;
@@ -98,7 +98,7 @@ public abstract class class_9716 extends class_704 {
    }
 
    public static class_9211 method_44882(class_4639 var0, String var1) {
-      class_7889 var4 = MinecraftClient.method_8510().method_8577();
+      class_7889 var4 = MinecraftClient.getInstance().method_8577();
       Object var5 = var4.method_35679(var0);
       if (var5 == null) {
          var5 = new class_9211(

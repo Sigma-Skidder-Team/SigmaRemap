@@ -18,7 +18,7 @@ public class class_9618 extends class_1859 {
    private final List<class_8428> field_49002 = new ArrayList<class_8428>();
 
    public class_9618(class_7038 var1, String var2, boolean var3, String var4, class_8888... var5) {
-      super(var1, var2, 0, 0, MinecraftClient.method_8510().field_9602.method_43166(), MinecraftClient.method_8510().field_9602.method_43163(), false);
+      super(var1, var2, 0, 0, MinecraftClient.getInstance().field_9602.method_43166(), MinecraftClient.getInstance().field_9602.method_43163(), false);
       this.field_48999 = var3;
       this.field_49005 = var4;
       this.method_32119(false);

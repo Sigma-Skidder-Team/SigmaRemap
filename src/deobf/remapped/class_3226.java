@@ -63,7 +63,7 @@ public class class_3226 extends class_5875 {
       if (var8) {
          method_26755(new class_9016(this.field_16067, this.field_16064, this.field_16065));
       } else if (var9) {
-         if (this.field_16065.field_39014.equals(MinecraftClient.method_8510().method_8502().method_5367())) {
+         if (this.field_16065.field_39014.equals(MinecraftClient.getInstance().method_8502().method_5367())) {
             method_26755(
                new class_5747(this.field_16067, this.field_16064, this.field_16065.field_39016, this.field_16065.field_39015 == class_8840.field_45209)
             );
@@ -88,14 +88,14 @@ public class class_3226 extends class_5875 {
                         try {
                            if (var2) {
                               Function var5x = var1x -> {
-                                 MinecraftClient.method_8510().method_8606().method_25058();
+                                 MinecraftClient.getInstance().method_8606().method_25058();
                                  field_29831.error(var1x);
                                  method_26755(new class_9306(new StringTextComponent("Failed to download resource pack!"), this.field_16067));
                                  return null;
                               };
 
                               try {
-                                 MinecraftClient.method_8510()
+                                 MinecraftClient.getInstance()
                                     .method_8606()
                                     .method_25055(var16.field_39501, var16.field_39503)
                                     .thenRun(

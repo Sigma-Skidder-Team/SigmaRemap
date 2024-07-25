@@ -502,8 +502,8 @@ public class class_3888 extends class_2089 {
             "",
             String.format(
                "Display: %dx%d (%s)",
-               MinecraftClient.method_8510().method_8552().method_43178(),
-               MinecraftClient.method_8510().method_8552().method_43198(),
+               MinecraftClient.getInstance().method_8552().method_43178(),
+               MinecraftClient.getInstance().method_8552().method_43198(),
                class_6765.method_31017()
             ),
             class_6765.method_31016(),

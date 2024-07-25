@@ -83,7 +83,7 @@ public class class_7330 {
    public static void method_33404(class_8591 var0) {
       method_33402();
       if (var0 != null && !(var0 instanceof class_185)) {
-         if (class_7860.field_39861.method_3596() && MinecraftClient.method_8510().method_8498() == null) {
+         if (class_7860.field_39861.method_3596() && MinecraftClient.getInstance().method_8498() == null) {
             class_3111.method_14277("[Shaders] Delayed loading of block mappings after resources are loaded");
             field_37456 = true;
          } else {

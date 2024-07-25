@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class class_3720 {
-   public static final MinecraftClient field_18219 = MinecraftClient.method_8510();
+   public static final MinecraftClient field_18219 = MinecraftClient.getInstance();
    private final String field_18221;
    private final String field_18220;
    private final String[] field_18217;

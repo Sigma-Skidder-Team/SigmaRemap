@@ -82,7 +82,7 @@ public class class_3913 extends class_2255<class_8398> {
       if (!class_6588.field_33945) {
          if (!class_3111.field_15481) {
             class_1331 var3 = var0.method_17399();
-            class_8145 var4 = MinecraftClient.method_8510().method_8516();
+            class_8145 var4 = MinecraftClient.getInstance().method_8516();
             double var5 = var4.method_37273((double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
             if (var5 > field_19010) {
                return false;
@@ -96,7 +96,7 @@ public class class_3913 extends class_2255<class_8398> {
    }
 
    public static void method_18117() {
-      MinecraftClient var2 = MinecraftClient.method_8510();
+      MinecraftClient var2 = MinecraftClient.getInstance();
       double var3 = class_3111.method_14261(var2.field_9577.field_45543, 1.0, 120.0);
       double var5 = Math.max(1.5 * (double)var2.method_8552().method_43163() / var3, 16.0);
       field_19010 = var5 * var5;

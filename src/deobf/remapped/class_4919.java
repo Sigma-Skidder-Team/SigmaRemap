@@ -10,7 +10,7 @@ public class class_4919 extends class_8715 {
    public class_4919(class_174 var1, double var2, double var4, double var6, double var8, double var10, double var12, class_2522 var14) {
       super(var1, var2, var4, var6, var8, var10, var12);
       this.field_25458 = var14;
-      this.method_40055(MinecraftClient.method_8510().method_8505().method_3716().method_43938(var14));
+      this.method_40055(MinecraftClient.getInstance().method_8505().method_3716().method_43938(var14));
       this.field_49477 = 1.0F;
       this.field_49485 = 0.6F;
       this.field_49468 = 0.6F;
@@ -46,7 +46,7 @@ public class class_4919 extends class_8715 {
    }
 
    public void method_22528(class_1331 var1) {
-      int var4 = MinecraftClient.method_8510().method_8569().method_20749(this.field_25458, this.field_49469, var1, 0);
+      int var4 = MinecraftClient.getInstance().method_8569().method_20749(this.field_25458, this.field_49469, var1, 0);
       this.field_49485 *= (float)(var4 >> 16 & 0xFF) / 255.0F;
       this.field_49468 *= (float)(var4 >> 8 & 0xFF) / 255.0F;
       this.field_49487 *= (float)(var4 & 0xFF) / 255.0F;

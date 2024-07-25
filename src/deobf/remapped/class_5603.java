@@ -26,8 +26,8 @@ public class class_5603 extends class_266 {
    }
 
    private class_4666 method_25423() {
-      class_4666 var3 = MinecraftClient.method_8510().field_9647.method_42158();
-      class_4666 var4 = MinecraftClient.method_8510().field_9647.method_42132();
+      class_4666 var3 = MinecraftClient.getInstance().field_9647.method_42158();
+      class_4666 var4 = MinecraftClient.getInstance().field_9647.method_42132();
       if (var4 == class_4666.field_22762) {
          if (var3 != class_4666.field_22761) {
             var4 = class_4666.field_22761;

@@ -99,7 +99,7 @@ public class class_9289 extends class_2596 {
    }
 
    public void method_42761(class_266 var1) {
-      MinecraftClient.method_8510().method_8609(var1);
+      MinecraftClient.getInstance().method_8609(var1);
       this.method_42758();
    }
 

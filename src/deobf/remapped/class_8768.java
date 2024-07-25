@@ -14,14 +14,14 @@ public class class_8768 extends class_7067<class_5490> {
       float var10 = 0.0625F;
       var4.method_36062(0.0625F, 0.0625F, 0.0625F);
       class_7907 var11 = var5.method_11645(class_3581.method_16734(this.method_40288(var1)));
-      class_4642 var12 = MinecraftClient.method_8510().method_8581();
+      class_4642 var12 = MinecraftClient.getInstance().method_8581();
       this.method_40287(var4, var11, var1, var9.method_31700(), var9.method_31699(), var12.method_21477(var9), var12.method_21478());
       var4.method_36064();
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
    public class_4639 method_40288(class_5490 var1) {
-      return MinecraftClient.method_8510().method_8581().method_21478().method_23608().method_38519();
+      return MinecraftClient.getInstance().method_8581().method_21478().method_23608().method_38519();
    }
 
    private void method_40287(class_7966 var1, class_7907 var2, class_5490 var3, int var4, int var5, class_5155 var6, class_5155 var7) {

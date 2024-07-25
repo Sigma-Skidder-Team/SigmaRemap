@@ -90,25 +90,25 @@ public class class_6340 extends class_7621 {
       GL11.glEnable(3008);
       GL11.glEnable(3042);
       class_73.method_97(
-         0.0F, 0.0F, (float) MinecraftClient.method_8510().field_9602.method_43166(), (float) MinecraftClient.method_8510().field_9602.method_43163(), field_32371, var0
+         0.0F, 0.0F, (float) MinecraftClient.getInstance().field_9602.method_43166(), (float) MinecraftClient.getInstance().field_9602.method_43163(), field_32371, var0
       );
       class_73.method_103(
          0.0F,
          0.0F,
-         (float) MinecraftClient.method_8510().field_9602.method_43166(),
-         (float) MinecraftClient.method_8510().field_9602.method_43163(),
+         (float) MinecraftClient.getInstance().field_9602.method_43166(),
+         (float) MinecraftClient.getInstance().field_9602.method_43163(),
          class_314.method_1444(0, 0.75F)
       );
       short var4 = 455;
       byte var5 = 78;
-      int var6 = (MinecraftClient.method_8510().field_9602.method_43166() - var4) / 2;
-      int var7 = Math.round((float)((MinecraftClient.method_8510().field_9602.method_43163() - var5) / 2) - 14.0F * var0);
+      int var6 = (MinecraftClient.getInstance().field_9602.method_43166() - var4) / 2;
+      int var7 = Math.round((float)((MinecraftClient.getInstance().field_9602.method_43163() - var5) / 2) - 14.0F * var0);
       float var8 = 0.75F + var0 * var0 * var0 * var0 * 0.25F;
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(MinecraftClient.method_8510().field_9602.method_43166() / 2), (float)(MinecraftClient.method_8510().field_9602.method_43163() / 2), 0.0F);
+      GL11.glTranslatef((float)(MinecraftClient.getInstance().field_9602.method_43166() / 2), (float)(MinecraftClient.getInstance().field_9602.method_43163() / 2), 0.0F);
       GL11.glScalef(var8, var8, 0.0F);
       GL11.glTranslatef(
-         (float)(-MinecraftClient.method_8510().field_9602.method_43166() / 2), (float)(-MinecraftClient.method_8510().field_9602.method_43163() / 2), 0.0F
+         (float)(-MinecraftClient.getInstance().field_9602.method_43166() / 2), (float)(-MinecraftClient.getInstance().field_9602.method_43163() / 2), 0.0F
       );
       class_73.method_99((float)var6, (float)var7, (float)var4, (float)var5, field_32372, class_314.method_1444(class_1255.field_6918.field_6917, var0));
       float var9 = Math.min(1.0F, var1 * 1.02F);

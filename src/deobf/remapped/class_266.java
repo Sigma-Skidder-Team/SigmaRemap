@@ -345,20 +345,20 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
 
    public static boolean method_1185() {
       return !MinecraftClient.field_9574
-         ? class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 341)
-            || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 345)
-         : class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 343)
-            || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 347);
+         ? class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 341)
+            || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 345)
+         : class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 343)
+            || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 347);
    }
 
    public static boolean method_1190() {
-      return class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 340)
-         || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 344);
+      return class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 340)
+         || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 344);
    }
 
    public static boolean method_1169() {
-      return class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 342)
-         || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 346);
+      return class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 342)
+         || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 346);
    }
 
    public static boolean method_1166(int var0) {

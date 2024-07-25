@@ -3,7 +3,7 @@ package remapped;
 public class class_4761 extends class_9790 {
    private static String[] field_23045;
    private class_2654 field_23047;
-   public MinecraftClient field_23046 = MinecraftClient.method_8510();
+   public MinecraftClient field_23046 = MinecraftClient.getInstance();
 
    @Override
    public int method_45194(class_1455 var1, int var2, int var3, int var4) {

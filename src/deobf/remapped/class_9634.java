@@ -46,7 +46,7 @@ public class class_9634 extends class_4171<class_5542, class_6980<class_5542>> {
       }
 
       class_6098 var16 = var4.method_26520(class_6943.field_35707);
-      MinecraftClient.method_8510().method_8574().method_42248(var4, var16, class_5612.field_28496, false, var1, var2, var3);
+      MinecraftClient.getInstance().method_8574().method_42248(var4, var16, class_5612.field_28496, false, var1, var2, var3);
       var1.method_36064();
    }
 }

@@ -130,7 +130,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          }
 
          boolean var17 = class_3111.method_14424();
-         MinecraftClient var18 = MinecraftClient.method_8510();
+         MinecraftClient var18 = MinecraftClient.getInstance();
          boolean var19 = this.method_29105((T)var1);
          boolean var20 = !var19 && !var1.method_37077(var18.field_9632);
          boolean var21 = var18.method_8563(var1);
@@ -302,7 +302,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          if (var5 >= (double)(var7 * var7)) {
             return false;
          } else {
-            MinecraftClient var8 = MinecraftClient.method_8510();
+            MinecraftClient var8 = MinecraftClient.getInstance();
             class_5989 var9 = var8.field_9632;
             boolean var10 = !var1.method_37077(var9);
             if (var1 != var9) {

@@ -108,16 +108,16 @@ public class class_4178 extends class_7038 implements class_333 {
                   this.method_32175(0);
                }
 
-               if (this.method_32132() + this.method_32109() > MinecraftClient.method_8510().field_9602.method_43166()) {
-                  this.method_32175(MinecraftClient.method_8510().field_9602.method_43166() - this.method_32109());
+               if (this.method_32132() + this.method_32109() > MinecraftClient.getInstance().field_9602.method_43166()) {
+                  this.method_32175(MinecraftClient.getInstance().field_9602.method_43166() - this.method_32109());
                }
 
                if (this.method_32173() < 0) {
                   this.method_32117(0);
                }
 
-               if (this.method_32173() + this.method_32137() > MinecraftClient.method_8510().field_9602.method_43163()) {
-                  this.method_32117(MinecraftClient.method_8510().field_9602.method_43163() - this.method_32137());
+               if (this.method_32173() + this.method_32137() > MinecraftClient.getInstance().field_9602.method_43163()) {
+                  this.method_32117(MinecraftClient.getInstance().field_9602.method_43163() - this.method_32137());
                }
             } else {
                if (this.method_32132() < 0) {

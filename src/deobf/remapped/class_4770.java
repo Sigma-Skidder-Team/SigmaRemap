@@ -16,7 +16,7 @@ public class class_4770 extends class_446 {
    );
    public String field_23120 = null;
    private class_9716 field_23122;
-   private MinecraftClient field_23121 = MinecraftClient.method_8510();
+   private MinecraftClient field_23121 = MinecraftClient.getInstance();
    private static class_174 field_23116;
    public class_7309 field_23119;
    private class_7884 field_23118;
@@ -72,7 +72,7 @@ public class class_4770 extends class_446 {
          var12 = (float)Math.sin((double)var12);
          new class_3169(0.0F, false);
          new class_6670(this.field_23121.method_8587());
-         class_3758 var15 = MinecraftClient.method_8510().method_8589().method_13796();
+         class_3758 var15 = MinecraftClient.getInstance().method_8589().method_13796();
          new class_7966();
          class_3542.method_16438();
          this.field_23121.method_8587().method_28136(false);

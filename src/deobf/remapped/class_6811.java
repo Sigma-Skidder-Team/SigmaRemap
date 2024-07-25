@@ -2,7 +2,7 @@ package remapped;
 
 public class class_6811 {
    private static String[] field_35143;
-   private static final MinecraftClient field_35144 = MinecraftClient.method_8510();
+   private static final MinecraftClient field_35144 = MinecraftClient.getInstance();
 
    public static double[] method_31263(class_5834 var0) {
       if (var0 != null) {

@@ -40,8 +40,8 @@ public class class_7693 extends class_9128 {
    @class_9148
    private void method_34855(class_3278 var1) {
       if (this.method_42015() && field_46692.field_9632 != null) {
-         if (!MinecraftClient.method_8510().field_9577.field_45470) {
-            if (!MinecraftClient.method_8510().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().field_9577.field_45470) {
+            if (!MinecraftClient.getInstance().field_9577.field_45567) {
                this.field_39066 = var1.method_14966();
                if (SigmaMainClass.method_3328().method_3299().method_30987()) {
                   for (class_6849 var7 : class_6849.values()) {

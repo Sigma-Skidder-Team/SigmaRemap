@@ -37,7 +37,7 @@ public class class_5514 extends class_1179 {
 
    @Override
    public class_8599 method_12293(class_9873 var1, float var2) {
-      class_6122 var5 = MinecraftClient.method_8510().method_8587();
+      class_6122 var5 = MinecraftClient.getInstance().method_8587();
       class_6247 var6 = new class_6247(var5, 0.87F);
       var6.field_32487 = (class_6521)var1;
       var6.field_36492 = var2;

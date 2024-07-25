@@ -15,7 +15,7 @@ public class class_7736 {
    }
 
    public void method_35020(class_7675 var1, String var2, int var3) {
-      MinecraftClient var6 = MinecraftClient.method_8510();
+      MinecraftClient var6 = MinecraftClient.getInstance();
       var6.method_8509(true);
       class_7567.method_34410(class_6956.method_31803("mco.connect.success"));
       new class_4029(this, "Realms-connect-task", var2, var3, var6, var1).start();

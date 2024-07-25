@@ -8,7 +8,7 @@ public class class_2488 extends class_1094 {
 
    public void method_11390(class_266 var1) {
       this.field_12384 = var1;
-      MinecraftClient.method_8510().method_8609(new class_7039(this));
+      MinecraftClient.getInstance().method_8609(new class_7039(this));
    }
 
    @Nullable
@@ -19,6 +19,6 @@ public class class_2488 extends class_1094 {
 
    @Override
    public void method_1163() {
-      MinecraftClient.method_8510().method_8609(this.field_12384);
+      MinecraftClient.getInstance().method_8609(this.field_12384);
    }
 }

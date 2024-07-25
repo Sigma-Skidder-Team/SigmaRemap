@@ -26,7 +26,7 @@ public class class_9545 extends class_2840<List<String>> {
 
    public List<String> method_44058(class_7832 var1, class_3492 var2) {
       try (
-              class_4038 var5 = MinecraftClient.method_8510().method_8498().method_35458(field_48562);
+              class_4038 var5 = MinecraftClient.getInstance().method_8498().method_35458(field_48562);
               BufferedReader var7 = new BufferedReader(new InputStreamReader(var5.method_18576(), StandardCharsets.UTF_8));
       ) {
          return var7.lines().<String>map(String::trim).filter(var0 -> var0.hashCode() != 125780783).collect(Collectors.<String>toList());

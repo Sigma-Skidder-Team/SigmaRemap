@@ -53,7 +53,7 @@ public final class class_2008 extends class_5155 {
    public static class_7884 method_9325() {
       if (field_10188 == null) {
          field_10188 = new class_7884(field_10190.method_16960());
-         MinecraftClient.method_8510().method_8577().method_35682(field_10189, field_10188);
+         MinecraftClient.getInstance().method_8577().method_35682(field_10189, field_10188);
       }
 
       return field_10188;

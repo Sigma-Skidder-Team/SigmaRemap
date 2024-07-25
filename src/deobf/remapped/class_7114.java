@@ -86,7 +86,7 @@ public abstract class class_7114 extends class_2089 implements class_1463, class
    }
 
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
-      MinecraftClient var7 = MinecraftClient.method_8510();
+      MinecraftClient var7 = MinecraftClient.getInstance();
       class_9854 var8 = var7.field_9668;
       var7.method_8577().method_35674(field_36678);
       class_3542.method_16480(1.0F, 1.0F, 1.0F, this.field_36680);
@@ -128,7 +128,7 @@ public abstract class class_7114 extends class_2089 implements class_1463, class
          if (this.method_32702(var5)) {
             boolean var8 = this.method_32696(var1, var3);
             if (var8) {
-               this.method_32692(MinecraftClient.method_8510().method_8590());
+               this.method_32692(MinecraftClient.getInstance().method_8590());
                this.method_32694(var1, var3);
                return true;
             }

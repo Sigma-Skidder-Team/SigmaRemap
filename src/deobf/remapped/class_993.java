@@ -29,7 +29,7 @@ public class class_993 extends class_1859 {
       int var11 = var5 - var10 - 10;
       int var12 = var6 - var9 - 10;
       this.method_32148(this.field_5052 = new class_6409(this, "zoom", var11, var12, var10, var9));
-      this.field_5050 = MinecraftClient.method_8510().field_9601.method_22556(MinecraftClient.method_8510().field_9632.method_37075()).method_27352();
+      this.field_5050 = MinecraftClient.getInstance().field_9601.method_22556(MinecraftClient.getInstance().field_9632.method_37075()).method_27352();
       this.method_32105(false);
    }
 
@@ -68,7 +68,7 @@ public class class_993 extends class_1859 {
          float var7 = (float)(this.field_36278 - var6) / 2.0F;
          float var8 = (float)(this.field_36257 - var6) / 2.0F;
          float var9 = (float)var1 - ((float)this.method_32155() + var8 + (float)(var6 / 2));
-         float var10 = (float)(MinecraftClient.method_8510().field_9602.method_43163() - var2) - ((float)this.method_32093() + var7 + (float)(var6 / 2));
+         float var10 = (float)(MinecraftClient.getInstance().field_9602.method_43163() - var2) - ((float)this.method_32093() + var7 + (float)(var6 / 2));
          float var11 = (float)var6 / ((float)(this.field_5048 - 1) * 2.0F);
          float var12 = (float)(this.field_5050.field_10328 * 16) - this.field_5061 * 16.0F;
          float var13 = (float)(this.field_5050.field_10327 * 16) - this.field_5057 * 16.0F;
@@ -94,7 +94,7 @@ public class class_993 extends class_1859 {
 
    @Override
    public void method_32178(float var1) {
-      MinecraftClient var4 = MinecraftClient.method_8510();
+      MinecraftClient var4 = MinecraftClient.getInstance();
       class_2034 var5 = new class_2034(this.field_5050.field_10328, this.field_5050.field_10327);
       var5.field_10328 = (int)((double)var5.field_10328 - Math.floor((double)this.field_5061));
       var5.field_10327 = (int)((double)var5.field_10327 - Math.floor((double)this.field_5057));

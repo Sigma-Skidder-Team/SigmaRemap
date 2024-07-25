@@ -24,7 +24,7 @@ public class class_9123 implements class_7912 {
 
    @Override
    public void method_35795(class_7966 var1, float var2, int var3) {
-      MinecraftClient.method_8510().method_8577().method_35674(class_8368.field_42845);
+      MinecraftClient.getInstance().method_8577().method_35674(class_8368.field_42845);
       if (this.field_46681 >= 0) {
          class_2089.method_9778(var1, 0, 0, 160.0F, 0.0F, 16, 16, 256, 256);
       } else {

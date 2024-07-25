@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class class_5190 {
-   public MinecraftClient field_26705 = MinecraftClient.method_8510();
+   public MinecraftClient field_26705 = MinecraftClient.getInstance();
 
    @class_9148
    private void method_23849(class_139 var1) {

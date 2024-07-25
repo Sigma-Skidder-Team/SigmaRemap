@@ -10,7 +10,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public abstract class class_1013 {
    public static final class_8369 field_5305 = new class_8369("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.field_45526, (var0, var1) -> {
       var0.field_45526 = class_9299.method_42829((int)var1.doubleValue(), 0, 7);
-      MinecraftClient.method_8510().field_9657.method_19998();
+      MinecraftClient.getInstance().field_9657.method_19998();
    }, (var0, var1) -> {
       double var4 = var1.method_38570(var0);
       int var6 = (int)var4 * 2 + 1;
@@ -18,28 +18,28 @@ public abstract class class_1013 {
    });
    public static final class_8369 field_5266 = new class_8369("options.chat.height.focused", 0.0, 1.0, 0.0F, var0 -> var0.field_45480, (var0, var1) -> {
       var0.field_45480 = var1;
-      MinecraftClient.method_8510().field_9614.method_13991().method_18693();
+      MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
       return var1.method_4489(class_4049.method_18688(var4));
    });
    public static final class_8369 field_5222 = new class_8369("options.chat.height.unfocused", 0.0, 1.0, 0.0F, var0 -> var0.field_45488, (var0, var1) -> {
       var0.field_45488 = var1;
-      MinecraftClient.method_8510().field_9614.method_13991().method_18693();
+      MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
       return var1.method_4489(class_4049.method_18688(var4));
    });
    public static final class_8369 field_5203 = new class_8369("options.chat.opacity", 0.0, 1.0, 0.0F, var0 -> var0.field_45402, (var0, var1) -> {
       var0.field_45402 = var1;
-      MinecraftClient.method_8510().field_9614.method_13991().method_18693();
+      MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
       return var1.method_4490(var4 * 0.9 + 0.1);
    });
    public static final class_8369 field_5225 = new class_8369("options.chat.scale", 0.0, 1.0, 0.0F, var0 -> var0.field_45419, (var0, var1) -> {
       var0.field_45419 = var1;
-      MinecraftClient.method_8510().field_9614.method_13991().method_18693();
+      MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
       return (ITextComponent)(var4 != 0.0 ? var1.method_4490(var4) : class_1402.method_6480(var1.method_4483(), false));
@@ -47,7 +47,7 @@ public abstract class class_1013 {
    public static final class_8369 field_5198 = new class_8369("options.chat.width", 0.0, 1.0, 0.0F, var0 -> var0.field_45388 / 4.0571431, (var0, var1) -> {
       var1 = var1 * 4.0571431;
       var0.field_45388 = var1;
-      MinecraftClient.method_8510().field_9614.method_13991().method_18693();
+      MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
       return var1.method_4489(class_4049.method_18686(var4 * 4.0571431));
@@ -94,7 +94,7 @@ public abstract class class_1013 {
       var0 -> Math.pow((double)var0.field_45386, 2.0),
       (var0, var1) -> var0.field_45386 = class_9299.method_42842(var1),
       (var0, var1) -> {
-         var1.method_4487(MinecraftClient.method_8510().field_9668.method_45391(field_5262, 200));
+         var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5262, 200));
          double var4 = var1.method_38566(var1.method_38570(var0));
          return var4 != 0.0 ? var1.method_4490(var4) : var1.method_4492(new TranslationTextComponent("options.fovEffectScale.off"));
       }
@@ -102,7 +102,7 @@ public abstract class class_1013 {
    private static final ITextComponent field_5268 = new TranslationTextComponent("options.screenEffectScale.tooltip");
    public static final class_8369 field_5259 = new class_8369(
       "options.screenEffectScale", 0.0, 1.0, 0.0F, var0 -> (double)var0.field_45469, (var0, var1) -> var0.field_45469 = var1.floatValue(), (var0, var1) -> {
-         var1.method_4487(MinecraftClient.method_8510().field_9668.method_45391(field_5268, 200));
+         var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5268, 200));
          double var4 = var1.method_38566(var1.method_38570(var0));
          return var4 != 0.0 ? var1.method_4490(var4) : var1.method_4492(new TranslationTextComponent("options.screenEffectScale.off"));
       }
@@ -122,7 +122,7 @@ public abstract class class_1013 {
          }
 
          var0.method_40862();
-         MinecraftClient.method_8510().method_8552().method_43194(var0.field_45439);
+         MinecraftClient.getInstance().method_8552().method_43194(var0.field_45439);
       },
       (var0, var1) -> {
          if (!var0.field_45502) {
@@ -164,14 +164,14 @@ public abstract class class_1013 {
    );
    public static final class_4802 field_5299 = new class_4802("options.rawMouseInput", var0 -> var0.field_45409, (var0, var1) -> {
       var0.field_45409 = var1;
-      class_9352 var4 = MinecraftClient.method_8510().method_8552();
+      class_9352 var4 = MinecraftClient.getInstance().method_8552();
       if (var4 != null) {
          var4.method_43176(var1);
       }
    });
    public static final class_8369 field_5250 = new class_8369("options.renderDistance", 2.0, 16.0, 1.0F, var0 -> (double)var0.field_45537, (var0, var1) -> {
       var0.field_45537 = (int)var1.doubleValue();
-      MinecraftClient.method_8510().field_9657.method_20018();
+      MinecraftClient.getInstance().field_9657.method_20018();
    }, (var0, var1) -> {
       double var4 = var1.method_38570(var0);
       return var1.method_4492(new TranslationTextComponent("options.chunks", (int)var4));
@@ -201,12 +201,12 @@ public abstract class class_1013 {
    public static final class_8369 field_5301 = new class_8369(
       "options.accessibility.text_background_opacity", 0.0, 1.0, 0.0F, var0 -> var0.field_45563, (var0, var1) -> {
          var0.field_45563 = var1;
-         MinecraftClient.method_8510().field_9614.method_13991().method_18693();
+         MinecraftClient.getInstance().field_9614.method_13991().method_18693();
       }, (var0, var1) -> var1.method_4490(var1.method_38566(var1.method_38570(var0)))
    );
    public static final class_4001 field_5267 = new class_4001("options.ao", (var0, var1) -> {
       var0.field_45533 = class_6168.method_28279(var0.field_45533.method_28277() + var1);
-      MinecraftClient.method_8510().field_9657.method_19998();
+      MinecraftClient.getInstance().field_9657.method_19998();
    }, (var0, var1) -> var1.method_4492(new TranslationTextComponent(var0.field_45533.method_28278())));
    public static final class_4001 field_5195 = new class_4001(
       "options.attackIndicator",
@@ -224,7 +224,7 @@ public abstract class class_1013 {
    );
    private static final ITextComponent field_5270 = new TranslationTextComponent("options.graphics.fancy.tooltip");
    public static final class_4001 field_5207 = new class_4001("options.graphics", (var0, var1) -> {
-      MinecraftClient var4 = MinecraftClient.method_8510();
+      MinecraftClient var4 = MinecraftClient.getInstance();
       class_5180 var5 = var4.method_8538();
       if (var0.field_45397 == class_4615.field_22437 && var5.method_23757()) {
          var5.method_23753();
@@ -240,13 +240,13 @@ public abstract class class_1013 {
    }, (var0, var1) -> {
       switch (var0.field_45397) {
          case field_22434:
-            var1.method_4487(MinecraftClient.method_8510().field_9668.method_45391(field_5219, 200));
+            var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5219, 200));
             break;
          case field_22437:
-            var1.method_4487(MinecraftClient.method_8510().field_9668.method_45391(field_5270, 200));
+            var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5270, 200));
             break;
          case field_22433:
-            var1.method_4487(MinecraftClient.method_8510().field_9668.method_45391(field_5281, 200));
+            var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5281, 200));
       }
 
       TranslationTextComponent var4 = new TranslationTextComponent(var0.field_45397.method_21387());
@@ -255,7 +255,7 @@ public abstract class class_1013 {
    public static final class_4001 field_5251 = new class_4001(
       "options.guiScale",
       (var0, var1) -> var0.field_45484 = class_9299.method_42788(
-            var0.field_45484 + var1, MinecraftClient.method_8510().method_8552().method_43164(0, MinecraftClient.method_8510().method_8578()) + 1
+            var0.field_45484 + var1, MinecraftClient.getInstance().method_8552().method_43164(0, MinecraftClient.getInstance().method_8578()) + 1
          ),
       (var0, var1) -> var0.field_45484 != 0 ? var1.method_4485(var0.field_45484) : var1.method_4492(new TranslationTextComponent("options.guiScale.auto"))
    );
@@ -285,7 +285,7 @@ public abstract class class_1013 {
    public static final class_4001 field_5288 = new class_4001("options.renderClouds", (var0, var1) -> {
       var0.field_45551 = class_9655.method_44551(var0.field_45551.method_44549() + var1);
       if (MinecraftClient.method_8497()) {
-         class_4230 var4 = MinecraftClient.method_8510().field_9657.method_20091();
+         class_4230 var4 = MinecraftClient.getInstance().field_9657.method_20091();
          if (var4 != null) {
             var4.method_19712(MinecraftClient.field_9574);
          }
@@ -312,14 +312,14 @@ public abstract class class_1013 {
    );
    public static final class_4802 field_5258 = new class_4802("options.vsync", var0 -> var0.field_45502, (var0, var1) -> {
       var0.field_45502 = var1;
-      if (MinecraftClient.method_8510().method_8552() != null) {
-         MinecraftClient.method_8510().method_8552().method_43162(var0.field_45502);
+      if (MinecraftClient.getInstance().method_8552() != null) {
+         MinecraftClient.getInstance().method_8552().method_43162(var0.field_45502);
       }
    });
    public static final class_4802 field_5231 = new class_4802("options.entityShadows", var0 -> var0.field_45568, (var0, var1) -> var0.field_45568 = var1);
    public static final class_4802 field_5306 = new class_4802("options.forceUnicodeFont", var0 -> var0.field_45463, (var0, var1) -> {
       var0.field_45463 = var1;
-      MinecraftClient var4 = MinecraftClient.method_8510();
+      MinecraftClient var4 = MinecraftClient.getInstance();
       if (var4.method_8552() != null) {
          var4.method_8540(var1);
       }
@@ -347,7 +347,7 @@ public abstract class class_1013 {
    public static final class_4802 field_5292 = new class_4802("options.touchscreen", var0 -> var0.field_45570, (var0, var1) -> var0.field_45570 = var1);
    public static final class_4802 field_5246 = new class_4802("options.fullscreen", var0 -> var0.field_45453, (var0, var1) -> {
       var0.field_45453 = var1;
-      MinecraftClient var4 = MinecraftClient.method_8510();
+      MinecraftClient var4 = MinecraftClient.getInstance();
       if (var4.method_8552() != null && var4.method_8552().method_43174() != var0.field_45453) {
          var4.method_8552().method_43156();
          var0.field_45453 = var4.method_8552().method_43174();

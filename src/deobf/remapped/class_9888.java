@@ -41,8 +41,8 @@ public class class_9888 extends class_4145 {
       class_73.method_149(
          0,
          0,
-         MinecraftClient.method_8510().field_9602.method_43166(),
-         (int)(30.0 * MinecraftClient.method_8510().field_9602.method_43189() / (double)class_6763.field_34898)
+         MinecraftClient.getInstance().field_9602.method_43166(),
+         (int)(30.0 * MinecraftClient.getInstance().field_9602.method_43189() / (double)class_6763.field_34898)
       );
       this.method_1183(var1);
       class_73.method_141();

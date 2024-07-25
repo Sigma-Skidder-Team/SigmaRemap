@@ -51,8 +51,8 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class MinecraftClient extends class_7760<Runnable> implements class_4252, class_7138 {
-   private static MinecraftClient field_9658;
+public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implements SnooperListener, WindowEventHandler {
+   private static MinecraftClient instance;
    private static final Logger field_9595 = LogManager.getLogger();
    public static final boolean field_9574 = class_9665.method_44667() == class_8208.field_41983;
    public static final class_4639 field_9620 = new class_4639("default");
@@ -161,7 +161,7 @@ public class MinecraftClient extends class_7760<Runnable> implements class_4252,
 
    public MinecraftClient(RunArgs var1) {
       super("Client");
-      field_9658 = this;
+      instance = this;
       this.runDirectory = var1.directories.field_20153;
       File var2 = var1.directories.field_20151;
       this.field_9607 = var1.directories.field_20150;
@@ -501,7 +501,7 @@ public class MinecraftClient extends class_7760<Runnable> implements class_4252,
    }
 
    public static void method_8608(class_159 var0) {
-      File var1 = new File(method_8510().runDirectory, "crash-reports");
+      File var1 = new File(getInstance().runDirectory, "crash-reports");
       File var2 = new File(var1, "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
       class_2557.method_11619(var0.method_632());
       if (var0.method_636() != null) {
@@ -1805,19 +1805,19 @@ public class MinecraftClient extends class_7760<Runnable> implements class_4252,
    }
 
    public static boolean method_8616() {
-      return !field_9658.field_9577.field_45567;
+      return !instance.field_9577.field_45567;
    }
 
    public static boolean method_8528() {
-      return field_9658.field_9577.field_45397.method_21386() >= class_4615.field_22437.method_21386();
+      return instance.field_9577.field_45397.method_21386() >= class_4615.field_22437.method_21386();
    }
 
    public static boolean method_8497() {
-      return field_9658.field_9577.field_45397.method_21386() >= class_4615.field_22433.method_21386();
+      return instance.field_9577.field_45397.method_21386() >= class_4615.field_22433.method_21386();
    }
 
    public static boolean method_8541() {
-      return field_9658.field_9577.field_45533 != class_6168.field_31559;
+      return instance.field_9577.field_45533 != class_6168.field_31559;
    }
 
    // $VF: Unable to simplify switch on enum
@@ -1986,8 +1986,8 @@ public class MinecraftClient extends class_7760<Runnable> implements class_4252,
       );
       var4.method_29850("Type", "Client (map_client.txt)");
       if (var2 != null) {
-         if (field_9658 != null) {
-            String var5 = field_9658.method_8538().method_23751();
+         if (instance != null) {
+            String var5 = instance.method_8538().method_23751();
             if (var5 != null) {
                var4.method_29850("GPU Warnings", var5);
             }
@@ -2019,8 +2019,8 @@ public class MinecraftClient extends class_7760<Runnable> implements class_4252,
       var4.method_29851("CPU", class_6765::method_31015);
    }
 
-   public static MinecraftClient method_8510() {
-      return field_9658;
+   public static MinecraftClient getInstance() {
+      return instance;
    }
 
    public CompletableFuture<Void> method_8488() {

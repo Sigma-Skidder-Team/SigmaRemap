@@ -7,9 +7,9 @@ public class class_212 {
    private class_5155 field_709;
 
    public void method_896() {
-      this.field_711[0] = MinecraftClient.method_8510().method_8535().method_33946().method_43946(class_4783.field_23811.method_29260()).method_33587();
+      this.field_711[0] = MinecraftClient.getInstance().method_8535().method_33946().method_43946(class_4783.field_23811.method_29260()).method_33587();
       this.field_711[1] = class_6560.field_33438.method_12947();
-      this.field_712[0] = MinecraftClient.method_8510().method_8535().method_33946().method_43946(class_4783.field_23900.method_29260()).method_33587();
+      this.field_712[0] = MinecraftClient.getInstance().method_8535().method_33946().method_43946(class_4783.field_23900.method_29260()).method_33587();
       this.field_712[1] = class_6560.field_33450.method_12947();
       this.field_709 = class_6560.field_33464.method_12947();
    }

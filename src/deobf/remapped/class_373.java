@@ -10,7 +10,7 @@ public class class_373 extends class_2255<class_945> {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public void method_1835(class_945 var1, float var2, class_7966 var3, class_2565 var4, int var5, int var6) {
-      if (MinecraftClient.method_8510().field_9632.method_3184() || MinecraftClient.method_8510().field_9632.method_37221()) {
+      if (MinecraftClient.getInstance().field_9632.method_3184() || MinecraftClient.getInstance().field_9632.method_37221()) {
          class_1331 var9 = var1.method_4116();
          class_1331 var10 = var1.method_4096();
          if (var10.method_12173() >= 1

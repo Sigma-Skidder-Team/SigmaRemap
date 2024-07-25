@@ -49,12 +49,12 @@ public class class_7565 extends class_367 {
          String var4 = this.method_42016("Position");
          switch (var4) {
             case "Center":
-               this.field_38545 = MinecraftClient.method_8510().field_9602.method_43166() / 2 - this.field_38556 / 2;
-               this.field_38544 = MinecraftClient.method_8510().field_9602.method_43163() / 2 + 40;
+               this.field_38545 = MinecraftClient.getInstance().field_9602.method_43166() / 2 - this.field_38556 / 2;
+               this.field_38544 = MinecraftClient.getInstance().field_9602.method_43163() / 2 + 40;
                break;
             case "Bottom":
-               this.field_38545 = MinecraftClient.method_8510().field_9602.method_43166() / 2 - this.field_38556 / 2;
-               this.field_38544 = MinecraftClient.method_8510().field_9602.method_43163() - 200;
+               this.field_38545 = MinecraftClient.getInstance().field_9602.method_43166() / 2 - this.field_38556 / 2;
+               this.field_38544 = MinecraftClient.getInstance().field_9602.method_43163() - 200;
          }
 
          this.field_38545 -= 100;
@@ -76,7 +76,7 @@ public class class_7565 extends class_367 {
       if (field_46692.field_9623 == null || field_46692.field_9623 instanceof class_5766) {
          GL11.glPushMatrix();
          class_73.method_150(var1 - 20, this.field_38544 - 20, var1 + 200, this.field_38544 + 120, true);
-         class_6122 var4 = MinecraftClient.method_8510().method_8587();
+         class_6122 var4 = MinecraftClient.getInstance().method_8587();
          class_5869 var5 = new class_5869(var4);
          short var6 = 150;
          UUID var7 = this.field_38555.method_37328();
@@ -147,7 +147,7 @@ public class class_7565 extends class_367 {
          class_5422 var11 = class_2426.field_12076.method_11074(180.0F);
          var10.method_36060(var11);
          var4.method_28136(false);
-         class_3758 var12 = MinecraftClient.method_8510().method_8589().method_13796();
+         class_3758 var12 = MinecraftClient.getInstance().method_8589().method_13796();
          class_3542.method_16430(
             () -> var5.method_26732(
                   var9, 100.0F, 0.0F, var10, var12, 15728880, Math.min(1.0F, this.field_38554.method_11123() * 4.0F), this.field_38552.method_11123()

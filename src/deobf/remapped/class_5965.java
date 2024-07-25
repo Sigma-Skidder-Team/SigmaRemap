@@ -30,7 +30,7 @@ public class class_5965 {
 
    public static void method_27243(class_6310 var0) {
       if (var0 instanceof class_509) {
-         MinecraftClient.method_8510().field_9657.method_20000();
+         MinecraftClient.getInstance().field_9657.method_20000();
       }
 
       if (!(var0 instanceof class_7786)) {

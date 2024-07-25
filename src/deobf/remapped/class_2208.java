@@ -305,8 +305,8 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
                         } else {
                            boolean var16 = var15 != -999
                               && (
-                                 class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 340)
-                                    || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 344)
+                                 class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 340)
+                                    || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 344)
                               );
                            class_6269 var17 = class_6269.field_32027;
                            if (!var16) {
@@ -486,8 +486,8 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
             if (!this.field_943.field_9577.field_45541.method_27070(var5)) {
                boolean var13 = var12 != -999
                   && (
-                     class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 340)
-                        || class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), 344)
+                     class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 340)
+                        || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 344)
                   );
                if (var13) {
                   this.field_10968 = var8 != null && var8.method_35884() ? var8.method_35898().method_27973() : class_6098.field_31203;

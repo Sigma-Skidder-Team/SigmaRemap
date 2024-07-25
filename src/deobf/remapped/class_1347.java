@@ -32,7 +32,7 @@ public class class_1347 {
          } else {
             if (this.field_7364 == null && this.field_7355 != null) {
                this.field_7364 = new class_7884(this.field_7355);
-               MinecraftClient.method_8510().method_8577().method_35682(this.field_7366, this.field_7364);
+               MinecraftClient.getInstance().method_8577().method_35682(this.field_7366, this.field_7364);
             }
 
             var9 = this.field_7366;

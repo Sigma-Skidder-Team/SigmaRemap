@@ -95,7 +95,7 @@ public class class_2262 {
 
    private static void method_10394(int var0, int var1, int var2, int var3, int var4, long var5, long var7) {
       if (!class_3111.method_14424() || var0 != 33352) {
-         MinecraftClient var11 = MinecraftClient.method_8510();
+         MinecraftClient var11 = MinecraftClient.getInstance();
          if ((var11 == null || var11.method_8552() == null || !var11.method_8552().method_43168()) && class_6941.method_31754(var2)) {
             String var12 = method_10393(var0);
             String var13 = method_10396(var1);
@@ -120,7 +120,7 @@ public class class_2262 {
                }
 
                String var21 = class_6956.method_31803("of.message.openglError", var2, var20);
-               MinecraftClient.method_8510().field_9614.method_13991().method_18676(new StringTextComponent(var21));
+               MinecraftClient.getInstance().field_9614.method_13991().method_18676(new StringTextComponent(var21));
             }
          }
       }

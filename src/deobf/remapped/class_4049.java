@@ -287,7 +287,7 @@ public class class_4049 extends class_2089 {
 
    public int method_18700() {
       int var3 = method_18686(this.field_19686.field_9577.field_45388);
-      class_9352 var4 = MinecraftClient.method_8510().method_8552();
+      class_9352 var4 = MinecraftClient.getInstance().method_8552();
       int var5 = (int)((double)(var4.method_43178() - 3) / var4.method_43189());
       return class_9299.method_42829(var3, 0, var5);
    }

@@ -17,7 +17,7 @@ public class class_6721 implements class_5256<class_7110> {
          return null;
       } else {
          class_1331 var18 = new class_1331(var3, var5, var7);
-         int var19 = MinecraftClient.method_8510().method_8569().method_20744(var17, var2, var18);
+         int var19 = MinecraftClient.getInstance().method_8569().method_20744(var17, var2, var18);
          if (var17.method_8360() instanceof class_305) {
             var19 = ((class_305)var17.method_8360()).method_1358(var17, var2, var18);
          }

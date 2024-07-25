@@ -286,7 +286,7 @@ public class class_8765 implements class_6491 {
       class_3542.method_16403(1.0F, -1.0F, 1.0F);
       class_3542.method_16403(16.0F, 16.0F, 16.0F);
       class_7966 var7 = new class_7966();
-      class_3758 var8 = MinecraftClient.method_8510().method_8589().method_13796();
+      class_3758 var8 = MinecraftClient.getInstance().method_8589().method_13796();
       boolean var9 = !var4.method_33585();
       if (var9) {
          class_2083.method_9716();
@@ -306,7 +306,7 @@ public class class_8765 implements class_6491 {
    }
 
    public void method_40274(class_6098 var1, int var2, int var3) {
-      this.method_40263(MinecraftClient.method_8510().field_9632, var1, var2, var3);
+      this.method_40263(MinecraftClient.getInstance().field_9632, var1, var2, var3);
    }
 
    public void method_40284(class_6098 var1, int var2, int var3) {
@@ -395,8 +395,8 @@ public class class_8765 implements class_6491 {
             class_3542.method_16428();
          }
 
-         class_5989 var20 = MinecraftClient.method_8510().field_9632;
-         float var22 = var20 != null ? var20.method_3173().method_32960(var2.method_27960(), MinecraftClient.method_8510().method_8554()) : 0.0F;
+         class_5989 var20 = MinecraftClient.getInstance().field_9632;
+         float var22 = var20 != null ? var20.method_3173().method_32960(var2.method_27960(), MinecraftClient.getInstance().method_8554()) : 0.0F;
          if (var22 > 0.0F) {
             class_3542.method_16491();
             class_3542.method_16354();

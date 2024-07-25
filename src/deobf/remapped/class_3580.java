@@ -673,7 +673,7 @@ public class class_3580 {
    }
 
    public static class_5155 method_16666(class_2843 var0) {
-      class_8359 var3 = MinecraftClient.method_8510().method_8535().method_33947(var0.method_12946());
+      class_8359 var3 = MinecraftClient.getInstance().method_8535().method_33947(var0.method_12946());
       return var3.method_38528(var0.method_12948());
    }
 

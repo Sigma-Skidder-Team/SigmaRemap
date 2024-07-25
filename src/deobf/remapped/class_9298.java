@@ -17,7 +17,7 @@ public class class_9298 extends class_9716 {
 
    @Override
    public boolean method_3186() {
-      class_753 var3 = MinecraftClient.method_8510().method_8614().method_4800(this.method_3247().getId());
+      class_753 var3 = MinecraftClient.getInstance().method_8614().method_4800(this.method_3247().getId());
       return true;
    }
 
@@ -63,7 +63,7 @@ public class class_9298 extends class_9716 {
    }
 
    public static class_9211 method_42784(class_4639 var0, String var1) {
-      class_7889 var4 = MinecraftClient.method_8510().method_8577();
+      class_7889 var4 = MinecraftClient.getInstance().method_8577();
       Object var5 = var4.method_35679(var0);
       if (var5 == null) {
          var5 = new class_9211(

@@ -25,15 +25,15 @@ public class class_3778 extends class_2596 {
       this.method_32148(var10 = new class_4643(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, class_2209.field_11035));
       var9.method_32100((var0, var1) -> {
          SigmaMainClass.method_3328().method_3327(class_6015.field_30642);
-         MinecraftClient.method_8510().method_8609(new class_1876());
+         MinecraftClient.getInstance().method_8609(new class_1876());
       });
       var10.method_32100((var0, var1) -> {
          SigmaMainClass.method_3328().method_3327(class_6015.field_30645);
-         MinecraftClient.method_8510().method_8609(new class_1876());
+         MinecraftClient.getInstance().method_8609(new class_1876());
       });
       var11.method_32100((var0, var1) -> {
          SigmaMainClass.method_3328().method_3327(class_6015.field_30644);
-         MinecraftClient.method_8510().method_8609(new class_1876());
+         MinecraftClient.getInstance().method_8609(new class_1876());
       });
       class_7038 var12 = new class_7038(this, "socialbtns", (this.method_32109() - 174) / 2, this.method_32137() - 70, 174, 34);
       class_3304 var13;
@@ -77,39 +77,39 @@ public class class_3778 extends class_2596 {
       if (class_6340.field_32369 != null) {
          field_18445.method_11119(class_4043.field_19620);
          byte var4 = 40;
-         float var5 = -field_18442 / (float) MinecraftClient.method_8510().field_9602.method_43166();
-         float var6 = -field_18444 / (float) MinecraftClient.method_8510().field_9602.method_43163();
+         float var5 = -field_18442 / (float) MinecraftClient.getInstance().field_9602.method_43166();
+         float var6 = -field_18444 / (float) MinecraftClient.getInstance().field_9602.method_43163();
          class_73.method_96(
             (float)var4 * var5,
             (float)var4 * var6,
-            (float)(MinecraftClient.method_8510().field_9602.method_43166() + var4),
-            (float)(MinecraftClient.method_8510().field_9602.method_43163() + var4),
+            (float)(MinecraftClient.getInstance().field_9602.method_43166() + var4),
+            (float)(MinecraftClient.getInstance().field_9602.method_43163() + var4),
             class_6340.field_32369
          );
          float var7 = class_5181.method_23766(field_18445.method_11123(), 0.16, 0.71, 0.0, 0.99);
-         int var8 = (MinecraftClient.method_8510().field_9602.method_43166() - 455) / 2;
-         int var9 = (int)((float)((MinecraftClient.method_8510().field_9602.method_43163() - 78) / 2 - 14) - 116.0F * var7);
+         int var8 = (MinecraftClient.getInstance().field_9602.method_43166() - 455) / 2;
+         int var9 = (int)((float)((MinecraftClient.getInstance().field_9602.method_43163() - 78) / 2 - 14) - 116.0F * var7);
          class_73.method_103(
             0.0F,
             0.0F,
-            (float) MinecraftClient.method_8510().field_9602.method_43166(),
-            (float) MinecraftClient.method_8510().field_9602.method_43163(),
+            (float) MinecraftClient.getInstance().field_9602.method_43166(),
+            (float) MinecraftClient.getInstance().field_9602.method_43163(),
             class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
          );
          super.method_32178(var1);
          class_73.method_99(
             0.0F,
             0.0F,
-            (float) MinecraftClient.method_8510().field_9602.method_43166(),
-            (float) MinecraftClient.method_8510().field_9602.method_43163(),
+            (float) MinecraftClient.getInstance().field_9602.method_43166(),
+            (float) MinecraftClient.getInstance().field_9602.method_43163(),
             class_6340.field_32371,
             class_314.method_1444(class_1255.field_6918.field_6917, 1.0F - field_18445.method_11123())
          );
          class_73.method_103(
             0.0F,
             0.0F,
-            (float) MinecraftClient.method_8510().field_9602.method_43166(),
-            (float) MinecraftClient.method_8510().field_9602.method_43163(),
+            (float) MinecraftClient.getInstance().field_9602.method_43166(),
+            (float) MinecraftClient.getInstance().field_9602.method_43163(),
             class_314.method_1444(0, 0.75F * (1.0F - field_18445.method_11123()))
          );
          class_73.method_96((float)var8, (float)var9, 455.0F, 78.0F, class_6340.field_32372);
@@ -120,7 +120,7 @@ public class class_3778 extends class_2596 {
    public void method_29509(int var1) {
       super.method_29509(var1);
       if (var1 == 256) {
-         MinecraftClient.method_8510().method_8609(new class_1876());
+         MinecraftClient.getInstance().method_8609(new class_1876());
       }
    }
 }

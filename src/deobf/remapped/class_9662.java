@@ -26,7 +26,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       this.field_49215 = var1;
       this.field_49213 = var2.method_37656();
       this.field_49209 = var3;
-      this.field_49207 = MinecraftClient.method_8510();
+      this.field_49207 = MinecraftClient.getInstance();
       String var6 = var3.method_2203();
       this.field_49211 = new class_4639(
          "minecraft", "worlds/" + class_9665.method_44678(var6, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var6) + "/icon"

@@ -55,7 +55,7 @@ public class class_7280 implements AutoCloseable {
       this.field_37268.method_19853("InSize").method_32386((float)this.field_37270.field_20533, (float)this.field_37270.field_20535);
       this.field_37268.method_19853("OutSize").method_32386(var4, var5);
       this.field_37268.method_19853("Time").method_32385(var1);
-      MinecraftClient var10 = MinecraftClient.method_8510();
+      MinecraftClient var10 = MinecraftClient.getInstance();
       this.field_37268.method_19853("ScreenSize").method_32386((float)var10.method_8552().method_43178(), (float)var10.method_8552().method_43198());
       this.field_37268.method_19852();
       this.field_37272.method_19712(MinecraftClient.field_9574);

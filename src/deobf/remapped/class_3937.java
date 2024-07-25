@@ -58,7 +58,7 @@ public class class_3937 extends class_446 {
          int var5 = this.field_36270 + 5;
          class_73.method_96(
             (float)var5,
-            (float)((MinecraftClient.method_8510().field_9602.method_43163() - var4 * 342 / 460) / 2 - 60),
+            (float)((MinecraftClient.getInstance().field_9602.method_43163() - var4 * 342 / 460) / 2 - 60),
             (float)var4,
             (float)(var4 * 342 / 460),
             class_2209.field_11027

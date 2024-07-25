@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.opengl.GL11;
 
 public class class_5937 {
-   private MinecraftClient field_30282 = MinecraftClient.method_8510();
+   private MinecraftClient field_30282 = MinecraftClient.getInstance();
    private List<class_8670> field_30284 = new ArrayList<class_8670>();
    public float field_30289 = -999.0F;
    public float field_30287 = -999.0F;

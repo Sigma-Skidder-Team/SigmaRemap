@@ -41,7 +41,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 public class class_314 {
-   private static final MinecraftClient field_1158 = MinecraftClient.method_8510();
+   private static final MinecraftClient field_1158 = MinecraftClient.getInstance();
    public static final float field_1159 = 0.3F;
    public static final float[] field_1162 = new float[4];
    public static final float[] field_1164 = new float[4];

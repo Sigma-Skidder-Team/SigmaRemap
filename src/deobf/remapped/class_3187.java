@@ -82,7 +82,7 @@ public class class_3187 {
    }
 
    public static void method_14669(class_2560 var0) {
-      class_3187 var3 = new class_3187(MinecraftClient.method_8510());
+      class_3187 var3 = new class_3187(MinecraftClient.getInstance());
       var3.method_14670();
 
       for (int var4 = 0; var4 < var3.method_14671(); var4++) {

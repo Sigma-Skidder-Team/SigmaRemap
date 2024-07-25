@@ -103,7 +103,7 @@ public class class_6705 {
                   });
                } else {
                   class_159 var6 = class_159.method_643(var3x, "Batching chunks");
-                  MinecraftClient.method_8510().method_8555(MinecraftClient.method_8510().method_8546(var6));
+                  MinecraftClient.getInstance().method_8555(MinecraftClient.getInstance().method_8546(var6));
                }
             });
          }

@@ -7,7 +7,7 @@ public class class_3116 {
    public List<String> field_15502 = new CopyOnWriteArrayList<String>();
    public List<String> field_15503 = new CopyOnWriteArrayList<String>();
    public int field_15501 = 0;
-   private MinecraftClient field_15500 = MinecraftClient.method_8510();
+   private MinecraftClient field_15500 = MinecraftClient.getInstance();
 
    public void method_14473() {
       SigmaMainClass.method_3328().method_3302().method_7908(this);

@@ -8,7 +8,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class class_7494 {
    private static String[] field_38238;
-   private static final MinecraftClient field_38239 = MinecraftClient.method_8510();
+   private static final MinecraftClient field_38239 = MinecraftClient.getInstance();
 
    public static boolean method_34116(class_704 var0, class_1331 var1) {
       return method_34108(var0, var1) < method_34074();
@@ -30,52 +30,52 @@ public class class_7494 {
    }
 
    public static void method_34094(class_1331 var0) {
-      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.method_8510().field_9632.method_37302();
+      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().field_9632.method_37302();
       double var5 = (double)var0.method_12165()
          + 0.5
-         - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277());
-      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.method_8510().field_9632.method_37156();
+         - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277());
+      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().field_9632.method_37156();
       double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
-      MinecraftClient.method_8510().field_9632.field_41701 = MinecraftClient.method_8510().field_9632.field_41701
-         + class_9299.method_42810(var11 - MinecraftClient.method_8510().field_9632.field_41701);
-      MinecraftClient.method_8510().field_9632.field_41755 = MinecraftClient.method_8510().field_9632.field_41755
-         + class_9299.method_42810(var12 - MinecraftClient.method_8510().field_9632.field_41755);
+      MinecraftClient.getInstance().field_9632.field_41701 = MinecraftClient.getInstance().field_9632.field_41701
+         + class_9299.method_42810(var11 - MinecraftClient.getInstance().field_9632.field_41701);
+      MinecraftClient.getInstance().field_9632.field_41755 = MinecraftClient.getInstance().field_9632.field_41755
+         + class_9299.method_42810(var12 - MinecraftClient.getInstance().field_9632.field_41755);
    }
 
    public static void method_34111(class_1331 var0) {
-      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.method_8510().field_9632.method_37302();
+      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().field_9632.method_37302();
       double var5 = (double)var0.method_12165()
          + 0.5
-         - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277());
-      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.method_8510().field_9632.method_37156();
+         - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277());
+      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().field_9632.method_37156();
       double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
-      MinecraftClient.method_8510()
+      MinecraftClient.getInstance()
          .method_8614()
          .method_4813(
             new class_3616(
-               MinecraftClient.method_8510().field_9632.field_41701 + class_9299.method_42810(var11 - MinecraftClient.method_8510().field_9632.field_41701),
-               MinecraftClient.method_8510().field_9632.field_41755 + class_9299.method_42810(var12 - MinecraftClient.method_8510().field_9632.field_41755),
-               MinecraftClient.method_8510().field_9632.field_41726
+               MinecraftClient.getInstance().field_9632.field_41701 + class_9299.method_42810(var11 - MinecraftClient.getInstance().field_9632.field_41701),
+               MinecraftClient.getInstance().field_9632.field_41755 + class_9299.method_42810(var12 - MinecraftClient.getInstance().field_9632.field_41755),
+               MinecraftClient.getInstance().field_9632.field_41726
             )
          );
    }
 
    public static float[] method_34076(class_1331 var0) {
-      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.method_8510().field_9632.method_37302();
+      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().field_9632.method_37302();
       double var5 = (double)var0.method_12165()
          - 0.25
-         - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277());
-      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.method_8510().field_9632.method_37156();
+         - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277());
+      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().field_9632.method_37156();
       double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       return new float[]{
-         MinecraftClient.method_8510().field_9632.field_41701 + class_9299.method_42810(var11 - MinecraftClient.method_8510().field_9632.field_41701),
-         MinecraftClient.method_8510().field_9632.field_41755 + class_9299.method_42810(var12 - MinecraftClient.method_8510().field_9632.field_41755)
+         MinecraftClient.getInstance().field_9632.field_41701 + class_9299.method_42810(var11 - MinecraftClient.getInstance().field_9632.field_41701),
+         MinecraftClient.getInstance().field_9632.field_41755 + class_9299.method_42810(var12 - MinecraftClient.getInstance().field_9632.field_41755)
       };
    }
 
@@ -102,18 +102,18 @@ public class class_7494 {
             var6++;
       }
 
-      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.method_8510().field_9632.method_37302() + (double)var4;
+      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().field_9632.method_37302() + (double)var4;
       double var9 = (double)var0.method_12165()
          - 0.02
-         - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277())
+         - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277())
          + (double)var6;
-      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.method_8510().field_9632.method_37156() + (double)var5;
+      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().field_9632.method_37156() + (double)var5;
       double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         MinecraftClient.method_8510().field_9632.field_41701 + class_9299.method_42810(var15 - MinecraftClient.method_8510().field_9632.field_41701),
-         MinecraftClient.method_8510().field_9632.field_41755 + class_9299.method_42810(var16 - MinecraftClient.method_8510().field_9632.field_41755)
+         MinecraftClient.getInstance().field_9632.field_41701 + class_9299.method_42810(var15 - MinecraftClient.getInstance().field_9632.field_41701),
+         MinecraftClient.getInstance().field_9632.field_41755 + class_9299.method_42810(var16 - MinecraftClient.getInstance().field_9632.field_41755)
       };
    }
 
@@ -156,18 +156,18 @@ public class class_7494 {
          var6 = (float)(0.6F - Math.sin((double)(System.currentTimeMillis() - 500L) / 1600.0) * 0.2);
       }
 
-      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.method_8510().field_9632.method_37302() + (double)var4;
+      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().field_9632.method_37302() + (double)var4;
       double var9 = (double)var0.method_12165()
          - 0.02
-         - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277())
+         - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277())
          + (double)var6;
-      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.method_8510().field_9632.method_37156() + (double)var5;
+      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().field_9632.method_37156() + (double)var5;
       double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
       return new float[]{
-         MinecraftClient.method_8510().field_9632.field_41701 + class_9299.method_42810(var15 - MinecraftClient.method_8510().field_9632.field_41701),
-         MinecraftClient.method_8510().field_9632.field_41755 + class_9299.method_42810(var16 - MinecraftClient.method_8510().field_9632.field_41755)
+         MinecraftClient.getInstance().field_9632.field_41701 + class_9299.method_42810(var15 - MinecraftClient.getInstance().field_9632.field_41701),
+         MinecraftClient.getInstance().field_9632.field_41755 + class_9299.method_42810(var16 - MinecraftClient.getInstance().field_9632.field_41755)
       };
    }
 
@@ -188,15 +188,15 @@ public class class_7494 {
             var4 -= 0.49F;
       }
 
-      double var6 = (double)var0.method_12173() + 0.5 - MinecraftClient.method_8510().field_9632.method_37302() + (double)var4;
-      double var8 = (double)var0.method_12185() + 0.5 - MinecraftClient.method_8510().field_9632.method_37156() + (double)var5;
+      double var6 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().field_9632.method_37302() + (double)var4;
+      double var8 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().field_9632.method_37156() + (double)var5;
       double var10 = (double)var0.method_12165()
          - 0.02
-         - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277())
+         - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277())
          + 1.0;
       double var12 = (double)var0.method_12165()
          - 0.02
-         - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277());
+         - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277());
       double var14 = (double)class_9299.method_42842(var6 * var6 + var8 * var8);
       float var16 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       float var17 = (float)(-(Math.atan2(var12, var14) * 180.0 / Math.PI));
@@ -372,17 +372,17 @@ public class class_7494 {
          double var3 = var2.method_33993().field_7336 - (double)var2.method_43955().method_12173();
          double var5 = var2.method_33993().field_7334 - (double)var2.method_43955().method_12185();
          double var7 = var2.method_33993().field_7333 - (double)var2.method_43955().method_12165();
-         double var9 = (double)var2.method_43955().method_12173() - MinecraftClient.method_8510().field_9632.method_37302() + var3;
+         double var9 = (double)var2.method_43955().method_12173() - MinecraftClient.getInstance().field_9632.method_37302() + var3;
          double var11 = (double)var2.method_43955().method_12165()
-            - (MinecraftClient.method_8510().field_9632.method_37309() + (double) MinecraftClient.method_8510().field_9632.method_37277())
+            - (MinecraftClient.getInstance().field_9632.method_37309() + (double) MinecraftClient.getInstance().field_9632.method_37277())
             + var7;
-         double var13 = (double)var2.method_43955().method_12185() - MinecraftClient.method_8510().field_9632.method_37156() + var5;
+         double var13 = (double)var2.method_43955().method_12185() - MinecraftClient.getInstance().field_9632.method_37156() + var5;
          double var15 = (double)class_9299.method_42842(var9 * var9 + var13 * var13);
          float var17 = (float)(Math.atan2(var13, var9) * 180.0 / Math.PI) - 90.0F;
          float var18 = (float)(-(Math.atan2(var11, var15) * 180.0 / Math.PI));
          return new float[]{
-            MinecraftClient.method_8510().field_9632.field_41701 + class_9299.method_42810(var17 - MinecraftClient.method_8510().field_9632.field_41701),
-            MinecraftClient.method_8510().field_9632.field_41755 + class_9299.method_42810(var18 - MinecraftClient.method_8510().field_9632.field_41755)
+            MinecraftClient.getInstance().field_9632.field_41701 + class_9299.method_42810(var17 - MinecraftClient.getInstance().field_9632.field_41701),
+            MinecraftClient.getInstance().field_9632.field_41755 + class_9299.method_42810(var18 - MinecraftClient.getInstance().field_9632.field_41755)
          };
       } else {
          return null;

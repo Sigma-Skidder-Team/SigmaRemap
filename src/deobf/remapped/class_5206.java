@@ -38,7 +38,7 @@ public class class_5206 extends class_5986 {
          class_3542.method_16413((float)(-(this.field_36670 + 8)), (float)(-(this.field_36674 + 12)), 0.0F);
       }
 
-      MinecraftClient var11 = MinecraftClient.method_8510();
+      MinecraftClient var11 = MinecraftClient.getInstance();
       var11.method_8577().method_35674(this.field_30492);
       class_3542.method_16491();
       int var8 = this.field_30493;

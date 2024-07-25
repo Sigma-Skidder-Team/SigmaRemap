@@ -130,9 +130,9 @@ public class class_9137 extends class_9128 {
                   }
                }
 
-               float var13 = (float)((double)var5.field_21077 - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_60());
-               float var14 = (float)((double)var5.field_21071 - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_61());
-               float var15 = (float)((double)var5.field_21073 - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_62());
+               float var13 = (float)((double)var5.field_21077 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_60());
+               float var14 = (float)((double)var5.field_21071 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_61());
+               float var15 = (float)((double)var5.field_21073 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_62());
                if (var5.field_21071 < 0) {
                   var14--;
                }

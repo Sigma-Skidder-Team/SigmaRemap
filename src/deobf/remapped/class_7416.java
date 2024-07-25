@@ -23,7 +23,7 @@ public class class_7416<T extends class_4393> extends class_4171<T, class_2611<T
 
    public void method_33785(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.method_26449() && !var4.method_37109()) {
-         class_856 var13 = MinecraftClient.method_8510().method_8505();
+         class_856 var13 = MinecraftClient.getInstance().method_8505();
          class_2522 var14 = var4.method_20463().method_9649();
          class_4639 var15 = this.method_33784(var14);
          class_7907 var16 = null;

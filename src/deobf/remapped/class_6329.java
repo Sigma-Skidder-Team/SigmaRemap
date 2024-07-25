@@ -33,7 +33,7 @@ public class class_6329<T extends class_5834, M extends class_6521<T> & class_17
          var5.method_36060(class_2426.field_12074.method_11074(180.0F));
          boolean var10 = var4 == class_1736.field_8940;
          var5.method_36065((double)((float)(!var10 ? 1 : -1) / 16.0F), 0.125, -0.625);
-         MinecraftClient.method_8510().method_8574().method_42248(var1, var2, var3, var10, var5, var6, var7);
+         MinecraftClient.getInstance().method_8574().method_42248(var1, var2, var3, var10, var5, var6, var7);
          var5.method_36064();
       }
    }

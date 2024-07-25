@@ -2107,7 +2107,7 @@ public class class_8881 {
       }
 
       if (this.field_45397 == class_4615.field_22433) {
-         class_4316 var1 = MinecraftClient.method_8510().field_9657;
+         class_4316 var1 = MinecraftClient.getInstance().field_9657;
          if (var1 != null) {
             class_4230 var2 = var1.method_20091();
             if (var2 != null) {

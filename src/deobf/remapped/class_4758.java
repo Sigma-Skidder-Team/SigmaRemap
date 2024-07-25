@@ -23,7 +23,7 @@ public class class_4758 extends class_5875 {
    @Override
    public void method_26751() {
       this.field_23041.method_35019();
-      MinecraftClient.method_8510().method_8606().method_25058();
+      MinecraftClient.getInstance().method_8606().method_25058();
    }
 
    @Override

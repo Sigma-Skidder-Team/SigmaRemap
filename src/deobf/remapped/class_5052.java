@@ -127,7 +127,7 @@ public class class_5052 {
    }
 
    public static void method_23268() {
-      field_26105 = MinecraftClient.method_8510().method_8577();
+      field_26105 = MinecraftClient.getInstance().method_8577();
       field_26111 = false;
       field_26110 = null;
       field_26108 = null;

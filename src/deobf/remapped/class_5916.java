@@ -45,7 +45,7 @@ public class class_5916 implements Comparable<class_5916> {
    public static void method_27065() {
       for (class_5916 var3 : field_30026.values()) {
          if (var3.field_30027.method_16990() == class_8863.field_45319 && var3.field_30027.method_16988() != class_9732.field_49455.method_16988()) {
-            var3.method_27056(class_9732.method_44934(MinecraftClient.method_8510().method_8552().method_43181(), var3.field_30027.method_16988()));
+            var3.method_27056(class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), var3.field_30027.method_16988()));
          }
       }
    }

@@ -18,7 +18,7 @@ public class class_176 {
    private static final class_5380 field_586 = new class_5380();
 
    public static class_176 method_777() {
-      MinecraftClient var2 = MinecraftClient.method_8510();
+      MinecraftClient var2 = MinecraftClient.getInstance();
       String var3 = var2.method_8502().method_5366();
       String var4 = var2.method_8502().method_5369();
       if (!field_585) {

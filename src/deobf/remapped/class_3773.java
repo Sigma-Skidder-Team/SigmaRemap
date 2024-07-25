@@ -11,7 +11,7 @@ public class class_3773 {
       if (var3 != null && !var3.isEmpty() && !var3.contains("\u0000") && field_18431.matcher(var3).matches()) {
          String var4 = "http://s.optifine.net/capes/" + var3 + ".png";
          class_4639 var5 = new class_4639("capeof/" + var3);
-         class_7889 var6 = MinecraftClient.method_8510().method_8577();
+         class_7889 var6 = MinecraftClient.getInstance().method_8577();
          class_8143 var7 = var6.method_35679(var5);
          if (var7 != null && var7 instanceof class_9211) {
             class_9211 var8 = (class_9211)var7;

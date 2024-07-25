@@ -25,7 +25,7 @@ public class class_9104 extends class_9733 {
       var8.method_36060(class_2426.field_12080.method_11074(150.0F * var6 - 60.0F));
       var8.method_36062(-1.0F, -1.0F, 1.0F);
       var8.method_36065(0.0, -1.101F, 1.5);
-      class_3758 var9 = MinecraftClient.method_8510().method_8589().method_13796();
+      class_3758 var9 = MinecraftClient.getInstance().method_8589().method_13796();
       class_7907 var10 = var9.method_11645(this.field_46618);
       this.field_46616.method_45499(var8, var10, 15728880, class_5367.field_27381, 1.0F, 1.0F, 1.0F, var7);
       var9.method_17415();

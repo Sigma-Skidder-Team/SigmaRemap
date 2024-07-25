@@ -154,7 +154,7 @@ public class class_4498 extends class_3289 {
    }
 
    private boolean method_20904() {
-      MinecraftClient var3 = MinecraftClient.method_8510();
+      MinecraftClient var3 = MinecraftClient.getInstance();
       return var3.field_9590.method_35949().method_41627().method_6203(this.field_49462, this.field_49473, this.field_49465) >= 256.0;
    }
 

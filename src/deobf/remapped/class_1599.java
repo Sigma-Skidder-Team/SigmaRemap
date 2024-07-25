@@ -103,7 +103,7 @@ public class class_1599 extends class_2208<class_338> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field_10956.method_18886(this.field_943.field_9632, var11)) {
-               MinecraftClient.method_8510().method_8590().method_16345(class_4949.method_22675(class_463.field_2242, 1.0F));
+               MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2242, 1.0F));
                this.field_943.field_9647.method_42154(this.field_10956.field_19925, var11);
                return true;
             }

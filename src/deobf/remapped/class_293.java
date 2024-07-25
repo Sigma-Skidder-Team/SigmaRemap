@@ -128,7 +128,7 @@ public class class_293 {
 
    public static void method_1322(class_7941 var0, class_9071 var1, int var2, float var3, long var4) {
       if (class_6588.field_33846 > 0 && --class_6588.field_33861 <= 0) {
-         MinecraftClient var8 = MinecraftClient.method_8510();
+         MinecraftClient var8 = MinecraftClient.getInstance();
          var8.method_8562().method_16050("shadow pass");
          class_4316 var9 = var8.field_9657;
          class_6588.field_33945 = true;

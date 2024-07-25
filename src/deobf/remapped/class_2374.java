@@ -15,7 +15,7 @@ public class class_2374 implements class_7912 {
 
    public class_2374(GameProfile var1) {
       this.field_11877 = var1;
-      MinecraftClient var4 = MinecraftClient.method_8510();
+      MinecraftClient var4 = MinecraftClient.getInstance();
       Map var5 = var4.method_8557().method_44310(var1);
       if (!var5.containsKey(Type.SKIN)) {
          this.field_11876 = class_1512.method_6921(class_704.method_3242(var1));
@@ -28,7 +28,7 @@ public class class_2374 implements class_7912 {
 
    @Override
    public void method_35792(class_3421 var1) {
-      MinecraftClient.method_8510().method_8614().method_4813(new class_6404(this.field_11877.getId()));
+      MinecraftClient.getInstance().method_8614().method_4813(new class_6404(this.field_11877.getId()));
    }
 
    @Override
@@ -38,7 +38,7 @@ public class class_2374 implements class_7912 {
 
    @Override
    public void method_35795(class_7966 var1, float var2, int var3) {
-      MinecraftClient.method_8510().method_8577().method_35674(this.field_11876);
+      MinecraftClient.getInstance().method_8577().method_35674(this.field_11876);
       class_3542.method_16480(1.0F, 1.0F, 1.0F, (float)var3 / 255.0F);
       class_2089.method_9780(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
       class_2089.method_9780(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);

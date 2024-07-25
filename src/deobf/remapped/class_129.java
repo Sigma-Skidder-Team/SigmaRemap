@@ -73,7 +73,7 @@ public abstract class class_129 extends class_7114 {
 
    @Override
    public void method_32704(double var1, double var3) {
-      super.method_32692(MinecraftClient.method_8510().method_8590());
+      super.method_32692(MinecraftClient.getInstance().method_8590());
    }
 
    public abstract void method_396();

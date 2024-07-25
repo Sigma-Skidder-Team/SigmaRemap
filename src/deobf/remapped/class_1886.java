@@ -54,8 +54,8 @@ public class class_1886 extends class_9128 {
             if (this.method_42007("GUI")) {
                class_3384 var4 = class_5320.field_27152;
                byte var5 = -1;
-               int var6 = MinecraftClient.method_8510().field_9602.method_43166();
-               int var7 = MinecraftClient.method_8510().field_9602.method_43163();
+               int var6 = MinecraftClient.getInstance().field_9602.method_43166();
+               int var7 = MinecraftClient.getInstance().field_9602.method_43163();
                if (this.field_9546 && this.field_9549 != null) {
                   this.field_9546 = false;
                }

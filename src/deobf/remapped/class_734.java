@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class class_734 extends class_2596 {
    public class_3240 field_4006;
-   private static MinecraftClient field_4009 = MinecraftClient.method_8510();
+   private static MinecraftClient field_4009 = MinecraftClient.getInstance();
    private static class_2440 field_4000;
    private static boolean field_4008;
    private static boolean field_4001;

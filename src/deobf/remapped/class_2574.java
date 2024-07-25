@@ -61,7 +61,7 @@ public class class_2574 extends class_5272<class_337> {
       float var10 = (1.0F - var1.method_1549(var9)) * 0.55F;
       this.method_11699(var4, var10);
       this.field_12738.field_8187 = -8.25F;
-      Object var11 = MinecraftClient.method_8510().method_8516();
+      Object var11 = MinecraftClient.getInstance().method_8516();
       if (var1.method_1555()) {
          var11 = var1.method_1552();
       }

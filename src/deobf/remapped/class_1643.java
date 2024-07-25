@@ -32,7 +32,7 @@ public class class_1643 extends class_2596 {
    @Override
    public void method_32145(int var1, int var2) {
       if (field_8537.method_11128() == class_4043.field_19618 && field_8537.method_11123() == 0.0F && field_8538 != null) {
-         MinecraftClient.method_8510().method_8609(field_8538);
+         MinecraftClient.getInstance().method_8609(field_8538);
       }
 
       super.method_32145(var1, var2);
@@ -95,7 +95,7 @@ public class class_1643 extends class_2596 {
    public void method_29509(int var1) {
       super.method_29509(var1);
       if (var1 == 256) {
-         MinecraftClient.method_8510().method_8609(null);
+         MinecraftClient.getInstance().method_8609(null);
       }
    }
 }

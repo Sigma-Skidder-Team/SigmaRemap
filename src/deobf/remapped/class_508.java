@@ -18,7 +18,7 @@ public class class_508 extends class_4171<class_912, class_5415<class_912>> {
          float var14 = 0.5F;
          var1.method_36062(-0.5F, -0.5F, 0.5F);
          var1.method_36060(class_2426.field_12074.method_11074(90.0F));
-         MinecraftClient.method_8510().method_8505().method_3713(var13, var1, var2, var3, class_5367.field_27381);
+         MinecraftClient.getInstance().method_8505().method_3713(var13, var1, var2, var3, class_5367.field_27381);
          var1.method_36064();
       }
    }

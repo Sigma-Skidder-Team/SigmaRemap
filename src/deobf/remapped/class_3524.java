@@ -28,6 +28,6 @@ public class class_3524 {
    }
 
    private static File method_16272() {
-      return new File(MinecraftClient.method_8510().runDirectory, "realms_persistence.json");
+      return new File(MinecraftClient.getInstance().runDirectory, "realms_persistence.json");
    }
 }

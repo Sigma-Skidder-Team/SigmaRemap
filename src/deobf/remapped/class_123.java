@@ -133,9 +133,9 @@ public class class_123 {
 
    @class_9148
    public void method_384(class_5596 var1) {
-      if (MinecraftClient.method_8510().field_9601 == null && this.field_298) {
+      if (MinecraftClient.getInstance().field_9601 == null && this.field_298) {
          this.method_378();
-      } else if (MinecraftClient.method_8510().field_9601 != null && !this.field_298) {
+      } else if (MinecraftClient.getInstance().field_9601 != null && !this.field_298) {
          this.method_375();
       }
    }
@@ -155,7 +155,7 @@ public class class_123 {
    public void method_375() {
       if (this.method_374()) {
          if (this.field_299 != null) {
-            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.method_8510().field_9602.method_43181()));
+            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
          }
 
          this.field_299 = new JTouchBar();
@@ -167,7 +167,7 @@ public class class_123 {
             this.field_299.addItem(new TouchBarItem("Jello", var3, true));
          }
 
-         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.method_8510().field_9602.method_43181()));
+         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
          this.field_298 = true;
       }
    }
@@ -192,7 +192,7 @@ public class class_123 {
    public void method_378() {
       if (this.method_374()) {
          if (this.field_299 != null) {
-            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.method_8510().field_9602.method_43181()));
+            this.field_299.hide(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
          }
 
          this.field_299 = new JTouchBar();
@@ -200,7 +200,7 @@ public class class_123 {
          TouchBarTextField var3 = new TouchBarTextField();
          var3.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
          this.field_299.addItem(new TouchBarItem("Jello", var3, true));
-         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.method_8510().field_9602.method_43181()));
+         this.field_299.show(GLFWNativeCocoa.glfwGetCocoaWindow(MinecraftClient.getInstance().field_9602.method_43181()));
          this.field_298 = false;
       }
    }

@@ -105,11 +105,11 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
       var5.field_41755 = -var9 * 20.0F;
       var5.field_29618 = var5.field_41701;
       var5.field_29657 = var5.field_41701;
-      class_6122 var18 = MinecraftClient.method_8510().method_8587();
+      class_6122 var18 = MinecraftClient.getInstance().method_8587();
       var12.method_24652();
       var18.method_28123(var12);
       var18.method_28136(false);
-      class_3758 var19 = MinecraftClient.method_8510().method_8589().method_13796();
+      class_3758 var19 = MinecraftClient.getInstance().method_8589().method_13796();
       class_3542.method_16430(() -> var18.method_28115(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
       var19.method_17415();
       var18.method_28136(true);

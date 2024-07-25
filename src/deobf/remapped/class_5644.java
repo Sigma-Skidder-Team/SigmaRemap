@@ -27,7 +27,7 @@ public class class_5644 {
    public static void method_25553(class_8591 var0) {
       method_25554();
       if (var0 != null) {
-         if (class_7860.field_39861.method_3596() && MinecraftClient.method_8510().method_8498() == null) {
+         if (class_7860.field_39861.method_3596() && MinecraftClient.getInstance().method_8498() == null) {
             class_3111.method_14277("[Shaders] Delayed loading of item mappings after resources are loaded");
             field_28614 = true;
          } else {

@@ -99,7 +99,7 @@ public class class_1996 extends class_2612 implements class_1768 {
    public void method_32145(int var1, int var2) {
       super.method_32145(var1, var2);
       class_3407 var5 = (class_3407)this.field_36283;
-      MinecraftClient.method_8510();
+      MinecraftClient.getInstance();
       float var6 = (float)(0.07F * (60.0 / (double) MinecraftClient.method_8501()));
       this.field_10144 = this.field_10144 + (!this.method_7901() ? 0.0F : (!this.field_10140 ? var6 : -var6));
       this.field_10144 = Math.max(0.0F, Math.min(1.0F, this.field_10144));

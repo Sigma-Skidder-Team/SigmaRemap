@@ -66,7 +66,7 @@ public class class_7762 extends class_341 {
    public void method_1658(BooleanSupplier var1) {
       this.method_35209();
       boolean var4 = this.field_39352;
-      this.field_39352 = MinecraftClient.method_8510().method_8614() != null && MinecraftClient.method_8510().method_8564();
+      this.field_39352 = MinecraftClient.getInstance().method_8614() != null && MinecraftClient.getInstance().method_8564();
       class_3492 var5 = this.method_1704();
       if (!var4 && this.field_39352) {
          var5.method_16056("autoSave");

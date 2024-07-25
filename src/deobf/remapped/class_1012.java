@@ -11,7 +11,7 @@ public class class_1012 extends class_1809 {
    }
 
    public class_4150 method_4362(class_7832 var1) {
-      MinecraftClient var4 = MinecraftClient.method_8510();
+      MinecraftClient var4 = MinecraftClient.getInstance();
       class_599 var5 = var4.method_8606().method_25060();
 
       try (InputStream var6 = var5.䴂쬫ಽ䩉㐖쬫(class_3168.field_15844, class_6340.method_29018())) {

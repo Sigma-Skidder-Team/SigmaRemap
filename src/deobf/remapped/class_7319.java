@@ -153,7 +153,7 @@ public class class_7319 extends class_9521 implements class_1200 {
          this.field_37428.accept(var15);
       }
 
-      MinecraftClient var19 = MinecraftClient.method_8510();
+      MinecraftClient var19 = MinecraftClient.getInstance();
       class_7889 var20 = var19.method_8577();
       if (!var13) {
          if (!var12) {

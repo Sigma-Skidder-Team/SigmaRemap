@@ -10,7 +10,7 @@ public class class_4292 {
    private short field_20826;
    private boolean field_20824 = false;
    private List<class_5660> field_20823 = new ArrayList<class_5660>();
-   public MinecraftClient field_20825 = MinecraftClient.method_8510();
+   public MinecraftClient field_20825 = MinecraftClient.getInstance();
 
    public class_4292() {
       SigmaMainClass.method_3328().method_3302().method_7908(this);

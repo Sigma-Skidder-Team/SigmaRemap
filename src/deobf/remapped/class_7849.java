@@ -107,7 +107,7 @@ public class class_7849 {
       var2 = (int)((float)var2 * class_6763.field_34898);
       var3 = (int)((float)var3 * class_6763.field_34898);
       var4 = (int)((float)var4 * class_6763.field_34898);
-      var1 = MinecraftClient.method_8510().field_9602.method_43198() - var1 - var3;
+      var1 = MinecraftClient.getInstance().field_9602.method_43198() - var1 - var3;
       if (var4 <= 0) {
          var4 = 1;
       }

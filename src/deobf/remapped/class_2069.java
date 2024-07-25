@@ -51,7 +51,7 @@ public class class_2069 extends class_7114 {
          this.field_10440 += var4;
       }
 
-      MinecraftClient var7 = MinecraftClient.method_8510();
+      MinecraftClient var7 = MinecraftClient.getInstance();
       var7.method_8577().method_35674(field_10438);
       byte var8 = 29;
       if (!this.field_10433.method_35013()) {

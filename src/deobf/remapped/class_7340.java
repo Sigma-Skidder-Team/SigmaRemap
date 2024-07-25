@@ -22,7 +22,7 @@ public enum class_7340 implements class_1342 {
 
    private class_7340(String var3) {
       this.field_37531 = var3;
-      this.field_37545 = MinecraftClient.method_8510().method_8587();
+      this.field_37545 = MinecraftClient.getInstance().method_8587();
    }
 
    public String method_33470() {
@@ -31,7 +31,7 @@ public enum class_7340 implements class_1342 {
 
    @Override
    public boolean method_6191() {
-      class_8145 var3 = MinecraftClient.method_8510().method_8516();
+      class_8145 var3 = MinecraftClient.getInstance().method_8516();
       if (var3 instanceof class_5834) {
          class_5834 var4 = (class_5834)var3;
          switch (this) {

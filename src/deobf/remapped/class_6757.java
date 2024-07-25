@@ -25,7 +25,7 @@ public class class_6757 extends class_2269 {
       this.field_34864 = var1;
       this.field_34870 = var2;
       this.field_34866 = var3;
-      this.field_34865 = MinecraftClient.method_8510();
+      this.field_34865 = MinecraftClient.getInstance();
       this.field_34868 = new class_4639("servers/" + Hashing.sha1().hashUnencodedChars(var3.field_12675) + "/icon");
       this.field_34867 = (class_7884)this.field_34865.method_8577().method_35679(this.field_34868);
    }

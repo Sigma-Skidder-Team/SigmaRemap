@@ -60,7 +60,7 @@ public class class_903 extends class_2255<class_4797> {
    private static class_3581 method_3868(class_558 var0, GameProfile var1) {
       class_4639 var4 = field_4632.get(var0);
       if (var0 == class_8469.field_43283 && var1 != null) {
-         MinecraftClient var5 = MinecraftClient.method_8510();
+         MinecraftClient var5 = MinecraftClient.getInstance();
          Map var6 = var5.method_8557().method_44310(var1);
          return !var6.containsKey(Type.SKIN)
             ? class_3581.method_16755(class_1512.method_6921(class_704.method_3242(var1)))

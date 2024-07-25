@@ -1627,7 +1627,7 @@ public class class_1092 implements class_392 {
                this.method_4801(class_6538.field_33248);
             } else {
                this.field_6026.execute(() -> this.field_6026.method_8609(new class_9640(var3 -> {
-                     this.field_6026 = MinecraftClient.method_8510();
+                     this.field_6026 = MinecraftClient.getInstance();
                      class_2560 var6x = this.field_6026.method_8530();
                      if (!var3) {
                         if (var6x != null) {

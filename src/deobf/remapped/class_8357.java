@@ -89,7 +89,7 @@ public class class_8357 extends class_2733 {
 
    @Override
    public class_8599 method_12293(class_9873 var1, float var2) {
-      class_6122 var5 = MinecraftClient.method_8510().method_8587();
+      class_6122 var5 = MinecraftClient.getInstance().method_8587();
       Object var6 = var5.method_28130().get(class_6629.field_34315);
       if (var6 instanceof class_2207) {
          if (((class_7067)var6).method_32557() == null) {

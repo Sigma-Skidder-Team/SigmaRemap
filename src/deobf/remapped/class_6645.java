@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class class_6645 {
    private static String[] field_34383;
-   private MinecraftClient field_34385 = MinecraftClient.method_8510();
+   private MinecraftClient field_34385 = MinecraftClient.getInstance();
    private HashMap<Integer, Date> field_34384 = new HashMap<Integer, Date>();
 
    public void method_30524() {

@@ -39,7 +39,7 @@ public class class_1840 extends class_266 {
 
    public class_1840() {
       super(new TranslationTextComponent("gui.socialInteractions.title"));
-      this.method_8132(MinecraftClient.method_8510());
+      this.method_8132(MinecraftClient.getInstance());
    }
 
    private int method_8136() {

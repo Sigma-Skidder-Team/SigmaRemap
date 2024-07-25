@@ -60,7 +60,7 @@ import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public abstract class class_341 extends class_7760<class_9320> implements class_4252, class_5801, AutoCloseable {
+public abstract class class_341 extends ReentrantThreadExecutor<class_9320> implements SnooperListener, class_5801, AutoCloseable {
    private static final Logger field_1316 = LogManager.getLogger();
    public static final File field_1312 = new File("usercache.json");
    public static final class_6292 field_1290 = new class_6292(

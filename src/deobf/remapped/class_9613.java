@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class class_9613 extends class_2255<class_3420> {
    private static String[] field_48982;
-   private final class_856 field_48981 = MinecraftClient.method_8510().method_8505();
+   private final class_856 field_48981 = MinecraftClient.getInstance().method_8505();
 
    public class_9613(class_3569 var1) {
       super(var1);

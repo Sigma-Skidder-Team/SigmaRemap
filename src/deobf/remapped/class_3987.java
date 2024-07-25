@@ -7,7 +7,7 @@ public class class_3987 extends class_9873 {
 
    public class_3987() {
       super(class_3581::method_16755);
-      class_8205 var3 = new class_8205(MinecraftClient.method_8510().method_8587());
+      class_8205 var3 = new class_8205(MinecraftClient.getInstance().method_8587());
       this.field_19385 = (class_1549)class_7860.field_40062.method_39231(var3, 0);
       this.field_19383 = (class_1549)class_7860.field_40062.method_39231(var3, 1);
       this.field_19384 = (class_1549)class_7860.field_40062.method_39231(var3, 2);

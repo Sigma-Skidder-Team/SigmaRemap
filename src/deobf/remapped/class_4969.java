@@ -111,8 +111,8 @@ public class class_4969 extends class_9128 {
    private void method_22828(class_3278 var1) throws IOException {
       if (this.method_42015() && field_46692.field_9632 != null && field_46692.field_9601 != null) {
          if (this.field_25730 != null) {
-            if (!MinecraftClient.method_8510().field_9577.field_45470) {
-               if (!MinecraftClient.method_8510().field_9577.field_45567) {
+            if (!MinecraftClient.getInstance().field_9577.field_45470) {
+               if (!MinecraftClient.getInstance().field_9577.field_45567) {
                   ByteBuffer var4 = this.field_25730;
                   this.field_25732 = var1.method_14966();
                   if (var4 != null) {

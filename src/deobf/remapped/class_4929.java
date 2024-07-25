@@ -48,7 +48,7 @@ public class class_4929 implements class_3025 {
 
    @Override
    public void method_16059() {
-      class_2434 var3 = (class_2434)class_7860.method_35557(MinecraftClient.method_8510(), field_25505);
+      class_2434 var3 = (class_2434)class_7860.method_35557(MinecraftClient.getInstance(), field_25505);
       this.field_25515 = var3 != null && var3.method_11091() == this;
       this.field_25514 = this.field_25515 && class_5099.method_23418();
       if (!this.field_25507) {

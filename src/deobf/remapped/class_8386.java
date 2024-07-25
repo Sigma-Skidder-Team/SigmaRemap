@@ -70,7 +70,7 @@ public class class_8386<T extends class_5834, M extends class_6521<T> & class_86
                var1.method_36065(0.0, 0.1875, 0.0);
             }
 
-            MinecraftClient.method_8510().method_8574().method_42248(var4, var13, class_5612.field_28497, false, var1, var2, var3);
+            MinecraftClient.getInstance().method_8574().method_42248(var4, var13, class_5612.field_28497, false, var1, var2, var3);
          }
 
          var1.method_36064();

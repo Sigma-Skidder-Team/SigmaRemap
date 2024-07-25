@@ -25,7 +25,7 @@ public enum class_4169 implements class_6839 {
 
    private class_4169(String var3) {
       this.field_20294 = var3;
-      this.field_20284 = MinecraftClient.method_8510().method_8587();
+      this.field_20284 = MinecraftClient.getInstance().method_8587();
    }
 
    public String method_19343() {

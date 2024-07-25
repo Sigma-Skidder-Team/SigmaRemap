@@ -12,7 +12,7 @@ public class class_4244 extends class_9128 {
          if (field_46692.field_9632.field_29666 != 1) {
             if (field_46692.field_9632.field_29666 == 0) {
                field_46692.field_9577.field_45416.field_30024 = class_9732.method_44934(
-                  MinecraftClient.method_8510().field_9602.method_43181(), field_46692.field_9577.field_45416.field_30027.field_17800
+                  MinecraftClient.getInstance().field_9602.method_43181(), field_46692.field_9577.field_45416.field_30027.field_17800
                );
             }
          } else {

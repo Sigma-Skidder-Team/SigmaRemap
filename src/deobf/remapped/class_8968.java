@@ -21,9 +21,9 @@ public class class_8968 extends class_3620 {
 
          this.method_41141(
             this.method_41136(),
-            (double)var5.method_12173() + 0.5 - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_61(),
-            (double)(var5.method_12165() + 1) - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_60(),
-            (double)var5.method_12185() + 0.5 - MinecraftClient.method_8510().field_9590.method_35949().method_41627().method_62()
+            (double)var5.method_12173() + 0.5 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_61(),
+            (double)(var5.method_12165() + 1) - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_60(),
+            (double)var5.method_12185() + 0.5 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_62()
          );
       }
    }

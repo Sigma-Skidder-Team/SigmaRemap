@@ -30,7 +30,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.lwjgl.opengl.GL11;
 
 public class class_2026 {
-   private static MinecraftClient field_10270 = MinecraftClient.method_8510();
+   private static MinecraftClient field_10270 = MinecraftClient.getInstance();
    private boolean field_10295 = false;
    private class_8896 field_10298;
    private int field_10285 = 50;

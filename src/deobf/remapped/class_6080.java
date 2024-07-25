@@ -7,7 +7,7 @@ import java.util.List;
 
 public class class_6080 {
    private static String[] field_31112;
-   public MinecraftClient field_31116 = MinecraftClient.method_8510();
+   public MinecraftClient field_31116 = MinecraftClient.getInstance();
    private List<class_8235> field_31118 = new ArrayList<class_8235>();
    private int field_31111 = 20;
    private int field_31115 = 1;
@@ -57,13 +57,13 @@ public class class_6080 {
 
    @class_9148
    private void method_27845(class_3278 var1) {
-      if (!MinecraftClient.method_8510().field_9577.field_45567) {
+      if (!MinecraftClient.getInstance().field_9577.field_45567) {
          this.field_31115 = Math.max(Math.round((float)(6 - MinecraftClient.method_8501() / 10)), 1);
 
          for (int var4 = 0; var4 < this.field_31118.size(); var4++) {
             class_8235 var5 = this.field_31118.get(var4);
             float var6 = this.method_27838(var5);
-            int var7 = MinecraftClient.method_8510().field_9602.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var6 * var6);
+            int var7 = MinecraftClient.getInstance().field_9602.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var6 * var6);
             int var8 = this.field_31116.field_9602.method_43163()
                - this.field_31121
                - this.field_31117
@@ -126,7 +126,7 @@ public class class_6080 {
       for (int var3 = 0; var3 < this.field_31118.size(); var3++) {
          class_8235 var4 = this.field_31118.get(var3);
          float var5 = this.method_27838(var4);
-         int var6 = MinecraftClient.method_8510().field_9602.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var5 * var5);
+         int var6 = MinecraftClient.getInstance().field_9602.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var5 * var5);
          int var7 = this.field_31116.field_9602.method_43163()
             - this.field_31121
             - this.field_31117

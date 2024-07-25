@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.lwjgl.opengl.GL11;
 
 public class class_4746 {
-   private static MinecraftClient field_22998 = MinecraftClient.method_8510();
+   private static MinecraftClient field_22998 = MinecraftClient.getInstance();
    private static class_4067 field_22994;
    public static class_4230 field_22996;
    public static class_4230 field_23002;

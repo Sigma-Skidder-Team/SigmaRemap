@@ -8,7 +8,7 @@ public class class_130 {
 
    public class_130(class_1973 var1) {
       this.field_322 = var1;
-      this.field_323 = MinecraftClient.method_8510();
+      this.field_323 = MinecraftClient.getInstance();
    }
 
    public void method_401(float var1, float var2) {

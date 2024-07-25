@@ -10,7 +10,7 @@ public class class_8734 {
    private float[] field_44745;
    public final int field_44746 = 3;
    private class_9128 field_44747;
-   public MinecraftClient field_44744 = MinecraftClient.method_8510();
+   public MinecraftClient field_44744 = MinecraftClient.getInstance();
    public boolean field_44749;
    public HashMap<class_8145, List<class_9097<class_1343, Long>>> field_44743 = new HashMap<class_8145, List<class_9097<class_1343, Long>>>();
 

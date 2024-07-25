@@ -3,7 +3,7 @@ package remapped;
 import java.util.Date;
 
 public class class_2315 extends class_2596 {
-   private static MinecraftClient field_11583 = MinecraftClient.method_8510();
+   private static MinecraftClient field_11583 = MinecraftClient.getInstance();
    private class_8343 field_11591;
    public Date field_11592;
    public class_3451 field_11588;
@@ -18,8 +18,8 @@ public class class_2315 extends class_2596 {
    public class_2315() {
       super("KeybindManager");
       this.field_11592 = new Date();
-      int var3 = Math.max(300, Math.min(850, MinecraftClient.method_8510().field_9602.method_43166() - 40));
-      int var4 = Math.max(200, Math.min(550, MinecraftClient.method_8510().field_9602.method_43163() - 80));
+      int var3 = Math.max(300, Math.min(850, MinecraftClient.getInstance().field_9602.method_43166() - 40));
+      int var4 = Math.max(200, Math.min(550, MinecraftClient.getInstance().field_9602.method_43163() - 80));
       this.method_32148(this.field_11588 = new class_3451(this, "mapView", (this.field_36278 - var3) / 2, (this.field_36257 - var4) / 2, var3, var4));
       this.field_11588.field_16933.method_4322((var2, var3x, var4x, var5) -> this.method_32102(new class_1006(this, this, var3x, var4x, var5)));
       this.field_11588.field_16933.method_4320(var1 -> this.method_10637());

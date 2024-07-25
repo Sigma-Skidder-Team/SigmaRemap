@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class class_9539 {
-   private static final YggdrasilAuthenticationService field_48534 = new YggdrasilAuthenticationService(MinecraftClient.method_8510().method_8607());
+   private static final YggdrasilAuthenticationService field_48534 = new YggdrasilAuthenticationService(MinecraftClient.getInstance().method_8607());
    private static final MinecraftSessionService field_48532 = field_48534.createMinecraftSessionService();
    public static LoadingCache<String, GameProfile> field_48533 = CacheBuilder.newBuilder().expireAfterWrite(60L, TimeUnit.MINUTES).build(new class_8463());
 

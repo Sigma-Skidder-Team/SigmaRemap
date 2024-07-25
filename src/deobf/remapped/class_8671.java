@@ -146,7 +146,7 @@ public class class_8671 {
          class_1523 var9 = new class_1523(var5);
          SigmaMainClass.method_3328().method_3302().method_7914(var9);
          if (!var9.method_29716()) {
-            if (var1 == MinecraftClient.method_8510().method_8552().method_43181()) {
+            if (var1 == MinecraftClient.getInstance().method_8552().method_43181()) {
                double var10 = (!this.field_44499.field_9577.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.field_9577.field_45578;
                if (this.field_44499.field_9610 == null) {
                   if (this.field_44499.field_9623 == null) {
@@ -213,7 +213,7 @@ public class class_8671 {
    }
 
    private void method_39839(long var1, double var3, double var5) {
-      if (var1 == MinecraftClient.method_8510().method_8552().method_43181()) {
+      if (var1 == MinecraftClient.getInstance().method_8552().method_43181()) {
          if (this.field_44489) {
             this.field_44482 = var3;
             this.field_44493 = var5;

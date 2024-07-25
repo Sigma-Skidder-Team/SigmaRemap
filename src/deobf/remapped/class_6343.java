@@ -14,7 +14,7 @@ public class class_6343 extends class_2269 {
    public class_6343(class_4145 var1, class_7295 var2) {
       this.field_32390 = var1;
       this.field_32391 = var2;
-      this.field_32392 = MinecraftClient.method_8510();
+      this.field_32392 = MinecraftClient.getInstance();
    }
 
    @Override

@@ -17,7 +17,7 @@ public class class_6185 extends class_1094 {
 
    @Override
    public void method_1163() {
-      MinecraftClient var3 = MinecraftClient.method_8510();
+      MinecraftClient var3 = MinecraftClient.getInstance();
       var3.method_8509(false);
       var3.method_8606().method_25058();
       class_7567.method_34410(this.field_31607.getString() + ": " + this.field_31604.getString());
@@ -32,7 +32,7 @@ public class class_6185 extends class_1094 {
 
    @Override
    public void method_1156() {
-      MinecraftClient.method_8510().method_8609(this.field_31605);
+      MinecraftClient.getInstance().method_8609(this.field_31605);
    }
 
    @Override

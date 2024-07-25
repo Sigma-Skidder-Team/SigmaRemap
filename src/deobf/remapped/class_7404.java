@@ -210,7 +210,7 @@ public class class_7404 extends class_266 {
          method_33721(var5);
       } catch (IOException var18) {
          if (!var4) {
-            class_4201.method_19563(MinecraftClient.method_8510(), var1);
+            class_4201.method_19563(MinecraftClient.getInstance(), var1);
          }
 
          field_37786.warn("Failed to create backup of level {}", var1, var18);
@@ -230,12 +230,12 @@ public class class_7404 extends class_266 {
       if (var5 != null) {
          TranslationTextComponent var9 = new TranslationTextComponent("selectWorld.edit.backupFailed");
          StringTextComponent var10 = new StringTextComponent(var5.getMessage());
-         MinecraftClient.method_8510().method_8519().method_42329(new class_4201(class_200.field_669, var9, var10));
+         MinecraftClient.getInstance().method_8519().method_42329(new class_4201(class_200.field_669, var9, var10));
          return false;
       } else {
          TranslationTextComponent var6 = new TranslationTextComponent("selectWorld.edit.backupCreated", var0.method_17070());
          TranslationTextComponent var7 = new TranslationTextComponent("selectWorld.edit.backupSize", class_9299.method_42815((double)var3 / 1048576.0));
-         MinecraftClient.method_8510().method_8519().method_42329(new class_4201(class_200.field_669, var6, var7));
+         MinecraftClient.getInstance().method_8519().method_42329(new class_4201(class_200.field_669, var6, var7));
          return true;
       }
    }

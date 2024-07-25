@@ -17,7 +17,7 @@ public class class_7100 implements class_7912 {
       this.field_36621 = Lists.newArrayList();
 
       for (String var6 : var2.method_23378()) {
-         class_753 var7 = MinecraftClient.method_8510().method_8614().method_4799(var6);
+         class_753 var7 = MinecraftClient.getInstance().method_8614().method_4799(var6);
          if (var7 != null) {
             this.field_36621.add(var7);
          }
@@ -52,7 +52,7 @@ public class class_7100 implements class_7912 {
          class_2089.method_9774(var1, 1, 1, 15, 15, class_9299.method_42796(var7 * var2, var8 * var2, var9 * var2) | var3 << 24);
       }
 
-      MinecraftClient.method_8510().method_8577().method_35674(this.field_36623);
+      MinecraftClient.getInstance().method_8577().method_35674(this.field_36623);
       class_3542.method_16480(var2, var2, var2, (float)var3 / 255.0F);
       class_2089.method_9780(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
       class_2089.method_9780(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);

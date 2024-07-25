@@ -168,8 +168,8 @@ public class class_268 extends class_9128 {
    @class_5355
    private void method_1196(class_3278 var1) {
       if (this.method_42015() && field_46692.field_9632 != null) {
-         if (!MinecraftClient.method_8510().field_9577.field_45470) {
-            if (!MinecraftClient.method_8510().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().field_9577.field_45470) {
+            if (!MinecraftClient.getInstance().field_9577.field_45567) {
                this.method_1208();
 
                for (class_3622 var5 : field_960) {

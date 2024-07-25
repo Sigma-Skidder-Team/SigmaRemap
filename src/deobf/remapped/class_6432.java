@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_6432 extends class_2596 {
-   private static MinecraftClient field_32855 = MinecraftClient.method_8510();
+   private static MinecraftClient field_32855 = MinecraftClient.getInstance();
    public class_6086 field_32857;
 
    public class_6432() {
