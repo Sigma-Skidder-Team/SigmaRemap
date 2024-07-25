@@ -16,7 +16,7 @@ public class class_367 extends Module {
          super.method_42023(var1);
       } else {
          if (this.field_46700 != var1) {
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Premium", this.method_41992() + " Not yet available for free version"));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Premium", this.getName() + " Not yet available for free version"));
             SigmaMainClass.getInstance().method_3315().method_21206("error");
          }
       }
@@ -28,7 +28,7 @@ public class class_367 extends Module {
          super.method_42018(var1);
       } else {
          if (this.field_46700 != var1 && var1) {
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Premium", this.method_41992() + " Not yet available for free version"));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Premium", this.getName() + " Not yet available for free version"));
             SigmaMainClass.getInstance().method_3315().method_21206("error");
          }
       }
@@ -40,7 +40,7 @@ public class class_367 extends Module {
          super.method_41991(var1);
       } else {
          if (this.method_42015() != var1) {
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Premium", this.method_41992() + " Not yet available for free version"));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Premium", this.getName() + " Not yet available for free version"));
             SigmaMainClass.getInstance().method_3315().method_21206("error");
          }
       }

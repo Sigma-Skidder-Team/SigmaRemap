@@ -16,7 +16,7 @@ public class class_7684 extends Module {
    @EventListen
    private void method_34825(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45567) {
             if (!(mcInstance.field_9623 instanceof class_5766)) {
                float var4 = mcInstance.field_9632.field_41701 % 360.0F - this.field_39044 % 360.0F;
                this.field_39044 = this.field_39044 + var4 / (float) MinecraftClient.method_8501() * 1.5F;

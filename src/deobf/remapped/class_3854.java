@@ -232,7 +232,7 @@ public class class_3854 extends Module {
             }
          }
 
-         if (mcInstance.field_9577.field_45450.field_30024) {
+         if (mcInstance.gameOptions.field_45450.field_30024) {
             var1.method_35235(0.25);
          }
       }

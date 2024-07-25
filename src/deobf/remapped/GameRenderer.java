@@ -294,7 +294,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       if (!this.field_40630) {
          double var6 = 70.0;
          if (var3) {
-            var6 = this.field_40612.field_9577.field_45543;
+            var6 = this.field_40612.gameOptions.field_45543;
             if (class_3111.method_14313()) {
                var6 *= (double)class_9299.method_42795(var2, this.field_40641, this.field_40607);
             }
@@ -302,20 +302,20 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
          boolean var8 = false;
          if (this.field_40612.field_9623 == null) {
-            var8 = this.field_40612.field_9577.field_45548.method_27060();
+            var8 = this.field_40612.gameOptions.field_45548.method_27060();
          }
 
          if (!var8) {
             if (class_3111.field_15481) {
                class_3111.field_15481 = false;
-               this.field_40612.field_9577.field_45499 = class_3111.field_15466;
+               this.field_40612.gameOptions.field_45499 = class_3111.field_15466;
                this.field_40612.worldRenderer.method_20018();
             }
          } else {
             if (!class_3111.field_15481) {
                class_3111.field_15481 = true;
-               class_3111.field_15466 = this.field_40612.field_9577.field_45499;
-               this.field_40612.field_9577.field_45499 = true;
+               class_3111.field_15466 = this.field_40612.gameOptions.field_45499;
+               this.field_40612.gameOptions.field_45499 = true;
                this.field_40612.worldRenderer.method_20018();
             }
 
@@ -393,14 +393,14 @@ public class GameRenderer implements class_6491, AutoCloseable {
          if (var4) {
             var1.method_36063();
             this.method_35952(var1, var3);
-            if (this.field_40612.field_9577.field_45512) {
+            if (this.field_40612.gameOptions.field_45512) {
                this.method_35935(var1, var3);
             }
 
             var10 = this.field_40612.method_8516() instanceof class_5834 && ((class_5834)this.field_40612.method_8516()).method_26507();
-            if (this.field_40612.field_9577.method_40867().method_42383()
+            if (this.field_40612.gameOptions.method_40867().method_42383()
                && !var10
-               && !this.field_40612.field_9577.field_45567
+               && !this.field_40612.gameOptions.field_45567
                && this.field_40612.field_9647.method_42158() != class_4666.field_22756) {
                this.field_40623.method_26126();
                if (!class_3111.method_14424()) {
@@ -438,12 +438,12 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.field_40623.method_26122();
          class_9081 var11 = new class_9081();
          SigmaMainClass.getInstance().method_3302().method_7914(var11);
-         if (this.field_40612.field_9577.method_40867().method_42383() && !var10 && !var11.method_29716()) {
+         if (this.field_40612.gameOptions.method_40867().method_42383() && !var10 && !var11.method_29716()) {
             class_450.method_2171(this.field_40612, var1);
             this.method_35952(var1, var3);
          }
 
-         if (this.field_40612.field_9577.field_45512) {
+         if (this.field_40612.gameOptions.field_45512) {
             this.method_35935(var1, var3);
          }
       }
@@ -494,8 +494,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
    public void method_35945(float var1, long var2, boolean var4) {
       this.method_35933();
       if (!this.field_40612.method_8558()
-         && this.field_40612.field_9577.field_45426
-         && (!this.field_40612.field_9577.field_45570 || !this.field_40612.field_9625.method_39842())) {
+         && this.field_40612.gameOptions.field_45426
+         && (!this.field_40612.gameOptions.field_45570 || !this.field_40612.field_9625.method_39842())) {
          if (Util.getMeasuringTimeMs() - this.field_40644 > 500L) {
             this.field_40612.method_8597(false);
          }
@@ -562,21 +562,21 @@ public class GameRenderer implements class_6491, AutoCloseable {
             this.field_40612.method_8562().method_16050("gui");
             if (this.field_40612.field_9632 != null) {
                float var11 = class_9299.method_42795(var1, this.field_40612.field_9632.field_30505, this.field_40612.field_9632.field_30510);
-               if (var11 > 0.0F && this.field_40612.field_9632.method_26480(Effects.field_19732) && this.field_40612.field_9577.field_45469 < 1.0F) {
-                  this.method_35941(var11 * (1.0F - this.field_40612.field_9577.field_45469));
+               if (var11 > 0.0F && this.field_40612.field_9632.method_26480(Effects.field_19732) && this.field_40612.gameOptions.field_45469 < 1.0F) {
+                  this.method_35941(var11 * (1.0F - this.field_40612.gameOptions.field_45469));
                }
             }
 
-            if (!this.field_40612.field_9577.field_45567 || this.field_40612.field_9623 != null) {
+            if (!this.field_40612.gameOptions.field_45567 || this.field_40612.field_9623 != null) {
                class_3542.method_16433();
                this.method_35921(this.field_40612.method_8552().method_43165(), this.field_40612.method_8552().method_43177(), var1);
-               class_2209.field_11030.method_38419();
+               NotificationIcons.field_11030.method_38419();
                this.field_40612.field_9614.method_13997(var10, var1);
-               if (this.field_40612.field_9577.field_45385 && !this.field_40612.field_9577.field_45470) {
+               if (this.field_40612.gameOptions.field_45385 && !this.field_40612.gameOptions.field_45470) {
                   class_3111.method_14343(var10);
                }
 
-               if (this.field_40612.field_9577.field_45470) {
+               if (this.field_40612.gameOptions.field_45470) {
                   class_5099.method_23420(var10, (int)this.field_40612.method_8552().method_43189());
                }
 
@@ -656,8 +656,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
       this.method_35927();
       class_5849.method_26667();
       class_5099.method_23416();
-      if (this.field_40612.field_9577.field_45523) {
-         this.field_40612.field_9577.field_45471 = true;
+      if (this.field_40612.gameOptions.field_45523) {
+         this.field_40612.gameOptions.field_45471 = true;
       }
    }
 
@@ -696,7 +696,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          return false;
       } else {
          Entity var3 = this.field_40612.method_8516();
-         boolean var4 = var3 instanceof class_704 && !this.field_40612.field_9577.field_45567;
+         boolean var4 = var3 instanceof class_704 && !this.field_40612.gameOptions.field_45567;
          if (var4 && !((class_704)var3).field_3876.field_4938) {
             class_6098 var5 = ((class_5834)var3).method_26446();
             class_7474 var6 = this.field_40612.field_9587;
@@ -740,7 +740,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       boolean var8 = this.method_35926();
       this.field_40612.method_8562().method_16050("camera");
       Camera var9 = this.field_40648;
-      this.field_40640 = (float)(this.field_40612.field_9577.field_45537 * 16);
+      this.field_40640 = (float)(this.field_40612.gameOptions.field_45537 * 16);
       if (class_3111.method_14324()) {
          this.field_40640 *= 0.95F;
       }
@@ -757,13 +757,13 @@ public class GameRenderer implements class_6491, AutoCloseable {
       }
 
       this.method_35952(var10, var1);
-      if (this.field_40612.field_9577.field_45512) {
+      if (this.field_40612.gameOptions.field_45512) {
          this.method_35935(var10, var1);
       }
 
       float var12 = class_9299.method_42795(var1, this.field_40612.field_9632.field_30505, this.field_40612.field_9632.field_30510)
-         * this.field_40612.field_9577.field_45469
-         * this.field_40612.field_9577.field_45469;
+         * this.field_40612.gameOptions.field_45469
+         * this.field_40612.gameOptions.field_45469;
       if (var12 > 0.0F) {
          int var13 = !this.field_40612.field_9632.method_26480(Effects.field_19732) ? 20 : 7;
          float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
@@ -784,8 +784,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
       var9.method_41643(
          this.field_40612.field_9601,
          (Entity)(this.field_40612.method_8516() != null ? this.field_40612.method_8516() : this.field_40612.field_9632),
-         !this.field_40612.field_9577.method_40867().method_42383(),
-         this.field_40612.field_9577.method_40867().method_42384(),
+         !this.field_40612.gameOptions.method_40867().method_42383(),
+         this.field_40612.gameOptions.method_40867().method_42384(),
          var1
       );
       if (class_7860.field_40044.method_3596()) {

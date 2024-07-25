@@ -20,8 +20,8 @@ public class AutoTotemModule extends Module {
    }
 
    @Override
-   public String method_41987() {
-      return this.method_41992() + "";
+   public String getName2() {
+      return this.getName() + "";
    }
 
    private void method_37568() {

@@ -55,16 +55,16 @@ public class class_7376 extends SecondModule {
          if (this.field_37692 != null) {
             if (mcInstance.field_9623 instanceof class_5766) {
                this.method_33594(null);
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Auto Join", "Auto join was canceled.", 2500));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Auto Join", "Auto join was canceled.", 2500));
             } else if (this.field_37692.method_6909()) {
                class_314.method_1423(this.field_37692.method_6912());
                this.method_33594(null);
             } else if ((int)(this.field_37692.method_6911() / 1000L) + 1 < this.field_37693) {
                this.field_37693 = (int)(this.field_37692.method_6911() / 1000L) + 1;
                SigmaMainClass.getInstance()
-                  .method_3335()
-                  .method_27841(
-                     new class_8235("Auto Join", "Joining a new game in " + this.field_37693 + " second" + (this.field_37693 > 1 ? "s" : "") + ".", 2000)
+                  .getNotificationManager()
+                  .pushNotification(
+                     new Notification("Auto Join", "Joining a new game in " + this.field_37693 + " second" + (this.field_37693 > 1 ? "s" : "") + ".", 2000)
                   );
             }
          }

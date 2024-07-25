@@ -46,14 +46,14 @@ public class class_6086 extends class_1859 {
          (float)(this.field_36261 + 20),
          20.0F,
          20.0F,
-         class_2209.field_11036,
+         NotificationIcons.field_11036,
          class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
       );
       ArrayList var5 = this.method_27867();
-      if (var5.size() > 0 && this.method_27865(this.field_31143, ((Module)var5.get(0)).method_41992())) {
-         String var6 = ((Module)var5.get(0)).method_41992();
+      if (var5.size() > 0 && this.method_27865(this.field_31143, ((Module)var5.get(0)).getName())) {
+         String var6 = ((Module)var5.get(0)).getName();
          String var7 = this.field_31143
-            + ((Module)var5.get(0)).method_41992().substring(this.field_31143.length(), var6.length())
+            + ((Module)var5.get(0)).getName().substring(this.field_31143.length(), var6.length())
             + (!((Module)var5.get(0)).method_42015() ? " - Disabled" : " - Enabled");
          class_73.method_87(
             this.field_31142.method_32097(),
@@ -71,7 +71,7 @@ public class class_6086 extends class_1859 {
       ArrayList var3 = new ArrayList();
       if (this.field_31143 != null && this.field_31143.length() != 0) {
          for (Module var5 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
-            if (this.method_27865(this.field_31143, var5.method_41992())) {
+            if (this.method_27865(this.field_31143, var5.getName())) {
                var3.add(var5);
             }
          }

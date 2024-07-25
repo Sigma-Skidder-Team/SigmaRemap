@@ -38,7 +38,7 @@ public class class_5523 {
       int var11 = var9.method_43178();
       int var12 = var9.method_43198();
       int var13 = var10.field_45484;
-      int var14 = var9.method_43164(var8.field_9577.field_45484, var8.field_9577.field_45463);
+      int var14 = var9.method_43164(var8.gameOptions.field_45484, var8.gameOptions.field_45463);
       int var15 = class_3111.method_14389();
       boolean var16 = class_3776.method_17487() && var15 > 1;
       if (var16) {

@@ -91,7 +91,7 @@ public class KillauraModule extends Module {
       this.field_12561
          .method_40099(
             mcInstance.field_9632.method_26617(class_2584.field_12791).method_27960() instanceof class_2235
-               && mcInstance.field_9577.field_45559.method_27060()
+               && mcInstance.gameOptions.field_45559.method_27060()
          );
       this.field_12564 = false;
       this.field_12552 = -1;
@@ -116,7 +116,7 @@ public class KillauraModule extends Module {
    @EventListen
    public void method_11541(class_717 var1) {
       if (this.method_42015() && this.getBooleanValueByName("Disable on death")) {
-         SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
+         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Aura", "Aura disabled due to respawn"));
          this.method_41999();
       }
    }
@@ -131,7 +131,7 @@ public class KillauraModule extends Module {
          if (this.getBooleanValueByName("Disable on death")) {
             if (!mcInstance.field_9632.method_37330()) {
                this.method_41999();
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Aura", "Aura disabled due to death"));
             }
          }
       }
@@ -439,7 +439,7 @@ public class KillauraModule extends Module {
             && var9
             && !mcInstance.field_9632.field_29654
             && !mcInstance.field_9632.method_37285()
-            && !mcInstance.field_9577.field_45450.method_27060()) {
+            && !mcInstance.gameOptions.field_45450.method_27060()) {
             if (!(var6 > 0.001)) {
                field_12548 = false;
             } else {
@@ -469,7 +469,7 @@ public class KillauraModule extends Module {
          this.onEnable();
       }
 
-      if (var6 != null && var6.size() != 0 && !mcInstance.field_9577.field_45530.method_27074()) {
+      if (var6 != null && var6.size() != 0 && !mcInstance.gameOptions.field_45530.method_27074()) {
          field_12558 = this.method_11557(var6);
          var6 = this.field_12561.method_40091(var4);
          if (var5.equals("Single") || var5.equals("Multi")) {

@@ -171,7 +171,7 @@ public class class_5766 extends Screen {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_41180(this.field_29142);
       this.field_29142.method_8273(true);
-      method_9774(var1, 2, this.field_940 - 14, this.field_941 - 2, this.field_940 - 2, this.field_943.field_9577.method_40881(Integer.MIN_VALUE));
+      method_9774(var1, 2, this.field_940 - 14, this.field_941 - 2, this.field_940 - 2, this.field_943.gameOptions.method_40881(Integer.MIN_VALUE));
       this.field_29142.method_6767(var1, var2, var3, var4);
       this.field_29143.method_4547(var1, var2, var3);
       Style var7 = this.field_943.field_9614.method_13991().method_18680((double)var2, (double)var3);

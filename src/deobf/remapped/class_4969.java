@@ -111,8 +111,8 @@ public class class_4969 extends Module {
    private void method_22828(class_3278 var1) throws IOException {
       if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
          if (this.field_25730 != null) {
-            if (!MinecraftClient.getInstance().field_9577.field_45470) {
-               if (!MinecraftClient.getInstance().field_9577.field_45567) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+               if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                   ByteBuffer var4 = this.field_25730;
                   this.field_25732 = var1.method_14966();
                   if (var4 != null) {
@@ -130,10 +130,10 @@ public class class_4969 extends Module {
                      float var11 = (float)this.field_25740 * var7;
                      float var12 = (float)this.field_25733 * var7;
                      class_73.method_149(this.field_25731, this.field_25732, this.field_25731 + this.field_25740, this.field_25732 + this.field_25733);
-                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, class_2209.field_11044);
+                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.field_11044);
                      float var13 = -var11 / 2.0F + (float)(this.field_25740 / 2) + var9;
                      float var14 = -var12 / 2.0F + (float)(this.field_25733 / 2) + var10;
-                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, class_2209.field_11030);
+                     class_73.method_96(0.0F, 0.0F, 0.0F, 0.0F, NotificationIcons.field_11030);
                      class_73.method_138(
                         var13,
                         var14,

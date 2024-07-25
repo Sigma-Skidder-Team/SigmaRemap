@@ -37,8 +37,8 @@ public class class_1964 extends Module {
    private void method_9062(class_3278 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null) {
-            if (!MinecraftClient.getInstance().field_9577.field_45470) {
-               if (!MinecraftClient.getInstance().field_9577.field_45567) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+               if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                   float var4 = Math.min(1.0F, 0.6F + this.field_9983.method_11123() * 4.0F);
                   String var5 = mcInstance.field_9632.method_37075().method_12173()
                      + " "

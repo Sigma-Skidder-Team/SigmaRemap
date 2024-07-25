@@ -29,7 +29,7 @@ public class class_2738 extends class_367 {
    @EventListen
    private void method_12308(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
-         if (mcInstance.field_9577.field_45560.method_27060()) {
+         if (mcInstance.gameOptions.field_45560.method_27060()) {
             double var4 = mcInstance.field_9632.method_37302();
             double var6 = mcInstance.field_9632.method_37309();
             double var8 = mcInstance.field_9632.method_37156();

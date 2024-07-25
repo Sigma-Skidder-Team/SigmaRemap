@@ -33,7 +33,7 @@ public class class_3721 extends class_367 {
       if (this.method_42015()) {
          if (mcInstance.field_9632.method_37243() != null) {
             if (!mcInstance.field_9632.method_37243().field_41726) {
-               if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+               if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = true;
                }
@@ -45,13 +45,13 @@ public class class_3721 extends class_367 {
    @EventListen
    private void method_17261(class_307 var1) {
       if (this.method_42015()) {
-         if (this.field_18223 && var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (this.field_18223 && var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             this.field_18223 = false;
          }
 
          if (mcInstance.field_9632.method_37243() != null) {
             if (!mcInstance.field_9632.method_37243().field_41726) {
-               if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+               if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = false;
                }
@@ -62,18 +62,18 @@ public class class_3721 extends class_367 {
 
    @Override
    public void onEnable() {
-      if (!mcInstance.field_9577.field_45560.method_27060()) {
-         if (!mcInstance.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+         if (!mcInstance.gameOptions.field_45560.method_27060()) {
             this.field_18223 = false;
          }
       } else {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          this.field_18223 = true;
       }
    }
 
    @Override
    public void onDisable() {
-      mcInstance.field_9577.field_45560.field_30024 = this.field_18223;
+      mcInstance.gameOptions.field_45560.field_30024 = this.field_18223;
    }
 }

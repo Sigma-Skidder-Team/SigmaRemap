@@ -100,25 +100,25 @@ public class class_5484 extends class_446 {
       this.field_27945
          .method_32148(
             this.field_27928 = new class_122(
-               this.field_27945, "play", var15, 27, 38, 38, class_2209.field_11037, new class_590(class_1255.field_6918.field_6917), null
+               this.field_27945, "play", var15, 27, 38, 38, NotificationIcons.field_11037, new class_590(class_1255.field_6918.field_6917), null
             )
          );
       this.field_27945
          .method_32148(
             this.field_27955 = new class_122(
-               this.field_27945, "pause", var15, 27, 38, 38, class_2209.field_11000, new class_590(class_1255.field_6918.field_6917), null
+               this.field_27945, "pause", var15, 27, 38, 38, NotificationIcons.field_11000, new class_590(class_1255.field_6918.field_6917), null
             )
          );
       this.field_27945
          .method_32148(
             this.field_27950 = new class_122(
-               this.field_27945, "forwards", var15 + 114, 23, 46, 46, class_2209.field_11046, new class_590(class_1255.field_6918.field_6917), null
+               this.field_27945, "forwards", var15 + 114, 23, 46, 46, NotificationIcons.field_11046, new class_590(class_1255.field_6918.field_6917), null
             )
          );
       this.field_27945
          .method_32148(
             this.field_27954 = new class_122(
-               this.field_27945, "backwards", var15 - 114, 23, 46, 46, class_2209.field_11040, new class_590(class_1255.field_6918.field_6917), null
+               this.field_27945, "backwards", var15 - 114, 23, 46, 46, NotificationIcons.field_11040, new class_590(class_1255.field_6918.field_6917), null
             )
          );
       this.field_27945.method_32148(this.field_27938 = new class_4936(this.field_27945, "volume", this.method_32109() - this.field_27953 - 19, 14, 4, 40));
@@ -377,7 +377,7 @@ public class class_5484 extends class_446 {
             (float)(this.method_32173() + this.method_32137() - this.field_27941),
             (float)this.method_32109(),
             (float)this.field_27941,
-            class_2209.field_11041,
+            NotificationIcons.field_11041,
             class_314.method_1444(class_1255.field_6918.field_6917, var1 * var1)
          );
          class_73.method_94(
@@ -399,7 +399,7 @@ public class class_5484 extends class_446 {
             (float)(this.method_32173() + this.method_32137() - 170),
             114.0F,
             114.0F,
-            class_2209.field_11009,
+            NotificationIcons.field_11009,
             class_314.method_1444(class_1255.field_6918.field_6917, var1)
          );
          class_73.method_128(
@@ -520,7 +520,7 @@ public class class_5484 extends class_446 {
          (float)this.field_27927,
          (float)(this.method_32109() - this.field_27953),
          20.0F,
-         class_2209.field_10992,
+         NotificationIcons.field_10992,
          class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1 * 0.5F)
       );
       this.field_27931 = this.field_27939.method_11853();

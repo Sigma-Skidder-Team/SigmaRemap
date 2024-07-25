@@ -37,7 +37,7 @@ public class SigmaMainClass {
    private SigmaLoginStuff field_3971;
    private class_845 field_3970;
    private class_4566 field_3980;
-   private class_6080 field_3949;
+   private class_6080 notificationManager;
    private class_6645 field_3960;
    private class_4763 field_3973;
    private class_5937 field_3979;
@@ -77,7 +77,7 @@ public class SigmaMainClass {
       this.field_3972 = new class_1772();
       this.commandManager = new CommandManager();
       this.commandManager.method_22654();
-      class_2209.method_10227();
+      NotificationIcons.method_10227();
       this.field_3971 = new SigmaLoginStuff();
       this.field_3971.method_23087();
       this.field_3970 = new class_845();
@@ -97,8 +97,8 @@ public class SigmaMainClass {
       this.field_3969.method_9478();
       this.field_3980 = new class_4566();
       this.field_3980.method_21204();
-      this.field_3949 = new class_6080();
-      this.field_3949.method_27843();
+      this.notificationManager = new class_6080();
+      this.notificationManager.method_27843();
       this.field_3981 = new class_8691();
       this.field_3981.method_39914();
       this.field_3973 = new class_4763();
@@ -197,7 +197,7 @@ public class SigmaMainClass {
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glDisable(2896);
       class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-      class_2209.field_11030.method_38419();
+      NotificationIcons.field_11030.method_38419();
       getInstance().method_3302().method_7914(new class_7285());
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       class_3542.method_16361();
@@ -304,8 +304,8 @@ public class SigmaMainClass {
       return this.field_3980;
    }
 
-   public class_6080 method_3335() {
-      return this.field_3949;
+   public class_6080 getNotificationManager() {
+      return this.notificationManager;
    }
 
    public class_8691 method_3303() {

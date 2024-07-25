@@ -15,7 +15,7 @@ public class class_9758 extends SecondModule {
    }
 
    @Override
-   public String method_41987() {
-      return SigmaMainClass.getInstance().method_3312() != class_6015.field_30644 ? super.method_41987() : "AntiVelocity";
+   public String getName2() {
+      return SigmaMainClass.getInstance().method_3312() != class_6015.field_30644 ? super.getName2() : "AntiVelocity";
    }
 }

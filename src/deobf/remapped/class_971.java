@@ -28,9 +28,9 @@ public class class_971 extends class_3259 {
       int var11 = this.field_940 / 6 - 12;
       this.<class_2116>method_1186(
          new class_2116(var10, var11 + 24 * (++var3 >> 1), 150, 20, class_1013.field_5291, class_1013.field_5291.method_22128(this.field_16164), var1 -> {
-            class_1013.field_5291.method_22127(this.field_943.field_9577);
-            var1.method_32687(class_1013.field_5291.method_22128(this.field_943.field_9577));
-            this.field_943.field_9577.method_40873();
+            class_1013.field_5291.method_22127(this.field_943.gameOptions);
+            var1.method_32687(class_1013.field_5291.method_22128(this.field_943.gameOptions));
+            this.field_943.gameOptions.method_40873();
          })
       );
       this.<class_9521>method_1186(

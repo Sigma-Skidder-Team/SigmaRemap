@@ -40,7 +40,7 @@ public class class_772 extends class_1094 {
    }
 
    private boolean method_3465() {
-      return this.field_943.field_9577.field_45435;
+      return this.field_943.gameOptions.field_45435;
    }
 
    private boolean method_3464() {

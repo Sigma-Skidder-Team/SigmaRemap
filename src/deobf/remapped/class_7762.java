@@ -78,7 +78,7 @@ public class class_7762 extends class_341 {
 
       if (!this.field_39352) {
          super.method_1658(var1);
-         int var6 = Math.max(2, this.field_39353.field_9577.field_45537 + -1);
+         int var6 = Math.max(2, this.field_39353.gameOptions.field_45537 + -1);
          if (var6 != this.method_1600().method_39970()) {
             field_39350.info("Changing view distance to {}, from {}", var6, this.method_1600().method_39970());
             this.method_1600().method_39961(var6);
@@ -244,12 +244,12 @@ public class class_7762 extends class_341 {
 
    @Override
    public int method_1638(int var1) {
-      return (int)(this.field_39353.field_9577.field_45475 * (float)var1);
+      return (int)(this.field_39353.gameOptions.field_45475 * (float)var1);
    }
 
    @Override
    public boolean method_1709() {
-      return this.field_39353.field_9577.field_45514;
+      return this.field_39353.gameOptions.field_45514;
    }
 
    private void method_35209() {
@@ -316,7 +316,7 @@ public class class_7762 extends class_341 {
    public boolean method_1635(boolean var1, boolean var2, boolean var3) {
       if (var1) {
          int var6 = this.method_1682();
-         int var7 = this.field_39353.field_9577.field_45476;
+         int var7 = this.field_39353.gameOptions.field_45476;
          if ((long)var6 < this.field_39355 + (long)var7) {
             return false;
          }

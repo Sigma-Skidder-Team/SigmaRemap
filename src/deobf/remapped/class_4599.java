@@ -23,7 +23,7 @@ public class class_4599 extends class_1859 {
          class_3054.field_14989,
          (float)(this.field_36270 + 10),
          (float)(this.field_36261 + 8),
-         this.field_22361.method_41987(),
+         this.field_22361.getName2(),
          class_314.method_1444(class_1255.field_6929.field_6917, !this.field_22361.method_42015() ? 0.5F : 0.9F)
       );
       class_73.method_87(

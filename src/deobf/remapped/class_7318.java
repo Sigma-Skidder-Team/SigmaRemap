@@ -63,7 +63,7 @@ public class class_7318 extends Module {
    @class_7664
    public void method_33364(class_2911 var1) {
       if (this.method_42015() && !class_7033.method_32081() && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
-         if (!mcInstance.field_9577.field_45450.method_27060() || !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()) {
+         if (!mcInstance.gameOptions.field_45450.method_27060() || !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()) {
             this.field_37410 = class_8865.method_40787()[0];
             this.field_37411 = 0;
             var1.method_13315(var1.method_13317().method_6217() * 1.05F);

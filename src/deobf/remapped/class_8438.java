@@ -110,7 +110,7 @@ public class class_8438 extends Module {
             }
          }
 
-         if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45567) {
             byte var20 = 10;
             byte var21 = 1;
             int var6 = MinecraftClient.getInstance().window.method_43166();
@@ -121,7 +121,7 @@ public class class_8438 extends Module {
                var20 -= 3;
             }
 
-            if (MinecraftClient.getInstance().field_9577.field_45470) {
+            if (MinecraftClient.getInstance().gameOptions.field_45470) {
                var7 = (int)((double)(mcInstance.field_9614.field_15026.field_18917.size() * 9) * mcInstance.window.method_43189() + 7.0);
             }
 
@@ -145,7 +145,7 @@ public class class_8438 extends Module {
                   var14 = 0.86F + 0.14F * var15;
                }
 
-               String var22 = var13.method_41987();
+               String var22 = var13.getName2();
                GL11.glAlphaFunc(519, 0.0F);
                GL11.glPushMatrix();
                int var17 = var6 - var20 - var8.method_18547(var22) / 2;
@@ -159,7 +159,7 @@ public class class_8438 extends Module {
                   (float)(var7 - 20),
                   (float)var8.method_18547(var22) * 3.0F,
                   (float)(var8.method_15654() + var21 + 40),
-                  class_2209.field_11045,
+                  NotificationIcons.field_11045,
                   class_314.method_1444(class_1255.field_6918.field_6917, 0.36F * var15 * var19)
                );
                class_73.method_87(

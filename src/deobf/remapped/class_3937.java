@@ -61,7 +61,7 @@ public class class_3937 extends class_446 {
             (float)((MinecraftClient.getInstance().window.method_43163() - var4 * 342 / 460) / 2 - 60),
             (float)var4,
             (float)(var4 * 342 / 460),
-            class_2209.field_11027
+            NotificationIcons.field_11027
          );
       }
 

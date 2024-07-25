@@ -40,7 +40,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            class_2209.field_11012,
+            NotificationIcons.field_11012,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -52,7 +52,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            class_2209.field_11015,
+            NotificationIcons.field_11015,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -64,7 +64,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            class_2209.field_10999,
+            NotificationIcons.field_10999,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -76,7 +76,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            class_2209.field_11029,
+            NotificationIcons.field_11029,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -88,7 +88,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            class_2209.field_10990,
+            NotificationIcons.field_10990,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -154,7 +154,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(MinecraftClient.getInstance().field_9623)));
       this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(MinecraftClient.getInstance().field_9623)));
       this.field_8717
-         .method_32100((var1x, var2x) -> this.method_7600(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577)));
+         .method_32100((var1x, var2x) -> this.method_7600(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().gameOptions)));
       this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new AltManagerMenu()));
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {
@@ -181,11 +181,11 @@ public class AnotherSigmaMainMenu extends class_7038 {
    @Override
    public void method_32178(float var1) {
       this.method_32190();
-      class_8343 var4 = class_2209.field_11032;
+      class_8343 var4 = NotificationIcons.field_11032;
       int var5 = var4.method_38415();
       int var6 = var4.method_38421();
       if (class_6763.field_34898 > 1.0F) {
-         var4 = class_2209.field_11058;
+         var4 = NotificationIcons.field_11058;
       }
 
       class_73.method_99(
@@ -193,7 +193,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
          (float)(this.method_32137() / 2 - var6),
          (float)var5,
          (float)var6,
-         class_2209.field_11032,
+         NotificationIcons.field_11032,
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
       super.method_32178(var1);

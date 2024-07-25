@@ -12,7 +12,7 @@ public class class_777 extends Module {
    @EventListen
    private void method_3476(class_8706 var1) {
       if (this.method_42015()) {
-         if (mcInstance.field_9577.field_45560.method_27060() && var1.method_40004() == class_3237.field_16101) {
+         if (mcInstance.gameOptions.field_45560.method_27060() && var1.method_40004() == class_3237.field_16101) {
             if (!(mcInstance.field_9632.field_41755 < 0.0F)) {
                this.method_3473(this.method_3477());
             } else {
@@ -101,7 +101,7 @@ public class class_777 extends Module {
             );
          mcInstance.field_9632
             .method_37256(mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() + (double)var1, mcInstance.field_9632.method_37156());
-         SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Successfuly VCliped", var1 + " Blocks", 2000, class_2209.field_10993));
+         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, NotificationIcons.field_10993));
       }
    }
 }

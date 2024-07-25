@@ -65,7 +65,7 @@ public class class_9522 extends class_367 {
    public void method_43926(class_3278 var1) {
       if (field_48470 != null) {
          if (this.method_42015()) {
-            if (!MinecraftClient.getInstance().field_9577.field_45567) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                if (!this.getBooleanValueByName("Smart Visibility")) {
                   this.field_48469
                      .method_11119(mcInstance.field_9623 != null && !this.getBooleanValueByName("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
@@ -182,7 +182,7 @@ public class class_9522 extends class_367 {
                field_48470.method_19717(true);
                class_3542.method_16432();
                class_3542.method_16481();
-               int var4 = mcInstance.field_9577.field_45439;
+               int var4 = mcInstance.gameOptions.field_45439;
                int var5 = Math.min(MinecraftClient.method_8501(), var4);
                var5 = Math.max(var5, 60);
                long var6 = Util.getMeasuringTimeNano() - var1.field_8849;
@@ -190,8 +190,8 @@ public class class_9522 extends class_367 {
                mcInstance.field_9632.field_41701 += 180.0F;
                class_3542.method_16428();
                GL11.glAlphaFunc(519, 0.0F);
-               double var9 = mcInstance.field_9577.field_45543;
-               mcInstance.field_9577.field_45543 = 114.0;
+               double var9 = mcInstance.gameOptions.field_45543;
+               mcInstance.gameOptions.field_45543 = 114.0;
                mcInstance.gameRenderer.field_40627 = false;
                SigmaMainClass.field_3951 = true;
                class_4230 var11 = mcInstance.worldRenderer.field_21000;
@@ -200,7 +200,7 @@ public class class_9522 extends class_367 {
                mcInstance.worldRenderer.field_21000 = var11;
                SigmaMainClass.field_3951 = false;
                mcInstance.gameRenderer.field_40627 = true;
-               mcInstance.field_9577.field_45543 = var9;
+               mcInstance.gameOptions.field_45543 = var9;
                mcInstance.field_9632.field_41701 = var8;
                class_3542.method_16489();
                mcInstance.method_8584().method_19717(true);

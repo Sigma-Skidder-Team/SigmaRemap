@@ -9,12 +9,12 @@ public class ModeSetting extends Setting<String> {
    private List<String> field_13859 = new ArrayList<String>();
 
    public ModeSetting(String var1, String var2, int var3, String... var4) {
-      super(var1, var2, class_5195.field_26722, var4[var3]);
+      super(var1, var2, SettingType.MODE_NORMAL, var4[var3]);
       this.field_13860 = Arrays.<String>asList(var4);
    }
 
    public ModeSetting(String var1, String var2, String var3, String... var4) {
-      super(var1, var2, class_5195.field_26722, var3);
+      super(var1, var2, SettingType.MODE_NORMAL, var3);
       this.field_13860 = Arrays.<String>asList(var4);
    }
 
@@ -56,7 +56,7 @@ public class ModeSetting extends Setting<String> {
       if (var1 <= this.field_13860.size()) {
          String var4 = this.field_13860.get(var1);
          if (this.field_13859.contains(var4) && MinecraftClient.getInstance() != null) {
-            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Premium", "Not yet available for free version"));
+            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Premium", "Not yet available for free version"));
          } else {
             this.method_23037(this.field_13860.get(var1));
          }

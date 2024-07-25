@@ -2756,7 +2756,7 @@ public class class_6588 {
             method_30207(field_33921, (float)field_33803);
             method_30207(field_33855, (float)field_33764);
             method_30207(field_33674, 0.05F);
-            method_30207(field_33754, (float)(field_33837.field_9577.field_45537 * 16));
+            method_30207(field_33754, (float)(field_33837.gameOptions.field_45537 * 16));
             method_30301(field_33752, field_33906[0], field_33906[1], field_33906[2]);
             method_30301(field_33786, field_33787[0], field_33787[1], field_33787[2]);
             method_30301(field_33820, field_33939[0], field_33939[1], field_33939[2]);
@@ -2785,8 +2785,8 @@ public class class_6588 {
             method_30211(field_33914, field_33725);
             method_30207(field_33925, field_33933);
             method_30207(field_33693, field_33718);
-            method_30207(field_33789, (float)field_33837.field_9577.field_45391);
-            method_30211(field_33836, field_33837.field_9577.field_45567 ? 1 : 0);
+            method_30207(field_33789, (float)field_33837.gameOptions.field_45391);
+            method_30211(field_33836, field_33837.gameOptions.field_45567 ? 1 : 0);
             method_30207(field_33632, field_33973);
             method_30111(field_33740, field_33946, field_33639);
             method_30207(field_33796, var13);
@@ -3968,7 +3968,7 @@ public class class_6588 {
 
    public static void method_30250(class_7966 var0) {
       class_9633 var1 = class_8042.method_36499().method_36501();
-      float var2 = (float)(field_33837.field_9577.field_45537 * 16);
+      float var2 = (float)(field_33837.gameOptions.field_45537 * 16);
       double var3 = (double)var2 * 0.9238;
       double var5 = (double)var2 * 0.3826;
       double var7 = -var5;

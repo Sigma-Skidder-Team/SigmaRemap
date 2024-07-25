@@ -202,7 +202,7 @@ public class class_5989 extends class_9716 {
             }
 
             this.field_30537 = this.field_41726;
-            this.field_30521 = this.field_30523.field_9577.field_45412;
+            this.field_30521 = this.field_30523.gameOptions.field_45412;
          }
 
          for (Runnable var30 : var4.method_6447()) {
@@ -629,7 +629,7 @@ public class class_5989 extends class_9716 {
          && var7
          && !this.method_26554()
          && !this.method_26480(Effects.field_19736)) {
-         if (this.field_30526 <= 0 && !this.field_30523.field_9577.field_45444.method_27060()) {
+         if (this.field_30526 <= 0 && !this.field_30523.gameOptions.field_45444.method_27060()) {
             this.field_30526 = 7;
          } else {
             this.method_37140(true);
@@ -642,7 +642,7 @@ public class class_5989 extends class_9716 {
          && var7
          && !this.method_26554()
          && !this.method_26480(Effects.field_19736)
-         && this.field_30523.field_9577.field_45444.method_27060()) {
+         && this.field_30523.gameOptions.field_45444.method_27060()) {
          this.method_37140(true);
       }
 
@@ -993,7 +993,7 @@ public class class_5989 extends class_9716 {
 
    @Override
    public class_1343 method_37202(float var1) {
-      if (!this.field_30523.field_9577.method_40867().method_42383()) {
+      if (!this.field_30523.gameOptions.method_40867().method_42383()) {
          return super.method_37202(var1);
       } else {
          float var4 = class_9299.method_42795(var1 * 0.5F, this.field_41701, this.field_41711) * (float) (Math.PI / 180.0);

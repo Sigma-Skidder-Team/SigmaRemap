@@ -95,7 +95,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
    }
 
    public List<ITextComponent> method_1179(class_6098 var1) {
-      return var1.method_28012(this.field_943.field_9632, !this.field_943.field_9577.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
+      return var1.method_28012(this.field_943.field_9632, !this.field_943.gameOptions.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
    }
 
    public void method_1176(class_7966 var1, ITextComponent var2, int var3, int var4) {
@@ -189,7 +189,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
                if (var10 != null) {
                   this.method_1175(var1, this.field_943.textRenderer.method_45391(var10, Math.max(this.field_941 / 2, 200)), var3, var4);
                }
-            } else if (this.field_943.field_9577.field_45482) {
+            } else if (this.field_943.gameOptions.field_45482) {
                this.method_1160(var1, var9.getTooltip(), var3, var4);
             }
          } else {
@@ -212,7 +212,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
             }
          } else if (var4 != null) {
             if (var4.getAction() == ClickEvent$class_47.OPEN_URL) {
-               if (!this.field_943.field_9577.field_45442) {
+               if (!this.field_943.gameOptions.field_45442) {
                   return false;
                }
 
@@ -227,7 +227,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
                      throw new URISyntaxException(var4.getValue(), "Unsupported protocol: " + var6.toLowerCase(Locale.ROOT));
                   }
 
-                  if (this.field_943.field_9577.field_45458) {
+                  if (this.field_943.gameOptions.field_45458) {
                      this.field_949 = var5;
                      this.field_943.method_8609(new class_260(this::method_1158, var4.getValue(), false));
                   } else {

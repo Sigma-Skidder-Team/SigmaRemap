@@ -7,7 +7,7 @@ public class FloatSetting<T extends Number> extends Setting<Float> {
    private float field_13451;
 
    public FloatSetting(String var1, String var2, float var3, Class<? extends T> var4, float var5, float var6, float var7) {
-      super(var1, var2, class_5195.field_26718, var3);
+      super(var1, var2, SettingType.FLOAT, var3);
       this.field_13452 = var4;
       this.field_13449 = var5;
       this.field_13453 = var6;

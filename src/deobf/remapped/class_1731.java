@@ -65,7 +65,7 @@ public class class_1731 extends Module {
             if (mcInstance.field_9632.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206) {
                if (class_5174.method_23723(class_4897.field_25024) == 0) {
                   if (this.field_8927.method_14772() > 5000L) {
-                     SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("BowFly", "You have no arrows"));
+                     SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("BowFly", "You have no arrows"));
                      this.field_8927.method_14773();
                   }
 

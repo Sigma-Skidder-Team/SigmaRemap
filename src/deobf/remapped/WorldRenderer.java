@@ -352,7 +352,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_174 var4 = this.client.field_9601;
          class_1331 var5 = new class_1331(var1.method_41627());
          class_1331 var6 = null;
-         int var7 = (int)(100.0F * var2 * var2) / (this.client.field_9577.field_45505 == class_9761.field_49576 ? 2 : 1);
+         int var7 = (int)(100.0F * var2 * var2) / (this.client.gameOptions.field_45505 == class_9761.field_49576 ? 2 : 1);
 
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
@@ -365,7 +365,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                && var12.method_28866() == class_6750.field_34844
                && var12.method_28865(var11) >= 0.15F) {
                var6 = var11;
-               if (this.client.field_9577.field_45505 == class_9761.field_49573) {
+               if (this.client.gameOptions.field_45505 == class_9761.field_49573) {
                   break;
                }
 
@@ -475,12 +475,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                var6 = null;
             }
 
-            this.client.field_9577.field_45397 = class_4615.field_22437;
+            this.client.gameOptions.field_45397 = class_4615.field_22437;
             this.client.method_8615(var5, var6);
          } else {
             class_159 var13 = this.client.method_8546(new class_159(var4, var5));
-            this.client.field_9577.field_45397 = class_4615.field_22437;
-            this.client.field_9577.method_40873();
+            this.client.gameOptions.field_45397 = class_4615.field_22437;
+            this.client.gameOptions.method_40873();
             LOGGER.fatal(var4, var5);
             this.client.method_8593();
             MinecraftClient.method_8608(var13);
@@ -691,7 +691,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          class_153.method_613();
          field_21005 = MinecraftClient.method_8541();
-         this.field_20922 = this.client.field_9577.field_45537;
+         this.field_20922 = this.client.gameOptions.field_45537;
          this.field_20927 = this.field_20922 * 16;
          this.field_20981 = this.field_20927 * this.field_20927;
          this.method_20039();
@@ -706,7 +706,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.field_20972.clear();
          }
 
-         this.field_20966 = new class_7626(this.field_20968, this.field_20970, this.client.field_9577.field_45537, this);
+         this.field_20966 = new class_7626(this.field_20968, this.field_20970, this.client.gameOptions.field_45537, this);
          if (this.field_20970 != null) {
             Entity var4 = this.client.method_8516();
             if (var4 != null) {
@@ -769,7 +769,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    public void method_20016(Camera var1, class_2359 var2, boolean var3, int var4, boolean var5) {
       class_1343 var6 = var1.method_41627();
-      if (this.client.field_9577.field_45537 != this.field_20922) {
+      if (this.client.gameOptions.field_45537 != this.field_20922) {
          this.method_19998();
       }
 
@@ -880,7 +880,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.field_20980.clear();
          Deque var41 = this.field_20980;
          Entity.method_37327(
-            class_9299.method_42827((double)this.client.field_9577.field_45537 / 8.0, 1.0, 2.5) * (double)this.client.field_9577.field_45475
+            class_9299.method_42827((double)this.client.gameOptions.field_45537 / 8.0, 1.0, 2.5) * (double)this.client.gameOptions.field_45475
          );
          boolean var43 = this.client.field_9631;
          class_1331 var45 = var1.method_41630();
@@ -1114,7 +1114,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_3542.method_16392(0, 0, this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
       }
 
-      class_6377.method_29157(var6, var2, this.client.field_9601, this.client.field_9577.field_45537, var7.method_35956(var2));
+      class_6377.method_29157(var6, var2, this.client.field_9601, this.client.gameOptions.field_45537, var7.method_35956(var2));
       class_3542.method_16402(16640, MinecraftClient.IS_SYSTEM_MAC);
       boolean var21 = class_3111.method_14424();
       if (var21) {
@@ -1151,7 +1151,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.method_20016(var6, var20, var19, this.field_20959++, this.client.field_9632.method_37221());
       var10.method_16050("updatechunks");
       byte var24 = 30;
-      int var25 = this.client.field_9577.field_45439;
+      int var25 = this.client.gameOptions.field_45439;
       long var26 = 33333333L;
       long var28;
       if ((double)var25 == class_1013.field_5277.method_38573()) {
@@ -1169,7 +1169,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_5099.field_26308.method_24313();
       var10.method_16050("terrain");
       class_5099.field_26298.method_24314();
-      if (this.client.field_9577.field_45432) {
+      if (this.client.gameOptions.field_45432) {
          this.client.method_8562().method_16050("finish");
          GL11.glFinish();
          this.client.method_8562().method_16050("terrain");
@@ -1180,7 +1180,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       this.method_20045(class_3581.method_16751(), var1, var12, var14, var16);
-      this.client.method_8577().method_35679(class_8359.field_42824).method_37049(false, this.client.field_9577.field_45577 > 0);
+      this.client.method_8577().method_35679(class_8359.field_42824).method_37049(false, this.client.gameOptions.field_45577 > 0);
       this.method_20045(class_3581.method_16756(), var1, var12, var14, var16);
       this.client.method_8577().method_35679(class_8359.field_42824).method_37057();
       this.method_20045(class_3581.method_16771(), var1, var12, var14, var16);
@@ -1515,7 +1515,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_1920.method_8856(true);
       class_3542.method_16438();
       class_3542.method_16358(var1.method_36058().method_28620());
-      if (this.client.field_9577.method_40860() != class_9655.field_49168) {
+      if (this.client.gameOptions.method_40860() != class_9655.field_49168) {
          if (this.field_20930 != null) {
             this.field_21006.method_19712(MinecraftClient.IS_SYSTEM_MAC);
             class_5348.field_27300.method_24420();
@@ -2231,7 +2231,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             double var14 = (double)(((float)this.field_20997 + var2) * 0.03F);
             double var16 = (var3 + var14) / 12.0;
             double var18 = (double)(var31 - (float)var5 + 0.33F);
-            var18 += this.client.field_9577.field_45398 * 128.0;
+            var18 += this.client.gameOptions.field_45398 * 128.0;
             double var20 = var7 / 12.0 + 0.33F;
             var16 -= (double)(class_9299.method_42847(var16 / 2048.0) * 2048);
             var20 -= (double)(class_9299.method_42847(var20 / 2048.0) * 2048);
@@ -2245,13 +2245,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             if (var26 != this.field_20944
                || var27 != this.field_20919
                || var28 != this.field_20957
-               || this.client.field_9577.method_40860() != this.field_20992
+               || this.client.gameOptions.method_40860() != this.field_20992
                || this.field_20975.method_6204(var25) > 2.0E-4) {
                this.field_20944 = var26;
                this.field_20919 = var27;
                this.field_20957 = var28;
                this.field_20975 = var25;
-               this.field_20992 = this.client.field_9577.method_40860();
+               this.field_20992 = this.client.gameOptions.method_40860();
                this.field_20986 = true;
             }
 
@@ -2575,7 +2575,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    private void method_20079(Camera var1) {
       class_9633 var2 = class_8042.method_36499().method_36501();
       class_2098 var3 = this.field_20970.method_6673();
-      double var4 = (double)(this.client.field_9577.field_45537 * 16);
+      double var4 = (double)(this.client.gameOptions.field_45537 * 16);
       if (!(var1.method_41627().field_7336 < var3.method_9828() - var4)
          || !(var1.method_41627().field_7336 > var3.method_9821() + var4)
          || !(var1.method_41627().field_7334 < var3.method_9816() - var4)
@@ -3055,7 +3055,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    private class_9761 method_20020(boolean var1) {
-      class_9761 var2 = this.client.field_9577.field_45505;
+      class_9761 var2 = this.client.gameOptions.field_45505;
       if (var1 && var2 == class_9761.field_49573 && this.field_20970.field_33033.nextInt(10) == 0) {
          var2 = class_9761.field_49576;
       }
@@ -3621,12 +3621,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_20015(Camera var1, class_2359 var2, boolean var3) {
-      int var4 = this.client.field_9577.field_45536;
-      boolean var5 = this.client.field_9577.field_45406;
+      int var4 = this.client.gameOptions.field_45536;
+      boolean var5 = this.client.gameOptions.field_45406;
 
       try {
-         this.client.field_9577.field_45536 = 1000;
-         this.client.field_9577.field_45406 = false;
+         this.client.gameOptions.field_45536 = 1000;
+         this.client.gameOptions.field_45406 = false;
          WorldRenderer var6 = class_3111.method_14387();
          int var7 = var6.method_20027();
          long var8 = System.currentTimeMillis();
@@ -3672,8 +3672,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_3111.method_14280("Finished loading visible chunks");
          class_6705.field_34625 = 0;
       } finally {
-         this.client.field_9577.field_45536 = var4;
-         this.client.field_9577.field_45406 = var5;
+         this.client.gameOptions.field_45536 = var4;
+         this.client.gameOptions.field_45406 = var5;
       }
    }
 

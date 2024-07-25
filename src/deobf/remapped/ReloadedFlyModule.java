@@ -16,12 +16,12 @@ public class ReloadedFlyModule extends Module {
    public void onEnable() {
       this.field_28771 = mcInstance.field_9632.method_37309();
       this.field_28770 = 0;
-      if (!mcInstance.field_9577.field_45560.method_27060()) {
-         if (!mcInstance.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+         if (!mcInstance.gameOptions.field_45560.method_27060()) {
             this.field_28772 = false;
          }
       } else {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          this.field_28772 = true;
       }
    }
@@ -37,7 +37,7 @@ public class ReloadedFlyModule extends Module {
    @EventListen
    private void method_25672(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28772 = true;
          }
@@ -47,7 +47,7 @@ public class ReloadedFlyModule extends Module {
    @EventListen
    private void method_25673(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28772 = false;
          }
@@ -73,7 +73,7 @@ public class ReloadedFlyModule extends Module {
                var4 -= (double)(this.getFloatValueByName("Speed") / 2.0F);
             }
 
-            if (mcInstance.field_9577.field_45450.method_27060()) {
+            if (mcInstance.gameOptions.field_45450.method_27060()) {
                var4 += (double)(this.getFloatValueByName("Speed") / 2.0F);
             }
 

@@ -30,7 +30,7 @@ public class class_5099 {
    public static void method_23416() {
       if (field_26314 == null) {
          field_26314 = MinecraftClient.getInstance();
-         field_26299 = field_26314.field_9577;
+         field_26299 = field_26314.gameOptions;
          field_26295 = field_26314.method_8562();
       }
 

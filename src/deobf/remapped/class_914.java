@@ -11,21 +11,21 @@ public class class_914 extends Module {
    @Override
    public void method_42012() {
       if (!this.method_42015()) {
-         mcInstance.field_9577.field_45391 = 1.0;
+         mcInstance.gameOptions.field_45391 = 1.0;
       }
    }
 
    @Override
    public void onEnable() {
       if (this.getStringValueByName("Type").equals("Normal")) {
-         mcInstance.field_9577.field_45391 = 999.0;
+         mcInstance.gameOptions.field_45391 = 999.0;
       }
    }
 
    @EventListen
    public void method_3924(class_5596 var1) {
       if (this.method_42015()) {
-         mcInstance.field_9577.field_45391 = 999.0;
+         mcInstance.gameOptions.field_45391 = 999.0;
          if (mcInstance.field_9601 != null) {
             if (!this.getStringValueByName("Type").equals("Normal")) {
                int var4 = 16;
@@ -40,7 +40,7 @@ public class class_914 extends Module {
 
                this.field_4691 = this.field_4691 + ((float)var4 - this.field_4691) * 0.2F;
                if (!(this.field_4691 < 1.5F)) {
-                  mcInstance.field_9577.field_45391 = (double)Math.min(Math.max(1.0F, this.field_4691), 10.0F);
+                  mcInstance.gameOptions.field_45391 = (double)Math.min(Math.max(1.0F, this.field_4691), 10.0F);
                }
             }
          }
@@ -49,6 +49,6 @@ public class class_914 extends Module {
 
    @Override
    public void onDisable() {
-      mcInstance.field_9577.field_45391 = 1.0;
+      mcInstance.gameOptions.field_45391 = 1.0;
    }
 }

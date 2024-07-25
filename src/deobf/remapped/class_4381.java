@@ -15,10 +15,10 @@ public class class_4381 extends class_2089 implements class_4440 {
    }
 
    public void method_20416(class_7966 var1) {
-      if (!this.field_21492 && this.field_21493.field_9577.field_45445) {
+      if (!this.field_21492 && this.field_21493.gameOptions.field_45445) {
          this.field_21493.method_8590().method_16343(this);
          this.field_21492 = true;
-      } else if (this.field_21492 && !this.field_21493.field_9577.field_45445) {
+      } else if (this.field_21492 && !this.field_21493.gameOptions.field_45445) {
          this.field_21493.method_8590().method_16347(this);
          this.field_21492 = false;
       }
@@ -79,7 +79,7 @@ public class class_4381 extends class_2089 implements class_4440 {
                0.0F
             );
             class_3542.method_16403(1.0F, 1.0F, 1.0F);
-            method_9774(var1, -var21 - 1, -var23 - 1, var21 + 1, var23 + 1, this.field_21493.field_9577.method_40888(0.8F));
+            method_9774(var1, -var21 - 1, -var23 - 1, var21 + 1, var23 + 1, this.field_21493.gameOptions.method_40888(0.8F));
             class_3542.method_16488();
             if (!var20) {
                if (!(var16 > 0.0)) {

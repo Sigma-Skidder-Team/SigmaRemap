@@ -6,12 +6,12 @@ public class ColorSetting extends Setting<Integer> {
    public boolean field_5001 = false;
 
    public ColorSetting(String var1, String var2, int var3, boolean var4) {
-      super(var1, var2, class_5195.field_26727, var3);
+      super(var1, var2, SettingType.COLOR, var3);
       this.field_5001 = var4;
    }
 
    public ColorSetting(String var1, String var2, int var3) {
-      super(var1, var2, class_5195.field_26727, var3);
+      super(var1, var2, SettingType.COLOR, var3);
    }
 
    @Override
@@ -31,7 +31,7 @@ public class ColorSetting extends Setting<Integer> {
 
    @Override
    public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
-      var1.method_5820("name", this.method_23032());
+      var1.method_5820("name", this.getName());
       var1.method_5820("value", this.method_4270());
       var1.method_5823("rainbow", this.field_5001);
       return var1;

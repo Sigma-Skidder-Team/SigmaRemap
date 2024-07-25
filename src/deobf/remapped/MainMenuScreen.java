@@ -40,7 +40,7 @@ public class MainMenuScreen extends Screen {
    }
 
    private boolean method_8400() {
-      return this.field_943.field_9577.field_45435 && this.field_9508 != null;
+      return this.field_943.gameOptions.field_45435 && this.field_9508 != null;
    }
 
    @Override
@@ -99,7 +99,7 @@ public class MainMenuScreen extends Screen {
             class_9521.field_36678,
             256,
             256,
-            var1 -> this.field_943.method_8609(new class_1709(this, this.field_943.field_9577, this.field_943.method_8561())),
+            var1 -> this.field_943.method_8609(new class_1709(this, this.field_943.gameOptions, this.field_943.method_8561())),
             new TranslationTextComponent("narrator.button.language")
          )
       );
@@ -110,7 +110,7 @@ public class MainMenuScreen extends Screen {
             98,
             20,
             new TranslationTextComponent("menu.options"),
-            var1 -> this.field_943.method_8609(new OptionsScreen(this, this.field_943.field_9577))
+            var1 -> this.field_943.method_8609(new OptionsScreen(this, this.field_943.gameOptions))
          )
       );
       this.<class_9521>method_1186(
@@ -128,12 +128,12 @@ public class MainMenuScreen extends Screen {
             field_9502,
             32,
             64,
-            var1 -> this.field_943.method_8609(new class_9728(this, this.field_943.field_9577)),
+            var1 -> this.field_943.method_8609(new class_9728(this, this.field_943.gameOptions)),
             new TranslationTextComponent("narrator.button.accessibility")
          )
       );
       this.field_943.method_8509(false);
-      if (this.field_943.field_9577.field_45435 && !this.field_9507) {
+      if (this.field_943.gameOptions.field_45435 && !this.field_9507) {
          class_2488 var6 = new class_2488();
          this.field_9508 = var6.method_11391(this);
          this.field_9507 = true;
@@ -174,7 +174,7 @@ public class MainMenuScreen extends Screen {
          : class_9521.field_48465;
       this.<class_9521>method_1186(
             new class_9521(this.field_941 / 2 - 100, var1 + var2 * 1, 200, 20, new TranslationTextComponent("menu.multiplayer"), var1x -> {
-               Object var4 = !this.field_943.field_9577.field_45481 ? new class_6557(this) : new class_4145(this);
+               Object var4 = !this.field_943.gameOptions.field_45481 ? new class_6557(this) : new class_4145(this);
                this.field_943.method_8609((Screen)var4);
             }, var6)
          )

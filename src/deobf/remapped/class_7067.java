@@ -94,7 +94,7 @@ public abstract class class_7067<T extends Entity> {
          var3.method_36060(this.field_36493.method_28121());
          var3.method_36062(-0.025F, -0.025F, 0.025F);
          class_8107 var14 = var3.method_36058().method_28620();
-         float var15 = MinecraftClient.getInstance().field_9577.method_40872(0.25F);
+         float var15 = MinecraftClient.getInstance().gameOptions.method_40872(0.25F);
          int var16 = (int)(var15 * 255.0F) << 24;
          TextRenderer var17 = this.method_32553();
          float var18 = (float)(-var17.method_45379(var2) / 2);

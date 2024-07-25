@@ -10,6 +10,6 @@ public class class_5309 implements Comparator<Module> {
    }
 
    public int compare(Module var1, Module var2) {
-      return var1.method_41987().compareTo(var2.method_41987());
+      return var1.getName2().compareTo(var2.getName2());
    }
 }

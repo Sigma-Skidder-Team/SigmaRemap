@@ -11,10 +11,10 @@ public class class_9134 extends Module {
    @EventListen
    private void method_42042(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45567) {
             byte var4 = 5;
             byte var5 = 60;
-            int var6 = !MinecraftClient.getInstance().field_9577.field_45470 ? 0 : 60;
+            int var6 = !MinecraftClient.getInstance().gameOptions.field_45470 ? 0 : 60;
             ArrayList var7 = this.method_42041((int)this.method_42039(mcInstance.field_9632.field_41701), var4);
             int var8 = (Integer)var7.get(var4);
             if (var8 == 0 && this.method_42039(mcInstance.field_9632.field_41701) > 345.0F) {
@@ -28,7 +28,7 @@ public class class_9134 extends Module {
                -40.0F,
                (float)(var4 * var5 * 2) * 1.5F,
                (float)(220 + var6),
-               class_2209.field_11045,
+               NotificationIcons.field_11045,
                class_314.method_1444(class_1255.field_6918.field_6917, 0.25F)
             );
             int var12 = 0;

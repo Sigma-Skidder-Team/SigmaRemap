@@ -15,12 +15,12 @@ public class class_8193 extends Module {
    @Override
    public void onEnable() {
       this.field_41932 = 0;
-      if (!mcInstance.field_9577.field_45560.method_27060()) {
-         if (!mcInstance.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+         if (!mcInstance.gameOptions.field_45560.method_27060()) {
             this.field_41931 = false;
          }
       } else {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          this.field_41931 = true;
       }
 
@@ -39,14 +39,14 @@ public class class_8193 extends Module {
       class_8865.method_40776(0.2);
       mcInstance.field_9616.field_32603 = 1.0F;
       if (this.field_41931) {
-         mcInstance.field_9577.field_45560.field_30024 = true;
+         mcInstance.gameOptions.field_45560.field_30024 = true;
       }
    }
 
    @EventListen
    private void method_37543(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_41931 = true;
          }
@@ -56,7 +56,7 @@ public class class_8193 extends Module {
    @EventListen
    private void method_37545(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_41931 = false;
          }
@@ -83,11 +83,11 @@ public class class_8193 extends Module {
                   if (this.field_41932 != -4) {
                      if (this.field_41932 != -1) {
                         if (class_3347.method_15349() > class_412.field_1747.method_2055()) {
-                           if (mcInstance.field_9577.field_45450.method_27060() && !this.field_41931) {
+                           if (mcInstance.gameOptions.field_45450.method_27060() && !this.field_41931) {
                               var1.method_35235(0.0625);
                               class_8865.method_40777(var1, 0.0);
                               this.field_41932 = 1;
-                           } else if (this.field_41931 && !mcInstance.field_9577.field_45450.method_27060()) {
+                           } else if (this.field_41931 && !mcInstance.gameOptions.field_45450.method_27060()) {
                               var1.method_35235(-0.225);
                               class_8865.method_40777(var1, 0.0);
                               this.field_41932 = 1;
@@ -101,7 +101,7 @@ public class class_8193 extends Module {
 
                         this.field_41932--;
                      }
-                  } else if (mcInstance.field_9577.field_45450.method_27060() && !this.field_41931) {
+                  } else if (mcInstance.gameOptions.field_45450.method_27060() && !this.field_41931) {
                      var1.method_35235(0.0625);
                   }
                }
@@ -122,7 +122,7 @@ public class class_8193 extends Module {
             } else if (!class_314.method_1413(mcInstance.field_9632, 0.001F)) {
                var1.method_35235(0.0);
                this.field_41932 = -2;
-               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Cubecraft Fly", "Please start on the ground."));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Cubecraft Fly", "Please start on the ground."));
             } else {
                class_8865.method_40777(var1, 0.0);
                var1.method_35235(0.0);

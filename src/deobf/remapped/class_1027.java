@@ -230,7 +230,7 @@ public class class_1027 {
       }
 
       this.field_5686 = null;
-      if (this.field_5691 && this.field_5692.field_9577.field_45493) {
+      if (this.field_5691 && this.field_5692.gameOptions.field_45493) {
          this.method_4553(false);
       }
    }

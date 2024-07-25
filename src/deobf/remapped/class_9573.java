@@ -34,7 +34,7 @@ public class class_9573 extends class_4098 {
       int var5 = (int)Math.floor((double)((float)this.field_48701 / 3.0F));
       short var6 = 170;
       byte var7 = 80;
-      this.method_32148(new class_4599(this, var1.method_41992(), 40 + var6 * var4, 72 + var7 * var5, var6, var7, var1));
+      this.method_32148(new class_4599(this, var1.getName(), 40 + var6 * var4, 72 + var7 * var5, var6, var7, var1));
       this.field_48701++;
    }
 
@@ -54,7 +54,7 @@ public class class_9573 extends class_4098 {
          for (class_7038 var5 : this.method_32134()) {
             if (var5 instanceof class_4599 && this.field_19963.method_11123() == 1.0F && var5.method_32120(this.method_32189(), this.method_32129())) {
                class_4599 var6 = (class_4599)var5;
-               class_73.method_87(class_3054.field_14989, 20.0F, (float)(this.method_32137() - 26), var6.field_22361.method_42001(), -14540254);
+               class_73.method_87(class_3054.field_14989, 20.0F, (float)(this.method_32137() - 26), var6.field_22361.getDescription(), -14540254);
                class_73.method_135(5.0F, (float)(this.method_32137() - 27), 12.0F, 24.0F);
                class_73.method_96(5.0F, (float)(this.method_32137() - 27), 24.0F, 24.0F, class_9898.field_50195);
                class_73.method_141();

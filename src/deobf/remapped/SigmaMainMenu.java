@@ -30,12 +30,12 @@ public class SigmaMainMenu extends class_7038 {
       this.field_8491.method_32100((var1x, var2x) -> this.method_7274(new class_7899(MinecraftClient.getInstance().field_9623)));
       this.field_8490.method_32100((var1x, var2x) -> this.method_7274(new class_9888(MinecraftClient.getInstance().field_9623)));
       this.field_8492
-         .method_32100((var1x, var2x) -> this.method_7274(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577)));
+         .method_32100((var1x, var2x) -> this.method_7274(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().gameOptions)));
       this.field_8496.method_32100((var1x, var2x) -> this.method_7275(new class_2135()));
       this.field_8489
          .method_32100(
             (var1x, var2x) -> this.method_7274(
-                  new class_1709(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577, MinecraftClient.getInstance().method_8561())
+                  new class_1709(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().gameOptions, MinecraftClient.getInstance().method_8561())
                )
          );
       this.field_8493.method_32100((var0, var1x) -> MinecraftClient.getInstance().method_8512());

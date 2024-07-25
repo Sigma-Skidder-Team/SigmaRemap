@@ -51,8 +51,8 @@ public class class_9024 extends Module {
    private void method_41399(class_1711 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (SigmaMainClass.getInstance().method_3299().method_30987()) {
-            if (!MinecraftClient.getInstance().field_9577.field_45470) {
-               if (!MinecraftClient.getInstance().field_9577.field_45567) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+               if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                   class_4746.method_21925(this.field_46182, this.field_46185, this.field_46158, this.field_46178);
                   if (this.field_46166) {
                      class_4746.method_21925(170, this.field_46185, this.field_46161, this.field_46160);
@@ -67,8 +67,8 @@ public class class_9024 extends Module {
    @class_5355
    private void method_41401(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
-         if (!MinecraftClient.getInstance().field_9577.field_45470) {
-            if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                this.field_46178 = 5 * this.field_46159 + this.field_46163;
                float var4 = Math.abs((float)this.method_41397() - this.field_46175);
                boolean var5 = (float)this.method_41397() - this.field_46175 < 0.0F;
@@ -137,7 +137,7 @@ public class class_9024 extends Module {
                class_5320.field_27161,
                (float)(var1 + 11) + this.field_46167.get(var9),
                (float)(var2 + this.field_46159 / 2 - class_5320.field_27161.method_15654() / 2 + 3 + var7 * this.field_46159),
-               var9.method_41992(),
+               var9.getName(),
                class_1255.field_6918.field_6917
             );
          } else {
@@ -145,7 +145,7 @@ public class class_9024 extends Module {
                class_5320.field_27152,
                (float)(var1 + 11) + this.field_46167.get(var9),
                (float)(var2 + this.field_46159 / 2 - class_5320.field_27152.method_15654() / 2 + 2 + var7 * this.field_46159),
-               var9.method_41992(),
+               var9.getName(),
                class_1255.field_6918.field_6917
             );
          }
@@ -253,10 +253,10 @@ public class class_9024 extends Module {
          var10 + this.field_46163 + this.field_46159 <= var3 ? (float)(var10 + var2 + this.field_46159 - 10) : (float)(var2 + var3 - 10),
          (float)var4,
          14.0F,
-         class_2209.field_10997,
+         NotificationIcons.field_10997,
          this.field_46186
       );
-      class_73.method_99((float)var1, var10 >= 0 ? (float)(var10 + var2) : (float)var2, (float)var4, 14.0F, class_2209.field_10992, this.field_46186);
+      class_73.method_99((float)var1, var10 >= 0 ? (float)(var10 + var2) : (float)var2, (float)var4, 14.0F, NotificationIcons.field_10992, this.field_46186);
       class_73.method_149(
          var1,
          var10 >= 0 ? var10 + var2 : var2,
@@ -393,8 +393,8 @@ public class class_9024 extends Module {
    private void method_41405() {
       byte var3 = 3;
       if (!SigmaMainClass.getInstance().method_3299().method_30987()) {
-         if (!MinecraftClient.getInstance().field_9577.field_45470) {
-            if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                for (int var4 = 0; var4 < 3; var4++) {
                   this.field_46174[var4] = this.method_41398(this.field_46182 + this.field_46158 / 3 * var4, this.field_46185, this.field_46174[var4]);
                   this.field_46173[var4] = this.method_41398(

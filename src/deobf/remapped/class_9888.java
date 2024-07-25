@@ -32,7 +32,7 @@ public class class_9888 extends class_4145 {
             return new StringTextComponent(this.method_45552(var5).method_2045());
          }
       );
-      this.field_50143 = this.<class_7114>method_1186(var3.method_4482(this.field_943.field_9577, this.field_941 / 2 + 40, 7, 114));
+      this.field_50143 = this.<class_7114>method_1186(var3.method_4482(this.field_943.gameOptions, this.field_941 / 2 + 40, 7, 114));
    }
 
    @Override

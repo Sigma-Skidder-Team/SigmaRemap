@@ -150,7 +150,7 @@ public class class_8865 {
       float var2 = field_45329.field_9632.field_29673;
       float var3 = field_45329.field_9632.field_29676;
       float var4 = field_45329.field_9632.field_41701 + 90.0F;
-      if (var2 > 0.0F && field_45329.field_9577.field_45434.method_27060()) {
+      if (var2 > 0.0F && field_45329.gameOptions.field_45434.method_27060()) {
          var2 = -1.0F;
       }
 
@@ -176,10 +176,10 @@ public class class_8865 {
    }
 
    public static boolean method_40772() {
-      boolean var2 = field_45329.field_9577.field_45416.method_27060();
-      boolean var3 = field_45329.field_9577.field_45504.method_27060();
-      boolean var4 = field_45329.field_9577.field_45411.method_27060();
-      boolean var5 = field_45329.field_9577.field_45434.method_27060();
+      boolean var2 = field_45329.gameOptions.field_45416.method_27060();
+      boolean var3 = field_45329.gameOptions.field_45504.method_27060();
+      boolean var4 = field_45329.gameOptions.field_45411.method_27060();
+      boolean var5 = field_45329.gameOptions.field_45434.method_27060();
       return var2 || var3 || var4 || var5;
    }
 

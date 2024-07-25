@@ -100,7 +100,7 @@ public class class_3062 extends class_2089 {
 
       SigmaMainClass.getInstance().method_3333();
       class_6098 var6 = this.field_15040.field_9632.field_3853.method_32416(3);
-      if (this.field_15040.field_9577.method_40867().method_42383() && var6.method_27960() == class_4783.field_23281.method_10803()) {
+      if (this.field_15040.gameOptions.method_40867().method_42383() && var6.method_27960() == class_4783.field_23281.method_10803()) {
          this.method_13979();
       }
 
@@ -110,14 +110,14 @@ public class class_3062 extends class_2089 {
       }
 
       if (this.field_15040.field_9647.method_42158() != class_4666.field_22756) {
-         if (!this.field_15040.field_9577.field_45567) {
+         if (!this.field_15040.gameOptions.field_45567) {
             this.method_13998(var2, var1);
          }
       } else {
          this.field_15032.method_38558(var1, var2);
       }
 
-      if (!this.field_15040.field_9577.field_45567) {
+      if (!this.field_15040.gameOptions.field_45567) {
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
          this.field_15040.method_8577().method_35674(field_10507);
          class_3542.method_16488();
@@ -145,7 +145,7 @@ public class class_3062 extends class_2089 {
             this.method_13999(var1, var8);
          }
 
-         if (this.field_15040.field_9577.field_45477 && this.field_15040.field_9647.method_42158() != class_4666.field_22756) {
+         if (this.field_15040.gameOptions.field_45477 && this.field_15040.field_9647.method_42158() != class_4666.field_22756) {
             this.method_13993(var1);
          } else if (this.field_15040.field_9632.method_37221()) {
             this.field_15032.method_38563(var1);
@@ -175,11 +175,11 @@ public class class_3062 extends class_2089 {
       }
 
       this.method_13983(var1);
-      if (this.field_15040.field_9577.field_45470) {
+      if (this.field_15040.gameOptions.field_45470) {
          this.field_15026.method_17982(var1);
       }
 
-      if (!this.field_15040.field_9577.field_45567) {
+      if (!this.field_15040.gameOptions.field_45567) {
          if (this.field_15031 != null && this.field_15051 > 0) {
             this.field_15040.method_8562().method_16056("overlayMessage");
             float var15 = (float)this.field_15051 - var2;
@@ -285,7 +285,7 @@ public class class_3062 extends class_2089 {
          this.field_15040.method_8562().method_16054();
          class_3542.method_16489();
          var28 = var17.method_4833(0);
-         if (this.field_15040.field_9577.field_45564.method_27060()
+         if (this.field_15040.gameOptions.field_45564.method_27060()
             && (!this.field_15040.method_8566() || this.field_15040.field_9632.field_30532.method_4798().size() > 1 || var28 != null)) {
             this.field_15053.method_9944(true);
             this.field_15053.method_9940(var1, this.field_15028, var17, var28);
@@ -299,7 +299,7 @@ public class class_3062 extends class_2089 {
    }
 
    private void method_14005(class_7966 var1, TextRenderer var2, int var3, int var4, int var5) {
-      int var8 = this.field_15040.field_9577.method_40888(0.0F);
+      int var8 = this.field_15040.gameOptions.method_40888(0.0F);
       if (var8 != 0) {
          int var9 = -var4 / 2;
          method_9774(var1, var9 - 2, var3 - 2, var9 + var4 + 2, var3 + 9 + 2, class_8496.method_39155(var8, var5));
@@ -307,7 +307,7 @@ public class class_3062 extends class_2089 {
    }
 
    private void method_13989(class_7966 var1) {
-      GameOptions var4 = this.field_15040.field_9577;
+      GameOptions var4 = this.field_15040.gameOptions;
       if (var4.method_40867().method_42383()
          && (this.field_15040.field_9647.method_42158() != class_4666.field_22756 || this.method_14001(this.field_15040.field_9587))) {
          if (var4.field_45470 && !var4.field_45567 && !this.field_15040.field_9632.method_3179() && !var4.field_45500) {
@@ -323,7 +323,7 @@ public class class_3062 extends class_2089 {
             class_3542.method_16425(class_5033.field_26037, class_8535.field_43686, class_5033.field_26047, class_8535.field_43699);
             byte var5 = 15;
             this.method_9781(var1, (this.field_15028 - 15) / 2, (this.field_15049 - 15) / 2, 0, 0, 15, 15);
-            if (this.field_15040.field_9577.field_45555 == class_8846.field_45243) {
+            if (this.field_15040.gameOptions.field_45555 == class_8846.field_45243) {
                float var6 = this.field_15040.field_9632.method_3203(0.0F);
                boolean var7 = false;
                if (this.field_15040.field_9662 != null && this.field_15040.field_9662 instanceof class_5834 && var6 >= 1.0F) {
@@ -480,7 +480,7 @@ public class class_3062 extends class_2089 {
             class_3290.method_15104(false);
          }
 
-         if (this.field_15040.field_9577.field_45555 == class_8846.field_45241) {
+         if (this.field_15040.gameOptions.field_45555 == class_8846.field_45241) {
             float var17 = this.field_15040.field_9632.method_3203(0.0F);
             if (var17 < 1.0F) {
                int var18 = this.field_15049 - 20;
@@ -582,7 +582,7 @@ public class class_3062 extends class_2089 {
             class_3542.method_16438();
             class_3542.method_16488();
             class_3542.method_16437();
-            method_9774(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field_15040.field_9577.method_40881(0));
+            method_9774(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field_15040.gameOptions.method_40881(0));
             TextRenderer var10 = null;
             if (class_7860.field_40211.method_3596()) {
                var10 = (TextRenderer)class_7860.method_35555(this.field_15039.method_27960(), class_7860.field_40211, this.field_15039);
@@ -645,8 +645,8 @@ public class class_3062 extends class_2089 {
       byte var30 = 3;
       int var31 = this.field_15028 - var11 - 3;
       int var17 = 0;
-      int var18 = this.field_15040.field_9577.method_40888(0.3F);
-      int var19 = this.field_15040.field_9577.method_40888(0.4F);
+      int var18 = this.field_15040.gameOptions.method_40888(0.3F);
+      int var19 = this.field_15040.gameOptions.method_40888(0.4F);
 
       for (Pair var21 : var8) {
          var17++;
@@ -1132,7 +1132,7 @@ public class class_3062 extends class_2089 {
    }
 
    public void method_13992(ChatType var1, ITextComponent var2, UUID var3) {
-      if (!this.field_15040.method_8526(var3) && (!this.field_15040.field_9577.field_45405 || !this.field_15040.method_8526(this.method_13986(var2)))) {
+      if (!this.field_15040.method_8526(var3) && (!this.field_15040.gameOptions.field_45405 || !this.field_15040.method_8526(this.method_13986(var2)))) {
          for (class_9720 var7 : this.field_15048.get(var1)) {
             var7.method_44914(var1, var2, var3);
          }

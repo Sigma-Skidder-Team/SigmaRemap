@@ -60,7 +60,7 @@ public class class_1675 {
             }
 
             for (Module var8 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
-               if (var8.method_41992().equals(var6) && var8.method_42004() != Category.GUI && var8.method_42004() != Category.RENDER) {
+               if (var8.getName().equals(var6) && var8.method_42004() != Category.GUI && var8.method_42004() != Category.RENDER) {
                   var5.method_5820("enabled", "false");
                }
             }
@@ -88,7 +88,7 @@ public class class_1675 {
                SigmaMainClass.getInstance().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            if (var2.method_41992().equals(var9)) {
+            if (var2.getName().equals(var9)) {
                if (var2.method_42004() != Category.GUI && var2.method_42004() != Category.RENDER) {
                   var5.method_6154(var7, var1);
                }
@@ -122,7 +122,7 @@ public class class_1675 {
                SigmaMainClass.getInstance().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            if (var1.method_41992().equals(var7)) {
+            if (var1.getName().equals(var7)) {
                return var6;
             }
          }

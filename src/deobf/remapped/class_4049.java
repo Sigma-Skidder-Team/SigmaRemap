@@ -49,10 +49,10 @@ public class class_4049 extends class_2089 {
             class_3542.method_16438();
             class_3542.method_16413(2.0F, 8.0F, 0.0F);
             class_3542.method_16356(var9, var9, 1.0);
-            double var12 = this.field_19686.field_9577.field_45402 * 0.9F + 0.1F;
-            double var14 = this.field_19686.field_9577.field_45563;
-            double var16 = 9.0 * (this.field_19686.field_9577.field_45465 + 1.0);
-            double var18 = -8.0 * (this.field_19686.field_9577.field_45465 + 1.0) + 4.0 * this.field_19686.field_9577.field_45465;
+            double var12 = this.field_19686.gameOptions.field_45402 * 0.9F + 0.1F;
+            double var14 = this.field_19686.gameOptions.field_45563;
+            double var16 = 9.0 * (this.field_19686.gameOptions.field_45465 + 1.0);
+            double var18 = -8.0 * (this.field_19686.gameOptions.field_45465 + 1.0) + 4.0 * this.field_19686.gameOptions.field_45465;
             int var20 = 0;
 
             for (int var21 = 0; var21 + this.field_19689 < this.field_19694.size() && var21 < var6; var21++) {
@@ -69,17 +69,17 @@ public class class_4049 extends class_2089 {
                         double var29 = (double)(-var21) * var16;
                         var1.method_36063();
                         var1.method_36065(0.0, 0.0, 50.0);
-                        if (this.field_19686.field_9577.field_45574 == 5) {
+                        if (this.field_19686.gameOptions.field_45574 == 5) {
                            var11 = this.field_19686.textRenderer.method_45400((class_7107)var22.method_39608()) - 2;
                         }
 
-                        if (this.field_19686.field_9577.field_45574 != 3) {
+                        if (this.field_19686.gameOptions.field_45574 != 3) {
                            method_9774(var1, -2, (int)(var29 - var16), 0 + var11 + 4, (int)var29, var27 << 24);
                         }
 
                         class_3542.method_16488();
                         var1.method_36065(0.0, 0.0, 50.0);
-                        if (this.field_19686.field_9577.field_45472) {
+                        if (this.field_19686.gameOptions.field_45472) {
                            this.field_19686
                               .textRenderer
                               .method_45402(var1, (class_7107)var22.method_39608(), 0.0F, (float)((int)(var29 + var18)), 16777215 + (var26 << 24));
@@ -134,7 +134,7 @@ public class class_4049 extends class_2089 {
    }
 
    private boolean method_18698() {
-      return this.field_19686.field_9577.field_45443 == class_1803.field_9186;
+      return this.field_19686.gameOptions.field_45443 == class_1803.field_9186;
    }
 
    private static double method_18699(int var0) {
@@ -233,7 +233,7 @@ public class class_4049 extends class_2089 {
    }
 
    public boolean method_18696(double var1, double var3) {
-      if (this.method_18695() && !this.field_19686.field_9577.field_45567 && !this.method_18698() && !this.field_19692.isEmpty()) {
+      if (this.method_18695() && !this.field_19686.gameOptions.field_45567 && !this.method_18698() && !this.field_19692.isEmpty()) {
          double var7 = var1 - 2.0;
          double var9 = (double)this.field_19686.method_8552().method_43177() - var3 - 40.0;
          if (var7 <= (double)class_9299.method_42847((double)this.method_18700() / this.method_18689())
@@ -252,11 +252,11 @@ public class class_4049 extends class_2089 {
 
    @Nullable
    public Style method_18680(double var1, double var3) {
-      if (this.method_18695() && !this.field_19686.field_9577.field_45567 && !this.method_18698()) {
+      if (this.method_18695() && !this.field_19686.gameOptions.field_45567 && !this.method_18698()) {
          double var7 = var1 - 2.0;
          double var9 = (double)this.field_19686.method_8552().method_43177() - var3 - 40.0;
          var7 = (double)class_9299.method_42847(var7 / this.method_18689());
-         var9 = (double)class_9299.method_42847(var9 / (this.method_18689() * (this.field_19686.field_9577.field_45465 + 1.0)));
+         var9 = (double)class_9299.method_42847(var9 / (this.method_18689() * (this.field_19686.gameOptions.field_45465 + 1.0)));
          if (!(var7 < 0.0) && !(var9 < 0.0)) {
             int var11 = Math.min(this.method_18681(), this.field_19694.size());
             if (var7 <= (double)class_9299.method_42847((double)this.method_18700() / this.method_18689()) && var9 < (double)(9 * var11 + var11)) {
@@ -286,7 +286,7 @@ public class class_4049 extends class_2089 {
    }
 
    public int method_18700() {
-      int var3 = method_18686(this.field_19686.field_9577.field_45388);
+      int var3 = method_18686(this.field_19686.gameOptions.field_45388);
       Window var4 = MinecraftClient.getInstance().method_8552();
       int var5 = (int)((double)(var4.method_43178() - 3) / var4.method_43189());
       return class_9299.method_42829(var3, 0, var5);
@@ -294,13 +294,13 @@ public class class_4049 extends class_2089 {
 
    public int method_18677() {
       return method_18688(
-         (!this.method_18695() ? this.field_19686.field_9577.field_45488 : this.field_19686.field_9577.field_45480)
-            / (this.field_19686.field_9577.field_45465 + 1.0)
+         (!this.method_18695() ? this.field_19686.gameOptions.field_45488 : this.field_19686.gameOptions.field_45480)
+            / (this.field_19686.gameOptions.field_45465 + 1.0)
       );
    }
 
    public double method_18689() {
-      return this.field_19686.field_9577.field_45419;
+      return this.field_19686.gameOptions.field_45419;
    }
 
    public static int method_18686(double var0) {
@@ -320,7 +320,7 @@ public class class_4049 extends class_2089 {
    }
 
    private long method_18679() {
-      return (long)(this.field_19686.field_9577.field_45479 * 1000.0);
+      return (long)(this.field_19686.gameOptions.field_45479 * 1000.0);
    }
 
    private void method_18685() {
@@ -334,7 +334,7 @@ public class class_4049 extends class_2089 {
    }
 
    public void method_18682(ITextComponent var1) {
-      if (!(this.field_19686.field_9577.field_45479 <= 0.0)) {
+      if (!(this.field_19686.gameOptions.field_45479 <= 0.0)) {
          long var4 = System.currentTimeMillis();
          if (var4 - this.field_19688 < this.method_18679()) {
             this.field_19692.add(var1);

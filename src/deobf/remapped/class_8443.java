@@ -70,7 +70,7 @@ public class class_8443 extends class_122 implements class_6375 {
          (float)var9 + var10[1] - (float)var11,
          var10[2] + (float)(var11 * 2),
          var10[3] + (float)(var11 * 2),
-         class_2209.field_11045,
+         NotificationIcons.field_11045,
          class_314.method_1444(class_1255.field_6918.field_6917, this.field_43191.method_11123() * 0.7F * var1)
       );
       class_73.method_99(
@@ -110,7 +110,7 @@ public class class_8443 extends class_122 implements class_6375 {
             (float)var12.method_18548(var14) / 3.0F,
             (float)(var12.method_18547(var14) * 2),
             (float)var12.method_18548(var14) * 3.0F,
-            class_2209.field_11045,
+            NotificationIcons.field_11045,
             var5 * 0.6F * var1
          );
          class_73.method_87(

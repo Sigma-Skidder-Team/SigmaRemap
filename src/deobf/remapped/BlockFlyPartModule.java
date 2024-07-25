@@ -133,7 +133,7 @@ public class BlockFlyPartModule extends Module {
             double var4 = var1.method_6450();
             double var6 = var1.method_6438();
             double var8 = var1.method_6454();
-            if (!mcInstance.field_9632.field_41744 && !mcInstance.field_9577.field_45450.field_30024) {
+            if (!mcInstance.field_9632.field_41744 && !mcInstance.gameOptions.field_45450.field_30024) {
                double[] var10 = this.method_36710();
                var4 = var10[0];
                var6 = var10[1];
@@ -144,7 +144,7 @@ public class BlockFlyPartModule extends Module {
                && class_7494.method_34079(0.0F, 90.0F, 3.0F).method_33990() == class_1430.field_7721) {
                var8 += Math.min(mcInstance.field_9632.method_37098().field_7333 * 2.0, 4.0);
             } else if ((this.getStringValueByName("Speed Mode").equals("Jump") || this.getStringValueByName("Speed Mode").equals("Cubecraft"))
-               && !mcInstance.field_9577.field_45450.method_27060()) {
+               && !mcInstance.gameOptions.field_45450.method_27060()) {
                var8 = this.field_41371;
             }
 
@@ -227,7 +227,7 @@ public class BlockFlyPartModule extends Module {
             case "Cubecraft":
                double var6 = 0.2;
                float var8 = this.method_36706(class_9299.method_42810(mcInstance.field_9632.field_41701));
-               if (mcInstance.field_9577.field_45450.method_27060()) {
+               if (mcInstance.gameOptions.field_45450.method_27060()) {
                   mcInstance.field_9616.field_32603 = 1.0F;
                } else if (mcInstance.field_9632.field_41726) {
                   if (class_314.method_1434() && !mcInstance.field_9632.method_37252() && !this.field_41374) {

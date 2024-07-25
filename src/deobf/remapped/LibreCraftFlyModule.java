@@ -12,12 +12,12 @@ public class LibreCraftFlyModule extends Module {
    @Override
    public void onEnable() {
       this.field_28095 = 0;
-      if (!mcInstance.field_9577.field_45560.method_27060()) {
-         if (!mcInstance.field_9577.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+         if (!mcInstance.gameOptions.field_45560.method_27060()) {
             this.field_28094 = false;
          }
       } else {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          this.field_28094 = true;
       }
    }
@@ -33,7 +33,7 @@ public class LibreCraftFlyModule extends Module {
    @EventListen
    private void method_25014(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28094 = true;
          }
@@ -43,7 +43,7 @@ public class LibreCraftFlyModule extends Module {
    @EventListen
    private void method_25015(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28094 = false;
          }

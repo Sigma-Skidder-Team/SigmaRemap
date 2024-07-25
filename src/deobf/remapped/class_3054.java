@@ -27,16 +27,16 @@ public class class_3054 {
    public static class_3384 field_14997;
 
    public static void method_13951() {
-      field_14996 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/singleplayer.png");
-      field_15005 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/multiplayer.png");
-      field_15011 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/options.png");
-      field_15000 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/language.png");
-      field_15009 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/accounts.png");
-      field_14995 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/exit.png");
-      field_15004 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/mainmenubackground.png");
-      field_15010 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/big.png");
-      field_14987 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/agora.png");
-      field_15007 = class_2209.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/checkbox.png");
+      field_14996 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/singleplayer.png");
+      field_15005 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/multiplayer.png");
+      field_15011 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/options.png");
+      field_15000 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/language.png");
+      field_15009 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/accounts.png");
+      field_14995 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/exit.png");
+      field_15004 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/mainmenubackground.png");
+      field_15010 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/big.png");
+      field_14987 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/agora.png");
+      field_15007 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/uglygui/checkbox.png");
       field_15008 = class_5320.method_24270("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 28.0F);
       field_14988 = class_5320.method_24270("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 25.0F);
       field_14994 = class_5320.method_24270("com/mentalfrostbyte/gui/resources/font/SF-UI-Display-Regular.ttf", 0, 20.0F);

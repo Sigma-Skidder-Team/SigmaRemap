@@ -61,7 +61,7 @@ public class class_7496 extends Module {
             double var4 = this.field_38245 ? 1.0E-14 : 0.0;
             boolean var6 = false;
             boolean var7 = mcInstance.field_9587 != null && mcInstance.field_9587.method_33990() == class_1430.field_7717;
-            boolean var8 = mcInstance.field_9647.method_42156() || mcInstance.field_9577.field_45530.method_27060() && var7;
+            boolean var8 = mcInstance.field_9647.method_42156() || mcInstance.gameOptions.field_45530.method_27060() && var7;
             if (!var8 && !class_7033.method_32081()) {
                switch (this.field_38243) {
                   case 0:

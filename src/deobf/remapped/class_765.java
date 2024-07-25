@@ -43,7 +43,7 @@ public class class_765 extends class_4232 {
    private class_6809 field_4144 = new class_6809(this, new class_3403());
    private List<class_7114> field_4146 = this.field_950;
    private class_7114 field_4135;
-   private GameOptions field_4145 = MinecraftClient.getInstance().field_9577;
+   private GameOptions field_4145 = MinecraftClient.getInstance().gameOptions;
 
    @Override
    public boolean method_26940(double var1, double var3, int var5) {
@@ -115,7 +115,7 @@ public class class_765 extends class_4232 {
          if (var4 != null) {
             int var5 = this.field_941 / 2 - 155 + var3 % 2 * 160;
             int var6 = this.field_940 / 6 + 21 * (var3 / 2) - 12;
-            class_7114 var7 = this.<class_7114>method_1186(var4.method_4482(this.field_943.field_9577, var5, var6, 150));
+            class_7114 var7 = this.<class_7114>method_1186(var4.method_4482(this.field_943.gameOptions, var5, var6, 150));
             if (var4 == class_1013.field_5251) {
                this.field_4135 = var7;
             }
@@ -209,36 +209,36 @@ public class class_765 extends class_4232 {
    private void method_3451(class_5932 var1, int var2) {
       if (var1.field_36675) {
          if (var1.field_30159 == 200) {
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             this.field_943.method_8609(this.field_4136);
          }
 
          if (var1.field_30159 == 201) {
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             class_9135 var5 = new class_9135(this, this.field_4133);
             this.field_943.method_8609(var5);
          }
 
          if (var1.field_30159 == 202) {
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             class_2908 var6 = new class_2908(this, this.field_4133);
             this.field_943.method_8609(var6);
          }
 
          if (var1.field_30159 == 211) {
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             class_587 var7 = new class_587(this, this.field_4133);
             this.field_943.method_8609(var7);
          }
 
          if (var1.field_30159 == 212) {
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             class_3646 var8 = new class_3646(this, this.field_4133);
             this.field_943.method_8609(var8);
          }
 
          if (var1.field_30159 == 222) {
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             class_8767 var9 = new class_8767(this, this.field_4133);
             this.field_943.method_8609(var9);
          }
@@ -259,7 +259,7 @@ public class class_765 extends class_4232 {
                return;
             }
 
-            this.field_943.field_9577.method_40873();
+            this.field_943.gameOptions.method_40873();
             class_1789 var10 = new class_1789(this, this.field_4133);
             this.field_943.method_8609(var10);
          }
@@ -268,7 +268,7 @@ public class class_765 extends class_4232 {
 
    @Override
    public void method_1162() {
-      this.field_943.field_9577.method_40873();
+      this.field_943.gameOptions.method_40873();
       super.method_1162();
    }
 

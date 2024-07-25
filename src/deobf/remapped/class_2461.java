@@ -78,7 +78,7 @@ public class class_2461 extends Module {
          }
 
          if (!this.getBooleanValueByName("Haphe (AACAP)")) {
-            mcInstance.field_9577.field_45444.field_30024 = false;
+            mcInstance.gameOptions.field_45444.field_30024 = false;
             mcInstance.field_9632.method_37140(false);
          }
 

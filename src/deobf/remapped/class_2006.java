@@ -48,7 +48,7 @@ public class class_2006 extends Screen {
       this.field_10181 = new class_1863(this.field_948, this.field_941 / 2 - 100, 116, 200, 20, new TranslationTextComponent("addServer.enterIp"));
       this.field_10181.method_8255(128);
       this.field_10181.method_8273(true);
-      this.field_10181.method_8281(this.field_943.field_9577.field_45414);
+      this.field_10181.method_8281(this.field_943.gameOptions.field_45414);
       this.field_10181.method_8277(var1 -> this.method_9320());
       this.field_942.add(this.field_10181);
       this.method_41178(this.field_10181);
@@ -75,8 +75,8 @@ public class class_2006 extends Screen {
    @Override
    public void method_1162() {
       this.field_943.field_9600.method_38887(false);
-      this.field_943.field_9577.field_45414 = this.field_10181.method_8246();
-      this.field_943.field_9577.method_40873();
+      this.field_943.gameOptions.field_45414 = this.field_10181.method_8246();
+      this.field_943.gameOptions.method_40873();
    }
 
    private void method_9320() {

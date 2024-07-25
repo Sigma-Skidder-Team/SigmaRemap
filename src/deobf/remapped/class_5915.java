@@ -64,7 +64,7 @@ public class class_5915 extends class_1859 {
             class_314.method_1444(class_1255.field_6918.field_6917, var1 * var1)
          );
          if (var8 != 0.0F) {
-            class_73.method_96((float)this.method_32132() + (float)this.method_32109() * var8, (float)this.method_32173(), 5.0F, 5.0F, class_2209.field_11018);
+            class_73.method_96((float)this.method_32132() + (float)this.method_32109() * var8, (float)this.method_32173(), 5.0F, 5.0F, NotificationIcons.field_11018);
          }
       }
    }

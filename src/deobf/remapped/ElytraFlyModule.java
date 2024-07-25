@@ -18,7 +18,7 @@ public class ElytraFlyModule extends Module {
    @EventListen
    public void method_45348(class_5596 var1) {
       if (this.method_42015()) {
-         mcInstance.field_9577.field_45560.field_30024 = false;
+         mcInstance.gameOptions.field_45560.field_30024 = false;
          if (!(mcInstance.field_9632.method_37098().field_7333 < 0.08) || mcInstance.field_9632.field_41726) {
             mcInstance.field_9632.method_37220(7, false);
             if (mcInstance.field_9632.method_37252()) {
@@ -61,7 +61,7 @@ public class ElytraFlyModule extends Module {
             var1.method_35235((double)this.field_49840);
          }
 
-         int var7 = GLFW.glfwGetKey(mcInstance.window.method_43181(), mcInstance.field_9577.field_45560.field_30027.field_17800);
+         int var7 = GLFW.glfwGetKey(mcInstance.window.method_43181(), mcInstance.gameOptions.field_45560.field_30027.field_17800);
          if (var7 == 1 && this.getBooleanValueByName("NCP")) {
             var1.method_35235(-0.9F);
          } else if (!mcInstance.field_9632.method_37252()) {

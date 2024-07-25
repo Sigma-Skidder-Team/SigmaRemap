@@ -48,8 +48,8 @@ public class TeleportCommand extends Command {
                field_18219.method_8614().method_4813(new class_9515(var9, var11 + 0.1, var13, false));
                this.field_19500.field_49646 = 1;
                SigmaMainClass.getInstance()
-                  .method_3335()
-                  .method_27841(new class_8235("Teleport", "Teleporting to \"" + this.field_19500.field_49648.method_45509().getString() + "\"...", 10000));
+                  .getNotificationManager()
+                  .pushNotification(new Notification("Teleport", "Teleporting to \"" + this.field_19500.field_49648.method_45509().getString() + "\"...", 10000));
                this.field_19500.field_49649.method_14776();
             }
          } else {

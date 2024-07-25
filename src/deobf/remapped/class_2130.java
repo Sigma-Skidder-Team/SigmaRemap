@@ -109,7 +109,7 @@ public class class_2130 extends class_2089 {
       }
 
       method_9774(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var38 * 9, Integer.MIN_VALUE);
-      int var45 = this.field_10666.field_9577.method_40881(553648127);
+      int var45 = this.field_10666.gameOptions.method_40881(553648127);
 
       for (int var47 = 0; var47 < var37; var47++) {
          int var49 = var47 / var38;

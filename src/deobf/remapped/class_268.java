@@ -168,8 +168,8 @@ public class class_268 extends Module {
    @class_5355
    private void method_1196(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (!MinecraftClient.getInstance().field_9577.field_45470) {
-            if (!MinecraftClient.getInstance().field_9577.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.field_45470) {
+            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                this.method_1208();
 
                for (class_3622 var5 : field_960) {
@@ -191,7 +191,7 @@ public class class_268 extends Module {
          int var6 = 0;
 
          for (Module var8 : SigmaMainClass.getInstance().getModuleManager().method_844(var5)) {
-            var3.method_13685(var6++, (!var8.method_42015() ? "§7" : "") + var8.method_41987());
+            var3.method_13685(var6++, (!var8.method_42015() ? "§7" : "") + var8.getName2());
          }
       }
    }
@@ -217,10 +217,10 @@ public class class_268 extends Module {
 
          Category var9 = this.field_958.get(var5.field_14700);
          Module var10 = SigmaMainClass.getInstance().getModuleManager().method_844(var9).get(var6.field_14700);
-         String var11 = var10.method_42001();
+         String var11 = var10.getDescription();
          if (var4 == 3) {
             Setting var12 = this.method_1206(var10).get(var7.field_14700);
-            var11 = var12.method_23033();
+            var11 = var12.getDescription();
          }
 
          float var17 = class_3483.method_15985(this.field_956.method_11123(), 0.0F, 1.0F, 1.0F) * field_955.method_11123();
@@ -287,7 +287,7 @@ public class class_268 extends Module {
       ArrayList var4 = new ArrayList();
 
       for (Module var6 : SigmaMainClass.getInstance().getModuleManager().method_844(var1)) {
-         var4.add(var6.method_41987());
+         var4.add(var6.getName2());
       }
 
       this.method_1202(1);
@@ -328,7 +328,7 @@ public class class_268 extends Module {
       ArrayList var4 = new ArrayList();
 
       for (Setting var6 : this.method_1206(var1)) {
-         var4.add(var6.method_23032() + " " + var6.method_23031());
+         var4.add(var6.getName() + " " + var6.method_23031());
       }
 
       return var4;
@@ -348,7 +348,7 @@ public class class_268 extends Module {
 
       while (var7.hasNext()) {
          Setting var6 = (Setting)var7.next();
-         if (var6.method_23032().equals("Keybind")) {
+         if (var6.getName().equals("Keybind")) {
             var7.remove();
          }
       }

@@ -2,7 +2,7 @@ package remapped;
 
 public class SomeWeirdMultiFloatSetting extends Setting<class_7928> {
    public SomeWeirdMultiFloatSetting(String var1, String var2, float var3, float var4, float var5, float var6) {
-      super(var1, var2, class_5195.field_26721, new class_7928(var3, var4, var5, var6));
+      super(var1, var2, SettingType.field_26721, new class_7928(var3, var4, var5, var6));
    }
 
    @Override
@@ -13,7 +13,7 @@ public class SomeWeirdMultiFloatSetting extends Setting<class_7928> {
 
    @Override
    public JSONObjectImpl loadDataFromJson(JSONObjectImpl var1) {
-      var1.method_5820("name", this.method_23032());
+      var1.method_5820("name", this.getName());
       var1.method_5820("value", this.method_23031().method_35842());
       return var1;
    }
