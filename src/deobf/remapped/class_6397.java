@@ -72,7 +72,7 @@ public class class_6397 {
          Direction[] var18 = Direction.values();
          class_2921 var19 = new class_2921();
 
-         for (class_1331 var21 : class_1331.method_6075(var14, 0, var16, var15, var4.method_28261() - 1, var17)) {
+         for (BlockPos var21 : BlockPos.method_6075(var14, 0, var16, var15, var4.method_28261() - 1, var17)) {
             class_2522 var22 = var4.method_28262(var21);
             class_2522 var23 = var22;
 
@@ -86,7 +86,7 @@ public class class_6397 {
       }
    }
 
-   private static class_2522 method_29204(class_2522 var0, Direction var1, class_9379 var2, class_1331 var3, class_1331 var4) {
+   private static class_2522 method_29204(class_2522 var0, Direction var1, class_9379 var2, BlockPos var3, BlockPos var4) {
       return field_32664.getOrDefault(var0.method_8360(), class_3823.field_18691).method_43653(var0, var1, var2.method_28262(var4), var2, var3, var4);
    }
 

@@ -14,13 +14,13 @@ public class class_212 {
       this.field_709 = class_6560.field_33464.method_12947();
    }
 
-   private static boolean method_906(class_6163 var0, class_1331 var1, Direction var2, class_4774 var3) {
-      class_1331 var6 = var1.method_6098(var2);
+   private static boolean method_906(class_6163 var0, BlockPos var1, Direction var2, class_4774 var3) {
+      BlockPos var6 = var1.method_6098(var2);
       class_4774 var7 = var0.method_28258(var6);
       return var7.method_22005().method_10723(var3.method_22005());
    }
 
-   private static boolean method_901(class_6163 var0, Direction var1, float var2, class_1331 var3, class_2522 var4) {
+   private static boolean method_901(class_6163 var0, Direction var1, float var2, BlockPos var3, class_2522 var4) {
       if (!var4.method_8302()) {
          return false;
       } else {
@@ -30,21 +30,21 @@ public class class_212 {
       }
    }
 
-   private static boolean method_898(class_6163 var0, class_1331 var1, Direction var2, float var3) {
-      class_1331 var6 = var1.method_6098(var2);
+   private static boolean method_898(class_6163 var0, BlockPos var1, Direction var2, float var3) {
+      BlockPos var6 = var1.method_6098(var2);
       class_2522 var7 = var0.method_28262(var6);
       return method_901(var0, var2, var3, var6, var7);
    }
 
-   private static boolean method_897(class_6163 var0, class_1331 var1, class_2522 var2, Direction var3) {
+   private static boolean method_897(class_6163 var0, BlockPos var1, class_2522 var2, Direction var3) {
       return method_901(var0, var3.method_1046(), 1.0F, var1, var2);
    }
 
-   public static boolean method_895(class_5561 var0, class_1331 var1, class_4774 var2, class_2522 var3, Direction var4) {
+   public static boolean method_895(class_5561 var0, BlockPos var1, class_4774 var2, class_2522 var3, Direction var4) {
       return !method_897(var0, var1, var3, var4) && !method_906(var0, var1, var4, var2);
    }
 
-   public boolean method_905(class_5561 var1, class_1331 var2, class_7907 var3, class_4774 var4) {
+   public boolean method_905(class_5561 var1, BlockPos var2, class_7907 var3, class_4774 var4) {
       class_2522 var7 = var4.method_22006();
 
       boolean var23;
@@ -255,7 +255,7 @@ public class class_212 {
 
                if (var119 && !method_898(var1, var2, var117, Math.max(var93, var97))) {
                   var23 = true;
-                  class_1331 var121 = var2.method_6098(var117);
+                  BlockPos var121 = var2.method_6098(var117);
                   class_5155 var122 = var9[1];
                   float var123 = 0.0F;
                   float var125 = 0.0F;
@@ -362,7 +362,7 @@ public class class_212 {
          .method_35735();
    }
 
-   private int method_904(class_5561 var1, class_1331 var2) {
+   private int method_904(class_5561 var1, BlockPos var2) {
       int var5 = WorldRenderer.method_20002(var1, var2);
       int var6 = WorldRenderer.method_20002(var1, var2.method_6081());
       int var7 = var5 & 0xFF;
@@ -372,12 +372,12 @@ public class class_212 {
       return (var7 <= var8 ? var8 : var7) | (var9 <= var10 ? var10 : var9) << 16;
    }
 
-   private float method_899(class_6163 var1, class_1331 var2, class_2340 var3) {
+   private float method_899(class_6163 var1, BlockPos var2, class_2340 var3) {
       int var6 = 0;
       float var7 = 0.0F;
 
       for (int var8 = 0; var8 < 4; var8++) {
-         class_1331 var9 = var2.method_6104(-(var8 & 1), 0, -(var8 >> 1 & 1));
+         BlockPos var9 = var2.method_6104(-(var8 & 1), 0, -(var8 >> 1 & 1));
          if (var1.method_28258(var9.method_6081()).method_22005().method_10723(var3)) {
             return 1.0F;
          }

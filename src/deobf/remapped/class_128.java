@@ -26,14 +26,14 @@ public class class_128 extends class_3599 {
    public void method_16794() {
       this.field_316--;
       if (this.field_316 <= 0) {
-         World var3 = this.field_318.field_41768;
+         World var3 = this.field_318.world;
          Random var4 = this.field_318.method_26594();
-         class_1331 var5 = this.field_318.method_37075();
+         BlockPos var5 = this.field_318.method_37075();
 
          for (int var6 = 0; var6 <= 5 && var6 >= -5; var6 = (var6 > 0 ? 0 : 1) - var6) {
             for (int var7 = 0; var7 <= 10 && var7 >= -10; var7 = (var7 > 0 ? 0 : 1) - var7) {
                for (int var8 = 0; var8 <= 10 && var8 >= -10; var8 = (var8 > 0 ? 0 : 1) - var8) {
-                  class_1331 var9 = var5.method_6104(var7, var6, var8);
+                  BlockPos var9 = var5.method_6104(var7, var6, var8);
                   class_2522 var10 = var3.method_28262(var9);
                   class_6414 var11 = var10.method_8360();
                   if (var11 instanceof class_6598) {

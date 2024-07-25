@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import java.util.Random;
 
 public class class_6754 extends class_4285<class_1941> {
-   private static final class_1331 field_34859 = new class_1331(8, 3, 8);
+   private static final BlockPos field_34859 = new BlockPos(8, 3, 8);
    private static final class_2034 field_34858 = new class_2034(field_34859);
 
    public class_6754(Codec<class_1941> var1) {
@@ -15,7 +15,7 @@ public class class_6754 extends class_4285<class_1941> {
       return Math.max(Math.abs(var0 - var2), Math.abs(var1 - var3));
    }
 
-   public boolean method_30958(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_30958(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       class_2034 var8 = new class_2034(var4);
       if (method_30959(var8.field_10328, var8.field_10327, field_34858.field_10328, field_34858.field_10327) > 1) {
          return true;

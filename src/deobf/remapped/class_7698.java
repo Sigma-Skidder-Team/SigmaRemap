@@ -46,7 +46,7 @@ public class class_7698 extends class_3599 {
 
    @Override
    public void method_16794() {
-      class_1331 var3 = class_3845.method_17871(this.field_39078);
+      BlockPos var3 = class_3845.method_17871(this.field_39078);
       boolean var4 = var3.method_12170(this.field_39078.method_37245(), 16.0);
       if (var4) {
          this.field_39081++;
@@ -59,7 +59,7 @@ public class class_7698 extends class_3599 {
             var6 = class_3425.method_15837(this.field_39078, 8, 7, var5);
          }
 
-         if (var6 != null && !var4 && !this.field_39078.field_41768.method_28262(new class_1331(var6)).method_8350(class_4783.field_23900)) {
+         if (var6 != null && !var4 && !this.field_39078.world.method_28262(new BlockPos(var6)).method_8350(class_4783.field_23900)) {
             var6 = class_3425.method_15837(this.field_39078, 16, 5, var5);
          }
 

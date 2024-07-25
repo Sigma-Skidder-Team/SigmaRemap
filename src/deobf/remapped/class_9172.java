@@ -14,7 +14,7 @@ public class class_9172 extends class_2103 {
 
    @Nullable
    @Override
-   public class_4099 method_9859(class_4924 var1, class_1331 var2, class_1331 var3, class_4099 var4, class_4099 var5, class_8478 var6) {
+   public class_4099 method_9859(class_4924 var1, BlockPos var2, BlockPos var3, class_4099 var4, class_4099 var5, class_8478 var6) {
       class_2522 var9 = var5.field_19967;
       if (var9.method_8350(class_4783.field_23319)) {
          String var10 = var5.field_19968.method_25965("final_state");

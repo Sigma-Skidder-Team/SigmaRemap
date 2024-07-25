@@ -12,13 +12,13 @@ public class class_8062<T extends class_5834, M extends class_6521<T>> extends c
       ItemStack var13 = var4.method_26520(class_6943.field_35708);
       if (this.method_36568(var13, (T)var4)) {
          Identifier var14;
-         if (!(var4 instanceof class_9716)) {
+         if (!(var4 instanceof AbstractClientPlayerEntity)) {
             var14 = this.method_36567(var13, (T)var4);
             if (Config.method_14390()) {
                var14 = class_3290.method_15089(var13, var14);
             }
          } else {
-            class_9716 var15 = (class_9716)var4;
+            AbstractClientPlayerEntity var15 = (AbstractClientPlayerEntity)var4;
             if (var15.method_44884() && var15.method_44883() != null) {
                var14 = var15.method_44883();
             } else if (var15.method_44887() && var15.method_44885() && var15.method_44891() != null && var15.method_3168(class_7742.field_39260)) {

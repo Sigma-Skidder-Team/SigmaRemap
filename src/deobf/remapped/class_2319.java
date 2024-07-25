@@ -36,7 +36,7 @@ public class class_2319 extends class_8273<class_5972> {
       }
    }
 
-   public void method_10661(class_9359 var1, class_1331 var2, ItemStack var3) {
+   public void method_10661(class_9359 var1, BlockPos var2, ItemStack var3) {
       class_2522 var6 = var1.method_43235().method_28262(var2);
       this.method_38137(var1, var4 -> var4.method_27271(var6, var2, var1.method_43235(), var3));
    }

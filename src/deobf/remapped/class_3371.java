@@ -41,7 +41,7 @@ public class class_3371 extends class_5920<class_5834> {
       this.field_16618 = var7.method_18438();
       class_5851 var8 = var7.method_18442();
       class_5851 var9 = var7.method_18438();
-      class_1331 var10 = var8.method_26686();
+      BlockPos var10 = var8.method_26686();
       class_2522 var11 = var1.method_28262(var10);
       if (var11.method_8349(class_2351.field_11787)) {
          class_4115 var12 = (class_4115)var11.method_8360();
@@ -52,7 +52,7 @@ public class class_3371 extends class_5920<class_5834> {
          this.method_15545(var1, var2, var10);
       }
 
-      class_1331 var15 = var9.method_26686();
+      BlockPos var15 = var9.method_26686();
       class_2522 var13 = var1.method_28262(var15);
       if (var13.method_8349(class_2351.field_11787)) {
          class_4115 var14 = (class_4115)var13.method_8360();
@@ -72,7 +72,7 @@ public class class_3371 extends class_5920<class_5834> {
 
          while (var7.hasNext()) {
             class_8150 var8 = (class_8150)var7.next();
-            class_1331 var9 = var8.method_37409();
+            BlockPos var9 = var8.method_37409();
             if ((var2 == null || !var2.method_26686().equals(var9)) && (var3 == null || !var3.method_26686().equals(var9))) {
                if (!method_15547(var0, var1, var8)) {
                   class_2522 var10 = var0.method_28262(var9);
@@ -99,7 +99,7 @@ public class class_3371 extends class_5920<class_5834> {
       }
    }
 
-   private static boolean method_15546(class_6331 var0, class_5834 var1, class_1331 var2) {
+   private static boolean method_15546(class_6331 var0, class_5834 var1, BlockPos var2) {
       class_1150 var5 = var1.method_26525();
       return var5.method_5117(class_6044.field_30907)
          ? var5.<List<class_5834>>method_5138(class_6044.field_30907)
@@ -111,7 +111,7 @@ public class class_3371 extends class_5920<class_5834> {
          : false;
    }
 
-   private static boolean method_15544(class_6331 var0, class_5834 var1, class_1331 var2) {
+   private static boolean method_15544(class_6331 var0, class_5834 var1, BlockPos var2) {
       if (!var1.method_26525().method_5117(class_6044.field_30888)) {
          return false;
       } else {
@@ -134,7 +134,7 @@ public class class_3371 extends class_5920<class_5834> {
       return var2.method_37408() != var0.method_29545() || !var2.method_37409().method_12170(var1.method_37245(), 2.0);
    }
 
-   private void method_15545(class_6331 var1, class_5834 var2, class_1331 var3) {
+   private void method_15545(class_6331 var1, class_5834 var2, BlockPos var3) {
       class_1150 var6 = var2.method_26525();
       class_8150 var7 = class_8150.method_37410(var1.method_29545(), var3);
       if (!var6.<Set<class_8150>>method_5138(class_6044.field_30872).isPresent()) {

@@ -26,7 +26,7 @@ public class class_8976 {
    }
 
    @Nullable
-   public class_3998 method_41159(class_9525 var1, class_5886 var2, Set<class_1331> var3, float var4, int var5, float var6) {
+   public class_3998 method_41159(class_9525 var1, class_5886 var2, Set<BlockPos> var3, float var4, int var5, float var6) {
       this.field_45987.method_24664();
       this.field_45989.method_7014(var1, var2);
       class_5851 var9 = this.field_45989.method_7003();
@@ -34,7 +34,7 @@ public class class_8976 {
          .collect(
             Collectors.toMap(
                var1x -> this.field_45989.method_7013((double)var1x.method_12173(), (double)var1x.method_12165(), (double)var1x.method_12185()),
-               Function.<class_1331>identity()
+               Function.<BlockPos>identity()
             )
          );
       class_3998 var11 = this.method_41162(var9, var10, var4, var5, var6);
@@ -43,7 +43,7 @@ public class class_8976 {
    }
 
    @Nullable
-   private class_3998 method_41162(class_5851 var1, Map<class_1478, class_1331> var2, float var3, int var4, float var5) {
+   private class_3998 method_41162(class_5851 var1, Map<class_1478, BlockPos> var2, float var3, int var4, float var5) {
       Set var8 = var2.keySet();
       var1.field_29734 = 0.0F;
       var1.field_29727 = this.method_41163(var1, var8);
@@ -99,10 +99,10 @@ public class class_8976 {
 
       Optional var19 = var11.isEmpty()
          ? var8.stream()
-            .<class_3998>map(var2x -> this.method_41160(var2x.method_6814(), (class_1331)var2.get(var2x), false))
+            .<class_3998>map(var2x -> this.method_41160(var2x.method_6814(), (BlockPos)var2.get(var2x), false))
             .min(Comparator.<class_3998>comparingDouble(class_3998::method_18444).thenComparingInt(class_3998::method_18437))
          : var11.stream()
-            .<class_3998>map(var2x -> this.method_41160(var2x.method_6814(), (class_1331)var2.get(var2x), true))
+            .<class_3998>map(var2x -> this.method_41160(var2x.method_6814(), (BlockPos)var2.get(var2x), true))
             .min(Comparator.comparingInt(class_3998::method_18437));
       return var19.isPresent() ? (class_3998)var19.get() : null;
    }
@@ -119,7 +119,7 @@ public class class_8976 {
       return var5;
    }
 
-   private class_3998 method_41160(class_5851 var1, class_1331 var2, boolean var3) {
+   private class_3998 method_41160(class_5851 var1, BlockPos var2, boolean var3) {
       ArrayList var6 = Lists.newArrayList();
       class_5851 var7 = var1;
       var6.add(0, var1);

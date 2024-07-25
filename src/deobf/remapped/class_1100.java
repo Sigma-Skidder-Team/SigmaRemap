@@ -37,9 +37,9 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
       int var3 = this.field_18358.method_12173();
       int var4 = this.field_18358.method_12165();
       int var5 = this.field_18358.method_12185();
-      class_1331 var6;
+      BlockPos var6;
       if (this.field_6325 >= var4) {
-         var6 = new class_1331(var3, this.field_6325 + 1, var5);
+         var6 = new BlockPos(var3, this.field_6325 + 1, var5);
       } else {
          var6 = this.field_18358;
          this.field_6317 = Lists.newArrayList();
@@ -135,7 +135,7 @@ public class class_1100 extends class_3757 implements class_4259, class_3745 {
 
          for (int var9 = var1 - var6; var9 <= var1 + var6 && var8; var9++) {
             for (int var10 = var3 - var6; var10 <= var3 + var6; var10++) {
-               if (!this.field_18364.method_28262(new class_1331(var9, var7, var10)).method_8349(class_2351.field_11729)) {
+               if (!this.field_18364.method_28262(new BlockPos(var9, var7, var10)).method_8349(class_2351.field_11729)) {
                   var8 = false;
                   break;
                }

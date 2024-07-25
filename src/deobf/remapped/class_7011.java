@@ -31,7 +31,7 @@ public class class_7011 extends class_8550 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_35950.get(var1.<Direction>method_10313(field_35952));
    }
 
@@ -39,7 +39,7 @@ public class class_7011 extends class_8550 {
    public class_2522 method_29302(class_353 var1) {
       class_2522 var4 = this.method_29260();
       World var5 = var1.method_21862();
-      class_1331 var6 = var1.method_21858();
+      BlockPos var6 = var1.method_21858();
       Direction[] var7 = var1.method_1786();
 
       for (Direction var11 : var7) {

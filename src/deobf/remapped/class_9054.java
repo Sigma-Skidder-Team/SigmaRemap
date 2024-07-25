@@ -4,14 +4,14 @@ import java.io.IOException;
 
 public class class_9054 implements Packet<class_1243> {
    private static String[] field_46361;
-   private class_1331 field_46364;
+   private BlockPos field_46364;
    private int field_46363;
    private boolean field_46362;
 
    public class_9054() {
    }
 
-   public class_9054(class_1331 var1, int var2, boolean var3) {
+   public class_9054(BlockPos var1, int var2, boolean var3) {
       this.field_46364 = var1;
       this.field_46363 = var2;
       this.field_46362 = var3;
@@ -35,7 +35,7 @@ public class class_9054 implements Packet<class_1243> {
       var1.method_5556(this);
    }
 
-   public class_1331 method_41593() {
+   public BlockPos method_41593() {
       return this.field_46364;
    }
 

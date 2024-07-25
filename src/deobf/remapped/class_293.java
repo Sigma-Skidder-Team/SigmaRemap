@@ -249,7 +249,7 @@ public class class_293 {
                   }
 
                   class_6588.method_30117(var30);
-                  class_1331 var32 = var30.method_17399();
+                  BlockPos var32 = var30.method_17399();
                   var10.method_36063();
                   var10.method_36065((double)var32.method_12173() - var14, (double)var32.method_12165() - var16, (double)var32.method_12185() - var18);
                   class_3569.field_17468.method_16586(var30, var3, var10, var22);

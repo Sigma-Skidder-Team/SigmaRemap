@@ -47,7 +47,7 @@ public class class_8205 extends class_7067<class_3577> {
       this.field_41972.method_7060(var4, var11, var6, var12);
       var4.method_36064();
       var4.method_36064();
-      class_1331 var14 = var1.method_16624();
+      BlockPos var14 = var1.method_16624();
       if (var14 != null) {
          float var15 = (float)var14.method_12173() + 0.5F;
          float var16 = (float)var14.method_12165() + 0.5F;

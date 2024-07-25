@@ -32,7 +32,7 @@ public class class_6722 extends class_4314 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       boolean var9 = var2.method_29576(var3);
       if (var9 != var1.<Boolean>method_10313(field_34722)) {
          if (var9) {
@@ -51,13 +51,13 @@ public class class_6722 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       return !this.method_30852(var2, var1, var6, var4, true) ? class_6910.field_35521 : class_6910.method_31659(var2.field_33055);
    }
 
    public boolean method_30852(World var1, class_2522 var2, class_9529 var3, class_704 var4, boolean var5) {
       Direction var8 = var3.method_43956();
-      class_1331 var9 = var3.method_43955();
+      BlockPos var9 = var3.method_43955();
       boolean var10 = !var5 || this.method_30853(var2, var8, var3.method_33993().field_7333 - (double)var9.method_12165());
       if (!var10) {
          return false;
@@ -93,7 +93,7 @@ public class class_6722 extends class_4314 {
       }
    }
 
-   public boolean method_30850(World var1, class_1331 var2, Direction var3) {
+   public boolean method_30850(World var1, BlockPos var2, Direction var3) {
       class_3757 var6 = var1.method_28260(var2);
       if (!var1.field_33055 && var6 instanceof class_9317) {
          if (var3 == null) {
@@ -135,12 +135,12 @@ public class class_6722 extends class_4314 {
    }
 
    @Override
-   public class_4190 method_10775(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10775(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.method_30851(var1);
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.method_30851(var1);
    }
 
@@ -153,7 +153,7 @@ public class class_6722 extends class_4314 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       Direction var4 = var1.method_21857();
-      class_1331 var5 = var1.method_21858();
+      BlockPos var5 = var1.method_21858();
       World var6 = var1.method_21862();
       class_9249 var7 = var4.method_1029();
       if (var7 != class_9249.field_47216) {
@@ -188,7 +188,7 @@ public class class_6722 extends class_4314 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       class_7048 var9 = var1.<class_7048>method_10313(field_34719);
       Direction var10 = method_30849(var1).method_1046();
       if (var10 == var2 && !var1.method_8309(var4, var5) && var9 != class_7048.field_36395) {
@@ -209,7 +209,7 @@ public class class_6722 extends class_4314 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       Direction var6 = method_30849(var1).method_1046();
       return var6 != Direction.field_817 ? class_2620.method_11867(var2, var3, var6) : class_6414.method_29266(var2, var3.method_6081(), Direction.field_802);
    }
@@ -244,7 +244,7 @@ public class class_6722 extends class_4314 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

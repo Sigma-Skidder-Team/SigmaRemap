@@ -63,12 +63,12 @@ public class class_2833 {
             }
 
             float var11 = (float)(class_9299.method_42821(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
-            this.field_13879.field_41701 = this.method_12882(this.field_13879.field_41701, var11, 90.0F);
+            this.field_13879.rotationYaw = this.method_12882(this.field_13879.rotationYaw, var11, 90.0F);
             this.field_13879.method_26461((float)(this.field_13885 * this.field_13879.method_26575(class_7331.field_37465)));
-            class_1331 var20 = this.field_13879.method_37075();
-            class_2522 var21 = this.field_13879.field_41768.method_28262(var20);
+            BlockPos var20 = this.field_13879.method_37075();
+            class_2522 var21 = this.field_13879.world.method_28262(var20);
             class_6414 var22 = var21.method_8360();
-            class_4190 var23 = var21.method_8324(this.field_13879.field_41768, var20);
+            class_4190 var23 = var21.method_8324(this.field_13879.world, var20);
             if (var16 > (double)this.field_13879.field_41733 && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field_13879.method_37086())
                || !var23.method_19485()
                   && this.field_13879.method_37309() < var23.method_19495(class_9249.field_47216) + (double)var20.method_12165()
@@ -91,8 +91,8 @@ public class class_2833 {
          var7 = var4 / var7;
          var5 *= var7;
          var6 *= var7;
-         float var8 = class_9299.method_42818(this.field_13879.field_41701 * (float) (Math.PI / 180.0));
-         float var9 = class_9299.method_42840(this.field_13879.field_41701 * (float) (Math.PI / 180.0));
+         float var8 = class_9299.method_42818(this.field_13879.rotationYaw * (float) (Math.PI / 180.0));
+         float var9 = class_9299.method_42840(this.field_13879.rotationYaw * (float) (Math.PI / 180.0));
          float var10 = var5 * var9 - var6 * var8;
          float var27 = var6 * var9 + var5 * var8;
          if (!this.method_12878(var10, var27)) {
@@ -113,7 +113,7 @@ public class class_2833 {
          class_1546 var6 = var5.method_5627();
          if (var6 != null
             && var6.method_7010(
-                  this.field_13879.field_41768,
+                  this.field_13879.world,
                   class_9299.method_42847(this.field_13879.method_37302() + (double)var1),
                   class_9299.method_42847(this.field_13879.method_37309()),
                   class_9299.method_42847(this.field_13879.method_37156() + (double)var2)

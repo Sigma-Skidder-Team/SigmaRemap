@@ -535,7 +535,7 @@ public class class_9300 {
       field_47489 = field_47484 == null && field_47478 == null && field_47497 == null && field_47465 == null && Config.method_14293();
    }
 
-   public static int method_42879(class_5024 var0, class_2522 var1, class_5561 var2, class_1331 var3, class_4460 var4) {
+   public static int method_42879(class_5024 var0, class_2522 var1, class_5561 var2, BlockPos var3, class_4460 var4) {
       class_6414 var7 = var1.method_8360();
       class_2522 var8 = var1;
       if (field_47482 != null) {
@@ -615,7 +615,7 @@ public class class_9300 {
       }
    }
 
-   public static class_6325 method_42872(class_5561 var0, class_1331 var1) {
+   public static class_6325 method_42872(class_5561 var0, BlockPos var1) {
       class_6325 var4 = class_5630.method_25519(var0, var1);
       if ((var4 == class_5630.field_28566 || var4 == class_5630.field_28569) && !Config.method_14293()) {
          var4 = class_5630.field_28568;
@@ -654,7 +654,7 @@ public class class_9300 {
       }
    }
 
-   private static int method_42857(class_2522 var0, class_5561 var1, class_1331 var2, class_9538 var3, class_523 var4) {
+   private static int method_42857(class_2522 var0, class_5561 var1, BlockPos var2, class_9538 var3, class_523 var4) {
       int var7 = 0;
       int var8 = 0;
       int var9 = 0;
@@ -682,7 +682,7 @@ public class class_9300 {
       return var20 << 16 | var21 << 8 | var22;
    }
 
-   public static int method_42889(class_5561 var0, class_2522 var1, class_1331 var2, class_4460 var3) {
+   public static int method_42889(class_5561 var0, class_2522 var1, BlockPos var2, class_4460 var3) {
       class_6414 var6 = var1.method_8360();
       Object var7 = method_42904(var1);
       if (var7 == null && var1.method_8362() == class_5371.field_27439) {
@@ -739,7 +739,7 @@ public class class_9300 {
 
    public static void method_42862(class_9733 var0, class_5561 var1, double var2, double var4, double var6) {
       if (field_47469 != null) {
-         class_2522 var10 = var1.method_28262(new class_1331(var2, var4, var6));
+         class_2522 var10 = var1.method_28262(new BlockPos(var2, var4, var6));
          int var11 = method_42912(var10, 15);
          int var12 = field_47469.method_44168(var11);
          int var13 = var12 >> 16 & 0xFF;
@@ -796,7 +796,7 @@ public class class_9300 {
 
    public static void method_42921(class_9733 var0, class_5561 var1, double var2, double var4, double var6, class_4460 var8) {
       if (field_47495 != null || field_47482 != null || field_47501 >= 0) {
-         class_1331 var11 = new class_1331(var2, var4, var6);
+         BlockPos var11 = new BlockPos(var2, var4, var6);
          var8.method_20678(field_47474, var11);
          int var12 = method_42889(var1, field_47474, var11, var8);
          int var13 = var12 >> 16 & 0xFF;
@@ -818,7 +818,7 @@ public class class_9300 {
       }
    }
 
-   private static int method_42926(class_5561 var0, class_1331 var1) {
+   private static int method_42926(class_5561 var0, BlockPos var1) {
       return field_47466 >= 0 ? field_47466 : method_42886().method_20749(class_4783.field_23860.method_29260(), var0, var1, 0);
    }
 
@@ -899,7 +899,7 @@ public class class_9300 {
       }
    }
 
-   private static int method_42870(class_2522 var0, class_6163 var1, class_1331 var2, class_4460 var3) {
+   private static int method_42870(class_2522 var0, class_6163 var1, BlockPos var2, class_4460 var3) {
       class_9561 var6 = field_47505;
       class_6414 var7 = var0.method_8360();
       if (var7 == class_4783.field_23301 && field_47475 != null) {

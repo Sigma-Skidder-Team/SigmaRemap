@@ -28,7 +28,7 @@ public class class_8255 {
       this.field_42358 = var5;
    }
 
-   public boolean method_37842(class_9359 var1, class_6199 var2, float var3, float var4, boolean var5) {
+   public boolean method_37842(class_9359 var1, DamageSource var2, float var3, float var4, boolean var5) {
       if (this != field_42355) {
          if (this.field_42360.method_28088(var3)) {
             if (this.field_42356.method_28088(var4)) {

@@ -39,7 +39,7 @@ public class class_2419 extends Module {
                client.method_8614().method_4813(var9);
             }
 
-            client.thePlayer.field_30502 = 0.0;
+            client.thePlayer.lastReportedPosY = 0.0;
             if (client.thePlayer.field_41697 <= 1) {
                this.field_12047.clear();
             }

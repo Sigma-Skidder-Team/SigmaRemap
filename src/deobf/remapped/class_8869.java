@@ -5,14 +5,14 @@ import net.minecraft.util.text.ITextComponent;
 
 public class class_8869 {
    private static String[] field_45346;
-   private final class_6199 field_45341;
+   private final DamageSource field_45341;
    private final int field_45342;
    private final float field_45345;
    private final float field_45343;
    private final String field_45344;
    private final float field_45347;
 
-   public class_8869(class_6199 var1, int var2, float var3, float var4, String var5, float var6) {
+   public class_8869(DamageSource var1, int var2, float var3, float var4, String var5, float var6) {
       this.field_45341 = var1;
       this.field_45342 = var2;
       this.field_45345 = var4;
@@ -21,7 +21,7 @@ public class class_8869 {
       this.field_45347 = var6;
    }
 
-   public class_6199 method_40799() {
+   public DamageSource method_40799() {
       return this.field_45341;
    }
 
@@ -44,6 +44,6 @@ public class class_8869 {
    }
 
    public float method_40804() {
-      return this.field_45341 != class_6199.field_31685 ? this.field_45347 : Float.MAX_VALUE;
+      return this.field_45341 != DamageSource.field_31685 ? this.field_45347 : Float.MAX_VALUE;
    }
 }

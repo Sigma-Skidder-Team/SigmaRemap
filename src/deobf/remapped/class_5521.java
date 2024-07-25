@@ -45,7 +45,7 @@ public abstract class class_5521 extends class_4109 {
    public void method_26522() {
       super.method_26522();
       if (this.method_25017()) {
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.method_37312(class_4783.field_23471);
          }
 
@@ -114,12 +114,12 @@ public abstract class class_5521 extends class_4109 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!this.method_26449()) {
          if (this.method_19043() && var1.method_3236()) {
             this.method_19076(var1);
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          }
 
          if (this.method_37151()) {
@@ -134,7 +134,7 @@ public abstract class class_5521 extends class_4109 {
 
          if (!this.method_19043()) {
             this.method_19037();
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          }
 
          if (!this.method_25017() && var5.method_27960() == class_4783.field_23471.method_10803()) {
@@ -145,18 +145,18 @@ public abstract class class_5521 extends class_4109 {
             }
 
             this.method_19072();
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          }
 
          if (!this.method_26449() && !this.method_43357() && var5.method_27960() == class_4897.field_24836) {
             this.method_19076(var1);
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          }
       }
 
       if (!this.method_26449()) {
          this.method_19039(var1);
-         return class_6910.method_31659(this.field_41768.field_33055);
+         return class_6910.method_31659(this.world.field_33055);
       } else {
          return super.method_26857(var1, var2);
       }

@@ -25,7 +25,7 @@ public class class_6441 extends class_5920<class_7666> {
       for (int var10 = 0; var10 < 5; var10++) {
          class_1343 var11 = class_3425.method_15846(var2, 15, 7, var1x -> (double)(-var1.method_28956(class_6979.method_31921(var1x))));
          if (var11 != null) {
-            int var12 = var7.method_6871(class_6979.method_31921(new class_1331(var11)));
+            int var12 = var7.method_6871(class_6979.method_31921(new BlockPos(var11)));
             if (var12 < var8) {
                var9 = var11;
                break;

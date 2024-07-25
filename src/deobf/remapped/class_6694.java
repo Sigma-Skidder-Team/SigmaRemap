@@ -39,7 +39,7 @@ public class class_6694 extends class_958 {
                   if (!var3.isPresent()) {
                      return false;
                   } else {
-                     class_8829.method_40600(this.field_34583, (class_1331)var3.get());
+                     class_8829.method_40600(this.field_34583, (BlockPos)var3.get());
                      class_8829.method_40602(this.field_34583)
                         .method_5595(
                            (double)class_8829.method_40554(this.field_34583).method_12173() + 0.5,
@@ -177,12 +177,12 @@ public class class_6694 extends class_958 {
       return (class_8829.method_40608(this.field_34583).nextFloat() * 2.0F - 1.0F) * 0.33333334F;
    }
 
-   private Optional<class_1331> method_30685() {
+   private Optional<BlockPos> method_30685() {
       return this.method_30690(this.field_34588, 5.0);
    }
 
-   private Optional<class_1331> method_30690(Predicate<class_2522> var1, double var2) {
-      class_1331 var6 = this.field_34583.method_37075();
+   private Optional<BlockPos> method_30690(Predicate<class_2522> var1, double var2) {
+      BlockPos var6 = this.field_34583.method_37075();
       class_2921 var7 = new class_2921();
 
       for (int var8 = 0; (double)var8 <= var2; var8 = var8 <= 0 ? 1 - var8 : -var8) {
@@ -191,13 +191,13 @@ public class class_6694 extends class_958 {
                for (int var11 = var10 < var9 && var10 > -var9 ? var9 : 0; var11 <= var9; var11 = var11 <= 0 ? 1 - var11 : -var11) {
                   var7.method_13360(var6, var10, var8 - 1, var11);
                   if (var6.method_12171(var7, var2) && var1.test(this.field_34583.field_41768.method_28262(var7))) {
-                     return Optional.<class_1331>of(var7);
+                     return Optional.<BlockPos>of(var7);
                   }
                }
             }
          }
       }
 
-      return Optional.<class_1331>empty();
+      return Optional.<BlockPos>empty();
    }
 }

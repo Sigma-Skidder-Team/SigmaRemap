@@ -33,7 +33,7 @@ public class class_2794 extends Screen {
             98,
             20,
             new TranslationTextComponent("gui.advancements"),
-            var1 -> this.field_943.method_8609(new class_9044(this.field_943.thePlayer.field_30532.method_4796()))
+            var1 -> this.field_943.method_8609(new class_9044(this.field_943.thePlayer.connection.method_4796()))
          )
       );
       this.<class_9521>method_1186(

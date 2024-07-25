@@ -16,7 +16,7 @@ public class class_2098 {
    private class_7462 field_10531 = new class_3655(this, 6.0E7);
    public static final class_1572 field_10526 = new class_1572(0.0, 0.0, 0.2, 5.0, 5, 15, 6.0E7, 0L, 0.0, null);
 
-   public boolean method_9813(class_1331 var1) {
+   public boolean method_9813(BlockPos var1) {
       return (double)(var1.method_12173() + 1) > this.method_9821()
          && (double)var1.method_12173() < this.method_9828()
          && (double)(var1.method_12185() + 1) > this.method_9825()

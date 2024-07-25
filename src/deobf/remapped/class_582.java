@@ -16,13 +16,13 @@ public interface class_582 extends class_5719, class_4924, class_6755 {
    }
 
    @Override
-   default class_1331 method_22563(class_3801 var1, class_1331 var2) {
+   default BlockPos method_22563(class_3801 var1, BlockPos var2) {
       return class_4924.super.method_22563(var1, var2);
    }
 
    class_6322 method_2755();
 
-   default Optional<class_5621<class_6325>> method_2754(class_1331 var1) {
+   default Optional<class_5621<class_6325>> method_2754(BlockPos var1) {
       return this.method_2755().<class_6325>method_28813(class_8669.field_44359).method_39800(this.method_22561(var1));
    }
 }

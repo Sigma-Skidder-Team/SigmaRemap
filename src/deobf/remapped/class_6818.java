@@ -27,12 +27,12 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
             if (var8.getValue() >= 15) {
                return 15;
             } else {
-               int var10 = class_1331.method_6080(var1);
-               int var11 = class_1331.method_6067(var1);
-               int var12 = class_1331.method_6092(var1);
-               int var13 = class_1331.method_6080(var3);
-               int var14 = class_1331.method_6067(var3);
-               int var15 = class_1331.method_6092(var3);
+               int var10 = BlockPos.method_6080(var1);
+               int var11 = BlockPos.method_6067(var1);
+               int var12 = BlockPos.method_6092(var1);
+               int var13 = BlockPos.method_6080(var3);
+               int var14 = BlockPos.method_6067(var3);
+               int var15 = BlockPos.method_6092(var3);
                boolean var16 = var10 == var13 && var12 == var15;
                int var17 = Integer.signum(var13 - var10);
                int var18 = Integer.signum(var14 - var11);
@@ -83,7 +83,7 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
    @Override
    public void method_27701(long var1, int var3, boolean var4) {
       long var7 = class_6979.method_31903(var1);
-      int var9 = class_1331.method_6067(var1);
+      int var9 = BlockPos.method_6067(var1);
       int var10 = class_6979.method_31913(var9);
       int var11 = class_6979.method_31915(var9);
       int var13;
@@ -99,13 +99,13 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
          var13 = 0;
       }
 
-      long var14 = class_1331.method_6096(var1, 0, -1 - var13 * 16, 0);
+      long var14 = BlockPos.method_6096(var1, 0, -1 - var13 * 16, 0);
       long var16 = class_6979.method_31903(var14);
       if (var7 == var16 || this.field_11554.method_17749(var16)) {
          this.method_27687(var1, var14, var3, var4);
       }
 
-      long var18 = class_1331.method_6097(var1, Direction.field_817);
+      long var18 = BlockPos.method_6097(var1, Direction.field_817);
       long var20 = class_6979.method_31903(var18);
       if (var7 == var20 || this.field_11554.method_17749(var20)) {
          this.method_27687(var1, var18, var3, var4);
@@ -115,7 +115,7 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
          int var26 = 0;
 
          do {
-            long var27 = class_1331.method_6096(var1, var25.method_1041(), -var26, var25.method_1034());
+            long var27 = BlockPos.method_6096(var1, var25.method_1041(), -var26, var25.method_1034());
             long var29 = class_6979.method_31903(var27);
             if (var7 == var29) {
                this.method_27687(var1, var27, var3, var4);
@@ -147,7 +147,7 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
       class_1201 var11 = this.field_11554.method_17744(var9, true);
 
       for (Direction var16 : field_35161) {
-         long var17 = class_1331.method_6097(var1, var16);
+         long var17 = BlockPos.method_6097(var1, var16);
          long var19 = class_6979.method_31903(var17);
          class_1201 var21;
          if (var9 != var19) {
@@ -168,9 +168,9 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
                }
             }
          } else if (var16 != Direction.field_802) {
-            for (var17 = class_1331.method_6087(var17);
+            for (var17 = BlockPos.method_6087(var17);
                !this.field_11554.method_17749(var19) && !this.field_11554.method_27137(var19);
-               var17 = class_1331.method_6096(var17, 0, 16, 0)
+               var17 = BlockPos.method_6096(var17, 0, 16, 0)
             ) {
                var19 = class_6979.method_31928(var19, Direction.field_817);
             }
@@ -203,9 +203,9 @@ public final class class_6818 extends class_2309<class_8759, class_5936> {
       this.field_11554.method_17732();
       long var5 = class_6979.method_31903(var1);
       if (!this.field_11554.method_17749(var5)) {
-         for (var1 = class_1331.method_6087(var1);
+         for (var1 = BlockPos.method_6087(var1);
             !this.field_11554.method_17749(var5) && !this.field_11554.method_27137(var5);
-            var1 = class_1331.method_6096(var1, 0, 16, 0)
+            var1 = BlockPos.method_6096(var1, 0, 16, 0)
          ) {
             var5 = class_6979.method_31928(var5, Direction.field_817);
          }

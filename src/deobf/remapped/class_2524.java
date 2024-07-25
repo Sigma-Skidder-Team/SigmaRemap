@@ -284,7 +284,7 @@ public class class_2524 {
    private float method_11485(World var1) {
       Entity var4 = MinecraftClient.getInstance().getRenderViewEntity();
       if (var4 != null) {
-         class_1331 var5 = var4.method_37075();
+         BlockPos var5 = var4.method_37075();
          if (this.field_12521 != null) {
             class_6325 var6 = var1.method_22561(var5);
             if (var6 == null) {

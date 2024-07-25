@@ -30,7 +30,7 @@ public class class_9191 {
       this.field_47014 = new class_4092((double)(var1 - var3), 0.0, (double)(var2 - var3), (double)(var1 + var3), 256.0, (double)(var2 + var3));
    }
 
-   public boolean method_42368(class_1331 var1) {
+   public boolean method_42368(BlockPos var1) {
       return var1.method_12173() >> 4 == this.field_47010 >> 4 && var1.method_12185() >> 4 == this.field_47013 >> 4;
    }
 

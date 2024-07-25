@@ -35,7 +35,7 @@ public class class_7228 extends class_3599 {
    @Override
    public boolean method_16795() {
       if (this.field_37095 <= 0) {
-         this.field_37102 = this.field_37092.field_41768.method_25859(field_37099, this.field_37092);
+         this.field_37102 = this.field_37092.world.method_25859(field_37099, this.field_37092);
          return this.field_37102 == null ? false : this.method_33088(this.field_37102.method_26446()) || this.method_33088(this.field_37102.method_26568());
       } else {
          this.field_37095--;
@@ -59,14 +59,14 @@ public class class_7228 extends class_3599 {
                return false;
             }
 
-            if (Math.abs((double)this.field_37102.field_41755 - this.field_37097) > 5.0
-               || Math.abs((double)this.field_37102.field_41701 - this.field_37096) > 5.0) {
+            if (Math.abs((double)this.field_37102.rotationPitch - this.field_37097) > 5.0
+               || Math.abs((double)this.field_37102.rotationYaw - this.field_37096) > 5.0) {
                return false;
             }
          }
 
-         this.field_37097 = (double)this.field_37102.field_41755;
-         this.field_37096 = (double)this.field_37102.field_41701;
+         this.field_37097 = (double)this.field_37102.rotationPitch;
+         this.field_37096 = (double)this.field_37102.rotationYaw;
       }
 
       return this.method_16795();

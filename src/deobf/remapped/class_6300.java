@@ -30,7 +30,7 @@ public class class_6300<T extends class_5886 & class_2354> extends class_2344<T>
    public void method_28755(T var1, float var2, float var3, float var4) {
       this.field_11698 = class_5455.field_27806;
       this.field_11702 = class_5455.field_27806;
-      ItemStack var7 = var1.method_26617(class_2584.field_12791);
+      ItemStack var7 = var1.method_26617(Hand.MAIN_HAND);
       if (var7.method_27960() == class_4897.field_25206 && var1.method_26892()) {
          if (var1.method_26432() != class_1736.field_8943) {
             this.field_11702 = class_5455.field_27803;

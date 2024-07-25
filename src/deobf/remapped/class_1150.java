@@ -315,7 +315,7 @@ public class class_1150<E extends class_5834> {
    }
 
    public void method_5100(class_6331 var1, E var2) {
-      long var5 = var2.field_41768.method_29546();
+      long var5 = var2.world.method_29546();
 
       for (class_5920 var8 : this.method_5139()) {
          var8.method_27079(var1, var2, var5);

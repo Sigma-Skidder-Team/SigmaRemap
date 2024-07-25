@@ -43,7 +43,7 @@ public class FreeCamModule extends Module {
             this.onEnable();
          }
 
-         client.thePlayer.field_30524 = client.thePlayer.field_41755;
+         client.thePlayer.lastReportedPitch = client.thePlayer.rotationPitch;
          class_4092 var4 = client.thePlayer.field_41712;
          field_48917.method_37256((var4.field_19941 + var4.field_19940) / 2.0, var4.field_19937, (var4.field_19938 + var4.field_19942) / 2.0);
          double var5 = this.field_48912 + (this.field_48921 - this.field_48912) * (double)var1.field_8848;
@@ -80,8 +80,8 @@ public class FreeCamModule extends Module {
       this.field_48921 = client.thePlayer.method_37302();
       this.field_48927 = client.thePlayer.method_37309();
       this.field_48914 = client.thePlayer.method_37156();
-      this.field_48915 = client.thePlayer.field_41701;
-      this.field_48920 = client.thePlayer.field_41755;
+      this.field_48915 = client.thePlayer.rotationYaw;
+      this.field_48920 = client.thePlayer.rotationPitch;
       String var3 = client.thePlayer.method_45509().getString();
       GameProfile var4 = new GameProfile(client.thePlayer.method_3247().getId(), var3);
       field_48917 = new class_9745(client.theWorld, var4);
@@ -222,8 +222,8 @@ public class FreeCamModule extends Module {
       if (this.method_42015() && var1.method_6449()) {
          var1.method_6441(this.field_48915 % 360.0F);
          var1.method_6448(this.field_48920);
-         client.thePlayer.field_30535 = this.field_48915;
-         client.thePlayer.field_30524 = this.field_48920;
+         client.thePlayer.lastReportedYaw = this.field_48915;
+         client.thePlayer.lastReportedPitch = this.field_48920;
          float[] var4 = class_8865.method_40774(this.field_48922, this.field_48928);
          float var5 = var4[1];
          float var6 = var4[2];
@@ -254,8 +254,8 @@ public class FreeCamModule extends Module {
                class_509 var4 = (class_509)var1.method_557();
                this.field_48915 = var4.field_3143;
                this.field_48920 = var4.field_3140;
-               var4.field_3143 = client.thePlayer.field_41701;
-               var4.field_3140 = client.thePlayer.field_41755;
+               var4.field_3143 = client.thePlayer.rotationYaw;
+               var4.field_3140 = client.thePlayer.rotationPitch;
                double var5 = var4.field_3139;
                double var7 = var4.field_3144;
                double var9 = var4.field_3141;
@@ -276,7 +276,7 @@ public class FreeCamModule extends Module {
    private void method_44327(class_2157 var1) {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_3195) {
-            field_48917.method_26597(class_2584.field_12791);
+            field_48917.method_26597(Hand.MAIN_HAND);
          }
 
          if (var1.method_10047() instanceof class_3398) {

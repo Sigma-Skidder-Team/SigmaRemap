@@ -33,11 +33,11 @@ public class class_8772 {
       this.field_44902 = var10;
    }
 
-   public boolean method_40300(class_9359 var1, class_6199 var2) {
+   public boolean method_40300(class_9359 var1, DamageSource var2) {
       return this.method_40299(var1.method_43235(), var1.method_37245(), var2);
    }
 
-   public boolean method_40299(class_6331 var1, class_1343 var2, class_6199 var3) {
+   public boolean method_40299(class_6331 var1, class_1343 var2, DamageSource var3) {
       if (this != field_44906) {
          if (this.field_44905 != null && this.field_44905 != var3.method_28357()) {
             return false;
@@ -53,7 +53,7 @@ public class class_8772 {
             return false;
          } else if (this.field_44912 != null && this.field_44912 != var3.method_28352()) {
             return false;
-         } else if (this.field_44908 != null && this.field_44908 != (var3 == class_6199.field_31674)) {
+         } else if (this.field_44908 != null && this.field_44908 != (var3 == DamageSource.field_31674)) {
             return false;
          } else {
             return this.field_44907.method_3736(var1, var2, var3.method_28353()) ? this.field_44902.method_3736(var1, var2, var3.method_28372()) : false;

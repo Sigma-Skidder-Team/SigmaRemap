@@ -17,7 +17,7 @@ public class class_8985 extends class_1249 {
 
    @Override
    public boolean method_5601() {
-      return this.field_6877.method_37360() || this.method_5617() || this.field_6877.method_37070();
+      return this.field_6877.method_37360() || this.method_5617() || this.field_6877.isPassenger();
    }
 
    @Override
@@ -26,9 +26,9 @@ public class class_8985 extends class_1249 {
    }
 
    @Override
-   public class_3998 method_5615(class_1331 var1, int var2) {
+   public class_3998 method_5615(BlockPos var1, int var2) {
       if (this.field_6882.method_28262(var1).method_8345()) {
-         class_1331 var5 = var1.method_6100();
+         BlockPos var5 = var1.method_6100();
 
          while (var5.method_12165() > 0 && this.field_6882.method_28262(var5).method_8345()) {
             var5 = var5.method_6100();
@@ -48,7 +48,7 @@ public class class_8985 extends class_1249 {
       if (!this.field_6882.method_28262(var1).method_8362().method_24499()) {
          return super.method_5615(var1, var2);
       } else {
-         class_1331 var6 = var1.method_6081();
+         BlockPos var6 = var1.method_6081();
 
          while (var6.method_12165() < this.field_6882.method_28261() && this.field_6882.method_28262(var6).method_8362().method_24499()) {
             var6 = var6.method_6081();
@@ -67,12 +67,12 @@ public class class_8985 extends class_1249 {
       if (this.field_6877.method_37285() && this.method_5602()) {
          int var3 = class_9299.method_42847(this.field_6877.method_37309());
          class_6414 var4 = this.field_6882
-            .method_28262(new class_1331(this.field_6877.method_37302(), (double)var3, this.field_6877.method_37156()))
+            .method_28262(new BlockPos(this.field_6877.method_37302(), (double)var3, this.field_6877.method_37156()))
             .method_8360();
          int var5 = 0;
 
          while (var4 == class_4783.field_23900) {
-            var4 = this.field_6882.method_28262(new class_1331(this.field_6877.method_37302(), (double)(++var3), this.field_6877.method_37156())).method_8360();
+            var4 = this.field_6882.method_28262(new BlockPos(this.field_6877.method_37302(), (double)(++var3), this.field_6877.method_37156())).method_8360();
             if (++var5 > 16) {
                return class_9299.method_42847(this.field_6877.method_37309());
             }
@@ -88,7 +88,7 @@ public class class_8985 extends class_1249 {
    public void method_5618() {
       super.method_5618();
       if (this.field_46023) {
-         if (this.field_6882.method_25263(new class_1331(this.field_6877.method_37302(), this.field_6877.method_37309() + 0.5, this.field_6877.method_37156()))
+         if (this.field_6882.method_25263(new BlockPos(this.field_6877.method_37302(), this.field_6877.method_37309() + 0.5, this.field_6877.method_37156()))
             )
           {
             return;
@@ -96,7 +96,7 @@ public class class_8985 extends class_1249 {
 
          for (int var3 = 0; var3 < this.field_6887.method_18437(); var3++) {
             class_5851 var4 = this.field_6887.method_18447(var3);
-            if (this.field_6882.method_25263(new class_1331(var4.field_29731, var4.field_29735, var4.field_29736))) {
+            if (this.field_6882.method_25263(new BlockPos(var4.field_29731, var4.field_29735, var4.field_29736))) {
                this.field_6887.method_18428(var3);
                return;
             }
@@ -210,7 +210,7 @@ public class class_8985 extends class_1249 {
    }
 
    private boolean method_41195(int var1, int var2, int var3, int var4, int var5, int var6, class_1343 var7, double var8, double var10) {
-      for (class_1331 var15 : class_1331.method_6076(new class_1331(var1, var2, var3), new class_1331(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
+      for (BlockPos var15 : BlockPos.method_6076(new BlockPos(var1, var2, var3), new BlockPos(var1 + var4 - 1, var2 + var5 - 1, var3 + var6 - 1))) {
          double var16 = (double)var15.method_12173() + 0.5 - var7.field_7336;
          double var18 = (double)var15.method_12185() + 0.5 - var7.field_7334;
          if (!(var16 * var8 + var18 * var10 < 0.0) && !this.field_6882.method_28262(var15).method_8319(this.field_6882, var15, class_2929.field_14271)) {

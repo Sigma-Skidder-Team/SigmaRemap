@@ -5,16 +5,16 @@ import javax.annotation.Nullable;
 public class class_4734 {
    private static String[] field_22942;
    private final class_704 field_22940;
-   private final class_2584 field_22941;
+   private final Hand field_22941;
    private final class_9529 field_22944;
    private final World field_22939;
    private final ItemStack field_22943;
 
-   public class_4734(class_704 var1, class_2584 var2, class_9529 var3) {
-      this(var1.field_41768, var1, var2, var1.method_26617(var2), var3);
+   public class_4734(class_704 var1, Hand var2, class_9529 var3) {
+      this(var1.world, var1, var2, var1.method_26617(var2), var3);
    }
 
-   public class_4734(World var1, class_704 var2, class_2584 var3, ItemStack var4, class_9529 var5) {
+   public class_4734(World var1, class_704 var2, Hand var3, ItemStack var4, class_9529 var5) {
       this.field_22940 = var2;
       this.field_22941 = var3;
       this.field_22944 = var5;
@@ -26,7 +26,7 @@ public class class_4734 {
       return this.field_22944;
    }
 
-   public class_1331 method_21858() {
+   public BlockPos method_21858() {
       return this.field_22944.method_43955();
    }
 
@@ -51,7 +51,7 @@ public class class_4734 {
       return this.field_22940;
    }
 
-   public class_2584 method_21860() {
+   public Hand method_21860() {
       return this.field_22941;
    }
 
@@ -68,6 +68,6 @@ public class class_4734 {
    }
 
    public float method_21861() {
-      return this.field_22940 != null ? this.field_22940.field_41701 : 0.0F;
+      return this.field_22940 != null ? this.field_22940.rotationYaw : 0.0F;
    }
 }

@@ -16,18 +16,18 @@ public class class_2711 extends class_7481 {
 
    @Nullable
    @Override
-   public class_3757 method_28260(class_1331 var1) {
+   public class_3757 method_28260(BlockPos var1) {
       return this.field_13258.method_28260(var1);
    }
 
    @Nullable
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       return this.field_13258.method_28262(var1);
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       return this.field_13258.method_28258(var1);
    }
 
@@ -38,12 +38,12 @@ public class class_2711 extends class_7481 {
 
    @Nullable
    @Override
-   public class_2522 method_27348(class_1331 var1, class_2522 var2, boolean var3) {
+   public class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3) {
       return null;
    }
 
    @Override
-   public void method_27346(class_1331 var1, class_3757 var2) {
+   public void method_27346(BlockPos var1, class_3757 var2) {
    }
 
    @Override
@@ -148,11 +148,11 @@ public class class_2711 extends class_7481 {
    }
 
    @Override
-   public void method_27370(class_1331 var1) {
+   public void method_27370(BlockPos var1) {
    }
 
    @Override
-   public void method_27365(class_1331 var1) {
+   public void method_27365(BlockPos var1) {
    }
 
    @Override
@@ -161,13 +161,13 @@ public class class_2711 extends class_7481 {
 
    @Nullable
    @Override
-   public CompoundNBT method_27355(class_1331 var1) {
+   public CompoundNBT method_27355(BlockPos var1) {
       return this.field_13258.method_27355(var1);
    }
 
    @Nullable
    @Override
-   public CompoundNBT method_27345(class_1331 var1) {
+   public CompoundNBT method_27345(BlockPos var1) {
       return this.field_13258.method_27345(var1);
    }
 
@@ -176,7 +176,7 @@ public class class_2711 extends class_7481 {
    }
 
    @Override
-   public Stream<class_1331> method_27360() {
+   public Stream<BlockPos> method_27360() {
       return this.field_13258.method_27360();
    }
 

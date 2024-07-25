@@ -26,7 +26,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       this.method_26895(class_1108.field_6352, 0.0F);
    }
 
-   public static boolean method_7926(class_6629<class_1775> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_7926(class_6629<class_1775> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       class_2921 var7 = var3.method_6089();
 
       do {
@@ -38,7 +38,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
    @Override
    public void method_37191(class_7821<?> var1) {
-      if (field_9090.equals(var1) && this.field_41768.field_33055) {
+      if (field_9090.equals(var1) && this.world.field_33055) {
          this.field_9086.method_3108();
       }
 
@@ -79,7 +79,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    public void method_43358(class_562 var1) {
       this.field_9086.method_3112(true);
       if (var1 != null) {
-         this.field_41768.method_29540((class_704)null, this, class_463.field_2057, var1, 0.5F, 1.0F);
+         this.world.method_29540((class_704)null, this, class_463.field_2057, var1, 0.5F, 1.0F);
       }
    }
 
@@ -145,11 +145,11 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    @Override
    public class_1343 method_37282(class_5834 var1) {
       class_1343[] var4 = new class_1343[]{
-         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.field_41701),
-         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.field_41701 - 22.5F),
-         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.field_41701 + 22.5F),
-         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.field_41701 - 45.0F),
-         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.field_41701 + 45.0F)
+         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw),
+         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw - 22.5F),
+         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw + 22.5F),
+         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw - 45.0F),
+         method_37373((double)this.method_37086(), (double)var1.method_37086(), var1.rotationYaw + 45.0F)
       };
       LinkedHashSet var5 = Sets.newLinkedHashSet();
       double var6 = this.method_37241().field_19939;
@@ -165,9 +165,9 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          }
       }
 
-      for (class_1331 var24 : var5) {
-         if (!this.field_41768.method_28258(var24).method_22007(class_6503.field_33095)) {
-            double var17 = this.field_41768.method_28259(var24);
+      for (BlockPos var24 : var5) {
+         if (!this.world.method_28258(var24).method_22007(class_6503.field_33095)) {
+            double var17 = this.world.method_28259(var24);
             if (class_160.method_648(var17)) {
                class_1343 var19 = class_1343.method_6219(var24, var17);
                UnmodifiableIterator var20 = var1.method_26454().iterator();
@@ -175,7 +175,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
                while (var20.hasNext()) {
                   class_7653 var21 = (class_7653)var20.next();
                   class_4092 var22 = var1.method_26549(var21);
-                  if (class_160.method_647(this.field_41768, var1, var22.method_18920(var19))) {
+                  if (class_160.method_647(this.world, var1, var22.method_18920(var19))) {
                      var1.method_37356(var21);
                      return var19;
                   }
@@ -213,7 +213,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(!this.method_37370() ? class_463.field_2173 : class_463.field_1925, 1.0F, 1.0F);
    }
 
@@ -223,7 +223,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public void method_37105(double var1, boolean var3, class_2522 var4, class_1331 var5) {
+   public void method_37105(double var1, boolean var3, class_2522 var4, BlockPos var5) {
       this.method_37097();
       if (!this.method_37370()) {
          super.method_37105(var1, var3, var4, var5);
@@ -240,7 +240,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          this.method_37155(class_463.field_2706, 1.0F, this.method_26547());
       }
 
-      class_2522 var3 = this.field_41768.method_28262(this.method_37075());
+      class_2522 var3 = this.world.method_28262(this.method_37075());
       class_2522 var4 = this.method_37304();
       boolean var5 = var3.method_8349(class_2351.field_11744) || var4.method_8349(class_2351.field_11744) || this.method_37284(class_6503.field_33095) > 0.0;
       this.method_7921(!var5);
@@ -266,7 +266,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       if (this.method_37370()) {
          class_214 var3 = class_214.method_926(this);
          if (var3.method_927(class_7855.field_39807, this.method_37075(), true)
-            && !this.field_41768.method_28258(this.method_37075().method_6081()).method_22007(class_6503.field_33095)) {
+            && !this.world.method_28258(this.method_37075().method_6081()).method_22007(class_6503.field_33095)) {
             this.field_41726 = true;
          } else {
             this.method_37215(this.method_37098().method_6209(0.5).method_6214(0.0, 0.05, 0.0));
@@ -284,7 +284,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2599;
    }
 
@@ -314,7 +314,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public float method_21376(class_1331 var1, class_4924 var2) {
+   public float method_21376(BlockPos var1, class_4924 var2) {
       if (!var2.method_28262(var1).method_8364().method_22007(class_6503.field_33095)) {
          return !this.method_37370() ? 0.0F : Float.NEGATIVE_INFINITY;
       } else {
@@ -340,19 +340,19 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       boolean var5 = this.method_24866(var1.method_26617(var2));
       if (!var5 && this.method_43357() && !this.method_37151() && !var1.method_3236()) {
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             var1.method_37353(this);
          }
 
-         return class_6910.method_31659(this.field_41768.field_33055);
+         return class_6910.method_31659(this.world.field_33055);
       } else {
          class_6910 var6 = super.method_26857(var1, var2);
          if (var6.method_31662()) {
             if (var5 && !this.method_37378()) {
-               this.field_41768
+               this.world
                   .method_29528(
                      (class_704)null,
                      this.method_37302(),
@@ -405,9 +405,9 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    private class_8733 method_7927(class_1556 var1, class_9589 var2, class_5886 var3, class_8733 var4) {
-      var3.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, 0.0F);
+      var3.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, 0.0F);
       var3.method_26864(var1, var2, class_2417.field_12037, var4, (CompoundNBT)null);
-      var3.method_37354(this, true);
+      var3.startRiding(this, true);
       return new class_1821(0.0F);
    }
 }

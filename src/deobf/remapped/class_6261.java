@@ -12,13 +12,13 @@ public class class_6261 extends class_6414 implements class_2593 {
       this.method_29284(this.field_32751.method_36446().method_10308(field_31998, Boolean.valueOf(true)));
    }
 
-   public void method_28562(class_2522 var1, class_9379 var2, class_1331 var3) {
+   public void method_28562(class_2522 var1, class_9379 var2, BlockPos var3) {
       if (!method_28561(var1, var2, var3)) {
          var2.method_43367().method_14011(var3, this, 60 + var2.method_43360().nextInt(40));
       }
    }
 
-   public static boolean method_28561(class_2522 var0, class_6163 var1, class_1331 var2) {
+   public static boolean method_28561(class_2522 var0, class_6163 var1, BlockPos var2) {
       if (var0.<Boolean>method_10313(field_31998)) {
          return true;
       } else {
@@ -40,12 +40,12 @@ public class class_6261 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_31999;
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method_10313(field_31998)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }
@@ -56,8 +56,8 @@ public class class_6261 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
-      class_1331 var6 = var3.method_6100();
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
+      BlockPos var6 = var3.method_6100();
       return var2.method_28262(var6).method_8308(var2, var6, Direction.field_817);
    }
 

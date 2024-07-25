@@ -11,7 +11,7 @@ public abstract class class_6017 extends class_1871 {
    }
 
    @Override
-   public float method_23467(class_6199 var1, float var2) {
+   public float method_23467(DamageSource var1, float var2) {
       if (!(var1.method_28353() instanceof class_6749)) {
          return super.method_23467(var1, var2);
       } else {

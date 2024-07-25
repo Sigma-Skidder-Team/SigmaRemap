@@ -28,7 +28,7 @@ public class class_6680 {
       return ((class_7481)this.field_34528.method_22553(var1.field_10328, var1.field_10327)).method_34019(var2);
    }
 
-   public class_2522 method_30650(class_1331 var1) {
+   public class_2522 method_30650(BlockPos var1) {
       return this.field_34528.method_28262(var1);
    }
 }

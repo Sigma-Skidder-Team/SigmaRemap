@@ -40,7 +40,7 @@ public class class_8725 extends class_7934 {
    @Override
    public void method_35893(ItemStack var1) {
       if (this.field_44714 > 0) {
-         var1.method_27964(this.field_44712.field_41768, this.field_44712, this.field_44714);
+         var1.method_27964(this.field_44712.world, this.field_44712, this.field_44714);
       }
 
       if (this.field_40591 instanceof class_9031) {
@@ -53,7 +53,7 @@ public class class_8725 extends class_7934 {
    @Override
    public ItemStack method_35892(class_704 var1, ItemStack var2) {
       this.method_35893(var2);
-      class_2831 var5 = var1.field_41768.method_29549().method_23147(class_1510.field_7997, this.field_44715, var1.field_41768);
+      class_2831 var5 = var1.world.method_29549().method_23147(class_1510.field_7997, this.field_44715, var1.world);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          ItemStack var7 = this.field_44715.method_31498(var6);

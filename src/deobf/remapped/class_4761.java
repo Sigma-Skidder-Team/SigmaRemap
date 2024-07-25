@@ -10,7 +10,7 @@ public class class_4761 extends class_9790 {
       if (this.field_23046.thePlayer == null) {
          return 0;
       } else {
-         class_2522 var7 = this.field_23046.theWorld.method_28262(new class_1331(var2, var3, var4));
+         class_2522 var7 = this.field_23046.theWorld.method_28262(new BlockPos(var2, var3, var4));
          return var7 != null ? class_7494.method_34081(var7.method_8360()) << 4 | class_7494.method_34075(var7) : 0;
       }
    }

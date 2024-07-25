@@ -2,7 +2,7 @@ package remapped;
 
 public class SpartanClickTP extends Module {
    private int field_12052;
-   private class_1331 field_12051;
+   private BlockPos field_12051;
 
    public SpartanClickTP() {
       super(Category.MOVEMENT, "Spartan", "ClickTP for spartan anticheat");
@@ -27,9 +27,9 @@ public class SpartanClickTP extends Module {
       if (this.method_42015() && (client.thePlayer.method_37252() || !this.method_42017().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
-               client.thePlayer.field_41701, client.thePlayer.field_41755, this.method_42017().getFloatValueByName("Maximum range")
+               client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.method_42017().getFloatValueByName("Maximum range")
             );
-            class_1331 var5 = null;
+            BlockPos var5 = null;
             if (var4 != null) {
                var5 = var4.method_43955();
             }

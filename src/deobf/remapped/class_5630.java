@@ -76,7 +76,7 @@ public class class_5630 {
       return var3;
    }
 
-   public static class_6325 method_25519(class_5561 var0, class_1331 var1) {
+   public static class_6325 method_25519(class_5561 var0, BlockPos var1) {
       class_6325 var4 = field_28568;
       if (!(var0 instanceof class_1680)) {
          if (var0 instanceof class_4924) {

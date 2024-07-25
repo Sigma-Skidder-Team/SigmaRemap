@@ -79,7 +79,7 @@ public class MineplexFly extends PremiumModule {
          if (this.field_46839) {
             class_8865.method_40777(var1, 0.01);
          } else {
-            float var4 = client.thePlayer.field_41701 + 90.0F;
+            float var4 = client.thePlayer.rotationYaw + 90.0F;
             if (!client.thePlayer.field_41726 && !class_314.method_1413(client.thePlayer, 0.001F)) {
                if (this.field_46840 != -1) {
                   if (this.field_46838 && !class_314.method_1434()) {
@@ -129,9 +129,9 @@ public class MineplexFly extends PremiumModule {
                }
 
                class_1343 var6 = new class_1343(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-               class_1331 var7 = new class_1331(client.thePlayer.method_37075()).method_6104(0, -1, 0);
+               BlockPos var7 = new BlockPos(client.thePlayer.method_37075()).method_6104(0, -1, 0);
                class_9529 var8 = new class_9529(var6, Direction.field_817, var7, false);
-               class_8585 var9 = new class_8585(class_2584.field_12791, var8);
+               class_8585 var9 = new class_8585(Hand.MAIN_HAND, var8);
                client.method_8614().method_4813(var9);
                if (!(this.field_46845 < (double)this.getFloatValueByName("Boost"))) {
                   class_8865.method_40777(var1, 0.0);

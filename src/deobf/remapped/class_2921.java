@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_2921 extends class_1331 {
+public class class_2921 extends BlockPos {
    public class_2921() {
       this(0, 0, 0);
    }
@@ -14,27 +14,27 @@ public class class_2921 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6103(double var1, double var3, double var5) {
+   public BlockPos method_6103(double var1, double var3, double var5) {
       return super.method_6103(var1, var3, var5).method_6072();
    }
 
    @Override
-   public class_1331 method_6104(int var1, int var2, int var3) {
+   public BlockPos method_6104(int var1, int var2, int var3) {
       return super.method_6104(var1, var2, var3).method_6072();
    }
 
    @Override
-   public class_1331 method_6099(Direction var1, int var2) {
+   public BlockPos method_6099(Direction var1, int var2) {
       return super.method_6099(var1, var2).method_6072();
    }
 
    @Override
-   public class_1331 method_6068(class_9249 var1, int var2) {
+   public BlockPos method_6068(class_9249 var1, int var2) {
       return super.method_6068(var1, var2).method_6072();
    }
 
    @Override
-   public class_1331 method_6078(class_6631 var1) {
+   public BlockPos method_6078(class_6631 var1) {
       return super.method_6078(var1).method_6072();
    }
 
@@ -122,7 +122,7 @@ public class class_2921 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6072() {
-      return new class_1331(this);
+   public BlockPos method_6072() {
+      return new BlockPos(this);
    }
 }

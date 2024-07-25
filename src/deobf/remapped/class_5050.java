@@ -27,13 +27,13 @@ public class class_5050 extends class_4382 {
       return 2;
    }
 
-   public static void method_23231(class_5834 var0, World var1, class_1331 var2, int var3) {
+   public static void method_23231(class_5834 var0, World var1, BlockPos var2, int var3) {
       if (var0.method_37360()) {
          class_2522 var6 = class_4783.field_23320.method_29260();
          float var7 = (float)Math.min(16, 2 + var3);
          class_2921 var8 = new class_2921();
 
-         for (class_1331 var10 : class_1331.method_6076(
+         for (BlockPos var10 : BlockPos.method_6076(
             var2.method_6103((double)(-var7), -1.0, (double)(-var7)), var2.method_6103((double)var7, -1.0, (double)var7)
          )) {
             if (var10.method_12170(var0.method_37245(), (double)var7)) {

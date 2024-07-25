@@ -13,12 +13,12 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 public class class_793 implements class_8773 {
-   private final class_1092 field_4260;
+   private final ClientPlayNetHandler field_4260;
    private final MinecraftClient field_4259;
    private int field_4262 = -1;
    private CompletableFuture<Suggestions> field_4261;
 
-   public class_793(class_1092 var1, MinecraftClient var2) {
+   public class_793(ClientPlayNetHandler var1, MinecraftClient var2) {
       this.field_4260 = var1;
       this.field_4259 = var2;
    }
@@ -48,7 +48,7 @@ public class class_793 implements class_8773 {
 
    @Override
    public Collection<Identifier> method_40309() {
-      return this.field_4259.method_8590().method_16338();
+      return this.field_4259.getSoundHandler().method_16338();
    }
 
    @Override
@@ -86,7 +86,7 @@ public class class_793 implements class_8773 {
    public Collection<class_7461> method_40322() {
       class_7474 var3 = this.field_4259.field_9587;
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
-         class_1331 var4 = ((class_9529)var3).method_43955();
+         BlockPos var4 = ((class_9529)var3).method_43955();
          return Collections.<class_7461>singleton(
             new class_7461(method_3523(var4.method_12173()), method_3523(var4.method_12165()), method_3523(var4.method_12185()))
          );

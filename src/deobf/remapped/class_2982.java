@@ -23,12 +23,12 @@ public class class_2982 extends class_6942 {
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return class_9299.method_42829(class_7099.method_32635(var2, var3), 0, 15);
    }
 
    @Override
-   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10778(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return var4 != Direction.field_817 ? 0 : var1.method_8327(var2, var3, var4);
    }
 }

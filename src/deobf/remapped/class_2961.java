@@ -11,23 +11,23 @@ public class class_2961 extends class_250 implements class_3978 {
    }
 
    @Override
-   public boolean method_18358(class_6163 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public boolean method_18358(class_6163 var1, BlockPos var2, class_2522 var3, boolean var4) {
       return var1.method_28262(var2.method_6081()).method_8345();
    }
 
    @Override
-   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, BlockPos var3, class_2522 var4) {
       return true;
    }
 
    @Override
-   public void method_18359(class_6331 var1, Random var2, class_1331 var3, class_2522 var4) {
-      class_1331 var7 = var3.method_6081();
+   public void method_18359(class_6331 var1, Random var2, BlockPos var3, class_2522 var4) {
+      BlockPos var7 = var3.method_6081();
       class_2522 var8 = class_4783.field_23868.method_29260();
 
       label61:
       for (int var9 = 0; var9 < 128; var9++) {
-         class_1331 var10 = var7;
+         BlockPos var10 = var7;
 
          for (int var11 = 0; var11 < var9 / 16; var11++) {
             var10 = var10.method_6104(var2.nextInt(3) - 1, (var2.nextInt(3) - 1) * var2.nextInt(3) / 2, var2.nextInt(3) - 1);

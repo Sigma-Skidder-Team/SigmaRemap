@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1601 extends class_1080 {
+public class class_1601 extends AbstractMinecartEntity {
    private static String[] field_8332;
 
    public class_1601(class_6629<?> var1, World var2) {
@@ -12,10 +12,10 @@ public class class_1601 extends class_1080 {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, class_2584 var2) {
+   public class_6910 method_37128(class_704 var1, Hand var2) {
       if (!var1.method_3236()) {
          if (!this.method_37151()) {
-            if (this.field_41768.field_33055) {
+            if (this.world.field_33055) {
                return class_6910.field_35520;
             } else {
                return !var1.method_37353(this) ? class_6910.field_35521 : class_6910.field_35518;

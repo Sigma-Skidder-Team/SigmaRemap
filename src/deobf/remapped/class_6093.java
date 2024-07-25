@@ -28,14 +28,14 @@ public class class_6093 extends class_3429 {
    @Override
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
-      if (!this.field_41768.field_33055) {
-         this.field_41768.method_43364(2002, this.method_37075(), class_9541.method_44000(class_3697.field_18108));
-         int var4 = 3 + this.field_41768.field_33033.nextInt(5) + this.field_41768.field_33033.nextInt(5);
+      if (!this.world.field_33055) {
+         this.world.method_43364(2002, this.method_37075(), class_9541.method_44000(class_3697.field_18108));
+         int var4 = 3 + this.world.field_33033.nextInt(5) + this.world.field_33033.nextInt(5);
 
          while (var4 > 0) {
             int var5 = class_5614.method_25476(var4);
             var4 -= var5;
-            this.field_41768.method_7509(new class_5614(this.field_41768, this.method_37302(), this.method_37309(), this.method_37156(), var5));
+            this.world.method_7509(new class_5614(this.world, this.method_37302(), this.method_37309(), this.method_37156(), var5));
          }
 
          this.method_37204();

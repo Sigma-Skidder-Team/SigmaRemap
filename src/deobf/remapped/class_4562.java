@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class class_4562 implements class_2995 {
    private final MinecraftClient field_22226;
-   private final Map<class_1331, class_6569> field_22223 = Maps.newHashMap();
+   private final Map<BlockPos, class_6569> field_22223 = Maps.newHashMap();
    private final Map<UUID, class_1236> field_22222 = Maps.newHashMap();
    private UUID field_22224;
 
@@ -64,7 +64,7 @@ public class class_4562 implements class_2995 {
    }
 
    private void method_21180() {
-      class_1331 var3 = this.method_21176().method_41630();
+      BlockPos var3 = this.method_21176().method_41630();
       this.field_22222.values().forEach(var1 -> {
          if (this.method_21174(var1)) {
             this.method_21164(var1);
@@ -72,7 +72,7 @@ public class class_4562 implements class_2995 {
       });
       this.method_21183();
 
-      for (class_1331 var5 : this.field_22223.keySet()) {
+      for (BlockPos var5 : this.field_22223.keySet()) {
          if (var3.method_12171(var5, 30.0)) {
             method_21161(var5);
          }
@@ -92,7 +92,7 @@ public class class_4562 implements class_2995 {
       });
    }
 
-   private Map<class_1331, Set<UUID>> method_21175() {
+   private Map<BlockPos, Set<UUID>> method_21175() {
       HashMap var3 = Maps.newHashMap();
       this.field_22222
          .values()
@@ -108,7 +108,7 @@ public class class_4562 implements class_2995 {
          .filter(class_1236::method_5487)
          .forEach(var1 -> var3.computeIfAbsent(var1.field_6816, var0x -> Sets.newHashSet()).add(var1.method_5489()));
       var3.entrySet().forEach(var0 -> {
-         class_1331 var3x = (class_1331)var0.getKey();
+         BlockPos var3x = (BlockPos)var0.getKey();
          Set var4 = (Set)var0.getValue();
          Set var5 = var4.stream().<String>map(class_4045::method_18611).collect(Collectors.toSet());
          int var6 = 1;
@@ -127,19 +127,19 @@ public class class_4562 implements class_2995 {
       }
    }
 
-   private static void method_21161(class_1331 var0) {
+   private static void method_21161(BlockPos var0) {
       float var3 = 0.05F;
       method_21182(var0, 0.05F, 0.2F, 0.2F, 1.0F, 0.3F);
    }
 
-   private void method_21181(class_1331 var1, List<String> var2) {
+   private void method_21181(BlockPos var1, List<String> var2) {
       float var5 = 0.05F;
       method_21182(var1, 0.05F, 0.2F, 0.2F, 1.0F, 0.3F);
       method_21159("" + var2, var1, 0, -256);
       method_21159("Ghost Hive", var1, 1, -65536);
    }
 
-   private static void method_21182(class_1331 var0, float var1, float var2, float var3, float var4, float var5) {
+   private static void method_21182(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       class_3372.method_15560(var0, var1, var2, var3, var4, var5);
@@ -211,11 +211,11 @@ public class class_4562 implements class_2995 {
    }
 
    private static void method_21162(String var0, class_6569 var1, int var2, int var3) {
-      class_1331 var6 = var1.field_33507;
+      BlockPos var6 = var1.field_33507;
       method_21159(var0, var6, var2, var3);
    }
 
-   private static void method_21159(String var0, class_1331 var1, int var2, int var3) {
+   private static void method_21159(String var0, BlockPos var1, int var2, int var3) {
       double var6 = 1.3;
       double var8 = 0.2;
       double var10 = (double)var1.method_12173() + 0.5;
@@ -227,7 +227,7 @@ public class class_4562 implements class_2995 {
    private static void method_21167(class_66 var0, int var1, String var2, int var3, float var4) {
       double var7 = 2.4;
       double var9 = 0.25;
-      class_1331 var11 = new class_1331(var0);
+      BlockPos var11 = new BlockPos(var0);
       double var12 = (double)var11.method_12173() + 0.5;
       double var14 = var0.method_60() + 2.4 + (double)var1 * 0.25;
       double var16 = (double)var11.method_12185() + 0.5;
@@ -239,7 +239,7 @@ public class class_4562 implements class_2995 {
       return this.field_22226.gameRenderer.method_35949();
    }
 
-   private String method_21173(class_1236 var1, class_1331 var2) {
+   private String method_21173(class_1236 var1, BlockPos var2) {
       float var5 = class_9299.method_42842(var2.method_12178(var1.field_6819.method_61(), var1.field_6819.method_60(), var1.field_6819.method_62(), true));
       double var6 = (double)Math.round(var5 * 10.0F) / 10.0;
       return var2.method_12175() + " (dist " + var6 + ")";
@@ -251,16 +251,16 @@ public class class_4562 implements class_2995 {
 
    private boolean method_21174(class_1236 var1) {
       ClientPlayerEntity var4 = this.field_22226.thePlayer;
-      class_1331 var5 = new class_1331(var4.method_37302(), var1.field_6819.method_60(), var4.method_37156());
-      class_1331 var6 = new class_1331(var1.field_6819);
+      BlockPos var5 = new BlockPos(var4.method_37302(), var1.field_6819.method_60(), var4.method_37156());
+      BlockPos var6 = new BlockPos(var1.field_6819);
       return var5.method_12171(var6, 30.0);
    }
 
-   private Collection<UUID> method_21168(class_1331 var1) {
+   private Collection<UUID> method_21168(BlockPos var1) {
       return this.field_22222.values().stream().filter(var1x -> var1x.method_5488(var1)).<UUID>map(class_1236::method_5489).collect(Collectors.<UUID>toSet());
    }
 
-   private Map<class_1331, List<String>> method_21166() {
+   private Map<BlockPos, List<String>> method_21166() {
       HashMap var3 = Maps.newHashMap();
 
       for (class_1236 var5 : this.field_22222.values()) {

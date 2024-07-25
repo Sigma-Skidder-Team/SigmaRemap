@@ -50,7 +50,7 @@ public class class_9868 extends class_3599 {
          if (this.field_49919 != 0) {
             if (this.field_49919 >= this.field_49920.method_1548()) {
                float var4 = 1.0F;
-               if (this.field_49920.field_41768.method_43370() == class_423.field_1782) {
+               if (this.field_49920.world.method_43370() == class_423.field_1782) {
                   var4 += 2.0F;
                }
 
@@ -58,14 +58,14 @@ public class class_9868 extends class_3599 {
                   var4 += 2.0F;
                }
 
-               var3.method_37181(class_6199.method_28369(this.field_49920, this.field_49920), var4);
-               var3.method_37181(class_6199.method_28345(this.field_49920), (float)this.field_49920.method_26575(class_7331.field_37462));
+               var3.attackEntityFrom(DamageSource.method_28369(this.field_49920, this.field_49920), var4);
+               var3.attackEntityFrom(DamageSource.method_28345(this.field_49920), (float)this.field_49920.method_26575(class_7331.field_37462));
                this.field_49920.method_26860((class_5834)null);
             }
          } else {
             class_337.method_1550(this.field_49920, this.field_49920.method_17809().method_37145());
             if (!this.field_49920.method_37378()) {
-               this.field_49920.field_41768.method_29587(this.field_49920, (byte)21);
+               this.field_49920.world.method_29587(this.field_49920, (byte)21);
             }
          }
 

@@ -24,7 +24,7 @@ public class class_9726 extends class_7896 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       if (!this.method_35693(var1, var5, 0)) {
          return false;
       } else {
@@ -72,12 +72,12 @@ public class class_9726 extends class_7896 {
             int var18 = this.method_32530(2, 5);
             int var19 = this.method_32507(2);
             int var16 = this.method_32523(2, 5);
-            if (var5.method_44395(new class_1331(var18, var19, var16))) {
+            if (var5.method_44395(new BlockPos(var18, var19, var16))) {
                this.field_49438 = true;
                class_1609 var17 = class_6629.field_34220.method_30484(var1.method_7066());
                var17.method_26883();
                var17.method_37144((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
-               var17.method_26864(var1, var1.method_43368(new class_1331(var18, var19, var16)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
+               var17.method_26864(var1, var1.method_43368(new BlockPos(var18, var19, var16)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
                var1.method_7065(var17);
             }
          }
@@ -92,12 +92,12 @@ public class class_9726 extends class_7896 {
          int var5 = this.method_32530(2, 5);
          int var6 = this.method_32507(2);
          int var7 = this.method_32523(2, 5);
-         if (var2.method_44395(new class_1331(var5, var6, var7))) {
+         if (var2.method_44395(new BlockPos(var5, var6, var7))) {
             this.field_49439 = true;
             class_5583 var8 = class_6629.field_34249.method_30484(var1.method_7066());
             var8.method_26883();
             var8.method_37144((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
-            var8.method_26864(var1, var1.method_43368(new class_1331(var5, var6, var7)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
+            var8.method_26864(var1, var1.method_43368(new BlockPos(var5, var6, var7)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
             var1.method_7065(var8);
          }
       }

@@ -29,11 +29,11 @@ public class class_7481 implements class_5990 {
    private volatile class_4663 field_38173;
    private final Map<class_3801, class_2131> field_38183 = Maps.newEnumMap(class_3801.class);
    private volatile class_7335 field_38182 = class_7335.field_37504;
-   private final Map<class_1331, class_3757> field_38187 = Maps.newHashMap();
-   private final Map<class_1331, CompoundNBT> field_38180 = Maps.newHashMap();
+   private final Map<BlockPos, class_3757> field_38187 = Maps.newHashMap();
+   private final Map<BlockPos, CompoundNBT> field_38180 = Maps.newHashMap();
    private final class_1315[] field_38175 = new class_1315[16];
    private final List<CompoundNBT> field_38179 = Lists.newArrayList();
-   private final List<class_1331> field_38171 = Lists.newArrayList();
+   private final List<BlockPos> field_38171 = Lists.newArrayList();
    private final ShortList[] field_38178 = new ShortList[16];
    private final Map<class_5390<?>, class_3200<?>> field_38189 = Maps.newHashMap();
    private final Map<class_5390<?>, LongSet> field_38172 = Maps.newHashMap();
@@ -69,7 +69,7 @@ public class class_7481 implements class_5990 {
    }
 
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       int var4 = var1.method_12165();
       if (!World.method_29571(var4)) {
          class_1315 var5 = this.method_27349()[var4 >> 4];
@@ -82,7 +82,7 @@ public class class_7481 implements class_5990 {
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       int var4 = var1.method_12165();
       if (!World.method_29571(var4)) {
          class_1315 var5 = this.method_27349()[var4 >> 4];
@@ -95,14 +95,14 @@ public class class_7481 implements class_5990 {
    }
 
    @Override
-   public Stream<class_1331> method_27360() {
+   public Stream<BlockPos> method_27360() {
       return this.field_38171.stream();
    }
 
    public ShortList[] method_34029() {
       ShortList[] var3 = new ShortList[16];
 
-      for (class_1331 var5 : this.field_38171) {
+      for (BlockPos var5 : this.field_38171) {
          class_5990.method_27337(var3, var5.method_12165() >> 4).add(method_34024(var5));
       }
 
@@ -113,13 +113,13 @@ public class class_7481 implements class_5990 {
       this.method_34021(method_34017(var1, var2, this.field_38177));
    }
 
-   public void method_34021(class_1331 var1) {
+   public void method_34021(BlockPos var1) {
       this.field_38171.add(var1.method_6072());
    }
 
    @Nullable
    @Override
-   public class_2522 method_27348(class_1331 var1, class_2522 var2, boolean var3) {
+   public class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3) {
       int var6 = var1.method_12173();
       int var7 = var1.method_12165();
       int var8 = var1.method_12185();
@@ -128,7 +128,7 @@ public class class_7481 implements class_5990 {
             return var2;
          } else {
             if (var2.method_8339() > 0) {
-               this.field_38171.add(new class_1331((var6 & 15) + this.method_27352().method_9535(), var7, (var8 & 15) + this.method_27352().method_9545()));
+               this.field_38171.add(new BlockPos((var6 & 15) + this.method_27352().method_9535(), var7, (var8 & 15) + this.method_27352().method_9545()));
             }
 
             class_1315 var9 = this.method_34031(var7 >> 4);
@@ -183,13 +183,13 @@ public class class_7481 implements class_5990 {
    }
 
    @Override
-   public void method_27346(class_1331 var1, class_3757 var2) {
+   public void method_27346(BlockPos var1, class_3757 var2) {
       var2.method_17390(var1);
       this.field_38187.put(var1, var2);
    }
 
    @Override
-   public Set<class_1331> method_27366() {
+   public Set<BlockPos> method_27366() {
       HashSet var3 = Sets.newHashSet(this.field_38180.keySet());
       var3.addAll(this.field_38187.keySet());
       return var3;
@@ -197,11 +197,11 @@ public class class_7481 implements class_5990 {
 
    @Nullable
    @Override
-   public class_3757 method_28260(class_1331 var1) {
+   public class_3757 method_28260(BlockPos var1) {
       return this.field_38187.get(var1);
    }
 
-   public Map<class_1331, class_3757> method_34025() {
+   public Map<BlockPos, class_3757> method_34025() {
       return this.field_38187;
    }
 
@@ -211,7 +211,7 @@ public class class_7481 implements class_5990 {
 
    @Override
    public void method_27342(Entity var1) {
-      if (!var1.method_37070()) {
+      if (!var1.isPassenger()) {
          CompoundNBT var4 = new CompoundNBT();
          var1.method_37350(var4);
          this.method_34020(var4);
@@ -344,7 +344,7 @@ public class class_7481 implements class_5990 {
       this.field_38185 = true;
    }
 
-   public static short method_34024(class_1331 var0) {
+   public static short method_34024(BlockPos var0) {
       int var3 = var0.method_12173();
       int var4 = var0.method_12165();
       int var5 = var0.method_12185();
@@ -354,15 +354,15 @@ public class class_7481 implements class_5990 {
       return (short)(var6 | var7 << 4 | var8 << 8);
    }
 
-   public static class_1331 method_34017(short var0, int var1, class_2034 var2) {
+   public static BlockPos method_34017(short var0, int var1, class_2034 var2) {
       int var5 = (var0 & 15) + (var2.field_10328 << 4);
       int var6 = (var0 >>> 4 & 15) + (var1 << 4);
       int var7 = (var0 >>> 8 & 15) + (var2.field_10327 << 4);
-      return new class_1331(var5, var6, var7);
+      return new BlockPos(var5, var6, var7);
    }
 
    @Override
-   public void method_27365(class_1331 var1) {
+   public void method_27365(BlockPos var1) {
       if (!World.method_29556(var1)) {
          class_5990.method_27337(this.field_38178, var1.method_12165() >> 4).add(method_34024(var1));
       }
@@ -403,27 +403,27 @@ public class class_7481 implements class_5990 {
 
    @Override
    public void method_27347(CompoundNBT var1) {
-      this.field_38180.put(new class_1331(var1.method_25947("x"), var1.method_25947("y"), var1.method_25947("z")), var1);
+      this.field_38180.put(new BlockPos(var1.method_25947("x"), var1.method_25947("y"), var1.method_25947("z")), var1);
    }
 
-   public Map<class_1331, CompoundNBT> method_34022() {
-      return Collections.<class_1331, CompoundNBT>unmodifiableMap(this.field_38180);
+   public Map<BlockPos, CompoundNBT> method_34022() {
+      return Collections.<BlockPos, CompoundNBT>unmodifiableMap(this.field_38180);
    }
 
    @Override
-   public CompoundNBT method_27355(class_1331 var1) {
+   public CompoundNBT method_27355(BlockPos var1) {
       return this.field_38180.get(var1);
    }
 
    @Nullable
    @Override
-   public CompoundNBT method_27345(class_1331 var1) {
+   public CompoundNBT method_27345(BlockPos var1) {
       class_3757 var4 = this.method_28260(var1);
       return var4 == null ? this.field_38180.get(var1) : var4.method_17396(new CompoundNBT());
    }
 
    @Override
-   public void method_27370(class_1331 var1) {
+   public void method_27370(BlockPos var1) {
       this.field_38187.remove(var1);
       this.field_38180.remove(var1);
    }

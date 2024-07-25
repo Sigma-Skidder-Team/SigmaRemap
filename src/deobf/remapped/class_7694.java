@@ -11,7 +11,7 @@ public class class_7694 extends class_9448 {
    }
 
    @Override
-   public Set<class_3841> method_43698(class_1331 var1, class_2522 var2, class_6590 var3) {
+   public Set<class_3841> method_43698(BlockPos var1, class_2522 var2, class_6590 var3) {
       HashSet var6 = new HashSet();
       if (var2.<class_7422>method_10313(class_3064.field_15063) == class_7422.field_37874) {
          class_2522 var7 = var3.method_30352(var1.method_6100());

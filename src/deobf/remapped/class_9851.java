@@ -34,7 +34,7 @@ public class class_9851 extends class_2833 {
 
       for (int var6 = 1; var6 < var2; var6++) {
          var5 = var5.method_18920(var1);
-         if (!this.field_49858.field_41768.method_6683(this.field_49858, var5)) {
+         if (!this.field_49858.world.method_6683(this.field_49858, var5)) {
             return false;
          }
       }

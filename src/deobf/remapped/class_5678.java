@@ -134,7 +134,7 @@ public class class_5678 extends class_8346 implements class_372, class_3745 {
       }
 
       var3.method_27970(1);
-      class_1331 var6 = this.method_17399();
+      BlockPos var6 = this.method_17399();
       if (var3.method_27960().method_11232()) {
          ItemStack var5 = new ItemStack(var3.method_27960().method_11241());
          if (!var3.method_28022()) {

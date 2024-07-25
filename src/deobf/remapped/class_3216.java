@@ -27,7 +27,7 @@ public class class_3216 extends class_5920<class_5834> {
          class_4612 var5 = (class_4612)var2;
          class_1489 var6 = var1.method_28969();
          Optional var7 = var6.method_6880(class_236.field_778.method_1007(), var2.method_37075(), 48, class_8122.field_41615);
-         return var7.isPresent() && !(((class_1331)var7.get()).method_12180(var5.method_37075()) <= 4.0);
+         return var7.isPresent() && !(((BlockPos)var7.get()).method_12180(var5.method_37075()) <= 4.0);
       }
    }
 
@@ -53,7 +53,7 @@ public class class_3216 extends class_5920<class_5834> {
       Stream var10 = var8.method_6867(class_236.field_778.method_1007(), var9, var2.method_37075(), 48, class_8122.field_41615);
       class_3998 var11 = var7.method_26927().method_5623(var10, class_236.field_778.method_1006());
       if (var11 != null && var11.method_18433()) {
-         class_1331 var12 = var11.method_18426();
+         BlockPos var12 = var11.method_18426();
          Optional var13 = var8.method_6870(var12);
          if (var13.isPresent()) {
             var2.method_26525().method_5105(class_6044.field_30889, new class_6651(var12, this.field_16039, 1));

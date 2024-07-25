@@ -14,11 +14,11 @@ public class class_3998 {
    private class_5851[] field_19423 = new class_5851[0];
    private Set<class_1478> field_19416;
    private int field_19420;
-   private final class_1331 field_19417;
+   private final BlockPos field_19417;
    private final float field_19419;
    private final boolean field_19424;
 
-   public class_3998(List<class_5851> var1, class_1331 var2, boolean var3) {
+   public class_3998(List<class_5851> var1, BlockPos var2, boolean var3) {
       this.field_19422 = var1;
       this.field_19417 = var2;
       this.field_19419 = !var1.isEmpty() ? this.field_19422.get(this.field_19422.size() - 1).method_26691(this.field_19417) : Float.MAX_VALUE;
@@ -76,7 +76,7 @@ public class class_3998 {
       return new class_1343(var6, var8, var10);
    }
 
-   public class_1331 method_18445(int var1) {
+   public BlockPos method_18445(int var1) {
       return this.field_19422.get(var1).method_26686();
    }
 
@@ -84,7 +84,7 @@ public class class_3998 {
       return this.method_18432(var1, this.field_19420);
    }
 
-   public class_1331 method_18449() {
+   public BlockPos method_18449() {
       return this.field_19422.get(this.field_19420).method_26686();
    }
 
@@ -137,7 +137,7 @@ public class class_3998 {
          var6.add(class_1478.method_6815(var0));
       }
 
-      class_1331 var13 = new class_1331(var0.readInt(), var0.readInt(), var0.readInt());
+      BlockPos var13 = new BlockPos(var0.readInt(), var0.readInt(), var0.readInt());
       ArrayList var8 = Lists.newArrayList();
       int var9 = var0.readInt();
 
@@ -170,7 +170,7 @@ public class class_3998 {
       return "Path(length=" + this.field_19422.size() + ")";
    }
 
-   public class_1331 method_18426() {
+   public BlockPos method_18426() {
       return this.field_19417;
    }
 

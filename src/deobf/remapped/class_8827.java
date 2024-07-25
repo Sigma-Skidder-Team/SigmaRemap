@@ -15,7 +15,7 @@ public class class_8827 {
       this.field_45147 = var1;
    }
 
-   public void method_40529(class_8859 var1) {
+   public void method_40529(MovementInput var1) {
       if (this.field_45149 != null) {
          this.field_45149.method_10482(var1);
       }
@@ -33,7 +33,7 @@ public class class_8827 {
       }
    }
 
-   public void method_40533(ClientWorld var1, class_1331 var2, class_2522 var3, float var4) {
+   public void method_40533(ClientWorld var1, BlockPos var2, class_2522 var3, float var4) {
       if (this.field_45149 != null) {
          this.field_45149.method_10480(var1, var2, var3, var4);
       }

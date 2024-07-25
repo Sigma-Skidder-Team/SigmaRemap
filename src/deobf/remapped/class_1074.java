@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class class_1074 implements Packet<class_1243> {
    private static String[] field_5863;
-   private class_1331 field_5868;
+   private BlockPos field_5868;
    private Identifier field_5865;
    private Identifier field_5867;
    private Identifier field_5864;
@@ -14,7 +14,7 @@ public class class_1074 implements Packet<class_1243> {
    public class_1074() {
    }
 
-   public class_1074(class_1331 var1, Identifier var2, Identifier var3, Identifier var4, String var5, class_1252 var6) {
+   public class_1074(BlockPos var1, Identifier var2, Identifier var3, Identifier var4, String var5, class_1252 var6) {
       this.field_5868 = var1;
       this.field_5865 = var2;
       this.field_5867 = var3;
@@ -47,7 +47,7 @@ public class class_1074 implements Packet<class_1243> {
       var1.method_5563(this);
    }
 
-   public class_1331 method_4704() {
+   public BlockPos method_4704() {
       return this.field_5868;
    }
 

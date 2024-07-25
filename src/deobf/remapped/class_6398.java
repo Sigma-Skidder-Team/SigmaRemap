@@ -16,7 +16,7 @@ public class class_6398 extends class_4569 {
       return new class_6398(class_8938.field_45798, var0.method_29097(), var1.method_43921());
    }
 
-   public boolean method_29213(class_2522 var1, class_6331 var2, class_1331 var3, ItemStack var4) {
+   public boolean method_29213(class_2522 var1, class_6331 var2, BlockPos var3, ItemStack var4) {
       return this.field_32668.method_23401(var2, (double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5)
          ? this.field_32667.method_24266(var4)
          : false;

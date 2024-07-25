@@ -50,12 +50,12 @@ public class class_7769<T extends class_5834> extends class_1498<T> {
 
       this.field_39371.field_8183 = 5.0F;
       this.field_39371.field_8181 = var11;
-      if (!(var1 instanceof class_9716)) {
+      if (!(var1 instanceof AbstractClientPlayerEntity)) {
          this.field_39371.field_8191 = var9;
          this.field_39371.field_8185 = var10;
          this.field_39371.field_8190 = var12;
       } else {
-         class_9716 var16 = (class_9716)var1;
+         AbstractClientPlayerEntity var16 = (AbstractClientPlayerEntity)var1;
          var16.field_49391 = (float)((double)var16.field_49391 + (double)(var9 - var16.field_49391) * 0.1);
          var16.field_49394 = (float)((double)var16.field_49394 + (double)(var12 - var16.field_49394) * 0.1);
          var16.field_49384 = (float)((double)var16.field_49384 + (double)(var10 - var16.field_49384) * 0.1);

@@ -272,7 +272,7 @@ public class class_2206 extends class_3232 {
    }
 
    @Override
-   public boolean method_14815(class_1331 var1) {
+   public boolean method_14815(BlockPos var1) {
       long var4 = class_2034.method_9540(var1.method_12173() >> 4, var1.method_12185() >> 4);
       return this.method_10208(var4, class_5344::method_24350);
    }
@@ -387,7 +387,7 @@ public class class_2206 extends class_3232 {
       return this.field_10934.method_3992();
    }
 
-   public void method_10195(class_1331 var1) {
+   public void method_10195(BlockPos var1) {
       int var4 = var1.method_12173() >> 4;
       int var5 = var1.method_12185() >> 4;
       class_5344 var6 = this.method_10194(class_2034.method_9540(var4, var5));

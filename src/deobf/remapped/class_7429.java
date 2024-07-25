@@ -37,7 +37,7 @@ public abstract class class_7429 extends class_7637 {
    }
 
    public boolean method_33825() {
-      return !this.field_41768.field_33055 ? this.field_37904 > 0 : this.field_41735.<Byte>method_36640(field_37902) > 0;
+      return !this.world.field_33055 ? this.field_37904 > 0 : this.field_41735.<Byte>method_36640(field_37902) > 0;
    }
 
    public void method_33822(class_248 var1) {
@@ -46,7 +46,7 @@ public abstract class class_7429 extends class_7637 {
    }
 
    public class_248 method_33824() {
-      return this.field_41768.field_33055 ? class_248.method_1084(this.field_41735.<Byte>method_36640(field_37902)) : this.field_37903;
+      return this.world.field_33055 ? class_248.method_1084(this.field_41735.<Byte>method_36640(field_37902)) : this.field_37903;
    }
 
    @Override
@@ -60,7 +60,7 @@ public abstract class class_7429 extends class_7637 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (this.field_41768.field_33055 && this.method_33825()) {
+      if (this.world.field_33055 && this.method_33825()) {
          class_248 var3 = this.method_33824();
          double var4 = class_248.method_1086(var3)[0];
          double var6 = class_248.method_1086(var3)[1];
@@ -68,7 +68,7 @@ public abstract class class_7429 extends class_7637 {
          float var10 = this.field_29605 * (float) (Math.PI / 180.0) + class_9299.method_42840((float)this.field_41697 * 0.6662F) * 0.25F;
          float var11 = class_9299.method_42840(var10);
          float var12 = class_9299.method_42818(var10);
-         this.field_41768
+         this.world
             .method_43361(
                class_3090.field_15353,
                this.method_37302() + (double)var11 * 0.6,
@@ -78,7 +78,7 @@ public abstract class class_7429 extends class_7637 {
                var6,
                var8
             );
-         this.field_41768
+         this.world
             .method_43361(
                class_3090.field_15353,
                this.method_37302() - (double)var11 * 0.6,

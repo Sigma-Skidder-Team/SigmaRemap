@@ -3,7 +3,7 @@ package remapped;
 public class class_9825 extends class_516 implements class_1869 {
    private static final class_7821<Integer> field_49780 = class_8073.<Integer>method_36641(class_9825.class, class_2734.field_13366);
    private class_1343 field_49778 = class_1343.field_7335;
-   private class_1331 field_49779 = class_1331.field_7306;
+   private BlockPos field_49779 = BlockPos.field_7306;
    private class_55 field_49777 = class_55.field_38;
 
    public class_9825(class_6629<? extends class_9825> var1, World var2) {
@@ -67,11 +67,11 @@ public class class_9825 extends class_516 implements class_1869 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (this.field_41768.field_33055) {
+      if (this.world.field_33055) {
          float var3 = class_9299.method_42840((float)(this.method_37145() * 3 + this.field_41697) * 0.13F + (float) Math.PI);
          float var4 = class_9299.method_42840((float)(this.method_37145() * 3 + this.field_41697 + 1) * 0.13F + (float) Math.PI);
          if (var3 > 0.0F && var4 <= 0.0F) {
-            this.field_41768
+            this.world
                .method_29527(
                   this.method_37302(),
                   this.method_37309(),
@@ -85,10 +85,10 @@ public class class_9825 extends class_516 implements class_1869 {
          }
 
          int var5 = this.method_45296();
-         float var6 = class_9299.method_42840(this.field_41701 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
-         float var7 = class_9299.method_42818(this.field_41701 * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var6 = class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
+         float var7 = class_9299.method_42818(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
          float var8 = (0.3F + var3 * 0.45F) * ((float)var5 * 0.2F + 1.0F);
-         this.field_41768
+         this.world
             .method_43361(
                class_3090.field_15328,
                this.method_37302() + (double)var6,
@@ -98,7 +98,7 @@ public class class_9825 extends class_516 implements class_1869 {
                0.0,
                0.0
             );
-         this.field_41768
+         this.world
             .method_43361(
                class_3090.field_15328,
                this.method_37302() - (double)var6,
@@ -136,7 +136,7 @@ public class class_9825 extends class_516 implements class_1869 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25938("AX")) {
-         this.field_49779 = new class_1331(var1.method_25947("AX"), var1.method_25947("AY"), var1.method_25947("AZ"));
+         this.field_49779 = new BlockPos(var1.method_25947("AX"), var1.method_25947("AY"), var1.method_25947("AZ"));
       }
 
       this.method_45299(var1.method_25947("Size"));
@@ -167,7 +167,7 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2191;
    }
 

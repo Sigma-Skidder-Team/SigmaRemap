@@ -25,9 +25,9 @@ public class class_9809 extends class_2062 {
 
    @Override
    public void method_9627(
-      class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<class_1331> var8, int var9, class_9616 var10
+           class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<BlockPos> var8, int var9, class_9616 var10
    ) {
-      class_1331 var13 = var5.method_36623();
+      BlockPos var13 = var5.method_36623();
       int var14 = var2.nextInt(2);
       int var15 = 1;
       byte var16 = 0;

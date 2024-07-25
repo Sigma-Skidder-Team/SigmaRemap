@@ -9,12 +9,12 @@ public class class_6092 extends class_608 implements class_1869 {
    private static final UUID field_31175 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
    private static final class_9343 field_31180 = new class_9343(field_31175, "Covered armor bonus", 20.0, class_9342.field_47679);
    public static final class_7821<Direction> field_31172 = class_8073.<Direction>method_36641(class_6092.class, class_2734.field_13364);
-   public static final class_7821<Optional<class_1331>> field_31171 = class_8073.<Optional<class_1331>>method_36641(class_6092.class, class_2734.field_13352);
+   public static final class_7821<Optional<BlockPos>> field_31171 = class_8073.<Optional<BlockPos>>method_36641(class_6092.class, class_2734.field_13352);
    public static final class_7821<Byte> field_31170 = class_8073.<Byte>method_36641(class_6092.class, class_2734.field_13361);
    public static final class_7821<Byte> field_31177 = class_8073.<Byte>method_36641(class_6092.class, class_2734.field_13361);
    private float field_31173;
    private float field_31178;
-   private class_1331 field_31176 = null;
+   private BlockPos field_31176 = null;
    private int field_31174;
 
    public class_6092(class_6629<? extends class_6092> var1, World var2) {
@@ -61,7 +61,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return !this.method_27924() ? class_463.field_2257 : class_463.field_1976;
    }
 
@@ -69,7 +69,7 @@ public class class_6092 extends class_608 implements class_1869 {
    public void method_37329() {
       super.method_37329();
       this.field_41735.method_36634(field_31172, Direction.field_802);
-      this.field_41735.method_36634(field_31171, Optional.<class_1331>empty());
+      this.field_41735.method_36634(field_31171, Optional.<BlockPos>empty());
       this.field_41735.method_36634(field_31170, (byte)0);
       this.field_41735.method_36634(field_31177, (byte)16);
    }
@@ -90,12 +90,12 @@ public class class_6092 extends class_608 implements class_1869 {
       this.field_41735.method_36633(field_31170, var1.method_25950("Peek"));
       this.field_41735.method_36633(field_31177, var1.method_25950("Color"));
       if (!var1.method_25938("APX")) {
-         this.field_41735.method_36633(field_31171, Optional.<class_1331>empty());
+         this.field_41735.method_36633(field_31171, Optional.<BlockPos>empty());
       } else {
          int var4 = var1.method_25947("APX");
          int var5 = var1.method_25947("APY");
          int var6 = var1.method_25947("APZ");
-         this.field_41735.method_36633(field_31171, Optional.<class_1331>of(new class_1331(var4, var5, var6)));
+         this.field_41735.method_36633(field_31171, Optional.<BlockPos>of(new BlockPos(var4, var5, var6)));
       }
    }
 
@@ -105,7 +105,7 @@ public class class_6092 extends class_608 implements class_1869 {
       var1.method_25921("AttachFace", (byte)this.field_41735.<Direction>method_36640(field_31172).method_1050());
       var1.method_25921("Peek", this.field_41735.<Byte>method_36640(field_31170));
       var1.method_25921("Color", this.field_41735.<Byte>method_36640(field_31177));
-      class_1331 var4 = this.method_27906();
+      BlockPos var4 = this.method_27906();
       if (var4 != null) {
          var1.method_25931("APX", var4.method_12173());
          var1.method_25931("APY", var4.method_12165());
@@ -116,35 +116,35 @@ public class class_6092 extends class_608 implements class_1869 {
    @Override
    public void method_37123() {
       super.method_37123();
-      class_1331 var3 = this.field_41735.<Optional<class_1331>>method_36640(field_31171).orElse((class_1331)null);
-      if (var3 == null && !this.field_41768.field_33055) {
+      BlockPos var3 = this.field_41735.<Optional<BlockPos>>method_36640(field_31171).orElse((BlockPos)null);
+      if (var3 == null && !this.world.field_33055) {
          var3 = this.method_37075();
-         this.field_41735.method_36633(field_31171, Optional.<class_1331>of(var3));
+         this.field_41735.method_36633(field_31171, Optional.<BlockPos>of(var3));
       }
 
-      if (!this.method_37070()) {
-         if (!this.field_41768.field_33055) {
-            class_2522 var4 = this.field_41768.method_28262(var3);
+      if (!this.isPassenger()) {
+         if (!this.world.field_33055) {
+            class_2522 var4 = this.world.method_28262(var3);
             if (!var4.method_8345()) {
                if (!var4.method_8350(class_4783.field_23833)) {
                   if (!var4.method_8350(class_4783.field_23336)) {
                      this.method_27920();
                   } else {
                      Direction var5 = var4.<Direction>method_10313(class_1166.field_16180);
-                     if (!this.field_41768.method_22548(var3.method_6098(var5))) {
+                     if (!this.world.method_22548(var3.method_6098(var5))) {
                         this.method_27920();
                      } else {
                         var3 = var3.method_6098(var5);
-                        this.field_41735.method_36633(field_31171, Optional.<class_1331>of(var3));
+                        this.field_41735.method_36633(field_31171, Optional.<BlockPos>of(var3));
                      }
                   }
                } else {
                   Direction var19 = var4.<Direction>method_10313(class_1990.field_16180);
-                  if (!this.field_41768.method_22548(var3.method_6098(var19))) {
+                  if (!this.world.method_22548(var3.method_6098(var19))) {
                      this.method_27920();
                   } else {
                      var3 = var3.method_6098(var19);
-                     this.field_41735.method_36633(field_31171, Optional.<class_1331>of(var3));
+                     this.field_41735.method_36633(field_31171, Optional.<BlockPos>of(var3));
                   }
                }
             }
@@ -161,8 +161,8 @@ public class class_6092 extends class_608 implements class_1869 {
          }
       } else {
          var3 = null;
-         float var17 = this.method_37243().field_41701;
-         this.field_41701 = var17;
+         float var17 = this.method_37243().rotationYaw;
+         this.rotationYaw = var17;
          this.field_29605 = var17;
          this.field_29611 = var17;
          this.field_31174 = 0;
@@ -179,7 +179,7 @@ public class class_6092 extends class_608 implements class_1869 {
       }
 
       if (var3 != null) {
-         if (this.field_41768.field_33055) {
+         if (this.world.field_33055) {
             if (this.field_31174 > 0 && this.field_31176 != null) {
                this.field_31174--;
             } else {
@@ -204,7 +204,7 @@ public class class_6092 extends class_608 implements class_1869 {
          );
          double var12 = var7 - var9;
          if (var12 > 0.0) {
-            List var14 = this.field_41768.method_25870(this, this.method_37241());
+            List var14 = this.world.method_25870(this, this.method_37241());
             if (!var14.isEmpty()) {
                for (Entity var16 : var14) {
                   if (!(var16 instanceof class_6092) && !var16.field_41731) {
@@ -233,7 +233,7 @@ public class class_6092 extends class_608 implements class_1869 {
       super.method_37256(var1, var3, var5);
       if (this.field_41735 != null && this.field_41697 != 0) {
          Optional var9 = this.field_41735.<Optional>method_36640(field_31171);
-         Optional var10 = Optional.<class_1331>of(new class_1331(var1, var3, var5));
+         Optional var10 = Optional.<BlockPos>of(new BlockPos(var1, var3, var5));
          if (!var10.equals(var9)) {
             this.field_41735.method_36633(field_31171, var10);
             this.field_41735.method_36633(field_31170, (byte)0);
@@ -243,7 +243,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Nullable
-   public Direction method_27907(class_1331 var1) {
+   public Direction method_27907(BlockPos var1) {
       for (Direction var7 : Direction.values()) {
          if (this.method_27916(var1, var7)) {
             return var7;
@@ -253,26 +253,26 @@ public class class_6092 extends class_608 implements class_1869 {
       return null;
    }
 
-   private boolean method_27916(class_1331 var1, Direction var2) {
-      return this.field_41768.method_29566(var1.method_6098(var2), this, var2.method_1046())
-         && this.field_41768.method_6683(this, class_6392.method_29191(var1, var2.method_1046()));
+   private boolean method_27916(BlockPos var1, Direction var2) {
+      return this.world.method_29566(var1.method_6098(var2), this, var2.method_1046())
+         && this.world.method_6683(this, class_6392.method_29191(var1, var2.method_1046()));
    }
 
    public boolean method_27920() {
       if (!this.method_26859() && this.method_37330()) {
-         class_1331 var3 = this.method_37075();
+         BlockPos var3 = this.method_37075();
 
          for (int var4 = 0; var4 < 5; var4++) {
-            class_1331 var5 = var3.method_6104(8 - this.field_41717.nextInt(17), 8 - this.field_41717.nextInt(17), 8 - this.field_41717.nextInt(17));
+            BlockPos var5 = var3.method_6104(8 - this.field_41717.nextInt(17), 8 - this.field_41717.nextInt(17), 8 - this.field_41717.nextInt(17));
             if (var5.method_12165() > 0
-               && this.field_41768.method_22548(var5)
-               && this.field_41768.method_6673().method_9813(var5)
-               && this.field_41768.method_6683(this, new class_4092(var5))) {
+               && this.world.method_22548(var5)
+               && this.world.method_6673().method_9813(var5)
+               && this.world.method_6683(this, new class_4092(var5))) {
                Direction var6 = this.method_27907(var5);
                if (var6 != null) {
                   this.field_41735.method_36633(field_31172, var6);
                   this.method_37155(class_463.field_2780, 1.0F, 1.0F);
-                  this.field_41735.method_36633(field_31171, Optional.<class_1331>of(var5));
+                  this.field_41735.method_36633(field_31171, Optional.<BlockPos>of(var5));
                   this.field_41735.method_36633(field_31170, (byte)0);
                   this.method_26860((class_5834)null);
                   return true;
@@ -298,8 +298,8 @@ public class class_6092 extends class_608 implements class_1869 {
 
    @Override
    public void method_37191(class_7821<?> var1) {
-      if (field_31171.equals(var1) && this.field_41768.field_33055 && !this.method_37070()) {
-         class_1331 var4 = this.method_27906();
+      if (field_31171.equals(var1) && this.world.field_33055 && !this.isPassenger()) {
+         BlockPos var4 = this.method_27906();
          if (var4 != null) {
             if (this.field_31176 != null) {
                this.field_31174 = 6;
@@ -320,7 +320,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (this.method_27924()) {
          Entity var5 = var1.method_28353();
          if (var5 instanceof class_6749) {
@@ -328,7 +328,7 @@ public class class_6092 extends class_608 implements class_1869 {
          }
       }
 
-      if (!super.method_37181(var1, var2)) {
+      if (!super.attackEntityFrom(var1, var2)) {
          return false;
       } else {
          if ((double)this.method_26551() < (double)this.method_26465() * 0.5 && this.field_41717.nextInt(4) == 0) {
@@ -353,12 +353,12 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Nullable
-   public class_1331 method_27906() {
-      return this.field_41735.<Optional<class_1331>>method_36640(field_31171).orElse((class_1331)null);
+   public BlockPos method_27906() {
+      return this.field_41735.<Optional<BlockPos>>method_36640(field_31171).orElse((BlockPos)null);
    }
 
-   public void method_27917(class_1331 var1) {
-      this.field_41735.method_36633(field_31171, Optional.<class_1331>ofNullable(var1));
+   public void method_27917(BlockPos var1) {
+      this.field_41735.method_36633(field_31171, Optional.<BlockPos>ofNullable(var1));
    }
 
    public int method_27911() {
@@ -366,7 +366,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    public void method_27913(int var1) {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_26561(class_7331.field_37473).method_45004(field_31180);
          if (var1 != 0) {
             this.method_37155(class_463.field_2073, 1.0F, 1.0F);
@@ -387,7 +387,7 @@ public class class_6092 extends class_608 implements class_1869 {
       return this.field_31174;
    }
 
-   public class_1331 method_27921() {
+   public BlockPos method_27921() {
       return this.field_31176;
    }
 

@@ -79,7 +79,7 @@ public abstract class class_6062<C extends class_9472> {
 
    public boolean method_27730(
       class_5990 var1,
-      Function<class_1331, class_6325> var2,
+      Function<BlockPos, class_6325> var2,
       long var3,
       int var5,
       int var6,
@@ -141,7 +141,7 @@ public abstract class class_6062<C extends class_9472> {
 
    public boolean method_27719(
       class_5990 var1,
-      Function<class_1331, class_6325> var2,
+      Function<BlockPos, class_6325> var2,
       BitSet var3,
       Random var4,
       class_2921 var5,
@@ -190,7 +190,7 @@ public abstract class class_6062<C extends class_9472> {
    }
 
    public abstract boolean method_27722(
-      class_5990 var1, Function<class_1331, class_6325> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, C var10
+           class_5990 var1, Function<BlockPos, class_6325> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, C var10
    );
 
    public abstract boolean method_27726(Random var1, int var2, int var3, C var4);

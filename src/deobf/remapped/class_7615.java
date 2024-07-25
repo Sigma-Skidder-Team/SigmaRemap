@@ -12,11 +12,11 @@ public class class_7615<T extends Entity & class_8190> extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       if (!var1.field_33055) {
          Entity var7 = var2.method_37243();
-         if (var2.method_37070() && var7 instanceof class_8190 && var7.method_37387() == this.field_38751) {
+         if (var2.isPassenger() && var7 instanceof class_8190 && var7.method_37387() == this.field_38751) {
             class_8190 var8 = (class_8190)var7;
             if (var8.method_37518()) {
                var6.method_28003(this.field_38750, var2, var1x -> var1x.method_26447(var3));

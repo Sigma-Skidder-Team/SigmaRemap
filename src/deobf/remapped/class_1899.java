@@ -41,7 +41,7 @@ public abstract class class_1899 extends class_4612 {
    }
 
    public int method_8634() {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          return this.field_9699;
       } else {
          return !this.field_41735.<Boolean>method_36640(field_9698) ? 1 : -1;
@@ -108,7 +108,7 @@ public abstract class class_1899 extends class_4612 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (this.method_37330()) {
             int var3 = this.method_8634();
             if (var3 >= 0) {
@@ -121,7 +121,7 @@ public abstract class class_1899 extends class_4612 {
          }
       } else if (this.field_9700 > 0) {
          if (this.field_9700 % 4 == 0) {
-            this.field_41768.method_43361(class_3090.field_15361, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), 0.0, 0.0, 0.0);
+            this.world.method_43361(class_3090.field_15361, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), 0.0, 0.0, 0.0);
          }
 
          this.field_9700--;

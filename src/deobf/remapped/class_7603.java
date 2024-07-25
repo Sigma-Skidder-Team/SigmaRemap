@@ -36,7 +36,7 @@ public class class_7603 extends class_7934 {
 
    @Override
    public void method_35893(ItemStack var1) {
-      var1.method_27964(this.field_38716.field_41768, this.field_38716, this.field_38717);
+      var1.method_27964(this.field_38716.world, this.field_38716, this.field_38717);
       this.field_38717 = 0;
    }
 

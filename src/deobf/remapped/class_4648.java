@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-public class class_4648 extends class_1080 {
+public class class_4648 extends AbstractMinecartEntity {
    private static final class_7821<String> field_22685 = class_8073.<String>method_36641(class_4648.class, class_2734.field_13349);
    private static final class_7821<ITextComponent> field_22682 = class_8073.<ITextComponent>method_36641(class_4648.class, class_2734.field_13355);
    private final class_8116 field_22683 = new class_3444(this);
@@ -55,13 +55,13 @@ public class class_4648 extends class_1080 {
    @Override
    public void method_4758(int var1, int var2, int var3, boolean var4) {
       if (var4 && this.field_41697 - this.field_22684 >= 4) {
-         this.method_21499().method_36922(this.field_41768);
+         this.method_21499().method_36922(this.world);
          this.field_22684 = this.field_41697;
       }
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, class_2584 var2) {
+   public class_6910 method_37128(class_704 var1, Hand var2) {
       return this.field_22683.method_36933(var1);
    }
 

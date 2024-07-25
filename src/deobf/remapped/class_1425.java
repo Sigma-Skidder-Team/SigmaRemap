@@ -35,24 +35,24 @@ public class class_1425 {
                if (this == Effects.field_19747 && var1 instanceof class_704) {
                   ((class_704)var1).method_3170(0.005F * (float)(var2 + 1));
                } else if (this == Effects.field_19734 && var1 instanceof class_704) {
-                  if (!var1.field_41768.field_33055) {
+                  if (!var1.world.field_33055) {
                      ((class_704)var1).method_3161().method_42236(var2 + 1, 1.0F);
                   }
                } else if ((this != Effects.field_19749 || var1.method_26563()) && (this != Effects.field_19723 || !var1.method_26563())) {
                   if (this == Effects.field_19723 && !var1.method_26563() || this == Effects.field_19749 && var1.method_26563()) {
-                     var1.method_37181(class_6199.field_31686, (float)(6 << var2));
+                     var1.attackEntityFrom(DamageSource.field_31686, (float)(6 << var2));
                   }
                } else {
-                  var1.method_26457((float)Math.max(4 << var2, 0));
+                  var1.heal((float)Math.max(4 << var2, 0));
                }
             } else {
-               var1.method_37181(class_6199.field_31669, 1.0F);
+               var1.attackEntityFrom(DamageSource.field_31669, 1.0F);
             }
          } else if (var1.method_26551() > 1.0F) {
-            var1.method_37181(class_6199.field_31686, 1.0F);
+            var1.attackEntityFrom(DamageSource.field_31686, 1.0F);
          }
       } else if (var1.method_26551() < var1.method_26465()) {
-         var1.method_26457(1.0F);
+         var1.heal(1.0F);
       }
    }
 
@@ -61,16 +61,16 @@ public class class_1425 {
          if (this == Effects.field_19723 && !var3.method_26563() || this == Effects.field_19749 && var3.method_26563()) {
             int var10 = (int)(var5 * (double)(6 << var4) + 0.5);
             if (var1 != null) {
-               var3.method_37181(class_6199.method_28369(var1, var2), (float)var10);
+               var3.attackEntityFrom(DamageSource.method_28369(var1, var2), (float)var10);
             } else {
-               var3.method_37181(class_6199.field_31686, (float)var10);
+               var3.attackEntityFrom(DamageSource.field_31686, (float)var10);
             }
          } else {
             this.method_6537(var3, var4);
          }
       } else {
          int var9 = (int)(var5 * (double)(4 << var4) + 0.5);
-         var3.method_26457((float)var9);
+         var3.heal((float)var9);
       }
    }
 

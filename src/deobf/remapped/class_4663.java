@@ -9,7 +9,7 @@ public class class_4663 implements class_7687 {
       this.field_22743 = !var3 ? null : new class_6818(var1);
    }
 
-   public void method_21566(class_1331 var1) {
+   public void method_21566(BlockPos var1) {
       if (this.field_22744 != null) {
          this.field_22744.method_10616(var1);
       }
@@ -19,7 +19,7 @@ public class class_4663 implements class_7687 {
       }
    }
 
-   public void method_21569(class_1331 var1, int var2) {
+   public void method_21569(BlockPos var1, int var2) {
       if (this.field_22744 != null) {
          this.field_22744.method_10624(var1, var2);
       }
@@ -104,7 +104,7 @@ public class class_4663 implements class_7687 {
       }
    }
 
-   public int method_21565(class_1331 var1, int var2) {
+   public int method_21565(BlockPos var1, int var2) {
       int var5 = this.field_22743 != null ? this.field_22743.method_45335(var1) - var2 : 0;
       int var6 = this.field_22744 != null ? this.field_22744.method_45335(var1) : 0;
       return Math.max(var6, var5);

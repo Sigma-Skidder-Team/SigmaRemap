@@ -275,7 +275,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
          if (!var3) {
             class_3498 var8 = var7.method_29817();
             Random var9 = new Random(var0.method_3133());
-            class_1331 var10 = var8.method_16085(0, var0.method_22552(), 0, 256, var0x -> var0x.method_28886().method_27796(), var9);
+            BlockPos var10 = var8.method_16085(0, var0.method_22552(), 0, 256, var0x -> var0x.method_28886().method_27796(), var9);
             class_2034 var11 = var10 != null ? new class_2034(var10) : new class_2034(0, 0);
             if (var10 == null) {
                field_1316.warn("Unable to find spawn biome");
@@ -299,7 +299,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
 
             for (int var18 = 0; var18 < 1024; var18++) {
                if (var20 > -16 && var20 <= 16 && var21 > -16 && var21 <= 16) {
-                  class_1331 var19 = class_1077.method_4715(var0, new class_2034(var11.field_10328 + var20, var11.field_10327 + var21), var12);
+                  BlockPos var19 = class_1077.method_4715(var0, new class_2034(var11.field_10328 + var20, var11.field_10327 + var21), var12);
                   if (var19 != null) {
                      var1.method_4988(var19, 0.0F);
                      break;
@@ -318,13 +318,13 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
 
             if (var2) {
                class_5927 var22 = class_7024.field_36070;
-               var22.method_27104(var0, var7, var0.field_33033, new class_1331(var1.method_8654(), var1.method_8660(), var1.method_8655()));
+               var22.method_27104(var0, var7, var0.field_33033, new BlockPos(var1.method_8654(), var1.method_8660(), var1.method_8655()));
             }
          } else {
-            var1.method_4988(class_1331.field_7306.method_6081(), 0.0F);
+            var1.method_4988(BlockPos.field_7306.method_6081(), 0.0F);
          }
       } else {
-         var1.method_4988(class_1331.field_7306.method_6082(var7.method_29823()), 0.0F);
+         var1.method_4988(BlockPos.field_7306.method_6082(var7.method_29823()), 0.0F);
       }
    }
 
@@ -342,7 +342,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    private void method_1743(class_1870 var1) {
       class_6331 var4 = this.method_1736();
       field_1316.info("Preparing start region for dimension {}", var4.method_29545().method_25499());
-      class_1331 var5 = var4.method_28998();
+      BlockPos var5 = var4.method_28998();
       var1.method_8296(new class_2034(var5));
       class_2206 var6 = var4.method_28945();
       var6.method_10175().method_9764(500);
@@ -1063,7 +1063,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       return 16;
    }
 
-   public boolean method_1618(class_6331 var1, class_1331 var2, class_704 var3) {
+   public boolean method_1618(class_6331 var1, BlockPos var2, class_704 var3) {
       return false;
    }
 

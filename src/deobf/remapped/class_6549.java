@@ -12,7 +12,7 @@ public class class_6549 extends class_6967 {
 
    @Override
    public boolean method_16799() {
-      return !this.field_33386.method_37285() && this.field_35808 <= 1200 && this.method_31855(this.field_33386.field_41768, this.field_35802);
+      return !this.field_33386.method_37285() && this.field_35808 <= 1200 && this.method_31855(this.field_33386.world, this.field_35802);
    }
 
    @Override
@@ -32,7 +32,7 @@ public class class_6549 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       return var1.method_28262(var2).method_8350(class_4783.field_23900);
    }
 }

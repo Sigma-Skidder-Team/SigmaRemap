@@ -39,7 +39,7 @@ public class class_2958 {
       this.field_14442 = (CompoundNBT)var5.orElse((CompoundNBT)null);
    }
 
-   public boolean method_13531(class_2522 var1, class_2522 var2, class_1331 var3, class_1331 var4, class_1331 var5, Random var6) {
+   public boolean method_13531(class_2522 var1, class_2522 var2, BlockPos var3, BlockPos var4, BlockPos var5, Random var6) {
       return this.field_14444.method_12207(var1, var6) && this.field_14441.method_12207(var2, var6) && this.field_14445.method_26953(var3, var4, var5, var6);
    }
 

@@ -21,9 +21,9 @@ public class class_2844 extends class_8388 {
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
       Entity var4 = this.method_26166();
-      if ((var1.method_33990() != class_1430.field_7718 || !((class_5631)var1).method_25524().method_37171(var4)) && !this.field_41768.field_33055) {
-         List var5 = this.field_41768.<class_5834>method_25868(class_5834.class, this.method_37241().method_18899(4.0, 2.0, 4.0));
-         class_4478 var6 = new class_4478(this.field_41768, this.method_37302(), this.method_37309(), this.method_37156());
+      if ((var1.method_33990() != class_1430.field_7718 || !((class_5631)var1).method_25524().method_37171(var4)) && !this.world.field_33055) {
+         List var5 = this.world.<class_5834>method_25868(class_5834.class, this.method_37241().method_18899(4.0, 2.0, 4.0));
+         class_4478 var6 = new class_4478(this.world, this.method_37302(), this.method_37309(), this.method_37156());
          if (var4 instanceof class_5834) {
             var6.method_20782((class_5834)var4);
          }
@@ -43,8 +43,8 @@ public class class_2844 extends class_8388 {
             }
          }
 
-         this.field_41768.method_43364(2006, this.method_37075(), !this.method_37378() ? 1 : -1);
-         this.field_41768.method_7509(var6);
+         this.world.method_43364(2006, this.method_37075(), !this.method_37378() ? 1 : -1);
+         this.world.method_7509(var6);
          this.method_37204();
       }
    }
@@ -55,7 +55,7 @@ public class class_2844 extends class_8388 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       return false;
    }
 

@@ -13,8 +13,8 @@ public class class_8579 extends class_2451 {
    @Override
    public class_6910 method_11237(class_4734 var1) {
       World var4 = var1.method_21862();
-      class_1331 var5 = var1.method_21858();
-      class_1331 var6 = var5.method_6098(var1.method_21857());
+      BlockPos var5 = var1.method_21858();
+      BlockPos var6 = var5.method_6098(var1.method_21857());
       if (!method_39459(var1.method_21867(), var4, var5)) {
          class_2522 var7 = var4.method_28262(var5);
          boolean var8 = var7.method_8308(var4, var5, var1.method_21857());
@@ -36,7 +36,7 @@ public class class_8579 extends class_2451 {
       }
    }
 
-   public static boolean method_39459(ItemStack var0, World var1, class_1331 var2) {
+   public static boolean method_39459(ItemStack var0, World var1, BlockPos var2) {
       class_2522 var5 = var1.method_28262(var2);
       if (var5.method_8360() instanceof class_3978) {
          class_3978 var6 = (class_3978)var5.method_8360();
@@ -56,14 +56,14 @@ public class class_8579 extends class_2451 {
       return false;
    }
 
-   public static boolean method_39460(ItemStack var0, World var1, class_1331 var2, Direction var3) {
+   public static boolean method_39460(ItemStack var0, World var1, BlockPos var2, Direction var3) {
       if (var1.method_28262(var2).method_8350(class_4783.field_23900) && var1.method_28258(var2).method_21996() == 8) {
          if (!(var1 instanceof class_6331)) {
             return true;
          } else {
             label110:
             for (int var6 = 0; var6 < 128; var6++) {
-               class_1331 var7 = var2;
+               BlockPos var7 = var2;
                class_2522 var8 = class_4783.field_23563.method_29260();
 
                for (int var9 = 0; var9 < var6 / 16; var9++) {
@@ -107,7 +107,7 @@ public class class_8579 extends class_2451 {
       }
    }
 
-   public static void method_39458(class_9379 var0, class_1331 var1, int var2) {
+   public static void method_39458(class_9379 var0, BlockPos var1, int var2) {
       if (var2 == 0) {
          var2 = 15;
       }
@@ -143,7 +143,7 @@ public class class_8579 extends class_2451 {
             double var19 = (double)var1.method_12173() + var17 + field_12172.nextDouble() * var6 * 2.0;
             double var21 = (double)var1.method_12165() + field_12172.nextDouble() * var8;
             double var23 = (double)var1.method_12185() + var17 + field_12172.nextDouble() * var6 * 2.0;
-            if (!var0.method_28262(new class_1331(var19, var21, var23).method_6100()).method_8345()) {
+            if (!var0.method_28262(new BlockPos(var19, var21, var23).method_6100()).method_8345()) {
                var0.method_43361(class_3090.field_15361, var19, var21, var23, var11, var13, var15);
             }
          }

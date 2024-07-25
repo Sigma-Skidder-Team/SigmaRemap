@@ -13,14 +13,14 @@ public class class_6554 extends class_6414 {
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (!this.method_29880(var2, var3)) {
          var2.method_7513(var3, this.field_33401.method_29260(), 2);
       }
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (!this.method_29880(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 60 + var4.method_43360().nextInt(40));
       }
@@ -28,7 +28,7 @@ public class class_6554 extends class_6414 {
       return super.method_10763(var1, var2, var3, var4, var5, var6);
    }
 
-   public boolean method_29880(class_6163 var1, class_1331 var2) {
+   public boolean method_29880(class_6163 var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
          class_4774 var9 = var1.method_28258(var2.method_6098(var8));
          if (var9.method_22007(class_6503.field_33094)) {

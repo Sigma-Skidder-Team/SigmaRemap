@@ -20,7 +20,7 @@ public class class_4687 extends class_2540 {
 
    @Override
    public void method_9627(
-      class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<class_1331> var8, int var9, class_9616 var10
+           class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<BlockPos> var8, int var9, class_9616 var10
    ) {
       for (int var13 = var9; var13 >= var9 - var6; var13--) {
          int var14 = var7 + (var13 != var9 && var13 != var9 - var6 ? 1 : 0);

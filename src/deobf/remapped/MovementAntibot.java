@@ -125,7 +125,7 @@ public class MovementAntibot extends class_5676 {
             var1.field_41712.field_19942
          );
 
-         for (class_1331 var6 : method_7142(var1)) {
+         for (BlockPos var6 : method_7142(var1)) {
             class_4190 var7 = field_28769.theWorld.method_28262(var6).method_8334(field_28769.theWorld, var6);
             if (!var7.method_19485() && var4.method_18909(var7.method_19483().method_18919(var6))) {
                return true;
@@ -138,13 +138,13 @@ public class MovementAntibot extends class_5676 {
       }
    }
 
-   public static List<class_1331> method_7142(Entity var0) {
+   public static List<BlockPos> method_7142(Entity var0) {
       ArrayList var3 = new ArrayList();
       byte var4 = 1;
 
       for (float var5 = (float)(-var4); var5 <= (float)var4; var5++) {
          for (float var6 = (float)(-var4); var6 <= (float)var4; var6++) {
-            class_1331 var7 = new class_1331(var0.method_37302() + (double)var5, var0.method_37309() - 1.0, var0.method_37156() + (double)var6);
+            BlockPos var7 = new BlockPos(var0.method_37302() + (double)var5, var0.method_37309() - 1.0, var0.method_37156() + (double)var6);
             var3.add(var7);
          }
       }

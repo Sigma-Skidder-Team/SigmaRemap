@@ -6,11 +6,11 @@ import org.apache.logging.log4j.Logger;
 public interface class_7907 extends class_275 {
    Logger field_40426 = LogManager.getLogger();
    ThreadLocal<class_4460> field_40428 = ThreadLocal.<class_4460>withInitial(
-      () -> new class_4460(class_4783.field_23184.method_29260(), new class_1331(0, 0, 0))
+      () -> new class_4460(class_4783.field_23184.method_29260(), new BlockPos(0, 0, 0))
    );
    boolean field_40427 = class_7860.field_40161.method_45472();
 
-   default class_4460 method_35749(class_2522 var1, class_1331 var2) {
+   default class_4460 method_35749(class_2522 var1, BlockPos var2) {
       class_4460 var5 = field_40428.get();
       var5.method_20678(var1, var2);
       return var5;

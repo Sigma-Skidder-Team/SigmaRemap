@@ -22,7 +22,7 @@ public class class_6377 {
             float var11 = (float)var9.field_7333;
             float var12 = (float)var9.field_7334;
             float var13 = class_9299.method_42828(class_9299.method_42840(var2.method_13578(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
-            class_859 var14 = var2.method_22564();
+            class_859 var14 = var2.getBiomeManager();
             class_1343 var15 = var0.method_41627().method_6193(2.0, 2.0, 2.0).method_6209(0.25);
             class_1343 var16 = class_4555.method_21121(
                var15,
@@ -80,7 +80,7 @@ public class class_6377 {
          }
       } else {
          long var19 = Util.getMeasuringTimeMs();
-         int var25 = var2.method_22561(new class_1331(var0.method_41627())).method_28883();
+         int var25 = var2.method_22561(new BlockPos(var0.method_41627())).method_28883();
          if (field_32580 < 0L) {
             field_32582 = var25;
             field_32579 = var25;
@@ -264,7 +264,7 @@ public class class_6377 {
             if (var8 instanceof ClientPlayerEntity) {
                ClientPlayerEntity var16 = (ClientPlayerEntity)var8;
                var14 -= var16.method_27328() * var16.method_27328() * 0.03F;
-               class_6325 var17 = var16.field_41768.method_22561(var16.method_37075());
+               class_6325 var17 = var16.world.method_22561(var16.method_37075());
                if (var17.method_28887() == class_8862.field_45306) {
                   var14 += 0.005F;
                }

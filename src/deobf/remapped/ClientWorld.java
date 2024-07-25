@@ -18,12 +18,12 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class ClientWorld extends World {
    public final Int2ObjectMap<Entity> field_568 = new Int2ObjectOpenHashMap();
-   private final class_1092 field_576;
+   private final ClientPlayNetHandler field_576;
    private final WorldRenderer field_567;
    private final class_784 field_572;
    private class_7513 field_579;
    private final MinecraftClient field_578 = MinecraftClient.getInstance();
-   private final List<class_9716> field_566 = Lists.newArrayList();
+   private final List<AbstractClientPlayerEntity> field_566 = Lists.newArrayList();
    private class_1097 field_570 = new class_1097();
    private final Map<String, class_2134> field_571 = Maps.newHashMap();
    private int field_573;
@@ -38,7 +38,7 @@ public class ClientWorld extends World {
    private boolean field_574 = false;
 
    public ClientWorld(
-      class_1092 var1,
+      ClientPlayNetHandler var1,
       class_784 var2,
       class_5621<World> var3,
       class_8760 var4,
@@ -57,7 +57,7 @@ public class ClientWorld extends World {
          this.field_577 = new class_5360(this, var5);
       }
 
-      this.method_752(new class_1331(8, 64, 8), 0.0F);
+      this.method_752(new BlockPos(8, 64, 8), 0.0F);
       this.method_29541();
       this.method_29525();
       if (class_7860.field_39863.method_3596()) {
@@ -117,7 +117,7 @@ public class ClientWorld extends World {
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
          Entity var6 = (Entity)var5.getValue();
-         if (!var6.method_37070()) {
+         if (!var6.isPassenger()) {
             var3.startSection("tick");
             if (!var6.field_41751) {
                this.method_29532(this::method_755, var6);
@@ -143,8 +143,8 @@ public class ClientWorld extends World {
          this.method_728(var1);
       } else {
          var1.method_37306(var1.method_37302(), var1.method_37309(), var1.method_37156());
-         var1.field_41711 = var1.field_41701;
-         var1.field_41762 = var1.field_41755;
+         var1.prevRotationYaw = var1.rotationYaw;
+         var1.field_41762 = var1.rotationPitch;
          if (var1.field_41727 || var1.method_37221()) {
             var1.field_41697++;
             this.method_29599().method_16057(() -> class_8669.field_44400.method_39797(var1.method_37387()).toString());
@@ -169,8 +169,8 @@ public class ClientWorld extends World {
          var2.method_37390();
       } else if (var2 instanceof class_704 || this.method_745().method_14824(var2)) {
          var2.method_37306(var2.method_37302(), var2.method_37309(), var2.method_37156());
-         var2.field_41711 = var2.field_41701;
-         var2.field_41762 = var2.field_41755;
+         var2.prevRotationYaw = var2.rotationYaw;
+         var2.field_41762 = var2.rotationPitch;
          if (var2.field_41727) {
             var2.field_41697++;
             var2.method_37189();
@@ -240,7 +240,7 @@ public class ClientWorld extends World {
       return this.field_568.size();
    }
 
-   public void method_762(int var1, class_9716 var2) {
+   public void method_762(int var1, AbstractClientPlayerEntity var2) {
       this.method_724(var1, var2);
       this.field_566.add(var2);
    }
@@ -312,7 +312,7 @@ public class ClientWorld extends World {
       return (Entity)this.field_568.get(var1);
    }
 
-   public void method_743(class_1331 var1, class_2522 var2) {
+   public void method_743(BlockPos var1, class_2522 var2) {
       this.method_7513(var1, var2, 19);
    }
 
@@ -355,7 +355,7 @@ public class ClientWorld extends World {
          class_5079 var15 = var14.method_22010();
          if (var15 != null && this.field_33033.nextInt(10) == 0) {
             boolean var16 = var13.method_8308(this, var7, Direction.field_802);
-            class_1331 var17 = var7.method_6100();
+            BlockPos var17 = var7.method_6100();
             this.method_746(var17, this.method_28262(var17), var15, var16);
          }
       }
@@ -385,7 +385,7 @@ public class ClientWorld extends World {
       }
    }
 
-   private void method_746(class_1331 var1, class_2522 var2, class_5079 var3, boolean var4) {
+   private void method_746(BlockPos var1, class_2522 var2, class_5079 var3, boolean var4) {
       if (var2.method_8364().method_22001()) {
          class_4190 var7 = var2.method_8324(this, var1);
          double var8 = var7.method_19495(class_9249.field_47216);
@@ -393,7 +393,7 @@ public class ClientWorld extends World {
             if (!var2.method_8349(class_2351.field_11735)) {
                double var10 = var7.method_19491(class_9249.field_47216);
                if (!(var10 > 0.0)) {
-                  class_1331 var12 = var1.method_6100();
+                  BlockPos var12 = var1.method_6100();
                   class_2522 var13 = this.method_28262(var12);
                   class_4190 var14 = var13.method_8324(this, var12);
                   double var15 = var14.method_19495(class_9249.field_47216);
@@ -417,7 +417,7 @@ public class ClientWorld extends World {
       }
    }
 
-   private void method_727(class_1331 var1, class_5079 var2, class_4190 var3, double var4) {
+   private void method_727(BlockPos var1, class_5079 var2, class_4190 var3, double var4) {
       this.method_726(
          (double)var1.method_12173() + var3.method_19491(class_9249.field_47215),
          (double)var1.method_12173() + var3.method_19495(class_9249.field_47215),
@@ -493,11 +493,11 @@ public class ClientWorld extends World {
       }
 
       if (var1 == this.field_578.thePlayer) {
-         this.field_578.method_8590().method_16345(new class_569(var3, var4, var2));
+         this.field_578.getSoundHandler().play(new class_569(var3, var4, var2));
       }
    }
 
-   public void method_721(class_1331 var1, class_8461 var2, class_562 var3, float var4, float var5, boolean var6) {
+   public void method_721(BlockPos var1, class_8461 var2, class_562 var3, float var4, float var5, boolean var6) {
       this.method_29527((double)var1.method_12173() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5, var2, var3, var4, var5, var6);
    }
 
@@ -507,9 +507,9 @@ public class ClientWorld extends World {
       class_4949 var16 = new class_4949(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;
-         this.field_578.method_8590().method_16342(var16, (int)(var17 * 20.0));
+         this.field_578.getSoundHandler().method_16342(var16, (int)(var17 * 20.0));
       } else {
-         this.field_578.method_8590().method_16345(var16);
+         this.field_578.getSoundHandler().play(var16);
       }
    }
 
@@ -547,7 +547,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public boolean method_7513(class_1331 var1, class_2522 var2, int var3) {
+   public boolean method_7513(BlockPos var1, class_2522 var2, int var3) {
       this.field_574 = this.method_729();
       boolean var6 = super.method_7513(var1, var2, var3);
       this.field_574 = false;
@@ -613,12 +613,12 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method_29572(class_1331 var1, class_2522 var2, class_2522 var3, int var4) {
+   public void method_29572(BlockPos var1, class_2522 var2, class_2522 var3, int var4) {
       this.field_567.method_20066(this, var1, var2, var3, var4);
    }
 
    @Override
-   public void method_29567(class_1331 var1, class_2522 var2, class_2522 var3) {
+   public void method_29567(BlockPos var1, class_2522 var2, class_2522 var3) {
       this.field_567.method_20094(var1, var2, var3);
    }
 
@@ -627,17 +627,17 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method_29568(int var1, class_1331 var2, int var3) {
+   public void method_29568(int var1, BlockPos var2, int var3) {
       this.field_567.method_20073(var1, var2, var3);
    }
 
    @Override
-   public void method_29589(int var1, class_1331 var2, int var3) {
+   public void method_29589(int var1, BlockPos var2, int var3) {
       this.field_567.method_20081(var1, var2, var3);
    }
 
    @Override
-   public void method_43365(class_704 var1, int var2, class_1331 var3, int var4) {
+   public void method_43365(class_704 var1, int var2, BlockPos var3, int var4) {
       try {
          this.field_567.method_20038(var1, var2, var3, var4);
       } catch (Throwable var10) {
@@ -672,7 +672,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public List<class_9716> method_25873() {
+   public List<AbstractClientPlayerEntity> method_25873() {
       return this.field_566;
    }
 
@@ -691,7 +691,7 @@ public class ClientWorld extends World {
       return var5 * 0.8F + 0.2F;
    }
 
-   public class_1343 method_750(class_1331 var1, float var2) {
+   public class_1343 method_750(BlockPos var1, float var2) {
       float var5 = this.method_13578(var2);
       float var6 = class_9299.method_42840(var5 * (float) (Math.PI * 2)) * 2.0F + 0.5F;
       var6 = class_9299.method_42828(var6, 0.0F, 1.0F);
@@ -816,12 +816,12 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public int method_25262(class_1331 var1, class_6581 var2) {
+   public int method_25262(BlockPos var1, class_6581 var2) {
       class_6530 var5 = (class_6530)this.field_569.get(var2);
       return var5.method_29721(var1, () -> this.method_759(var1, var2));
    }
 
-   public int method_759(class_1331 var1, class_6581 var2) {
+   public int method_759(BlockPos var1, class_6581 var2) {
       int var5 = MinecraftClient.getInstance().gameOptions.field_45526;
       if (var5 == 0) {
          return var2.method_30079(this.method_22561(var1), (double)var1.method_12173(), (double)var1.method_12185());
@@ -852,10 +852,10 @@ public class ClientWorld extends World {
       }
    }
 
-   public class_1331 method_758() {
-      class_1331 var3 = new class_1331(this.field_33035.method_8654(), this.field_33035.method_8660(), this.field_33035.method_8655());
+   public BlockPos method_758() {
+      BlockPos var3 = new BlockPos(this.field_33035.method_8654(), this.field_33035.method_8660(), this.field_33035.method_8655());
       if (!this.method_6673().method_9813(var3)) {
-         var3 = this.method_22563(class_3801.field_18595, new class_1331(this.method_6673().method_9807(), 0.0, this.method_6673().method_9835()));
+         var3 = this.method_22563(class_3801.field_18595, new BlockPos(this.method_6673().method_9807(), 0.0, this.method_6673().method_9835()));
       }
 
       return var3;
@@ -865,7 +865,7 @@ public class ClientWorld extends World {
       return this.field_33035.method_8657();
    }
 
-   public void method_752(class_1331 var1, float var2) {
+   public void method_752(BlockPos var1, float var2) {
       this.field_33035.method_4988(var1, var2);
    }
 

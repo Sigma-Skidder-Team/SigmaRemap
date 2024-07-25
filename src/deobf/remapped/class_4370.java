@@ -395,7 +395,7 @@ public class class_4370 implements Consumer<BiConsumer<Identifier, class_8843>> 
                               .method_27631(class_7344.method_33475().method_33479(class_3064.field_15063, class_7422.field_37874).method_33476())
                               .method_27632()
                         ),
-                     new class_1331(0, 1, 0)
+                     new BlockPos(0, 1, 0)
                   )
                )
          )
@@ -412,7 +412,7 @@ public class class_4370 implements Consumer<BiConsumer<Identifier, class_8843>> 
                               .method_27631(class_7344.method_33475().method_33479(class_3064.field_15063, class_7422.field_37876).method_33476())
                               .method_27632()
                         ),
-                     new class_1331(0, -1, 0)
+                     new BlockPos(0, -1, 0)
                   )
                )
          );

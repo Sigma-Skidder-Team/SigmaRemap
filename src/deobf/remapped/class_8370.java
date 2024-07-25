@@ -6,7 +6,7 @@ public class class_8370 extends class_8131 {
    private final Identifier field_42853;
    private final class_6631 field_42852;
 
-   public class_8370(class_5799 var1, Identifier var2, class_1331 var3, class_6631 var4) {
+   public class_8370(class_5799 var1, Identifier var2, BlockPos var3, class_6631 var4) {
       super(class_2746.field_13419, 0);
       this.field_42853 = var2;
       this.field_41648 = var3;
@@ -35,11 +35,11 @@ public class class_8370 extends class_8131 {
    }
 
    @Override
-   public void method_36999(String var1, class_1331 var2, class_1556 var3, Random var4, class_9616 var5) {
+   public void method_36999(String var1, BlockPos var2, class_1556 var3, Random var4, class_9616 var5) {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       var5.method_44392(this.field_41647.method_29986(this.field_41650, this.field_41648));
       return super.method_32501(var1, var2, var3, var4, var5, var6, var7);
    }

@@ -12,7 +12,7 @@ public class class_9525 implements class_6163, class_1449 {
    public boolean field_48482;
    public final World field_48479;
 
-   public class_9525(World var1, class_1331 var2, class_1331 var3) {
+   public class_9525(World var1, BlockPos var2, BlockPos var3) {
       this.field_48479 = var1;
       this.field_48480 = var2.method_12173() >> 4;
       this.field_48478 = var2.method_12185() >> 4;
@@ -39,7 +39,7 @@ public class class_9525 implements class_6163, class_1449 {
       }
    }
 
-   private class_5990 method_43949(class_1331 var1) {
+   private class_5990 method_43949(BlockPos var1) {
       return this.method_43948(var1.method_12173() >> 4, var1.method_12185() >> 4);
    }
 
@@ -66,13 +66,13 @@ public class class_9525 implements class_6163, class_1449 {
 
    @Nullable
    @Override
-   public class_3757 method_28260(class_1331 var1) {
+   public class_3757 method_28260(BlockPos var1) {
       class_5990 var4 = this.method_43949(var1);
       return var4.method_28260(var1);
    }
 
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       if (!World.method_29556(var1)) {
          class_5990 var4 = this.method_43949(var1);
          return var4.method_28262(var1);
@@ -92,7 +92,7 @@ public class class_9525 implements class_6163, class_1449 {
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       if (!World.method_29556(var1)) {
          class_5990 var4 = this.method_43949(var1);
          return var4.method_28258(var1);

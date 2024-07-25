@@ -3,7 +3,7 @@ package remapped;
 import org.lwjgl.opengl.GL11;
 
 public class Auto32KModule extends Module {
-   public class_1331 field_44720;
+   public BlockPos field_44720;
    public int field_44718 = -1;
    public int field_44721 = -1;
    public int field_44724 = 0;
@@ -20,7 +20,7 @@ public class Auto32KModule extends Module {
    public void onEnable() {
       this.field_44720 = null;
 
-      for (class_1331 var4 : class_7494.method_34085(class_7494.method_34110(client.playerController.method_42146()))) {
+      for (BlockPos var4 : class_7494.method_34085(class_7494.method_34110(client.playerController.method_42146()))) {
          if (!(class_7494.method_34108(client.thePlayer, var4) < 2.0F)
             && class_7494.method_34116(client.thePlayer, var4)
             && (double)var4.method_12165() >= client.thePlayer.method_37309() - 2.0
@@ -94,7 +94,7 @@ public class Auto32KModule extends Module {
       this.field_44724 = 0;
    }
 
-   public boolean method_40074(class_1331 var1) {
+   public boolean method_40074(BlockPos var1) {
       class_2522 var4 = client.theWorld.method_28262(var1);
       class_2522 var5 = client.theWorld.method_28262(var1.method_6081());
       class_2522 var6 = client.theWorld.method_28262(var1.method_6082(2));
@@ -110,7 +110,7 @@ public class Auto32KModule extends Module {
       if (this.method_42015()) {
          if (this.field_44720 != null) {
             GL11.glAlphaFunc(516, 0.0F);
-            class_1331 var4 = this.field_44720;
+            BlockPos var4 = this.field_44720;
             double var5 = (double)var4.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
             double var7 = (double)var4.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
             double var9 = (double)var4.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
@@ -208,20 +208,20 @@ public class Auto32KModule extends Module {
                         client.thePlayer.inventory.field_36404 = this.field_44718;
                         class_1343 var7 = class_7494.method_34098(Direction.field_817, this.field_44720);
                         class_9529 var8 = new class_9529(var7, Direction.field_817, this.field_44720, false);
-                        class_6910 var9 = client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var8);
-                        client.thePlayer.method_26597(class_2584.field_12791);
+                        class_6910 var9 = client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var8);
+                        client.thePlayer.method_26597(Hand.MAIN_HAND);
                         if (var9 == class_6910.field_35520) {
                            this.field_44724++;
                            client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20098));
-                           client.thePlayer.field_30533.field_45289 = true;
+                           client.thePlayer.movementInput.field_45289 = true;
                            client.thePlayer.inventory.field_36404 = this.field_44721;
                            class_1343 var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
                            class_9529 var11 = new class_9529(var10, Direction.field_817, this.field_44720.method_6081(), false);
-                           client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var11);
-                           client.thePlayer.method_26597(class_2584.field_12791);
-                           client.thePlayer.field_30533.field_45289 = false;
+                           client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var11);
+                           client.thePlayer.method_26597(Hand.MAIN_HAND);
+                           client.thePlayer.movementInput.field_45289 = false;
                            client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20097));
-                           client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var11);
+                           client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var11);
                         }
                      }
                   } else {

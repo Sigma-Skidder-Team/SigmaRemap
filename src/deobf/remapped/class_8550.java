@@ -18,7 +18,7 @@ public abstract class class_8550 extends class_4314 implements class_9866 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

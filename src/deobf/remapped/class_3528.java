@@ -44,7 +44,7 @@ public class class_3528 extends class_6127<class_5886> {
          Stream var7 = var5.method_6867(class_236.field_778.method_1007(), var6, var2.method_37075(), 48, class_8122.field_41615);
          class_3998 var8 = var2.method_26927().method_5623(var7, class_236.field_778.method_1006());
          if (var8 != null && var8.method_18433()) {
-            class_1331 var9 = var8.method_18426();
+            BlockPos var9 = var8.method_18426();
             Optional var10 = var5.method_6870(var9);
             if (var10.isPresent()) {
                var2.method_26525().method_5105(class_6044.field_30910, var9);

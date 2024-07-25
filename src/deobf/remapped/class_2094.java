@@ -52,7 +52,7 @@ public class class_2094 extends class_3599 {
       if (class_9825.method_45298(this.field_10517).method_12165() < this.field_10517.field_41768.method_22552()) {
          class_9825.method_45297(
             this.field_10517,
-            new class_1331(
+            new BlockPos(
                class_9825.method_45298(this.field_10517).method_12173(),
                this.field_10517.field_41768.method_22552() + 1,
                class_9825.method_45298(this.field_10517).method_12185()

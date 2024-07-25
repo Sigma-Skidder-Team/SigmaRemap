@@ -5,12 +5,12 @@ import java.io.IOException;
 public class class_7825 implements Packet<class_1243> {
    private static String[] field_39685;
    private int field_39684;
-   private class_1331 field_39686;
+   private BlockPos field_39686;
 
    public class_7825() {
    }
 
-   public class_7825(int var1, class_1331 var2) {
+   public class_7825(int var1, BlockPos var2) {
       this.field_39684 = var1;
       this.field_39686 = var2;
    }
@@ -35,7 +35,7 @@ public class class_7825 implements Packet<class_1243> {
       return this.field_39684;
    }
 
-   public class_1331 method_35429() {
+   public BlockPos method_35429() {
       return this.field_39686;
    }
 }

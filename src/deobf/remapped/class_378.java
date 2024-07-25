@@ -98,7 +98,7 @@ public class class_378 extends class_5886 implements class_1869 {
             float var6 = this.field_41717.nextFloat() * 0.5F + 0.5F;
             float var7 = class_9299.method_42818(var5) * (float)var3 * 0.5F * var6;
             float var8 = class_9299.method_42840(var5) * (float)var3 * 0.5F * var6;
-            this.field_41768
+            this.world
                .method_43361(this.method_1854(), this.method_37302() + (double)var7, this.method_37309(), this.method_37156() + (double)var8, 0.0, 0.0, 0.0);
          }
 
@@ -133,7 +133,7 @@ public class class_378 extends class_5886 implements class_1869 {
    public void method_37191(class_7821<?> var1) {
       if (field_1534.equals(var1)) {
          this.method_37187();
-         this.field_41701 = this.field_29618;
+         this.rotationYaw = this.field_29618;
          this.field_29605 = this.field_29618;
          if (this.method_37285() && this.field_41717.nextInt(20) == 0) {
             this.method_37101();
@@ -151,7 +151,7 @@ public class class_378 extends class_5886 implements class_1869 {
    @Override
    public void method_37204() {
       int var3 = this.method_1860();
-      if (!this.field_41768.field_33055 && var3 > 1 && this.method_26450()) {
+      if (!this.world.field_33055 && var3 > 1 && this.method_26450()) {
          ITextComponent var4 = this.method_45508();
          boolean var5 = this.method_26859();
          float var6 = (float)var3 / 4.0F;
@@ -161,7 +161,7 @@ public class class_378 extends class_5886 implements class_1869 {
          for (int var9 = 0; var9 < var8; var9++) {
             float var10 = ((float)(var9 % 2) - 0.5F) * var6;
             float var11 = ((float)(var9 / 2) - 0.5F) * var6;
-            class_378 var12 = this.method_37387().method_30484(this.field_41768);
+            class_378 var12 = this.method_37387().method_30484(this.world);
             if (this.method_26925()) {
                var12.method_26883();
             }
@@ -173,7 +173,7 @@ public class class_378 extends class_5886 implements class_1869 {
             var12.method_37144(
                this.method_37302() + (double)var10, this.method_37309() + 0.5, this.method_37156() + (double)var11, this.field_41717.nextFloat() * 360.0F, 0.0F
             );
-            this.field_41768.method_7509(var12);
+            this.world.method_7509(var12);
          }
       }
 
@@ -200,7 +200,7 @@ public class class_378 extends class_5886 implements class_1869 {
          int var4 = this.method_1860();
          if (this.method_37275(var1) < 0.6 * (double)var4 * 0.6 * (double)var4
             && this.method_26420(var1)
-            && var1.method_37181(class_6199.method_28345(this), this.method_1858())) {
+            && var1.attackEntityFrom(DamageSource.method_28345(this), this.method_1858())) {
             this.method_37155(class_463.field_2129, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             this.method_37096(this, var1);
          }
@@ -221,7 +221,7 @@ public class class_378 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return !this.method_1859() ? class_463.field_2078 : class_463.field_1949;
    }
 
@@ -239,7 +239,7 @@ public class class_378 extends class_5886 implements class_1869 {
       return this.method_1860() != 1 ? class_5931.field_30157 : this.method_37387().method_30480();
    }
 
-   public static boolean method_1853(class_6629<class_378> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_1853(class_6629<class_378> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (var1.method_43370() != class_423.field_1790) {
          if (Objects.equals(var1.method_2754(var3), Optional.<class_5621<class_6325>>of(class_8606.field_44089))
             && var3.method_12165() > 50

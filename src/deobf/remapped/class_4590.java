@@ -27,7 +27,7 @@ public class class_4590 extends class_6143 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_22313.get(var1.<Direction>method_10313(field_22314));
    }
 
@@ -47,7 +47,7 @@ public class class_4590 extends class_6143 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method_10313(field_31998)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }
@@ -56,9 +56,9 @@ public class class_4590 extends class_6143 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       Direction var6 = var1.<Direction>method_10313(field_22314);
-      class_1331 var7 = var3.method_6098(var6.method_1046());
+      BlockPos var7 = var3.method_6098(var6.method_1046());
       class_2522 var8 = var2.method_28262(var7);
       return var8.method_8308(var2, var7, var6);
    }
@@ -68,7 +68,7 @@ public class class_4590 extends class_6143 {
    public class_2522 method_29302(class_353 var1) {
       class_2522 var4 = super.method_29302(var1);
       World var5 = var1.method_21862();
-      class_1331 var6 = var1.method_21858();
+      BlockPos var6 = var1.method_21858();
       Direction[] var7 = var1.method_1786();
 
       for (Direction var11 : var7) {

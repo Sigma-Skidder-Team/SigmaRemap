@@ -10,7 +10,7 @@ public class class_588 extends class_3725 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       super.method_29257(var1, var2, var3, var4, var5);
       class_3757 var8 = var1.method_28260(var2);
       if (var8 instanceof class_4797) {

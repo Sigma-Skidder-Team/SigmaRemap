@@ -26,12 +26,12 @@ public abstract class class_2062 {
 
    public abstract class_389<?> method_9633();
 
-   public void method_9629(class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<class_1331> var8, class_9616 var9) {
+   public void method_9629(class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<BlockPos> var8, class_9616 var9) {
       this.method_9627(var1, var2, var3, var4, var5, var6, var7, var8, this.method_9631(var2), var9);
    }
 
    public abstract void method_9627(
-      class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<class_1331> var8, int var9, class_9616 var10
+           class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<BlockPos> var8, int var9, class_9616 var10
    );
 
    public abstract int method_9628(Random var1, int var2, class_1297 var3);
@@ -61,7 +61,7 @@ public abstract class class_2062 {
    }
 
    public void method_9625(
-      class_6755 var1, Random var2, class_1297 var3, class_1331 var4, int var5, Set<class_1331> var6, int var7, boolean var8, class_9616 var9
+           class_6755 var1, Random var2, class_1297 var3, BlockPos var4, int var5, Set<BlockPos> var6, int var7, boolean var8, class_9616 var9
    ) {
       int var12 = !var8 ? 0 : 1;
       class_2921 var13 = new class_2921();

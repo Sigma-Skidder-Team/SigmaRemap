@@ -2,14 +2,14 @@ package remapped;
 
 public class class_8696 extends class_8985 {
    private static String[] field_44592;
-   private class_1331 field_44593;
+   private BlockPos field_44593;
 
    public class_8696(class_5886 var1, World var2) {
       super(var1, var2);
    }
 
    @Override
-   public class_3998 method_5615(class_1331 var1, int var2) {
+   public class_3998 method_5615(BlockPos var1, int var2) {
       this.field_44593 = var1;
       return super.method_5615(var1, var2);
    }
@@ -39,7 +39,7 @@ public class class_8696 extends class_8985 {
             if (!this.field_44593.method_12170(this.field_6877.method_37245(), (double)this.field_6877.method_37086())
                && (
                   !(this.field_6877.method_37309() > (double)this.field_44593.method_12165())
-                     || !new class_1331((double)this.field_44593.method_12173(), this.field_6877.method_37309(), (double)this.field_44593.method_12185())
+                     || !new BlockPos((double)this.field_44593.method_12173(), this.field_6877.method_37309(), (double)this.field_44593.method_12185())
                         .method_12170(this.field_6877.method_37245(), (double)this.field_6877.method_37086())
                )) {
                this.field_6877

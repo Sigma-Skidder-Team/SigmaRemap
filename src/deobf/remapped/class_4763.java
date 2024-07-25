@@ -375,9 +375,9 @@ public class class_4763 {
 
       for (int var8 = 0; var8 < 16; var8++) {
          for (int var9 = 0; var9 < 16; var9++) {
-            class_1331 var10 = new class_1331(var6 + var8, 64, var7 + var9);
+            BlockPos var10 = new BlockPos(var6 + var8, 64, var7 + var9);
             int var11 = this.method_21975(
-               new class_1331(var10.method_12173(), var1.method_27353(class_3801.field_18592).method_9957(var8, var9) - 1, var10.method_12185()), var2
+               new BlockPos(var10.method_12173(), var1.method_27353(class_3801.field_18592).method_9957(var8, var9) - 1, var10.method_12185()), var2
             );
             var5.put((byte)(var11 >> 16 & 0xFF));
             var5.put((byte)(var11 >> 8 & 0xFF));
@@ -389,7 +389,7 @@ public class class_4763 {
       return var5;
    }
 
-   public int method_21975(class_1331 var1, boolean var2) {
+   public int method_21975(BlockPos var1, boolean var2) {
       if (this.field_23056.theWorld.method_28262(var1).method_8360() == class_4783.field_23184) {
          var1 = var1.method_6100();
       }

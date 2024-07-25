@@ -5,8 +5,8 @@ public interface class_1808 {
 
    class_4895 method_8025(class_9155 var1);
 
-   default class_1331 method_8024(class_9155 var1) {
-      return new class_1331(this.method_8027(var1));
+   default BlockPos method_8024(class_9155 var1) {
+      return new BlockPos(this.method_8027(var1));
    }
 
    boolean method_8028();

@@ -25,7 +25,7 @@ public class class_4359 extends class_2811 implements class_2354 {
       this.field_29916.method_3485(2, new class_8719(this, 1.0, 40, 10.0F));
       this.field_29916.method_3485(2, new class_7264(this, 1.0, false));
       this.field_29916.method_3485(5, new class_957(this, 1.0));
-      this.field_29916.method_3485(6, new class_5602(this, 1.0, this.field_41768.method_22552()));
+      this.field_29916.method_3485(6, new class_5602(this, 1.0, this.world.method_22552()));
       this.field_29916.method_3485(7, new class_8285(this, 1.0));
       this.field_29908.method_3485(1, new class_8420(this, class_4359.class).method_38757(class_1918.class));
       this.field_29908.method_3485(2, new class_4138<class_704>(this, class_704.class, 10, true, false, this::method_20226));
@@ -45,7 +45,7 @@ public class class_4359 extends class_2811 implements class_2354 {
       return var4;
    }
 
-   public static boolean method_20225(class_6629<class_4359> var0, class_1556 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_20225(class_6629<class_4359> var0, class_1556 var1, class_2417 var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method_2754(var3);
       boolean var8 = var1.method_43370() != class_423.field_1790
          && method_5200(var1, var3, var4)
@@ -56,7 +56,7 @@ public class class_4359 extends class_2811 implements class_2354 {
          : var4.nextInt(15) == 0 && var8;
    }
 
-   private static boolean method_20221(class_9379 var0, class_1331 var1) {
+   private static boolean method_20221(class_9379 var0, BlockPos var1) {
       return var1.method_12165() < var0.method_22552() - 5;
    }
 
@@ -71,7 +71,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return !this.method_37285() ? class_463.field_2226 : class_463.field_2088;
    }
 
@@ -131,7 +131,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    public boolean method_20226(class_5834 var1) {
-      return var1 == null ? false : !this.field_41768.method_29602() || var1.method_37285();
+      return var1 == null ? false : !this.world.method_29602() || var1.method_37285();
    }
 
    @Override
@@ -161,7 +161,7 @@ public class class_4359 extends class_2811 implements class_2354 {
 
    @Override
    public void method_37337() {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (this.method_26530() && this.method_37285() && this.method_20227()) {
             this.field_29904 = this.field_21388;
             this.method_37260(true);
@@ -175,7 +175,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    public boolean method_20223() {
       class_3998 var3 = this.method_26927().method_5594();
       if (var3 != null) {
-         class_1331 var4 = var3.method_18426();
+         BlockPos var4 = var3.method_18426();
          if (var4 != null) {
             double var5 = this.method_37273((double)var4.method_12173(), (double)var4.method_12165(), (double)var4.method_12185());
             if (var5 < 4.0) {
@@ -189,14 +189,14 @@ public class class_4359 extends class_2811 implements class_2354 {
 
    @Override
    public void method_10805(class_5834 var1, float var2) {
-      class_3348 var5 = new class_3348(this.field_41768, this, new ItemStack(class_4897.field_25086));
+      class_3348 var5 = new class_3348(this.world, this, new ItemStack(class_4897.field_25086));
       double var6 = var1.method_37302() - this.method_37302();
       double var8 = var1.method_37080(0.3333333333333333) - var5.method_37309();
       double var10 = var1.method_37156() - this.method_37156();
       double var12 = (double)class_9299.method_42842(var6 * var6 + var10 * var10);
-      var5.method_26161(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.field_41768.method_43370().method_2097() * 4));
+      var5.method_26161(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
       this.method_37155(class_463.field_2187, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
-      this.field_41768.method_7509(var5);
+      this.world.method_7509(var5);
    }
 
    public void method_20220(boolean var1) {

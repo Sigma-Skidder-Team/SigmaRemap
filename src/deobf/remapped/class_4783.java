@@ -3314,15 +3314,15 @@ public class class_4783 {
       return var1 -> !var1.<Boolean>method_10313(class_6023.field_30732) ? 0 : var0;
    }
 
-   private static Boolean method_22061(class_2522 var0, class_6163 var1, class_1331 var2, class_6629<?> var3) {
+   private static Boolean method_22061(class_2522 var0, class_6163 var1, BlockPos var2, class_6629<?> var3) {
       return false;
    }
 
-   private static Boolean method_22065(class_2522 var0, class_6163 var1, class_1331 var2, class_6629<?> var3) {
+   private static Boolean method_22065(class_2522 var0, class_6163 var1, BlockPos var2, class_6629<?> var3) {
       return true;
    }
 
-   private static Boolean method_22073(class_2522 var0, class_6163 var1, class_1331 var2, class_6629<?> var3) {
+   private static Boolean method_22073(class_2522 var0, class_6163 var1, BlockPos var2, class_6629<?> var3) {
       return var3 == class_6629.field_34214 || var3 == class_6629.field_34228;
    }
 
@@ -3351,11 +3351,11 @@ public class class_4783 {
       return new class_7947(class_3073.method_14057(class_5371.field_27389, var1 -> var0).method_14096(2.0F).method_14061(class_4618.field_22478));
    }
 
-   private static boolean method_22074(class_2522 var0, class_6163 var1, class_1331 var2) {
+   private static boolean method_22074(class_2522 var0, class_6163 var1, BlockPos var2) {
       return true;
    }
 
-   private static boolean method_22072(class_2522 var0, class_6163 var1, class_1331 var2) {
+   private static boolean method_22072(class_2522 var0, class_6163 var1, BlockPos var2) {
       return false;
    }
 

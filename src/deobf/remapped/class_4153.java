@@ -8,7 +8,7 @@ public final class class_4153 extends class_8085 {
       class_6331 var5 = var1.method_40140();
       this.method_36717(true);
       Direction var6 = var1.method_40141().<Direction>method_10313(class_6451.field_32900);
-      class_1331 var7 = var1.method_40142().method_6098(var6);
+      BlockPos var7 = var1.method_40142().method_6098(var6);
       class_2522 var8 = var5.method_28262(var7);
       if (!class_9476.method_43769(var5, var7, var6)) {
          if (!class_8474.method_39007(var8)) {

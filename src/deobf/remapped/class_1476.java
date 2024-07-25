@@ -10,13 +10,13 @@ public class class_1476 extends class_6967 {
    }
 
    @Override
-   public class_1331 method_31861() {
+   public BlockPos method_31861() {
       return this.field_35802;
    }
 
    @Override
    public boolean method_16799() {
-      return !this.field_7915.method_37370() && this.method_31855(this.field_7915.field_41768, this.field_35802);
+      return !this.field_7915.method_37370() && this.method_31855(this.field_7915.world, this.field_35802);
    }
 
    @Override
@@ -30,7 +30,7 @@ public class class_1476 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       return var1.method_28262(var2).method_8350(class_4783.field_23811)
          && var1.method_28262(var2.method_6081()).method_8319(var1, var2, class_2929.field_14271);
    }

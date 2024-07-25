@@ -45,7 +45,7 @@ public class class_7626 {
 
          for (int var13 = 0; var13 < Direction.field_803.length; var13++) {
             Direction var14 = Direction.field_803[var13];
-            class_1331 var9 = var12.method_16143(var14);
+            BlockPos var9 = var12.method_16143(var14);
             class_3511 var10 = this.method_34563(var9);
             var12.method_16139(var14, var10);
          }
@@ -103,7 +103,7 @@ public class class_7626 {
    }
 
    @Nullable
-   public class_3511 method_34563(class_1331 var1) {
+   public class_3511 method_34563(BlockPos var1) {
       int var4 = var1.method_12173() >> 4;
       int var5 = var1.method_12165() >> 4;
       int var6 = var1.method_12185() >> 4;
@@ -117,7 +117,7 @@ public class class_7626 {
    }
 
    private void method_34562(class_3511 var1) {
-      class_1331 var4 = var1.method_16189();
+      BlockPos var4 = var1.method_16189();
       int var5 = var4.method_12173() >> 8 << 8;
       int var6 = var4.method_12185() >> 8 << 8;
       class_2034 var7 = new class_2034(var5, var6);

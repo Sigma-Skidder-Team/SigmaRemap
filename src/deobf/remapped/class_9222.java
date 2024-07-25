@@ -23,9 +23,9 @@ public class class_9222 implements class_4904 {
    @Nullable
    @Override
    public class_8014 method_22451(Entity var1, Random var2) {
-      if (var1.field_41768 instanceof class_6331) {
-         class_6331 var5 = (class_6331)var1.field_41768;
-         class_1331 var6 = var5.method_29000(this.field_47149, var1.method_37075(), 100, true);
+      if (var1.world instanceof class_6331) {
+         class_6331 var5 = (class_6331)var1.world;
+         BlockPos var6 = var5.method_29000(this.field_47149, var1.method_37075(), 100, true);
          if (var6 == null) {
             return null;
          } else {

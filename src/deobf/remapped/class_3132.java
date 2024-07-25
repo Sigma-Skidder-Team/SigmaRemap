@@ -12,7 +12,7 @@ public enum class_3132 implements class_7293 {
    }
 
    @Override
-   public class_4190 method_33289(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_33289(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.field_15550.method_33289(var1, var2, var3, var4);
    }
 }

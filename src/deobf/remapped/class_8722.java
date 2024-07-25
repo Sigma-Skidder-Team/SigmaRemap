@@ -20,8 +20,8 @@ public abstract class class_8722 extends class_3798 {
    }
 
    @Override
-   public void method_10722(World var1, class_1331 var2, class_4774 var3, Random var4) {
-      class_1331 var7 = var2.method_6081();
+   public void method_10722(World var1, BlockPos var2, class_4774 var3, Random var4) {
+      BlockPos var7 = var2.method_6081();
       if (var1.method_28262(var7).method_8345() && !var1.method_28262(var7).method_8321(var1, var7)) {
          if (var4.nextInt(100) == 0) {
             double var8 = (double)var2.method_12173() + var4.nextDouble();
@@ -49,12 +49,12 @@ public abstract class class_8722 extends class_3798 {
    }
 
    @Override
-   public void method_10706(World var1, class_1331 var2, class_4774 var3, Random var4) {
+   public void method_10706(World var1, BlockPos var2, class_4774 var3, Random var4) {
       if (var1.method_29537().method_1285(class_291.field_1035)) {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
             for (int var8 = 0; var8 < 3; var8++) {
-               class_1331 var9 = var2.method_6104(var4.nextInt(3) - 1, 0, var4.nextInt(3) - 1);
+               BlockPos var9 = var2.method_6104(var4.nextInt(3) - 1, 0, var4.nextInt(3) - 1);
                if (!var1.method_29585(var9)) {
                   return;
                }
@@ -64,7 +64,7 @@ public abstract class class_8722 extends class_3798 {
                }
             }
          } else {
-            class_1331 var11 = var2;
+            BlockPos var11 = var2;
 
             for (int var12 = 0; var12 < var7; var12++) {
                var11 = var11.method_6104(var4.nextInt(3) - 1, 1, var4.nextInt(3) - 1);
@@ -86,7 +86,7 @@ public abstract class class_8722 extends class_3798 {
       }
    }
 
-   private boolean method_40066(class_4924 var1, class_1331 var2) {
+   private boolean method_40066(class_4924 var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
          if (this.method_40068(var1, var2.method_6098(var8))) {
             return true;
@@ -96,8 +96,8 @@ public abstract class class_8722 extends class_3798 {
       return false;
    }
 
-   private boolean method_40068(class_4924 var1, class_1331 var2) {
-      return var2.method_12165() >= 0 && var2.method_12165() < 256 && !var1.method_22559(var2) ? false : var1.method_28262(var2).method_8362().method_24495();
+   private boolean method_40068(class_4924 var1, BlockPos var2) {
+      return var2.method_12165() >= 0 && var2.method_12165() < 256 && !var1.isBlockLoaded(var2) ? false : var1.method_28262(var2).method_8362().method_24495();
    }
 
    @Nullable
@@ -107,7 +107,7 @@ public abstract class class_8722 extends class_3798 {
    }
 
    @Override
-   public void method_17664(class_9379 var1, class_1331 var2, class_2522 var3) {
+   public void method_17664(class_9379 var1, BlockPos var2, class_2522 var3) {
       this.method_40067(var1, var2);
    }
 
@@ -132,7 +132,7 @@ public abstract class class_8722 extends class_3798 {
    }
 
    @Override
-   public boolean method_10709(class_4774 var1, class_6163 var2, class_1331 var3, class_2340 var4, Direction var5) {
+   public boolean method_10709(class_4774 var1, class_6163 var2, BlockPos var3, class_2340 var4, Direction var5) {
       return var1.method_22008(var2, var3) >= 0.44444445F && var4.method_10724(class_6503.field_33094);
    }
 
@@ -142,7 +142,7 @@ public abstract class class_8722 extends class_3798 {
    }
 
    @Override
-   public int method_17645(World var1, class_1331 var2, class_4774 var3, class_4774 var4) {
+   public int method_17645(World var1, BlockPos var2, class_4774 var3, class_4774 var4) {
       int var7 = this.method_10711(var1);
       if (!var3.method_22001()
          && !var4.method_22001()
@@ -156,7 +156,7 @@ public abstract class class_8722 extends class_3798 {
       return var7;
    }
 
-   private void method_40067(class_9379 var1, class_1331 var2) {
+   private void method_40067(class_9379 var1, BlockPos var2) {
       var1.method_43364(1501, var2, 0);
    }
 
@@ -166,7 +166,7 @@ public abstract class class_8722 extends class_3798 {
    }
 
    @Override
-   public void method_17658(class_9379 var1, class_1331 var2, class_2522 var3, Direction var4, class_4774 var5) {
+   public void method_17658(class_9379 var1, BlockPos var2, class_2522 var3, Direction var4, class_4774 var5) {
       if (var4 == Direction.field_802) {
          class_4774 var8 = var1.method_28258(var2);
          if (this.method_10724(class_6503.field_33095) && var8.method_22007(class_6503.field_33094)) {

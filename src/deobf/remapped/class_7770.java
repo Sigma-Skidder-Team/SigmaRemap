@@ -50,10 +50,10 @@ public class class_7770 extends class_5920<class_7666> {
       if (var6.isPresent()) {
          Optional var7 = this.method_35245(var1, var2, var3);
          if (!var7.isPresent()) {
-            var1.method_28969().method_6860((class_1331)var6.get());
-            class_1892.method_8433(var1, (class_1331)var6.get());
+            var1.method_28969().method_6860((BlockPos)var6.get());
+            class_1892.method_8433(var1, (BlockPos)var6.get());
          } else {
-            this.method_35248(var1, (class_7666)var7.get(), (class_1331)var6.get());
+            this.method_35248(var1, (class_7666)var7.get(), (BlockPos)var6.get());
          }
       } else {
          var1.method_29587(var3, (byte)13);
@@ -73,11 +73,11 @@ public class class_7770 extends class_5920<class_7666> {
          : class_1225.method_5450(var4, class_6044.field_30892, class_6629.field_34276) && var1.method_8636() && ((class_1899)var5.get()).method_8636();
    }
 
-   private Optional<class_1331> method_35253(class_6331 var1, class_7666 var2) {
+   private Optional<BlockPos> method_35253(class_6331 var1, class_7666 var2) {
       return var1.method_28969().method_6861(class_236.field_778.method_1007(), var2x -> this.method_35249(var2, var2x), var2.method_37075(), 48);
    }
 
-   private boolean method_35249(class_7666 var1, class_1331 var2) {
+   private boolean method_35249(class_7666 var1, BlockPos var2) {
       class_3998 var5 = var1.method_26927().method_5615(var2, class_236.field_778.method_1006());
       return var5 != null && var5.method_18433();
    }
@@ -97,7 +97,7 @@ public class class_7770 extends class_5920<class_7666> {
       }
    }
 
-   private void method_35248(class_6331 var1, class_7666 var2, class_1331 var3) {
+   private void method_35248(class_6331 var1, class_7666 var2, BlockPos var3) {
       class_8150 var6 = class_8150.method_37410(var1.method_29545(), var3);
       var2.method_26525().method_5105(class_6044.field_30854, var6);
    }

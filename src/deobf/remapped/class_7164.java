@@ -47,12 +47,12 @@ public abstract class class_7164<T extends class_5886, M extends class_6521<T>> 
          float var28 = class_9299.method_42836(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
          float var30 = var22 * var28;
-         class_1331 var31 = new class_1331(var1.method_37335(var2));
-         class_1331 var32 = new class_1331(var5.method_37335(var2));
+         BlockPos var31 = new BlockPos(var1.method_37335(var2));
+         BlockPos var32 = new BlockPos(var5.method_37335(var2));
          int var33 = this.method_32546((T)var1, var31);
          int var34 = this.field_36493.<Entity>method_28131(var5).method_32546(var5, var32);
-         int var35 = var1.field_41768.method_25266(class_2957.field_14437, var31);
-         int var36 = var1.field_41768.method_25266(class_2957.field_14437, var32);
+         int var35 = var1.world.method_25266(class_2957.field_14437, var31);
+         int var36 = var1.world.method_25266(class_2957.field_14437, var32);
          if (Config.method_14424()) {
             class_6588.method_30195();
          }

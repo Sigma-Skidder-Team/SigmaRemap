@@ -68,14 +68,14 @@ public class SpartanFly extends Module {
                         client.method_8614().method_4813(new class_7371(var5));
                      }
 
-                     if (var6 && (var5 >= 0 || client.thePlayer.method_26617(class_2584.field_12791).method_27960() instanceof class_6201)) {
+                     if (var6 && (var5 >= 0 || client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() instanceof class_6201)) {
                         class_9529 var7 = new class_9529(
                            client.thePlayer.method_37245().method_6214(0.0, -2.0, 0.0),
                            Direction.field_817,
                            client.thePlayer.method_37075().method_6104(0, -2, 0),
                            false
                         );
-                        class_8585 var8 = new class_8585(class_2584.field_12791, var7);
+                        class_8585 var8 = new class_8585(Hand.MAIN_HAND, var7);
                         client.method_8614().method_4813(var8);
                      }
 

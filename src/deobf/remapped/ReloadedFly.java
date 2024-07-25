@@ -115,8 +115,8 @@ public class ReloadedFly extends Module {
             }
 
             this.field_28771 = var5.field_3144;
-            var5.field_3143 = client.thePlayer.field_41701;
-            var5.field_3140 = client.thePlayer.field_41755;
+            var5.field_3143 = client.thePlayer.rotationYaw;
+            var5.field_3140 = client.thePlayer.rotationPitch;
          }
       }
    }

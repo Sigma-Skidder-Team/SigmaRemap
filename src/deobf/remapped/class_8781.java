@@ -49,7 +49,7 @@ public class class_8781 extends class_2609 {
       return (class_6561)this.field_44942.map(var1::method_26279, Function.identity());
    }
 
-   public List<class_4099> method_40369(class_5799 var1, class_1331 var2, class_6631 var3, boolean var4) {
+   public List<class_4099> method_40369(class_5799 var1, BlockPos var2, class_6631 var3, boolean var4) {
       class_6561 var7 = this.method_40368(var1);
       List var8 = var7.method_29987(var2, new class_8478().method_39053(var3), class_4783.field_23846, var4);
       ArrayList var9 = Lists.newArrayList();
@@ -67,7 +67,7 @@ public class class_8781 extends class_2609 {
    }
 
    @Override
-   public List<class_4099> method_11829(class_5799 var1, class_1331 var2, class_6631 var3, Random var4) {
+   public List<class_4099> method_11829(class_5799 var1, BlockPos var2, class_6631 var3, Random var4) {
       class_6561 var7 = this.method_40368(var1);
       List var8 = var7.method_29987(var2, new class_8478().method_39053(var3), class_4783.field_23319, true);
       Collections.shuffle(var8, var4);
@@ -75,7 +75,7 @@ public class class_8781 extends class_2609 {
    }
 
    @Override
-   public class_9616 method_11832(class_5799 var1, class_1331 var2, class_6631 var3) {
+   public class_9616 method_11832(class_5799 var1, BlockPos var2, class_6631 var3) {
       class_6561 var6 = this.method_40368(var1);
       return var6.method_29986(new class_8478().method_39053(var3), var2);
    }
@@ -86,8 +86,8 @@ public class class_8781 extends class_2609 {
       class_700 var2,
       class_2033 var3,
       class_6541 var4,
-      class_1331 var5,
-      class_1331 var6,
+      BlockPos var5,
+      BlockPos var6,
       class_6631 var7,
       class_9616 var8,
       Random var9,

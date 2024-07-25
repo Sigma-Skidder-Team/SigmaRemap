@@ -22,8 +22,8 @@ public class class_6823 extends class_7067<class_7451> {
       var4.method_36065(-var10.method_61(), -var10.method_60(), -var10.method_62());
       double var11 = 0.46875;
       var4.method_36065((double)var9.method_1041() * 0.46875, (double)var9.method_1054() * 0.46875, (double)var9.method_1034() * 0.46875);
-      var4.method_36060(class_2426.field_12080.method_11074(var1.field_41755));
-      var4.method_36060(class_2426.field_12074.method_11074(180.0F - var1.field_41701));
+      var4.method_36060(class_2426.field_12080.method_11074(var1.rotationPitch));
+      var4.method_36060(class_2426.field_12074.method_11074(180.0F - var1.rotationYaw));
       boolean var13 = var1.method_37109();
       if (!var13) {
          class_856 var14 = this.field_35169.method_8505();
@@ -68,7 +68,7 @@ public class class_6823 extends class_7067<class_7451> {
                float var17 = 0.0078125F;
                var4.method_36062(0.0078125F, 0.0078125F, 0.0078125F);
                var4.method_36065(-64.0, -64.0, 0.0);
-               class_2134 var18 = class_8835.method_40647(var19, var1.field_41768);
+               class_2134 var18 = class_8835.method_40647(var19, var1.world);
                var4.method_36065(0.0, 0.0, -1.0);
                if (var18 != null) {
                   this.field_35169.gameRenderer.method_35928().method_38860(var4, var5, var18, true, var6);

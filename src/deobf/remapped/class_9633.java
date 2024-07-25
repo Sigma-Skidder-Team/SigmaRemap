@@ -607,7 +607,7 @@ public class class_9633 extends class_7690 implements class_5359 {
    }
 
    @Override
-   public class_4460 method_35749(class_2522 var1, class_1331 var2) {
+   public class_4460 method_35749(class_2522 var1, BlockPos var2) {
       if (this.field_49073 != null) {
          this.field_49073.method_20678(var1, var2);
          return this.field_49073;

@@ -29,7 +29,7 @@ public class FullbrightModule extends Module {
          if (client.theWorld != null) {
             if (!this.getStringValueByName("Type").equals("Normal")) {
                int var4 = 16;
-               class_1331 var5 = new class_1331(
+               BlockPos var5 = new BlockPos(
                      client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156()
                   )
                   .method_6081();

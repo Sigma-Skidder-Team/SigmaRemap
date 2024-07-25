@@ -28,7 +28,7 @@ public abstract class class_1546 {
       this.field_8166 = null;
    }
 
-   public class_5851 method_7017(class_1331 var1) {
+   public class_5851 method_7017(BlockPos var1) {
       return this.method_7016(var1.method_12173(), var1.method_12165(), var1.method_12185());
    }
 

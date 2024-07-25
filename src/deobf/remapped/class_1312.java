@@ -17,12 +17,12 @@ public class class_1312 extends class_7067<class_1511> {
          }
 
          var4.method_36063();
-         var4.method_36060(class_2426.field_12074.method_11074(90.0F - var1.field_41701));
+         var4.method_36060(class_2426.field_12074.method_11074(90.0F - var1.rotationYaw));
          var4.method_36062(-var10, -var10, var10);
          float var11 = 0.03125F;
          var4.method_36065(0.0, -0.626F, 0.0);
          var4.method_36062(0.5F, 0.5F, 0.5F);
-         this.field_7248.method_29700(var1, var9, 0.0F, 0.0F, var1.field_41701, var1.field_41755);
+         this.field_7248.method_29700(var1, var9, 0.0F, 0.0F, var1.rotationYaw, var1.rotationPitch);
          class_7907 var12 = var5.method_11645(this.field_7248.method_45498(field_7249));
          this.field_7248.method_45499(var4, var12, var6, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
          var4.method_36064();

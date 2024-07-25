@@ -36,7 +36,7 @@ public class class_9190 extends class_8715 {
             this.field_49481 *= 0.98F;
             this.field_49486 *= 0.98F;
             this.field_49471 *= 0.98F;
-            class_1331 var3 = new class_1331(this.field_49462, this.field_49473, this.field_49465);
+            BlockPos var3 = new BlockPos(this.field_49462, this.field_49473, this.field_49465);
             class_4774 var4 = this.field_49469.method_28258(var3);
             if (var4.method_22005() == this.field_47008 && this.field_49473 < (double)((float)var3.method_12165() + var4.method_22008(this.field_49469, var3))) {
                this.method_44948();

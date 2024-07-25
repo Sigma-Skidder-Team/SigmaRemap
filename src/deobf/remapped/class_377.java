@@ -43,7 +43,7 @@ public class class_377 extends class_5920<class_7666> {
                   int var10 = 0;
 
                   for (short var11 = 1000;
-                     var10 < 1000 && (var9 == null || this.method_1847(var2, class_8150.method_37410(var1.method_29545(), new class_1331(var9))));
+                     var10 < 1000 && (var9 == null || this.method_1847(var2, class_8150.method_37410(var1.method_29545(), new BlockPos(var9))));
                      var10++
                   ) {
                      var9 = class_3425.method_15837(var2, 15, 7, class_1343.method_6200(var6.method_37409()));

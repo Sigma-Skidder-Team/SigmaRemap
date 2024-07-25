@@ -31,7 +31,7 @@ public class class_2652 extends class_3599 {
    @Override
    public boolean method_16795() {
       List var3 = this.field_13054
-         .field_41768
+         .world
          .<class_5886>method_25869(class_5886.class, this.field_13054.method_37241().method_18898((double)this.field_13057), this.field_13062);
       if (!var3.isEmpty()) {
          for (class_5886 var5 : var3) {

@@ -55,7 +55,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public boolean method_11203(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
       return true;
    }
 
@@ -72,7 +72,7 @@ public class class_2451 implements class_8525 {
       return 1.0F;
    }
 
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       if (!this.method_11247()) {
          return class_954.<ItemStack>method_4207(var2.method_26617(var3));
       } else {
@@ -106,7 +106,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, BlockPos var4, class_5834 var5) {
       return false;
    }
 
@@ -114,7 +114,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, class_2584 var4) {
+   public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, Hand var4) {
       return class_6910.field_35521;
    }
 
@@ -216,8 +216,8 @@ public class class_2451 implements class_8525 {
    }
 
    public static class_9529 method_11238(World var0, class_704 var1, class_9583 var2) {
-      float var5 = var1.field_41755;
-      float var6 = var1.field_41701;
+      float var5 = var1.rotationPitch;
+      float var6 = var1.rotationYaw;
       class_1343 var7 = var1.method_37335(1.0F);
       float var8 = class_9299.method_42840(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
       float var9 = class_9299.method_42818(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
@@ -291,7 +291,7 @@ public class class_2451 implements class_8525 {
       return this.field_12175;
    }
 
-   public boolean method_11211(class_6199 var1) {
+   public boolean method_11211(DamageSource var1) {
       return !this.field_12175 || !var1.method_28360();
    }
 }

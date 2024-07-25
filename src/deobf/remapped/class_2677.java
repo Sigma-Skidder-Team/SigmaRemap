@@ -24,7 +24,7 @@ public class class_2677 extends class_3266 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       switch (var1.<Direction>method_10313(field_16180).method_1029()) {
          case field_47215:
          default:
@@ -46,7 +46,7 @@ public class class_2677 extends class_3266 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>method_10313(field_16180);
       double var8 = (double)var3.method_12173() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var10 = (double)var3.method_12165() + 0.55 - (double)(var4.nextFloat() * 0.1F);
@@ -76,7 +76,7 @@ public class class_2677 extends class_3266 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

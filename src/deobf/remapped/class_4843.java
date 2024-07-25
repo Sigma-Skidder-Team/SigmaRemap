@@ -20,7 +20,7 @@ public class class_4843 implements class_7835 {
    }
 
    @Override
-   public class_1331 method_35462() {
+   public BlockPos method_35462() {
       return this.field_24168.method_37075();
    }
 

@@ -14,7 +14,7 @@ public class AutoMinerModule extends Module {
    public Set<class_2034> field_25748 = new HashSet<class_2034>();
    public class_9806 field_25755;
    public Thread field_25750;
-   private class_1331 field_25747;
+   private BlockPos field_25747;
    public int field_25749;
    public List<class_7047> field_25752 = new ArrayList<class_7047>();
    public List<class_7047> field_25753 = new ArrayList<class_7047>();
@@ -57,7 +57,7 @@ public class AutoMinerModule extends Module {
       this.field_25748.clear();
    }
 
-   public List<class_1331> method_22864(class_2034 var1) {
+   public List<BlockPos> method_22864(class_2034 var1) {
       ArrayList var4 = new ArrayList();
       int var5 = var1.field_10328 * 16;
       int var6 = var1.field_10327 * 16;
@@ -69,7 +69,7 @@ public class AutoMinerModule extends Module {
       for (float var11 = (float)var7; var11 <= (float)var10 && !(var11 > 100.0F); var11++) {
          for (float var12 = (float)var5; var12 <= (float)var8; var12++) {
             for (float var13 = (float)var6; var13 <= (float)var9; var13++) {
-               class_1331 var14 = new class_1331((double)var12, (double)var11, (double)var13);
+               BlockPos var14 = new BlockPos((double)var12, (double)var11, (double)var13);
                if (client.theWorld.method_28262(var14).method_8360() == class_4783.field_23681) {
                   var4.add(var14);
                }
@@ -128,7 +128,7 @@ public class AutoMinerModule extends Module {
                   () -> {
                      boolean var4x = false;
 
-                     for (class_1331 var6x : var15) {
+                     for (BlockPos var6x : var15) {
                         try {
                            this.field_25755 = new class_9806();
                            class_8670 var7x = new class_8670(new class_7047(client.thePlayer.method_37075()));
@@ -190,7 +190,7 @@ public class AutoMinerModule extends Module {
       }
    }
 
-   public class_1331 method_22859(float var1) {
+   public BlockPos method_22859(float var1) {
       ArrayList var4 = new ArrayList();
 
       for (class_522 var6 : this.field_25751) {
@@ -198,10 +198,10 @@ public class AutoMinerModule extends Module {
       }
 
       class_7494.method_34085(var4);
-      return var4.size() <= 0 ? null : (class_1331)var4.get(0);
+      return var4.size() <= 0 ? null : (BlockPos)var4.get(0);
    }
 
-   public List<class_1331> method_22863() {
+   public List<BlockPos> method_22863() {
       ArrayList var3 = new ArrayList();
 
       for (class_522 var5 : this.field_25751) {
@@ -213,8 +213,8 @@ public class AutoMinerModule extends Module {
          ArrayList var10 = new ArrayList();
          var10.add(var3.get(0));
 
-         for (class_1331 var6 : var3) {
-            class_1331 var7 = (class_1331)var10.get(var10.size() - 1);
+         for (BlockPos var6 : var3) {
+            BlockPos var7 = (BlockPos)var10.get(var10.size() - 1);
             double var8 = Math.sqrt(var6.method_12180(var7));
             if (var8 > 4.0 && !class_7047.method_32361(var6)) {
                var10.add(var6);

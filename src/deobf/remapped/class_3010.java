@@ -14,7 +14,7 @@ public class class_3010<DC extends class_9793> implements class_3988<class_3010<
       this.field_14780 = (DC)var2;
    }
 
-   public Stream<class_1331> method_13769(class_6680 var1, Random var2, class_1331 var3) {
+   public Stream<BlockPos> method_13769(class_6680 var1, Random var2, BlockPos var3) {
       return this.field_14782.method_26185(var1, var2, this.field_14780, var3);
    }
 

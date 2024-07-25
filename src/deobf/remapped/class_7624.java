@@ -10,13 +10,13 @@ import org.apache.logging.log4j.Logger;
 public class class_7624 extends class_7060 {
    private static final Logger field_38788 = LogManager.getLogger();
    public final class_2609 field_38789;
-   public class_1331 field_38792;
+   public BlockPos field_38792;
    private final int field_38795;
    public final class_6631 field_38790;
    private final List<class_98> field_38794 = Lists.newArrayList();
    private final class_5799 field_38793;
 
-   public class_7624(class_5799 var1, class_2609 var2, class_1331 var3, int var4, class_6631 var5, class_9616 var6) {
+   public class_7624(class_5799 var1, class_2609 var2, BlockPos var3, int var4, class_6631 var5, class_9616 var6) {
       super(class_2746.field_13430, 0);
       this.field_38793 = var1;
       this.field_38789 = var2;
@@ -29,7 +29,7 @@ public class class_7624 extends class_7060 {
    public class_7624(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13430, var2);
       this.field_38793 = var1;
-      this.field_38792 = new class_1331(var2.method_25947("PosX"), var2.method_25947("PosY"), var2.method_25947("PosZ"));
+      this.field_38792 = new BlockPos(var2.method_25947("PosX"), var2.method_25947("PosY"), var2.method_25947("PosZ"));
       this.field_38795 = var2.method_25947("ground_level_delta");
       this.field_38789 = class_2609.field_12888
          .parse(class_3504.field_17178, var2.getCompound("pool_element"))
@@ -63,11 +63,11 @@ public class class_7624 extends class_7060 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       return this.method_34557(var1, var2, var3, var4, var5, var7, false);
    }
 
-   public boolean method_34557(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_1331 var6, boolean var7) {
+   public boolean method_34557(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, BlockPos var6, boolean var7) {
       return this.field_38789.method_11827(this.field_38793, var1, var2, var3, this.field_38792, var6, this.field_38790, var5, var4, var7);
    }
 
@@ -91,7 +91,7 @@ public class class_7624 extends class_7060 {
       return this.field_38789;
    }
 
-   public class_1331 method_34555() {
+   public BlockPos method_34555() {
       return this.field_38792;
    }
 

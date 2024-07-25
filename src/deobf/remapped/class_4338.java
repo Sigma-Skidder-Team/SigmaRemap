@@ -161,11 +161,11 @@ public final class class_4338 {
       }
    }
 
-   public static class_1331 method_20189(CompoundNBT var0) {
-      return new class_1331(var0.method_25947("X"), var0.method_25947("Y"), var0.method_25947("Z"));
+   public static BlockPos method_20189(CompoundNBT var0) {
+      return new BlockPos(var0.method_25947("X"), var0.method_25947("Y"), var0.method_25947("Z"));
    }
 
-   public static CompoundNBT method_20190(class_1331 var0) {
+   public static CompoundNBT method_20190(BlockPos var0) {
       CompoundNBT var3 = new CompoundNBT();
       var3.method_25931("X", var0.method_12173());
       var3.method_25931("Y", var0.method_12165());

@@ -7,15 +7,15 @@ import java.util.List;
 public class class_7442 {
    private static String[] field_37933;
    private final World field_37939;
-   private final class_1331 field_37935;
+   private final BlockPos field_37935;
    private final boolean field_37936;
-   private final class_1331 field_37932;
+   private final BlockPos field_37932;
    private final Direction field_37937;
-   private final List<class_1331> field_37934 = Lists.newArrayList();
-   private final List<class_1331> field_37940 = Lists.newArrayList();
+   private final List<BlockPos> field_37934 = Lists.newArrayList();
+   private final List<BlockPos> field_37940 = Lists.newArrayList();
    private final Direction field_37938;
 
-   public class_7442(World var1, class_1331 var2, Direction var3, boolean var4) {
+   public class_7442(World var1, BlockPos var2, Direction var3, boolean var4) {
       this.field_37939 = var1;
       this.field_37935 = var2;
       this.field_37938 = var3;
@@ -36,7 +36,7 @@ public class class_7442 {
       if (class_1990.method_9171(var3, this.field_37939, this.field_37932, this.field_37937, false, this.field_37938)) {
          if (this.method_33861(this.field_37932, this.field_37937)) {
             for (int var4 = 0; var4 < this.field_37934.size(); var4++) {
-               class_1331 var5 = this.field_37934.get(var4);
+               BlockPos var5 = this.field_37934.get(var4);
                if (method_33865(this.field_37939.method_28262(var5).method_8360()) && !this.method_33868(var5)) {
                   return false;
                }
@@ -66,7 +66,7 @@ public class class_7442 {
       }
    }
 
-   private boolean method_33861(class_1331 var1, Direction var2) {
+   private boolean method_33861(BlockPos var1, Direction var2) {
       class_2522 var5 = this.field_37939.method_28262(var1);
       class_6414 var6 = var5.method_8360();
       if (var5.method_8345()) {
@@ -83,7 +83,7 @@ public class class_7442 {
             return false;
          } else {
             while (method_33865(var6)) {
-               class_1331 var8 = var1.method_6099(this.field_37937.method_1046(), var7);
+               BlockPos var8 = var1.method_6099(this.field_37937.method_1046(), var7);
                class_6414 var9 = var6;
                var5 = this.field_37939.method_28262(var8);
                var6 = var5.method_8360();
@@ -109,13 +109,13 @@ public class class_7442 {
             int var18 = 1;
 
             while (true) {
-               class_1331 var10 = var1.method_6099(this.field_37937, var18);
+               BlockPos var10 = var1.method_6099(this.field_37937, var18);
                int var11 = this.field_37934.indexOf(var10);
                if (var11 > -1) {
                   this.method_33867(var16, var11);
 
                   for (int var12 = 0; var12 <= var11 + var16; var12++) {
-                     class_1331 var13 = this.field_37934.get(var12);
+                     BlockPos var13 = this.field_37934.get(var12);
                      if (method_33865(this.field_37939.method_28262(var13).method_8360()) && !this.method_33868(var13)) {
                         return false;
                      }
@@ -163,12 +163,12 @@ public class class_7442 {
       this.field_37934.addAll(var7);
    }
 
-   private boolean method_33868(class_1331 var1) {
+   private boolean method_33868(BlockPos var1) {
       class_2522 var4 = this.field_37939.method_28262(var1);
 
       for (Direction var8 : Direction.values()) {
          if (var8.method_1029() != this.field_37937.method_1029()) {
-            class_1331 var9 = var1.method_6098(var8);
+            BlockPos var9 = var1.method_6098(var8);
             class_2522 var10 = this.field_37939.method_28262(var9);
             if (method_33863(var10.method_8360(), var4.method_8360()) && !this.method_33861(var9, var8)) {
                return false;
@@ -179,11 +179,11 @@ public class class_7442 {
       return true;
    }
 
-   public List<class_1331> method_33866() {
+   public List<BlockPos> method_33866() {
       return this.field_37934;
    }
 
-   public List<class_1331> method_33862() {
+   public List<BlockPos> method_33862() {
       return this.field_37940;
    }
 }

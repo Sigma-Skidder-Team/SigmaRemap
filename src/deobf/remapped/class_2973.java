@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 public class class_2973 implements class_2995 {
    private static final Logger field_14616 = LogManager.getLogger();
    private final MinecraftClient field_14620;
-   private final Map<class_1331, class_7942> field_14615 = Maps.newHashMap();
+   private final Map<BlockPos, class_7942> field_14615 = Maps.newHashMap();
    private final Map<UUID, class_6388> field_14617 = Maps.newHashMap();
    private UUID field_14619;
 
@@ -36,11 +36,11 @@ public class class_2973 implements class_2995 {
       this.field_14615.put(var1.field_40651, var1);
    }
 
-   public void method_13613(class_1331 var1) {
+   public void method_13613(BlockPos var1) {
       this.field_14615.remove(var1);
    }
 
-   public void method_13591(class_1331 var1, int var2) {
+   public void method_13591(BlockPos var1, int var2) {
       class_7942 var5 = this.field_14615.get(var1);
       if (var5 != null) {
          var5.field_40650 = var2;
@@ -77,14 +77,14 @@ public class class_2973 implements class_2995 {
    }
 
    private void method_13595(double var1, double var3, double var5) {
-      class_1331 var9 = new class_1331(var1, var3, var5);
+      BlockPos var9 = new BlockPos(var1, var3, var5);
       this.field_14617.values().forEach(var7 -> {
          if (this.method_13612(var7)) {
             this.method_13596(var7, var1, var3, var5);
          }
       });
 
-      for (class_1331 var11 : this.field_14615.keySet()) {
+      for (BlockPos var11 : this.field_14615.keySet()) {
          if (var9.method_12171(var11, 30.0)) {
             method_13610(var11);
          }
@@ -102,14 +102,14 @@ public class class_2973 implements class_2995 {
       });
    }
 
-   private static void method_13610(class_1331 var0) {
+   private static void method_13610(BlockPos var0) {
       float var3 = 0.05F;
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       class_3372.method_15560(var0, 0.05F, 0.2F, 0.2F, 1.0F, 0.3F);
    }
 
-   private void method_13603(class_1331 var1, List<String> var2) {
+   private void method_13603(BlockPos var1, List<String> var2) {
       float var5 = 0.05F;
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
@@ -212,11 +212,11 @@ public class class_2973 implements class_2995 {
    }
 
    private static void method_13601(String var0, class_7942 var1, int var2, int var3) {
-      class_1331 var6 = var1.field_40651;
+      BlockPos var6 = var1.field_40651;
       method_13606(var0, var6, var2, var3);
    }
 
-   private static void method_13606(String var0, class_1331 var1, int var2, int var3) {
+   private static void method_13606(String var0, BlockPos var1, int var2, int var3) {
       double var6 = 1.3;
       double var8 = 0.2;
       double var10 = (double)var1.method_12173() + 0.5;
@@ -228,7 +228,7 @@ public class class_2973 implements class_2995 {
    private static void method_13599(class_66 var0, int var1, String var2, int var3, float var4) {
       double var7 = 2.4;
       double var9 = 0.25;
-      class_1331 var11 = new class_1331(var0);
+      BlockPos var11 = new BlockPos(var0);
       double var12 = (double)var11.method_12173() + 0.5;
       double var14 = var0.method_60() + 2.4 + (double)var1 * 0.25;
       double var16 = (double)var11.method_12185() + 0.5;
@@ -250,12 +250,12 @@ public class class_2973 implements class_2995 {
 
    private boolean method_13612(class_6388 var1) {
       ClientPlayerEntity var4 = this.field_14620.thePlayer;
-      class_1331 var5 = new class_1331(var4.method_37302(), var1.field_32616.method_60(), var4.method_37156());
-      class_1331 var6 = new class_1331(var1.field_32616);
+      BlockPos var5 = new BlockPos(var4.method_37302(), var1.field_32616.method_60(), var4.method_37156());
+      BlockPos var6 = new BlockPos(var1.field_32616);
       return var5.method_12171(var6, 30.0);
    }
 
-   private Collection<UUID> method_13593(class_1331 var1) {
+   private Collection<UUID> method_13593(BlockPos var1) {
       return this.field_14617
          .values()
          .stream()
@@ -264,7 +264,7 @@ public class class_2973 implements class_2995 {
          .collect(Collectors.<UUID>toSet());
    }
 
-   private Collection<UUID> method_13594(class_1331 var1) {
+   private Collection<UUID> method_13594(BlockPos var1) {
       return this.field_14617
          .values()
          .stream()
@@ -273,11 +273,11 @@ public class class_2973 implements class_2995 {
          .collect(Collectors.<UUID>toSet());
    }
 
-   private Map<class_1331, List<String>> method_13597() {
+   private Map<BlockPos, List<String>> method_13597() {
       HashMap var3 = Maps.newHashMap();
 
       for (class_6388 var5 : this.field_14617.values()) {
-         for (class_1331 var7 : Iterables.concat(var5.field_32612, var5.field_32623)) {
+         for (BlockPos var7 : Iterables.concat(var5.field_32612, var5.field_32623)) {
             if (!this.field_14615.containsKey(var7)) {
                var3.computeIfAbsent(var7, var0 -> Lists.newArrayList()).add(var5.field_32620);
             }

@@ -49,7 +49,7 @@ public class class_1163 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       return var1.method_22548(var2.method_6081()) && var1.method_28262(var2).method_8360().method_29299(class_2351.field_11784);
    }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 public class class_9715 extends class_292 implements class_4511 {
    private boolean field_49380 = true;
    private int field_49379 = -1;
-   private final class_1331 field_49378 = class_1331.field_7306;
+   private final BlockPos field_49378 = BlockPos.field_7306;
 
    public class_9715(class_6629<? extends class_9715> var1, World var2) {
       super(var1, var2);
@@ -53,7 +53,7 @@ public class class_9715 extends class_292 implements class_4511 {
 
    @Override
    public World method_17402() {
-      return this.field_41768;
+      return this.world;
    }
 
    @Override
@@ -74,8 +74,8 @@ public class class_9715 extends class_292 implements class_4511 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (!this.field_41768.field_33055 && this.method_37330() && this.method_44873()) {
-         class_1331 var3 = this.method_37075();
+      if (!this.world.field_33055 && this.method_37330() && this.method_44873()) {
+         BlockPos var3 = this.method_37075();
          if (!var3.equals(this.field_49378)) {
             this.method_44869(0);
          } else {
@@ -94,7 +94,7 @@ public class class_9715 extends class_292 implements class_4511 {
 
    public boolean method_44871() {
       if (!class_5772.method_26101(this)) {
-         List var3 = this.field_41768.<Entity>method_25869(class_91.class, this.method_37241().method_18899(0.25, 0.0, 0.25), class_3572.field_17481);
+         List var3 = this.world.<Entity>method_25869(class_91.class, this.method_37241().method_18899(0.25, 0.0, 0.25), class_3572.field_17481);
          if (!var3.isEmpty()) {
             class_5772.method_26105(this, (class_91)var3.get(0));
          }
@@ -106,9 +106,9 @@ public class class_9715 extends class_292 implements class_4511 {
    }
 
    @Override
-   public void method_4743(class_6199 var1) {
+   public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
+      if (this.world.method_29537().method_1285(class_291.field_1024)) {
          this.method_37312(class_4783.field_23698);
       }
    }

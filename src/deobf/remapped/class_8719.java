@@ -18,7 +18,7 @@ public class class_8719 extends class_1837 {
    public void method_16796() {
       super.method_16796();
       this.field_44702.method_26891(true);
-      this.field_44702.method_26462(class_2584.field_12791);
+      this.field_44702.method_26462(Hand.MAIN_HAND);
    }
 
    @Override

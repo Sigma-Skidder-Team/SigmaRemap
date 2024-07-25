@@ -13,8 +13,8 @@ public class class_7951 {
       class_6162 var3,
       class_2522 var4,
       class_9379 var5,
-      class_1331 var6,
-      BiPredicate<class_9379, class_1331> var7
+      BlockPos var6,
+      BiPredicate<class_9379, BlockPos> var7
    ) {
       class_3757 var10 = var0.method_447(var5, var6);
       if (var10 != null) {
@@ -23,7 +23,7 @@ public class class_7951 {
             boolean var12 = var11 == class_1168.field_6622;
             boolean var13 = var11 == class_1168.field_6621;
             if (!var12) {
-               class_1331 var14 = var6.method_6098((Direction)var2.apply(var4));
+               BlockPos var14 = var6.method_6098((Direction)var2.apply(var4));
                class_2522 var15 = var5.method_28262(var14);
                if (var15.method_8350(var4.method_8360())) {
                   class_1168 var16 = (class_1168)var1.apply(var15);

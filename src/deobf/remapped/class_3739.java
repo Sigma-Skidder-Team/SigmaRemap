@@ -226,7 +226,7 @@ public class class_3739 {
       Config.method_14317("[CustomGuis] " + var0);
    }
 
-   private boolean method_17332(class_1614 var1, class_1331 var2, class_4924 var3) {
+   private boolean method_17332(class_1614 var1, BlockPos var2, class_4924 var3) {
       if (this.field_18293 == var1) {
          if (this.field_18301 != null) {
             class_6325 var6 = var3.method_22561(var2);
@@ -241,7 +241,7 @@ public class class_3739 {
       }
    }
 
-   public boolean method_17316(class_1614 var1, class_1331 var2, class_4924 var3, Screen var4) {
+   public boolean method_17316(class_1614 var1, BlockPos var2, class_4924 var3, Screen var4) {
       if (!this.method_17332(var1, var2, var3)) {
          return false;
       } else {
@@ -272,7 +272,7 @@ public class class_3739 {
       return var3 != null ? var3.getUnformattedComponentText() : null;
    }
 
-   private boolean method_17328(class_1331 var1, class_5561 var2) {
+   private boolean method_17328(BlockPos var1, class_5561 var2) {
       class_3757 var5 = var2.method_28260(var1);
       if (var5 instanceof class_1100) {
          class_1100 var6 = (class_1100)var5;
@@ -289,7 +289,7 @@ public class class_3739 {
       }
    }
 
-   private boolean method_17318(class_1331 var1, class_5561 var2) {
+   private boolean method_17318(BlockPos var1, class_5561 var2) {
       class_3757 var5 = var2.method_28260(var1);
       if (!(var5 instanceof class_7099)) {
          if (!(var5 instanceof class_9180)) {
@@ -304,7 +304,7 @@ public class class_3739 {
       }
    }
 
-   private boolean method_17319(class_7099 var1, class_1331 var2, class_5561 var3) {
+   private boolean method_17319(class_7099 var1, BlockPos var2, class_5561 var3) {
       class_2522 var6 = var3.method_28262(var2);
       class_9264 var7 = !var6.method_10307(class_6942.field_35695) ? class_9264.field_47274 : var6.<class_9264>method_10313(class_6942.field_35695);
       boolean var8 = var7 == class_9264.field_47274;
@@ -314,7 +314,7 @@ public class class_3739 {
       return this.method_17320(var8, var9, var10, var11);
    }
 
-   private boolean method_17327(class_9180 var1, class_1331 var2, class_5561 var3) {
+   private boolean method_17327(class_9180 var1, BlockPos var2, class_5561 var3) {
       return this.method_17320(false, false, false, true);
    }
 
@@ -328,7 +328,7 @@ public class class_3739 {
       }
    }
 
-   private boolean method_17330(class_1331 var1, class_5561 var2) {
+   private boolean method_17330(BlockPos var1, class_5561 var2) {
       class_3757 var5 = var2.method_28260(var1);
       if (var5 instanceof class_7434) {
          class_7434 var6 = (class_7434)var5;
@@ -349,7 +349,7 @@ public class class_3739 {
       return !(var1 instanceof class_5705) ? class_5469.field_27886 : class_5469.field_27882;
    }
 
-   private boolean method_17314(class_1331 var1, class_5561 var2) {
+   private boolean method_17314(BlockPos var1, class_5561 var2) {
       class_3757 var5 = var2.method_28260(var1);
       if (var5 instanceof class_4816) {
          class_4816 var6 = (class_4816)var5;

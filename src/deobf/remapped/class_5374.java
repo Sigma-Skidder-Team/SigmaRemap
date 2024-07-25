@@ -9,12 +9,12 @@ public class class_5374 extends class_1710<class_3891> {
       super(var1);
    }
 
-   public Stream<class_1331> method_24508(Random var1, class_3891 var2, class_1331 var3) {
+   public Stream<BlockPos> method_24508(Random var1, class_3891 var2, BlockPos var3) {
       int var6 = var2.field_18932;
       int var7 = var2.field_18934;
       int var8 = var3.method_12173();
       int var9 = var3.method_12185();
       int var10 = var1.nextInt(var7) + var1.nextInt(var7) - var7 + var6;
-      return Stream.<class_1331>of(new class_1331(var8, var10, var9));
+      return Stream.<BlockPos>of(new BlockPos(var8, var10, var9));
    }
 }

@@ -16,7 +16,7 @@ public class class_8302 extends class_7934 {
 
    @Override
    public ItemStack method_35892(class_704 var1, ItemStack var2) {
-      var2.method_27964(var1.field_41768, var1, var2.method_27997());
+      var2.method_27964(var1.world, var1, var2.method_27997());
       class_338.method_1560(this.field_42536).method_41424(var1);
       ItemStack var5 = this.field_42536.field_1266.method_35899(1);
       if (!var5.method_28022()) {

@@ -44,9 +44,9 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
 
          var4.method_36063();
          this.field_32487.field_33202 = this.method_29101((T)var1, var3);
-         this.field_32487.field_33203 = var1.method_37070();
+         this.field_32487.field_33203 = var1.isPassenger();
          if (class_7860.field_40084.method_3596()) {
-            this.field_32487.field_33203 = var1.method_37070()
+            this.field_32487.field_33203 = var1.isPassenger()
                && var1.method_37243() != null
                && class_7860.method_35565(var1.method_37243(), class_7860.field_40084);
          }
@@ -76,7 +76,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
             var11 = var10 - var9;
          }
 
-         float var31 = class_9299.method_42795(var3, var1.field_41762, var1.field_41755);
+         float var31 = class_9299.method_42795(var3, var1.field_41762, var1.rotationPitch);
          class_5278 var33 = new class_5278(var9, var10, var11, var31, var3, var1);
          SigmaMainClass.getInstance().getEventManager().call(var33);
          if (var33.method_29716()) {
@@ -103,7 +103,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
          var4.method_36065(0.0, -1.501F, 0.0);
          float var35 = 0.0F;
          float var16 = 0.0F;
-         if (!var1.method_37070() && var1.method_37330()) {
+         if (!var1.isPassenger() && var1.method_37330()) {
             var35 = class_9299.method_42795(var3, var1.field_29598, var1.field_29643);
             var16 = var1.field_29671 - var1.field_29643 * (1.0F - var3);
             if (var1.method_26449()) {
@@ -256,7 +256,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
                var2.method_36060(class_2426.field_12074.method_11074(270.0F));
             }
          } else {
-            var2.method_36060(class_2426.field_12080.method_11074(-90.0F - var1.field_41755));
+            var2.method_36060(class_2426.field_12080.method_11074(-90.0F - var1.rotationPitch));
             var2.method_36060(class_2426.field_12074.method_11074(((float)var1.field_41697 + var5) * -75.0F));
          }
       } else {

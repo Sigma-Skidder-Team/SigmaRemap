@@ -36,7 +36,7 @@ public class class_1645 extends class_380 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       if (!var1.<Boolean>method_10313(field_8557)) {
          return var1.<Direction>method_10313(field_1543).method_1029() != class_9249.field_47215 ? field_8547 : field_8556;
       } else {
@@ -45,7 +45,7 @@ public class class_1645 extends class_380 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       class_9249 var9 = var2.method_1029();
       if (var1.<Direction>method_10313(field_1543).method_1042().method_1029() != var9) {
          return super.method_10763(var1, var2, var3, var4, var5, var6);
@@ -56,7 +56,7 @@ public class class_1645 extends class_380 {
    }
 
    @Override
-   public class_4190 method_10775(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10775(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       if (!var1.<Boolean>method_10313(field_8559)) {
          return var1.<Direction>method_10313(field_1543).method_1029() != class_9249.field_47219 ? field_8555 : field_8560;
       } else {
@@ -65,7 +65,7 @@ public class class_1645 extends class_380 {
    }
 
    @Override
-   public class_4190 method_10790(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_10790(class_2522 var1, class_6163 var2, BlockPos var3) {
       if (!var1.<Boolean>method_10313(field_8557)) {
          return var1.<Direction>method_10313(field_1543).method_1029() != class_9249.field_47215 ? field_8552 : field_8550;
       } else {
@@ -76,7 +76,7 @@ public class class_1645 extends class_380 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       switch (var4) {
          case field_14271:
             return var1.<Boolean>method_10313(field_8559);
@@ -92,7 +92,7 @@ public class class_1645 extends class_380 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       World var4 = var1.method_21862();
-      class_1331 var5 = var1.method_21858();
+      BlockPos var5 = var1.method_21858();
       boolean var6 = var4.method_29576(var5);
       Direction var7 = var1.method_21863();
       class_9249 var8 = var7.method_1029();
@@ -112,7 +112,7 @@ public class class_1645 extends class_380 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       if (!var1.<Boolean>method_10313(field_8559)) {
          Direction var9 = var4.method_37365();
          if (var1.<Direction>method_10313(field_1543) == var9.method_1046()) {
@@ -131,7 +131,7 @@ public class class_1645 extends class_380 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       if (!var2.field_33055) {
          boolean var9 = var2.method_29576(var3);
          if (var1.<Boolean>method_10313(field_8553) != var9) {

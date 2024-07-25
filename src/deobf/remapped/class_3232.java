@@ -49,7 +49,7 @@ public abstract class class_3232 implements class_5002, AutoCloseable {
       return true;
    }
 
-   public boolean method_14815(class_1331 var1) {
+   public boolean method_14815(BlockPos var1) {
       return true;
    }
 }

@@ -10,7 +10,7 @@ public class class_7829 {
       if (var0.size() <= 0) {
          return false;
       } else {
-         class_1331 var3 = ((class_7606)var0.get(0)).field_38725;
+         BlockPos var3 = ((class_7606)var0.get(0)).field_38725;
          class_7606[] var4 = new class_7606[]{
             new class_7606(var3.method_6094(), Direction.field_800),
             new class_7606(var3.method_6090(), Direction.field_809),
@@ -40,7 +40,7 @@ public class class_7829 {
       return var3;
    }
 
-   public static List<class_7606> method_35452(class_6414 var0, class_1331 var1, int var2) {
+   public static List<class_7606> method_35452(class_6414 var0, BlockPos var1, int var2) {
       ArrayList var5 = new ArrayList();
       if (var1 != null && var2 >= 0) {
          if (!class_7494.method_34117(var0, var1)) {

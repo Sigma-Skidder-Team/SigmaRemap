@@ -32,7 +32,7 @@ public final class class_9670 {
 
    private void method_44721(class_7624 var1, MutableObject<class_4190> var2, int var3, int var4, boolean var5) {
       class_2609 var8 = var1.method_34553();
-      class_1331 var9 = var1.method_34555();
+      BlockPos var9 = var1.method_34555();
       class_6631 var10 = var1.method_32528();
       class_7599 var11 = var8.method_11834();
       boolean var12 = var11 == class_7599.field_38708;
@@ -43,8 +43,8 @@ public final class class_9670 {
       label174:
       for (class_4099 var17 : var8.method_11829(this.field_49254, var9, var10, this.field_49262)) {
          Direction var18 = class_195.method_860(var17.field_19967);
-         class_1331 var19 = var17.field_19965;
-         class_1331 var20 = var19.method_6098(var18);
+         BlockPos var19 = var17.field_19965;
+         BlockPos var20 = var19.method_6098(var18);
          int var21 = var19.method_12165() - var15;
          int var22 = -1;
          Identifier var23 = new Identifier(var17.field_19968.method_25965("pool"));
@@ -82,8 +82,8 @@ public final class class_9670 {
                   }
 
                   for (class_6631 var34 : class_6631.method_30487(this.field_49262)) {
-                     List var35 = var32.method_11829(this.field_49254, class_1331.field_7306, var34, this.field_49262);
-                     class_9616 var36 = var32.method_11832(this.field_49254, class_1331.field_7306, var34);
+                     List var35 = var32.method_11829(this.field_49254, BlockPos.field_7306, var34, this.field_49262);
+                     class_9616 var36 = var32.method_11832(this.field_49254, BlockPos.field_7306, var34);
                      int var37;
                      if (var5 && var36.method_44398() <= 16) {
                         var37 = var35.stream().mapToInt(var2x -> {
@@ -104,8 +104,8 @@ public final class class_9670 {
 
                      for (class_4099 var39 : var35) {
                         if (class_195.method_862(var17, var39)) {
-                           class_1331 var40 = var39.field_19965;
-                           class_1331 var41 = new class_1331(
+                           BlockPos var40 = var39.field_19965;
+                           BlockPos var41 = new BlockPos(
                               var20.method_12173() - var40.method_12173(),
                               var20.method_12165() - var40.method_12165(),
                               var20.method_12185() - var40.method_12185()
@@ -129,7 +129,7 @@ public final class class_9670 {
 
                            int var49 = var48 - var43;
                            class_9616 var50 = var42.method_44399(0, var49, 0);
-                           class_1331 var51 = var41.method_6104(0, var49, 0);
+                           BlockPos var51 = var41.method_6104(0, var49, 0);
                            if (var37 > 0) {
                               int var52 = Math.max(var37 + 1, var50.field_48993 - var50.field_48995);
                               var50.field_48993 = var50.field_48995 + var52;

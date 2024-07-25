@@ -41,7 +41,7 @@ public class AAC4Criticals extends Module {
          boolean var4 = !this.getBooleanValueByName("KillAura") || KillauraModule.field_12558 != null || KillauraModule.field_12556 != null;
          if (client.thePlayer.field_41726 && client.thePlayer.field_41774 && var4) {
             field_18992++;
-            client.thePlayer.field_30502 = 0.0;
+            client.thePlayer.lastReportedPosY = 0.0;
             if (field_18992 != 2) {
                if (field_18992 >= 3) {
                   double var5 = 0.001;

@@ -68,7 +68,7 @@ public class class_5534 {
       );
    }
 
-   private static int method_25139(class_9155 var0, class_1331 var1, class_6986 var2, class_9532 var3, Predicate<class_9115> var4) throws CommandSyntaxException {
+   private static int method_25139(class_9155 var0, BlockPos var1, class_6986 var2, class_9532 var3, Predicate<class_9115> var4) throws CommandSyntaxException {
       class_6331 var7 = var0.method_42198();
       if (var4 != null && !var4.test(new class_9115(var7, var1, true))) {
          throw field_28212.create();

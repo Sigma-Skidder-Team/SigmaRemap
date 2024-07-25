@@ -21,7 +21,7 @@ public class class_7863 extends class_6414 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return !var1.<Boolean>method_10313(field_40260) ? field_40263 : field_40262;
    }
 
@@ -36,7 +36,7 @@ public class class_7863 extends class_6414 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, BlockPos var3) {
       return !var1.<Boolean>method_10313(field_40260) ? 0 : 15;
    }
 
@@ -99,7 +99,7 @@ public class class_7863 extends class_6414 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

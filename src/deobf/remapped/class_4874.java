@@ -17,10 +17,10 @@ public class class_4874 implements class_2995 {
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       RenderSystem.method_16354();
-      class_1331 var12 = new class_1331(var3, var5, var7);
+      BlockPos var12 = new BlockPos(var3, var5, var7);
       LongOpenHashSet var13 = new LongOpenHashSet();
 
-      for (class_1331 var15 : class_1331.method_6076(var12.method_6104(-10, -10, -10), var12.method_6104(10, 10, 10))) {
+      for (BlockPos var15 : BlockPos.method_6076(var12.method_6104(-10, -10, -10), var12.method_6104(10, 10, 10))) {
          int var16 = var11.method_25266(class_2957.field_14437, var15);
          float var17 = (float)(15 - var16) / 15.0F * 0.5F + 0.16F;
          int var18 = class_9299.method_42792(var17, 0.9F, 0.9F);

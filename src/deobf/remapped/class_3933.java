@@ -10,21 +10,21 @@ public class class_3933 extends class_6414 {
    }
 
    @Override
-   public void method_29286(World var1, class_1331 var2, Entity var3) {
+   public void method_29286(World var1, BlockPos var2, Entity var3) {
       if (!var3.method_37087() && var3 instanceof class_5834 && !class_2931.method_13407((class_5834)var3)) {
-         var3.method_37181(class_6199.field_31675, 1.0F);
+         var3.attackEntityFrom(DamageSource.field_31675, 1.0F);
       }
 
       super.method_29286(var1, var2, var3);
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       class_6644.method_30519(var2, var3.method_6081(), true);
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var2 == Direction.field_817 && var3.method_8350(class_4783.field_23900)) {
          var4.method_43367().method_14011(var5, this, 20);
       }
@@ -33,8 +33,8 @@ public class class_3933 extends class_6414 {
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
-      class_1331 var7 = var3.method_6081();
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
+      BlockPos var7 = var3.method_6081();
       if (var2.method_28258(var3).method_22007(class_6503.field_33094)) {
          var2.method_43359(
             (class_704)null,
@@ -59,7 +59,7 @@ public class class_3933 extends class_6414 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       var2.method_43367().method_14011(var3, this, 20);
    }
 }

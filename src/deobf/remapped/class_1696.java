@@ -5,7 +5,7 @@ public enum class_1696 {
    }
 
    @Override
-   public float method_297(class_1331 var1, float var2) {
+   public float method_297(BlockPos var1, float var2) {
       return var2;
    }
 }

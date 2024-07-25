@@ -30,7 +30,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_1092 implements class_392 {
+public class ClientPlayNetHandler implements class_392 {
    private static final Logger field_6038 = LogManager.getLogger();
    private static final ITextComponent field_6028 = new TranslationTextComponent("disconnect.lost");
    private final class_5121 field_6035;
@@ -53,7 +53,7 @@ public class class_1092 implements class_392 {
    private Set<class_5621<World>> field_6029;
    public class_6322 field_6037 = class_6322.method_28810();
 
-   public class_1092(MinecraftClient var1, Screen var2, class_5121 var3, GameProfile var4) {
+   public ClientPlayNetHandler(MinecraftClient var1, Screen var2, class_5121 var3, GameProfile var4) {
       this.field_6026 = var1;
       this.field_6041 = var2;
       this.field_6035 = var3;
@@ -98,8 +98,8 @@ public class class_1092 implements class_392 {
       );
       this.field_6026.method_8508(this.field_6021);
       if (this.field_6026.thePlayer == null) {
-         this.field_6026.thePlayer = this.field_6026.playerController.method_42131(this.field_6021, new class_4156(), new class_2716());
-         this.field_6026.thePlayer.field_41701 = -180.0F;
+         this.field_6026.thePlayer = this.field_6026.playerController.method_42131(this.field_6021, new StatisticsManager(), new ClientRecipeBook());
+         this.field_6026.thePlayer.rotationYaw = -180.0F;
          if (this.field_6026.method_8515() != null) {
             this.field_6026.method_8515().method_35214(this.field_6026.thePlayer.method_37328());
          }
@@ -109,7 +109,7 @@ public class class_1092 implements class_392 {
       this.field_6026.thePlayer.method_37100();
       int var10 = var1.method_9225();
       this.field_6021.method_762(var10, this.field_6026.thePlayer);
-      this.field_6026.thePlayer.field_30533 = new class_8439(this.field_6026.gameOptions);
+      this.field_6026.thePlayer.movementInput = new class_8439(this.field_6026.gameOptions);
       this.field_6026.playerController.method_42136(this.field_6026.thePlayer);
       this.field_6026.field_9669 = this.field_6026.thePlayer;
       this.field_6026.method_8609(new class_881());
@@ -201,7 +201,7 @@ public class class_1092 implements class_392 {
                                                                                              );
                                                                                           }
                                                                                        } else {
-                                                                                          var11 = new class_9149(this.field_6021, var4, var6, var8);
+                                                                                          var11 = new BoatEntity(this.field_6021, var4, var6, var8);
                                                                                        }
                                                                                     } else {
                                                                                        var11 = new class_6093(this.field_6021, var4, var6, var8);
@@ -282,11 +282,11 @@ public class class_1092 implements class_392 {
                                                       var11 = new class_1537(this.field_6021, var4, var6, var8);
                                                    }
                                                 } else {
-                                                   var11 = new class_8008(this.field_6021, new class_1331(var4, var6, var8));
+                                                   var11 = new class_8008(this.field_6021, new BlockPos(var4, var6, var8));
                                                 }
                                              } else {
                                                 var11 = new class_7451(
-                                                   this.field_6021, new class_1331(var4, var6, var8), Direction.method_1033(var1.method_30335())
+                                                   this.field_6021, new BlockPos(var4, var6, var8), Direction.method_1033(var1.method_30335())
                                                 );
                                              }
                                           } else {
@@ -352,13 +352,13 @@ public class class_1092 implements class_392 {
          int var16 = var1.method_30333();
          ((Entity)var11).method_37223(var4, var6, var8);
          ((Entity)var11).method_37195(var4, var6, var8);
-         ((Entity)var11).field_41755 = (float)(var1.method_30327() * 360) / 256.0F;
-         ((Entity)var11).field_41701 = (float)(var1.method_30328() * 360) / 256.0F;
+         ((Entity)var11).rotationPitch = (float)(var1.method_30327() * 360) / 256.0F;
+         ((Entity)var11).rotationYaw = (float)(var1.method_30328() * 360) / 256.0F;
          ((Entity)var11).method_37091(var16);
          ((Entity)var11).method_37377(var1.method_30337());
          this.field_6021.method_725(var16, (Entity)var11);
-         if (var11 instanceof class_1080) {
-            this.field_6026.method_8590().method_16345(new class_826((class_1080)var11));
+         if (var11 instanceof AbstractMinecartEntity) {
+            this.field_6026.getSoundHandler().play(new class_826((AbstractMinecartEntity)var11));
          }
       }
    }
@@ -371,8 +371,8 @@ public class class_1092 implements class_392 {
       double var8 = var1.method_16043();
       class_5614 var10 = new class_5614(this.field_6021, var4, var6, var8, var1.method_16049());
       var10.method_37223(var4, var6, var8);
-      var10.field_41701 = 0.0F;
-      var10.field_41755 = 0.0F;
+      var10.rotationYaw = 0.0F;
+      var10.rotationPitch = 0.0F;
       var10.method_37091(var1.method_16045());
       this.field_6021.method_725(var1.method_16045(), var10);
    }
@@ -463,8 +463,8 @@ public class class_1092 implements class_392 {
          } else {
             class_1343 var8 = var1.method_2558(var4.method_37103());
             var4.method_37358(var8);
-            float var9 = !var1.method_2560() ? var4.field_41701 : (float)(var1.method_2557() * 360) / 256.0F;
-            float var7 = !var1.method_2560() ? var4.field_41755 : (float)(var1.method_2561() * 360) / 256.0F;
+            float var9 = !var1.method_2560() ? var4.rotationYaw : (float)(var1.method_2557() * 360) / 256.0F;
+            float var7 = !var1.method_2560() ? var4.rotationPitch : (float)(var1.method_2561() * 360) / 256.0F;
             var4.method_37318(var8.method_61(), var8.method_60(), var8.method_62(), var9, var7, 3, false);
          }
 
@@ -537,7 +537,7 @@ public class class_1092 implements class_392 {
       }
 
       if (var4.field_41697 > 0 && var4.method_37243() != null) {
-         var4.method_37389();
+         var4.dismount();
       }
 
       var4.method_37222(var11, var15, var19);
@@ -548,16 +548,16 @@ public class class_1092 implements class_392 {
       float var21 = var1.method_2522();
       float var22 = var1.method_2523();
       if (var1.method_2518().contains(class_8089.field_41429)) {
-         var22 += var4.field_41755;
+         var22 += var4.rotationPitch;
       }
 
       if (var1.method_2518().contains(class_8089.field_41428)) {
-         var21 += var4.field_41701;
+         var21 += var4.rotationYaw;
       }
 
       var4.method_37249(var11, var15, var19, var21, var22);
       this.field_6035.method_23485(new class_2492(var1.method_2521()));
-      this.field_6035.method_23485(new class_1514(var4.method_37302(), var4.method_37309(), var4.method_37156(), var4.field_41701, var4.field_41755, false));
+      this.field_6035.method_23485(new class_1514(var4.method_37302(), var4.method_37309(), var4.method_37156(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field_6030) {
          this.field_6030 = true;
          this.field_6026.method_8609((Screen)null);
@@ -591,7 +591,7 @@ public class class_1092 implements class_392 {
       }
 
       for (CompoundNBT var9 : var1.method_22143()) {
-         class_1331 var10 = new class_1331(var9.method_25947("x"), var9.method_25947("y"), var9.method_25947("z"));
+         BlockPos var10 = new BlockPos(var9.method_25947("x"), var9.method_25947("y"), var9.method_25947("z"));
          class_3757 var11 = this.field_6021.method_28260(var10);
          if (var11 != null) {
             var11.method_17394(this.field_6021.method_28262(var10), var9);
@@ -726,11 +726,11 @@ public class class_1092 implements class_392 {
                }
             } else {
                class_5834 var6 = (class_5834)var4;
-               var6.method_26597(class_2584.field_12794);
+               var6.method_26597(Hand.OFF_HAND);
             }
          } else {
             class_5834 var7 = (class_5834)var4;
-            var7.method_26597(class_2584.field_12791);
+            var7.method_26597(Hand.MAIN_HAND);
          }
       }
    }
@@ -774,7 +774,7 @@ public class class_1092 implements class_392 {
                var16 = new class_7328((class_8829)var12);
             }
 
-            this.field_6026.method_8590().method_16351((class_6483)var16);
+            this.field_6026.getSoundHandler().method_16351((class_6483)var16);
          }
       }
    }
@@ -803,7 +803,7 @@ public class class_1092 implements class_392 {
          for (int var9 : var1.method_21304()) {
             Entity var10 = this.field_6021.method_29534(var9);
             if (var10 != null) {
-               var10.method_37354(var4, true);
+               var10.startRiding(var4, true);
                if (var10 == this.field_6026.thePlayer && !var5) {
                   this.field_6026
                      .field_9614
@@ -826,7 +826,7 @@ public class class_1092 implements class_392 {
    }
 
    private static ItemStack method_4816(class_704 var0) {
-      for (class_2584 var6 : class_2584.values()) {
+      for (Hand var6 : Hand.values()) {
          ItemStack var7 = var0.method_26617(var6);
          if (var7.method_27960() == class_4897.field_24472) {
             return var7;
@@ -854,7 +854,7 @@ public class class_1092 implements class_392 {
                }
             }
          } else {
-            this.field_6026.method_8590().method_16345(new class_2704((class_337)var4));
+            this.field_6026.getSoundHandler().play(new class_2704((class_337)var4));
          }
       }
    }
@@ -881,7 +881,7 @@ public class class_1092 implements class_392 {
       ClientPlayerEntity var6 = this.field_6026.thePlayer;
       int var7 = var6.method_37145();
       this.field_6030 = false;
-      if (var4 != var6.field_41768.method_29545()) {
+      if (var4 != var6.world.method_29545()) {
          class_1097 var8 = this.field_6021.method_29562();
          boolean var9 = var1.method_35336();
          boolean var10 = var1.method_35338();
@@ -903,7 +903,7 @@ public class class_1092 implements class_392 {
          .method_42130(this.field_6021, var6.method_27331(), var6.method_27334(), var6.method_37252(), var6.method_37321());
       var13.method_37091(var7);
       this.field_6026.thePlayer = var13;
-      if (var4 != var6.field_41768.method_29545()) {
+      if (var4 != var6.world.method_29545()) {
          this.field_6026.method_8575().method_31312();
       }
 
@@ -916,8 +916,8 @@ public class class_1092 implements class_392 {
       var13.method_37100();
       var13.method_27315(var12);
       this.field_6021.method_762(var7, var13);
-      var13.field_41701 = -180.0F;
-      var13.field_30533 = new class_8439(this.field_6026.gameOptions);
+      var13.rotationYaw = -180.0F;
+      var13.movementInput = new class_8439(this.field_6026.gameOptions);
       this.field_6026.playerController.method_42136(var13);
       var13.method_3151(var6.method_3179());
       var13.method_27333(var6.method_27329());
@@ -1044,7 +1044,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1903(class_5029 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_1331 var4 = var1.method_23192();
+      BlockPos var4 = var1.method_23192();
       class_3757 var5 = this.field_6026.theWorld.method_28260(var4);
       int var6 = var1.method_23195();
       boolean var7 = var6 == 2 && var5 instanceof class_7454;
@@ -1213,10 +1213,10 @@ public class class_1092 implements class_392 {
                   } else if (var7 != 0) {
                      if (var7 == 1) {
                         this.field_6026
-                           .method_8609(new class_3129(true, () -> this.field_6026.thePlayer.field_30532.method_4813(new class_8559(class_2105.field_10549))));
+                           .method_8609(new class_3129(true, () -> this.field_6026.thePlayer.connection.method_4813(new class_8559(class_2105.field_10549))));
                      }
                   } else {
-                     this.field_6026.thePlayer.field_30532.method_4813(new class_8559(class_2105.field_10549));
+                     this.field_6026.thePlayer.connection.method_4813(new class_8559(class_2105.field_10549));
                      this.field_6026.method_8609(new class_881());
                   }
                } else {
@@ -1294,7 +1294,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1896(class_4935 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      this.field_6026.method_8590().method_16337(var1.method_22631(), var1.method_22632());
+      this.field_6026.getSoundHandler().method_16337(var1.method_22631(), var1.method_22632());
    }
 
    @Override
@@ -1309,7 +1309,7 @@ public class class_1092 implements class_392 {
       this.field_6024.method_23140(var1.method_30439());
       class_1272 var4 = this.field_6026.<class_7735>method_8532(SearchManager.field_4278);
       var4.method_5711();
-      class_2716 var5 = this.field_6026.thePlayer.method_27334();
+      ClientRecipeBook var5 = this.field_6026.thePlayer.method_27334();
       var5.method_12235(this.field_6024.method_23141());
       var5.method_12232().forEach(var4::method_5709);
       var4.method_5710();
@@ -1350,7 +1350,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1912(class_6791 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_2716 var4 = this.field_6026.thePlayer.method_27334();
+      ClientRecipeBook var4 = this.field_6026.thePlayer.method_27334();
       var4.method_5080(var1.method_31130());
       class_6265 var5 = var1.method_31128();
       switch (var5) {
@@ -1580,8 +1580,8 @@ public class class_1092 implements class_392 {
    public void method_1898(class_8283 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       this.field_6026
-         .method_8590()
-         .method_16345(
+         .getSoundHandler()
+         .play(
             new class_4949(
                var1.method_38221(),
                var1.method_38225(),
@@ -1733,10 +1733,10 @@ public class class_1092 implements class_392 {
             this.field_6026.field_9612.field_16626.method_34332(var6, var8, var7);
          } else if (class_6197.field_31652.equals(var4)) {
             long var9 = var5.method_37781();
-            class_1331 var62 = var5.method_37748();
+            BlockPos var62 = var5.method_37748();
             ((class_4921)this.field_6026.field_9612.field_16631).method_22539(var9, var62);
          } else if (class_6197.field_31654.equals(var4)) {
-            class_1331 var42 = var5.method_37748();
+            BlockPos var42 = var5.method_37748();
             int var52 = var5.readInt();
             ArrayList var63 = Lists.newArrayList();
             ArrayList var11 = Lists.newArrayList();
@@ -1776,20 +1776,20 @@ public class class_1092 implements class_392 {
                this.field_6026.field_9612.field_16624.method_39937(var5.method_37769());
             }
          } else if (class_6197.field_31646.equals(var4)) {
-            class_1331 var45 = var5.method_37748();
+            BlockPos var45 = var5.method_37748();
             String var56 = var5.method_37783();
             int var66 = var5.readInt();
             class_7942 var74 = new class_7942(var45, var56, var66);
             this.field_6026.field_9612.field_16637.method_13604(var74);
          } else if (class_6197.field_31642.equals(var4)) {
-            class_1331 var46 = var5.method_37748();
+            BlockPos var46 = var5.method_37748();
             this.field_6026.field_9612.field_16637.method_13613(var46);
          } else if (class_6197.field_31649.equals(var4)) {
-            class_1331 var47 = var5.method_37748();
+            BlockPos var47 = var5.method_37748();
             int var57 = var5.readInt();
             this.field_6026.field_9612.field_16637.method_13591(var47, var57);
          } else if (class_6197.field_31647.equals(var4)) {
-            class_1331 var48 = var5.method_37748();
+            BlockPos var48 = var5.method_37748();
             int var58 = var5.readInt();
             int var67 = var5.readInt();
             ArrayList var75 = Lists.newArrayList();
@@ -1858,14 +1858,14 @@ public class class_1092 implements class_392 {
             int var108 = var5.readInt();
 
             for (int var109 = 0; var109 < var108; var109++) {
-               class_1331 var36 = var5.method_37748();
+               BlockPos var36 = var5.method_37748();
                var30.field_32612.add(var36);
             }
 
             int var110 = var5.readInt();
 
             for (int var111 = 0; var111 < var110; var111++) {
-               class_1331 var37 = var5.method_37748();
+               BlockPos var37 = var5.method_37748();
                var30.field_32623.add(var37);
             }
 
@@ -1885,13 +1885,13 @@ public class class_1092 implements class_392 {
             UUID var86 = var5.method_37753();
             int var89 = var5.readInt();
             boolean var90 = var5.readBoolean();
-            class_1331 var91 = null;
+            BlockPos var91 = null;
             if (var90) {
                var91 = var5.method_37748();
             }
 
             boolean var92 = var5.readBoolean();
-            class_1331 var93 = null;
+            BlockPos var93 = null;
             if (var92) {
                var93 = var5.method_37748();
             }
@@ -1914,13 +1914,13 @@ public class class_1092 implements class_392 {
             int var100 = var5.readInt();
 
             for (int var102 = 0; var102 < var100; var102++) {
-               class_1331 var104 = var5.method_37748();
+               BlockPos var104 = var5.method_37748();
                var97.field_6822.add(var104);
             }
 
             this.field_6026.field_9612.field_16638.method_21178(var97);
          } else if (class_6197.field_31641.equals(var4)) {
-            class_1331 var50 = var5.method_37748();
+            BlockPos var50 = var5.method_37748();
             String var60 = var5.method_37783();
             int var69 = var5.readInt();
             int var76 = var5.readInt();
@@ -1930,7 +1930,7 @@ public class class_1092 implements class_392 {
          } else if (class_6197.field_31640.equals(var4)) {
             this.field_6026.field_9612.field_16635.method_13699();
          } else if (class_6197.field_31648.equals(var4)) {
-            class_1331 var51 = var5.method_37748();
+            BlockPos var51 = var5.method_37748();
             int var61 = var5.readInt();
             String var70 = var5.method_37783();
             int var77 = var5.readInt();
@@ -2212,7 +2212,7 @@ public class class_1092 implements class_392 {
       return null;
    }
 
-   public GameProfile method_4810() {
+   public GameProfile getGameProfile() {
       return this.field_6022;
    }
 

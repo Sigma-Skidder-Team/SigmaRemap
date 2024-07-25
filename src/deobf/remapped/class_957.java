@@ -12,9 +12,9 @@ public class class_957 extends class_6967 {
    @Override
    public boolean method_16795() {
       return super.method_16795()
-         && !this.field_4923.field_41768.method_29602()
+         && !this.field_4923.world.method_29602()
          && this.field_4923.method_37285()
-         && this.field_4923.method_37309() >= (double)(this.field_4923.field_41768.method_22552() - 3);
+         && this.field_4923.method_37309() >= (double)(this.field_4923.world.method_22552() - 3);
    }
 
    @Override
@@ -23,8 +23,8 @@ public class class_957 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
-      class_1331 var5 = var2.method_6081();
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
+      BlockPos var5 = var2.method_6081();
       return var1.method_22548(var5) && var1.method_22548(var5.method_6081()) ? var1.method_28262(var2).method_8337(var1, var2, this.field_4923) : false;
    }
 

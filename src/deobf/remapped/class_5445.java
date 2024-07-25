@@ -173,7 +173,7 @@ public class class_5445 extends Screen {
       this.field_27732.method_8255(64);
       this.field_27732.method_8281(this.field_27753.method_4113());
       this.field_942.add(this.field_27732);
-      class_1331 var3 = this.field_27753.method_4116();
+      BlockPos var3 = this.field_27753.method_4116();
       this.field_27731 = new class_1863(this.field_948, this.field_941 / 2 - 152, 80, 80, 20, new TranslationTextComponent("structure_block.position.x"));
       this.field_27731.method_8255(15);
       this.field_27731.method_8281(Integer.toString(var3.method_12173()));
@@ -186,7 +186,7 @@ public class class_5445 extends Screen {
       this.field_27756.method_8255(15);
       this.field_27756.method_8281(Integer.toString(var3.method_12185()));
       this.field_942.add(this.field_27756);
-      class_1331 var4 = this.field_27753.method_4096();
+      BlockPos var4 = this.field_27753.method_4096();
       this.field_27741 = new class_1863(this.field_948, this.field_941 / 2 - 152, 120, 80, 20, new TranslationTextComponent("structure_block.size.x"));
       this.field_27741.method_8255(15);
       this.field_27741.method_8281(Integer.toString(var4.method_12173()));
@@ -368,12 +368,12 @@ public class class_5445 extends Screen {
    }
 
    private boolean method_24821(class_6664 var1) {
-      class_1331 var4 = new class_1331(
+      BlockPos var4 = new BlockPos(
          this.method_24824(this.field_27731.method_8246()),
          this.method_24824(this.field_27762.method_8246()),
          this.method_24824(this.field_27756.method_8246())
       );
-      class_1331 var5 = new class_1331(
+      BlockPos var5 = new BlockPos(
          this.method_24824(this.field_27741.method_8246()),
          this.method_24824(this.field_27754.method_8246()),
          this.method_24824(this.field_27759.method_8246())

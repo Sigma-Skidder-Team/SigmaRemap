@@ -4,7 +4,7 @@ import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_9745 extends class_9716 {
+public class class_9745 extends AbstractClientPlayerEntity {
    public class_9745(ClientWorld var1, GameProfile var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
@@ -23,7 +23,7 @@ public class class_9745 extends class_9716 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       return true;
    }
 
@@ -39,11 +39,11 @@ public class class_9745 extends class_9716 {
          double var4 = this.method_37302() + (this.field_29597 - this.method_37302()) / (double)this.field_29612;
          double var6 = this.method_37309() + (this.field_29609 - this.method_37309()) / (double)this.field_29612;
          double var8 = this.method_37156() + (this.field_29650 - this.method_37156()) / (double)this.field_29612;
-         this.field_41701 = (float)((double)this.field_41701 + class_9299.method_42809(this.field_29604 - (double)this.field_41701) / (double)this.field_29612);
-         this.field_41755 = (float)((double)this.field_41755 + (this.field_29625 - (double)this.field_41755) / (double)this.field_29612);
+         this.rotationYaw = (float)((double)this.rotationYaw + class_9299.method_42809(this.field_29604 - (double)this.rotationYaw) / (double)this.field_29612);
+         this.rotationPitch = (float)((double)this.rotationPitch + (this.field_29625 - (double)this.rotationPitch) / (double)this.field_29612);
          this.field_29612--;
          this.method_37256(var4, var6, var8);
-         this.method_37395(this.field_41701, this.field_41755);
+         this.method_37395(this.rotationYaw, this.rotationPitch);
       }
 
       if (this.field_29653 > 0) {
@@ -67,9 +67,9 @@ public class class_9745 extends class_9716 {
       }
 
       this.field_3859 = this.field_3859 + (var3 - this.field_3859) * 0.4F;
-      this.field_41768.method_29599().startSection("push");
+      this.world.method_29599().startSection("push");
       this.method_26428();
-      this.field_41768.method_29599().endSection();
+      this.world.method_29599().endSection();
    }
 
    @Override

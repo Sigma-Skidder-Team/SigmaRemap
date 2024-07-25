@@ -44,7 +44,7 @@ public abstract class class_4040 extends class_4607 {
 
    @Override
    public void method_26606() {
-      if (this.field_41768 instanceof class_6331 && this.method_37330()) {
+      if (this.world instanceof class_6331 && this.method_37330()) {
          class_2452 var3 = this.method_18589();
          if (this.method_18593()) {
             if (var3 != null) {
@@ -52,10 +52,10 @@ public abstract class class_4040 extends class_4607 {
                if (var4 != null && (var4.method_37387() == class_6629.field_34300 || var4.method_37387() == class_6629.field_34298)) {
                   this.field_29658 = 0;
                }
-            } else if (this.field_41768.method_29546() % 20L == 0L) {
-               class_2452 var5 = ((class_6331)this.field_41768).method_28984(this.method_37075());
+            } else if (this.world.method_29546() % 20L == 0L) {
+               class_2452 var5 = ((class_6331)this.world).method_28984(this.method_37075());
                if (var5 != null && class_8996.method_41275(this, var5)) {
-                  var5.method_11275(var5.method_11262(), this, (class_1331)null, true);
+                  var5.method_11275(var5.method_11262(), this, (BlockPos)null, true);
                }
             }
          }
@@ -70,8 +70,8 @@ public abstract class class_4040 extends class_4607 {
    }
 
    @Override
-   public void method_26452(class_6199 var1) {
-      if (this.field_41768 instanceof class_6331) {
+   public void method_26452(DamageSource var1) {
+      if (this.world instanceof class_6331) {
          Entity var4 = var1.method_28372();
          class_2452 var5 = this.method_18589();
          if (var5 != null) {
@@ -86,7 +86,7 @@ public abstract class class_4040 extends class_4607 {
             var5.method_11289(this, false);
          }
 
-         if (this.method_21359() && var5 == null && ((class_6331)this.field_41768).method_28984(this.method_37075()) == null) {
+         if (this.method_21359() && var5 == null && ((class_6331)this.world).method_28984(this.method_37075()) == null) {
             ItemStack var6 = this.method_26520(class_6943.field_35704);
             class_704 var7 = null;
             if (!(var4 instanceof class_704)) {
@@ -113,7 +113,7 @@ public abstract class class_4040 extends class_4607 {
 
                var12 = class_9299.method_42829(var12, 0, 4);
                class_2250 var10 = new class_2250(Effects.field_19721, 120000, var12, false, false, true);
-               if (!this.field_41768.method_29537().method_1285(class_291.field_1045)) {
+               if (!this.world.method_29537().method_1285(class_291.field_1045)) {
                   var7.method_26558(var10);
                }
             }
@@ -173,8 +173,8 @@ public abstract class class_4040 extends class_4607 {
       this.field_19611 = var1.method_25947("Wave");
       this.field_19608 = var1.getBoolean("CanJoinRaid");
       if (var1.contains("RaidId", 3)) {
-         if (this.field_41768 instanceof class_6331) {
-            this.field_19610 = ((class_6331)this.field_41768).method_28985().method_41269(var1.method_25947("RaidId"));
+         if (this.world instanceof class_6331) {
+            this.field_19610 = ((class_6331)this.world).method_28985().method_41269(var1.method_25947("RaidId"));
          }
 
          if (this.field_19610 != null) {
@@ -228,12 +228,12 @@ public abstract class class_4040 extends class_4607 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (this.method_18600()) {
          this.method_18589().method_11290();
       }
 
-      return super.method_37181(var1, var2);
+      return super.attackEntityFrom(var1, var2);
    }
 
    @Nullable

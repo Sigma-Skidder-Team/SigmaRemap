@@ -9,7 +9,7 @@ public class class_8595 extends class_9270 {
    }
 
    @Override
-   public boolean method_42716(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_8351 var5) {
+   public boolean method_42716(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_8351 var5) {
       while (var1.method_22548(var4) && var4.method_12165() > 2) {
          var4 = var4.method_6100();
       }

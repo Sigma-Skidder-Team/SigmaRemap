@@ -84,7 +84,7 @@ public class class_2143 extends class_6249 {
                      int var21 = (var7 / var6 + var14 - 64) * var6;
                      int var22 = (var8 / var6 + var17 - 64) * var6;
                      LinkedHashMultiset var23 = LinkedHashMultiset.create();
-                     class_2654 var24 = var1.method_29542(new class_1331(var21, 0, var22));
+                     class_2654 var24 = var1.method_29542(new BlockPos(var21, 0, var22));
                      if (!var24.method_12003()) {
                         class_2034 var25 = var24.method_27352();
                         int var26 = var21 & 15;
@@ -131,9 +131,9 @@ public class class_2143 extends class_6249 {
                            int var42 = var21 + var22 * 231871;
                            var42 = var42 * var42 * 31287121 + var42 * 11;
                            if ((var42 >> 20 & 1) != 0) {
-                              var23.add(class_4783.field_23644.method_29260().method_8323(var1, class_1331.field_7306), 100);
+                              var23.add(class_4783.field_23644.method_29260().method_8323(var1, BlockPos.field_7306), 100);
                            } else {
-                              var23.add(class_4783.field_23592.method_29260().method_8323(var1, class_1331.field_7306), 10);
+                              var23.add(class_4783.field_23592.method_29260().method_8323(var1, BlockPos.field_7306), 10);
                            }
 
                            var29 = 100.0;
@@ -181,7 +181,7 @@ public class class_2143 extends class_6249 {
       }
    }
 
-   private class_2522 method_10010(World var1, class_2522 var2, class_1331 var3) {
+   private class_2522 method_10010(World var1, class_2522 var2, BlockPos var3) {
       class_4774 var6 = var2.method_8364();
       return !var6.method_22001() && !var2.method_8308(var1, var3, Direction.field_817) ? var6.method_22006() : var2;
    }
@@ -200,7 +200,7 @@ public class class_2143 extends class_6249 {
 
          for (int var9 = 0; var9 < 128 * var5; var9++) {
             for (int var10 = 0; var10 < 128 * var5; var10++) {
-               var8[var9 * 128 * var5 + var10] = var0.method_22561(new class_1331((var6 / var5 - 64) * var5 + var10, 0, (var7 / var5 - 64) * var5 + var9));
+               var8[var9 * 128 * var5 + var10] = var0.method_22561(new BlockPos((var6 / var5 - 64) * var5 + var10, 0, (var7 / var5 - 64) * var5 + var9));
             }
          }
 

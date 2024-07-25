@@ -10,7 +10,7 @@ public class class_1897 implements Packet<class_392> {
    public double field_9689;
    public double field_9685;
    public float field_9686;
-   public List<class_1331> field_9690;
+   public List<BlockPos> field_9690;
    public float field_9687;
    public float field_9692;
    public float field_9693;
@@ -18,7 +18,7 @@ public class class_1897 implements Packet<class_392> {
    public class_1897() {
    }
 
-   public class_1897(double var1, double var3, double var5, float var7, List<class_1331> var8, class_1343 var9) {
+   public class_1897(double var1, double var3, double var5, float var7, List<BlockPos> var8, class_1343 var9) {
       this.field_9691 = var1;
       this.field_9689 = var3;
       this.field_9685 = var5;
@@ -47,7 +47,7 @@ public class class_1897 implements Packet<class_392> {
          int var9 = var1.readByte() + var5;
          int var10 = var1.readByte() + var6;
          int var11 = var1.readByte() + var7;
-         this.field_9690.add(new class_1331(var9, var10, var11));
+         this.field_9690.add(new BlockPos(var9, var10, var11));
       }
 
       this.field_9687 = var1.readFloat();
@@ -66,7 +66,7 @@ public class class_1897 implements Packet<class_392> {
       int var5 = class_9299.method_42847(this.field_9689);
       int var6 = class_9299.method_42847(this.field_9685);
 
-      for (class_1331 var8 : this.field_9690) {
+      for (BlockPos var8 : this.field_9690) {
          int var9 = var8.method_12173() - var4;
          int var10 = var8.method_12165() - var5;
          int var11 = var8.method_12185() - var6;
@@ -112,7 +112,7 @@ public class class_1897 implements Packet<class_392> {
       return this.field_9686;
    }
 
-   public List<class_1331> method_8629() {
+   public List<BlockPos> method_8629() {
       return this.field_9690;
    }
 }

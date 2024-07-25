@@ -29,7 +29,7 @@ public class class_3435 {
             this.field_16885 = "water";
          }
       } else {
-         class_2522 var4 = this.field_16886.field_41768.method_28262((class_1331)var3.get());
+         class_2522 var4 = this.field_16886.world.method_28262((BlockPos)var3.get());
          if (var4.method_8350(class_4783.field_23748) || var4.method_8349(class_2351.field_11806)) {
             this.field_16885 = "ladder";
          } else if (!var4.method_8350(class_4783.field_23323)) {
@@ -48,7 +48,7 @@ public class class_3435 {
       }
    }
 
-   public void method_15875(class_6199 var1, float var2, float var3) {
+   public void method_15875(DamageSource var1, float var2, float var3) {
       this.method_15868();
       this.method_15872();
       class_8869 var6 = new class_8869(var1, this.field_16886.field_41697, var2, var3, this.field_16885, this.field_16886.field_41706);
@@ -72,9 +72,9 @@ public class class_3435 {
          ITextComponent var5 = var4.method_40803();
          Entity var6 = var4.method_40799().method_28372();
          Object var7;
-         if (var3 != null && var4.method_40799() == class_6199.field_31684) {
+         if (var3 != null && var4.method_40799() == DamageSource.field_31684) {
             ITextComponent var8 = var3.method_40803();
-            if (var3.method_40799() == class_6199.field_31684 || var3.method_40799() == class_6199.field_31685) {
+            if (var3.method_40799() == DamageSource.field_31684 || var3.method_40799() == DamageSource.field_31685) {
                var7 = new TranslationTextComponent("death.fell.accident." + this.method_15869(var3), this.field_16886.method_19839());
             } else if (var8 != null && (var5 == null || !var8.equals(var5))) {
                Entity var11 = var3.method_40799().method_28372();
@@ -134,7 +134,7 @@ public class class_3435 {
       for (int var7 = 0; var7 < this.field_16881.size(); var7++) {
          class_8869 var8 = this.field_16881.get(var7);
          class_8869 var9 = var7 <= 0 ? null : this.field_16881.get(var7 - 1);
-         if ((var8.method_40799() == class_6199.field_31684 || var8.method_40799() == class_6199.field_31685)
+         if ((var8.method_40799() == DamageSource.field_31684 || var8.method_40799() == DamageSource.field_31685)
             && var8.method_40804() > 0.0F
             && (var3 == null || var8.method_40804() > var6)) {
             if (var7 <= 0) {

@@ -1,19 +1,19 @@
 package remapped;
 
 public class class_970 {
-   private final class_1331 field_4967;
+   private final BlockPos field_4967;
    private final class_6414 field_4965;
    private final int field_4963;
    private final int field_4964;
 
-   public class_970(class_1331 var1, class_6414 var2, int var3, int var4) {
+   public class_970(BlockPos var1, class_6414 var2, int var3, int var4) {
       this.field_4967 = var1;
       this.field_4965 = var2;
       this.field_4963 = var3;
       this.field_4964 = var4;
    }
 
-   public class_1331 method_4248() {
+   public BlockPos method_4248() {
       return this.field_4967;
    }
 

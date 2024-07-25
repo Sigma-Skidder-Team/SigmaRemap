@@ -93,7 +93,7 @@ public class class_7427 {
       );
    }
 
-   private static int method_33819(class_9155 var0, class_1331 var1, int var2, ItemStack var3) throws CommandSyntaxException {
+   private static int method_33819(class_9155 var0, BlockPos var1, int var2, ItemStack var3) throws CommandSyntaxException {
       class_3757 var6 = var0.method_42198().method_28260(var1);
       if (var6 instanceof class_6867) {
          class_6867 var7 = (class_6867)var6;

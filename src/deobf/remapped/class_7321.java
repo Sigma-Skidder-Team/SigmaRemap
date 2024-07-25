@@ -74,7 +74,7 @@ public class class_7321 {
    }
 
    public boolean method_33382(class_6163 var1, int var2) {
-      class_1331 var5 = new class_1331(this.field_37430, (double)(this.method_33384(var1, var2) - 1), this.field_37432);
+      BlockPos var5 = new BlockPos(this.field_37430, (double)(this.method_33384(var1, var2) - 1), this.field_37432);
       class_2522 var6 = var1.method_28262(var5);
       class_5371 var7 = var6.method_8362();
       return var5.method_12165() < var2 && !var7.method_24494() && var7 != class_5371.field_27434;

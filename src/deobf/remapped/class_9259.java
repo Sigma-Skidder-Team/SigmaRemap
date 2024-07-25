@@ -3,16 +3,16 @@ package remapped;
 public class class_9259 implements Comparable<class_9259> {
    private static String[] field_47247;
    private final int field_47248;
-   private final class_1331 field_47249;
+   private final BlockPos field_47249;
    private int field_47251;
    private int field_47250;
 
-   public class_9259(int var1, class_1331 var2) {
+   public class_9259(int var1, BlockPos var2) {
       this.field_47248 = var1;
       this.field_47249 = var2;
    }
 
-   public class_1331 method_42661() {
+   public BlockPos method_42661() {
       return this.field_47249;
    }
 

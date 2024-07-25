@@ -10,7 +10,7 @@ public class class_8509 extends class_2833 {
    public class_8509(class_378 var1) {
       super(var1);
       this.field_43554 = var1;
-      this.field_43556 = 180.0F * var1.field_41701 / (float) Math.PI;
+      this.field_43556 = 180.0F * var1.rotationYaw / (float) Math.PI;
    }
 
    public void method_39183(float var1, boolean var2) {
@@ -25,9 +25,9 @@ public class class_8509 extends class_2833 {
 
    @Override
    public void method_12883() {
-      this.field_13879.field_41701 = this.method_12882(this.field_13879.field_41701, this.field_43556, 90.0F);
-      this.field_13879.field_29618 = this.field_13879.field_41701;
-      this.field_13879.field_29605 = this.field_13879.field_41701;
+      this.field_13879.rotationYaw = this.method_12882(this.field_13879.rotationYaw, this.field_43556, 90.0F);
+      this.field_13879.field_29618 = this.field_13879.rotationYaw;
+      this.field_13879.field_29605 = this.field_13879.rotationYaw;
       if (this.field_13878 == class_1737.field_8946) {
          this.field_13878 = class_1737.field_8945;
          if (!this.field_13879.method_37360()) {

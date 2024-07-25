@@ -398,7 +398,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    public void method_35869(class_704 var1) {
-      List var4 = this.method_35879(var1.field_41768, var1.method_37245());
+      List var4 = this.method_35879(var1.world, var1.method_37245());
       var1.method_3223(var4);
       this.field_40586.clear();
    }

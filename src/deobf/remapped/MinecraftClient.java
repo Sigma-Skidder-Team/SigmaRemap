@@ -328,7 +328,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       StringBuilder var1 = new StringBuilder(SigmaMainClass.getInstance().method_3312() == class_6015.field_30645 ? "Jello for Sigma 5.0" : "Sigma 5.0");
       var1.append(" ");
       var1.append(class_7665.method_34674().getName());
-      class_1092 var2 = this.method_8614();
+      ClientPlayNetHandler var2 = this.method_8614();
       if (var2 != null && var2.method_9091().method_23493()) {
          var1.append(" - ");
          if (this.field_9646 != null && !this.field_9646.method_1624()) {
@@ -1073,12 +1073,12 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       if (this.field_9582 <= 0 && !this.thePlayer.method_26554()) {
          if (var1 && this.field_9587 != null && this.field_9587.method_33990() == class_1430.field_7717) {
             class_9529 var2 = (class_9529)this.field_9587;
-            class_1331 var3 = var2.method_43955();
+            BlockPos var3 = var2.method_43955();
             if (!this.theWorld.method_28262(var3).method_8345()) {
                Direction var4 = var2.method_43956();
                if (this.playerController.method_42163(var3, var4)) {
                   this.field_9572.method_43058(var3, var4);
-                  this.thePlayer.method_26597(class_2584.field_12791);
+                  this.thePlayer.method_26597(Hand.MAIN_HAND);
                }
             }
          } else {
@@ -1111,7 +1111,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
                boolean var3 = class_3347.method_15348().equals(class_412.field_1747);
                if (var3) {
-                  this.thePlayer.method_26597(class_2584.field_12791);
+                  this.thePlayer.method_26597(Hand.MAIN_HAND);
                }
 
                switch (this.field_9587.method_33990()) {
@@ -1124,7 +1124,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                      break;
                   case field_7717:
                      class_9529 var4 = (class_9529)this.field_9587;
-                     class_1331 var5 = var4.method_43955();
+                     BlockPos var5 = var4.method_43955();
                      if (!this.theWorld.method_28262(var5).method_8345()) {
                         this.playerController.method_42142(var5, var4.method_43956());
                         break;
@@ -1138,7 +1138,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                }
 
                if (!var3) {
-                  this.thePlayer.method_26597(class_2584.field_12791);
+                  this.thePlayer.method_26597(Hand.MAIN_HAND);
                }
             }
          }
@@ -1158,7 +1158,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   LOGGER.warn("Null returned as 'hitResult', this shouldn't happen!");
                }
 
-               for (class_2584 var5 : class_2584.values()) {
+               for (Hand var5 : Hand.values()) {
                   ItemStack var6 = this.thePlayer.method_26617(var5);
                   if (this.field_9587 != null) {
                      switch (this.field_9587.method_33990()) {
@@ -1412,18 +1412,18 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       while (this.gameOptions.keyAdvancements.isPressed()) {
-         this.method_8609(new class_9044(this.thePlayer.field_30532.method_4796()));
+         this.method_8609(new class_9044(this.thePlayer.connection.method_4796()));
       }
 
       while (this.gameOptions.keySwapOffHand.isPressed()) {
          if (!this.thePlayer.method_37221()) {
-            this.method_8614().method_4813(new class_1586(class_7500.field_38260, class_1331.field_7306, Direction.field_802));
+            this.method_8614().method_4813(new class_1586(class_7500.field_38260, BlockPos.field_7306, Direction.field_802));
          }
       }
 
       while (this.gameOptions.keyDrop.isPressed()) {
          if (!this.thePlayer.method_37221() && this.thePlayer.method_3235(Screen.method_1185())) {
-            this.thePlayer.method_26597(class_2584.field_12791);
+            this.thePlayer.method_26597(Hand.MAIN_HAND);
          }
       }
 
@@ -1723,7 +1723,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    public void method_8500(Screen var1) {
-      class_1092 var2 = this.method_8614();
+      ClientPlayNetHandler var2 = this.method_8614();
       if (var2 != null) {
          this.method_34459();
          var2.method_4818();
@@ -1801,8 +1801,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    @Nullable
-   public class_1092 method_8614() {
-      return this.thePlayer == null ? null : this.thePlayer.field_30532;
+   public ClientPlayNetHandler method_8614() {
+      return this.thePlayer == null ? null : this.thePlayer.connection;
    }
 
    public static boolean method_8616() {
@@ -1833,7 +1833,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             class_1430 var4 = this.field_9587.method_33990();
             ItemStack var5;
             if (var4 == class_1430.field_7717) {
-               class_1331 var6 = ((class_9529)this.field_9587).method_43955();
+               BlockPos var6 = ((class_9529)this.field_9587).method_43955();
                class_2522 var7 = this.theWorld.method_28262(var6);
                class_6414 var8 = var7.method_8360();
                if (var7.method_8345()) {
@@ -1866,8 +1866,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   } else {
                      var5 = var16.method_27973();
                   }
-               } else if (var9 instanceof class_1080) {
-                  class_1080 var13 = (class_1080)var9;
+               } else if (var9 instanceof AbstractMinecartEntity) {
+                  AbstractMinecartEntity var13 = (AbstractMinecartEntity)var9;
                   class_2451 var17;
                   switch (var13.method_4737()) {
                      case field_17068:
@@ -1890,8 +1890,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   }
 
                   var5 = new ItemStack(var17);
-               } else if (var9 instanceof class_9149) {
-                  var5 = new ItemStack(((class_9149)var9).method_42090());
+               } else if (var9 instanceof BoatEntity) {
+                  var5 = new ItemStack(((BoatEntity)var9).method_42090());
                } else if (var9 instanceof class_9399) {
                   var5 = new ItemStack(class_4897.field_24960);
                } else if (var9 instanceof class_3577) {
@@ -1926,7 +1926,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                int var15 = var11.method_32407(var5);
                if (var2) {
                   var11.method_32427(var5);
-                  this.playerController.method_42148(this.thePlayer.method_26617(class_2584.field_12791), 36 + var11.field_36404);
+                  this.playerController.method_42148(this.thePlayer.method_26617(Hand.MAIN_HAND), 36 + var11.field_36404);
                } else if (var15 != -1) {
                   if (class_7051.method_32417(var15)) {
                      var11.field_36404 = var15;
@@ -2182,7 +2182,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       return this.field_9636;
    }
 
-   public class_3541 method_8590() {
+   public class_3541 getSoundHandler() {
       return this.field_9611;
    }
 
@@ -2190,17 +2190,17 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       if (this.field_9623 instanceof class_3129) {
          return class_2623.field_12931;
       } else if (this.thePlayer != null) {
-         if (this.thePlayer.field_41768.method_29545() == World.field_33038) {
+         if (this.thePlayer.world.method_29545() == World.field_33038) {
             return this.field_9614.method_13972().method_21876() ? class_2623.field_12932 : class_2623.field_12929;
          } else {
-            class_8862 var1 = this.thePlayer.field_41768.method_22561(this.thePlayer.method_37075()).method_28887();
+            class_8862 var1 = this.thePlayer.world.method_22561(this.thePlayer.method_37075()).method_28887();
             if (!this.field_9568.method_31308(class_2623.field_12930)
                && (!this.thePlayer.method_37179() || var1 != class_8862.field_45309 && var1 != class_8862.field_45297)) {
-               return this.thePlayer.field_41768.method_29545() != World.field_33029
+               return this.thePlayer.world.method_29545() != World.field_33029
                      && this.thePlayer.playerAbilities.isCreativeMode
                      && this.thePlayer.playerAbilities.allowFlying
                   ? class_2623.field_12925
-                  : this.theWorld.method_22564().method_3725(this.thePlayer.method_37075()).method_28879().orElse(class_2623.field_12928);
+                  : this.theWorld.getBiomeManager().method_3725(this.thePlayer.method_37075()).method_28879().orElse(class_2623.field_12928);
             } else {
                return class_2623.field_12930;
             }

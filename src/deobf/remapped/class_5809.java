@@ -13,7 +13,7 @@ public class class_5809 extends class_3599 {
 
    public class_5809(class_9408 var1, float var2) {
       this.field_29320 = var1;
-      this.field_29324 = var1.field_41768;
+      this.field_29324 = var1.world;
       this.field_29323 = var2;
       this.field_29319 = new class_4931().method_22607((double)var2).method_22603().method_22601().method_22609();
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9560));
@@ -59,7 +59,7 @@ public class class_5809 extends class_3599 {
    }
 
    private boolean method_26302(class_704 var1) {
-      for (class_2584 var7 : class_2584.values()) {
+      for (Hand var7 : Hand.values()) {
          ItemStack var8 = var1.method_26617(var7);
          if (this.field_29320.method_41215() && var8.method_27960() == class_4897.field_24384) {
             return true;

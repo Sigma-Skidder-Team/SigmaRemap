@@ -219,7 +219,7 @@ public class DebugOverlayGui extends AbstractGui {
          var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field_18930.thePlayer.method_27309(), var5, var6);
       }
 
-      class_1331 var8 = this.field_18930.getRenderViewEntity().method_37075();
+      BlockPos var8 = this.field_18930.getRenderViewEntity().method_37075();
       String var9 = class_7665.method_34674().getName();
       if (!this.field_18930.method_8520()) {
          var9 = class_412.method_2051(class_3347.method_15349()).method_2045();
@@ -320,12 +320,12 @@ public class DebugOverlayGui extends AbstractGui {
                "Facing: %s (%s) (%.1f / %.1f)",
                var11,
                var12,
-               class_9299.method_42810(var10.field_41701),
-               class_9299.method_42810(var10.field_41755)
+               class_9299.method_42810(var10.rotationYaw),
+               class_9299.method_42810(var10.rotationPitch)
             )
          );
          if (this.field_18930.theWorld != null) {
-            if (this.field_18930.theWorld.method_22559(var8)) {
+            if (this.field_18930.theWorld.isBlockLoaded(var8)) {
                class_2654 var18 = this.method_17990();
                if (var18.method_12003()) {
                   var16.add("Waiting for chunk...");
@@ -435,7 +435,7 @@ public class DebugOverlayGui extends AbstractGui {
          }
 
          var16.add(
-            this.field_18930.method_8590().method_16332() + String.format(" (Mood %d%%)", Math.round(this.field_18930.thePlayer.method_27306() * 100.0F))
+            this.field_18930.getSoundHandler().method_16332() + String.format(" (Mood %d%%)", Math.round(this.field_18930.thePlayer.method_27306() * 100.0F))
          );
          return var16;
       }
@@ -530,7 +530,7 @@ public class DebugOverlayGui extends AbstractGui {
          return var11;
       } else {
          if (this.field_18928.method_33990() == class_1430.field_7717) {
-            class_1331 var24 = ((class_9529)this.field_18928).method_43955();
+            BlockPos var24 = ((class_9529)this.field_18928).method_43955();
             class_2522 var27 = this.field_18930.theWorld.method_28262(var24);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Block: " + var24.method_12173() + ", " + var24.method_12165() + ", " + var24.method_12185());
@@ -555,7 +555,7 @@ public class DebugOverlayGui extends AbstractGui {
          }
 
          if (this.field_18929.method_33990() == class_1430.field_7717) {
-            class_1331 var25 = ((class_9529)this.field_18929).method_43955();
+            BlockPos var25 = ((class_9529)this.field_18929).method_43955();
             class_4774 var28 = this.field_18930.theWorld.method_28258(var25);
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Fluid: " + var25.method_12173() + ", " + var25.method_12165() + ", " + var25.method_12185());

@@ -7,13 +7,13 @@ import javax.annotation.Nullable;
 public class class_8360 {
    private static String[] field_42827;
    private final World field_42830;
-   private final class_1331 field_42828;
+   private final BlockPos field_42828;
    private final class_6788 field_42831;
    private class_2522 field_42826;
    private final boolean field_42829;
-   private final List<class_1331> field_42832 = Lists.newArrayList();
+   private final List<BlockPos> field_42832 = Lists.newArrayList();
 
-   public class_8360(World var1, class_1331 var2, class_2522 var3) {
+   public class_8360(World var1, BlockPos var2, class_2522 var3) {
       this.field_42830 = var1;
       this.field_42828 = var2;
       this.field_42826 = var3;
@@ -23,7 +23,7 @@ public class class_8360 {
       this.method_38535(var6);
    }
 
-   public List<class_1331> method_38542() {
+   public List<BlockPos> method_38542() {
       return this.field_42832;
    }
 
@@ -85,17 +85,17 @@ public class class_8360 {
       }
    }
 
-   private boolean method_38537(class_1331 var1) {
+   private boolean method_38537(BlockPos var1) {
       return class_6788.method_31116(this.field_42830, var1)
          || class_6788.method_31116(this.field_42830, var1.method_6081())
          || class_6788.method_31116(this.field_42830, var1.method_6100());
    }
 
    @Nullable
-   private class_8360 method_38544(class_1331 var1) {
+   private class_8360 method_38544(BlockPos var1) {
       class_2522 var4 = this.field_42830.method_28262(var1);
       if (!class_6788.method_31115(var4)) {
-         class_1331 var5 = var1.method_6081();
+         BlockPos var5 = var1.method_6081();
          var4 = this.field_42830.method_28262(var5);
          if (!class_6788.method_31115(var4)) {
             var5 = var1.method_6100();
@@ -113,9 +113,9 @@ public class class_8360 {
       return this.method_38539(var1.field_42828);
    }
 
-   private boolean method_38539(class_1331 var1) {
+   private boolean method_38539(BlockPos var1) {
       for (int var4 = 0; var4 < this.field_42832.size(); var4++) {
-         class_1331 var5 = this.field_42832.get(var4);
+         BlockPos var5 = this.field_42832.get(var4);
          if (var5.method_12173() == var1.method_12173() && var5.method_12185() == var1.method_12185()) {
             return true;
          }
@@ -142,10 +142,10 @@ public class class_8360 {
 
    private void method_38536(class_8360 var1) {
       this.field_42832.add(var1.field_42828);
-      class_1331 var4 = this.field_42828.method_6094();
-      class_1331 var5 = this.field_42828.method_6073();
-      class_1331 var6 = this.field_42828.method_6108();
-      class_1331 var7 = this.field_42828.method_6090();
+      BlockPos var4 = this.field_42828.method_6094();
+      BlockPos var5 = this.field_42828.method_6073();
+      BlockPos var6 = this.field_42828.method_6108();
+      BlockPos var7 = this.field_42828.method_6090();
       boolean var8 = this.method_38539(var4);
       boolean var9 = this.method_38539(var5);
       boolean var10 = this.method_38539(var6);
@@ -205,7 +205,7 @@ public class class_8360 {
       this.field_42830.method_7513(this.field_42828, this.field_42826, 3);
    }
 
-   private boolean method_38546(class_1331 var1) {
+   private boolean method_38546(BlockPos var1) {
       class_8360 var4 = this.method_38544(var1);
       if (var4 != null) {
          var4.method_38541();
@@ -216,10 +216,10 @@ public class class_8360 {
    }
 
    public class_8360 method_38534(boolean var1, boolean var2, class_3665 var3) {
-      class_1331 var6 = this.field_42828.method_6094();
-      class_1331 var7 = this.field_42828.method_6073();
-      class_1331 var8 = this.field_42828.method_6108();
-      class_1331 var9 = this.field_42828.method_6090();
+      BlockPos var6 = this.field_42828.method_6094();
+      BlockPos var7 = this.field_42828.method_6073();
+      BlockPos var8 = this.field_42828.method_6108();
+      BlockPos var9 = this.field_42828.method_6090();
       boolean var10 = this.method_38546(var6);
       boolean var11 = this.method_38546(var7);
       boolean var12 = this.method_38546(var8);

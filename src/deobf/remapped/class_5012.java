@@ -8,8 +8,8 @@ public class class_5012 extends class_4285<class_2045> {
       super(var1);
    }
 
-   public boolean method_23067(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_2045 var5) {
-      var4 = new class_1331(var4.method_12173(), var2.method_29816(), var4.method_12185());
+   public boolean method_23067(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_2045 var5) {
+      var4 = new BlockPos(var4.method_12173(), var2.method_29816(), var4.method_12185());
       boolean var8 = var3.nextDouble() > 0.7;
       class_2522 var9 = var5.field_10356;
       double var10 = var3.nextDouble() * 2.0 * Math.PI;
@@ -59,7 +59,7 @@ public class class_5012 extends class_4285<class_2045> {
       return true;
    }
 
-   private void method_23064(Random var1, class_9379 var2, int var3, int var4, class_1331 var5, boolean var6, int var7, double var8, int var10) {
+   private void method_23064(Random var1, class_9379 var2, int var3, int var4, BlockPos var5, boolean var6, int var7, double var8, int var10) {
       int var13 = !var1.nextBoolean() ? 1 : -1;
       int var14 = !var1.nextBoolean() ? 1 : -1;
       int var15 = var1.nextInt(Math.max(var3 / 2 - 2, 1));
@@ -76,7 +76,7 @@ public class class_5012 extends class_4285<class_2045> {
          var15 = var16 = var1.nextInt(Math.max(var7 - 5, 1));
       }
 
-      class_1331 var17 = new class_1331(var13 * var15, 0, var14 * var16);
+      BlockPos var17 = new BlockPos(var13 * var15, 0, var14 * var16);
       double var18 = !var6 ? var1.nextDouble() * 2.0 * Math.PI : var8 + (Math.PI / 2);
 
       for (int var20 = 0; var20 < var4 - 3; var20++) {
@@ -90,7 +90,7 @@ public class class_5012 extends class_4285<class_2045> {
       }
    }
 
-   private void method_23060(int var1, int var2, class_1331 var3, class_9379 var4, boolean var5, double var6, class_1331 var8, int var9, int var10) {
+   private void method_23060(int var1, int var2, BlockPos var3, class_9379 var4, boolean var5, double var6, BlockPos var8, int var9, int var10) {
       int var13 = var1 + 1 + var9 / 3;
       int var14 = Math.min(var1 - 3, 3) + var10 / 2 - 1;
 
@@ -98,7 +98,7 @@ public class class_5012 extends class_4285<class_2045> {
          for (int var16 = -var13; var16 < var13; var16++) {
             double var17 = this.method_23071(var15, var16, var8, var13, var14, var6);
             if (var17 < 0.0) {
-               class_1331 var19 = var3.method_6104(var15, var2, var16);
+               BlockPos var19 = var3.method_6104(var15, var2, var16);
                class_6414 var20 = var4.method_28262(var19).method_8360();
                if (this.method_23073(var20) || var20 == class_4783.field_23813) {
                   if (!var5) {
@@ -113,7 +113,7 @@ public class class_5012 extends class_4285<class_2045> {
       }
    }
 
-   private void method_23065(class_9379 var1, class_1331 var2) {
+   private void method_23065(class_9379 var1, BlockPos var2) {
       if (var1.method_28262(var2.method_6081()).method_8350(class_4783.field_23552)) {
          this.method_19906(var1, var2.method_6081(), class_4783.field_23184.method_29260());
       }
@@ -122,7 +122,7 @@ public class class_5012 extends class_4285<class_2045> {
    private void method_23072(
       class_9379 var1,
       Random var2,
-      class_1331 var3,
+      BlockPos var3,
       int var4,
       int var5,
       int var6,
@@ -136,10 +136,10 @@ public class class_5012 extends class_4285<class_2045> {
       class_2522 var15
    ) {
       double var18 = !var10
-         ? this.method_23068(var5, var7, class_1331.field_7306, var8, var2)
-         : this.method_23071(var5, var7, class_1331.field_7306, var9, this.method_23074(var6, var4, var11), var12);
+         ? this.method_23068(var5, var7, BlockPos.field_7306, var8, var2)
+         : this.method_23071(var5, var7, BlockPos.field_7306, var9, this.method_23074(var6, var4, var11), var12);
       if (var18 < 0.0) {
-         class_1331 var20 = var3.method_6104(var5, var6, var7);
+         BlockPos var20 = var3.method_6104(var5, var6, var7);
          double var21 = !var10 ? (double)(-6 - var2.nextInt(3)) : -0.5;
          if (var18 > var21 && var2.nextDouble() > 0.9) {
             return;
@@ -149,7 +149,7 @@ public class class_5012 extends class_4285<class_2045> {
       }
    }
 
-   private void method_23063(class_1331 var1, class_9379 var2, Random var3, int var4, int var5, boolean var6, boolean var7, class_2522 var8) {
+   private void method_23063(BlockPos var1, class_9379 var2, Random var3, int var4, int var5, boolean var6, boolean var7, class_2522 var8) {
       class_2522 var11 = var2.method_28262(var1);
       if (var11.method_8362() == class_5371.field_27403
          || var11.method_8350(class_4783.field_23813)
@@ -177,7 +177,7 @@ public class class_5012 extends class_4285<class_2045> {
       return var6;
    }
 
-   private double method_23068(int var1, int var2, class_1331 var3, int var4, Random var5) {
+   private double method_23068(int var1, int var2, BlockPos var3, int var4, Random var5) {
       float var8 = 10.0F * class_9299.method_42828(var5.nextFloat(), 0.2F, 0.8F) / (float)var4;
       return (double)var8
          + Math.pow((double)(var1 - var3.method_12173()), 2.0)
@@ -185,7 +185,7 @@ public class class_5012 extends class_4285<class_2045> {
          - Math.pow((double)var4, 2.0);
    }
 
-   private double method_23071(int var1, int var2, class_1331 var3, int var4, int var5, double var6) {
+   private double method_23071(int var1, int var2, BlockPos var3, int var4, int var5, double var6) {
       return Math.pow(((double)(var1 - var3.method_12173()) * Math.cos(var6) - (double)(var2 - var3.method_12185()) * Math.sin(var6)) / (double)var4, 2.0)
          + Math.pow(((double)(var1 - var3.method_12173()) * Math.sin(var6) + (double)(var2 - var3.method_12185()) * Math.cos(var6)) / (double)var5, 2.0)
          - 1.0;
@@ -218,17 +218,17 @@ public class class_5012 extends class_4285<class_2045> {
       return var1 == class_4783.field_23829 || var1 == class_4783.field_23813 || var1 == class_4783.field_23437;
    }
 
-   private boolean method_23062(class_6163 var1, class_1331 var2) {
+   private boolean method_23062(class_6163 var1, BlockPos var2) {
       return var1.method_28262(var2.method_6100()).method_8362() == class_5371.field_27403;
    }
 
-   private void method_23069(class_9379 var1, class_1331 var2, int var3, int var4, boolean var5, int var6) {
+   private void method_23069(class_9379 var1, BlockPos var2, int var3, int var4, boolean var5, int var6) {
       int var9 = !var5 ? var3 / 2 : var6;
 
       for (int var10 = -var9; var10 <= var9; var10++) {
          for (int var11 = -var9; var11 <= var9; var11++) {
             for (int var12 = 0; var12 <= var4; var12++) {
-               class_1331 var13 = var2.method_6104(var10, var12, var11);
+               BlockPos var13 = var2.method_6104(var10, var12, var11);
                class_6414 var14 = var1.method_28262(var13).method_8360();
                if (this.method_23073(var14) || var14 == class_4783.field_23552) {
                   if (this.method_23062(var1, var13)) {

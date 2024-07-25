@@ -13,12 +13,12 @@ public class AutoCrystalModule extends PremiumModule {
    private static float field_48553;
    private static float field_48549;
    private static boolean field_48558;
-   private class_1331 field_48552;
+   private BlockPos field_48552;
    private Entity field_48550;
    private static boolean field_48555 = false;
    private Runnable field_48554 = null;
    private int field_48557;
-   private List<class_1331> field_48551 = new ArrayList<class_1331>();
+   private List<BlockPos> field_48551 = new ArrayList<BlockPos>();
 
    public AutoCrystalModule() {
       super("AutoCrystal", "Automatically detonates crystals", Category.WORLD);
@@ -83,7 +83,7 @@ public class AutoCrystalModule extends PremiumModule {
          this.field_48551
             .sort(Comparator.comparing(var1x -> this.field_48550.method_37273((double)var1x.field_13231, (double)var1x.field_13230, (double)var1x.field_13229)));
          if (this.field_48551 != null && !this.field_48551.isEmpty()) {
-            class_1331 var6 = this.field_48551
+            BlockPos var6 = this.field_48551
                .stream()
                .max(
                   Comparator.comparing(
@@ -109,7 +109,7 @@ public class AutoCrystalModule extends PremiumModule {
       GL11.glPushMatrix();
       GL11.glDisable(2929);
 
-      for (class_1331 var6 : this.field_48551) {
+      for (BlockPos var6 : this.field_48551) {
          double var7 = (double)var6.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
          double var9 = (double)var6.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
          double var11 = (double)var6.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
@@ -131,23 +131,23 @@ public class AutoCrystalModule extends PremiumModule {
       GL11.glPopMatrix();
    }
 
-   public static class_1331 method_44011() {
-      return new class_1331(
+   public static BlockPos method_44011() {
+      return new BlockPos(
          Math.floor(client.thePlayer.method_37302()),
          Math.floor(client.thePlayer.method_37309()),
          Math.floor(client.thePlayer.method_37156())
       );
    }
 
-   private List<class_1331> method_44022() {
+   private List<BlockPos> method_44022() {
       class_2831 var3 = class_2831.method_12874();
       var3.addAll(this.method_44015(method_44011(), 6.0F, 6, false, true, 0).stream().filter(this::method_44012).collect(Collectors.toList()));
       return var3;
    }
 
-   private boolean method_44012(class_1331 var1) {
-      class_1331 var4 = var1.method_6104(0, 1, 0);
-      class_1331 var5 = var1.method_6104(0, 2, 0);
+   private boolean method_44012(BlockPos var1) {
+      BlockPos var4 = var1.method_6104(0, 1, 0);
+      BlockPos var5 = var1.method_6104(0, 2, 0);
       return (
             client.theWorld.method_28262(var1).method_8360() == class_4783.field_23433
                || client.theWorld.method_28262(var1).method_8360() == class_4783.field_23881
@@ -157,7 +157,7 @@ public class AutoCrystalModule extends PremiumModule {
          && client.theWorld.<Entity>method_25868(Entity.class, new class_4092(var4)).isEmpty();
    }
 
-   public List<class_1331> method_44015(class_1331 var1, float var2, int var3, boolean var4, boolean var5, int var6) {
+   public List<BlockPos> method_44015(BlockPos var1, float var2, int var3, boolean var4, boolean var5, int var6) {
       ArrayList var9 = new ArrayList();
       int var10 = var1.method_12173();
       int var11 = var1.method_12165();
@@ -168,7 +168,7 @@ public class AutoCrystalModule extends PremiumModule {
             for (int var15 = !var5 ? var11 : var11 - (int)var2; (float)var15 < (!var5 ? (float)(var11 + var3) : (float)var11 + var2); var15++) {
                double var16 = (double)((var10 - var13) * (var10 - var13) + (var12 - var14) * (var12 - var14) + (!var5 ? 0 : (var11 - var15) * (var11 - var15)));
                if (var16 < (double)(var2 * var2) && (!var4 || !(var16 < (double)((var2 - 1.0F) * (var2 - 1.0F))))) {
-                  class_1331 var18 = new class_1331(var13, var15 + var6, var14);
+                  BlockPos var18 = new BlockPos(var13, var15 + var6, var14);
                   var9.add(var18);
                }
             }
@@ -207,7 +207,7 @@ public class AutoCrystalModule extends PremiumModule {
          return class_6357.method_29129(var1, (float)var0.method_26565(), (float)var0.method_26575(class_7331.field_37472));
       } else {
          class_704 var5 = (class_704)var0;
-         class_6199 var6 = class_6199.method_28350(var2);
+         DamageSource var6 = DamageSource.method_28350(var2);
          var1 = class_6357.method_29129(var1, (float)var5.method_26565(), (float)var5.method_26575(class_7331.field_37472));
          int var7 = class_2931.method_13427(var5.method_37262(), var6);
          float var8 = class_9299.method_42828((float)var7, 0.0F, 20.0F);
@@ -222,8 +222,8 @@ public class AutoCrystalModule extends PremiumModule {
 
    private static void method_44027() {
       if (field_48558) {
-         field_48553 = client.thePlayer.field_41701;
-         field_48549 = client.thePlayer.field_41755;
+         field_48553 = client.thePlayer.rotationYaw;
+         field_48549 = client.thePlayer.rotationPitch;
          field_48558 = false;
       }
    }

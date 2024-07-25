@@ -32,7 +32,7 @@ public class class_7261 extends class_3599 {
    }
 
    private void method_33184() {
-      Iterable var3 = class_1331.method_6075(
+      Iterable var3 = BlockPos.method_6075(
          class_9299.method_42847(this.field_37201.method_37302() - 1.0),
          class_9299.method_42847(this.field_37201.method_37309()),
          class_9299.method_42847(this.field_37201.method_37156() - 1.0),
@@ -40,17 +40,17 @@ public class class_7261 extends class_3599 {
          class_9299.method_42847(this.field_37201.method_37309() + 8.0),
          class_9299.method_42847(this.field_37201.method_37156() + 1.0)
       );
-      class_1331 var4 = null;
+      BlockPos var4 = null;
 
-      for (class_1331 var6 : var3) {
-         if (this.method_33185(this.field_37201.field_41768, var6)) {
+      for (BlockPos var6 : var3) {
+         if (this.method_33185(this.field_37201.world, var6)) {
             var4 = var6;
             break;
          }
       }
 
       if (var4 == null) {
-         var4 = new class_1331(this.field_37201.method_37302(), this.field_37201.method_37309() + 8.0, this.field_37201.method_37156());
+         var4 = new BlockPos(this.field_37201.method_37302(), this.field_37201.method_37309() + 8.0, this.field_37201.method_37156());
       }
 
       this.field_37201.method_26927().method_5595((double)var4.method_12173(), (double)(var4.method_12165() + 1), (double)var4.method_12185(), 1.0);
@@ -64,7 +64,7 @@ public class class_7261 extends class_3599 {
       this.field_37201.method_37226(class_7412.field_37839, this.field_37201.method_37098());
    }
 
-   private boolean method_33185(class_4924 var1, class_1331 var2) {
+   private boolean method_33185(class_4924 var1, BlockPos var2) {
       class_2522 var5 = var1.method_28262(var2);
       return (var1.method_28258(var2).method_22001() || var5.method_8350(class_4783.field_23269)) && var5.method_8319(var1, var2, class_2929.field_14271);
    }

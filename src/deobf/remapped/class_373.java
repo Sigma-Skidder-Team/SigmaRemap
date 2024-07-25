@@ -11,8 +11,8 @@ public class class_373 extends class_2255<class_945> {
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public void method_1835(class_945 var1, float var2, class_7966 var3, class_2565 var4, int var5, int var6) {
       if (MinecraftClient.getInstance().thePlayer.method_3184() || MinecraftClient.getInstance().thePlayer.method_37221()) {
-         class_1331 var9 = var1.method_4116();
-         class_1331 var10 = var1.method_4096();
+         BlockPos var9 = var1.method_4116();
+         BlockPos var10 = var1.method_4096();
          if (var10.method_12173() >= 1
             && var10.method_12165() >= 1
             && var10.method_12185() >= 1
@@ -83,12 +83,12 @@ public class class_373 extends class_2255<class_945> {
       }
    }
 
-   private void method_1836(class_945 var1, class_7907 var2, class_1331 var3, boolean var4, class_7966 var5) {
+   private void method_1836(class_945 var1, class_7907 var2, BlockPos var3, boolean var4, class_7966 var5) {
       World var8 = var1.method_17402();
-      class_1331 var9 = var1.method_17399();
-      class_1331 var10 = var9.method_6105(var3);
+      BlockPos var9 = var1.method_17399();
+      BlockPos var10 = var9.method_6105(var3);
 
-      for (class_1331 var12 : class_1331.method_6076(var10, var10.method_6105(var1.method_4096()).method_6104(-1, -1, -1))) {
+      for (BlockPos var12 : BlockPos.method_6076(var10, var10.method_6105(var1.method_4096()).method_6104(-1, -1, -1))) {
          class_2522 var13 = var8.method_28262(var12);
          boolean var14 = var13.method_8345();
          boolean var15 = var13.method_8350(class_4783.field_23227);

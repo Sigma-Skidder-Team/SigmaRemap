@@ -10,7 +10,7 @@ public class class_7288 extends class_305 {
    }
 
    @Override
-   public int method_1358(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public int method_1358(class_2522 var1, class_6163 var2, BlockPos var3) {
       return this.field_37287;
    }
 }

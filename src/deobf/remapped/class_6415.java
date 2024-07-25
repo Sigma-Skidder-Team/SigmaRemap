@@ -152,8 +152,8 @@ public class class_6415 extends class_4088 {
                var1.method_3153(var4, false);
             }
          } else {
-            var1.inventory.method_32395(var1.field_41768, this.field_32764.method_31507(0));
-            var1.inventory.method_32395(var1.field_41768, this.field_32764.method_31507(1));
+            var1.inventory.method_32395(var1.world, this.field_32764.method_31507(0));
+            var1.inventory.method_32395(var1.world, this.field_32764.method_31507(1));
          }
       }
    }

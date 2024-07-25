@@ -16,7 +16,7 @@ public class class_2878 extends class_9446 {
       double var7 = var1.method_61() + (double)((float)var5.method_1041() * 1.125F);
       double var9 = var1.method_60() + (double)((float)var5.method_1054() * 1.125F);
       double var11 = var1.method_62() + (double)((float)var5.method_1034() * 1.125F);
-      class_1331 var13 = var1.method_40142().method_6098(var5);
+      BlockPos var13 = var1.method_40142().method_6098(var5);
       double var14;
       if (!var6.method_28258(var13).method_22007(class_6503.field_33094)) {
          if (!var6.method_28262(var13).method_8345() || !var6.method_28258(var13.method_6100()).method_22007(class_6503.field_33094)) {
@@ -28,9 +28,9 @@ public class class_2878 extends class_9446 {
          var14 = 1.0;
       }
 
-      class_9149 var16 = new class_9149(var6, var7, var9 + var14, var11);
+      BoatEntity var16 = new BoatEntity(var6, var7, var9 + var14, var11);
       var16.method_42101(this.field_14094);
-      var16.field_41701 = var5.method_1028();
+      var16.rotationYaw = var5.method_1028();
       var6.method_7509(var16);
       var2.method_27970(1);
       return var2;

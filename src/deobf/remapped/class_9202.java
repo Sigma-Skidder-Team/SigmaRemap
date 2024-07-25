@@ -138,13 +138,13 @@ public class class_9202 {
          method_42461(
             var0,
             var6,
-            (class_6331)var2.field_41768,
+            (class_6331)var2.world,
             var2.method_37302(),
             var2.method_37309(),
             var2.method_37156(),
             EnumSet.<class_8089>noneOf(class_8089.class),
-            var2.field_41701,
-            var2.field_41755,
+            var2.rotationYaw,
+            var2.rotationPitch,
             (class_4839)null
          );
       }
@@ -194,7 +194,7 @@ public class class_9202 {
          if (var4 != null) {
             method_42461(var0, var12, var2, var8.field_7336, var8.field_7333, var8.field_7334, var10, var9.field_24329, var9.field_24326, var5);
          } else {
-            method_42461(var0, var12, var2, var8.field_7336, var8.field_7333, var8.field_7334, var10, var12.field_41701, var12.field_41755, var5);
+            method_42461(var0, var12, var2, var8.field_7336, var8.field_7333, var8.field_7334, var10, var12.rotationYaw, var12.rotationPitch, var5);
          }
       }
 
@@ -230,13 +230,13 @@ public class class_9202 {
       float var11,
       class_4839 var12
    ) throws CommandSyntaxException {
-      class_1331 var15 = new class_1331(var3, var5, var7);
+      BlockPos var15 = new BlockPos(var3, var5, var7);
       if (World.method_29593(var15)) {
          if (!(var1 instanceof class_9359)) {
             float var16 = class_9299.method_42810(var10);
             float var17 = class_9299.method_42810(var11);
             var17 = class_9299.method_42828(var17, -90.0F, 90.0F);
-            if (var2 != var1.field_41768) {
+            if (var2 != var1.world) {
                var1.method_37269();
                Entity var18 = var1;
                var1 = var1.method_37387().method_30484(var2);
@@ -246,28 +246,28 @@ public class class_9202 {
 
                var1.method_37199(var18);
                var1.method_37144(var3, var5, var7, var16, var17);
-               var1.method_37161(var16);
+               var1.setRotationYawHead(var16);
                var2.method_28954(var1);
                var18.field_41751 = true;
             } else {
                var1.method_37144(var3, var5, var7, var16, var17);
-               var1.method_37161(var16);
+               var1.setRotationYawHead(var16);
             }
          } else {
-            class_2034 var19 = new class_2034(new class_1331(var3, var5, var7));
+            class_2034 var19 = new class_2034(new BlockPos(var3, var5, var7));
             var2.method_28945().method_10177(class_5032.field_26020, var19, 1, var1.method_37145());
             var1.method_37390();
             if (((class_9359)var1).method_26507()) {
                ((class_9359)var1).method_3162(true, true);
             }
 
-            if (var2 != var1.field_41768) {
+            if (var2 != var1.world) {
                ((class_9359)var1).method_43274(var2, var3, var5, var7, var10, var11);
             } else {
                ((class_9359)var1).field_47794.method_4171(var3, var5, var7, var10, var11, var9);
             }
 
-            var1.method_37161(var10);
+            var1.setRotationYawHead(var10);
          }
 
          if (var12 != null) {

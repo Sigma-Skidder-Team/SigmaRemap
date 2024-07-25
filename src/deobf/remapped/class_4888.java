@@ -17,17 +17,17 @@ public class class_4888 extends class_380 implements class_9866 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360())) {
          this.method_22423(var2, var3);
       }
    }
 
-   public boolean method_22420(class_4924 var1, class_1331 var2) {
+   public boolean method_22420(class_4924 var1, BlockPos var2) {
       return this.method_22422().method_44981(var1, var2) != null || this.method_22419().method_44981(var1, var2) != null;
    }
 
-   private void method_22423(World var1, class_1331 var2) {
+   private void method_22423(World var1, BlockPos var2) {
       class_6953 var5 = this.method_22421().method_44981(var1, var2);
       if (var5 == null) {
          var5 = this.method_22424().method_44981(var1, var2);
@@ -40,7 +40,7 @@ public class class_4888 extends class_380 implements class_9866 {
                }
             }
 
-            class_1331 var12 = var5.method_31795(1, 2, 0).method_41966();
+            BlockPos var12 = var5.method_31795(1, 2, 0).method_41966();
             class_8127 var15 = class_6629.field_34298.method_30484(var1);
             var15.method_36979(true);
             var15.method_37144((double)var12.method_12173() + 0.5, (double)var12.method_12165() + 0.05, (double)var12.method_12185() + 0.5, 0.0F, 0.0F);
@@ -65,7 +65,7 @@ public class class_4888 extends class_380 implements class_9866 {
          }
 
          class_223 var14 = class_6629.field_34253.method_30484(var1);
-         class_1331 var17 = var5.method_31795(0, 2, 0).method_41966();
+         BlockPos var17 = var5.method_31795(0, 2, 0).method_41966();
          var14.method_37144((double)var17.method_12173() + 0.5, (double)var17.method_12165() + 0.05, (double)var17.method_12185() + 0.5, 0.0F, 0.0F);
          var1.method_7509(var14);
 

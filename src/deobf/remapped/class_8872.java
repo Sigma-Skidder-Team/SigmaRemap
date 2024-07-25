@@ -14,7 +14,7 @@ public class class_8872 extends class_6127<class_5834> {
    @Override
    public void method_28154(class_6331 var1, class_5834 var2) {
       class_1150 var5 = var2.method_26525();
-      class_6199 var6 = var2.method_26429();
+      DamageSource var6 = var2.method_26429();
       if (var6 == null) {
          var5.method_5127(class_6044.field_30867);
       } else {

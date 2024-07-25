@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_8859 {
+public class MovementInput {
    private static String[] field_45285;
    public float field_45282;
    public float field_45287;

@@ -56,8 +56,8 @@ public class class_8192 {
          var4 = Config.method_14327().thePlayer;
       }
 
-      if (var4 instanceof class_9716) {
-         class_9716 var5 = (class_9716)var4;
+      if (var4 instanceof AbstractClientPlayerEntity) {
+         AbstractClientPlayerEntity var5 = (AbstractClientPlayerEntity)var4;
          UUID var6 = var0.method_37328();
          if (!var1) {
             class_8073 var7 = var0.method_37372();

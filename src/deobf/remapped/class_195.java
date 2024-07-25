@@ -45,7 +45,7 @@ public class class_195 extends class_6414 implements class_724 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       class_3757 var9 = var2.method_28260(var3);
       if (var9 instanceof class_6786 && var4.method_3184()) {
          var4.method_3201((class_6786)var9);

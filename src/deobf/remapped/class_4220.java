@@ -46,7 +46,7 @@ public class class_4220 extends class_3077 {
    @Override
    public class_6910 method_11237(class_4734 var1) {
       World var4 = var1.method_21862();
-      class_1331 var5 = var1.method_21858();
+      BlockPos var5 = var1.method_21858();
       if (var1.method_21857() != Direction.field_802 && var4.method_28262(var5.method_6081()).method_8345()) {
          class_2522 var6 = field_20481.get(var4.method_28262(var5).method_8360());
          if (var6 != null) {

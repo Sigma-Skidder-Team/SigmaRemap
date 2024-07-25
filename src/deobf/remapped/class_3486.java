@@ -12,5 +12,5 @@ public enum class_3486 {
    private class_3486() {
    }
 
-   public abstract void method_16031(class_6331 var1, class_2810 var2, List<class_3577> var3, int var4, class_1331 var5);
+   public abstract void method_16031(class_6331 var1, class_2810 var2, List<class_3577> var3, int var4, BlockPos var5);
 }

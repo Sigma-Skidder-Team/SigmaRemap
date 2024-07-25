@@ -10,7 +10,7 @@ public abstract class class_3793 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055) {
          this.method_17625(var2, var3, var4);
          return class_6910.field_35518;
@@ -19,7 +19,7 @@ public abstract class class_3793 extends class_4314 {
       }
    }
 
-   public abstract void method_17625(World var1, class_1331 var2, class_704 var3);
+   public abstract void method_17625(World var1, BlockPos var2, class_704 var3);
 
    @Override
    public class_2522 method_29302(class_353 var1) {
@@ -27,7 +27,7 @@ public abstract class class_3793 extends class_4314 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       if (var5.method_28018()) {
          class_3757 var8 = var1.method_28260(var2);
          if (var8 instanceof class_7933) {
@@ -37,7 +37,7 @@ public abstract class class_3793 extends class_4314 {
    }
 
    @Override
-   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var1.method_8350(var4.method_8360())) {
          class_3757 var8 = var2.method_28260(var3);
          if (var8 instanceof class_7933) {
@@ -56,7 +56,7 @@ public abstract class class_3793 extends class_4314 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, BlockPos var3) {
       return class_4088.method_18863(var2.method_28260(var3));
    }
 

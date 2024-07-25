@@ -30,10 +30,10 @@ public class class_5212 extends class_5920<class_5834> {
    @Nullable
    private class_1343 method_23889(class_6331 var1, class_5834 var2) {
       Random var5 = var2.method_26594();
-      class_1331 var6 = var2.method_37075();
+      BlockPos var6 = var2.method_37075();
 
       for (int var7 = 0; var7 < 10; var7++) {
-         class_1331 var8 = var6.method_6104(var5.nextInt(20) - 10, var5.nextInt(6) - 3, var5.nextInt(20) - 10);
+         BlockPos var8 = var6.method_6104(var5.nextInt(20) - 10, var5.nextInt(6) - 3, var5.nextInt(20) - 10);
          if (method_23890(var1, var2, var8)) {
             return class_1343.method_6200(var8);
          }
@@ -42,7 +42,7 @@ public class class_5212 extends class_5920<class_5834> {
       return null;
    }
 
-   public static boolean method_23890(class_6331 var0, class_5834 var1, class_1331 var2) {
+   public static boolean method_23890(class_6331 var0, class_5834 var1, BlockPos var2) {
       return var0.method_25263(var2) && (double)var0.method_22563(class_3801.field_18595, var2).method_12165() <= var1.method_37309();
    }
 }

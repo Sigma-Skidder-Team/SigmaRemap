@@ -21,7 +21,7 @@ public class class_6596 {
       new Identifier("nether_fossils/fossil_14")
    };
 
-   public static void method_30372(class_5799 var0, List<class_7060> var1, Random var2, class_1331 var3) {
+   public static void method_30372(class_5799 var0, List<class_7060> var1, Random var2, BlockPos var3) {
       class_6631 var6 = class_6631.method_30492(var2);
       var1.add(new class_8370(var0, Util.<Identifier>method_44697(field_34030, var2), var3, var6));
    }

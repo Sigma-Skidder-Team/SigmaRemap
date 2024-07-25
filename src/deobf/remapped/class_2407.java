@@ -6,7 +6,7 @@ import java.util.Random;
 
 public enum class_2407 {
    @Override
-   public void method_16031(class_6331 var1, class_2810 var2, List<class_3577> var3, int var4, class_1331 var5) {
+   public void method_16031(class_6331 var1, class_2810 var2, List<class_3577> var3, int var4, BlockPos var5) {
       byte var8 = 40;
       boolean var9 = var4 % 40 == 0;
       boolean var10 = var4 % 40 == 39;
@@ -22,9 +22,9 @@ public enum class_2407 {
             if (!var9) {
                byte var14 = 10;
 
-               for (class_1331 var16 : class_1331.method_6076(
-                  new class_1331(var13.method_42371() - 10, var13.method_42370() - 10, var13.method_42373() - 10),
-                  new class_1331(var13.method_42371() + 10, var13.method_42370() + 10, var13.method_42373() + 10)
+               for (BlockPos var16 : BlockPos.method_6076(
+                  new BlockPos(var13.method_42371() - 10, var13.method_42370() - 10, var13.method_42373() - 10),
+                  new BlockPos(var13.method_42371() + 10, var13.method_42370() + 10, var13.method_42373() + 10)
                )) {
                   var1.method_7508(var16, false);
                }
@@ -37,13 +37,13 @@ public enum class_2407 {
                   5.0F,
                   class_7298.field_37311
                );
-               class_4069 var18 = new class_4069(true, ImmutableList.of(var13), new class_1331(0, 128, 0));
+               class_4069 var18 = new class_4069(true, ImmutableList.of(var13), new BlockPos(0, 128, 0));
                class_4285.field_20758
                   .method_19909(var18)
-                  .method_27104(var1, var1.method_28945().method_10189(), new Random(), new class_1331(var13.method_42371(), 45, var13.method_42373()));
+                  .method_27104(var1, var1.method_28945().method_10189(), new Random(), new BlockPos(var13.method_42371(), 45, var13.method_42373()));
             } else {
                for (class_3577 var19 : var3) {
-                  var19.method_16625(new class_1331(var13.method_42371(), var13.method_42370() + 1, var13.method_42373()));
+                  var19.method_16625(new BlockPos(var13.method_42371(), var13.method_42370() + 1, var13.method_42373()));
                }
             }
          }

@@ -62,8 +62,8 @@ public class BasicAutoGapple extends Module {
                this.field_49494++;
                if (this.field_49494 != 1) {
                   if (this.field_49494 > 1
-                     && client.thePlayer.method_26617(class_2584.field_12791).method_27960() != class_4897.field_25037
-                     && client.thePlayer.method_26617(class_2584.field_12791).method_27960() != class_4897.field_24966) {
+                     && client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() != class_4897.field_25037
+                     && client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() != class_4897.field_24966) {
                      client.thePlayer.inventory.field_36404 = this.field_49493;
                      this.field_49493 = -1;
                      this.field_49494 = -1;
@@ -72,7 +72,7 @@ public class BasicAutoGapple extends Module {
                   this.field_49493 = client.thePlayer.inventory.field_36404;
                   client.thePlayer.inventory.field_36404 = var4;
                   client.playerController.method_42129();
-                  client.playerController.method_42155(client.thePlayer, client.theWorld, class_2584.field_12791);
+                  client.playerController.method_42155(client.thePlayer, client.theWorld, Hand.MAIN_HAND);
                }
             }
          }

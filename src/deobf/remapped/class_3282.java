@@ -49,6 +49,6 @@ public class class_3282 extends class_3599 {
    @Override
    public void method_16794() {
       this.field_16255.method_26914(this.field_16255.method_17809(), 10.0F, 10.0F);
-      ((class_8509)this.field_16255.method_26905()).method_39183(this.field_16255.field_41701, this.field_16255.method_1857());
+      ((class_8509)this.field_16255.method_26905()).method_39183(this.field_16255.rotationYaw, this.field_16255.method_1857());
    }
 }

@@ -62,8 +62,8 @@ public abstract class class_8574 extends class_3578 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (this.method_39445() && this.field_41768.field_33033.nextInt(200) == 1) {
-         List var3 = this.field_41768.method_25868(this.getClass(), this.method_37241().method_18899(8.0, 8.0, 8.0));
+      if (this.method_39445() && this.world.field_33033.nextInt(200) == 1) {
+         List var3 = this.world.method_25868(this.getClass(), this.method_37241().method_18899(8.0, 8.0, 8.0));
          if (var3.size() <= 1) {
             this.field_43946 = 1;
          }

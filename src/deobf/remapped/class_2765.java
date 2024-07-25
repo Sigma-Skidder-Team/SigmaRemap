@@ -35,29 +35,29 @@ public class class_2765 {
    }
 
    public static class_4092 method_12596(class_945 var0) {
-      class_1331 var3 = var0.method_17399();
-      class_1331 var4 = var3.method_6105(var0.method_4096().method_6104(-1, -1, -1));
-      class_1331 var5 = class_6561.method_29966(var4, class_9022.field_46145, var0.method_4120(), var3);
+      BlockPos var3 = var0.method_17399();
+      BlockPos var4 = var3.method_6105(var0.method_4096().method_6104(-1, -1, -1));
+      BlockPos var5 = class_6561.method_29966(var4, class_9022.field_46145, var0.method_4120(), var3);
       return new class_4092(var3, var5);
    }
 
    public static class_9616 method_12591(class_945 var0) {
-      class_1331 var3 = var0.method_17399();
-      class_1331 var4 = var3.method_6105(var0.method_4096().method_6104(-1, -1, -1));
-      class_1331 var5 = class_6561.method_29966(var4, class_9022.field_46145, var0.method_4120(), var3);
+      BlockPos var3 = var0.method_17399();
+      BlockPos var4 = var3.method_6105(var0.method_4096().method_6104(-1, -1, -1));
+      BlockPos var5 = class_6561.method_29966(var4, class_9022.field_46145, var0.method_4120(), var3);
       return new class_9616(var3, var5);
    }
 
-   public static void method_12587(class_1331 var0, class_1331 var1, class_6631 var2, class_6331 var3) {
-      class_1331 var6 = class_6561.method_29966(var0.method_6105(var1), class_9022.field_46145, var2, var0);
+   public static void method_12587(BlockPos var0, BlockPos var1, class_6631 var2, class_6331 var3) {
+      BlockPos var6 = class_6561.method_29966(var0.method_6105(var1), class_9022.field_46145, var2, var0);
       var3.method_29594(var6, class_4783.field_23730.method_29260());
       class_7454 var7 = (class_7454)var3.method_28260(var6);
       var7.method_33929().method_36930("test runthis");
-      class_1331 var8 = class_6561.method_29966(var6.method_6104(0, 0, -1), class_9022.field_46145, var2, var6);
+      BlockPos var8 = class_6561.method_29966(var6.method_6104(0, 0, -1), class_9022.field_46145, var2, var6);
       var3.method_29594(var8, class_4783.field_23448.method_29260().method_8318(var2));
    }
 
-   public static void method_12588(String var0, class_1331 var1, class_1331 var2, class_6631 var3, class_6331 var4) {
+   public static void method_12588(String var0, BlockPos var1, BlockPos var2, class_6631 var3, class_6331 var4) {
       class_9616 var7 = method_12589(var1, var2, var3);
       method_12583(var7, var1.method_12165(), var4);
       var4.method_29594(var1, class_4783.field_23846.method_29260());
@@ -69,10 +69,10 @@ public class class_2765 {
       var8.method_4123(true);
    }
 
-   public static class_945 method_12584(String var0, class_1331 var1, class_6631 var2, int var3, class_6331 var4, boolean var5) {
-      class_1331 var8 = method_12595(var0, var4).method_29975();
+   public static class_945 method_12584(String var0, BlockPos var1, class_6631 var2, int var3, class_6331 var4, boolean var5) {
+      BlockPos var8 = method_12595(var0, var4).method_29975();
       class_9616 var9 = method_12589(var1, var8, var2);
-      class_1331 var10;
+      BlockPos var10;
       if (var2 != class_6631.field_34340) {
          if (var2 != class_6631.field_34334) {
             if (var2 != class_6631.field_34338) {
@@ -99,7 +99,7 @@ public class class_2765 {
       return var11;
    }
 
-   private static void method_12580(class_1331 var0, class_6331 var1) {
+   private static void method_12580(BlockPos var0, class_6331 var1) {
       class_2034 var4 = new class_2034(var0);
 
       for (int var5 = -1; var5 < 4; var5++) {
@@ -115,7 +115,7 @@ public class class_2765 {
       class_9616 var5 = new class_9616(
          var0.field_48996 - 2, var0.field_48995 - 3, var0.field_48992 - 3, var0.field_48991 + 3, var0.field_48993 + 20, var0.field_48994 + 3
       );
-      class_1331.method_6086(var5).forEach(var2x -> method_12590(var1, var2x, var2));
+      BlockPos.method_6086(var5).forEach(var2x -> method_12590(var1, var2x, var2));
       var2.method_28968().method_13096(var5, true, false);
       var2.method_28937(var5);
       class_4092 var6 = new class_4092(
@@ -130,32 +130,32 @@ public class class_2765 {
       var7.forEach(Entity::method_37204);
    }
 
-   public static class_9616 method_12589(class_1331 var0, class_1331 var1, class_6631 var2) {
-      class_1331 var5 = var0.method_6105(var1).method_6104(-1, -1, -1);
-      class_1331 var6 = class_6561.method_29966(var5, class_9022.field_46145, var2, var0);
+   public static class_9616 method_12589(BlockPos var0, BlockPos var1, class_6631 var2) {
+      BlockPos var5 = var0.method_6105(var1).method_6104(-1, -1, -1);
+      BlockPos var6 = class_6561.method_29966(var5, class_9022.field_46145, var2, var0);
       class_9616 var7 = class_9616.method_44400(
          var0.method_12173(), var0.method_12165(), var0.method_12185(), var6.method_12173(), var6.method_12165(), var6.method_12185()
       );
       int var8 = Math.min(var7.field_48996, var7.field_48991);
       int var9 = Math.min(var7.field_48992, var7.field_48994);
-      class_1331 var10 = new class_1331(var0.method_12173() - var8, 0, var0.method_12185() - var9);
+      BlockPos var10 = new BlockPos(var0.method_12173() - var8, 0, var0.method_12185() - var9);
       var7.method_44385(var10);
       return var7;
    }
 
-   public static Optional<class_1331> method_12592(class_1331 var0, int var1, class_6331 var2) {
+   public static Optional<BlockPos> method_12592(BlockPos var0, int var1, class_6331 var2) {
       return method_12585(var0, var1, var2).stream().filter(var2x -> method_12593(var2x, var0, var2)).findFirst();
    }
 
    @Nullable
-   public static class_1331 method_12597(class_1331 var0, int var1, class_6331 var2) {
-      Comparator var5 = Comparator.<class_1331>comparingInt(var1x -> var1x.method_12176(var0));
+   public static BlockPos method_12597(BlockPos var0, int var1, class_6331 var2) {
+      Comparator var5 = Comparator.<BlockPos>comparingInt(var1x -> var1x.method_12176(var0));
       Collection var6 = method_12585(var0, var1, var2);
       Optional var7 = var6.stream().min(var5);
-      return (class_1331)var7.orElse((class_1331)null);
+      return (BlockPos)var7.orElse((BlockPos)null);
    }
 
-   public static Collection<class_1331> method_12585(class_1331 var0, int var1, class_6331 var2) {
+   public static Collection<BlockPos> method_12585(BlockPos var0, int var1, class_6331 var2) {
       ArrayList var5 = Lists.newArrayList();
       class_4092 var6 = new class_4092(var0);
       var6 = var6.method_18898((double)var1);
@@ -163,7 +163,7 @@ public class class_2765 {
       for (int var7 = (int)var6.field_19941; var7 <= (int)var6.field_19940; var7++) {
          for (int var8 = (int)var6.field_19937; var8 <= (int)var6.field_19939; var8++) {
             for (int var9 = (int)var6.field_19938; var9 <= (int)var6.field_19942; var9++) {
-               class_1331 var10 = new class_1331(var7, var8, var9);
+               BlockPos var10 = new BlockPos(var7, var8, var9);
                class_2522 var11 = var2.method_28262(var10);
                if (var11.method_8350(class_4783.field_23846)) {
                   var5.add(var10);
@@ -192,7 +192,7 @@ public class class_2765 {
       }
    }
 
-   private static class_945 method_12586(String var0, class_1331 var1, class_6631 var2, class_6331 var3, boolean var4) {
+   private static class_945 method_12586(String var0, BlockPos var1, class_6631 var2, class_6331 var3, boolean var4) {
       var3.method_29594(var1, class_4783.field_23846.method_29260());
       class_945 var7 = (class_945)var3.method_28260(var1);
       var7.method_4108(class_589.field_3414);
@@ -200,10 +200,10 @@ public class class_2765 {
       var7.method_4110(false);
       var7.method_4099(new Identifier(var0));
       var7.method_4088(var3, var4);
-      if (var7.method_4096() == class_1331.field_7306) {
+      if (var7.method_4096() == BlockPos.field_7306) {
          class_6561 var8 = method_12595(var0, var3);
          var7.method_4109(var3, var4, var8);
-         if (var7.method_4096() != class_1331.field_7306) {
+         if (var7.method_4096() != BlockPos.field_7306) {
             return var7;
          } else {
             throw new RuntimeException("Failed to load structure " + var0);
@@ -226,7 +226,7 @@ public class class_2765 {
       }
    }
 
-   private static void method_12590(int var0, class_1331 var1, class_6331 var2) {
+   private static void method_12590(int var0, BlockPos var1, class_6331 var2) {
       class_2522 var5 = null;
       class_9512 var6 = class_9512.method_43900(var2.method_2755().<class_6325>method_28813(class_8669.field_44359));
       if (!(var6 instanceof class_9512)) {
@@ -253,7 +253,7 @@ public class class_2765 {
       var2.method_43369(var1, var5.method_8360());
    }
 
-   private static boolean method_12593(class_1331 var0, class_1331 var1, class_6331 var2) {
+   private static boolean method_12593(BlockPos var0, BlockPos var1, class_6331 var2) {
       class_945 var5 = (class_945)var2.method_28260(var0);
       class_4092 var6 = method_12596(var5).method_18898(1.0);
       return var6.method_18903(class_1343.method_6216(var1));

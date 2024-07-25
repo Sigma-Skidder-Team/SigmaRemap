@@ -22,7 +22,7 @@ public class class_6817 extends class_3239 {
    }
 
    @Override
-   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, class_1331 var4, Set<class_1331> var5, class_9616 var6, class_1297 var7) {
+   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
       ArrayList var10 = Lists.newArrayList();
       var10.addAll(super.method_4966(var1, var2, var3, var4, var5, var6, var7));
 
@@ -34,7 +34,7 @@ public class class_6817 extends class_3239 {
          for (int var15 = 0; var15 < 5; var15++) {
             var13 = (int)(1.5F + class_9299.method_42840(var12) * (float)var15);
             var14 = (int)(1.5F + class_9299.method_42818(var12) * (float)var15);
-            class_1331 var16 = var4.method_6104(var13, var11 - 3 + var15 / 2, var14);
+            BlockPos var16 = var4.method_6104(var13, var11 - 3 + var15 / 2, var14);
             method_4974(var1, var2, var16, var5, var6, var7);
          }
 

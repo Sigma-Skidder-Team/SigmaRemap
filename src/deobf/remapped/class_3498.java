@@ -64,17 +64,17 @@ public abstract class class_3498 implements class_6142 {
    }
 
    @Nullable
-   public class_1331 method_16085(int var1, int var2, int var3, int var4, Predicate<class_6325> var5, Random var6) {
+   public BlockPos method_16085(int var1, int var2, int var3, int var4, Predicate<class_6325> var5, Random var6) {
       return this.method_16084(var1, var2, var3, var4, 1, var5, var6, false);
    }
 
    @Nullable
-   public class_1331 method_16084(int var1, int var2, int var3, int var4, int var5, Predicate<class_6325> var6, Random var7, boolean var8) {
+   public BlockPos method_16084(int var1, int var2, int var3, int var4, int var5, Predicate<class_6325> var6, Random var7, boolean var8) {
       int var11 = var1 >> 2;
       int var12 = var3 >> 2;
       int var13 = var4 >> 2;
       int var14 = var2 >> 2;
-      class_1331 var15 = null;
+      BlockPos var15 = null;
       int var16 = 0;
       int var17 = !var8 ? var13 : 0;
       int var18 = var17;
@@ -95,7 +95,7 @@ public abstract class class_3498 implements class_6142 {
                int var23 = var12 + var19;
                if (var6.test(this.method_28192(var24, var14, var23))) {
                   if (var15 == null || var7.nextInt(var16 + 1) == 0) {
-                     var15 = new class_1331(var24 << 2, var2, var23 << 2);
+                     var15 = new BlockPos(var24 << 2, var2, var23 << 2);
                      if (var8) {
                         return var15;
                      }

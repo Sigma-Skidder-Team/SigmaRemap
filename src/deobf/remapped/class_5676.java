@@ -44,11 +44,11 @@ public abstract class class_5676 implements class_1602 {
       return this.field_28766;
    }
 
-   public List<class_9716> method_25665() {
+   public List<AbstractClientPlayerEntity> method_25665() {
       return field_28769.theWorld.method_25873();
    }
 
-   public List<class_9716> method_25661() {
+   public List<AbstractClientPlayerEntity> method_25661() {
       return field_28769.theWorld.method_25873();
    }
 

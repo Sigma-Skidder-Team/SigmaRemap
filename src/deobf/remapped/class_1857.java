@@ -10,7 +10,7 @@ import java.util.UUID;
 public class class_1857 {
    private static String[] field_9423;
    public MinecraftClient field_9415 = MinecraftClient.getInstance();
-   public List<class_1331> field_9420 = new ArrayList<class_1331>();
+   public List<BlockPos> field_9420 = new ArrayList<BlockPos>();
    public static List<Entity> field_9416 = new ArrayList<Entity>();
    public static int field_9414 = 0;
    public final class_6590 field_9417;
@@ -354,10 +354,10 @@ public class class_1857 {
                if (this.field_9422) {
                   var1.method_24096(class_9299.method_42837(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29605));
                   var1.method_24090(class_9299.method_42837(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29618));
-                  var1.method_24086(class_9299.method_42795(var1.method_24094(), class_1393.field_7602, var1.method_24098().field_41755));
+                  var1.method_24086(class_9299.method_42795(var1.method_24094(), class_1393.field_7602, var1.method_24098().rotationPitch));
                   var1.method_24099(var1.method_24092() - var1.method_24091());
                   var1.method_24098().field_41762 = class_1393.field_7602;
-                  var1.method_24098().field_41711 = class_1393.field_7593;
+                  var1.method_24098().prevRotationYaw = class_1393.field_7593;
                   var1.method_24098().field_29657 = class_1393.field_7593;
                   var1.method_24098().field_29611 = class_1393.field_7593;
                   this.field_9422 = !this.field_9422;

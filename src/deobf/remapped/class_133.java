@@ -212,7 +212,7 @@ public class class_133<T extends class_3757> {
    }
 
    @Nullable
-   public T method_447(class_6163 var1, class_1331 var2) {
+   public T method_447(class_6163 var1, BlockPos var2) {
       class_3757 var5 = var1.method_28260(var2);
       return (T)(var5 != null && var5.method_17405() == this ? var5 : null);
    }

@@ -13,7 +13,7 @@ public class class_6267 extends class_5920<class_7666> {
    }
 
    public boolean method_28583(class_6331 var1, class_7666 var2) {
-      class_1331 var5 = var2.method_37075();
+      BlockPos var5 = var2.method_37075();
       this.field_32017 = var1.method_28984(var5);
       return this.field_32017 != null && this.field_32017.method_11303() && class_5212.method_23890(var1, var2, var5);
    }
@@ -37,8 +37,8 @@ public class class_6267 extends class_5920<class_7666> {
          class_9077 var8 = Util.<class_9077>method_44697(class_9077.values(), var7);
          int var9 = var7.nextInt(3);
          ItemStack var10 = this.method_28581(var8, var9);
-         class_8612 var11 = new class_8612(var2.field_41768, var2, var2.method_37302(), var2.method_37388(), var2.method_37156(), var10);
-         var2.field_41768.method_7509(var11);
+         class_8612 var11 = new class_8612(var2.world, var2, var2.method_37302(), var2.method_37388(), var2.method_37156(), var10);
+         var2.world.method_7509(var11);
       }
    }
 

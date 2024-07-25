@@ -91,7 +91,7 @@ public class class_7808 extends class_4591 {
          .method_8614()
          .method_4813(
             new class_6066(
-               new class_1331(var1.method_36923()), this.field_22318.method_8246(), this.field_39525, var1.method_36927(), this.field_39527, this.field_39528
+               new BlockPos(var1.method_36923()), this.field_22318.method_8246(), this.field_39525, var1.method_36927(), this.field_39527, this.field_39528
             )
          );
    }

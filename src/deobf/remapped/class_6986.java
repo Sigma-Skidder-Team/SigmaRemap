@@ -38,7 +38,7 @@ public class class_6986 implements Predicate<class_9115> {
       }
    }
 
-   public boolean method_31964(class_6331 var1, class_1331 var2, int var3) {
+   public boolean method_31964(class_6331 var1, BlockPos var2, int var3) {
       class_2522 var6 = class_6414.method_29274(this.field_35869, var1, var2);
       if (var6.method_8345()) {
          var6 = this.field_35869;

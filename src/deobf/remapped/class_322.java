@@ -359,7 +359,7 @@ public final class class_322 extends class_6541 {
       boolean var12 = var10 + 4 >= 0 && var10 < this.field_1194;
       boolean var13 = var9 + 4 >= 0 && var9 < this.field_1194;
       if (var12 || var13) {
-         for (class_1331 var15 : class_1331.method_6075(var6, 0, var7, var6 + 15, 0, var7 + 15)) {
+         for (BlockPos var15 : BlockPos.method_6075(var6, 0, var7, var6 + 15, 0, var7 + 15)) {
             if (var12) {
                for (int var16 = 0; var16 < 5; var16++) {
                   if (var16 <= var2.nextInt(5)) {
@@ -562,7 +562,7 @@ public final class class_322 extends class_6541 {
    }
 
    @Override
-   public List<class_3222> method_29836(class_6325 var1, class_2033 var2, class_4565 var3, class_1331 var4) {
+   public List<class_3222> method_29836(class_6325 var1, class_2033 var2, class_4565 var3, BlockPos var4) {
       if (var2.method_9525(var4, true, class_5390.field_27515).method_14731()) {
          if (var3 == class_4565.field_22247) {
             return class_5390.field_27515.method_24557();

@@ -16,7 +16,7 @@ public class class_2986 {
       return class_4783.field_23552.method_29260();
    }
 
-   public static boolean method_13667(class_5561 var0, class_2522 var1, class_1331 var2) {
+   public static boolean method_13667(class_5561 var0, class_2522 var1, BlockPos var2) {
       if (var0 instanceof class_6163) {
          return method_13664(var0, var1, var2) ? method_13665(var0, var2) : false;
       } else {
@@ -24,7 +24,7 @@ public class class_2986 {
       }
    }
 
-   private static boolean method_13665(class_6163 var0, class_1331 var1) {
+   private static boolean method_13665(class_6163 var0, BlockPos var1) {
       class_6414 var4 = class_4783.field_23552;
       if (var0.method_28262(var1.method_6094()).method_8360() == var4
          || var0.method_28262(var1.method_6073()).method_8360() == var4
@@ -48,7 +48,7 @@ public class class_2986 {
       return false;
    }
 
-   private static boolean method_13664(class_6163 var0, class_2522 var1, class_1331 var2) {
+   private static boolean method_13664(class_6163 var0, class_2522 var1, BlockPos var2) {
       if (!var1.method_8321(var0, var2)) {
          class_6414 var5 = var1.method_8360();
          if (var5 == class_4783.field_23813) {

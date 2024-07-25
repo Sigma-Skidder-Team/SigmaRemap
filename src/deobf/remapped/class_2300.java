@@ -18,8 +18,8 @@ public class class_2300<T> extends class_5920<class_4612> {
       this.field_11486 = var5;
    }
 
-   public static class_2300<class_1331> method_10574(class_6044<class_1331> var0, float var1, int var2, boolean var3) {
-      return new class_2300<class_1331>(var0, var1, var2, var3, class_1343::method_6200);
+   public static class_2300<BlockPos> method_10574(class_6044<BlockPos> var0, float var1, int var2, boolean var3) {
+      return new class_2300<BlockPos>(var0, var1, var2, var3, class_1343::method_6200);
    }
 
    public static class_2300<? extends Entity> method_10577(class_6044<? extends Entity> var0, float var1, int var2, boolean var3) {

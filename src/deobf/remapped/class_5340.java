@@ -12,9 +12,9 @@ public class class_5340 extends class_292 {
    }
 
    @Override
-   public void method_4743(class_6199 var1) {
+   public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
+      if (this.world.method_29537().method_1285(class_291.field_1024)) {
          this.method_37312(class_4783.field_23471);
       }
    }

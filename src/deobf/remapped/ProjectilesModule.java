@@ -20,8 +20,8 @@ public class ProjectilesModule extends Module {
          if (client.thePlayer.method_26446() != null) {
             class_3336 var4 = class_3336.method_15299(client.thePlayer.method_26446().method_27960());
             if (var4 != null) {
-               float var5 = (float)Math.toRadians((double)(client.thePlayer.field_41701 - 25.0F));
-               float var6 = (float)Math.toRadians((double) client.thePlayer.field_41755);
+               float var5 = (float)Math.toRadians((double)(client.thePlayer.rotationYaw - 25.0F));
+               float var6 = (float)Math.toRadians((double) client.thePlayer.rotationPitch);
                double var7 = 0.2F;
                double var9 = client.thePlayer.field_41712.method_18906() / 2.0;
                double var11 = (double)class_9299.method_42840(var5) * var9;
@@ -106,7 +106,7 @@ public class ProjectilesModule extends Module {
                   double var45 = var4.field_16443 - client.gameRenderer.method_35949().method_41627().method_62();
                   GL11.glPushMatrix();
                   GL11.glTranslated(var49, var42, var45);
-                  class_1331 var33 = new class_1331(0, 0, 0).method_6098(((class_9529)var4.field_16463).method_43956());
+                  BlockPos var33 = new BlockPos(0, 0, 0).method_6098(((class_9529)var4.field_16463).method_43956());
                   GL11.glRotatef(
                      45.0F,
                      this.field_19188.method_8982((float)var33.method_12173()),

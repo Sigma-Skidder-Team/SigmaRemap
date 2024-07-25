@@ -59,7 +59,7 @@ public class class_107 extends class_7819 implements class_674 {
    public float field_269;
    private float field_272 = 1.0F;
    private boolean field_268;
-   private class_1331 field_266;
+   private BlockPos field_266;
 
    public class_107(class_6629<? extends class_107> var1, World var2) {
       super(var1, var2);
@@ -122,13 +122,13 @@ public class class_107 extends class_7819 implements class_674 {
    public void method_26606() {
       if (this.field_266 == null
          || !this.field_266.method_12170(this.method_37245(), 3.46)
-         || !this.field_41768.method_28262(this.field_266).method_8350(class_4783.field_23312)) {
+         || !this.world.method_28262(this.field_266).method_8350(class_4783.field_23312)) {
          this.field_268 = false;
          this.field_266 = null;
       }
 
-      if (this.field_41768.field_33033.nextInt(400) == 0) {
-         method_325(this.field_41768, this);
+      if (this.world.field_33033.nextInt(400) == 0) {
+         method_325(this.world, this);
       }
 
       super.method_26606();
@@ -136,7 +136,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public void method_26424(class_1331 var1, boolean var2) {
+   public void method_26424(BlockPos var1, boolean var2) {
       this.field_266 = var1;
       this.field_268 = var2;
    }
@@ -148,7 +148,7 @@ public class class_107 extends class_7819 implements class_674 {
    private void method_328() {
       this.field_269 = this.field_262;
       this.field_263 = this.field_270;
-      this.field_270 = (float)((double)this.field_270 + (double)(!this.field_41726 && !this.method_37070() ? 4 : -1) * 0.3);
+      this.field_270 = (float)((double)this.field_270 + (double)(!this.field_41726 && !this.isPassenger() ? 4 : -1) * 0.3);
       this.field_270 = class_9299.method_42828(this.field_270, 0.0F, 1.0F);
       if (!this.field_41726 && this.field_272 < 1.0F) {
          this.field_272 = 1.0F;
@@ -184,7 +184,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!this.method_41215() && field_273.contains(var5.method_27960())) {
          if (!var1.playerAbilities.isCreativeMode) {
@@ -192,7 +192,7 @@ public class class_107 extends class_7819 implements class_674 {
          }
 
          if (!this.method_37378()) {
-            this.field_41768
+            this.world
                .method_29528(
                   (class_704)null,
                   this.method_37302(),
@@ -205,23 +205,23 @@ public class class_107 extends class_7819 implements class_674 {
                );
          }
 
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             if (this.field_41717.nextInt(10) != 0) {
-               this.field_41768.method_29587(this, (byte)6);
+               this.world.method_29587(this, (byte)6);
             } else {
                this.method_41212(var1);
-               this.field_41768.method_29587(this, (byte)7);
+               this.world.method_29587(this, (byte)7);
             }
          }
 
-         return class_6910.method_31659(this.field_41768.field_33055);
+         return class_6910.method_31659(this.world.field_33055);
       } else if (var5.method_27960() != field_261) {
          if (!this.method_323() && this.method_41215() && this.method_41206(var1)) {
-            if (!this.field_41768.field_33055) {
+            if (!this.world.field_33055) {
                this.method_41208(!this.method_41216());
             }
 
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          } else {
             return super.method_26857(var1, var2);
          }
@@ -232,10 +232,10 @@ public class class_107 extends class_7819 implements class_674 {
 
          this.method_26558(new class_2250(Effects.field_19718, 900));
          if (var1.method_3186() || !this.method_37367()) {
-            this.method_37181(class_6199.method_28344(var1), Float.MAX_VALUE);
+            this.attackEntityFrom(DamageSource.method_28344(var1), Float.MAX_VALUE);
          }
 
-         return class_6910.method_31659(this.field_41768.field_33055);
+         return class_6910.method_31659(this.world.field_33055);
       }
    }
 
@@ -244,7 +244,7 @@ public class class_107 extends class_7819 implements class_674 {
       return false;
    }
 
-   public static boolean method_321(class_6629<class_107> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_321(class_6629<class_107> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       class_2522 var7 = var1.method_28262(var3.method_6100());
       return (
             var7.method_8349(class_2351.field_11737)
@@ -261,7 +261,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public void method_37105(double var1, boolean var3, class_2522 var4, class_1331 var5) {
+   public void method_37105(double var1, boolean var3, class_2522 var4, BlockPos var5) {
    }
 
    @Override
@@ -277,13 +277,13 @@ public class class_107 extends class_7819 implements class_674 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      return var1.method_37181(class_6199.method_28345(this), 3.0F);
+      return var1.attackEntityFrom(DamageSource.method_28345(this), 3.0F);
    }
 
    @Nullable
    @Override
    public class_8461 method_26918() {
-      return method_322(this.field_41768, this.field_41768.field_33033);
+      return method_322(this.world, this.world.field_33033);
    }
 
    public static class_8461 method_322(World var0, Random var1) {
@@ -300,7 +300,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2018;
    }
 
@@ -310,7 +310,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2696, 0.15F, 1.0F);
    }
 
@@ -352,10 +352,10 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
          this.method_41208(false);
-         return super.method_37181(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }

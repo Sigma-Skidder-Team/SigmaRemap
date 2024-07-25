@@ -29,12 +29,12 @@ public class class_1521 {
    });
    private int field_8095 = 4096;
 
-   public void method_6944(class_1331 var1) {
+   public void method_6944(BlockPos var1) {
       this.field_8090.set(method_6948(var1), true);
       this.field_8095--;
    }
 
-   private static int method_6948(class_1331 var0) {
+   private static int method_6948(BlockPos var0) {
       return method_6947(var0.method_12173() & 15, var0.method_12165() & 15, var0.method_12185() & 15);
    }
 

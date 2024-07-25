@@ -13,11 +13,11 @@ public final class class_9757 implements class_3825 {
       if (var6 == null) {
          return 0.0F;
       } else {
-         if (var2 == null && ((Entity)var6).field_41768 instanceof ClientWorld) {
-            var2 = (ClientWorld)((Entity)var6).field_41768;
+         if (var2 == null && ((Entity)var6).world instanceof ClientWorld) {
+            var2 = (ClientWorld)((Entity)var6).world;
          }
 
-         class_1331 var7 = !class_8036.method_36487(var1) ? this.method_45037(var2) : this.method_45036(var2, var1.method_27994());
+         BlockPos var7 = !class_8036.method_36487(var1) ? this.method_45037(var2) : this.method_45036(var2, var1.method_27994());
          long var8 = var2.method_29546();
          if (var7 != null
             && !(
@@ -40,7 +40,7 @@ public final class class_9757 implements class_3825 {
                   var13 = this.method_45033((class_7451)var6);
                }
             } else {
-               var13 = (double)var3.field_41701;
+               var13 = (double)var3.rotationYaw;
             }
 
             var13 = class_9299.method_42799(var13 / 360.0, 1.0);
@@ -69,12 +69,12 @@ public final class class_9757 implements class_3825 {
    }
 
    @Nullable
-   private class_1331 method_45037(ClientWorld var1) {
+   private BlockPos method_45037(ClientWorld var1) {
       return !var1.method_22572().method_40233() ? null : var1.method_758();
    }
 
    @Nullable
-   private class_1331 method_45036(World var1, CompoundNBT var2) {
+   private BlockPos method_45036(World var1, CompoundNBT var2) {
       boolean var5 = var2.method_25938("LodestonePos");
       boolean var6 = var2.method_25938("LodestoneDimension");
       if (var5 && var6) {

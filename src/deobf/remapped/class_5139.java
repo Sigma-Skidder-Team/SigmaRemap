@@ -25,13 +25,13 @@ public class class_5139 extends class_4382 {
    }
 
    @Override
-   public int method_20438(int var1, class_6199 var2) {
+   public int method_20438(int var1, DamageSource var2) {
       if (var2.method_28346()) {
          return 0;
       } else if (this.field_26489 != class_1849.field_9384) {
          if (this.field_26489 == class_1849.field_9379 && var2.method_28360()) {
             return var1 * 2;
-         } else if (this.field_26489 == class_1849.field_9387 && var2 == class_6199.field_31684) {
+         } else if (this.field_26489 == class_1849.field_9387 && var2 == DamageSource.field_31684) {
             return var1 * 3;
          } else if (this.field_26489 == class_1849.field_9388 && var2.method_28367()) {
             return var1 * 2;

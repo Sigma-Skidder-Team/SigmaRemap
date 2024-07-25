@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class class_7881 implements Packet<class_392> {
    private static String[] field_40333;
    private static final Logger field_40331 = LogManager.getLogger();
-   private class_1331 field_40330;
+   private BlockPos field_40330;
    private class_2522 field_40332;
    public class_7500 field_40334;
    private boolean field_40335;
@@ -15,7 +15,7 @@ public class class_7881 implements Packet<class_392> {
    public class_7881() {
    }
 
-   public class_7881(class_1331 var1, class_2522 var2, class_7500 var3, boolean var4, String var5) {
+   public class_7881(BlockPos var1, class_2522 var2, class_7500 var3, boolean var4, String var5) {
       this.field_40330 = var1.method_6072();
       this.field_40332 = var2;
       this.field_40334 = var3;
@@ -46,7 +46,7 @@ public class class_7881 implements Packet<class_392> {
       return this.field_40332;
    }
 
-   public class_1331 method_35641() {
+   public BlockPos method_35641() {
       return this.field_40330;
    }
 

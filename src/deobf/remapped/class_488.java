@@ -75,7 +75,7 @@ public class class_488 {
                                                    for (Entity var5 : class_5601.method_25417(var0x, "targets")) {
                                                       var3x.add(
                                                          ((class_9155)var0x.getSource())
-                                                            .method_42195((class_6331)var5.field_41768)
+                                                            .method_42195((class_6331)var5.world)
                                                             .method_42180(var5.method_37245())
                                                             .method_42183(var5.method_37366())
                                                       );
@@ -633,10 +633,10 @@ public class class_488 {
       );
    }
 
-   private static OptionalInt method_2383(class_6331 var0, class_1331 var1, class_1331 var2, class_1331 var3, boolean var4) throws CommandSyntaxException {
+   private static OptionalInt method_2383(class_6331 var0, BlockPos var1, BlockPos var2, BlockPos var3, boolean var4) throws CommandSyntaxException {
       class_9616 var7 = new class_9616(var1, var2);
       class_9616 var8 = new class_9616(var3, var3.method_6105(var7.method_44394()));
-      class_1331 var9 = new class_1331(var8.field_48996 - var7.field_48996, var8.field_48995 - var7.field_48995, var8.field_48992 - var7.field_48992);
+      BlockPos var9 = new BlockPos(var8.field_48996 - var7.field_48996, var8.field_48995 - var7.field_48995, var8.field_48992 - var7.field_48992);
       int var10 = var7.method_44393() * var7.method_44398() * var7.method_44387();
       if (var10 > 32768) {
          throw field_3060.create(32768, var10);
@@ -646,8 +646,8 @@ public class class_488 {
          for (int var12 = var7.field_48992; var12 <= var7.field_48994; var12++) {
             for (int var13 = var7.field_48995; var13 <= var7.field_48993; var13++) {
                for (int var14 = var7.field_48996; var14 <= var7.field_48991; var14++) {
-                  class_1331 var15 = new class_1331(var14, var13, var12);
-                  class_1331 var16 = var15.method_6105(var9);
+                  BlockPos var15 = new BlockPos(var14, var13, var12);
+                  BlockPos var16 = var15.method_6105(var9);
                   class_2522 var17 = var0.method_28262(var15);
                   if (!var4 || !var17.method_8350(class_4783.field_23184)) {
                      if (var17 != var0.method_28262(var16)) {

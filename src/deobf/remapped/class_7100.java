@@ -25,8 +25,8 @@ public class class_7100 implements class_7912 {
 
       if (!this.field_36621.isEmpty()) {
          String var8 = this.field_36621.get(new Random().nextInt(this.field_36621.size())).method_3392().getName();
-         this.field_36623 = class_9716.method_44890(var8);
-         class_9716.method_44882(this.field_36623, var8);
+         this.field_36623 = AbstractClientPlayerEntity.method_44890(var8);
+         AbstractClientPlayerEntity.method_44882(this.field_36623, var8);
       } else {
          this.field_36623 = class_1512.method_6922();
       }

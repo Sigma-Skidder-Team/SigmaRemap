@@ -28,19 +28,19 @@ public class class_8330 extends class_2830 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_42653.get(var1.<Direction>method_10313(field_42655));
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       return !var3.method_8350(this.field_42654) && var2 == var1.method_10313(field_42655)
          ? this.field_42654.method_39158().method_29260().method_10308(class_8138.field_41679, Integer.valueOf(7))
          : super.method_10763(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method_12870(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_12870(class_2522 var1, class_6163 var2, BlockPos var3) {
       return var1.method_8350(class_4783.field_23421);
    }
 
@@ -53,7 +53,7 @@ public class class_8330 extends class_2830 {
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return new ItemStack(this.method_38368());
    }
 

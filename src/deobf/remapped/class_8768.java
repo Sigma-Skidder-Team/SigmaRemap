@@ -74,7 +74,7 @@ public class class_8768 extends class_7067<class_5490> {
                var42 = class_9299.method_42847(var3.method_37156() + (double)((var36 + var37) / 2.0F / 16.0F));
             }
 
-            int var44 = WorldRenderer.method_20002(var3.field_41768, new class_1331(var40, var41, var42));
+            int var44 = WorldRenderer.method_20002(var3.world, new BlockPos(var40, var41, var42));
             float var45 = var6.method_23602(var30 * (double)(var28 - var34));
             float var46 = var6.method_23602(var30 * (double)(var28 - (var34 + 1)));
             float var47 = var6.method_23639(var32 * (double)(var29 - var35));

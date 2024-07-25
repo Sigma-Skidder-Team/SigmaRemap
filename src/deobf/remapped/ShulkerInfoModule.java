@@ -96,9 +96,9 @@ public class ShulkerInfoModule extends Module {
          double var8 = var1.method_37309() - client.thePlayer.method_37309() - (double) client.thePlayer.method_37074() + 0.4F;
          double var10 = var1.method_37156() - client.thePlayer.method_37156();
          double var12 = (double)class_9299.method_42842(var6 * var6 + var10 * var10);
-         float var14 = class_7211.method_33002(client.thePlayer.field_41701, (float)(Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
-         float var15 = class_7211.method_33002(client.thePlayer.field_41755, (float)(-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
-         return this.method_31550(client.thePlayer.field_41701, var14) <= var5 && this.method_31550(client.thePlayer.field_41755, var15) <= var5;
+         float var14 = class_7211.method_33002(client.thePlayer.rotationYaw, (float)(Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
+         float var15 = class_7211.method_33002(client.thePlayer.rotationPitch, (float)(-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
+         return this.method_31550(client.thePlayer.rotationYaw, var14) <= var5 && this.method_31550(client.thePlayer.rotationPitch, var15) <= var5;
       }
    }
 

@@ -32,7 +32,7 @@ public class class_4965 extends class_337 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return !this.method_37134() ? class_463.field_2473 : class_463.field_2910;
    }
 
@@ -52,7 +52,7 @@ public class class_4965 extends class_337 {
       short var3 = 1200;
       if ((this.field_41697 + this.method_37145()) % 1200 == 0) {
          class_1425 var4 = Effects.field_19748;
-         List var5 = ((class_6331)this.field_41768).method_28990(var1 -> this.method_37275(var1) < 2500.0 && var1.field_47807.method_39515());
+         List var5 = ((class_6331)this.world).method_28990(var1 -> this.method_37275(var1) < 2500.0 && var1.field_47807.method_39515());
          byte var6 = 2;
          short var7 = 6000;
          short var8 = 1200;

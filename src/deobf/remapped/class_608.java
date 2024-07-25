@@ -20,7 +20,7 @@ public abstract class class_608 extends class_4612 {
 
    @Nullable
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return null;
    }
 

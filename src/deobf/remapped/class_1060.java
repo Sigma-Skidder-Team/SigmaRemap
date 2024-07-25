@@ -10,7 +10,7 @@ public class class_1060 extends class_7067<class_5614> {
       this.field_36494 = 0.75F;
    }
 
-   public int method_4657(class_5614 var1, class_1331 var2) {
+   public int method_4657(class_5614 var1, BlockPos var2) {
       return class_9299.method_42829(super.method_32546(var1, var2) + 7, 0, 15);
    }
 

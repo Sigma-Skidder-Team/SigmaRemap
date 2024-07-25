@@ -44,7 +44,7 @@ public class class_7548 extends class_5783 {
       this.method_26167();
       float var11 = 0.99F;
       float var12 = 0.06F;
-      if (!this.field_41768.method_28256(this.method_37241()).noneMatch(class_1873::method_8345)) {
+      if (!this.world.method_28256(this.method_37241()).noneMatch(class_1873::method_8345)) {
          if (!this.method_37134()) {
             this.method_37215(var3.method_6209(0.99F));
             if (!this.method_37078()) {
@@ -65,14 +65,14 @@ public class class_7548 extends class_5783 {
       super.method_26163(var1);
       Entity var4 = this.method_26166();
       if (var4 instanceof class_5834) {
-         var1.method_25524().method_37181(class_6199.method_28358(this, (class_5834)var4).method_28359(), 1.0F);
+         var1.method_25524().attackEntityFrom(DamageSource.method_28358(this, (class_5834)var4).method_28359(), 1.0F);
       }
    }
 
    @Override
    public void method_26165(class_9529 var1) {
       super.method_26165(var1);
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_37204();
       }
    }

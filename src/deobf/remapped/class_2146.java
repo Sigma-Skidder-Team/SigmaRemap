@@ -14,8 +14,8 @@ public class class_2146 implements Runnable {
       AutoFarmModule.method_21408().method_8614().method_4813(new class_7371(this.field_10741));
       AutoFarmModule.method_21404()
          .method_8614()
-         .method_4813(new class_8585(class_2584.field_12791, class_7494.method_34079(this.field_10742[0], this.field_10742[1], 4.5F)));
-      AutoFarmModule.method_21419().method_8614().method_4813(new class_3195(class_2584.field_12791));
+         .method_4813(new class_8585(Hand.MAIN_HAND, class_7494.method_34079(this.field_10742[0], this.field_10742[1], 4.5F)));
+      AutoFarmModule.method_21419().method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
       AutoFarmModule.method_21412().method_8614().method_4813(new class_7371(AutoFarmModule.method_21417().field_9632.field_3853.field_36404));
    }
 }

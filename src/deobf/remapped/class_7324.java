@@ -26,7 +26,7 @@ public class class_7324 implements class_1517 {
 
                for (class_704 var9 : var1.method_25873()) {
                   if (!var9.method_37221()) {
-                     class_1331 var10 = var9.method_37075();
+                     BlockPos var10 = var9.method_37075();
                      if (!var1.method_22572().method_40229() || var10.method_12165() >= var1.method_22552() && var1.method_25263(var10)) {
                         class_9589 var11 = var1.method_43368(var10);
                         if (var11.method_44286(var6.nextFloat() * 3.0F)) {
@@ -36,7 +36,7 @@ public class class_7324 implements class_1517 {
                            );
                            short var14 = 24000;
                            if (var6.nextInt(var13) >= 72000) {
-                              class_1331 var15 = var10.method_6082(20 + var6.nextInt(15))
+                              BlockPos var15 = var10.method_6082(20 + var6.nextInt(15))
                                  .method_6091(-10 + var6.nextInt(21))
                                  .method_6074(-10 + var6.nextInt(21));
                               class_2522 var16 = var1.method_28262(var15);

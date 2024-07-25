@@ -9,7 +9,7 @@ public class class_4180 extends class_1595 {
       super(var1, var2);
    }
 
-   public static boolean method_19449(class_6629<class_4180> var0, class_1556 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_19449(class_6629<class_4180> var0, class_1556 var1, class_2417 var2, BlockPos var3, Random var4) {
       return method_5199(var0, var1, var2, var3, var4) && (var2 == class_2417.field_12024 || var1.method_25263(var3));
    }
 
@@ -19,7 +19,7 @@ public class class_4180 extends class_1595 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2905;
    }
 

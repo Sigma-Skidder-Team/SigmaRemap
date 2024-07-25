@@ -10,8 +10,8 @@ import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
 public class NameTagsModule extends Module {
-   private HashMap<class_1331, class_1325> field_6693 = new HashMap<class_1331, class_1325>();
-   private class_1331 field_6694;
+   private HashMap<BlockPos, class_1325> field_6693 = new HashMap<BlockPos, class_1325>();
+   private BlockPos field_6694;
    private static class_5023 field_6699 = new class_5023();
    private static HashMap<String, class_8343> field_6698 = new HashMap<String, class_8343>();
    public static NameTagsModule field_6701;
@@ -40,7 +40,7 @@ public class NameTagsModule extends Module {
 
             while (var4.hasNext()) {
                Entry var5 = (Entry)var4.next();
-               if (!(client.theWorld.method_28262((class_1331)var5.getKey()).method_8360() instanceof class_3744)) {
+               if (!(client.theWorld.method_28262((BlockPos)var5.getKey()).method_8360() instanceof class_3744)) {
                   var4.remove();
                }
 
@@ -181,10 +181,10 @@ public class NameTagsModule extends Module {
          for (Entry var11 : this.field_6693.entrySet()) {
             float var13 = 1.0F;
             if (var4) {
-               var13 = (float)Math.max(0.8F, Math.sqrt(class_9189.method_42355((class_1331)var11.getKey()) / 30.0));
+               var13 = (float)Math.max(0.8F, Math.sqrt(class_9189.method_42355((BlockPos)var11.getKey()) / 30.0));
             }
 
-            this.method_5290((class_1331)var11.getKey(), (class_1325)var11.getValue(), var13);
+            this.method_5290((BlockPos)var11.getKey(), (class_1325)var11.getValue(), var13);
          }
 
          if (this.method_42007("Mob Owners")) {
@@ -251,7 +251,7 @@ public class NameTagsModule extends Module {
       GL11.glEnd();
    }
 
-   public void method_5290(class_1331 var1, class_1325 var2, float var3) {
+   public void method_5290(BlockPos var1, class_1325 var2, float var3) {
       class_3384 var6 = class_5320.field_27141;
       String var7 = "None";
       if (var2.field_7295 != null) {

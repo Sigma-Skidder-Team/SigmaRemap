@@ -32,11 +32,11 @@ public abstract class class_9506 extends class_5783 {
       class_7474 var3 = class_8462.method_38935(this, this::method_26164);
       boolean var4 = false;
       if (var3.method_33990() == class_1430.field_7717) {
-         class_1331 var5 = ((class_9529)var3).method_43955();
-         class_2522 var13 = this.field_41768.method_28262(var5);
+         BlockPos var5 = ((class_9529)var3).method_43955();
+         class_2522 var13 = this.world.method_28262(var5);
          if (!var13.method_8350(class_4783.field_23588)) {
             if (var13.method_8350(class_4783.field_23824)) {
-               class_3757 var14 = this.field_41768.method_28260(var5);
+               class_3757 var14 = this.world.method_28260(var5);
                if (var14 instanceof class_5555 && class_5555.method_25250(this)) {
                   ((class_5555)var14).method_25252(this);
                }
@@ -65,7 +65,7 @@ public abstract class class_9506 extends class_5783 {
       } else {
          for (int var15 = 0; var15 < 4; var15++) {
             float var16 = 0.25F;
-            this.field_41768
+            this.world
                .method_43361(
                   class_3090.field_15340,
                   var6 - var17.field_7336 * 0.25,

@@ -16,7 +16,7 @@ public class class_9136 extends class_1279 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       if (class_7914.method_35808(this.field_7031) / 25 > 0) {
          this.method_5722(var1, var5, 0, 0, class_7914.method_35806(this.field_7031)[Direction.field_802.method_1050()]);
       }

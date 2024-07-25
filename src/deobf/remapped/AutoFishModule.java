@@ -19,8 +19,8 @@ public class AutoFishModule extends Module {
                      return;
                   }
 
-                  client.method_8614().method_4813(new class_1022(class_2584.field_12791));
-                  client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+                  client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
                   SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoFish", "We catched something!", NotificationIcons.field_11004));
                }
             }

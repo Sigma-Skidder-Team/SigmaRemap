@@ -29,7 +29,7 @@ public class class_1443 extends class_6315 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       this.method_32500(var1, var5, 0, 2, 0, 6, 7, 7, class_4783.field_23184.method_29260(), class_4783.field_23184.method_29260(), false);
       this.method_32500(var1, var5, 1, 0, 0, 5, 1, 7, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
       this.method_32500(var1, var5, 1, 2, 1, 5, 2, 7, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
@@ -106,7 +106,7 @@ public class class_1443 extends class_6315 {
       this.method_32529(var1, var10, 3, 8, 8, var5);
       this.method_32529(var1, class_4783.field_23587.method_29260().method_10308(class_3821.field_49664, Boolean.valueOf(true)), 4, 8, 8, var5);
       if (!this.field_7772) {
-         class_1331 var12 = new class_1331(this.method_32530(3, 5), this.method_32507(5), this.method_32523(3, 5));
+         BlockPos var12 = new BlockPos(this.method_32530(3, 5), this.method_32507(5), this.method_32523(3, 5));
          if (var5.method_44395(var12)) {
             this.field_7772 = true;
             var1.method_7513(var12, class_4783.field_23617.method_29260(), 2);

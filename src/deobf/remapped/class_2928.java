@@ -11,7 +11,7 @@ public class class_2928 extends class_5920<class_7666> {
    }
 
    public boolean method_13387(class_6331 var1, class_7666 var2) {
-      class_1331 var5 = var2.method_26525().<class_8150>method_5138(class_6044.field_30868).get().method_37409();
+      BlockPos var5 = var2.method_26525().<class_8150>method_5138(class_6044.field_30868).get().method_37409();
       return var5.method_12170(var2.method_37245(), 2.0) || var2.method_34698();
    }
 

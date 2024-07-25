@@ -19,7 +19,7 @@ public class class_8307 extends class_2451 {
             double var14 = var3.method_37302() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
             double var16 = class_9299.method_42827(var3.method_37309() + (double)(var3.method_26594().nextInt(16) - 8), 0.0, (double)(var2.method_43371() - 1));
             double var18 = var3.method_37156() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
-            if (var3.method_37070()) {
+            if (var3.isPassenger()) {
                var3.method_37390();
             }
 

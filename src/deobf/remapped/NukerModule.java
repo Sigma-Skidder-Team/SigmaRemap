@@ -5,8 +5,8 @@ import java.util.List;
 import org.lwjgl.opengl.GL11;
 
 public class NukerModule extends Module {
-   private class_1331 field_48181;
-   private List<class_1331> field_48180;
+   private BlockPos field_48181;
+   private List<BlockPos> field_48180;
 
    public NukerModule() {
       super(Category.WORLD, "Nuker", "Destroys blocks around you");
@@ -47,9 +47,9 @@ public class NukerModule extends Module {
                SigmaMainClass.getInstance().getEventManager().call(var5);
                client.playerController.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.getBooleanValueByName("NoSwing")) {
-                  client.thePlayer.method_26597(class_2584.field_12791);
+                  client.thePlayer.method_26597(Hand.MAIN_HAND);
                } else {
-                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
                }
             } else {
                this.field_48181 = this.field_48180.get(0);
@@ -62,18 +62,18 @@ public class NukerModule extends Module {
                SigmaMainClass.getInstance().getEventManager().call(var8);
                client.playerController.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.getBooleanValueByName("NoSwing")) {
-                  client.thePlayer.method_26597(class_2584.field_12791);
+                  client.thePlayer.method_26597(Hand.MAIN_HAND);
                } else {
-                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
                }
             }
          } else {
-            for (class_1331 var9 : this.field_48180) {
+            for (BlockPos var9 : this.field_48180) {
                client.method_8614().method_4813(new class_1586(class_7500.field_38263, var9, class_7494.method_34113(var9)));
                if (!this.getBooleanValueByName("NoSwing")) {
-                  client.thePlayer.method_26597(class_2584.field_12791);
+                  client.thePlayer.method_26597(Hand.MAIN_HAND);
                } else {
-                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
                }
             }
          }
@@ -104,24 +104,24 @@ public class NukerModule extends Module {
       }
    }
 
-   public static void method_43657(class_1331 var0) {
+   public static void method_43657(BlockPos var0) {
       client.method_8614().method_4813(new class_1586(class_7500.field_38263, var0, Direction.field_817));
       client.method_8614().method_4813(new class_1586(class_7500.field_38258, var0, Direction.field_817));
       client.theWorld.method_29594(var0, class_4783.field_23184.method_29260());
    }
 
-   private boolean method_43658(class_1331 var1) {
+   private boolean method_43658(BlockPos var1) {
       class_6414 var4 = client.theWorld.method_28262(var1).method_8360();
       return client.theWorld.method_28262(var1).method_8362().method_24497() || var4 instanceof class_2830;
    }
 
-   private List<class_1331> method_43660(float var1) {
+   private List<BlockPos> method_43660(float var1) {
       ArrayList var4 = new ArrayList();
 
       for (float var5 = var1 + 2.0F; var5 >= -var1 + 1.0F; var5--) {
          for (float var6 = -var1; var6 <= var1; var6++) {
             for (float var7 = -var1; var7 <= var1; var7++) {
-               class_1331 var8 = new class_1331(
+               BlockPos var8 = new BlockPos(
                   client.thePlayer.method_37302() + (double)var6,
                   client.thePlayer.method_37309() + (double)var5,
                   client.thePlayer.method_37156() + (double)var7

@@ -17,7 +17,7 @@ public class FastBowModule extends Module {
                client.method_8614().method_4813(new class_4609(true));
             }
 
-            client.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
+            client.method_8614().method_4813(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
          }
       }
    }

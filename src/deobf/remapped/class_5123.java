@@ -39,7 +39,7 @@ public class class_5123 {
                   var12.method_252(var1.method_37328());
                }
             } else {
-               var1.field_41768
+               var1.world
                   .method_29528(
                      (class_704)null,
                      var1.method_37302(),

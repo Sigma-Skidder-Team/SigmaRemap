@@ -21,8 +21,8 @@ public class class_3239 extends class_1131 {
    }
 
    @Override
-   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, class_1331 var4, Set<class_1331> var5, class_9616 var6, class_1297 var7) {
-      class_1331 var10 = var4.method_6100();
+   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
+      BlockPos var10 = var4.method_6100();
       method_4969(var1, var10);
       method_4969(var1, var10.method_6090());
       method_4969(var1, var10.method_6073());
@@ -42,7 +42,7 @@ public class class_3239 extends class_1131 {
    }
 
    private static void method_14837(
-      class_6755 var0, Random var1, class_2921 var2, Set<class_1331> var3, class_9616 var4, class_1297 var5, class_1331 var6, int var7, int var8, int var9
+           class_6755 var0, Random var1, class_2921 var2, Set<BlockPos> var3, class_9616 var4, class_1297 var5, BlockPos var6, int var7, int var8, int var9
    ) {
       var2.method_13360(var6, var7, var8, var9);
       method_4968(var0, var1, var2, var3, var4, var5);

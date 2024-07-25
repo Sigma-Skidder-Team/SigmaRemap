@@ -10,7 +10,7 @@ public class class_4702 extends class_3200<class_8401> {
    public void method_21676(class_6322 var1, class_6541 var2, class_5799 var3, int var4, int var5, class_6325 var6, class_8401 var7) {
       int var10 = var4 * 16;
       int var11 = var5 * 16;
-      class_1331 var12 = new class_1331(var10, 90, var11);
+      BlockPos var12 = new BlockPos(var10, 90, var11);
       class_6631 var13 = class_6631.method_30492(this.field_15989);
       class_9834.method_45328(var3, var12, var13, this.field_15986, this.field_15989, var7);
       this.method_14720();

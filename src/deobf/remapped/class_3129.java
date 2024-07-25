@@ -41,7 +41,7 @@ public class class_3129 extends Screen {
    @Override
    public void method_5312() {
       this.field_943.method_8575().method_31309();
-      this.field_943.method_8590().method_16330(false);
+      this.field_943.getSoundHandler().method_16330(false);
       float var3 = (float)(this.field_15536 + this.field_940 + this.field_940 + 24) / this.field_15533;
       if (this.field_15540 > var3) {
          this.method_14490();

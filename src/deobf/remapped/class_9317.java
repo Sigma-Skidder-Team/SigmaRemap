@@ -63,7 +63,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    }
 
    public void method_43016(Direction var1) {
-      class_1331 var4 = this.method_17399();
+      BlockPos var4 = this.method_17399();
       this.field_47577 = var1;
       if (!this.field_47584) {
          this.field_47584 = true;
@@ -75,7 +75,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    }
 
    private void method_43015() {
-      class_1331 var3 = this.method_17399();
+      BlockPos var3 = this.method_17399();
       if (this.field_18364.method_29546() > this.field_47579 + 60L || this.field_47583 == null) {
          this.field_47579 = this.field_18364.method_29546();
          class_4092 var4 = new class_4092(var3).method_18898(48.0);
@@ -92,7 +92,7 @@ public class class_9317 extends class_3757 implements class_3745 {
    }
 
    private boolean method_43013() {
-      class_1331 var3 = this.method_17399();
+      BlockPos var3 = this.method_17399();
 
       for (class_5834 var5 : this.field_47583) {
          if (var5.method_37330()
@@ -114,7 +114,7 @@ public class class_9317 extends class_3757 implements class_3745 {
 
    private void method_43017(World var1) {
       if (var1.field_33055) {
-         class_1331 var4 = this.method_17399();
+         BlockPos var4 = this.method_17399();
          MutableInt var5 = new MutableInt(16700985);
          int var6 = (int)this.field_47583.stream().filter(var1x -> var4.method_12170(var1x.method_37245(), 48.0)).count();
          this.field_47583

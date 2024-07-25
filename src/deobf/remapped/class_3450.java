@@ -8,7 +8,7 @@ public final class class_3450 extends class_1048 {
    }
 
    @Override
-   public boolean method_927(class_4190 var1, class_1331 var2, boolean var3) {
+   public boolean method_927(class_4190 var1, BlockPos var2, boolean var3) {
       return var3;
    }
 }

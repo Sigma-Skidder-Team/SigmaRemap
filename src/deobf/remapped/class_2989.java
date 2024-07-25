@@ -39,7 +39,7 @@ public class class_2989 extends class_4855<class_5530> {
       this.field_14694.clear();
 
       for (UUID var7 : var1) {
-         class_753 var8 = this.field_14695.thePlayer.field_30532.method_4800(var7);
+         class_753 var8 = this.field_14695.thePlayer.connection.method_4800(var7);
          if (var8 != null) {
             this.field_14694
                .add(new class_5530(this.field_14695, this.field_14696, var8.method_3392().getId(), var8.method_3392().getName(), var8::method_3402));

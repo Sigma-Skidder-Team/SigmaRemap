@@ -8,8 +8,8 @@ import org.apache.logging.log4j.Logger;
 public class class_9153 {
    private static final Logger field_46824 = LogManager.getLogger();
    public final MinecraftClient field_46835;
-   public final class_1092 field_46837;
-   private class_1331 field_46836 = new class_1331(-1, -1, -1);
+   public final ClientPlayNetHandler field_46837;
+   private BlockPos field_46836 = new BlockPos(-1, -1, -1);
    private ItemStack field_46827 = ItemStack.EMPTY;
    public float field_46832;
    private float field_46825;
@@ -17,10 +17,10 @@ public class class_9153 {
    private boolean field_46829;
    private GameType field_46833 = GameType.SURVIVAL;
    private GameType field_46828 = GameType.NOT_SET;
-   private final Object2ObjectLinkedOpenHashMap<Pair<class_1331, class_7500>, class_1343> field_46830 = new Object2ObjectLinkedOpenHashMap();
+   private final Object2ObjectLinkedOpenHashMap<Pair<BlockPos, class_7500>, class_1343> field_46830 = new Object2ObjectLinkedOpenHashMap();
    private int field_46834;
 
-   public class_9153(MinecraftClient var1, class_1092 var2) {
+   public class_9153(MinecraftClient var1, ClientPlayNetHandler var2) {
       this.field_46835 = var1;
       this.field_46837 = var2;
    }
@@ -46,7 +46,7 @@ public class class_9153 {
       return this.field_46833.method_21593();
    }
 
-   public boolean method_42152(class_1331 var1) {
+   public boolean method_42152(BlockPos var1) {
       if (!this.field_46835.thePlayer.method_3228(this.field_46835.theWorld, var1, this.field_46833)) {
          ClientWorld var4 = this.field_46835.theWorld;
          class_2522 var5 = var4.method_28262(var1);
@@ -74,7 +74,7 @@ public class class_9153 {
       }
    }
 
-   public boolean method_42142(class_1331 var1, Direction var2) {
+   public boolean method_42142(BlockPos var1, Direction var2) {
       if (!this.field_46835.thePlayer.method_3228(this.field_46835.theWorld, var1, this.field_46833)) {
          if (!this.field_46835.theWorld.method_6673().method_9813(var1)) {
             return false;
@@ -93,7 +93,7 @@ public class class_9153 {
                      var5.method_8307(this.field_46835.theWorld, var1, this.field_46835.thePlayer);
                   }
 
-                  if (var6 && var5.method_8311(this.field_46835.thePlayer, this.field_46835.thePlayer.field_41768, var1) >= 1.0F) {
+                  if (var6 && var5.method_8311(this.field_46835.thePlayer, this.field_46835.thePlayer.world, var1) >= 1.0F) {
                      this.method_42152(var1);
                   } else {
                      this.field_46829 = true;
@@ -133,7 +133,7 @@ public class class_9153 {
       }
    }
 
-   public boolean method_42163(class_1331 var1, Direction var2) {
+   public boolean method_42163(BlockPos var1, Direction var2) {
       this.method_42129();
       if (this.field_46831 <= 0) {
          if (this.field_46833.method_21587() && this.field_46835.theWorld.method_6673().method_9813(var1)) {
@@ -148,12 +148,12 @@ public class class_9153 {
          } else {
             class_2522 var5 = this.field_46835.theWorld.method_28262(var1);
             if (!var5.method_8345()) {
-               this.field_46832 = this.field_46832 + var5.method_8311(this.field_46835.thePlayer, this.field_46835.thePlayer.field_41768, var1);
+               this.field_46832 = this.field_46832 + var5.method_8311(this.field_46835.thePlayer, this.field_46835.thePlayer.world, var1);
                if (this.field_46825 % 4.0F == 0.0F) {
                   class_4618 var6 = var5.method_8316();
                   this.field_46835
-                     .method_8590()
-                     .method_16345(
+                     .getSoundHandler()
+                     .play(
                         new class_4949(var6.method_21392(), class_562.field_3322, (var6.method_21395() + 1.0F) / 8.0F, var6.method_21393() * 0.5F, var1)
                      );
                }
@@ -195,7 +195,7 @@ public class class_9153 {
       }
    }
 
-   private boolean method_42160(class_1331 var1) {
+   private boolean method_42160(BlockPos var1) {
       ItemStack var4 = this.field_46835.thePlayer.method_26446();
       boolean var5 = this.field_46827.method_28022() && var4.method_28022();
       if (!this.field_46827.method_28022() && !var4.method_28022()) {
@@ -215,9 +215,9 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42147(ClientPlayerEntity var1, ClientWorld var2, class_2584 var3, class_9529 var4) {
+   public class_6910 method_42147(ClientPlayerEntity var1, ClientWorld var2, Hand var3, class_9529 var4) {
       this.method_42129();
-      class_1331 var7 = var4.method_43955();
+      BlockPos var7 = var4.method_43955();
       if (this.field_46835.theWorld.method_6673().method_9813(var7)) {
          ItemStack var8 = var1.method_26617(var3);
          if (this.field_46833 == GameType.SPECTATOR) {
@@ -256,7 +256,7 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42155(class_704 var1, World var2, class_2584 var3) {
+   public class_6910 method_42155(class_704 var1, World var2, Hand var3) {
       if (this.field_46833 != GameType.SPECTATOR) {
          this.method_42129();
          this.field_46837.method_4813(new class_1022(var3));
@@ -278,11 +278,11 @@ public class class_9153 {
       }
    }
 
-   public ClientPlayerEntity method_42131(ClientWorld var1, class_4156 var2, class_2716 var3) {
+   public ClientPlayerEntity method_42131(ClientWorld var1, StatisticsManager var2, ClientRecipeBook var3) {
       return this.method_42130(var1, var2, var3, false, false);
    }
 
-   public ClientPlayerEntity method_42130(ClientWorld var1, class_4156 var2, class_2716 var3, boolean var4, boolean var5) {
+   public ClientPlayerEntity method_42130(ClientWorld var1, StatisticsManager var2, ClientRecipeBook var3, boolean var4, boolean var5) {
       return new ClientPlayerEntity(this.field_46835, var1, this.field_46837, var2, var3, var4, var5);
    }
 
@@ -295,13 +295,13 @@ public class class_9153 {
       }
    }
 
-   public class_6910 method_42144(class_704 var1, Entity var2, class_2584 var3) {
+   public class_6910 method_42144(class_704 var1, Entity var2, Hand var3) {
       this.method_42129();
       this.field_46837.method_4813(new class_3398(var2, var3, var1.method_37252()));
       return this.field_46833 != GameType.SPECTATOR ? var1.method_3204(var2, var3) : class_6910.field_35521;
    }
 
-   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, class_2584 var4) {
+   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, Hand var4) {
       this.method_42129();
       class_1343 var7 = var3.method_33993().method_6193(var2.method_37302(), var2.method_37309(), var2.method_37156());
       this.field_46837.method_4813(new class_3398(var2, var4, var7, var1.method_37252()));
@@ -334,7 +334,7 @@ public class class_9153 {
 
    public void method_42139(class_704 var1) {
       this.method_42129();
-      this.field_46837.method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
+      this.field_46837.method_4813(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
       var1.method_26474();
    }
 
@@ -355,7 +355,7 @@ public class class_9153 {
    }
 
    public boolean method_42161() {
-      return this.field_46835.thePlayer.method_37070() && this.field_46835.thePlayer.method_37243() instanceof class_4109;
+      return this.field_46835.thePlayer.isPassenger() && this.field_46835.thePlayer.method_37243() instanceof class_4109;
    }
 
    public boolean method_42153() {
@@ -378,19 +378,19 @@ public class class_9153 {
       this.field_46837.method_4813(new class_4006(var1));
    }
 
-   private void method_42127(class_7500 var1, class_1331 var2, Direction var3) {
+   private void method_42127(class_7500 var1, BlockPos var2, Direction var3) {
       ClientPlayerEntity var6 = this.field_46835.thePlayer;
       this.field_46830.put(Pair.of(var2, var1), var6.method_37245());
       this.field_46837.method_4813(new class_1586(var1, var2, var3));
    }
 
-   public void method_42159(ClientWorld var1, class_1331 var2, class_2522 var3, class_7500 var4, boolean var5) {
+   public void method_42159(ClientWorld var1, BlockPos var2, class_2522 var3, class_7500 var4, boolean var5) {
       class_1343 var8 = (class_1343)this.field_46830.remove(Pair.of(var2, var4));
       class_2522 var9 = var1.method_28262(var2);
       if ((var8 == null || !var5 || var4 != class_7500.field_38263 && var9 != var3) && var9 != var3) {
          var1.method_743(var2, var3);
          ClientPlayerEntity var10 = this.field_46835.thePlayer;
-         if (var8 != null && var1 == var10.field_41768 && var10.method_37381(var2, var3)) {
+         if (var8 != null && var1 == var10.world && var10.method_37381(var2, var3)) {
             var10.method_37165(var8.field_7336, var8.field_7333, var8.field_7334);
          }
       }

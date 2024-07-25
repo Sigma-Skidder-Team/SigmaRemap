@@ -105,11 +105,11 @@ public class class_2987 extends class_6127<class_5834> {
       var5.method_5105(class_6044.field_30906, var13);
    }
 
-   private static Optional<class_1331> method_13673(class_6331 var0, class_5834 var1) {
-      return class_1331.method_6102(var1.method_37075(), 8, 4, var1x -> method_13672(var0, var1x));
+   private static Optional<BlockPos> method_13673(class_6331 var0, class_5834 var1) {
+      return BlockPos.method_6102(var1.method_37075(), 8, 4, var1x -> method_13672(var0, var1x));
    }
 
-   private static boolean method_13672(class_6331 var0, class_1331 var1) {
+   private static boolean method_13672(class_6331 var0, BlockPos var1) {
       class_2522 var4 = var0.method_28262(var1);
       boolean var5 = var4.method_8349(class_2351.field_11808);
       return var5 && var4.method_8350(class_4783.field_23511) ? class_8474.method_39004(var4) : var5;

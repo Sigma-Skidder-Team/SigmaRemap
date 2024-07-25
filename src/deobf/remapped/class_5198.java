@@ -16,14 +16,14 @@ public class class_5198 extends class_4314 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_26731;
    }
 
    @Override
-   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
+   public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
       if (var2 instanceof class_6331
-         && !var4.method_37070()
+         && !var4.isPassenger()
          && !var4.method_37151()
          && var4.method_37148()
          && class_3370.method_15537(
@@ -44,7 +44,7 @@ public class class_5198 extends class_4314 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.method_12173() + var4.nextDouble();
       double var9 = (double)var3.method_12165() + 0.8;
       double var11 = (double)var3.method_12185() + var4.nextDouble();
@@ -52,7 +52,7 @@ public class class_5198 extends class_4314 {
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return ItemStack.EMPTY;
    }
 

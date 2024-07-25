@@ -97,7 +97,7 @@ public class class_2931 {
       }
    }
 
-   public static int method_13427(Iterable<ItemStack> var0, class_6199 var1) {
+   public static int method_13427(Iterable<ItemStack> var0, DamageSource var1) {
       MutableInt var4 = new MutableInt();
       method_13416((var2, var3) -> var4.add(var2.method_20438(var3, var1)), var0);
       return var4.intValue();

@@ -48,7 +48,7 @@ public class class_8835 {
       return class_7860.field_40192.method_3596() ? class_7860.method_35565(var0.method_27960(), class_7860.field_40192, var0) : var0.method_27995();
    }
 
-   public static int method_40643(class_2522 var0, class_5561 var1, class_1331 var2) {
+   public static int method_40643(class_2522 var0, class_5561 var1, BlockPos var2) {
       return !class_7860.field_40163.method_3596() ? var0.method_8339() : class_7860.method_35569(var0, class_7860.field_40163, var1, var2);
    }
 
@@ -86,7 +86,7 @@ public class class_8835 {
       }
    }
 
-   public static boolean method_40652(class_2522 var0, class_6163 var1, class_1331 var2) {
+   public static boolean method_40652(class_2522 var0, class_6163 var1, BlockPos var2) {
       return !class_7860.field_39999.method_3596() ? var0.method_8345() : class_7860.method_35565(var0, class_7860.field_39999, var1, var2);
    }
 

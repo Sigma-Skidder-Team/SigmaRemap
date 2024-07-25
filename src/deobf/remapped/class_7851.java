@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7851 extends class_1080 {
+public class class_7851 extends AbstractMinecartEntity {
    private static final class_7821<Boolean> field_39787 = class_8073.<Boolean>method_36641(class_7851.class, class_2734.field_13347);
    private int field_39789;
    public double field_39788;
@@ -29,7 +29,7 @@ public class class_7851 extends class_1080 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (!this.field_41768.method_22567()) {
+      if (!this.world.method_22567()) {
          if (this.field_39789 > 0) {
             this.field_39789--;
          }
@@ -43,7 +43,7 @@ public class class_7851 extends class_1080 {
       }
 
       if (this.method_35522() && this.field_41717.nextInt(4) == 0) {
-         this.field_41768.method_43361(class_3090.field_15319, this.method_37302(), this.method_37309() + 0.8, this.method_37156(), 0.0, 0.0, 0.0);
+         this.world.method_43361(class_3090.field_15319, this.method_37302(), this.method_37309() + 0.8, this.method_37156(), 0.0, 0.0, 0.0);
       }
    }
 
@@ -53,15 +53,15 @@ public class class_7851 extends class_1080 {
    }
 
    @Override
-   public void method_4743(class_6199 var1) {
+   public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (!var1.method_28367() && this.field_41768.method_29537().method_1285(class_291.field_1024)) {
+      if (!var1.method_28367() && this.world.method_29537().method_1285(class_291.field_1024)) {
          this.method_37312(class_4783.field_23883);
       }
    }
 
    @Override
-   public void method_4750(class_1331 var1, class_2522 var2) {
+   public void method_4750(BlockPos var1, class_2522 var2) {
       double var5 = 1.0E-4;
       double var7 = 0.001;
       super.method_4750(var1, var2);
@@ -92,7 +92,7 @@ public class class_7851 extends class_1080 {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, class_2584 var2) {
+   public class_6910 method_37128(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (field_39785.test(var5) && this.field_39789 + 3600 <= 32000) {
          if (!var1.playerAbilities.isCreativeMode) {
@@ -107,7 +107,7 @@ public class class_7851 extends class_1080 {
          this.field_39786 = this.method_37156() - var1.method_37156();
       }
 
-      return class_6910.method_31659(this.field_41768.field_33055);
+      return class_6910.method_31659(this.world.field_33055);
    }
 
    @Override

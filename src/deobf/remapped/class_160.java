@@ -42,14 +42,14 @@ public class class_160 {
       return null;
    }
 
-   public static class_4190 method_646(class_6163 var0, class_1331 var1) {
+   public static class_4190 method_646(class_6163 var0, BlockPos var1) {
       class_2522 var4 = var0.method_28262(var1);
       return !var4.method_8349(class_2351.field_11770) && (!(var4.method_8360() instanceof class_7502) || !var4.<Boolean>method_10313(class_7502.field_38300))
          ? var4.method_8324(var0, var1)
          : class_3370.method_15536();
    }
 
-   public static double method_652(class_1331 var0, int var1, Function<class_1331, class_4190> var2) {
+   public static double method_652(BlockPos var0, int var1, Function<BlockPos, class_4190> var2) {
       class_2921 var5 = var0.method_6089();
       int var6 = 0;
 
@@ -67,7 +67,7 @@ public class class_160 {
    }
 
    @Nullable
-   public static class_1343 method_650(class_6629<?> var0, class_1449 var1, class_1331 var2, boolean var3) {
+   public static class_1343 method_650(class_6629<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
       if (var3 && var0.method_30481(var1.method_28262(var2))) {
          return null;
       } else {

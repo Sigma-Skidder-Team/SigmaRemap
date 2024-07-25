@@ -22,7 +22,7 @@ public class class_6598 extends class_6414 {
       return field_34034.containsKey(var0.method_8360());
    }
 
-   private void method_30379(class_6331 var1, class_1331 var2) {
+   private void method_30379(class_6331 var1, BlockPos var2) {
       class_6174 var5 = class_6629.field_34314.method_30484(var1);
       var5.method_37144((double)var2.method_12173() + 0.5, (double)var2.method_12165(), (double)var2.method_12185() + 0.5, 0.0F, 0.0F);
       var1.method_7509(var5);
@@ -30,7 +30,7 @@ public class class_6598 extends class_6414 {
    }
 
    @Override
-   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, ItemStack var4) {
+   public void method_10765(class_2522 var1, class_6331 var2, BlockPos var3, ItemStack var4) {
       super.method_10765(var1, var2, var3, var4);
       if (var2.method_29537().method_1285(class_291.field_1058) && class_2931.method_13423(class_3668.field_17870, var4) == 0) {
          this.method_30379(var2, var3);
@@ -38,7 +38,7 @@ public class class_6598 extends class_6414 {
    }
 
    @Override
-   public void method_29279(World var1, class_1331 var2, class_2730 var3) {
+   public void method_29279(World var1, BlockPos var2, class_2730 var3) {
       if (var1 instanceof class_6331) {
          this.method_30379((class_6331)var1, var2);
       }

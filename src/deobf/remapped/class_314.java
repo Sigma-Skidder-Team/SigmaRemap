@@ -145,8 +145,8 @@ public class class_314 {
       float var16 = (float)(Math.atan2(var12, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       return new float[]{
-         field_1158.thePlayer.field_41701 + class_9299.method_42810(var16 - field_1158.thePlayer.field_41701),
-         field_1158.thePlayer.field_41755 + class_9299.method_42810(var17 - field_1158.thePlayer.field_41755)
+         field_1158.thePlayer.rotationYaw + class_9299.method_42810(var16 - field_1158.thePlayer.rotationYaw),
+         field_1158.thePlayer.rotationPitch + class_9299.method_42810(var17 - field_1158.thePlayer.rotationPitch)
       };
    }
 
@@ -654,13 +654,13 @@ public class class_314 {
       return var5.count() != 0L;
    }
 
-   public static List<class_1331> method_1447(Entity var0) {
+   public static List<BlockPos> method_1447(Entity var0) {
       ArrayList var3 = new ArrayList();
       byte var4 = 1;
 
       for (float var5 = (float)(-var4); var5 <= (float)var4; var5++) {
          for (float var6 = (float)(-var4); var6 <= (float)var4; var6++) {
-            class_1331 var7 = new class_1331(var0.method_37302() + (double)var5, var0.method_37309() - 1.0, var0.method_37156() + (double)var6);
+            BlockPos var7 = new BlockPos(var0.method_37302() + (double)var5, var0.method_37309() - 1.0, var0.method_37156() + (double)var6);
             var3.add(var7);
          }
       }
@@ -684,12 +684,12 @@ public class class_314 {
    }
 
    public static void method_1396() {
-      field_1158.method_8614().method_4813(new class_1022(class_2584.field_12791));
-      field_1158.method_8614().method_4813(new class_1022(class_2584.field_12794));
+      field_1158.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+      field_1158.method_8614().method_4813(new class_1022(Hand.OFF_HAND));
    }
 
    public static void method_1459() {
-      field_1158.method_8614().method_4813(new class_1586(class_7500.field_38259, new class_1331(0, 0, 0), Direction.field_802));
+      field_1158.method_8614().method_4813(new class_1586(class_7500.field_38259, new BlockPos(0, 0, 0), Direction.field_802));
    }
 
    public static void method_1431(Entity var0, boolean var1) {
@@ -698,11 +698,11 @@ public class class_314 {
       SigmaMainClass.getInstance().getEventManager().call(var5);
       if (!var5.method_29716()) {
          if (var4 && var1) {
-            field_1158.thePlayer.method_26597(class_2584.field_12791);
+            field_1158.thePlayer.method_26597(Hand.MAIN_HAND);
          }
 
          field_1158.method_8614().method_4813(new class_3398(var5.method_16973(), field_1158.thePlayer.method_37252()));
-         if (class_2931.method_13423(class_4382.method_20431(12), field_1158.thePlayer.method_26617(class_2584.field_12791)) > 0) {
+         if (class_2931.method_13423(class_4382.method_20431(12), field_1158.thePlayer.method_26617(Hand.MAIN_HAND)) > 0) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15360);
          }
 
@@ -713,14 +713,14 @@ public class class_314 {
             && !field_1158.thePlayer.method_26505()
             && !field_1158.thePlayer.method_37285()
             && !field_1158.thePlayer.isPotionActive(Effects.field_19736)
-            && !field_1158.thePlayer.method_37070();
+            && !field_1158.thePlayer.isPassenger();
          if (var7 || field_1158.thePlayer.field_41726 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015()) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15322);
          }
 
          field_1158.thePlayer.method_3164();
          if (!var4 && var1) {
-            field_1158.thePlayer.method_26597(class_2584.field_12791);
+            field_1158.thePlayer.method_26597(Hand.MAIN_HAND);
          }
 
          var5.method_16974();
@@ -1100,10 +1100,10 @@ public class class_314 {
    }
 
    public static float method_1438(float var0) {
-      float var3 = class_9299.method_42810(field_1158.thePlayer.field_41701);
+      float var3 = class_9299.method_42810(field_1158.thePlayer.rotationYaw);
       float var4 = 180.0F;
       float var5 = 0.0F;
-      class_8859 var6 = field_1158.thePlayer.field_30533;
+      MovementInput var6 = field_1158.thePlayer.movementInput;
       float var7 = var6.field_45287;
       float var8 = var6.field_45282;
       if (var7 == 0.0F) {

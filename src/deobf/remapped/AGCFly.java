@@ -109,8 +109,8 @@ public class AGCFly extends Module {
                this.field_6382 = -1;
             }
 
-            var5.field_3143 = client.thePlayer.field_41701;
-            var5.field_3140 = client.thePlayer.field_41755;
+            var5.field_3143 = client.thePlayer.rotationYaw;
+            var5.field_3140 = client.thePlayer.rotationPitch;
          }
       }
    }
@@ -121,13 +121,13 @@ public class AGCFly extends Module {
             class_4092 var3 = client.thePlayer.field_41712.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             Iterator var4 = client.theWorld.method_6680(client.thePlayer, var3).iterator();
             double var5 = -1.0;
-            class_1331 var7 = null;
+            BlockPos var7 = null;
 
             while (var4.hasNext()) {
                class_4190 var8 = (class_4190)var4.next();
                if (var8.method_19483().field_19939 > var5) {
                   var5 = var8.method_19483().field_19939;
-                  var7 = new class_1331(var8.method_19483().field_19941, var8.method_19483().field_19937, var8.method_19483().field_19938);
+                  var7 = new BlockPos(var8.method_19483().field_19941, var8.method_19483().field_19937, var8.method_19483().field_19938);
                }
             }
 

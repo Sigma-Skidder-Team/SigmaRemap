@@ -35,7 +35,7 @@ public class class_9021 extends class_6315 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       this.method_32500(var1, var5, 0, 0, 0, 4, 1, 4, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
       this.method_32500(var1, var5, 0, 2, 0, 4, 5, 4, class_4783.field_23184.method_29260(), class_4783.field_23184.method_29260(), false);
       class_2522 var10 = class_4783.field_23587
@@ -53,7 +53,7 @@ public class class_9021 extends class_6315 {
       this.method_32500(var1, var5, 1, 2, 4, 4, 5, 4, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
       this.method_32500(var1, var5, 1, 3, 4, 1, 4, 4, var10, var10, false);
       this.method_32500(var1, var5, 3, 3, 4, 3, 4, 4, var10, var10, false);
-      if (this.field_46142 && var5.method_44395(new class_1331(this.method_32530(1, 3), this.method_32507(2), this.method_32523(1, 3)))) {
+      if (this.field_46142 && var5.method_44395(new BlockPos(this.method_32530(1, 3), this.method_32507(2), this.method_32523(1, 3)))) {
          this.field_46142 = false;
          this.method_32525(var1, var5, var4, 1, 2, 3, class_5931.field_30106);
       }

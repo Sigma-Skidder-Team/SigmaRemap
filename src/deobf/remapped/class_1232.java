@@ -31,7 +31,7 @@ public class class_1232 implements class_7279 {
       if (var4 == null) {
          return false;
       } else {
-         class_1097 var5 = var4.field_41768.method_29562();
+         class_1097 var5 = var4.world.method_29562();
 
          for (Entry var7 : this.field_6802.entrySet()) {
             if (!this.method_5479(var4, var5, (String)var7.getKey(), (class_7986)var7.getValue())) {

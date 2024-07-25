@@ -20,8 +20,8 @@ public class class_2171 implements Packet<class_392> {
       this.field_10825 = var1.method_37302();
       this.field_10824 = var1.method_37309();
       this.field_10822 = var1.method_37156();
-      this.field_10821 = (byte)((int)(var1.field_41701 * 256.0F / 360.0F));
-      this.field_10823 = (byte)((int)(var1.field_41755 * 256.0F / 360.0F));
+      this.field_10821 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
+      this.field_10823 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
       this.field_10820 = var1.method_37360();
    }
 

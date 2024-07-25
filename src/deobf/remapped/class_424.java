@@ -23,7 +23,7 @@ public class class_424 extends class_4285<class_9431> {
       super(var1);
    }
 
-   public boolean method_2104(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_9431 var5) {
+   public boolean method_2104(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_9431 var5) {
       int var8 = var2.method_29816();
       if (method_2107(var1, var8, var4.method_6089())) {
          int var9 = var5.method_43651().method_15936(var3);
@@ -32,7 +32,7 @@ public class class_424 extends class_4285<class_9431> {
          int var12 = !var10 ? 15 : 50;
          boolean var13 = false;
 
-         for (class_1331 var15 : class_1331.method_6079(
+         for (BlockPos var15 : BlockPos.method_6079(
             var3,
             var12,
             var4.method_12173() - var11,
@@ -54,10 +54,10 @@ public class class_424 extends class_4285<class_9431> {
       }
    }
 
-   private boolean method_2105(class_9379 var1, int var2, class_1331 var3, int var4, int var5) {
+   private boolean method_2105(class_9379 var1, int var2, BlockPos var3, int var4, int var5) {
       boolean var8 = false;
 
-      for (class_1331 var10 : class_1331.method_6075(
+      for (BlockPos var10 : BlockPos.method_6075(
          var3.method_12173() - var5,
          var3.method_12165(),
          var3.method_12185() - var5,
@@ -66,7 +66,7 @@ public class class_424 extends class_4285<class_9431> {
          var3.method_12185() + var5
       )) {
          int var11 = var10.method_12176(var3);
-         class_1331 var12 = !method_2103(var1, var2, var10)
+         BlockPos var12 = !method_2103(var1, var2, var10)
             ? method_2106(var1, var10.method_6089(), var11)
             : method_2102(var1, var2, var10.method_6089(), var11);
          if (var12 != null) {
@@ -92,7 +92,7 @@ public class class_424 extends class_4285<class_9431> {
    }
 
    @Nullable
-   private static class_1331 method_2102(class_9379 var0, int var1, class_2921 var2, int var3) {
+   private static BlockPos method_2102(class_9379 var0, int var1, class_2921 var2, int var3) {
       while (var2.method_12165() > 1 && var3 > 0) {
          var3--;
          if (method_2107(var0, var1, var2)) {
@@ -116,7 +116,7 @@ public class class_424 extends class_4285<class_9431> {
    }
 
    @Nullable
-   private static class_1331 method_2106(class_9379 var0, class_2921 var1, int var2) {
+   private static BlockPos method_2106(class_9379 var0, class_2921 var1, int var2) {
       while (var1.method_12165() < var0.method_28261() && var2 > 0) {
          var2--;
          class_2522 var5 = var0.method_28262(var1);
@@ -135,7 +135,7 @@ public class class_424 extends class_4285<class_9431> {
       return null;
    }
 
-   private static boolean method_2103(class_9379 var0, int var1, class_1331 var2) {
+   private static boolean method_2103(class_9379 var0, int var1, BlockPos var2) {
       class_2522 var5 = var0.method_28262(var2);
       return var5.method_8345() || var5.method_8350(class_4783.field_23811) && var2.method_12165() <= var1;
    }

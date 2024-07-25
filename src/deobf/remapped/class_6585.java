@@ -18,9 +18,9 @@ public class class_6585 extends class_8285 {
       while (
          var3 != null
             && !this.field_42465
-               .field_41768
-               .method_28262(new class_1331(var3))
-               .method_8319(this.field_42465.field_41768, new class_1331(var3), class_2929.field_14272)
+               .world
+               .method_28262(new BlockPos(var3))
+               .method_8319(this.field_42465.world, new BlockPos(var3), class_2929.field_14272)
             && var4++ < 10
       ) {
          var3 = class_3425.method_15845(this.field_42465, 10, 7);

@@ -294,14 +294,14 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
    }
 
    @Nullable
-   public static class_6867 method_26108(World var0, class_1331 var1) {
+   public static class_6867 method_26108(World var0, BlockPos var1) {
       return method_26107(var0, (double)var1.method_12173() + 0.5, (double)var1.method_12165() + 0.5, (double)var1.method_12185() + 0.5);
    }
 
    @Nullable
    public static class_6867 method_26107(World var0, double var1, double var3, double var5) {
       Object var9 = null;
-      class_1331 var10 = new class_1331(var1, var3, var5);
+      BlockPos var10 = new BlockPos(var1, var3, var5);
       class_2522 var11 = var0.method_28262(var10);
       class_6414 var12 = var11.method_8360();
       if (!(var12 instanceof class_8660)) {
@@ -381,7 +381,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
 
    public void method_26088(Entity var1) {
       if (var1 instanceof class_91) {
-         class_1331 var4 = this.method_17399();
+         BlockPos var4 = this.method_17399();
          if (class_3370.method_15537(
             class_3370.method_15523(
                var1.method_37241().method_18918((double)(-var4.method_12173()), (double)(-var4.method_12165()), (double)(-var4.method_12185()))

@@ -25,7 +25,7 @@ public class class_7804 extends class_4314 {
    }
 
    @Override
-   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var1.method_8350(var4.method_8360())) {
          class_3757 var8 = var2.method_28260(var3);
          if (var8 instanceof class_3420) {
@@ -35,8 +35,8 @@ public class class_7804 extends class_4314 {
    }
 
    @Override
-   public void method_29290(class_9379 var1, class_1331 var2, class_2522 var3) {
-      class_1331 var6 = var2.method_6098(var3.<Direction>method_10313(field_39514).method_1046());
+   public void method_29290(class_9379 var1, BlockPos var2, class_2522 var3) {
+      BlockPos var6 = var2.method_6098(var3.<Direction>method_10313(field_39514).method_1046());
       class_2522 var7 = var1.method_28262(var6);
       if (var7.method_8360() instanceof class_1990 && var7.<Boolean>method_10313(class_1990.field_10077)) {
          var1.method_7508(var6, false);
@@ -44,7 +44,7 @@ public class class_7804 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       if (!var2.field_33055 && var2.method_28260(var3) == null) {
          var2.method_7508(var3, false);
          return class_6910.field_35518;
@@ -55,29 +55,29 @@ public class class_7804 extends class_4314 {
 
    @Override
    public List<ItemStack> method_10796(class_2522 var1, class_8480 var2) {
-      class_3420 var5 = this.method_35383(var2.method_39060(), new class_1331(var2.<class_1343>method_39062(class_8712.field_44671)));
+      class_3420 var5 = this.method_35383(var2.method_39060(), new BlockPos(var2.<class_1343>method_39062(class_8712.field_44671)));
       return var5 != null ? var5.method_15792().method_8333(var2) : Collections.<ItemStack>emptyList();
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return class_3370.method_15536();
    }
 
    @Override
-   public class_4190 method_10775(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10775(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       class_3420 var7 = this.method_35383(var2, var3);
       return var7 == null ? class_3370.method_15536() : var7.method_15801(var2, var3);
    }
 
    @Nullable
-   private class_3420 method_35383(class_6163 var1, class_1331 var2) {
+   private class_3420 method_35383(class_6163 var1, BlockPos var2) {
       class_3757 var5 = var1.method_28260(var2);
       return !(var5 instanceof class_3420) ? null : (class_3420)var5;
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return ItemStack.EMPTY;
    }
 
@@ -97,7 +97,7 @@ public class class_7804 extends class_4314 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

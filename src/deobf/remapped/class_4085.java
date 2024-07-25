@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 
 public class class_4085 {
    private final class_226 field_19882;
-   private class_1331 field_19876;
+   private BlockPos field_19876;
    private final class_6331 field_19879;
    private final Collection<class_6685> field_19870 = Lists.newArrayList();
    private final int field_19883;
@@ -32,7 +32,7 @@ public class class_4085 {
       this.field_19880 = var1.method_961().method_30486(var2);
    }
 
-   public void method_18846(class_1331 var1) {
+   public void method_18846(BlockPos var1) {
       this.field_19876 = var1;
    }
 
@@ -98,7 +98,7 @@ public class class_4085 {
       return this.field_19882.method_962();
    }
 
-   public class_1331 method_18843() {
+   public BlockPos method_18843() {
       return this.field_19876;
    }
 
@@ -149,11 +149,11 @@ public class class_4085 {
       this.field_19870.add(var1);
    }
 
-   public void method_18834(class_1331 var1, int var2) {
+   public void method_18834(BlockPos var1, int var2) {
       class_945 var5 = class_2765.method_12584(this.method_18839(), var1, this.method_18840(), var2, this.field_19879, false);
       this.method_18846(var5.method_17399());
       var5.method_4098(this.method_18835());
-      class_2765.method_12587(this.field_19876, new class_1331(1, 0, -1), this.method_18840(), this.field_19879);
+      class_2765.method_12587(this.field_19876, new BlockPos(1, 0, -1), this.method_18840(), this.field_19879);
       this.field_19870.forEach(var1x -> var1x.method_30658(this));
    }
 

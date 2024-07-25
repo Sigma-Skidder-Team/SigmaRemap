@@ -9,7 +9,7 @@ public class class_2651 {
       this.field_13052 = var2;
    }
 
-   public class_2651(class_1331 var1) {
+   public class_2651(BlockPos var1) {
       this.field_13051 = var1.method_12173();
       this.field_13052 = var1.method_12185();
    }

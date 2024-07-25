@@ -8,7 +8,7 @@ public class class_7658 extends class_4285<class_204> {
       super(var1);
    }
 
-   public boolean method_34665(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_204 var5) {
+   public boolean method_34665(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_204 var5) {
       if (var5.field_685.contains(var1.method_28262(var4.method_6081()).method_8360())) {
          if (var5.field_683 && !var5.field_685.contains(var1.method_28262(var4.method_6100()).method_8360())) {
             return false;

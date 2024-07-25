@@ -14,7 +14,7 @@ public class class_3756 extends class_3757 implements class_3745 {
    private float field_18350;
    private boolean field_18357;
    private boolean field_18353;
-   private final List<class_1331> field_18352 = Lists.newArrayList();
+   private final List<BlockPos> field_18352 = Lists.newArrayList();
    private class_5834 field_18356;
    private UUID field_18351;
    private long field_18348;
@@ -94,7 +94,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       for (int var3 = -1; var3 <= 1; var3++) {
          for (int var4 = -1; var4 <= 1; var4++) {
             for (int var5 = -1; var5 <= 1; var5++) {
-               class_1331 var6 = this.field_18358.method_6104(var3, var4, var5);
+               BlockPos var6 = this.field_18358.method_6104(var3, var4, var5);
                if (!this.field_18364.method_22565(var6)) {
                   return false;
                }
@@ -110,7 +110,7 @@ public class class_3756 extends class_3757 implements class_3745 {
                int var8 = Math.abs(var17);
                if ((var18 > 1 || var7 > 1 || var8 > 1)
                   && (var15 == 0 && (var7 == 2 || var8 == 2) || var16 == 0 && (var18 == 2 || var8 == 2) || var17 == 0 && (var18 == 2 || var7 == 2))) {
-                  class_1331 var9 = this.field_18358.method_6104(var15, var16, var17);
+                  BlockPos var9 = this.field_18358.method_6104(var15, var16, var17);
                   class_2522 var10 = this.field_18364.method_28262(var9);
 
                   for (class_6414 var14 : field_18354) {
@@ -180,7 +180,7 @@ public class class_3756 extends class_3757 implements class_3745 {
                1.0F,
                1.0F
             );
-         this.field_18356.method_37181(class_6199.field_31686, 4.0F);
+         this.field_18356.attackEntityFrom(DamageSource.field_31686, 4.0F);
       }
 
       if (var3 != this.field_18356) {
@@ -223,12 +223,12 @@ public class class_3756 extends class_3757 implements class_3745 {
          (double)this.field_18358.method_12173() + 0.5, (double)this.field_18358.method_12165() + 1.5 + var4, (double)this.field_18358.method_12185() + 0.5
       );
 
-      for (class_1331 var8 : this.field_18352) {
+      for (BlockPos var8 : this.field_18352) {
          if (var3.nextInt(50) == 0) {
             float var9 = -0.5F + var3.nextFloat();
             float var10 = -2.0F + var3.nextFloat();
             float var11 = -0.5F + var3.nextFloat();
-            class_1331 var12 = var8.method_6093(this.field_18358);
+            BlockPos var12 = var8.method_6093(this.field_18358);
             class_1343 var13 = new class_1343((double)var9, (double)var10, (double)var11)
                .method_6214((double)var12.method_12173(), (double)var12.method_12165(), (double)var12.method_12185());
             this.field_18364

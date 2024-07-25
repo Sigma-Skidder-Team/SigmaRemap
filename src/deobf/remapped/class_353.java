@@ -2,24 +2,24 @@ package remapped;
 
 public class class_353 extends class_4734 {
    private static String[] field_1380;
-   public class_1331 field_1379;
+   public BlockPos field_1379;
    public boolean field_1381 = true;
 
-   public class_353(class_704 var1, class_2584 var2, ItemStack var3, class_9529 var4) {
-      this(var1.field_41768, var1, var2, var3, var4);
+   public class_353(class_704 var1, Hand var2, ItemStack var3, class_9529 var4) {
+      this(var1.world, var1, var2, var3, var4);
    }
 
    public class_353(class_4734 var1) {
       this(var1.method_21862(), var1.method_21868(), var1.method_21860(), var1.method_21867(), var1.method_21864());
    }
 
-   public class_353(World var1, class_704 var2, class_2584 var3, ItemStack var4, class_9529 var5) {
+   public class_353(World var1, class_704 var2, Hand var3, ItemStack var4, class_9529 var5) {
       super(var1, var2, var3, var4, var5);
       this.field_1379 = var5.method_43955().method_6098(var5.method_43956());
       this.field_1381 = var1.method_28262(var5.method_43955()).method_8374(this);
    }
 
-   public static class_353 method_1784(class_353 var0, class_1331 var1, Direction var2) {
+   public static class_353 method_1784(class_353 var0, BlockPos var1, Direction var2) {
       return new class_353(
          var0.method_21862(),
          var0.method_21868(),
@@ -39,7 +39,7 @@ public class class_353 extends class_4734 {
    }
 
    @Override
-   public class_1331 method_21858() {
+   public BlockPos method_21858() {
       return !this.field_1381 ? this.field_1379 : super.method_21858();
    }
 

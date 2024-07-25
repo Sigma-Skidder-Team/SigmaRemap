@@ -3,7 +3,7 @@ package remapped;
 import javax.annotation.Nullable;
 
 public class class_6862 extends class_405 {
-   private class_1331 field_35357;
+   private BlockPos field_35357;
    private int field_35359;
 
    public class_6862(class_6629<? extends class_6862> var1, World var2) {
@@ -21,14 +21,14 @@ public class class_6862 extends class_405 {
                this,
                class_9541.method_43999(new ItemStack(class_4897.field_25157), class_3697.field_18126),
                class_463.field_2449,
-               var1 -> this.field_41768.method_29544() && !var1.method_37109()
+               var1 -> this.world.method_29544() && !var1.method_37109()
             )
          );
       this.field_29916
          .method_3485(
             0,
             new class_7018<class_6862>(
-               this, new ItemStack(class_4897.field_24579), class_463.field_2362, var1 -> this.field_41768.method_29602() && var1.method_37109()
+               this, new ItemStack(class_4897.field_24579), class_463.field_2362, var1 -> this.world.method_29602() && var1.method_37109()
             )
          );
       this.field_29916.method_3485(1, new class_7713(this));
@@ -60,22 +60,22 @@ public class class_6862 extends class_405 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25034 && this.method_37330() && !this.method_2024() && !this.method_26449()) {
-         if (var2 == class_2584.field_12791) {
+         if (var2 == Hand.MAIN_HAND) {
             var1.method_3209(class_6234.field_31910);
          }
 
          if (!this.method_974().isEmpty()) {
-            if (!this.field_41768.field_33055) {
+            if (!this.world.field_33055) {
                this.method_975(var1);
                this.method_977(var1, this.method_19839(), 1);
             }
 
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          } else {
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          }
       } else {
          return super.method_26857(var1, var2);
@@ -130,7 +130,7 @@ public class class_6862 extends class_405 {
    public void method_2023(class_8014 var1) {
       if (var1.method_36374()) {
          int var4 = 3 + this.field_41717.nextInt(4);
-         this.field_41768.method_7509(new class_5614(this.field_41768, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), var4));
+         this.world.method_7509(new class_5614(this.world, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), var4));
       }
    }
 
@@ -140,7 +140,7 @@ public class class_6862 extends class_405 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2822;
    }
 
@@ -176,7 +176,7 @@ public class class_6862 extends class_405 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_31485();
       }
    }
@@ -187,12 +187,12 @@ public class class_6862 extends class_405 {
       }
    }
 
-   public void method_31484(class_1331 var1) {
+   public void method_31484(BlockPos var1) {
       this.field_35357 = var1;
    }
 
    @Nullable
-   private class_1331 method_31479() {
+   private BlockPos method_31479() {
       return this.field_35357;
    }
 }

@@ -77,7 +77,7 @@ public abstract class class_8704 {
       }
 
       var2.method_37120(var12);
-      var2.field_47807.method_39527((class_6331)var2.field_41768);
+      var2.field_47807.method_39527((class_6331)var2.world);
       String var13 = "local";
       if (var1.method_23494() != null) {
          var13 = var1.method_23494().toString();
@@ -136,7 +136,7 @@ public abstract class class_8704 {
       }
 
       this.method_39983(var19.mergeStyle(TextFormatting.YELLOW), ChatType.SYSTEM, Util.NIL_UUID);
-      var15.method_4170(var2.method_37302(), var2.method_37309(), var2.method_37156(), var2.field_41701, var2.field_41755);
+      var15.method_4170(var2.method_37302(), var2.method_37309(), var2.method_37156(), var2.rotationYaw, var2.rotationPitch);
       this.field_44632.add(var2);
       this.field_44619.put(var2.method_37328(), var2);
       this.method_39972(new class_7867(class_2236.field_11144, var2));
@@ -170,15 +170,15 @@ public abstract class class_8704 {
             if (!var27.method_37328().equals(var22)) {
                for (Entity var24 : var27.method_37379()) {
                   if (var24.method_37328().equals(var22)) {
-                     var2.method_37354(var24, true);
+                     var2.startRiding(var24, true);
                      break;
                   }
                }
             } else {
-               var2.method_37354(var27, true);
+               var2.startRiding(var27, true);
             }
 
-            if (!var2.method_37070()) {
+            if (!var2.isPassenger()) {
                field_44623.warn("Couldn't reattach entity to player");
                var12.method_28977(var27);
 
@@ -247,7 +247,7 @@ public abstract class class_8704 {
       class_6331 var4 = var1.method_43235();
       var1.method_3209(class_6234.field_31854);
       this.method_39967(var1);
-      if (var1.method_37070()) {
+      if (var1.isPassenger()) {
          Entity var5 = var1.method_37240();
          if (var5.method_37172()) {
             field_44623.debug("Removing player mount");
@@ -343,7 +343,7 @@ public abstract class class_8704 {
    public class_9359 method_39984(class_9359 var1, boolean var2) {
       this.field_44632.remove(var1);
       var1.method_43235().method_28964(var1);
-      class_1331 var5 = var1.method_43279();
+      BlockPos var5 = var1.method_43279();
       float var6 = var1.method_43270();
       boolean var7 = var1.method_43268();
       class_6331 var8 = this.field_44631.method_1697(var1.method_43259());
@@ -399,12 +399,12 @@ public abstract class class_8704 {
          var12.method_37256(var12.method_37302(), var12.method_37309() + 1.0, var12.method_37156());
       }
 
-      class_1906 var21 = var12.field_41768.method_43366();
+      class_1906 var21 = var12.world.method_43366();
       var12.field_47794
          .method_4156(
             new class_7786(
-               var12.field_41768.method_22572(),
-               var12.field_41768.method_29545(),
+               var12.world.method_22572(),
+               var12.world.method_29545(),
                class_859.method_3728(var12.method_43235().method_3133()),
                var12.field_47807.method_39517(),
                var12.field_47807.method_39524(),
@@ -413,7 +413,7 @@ public abstract class class_8704 {
                var2
             )
          );
-      var12.field_47794.method_4170(var12.method_37302(), var12.method_37309(), var12.method_37156(), var12.field_41701, var12.field_41755);
+      var12.field_47794.method_4170(var12.method_37302(), var12.method_37309(), var12.method_37156(), var12.rotationYaw, var12.rotationPitch);
       var12.field_47794.method_4156(new class_2073(var10.method_28998(), var10.method_28988()));
       var12.field_47794.method_4156(new class_9275(var21.method_8661(), var21.method_8662()));
       var12.field_47794.method_4156(new class_8175(var12.field_3842, var12.field_3862, var12.field_3840));
@@ -458,7 +458,7 @@ public abstract class class_8704 {
    public void method_39958(Packet<?> var1, class_5621<World> var2) {
       for (int var5 = 0; var5 < this.field_44632.size(); var5++) {
          class_9359 var6 = this.field_44632.get(var5);
-         if (var6.field_41768.method_29545() == var2) {
+         if (var6.world.method_29545() == var2) {
             var6.field_47794.method_4156(var1);
          }
       }
@@ -565,7 +565,7 @@ public abstract class class_8704 {
    public void method_39996(class_704 var1, double var2, double var4, double var6, double var8, class_5621<World> var10, Packet<?> var11) {
       for (int var14 = 0; var14 < this.field_44632.size(); var14++) {
          class_9359 var15 = this.field_44632.get(var14);
-         if (var15 != var1 && var15.field_41768.method_29545() == var10) {
+         if (var15 != var1 && var15.world.method_29545() == var10) {
             double var16 = var2 - var15.method_37302();
             double var18 = var4 - var15.method_37309();
             double var20 = var6 - var15.method_37156();

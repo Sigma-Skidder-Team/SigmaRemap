@@ -23,8 +23,8 @@ public class class_6388 {
    public final List<String> field_32628 = Lists.newArrayList();
    public final List<String> field_32611 = Lists.newArrayList();
    public final List<String> field_32626 = Lists.newArrayList();
-   public final Set<class_1331> field_32612 = Sets.newHashSet();
-   public final Set<class_1331> field_32623 = Sets.newHashSet();
+   public final Set<BlockPos> field_32612 = Sets.newHashSet();
+   public final Set<BlockPos> field_32623 = Sets.newHashSet();
 
    public class_6388(
       UUID var1, int var2, String var3, String var4, int var5, float var6, float var7, class_66 var8, String var9, class_3998 var10, boolean var11
@@ -42,11 +42,11 @@ public class class_6388 {
       this.field_32619 = var11;
    }
 
-   private boolean method_29178(class_1331 var1) {
+   private boolean method_29178(BlockPos var1) {
       return this.field_32612.stream().anyMatch(var1::equals);
    }
 
-   private boolean method_29182(class_1331 var1) {
+   private boolean method_29182(BlockPos var1) {
       return this.field_32623.contains(var1);
    }
 

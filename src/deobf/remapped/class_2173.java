@@ -15,7 +15,7 @@ public class class_2173 extends class_1871 {
    @Override
    public void method_23473() {
       if (!this.field_10830 && this.field_10827 != null) {
-         class_1331 var3 = this.field_9479.field_41768.method_22563(class_3801.field_18590, class_8870.field_45348);
+         BlockPos var3 = this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348);
          if (!var3.method_12170(this.field_9479.method_37245(), 10.0)) {
             this.field_9479.method_12611().method_29422(class_8978.field_46006);
          }
@@ -55,7 +55,7 @@ public class class_2173 extends class_1871 {
       if (this.field_10827 != null) {
          this.field_10827.method_18434();
          if (!this.field_10827.method_18436()) {
-            class_1331 var3 = this.field_10827.method_18449();
+            BlockPos var3 = this.field_10827.method_18449();
             this.field_10827.method_18434();
 
             double var4;

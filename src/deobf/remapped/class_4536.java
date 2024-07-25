@@ -40,7 +40,7 @@ public enum class_4536 {
       return this.field_22137;
    }
 
-   public class_1331 method_21056(class_1331 var1) {
+   public BlockPos method_21056(BlockPos var1) {
       var1 = var1.method_6099(this.field_22121, 1);
       if (this.field_22137 != null) {
          var1 = var1.method_6099(this.field_22137, 1);

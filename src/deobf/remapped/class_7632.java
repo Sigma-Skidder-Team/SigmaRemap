@@ -19,7 +19,7 @@ public class class_7632 extends class_8985 {
    }
 
    @Override
-   public boolean method_5609(class_1331 var1) {
+   public boolean method_5609(BlockPos var1) {
       return this.field_6882.method_28262(var1).method_8350(class_4783.field_23811) || super.method_5609(var1);
    }
 }

@@ -11,14 +11,14 @@ public class class_5506 extends class_3599 {
    @Override
    public boolean method_16795() {
       return this.field_28048.method_37360()
-         && !this.field_28048.field_41768.method_28258(this.field_28048.method_37075()).method_22007(class_6503.field_33094);
+         && !this.field_28048.world.method_28258(this.field_28048.method_37075()).method_22007(class_6503.field_33094);
    }
 
    @Override
    public void method_16796() {
-      class_1331 var3 = null;
+      BlockPos var3 = null;
 
-      for (class_1331 var5 : class_1331.method_6075(
+      for (BlockPos var5 : BlockPos.method_6075(
          class_9299.method_42847(this.field_28048.method_37302() - 2.0),
          class_9299.method_42847(this.field_28048.method_37309() - 2.0),
          class_9299.method_42847(this.field_28048.method_37156() - 2.0),
@@ -26,7 +26,7 @@ public class class_5506 extends class_3599 {
          class_9299.method_42847(this.field_28048.method_37309()),
          class_9299.method_42847(this.field_28048.method_37156() + 2.0)
       )) {
-         if (this.field_28048.field_41768.method_28258(var5).method_22007(class_6503.field_33094)) {
+         if (this.field_28048.world.method_28258(var5).method_22007(class_6503.field_33094)) {
             var3 = var5;
             break;
          }

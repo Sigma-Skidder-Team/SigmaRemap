@@ -19,7 +19,7 @@ public class class_3927 extends class_6353<class_9399, class_8108> {
 
    public void method_18157(class_9399 var1, class_7966 var2, float var3, float var4, float var5) {
       var2.method_36060(class_2426.field_12074.method_11074(180.0F - var4));
-      float var8 = (float)(var1.field_41768.method_29546() - var1.field_48050) + var5;
+      float var8 = (float)(var1.world.method_29546() - var1.field_48050) + var5;
       if (var8 < 5.0F) {
          var2.method_36060(class_2426.field_12074.method_11074(class_9299.method_42818(var8 / 1.5F * (float) Math.PI) * 3.0F));
       }

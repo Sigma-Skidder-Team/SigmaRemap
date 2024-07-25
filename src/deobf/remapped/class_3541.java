@@ -120,7 +120,7 @@ public class class_3541 extends class_2840<class_5408> {
       this.field_17314.method_425(var1);
    }
 
-   public void method_16345(class_3560 var1) {
+   public void play(class_3560 var1) {
       this.field_17314.method_435(var1);
    }
 

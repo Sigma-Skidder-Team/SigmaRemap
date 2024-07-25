@@ -41,7 +41,7 @@ public class PlayerTabOverlayGui extends AbstractGui {
    }
 
    public void method_9940(class_7966 var1, int var2, class_1097 var3, class_4399 var4) {
-      class_1092 var7 = this.field_10666.thePlayer.field_30532;
+      ClientPlayNetHandler var7 = this.field_10666.thePlayer.connection;
       List var8 = field_10660.sortedCopy(var7.method_4798());
       int var9 = 0;
       int var10 = 0;

@@ -19,7 +19,7 @@ public abstract class class_8383 extends class_3954<class_6867> {
       method_18867(var7, 4);
       this.field_42898 = var6;
       this.field_42896 = var7;
-      this.field_42895 = var5.field_36409.field_41768;
+      this.field_42895 = var5.field_36409.world;
       this.method_18885(new class_7934(var6, 0, 56, 17));
       this.method_18885(new class_5040(this, var6, 1, 56, 53));
       this.method_18885(new class_5833(var5.field_36409, var6, 2, 116, 35));

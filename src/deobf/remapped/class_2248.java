@@ -18,7 +18,7 @@ public class class_2248 extends class_3521 {
    }
 
    @Override
-   public class_1331 method_16261() {
+   public BlockPos method_16261() {
       return this.field_11183.field_18358;
    }
 

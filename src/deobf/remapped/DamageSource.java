@@ -4,28 +4,28 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_6199 {
-   public static final class_6199 field_31678 = new class_6199("inFire").method_28371().method_28343();
-   public static final class_6199 field_31674 = new class_6199("lightningBolt");
-   public static final class_6199 field_31665 = new class_6199(field_31663[6]).method_28371().method_28343();
-   public static final class_6199 field_31691 = new class_6199("lava").method_28343();
-   public static final class_6199 field_31675 = new class_6199("hotFloor").method_28343();
-   public static final class_6199 field_31670 = new class_6199("inWall").method_28371();
-   public static final class_6199 field_31676 = new class_6199("cramming").method_28371();
-   public static final class_6199 field_31671 = new class_6199("drown").method_28371();
-   public static final class_6199 field_31694 = new class_6199("starve").method_28371().method_28354();
-   public static final class_6199 field_31677 = new class_6199("cactus");
-   public static final class_6199 field_31684 = new class_6199("fall").method_28371();
-   public static final class_6199 field_31672 = new class_6199("flyIntoWall").method_28371();
-   public static final class_6199 field_31685 = new class_6199("outOfWorld").method_28371().method_28356();
-   public static final class_6199 field_31664 = new class_6199("generic").method_28371();
-   public static final class_6199 field_31686 = new class_6199("magic").method_28371().method_28361();
-   public static final class_6199 field_31669 = new class_6199("wither").method_28371();
-   public static final class_6199 field_31666 = new class_6199("anvil");
-   public static final class_6199 field_31681 = new class_6199("fallingBlock");
-   public static final class_6199 field_31692 = new class_6199("dragonBreath").method_28371();
-   public static final class_6199 field_31688 = new class_6199("dryout");
-   public static final class_6199 field_31687 = new class_6199("sweetBerryBush");
+public class DamageSource {
+   public static final DamageSource field_31678 = new DamageSource("inFire").method_28371().method_28343();
+   public static final DamageSource field_31674 = new DamageSource("lightningBolt");
+   public static final DamageSource field_31665 = new DamageSource(field_31663[6]).method_28371().method_28343();
+   public static final DamageSource field_31691 = new DamageSource("lava").method_28343();
+   public static final DamageSource field_31675 = new DamageSource("hotFloor").method_28343();
+   public static final DamageSource field_31670 = new DamageSource("inWall").method_28371();
+   public static final DamageSource field_31676 = new DamageSource("cramming").method_28371();
+   public static final DamageSource field_31671 = new DamageSource("drown").method_28371();
+   public static final DamageSource field_31694 = new DamageSource("starve").method_28371().method_28354();
+   public static final DamageSource field_31677 = new DamageSource("cactus");
+   public static final DamageSource field_31684 = new DamageSource("fall").method_28371();
+   public static final DamageSource field_31672 = new DamageSource("flyIntoWall").method_28371();
+   public static final DamageSource field_31685 = new DamageSource("outOfWorld").method_28371().method_28356();
+   public static final DamageSource field_31664 = new DamageSource("generic").method_28371();
+   public static final DamageSource field_31686 = new DamageSource("magic").method_28371().method_28361();
+   public static final DamageSource field_31669 = new DamageSource("wither").method_28371();
+   public static final DamageSource field_31666 = new DamageSource("anvil");
+   public static final DamageSource field_31681 = new DamageSource("fallingBlock");
+   public static final DamageSource field_31692 = new DamageSource("dragonBreath").method_28371();
+   public static final DamageSource field_31688 = new DamageSource("dryout");
+   public static final DamageSource field_31687 = new DamageSource("sweetBerryBush");
    private boolean field_31673;
    private boolean field_31668;
    private boolean field_31680;
@@ -37,65 +37,65 @@ public class class_6199 {
    private boolean field_31683;
    public final String field_31693;
 
-   public static class_6199 method_28370(class_5834 var0) {
+   public static DamageSource method_28370(class_5834 var0) {
       return new class_5405("sting", var0);
    }
 
-   public static class_6199 method_28345(class_5834 var0) {
+   public static DamageSource method_28345(class_5834 var0) {
       return new class_5405("mob", var0);
    }
 
-   public static class_6199 method_28358(Entity var0, class_5834 var1) {
+   public static DamageSource method_28358(Entity var0, class_5834 var1) {
       return new class_8758("mob", var0, var1);
    }
 
-   public static class_6199 method_28344(class_704 var0) {
+   public static DamageSource method_28344(class_704 var0) {
       return new class_5405("player", var0);
    }
 
-   public static class_6199 method_28379(class_6749 var0, Entity var1) {
+   public static DamageSource method_28379(class_6749 var0, Entity var1) {
       return new class_8758("arrow", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28368(Entity var0, Entity var1) {
+   public static DamageSource method_28368(Entity var0, Entity var1) {
       return new class_8758("trident", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28363(class_8612 var0, Entity var1) {
+   public static DamageSource method_28363(class_8612 var0, Entity var1) {
       return new class_8758("fireworks", var0, var1).method_28377();
    }
 
-   public static class_6199 method_28375(class_2550 var0, Entity var1) {
+   public static DamageSource method_28375(class_2550 var0, Entity var1) {
       return var1 != null
          ? new class_8758("fireball", var0, var1).method_28343().method_28359()
          : new class_8758("onFire", var0, var0).method_28343().method_28359();
    }
 
-   public static class_6199 method_28376(class_1044 var0, Entity var1) {
+   public static DamageSource method_28376(class_1044 var0, Entity var1) {
       return new class_8758("witherSkull", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28355(Entity var0, Entity var1) {
+   public static DamageSource method_28355(Entity var0, Entity var1) {
       return new class_8758("thrown", var0, var1).method_28359();
    }
 
-   public static class_6199 method_28369(Entity var0, Entity var1) {
+   public static DamageSource method_28369(Entity var0, Entity var1) {
       return new class_8758("indirectMagic", var0, var1).method_28371().method_28361();
    }
 
-   public static class_6199 method_28364(Entity var0) {
+   public static DamageSource method_28364(Entity var0) {
       return new class_5405("thorns", var0).method_24599().method_28361();
    }
 
-   public static class_6199 method_28350(class_2730 var0) {
+   public static DamageSource method_28350(class_2730 var0) {
       return method_28351(var0 == null ? null : var0.method_12273());
    }
 
-   public static class_6199 method_28351(class_5834 var0) {
-      return var0 == null ? new class_6199("explosion").method_28366().method_28377() : new class_5405("explosion.player", var0).method_28366().method_28377();
+   public static DamageSource method_28351(class_5834 var0) {
+      return var0 == null ? new DamageSource("explosion").method_28366().method_28377() : new class_5405("explosion.player", var0).method_28366().method_28377();
    }
 
-   public static class_6199 method_28378() {
+   public static DamageSource method_28378() {
       return new class_6188();
    }
 
@@ -108,7 +108,7 @@ public class class_6199 {
       return this.field_31682;
    }
 
-   public class_6199 method_28359() {
+   public DamageSource method_28359() {
       this.field_31682 = true;
       return this;
    }
@@ -117,7 +117,7 @@ public class class_6199 {
       return this.field_31683;
    }
 
-   public class_6199 method_28377() {
+   public DamageSource method_28377() {
       this.field_31683 = true;
       return this;
    }
@@ -138,7 +138,7 @@ public class class_6199 {
       return this.field_31680;
    }
 
-   public class_6199(String var1) {
+   public DamageSource(String var1) {
       this.field_31693 = var1;
    }
 
@@ -152,24 +152,24 @@ public class class_6199 {
       return null;
    }
 
-   public class_6199 method_28371() {
+   public DamageSource method_28371() {
       this.field_31673 = true;
       this.field_31689 = 0.0F;
       return this;
    }
 
-   public class_6199 method_28356() {
+   public DamageSource method_28356() {
       this.field_31668 = true;
       return this;
    }
 
-   public class_6199 method_28354() {
+   public DamageSource method_28354() {
       this.field_31680 = true;
       this.field_31689 = 0.0F;
       return this;
    }
 
-   public class_6199 method_28343() {
+   public DamageSource method_28343() {
       this.field_31679 = true;
       return this;
    }
@@ -191,7 +191,7 @@ public class class_6199 {
       return this.field_31693;
    }
 
-   public class_6199 method_28366() {
+   public DamageSource method_28366() {
       this.field_31690 = true;
       return this;
    }
@@ -204,7 +204,7 @@ public class class_6199 {
       return this.field_31667;
    }
 
-   public class_6199 method_28361() {
+   public DamageSource method_28361() {
       this.field_31667 = true;
       return this;
    }

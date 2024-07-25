@@ -45,7 +45,7 @@ public class class_2806 extends class_1173 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2725;
    }
 
@@ -65,9 +65,9 @@ public class class_2806 extends class_1173 {
          this.method_37215(this.method_37098().method_6210(1.0, 0.6, 1.0));
       }
 
-      if (this.field_41768.field_33055) {
+      if (this.world.field_33055) {
          if (this.field_41717.nextInt(24) == 0 && !this.method_37378()) {
-            this.field_41768
+            this.world
                .method_29527(
                   this.method_37302() + 0.5,
                   this.method_37309() + 0.5,
@@ -81,7 +81,7 @@ public class class_2806 extends class_1173 {
          }
 
          for (int var3 = 0; var3 < 2; var3++) {
-            this.field_41768.method_43361(class_3090.field_15319, this.method_37361(0.5), this.method_37255(), this.method_37383(0.5), 0.0, 0.0, 0.0);
+            this.world.method_43361(class_3090.field_15319, this.method_37361(0.5), this.method_37255(), this.method_37383(0.5), 0.0, 0.0, 0.0);
          }
       }
 

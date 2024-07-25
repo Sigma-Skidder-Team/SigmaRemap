@@ -12,7 +12,7 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
+   public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
       class_2522 var7 = var2.method_28262(var3.method_6081());
       if (!var7.method_8345()) {
          var4.method_37188(var1.<Boolean>method_10313(field_34381));
@@ -50,12 +50,12 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       method_30519(var2, var3.method_6081(), method_30521(var2, var3.method_6100()));
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       method_30519(var2, var3.method_6081(), method_30521(var2, var3));
    }
 
@@ -64,24 +64,24 @@ public class class_6644 extends class_6414 implements class_5978 {
       return class_8532.field_43674.method_17649(false);
    }
 
-   public static void method_30519(class_9379 var0, class_1331 var1, boolean var2) {
+   public static void method_30519(class_9379 var0, BlockPos var1, boolean var2) {
       if (method_30520(var0, var1)) {
          var0.method_7513(var1, class_4783.field_23269.method_29260().method_10308(field_34381, Boolean.valueOf(var2)), 2);
       }
    }
 
-   public static boolean method_30520(class_9379 var0, class_1331 var1) {
+   public static boolean method_30520(class_9379 var0, BlockPos var1) {
       class_4774 var4 = var0.method_28258(var1);
       return var0.method_28262(var1).method_8350(class_4783.field_23900) && var4.method_21996() >= 8 && var4.method_21993();
    }
 
-   private static boolean method_30521(class_6163 var0, class_1331 var1) {
+   private static boolean method_30521(class_6163 var0, BlockPos var1) {
       class_2522 var4 = var0.method_28262(var1);
       return !var4.method_8350(class_4783.field_23269) ? !var4.method_8350(class_4783.field_23784) : var4.<Boolean>method_10313(field_34381);
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       double var7 = (double)var3.method_12173();
       double var9 = (double)var3.method_12165();
       double var11 = (double)var3.method_12185();
@@ -106,7 +106,7 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var1.method_8309(var4, var5)) {
          if (var2 != Direction.field_802) {
             if (var2 == Direction.field_817 && !var3.method_8350(class_4783.field_23269) && method_30520(var4, var6)) {
@@ -124,13 +124,13 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       class_2522 var6 = var2.method_28262(var3.method_6100());
       return var6.method_8350(class_4783.field_23269) || var6.method_8350(class_4783.field_23215) || var6.method_8350(class_4783.field_23784);
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return class_3370.method_15536();
    }
 
@@ -145,7 +145,7 @@ public class class_6644 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public class_2340 method_27280(class_9379 var1, class_1331 var2, class_2522 var3) {
+   public class_2340 method_27280(class_9379 var1, BlockPos var2, class_2522 var3) {
       var1.method_7513(var2, class_4783.field_23184.method_29260(), 11);
       return class_8532.field_43674;
    }

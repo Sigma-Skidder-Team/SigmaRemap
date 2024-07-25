@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
 import java.util.Arrays;
 
-public class class_4803 extends class_5272<class_9149> {
+public class class_4803 extends class_5272<BoatEntity> {
    private static String[] field_24000;
    private final class_1549[] field_23999 = new class_1549[2];
    private final class_1549 field_23998;
@@ -54,7 +54,7 @@ public class class_4803 extends class_5272<class_9149> {
       this.field_23997 = var9.build();
    }
 
-   public void method_22131(class_9149 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void method_22131(BoatEntity var1, float var2, float var3, float var4, float var5, float var6) {
       this.method_22132(var1, 0, var2);
       this.method_22132(var1, 1, var2);
    }
@@ -78,7 +78,7 @@ public class class_4803 extends class_5272<class_9149> {
       return var4;
    }
 
-   public void method_22132(class_9149 var1, int var2, float var3) {
+   public void method_22132(BoatEntity var1, int var2, float var3) {
       float var6 = var1.method_42108(var2, var3);
       class_1549 var7 = this.field_23999[var2];
       var7.field_8191 = (float)class_9299.method_42841(

@@ -110,7 +110,7 @@ public class ElytraFlyModule extends Module {
                   client.method_8614().method_4813(new class_7371(var5));
                }
 
-               client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+               client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
                if (var5 != client.thePlayer.inventory.field_36404) {
                   client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
                }

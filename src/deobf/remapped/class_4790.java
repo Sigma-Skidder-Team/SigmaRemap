@@ -10,7 +10,7 @@ public class class_4790 implements class_1979 {
    }
 
    @Override
-   public class_1331 method_9092() {
+   public BlockPos method_9092() {
       return this.field_23956.method_17399();
    }
 

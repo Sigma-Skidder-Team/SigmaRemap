@@ -661,7 +661,7 @@ public class class_916 extends class_4037 implements class_6510 {
    }
 
    public void method_3975(class_9359 var1, class_2034 var2, Packet<?>[] var3, boolean var4, boolean var5) {
-      if (var1.field_41768 == this.field_4703) {
+      if (var1.world == this.field_4703) {
          if (class_7860.field_39857.method_3596()) {
             class_7860.field_39857.method_3582(var4, var5, var1, var2, this.field_4703);
          }

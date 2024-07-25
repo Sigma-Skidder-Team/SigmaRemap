@@ -53,8 +53,8 @@ public class ChestStealerModule extends Module {
                   && var4.method_43955().method_12165() == this.field_15892.method_17399().method_12165()
                   && var4.method_43955().method_12185() == this.field_15892.method_17399().method_12185()) {
                   this.field_15894 = true;
-                  client.method_8614().method_4813(new class_8585(class_2584.field_12791, var4));
-                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_8585(Hand.MAIN_HAND, var4));
+                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
                   this.field_15893.method_14773();
                }
             }
@@ -252,7 +252,7 @@ public class ChestStealerModule extends Module {
       }
 
       for (Object var11 : var5) {
-         if (class_7494.method_34120((class_1331) var11) instanceof class_6942 || class_7494.method_34120((class_1331) var11) instanceof class_3311) {
+         if (class_7494.method_34120((BlockPos) var11) instanceof class_6942 || class_7494.method_34120((BlockPos) var11) instanceof class_3311) {
             return true;
          }
       }

@@ -15,7 +15,7 @@ public class class_4107 extends class_6062<class_4080> {
    }
 
    public boolean method_19028(
-      class_5990 var1, Function<class_1331, class_6325> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, class_4080 var10
+           class_5990 var1, Function<BlockPos, class_6325> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9, class_4080 var10
    ) {
       int var13 = (this.method_27720() * 2 - 1) * 16;
       int var14 = var3.nextInt(var3.nextInt(var3.nextInt(this.method_19029()) + 1) + 1);
@@ -68,7 +68,7 @@ public class class_4107 extends class_6062<class_4080> {
 
    public void method_19026(
       class_5990 var1,
-      Function<class_1331, class_6325> var2,
+      Function<BlockPos, class_6325> var2,
       long var3,
       int var5,
       int var6,
@@ -87,7 +87,7 @@ public class class_4107 extends class_6062<class_4080> {
 
    public void method_19027(
       class_5990 var1,
-      Function<class_1331, class_6325> var2,
+      Function<BlockPos, class_6325> var2,
       long var3,
       int var5,
       int var6,

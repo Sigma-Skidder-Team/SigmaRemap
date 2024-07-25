@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.AbstractIterator;
 
-public final class class_7662 extends AbstractIterator<class_1331> {
+public final class class_7662 extends AbstractIterator<BlockPos> {
    private static String[] field_38941;
    private final class_2921 field_38934;
    private int field_38942;
@@ -17,7 +17,7 @@ public final class class_7662 extends AbstractIterator<class_1331> {
       this.field_38934 = new class_2921();
    }
 
-   public class_1331 computeNext() {
+   public BlockPos computeNext() {
       if (this.field_38942 != this.field_38937) {
          int var3 = this.field_38942 % this.field_38935;
          int var4 = this.field_38942 / this.field_38935;
@@ -26,7 +26,7 @@ public final class class_7662 extends AbstractIterator<class_1331> {
          this.field_38942++;
          return this.field_38934.method_13362(this.field_38936 + var3, this.field_38939 + var5, this.field_38940 + var6);
       } else {
-         return (class_1331)this.endOfData();
+         return (BlockPos)this.endOfData();
       }
    }
 }

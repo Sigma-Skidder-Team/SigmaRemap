@@ -57,9 +57,9 @@ public class TestModule extends Module {
    public void onEnable() {
       this.field_8821 = 0.0;
       this.field_8816 = new class_2440(1000, 100000, class_4043.field_19620);
-      this.field_8832 = class_9299.method_42810(client.thePlayer.field_41701);
+      this.field_8832 = class_9299.method_42810(client.thePlayer.rotationYaw);
       this.field_8832 = 39.0F;
-      this.field_8826 = client.thePlayer.field_41755;
+      this.field_8826 = client.thePlayer.rotationPitch;
       double var3 = client.thePlayer.method_37302();
       double var5 = client.thePlayer.method_37309();
       double var7 = client.thePlayer.method_37156();
@@ -188,7 +188,7 @@ public class TestModule extends Module {
                      }
                   } else {
                      class_1022 var15 = (class_1022)var4;
-                     if (var15.method_4516() != class_2584.field_12794) {
+                     if (var15.method_4516() != Hand.OFF_HAND) {
                      }
                   }
                } else {

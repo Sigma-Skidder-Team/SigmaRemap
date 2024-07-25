@@ -27,7 +27,7 @@ public class class_5674<E extends class_5834, T extends Entity> extends class_59
    }
 
    private boolean method_25659(E var1, Entity var2) {
-      return var2.method_37330() && var2.method_37124(var1, (double)this.field_28760) && var2.field_41768 == var1.field_41768;
+      return var2.method_37330() && var2.method_37124(var1, (double)this.field_28760) && var2.world == var1.world;
    }
 
    @Override

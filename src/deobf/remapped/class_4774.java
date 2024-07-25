@@ -26,7 +26,7 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return this.method_22005().method_10727();
    }
 
-   public float method_22008(class_6163 var1, class_1331 var2) {
+   public float method_22008(class_6163 var1, BlockPos var2) {
       return this.method_22005().method_10707(this, var1, var2);
    }
 
@@ -38,10 +38,10 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return this.method_22005().method_10729(this);
    }
 
-   public boolean method_21997(class_6163 var1, class_1331 var2) {
+   public boolean method_21997(class_6163 var1, BlockPos var2) {
       for (int var5 = -1; var5 <= 1; var5++) {
          for (int var6 = -1; var6 <= 1; var6++) {
-            class_1331 var7 = var2.method_6104(var5, 0, var6);
+            BlockPos var7 = var2.method_6104(var5, 0, var6);
             class_4774 var8 = var1.method_28258(var7);
             if (!var8.method_22005().method_10723(this.method_22005()) && !var1.method_28262(var7).method_8321(var1, var7)) {
                return true;
@@ -52,11 +52,11 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return false;
    }
 
-   public void method_22004(World var1, class_1331 var2) {
+   public void method_22004(World var1, BlockPos var2) {
       this.method_22005().method_10718(var1, var2, this);
    }
 
-   public void method_22002(World var1, class_1331 var2, Random var3) {
+   public void method_22002(World var1, BlockPos var2, Random var3) {
       this.method_22005().method_10722(var1, var2, this, var3);
    }
 
@@ -64,11 +64,11 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return this.method_22005().method_10715();
    }
 
-   public void method_21999(World var1, class_1331 var2, Random var3) {
+   public void method_21999(World var1, BlockPos var2, Random var3) {
       this.method_22005().method_10706(var1, var2, this, var3);
    }
 
-   public class_1343 method_22003(class_6163 var1, class_1331 var2) {
+   public class_1343 method_22003(class_6163 var1, BlockPos var2) {
       return this.method_22005().method_10725(var1, var2, this);
    }
 
@@ -89,11 +89,11 @@ public final class class_4774 extends class_2243<class_2340, class_4774> {
       return this.method_22005().method_10716();
    }
 
-   public boolean method_22009(class_6163 var1, class_1331 var2, class_2340 var3, Direction var4) {
+   public boolean method_22009(class_6163 var1, BlockPos var2, class_2340 var3, Direction var4) {
       return this.method_22005().method_10709(this, var1, var2, var3, var4);
    }
 
-   public class_4190 method_21994(class_6163 var1, class_1331 var2) {
+   public class_4190 method_21994(class_6163 var1, BlockPos var2) {
       return this.method_22005().method_10712(this, var1, var2);
    }
 }

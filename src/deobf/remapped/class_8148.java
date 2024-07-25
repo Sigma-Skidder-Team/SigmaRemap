@@ -32,7 +32,7 @@ public class class_8148<E extends class_5886> extends class_5920<E> {
    public void method_37401(class_6331 var1, E var2, long var3) {
       var2.method_26525().method_5105(class_6044.field_30874, new class_4843(this.method_37404((E)var2), true));
       var2.method_26905().method_12884(-this.field_41778, 0.0F);
-      var2.field_41701 = class_9299.method_42789(var2.field_41701, var2.field_29618, 0.0F);
+      var2.rotationYaw = class_9299.method_42789(var2.rotationYaw, var2.field_29618, 0.0F);
    }
 
    private boolean method_37403(E var1) {

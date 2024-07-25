@@ -105,7 +105,7 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public float method_21376(class_1331 var1, class_4924 var2) {
+   public float method_21376(BlockPos var1, class_4924 var2) {
       class_2522 var5 = var2.method_28262(var1.method_6100());
       return !var5.method_8350(class_4783.field_23259) && !var5.method_8350(class_4783.field_23216) ? 0.5F - var2.method_22566(var1) : 10.0F;
    }
@@ -164,7 +164,7 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2487;
    }
 

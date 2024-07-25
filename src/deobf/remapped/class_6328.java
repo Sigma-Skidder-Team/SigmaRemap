@@ -53,7 +53,7 @@ public class class_6328 {
                   var13.method_246();
                }
 
-               var7.field_41768
+               var7.world
                   .method_29528(
                      (class_704)null,
                      var7.method_37302(),

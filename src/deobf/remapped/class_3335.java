@@ -12,7 +12,7 @@ public abstract class class_3335 extends class_3599 {
    }
 
    public boolean method_15298() {
-      class_1331 var3 = new class_1331(this.field_16442.method_37302(), this.field_16442.method_37241().field_19939, this.field_16442.method_37156());
+      BlockPos var3 = new BlockPos(this.field_16442.method_37302(), this.field_16442.method_37241().field_19939, this.field_16442.method_37156());
       return !this.field_16442.field_41768.method_25263(var3) && this.field_16442.method_21375(var3) >= 0.0F;
    }
 

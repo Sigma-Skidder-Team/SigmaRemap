@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import remapped.class_1024;
-import remapped.class_1331;
+import remapped.BlockPos;
 import remapped.class_1808;
 import remapped.class_3757;
 import remapped.CompoundNBT;
@@ -52,7 +52,7 @@ public class NBTTextComponent$class_43 extends NBTTextComponent {
    public Stream<CompoundNBT> func_218673_a(class_9155 p_218673_1_) {
       if (this.field_218685_f != null) {
          class_6331 blockpos = p_218673_1_.method_42198();
-         class_1331 tileentity = this.field_218685_f.method_8024(p_218673_1_);
+         BlockPos tileentity = this.field_218685_f.method_8024(p_218673_1_);
          if (blockpos.method_29585(tileentity)) {
             class_3757 var6 = blockpos.method_28260(tileentity);
             if (var6 != null) {

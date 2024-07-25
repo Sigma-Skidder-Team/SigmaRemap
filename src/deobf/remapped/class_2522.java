@@ -49,7 +49,7 @@ public class class_2522 extends class_1873 {
       return this.field_12493;
    }
 
-   public int method_11478(class_6163 var1, class_1331 var2) {
+   public int method_11478(class_6163 var1, BlockPos var2) {
       return this.method_8339();
    }
 

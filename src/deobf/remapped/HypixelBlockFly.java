@@ -7,7 +7,7 @@ public class HypixelBlockFly extends Module {
    private int field_31713 = -1;
    private int field_31714;
    private int field_31716;
-   private class_2584 field_31708;
+   private Hand field_31708;
    private BlockFlyModule field_31710 = null;
    private boolean field_31719;
    private boolean field_31715 = false;
@@ -143,13 +143,13 @@ public class HypixelBlockFly extends Module {
             } else {
                this.field_31714++;
                var1.method_6444(true);
-               this.field_31708 = class_2584.field_12791;
-               if (BlockFlyModule.method_17216(client.thePlayer.method_26617(class_2584.field_12794).method_27960())
+               this.field_31708 = Hand.MAIN_HAND;
+               if (BlockFlyModule.method_17216(client.thePlayer.method_26617(Hand.OFF_HAND).method_27960())
                   && (
                      client.thePlayer.method_26617(this.field_31708).method_28022()
                         || !BlockFlyModule.method_17216(client.thePlayer.method_26617(this.field_31708).method_27960())
                   )) {
-                  this.field_31708 = class_2584.field_12794;
+                  this.field_31708 = Hand.OFF_HAND;
                }
 
                double var5 = var1.method_6450();
@@ -167,7 +167,7 @@ public class HypixelBlockFly extends Module {
                }
 
                if (!class_7494.method_34090(
-                  new class_1331(
+                  new BlockPos(
                      client.thePlayer.method_37245().method_61(),
                      client.thePlayer.method_37245().method_60() - 1.0,
                      client.thePlayer.method_37245().method_62()
@@ -177,7 +177,7 @@ public class HypixelBlockFly extends Module {
                   var7 = client.thePlayer.method_37245().method_62();
                }
 
-               class_1331 var11 = new class_1331(var5, var9 - 1.0, var7);
+               BlockPos var11 = new BlockPos(var5, var9 - 1.0, var7);
                if (!class_7494.method_34090(var11) && this.field_31710.method_17224(this.field_31708)) {
                   class_2899 var12 = class_7494.method_34118(var11, !this.field_31719 && this.getBooleanValueByName("Downwards"));
                   this.field_31718 = var12;
@@ -190,7 +190,7 @@ public class HypixelBlockFly extends Module {
                            - ((double)var12.field_14163.field_13229 + 0.5 + (double)var12.field_14162.method_1034() / 2.0);
                         double var18 = Math.sqrt(var14 * var14 + var16 * var16);
                         if (var18 < 2.0) {
-                           var13[0] = client.thePlayer.field_41701 + 1.0F;
+                           var13[0] = client.thePlayer.rotationYaw + 1.0F;
                            var13[1] = 90.0F;
                         }
                      }
@@ -202,14 +202,14 @@ public class HypixelBlockFly extends Module {
                   }
                } else {
                   if (this.getBooleanValueByName("KeepRotations") && this.field_31711 != 999.0F) {
-                     var1.method_6441(client.thePlayer.field_41701 + 1.0F);
+                     var1.method_6441(client.thePlayer.rotationYaw + 1.0F);
                      var1.method_6448(90.0F);
                   }
 
                   this.field_31718 = null;
                }
 
-               if (client.thePlayer.field_41701 != var1.method_6442() && client.thePlayer.field_41755 != var1.method_6439()) {
+               if (client.thePlayer.rotationYaw != var1.method_6442() && client.thePlayer.rotationPitch != var1.method_6439()) {
                   this.field_31714 = 0;
                }
             }
@@ -259,7 +259,7 @@ public class HypixelBlockFly extends Module {
                break;
             case "Cubecraft":
                double var6 = 0.2;
-               float var8 = this.method_28399(class_9299.method_42810(client.thePlayer.field_41701));
+               float var8 = this.method_28399(class_9299.method_42810(client.thePlayer.rotationYaw));
                if (client.gameOptions.keyJump.isKeyDown()) {
                   client.theTimer.timerSpeed = 1.0F;
                } else if (client.thePlayer.field_41726) {
@@ -363,7 +363,7 @@ public class HypixelBlockFly extends Module {
       }
    }
 
-   public static class_1343 method_28403(class_1331 var0, Direction var1) {
+   public static class_1343 method_28403(BlockPos var0, Direction var1) {
       double var4 = (double)var0.method_12173() + 0.5;
       double var6 = (double)var0.method_12165() + 0.5;
       double var8 = (double)var0.method_12185() + 0.5;

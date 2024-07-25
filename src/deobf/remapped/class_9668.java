@@ -55,7 +55,7 @@ public class class_9668 extends class_5467 implements class_6250 {
          .method_5984(class_7331.field_37462, 6.0);
    }
 
-   public static boolean method_44711(class_6629<class_9668> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_44711(class_6629<class_9668> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method_2754(var3);
       return !Objects.equals(var7, Optional.<class_5621<class_6325>>of(class_8606.field_44137))
             && !Objects.equals(var7, Optional.<class_5621<class_6325>>of(class_8606.field_44115))
@@ -66,7 +66,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_28533((class_6331)this.field_41768, var1);
+      this.method_28533((class_6331)this.world, var1);
    }
 
    @Override
@@ -106,7 +106,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2238;
    }
 
@@ -116,7 +116,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2867, 0.15F, 1.0F);
    }
 
@@ -136,7 +136,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (this.field_41768.field_33055) {
+      if (this.world.field_33055) {
          if (this.field_49243 != this.field_49241) {
             this.method_37187();
          }
@@ -153,8 +153,8 @@ public class class_9668 extends class_5467 implements class_6250 {
          this.field_49246--;
       }
 
-      if (!this.field_41768.field_33055) {
-         this.method_28530((class_6331)this.field_41768, true);
+      if (!this.world.field_33055) {
+         this.method_28530((class_6331)this.world, true);
       }
    }
 
@@ -171,7 +171,7 @@ public class class_9668 extends class_5467 implements class_6250 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      boolean var4 = var1.method_37181(class_6199.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
       if (var4) {
          this.method_37096(this, var1);
       }

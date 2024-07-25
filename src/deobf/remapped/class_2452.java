@@ -29,7 +29,7 @@ public class class_2452 {
    private final Map<Integer, Set<class_4040>> field_12187 = Maps.newHashMap();
    private final Set<UUID> field_12190 = Sets.newHashSet();
    private long field_12183;
-   private class_1331 field_12185;
+   private BlockPos field_12185;
    private final class_6331 field_12189;
    private boolean field_12188;
    private final int field_12180;
@@ -44,9 +44,9 @@ public class class_2452 {
    private final int field_12195;
    private class_4264 field_12198;
    private int field_12179;
-   private Optional<class_1331> field_12193 = Optional.<class_1331>empty();
+   private Optional<BlockPos> field_12193 = Optional.<BlockPos>empty();
 
-   public class_2452(int var1, class_6331 var2, class_1331 var3) {
+   public class_2452(int var1, class_6331 var2, BlockPos var3) {
       this.field_12180 = var1;
       this.field_12189 = var2;
       this.field_12200 = true;
@@ -68,7 +68,7 @@ public class class_2452 {
       this.field_12197 = var2.method_25947("PreRaidTicks");
       this.field_12178 = var2.method_25947("PostRaidTicks");
       this.field_12201 = var2.getFloat("TotalHealth");
-      this.field_12185 = new class_1331(var2.method_25947("CX"), var2.method_25947("CY"), var2.method_25947("CZ"));
+      this.field_12185 = new BlockPos(var2.method_25947("CX"), var2.method_25947("CY"), var2.method_25947("CZ"));
       this.field_12195 = var2.method_25947("NumGroups");
       this.field_12198 = class_4264.method_19861(var2.method_25965("Status"));
       this.field_12190.clear();
@@ -119,7 +119,7 @@ public class class_2452 {
 
    private Predicate<class_9359> method_11273() {
       return var1 -> {
-         class_1331 var4 = var1.method_37075();
+         BlockPos var4 = var1.method_37075();
          return var1.method_37330() && this.field_12189.method_28984(var4) == this;
       };
    }
@@ -187,7 +187,7 @@ public class class_2452 {
             }
          } else {
             boolean var3 = this.field_12200;
-            this.field_12200 = this.field_12189.method_22559(this.field_12185);
+            this.field_12200 = this.field_12189.isBlockLoaded(this.field_12185);
             if (this.field_12189.method_43370() == class_423.field_1790) {
                this.method_11271();
                return;
@@ -275,7 +275,7 @@ public class class_2452 {
             int var13 = 0;
 
             while (this.method_11300()) {
-               class_1331 var14 = !this.field_12193.isPresent() ? this.method_11298(var13, 20) : this.field_12193.get();
+               BlockPos var14 = !this.field_12193.isPresent() ? this.method_11298(var13, 20) : this.field_12193.get();
                if (var14 == null) {
                   var13++;
                } else {
@@ -322,20 +322,20 @@ public class class_2452 {
    private void method_11284() {
       Stream var3 = class_6979.method_31906(class_6979.method_31921(this.field_12185), 2);
       var3.filter(this.field_12189::method_28995)
-         .<class_1331>map(class_6979::method_31892)
+         .<BlockPos>map(class_6979::method_31892)
          .min(Comparator.comparingDouble(var1 -> var1.method_12180(this.field_12185)))
          .ifPresent(this::method_11278);
    }
 
-   private Optional<class_1331> method_11307(int var1) {
+   private Optional<BlockPos> method_11307(int var1) {
       for (int var4 = 0; var4 < 3; var4++) {
-         class_1331 var5 = this.method_11298(var1, 1);
+         BlockPos var5 = this.method_11298(var1, 1);
          if (var5 != null) {
-            return Optional.<class_1331>of(var5);
+            return Optional.<BlockPos>of(var5);
          }
       }
 
-      return Optional.<class_1331>empty();
+      return Optional.<BlockPos>empty();
    }
 
    private boolean method_11305() {
@@ -366,8 +366,8 @@ public class class_2452 {
          Set var5 = (Set)var3.next();
 
          for (class_4040 var7 : var5) {
-            class_1331 var8 = var7.method_37075();
-            if (var7.field_41751 || var7.field_41768.method_29545() != this.field_12189.method_29545() || this.field_12185.method_12180(var8) >= 12544.0) {
+            BlockPos var8 = var7.method_37075();
+            if (var7.field_41751 || var7.world.method_29545() != this.field_12189.method_29545() || this.field_12185.method_12180(var8) >= 12544.0) {
                var4.add(var7);
             } else if (var7.field_41697 > 600) {
                if (this.field_12189.method_28925(var7.method_37328()) == null) {
@@ -390,7 +390,7 @@ public class class_2452 {
       }
    }
 
-   private void method_11286(class_1331 var1) {
+   private void method_11286(BlockPos var1) {
       float var4 = 13.0F;
       byte var5 = 64;
       Collection var6 = this.field_12186.method_2406();
@@ -410,7 +410,7 @@ public class class_2452 {
       }
    }
 
-   private void method_11280(class_1331 var1) {
+   private void method_11280(BlockPos var1) {
       boolean var4 = false;
       int var5 = this.field_12182 + 1;
       this.field_12201 = 0.0F;
@@ -454,13 +454,13 @@ public class class_2452 {
          }
       }
 
-      this.field_12193 = Optional.<class_1331>empty();
+      this.field_12193 = Optional.<BlockPos>empty();
       this.field_12182++;
       this.method_11290();
       this.method_11297();
    }
 
-   public void method_11275(int var1, class_4040 var2, class_1331 var3, boolean var4) {
+   public void method_11275(int var1, class_4040 var2, BlockPos var3, boolean var4) {
       boolean var7 = this.method_11274(var1, var2);
       if (var7) {
          var2.method_18587(this);
@@ -546,7 +546,7 @@ public class class_2452 {
    }
 
    @Nullable
-   private class_1331 method_11298(int var1, int var2) {
+   private BlockPos method_11298(int var1, int var2) {
       int var5 = var1 != 0 ? 2 - var1 : 2;
       class_2921 var6 = new class_2921();
 
@@ -623,11 +623,11 @@ public class class_2452 {
       this.field_12191.remove(var1);
    }
 
-   public class_1331 method_11269() {
+   public BlockPos method_11269() {
       return this.field_12185;
    }
 
-   private void method_11278(class_1331 var1) {
+   private void method_11278(BlockPos var1) {
       this.field_12185 = var1;
    }
 

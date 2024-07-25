@@ -18,12 +18,12 @@ public class class_3331 extends class_2830 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_16436[var1.<Integer>method_10313(field_16435)];
    }
 
    @Override
-   public boolean method_12870(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_12870(class_2522 var1, class_6163 var2, BlockPos var3) {
       return var1.method_8350(class_4783.field_23784);
    }
 
@@ -33,7 +33,7 @@ public class class_3331 extends class_2830 {
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       int var7 = var1.<Integer>method_10313(field_16435);
       if (var7 < 3 && var4.nextInt(10) == 0) {
          var1 = var1.method_10308(field_16435, Integer.valueOf(var7 + 1));
@@ -42,7 +42,7 @@ public class class_3331 extends class_2830 {
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return new ItemStack(class_4897.field_24573);
    }
 

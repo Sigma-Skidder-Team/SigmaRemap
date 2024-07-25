@@ -10,7 +10,7 @@ public class class_5836 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_26622(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_26622(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       if (var1.method_22548(var4)) {
          class_2522 var8 = var1.method_28262(var4.method_6081());
          if (!var8.method_8350(class_4783.field_23700) && !var8.method_8350(class_4783.field_23273)) {
@@ -25,7 +25,7 @@ public class class_5836 extends class_4285<class_1941> {
       }
    }
 
-   private void method_26624(class_9379 var1, Random var2, class_1331 var3) {
+   private void method_26624(class_9379 var1, Random var2, BlockPos var3) {
       var1.method_7513(var3, class_4783.field_23273.method_29260(), 2);
       class_2921 var6 = new class_2921();
       class_2921 var7 = new class_2921();
@@ -53,7 +53,7 @@ public class class_5836 extends class_4285<class_1941> {
       }
    }
 
-   private void method_26623(class_9379 var1, Random var2, class_1331 var3) {
+   private void method_26623(class_9379 var1, Random var2, BlockPos var3) {
       class_2921 var6 = new class_2921();
 
       for (int var7 = 0; var7 < 100; var7++) {

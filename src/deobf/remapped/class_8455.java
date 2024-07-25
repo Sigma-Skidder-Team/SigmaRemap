@@ -60,7 +60,7 @@ public class class_8455 {
                if (this.field_43225.thePlayer.method_3179()) {
                   return false;
                } else {
-                  class_1092 var9 = this.field_43225.thePlayer.field_30532;
+                  ClientPlayNetHandler var9 = this.field_43225.thePlayer.connection;
                   if (var9 == null) {
                      return false;
                   }
@@ -70,12 +70,12 @@ public class class_8455 {
                      String.format(
                         Locale.ROOT,
                         "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f",
-                        this.field_43225.thePlayer.field_41768.method_29545().method_25499(),
+                        this.field_43225.thePlayer.world.method_29545().method_25499(),
                         this.field_43225.thePlayer.method_37302(),
                         this.field_43225.thePlayer.method_37309(),
                         this.field_43225.thePlayer.method_37156(),
-                        this.field_43225.thePlayer.field_41701,
-                        this.field_43225.thePlayer.field_41755
+                        this.field_43225.thePlayer.rotationYaw,
+                        this.field_43225.thePlayer.rotationPitch
                      )
                   );
                   return true;
@@ -191,16 +191,16 @@ public class class_8455 {
       if (var5 != null) {
          switch (var5.method_33990()) {
             case field_7717:
-               class_1331 var6 = ((class_9529)var5).method_43955();
-               class_2522 var7 = this.field_43225.thePlayer.field_41768.method_28262(var6);
+               BlockPos var6 = ((class_9529)var5).method_43955();
+               class_2522 var7 = this.field_43225.thePlayer.world.method_28262(var6);
                if (var1) {
                   if (var2) {
-                     this.field_43225.thePlayer.field_30532.method_4809().method_571(var6, var3 -> {
+                     this.field_43225.thePlayer.connection.method_4809().method_571(var6, var3 -> {
                         this.method_38880(var7, var6, var3);
                         this.method_38881("debug.inspect.server.block");
                      });
                   } else {
-                     class_3757 var11 = this.field_43225.thePlayer.field_41768.method_28260(var6);
+                     class_3757 var11 = this.field_43225.thePlayer.world.method_28260(var6);
                      CompoundNBT var12 = var11 != null ? var11.method_17396(new CompoundNBT()) : null;
                      this.method_38880(var7, var6, var12);
                      this.method_38881("debug.inspect.client.block");
@@ -215,7 +215,7 @@ public class class_8455 {
                Identifier var9 = class_8669.field_44400.method_39797(var8.method_37387());
                if (var1) {
                   if (var2) {
-                     this.field_43225.thePlayer.field_30532.method_4809().method_572(var8.method_37145(), var3 -> {
+                     this.field_43225.thePlayer.connection.method_4809().method_572(var8.method_37145(), var3 -> {
                         this.method_38885(var9, var8.method_37245(), var3);
                         this.method_38881("debug.inspect.server.entity");
                      });
@@ -232,7 +232,7 @@ public class class_8455 {
       }
    }
 
-   private void method_38880(class_2522 var1, class_1331 var2, CompoundNBT var3) {
+   private void method_38880(class_2522 var1, BlockPos var2, CompoundNBT var3) {
       if (var3 != null) {
          var3.method_25959("x");
          var3.method_25959("y");

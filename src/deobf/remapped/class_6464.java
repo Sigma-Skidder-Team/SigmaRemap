@@ -8,7 +8,7 @@ public class class_6464 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_29444(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_29444(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       while (var1.method_22548(var4) && var4.method_12165() > 2) {
          var4 = var4.method_6100();
       }
@@ -63,7 +63,7 @@ public class class_6464 extends class_4285<class_1941> {
 
          for (int var21 = -var20; var21 <= var20; var21++) {
             for (int var22 = -var20; var22 <= var20; var22++) {
-               class_1331 var23 = var4.method_6104(var21, -1, var22);
+               BlockPos var23 = var4.method_6104(var21, -1, var22);
                int var24 = 50;
                if (Math.abs(var21) == 1 && Math.abs(var22) == 1) {
                   var24 = var3.nextInt(5);

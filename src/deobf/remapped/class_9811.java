@@ -97,7 +97,7 @@ public class class_9811 extends class_1249 {
       }
 
       if (this.field_6887 != null && !this.field_6887.method_18436()) {
-         class_1331 var4 = this.field_6887.method_18449();
+         BlockPos var4 = this.field_6887.method_18449();
          if (!var4.equals(this.field_6879)) {
             this.field_6879 = var4;
             double var5 = var1.method_6195(class_1343.method_6216(this.field_6879));
@@ -125,7 +125,7 @@ public class class_9811 extends class_1249 {
    }
 
    @Override
-   public boolean method_5609(class_1331 var1) {
+   public boolean method_5609(BlockPos var1) {
       return !this.field_6882.method_28262(var1).method_8321(this.field_6882, var1);
    }
 

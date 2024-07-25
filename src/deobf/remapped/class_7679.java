@@ -21,7 +21,7 @@ public class class_7679 extends class_5920<class_7666> {
    }
 
    public void method_34794(class_6331 var1, class_7666 var2, long var3) {
-      class_1331 var7 = var2.method_26525().<class_8150>method_5138(class_6044.field_30868).get().method_37409();
+      BlockPos var7 = var2.method_26525().<class_8150>method_5138(class_6044.field_30868).get().method_37409();
       Optional var8 = var1.method_28969().method_6870(var7);
       if (var8.isPresent()) {
          class_1225.method_5455(var2, var3x -> this.method_34798((class_236)var8.get(), var3x, var7))
@@ -30,7 +30,7 @@ public class class_7679 extends class_5920<class_7666> {
       }
    }
 
-   private boolean method_34798(class_236 var1, class_7666 var2, class_1331 var3) {
+   private boolean method_34798(class_236 var1, class_7666 var2, BlockPos var3) {
       boolean var6 = var2.method_26525().<class_8150>method_5138(class_6044.field_30868).isPresent();
       if (!var6) {
          Optional var7 = var2.method_26525().<class_8150>method_5138(class_6044.field_30883);
@@ -45,7 +45,7 @@ public class class_7679 extends class_5920<class_7666> {
       }
    }
 
-   private void method_34795(class_6331 var1, class_7666 var2, class_7666 var3, class_1331 var4, boolean var5) {
+   private void method_34795(class_6331 var1, class_7666 var2, class_7666 var3, BlockPos var4, boolean var5) {
       this.method_34797(var2);
       if (!var5) {
          class_1225.method_5446(var3, var4, this.field_39025, 1);
@@ -54,7 +54,7 @@ public class class_7679 extends class_5920<class_7666> {
       }
    }
 
-   private boolean method_34793(class_7666 var1, class_1331 var2, class_236 var3) {
+   private boolean method_34793(class_7666 var1, BlockPos var2, class_236 var3) {
       class_3998 var6 = var1.method_26927().method_5615(var2, var3.method_1006());
       return var6 != null && var6.method_18433();
    }

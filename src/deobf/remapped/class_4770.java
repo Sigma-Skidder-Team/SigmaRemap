@@ -15,7 +15,7 @@ public class class_4770 extends class_446 {
       class_6206.field_31726
    );
    public String field_23120 = null;
-   private class_9716 field_23122;
+   private AbstractClientPlayerEntity field_23122;
    private MinecraftClient field_23121 = MinecraftClient.getInstance();
    private static ClientWorld field_23116;
    public class_7309 field_23119;

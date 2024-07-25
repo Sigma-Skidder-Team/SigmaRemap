@@ -22,7 +22,7 @@ public class class_8228 extends class_2451 implements class_9866 {
    private final Multimap<class_225, class_9343> field_42241;
 
    public static boolean method_37666(class_8743 var0, ItemStack var1) {
-      class_1331 var4 = var0.method_40142().method_6098(var0.method_40141().<Direction>method_10313(class_6451.field_32900));
+      BlockPos var4 = var0.method_40142().method_6098(var0.method_40141().<Direction>method_10313(class_6451.field_32900));
       List var5 = var0.method_40140().<Entity>method_25869(class_5834.class, new class_4092(var4), class_3572.field_17483.and(new class_8389(var1)));
       if (!var5.isEmpty()) {
          class_5834 var6 = (class_5834)var5.get(0);
@@ -78,7 +78,7 @@ public class class_8228 extends class_2451 implements class_9866 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       class_6943 var7 = class_5886.method_26896(var6);
       ItemStack var8 = var2.method_26520(var7);

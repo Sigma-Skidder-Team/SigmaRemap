@@ -31,12 +31,12 @@ public class class_9089 extends class_2609 {
       return var3;
    }
 
-   public class_1331 method_41855(class_5799 var1, class_6631 var2) {
-      return class_1331.field_7306;
+   public BlockPos method_41855(class_5799 var1, class_6631 var2) {
+      return BlockPos.field_7306;
    }
 
    @Override
-   public List<class_4099> method_11829(class_5799 var1, class_1331 var2, class_6631 var3, Random var4) {
+   public List<class_4099> method_11829(class_5799 var1, BlockPos var2, class_6631 var3, Random var4) {
       ArrayList var7 = Lists.newArrayList();
       var7.add(
          new class_4099(
@@ -49,8 +49,8 @@ public class class_9089 extends class_2609 {
    }
 
    @Override
-   public class_9616 method_11832(class_5799 var1, class_1331 var2, class_6631 var3) {
-      class_1331 var6 = this.method_41855(var1, var3);
+   public class_9616 method_11832(class_5799 var1, BlockPos var2, class_6631 var3) {
+      BlockPos var6 = this.method_41855(var1, var3);
       return new class_9616(
          var2.method_12173(),
          var2.method_12165(),
@@ -67,8 +67,8 @@ public class class_9089 extends class_2609 {
       class_700 var2,
       class_2033 var3,
       class_6541 var4,
-      class_1331 var5,
-      class_1331 var6,
+      BlockPos var5,
+      BlockPos var6,
       class_6631 var7,
       class_9616 var8,
       Random var9,

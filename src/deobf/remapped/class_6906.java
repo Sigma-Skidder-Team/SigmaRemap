@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_6906<T extends class_1080> extends class_7067<T> {
+public class class_6906<T extends AbstractMinecartEntity> extends class_7067<T> {
    private static final Identifier field_35502 = new Identifier("textures/entity/minecart.png");
    public final class_6521<T> field_35503 = new class_1921<T>();
 
@@ -23,7 +23,7 @@ public class class_6906<T extends class_1080> extends class_7067<T> {
       double var18 = class_9299.method_42794((double)var3, var1.field_41724, var1.method_37156());
       double var20 = 0.3F;
       class_1343 var22 = var1.method_4748(var14, var16, var18);
-      float var23 = class_9299.method_42795(var3, var1.field_41762, var1.field_41755);
+      float var23 = class_9299.method_42795(var3, var1.field_41762, var1.rotationPitch);
       if (var22 != null) {
          class_1343 var24 = var1.method_4745(var14, var16, var18, 0.3F);
          class_1343 var25 = var1.method_4745(var14, var16, var18, -0.3F);

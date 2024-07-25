@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public abstract class class_1080 extends Entity {
-   private static final class_7821<Integer> field_5894 = class_8073.<Integer>method_36641(class_1080.class, class_2734.field_13366);
-   private static final class_7821<Integer> field_5880 = class_8073.<Integer>method_36641(class_1080.class, class_2734.field_13366);
-   private static final class_7821<Float> field_5886 = class_8073.<Float>method_36641(class_1080.class, class_2734.field_13350);
-   private static final class_7821<Integer> field_5882 = class_8073.<Integer>method_36641(class_1080.class, class_2734.field_13366);
-   private static final class_7821<Integer> field_5885 = class_8073.<Integer>method_36641(class_1080.class, class_2734.field_13366);
-   private static final class_7821<Boolean> field_5881 = class_8073.<Boolean>method_36641(class_1080.class, class_2734.field_13347);
+public abstract class AbstractMinecartEntity extends Entity {
+   private static final class_7821<Integer> field_5894 = class_8073.<Integer>method_36641(AbstractMinecartEntity.class, class_2734.field_13366);
+   private static final class_7821<Integer> field_5880 = class_8073.<Integer>method_36641(AbstractMinecartEntity.class, class_2734.field_13366);
+   private static final class_7821<Float> field_5886 = class_8073.<Float>method_36641(AbstractMinecartEntity.class, class_2734.field_13350);
+   private static final class_7821<Integer> field_5882 = class_8073.<Integer>method_36641(AbstractMinecartEntity.class, class_2734.field_13366);
+   private static final class_7821<Integer> field_5885 = class_8073.<Integer>method_36641(AbstractMinecartEntity.class, class_2734.field_13366);
+   private static final class_7821<Boolean> field_5881 = class_8073.<Boolean>method_36641(AbstractMinecartEntity.class, class_2734.field_13347);
    private static final ImmutableMap<class_7653, ImmutableList<Integer>> field_5895 = ImmutableMap.of(
       class_7653.field_38885, ImmutableList.of(0, 1, -1), class_7653.field_38881, ImmutableList.of(0, 1, -1), class_7653.field_38888, ImmutableList.of(0, 1)
    );
@@ -52,12 +52,12 @@ public abstract class class_1080 extends Entity {
    private double field_5883;
    private double field_5897;
 
-   public class_1080(class_6629<?> var1, World var2) {
+   public AbstractMinecartEntity(class_6629<?> var1, World var2) {
       super(var1, var2);
       this.field_41759 = true;
    }
 
-   public class_1080(class_6629<?> var1, World var2, double var3, double var5, double var7) {
+   public AbstractMinecartEntity(class_6629<?> var1, World var2, double var3, double var5, double var7) {
       this(var1, var2);
       this.method_37256(var3, var5, var7);
       this.method_37215(class_1343.field_7335);
@@ -66,13 +66,13 @@ public abstract class class_1080 extends Entity {
       this.field_41725 = var7;
    }
 
-   public static class_1080 method_4759(World var0, double var1, double var3, double var5, class_3481 var7) {
+   public static AbstractMinecartEntity method_4759(World var0, double var1, double var3, double var5, class_3481 var7) {
       if (var7 != class_3481.field_17064) {
          if (var7 != class_3481.field_17068) {
             if (var7 != class_3481.field_17067) {
                if (var7 != class_3481.field_17070) {
                   if (var7 != class_3481.field_17063) {
-                     return (class_1080)(var7 != class_3481.field_17069 ? new class_1601(var0, var1, var3, var5) : new class_4648(var0, var1, var3, var5));
+                     return (AbstractMinecartEntity)(var7 != class_3481.field_17069 ? new class_1601(var0, var1, var3, var5) : new class_4648(var0, var1, var3, var5));
                   } else {
                      return new class_9715(var0, var1, var3, var5);
                   }
@@ -107,7 +107,7 @@ public abstract class class_1080 extends Entity {
 
    @Override
    public boolean method_37325(Entity var1) {
-      return class_9149.method_42092(this, var1);
+      return BoatEntity.method_42092(this, var1);
    }
 
    @Override
@@ -132,7 +132,7 @@ public abstract class class_1080 extends Entity {
          return super.method_37282(var1);
       } else {
          int[][] var5 = class_160.method_645(var4);
-         class_1331 var6 = this.method_37075();
+         BlockPos var6 = this.method_37075();
          class_2921 var7 = new class_2921();
          ImmutableList var8 = var1.method_26454();
          UnmodifiableIterator var9 = var8.iterator();
@@ -148,12 +148,12 @@ public abstract class class_1080 extends Entity {
 
                for (int[] var20 : var5) {
                   var7.method_13362(var6.method_12173() + var20[0], var6.method_12165() + var16, var6.method_12185() + var20[1]);
-                  double var21 = this.field_41768
-                     .method_28264(class_160.method_646(this.field_41768, var7), () -> class_160.method_646(this.field_41768, var7.method_6100()));
+                  double var21 = this.world
+                     .method_28264(class_160.method_646(this.world, var7), () -> class_160.method_646(this.world, var7.method_6100()));
                   if (class_160.method_648(var21)) {
                      class_4092 var23 = new class_4092((double)(-var14), 0.0, (double)(-var14), (double)var14, (double)var12.field_31200, (double)var14);
                      class_1343 var24 = class_1343.method_6219(var7, var21);
-                     if (class_160.method_647(this.field_41768, var1, var23.method_18920(var24))) {
+                     if (class_160.method_647(this.world, var1, var23.method_18920(var24))) {
                         var1.method_37356(var13);
                         return var24;
                      }
@@ -170,7 +170,7 @@ public abstract class class_1080 extends Entity {
             class_7653 var30 = (class_7653)var29.next();
             double var25 = (double)var1.method_37190(var30).field_31200;
             int var31 = class_9299.method_42815(var10 - (double)var7.method_12165() + var25);
-            double var27 = class_160.method_652(var7, var31, var1x -> this.field_41768.method_28262(var1x).method_8324(this.field_41768, var1x));
+            double var27 = class_160.method_652(var7, var31, var1x -> this.world.method_28262(var1x).method_8324(this.world, var1x));
             if (var10 + var25 <= var27) {
                var1.method_37356(var30);
                break;
@@ -182,8 +182,8 @@ public abstract class class_1080 extends Entity {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      if (this.field_41768.field_33055 || this.field_41751) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (this.world.field_33055 || this.field_41751) {
          return true;
       } else if (this.method_37180(var1)) {
          return false;
@@ -208,13 +208,13 @@ public abstract class class_1080 extends Entity {
 
    @Override
    public float method_37364() {
-      class_2522 var3 = this.field_41768.method_28262(this.method_37075());
+      class_2522 var3 = this.world.method_28262(this.method_37075());
       return !var3.method_8349(class_2351.field_11745) ? super.method_37364() : 1.0F;
    }
 
-   public void method_4743(class_6199 var1) {
+   public void method_4743(DamageSource var1) {
       this.method_37204();
-      if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
+      if (this.world.method_29537().method_1285(class_291.field_1024)) {
          ItemStack var4 = new ItemStack(class_4897.field_24547);
          if (this.method_45507()) {
             var4.method_28032(this.method_45508());
@@ -260,7 +260,7 @@ public abstract class class_1080 extends Entity {
       }
 
       this.method_37237();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (!this.method_37078()) {
             this.method_37215(this.method_37098().method_6214(0.0, -0.04, 0.0));
          }
@@ -268,12 +268,12 @@ public abstract class class_1080 extends Entity {
          int var3 = class_9299.method_42847(this.method_37302());
          int var4 = class_9299.method_42847(this.method_37309());
          int var5 = class_9299.method_42847(this.method_37156());
-         if (this.field_41768.method_28262(new class_1331(var3, var4 - 1, var5)).method_8349(class_2351.field_11745)) {
+         if (this.world.method_28262(new BlockPos(var3, var4 - 1, var5)).method_8349(class_2351.field_11745)) {
             var4--;
          }
 
-         class_1331 var6 = new class_1331(var3, var4, var5);
-         class_2522 var7 = this.field_41768.method_28262(var6);
+         BlockPos var6 = new BlockPos(var3, var4, var5);
+         class_2522 var7 = this.world.method_28262(var6);
          if (!class_6788.method_31115(var7)) {
             this.method_4744();
          } else {
@@ -284,33 +284,33 @@ public abstract class class_1080 extends Entity {
          }
 
          this.method_37097();
-         this.field_41755 = 0.0F;
+         this.rotationPitch = 0.0F;
          double var16 = this.field_41767 - this.method_37302();
          double var18 = this.field_41725 - this.method_37156();
          if (var16 * var16 + var18 * var18 > 0.001) {
-            this.field_41701 = (float)(class_9299.method_42821(var18, var16) * 180.0 / Math.PI);
+            this.rotationYaw = (float)(class_9299.method_42821(var18, var16) * 180.0 / Math.PI);
             if (this.field_5893) {
-               this.field_41701 += 180.0F;
+               this.rotationYaw += 180.0F;
             }
          }
 
-         double var20 = (double)class_9299.method_42810(this.field_41701 - this.field_41711);
+         double var20 = (double)class_9299.method_42810(this.rotationYaw - this.prevRotationYaw);
          if (var20 < -170.0 || var20 >= 170.0) {
-            this.field_41701 += 180.0F;
+            this.rotationYaw += 180.0F;
             this.field_5893 = !this.field_5893;
          }
 
-         this.method_37395(this.field_41701, this.field_41755);
+         this.method_37395(this.rotationYaw, this.rotationPitch);
          if (this.method_4737() == class_3481.field_17066 && method_37266(this.method_37098()) > 0.01) {
-            List var25 = this.field_41768.method_25867(this, this.method_37241().method_18899(0.2F, 0.0, 0.2F), class_3572.method_16616(this));
+            List var25 = this.world.method_25867(this, this.method_37241().method_18899(0.2F, 0.0, 0.2F), class_3572.method_16616(this));
             if (!var25.isEmpty()) {
                for (int var26 = 0; var26 < var25.size(); var26++) {
                   Entity var24 = (Entity)var25.get(var26);
                   if (!(var24 instanceof class_704)
                      && !(var24 instanceof class_8127)
-                     && !(var24 instanceof class_1080)
+                     && !(var24 instanceof AbstractMinecartEntity)
                      && !this.method_37151()
-                     && !var24.method_37070()) {
+                     && !var24.isPassenger()) {
                      var24.method_37353(this);
                   } else {
                      var24.method_37183(this);
@@ -318,8 +318,8 @@ public abstract class class_1080 extends Entity {
                }
             }
          } else {
-            for (Entity var23 : this.field_41768.method_25870(this, this.method_37241().method_18899(0.2F, 0.0, 0.2F))) {
-               if (!this.method_37072(var23) && var23.method_37177() && var23 instanceof class_1080) {
+            for (Entity var23 : this.world.method_25870(this, this.method_37241().method_18899(0.2F, 0.0, 0.2F))) {
+               if (!this.method_37072(var23) && var23.method_37177() && var23 instanceof AbstractMinecartEntity) {
                   var23.method_37183(this);
                }
             }
@@ -334,17 +334,17 @@ public abstract class class_1080 extends Entity {
          this.field_41716 = false;
       } else if (this.field_5892 <= 0) {
          this.method_37351();
-         this.method_37395(this.field_41701, this.field_41755);
+         this.method_37395(this.rotationYaw, this.rotationPitch);
       } else {
          double var8 = this.method_37302() + (this.field_5889 - this.method_37302()) / (double)this.field_5892;
          double var10 = this.method_37309() + (this.field_5884 - this.method_37309()) / (double)this.field_5892;
          double var12 = this.method_37156() + (this.field_5891 - this.method_37156()) / (double)this.field_5892;
-         double var14 = class_9299.method_42809(this.field_5888 - (double)this.field_41701);
-         this.field_41701 = (float)((double)this.field_41701 + var14 / (double)this.field_5892);
-         this.field_41755 = (float)((double)this.field_41755 + (this.field_5896 - (double)this.field_41755) / (double)this.field_5892);
+         double var14 = class_9299.method_42809(this.field_5888 - (double)this.rotationYaw);
+         this.rotationYaw = (float)((double)this.rotationYaw + var14 / (double)this.field_5892);
+         this.rotationPitch = (float)((double)this.rotationPitch + (this.field_5896 - (double)this.rotationPitch) / (double)this.field_5892);
          this.field_5892--;
          this.method_37256(var8, var10, var12);
-         this.method_37395(this.field_41701, this.field_41755);
+         this.method_37395(this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -371,7 +371,7 @@ public abstract class class_1080 extends Entity {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public void method_4750(class_1331 var1, class_2522 var2) {
+   public void method_4750(BlockPos var1, class_2522 var2) {
       this.field_41706 = 0.0F;
       double var5 = this.method_37302();
       double var7 = this.method_37309();
@@ -534,8 +534,8 @@ public abstract class class_1080 extends Entity {
       }
    }
 
-   private boolean method_4740(class_1331 var1) {
-      return this.field_41768.method_28262(var1).method_8356(this.field_41768, var1);
+   private boolean method_4740(BlockPos var1) {
+      return this.world.method_28262(var1).method_8356(this.world, var1);
    }
 
    public void method_4755() {
@@ -548,11 +548,11 @@ public abstract class class_1080 extends Entity {
       int var11 = class_9299.method_42847(var1);
       int var12 = class_9299.method_42847(var3);
       int var13 = class_9299.method_42847(var5);
-      if (this.field_41768.method_28262(new class_1331(var11, var12 - 1, var13)).method_8349(class_2351.field_11745)) {
+      if (this.world.method_28262(new BlockPos(var11, var12 - 1, var13)).method_8349(class_2351.field_11745)) {
          var12--;
       }
 
-      class_2522 var14 = this.field_41768.method_28262(new class_1331(var11, var12, var13));
+      class_2522 var14 = this.world.method_28262(new BlockPos(var11, var12, var13));
       if (!class_6788.method_31115(var14)) {
          return null;
       } else {
@@ -591,11 +591,11 @@ public abstract class class_1080 extends Entity {
       int var9 = class_9299.method_42847(var1);
       int var10 = class_9299.method_42847(var3);
       int var11 = class_9299.method_42847(var5);
-      if (this.field_41768.method_28262(new class_1331(var9, var10 - 1, var11)).method_8349(class_2351.field_11745)) {
+      if (this.world.method_28262(new BlockPos(var9, var10 - 1, var11)).method_8349(class_2351.field_11745)) {
          var10--;
       }
 
-      class_2522 var12 = this.field_41768.method_28262(new class_1331(var9, var10, var11));
+      class_2522 var12 = this.world.method_28262(new BlockPos(var9, var10, var11));
       if (!class_6788.method_31115(var12)) {
          return null;
       } else {
@@ -665,7 +665,7 @@ public abstract class class_1080 extends Entity {
 
    @Override
    public void method_37183(Entity var1) {
-      if (!this.field_41768.field_33055 && !var1.field_41731 && !this.field_41731 && !this.method_37072(var1)) {
+      if (!this.world.field_33055 && !var1.field_41731 && !this.field_41731 && !this.method_37072(var1)) {
          double var4 = var1.method_37302() - this.method_37302();
          double var6 = var1.method_37156() - this.method_37156();
          double var8 = var4 * var4 + var6 * var6;
@@ -686,7 +686,7 @@ public abstract class class_1080 extends Entity {
             var6 *= (double)(1.0F - this.field_41721);
             var4 *= 0.5;
             var6 *= 0.5;
-            if (!(var1 instanceof class_1080)) {
+            if (!(var1 instanceof AbstractMinecartEntity)) {
                this.method_37186(-var4, 0.0, -var6);
                var1.method_37186(var4 / 4.0, 0.0, var6 / 4.0);
             } else {
@@ -694,9 +694,9 @@ public abstract class class_1080 extends Entity {
                double var14 = var1.method_37156() - this.method_37156();
                class_1343 var16 = new class_1343(var12, 0.0, var14).method_6213();
                class_1343 var17 = new class_1343(
-                     (double)class_9299.method_42840(this.field_41701 * (float) (Math.PI / 180.0)),
+                     (double)class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0)),
                      0.0,
-                     (double)class_9299.method_42818(this.field_41701 * (float) (Math.PI / 180.0))
+                     (double)class_9299.method_42818(this.rotationYaw * (float) (Math.PI / 180.0))
                   )
                   .method_6213();
                double var18 = Math.abs(var16.method_6206(var17));
@@ -706,11 +706,11 @@ public abstract class class_1080 extends Entity {
 
                class_1343 var20 = this.method_37098();
                class_1343 var21 = var1.method_37098();
-               if (((class_1080)var1).method_4737() == class_3481.field_17068 && this.method_4737() != class_3481.field_17068) {
+               if (((AbstractMinecartEntity)var1).method_4737() == class_3481.field_17068 && this.method_4737() != class_3481.field_17068) {
                   this.method_37215(var20.method_6210(0.2, 1.0, 0.2));
                   this.method_37186(var21.field_7336 - var4, 0.0, var21.field_7334 - var6);
                   var1.method_37215(var21.method_6210(0.95, 1.0, 0.95));
-               } else if (((class_1080)var1).method_4737() != class_3481.field_17068 && this.method_4737() == class_3481.field_17068) {
+               } else if (((AbstractMinecartEntity)var1).method_4737() != class_3481.field_17068 && this.method_4737() == class_3481.field_17068) {
                   var1.method_37215(var21.method_6210(0.2, 1.0, 0.2));
                   var1.method_37186(var20.field_7336 + var4, 0.0, var20.field_7334 + var6);
                   this.method_37215(var20.method_6210(0.95, 1.0, 0.95));

@@ -104,11 +104,11 @@ public class InfiniteAuraModule extends Module {
             var5.field_41736.field_7333 = var8.method_21801();
             var5.field_41736.field_7334 = var8.method_21799() + 0.5;
             client.method_8614().method_4813(new class_8125(false, false));
-            client.method_8614().method_4813(new class_3616(client.thePlayer.field_41701, client.thePlayer.field_41755, false));
+            client.method_8614().method_4813(new class_3616(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, false));
             client.method_8614().method_4813(new class_758(0.0F, 1.0F, false, false));
-            class_9149 var9 = new class_9149(client.theWorld, var8.method_21803() + 0.5, var8.method_21801(), var8.method_21799() + 0.5);
-            var9.field_41701 = var5.field_41701;
-            var9.field_41755 = var5.field_41755;
+            BoatEntity var9 = new BoatEntity(client.theWorld, var8.method_21803() + 0.5, var8.method_21801(), var8.method_21799() + 0.5);
+            var9.rotationYaw = var5.rotationYaw;
+            var9.rotationPitch = var5.rotationPitch;
             client.method_8614().method_4813(new class_4148(var9));
          }
       }

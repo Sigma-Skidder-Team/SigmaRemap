@@ -24,11 +24,11 @@ public class class_972 {
       return this.field_4969;
    }
 
-   public class_4190 method_4257(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_4257(class_2522 var1, class_6163 var2, BlockPos var3) {
       return this.field_4973.method_33289(var1, var2, var3, this.field_4974);
    }
 
-   public class_4190 method_4258(class_4774 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_4258(class_4774 var1, class_6163 var2, BlockPos var3) {
       return !this.field_4971.method_44270(var1) ? class_3370.method_15536() : var1.method_21994(var2, var3);
    }
 }

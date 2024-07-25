@@ -26,7 +26,7 @@ public class class_1322 {
                } else if (var3 instanceof class_2546) {
                   return method_6039(class_1614.field_8385, field_7279.thePlayer.method_37075(), var4, var0, var3);
                } else if (!(var3 instanceof class_3431)) {
-                  class_1331 var5 = field_7283.method_21812();
+                  BlockPos var5 = field_7283.method_21812();
                   if (var5 != null) {
                      if (var3 instanceof class_2713) {
                         return method_6039(class_1614.field_8384, var5, var4, var0, var3);
@@ -95,7 +95,7 @@ public class class_1322 {
       }
    }
 
-   private static Identifier method_6039(class_1614 var0, class_1331 var1, class_4924 var2, Identifier var3, Screen var4) {
+   private static Identifier method_6039(class_1614 var0, BlockPos var1, class_4924 var2, Identifier var3, Screen var4) {
       class_3739[] var7 = field_7281[var0.ordinal()];
       if (var7 == null) {
          return var3;

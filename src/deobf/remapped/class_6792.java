@@ -9,14 +9,14 @@ public class class_6792 extends class_7067<class_9552> {
       super(var1);
    }
 
-   public int method_31133(class_9552 var1, class_1331 var2) {
+   public int method_31133(class_9552 var1, BlockPos var2) {
       return 15;
    }
 
    public void method_31135(class_9552 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       var4.method_36063();
-      float var9 = class_9299.method_42833(var1.field_41711, var1.field_41701, var3);
-      float var10 = class_9299.method_42795(var3, var1.field_41762, var1.field_41755);
+      float var9 = class_9299.method_42833(var1.prevRotationYaw, var1.rotationYaw, var3);
+      float var10 = class_9299.method_42795(var3, var1.field_41762, var1.rotationPitch);
       float var11 = (float)var1.field_41697 + var3;
       var4.method_36065(0.0, 0.15F, 0.0);
       var4.method_36060(class_2426.field_12074.method_11074(class_9299.method_42818(var11 * 0.1F) * 180.0F));

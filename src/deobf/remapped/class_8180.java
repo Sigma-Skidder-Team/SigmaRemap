@@ -18,19 +18,19 @@ public class class_8180 extends class_3599 {
 
    @Override
    public void method_16793() {
-      this.field_41876.method_31484((class_1331)null);
+      this.field_41876.method_31484((BlockPos)null);
       class_6862.method_31482(this.field_41874).method_5620();
    }
 
    @Override
    public boolean method_16795() {
-      class_1331 var3 = class_6862.method_31483(this.field_41876);
+      BlockPos var3 = class_6862.method_31483(this.field_41876);
       return var3 != null && this.method_37498(var3, this.field_41872);
    }
 
    @Override
    public void method_16794() {
-      class_1331 var3 = class_6862.method_31483(this.field_41876);
+      BlockPos var3 = class_6862.method_31483(this.field_41876);
       if (var3 != null && class_6862.method_31480(this.field_41874).method_5591()) {
          if (!this.method_37498(var3, 10.0)) {
             class_6862.method_31486(this.field_41874)
@@ -49,7 +49,7 @@ public class class_8180 extends class_3599 {
       }
    }
 
-   private boolean method_37498(class_1331 var1, double var2) {
+   private boolean method_37498(BlockPos var1, double var2) {
       return !var1.method_12170(this.field_41876.method_37245(), var2);
    }
 }

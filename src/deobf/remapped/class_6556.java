@@ -24,12 +24,12 @@ public class class_6556 extends class_2609 {
    }
 
    @Override
-   public List<class_4099> method_11829(class_5799 var1, class_1331 var2, class_6631 var3, Random var4) {
+   public List<class_4099> method_11829(class_5799 var1, BlockPos var2, class_6631 var3, Random var4) {
       return this.field_33416.get(0).method_11829(var1, var2, var3, var4);
    }
 
    @Override
-   public class_9616 method_11832(class_5799 var1, class_1331 var2, class_6631 var3) {
+   public class_9616 method_11832(class_5799 var1, BlockPos var2, class_6631 var3) {
       class_9616 var6 = class_9616.method_44397();
 
       for (class_2609 var8 : this.field_33416) {
@@ -46,8 +46,8 @@ public class class_6556 extends class_2609 {
       class_700 var2,
       class_2033 var3,
       class_6541 var4,
-      class_1331 var5,
-      class_1331 var6,
+      BlockPos var5,
+      BlockPos var6,
       class_6631 var7,
       class_9616 var8,
       Random var9,

@@ -15,7 +15,7 @@ public class class_1598 extends class_8131 {
    private final class_3487 field_8319;
    private final class_4168 field_8321;
 
-   public class_1598(class_1331 var1, class_3487 var2, class_4168 var3, Identifier var4, class_6561 var5, class_6631 var6, class_9022 var7, class_1331 var8) {
+   public class_1598(BlockPos var1, class_3487 var2, class_4168 var3, Identifier var4, class_6561 var5, class_6631 var6, class_9022 var7, BlockPos var8) {
       super(class_2746.field_13398, 0);
       this.field_41648 = var1;
       this.field_8322 = var4;
@@ -36,7 +36,7 @@ public class class_1598 extends class_8131 {
          .parse(new Dynamic(class_3504.field_17178, var2.method_25929("Properties")))
          .getOrThrow(true, field_8320::error);
       class_6561 var5 = var1.method_26279(this.field_8322);
-      this.method_7168(var5, new class_1331(var5.method_29975().method_12173() / 2, 0, var5.method_29975().method_12185() / 2));
+      this.method_7168(var5, new BlockPos(var5.method_29975().method_12173() / 2, 0, var5.method_29975().method_12185() / 2));
    }
 
    @Override
@@ -52,7 +52,7 @@ public class class_1598 extends class_8131 {
          .ifPresent(var1x -> var1.put("Properties", var1x));
    }
 
-   private void method_7168(class_6561 var1, class_1331 var2) {
+   private void method_7168(class_6561 var1, BlockPos var2) {
       class_2010 var5 = !this.field_8321.field_20274 ? class_2010.field_10193 : class_2010.field_10194;
       ArrayList var6 = Lists.newArrayList();
       var6.add(method_7157(class_4783.field_23692, 0.3F, class_4783.field_23184));
@@ -87,7 +87,7 @@ public class class_1598 extends class_8131 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       if (!var5.method_44395(this.field_41648)) {
          return true;
       } else {
@@ -96,7 +96,7 @@ public class class_1598 extends class_8131 {
          this.method_7158(var4, var1);
          this.method_7163(var4, var1);
          if (this.field_8321.field_20276 || this.field_8321.field_20277) {
-            class_1331.method_6086(this.method_32512()).forEach(var3x -> {
+            BlockPos.method_6086(this.method_32512()).forEach(var3x -> {
                if (this.field_8321.field_20276) {
                   this.method_7165(var4, var1, var3x);
                }
@@ -112,14 +112,14 @@ public class class_1598 extends class_8131 {
    }
 
    @Override
-   public void method_36999(String var1, class_1331 var2, class_1556 var3, Random var4, class_9616 var5) {
+   public void method_36999(String var1, BlockPos var2, class_1556 var3, Random var4, class_9616 var5) {
    }
 
-   private void method_7165(Random var1, class_9379 var2, class_1331 var3) {
+   private void method_7165(Random var1, class_9379 var2, BlockPos var3) {
       class_2522 var6 = var2.method_28262(var3);
       if (!var6.method_8345() && !var6.method_8350(class_4783.field_23323)) {
          Direction var7 = class_9594.field_48893.method_44313(var1);
-         class_1331 var8 = var3.method_6098(var7);
+         BlockPos var8 = var3.method_6098(var7);
          class_2522 var9 = var2.method_28262(var8);
          if (var9.method_8345() && class_6414.method_29303(var6.method_8324(var2, var3), var7)) {
             class_6720 var10 = class_4196.method_19521(var7.method_1046());
@@ -128,7 +128,7 @@ public class class_1598 extends class_8131 {
       }
    }
 
-   private void method_7162(Random var1, class_9379 var2, class_1331 var3) {
+   private void method_7162(Random var1, class_9379 var2, BlockPos var3) {
       if (var1.nextFloat() < 0.5F && var2.method_28262(var3).method_8350(class_4783.field_23700) && var2.method_28262(var3.method_6081()).method_8345()) {
          var2.method_7513(var3.method_6081(), class_4783.field_23386.method_29260().method_10308(class_4423.field_21619, Boolean.valueOf(true)), 3);
       }
@@ -137,7 +137,7 @@ public class class_1598 extends class_8131 {
    private void method_7163(Random var1, class_9379 var2) {
       for (int var5 = this.field_36435.field_48996 + 1; var5 < this.field_36435.field_48991; var5++) {
          for (int var6 = this.field_36435.field_48992 + 1; var6 < this.field_36435.field_48994; var6++) {
-            class_1331 var7 = new class_1331(var5, this.field_36435.field_48995, var6);
+            BlockPos var7 = new BlockPos(var5, this.field_36435.field_48995, var6);
             if (var2.method_28262(var7).method_8350(class_4783.field_23700)) {
                this.method_7160(var1, var2, var7.method_6100());
             }
@@ -145,7 +145,7 @@ public class class_1598 extends class_8131 {
       }
    }
 
-   private void method_7160(Random var1, class_9379 var2, class_1331 var3) {
+   private void method_7160(Random var1, class_9379 var2, BlockPos var3) {
       class_2921 var6 = var3.method_6089();
       this.method_7164(var1, var2, var6);
       int var7 = 8;
@@ -167,7 +167,7 @@ public class class_1598 extends class_8131 {
       int var11 = (this.field_36435.method_44393() + this.field_36435.method_44387()) / 2;
       int var12 = var1.nextInt(Math.max(1, 8 - var11 / 2));
       byte var13 = 3;
-      class_2921 var14 = class_1331.field_7306.method_6089();
+      class_2921 var14 = BlockPos.field_7306.method_6089();
 
       for (int var15 = var7 - var10; var15 <= var7 + var10; var15++) {
          for (int var16 = var8 - var10; var16 <= var8 + var10; var16++) {
@@ -193,7 +193,7 @@ public class class_1598 extends class_8131 {
       }
    }
 
-   private boolean method_7166(class_9379 var1, class_1331 var2) {
+   private boolean method_7166(class_9379 var1, BlockPos var2) {
       class_2522 var5 = var1.method_28262(var2);
       return !var5.method_8350(class_4783.field_23184)
          && !var5.method_8350(class_4783.field_23881)
@@ -201,7 +201,7 @@ public class class_1598 extends class_8131 {
          && (this.field_8319 == class_3487.field_17121 || !var5.method_8350(class_4783.field_23811));
    }
 
-   private void method_7164(Random var1, class_9379 var2, class_1331 var3) {
+   private void method_7164(Random var1, class_9379 var2, BlockPos var3) {
       if (!this.field_8321.field_20278 && var1.nextFloat() < 0.07F) {
          var2.method_7513(var3, class_4783.field_23215.method_29260(), 3);
       } else {

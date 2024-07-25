@@ -20,7 +20,7 @@ public class class_5972 extends class_4569 {
       return new class_5972(class_8938.field_45798, var0, class_1827.field_9269, class_5093.field_26274, class_5319.field_27132);
    }
 
-   public boolean method_27271(class_2522 var1, class_1331 var2, class_6331 var3, ItemStack var4) {
+   public boolean method_27271(class_2522 var1, BlockPos var2, class_6331 var3, ItemStack var4) {
       if (this.field_30418 != null && !var1.method_8350(this.field_30418)) {
          return false;
       } else if (this.field_30419.method_8076(var1)) {

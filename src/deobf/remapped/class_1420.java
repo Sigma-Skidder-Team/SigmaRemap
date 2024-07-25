@@ -105,7 +105,7 @@ public class class_1420 implements class_7203 {
    }
 
    @Override
-   public void method_4988(class_1331 var1, float var2) {
+   public void method_4988(BlockPos var1, float var2) {
    }
 
    @Override

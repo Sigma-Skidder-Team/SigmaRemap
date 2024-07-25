@@ -16,9 +16,9 @@ public class class_2588 extends class_2451 {
    }
 
    @Override
-   public boolean method_11203(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
       if (!var2.field_33055) {
-         this.method_11756(var4, var1, var2, var3, false, var4.method_26617(class_2584.field_12791));
+         this.method_11756(var4, var1, var2, var3, false, var4.method_26617(Hand.MAIN_HAND));
       }
 
       return false;
@@ -29,14 +29,14 @@ public class class_2588 extends class_2451 {
       class_704 var4 = var1.method_21868();
       World var5 = var1.method_21862();
       if (!var5.field_33055 && var4 != null) {
-         class_1331 var6 = var1.method_21858();
+         BlockPos var6 = var1.method_21858();
          this.method_11756(var4, var5.method_28262(var6), var5, var6, true, var1.method_21867());
       }
 
       return class_6910.method_31659(var5.field_33055);
    }
 
-   private void method_11756(class_704 var1, class_2522 var2, class_9379 var3, class_1331 var4, boolean var5, ItemStack var6) {
+   private void method_11756(class_704 var1, class_2522 var2, class_9379 var3, BlockPos var4, boolean var5, ItemStack var6) {
       if (var1.method_3184()) {
          class_6414 var9 = var2.method_8360();
          class_8021 var10 = var9.method_29306();

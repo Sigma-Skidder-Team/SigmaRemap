@@ -4,18 +4,18 @@ import java.io.IOException;
 
 public class class_5036 implements Packet<class_392> {
    private static String[] field_26059;
-   private class_2584 field_26060;
+   private Hand field_26060;
 
    public class_5036() {
    }
 
-   public class_5036(class_2584 var1) {
+   public class_5036(Hand var1) {
       this.field_26060 = var1;
    }
 
    @Override
    public void method_28775(class_8248 var1) throws IOException {
-      this.field_26060 = var1.<class_2584>method_37787(class_2584.class);
+      this.field_26060 = var1.<Hand>method_37787(Hand.class);
    }
 
    @Override
@@ -27,7 +27,7 @@ public class class_5036 implements Packet<class_392> {
       var1.method_1930(this);
    }
 
-   public class_2584 method_23207() {
+   public Hand method_23207() {
       return this.field_26060;
    }
 }

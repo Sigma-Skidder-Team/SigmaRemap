@@ -45,7 +45,7 @@ public class class_9564 implements class_6406 {
          if (!this.field_48679 && var3 > 0L) {
             this.field_48679 = true;
             if (var7.method_35157() == class_3361.field_16559) {
-               var2.method_42327().method_8590().method_16345(class_4949.method_22676(class_463.field_2139, 1.0F, 1.0F));
+               var2.method_42327().getSoundHandler().play(class_4949.method_22676(class_463.field_2139, 1.0F, 1.0F));
             }
          }
 

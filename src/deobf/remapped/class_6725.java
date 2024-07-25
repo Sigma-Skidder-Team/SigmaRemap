@@ -14,7 +14,7 @@ public class class_6725 extends class_502 {
    }
 
    @Override
-   public void method_2498(class_9379 var1, class_1331 var2, class_2522 var3, Random var4) {
+   public void method_2498(class_9379 var1, BlockPos var2, class_2522 var3, Random var4) {
       var1.method_7513(var2, var3, 2);
    }
 }

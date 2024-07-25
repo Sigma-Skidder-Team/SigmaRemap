@@ -30,7 +30,7 @@ public class DerpModule extends Module {
          this.field_33188++;
          if (this.getBooleanValueByName("Hit") && this.field_33188 > this.random.nextInt(5) + 3) {
             this.field_33188 = 0;
-            class_2584 var4 = class_2584.values()[this.random.nextInt(1)];
+            Hand var4 = Hand.values()[this.random.nextInt(1)];
             client.thePlayer.method_26597(var4);
          }
 
@@ -54,6 +54,6 @@ public class DerpModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_33191 = (int) client.thePlayer.field_41701;
+      this.field_33191 = (int) client.thePlayer.rotationYaw;
    }
 }

@@ -17,14 +17,14 @@ public class class_8601 extends class_3956 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       for (Direction var11 : Direction.values()) {
          var2.method_29563(var3.method_6098(var11), this);
       }
    }
 
    @Override
-   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var5) {
          for (Direction var11 : Direction.values()) {
             var2.method_29563(var3.method_6098(var11), this);
@@ -33,16 +33,16 @@ public class class_8601 extends class_3956 {
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return var1.<Boolean>method_10313(field_44047) && Direction.field_817 != var4 ? 15 : 0;
    }
 
-   public boolean method_39536(World var1, class_1331 var2, class_2522 var3) {
+   public boolean method_39536(World var1, BlockPos var2, class_2522 var3) {
       return var1.method_29588(var2.method_6100(), Direction.field_802);
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       boolean var7 = this.method_39536(var2, var3, var1);
       List var8 = field_44046.get(var2);
 
@@ -64,14 +64,14 @@ public class class_8601 extends class_3956 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       if (var1.<Boolean>method_10313(field_44047) == this.method_39536(var2, var3, var1) && !var2.method_43367().method_14010(var3, this)) {
          var2.method_43367().method_14011(var3, this, 2);
       }
    }
 
    @Override
-   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10778(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return var4 != Direction.field_802 ? 0 : var1.method_8327(var2, var3, var4);
    }
 
@@ -81,7 +81,7 @@ public class class_8601 extends class_3956 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method_10313(field_44047)) {
          double var7 = (double)var3.method_12173() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var9 = (double)var3.method_12165() + 0.7 + (var4.nextDouble() - 0.5) * 0.2;
@@ -95,7 +95,7 @@ public class class_8601 extends class_3956 {
       var1.method_10162(field_44047);
    }
 
-   private static boolean method_39535(World var0, class_1331 var1, boolean var2) {
+   private static boolean method_39535(World var0, BlockPos var1, boolean var2) {
       List var5 = field_44046.computeIfAbsent(var0, var0x -> Lists.newArrayList());
       if (var2) {
          var5.add(new class_6709(var1.method_6072(), var0.method_29546()));

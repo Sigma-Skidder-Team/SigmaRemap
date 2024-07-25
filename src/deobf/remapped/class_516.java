@@ -11,7 +11,7 @@ public abstract class class_516 extends class_5886 {
    }
 
    @Override
-   public void method_37105(double var1, boolean var3, class_2522 var4, class_1331 var5) {
+   public void method_37105(double var1, boolean var3, class_2522 var4, BlockPos var5) {
    }
 
    @Override
@@ -20,8 +20,8 @@ public abstract class class_516 extends class_5886 {
          if (!this.method_37370()) {
             float var4 = 0.91F;
             if (this.field_41726) {
-               var4 = this.field_41768
-                     .method_28262(new class_1331(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
+               var4 = this.world
+                     .method_28262(new BlockPos(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
                      .method_8360()
                      .method_29308()
                   * 0.91F;
@@ -30,8 +30,8 @@ public abstract class class_516 extends class_5886 {
             float var5 = 0.16277137F / (var4 * var4 * var4);
             var4 = 0.91F;
             if (this.field_41726) {
-               var4 = this.field_41768
-                     .method_28262(new class_1331(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
+               var4 = this.world
+                     .method_28262(new BlockPos(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
                      .method_8360()
                      .method_29308()
                   * 0.91F;

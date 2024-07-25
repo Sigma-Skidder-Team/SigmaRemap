@@ -44,7 +44,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
                   .<class_6867, class_5917>method_23138(class_1510.field_7996, var6, this.field_18364)
                   .<ItemStack>map(var1 -> var1.method_41042(var6))
                   .orElse(var4);
-               class_1331 var8 = this.method_17399();
+               BlockPos var8 = this.method_17399();
                class_1573.method_7100(this.field_18364, (double)var8.method_12173(), (double)var8.method_12165(), (double)var8.method_12185(), var7);
                this.field_3312.set(var3, ItemStack.EMPTY);
                this.method_2669();
@@ -56,7 +56,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
    private void method_2676() {
       World var3 = this.method_17402();
       if (var3 != null) {
-         class_1331 var4 = this.method_17399();
+         BlockPos var4 = this.method_17399();
          Random var5 = var3.field_33033;
          if (var5.nextFloat() < 0.11F) {
             for (int var6 = 0; var6 < var5.nextInt(2) + 2; var6++) {

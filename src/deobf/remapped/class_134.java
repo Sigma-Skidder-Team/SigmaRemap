@@ -35,7 +35,7 @@ public class class_134 {
    }
 
    public static void method_537(class_2599 var0) {
-      int var3 = field_387.method_20387(var0.field_41768.field_33033);
+      int var3 = field_387.method_20387(var0.world.field_33033);
       var0.method_26525().method_5107(class_6044.field_30864, true, (long)var3);
    }
 
@@ -141,7 +141,7 @@ public class class_134 {
          ImmutableList.of(
             new class_5007(0.8F),
             new class_6109(class_134::method_512, 8.0F),
-            new class_2214<class_2599>(Entity::method_37070, method_530()),
+            new class_2214<class_2599>(Entity::isPassenger, method_530()),
             new class_5674(8, class_134::method_503)
          ),
          class_6044.field_30903
@@ -170,7 +170,7 @@ public class class_134 {
       );
    }
 
-   private static class_2300<class_1331> method_508() {
+   private static class_2300<BlockPos> method_508() {
       return class_2300.method_10574(class_6044.field_30905, 1.0F, 8, false);
    }
 
@@ -247,7 +247,7 @@ public class class_134 {
 
    private static void method_546(class_2599 var0, ItemStack var1) {
       if (method_528(var0)) {
-         var0.method_37310(var0.method_26617(class_2584.field_12794));
+         var0.method_37310(var0.method_26617(Hand.OFF_HAND));
       }
 
       var0.method_11794(var1);
@@ -266,8 +266,8 @@ public class class_134 {
    }
 
    public static void method_485(class_2599 var0, boolean var1) {
-      ItemStack var4 = var0.method_26617(class_2584.field_12794);
-      var0.method_26615(class_2584.field_12794, ItemStack.EMPTY);
+      ItemStack var4 = var0.method_26617(Hand.OFF_HAND);
+      var0.method_26615(Hand.OFF_HAND, ItemStack.EMPTY);
       if (!var0.method_31995()) {
          boolean var5 = var0.method_26879(var4);
          if (!var5) {
@@ -296,7 +296,7 @@ public class class_134 {
    public static void method_496(class_2599 var0) {
       if (method_468(var0) && !var0.method_26568().method_28022()) {
          var0.method_37310(var0.method_26568());
-         var0.method_26615(class_2584.field_12794, ItemStack.EMPTY);
+         var0.method_26615(Hand.OFF_HAND, ItemStack.EMPTY);
       }
    }
 
@@ -324,7 +324,7 @@ public class class_134 {
 
    private static void method_497(class_2599 var0, List<ItemStack> var1, class_1343 var2) {
       if (!var1.isEmpty()) {
-         var0.method_26597(class_2584.field_12794);
+         var0.method_26597(Hand.OFF_HAND);
 
          for (ItemStack var6 : var1) {
             class_1225.method_5439(var0, var6, var2.method_6214(0.0, 1.0, 0.0));
@@ -333,17 +333,17 @@ public class class_134 {
    }
 
    private static List<ItemStack> method_527(class_2599 var0) {
-      class_1758 var3 = var0.field_41768.method_29522().method_1722().method_4604(class_5931.field_30100);
+      class_1758 var3 = var0.world.method_29522().method_1722().method_4604(class_5931.field_30100);
       return var3.method_7862(
-         new class_8480((class_6331)var0.field_41768)
+         new class_8480((class_6331)var0.world)
             .method_39065(class_8712.field_44676, var0)
-            .method_39068(var0.field_41768.field_33033)
+            .method_39068(var0.world.field_33033)
             .method_39064(class_4933.field_25567)
       );
    }
 
    private static boolean method_477(class_5834 var0, class_5834 var1) {
-      return var1.method_37387() == class_6629.field_34306 ? new Random(var0.field_41768.method_29546()).nextFloat() < 0.1F : false;
+      return var1.method_37387() == class_6629.field_34306 ? new Random(var0.world.method_29546()).nextFloat() < 0.1F : false;
    }
 
    public static boolean method_511(class_2599 var0, ItemStack var1) {
@@ -427,7 +427,7 @@ public class class_134 {
    }
 
    public static void method_474(class_704 var0, boolean var1) {
-      List var4 = var0.field_41768.<class_2599>method_25868(class_2599.class, var0.method_37241().method_18898(16.0));
+      List var4 = var0.world.<class_2599>method_25868(class_2599.class, var0.method_37241().method_18898(16.0));
       var4.stream().filter(class_134::method_531).filter(var2 -> !var1 || class_1225.method_5449(var2, var0)).forEach(var1x -> {
          if (!var1x.field_41768.method_29537().method_1285(class_291.field_1039)) {
             method_533(var1x, var0);
@@ -437,7 +437,7 @@ public class class_134 {
       });
    }
 
-   public static class_6910 method_518(class_2599 var0, class_704 var1, class_2584 var2) {
+   public static class_6910 method_518(class_2599 var0, class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!method_515(var0, var5)) {
          return class_6910.field_35521;
@@ -491,7 +491,7 @@ public class class_134 {
 
    public static void method_522(class_6993 var0, class_5834 var1) {
       if (!var0.method_26525().method_5134(class_6275.field_32068) && method_504(var1) && !class_1225.method_5452(var0, var1, 4.0)) {
-         if (var1.method_37387() == class_6629.field_34300 && var0.field_41768.method_29537().method_1285(class_291.field_1039)) {
+         if (var1.method_37387() == class_6629.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
             method_521(var0, var1);
             method_517(var0);
          } else {
@@ -593,7 +593,7 @@ public class class_134 {
             method_470(var0);
          }
 
-         if (var1.method_37387() == class_6629.field_34300 && var0.field_41768.method_29537().method_1285(class_291.field_1039)) {
+         if (var1.method_37387() == class_6629.field_34300 && var0.world.method_29537().method_1285(class_291.field_1039)) {
             var0.method_26525().method_5107(class_6044.field_30880, true, 600L);
          }
       }
@@ -672,12 +672,12 @@ public class class_134 {
       var0.method_26525().method_5127(class_6044.field_30866);
       var0.method_26525().method_5127(class_6044.field_30884);
       var0.method_26525().method_5127(class_6044.field_30889);
-      var0.method_26525().method_5107(class_6044.field_30913, var1, (long)field_391.method_20387(var0.field_41768.field_33033));
+      var0.method_26525().method_5107(class_6044.field_30913, var1, (long)field_391.method_20387(var0.world.field_33033));
       method_470(var0);
    }
 
    public static void method_470(class_6993 var0) {
-      var0.method_26525().method_5107(class_6044.field_30864, true, (long)field_387.method_20387(var0.field_41768.field_33033));
+      var0.method_26525().method_5107(class_6044.field_30864, true, (long)field_387.method_20387(var0.world.field_33033));
    }
 
    private static void method_524(class_2599 var0) {

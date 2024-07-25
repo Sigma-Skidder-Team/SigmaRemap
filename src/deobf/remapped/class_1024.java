@@ -22,9 +22,9 @@ public class class_1024 implements ArgumentType<class_1808> {
       return new class_1024();
    }
 
-   public static class_1331 method_4519(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
-      class_1331 var4 = ((class_1808)var0.getArgument(var1, class_1808.class)).method_8024((class_9155)var0.getSource());
-      if (((class_9155)var0.getSource()).method_42198().method_22559(var4)) {
+   public static BlockPos method_4519(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+      BlockPos var4 = ((class_1808)var0.getArgument(var1, class_1808.class)).method_8024((class_9155)var0.getSource());
+      if (((class_9155)var0.getSource()).method_42198().isBlockLoaded(var4)) {
          ((class_9155)var0.getSource()).method_42198();
          if (class_6331.method_29586(var4)) {
             return var4;
@@ -36,7 +36,7 @@ public class class_1024 implements ArgumentType<class_1808> {
       }
    }
 
-   public static class_1331 method_4520(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+   public static BlockPos method_4520(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
       return ((class_1808)var0.getArgument(var1, class_1808.class)).method_8024((class_9155)var0.getSource());
    }
 

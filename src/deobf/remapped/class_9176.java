@@ -14,7 +14,7 @@ public class class_9176 extends class_6414 {
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (!var1.method_8309(var2, var3)) {
          var2.method_7510(var3, true);
       }
@@ -26,8 +26,8 @@ public class class_9176 extends class_6414 {
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
-      class_1331 var7 = var3.method_6081();
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
+      BlockPos var7 = var3.method_6081();
       if (var2.method_22548(var7) && var7.method_12165() < 256) {
          int var8 = var1.<Integer>method_10313(field_46944);
          if (var8 < 5) {
@@ -76,7 +76,7 @@ public class class_9176 extends class_6414 {
 
                for (int var20 = 0; var20 < var18; var20++) {
                   Direction var16 = class_9594.field_48893.method_44313(var4);
-                  class_1331 var17 = var3.method_6098(var16);
+                  BlockPos var17 = var3.method_6098(var16);
                   if (var2.method_22548(var17) && var2.method_22548(var17.method_6100()) && method_42287(var2, var17, var16.method_1046())) {
                      this.method_42289(var2, var17, var8 + 1);
                      var19 = true;
@@ -93,17 +93,17 @@ public class class_9176 extends class_6414 {
       }
    }
 
-   private void method_42289(World var1, class_1331 var2, int var3) {
+   private void method_42289(World var1, BlockPos var2, int var3) {
       var1.method_7513(var2, this.method_29260().method_10308(field_46944, Integer.valueOf(var3)), 2);
       var1.method_43364(1033, var2, 0);
    }
 
-   private void method_42286(World var1, class_1331 var2) {
+   private void method_42286(World var1, BlockPos var2) {
       var1.method_7513(var2, this.method_29260().method_10308(field_46944, Integer.valueOf(5)), 2);
       var1.method_43364(1034, var2, 0);
    }
 
-   private static boolean method_42287(class_4924 var0, class_1331 var1, Direction var2) {
+   private static boolean method_42287(class_4924 var0, BlockPos var1, Direction var2) {
       for (Direction var6 : class_9594.field_48893) {
          if (var6 != var2 && !var0.method_22548(var1.method_6098(var6))) {
             return false;
@@ -114,7 +114,7 @@ public class class_9176 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var2 != Direction.field_817 && !var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
@@ -123,7 +123,7 @@ public class class_9176 extends class_6414 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       class_2522 var6 = var2.method_28262(var3.method_6100());
       if (var6.method_8360() != this.field_46945 && !var6.method_8350(class_4783.field_23894)) {
          if (var6.method_8345()) {
@@ -158,12 +158,12 @@ public class class_9176 extends class_6414 {
       var1.method_10162(field_46944);
    }
 
-   public static void method_42288(class_9379 var0, class_1331 var1, Random var2, int var3) {
+   public static void method_42288(class_9379 var0, BlockPos var1, Random var2, int var3) {
       var0.method_7513(var1, ((class_5307)class_4783.field_23634).method_24237(var0, var1), 2);
       method_42285(var0, var1, var2, var1, var3, 0);
    }
 
-   private static void method_42285(class_9379 var0, class_1331 var1, Random var2, class_1331 var3, int var4, int var5) {
+   private static void method_42285(class_9379 var0, BlockPos var1, Random var2, BlockPos var3, int var4, int var5) {
       class_5307 var8 = (class_5307)class_4783.field_23634;
       int var9 = var2.nextInt(4) + 1;
       if (var5 == 0) {
@@ -171,7 +171,7 @@ public class class_9176 extends class_6414 {
       }
 
       for (int var10 = 0; var10 < var9; var10++) {
-         class_1331 var11 = var1.method_6082(var10 + 1);
+         BlockPos var11 = var1.method_6082(var10 + 1);
          if (!method_42287(var0, var11, (Direction)null)) {
             return;
          }
@@ -189,7 +189,7 @@ public class class_9176 extends class_6414 {
 
          for (int var12 = 0; var12 < var16; var12++) {
             Direction var13 = class_9594.field_48893.method_44313(var2);
-            class_1331 var14 = var1.method_6082(var9).method_6098(var13);
+            BlockPos var14 = var1.method_6082(var9).method_6098(var13);
             if (Math.abs(var14.method_12173() - var3.method_12173()) < var4
                && Math.abs(var14.method_12185() - var3.method_12185()) < var4
                && var0.method_22548(var14)
@@ -211,7 +211,7 @@ public class class_9176 extends class_6414 {
    @Override
    public void method_10758(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
       if (var4.method_37387().method_30453(class_5218.field_26793)) {
-         class_1331 var7 = var3.method_43955();
+         BlockPos var7 = var3.method_43955();
          var1.method_7511(var7, true, var4);
       }
    }

@@ -28,7 +28,7 @@ public class class_235 extends class_6315 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       this.method_32500(var1, var5, 0, 3, 0, 12, 4, 12, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);
       this.method_32500(var1, var5, 0, 5, 0, 12, 13, 12, class_4783.field_23184.method_29260(), class_4783.field_23184.method_29260(), false);
       this.method_32500(var1, var5, 0, 5, 0, 1, 12, 12, class_4783.field_23484.method_29260(), class_4783.field_23484.method_29260(), false);

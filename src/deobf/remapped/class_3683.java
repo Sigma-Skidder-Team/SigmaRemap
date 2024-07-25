@@ -59,20 +59,20 @@ public class class_3683 extends class_3954<class_6946> {
 
    @Override
    public boolean method_18267(class_8932<? super class_6946> var1) {
-      return var1.method_41052(this.field_18049, this.field_18051.field_41768);
+      return var1.method_41052(this.field_18049, this.field_18051.world);
    }
 
    @Override
    public void method_18853(class_6867 var1) {
-      class_1722.method_7714(this.field_19925, this.field_18051.field_41768, this.field_18051, this.field_18049, this.field_18056);
+      class_1722.method_7714(this.field_19925, this.field_18051.world, this.field_18051, this.field_18049, this.field_18056);
    }
 
    @Override
    public void method_18876(class_704 var1) {
       super.method_18876(var1);
       this.field_18056.method_24975();
-      if (!var1.field_41768.field_33055) {
-         this.method_18887(var1, var1.field_41768, this.field_18049);
+      if (!var1.world.field_33055) {
+         this.method_18887(var1, var1.world, this.field_18049);
       }
    }
 

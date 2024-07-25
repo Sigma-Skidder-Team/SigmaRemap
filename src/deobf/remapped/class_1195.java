@@ -32,7 +32,7 @@ public class class_1195 extends class_8557 {
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var4.nextInt(3) != 0) {
          super.method_10783(var1, var2, var3, var4);
       }
@@ -49,7 +49,7 @@ public class class_1195 extends class_8557 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_6690[var1.<Integer>method_10313(this.method_39380())];
    }
 }

@@ -150,11 +150,11 @@ public class class_4964 {
 
    private void method_22800() {
       if (this.field_25693 != class_9721.field_49421) {
-         this.field_25665 = this.field_25665.and(this.method_22738(this.field_25693, var0 -> (double)var0.field_41755));
+         this.field_25665 = this.field_25665.and(this.method_22738(this.field_25693, var0 -> (double)var0.rotationPitch));
       }
 
       if (this.field_25673 != class_9721.field_49421) {
-         this.field_25665 = this.field_25665.and(this.method_22738(this.field_25673, var0 -> (double)var0.field_41701));
+         this.field_25665 = this.field_25665.and(this.method_22738(this.field_25673, var0 -> (double)var0.rotationYaw));
       }
 
       if (!this.field_25694.method_27852()) {

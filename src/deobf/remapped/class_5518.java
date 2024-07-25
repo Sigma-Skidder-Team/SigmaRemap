@@ -61,7 +61,7 @@ public class class_5518 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       return class_4754.method_21939(var1, var2, var3);
    }
 

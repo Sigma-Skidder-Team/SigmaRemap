@@ -13,10 +13,10 @@ public interface class_3832 extends class_2354 {
    void method_17814();
 
    default void method_17815(class_5834 var1, float var2) {
-      class_2584 var5 = class_8462.method_38934(var1, class_4897.field_25030);
+      Hand var5 = class_8462.method_38934(var1, class_4897.field_25030);
       ItemStack var6 = var1.method_26617(var5);
       if (var1.method_26443(class_4897.field_25030)) {
-         class_4380.method_20402(var1.field_41768, var1, var5, var6, var2, (float)(14 - var1.field_41768.method_43370().method_2097() * 4));
+         class_4380.method_20402(var1.world, var1, var5, var6, var2, (float)(14 - var1.world.method_43370().method_2097() * 4));
       }
 
       this.method_17814();
@@ -33,7 +33,7 @@ public interface class_3832 extends class_2354 {
          (double)var16.method_11061(),
          (double)var16.method_11055(),
          var5,
-         (float)(14 - var1.field_41768.method_43370().method_2097() * 4)
+         (float)(14 - var1.world.method_43370().method_2097() * 4)
       );
       var1.method_37155(class_463.field_2025, 1.0F, 1.0F / (var1.method_26594().nextFloat() * 0.4F + 0.8F));
    }

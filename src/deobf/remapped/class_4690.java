@@ -16,7 +16,7 @@ public class class_4690 {
    }
 
    public static List<class_5024> method_21658(
-           List<class_5024> var0, class_5561 var1, class_2522 var2, class_1331 var3, Direction var4, RenderLayer var5, long var6, class_4460 var8
+           List<class_5024> var0, class_5561 var1, class_2522 var2, BlockPos var3, Direction var4, RenderLayer var5, long var6, class_4460 var8
    ) {
       if (var4 != null) {
          if (var8.method_20696() && class_9582.method_44266(var1.method_28262(var3.method_6098(var4)), var2)) {
@@ -55,7 +55,7 @@ public class class_4690 {
       return var0 != null && var0 != class_6727.field_34745 ? var0 : class_6727.field_34746;
    }
 
-   private static class_5024[] method_21659(class_5024 var0, class_5561 var1, class_2522 var2, class_1331 var3, Direction var4, long var5, class_4460 var7) {
+   private static class_5024[] method_21659(class_5024 var0, class_5561 var1, class_2522 var2, BlockPos var3, Direction var4, long var5, class_4460 var7) {
       if (var7.method_20691(var0)) {
          return var7.method_20683(var0);
       } else {

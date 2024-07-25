@@ -26,7 +26,7 @@ public class class_5536 extends class_1871 {
          double var16 = var8 + var11.nextGaussian() / 2.0;
          class_1343 var18 = this.field_9479.method_37098();
          this.field_9479
-            .field_41768
+            .world
             .method_43361(
                class_3090.field_15315,
                var12,
@@ -43,7 +43,7 @@ public class class_5536 extends class_1871 {
    @Override
    public void method_23473() {
       if (this.field_28217 == null) {
-         this.field_28217 = class_1343.method_6200(this.field_9479.field_41768.method_22563(class_3801.field_18590, class_8870.field_45348));
+         this.field_28217 = class_1343.method_6200(this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348));
       }
 
       if (this.field_28217.method_6203(this.field_9479.method_37302(), this.field_9479.method_37309(), this.field_9479.method_37156()) < 1.0) {

@@ -84,13 +84,13 @@ public class KillauraModule extends Module {
       this.field_12553 = 0;
       this.field_12570 = 0;
       field_12551 = 0;
-      this.field_12569 = new class_1988(client.thePlayer.field_30535, client.thePlayer.field_30524);
-      this.field_12567 = new class_1988(client.thePlayer.field_41701, client.thePlayer.field_41755);
-      field_12563 = new class_1988(client.thePlayer.field_41701, client.thePlayer.field_41755);
+      this.field_12569 = new class_1988(client.thePlayer.lastReportedYaw, client.thePlayer.lastReportedPitch);
+      this.field_12567 = new class_1988(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch);
+      field_12563 = new class_1988(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch);
       this.field_12562 = -1.0F;
       this.field_12561
          .method_40099(
-            client.thePlayer.method_26617(class_2584.field_12791).method_27960() instanceof class_2235
+            client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() instanceof class_2235
                && client.gameOptions.keyUse.isKeyDown()
          );
       this.field_12564 = false;
@@ -191,7 +191,7 @@ public class KillauraModule extends Module {
                }
 
                this.method_11545();
-               if (var1.method_6442() - client.thePlayer.field_41701 != 0.0F) {
+               if (var1.method_6442() - client.thePlayer.rotationYaw != 0.0F) {
                   this.field_12567.field_10069 = var1.method_6442();
                   this.field_12567.field_10067 = var1.method_6439();
                }
@@ -236,8 +236,8 @@ public class KillauraModule extends Module {
          float var5 = class_9299.method_42810(
             this.field_12569.field_10067 + (this.field_12567.field_10067 - this.field_12569.field_10067) * client.method_8554()
          );
-         client.thePlayer.field_41701 = var4;
-         client.thePlayer.field_41755 = var5;
+         client.thePlayer.rotationYaw = var4;
+         client.thePlayer.rotationPitch = var5;
       }
    }
 
@@ -482,8 +482,8 @@ public class KillauraModule extends Module {
             this.field_12546 = (int)this.field_12561.method_40095(0);
             this.field_12553 = 0;
             field_12548 = false;
-            this.field_12567.field_10069 = client.thePlayer.field_41701;
-            this.field_12567.field_10067 = client.thePlayer.field_41755;
+            this.field_12567.field_10069 = client.thePlayer.rotationYaw;
+            this.field_12567.field_10067 = client.thePlayer.rotationPitch;
             field_12563.field_10069 = this.field_12567.field_10069;
             field_12563.field_10067 = this.field_12567.field_10067;
             this.field_12562 = -1.0F;
@@ -568,8 +568,8 @@ public class KillauraModule extends Module {
          this.field_12546 = (int)this.field_12561.method_40095(0);
          this.field_12553 = 0;
          field_12548 = false;
-         this.field_12567.field_10069 = client.thePlayer.field_41701;
-         this.field_12567.field_10067 = client.thePlayer.field_41755;
+         this.field_12567.field_10069 = client.thePlayer.rotationYaw;
+         this.field_12567.field_10067 = client.thePlayer.rotationPitch;
          field_12563.field_10069 = this.field_12567.field_10069;
          field_12563.field_10067 = this.field_12567.field_10067;
          this.field_12562 = -1.0F;
@@ -687,8 +687,8 @@ public class KillauraModule extends Module {
          case "None":
             this.field_12569.field_10069 = this.field_12567.field_10069;
             this.field_12569.field_10067 = this.field_12567.field_10067;
-            this.field_12567.field_10069 = client.thePlayer.field_41701;
-            this.field_12567.field_10067 = client.thePlayer.field_41755;
+            this.field_12567.field_10069 = client.thePlayer.rotationYaw;
+            this.field_12567.field_10067 = client.thePlayer.rotationPitch;
             break;
          case "LockView":
             this.field_12569.field_10069 = this.field_12567.field_10069;

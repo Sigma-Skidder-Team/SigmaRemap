@@ -19,8 +19,8 @@ public class AACBlockFly extends Module {
    @Override
    public void onEnable() {
       this.field_12311 = client.thePlayer.inventory.field_36404;
-      this.field_12315 = client.thePlayer.field_41701;
-      this.field_12313 = client.thePlayer.field_41755;
+      this.field_12315 = client.thePlayer.rotationYaw;
+      this.field_12313 = client.thePlayer.rotationPitch;
       this.field_12316 = (int) client.thePlayer.method_37309();
       this.field_12312 = -1;
       ((BlockFlyModule)this.method_42017()).field_18196 = -1;
@@ -120,13 +120,13 @@ public class AACBlockFly extends Module {
 
    private boolean method_11333() {
       class_9529 var3 = (class_9529)class_7494.method_34115(
-         client.thePlayer.field_30535, client.thePlayer.field_30524, class_7494.method_34074(), 0.0F
+         client.thePlayer.lastReportedYaw, client.thePlayer.lastReportedPitch, class_7494.method_34074(), 0.0F
       );
       boolean var4 = false;
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
          if (this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
             BlockFlyModule var10000 = (BlockFlyModule)this.method_42017();
-            if (!BlockFlyModule.method_17216(client.thePlayer.method_26617(class_2584.field_12791).method_27960())) {
+            if (!BlockFlyModule.method_17216(client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960())) {
                return false;
             }
          }
@@ -157,16 +157,16 @@ public class AACBlockFly extends Module {
             ((BlockFlyModule)this.method_42017()).method_17211();
          }
 
-         class_6910 var6 = client.playerController.method_42147(client.thePlayer, client.theWorld, class_2584.field_12791, var3);
+         class_6910 var6 = client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var3);
          if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
             client.thePlayer.inventory.field_36404 = var5;
          }
 
          if (var6 == class_6910.field_35520) {
             if (!this.method_42017().getBooleanValueByName("NoSwing")) {
-               client.thePlayer.method_26597(class_2584.field_12791);
+               client.thePlayer.method_26597(Hand.MAIN_HAND);
             } else {
-               client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+               client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
             }
 
             if (var3.method_43956() == Direction.field_817) {
@@ -180,7 +180,7 @@ public class AACBlockFly extends Module {
       return var4;
    }
 
-   public List<class_7606> method_11334(class_6414 var1, class_1331 var2) {
+   public List<class_7606> method_11334(class_6414 var1, BlockPos var2) {
       return class_7829.method_35452(var1, var2, (int) client.playerController.method_42146());
    }
 
@@ -219,7 +219,7 @@ public class AACBlockFly extends Module {
                var4 = (double)this.field_12316;
             }
 
-            class_1331 var6 = new class_1331(client.thePlayer.method_37302(), (double)Math.round(var4 - 1.0), client.thePlayer.method_37156());
+            BlockPos var6 = new BlockPos(client.thePlayer.method_37302(), (double)Math.round(var4 - 1.0), client.thePlayer.method_37156());
             List var7 = this.method_11334(class_4783.field_23644, var6);
             if (!var7.isEmpty()) {
                class_7606 var8 = (class_7606)var7.get(var7.size() - 1);

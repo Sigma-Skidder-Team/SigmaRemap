@@ -31,7 +31,7 @@ public abstract class class_5834 extends Entity {
    private static final class_7821<Boolean> field_29626 = class_8073.<Boolean>method_36641(class_5834.class, class_2734.field_13347);
    private static final class_7821<Integer> field_29631 = class_8073.<Integer>method_36641(class_5834.class, class_2734.field_13366);
    private static final class_7821<Integer> field_29610 = class_8073.<Integer>method_36641(class_5834.class, class_2734.field_13366);
-   private static final class_7821<Optional<class_1331>> field_29621 = class_8073.<Optional<class_1331>>method_36641(class_5834.class, class_2734.field_13352);
+   private static final class_7821<Optional<BlockPos>> field_29621 = class_8073.<Optional<BlockPos>>method_36641(class_5834.class, class_2734.field_13352);
    public static final class_6097 field_29629 = class_6097.method_27941(0.2F, 0.2F);
    private final class_6711 field_29603;
    private final class_3435 field_29649 = new class_3435(this);
@@ -39,7 +39,7 @@ public abstract class class_5834 extends Entity {
    private final class_2831<ItemStack> field_29632 = class_2831.<ItemStack>method_12872(2, ItemStack.EMPTY);
    private final class_2831<ItemStack> field_29613 = class_2831.<ItemStack>method_12872(4, ItemStack.EMPTY);
    public boolean field_29599;
-   public class_2584 field_29616;
+   public Hand field_29616;
    public int field_29666;
    public int field_29619;
    public int field_29646;
@@ -95,9 +95,9 @@ public abstract class class_5834 extends Entity {
    public ItemStack field_29668 = ItemStack.EMPTY;
    public int field_29656;
    public int field_29661;
-   private class_1331 field_29664;
-   private Optional<class_1331> field_29669 = Optional.<class_1331>empty();
-   private class_6199 field_29652;
+   private BlockPos field_29664;
+   private Optional<BlockPos> field_29669 = Optional.<BlockPos>empty();
+   private DamageSource field_29652;
    private long field_29607;
    public int field_29630;
    private float field_29670;
@@ -112,8 +112,8 @@ public abstract class class_5834 extends Entity {
       this.field_29637 = (float)((Math.random() + 1.0) * 0.01F);
       this.method_37351();
       this.field_29617 = (float)Math.random() * 12398.0F;
-      this.field_41701 = (float)(Math.random() * (float) (Math.PI * 2));
-      this.field_29618 = this.field_41701;
+      this.rotationYaw = (float)(Math.random() * (float) (Math.PI * 2));
+      this.field_29618 = this.rotationYaw;
       this.field_41733 = 0.6F;
       class_3504 var5 = class_3504.field_17178;
       this.field_29675 = this.method_26585(new Dynamic(var5, var5.createMap(ImmutableMap.of(var5.createString("memories"), var5.emptyMap()))));
@@ -133,7 +133,7 @@ public abstract class class_5834 extends Entity {
 
    @Override
    public void method_37250() {
-      this.method_37181(class_6199.field_31685, Float.MAX_VALUE);
+      this.attackEntityFrom(DamageSource.field_31685, Float.MAX_VALUE);
    }
 
    public boolean method_26610(class_6629<?> var1) {
@@ -148,7 +148,7 @@ public abstract class class_5834 extends Entity {
       this.field_41735.method_36634(field_29631, 0);
       this.field_41735.method_36634(field_29610, 0);
       this.field_41735.method_36634(field_29627, 1.0F);
-      this.field_41735.method_36634(field_29621, Optional.<class_1331>empty());
+      this.field_41735.method_36634(field_29621, Optional.<BlockPos>empty());
    }
 
    public static class_1313 method_26409() {
@@ -161,22 +161,22 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public void method_37105(double var1, boolean var3, class_2522 var4, class_1331 var5) {
+   public void method_37105(double var1, boolean var3, class_2522 var4, BlockPos var5) {
       if (!this.method_37285()) {
          this.method_37362();
       }
 
-      if (!this.field_41768.field_33055 && var3 && this.field_41706 > 0.0F) {
+      if (!this.world.field_33055 && var3 && this.field_41706 > 0.0F) {
          this.method_26434();
          this.method_26471();
       }
 
-      if (!this.field_41768.field_33055 && this.field_41706 > 3.0F && var3) {
+      if (!this.world.field_33055 && this.field_41706 > 3.0F && var3) {
          float var8 = (float)class_9299.method_42816(this.field_41706 - 3.0F);
          if (!var4.method_8345()) {
             double var9 = Math.min((double)(0.2F + var8 / 15.0F), 2.5);
             int var11 = (int)(150.0 * var9);
-            ((class_6331)this.field_41768)
+            ((class_6331)this.world)
                .method_28957(
                   new class_7110(class_3090.field_15325, var4), this.method_37302(), this.method_37309(), this.method_37156(), var11, 0.0, 0.0, 0.0, 0.15F
                );
@@ -206,33 +206,33 @@ public abstract class class_5834 extends Entity {
       }
 
       super.method_37219();
-      this.field_41768.method_29599().startSection("livingEntityBaseTick");
+      this.world.method_29599().startSection("livingEntityBaseTick");
       boolean var3 = this instanceof class_704;
       if (this.method_37330()) {
          if (!this.method_37153()) {
-            if (var3 && !this.field_41768.method_6673().method_9815(this.method_37241())) {
-               double var4 = this.field_41768.method_6673().method_9809(this) + this.field_41768.method_6673().method_9830();
+            if (var3 && !this.world.method_6673().method_9815(this.method_37241())) {
+               double var4 = this.world.method_6673().method_9809(this) + this.world.method_6673().method_9830();
                if (var4 < 0.0) {
-                  double var6 = this.field_41768.method_6673().method_9826();
+                  double var6 = this.world.method_6673().method_9826();
                   if (var6 > 0.0) {
-                     this.method_37181(class_6199.field_31670, (float)Math.max(1, class_9299.method_42847(-var4 * var6)));
+                     this.attackEntityFrom(DamageSource.field_31670, (float)Math.max(1, class_9299.method_42847(-var4 * var6)));
                   }
                }
             }
          } else {
-            this.method_37181(class_6199.field_31670, 1.0F);
+            this.attackEntityFrom(DamageSource.field_31670, 1.0F);
          }
       }
 
-      if (this.method_37087() || this.field_41768.field_33055) {
+      if (this.method_37087() || this.world.field_33055) {
          this.method_37136();
       }
 
       boolean var8 = var3 && ((class_704)this).playerAbilities.disableDamage;
       if (this.method_37330()) {
          if (this.method_37261(class_6503.field_33094)
-            && !this.field_41768
-               .method_28262(new class_1331(this.method_37302(), this.method_37388(), this.method_37156()))
+            && !this.world
+               .method_28262(new BlockPos(this.method_37302(), this.method_37388(), this.method_37156()))
                .method_8350(class_4783.field_23269)) {
             if (!this.method_26509() && !class_1493.method_6890(this) && !var8) {
                this.method_37192(this.method_26536(this.method_37229()));
@@ -244,7 +244,7 @@ public abstract class class_5834 extends Entity {
                      double var11 = this.field_41717.nextDouble() - this.field_41717.nextDouble();
                      double var13 = this.field_41717.nextDouble() - this.field_41717.nextDouble();
                      double var15 = this.field_41717.nextDouble() - this.field_41717.nextDouble();
-                     this.field_41768
+                     this.world
                         .method_43361(
                            class_3090.field_15340,
                            this.method_37302() + var11,
@@ -256,19 +256,19 @@ public abstract class class_5834 extends Entity {
                         );
                   }
 
-                  this.method_37181(class_6199.field_31671, 2.0F);
+                  this.attackEntityFrom(DamageSource.field_31671, 2.0F);
                }
             }
 
-            if (!this.field_41768.field_33055 && this.method_37070() && this.method_37243() != null && !this.method_37243().method_37168()) {
+            if (!this.world.field_33055 && this.isPassenger() && this.method_37243() != null && !this.method_37243().method_37168()) {
                this.method_37390();
             }
          } else if (this.method_37229() < this.method_37099()) {
             this.method_37192(this.method_26501(this.method_37229()));
          }
 
-         if (!this.field_41768.field_33055) {
-            class_1331 var17 = this.method_37075();
+         if (!this.world.field_33055) {
+            BlockPos var17 = this.method_37075();
             if (!Objects.equal(this.field_29664, var17)) {
                this.field_29664 = var17;
                this.method_26598(var17);
@@ -316,9 +316,9 @@ public abstract class class_5834 extends Entity {
       this.field_29602 = this.field_29672;
       this.field_29611 = this.field_29605;
       this.field_29657 = this.field_29618;
-      this.field_41711 = this.field_41701;
-      this.field_41762 = this.field_41755;
-      this.field_41768.method_29599().endSection();
+      this.prevRotationYaw = this.rotationYaw;
+      this.field_41762 = this.rotationPitch;
+      this.world.method_29599().endSection();
    }
 
    public boolean method_26412() {
@@ -332,7 +332,7 @@ public abstract class class_5834 extends Entity {
 
    public void method_26535() {
       class_1343 var3 = this.method_37098();
-      this.field_41768
+      this.world
          .method_43361(
             class_3090.field_15380,
             this.method_37302() + (this.field_41717.nextDouble() - 0.5) * (double)this.method_37086(),
@@ -347,7 +347,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public boolean method_26444() {
-      return this.field_41768.method_28262(this.method_37119()).method_8349(class_2351.field_11756);
+      return this.world.method_28262(this.method_37119()).method_8349(class_2351.field_11756);
    }
 
    @Override
@@ -384,10 +384,10 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26598(class_1331 var1) {
+   public void method_26598(BlockPos var1) {
       int var4 = class_2931.method_13399(class_3668.field_17848, this);
       if (var4 > 0) {
-         class_5050.method_23231(this, this.field_41768, var1, var4);
+         class_5050.method_23231(this, this.world, var1, var4);
       }
 
       if (this.method_26485(this.method_37304())) {
@@ -423,7 +423,7 @@ public abstract class class_5834 extends Entity {
             double var4 = this.field_41717.nextGaussian() * 0.02;
             double var6 = this.field_41717.nextGaussian() * 0.02;
             double var8 = this.field_41717.nextGaussian() * 0.02;
-            this.field_41768.method_43361(class_3090.field_15343, this.method_37361(1.0), this.method_37255(), this.method_37383(1.0), var4, var6, var8);
+            this.world.method_43361(class_3090.field_15343, this.method_37361(1.0), this.method_37255(), this.method_37383(1.0), var4, var6, var8);
          }
       }
    }
@@ -550,7 +550,7 @@ public abstract class class_5834 extends Entity {
    @Override
    public void method_37314(CompoundNBT var1) {
       this.method_26460(var1.getFloat("AbsorptionAmount"));
-      if (var1.contains("Attributes", 9) && this.field_41768 != null && !this.field_41768.field_33055) {
+      if (var1.contains("Attributes", 9) && this.world != null && !this.world.field_33055) {
          this.method_26590().method_30812(var1.method_25927("Attributes", 10));
       }
 
@@ -575,8 +575,8 @@ public abstract class class_5834 extends Entity {
       this.field_29636 = var1.method_25947("HurtByTimestamp");
       if (var1.contains("Team", 8)) {
          String var8 = var1.method_25965("Team");
-         class_3903 var10 = this.field_41768.method_29562().method_4850(var8);
-         boolean var11 = var10 != null && this.field_41768.method_29562().method_4842(this.method_37225(), var10);
+         class_3903 var10 = this.world.method_29562().method_4850(var8);
+         boolean var11 = var10 != null && this.world.method_29562().method_4842(this.method_37225(), var10);
          if (!var11) {
             field_41741.warn("Unable to add mob to team \"{}\" (that team probably doesn't exist)", var8);
          }
@@ -587,7 +587,7 @@ public abstract class class_5834 extends Entity {
       }
 
       if (var1.contains("SleepingX", 99) && var1.contains("SleepingY", 99) && var1.contains("SleepingZ", 99)) {
-         class_1331 var9 = new class_1331(var1.method_25947("SleepingX"), var1.method_25947("SleepingY"), var1.method_25947("SleepingZ"));
+         BlockPos var9 = new BlockPos(var1.method_25947("SleepingX"), var1.method_25947("SleepingY"), var1.method_25947("SleepingZ"));
          this.method_26601(var9);
          this.field_41735.method_36633(field_41734, class_7653.field_38886);
          if (!this.field_41716) {
@@ -608,7 +608,7 @@ public abstract class class_5834 extends Entity {
             class_1425 var4 = (class_1425)var3.next();
             class_2250 var5 = this.field_29642.get(var4);
             if (!var5.method_10341(this, () -> this.method_26552(var5, true))) {
-               if (!this.field_41768.field_33055) {
+               if (!this.world.field_33055) {
                   var3.remove();
                   this.method_26616(var5);
                }
@@ -620,7 +620,7 @@ public abstract class class_5834 extends Entity {
       }
 
       if (this.field_29628) {
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.method_26414();
          }
 
@@ -645,7 +645,7 @@ public abstract class class_5834 extends Entity {
             double var7 = (double)(var14 >> 16 & 0xFF) / 255.0;
             double var9 = (double)(var14 >> 8 & 0xFF) / 255.0;
             double var11 = (double)(var14 >> 0 & 0xFF) / 255.0;
-            this.field_41768
+            this.world
                .method_43361(
                   var15 ? class_3090.field_15364 : class_3090.field_15353,
                   this.method_37361(0.5),
@@ -724,7 +724,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public boolean method_26523() {
-      if (this.field_41768.field_33055) {
+      if (this.world.field_33055) {
          return false;
       } else {
          Iterator var3 = this.field_29642.values().iterator();
@@ -819,14 +819,14 @@ public abstract class class_5834 extends Entity {
 
    public void method_26494(class_2250 var1) {
       this.field_29628 = true;
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          var1.method_10339().method_6543(this, this.method_26590(), var1.method_10333());
       }
    }
 
    public void method_26552(class_2250 var1, boolean var2) {
       this.field_29628 = true;
-      if (var2 && !this.field_41768.field_33055) {
+      if (var2 && !this.world.field_33055) {
          class_1425 var5 = var1.method_10339();
          var5.method_6551(this, this.method_26590(), var1.method_10333());
          var5.method_6543(this, this.method_26590(), var1.method_10333());
@@ -835,12 +835,12 @@ public abstract class class_5834 extends Entity {
 
    public void method_26616(class_2250 var1) {
       this.field_29628 = true;
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          var1.method_10339().method_6551(this, this.method_26590(), var1.method_10333());
       }
    }
 
-   public void method_26457(float var1) {
+   public void heal(float var1) {
       float var4 = this.method_26551();
       if (var4 > 0.0F) {
          this.method_26456(var4 + var1);
@@ -860,22 +860,22 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (this.method_37180(var1)) {
          return false;
-      } else if (!this.field_41768.field_33055) {
+      } else if (!this.world.field_33055) {
          if (this.method_26450()) {
             return false;
          } else if (var1.method_28360() && this.isPotionActive(Effects.field_19745)) {
             return false;
          } else {
-            if (this.method_26507() && !this.field_41768.field_33055) {
+            if (this.method_26507() && !this.world.field_33055) {
                this.method_26557();
             }
 
             this.field_29658 = 0;
             float var5 = var2;
-            if ((var1 == class_6199.field_31666 || var1 == class_6199.field_31681) && !this.method_26520(class_6943.field_35704).method_28022()) {
+            if ((var1 == DamageSource.field_31666 || var1 == DamageSource.field_31681) && !this.method_26520(class_6943.field_35704).method_28022()) {
                this.method_26520(class_6943.field_35704)
                   .method_28003((int)(var2 * 4.0F + this.field_41717.nextFloat() * var2 * 2.0F), this, var0 -> var0.method_26448(class_6943.field_35704));
                var2 *= 0.75F;
@@ -944,12 +944,12 @@ public abstract class class_5834 extends Entity {
             if (var16) {
                if (!var6) {
                   if (var1 instanceof class_5405 && ((class_5405)var1).method_24600()) {
-                     this.field_41768.method_29587(this, (byte)33);
+                     this.world.method_29587(this, (byte)33);
                   } else {
                      byte var17;
-                     if (var1 != class_6199.field_31671) {
+                     if (var1 != DamageSource.field_31671) {
                         if (!var1.method_28360()) {
-                           if (var1 != class_6199.field_31687) {
+                           if (var1 != DamageSource.field_31687) {
                               var17 = 2;
                            } else {
                               var17 = 44;
@@ -961,13 +961,13 @@ public abstract class class_5834 extends Entity {
                         var17 = 36;
                      }
 
-                     this.field_41768.method_29587(this, var17);
+                     this.world.method_29587(this, var17);
                   }
                } else {
-                  this.field_41768.method_29587(this, (byte)29);
+                  this.world.method_29587(this, (byte)29);
                }
 
-               if (var1 != class_6199.field_31671 && (!var6 || var2 > 0.0F)) {
+               if (var1 != DamageSource.field_31671 && (!var6 || var2 > 0.0F)) {
                   this.method_37138();
                }
 
@@ -984,7 +984,7 @@ public abstract class class_5834 extends Entity {
                      var12 = (Math.random() - Math.random()) * 0.01;
                   }
 
-                  this.field_29608 = (float)(class_9299.method_42821(var14, var12) * 180.0F / (float)Math.PI - (double)this.field_41701);
+                  this.field_29608 = (float)(class_9299.method_42821(var14, var12) * 180.0F / (float)Math.PI - (double)this.rotationYaw);
                   this.method_26567(0.4F, var12, var14);
                }
             }
@@ -1005,7 +1005,7 @@ public abstract class class_5834 extends Entity {
             boolean var19 = !var6 || var2 > 0.0F;
             if (var19) {
                this.field_29652 = var1;
-               this.field_29607 = this.field_41768.method_29546();
+               this.field_29607 = this.world.method_29546();
             }
 
             if (this instanceof class_9359) {
@@ -1034,13 +1034,13 @@ public abstract class class_5834 extends Entity {
       var1.method_26567(0.5F, var1.method_37302() - this.method_37302(), var1.method_37156() - this.method_37156());
    }
 
-   private boolean method_26573(class_6199 var1) {
+   private boolean method_26573(DamageSource var1) {
       if (var1.method_28346()) {
          return false;
       } else {
          ItemStack var4 = null;
 
-         for (class_2584 var8 : class_2584.values()) {
+         for (Hand var8 : Hand.values()) {
             ItemStack var9 = this.method_26617(var8);
             if (var9.method_27960() == class_4897.field_24472) {
                var4 = var9.method_27973();
@@ -1061,7 +1061,7 @@ public abstract class class_5834 extends Entity {
             this.method_26558(new class_2250(Effects.field_19742, 900, 1));
             this.method_26558(new class_2250(Effects.field_19731, 100, 1));
             this.method_26558(new class_2250(Effects.field_19745, 800, 0));
-            this.field_41768.method_29587(this, (byte)35);
+            this.world.method_29587(this, (byte)35);
          }
 
          return var4 != null;
@@ -1069,22 +1069,22 @@ public abstract class class_5834 extends Entity {
    }
 
    @Nullable
-   public class_6199 method_26429() {
-      if (this.field_41768.method_29546() - this.field_29607 > 40L) {
+   public DamageSource method_26429() {
+      if (this.world.method_29546() - this.field_29607 > 40L) {
          this.field_29652 = null;
       }
 
       return this.field_29652;
    }
 
-   public void method_26593(class_6199 var1) {
+   public void method_26593(DamageSource var1) {
       class_8461 var4 = this.method_26541(var1);
       if (var4 != null) {
          this.method_37155(var4, this.method_26439(), this.method_26547());
       }
    }
 
-   private boolean method_26413(class_6199 var1) {
+   private boolean method_26413(DamageSource var1) {
       Entity var4 = var1.method_28353();
       boolean var5 = false;
       if (var4 instanceof class_6749) {
@@ -1112,7 +1112,7 @@ public abstract class class_5834 extends Entity {
    private void method_26464(ItemStack var1) {
       if (!var1.method_28022()) {
          if (!this.method_37378()) {
-            this.field_41768
+            this.world
                .method_29527(
                   this.method_37302(),
                   this.method_37309(),
@@ -1120,7 +1120,7 @@ public abstract class class_5834 extends Entity {
                   class_463.field_1962,
                   this.method_37197(),
                   0.8F,
-                  0.8F + this.field_41768.field_33033.nextFloat() * 0.4F,
+                  0.8F + this.world.field_33033.nextFloat() * 0.4F,
                   false
                );
          }
@@ -1129,7 +1129,7 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26452(class_6199 var1) {
+   public void method_26452(DamageSource var1) {
       if (!this.field_41751 && !this.field_29659) {
          Entity var4 = var1.method_28372();
          class_5834 var5 = this.method_26560();
@@ -1143,44 +1143,44 @@ public abstract class class_5834 extends Entity {
 
          this.field_29659 = true;
          this.method_26476().method_15868();
-         if (this.field_41768 instanceof class_6331) {
+         if (this.world instanceof class_6331) {
             if (var4 != null) {
-               var4.method_37231((class_6331)this.field_41768, this);
+               var4.method_37231((class_6331)this.world, this);
             }
 
             this.method_26513(var1);
             this.method_26487(var5);
          }
 
-         this.field_41768.method_29587(this, (byte)3);
+         this.world.method_29587(this, (byte)3);
          this.method_37356(class_7653.field_38887);
       }
    }
 
    public void method_26487(class_5834 var1) {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          boolean var4 = false;
          if (var1 instanceof class_4653) {
-            if (this.field_41768.method_29537().method_1285(class_291.field_1047)) {
-               class_1331 var5 = this.method_37075();
+            if (this.world.method_29537().method_1285(class_291.field_1047)) {
+               BlockPos var5 = this.method_37075();
                class_2522 var6 = class_4783.field_23401.method_29260();
-               if (this.field_41768.method_28262(var5).method_8345() && var6.method_8309(this.field_41768, var5)) {
-                  this.field_41768.method_7513(var5, var6, 3);
+               if (this.world.method_28262(var5).method_8345() && var6.method_8309(this.world, var5)) {
+                  this.world.method_7513(var5, var6, 3);
                   var4 = true;
                }
             }
 
             if (!var4) {
                class_91 var7 = new class_91(
-                  this.field_41768, this.method_37302(), this.method_37309(), this.method_37156(), new ItemStack(class_4897.field_24893)
+                  this.world, this.method_37302(), this.method_37309(), this.method_37156(), new ItemStack(class_4897.field_24893)
                );
-               this.field_41768.method_7509(var7);
+               this.world.method_7509(var7);
             }
          }
       }
    }
 
-   public void method_26513(class_6199 var1) {
+   public void method_26513(DamageSource var1) {
       Entity var4 = var1.method_28372();
       int var5;
       if (!(var4 instanceof class_704)) {
@@ -1190,7 +1190,7 @@ public abstract class class_5834 extends Entity {
       }
 
       boolean var6 = this.field_29665 > 0;
-      if (this.method_26534() && this.field_41768.method_29537().method_1285(class_291.field_1033)) {
+      if (this.method_26534() && this.world.method_29537().method_1285(class_291.field_1033)) {
          this.method_26483(var1, var6);
          this.method_26614(var1, var5, var6);
       }
@@ -1203,34 +1203,34 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26604() {
-      if (!this.field_41768.field_33055
-         && (this.method_26586() || this.field_29665 > 0 && this.method_26482() && this.field_41768.method_29537().method_1285(class_291.field_1033))) {
+      if (!this.world.field_33055
+         && (this.method_26586() || this.field_29665 > 0 && this.method_26482() && this.world.method_29537().method_1285(class_291.field_1033))) {
          int var3 = this.method_26427(this.field_29634);
 
          while (var3 > 0) {
             int var4 = class_5614.method_25476(var3);
             var3 -= var4;
-            this.field_41768.method_7509(new class_5614(this.field_41768, this.method_37302(), this.method_37309(), this.method_37156(), var4));
+            this.world.method_7509(new class_5614(this.world, this.method_37302(), this.method_37309(), this.method_37156(), var4));
          }
       }
    }
 
-   public void method_26614(class_6199 var1, int var2, boolean var3) {
+   public void method_26614(DamageSource var1, int var2, boolean var3) {
    }
 
    public Identifier method_26591() {
       return this.method_37387().method_30480();
    }
 
-   public void method_26483(class_6199 var1, boolean var2) {
+   public void method_26483(DamageSource var1, boolean var2) {
       Identifier var5 = this.method_26591();
-      class_1758 var6 = this.field_41768.method_29522().method_1722().method_4604(var5);
+      class_1758 var6 = this.world.method_29522().method_1722().method_4604(var5);
       class_8480 var7 = this.method_26502(var2, var1);
       var6.method_7863(var7.method_39064(class_4933.field_25566), this::method_37310);
    }
 
-   public class_8480 method_26502(boolean var1, class_6199 var2) {
-      class_8480 var5 = new class_8480((class_6331)this.field_41768)
+   public class_8480 method_26502(boolean var1, DamageSource var2) {
+      class_8480 var5 = new class_8480((class_6331)this.world)
          .method_39068(this.field_41717)
          .method_39065(class_8712.field_44676, this)
          .method_39065(class_8712.field_44671, this.method_37245())
@@ -1259,7 +1259,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Nullable
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2152;
    }
 
@@ -1284,28 +1284,28 @@ public abstract class class_5834 extends Entity {
    public void method_37386(boolean var1) {
       super.method_37386(var1);
       if (var1) {
-         this.field_29669 = Optional.<class_1331>empty();
+         this.field_29669 = Optional.<BlockPos>empty();
       }
    }
 
-   public Optional<class_1331> method_26436() {
+   public Optional<BlockPos> method_26436() {
       return this.field_29669;
    }
 
    public boolean method_26505() {
       if (!this.method_37221()) {
-         class_1331 var3 = this.method_37075();
+         BlockPos var3 = this.method_37075();
          class_2522 var4 = this.method_26603();
          class_6414 var5 = var4.method_8360();
          if (!var5.method_29299(class_2351.field_11770)) {
             if (var5 instanceof class_7502 && this.method_26544(var3, var4)) {
-               this.field_29669 = Optional.<class_1331>of(var3);
+               this.field_29669 = Optional.<BlockPos>of(var3);
                return true;
             } else {
                return false;
             }
          } else {
-            this.field_29669 = Optional.<class_1331>of(var3);
+            this.field_29669 = Optional.<BlockPos>of(var3);
             return true;
          }
       } else {
@@ -1314,12 +1314,12 @@ public abstract class class_5834 extends Entity {
    }
 
    public class_2522 method_26603() {
-      return this.field_41768.method_28262(this.method_37075());
+      return this.world.method_28262(this.method_37075());
    }
 
-   private boolean method_26544(class_1331 var1, class_2522 var2) {
+   private boolean method_26544(BlockPos var1, class_2522 var2) {
       if (var2.<Boolean>method_10313(class_7502.field_38300)) {
-         class_2522 var5 = this.field_41768.method_28262(var1.method_6100());
+         class_2522 var5 = this.world.method_28262(var1.method_6100());
          if (var5.method_8350(class_4783.field_23748)
             && var5.<Direction>method_10313(class_5613.field_28506) == var2.<Direction>method_10313(class_7502.field_1543)) {
             return true;
@@ -1343,7 +1343,7 @@ public abstract class class_5834 extends Entity {
       } else {
          this.method_37155(this.method_26587(var6), 1.0F, 1.0F);
          this.method_26512();
-         this.method_37181(class_6199.field_31684, (float)var6);
+         this.attackEntityFrom(DamageSource.field_31684, (float)var6);
          return true;
       }
    }
@@ -1359,7 +1359,7 @@ public abstract class class_5834 extends Entity {
          int var3 = class_9299.method_42847(this.method_37302());
          int var4 = class_9299.method_42847(this.method_37309() - 0.2F);
          int var5 = class_9299.method_42847(this.method_37156());
-         class_2522 var6 = this.field_41768.method_28262(new class_1331(var3, var4, var5));
+         class_2522 var6 = this.world.method_28262(new BlockPos(var3, var4, var5));
          if (!var6.method_8345()) {
             class_4618 var7 = var6.method_8316();
             this.method_37155(var7.method_21394(), var7.method_21395() * 0.5F, var7.method_21393() * 0.75F);
@@ -1378,13 +1378,13 @@ public abstract class class_5834 extends Entity {
       return class_9299.method_42847(this.method_26575(class_7331.field_37473));
    }
 
-   public void method_26524(class_6199 var1, float var2) {
+   public void method_26524(DamageSource var1, float var2) {
    }
 
    public void method_26451(float var1) {
    }
 
-   public float method_26555(class_6199 var1, float var2) {
+   public float method_26555(DamageSource var1, float var2) {
       if (!var1.method_28380()) {
          this.method_26524(var1, var2);
          var2 = class_6357.method_29129(var2, (float)this.method_26565(), (float)this.method_26575(class_7331.field_37472));
@@ -1393,9 +1393,9 @@ public abstract class class_5834 extends Entity {
       return var2;
    }
 
-   public float method_26477(class_6199 var1, float var2) {
+   public float method_26477(DamageSource var1, float var2) {
       if (!var1.method_28348()) {
-         if (this.isPotionActive(Effects.field_19727) && var1 != class_6199.field_31685) {
+         if (this.isPotionActive(Effects.field_19727) && var1 != DamageSource.field_31685) {
             int var5 = (this.method_26553(Effects.field_19727).method_10333() + 1) * 5;
             int var6 = 25 - var5;
             float var7 = var2 * (float)var6;
@@ -1428,7 +1428,7 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26574(class_6199 var1, float var2) {
+   public void method_26574(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
          var2 = this.method_26555(var1, var2);
          var2 = this.method_26477(var1, var2);
@@ -1493,18 +1493,18 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26597(class_2584 var1) {
+   public void method_26597(Hand var1) {
       this.method_26488(var1, false);
    }
 
-   public void method_26488(class_2584 var1, boolean var2) {
+   public void method_26488(Hand var1, boolean var2) {
       if (!this.field_29599 || this.field_29666 >= this.method_26473() / 2 || this.field_29666 < 0) {
          this.field_29666 = -1;
          this.field_29599 = true;
          this.field_29616 = var1;
-         if (this.field_41768 instanceof class_6331) {
-            class_8329 var5 = new class_8329(this, var1 != class_2584.field_12791 ? 3 : 0);
-            class_2206 var6 = ((class_6331)this.field_41768).method_28945();
+         if (this.world instanceof class_6331) {
+            class_8329 var5 = new class_8329(this, var1 != Hand.MAIN_HAND ? 3 : 0);
+            class_2206 var6 = ((class_6331)this.world).method_28945();
             if (!var2) {
                var6.method_10200(this, var5);
             } else {
@@ -1535,15 +1535,15 @@ public abstract class class_5834 extends Entity {
                this.method_37155(class_463.field_2676, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             }
 
-            class_6199 var8;
+            DamageSource var8;
             if (var6) {
-               var8 = class_6199.field_31665;
+               var8 = DamageSource.field_31665;
             } else if (var5) {
-               var8 = class_6199.field_31671;
+               var8 = DamageSource.field_31671;
             } else if (var7) {
-               var8 = class_6199.field_31687;
+               var8 = DamageSource.field_31687;
             } else {
-               var8 = class_6199.field_31664;
+               var8 = DamageSource.field_31664;
             }
 
             class_8461 var9 = this.method_26541(var8);
@@ -1551,7 +1551,7 @@ public abstract class class_5834 extends Entity {
                this.method_37155(var9, this.method_26439(), (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
             }
 
-            this.method_37181(class_6199.field_31664, 0.0F);
+            this.attackEntityFrom(DamageSource.field_31664, 0.0F);
             break;
          case 3:
             class_8461 var10 = this.method_26599();
@@ -1561,7 +1561,7 @@ public abstract class class_5834 extends Entity {
 
             if (!(this instanceof class_704)) {
                this.method_26456(0.0F);
-               this.method_26452(class_6199.field_31664);
+               this.method_26452(DamageSource.field_31664);
             }
             break;
          case 4:
@@ -1605,10 +1605,10 @@ public abstract class class_5834 extends Entity {
             super.method_37336(var1);
             break;
          case 29:
-            this.method_37155(class_463.field_2771, 1.0F, 0.8F + this.field_41768.field_33033.nextFloat() * 0.4F);
+            this.method_37155(class_463.field_2771, 1.0F, 0.8F + this.world.field_33033.nextFloat() * 0.4F);
             break;
          case 30:
-            this.method_37155(class_463.field_2764, 0.8F, 0.8F + this.field_41768.field_33033.nextFloat() * 0.4F);
+            this.method_37155(class_463.field_2764, 0.8F, 0.8F + this.world.field_33033.nextFloat() * 0.4F);
             break;
          case 46:
             short var11 = 128;
@@ -1624,7 +1624,7 @@ public abstract class class_5834 extends Entity {
                   + this.field_41717.nextDouble() * (double)this.method_37074();
                double var22 = class_9299.method_42794(var13, this.field_41725, this.method_37156())
                   + (this.field_41717.nextDouble() - 0.5) * (double)this.method_37086() * 2.0;
-               this.field_41768.method_43361(class_3090.field_15356, var18, var20, var22, (double)var15, (double)var16, (double)var17);
+               this.world.method_43361(class_3090.field_15356, var18, var20, var22, (double)var15, (double)var16, (double)var17);
             }
             break;
          case 47:
@@ -1661,7 +1661,7 @@ public abstract class class_5834 extends Entity {
 
    @Override
    public void method_37150() {
-      this.method_37181(class_6199.field_31685, 4.0F);
+      this.attackEntityFrom(DamageSource.field_31685, 4.0F);
    }
 
    public void method_26489() {
@@ -1716,9 +1716,9 @@ public abstract class class_5834 extends Entity {
       return var1.test(this.method_26446().method_27960()) || var1.test(this.method_26568().method_27960());
    }
 
-   public ItemStack method_26617(class_2584 var1) {
-      if (var1 != class_2584.field_12791) {
-         if (var1 != class_2584.field_12794) {
+   public ItemStack method_26617(Hand var1) {
+      if (var1 != Hand.MAIN_HAND) {
+         if (var1 != Hand.OFF_HAND) {
             throw new IllegalArgumentException("Invalid hand " + var1);
          } else {
             return this.method_26520(class_6943.field_35701);
@@ -1728,9 +1728,9 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26615(class_2584 var1, ItemStack var2) {
-      if (var1 != class_2584.field_12791) {
-         if (var1 != class_2584.field_12794) {
+   public void method_26615(Hand var1, ItemStack var2) {
+      if (var1 != Hand.MAIN_HAND) {
+         if (var1 != Hand.OFF_HAND) {
             throw new IllegalArgumentException("Invalid hand " + var1);
          }
 
@@ -1804,7 +1804,7 @@ public abstract class class_5834 extends Entity {
 
    private void method_26433(Entity var1) {
       class_1343 var4;
-      if (!var1.field_41751 && !this.field_41768.method_28262(var1.method_37075()).method_8360().method_29299(class_2351.field_11740)) {
+      if (!var1.field_41751 && !this.world.method_28262(var1.method_37075()).method_8360().method_29299(class_2351.field_11740)) {
          var4 = var1.method_37282(this);
       } else {
          var4 = new class_1343(var1.method_37302(), var1.method_37309() + (double)var1.method_37074(), var1.method_37156());
@@ -1837,7 +1837,7 @@ public abstract class class_5834 extends Entity {
       if (!var5.method_29716()) {
          this.method_37215(var5.method_13317());
          if (this.method_37321() && !var5.method_13314()) {
-            float var6 = this.field_41701 * (float) (Math.PI / 180.0);
+            float var6 = this.rotationYaw * (float) (Math.PI / 180.0);
             this.method_37215(
                this.method_37098().method_6214((double)(-class_9299.method_42818(var6) * 0.2F), 0.0, (double)(class_9299.method_42840(var6) * 0.2F))
             );
@@ -1872,7 +1872,7 @@ public abstract class class_5834 extends Entity {
             this.field_41706 = 0.0F;
          }
 
-         class_4774 var7 = this.field_41768.method_28258(this.method_37075());
+         class_4774 var7 = this.world.method_28258(this.method_37075());
          if (this.method_37285() && this.method_26498() && !this.method_26496(var7.method_22005())) {
             double var34 = this.method_37309();
             float var38 = !this.method_37321() ? this.method_26458() : 0.9F;
@@ -1929,13 +1929,13 @@ public abstract class class_5834 extends Entity {
                this.method_37214(var37.field_7336, 0.3F, var37.field_7334);
             }
          } else if (!this.method_26618()) {
-            class_1331 var8 = this.method_37119();
-            float var9 = this.field_41768.method_28262(var8).method_8360().method_29308();
+            BlockPos var8 = this.method_37119();
+            float var9 = this.world.method_28262(var8).method_8360().method_29308();
             float var12 = !this.field_41726 ? 0.91F : var9 * 0.91F;
             class_1343 var13 = this.method_26588(var1, var9);
             double var29 = var13.field_7333;
             if (!this.isPotionActive(Effects.LevitationEffect)) {
-               if (this.field_41768.field_33055 && !this.field_41768.method_22559(var8)) {
+               if (this.world.field_33055 && !this.world.isBlockLoaded(var8)) {
                   if (!(this.method_37309() > 0.0)) {
                      var29 = 0.0;
                   } else {
@@ -1957,7 +1957,7 @@ public abstract class class_5834 extends Entity {
             }
 
             class_1343 var33 = this.method_37246();
-            float var35 = this.field_41755 * (float) (Math.PI / 180.0);
+            float var35 = this.rotationPitch * (float) (Math.PI / 180.0);
             double var17 = Math.sqrt(var33.field_7336 * var33.field_7336 + var33.field_7334 * var33.field_7334);
             double var19 = Math.sqrt(method_37266(var31));
             double var21 = var33.method_6217();
@@ -1982,17 +1982,17 @@ public abstract class class_5834 extends Entity {
 
             this.method_37215(var31.method_6210(0.99F, 0.98F, 0.99F));
             this.method_37226(class_7412.field_37839, this.method_37098());
-            if (this.field_41744 && !this.field_41768.field_33055) {
+            if (this.field_41744 && !this.world.field_33055) {
                double var42 = Math.sqrt(method_37266(this.method_37098()));
                double var26 = var19 - var42;
                float var28 = (float)(var26 * 10.0 - 3.0);
                if (var28 > 0.0F) {
                   this.method_37155(this.method_26587((int)var28), 1.0F, 1.0F);
-                  this.method_37181(class_6199.field_31672, var28);
+                  this.attackEntityFrom(DamageSource.field_31672, var28);
                }
             }
 
-            if (this.field_41726 && !this.field_41768.field_33055) {
+            if (this.field_41726 && !this.world.field_33055) {
                this.method_37220(7, false);
             }
          }
@@ -2081,7 +2081,7 @@ public abstract class class_5834 extends Entity {
       super.method_37123();
       this.method_26430();
       this.method_26572();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          int var11 = this.method_26569();
          if (var11 > 0) {
             if (this.field_29619 <= 0) {
@@ -2135,7 +2135,7 @@ public abstract class class_5834 extends Entity {
          var10 = 1.0F;
          var9 = (float)Math.sqrt((double)var7) * 3.0F;
          float var14 = (float)class_9299.method_42821(var5, var3) * (180.0F / (float)Math.PI) - 90.0F;
-         float var15 = class_9299.method_42804(class_9299.method_42810(this.field_41701) - var14);
+         float var15 = class_9299.method_42804(class_9299.method_42810(this.rotationYaw) - var14);
          if (95.0F < var15 && var15 < 265.0F) {
             var8 = var14 - 180.0F;
          } else {
@@ -2144,7 +2144,7 @@ public abstract class class_5834 extends Entity {
       }
 
       if (this.field_29606 > 0.0F) {
-         var8 = this.field_41701;
+         var8 = this.rotationYaw;
       }
 
       if (!this.field_41726) {
@@ -2152,17 +2152,17 @@ public abstract class class_5834 extends Entity {
       }
 
       this.field_29660 = this.field_29660 + (var10 - this.field_29660) * 0.3F;
-      this.field_41768.method_29599().startSection("headTurn");
+      this.world.method_29599().startSection("headTurn");
       var9 = this.method_26582(var8, var9);
-      this.field_41768.method_29599().endSection();
-      this.field_41768.method_29599().startSection("rangeChecks");
+      this.world.method_29599().endSection();
+      this.world.method_29599().startSection("rangeChecks");
 
-      while (this.field_41701 - this.field_41711 < -180.0F) {
-         this.field_41711 -= 360.0F;
+      while (this.rotationYaw - this.prevRotationYaw < -180.0F) {
+         this.prevRotationYaw -= 360.0F;
       }
 
-      while (this.field_41701 - this.field_41711 >= 180.0F) {
-         this.field_41711 += 360.0F;
+      while (this.rotationYaw - this.prevRotationYaw >= 180.0F) {
+         this.prevRotationYaw += 360.0F;
       }
 
       while (this.field_29605 - this.field_29611 < -180.0F) {
@@ -2173,11 +2173,11 @@ public abstract class class_5834 extends Entity {
          this.field_29611 += 360.0F;
       }
 
-      while (this.field_41755 - this.field_41762 < -180.0F) {
+      while (this.rotationPitch - this.field_41762 < -180.0F) {
          this.field_41762 -= 360.0F;
       }
 
-      while (this.field_41755 - this.field_41762 >= 180.0F) {
+      while (this.rotationPitch - this.field_41762 >= 180.0F) {
          this.field_41762 += 360.0F;
       }
 
@@ -2189,7 +2189,7 @@ public abstract class class_5834 extends Entity {
          this.field_29657 += 360.0F;
       }
 
-      this.field_41768.method_29599().endSection();
+      this.world.method_29599().endSection();
       this.field_29672 += var9;
       if (!this.method_26618()) {
          this.field_29661 = 0;
@@ -2198,7 +2198,7 @@ public abstract class class_5834 extends Entity {
       }
 
       if (this.method_26507()) {
-         this.field_41755 = 0.0F;
+         this.rotationPitch = 0.0F;
       }
    }
 
@@ -2256,7 +2256,7 @@ public abstract class class_5834 extends Entity {
          && var5 != null
          && ItemStack.method_27982(var4, this.method_26578(class_6943.field_35701))
          && ItemStack.method_27982(var5, this.method_26578(class_6943.field_35707))) {
-         ((class_6331)this.field_41768).method_28945().method_10200(this, new class_295(this, (byte)55));
+         ((class_6331)this.world).method_28945().method_10200(this, new class_295(this, (byte)55));
          var1.remove(class_6943.field_35707);
          var1.remove(class_6943.field_35701);
          this.method_26453(class_6943.field_35707, var4.method_27973());
@@ -2277,7 +2277,7 @@ public abstract class class_5834 extends Entity {
                this.method_26481(var2, var6);
          }
       });
-      ((class_6331)this.field_41768).method_28945().method_10200(this, new class_9014(this.method_37145(), var4));
+      ((class_6331)this.world).method_28945().method_10200(this, new class_9014(this.method_37145(), var4));
    }
 
    private ItemStack method_26545(class_6943 var1) {
@@ -2299,7 +2299,7 @@ public abstract class class_5834 extends Entity {
    public float method_26582(float var1, float var2) {
       float var5 = class_9299.method_42810(var1 - this.field_29605);
       this.field_29605 += var5 * 0.3F;
-      float var6 = class_9299.method_42810(this.field_41701 - this.field_29605);
+      float var6 = class_9299.method_42810(this.rotationYaw - this.field_29605);
       boolean var7 = var6 < -90.0F || var6 >= 90.0F;
       if (var6 < -75.0F) {
          var6 = -75.0F;
@@ -2309,7 +2309,7 @@ public abstract class class_5834 extends Entity {
          var6 = 75.0F;
       }
 
-      this.field_29605 = this.field_41701 - var6;
+      this.field_29605 = this.rotationYaw - var6;
       if (var6 * var6 > 2500.0F) {
          this.field_29605 += var6 * 0.2F;
       }
@@ -2339,12 +2339,12 @@ public abstract class class_5834 extends Entity {
          double var10 = this.method_37302() + (this.field_29597 - this.method_37302()) / (double)this.field_29612;
          double var12 = this.method_37309() + (this.field_29609 - this.method_37309()) / (double)this.field_29612;
          double var14 = this.method_37156() + (this.field_29650 - this.method_37156()) / (double)this.field_29612;
-         double var16 = class_9299.method_42809(this.field_29604 - (double)this.field_41701);
-         this.field_41701 = (float)((double)this.field_41701 + var16 / (double)this.field_29612);
-         this.field_41755 = (float)((double)this.field_41755 + (this.field_29625 - (double)this.field_41755) / (double)this.field_29612);
+         double var16 = class_9299.method_42809(this.field_29604 - (double)this.rotationYaw);
+         this.rotationYaw = (float)((double)this.rotationYaw + var16 / (double)this.field_29612);
+         this.rotationPitch = (float)((double)this.rotationPitch + (this.field_29625 - (double)this.rotationPitch) / (double)this.field_29612);
          this.field_29612--;
          this.method_37256(var10, var12, var14);
-         this.method_37395(this.field_41701, this.field_41755);
+         this.method_37395(this.rotationYaw, this.rotationPitch);
       }
 
       if (this.field_29653 > 0) {
@@ -2369,12 +2369,12 @@ public abstract class class_5834 extends Entity {
       }
 
       this.method_37214(var4, var6, var8);
-      this.field_41768.method_29599().startSection("ai");
+      this.world.method_29599().startSection("ai");
       if (!this.method_26468()) {
          if (this.method_26530()) {
-            this.field_41768.method_29599().startSection("newAi");
+            this.world.method_29599().startSection("newAi");
             this.method_26417();
-            this.field_41768.method_29599().endSection();
+            this.world.method_29599().endSection();
          }
       } else {
          this.field_29654 = false;
@@ -2382,8 +2382,8 @@ public abstract class class_5834 extends Entity {
          this.field_29673 = 0.0F;
       }
 
-      this.field_41768.method_29599().endSection();
-      this.field_41768.method_29599().startSection("jump");
+      this.world.method_29599().endSection();
+      this.world.method_29599().startSection("jump");
       if (this.field_29654 && this.method_26498()) {
          double var18;
          if (!this.method_37370()) {
@@ -2410,24 +2410,24 @@ public abstract class class_5834 extends Entity {
          this.field_29600 = 0;
       }
 
-      this.field_41768.method_29599().endSection();
-      this.field_41768.method_29599().startSection("travel");
+      this.world.method_29599().endSection();
+      this.world.method_29599().startSection("travel");
       this.field_29676 *= 0.98F;
       this.field_29673 *= 0.98F;
       this.method_26571();
       class_4092 var23 = this.method_37241();
       this.method_26431(new class_1343((double)this.field_29676, (double)this.field_29651, (double)this.field_29673));
-      this.field_41768.method_29599().endSection();
-      this.field_41768.method_29599().startSection("push");
+      this.world.method_29599().endSection();
+      this.world.method_29599().startSection("push");
       if (this.field_29630 > 0) {
          this.field_29630--;
          this.method_26542(var23, this.method_37241());
       }
 
       this.method_26428();
-      this.field_41768.method_29599().endSection();
-      if (!this.field_41768.field_33055 && this.method_26537() && this.method_37110()) {
-         this.method_37181(class_6199.field_31671, 1.0F);
+      this.world.method_29599().endSection();
+      if (!this.world.field_33055 && this.method_26537() && this.method_37110()) {
+         this.attackEntityFrom(DamageSource.field_31671, 1.0F);
       }
    }
 
@@ -2437,11 +2437,11 @@ public abstract class class_5834 extends Entity {
 
    private void method_26571() {
       boolean var3 = this.method_37385(7);
-      if (var3 && !this.field_41726 && !this.method_37070() && !this.isPotionActive(Effects.LevitationEffect)) {
+      if (var3 && !this.field_41726 && !this.isPassenger() && !this.isPotionActive(Effects.LevitationEffect)) {
          ItemStack var4 = this.method_26520(class_6943.field_35708);
          if (var4.method_27960() == class_4897.field_24503 && class_3286.method_15061(var4)) {
             var3 = true;
-            if (!this.field_41768.field_33055 && (this.field_29661 + 1) % 20 == 0) {
+            if (!this.world.field_33055 && (this.field_29661 + 1) % 20 == 0) {
                var4.method_28003(1, this, var0 -> var0.method_26448(class_6943.field_35708));
             }
          } else {
@@ -2451,7 +2451,7 @@ public abstract class class_5834 extends Entity {
          var3 = false;
       }
 
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_37220(7, var3);
       }
    }
@@ -2460,20 +2460,20 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26428() {
-      List var3 = this.field_41768.method_25867(this, this.method_37241(), class_3572.method_16616(this));
+      List var3 = this.world.method_25867(this, this.method_37241(), class_3572.method_16616(this));
       if (!var3.isEmpty()) {
-         int var4 = this.field_41768.method_29537().method_1295(class_291.field_1027);
+         int var4 = this.world.method_29537().method_1295(class_291.field_1027);
          if (var4 > 0 && var3.size() > var4 - 1 && this.field_41717.nextInt(4) == 0) {
             int var5 = 0;
 
             for (int var6 = 0; var6 < var3.size(); var6++) {
-               if (!((Entity)var3.get(var6)).method_37070()) {
+               if (!((Entity)var3.get(var6)).isPassenger()) {
                   var5++;
                }
             }
 
             if (var5 > var4 - 1) {
-               this.method_37181(class_6199.field_31676, 6.0F);
+               this.attackEntityFrom(DamageSource.field_31676, 6.0F);
             }
          }
 
@@ -2486,7 +2486,7 @@ public abstract class class_5834 extends Entity {
 
    public void method_26542(class_4092 var1, class_4092 var2) {
       class_4092 var5 = var1.method_18905(var2);
-      List var6 = this.field_41768.method_25870(this, var5);
+      List var6 = this.world.method_25870(this, var5);
       if (var6.isEmpty()) {
          if (this.field_41744) {
             this.field_29630 = 0;
@@ -2503,7 +2503,7 @@ public abstract class class_5834 extends Entity {
          }
       }
 
-      if (!this.field_41768.field_33055 && this.field_29630 <= 0) {
+      if (!this.world.field_33055 && this.field_29630 <= 0) {
          this.method_26438(4, false);
       }
    }
@@ -2517,7 +2517,7 @@ public abstract class class_5834 extends Entity {
 
    public void method_26445(int var1) {
       this.field_29630 = var1;
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_26438(4, true);
       }
    }
@@ -2530,7 +2530,7 @@ public abstract class class_5834 extends Entity {
    public void method_37390() {
       Entity var3 = this.method_37243();
       super.method_37390();
-      if (var3 != null && var3 != this.method_37243() && !this.field_41768.field_33055) {
+      if (var3 != null && var3 != this.method_37243() && !this.world.field_33055) {
          this.method_26433(var3);
       }
    }
@@ -2564,27 +2564,27 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26562(class_91 var1) {
-      class_704 var4 = var1.method_253() == null ? null : this.field_41768.method_25862(var1.method_253());
+      class_704 var4 = var1.method_253() == null ? null : this.world.method_25862(var1.method_253());
       if (var4 instanceof class_9359) {
          class_8807.field_45055.method_14612((class_9359)var4, var1.method_264(), this);
       }
    }
 
    public void method_26467(Entity var1, int var2) {
-      if (!var1.field_41751 && !this.field_41768.field_33055 && (var1 instanceof class_91 || var1 instanceof class_6749 || var1 instanceof class_5614)) {
-         ((class_6331)this.field_41768).method_28945().method_10200(var1, new class_4476(var1.method_37145(), this.method_37145(), var2));
+      if (!var1.field_41751 && !this.world.field_33055 && (var1 instanceof class_91 || var1 instanceof class_6749 || var1 instanceof class_5614)) {
+         ((class_6331)this.world).method_28945().method_10200(var1, new class_4476(var1.method_37145(), this.method_37145(), var2));
       }
    }
 
    public boolean method_26420(Entity var1) {
       class_1343 var4 = new class_1343(this.method_37302(), this.method_37388(), this.method_37156());
       class_1343 var5 = new class_1343(var1.method_37302(), var1.method_37388(), var1.method_37156());
-      return this.field_41768.method_28265(new class_972(var4, var5, class_3132.field_15553, class_9583.field_48747, this)).method_33990()
+      return this.world.method_28265(new class_972(var4, var5, class_3132.field_15553, class_9583.field_48747, this)).method_33990()
          == class_1430.field_7721;
    }
 
    @Override
-   public float method_37291(float var1) {
+   public float getYaw(float var1) {
       return var1 != 1.0F ? class_9299.method_42795(var1, this.field_29657, this.field_29618) : this.field_29618;
    }
 
@@ -2598,7 +2598,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public boolean method_26530() {
-      return !this.field_41768.field_33055;
+      return !this.world.field_33055;
    }
 
    @Override
@@ -2622,7 +2622,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public void method_37161(float var1) {
+   public void setRotationYawHead(float var1) {
       this.field_29618 = var1;
    }
 
@@ -2668,8 +2668,8 @@ public abstract class class_5834 extends Entity {
       return (this.field_41735.<Byte>method_36640(field_29638) & 1) > 0;
    }
 
-   public class_2584 method_26500() {
-      return (this.field_41735.<Byte>method_36640(field_29638) & 2) <= 0 ? class_2584.field_12791 : class_2584.field_12794;
+   public Hand method_26500() {
+      return (this.field_41735.<Byte>method_36640(field_29638) & 2) <= 0 ? Hand.MAIN_HAND : Hand.OFF_HAND;
    }
 
    private void method_26430() {
@@ -2678,12 +2678,12 @@ public abstract class class_5834 extends Entity {
             this.method_26529();
          } else {
             this.field_29668 = this.method_26617(this.method_26500());
-            this.field_29668.method_28033(this.field_41768, this, this.method_26466());
+            this.field_29668.method_28033(this.world, this, this.method_26466());
             if (this.method_26459()) {
                this.method_26515(this.field_29668, 5);
             }
 
-            if (--this.field_29656 == 0 && !this.field_41768.field_33055 && !this.field_29668.method_28028()) {
+            if (--this.field_29656 == 0 && !this.world.field_33055 && !this.field_29668.method_28028()) {
                this.method_26527();
             }
          }
@@ -2718,14 +2718,14 @@ public abstract class class_5834 extends Entity {
       this.field_41735.method_36633(field_29638, (byte)var5);
    }
 
-   public void method_26462(class_2584 var1) {
+   public void method_26462(Hand var1) {
       ItemStack var4 = this.method_26617(var1);
       if (!var4.method_28022() && !this.method_26554()) {
          this.field_29668 = var4;
          this.field_29656 = var4.method_28004();
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.method_26438(1, true);
-            this.method_26438(2, var1 == class_2584.field_12794);
+            this.method_26438(2, var1 == Hand.OFF_HAND);
          }
       }
    }
@@ -2734,7 +2734,7 @@ public abstract class class_5834 extends Entity {
    public void method_37191(class_7821<?> var1) {
       super.method_37191(var1);
       if (!field_29621.equals(var1)) {
-         if (field_29638.equals(var1) && this.field_41768.field_33055) {
+         if (field_29638.equals(var1) && this.world.field_33055) {
             if (this.method_26554() && this.field_29668.method_28022()) {
                this.field_29668 = this.method_26617(this.method_26500());
                if (!this.field_29668.method_28022()) {
@@ -2745,7 +2745,7 @@ public abstract class class_5834 extends Entity {
                this.field_29656 = 0;
             }
          }
-      } else if (this.field_41768.field_33055) {
+      } else if (this.world.field_33055) {
          this.method_26518().ifPresent(this::method_26584);
       }
    }
@@ -2761,7 +2761,7 @@ public abstract class class_5834 extends Entity {
    public void method_26515(ItemStack var1, int var2) {
       if (!var1.method_28022() && this.method_26554()) {
          if (var1.method_27952() == class_6209.field_31739) {
-            this.method_37155(this.method_26566(var1), 0.5F, this.field_41768.field_33033.nextFloat() * 0.1F + 0.9F);
+            this.method_37155(this.method_26566(var1), 0.5F, this.world.field_33033.nextFloat() * 0.1F + 0.9F);
          }
 
          if (var1.method_27952() == class_6209.field_31732) {
@@ -2778,14 +2778,14 @@ public abstract class class_5834 extends Entity {
    private void method_26519(ItemStack var1, int var2) {
       for (int var5 = 0; var5 < var2; var5++) {
          class_1343 var6 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0);
-         var6 = var6.method_6212(-this.field_41755 * (float) (Math.PI / 180.0));
-         var6 = var6.method_6192(-this.field_41701 * (float) (Math.PI / 180.0));
+         var6 = var6.method_6212(-this.rotationPitch * (float) (Math.PI / 180.0));
+         var6 = var6.method_6192(-this.rotationYaw * (float) (Math.PI / 180.0));
          double var7 = (double)(-this.field_41717.nextFloat()) * 0.6 - 0.3;
          class_1343 var9 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.3, var7, 0.6);
-         var9 = var9.method_6212(-this.field_41755 * (float) (Math.PI / 180.0));
-         var9 = var9.method_6192(-this.field_41701 * (float) (Math.PI / 180.0));
+         var9 = var9.method_6212(-this.rotationPitch * (float) (Math.PI / 180.0));
+         var9 = var9.method_6192(-this.rotationYaw * (float) (Math.PI / 180.0));
          var9 = var9.method_6214(this.method_37302(), this.method_37388(), this.method_37156());
-         this.field_41768
+         this.world
             .method_43361(
                new class_8661(class_3090.field_15351, var1),
                var9.field_7336,
@@ -2799,11 +2799,11 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26527() {
-      class_2584 var3 = this.method_26500();
+      Hand var3 = this.method_26500();
       if (this.field_29668.equals(this.method_26617(var3))) {
          if (!this.field_29668.method_28022() && this.method_26554()) {
             this.method_26515(this.field_29668, 16);
-            ItemStack var4 = this.field_29668.method_27971(this.field_41768, this);
+            ItemStack var4 = this.field_29668.method_27971(this.world, this);
             if (var4 != this.field_29668) {
                this.method_26615(var3, var4);
             }
@@ -2829,7 +2829,7 @@ public abstract class class_5834 extends Entity {
 
    public void method_26474() {
       if (!this.field_29668.method_28022()) {
-         this.field_29668.method_27989(this.field_41768, this, this.method_26466());
+         this.field_29668.method_27989(this.world, this, this.method_26466());
          if (this.field_29668.method_28028()) {
             this.method_26430();
          }
@@ -2839,7 +2839,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26529() {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_26438(1, false);
       }
 
@@ -2879,13 +2879,13 @@ public abstract class class_5834 extends Entity {
       double var14 = this.method_37156();
       double var16 = var3;
       boolean var18 = false;
-      class_1331 var19 = new class_1331(var1, var3, var5);
-      World var20 = this.field_41768;
-      if (var20.method_22559(var19)) {
+      BlockPos var19 = new BlockPos(var1, var3, var5);
+      World var20 = this.world;
+      if (var20.isBlockLoaded(var19)) {
          boolean var21 = false;
 
          while (!var21 && var19.method_12165() > 0) {
-            class_1331 var22 = var19.method_6100();
+            BlockPos var22 = var19.method_6100();
             class_2522 var23 = var20.method_28262(var22);
             if (!var23.method_8362().method_24502()) {
                var16--;
@@ -2927,7 +2927,7 @@ public abstract class class_5834 extends Entity {
       return true;
    }
 
-   public void method_26424(class_1331 var1, boolean var2) {
+   public void method_26424(BlockPos var1, boolean var2) {
    }
 
    public boolean method_26612(ItemStack var1) {
@@ -2960,30 +2960,30 @@ public abstract class class_5834 extends Entity {
       );
    }
 
-   public Optional<class_1331> method_26518() {
-      return this.field_41735.<Optional<class_1331>>method_36640(field_29621);
+   public Optional<BlockPos> method_26518() {
+      return this.field_41735.<Optional<BlockPos>>method_36640(field_29621);
    }
 
-   public void method_26601(class_1331 var1) {
-      this.field_41735.method_36633(field_29621, Optional.<class_1331>of(var1));
+   public void method_26601(BlockPos var1) {
+      this.field_41735.method_36633(field_29621, Optional.<BlockPos>of(var1));
    }
 
    public void method_26570() {
-      this.field_41735.method_36633(field_29621, Optional.<class_1331>empty());
+      this.field_41735.method_36633(field_29621, Optional.<BlockPos>empty());
    }
 
    public boolean method_26507() {
       return this.method_26518().isPresent();
    }
 
-   public void method_26470(class_1331 var1) {
-      if (this.method_37070()) {
+   public void method_26470(BlockPos var1) {
+      if (this.isPassenger()) {
          this.method_37390();
       }
 
-      class_2522 var4 = this.field_41768.method_28262(var1);
+      class_2522 var4 = this.world.method_28262(var1);
       if (var4.method_8360() instanceof class_3633) {
-         this.field_41768.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(true)), 3);
+         this.world.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(true)), 3);
       }
 
       this.method_37356(class_7653.field_38886);
@@ -2993,28 +2993,28 @@ public abstract class class_5834 extends Entity {
       this.field_41763 = true;
    }
 
-   private void method_26584(class_1331 var1) {
+   private void method_26584(BlockPos var1) {
       this.method_37256((double)var1.method_12173() + 0.5, (double)var1.method_12165() + 0.6875, (double)var1.method_12185() + 0.5);
    }
 
    private boolean method_26415() {
-      return this.method_26518().<Boolean>map(var1 -> this.field_41768.method_28262(var1).method_8360() instanceof class_3633).orElse(false);
+      return this.method_26518().<Boolean>map(var1 -> this.world.method_28262(var1).method_8360() instanceof class_3633).orElse(false);
    }
 
    public void method_26557() {
-      this.method_26518().filter(this.field_41768::method_22559).ifPresent(var1 -> {
-         class_2522 var4 = this.field_41768.method_28262(var1);
+      this.method_26518().filter(this.world::isBlockLoaded).ifPresent(var1 -> {
+         class_2522 var4 = this.world.method_28262(var1);
          if (var4.method_8360() instanceof class_3633) {
-            this.field_41768.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(false)), 3);
-            class_1343 var5 = class_3633.method_16932(this.method_37387(), this.field_41768, var1, this.field_41701).orElseGet(() -> {
-               class_1331 var3x = var1.method_6081();
+            this.world.method_7513(var1, var4.method_10308(class_3633.field_17728, Boolean.valueOf(false)), 3);
+            class_1343 var5 = class_3633.method_16932(this.method_37387(), this.world, var1, this.rotationYaw).orElseGet(() -> {
+               BlockPos var3x = var1.method_6081();
                return new class_1343((double)var3x.method_12173() + 0.5, (double)var3x.method_12165() + 0.1, (double)var3x.method_12185() + 0.5);
             });
             class_1343 var6 = class_1343.method_6200(var1).method_6194(var5).method_6213();
             float var7 = (float)class_9299.method_42809(class_9299.method_42821(var6.field_7334, var6.field_7336) * 180.0F / (float)Math.PI - 90.0);
             this.method_37256(var5.field_7336, var5.field_7333, var5.field_7334);
-            this.field_41701 = var7;
-            this.field_41755 = 0.0F;
+            this.rotationYaw = var7;
+            this.rotationPitch = 0.0F;
          }
       });
       class_1343 var3 = this.method_37245();
@@ -3025,8 +3025,8 @@ public abstract class class_5834 extends Entity {
 
    @Nullable
    public Direction method_26408() {
-      class_1331 var3 = this.method_26518().orElse((class_1331)null);
-      return var3 == null ? null : class_3633.method_16936(this.field_41768, var3);
+      BlockPos var3 = this.method_26518().orElse((BlockPos)null);
+      return var3 == null ? null : class_3633.method_16936(this.world, var3);
    }
 
    @Override
@@ -3099,11 +3099,11 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26448(class_6943 var1) {
-      this.field_41768.method_29587(this, method_26605(var1));
+      this.world.method_29587(this, method_26605(var1));
    }
 
-   public void method_26447(class_2584 var1) {
-      this.method_26448(var1 != class_2584.field_12791 ? class_6943.field_35701 : class_6943.field_35707);
+   public void method_26447(Hand var1) {
+      this.method_26448(var1 != Hand.MAIN_HAND ? class_6943.field_35701 : class_6943.field_35707);
    }
 
    @Override

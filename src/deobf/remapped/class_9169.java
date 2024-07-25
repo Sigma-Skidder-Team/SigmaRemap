@@ -64,7 +64,7 @@ public class class_9169 extends class_3599 {
 
          this.field_46926.method_37305();
          this.field_46926.method_19037();
-         this.field_46926.field_41768.method_29587(this.field_46926, (byte)6);
+         this.field_46926.world.method_29587(this.field_46926, (byte)6);
       }
    }
 }

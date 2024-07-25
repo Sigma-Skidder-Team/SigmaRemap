@@ -16,7 +16,7 @@ public class class_5133 extends class_1249 {
 
    @Override
    public boolean method_5601() {
-      return this.method_5602() && this.method_5617() || !this.field_6877.method_37070();
+      return this.method_5602() && this.method_5617() || !this.field_6877.isPassenger();
    }
 
    @Override
@@ -134,7 +134,7 @@ public class class_5133 extends class_1249 {
    }
 
    @Override
-   public boolean method_5609(class_1331 var1) {
+   public boolean method_5609(BlockPos var1) {
       return this.field_6882.method_28262(var1).method_8337(this.field_6882, var1, this.field_6877);
    }
 }

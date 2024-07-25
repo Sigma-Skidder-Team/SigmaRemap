@@ -9,7 +9,7 @@ public class class_6542 extends class_7164<class_4653, class_379<class_4653>> {
       this.method_29100(new class_3369(this));
    }
 
-   public int method_29838(class_4653 var1, class_1331 var2) {
+   public int method_29838(class_4653 var1, BlockPos var2) {
       return 15;
    }
 

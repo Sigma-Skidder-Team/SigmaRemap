@@ -39,8 +39,8 @@ public class class_5833 extends class_7934 {
 
    @Override
    public void method_35893(ItemStack var1) {
-      var1.method_27964(this.field_29594.field_41768, this.field_29594, this.field_29595);
-      if (!this.field_29594.field_41768.field_33055 && this.field_40591 instanceof class_7933) {
+      var1.method_27964(this.field_29594.world, this.field_29594, this.field_29595);
+      if (!this.field_29594.world.field_33055 && this.field_40591 instanceof class_7933) {
          ((class_7933)this.field_40591).method_35869(this.field_29594);
       }
 

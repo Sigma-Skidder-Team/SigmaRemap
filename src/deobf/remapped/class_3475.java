@@ -84,7 +84,7 @@ public class class_3475 {
       }
    }
 
-   public static class_5024 method_15966(class_1331 var0, class_5024 var1) {
+   public static class_5024 method_15966(BlockPos var0, class_5024 var1) {
       class_5155 var4 = var1.method_23148();
       if (var4 != null) {
          class_5721 var5 = method_15965(var4);

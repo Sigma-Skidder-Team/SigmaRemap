@@ -239,7 +239,7 @@ public class class_9209 {
          );
    }
 
-   private static class_6867 method_42523(class_9155 var0, class_1331 var1) throws CommandSyntaxException {
+   private static class_6867 method_42523(class_9155 var0, BlockPos var1) throws CommandSyntaxException {
       class_3757 var4 = var0.method_42198().method_28260(var1);
       if (var4 instanceof class_6867) {
          return (class_6867)var4;
@@ -248,7 +248,7 @@ public class class_9209 {
       }
    }
 
-   private static int method_42516(class_9155 var0, class_1331 var1, List<ItemStack> var2, class_3119 var3) throws CommandSyntaxException {
+   private static int method_42516(class_9155 var0, BlockPos var1, List<ItemStack> var2, class_3119 var3) throws CommandSyntaxException {
       class_6867 var6 = method_42523(var0, var1);
       ArrayList var7 = Lists.newArrayListWithCapacity(var2.size());
 
@@ -288,7 +288,7 @@ public class class_9209 {
       return var4;
    }
 
-   private static int method_42514(class_9155 var0, class_1331 var1, int var2, int var3, List<ItemStack> var4, class_3119 var5) throws CommandSyntaxException {
+   private static int method_42514(class_9155 var0, BlockPos var1, int var2, int var3, List<ItemStack> var4, class_3119 var5) throws CommandSyntaxException {
       class_6867 var8 = method_42523(var0, var1);
       int var9 = var8.method_31505();
       if (var2 >= 0 && var2 < var9) {
@@ -397,7 +397,7 @@ public class class_9209 {
       }
    }
 
-   private static int method_42517(CommandContext<class_9155> var0, class_1331 var1, ItemStack var2, class_6374 var3) throws CommandSyntaxException {
+   private static int method_42517(CommandContext<class_9155> var0, BlockPos var1, ItemStack var2, class_6374 var3) throws CommandSyntaxException {
       class_9155 var6 = (class_9155)var0.getSource();
       class_6331 var7 = var6.method_42198();
       class_2522 var8 = var7.method_28262(var1);
@@ -422,7 +422,7 @@ public class class_9209 {
             var7.method_39065(class_8712.field_44675, (class_704)var8);
          }
 
-         var7.method_39065(class_8712.field_44674, class_6199.field_31686);
+         var7.method_39065(class_8712.field_44674, DamageSource.field_31686);
          var7.method_39069(class_8712.field_44669, var8);
          var7.method_39069(class_8712.field_44678, var8);
          var7.method_39065(class_8712.field_44676, var1);
@@ -443,7 +443,7 @@ public class class_9209 {
       return method_42509(var0, var1, var6.method_39064(class_4933.field_25565), var2);
    }
 
-   private static int method_42524(CommandContext<class_9155> var0, Identifier var1, class_1331 var2, ItemStack var3, class_6374 var4) throws CommandSyntaxException {
+   private static int method_42524(CommandContext<class_9155> var0, Identifier var1, BlockPos var2, ItemStack var3, class_6374 var4) throws CommandSyntaxException {
       class_9155 var7 = (class_9155)var0.getSource();
       class_2792 var8 = new class_8480(var7.method_42198())
          .method_39065(class_8712.field_44671, class_1343.method_6216(var2))

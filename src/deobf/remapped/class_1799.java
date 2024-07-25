@@ -93,7 +93,7 @@ public class class_1799 extends class_7429 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2336;
    }
 

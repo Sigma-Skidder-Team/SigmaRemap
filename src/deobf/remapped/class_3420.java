@@ -314,7 +314,7 @@ public class class_3420 extends class_3757 implements class_3745 {
       return var1;
    }
 
-   public class_4190 method_15801(class_6163 var1, class_1331 var2) {
+   public class_4190 method_15801(class_6163 var1, BlockPos var2) {
       class_4190 var5;
       if (!this.field_16827 && this.field_16836) {
          var5 = this.field_16829.method_10308(class_1990.field_10077, Boolean.valueOf(true)).method_8324(var1, var2);

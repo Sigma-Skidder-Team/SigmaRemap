@@ -7,7 +7,7 @@ public class NCPBlockFly extends Module {
    private int field_30933 = -1;
    private int field_30934;
    private int field_30939;
-   private class_2584 field_30940;
+   private Hand field_30940;
    private BlockFlyModule field_30936 = null;
    private boolean field_30935;
    private boolean field_30941 = false;
@@ -139,13 +139,13 @@ public class NCPBlockFly extends Module {
          } else {
             this.field_30934++;
             var1.method_6444(true);
-            this.field_30940 = class_2584.field_12791;
-            if (BlockFlyModule.method_17216(client.thePlayer.method_26617(class_2584.field_12794).method_27960())
+            this.field_30940 = Hand.MAIN_HAND;
+            if (BlockFlyModule.method_17216(client.thePlayer.method_26617(Hand.OFF_HAND).method_27960())
                && (
                   client.thePlayer.method_26617(this.field_30940).method_28022()
                      || !BlockFlyModule.method_17216(client.thePlayer.method_26617(this.field_30940).method_27960())
                )) {
-               this.field_30940 = class_2584.field_12794;
+               this.field_30940 = Hand.OFF_HAND;
             }
 
             double var4 = var1.method_6450();
@@ -169,7 +169,7 @@ public class NCPBlockFly extends Module {
             }
 
             if (!class_7494.method_34090(
-               new class_1331(
+               new BlockPos(
                   client.thePlayer.method_37245().method_61(),
                   client.thePlayer.method_37245().method_60() - 1.0,
                   client.thePlayer.method_37245().method_62()
@@ -179,7 +179,7 @@ public class NCPBlockFly extends Module {
                var6 = client.thePlayer.method_37245().method_62();
             }
 
-            class_1331 var15 = new class_1331(var4, var8 - 1.0, var6);
+            BlockPos var15 = new BlockPos(var4, var8 - 1.0, var6);
             if (!class_7494.method_34090(var15) && this.field_30936.method_17224(this.field_30940)) {
                class_2899 var11 = class_7494.method_34118(var15, !this.field_30935 && this.getBooleanValueByName("Downwards"));
                this.field_30932 = var11;
@@ -199,7 +199,7 @@ public class NCPBlockFly extends Module {
                this.field_30932 = null;
             }
 
-            if (client.thePlayer.field_41701 != var1.method_6442() && client.thePlayer.field_41755 != var1.method_6439()) {
+            if (client.thePlayer.rotationYaw != var1.method_6442() && client.thePlayer.rotationPitch != var1.method_6439()) {
                this.field_30934 = 0;
             }
          }
@@ -248,7 +248,7 @@ public class NCPBlockFly extends Module {
                break;
             case "Cubecraft":
                double var6 = 0.2;
-               float var8 = this.method_27622(class_9299.method_42810(client.thePlayer.field_41701));
+               float var8 = this.method_27622(class_9299.method_42810(client.thePlayer.rotationYaw));
                if (client.gameOptions.keyJump.isKeyDown()) {
                   client.theTimer.timerSpeed = 1.0F;
                } else if (client.thePlayer.field_41726) {
@@ -355,17 +355,17 @@ public class NCPBlockFly extends Module {
    public double[] method_27620() {
       double var3 = client.thePlayer.method_37302();
       double var5 = client.thePlayer.method_37156();
-      double var7 = (double) client.thePlayer.field_30533.field_45287;
-      double var9 = (double) client.thePlayer.field_30533.field_45282;
-      float var11 = client.thePlayer.field_41701;
-      class_1331 var12 = new class_1331(var3, client.thePlayer.method_37309() - 1.0, var5);
+      double var7 = (double) client.thePlayer.movementInput.field_45287;
+      double var9 = (double) client.thePlayer.movementInput.field_45282;
+      float var11 = client.thePlayer.rotationYaw;
+      BlockPos var12 = new BlockPos(var3, client.thePlayer.method_37309() - 1.0, var5);
       double var13 = var3;
       double var15 = var5;
       double var17 = 0.0;
 
       for (double var19 = (double)(this.getFloatValueByName("Extend") * 2.0F);
            class_7494.method_34090(var12);
-           var12 = new class_1331(var13, client.thePlayer.method_37309() - 1.0, var15)
+           var12 = new BlockPos(var13, client.thePlayer.method_37309() - 1.0, var15)
       ) {
          if (++var17 > var19) {
             var17 = var19;
@@ -383,7 +383,7 @@ public class NCPBlockFly extends Module {
       return new double[]{var13, var15};
    }
 
-   public static class_1343 method_27625(class_1331 var0, Direction var1) {
+   public static class_1343 method_27625(BlockPos var0, Direction var1) {
       double var4 = (double)var0.method_12173() + 0.5;
       double var6 = (double)var0.method_12165() + 0.5;
       double var8 = (double)var0.method_12185() + 0.5;

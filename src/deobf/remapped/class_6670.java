@@ -3,35 +3,35 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
+public class class_6670 extends class_6353<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>> {
    public class_6670(EntityRenderDispatcher var1) {
       this(var1, false);
    }
 
    public class_6670(EntityRenderDispatcher var1, boolean var2) {
-      super(var1, new class_3169<class_9716>(0.0F, var2), 0.5F);
+      super(var1, new class_3169<AbstractClientPlayerEntity>(0.0F, var2), 0.5F);
       this.method_29100(new class_3035(this, new class_2344(0.5F), new class_2344(1.0F)));
-      this.method_29100(new class_6329<class_9716, class_3169<class_9716>>(this));
-      this.method_29100(new class_6829<class_9716, class_3169<class_9716>>(this));
+      this.method_29100(new class_6329<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>>(this));
+      this.method_29100(new class_6829<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>>(this));
       this.method_29100(new class_5985(this));
       this.method_29100(new class_9284(this));
-      this.method_29100(new class_8386<class_9716, class_3169<class_9716>>(this));
-      this.method_29100(new class_8062<class_9716, class_3169<class_9716>>(this));
-      this.method_29100(new class_9871<class_9716>(this));
-      this.method_29100(new class_2401<class_9716>(this));
-      this.method_29100(new class_3787<class_9716, class_3169<class_9716>>(this));
+      this.method_29100(new class_8386<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>>(this));
+      this.method_29100(new class_8062<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>>(this));
+      this.method_29100(new class_9871<AbstractClientPlayerEntity>(this));
+      this.method_29100(new class_2401<AbstractClientPlayerEntity>(this));
+      this.method_29100(new class_3787<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>>(this));
    }
 
-   public void method_30609(class_9716 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
+   public void method_30609(AbstractClientPlayerEntity var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       this.method_30611(var1);
       super.method_29107(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_1343 method_30612(class_9716 var1, float var2) {
+   public class_1343 method_30612(AbstractClientPlayerEntity var1, float var2) {
       return !var1.method_37382() ? super.method_32555(var1, var2) : new class_1343(0.0, -0.125, 0.0);
    }
 
-   private void method_30611(class_9716 var1) {
+   private void method_30611(AbstractClientPlayerEntity var1) {
       class_3169 var4 = this.method_11447();
       if (!var1.method_37221()) {
          var4.method_10741(true);
@@ -42,8 +42,8 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
          var4.field_15851.field_8200 = var1.method_3168(class_7742.field_39264);
          var4.field_15855.field_8200 = var1.method_3168(class_7742.field_39256);
          var4.field_11697 = var1.method_37382();
-         class_5455 var5 = method_30605(var1, class_2584.field_12791);
-         class_5455 var6 = method_30605(var1, class_2584.field_12794);
+         class_5455 var5 = method_30605(var1, Hand.MAIN_HAND);
+         class_5455 var6 = method_30605(var1, Hand.OFF_HAND);
          if (var5.method_24844()) {
             var6 = !var1.method_26568().method_28022() ? class_5455.field_27802 : class_5455.field_27806;
          }
@@ -62,7 +62,7 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
       }
    }
 
-   private static class_5455 method_30605(class_9716 var0, class_2584 var1) {
+   private static class_5455 method_30605(AbstractClientPlayerEntity var0, Hand var1) {
       ItemStack var4 = var0.method_26617(var1);
       if (var4.method_28022()) {
          return class_5455.field_27806;
@@ -92,16 +92,16 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
       }
    }
 
-   public Identifier method_30607(class_9716 var1) {
+   public Identifier method_30607(AbstractClientPlayerEntity var1) {
       return var1.method_44889();
    }
 
-   public void method_30613(class_9716 var1, class_7966 var2, float var3) {
+   public void method_30613(AbstractClientPlayerEntity var1, class_7966 var2, float var3) {
       float var6 = 0.9375F;
       var2.method_36062(0.9375F, 0.9375F, 0.9375F);
    }
 
-   public void method_30603(class_9716 var1, ITextComponent var2, class_7966 var3, class_2565 var4, int var5) {
+   public void method_30603(AbstractClientPlayerEntity var1, ITextComponent var2, class_7966 var3, class_2565 var4, int var5) {
       double var8 = this.field_36493.method_28129(var1);
       var3.method_36063();
       if (var8 < 100.0) {
@@ -120,15 +120,15 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
       var3.method_36064();
    }
 
-   public void method_30608(class_7966 var1, class_2565 var2, int var3, class_9716 var4) {
+   public void method_30608(class_7966 var1, class_2565 var2, int var3, AbstractClientPlayerEntity var4) {
       this.method_30606(var1, var2, var3, var4, this.field_32487.field_11705, this.field_32487.field_15855);
    }
 
-   public void method_30610(class_7966 var1, class_2565 var2, int var3, class_9716 var4) {
+   public void method_30610(class_7966 var1, class_2565 var2, int var3, AbstractClientPlayerEntity var4) {
       this.method_30606(var1, var2, var3, var4, this.field_32487.field_11701, this.field_32487.field_15851);
    }
 
-   private void method_30606(class_7966 var1, class_2565 var2, int var3, class_9716 var4, class_1549 var5, class_1549 var6) {
+   private void method_30606(class_7966 var1, class_2565 var2, int var3, AbstractClientPlayerEntity var4, class_1549 var5, class_1549 var6) {
       class_3169 var9 = this.method_11447();
       this.method_30611(var4);
       var9.field_33202 = 0.0F;
@@ -141,14 +141,14 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
       var6.method_7060(var1, var2.method_11645(RenderLayer.method_16705(var4.method_44889())), var3, class_5367.field_27381);
    }
 
-   public void method_30604(class_9716 var1, class_7966 var2, float var3, float var4, float var5) {
+   public void method_30604(AbstractClientPlayerEntity var1, class_7966 var2, float var3, float var4, float var5) {
       float var8 = var1.method_26602(var5);
       if (!var1.method_26618()) {
          if (!(var8 > 0.0F)) {
             super.method_29099(var1, var2, var3, var4, var5);
          } else {
             super.method_29099(var1, var2, var3, var4, var5);
-            float var9 = !var1.method_37285() ? -90.0F : -90.0F - var1.field_41755;
+            float var9 = !var1.method_37285() ? -90.0F : -90.0F - var1.rotationPitch;
             float var10 = class_9299.method_42795(var8, 0.0F, var9);
             var2.method_36060(class_2426.field_12080.method_11074(var10));
             if (var1.method_37297()) {
@@ -160,7 +160,7 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
          float var21 = (float)var1.method_26422() + var5;
          float var22 = class_9299.method_42828(var21 * var21 / 100.0F, 0.0F, 1.0F);
          if (!var1.method_26600()) {
-            var2.method_36060(class_2426.field_12080.method_11074(var22 * (-90.0F - var1.field_41755)));
+            var2.method_36060(class_2426.field_12080.method_11074(var22 * (-90.0F - var1.rotationPitch)));
          }
 
          class_1343 var11 = var1.method_37307(var5);

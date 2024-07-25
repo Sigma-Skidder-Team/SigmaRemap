@@ -20,8 +20,8 @@ public class class_8032 extends class_7937 {
       } else {
          if (var1 instanceof class_5834) {
             byte var4 = 0;
-            if (this.field_41768.method_43370() != class_423.field_1789) {
-               if (this.field_41768.method_43370() == class_423.field_1782) {
+            if (this.world.method_43370() != class_423.field_1789) {
+               if (this.world.method_43370() == class_423.field_1782) {
                   var4 = 15;
                }
             } else {

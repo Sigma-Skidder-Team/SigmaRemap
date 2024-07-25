@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_5405 extends class_6199 {
+public class class_5405 extends DamageSource {
    public final Entity field_27576;
    private boolean field_27578;
 

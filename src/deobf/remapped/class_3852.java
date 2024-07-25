@@ -8,7 +8,7 @@ public class class_3852 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_17878(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_17878(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       if (var1.method_22548(var4) && !var1.method_22548(var4.method_6081())) {
          class_2921 var8 = var4.method_6089();
          class_2921 var9 = var4.method_6089();
@@ -65,13 +65,13 @@ public class class_3852 extends class_4285<class_1941> {
       }
    }
 
-   private void method_17877(class_9379 var1, Random var2, class_1331 var3) {
+   private void method_17877(class_9379 var1, Random var2, BlockPos var3) {
       if (var2.nextBoolean()) {
          var1.method_7513(var3, class_4783.field_23788.method_29260(), 2);
       }
    }
 
-   private boolean method_17879(class_9379 var1, Random var2, class_1331 var3) {
+   private boolean method_17879(class_9379 var1, Random var2, BlockPos var3) {
       if (var2.nextInt(10) == 0) {
          return false;
       } else {

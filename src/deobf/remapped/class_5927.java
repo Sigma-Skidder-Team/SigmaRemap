@@ -38,7 +38,7 @@ public class class_5927<FC extends class_6157, F extends class_4285<FC>> impleme
       return new class_2642(this, var1);
    }
 
-   public boolean method_27104(class_700 var1, class_6541 var2, Random var3, class_1331 var4) {
+   public boolean method_27104(class_700 var1, class_6541 var2, Random var3, BlockPos var4) {
       return this.field_30065.method_19907(var1, var2, var3, var4, this.field_30062);
    }
 

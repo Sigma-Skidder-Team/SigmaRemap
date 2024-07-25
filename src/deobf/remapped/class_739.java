@@ -3,7 +3,7 @@ package remapped;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class class_739 implements Iterator<class_1331> {
+public class class_739 implements Iterator<BlockPos> {
    private double field_4037;
    private double field_4036;
    private int field_4025;
@@ -18,7 +18,7 @@ public class class_739 implements Iterator<class_1331> {
    private class_523 field_4029 = new class_523(0, 0, 0);
    private boolean field_4031 = false;
 
-   public class_739(class_1331 var1, class_1331 var2, double var3, double var5) {
+   public class_739(BlockPos var1, BlockPos var2, double var3, double var5) {
       this.field_4037 = var3;
       this.field_4036 = var5;
       this.field_4025 = var1.method_12173();
@@ -38,7 +38,7 @@ public class class_739 implements Iterator<class_1331> {
       return this.field_4031;
    }
 
-   public class_1331 next() {
+   public BlockPos next() {
       if (!this.field_4031) {
          throw new NoSuchElementException();
       } else {
@@ -75,15 +75,15 @@ public class class_739 implements Iterator<class_1331> {
    }
 
    public static void main(String[] var0) throws Exception {
-      class_1331 var3 = new class_1331(-2, 10, 20);
-      class_1331 var4 = new class_1331(2, 12, 22);
+      BlockPos var3 = new BlockPos(-2, 10, 20);
+      BlockPos var4 = new BlockPos(2, 12, 22);
       double var5 = -0.5;
       double var7 = 0.5;
       class_739 var9 = new class_739(var3, var4, var5, var7);
       System.out.println("Start: " + var3 + ", end: " + var4 + ", yDelta: " + var5 + ", zDelta: " + var7);
 
       while (var9.hasNext()) {
-         class_1331 var10 = var9.next();
+         BlockPos var10 = var9.next();
          System.out.println("" + var10);
       }
    }

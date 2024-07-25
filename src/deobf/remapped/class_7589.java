@@ -3,7 +3,7 @@ package remapped;
 public class class_7589 implements Runnable {
    private static String[] field_38654;
 
-   public class_7589(AutoCrystalModule var1, class_1331 var2, int var3) {
+   public class_7589(AutoCrystalModule var1, BlockPos var2, int var3) {
       this.field_38653 = var1;
       this.field_38655 = var2;
       this.field_38652 = var3;
@@ -17,8 +17,8 @@ public class class_7589 implements Runnable {
       AutoCrystalModule.method_44019().field_9647.method_42129();
       AutoCrystalModule.method_44024()
          .field_9647
-         .method_42147(AutoCrystalModule.method_44014().field_9632, AutoCrystalModule.method_44016().field_9601, class_2584.field_12791, var3);
-      AutoCrystalModule.method_44026().field_9632.method_26597(class_2584.field_12791);
+         .method_42147(AutoCrystalModule.method_44014().field_9632, AutoCrystalModule.method_44016().field_9601, Hand.MAIN_HAND, var3);
+      AutoCrystalModule.method_44026().field_9632.method_26597(Hand.MAIN_HAND);
       AutoCrystalModule.method_44034().field_9632.field_3853.field_36404 = var4;
    }
 }

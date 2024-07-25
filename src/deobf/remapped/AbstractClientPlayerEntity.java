@@ -5,7 +5,7 @@ import com.mojang.authlib.GameProfile;
 import java.io.File;
 import javax.annotation.Nullable;
 
-public abstract class class_9716 extends class_704 {
+public abstract class AbstractClientPlayerEntity extends class_704 {
    public class_753 field_49385;
    public float field_49391;
    public float field_49394;
@@ -22,7 +22,7 @@ public abstract class class_9716 extends class_704 {
    public float field_49386;
    private static final Identifier field_49388 = new Identifier("textures/entity/elytra.png");
 
-   public class_9716(ClientWorld var1, GameProfile var2) {
+   public AbstractClientPlayerEntity(ClientWorld var1, GameProfile var2) {
       super(var1, var1.method_758(), var1.method_734(), var2);
       this.field_49392 = var1;
       this.field_49389 = var2.getName();

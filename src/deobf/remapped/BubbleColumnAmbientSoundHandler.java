@@ -1,18 +1,18 @@
 package remapped;
 
-public class class_7509 implements class_3753 {
+public class BubbleColumnAmbientSoundHandler implements IAmbientSoundHandler {
    private static String[] field_38349;
    private final ClientPlayerEntity field_38350;
    private boolean field_38347;
    private boolean field_38348 = true;
 
-   public class_7509(ClientPlayerEntity var1) {
+   public BubbleColumnAmbientSoundHandler(ClientPlayerEntity var1) {
       this.field_38350 = var1;
    }
 
    @Override
    public void method_17366() {
-      World var3 = this.field_38350.field_41768;
+      World var3 = this.field_38350.world;
       class_2522 var4 = var3.method_22549(this.field_38350.method_37241().method_18899(0.0, -0.4F, 0.0).method_18924(0.001))
          .filter(var0 -> var0.method_8350(class_4783.field_23269))
          .findFirst()

@@ -46,7 +46,7 @@ public class class_6903 extends class_5920<class_4612> {
       } else if (this.field_35490 != 0L) {
          return var1.method_29546() >= this.field_35490;
       } else {
-         this.field_35490 = var2.field_41768.method_29546() + (long)var1.field_33033.nextInt(20);
+         this.field_35490 = var2.world.method_29546() + (long)var1.field_33033.nextInt(20);
          return false;
       }
    }
@@ -71,7 +71,7 @@ public class class_6903 extends class_5920<class_4612> {
       Set var9 = var7.method_6875(this.field_35489.method_1007(), var8, var2.method_37075(), 48, class_8122.field_41617).limit(5L).collect(Collectors.toSet());
       class_3998 var10 = var2.method_26927().method_5626(var9, this.field_35489.method_1006());
       if (var10 != null && var10.method_18433()) {
-         class_1331 var13 = var10.method_18426();
+         BlockPos var13 = var10.method_18426();
          var7.method_6870(var13).ifPresent(var5 -> {
             var7.method_6861(this.field_35489.method_1007(), var1xx -> var1xx.equals(var13), var13, 1);
             var2.method_26525().method_5105(this.field_35488, class_8150.method_37410(var1.method_29545(), var13));
@@ -80,8 +80,8 @@ public class class_6903 extends class_5920<class_4612> {
             class_1892.method_8433(var1, var13);
          });
       } else {
-         for (class_1331 var12 : var9) {
-            this.field_35487.computeIfAbsent(var12.method_6077(), var3x -> new class_4318(var2.field_41768.field_33033, var3));
+         for (BlockPos var12 : var9) {
+            this.field_35487.computeIfAbsent(var12.method_6077(), var3x -> new class_4318(var2.world.field_33033, var3));
          }
       }
    }

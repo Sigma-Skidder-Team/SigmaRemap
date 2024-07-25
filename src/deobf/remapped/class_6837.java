@@ -41,7 +41,7 @@ public class class_6837<T extends class_5834> extends class_3599 {
    @Override
    public boolean method_16795() {
       this.field_35258 = this.field_35261
-         .field_41768
+         .world
          .<T>method_25872(
             this.field_35259,
             this.field_35260,

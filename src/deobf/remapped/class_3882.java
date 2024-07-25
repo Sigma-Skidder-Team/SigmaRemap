@@ -10,8 +10,8 @@ public class class_3882 extends class_3599 {
    private static String[] field_18894;
    private final class_4040 field_18898;
    private final double field_18893;
-   private class_1331 field_18897;
-   private final List<class_1331> field_18892 = Lists.newArrayList();
+   private BlockPos field_18897;
+   private final List<BlockPos> field_18892 = Lists.newArrayList();
    private final int field_18896;
    private boolean field_18895;
 
@@ -33,12 +33,12 @@ public class class_3882 extends class_3599 {
    }
 
    private boolean method_17949() {
-      class_6331 var3 = (class_6331)this.field_18898.field_41768;
-      class_1331 var4 = this.field_18898.method_37075();
+      class_6331 var3 = (class_6331)this.field_18898.world;
+      BlockPos var4 = this.field_18898.method_37075();
       Optional var5 = var3.method_28969()
          .method_6881(var0 -> var0 == class_236.field_778, this::method_17951, class_8122.field_41615, var4, 48, class_4040.method_18603(this.field_18898));
       if (var5.isPresent()) {
-         this.field_18897 = ((class_1331)var5.get()).method_6072();
+         this.field_18897 = ((BlockPos)var5.get()).method_6072();
          return true;
       } else {
          return false;
@@ -91,8 +91,8 @@ public class class_3882 extends class_3599 {
       }
    }
 
-   private boolean method_17951(class_1331 var1) {
-      for (class_1331 var5 : this.field_18892) {
+   private boolean method_17951(BlockPos var1) {
+      for (BlockPos var5 : this.field_18892) {
          if (Objects.equals(var1, var5)) {
             return false;
          }

@@ -36,7 +36,7 @@ public enum Direction implements class_4530 {
       .sorted(Comparator.comparingInt(var0 -> var0.field_813))
       .<Direction>toArray(Direction[]::new);
    private static final Long2ObjectMap<Direction> field_801 = Arrays.<Direction>stream(field_803)
-      .collect(Collectors.toMap(var0 -> new class_1331(var0.method_1037()).method_6077(), var0 -> (Direction)var0, (var0, var1) -> {
+      .collect(Collectors.toMap(var0 -> new BlockPos(var0.method_1037()).method_6077(), var0 -> (Direction)var0, (var0, var1) -> {
          throw new IllegalArgumentException("Duplicate keys");
       }, Long2ObjectOpenHashMap::new));
 
@@ -51,8 +51,8 @@ public enum Direction implements class_4530 {
    }
 
    public static Direction[] method_1051(Entity var0) {
-      float var3 = var0.method_37184(1.0F) * (float) (Math.PI / 180.0);
-      float var4 = -var0.method_37291(1.0F) * (float) (Math.PI / 180.0);
+      float var3 = var0.getPitch(1.0F) * (float) (Math.PI / 180.0);
+      float var4 = -var0.getYaw(1.0F) * (float) (Math.PI / 180.0);
       float var5 = class_9299.method_42818(var3);
       float var6 = class_9299.method_42840(var3);
       float var7 = class_9299.method_42818(var4);
@@ -205,7 +205,7 @@ public enum Direction implements class_4530 {
 
    @Nullable
    public static Direction method_1032(int var0, int var1, int var2) {
-      return (Direction)field_801.get(class_1331.method_6107(var0, var1, var2));
+      return (Direction)field_801.get(BlockPos.method_6107(var0, var1, var2));
    }
 
    public static Direction method_1036(double var0) {

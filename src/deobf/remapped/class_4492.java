@@ -7,10 +7,10 @@ import javax.annotation.Nullable;
 
 public class class_4492 extends class_5920<class_7666> {
    private static String[] field_21964;
-   private class_1331 field_21963;
+   private BlockPos field_21963;
    private long field_21961;
    private int field_21965;
-   private final List<class_1331> field_21962 = Lists.newArrayList();
+   private final List<BlockPos> field_21962 = Lists.newArrayList();
 
    public class_4492() {
       super(
@@ -34,7 +34,7 @@ public class class_4492 extends class_5920<class_7666> {
                for (int var8 = -1; var8 <= 1; var8++) {
                   var5.method_13361(var2.method_37302() + (double)var6, var2.method_37309() + (double)var7, var2.method_37156() + (double)var8);
                   if (this.method_20879(var5, var1)) {
-                     this.field_21962.add(new class_1331(var5));
+                     this.field_21962.add(new BlockPos(var5));
                   }
                }
             }
@@ -46,11 +46,11 @@ public class class_4492 extends class_5920<class_7666> {
    }
 
    @Nullable
-   private class_1331 method_20877(class_6331 var1) {
+   private BlockPos method_20877(class_6331 var1) {
       return !this.field_21962.isEmpty() ? this.field_21962.get(var1.method_43360().nextInt(this.field_21962.size())) : null;
    }
 
-   private boolean method_20879(class_1331 var1, class_6331 var2) {
+   private boolean method_20879(BlockPos var1, class_6331 var2) {
       class_2522 var5 = var2.method_28262(var1);
       class_6414 var6 = var5.method_8360();
       class_6414 var7 = var2.method_28262(var1.method_6100()).method_8360();

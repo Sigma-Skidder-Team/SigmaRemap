@@ -31,7 +31,7 @@ public class class_9283 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_42748(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_42748(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       class_6631 var8 = class_6631.method_30492(var3);
       int var9 = var3.nextInt(field_47348.length);
       class_5799 var10 = var1.method_7066().method_29522().method_1670();
@@ -40,7 +40,7 @@ public class class_9283 extends class_4285<class_1941> {
       class_2034 var13 = new class_2034(var4);
       class_9616 var14 = new class_9616(var13.method_9535(), 0, var13.method_9545(), var13.method_9536(), 256, var13.method_9538());
       class_8478 var15 = new class_8478().method_39053(var8).method_39051(var14).method_39041(var3).method_39048(class_2010.field_10193);
-      class_1331 var16 = var11.method_29970(var8);
+      BlockPos var16 = var11.method_29970(var8);
       int var17 = var3.nextInt(16 - var16.method_12173());
       int var18 = var3.nextInt(16 - var16.method_12185());
       int var19 = 256;
@@ -52,7 +52,7 @@ public class class_9283 extends class_4285<class_1941> {
       }
 
       int var24 = Math.max(var19 - 15 - var3.nextInt(10), 10);
-      class_1331 var25 = var11.method_29977(var4.method_6104(var17, var24, var18), class_9022.field_46145, var8);
+      BlockPos var25 = var11.method_29977(var4.method_6104(var17, var24, var18), class_9022.field_46145, var8);
       class_9098 var22 = new class_9098(0.9F);
       var15.method_39035().method_39048(var22);
       var11.method_29965(var1, var25, var25, var15, var3, 4);

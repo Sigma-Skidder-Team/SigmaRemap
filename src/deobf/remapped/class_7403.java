@@ -36,7 +36,7 @@ public class class_7403 extends class_4382 {
       Entry var7 = class_2931.method_13412(class_3668.field_17882, var1);
       if (method_33706(var3, var6)) {
          if (var2 != null) {
-            var2.method_37181(class_6199.method_28364(var1), (float)method_33705(var3, var6));
+            var2.attackEntityFrom(DamageSource.method_28364(var1), (float)method_33705(var3, var6));
          }
 
          if (var7 != null) {

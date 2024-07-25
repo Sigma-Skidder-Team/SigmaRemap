@@ -25,7 +25,7 @@ public class class_2642 {
       this.field_13017 = var2;
    }
 
-   public boolean method_11949(class_700 var1, class_6541 var2, Random var3, class_1331 var4) {
+   public boolean method_11949(class_700 var1, class_6541 var2, Random var3, BlockPos var4) {
       return this.field_13015.get().method_27104(var1, var2, var3, var4);
    }
 }

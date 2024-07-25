@@ -77,19 +77,19 @@ public class class_666 extends class_3599 {
                if (this.field_3690 > 1) {
                   float var13 = class_9299.method_42843(class_9299.method_42842(var5)) * 0.5F;
                   if (!this.field_3691.method_37378()) {
-                     this.field_3691.field_41768.method_43365((class_704)null, 1018, this.field_3691.method_37075(), 0);
+                     this.field_3691.world.method_43365((class_704)null, 1018, this.field_3691.method_37075(), 0);
                   }
 
                   for (int var14 = 0; var14 < 1; var14++) {
                      class_1593 var15 = new class_1593(
-                        this.field_3691.field_41768,
+                        this.field_3691.world,
                         this.field_3691,
                         var7 + this.field_3691.method_26594().nextGaussian() * (double)var13,
                         var9,
                         var11 + this.field_3691.method_26594().nextGaussian() * (double)var13
                      );
                      var15.method_37256(var15.method_37302(), this.field_3691.method_37080(0.5) + 0.5, var15.method_37156());
-                     this.field_3691.field_41768.method_7509(var15);
+                     this.field_3691.world.method_7509(var15);
                   }
                }
             }

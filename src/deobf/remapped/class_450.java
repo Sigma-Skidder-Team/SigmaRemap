@@ -48,7 +48,7 @@ public class class_450 {
       return var3 != null ? (class_2522)var3.getLeft() : null;
    }
 
-   private static Pair<class_2522, class_1331> method_2172(class_704 var0) {
+   private static Pair<class_2522, BlockPos> method_2172(class_704 var0) {
       class_2921 var3 = new class_2921();
 
       for (int var4 = 0; var4 < 8; var4++) {
@@ -56,8 +56,8 @@ public class class_450 {
          double var7 = var0.method_37388() + (double)(((float)((var4 >> 1) % 2) - 0.5F) * 0.1F);
          double var9 = var0.method_37156() + (double)(((float)((var4 >> 2) % 2) - 0.5F) * var0.method_37086() * 0.8F);
          var3.method_13361(var5, var7, var9);
-         class_2522 var11 = var0.field_41768.method_28262(var3);
-         if (var11.method_8352() != class_7537.field_38470 && var11.method_8330(var0.field_41768, var3)) {
+         class_2522 var11 = var0.world.method_28262(var3);
+         if (var11.method_8352() != class_7537.field_38470 && var11.method_8330(var0.world, var3)) {
             return Pair.of(var11, var3.method_6072());
          }
       }
@@ -109,8 +109,8 @@ public class class_450 {
       float var9 = -1.0F;
       float var10 = 1.0F;
       float var11 = -0.5F;
-      float var12 = -var0.thePlayer.field_41701 / 64.0F;
-      float var13 = var0.thePlayer.field_41755 / 64.0F;
+      float var12 = -var0.thePlayer.rotationYaw / 64.0F;
+      float var13 = var0.thePlayer.rotationPitch / 64.0F;
       class_8107 var14 = var1.method_36058().method_28620();
       var4.method_44471(7, class_7985.field_40913);
       var4.method_35762(var14, -1.0F, -1.0F, -0.5F).method_35742(var5, var5, var5, 0.1F).method_35745(4.0F + var12, 4.0F + var13).method_35735();

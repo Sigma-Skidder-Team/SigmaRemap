@@ -7,7 +7,7 @@ public enum class_4327 {
    );
 
    @Override
-   public boolean method_15689(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public boolean method_15689(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return !class_3370.method_15537(var1.method_8314(var2, var3).method_19494(var4), this.field_21048, class_8529.field_43654);
    }
 }

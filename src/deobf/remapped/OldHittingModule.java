@@ -28,7 +28,7 @@ public class OldHittingModule extends Module {
                && client.field_9587.method_33990() == class_1430.field_7717
                && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(KillauraModule.class).method_42003()) {
                class_9529 var7 = (class_9529) client.field_9587;
-               class_1331 var8 = var7.method_43955();
+               BlockPos var8 = var7.method_43955();
                class_6414 var9 = client.theWorld.method_28262(var8).method_8360();
                ArrayList var10 = new ArrayList<class_6414>(
                   Arrays.asList(

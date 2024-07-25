@@ -152,14 +152,14 @@ public class class_2134 extends class_7186 {
          class_4986 var6 = this.field_10684.get(var9);
          String var7 = var6.field_25824.method_45509().getString();
          if (!var6.field_25824.field_41751 && (var6.field_25824.inventory.method_32405(var2) || var2.method_27966())) {
-            if (!var2.method_27966() && var6.field_25824.field_41768.method_29545() == this.field_10685 && this.field_10681) {
+            if (!var2.method_27966() && var6.field_25824.world.method_29545() == this.field_10685 && this.field_10681) {
                this.method_9972(
                   class_8086.field_41393,
-                  var6.field_25824.field_41768,
+                  var6.field_25824.world,
                   var7,
                   var6.field_25824.method_37302(),
                   var6.field_25824.method_37156(),
-                  (double)var6.field_25824.field_41701,
+                  (double)var6.field_25824.rotationYaw,
                   (ITextComponent)null
                );
             }
@@ -172,7 +172,7 @@ public class class_2134 extends class_7186 {
 
       if (var2.method_27966() && this.field_10681) {
          class_7451 var10 = var2.method_27961();
-         class_1331 var12 = var10.method_21469();
+         BlockPos var12 = var10.method_21469();
          class_869 var14 = this.field_10687.get(class_869.method_3762(var12));
          if (var14 != null && var10.method_37145() != var14.method_3764() && this.field_10687.containsKey(var14.method_3759())) {
             this.field_10683.remove("frame-" + var14.method_3764());
@@ -181,7 +181,7 @@ public class class_2134 extends class_7186 {
          class_869 var8 = new class_869(var12, var10.method_37365().method_1031() * 90, var10.method_37145());
          this.method_9972(
             class_8086.field_41416,
-            var1.field_41768,
+            var1.world,
             "frame-" + var10.method_37145(),
             (double)var12.method_12173(),
             (double)var12.method_12185(),
@@ -200,7 +200,7 @@ public class class_2134 extends class_7186 {
             if (!this.field_10683.containsKey(var16.method_25965("id"))) {
                this.method_9972(
                   class_8086.method_36718(var16.method_25950("type")),
-                  var1.field_41768,
+                  var1.world,
                   var16.method_25965("id"),
                   var16.method_25932("x"),
                   var16.method_25932("z"),
@@ -212,7 +212,7 @@ public class class_2134 extends class_7186 {
       }
    }
 
-   public static void method_9969(ItemStack var0, class_1331 var1, String var2, class_8086 var3) {
+   public static void method_9969(ItemStack var0, BlockPos var1, String var2, class_8086 var3) {
       class_3416 var6;
       if (var0.method_28002() && var0.method_27990().contains("Decorations", 9)) {
          var6 = var0.method_27990().method_25927("Decorations", 10);
@@ -313,7 +313,7 @@ public class class_2134 extends class_7186 {
       return var4;
    }
 
-   public void method_9971(class_9379 var1, class_1331 var2) {
+   public void method_9971(class_9379 var1, BlockPos var2) {
       double var5 = (double)var2.method_12173() + 0.5;
       double var7 = (double)var2.method_12185() + 0.5;
       int var9 = 1 << this.field_10678;
@@ -362,7 +362,7 @@ public class class_2134 extends class_7186 {
       }
    }
 
-   public void method_9964(class_1331 var1, int var2) {
+   public void method_9964(BlockPos var1, int var2) {
       this.field_10683.remove("frame-" + var2);
       this.field_10687.remove(class_869.method_3762(var1));
    }

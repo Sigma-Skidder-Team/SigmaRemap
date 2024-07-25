@@ -2,11 +2,11 @@ package remapped;
 
 public class class_7452 implements Runnable {
    private static String[] field_37982;
-   private class_9716 field_37981;
+   private AbstractClientPlayerEntity field_37981;
    private Identifier field_37979;
    private boolean field_37980;
 
-   public class_7452(class_9716 var1, Identifier var2) {
+   public class_7452(AbstractClientPlayerEntity var1, Identifier var2) {
       this.field_37981 = var1;
       this.field_37979 = var2;
    }

@@ -13,7 +13,7 @@ public class class_6615 extends class_6201 {
    @Nullable
    @Override
    public class_353 method_28395(class_353 var1) {
-      class_1331 var4 = var1.method_21858();
+      BlockPos var4 = var1.method_21858();
       World var5 = var1.method_21862();
       class_2522 var6 = var5.method_28262(var4);
       class_6414 var7 = this.method_28392();

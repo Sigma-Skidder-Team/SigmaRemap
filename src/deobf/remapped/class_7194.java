@@ -16,7 +16,7 @@ public class class_7194 {
    public static double field_36985;
    public static float field_36989;
 
-   public static long method_32944(class_1331 var0) {
+   public static long method_32944(BlockPos var0) {
       return ((long)var0.method_12173() & field_36995) << field_36986
          | ((long)var0.method_12165() & field_36993) << field_36983
          | ((long)var0.method_12185() & field_36994) << 0;
@@ -34,8 +34,8 @@ public class class_7194 {
          var0 *= var6;
          var1 *= var6;
          var2 *= var6;
-         float var7 = class_9299.method_42818(field_36996.thePlayer.field_41701 * (float) (Math.PI / 180.0));
-         float var8 = class_9299.method_42840(field_36996.thePlayer.field_41701 * (float) (Math.PI / 180.0));
+         float var7 = class_9299.method_42818(field_36996.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
+         float var8 = class_9299.method_42840(field_36996.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
          field_36984 += (double)(var0 * var8 - var2 * var7);
          field_36992 += (double)var1;
          field_36985 += (double)(var2 * var8 + var0 * var7);
@@ -90,7 +90,7 @@ public class class_7194 {
          for (int var10 = var4; var10 < var5; var10++) {
             for (int var11 = var6; var11 < var7; var11++) {
                for (int var12 = var8; var12 < var9; var12++) {
-                  class_2522 var13 = field_36996.theWorld.method_28262(new class_1331(var10, var11, var12));
+                  class_2522 var13 = field_36996.theWorld.method_28262(new BlockPos(var10, var11, var12));
                   class_6414 var14 = var13.method_8360();
                   if (var13.method_8362() == var1) {
                      return true;

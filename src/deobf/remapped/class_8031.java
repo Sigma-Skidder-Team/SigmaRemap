@@ -75,7 +75,7 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    @Override
    public void method_26606() {
-      if (this.field_41768.field_33055) {
+      if (this.world.field_33055) {
          this.field_41106 = Math.max(0, this.field_41106 - 1);
       }
 
@@ -163,16 +163,16 @@ public class class_8031 extends class_5467 implements class_9897 {
          float var4 = ((float)(this.field_41106 - 4) - var1) / 32.0F;
          return (float) (Math.PI / 5) + 0.21991149F * class_9299.method_42818(var4 * 28.7F);
       } else {
-         return this.field_41106 <= 0 ? this.field_41755 * (float) (Math.PI / 180.0) : (float) (Math.PI / 5);
+         return this.field_41106 <= 0 ? this.rotationPitch * (float) (Math.PI / 180.0) : (float) (Math.PI / 5);
       }
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_24853) {
          return super.method_26857(var1, var2);
-      } else if (!this.field_41768.field_33055 && this.method_45584()) {
+      } else if (!this.world.field_33055 && this.method_45584()) {
          this.method_45583(class_562.field_3335);
          var5.method_28003(1, var1, var1x -> var1x.method_26447(var2));
          return class_6910.field_35520;
@@ -183,7 +183,7 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    @Override
    public void method_45583(class_562 var1) {
-      this.field_41768.method_29540((class_704)null, this, class_463.field_2398, var1, 1.0F, 1.0F);
+      this.world.method_29540((class_704)null, this, class_463.field_2398, var1, 1.0F, 1.0F);
       this.method_36469(true);
       int var4 = 1 + this.field_41717.nextInt(3);
 
@@ -227,7 +227,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2204;
    }
 
@@ -237,7 +237,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2167, 0.15F, 1.0F);
    }
 
@@ -310,15 +310,15 @@ public class class_8031 extends class_5467 implements class_9897 {
       class_9077 var5 = ((class_8031)var1).method_36474();
       class_9077 var6 = ((class_8031)var2).method_36474();
       class_6946 var7 = method_36476(var5, var6);
-      return this.field_41768
+      return this.world
          .method_29549()
-         .<class_6946, class_1504>method_23138(class_1510.field_7997, var7, this.field_41768)
+         .<class_6946, class_1504>method_23138(class_1510.field_7997, var7, this.world)
          .<ItemStack>map(var1x -> var1x.method_41042(var7))
          .<class_2451>map(ItemStack::method_27960)
          .filter(class_239.class::isInstance)
          .<class_239>map(class_239.class::cast)
          .<class_9077>map(class_239::method_1015)
-         .orElseGet(() -> !this.field_41768.field_33033.nextBoolean() ? var6 : var5);
+         .orElseGet(() -> !this.world.field_33033.nextBoolean() ? var6 : var5);
    }
 
    private static class_6946 method_36476(class_9077 var0, class_9077 var1) {

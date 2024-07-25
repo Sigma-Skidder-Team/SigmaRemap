@@ -20,15 +20,15 @@ public class class_3230<T extends class_4040> extends class_3599 {
          && !this.field_16076.method_37151()
          && this.field_16076.method_18600()
          && !this.field_16076.method_18589().method_11259()
-         && !((class_6331)this.field_16076.field_41768).method_28994(this.field_16076.method_37075());
+         && !((class_6331)this.field_16076.world).method_28994(this.field_16076.method_37075());
    }
 
    @Override
    public boolean method_16799() {
       return this.field_16076.method_18600()
          && !this.field_16076.method_18589().method_11259()
-         && this.field_16076.field_41768 instanceof class_6331
-         && !((class_6331)this.field_16076.field_41768).method_28994(this.field_16076.method_37075());
+         && this.field_16076.world instanceof class_6331
+         && !((class_6331)this.field_16076.world).method_28994(this.field_16076.method_37075());
    }
 
    @Override
@@ -52,14 +52,14 @@ public class class_3230<T extends class_4040> extends class_3599 {
       if (var1.method_11306()) {
          HashSet var4 = Sets.newHashSet();
          List var5 = this.field_16076
-            .field_41768
+            .world
             .<class_4040>method_25869(
                class_4040.class, this.field_16076.method_37241().method_18898(16.0), var1x -> !var1x.method_18600() && class_8996.method_41275(var1x, var1)
             );
          var4.addAll(var5);
 
          for (class_4040 var7 : var4) {
-            var1.method_11275(var1.method_11262(), var7, (class_1331)null, true);
+            var1.method_11275(var1.method_11262(), var7, (BlockPos)null, true);
          }
       }
    }

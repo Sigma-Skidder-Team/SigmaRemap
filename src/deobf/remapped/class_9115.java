@@ -6,20 +6,20 @@ import javax.annotation.Nullable;
 public class class_9115 {
    private static String[] field_46661;
    private final class_4924 field_46658;
-   private final class_1331 field_46662;
+   private final BlockPos field_46662;
    private final boolean field_46659;
    private class_2522 field_46663;
    private class_3757 field_46660;
    private boolean field_46657;
 
-   public class_9115(class_4924 var1, class_1331 var2, boolean var3) {
+   public class_9115(class_4924 var1, BlockPos var2, boolean var3) {
       this.field_46658 = var1;
       this.field_46662 = var2.method_6072();
       this.field_46659 = var3;
    }
 
    public class_2522 method_41968() {
-      if (this.field_46663 == null && (this.field_46659 || this.field_46658.method_22559(this.field_46662))) {
+      if (this.field_46663 == null && (this.field_46659 || this.field_46658.isBlockLoaded(this.field_46662))) {
          this.field_46663 = this.field_46658.method_28262(this.field_46662);
       }
 
@@ -40,7 +40,7 @@ public class class_9115 {
       return this.field_46658;
    }
 
-   public class_1331 method_41966() {
+   public BlockPos method_41966() {
       return this.field_46662;
    }
 

@@ -60,7 +60,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    public boolean method_26442(Entity var1) {
       if (var1 instanceof class_5834) {
          this.field_34611 = 10;
-         this.field_41768.method_29587(this, (byte)4);
+         this.world.method_29587(this, (byte)4);
          this.method_37155(class_463.field_2523, 1.0F, this.method_26547());
          class_6902.method_31606(this, (class_5834)var1);
          return class_9479.method_43797(this, (class_5834)var1);
@@ -77,9 +77,9 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      boolean var5 = super.method_37181(var1, var2);
-      if (!this.field_41768.field_33055) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      boolean var5 = super.attackEntityFrom(var1, var2);
+      if (!this.world.field_33055) {
          if (var5 && var1.method_28372() instanceof class_5834) {
             class_6902.method_31607(this, (class_5834)var1.method_28372());
          }
@@ -107,9 +107,9 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().startSection("hoglinBrain");
-      this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().endSection();
+      this.world.method_29599().startSection("hoglinBrain");
+      this.method_26525().method_5141((class_6331)this.world, this);
+      this.world.method_29599().endSection();
       class_6902.method_31614(this);
       if (!this.method_30710()) {
          this.field_34612 = 0;
@@ -117,7 +117,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
          this.field_34612++;
          if (this.field_34612 > 300) {
             this.method_30706(class_463.field_2625);
-            this.method_30712((class_6331)this.field_41768);
+            this.method_30712((class_6331)this.world);
          }
       }
    }
@@ -142,7 +142,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
       }
    }
 
-   public static boolean method_30705(class_6629<class_6704> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_30705(class_6629<class_6704> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return !var1.method_28262(var3.method_6100()).method_8350(class_4783.field_23273);
    }
 
@@ -162,7 +162,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public float method_21376(class_1331 var1, class_4924 var2) {
+   public float method_21376(BlockPos var1, class_4924 var2) {
       if (!class_6902.method_31615(this, var1)) {
          return !var2.method_28262(var1.method_6100()).method_8350(class_4783.field_23598) ? 0.0F : 10.0F;
       } else {
@@ -176,7 +176,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       class_6910 var5 = super.method_26857(var1, var2);
       if (var5.method_31662()) {
          this.method_26883();
@@ -262,7 +262,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    public boolean method_30710() {
-      return !this.field_41768.method_22572().method_40227() && !this.method_30709() && !this.method_26859();
+      return !this.world.method_22572().method_40227() && !this.method_30709() && !this.method_26859();
    }
 
    private void method_30708(boolean var1) {
@@ -296,11 +296,11 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
 
    @Override
    public class_8461 method_26918() {
-      return !this.field_41768.field_33055 ? class_6902.method_31618(this).orElse((class_8461)null) : null;
+      return !this.world.field_33055 ? class_6902.method_31618(this).orElse((class_8461)null) : null;
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2463;
    }
 
@@ -320,7 +320,7 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2064, 0.15F, 1.0F);
    }
 

@@ -258,7 +258,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             double var19 = var7.method_6204(var18);
             if (var8 && var19 > 9.0) {
                this.field_40612.field_9587 = class_9529.method_43958(
-                  var18, Direction.method_1044(var12.field_7336, var12.field_7333, var12.field_7334), new class_1331(var18)
+                  var18, Direction.method_1044(var12.field_7336, var12.field_7333, var12.field_7334), new BlockPos(var18)
                );
             } else if (var19 < var10 || this.field_40612.field_9587 == null) {
                this.field_40612.field_9587 = var16;
@@ -274,8 +274,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
    private void method_35937() {
       float var3 = 1.0F;
-      if (this.field_40612.getRenderViewEntity() instanceof class_9716) {
-         class_9716 var4 = (class_9716)this.field_40612.getRenderViewEntity();
+      if (this.field_40612.getRenderViewEntity() instanceof AbstractClientPlayerEntity) {
+         AbstractClientPlayerEntity var4 = (AbstractClientPlayerEntity)this.field_40612.getRenderViewEntity();
          var3 = var4.method_44876();
       }
 
@@ -701,7 +701,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             ItemStack var5 = ((class_5834)var3).method_26446();
             class_7474 var6 = this.field_40612.field_9587;
             if (var6 != null && var6.method_33990() == class_1430.field_7717) {
-               class_1331 var7 = ((class_9529)var6).method_43955();
+               BlockPos var7 = ((class_9529)var6).method_43955();
                class_2522 var8 = this.field_40612.theWorld.method_28262(var7);
                if (this.field_40612.playerController.getCurrentGameType() != GameType.SPECTATOR) {
                   class_9115 var9 = new class_9115(this.field_40612.theWorld, var7, false);

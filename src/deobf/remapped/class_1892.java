@@ -9,7 +9,7 @@ public class class_1892 {
    private static String[] field_9567;
    private static final Logger field_9566 = LogManager.getLogger();
 
-   public static void method_8436(class_6331 var0, class_1331 var1, String var2, int var3, int var4) {
+   public static void method_8436(class_6331 var0, BlockPos var1, String var2, int var3, int var4) {
       class_8248 var7 = new class_8248(Unpooled.buffer());
       var7.method_37770(var1);
       var7.writeInt(var3);
@@ -26,25 +26,25 @@ public class class_1892 {
    public static void method_8446(class_6331 var0, class_2034 var1) {
    }
 
-   public static void method_8434(class_6331 var0, class_1331 var1) {
+   public static void method_8434(class_6331 var0, BlockPos var1) {
       method_8437(var0, var1);
    }
 
-   public static void method_8432(class_6331 var0, class_1331 var1) {
+   public static void method_8432(class_6331 var0, BlockPos var1) {
       method_8437(var0, var1);
    }
 
-   public static void method_8433(class_6331 var0, class_1331 var1) {
+   public static void method_8433(class_6331 var0, BlockPos var1) {
       method_8437(var0, var1);
    }
 
-   private static void method_8437(class_6331 var0, class_1331 var1) {
+   private static void method_8437(class_6331 var0, BlockPos var1) {
    }
 
    public static void method_8443(World var0, class_5886 var1, class_3998 var2, float var3) {
    }
 
-   public static void method_8430(World var0, class_1331 var1) {
+   public static void method_8430(World var0, BlockPos var1) {
    }
 
    public static void method_8444(class_700 var0, class_3200<?> var1) {

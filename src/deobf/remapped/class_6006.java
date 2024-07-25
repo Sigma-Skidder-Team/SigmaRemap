@@ -16,7 +16,7 @@ public class class_6006 {
       class_1242 var2,
       class_6541 var3,
       class_5799 var4,
-      class_1331 var5,
+      BlockPos var5,
       List<? super class_7624> var6,
       Random var7,
       boolean var8,

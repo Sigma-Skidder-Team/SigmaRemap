@@ -52,7 +52,7 @@ public class SigmaMainMenu extends class_7038 {
    }
 
    public void method_7276() {
-      MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_1995, 1.0F));
+      MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(class_463.field_1995, 1.0F));
    }
 
    private int method_7273() {

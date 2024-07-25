@@ -25,7 +25,7 @@ public class class_5072 extends class_502 {
    }
 
    @Override
-   public void method_2498(class_9379 var1, class_1331 var2, class_2522 var3, Random var4) {
+   public void method_2498(class_9379 var1, BlockPos var2, class_2522 var3, Random var4) {
       class_2921 var7 = var2.method_6089();
       int var8 = this.field_26207 + var4.nextInt(var4.nextInt(this.field_26209 + 1) + 1);
 

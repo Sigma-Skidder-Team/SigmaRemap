@@ -128,7 +128,7 @@ public abstract class class_7114 extends AbstractGui implements IRenderable, cla
          if (this.method_32702(var5)) {
             boolean var8 = this.method_32696(var1, var3);
             if (var8) {
-               this.method_32692(MinecraftClient.getInstance().method_8590());
+               this.method_32692(MinecraftClient.getInstance().getSoundHandler());
                this.method_32694(var1, var3);
                return true;
             }
@@ -205,7 +205,7 @@ public abstract class class_7114 extends AbstractGui implements IRenderable, cla
    }
 
    public void method_32692(class_3541 var1) {
-      var1.method_16345(class_4949.method_22675(class_463.field_1995, 1.0F));
+      var1.play(class_4949.method_22675(class_463.field_1995, 1.0F));
    }
 
    public int method_32699() {

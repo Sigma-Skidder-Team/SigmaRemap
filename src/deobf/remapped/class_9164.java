@@ -25,7 +25,7 @@ public class class_9164 {
    public void method_42248(class_5834 var1, ItemStack var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, int var7) {
       class_3290.method_15104(var4);
       if (!var2.method_28022()) {
-         this.field_46901.method_40268(var1, var2, var3, var4, var5, var6, var1.field_41768, var7, class_5367.field_27381);
+         this.field_46901.method_40268(var1, var2, var3, var4, var5, var6, var1.world, var7, class_5367.field_27381);
       }
 
       class_3290.method_15104(false);
@@ -39,7 +39,7 @@ public class class_9164 {
 
    private void method_42247(class_7966 var1, class_2565 var2, int var3, class_1736 var4) {
       this.field_46897.getTextureManager().bindTexture(this.field_46897.thePlayer.method_44889());
-      class_6670 var7 = (class_6670)this.field_46904.<class_9716>method_28131(this.field_46897.thePlayer);
+      class_6670 var7 = (class_6670)this.field_46904.<AbstractClientPlayerEntity>method_28131(this.field_46897.thePlayer);
       var1.method_36063();
       float var8 = var4 != class_1736.field_8943 ? -1.0F : 1.0F;
       var1.method_36060(class_2426.field_12074.method_11074(92.0F));
@@ -139,7 +139,7 @@ public class class_9164 {
       var1.method_36060(class_2426.field_12080.method_11074(200.0F));
       var1.method_36060(class_2426.field_12074.method_11074(var10 * -135.0F));
       var1.method_36065((double)(var10 * 5.6F), 0.0, 0.0);
-      class_6670 var18 = (class_6670)this.field_46904.<class_9716>method_28131(var17);
+      class_6670 var18 = (class_6670)this.field_46904.<AbstractClientPlayerEntity>method_28131(var17);
       if (!var9) {
          var18.method_30610(var1, var2, var3, var17);
       } else {
@@ -180,8 +180,8 @@ public class class_9164 {
 
    public void method_42243(float var1, class_7966 var2, class_3758 var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.method_26533(var1);
-      class_2584 var9 = (class_2584)MoreObjects.firstNonNull(var4.field_29616, class_2584.field_12791);
-      float var10 = class_9299.method_42795(var1, var4.field_41762, var4.field_41755);
+      Hand var9 = (Hand)MoreObjects.firstNonNull(var4.field_29616, Hand.MAIN_HAND);
+      float var10 = class_9299.method_42795(var1, var4.field_41762, var4.rotationPitch);
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.method_26554()) {
@@ -198,12 +198,12 @@ public class class_9164 {
       } else {
          ItemStack var17 = var4.method_26576();
          if (var17.method_27960() instanceof class_551) {
-            var11 = var4.method_26500() == class_2584.field_12791;
+            var11 = var4.method_26500() == Hand.MAIN_HAND;
             var12 = !var11;
          }
 
-         class_2584 var19 = var4.method_26500();
-         if (var19 == class_2584.field_12791) {
+         Hand var19 = var4.method_26500();
+         if (var19 == Hand.MAIN_HAND) {
             ItemStack var15 = var4.method_26568();
             if (var15.method_27960() instanceof class_4380 && class_4380.method_20408(var15)) {
                var12 = false;
@@ -211,25 +211,25 @@ public class class_9164 {
          }
       }
 
-      float var18 = class_9299.method_42795(var1, var4.field_30515, var4.field_30529);
-      float var20 = class_9299.method_42795(var1, var4.field_30520, var4.field_30531);
-      var2.method_36060(class_2426.field_12080.method_11074((var4.method_37184(var1) - var18) * 0.1F));
-      var2.method_36060(class_2426.field_12074.method_11074((var4.method_37291(var1) - var20) * 0.1F));
+      float var18 = class_9299.method_42795(var1, var4.prevRenderArmPitch, var4.renderArmPitch);
+      float var20 = class_9299.method_42795(var1, var4.prevRenderArmYaw, var4.renderArmYaw);
+      var2.method_36060(class_2426.field_12080.method_11074((var4.getPitch(var1) - var18) * 0.1F));
+      var2.method_36060(class_2426.field_12074.method_11074((var4.getYaw(var1) - var20) * 0.1F));
       if (var11) {
-         float var21 = var9 != class_2584.field_12791 ? 0.0F : var8;
+         float var21 = var9 != Hand.MAIN_HAND ? 0.0F : var8;
          float var16 = 1.0F - class_9299.method_42795(var1, this.field_46902, this.field_46907);
          if (!class_7860.field_40073.method_3596()
-            || !class_7860.method_35566(class_7860.field_40073, class_2584.field_12791, var2, var3, var5, var1, var10, var21, var16, this.field_46899)) {
-            this.method_42244(var4, var1, var10, class_2584.field_12791, var21, this.field_46899, var16, var2, var3, var5);
+            || !class_7860.method_35566(class_7860.field_40073, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field_46899)) {
+            this.method_42244(var4, var1, var10, Hand.MAIN_HAND, var21, this.field_46899, var16, var2, var3, var5);
          }
       }
 
       if (var12) {
-         float var22 = var9 != class_2584.field_12794 ? 0.0F : var8;
+         float var22 = var9 != Hand.OFF_HAND ? 0.0F : var8;
          float var23 = 1.0F - class_9299.method_42795(var1, this.field_46906, this.field_46900);
          if (!class_7860.field_40073.method_3596()
-            || !class_7860.method_35566(class_7860.field_40073, class_2584.field_12794, var2, var3, var5, var1, var10, var22, var23, this.field_46898)) {
-            this.method_42244(var4, var1, var10, class_2584.field_12794, var22, this.field_46898, var23, var2, var3, var5);
+            || !class_7860.method_35566(class_7860.field_40073, Hand.OFF_HAND, var2, var3, var5, var1, var10, var22, var23, this.field_46898)) {
+            this.method_42244(var4, var1, var10, Hand.OFF_HAND, var22, this.field_46898, var23, var2, var3, var5);
          }
       }
 
@@ -239,10 +239,10 @@ public class class_9164 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_42244(
-           class_9716 var1, float var2, float var3, class_2584 var4, float var5, ItemStack var6, float var7, class_7966 var8, class_2565 var9, int var10
+           AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float var5, ItemStack var6, float var7, class_7966 var8, class_2565 var9, int var10
    ) {
       if (!Config.method_14424() || !class_6588.method_30230(var4)) {
-         boolean var13 = var4 == class_2584.field_12791;
+         boolean var13 = var4 == Hand.MAIN_HAND;
          class_1736 var14 = var13 ? var1.method_26432() : var1.method_26432().method_7745();
          var8.method_36063();
          if (var6.method_28022()) {
@@ -438,8 +438,8 @@ public class class_9164 {
       }
    }
 
-   public void method_42250(class_2584 var1) {
-      if (var1 != class_2584.field_12791) {
+   public void method_42250(Hand var1) {
+      if (var1 != Hand.MAIN_HAND) {
          this.field_46900 = 0.0F;
       } else {
          this.field_46907 = 0.0F;

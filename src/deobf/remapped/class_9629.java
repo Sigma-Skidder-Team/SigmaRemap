@@ -16,7 +16,7 @@ public class class_9629 extends class_9310 {
 
    @Override
    public class_9310 method_42987() {
-      return class_6629.field_34230.method_30484(this.field_41768);
+      return class_6629.field_34230.method_30484(this.world);
    }
 
    @Override
@@ -51,7 +51,7 @@ public class class_9629 extends class_9310 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_44436();
       }
    }

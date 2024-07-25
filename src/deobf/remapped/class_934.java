@@ -20,7 +20,7 @@ public class class_934 implements class_2995 {
       if (var11 - this.field_4776 > 1.0E8) {
          this.field_4776 = var11;
          Entity var13 = this.field_4779.gameRenderer.method_35949().method_41633();
-         this.field_4777 = var13.field_41768.method_6676(var13, var13.method_37241().method_18898(6.0), var0 -> true).collect(Collectors.<class_4190>toList());
+         this.field_4777 = var13.world.method_6676(var13, var13.method_37241().method_18898(6.0), var0 -> true).collect(Collectors.<class_4190>toList());
       }
 
       class_7907 var16 = var2.method_11645(RenderLayer.method_16744());

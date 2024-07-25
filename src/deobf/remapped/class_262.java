@@ -10,15 +10,15 @@ public class class_262 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      World var11 = this.field_921.thePlayer.field_41768;
+      World var11 = this.field_921.thePlayer.world;
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       RenderSystem.method_16484(2.0F);
       RenderSystem.method_16354();
       RenderSystem.method_16387(false);
-      class_1331 var12 = new class_1331(var3, var5, var7);
+      BlockPos var12 = new BlockPos(var3, var5, var7);
 
-      for (class_1331 var14 : class_1331.method_6076(var12.method_6104(-6, -6, -6), var12.method_6104(6, 6, 6))) {
+      for (BlockPos var14 : BlockPos.method_6076(var12.method_6104(-6, -6, -6), var12.method_6104(6, 6, 6))) {
          class_2522 var15 = var11.method_28262(var14);
          if (!var15.method_8350(class_4783.field_23184)) {
             class_4190 var16 = var15.method_8334(var11, var14);

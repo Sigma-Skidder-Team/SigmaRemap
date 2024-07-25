@@ -14,7 +14,7 @@ public class class_805 extends class_6967 {
    @Override
    public boolean method_16795() {
       if (this.field_35805 <= 0) {
-         if (!this.field_4300.field_41768.method_29537().method_1285(class_291.field_1047)) {
+         if (!this.field_4300.world.method_29537().method_1285(class_291.field_1047)) {
             return false;
          }
 
@@ -44,8 +44,8 @@ public class class_805 extends class_6967 {
             (float)this.field_4300.method_26862()
          );
       if (this.method_31860()) {
-         World var3 = this.field_4300.field_41768;
-         class_1331 var4 = this.field_35802.method_6081();
+         World var3 = this.field_4300.world;
+         BlockPos var4 = this.field_35802.method_6081();
          class_2522 var5 = var3.method_28262(var4);
          class_6414 var6 = var5.method_8360();
          if (this.field_4301 && var6 instanceof class_9463) {
@@ -67,7 +67,7 @@ public class class_805 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       class_6414 var5 = var1.method_28262(var2).method_8360();
       if (var5 == class_4783.field_23421 && this.field_4299 && !this.field_4301) {
          var2 = var2.method_6081();

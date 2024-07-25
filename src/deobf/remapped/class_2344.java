@@ -366,6 +366,6 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
 
    public class_1736 method_10743(T var1) {
       class_1736 var4 = var1.method_26432();
-      return var1.field_29616 != class_2584.field_12791 ? var4.method_7745() : var4;
+      return var1.field_29616 != Hand.MAIN_HAND ? var4.method_7745() : var4;
    }
 }

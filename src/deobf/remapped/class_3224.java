@@ -19,7 +19,7 @@ public class class_3224 extends class_6451 {
    }
 
    @Override
-   public void method_29410(class_6331 var1, class_1331 var2) {
+   public void method_29410(class_6331 var1, BlockPos var2) {
       class_1010 var5 = new class_1010(var1, var2);
       class_7434 var6 = var5.<class_7434>method_40143();
       int var7 = var6.method_33831();

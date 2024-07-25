@@ -85,7 +85,7 @@ public class class_2858<T> implements class_3065<T> {
    }
 
    @Override
-   public boolean method_14010(class_1331 var1, T var2) {
+   public boolean method_14010(BlockPos var1, T var2) {
       return this.field_13999.contains(new class_4110<Object>(var1, var2));
    }
 
@@ -117,7 +117,7 @@ public class class_2858<T> implements class_3065<T> {
 
       while (var7.hasNext()) {
          class_4110 var8 = (class_4110)var7.next();
-         class_1331 var9 = var8.field_20034;
+         BlockPos var9 = var8.field_20034;
          if (var9.method_12173() >= var3.field_48996
             && var9.method_12173() < var3.field_48991
             && var9.method_12185() >= var3.field_48992
@@ -137,10 +137,10 @@ public class class_2858<T> implements class_3065<T> {
       return (List<class_4110<T>>)var1;
    }
 
-   public void method_13091(class_9616 var1, class_1331 var2) {
+   public void method_13091(class_9616 var1, BlockPos var2) {
       for (class_4110 var6 : this.method_13096(var1, false, false)) {
          if (var1.method_44395(var6.field_20034)) {
-            class_1331 var7 = var6.field_20034.method_6105(var2);
+            BlockPos var7 = var6.field_20034.method_6105(var2);
             Object var8 = var6.method_19096();
             this.method_13092(new class_4110<T>(var7, (T)var8, var6.field_20036, var6.field_20035));
          }
@@ -170,12 +170,12 @@ public class class_2858<T> implements class_3065<T> {
    }
 
    @Override
-   public boolean method_14013(class_1331 var1, T var2) {
+   public boolean method_14013(BlockPos var1, T var2) {
       return this.field_14001.contains(new class_4110<Object>(var1, var2));
    }
 
    @Override
-   public void method_14012(class_1331 var1, T var2, int var3, class_1716 var4) {
+   public void method_14012(BlockPos var1, T var2, int var3, class_1716 var4) {
       if (!this.field_14002.test((T)var2)) {
          this.method_13092(new class_4110<T>(var1, (T)var2, (long)var3 + this.field_13997.method_29546(), var4));
       }

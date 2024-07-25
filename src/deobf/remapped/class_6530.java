@@ -11,7 +11,7 @@ public class class_6530 {
    private final Long2ObjectLinkedOpenHashMap<int[]> field_33226 = new Long2ObjectLinkedOpenHashMap(256, 0.25F);
    private final ReentrantReadWriteLock field_33224 = new ReentrantReadWriteLock();
 
-   public int method_29721(class_1331 var1, IntSupplier var2) {
+   public int method_29721(BlockPos var1, IntSupplier var2) {
       int var5 = var1.method_12173() >> 4;
       int var6 = var1.method_12185() >> 4;
       class_5489 var7 = this.field_33227.get();

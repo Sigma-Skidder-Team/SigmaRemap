@@ -17,7 +17,7 @@ public class class_5661 extends class_6967 {
 
    @Override
    public boolean method_16795() {
-      if (this.field_28700.field_41768.method_29537().method_1285(class_291.field_1047)) {
+      if (this.field_28700.world.method_29537().method_1285(class_291.field_1047)) {
          if (this.field_35805 <= 0) {
             if (!this.method_25621()) {
                this.field_35805 = this.method_31862(this.field_35801);
@@ -36,7 +36,7 @@ public class class_5661 extends class_6967 {
    }
 
    private boolean method_25621() {
-      return this.field_35802 != null && this.method_31855(this.field_35801.field_41768, this.field_35802) ? true : this.method_31856();
+      return this.field_35802 != null && this.method_31855(this.field_35801.world, this.field_35802) ? true : this.method_31856();
    }
 
    @Override
@@ -51,18 +51,18 @@ public class class_5661 extends class_6967 {
       this.field_28702 = 0;
    }
 
-   public void method_25623(class_9379 var1, class_1331 var2) {
+   public void method_25623(class_9379 var1, BlockPos var2) {
    }
 
-   public void method_25622(World var1, class_1331 var2) {
+   public void method_25622(World var1, BlockPos var2) {
    }
 
    @Override
    public void method_16794() {
       super.method_16794();
-      World var3 = this.field_28700.field_41768;
-      class_1331 var4 = this.field_28700.method_37075();
-      class_1331 var5 = this.method_25624(var4, var3);
+      World var3 = this.field_28700.world;
+      BlockPos var4 = this.field_28700.method_37075();
+      BlockPos var5 = this.method_25624(var4, var3);
       Random var6 = this.field_28700.method_26594();
       if (this.method_31860() && var5 != null) {
          if (this.field_28702 > 0) {
@@ -123,15 +123,15 @@ public class class_5661 extends class_6967 {
    }
 
    @Nullable
-   private class_1331 method_25624(class_1331 var1, class_6163 var2) {
+   private BlockPos method_25624(BlockPos var1, class_6163 var2) {
       if (var2.method_28262(var1).method_8350(this.field_28701)) {
          return var1;
       } else {
-         class_1331[] var5 = new class_1331[]{
+         BlockPos[] var5 = new BlockPos[]{
             var1.method_6100(), var1.method_6108(), var1.method_6090(), var1.method_6094(), var1.method_6073(), var1.method_6100().method_6100()
          };
 
-         for (class_1331 var9 : var5) {
+         for (BlockPos var9 : var5) {
             if (var2.method_28262(var9).method_8350(this.field_28701)) {
                return var9;
             }
@@ -142,7 +142,7 @@ public class class_5661 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       class_5990 var5 = var1.method_22555(var2.method_12173() >> 4, var2.method_12185() >> 4, class_7335.field_37514, false);
       return var5 == null
          ? false

@@ -8,14 +8,14 @@ import java.util.Map.Entry;
 
 public class class_8540 implements class_2995 {
    private static String[] field_43713;
-   private final Map<class_1331, class_1331> field_43712 = Maps.newHashMap();
-   private final Map<class_1331, Float> field_43711 = Maps.newHashMap();
-   private final List<class_1331> field_43710 = Lists.newArrayList();
+   private final Map<BlockPos, BlockPos> field_43712 = Maps.newHashMap();
+   private final Map<BlockPos, Float> field_43711 = Maps.newHashMap();
+   private final List<BlockPos> field_43710 = Lists.newArrayList();
 
-   public void method_39313(class_1331 var1, List<class_1331> var2, List<Float> var3) {
+   public void method_39313(BlockPos var1, List<BlockPos> var2, List<Float> var3) {
       for (int var6 = 0; var6 < var2.size(); var6++) {
-         this.field_43712.put((class_1331)var2.get(var6), var1);
-         this.field_43711.put((class_1331)var2.get(var6), (Float)var3.get(var6));
+         this.field_43712.put((BlockPos)var2.get(var6), var1);
+         this.field_43711.put((BlockPos)var2.get(var6), (Float)var3.get(var6));
       }
 
       this.field_43710.add(var1);
@@ -27,14 +27,14 @@ public class class_8540 implements class_2995 {
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       RenderSystem.method_16354();
-      class_1331 var11 = new class_1331(var3, 0.0, var7);
+      BlockPos var11 = new BlockPos(var3, 0.0, var7);
       class_8042 var12 = class_8042.method_36499();
       class_9633 var13 = var12.method_36501();
       var13.method_44471(5, class_7985.field_40903);
 
       for (Entry var15 : this.field_43712.entrySet()) {
-         class_1331 var16 = (class_1331)var15.getKey();
-         class_1331 var17 = (class_1331)var15.getValue();
+         BlockPos var16 = (BlockPos)var15.getKey();
+         BlockPos var17 = (BlockPos)var15.getValue();
          float var18 = (float)(var17.method_12173() * 128 % 256) / 256.0F;
          float var19 = (float)(var17.method_12165() * 128 % 256) / 256.0F;
          float var20 = (float)(var17.method_12185() * 128 % 256) / 256.0F;
@@ -56,7 +56,7 @@ public class class_8540 implements class_2995 {
          }
       }
 
-      for (class_1331 var23 : this.field_43710) {
+      for (BlockPos var23 : this.field_43710) {
          if (var11.method_12171(var23, 160.0)) {
             WorldRenderer.method_20064(
                var13,

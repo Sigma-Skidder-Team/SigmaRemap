@@ -18,8 +18,8 @@ public class class_7841 extends class_6749 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (this.field_41768.field_33055 && !this.field_34834) {
-         this.field_41768.method_43361(class_3090.field_15324, this.method_37302(), this.method_37309(), this.method_37156(), 0.0, 0.0, 0.0);
+      if (this.world.field_33055 && !this.field_34834) {
+         this.world.method_43361(class_3090.field_15324, this.method_37302(), this.method_37309(), this.method_37156(), 0.0, 0.0, 0.0);
       }
    }
 

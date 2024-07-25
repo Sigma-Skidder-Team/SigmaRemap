@@ -14,7 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.util.Supplier;
 
-public class class_2716 extends class_1147 {
+public class ClientRecipeBook extends class_1147 {
    private static final Logger field_13278 = LogManager.getLogger();
    private Map<class_1296, List<class_7735>> field_13280 = ImmutableMap.of();
    private List<class_7735> field_13279 = ImmutableList.of();

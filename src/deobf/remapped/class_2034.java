@@ -14,7 +14,7 @@ public class class_2034 {
       this.field_10327 = var2;
    }
 
-   public class_2034(class_1331 var1) {
+   public class_2034(BlockPos var1) {
       this.field_10328 = var1.method_12173() >> 4;
       this.field_10327 = var1.method_12185() >> 4;
    }
@@ -103,8 +103,8 @@ public class class_2034 {
       return "[" + this.field_10328 + ", " + this.field_10327 + "]";
    }
 
-   public class_1331 method_9546() {
-      return new class_1331(this.method_9535(), 0, this.method_9545());
+   public BlockPos method_9546() {
+      return new BlockPos(this.method_9535(), 0, this.method_9545());
    }
 
    public int method_9549(class_2034 var1) {

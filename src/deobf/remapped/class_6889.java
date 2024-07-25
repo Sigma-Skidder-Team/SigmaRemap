@@ -31,7 +31,7 @@ public class class_6889 extends class_3429 {
          class_5079 var4 = this.method_31573();
 
          for (int var5 = 0; var5 < 8; var5++) {
-            this.field_41768.method_43361(var4, this.method_37302(), this.method_37309(), this.method_37156(), 0.0, 0.0, 0.0);
+            this.world.method_43361(var4, this.method_37302(), this.method_37309(), this.method_37156(), 0.0, 0.0, 0.0);
          }
       }
    }
@@ -41,14 +41,14 @@ public class class_6889 extends class_3429 {
       super.method_26163(var1);
       Entity var4 = var1.method_25524();
       int var5 = !(var4 instanceof class_2806) ? 0 : 3;
-      var4.method_37181(class_6199.method_28355(this, this.method_26166()), (float)var5);
+      var4.attackEntityFrom(DamageSource.method_28355(this, this.method_26166()), (float)var5);
    }
 
    @Override
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
-      if (!this.field_41768.field_33055) {
-         this.field_41768.method_29587(this, (byte)3);
+      if (!this.world.field_33055) {
+         this.world.method_29587(this, (byte)3);
          this.method_37204();
       }
    }

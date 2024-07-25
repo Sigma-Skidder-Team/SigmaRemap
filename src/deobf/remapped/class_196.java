@@ -38,7 +38,7 @@ public class class_196 extends class_8715 {
             this.field_49471 *= 0.7F;
          }
 
-         class_1331 var3 = new class_1331(this.field_49462, this.field_49473, this.field_49465);
+         BlockPos var3 = new BlockPos(this.field_49462, this.field_49473, this.field_49465);
          double var4 = Math.max(
             this.field_49469
                .method_28262(var3)

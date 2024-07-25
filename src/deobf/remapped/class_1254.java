@@ -8,7 +8,7 @@ public class class_1254 extends class_5920<class_7666> {
    private long field_6907;
    private long field_6910;
    private int field_6909;
-   private Optional<class_1331> field_6908 = Optional.<class_1331>empty();
+   private Optional<BlockPos> field_6908 = Optional.<BlockPos>empty();
 
    public class_1254() {
       super(ImmutableMap.of(class_6044.field_30874, class_561.field_3318, class_6044.field_30889, class_561.field_3318));
@@ -31,7 +31,7 @@ public class class_1254 extends class_5920<class_7666> {
       return this.field_6909 < 80 && this.field_6908.isPresent();
    }
 
-   private Optional<class_1331> method_5649(class_6331 var1, class_7666 var2) {
+   private Optional<BlockPos> method_5649(class_6331 var1, class_7666 var2) {
       class_2921 var5 = new class_2921();
       Optional var6 = Optional.empty();
       int var7 = 0;
@@ -42,7 +42,7 @@ public class class_1254 extends class_5920<class_7666> {
                var5.method_13360(var2.method_37075(), var8, var9, var10);
                if (this.method_5648(var5, var1)) {
                   if (var1.field_33033.nextInt(++var7) == 0) {
-                     var6 = Optional.<class_1331>of(var5.method_6072());
+                     var6 = Optional.<BlockPos>of(var5.method_6072());
                   }
                }
             }
@@ -52,7 +52,7 @@ public class class_1254 extends class_5920<class_7666> {
       return var6;
    }
 
-   private boolean method_5648(class_1331 var1, class_6331 var2) {
+   private boolean method_5648(BlockPos var1, class_6331 var2) {
       class_2522 var5 = var2.method_28262(var1);
       class_6414 var6 = var5.method_8360();
       return var6 instanceof class_8557 && !((class_8557)var6).method_39383(var5);
@@ -79,7 +79,7 @@ public class class_1254 extends class_5920<class_7666> {
    }
 
    public void method_5645(class_6331 var1, class_7666 var2, long var3) {
-      class_1331 var7 = this.field_6908.get();
+      BlockPos var7 = this.field_6908.get();
       if (var3 >= this.field_6907 && var7.method_12170(var2.method_37245(), 1.0)) {
          ItemStack var8 = ItemStack.EMPTY;
          class_4657 var9 = var2.method_2017();

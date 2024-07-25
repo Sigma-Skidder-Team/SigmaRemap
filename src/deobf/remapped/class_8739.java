@@ -16,50 +16,50 @@ public class class_8739 extends class_4285<class_1297> {
       super(var1);
    }
 
-   public static boolean method_40122(class_8308 var0, class_1331 var1) {
+   public static boolean method_40122(class_8308 var0, BlockPos var1) {
       return method_40126(var0, var1) || var0.method_38320(var1, var0x -> var0x.method_8349(class_2351.field_11730));
    }
 
-   private static boolean method_40119(class_8308 var0, class_1331 var1) {
+   private static boolean method_40119(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, var0x -> var0x.method_8350(class_4783.field_23323));
    }
 
-   private static boolean method_40125(class_8308 var0, class_1331 var1) {
+   private static boolean method_40125(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, var0x -> var0x.method_8350(class_4783.field_23900));
    }
 
-   public static boolean method_40118(class_8308 var0, class_1331 var1) {
+   public static boolean method_40118(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, var0x -> var0x.method_8345() || var0x.method_8349(class_2351.field_11737));
    }
 
-   private static boolean method_40129(class_8308 var0, class_1331 var1) {
+   private static boolean method_40129(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, var0x -> {
          class_6414 var3 = var0x.method_8360();
          return method_19910(var3) || var3 == class_4783.field_23421;
       });
    }
 
-   private static boolean method_40121(class_8308 var0, class_1331 var1) {
+   private static boolean method_40121(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, var0x -> {
          class_5371 var3 = var0x.method_8362();
          return var3 == class_5371.field_27428;
       });
    }
 
-   public static void method_40128(class_1678 var0, class_1331 var1, class_2522 var2) {
+   public static void method_40128(class_1678 var0, BlockPos var1, class_2522 var2) {
       var0.method_7513(var1, var2, 19);
    }
 
-   public static boolean method_40126(class_8308 var0, class_1331 var1) {
+   public static boolean method_40126(class_8308 var0, BlockPos var1) {
       return method_40118(var0, var1) || method_40121(var0, var1) || method_40125(var0, var1);
    }
 
-   private boolean method_40127(class_6755 var1, Random var2, class_1331 var3, Set<class_1331> var4, Set<class_1331> var5, class_9616 var6, class_1297 var7) {
+   private boolean method_40127(class_6755 var1, Random var2, BlockPos var3, Set<BlockPos> var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
       int var10 = var7.field_7154.method_4973(var2);
       int var11 = var7.field_7147.method_9628(var2, var10, var7);
       int var12 = var10 - var11;
       int var13 = var7.field_7147.method_9632(var2, var12);
-      class_1331 var14;
+      BlockPos var14;
       if (var7.field_7153) {
          var14 = var3;
       } else {
@@ -80,7 +80,7 @@ public class class_8739 extends class_4285<class_1297> {
             var17 = var15;
          }
 
-         var14 = new class_1331(var3.method_12173(), var17, var3.method_12185());
+         var14 = new BlockPos(var3.method_12173(), var17, var3.method_12185());
       }
 
       if (var14.method_12165() < 1 || var14.method_12165() + var10 + 1 > 256) {
@@ -100,7 +100,7 @@ public class class_8739 extends class_4285<class_1297> {
       }
    }
 
-   private int method_40124(class_8308 var1, int var2, class_1331 var3, class_1297 var4) {
+   private int method_40124(class_8308 var1, int var2, BlockPos var3, class_1297 var4) {
       class_2921 var7 = new class_2921();
 
       for (int var8 = 0; var8 <= var2 + 1; var8++) {
@@ -120,11 +120,11 @@ public class class_8739 extends class_4285<class_1297> {
    }
 
    @Override
-   public void method_19906(class_1678 var1, class_1331 var2, class_2522 var3) {
+   public void method_19906(class_1678 var1, BlockPos var2, class_2522 var3) {
       method_40128(var1, var2, var3);
    }
 
-   public final boolean method_40123(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1297 var5) {
+   public final boolean method_40123(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1297 var5) {
       HashSet var8 = Sets.newHashSet();
       HashSet var9 = Sets.newHashSet();
       HashSet var10 = Sets.newHashSet();
@@ -147,7 +147,7 @@ public class class_8739 extends class_4285<class_1297> {
       }
    }
 
-   private class_5791 method_40120(class_9379 var1, class_9616 var2, Set<class_1331> var3, Set<class_1331> var4) {
+   private class_5791 method_40120(class_9379 var1, class_9616 var2, Set<BlockPos> var3, Set<BlockPos> var4) {
       ArrayList var7 = Lists.newArrayList();
       class_3087 var8 = new class_3087(var2.method_44393(), var2.method_44398(), var2.method_44387());
       byte var9 = 6;
@@ -158,7 +158,7 @@ public class class_8739 extends class_4285<class_1297> {
 
       class_2921 var23 = new class_2921();
 
-      for (class_1331 var12 : Lists.newArrayList(var4)) {
+      for (BlockPos var12 : Lists.newArrayList(var4)) {
          if (var2.method_44395(var12)) {
             var8.method_26202(
                var12.method_12173() - var2.field_48996, var12.method_12165() - var2.field_48995, var12.method_12185() - var2.field_48992, true, true
@@ -166,7 +166,7 @@ public class class_8739 extends class_4285<class_1297> {
          }
       }
 
-      for (class_1331 var26 : Lists.newArrayList(var3)) {
+      for (BlockPos var26 : Lists.newArrayList(var3)) {
          if (var2.method_44395(var26)) {
             var8.method_26202(
                var26.method_12173() - var2.field_48996, var26.method_12165() - var2.field_48995, var26.method_12185() - var2.field_48992, true, true
@@ -194,7 +194,7 @@ public class class_8739 extends class_4285<class_1297> {
          Set var27 = (Set)var7.get(var25 - 1);
          Set var28 = (Set)var7.get(var25);
 
-         for (class_1331 var30 : var27) {
+         for (BlockPos var30 : var27) {
             if (var2.method_44395(var30)) {
                var8.method_26202(
                   var30.method_12173() - var2.field_48996, var30.method_12165() - var2.field_48995, var30.method_12185() - var2.field_48992, true, true

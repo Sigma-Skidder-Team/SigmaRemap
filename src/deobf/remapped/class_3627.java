@@ -9,7 +9,7 @@ public class class_3627 extends class_4285<class_9253> {
       super(var1);
    }
 
-   public boolean method_16901(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_9253 var5) {
+   public boolean method_16901(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_9253 var5) {
       float var8 = var3.nextFloat() * (float) Math.PI;
       float var9 = (float)var5.field_47236 / 8.0F;
       int var10 = class_9299.method_42816(((float)var5.field_47236 / 16.0F * 2.0F + 1.0F) / 2.0F);

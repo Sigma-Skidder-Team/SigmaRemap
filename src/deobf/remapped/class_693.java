@@ -8,7 +8,7 @@ public class class_693 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_3126(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_3126(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       float var8 = (float)(var3.nextInt(3) + 4);
 
       for (int var9 = 0; var8 > 0.5F; var9--) {

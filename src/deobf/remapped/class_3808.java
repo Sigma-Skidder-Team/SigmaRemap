@@ -63,9 +63,9 @@ public abstract class class_3808<M extends class_8666<M>> extends class_4938 {
       long var5 = class_6979.method_31903(var1);
       class_1201 var7 = this.method_17744(var5, true);
       return var7.method_5314(
-         class_6979.method_31913(class_1331.method_6080(var1)),
-         class_6979.method_31913(class_1331.method_6067(var1)),
-         class_6979.method_31913(class_1331.method_6092(var1))
+         class_6979.method_31913(BlockPos.method_6080(var1)),
+         class_6979.method_31913(BlockPos.method_6067(var1)),
+         class_6979.method_31913(BlockPos.method_6092(var1))
       );
    }
 
@@ -77,16 +77,16 @@ public abstract class class_3808<M extends class_8666<M>> extends class_4938 {
 
       class_1201 var8 = this.method_17744(var6, true);
       var8.method_5323(
-         class_6979.method_31913(class_1331.method_6080(var1)),
-         class_6979.method_31913(class_1331.method_6067(var1)),
-         class_6979.method_31913(class_1331.method_6092(var1)),
+         class_6979.method_31913(BlockPos.method_6080(var1)),
+         class_6979.method_31913(BlockPos.method_6067(var1)),
+         class_6979.method_31913(BlockPos.method_6092(var1)),
          var3
       );
 
       for (int var9 = -1; var9 <= 1; var9++) {
          for (int var10 = -1; var10 <= 1; var10++) {
             for (int var11 = -1; var11 <= 1; var11++) {
-               this.field_18635.add(class_6979.method_31903(class_1331.method_6096(var1, var10, var11, var9)));
+               this.field_18635.add(class_6979.method_31903(BlockPos.method_6096(var1, var10, var11, var9)));
             }
          }
       }
@@ -136,7 +136,7 @@ public abstract class class_3808<M extends class_8666<M>> extends class_4938 {
             for (int var7 = -1; var7 <= 1; var7++) {
                for (int var8 = -1; var8 <= 1; var8++) {
                   for (int var9 = -1; var9 <= 1; var9++) {
-                     this.field_18635.add(class_6979.method_31903(class_1331.method_6096(var1, var8, var9, var7)));
+                     this.field_18635.add(class_6979.method_31903(BlockPos.method_6096(var1, var8, var9, var7)));
                   }
                }
             }
@@ -166,7 +166,7 @@ public abstract class class_3808<M extends class_8666<M>> extends class_4938 {
          for (int var9 = 0; var9 < 16; var9++) {
             for (int var10 = 0; var10 < 16; var10++) {
                for (int var11 = 0; var11 < 16; var11++) {
-                  long var12 = class_1331.method_6107(var6 + var9, var7 + var10, var8 + var11);
+                  long var12 = BlockPos.method_6107(var6 + var9, var7 + var10, var8 + var11);
                   var1.method_27690(var12);
                }
             }
@@ -270,28 +270,28 @@ public abstract class class_3808<M extends class_8666<M>> extends class_4938 {
                      long var19;
                      switch (var12) {
                         case field_802:
-                           var17 = class_1331.method_6107(var6 + var16, var7, var8 + var15);
-                           var19 = class_1331.method_6107(var6 + var16, var7 - 1, var8 + var15);
+                           var17 = BlockPos.method_6107(var6 + var16, var7, var8 + var15);
+                           var19 = BlockPos.method_6107(var6 + var16, var7 - 1, var8 + var15);
                            break;
                         case field_817:
-                           var17 = class_1331.method_6107(var6 + var16, var7 + 16 - 1, var8 + var15);
-                           var19 = class_1331.method_6107(var6 + var16, var7 + 16, var8 + var15);
+                           var17 = BlockPos.method_6107(var6 + var16, var7 + 16 - 1, var8 + var15);
+                           var19 = BlockPos.method_6107(var6 + var16, var7 + 16, var8 + var15);
                            break;
                         case field_818:
-                           var17 = class_1331.method_6107(var6 + var15, var7 + var16, var8);
-                           var19 = class_1331.method_6107(var6 + var15, var7 + var16, var8 - 1);
+                           var17 = BlockPos.method_6107(var6 + var15, var7 + var16, var8);
+                           var19 = BlockPos.method_6107(var6 + var15, var7 + var16, var8 - 1);
                            break;
                         case field_800:
-                           var17 = class_1331.method_6107(var6 + var15, var7 + var16, var8 + 16 - 1);
-                           var19 = class_1331.method_6107(var6 + var15, var7 + var16, var8 + 16);
+                           var17 = BlockPos.method_6107(var6 + var15, var7 + var16, var8 + 16 - 1);
+                           var19 = BlockPos.method_6107(var6 + var15, var7 + var16, var8 + 16);
                            break;
                         case field_809:
-                           var17 = class_1331.method_6107(var6, var7 + var15, var8 + var16);
-                           var19 = class_1331.method_6107(var6 - 1, var7 + var15, var8 + var16);
+                           var17 = BlockPos.method_6107(var6, var7 + var15, var8 + var16);
+                           var19 = BlockPos.method_6107(var6 - 1, var7 + var15, var8 + var16);
                            break;
                         default:
-                           var17 = class_1331.method_6107(var6 + 16 - 1, var7 + var15, var8 + var16);
-                           var19 = class_1331.method_6107(var6 + 16, var7 + var15, var8 + var16);
+                           var17 = BlockPos.method_6107(var6 + 16 - 1, var7 + var15, var8 + var16);
+                           var19 = BlockPos.method_6107(var6 + 16, var7 + var15, var8 + var16);
                      }
 
                      var1.method_27703(var17, var19, var1.method_27700(var17, var19, var1.method_27698(var17)), false);

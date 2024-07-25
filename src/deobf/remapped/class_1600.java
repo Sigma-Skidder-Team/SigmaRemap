@@ -3,9 +3,9 @@ package remapped;
 public class class_1600 implements class_7279 {
    private static String[] field_8330;
    private final class_5093 field_8329;
-   private final class_1331 field_8331;
+   private final BlockPos field_8331;
 
-   private class_1600(class_5093 var1, class_1331 var2) {
+   private class_1600(class_5093 var1, BlockPos var2) {
       this.field_8329 = var1;
       this.field_8331 = var2;
    }
@@ -28,10 +28,10 @@ public class class_1600 implements class_7279 {
    }
 
    public static class_5704 method_7177(class_6352 var0) {
-      return () -> new class_1600(var0.method_29097(), class_1331.field_7306);
+      return () -> new class_1600(var0.method_29097(), BlockPos.field_7306);
    }
 
-   public static class_5704 method_7179(class_6352 var0, class_1331 var1) {
+   public static class_5704 method_7179(class_6352 var0, BlockPos var1) {
       return () -> new class_1600(var0.method_29097(), var1);
    }
 }

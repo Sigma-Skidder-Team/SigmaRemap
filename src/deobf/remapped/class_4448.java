@@ -7,7 +7,7 @@ public class class_4448 implements Packet<class_392> {
    private static String[] field_21686;
    private int field_21683;
    private UUID field_21681;
-   private class_1331 field_21682;
+   private BlockPos field_21682;
    private Direction field_21685;
    private int field_21684;
 
@@ -52,7 +52,7 @@ public class class_4448 implements Packet<class_392> {
       return this.field_21681;
    }
 
-   public class_1331 method_20629() {
+   public BlockPos method_20629() {
       return this.field_21682;
    }
 

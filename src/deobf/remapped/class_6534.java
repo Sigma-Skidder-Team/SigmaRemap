@@ -34,7 +34,7 @@ public class class_6534 extends class_7732 {
    }
 
    @Override
-   public class_2522 method_35002(Random var1, class_1331 var2) {
+   public class_2522 method_35002(Random var1, BlockPos var2) {
       return this.field_33234.method_7282(var1);
    }
 }

@@ -32,14 +32,14 @@ public class class_2080<T> implements class_3065<T> {
       return class_9477.method_43782(this.field_10471);
    }
 
-   public void method_9708(class_3065<T> var1, Function<class_1331, T> var2) {
+   public void method_9708(class_3065<T> var1, Function<BlockPos, T> var2) {
       for (int var5 = 0; var5 < this.field_10471.length; var5++) {
          if (this.field_10471[var5] != null) {
             ShortListIterator var6 = this.field_10471[var5].iterator();
 
             while (var6.hasNext()) {
                Short var7 = (Short)var6.next();
-               class_1331 var8 = class_7481.method_34017(var7, var5, this.field_10472);
+               BlockPos var8 = class_7481.method_34017(var7, var5, this.field_10472);
                var1.method_14011(var8, var2.apply(var8), 0);
             }
 
@@ -49,17 +49,17 @@ public class class_2080<T> implements class_3065<T> {
    }
 
    @Override
-   public boolean method_14013(class_1331 var1, T var2) {
+   public boolean method_14013(BlockPos var1, T var2) {
       return false;
    }
 
    @Override
-   public void method_14012(class_1331 var1, T var2, int var3, class_1716 var4) {
+   public void method_14012(BlockPos var1, T var2, int var3, class_1716 var4) {
       class_5990.method_27337(this.field_10471, var1.method_12165() >> 4).add(class_7481.method_34024(var1));
    }
 
    @Override
-   public boolean method_14010(class_1331 var1, T var2) {
+   public boolean method_14010(BlockPos var1, T var2) {
       return false;
    }
 }

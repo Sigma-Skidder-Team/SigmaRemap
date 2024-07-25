@@ -66,7 +66,7 @@ public class class_1166 extends class_3266 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return (!var1.<Boolean>method_10313(field_6610) ? field_6609 : field_6613)[var1.<Direction>method_10313(field_16180).ordinal()];
    }
 
@@ -78,9 +78,9 @@ public class class_1166 extends class_3266 {
    }
 
    @Override
-   public void method_29265(World var1, class_1331 var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
       if (!var1.field_33055 && var4.playerAbilities.isCreativeMode) {
-         class_1331 var7 = var2.method_6098(var3.<Direction>method_10313(field_16180).method_1046());
+         BlockPos var7 = var2.method_6098(var3.<Direction>method_10313(field_16180).method_1046());
          if (this.method_5184(var3, var1.method_28262(var7))) {
             var1.method_7510(var7, false);
          }
@@ -90,10 +90,10 @@ public class class_1166 extends class_3266 {
    }
 
    @Override
-   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var1.method_8350(var4.method_8360())) {
          super.method_10761(var1, var2, var3, var4, var5);
-         class_1331 var8 = var3.method_6098(var1.<Direction>method_10313(field_16180).method_1046());
+         BlockPos var8 = var3.method_6098(var1.<Direction>method_10313(field_16180).method_1046());
          if (this.method_5184(var1, var2.method_28262(var8))) {
             var2.method_7510(var8, true);
          }
@@ -101,29 +101,29 @@ public class class_1166 extends class_3266 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       return var2.method_1046() == var1.method_10313(field_16180) && !var1.method_8309(var4, var5)
          ? class_4783.field_23184.method_29260()
          : super.method_10763(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       class_2522 var6 = var2.method_28262(var3.method_6098(var1.<Direction>method_10313(field_16180).method_1046()));
       return this.method_5184(var1, var6)
          || var6.method_8350(class_4783.field_23833) && var6.<Direction>method_10313(field_16180) == var1.<Direction>method_10313(field_16180);
    }
 
    @Override
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       if (var1.method_8309(var2, var3)) {
-         class_1331 var9 = var3.method_6098(var1.<Direction>method_10313(field_16180).method_1046());
+         BlockPos var9 = var3.method_6098(var1.<Direction>method_10313(field_16180).method_1046());
          var2.method_28262(var9).method_8343(var2, var9, var4, var5, false);
       }
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return new ItemStack(var3.method_10313(field_6616) != class_989.field_5035 ? class_4783.field_23649 : class_4783.field_23861);
    }
 
@@ -143,7 +143,7 @@ public class class_1166 extends class_3266 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

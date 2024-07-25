@@ -50,7 +50,7 @@ public class class_7539 implements class_2995 {
 
    private static void method_34330(class_3998 var0, float var1, boolean var2, boolean var3, double var4, double var6, double var8) {
       method_34334(var0, var4, var6, var8);
-      class_1331 var12 = var0.method_18426();
+      BlockPos var12 = var0.method_18426();
       if (method_34333(var12, var4, var6, var8) <= 80.0F) {
          class_3372.method_15562(
             new class_4092(
@@ -187,7 +187,7 @@ public class class_7539 implements class_2995 {
       var9.method_36500();
    }
 
-   private static float method_34333(class_1331 var0, double var1, double var3, double var5) {
+   private static float method_34333(BlockPos var0, double var1, double var3, double var5) {
       return (float)(Math.abs((double)var0.method_12173() - var1) + Math.abs((double)var0.method_12165() - var3) + Math.abs((double)var0.method_12185() - var5));
    }
 }

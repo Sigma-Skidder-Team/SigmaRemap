@@ -46,7 +46,7 @@ public class class_6011 extends class_1829 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2668;
    }
 
@@ -74,13 +74,13 @@ public class class_6011 extends class_1829 {
       this.field_30608 = this.field_30609;
       this.field_30612 = this.field_30612 + this.field_30620;
       if ((double)this.field_30612 > Math.PI * 2) {
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.field_30612 = (float)((double)this.field_30612 - (Math.PI * 2));
             if (this.field_41717.nextInt(10) == 0) {
                this.field_30620 = 1.0F / (this.field_41717.nextFloat() + 1.0F) * 0.2F;
             }
 
-            this.field_41768.method_29587(this, (byte)19);
+            this.world.method_29587(this, (byte)19);
          } else {
             this.field_30612 = (float) (Math.PI * 2);
          }
@@ -88,7 +88,7 @@ public class class_6011 extends class_1829 {
 
       if (!this.method_37134()) {
          this.field_30609 = class_9299.method_42804(class_9299.method_42818(this.field_30612)) * (float) Math.PI * 0.25F;
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             double var5 = this.method_37098().field_7333;
             if (!this.isPotionActive(Effects.LevitationEffect)) {
                if (!this.method_37078()) {
@@ -118,7 +118,7 @@ public class class_6011 extends class_1829 {
             }
          }
 
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.method_37214(
                (double)(this.field_30607 * this.field_30614), (double)(this.field_30615 * this.field_30614), (double)(this.field_30617 * this.field_30614)
             );
@@ -128,7 +128,7 @@ public class class_6011 extends class_1829 {
          float var4 = class_9299.method_42842(method_37266(var7));
          this.field_29605 = this.field_29605
             + (-((float)class_9299.method_42821(var7.field_7336, var7.field_7334)) * (180.0F / (float)Math.PI) - this.field_29605) * 0.1F;
-         this.field_41701 = this.field_29605;
+         this.rotationYaw = this.field_29605;
          this.field_30618 = (float)((double)this.field_30618 + Math.PI * (double)this.field_30606 * 1.5);
          this.field_30616 = this.field_30616
             + (-((float)class_9299.method_42821((double)var4, var7.field_7333)) * (180.0F / (float)Math.PI) - this.field_30616) * 0.1F;
@@ -136,8 +136,8 @@ public class class_6011 extends class_1829 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      if (super.method_37181(var1, var2) && this.method_26531() != null) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (super.attackEntityFrom(var1, var2) && this.method_26531() != null) {
          this.method_27438();
          return true;
       } else {
@@ -159,7 +159,7 @@ public class class_6011 extends class_1829 {
             new class_1343((double)this.field_41717.nextFloat() * 0.6 - 0.3, -1.0, (double)this.field_41717.nextFloat() * 0.6 - 0.3)
          );
          class_1343 var6 = var5.method_6209(0.3 + (double)(this.field_41717.nextFloat() * 2.0F));
-         ((class_6331)this.field_41768)
+         ((class_6331)this.world)
             .method_28957(
                class_3090.field_15368, var3.field_7336, var3.field_7333 + 0.5, var3.field_7334, 0, var6.field_7336, var6.field_7333, var6.field_7334, 0.1F
             );
@@ -171,7 +171,7 @@ public class class_6011 extends class_1829 {
       this.method_37226(class_7412.field_37839, this.method_37098());
    }
 
-   public static boolean method_27439(class_6629<class_6011> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_27439(class_6629<class_6011> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var3.method_12165() > 45 && var3.method_12165() < var1.method_22552();
    }
 

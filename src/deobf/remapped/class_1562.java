@@ -12,7 +12,7 @@ public class class_1562 {
       this.field_8234 = var1;
    }
 
-   public boolean method_7073(class_6331 var1, class_1331 var2) {
+   public boolean method_7073(class_6331 var1, BlockPos var2) {
       if (this != field_8232) {
          return var1.method_29585(var2) ? this.field_8234.method_35307(var1.method_22573(var2)) : false;
       } else {

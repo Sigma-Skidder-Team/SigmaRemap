@@ -56,7 +56,7 @@ public class class_3024 extends class_5467 {
       }
 
       this.field_14831 = this.field_14831 + this.field_14825 * 2.0F;
-      if (!this.field_41768.field_33055 && this.method_37330() && !this.method_26449() && !this.method_13809() && --this.field_14824 <= 0) {
+      if (!this.world.field_33055 && this.method_37330() && !this.method_26449() && !this.method_13809() && --this.field_14824 <= 0) {
          this.method_37155(class_463.field_2876, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
          this.method_37312(class_4897.field_24962);
          this.field_14824 = this.field_41717.nextInt(6000) + 6000;
@@ -74,7 +74,7 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2424;
    }
 
@@ -84,7 +84,7 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2840, 0.15F, 1.0F);
    }
 

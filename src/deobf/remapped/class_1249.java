@@ -22,7 +22,7 @@ public abstract class class_1249 {
    public boolean field_6874;
    public long field_6880;
    public class_1546 field_6888;
-   private class_1331 field_6872;
+   private BlockPos field_6872;
    private int field_6878;
    private float field_6883 = 1.0F;
    private final class_8976 field_6873;
@@ -43,7 +43,7 @@ public abstract class class_1249 {
       this.field_6883 = var1;
    }
 
-   public class_1331 method_5603() {
+   public BlockPos method_5603() {
       return this.field_6872;
    }
 
@@ -70,21 +70,21 @@ public abstract class class_1249 {
 
    @Nullable
    public final class_3998 method_5614(double var1, double var3, double var5, int var7) {
-      return this.method_5615(new class_1331(var1, var3, var5), var7);
+      return this.method_5615(new BlockPos(var1, var3, var5), var7);
    }
 
    @Nullable
-   public class_3998 method_5623(Stream<class_1331> var1, int var2) {
-      return this.method_5606(var1.collect(Collectors.<class_1331>toSet()), 8, false, var2);
+   public class_3998 method_5623(Stream<BlockPos> var1, int var2) {
+      return this.method_5606(var1.collect(Collectors.<BlockPos>toSet()), 8, false, var2);
    }
 
    @Nullable
-   public class_3998 method_5626(Set<class_1331> var1, int var2) {
+   public class_3998 method_5626(Set<BlockPos> var1, int var2) {
       return this.method_5606(var1, 8, false, var2);
    }
 
    @Nullable
-   public class_3998 method_5615(class_1331 var1, int var2) {
+   public class_3998 method_5615(BlockPos var1, int var2) {
       return this.method_5606(ImmutableSet.of(var1), 8, false, var2);
    }
 
@@ -94,7 +94,7 @@ public abstract class class_1249 {
    }
 
    @Nullable
-   public class_3998 method_5606(Set<class_1331> var1, int var2, boolean var3, int var4) {
+   public class_3998 method_5606(Set<BlockPos> var1, int var2, boolean var3, int var4) {
       if (!var1.isEmpty()) {
          if (!(this.field_6877.method_37309() < 0.0)) {
             if (this.method_5601()) {
@@ -103,7 +103,7 @@ public abstract class class_1249 {
                } else {
                   this.field_6882.method_29599().startSection("pathfind");
                   float var7 = (float)this.field_6877.method_26575(class_7331.field_37471);
-                  class_1331 var8 = !var3 ? this.field_6877.method_37075() : this.field_6877.method_37075().method_6081();
+                  BlockPos var8 = !var3 ? this.field_6877.method_37075() : this.field_6877.method_37075().method_6081();
                   int var9 = (int)(var7 + (float)var2);
                   class_9525 var10 = new class_9525(this.field_6882, var8.method_6104(-var9, -var9, -var9), var8.method_6104(var9, var9, var9));
                   class_3998 var11 = this.field_6873.method_41159(var10, this.field_6877, var1, var7, var4, this.field_6883);
@@ -192,7 +192,7 @@ public abstract class class_1249 {
          class_1892.method_8443(this.field_6882, this.field_6877, this.field_6887, this.field_6889);
          if (!this.method_5591()) {
             class_1343 var5 = this.field_6887.method_18439(this.field_6877);
-            class_1331 var6 = new class_1331(var5);
+            BlockPos var6 = new BlockPos(var5);
             this.field_6877
                .method_26905()
                .method_12879(
@@ -208,7 +208,7 @@ public abstract class class_1249 {
    public void method_5592() {
       class_1343 var3 = this.method_5596();
       this.field_6889 = !(this.field_6877.method_37086() > 0.75F) ? 0.75F - this.field_6877.method_37086() / 2.0F : this.field_6877.method_37086() / 2.0F;
-      class_1331 var4 = this.field_6887.method_18449();
+      BlockPos var4 = this.field_6887.method_18449();
       double var5 = Math.abs(this.field_6877.method_37302() - ((double)var4.method_12173() + 0.5));
       double var7 = Math.abs(this.field_6877.method_37309() - (double)var4.method_12165());
       double var9 = Math.abs(this.field_6877.method_37156() - ((double)var4.method_12185() + 0.5));
@@ -250,7 +250,7 @@ public abstract class class_1249 {
       }
 
       if (this.field_6887 != null && !this.field_6887.method_18436()) {
-         class_1331 var4 = this.field_6887.method_18449();
+         BlockPos var4 = this.field_6887.method_18449();
          if (!var4.equals(this.field_6879)) {
             this.field_6879 = var4;
             double var5 = var1.method_6195(class_1343.method_6200(this.field_6879));
@@ -304,7 +304,7 @@ public abstract class class_1249 {
          for (int var3 = 0; var3 < this.field_6887.method_18437(); var3++) {
             class_5851 var4 = this.field_6887.method_18447(var3);
             class_5851 var5 = var3 + 1 >= this.field_6887.method_18437() ? null : this.field_6887.method_18447(var3 + 1);
-            class_2522 var6 = this.field_6882.method_28262(new class_1331(var4.field_29731, var4.field_29735, var4.field_29736));
+            class_2522 var6 = this.field_6882.method_28262(new BlockPos(var4.field_29731, var4.field_29735, var4.field_29736));
             if (var6.method_8350(class_4783.field_23673)) {
                this.field_6887.method_18427(var3, var4.method_26692(var4.field_29731, var4.field_29735 + 1, var4.field_29736));
                if (var5 != null && var4.field_29735 >= var5.field_29735) {
@@ -317,8 +317,8 @@ public abstract class class_1249 {
 
    public abstract boolean method_5599(class_1343 var1, class_1343 var2, int var3, int var4, int var5);
 
-   public boolean method_5609(class_1331 var1) {
-      class_1331 var4 = var1.method_6100();
+   public boolean method_5609(BlockPos var1) {
+      BlockPos var4 = var1.method_6100();
       return this.field_6882.method_28262(var4).method_8321(this.field_6882, var4);
    }
 
@@ -334,7 +334,7 @@ public abstract class class_1249 {
       return this.field_6888.method_7015();
    }
 
-   public void method_5625(class_1331 var1) {
+   public void method_5625(BlockPos var1) {
       if (this.field_6887 != null && !this.field_6887.method_18436() && this.field_6887.method_18437() != 0) {
          class_5851 var4 = this.field_6887.method_18448();
          class_1343 var5 = new class_1343(

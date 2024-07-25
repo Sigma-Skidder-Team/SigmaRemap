@@ -21,7 +21,7 @@ public class class_5675 extends class_7732 {
    }
 
    @Override
-   public class_2522 method_35002(Random var1, class_1331 var2) {
+   public class_2522 method_35002(Random var1, BlockPos var2) {
       class_9249 var5 = class_9249.method_42627(var1);
       return this.field_28763.method_29260().method_10308(class_7947.field_40671, var5);
    }

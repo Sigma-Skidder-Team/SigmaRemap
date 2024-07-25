@@ -53,7 +53,7 @@ public class RearViewModule extends PremiumModule {
       float var4 = class_7211.method_33014(
          var1, client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156()
       )[0];
-      return this.method_43925(client.thePlayer.field_41701, var4) <= 90.0F;
+      return this.method_43925(client.thePlayer.rotationYaw, var4) <= 90.0F;
    }
 
    public float method_43925(float var1, float var2) {
@@ -186,8 +186,8 @@ public class RearViewModule extends PremiumModule {
                int var5 = Math.min(MinecraftClient.method_8501(), var4);
                var5 = Math.max(var5, 60);
                long var6 = Util.getMeasuringTimeNano() - var1.field_8849;
-               float var8 = client.thePlayer.field_41701;
-               client.thePlayer.field_41701 += 180.0F;
+               float var8 = client.thePlayer.rotationYaw;
+               client.thePlayer.rotationYaw += 180.0F;
                RenderSystem.enableDepthTest();
                GL11.glAlphaFunc(519, 0.0F);
                double var9 = client.gameOptions.field_45543;
@@ -201,7 +201,7 @@ public class RearViewModule extends PremiumModule {
                SigmaMainClass.field_3951 = false;
                client.gameRenderer.field_40627 = true;
                client.gameOptions.field_45543 = var9;
-               client.thePlayer.field_41701 = var8;
+               client.thePlayer.rotationYaw = var8;
                RenderSystem.method_16489();
                client.method_8584().method_19717(true);
             }

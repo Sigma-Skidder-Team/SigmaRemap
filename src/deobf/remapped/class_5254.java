@@ -27,7 +27,7 @@ public class class_5254 extends class_7732 {
    }
 
    @Override
-   public class_2522 method_35002(Random var1, class_1331 var2) {
+   public class_2522 method_35002(Random var1, BlockPos var2) {
       double var5 = class_9299.method_42827(
          (1.0 + class_6325.field_32304.method_31321((double)var2.method_12173() / 48.0, (double)var2.method_12185() / 48.0, false)) / 2.0, 0.0, 0.9999
       );

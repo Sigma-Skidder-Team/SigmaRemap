@@ -9,8 +9,8 @@ import org.lwjgl.opengl.GL11;
 public class class_9093 extends Module {
    private List<class_7606> field_46576;
    private class_6009 field_46580;
-   private class_1331 field_46570;
-   private class_1331 field_46573;
+   private BlockPos field_46570;
+   private BlockPos field_46573;
    private class_6414 field_46571;
    private class_7606 field_46577;
    private boolean field_46575;
@@ -39,8 +39,8 @@ public class class_9093 extends Module {
       }
    }
 
-   private class_1331 method_41923(int var1) {
-      return new class_1331(
+   private BlockPos method_41923(int var1) {
+      return new BlockPos(
          this.field_46570.method_12173() + this.field_46580.method_27432().get(var1).method_1250().method_19587(),
          this.field_46570.method_12165() + this.field_46580.method_27432().get(var1).method_1250().method_19639(),
          this.field_46570.method_12185() + this.field_46580.method_27432().get(var1).method_1250().method_19638()
@@ -51,7 +51,7 @@ public class class_9093 extends Module {
       return class_6414.method_29293(this.field_46580.method_27432().get(var1).method_1251()).method_8360();
    }
 
-   private class_1331 method_41925() {
+   private BlockPos method_41925() {
       this.field_46571 = this.method_41926(this.field_46569);
       this.field_46573 = this.method_41923(this.field_46569++);
       return this.field_46573;
@@ -68,7 +68,7 @@ public class class_9093 extends Module {
          this.field_46580 = new class_6009(var3);
          if (this.field_46580.method_27431() && this.field_46580.method_27432().size() > 0) {
             class_314.method_1443(this.field_46580.method_27432().size() + " blocks loaded from schematic");
-            this.field_46570 = new class_1331(
+            this.field_46570 = new BlockPos(
                client.thePlayer.method_37302() + this.field_46580.method_27435().method_19594() * 0.0,
                client.thePlayer.method_37309() + this.field_46580.method_27435().method_19634() * 0.0,
                client.thePlayer.method_37156() + this.field_46580.method_27435().method_19612() * 0.0
@@ -90,7 +90,7 @@ public class class_9093 extends Module {
          GL11.glAlphaFunc(516, 0.0F);
 
          for (class_278 var5 : this.field_46580.method_27432()) {
-            class_1331 var6 = new class_1331(
+            BlockPos var6 = new BlockPos(
                (double)this.field_46570.method_12173() + var5.method_1250().method_19594(),
                (double)this.field_46570.method_12165() + var5.method_1250().method_19634(),
                (double)this.field_46570.method_12185() + var5.method_1250().method_19612()
@@ -108,7 +108,7 @@ public class class_9093 extends Module {
          }
 
          for (class_7606 var15 : this.field_46576) {
-            class_1331 var16 = var15.field_38725;
+            BlockPos var16 = var15.field_38725;
             double var17 = (double)var16.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
             double var18 = (double)var16.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
             double var19 = (double)var16.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();

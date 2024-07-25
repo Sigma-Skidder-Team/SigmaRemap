@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 public class class_2022 extends class_1944 {
    private static final class_7821<Byte> field_10248 = class_8073.<Byte>method_36641(class_2022.class, class_2734.field_13361);
    private static final class_4931 field_10249 = new class_4931().method_22607(4.0).method_22601();
-   private class_1331 field_10246;
+   private BlockPos field_10246;
 
    public class_2022(class_6629<? extends class_2022> var1, World var2) {
       super(var1, var2);
@@ -38,7 +38,7 @@ public class class_2022 extends class_1944 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2789;
    }
 
@@ -91,15 +91,15 @@ public class class_2022 extends class_1944 {
    @Override
    public void method_26919() {
       super.method_26919();
-      class_1331 var3 = this.method_37075();
-      class_1331 var4 = var3.method_6081();
+      BlockPos var3 = this.method_37075();
+      BlockPos var4 = var3.method_6081();
       if (!this.method_9392()) {
-         if (this.field_10246 != null && (!this.field_41768.method_22548(this.field_10246) || this.field_10246.method_12165() < 1)) {
+         if (this.field_10246 != null && (!this.world.method_22548(this.field_10246) || this.field_10246.method_12165() < 1)) {
             this.field_10246 = null;
          }
 
          if (this.field_10246 == null || this.field_41717.nextInt(30) == 0 || this.field_10246.method_12170(this.method_37245(), 2.0)) {
-            this.field_10246 = new class_1331(
+            this.field_10246 = new BlockPos(
                this.method_37302() + (double)this.field_41717.nextInt(7) - (double)this.field_41717.nextInt(7),
                this.method_37309() + (double)this.field_41717.nextInt(6) - 2.0,
                this.method_37156() + (double)this.field_41717.nextInt(7) - (double)this.field_41717.nextInt(7)
@@ -117,28 +117,28 @@ public class class_2022 extends class_1944 {
          );
          this.method_37215(var13);
          float var14 = (float)(class_9299.method_42821(var13.field_7334, var13.field_7336) * 180.0F / (float)Math.PI) - 90.0F;
-         float var15 = class_9299.method_42810(var14 - this.field_41701);
+         float var15 = class_9299.method_42810(var14 - this.rotationYaw);
          this.field_29673 = 0.5F;
-         this.field_41701 += var15;
-         if (this.field_41717.nextInt(100) == 0 && this.field_41768.method_28262(var4).method_8356(this.field_41768, var4)) {
+         this.rotationYaw += var15;
+         if (this.field_41717.nextInt(100) == 0 && this.world.method_28262(var4).method_8356(this.world, var4)) {
             this.method_9395(true);
          }
       } else {
          boolean var5 = this.method_37378();
-         if (!this.field_41768.method_28262(var4).method_8356(this.field_41768, var3)) {
+         if (!this.world.method_28262(var4).method_8356(this.world, var3)) {
             this.method_9395(false);
             if (!var5) {
-               this.field_41768.method_43365((class_704)null, 1025, var3, 0);
+               this.world.method_43365((class_704)null, 1025, var3, 0);
             }
          } else {
             if (this.field_41717.nextInt(200) == 0) {
                this.field_29618 = (float)this.field_41717.nextInt(360);
             }
 
-            if (this.field_41768.method_25859(field_10249, this) != null) {
+            if (this.world.method_25859(field_10249, this) != null) {
                this.method_9395(false);
                if (!var5) {
-                  this.field_41768.method_43365((class_704)null, 1025, var3, 0);
+                  this.world.method_43365((class_704)null, 1025, var3, 0);
                }
             }
          }
@@ -156,7 +156,7 @@ public class class_2022 extends class_1944 {
    }
 
    @Override
-   public void method_37105(double var1, boolean var3, class_2522 var4, class_1331 var5) {
+   public void method_37105(double var1, boolean var3, class_2522 var4, BlockPos var5) {
    }
 
    @Override
@@ -165,13 +165,13 @@ public class class_2022 extends class_1944 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
-         if (!this.field_41768.field_33055 && this.method_9392()) {
+         if (!this.world.field_33055 && this.method_9392()) {
             this.method_9395(false);
          }
 
-         return super.method_37181(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }
@@ -189,7 +189,7 @@ public class class_2022 extends class_1944 {
       var1.method_25921("BatFlags", this.field_41735.<Byte>method_36640(field_10248));
    }
 
-   public static boolean method_9393(class_6629<class_2022> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_9393(class_6629<class_2022> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (var3.method_12165() < var1.method_22552()) {
          int var7 = var1.method_22573(var3);
          byte var8 = 4;

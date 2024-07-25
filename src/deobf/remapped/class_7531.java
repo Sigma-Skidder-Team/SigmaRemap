@@ -7,7 +7,7 @@ public class class_7531 extends class_7164<class_2806, class_5107<class_2806>> {
       super(var1, new class_5107<class_2806>(), 0.5F);
    }
 
-   public int method_34312(class_2806 var1, class_1331 var2) {
+   public int method_34312(class_2806 var1, BlockPos var2) {
       return 15;
    }
 

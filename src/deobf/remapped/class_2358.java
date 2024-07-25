@@ -11,7 +11,7 @@ public abstract class class_2358 extends class_8346 {
       super(var1);
    }
 
-   public static void method_10817(class_6163 var0, Random var1, class_1331 var2, Identifier var3) {
+   public static void method_10817(class_6163 var0, Random var1, BlockPos var2, Identifier var3) {
       class_3757 var6 = var0.method_28260(var2);
       if (var6 instanceof class_2358) {
          ((class_2358)var6).method_10816(var3, var1.nextLong());

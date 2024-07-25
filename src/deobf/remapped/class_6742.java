@@ -29,7 +29,7 @@ public class class_6742 implements class_2995 {
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       RenderSystem.method_16354();
-      class_1331 var12 = new class_1331(var11.method_41627().field_7336, 0.0, var11.method_41627().field_7334);
+      BlockPos var12 = new BlockPos(var11.method_41627().field_7336, 0.0, var11.method_41627().field_7334);
       this.field_34795.forEach((var1x, var2x) -> {
          for (int var5x = 0; var5x < var2x.size(); var5x++) {
             class_118 var6 = var2x.get(var5x);

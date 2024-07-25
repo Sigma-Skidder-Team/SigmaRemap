@@ -14,10 +14,10 @@ public class class_6171 extends class_2103 {
 
    @Nullable
    @Override
-   public class_4099 method_9859(class_4924 var1, class_1331 var2, class_1331 var3, class_4099 var4, class_4099 var5, class_8478 var6) {
+   public class_4099 method_9859(class_4924 var1, BlockPos var2, BlockPos var3, class_4099 var4, class_4099 var5, class_8478 var6) {
       Random var9 = var6.method_39052(var5.field_19965);
       class_2522 var10 = var5.field_19967;
-      class_1331 var11 = var5.field_19965;
+      BlockPos var11 = var5.field_19965;
       class_2522 var12 = null;
       if (var10.method_8350(class_4783.field_23355) || var10.method_8350(class_4783.field_23644) || var10.method_8350(class_4783.field_23543)) {
          var12 = this.method_28290(var9);

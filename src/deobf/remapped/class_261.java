@@ -91,7 +91,7 @@ public class class_261 implements class_8886 {
       this.field_914.accept(new TranslationTextComponent("connect.joining"));
       this.field_916 = var1.method_6883();
       this.field_920.method_23501(class_5776.field_29176);
-      this.field_920.method_23495(new class_1092(this.field_915, this.field_917, this.field_920, this.field_916));
+      this.field_920.method_23495(new ClientPlayNetHandler(this.field_915, this.field_917, this.field_920, this.field_916));
    }
 
    @Override

@@ -25,24 +25,24 @@ public class class_8138 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_41681[var1.<Integer>method_10313(field_41679)];
    }
 
    @Override
-   public boolean method_12870(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_12870(class_2522 var1, class_6163 var2, BlockPos var3) {
       return var1.method_8350(class_4783.field_23421);
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var2.method_25261(var3, 0) >= 9) {
          float var7 = class_8557.method_39377(this, var2, var3);
          if (var4.nextInt((int)(25.0F / var7) + 1) == 0) {
             int var8 = var1.<Integer>method_10313(field_41679);
             if (var8 >= 7) {
                Direction var9 = class_9594.field_48893.method_44313(var4);
-               class_1331 var10 = var3.method_6098(var9);
+               BlockPos var10 = var3.method_6098(var9);
                class_2522 var11 = var2.method_28262(var10.method_6100());
                if (var2.method_28262(var10).method_8345()
                   && (
@@ -73,23 +73,23 @@ public class class_8138 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       class_2451 var6 = this.method_37035();
       return var6 != null ? new ItemStack(var6) : ItemStack.EMPTY;
    }
 
    @Override
-   public boolean method_18358(class_6163 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public boolean method_18358(class_6163 var1, BlockPos var2, class_2522 var3, boolean var4) {
       return var3.<Integer>method_10313(field_41679) != 7;
    }
 
    @Override
-   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, BlockPos var3, class_2522 var4) {
       return true;
    }
 
    @Override
-   public void method_18359(class_6331 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public void method_18359(class_6331 var1, Random var2, BlockPos var3, class_2522 var4) {
       int var7 = Math.min(7, var4.<Integer>method_10313(field_41679) + class_9299.method_42824(var1.field_33033, 2, 5));
       class_2522 var8 = var4.method_10308(field_41679, Integer.valueOf(var7));
       var1.method_7513(var3, var8, 2);

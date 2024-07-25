@@ -1290,7 +1290,7 @@ public class Config {
       return var0 ^ var0 >> 15;
    }
 
-   public static int method_14242(class_1331 var0, int var1) {
+   public static int method_14242(BlockPos var0, int var1) {
       int var4 = method_14419(var1 + 37);
       var4 = method_14419(var4 + var0.method_12173());
       var4 = method_14419(var4 + var0.method_12185());

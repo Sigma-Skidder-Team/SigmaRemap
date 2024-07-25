@@ -43,7 +43,7 @@ public class class_1086 extends class_5766 {
    }
 
    private void method_4763() {
-      class_1092 var3 = this.field_943.thePlayer.field_30532;
+      ClientPlayNetHandler var3 = this.field_943.thePlayer.connection;
       var3.method_4813(new class_2317(this.field_943.thePlayer, class_4127.field_20102));
    }
 }

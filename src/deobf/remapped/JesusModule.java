@@ -119,7 +119,7 @@ public class JesusModule extends Module {
 
                      double var14 = this.method_32080((double)this.field_36210);
                      if (var14 != -999.0) {
-                        client.thePlayer.field_30502 = 0.0;
+                        client.thePlayer.lastReportedPosY = 0.0;
                         var1.method_35235(var14);
                      }
                   }
@@ -181,7 +181,7 @@ public class JesusModule extends Module {
       int var9 = class_9299.method_42847(var1.field_19938);
       int var10 = class_9299.method_42815(var1.field_19942);
       class_2927 var11 = class_2927.method_13381(var2);
-      return class_1331.method_6083(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(client.theWorld.method_28262(var1x)));
+      return BlockPos.method_6083(var5, var7, var9, var6 - 1, var8 - 1, var10 - 1).anyMatch(var1x -> var11.test(client.theWorld.method_28262(var1x)));
    }
 
    public static boolean method_32081() {
@@ -193,7 +193,7 @@ public class JesusModule extends Module {
          while (var4.hasNext()) {
             class_4190 var6 = (class_4190)var4.next();
             class_4092 var7 = var6.method_19483();
-            class_1331 var8 = new class_1331(var7.method_18926());
+            BlockPos var8 = new BlockPos(var7.method_18926());
             class_6414 var9 = client.theWorld.method_28262(var8).method_8360();
             if (var9 != class_4783.field_23900
                && var9 != class_4783.field_23811

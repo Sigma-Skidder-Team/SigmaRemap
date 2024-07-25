@@ -27,8 +27,8 @@ public class class_8742 {
       this.field_44771[3] = 1.0F;
    }
 
-   public void method_40134(class_5561 var1, class_2522 var2, class_1331 var3, Direction var4, float[] var5, BitSet var6, boolean var7) {
-      class_1331 var10 = !var6.get(0) ? var3 : var3.method_6098(var4);
+   public void method_40134(class_5561 var1, class_2522 var2, BlockPos var3, Direction var4, float[] var5, BitSet var6, boolean var7) {
+      BlockPos var10 = !var6.get(0) ? var3 : var3.method_6098(var4);
       class_9356 var11 = class_9356.method_43210(var4);
       class_523 var12 = this.field_44772;
       class_109 var13 = class_2174.method_10098();

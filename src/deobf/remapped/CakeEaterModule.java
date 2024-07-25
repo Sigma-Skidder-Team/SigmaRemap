@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class CakeEaterModule extends Module {
-   public static class_1331 field_24090;
+   public static BlockPos field_24090;
 
    public CakeEaterModule() {
       super(Category.WORLD, "CakeEater", "Automatically eats cake");
@@ -45,9 +45,9 @@ public class CakeEaterModule extends Module {
          if (!var1.method_6449()) {
             if (field_24090 != null) {
                if (this.getBooleanValueByName("No Swing") && !this.getBooleanValueByName("Mineplex")) {
-                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
                } else if (!this.getBooleanValueByName("No Swing")) {
-                  client.thePlayer.method_26597(class_2584.field_12791);
+                  client.thePlayer.method_26597(Hand.MAIN_HAND);
                }
 
                class_9529 var7 = new class_9529(
@@ -60,7 +60,7 @@ public class CakeEaterModule extends Module {
                   field_24090,
                   false
                );
-               client.method_8614().method_4813(new class_8585(class_2584.field_12791, var7));
+               client.method_8614().method_4813(new class_8585(Hand.MAIN_HAND, var7));
             }
          } else {
             List var8 = this.method_22209(!this.getBooleanValueByName("Mineplex") ? client.playerController.method_42146() : 6.0F);
@@ -68,7 +68,7 @@ public class CakeEaterModule extends Module {
                field_24090 = null;
             } else {
                Collections.sort(var8, new class_9688(this));
-               field_24090 = (class_1331)var8.get(0);
+               field_24090 = (BlockPos)var8.get(0);
                if (!this.getBooleanValueByName("Mineplex")) {
                   float[] var6 = class_7211.method_33006(
                      (double)field_24090.method_12173() + 0.5, (double)field_24090.method_12185() + 0.5, (double)field_24090.method_12165()
@@ -81,13 +81,13 @@ public class CakeEaterModule extends Module {
       }
    }
 
-   private List<class_1331> method_22209(float var1) {
+   private List<BlockPos> method_22209(float var1) {
       ArrayList var4 = new ArrayList();
 
       for (float var5 = var1 + 2.0F; var5 >= -var1 + 1.0F; var5--) {
          for (float var6 = -var1; var6 <= var1; var6++) {
             for (float var7 = -var1; var7 <= var1; var7++) {
-               class_1331 var8 = new class_1331(
+               BlockPos var8 = new BlockPos(
                   client.thePlayer.method_37302() + (double)var6,
                   client.thePlayer.method_37309() + (double)var5,
                   client.thePlayer.method_37156() + (double)var7

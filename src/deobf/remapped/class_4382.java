@@ -58,7 +58,7 @@ public abstract class class_4382 {
       return this.method_20433(var1) + 5;
    }
 
-   public int method_20438(int var1, class_6199 var2) {
+   public int method_20438(int var1, DamageSource var2) {
       return 0;
    }
 

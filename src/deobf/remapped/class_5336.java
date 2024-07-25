@@ -10,7 +10,7 @@ public class class_5336 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       List var6 = var1.<class_4478>method_25869(
          class_4478.class, var2.method_37241().method_18898(2.0), var0 -> var0 != null && var0.method_37330() && var0.method_20795() instanceof class_2770
       );
@@ -19,7 +19,7 @@ public class class_5336 extends class_2451 {
          class_9529 var10 = method_11238(var1, var2, class_9583.field_48749);
          if (var10.method_33990() != class_1430.field_7721) {
             if (var10.method_33990() == class_1430.field_7717) {
-               class_1331 var9 = var10.method_43955();
+               BlockPos var9 = var10.method_43955();
                if (!var1.method_29538(var2, var9)) {
                   return class_954.<ItemStack>method_4207(var7);
                }

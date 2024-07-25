@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_523 extends class_1331 {
+public class class_523 extends BlockPos {
    private static String[] field_3188;
    private int field_3189;
    private int field_3191;
@@ -56,7 +56,7 @@ public class class_523 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6098(Direction var1) {
+   public BlockPos method_6098(Direction var1) {
       if (this.field_3193 > 0) {
          if (this.field_3192 == null) {
             this.field_3192 = new class_523[Direction.field_803.length];
@@ -83,17 +83,17 @@ public class class_523 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6099(Direction var1, int var2) {
+   public BlockPos method_6099(Direction var1, int var2) {
       return var2 != 1 ? super.method_6099(var1, var2).method_6072() : this.method_6098(var1);
    }
 
-   public void method_2549(class_1331 var1, Direction var2) {
+   public void method_2549(BlockPos var1, Direction var2) {
       this.field_3189 = var1.method_12173() + var2.method_1041();
       this.field_3191 = var1.method_12165() + var2.method_1054();
       this.field_3194 = var1.method_12185() + var2.method_1034();
    }
 
-   public void method_2550(class_1331 var1, Direction var2, Direction var3) {
+   public void method_2550(BlockPos var1, Direction var2, Direction var3) {
       this.field_3189 = var1.method_12173() + var2.method_1041() + var3.method_1041();
       this.field_3191 = var1.method_12165() + var2.method_1054() + var3.method_1054();
       this.field_3194 = var1.method_12185() + var2.method_1034() + var3.method_1034();
@@ -115,17 +115,17 @@ public class class_523 extends class_1331 {
    }
 
    @Override
-   public class_1331 method_6072() {
-      return new class_1331(this.field_3189, this.field_3191, this.field_3194);
+   public BlockPos method_6072() {
+      return new BlockPos(this.field_3189, this.field_3191, this.field_3194);
    }
 
-   public static Iterable method_2546(class_1331 var0, class_1331 var1) {
-      class_1331 var4 = new class_1331(
+   public static Iterable method_2546(BlockPos var0, BlockPos var1) {
+      BlockPos var4 = new BlockPos(
          Math.min(var0.method_12173(), var1.method_12173()),
          Math.min(var0.method_12165(), var1.method_12165()),
          Math.min(var0.method_12185(), var1.method_12185())
       );
-      class_1331 var5 = new class_1331(
+      BlockPos var5 = new BlockPos(
          Math.max(var0.method_12173(), var1.method_12173()),
          Math.max(var0.method_12165(), var1.method_12165()),
          Math.max(var0.method_12185(), var1.method_12185())

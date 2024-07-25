@@ -36,7 +36,7 @@ public class class_6082 extends class_3599 {
          this.field_31126.method_37155(this.field_31126.method_18591(), class_4040.method_18601(this.field_31126), class_4040.method_18597(this.field_31126));
       }
 
-      if (!this.field_31127.method_37070() && class_4040.method_18604(this.field_31127).nextInt(50) == 0) {
+      if (!this.field_31127.isPassenger() && class_4040.method_18604(this.field_31127).nextInt(50) == 0) {
          this.field_31127.method_26886().method_18772();
       }
 

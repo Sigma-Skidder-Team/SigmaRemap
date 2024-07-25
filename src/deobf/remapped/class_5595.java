@@ -15,8 +15,8 @@ public class class_5595 extends class_7164<class_6092, class_7916<class_6092>> {
    public class_1343 method_25402(class_6092 var1, float var2) {
       int var5 = var1.method_27925();
       if (var5 > 0 && var1.method_27918()) {
-         class_1331 var6 = var1.method_27906();
-         class_1331 var7 = var1.method_27921();
+         BlockPos var6 = var1.method_27906();
+         BlockPos var7 = var1.method_27921();
          double var8 = (double)((float)var5 - var2) / 6.0;
          var8 *= var8;
          double var10 = (double)(var6.method_12173() - var7.method_12173()) * var8;

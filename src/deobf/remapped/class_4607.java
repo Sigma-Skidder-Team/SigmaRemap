@@ -4,7 +4,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public abstract class class_4607 extends class_1173 {
-   private class_1331 field_22413;
+   private BlockPos field_22413;
    private boolean field_22414;
    private boolean field_22415;
 
@@ -72,7 +72,7 @@ public abstract class class_4607 extends class_1173 {
       return super.method_26864(var1, var2, var3, var4, var5);
    }
 
-   public static boolean method_21355(class_6629<? extends class_4607> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_21355(class_6629<? extends class_4607> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_25266(class_2957.field_14440, var3) <= 8 ? method_5198(var0, var1, var2, var3, var4) : false;
    }
 
@@ -81,12 +81,12 @@ public abstract class class_4607 extends class_1173 {
       return !this.field_22415 || var1 > 16384.0;
    }
 
-   public void method_21349(class_1331 var1) {
+   public void method_21349(BlockPos var1) {
       this.field_22413 = var1;
       this.field_22415 = true;
    }
 
-   public class_1331 method_21358() {
+   public BlockPos method_21358() {
       return this.field_22413;
    }
 

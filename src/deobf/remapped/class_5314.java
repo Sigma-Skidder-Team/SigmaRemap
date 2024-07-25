@@ -22,7 +22,7 @@ public class class_5314 extends class_9260 {
    }
 
    private void method_24247(class_6331 var1, class_7666 var2, class_8150 var3, class_2522 var4) {
-      class_1331 var7 = var3.method_37409();
+      BlockPos var7 = var3.method_37409();
       if (var4.<Integer>method_10313(class_7689.field_39050) == 8) {
          var4 = class_7689.method_34839(var4, var1, var7);
       }
@@ -59,7 +59,7 @@ public class class_5314 extends class_9260 {
       this.method_24245(var1, var4, var7, var13);
    }
 
-   private void method_24245(class_6331 var1, class_2522 var2, class_1331 var3, class_2522 var4) {
+   private void method_24245(class_6331 var1, class_2522 var2, BlockPos var3, class_2522 var4) {
       var1.method_43364(1500, var3, var4 == var2 ? 0 : 1);
    }
 

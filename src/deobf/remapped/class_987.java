@@ -29,7 +29,7 @@ public class class_987<WC extends class_9472> {
    }
 
    public boolean method_4312(
-      class_5990 var1, Function<class_1331, class_6325> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9
+           class_5990 var1, Function<BlockPos, class_6325> var2, Random var3, int var4, int var5, int var6, int var7, int var8, BitSet var9
    ) {
       return this.field_5028.method_27722(var1, var2, var3, var4, var5, var6, var7, var8, var9, this.field_5031);
    }

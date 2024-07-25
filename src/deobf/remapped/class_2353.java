@@ -36,13 +36,13 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public void method_10804(class_2522 var1, class_9379 var2, class_1331 var3, int var4, int var5) {
+   public void method_10804(class_2522 var1, class_9379 var2, BlockPos var3, int var4, int var5) {
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Deprecated
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       switch (var4) {
          case field_14271:
             return !var1.method_8306(var2, var3);
@@ -56,7 +56,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       return var1;
    }
 
@@ -66,28 +66,28 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       class_1892.method_8430(var2, var3);
    }
 
    @Deprecated
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
    }
 
    @Deprecated
-   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (this.method_10802() && !var1.method_8350(var4.method_8360())) {
          var2.method_29597(var3);
       }
    }
 
    @Deprecated
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       return class_6910.field_35521;
    }
 
    @Deprecated
-   public boolean method_10800(class_2522 var1, World var2, class_1331 var3, int var4, int var5) {
+   public boolean method_10800(class_2522 var1, World var2, BlockPos var3, int var4, int var5) {
       return false;
    }
 
@@ -159,27 +159,27 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public long method_10759(class_2522 var1, class_1331 var2) {
+   public long method_10759(class_2522 var1, BlockPos var2) {
       return class_9299.method_42802(var2);
    }
 
    @Deprecated
-   public class_4190 method_10790(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_10790(class_2522 var1, class_6163 var2, BlockPos var3) {
       return var1.method_8334(var2, var3);
    }
 
    @Deprecated
-   public class_4190 method_10774(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_10774(class_2522 var1, class_6163 var2, BlockPos var3) {
       return this.method_10775(var1, var2, var3, class_214.method_928());
    }
 
    @Deprecated
-   public class_4190 method_10776(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_10776(class_2522 var1, class_6163 var2, BlockPos var3) {
       return class_3370.method_15536();
    }
 
    @Deprecated
-   public int method_10794(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public int method_10794(class_2522 var1, class_6163 var2, BlockPos var3) {
       if (!var1.method_8321(var2, var3)) {
          return !var1.method_8369(var2, var3) ? 1 : 0;
       } else {
@@ -189,51 +189,51 @@ public abstract class class_2353 {
 
    @Nullable
    @Deprecated
-   public class_4259 method_10767(class_2522 var1, World var2, class_1331 var3) {
+   public class_4259 method_10767(class_2522 var1, World var2, BlockPos var3) {
       return null;
    }
 
    @Deprecated
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       return true;
    }
 
    @Deprecated
-   public float method_10779(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public float method_10779(class_2522 var1, class_6163 var2, BlockPos var3) {
       return !var1.method_8306(var2, var3) ? 1.0F : 0.2F;
    }
 
    @Deprecated
-   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, BlockPos var3) {
       return 0;
    }
 
    @Deprecated
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return class_3370.method_15524();
    }
 
    @Deprecated
-   public class_4190 method_10775(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10775(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return !this.field_11822 ? class_3370.method_15536() : var1.method_8334(var2, var3);
    }
 
    @Deprecated
-   public class_4190 method_10757(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10757(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.method_10775(var1, var2, var3, var4);
    }
 
    @Deprecated
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       this.method_10797(var1, var2, var3, var4);
    }
 
    @Deprecated
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
    }
 
    @Deprecated
-   public float method_10799(class_2522 var1, class_704 var2, class_6163 var3, class_1331 var4) {
+   public float method_10799(class_2522 var1, class_704 var2, class_6163 var3, BlockPos var4) {
       float var7 = var1.method_8341(var3, var4);
       if (var7 != -1.0F) {
          int var8 = !var2.method_3232(var1) ? 100 : 30;
@@ -244,24 +244,24 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, ItemStack var4) {
+   public void method_10765(class_2522 var1, class_6331 var2, BlockPos var3, ItemStack var4) {
    }
 
    @Deprecated
-   public void method_10791(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
    }
 
    @Deprecated
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return 0;
    }
 
    @Deprecated
-   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
+   public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
    }
 
    @Deprecated
-   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10778(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return 0;
    }
 

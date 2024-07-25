@@ -47,8 +47,8 @@ public class class_6296 extends class_7067<class_3942> {
             double var33 = this.field_36493.gameOptions.field_45543;
             var33 /= 100.0;
             class_1343 var35 = new class_1343((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
-            var35 = var35.method_6212(-class_9299.method_42795(var3, var9.field_41762, var9.field_41755) * (float) (Math.PI / 180.0));
-            var35 = var35.method_6192(-class_9299.method_42795(var3, var9.field_41711, var9.field_41701) * (float) (Math.PI / 180.0));
+            var35 = var35.method_6212(-class_9299.method_42795(var3, var9.field_41762, var9.rotationPitch) * (float) (Math.PI / 180.0));
+            var35 = var35.method_6192(-class_9299.method_42795(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
             var35 = var35.method_6192(var17 * 0.5F);
             var35 = var35.method_6212(-var17 * 0.7F);
             var27 = class_9299.method_42794((double)var3, var9.field_41767, var9.method_37302()) + var35.field_7336;

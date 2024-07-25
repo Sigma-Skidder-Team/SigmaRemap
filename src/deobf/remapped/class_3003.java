@@ -28,7 +28,7 @@ public class class_3003 extends class_2451 {
          return class_6910.field_35520;
       } else {
          ItemStack var5 = var1.method_21867();
-         class_1331 var6 = var1.method_21858();
+         BlockPos var6 = var1.method_21858();
          Direction var7 = var1.method_21857();
          class_2522 var8 = var4.method_28262(var6);
          if (var8.method_8350(class_4783.field_23617)) {
@@ -44,7 +44,7 @@ public class class_3003 extends class_2451 {
             }
          }
 
-         class_1331 var12;
+         BlockPos var12;
          if (!var8.method_8324(var4, var6).method_19485()) {
             var12 = var6.method_6098(var7);
          } else {
@@ -64,13 +64,13 @@ public class class_3003 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48749);
       if (var7.method_33990() == class_1430.field_7717) {
          if (var1 instanceof class_6331) {
             class_9529 var8 = var7;
-            class_1331 var9 = var8.method_43955();
+            BlockPos var9 = var8.method_43955();
             if (var1.method_28262(var9).method_8360() instanceof class_7855) {
                if (var1.method_29538(var2, var9) && var2.method_3208(var9, var8.method_43956(), var6)) {
                   class_6629 var10 = this.method_13719(var6.method_27990());

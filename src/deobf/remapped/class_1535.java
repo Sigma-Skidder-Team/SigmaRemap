@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 public class class_1535 {
    private static String[] field_8139;
 
-   public static class_8623 method_6972(class_1331 var0, class_9249 var1, int var2, class_9249 var3, int var4, Predicate<class_1331> var5) {
+   public static class_8623 method_6972(BlockPos var0, class_9249 var1, int var2, class_9249 var3, int var4, Predicate<BlockPos> var5) {
       class_2921 var8 = var0.method_6089();
       Direction var9 = Direction.method_1043(class_137.field_403, var1);
       Direction var10 = var9.method_1046();
@@ -66,7 +66,7 @@ public class class_1535 {
       return new class_8623(var0.method_6068(var1, var29 - var15).method_6068(var3, var31 - var17), var20, var21);
    }
 
-   private static int method_6973(Predicate<class_1331> var0, class_2921 var1, Direction var2, int var3) {
+   private static int method_6973(Predicate<BlockPos> var0, class_2921 var1, Direction var2, int var3) {
       int var6 = 0;
 
       while (var6 < var3 && var0.test(var1.method_13368(var2))) {

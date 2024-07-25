@@ -31,14 +31,14 @@ public class class_8011 extends class_3429 implements class_3713 {
    @Override
    public void method_26165(class_9529 var1) {
       super.method_26165(var1);
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          ItemStack var4 = this.method_17246();
          class_6004 var5 = class_9541.method_43990(var4);
          List var6 = class_9541.method_43993(var4);
          boolean var7 = var5 == class_3697.field_18108 && var6.isEmpty();
          Direction var8 = var1.method_43956();
-         class_1331 var9 = var1.method_43955();
-         class_1331 var10 = var9.method_6098(var8);
+         BlockPos var9 = var1.method_43955();
+         BlockPos var10 = var9.method_6098(var8);
          if (var7) {
             this.method_36348(var10, var8);
             this.method_36348(var10.method_6098(var8.method_1046()), var8);
@@ -53,7 +53,7 @@ public class class_8011 extends class_3429 implements class_3713 {
    @Override
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          ItemStack var4 = this.method_17246();
          class_6004 var5 = class_9541.method_43990(var4);
          List var6 = class_9541.method_43993(var4);
@@ -71,19 +71,19 @@ public class class_8011 extends class_3429 implements class_3713 {
          }
 
          int var8 = !var5.method_27402() ? 2002 : 2007;
-         this.field_41768.method_43364(var8, this.method_37075(), class_9541.method_43987(var4));
+         this.world.method_43364(var8, this.method_37075(), class_9541.method_43987(var4));
          this.method_37204();
       }
    }
 
    private void method_36351() {
       class_4092 var3 = this.method_37241().method_18899(4.0, 2.0, 4.0);
-      List var4 = this.field_41768.<class_5834>method_25869(class_5834.class, var3, field_41037);
+      List var4 = this.world.<class_5834>method_25869(class_5834.class, var3, field_41037);
       if (!var4.isEmpty()) {
          for (class_5834 var6 : var4) {
             double var7 = this.method_37275(var6);
             if (var7 < 16.0 && var6.method_26537()) {
-               var6.method_37181(class_6199.method_28369(var6, this.method_26166()), 1.0F);
+               var6.attackEntityFrom(DamageSource.method_28369(var6, this.method_26166()), 1.0F);
             }
          }
       }
@@ -91,7 +91,7 @@ public class class_8011 extends class_3429 implements class_3713 {
 
    private void method_36350(List<class_2250> var1, Entity var2) {
       class_4092 var5 = this.method_37241().method_18899(4.0, 2.0, 4.0);
-      List var6 = this.field_41768.<class_5834>method_25868(class_5834.class, var5);
+      List var6 = this.world.<class_5834>method_25868(class_5834.class, var5);
       if (!var6.isEmpty()) {
          for (class_5834 var8 : var6) {
             if (var8.method_26611()) {
@@ -120,7 +120,7 @@ public class class_8011 extends class_3429 implements class_3713 {
    }
 
    private void method_36347(ItemStack var1, class_6004 var2) {
-      class_4478 var5 = new class_4478(this.field_41768, this.method_37302(), this.method_37309(), this.method_37156());
+      class_4478 var5 = new class_4478(this.world, this.method_37302(), this.method_37309(), this.method_37156());
       Entity var6 = this.method_26166();
       if (var6 instanceof class_5834) {
          var5.method_20782((class_5834)var6);
@@ -141,23 +141,23 @@ public class class_8011 extends class_3429 implements class_3713 {
          var5.method_20785(var9.method_25947("CustomPotionColor"));
       }
 
-      this.field_41768.method_7509(var5);
+      this.world.method_7509(var5);
    }
 
    private boolean method_36349() {
       return this.method_17246().method_27960() == class_4897.field_24444;
    }
 
-   private void method_36348(class_1331 var1, Direction var2) {
-      class_2522 var5 = this.field_41768.method_28262(var1);
+   private void method_36348(BlockPos var1, Direction var2) {
+      class_2522 var5 = this.world.method_28262(var1);
       if (!var5.method_8349(class_2351.field_11771)) {
          if (class_8474.method_39004(var5)) {
-            this.field_41768.method_43365((class_704)null, 1009, var1, 0);
-            class_8474.method_39006(this.field_41768, var1, var5);
-            this.field_41768.method_29594(var1, var5.method_10308(class_8474.field_43423, Boolean.valueOf(false)));
+            this.world.method_43365((class_704)null, 1009, var1, 0);
+            class_8474.method_39006(this.world, var1, var5);
+            this.world.method_29594(var1, var5.method_10308(class_8474.field_43423, Boolean.valueOf(false)));
          }
       } else {
-         this.field_41768.method_7508(var1, false);
+         this.world.method_7508(var1, false);
       }
    }
 }

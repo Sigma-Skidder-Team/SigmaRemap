@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1133 extends class_7067<class_9149> {
+public class class_1133 extends class_7067<BoatEntity> {
    private static final Identifier[] field_6450 = new Identifier[]{
       new Identifier("textures/entity/boat/oak.png"),
       new Identifier("textures/entity/boat/spruce.png"),
@@ -16,7 +16,7 @@ public class class_1133 extends class_7067<class_9149> {
       this.field_36492 = 0.8F;
    }
 
-   public void method_4978(class_9149 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
+   public void method_4978(BoatEntity var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       var4.method_36063();
       var4.method_36065(0.0, 0.375, 0.0);
       var4.method_36060(class_2426.field_12074.method_11074(180.0F - var2));
@@ -49,7 +49,7 @@ public class class_1133 extends class_7067<class_9149> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public Identifier method_4977(class_9149 var1) {
+   public Identifier method_4977(BoatEntity var1) {
       return field_6450[var1.method_42112().ordinal()];
    }
 }

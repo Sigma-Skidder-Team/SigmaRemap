@@ -2,11 +2,11 @@ package remapped;
 
 public class class_663 {
    private static String[] field_3675;
-   public class_1331 field_3674;
+   public BlockPos field_3674;
    public float field_3677 = -1.0F;
    public class_617 field_3676 = class_617.field_3517;
 
-   public class_663(class_1331 var1) {
+   public class_663(BlockPos var1) {
       this.field_3674 = var1;
       this.field_3676 = class_617.method_2882(NoteblockPlayerModule.method_36549().field_9601.method_28262(var1.method_6100()));
    }

@@ -60,11 +60,11 @@ public class class_1750 {
       return (float)((double)Math.round(var0 * 1.0E8) / 1.0E8);
    }
 
-   public static double method_7806(class_1331 var0, double var1, double var3, double var5) {
+   public static double method_7806(BlockPos var0, double var1, double var3, double var5) {
       return method_7804((double)var0.method_12173(), (double)var0.method_12165(), (double)var0.method_12185(), var1, var3, var5);
    }
 
-   public static float method_7807(class_1331 var0, float var1, float var2, float var3) {
+   public static float method_7807(BlockPos var0, float var1, float var2, float var3) {
       return method_7805((float)var0.method_12173(), (float)var0.method_12165(), (float)var0.method_12185(), var1, var2, var3);
    }
 

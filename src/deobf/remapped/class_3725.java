@@ -11,12 +11,12 @@ public class class_3725 extends class_8550 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_18229;
    }
 
    @Override
-   public class_4190 method_10790(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_10790(class_2522 var1, class_6163 var2, BlockPos var3) {
       return class_3370.method_15536();
    }
 

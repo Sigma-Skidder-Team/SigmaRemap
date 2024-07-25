@@ -17,13 +17,13 @@ public class class_7685 {
          float var13 = -class_9299.method_42818(var12);
          float var14 = class_9299.method_42840(var12) * class_9299.method_42840(var11);
          float var15 = -class_9299.method_42840(var12) * class_9299.method_42818(var11);
-         class_1331 var16 = new class_1331(
+         BlockPos var16 = new BlockPos(
             class_9299.method_42847(var3.method_37302()) >> 4,
             class_9299.method_42847(var3.method_37309()) >> 4,
             class_9299.method_42847(var3.method_37156()) >> 4
          );
-         class_1331 var17 = var16.method_6103((double)(-var13 * (float)var19), (double)(-var14 * (float)var19), (double)(-var15 * (float)var19));
-         class_1331 var18 = var16.method_6103((double)(var13 * (float)var4), (double)(var14 * (float)var4), (double)(var15 * (float)var4));
+         BlockPos var17 = var16.method_6103((double)(-var13 * (float)var19), (double)(-var14 * (float)var19), (double)(-var15 * (float)var19));
+         BlockPos var18 = var16.method_6103((double)(var13 * (float)var4), (double)(var14 * (float)var4), (double)(var15 * (float)var4));
          return new class_5126(var5, var17, var18, var19, var19);
       } else {
          List var9 = Arrays.<class_3511>asList(var5.field_38807);

@@ -22,9 +22,9 @@ public class class_4469 extends class_2833 {
          double var9 = var3 * var3 + var5 * var5 + var7 * var7;
          if (!(var9 < 2.5000003E-7F)) {
             float var11 = (float)(class_9299.method_42821(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
-            this.field_21792.field_41701 = this.method_12882(this.field_21792.field_41701, var11, 10.0F);
-            this.field_21792.field_29605 = this.field_21792.field_41701;
-            this.field_21792.field_29618 = this.field_21792.field_41701;
+            this.field_21792.rotationYaw = this.method_12882(this.field_21792.rotationYaw, var11, 10.0F);
+            this.field_21792.field_29605 = this.field_21792.rotationYaw;
+            this.field_21792.field_29618 = this.field_21792.rotationYaw;
             float var12 = (float)(this.field_13885 * this.field_21792.method_26575(class_7331.field_37465));
             if (!this.field_21792.method_37285()) {
                this.field_21792.method_26461(var12 * 0.1F);
@@ -32,9 +32,9 @@ public class class_4469 extends class_2833 {
                this.field_21792.method_26461(var12 * 0.02F);
                float var13 = -((float)(class_9299.method_42821(var5, (double)class_9299.method_42842(var3 * var3 + var7 * var7)) * 180.0F / (float)Math.PI));
                var13 = class_9299.method_42828(class_9299.method_42810(var13), -85.0F, 85.0F);
-               this.field_21792.field_41755 = this.method_12882(this.field_21792.field_41755, var13, 5.0F);
-               float var14 = class_9299.method_42840(this.field_21792.field_41755 * (float) (Math.PI / 180.0));
-               float var15 = class_9299.method_42818(this.field_21792.field_41755 * (float) (Math.PI / 180.0));
+               this.field_21792.rotationPitch = this.method_12882(this.field_21792.rotationPitch, var13, 5.0F);
+               float var14 = class_9299.method_42840(this.field_21792.rotationPitch * (float) (Math.PI / 180.0));
+               float var15 = class_9299.method_42818(this.field_21792.rotationPitch * (float) (Math.PI / 180.0));
                this.field_21792.field_29673 = var14 * var12;
                this.field_21792.field_29651 = -var15 * var12;
             }

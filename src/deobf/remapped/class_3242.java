@@ -15,7 +15,7 @@ public class class_3242 extends class_8273<class_7695> {
       return new class_7695(var2, var6);
    }
 
-   public void method_14841(class_9359 var1, class_6199 var2, float var3, float var4, boolean var5) {
+   public void method_14841(class_9359 var1, DamageSource var2, float var3, float var4, boolean var5) {
       this.method_38137(var1, var5x -> var5x.method_34865(var1, var2, var3, var4, var5));
    }
 }

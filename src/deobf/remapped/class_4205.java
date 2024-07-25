@@ -15,7 +15,7 @@ public class class_4205 extends class_3599 {
    public boolean method_16795() {
       if ((this.field_20446.method_26449() || this.field_20446.method_2423()) && this.field_20446.field_41726) {
          if (this.field_20446.method_2451()) {
-            float var3 = this.field_20446.field_41701 * (float) (Math.PI / 180.0);
+            float var3 = this.field_20446.rotationYaw * (float) (Math.PI / 180.0);
             int var4 = 0;
             int var5 = 0;
             float var6 = -class_9299.method_42818(var3);
@@ -28,7 +28,7 @@ public class class_4205 extends class_3599 {
                var5 = (int)((float)var5 + var7 / Math.abs(var7));
             }
 
-            if (this.field_20446.field_41768.method_28262(this.field_20446.method_37075().method_6104(var4, -1, var5)).method_8345()) {
+            if (this.field_20446.world.method_28262(this.field_20446.method_37075().method_6104(var4, -1, var5)).method_8345()) {
                return true;
             } else {
                return this.field_20446.method_2423() && class_496.method_2457(this.field_20446).nextInt(60) == 1

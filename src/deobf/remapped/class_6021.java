@@ -12,12 +12,12 @@ public class class_6021 extends class_4749 {
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       this.method_10797(var1, var2, var3, var4);
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if ((var4.nextInt(3) == 0 || this.method_27460(var2, var3, 4))
          && var2.method_22573(var3) > 11 - var1.<Integer>method_10313(field_30661) - var1.method_8320(var2, var3)
          && this.method_27459(var1, var2, var3)) {
@@ -35,7 +35,7 @@ public class class_6021 extends class_4749 {
       }
    }
 
-   private boolean method_27459(class_2522 var1, World var2, class_1331 var3) {
+   private boolean method_27459(class_2522 var1, World var2, BlockPos var3) {
       int var6 = var1.<Integer>method_10313(field_30661);
       if (var6 >= 3) {
          this.method_21930(var1, var2, var3);
@@ -47,7 +47,7 @@ public class class_6021 extends class_4749 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       if (var4 == this && this.method_27460(var2, var3, 2)) {
          this.method_21930(var1, var2, var3);
       }
@@ -55,7 +55,7 @@ public class class_6021 extends class_4749 {
       super.method_10801(var1, var2, var3, var4, var5, var6);
    }
 
-   private boolean method_27460(class_6163 var1, class_1331 var2, int var3) {
+   private boolean method_27460(class_6163 var1, BlockPos var2, int var3) {
       int var6 = 0;
       class_2921 var7 = new class_2921();
 
@@ -77,7 +77,7 @@ public class class_6021 extends class_4749 {
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return ItemStack.EMPTY;
    }
 }

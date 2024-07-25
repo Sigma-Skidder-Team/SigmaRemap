@@ -59,7 +59,7 @@ public abstract class class_7060 {
    public void method_32527(class_7060 var1, List<class_7060> var2, Random var3) {
    }
 
-   public abstract boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7);
+   public abstract boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7);
 
    public class_9616 method_32512() {
       return this.field_36435;
@@ -180,7 +180,7 @@ public abstract class class_7060 {
    }
 
    public void method_32529(class_700 var1, class_2522 var2, int var3, int var4, int var5, class_9616 var6) {
-      class_1331 var9 = new class_1331(this.method_32530(var3, var5), this.method_32507(var4), this.method_32523(var3, var5));
+      BlockPos var9 = new BlockPos(this.method_32530(var3, var5), this.method_32507(var4), this.method_32523(var3, var5));
       if (var6.method_44395(var9)) {
          if (this.field_36440 != class_9022.field_46145) {
             var2 = var2.method_8372(this.field_36440);
@@ -206,7 +206,7 @@ public abstract class class_7060 {
       int var8 = this.method_32530(var2, var4);
       int var9 = this.method_32507(var3);
       int var10 = this.method_32523(var2, var4);
-      class_1331 var11 = new class_1331(var8, var9, var10);
+      BlockPos var11 = new BlockPos(var8, var9, var10);
       return var5.method_44395(var11) ? var1.method_28262(var11) : class_4783.field_23184.method_29260();
    }
 
@@ -214,7 +214,7 @@ public abstract class class_7060 {
       int var8 = this.method_32530(var2, var4);
       int var9 = this.method_32507(var3 + 1);
       int var10 = this.method_32523(var2, var4);
-      class_1331 var11 = new class_1331(var8, var9, var10);
+      BlockPos var11 = new BlockPos(var8, var9, var10);
       return var5.method_44395(var11) ? var9 < var1.method_22562(class_3801.field_18591, var8, var10) : false;
    }
 
@@ -332,27 +332,27 @@ public abstract class class_7060 {
       int var9 = this.method_32530(var3, var5);
       int var10 = this.method_32507(var4);
       int var11 = this.method_32523(var3, var5);
-      if (var6.method_44395(new class_1331(var9, var10, var11))) {
+      if (var6.method_44395(new BlockPos(var9, var10, var11))) {
          while (
-            (var1.method_22548(new class_1331(var9, var10, var11)) || var1.method_28262(new class_1331(var9, var10, var11)).method_8362().method_24494())
+            (var1.method_22548(new BlockPos(var9, var10, var11)) || var1.method_28262(new BlockPos(var9, var10, var11)).method_8362().method_24494())
                && var10 > 1
          ) {
-            var1.method_7513(new class_1331(var9, var10, var11), var2, 2);
+            var1.method_7513(new BlockPos(var9, var10, var11), var2, 2);
             var10--;
          }
       }
    }
 
    public boolean method_32525(class_700 var1, class_9616 var2, Random var3, int var4, int var5, int var6, Identifier var7) {
-      class_1331 var10 = new class_1331(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
+      BlockPos var10 = new BlockPos(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
       return this.method_32526(var1, var2, var3, var10, var7, (class_2522)null);
    }
 
-   public static class_2522 method_32509(class_6163 var0, class_1331 var1, class_2522 var2) {
+   public static class_2522 method_32509(class_6163 var0, BlockPos var1, class_2522 var2) {
       Direction var5 = null;
 
       for (Direction var7 : class_9594.field_48893) {
-         class_1331 var8 = var1.method_6098(var7);
+         BlockPos var8 = var1.method_6098(var7);
          class_2522 var9 = var0.method_28262(var8);
          if (var9.method_8350(class_4783.field_23471)) {
             return var2;
@@ -370,7 +370,7 @@ public abstract class class_7060 {
 
       if (var5 == null) {
          Direction var10 = var2.<Direction>method_10313(class_380.field_1543);
-         class_1331 var11 = var1.method_6098(var10);
+         BlockPos var11 = var1.method_6098(var10);
          if (var0.method_28262(var11).method_8321(var0, var11)) {
             var10 = var10.method_1046();
             var11 = var1.method_6098(var10);
@@ -392,7 +392,7 @@ public abstract class class_7060 {
       }
    }
 
-   public boolean method_32526(class_1556 var1, class_9616 var2, Random var3, class_1331 var4, Identifier var5, class_2522 var6) {
+   public boolean method_32526(class_1556 var1, class_9616 var2, Random var3, BlockPos var4, Identifier var5, class_2522 var6) {
       if (var2.method_44395(var4) && !var1.method_28262(var4).method_8350(class_4783.field_23471)) {
          if (var6 == null) {
             var6 = method_32509(var1, var4, class_4783.field_23471.method_29260());
@@ -411,7 +411,7 @@ public abstract class class_7060 {
    }
 
    public boolean method_32504(class_700 var1, class_9616 var2, Random var3, int var4, int var5, int var6, Direction var7, Identifier var8) {
-      class_1331 var11 = new class_1331(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
+      BlockPos var11 = new BlockPos(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
       if (var2.method_44395(var11) && !var1.method_28262(var11).method_8350(class_4783.field_23304)) {
          this.method_32529(var1, class_4783.field_23304.method_29260().method_10308(class_6451.field_32900, var7), var4, var5, var6, var2);
          class_3757 var12 = var1.method_28260(var11);

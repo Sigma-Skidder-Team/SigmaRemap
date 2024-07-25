@@ -349,12 +349,12 @@ public class class_4497 extends class_341 implements class_8685 {
    }
 
    @Override
-   public boolean method_1618(class_6331 var1, class_1331 var2, class_704 var3) {
+   public boolean method_1618(class_6331 var1, BlockPos var2, class_704 var3) {
       if (var1.method_29545() == World.field_33048) {
          if (!this.method_20890().method_39947().method_19931()) {
             if (!this.method_20890().method_39962(var3.method_3247())) {
                if (this.method_1680() > 0) {
-                  class_1331 var6 = var1.method_28998();
+                  BlockPos var6 = var1.method_28998();
                   int var7 = class_9299.method_42805(var2.method_12173() - var6.method_12173());
                   int var8 = class_9299.method_42805(var2.method_12185() - var6.method_12185());
                   int var9 = Math.max(var7, var8);

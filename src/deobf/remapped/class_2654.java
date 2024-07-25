@@ -27,12 +27,12 @@ public class class_2654 implements class_5990 {
    public static final class_1315 field_13073 = null;
    private final class_1315[] field_13068 = new class_1315[16];
    private class_546 field_13076;
-   private final Map<class_1331, CompoundNBT> field_13082 = Maps.newHashMap();
+   private final Map<BlockPos, CompoundNBT> field_13082 = Maps.newHashMap();
    public boolean field_13081;
    private final World field_13074;
    private final Map<class_3801, class_2131> field_13066 = Maps.newEnumMap(class_3801.class);
    private final class_6397 field_13069;
-   private final Map<class_1331, class_3757> field_13088 = Maps.newHashMap();
+   private final Map<BlockPos, class_3757> field_13088 = Maps.newHashMap();
    private final class_4722<Entity>[] field_13083;
    private final Map<class_5390<?>, class_3200<?>> field_13070 = Maps.newHashMap();
    private final Map<class_5390<?>, LongSet> field_13079 = Maps.newHashMap();
@@ -151,7 +151,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public Set<class_1331> method_27366() {
+   public Set<BlockPos> method_27366() {
       HashSet var3 = Sets.newHashSet(this.field_13082.keySet());
       var3.addAll(this.field_13088.keySet());
       return var3;
@@ -163,7 +163,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       int var4 = var1.method_12173();
       int var5 = var1.method_12165();
       int var6 = var1.method_12185();
@@ -198,7 +198,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       return this.method_11985(var1.method_12173(), var1.method_12165(), var1.method_12185());
    }
 
@@ -222,7 +222,7 @@ public class class_2654 implements class_5990 {
 
    @Nullable
    @Override
-   public class_2522 method_27348(class_1331 var1, class_2522 var2, boolean var3) {
+   public class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3) {
       int var6 = var1.method_12173() & 15;
       int var7 = var1.method_12165();
       int var8 = var1.method_12185() & 15;
@@ -348,7 +348,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Nullable
-   private class_3757 method_11991(class_1331 var1) {
+   private class_3757 method_11991(BlockPos var1) {
       class_2522 var4 = this.method_28262(var1);
       class_6414 var5 = var4.method_8360();
       return var5.method_10802() ? ((class_724)var5).method_3281(this.field_13074) : null;
@@ -356,12 +356,12 @@ public class class_2654 implements class_5990 {
 
    @Nullable
    @Override
-   public class_3757 method_28260(class_1331 var1) {
+   public class_3757 method_28260(BlockPos var1) {
       return this.method_11988(var1, class_1628.field_8476);
    }
 
    @Nullable
-   public class_3757 method_11988(class_1331 var1, class_1628 var2) {
+   public class_3757 method_11988(BlockPos var1, class_1628 var2) {
       class_3757 var5 = this.field_13088.get(var1);
       if (var5 == null) {
          CompoundNBT var6 = this.field_13082.remove(var1);
@@ -394,7 +394,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public void method_27346(class_1331 var1, class_3757 var2) {
+   public void method_27346(BlockPos var1, class_3757 var2) {
       if (this.method_28262(var1).method_8360() instanceof class_724) {
          var2.method_17393(this.field_13074, var1);
          var2.method_17412();
@@ -407,12 +407,12 @@ public class class_2654 implements class_5990 {
 
    @Override
    public void method_27347(CompoundNBT var1) {
-      this.field_13082.put(new class_1331(var1.method_25947("x"), var1.method_25947("y"), var1.method_25947("z")), var1);
+      this.field_13082.put(new BlockPos(var1.method_25947("x"), var1.method_25947("y"), var1.method_25947("z")), var1);
    }
 
    @Nullable
    @Override
-   public CompoundNBT method_27345(class_1331 var1) {
+   public CompoundNBT method_27345(BlockPos var1) {
       class_3757 var4 = this.method_28260(var1);
       if (var4 != null && !var4.method_17395()) {
          CompoundNBT var6 = var4.method_17396(new CompoundNBT());
@@ -430,7 +430,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public void method_27370(class_1331 var1) {
+   public void method_27370(BlockPos var1) {
       if (this.field_13081 || this.field_13074.method_22567()) {
          class_3757 var4 = this.field_13088.remove(var1);
          if (var4 != null) {
@@ -572,7 +572,7 @@ public class class_2654 implements class_5990 {
       return Collections.<Entry<class_3801, class_2131>>unmodifiableSet(this.field_13066.entrySet());
    }
 
-   public Map<class_1331, class_3757> method_12004() {
+   public Map<BlockPos, class_3757> method_12004() {
       return this.field_13088;
    }
 
@@ -581,14 +581,14 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public CompoundNBT method_27355(class_1331 var1) {
+   public CompoundNBT method_27355(BlockPos var1) {
       return this.field_13082.get(var1);
    }
 
    @Override
-   public Stream<class_1331> method_27360() {
-      return StreamSupport.<class_1331>stream(
-            class_1331.method_6075(
+   public Stream<BlockPos> method_27360() {
+      return StreamSupport.<BlockPos>stream(
+            BlockPos.method_6075(
                   this.field_13067.method_9535(), 0, this.field_13067.method_9545(), this.field_13067.method_9536(), 255, this.field_13067.method_9538()
                )
                .spliterator(),
@@ -688,7 +688,7 @@ public class class_2654 implements class_5990 {
 
             while (var5.hasNext()) {
                Short var6 = (Short)var5.next();
-               class_1331 var7 = class_7481.method_34017(var6, var4, var3);
+               BlockPos var7 = class_7481.method_34017(var6, var4, var3);
                class_2522 var8 = this.method_28262(var7);
                class_2522 var9 = class_6414.method_29274(var8, this.field_13074, var7);
                this.field_13074.method_7513(var7, var9, 20);
@@ -700,7 +700,7 @@ public class class_2654 implements class_5990 {
 
       this.method_11989();
 
-      for (class_1331 var11 : Sets.newHashSet(this.field_13082.keySet())) {
+      for (BlockPos var11 : Sets.newHashSet(this.field_13082.keySet())) {
          this.method_28260(var11);
       }
 
@@ -709,7 +709,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Nullable
-   private class_3757 method_11980(class_1331 var1, CompoundNBT var2) {
+   private class_3757 method_11980(BlockPos var1, CompoundNBT var2) {
       class_2522 var5 = this.method_28262(var1);
       class_3757 var6;
       if (!"DUMMY".equals(var2.method_25965("id"))) {

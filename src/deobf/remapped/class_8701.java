@@ -33,7 +33,7 @@ public class class_8701 implements class_2995 {
    }
 
    private void method_39939(double var1, double var3, double var5) {
-      class_1331 var9 = new class_1331(var1, var3, var5);
+      BlockPos var9 = new BlockPos(var1, var3, var5);
       this.field_44608.forEach(var1x -> {
          if (var9.method_12171(var1x.method_31892(), 60.0)) {
             method_39938(var1x);
@@ -43,9 +43,9 @@ public class class_8701 implements class_2995 {
 
    private static void method_39938(class_6979 var0) {
       float var3 = 1.0F;
-      class_1331 var4 = var0.method_31892();
-      class_1331 var5 = var4.method_6103(-1.0, -1.0, -1.0);
-      class_1331 var6 = var4.method_6103(1.0, 1.0, 1.0);
+      BlockPos var4 = var0.method_31892();
+      BlockPos var5 = var4.method_6103(-1.0, -1.0, -1.0);
+      BlockPos var6 = var4.method_6103(1.0, 1.0, 1.0);
       class_3372.method_15561(var5, var6, 0.2F, 1.0F, 0.2F, 0.15F);
    }
 }

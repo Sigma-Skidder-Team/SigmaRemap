@@ -123,7 +123,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    public boolean method_26442(Entity var1) {
       if (var1 instanceof class_5834) {
          this.field_18950 = 10;
-         this.field_41768.method_29587(this, (byte)4);
+         this.world.method_29587(this, (byte)4);
          this.method_37155(class_463.field_2853, 1.0F, this.method_26547());
          return class_9479.method_43797(this, (class_5834)var1);
       } else {
@@ -149,9 +149,9 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      boolean var5 = super.method_37181(var1, var2);
-      if (!this.field_41768.field_33055) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      boolean var5 = super.attackEntityFrom(var1, var2);
+      if (!this.world.field_33055) {
          if (var5 && var1.method_28372() instanceof class_5834) {
             class_5834 var6 = (class_5834)var1.method_28372();
             if (class_3572.field_17480.test(var6) && !class_1225.method_5452(this, var6, 4.0)) {
@@ -190,16 +190,16 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().startSection("zoglinBrain");
-      this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().endSection();
+      this.world.method_29599().startSection("zoglinBrain");
+      this.method_26525().method_5141((class_6331)this.world, this);
+      this.world.method_29599().endSection();
       this.method_18036();
    }
 
    @Override
    public void method_26910(boolean var1) {
       this.method_37372().method_36633(field_18951, var1);
-      if (!this.field_41768.field_33055 && var1) {
+      if (!this.world.field_33055 && var1) {
          this.method_26561(class_7331.field_37462).method_45006(0.5);
       }
    }
@@ -235,7 +235,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
 
    @Override
    public class_8461 method_26918() {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          return !this.field_29675.method_5117(class_6044.field_30884) ? class_463.field_2726 : class_463.field_2845;
       } else {
          return null;
@@ -243,7 +243,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2553;
    }
 
@@ -253,7 +253,7 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2189, 0.15F, 1.0F);
    }
 

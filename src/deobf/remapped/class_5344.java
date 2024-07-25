@@ -114,7 +114,7 @@ public class class_5344 {
       return this.field_27242;
    }
 
-   public void method_24357(class_1331 var1) {
+   public void method_24357(BlockPos var1) {
       class_2654 var4 = this.method_24349();
       if (var4 != null) {
          byte var5 = (byte)class_6979.method_31915(var1.method_12165());
@@ -165,7 +165,7 @@ public class class_5344 {
                   this.method_24348(var10, false);
                   var10.method_20730((var2, var3) -> this.method_24341(var4, var2, var3));
                } else {
-                  class_1331 var12 = var8.method_31904(var7.iterator().nextShort());
+                  BlockPos var12 = var8.method_31904(var7.iterator().nextShort());
                   class_2522 var13 = var4.method_28262(var12);
                   this.method_24348(new class_4267(var12, var13), false);
                   this.method_24341(var4, var12, var13);
@@ -179,13 +179,13 @@ public class class_5344 {
       }
    }
 
-   private void method_24341(World var1, class_1331 var2, class_2522 var3) {
+   private void method_24341(World var1, BlockPos var2, class_2522 var3) {
       if (var3.method_8360().method_10802()) {
          this.method_24359(var1, var2);
       }
    }
 
-   private void method_24359(World var1, class_1331 var2) {
+   private void method_24359(World var1, BlockPos var2) {
       class_3757 var5 = var1.method_28260(var2);
       if (var5 != null) {
          class_5029 var6 = var5.method_17413();

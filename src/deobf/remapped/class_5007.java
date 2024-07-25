@@ -17,7 +17,7 @@ public class class_5007<E extends class_5834> extends class_5920<E> {
 
    @Override
    public boolean method_27088(class_6331 var1, E var2) {
-      return !var2.method_37070();
+      return !var2.isPassenger();
    }
 
    @Override

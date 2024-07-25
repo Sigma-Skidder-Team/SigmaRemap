@@ -8,7 +8,7 @@ public abstract class class_3982 extends class_4285<class_1926> {
       super(var1);
    }
 
-   public void method_18372(class_9379 var1, Random var2, class_1331 var3, class_1926 var4, int var5, class_2921 var6) {
+   public void method_18372(class_9379 var1, Random var2, BlockPos var3, class_1926 var4, int var5, class_2921 var6) {
       for (int var9 = 0; var9 < var5; var9++) {
          var6.method_13364(var3).method_13369(Direction.field_817, var9);
          if (!var1.method_28262(var6).method_8321(var1, var6)) {
@@ -26,7 +26,7 @@ public abstract class class_3982 extends class_4285<class_1926> {
       return var4;
    }
 
-   public boolean method_18369(class_9379 var1, class_1331 var2, int var3, class_2921 var4, class_1926 var5) {
+   public boolean method_18369(class_9379 var1, BlockPos var2, int var3, class_2921 var4, class_1926 var5) {
       int var8 = var2.method_12165();
       if (var8 >= 1 && var8 + var3 + 1 < 256) {
          class_6414 var9 = var1.method_28262(var2.method_6100()).method_8360();
@@ -53,7 +53,7 @@ public abstract class class_3982 extends class_4285<class_1926> {
       }
    }
 
-   public boolean method_18371(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1926 var5) {
+   public boolean method_18371(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1926 var5) {
       int var8 = this.method_18368(var3);
       class_2921 var9 = new class_2921();
       if (this.method_18369(var1, var4, var8, var9, var5)) {
@@ -67,5 +67,5 @@ public abstract class class_3982 extends class_4285<class_1926> {
 
    public abstract int method_18370(int var1, int var2, int var3, int var4);
 
-   public abstract void method_18373(class_9379 var1, Random var2, class_1331 var3, int var4, class_2921 var5, class_1926 var6);
+   public abstract void method_18373(class_9379 var1, Random var2, BlockPos var3, int var4, class_2921 var5, class_1926 var6);
 }

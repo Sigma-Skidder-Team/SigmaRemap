@@ -17,8 +17,8 @@ public class class_4148 implements Packet<class_1243> {
       this.field_20185 = var1.method_37302();
       this.field_20182 = var1.method_37309();
       this.field_20183 = var1.method_37156();
-      this.field_20186 = var1.field_41701;
-      this.field_20181 = var1.field_41755;
+      this.field_20186 = var1.rotationYaw;
+      this.field_20181 = var1.rotationPitch;
    }
 
    @Override

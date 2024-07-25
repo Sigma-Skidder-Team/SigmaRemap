@@ -72,8 +72,8 @@ public class HawkFly extends Module {
             this.field_16753 = var5.field_3139;
             this.field_16751 = var5.field_3144;
             this.field_16755 = var5.field_3141;
-            var5.field_3143 = client.thePlayer.field_41701;
-            var5.field_3140 = client.thePlayer.field_41755;
+            var5.field_3143 = client.thePlayer.rotationYaw;
+            var5.field_3140 = client.thePlayer.rotationPitch;
          }
       }
    }

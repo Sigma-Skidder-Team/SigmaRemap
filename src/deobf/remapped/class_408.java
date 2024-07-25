@@ -149,7 +149,7 @@ public class class_408 extends class_2208<class_3682> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 14);
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field_10956.method_18886(this.field_943.thePlayer, var11)) {
-               MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2842, 1.0F));
+               MinecraftClient.getInstance().getSoundHandler().play(class_4949.method_22675(class_463.field_2842, 1.0F));
                this.field_943.playerController.method_42154(this.field_10956.field_19925, var11);
                return true;
             }

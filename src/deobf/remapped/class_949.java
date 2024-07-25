@@ -7,7 +7,7 @@ import java.util.List;
 public class class_949 extends class_958 {
    private static String[] field_4889;
    private int field_4885;
-   private List<class_1331> field_4886;
+   private List<BlockPos> field_4886;
    private class_3998 field_4887;
    private int field_4888;
 
@@ -82,17 +82,17 @@ public class class_949 extends class_958 {
       }
    }
 
-   private boolean method_4178(class_1331 var1) {
+   private boolean method_4178(BlockPos var1) {
       class_8829.method_40571(this.field_4884).method_5613(10.0F);
       class_8829.method_40555(this.field_4884).method_5595((double)var1.method_12173(), (double)var1.method_12165(), (double)var1.method_12185(), 1.0);
       return class_8829.method_40613(this.field_4884).method_5594() != null && class_8829.method_40577(this.field_4884).method_5594().method_18433();
    }
 
-   private boolean method_4181(class_1331 var1) {
+   private boolean method_4181(BlockPos var1) {
       return this.field_4886.contains(var1);
    }
 
-   private void method_4182(class_1331 var1) {
+   private void method_4182(BlockPos var1) {
       this.field_4886.add(var1);
 
       while (this.field_4886.size() > 3) {
@@ -117,7 +117,7 @@ public class class_949 extends class_958 {
       class_8829.method_40599(this.field_4884, 200);
    }
 
-   private boolean method_4185(class_1331 var1) {
+   private boolean method_4185(BlockPos var1) {
       if (class_8829.method_40573(this.field_4884, var1, 2)) {
          return true;
       } else {

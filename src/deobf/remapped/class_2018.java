@@ -11,15 +11,15 @@ public class class_2018 {
    private final class_9249 field_10223;
    private final Direction field_10226;
    private int field_10227;
-   private class_1331 field_10224;
+   private BlockPos field_10224;
    private int field_10230;
    private int field_10225;
 
-   public static Optional<class_2018> method_9378(class_9379 var0, class_1331 var1, class_9249 var2) {
+   public static Optional<class_2018> method_9378(class_9379 var0, BlockPos var1, class_9249 var2) {
       return method_9381(var0, var1, var0x -> var0x.method_9383() && var0x.field_10227 == 0, var2);
    }
 
-   public static Optional<class_2018> method_9381(class_9379 var0, class_1331 var1, Predicate<class_2018> var2, class_9249 var3) {
+   public static Optional<class_2018> method_9381(class_9379 var0, BlockPos var1, Predicate<class_2018> var2, class_9249 var3) {
       Optional var6 = Optional.<class_2018>of(new class_2018(var0, var1, var3)).filter(var2);
       if (!var6.isPresent()) {
          class_9249 var7 = var3 != class_9249.field_47215 ? class_9249.field_47215 : class_9249.field_47219;
@@ -29,7 +29,7 @@ public class class_2018 {
       }
    }
 
-   public class_2018(class_9379 var1, class_1331 var2, class_9249 var3) {
+   public class_2018(class_9379 var1, BlockPos var2, class_9249 var3) {
       this.field_10229 = var1;
       this.field_10223 = var3;
       this.field_10226 = var3 != class_9249.field_47215 ? Direction.field_800 : Direction.field_809;
@@ -47,7 +47,7 @@ public class class_2018 {
    }
 
    @Nullable
-   private class_1331 method_9380(class_1331 var1) {
+   private BlockPos method_9380(BlockPos var1) {
       int var4 = Math.max(0, var1.method_12165() - 21);
 
       while (var1.method_12165() > var4 && method_9371(this.field_10229.method_28262(var1.method_6100()))) {
@@ -64,7 +64,7 @@ public class class_2018 {
       return var3 >= 2 && var3 <= 21 ? var3 : 0;
    }
 
-   private int method_9374(class_1331 var1, Direction var2) {
+   private int method_9374(BlockPos var1, Direction var2) {
       class_2921 var5 = new class_2921();
 
       for (int var6 = 0; var6 <= 21; var6++) {
@@ -141,7 +141,7 @@ public class class_2018 {
 
    public void method_9377() {
       class_2522 var3 = class_4783.field_23588.method_29260().method_10308(class_3465.field_16975, this.field_10223);
-      class_1331.method_6076(
+      BlockPos.method_6076(
             this.field_10224, this.field_10224.method_6099(Direction.field_817, this.field_10230 - 1).method_6099(this.field_10226, this.field_10225 - 1)
          )
          .forEach(var2 -> this.field_10229.method_7513(var2, var3, 18));
@@ -154,7 +154,7 @@ public class class_2018 {
    public static class_1343 method_9370(class_8623 var0, class_9249 var1, class_1343 var2, class_6097 var3) {
       double var6 = (double)var0.field_44251 - (double)var3.field_31199;
       double var8 = (double)var0.field_44249 - (double)var3.field_31200;
-      class_1331 var10 = var0.field_44250;
+      BlockPos var10 = var0.field_44250;
       double var11;
       if (!(var6 > 0.0)) {
          var11 = 0.5;
@@ -179,7 +179,7 @@ public class class_2018 {
    public static class_9606 method_9379(
       class_6331 var0, class_8623 var1, class_9249 var2, class_1343 var3, class_6097 var4, class_1343 var5, float var6, float var7
    ) {
-      class_1331 var10 = var1.field_44250;
+      BlockPos var10 = var1.field_44250;
       class_2522 var11 = var0.method_28262(var10);
       class_9249 var12 = var11.<class_9249>method_10313(class_6023.field_30670);
       double var13 = (double)var1.field_44251;

@@ -22,7 +22,7 @@ public class class_7762 extends class_341 {
    private UUID field_39351;
    private long field_39355 = 0L;
    public World field_39347 = null;
-   public class_1331 field_39349 = null;
+   public BlockPos field_39349 = null;
    public class_9589 field_39354 = null;
 
    public class_7762(
@@ -274,7 +274,7 @@ public class class_7762 extends class_341 {
       }
    }
 
-   public class_9589 method_35211(World var1, class_1331 var2) {
+   public class_9589 method_35211(World var1, BlockPos var2) {
       this.field_39347 = var1;
       this.field_39349 = var2;
       return this.field_39354;

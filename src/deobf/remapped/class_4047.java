@@ -47,12 +47,12 @@ public class class_4047 extends Screen {
    private class_9521 field_19661;
    private class_9521 field_19656;
    private class_9521 field_19671;
-   private final class_2584 field_19669;
+   private final Hand field_19669;
    private class_4475 field_19657 = class_4475.method_20762();
    private ITextComponent field_19665 = StringTextComponent.EMPTY;
    private final ITextComponent field_19672;
 
-   public class_4047(class_704 var1, ItemStack var2, class_2584 var3) {
+   public class_4047(class_704 var1, ItemStack var2, Hand var3) {
       super(NarratorChatListener.field_38486);
       this.field_19681 = var1;
       this.field_19670 = var2;
@@ -189,7 +189,7 @@ public class class_4047 extends Screen {
             this.field_19670.method_27954("title", class_473.method_2261(this.field_19680.trim()));
          }
 
-         int var5 = this.field_19669 != class_2584.field_12791 ? 40 : this.field_19681.inventory.field_36404;
+         int var5 = this.field_19669 != Hand.MAIN_HAND ? 40 : this.field_19681.inventory.field_36404;
          this.field_943.method_8614().method_4813(new class_703(this.field_19670, var1, var5));
       }
    }

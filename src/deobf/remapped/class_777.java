@@ -13,7 +13,7 @@ public class class_777 extends Module {
    private void method_3476(class_8706 var1) {
       if (this.method_42015()) {
          if (client.gameOptions.keySneak.isKeyDown() && var1.method_40004() == class_3237.field_16101) {
-            if (!(client.thePlayer.field_41755 < 0.0F)) {
+            if (!(client.thePlayer.rotationPitch < 0.0F)) {
                this.method_3473(this.method_3477());
             } else {
                this.method_3473(this.method_3478());
@@ -39,7 +39,7 @@ public class class_777 extends Module {
             var7 = Integer.parseInt(var5);
          }
 
-         float var8 = (float)Math.toRadians((double)(client.thePlayer.field_41701 + 90.0F));
+         float var8 = (float)Math.toRadians((double)(client.thePlayer.rotationYaw + 90.0F));
          double var9 = (double)(class_9299.method_42840(var8) * (float)var7);
          double var11 = (double)(class_9299.method_42818(var8) * (float)var7);
          client.thePlayer
@@ -56,7 +56,7 @@ public class class_777 extends Module {
       int var4 = 0;
 
       for (int var5 = 0; var5 < 10; var5++) {
-         class_1331 var6 = new class_1331(
+         BlockPos var6 = new BlockPos(
             client.thePlayer.method_37302(), client.thePlayer.method_37309() - (double)var5, client.thePlayer.method_37156()
          );
          if (client.theWorld.method_28262(var6).method_8302() && var3) {
@@ -75,7 +75,7 @@ public class class_777 extends Module {
       int var4 = 0;
 
       for (int var5 = 10; var5 > 0; var5--) {
-         class_1331 var6 = new class_1331(
+         BlockPos var6 = new BlockPos(
             client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var5, client.thePlayer.method_37156()
          );
          if (client.theWorld.method_28262(var6).method_8302() && var3 && !client.theWorld.method_28262(var6.method_6100()).method_8302()) {

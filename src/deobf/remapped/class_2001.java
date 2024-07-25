@@ -7,25 +7,25 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$class_40;
 
 public class class_2001 {
-   private final class_1331 field_10165;
+   private final BlockPos field_10165;
    private final class_9077 field_10163;
    private final ITextComponent field_10166;
 
-   public class_2001(class_1331 var1, class_9077 var2, ITextComponent var3) {
+   public class_2001(BlockPos var1, class_9077 var2, ITextComponent var3) {
       this.field_10165 = var1;
       this.field_10163 = var2;
       this.field_10166 = var3;
    }
 
    public static class_2001 method_9288(CompoundNBT var0) {
-      class_1331 var3 = class_4338.method_20189(var0.getCompound("Pos"));
+      BlockPos var3 = class_4338.method_20189(var0.getCompound("Pos"));
       class_9077 var4 = class_9077.method_41788(var0.method_25965("Color"), class_9077.field_46493);
       IFormattableTextComponent var5 = !var0.method_25938("Name") ? null : ITextComponent$class_40.func_240643_a_(var0.method_25965("Name"));
       return new class_2001(var3, var4, var5);
    }
 
    @Nullable
-   public static class_2001 method_9293(class_6163 var0, class_1331 var1) {
+   public static class_2001 method_9293(class_6163 var0, BlockPos var1) {
       class_3757 var4 = var0.method_28260(var1);
       if (!(var4 instanceof class_8837)) {
          return null;
@@ -37,7 +37,7 @@ public class class_2001 {
       }
    }
 
-   public class_1331 method_9287() {
+   public BlockPos method_9287() {
       return this.field_10165;
    }
 

@@ -12,10 +12,10 @@ public class class_8598 {
    private GameType field_44030 = GameType.NOT_SET;
    private boolean field_44040;
    private int field_44032;
-   private class_1331 field_44038 = class_1331.field_7306;
+   private BlockPos field_44038 = BlockPos.field_7306;
    private int field_44035;
    private boolean field_44031;
-   private class_1331 field_44028 = class_1331.field_7306;
+   private BlockPos field_44028 = BlockPos.field_7306;
    private int field_44029;
    private int field_44039 = -1;
 
@@ -87,9 +87,9 @@ public class class_8598 {
       }
    }
 
-   private float method_39522(class_2522 var1, class_1331 var2, int var3) {
+   private float method_39522(class_2522 var1, BlockPos var2, int var3) {
       int var6 = this.field_44035 - var3;
-      float var7 = var1.method_8311(this.field_44036, this.field_44036.field_41768, var2) * (float)(var6 + 1);
+      float var7 = var1.method_8311(this.field_44036, this.field_44036.world, var2) * (float)(var6 + 1);
       int var8 = (int)(var7 * 10.0F);
       if (var8 != this.field_44039) {
          this.field_44037.method_29568(this.field_44036.method_37145(), var2, var8);
@@ -99,7 +99,7 @@ public class class_8598 {
       return var7;
    }
 
-   public void method_39523(class_1331 var1, class_7500 var2, Direction var3, int var4) {
+   public void method_39523(BlockPos var1, class_7500 var2, Direction var3, int var4) {
       double var7 = this.field_44036.method_37302() - ((double)var1.method_12173() + 0.5);
       double var9 = this.field_44036.method_37309() - ((double)var1.method_12165() + 0.5) + 1.5;
       double var11 = this.field_44036.method_37156() - ((double)var1.method_12185() + 0.5);
@@ -128,7 +128,7 @@ public class class_8598 {
                      int var15 = this.field_44035 - this.field_44032;
                      class_2522 var16 = this.field_44037.method_28262(var1);
                      if (!var16.method_8345()) {
-                        float var17 = var16.method_8311(this.field_44036, this.field_44036.field_41768, var1) * (float)(var15 + 1);
+                        float var17 = var16.method_8311(this.field_44036, this.field_44036.world, var1) * (float)(var15 + 1);
                         if (var17 >= 0.7F) {
                            this.field_44040 = false;
                            this.field_44037.method_29568(this.field_44036.method_37145(), var1, -1);
@@ -168,7 +168,7 @@ public class class_8598 {
                class_2522 var19 = this.field_44037.method_28262(var1);
                if (!var19.method_8345()) {
                   var19.method_8307(this.field_44037, var1, this.field_44036);
-                  var18 = var19.method_8311(this.field_44036, this.field_44036.field_41768, var1);
+                  var18 = var19.method_8311(this.field_44036, this.field_44036.world, var1);
                }
 
                if (!var19.method_8345() && var18 >= 1.0F) {
@@ -204,7 +204,7 @@ public class class_8598 {
       }
    }
 
-   public void method_39513(class_1331 var1, class_7500 var2, String var3) {
+   public void method_39513(BlockPos var1, class_7500 var2, String var3) {
       if (!this.method_39518(var1)) {
          this.field_44036.field_47794.method_4156(new class_7881(var1, this.field_44037.method_28262(var1), var2, false, var3));
       } else {
@@ -212,7 +212,7 @@ public class class_8598 {
       }
    }
 
-   public boolean method_39518(class_1331 var1) {
+   public boolean method_39518(BlockPos var1) {
       class_2522 var4 = this.field_44037.method_28262(var1);
       if (!this.field_44036.method_26446().method_27960().method_11203(var4, this.field_44037, var1, this.field_44036)) {
          return false;
@@ -248,7 +248,7 @@ public class class_8598 {
       }
    }
 
-   public class_6910 method_39520(class_9359 var1, World var2, ItemStack var3, class_2584 var4) {
+   public class_6910 method_39520(class_9359 var1, World var2, ItemStack var3, Hand var4) {
       if (this.field_44033 != GameType.SPECTATOR) {
          if (!var1.method_3173().method_32954(var3.method_27960())) {
             int var7 = var3.method_27997();
@@ -286,8 +286,8 @@ public class class_8598 {
       }
    }
 
-   public class_6910 method_39528(class_9359 var1, World var2, ItemStack var3, class_2584 var4, class_9529 var5) {
-      class_1331 var8 = var5.method_43955();
+   public class_6910 method_39528(class_9359 var1, World var2, ItemStack var3, Hand var4, class_9529 var5) {
+      BlockPos var8 = var5.method_43955();
       class_2522 var9 = var2.method_28262(var8);
       if (this.field_44033 == GameType.SPECTATOR) {
          class_4259 var16 = var9.method_8317(var2, var8);

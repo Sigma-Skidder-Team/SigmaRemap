@@ -379,7 +379,7 @@ public class class_9326 implements class_2231 {
       this.field_47621.clear();
    }
 
-   public void method_43048(class_1331 var1, class_2522 var2) {
+   public void method_43048(BlockPos var1, class_2522 var2) {
       boolean var6;
       if (class_7860.field_40197.method_3596() && class_7860.field_39999.method_3596()) {
          class_6414 var5 = var2.method_8360();
@@ -431,7 +431,7 @@ public class class_9326 implements class_2231 {
       }
    }
 
-   public void method_43058(class_1331 var1, Direction var2) {
+   public void method_43058(BlockPos var1, Direction var2) {
       class_2522 var5 = this.field_47617.method_28262(var1);
       if (var5.method_8352() != class_7537.field_38470) {
          int var6 = var1.method_12173();
@@ -487,7 +487,7 @@ public class class_9326 implements class_2231 {
       return false;
    }
 
-   public void method_43059(class_1331 var1, class_9529 var2) {
+   public void method_43059(BlockPos var1, class_9529 var2) {
       class_2522 var5 = this.field_47617.method_28262(var1);
       if (var5 != null) {
          boolean var6 = class_7860.method_35565(var5, class_7860.field_39850, this.field_47617, var2, this);

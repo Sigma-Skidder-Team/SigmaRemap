@@ -26,11 +26,11 @@ public class class_59 extends class_3599 {
       int var6 = var5.nextInt(1025) - 512;
       int var7 = var5.nextInt(9) - 4;
       int var8 = var5.nextInt(1025) - 512;
-      if ((double)var7 + this.field_53.method_37309() > (double)(this.field_53.field_41768.method_22552() - 1)) {
+      if ((double)var7 + this.field_53.method_37309() > (double)(this.field_53.world.method_22552() - 1)) {
          var7 = 0;
       }
 
-      class_1331 var9 = new class_1331(
+      BlockPos var9 = new BlockPos(
          (double)var6 + this.field_53.method_37302(), (double)var7 + this.field_53.method_37309(), (double)var8 + this.field_53.method_37156()
       );
       class_3845.method_17869(this.field_53, var9);
@@ -51,7 +51,7 @@ public class class_59 extends class_3599 {
             int var5 = class_9299.method_42847(var4.field_7336);
             int var6 = class_9299.method_42847(var4.field_7334);
             byte var7 = 34;
-            if (!this.field_53.field_41768.method_22569(var5 - 34, 0, var6 - 34, var5 + 34, 0, var6 + 34)) {
+            if (!this.field_53.world.method_22569(var5 - 34, 0, var6 - 34, var5 + 34, 0, var6 + 34)) {
                var4 = null;
             }
          }

@@ -45,12 +45,12 @@ public class StepModule extends SecondModule {
       Object[] var13 = client.theWorld.method_6680(client.thePlayer, var12).toArray();
       int var14 = var13.length;
       class_2522 var15 = null;
-      class_1331 var16 = null;
+      BlockPos var16 = null;
       double var17 = 0.0;
 
       for (int var19 = 0; var19 < var14; var19++) {
          class_4190 var20 = (class_4190)var13[var19];
-         class_1331 var21 = new class_1331(
+         BlockPos var21 = new BlockPos(
             var20.method_19491(class_9249.field_47215), var20.method_19491(class_9249.field_47216), var20.method_19491(class_9249.field_47219)
          );
          class_2522 var22 = client.theWorld.method_28262(var21);

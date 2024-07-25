@@ -25,19 +25,19 @@ public class class_9464 extends class_5877 implements class_724 {
    }
 
    @Override
-   public int method_26771(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public int method_26771(class_6163 var1, BlockPos var2, class_2522 var3) {
       class_3757 var6 = var1.method_28260(var2);
       return !(var6 instanceof class_892) ? 0 : ((class_892)var6).method_3847();
    }
 
-   private int method_43737(World var1, class_1331 var2, class_2522 var3) {
+   private int method_43737(World var1, BlockPos var2, class_2522 var3) {
       return var3.method_10313(field_48280) != class_9607.field_48960
          ? this.method_26773(var1, var2, var3)
          : Math.max(this.method_26773(var1, var2, var3) - this.method_26770(var1, var2, var3), 0);
    }
 
    @Override
-   public boolean method_26772(World var1, class_1331 var2, class_2522 var3) {
+   public boolean method_26772(World var1, BlockPos var2, class_2522 var3) {
       int var6 = this.method_26773(var1, var2, var3);
       if (var6 != 0) {
          int var7 = this.method_26770(var1, var2, var3);
@@ -48,10 +48,10 @@ public class class_9464 extends class_5877 implements class_724 {
    }
 
    @Override
-   public int method_26773(World var1, class_1331 var2, class_2522 var3) {
+   public int method_26773(World var1, BlockPos var2, class_2522 var3) {
       int var6 = super.method_26773(var1, var2, var3);
       Direction var7 = var3.<Direction>method_10313(field_1543);
-      class_1331 var8 = var2.method_6098(var7);
+      BlockPos var8 = var2.method_6098(var7);
       class_2522 var9 = var1.method_28262(var8);
       if (!var9.method_8344()) {
          if (var6 < 15 && var9.method_8356(var1, var8)) {
@@ -73,7 +73,7 @@ public class class_9464 extends class_5877 implements class_724 {
    }
 
    @Nullable
-   private class_7451 method_43739(World var1, Direction var2, class_1331 var3) {
+   private class_7451 method_43739(World var1, Direction var2, BlockPos var3) {
       List var6 = var1.<class_7451>method_25869(
          class_7451.class,
          new class_4092(
@@ -90,7 +90,7 @@ public class class_9464 extends class_5877 implements class_724 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       if (var4.playerAbilities.allowEdit) {
          var1 = var1.method_10317(field_48280);
          float var9 = var1.method_10313(field_48280) != class_9607.field_48960 ? 0.5F : 0.55F;
@@ -104,7 +104,7 @@ public class class_9464 extends class_5877 implements class_724 {
    }
 
    @Override
-   public void method_26774(World var1, class_1331 var2, class_2522 var3) {
+   public void method_26774(World var1, BlockPos var2, class_2522 var3) {
       if (!var1.method_43367().method_14010(var2, this)) {
          int var6 = this.method_43737(var1, var2, var3);
          class_3757 var7 = var1.method_28260(var2);
@@ -116,7 +116,7 @@ public class class_9464 extends class_5877 implements class_724 {
       }
    }
 
-   private void method_43738(World var1, class_1331 var2, class_2522 var3) {
+   private void method_43738(World var1, BlockPos var2, class_2522 var3) {
       int var6 = this.method_43737(var1, var2, var3);
       class_3757 var7 = var1.method_28260(var2);
       int var8 = 0;
@@ -140,12 +140,12 @@ public class class_9464 extends class_5877 implements class_724 {
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       this.method_43738(var2, var3, var1);
    }
 
    @Override
-   public boolean method_10800(class_2522 var1, World var2, class_1331 var3, int var4, int var5) {
+   public boolean method_10800(class_2522 var1, World var2, BlockPos var3, int var4, int var5) {
       super.method_10800(var1, var2, var3, var4, var5);
       class_3757 var8 = var2.method_28260(var3);
       return var8 != null && var8.method_17408(var4, var5);

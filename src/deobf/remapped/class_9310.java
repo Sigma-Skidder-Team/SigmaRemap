@@ -148,13 +148,13 @@ public class class_9310 extends class_5521 implements class_2354 {
       }
 
       if (this.method_26551() < this.method_26465() && var7 > 0.0F) {
-         this.method_26457(var7);
+         this.heal(var7);
          var8 = true;
       }
 
       if (this.method_26449() && var5 > 0) {
-         this.field_41768.method_43361(class_3090.field_15361, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), 0.0, 0.0, 0.0);
-         if (!this.field_41768.field_33055) {
+         this.world.method_43361(class_3090.field_15361, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), 0.0, 0.0, 0.0);
+         if (!this.world.field_33055) {
             this.method_8632(var5);
          }
 
@@ -163,7 +163,7 @@ public class class_9310 extends class_5521 implements class_2354 {
 
       if (var6 > 0 && (var8 || !this.method_19043()) && this.method_19062() < this.method_19075()) {
          var8 = true;
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.method_19074(var6);
          }
       }
@@ -171,7 +171,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       if (var8 && !this.method_37378()) {
          class_8461 var10 = this.method_19083();
          if (var10 != null) {
-            this.field_41768
+            this.world
                .method_29528(
                   (class_704)null,
                   this.method_37302(),
@@ -220,7 +220,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2539;
    }
 
@@ -236,7 +236,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2691, 0.15F, 1.0F);
    }
 
@@ -291,7 +291,7 @@ public class class_9310 extends class_5521 implements class_2354 {
 
    @Override
    public void method_19070() {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          super.method_19070();
          this.method_42973(method_42978(this.field_20021.method_31498(1)));
       }
@@ -338,18 +338,18 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    public class_9310 method_42987() {
-      return class_6629.field_34327.method_30484(this.field_41768);
+      return class_6629.field_34327.method_30484(this.world);
    }
 
    private void method_42985(class_5834 var1) {
-      class_7548 var4 = new class_7548(this.field_41768, this);
+      class_7548 var4 = new class_7548(this.world, this);
       double var5 = var1.method_37302() - this.method_37302();
       double var7 = var1.method_37080(0.3333333333333333) - var4.method_37309();
       double var9 = var1.method_37156() - this.method_37156();
       float var11 = class_9299.method_42842(var5 * var5 + var9 * var9) * 0.2F;
       var4.method_26161(var5, var7 + (double)var11, var9, 1.5F, 10.0F);
       if (!this.method_37378()) {
-         this.field_41768
+         this.world
             .method_29528(
                (class_704)null,
                this.method_37302(),
@@ -362,7 +362,7 @@ public class class_9310 extends class_5521 implements class_2354 {
             );
       }
 
-      this.field_41768.method_7509(var4);
+      this.world.method_7509(var4);
       this.field_47539 = true;
    }
 
@@ -377,10 +377,10 @@ public class class_9310 extends class_5521 implements class_2354 {
          return false;
       } else {
          if (var1 >= 6.0F) {
-            this.method_37181(class_6199.field_31684, (float)var5);
+            this.attackEntityFrom(DamageSource.field_31684, (float)var5);
             if (this.method_37151()) {
                for (Entity var7 : this.method_37379()) {
-                  var7.method_37181(class_6199.field_31684, (float)var5);
+                  var7.attackEntityFrom(DamageSource.field_31684, (float)var5);
                }
             }
          }

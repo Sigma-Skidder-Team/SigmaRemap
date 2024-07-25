@@ -6,9 +6,9 @@ public class class_522 {
    private static String[] field_3184;
    public int field_3187;
    public int field_3186;
-   public List<class_1331> field_3185;
+   public List<BlockPos> field_3185;
 
-   public class_522(int var1, int var2, List<class_1331> var3) {
+   public class_522(int var1, int var2, List<BlockPos> var3) {
       this.field_3187 = var1;
       this.field_3186 = var2;
       this.field_3185 = var3;

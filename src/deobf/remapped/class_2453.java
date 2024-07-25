@@ -12,7 +12,7 @@ public enum class_2453 implements class_9840 {
    }
 
    @Override
-   public int method_45335(class_1331 var1) {
+   public int method_45335(BlockPos var1) {
       return 0;
    }
 

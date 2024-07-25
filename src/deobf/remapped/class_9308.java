@@ -25,6 +25,6 @@ public class class_9308 implements class_6478<class_1600> {
       int var6 = class_6539.method_29768(var1, "offsetX", 0);
       int var7 = class_6539.method_29768(var1, "offsetY", 0);
       int var8 = class_6539.method_29768(var1, "offsetZ", 0);
-      return new class_1600(var5, new class_1331(var6, var7, var8), null);
+      return new class_1600(var5, new BlockPos(var6, var7, var8), null);
    }
 }

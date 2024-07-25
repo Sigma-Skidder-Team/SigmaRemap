@@ -123,7 +123,7 @@ public class class_1840 extends Screen {
       switch (var1) {
          case field_25921:
             this.field_9321.method_32687(field_9340);
-            var4 = this.field_943.thePlayer.field_30532.method_4803();
+            var4 = this.field_943.thePlayer.connection.method_4803();
             break;
          case field_25920:
             this.field_9338.method_32687(field_9331);
@@ -132,7 +132,7 @@ public class class_1840 extends Screen {
          case field_25922:
             this.field_9337.method_32687(field_9341);
             class_9186 var5 = this.field_943.method_8586();
-            var4 = this.field_943.thePlayer.field_30532.method_4803().stream().filter(var5::method_42336).collect(Collectors.toSet());
+            var4 = this.field_943.thePlayer.connection.method_4803().stream().filter(var5::method_42336).collect(Collectors.toSet());
             break;
          default:
             var4 = ImmutableList.of();

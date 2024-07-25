@@ -13,19 +13,19 @@ public class class_5339 extends class_6261 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       this.method_28562(var1, var2, var3);
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (!method_28561(var1, var2, var3)) {
          var2.method_7513(var3, this.field_27228.method_29260().method_10308(field_31998, Boolean.valueOf(false)), 2);
       }
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var2 == Direction.field_802 && !var1.method_8309(var4, var5)) {
          return class_4783.field_23184.method_29260();
       } else {
@@ -39,7 +39,7 @@ public class class_5339 extends class_6261 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_27229;
    }
 }

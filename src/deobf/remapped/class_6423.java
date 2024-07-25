@@ -33,7 +33,7 @@ public class class_6423 extends class_9521 {
    @Override
    public void method_32692(class_3541 var1) {
       if (this.field_32826) {
-         var1.method_16345(class_4949.method_22675(class_463.field_2778, 1.0F));
+         var1.play(class_4949.method_22675(class_463.field_2778, 1.0F));
       }
    }
 }

@@ -45,7 +45,7 @@ public class class_1609 extends class_4040 implements class_2354 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2874;
    }
 
@@ -68,7 +68,7 @@ public class class_1609 extends class_4040 implements class_2354 {
 
    @Override
    public void method_26606() {
-      if (!this.field_41768.field_33055 && this.method_37330()) {
+      if (!this.world.field_33055 && this.method_37330()) {
          this.field_8348.method_44424();
          if (this.field_8348.method_44423() > 0) {
             this.field_8349.method_13645(false);
@@ -98,7 +98,7 @@ public class class_1609 extends class_4040 implements class_2354 {
                this.field_8351 = this.method_26446().method_28004();
                this.method_7189(true);
                if (!this.method_37378()) {
-                  this.field_41768
+                  this.world
                      .method_29528(
                         (class_704)null,
                         this.method_37302(),
@@ -132,7 +132,7 @@ public class class_1609 extends class_4040 implements class_2354 {
          }
 
          if (this.field_41717.nextFloat() < 7.5E-4F) {
-            this.field_41768.method_29587(this, (byte)15);
+            this.world.method_29587(this, (byte)15);
          }
       }
 
@@ -150,7 +150,7 @@ public class class_1609 extends class_4040 implements class_2354 {
          super.method_37336(var1);
       } else {
          for (int var4 = 0; var4 < this.field_41717.nextInt(35) + 10; var4++) {
-            this.field_41768
+            this.world
                .method_43361(
                   class_3090.field_15342,
                   this.method_37302() + this.field_41717.nextGaussian() * 0.13F,
@@ -165,7 +165,7 @@ public class class_1609 extends class_4040 implements class_2354 {
    }
 
    @Override
-   public float method_26477(class_6199 var1, float var2) {
+   public float method_26477(DamageSource var1, float var2) {
       var2 = super.method_26477(var1, var2);
       if (var1.method_28372() == this) {
          var2 = 0.0F;
@@ -205,12 +205,12 @@ public class class_1609 extends class_4040 implements class_2354 {
             this.method_26860((class_5834)null);
          }
 
-         class_8011 var14 = new class_8011(this.field_41768, this);
+         class_8011 var14 = new class_8011(this.world, this);
          var14.method_15852(class_9541.method_43999(new ItemStack(class_4897.field_25226), var13));
-         var14.field_41755 -= -20.0F;
+         var14.rotationPitch -= -20.0F;
          var14.method_26161(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.method_37378()) {
-            this.field_41768
+            this.world
                .method_29528(
                   (class_704)null,
                   this.method_37302(),
@@ -223,7 +223,7 @@ public class class_1609 extends class_4040 implements class_2354 {
                );
          }
 
-         this.field_41768.method_7509(var14);
+         this.world.method_7509(var14);
       }
    }
 

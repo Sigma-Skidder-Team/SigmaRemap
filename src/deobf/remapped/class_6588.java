@@ -4644,8 +4644,8 @@ public class class_6588 {
       }
    }
 
-   public static boolean method_30230(class_2584 var0) {
-      return var0 == class_2584.field_12791 && field_33953 ? true : var0 == class_2584.field_12794 && field_33902;
+   public static boolean method_30230(Hand var0) {
+      return var0 == Hand.MAIN_HAND && field_33953 ? true : var0 == Hand.OFF_HAND && field_33902;
    }
 
    public static boolean method_30279() {
@@ -4698,8 +4698,8 @@ public class class_6588 {
       return field_33680;
    }
 
-   public static class_1331 method_30293() {
-      return new class_1331(field_33915, field_33769, field_33641);
+   public static BlockPos method_30293() {
+      return new BlockPos(field_33915, field_33769, field_33641);
    }
 
    public static boolean method_30265() {

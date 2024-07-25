@@ -45,7 +45,7 @@ public class class_8225 extends class_8549 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       for (int var10 = 0; var10 < this.field_42225; var10++) {
          this.method_32529(var1, class_4783.field_23355.method_29260(), 0, 0, var10, var5);
          this.method_32529(var1, class_4783.field_23355.method_29260(), 1, 0, var10, var5);

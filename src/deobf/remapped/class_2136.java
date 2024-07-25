@@ -39,13 +39,13 @@ public class class_2136 extends class_3498 {
 
    @Nullable
    @Override
-   public class_1331 method_16084(int var1, int var2, int var3, int var4, int var5, Predicate<class_6325> var6, Random var7, boolean var8) {
+   public BlockPos method_16084(int var1, int var2, int var3, int var4, int var5, Predicate<class_6325> var6, Random var7, boolean var8) {
       if (!var6.test(this.field_10712.get())) {
          return null;
       } else {
          return !var8
-            ? new class_1331(var1 - var4 + var7.nextInt(var4 * 2 + 1), var2, var3 - var4 + var7.nextInt(var4 * 2 + 1))
-            : new class_1331(var1, var2, var3);
+            ? new BlockPos(var1 - var4 + var7.nextInt(var4 * 2 + 1), var2, var3 - var4 + var7.nextInt(var4 * 2 + 1))
+            : new BlockPos(var1, var2, var3);
       }
    }
 

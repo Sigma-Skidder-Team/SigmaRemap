@@ -25,8 +25,8 @@ public class NCPSpeed extends Module {
          && !JesusModule.method_32081()
          && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
          if (var1.method_6449() && SpeedModule.field_35509 > 1) {
-            double var4 = client.thePlayer.method_37302() - client.thePlayer.field_30525;
-            double var6 = client.thePlayer.method_37156() - client.thePlayer.field_30507;
+            double var4 = client.thePlayer.method_37302() - client.thePlayer.lastReportedPosX;
+            double var6 = client.thePlayer.method_37156() - client.thePlayer.lastReportedPosZ;
             if (this.field_7881 != 0) {
                this.field_7882 = Math.sqrt(var4 * var4 + var6 * var6);
             } else {

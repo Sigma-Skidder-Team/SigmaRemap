@@ -50,7 +50,7 @@ public class class_2033 {
       return this.field_10322.method_13287();
    }
 
-   public class_3200<?> method_9525(class_1331 var1, boolean var2, class_5390<?> var3) {
+   public class_3200<?> method_9525(BlockPos var1, boolean var2, class_5390<?> var3) {
       return (class_3200<?>)DataFixUtils.orElse(
          this.method_9531(class_6979.method_31921(var1), var3)
             .filter(var1x -> var1x.method_14724().method_44395(var1))

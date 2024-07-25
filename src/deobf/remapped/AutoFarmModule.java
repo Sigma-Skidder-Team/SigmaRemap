@@ -9,11 +9,11 @@ public class AutoFarmModule extends Module {
    public void method_21418(class_1393 var1) {
       if (this.method_42015()) {
          if (client.thePlayer != null && client.theWorld != null) {
-            for (class_1331 var5 : class_7494.method_34085(class_7494.method_34110(client.playerController.method_42146()))) {
+            for (BlockPos var5 : class_7494.method_34085(class_7494.method_34110(client.playerController.method_42146()))) {
                if (class_7494.method_34116(client.thePlayer, var5)) {
                   class_2522 var6 = client.theWorld.method_28262(var5);
                   if (var6.method_8360() instanceof class_8557 || var6.method_8360() instanceof class_8820 || var6.method_8360() instanceof class_9463) {
-                     ItemStack var14 = client.thePlayer.method_26617(class_2584.field_12791);
+                     ItemStack var14 = client.thePlayer.method_26617(Hand.MAIN_HAND);
                      if (var14 != null && var14.method_27960() instanceof class_239) {
                         if (var6.<Integer>method_10313(class_6023.field_30676) != 7) {
                            float[] var18 = class_7494.method_34077(var5, Direction.field_802);

@@ -32,7 +32,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(this.method_7150(), 0.15F, 1.0F);
    }
 
@@ -105,7 +105,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    }
 
    public void method_7153() {
-      if (this.field_41768 != null && !this.field_41768.field_33055) {
+      if (this.world != null && !this.world.field_33055) {
          this.field_29916.method_3488(this.field_8311);
          this.field_29916.method_3488(this.field_8312);
          ItemStack var3 = this.method_26617(class_8462.method_38934(this, class_4897.field_25206));
@@ -113,7 +113,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
             this.field_29916.method_3485(4, this.field_8311);
          } else {
             byte var4 = 20;
-            if (this.field_41768.method_43370() != class_423.field_1782) {
+            if (this.world.method_43370() != class_423.field_1782) {
                var4 = 40;
             }
 
@@ -131,9 +131,9 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
       double var9 = var1.method_37080(0.3333333333333333) - var6.method_37309();
       double var11 = var1.method_37156() - this.method_37156();
       double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
-      var6.method_26161(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.field_41768.method_43370().method_2097() * 4));
+      var6.method_26161(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
       this.method_37155(class_463.field_2526, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
-      this.field_41768.method_7509(var6);
+      this.world.method_7509(var6);
    }
 
    public class_6749 method_7152(ItemStack var1, float var2) {
@@ -154,7 +154,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    @Override
    public void method_37349(class_6943 var1, ItemStack var2) {
       super.method_37349(var1, var2);
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_7153();
       }
    }

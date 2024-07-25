@@ -24,7 +24,7 @@ public class Camera {
       this.field_46419 = var2;
       this.field_46417 = var3;
       this.field_46409 = var4;
-      this.method_41637(var2.method_37291(var5), var2.method_37184(var5));
+      this.method_41637(var2.getYaw(var5), var2.getPitch(var5));
       this.method_41628(
          class_9299.method_42794((double)var5, var2.field_41767, var2.method_37302()),
          class_9299.method_42794((double)var5, var2.field_41698, var2.method_37309())
@@ -119,7 +119,7 @@ public class Camera {
       return this.field_46411;
    }
 
-   public class_1331 method_41630() {
+   public BlockPos method_41630() {
       return this.field_46414;
    }
 

@@ -42,7 +42,7 @@ public class class_7937 extends class_1173 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_35904(this.field_41744);
       }
    }
@@ -57,7 +57,7 @@ public class class_7937 extends class_1173 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2519;
    }
 
@@ -67,7 +67,7 @@ public class class_7937 extends class_1173 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_1974, 0.15F, 1.0F);
    }
 
@@ -113,8 +113,8 @@ public class class_7937 extends class_1173 {
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (var1.method_43360().nextInt(100) == 0) {
-         class_6778 var8 = class_6629.field_34241.method_30484(this.field_41768);
-         var8.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, 0.0F);
+         class_6778 var8 = class_6629.field_34241.method_30484(this.world);
+         var8.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, 0.0F);
          var8.method_26864(var1, var2, var3, (class_8733)null, (CompoundNBT)null);
          var8.method_37353(this);
       }

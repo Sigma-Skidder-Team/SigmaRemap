@@ -53,7 +53,7 @@ public class class_7314 extends class_9733 {
             var14 - var21.method_61(),
             var16 - var21.method_60(),
             var18 - var21.method_62(),
-            this.field_37398.field_41701,
+            this.field_37398.rotationYaw,
             var3,
             new class_7966(),
             var20,

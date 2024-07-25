@@ -84,7 +84,7 @@ public class class_9477 {
          }
 
          if (!var15 && var26.method_27364().method_33453(class_7335.field_37512)) {
-            for (class_1331 var29 : class_1331.method_6075(var3.method_9535(), 0, var3.method_9545(), var3.method_9536(), 255, var3.method_9538())) {
+            for (BlockPos var29 : BlockPos.method_6075(var3.method_9535(), 0, var3.method_9545(), var3.method_9536(), 255, var3.method_9538())) {
                if (((class_5990)var43).method_28262(var29).method_8339() != 0) {
                   var26.method_34021(var29);
                }
@@ -251,7 +251,7 @@ public class class_9477 {
 
       class_3416 var23 = new class_3416();
 
-      for (class_1331 var26 : var1.method_27366()) {
+      for (BlockPos var26 : var1.method_27366()) {
          CompoundNBT var30 = var1.method_27345(var26);
          if (var30 != null) {
             var23.add(var30);
@@ -356,7 +356,7 @@ public class class_9477 {
          CompoundNBT var8 = var12.method_15764(var13);
          boolean var9 = var8.getBoolean("keepPacked");
          if (!var9) {
-            class_1331 var10 = new class_1331(var8.method_25947("x"), var8.method_25947("y"), var8.method_25947("z"));
+            BlockPos var10 = new BlockPos(var8.method_25947("x"), var8.method_25947("y"), var8.method_25947("z"));
             class_3757 var11 = class_3757.method_17410(var1.method_28262(var10), var8);
             if (var11 != null) {
                var1.method_11982(var11);

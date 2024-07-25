@@ -36,8 +36,8 @@ public class class_6629<T extends Entity> {
    public static final class_6629<class_2806> field_34301 = method_30457(
       "blaze", class_6238.<class_2806>method_28492(class_2806::new, class_4565.field_22247).method_28490().method_28489(0.6F, 1.8F).method_28499(8)
    );
-   public static final class_6629<class_9149> field_34330 = method_30457(
-      "boat", class_6238.<class_9149>method_28492(class_9149::new, class_4565.field_22251).method_28489(1.375F, 0.5625F).method_28499(10)
+   public static final class_6629<BoatEntity> field_34330 = method_30457(
+      "boat", class_6238.<BoatEntity>method_28492(BoatEntity::new, class_4565.field_22251).method_28489(1.375F, 0.5625F).method_28499(10)
    );
    public static final class_6629<class_5583> field_34249 = method_30457(
       "cat", class_6238.<class_5583>method_28492(class_5583::new, class_4565.field_22239).method_28489(0.6F, 0.7F).method_28499(8)
@@ -429,14 +429,14 @@ public class class_6629<T extends Entity> {
    }
 
    @Nullable
-   public Entity method_30479(class_6331 var1, ItemStack var2, class_704 var3, class_1331 var4, class_2417 var5, boolean var6, boolean var7) {
+   public Entity method_30479(class_6331 var1, ItemStack var2, class_704 var3, BlockPos var4, class_2417 var5, boolean var6, boolean var7) {
       return this.method_30478(
          var1, var2 != null ? var2.method_27990() : null, var2 != null && var2.method_28018() ? var2.method_28008() : null, var3, var4, var5, var6, var7
       );
    }
 
    @Nullable
-   public T method_30478(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
+   public T method_30478(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, BlockPos var5, class_2417 var6, boolean var7, boolean var8) {
       Entity var11 = this.method_30483(var1, var2, var3, var4, var5, var6, var7, var8);
       if (var11 != null) {
          var1.method_7065(var11);
@@ -446,7 +446,7 @@ public class class_6629<T extends Entity> {
    }
 
    @Nullable
-   public T method_30483(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, class_1331 var5, class_2417 var6, boolean var7, boolean var8) {
+   public T method_30483(class_6331 var1, CompoundNBT var2, ITextComponent var3, class_704 var4, BlockPos var5, class_2417 var6, boolean var7, boolean var8) {
       Entity var11 = this.method_30484(var1);
       if (var11 != null) {
          double var12;
@@ -466,8 +466,8 @@ public class class_6629<T extends Entity> {
          );
          if (var11 instanceof class_5886) {
             class_5886 var14 = (class_5886)var11;
-            var14.field_29618 = var14.field_41701;
-            var14.field_29605 = var14.field_41701;
+            var14.field_29618 = var14.rotationYaw;
+            var14.field_29605 = var14.rotationYaw;
             var14.method_26864(var1, var1.method_43368(var14.method_37075()), var6, (class_8733)null, var2);
             var14.method_26853();
          }
@@ -483,7 +483,7 @@ public class class_6629<T extends Entity> {
       }
    }
 
-   public static double method_30461(class_4924 var0, class_1331 var1, boolean var2, class_4092 var3) {
+   public static double method_30461(class_4924 var0, BlockPos var1, boolean var2, class_4092 var3) {
       class_4092 var6 = new class_4092(var1);
       if (var2) {
          var6 = var6.method_18928(0.0, -1.0, 0.0);
@@ -623,7 +623,7 @@ public class class_6629<T extends Entity> {
             for (int var7 = 0; var7 < var6.size(); var7++) {
                Entity var8 = method_30455(var6.method_15764(var7), var1, var2);
                if (var8 != null) {
-                  var8.method_37354(var3, true);
+                  var8.startRiding(var3, true);
                }
             }
          }

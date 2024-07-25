@@ -16,7 +16,7 @@ public class class_6721 implements class_5256<class_7110> {
       if (!var17.method_8345() && var17.method_8352() == class_7537.field_38470) {
          return null;
       } else {
-         class_1331 var18 = new class_1331(var3, var5, var7);
+         BlockPos var18 = new BlockPos(var3, var5, var7);
          int var19 = MinecraftClient.getInstance().method_8569().method_20744(var17, var2, var18);
          if (var17.method_8360() instanceof class_305) {
             var19 = ((class_305)var17.method_8360()).method_1358(var17, var2, var18);

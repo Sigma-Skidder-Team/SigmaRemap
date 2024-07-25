@@ -44,7 +44,7 @@ public class class_763 extends class_7164<class_337, class_2574> {
       class_5834 var9 = var1.method_1552();
       if (var9 != null) {
          float var10 = var1.method_1546(var3);
-         float var11 = (float)var1.field_41768.method_29546() + var3;
+         float var11 = (float)var1.world.method_29546() + var3;
          float var12 = var11 * 0.5F % 1.0F;
          float var13 = var1.method_37277();
          var4.method_36063();

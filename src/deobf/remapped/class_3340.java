@@ -99,8 +99,8 @@ public class class_3340 extends class_5920<class_7666> {
          if (!field_16484.containsKey(var4)) {
             return ImmutableList.of(new ItemStack(class_4897.field_24621));
          } else {
-            class_1758 var5 = var1.field_41768.method_29522().method_1722().method_4604(field_16484.get(var4));
-            class_8480 var6 = new class_8480((class_6331)var1.field_41768)
+            class_1758 var5 = var1.world.method_29522().method_1722().method_4604(field_16484.get(var4));
+            class_8480 var6 = new class_8480((class_6331)var1.world)
                .method_39065(class_8712.field_44671, var1.method_37245())
                .method_39065(class_8712.field_44676, var1)
                .method_39068(var1.method_26594());
@@ -124,8 +124,8 @@ public class class_3340 extends class_5920<class_7666> {
    }
 
    private boolean method_15336(class_7666 var1, class_704 var2) {
-      class_1331 var5 = var2.method_37075();
-      class_1331 var6 = var1.method_37075();
+      BlockPos var5 = var2.method_37075();
+      BlockPos var6 = var1.method_37075();
       return var6.method_12171(var5, 5.0);
    }
 

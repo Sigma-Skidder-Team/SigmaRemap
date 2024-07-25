@@ -10,7 +10,7 @@ public class class_4695 extends class_4285<class_2045> {
       super(var1);
    }
 
-   public boolean method_21669(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_2045 var5) {
+   public boolean method_21669(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_2045 var5) {
       while (var4.method_12165() > 5 && var1.method_22548(var4)) {
          var4 = var4.method_6100();
       }
@@ -88,7 +88,7 @@ public class class_4695 extends class_4285<class_2045> {
                for (int var45 = 0; var45 < 16; var45++) {
                   for (int var49 = 4; var49 < 8; var49++) {
                      if (var8[(var41 * 16 + var45) * 8 + var49]) {
-                        class_1331 var52 = var4.method_6104(var41, var49 - 1, var45);
+                        BlockPos var52 = var4.method_6104(var41, var49 - 1, var45);
                         if (method_19910(var1.method_28262(var52).method_8360())
                            && var1.method_25266(class_2957.field_14437, var4.method_6104(var41, var49, var45)) > 0) {
                            class_6325 var55 = var1.method_22561(var52);
@@ -130,7 +130,7 @@ public class class_4695 extends class_4285<class_2045> {
                for (int var43 = 0; var43 < 16; var43++) {
                   for (int var47 = 0; var47 < 16; var47++) {
                      byte var51 = 4;
-                     class_1331 var54 = var4.method_6104(var43, 4, var47);
+                     BlockPos var54 = var4.method_6104(var43, 4, var47);
                      if (var1.method_22561(var54).method_28859(var1, var54, false)) {
                         var1.method_7513(var54, class_4783.field_23496.method_29260(), 2);
                      }

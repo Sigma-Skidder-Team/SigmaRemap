@@ -29,8 +29,8 @@ public class class_9239 extends class_2833 {
 
          if (var4 != 0.0 || var8 != 0.0) {
             float var10 = (float)(class_9299.method_42821(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
-            this.field_47202.field_41701 = this.method_12882(this.field_47202.field_41701, var10, 90.0F);
-            this.field_47202.field_29605 = this.field_47202.field_41701;
+            this.field_47202.rotationYaw = this.method_12882(this.field_47202.rotationYaw, var10, 90.0F);
+            this.field_47202.field_29605 = this.field_47202.rotationYaw;
          }
       } else {
          this.field_47202.method_26461(0.0F);

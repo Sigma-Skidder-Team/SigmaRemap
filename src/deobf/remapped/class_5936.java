@@ -29,20 +29,20 @@ public class class_5936 extends class_3808<class_8759> {
       if (var9 != class_8759.method_40203(var8) && var7 < var9) {
          class_1201 var10 = this.method_17745(var8, var5);
          if (var10 == null) {
-            for (var1 = class_1331.method_6087(var1); var10 == null; var10 = this.method_17745(var8, var5)) {
+            for (var1 = BlockPos.method_6087(var1); var10 == null; var10 = this.method_17745(var8, var5)) {
                var5 = class_6979.method_31928(var5, Direction.field_817);
                if (++var7 >= var9) {
                   return 15;
                }
 
-               var1 = class_1331.method_6096(var1, 0, 16, 0);
+               var1 = BlockPos.method_6096(var1, 0, 16, 0);
             }
          }
 
          return var10.method_5314(
-            class_6979.method_31913(class_1331.method_6080(var1)),
-            class_6979.method_31913(class_1331.method_6067(var1)),
-            class_6979.method_31913(class_1331.method_6092(var1))
+            class_6979.method_31913(BlockPos.method_6080(var1)),
+            class_6979.method_31913(BlockPos.method_6067(var1)),
+            class_6979.method_31913(BlockPos.method_6092(var1))
          );
       } else {
          return 15;
@@ -192,20 +192,20 @@ public class class_5936 extends class_3808<class_8759> {
                                  long var23;
                                  switch (var16) {
                                     case field_818:
-                                       var21 = class_1331.method_6107(var34 + var19, var36 + var20, var12);
-                                       var23 = class_1331.method_6107(var34 + var19, var36 + var20, var12 - 1);
+                                       var21 = BlockPos.method_6107(var34 + var19, var36 + var20, var12);
+                                       var23 = BlockPos.method_6107(var34 + var19, var36 + var20, var12 - 1);
                                        break;
                                     case field_800:
-                                       var21 = class_1331.method_6107(var34 + var19, var36 + var20, var12 + 16 - 1);
-                                       var23 = class_1331.method_6107(var34 + var19, var36 + var20, var12 + 16);
+                                       var21 = BlockPos.method_6107(var34 + var19, var36 + var20, var12 + 16 - 1);
+                                       var23 = BlockPos.method_6107(var34 + var19, var36 + var20, var12 + 16);
                                        break;
                                     case field_809:
-                                       var21 = class_1331.method_6107(var34, var36 + var19, var12 + var20);
-                                       var23 = class_1331.method_6107(var34 - 1, var36 + var19, var12 + var20);
+                                       var21 = BlockPos.method_6107(var34, var36 + var19, var12 + var20);
+                                       var23 = BlockPos.method_6107(var34 - 1, var36 + var19, var12 + var20);
                                        break;
                                     default:
-                                       var21 = class_1331.method_6107(var34 + 16 - 1, var36 + var19, var12 + var20);
-                                       var23 = class_1331.method_6107(var34 + 16, var36 + var19, var12 + var20);
+                                       var21 = BlockPos.method_6107(var34 + 16 - 1, var36 + var19, var12 + var20);
+                                       var23 = BlockPos.method_6107(var34 + 16, var36 + var19, var12 + var20);
                                  }
 
                                  var1.method_27703(var21, var23, var1.method_27700(var21, var23, 0), true);
@@ -216,12 +216,12 @@ public class class_5936 extends class_3808<class_8759> {
 
                      for (int var37 = 0; var37 < 16; var37++) {
                         for (int var38 = 0; var38 < 16; var38++) {
-                           long var25 = class_1331.method_6107(
+                           long var25 = BlockPos.method_6107(
                               class_6979.method_31908(class_6979.method_31895(var7)) + var37,
                               class_6979.method_31908(class_6979.method_31929(var7)),
                               class_6979.method_31908(class_6979.method_31916(var7)) + var38
                            );
-                           long var39 = class_1331.method_6107(
+                           long var39 = BlockPos.method_6107(
                               class_6979.method_31908(class_6979.method_31895(var7)) + var37,
                               class_6979.method_31908(class_6979.method_31929(var7)) - 1,
                               class_6979.method_31908(class_6979.method_31916(var7)) + var38
@@ -232,7 +232,7 @@ public class class_5936 extends class_3808<class_8759> {
                   } else {
                      for (int var10 = 0; var10 < 16; var10++) {
                         for (int var11 = 0; var11 < 16; var11++) {
-                           long var27 = class_1331.method_6107(
+                           long var27 = BlockPos.method_6107(
                               class_6979.method_31908(class_6979.method_31895(var7)) + var10,
                               class_6979.method_31908(class_6979.method_31929(var7)) + 16 - 1,
                               class_6979.method_31908(class_6979.method_31916(var7)) + var11
@@ -254,7 +254,7 @@ public class class_5936 extends class_3808<class_8759> {
                if (this.field_30278.remove(var32) && this.method_17749(var32)) {
                   for (int var33 = 0; var33 < 16; var33++) {
                      for (int var35 = 0; var35 < 16; var35++) {
-                        long var29 = class_1331.method_6107(
+                        long var29 = BlockPos.method_6107(
                            class_6979.method_31908(class_6979.method_31895(var32)) + var33,
                            class_6979.method_31908(class_6979.method_31929(var32)) + 16 - 1,
                            class_6979.method_31908(class_6979.method_31916(var32)) + var35
@@ -276,7 +276,7 @@ public class class_5936 extends class_3808<class_8759> {
    }
 
    public boolean method_27142(long var1) {
-      int var5 = class_1331.method_6067(var1);
+      int var5 = BlockPos.method_6067(var1);
       if ((var5 & 15) == 15) {
          long var6 = class_6979.method_31903(var1);
          long var8 = class_6979.method_31910(var6);

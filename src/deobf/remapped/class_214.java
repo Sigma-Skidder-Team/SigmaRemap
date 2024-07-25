@@ -11,7 +11,7 @@ public interface class_214 {
 
    boolean method_925();
 
-   boolean method_927(class_4190 var1, class_1331 var2, boolean var3);
+   boolean method_927(class_4190 var1, BlockPos var2, boolean var3);
 
    boolean method_930(class_2451 var1);
 

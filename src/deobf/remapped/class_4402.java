@@ -57,7 +57,7 @@ public class class_4402 {
          .filter(var2.method_36962());
    }
 
-   public void method_20516(class_1331 var1, class_236 var2) {
+   public void method_20516(BlockPos var1, class_236 var2) {
       if (this.method_20517(new class_8009(var1, var2, this.field_21545))) {
          field_21547.debug("Added POI of type {} @ {}", new Supplier[]{() -> var2, () -> var1});
          this.field_21545.run();
@@ -65,7 +65,7 @@ public class class_4402 {
    }
 
    private boolean method_20517(class_8009 var1) {
-      class_1331 var4 = var1.method_36337();
+      BlockPos var4 = var1.method_36337();
       class_236 var5 = var1.method_36341();
       short var6 = class_6979.method_31909(var4);
       class_8009 var7 = (class_8009)this.field_21544.get(var6);
@@ -80,7 +80,7 @@ public class class_4402 {
       }
    }
 
-   public void method_20510(class_1331 var1) {
+   public void method_20510(BlockPos var1) {
       class_8009 var4 = (class_8009)this.field_21544.remove(class_6979.method_31909(var1));
       if (var4 != null) {
          this.field_21549.get(var4.method_36341()).remove(var4);
@@ -91,7 +91,7 @@ public class class_4402 {
       }
    }
 
-   public boolean method_20512(class_1331 var1) {
+   public boolean method_20512(BlockPos var1) {
       class_8009 var4 = (class_8009)this.field_21544.get(class_6979.method_31909(var1));
       if (var4 != null) {
          boolean var5 = var4.method_36342();
@@ -102,19 +102,19 @@ public class class_4402 {
       }
    }
 
-   public boolean method_20514(class_1331 var1, Predicate<class_236> var2) {
+   public boolean method_20514(BlockPos var1, Predicate<class_236> var2) {
       short var5 = class_6979.method_31909(var1);
       class_8009 var6 = (class_8009)this.field_21544.get(var5);
       return var6 != null && var2.test(var6.method_36341());
    }
 
-   public Optional<class_236> method_20515(class_1331 var1) {
+   public Optional<class_236> method_20515(BlockPos var1) {
       short var4 = class_6979.method_31909(var1);
       class_8009 var5 = (class_8009)this.field_21544.get(var4);
       return var5 == null ? Optional.<class_236>empty() : Optional.<class_236>of(var5.method_36341());
    }
 
-   public void method_20513(Consumer<BiConsumer<class_1331, class_236>> var1) {
+   public void method_20513(Consumer<BiConsumer<BlockPos, class_236>> var1) {
       if (!this.field_21548) {
          Short2ObjectOpenHashMap var4 = new Short2ObjectOpenHashMap(this.field_21544);
          this.method_20509();

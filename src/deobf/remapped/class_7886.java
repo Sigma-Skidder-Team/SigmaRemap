@@ -70,8 +70,8 @@ public class class_7886 extends class_4117 {
 
    private Set<class_3757> method_35663(float var1, float var2, float var3, class_8845 var4, class_2848 var5) {
       boolean var8 = true;
-      class_1331 var9 = class_3511.method_16179(this.field_40354).method_6072();
-      class_1331 var10 = var9.method_6104(15, 15, 15);
+      BlockPos var9 = class_3511.method_16179(this.field_40354).method_6072();
+      BlockPos var10 = var9.method_6104(15, 15, 15);
       class_1521 var11 = new class_1521();
       HashSet var12 = Sets.newHashSet();
       this.field_40353 = null;

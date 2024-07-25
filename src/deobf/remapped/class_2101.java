@@ -28,8 +28,8 @@ public class class_2101 extends class_2833 {
          double var10 = (double)class_9299.method_42842(var4 * var4 + var6 * var6 + var8 * var8);
          var6 /= var10;
          float var12 = (float)(class_9299.method_42821(var8, var4) * 180.0F / (float)Math.PI) - 90.0F;
-         this.field_10540.field_41701 = this.method_12882(this.field_10540.field_41701, var12, 90.0F);
-         this.field_10540.field_29605 = this.field_10540.field_41701;
+         this.field_10540.rotationYaw = this.method_12882(this.field_10540.rotationYaw, var12, 90.0F);
+         this.field_10540.field_29605 = this.field_10540.rotationYaw;
          float var13 = (float)(this.field_13885 * this.field_10540.method_26575(class_7331.field_37465));
          float var14 = class_9299.method_42795(0.125F, this.field_10540.method_26423(), var13);
          this.field_10540.method_26461(var14);

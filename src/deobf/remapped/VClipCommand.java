@@ -22,8 +22,8 @@ public class VClipCommand extends Command {
                         field_18219.thePlayer.method_37302(),
                         field_18219.thePlayer.method_37309() + var2[0].method_24062(),
                         field_18219.thePlayer.method_37156(),
-                        field_18219.thePlayer.field_41701,
-                        field_18219.thePlayer.field_41755,
+                        field_18219.thePlayer.rotationYaw,
+                        field_18219.thePlayer.rotationPitch,
                         Collections.<class_8089>emptySet(),
                         (int)(2.147483647E9 * Math.random())
                      )

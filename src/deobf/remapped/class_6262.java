@@ -251,7 +251,7 @@ public class class_6262 extends class_462 {
 
    @Override
    public boolean method_32525(class_700 var1, class_9616 var2, Random var3, int var4, int var5, int var6, Identifier var7) {
-      class_1331 var10 = new class_1331(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
+      BlockPos var10 = new BlockPos(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
       if (var2.method_44395(var10) && var1.method_28262(var10).method_8345() && !var1.method_28262(var10.method_6100()).method_8345()) {
          class_2522 var11 = class_4783.field_23540
             .method_29260()
@@ -269,7 +269,7 @@ public class class_6262 extends class_462 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       if (this.method_32503(var1, var5)) {
          return false;
       } else {
@@ -309,7 +309,7 @@ public class class_6262 extends class_462 {
                int var19 = var17 - 1 + var4.nextInt(3);
                int var20 = this.method_32530(1, var19);
                int var21 = this.method_32523(1, var19);
-               class_1331 var22 = new class_1331(var20, var18, var21);
+               BlockPos var22 = new BlockPos(var20, var18, var21);
                if (var5.method_44395(var22) && this.method_32522(var1, 1, 0, var19, var5)) {
                   this.field_32004 = true;
                   var1.method_7513(var22, class_4783.field_23617.method_29260(), 2);
@@ -338,7 +338,7 @@ public class class_6262 extends class_462 {
             for (int var27 = 0; var27 <= var14; var27++) {
                class_2522 var29 = this.method_32514(var1, 1, -1, var27, var5);
                if (!var29.method_8345()
-                  && var29.method_8321(var1, new class_1331(this.method_32530(1, var27), this.method_32507(-1), this.method_32523(1, var27)))) {
+                  && var29.method_8321(var1, new BlockPos(this.method_32530(1, var27), this.method_32507(-1), this.method_32523(1, var27)))) {
                   float var31 = !this.method_32522(var1, 1, 0, var27, var5) ? 0.9F : 0.7F;
                   this.method_32524(var1, var5, var4, var31, 1, 0, var27, var25);
                }

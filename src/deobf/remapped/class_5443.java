@@ -40,7 +40,7 @@ public class class_5443<E extends class_5886> extends class_5920<E> {
    }
 
    private boolean method_24800(E var1) {
-      return this.method_24798((E)var1).field_41768 != var1.field_41768;
+      return this.method_24798((E)var1).world != var1.world;
    }
 
    private class_5834 method_24798(E var1) {
@@ -49,7 +49,7 @@ public class class_5443<E extends class_5886> extends class_5920<E> {
 
    private static <E extends class_5834> boolean method_24799(E var0) {
       Optional var3 = var0.method_26525().<Long>method_5138(class_6044.field_30909);
-      return var3.isPresent() && var0.field_41768.method_29546() - (Long)var3.get() > 200L;
+      return var3.isPresent() && var0.world.method_29546() - (Long)var3.get() > 200L;
    }
 
    private boolean method_24797(E var1) {

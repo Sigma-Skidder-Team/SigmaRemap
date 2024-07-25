@@ -22,7 +22,7 @@ public class class_3425 {
    }
 
    @Nullable
-   public static class_1343 method_15846(class_4612 var0, int var1, int var2, ToDoubleFunction<class_1331> var3) {
+   public static class_1343 method_15846(class_4612 var0, int var1, int var2, ToDoubleFunction<BlockPos> var3) {
       return method_15833(var0, var1, var2, 0, (class_1343)null, false, 0.0, var3, true, 0, 0, true);
    }
 
@@ -76,7 +76,7 @@ public class class_3425 {
       class_1343 var4,
       boolean var5,
       double var6,
-      ToDoubleFunction<class_1331> var8,
+      ToDoubleFunction<BlockPos> var8,
       boolean var9,
       int var10,
       int var11,
@@ -93,16 +93,16 @@ public class class_3425 {
 
       boolean var18 = false;
       double var19 = Double.NEGATIVE_INFINITY;
-      class_1331 var21 = var0.method_37075();
+      BlockPos var21 = var0.method_37075();
 
       for (int var22 = 0; var22 < 10; var22++) {
-         class_1331 var23 = method_15840(var16, var1, var2, var3, var4, var6);
+         BlockPos var23 = method_15840(var16, var1, var2, var3, var4, var6);
          if (var23 != null) {
             int var24 = var23.method_12173();
             int var25 = var23.method_12165();
             int var26 = var23.method_12185();
             if (var0.method_26848() && var1 > 1) {
-               class_1331 var27 = var0.method_26885();
+               BlockPos var27 = var0.method_26885();
                if (!(var0.method_37302() > (double)var27.method_12173())) {
                   var24 += var16.nextInt(var1 / 2);
                } else {
@@ -116,22 +116,22 @@ public class class_3425 {
                }
             }
 
-            class_1331 var31 = new class_1331((double)var24 + var0.method_37302(), (double)var25 + var0.method_37309(), (double)var26 + var0.method_37156());
+            BlockPos var31 = new BlockPos((double)var24 + var0.method_37302(), (double)var25 + var0.method_37309(), (double)var26 + var0.method_37156());
             if (var31.method_12165() >= 0
-               && var31.method_12165() <= var0.field_41768.method_28261()
+               && var31.method_12165() <= var0.world.method_28261()
                && (!var17 || var0.method_26880(var31))
                && (!var12 || var15.method_5609(var31))) {
                if (var9) {
                   var31 = method_15844(
                      var31,
                      var16.nextInt(var10 + 1) + var11,
-                     var0.field_41768.method_28261(),
-                     var1x -> var0.field_41768.method_28262(var1x).method_8362().method_24499()
+                     var0.world.method_28261(),
+                     var1x -> var0.world.method_28262(var1x).method_8362().method_24499()
                   );
                }
 
-               if (var5 || !var0.field_41768.method_28258(var31).method_22007(class_6503.field_33094)) {
-                  class_1108 var28 = class_2266.method_10452(var0.field_41768, var31.method_6089());
+               if (var5 || !var0.world.method_28258(var31).method_22007(class_6503.field_33094)) {
+                  class_1108 var28 = class_2266.method_10452(var0.world, var31.method_6089());
                   if (var0.method_26931(var28) == 0.0F) {
                      double var29 = var8.applyAsDouble(var31);
                      if (var29 > var19) {
@@ -149,7 +149,7 @@ public class class_3425 {
    }
 
    @Nullable
-   private static class_1331 method_15840(Random var0, int var1, int var2, int var3, class_1343 var4, double var5) {
+   private static BlockPos method_15840(Random var0, int var1, int var2, int var3, class_1343 var4, double var5) {
       if (var4 != null && !(var5 >= Math.PI)) {
          double var12 = class_9299.method_42821(var4.field_7334, var4.field_7336) - (float) (Math.PI / 2);
          double var14 = var12 + (double)(2.0F * var0.nextFloat() - 1.0F) * var5;
@@ -158,7 +158,7 @@ public class class_3425 {
          double var20 = var16 * Math.cos(var14);
          if (!(Math.abs(var18) > (double)var1) && !(Math.abs(var20) > (double)var1)) {
             int var22 = var0.nextInt(2 * var2 + 1) - var2 + var3;
-            return new class_1331(var18, (double)var22, var20);
+            return new BlockPos(var18, (double)var22, var20);
          } else {
             return null;
          }
@@ -166,26 +166,26 @@ public class class_3425 {
          int var9 = var0.nextInt(2 * var1 + 1) - var1;
          int var10 = var0.nextInt(2 * var2 + 1) - var2 + var3;
          int var11 = var0.nextInt(2 * var1 + 1) - var1;
-         return new class_1331(var9, var10, var11);
+         return new BlockPos(var9, var10, var11);
       }
    }
 
-   public static class_1331 method_15844(class_1331 var0, int var1, int var2, Predicate<class_1331> var3) {
+   public static BlockPos method_15844(BlockPos var0, int var1, int var2, Predicate<BlockPos> var3) {
       if (var1 < 0) {
          throw new IllegalArgumentException("aboveSolidAmount was " + var1 + ", expected >= 0");
       } else if (!var3.test(var0)) {
          return var0;
       } else {
-         class_1331 var6 = var0.method_6081();
+         BlockPos var6 = var0.method_6081();
 
          while (var6.method_12165() < var2 && var3.test(var6)) {
             var6 = var6.method_6081();
          }
 
-         class_1331 var7 = var6;
+         BlockPos var7 = var6;
 
          while (var7.method_12165() < var2 && var7.method_12165() - var6.method_12165() < var1) {
-            class_1331 var8 = var7.method_6081();
+            BlockPos var8 = var7.method_6081();
             if (var3.test(var8)) {
                break;
             }

@@ -61,15 +61,15 @@ public class class_5851 {
       return var4 + var5 + var6;
    }
 
-   public float method_26691(class_1331 var1) {
+   public float method_26691(BlockPos var1) {
       float var4 = (float)Math.abs(var1.method_12173() - this.field_29731);
       float var5 = (float)Math.abs(var1.method_12165() - this.field_29735);
       float var6 = (float)Math.abs(var1.method_12185() - this.field_29736);
       return var4 + var5 + var6;
    }
 
-   public class_1331 method_26686() {
-      return new class_1331(this.field_29731, this.field_29735, this.field_29736);
+   public BlockPos method_26686() {
+      return new BlockPos(this.field_29731, this.field_29735, this.field_29736);
    }
 
    @Override

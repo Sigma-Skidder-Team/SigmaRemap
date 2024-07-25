@@ -64,7 +64,7 @@ public enum class_8972 implements class_1342 {
                case field_45962:
                   return var5.method_37151();
                case field_45973:
-                  return var5.method_37070();
+                  return var5.isPassenger();
                case field_45970:
                   return var5.method_37382();
                case field_45978:

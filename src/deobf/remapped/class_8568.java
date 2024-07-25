@@ -11,7 +11,7 @@ public class class_8568 extends class_6017 {
    @Override
    public void method_23466() {
       this.field_9479
-         .field_41768
+         .world
          .method_29527(
             this.field_9479.method_37302(),
             this.field_9479.method_37309(),

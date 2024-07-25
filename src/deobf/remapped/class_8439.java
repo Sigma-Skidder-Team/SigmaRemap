@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_8439 extends class_8859 {
+public class class_8439 extends MovementInput {
    private static String[] field_43175;
    private final GameOptions field_43174;
 

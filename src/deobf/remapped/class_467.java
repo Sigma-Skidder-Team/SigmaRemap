@@ -12,18 +12,18 @@ import org.apache.logging.log4j.Logger;
 
 public class class_467 {
    private static final Logger field_2927 = LogManager.getLogger();
-   private final class_1331 field_2924;
+   private final BlockPos field_2924;
    private final class_6331 field_2928;
    private final class_2983 field_2925;
    private final int field_2919;
    private final List<class_4085> field_2920 = Lists.newArrayList();
-   private final Map<class_4085, class_1331> field_2929 = Maps.newHashMap();
+   private final Map<class_4085, BlockPos> field_2929 = Maps.newHashMap();
    private final List<Pair<class_4350, Collection<class_4085>>> field_2922 = Lists.newArrayList();
    private class_8604 field_2921;
    private int field_2930 = 0;
    private class_2921 field_2926;
 
-   public class_467(Collection<class_4350> var1, class_1331 var2, class_6631 var3, class_6331 var4, class_2983 var5, int var6) {
+   public class_467(Collection<class_4350> var1, BlockPos var2, class_6631 var3, class_6331 var4, class_2983 var5, int var6) {
       this.field_2926 = var2.method_6089();
       this.field_2924 = var2;
       this.field_2928 = var4;
@@ -64,7 +64,7 @@ public class class_467 {
          var6.forEach(var1x -> {
             this.field_2921.method_39548(var1x);
             this.field_2921.method_39546(new class_4500(this));
-            class_1331 var4x = this.field_2929.get(var1x);
+            BlockPos var4x = this.field_2929.get(var1x);
             class_1954.method_9032(var1x, var4x, this.field_2925);
          });
       }
@@ -81,11 +81,11 @@ public class class_467 {
       class_4092 var5 = new class_4092(this.field_2926);
 
       for (class_4085 var7 : var1) {
-         class_1331 var8 = new class_1331(this.field_2926);
+         BlockPos var8 = new BlockPos(this.field_2926);
          class_945 var9 = class_2765.method_12584(var7.method_18839(), var8, var7.method_18840(), 2, this.field_2928, true);
          class_4092 var10 = class_2765.method_12596(var9);
          var7.method_18846(var9.method_17399());
-         this.field_2929.put(var7, new class_1331(this.field_2926));
+         this.field_2929.put(var7, new BlockPos(this.field_2926));
          var5 = var5.method_18905(var10);
          this.field_2926.method_13367((int)var10.method_18910() + 5, 0, 0);
          if (var4++ % this.field_2919 == this.field_2919 - 1) {

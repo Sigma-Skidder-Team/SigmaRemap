@@ -15,10 +15,10 @@ public class class_5302 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      List var3 = this.field_27098.field_41768.<class_9149>method_25868(class_9149.class, this.field_27098.method_37241().method_18898(5.0));
+      List var3 = this.field_27098.world.<BoatEntity>method_25868(BoatEntity.class, this.field_27098.method_37241().method_18898(5.0));
       boolean var4 = false;
 
-      for (class_9149 var6 : var3) {
+      for (BoatEntity var6 : var3) {
          Entity var7 = var6.method_37259();
          if (var7 instanceof class_704
             && (class_9299.method_42804(((class_704)var7).field_29676) > 0.0F || class_9299.method_42804(((class_704)var7).field_29673) > 0.0F)) {
@@ -40,13 +40,13 @@ public class class_5302 extends class_3599 {
    @Override
    public boolean method_16799() {
       return this.field_27099 != null
-         && this.field_27099.method_37070()
+         && this.field_27099.isPassenger()
          && (class_9299.method_42804(this.field_27099.field_29676) > 0.0F || class_9299.method_42804(this.field_27099.field_29673) > 0.0F);
    }
 
    @Override
    public void method_16796() {
-      for (class_9149 var4 : this.field_27098.field_41768.<class_9149>method_25868(class_9149.class, this.field_27098.method_37241().method_18898(5.0))) {
+      for (BoatEntity var4 : this.field_27098.world.<BoatEntity>method_25868(BoatEntity.class, this.field_27098.method_37241().method_18898(5.0))) {
          if (var4.method_37259() != null && var4.method_37259() instanceof class_704) {
             this.field_27099 = (class_704)var4.method_37259();
             break;
@@ -74,7 +74,7 @@ public class class_5302 extends class_3599 {
          if (this.field_27100 != class_9414.field_48135) {
             if (this.field_27100 == class_9414.field_48137) {
                Direction var5 = this.field_27099.method_37235();
-               class_1331 var6 = this.field_27099.method_37075().method_6099(var5, 10);
+               BlockPos var6 = this.field_27099.method_37075().method_6099(var5, 10);
                this.field_27098.method_26927().method_5595((double)var6.method_12173(), (double)(var6.method_12165() - 1), (double)var6.method_12185(), 1.0);
                if (this.field_27098.method_37175(this.field_27099) > 12.0F) {
                   this.field_27096 = 0;
@@ -82,7 +82,7 @@ public class class_5302 extends class_3599 {
                }
             }
          } else {
-            class_1331 var7 = this.field_27099.method_37075().method_6098(this.field_27099.method_37365().method_1046());
+            BlockPos var7 = this.field_27099.method_37075().method_6098(this.field_27099.method_37365().method_1046());
             var7 = var7.method_6104(0, -1, 0);
             this.field_27098.method_26927().method_5595((double)var7.method_12173(), (double)var7.method_12165(), (double)var7.method_12185(), 1.0);
             if (this.field_27098.method_37175(this.field_27099) < 4.0F) {

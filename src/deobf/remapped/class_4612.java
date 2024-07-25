@@ -5,11 +5,11 @@ public abstract class class_4612 extends class_5886 {
       super(var1, var2);
    }
 
-   public float method_21375(class_1331 var1) {
-      return this.method_21376(var1, this.field_41768);
+   public float method_21375(BlockPos var1) {
+      return this.method_21376(var1, this.world);
    }
 
-   public float method_21376(class_1331 var1, class_4924 var2) {
+   public float method_21376(BlockPos var1, class_4924 var2) {
       return 0.0F;
    }
 
@@ -26,7 +26,7 @@ public abstract class class_4612 extends class_5886 {
    public void method_26921() {
       super.method_26921();
       Entity var3 = this.method_26922();
-      if (var3 != null && var3.field_41768 == this.field_41768) {
+      if (var3 != null && var3.world == this.world) {
          this.method_26843(var3.method_37075(), 5);
          float var4 = this.method_37175(var3);
          if (this instanceof class_8990 && ((class_8990)this).method_41209()) {

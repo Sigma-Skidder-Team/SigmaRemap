@@ -19,7 +19,7 @@ public class class_9544 {
    }
 
    public static void method_44041(class_7263 var0) {
-      class_8150 var3 = class_8150.method_37410(var0.field_41768.method_29545(), var0.method_37075());
+      class_8150 var3 = class_8150.method_37410(var0.world.method_29545(), var0.method_37075());
       var0.method_26525().method_5105(class_6044.field_30854, var3);
    }
 
@@ -110,7 +110,7 @@ public class class_9544 {
    }
 
    public static void method_44043(class_7263 var0) {
-      if ((double)var0.field_41768.field_33033.nextFloat() < 0.0125) {
+      if ((double)var0.world.field_33033.nextFloat() < 0.0125) {
          method_44051(var0);
       }
    }

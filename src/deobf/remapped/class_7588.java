@@ -49,7 +49,7 @@ public class class_7588 extends class_6127<class_6704> {
       var5.method_5105(class_6044.field_30906, var8.size());
    }
 
-   private Optional<class_1331> method_34481(class_6331 var1, class_6704 var2) {
-      return class_1331.method_6102(var2.method_37075(), 8, 4, var1x -> var1.method_28262(var1x).method_8349(class_2351.field_11758));
+   private Optional<BlockPos> method_34481(class_6331 var1, class_6704 var2) {
+      return BlockPos.method_6102(var2.method_37075(), 8, 4, var1x -> var1.method_28262(var1x).method_8349(class_2351.field_11758));
    }
 }

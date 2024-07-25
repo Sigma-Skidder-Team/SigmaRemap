@@ -2,7 +2,7 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public abstract class class_292 extends class_1080 implements class_6867, class_4259 {
+public abstract class class_292 extends AbstractMinecartEntity implements class_6867, class_4259 {
    private class_2831<ItemStack> field_1062 = class_2831.<ItemStack>method_12872(36, ItemStack.EMPTY);
    private boolean field_1061 = true;
    private Identifier field_1063;
@@ -17,11 +17,11 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    }
 
    @Override
-   public void method_4743(class_6199 var1) {
+   public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
-         class_1573.method_7105(this.field_41768, this, this);
-         if (!this.field_41768.field_33055) {
+      if (this.world.method_29537().method_1285(class_291.field_1024)) {
+         class_1573.method_7105(this.world, this, this);
+         if (!this.world.field_33055) {
             Entity var4 = var1.method_28353();
             if (var4 != null && var4.method_37387() == class_6629.field_34300) {
                class_134.method_474((class_704)var4, true);
@@ -102,8 +102,8 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
 
    @Override
    public void method_37204() {
-      if (!this.field_41768.field_33055 && this.field_1061) {
-         class_1573.method_7105(this.field_41768, this, this);
+      if (!this.world.field_33055 && this.field_1061) {
+         class_1573.method_7105(this.world, this, this);
       }
 
       super.method_37204();
@@ -135,9 +135,9 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, class_2584 var2) {
+   public class_6910 method_37128(class_704 var1, Hand var2) {
       var1.method_3152(this);
-      if (var1.field_41768.field_33055) {
+      if (var1.world.field_33055) {
          return class_6910.field_35520;
       } else {
          class_134.method_474(var1, true);
@@ -157,14 +157,14 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    }
 
    public void method_1298(class_704 var1) {
-      if (this.field_1063 != null && this.field_41768.method_29522() != null) {
-         class_1758 var4 = this.field_41768.method_29522().method_1722().method_4604(this.field_1063);
+      if (this.field_1063 != null && this.world.method_29522() != null) {
+         class_1758 var4 = this.world.method_29522().method_1722().method_4604(this.field_1063);
          if (var1 instanceof class_9359) {
             class_8807.field_45075.method_27870((class_9359)var1, this.field_1063);
          }
 
          this.field_1063 = null;
-         class_8480 var5 = new class_8480((class_6331)this.field_41768).method_39065(class_8712.field_44671, this.method_37245()).method_39067(this.field_1064);
+         class_8480 var5 = new class_8480((class_6331)this.world).method_39065(class_8712.field_44671, this.method_37245()).method_39067(this.field_1064);
          if (var1 != null) {
             var5.method_39063(var1.method_3234()).method_39065(class_8712.field_44676, var1);
          }

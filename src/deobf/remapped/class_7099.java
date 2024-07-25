@@ -187,7 +187,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
       return class_9299.method_42795(var1, this.field_36618, this.field_36616);
    }
 
-   public static int method_32635(class_6163 var0, class_1331 var1) {
+   public static int method_32635(class_6163 var0, BlockPos var1) {
       class_2522 var4 = var0.method_28262(var1);
       if (var4.method_8360().method_10802()) {
          class_3757 var5 = var0.method_28260(var1);

@@ -61,13 +61,13 @@ public class class_9782 {
                               this.field_49645.method_8614().method_4813(new class_8125(false, false));
                               this.field_49645
                                  .method_8614()
-                                 .method_4813(new class_3616(this.field_49645.thePlayer.field_41701, this.field_49645.thePlayer.field_41755, false));
+                                 .method_4813(new class_3616(this.field_49645.thePlayer.rotationYaw, this.field_49645.thePlayer.rotationPitch, false));
                               this.field_49645.method_8614().method_4813(new class_758(0.0F, 1.0F, false, false));
-                              class_9149 var10 = new class_9149(
+                              BoatEntity var10 = new BoatEntity(
                                  this.field_49645.theWorld, var9x.method_21803() + 0.5, var9x.method_21801(), var9x.method_21799() + 0.5
                               );
-                              var10.field_41701 = var7.field_41701;
-                              var10.field_41755 = var7.field_41755;
+                              var10.rotationYaw = var7.rotationYaw;
+                              var10.rotationPitch = var7.rotationPitch;
                               this.field_49645.method_8614().method_4813(new class_4148(var10));
                            } else if (var4) {
                               this.field_49645

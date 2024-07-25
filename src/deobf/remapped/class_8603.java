@@ -98,7 +98,7 @@ public class class_8603 implements class_2274 {
       }
    }
 
-   public void 竬葫霥鼒䡸䂷(class_8859 var1) {
+   public void 竬葫霥鼒䡸䂷(MovementInput var1) {
       if (var1.field_45288 || var1.field_45290 || var1.field_45283 || var1.field_45286 || var1.field_45284) {
          this.field_44053 = true;
       }

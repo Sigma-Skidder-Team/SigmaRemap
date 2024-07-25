@@ -47,8 +47,8 @@ public class BowAimbotModule extends Module {
       if (this.method_42015() && !this.getBooleanValueByName("Silent")) {
          if (!this.field_14300.isEmpty()) {
             float[] var4 = class_7211.method_33005((class_5834)this.field_14300.get(0));
-            client.thePlayer.field_41701 = var4[0];
-            client.thePlayer.field_41755 = var4[1];
+            client.thePlayer.rotationYaw = var4[0];
+            client.thePlayer.rotationPitch = var4[1];
          }
       }
    }

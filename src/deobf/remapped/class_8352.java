@@ -20,9 +20,9 @@ public class class_8352 extends class_2062 {
 
    @Override
    public void method_9627(
-      class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<class_1331> var8, int var9, class_9616 var10
+           class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<BlockPos> var8, int var9, class_9616 var10
    ) {
-      class_1331 var13 = var5.method_36623().method_6082(var9);
+      BlockPos var13 = var5.method_36623().method_6082(var9);
       boolean var14 = var5.method_36625();
       if (!var14) {
          this.method_9625(var1, var2, var3, var13, var7 + 2, var8, -1, var14, var10);

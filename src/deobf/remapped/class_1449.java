@@ -16,7 +16,7 @@ public interface class_1449 extends class_6163 {
       return true;
    }
 
-   default boolean method_6671(class_2522 var1, class_1331 var2, class_214 var3) {
+   default boolean method_6671(class_2522 var1, BlockPos var2, class_214 var3) {
       class_4190 var6 = var1.method_8325(this, var2, var3);
       return var6.method_19485()
          || this.method_6678((Entity)null, var6.method_19496((double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185()));
@@ -52,11 +52,11 @@ public interface class_1449 extends class_6163 {
       return StreamSupport.<class_4190>stream(new class_4491(this, var1, var2), false);
    }
 
-   default boolean method_6670(Entity var1, class_4092 var2, BiPredicate<class_2522, class_1331> var3) {
+   default boolean method_6670(Entity var1, class_4092 var2, BiPredicate<class_2522, BlockPos> var3) {
       return this.method_6674(var1, var2, var3).allMatch(class_4190::method_19485);
    }
 
-   default Stream<class_4190> method_6674(Entity var1, class_4092 var2, BiPredicate<class_2522, class_1331> var3) {
+   default Stream<class_4190> method_6674(Entity var1, class_4092 var2, BiPredicate<class_2522, BlockPos> var3) {
       return StreamSupport.<class_4190>stream(new class_4491(this, var1, var2, var3), false);
    }
 }

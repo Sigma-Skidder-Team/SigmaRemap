@@ -18,7 +18,7 @@ public class class_7684 extends Module {
       if (this.method_42015() && client.thePlayer != null) {
          if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
             if (!(client.field_9623 instanceof class_5766)) {
-               float var4 = client.thePlayer.field_41701 % 360.0F - this.field_39044 % 360.0F;
+               float var4 = client.thePlayer.rotationYaw % 360.0F - this.field_39044 % 360.0F;
                this.field_39044 = this.field_39044 + var4 / (float) MinecraftClient.method_8501() * 1.5F;
                boolean var5 = false;
                int var6 = 14;

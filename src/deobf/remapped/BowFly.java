@@ -22,7 +22,7 @@ public class BowFly extends Module {
    @EventListen
    public void method_7737(class_4996 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206 && this.field_8926 >= 1) {
+         if (client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() == class_4897.field_25206 && this.field_8926 >= 1) {
             var1.method_29715(true);
          }
       }
@@ -62,7 +62,7 @@ public class BowFly extends Module {
 
          int var4 = this.method_7736();
          if (var4 >= 0 || var4 <= 8) {
-            if (client.thePlayer.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206) {
+            if (client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() == class_4897.field_25206) {
                if (InvManagerModule.method_23723(class_4897.field_25024) == 0) {
                   if (this.field_8927.method_14772() > 5000L) {
                      SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("BowFly", "You have no arrows"));
@@ -76,7 +76,7 @@ public class BowFly extends Module {
                   return;
                }
 
-               float var5 = client.thePlayer.field_41701;
+               float var5 = client.thePlayer.rotationYaw;
                float var6 = -90.0F;
                if (client.thePlayer.field_29673 != 0.0F || client.thePlayer.field_29676 != 0.0F) {
                   var6 = -80.0F;
@@ -105,10 +105,10 @@ public class BowFly extends Module {
                this.field_8926++;
                if (this.field_8926 < 4) {
                   if (this.field_8926 == 1) {
-                     client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+                     client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
                   }
                } else {
-                  client.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
+                  client.method_8614().method_4813(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
                   this.field_8926 = 0;
                }
             }

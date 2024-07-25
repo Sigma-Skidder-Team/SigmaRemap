@@ -69,9 +69,9 @@ public class class_9233 extends Module {
             double var4 = client.thePlayer.method_37302();
             double var6 = client.thePlayer.method_37156();
             double var8 = client.thePlayer.method_37309();
-            double var10 = (double) client.thePlayer.field_30533.field_45287;
-            double var12 = (double) client.thePlayer.field_30533.field_45282;
-            float var14 = client.thePlayer.field_41701;
+            double var10 = (double) client.thePlayer.movementInput.field_45287;
+            double var12 = (double) client.thePlayer.movementInput.field_45282;
+            float var14 = client.thePlayer.rotationYaw;
             double var15 = 0.1;
             double var17 = var4
                + (var10 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F))) + var12 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F)))) * var15;

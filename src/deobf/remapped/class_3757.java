@@ -9,7 +9,7 @@ public abstract class class_3757 {
    private static final Logger field_18360 = LogManager.getLogger();
    private final class_133<?> field_18362;
    public World field_18364;
-   public class_1331 field_18358 = class_1331.field_7306;
+   public BlockPos field_18358 = BlockPos.field_7306;
    public boolean field_18361;
    private class_2522 field_18363;
    private boolean field_18359;
@@ -23,7 +23,7 @@ public abstract class class_3757 {
       return this.field_18364;
    }
 
-   public void method_17393(World var1, class_1331 var2) {
+   public void method_17393(World var1, BlockPos var2) {
       this.field_18364 = var1;
       this.field_18358 = var2.method_6072();
    }
@@ -33,7 +33,7 @@ public abstract class class_3757 {
    }
 
    public void method_17394(class_2522 var1, CompoundNBT var2) {
-      this.field_18358 = new class_1331(var2.method_25947("x"), var2.method_25947("y"), var2.method_25947("z"));
+      this.field_18358 = new BlockPos(var2.method_25947("x"), var2.method_25947("y"), var2.method_25947("z"));
    }
 
    public CompoundNBT method_17396(CompoundNBT var1) {
@@ -91,7 +91,7 @@ public abstract class class_3757 {
       return 64.0;
    }
 
-   public class_1331 method_17399() {
+   public BlockPos method_17399() {
       return this.field_18358;
    }
 
@@ -140,7 +140,7 @@ public abstract class class_3757 {
       }
    }
 
-   public void method_17390(class_1331 var1) {
+   public void method_17390(BlockPos var1) {
       this.field_18358 = var1.method_6072();
    }
 

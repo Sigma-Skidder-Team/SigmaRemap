@@ -23,7 +23,7 @@ public class class_91 extends Entity {
    public class_91(World var1, double var2, double var4, double var6) {
       this(class_6629.field_34208, var1);
       this.method_37256(var2, var4, var6);
-      this.field_41701 = this.field_41717.nextFloat() * 360.0F;
+      this.rotationYaw = this.field_41717.nextFloat() * 360.0F;
       this.method_37214(this.field_41717.nextDouble() * 0.2 - 0.1, 0.2, this.field_41717.nextDouble() * 0.2 - 0.1);
    }
 
@@ -33,7 +33,7 @@ public class class_91 extends Entity {
    }
 
    private class_91(class_91 var1) {
-      super(var1.method_37387(), var1.field_41768);
+      super(var1.method_37387(), var1.world);
       this.method_248(var1.method_264().method_27973());
       this.method_37299(var1);
       this.field_178 = var1.field_178;
@@ -71,8 +71,8 @@ public class class_91 extends Entity {
             this.method_37215(this.method_37098().method_6214(0.0, -0.04, 0.0));
          }
 
-         if (!this.field_41768.field_33055) {
-            this.field_41731 = !this.field_41768.method_6682(this);
+         if (!this.world.field_33055) {
+            this.field_41731 = !this.world.method_6682(this);
             if (this.field_41731) {
                this.method_37160(this.method_37302(), (this.method_37241().field_19937 + this.method_37241().field_19939) / 2.0, this.method_37156());
             }
@@ -84,8 +84,8 @@ public class class_91 extends Entity {
             this.method_37226(class_7412.field_37839, this.method_37098());
             float var5 = 0.98F;
             if (this.field_41726) {
-               var5 = this.field_41768
-                     .method_28262(new class_1331(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
+               var5 = this.world
+                     .method_28262(new BlockPos(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
                      .method_8360()
                      .method_29308()
                   * 0.98F;
@@ -105,11 +105,11 @@ public class class_91 extends Entity {
             || class_9299.method_42847(this.field_41725) != class_9299.method_42847(this.method_37156());
          int var10 = !var9 ? 40 : 2;
          if (this.field_41697 % var10 == 0) {
-            if (this.field_41768.method_28258(this.method_37075()).method_22007(class_6503.field_33095) && !this.method_37087()) {
+            if (this.world.method_28258(this.method_37075()).method_22007(class_6503.field_33095) && !this.method_37087()) {
                this.method_37155(class_463.field_2912, 0.4F, 2.0F + this.field_41717.nextFloat() * 0.4F);
             }
 
-            if (!this.field_41768.field_33055 && this.method_261()) {
+            if (!this.world.field_33055 && this.method_261()) {
                this.method_255();
             }
          }
@@ -119,14 +119,14 @@ public class class_91 extends Entity {
          }
 
          this.field_41763 = this.field_41763 | this.method_37228();
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             double var7 = this.method_37098().method_6194(var3).method_6221();
             if (var7 > 0.01) {
                this.field_41763 = true;
             }
          }
 
-         if (!this.field_41768.field_33055 && this.field_178 >= 6000) {
+         if (!this.world.field_33055 && this.field_178 >= 6000) {
             this.method_37204();
          }
       } else {
@@ -146,7 +146,7 @@ public class class_91 extends Entity {
 
    private void method_255() {
       if (this.method_261()) {
-         for (class_91 var4 : this.field_41768
+         for (class_91 var4 : this.world
             .<class_91>method_25869(class_91.class, this.method_37241().method_18899(0.5, 0.0, 0.5), var1 -> var1 != this && var1.method_261())) {
             if (var4.method_261()) {
                this.method_263(var4);
@@ -213,7 +213,7 @@ public class class_91 extends Entity {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
          if (!this.method_264().method_28022() && this.method_264().method_27960() == class_4897.field_24381 && var1.method_28367()) {
             return false;
@@ -276,7 +276,7 @@ public class class_91 extends Entity {
 
    @Override
    public void method_37347(class_704 var1) {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          ItemStack var4 = this.method_264();
          class_2451 var5 = var4.method_27960();
          int var6 = var4.method_27997();
@@ -308,7 +308,7 @@ public class class_91 extends Entity {
    @Override
    public Entity method_37326(class_6331 var1) {
       Entity var4 = super.method_37326(var1);
-      if (!this.field_41768.field_33055 && var4 instanceof class_91) {
+      if (!this.world.field_33055 && var4 instanceof class_91) {
          ((class_91)var4).method_255();
       }
 

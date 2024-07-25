@@ -18,7 +18,7 @@ public class class_7003 extends class_4171<class_223, class_7749<class_223>> {
          ItemStack var14 = new ItemStack(class_4783.field_23281);
          MinecraftClient.getInstance()
             .method_8511()
-            .method_40268(var4, var14, class_5612.field_28497, false, var1, var2, var4.field_41768, var3, class_6353.method_29110(var4, 0.0F));
+            .method_40268(var4, var14, class_5612.field_28497, false, var1, var2, var4.world, var3, class_6353.method_29110(var4, 0.0F));
          var1.method_36064();
       }
    }

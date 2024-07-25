@@ -8,5 +8,5 @@ public abstract class class_7732 {
 
    public abstract class_9212<?> method_35003();
 
-   public abstract class_2522 method_35002(Random var1, class_1331 var2);
+   public abstract class_2522 method_35002(Random var1, BlockPos var2);
 }

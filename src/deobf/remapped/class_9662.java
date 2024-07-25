@@ -270,7 +270,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
    }
 
    private void method_44608() {
-      this.field_49207.method_8590().method_16345(class_4949.method_22675(class_463.field_1995, 1.0F));
+      this.field_49207.getSoundHandler().play(class_4949.method_22675(class_463.field_1995, 1.0F));
       if (this.field_49207.method_8591().method_44634(this.field_49209.method_2203())) {
          this.method_44603();
          this.field_49207.method_8599(this.field_49209.method_2203());

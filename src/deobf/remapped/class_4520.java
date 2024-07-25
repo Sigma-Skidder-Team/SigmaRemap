@@ -12,7 +12,7 @@ public class class_4520 extends class_518 {
    @Override
    public boolean method_16795() {
       if (this.field_22076.method_37264()) {
-         class_1331 var3 = this.method_2534(this.field_3169.field_41768, this.field_3169, 5, 4);
+         BlockPos var3 = this.method_2534(this.field_3169.world, this.field_3169, 5, 4);
          if (var3 == null) {
             return this.method_2535();
          } else {

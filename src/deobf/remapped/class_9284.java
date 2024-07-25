@@ -1,14 +1,14 @@
 package remapped;
 
-public class class_9284 extends class_4171<class_9716, class_3169<class_9716>> {
+public class class_9284 extends class_4171<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>> {
    private static String[] field_47364;
 
-   public class_9284(class_2514<class_9716, class_3169<class_9716>> var1) {
+   public class_9284(class_2514<AbstractClientPlayerEntity, class_3169<AbstractClientPlayerEntity>> var1) {
       super(var1);
    }
 
    public void method_42749(
-      class_7966 var1, class_2565 var2, int var3, class_9716 var4, float var5, float var6, float var7, float var8, float var9, float var10
+           class_7966 var1, class_2565 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10
    ) {
       if (var4.method_44885() && !var4.method_37109() && var4.method_3168(class_7742.field_39260) && var4.method_44891() != null) {
          ItemStack var13 = var4.method_26520(class_6943.field_35708);

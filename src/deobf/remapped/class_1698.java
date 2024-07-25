@@ -14,7 +14,7 @@ public final class class_1698 extends AbstractIterator<class_2921> {
    private int field_8774;
    private int field_8775;
 
-   public class_1698(Direction var1, Direction var2, class_1331 var3, int var4) {
+   public class_1698(Direction var1, Direction var2, BlockPos var3, int var4) {
       this.field_8776 = var1;
       this.field_8778 = var2;
       this.field_8779 = var3;

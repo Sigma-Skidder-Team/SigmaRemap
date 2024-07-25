@@ -9,7 +9,7 @@ public class class_8008 extends class_4641 {
       super(var1, var2);
    }
 
-   public class_8008(World var1, class_1331 var2) {
+   public class_8008(World var1, BlockPos var2) {
       super(class_6629.field_34275, var1, var2);
       this.method_37256((double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5);
       float var5 = 0.125F;
@@ -78,13 +78,13 @@ public class class_8008 extends class_4641 {
    }
 
    @Override
-   public class_6910 method_37128(class_704 var1, class_2584 var2) {
-      if (this.field_41768.field_33055) {
+   public class_6910 method_37128(class_704 var1, Hand var2) {
+      if (this.world.field_33055) {
          return class_6910.field_35520;
       } else {
          boolean var5 = false;
          double var6 = 7.0;
-         List var8 = this.field_41768
+         List var8 = this.world
             .<class_5886>method_25868(
                class_5886.class,
                new class_4092(
@@ -121,10 +121,10 @@ public class class_8008 extends class_4641 {
 
    @Override
    public boolean method_21472() {
-      return this.field_41768.method_28262(this.field_22661).method_8360().method_29299(class_2351.field_11728);
+      return this.world.method_28262(this.field_22661).method_8360().method_29299(class_2351.field_11728);
    }
 
-   public static class_8008 method_36331(World var0, class_1331 var1) {
+   public static class_8008 method_36331(World var0, BlockPos var1) {
       int var4 = var1.method_12173();
       int var5 = var1.method_12165();
       int var6 = var1.method_12185();

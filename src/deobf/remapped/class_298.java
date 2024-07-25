@@ -35,7 +35,7 @@ public class class_298 extends class_7637 {
    @Override
    public void method_26919() {
       if (!this.method_26859() && class_3613.method_16840(this)) {
-         boolean var3 = ((class_6331)this.field_41768).method_28983(this.method_37075());
+         boolean var3 = ((class_6331)this.world).method_28983(this.method_37075());
          ((class_8985)this.method_26927()).method_41199(var3);
       }
 
@@ -127,7 +127,7 @@ public class class_298 extends class_7637 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2486;
    }
 

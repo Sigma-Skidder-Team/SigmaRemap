@@ -23,7 +23,7 @@ public class class_6153 extends class_1131 {
    }
 
    @Override
-   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, class_1331 var4, Set<class_1331> var5, class_9616 var6, class_1297 var7) {
+   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
       byte var10 = 5;
       int var11 = var3 + 2;
       int var12 = class_9299.method_42847((double)var11 * 0.618);
@@ -47,14 +47,14 @@ public class class_6153 extends class_1131 {
                double var25 = (double)(var2.nextFloat() * 2.0F) * Math.PI;
                double var27 = var23 * Math.sin(var25) + 0.5;
                double var29 = var23 * Math.cos(var25) + 0.5;
-               class_1331 var31 = var4.method_6103(var27, (double)(var17 - 1), var29);
-               class_1331 var32 = var31.method_6082(5);
+               BlockPos var31 = var4.method_6103(var27, (double)(var17 - 1), var29);
+               BlockPos var32 = var31.method_6082(5);
                if (this.method_28231(var1, var2, var31, var32, false, var5, var6, var7)) {
                   int var33 = var4.method_12173() - var31.method_12173();
                   int var34 = var4.method_12185() - var31.method_12185();
                   double var35 = (double)var31.method_12165() - Math.sqrt((double)(var33 * var33 + var34 * var34)) * 0.381;
                   int var37 = !(var35 > (double)var16) ? (int)var35 : var16;
-                  class_1331 var38 = new class_1331(var4.method_12173(), var37, var4.method_12185());
+                  BlockPos var38 = new BlockPos(var4.method_12173(), var37, var4.method_12185());
                   if (this.method_28231(var1, var2, var38, var31, false, var5, var6, var7)) {
                      var18.add(new class_5811(var31, var38.method_12165()));
                   }
@@ -77,19 +77,19 @@ public class class_6153 extends class_1131 {
    }
 
    private boolean method_28231(
-      class_6755 var1, Random var2, class_1331 var3, class_1331 var4, boolean var5, Set<class_1331> var6, class_9616 var7, class_1297 var8
+           class_6755 var1, Random var2, BlockPos var3, BlockPos var4, boolean var5, Set<BlockPos> var6, class_9616 var7, class_1297 var8
    ) {
       if (!var5 && Objects.equals(var3, var4)) {
          return true;
       } else {
-         class_1331 var11 = var4.method_6104(-var3.method_12173(), -var3.method_12165(), -var3.method_12185());
+         BlockPos var11 = var4.method_6104(-var3.method_12173(), -var3.method_12165(), -var3.method_12185());
          int var12 = this.method_28233(var11);
          float var13 = (float)var11.method_12173() / (float)var12;
          float var14 = (float)var11.method_12165() / (float)var12;
          float var15 = (float)var11.method_12185() / (float)var12;
 
          for (int var16 = 0; var16 <= var12; var16++) {
-            class_1331 var17 = var3.method_6103(
+            BlockPos var17 = var3.method_6103(
                (double)(0.5F + (float)var16 * var13), (double)(0.5F + (float)var16 * var14), (double)(0.5F + (float)var16 * var15)
             );
             if (!var5) {
@@ -106,14 +106,14 @@ public class class_6153 extends class_1131 {
       }
    }
 
-   private int method_28233(class_1331 var1) {
+   private int method_28233(BlockPos var1) {
       int var4 = class_9299.method_42805(var1.method_12173());
       int var5 = class_9299.method_42805(var1.method_12165());
       int var6 = class_9299.method_42805(var1.method_12185());
       return Math.max(var4, Math.max(var5, var6));
    }
 
-   private class_9249 method_28232(class_1331 var1, class_1331 var2) {
+   private class_9249 method_28232(BlockPos var1, BlockPos var2) {
       class_9249 var5 = class_9249.field_47216;
       int var6 = Math.abs(var2.method_12173() - var1.method_12173());
       int var7 = Math.abs(var2.method_12185() - var1.method_12185());
@@ -134,11 +134,11 @@ public class class_6153 extends class_1131 {
    }
 
    private void method_28229(
-      class_6755 var1, Random var2, int var3, class_1331 var4, List<class_5811> var5, Set<class_1331> var6, class_9616 var7, class_1297 var8
+           class_6755 var1, Random var2, int var3, BlockPos var4, List<class_5811> var5, Set<BlockPos> var6, class_9616 var7, class_1297 var8
    ) {
       for (class_5811 var12 : var5) {
          int var13 = var12.method_26317();
-         class_1331 var14 = new class_1331(var4.method_12173(), var13, var4.method_12185());
+         BlockPos var14 = new BlockPos(var4.method_12173(), var13, var4.method_12185());
          if (!var14.equals(class_5811.method_26316(var12).method_36623()) && this.method_28234(var3, var13 - var4.method_12165())) {
             this.method_28231(var1, var2, var14, class_5811.method_26316(var12).method_36623(), true, var6, var7, var8);
          }

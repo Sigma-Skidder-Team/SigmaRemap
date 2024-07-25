@@ -7,7 +7,7 @@ public interface class_2274 {
    default void method_10483() {
    }
 
-   default void method_10482(class_8859 var1) {
+   default void method_10482(MovementInput var1) {
    }
 
    default void method_10484(double var1, double var3) {
@@ -16,7 +16,7 @@ public interface class_2274 {
    default void method_10479(ClientWorld var1, class_7474 var2) {
    }
 
-   default void method_10480(ClientWorld var1, class_1331 var2, class_2522 var3, float var4) {
+   default void method_10480(ClientWorld var1, BlockPos var2, class_2522 var3, float var4) {
    }
 
    default void method_10485() {

@@ -5,7 +5,7 @@ public enum class_5048 {
    }
 
    @Override
-   public float method_297(class_1331 var1, float var2) {
+   public float method_297(BlockPos var1, float var2) {
       double var5 = class_6325.method_28867().method_31321((double)var1.method_12173() * 0.05, (double)var1.method_12185() * 0.05, false) * 7.0;
       double var7 = class_6325.field_32304.method_31321((double)var1.method_12173() * 0.2, (double)var1.method_12185() * 0.2, false);
       double var9 = var5 + var7;

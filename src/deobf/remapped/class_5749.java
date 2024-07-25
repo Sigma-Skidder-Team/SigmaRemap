@@ -10,9 +10,9 @@ public class class_5749 implements class_1429 {
    private static final SimpleCommandExceptionType field_29111 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.data.block.invalid"));
    public static final Function<String, class_5098> field_29109 = var0 -> new class_5953(var0);
    private final class_3757 field_29110;
-   private final class_1331 field_29107;
+   private final BlockPos field_29107;
 
-   public class_5749(class_3757 var1, class_1331 var2) {
+   public class_5749(class_3757 var1, BlockPos var2) {
       this.field_29110 = var1;
       this.field_29107 = var2;
    }

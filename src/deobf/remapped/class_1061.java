@@ -36,7 +36,7 @@ public class class_1061 extends class_3200<class_1941> {
       int var18 = var2.method_29819(var13 + var11, var14 + var12, class_3801.field_18598);
       int var19 = Math.min(Math.min(var15, var16), Math.min(var17, var18));
       if (var19 >= 60) {
-         class_1331 var20 = new class_1331(var4 * 16 + 8, var19 + 1, var5 * 16 + 8);
+         BlockPos var20 = new BlockPos(var4 * 16 + 8, var19 + 1, var5 * 16 + 8);
          LinkedList var21 = Lists.newLinkedList();
          class_9404.method_43570(var3, var20, var10, var21, this.field_15989);
          this.field_15986.addAll(var21);
@@ -51,7 +51,7 @@ public class class_1061 extends class_3200<class_1941> {
 
       for (int var10 = var5.field_48996; var10 <= var5.field_48991; var10++) {
          for (int var11 = var5.field_48992; var11 <= var5.field_48994; var11++) {
-            class_1331 var12 = new class_1331(var10, var9, var11);
+            BlockPos var12 = new BlockPos(var10, var9, var11);
             if (!var1.method_22548(var12) && this.field_15988.method_44395(var12)) {
                boolean var13 = false;
 
@@ -64,7 +64,7 @@ public class class_1061 extends class_3200<class_1941> {
 
                if (var13) {
                   for (int var16 = var9 - 1; var16 > 1; var16--) {
-                     class_1331 var17 = new class_1331(var10, var16, var11);
+                     BlockPos var17 = new BlockPos(var10, var16, var11);
                      if (!var1.method_22548(var17) && !var1.method_28262(var17).method_8362().method_24494()) {
                         break;
                      }

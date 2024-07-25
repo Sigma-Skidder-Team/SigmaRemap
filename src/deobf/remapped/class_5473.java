@@ -5,7 +5,7 @@ import java.util.Random;
 public class class_5473 extends class_7060 {
    private static String[] field_27889;
 
-   public class_5473(class_1331 var1) {
+   public class_5473(BlockPos var1) {
       super(class_2746.field_13416, 0);
       this.field_36435 = new class_9616(
          var1.method_12173(), var1.method_12165(), var1.method_12185(), var1.method_12173(), var1.method_12165(), var1.method_12185()
@@ -21,7 +21,7 @@ public class class_5473 extends class_7060 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       int var10 = var1.method_22562(class_3801.field_18591, this.field_36435.field_48996, this.field_36435.field_48992);
       class_2921 var11 = new class_2921(this.field_36435.field_48996, var10, this.field_36435.field_48992);
 
@@ -36,10 +36,10 @@ public class class_5473 extends class_7060 {
             class_2522 var14 = !var12.method_8345() && !this.method_24885(var12) ? var12 : class_4783.field_23216.method_29260();
 
             for (Direction var18 : Direction.values()) {
-               class_1331 var19 = var11.method_6098(var18);
+               BlockPos var19 = var11.method_6098(var18);
                class_2522 var20 = var1.method_28262(var19);
                if (var20.method_8345() || this.method_24885(var20)) {
-                  class_1331 var21 = var19.method_6100();
+                  BlockPos var21 = var19.method_6100();
                   class_2522 var22 = var1.method_28262(var21);
                   if ((var22.method_8345() || this.method_24885(var22)) && var18 != Direction.field_817) {
                      var1.method_7513(var19, var13, 3);

@@ -16,10 +16,10 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
 
    public void method_20416(class_7966 var1) {
       if (!this.field_21492 && this.field_21493.gameOptions.field_45445) {
-         this.field_21493.method_8590().method_16343(this);
+         this.field_21493.getSoundHandler().method_16343(this);
          this.field_21492 = true;
       } else if (this.field_21492 && !this.field_21493.gameOptions.field_45445) {
-         this.field_21493.method_8590().method_16347(this);
+         this.field_21493.getSoundHandler().method_16347(this);
          this.field_21492 = false;
       }
 
@@ -31,11 +31,11 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
             this.field_21493.thePlayer.method_37302(), this.field_21493.thePlayer.method_37388(), this.field_21493.thePlayer.method_37156()
          );
          class_1343 var5 = new class_1343(0.0, 0.0, -1.0)
-            .method_6212(-this.field_21493.thePlayer.field_41755 * (float) (Math.PI / 180.0))
-            .method_6192(-this.field_21493.thePlayer.field_41701 * (float) (Math.PI / 180.0));
+            .method_6212(-this.field_21493.thePlayer.rotationPitch * (float) (Math.PI / 180.0))
+            .method_6192(-this.field_21493.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
          class_1343 var6 = new class_1343(0.0, 1.0, 0.0)
-            .method_6212(-this.field_21493.thePlayer.field_41755 * (float) (Math.PI / 180.0))
-            .method_6192(-this.field_21493.thePlayer.field_41701 * (float) (Math.PI / 180.0));
+            .method_6212(-this.field_21493.thePlayer.rotationPitch * (float) (Math.PI / 180.0))
+            .method_6192(-this.field_21493.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
          class_1343 var7 = var5.method_6196(var6);
          int var8 = 0;
          int var9 = 0;

@@ -59,8 +59,8 @@ public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M
 
    public class_2522 method_10615(long var1, MutableInt var3) {
       if (var1 != Long.MAX_VALUE) {
-         int var6 = class_6979.method_31915(class_1331.method_6080(var1));
-         int var7 = class_6979.method_31915(class_1331.method_6092(var1));
+         int var6 = class_6979.method_31915(BlockPos.method_6080(var1));
+         int var7 = class_6979.method_31915(BlockPos.method_6092(var1));
          class_6163 var8 = this.method_10625(var6, var7);
          if (var8 == null) {
             if (var3 != null) {
@@ -91,7 +91,7 @@ public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M
       return !var1.method_8302() ? class_3370.method_15536() : var1.method_8346(this.field_11553.method_23027(), this.field_11557.method_13363(var2), var4);
    }
 
-   public static int method_10626(class_6163 var0, class_2522 var1, class_1331 var2, class_2522 var3, class_1331 var4, Direction var5, int var6) {
+   public static int method_10626(class_6163 var0, class_2522 var1, BlockPos var2, class_2522 var3, BlockPos var4, Direction var5, int var6) {
       boolean var9 = var1.method_8302() && var1.method_8358();
       boolean var10 = var3.method_8302() && var3.method_8358();
       if (!var9 && !var10) {
@@ -121,9 +121,9 @@ public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M
    public int method_10617(class_1201 var1, long var2) {
       return 15
          - var1.method_5314(
-            class_6979.method_31913(class_1331.method_6080(var2)),
-            class_6979.method_31913(class_1331.method_6067(var2)),
-            class_6979.method_31913(class_1331.method_6092(var2))
+            class_6979.method_31913(BlockPos.method_6080(var2)),
+            class_6979.method_31913(BlockPos.method_6067(var2)),
+            class_6979.method_31913(BlockPos.method_6092(var2))
          );
    }
 
@@ -178,7 +178,7 @@ public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M
    }
 
    @Override
-   public int method_45335(class_1331 var1) {
+   public int method_45335(BlockPos var1) {
       return this.field_11554.method_17737(var1.method_6077());
    }
 
@@ -186,16 +186,16 @@ public abstract class class_2309<M extends class_8666<M>, S extends class_3808<M
       return "" + this.field_11554.method_27698(var1);
    }
 
-   public void method_10616(class_1331 var1) {
+   public void method_10616(BlockPos var1) {
       long var4 = var1.method_6077();
       this.method_27702(var4);
 
       for (Direction var9 : field_11558) {
-         this.method_27702(class_1331.method_6097(var4, var9));
+         this.method_27702(BlockPos.method_6097(var4, var9));
       }
    }
 
-   public void method_10624(class_1331 var1, int var2) {
+   public void method_10624(BlockPos var1, int var2) {
    }
 
    @Override

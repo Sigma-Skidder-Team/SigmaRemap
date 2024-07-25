@@ -38,7 +38,7 @@ public class class_4122 extends class_8549 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       byte var10 = 11;
       if (!this.field_20084) {
          var10 = 6;

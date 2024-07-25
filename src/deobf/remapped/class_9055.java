@@ -9,12 +9,12 @@ public class class_9055 extends class_2340 {
    }
 
    @Override
-   public boolean method_10709(class_4774 var1, class_6163 var2, class_1331 var3, class_2340 var4, Direction var5) {
+   public boolean method_10709(class_4774 var1, class_6163 var2, BlockPos var3, class_2340 var4, Direction var5) {
       return true;
    }
 
    @Override
-   public class_1343 method_10725(class_6163 var1, class_1331 var2, class_4774 var3) {
+   public class_1343 method_10725(class_6163 var1, BlockPos var2, class_4774 var3) {
       return class_1343.field_7335;
    }
 
@@ -34,7 +34,7 @@ public class class_9055 extends class_2340 {
    }
 
    @Override
-   public float method_10707(class_4774 var1, class_6163 var2, class_1331 var3) {
+   public float method_10707(class_4774 var1, class_6163 var2, BlockPos var3) {
       return 0.0F;
    }
 
@@ -59,7 +59,7 @@ public class class_9055 extends class_2340 {
    }
 
    @Override
-   public class_4190 method_10712(class_4774 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_10712(class_4774 var1, class_6163 var2, BlockPos var3) {
       return class_3370.method_15536();
    }
 }

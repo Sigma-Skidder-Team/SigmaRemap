@@ -22,9 +22,9 @@ public class class_9125 extends class_1131 {
    }
 
    @Override
-   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, class_1331 var4, Set<class_1331> var5, class_9616 var6, class_1297 var7) {
+   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
       ArrayList var10 = Lists.newArrayList();
-      class_1331 var11 = var4.method_6100();
+      BlockPos var11 = var4.method_6100();
       method_4969(var1, var11);
       method_4969(var1, var11.method_6090());
       method_4969(var1, var11.method_6073());
@@ -47,7 +47,7 @@ public class class_9125 extends class_1131 {
          }
 
          int var22 = var16 + var21;
-         class_1331 var23 = new class_1331(var18, var22, var19);
+         BlockPos var23 = new BlockPos(var18, var22, var19);
          if (class_8739.method_40118(var1, var23)) {
             method_4974(var1, var2, var23, var5, var6, var7);
             method_4974(var1, var2, var23.method_6090(), var5, var6, var7);
@@ -56,7 +56,7 @@ public class class_9125 extends class_1131 {
          }
       }
 
-      var10.add(new class_8070(new class_1331(var18, var20, var19), 0, true));
+      var10.add(new class_8070(new BlockPos(var18, var20, var19), 0, true));
 
       for (int var25 = -1; var25 <= 2; var25++) {
          for (int var26 = -1; var26 <= 2; var26++) {
@@ -64,10 +64,10 @@ public class class_9125 extends class_1131 {
                int var27 = var2.nextInt(3) + 2;
 
                for (int var24 = 0; var24 < var27; var24++) {
-                  method_4974(var1, var2, new class_1331(var15 + var25, var20 - var24 - 1, var17 + var26), var5, var6, var7);
+                  method_4974(var1, var2, new BlockPos(var15 + var25, var20 - var24 - 1, var17 + var26), var5, var6, var7);
                }
 
-               var10.add(new class_8070(new class_1331(var18 + var25, var20, var19 + var26), 0, false));
+               var10.add(new class_8070(new BlockPos(var18 + var25, var20, var19 + var26), 0, false));
             }
          }
       }

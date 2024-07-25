@@ -42,7 +42,7 @@ public class class_2882 extends class_5837 {
          class_1343 var5 = var2.<class_1343>method_12698(class_8712.field_44671);
          if (var5 != null) {
             class_6331 var6 = var2.method_12694();
-            class_1331 var7 = var6.method_29000(this.field_14118, new class_1331(var5), this.field_14114, this.field_14117);
+            BlockPos var7 = var6.method_29000(this.field_14118, new BlockPos(var5), this.field_14114, this.field_14117);
             if (var7 != null) {
                ItemStack var8 = class_2143.method_10014(var6, var7.method_12173(), var7.method_12185(), this.field_14115, true, true);
                class_2143.method_10013(var6, var8);

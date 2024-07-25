@@ -9,24 +9,24 @@ public class class_5730 extends class_305 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_28946;
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       this.method_25914(var1, var2, var3);
       return class_6910.method_31659(var2.field_33055);
    }
 
    @Override
-   public void method_10791(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
+   public void method_10791(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
       this.method_25914(var1, var2, var3);
    }
 
-   private void method_25914(class_2522 var1, World var2, class_1331 var3) {
+   private void method_25914(class_2522 var1, World var2, BlockPos var3) {
       for (int var6 = 0; var6 < 1000; var6++) {
-         class_1331 var7 = var3.method_6104(
+         BlockPos var7 = var3.method_6104(
             var2.field_33033.nextInt(16) - var2.field_33033.nextInt(16),
             var2.field_33033.nextInt(8) - var2.field_33033.nextInt(8),
             var2.field_33033.nextInt(16) - var2.field_33033.nextInt(16)
@@ -63,7 +63,7 @@ public class class_5730 extends class_305 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

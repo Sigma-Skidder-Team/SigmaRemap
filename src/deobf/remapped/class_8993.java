@@ -12,17 +12,17 @@ public class class_8993 extends class_3064 implements class_4582 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_46045;
    }
 
    @Override
-   public boolean method_12870(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_12870(class_2522 var1, class_6163 var2, BlockPos var3) {
       return var1.method_8308(var2, var3, Direction.field_817) && !var1.method_8350(class_4783.field_23215);
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return new ItemStack(class_4783.field_23563);
    }
 
@@ -41,7 +41,7 @@ public class class_8993 extends class_3064 implements class_4582 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       if (var1.<class_7422>method_10313(field_46044) != class_7422.field_37874) {
          class_4774 var7 = var2.method_28258(var3);
          return super.method_10787(var1, var2, var3) && var7.method_22007(class_6503.field_33094) && var7.method_21996() == 8;
@@ -57,12 +57,12 @@ public class class_8993 extends class_3064 implements class_4582 {
    }
 
    @Override
-   public boolean method_21238(class_6163 var1, class_1331 var2, class_2522 var3, class_2340 var4) {
+   public boolean method_21238(class_6163 var1, BlockPos var2, class_2522 var3, class_2340 var4) {
       return false;
    }
 
    @Override
-   public boolean method_21237(class_9379 var1, class_1331 var2, class_2522 var3, class_4774 var4) {
+   public boolean method_21237(class_9379 var1, BlockPos var2, class_2522 var3, class_4774 var4) {
       return false;
    }
 }

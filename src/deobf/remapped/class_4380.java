@@ -29,7 +29,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       if (!method_20408(var6)) {
          if (var2.method_26475(var6).method_28022()) {
@@ -170,7 +170,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    private static void method_20400(
-           World var0, class_5834 var1, class_2584 var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
+           World var0, class_5834 var1, Hand var2, ItemStack var3, ItemStack var4, float var5, boolean var6, float var7, float var8, float var9
    ) {
       if (!var0.field_33055) {
          boolean var12 = var4.method_27960() == class_4897.field_24479;
@@ -221,7 +221,7 @@ public class class_4380 extends class_551 implements class_1538 {
       return var7;
    }
 
-   public static void method_20402(World var0, class_5834 var1, class_2584 var2, ItemStack var3, float var4, float var5) {
+   public static void method_20402(World var0, class_5834 var1, Hand var2, ItemStack var3, float var4, float var5) {
       List var8 = method_20411(var3);
       float[] var9 = method_20398(var1.method_26594());
 

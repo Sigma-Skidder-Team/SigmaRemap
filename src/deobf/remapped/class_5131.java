@@ -20,7 +20,7 @@ public class class_5131 extends class_9335 {
          Direction var3 = this.field_26468.method_37235();
          int var4 = var3.method_1041();
          int var5 = var3.method_1034();
-         class_1331 var6 = this.field_26468.method_37075();
+         BlockPos var6 = this.field_26468.method_37075();
 
          for (int var10 : field_26470) {
             if (!this.method_23532(var6, var4, var5, var10) || !this.method_23531(var6, var4, var5, var10)) {
@@ -32,15 +32,15 @@ public class class_5131 extends class_9335 {
       }
    }
 
-   private boolean method_23532(class_1331 var1, int var2, int var3, int var4) {
-      class_1331 var7 = var1.method_6104(var2 * var4, 0, var3 * var4);
-      return this.field_26468.field_41768.method_28258(var7).method_22007(class_6503.field_33094)
-         && !this.field_26468.field_41768.method_28262(var7).method_8362().method_24502();
+   private boolean method_23532(BlockPos var1, int var2, int var3, int var4) {
+      BlockPos var7 = var1.method_6104(var2 * var4, 0, var3 * var4);
+      return this.field_26468.world.method_28258(var7).method_22007(class_6503.field_33094)
+         && !this.field_26468.world.method_28262(var7).method_8362().method_24502();
    }
 
-   private boolean method_23531(class_1331 var1, int var2, int var3, int var4) {
-      return this.field_26468.field_41768.method_28262(var1.method_6104(var2 * var4, 1, var3 * var4)).method_8345()
-         && this.field_26468.field_41768.method_28262(var1.method_6104(var2 * var4, 2, var3 * var4)).method_8345();
+   private boolean method_23531(BlockPos var1, int var2, int var3, int var4) {
+      return this.field_26468.world.method_28262(var1.method_6104(var2 * var4, 1, var3 * var4)).method_8345()
+         && this.field_26468.world.method_28262(var1.method_6104(var2 * var4, 2, var3 * var4)).method_8345();
    }
 
    @Override
@@ -48,8 +48,8 @@ public class class_5131 extends class_9335 {
       double var3 = this.field_26468.method_37098().field_7333;
       return (
             !(var3 * var3 < 0.03F)
-               || this.field_26468.field_41755 == 0.0F
-               || !(Math.abs(this.field_26468.field_41755) < 10.0F)
+               || this.field_26468.rotationPitch == 0.0F
+               || !(Math.abs(this.field_26468.rotationPitch) < 10.0F)
                || !this.field_26468.method_37285()
          )
          && !this.field_26468.method_37360();
@@ -69,14 +69,14 @@ public class class_5131 extends class_9335 {
 
    @Override
    public void method_16793() {
-      this.field_26468.field_41755 = 0.0F;
+      this.field_26468.rotationPitch = 0.0F;
    }
 
    @Override
    public void method_16794() {
       boolean var3 = this.field_26469;
       if (!var3) {
-         class_4774 var4 = this.field_26468.field_41768.method_28258(this.field_26468.method_37075());
+         class_4774 var4 = this.field_26468.world.method_28258(this.field_26468.method_37075());
          this.field_26469 = var4.method_22007(class_6503.field_33094);
       }
 
@@ -85,12 +85,12 @@ public class class_5131 extends class_9335 {
       }
 
       class_1343 var9 = this.field_26468.method_37098();
-      if (var9.field_7333 * var9.field_7333 < 0.03F && this.field_26468.field_41755 != 0.0F) {
-         this.field_26468.field_41755 = class_9299.method_42833(this.field_26468.field_41755, 0.0F, 0.2F);
+      if (var9.field_7333 * var9.field_7333 < 0.03F && this.field_26468.rotationPitch != 0.0F) {
+         this.field_26468.rotationPitch = class_9299.method_42833(this.field_26468.rotationPitch, 0.0F, 0.2F);
       } else {
          double var5 = Math.sqrt(Entity.method_37266(var9));
          double var7 = Math.signum(-var9.field_7333) * Math.acos(var5 / var9.method_6217()) * 180.0F / (float)Math.PI;
-         this.field_26468.field_41755 = (float)var7;
+         this.field_26468.rotationPitch = (float)var7;
       }
    }
 }

@@ -91,7 +91,7 @@ public class MineplexLongjump extends Module {
             }
 
             this.field_21696 = class_314.method_1434();
-            class_1331 var4 = new class_1331(
+            BlockPos var4 = new BlockPos(
                client.thePlayer.method_37302(), client.thePlayer.method_37309() - 0.4, client.thePlayer.method_37156()
             );
             if (class_314.method_1434()

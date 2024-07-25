@@ -71,7 +71,7 @@ public class class_1722 extends class_3954<class_6946> {
 
    @Override
    public boolean method_18267(class_8932<? super class_6946> var1) {
-      return var1.method_41052(this.field_8892, this.field_8890.field_41768);
+      return var1.method_41052(this.field_8892, this.field_8890.world);
    }
 
    @Override

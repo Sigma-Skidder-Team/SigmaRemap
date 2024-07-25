@@ -30,7 +30,7 @@ public class class_1541 {
       this.field_8148.clear();
    }
 
-   public int method_6985(class_2522 var1, class_5561 var2, class_1331 var3) {
+   public int method_6985(class_2522 var1, class_5561 var2, BlockPos var3) {
       long var6 = var3.method_6077();
       if (this.field_8146) {
          int var8 = this.field_8147.get(var6);
@@ -51,7 +51,7 @@ public class class_1541 {
       return var9;
    }
 
-   public float method_6983(class_2522 var1, class_5561 var2, class_1331 var3) {
+   public float method_6983(class_2522 var1, class_5561 var2, BlockPos var3) {
       long var6 = var3.method_6077();
       if (this.field_8146) {
          float var8 = this.field_8148.get(var6);

@@ -16,7 +16,7 @@ public class class_8442 extends class_4041 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       var1.method_29528(
          (class_704)null,
          var2.method_37302(),

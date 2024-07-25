@@ -98,7 +98,7 @@ public class class_3372 {
       }
    }
 
-   public static void method_15561(class_1331 var0, class_1331 var1, float var2, float var3, float var4, float var5) {
+   public static void method_15561(BlockPos var0, BlockPos var1, float var2, float var3, float var4, float var5) {
       Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
@@ -107,7 +107,7 @@ public class class_3372 {
       }
    }
 
-   public static void method_15560(class_1331 var0, float var1, float var2, float var3, float var4, float var5) {
+   public static void method_15560(BlockPos var0, float var1, float var2, float var3, float var4, float var5) {
       Camera var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();

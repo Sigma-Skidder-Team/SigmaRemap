@@ -33,7 +33,7 @@ public class class_4073 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       if (var1.method_22548(var2.method_6081())) {
          class_2522 var5 = var1.method_28262(var2);
          if (var5.method_8350(class_4783.field_23471)) {

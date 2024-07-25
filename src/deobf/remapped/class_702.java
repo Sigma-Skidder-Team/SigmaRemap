@@ -105,12 +105,12 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       return this.method_22553(var1.method_12173() >> 4, var1.method_12185() >> 4).method_28262(var1);
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       return this.method_22556(var1).method_28258(var1);
    }
 
@@ -126,7 +126,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public class_859 method_22564() {
+   public class_859 getBiomeManager() {
       return this.field_3830;
    }
 
@@ -146,7 +146,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public boolean method_7512(class_1331 var1, boolean var2, Entity var3, int var4) {
+   public boolean method_7512(BlockPos var1, boolean var2, Entity var3, int var4) {
       class_2522 var7 = this.method_28262(var1);
       if (!var7.method_8345()) {
          if (var2) {
@@ -162,7 +162,7 @@ public class class_702 implements class_700 {
 
    @Nullable
    @Override
-   public class_3757 method_28260(class_1331 var1) {
+   public class_3757 method_28260(BlockPos var1) {
       class_5990 var4 = this.method_22556(var1);
       class_3757 var5 = var4.method_28260(var1);
       if (var5 == null) {
@@ -197,7 +197,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public boolean method_7514(class_1331 var1, class_2522 var2, int var3, int var4) {
+   public boolean method_7514(BlockPos var1, class_2522 var2, int var3, int var4) {
       class_5990 var7 = this.method_22556(var1);
       class_2522 var8 = var7.method_27348(var1, var2, false);
       if (var8 != null) {
@@ -227,7 +227,7 @@ public class class_702 implements class_700 {
       return true;
    }
 
-   private void method_3140(class_1331 var1) {
+   private void method_3140(BlockPos var1) {
       this.method_22556(var1).method_27365(var1);
    }
 
@@ -240,7 +240,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public boolean method_7508(class_1331 var1, boolean var2) {
+   public boolean method_7508(BlockPos var1, boolean var2) {
       return this.method_7513(var1, class_4783.field_23184.method_29260(), 3);
    }
 
@@ -271,7 +271,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public class_9589 method_43368(class_1331 var1) {
+   public class_9589 method_43368(BlockPos var1) {
       if (this.method_22560(var1.method_12173() >> 4, var1.method_12185() >> 4)) {
          return new class_9589(this.field_3827.method_43370(), this.field_3827.method_29584(), 0L, this.field_3827.method_13576());
       } else {
@@ -315,7 +315,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public void method_43359(class_704 var1, class_1331 var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_43359(class_704 var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
    }
 
    @Override
@@ -323,7 +323,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public void method_43365(class_704 var1, int var2, class_1331 var3, int var4) {
+   public void method_43365(class_704 var1, int var2, BlockPos var3, int var4) {
    }
 
    @Override
@@ -332,7 +332,7 @@ public class class_702 implements class_700 {
    }
 
    @Override
-   public boolean method_38320(class_1331 var1, Predicate<class_2522> var2) {
+   public boolean method_38320(BlockPos var1, Predicate<class_2522> var2) {
       return var2.test(this.method_28262(var1));
    }
 

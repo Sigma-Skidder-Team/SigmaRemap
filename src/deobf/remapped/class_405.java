@@ -101,7 +101,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
 
    @Override
    public void method_979(ItemStack var1) {
-      if (!this.field_41768.field_33055 && this.field_29913 > -this.method_26850() + 20) {
+      if (!this.world.field_33055 && this.field_29913 > -this.method_26850() + 20) {
          this.field_29913 = -this.method_26850();
          this.method_37155(this.method_2018(!var1.method_28022()), this.method_26439(), this.method_26547());
       }
@@ -153,7 +153,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public void method_26452(class_6199 var1) {
+   public void method_26452(DamageSource var1) {
       super.method_26452(var1);
       this.method_2025();
    }
@@ -163,7 +163,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
          double var5 = this.field_41717.nextGaussian() * 0.02;
          double var7 = this.field_41717.nextGaussian() * 0.02;
          double var9 = this.field_41717.nextGaussian() * 0.02;
-         this.field_41768.method_43361(var1, this.method_37361(1.0), this.method_37255() + 1.0, this.method_37383(1.0), var5, var7, var9);
+         this.world.method_43361(var1, this.method_37361(1.0), this.method_37255() + 1.0, this.method_37383(1.0), var5, var7, var9);
       }
    }
 
@@ -193,7 +193,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
 
    @Override
    public World method_972() {
-      return this.field_41768;
+      return this.world;
    }
 
    public abstract void method_2016();

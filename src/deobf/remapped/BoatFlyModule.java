@@ -22,7 +22,7 @@ public class BoatFlyModule extends PremiumModule {
             }
 
             Entity var10 = client.thePlayer.method_37243();
-            var10.field_41701 = client.thePlayer.field_41701;
+            var10.rotationYaw = client.thePlayer.rotationYaw;
             var10.method_37214(var6, !client.thePlayer.field_29654 ? (!this.field_18223 ? 0.0 : (double)(-var5)) : (double)var5, var8);
          }
       }

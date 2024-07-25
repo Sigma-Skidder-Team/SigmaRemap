@@ -41,7 +41,7 @@ public class class_3348 extends class_6749 {
       if ((this.field_16518 || this.method_30926()) && var3 != null) {
          byte var4 = this.field_41735.<Byte>method_36640(field_16515);
          if (var4 > 0 && !this.method_15351()) {
-            if (!this.field_41768.field_33055 && this.field_34835 == class_4237.field_20563) {
+            if (!this.world.field_33055 && this.field_34835 == class_4237.field_20563) {
                this.method_37311(this.method_30925(), 0.1F);
             }
 
@@ -52,7 +52,7 @@ public class class_3348 extends class_6749 {
                var3.method_37302() - this.method_37302(), var3.method_37388() - this.method_37309(), var3.method_37156() - this.method_37156()
             );
             this.method_37222(this.method_37302(), this.method_37309() + var5.field_7333 * 0.015 * (double)var4, this.method_37156());
-            if (this.field_41768.field_33055) {
+            if (this.world.field_33055) {
                this.field_41713 = this.method_37309();
             }
 
@@ -99,10 +99,10 @@ public class class_3348 extends class_6749 {
       }
 
       Entity var12 = this.method_26166();
-      class_6199 var7 = class_6199.method_28368(this, (Entity)(var12 != null ? var12 : this));
+      DamageSource var7 = DamageSource.method_28368(this, (Entity)(var12 != null ? var12 : this));
       this.field_16518 = true;
       class_8461 var8 = class_463.field_2442;
-      if (var4.method_37181(var7, var5)) {
+      if (var4.attackEntityFrom(var7, var5)) {
          if (var4.method_37387() == class_6629.field_34308) {
             return;
          }
@@ -120,13 +120,13 @@ public class class_3348 extends class_6749 {
 
       this.method_37215(this.method_37098().method_6210(-0.01, -0.1, -0.01));
       float var13 = 1.0F;
-      if (this.field_41768 instanceof class_6331 && this.field_41768.method_29570() && class_2931.method_13424(this.field_16520)) {
-         class_1331 var10 = var4.method_37075();
-         if (this.field_41768.method_25263(var10)) {
-            class_900 var11 = class_6629.field_34224.method_30484(this.field_41768);
+      if (this.world instanceof class_6331 && this.world.method_29570() && class_2931.method_13424(this.field_16520)) {
+         BlockPos var10 = var4.method_37075();
+         if (this.world.method_25263(var10)) {
+            class_900 var11 = class_6629.field_34224.method_30484(this.world);
             var11.method_37196(class_1343.method_6200(var10));
             var11.method_3857(!(var12 instanceof class_9359) ? null : (class_9359)var12);
-            this.field_41768.method_7509(var11);
+            this.world.method_7509(var11);
             var8 = class_463.field_2225;
             var13 = 5.0F;
          }

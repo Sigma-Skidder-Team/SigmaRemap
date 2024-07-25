@@ -21,7 +21,7 @@ public class class_7192 extends class_2829 {
          return false;
       } else {
          this.field_36979 = 100;
-         class_1331 var3 = this.field_13867.method_37075();
+         BlockPos var3 = this.field_13867.method_37075();
          return this.field_36980.field_41768.method_29602()
             && this.field_36980.field_41768.method_25263(var3)
             && !((class_6331)this.field_36980.field_41768).method_28994(var3)

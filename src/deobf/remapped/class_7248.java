@@ -64,15 +64,15 @@ public class class_7248 extends class_3200<class_1267> {
       class_6561 var13 = var3.method_26279(var26);
       class_6631 var14 = Util.<class_6631>method_44697(class_6631.values(), this.field_15989);
       class_9022 var15 = !(this.field_15989.nextFloat() < 0.5F) ? class_9022.field_46144 : class_9022.field_46145;
-      class_1331 var16 = new class_1331(var13.method_29975().method_12173() / 2, 0, var13.method_29975().method_12185() / 2);
-      class_1331 var17 = new class_2034(var4, var5).method_9546();
+      BlockPos var16 = new BlockPos(var13.method_29975().method_12173() / 2, 0, var13.method_29975().method_12185() / 2);
+      BlockPos var17 = new class_2034(var4, var5).method_9546();
       class_9616 var18 = var13.method_29973(var17, var14, var16, var15);
       class_2700 var19 = var18.method_44396();
       int var20 = var19.method_12173();
       int var21 = var19.method_12185();
       int var22 = var2.method_29830(var20, var21, class_1598.method_7169(var11)) - 1;
       int var23 = class_4721.method_21832(this.field_15989, var2, var11, var10.field_20274, var22, var18.method_44398(), var18);
-      class_1331 var24 = new class_1331(var17.method_12173(), var23, var17.method_12185());
+      BlockPos var24 = new BlockPos(var17.method_12173(), var23, var17.method_12185());
       if (var7.field_6971 == class_6593.field_34018 || var7.field_6971 == class_6593.field_34020 || var7.field_6971 == class_6593.field_34019) {
          var10.field_20278 = class_4721.method_21828(var24, var6);
       }

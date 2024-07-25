@@ -9,8 +9,8 @@ public class InteractRangeModule extends Module {
    @EventListen
    private void method_12310(class_8706 var1) {
       if (this.method_42015()) {
-         Entity var4 = class_314.method_1458(client.thePlayer.field_41701, client.thePlayer.field_41755, this.getFloatValueByName("Range"), 0.0);
-         class_9529 var5 = class_7494.method_34079(client.thePlayer.field_41701, client.thePlayer.field_41755, this.getFloatValueByName("Range"));
+         Entity var4 = class_314.method_1458(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getFloatValueByName("Range"), 0.0);
+         class_9529 var5 = class_7494.method_34079(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getFloatValueByName("Range"));
          if (var4 != null && client.field_9587.method_33990() == class_1430.field_7721) {
             client.field_9587 = new class_5631(var4);
          }

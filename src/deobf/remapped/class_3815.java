@@ -30,7 +30,7 @@ public final class class_3815 {
 
          class_4565 var11 = var8.method_37387().method_30476();
          if (var11 != class_4565.field_22251) {
-            class_1331 var12 = var8.method_37075();
+            BlockPos var12 = var8.method_37075();
             long var13 = class_2034.method_9540(var12.method_12173() >> 4, var12.method_12185() >> 4);
             var2.method_24143(var13, var5x -> {
                class_2658 var8x = method_17781(var12, var5x).method_28886().method_27798(var8.method_37387());
@@ -46,7 +46,7 @@ public final class class_3815 {
       return new class_1728(var0, var6, var5, null);
    }
 
-   private static class_6325 method_17781(class_1331 var0, class_5990 var1) {
+   private static class_6325 method_17781(BlockPos var0, class_5990 var1) {
       return class_8354.field_42777.method_28268(0L, var0.method_12173(), var0.method_12165(), var0.method_12185(), var1.method_27356());
    }
 
@@ -69,13 +69,13 @@ public final class class_3815 {
    }
 
    public static void method_17774(class_4565 var0, class_6331 var1, class_2654 var2, class_3712 var3, class_6453 var4) {
-      class_1331 var7 = method_17766(var1, var2);
+      BlockPos var7 = method_17766(var1, var2);
       if (var7.method_12165() >= 1) {
          method_17765(var0, var1, var2, var7, var3, var4);
       }
    }
 
-   public static void method_17765(class_4565 var0, class_6331 var1, class_5990 var2, class_1331 var3, class_3712 var4, class_6453 var5) {
+   public static void method_17765(class_4565 var0, class_6331 var1, class_5990 var2, BlockPos var3, class_3712 var4, class_6453 var5) {
       class_2033 var8 = var1.method_28991();
       class_6541 var9 = var1.method_28945().method_10189();
       int var10 = var3.method_12165();
@@ -199,7 +199,7 @@ public final class class_3815 {
    }
 
    @Nullable
-   private static class_3222 method_17780(class_6331 var0, class_2033 var1, class_6541 var2, class_4565 var3, Random var4, class_1331 var5) {
+   private static class_3222 method_17780(class_6331 var0, class_2033 var1, class_6541 var2, class_4565 var3, Random var4, BlockPos var5) {
       class_6325 var8 = var0.method_22561(var5);
       if (var3 == class_4565.field_22248 && var8.method_28887() == class_8862.field_45297 && var4.nextFloat() < 0.98F) {
          return null;
@@ -209,11 +209,11 @@ public final class class_3815 {
       }
    }
 
-   private static boolean method_17768(class_6331 var0, class_2033 var1, class_6541 var2, class_4565 var3, class_3222 var4, class_1331 var5) {
+   private static boolean method_17768(class_6331 var0, class_2033 var1, class_6541 var2, class_4565 var3, class_3222 var4, BlockPos var5) {
       return method_17769(var0, var1, var2, var3, var5, (class_6325)null).contains(var4);
    }
 
-   private static List<class_3222> method_17769(class_6331 var0, class_2033 var1, class_6541 var2, class_4565 var3, class_1331 var4, class_6325 var5) {
+   private static List<class_3222> method_17769(class_6331 var0, class_2033 var1, class_6541 var2, class_4565 var3, BlockPos var4, class_6325 var5) {
       return var3 == class_4565.field_22247
             && var0.method_28262(var4.method_6100()).method_8360() == class_4783.field_23484
             && var1.method_9525(var4, false, class_5390.field_27510).method_14731()
@@ -221,16 +221,16 @@ public final class class_3815 {
          : var2.method_29836(var5 == null ? var0.method_22561(var4) : var5, var1, var3, var4);
    }
 
-   private static class_1331 method_17766(World var0, class_2654 var1) {
+   private static BlockPos method_17766(World var0, class_2654 var1) {
       class_2034 var4 = var1.method_27352();
       int var5 = var4.method_9535() + var0.field_33033.nextInt(16);
       int var6 = var4.method_9545() + var0.field_33033.nextInt(16);
       int var7 = var1.method_27367(class_3801.field_18592, var5, var6) + 1;
       int var8 = var0.field_33033.nextInt(var7 + 1);
-      return new class_1331(var5, var8, var6);
+      return new BlockPos(var5, var8, var6);
    }
 
-   public static boolean method_17772(class_6163 var0, class_1331 var1, class_2522 var2, class_4774 var3, class_6629<?> var4) {
+   public static boolean method_17772(class_6163 var0, BlockPos var1, class_2522 var2, class_4774 var3, class_6629<?> var4) {
       if (!var2.method_8306(var0, var1)) {
          if (!var2.method_8355()) {
             if (var3.method_22001()) {
@@ -246,14 +246,14 @@ public final class class_3815 {
       }
    }
 
-   public static boolean method_17767(class_1257 var0, class_4924 var1, class_1331 var2, class_6629<?> var3) {
+   public static boolean method_17767(class_1257 var0, class_4924 var1, BlockPos var2, class_6629<?> var3) {
       if (var0 == class_1257.field_6939) {
          return true;
       } else if (var3 != null && var1.method_6673().method_9813(var2)) {
          class_2522 var6 = var1.method_28262(var2);
          class_4774 var7 = var1.method_28258(var2);
-         class_1331 var8 = var2.method_6081();
-         class_1331 var9 = var2.method_6100();
+         BlockPos var8 = var2.method_6081();
+         BlockPos var9 = var2.method_6100();
          switch (var0) {
             case field_6934:
                return var7.method_22007(class_6503.field_33094)
@@ -293,14 +293,14 @@ public final class class_3815 {
                boolean var19 = false;
 
                for (int var20 = 0; !var19 && var20 < 4; var20++) {
-                  class_1331 var21 = method_17778(var0, var11.field_16053, var14, var15);
+                  BlockPos var21 = method_17778(var0, var11.field_16053, var14, var15);
                   if (var11.field_16053.method_30465() && method_17767(class_1136.method_4980(var11.field_16053), var0, var21, var11.field_16053)) {
                      float var22 = var11.field_16053.method_30459();
                      double var23 = class_9299.method_42827((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
                      double var25 = class_9299.method_42827((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
                      if (!var0.method_6681(var11.field_16053.method_30456(var23, (double)var21.method_12165(), var25))
                         || !class_1136.method_4983(
-                           var11.field_16053, var0, class_2417.field_12034, new class_1331(var23, (double)var21.method_12165(), var25), var0.method_43360()
+                           var11.field_16053, var0, class_2417.field_12034, new BlockPos(var23, (double)var21.method_12165(), var25), var0.method_43360()
                         )) {
                         continue;
                      }
@@ -338,7 +338,7 @@ public final class class_3815 {
       }
    }
 
-   private static class_1331 method_17778(class_4924 var0, class_6629<?> var1, int var2, int var3) {
+   private static BlockPos method_17778(class_4924 var0, class_6629<?> var1, int var2, int var3) {
       int var6 = var0.method_22562(class_1136.method_4984(var1), var2, var3);
       class_2921 var7 = new class_2921(var2, var6, var3);
       if (var0.method_22572().method_40244()) {
@@ -352,7 +352,7 @@ public final class class_3815 {
       }
 
       if (class_1136.method_4980(var1) == class_1257.field_6935) {
-         class_1331 var8 = var7.method_6100();
+         BlockPos var8 = var7.method_6100();
          if (var0.method_28262(var8).method_8319(var0, var8, class_2929.field_14271)) {
             return var8;
          }

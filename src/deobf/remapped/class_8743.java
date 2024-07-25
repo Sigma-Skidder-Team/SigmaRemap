@@ -10,7 +10,7 @@ public interface class_8743 extends class_66 {
    @Override
    double method_62();
 
-   class_1331 method_40142();
+   BlockPos method_40142();
 
    class_2522 method_40141();
 

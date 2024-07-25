@@ -36,7 +36,7 @@ public class class_2810 {
    private boolean field_13803;
    private UUID field_13804;
    private boolean field_13788 = true;
-   private class_1331 field_13797;
+   private BlockPos field_13797;
    private class_3486 field_13792;
    private int field_13795;
    private List<class_3577> field_13793;
@@ -235,7 +235,7 @@ public class class_2810 {
                if (var7 instanceof class_9795) {
                   class_6953 var8 = this.field_13794.method_44981(this.field_13790, var7.method_17399());
                   if (var8 != null) {
-                     class_1331 var9 = var8.method_31795(3, 3, 3).method_41966();
+                     BlockPos var9 = var8.method_31795(3, 3, 3).method_41966();
                      if (this.field_13797 == null && var9.method_12173() == 0 && var9.method_12185() == 0) {
                         this.field_13797 = var9;
                      }
@@ -251,7 +251,7 @@ public class class_2810 {
 
       for (int var11 = var10; var11 >= 0; var11--) {
          class_6953 var12 = this.field_13794
-            .method_44981(this.field_13790, new class_1331(class_8870.field_45348.method_12173(), var11, class_8870.field_45348.method_12185()));
+            .method_44981(this.field_13790, new BlockPos(class_8870.field_45348.method_12173(), var11, class_8870.field_45348.method_12185()));
          if (var12 != null) {
             if (this.field_13797 == null) {
                this.field_13797 = var12.method_31795(3, 3, 3).method_41966();
@@ -329,11 +329,11 @@ public class class_2810 {
          int var3 = this.field_13787.remove(this.field_13787.size() - 1);
          int var4 = class_9299.method_42847(96.0 * Math.cos(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
          int var5 = class_9299.method_42847(96.0 * Math.sin(2.0 * (-Math.PI + (Math.PI / 20) * (double)var3)));
-         this.method_12787(new class_1331(var4, 75, var5));
+         this.method_12787(new BlockPos(var4, 75, var5));
       }
    }
 
-   private void method_12787(class_1331 var1) {
+   private void method_12787(BlockPos var1) {
       this.field_13790.method_43364(3000, var1, 0);
       class_7024.field_36071.method_27104(this.field_13790, this.field_13790.method_28945().method_10189(), new Random(), var1);
    }
@@ -355,7 +355,7 @@ public class class_2810 {
    }
 
    private class_2770 method_12776() {
-      this.field_13790.method_29542(new class_1331(0, 128, 0));
+      this.field_13790.method_29542(new BlockPos(0, 128, 0));
       class_2770 var3 = class_6629.field_34310.method_30484(this.field_13790);
       var3.method_12611().method_29422(class_8978.field_46006);
       var3.method_37144(0.0, 128.0, 0.0, this.field_13790.field_33033.nextFloat() * 360.0F, 0.0F);
@@ -378,7 +378,7 @@ public class class_2810 {
       return this.field_13798;
    }
 
-   public void method_12775(class_3577 var1, class_6199 var2) {
+   public void method_12775(class_3577 var1, DamageSource var2) {
       if (this.field_13792 != null && this.field_13793.contains(var1)) {
          field_13789.debug("Aborting respawn sequence");
          this.field_13792 = null;
@@ -400,7 +400,7 @@ public class class_2810 {
 
    public void method_12774() {
       if (this.field_13796 && this.field_13792 == null) {
-         class_1331 var3 = this.field_13797;
+         BlockPos var3 = this.field_13797;
          if (var3 == null) {
             field_13789.debug("Tried to respawn, but need to find the portal first.");
             class_6953 var4 = this.method_12769();
@@ -415,7 +415,7 @@ public class class_2810 {
          }
 
          ArrayList var9 = Lists.newArrayList();
-         class_1331 var5 = var3.method_6082(1);
+         BlockPos var5 = var3.method_6082(1);
 
          for (Direction var7 : class_9594.field_48893) {
             List var8 = this.field_13790.<class_3577>method_25868(class_3577.class, new class_4092(var5.method_6099(var7, 2)));
@@ -457,7 +457,7 @@ public class class_2810 {
       for (class_9191 var4 : class_9484.method_43809(this.field_13790)) {
          for (class_3577 var6 : this.field_13790.<class_3577>method_25868(class_3577.class, var4.method_42372())) {
             var6.method_37289(false);
-            var6.method_16625((class_1331)null);
+            var6.method_16625((BlockPos)null);
          }
       }
    }

@@ -12,7 +12,7 @@ public final class class_5953 implements class_5098 {
 
    @Override
    public class_1429 method_23413(CommandContext<class_9155> var1) throws CommandSyntaxException {
-      class_1331 var4 = class_1024.method_4519(var1, this.field_30349 + "Pos");
+      BlockPos var4 = class_1024.method_4519(var1, this.field_30349 + "Pos");
       class_3757 var5 = ((class_9155)var1.getSource()).method_42198().method_28260(var4);
       if (var5 != null) {
          return new class_5749(var5, var4);

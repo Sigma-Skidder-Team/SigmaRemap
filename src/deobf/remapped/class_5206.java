@@ -14,7 +14,7 @@ public class class_5206 extends class_5986 {
    }
 
    public void method_23881(MinecraftClient var1) {
-      class_2716 var4 = var1.thePlayer.method_27334();
+      ClientRecipeBook var4 = var1.thePlayer.method_27334();
       List var5 = var4.method_12233(this.field_26753);
       if (var1.thePlayer.field_3874 instanceof class_3954) {
          for (class_7735 var7 : var5) {
@@ -83,7 +83,7 @@ public class class_5206 extends class_5986 {
       return this.field_26753;
    }
 
-   public boolean method_23882(class_2716 var1) {
+   public boolean method_23882(ClientRecipeBook var1) {
       List var4 = var1.method_12233(this.field_26753);
       this.field_36677 = false;
       if (var4 != null) {

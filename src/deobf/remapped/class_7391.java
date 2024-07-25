@@ -19,8 +19,8 @@ public class class_7391 extends class_6291 {
    }
 
    @Override
-   public void method_28703(class_700 var1, Random var2, List<class_1331> var3, List<class_1331> var4, Set<class_1331> var5, class_9616 var6) {
-      int var9 = ((class_1331)var3.get(0)).method_12165();
+   public void method_28703(class_700 var1, Random var2, List<BlockPos> var3, List<BlockPos> var4, Set<BlockPos> var5, class_9616 var6) {
+      int var9 = ((BlockPos)var3.get(0)).method_12165();
       var3.stream().filter(var1x -> var1x.method_12165() == var9).forEach(var3x -> {
          this.method_33670(var1, var2, var3x.method_6108().method_6094());
          this.method_33670(var1, var2, var3x.method_6091(2).method_6094());
@@ -38,7 +38,7 @@ public class class_7391 extends class_6291 {
       });
    }
 
-   private void method_33670(class_6755 var1, Random var2, class_1331 var3) {
+   private void method_33670(class_6755 var1, Random var2, BlockPos var3) {
       for (int var6 = -2; var6 <= 2; var6++) {
          for (int var7 = -2; var7 <= 2; var7++) {
             if (Math.abs(var6) != 2 || Math.abs(var7) != 2) {
@@ -48,9 +48,9 @@ public class class_7391 extends class_6291 {
       }
    }
 
-   private void method_33671(class_6755 var1, Random var2, class_1331 var3) {
+   private void method_33671(class_6755 var1, Random var2, BlockPos var3) {
       for (int var6 = 2; var6 >= -3; var6--) {
-         class_1331 var7 = var3.method_6082(var6);
+         BlockPos var7 = var3.method_6082(var6);
          if (class_4285.method_19912(var1, var7)) {
             var1.method_7513(var7, this.field_37745.method_35002(var2, var3), 19);
             break;

@@ -21,7 +21,7 @@ public class class_3159 extends class_1131 {
    }
 
    @Override
-   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, class_1331 var4, Set<class_1331> var5, class_9616 var6, class_1297 var7) {
+   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
       method_4969(var1, var4.method_6100());
 
       for (int var10 = 0; var10 < var3; var10++) {

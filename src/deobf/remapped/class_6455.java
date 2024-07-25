@@ -21,11 +21,11 @@ public class class_6455 {
          }
 
          this.field_32909 = this.<class_5120>method_29420(var1);
-         if (!this.field_32912.field_41768.field_33055) {
+         if (!this.field_32912.world.field_33055) {
             this.field_32912.method_37372().method_36633(class_2770.field_13536, var1.method_41171());
          }
 
-         field_32913.debug("Dragon is now in phase {} on the {}", var1, !this.field_32912.field_41768.field_33055 ? "server" : "client");
+         field_32913.debug("Dragon is now in phase {} on the {}", var1, !this.field_32912.world.field_33055 ? "server" : "client");
          this.field_32909.method_23469();
       }
    }

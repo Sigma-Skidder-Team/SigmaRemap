@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public abstract class class_4117 implements Comparable<class_4117> {
    public final double field_20072;
    public final AtomicBoolean field_20070;
-   public Map<class_1331, class_1488> field_20071;
+   public Map<BlockPos, class_1488> field_20071;
 
    public class_4117(class_3511 var1, double var2) {
       this(var1, (class_2034)null, var2);
@@ -22,7 +22,7 @@ public abstract class class_4117 implements Comparable<class_4117> {
       if (var2 != null) {
          this.field_20071 = class_4093.method_18931(MinecraftClient.getInstance().theWorld, var2);
       } else {
-         this.field_20071 = Collections.<class_1331, class_1488>emptyMap();
+         this.field_20071 = Collections.<BlockPos, class_1488>emptyMap();
       }
    }
 
@@ -34,7 +34,7 @@ public abstract class class_4117 implements Comparable<class_4117> {
       return Doubles.compare(this.field_20072, var1.field_20072);
    }
 
-   public class_1488 method_19132(class_1331 var1) {
+   public class_1488 method_19132(BlockPos var1) {
       return this.field_20071.getOrDefault(var1, class_6652.field_34420);
    }
 }

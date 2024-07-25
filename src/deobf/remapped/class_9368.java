@@ -9,7 +9,7 @@ public class class_9368 extends class_1710<class_9504> {
       super(var1);
    }
 
-   public Stream<class_1331> method_43332(Random var1, class_9504 var2, class_1331 var3) {
-      return Stream.<class_1331>of(var3);
+   public Stream<BlockPos> method_43332(Random var1, class_9504 var2, BlockPos var3) {
+      return Stream.<BlockPos>of(var3);
    }
 }

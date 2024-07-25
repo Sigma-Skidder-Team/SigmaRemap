@@ -11,7 +11,7 @@ public class class_4294 extends class_7571 {
    }
 
    @Override
-   public Optional<Float> method_34424(class_2730 var1, class_6163 var2, class_1331 var3, class_2522 var4, class_4774 var5) {
+   public Optional<Float> method_34424(class_2730 var1, class_6163 var2, BlockPos var3, class_2522 var4, class_4774 var5) {
       return var3.equals(var3) && this.field_20831
          ? Optional.<Float>of(class_4783.field_23900.method_29264())
          : super.method_34424(var1, var2, var3, var4, var5);

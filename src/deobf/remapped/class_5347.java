@@ -17,7 +17,7 @@ public class class_5347 extends class_1793<class_4359, class_62<class_4359>> {
       super.method_29099(var1, var2, var3, var4, var5);
       float var8 = var1.method_26602(var5);
       if (var8 > 0.0F) {
-         var2.method_36060(class_2426.field_12080.method_11074(class_9299.method_42795(var8, var1.field_41755, -10.0F - var1.field_41755)));
+         var2.method_36060(class_2426.field_12080.method_11074(class_9299.method_42795(var8, var1.rotationPitch, -10.0F - var1.rotationPitch)));
       }
    }
 }

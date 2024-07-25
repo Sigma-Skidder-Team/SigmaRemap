@@ -17,7 +17,7 @@ public class class_4689 {
       this.field_22825 = var3;
    }
 
-   public boolean method_21653(class_6331 var1, class_1331 var2) {
+   public boolean method_21653(class_6331 var1, BlockPos var2) {
       if (this != field_22823) {
          if (var1.method_29585(var2)) {
             class_4774 var5 = var1.method_28258(var2);

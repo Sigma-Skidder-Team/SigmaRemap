@@ -75,9 +75,9 @@ public class class_581 extends class_6749 {
    @Override
    public void method_37123() {
       super.method_37123();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (this.field_34834 && this.field_34840 != 0 && !this.field_3395.isEmpty() && this.field_34840 >= 600) {
-            this.field_41768.method_29587(this, (byte)0);
+            this.world.method_29587(this, (byte)0);
             this.field_3394 = class_3697.field_18134;
             this.field_3395.clear();
             this.field_41735.method_36633(field_3391, -1);
@@ -97,7 +97,7 @@ public class class_581 extends class_6749 {
          double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
          for (int var11 = 0; var11 < var1; var11++) {
-            this.field_41768.method_43361(class_3090.field_15353, this.method_37361(0.5), this.method_37255(), this.method_37383(0.5), var5, var7, var9);
+            this.world.method_43361(class_3090.field_15353, this.method_37361(0.5), this.method_37255(), this.method_37383(0.5), var5, var7, var9);
          }
       }
    }
@@ -196,7 +196,7 @@ public class class_581 extends class_6749 {
             double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
             for (int var11 = 0; var11 < 20; var11++) {
-               this.field_41768.method_43361(class_3090.field_15353, this.method_37361(0.5), this.method_37255(), this.method_37383(0.5), var5, var7, var9);
+               this.world.method_43361(class_3090.field_15353, this.method_37361(0.5), this.method_37255(), this.method_37383(0.5), var5, var7, var9);
             }
          }
       }

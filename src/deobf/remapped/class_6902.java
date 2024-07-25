@@ -119,16 +119,16 @@ public class class_6902 {
    private static void method_31629(class_6704 var0, class_5834 var1) {
       var0.method_26525().method_5127(class_6044.field_30884);
       var0.method_26525().method_5127(class_6044.field_30889);
-      var0.method_26525().method_5107(class_6044.field_30913, var1, (long)field_35485.method_20387(var0.field_41768.field_33033));
+      var0.method_26525().method_5107(class_6044.field_30913, var1, (long)field_35485.method_20387(var0.world.field_33033));
    }
 
    private static Optional<? extends class_5834> method_31610(class_6704 var0) {
       return !method_31623(var0) && !method_31605(var0) ? var0.method_26525().method_5138(class_6044.field_30912) : Optional.empty();
    }
 
-   public static boolean method_31615(class_6704 var0, class_1331 var1) {
-      Optional var4 = var0.method_26525().<class_1331>method_5138(class_6044.field_30905);
-      return var4.isPresent() && ((class_1331)var4.get()).method_12171(var1, 8.0);
+   public static boolean method_31615(class_6704 var0, BlockPos var1) {
+      Optional var4 = var0.method_26525().<BlockPos>method_5138(class_6044.field_30905);
+      return var4.isPresent() && ((BlockPos)var4.get()).method_12171(var1, 8.0);
    }
 
    private static boolean method_31631(class_6704 var0) {

@@ -39,13 +39,13 @@ public class class_4206 extends class_516 implements class_1869 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
          if (var1.method_28353() instanceof class_9053 && var1.method_28372() instanceof class_704) {
-            super.method_37181(var1, 1000.0F);
+            super.attackEntityFrom(var1, 1000.0F);
             return true;
          } else {
-            return super.method_37181(var1, var2);
+            return super.attackEntityFrom(var1, var2);
          }
       } else {
          return false;
@@ -73,7 +73,7 @@ public class class_4206 extends class_516 implements class_1869 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2209;
    }
 
@@ -87,7 +87,7 @@ public class class_4206 extends class_516 implements class_1869 {
       return 5.0F;
    }
 
-   public static boolean method_19574(class_6629<class_4206> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_19574(class_6629<class_4206> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790 && var4.nextInt(20) == 0 && method_26908(var0, var1, var2, var3, var4);
    }
 

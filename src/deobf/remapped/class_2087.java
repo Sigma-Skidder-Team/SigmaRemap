@@ -36,13 +36,13 @@ public class class_2087 extends class_4663 implements AutoCloseable {
    }
 
    @Override
-   public void method_21569(class_1331 var1, int var2) {
+   public void method_21569(BlockPos var1, int var2) {
       throw (UnsupportedOperationException) Util.method_44658(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
    @Override
-   public void method_21566(class_1331 var1) {
-      class_1331 var4 = var1.method_6072();
+   public void method_21566(BlockPos var1) {
+      BlockPos var4 = var1.method_6072();
       this.method_9763(
          var1.method_12173() >> 4,
          var1.method_12185() >> 4,

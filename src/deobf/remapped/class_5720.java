@@ -34,7 +34,7 @@ public class class_5720 extends class_5521 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       super.method_26541(var1);
       return class_463.field_2591;
    }

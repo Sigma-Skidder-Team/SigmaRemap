@@ -39,7 +39,7 @@ public class NCPLongjump extends Module {
                return;
             }
 
-            class_1331 var4 = new class_1331(
+            BlockPos var4 = new BlockPos(
                client.thePlayer.method_37302(), client.thePlayer.method_37309() - 0.4, client.thePlayer.method_37156()
             );
             if (StepModule.field_20352 > 1) {

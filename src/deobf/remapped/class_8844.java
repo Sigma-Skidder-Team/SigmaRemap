@@ -29,15 +29,15 @@ public abstract class class_8844 extends class_6414 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
-      class_1331 var6 = var3.method_6098(this.field_45228.method_1046());
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
+      BlockPos var6 = var3.method_6098(this.field_45228.method_1046());
       class_2522 var7 = var2.method_28262(var6);
       class_6414 var8 = var7.method_8360();
       return !this.method_40684(var8) ? false : var8 == this.method_40682() || var8 == this.method_40683() || var7.method_8308(var2, var6, this.field_45228);
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (!var1.method_8309(var2, var3)) {
          var2.method_7510(var3, true);
       }
@@ -48,7 +48,7 @@ public abstract class class_8844 extends class_6414 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.field_45229;
    }
 

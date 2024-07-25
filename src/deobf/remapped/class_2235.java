@@ -22,7 +22,7 @@ public class class_2235 extends class_9742 implements class_1538 {
    }
 
    @Override
-   public boolean method_11203(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
       return !var4.method_3186();
    }
 
@@ -49,7 +49,7 @@ public class class_2235 extends class_9742 implements class_1538 {
    }
 
    @Override
-   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, BlockPos var4, class_5834 var5) {
       if (var3.method_8341(var2, var4) != 0.0F) {
          var1.method_28003(2, var5, var0 -> var0.method_26448(class_6943.field_35707));
       }

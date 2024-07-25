@@ -11,12 +11,12 @@ public interface class_8190 {
       if (var1.method_37330()) {
          Entity var6 = !var1.method_37114().isEmpty() ? var1.method_37114().get(0) : null;
          if (var1.method_37151() && var1.method_26863() && var6 instanceof class_704) {
-            var1.field_41701 = var6.field_41701;
-            var1.field_41711 = var1.field_41701;
-            var1.field_41755 = var6.field_41755 * 0.5F;
-            var1.method_37395(var1.field_41701, var1.field_41755);
-            var1.field_29605 = var1.field_41701;
-            var1.field_29618 = var1.field_41701;
+            var1.rotationYaw = var6.rotationYaw;
+            var1.prevRotationYaw = var1.rotationYaw;
+            var1.rotationPitch = var6.rotationPitch * 0.5F;
+            var1.method_37395(var1.rotationYaw, var1.rotationPitch);
+            var1.field_29605 = var1.rotationYaw;
+            var1.field_29618 = var1.rotationYaw;
             var1.field_41733 = 1.0F;
             var1.field_29674 = var1.method_26423() * 0.1F;
             if (var2.field_3773 && var2.field_3774++ > var2.field_3776) {

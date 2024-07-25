@@ -25,17 +25,17 @@ public class class_968<T> implements class_3065<T> {
    }
 
    @Override
-   public boolean method_14013(class_1331 var1, T var2) {
+   public boolean method_14013(BlockPos var1, T var2) {
       return false;
    }
 
    @Override
-   public void method_14012(class_1331 var1, T var2, int var3, class_1716 var4) {
+   public void method_14012(BlockPos var1, T var2, int var3, class_1716 var4) {
       this.field_4962.add(new class_723<T>(var2, var1, var3, var4, null));
    }
 
    @Override
-   public boolean method_14010(class_1331 var1, T var2) {
+   public boolean method_14010(BlockPos var1, T var2) {
       return false;
    }
 
@@ -63,7 +63,7 @@ public class class_968<T> implements class_3065<T> {
          CompoundNBT var7 = var0.method_15764(var6);
          Object var8 = var2.apply(new Identifier(var7.method_25965("i")));
          if (var8 != null) {
-            class_1331 var9 = new class_1331(var7.method_25947("x"), var7.method_25947("y"), var7.method_25947("z"));
+            BlockPos var9 = new BlockPos(var7.method_25947("x"), var7.method_25947("y"), var7.method_25947("z"));
             var5.add(new class_723(var8, var9, var7.method_25947("t"), class_1716.method_7694(var7.method_25947("p")), null));
          }
       }

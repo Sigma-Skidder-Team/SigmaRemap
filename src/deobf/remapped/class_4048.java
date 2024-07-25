@@ -11,7 +11,7 @@ public final class class_4048 extends class_9446 {
       double var7 = var1.method_61() + (double)var5.method_1041() * 1.125;
       double var9 = Math.floor(var1.method_60()) + (double)var5.method_1054();
       double var11 = var1.method_62() + (double)var5.method_1034() * 1.125;
-      class_1331 var13 = var1.method_40142().method_6098(var5);
+      BlockPos var13 = var1.method_40142().method_6098(var5);
       class_2522 var14 = var6.method_28262(var13);
       class_3665 var15 = !(var14.method_8360() instanceof class_6788)
          ? class_3665.field_17829
@@ -37,7 +37,7 @@ public final class class_4048 extends class_9446 {
          var16 = 0.6;
       }
 
-      class_1080 var20 = class_1080.method_4759(var6, var7, var9 + var16, var11, class_742.method_3371((class_742)var2.method_27960()));
+      AbstractMinecartEntity var20 = AbstractMinecartEntity.method_4759(var6, var7, var9 + var16, var11, class_742.method_3371((class_742)var2.method_27960()));
       if (var2.method_28018()) {
          var20.method_37303(var2.method_28008());
       }

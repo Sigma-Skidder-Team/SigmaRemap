@@ -18,17 +18,17 @@ public class class_939 extends class_6414 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_4785;
    }
 
    @Override
-   public class_4190 method_10776(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public class_4190 method_10776(class_2522 var1, class_6163 var2, BlockPos var3) {
       return field_4784;
    }
 
    @Override
-   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
+   public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
       int var7 = var1.<Integer>method_10313(field_4787);
       float var8 = (float)var3.method_12165() + (6.0F + (float)(3 * var7)) / 16.0F;
       if (!var2.field_33055 && var4.method_37264() && var7 > 0 && var4.method_37309() <= (double)var8) {
@@ -38,7 +38,7 @@ public class class_939 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
       if (!var9.method_28022()) {
          int var10 = var1.<Integer>method_10313(field_4787);
@@ -180,13 +180,13 @@ public class class_939 extends class_6414 {
       }
    }
 
-   public void method_4060(World var1, class_1331 var2, class_2522 var3, int var4) {
+   public void method_4060(World var1, BlockPos var2, class_2522 var3, int var4) {
       var1.method_7513(var2, var3.method_10308(field_4787, Integer.valueOf(class_9299.method_42829(var4, 0, 3))), 2);
       var1.method_29523(var2, this);
    }
 
    @Override
-   public void method_29259(World var1, class_1331 var2) {
+   public void method_29259(World var1, BlockPos var2) {
       if (var1.field_33033.nextInt(20) == 1) {
          float var5 = var1.method_22561(var2).method_28865(var2);
          if (!(var5 < 0.15F)) {
@@ -204,7 +204,7 @@ public class class_939 extends class_6414 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, BlockPos var3) {
       return var1.<Integer>method_10313(field_4787);
    }
 
@@ -214,7 +214,7 @@ public class class_939 extends class_6414 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

@@ -20,17 +20,17 @@ public abstract class class_2609 {
       this.field_12889 = var1;
    }
 
-   public abstract List<class_4099> method_11829(class_5799 var1, class_1331 var2, class_6631 var3, Random var4);
+   public abstract List<class_4099> method_11829(class_5799 var1, BlockPos var2, class_6631 var3, Random var4);
 
-   public abstract class_9616 method_11832(class_5799 var1, class_1331 var2, class_6631 var3);
+   public abstract class_9616 method_11832(class_5799 var1, BlockPos var2, class_6631 var3);
 
    public abstract boolean method_11827(
       class_5799 var1,
       class_700 var2,
       class_2033 var3,
       class_6541 var4,
-      class_1331 var5,
-      class_1331 var6,
+      BlockPos var5,
+      BlockPos var6,
       class_6631 var7,
       class_9616 var8,
       Random var9,
@@ -39,7 +39,7 @@ public abstract class class_2609 {
 
    public abstract class_4263<?> method_11836();
 
-   public void method_11837(class_9379 var1, class_4099 var2, class_1331 var3, class_6631 var4, Random var5, class_9616 var6) {
+   public void method_11837(class_9379 var1, class_4099 var2, BlockPos var3, class_6631 var4, Random var5, class_9616 var6) {
    }
 
    public class_2609 method_11828(class_7599 var1) {

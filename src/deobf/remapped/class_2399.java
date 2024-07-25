@@ -10,7 +10,7 @@ public class class_2399 extends class_6788 {
    }
 
    @Override
-   public void method_31118(class_2522 var1, World var2, class_1331 var3, class_6414 var4) {
+   public void method_31118(class_2522 var1, World var2, BlockPos var3, class_6414 var4) {
       if (var4.method_29260().method_8355() && new class_8360(var2, var3, var1).method_38538() == 3) {
          this.method_31117(var2, var3, var1, false);
       }

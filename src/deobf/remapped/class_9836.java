@@ -13,7 +13,7 @@ public class class_9836 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      return !this.field_49812.method_37070();
+      return !this.field_49812.isPassenger();
    }
 
    @Override

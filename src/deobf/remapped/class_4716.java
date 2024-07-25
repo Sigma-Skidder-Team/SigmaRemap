@@ -21,7 +21,7 @@ public class class_4716 extends class_5920<class_4612> {
    }
 
    public void method_21809(class_6331 var1, class_4612 var2, long var3) {
-      class_1331 var7 = var2.method_37075();
+      BlockPos var7 = var2.method_37075();
       if (!var1.method_28994(var7)) {
          class_6979 var8 = class_6979.method_31921(var7);
          class_6979 var9 = class_1225.method_5456(var1, var8, 2);

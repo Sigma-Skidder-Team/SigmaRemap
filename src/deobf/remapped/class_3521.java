@@ -30,7 +30,7 @@ public abstract class class_3521 {
       try {
          return class_6660.method_30576(var3) ? null : new Identifier(var3);
       } catch (class_7485 var6) {
-         class_1331 var5 = this.method_16261();
+         BlockPos var5 = this.method_16261();
          field_17257.warn(
             "Invalid entity id '{}' at spawner {}:[{},{},{}]",
             var3,
@@ -48,7 +48,7 @@ public abstract class class_3521 {
    }
 
    private boolean method_16259() {
-      class_1331 var3 = this.method_16261();
+      BlockPos var3 = this.method_16261();
       return this.method_16252()
          .method_25866((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 0.5, (double)var3.method_12185() + 0.5, (double)this.field_17256);
    }
@@ -56,7 +56,7 @@ public abstract class class_3521 {
    public void method_16267() {
       if (this.method_16259()) {
          World var3 = this.method_16252();
-         class_1331 var4 = this.method_16261();
+         BlockPos var4 = this.method_16261();
          if (var3 instanceof class_6331) {
             if (this.field_17251 == -1) {
                this.method_16265();
@@ -88,9 +88,9 @@ public abstract class class_3521 {
                   : var15.method_15763(2);
                if (var3.method_6681(((class_6629)var14.get()).method_30456(var17, var19, var21))) {
                   class_6331 var23 = (class_6331)var3;
-                  if (class_1136.method_4983((class_6629)var14.get(), var23, class_2417.field_12024, new class_1331(var17, var19, var21), var3.method_43360())) {
+                  if (class_1136.method_4983((class_6629)var14.get(), var23, class_2417.field_12024, new BlockPos(var17, var19, var21), var3.method_43360())) {
                      Entity var24 = class_6629.method_30455(var13, var3, var6x -> {
-                        var6x.method_37144(var17, var19, var21, var6x.field_41701, var6x.field_41755);
+                        var6x.method_37144(var17, var19, var21, var6x.rotationYaw, var6x.rotationPitch);
                         return var6x;
                      });
                      if (var24 == null) {
@@ -276,7 +276,7 @@ public abstract class class_3521 {
 
    public abstract World method_16252();
 
-   public abstract class_1331 method_16261();
+   public abstract BlockPos method_16261();
 
    public double method_16264() {
       return this.field_17259;

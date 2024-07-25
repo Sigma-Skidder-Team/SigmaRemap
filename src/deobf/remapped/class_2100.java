@@ -27,7 +27,7 @@ public class class_2100 extends class_551 implements class_1538 {
                if (!var2.field_33055) {
                   class_603 var13 = (class_603)(!(var9.method_27960() instanceof class_603) ? class_4897.field_25024 : var9.method_27960());
                   class_6749 var14 = var13.method_2819(var2, var9, var7);
-                  var14.method_26158(var7, var7.field_41755, var7.field_41701, 0.0F, var11 * 3.0F, 1.0F);
+                  var14.method_26158(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, var11 * 3.0F, 1.0F);
                   if (var11 == 1.0F) {
                      var14.method_30918(true);
                   }
@@ -98,7 +98,7 @@ public class class_2100 extends class_551 implements class_1538 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       boolean var7 = !var2.method_26475(var6).method_28022();
       if (!var2.playerAbilities.isCreativeMode && !var7) {

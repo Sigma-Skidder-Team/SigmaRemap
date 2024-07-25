@@ -8,14 +8,14 @@ public class class_2614 {
    private static boolean field_12905 = Boolean.getBoolean("player.models.reload");
    private static long field_12906 = System.currentTimeMillis();
 
-   public static void method_11859(class_2344 var0, class_9716 var1, class_7966 var2, class_2565 var3, int var4, int var5) {
+   public static void method_11859(class_2344 var0, AbstractClientPlayerEntity var1, class_7966 var2, class_2565 var3, int var4, int var5) {
       class_2697 var8 = method_11857(var1);
       if (var8 != null) {
          var8.method_12152(var0, var1, var2, var3, var4, var5);
       }
    }
 
-   public static synchronized class_2697 method_11857(class_9716 var0) {
+   public static synchronized class_2697 method_11857(AbstractClientPlayerEntity var0) {
       if (field_12905 && System.currentTimeMillis() > field_12906 + 5000L) {
          ClientPlayerEntity var3 = MinecraftClient.getInstance().thePlayer;
          if (var3 != null) {

@@ -25,7 +25,7 @@ public class class_7047 {
       this.method_32358(var1, var3, var5);
    }
 
-   public class_7047(class_1331 var1) {
+   public class_7047(BlockPos var1) {
       this.method_32358((double)var1.method_12173(), (double)var1.method_12165(), (double)var1.method_12185());
    }
 
@@ -105,8 +105,8 @@ public class class_7047 {
       return Math.abs(var4) + Math.abs(var8) + Math.abs(var6);
    }
 
-   public class_1331 method_32355() {
-      return new class_1331(this.method_32381(), this.method_32375(), this.method_32382());
+   public BlockPos method_32355() {
+      return new BlockPos(this.method_32381(), this.method_32375(), this.method_32382());
    }
 
    public boolean method_32356() {
@@ -133,7 +133,7 @@ public class class_7047 {
       return this.method_32356() && this.method_32365(this.method_32355().method_6100());
    }
 
-   public static boolean method_32361(class_1331 var0) {
+   public static boolean method_32361(BlockPos var0) {
       for (class_8571 var6 : field_36388) {
          class_2522 var7 = field_36392.theWorld.method_28262(var0.method_6103(var6.field_43941, var6.field_43940, var6.field_43942));
          if (var7.method_8360() == class_4783.field_23900 || var7.method_8360() == class_4783.field_23811) {
@@ -144,7 +144,7 @@ public class class_7047 {
       return false;
    }
 
-   public static boolean method_32366(class_1331 var0) {
+   public static boolean method_32366(BlockPos var0) {
       for (class_8571 var6 : field_36388) {
          class_2522 var7 = field_36392.theWorld.method_28262(var0.method_6103(var6.field_43941, var6.field_43940, var6.field_43942));
          if (var7.method_8345()) {
@@ -180,7 +180,7 @@ public class class_7047 {
          || field_36392.theWorld.method_28262(this.method_32355().method_6081()).method_8360() == class_4783.field_23433;
    }
 
-   public boolean method_32371(class_1331 var1) {
+   public boolean method_32371(BlockPos var1) {
       return !this.field_36387.field_44466.contains(var1.method_6077())
          ? MinecraftClient.getInstance().theWorld.method_28262(var1).method_8324(field_36392.theWorld, var1).method_19485()
          : true;
@@ -190,7 +190,7 @@ public class class_7047 {
       return this.method_32365(this.method_32355());
    }
 
-   public boolean method_32365(class_1331 var1) {
+   public boolean method_32365(BlockPos var1) {
       if (!this.field_36387.field_44466.contains(this.method_32355().method_6077())) {
          class_4190 var4 = MinecraftClient.getInstance().theWorld.method_28262(var1).method_8324(field_36392.theWorld, var1);
          if (var4.method_19485()) {

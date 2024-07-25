@@ -55,7 +55,7 @@ public class class_6662 {
       var3.method_30589(
          (var1, var2) -> {
             class_2522 var5x = ((class_6201)var1.method_27960()).method_28392().method_29260();
-            return var0.method_20749(var5x, (class_5561)null, (class_1331)null, var2);
+            return var0.method_20749(var5x, (class_5561)null, (BlockPos)null, var2);
          },
          class_4783.field_23259,
          class_4783.field_23868,

@@ -10,7 +10,7 @@ public class class_7647 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_34642(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_34642(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       class_2921 var8 = var4.method_6089();
 
       for (int var9 = 64; var9 < 256; var9++) {

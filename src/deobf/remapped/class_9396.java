@@ -11,7 +11,7 @@ public class class_9396 {
    private double field_48012 = -2.1474836E9F;
    private int field_48011 = 0;
    private long field_48017 = 0L;
-   private Set<class_1331> field_48013 = new HashSet<class_1331>();
+   private Set<BlockPos> field_48013 = new HashSet<BlockPos>();
    private class_2921 field_48014 = new class_2921();
 
    public class_9396(Entity var1) {
@@ -47,21 +47,21 @@ public class class_9396 {
             Direction var20 = (class_9299.method_42847(var39) & 15) < 8 ? Direction.field_809 : Direction.field_804;
             Direction var21 = (class_9299.method_42847(var6) & 15) < 8 ? Direction.field_802 : Direction.field_817;
             Direction var22 = (class_9299.method_42847(var8) & 15) < 8 ? Direction.field_818 : Direction.field_800;
-            class_1331 var23 = new class_1331(var39, var6, var8);
+            BlockPos var23 = new BlockPos(var39, var6, var8);
             class_3511 var24 = var1.method_20068(var23);
-            class_1331 var25 = this.method_43477(var24, var23, var20);
+            BlockPos var25 = this.method_43477(var24, var23, var20);
             class_3511 var26 = var1.method_20068(var25);
-            class_1331 var27 = this.method_43477(var24, var23, var22);
+            BlockPos var27 = this.method_43477(var24, var23, var22);
             class_3511 var28 = var1.method_20068(var27);
-            class_1331 var29 = this.method_43477(var26, var25, var22);
+            BlockPos var29 = this.method_43477(var26, var25, var22);
             class_3511 var30 = var1.method_20068(var29);
-            class_1331 var31 = this.method_43477(var24, var23, var21);
+            BlockPos var31 = this.method_43477(var24, var23, var21);
             class_3511 var32 = var1.method_20068(var31);
-            class_1331 var33 = this.method_43477(var32, var31, var20);
+            BlockPos var33 = this.method_43477(var32, var31, var20);
             class_3511 var34 = var1.method_20068(var33);
-            class_1331 var35 = this.method_43477(var32, var31, var22);
+            BlockPos var35 = this.method_43477(var32, var31, var22);
             class_3511 var36 = var1.method_20068(var35);
-            class_1331 var37 = this.method_43477(var34, var33, var22);
+            BlockPos var37 = this.method_43477(var34, var33, var22);
             class_3511 var38 = var1.method_20068(var37);
             this.method_43469(var24, this.field_48013, var19);
             this.method_43469(var26, this.field_48013, var19);
@@ -78,18 +78,18 @@ public class class_9396 {
       }
    }
 
-   private class_1331 method_43477(class_3511 var1, class_1331 var2, Direction var3) {
+   private BlockPos method_43477(class_3511 var1, BlockPos var2, Direction var3) {
       return var1 == null ? var2.method_6099(var3, 16) : var1.method_16143(var3);
    }
 
-   private void method_43469(class_3511 var1, Set<class_1331> var2, Set<class_1331> var3) {
+   private void method_43469(class_3511 var1, Set<BlockPos> var2, Set<BlockPos> var3) {
       if (var1 != null) {
          class_8845 var6 = var1.method_16150();
          if (var6 != null && !var6.method_40691()) {
             var1.method_16169(false);
          }
 
-         class_1331 var7 = var1.method_16189().method_6072();
+         BlockPos var7 = var1.method_16189().method_6072();
          if (var2 != null) {
             var2.remove(var7);
          }
@@ -101,9 +101,9 @@ public class class_9396 {
    }
 
    public void method_43473(WorldRenderer var1) {
-      for (class_1331 var5 : this.field_48013) {
+      for (BlockPos var5 : this.field_48013) {
          class_3511 var6 = var1.method_20068(var5);
-         this.method_43469(var6, (Set<class_1331>)null, (Set<class_1331>)null);
+         this.method_43469(var6, (Set<BlockPos>)null, (Set<BlockPos>)null);
       }
    }
 

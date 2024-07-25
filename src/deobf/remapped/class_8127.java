@@ -77,9 +77,9 @@ public class class_8127 extends class_608 implements class_6250 {
          int var3 = class_9299.method_42847(this.method_37302());
          int var4 = class_9299.method_42847(this.method_37309() - 0.2F);
          int var5 = class_9299.method_42847(this.method_37156());
-         class_2522 var6 = this.field_41768.method_28262(new class_1331(var3, var4, var5));
+         class_2522 var6 = this.world.method_28262(new BlockPos(var3, var4, var5));
          if (!var6.method_8345()) {
-            this.field_41768
+            this.world
                .method_43361(
                   new class_7110(class_3090.field_15325, var6),
                   this.method_37302() + ((double)this.field_41717.nextFloat() - 0.5) * (double)this.method_37086(),
@@ -92,8 +92,8 @@ public class class_8127 extends class_608 implements class_6250 {
          }
       }
 
-      if (!this.field_41768.field_33055) {
-         this.method_28530((class_6331)this.field_41768, true);
+      if (!this.world.field_33055) {
+         this.method_28530((class_6331)this.world, true);
       }
    }
 
@@ -117,7 +117,7 @@ public class class_8127 extends class_608 implements class_6250 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_36979(var1.getBoolean("PlayerCreated"));
-      this.method_28533((class_6331)this.field_41768, var1);
+      this.method_28533((class_6331)this.world, var1);
    }
 
    @Override
@@ -152,10 +152,10 @@ public class class_8127 extends class_608 implements class_6250 {
    @Override
    public boolean method_26442(Entity var1) {
       this.field_41632 = 10;
-      this.field_41768.method_29587(this, (byte)4);
+      this.world.method_29587(this, (byte)4);
       float var4 = this.method_36975();
       float var5 = (int)var4 <= 0 ? var4 : var4 / 2.0F + (float)this.field_41717.nextInt((int)var4);
-      boolean var6 = var1.method_37181(class_6199.method_28345(this), var5);
+      boolean var6 = var1.attackEntityFrom(DamageSource.method_28345(this), var5);
       if (var6) {
          var1.method_37215(var1.method_37098().method_6214(0.0, 0.4F, 0.0));
          this.method_37096(this, var1);
@@ -166,9 +166,9 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       class_440 var5 = this.method_36976();
-      boolean var6 = super.method_37181(var1, var2);
+      boolean var6 = super.attackEntityFrom(var1, var2);
       if (var6 && this.method_36976() != var5) {
          this.method_37155(class_463.field_2564, 1.0F, 1.0F);
       }
@@ -205,15 +205,15 @@ public class class_8127 extends class_608 implements class_6250 {
    public void method_36973(boolean var1) {
       if (!var1) {
          this.field_41631 = 0;
-         this.field_41768.method_29587(this, (byte)34);
+         this.world.method_29587(this, (byte)34);
       } else {
          this.field_41631 = 400;
-         this.field_41768.method_29587(this, (byte)11);
+         this.world.method_29587(this, (byte)11);
       }
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2006;
    }
 
@@ -223,12 +223,12 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       class_2451 var6 = var5.method_27960();
       if (var6 == class_4897.field_25021) {
          float var7 = this.method_26551();
-         this.method_26457(25.0F);
+         this.heal(25.0F);
          if (this.method_26551() != var7) {
             float var8 = 1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F;
             this.method_37155(class_463.field_1936, 1.0F, var8);
@@ -236,7 +236,7 @@ public class class_8127 extends class_608 implements class_6250 {
                var5.method_27970(1);
             }
 
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          } else {
             return class_6910.field_35521;
          }
@@ -246,7 +246,7 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2483, 1.0F, 1.0F);
    }
 
@@ -268,20 +268,20 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    @Override
-   public void method_26452(class_6199 var1) {
+   public void method_26452(DamageSource var1) {
       super.method_26452(var1);
    }
 
    @Override
    public boolean method_26855(class_4924 var1) {
-      class_1331 var4 = this.method_37075();
-      class_1331 var5 = var4.method_6100();
+      BlockPos var4 = this.method_37075();
+      BlockPos var5 = var4.method_6100();
       class_2522 var6 = var1.method_28262(var5);
       if (!var6.method_8337(var1, var5, this)) {
          return false;
       } else {
          for (int var7 = 1; var7 < 3; var7++) {
-            class_1331 var8 = var4.method_6082(var7);
+            BlockPos var8 = var4.method_6082(var7);
             class_2522 var9 = var1.method_28262(var8);
             if (!class_3815.method_17772(var1, var8, var9, var9.method_8364(), class_6629.field_34298)) {
                return false;

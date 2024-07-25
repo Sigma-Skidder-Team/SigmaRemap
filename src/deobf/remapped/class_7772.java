@@ -38,8 +38,8 @@ public class class_7772 {
       this.field_39395 = var3;
       this.field_39384 = var4;
       this.method_35256();
-      this.field_39383 = class_9299.method_42848(var2.field_41701 * 256.0F / 360.0F);
-      this.field_39393 = class_9299.method_42848(var2.field_41755 * 256.0F / 360.0F);
+      this.field_39383 = class_9299.method_42848(var2.rotationYaw * 256.0F / 360.0F);
+      this.field_39393 = class_9299.method_42848(var2.rotationPitch * 256.0F / 360.0F);
       this.field_39398 = class_9299.method_42848(var2.method_37267() * 256.0F / 360.0F);
       this.field_39390 = var2.method_37360();
    }
@@ -70,10 +70,10 @@ public class class_7772 {
       }
 
       if (this.field_39397 % this.field_39395 == 0 || this.field_39387.field_41763 || this.field_39387.method_37372().method_36643()) {
-         if (!this.field_39387.method_37070()) {
+         if (!this.field_39387.isPassenger()) {
             this.field_39388++;
-            int var22 = class_9299.method_42848(this.field_39387.field_41701 * 256.0F / 360.0F);
-            int var25 = class_9299.method_42848(this.field_39387.field_41755 * 256.0F / 360.0F);
+            int var22 = class_9299.method_42848(this.field_39387.rotationYaw * 256.0F / 360.0F);
+            int var25 = class_9299.method_42848(this.field_39387.rotationPitch * 256.0F / 360.0F);
             class_1343 var27 = this.field_39387.method_37245().method_6194(class_527.method_2556(this.field_39386, this.field_39392, this.field_39400));
             boolean var28 = var27.method_6221() >= 7.6293945E-6F;
             Object var29 = null;
@@ -137,8 +137,8 @@ public class class_7772 {
 
             this.field_39394 = false;
          } else {
-            int var21 = class_9299.method_42848(this.field_39387.field_41701 * 256.0F / 360.0F);
-            int var24 = class_9299.method_42848(this.field_39387.field_41755 * 256.0F / 360.0F);
+            int var21 = class_9299.method_42848(this.field_39387.rotationYaw * 256.0F / 360.0F);
+            int var24 = class_9299.method_42848(this.field_39387.rotationPitch * 256.0F / 360.0F);
             boolean var26 = Math.abs(var21 - this.field_39383) >= 1 || Math.abs(var24 - this.field_39393) >= 1;
             if (var26) {
                this.field_39396.accept(new class_2515(this.field_39387.method_37145(), (byte)var21, (byte)var24, this.field_39387.method_37360()));
@@ -234,7 +234,7 @@ public class class_7772 {
          var1.accept(new class_4597(this.field_39387));
       }
 
-      if (this.field_39387.method_37070()) {
+      if (this.field_39387.isPassenger()) {
          var1.accept(new class_4597(this.field_39387.method_37243()));
       }
 

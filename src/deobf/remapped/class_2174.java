@@ -16,7 +16,7 @@ public class class_2174 {
    private void method_10107(
       class_5561 var1,
       class_2522 var2,
-      class_1331 var3,
+      BlockPos var3,
       class_7966 var4,
       class_7907 var5,
       List<class_5024> var6,
@@ -51,7 +51,7 @@ public class class_2174 {
    private void method_10115(
       class_5561 var1,
       class_2522 var2,
-      class_1331 var3,
+      BlockPos var3,
       class_7907 var4,
       class_6279 var5,
       class_5024 var6,
@@ -85,7 +85,7 @@ public class class_2174 {
    private void method_10110(
       class_5561 var1,
       class_2522 var2,
-      class_1331 var3,
+      BlockPos var3,
       int var4,
       int var5,
       boolean var6,
@@ -97,7 +97,7 @@ public class class_2174 {
       for (class_5024 var14 : var9) {
          if (var6) {
             this.method_10109(var1, var2, var3, var14.method_23155(), var14.method_23150(), (float[])null, var10);
-            class_1331 var15 = !var10.get(0) ? var3 : var3.method_6098(var14.method_23150());
+            BlockPos var15 = !var10.get(0) ? var3 : var3.method_6098(var14.method_23150());
             var4 = WorldRenderer.method_20052(var1, var2, var15);
          }
 
@@ -111,7 +111,7 @@ public class class_2174 {
    }
 
    public boolean method_10103(
-      class_5561 var1, class_7373 var2, class_2522 var3, class_1331 var4, class_7966 var5, class_7907 var6, boolean var7, Random var8, long var9, int var11
+           class_5561 var1, class_7373 var2, class_2522 var3, BlockPos var4, class_7966 var5, class_7907 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method_10104(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, class_6652.field_34420);
    }
@@ -120,7 +120,7 @@ public class class_2174 {
       class_5561 var1,
       class_7373 var2,
       class_2522 var3,
-      class_1331 var4,
+      BlockPos var4,
       class_7966 var5,
       class_7907 var6,
       boolean var7,
@@ -170,7 +170,7 @@ public class class_2174 {
    }
 
    public boolean method_10101(
-      class_5561 var1, class_7373 var2, class_2522 var3, class_1331 var4, class_7966 var5, class_7907 var6, boolean var7, Random var8, long var9, int var11
+           class_5561 var1, class_7373 var2, class_2522 var3, BlockPos var4, class_7966 var5, class_7907 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method_10102(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, class_6652.field_34420);
    }
@@ -179,7 +179,7 @@ public class class_2174 {
       class_5561 var1,
       class_7373 var2,
       class_2522 var3,
-      class_1331 var4,
+      BlockPos var4,
       class_7966 var5,
       class_7907 var6,
       boolean var7,
@@ -214,7 +214,7 @@ public class class_2174 {
    }
 
    public boolean method_10099(
-      class_5561 var1, class_7373 var2, class_2522 var3, class_1331 var4, class_7966 var5, class_7907 var6, boolean var7, Random var8, long var9, int var11
+           class_5561 var1, class_7373 var2, class_2522 var3, BlockPos var4, class_7966 var5, class_7907 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method_10100(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, class_6652.field_34420);
    }
@@ -223,7 +223,7 @@ public class class_2174 {
       class_5561 var1,
       class_7373 var2,
       class_2522 var3,
-      class_1331 var4,
+      BlockPos var4,
       class_7966 var5,
       class_7907 var6,
       boolean var7,
@@ -259,7 +259,7 @@ public class class_2174 {
    }
 
    private void method_10106(
-      class_5561 var1, class_2522 var2, class_1331 var3, class_7966 var4, class_7907 var5, List<class_5024> var6, int var7, class_4460 var8
+           class_5561 var1, class_2522 var2, BlockPos var3, class_7966 var4, class_7907 var5, List<class_5024> var6, int var7, class_4460 var8
    ) {
       float[] var11 = var8.method_20693();
       BitSet var12 = var8.method_20682();
@@ -298,7 +298,7 @@ public class class_2174 {
    private void method_10116(
       class_5561 var1,
       class_2522 var2,
-      class_1331 var3,
+      BlockPos var3,
       class_7907 var4,
       class_6279 var5,
       class_5024 var6,
@@ -333,7 +333,7 @@ public class class_2174 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   private void method_10109(class_5561 var1, class_2522 var2, class_1331 var3, int[] var4, Direction var5, float[] var6, BitSet var7) {
+   private void method_10109(class_5561 var1, class_2522 var2, BlockPos var3, int[] var4, Direction var5, float[] var6, BitSet var7) {
       float var10 = 32.0F;
       float var11 = 32.0F;
       float var12 = 32.0F;
@@ -402,7 +402,7 @@ public class class_2174 {
    private void method_10111(
       class_5561 var1,
       class_2522 var2,
-      class_1331 var3,
+      BlockPos var3,
       int var4,
       int var5,
       boolean var6,
@@ -418,7 +418,7 @@ public class class_2174 {
          class_5024 var16 = (class_5024)var9.get(var15);
          if (var6) {
             this.method_10109(var1, var2, var3, var16.method_23155(), var16.method_23150(), (float[])null, var13);
-            class_1331 var17 = !var13.get(0) ? var3 : var3.method_6098(var16.method_23150());
+            BlockPos var17 = !var13.get(0) ? var3 : var3.method_6098(var16.method_23150());
             var4 = WorldRenderer.method_20052(var1, var2, var17);
          }
 
@@ -511,7 +511,7 @@ public class class_2174 {
       class_5561 var1,
       class_7373 var2,
       class_2522 var3,
-      class_1331 var4,
+      BlockPos var4,
       class_7966 var5,
       class_7907 var6,
       int var7,

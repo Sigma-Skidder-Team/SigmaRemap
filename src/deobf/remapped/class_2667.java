@@ -45,7 +45,7 @@ public class class_2667 extends class_1173 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2324;
    }
 
@@ -55,7 +55,7 @@ public class class_2667 extends class_1173 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2103, 0.15F, 1.0F);
    }
 
@@ -75,13 +75,13 @@ public class class_2667 extends class_1173 {
 
    @Override
    public void method_37123() {
-      this.field_29605 = this.field_41701;
+      this.field_29605 = this.rotationYaw;
       super.method_37123();
    }
 
    @Override
    public void method_37090(float var1) {
-      this.field_41701 = var1;
+      this.rotationYaw = var1;
       super.method_37090(var1);
    }
 
@@ -101,7 +101,7 @@ public class class_2667 extends class_1173 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (!this.method_26925()) {
             this.field_13118++;
          }
@@ -111,7 +111,7 @@ public class class_2667 extends class_1173 {
          }
       } else {
          for (int var3 = 0; var3 < 2; var3++) {
-            this.field_41768
+            this.world
                .method_43361(
                   class_3090.field_15356,
                   this.method_37361(0.5),
@@ -125,7 +125,7 @@ public class class_2667 extends class_1173 {
       }
    }
 
-   public static boolean method_12024(class_6629<class_2667> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_12024(class_6629<class_2667> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       if (!method_5198(var0, var1, var2, var3, var4)) {
          return false;
       } else {

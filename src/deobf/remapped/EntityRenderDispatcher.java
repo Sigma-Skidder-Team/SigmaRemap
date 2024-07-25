@@ -163,10 +163,10 @@ public class EntityRenderDispatcher {
    }
 
    public <T extends Entity> class_7067<? super T> method_28131(T var1) {
-      if (!(var1 instanceof class_9716)) {
+      if (!(var1 instanceof AbstractClientPlayerEntity)) {
          return (class_7067<? super T>)this.renderers.get(var1.method_37387());
       } else {
-         String var4 = ((class_9716)var1).method_44874();
+         String var4 = ((AbstractClientPlayerEntity)var1).method_44874();
          class_6670 var5 = this.modelRenderers.get(var4);
          return var5 == null ? this.playerRenderer : var5;
       }
@@ -403,16 +403,16 @@ public class EntityRenderDispatcher {
          class_6279 var22 = var0.method_36058();
          class_7907 var23 = var1.method_11645(SHADOW_LAYER);
 
-         for (class_1331 var26 : class_1331.method_6076(new class_1331(var16, var18, var20), new class_1331(var17, var19, var21))) {
+         for (BlockPos var26 : BlockPos.method_6076(new BlockPos(var16, var18, var20), new BlockPos(var17, var19, var21))) {
             method_28124(var22, var23, var5, var26, var10, var12, var14, var9, var3);
          }
       }
    }
 
    private static void method_28124(
-      class_6279 var0, class_7907 var1, class_4924 var2, class_1331 var3, double var4, double var6, double var8, float var10, float var11
+           class_6279 var0, class_7907 var1, class_4924 var2, BlockPos var3, double var4, double var6, double var8, float var10, float var11
    ) {
-      class_1331 var14 = var3.method_6100();
+      BlockPos var14 = var3.method_6100();
       class_2522 var15 = var2.method_28262(var14);
       if (var15.method_8352() != class_7537.field_38470 && var2.method_22573(var3) > 3 && var15.method_8306(var2, var14)) {
          class_4190 var16 = var15.method_8334(var2, var3.method_6100());

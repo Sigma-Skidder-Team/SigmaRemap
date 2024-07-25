@@ -16,7 +16,7 @@ public class class_8214 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      this.field_42021 = this.field_42022.field_41768.method_25859(class_449.method_2166(), this.field_42022);
+      this.field_42021 = this.field_42022.world.method_25859(class_449.method_2166(), this.field_42022);
       return this.field_42021 == null ? false : this.field_42021.method_37113() && this.field_42022.method_17809() != this.field_42021;
    }
 
@@ -45,7 +45,7 @@ public class class_8214 extends class_3599 {
          this.field_42022.method_26927().method_5620();
       }
 
-      if (this.field_42021.method_37113() && this.field_42021.field_41768.field_33033.nextInt(6) == 0) {
+      if (this.field_42021.method_37113() && this.field_42021.world.field_33033.nextInt(6) == 0) {
          this.field_42021.method_26558(new class_2250(Effects.field_19724, 100));
       }
    }

@@ -52,20 +52,20 @@ public class class_108 extends class_6414 {
       return Math.max(1, class_9299.method_42815(15.0 * class_9299.method_42827((0.5 - var12) / 0.5, 0.0, 1.0)));
    }
 
-   private static void method_334(class_9379 var0, class_2522 var1, int var2, class_1331 var3, int var4) {
+   private static void method_334(class_9379 var0, class_2522 var1, int var2, BlockPos var3, int var4) {
       var0.method_7513(var3, var1.method_10308(field_274, Integer.valueOf(var2)), 3);
       var0.method_43367().method_14011(var3, var1.method_8360(), var4);
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method_10313(field_274) != 0) {
          var2.method_7513(var3, var1.method_10308(field_274, Integer.valueOf(0)), 3);
       }
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return var1.<Integer>method_10313(field_274);
    }
 
@@ -80,7 +80,7 @@ public class class_108 extends class_6414 {
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var2.method_22567()
          && !var1.method_8350(var4.method_8360())
          && var1.<Integer>method_10313(field_274) > 0

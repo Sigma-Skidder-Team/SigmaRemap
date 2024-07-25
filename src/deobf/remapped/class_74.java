@@ -15,18 +15,18 @@ public class class_74 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_110;
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var2.method_22573(var3.method_6081()) >= 9 && var4.nextInt(7) == 0) {
          this.method_154(var2, var3, var1, var4);
       }
    }
 
-   public void method_154(class_6331 var1, class_1331 var2, class_2522 var3, Random var4) {
+   public void method_154(class_6331 var1, BlockPos var2, class_2522 var3, Random var4) {
       if (var3.<Integer>method_10313(field_111) != 0) {
          this.field_112.method_41607(var1, var1.method_28945().method_10189(), var2, var3, var4);
       } else {
@@ -35,17 +35,17 @@ public class class_74 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public boolean method_18358(class_6163 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public boolean method_18358(class_6163 var1, BlockPos var2, class_2522 var3, boolean var4) {
       return true;
    }
 
    @Override
-   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, BlockPos var3, class_2522 var4) {
       return (double)var1.field_33033.nextFloat() < 0.45;
    }
 
    @Override
-   public void method_18359(class_6331 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public void method_18359(class_6331 var1, Random var2, BlockPos var3, class_2522 var4) {
       this.method_154(var1, var3, var4, var2);
    }
 

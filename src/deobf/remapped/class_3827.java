@@ -25,7 +25,7 @@ public class class_3827 extends class_8394<class_1941> {
       }
 
       if (var14 > var13) {
-         class_6596.method_30372(var3, this.field_15986, this.field_15989, new class_1331(var11, var14, var12));
+         class_6596.method_30372(var3, this.field_15986, this.field_15989, new BlockPos(var11, var14, var12));
          this.method_14720();
       }
    }

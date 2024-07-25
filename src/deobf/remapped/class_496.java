@@ -251,7 +251,7 @@ public class class_496 extends class_5467 {
    public void method_37123() {
       super.method_37123();
       if (this.method_2462()) {
-         if (this.field_41768.method_29570() && !this.method_37285()) {
+         if (this.world.method_29570() && !this.method_37285()) {
             this.method_2442(true);
             this.method_2456(false);
          } else if (!this.method_2427()) {
@@ -295,7 +295,7 @@ public class class_496 extends class_5467 {
       }
 
       if (this.method_2449()) {
-         this.field_41755 = 0.0F;
+         this.rotationPitch = 0.0F;
       }
 
       this.method_2433();
@@ -305,7 +305,7 @@ public class class_496 extends class_5467 {
    }
 
    public boolean method_2421() {
-      return this.method_2462() && this.field_41768.method_29570();
+      return this.method_2462() && this.world.method_29570();
    }
 
    private void method_2441() {
@@ -321,9 +321,9 @@ public class class_496 extends class_5467 {
 
       if (this.method_2427()) {
          this.method_2472();
-         if (!this.field_41768.field_33055 && this.method_2461() > 80 && this.field_41717.nextInt(20) == 1) {
+         if (!this.world.field_33055 && this.method_2461() > 80 && this.field_41717.nextInt(20) == 1) {
             if (this.method_2461() > 100 && this.method_2447(this.method_26520(class_6943.field_35707))) {
-               if (!this.field_41768.field_33055) {
+               if (!this.world.field_33055) {
                   this.method_37349(class_6943.field_35707, ItemStack.EMPTY);
                }
 
@@ -348,13 +348,13 @@ public class class_496 extends class_5467 {
             class_1343 var4 = new class_1343(
                ((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double)this.field_41717.nextFloat() - 0.5) * 0.1
             );
-            var4 = var4.method_6212(-this.field_41755 * (float) (Math.PI / 180.0));
-            var4 = var4.method_6192(-this.field_41701 * (float) (Math.PI / 180.0));
+            var4 = var4.method_6212(-this.rotationPitch * (float) (Math.PI / 180.0));
+            var4 = var4.method_6192(-this.rotationYaw * (float) (Math.PI / 180.0));
             double var5 = (double)(-this.field_41717.nextFloat()) * 0.6 - 0.3;
             class_1343 var7 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.8, var5, 1.0 + ((double)this.field_41717.nextFloat() - 0.5) * 0.4);
             var7 = var7.method_6192(-this.field_29605 * (float) (Math.PI / 180.0));
             var7 = var7.method_6214(this.method_37302(), this.method_37388() + 1.0, this.method_37156());
-            this.field_41768
+            this.world
                .method_43361(
                   new class_8661(class_3090.field_15351, this.method_26520(class_6943.field_35707)),
                   var7.field_7336,
@@ -410,7 +410,7 @@ public class class_496 extends class_5467 {
    private void method_2466() {
       this.field_3086++;
       if (this.field_3086 <= 32) {
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             class_1343 var3 = this.method_37098();
             if (this.field_3086 != 1) {
                if ((float)this.field_3086 != 7.0F && (float)this.field_3086 != 15.0F && (float)this.field_3086 != 23.0F) {
@@ -419,7 +419,7 @@ public class class_496 extends class_5467 {
                   this.method_37214(0.0, !this.field_41726 ? var3.field_7333 : 0.27, 0.0);
                }
             } else {
-               float var4 = this.field_41701 * (float) (Math.PI / 180.0);
+               float var4 = this.rotationYaw * (float) (Math.PI / 180.0);
                float var5 = !this.method_26449() ? 0.2F : 0.1F;
                this.field_3080 = new class_1343(
                   var3.field_7336 + (double)(-class_9299.method_42818(var4) * var5), 0.0, var3.field_7334 + (double)(class_9299.method_42840(var4) * var5)
@@ -434,7 +434,7 @@ public class class_496 extends class_5467 {
 
    private void method_2426() {
       class_1343 var3 = this.method_37098();
-      this.field_41768
+      this.world
          .method_43361(
             class_3090.field_15326,
             this.method_37302() - (double)(this.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0)),
@@ -446,13 +446,13 @@ public class class_496 extends class_5467 {
          );
       this.method_37155(class_463.field_2410, 1.0F, 1.0F);
 
-      for (class_496 var5 : this.field_41768.<class_496>method_25868(class_496.class, this.method_37241().method_18898(10.0))) {
+      for (class_496 var5 : this.world.<class_496>method_25868(class_496.class, this.method_37241().method_18898(10.0))) {
          if (!var5.method_26449() && var5.field_41726 && !var5.method_37285() && var5.method_2451()) {
             var5.method_26595();
          }
       }
 
-      if (!this.field_41768.method_22567() && this.field_41717.nextInt(700) == 0 && this.field_41768.method_29537().method_1285(class_291.field_1033)) {
+      if (!this.world.method_22567() && this.field_41717.nextInt(700) == 0 && this.world.method_29537().method_1285(class_291.field_1033)) {
          this.method_37312(class_4897.field_24592);
       }
    }
@@ -470,9 +470,9 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       this.method_2442(false);
-      return super.method_37181(var1, var2);
+      return super.attackEntityFrom(var1, var2);
    }
 
    @Nullable
@@ -537,12 +537,12 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!this.method_2421()) {
          if (this.method_2450()) {
             this.method_2471(false);
-            return class_6910.method_31659(this.field_41768.field_33055);
+            return class_6910.method_31659(this.world.field_33055);
          } else if (!this.method_24866(var5)) {
             return class_6910.field_35521;
          } else {
@@ -551,11 +551,11 @@ public class class_496 extends class_5467 {
             }
 
             if (!this.method_26449()) {
-               if (!this.field_41768.field_33055 && this.method_8634() == 0 && this.method_24870()) {
+               if (!this.world.field_33055 && this.method_8634() == 0 && this.method_24870()) {
                   this.method_24867(var1, var5);
                   this.method_24869(var1);
                } else {
-                  if (this.field_41768.field_33055 || this.method_2449() || this.method_37285()) {
+                  if (this.world.field_33055 || this.method_2449() || this.method_37285()) {
                      return class_6910.field_35521;
                   }
 
@@ -592,7 +592,7 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2675, 0.15F, 1.0F);
    }
 
@@ -613,7 +613,7 @@ public class class_496 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2595;
    }
 

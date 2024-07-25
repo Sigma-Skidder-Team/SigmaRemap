@@ -11,7 +11,7 @@ public class class_9189 {
       return var3 * var3 + var5 * var5 + var7 * var7;
    }
 
-   public static double method_42355(class_1331 var0) {
+   public static double method_42355(BlockPos var0) {
       double var3 = method_42357(field_47005.thePlayer).field_42648 - (double)var0.method_12173();
       double var5 = method_42357(field_47005.thePlayer).field_42646 - (double)var0.method_12165();
       double var7 = method_42357(field_47005.thePlayer).field_42649 - (double)var0.method_12185();
@@ -35,7 +35,7 @@ public class class_9189 {
       );
    }
 
-   public static class_8328 method_42356(class_1331 var0) {
+   public static class_8328 method_42356(BlockPos var0) {
       return new class_8328(
          (double)var0.method_12173() - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61(),
          (double)var0.method_12165() - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60(),

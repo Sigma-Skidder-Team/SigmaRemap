@@ -32,7 +32,7 @@ public class class_3780 extends class_4569 {
       return new class_3780(class_2544.method_11579(class_8807.field_45060), class_8938.field_45798, class_8938.field_45798, class_8772.field_44906);
    }
 
-   public boolean method_17507(class_9359 var1, class_2792 var2, class_6199 var3) {
+   public boolean method_17507(class_9359 var1, class_2792 var2, DamageSource var3) {
       return this.field_18449.method_40300(var1, var3) ? this.field_18451.method_41071(var2) : false;
    }
 

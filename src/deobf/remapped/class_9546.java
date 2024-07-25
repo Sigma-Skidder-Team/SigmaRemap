@@ -37,16 +37,16 @@ public class class_9546 extends class_2266 {
          var3 = class_9299.method_42847(this.field_8166.method_37309() + 0.5);
       }
 
-      class_1331 var10 = this.field_8166.method_37075();
+      BlockPos var10 = this.field_8166.method_37075();
       class_1108 var11 = this.method_44059(this.field_8166, var10.method_12173(), var3, var10.method_12185());
       if (this.field_8166.method_26931(var11) < 0.0F) {
          HashSet var6 = Sets.newHashSet();
-         var6.add(new class_1331(this.field_8166.method_37241().field_19941, (double)var3, this.field_8166.method_37241().field_19938));
-         var6.add(new class_1331(this.field_8166.method_37241().field_19941, (double)var3, this.field_8166.method_37241().field_19942));
-         var6.add(new class_1331(this.field_8166.method_37241().field_19940, (double)var3, this.field_8166.method_37241().field_19938));
-         var6.add(new class_1331(this.field_8166.method_37241().field_19940, (double)var3, this.field_8166.method_37241().field_19942));
+         var6.add(new BlockPos(this.field_8166.method_37241().field_19941, (double)var3, this.field_8166.method_37241().field_19938));
+         var6.add(new BlockPos(this.field_8166.method_37241().field_19941, (double)var3, this.field_8166.method_37241().field_19942));
+         var6.add(new BlockPos(this.field_8166.method_37241().field_19940, (double)var3, this.field_8166.method_37241().field_19938));
+         var6.add(new BlockPos(this.field_8166.method_37241().field_19940, (double)var3, this.field_8166.method_37241().field_19942));
 
-         for (class_1331 var8 : var6) {
+         for (BlockPos var8 : var6) {
             class_1108 var9 = this.method_44060(this.field_8166, var8);
             if (this.field_8166.method_26931(var9) >= 0.0F) {
                return super.method_7016(var8.method_12173(), var8.method_12165(), var8.method_12185());
@@ -274,7 +274,7 @@ public class class_9546 extends class_2266 {
    public class_1108 method_7011(class_6163 var1, int var2, int var3, int var4, class_5886 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet var13 = EnumSet.<class_1108>noneOf(class_1108.class);
       class_1108 var14 = class_1108.field_6365;
-      class_1331 var15 = var5.method_37075();
+      BlockPos var15 = var5.method_37075();
       var14 = this.method_10457(var1, var2, var3, var4, var6, var7, var8, var9, var10, var13, var14, var15);
       if (var13.contains(class_1108.field_6353)) {
          return class_1108.field_6353;
@@ -335,7 +335,7 @@ public class class_9546 extends class_2266 {
       return var8;
    }
 
-   private class_1108 method_44060(class_5886 var1, class_1331 var2) {
+   private class_1108 method_44060(class_5886 var1, BlockPos var2) {
       return this.method_44059(var1, var2.method_12173(), var2.method_12165(), var2.method_12185());
    }
 

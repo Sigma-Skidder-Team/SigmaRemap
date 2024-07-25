@@ -12,7 +12,7 @@ public class class_217 extends class_3418 {
    }
 
    @Override
-   public boolean method_15772(class_9379 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_15772(class_9379 var1, Random var2, BlockPos var3, class_2522 var4) {
       if (!this.method_15774(var1, var2, var3, var4)) {
          return false;
       } else {

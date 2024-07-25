@@ -74,11 +74,11 @@ public abstract class class_4285<FC extends class_6157> {
       return new class_5927<FC, class_4285<FC>>(this, (FC)var1);
    }
 
-   public void method_19906(class_1678 var1, class_1331 var2, class_2522 var3) {
+   public void method_19906(class_1678 var1, BlockPos var2, class_2522 var3) {
       var1.method_7513(var2, var3, 3);
    }
 
-   public abstract boolean method_19907(class_700 var1, class_6541 var2, Random var3, class_1331 var4, FC var5);
+   public abstract boolean method_19907(class_700 var1, class_6541 var2, Random var3, BlockPos var4, FC var5);
 
    public static boolean method_19913(class_6414 var0) {
       return var0 == class_4783.field_23644 || var0 == class_4783.field_23695 || var0 == class_4783.field_23440 || var0 == class_4783.field_23271;
@@ -92,11 +92,11 @@ public abstract class class_4285<FC extends class_6157> {
          || var0 == class_4783.field_23162;
    }
 
-   public static boolean method_19912(class_8308 var0, class_1331 var1) {
+   public static boolean method_19912(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, var0x -> method_19910(var0x.method_8360()));
    }
 
-   public static boolean method_19908(class_8308 var0, class_1331 var1) {
+   public static boolean method_19908(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, class_1873::method_8345);
    }
 }

@@ -7,7 +7,7 @@ public class class_1657 extends class_5920<class_5886> {
    private static String[] field_8598;
    private int field_8600;
    private class_3998 field_8601;
-   private class_1331 field_8597;
+   private BlockPos field_8597;
    private float field_8599;
 
    public class_1657() {
@@ -92,7 +92,7 @@ public class class_1657 extends class_5920<class_5886> {
    }
 
    private boolean method_7390(class_5886 var1, class_6651 var2, long var3) {
-      class_1331 var7 = var2.method_30562().method_35462();
+      BlockPos var7 = var2.method_30562().method_35462();
       this.field_8601 = var1.method_26927().method_5615(var7, 0);
       this.field_8599 = var2.method_30559();
       class_1150 var8 = var1.method_26525();

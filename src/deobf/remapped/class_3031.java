@@ -32,7 +32,7 @@ public class class_3031 extends class_9513 {
    }
 
    private boolean method_13833() {
-      class_1331 var3 = this.field_14849.method_37075();
+      BlockPos var3 = this.field_14849.method_37075();
       class_2921 var4 = new class_2921();
 
       for (int var5 = 0; var5 < 3; var5++) {

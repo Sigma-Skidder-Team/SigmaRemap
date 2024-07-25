@@ -72,7 +72,7 @@ public class class_8115 {
       if (this.field_41589 == Integer.MIN_VALUE) {
          this.field_41589 = this.field_41590
             .stream()
-            .mapToInt(var1x -> var1x.method_11832(var1, class_1331.field_7306, class_6631.field_34340).method_44398())
+            .mapToInt(var1x -> var1x.method_11832(var1, BlockPos.field_7306, class_6631.field_34340).method_44398())
             .max()
             .orElse(0);
       }

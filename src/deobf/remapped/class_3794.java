@@ -15,7 +15,7 @@ public class class_3794 extends class_3793 {
    }
 
    @Override
-   public void method_17625(World var1, class_1331 var2, class_704 var3) {
+   public void method_17625(World var1, BlockPos var2, class_704 var3) {
       class_3757 var6 = var1.method_28260(var2);
       if (var6 instanceof class_5717) {
          var3.method_3152((class_4259)var6);
@@ -24,7 +24,7 @@ public class class_3794 extends class_3793 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Boolean>method_10313(field_18522)) {
          double var7 = (double)var3.method_12173() + 0.5;
          double var9 = (double)var3.method_12165();

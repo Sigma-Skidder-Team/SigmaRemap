@@ -53,7 +53,7 @@ public class class_1703 extends class_1546 {
 
    @Override
    public class_1108 method_7010(class_6163 var1, int var2, int var3, int var4) {
-      class_1331 var7 = new class_1331(var2, var3, var4);
+      BlockPos var7 = new BlockPos(var2, var3, var4);
       class_4774 var8 = var1.method_28258(var7);
       class_2522 var9 = var1.method_28262(var7);
       if (var8.method_22001() && var9.method_8319(var1, var7.method_6100(), class_2929.field_14272) && var9.method_8345()) {
@@ -75,13 +75,13 @@ public class class_1703 extends class_1546 {
    @Override
    public class_5851 method_7016(int var1, int var2, int var3) {
       class_5851 var6 = null;
-      class_1108 var7 = this.method_7010(this.field_8166.field_41768, var1, var2, var3);
+      class_1108 var7 = this.method_7010(this.field_8166.world, var1, var2, var3);
       float var8 = this.field_8166.method_26931(var7);
       if (var8 >= 0.0F) {
          var6 = super.method_7016(var1, var2, var3);
          var6.field_29730 = var7;
          var6.field_29729 = Math.max(var6.field_29729, var8);
-         if (this.field_8165.method_28258(new class_1331(var1, var2, var3)).method_22001()) {
+         if (this.field_8165.method_28258(new BlockPos(var1, var2, var3)).method_22001()) {
             var6.field_29729 += 8.0F;
          }
       }

@@ -73,15 +73,15 @@ public abstract class World implements class_9379, AutoCloseable {
       return null;
    }
 
-   public static boolean method_29586(class_1331 var0) {
+   public static boolean method_29586(BlockPos var0) {
       return !method_29556(var0) && method_29592(var0);
    }
 
-   public static boolean method_29593(class_1331 var0) {
+   public static boolean method_29593(BlockPos var0) {
       return !method_29595(var0.method_12165()) && method_29592(var0);
    }
 
-   private static boolean method_29592(class_1331 var0) {
+   private static boolean method_29592(BlockPos var0) {
       return var0.method_12173() >= -30000000 && var0.method_12185() >= -30000000 && var0.method_12173() < 30000000 && var0.method_12185() < 30000000;
    }
 
@@ -89,7 +89,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return var0 < -20000000 || var0 >= 20000000;
    }
 
-   public static boolean method_29556(class_1331 var0) {
+   public static boolean method_29556(BlockPos var0) {
       return method_29571(var0.method_12165());
    }
 
@@ -97,7 +97,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return var0 < 0 || var0 >= 256;
    }
 
-   public class_2654 method_29542(class_1331 var1) {
+   public class_2654 method_29542(BlockPos var1) {
       return this.method_29554(var1.method_12173() >> 4, var1.method_12185() >> 4);
    }
 
@@ -116,12 +116,12 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public boolean method_7513(class_1331 var1, class_2522 var2, int var3) {
+   public boolean method_7513(BlockPos var1, class_2522 var2, int var3) {
       return this.method_7514(var1, var2, var3, 512);
    }
 
    @Override
-   public boolean method_7514(class_1331 var1, class_2522 var2, int var3, int var4) {
+   public boolean method_7514(BlockPos var1, class_2522 var2, int var3, int var4) {
       if (method_29556(var1)) {
          return false;
       } else if (!this.field_33055 && this.method_29581()) {
@@ -180,17 +180,17 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public void method_29550(class_1331 var1, class_2522 var2, class_2522 var3) {
+   public void method_29550(BlockPos var1, class_2522 var2, class_2522 var3) {
    }
 
    @Override
-   public boolean method_7508(class_1331 var1, boolean var2) {
+   public boolean method_7508(BlockPos var1, boolean var2) {
       class_4774 var5 = this.method_28258(var1);
       return this.method_7513(var1, var5.method_22006(), 3 | (!var2 ? 0 : 64));
    }
 
    @Override
-   public boolean method_7512(class_1331 var1, boolean var2, Entity var3, int var4) {
+   public boolean method_7512(BlockPos var1, boolean var2, Entity var3, int var4) {
       class_2522 var7 = this.method_28262(var1);
       if (!var7.method_8345()) {
          class_4774 var8 = this.method_28258(var1);
@@ -209,16 +209,16 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public boolean method_29594(class_1331 var1, class_2522 var2) {
+   public boolean method_29594(BlockPos var1, class_2522 var2) {
       return this.method_7513(var1, var2, 3);
    }
 
-   public abstract void method_29572(class_1331 var1, class_2522 var2, class_2522 var3, int var4);
+   public abstract void method_29572(BlockPos var1, class_2522 var2, class_2522 var3, int var4);
 
-   public void method_29567(class_1331 var1, class_2522 var2, class_2522 var3) {
+   public void method_29567(BlockPos var1, class_2522 var2, class_2522 var3) {
    }
 
-   public void method_29563(class_1331 var1, class_6414 var2) {
+   public void method_29563(BlockPos var1, class_6414 var2) {
       this.method_29520(var1.method_6108(), var2, var1);
       this.method_29520(var1.method_6090(), var2, var1);
       this.method_29520(var1.method_6100(), var2, var1);
@@ -227,7 +227,7 @@ public abstract class World implements class_9379, AutoCloseable {
       this.method_29520(var1.method_6073(), var2, var1);
    }
 
-   public void method_29526(class_1331 var1, class_6414 var2, Direction var3) {
+   public void method_29526(BlockPos var1, class_6414 var2, Direction var3) {
       if (var3 != Direction.field_809) {
          this.method_29520(var1.method_6108(), var2, var1);
       }
@@ -253,7 +253,7 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public void method_29520(class_1331 var1, class_6414 var2, class_1331 var3) {
+   public void method_29520(BlockPos var1, class_6414 var2, BlockPos var3) {
       if (!this.field_33055) {
          class_2522 var6 = this.method_28262(var1);
 
@@ -297,7 +297,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       if (!method_29556(var1)) {
          class_2654 var4 = this.method_29554(var1.method_12173() >> 4, var1.method_12185() >> 4);
          return var4.method_28262(var1);
@@ -307,7 +307,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       if (!method_29556(var1)) {
          class_2654 var4 = this.method_29542(var1);
          return var4.method_28258(var1);
@@ -325,7 +325,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public void method_43359(class_704 var1, class_1331 var2, class_8461 var3, class_562 var4, float var5, float var6) {
+   public void method_43359(class_704 var1, BlockPos var2, class_8461 var3, class_562 var4, float var5, float var6) {
       this.method_29528(var1, (double)var2.method_12173() + 0.5, (double)var2.method_12165() + 0.5, (double)var2.method_12185() + 0.5, var3, var4, var5, var6);
    }
 
@@ -368,7 +368,7 @@ public abstract class World implements class_9379, AutoCloseable {
       }
 
       if (this.field_33055) {
-         class_1331 var5 = var1.method_17399();
+         BlockPos var5 = var1.method_17399();
          class_2522 var6 = this.method_28262(var5);
          this.method_29572(var5, var6, var6, 2);
       }
@@ -401,7 +401,7 @@ public abstract class World implements class_9379, AutoCloseable {
       while (var4.hasNext()) {
          class_3757 var5 = (class_3757)var4.next();
          if (!var5.method_17395() && var5.method_17392()) {
-            class_1331 var6 = var5.method_17399();
+            BlockPos var6 = var5.method_17399();
             if (this.method_43363().method_14815(var6) && this.method_6673().method_9813(var6)) {
                try {
                   var3.method_16057(() -> String.valueOf(class_133.method_445(var5.method_17405())));
@@ -424,7 +424,7 @@ public abstract class World implements class_9379, AutoCloseable {
          if (var5.method_17395()) {
             var4.remove();
             this.field_33053.remove(var5);
-            if (this.method_22559(var5.method_17399())) {
+            if (this.isBlockLoaded(var5.method_17399())) {
                this.method_29542(var5.method_17399()).method_27370(var5.method_17399());
             }
          }
@@ -440,7 +440,7 @@ public abstract class World implements class_9379, AutoCloseable {
                   this.method_29539(var12);
                }
 
-               if (this.method_22559(var12.method_17399())) {
+               if (this.isBlockLoaded(var12.method_17399())) {
                   class_2654 var7 = this.method_29542(var12.method_17399());
                   class_2522 var13 = var7.method_28262(var12.method_17399());
                   var7.method_27346(var12.method_17399(), var12);
@@ -467,15 +467,15 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    public class_2730 method_29573(Entity var1, double var2, double var4, double var6, float var8, class_7298 var9) {
-      return this.method_29575(var1, (class_6199)null, (class_7571)null, var2, var4, var6, var8, false, var9);
+      return this.method_29575(var1, (DamageSource)null, (class_7571)null, var2, var4, var6, var8, false, var9);
    }
 
    public class_2730 method_29574(Entity var1, double var2, double var4, double var6, float var8, boolean var9, class_7298 var10) {
-      return this.method_29575(var1, (class_6199)null, (class_7571)null, var2, var4, var6, var8, var9, var10);
+      return this.method_29575(var1, (DamageSource)null, (class_7571)null, var2, var4, var6, var8, var9, var10);
    }
 
    public class_2730 method_29575(
-           Entity var1, class_6199 var2, class_7571 var3, double var4, double var6, double var8, float var10, boolean var11, class_7298 var12
+           Entity var1, DamageSource var2, class_7571 var3, double var4, double var6, double var8, float var10, boolean var11, class_7298 var12
    ) {
       class_2730 var15 = new class_2730(this, var1, var2, var3, var4, var6, var8, var10, var11, var12);
       var15.method_12266();
@@ -489,7 +489,7 @@ public abstract class World implements class_9379, AutoCloseable {
 
    @Nullable
    @Override
-   public class_3757 method_28260(class_1331 var1) {
+   public class_3757 method_28260(BlockPos var1) {
       if (!method_29556(var1)) {
          if (!this.field_33055 && Thread.currentThread() != this.field_33036) {
             return null;
@@ -515,7 +515,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Nullable
-   private class_3757 method_29598(class_1331 var1) {
+   private class_3757 method_29598(BlockPos var1) {
       for (int var4 = 0; var4 < this.field_33030.size(); var4++) {
          class_3757 var5 = this.field_33030.get(var4);
          if (!var5.method_17395() && var5.method_17399().equals(var1)) {
@@ -526,7 +526,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return null;
    }
 
-   public void method_29558(class_1331 var1, class_3757 var2) {
+   public void method_29558(BlockPos var1, class_3757 var2) {
       if (!method_29556(var1) && var2 != null && !var2.method_17395()) {
          if (!this.field_33054) {
             this.method_29542(var1).method_27346(var1, var2);
@@ -548,7 +548,7 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public void method_29597(class_1331 var1) {
+   public void method_29597(BlockPos var1) {
       class_3757 var4 = this.method_28260(var1);
       if (var4 != null && this.field_33054) {
          var4.method_17406();
@@ -564,11 +564,11 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public boolean method_29585(class_1331 var1) {
+   public boolean method_29585(BlockPos var1) {
       return !method_29556(var1) ? this.method_43363().method_14816(var1.method_12173() >> 4, var1.method_12185() >> 4) : false;
    }
 
-   public boolean method_29566(class_1331 var1, Entity var2, Direction var3) {
+   public boolean method_29566(BlockPos var1, Entity var2, Direction var3) {
       if (!method_29556(var1)) {
          class_5990 var6 = this.method_22555(var1.method_12173() >> 4, var1.method_12185() >> 4, class_7335.field_37514, false);
          return var6 != null ? var6.method_28262(var1).method_8338(this, var1, var2, var3) : false;
@@ -577,7 +577,7 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public boolean method_29518(class_1331 var1, Entity var2) {
+   public boolean method_29518(BlockPos var1, Entity var2) {
       return this.method_29566(var1, var2, Direction.field_817);
    }
 
@@ -701,8 +701,8 @@ public abstract class World implements class_9379, AutoCloseable {
    @Nullable
    public abstract Entity method_29534(int var1);
 
-   public void method_29557(class_1331 var1, class_3757 var2) {
-      if (this.method_22559(var1)) {
+   public void method_29557(BlockPos var1, class_3757 var2) {
+      if (this.isBlockLoaded(var1)) {
          this.method_29542(var1).method_11992();
       }
    }
@@ -712,7 +712,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return 63;
    }
 
-   public int method_29530(class_1331 var1) {
+   public int method_29530(BlockPos var1) {
       int var4 = 0;
       var4 = Math.max(var4, this.method_22551(var1.method_6100(), Direction.field_802));
       if (var4 < 15) {
@@ -743,17 +743,17 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public boolean method_29588(class_1331 var1, Direction var2) {
+   public boolean method_29588(BlockPos var1, Direction var2) {
       return this.method_29577(var1, var2) > 0;
    }
 
-   public int method_29577(class_1331 var1, Direction var2) {
+   public int method_29577(BlockPos var1, Direction var2) {
       class_2522 var5 = this.method_28262(var1);
       int var6 = var5.method_8327(this, var1, var2);
       return !var5.method_8356(this, var1) ? var6 : Math.max(var6, this.method_29530(var1));
    }
 
-   public boolean method_29576(class_1331 var1) {
+   public boolean method_29576(BlockPos var1) {
       if (this.method_29577(var1.method_6100(), Direction.field_802) <= 0) {
          if (this.method_29577(var1.method_6081(), Direction.field_817) <= 0) {
             if (this.method_29577(var1.method_6094(), Direction.field_818) <= 0) {
@@ -775,7 +775,7 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public int method_29565(class_1331 var1) {
+   public int method_29565(BlockPos var1) {
       int var4 = 0;
 
       for (Direction var8 : field_33052) {
@@ -803,14 +803,14 @@ public abstract class World implements class_9379, AutoCloseable {
       return this.field_33035.method_8666();
    }
 
-   public boolean method_29538(class_704 var1, class_1331 var2) {
+   public boolean method_29538(class_704 var1, BlockPos var2) {
       return true;
    }
 
    public void method_29587(Entity var1, byte var2) {
    }
 
-   public void method_29521(class_1331 var1, class_6414 var2, int var3, int var4) {
+   public void method_29521(BlockPos var1, class_6414 var2, int var3, int var4) {
       this.method_28262(var1).method_8354(this, var1, var3, var4);
    }
 
@@ -849,7 +849,7 @@ public abstract class World implements class_9379, AutoCloseable {
       return (double)this.method_29578(1.0F) > 0.2;
    }
 
-   public boolean method_29569(class_1331 var1) {
+   public boolean method_29569(BlockPos var1) {
       if (!this.method_29561()) {
          return false;
       } else if (this.method_25263(var1)) {
@@ -864,7 +864,7 @@ public abstract class World implements class_9379, AutoCloseable {
       }
    }
 
-   public boolean method_29529(class_1331 var1) {
+   public boolean method_29529(BlockPos var1) {
       class_6325 var4 = this.method_22561(var1);
       return var4.method_28881();
    }
@@ -876,7 +876,7 @@ public abstract class World implements class_9379, AutoCloseable {
 
    public abstract int method_29564();
 
-   public void method_29589(int var1, class_1331 var2, int var3) {
+   public void method_29589(int var1, BlockPos var2, int var3) {
    }
 
    public class_6544 method_29548(class_159 var1) {
@@ -894,17 +894,17 @@ public abstract class World implements class_9379, AutoCloseable {
       return var4;
    }
 
-   public abstract void method_29568(int var1, class_1331 var2, int var3);
+   public abstract void method_29568(int var1, BlockPos var2, int var3);
 
    public void method_29536(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
    }
 
    public abstract class_1097 method_29562();
 
-   public void method_29523(class_1331 var1, class_6414 var2) {
+   public void method_29523(BlockPos var1, class_6414 var2) {
       for (Direction var6 : class_9594.field_48893) {
-         class_1331 var7 = var1.method_6098(var6);
-         if (this.method_22559(var7)) {
+         BlockPos var7 = var1.method_6098(var6);
+         if (this.isBlockLoaded(var7)) {
             class_2522 var8 = this.method_28262(var7);
             if (!var8.method_8350(class_4783.field_23166)) {
                if (var8.method_8356(this, var7)) {
@@ -922,10 +922,10 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public class_9589 method_43368(class_1331 var1) {
+   public class_9589 method_43368(BlockPos var1) {
       long var4 = 0L;
       float var6 = 0.0F;
-      if (this.method_22559(var1)) {
+      if (this.isBlockLoaded(var1)) {
          var6 = this.method_13576();
          var4 = this.method_29542(var1).method_27340();
       }
@@ -965,7 +965,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public boolean method_38320(class_1331 var1, Predicate<class_2522> var2) {
+   public boolean method_38320(BlockPos var1, Predicate<class_2522> var2) {
       return var2.test(this.method_28262(var1));
    }
 
@@ -973,10 +973,10 @@ public abstract class World implements class_9379, AutoCloseable {
 
    public abstract class_6437 method_29600();
 
-   public class_1331 method_29596(int var1, int var2, int var3, int var4) {
+   public BlockPos method_29596(int var1, int var2, int var3, int var4) {
       this.field_33051 = this.field_33051 * 3 + 1013904223;
       int var7 = this.field_33051 >> 2;
-      return new class_1331(var1 + (var7 & 15), var2 + (var7 >> 16 & var4), var3 + (var7 >> 8 & 15));
+      return new BlockPos(var1 + (var7 & 15), var2 + (var7 >> 16 & var4), var3 + (var7 >> 8 & 15));
    }
 
    public boolean method_29590() {
@@ -992,7 +992,7 @@ public abstract class World implements class_9379, AutoCloseable {
    }
 
    @Override
-   public class_859 method_22564() {
+   public class_859 getBiomeManager() {
       return this.field_33042;
    }
 

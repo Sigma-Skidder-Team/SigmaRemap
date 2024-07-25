@@ -29,7 +29,7 @@ public class class_2221 extends class_3599 {
       class_5834 var3 = this.field_11104.method_17809();
       double var4 = 64.0;
       if (var3.method_37275(this.field_11104) < 4096.0 && this.field_11104.method_26420(var3)) {
-         World var6 = this.field_11104.field_41768;
+         World var6 = this.field_11104.world;
          this.field_11103++;
          if (this.field_11103 == 10 && !this.field_11104.method_37378()) {
             var6.method_43365((class_704)null, 1015, this.field_11104.method_37075(), 0);

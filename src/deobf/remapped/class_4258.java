@@ -9,7 +9,7 @@ public class class_4258 extends class_3982 {
    }
 
    @Override
-   public void method_18373(class_9379 var1, Random var2, class_1331 var3, int var4, class_2921 var5, class_1926 var6) {
+   public void method_18373(class_9379 var1, Random var2, BlockPos var3, int var4, class_2921 var5, class_1926 var6) {
       for (int var9 = var4 - 3; var9 <= var4; var9++) {
          int var10 = var9 >= var4 ? var6.field_9859 - 1 : var6.field_9859;
          int var11 = var6.field_9859 - 2;

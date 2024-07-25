@@ -9,20 +9,20 @@ public class class_5389<T> implements class_3065<T> {
    }
 
    @Override
-   public boolean method_14013(class_1331 var1, T var2) {
+   public boolean method_14013(BlockPos var1, T var2) {
       return false;
    }
 
    @Override
-   public void method_14011(class_1331 var1, T var2, int var3) {
+   public void method_14011(BlockPos var1, T var2, int var3) {
    }
 
    @Override
-   public void method_14012(class_1331 var1, T var2, int var3, class_1716 var4) {
+   public void method_14012(BlockPos var1, T var2, int var3, class_1716 var4) {
    }
 
    @Override
-   public boolean method_14010(class_1331 var1, T var2) {
+   public boolean method_14010(BlockPos var1, T var2) {
       return false;
    }
 }

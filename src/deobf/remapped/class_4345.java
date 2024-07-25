@@ -8,7 +8,7 @@ public class class_4345 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_20197(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_20197(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       return true;
    }
 }

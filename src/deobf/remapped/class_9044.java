@@ -40,7 +40,7 @@ public class class_9044 extends Screen implements class_4361 {
    @Override
    public void method_1162() {
       this.field_46303.method_25747((class_4361)null);
-      class_1092 var3 = this.field_943.method_8614();
+      ClientPlayNetHandler var3 = this.field_943.method_8614();
       if (var3 != null) {
          var3.method_4813(class_3906.method_18086());
       }

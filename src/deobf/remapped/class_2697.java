@@ -5,7 +5,7 @@ public class class_2697 {
    private class_1347[] field_13215 = new class_1347[0];
    private boolean field_13217 = false;
 
-   public void method_12152(class_2344 var1, class_9716 var2, class_7966 var3, class_2565 var4, int var5, int var6) {
+   public void method_12152(class_2344 var1, AbstractClientPlayerEntity var2, class_7966 var3, class_2565 var4, int var5, int var6) {
       if (this.field_13217) {
          for (int var9 = 0; var9 < this.field_13215.length; var9++) {
             class_1347 var10 = this.field_13215[var9];

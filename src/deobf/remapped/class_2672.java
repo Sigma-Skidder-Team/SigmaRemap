@@ -8,11 +8,11 @@ public class class_2672 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_12037(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_12037(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       return method_12040(var1, var3, var4, 8, 4, 8);
    }
 
-   public static boolean method_12040(class_9379 var0, Random var1, class_1331 var2, int var3, int var4, int var5) {
+   public static boolean method_12040(class_9379 var0, Random var1, BlockPos var2, int var3, int var4, int var5) {
       if (!method_12039(var0, var2)) {
          method_12036(var0, var1, var2, var3, var4, var5);
          return true;
@@ -21,7 +21,7 @@ public class class_2672 extends class_4285<class_1941> {
       }
    }
 
-   private static void method_12036(class_9379 var0, Random var1, class_1331 var2, int var3, int var4, int var5) {
+   private static void method_12036(class_9379 var0, Random var1, BlockPos var2, int var3, int var4, int var5) {
       class_2921 var8 = new class_2921();
 
       for (int var9 = 0; var9 < var3 * var3; var9++) {
@@ -79,7 +79,7 @@ public class class_2672 extends class_4285<class_1941> {
       }
    }
 
-   private static boolean method_12039(class_9379 var0, class_1331 var1) {
+   private static boolean method_12039(class_9379 var0, BlockPos var1) {
       if (!var0.method_22548(var1)) {
          return true;
       } else {

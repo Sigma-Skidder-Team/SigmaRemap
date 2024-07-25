@@ -29,7 +29,7 @@ public class class_2680 extends class_246 {
          }
 
          this.method_44962(this.field_49481, this.field_49486, this.field_49471);
-         if (this.field_49469.method_28262(new class_1331(this.field_49462, this.field_49473, this.field_49465)).method_8345()) {
+         if (this.field_49469.method_28262(new BlockPos(this.field_49462, this.field_49473, this.field_49465)).method_8345()) {
             this.field_49486 -= 0.008F;
          }
 

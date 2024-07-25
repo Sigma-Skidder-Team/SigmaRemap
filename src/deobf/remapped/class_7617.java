@@ -106,7 +106,7 @@ public class class_7617 extends class_5467 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2638;
    }
 
@@ -121,31 +121,31 @@ public class class_7617 extends class_5467 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      return var1.method_37181(class_6199.method_28345(this), this.method_34545());
+      return var1.attackEntityFrom(DamageSource.method_28345(this), this.method_34545());
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      return !this.method_37180(var1) ? super.method_37181(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.method_37180(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if ((this.field_38766 == null || this.field_38766.method_33089()) && !this.method_34544() && this.method_24866(var5) && var1.method_37275(this) < 9.0) {
          this.method_24867(var1, var5);
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             if (this.field_41717.nextInt(3) != 0) {
                this.method_34539(false);
-               this.field_41768.method_29587(this, (byte)40);
+               this.world.method_29587(this, (byte)40);
             } else {
                this.method_34540(true);
                this.method_34539(true);
-               this.field_41768.method_29587(this, (byte)41);
+               this.world.method_29587(this, (byte)41);
             }
          }
 
-         return class_6910.method_31659(this.field_41768.field_33055);
+         return class_6910.method_31659(this.world.field_33055);
       } else {
          return super.method_26857(var1, var2);
       }
@@ -174,7 +174,7 @@ public class class_7617 extends class_5467 {
          double var6 = this.field_41717.nextGaussian() * 0.02;
          double var8 = this.field_41717.nextGaussian() * 0.02;
          double var10 = this.field_41717.nextGaussian() * 0.02;
-         this.field_41768.method_43361(var4, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), var6, var8, var10);
+         this.world.method_43361(var4, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), var6, var8, var10);
       }
    }
 
@@ -198,14 +198,14 @@ public class class_7617 extends class_5467 {
       return field_38768.test(var1);
    }
 
-   public static boolean method_34538(class_6629<class_7617> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_34538(class_6629<class_7617> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var4.nextInt(3) != 0;
    }
 
    @Override
    public boolean method_26855(class_4924 var1) {
       if (var1.method_6677(this) && !var1.method_22550(this.method_37241())) {
-         class_1331 var4 = this.method_37075();
+         BlockPos var4 = this.method_37075();
          if (var4.method_12165() < var1.method_22552()) {
             return false;
          }

@@ -59,17 +59,17 @@ public class class_4468 {
       return var2;
    }
 
-   public int method_20744(class_2522 var1, World var2, class_1331 var3) {
+   public int method_20744(class_2522 var1, World var2, BlockPos var3) {
       class_3440 var6 = this.field_21791.method_14040(class_8669.field_44462.method_14041(var1.method_8360()));
       if (var6 == null) {
          class_1513 var7 = var1.method_8323(var2, var3);
          return var7 == null ? -1 : var7.field_8060;
       } else {
-         return var6.method_15879(var1, (class_5561)null, (class_1331)null, 0);
+         return var6.method_15879(var1, (class_5561)null, (BlockPos)null, 0);
       }
    }
 
-   public int method_20749(class_2522 var1, class_5561 var2, class_1331 var3, int var4) {
+   public int method_20749(class_2522 var1, class_5561 var2, BlockPos var3, int var4) {
       class_3440 var7 = this.field_21791.method_14040(class_8669.field_44462.method_14041(var1.method_8360()));
       return var7 != null ? var7.method_15879(var1, var2, var3, var4) : -1;
    }

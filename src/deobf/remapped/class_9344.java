@@ -19,7 +19,7 @@ public class class_9344 extends class_4138<class_704> {
 
    @Override
    public boolean method_16795() {
-      this.field_47693 = this.field_47688.field_41768.method_25859(this.field_47691, this.field_47688);
+      this.field_47693 = this.field_47688.world.method_25859(this.field_47691, this.field_47688);
       return this.field_47693 != null;
    }
 
@@ -57,7 +57,7 @@ public class class_9344 extends class_4138<class_704> {
       }
 
       if (this.field_47693 == null) {
-         if (this.field_20146 != null && !this.field_47688.method_37070()) {
+         if (this.field_20146 != null && !this.field_47688.isPassenger()) {
             if (!class_912.method_3906(this.field_47688, (class_704)this.field_20146)) {
                if (this.field_20146.method_37275(this.field_47688) > 256.0
                   && this.field_47689++ >= 30

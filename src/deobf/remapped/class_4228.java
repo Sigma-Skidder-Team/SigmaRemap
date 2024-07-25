@@ -28,8 +28,8 @@ public class class_4228 implements Packet<class_392> {
       this.field_20512 = var1.method_37302();
       this.field_20511 = var1.method_37309();
       this.field_20513 = var1.method_37156();
-      this.field_20514 = (byte)((int)(var1.field_41701 * 256.0F / 360.0F));
-      this.field_20519 = (byte)((int)(var1.field_41755 * 256.0F / 360.0F));
+      this.field_20514 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
+      this.field_20519 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
       this.field_20523 = (byte)((int)(var1.field_29618 * 256.0F / 360.0F));
       double var4 = 3.9;
       class_1343 var6 = var1.method_37098();

@@ -156,7 +156,7 @@ public class class_8316 {
       return var3.method_38515(var8);
    }
 
-   public static List method_38342(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
+   public static List method_38342(class_6163 var0, class_2522 var1, BlockPos var2, Direction var3, List var4) {
       if (var3 == Direction.field_817 || var3 == Direction.field_802) {
          return var4;
       } else if (field_42587) {
@@ -177,7 +177,7 @@ public class class_8316 {
       }
    }
 
-   private static List method_38339(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
+   private static List method_38339(class_6163 var0, class_2522 var1, BlockPos var2, Direction var3, List var4) {
       class_6414 var7 = var0.method_28262(var2.method_6081()).method_8360();
       boolean var8 = var7 == class_4783.field_23813 || var7 == class_4783.field_23552;
       if (!Config.method_14299()) {
@@ -199,7 +199,7 @@ public class class_8316 {
       return var4;
    }
 
-   private static List method_38332(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
+   private static List method_38332(class_6163 var0, class_2522 var1, BlockPos var2, Direction var3, List var4) {
       if (field_42606) {
          if (!Config.method_14299()) {
             return field_42602.method_33580(var1, var3, field_42589);
@@ -211,7 +211,7 @@ public class class_8316 {
       }
    }
 
-   private static List method_38336(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
+   private static List method_38336(class_6163 var0, class_2522 var1, BlockPos var2, Direction var3, List var4) {
       class_6414 var7 = method_38343(var2, Direction.field_817, var0);
       boolean var8 = var7 == class_4783.field_23813 || var7 == class_4783.field_23552;
       if (!Config.method_14299()) {
@@ -224,7 +224,7 @@ public class class_8316 {
          }
       } else if (!var8) {
          if (field_42595) {
-            class_1331 var9 = var2.method_6100().method_6098(var3);
+            BlockPos var9 = var2.method_6100().method_6098(var3);
             class_2522 var10 = var0.method_28262(var9);
             if (var10.method_8360() == class_4783.field_23201) {
                return field_42593.method_33580(var1, var3, field_42589);
@@ -237,14 +237,14 @@ public class class_8316 {
       return var4;
    }
 
-   private static List method_38334(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
+   private static List method_38334(class_6163 var0, class_2522 var1, BlockPos var2, Direction var3, List var4) {
       class_6414 var7 = method_38343(var2, Direction.field_817, var0);
       return var7 == class_4783.field_23608 && field_42606 && method_38343(var2, var3, var0) == class_4783.field_23608
          ? field_42592.method_33580(var1, var3, field_42589)
          : var4;
    }
 
-   private static List method_38333(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
+   private static List method_38333(class_6163 var0, class_2522 var1, BlockPos var2, Direction var3, List var4) {
       class_6414 var7 = var0.method_28262(var2.method_6081()).method_8360();
       boolean var8 = var7 == class_4783.field_23813 || var7 == class_4783.field_23552;
       if (!Config.method_14299()) {
@@ -266,8 +266,8 @@ public class class_8316 {
       return var4;
    }
 
-   private static class_6414 method_38343(class_1331 var0, Direction var1, class_6163 var2) {
-      class_1331 var5 = var0.method_6098(var1);
+   private static class_6414 method_38343(BlockPos var0, Direction var1, class_6163 var2) {
+      BlockPos var5 = var0.method_6098(var1);
       return var2.method_28262(var5).method_8360();
    }
 

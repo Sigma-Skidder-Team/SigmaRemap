@@ -20,7 +20,7 @@ public class class_4092 {
       this.field_19942 = Math.max(var5, var11);
    }
 
-   public class_4092(class_1331 var1) {
+   public class_4092(BlockPos var1) {
       this(
          (double)var1.method_12173(),
          (double)var1.method_12165(),
@@ -31,7 +31,7 @@ public class class_4092 {
       );
    }
 
-   public class_4092(class_1331 var1, class_1331 var2) {
+   public class_4092(BlockPos var1, BlockPos var2) {
       this(
          (double)var1.method_12173(),
          (double)var1.method_12165(),
@@ -227,7 +227,7 @@ public class class_4092 {
       );
    }
 
-   public class_4092 method_18919(class_1331 var1) {
+   public class_4092 method_18919(BlockPos var1) {
       return new class_4092(
          this.field_19941 + (double)var1.method_12173(),
          this.field_19937 + (double)var1.method_12165(),
@@ -317,7 +317,7 @@ public class class_4092 {
    }
 
    @Nullable
-   public static class_9529 method_18922(Iterable<class_4092> var0, class_1343 var1, class_1343 var2, class_1331 var3) {
+   public static class_9529 method_18922(Iterable<class_4092> var0, class_1343 var1, class_1343 var2, BlockPos var3) {
       double[] var6 = new double[]{1.0};
       Direction var7 = null;
       double var8 = var2.field_7336 - var1.field_7336;

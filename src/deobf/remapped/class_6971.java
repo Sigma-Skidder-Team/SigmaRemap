@@ -4,12 +4,12 @@ import java.io.IOException;
 
 public class class_6971 implements Packet<class_1243> {
    private static String[] field_35822;
-   private class_1331 field_35827;
+   private BlockPos field_35827;
    private class_6664 field_35819;
    private class_589 field_35832;
    private String field_35825;
-   private class_1331 field_35820;
-   private class_1331 field_35829;
+   private BlockPos field_35820;
+   private BlockPos field_35829;
    private class_9022 field_35824;
    private class_6631 field_35831;
    private String field_35828;
@@ -23,12 +23,12 @@ public class class_6971 implements Packet<class_1243> {
    }
 
    public class_6971(
-      class_1331 var1,
+      BlockPos var1,
       class_6664 var2,
       class_589 var3,
       String var4,
-      class_1331 var5,
-      class_1331 var6,
+      BlockPos var5,
+      BlockPos var6,
       class_9022 var7,
       class_6631 var8,
       String var9,
@@ -253,7 +253,7 @@ public class class_6971 implements Packet<class_1243> {
       var1.method_5571(this);
    }
 
-   public class_1331 method_31869() {
+   public BlockPos method_31869() {
       return this.field_35827;
    }
 
@@ -269,11 +269,11 @@ public class class_6971 implements Packet<class_1243> {
       return this.field_35825;
    }
 
-   public class_1331 method_31884() {
+   public BlockPos method_31884() {
       return this.field_35820;
    }
 
-   public class_1331 method_31879() {
+   public BlockPos method_31879() {
       return this.field_35829;
    }
 

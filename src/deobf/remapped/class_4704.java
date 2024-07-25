@@ -19,7 +19,7 @@ public class class_4704 extends class_9811 {
    }
 
    @Override
-   public boolean method_5609(class_1331 var1) {
+   public boolean method_5609(BlockPos var1) {
       if (this.field_6877 instanceof class_3845) {
          class_3845 var4 = (class_3845)this.field_6877;
          if (class_3845.method_17849(var4)) {

@@ -149,7 +149,7 @@ public class class_3682 extends class_4088 {
    @Override
    public void method_18876(class_704 var1) {
       super.method_18876(var1);
-      this.field_18042.method_42533((var2, var3) -> this.method_18887(var1, var1.field_41768, this.field_18037));
+      this.field_18042.method_42533((var2, var3) -> this.method_18887(var1, var1.world, this.field_18037));
    }
 
    private void method_17093() {

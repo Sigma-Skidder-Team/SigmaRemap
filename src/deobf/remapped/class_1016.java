@@ -17,7 +17,7 @@ public class class_1016 implements class_2995 {
       RenderSystem.disableBlend();
       RenderSystem.method_16354();
       RenderSystem.enableDepthTest();
-      class_1331 var12 = new class_1331(var3, 0.0, var7);
+      BlockPos var12 = new BlockPos(var3, 0.0, var7);
       class_8042 var13 = class_8042.method_36499();
       class_9633 var14 = var13.method_36501();
       var14.method_44471(5, class_7985.field_40903);

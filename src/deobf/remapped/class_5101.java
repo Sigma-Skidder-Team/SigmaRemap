@@ -14,7 +14,7 @@ public class class_5101 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48752);
       if (var7.method_33990() == class_1430.field_7721) {
@@ -37,9 +37,9 @@ public class class_5101 extends class_2451 {
          if (var7.method_33990() != class_1430.field_7717) {
             return class_954.<ItemStack>method_4207(var6);
          } else {
-            class_9149 var16 = new class_9149(var1, var7.method_33993().field_7336, var7.method_33993().field_7333, var7.method_33993().field_7334);
+            BoatEntity var16 = new BoatEntity(var1, var7.method_33993().field_7336, var7.method_33993().field_7333, var7.method_33993().field_7334);
             var16.method_42101(this.field_26315);
-            var16.field_41701 = var2.field_41701;
+            var16.rotationYaw = var2.rotationYaw;
             if (var1.method_6683(var16, var16.method_37241().method_18898(-0.1))) {
                if (!var1.field_33055) {
                   var1.method_7509(var16);

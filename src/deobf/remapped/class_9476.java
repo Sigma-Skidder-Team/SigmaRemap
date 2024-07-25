@@ -17,19 +17,19 @@ public abstract class class_9476 extends class_6414 {
       return method_43768(var1.method_21862(), var1.method_21858());
    }
 
-   public static class_2522 method_43768(class_6163 var0, class_1331 var1) {
-      class_1331 var4 = var1.method_6100();
+   public static class_2522 method_43768(class_6163 var0, BlockPos var1) {
+      BlockPos var4 = var1.method_6100();
       class_2522 var5 = var0.method_28262(var4);
       return !class_1754.method_7846(var5.method_8360()) ? ((class_1878)class_4783.field_23877).method_8413(var0, var1) : class_4783.field_23311.method_29260();
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_48307;
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(24) == 0) {
          var2.method_29527(
             (double)var3.method_12173() + 0.5,
@@ -43,7 +43,7 @@ public abstract class class_9476 extends class_6414 {
          );
       }
 
-      class_1331 var7 = var3.method_6100();
+      BlockPos var7 = var3.method_6100();
       class_2522 var8 = var2.method_28262(var7);
       if (!this.method_43770(var8) && !var8.method_8308(var2, var7, Direction.field_817)) {
          if (this.method_43770(var2.method_28262(var3.method_6108()))) {
@@ -103,21 +103,21 @@ public abstract class class_9476 extends class_6414 {
    public abstract boolean method_43770(class_2522 var1);
 
    @Override
-   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
+   public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.method_37087()) {
          var4.method_37164(var4.method_37230() + 1);
          if (var4.method_37230() == 0) {
             var4.method_37178(8);
          }
 
-         var4.method_37181(class_6199.field_31678, this.field_48306);
+         var4.attackEntityFrom(DamageSource.field_31678, this.field_48306);
       }
 
       super.method_10784(var1, var2, var3, var4);
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var4.method_8350(var1.method_8360())) {
          if (method_43767(var2)) {
             Optional var8 = class_2018.method_9378(var2, var3, class_9249.field_47215);
@@ -138,18 +138,18 @@ public abstract class class_9476 extends class_6414 {
    }
 
    @Override
-   public void method_29265(World var1, class_1331 var2, class_2522 var3, class_704 var4) {
+   public void method_29265(World var1, BlockPos var2, class_2522 var3, class_704 var4) {
       if (!var1.method_22567()) {
          var1.method_43365((class_704)null, 1009, var2, 0);
       }
    }
 
-   public static boolean method_43769(World var0, class_1331 var1, Direction var2) {
+   public static boolean method_43769(World var0, BlockPos var1, Direction var2) {
       class_2522 var5 = var0.method_28262(var1);
       return !var5.method_8345() ? false : method_43768(var0, var1).method_8309(var0, var1) || method_43771(var0, var1, var2);
    }
 
-   private static boolean method_43771(World var0, class_1331 var1, Direction var2) {
+   private static boolean method_43771(World var0, BlockPos var1, Direction var2) {
       if (!method_43767(var0)) {
          return false;
       } else {

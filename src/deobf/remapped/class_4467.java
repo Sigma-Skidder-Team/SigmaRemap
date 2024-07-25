@@ -62,7 +62,7 @@ public class class_4467 implements Packet<class_392> {
       var1.method_1932(this);
    }
 
-   public void method_20730(BiConsumer<class_1331, class_2522> var1) {
+   public void method_20730(BiConsumer<BlockPos, class_2522> var1) {
       class_2921 var4 = new class_2921();
 
       for (int var5 = 0; var5 < this.field_21787.length; var5++) {

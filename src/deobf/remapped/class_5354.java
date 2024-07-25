@@ -7,7 +7,7 @@ import java.util.List;
 
 public class class_5354 extends class_3757 implements class_3745 {
    private final List<class_7955> field_27341 = Lists.newArrayList();
-   private class_1331 field_27340 = null;
+   private BlockPos field_27340 = null;
 
    public class_5354() {
       super(class_133.field_353);
@@ -26,7 +26,7 @@ public class class_5354 extends class_3757 implements class_3745 {
       if (this.field_18364 == null) {
          return false;
       } else {
-         for (class_1331 var4 : class_1331.method_6076(this.field_18358.method_6104(-1, -1, -1), this.field_18358.method_6104(1, 1, 1))) {
+         for (BlockPos var4 : BlockPos.method_6076(this.field_18358.method_6104(-1, -1, -1), this.field_18358.method_6104(1, 1, 1))) {
             if (this.field_18364.method_28262(var4).method_8360() instanceof class_1878) {
                return true;
             }
@@ -103,7 +103,7 @@ public class class_5354 extends class_3757 implements class_3745 {
                }
             }
 
-            class_1331 var8 = this.method_17399();
+            BlockPos var8 = this.method_17399();
             this.field_18364
                .method_29528(
                   (class_704)null,
@@ -125,13 +125,13 @@ public class class_5354 extends class_3757 implements class_3745 {
       if ((this.field_18364.method_29544() || this.field_18364.method_29561()) && var4 != class_8771.field_44900) {
          return false;
       } else {
-         class_1331 var7 = this.method_17399();
+         BlockPos var7 = this.method_17399();
          CompoundNBT var8 = class_7955.method_35994(var2);
          var8.method_25959("Passengers");
          var8.method_25959("Leash");
          var8.method_25959("UUID");
          Direction var9 = var1.<Direction>method_10313(class_4745.field_22991);
-         class_1331 var10 = var7.method_6098(var9);
+         BlockPos var10 = var7.method_6098(var9);
          boolean var11 = !this.field_18364.method_28262(var10).method_8324(this.field_18364, var10).method_19485();
          if (var11 && var4 != class_8771.field_44900) {
             return false;
@@ -171,7 +171,7 @@ public class class_5354 extends class_3757 implements class_3745 {
                   double var18 = (double)var7.method_12173() + 0.5 + var16 * (double)var9.method_1041();
                   double var20 = (double)var7.method_12165() + 0.5 - (double)(var12.method_37074() / 2.0F);
                   double var22 = (double)var7.method_12185() + 0.5 + var16 * (double)var9.method_1034();
-                  var12.method_37144(var18, var20, var22, var12.field_41701, var12.field_41755);
+                  var12.method_37144(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 
                this.field_18364.method_43359((class_704)null, var7, class_463.field_2672, class_562.field_3322, 1.0F, 1.0F);
@@ -222,7 +222,7 @@ public class class_5354 extends class_3757 implements class_3745 {
    public void method_17353() {
       if (!this.field_18364.field_33055) {
          this.method_24444();
-         class_1331 var3 = this.method_17399();
+         BlockPos var3 = this.method_17399();
          if (this.field_27341.size() > 0 && this.field_18364.method_43360().nextDouble() < 0.005) {
             double var4 = (double)var3.method_12173() + 0.5;
             double var6 = (double)var3.method_12165();

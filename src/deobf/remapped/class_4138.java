@@ -43,7 +43,7 @@ public class class_4138<T extends class_5834> extends class_956 {
    public void method_19213() {
       if (this.field_20142 != class_704.class && this.field_20142 != class_9359.class) {
          this.field_20146 = this.field_4915
-            .field_41768
+            .world
             .<class_5834>method_25872(
                this.field_20142,
                this.field_20144,
@@ -55,7 +55,7 @@ public class class_4138<T extends class_5834> extends class_956 {
             );
       } else {
          this.field_20146 = this.field_4915
-            .field_41768
+            .world
             .method_25860(this.field_20144, this.field_4915, this.field_4915.method_37302(), this.field_4915.method_37388(), this.field_4915.method_37156());
       }
    }

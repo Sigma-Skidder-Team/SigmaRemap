@@ -70,7 +70,7 @@ public abstract class class_8990 extends class_5467 {
          double var6 = this.field_41717.nextGaussian() * 0.02;
          double var8 = this.field_41717.nextGaussian() * 0.02;
          double var10 = this.field_41717.nextGaussian() * 0.02;
-         this.field_41768.method_43361(var4, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), var6, var8, var10);
+         this.world.method_43361(var4, this.method_37361(1.0), this.method_37255() + 0.5, this.method_37383(1.0), var6, var8, var10);
       }
    }
 
@@ -139,7 +139,7 @@ public abstract class class_8990 extends class_5467 {
    public class_5834 method_41207() {
       try {
          UUID var3 = this.method_41211();
-         return var3 == null ? null : this.field_41768.method_25862(var3);
+         return var3 == null ? null : this.world.method_25862(var3);
       } catch (IllegalArgumentException var4) {
          return null;
       }
@@ -187,8 +187,8 @@ public abstract class class_8990 extends class_5467 {
    }
 
    @Override
-   public void method_26452(class_6199 var1) {
-      if (!this.field_41768.field_33055 && this.field_41768.method_29537().method_1285(class_291.field_1060) && this.method_41207() instanceof class_9359) {
+   public void method_26452(DamageSource var1) {
+      if (!this.world.field_33055 && this.world.method_29537().method_1285(class_291.field_1060) && this.method_41207() instanceof class_9359) {
          this.method_41207().method_26286(this.method_26476().method_15870(), Util.NIL_UUID);
       }
 

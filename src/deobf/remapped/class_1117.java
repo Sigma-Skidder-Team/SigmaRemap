@@ -26,11 +26,11 @@ public class class_1117 extends class_6967 {
    @Override
    public void method_16794() {
       super.method_16794();
-      class_1331 var3 = this.field_6393.method_37075();
+      BlockPos var3 = this.field_6393.method_37075();
       if (!this.field_6393.method_37285() && this.method_31860()) {
          if (class_3845.method_17854(this.field_6393) >= 1) {
             if (class_3845.method_17854(this.field_6393) > 200) {
-               World var4 = this.field_6393.field_41768;
+               World var4 = this.field_6393.world;
                var4.method_43359((class_704)null, var3, class_463.field_2325, class_562.field_3322, 0.3F, 0.9F + var4.field_33033.nextFloat() * 0.2F);
                var4.method_7513(
                   this.field_35802.method_6081(),
@@ -54,7 +54,7 @@ public class class_1117 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       return var1.method_22548(var2.method_6081()) ? class_1477.method_6810(var1, var2) : false;
    }
 }

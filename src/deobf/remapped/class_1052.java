@@ -32,7 +32,7 @@ public class class_1052 extends class_3599 {
       this.field_5778.method_26927().method_5620();
 
       for (class_4040 var4 : this.field_5778
-         .field_41768
+         .world
          .<class_4040>method_25863(class_4040.class, this.field_5779, this.field_5778, this.field_5778.method_37241().method_18899(8.0, 8.0, 8.0))) {
          var4.method_26860(this.field_5778.method_17809());
       }
@@ -44,7 +44,7 @@ public class class_1052 extends class_3599 {
       class_5834 var3 = this.field_5778.method_17809();
       if (var3 != null) {
          for (class_4040 var5 : this.field_5778
-            .field_41768
+            .world
             .<class_4040>method_25863(class_4040.class, this.field_5779, this.field_5778, this.field_5778.method_37241().method_18899(8.0, 8.0, 8.0))) {
             var5.method_26860(var3);
             var5.method_26891(true);

@@ -12,11 +12,11 @@ public class SmoothAimbot extends Module {
    @EventListen
    private void method_25540(class_3368 var1) {
       if (this.method_42015()) {
-         if (!(client.thePlayer.field_41755 > 45.0F)) {
+         if (!(client.thePlayer.rotationPitch > 45.0F)) {
             Entity var4 = ((AimbotModule)this.method_42017()).method_10678(this.getFloatValueByName("Range"));
             if (var4 != null) {
-               double var5 = (double)(client.thePlayer.field_41755 - this.method_25542(var4)[1]);
-               double var7 = (double)(client.thePlayer.field_41701 - this.method_25542(var4)[0]);
+               double var5 = (double)(client.thePlayer.rotationPitch - this.method_25542(var4)[1]);
+               double var7 = (double)(client.thePlayer.rotationYaw - this.method_25542(var4)[0]);
                if (var7 < 0.0) {
                   var7 *= -1.0;
                }
@@ -33,23 +33,23 @@ public class SmoothAimbot extends Module {
                }
 
                double var15 = 0.05 * (double) MinecraftClient.method_8501() * (var13 + 1.0);
-               if (client.thePlayer.field_41755 > this.method_25542(var4)[1]) {
-                  client.thePlayer.field_41755 = (float)((double) client.thePlayer.field_41755 - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
+               if (client.thePlayer.rotationPitch > this.method_25542(var4)[1]) {
+                  client.thePlayer.rotationPitch = (float)((double) client.thePlayer.rotationPitch - (var15 * var5 / 90.0 + Math.min(0.5, var7)));
                }
 
-               if (client.thePlayer.field_41755 < this.method_25542(var4)[1]) {
-                  client.thePlayer.field_41755 = (float)((double) client.thePlayer.field_41755 + var15 * var5 / 90.0 + Math.min(0.5, var7));
+               if (client.thePlayer.rotationPitch < this.method_25542(var4)[1]) {
+                  client.thePlayer.rotationPitch = (float)((double) client.thePlayer.rotationPitch + var15 * var5 / 90.0 + Math.min(0.5, var7));
                }
 
-               if (client.thePlayer.field_41701 > this.method_25542(var4)[0]) {
-                  client.thePlayer.field_41701 = (float)((double) client.thePlayer.field_41701 - (var15 * var7 / 90.0 + Math.min(0.5, var5)));
+               if (client.thePlayer.rotationYaw > this.method_25542(var4)[0]) {
+                  client.thePlayer.rotationYaw = (float)((double) client.thePlayer.rotationYaw - (var15 * var7 / 90.0 + Math.min(0.5, var5)));
                }
 
-               if (client.thePlayer.field_41701 < this.method_25542(var4)[0]) {
-                  client.thePlayer.field_41701 = (float)((double) client.thePlayer.field_41701 + var15 * var7 / 90.0 + Math.min(0.5, var5));
+               if (client.thePlayer.rotationYaw < this.method_25542(var4)[0]) {
+                  client.thePlayer.rotationYaw = (float)((double) client.thePlayer.rotationYaw + var15 * var7 / 90.0 + Math.min(0.5, var5));
                }
 
-               client.thePlayer.field_29618 = client.thePlayer.field_41701;
+               client.thePlayer.field_29618 = client.thePlayer.rotationYaw;
             }
          }
       }
@@ -65,8 +65,8 @@ public class SmoothAimbot extends Module {
       double var6 = var1.method_37309() - 1.6 - this.field_28607 + (double)var1.method_37277() - client.thePlayer.method_37309();
       double var8 = var1.method_37156() - client.thePlayer.method_37156() + Math.sin((double)(var1.method_37267() + 90.0F) * Math.PI / 180.0) * 0.14;
       double var10 = (double)class_9299.method_42842(var4 * var4 + var8 * var8);
-      float var12 = this.method_25541(client.thePlayer.field_41701, (float)(Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
-      float var13 = this.method_25541(client.thePlayer.field_41755, (float)(-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
+      float var12 = this.method_25541(client.thePlayer.rotationYaw, (float)(Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
+      float var13 = this.method_25541(client.thePlayer.rotationPitch, (float)(-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);
       return new float[]{var12, var13};
    }
 

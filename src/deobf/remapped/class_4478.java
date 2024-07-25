@@ -53,7 +53,7 @@ public class class_4478 extends Entity {
    }
 
    public void method_20781(float var1) {
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          this.method_37372().method_36633(field_21838, var1);
       }
    }
@@ -131,7 +131,7 @@ public class class_4478 extends Entity {
       super.method_37123();
       boolean var3 = this.method_20784();
       float var4 = this.method_20783();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (this.field_41697 >= this.field_21824 + this.field_21826) {
             this.method_37204();
             return;
@@ -174,7 +174,7 @@ public class class_4478 extends Entity {
 
             var27.addAll(this.field_21833);
             if (!var27.isEmpty()) {
-               List var30 = this.field_41768.<class_5834>method_25868(class_5834.class, this.method_37241());
+               List var30 = this.world.<class_5834>method_25868(class_5834.class, this.method_37241());
                if (!var30.isEmpty()) {
                   for (class_5834 var10 : var30) {
                      if (!this.field_21829.containsKey(var10) && var10.method_26611()) {
@@ -228,7 +228,7 @@ public class class_4478 extends Entity {
                float var36 = class_9299.method_42840(var31) * var34;
                float var11 = class_9299.method_42818(var31) * var34;
                if (var24.method_23357() != class_3090.field_15353) {
-                  this.field_41768
+                  this.world
                      .method_29551(
                         var24,
                         this.method_37302() + (double)var36,
@@ -243,7 +243,7 @@ public class class_4478 extends Entity {
                   int var13 = var12 >> 16 & 0xFF;
                   int var14 = var12 >> 8 & 0xFF;
                   int var15 = var12 & 0xFF;
-                  this.field_41768
+                  this.world
                      .method_29551(
                         var24,
                         this.method_37302() + (double)var36,
@@ -262,14 +262,14 @@ public class class_4478 extends Entity {
                float var35 = class_9299.method_42840(var29) * var32;
                float var37 = class_9299.method_42818(var29) * var32;
                if (var24.method_23357() != class_3090.field_15353) {
-                  this.field_41768
+                  this.world
                      .method_29551(var24, this.method_37302() + (double)var35, this.method_37309(), this.method_37156() + (double)var37, 0.0, 0.0, 0.0);
                } else {
                   int var38 = !this.field_41717.nextBoolean() ? this.method_20790() : 16777215;
                   int var39 = var38 >> 16 & 0xFF;
                   int var40 = var38 >> 8 & 0xFF;
                   int var41 = var38 & 0xFF;
-                  this.field_41768
+                  this.world
                      .method_29551(
                         var24,
                         this.method_37302() + (double)var35,
@@ -304,8 +304,8 @@ public class class_4478 extends Entity {
 
    @Nullable
    public class_5834 method_20795() {
-      if (this.field_21825 == null && this.field_21837 != null && this.field_41768 instanceof class_6331) {
-         Entity var3 = ((class_6331)this.field_41768).method_28925(this.field_21837);
+      if (this.field_21825 == null && this.field_21837 != null && this.world instanceof class_6331) {
+         Entity var3 = ((class_6331)this.world).method_28925(this.field_21837);
          if (var3 instanceof class_5834) {
             this.field_21825 = (class_5834)var3;
          }

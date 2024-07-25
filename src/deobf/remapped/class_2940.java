@@ -22,13 +22,13 @@ public class class_2940 extends class_3599 {
 
    @Override
    public void method_16794() {
-      class_1331 var3 = this.field_14298.method_11466();
+      BlockPos var3 = this.field_14298.method_11466();
       if (var3 == null) {
          var3 = this.field_14298.method_37075();
       }
 
       for (int var4 = 0; var4 < 3; var4++) {
-         class_1331 var5 = var3.method_6104(
+         BlockPos var5 = var3.method_6104(
             class_2519.method_11452(this.field_14298).nextInt(15) - 7,
             class_2519.method_11461(this.field_14298).nextInt(11) - 5,
             class_2519.method_11457(this.field_14298).nextInt(15) - 7

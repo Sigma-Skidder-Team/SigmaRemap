@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 public class class_8478 {
    private class_9022 field_43450 = class_9022.field_46145;
    private class_6631 field_43447 = class_6631.field_34340;
-   private class_1331 field_43446 = class_1331.field_7306;
+   private BlockPos field_43446 = BlockPos.field_7306;
    private boolean field_43445;
    private class_2034 field_43443;
    private class_9616 field_43439;
@@ -46,7 +46,7 @@ public class class_8478 {
       return this;
    }
 
-   public class_8478 method_39037(class_1331 var1) {
+   public class_8478 method_39037(BlockPos var1) {
       this.field_43446 = var1;
       return this;
    }
@@ -99,11 +99,11 @@ public class class_8478 {
       return this.field_43447;
    }
 
-   public class_1331 method_39036() {
+   public BlockPos method_39036() {
       return this.field_43446;
    }
 
-   public Random method_39052(class_1331 var1) {
+   public Random method_39052(BlockPos var1) {
       if (this.field_43448 == null) {
          return var1 != null ? new Random(class_9299.method_42802(var1)) : new Random(Util.getMeasuringTimeMs());
       } else {
@@ -142,7 +142,7 @@ public class class_8478 {
       return this.field_43441;
    }
 
-   public class_1673 method_39057(List<class_1673> var1, class_1331 var2) {
+   public class_1673 method_39057(List<class_1673> var1, BlockPos var2) {
       int var5 = var1.size();
       if (var5 != 0) {
          return (class_1673)var1.get(this.method_39052(var2).nextInt(var5));

@@ -1,5 +1,5 @@
 package remapped;
 
-public interface class_3753 {
+public interface IAmbientSoundHandler {
    void method_17366();
 }

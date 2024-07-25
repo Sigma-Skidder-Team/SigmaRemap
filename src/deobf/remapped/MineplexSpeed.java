@@ -81,9 +81,9 @@ public class MineplexSpeed extends Module {
             }
 
             class_1343 var7 = new class_1343(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-            class_1331 var8 = new class_1331(client.thePlayer.method_37075()).method_6104(0, -1, 0);
+            BlockPos var8 = new BlockPos(client.thePlayer.method_37075()).method_6104(0, -1, 0);
             class_9529 var9 = new class_9529(var7, Direction.field_817, var8, false);
-            class_8585 var10 = new class_8585(class_2584.field_12791, var9);
+            class_8585 var10 = new class_8585(Hand.MAIN_HAND, var9);
             client.method_8614().method_4813(var10);
             this.field_29130 += var4 / 4.0;
             if (client.thePlayer.field_41744) {

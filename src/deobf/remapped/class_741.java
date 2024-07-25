@@ -18,7 +18,7 @@ public class class_741 extends class_6201 {
       class_2522 var4 = this.field_4040.method_29302(var1);
       class_2522 var5 = null;
       World var6 = var1.method_21862();
-      class_1331 var7 = var1.method_21858();
+      BlockPos var7 = var1.method_21858();
 
       for (Direction var11 : var1.method_1786()) {
          if (var11 != Direction.field_817) {

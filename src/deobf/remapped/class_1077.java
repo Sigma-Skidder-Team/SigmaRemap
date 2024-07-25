@@ -6,7 +6,7 @@ public class class_1077 {
    private static String[] field_5875;
 
    @Nullable
-   public static class_1331 method_4714(class_6331 var0, int var1, int var2, boolean var3) {
+   public static BlockPos method_4714(class_6331 var0, int var1, int var2, boolean var3) {
       class_2921 var6 = new class_2921(var1, 0, var2);
       class_6325 var7 = var0.method_22561(var6);
       boolean var8 = var0.method_22572().method_40244();
@@ -42,10 +42,10 @@ public class class_1077 {
    }
 
    @Nullable
-   public static class_1331 method_4715(class_6331 var0, class_2034 var1, boolean var2) {
+   public static BlockPos method_4715(class_6331 var0, class_2034 var1, boolean var2) {
       for (int var5 = var1.method_9535(); var5 <= var1.method_9536(); var5++) {
          for (int var6 = var1.method_9545(); var6 <= var1.method_9538(); var6++) {
-            class_1331 var7 = method_4714(var0, var5, var6, var2);
+            BlockPos var7 = method_4714(var0, var5, var6, var2);
             if (var7 != null) {
                return var7;
             }

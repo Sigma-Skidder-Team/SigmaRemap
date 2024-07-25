@@ -20,7 +20,7 @@ public class class_5906 extends class_6967 {
    }
 
    @Override
-   public boolean method_31855(class_4924 var1, class_1331 var2) {
+   public boolean method_31855(class_4924 var1, BlockPos var2) {
       class_2522 var5 = var1.method_28262(var2);
       return var5.method_8350(class_4783.field_23637) && var5.<Integer>method_10313(class_7086.field_36577) >= 2;
    }

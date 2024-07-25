@@ -179,7 +179,7 @@ public class class_974 {
          return false;
       } else {
          if (this.field_4988 != null) {
-            class_1331 var4 = var1.method_9092();
+            BlockPos var4 = var1.method_9092();
             if (var4 != null && !this.field_4988.method_40164(var4.method_12165())) {
                return false;
             }

@@ -4,11 +4,11 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMaps;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 
-public class class_4156 {
+public class StatisticsManager {
    private static String[] field_20205;
    public final Object2IntMap<class_6676<?>> field_20206 = Object2IntMaps.synchronize(new Object2IntOpenHashMap());
 
-   public class_4156() {
+   public StatisticsManager() {
       this.field_20206.defaultReturnValue(0);
    }
 

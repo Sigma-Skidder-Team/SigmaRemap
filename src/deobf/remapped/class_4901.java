@@ -28,7 +28,7 @@ public class class_4901 extends class_958 {
    public void method_16794() {
       if (class_8829.method_40601(this.field_25333).nextInt(30) == 0) {
          for (int var3 = 1; var3 <= 2; var3++) {
-            class_1331 var4 = this.field_25333.method_37075().method_6101(var3);
+            BlockPos var4 = this.field_25333.method_37075().method_6101(var3);
             class_2522 var5 = this.field_25333.field_41768.method_28262(var4);
             class_6414 var6 = var5.method_8360();
             boolean var7 = false;

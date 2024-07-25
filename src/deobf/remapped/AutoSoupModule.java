@@ -141,7 +141,7 @@ public class AutoSoupModule extends Module {
       if (!this.getStringValueByName("Soup mode").equals("Instant")) {
          if (this.field_29806 >= 0) {
             if (var5) {
-               client.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
+               client.method_8614().method_4813(new class_1586(class_7500.field_38266, BlockPos.field_7306, Direction.field_802));
             }
 
             client.thePlayer.inventory.field_36404 = this.field_29806;
@@ -156,8 +156,8 @@ public class AutoSoupModule extends Module {
             this.field_29806 = client.thePlayer.inventory.field_36404;
             client.thePlayer.inventory.field_36404 = var3;
             client.playerController.method_42129();
-            client.method_8614().method_4813(new class_1022(class_2584.field_12794));
-            client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+            client.method_8614().method_4813(new class_1022(Hand.OFF_HAND));
+            client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
          }
       } else {
          if (var3 < 0 || this.field_29805 <= 3 || client.thePlayer.method_26551() > this.getFloatValueByName("Health")) {
@@ -165,10 +165,10 @@ public class AutoSoupModule extends Module {
          }
 
          client.method_8614().method_4813(new class_7371(var3));
-         client.method_8614().method_4813(new class_1022(class_2584.field_12794));
-         client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+         client.method_8614().method_4813(new class_1022(Hand.OFF_HAND));
+         client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
          if (var5) {
-            client.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
+            client.method_8614().method_4813(new class_1586(class_7500.field_38266, BlockPos.field_7306, Direction.field_802));
          }
 
          client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));

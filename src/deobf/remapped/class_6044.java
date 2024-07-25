@@ -29,8 +29,8 @@ public class class_6044<U> {
    public static final class_6044<class_3998> field_30888 = method_27596("path");
    public static final class_6044<List<class_8150>> field_30900 = method_27596("interactable_doors");
    public static final class_6044<Set<class_8150>> field_30872 = method_27596("doors_to_close");
-   public static final class_6044<class_1331> field_30910 = method_27596("nearest_bed");
-   public static final class_6044<class_6199> field_30867 = method_27596("hurt_by");
+   public static final class_6044<BlockPos> field_30910 = method_27596("nearest_bed");
+   public static final class_6044<DamageSource> field_30867 = method_27596("hurt_by");
    public static final class_6044<class_5834> field_30859 = method_27596("hurt_by_entity");
    public static final class_6044<class_5834> field_30913 = method_27596("avoid_target");
    public static final class_6044<class_5834> field_30896 = method_27596("nearest_hostile");
@@ -51,7 +51,7 @@ public class class_6044<U> {
    public static final class_6044<Boolean> field_30890 = method_27596("disable_walk_to_admire_item");
    public static final class_6044<Boolean> field_30879 = method_27595("admiring_disabled", Codec.BOOL);
    public static final class_6044<Boolean> field_30864 = method_27595("hunted_recently", Codec.BOOL);
-   public static final class_6044<class_1331> field_30895 = method_27596("celebrate_location");
+   public static final class_6044<BlockPos> field_30895 = method_27596("celebrate_location");
    public static final class_6044<Boolean> field_30862 = method_27596("dancing");
    public static final class_6044<class_6704> field_30873 = method_27596("nearest_visible_huntable_hoglin");
    public static final class_6044<class_6704> field_30914 = method_27596("nearest_visible_baby_hoglin");
@@ -65,7 +65,7 @@ public class class_6044<U> {
    public static final class_6044<Integer> field_30906 = method_27596("visible_adult_hoglin_count");
    public static final class_6044<class_704> field_30911 = method_27596("nearest_player_holding_wanted_item");
    public static final class_6044<Boolean> field_30857 = method_27596("ate_recently");
-   public static final class_6044<class_1331> field_30905 = method_27596("nearest_repellent");
+   public static final class_6044<BlockPos> field_30905 = method_27596("nearest_repellent");
    public static final class_6044<Boolean> field_30860 = method_27596("pacified");
    private final Optional<Codec<class_3909<U>>> field_30855;
 

@@ -13,8 +13,8 @@ public class class_945 extends class_3757 {
    private Identifier field_4835;
    private String field_4827 = "";
    private String field_4838 = "";
-   private class_1331 field_4836 = new class_1331(0, 1, 0);
-   private class_1331 field_4833 = class_1331.field_7306;
+   private BlockPos field_4836 = new BlockPos(0, 1, 0);
+   private BlockPos field_4833 = BlockPos.field_7306;
    private class_9022 field_4840 = class_9022.field_46145;
    private class_6631 field_4831 = class_6631.field_34340;
    private class_589 field_4830 = class_589.field_3411;
@@ -67,11 +67,11 @@ public class class_945 extends class_3757 {
       int var5 = class_9299.method_42829(var2.method_25947("posX"), -48, 48);
       int var6 = class_9299.method_42829(var2.method_25947("posY"), -48, 48);
       int var7 = class_9299.method_42829(var2.method_25947("posZ"), -48, 48);
-      this.field_4836 = new class_1331(var5, var6, var7);
+      this.field_4836 = new BlockPos(var5, var6, var7);
       int var8 = class_9299.method_42829(var2.method_25947("sizeX"), 0, 48);
       int var9 = class_9299.method_42829(var2.method_25947("sizeY"), 0, 48);
       int var10 = class_9299.method_42829(var2.method_25947("sizeZ"), 0, 48);
-      this.field_4833 = new class_1331(var8, var9, var10);
+      this.field_4833 = new BlockPos(var8, var9, var10);
 
       try {
          this.field_4831 = class_6631.valueOf(var2.method_25965("rotation"));
@@ -107,7 +107,7 @@ public class class_945 extends class_3757 {
 
    private void method_4129() {
       if (this.field_18364 != null) {
-         class_1331 var3 = this.method_17399();
+         BlockPos var3 = this.method_17399();
          class_2522 var4 = this.field_18364.method_28262(var3);
          if (var4.method_8350(class_4783.field_23846)) {
             this.field_18364.method_7513(var3, var4.method_10308(class_7297.field_37308, this.field_4830), 2);
@@ -162,19 +162,19 @@ public class class_945 extends class_3757 {
       this.field_4827 = var1.method_45509().getString();
    }
 
-   public class_1331 method_4116() {
+   public BlockPos method_4116() {
       return this.field_4836;
    }
 
-   public void method_4119(class_1331 var1) {
+   public void method_4119(BlockPos var1) {
       this.field_4836 = var1;
    }
 
-   public class_1331 method_4096() {
+   public BlockPos method_4096() {
       return this.field_4833;
    }
 
-   public void method_4107(class_1331 var1) {
+   public void method_4107(BlockPos var1) {
       this.field_4833 = var1;
    }
 
@@ -258,19 +258,19 @@ public class class_945 extends class_3757 {
 
    public boolean method_4094() {
       if (this.field_4830 == class_589.field_3417) {
-         class_1331 var3 = this.method_17399();
+         BlockPos var3 = this.method_17399();
          byte var4 = 80;
-         class_1331 var5 = new class_1331(var3.method_12173() - 80, 0, var3.method_12185() - 80);
-         class_1331 var6 = new class_1331(var3.method_12173() + 80, 255, var3.method_12185() + 80);
+         BlockPos var5 = new BlockPos(var3.method_12173() - 80, 0, var3.method_12185() - 80);
+         BlockPos var6 = new BlockPos(var3.method_12173() + 80, 255, var3.method_12185() + 80);
          List var7 = this.method_4093(var5, var6);
          List var8 = this.method_4105(var7);
          if (var8.size() >= 1) {
             class_9616 var9 = this.method_4104(var3, var8);
             if (var9.field_48991 - var9.field_48996 > 1 && var9.field_48993 - var9.field_48995 > 1 && var9.field_48994 - var9.field_48992 > 1) {
-               this.field_4836 = new class_1331(
+               this.field_4836 = new BlockPos(
                   var9.field_48996 - var3.method_12173() + 1, var9.field_48995 - var3.method_12165() + 1, var9.field_48992 - var3.method_12185() + 1
                );
-               this.field_4833 = new class_1331(
+               this.field_4833 = new BlockPos(
                   var9.field_48991 - var9.field_48996 - 1, var9.field_48993 - var9.field_48995 - 1, var9.field_48994 - var9.field_48992 - 1
                );
                this.method_17407();
@@ -293,10 +293,10 @@ public class class_945 extends class_3757 {
       return var1.stream().filter(var4).collect(Collectors.<class_945>toList());
    }
 
-   private List<class_945> method_4093(class_1331 var1, class_1331 var2) {
+   private List<class_945> method_4093(BlockPos var1, BlockPos var2) {
       ArrayList var5 = Lists.newArrayList();
 
-      for (class_1331 var7 : class_1331.method_6076(var1, var2)) {
+      for (BlockPos var7 : BlockPos.method_6076(var1, var2)) {
          class_2522 var8 = this.field_18364.method_28262(var7);
          if (var8.method_8350(class_4783.field_23846)) {
             class_3757 var9 = this.field_18364.method_28260(var7);
@@ -309,17 +309,17 @@ public class class_945 extends class_3757 {
       return var5;
    }
 
-   private class_9616 method_4104(class_1331 var1, List<class_945> var2) {
+   private class_9616 method_4104(BlockPos var1, List<class_945> var2) {
       class_9616 var5;
       if (var2.size() <= 1) {
          var5 = new class_9616(var1, var1);
       } else {
-         class_1331 var6 = ((class_945)var2.get(0)).method_17399();
+         BlockPos var6 = ((class_945)var2.get(0)).method_17399();
          var5 = new class_9616(var6, var6);
       }
 
       for (class_945 var7 : var2) {
-         class_1331 var8 = var7.method_17399();
+         BlockPos var8 = var7.method_17399();
          if (var8.method_12173() >= var5.field_48996) {
             if (var8.method_12173() > var5.field_48991) {
                var5.field_48991 = var8.method_12173();
@@ -354,7 +354,7 @@ public class class_945 extends class_3757 {
 
    public boolean method_4115(boolean var1) {
       if (this.field_4830 == class_589.field_3417 && !this.field_18364.field_33055 && this.field_4835 != null) {
-         class_1331 var4 = this.method_17399().method_6105(this.field_4836);
+         BlockPos var4 = this.method_17399().method_6105(this.field_4836);
          class_6331 var5 = (class_6331)this.field_18364;
          class_5799 var6 = var5.method_28978();
 
@@ -407,12 +407,12 @@ public class class_945 extends class_3757 {
    }
 
    public boolean method_4109(class_6331 var1, boolean var2, class_6561 var3) {
-      class_1331 var6 = this.method_17399();
+      BlockPos var6 = this.method_17399();
       if (!class_6660.method_30576(var3.method_29982())) {
          this.field_4827 = var3.method_29982();
       }
 
-      class_1331 var7 = var3.method_29975();
+      BlockPos var7 = var3.method_29975();
       boolean var8 = this.field_4833.equals(var7);
       if (!var8) {
          this.field_4833 = var7;
@@ -433,7 +433,7 @@ public class class_945 extends class_3757 {
             var11.method_39035().method_39048(new class_9098(class_9299.method_42828(this.field_4826, 0.0F, 1.0F))).method_39041(method_4090(this.field_4829));
          }
 
-         class_1331 var10 = var6.method_6105(this.field_4836);
+         BlockPos var10 = var6.method_6105(this.field_4836);
          var3.method_29984(var1, var10, var11, method_4090(this.field_4829));
          return true;
       }

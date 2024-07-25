@@ -62,7 +62,7 @@ public class class_3511 {
       this.field_17208 = new class_1261(this, (Direction)null, 0);
    }
 
-   private boolean method_16158(class_1331 var1) {
+   private boolean method_16158(BlockPos var1) {
       return class_6705.method_30723(this.field_17225).method_22555(var1.method_12173() >> 4, var1.method_12185() >> 4, class_7335.field_37514, false) != null;
    }
 
@@ -155,7 +155,7 @@ public class class_3511 {
       this.field_17199.values().forEach(class_7995::close);
    }
 
-   public class_1331 method_16189() {
+   public BlockPos method_16189() {
       return this.field_17223;
    }
 
@@ -182,7 +182,7 @@ public class class_3511 {
       return this.field_17210 && this.field_17227;
    }
 
-   public class_1331 method_16143(Direction var1) {
+   public BlockPos method_16143(Direction var1) {
       return this.field_17209[var1.ordinal()];
    }
 
@@ -220,7 +220,7 @@ public class class_3511 {
 
    public class_4117 method_16142() {
       this.method_16162();
-      class_1331 var3 = this.field_17223.method_6072();
+      BlockPos var3 = this.field_17223.method_6072();
       boolean var4 = true;
       Object var5 = null;
       if (!class_6705.method_30745()) {
@@ -283,7 +283,7 @@ public class class_3511 {
       }
    }
 
-   private RenderLayer method_16164(class_6163 var1, class_2522 var2, class_1331 var3, RenderLayer var4) {
+   private RenderLayer method_16164(class_6163 var1, class_2522 var2, BlockPos var3, RenderLayer var4) {
       if (class_1303.method_5952()) {
          RenderLayer var7 = class_1303.method_5950(var1, var2, var3);
          if (var7 != null) {
@@ -331,14 +331,14 @@ public class class_3511 {
       }
    }
 
-   private class_1680 method_16172(class_1331 var1) {
-      class_1331 var4 = var1.method_6104(-1, -1, -1);
-      class_1331 var5 = var1.method_6104(16, 16, 16);
+   private class_1680 method_16172(BlockPos var1) {
+      BlockPos var4 = var1.method_6104(-1, -1, -1);
+      BlockPos var5 = var1.method_6104(16, 16, 16);
       class_7850 var6 = this.method_16173(class_6705.method_30723(this.field_17225), var4, var5, 1);
       return new class_1680(var6, var4, var5, 1);
    }
 
-   public class_7850 method_16173(World var1, class_1331 var2, class_1331 var3, int var4) {
+   public class_7850 method_16173(World var1, BlockPos var2, BlockPos var3, int var4) {
       return class_7850.method_35516(var1, var2, var3, var4, false);
    }
 
@@ -346,7 +346,7 @@ public class class_3511 {
       if (!this.field_17200) {
          for (int var5 = 0; var5 < Direction.field_803.length; var5++) {
             Direction var6 = Direction.field_803[var5];
-            class_1331 var7 = this.method_16143(var6);
+            BlockPos var7 = this.method_16143(var6);
             this.field_17219[var5] = var1.method_34563(var7);
          }
 
@@ -360,7 +360,7 @@ public class class_3511 {
       return this.method_16175(this.field_17223);
    }
 
-   private class_2654 method_16175(class_1331 var1) {
+   private class_2654 method_16175(BlockPos var1) {
       class_2654 var4 = this.field_17198;
       if (var4 != null && class_5475.method_24889(var4)) {
          return var4;
@@ -375,7 +375,7 @@ public class class_3511 {
       return this.method_16183(this.field_17223);
    }
 
-   private boolean method_16183(class_1331 var1) {
+   private boolean method_16183(BlockPos var1) {
       int var4 = var1.method_12165();
       int var5 = var4 + 15;
       return this.method_16175(var1).method_27368(var4, var5);
@@ -418,7 +418,7 @@ public class class_3511 {
 
    public class_682 method_16155() {
       if (this.field_17201 == null) {
-         class_1331 var3 = this.method_16189();
+         BlockPos var3 = this.method_16189();
          int var4 = var3.method_12173();
          int var5 = var3.method_12165();
          int var6 = var3.method_12185();
@@ -427,7 +427,7 @@ public class class_3511 {
          int var9 = var5 >> var7 << var7;
          int var10 = var6 >> var7 << var7;
          if (var8 != var4 || var9 != var5 || var10 != var6) {
-            class_682 var11 = class_6705.method_30741(this.field_17225).method_20068(new class_1331(var8, var9, var10)).method_16155();
+            class_682 var11 = class_6705.method_30741(this.field_17225).method_20068(new BlockPos(var8, var9, var10)).method_16155();
             if (var11 != null && var11.field_19941 == (double)var8 && var11.field_19937 == (double)var9 && var11.field_19938 == (double)var10) {
                this.field_17201 = var11;
             }

@@ -204,22 +204,22 @@ public class class_6769 {
    private static int method_31060(class_9155 var0, String var1, int var2, int var3, int var4) {
       if (var2 <= 48 && var3 <= 48 && var4 <= 48) {
          class_6331 var7 = var0.method_42198();
-         class_1331 var8 = new class_1331(var0.method_42192());
-         class_1331 var9 = new class_1331(
+         BlockPos var8 = new BlockPos(var0.method_42192());
+         BlockPos var9 = new BlockPos(
             var8.method_12173(), var0.method_42198().method_22563(class_3801.field_18592, var8).method_12165(), var8.method_12185() + 3
          );
-         class_2765.method_12588(var1.toLowerCase(), var9, new class_1331(var2, var3, var4), class_6631.field_34340, var7);
+         class_2765.method_12588(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), class_6631.field_34340, var7);
 
          for (int var10 = 0; var10 < var2; var10++) {
             for (int var11 = 0; var11 < var4; var11++) {
-               class_1331 var12 = new class_1331(var9.method_12173() + var10, var9.method_12165() + 1, var9.method_12185() + var11);
+               BlockPos var12 = new BlockPos(var9.method_12173() + var10, var9.method_12165() + 1, var9.method_12185() + var11);
                class_6414 var13 = class_4783.field_23582;
                class_6986 var14 = new class_6986(var13.method_29260(), Collections.EMPTY_SET, (CompoundNBT)null);
                var14.method_31964(var7, var12, 2);
             }
          }
 
-         class_2765.method_12587(var9, new class_1331(1, 0, -1), class_6631.field_34340, var7);
+         class_2765.method_12587(var9, new BlockPos(1, 0, -1), class_6631.field_34340, var7);
          return 0;
       } else {
          throw new IllegalArgumentException("The structure must be less than 48 blocks big in each axis");
@@ -228,7 +228,7 @@ public class class_6769 {
 
    private static int method_31071(class_9155 var0, String var1) throws CommandSyntaxException {
       class_9529 var4 = (class_9529)var0.method_42179().method_37201(10.0, 1.0F, false);
-      class_1331 var5 = var4.method_43955();
+      BlockPos var5 = var4.method_43955();
       class_6331 var6 = var0.method_42198();
       Optional var7 = class_2765.method_12592(var5, 15, var6);
       if (!var7.isPresent()) {
@@ -236,8 +236,8 @@ public class class_6769 {
       }
 
       if (var7.isPresent()) {
-         class_945 var8 = (class_945)var6.method_28260((class_1331)var7.get());
-         class_1331 var9 = var5.method_6093((class_2700)var7.get());
+         class_945 var8 = (class_945)var6.method_28260((BlockPos)var7.get());
+         BlockPos var9 = var5.method_6093((class_2700)var7.get());
          String var10 = var9.method_12173() + ", " + var9.method_12165() + ", " + var9.method_12185();
          String var11 = var8.method_4102();
          IFormattableTextComponent var12 = new StringTextComponent(var10)
@@ -249,7 +249,7 @@ public class class_6769 {
                   .setClickEvent(new ClickEvent(ClickEvent$class_47.COPY_TO_CLIPBOARD, "final BlockPos " + var1 + " = new BlockPos(" + var10 + ");"))
             );
          var0.method_42196(new StringTextComponent("Position relative to " + var11 + ": ").append(var12), false);
-         class_1892.method_8436(var6, new class_1331(var5), var10, -2147418368, 10000);
+         class_1892.method_8436(var6, new BlockPos(var5), var10, -2147418368, 10000);
          return 1;
       } else {
          var0.method_42175(new StringTextComponent("Can't find a structure block that contains the targeted pos " + var5));
@@ -258,9 +258,9 @@ public class class_6769 {
    }
 
    private static int method_31065(class_9155 var0) {
-      class_1331 var3 = new class_1331(var0.method_42192());
+      BlockPos var3 = new BlockPos(var0.method_42192());
       class_6331 var4 = var0.method_42198();
-      class_1331 var5 = class_2765.method_12597(var3, 15, var4);
+      BlockPos var5 = class_2765.method_12597(var3, 15, var4);
       if (var5 != null) {
          class_1954.method_9039(var4);
          method_31073(var4, var5, (class_8604)null);
@@ -272,7 +272,7 @@ public class class_6769 {
    }
 
    private static int method_31077(class_9155 var0) {
-      class_1331 var3 = new class_1331(var0.method_42192());
+      BlockPos var3 = new BlockPos(var0.method_42192());
       class_6331 var4 = var0.method_42198();
       Collection var5 = class_2765.method_12585(var3, 200, var4);
       if (!var5.isEmpty()) {
@@ -287,7 +287,7 @@ public class class_6769 {
       }
    }
 
-   private static void method_31073(class_6331 var0, class_1331 var1, class_8604 var2) {
+   private static void method_31073(class_6331 var0, BlockPos var1, class_8604 var2) {
       class_945 var5 = (class_945)var0.method_28260(var1);
       String var6 = var5.method_4102();
       class_226 var7 = class_3084.method_14142(var6);
@@ -299,7 +299,7 @@ public class class_6769 {
 
       method_31067(var7, var0);
       class_4092 var9 = class_2765.method_12596(var5);
-      class_1331 var10 = new class_1331(var9.field_19941, var9.field_19937, var9.field_19938);
+      BlockPos var10 = new BlockPos(var9.field_19941, var9.field_19937, var9.field_19938);
       class_1954.method_9032(var8, var10, class_2983.field_14682);
    }
 
@@ -321,9 +321,9 @@ public class class_6769 {
    private static int method_31074(class_9155 var0, int var1) {
       class_6331 var4 = var0.method_42198();
       class_1954.method_9039(var4);
-      class_1331 var5 = new class_1331(
+      BlockPos var5 = new BlockPos(
          var0.method_42192().field_7336,
-         (double)var0.method_42198().method_22563(class_3801.field_18592, new class_1331(var0.method_42192())).method_12165(),
+         (double)var0.method_42198().method_22563(class_3801.field_18592, new BlockPos(var0.method_42192())).method_12165(),
          var0.method_42192().field_7334
       );
       class_1954.method_9038(var4, var5, class_2983.field_14682, class_9299.method_42829(var1, 0, 1024));
@@ -332,9 +332,9 @@ public class class_6769 {
 
    private static int method_31070(class_9155 var0, class_226 var1, int var2) {
       class_6331 var5 = var0.method_42198();
-      class_1331 var6 = new class_1331(var0.method_42192());
+      BlockPos var6 = new BlockPos(var0.method_42192());
       int var7 = var0.method_42198().method_22563(class_3801.field_18592, var6).method_12165();
-      class_1331 var8 = new class_1331(var6.method_12173(), var7, var6.method_12185() + 3);
+      BlockPos var8 = new BlockPos(var6.method_12173(), var7, var6.method_12185() + 3);
       class_1954.method_9039(var5);
       method_31067(var1, var5);
       class_6631 var9 = class_2765.method_12594(var2);
@@ -388,8 +388,8 @@ public class class_6769 {
    }
 
    private static void method_31064(class_9155 var0, Collection<class_226> var1, int var2, int var3) {
-      class_1331 var6 = new class_1331(var0.method_42192());
-      class_1331 var7 = new class_1331(
+      BlockPos var6 = new BlockPos(var0.method_42192());
+      BlockPos var7 = new BlockPos(
          var6.method_12173(), var0.method_42198().method_22563(class_3801.field_18592, var6).method_12165(), var6.method_12185() + 3
       );
       class_6331 var8 = var0.method_42198();
@@ -405,9 +405,9 @@ public class class_6769 {
    }
 
    private static int method_31072(class_9155 var0) {
-      class_1331 var3 = new class_1331(var0.method_42192());
+      BlockPos var3 = new BlockPos(var0.method_42192());
       class_6331 var4 = var0.method_42198();
-      class_1331 var5 = class_2765.method_12597(var3, 15, var4);
+      BlockPos var5 = class_2765.method_12597(var3, 15, var4);
       if (var5 != null) {
          class_945 var6 = (class_945)var4.method_28260(var5);
          String var7 = var6.method_4102();

@@ -20,9 +20,9 @@ public class class_5744 extends class_5920<class_4612> {
    }
 
    public void method_25995(class_6331 var1, class_4612 var2, long var3) {
-      class_1331 var7 = var2.method_37075();
-      List var8 = class_1331.method_6084(var7.method_6104(-1, -1, -1), var7.method_6104(1, 1, 1))
-         .<class_1331>map(class_1331::method_6072)
+      BlockPos var7 = var2.method_37075();
+      List var8 = BlockPos.method_6084(var7.method_6104(-1, -1, -1), var7.method_6104(1, 1, 1))
+         .<BlockPos>map(BlockPos::method_6072)
          .collect(Collectors.toList());
       Collections.shuffle(var8);
       Optional var9 = var8.stream()

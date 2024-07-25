@@ -25,7 +25,7 @@ public class class_338 extends class_4088 {
    public class_338(int var1, class_7051 var2, class_9210 var3) {
       super(class_4165.field_20255, var1);
       this.field_1268 = var3;
-      this.field_1273 = var2.field_36409.field_41768;
+      this.field_1273 = var2.field_36409.world;
       this.field_1266 = this.method_18885(new class_7934(this.field_1263, 0, 20, 33));
       this.field_1271 = this.method_18885(new class_8302(this, this.field_1262, 1, 143, 33, var3));
 
@@ -149,7 +149,7 @@ public class class_338 extends class_4088 {
                return ItemStack.EMPTY;
             }
          } else {
-            var8.method_11236(var7, var1.field_41768, var1);
+            var8.method_11236(var7, var1.world, var1);
             if (!this.method_18892(var7, 2, 38, true)) {
                return ItemStack.EMPTY;
             }
@@ -177,6 +177,6 @@ public class class_338 extends class_4088 {
    public void method_18876(class_704 var1) {
       super.method_18876(var1);
       this.field_1262.method_31507(1);
-      this.field_1268.method_42533((var2, var3) -> this.method_18887(var1, var1.field_41768, this.field_1263));
+      this.field_1268.method_42533((var2, var3) -> this.method_18887(var1, var1.world, this.field_1263));
    }
 }

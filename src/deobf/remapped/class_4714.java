@@ -11,7 +11,7 @@ public class class_4714 {
       this.field_22879 = var5;
    }
 
-   public class_4714(class_1331 var1) {
+   public class_4714(BlockPos var1) {
       this.field_22878 = (double)var1.method_12173();
       this.field_22880 = (double)var1.method_12165();
       this.field_22879 = (double)var1.method_12185();

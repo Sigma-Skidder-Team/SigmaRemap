@@ -14,7 +14,7 @@ public class class_366 extends class_1279 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       this.method_5720(var1, var5, 1, 8, 0, 14, 8, 14, field_7037);
       byte var10 = 7;
       class_2522 var11 = field_7039;

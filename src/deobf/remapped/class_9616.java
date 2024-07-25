@@ -156,7 +156,7 @@ public class class_9616 {
    }
 
    public class_2700 method_44396() {
-      return new class_1331(
+      return new BlockPos(
          this.field_48996 + (this.field_48991 - this.field_48996 + 1) / 2,
          this.field_48995 + (this.field_48993 - this.field_48995 + 1) / 2,
          this.field_48992 + (this.field_48994 - this.field_48992 + 1) / 2

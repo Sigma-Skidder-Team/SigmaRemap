@@ -5,7 +5,7 @@ public enum class_3292 {
    }
 
    @Override
-   public class_2522 method_43653(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_43653(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var3.method_8350(var1.method_8360())
          && var2.method_1029().method_42629()
          && var1.<class_9264>method_10313(class_6942.field_35695) == class_9264.field_47274

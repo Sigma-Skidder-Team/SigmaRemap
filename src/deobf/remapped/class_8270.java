@@ -18,7 +18,7 @@ public class class_8270 implements class_1517 {
                Random var7 = var1.field_33033;
                int var8 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
                int var9 = (8 + var7.nextInt(24)) * (!var7.nextBoolean() ? 1 : -1);
-               class_1331 var10 = var6.method_37075().method_6104(var8, 0, var9);
+               BlockPos var10 = var6.method_37075().method_6104(var8, 0, var9);
                if (var1.method_22569(
                   var10.method_12173() - 10,
                   var10.method_12165() - 10,
@@ -52,7 +52,7 @@ public class class_8270 implements class_1517 {
       }
    }
 
-   private int method_38122(class_6331 var1, class_1331 var2) {
+   private int method_38122(class_6331 var1, BlockPos var2) {
       byte var5 = 48;
       if (var1.method_28969().method_6866(class_236.field_778.method_1007(), var2, 48, class_8122.field_41618) > 4L) {
          List var6 = var1.<class_5583>method_25868(class_5583.class, new class_4092(var2).method_18899(48.0, 8.0, 48.0));
@@ -64,13 +64,13 @@ public class class_8270 implements class_1517 {
       return 0;
    }
 
-   private int method_38125(class_6331 var1, class_1331 var2) {
+   private int method_38125(class_6331 var1, BlockPos var2) {
       byte var5 = 16;
       List var6 = var1.<class_5583>method_25868(class_5583.class, new class_4092(var2).method_18899(16.0, 8.0, 16.0));
       return var6.size() >= 1 ? 0 : this.method_38124(var2, var1);
    }
 
-   private int method_38124(class_1331 var1, class_6331 var2) {
+   private int method_38124(BlockPos var1, class_6331 var2) {
       class_5583 var5 = class_6629.field_34249.method_30484(var2);
       if (var5 != null) {
          var5.method_26864(var2, var2.method_43368(var1), class_2417.field_12031, (class_8733)null, (CompoundNBT)null);

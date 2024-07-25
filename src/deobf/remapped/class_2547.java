@@ -59,7 +59,7 @@ public class class_2547 extends class_7429 implements class_2354 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (this.field_41768.field_33055 && this.method_37109()) {
+      if (this.world.field_33055 && this.method_37109()) {
          this.field_12620--;
          if (this.field_12620 < 0) {
             this.field_12620 = 0;
@@ -80,10 +80,10 @@ public class class_2547 extends class_7429 implements class_2354 {
             }
 
             for (int var7 = 0; var7 < 16; var7++) {
-               this.field_41768.method_43361(class_3090.field_15385, this.method_37361(0.5), this.method_37255(), this.method_37205(0.5), 0.0, 0.0, 0.0);
+               this.world.method_43361(class_3090.field_15385, this.method_37361(0.5), this.method_37255(), this.method_37205(0.5), 0.0, 0.0, 0.0);
             }
 
-            this.field_41768
+            this.world
                .method_29527(this.method_37302(), this.method_37309(), this.method_37156(), class_463.field_1956, this.method_37197(), 1.0F, 1.0F, false);
          } else if (this.field_29645 == this.field_29662 - 1) {
             this.field_12620 = 3;
@@ -139,7 +139,7 @@ public class class_2547 extends class_7429 implements class_2354 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2888;
    }
 
@@ -160,9 +160,9 @@ public class class_2547 extends class_7429 implements class_2354 {
       double var9 = var1.method_37080(0.3333333333333333) - var6.method_37309();
       double var11 = var1.method_37156() - this.method_37156();
       double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
-      var6.method_26161(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.field_41768.method_43370().method_2097() * 4));
+      var6.method_26161(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
       this.method_37155(class_463.field_2526, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
-      this.field_41768.method_7509(var6);
+      this.world.method_7509(var6);
    }
 
    @Override

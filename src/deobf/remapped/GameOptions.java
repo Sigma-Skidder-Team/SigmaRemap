@@ -831,7 +831,7 @@ public class GameOptions {
 
    public void method_40886(class_562 var1, float var2) {
       this.field_45576.put(var1, var2);
-      this.field_45495.method_8590().method_16349(var1, var2);
+      this.field_45495.getSoundHandler().method_16349(var1, var2);
    }
 
    public void method_40870() {
@@ -844,7 +844,7 @@ public class GameOptions {
 
          this.field_45495
             .thePlayer
-            .field_30532
+            .connection
             .method_4813(new class_8244(this.field_45437, this.field_45537, this.field_45443, this.field_45554, var1, this.field_45569));
       }
    }

@@ -11,7 +11,7 @@ public class class_1018 extends class_5788<class_611> {
       super(var1);
    }
 
-   public Stream<class_1331> method_4507(class_6680 var1, Random var2, class_611 var3, class_1331 var4) {
+   public Stream<BlockPos> method_4507(class_6680 var1, Random var2, class_611 var3, BlockPos var4) {
       ArrayList var7 = Lists.newArrayList();
       int var8 = 0;
 
@@ -25,7 +25,7 @@ public class class_1018 extends class_5788<class_611> {
             int var13 = var1.method_30648(class_3801.field_18595, var11, var12);
             int var14 = method_4505(var1, var11, var13, var12, var8);
             if (var14 != Integer.MAX_VALUE) {
-               var7.add(new class_1331(var11, var14, var12));
+               var7.add(new BlockPos(var11, var14, var12));
                var9 = true;
             }
          }

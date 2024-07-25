@@ -13,14 +13,14 @@ public class class_4323 extends class_3711 {
    public void method_17234() {
       if (!this.field_18204) {
          if (this.field_18205.method_26927().method_5591()) {
-            this.field_18205.field_41755 = this.method_17239(this.field_18205.field_41755, 0.0F, 5.0F);
+            this.field_18205.rotationPitch = this.method_17239(this.field_18205.rotationPitch, 0.0F, 5.0F);
          }
 
          this.field_18205.field_29618 = this.method_17239(this.field_18205.field_29618, this.field_18205.field_29605, this.field_18208);
       } else {
          this.field_18204 = false;
          this.field_18205.field_29618 = this.method_17239(this.field_18205.field_29618, this.method_17243() + 20.0F, this.field_18208);
-         this.field_18205.field_41755 = this.method_17239(this.field_18205.field_41755, this.method_17233() + 10.0F, this.field_18207);
+         this.field_18205.rotationPitch = this.method_17239(this.field_18205.rotationPitch, this.method_17233() + 10.0F, this.field_18207);
       }
 
       float var3 = class_9299.method_42810(this.field_18205.field_29618 - this.field_18205.field_29605);

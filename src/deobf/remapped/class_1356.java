@@ -54,12 +54,12 @@ public class class_1356 extends Entity {
       this.field_7390--;
       if (this.field_7390 > 0) {
          this.method_37228();
-         if (this.field_41768.field_33055) {
-            this.field_41768.method_43361(class_3090.field_15376, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), 0.0, 0.0, 0.0);
+         if (this.world.field_33055) {
+            this.world.method_43361(class_3090.field_15376, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), 0.0, 0.0, 0.0);
          }
       } else {
          this.method_37204();
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.method_6259();
          }
       }
@@ -67,7 +67,7 @@ public class class_1356 extends Entity {
 
    private void method_6259() {
       float var3 = 4.0F;
-      this.field_41768.method_29573(this, this.method_37302(), this.method_37080(0.0625), this.method_37156(), 4.0F, class_7298.field_37309);
+      this.world.method_29573(this, this.method_37302(), this.method_37080(0.0625), this.method_37156(), 4.0F, class_7298.field_37309);
    }
 
    @Override

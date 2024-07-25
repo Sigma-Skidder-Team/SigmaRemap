@@ -10,7 +10,7 @@ public class class_9862 extends class_7011 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       class_4783.field_23525.method_29257(var1, var2, var3, var4, var5);
    }
 

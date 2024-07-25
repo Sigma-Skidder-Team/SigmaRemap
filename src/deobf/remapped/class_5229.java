@@ -13,7 +13,7 @@ public class class_5229 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       var1.method_29528(
          (class_704)null,
@@ -28,7 +28,7 @@ public class class_5229 extends class_2451 {
       if (!var1.field_33055) {
          class_6093 var7 = new class_6093(var1, var2);
          var7.method_15852(var6);
-         var7.method_26158(var2, var2.field_41755, var2.field_41701, -20.0F, 0.7F, 1.0F);
+         var7.method_26158(var2, var2.rotationPitch, var2.rotationYaw, -20.0F, 0.7F, 1.0F);
          var1.method_7509(var7);
       }
 

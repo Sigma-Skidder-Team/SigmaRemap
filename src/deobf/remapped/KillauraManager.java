@@ -47,7 +47,7 @@ public class KillauraManager implements Runnable {
             KillauraModule.method_11540(this.field_20900, KillauraModule.method_11544(this.field_20900) + 1);
          }
       } else if (!this.field_20900.method_42007("No swing")) {
-         KillauraModule.method_11534().field_9632.method_26597(class_2584.field_12791);
+         KillauraModule.method_11534().field_9632.method_26597(Hand.MAIN_HAND);
       }
 
       if (KillauraModule.field_12558 != null

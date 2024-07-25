@@ -32,8 +32,8 @@ public class AutoToolsModule extends Module {
       }
    }
 
-   public void method_29647(class_1331 var1) {
-      class_1331 var4 = var1 == null
+   public void method_29647(BlockPos var1) {
+      BlockPos var4 = var1 == null
          ? (client.field_9587.method_33990() != class_1430.field_7717 ? null : ((class_9529) client.field_9587).method_43955())
          : var1;
       if (var4 != null) {

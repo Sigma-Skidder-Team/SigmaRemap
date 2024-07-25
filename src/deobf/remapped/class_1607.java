@@ -32,7 +32,7 @@ public class class_1607 extends class_3599 {
          class_2522 var5 = this.field_8338
             .field_41768
             .method_28262(
-               new class_1331(
+               new BlockPos(
                   this.field_8338.method_37302() + var4.field_7336,
                   this.field_8338.method_37309() + var4.field_7333,
                   this.field_8338.method_37156() + var4.field_7334
@@ -41,7 +41,7 @@ public class class_1607 extends class_3599 {
          class_4774 var6 = this.field_8338
             .field_41768
             .method_28258(
-               new class_1331(
+               new BlockPos(
                   this.field_8338.method_37302() + var4.field_7336,
                   this.field_8338.method_37309() + var4.field_7333,
                   this.field_8338.method_37156() + var4.field_7334

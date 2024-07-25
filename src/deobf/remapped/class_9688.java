@@ -2,14 +2,14 @@ package remapped;
 
 import java.util.Comparator;
 
-public class class_9688 implements Comparator<class_1331> {
+public class class_9688 implements Comparator<BlockPos> {
    private static String[] field_49299;
 
    public class_9688(CakeEaterModule var1) {
       this.field_49300 = var1;
    }
 
-   public int compare(class_1331 var1, class_1331 var2) {
+   public int compare(BlockPos var1, BlockPos var2) {
       return !(
             Math.sqrt(
                   CakeEaterModule.method_22208()

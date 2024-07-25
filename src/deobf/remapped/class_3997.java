@@ -10,7 +10,7 @@ public class class_3997 extends class_2451 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, this.field_19414 != class_8532.field_43673 ? class_9583.field_48747 : class_9583.field_48749);
       if (var7.method_33990() != class_1430.field_7721) {
@@ -18,9 +18,9 @@ public class class_3997 extends class_2451 {
             return class_954.<ItemStack>method_4207(var6);
          } else {
             class_9529 var8 = var7;
-            class_1331 var9 = var8.method_43955();
+            BlockPos var9 = var8.method_43955();
             Direction var10 = var8.method_43956();
-            class_1331 var11 = var9.method_6098(var10);
+            BlockPos var11 = var9.method_6098(var10);
             if (!var1.method_29538(var2, var9) || !var2.method_3208(var11, var10, var6)) {
                return class_954.<ItemStack>method_4202(var6);
             } else if (this.field_19414 == class_8532.field_43673) {
@@ -42,7 +42,7 @@ public class class_3997 extends class_2451 {
                return class_954.<ItemStack>method_4202(var6);
             } else {
                class_2522 var12 = var1.method_28262(var9);
-               class_1331 var13 = var12.method_8360() instanceof class_4582 && this.field_19414 == class_8532.field_43674 ? var9 : var11;
+               BlockPos var13 = var12.method_8360() instanceof class_4582 && this.field_19414 == class_8532.field_43674 ? var9 : var11;
                if (!this.method_18424(var2, var1, var13, var8)) {
                   return class_954.<ItemStack>method_4202(var6);
                } else {
@@ -65,10 +65,10 @@ public class class_3997 extends class_2451 {
       return var2.playerAbilities.isCreativeMode ? var1 : new ItemStack(class_4897.field_24548);
    }
 
-   public void method_18422(World var1, ItemStack var2, class_1331 var3) {
+   public void method_18422(World var1, ItemStack var2, BlockPos var3) {
    }
 
-   public boolean method_18424(class_704 var1, World var2, class_1331 var3, class_9529 var4) {
+   public boolean method_18424(class_704 var1, World var2, BlockPos var3, class_9529 var4) {
       if (!(this.field_19414 instanceof class_3798)) {
          return false;
       } else {
@@ -115,7 +115,7 @@ public class class_3997 extends class_2451 {
       }
    }
 
-   public void method_18425(class_704 var1, class_9379 var2, class_1331 var3) {
+   public void method_18425(class_704 var1, class_9379 var2, BlockPos var3) {
       class_8461 var6 = !this.field_19414.method_10724(class_6503.field_33095) ? class_463.field_2168 : class_463.field_2089;
       var2.method_43359(var1, var3, var6, class_562.field_3322, 1.0F, 1.0F);
    }

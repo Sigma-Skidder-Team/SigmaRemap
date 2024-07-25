@@ -23,7 +23,7 @@ public class class_8420 extends class_956 {
       int var3 = this.field_4915.method_26577();
       class_5834 var4 = this.field_4915.method_26531();
       if (var3 != this.field_43058 && var4 != null) {
-         if (var4.method_37387() == class_6629.field_34300 && this.field_4915.field_41768.method_29537().method_1285(class_291.field_1039)) {
+         if (var4.method_37387() == class_6629.field_34300 && this.field_4915.world.method_29537().method_1285(class_291.field_1039)) {
             return false;
          } else {
             for (Class var8 : this.field_43057) {
@@ -61,7 +61,7 @@ public class class_8420 extends class_956 {
    public void method_38755() {
       double var3 = this.method_4211();
       class_4092 var5 = class_4092.method_18911(this.field_4915.method_37245()).method_18899(var3, 10.0, var3);
-      List var6 = this.field_4915.field_41768.method_25874(this.field_4915.getClass(), var5);
+      List var6 = this.field_4915.world.method_25874(this.field_4915.getClass(), var5);
       Iterator var7 = var6.iterator();
 
       while (true) {

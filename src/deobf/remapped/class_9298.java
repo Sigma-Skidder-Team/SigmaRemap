@@ -5,7 +5,7 @@ import com.mojang.authlib.GameProfile;
 import java.io.File;
 import javax.annotation.Nullable;
 
-public class class_9298 extends class_9716 {
+public class class_9298 extends AbstractClientPlayerEntity {
    public class_9298(ClientWorld var1, GameProfile var2) {
       super(var1, var2);
    }

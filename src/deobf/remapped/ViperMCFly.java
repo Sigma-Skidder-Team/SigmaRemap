@@ -136,8 +136,8 @@ public class ViperMCFly extends Module {
 
             this.field_38903 = this.field_38902;
             this.field_38902 = var7.field_3144;
-            var7.field_3143 = client.thePlayer.field_41701;
-            var7.field_3140 = client.thePlayer.field_41755;
+            var7.field_3143 = client.thePlayer.rotationYaw;
+            var7.field_3140 = client.thePlayer.rotationPitch;
          }
       }
    }

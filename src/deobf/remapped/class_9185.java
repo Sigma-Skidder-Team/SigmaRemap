@@ -7,7 +7,7 @@ public class class_9185 extends class_8131 {
    private final class_6631 field_46996;
    private final boolean field_46995;
 
-   public class_9185(class_5799 var1, String var2, class_1331 var3, class_6631 var4, boolean var5) {
+   public class_9185(class_5799 var1, String var2, BlockPos var3, class_6631 var4, boolean var5) {
       super(class_2746.field_13441, 0);
       this.field_46997 = var2;
       this.field_41648 = var3;
@@ -39,7 +39,7 @@ public class class_9185 extends class_8131 {
    }
 
    @Override
-   public void method_36999(String var1, class_1331 var2, class_1556 var3, Random var4, class_9616 var5) {
+   public void method_36999(String var1, BlockPos var2, class_1556 var3, Random var4, class_9616 var5) {
       if (!var1.startsWith("Chest")) {
          if (!var1.startsWith("Sentry")) {
             if (var1.startsWith("Elytra")) {
@@ -54,7 +54,7 @@ public class class_9185 extends class_8131 {
             var3.method_7509(var9);
          }
       } else {
-         class_1331 var10 = var2.method_6100();
+         BlockPos var10 = var2.method_6100();
          if (var5.method_44395(var10)) {
             class_2358.method_10817(var3, var4, var10, class_5931.field_30129);
          }

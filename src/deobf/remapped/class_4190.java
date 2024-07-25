@@ -132,7 +132,7 @@ public abstract class class_4190 {
    }
 
    @Nullable
-   public class_9529 method_19493(class_1343 var1, class_1343 var2, class_1331 var3) {
+   public class_9529 method_19493(class_1343 var1, class_1343 var2, BlockPos var3) {
       if (!this.method_19485()) {
          class_1343 var6 = var2.method_6194(var1);
          if (!(var6.method_6221() < 1.0E-7)) {

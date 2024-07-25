@@ -2,10 +2,10 @@ package remapped;
 
 public class class_826 extends class_6165 {
    private static String[] field_4359;
-   private final class_1080 field_4360;
+   private final AbstractMinecartEntity field_4360;
    private float field_4358 = 0.0F;
 
-   public class_826(class_1080 var1) {
+   public class_826(AbstractMinecartEntity var1) {
       super(class_463.field_2311, class_562.field_3328);
       this.field_4360 = var1;
       this.field_5768 = true;

@@ -65,7 +65,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2135, 0.15F, 1.0F);
    }
 
@@ -83,7 +83,7 @@ public class class_9408 extends class_8990 implements class_6250 {
          this.method_43582(class_9077.method_41789(var1.method_25947("CollarColor")));
       }
 
-      this.method_28533((class_6331)this.field_41768, var1);
+      this.method_28533((class_6331)this.world, var1);
    }
 
    @Override
@@ -100,7 +100,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2490;
    }
 
@@ -117,15 +117,15 @@ public class class_9408 extends class_8990 implements class_6250 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (!this.field_41768.field_33055 && this.field_48106 && !this.field_48103 && !this.method_21379() && this.field_41726) {
+      if (!this.world.field_33055 && this.field_48106 && !this.field_48103 && !this.method_21379() && this.field_41726) {
          this.field_48103 = true;
          this.field_48110 = 0.0F;
          this.field_48113 = 0.0F;
-         this.field_41768.method_29587(this, (byte)8);
+         this.world.method_29587(this, (byte)8);
       }
 
-      if (!this.field_41768.field_33055) {
-         this.method_28530((class_6331)this.field_41768, true);
+      if (!this.world.field_33055) {
+         this.method_28530((class_6331)this.world, true);
       }
    }
 
@@ -163,7 +163,7 @@ public class class_9408 extends class_8990 implements class_6250 {
                   for (int var6 = 0; var6 < var4; var6++) {
                      float var7 = (this.field_41717.nextFloat() * 2.0F - 1.0F) * this.method_37086() * 0.5F;
                      float var8 = (this.field_41717.nextFloat() * 2.0F - 1.0F) * this.method_37086() * 0.5F;
-                     this.field_41768
+                     this.world
                         .method_43361(
                            class_3090.field_15346,
                            this.method_37302() + (double)var7,
@@ -178,8 +178,8 @@ public class class_9408 extends class_8990 implements class_6250 {
             }
          } else {
             this.field_48106 = true;
-            if (this.field_48103 && !this.field_41768.field_33055) {
-               this.field_41768.method_29587(this, (byte)56);
+            if (this.field_48103 && !this.world.field_33055) {
+               this.world.method_29587(this, (byte)56);
                this.method_43576();
             }
          }
@@ -193,7 +193,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public void method_26452(class_6199 var1) {
+   public void method_26452(DamageSource var1) {
       this.field_48106 = false;
       this.field_48103 = false;
       this.field_48113 = 0.0F;
@@ -237,7 +237,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.method_37180(var1)) {
          Entity var5 = var1.method_28372();
          this.method_41208(false);
@@ -245,7 +245,7 @@ public class class_9408 extends class_8990 implements class_6250 {
             var2 = (var2 + 1.0F) / 2.0F;
          }
 
-         return super.method_37181(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }
@@ -253,7 +253,7 @@ public class class_9408 extends class_8990 implements class_6250 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      boolean var4 = var1.method_37181(class_6199.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method_28345(this), (float)((int)this.method_26575(class_7331.field_37462)));
       if (var4) {
          this.method_37096(this, var1);
       }
@@ -275,10 +275,10 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       class_2451 var6 = var5.method_27960();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (!this.method_41215()) {
             if (var6 == class_4897.field_24384 && !this.method_28537()) {
                if (!var1.playerAbilities.isCreativeMode) {
@@ -286,13 +286,13 @@ public class class_9408 extends class_8990 implements class_6250 {
                }
 
                if (this.field_41717.nextInt(3) != 0) {
-                  this.field_41768.method_29587(this, (byte)6);
+                  this.world.method_29587(this, (byte)6);
                } else {
                   this.method_41212(var1);
                   this.field_29904.method_5620();
                   this.method_26860((class_5834)null);
                   this.method_41208(true);
-                  this.field_41768.method_29587(this, (byte)7);
+                  this.world.method_29587(this, (byte)7);
                }
 
                return class_6910.field_35520;
@@ -303,7 +303,7 @@ public class class_9408 extends class_8990 implements class_6250 {
                   var5.method_27970(1);
                }
 
-               this.method_26457((float)var6.method_11227().method_38406());
+               this.heal((float)var6.method_11227().method_38406());
                return class_6910.field_35520;
             }
 

@@ -17,7 +17,7 @@ public class class_3465 extends class_6414 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       switch ((class_9249)var1.method_10313(field_16975)) {
          case field_47219:
             return field_16973;
@@ -28,7 +28,7 @@ public class class_3465 extends class_6414 {
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var2.method_22572().method_40233() && var2.method_29537().method_1285(class_291.field_1028) && var4.nextInt(2000) < var2.method_43370().method_2097()
          )
        {
@@ -47,7 +47,7 @@ public class class_3465 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       class_9249 var9 = var2.method_1029();
       class_9249 var10 = var1.<class_9249>method_10313(field_16975);
       boolean var11 = var10 != var9 && var9.method_42629();
@@ -57,14 +57,14 @@ public class class_3465 extends class_6414 {
    }
 
    @Override
-   public void method_10784(class_2522 var1, World var2, class_1331 var3, Entity var4) {
-      if (!var4.method_37070() && !var4.method_37151() && var4.method_37148()) {
+   public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
+      if (!var4.isPassenger() && !var4.method_37151() && var4.method_37148()) {
          var4.method_37213(var3);
       }
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var4.nextInt(100) == 0) {
          var2.method_29527(
             (double)var3.method_12173() + 0.5,
@@ -99,7 +99,7 @@ public class class_3465 extends class_6414 {
    }
 
    @Override
-   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, BlockPos var2, class_2522 var3) {
       return ItemStack.EMPTY;
    }
 

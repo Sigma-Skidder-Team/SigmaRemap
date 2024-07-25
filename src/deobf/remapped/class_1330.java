@@ -16,7 +16,7 @@ public class class_1330 extends class_2451 {
       if (var4 != Direction.field_802) {
          World var5 = var1.method_21862();
          class_353 var6 = new class_353(var1);
-         class_1331 var7 = var6.method_21858();
+         BlockPos var7 = var6.method_21858();
          ItemStack var8 = var1.method_21867();
          class_1343 var9 = class_1343.method_6200(var7);
          class_4092 var10 = class_6629.field_34289.method_30473().method_27940(var9.method_61(), var9.method_60(), var9.method_62());

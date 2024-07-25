@@ -203,7 +203,7 @@ public class class_9362 extends class_1279 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       int var10 = Math.max(var1.method_22552(), 64) - this.field_36435.field_48995;
       this.method_5718(var1, var5, 0, 0, 0, 58, var10, 58);
       this.method_43302(false, 0, var1, var4, var5);

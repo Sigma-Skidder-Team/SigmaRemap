@@ -435,8 +435,8 @@ public class class_9558 {
                Identifier var4 = Identifier.method_21464(var0.method_22749());
                var0.method_22758(
                   var2 -> {
-                     if (var2.field_41768 instanceof class_6331) {
-                        class_6331 var5 = (class_6331)var2.field_41768;
+                     if (var2.world instanceof class_6331) {
+                        class_6331 var5 = (class_6331)var2.world;
                         class_7279 var6 = var5.method_29522().method_1676().method_1146(var4);
                         if (var6 != null) {
                            class_2792 var7 = new class_8480(var5)

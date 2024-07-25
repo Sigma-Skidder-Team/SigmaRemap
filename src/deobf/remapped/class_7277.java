@@ -15,7 +15,7 @@ public class class_7277 {
                   var0x -> method_33260(
                         (class_9155)var0x.getSource(),
                         Collections.<class_9359>singleton(((class_9155)var0x.getSource()).method_42179()),
-                        new class_1331(((class_9155)var0x.getSource()).method_42192()),
+                        new BlockPos(((class_9155)var0x.getSource()).method_42192()),
                         0.0F
                      )
                ))
@@ -25,7 +25,7 @@ public class class_7277 {
                         var0x -> method_33260(
                               (class_9155)var0x.getSource(),
                               class_5601.method_25412(var0x, "targets"),
-                              new class_1331(((class_9155)var0x.getSource()).method_42192()),
+                              new BlockPos(((class_9155)var0x.getSource()).method_42192()),
                               0.0F
                            )
                      ))
@@ -52,7 +52,7 @@ public class class_7277 {
       );
    }
 
-   private static int method_33260(class_9155 var0, Collection<class_9359> var1, class_1331 var2, float var3) {
+   private static int method_33260(class_9155 var0, Collection<class_9359> var1, BlockPos var2, float var3) {
       class_5621 var6 = var0.method_42198().method_29545();
 
       for (class_9359 var8 : var1) {

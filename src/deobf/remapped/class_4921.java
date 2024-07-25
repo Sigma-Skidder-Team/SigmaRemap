@@ -12,13 +12,13 @@ import java.util.Map.Entry;
 public class class_4921 implements class_2995 {
    private static String[] field_25470;
    private final MinecraftClient field_25469;
-   private final Map<Long, Map<class_1331, Integer>> field_25471 = Maps.newTreeMap(Ordering.natural().reverse());
+   private final Map<Long, Map<BlockPos, Integer>> field_25471 = Maps.newTreeMap(Ordering.natural().reverse());
 
    public class_4921(MinecraftClient var1) {
       this.field_25469 = var1;
    }
 
-   public void method_22539(long var1, class_1331 var3) {
+   public void method_22539(long var1, BlockPos var3) {
       Map var6 = this.field_25471.computeIfAbsent(var1, var0 -> Maps.newHashMap());
       int var7 = var6.getOrDefault(var3, 0);
       var6.put(var3, var7 + 1);
@@ -41,10 +41,10 @@ public class class_4921 implements class_2995 {
          long var23 = var11 - var21;
          if (var23 <= 200L) {
             for (Entry var26 : var22.entrySet()) {
-               class_1331 var27 = (class_1331)var26.getKey();
+               BlockPos var27 = (BlockPos)var26.getKey();
                Integer var28 = (Integer)var26.getValue();
                if (var16.add(var27)) {
-                  class_4092 var29 = new class_4092(class_1331.field_7306)
+                  class_4092 var29 = new class_4092(BlockPos.field_7306)
                      .method_18898(0.002)
                      .method_18924(0.0025 * (double)var23)
                      .method_18918((double)var27.method_12173(), (double)var27.method_12165(), (double)var27.method_12185())
@@ -72,7 +72,7 @@ public class class_4921 implements class_2995 {
       }
 
       for (Entry var32 : var17.entrySet()) {
-         class_1331 var33 = (class_1331)var32.getKey();
+         BlockPos var33 = (BlockPos)var32.getKey();
          Integer var30 = (Integer)var32.getValue();
          class_3372.method_15556(String.valueOf(var30), var33.method_12173(), var33.method_12165(), var33.method_12185(), -1);
       }

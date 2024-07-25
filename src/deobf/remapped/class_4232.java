@@ -28,7 +28,7 @@ public class class_4232 extends Screen {
          if (var5 == 1 && var9 instanceof class_8243) {
             class_8243 var10 = (class_8243)var9;
             if (var10.method_9910() == class_1013.field_5251) {
-               var9.method_32692(super.field_943.method_8590());
+               var9.method_32692(super.field_943.getSoundHandler());
             }
          }
 

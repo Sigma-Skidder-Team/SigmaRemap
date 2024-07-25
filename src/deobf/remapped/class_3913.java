@@ -81,7 +81,7 @@ public class class_3913 extends class_2255<class_8398> {
    private static boolean method_18119(class_8398 var0) {
       if (!class_6588.field_33945) {
          if (!Config.field_15481) {
-            class_1331 var3 = var0.method_17399();
+            BlockPos var3 = var0.method_17399();
             Entity var4 = MinecraftClient.getInstance().getRenderViewEntity();
             double var5 = var4.method_37273((double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
             if (var5 > field_19010) {

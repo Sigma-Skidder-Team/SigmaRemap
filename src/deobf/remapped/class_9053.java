@@ -18,9 +18,9 @@ public class class_9053 extends class_2550 {
    @Override
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
-      if (!this.field_41768.field_33055) {
-         boolean var4 = this.field_41768.method_29537().method_1285(class_291.field_1047);
-         this.field_41768
+      if (!this.world.field_33055) {
+         boolean var4 = this.world.method_29537().method_1285(class_291.field_1047);
+         this.world
             .method_29574(
                (Entity)null,
                this.method_37302(),
@@ -37,10 +37,10 @@ public class class_9053 extends class_2550 {
    @Override
    public void method_26163(class_5631 var1) {
       super.method_26163(var1);
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          Entity var4 = var1.method_25524();
          Entity var5 = this.method_26166();
-         var4.method_37181(class_6199.method_28375(this, var5), 6.0F);
+         var4.attackEntityFrom(DamageSource.method_28375(this, var5), 6.0F);
          if (var5 instanceof class_5834) {
             this.method_37096((class_5834)var5, var4);
          }

@@ -45,7 +45,7 @@ public class class_8036 extends class_2451 implements class_1538 {
 
    @Override
    public class_6910 method_11237(class_4734 var1) {
-      class_1331 var4 = var1.method_21858();
+      BlockPos var4 = var1.method_21858();
       World var5 = var1.method_21862();
       if (!var5.method_28262(var4).method_8350(class_4783.field_23852)) {
          return super.method_11237(var1);
@@ -74,7 +74,7 @@ public class class_8036 extends class_2451 implements class_1538 {
       }
    }
 
-   private void method_36486(class_5621<World> var1, class_1331 var2, CompoundNBT var3) {
+   private void method_36486(class_5621<World> var1, BlockPos var2, CompoundNBT var3) {
       var3.put("LodestonePos", class_4338.method_20190(var2));
       World.field_33043
          .encodeStart(class_3504.field_17178, var1)

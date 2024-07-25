@@ -16,13 +16,13 @@ public class class_7348 implements Runnable {
    public void run() {
       for (Entry var4 : this.field_37572.entrySet()) {
          if (var4.getValue() != null) {
-            MinecraftClient.getInstance().theWorld.method_29594((class_1331)var4.getKey(), ((class_3841)var4.getValue()).field_18752);
+            MinecraftClient.getInstance().theWorld.method_29594((BlockPos)var4.getKey(), ((class_3841)var4.getValue()).field_18752);
          }
       }
 
       for (Entry var6 : this.field_37573.entrySet()) {
          if (var6.getValue() != null) {
-            MinecraftClient.getInstance().theWorld.method_29594((class_1331)var6.getKey(), (class_2522)var6.getValue());
+            MinecraftClient.getInstance().theWorld.method_29594((BlockPos)var6.getKey(), (class_2522)var6.getValue());
          }
       }
    }

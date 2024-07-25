@@ -11,17 +11,17 @@ public abstract class class_5877 extends class_380 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_29834;
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       return method_29273(var2, var3.method_6100());
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (!this.method_26767(var2, var3, var1)) {
          boolean var7 = var1.<Boolean>method_10313(field_29833);
          boolean var8 = this.method_26772(var2, var3, var1);
@@ -37,12 +37,12 @@ public abstract class class_5877 extends class_380 {
    }
 
    @Override
-   public int method_10778(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10778(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       return var1.method_8327(var2, var3, var4);
    }
 
    @Override
-   public int method_10766(class_2522 var1, class_6163 var2, class_1331 var3, Direction var4) {
+   public int method_10766(class_2522 var1, class_6163 var2, BlockPos var3, Direction var4) {
       if (var1.<Boolean>method_10313(field_29833)) {
          return var1.method_10313(field_1543) != var4 ? 0 : this.method_26771(var2, var3, var1);
       } else {
@@ -51,7 +51,7 @@ public abstract class class_5877 extends class_380 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       if (!var1.method_8309(var2, var3)) {
          class_3757 var9 = !this.method_10802() ? null : var2.method_28260(var3);
          method_29296(var1, var2, var3, var9);
@@ -65,7 +65,7 @@ public abstract class class_5877 extends class_380 {
       }
    }
 
-   public void method_26774(World var1, class_1331 var2, class_2522 var3) {
+   public void method_26774(World var1, BlockPos var2, class_2522 var3) {
       if (!this.method_26767(var1, var2, var3)) {
          boolean var6 = var3.<Boolean>method_10313(field_29833);
          boolean var7 = this.method_26772(var1, var2, var3);
@@ -84,17 +84,17 @@ public abstract class class_5877 extends class_380 {
       }
    }
 
-   public boolean method_26767(class_4924 var1, class_1331 var2, class_2522 var3) {
+   public boolean method_26767(class_4924 var1, BlockPos var2, class_2522 var3) {
       return false;
    }
 
-   public boolean method_26772(World var1, class_1331 var2, class_2522 var3) {
+   public boolean method_26772(World var1, BlockPos var2, class_2522 var3) {
       return this.method_26773(var1, var2, var3) > 0;
    }
 
-   public int method_26773(World var1, class_1331 var2, class_2522 var3) {
+   public int method_26773(World var1, BlockPos var2, class_2522 var3) {
       Direction var6 = var3.<Direction>method_10313(field_1543);
-      class_1331 var7 = var2.method_6098(var6);
+      BlockPos var7 = var2.method_6098(var6);
       int var8 = var1.method_29577(var7, var6);
       if (var8 < 15) {
          class_2522 var9 = var1.method_28262(var7);
@@ -104,14 +104,14 @@ public abstract class class_5877 extends class_380 {
       }
    }
 
-   public int method_26770(class_4924 var1, class_1331 var2, class_2522 var3) {
+   public int method_26770(class_4924 var1, BlockPos var2, class_2522 var3) {
       Direction var6 = var3.<Direction>method_10313(field_1543);
       Direction var7 = var6.method_1042();
       Direction var8 = var6.method_1053();
       return Math.max(this.method_26766(var1, var2.method_6098(var7), var7), this.method_26766(var1, var2.method_6098(var8), var8));
    }
 
-   public int method_26766(class_4924 var1, class_1331 var2, Direction var3) {
+   public int method_26766(class_4924 var1, BlockPos var2, Direction var3) {
       class_2522 var6 = var1.method_28262(var2);
       if (!this.method_26763(var6)) {
          return 0;
@@ -133,28 +133,28 @@ public abstract class class_5877 extends class_380 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       if (this.method_26772(var1, var2, var3)) {
          var1.method_43367().method_14011(var2, this, 1);
       }
    }
 
    @Override
-   public void method_10760(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10760(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       this.method_26764(var2, var3, var1);
    }
 
    @Override
-   public void method_10761(class_2522 var1, World var2, class_1331 var3, class_2522 var4, boolean var5) {
+   public void method_10761(class_2522 var1, World var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var5 && !var1.method_8350(var4.method_8360())) {
          super.method_10761(var1, var2, var3, var4, var5);
          this.method_26764(var2, var3, var1);
       }
    }
 
-   public void method_26764(World var1, class_1331 var2, class_2522 var3) {
+   public void method_26764(World var1, BlockPos var2, class_2522 var3) {
       Direction var6 = var3.<Direction>method_10313(field_1543);
-      class_1331 var7 = var2.method_6098(var6.method_1046());
+      BlockPos var7 = var2.method_6098(var6.method_1046());
       var1.method_29520(var7, this, var2);
       var1.method_29526(var7, this, var6);
    }
@@ -163,7 +163,7 @@ public abstract class class_5877 extends class_380 {
       return var1.method_8355();
    }
 
-   public int method_26771(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public int method_26771(class_6163 var1, BlockPos var2, class_2522 var3) {
       return 15;
    }
 
@@ -171,7 +171,7 @@ public abstract class class_5877 extends class_380 {
       return var0.method_8360() instanceof class_5877;
    }
 
-   public boolean method_26768(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public boolean method_26768(class_6163 var1, BlockPos var2, class_2522 var3) {
       Direction var6 = var3.<Direction>method_10313(field_1543).method_1046();
       class_2522 var7 = var1.method_28262(var2.method_6098(var6));
       return method_26769(var7) && var7.<Direction>method_10313(field_1543) != var6;

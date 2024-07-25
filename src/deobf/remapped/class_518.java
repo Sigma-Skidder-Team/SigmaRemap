@@ -24,7 +24,7 @@ public class class_518 extends class_3599 {
          return false;
       } else {
          if (this.field_3169.method_37264()) {
-            class_1331 var3 = this.method_2534(this.field_3169.field_41768, this.field_3169, 5, 4);
+            BlockPos var3 = this.method_2534(this.field_3169.world, this.field_3169, 5, 4);
             if (var3 != null) {
                this.field_3166 = (double)var3.method_12173();
                this.field_3172 = (double)var3.method_12165();
@@ -70,13 +70,13 @@ public class class_518 extends class_3599 {
    }
 
    @Nullable
-   public class_1331 method_2534(class_6163 var1, Entity var2, int var3, int var4) {
-      class_1331 var7 = var2.method_37075();
+   public BlockPos method_2534(class_6163 var1, Entity var2, int var3, int var4) {
+      BlockPos var7 = var2.method_37075();
       int var8 = var7.method_12173();
       int var9 = var7.method_12165();
       int var10 = var7.method_12185();
       float var11 = (float)(var3 * var3 * var4 * 2);
-      class_1331 var12 = null;
+      BlockPos var12 = null;
       class_2921 var13 = new class_2921();
 
       for (int var14 = var8 - var3; var14 <= var8 + var3; var14++) {
@@ -87,7 +87,7 @@ public class class_518 extends class_3599 {
                   float var17 = (float)((var14 - var8) * (var14 - var8) + (var15 - var9) * (var15 - var9) + (var16 - var10) * (var16 - var10));
                   if (var17 < var11) {
                      var11 = var17;
-                     var12 = new class_1331(var13);
+                     var12 = new BlockPos(var13);
                   }
                }
             }

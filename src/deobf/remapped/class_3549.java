@@ -69,12 +69,12 @@ public class class_3549 implements class_1517 {
          if (this.field_17366.nextInt(10) != 0) {
             return false;
          } else {
-            class_1331 var5 = var4.method_37075();
+            BlockPos var5 = var4.method_37075();
             byte var6 = 48;
             class_1489 var7 = var1.method_28969();
             Optional var8 = var7.method_6876(class_236.field_783.method_1007(), var0 -> true, var5, 48, class_8122.field_41615);
-            class_1331 var9 = var8.orElse(var5);
-            class_1331 var10 = this.method_16516(var1, var9, 48);
+            BlockPos var9 = var8.orElse(var5);
+            BlockPos var10 = this.method_16516(var1, var9, 48);
             if (var10 != null && this.method_16517(var1, var10)) {
                if (var1.method_2754(var10).equals(Optional.<class_5621<class_6325>>of(class_8606.field_44126))) {
                   return false;
@@ -103,7 +103,7 @@ public class class_3549 implements class_1517 {
    }
 
    private void method_16515(class_6331 var1, class_6862 var2, int var3) {
-      class_1331 var6 = this.method_16516(var1, var2.method_37075(), var3);
+      BlockPos var6 = this.method_16516(var1, var2.method_37075(), var3);
       if (var6 != null) {
          class_9629 var7 = class_6629.field_34230
             .method_30478(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var6, class_2417.field_12040, false, false);
@@ -114,14 +114,14 @@ public class class_3549 implements class_1517 {
    }
 
    @Nullable
-   private class_1331 method_16516(class_4924 var1, class_1331 var2, int var3) {
-      class_1331 var6 = null;
+   private BlockPos method_16516(class_4924 var1, BlockPos var2, int var3) {
+      BlockPos var6 = null;
 
       for (int var7 = 0; var7 < 10; var7++) {
          int var8 = var2.method_12173() + this.field_17366.nextInt(var3 * 2) - var3;
          int var9 = var2.method_12185() + this.field_17366.nextInt(var3 * 2) - var3;
          int var10 = var1.method_22562(class_3801.field_18592, var8, var9);
-         class_1331 var11 = new class_1331(var8, var10, var9);
+         BlockPos var11 = new BlockPos(var8, var10, var9);
          if (class_3815.method_17767(class_1257.field_6935, var1, var11, class_6629.field_34303)) {
             var6 = var11;
             break;
@@ -131,8 +131,8 @@ public class class_3549 implements class_1517 {
       return var6;
    }
 
-   private boolean method_16517(class_6163 var1, class_1331 var2) {
-      for (class_1331 var6 : class_1331.method_6076(var2, var2.method_6104(1, 2, 1))) {
+   private boolean method_16517(class_6163 var1, BlockPos var2) {
+      for (BlockPos var6 : BlockPos.method_6076(var2, var2.method_6104(1, 2, 1))) {
          if (!var1.method_28262(var6).method_8324(var1, var6).method_19485()) {
             return false;
          }

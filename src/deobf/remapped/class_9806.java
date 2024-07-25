@@ -438,13 +438,13 @@ public class class_9806 {
       return var7;
    }
 
-   public static double method_45228(class_1331 var0, class_1331 var1) {
+   public static double method_45228(BlockPos var0, BlockPos var1) {
       double var4 = (double)var0.method_12173() - (double)var1.method_12173();
       double var6 = (double)var0.method_12185() - (double)var1.method_12185();
       return Math.sqrt(var4 * var6);
    }
 
-   public static double method_45224(class_1331 var0, class_1331 var1, class_1331 var2) {
+   public static double method_45224(BlockPos var0, BlockPos var1, BlockPos var2) {
       if (var1.field_13231 == var2.field_13231 && var1.field_13229 == var2.field_13229) {
          return method_45228(var0, var1);
       } else {

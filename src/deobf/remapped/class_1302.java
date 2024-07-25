@@ -16,7 +16,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public boolean method_11203(class_2522 var1, World var2, class_1331 var3, class_704 var4) {
+   public boolean method_11203(class_2522 var1, World var2, BlockPos var3, class_704 var4) {
       return !var4.method_3186();
    }
 
@@ -42,7 +42,7 @@ public class class_1302 extends class_2451 implements class_1538 {
                   var1.method_28003(1, var7, var1x -> var1x.method_26447(var3.method_26500()));
                   if (var9 == 0) {
                      class_3348 var10 = new class_3348(var2, var7, var1);
-                     var10.method_26158(var7, var7.field_41755, var7.field_41701, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
+                     var10.method_26158(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
                      if (var7.playerAbilities.isCreativeMode) {
                         var10.field_34835 = class_4237.field_20565;
                      }
@@ -57,8 +57,8 @@ public class class_1302 extends class_2451 implements class_1538 {
 
                var7.method_3211(class_6234.field_31907.method_43790(this));
                if (var9 > 0) {
-                  float var18 = var7.field_41701;
-                  float var11 = var7.field_41755;
+                  float var18 = var7.rotationYaw;
+                  float var11 = var7.rotationPitch;
                   float var12 = -class_9299.method_42818(var18 * (float) (Math.PI / 180.0)) * class_9299.method_42840(var11 * (float) (Math.PI / 180.0));
                   float var13 = -class_9299.method_42818(var11 * (float) (Math.PI / 180.0));
                   float var14 = class_9299.method_42840(var18 * (float) (Math.PI / 180.0)) * class_9299.method_42840(var11 * (float) (Math.PI / 180.0));
@@ -93,7 +93,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
       if (var6.method_28026() < var6.method_27957() - 1) {
          if (class_2931.method_13415(var6) > 0 && !var2.method_37363()) {
@@ -114,7 +114,7 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, BlockPos var4, class_5834 var5) {
       if ((double)var3.method_8341(var2, var4) != 0.0) {
          var1.method_28003(2, var5, var0 -> var0.method_26448(class_6943.field_35707));
       }

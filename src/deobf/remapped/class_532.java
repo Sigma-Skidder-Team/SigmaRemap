@@ -65,12 +65,12 @@ public class class_532 extends class_3558 {
    }
 
    private void method_2589(double var1, double var3, double var5, double var7, float var9, int var10) {
-      class_1331 var13 = new class_1331(var1, var7, var3);
+      BlockPos var13 = new BlockPos(var1, var7, var3);
       boolean var14 = false;
       double var15 = 0.0;
 
       while (true) {
-         class_1331 var17 = var13.method_6100();
+         BlockPos var17 = var13.method_6100();
          class_2522 var18 = this.field_3238.field_41768.method_28262(var17);
          if (!var18.method_8308(this.field_3238.field_41768, var17, Direction.field_817)) {
             var13 = var13.method_6100();

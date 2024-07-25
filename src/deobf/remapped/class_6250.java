@@ -67,7 +67,7 @@ public interface class_6250 {
       if (!class_3572.field_17480.test(var1)) {
          return false;
       } else {
-         return var1.method_37387() == class_6629.field_34300 && this.method_28527(var1.field_41768) ? true : var1.method_37328().equals(this.method_28535());
+         return var1.method_37387() == class_6629.field_34300 && this.method_28527(var1.world) ? true : var1.method_37328().equals(this.method_28535());
       }
    }
 
@@ -80,7 +80,7 @@ public interface class_6250 {
    }
 
    default void method_28526(class_704 var1) {
-      if (var1.field_41768.method_29537().method_1285(class_291.field_1042) && var1.method_37328().equals(this.method_28535())) {
+      if (var1.world.method_29537().method_1285(class_291.field_1042) && var1.method_37328().equals(this.method_28535())) {
          this.method_28538();
       }
    }

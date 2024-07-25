@@ -7,11 +7,11 @@ public class class_8600 extends class_8131 {
    private final class_6631 field_44042;
    private final class_9022 field_44043;
 
-   public class_8600(class_5799 var1, String var2, class_1331 var3, class_6631 var4) {
+   public class_8600(class_5799 var1, String var2, BlockPos var3, class_6631 var4) {
       this(var1, var2, var3, var4, class_9022.field_46145);
    }
 
-   public class_8600(class_5799 var1, String var2, class_1331 var3, class_6631 var4, class_9022 var5) {
+   public class_8600(class_5799 var1, String var2, BlockPos var3, class_6631 var4, class_9022 var5) {
       super(class_2746.field_13442, 0);
       this.field_44044 = var2;
       this.field_41648 = var3;
@@ -43,7 +43,7 @@ public class class_8600 extends class_8131 {
    }
 
    @Override
-   public void method_36999(String var1, class_1331 var2, class_1556 var3, Random var4, class_9616 var5) {
+   public void method_36999(String var1, BlockPos var2, class_1556 var3, Random var4, class_9616 var5) {
       if (var1.startsWith("Chest")) {
          class_6631 var8 = this.field_41650.method_39056();
          class_2522 var9 = class_4783.field_23471.method_29260();

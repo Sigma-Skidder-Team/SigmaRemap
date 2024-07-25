@@ -126,7 +126,7 @@ public class class_3411 {
          class_6331 var9 = var0.method_42198();
          int var10 = 0;
 
-         for (class_1331 var12 : class_1331.method_6075(
+         for (BlockPos var12 : BlockPos.method_6075(
             var1.field_48996, var1.field_48995, var1.field_48992, var1.field_48991, var1.field_48993, var1.field_48994
          )) {
             if (var4 == null || var4.test(new class_9115(var9, var12, true))) {
@@ -142,7 +142,7 @@ public class class_3411 {
             }
          }
 
-         for (class_1331 var16 : var8) {
+         for (BlockPos var16 : var8) {
             class_6414 var17 = var9.method_28262(var16).method_8360();
             var9.method_43369(var16, var17);
          }

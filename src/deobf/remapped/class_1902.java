@@ -25,7 +25,7 @@ public class class_1902 {
             }
          }
       } else {
-         this.field_9712.field_29605 = this.field_9712.field_41701;
+         this.field_9712.field_29605 = this.field_9712.rotationYaw;
          this.method_8642();
          this.field_9709 = this.field_9712.field_29618;
          this.field_9711 = 0;

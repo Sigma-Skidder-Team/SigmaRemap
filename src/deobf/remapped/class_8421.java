@@ -152,7 +152,7 @@ public class class_8421 {
       }
    }
 
-   public static int method_38765(class_1331 var0, int var1) {
+   public static int method_38765(BlockPos var0, int var1) {
       double var4 = method_38770(var0);
       return method_38764(var4, var1);
    }
@@ -180,7 +180,7 @@ public class class_8421 {
       return var2;
    }
 
-   public static double method_38770(class_1331 var0) {
+   public static double method_38770(BlockPos var0) {
       double var3 = 0.0;
       synchronized (field_43070) {
          List var6 = field_43070.method_17191();

@@ -48,7 +48,7 @@ public class class_1225 {
       var0.method_26525().method_5105(class_6044.field_30889, var6);
    }
 
-   public static void method_5446(class_5834 var0, class_1331 var1, float var2, int var3) {
+   public static void method_5446(class_5834 var0, BlockPos var1, float var2, int var3) {
       class_6651 var6 = new class_6651(new class_2933(var1), var2, var3);
       var0.method_26525().method_5105(class_6044.field_30874, new class_2933(var1));
       var0.method_26525().method_5105(class_6044.field_30889, var6);
@@ -56,13 +56,13 @@ public class class_1225 {
 
    public static void method_5439(class_5834 var0, ItemStack var1, class_1343 var2) {
       double var5 = var0.method_37388() - 0.3F;
-      class_91 var7 = new class_91(var0.field_41768, var0.method_37302(), var5, var0.method_37156(), var1);
+      class_91 var7 = new class_91(var0.world, var0.method_37302(), var5, var0.method_37156(), var1);
       float var8 = 0.3F;
       class_1343 var9 = var2.method_6194(var0.method_37245());
       var9 = var9.method_6213().method_6209(0.3F);
       var7.method_37215(var9);
       var7.method_257();
-      var0.field_41768.method_7509(var7);
+      var0.world.method_7509(var7);
    }
 
    public static class_6979 method_5456(class_6331 var0, class_6979 var1, int var2) {
@@ -114,7 +114,7 @@ public class class_1225 {
 
    public static Optional<class_5834> method_5454(class_5834 var0, class_6044<UUID> var1) {
       Optional var4 = var0.method_26525().method_5138(var1);
-      return var4.<class_5834>map(var1x -> (class_5834)((class_6331)var0.field_41768).method_28925(var1x));
+      return var4.<class_5834>map(var1x -> (class_5834)((class_6331)var0.world).method_28925(var1x));
    }
 
    public static Stream<class_7666> method_5455(class_7666 var0, Predicate<class_7666> var1) {

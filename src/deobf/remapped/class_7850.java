@@ -6,7 +6,7 @@ public class class_7850 implements class_5561 {
    private static String[] field_39782;
    public final int field_39775;
    public final int field_39783;
-   public final class_1331 field_39784;
+   public final BlockPos field_39784;
    public final int field_39776;
    public final int field_39781;
    public final int field_39780;
@@ -16,11 +16,11 @@ public class class_7850 implements class_5561 {
    public final World field_39779;
 
    @Nullable
-   public static class_7850 method_35515(World var0, class_1331 var1, class_1331 var2, int var3) {
+   public static class_7850 method_35515(World var0, BlockPos var1, BlockPos var2, int var3) {
       return method_35516(var0, var1, var2, var3, true);
    }
 
-   public static class_7850 method_35516(World var0, class_1331 var1, class_1331 var2, int var3, boolean var4) {
+   public static class_7850 method_35516(World var0, BlockPos var1, BlockPos var2, int var3, boolean var4) {
       int var7 = var1.method_12173() - var3 >> 4;
       int var8 = var1.method_12185() - var3 >> 4;
       int var9 = var2.method_12173() + var3 >> 4;
@@ -37,13 +37,13 @@ public class class_7850 implements class_5561 {
          return null;
       } else {
          boolean var15 = true;
-         class_1331 var16 = var1.method_6104(-1, -1, -1);
-         class_1331 var14 = var2.method_6104(1, 1, 1);
+         BlockPos var16 = var1.method_6104(-1, -1, -1);
+         BlockPos var14 = var2.method_6104(1, 1, 1);
          return new class_7850(var0, var7, var8, var11, var16, var14);
       }
    }
 
-   public static boolean method_35521(class_1331 var0, class_1331 var1, int var2, int var3, class_2654[][] var4) {
+   public static boolean method_35521(BlockPos var0, BlockPos var1, int var2, int var3, class_2654[][] var4) {
       for (int var7 = var0.method_12173() >> 4; var7 <= var1.method_12173() >> 4; var7++) {
          for (int var8 = var0.method_12185() >> 4; var8 <= var1.method_12185() >> 4; var8++) {
             class_2654 var9 = var4[var7 - var2][var8 - var3];
@@ -56,7 +56,7 @@ public class class_7850 implements class_5561 {
       return true;
    }
 
-   public class_7850(World var1, int var2, int var3, class_2654[][] var4, class_1331 var5, class_1331 var6) {
+   public class_7850(World var1, int var2, int var3, class_2654[][] var4, BlockPos var5, BlockPos var6) {
       this.field_39779 = var1;
       this.field_39775 = var2;
       this.field_39783 = var3;
@@ -69,7 +69,7 @@ public class class_7850 implements class_5561 {
       this.field_39777 = null;
    }
 
-   public final int method_35520(class_1331 var1) {
+   public final int method_35520(BlockPos var1) {
       return this.method_35519(var1.method_12173(), var1.method_12165(), var1.method_12185());
    }
 
@@ -81,14 +81,14 @@ public class class_7850 implements class_5561 {
    }
 
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       int var4 = (var1.method_12173() >> 4) - this.field_39775;
       int var5 = (var1.method_12185() >> 4) - this.field_39783;
       return this.field_39774[var4][var5].method_28262(var1);
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       int var4 = (var1.method_12173() >> 4) - this.field_39775;
       int var5 = (var1.method_12185() >> 4) - this.field_39783;
       return this.field_39774[var4][var5].method_28258(var1);
@@ -106,23 +106,23 @@ public class class_7850 implements class_5561 {
 
    @Nullable
    @Override
-   public class_3757 method_28260(class_1331 var1) {
+   public class_3757 method_28260(BlockPos var1) {
       return this.method_35518(var1, class_1628.field_8478);
    }
 
    @Nullable
-   public class_3757 method_35518(class_1331 var1, class_1628 var2) {
+   public class_3757 method_35518(BlockPos var1, class_1628 var2) {
       int var5 = (var1.method_12173() >> 4) - this.field_39775;
       int var6 = (var1.method_12185() >> 4) - this.field_39783;
       return this.field_39774[var5][var6].method_11988(var1, var2);
    }
 
    @Override
-   public int method_25262(class_1331 var1, class_6581 var2) {
+   public int method_25262(BlockPos var1, class_6581 var2) {
       return this.field_39779.method_25262(var1, var2);
    }
 
-   public class_6325 method_35513(class_1331 var1) {
+   public class_6325 method_35513(BlockPos var1) {
       return this.field_39779.method_22561(var1);
    }
 

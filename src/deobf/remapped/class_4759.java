@@ -20,7 +20,7 @@ public abstract class class_4759 extends class_3798 {
    }
 
    @Override
-   public void method_10722(World var1, class_1331 var2, class_4774 var3, Random var4) {
+   public void method_10722(World var1, BlockPos var2, class_4774 var3, Random var4) {
       if (!var3.method_21993() && !var3.<Boolean>method_10313(field_18532)) {
          if (var4.nextInt(64) == 0) {
             var1.method_29527(
@@ -59,7 +59,7 @@ public abstract class class_4759 extends class_3798 {
    }
 
    @Override
-   public void method_17664(class_9379 var1, class_1331 var2, class_2522 var3) {
+   public void method_17664(class_9379 var1, BlockPos var2, class_2522 var3) {
       class_3757 var6 = !var3.method_8360().method_10802() ? null : var1.method_28260(var2);
       class_6414.method_29296(var3, var1, var2, var6);
    }
@@ -90,7 +90,7 @@ public abstract class class_4759 extends class_3798 {
    }
 
    @Override
-   public boolean method_10709(class_4774 var1, class_6163 var2, class_1331 var3, class_2340 var4, Direction var5) {
+   public boolean method_10709(class_4774 var1, class_6163 var2, BlockPos var3, class_2340 var4, Direction var5) {
       return var5 == Direction.field_802 && !var4.method_10724(class_6503.field_33094);
    }
 

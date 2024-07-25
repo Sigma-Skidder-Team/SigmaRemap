@@ -209,9 +209,9 @@ public class class_654 {
       );
    }
 
-   private static int method_3009(class_9155 var0, class_1331 var1, class_1331 var2, class_1331 var3, Predicate<class_9115> var4, class_6648 var5) throws CommandSyntaxException {
+   private static int method_3009(class_9155 var0, BlockPos var1, BlockPos var2, BlockPos var3, Predicate<class_9115> var4, class_6648 var5) throws CommandSyntaxException {
       class_9616 var8 = new class_9616(var1, var2);
-      class_1331 var9 = var3.method_6105(var8.method_44394());
+      BlockPos var9 = var3.method_6105(var8.method_44394());
       class_9616 var10 = new class_9616(var3, var9);
       if (!var5.method_30543() && var10.method_44402(var8)) {
          throw field_3640.create();
@@ -226,15 +226,15 @@ public class class_654 {
                ArrayList var14 = Lists.newArrayList();
                ArrayList var15 = Lists.newArrayList();
                LinkedList var16 = Lists.newLinkedList();
-               class_1331 var17 = new class_1331(
+               BlockPos var17 = new BlockPos(
                   var10.field_48996 - var8.field_48996, var10.field_48995 - var8.field_48995, var10.field_48992 - var8.field_48992
                );
 
                for (int var18 = var8.field_48992; var18 <= var8.field_48994; var18++) {
                   for (int var19 = var8.field_48995; var19 <= var8.field_48993; var19++) {
                      for (int var20 = var8.field_48996; var20 <= var8.field_48991; var20++) {
-                        class_1331 var21 = new class_1331(var20, var19, var18);
-                        class_1331 var22 = var21.method_6105(var17);
+                        BlockPos var21 = new BlockPos(var20, var19, var18);
+                        BlockPos var22 = var21.method_6105(var17);
                         class_9115 var23 = new class_9115(var12, var21, false);
                         class_2522 var24 = var23.method_41968();
                         if (var4.test(var23)) {
@@ -258,13 +258,13 @@ public class class_654 {
                }
 
                if (var5 == class_6648.field_34403) {
-                  for (class_1331 var30 : var16) {
+                  for (BlockPos var30 : var16) {
                      class_3757 var33 = var12.method_28260(var30);
                      class_5507.method_24976(var33);
                      var12.method_7513(var30, class_4783.field_23207.method_29260(), 2);
                   }
 
-                  for (class_1331 var31 : var16) {
+                  for (BlockPos var31 : var16) {
                      var12.method_7513(var31, class_4783.field_23184.method_29260(), 3);
                   }
                }

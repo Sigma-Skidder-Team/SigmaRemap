@@ -3,15 +3,15 @@ package remapped;
 public class class_4717 extends class_9153 {
    private static String[] field_22887;
    private boolean field_22886 = false;
-   private class_1331 field_22889 = null;
+   private BlockPos field_22889 = null;
    private Entity field_22888 = null;
 
-   public class_4717(MinecraftClient var1, class_1092 var2) {
+   public class_4717(MinecraftClient var1, ClientPlayNetHandler var2) {
       super(var1, var2);
    }
 
    @Override
-   public boolean method_42142(class_1331 var1, Direction var2) {
+   public boolean method_42142(BlockPos var1, Direction var2) {
       this.field_22886 = true;
       this.field_22889 = var1;
       boolean var5 = super.method_42142(var1, var2);
@@ -20,7 +20,7 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public boolean method_42163(class_1331 var1, Direction var2) {
+   public boolean method_42163(BlockPos var1, Direction var2) {
       this.field_22886 = true;
       this.field_22889 = var1;
       boolean var5 = super.method_42163(var1, var2);
@@ -29,7 +29,7 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42155(class_704 var1, World var2, class_2584 var3) {
+   public class_6910 method_42155(class_704 var1, World var2, Hand var3) {
       this.field_22886 = true;
       class_6910 var6 = super.method_42155(var1, var2, var3);
       this.field_22886 = false;
@@ -37,7 +37,7 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42147(ClientPlayerEntity var1, ClientWorld var2, class_2584 var3, class_9529 var4) {
+   public class_6910 method_42147(ClientPlayerEntity var1, ClientWorld var2, Hand var3, class_9529 var4) {
       this.field_22886 = true;
       this.field_22889 = var4.method_43955();
       class_6910 var7 = super.method_42147(var1, var2, var3, var4);
@@ -46,13 +46,13 @@ public class class_4717 extends class_9153 {
    }
 
    @Override
-   public class_6910 method_42144(class_704 var1, Entity var2, class_2584 var3) {
+   public class_6910 method_42144(class_704 var1, Entity var2, Hand var3) {
       this.field_22888 = var2;
       return super.method_42144(var1, var2, var3);
    }
 
    @Override
-   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, class_2584 var4) {
+   public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, Hand var4) {
       this.field_22888 = var2;
       return super.method_42145(var1, var2, var3, var4);
    }
@@ -61,7 +61,7 @@ public class class_4717 extends class_9153 {
       return this.field_22886;
    }
 
-   public class_1331 method_21812() {
+   public BlockPos method_21812() {
       return this.field_22889;
    }
 

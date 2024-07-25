@@ -29,7 +29,7 @@ public class class_7018<T extends class_5886> extends class_3599 {
    @Override
    public void method_16796() {
       this.field_35971.method_37349(class_6943.field_35707, this.field_35970.method_27973());
-      this.field_35971.method_26462(class_2584.field_12791);
+      this.field_35971.method_26462(Hand.MAIN_HAND);
    }
 
    @Override

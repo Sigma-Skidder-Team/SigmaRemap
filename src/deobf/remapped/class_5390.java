@@ -118,7 +118,7 @@ public abstract class class_5390<C extends class_6157> {
    }
 
    @Nullable
-   public class_1331 method_24548(class_4924 var1, class_2033 var2, class_1331 var3, int var4, boolean var5, long var6, class_4757 var8) {
+   public BlockPos method_24548(class_4924 var1, class_2033 var2, BlockPos var3, int var4, boolean var5, long var6, class_4757 var8) {
       int var11 = var8.method_21953();
       int var12 = var3.method_12173() >> 4;
       int var13 = var3.method_12185() >> 4;

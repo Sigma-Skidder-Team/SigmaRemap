@@ -12,7 +12,7 @@ public class class_1378 extends class_3418 {
    }
 
    @Override
-   public boolean method_15772(class_9379 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_15772(class_9379 var1, Random var2, BlockPos var3, class_2522 var4) {
       class_2921 var7 = var3.method_6089();
       int var8 = var2.nextInt(3) + 1;
 
@@ -24,7 +24,7 @@ public class class_1378 extends class_3418 {
          var7.method_13368(Direction.field_817);
       }
 
-      class_1331 var17 = var7.method_6072();
+      BlockPos var17 = var7.method_6072();
       int var10 = var2.nextInt(3) + 2;
       ArrayList var11 = Lists.newArrayList(class_9594.field_48893);
       Collections.shuffle(var11, var2);

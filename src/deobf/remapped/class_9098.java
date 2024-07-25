@@ -14,7 +14,7 @@ public class class_9098 extends class_2103 {
 
    @Nullable
    @Override
-   public class_4099 method_9859(class_4924 var1, class_1331 var2, class_1331 var3, class_4099 var4, class_4099 var5, class_8478 var6) {
+   public class_4099 method_9859(class_4924 var1, BlockPos var2, BlockPos var3, class_4099 var4, class_4099 var5, class_8478 var6) {
       Random var9 = var6.method_39052(var5.field_19965);
       return !(this.field_46604 >= 1.0F) && !(var9.nextFloat() <= this.field_46604) ? null : var5;
    }

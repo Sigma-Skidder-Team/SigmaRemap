@@ -14,16 +14,16 @@ public abstract class class_7067<T extends Entity> {
    }
 
    public final int method_32554(T var1, float var2) {
-      class_1331 var5 = new class_1331(var1.method_37339(var2));
+      BlockPos var5 = new BlockPos(var1.method_37339(var2));
       return class_5778.method_26127(this.method_32546((T)var1, var5), this.method_32552((T)var1, var5));
    }
 
-   public int method_32552(T var1, class_1331 var2) {
-      return var1.field_41768.method_25266(class_2957.field_14437, var2);
+   public int method_32552(T var1, BlockPos var2) {
+      return var1.world.method_25266(class_2957.field_14437, var2);
    }
 
-   public int method_32546(T var1, class_1331 var2) {
-      return !var1.method_37264() ? var1.field_41768.method_25266(class_2957.field_14440, var2) : 15;
+   public int method_32546(T var1, BlockPos var2) {
+      return !var1.method_37264() ? var1.world.method_25266(class_2957.field_14440, var2) : 15;
    }
 
    public boolean method_32548(T var1, class_2359 var2, double var3, double var5, double var7) {

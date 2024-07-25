@@ -44,8 +44,8 @@ public class TracersModule extends Module {
       double var6 = class_9189.method_42353(var1).field_42646 + (double)(var1.method_37074() / 2.0F);
       double var8 = class_9189.method_42353(var1).field_42649;
       class_1343 var10 = new class_1343(0.0, 0.0, 10.0)
-         .method_6212(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.field_41755)))
-         .method_6192(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.field_41701)));
+         .method_6212(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.rotationPitch)))
+         .method_6192(-((float)Math.toRadians((double) MinecraftClient.getInstance().thePlayer.rotationYaw)));
       int var11 = this.getIntValueByName("Color");
       GL11.glBegin(1);
       GL11.glColor4fv(class_314.method_1412(class_314.method_1444(var11, 0.45F)));

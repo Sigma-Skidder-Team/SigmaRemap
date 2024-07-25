@@ -52,9 +52,9 @@ public class class_3394 extends class_1871 {
                )
                .method_6213();
             class_1343 var16 = new class_1343(
-                  (double)class_9299.method_42818(this.field_9479.field_41701 * (float) (Math.PI / 180.0)),
+                  (double)class_9299.method_42818(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)),
                   0.0,
-                  (double)(-class_9299.method_42840(this.field_9479.field_41701 * (float) (Math.PI / 180.0)))
+                  (double)(-class_9299.method_42840(this.field_9479.rotationYaw * (float) (Math.PI / 180.0)))
                )
                .method_6213();
             float var17 = (float)var16.method_6206(var15);
@@ -70,12 +70,12 @@ public class class_3394 extends class_1871 {
                double var28 = this.field_16723.method_37080(0.5) - var22;
                double var30 = this.field_16723.method_37156() - var24;
                if (!this.field_9479.method_37378()) {
-                  this.field_9479.field_41768.method_43365((class_704)null, 1017, this.field_9479.method_37075(), 0);
+                  this.field_9479.world.method_43365((class_704)null, 1017, this.field_9479.method_37075(), 0);
                }
 
-               class_2844 var32 = new class_2844(this.field_9479.field_41768, this.field_9479, var26, var28, var30);
+               class_2844 var32 = new class_2844(this.field_9479.world, this.field_9479, var26, var28, var30);
                var32.method_37144(var20, var22, var24, 0.0F, 0.0F);
-               this.field_9479.field_41768.method_7509(var32);
+               this.field_9479.world.method_7509(var32);
                this.field_16721 = 0;
                if (this.field_16719 != null) {
                   while (!this.field_16719.method_18436()) {
@@ -129,7 +129,7 @@ public class class_3394 extends class_1871 {
 
    private void method_15683() {
       if (this.field_16719 != null && !this.field_16719.method_18436()) {
-         class_1331 var3 = this.field_16719.method_18449();
+         BlockPos var3 = this.field_16719.method_18449();
          this.field_16719.method_18434();
          double var4 = (double)var3.method_12173();
          double var6 = (double)var3.method_12185();

@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import java.util.Optional;
 import java.util.Random;
 
-public class class_6776 implements class_3753 {
+public class BiomeSoundHandler implements IAmbientSoundHandler {
    private static String[] field_34966;
    private final ClientPlayerEntity field_34963;
    private final class_3541 field_34964;
@@ -16,8 +16,8 @@ public class class_6776 implements class_3753 {
    private float field_34959;
    private class_6325 field_34958;
 
-   public class_6776(ClientPlayerEntity var1, class_3541 var2, class_859 var3) {
-      this.field_34961 = var1.field_41768.method_43360();
+   public BiomeSoundHandler(ClientPlayerEntity var1, class_3541 var2, class_859 var3) {
+      this.field_34961 = var1.world.method_43360();
       this.field_34963 = var1;
       this.field_34964 = var2;
       this.field_34960 = var3;
@@ -40,7 +40,7 @@ public class class_6776 implements class_3753 {
             class_7311 var5 = (class_7311)this.field_34967.compute(var3, (var2x, var3x) -> {
                if (var3x == null) {
                   var3x = new class_7311(var2);
-                  this.field_34964.method_16345(var3x);
+                  this.field_34964.play(var3x);
                }
 
                var3x.method_33353();
@@ -51,15 +51,15 @@ public class class_6776 implements class_3753 {
 
       this.field_34965.ifPresent(var1 -> {
          if (this.field_34961.nextDouble() < var1.method_18054()) {
-            this.field_34964.method_16345(class_4949.method_22681(var1.method_18056()));
+            this.field_34964.play(class_4949.method_22681(var1.method_18056()));
          }
       });
       this.field_34962
          .ifPresent(
             var1 -> {
-               World var4 = this.field_34963.field_41768;
+               World var4 = this.field_34963.world;
                int var5 = var1.method_14589() * 2 + 1;
-               class_1331 var6 = new class_1331(
+               BlockPos var6 = new BlockPos(
                   this.field_34963.method_37302() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589(),
                   this.field_34963.method_37388() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589(),
                   this.field_34963.method_37156() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589()
@@ -88,7 +88,7 @@ public class class_6776 implements class_3753 {
                      this.field_34963.method_37388() + var16 / var20 * var22,
                      this.field_34963.method_37156() + var18 / var20 * var22
                   );
-                  this.field_34964.method_16345(var24);
+                  this.field_34964.play(var24);
                   this.field_34959 = 0.0F;
                }
             }

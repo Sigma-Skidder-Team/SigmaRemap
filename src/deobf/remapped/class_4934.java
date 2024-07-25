@@ -16,7 +16,7 @@ public class class_4934 extends class_7067<class_1453> {
          World var10 = var1.method_6689();
          if (var9 != var10.method_28262(var1.method_37075()) && var9.method_8352() != class_7537.field_38470) {
             var4.method_36063();
-            class_1331 var11 = new class_1331(var1.method_37302(), var1.method_37241().field_19939, var1.method_37156());
+            BlockPos var11 = new BlockPos(var1.method_37302(), var1.method_37241().field_19939, var1.method_37156());
             var4.method_36065(-0.5, 0.0, -0.5);
             class_856 var12 = MinecraftClient.getInstance().method_8505();
             var12.method_3717()

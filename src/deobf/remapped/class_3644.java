@@ -20,7 +20,7 @@ public interface class_3644 {
       return (class_7373)class_7860.field_40007.method_3582(this.method_16968(), var1, var2);
    }
 
-   default class_1488 method_16964(class_5561 var1, class_1331 var2, class_2522 var3, class_1488 var4) {
+   default class_1488 method_16964(class_5561 var1, BlockPos var2, class_2522 var3, class_1488 var4) {
       return var4;
    }
 

@@ -92,17 +92,17 @@ public class class_5177 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.field_26645.get(var1);
    }
 
    @Override
-   public class_4190 method_10775(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10775(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.field_26648.get(var1);
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 
@@ -115,13 +115,13 @@ public class class_5177 extends class_6414 implements class_2593 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       World var4 = var1.method_21862();
-      class_1331 var5 = var1.method_21858();
+      BlockPos var5 = var1.method_21858();
       class_4774 var6 = var1.method_21862().method_28258(var1.method_21858());
-      class_1331 var7 = var5.method_6094();
-      class_1331 var8 = var5.method_6090();
-      class_1331 var9 = var5.method_6073();
-      class_1331 var10 = var5.method_6108();
-      class_1331 var11 = var5.method_6081();
+      BlockPos var7 = var5.method_6094();
+      BlockPos var8 = var5.method_6090();
+      BlockPos var9 = var5.method_6073();
+      BlockPos var10 = var5.method_6108();
+      BlockPos var11 = var5.method_6081();
       class_2522 var12 = var4.method_28262(var7);
       class_2522 var13 = var4.method_28262(var8);
       class_2522 var14 = var4.method_28262(var9);
@@ -136,7 +136,7 @@ public class class_5177 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method_10313(field_26653)) {
          var4.method_43362().method_14011(var5, class_8532.field_43674, class_8532.field_43674.method_10711(var4));
       }
@@ -156,7 +156,7 @@ public class class_5177 extends class_6414 implements class_2593 {
       return !class_3370.method_15537(var1, var0, class_8529.field_43656);
    }
 
-   private class_2522 method_23731(class_4924 var1, class_2522 var2, class_1331 var3, class_2522 var4) {
+   private class_2522 method_23731(class_4924 var1, class_2522 var2, BlockPos var3, class_2522 var4) {
       boolean var7 = method_23730(var2, field_26641);
       boolean var8 = method_23730(var2, field_26643);
       boolean var9 = method_23730(var2, field_26652);
@@ -164,18 +164,18 @@ public class class_5177 extends class_6414 implements class_2593 {
       return this.method_23732(var1, var2, var3, var4, var7, var8, var9, var10);
    }
 
-   private class_2522 method_23735(class_4924 var1, class_1331 var2, class_2522 var3, class_1331 var4, class_2522 var5, Direction var6) {
+   private class_2522 method_23735(class_4924 var1, BlockPos var2, class_2522 var3, BlockPos var4, class_2522 var5, Direction var6) {
       Direction var9 = var6.method_1046();
       boolean var10 = var6 != Direction.field_818 ? method_23730(var3, field_26641) : this.method_23739(var5, var5.method_8308(var1, var4, var9), var9);
       boolean var11 = var6 != Direction.field_804 ? method_23730(var3, field_26643) : this.method_23739(var5, var5.method_8308(var1, var4, var9), var9);
       boolean var12 = var6 != Direction.field_800 ? method_23730(var3, field_26652) : this.method_23739(var5, var5.method_8308(var1, var4, var9), var9);
       boolean var13 = var6 != Direction.field_809 ? method_23730(var3, field_26642) : this.method_23739(var5, var5.method_8308(var1, var4, var9), var9);
-      class_1331 var14 = var2.method_6081();
+      BlockPos var14 = var2.method_6081();
       class_2522 var15 = var1.method_28262(var14);
       return this.method_23732(var1, var3, var14, var15, var10, var11, var12, var13);
    }
 
-   private class_2522 method_23732(class_4924 var1, class_2522 var2, class_1331 var3, class_2522 var4, boolean var5, boolean var6, boolean var7, boolean var8) {
+   private class_2522 method_23732(class_4924 var1, class_2522 var2, BlockPos var3, class_2522 var4, boolean var5, boolean var6, boolean var7, boolean var8) {
       class_4190 var11 = var4.method_8324(var1, var3).method_19494(Direction.field_802);
       class_2522 var12 = this.method_23738(var2, var5, var6, var7, var8, var11);
       return var12.method_10308(field_26651, Boolean.valueOf(this.method_23733(var12, var4, var11)));
@@ -226,7 +226,7 @@ public class class_5177 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public boolean method_29275(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_29275(class_2522 var1, class_6163 var2, BlockPos var3) {
       return !var1.<Boolean>method_10313(field_26653);
    }
 

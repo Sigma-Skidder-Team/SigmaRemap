@@ -103,7 +103,7 @@ public class class_912 extends class_1173 implements class_6250 {
       if (this.field_41697 >= this.field_4679 + 400) {
          this.field_4679 = this.field_41697;
          if (!this.method_37378()) {
-            this.field_41768
+            this.world
                .method_29527(this.method_37302(), this.method_37388(), this.method_37156(), class_463.field_2369, this.method_37197(), 2.5F, 1.0F, false);
          }
       }
@@ -111,7 +111,7 @@ public class class_912 extends class_1173 implements class_6250 {
 
    @Override
    public void method_37191(class_7821<?> var1) {
-      if (field_4678.equals(var1) && this.method_3916() && this.field_41768.field_33055) {
+      if (field_4678.equals(var1) && this.method_3916() && this.world.field_33055) {
          this.method_3907();
       }
 
@@ -141,7 +141,7 @@ public class class_912 extends class_1173 implements class_6250 {
       }
 
       this.method_3915(var4);
-      this.method_28533((class_6331)this.field_41768, var1);
+      this.method_28533((class_6331)this.world, var1);
    }
 
    private boolean method_3905(class_704 var1) {
@@ -167,9 +167,9 @@ public class class_912 extends class_1173 implements class_6250 {
 
    @Override
    public void method_26606() {
-      if (this.field_41768.field_33055) {
+      if (this.world.field_33055) {
          for (int var3 = 0; var3 < 2; var3++) {
-            this.field_41768
+            this.world
                .method_43361(
                   class_3090.field_15356,
                   this.method_37361(0.5),
@@ -183,8 +183,8 @@ public class class_912 extends class_1173 implements class_6250 {
       }
 
       this.field_29654 = false;
-      if (!this.field_41768.field_33055) {
-         this.method_28530((class_6331)this.field_41768, true);
+      if (!this.world.field_33055) {
+         this.method_28530((class_6331)this.world, true);
       }
 
       super.method_26606();
@@ -197,9 +197,9 @@ public class class_912 extends class_1173 implements class_6250 {
 
    @Override
    public void method_26919() {
-      if (this.field_41768.method_29602() && this.field_41697 >= this.field_4677 + 600) {
+      if (this.world.method_29602() && this.field_41697 >= this.field_4677 + 600) {
          float var3 = this.method_37193();
-         if (var3 > 0.5F && this.field_41768.method_25263(this.method_37075()) && this.field_41717.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
+         if (var3 > 0.5F && this.world.method_25263(this.method_37075()) && this.field_41717.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
             this.method_26860((class_5834)null);
             this.method_3914();
          }
@@ -209,7 +209,7 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    public boolean method_3914() {
-      if (!this.field_41768.method_22567() && this.method_37330()) {
+      if (!this.world.method_22567() && this.method_37330()) {
          double var3 = this.method_37302() + (this.field_41717.nextDouble() - 0.5) * 64.0;
          double var5 = this.method_37309() + (double)(this.field_41717.nextInt(64) - 32);
          double var7 = this.method_37156() + (this.field_41717.nextDouble() - 0.5) * 64.0;
@@ -234,17 +234,17 @@ public class class_912 extends class_1173 implements class_6250 {
    private boolean method_3912(double var1, double var3, double var5) {
       class_2921 var9 = new class_2921(var1, var3, var5);
 
-      while (var9.method_12165() > 0 && !this.field_41768.method_28262(var9).method_8362().method_24502()) {
+      while (var9.method_12165() > 0 && !this.world.method_28262(var9).method_8362().method_24502()) {
          var9.method_13368(Direction.field_802);
       }
 
-      class_2522 var10 = this.field_41768.method_28262(var9);
+      class_2522 var10 = this.world.method_28262(var9);
       boolean var11 = var10.method_8362().method_24502();
       boolean var12 = var10.method_8364().method_22007(class_6503.field_33094);
       if (var11 && !var12) {
          boolean var13 = this.method_26499(var1, var3, var5, true);
          if (var13 && !this.method_37378()) {
-            this.field_41768
+            this.world
                .method_29528((class_704)null, this.field_41767, this.field_41698, this.field_41725, class_463.field_2563, this.method_37197(), 1.0F, 1.0F);
             this.method_37155(class_463.field_2563, 1.0F, 1.0F);
          }
@@ -261,7 +261,7 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2641;
    }
 
@@ -271,7 +271,7 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    @Override
-   public void method_26614(class_6199 var1, int var2, boolean var3) {
+   public void method_26614(DamageSource var1, int var2, boolean var3) {
       super.method_26614(var1, var2, var3);
       class_2522 var6 = this.method_3913();
       if (var6 != null) {
@@ -289,12 +289,12 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (this.method_37180(var1)) {
          return false;
       } else if (!(var1 instanceof class_8758)) {
-         boolean var6 = super.method_37181(var1, var2);
-         if (!this.field_41768.method_22567() && !(var1.method_28372() instanceof class_5834) && this.field_41717.nextInt(10) != 0) {
+         boolean var6 = super.attackEntityFrom(var1, var2);
+         if (!this.world.method_22567() && !(var1.method_28372() instanceof class_5834) && this.field_41717.nextInt(10) != 0) {
             this.method_3914();
          }
 

@@ -23,7 +23,7 @@ public class class_9110<T extends class_4040> extends class_3599 {
          class_4040 var4 = var3.method_11282(this.field_46652.method_18592());
          if (var4 == null || !var4.method_37330()) {
             List var5 = this.field_46652
-               .field_41768
+               .world
                .<class_91>method_25869(class_91.class, this.field_46652.method_37241().method_18899(16.0, 8.0, 16.0), class_4040.method_18599());
             if (!var5.isEmpty()) {
                return this.field_46652.method_26927().method_5616((Entity)var5.get(0), 1.15F);
@@ -40,7 +40,7 @@ public class class_9110<T extends class_4040> extends class_3599 {
    public void method_16794() {
       if (this.field_46652.method_26927().method_5603().method_12170(this.field_46652.method_37245(), 1.414)) {
          List var3 = this.field_46652
-            .field_41768
+            .world
             .<class_91>method_25869(class_91.class, this.field_46652.method_37241().method_18899(4.0, 4.0, 4.0), class_4040.method_18599());
          if (!var3.isEmpty()) {
             this.field_46652.method_26902((class_91)var3.get(0));

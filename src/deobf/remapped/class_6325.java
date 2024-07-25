@@ -87,7 +87,7 @@ public final class class_6325 {
       return this.method_28870() > 0.85F;
    }
 
-   private float method_28863(class_1331 var1) {
+   private float method_28863(BlockPos var1) {
       float var4 = class_1310.method_5970(this.field_32295).method_297(var1, this.method_28861());
       if (var1.method_12165() <= 64) {
          return var4;
@@ -97,7 +97,7 @@ public final class class_6325 {
       }
    }
 
-   public final float method_28865(class_1331 var1) {
+   public final float method_28865(BlockPos var1) {
       long var4 = var1.method_6077();
       Long2FloatLinkedOpenHashMap var6 = this.field_32291.get();
       float var7 = var6.get(var4);
@@ -114,11 +114,11 @@ public final class class_6325 {
       }
    }
 
-   public boolean method_28858(class_4924 var1, class_1331 var2) {
+   public boolean method_28858(class_4924 var1, BlockPos var2) {
       return this.method_28859(var1, var2, true);
    }
 
-   public boolean method_28859(class_4924 var1, class_1331 var2, boolean var3) {
+   public boolean method_28859(class_4924 var1, BlockPos var2, boolean var3) {
       if (this.method_28865(var2) >= 0.15F) {
          return false;
       } else {
@@ -144,7 +144,7 @@ public final class class_6325 {
       }
    }
 
-   public boolean method_28882(class_4924 var1, class_1331 var2) {
+   public boolean method_28882(class_4924 var1, BlockPos var2) {
       if (!(this.method_28865(var2) >= 0.15F)) {
          if (var2.method_12165() >= 0 && var2.method_12165() < 256 && var1.method_25266(class_2957.field_14440, var2) < 10) {
             class_2522 var5 = var1.method_28262(var2);
@@ -163,7 +163,7 @@ public final class class_6325 {
       return this.field_32294;
    }
 
-   public void method_28862(class_2033 var1, class_6541 var2, class_702 var3, long var4, class_8679 var6, class_1331 var7) {
+   public void method_28862(class_2033 var1, class_6541 var2, class_702 var3, long var4, class_8679 var6, BlockPos var7) {
       List var10 = this.field_32294.method_9456();
       int var11 = class_1841.values().length;
 

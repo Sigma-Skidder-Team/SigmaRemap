@@ -84,9 +84,9 @@ public class class_7263 extends class_6993 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().startSection("piglinBruteBrain");
-      this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().endSection();
+      this.world.method_29599().startSection("piglinBruteBrain");
+      this.method_26525().method_5141((class_6331)this.world, this);
+      this.world.method_29599().endSection();
       class_9544.method_44044(this);
       class_9544.method_44043(this);
       super.method_26919();
@@ -98,9 +98,9 @@ public class class_7263 extends class_6993 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      boolean var5 = super.method_37181(var1, var2);
-      if (!this.field_41768.field_33055) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      boolean var5 = super.attackEntityFrom(var1, var2);
+      if (!this.world.field_33055) {
          if (var5 && var1.method_28372() instanceof class_5834) {
             class_9544.method_44048(this, (class_5834)var1.method_28372());
          }
@@ -117,7 +117,7 @@ public class class_7263 extends class_6993 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2711;
    }
 
@@ -127,7 +127,7 @@ public class class_7263 extends class_6993 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2066, 0.15F, 1.0F);
    }
 

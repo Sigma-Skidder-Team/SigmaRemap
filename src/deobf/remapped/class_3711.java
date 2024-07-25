@@ -37,7 +37,7 @@ public class class_3711 {
 
    public void method_17234() {
       if (this.method_17241()) {
-         this.field_18205.field_41755 = 0.0F;
+         this.field_18205.rotationPitch = 0.0F;
       }
 
       if (!this.field_18204) {
@@ -45,7 +45,7 @@ public class class_3711 {
       } else {
          this.field_18204 = false;
          this.field_18205.field_29618 = this.method_17239(this.field_18205.field_29618, this.method_17243(), this.field_18208);
-         this.field_18205.field_41755 = this.method_17239(this.field_18205.field_41755, this.method_17233(), this.field_18207);
+         this.field_18205.rotationPitch = this.method_17239(this.field_18205.rotationPitch, this.method_17233(), this.field_18207);
       }
 
       if (!this.field_18205.method_26927().method_5591()) {

@@ -150,11 +150,11 @@ public class class_8248 extends ByteBuf {
       return var1;
    }
 
-   public class_1331 method_37748() {
-      return class_1331.method_6088(this.readLong());
+   public BlockPos method_37748() {
+      return BlockPos.method_6088(this.readLong());
    }
 
-   public class_8248 method_37770(class_1331 var1) {
+   public class_8248 method_37770(BlockPos var1) {
       this.writeLong(var1.method_6077());
       return this;
    }
@@ -378,7 +378,7 @@ public class class_8248 extends ByteBuf {
    }
 
    public class_9529 method_37782() {
-      class_1331 var3 = this.method_37748();
+      BlockPos var3 = this.method_37748();
       Direction var4 = this.<Direction>method_37787(Direction.class);
       float var5 = this.readFloat();
       float var6 = this.readFloat();
@@ -393,7 +393,7 @@ public class class_8248 extends ByteBuf {
    }
 
    public void method_37747(class_9529 var1) {
-      class_1331 var4 = var1.method_43955();
+      BlockPos var4 = var1.method_43955();
       this.method_37770(var4);
       this.method_37750(var1.method_43956());
       class_1343 var5 = var1.method_33993();

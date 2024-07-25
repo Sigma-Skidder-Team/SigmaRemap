@@ -43,7 +43,7 @@ public class class_2266 extends class_1546 {
                var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.method_37302(), (double)(++var4), this.field_8166.method_37156()));
             }
          } else if (!this.field_8166.method_37360()) {
-            class_1331 var6 = this.field_8166.method_37075();
+            BlockPos var6 = this.field_8166.method_37075();
 
             while (
                (
@@ -67,7 +67,7 @@ public class class_2266 extends class_1546 {
          var4--;
       }
 
-      class_1331 var11 = this.field_8166.method_37075();
+      BlockPos var11 = this.field_8166.method_37075();
       class_1108 var7 = this.method_10454(this.field_8166, var11.method_12173(), var4, var11.method_12185());
       if (this.field_8166.method_26931(var7) < 0.0F) {
          class_4092 var8 = this.field_8166.method_37241();
@@ -88,7 +88,7 @@ public class class_2266 extends class_1546 {
       return var12;
    }
 
-   private boolean method_10453(class_1331 var1) {
+   private boolean method_10453(BlockPos var1) {
       class_1108 var4 = this.method_10456(this.field_8166, var1);
       return this.field_8166.method_26931(var4) >= 0.0F;
    }
@@ -108,7 +108,7 @@ public class class_2266 extends class_1546 {
          var6 = class_9299.method_42848(Math.max(1.0F, this.field_8166.field_41733));
       }
 
-      double var9 = method_10464(this.field_8165, new class_1331(var2.field_29731, var2.field_29735, var2.field_29736));
+      double var9 = method_10464(this.field_8165, new BlockPos(var2.field_29731, var2.field_29735, var2.field_29736));
       class_5851 var11 = this.method_10450(var2.field_29731, var2.field_29735, var2.field_29736 + 1, var6, var9, Direction.field_800, var8);
       if (this.method_10462(var11, var2)) {
          var1[var5++] = var11;
@@ -193,8 +193,8 @@ public class class_2266 extends class_1546 {
       return true;
    }
 
-   public static double method_10464(class_6163 var0, class_1331 var1) {
-      class_1331 var4 = var1.method_6100();
+   public static double method_10464(class_6163 var0, BlockPos var1) {
+      BlockPos var4 = var1.method_6100();
       class_4190 var5 = var0.method_28262(var4).method_8324(var0, var4);
       return (double)var4.method_12165() + (!var5.method_19485() ? var5.method_19495(class_9249.field_47216) : 0.0);
    }
@@ -324,7 +324,7 @@ public class class_2266 extends class_1546 {
    public class_1108 method_7011(class_6163 var1, int var2, int var3, int var4, class_5886 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet var13 = EnumSet.<class_1108>noneOf(class_1108.class);
       class_1108 var14 = class_1108.field_6365;
-      class_1331 var15 = var5.method_37075();
+      BlockPos var15 = var5.method_37075();
       var14 = this.method_10457(var1, var2, var3, var4, var6, var7, var8, var9, var10, var13, var14, var15);
       if (var13.contains(class_1108.field_6353)) {
          return class_1108.field_6353;
@@ -359,7 +359,7 @@ public class class_2266 extends class_1546 {
       boolean var9,
       EnumSet<class_1108> var10,
       class_1108 var11,
-      class_1331 var12
+      BlockPos var12
    ) {
       for (int var15 = 0; var15 < var5; var15++) {
          for (int var16 = 0; var16 < var6; var16++) {
@@ -381,7 +381,7 @@ public class class_2266 extends class_1546 {
       return var11;
    }
 
-   public class_1108 method_10463(class_6163 var1, boolean var2, boolean var3, class_1331 var4, class_1108 var5) {
+   public class_1108 method_10463(class_6163 var1, boolean var2, boolean var3, BlockPos var4, class_1108 var5) {
       if (var5 == class_1108.field_6355 && var2 && var3) {
          var5 = class_1108.field_6363;
       }
@@ -403,14 +403,14 @@ public class class_2266 extends class_1546 {
       return var5;
    }
 
-   private class_1108 method_10456(class_5886 var1, class_1331 var2) {
+   private class_1108 method_10456(class_5886 var1, BlockPos var2) {
       return this.method_10454(var1, var2.method_12173(), var2.method_12165(), var2.method_12185());
    }
 
    private class_1108 method_10454(class_5886 var1, int var2, int var3, int var4) {
       return (class_1108)this.field_11279
          .computeIfAbsent(
-            class_1331.method_6107(var2, var3, var4),
+            BlockPos.method_6107(var2, var3, var4),
             var5 -> this.method_7011(
                   this.field_8165, var2, var3, var4, var1, this.field_8164, this.field_8163, this.field_8167, this.method_7006(), this.method_7004()
                )
@@ -490,7 +490,7 @@ public class class_2266 extends class_1546 {
       return var2;
    }
 
-   public static class_1108 method_10461(class_6163 var0, class_1331 var1) {
+   public static class_1108 method_10461(class_6163 var0, BlockPos var1) {
       class_2522 var4 = var0.method_28262(var1);
       class_6414 var5 = var4.method_8360();
       class_5371 var6 = var4.method_8362();

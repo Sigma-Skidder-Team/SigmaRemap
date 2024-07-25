@@ -168,7 +168,7 @@ public abstract class class_8116 implements class_5801 {
             var1.method_3243(this);
          }
 
-         return class_6910.method_31659(var1.field_41768.field_33055);
+         return class_6910.method_31659(var1.world.field_33055);
       } else {
          return class_6910.field_35521;
       }

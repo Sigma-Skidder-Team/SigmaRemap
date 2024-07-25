@@ -9,7 +9,7 @@ public interface class_5120 {
 
    void method_23473();
 
-   void method_23468(class_3577 var1, class_1331 var2, class_6199 var3, class_704 var4);
+   void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, class_704 var4);
 
    void method_23469();
 
@@ -24,5 +24,5 @@ public interface class_5120 {
    @Nullable
    class_1343 method_23463();
 
-   float method_23467(class_6199 var1, float var2);
+   float method_23467(DamageSource var1, float var2);
 }

@@ -21,7 +21,7 @@ public class MiniMapModule extends Module {
    private int field_25731 = 10;
    private int field_25732 = 260;
    private int field_25728 = 1;
-   private class_1331 field_25727;
+   private BlockPos field_25727;
    private int field_25729 = 10;
    public List<class_4601> field_25735 = new ArrayList<class_4601>();
    private double field_25736;
@@ -125,7 +125,7 @@ public class MiniMapModule extends Module {
                      float var9 = (float)((double)(var8 * var7) * this.field_25734);
                      float var10 = (float)((double)(-var8 * var7) * this.field_25736);
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2), (float)(this.field_25732 + this.field_25733 / 2), 0.0F);
-                     GL11.glRotatef(90.0F - client.thePlayer.field_41701, 0.0F, 0.0F, 1.0F);
+                     GL11.glRotatef(90.0F - client.thePlayer.rotationYaw, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-this.field_25740 / 2), (float)(-this.field_25733 / 2), 0.0F);
                      float var11 = (float)this.field_25740 * var7;
                      float var12 = (float)this.field_25733 * var7;
@@ -153,7 +153,7 @@ public class MiniMapModule extends Module {
                      GL11.glPushMatrix();
                      int var15 = (int)class_8865.method_40787()[0];
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2 + 1), (float)(this.field_25732 + this.field_25733 / 2 + 3), 0.0F);
-                     GL11.glRotatef((float)(270 + var15) - client.thePlayer.field_41701, 0.0F, 0.0F, 1.0F);
+                     GL11.glRotatef((float)(270 + var15) - client.thePlayer.rotationYaw, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-(this.field_25731 + this.field_25740 / 2 + 1)), (float)(-(this.field_25732 + this.field_25733 / 2)), 0.0F);
                      class_73.method_87(
                         var6, (float)(this.field_25731 + this.field_25740 / 2 - 4), (float)(this.field_25732 + this.field_25733 / 2 - 8), var5, 1879048192
@@ -161,7 +161,7 @@ public class MiniMapModule extends Module {
                      GL11.glPopMatrix();
                      GL11.glPushMatrix();
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2 + 1), (float)(this.field_25732 + this.field_25733 / 2), 0.0F);
-                     GL11.glRotatef((float)(270 + var15) - client.thePlayer.field_41701, 0.0F, 0.0F, 1.0F);
+                     GL11.glRotatef((float)(270 + var15) - client.thePlayer.rotationYaw, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-(this.field_25731 + this.field_25740 / 2 + 1)), (float)(-(this.field_25732 + this.field_25733 / 2)), 0.0F);
                      class_73.method_87(
                         var6,

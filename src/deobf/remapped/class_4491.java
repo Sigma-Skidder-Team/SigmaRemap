@@ -16,13 +16,13 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
    private final class_4190 field_21954;
    private final class_1449 field_21952;
    private boolean field_21951;
-   private final BiPredicate<class_2522, class_1331> field_21956;
+   private final BiPredicate<class_2522, BlockPos> field_21956;
 
    public class_4491(class_1449 var1, Entity var2, class_4092 var3) {
       this(var1, var2, var3, (var0, var1x) -> true);
    }
 
-   public class_4491(class_1449 var1, Entity var2, class_4092 var3, BiPredicate<class_2522, class_1331> var4) {
+   public class_4491(class_1449 var1, Entity var2, class_4092 var3, BiPredicate<class_2522, BlockPos> var4) {
       super(Long.MAX_VALUE, 1280);
       this.field_21955 = var2 != null ? class_214.method_926(var2) : class_214.method_928();
       this.field_21957 = new class_2921();

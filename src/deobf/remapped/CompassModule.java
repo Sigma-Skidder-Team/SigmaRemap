@@ -15,13 +15,13 @@ public class CompassModule extends Module {
             byte var4 = 5;
             byte var5 = 60;
             int var6 = !MinecraftClient.getInstance().gameOptions.field_45470 ? 0 : 60;
-            ArrayList var7 = this.method_42041((int)this.method_42039(client.thePlayer.field_41701), var4);
+            ArrayList var7 = this.method_42041((int)this.method_42039(client.thePlayer.rotationYaw), var4);
             int var8 = (Integer)var7.get(var4);
-            if (var8 == 0 && this.method_42039(client.thePlayer.field_41701) > 345.0F) {
+            if (var8 == 0 && this.method_42039(client.thePlayer.rotationYaw) > 345.0F) {
                var8 = 360;
             }
 
-            float var9 = 7.0F + this.method_42039(client.thePlayer.field_41701) - (float)var8;
+            float var9 = 7.0F + this.method_42039(client.thePlayer.rotationYaw) - (float)var8;
             double var10 = (double)(var9 / 15.0F * (float)var5);
             class_73.method_99(
                (float)(client.window.method_43166() / 2) - (float)(var4 * var5) * 1.5F,

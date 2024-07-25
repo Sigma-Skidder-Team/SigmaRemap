@@ -20,7 +20,7 @@ public class class_7549 extends class_1173 {
    }
 
    @Override
-   public float method_21376(class_1331 var1, class_4924 var2) {
+   public float method_21376(BlockPos var1, class_4924 var2) {
       return var2.method_22566(var1) - 0.5F;
    }
 }

@@ -114,23 +114,23 @@ public enum class_4487 {
          if (this.field_21873 == null || var2 >= 0 && var2 <= this.field_21873.length) {
             switch (this) {
                case field_21905:
-                  class_1331 var5 = class_6588.method_30293();
+                  BlockPos var5 = class_6588.method_30293();
                   class_6325 var6 = class_6588.method_30215().method_22561(var5);
                   return (float)class_5630.method_25522(var6);
                case field_21904:
-                  class_1331 var7 = class_6588.method_30293();
+                  BlockPos var7 = class_6588.method_30293();
                   class_6325 var8 = class_6588.method_30215().method_22561(var7);
                   return var8 != null ? (float)var8.method_28887().ordinal() : 0.0F;
                case field_21908:
-                  class_1331 var9 = class_6588.method_30293();
+                  BlockPos var9 = class_6588.method_30293();
                   class_6325 var10 = class_6588.method_30215().method_22561(var9);
                   return var10 != null ? (float)var10.method_28866().ordinal() : 0.0F;
                case field_21870:
-                  class_1331 var11 = class_6588.method_30293();
+                  BlockPos var11 = class_6588.method_30293();
                   class_6325 var12 = class_6588.method_30215().method_22561(var11);
                   return var12 != null ? var12.method_28865(var11) : 0.0F;
                case field_21913:
-                  class_1331 var13 = class_6588.method_30293();
+                  BlockPos var13 = class_6588.method_30293();
                   class_6325 var14 = class_6588.method_30215().method_22561(var13);
                   return var14 != null ? var14.method_28870() : 0.0F;
                default:

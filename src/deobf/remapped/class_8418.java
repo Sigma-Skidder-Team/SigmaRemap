@@ -6,7 +6,7 @@ import java.util.Optional;
 public class class_8418 extends class_5920<class_5886> {
    private static String[] field_43048;
    private final float field_43051;
-   private class_1331 field_43050;
+   private BlockPos field_43050;
    private int field_43047;
    private int field_43049;
    private int field_43046;
@@ -68,7 +68,7 @@ public class class_8418 extends class_5920<class_5886> {
       }
    }
 
-   private void method_38748(class_5886 var1, class_1331 var2) {
+   private void method_38748(class_5886 var1, BlockPos var2) {
       var1.method_26525().method_5105(class_6044.field_30889, new class_6651(var2, this.field_43051, 0));
    }
 
@@ -77,8 +77,8 @@ public class class_8418 extends class_5920<class_5886> {
    }
 
    private boolean method_38741(class_6331 var1, class_5886 var2) {
-      class_1331 var5 = var2.method_37075();
-      class_1331 var6 = var5.method_6100();
+      BlockPos var5 = var2.method_37075();
+      BlockPos var6 = var5.method_6100();
       return this.method_38749(var1, var5) || this.method_38749(var1, var6);
    }
 
@@ -86,12 +86,12 @@ public class class_8418 extends class_5920<class_5886> {
       return this.method_38749(var1, var2.method_37075());
    }
 
-   private boolean method_38749(class_6331 var1, class_1331 var2) {
+   private boolean method_38749(class_6331 var1, BlockPos var2) {
       return var1.method_28262(var2).method_8349(class_2351.field_11784);
    }
 
-   private Optional<class_1331> method_38753(class_5886 var1) {
-      return var1.method_26525().<class_1331>method_5138(class_6044.field_30910);
+   private Optional<BlockPos> method_38753(class_5886 var1) {
+      return var1.method_26525().<BlockPos>method_5138(class_6044.field_30910);
    }
 
    private boolean method_38744(class_6331 var1, class_5886 var2) {

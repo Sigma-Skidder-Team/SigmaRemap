@@ -22,7 +22,7 @@ public class class_9484 extends class_4285<class_4069> {
       return (List<class_9191>)field_48333.getUnchecked(var4);
    }
 
-   public boolean method_43808(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_4069 var5) {
+   public boolean method_43808(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_4069 var5) {
       List var8 = var5.method_18769();
       if (var8.isEmpty()) {
          var8 = method_43809(var1);
@@ -40,9 +40,9 @@ public class class_9484 extends class_4285<class_4069> {
    private void method_43807(class_1556 var1, Random var2, class_4069 var3, class_9191 var4) {
       int var7 = var4.method_42367();
 
-      for (class_1331 var9 : class_1331.method_6076(
-         new class_1331(var4.method_42371() - var7, 0, var4.method_42373() - var7),
-         new class_1331(var4.method_42371() + var7, var4.method_42370() + 10, var4.method_42373() + var7)
+      for (BlockPos var9 : BlockPos.method_6076(
+         new BlockPos(var4.method_42371() - var7, 0, var4.method_42373() - var7),
+         new BlockPos(var4.method_42371() + var7, var4.method_42370() + 10, var4.method_42373() + var7)
       )) {
          if (var9.method_12178((double)var4.method_42371(), (double)var9.method_12165(), (double)var4.method_42373(), false) <= (double)(var7 * var7 + 1)
             && var9.method_12165() < var4.method_42370()) {
@@ -87,6 +87,6 @@ public class class_9484 extends class_4285<class_4069> {
          (double)var4.method_42371() + 0.5, (double)(var4.method_42370() + 1), (double)var4.method_42373() + 0.5, var2.nextFloat() * 360.0F, 0.0F
       );
       var1.method_7509(var22);
-      this.method_19906(var1, new class_1331(var4.method_42371(), var4.method_42370(), var4.method_42373()), class_4783.field_23433.method_29260());
+      this.method_19906(var1, new BlockPos(var4.method_42371(), var4.method_42370(), var4.method_42373()), class_4783.field_23433.method_29260());
    }
 }

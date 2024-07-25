@@ -23,9 +23,9 @@ public abstract class class_6408 extends class_8844 implements class_3978 {
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method_10313(field_32703) < 25 && var4.nextDouble() < this.field_32704) {
-         class_1331 var7 = var3.method_6098(this.field_45228);
+         BlockPos var7 = var3.method_6098(this.field_45228);
          if (this.method_29241(var2.method_28262(var7))) {
             var2.method_29594(var7, var1.method_10317(field_32703));
          }
@@ -33,7 +33,7 @@ public abstract class class_6408 extends class_8844 implements class_3978 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (var2 == this.field_45228.method_1046() && !var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
@@ -55,18 +55,18 @@ public abstract class class_6408 extends class_8844 implements class_3978 {
    }
 
    @Override
-   public boolean method_18358(class_6163 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public boolean method_18358(class_6163 var1, BlockPos var2, class_2522 var3, boolean var4) {
       return this.method_29241(var1.method_28262(var2.method_6098(this.field_45228)));
    }
 
    @Override
-   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, BlockPos var3, class_2522 var4) {
       return true;
    }
 
    @Override
-   public void method_18359(class_6331 var1, Random var2, class_1331 var3, class_2522 var4) {
-      class_1331 var7 = var3.method_6098(this.field_45228);
+   public void method_18359(class_6331 var1, Random var2, BlockPos var3, class_2522 var4) {
+      BlockPos var7 = var3.method_6098(this.field_45228);
       int var8 = Math.min(var4.<Integer>method_10313(field_32703) + 1, 25);
       int var9 = this.method_29242(var2);
 

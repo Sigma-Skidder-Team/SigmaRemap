@@ -25,7 +25,7 @@ public class class_5650 extends class_3599 {
    public void method_16796() {
       class_1343 var3 = this.method_25566();
       if (var3 != null) {
-         class_8829.method_40547(this.field_28663).method_5607(class_8829.method_40572(this.field_28663).method_5615(new class_1331(var3), 1), 1.0);
+         class_8829.method_40547(this.field_28663).method_5607(class_8829.method_40572(this.field_28663).method_5615(new BlockPos(var3), 1), 1.0);
       }
    }
 

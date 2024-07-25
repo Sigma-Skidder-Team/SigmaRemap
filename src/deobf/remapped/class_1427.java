@@ -8,9 +8,9 @@ public class class_1427 extends class_4285<class_8541> {
       super(var1);
    }
 
-   public boolean method_6558(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_8541 var5) {
+   public boolean method_6558(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_8541 var5) {
       class_6414 var8 = var5.field_43717.method_8360();
-      class_1331 var9 = null;
+      BlockPos var9 = null;
       class_6414 var10 = var1.method_28262(var4.method_6100()).method_8360();
       if (var10 == var8) {
          var9 = var4;
@@ -39,14 +39,14 @@ public class class_1427 extends class_4285<class_8541> {
       }
    }
 
-   private static boolean method_6557(class_9379 var0, class_1331 var1, boolean var2) {
+   private static boolean method_6557(class_9379 var0, BlockPos var1, boolean var2) {
       return var0.method_38320(var1, var1x -> {
          class_5371 var4 = var1x.method_8362();
          return var1x.method_8362().method_24497() || var2 && var4 == class_5371.field_27440;
       });
    }
 
-   private void method_6556(class_9379 var1, Random var2, class_8541 var3, class_1331 var4, int var5, boolean var6) {
+   private void method_6556(class_9379 var1, Random var2, class_8541 var3, BlockPos var4, int var5, boolean var6) {
       class_2921 var9 = new class_2921();
       class_2522 var10 = var3.field_43723;
       int var11 = !var6 ? 0 : 1;
@@ -77,7 +77,7 @@ public class class_1427 extends class_4285<class_8541> {
       }
    }
 
-   private void method_6560(class_9379 var1, Random var2, class_8541 var3, class_1331 var4, int var5, boolean var6) {
+   private void method_6560(class_9379 var1, Random var2, class_8541 var3, BlockPos var4, int var5, boolean var6) {
       class_2921 var9 = new class_2921();
       boolean var10 = var3.field_43720.method_8350(class_4783.field_23273);
       int var11 = Math.min(var2.nextInt(1 + var5 / 3) + 5, var5);
@@ -138,7 +138,7 @@ public class class_1427 extends class_4285<class_8541> {
       }
    }
 
-   private void method_6559(class_9379 var1, Random var2, class_1331 var3, class_2522 var4, boolean var5) {
+   private void method_6559(class_9379 var1, Random var2, BlockPos var3, class_2522 var4, boolean var5) {
       if (!var1.method_28262(var3.method_6100()).method_8350(var4.method_8360())) {
          if ((double)var2.nextFloat() < 0.15) {
             this.method_19906(var1, var3, var4);
@@ -151,7 +151,7 @@ public class class_1427 extends class_4285<class_8541> {
       }
    }
 
-   private static void method_6555(class_1331 var0, class_9379 var1, Random var2) {
+   private static void method_6555(BlockPos var0, class_9379 var1, Random var2) {
       class_2921 var5 = var0.method_6089().method_13368(Direction.field_802);
       if (var1.method_22548(var5)) {
          int var6 = class_9299.method_42824(var2, 1, 5);

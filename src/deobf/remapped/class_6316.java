@@ -23,7 +23,7 @@ public class class_6316 extends class_3599 {
    @Override
    public boolean method_16795() {
       if (this.field_32264 <= 0) {
-         this.field_32263 = this.field_32260.field_41768.method_25859(field_32259, this.field_32260);
+         this.field_32263 = this.field_32260.world.method_25859(field_32259, this.field_32260);
          return this.field_32263 == null ? false : this.method_28788(this.field_32263.method_26446()) || this.method_28788(this.field_32263.method_26568());
       } else {
          this.field_32264--;

@@ -8,7 +8,7 @@ public class class_3311 extends class_6414 {
    }
 
    @Override
-   public boolean method_29275(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_29275(class_2522 var1, class_6163 var2, BlockPos var3) {
       return true;
    }
 
@@ -18,7 +18,7 @@ public class class_3311 extends class_6414 {
    }
 
    @Override
-   public float method_10779(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public float method_10779(class_2522 var1, class_6163 var2, BlockPos var3) {
       return 1.0F;
    }
 }

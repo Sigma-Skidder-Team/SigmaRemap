@@ -13,8 +13,8 @@ public class ClickTPModule extends SecondModule {
    @EventListen
    public void method_41139(class_3368 var1) {
       if (this.method_42015() && (client.thePlayer.method_37252() || !this.getBooleanValueByName("Sneak"))) {
-         class_9529 var4 = class_7494.method_34079(client.thePlayer.field_41701, client.thePlayer.field_41755, this.getFloatValueByName("Maximum range"));
-         class_1331 var5 = null;
+         class_9529 var4 = class_7494.method_34079(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getFloatValueByName("Maximum range"));
+         BlockPos var5 = null;
          if (var4 != null) {
             var5 = var4.method_43955();
          }
@@ -29,7 +29,7 @@ public class ClickTPModule extends SecondModule {
    }
 
    private double method_41136() {
-      return (double)(class_9299.method_42818((float)Math.toRadians((double)(90.0F - client.thePlayer.field_41755))) * 10.0F);
+      return (double)(class_9299.method_42818((float)Math.toRadians((double)(90.0F - client.thePlayer.rotationPitch))) * 10.0F);
    }
 
    private void method_41141(double var1, double var3, double var5, double var7) {

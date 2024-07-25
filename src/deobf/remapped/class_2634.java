@@ -33,7 +33,7 @@ public class class_2634 extends class_3956 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return method_11913(var1);
    }
 
@@ -42,9 +42,9 @@ public class class_2634 extends class_3956 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       Direction var6 = var1.<Direction>method_10313(field_12970);
-      class_1331 var7 = var3.method_6098(var6.method_1046());
+      BlockPos var7 = var3.method_6098(var6.method_1046());
       class_2522 var8 = var2.method_28262(var7);
       return var8.method_8308(var2, var7, var6);
    }
@@ -54,7 +54,7 @@ public class class_2634 extends class_3956 {
    public class_2522 method_29302(class_353 var1) {
       class_2522 var4 = this.method_29260();
       World var5 = var1.method_21862();
-      class_1331 var6 = var1.method_21858();
+      BlockPos var6 = var1.method_21858();
       Direction[] var7 = var1.method_1786();
 
       for (Direction var11 : var7) {
@@ -71,12 +71,12 @@ public class class_2634 extends class_3956 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       return var2.method_1046() == var1.method_10313(field_12970) && !var1.method_8309(var4, var5) ? class_4783.field_23184.method_29260() : var1;
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       Direction var7 = var1.<Direction>method_10313(field_12970);
       double var8 = (double)var3.method_12173() + 0.5;
       double var10 = (double)var3.method_12165() + 0.7;

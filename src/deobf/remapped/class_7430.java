@@ -21,7 +21,7 @@ public abstract class class_7430 extends class_7114 {
       } else if (var1 != 257 && var1 != 32 && var1 != 335) {
          return false;
       } else {
-         this.method_32692(MinecraftClient.getInstance().method_8590());
+         this.method_32692(MinecraftClient.getInstance().getSoundHandler());
          this.method_33827();
          return true;
       }

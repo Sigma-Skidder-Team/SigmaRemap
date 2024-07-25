@@ -115,7 +115,7 @@ public class class_5093 {
          } else if (this.field_26273 != null && this.field_26273 != var1.method_29545()) {
             return false;
          } else {
-            class_1331 var7 = new class_1331((double)var2, (double)var3, (double)var4);
+            BlockPos var7 = new BlockPos((double)var2, (double)var3, (double)var4);
             boolean var8 = var1.method_29585(var7);
             Optional var9 = var1.method_2755().<class_6325>method_28813(class_8669.field_44359).method_39800(var1.method_22561(var7));
             if (!var9.isPresent()) {

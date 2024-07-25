@@ -47,23 +47,23 @@ public class class_6589 implements Packet<class_392> {
          var1.method_37302(),
          var1.method_37309(),
          var1.method_37156(),
-         var1.field_41755,
-         var1.field_41701,
+         var1.rotationPitch,
+         var1.rotationYaw,
          var1.method_37387(),
          var2,
          var1.method_37098()
       );
    }
 
-   public class_6589(Entity var1, class_6629<?> var2, int var3, class_1331 var4) {
+   public class_6589(Entity var1, class_6629<?> var2, int var3, BlockPos var4) {
       this(
          var1.method_37145(),
          var1.method_37328(),
          (double)var4.method_12173(),
          (double)var4.method_12165(),
          (double)var4.method_12185(),
-         var1.field_41755,
-         var1.field_41701,
+         var1.rotationPitch,
+         var1.rotationYaw,
          var2,
          var3,
          var1.method_37098()

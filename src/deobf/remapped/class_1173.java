@@ -44,12 +44,12 @@ public abstract class class_1173 extends class_4612 implements class_1869 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      return !this.method_37180(var1) ? super.method_37181(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.method_37180(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2091;
    }
 
@@ -64,11 +64,11 @@ public abstract class class_1173 extends class_4612 implements class_1869 {
    }
 
    @Override
-   public float method_21376(class_1331 var1, class_4924 var2) {
+   public float method_21376(BlockPos var1, class_4924 var2) {
       return 0.5F - var2.method_22566(var1);
    }
 
-   public static boolean method_5200(class_1556 var0, class_1331 var1, Random var2) {
+   public static boolean method_5200(class_1556 var0, BlockPos var1, Random var2) {
       if (var0.method_25266(class_2957.field_14437, var1) <= var2.nextInt(32)) {
          int var5 = !var0.method_7066().method_29570() ? var0.method_22573(var1) : var0.method_22571(var1, 10);
          return var5 <= var2.nextInt(8);
@@ -77,11 +77,11 @@ public abstract class class_1173 extends class_4612 implements class_1869 {
       }
    }
 
-   public static boolean method_5199(class_6629<? extends class_1173> var0, class_1556 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_5199(class_6629<? extends class_1173> var0, class_1556 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790 && method_5200(var1, var3, var4) && method_26908(var0, var1, var2, var3, var4);
    }
 
-   public static boolean method_5198(class_6629<? extends class_1173> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_5198(class_6629<? extends class_1173> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790 && method_26908(var0, var1, var2, var3, var4);
    }
 

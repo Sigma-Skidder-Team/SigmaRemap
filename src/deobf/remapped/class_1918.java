@@ -65,7 +65,7 @@ public class class_1918 extends class_2811 implements class_6250 {
          this.method_8727();
       }
 
-      this.method_28530((class_6331)this.field_41768, true);
+      this.method_28530((class_6331)this.world, true);
       if (this.method_17809() != null) {
          this.method_8724();
       }
@@ -101,7 +101,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    private void method_8725() {
       double var3 = this.method_26575(class_7331.field_37471);
       class_4092 var5 = class_4092.method_18911(this.method_37245()).method_18899(var3, 10.0, var3);
-      this.field_41768
+      this.world
          .<class_1918>method_25874(class_1918.class, var5)
          .stream()
          .filter(var1 -> var1 != this)
@@ -133,7 +133,7 @@ public class class_1918 extends class_2811 implements class_6250 {
       this.method_28532(field_9786.method_20387(this.field_41717));
    }
 
-   public static boolean method_8726(class_6629<class_1918> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_8726(class_6629<class_1918> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790 && var1.method_28262(var3.method_6100()).method_8360() != class_4783.field_23273;
    }
 
@@ -151,7 +151,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    @Override
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
-      this.method_28533((class_6331)this.field_41768, var1);
+      this.method_28533((class_6331)this.world, var1);
    }
 
    @Override
@@ -165,8 +165,8 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      return !this.method_37180(var1) ? super.method_37181(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.method_37180(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    @Override
@@ -175,7 +175,7 @@ public class class_1918 extends class_2811 implements class_6250 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2350;
    }
 

@@ -8,9 +8,9 @@ public class class_8088 extends class_4285<class_1059> {
       super(var1);
    }
 
-   public boolean method_36729(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1059 var5) {
+   public boolean method_36729(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1059 var5) {
       class_2522 var8 = var5.field_5814.method_35002(var3, var4);
-      class_1331 var9;
+      BlockPos var9;
       if (!var5.field_5807) {
          var9 = var4;
       } else {
@@ -27,7 +27,7 @@ public class class_8088 extends class_4285<class_1059> {
             var3.nextInt(var5.field_5808 + 1) - var3.nextInt(var5.field_5808 + 1),
             var3.nextInt(var5.field_5811 + 1) - var3.nextInt(var5.field_5811 + 1)
          );
-         class_1331 var13 = var11.method_6100();
+         BlockPos var13 = var11.method_6100();
          class_2522 var14 = var1.method_28262(var13);
          if ((var1.method_22548(var11) || var5.field_5804 && var1.method_28262(var11).method_8362().method_24497())
             && var8.method_8309(var1, var11)

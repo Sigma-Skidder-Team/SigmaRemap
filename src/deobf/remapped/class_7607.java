@@ -12,7 +12,7 @@ public class class_7607 extends class_5892 {
    }
 
    @Override
-   public boolean method_26953(class_1331 var1, class_1331 var2, class_1331 var3, Random var4) {
+   public boolean method_26953(BlockPos var1, BlockPos var2, BlockPos var3, Random var4) {
       return true;
    }
 

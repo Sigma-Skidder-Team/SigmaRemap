@@ -5,14 +5,14 @@ import java.util.List;
 
 public class class_7897 implements class_2995 {
    private static String[] field_40386;
-   private final List<class_1331> field_40382 = Lists.newArrayList();
+   private final List<BlockPos> field_40382 = Lists.newArrayList();
    private final List<Float> field_40385 = Lists.newArrayList();
    private final List<Float> field_40381 = Lists.newArrayList();
    private final List<Float> field_40384 = Lists.newArrayList();
    private final List<Float> field_40383 = Lists.newArrayList();
    private final List<Float> field_40380 = Lists.newArrayList();
 
-   public void method_35695(class_1331 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void method_35695(BlockPos var1, float var2, float var3, float var4, float var5, float var6) {
       this.field_40382.add(var1);
       this.field_40385.add(var2);
       this.field_40381.add(var6);
@@ -32,7 +32,7 @@ public class class_7897 implements class_2995 {
       var12.method_44471(5, class_7985.field_40903);
 
       for (int var13 = 0; var13 < this.field_40382.size(); var13++) {
-         class_1331 var14 = this.field_40382.get(var13);
+         BlockPos var14 = this.field_40382.get(var13);
          Float var15 = this.field_40385.get(var13);
          float var16 = var15 / 2.0F;
          WorldRenderer.method_20064(

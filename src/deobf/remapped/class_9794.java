@@ -16,7 +16,7 @@ public class class_9794 extends class_1279 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       if (this.field_49683 != 0) {
          if (this.field_49683 == 1) {
             this.method_32500(var1, var5, 9, 3, 18, 13, 3, 20, field_7039, field_7039, false);

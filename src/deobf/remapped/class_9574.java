@@ -14,7 +14,7 @@ public class class_9574 extends class_2875 {
 
    public class_9574(int var1, class_7051 var2, class_9210 var3) {
       super(class_4165.field_20258, var1, var2, var3);
-      this.field_48707 = var2.field_36409.field_41768;
+      this.field_48707 = var2.field_36409.world;
       this.field_48706 = this.field_48707.method_29549().<class_6867, class_667>method_23137(class_1510.field_7998);
    }
 
@@ -30,7 +30,7 @@ public class class_9574 extends class_2875 {
 
    @Override
    public ItemStack method_13209(class_704 var1, ItemStack var2) {
-      var2.method_27964(var1.field_41768, var1, var2.method_27997());
+      var2.method_27964(var1.world, var1, var2.method_27997());
       this.field_14087.method_41424(var1);
       this.method_44242(0);
       this.method_44242(1);

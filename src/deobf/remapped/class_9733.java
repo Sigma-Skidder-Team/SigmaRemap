@@ -205,8 +205,8 @@ public abstract class class_9733 {
    }
 
    public int method_44952(float var1) {
-      class_1331 var4 = new class_1331(this.field_49462, this.field_49473, this.field_49465);
-      return !this.field_49469.method_22559(var4) ? 0 : WorldRenderer.method_20002(this.field_49469, var4);
+      BlockPos var4 = new BlockPos(this.field_49462, this.field_49473, this.field_49465);
+      return !this.field_49469.isBlockLoaded(var4) ? 0 : WorldRenderer.method_20002(this.field_49469, var4);
    }
 
    public boolean method_44946() {

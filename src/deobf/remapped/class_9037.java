@@ -25,7 +25,7 @@ public class class_9037 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      long var3 = this.field_46244.field_41768.method_29546();
+      long var3 = this.field_46244.world.method_29546();
       if (var3 - this.field_46243 >= 20L) {
          this.field_46243 = var3;
          class_5834 var5 = this.field_46244.method_17809();
@@ -121,7 +121,7 @@ public class class_9037 extends class_3599 {
       double var6 = this.method_41492(var1);
       if (var2 <= var6 && this.field_46238 <= 0) {
          this.method_41491();
-         this.field_46244.method_26597(class_2584.field_12791);
+         this.field_46244.method_26597(Hand.MAIN_HAND);
          this.field_46244.method_26442(var1);
       }
    }

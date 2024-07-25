@@ -4,10 +4,10 @@ public class class_2129 extends class_4657 implements class_372 {
    private static String[] field_10654;
    private final class_2522 field_10656;
    private final class_9379 field_10658;
-   private final class_1331 field_10655;
+   private final BlockPos field_10655;
    private boolean field_10657;
 
-   public class_2129(class_2522 var1, class_9379 var2, class_1331 var3) {
+   public class_2129(class_2522 var1, class_9379 var2, BlockPos var3) {
       super(1);
       this.field_10656 = var1;
       this.field_10658 = var2;

@@ -9,12 +9,12 @@ public class class_9864 extends class_2830 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_49909;
    }
 
    @Override
-   public boolean method_12870(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_12870(class_2522 var1, class_6163 var2, BlockPos var3) {
       return var1.method_8349(class_2351.field_11769) || var1.method_8350(class_4783.field_23531) || super.method_12870(var1, var2, var3);
    }
 

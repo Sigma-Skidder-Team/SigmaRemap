@@ -212,7 +212,7 @@ public class class_3362 {
             var1.method_14517().method_23509(this.field_16567);
             if (var1.method_14511() != null
                && var1.method_14511().method_35163()
-               && this.field_16567.field_41768.method_29537().method_1285(class_291.field_1053)) {
+               && this.field_16567.world.method_29537().method_1285(class_291.field_1053)) {
                this.field_16564
                   .method_39983(
                      new TranslationTextComponent(

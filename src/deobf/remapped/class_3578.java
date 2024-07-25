@@ -24,7 +24,7 @@ public abstract class class_3578 extends class_1829 {
       return super.method_26915() || this.method_16636();
    }
 
-   public static boolean method_16634(class_6629<? extends class_3578> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_16634(class_6629<? extends class_3578> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_28262(var3).method_8350(class_4783.field_23900) && var1.method_28262(var3.method_6081()).method_8350(class_4783.field_23900);
    }
 
@@ -109,14 +109,14 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24999 && this.method_37330()) {
          this.method_37155(class_463.field_2597, 1.0F, 1.0F);
          var5.method_27970(1);
          ItemStack var6 = this.method_16633();
          this.method_16630(var6);
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             class_8807.field_45082.method_44414((class_9359)var1, var6);
          }
 
@@ -129,7 +129,7 @@ public abstract class class_3578 extends class_1829 {
          }
 
          this.method_37204();
-         return class_6910.method_31659(this.field_41768.field_33055);
+         return class_6910.method_31659(this.world.field_33055);
       } else {
          return super.method_26857(var1, var2);
       }
@@ -155,6 +155,6 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
    }
 }

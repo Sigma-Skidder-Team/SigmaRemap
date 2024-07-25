@@ -12,10 +12,10 @@ public class NoViewResetModule extends Module {
             if (client.thePlayer.field_41697 >= 10) {
                if (client.thePlayer != null && var1.method_557() instanceof class_509) {
                   class_509 var4 = (class_509)var1.method_557();
-                  client.thePlayer.field_41711 = var4.field_3143;
+                  client.thePlayer.prevRotationYaw = var4.field_3143;
                   client.thePlayer.field_41762 = var4.field_3140;
-                  var4.field_3143 = client.thePlayer.field_41701;
-                  var4.field_3140 = client.thePlayer.field_41755;
+                  var4.field_3143 = client.thePlayer.rotationYaw;
+                  var4.field_3140 = client.thePlayer.rotationPitch;
                }
             }
          }

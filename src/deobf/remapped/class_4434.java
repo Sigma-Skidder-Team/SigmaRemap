@@ -25,9 +25,9 @@ public class class_4434 extends class_2062 {
 
    @Override
    public void method_9627(
-      class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<class_1331> var8, int var9, class_9616 var10
+           class_6755 var1, Random var2, class_1297 var3, int var4, class_8070 var5, int var6, int var7, Set<BlockPos> var8, int var9, class_9616 var10
    ) {
-      class_1331 var13 = var5.method_36623();
+      BlockPos var13 = var5.method_36623();
       int var14 = 0;
 
       for (int var15 = var13.method_12165() - var6 + var9; var15 <= var13.method_12165() + var9; var15++) {
@@ -40,7 +40,7 @@ public class class_4434 extends class_2062 {
             var18 = var17;
          }
 
-         this.method_9625(var1, var2, var3, new class_1331(var13.method_12173(), var15, var13.method_12185()), var18, var8, 0, var5.method_36625(), var10);
+         this.method_9625(var1, var2, var3, new BlockPos(var13.method_12173(), var15, var13.method_12185()), var18, var8, 0, var5.method_36625(), var10);
          var14 = var17;
       }
    }

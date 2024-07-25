@@ -41,7 +41,7 @@ public class ServerCrashesModule extends PremiumModule {
                      this.field_9875 = 0;
 
                      for (int var25 = 0; var25 < 100000; var25++) {
-                        client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                        client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
                      }
 
                      class_6324.method_28832("Trying to crash the server..");

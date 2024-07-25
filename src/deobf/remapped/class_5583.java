@@ -165,7 +165,7 @@ public class class_5583 extends class_8990 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2548;
    }
 
@@ -201,7 +201,7 @@ public class class_5583 extends class_8990 {
 
    @Override
    public boolean method_26442(Entity var1) {
-      return var1.method_37181(class_6199.method_28345(this), this.method_25359());
+      return var1.attackEntityFrom(DamageSource.method_28345(this), this.method_25359());
    }
 
    @Override
@@ -313,19 +313,19 @@ public class class_5583 extends class_8990 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       class_2451 var6 = var5.method_27960();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (!this.method_41215()) {
             if (this.method_24866(var5)) {
                this.method_24867(var1, var5);
                if (this.field_41717.nextInt(3) != 0) {
-                  this.field_41768.method_29587(this, (byte)6);
+                  this.world.method_29587(this, (byte)6);
                } else {
                   this.method_41212(var1);
                   this.method_41208(true);
-                  this.field_41768.method_29587(this, (byte)7);
+                  this.world.method_29587(this, (byte)7);
                }
 
                this.method_26883();
@@ -335,7 +335,7 @@ public class class_5583 extends class_8990 {
             if (!(var6 instanceof class_239)) {
                if (var6.method_11247() && this.method_24866(var5) && this.method_26551() < this.method_26465()) {
                   this.method_24867(var1, var5);
-                  this.method_26457((float)var6.method_11227().method_38406());
+                  this.heal((float)var6.method_11227().method_38406());
                   return class_6910.field_35518;
                }
 

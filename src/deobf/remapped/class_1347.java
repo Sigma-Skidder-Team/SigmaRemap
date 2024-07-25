@@ -24,7 +24,7 @@ public class class_1347 {
       this.field_7357 = var3;
    }
 
-   public void method_6231(class_2344 var1, class_9716 var2, class_7966 var3, class_2565 var4, int var5, int var6) {
+   public void method_6231(class_2344 var1, AbstractClientPlayerEntity var2, class_7966 var3, class_2565 var4, int var5, int var6) {
       Identifier var9 = this.field_7359;
       if (!this.field_7352) {
          if (this.field_7366 == null) {

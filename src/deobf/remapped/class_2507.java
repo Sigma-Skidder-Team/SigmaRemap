@@ -91,7 +91,7 @@ public class class_2507 {
       return var4.method_11426();
    }
 
-   public boolean method_11429(class_1331 var1) {
+   public boolean method_11429(BlockPos var1) {
       for (class_8571 var7 : field_12450) {
          class_2522 var8 = field_12447.theWorld.method_28262(var1.method_6103(var7.field_43941, var7.field_43940, var7.field_43942));
          if (var8.method_8360() == class_4783.field_23900 || var8.method_8360() == class_4783.field_23811) {
@@ -103,8 +103,8 @@ public class class_2507 {
    }
 
    public boolean method_11425(int var1, int var2, int var3) {
-      class_1331 var6 = new class_1331(var1, var2, var3);
-      return field_12447.theWorld.method_28262(new class_1331(var1, var2 - 1, var3)).method_8360() != class_4783.field_23184
+      BlockPos var6 = new BlockPos(var1, var2, var3);
+      return field_12447.theWorld.method_28262(new BlockPos(var1, var2 - 1, var3)).method_8360() != class_4783.field_23184
          ? !this.method_11429(var6) && !this.method_11429(var6.method_6081())
          : false;
    }
@@ -131,7 +131,7 @@ public class class_2507 {
 
    public boolean method_11433(class_8571 var1) {
       return field_12447.theWorld
-            .method_28262(new class_1331((int)var1.method_39427(), (int)var1.method_39425() - 1, (int)var1.method_39423()))
+            .method_28262(new BlockPos((int)var1.method_39427(), (int)var1.method_39425() - 1, (int)var1.method_39423()))
             .method_8360()
          != class_4783.field_23184;
    }
@@ -149,8 +149,8 @@ public class class_2507 {
    }
 
    public static boolean method_11432(int var0, int var1, int var2) {
-      return field_12447.theWorld.method_28262(new class_1331(var0, var1 + 1, var2)).method_8360() != class_4783.field_23184
-         || field_12447.theWorld.method_28262(new class_1331(var0, var1, var2)).method_8360() != class_4783.field_23184;
+      return field_12447.theWorld.method_28262(new BlockPos(var0, var1 + 1, var2)).method_8360() != class_4783.field_23184
+         || field_12447.theWorld.method_28262(new BlockPos(var0, var1, var2)).method_8360() != class_4783.field_23184;
    }
 
    public class_3027 method_11436(class_8571 var1, class_407 var2) {

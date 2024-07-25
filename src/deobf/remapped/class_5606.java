@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.AbstractIterator;
 
-public final class class_5606 extends AbstractIterator<class_1331> {
+public final class class_5606 extends AbstractIterator<BlockPos> {
    private static String[] field_28463;
    private final class_2921 field_28451;
    private int field_28465;
@@ -23,7 +23,7 @@ public final class class_5606 extends AbstractIterator<class_1331> {
       this.field_28451 = new class_2921();
    }
 
-   public class_1331 computeNext() {
+   public BlockPos computeNext() {
       if (!this.field_28460) {
          class_2921 var3;
          for (var3 = null; var3 == null; this.field_28453++) {
@@ -32,7 +32,7 @@ public final class class_5606 extends AbstractIterator<class_1331> {
                if (this.field_28459 > this.field_28455) {
                   this.field_28465++;
                   if (this.field_28465 > this.field_28458) {
-                     return (class_1331)this.endOfData();
+                     return (BlockPos)this.endOfData();
                   }
 
                   this.field_28455 = Math.min(this.field_28462, this.field_28465);

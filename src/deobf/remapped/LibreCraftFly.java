@@ -103,8 +103,8 @@ public class LibreCraftFly extends Module {
                this.field_28095 = -1;
             }
 
-            var5.field_3143 = client.thePlayer.field_41701;
-            var5.field_3140 = client.thePlayer.field_41755;
+            var5.field_3143 = client.thePlayer.rotationYaw;
+            var5.field_3140 = client.thePlayer.rotationPitch;
          }
       }
    }

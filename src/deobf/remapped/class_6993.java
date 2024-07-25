@@ -69,12 +69,12 @@ public abstract class class_6993 extends class_1173 {
 
       if (this.field_35908 > 300) {
          this.method_31986();
-         this.method_31992((class_6331)this.field_41768);
+         this.method_31992((class_6331)this.world);
       }
    }
 
    public boolean method_31990() {
-      return !this.field_41768.method_22572().method_40227() && !this.method_31991() && !this.method_26859();
+      return !this.world.method_22572().method_40227() && !this.method_31991() && !this.method_26859();
    }
 
    public void method_31992(class_6331 var1) {

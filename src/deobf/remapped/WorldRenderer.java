@@ -68,7 +68,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    private int field_20997;
    private final Int2ObjectMap<class_9259> field_20945 = new Int2ObjectOpenHashMap();
    private final Long2ObjectMap<SortedSet<class_9259>> field_20948 = new Long2ObjectOpenHashMap();
-   private final Map<class_1331, class_3560> field_20971 = Maps.newHashMap();
+   private final Map<BlockPos, class_3560> field_20971 = Maps.newHashMap();
    public class_4230 field_21000;
    private class_4067 field_20926;
    private class_4230 field_21001;
@@ -128,7 +128,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    private static final Set field_21003 = Collections.<Direction>unmodifiableSet(new HashSet(Arrays.asList(Direction.field_803)));
    private int field_20920;
    private int field_20963 = 0;
-   private class_4460 field_20960 = new class_4460(class_4783.field_23184.method_29260(), new class_1331(0, 0, 0));
+   private class_4460 field_20960 = new class_4460(class_4783.field_23184.method_29260(), new BlockPos(0, 0, 0));
    public boolean field_20932 = false;
    public boolean field_20923 = false;
    private boolean field_21009 = false;
@@ -140,8 +140,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    private Map<RenderLayer, Map> field_20967 = new LinkedHashMap<class_3581, Map>();
 
    @Nullable
-   private class_3511 method_20003(class_1331 var1, class_3511 var2, Direction var3) {
-      class_1331 var4 = var2.method_16143(var3);
+   private class_3511 method_20003(BlockPos var1, class_3511 var2, Direction var3) {
+      BlockPos var4 = var2.method_16143(var3);
       if (class_9299.method_42805(var1.method_12173() - var4.method_12173()) > this.field_20922 * 16) {
          return null;
       } else if (var4.method_12165() >= 0 && var4.method_12165() < 256) {
@@ -350,14 +350,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       if (!(var2 <= 0.0F) && Config.method_14356()) {
          Random var3 = new Random((long)this.field_20997 * 312987231L);
          ClientWorld var4 = this.client.theWorld;
-         class_1331 var5 = new class_1331(var1.method_41627());
-         class_1331 var6 = null;
+         BlockPos var5 = new BlockPos(var1.method_41627());
+         BlockPos var6 = null;
          int var7 = (int)(100.0F * var2 * var2) / (this.client.gameOptions.field_45505 == class_9761.field_49576 ? 2 : 1);
 
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
             int var10 = var3.nextInt(21) - 10;
-            class_1331 var11 = var4.method_22563(class_3801.field_18595, var5.method_6104(var9, 0, var10)).method_6100();
+            BlockPos var11 = var4.method_22563(class_3801.field_18595, var5.method_6104(var9, 0, var10)).method_6100();
             class_6325 var12 = var4.method_22561(var11);
             if (var11.method_12165() > 0
                && var11.method_12165() <= var5.method_12165() + 10
@@ -641,7 +641,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       class_5161.method_23652();
-      this.field_20960.method_20678((class_2522)null, (class_1331)null);
+      this.field_20960.method_20678((class_2522)null, (BlockPos)null);
       class_5630.method_25517(this.field_20970);
       class_6588.method_30223(this.field_20970);
       if (var1 != null) {
@@ -797,10 +797,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.field_20968.method_30739(var6);
       this.field_20970.method_29599().method_16050("cull");
       this.client.getProfiler().method_16050("culling");
-      class_1331 var13 = var1.method_41630();
+      BlockPos var13 = var1.method_41630();
       class_3511 var14 = this.field_20966.method_34563(var13);
       byte var15 = 16;
-      class_1331 var16 = new class_1331(
+      BlockPos var16 = new BlockPos(
          class_9299.method_42847(var6.field_7336 / 16.0) * 16,
          class_9299.method_42847(var6.field_7333 / 16.0) * 16,
          class_9299.method_42847(var6.field_7334 / 16.0) * 16
@@ -837,7 +837,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var21 = class_5161.method_23653(this.field_20970, var20, this.field_20922);
       }
 
-      class_3511 var22 = this.field_20966.method_34563(new class_1331(var20.method_37302(), var20.method_37309(), var20.method_37156()));
+      class_3511 var22 = this.field_20966.method_34563(new BlockPos(var20.method_37302(), var20.method_37309(), var20.method_37156()));
       if (class_6588.field_33945) {
          this.field_20982 = this.field_21015;
          this.field_20961 = this.field_20940;
@@ -883,7 +883,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_9299.method_42827((double)this.client.gameOptions.field_45537 / 8.0, 1.0, 2.5) * (double)this.client.gameOptions.field_45475
          );
          boolean var43 = this.client.field_9631;
-         class_1331 var45 = var1.method_41630();
+         BlockPos var45 = var1.method_41630();
          int var26 = var45.method_12165();
          int var27 = var26 >> 4 << 4;
          if (var27 > var21) {
@@ -906,7 +906,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                double var36 = (double)(this.field_20922 * 16);
 
                for (double var38 = var36 * var36; var29.method_6204(var28) < var38; var29 = var29.method_6214(var32, 0.0, var34)) {
-                  class_3511 var40 = this.field_20966.method_34563(new class_1331(var29));
+                  class_3511 var40 = this.field_20966.method_34563(new BlockPos(var29));
                   if (var40 == null) {
                      break;
                   }
@@ -940,7 +940,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
                for (int var58 = -this.field_20922; var58 <= this.field_20922; var58++) {
                   for (int var33 = -this.field_20922; var33 <= this.field_20922; var33++) {
-                     class_3511 var61 = this.field_20966.method_34563(new class_1331(var52 + (var58 << 4) + 8, var49, var54 + (var33 << 4) + 8));
+                     class_3511 var61 = this.field_20966.method_34563(new BlockPos(var52 + (var58 << 4) + 8, var49, var54 + (var33 << 4) + 8));
                      if (var61 != null && var2.method_10824(var61.field_17221)) {
                         var61.method_16187(var4);
                         class_1261 var35 = var61.method_16166();
@@ -1010,7 +1010,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_3511 var47 = var46.field_6947;
             if (var47.method_16181() || var42.contains(var47)) {
                this.field_20985 = true;
-               class_1331 var48 = var47.method_16189();
+               BlockPos var48 = var47.method_16189();
                boolean var51 = (double)class_1750.method_7807(
                      var16, (float)(var48.method_12173() + 8), (float)(var48.method_12165() + 8), (float)(var48.method_12185() + 8)
                   )
@@ -1035,7 +1035,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    @Nullable
-   private class_3511 method_20004(class_1331 var1, class_3511 var2, Direction var3, boolean var4, int var5) {
+   private class_3511 method_20004(BlockPos var1, class_3511 var2, Direction var3, boolean var4, int var5) {
       class_3511 var6 = var2.method_16165(var3);
       if (var6 == null) {
          return null;
@@ -1043,7 +1043,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          return null;
       } else {
          if (var4) {
-            class_1331 var7 = var6.method_16189();
+            BlockPos var7 = var6.method_16189();
             int var8 = var1.method_12173() - var7.method_12173();
             int var9 = var1.method_12185() - var7.method_12185();
             int var10 = var8 * var8 + var9 * var9;
@@ -1316,7 +1316,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                   class_6588.method_30117(var82);
                }
 
-               class_1331 var88 = var82.method_17399();
+               BlockPos var88 = var82.method_17399();
                Object var89 = var39;
                var1.method_36063();
                if (MinecraftClient.getInstance().field_9591) {
@@ -1358,7 +1358,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                class_6588.method_30117(var73);
             }
 
-            class_1331 var83 = var73.method_17399();
+            BlockPos var83 = var73.method_17399();
             var1.method_36063();
             var1.method_36065((double)var83.method_12173() - var12, (double)var83.method_12165() - var14, (double)var83.method_12185() - var16);
             class_3569.field_17468.method_16586(var73, var2, var1, var39);
@@ -1396,7 +1396,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       while (var63.hasNext()) {
          Entry var68 = (Entry)var63.next();
-         class_1331 var74 = class_1331.method_6088(var68.getLongKey());
+         BlockPos var74 = BlockPos.method_6088(var68.getLongKey());
          double var79 = (double)var74.method_12173() - var12;
          double var87 = (double)var74.method_12165() - var14;
          double var90 = (double)var74.method_12185() - var16;
@@ -1422,7 +1422,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_7474 var64 = this.client.field_9587;
       if (var5 && var64 != null && var64.method_33990() == class_1430.field_7717) {
          var10.method_16050("outline");
-         class_1331 var69 = ((class_9529)var64).method_43955();
+         BlockPos var69 = ((class_9529)var64).method_43955();
          class_2522 var75 = this.field_20970.method_28262(var69);
          boolean var80;
          if (class_7860.field_39999.method_3596() && class_7860.field_39840.method_3596()) {
@@ -1574,7 +1574,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       double var11 = class_9299.method_42794((double)var8, var1.field_41754, var1.method_37302());
       double var13 = class_9299.method_42794((double)var8, var1.field_41713, var1.method_37309());
       double var15 = class_9299.method_42794((double)var8, var1.field_41724, var1.method_37156());
-      float var17 = class_9299.method_42795(var8, var1.field_41711, var1.field_41701);
+      float var17 = class_9299.method_42795(var8, var1.prevRotationYaw, var1.rotationYaw);
       this.field_20988.method_28115(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field_20988.method_28120(var1, var8));
    }
 
@@ -1678,7 +1678,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             if (!var32.method_16150().method_40698(var1)) {
                class_7995 var15 = var32.method_16180(var1);
                GlStateManager.method_8757();
-               class_1331 var35 = var32.method_16189();
+               BlockPos var35 = var32.method_16189();
                GlStateManager.method_8876((double)var35.method_12173() - var3, (double)var35.method_12165() - var5, (double)var35.method_12185() - var7);
                var15.method_36280();
                class_7985.field_40918.method_13179(0L);
@@ -1737,7 +1737,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_1261 var11 = (class_1261)var10.next();
             class_3511 var12 = var11.field_6947;
             RenderSystem.method_16438();
-            class_1331 var13 = var12.method_16189();
+            BlockPos var13 = var12.method_16189();
             RenderSystem.method_16483((double)var13.method_12173() - var4, (double)var13.method_12165() - var6, (double)var13.method_12185() - var8);
             if (this.client.field_9569) {
                var3.method_44471(1, class_7985.field_40903);
@@ -2692,7 +2692,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       var1.method_35761(var8 - var2, (double)var10 - var4, var11 - var6).method_35745(var13, var14).method_35735();
    }
 
-   private void method_20053(class_7966 var1, class_7907 var2, Entity var3, double var4, double var6, double var8, class_1331 var10, class_2522 var11) {
+   private void method_20053(class_7966 var1, class_7907 var2, Entity var3, double var4, double var6, double var8, BlockPos var10, class_2522 var11) {
       method_20046(
          var1,
          var2,
@@ -2856,11 +2856,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       var0.method_35761(var7, var9, var11).method_35742(var13, var14, var15, var16).method_35735();
    }
 
-   public void method_20066(class_6163 var1, class_1331 var2, class_2522 var3, class_2522 var4, int var5) {
+   public void method_20066(class_6163 var1, BlockPos var2, class_2522 var3, class_2522 var4, int var5) {
       this.method_20065(var2, false);
    }
 
-   private void method_20065(class_1331 var1, boolean var2) {
+   private void method_20065(BlockPos var1, boolean var2) {
       for (int var3 = var1.method_12185() - 1; var3 <= var1.method_12185() + 1; var3++) {
          for (int var4 = var1.method_12173() - 1; var4 <= var1.method_12173() + 1; var4++) {
             for (int var5 = var1.method_12165() - 1; var5 <= var1.method_12165() + 1; var5++) {
@@ -2880,7 +2880,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20094(class_1331 var1, class_2522 var2, class_2522 var3) {
+   public void method_20094(BlockPos var1, class_2522 var2, class_2522 var3) {
       if (this.client.method_8535().method_33944(var2, var3)) {
          this.method_20093(var1.method_12173(), var1.method_12165(), var1.method_12185(), var1.method_12173(), var1.method_12165(), var1.method_12185());
       }
@@ -2904,14 +2904,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.field_20966.method_34569(var1, var2, var3, var4);
    }
 
-   public void method_20088(class_8461 var1, class_1331 var2) {
+   public void method_20088(class_8461 var1, BlockPos var2) {
       this.method_20089(var1, var2, var1 == null ? null : class_7738.method_35031(var1));
    }
 
-   public void method_20089(class_8461 var1, class_1331 var2, class_7738 var3) {
+   public void method_20089(class_8461 var1, BlockPos var2, class_7738 var3) {
       class_3560 var4 = this.field_20971.get(var2);
       if (var4 != null) {
-         this.client.method_8590().method_16336(var4);
+         this.client.getSoundHandler().method_16336(var4);
          this.field_20971.remove(var2);
       }
 
@@ -2927,13 +2927,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          class_4949 var6 = class_4949.method_22679(var1, (double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
          this.field_20971.put(var2, var6);
-         this.client.method_8590().method_16345(var6);
+         this.client.getSoundHandler().play(var6);
       }
 
       this.method_20080(this.field_20970, var2, var1 != null);
    }
 
-   private void method_20080(World var1, class_1331 var2, boolean var3) {
+   private void method_20080(World var1, BlockPos var2, boolean var3) {
       for (class_5834 var5 : var1.<class_5834>method_25868(class_5834.class, new class_4092(var2).method_18898(3.0))) {
          var5.method_26424(var2, var3);
       }
@@ -3070,7 +3070,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    public void method_20034() {
    }
 
-   public void method_20081(int var1, class_1331 var2, int var3) {
+   public void method_20081(int var1, BlockPos var2, int var3) {
       switch (var1) {
          case 1023:
          case 1028:
@@ -3101,7 +3101,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20038(class_704 var1, int var2, class_1331 var3, int var4) {
+   public void method_20038(class_704 var1, int var2, BlockPos var3, int var4) {
       Random var5 = this.field_20970.field_33033;
       switch (var2) {
          case 1000:
@@ -3203,7 +3203,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.field_20970.method_721(var3, class_463.field_2802, class_562.field_3322, 0.3F, this.field_20970.field_33033.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1032:
-            this.client.method_8590().method_16345(class_4949.method_22680(class_463.field_2294, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.client.getSoundHandler().play(class_4949.method_22680(class_463.field_2294, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
             break;
          case 1033:
             this.field_20970.method_721(var3, class_463.field_2280, class_562.field_3322, 1.0F, 1.0F, false);
@@ -3486,7 +3486,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20073(int var1, class_1331 var2, int var3) {
+   public void method_20073(int var1, BlockPos var2, int var3) {
       if (var3 >= 0 && var3 < 10) {
          class_9259 var5 = (class_9259)this.field_20945.get(var1);
          if (var5 != null) {
@@ -3550,7 +3550,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       return this.field_20924.size();
    }
 
-   public class_3511 method_20068(class_1331 var1) {
+   public class_3511 method_20068(BlockPos var1) {
       return this.field_20966.method_34563(var1);
    }
 
@@ -3688,11 +3688,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
    }
 
-   public static int method_20002(class_5561 var0, class_1331 var1) {
+   public static int method_20002(class_5561 var0, BlockPos var1) {
       return method_20052(var0, var0.method_28262(var1), var1);
    }
 
-   public static int method_20052(class_5561 var0, class_2522 var1, class_1331 var2) {
+   public static int method_20052(class_5561 var0, class_2522 var1, BlockPos var2) {
       if (var1.method_8342(var0, var2)) {
          return 15728880;
       } else {

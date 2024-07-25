@@ -40,7 +40,7 @@ public abstract class class_3200<C extends class_6157> {
          if (!this.field_15986.isEmpty()) {
             class_9616 var10 = this.field_15986.get(0).field_36435;
             class_2700 var11 = var10.method_44396();
-            class_1331 var12 = new class_1331(var11.method_12173(), var10.field_48995, var11.method_12185());
+            BlockPos var12 = new BlockPos(var11.method_12173(), var10.field_48995, var11.method_12185());
             Iterator var13 = this.field_15986.iterator();
 
             while (var13.hasNext()) {
@@ -130,8 +130,8 @@ public abstract class class_3200<C extends class_6157> {
       return this.field_15987;
    }
 
-   public class_1331 method_14730() {
-      return new class_1331(this.field_15992 << 4, 0, this.field_15987 << 4);
+   public BlockPos method_14730() {
+      return new BlockPos(this.field_15992 << 4, 0, this.field_15987 << 4);
    }
 
    public boolean method_14725() {

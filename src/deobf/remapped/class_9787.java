@@ -72,17 +72,17 @@ public class class_9787 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public boolean method_29275(class_2522 var1, class_6163 var2, class_1331 var3) {
+   public boolean method_29275(class_2522 var1, class_6163 var2, BlockPos var3) {
       return !var1.<Boolean>method_10313(field_49673);
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.field_49666[this.method_45184(var1)];
    }
 
    @Override
-   public class_4190 method_10775(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10775(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return this.field_49672[this.method_45184(var1)];
    }
 
@@ -119,7 +119,7 @@ public class class_9787 extends class_6414 implements class_2593 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 

@@ -10,8 +10,8 @@ import java.util.Map.Entry;
 public class class_6590 {
    private static String[] field_33997;
    private final class_1857 field_34000;
-   private HashMap<class_1331, class_2522> field_34001 = new HashMap<class_1331, class_2522>();
-   private HashMap<class_1331, class_2522> field_33996 = new HashMap<class_1331, class_2522>();
+   private HashMap<BlockPos, class_2522> field_34001 = new HashMap<BlockPos, class_2522>();
+   private HashMap<BlockPos, class_2522> field_33996 = new HashMap<BlockPos, class_2522>();
    private Set<class_9448> field_34002 = new HashSet<class_9448>();
    private Set<class_3841> field_33998 = new HashSet<class_3841>();
    private Set<class_3841> field_34003 = new HashSet<class_3841>();
@@ -41,7 +41,7 @@ public class class_6590 {
 
    public void method_30350() {
       for (Entry var4 : this.field_34001.entrySet()) {
-         this.method_30355((class_1331)var4.getKey(), (class_2522)var4.getValue());
+         this.method_30355((BlockPos)var4.getKey(), (class_2522)var4.getValue());
       }
 
       this.field_34001.clear();
@@ -49,7 +49,7 @@ public class class_6590 {
 
    public void method_30351() {
       for (Entry var4 : this.field_33996.entrySet()) {
-         this.method_30343((class_1331)var4.getKey(), (class_2522)var4.getValue());
+         this.method_30343((BlockPos)var4.getKey(), (class_2522)var4.getValue());
       }
 
       this.field_33996.clear();
@@ -76,7 +76,7 @@ public class class_6590 {
       }
    }
 
-   private void method_30355(class_1331 var1, class_2522 var2) {
+   private void method_30355(BlockPos var1, class_2522 var2) {
       class_9448 var5 = this.method_30348(var2);
       if (var5 != null) {
          try {
@@ -113,7 +113,7 @@ public class class_6590 {
          class_4467 var9 = (class_4467)var1;
 
          for (int var7 = 0; var7 < var9.field_21787.length; var7++) {
-            class_1331 var8 = var9.field_21788.method_31904(var9.field_21787[var7]);
+            BlockPos var8 = var9.field_21788.method_31904(var9.field_21787[var7]);
             if (!this.method_30342(var9.field_21786[var7])) {
                var5.put(var8, var9.field_21786[var7]);
             } else {
@@ -132,7 +132,7 @@ public class class_6590 {
       return null;
    }
 
-   private void method_30343(class_1331 var1, class_2522 var2) {
+   private void method_30343(BlockPos var1, class_2522 var2) {
       class_9448 var5 = this.method_30348(var2);
       if (var5 != null) {
          this.field_34003.addAll(var5.method_43697(var1, var2, this));
@@ -143,12 +143,12 @@ public class class_6590 {
       return this.method_30348(var1) != null;
    }
 
-   public void method_30346(class_1331 var1, class_2522 var2) {
+   public void method_30346(BlockPos var1, class_2522 var2) {
       this.field_34001.put(var1, var2);
       this.field_33996.put(var1, var2);
    }
 
-   public class_2522 method_30352(class_1331 var1) {
+   public class_2522 method_30352(BlockPos var1) {
       if (!this.field_34001.containsKey(var1)) {
          return !this.field_33996.containsKey(var1) ? MinecraftClient.getInstance().theWorld.method_28262(var1) : this.field_33996.get(var1);
       } else {

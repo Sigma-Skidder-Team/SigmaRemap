@@ -34,7 +34,7 @@ public class class_6653 extends class_5892 {
    }
 
    @Override
-   public boolean method_26953(class_1331 var1, class_1331 var2, class_1331 var3, Random var4) {
+   public boolean method_26953(BlockPos var1, BlockPos var2, BlockPos var3, Random var4) {
       Direction var7 = Direction.method_1043(class_137.field_405, this.field_34422);
       float var8 = (float)Math.abs((var2.method_12173() - var3.method_12173()) * var7.method_1041());
       float var9 = (float)Math.abs((var2.method_12165() - var3.method_12165()) * var7.method_1054());

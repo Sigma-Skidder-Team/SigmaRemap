@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7339 extends class_1080 {
+public class class_7339 extends AbstractMinecartEntity {
    private static String[] field_37530;
    private final class_3521 field_37529 = new class_4070(this);
 

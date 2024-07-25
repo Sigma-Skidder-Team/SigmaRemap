@@ -13,7 +13,7 @@ public class class_3252 extends class_378 {
       return class_1173.method_5201().method_5984(class_7331.field_37465, 0.2F);
    }
 
-   public static boolean method_14865(class_6629<class_3252> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_14865(class_6629<class_3252> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       return var1.method_43370() != class_423.field_1790;
    }
 
@@ -92,7 +92,7 @@ public class class_3252 extends class_378 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return !this.method_1859() ? class_463.field_2044 : class_463.field_2413;
    }
 

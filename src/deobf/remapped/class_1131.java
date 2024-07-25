@@ -30,31 +30,31 @@ public abstract class class_1131 {
 
    public abstract class_7027<?> method_4970();
 
-   public abstract List<class_8070> method_4966(class_6755 var1, Random var2, int var3, class_1331 var4, Set<class_1331> var5, class_9616 var6, class_1297 var7);
+   public abstract List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7);
 
    public int method_4973(Random var1) {
       return this.field_6446 + var1.nextInt(this.field_6444 + 1) + var1.nextInt(this.field_6445 + 1);
    }
 
-   public static void method_4967(class_1678 var0, class_1331 var1, class_2522 var2, class_9616 var3) {
+   public static void method_4967(class_1678 var0, BlockPos var1, class_2522 var2, class_9616 var3) {
       class_8739.method_40128(var0, var1, var2);
       var3.method_44392(new class_9616(var1, var1));
    }
 
-   private static boolean method_4971(class_8308 var0, class_1331 var1) {
+   private static boolean method_4971(class_8308 var0, BlockPos var1) {
       return var0.method_38320(var1, var0x -> {
          class_6414 var3 = var0x.method_8360();
          return class_4285.method_19910(var3) && !var0x.method_8350(class_4783.field_23259) && !var0x.method_8350(class_4783.field_23162);
       });
    }
 
-   public static void method_4969(class_6755 var0, class_1331 var1) {
+   public static void method_4969(class_6755 var0, BlockPos var1) {
       if (!method_4971(var0, var1)) {
          class_8739.method_40128(var0, var1, class_4783.field_23592.method_29260());
       }
    }
 
-   public static boolean method_4974(class_6755 var0, Random var1, class_1331 var2, Set<class_1331> var3, class_9616 var4, class_1297 var5) {
+   public static boolean method_4974(class_6755 var0, Random var1, BlockPos var2, Set<BlockPos> var3, class_9616 var4, class_1297 var5) {
       if (!class_8739.method_40126(var0, var2)) {
          return false;
       } else {
@@ -64,7 +64,7 @@ public abstract class class_1131 {
       }
    }
 
-   public static void method_4968(class_6755 var0, Random var1, class_2921 var2, Set<class_1331> var3, class_9616 var4, class_1297 var5) {
+   public static void method_4968(class_6755 var0, Random var1, class_2921 var2, Set<BlockPos> var3, class_9616 var4, class_1297 var5) {
       if (class_8739.method_40122(var0, var2)) {
          method_4974(var0, var1, var2, var3, var4, var5);
       }

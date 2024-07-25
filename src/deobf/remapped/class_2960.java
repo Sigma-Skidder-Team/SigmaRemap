@@ -68,7 +68,7 @@ public class class_2960 extends class_3578 {
 
    @Override
    public void method_37123() {
-      if (!this.field_41768.field_33055 && this.method_37330() && this.method_26530()) {
+      if (!this.world.field_33055 && this.method_37330() && this.method_26530()) {
          if (this.field_14452 <= 0) {
             if (this.method_13537() != 0) {
                if (this.field_14451 > 60 && this.method_13537() == 2) {
@@ -103,7 +103,7 @@ public class class_2960 extends class_3578 {
    public void method_26606() {
       super.method_26606();
       if (this.method_37330() && this.method_13537() > 0) {
-         for (class_5886 var4 : this.field_41768.<class_5834>method_25869(class_5886.class, this.method_37241().method_18898(0.3), field_14454)) {
+         for (class_5886 var4 : this.world.<class_5834>method_25869(class_5886.class, this.method_37241().method_18898(0.3), field_14454)) {
             if (var4.method_37330()) {
                this.method_13536(var4);
             }
@@ -113,7 +113,7 @@ public class class_2960 extends class_3578 {
 
    private void method_13536(class_5886 var1) {
       int var4 = this.method_13537();
-      if (var1.method_37181(class_6199.method_28345(this), (float)(1 + var4))) {
+      if (var1.attackEntityFrom(DamageSource.method_28345(this), (float)(1 + var4))) {
          var1.method_26558(new class_2250(Effects.field_19718, 60 * var4, 0));
          this.method_37155(class_463.field_1961, 1.0F, 1.0F);
       }
@@ -122,7 +122,7 @@ public class class_2960 extends class_3578 {
    @Override
    public void method_37347(class_704 var1) {
       int var4 = this.method_13537();
-      if (var1 instanceof class_9359 && var4 > 0 && var1.method_37181(class_6199.method_28345(this), (float)(1 + var4))) {
+      if (var1 instanceof class_9359 && var4 > 0 && var1.attackEntityFrom(DamageSource.method_28345(this), (float)(1 + var4))) {
          if (!this.method_37378()) {
             ((class_9359)var1).field_47794.method_4156(new class_2161(class_2161.field_10787, 0.0F));
          }
@@ -142,7 +142,7 @@ public class class_2960 extends class_3578 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2800;
    }
 

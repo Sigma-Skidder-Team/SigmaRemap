@@ -19,7 +19,7 @@ public class class_6394 {
          class_4467 var17 = (class_4467)var0.method_557();
 
          for (int var5 = 0; var5 < var17.field_21787.length; var5++) {
-            class_1331 var6 = var17.field_21788.method_31904(var17.field_21787[var5]);
+            BlockPos var6 = var17.field_21788.method_31904(var17.field_21787[var5]);
             if (var1.method_30342(var17.field_21786[var5])) {
                var1.method_30346(var6, var17.field_21786[var5]);
             }
@@ -53,10 +53,10 @@ public class class_6394 {
                   for (float var12 = 0.0F; var12 <= 15.0F; var12++) {
                      for (float var13 = 0.0F; var13 <= 15.0F; var13++) {
                         for (float var14 = 0.0F; var14 <= 15.0F; var14++) {
-                           class_2522 var15 = var20.method_28262(new class_1331((double)var13, (double)((float)(var7 * 16) + var12), (double)var14));
+                           class_2522 var15 = var20.method_28262(new BlockPos((double)var13, (double)((float)(var7 * 16) + var12), (double)var14));
                            if (var1.method_30342(var15)) {
                               var1.method_30346(
-                                 new class_1331(
+                                 new BlockPos(
                                     (double)((float)(var20.method_27352().field_10328 * 16) + var13),
                                     (double)((float)(var7 * 16) + var12),
                                     (double)((float)(var20.method_27352().field_10327 * 16) + var14)

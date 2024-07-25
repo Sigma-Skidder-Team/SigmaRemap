@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class class_2294 {
-   public static String method_10557(class_6163 var0, class_1331 var1) {
+   public static String method_10557(class_6163 var0, BlockPos var1) {
       class_3757 var4 = var0.method_28260(var1);
       return method_10556(var4);
    }
@@ -20,7 +20,7 @@ public class class_2294 {
    }
 
    public static void method_10558(class_3757 var0) {
-      class_1331 var3 = var0.method_17399();
+      BlockPos var3 = var0.method_17399();
       ITextComponent var4 = method_10559(var0);
       if (var4 == null) {
          Object var5 = method_10561(var3);
@@ -32,7 +32,7 @@ public class class_2294 {
       }
    }
 
-   public static ITextComponent method_10561(class_1331 var0) {
+   public static ITextComponent method_10561(BlockPos var0) {
       class_3757 var3 = class_419.method_2088(var0);
       return var3 != null ? method_10559(var3) : null;
    }

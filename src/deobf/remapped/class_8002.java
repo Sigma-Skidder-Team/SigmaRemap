@@ -28,7 +28,7 @@ public class class_8002 extends AbstractGui implements IRenderable, class_5888, 
    public MinecraftClient field_41006;
    private class_1863 field_41002;
    private String field_41001 = "";
-   private class_2716 field_40992;
+   private ClientRecipeBook field_40992;
    private final class_65 field_41005 = new class_65();
    private final class_534 field_40995 = new class_534();
    private int field_40994;

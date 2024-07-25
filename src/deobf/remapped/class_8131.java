@@ -10,7 +10,7 @@ public abstract class class_8131 extends class_7060 {
    private static final Logger field_41649 = LogManager.getLogger();
    public class_6561 field_41647;
    public class_8478 field_41650;
-   public class_1331 field_41648;
+   public BlockPos field_41648;
 
    public class_8131(class_2746 var1, int var2) {
       super(var1, var2);
@@ -18,10 +18,10 @@ public abstract class class_8131 extends class_7060 {
 
    public class_8131(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
-      this.field_41648 = new class_1331(var2.method_25947("TPX"), var2.method_25947("TPY"), var2.method_25947("TPZ"));
+      this.field_41648 = new BlockPos(var2.method_25947("TPX"), var2.method_25947("TPY"), var2.method_25947("TPZ"));
    }
 
-   public void method_36998(class_6561 var1, class_1331 var2, class_8478 var3) {
+   public void method_36998(class_6561 var1, BlockPos var2, class_8478 var3) {
       this.field_41647 = var1;
       this.method_32519(Direction.field_818);
       this.field_41648 = var2;
@@ -37,7 +37,7 @@ public abstract class class_8131 extends class_7060 {
    }
 
    @Override
-   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, class_1331 var7) {
+   public boolean method_32501(class_700 var1, class_2033 var2, class_6541 var3, Random var4, class_9616 var5, class_2034 var6, BlockPos var7) {
       this.field_41650.method_39051(var5);
       this.field_36435 = this.field_41647.method_29986(this.field_41650, this.field_41648);
       if (this.field_41647.method_29965(var1, this.field_41648, var7, this.field_41650, var4, 2)) {
@@ -76,7 +76,7 @@ public abstract class class_8131 extends class_7060 {
       return true;
    }
 
-   public abstract void method_36999(String var1, class_1331 var2, class_1556 var3, Random var4, class_9616 var5);
+   public abstract void method_36999(String var1, BlockPos var2, class_1556 var3, Random var4, class_9616 var5);
 
    @Override
    public void method_32508(int var1, int var2, int var3) {

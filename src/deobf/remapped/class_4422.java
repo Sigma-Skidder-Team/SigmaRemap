@@ -22,7 +22,7 @@ public class class_4422 extends class_1131 {
    }
 
    @Override
-   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, class_1331 var4, Set<class_1331> var5, class_9616 var6, class_1297 var7) {
+   public List<class_8070> method_4966(class_6755 var1, Random var2, int var3, BlockPos var4, Set<BlockPos> var5, class_9616 var6, class_1297 var7) {
       method_4969(var1, var4.method_6100());
       ArrayList var10 = Lists.newArrayList();
       Direction var11 = class_9594.field_48893.method_44313(var2);
@@ -46,7 +46,7 @@ public class class_4422 extends class_1131 {
          }
       }
 
-      var10.add(new class_8070(new class_1331(var15, var17, var16), 1, false));
+      var10.add(new class_8070(new BlockPos(var15, var17, var16), 1, false));
       var15 = var4.method_12173();
       var16 = var4.method_12185();
       Direction var26 = class_9594.field_48893.method_44313(var2);
@@ -69,7 +69,7 @@ public class class_4422 extends class_1131 {
          }
 
          if (var17 > 1) {
-            var10.add(new class_8070(new class_1331(var15, var17, var16), 0, false));
+            var10.add(new class_8070(new BlockPos(var15, var17, var16), 0, false));
          }
       }
 

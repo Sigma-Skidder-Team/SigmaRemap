@@ -10,7 +10,7 @@ import net.minecraft.util.text.event.ClickEvent$class_47;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$class_48;
 
-public class class_6188 extends class_6199 {
+public class class_6188 extends DamageSource {
    public class_6188() {
       super("badRespawnPoint");
       this.method_28366();

@@ -27,7 +27,7 @@ public class class_5488 extends class_5920<class_5886> {
    public void method_24947(class_6331 var1, class_5886 var2, long var3) {
       class_5834 var7 = this.method_24949(var2);
       class_1225.method_5444(var2, var7);
-      var2.method_26597(class_2584.field_12791);
+      var2.method_26597(Hand.MAIN_HAND);
       var2.method_26442(var7);
       var2.method_26525().method_5107(class_6044.field_30865, true, (long)this.field_27971);
    }

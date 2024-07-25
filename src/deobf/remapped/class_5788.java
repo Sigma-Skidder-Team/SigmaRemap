@@ -52,7 +52,7 @@ public abstract class class_5788<DC extends class_9793> {
       return this.field_29241;
    }
 
-   public abstract Stream<class_1331> method_26185(class_6680 var1, Random var2, DC var3, class_1331 var4);
+   public abstract Stream<BlockPos> method_26185(class_6680 var1, Random var2, DC var3, BlockPos var4);
 
    @Override
    public String toString() {

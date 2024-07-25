@@ -15,9 +15,9 @@ public class class_9322 extends class_3808<class_2271> {
       class_1201 var7 = this.method_17744(var5, false);
       return var7 != null
          ? var7.method_5314(
-            class_6979.method_31913(class_1331.method_6080(var1)),
-            class_6979.method_31913(class_1331.method_6067(var1)),
-            class_6979.method_31913(class_1331.method_6092(var1))
+            class_6979.method_31913(BlockPos.method_6080(var1)),
+            class_6979.method_31913(BlockPos.method_6067(var1)),
+            class_6979.method_31913(BlockPos.method_6092(var1))
          )
          : 0;
    }

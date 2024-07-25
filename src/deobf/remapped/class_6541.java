@@ -55,7 +55,7 @@ public abstract class class_6541 {
                double var14 = (double)(4 * var19 + var19 * var12 * 6) + (var8.nextDouble() - 0.5) * (double)var19 * 2.5;
                int var16 = (int)Math.round(Math.cos(var9) * var14);
                int var17 = (int)Math.round(Math.sin(var9) * var14);
-               class_1331 var18 = this.field_33263.method_16085((var16 << 4) + 8, 0, (var17 << 4) + 8, 112, var4::contains, var8);
+               BlockPos var18 = this.field_33263.method_16085((var16 << 4) + 8, 0, (var17 << 4) + 8, 112, var4::contains, var8);
                if (var18 != null) {
                   var16 = var18.method_12173() >> 4;
                   var17 = var18.method_12185() >> 4;
@@ -112,14 +112,14 @@ public abstract class class_6541 {
    }
 
    @Nullable
-   public class_1331 method_29820(class_6331 var1, class_5390<?> var2, class_1331 var3, int var4, boolean var5) {
+   public BlockPos method_29820(class_6331 var1, class_5390<?> var2, BlockPos var3, int var4, boolean var5) {
       if (this.field_33263.method_16090(var2)) {
          if (var2 != class_5390.field_27511) {
             class_4757 var16 = this.field_33261.method_44376(var2);
             return var16 != null ? var2.method_24548(var1, var1.method_28991(), var3, var4, var5, var1.method_3133(), var16) : null;
          } else {
             this.method_29832();
-            class_1331 var8 = null;
+            BlockPos var8 = null;
             double var9 = Double.MAX_VALUE;
             class_2921 var11 = new class_2921();
 
@@ -128,11 +128,11 @@ public abstract class class_6541 {
                double var14 = var11.method_12180(var3);
                if (var8 != null) {
                   if (var14 < var9) {
-                     var8 = new class_1331(var11);
+                     var8 = new BlockPos(var11);
                      var9 = var14;
                   }
                } else {
-                  var8 = new class_1331(var11);
+                  var8 = new BlockPos(var11);
                   var9 = var14;
                }
             }
@@ -149,7 +149,7 @@ public abstract class class_6541 {
       int var6 = var1.method_3139();
       int var7 = var5 * 16;
       int var8 = var6 * 16;
-      class_1331 var9 = new class_1331(var7, 0, var8);
+      BlockPos var9 = new BlockPos(var7, 0, var8);
       class_6325 var10 = this.field_33263.method_28192((var5 << 2) + 2, 2, (var6 << 2) + 2);
       class_8679 var11 = new class_8679();
       long var12 = var11.method_39867(var1.method_3133(), var7, var8);
@@ -184,7 +184,7 @@ public abstract class class_6541 {
       return 256;
    }
 
-   public List<class_3222> method_29836(class_6325 var1, class_2033 var2, class_4565 var3, class_1331 var4) {
+   public List<class_3222> method_29836(class_6325 var1, class_2033 var2, class_4565 var3, BlockPos var4) {
       return var1.method_28886().method_27794(var3);
    }
 

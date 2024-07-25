@@ -24,7 +24,7 @@ public class class_5244 extends class_5920<class_5834> {
    public void method_27080(class_6331 var1, class_5834 var2, long var3) {
       class_1150 var7 = var2.method_26525();
       class_8150 var8 = var7.<class_8150>method_5138(this.field_26867).get();
-      class_1331 var9 = var8.method_37409();
+      BlockPos var9 = var8.method_37409();
       class_6331 var10 = var1.method_29522().method_1697(var8.method_37408());
       if (var10 == null || this.method_23991(var10, var9)) {
          var7.method_5127(this.field_26867);
@@ -35,12 +35,12 @@ public class class_5244 extends class_5920<class_5834> {
       }
    }
 
-   private boolean method_23990(class_6331 var1, class_1331 var2, class_5834 var3) {
+   private boolean method_23990(class_6331 var1, BlockPos var2, class_5834 var3) {
       class_2522 var6 = var1.method_28262(var2);
       return var6.method_8360().method_29299(class_2351.field_11784) && var6.<Boolean>method_10313(class_3633.field_17728) && !var3.method_26507();
    }
 
-   private boolean method_23991(class_6331 var1, class_1331 var2) {
+   private boolean method_23991(class_6331 var1, BlockPos var2) {
       return !var1.method_28969().method_6869(var2, this.field_26868);
    }
 }

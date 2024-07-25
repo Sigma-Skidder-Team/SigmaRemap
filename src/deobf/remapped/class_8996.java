@@ -51,7 +51,7 @@ public class class_8996 extends class_7186 {
 
    public static boolean method_41275(class_4040 var0, class_2452 var1) {
       return var0 != null && var1 != null && var1.method_11267() != null
-         ? var0.method_37330() && var0.method_18593() && var0.method_26532() <= 2400 && var0.field_41768.method_22572() == var1.method_11267().method_22572()
+         ? var0.method_37330() && var0.method_18593() && var0.method_26532() <= 2400 && var0.world.method_22572() == var1.method_11267().method_22572()
          : false;
    }
 
@@ -62,27 +62,27 @@ public class class_8996 extends class_7186 {
       } else if (this.field_46054.method_29537().method_1285(class_291.field_1045)) {
          return null;
       } else {
-         class_8760 var4 = var1.field_41768.method_22572();
+         class_8760 var4 = var1.world.method_22572();
          if (!var4.method_40239()) {
             return null;
          } else {
-            class_1331 var5 = var1.method_37075();
+            BlockPos var5 = var1.method_37075();
             List var6 = this.field_46054.method_28969().method_6877(class_236.field_768, var5, 64, class_8122.field_41618).collect(Collectors.toList());
             int var7 = 0;
             class_1343 var8 = class_1343.field_7335;
 
             for (class_8009 var10 : var6) {
-               class_1331 var11 = var10.method_36337();
+               BlockPos var11 = var10.method_36337();
                var8 = var8.method_6214((double)var11.method_12173(), (double)var11.method_12165(), (double)var11.method_12185());
                var7++;
             }
 
-            class_1331 var13;
+            BlockPos var13;
             if (var7 <= 0) {
                var13 = var5;
             } else {
                var8 = var8.method_6209(1.0 / (double)var7);
-               var13 = new class_1331(var8);
+               var13 = new BlockPos(var8);
             }
 
             class_2452 var14 = this.method_41274(var1.method_43235(), var13);
@@ -117,7 +117,7 @@ public class class_8996 extends class_7186 {
       }
    }
 
-   private class_2452 method_41274(class_6331 var1, class_1331 var2) {
+   private class_2452 method_41274(class_6331 var1, BlockPos var2) {
       class_2452 var5 = var1.method_28984(var2);
       return var5 == null ? new class_2452(this.method_41273(), var1, var2) : var5;
    }
@@ -160,7 +160,7 @@ public class class_8996 extends class_7186 {
    }
 
    @Nullable
-   public class_2452 method_41272(class_1331 var1, int var2) {
+   public class_2452 method_41272(BlockPos var1, int var2) {
       class_2452 var5 = null;
       double var6 = (double)var2;
 

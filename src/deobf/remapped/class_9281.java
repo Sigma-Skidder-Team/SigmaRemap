@@ -13,19 +13,19 @@ public class class_9281 extends class_6414 {
    }
 
    @Override
-   public class_4190 method_10769(class_2522 var1, class_6163 var2, class_1331 var3, class_214 var4) {
+   public class_4190 method_10769(class_2522 var1, class_6163 var2, BlockPos var3, class_214 var4) {
       return field_47343;
    }
 
    @Override
-   public void method_10797(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10797(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (!var1.method_8309(var2, var3)) {
          var2.method_7510(var3, true);
       }
    }
 
    @Override
-   public void method_10783(class_2522 var1, class_6331 var2, class_1331 var3, Random var4) {
+   public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
       if (var2.method_22548(var3.method_6081())) {
          int var7 = 1;
 
@@ -46,7 +46,7 @@ public class class_9281 extends class_6414 {
    }
 
    @Override
-   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, class_1331 var5, class_1331 var6) {
+   public class_2522 method_10763(class_2522 var1, Direction var2, class_2522 var3, class_9379 var4, BlockPos var5, BlockPos var6) {
       if (!var1.method_8309(var4, var5)) {
          var4.method_43367().method_14011(var5, this, 1);
       }
@@ -55,7 +55,7 @@ public class class_9281 extends class_6414 {
    }
 
    @Override
-   public boolean method_10787(class_2522 var1, class_4924 var2, class_1331 var3) {
+   public boolean method_10787(class_2522 var1, class_4924 var2, BlockPos var3) {
       class_2522 var6 = var2.method_28262(var3.method_6100());
       if (var6.method_8360() == this) {
          return true;
@@ -66,7 +66,7 @@ public class class_9281 extends class_6414 {
             || var6.method_8350(class_4783.field_23201)
             || var6.method_8350(class_4783.field_23216)
             || var6.method_8350(class_4783.field_23814)) {
-            class_1331 var7 = var3.method_6100();
+            BlockPos var7 = var3.method_6100();
 
             for (Direction var9 : class_9594.field_48893) {
                class_2522 var10 = var2.method_28262(var7.method_6098(var9));

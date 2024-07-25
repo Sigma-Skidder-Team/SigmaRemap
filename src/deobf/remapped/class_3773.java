@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class class_3773 {
    private static final Pattern field_18431 = Pattern.compile("[a-zA-Z0-9_]+");
 
-   public static void method_17457(class_9716 var0) {
+   public static void method_17457(AbstractClientPlayerEntity var0) {
       String var3 = var0.method_44878();
       if (var3 != null && !var3.isEmpty() && !var3.contains("\u0000") && field_18431.matcher(var3).matches()) {
          String var4 = "http://s.optifine.net/capes/" + var3 + ".png";
@@ -55,7 +55,7 @@ public class class_3773 {
       return var0.method_26228() > var1.method_26253();
    }
 
-   public static void method_17459(class_9716 var0) {
+   public static void method_17459(AbstractClientPlayerEntity var0) {
       String var3 = var0.method_44878();
       Identifier var4 = new Identifier("capeof/" + var3);
       TextureManager var5 = Config.method_14266();

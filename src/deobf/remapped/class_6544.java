@@ -16,10 +16,10 @@ public class class_6544 {
    }
 
    public static String method_29844(double var0, double var2, double var4) {
-      return String.format(Locale.ROOT, "%.2f,%.2f,%.2f - %s", var0, var2, var4, method_29846(new class_1331(var0, var2, var4)));
+      return String.format(Locale.ROOT, "%.2f,%.2f,%.2f - %s", var0, var2, var4, method_29846(new BlockPos(var0, var2, var4)));
    }
 
-   public static String method_29846(class_1331 var0) {
+   public static String method_29846(BlockPos var0) {
       return method_29845(var0.method_12173(), var0.method_12165(), var0.method_12185());
    }
 
@@ -170,7 +170,7 @@ public class class_6544 {
       return this.field_33272;
    }
 
-   public static void method_29843(class_6544 var0, class_1331 var1, class_2522 var2) {
+   public static void method_29843(class_6544 var0, BlockPos var1, class_2522 var2) {
       if (var2 != null) {
          var0.method_29851("Block", var2::toString);
       }

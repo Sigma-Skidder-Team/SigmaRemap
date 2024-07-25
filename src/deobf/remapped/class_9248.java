@@ -9,7 +9,7 @@ public class class_9248 extends class_3418 {
    }
 
    @Override
-   public boolean method_15772(class_9379 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_15772(class_9379 var1, Random var2, BlockPos var3, class_2522 var4) {
       int var7 = var2.nextInt(3) + 3;
       int var8 = var2.nextInt(3) + 3;
       int var9 = var2.nextInt(3) + 3;

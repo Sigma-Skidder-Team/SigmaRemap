@@ -24,7 +24,7 @@ public class class_6202 extends class_8715 {
          this.field_49481 *= 0.85F;
          this.field_49486 *= 0.85F;
          this.field_49471 *= 0.85F;
-         if (!this.field_49469.method_28258(new class_1331(this.field_49462, this.field_49473, this.field_49465)).method_22007(class_6503.field_33094)) {
+         if (!this.field_49469.method_28258(new BlockPos(this.field_49462, this.field_49473, this.field_49465)).method_22007(class_6503.field_33094)) {
             this.method_44948();
          }
       } else {

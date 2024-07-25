@@ -25,28 +25,28 @@ public class class_2730 {
    private final double field_13326;
    private final Entity field_13323;
    private final float field_13325;
-   private final class_6199 field_13324;
+   private final DamageSource field_13324;
    private final class_7571 field_13333;
-   private final List<class_1331> field_13335 = Lists.newArrayList();
+   private final List<BlockPos> field_13335 = Lists.newArrayList();
    private final Map<class_704, class_1343> field_13331 = Maps.newHashMap();
 
-   public class_2730(World var1, Entity var2, double var3, double var5, double var7, float var9, List<class_1331> var10) {
+   public class_2730(World var1, Entity var2, double var3, double var5, double var7, float var9, List<BlockPos> var10) {
       this(var1, var2, var3, var5, var7, var9, false, class_7298.field_37311, var10);
    }
 
    public class_2730(
-           World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, class_7298 var11, List<class_1331> var12
+           World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, class_7298 var11, List<BlockPos> var12
    ) {
       this(var1, var2, var3, var5, var7, var9, var10, var11);
       this.field_13335.addAll(var12);
    }
 
    public class_2730(World var1, Entity var2, double var3, double var5, double var7, float var9, boolean var10, class_7298 var11) {
-      this(var1, var2, (class_6199)null, (class_7571)null, var3, var5, var7, var9, var10, var11);
+      this(var1, var2, (DamageSource)null, (class_7571)null, var3, var5, var7, var9, var10, var11);
    }
 
    public class_2730(
-           World var1, Entity var2, class_6199 var3, class_7571 var4, double var5, double var7, double var9, float var11, boolean var12, class_7298 var13
+           World var1, Entity var2, DamageSource var3, class_7571 var4, double var5, double var7, double var9, float var11, boolean var12, class_7298 var13
    ) {
       this.field_13330 = var1;
       this.field_13323 = var2;
@@ -56,7 +56,7 @@ public class class_2730 {
       this.field_13326 = var9;
       this.field_13332 = var12;
       this.field_13334 = var13;
-      this.field_13324 = var3 != null ? var3 : class_6199.method_28350(this);
+      this.field_13324 = var3 != null ? var3 : DamageSource.method_28350(this);
       this.field_13333 = var4 != null ? var4 : this.method_12268(var2);
    }
 
@@ -82,7 +82,7 @@ public class class_2730 {
                   double var22 = class_9299.method_42794((double)var18, var4.field_19937, var4.field_19939);
                   double var24 = class_9299.method_42794((double)var19, var4.field_19938, var4.field_19942);
                   class_1343 var26 = new class_1343(var20 + var11, var22, var24 + var13);
-                  if (var1.field_41768.method_28265(new class_972(var26, var0, class_3132.field_15553, class_9583.field_48747, var1)).method_33990()
+                  if (var1.world.method_28265(new class_972(var26, var0, class_3132.field_15553, class_9583.field_48747, var1)).method_33990()
                      == class_1430.field_7721) {
                      var15++;
                   }
@@ -119,7 +119,7 @@ public class class_2730 {
                   double var28 = this.field_13326;
 
                   for (float var30 = 0.3F; var23 > 0.0F; var23 -= 0.22500001F) {
-                     class_1331 var31 = new class_1331(var24, var26, var28);
+                     BlockPos var31 = new BlockPos(var24, var26, var28);
                      class_2522 var32 = this.field_13330.method_28262(var31);
                      class_4774 var33 = this.field_13330.method_28258(var31);
                      Optional var34 = this.field_13333.method_34424(this, this.field_13330, var31, var32, var33);
@@ -167,7 +167,7 @@ public class class_2730 {
                   var42 /= var44;
                   double var46 = (double)method_12265(var13, var35);
                   double var48 = (1.0 - var36) * var46;
-                  var35.method_37181(this.method_12274(), (float)((int)((var48 * var48 + var48) / 2.0 * 7.0 * (double)var53 + 1.0)));
+                  var35.attackEntityFrom(this.method_12274(), (float)((int)((var48 * var48 + var48) / 2.0 * 7.0 * (double)var53 + 1.0)));
                   double var50 = var48;
                   if (var35 instanceof class_5834) {
                      var50 = class_5139.method_23553((class_5834)var35, var48);
@@ -214,11 +214,11 @@ public class class_2730 {
          ObjectArrayList var5 = new ObjectArrayList();
          Collections.shuffle(this.field_13335, this.field_13330.field_33033);
 
-         for (class_1331 var7 : this.field_13335) {
+         for (BlockPos var7 : this.field_13335) {
             class_2522 var8 = this.field_13330.method_28262(var7);
             class_6414 var9 = var8.method_8360();
             if (!var8.method_8345()) {
-               class_1331 var10 = var7.method_6072();
+               BlockPos var10 = var7.method_6072();
                this.field_13330.method_29599().startSection("explosion_blocks");
                if (var9.method_29256(this) && this.field_13330 instanceof class_6331) {
                   class_3757 var11 = !var9.method_10802() ? null : this.field_13330.method_28260(var7);
@@ -245,12 +245,12 @@ public class class_2730 {
 
          while (var14.hasNext()) {
             Pair var16 = (Pair)var14.next();
-            class_6414.method_29267(this.field_13330, (class_1331)var16.getSecond(), (ItemStack)var16.getFirst());
+            class_6414.method_29267(this.field_13330, (BlockPos)var16.getSecond(), (ItemStack)var16.getFirst());
          }
       }
 
       if (this.field_13332) {
-         for (class_1331 var15 : this.field_13335) {
+         for (BlockPos var15 : this.field_13335) {
             if (this.field_13327.nextInt(3) == 0
                && this.field_13330.method_28262(var15).method_8345()
                && this.field_13330.method_28262(var15.method_6100()).method_8321(this.field_13330, var15.method_6100())) {
@@ -260,7 +260,7 @@ public class class_2730 {
       }
    }
 
-   private static void method_12271(ObjectArrayList<Pair<ItemStack, class_1331>> var0, ItemStack var1, class_1331 var2) {
+   private static void method_12271(ObjectArrayList<Pair<ItemStack, BlockPos>> var0, ItemStack var1, BlockPos var2) {
       int var5 = var0.size();
 
       for (int var6 = 0; var6 < var5; var6++) {
@@ -278,7 +278,7 @@ public class class_2730 {
       var0.add(Pair.of(var1, var2));
    }
 
-   public class_6199 method_12274() {
+   public DamageSource method_12274() {
       return this.field_13324;
    }
 
@@ -314,7 +314,7 @@ public class class_2730 {
       this.field_13335.clear();
    }
 
-   public List<class_1331> method_12275() {
+   public List<BlockPos> method_12275() {
       return this.field_13335;
    }
 }

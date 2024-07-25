@@ -8,7 +8,7 @@ public class class_5540 extends class_4285<class_9253> {
       super(var1);
    }
 
-   public boolean method_25155(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_9253 var5) {
+   public boolean method_25155(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_9253 var5) {
       int var8 = var3.nextInt(var5.field_47236 + 1);
       class_2921 var9 = new class_2921();
 
@@ -22,7 +22,7 @@ public class class_5540 extends class_4285<class_9253> {
       return true;
    }
 
-   private void method_25157(class_2921 var1, Random var2, class_1331 var3, int var4) {
+   private void method_25157(class_2921 var1, Random var2, BlockPos var3, int var4) {
       int var7 = this.method_25156(var2, var4);
       int var8 = this.method_25156(var2, var4);
       int var9 = this.method_25156(var2, var4);
@@ -33,7 +33,7 @@ public class class_5540 extends class_4285<class_9253> {
       return Math.round((var1.nextFloat() - var1.nextFloat()) * (float)var2);
    }
 
-   private boolean method_25154(class_9379 var1, class_1331 var2) {
+   private boolean method_25154(class_9379 var1, BlockPos var2) {
       class_2921 var5 = new class_2921();
 
       for (Direction var9 : Direction.values()) {

@@ -2,10 +2,10 @@ package remapped;
 
 public class class_3841 {
    private static String[] field_18751;
-   public class_1331 field_18753;
+   public BlockPos field_18753;
    public class_2522 field_18752;
 
-   public class_3841(class_1331 var1, class_2522 var2) {
+   public class_3841(BlockPos var1, class_2522 var2) {
       this.field_18753 = var1;
       this.field_18752 = var2;
    }

@@ -22,7 +22,7 @@ public class class_6934 extends class_5920<class_5834> {
       Optional var8 = var7.<Long>method_5138(class_6044.field_30894);
       boolean var9 = (Long)var8.get() + 300L <= var3;
       if (this.field_35644 <= this.field_35641 && !var9) {
-         class_1331 var10 = var7.<class_8150>method_5138(class_6044.field_30899).get().method_37409();
+         BlockPos var10 = var7.<class_8150>method_5138(class_6044.field_30899).get().method_37409();
          if (var10.method_12171(var2.method_37075(), (double)this.field_35643)) {
             this.field_35644++;
          }

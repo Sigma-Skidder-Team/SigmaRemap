@@ -63,8 +63,8 @@ public class class_7272 extends class_5467 {
          }
       }
 
-      if (!this.field_41768.field_33055) {
-         this.field_41768.method_29587(this, (byte)1);
+      if (!this.world.field_33055) {
+         this.world.method_29587(this, (byte)1);
       }
    }
 
@@ -152,7 +152,7 @@ public class class_7272 extends class_5467 {
    }
 
    private void method_33243(double var1, double var3) {
-      this.field_41701 = (float)(class_9299.method_42821(var3 - this.method_37156(), var1 - this.method_37302()) * 180.0F / (float)Math.PI) - 90.0F;
+      this.rotationYaw = (float)(class_9299.method_42821(var3 - this.method_37156(), var1 - this.method_37302()) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    private void method_33228() {
@@ -218,7 +218,7 @@ public class class_7272 extends class_5467 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2576;
    }
 
@@ -230,10 +230,10 @@ public class class_7272 extends class_5467 {
    @Override
    public boolean method_26442(Entity var1) {
       if (this.method_33239() != 99) {
-         return var1.method_37181(class_6199.method_28345(this), 3.0F);
+         return var1.attackEntityFrom(DamageSource.method_28345(this), 3.0F);
       } else {
          this.method_37155(class_463.field_2065, 1.0F, (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F + 1.0F);
-         return var1.method_37181(class_6199.method_28345(this), 8.0F);
+         return var1.attackEntityFrom(DamageSource.method_28345(this), 8.0F);
       }
    }
 
@@ -243,8 +243,8 @@ public class class_7272 extends class_5467 {
    }
 
    @Override
-   public boolean method_37181(class_6199 var1, float var2) {
-      return !this.method_37180(var1) ? super.method_37181(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.method_37180(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    private boolean method_33233(class_2451 var1) {
@@ -318,7 +318,7 @@ public class class_7272 extends class_5467 {
       }
    }
 
-   public static boolean method_33242(class_6629<class_7272> var0, class_9379 var1, class_2417 var2, class_1331 var3, Random var4) {
+   public static boolean method_33242(class_6629<class_7272> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       class_2522 var7 = var1.method_28262(var3.method_6100());
       return (var7.method_8350(class_4783.field_23259) || var7.method_8350(class_4783.field_23552) || var7.method_8350(class_4783.field_23216))
          && var1.method_25261(var3, 0) > 8;

@@ -14,7 +14,7 @@ public class class_6979 extends class_2700 {
       return new class_6979(var0, var1, var2);
    }
 
-   public static class_6979 method_31921(class_1331 var0) {
+   public static class_6979 method_31921(BlockPos var0) {
       return new class_6979(method_31915(var0.method_12173()), method_31915(var0.method_12165()), method_31915(var0.method_12185()));
    }
 
@@ -50,7 +50,7 @@ public class class_6979 extends class_2700 {
       return var0 & 15;
    }
 
-   public static short method_31909(class_1331 var0) {
+   public static short method_31909(BlockPos var0) {
       int var3 = method_31913(var0.method_12173());
       int var4 = method_31913(var0.method_12165());
       int var5 = method_31913(var0.method_12185());
@@ -81,8 +81,8 @@ public class class_6979 extends class_2700 {
       return this.method_31901() + method_31911(var1);
    }
 
-   public class_1331 method_31904(short var1) {
-      return new class_1331(this.method_31896(var1), this.method_31897(var1), this.method_31907(var1));
+   public BlockPos method_31904(short var1) {
+      return new BlockPos(this.method_31896(var1), this.method_31897(var1), this.method_31907(var1));
    }
 
    public static int method_31908(int var0) {
@@ -138,18 +138,18 @@ public class class_6979 extends class_2700 {
    }
 
    public static long method_31903(long var0) {
-      return method_31926(method_31915(class_1331.method_6080(var0)), method_31915(class_1331.method_6067(var0)), method_31915(class_1331.method_6092(var0)));
+      return method_31926(method_31915(BlockPos.method_6080(var0)), method_31915(BlockPos.method_6067(var0)), method_31915(BlockPos.method_6092(var0)));
    }
 
    public static long method_31910(long var0) {
       return var0 & -1048576L;
    }
 
-   public class_1331 method_31899() {
-      return new class_1331(method_31908(this.method_31930()), method_31908(this.method_31918()), method_31908(this.method_31900()));
+   public BlockPos method_31899() {
+      return new BlockPos(method_31908(this.method_31930()), method_31908(this.method_31918()), method_31908(this.method_31900()));
    }
 
-   public class_1331 method_31892() {
+   public BlockPos method_31892() {
       byte var3 = 8;
       return this.method_31899().method_6104(8, 8, 8);
    }
@@ -169,8 +169,8 @@ public class class_6979 extends class_2700 {
       return method_31926(this.method_31930(), this.method_31918(), this.method_31900());
    }
 
-   public Stream<class_1331> method_31902() {
-      return class_1331.method_6083(
+   public Stream<BlockPos> method_31902() {
+      return BlockPos.method_6083(
          this.method_31898(), this.method_31924(), this.method_31901(), this.method_31894(), this.method_31914(), this.method_31919()
       );
    }

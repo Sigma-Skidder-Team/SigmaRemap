@@ -16,7 +16,7 @@ public class class_7156 extends class_3599 {
    public class_7156(class_4612 var1, double var2) {
       this.field_36854 = var1;
       this.field_36857 = var2;
-      this.field_36860 = var1.field_41768;
+      this.field_36860 = var1.world;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564));
    }
 
@@ -54,10 +54,10 @@ public class class_7156 extends class_3599 {
    @Nullable
    private class_1343 method_32848() {
       Random var3 = this.field_36854.method_26594();
-      class_1331 var4 = this.field_36854.method_37075();
+      BlockPos var4 = this.field_36854.method_37075();
 
       for (int var5 = 0; var5 < 10; var5++) {
-         class_1331 var6 = var4.method_6104(var3.nextInt(20) - 10, 2 - var3.nextInt(8), var3.nextInt(20) - 10);
+         BlockPos var6 = var4.method_6104(var3.nextInt(20) - 10, 2 - var3.nextInt(8), var3.nextInt(20) - 10);
          if (this.field_36860.method_28262(var6).method_8350(class_4783.field_23900)) {
             return class_1343.method_6200(var6);
          }

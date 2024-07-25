@@ -76,11 +76,11 @@ public class class_9355 extends class_2811 implements class_3449 {
 
    @Override
    public void method_37123() {
-      if (!this.field_41768.field_33055 && this.method_37330() && this.method_43208()) {
+      if (!this.world.field_33055 && this.method_37330() && this.method_43208()) {
          int var3 = this.method_43202();
          this.field_47746 -= var3;
          if (this.field_47746 <= 0) {
-            this.method_43204((class_6331)this.field_41768);
+            this.method_43204((class_6331)this.world);
          }
       }
 
@@ -88,7 +88,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25037) {
          return super.method_26857(var1, var2);
@@ -99,7 +99,7 @@ public class class_9355 extends class_2811 implements class_3449 {
             var5.method_27970(1);
          }
 
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             this.method_43201(var1.method_37328(), this.field_41717.nextInt(2401) + 3600);
          }
 
@@ -126,8 +126,8 @@ public class class_9355 extends class_2811 implements class_3449 {
       this.field_47746 = var2;
       this.method_37372().method_36633(field_47749, true);
       this.removeEffect(Effects.field_19737);
-      this.method_26558(new class_2250(Effects.field_19733, var2, Math.min(this.field_41768.method_43370().method_2097() - 1, 0)));
-      this.field_41768.method_29587(this, (byte)16);
+      this.method_26558(new class_2250(Effects.field_19733, var2, Math.min(this.world.method_43370().method_2097() - 1, 0)));
+      this.world.method_29587(this, (byte)16);
    }
 
    @Override
@@ -135,7 +135,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       if (var1 != 16) {
          super.method_37336(var1);
       } else if (!this.method_37378()) {
-         this.field_41768
+         this.world
             .method_29527(
                this.method_37302(),
                this.method_37388(),
@@ -200,7 +200,7 @@ public class class_9355 extends class_2811 implements class_3449 {
          for (int var6 = (int)this.method_37302() - 4; var6 < (int)this.method_37302() + 4 && var4 < 14; var6++) {
             for (int var7 = (int)this.method_37309() - 4; var7 < (int)this.method_37309() + 4 && var4 < 14; var7++) {
                for (int var8 = (int)this.method_37156() - 4; var8 < (int)this.method_37156() + 4 && var4 < 14; var8++) {
-                  class_6414 var9 = this.field_41768.method_28262(var5.method_13362(var6, var7, var8)).method_8360();
+                  class_6414 var9 = this.world.method_28262(var5.method_13362(var6, var7, var8)).method_8360();
                   if (var9 == class_4783.field_23817 || var9 instanceof class_3633) {
                      if (this.field_41717.nextFloat() < 0.3F) {
                         var3++;
@@ -229,7 +229,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2379;
    }
 

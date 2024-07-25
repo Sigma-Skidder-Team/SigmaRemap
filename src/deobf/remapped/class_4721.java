@@ -30,7 +30,7 @@ public class class_4721 extends class_5390<class_1267> {
       return class_7248::new;
    }
 
-   private static boolean method_21829(class_1331 var0, class_6325 var1) {
+   private static boolean method_21829(BlockPos var0, class_6325 var1) {
       return var1.method_28865(var0) < 0.15F;
    }
 
@@ -63,10 +63,10 @@ public class class_4721 extends class_5390<class_1267> {
       }
 
       ImmutableList var20 = ImmutableList.of(
-         new class_1331(var6.field_48996, 0, var6.field_48992),
-         new class_1331(var6.field_48991, 0, var6.field_48992),
-         new class_1331(var6.field_48996, 0, var6.field_48994),
-         new class_1331(var6.field_48991, 0, var6.field_48994)
+         new BlockPos(var6.field_48996, 0, var6.field_48992),
+         new BlockPos(var6.field_48991, 0, var6.field_48992),
+         new BlockPos(var6.field_48996, 0, var6.field_48994),
+         new BlockPos(var6.field_48991, 0, var6.field_48994)
       );
       List var11 = var20.stream().<class_6163>map(var1x -> var1.method_29822(var1x.method_12173(), var1x.method_12185())).collect(Collectors.toList());
       class_3801 var12 = var2 != class_3487.field_17119 ? class_3801.field_18598 : class_3801.field_18591;

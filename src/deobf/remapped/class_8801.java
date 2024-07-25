@@ -38,7 +38,7 @@ public class class_8801 extends class_3558 {
       class_6331 var3 = (class_6331)this.field_45024.field_41768;
 
       for (int var4 = 0; var4 < 3; var4++) {
-         class_1331 var5 = this.field_45024
+         BlockPos var5 = this.field_45024
             .method_37075()
             .method_6104(-2 + class_1799.method_8005(this.field_45024).nextInt(5), 1, -2 + class_1799.method_8003(this.field_45024).nextInt(5));
          class_2519 var6 = class_6629.field_34277.method_30484(this.field_45024.field_41768);

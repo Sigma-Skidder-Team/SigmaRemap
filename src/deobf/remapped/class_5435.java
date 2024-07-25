@@ -27,12 +27,12 @@ public class class_5435 extends class_6408 implements class_4582 {
    }
 
    @Override
-   public boolean method_21238(class_6163 var1, class_1331 var2, class_2522 var3, class_2340 var4) {
+   public boolean method_21238(class_6163 var1, BlockPos var2, class_2522 var3, class_2340 var4) {
       return false;
    }
 
    @Override
-   public boolean method_21237(class_9379 var1, class_1331 var2, class_2522 var3, class_4774 var4) {
+   public boolean method_21237(class_9379 var1, BlockPos var2, class_2522 var3, class_4774 var4) {
       return false;
    }
 

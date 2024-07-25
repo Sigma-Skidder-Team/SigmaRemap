@@ -98,7 +98,7 @@ public class class_9561 implements class_9538 {
             }
 
             if (this.field_48669 == 1) {
-               this.field_48653 = this.method_44190(class_5630.field_28568, new class_1331(0, 64, 0));
+               this.field_48653 = this.method_44190(class_5630.field_28568, new BlockPos(0, 64, 0));
             }
          }
       }
@@ -269,11 +269,11 @@ public class class_9561 implements class_9538 {
    }
 
    @Override
-   public int method_43977(class_2522 var1, class_5561 var2, class_1331 var3) {
+   public int method_43977(class_2522 var1, class_5561 var2, BlockPos var3) {
       return this.method_44170(var2, var3);
    }
 
-   public int method_44170(class_5561 var1, class_1331 var2) {
+   public int method_44170(class_5561 var1, BlockPos var2) {
       class_6325 var5 = class_9300.method_42872(var1, var2);
       return this.method_44171(var5, var2);
    }
@@ -283,7 +283,7 @@ public class class_9561 implements class_9538 {
       return this.field_48669 == 2;
    }
 
-   public int method_44171(class_6325 var1, class_1331 var2) {
+   public int method_44171(class_6325 var1, BlockPos var2) {
       if (this.field_48669 != 0) {
          return this.field_48669 != 1 ? this.field_48653 : this.method_44190(var1, var2);
       } else {
@@ -322,7 +322,7 @@ public class class_9561 implements class_9538 {
       }
    }
 
-   private int method_44176(class_6325 var1, class_1331 var2) {
+   private int method_44176(class_6325 var1, BlockPos var2) {
       double var5 = (double)class_9299.method_42828(var1.method_28865(var2), 0.0F, 1.0F);
       double var7 = (double)class_9299.method_42828(var1.method_28870(), 0.0F, 1.0F);
       var7 *= var5;
@@ -331,7 +331,7 @@ public class class_9561 implements class_9538 {
       return this.method_44169(var9, var10);
    }
 
-   private int method_44190(class_6325 var1, class_1331 var2) {
+   private int method_44190(class_6325 var1, BlockPos var2) {
       int var5 = class_5630.method_25522(var1);
       int var6 = var2.method_12165() - this.field_48651;
       if (this.field_48665 > 0) {

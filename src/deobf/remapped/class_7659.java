@@ -27,7 +27,7 @@ public class class_7659 extends class_6017 {
 
             for (int var17 = 0; var17 < 6; var17++) {
                this.field_9479
-                  .field_41768
+                  .world
                   .method_43361(
                      class_3090.field_15315,
                      var11,
@@ -62,7 +62,7 @@ public class class_7659 extends class_6017 {
             double var11 = var9;
             class_2921 var13 = new class_2921(var5, var9, var7);
 
-            while (this.field_9479.field_41768.method_22548(var13)) {
+            while (this.field_9479.world.method_22548(var13)) {
                if (--var11 < 0.0) {
                   var11 = var9;
                   break;
@@ -72,13 +72,13 @@ public class class_7659 extends class_6017 {
             }
 
             var11 = (double)(class_9299.method_42847(var11) + 1);
-            this.field_38905 = new class_4478(this.field_9479.field_41768, var5, var11, var7);
+            this.field_38905 = new class_4478(this.field_9479.world, var5, var11, var7);
             this.field_38905.method_20782(this.field_9479);
             this.field_38905.method_20781(5.0F);
             this.field_38905.method_20787(200);
             this.field_38905.method_20789(class_3090.field_15315);
             this.field_38905.method_20788(new class_2250(Effects.field_19723));
-            this.field_9479.field_41768.method_7509(this.field_38905);
+            this.field_9479.world.method_7509(this.field_38905);
          }
       } else if (this.field_38906 < 4) {
          this.field_9479.method_12611().method_29422(class_8978.field_45998);

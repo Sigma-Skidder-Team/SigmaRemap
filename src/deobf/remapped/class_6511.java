@@ -18,7 +18,7 @@ public class class_6511 extends class_4285<class_4080> {
       super(var1);
    }
 
-   public boolean method_29665(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_4080 var5) {
+   public boolean method_29665(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_4080 var5) {
       int var8 = 0;
       class_2921 var9 = var4.method_6089();
       class_2921 var10 = var4.method_6089();

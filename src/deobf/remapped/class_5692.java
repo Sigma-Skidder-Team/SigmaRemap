@@ -51,7 +51,7 @@ public class class_5692 {
    }
 
    public void method_25746(class_3139 var1, boolean var2) {
-      class_1092 var5 = this.field_28832.method_8614();
+      ClientPlayNetHandler var5 = this.field_28832.method_8614();
       if (var5 != null && var1 != null && var2) {
          var5.method_4813(class_3906.method_18083(var1));
       }

@@ -32,7 +32,7 @@ public class class_7885 extends class_4040 {
    @Override
    public void method_26872() {
       boolean var3 = !(this.method_37259() instanceof class_5886) || this.method_37259().method_37387().method_30453(class_5218.field_26788);
-      boolean var4 = !(this.method_37243() instanceof class_9149);
+      boolean var4 = !(this.method_37243() instanceof BoatEntity);
       this.field_29916.method_3493(class_1891.field_9564, var3);
       this.field_29916.method_3493(class_1891.field_9561, var3 && var4);
       this.field_29916.method_3493(class_1891.field_9560, var3);
@@ -108,11 +108,11 @@ public class class_7885 extends class_4040 {
             this.method_26561(class_7331.field_37465).method_45006(0.0);
          }
 
-         if (this.field_41744 && this.field_41768.method_29537().method_1285(class_291.field_1047)) {
+         if (this.field_41744 && this.world.method_29537().method_1285(class_291.field_1047)) {
             boolean var7 = false;
             class_4092 var8 = this.method_37241().method_18898(0.2);
 
-            for (class_1331 var10 : class_1331.method_6075(
+            for (BlockPos var10 : BlockPos.method_6075(
                class_9299.method_42847(var8.field_19941),
                class_9299.method_42847(var8.field_19937),
                class_9299.method_42847(var8.field_19938),
@@ -120,10 +120,10 @@ public class class_7885 extends class_4040 {
                class_9299.method_42847(var8.field_19939),
                class_9299.method_42847(var8.field_19942)
             )) {
-               class_2522 var11 = this.field_41768.method_28262(var10);
+               class_2522 var11 = this.world.method_28262(var10);
                class_6414 var12 = var11.method_8360();
                if (var12 instanceof class_4423) {
-                  var7 = this.field_41768.method_7511(var10, true, this) || var7;
+                  var7 = this.world.method_7511(var10, true, this) || var7;
                }
             }
 
@@ -163,7 +163,7 @@ public class class_7885 extends class_4040 {
          double var7 = this.method_37156()
             + (double)this.method_37086() * Math.cos((double)(this.field_29605 * (float) (Math.PI / 180.0)))
             + (this.field_41717.nextDouble() * 0.6 - 0.3);
-         this.field_41768.method_43361(class_3090.field_15353, var3, var5, var7, 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
+         this.world.method_43361(class_3090.field_15353, var3, var5, var7, 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
       }
    }
 
@@ -185,7 +185,7 @@ public class class_7885 extends class_4040 {
          } else {
             this.field_40351 = 40;
             this.method_37155(class_463.field_2615, 1.0F, 1.0F);
-            this.field_41768.method_29587(this, (byte)39);
+            this.world.method_29587(this, (byte)39);
             var1.method_37183(this);
          }
 
@@ -195,9 +195,9 @@ public class class_7885 extends class_4040 {
 
    private void method_35657() {
       if (this.method_37330()) {
-         for (Entity var4 : this.field_41768.<Entity>method_25869(class_5834.class, this.method_37241().method_18898(4.0), field_40350)) {
+         for (Entity var4 : this.world.<Entity>method_25869(class_5834.class, this.method_37241().method_18898(4.0), field_40350)) {
             if (!(var4 instanceof class_7637)) {
-               var4.method_37181(class_6199.method_28345(this), 6.0F);
+               var4.attackEntityFrom(DamageSource.method_28345(this), 6.0F);
             }
 
             this.method_35658(var4);
@@ -209,7 +209,7 @@ public class class_7885 extends class_4040 {
             double var5 = this.field_41717.nextGaussian() * 0.2;
             double var7 = this.field_41717.nextGaussian() * 0.2;
             double var9 = this.field_41717.nextGaussian() * 0.2;
-            this.field_41768.method_43361(class_3090.field_15343, var11.field_7336, var11.field_7333, var11.field_7334, var5, var7, var9);
+            this.world.method_43361(class_3090.field_15343, var11.field_7336, var11.field_7333, var11.field_7334, var5, var7, var9);
          }
       }
    }
@@ -250,7 +250,7 @@ public class class_7885 extends class_4040 {
    @Override
    public boolean method_26442(Entity var1) {
       this.field_40349 = 10;
-      this.field_41768.method_29587(this, (byte)4);
+      this.world.method_29587(this, (byte)4);
       this.method_37155(class_463.field_2738, 1.0F, 1.0F);
       return super.method_26442(var1);
    }
@@ -262,7 +262,7 @@ public class class_7885 extends class_4040 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2520;
    }
 
@@ -272,7 +272,7 @@ public class class_7885 extends class_4040 {
    }
 
    @Override
-   public void method_37207(class_1331 var1, class_2522 var2) {
+   public void method_37207(BlockPos var1, class_2522 var2) {
       this.method_37155(class_463.field_2392, 0.15F, 1.0F);
    }
 

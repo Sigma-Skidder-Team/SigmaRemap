@@ -9,14 +9,14 @@ public class class_4194 extends class_5788<class_3966> {
       super(var1);
    }
 
-   public Stream<class_1331> method_19504(class_6680 var1, Random var2, class_3966 var3, class_1331 var4) {
+   public Stream<BlockPos> method_19504(class_6680 var1, Random var2, class_3966 var3, BlockPos var4) {
       if (var2.nextInt(var3.field_19208) != 0) {
-         return Stream.<class_1331>empty();
+         return Stream.<BlockPos>empty();
       } else {
          int var7 = var2.nextInt(16) + var4.method_12173();
          int var8 = var2.nextInt(16) + var4.method_12185();
          int var9 = var2.nextInt(var1.method_30645());
-         return Stream.<class_1331>of(new class_1331(var7, var9, var8));
+         return Stream.<BlockPos>of(new BlockPos(var7, var9, var8));
       }
    }
 }

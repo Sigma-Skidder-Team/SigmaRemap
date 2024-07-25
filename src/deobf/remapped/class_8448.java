@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class class_8448 implements class_2995 {
    private static String[] field_43204;
-   private final Map<class_1331, class_7351> field_43203 = Maps.newHashMap();
+   private final Map<BlockPos, class_7351> field_43203 = Maps.newHashMap();
 
-   public void method_38854(class_1331 var1, int var2, String var3, int var4) {
+   public void method_38854(BlockPos var1, int var2, String var3, int var4) {
       this.field_43203.put(var1, new class_7351(var2, var3, Util.getMeasuringTimeMs() + (long)var4));
    }
 
@@ -23,7 +23,7 @@ public class class_8448 implements class_2995 {
       this.field_43203.forEach(this::method_38855);
    }
 
-   private void method_38855(class_1331 var1, class_7351 var2) {
+   private void method_38855(BlockPos var1, class_7351 var2) {
       RenderSystem.method_16438();
       RenderSystem.enableBlend();
       RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);

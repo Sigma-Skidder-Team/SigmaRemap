@@ -49,7 +49,7 @@ public class class_2409 extends class_5920<class_4612> {
    private void method_10963(class_6331 var1, class_4612 var2, class_5834 var3) {
       for (int var6 = 0; var6 < 10; var6++) {
          class_1343 var7 = class_3425.method_15834(var2, 20, 8);
-         if (var7 != null && var1.method_28994(new class_1331(var7))) {
+         if (var7 != null && var1.method_28994(new BlockPos(var7))) {
             var2.method_26525().method_5105(class_6044.field_30889, new class_6651(var7, 0.6F, 0));
             return;
          }

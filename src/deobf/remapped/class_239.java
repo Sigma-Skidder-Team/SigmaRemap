@@ -15,16 +15,16 @@ public class class_239 extends class_2451 {
    }
 
    @Override
-   public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, class_2584 var4) {
+   public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, Hand var4) {
       if (var3 instanceof class_8031) {
          class_8031 var7 = (class_8031)var3;
          if (var7.method_37330() && !var7.method_36478() && var7.method_36474() != this.field_797) {
-            if (!var2.field_41768.field_33055) {
+            if (!var2.world.field_33055) {
                var7.method_36471(this.field_797);
                var1.method_27970(1);
             }
 
-            return class_6910.method_31659(var2.field_41768.field_33055);
+            return class_6910.method_31659(var2.world.field_33055);
          }
       }
 

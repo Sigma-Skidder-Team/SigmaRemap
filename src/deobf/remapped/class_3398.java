@@ -8,7 +8,7 @@ public class class_3398 implements Packet<class_1243> {
    private int field_16735;
    private class_92 field_16738;
    private class_1343 field_16734;
-   private class_2584 field_16733;
+   private Hand field_16733;
    private boolean field_16736;
 
    public class_3398() {
@@ -20,14 +20,14 @@ public class class_3398 implements Packet<class_1243> {
       this.field_16736 = var2;
    }
 
-   public class_3398(Entity var1, class_2584 var2, boolean var3) {
+   public class_3398(Entity var1, Hand var2, boolean var3) {
       this.field_16735 = var1.method_37145();
       this.field_16738 = class_92.field_185;
       this.field_16733 = var2;
       this.field_16736 = var3;
    }
 
-   public class_3398(Entity var1, class_2584 var2, class_1343 var3, boolean var4) {
+   public class_3398(Entity var1, Hand var2, class_1343 var3, boolean var4) {
       this.field_16735 = var1.method_37145();
       this.field_16738 = class_92.field_184;
       this.field_16733 = var2;
@@ -44,7 +44,7 @@ public class class_3398 implements Packet<class_1243> {
       }
 
       if (this.field_16738 == class_92.field_185 || this.field_16738 == class_92.field_184) {
-         this.field_16733 = var1.<class_2584>method_37787(class_2584.class);
+         this.field_16733 = var1.<Hand>method_37787(Hand.class);
       }
 
       this.field_16736 = var1.readBoolean();
@@ -81,7 +81,7 @@ public class class_3398 implements Packet<class_1243> {
    }
 
    @Nullable
-   public class_2584 method_15691() {
+   public Hand method_15691() {
       return this.field_16733;
    }
 

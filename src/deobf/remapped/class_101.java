@@ -14,7 +14,7 @@ public enum class_101 implements class_4530 {
    private static final Map<String, class_101> field_238 = Arrays.<class_101>stream(values())
       .collect(Collectors.toMap(class_101::method_299, var0 -> (class_101)var0));
 
-   public abstract float method_297(class_1331 var1, float var2);
+   public abstract float method_297(BlockPos var1, float var2);
 
    private class_101(String var3) {
       this.field_242 = var3;

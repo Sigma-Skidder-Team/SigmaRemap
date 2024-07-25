@@ -98,10 +98,10 @@ public class class_6786 extends class_3757 {
       class_5799 var7 = var1.method_28978();
       class_2033 var8 = var1.method_28991();
       Random var9 = var1.method_43360();
-      class_1331 var10 = this.method_17399();
+      BlockPos var10 = this.method_17399();
       ArrayList var11 = Lists.newArrayList();
       class_6561 var12 = new class_6561();
-      var12.method_29976(var1, var10, new class_1331(1, 1, 1), false, (class_6414)null);
+      var12.method_29976(var1, var10, new BlockPos(1, 1, 1), false, (class_6414)null);
       class_8781 var13 = new class_8781(var12);
       class_7624 var14 = new class_7624(var7, var13, var10, 1, class_6631.field_34340, new class_9616(var10, var10));
       class_6006.method_27409(var1.method_2755(), var14, var2, class_7624::new, var6, var7, var11, var9);

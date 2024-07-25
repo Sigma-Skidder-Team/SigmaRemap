@@ -3,8 +3,8 @@ package remapped;
 import javax.annotation.Nullable;
 
 public class class_2832 extends class_699 {
-   private final class_1331 field_13874 = null;
-   private final class_1331 field_13876 = null;
+   private final BlockPos field_13874 = null;
+   private final BlockPos field_13876 = null;
    private final long field_13875 = 0L;
 
    @Override
@@ -31,7 +31,7 @@ public class class_2832 extends class_699 {
    }
 
    @Nullable
-   public class_1331 method_12875() {
+   public BlockPos method_12875() {
       return this.field_13874;
    }
 

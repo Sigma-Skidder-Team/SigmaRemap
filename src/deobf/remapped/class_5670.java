@@ -24,7 +24,7 @@ public class class_5670 extends class_4407 {
          if (this.field_21563 == null) {
             if (this.field_21567 != class_704.class) {
                this.field_21563 = this.field_21568
-                  .field_41768
+                  .world
                   .<class_5834>method_25872(
                      this.field_21567,
                      this.field_21569,
@@ -36,7 +36,7 @@ public class class_5670 extends class_4407 {
                   );
             } else {
                this.field_21563 = this.field_21568
-                  .field_41768
+                  .world
                   .method_25860(
                      this.field_21569, this.field_21568, this.field_21568.method_37302(), this.field_21568.method_37388(), this.field_21568.method_37156()
                   );

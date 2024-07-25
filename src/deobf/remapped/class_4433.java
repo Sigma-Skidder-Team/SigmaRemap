@@ -10,11 +10,11 @@ public class class_4433 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public boolean method_18358(class_6163 var1, class_1331 var2, class_2522 var3, boolean var4) {
+   public boolean method_18358(class_6163 var1, BlockPos var2, class_2522 var3, boolean var4) {
       if (!var1.method_28262(var2.method_6081()).method_8369(var1, var2)) {
          return false;
       } else {
-         for (class_1331 var8 : class_1331.method_6076(var2.method_6104(-1, -1, -1), var2.method_6104(1, 1, 1))) {
+         for (BlockPos var8 : BlockPos.method_6076(var2.method_6104(-1, -1, -1), var2.method_6104(1, 1, 1))) {
             if (var1.method_28262(var8).method_8349(class_2351.field_11769)) {
                return true;
             }
@@ -25,16 +25,16 @@ public class class_4433 extends class_6414 implements class_3978 {
    }
 
    @Override
-   public boolean method_18357(World var1, Random var2, class_1331 var3, class_2522 var4) {
+   public boolean method_18357(World var1, Random var2, BlockPos var3, class_2522 var4) {
       return true;
    }
 
    @Override
-   public void method_18359(class_6331 var1, Random var2, class_1331 var3, class_2522 var4) {
+   public void method_18359(class_6331 var1, Random var2, BlockPos var3, class_2522 var4) {
       boolean var7 = false;
       boolean var8 = false;
 
-      for (class_1331 var10 : class_1331.method_6076(var3.method_6104(-1, -1, -1), var3.method_6104(1, 1, 1))) {
+      for (BlockPos var10 : BlockPos.method_6076(var3.method_6104(-1, -1, -1), var3.method_6104(1, 1, 1))) {
          class_2522 var11 = var1.method_28262(var10);
          if (var11.method_8350(class_4783.field_23209)) {
             var8 = true;

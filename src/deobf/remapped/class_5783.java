@@ -21,10 +21,10 @@ public abstract class class_5783 extends Entity {
 
    @Nullable
    public Entity method_26166() {
-      if (this.field_29207 != null && this.field_41768 instanceof class_6331) {
-         return ((class_6331)this.field_41768).method_28925(this.field_29207);
+      if (this.field_29207 != null && this.world instanceof class_6331) {
+         return ((class_6331)this.world).method_28925(this.field_29207);
       } else {
-         return this.field_29205 == 0 ? null : this.field_41768.method_29534(this.field_29205);
+         return this.field_29205 == 0 ? null : this.world.method_29534(this.field_29205);
       }
    }
 
@@ -60,7 +60,7 @@ public abstract class class_5783 extends Entity {
    private boolean method_26162() {
       Entity var3 = this.method_26166();
       if (var3 != null) {
-         for (Entity var5 : this.field_41768
+         for (Entity var5 : this.world
             .method_25867(this, this.method_37241().method_18929(this.method_37098()).method_18898(1.0), var0 -> !var0.method_37221() && var0.method_37167())) {
             if (var5.method_37240() == var3.method_37240()) {
                return false;
@@ -82,10 +82,10 @@ public abstract class class_5783 extends Entity {
          .method_6209((double)var7);
       this.method_37215(var11);
       float var12 = class_9299.method_42842(method_37266(var11));
-      this.field_41701 = (float)(class_9299.method_42821(var11.field_7336, var11.field_7334) * 180.0F / (float)Math.PI);
-      this.field_41755 = (float)(class_9299.method_42821(var11.field_7333, (double)var12) * 180.0F / (float)Math.PI);
-      this.field_41711 = this.field_41701;
-      this.field_41762 = this.field_41755;
+      this.rotationYaw = (float)(class_9299.method_42821(var11.field_7336, var11.field_7334) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(class_9299.method_42821(var11.field_7333, (double)var12) * 180.0F / (float)Math.PI);
+      this.prevRotationYaw = this.rotationYaw;
+      this.field_41762 = this.rotationPitch;
    }
 
    public void method_26158(Entity var1, float var2, float var3, float var4, float var5, float var6) {
@@ -112,20 +112,20 @@ public abstract class class_5783 extends Entity {
    }
 
    public void method_26165(class_9529 var1) {
-      class_2522 var4 = this.field_41768.method_28262(var1.method_43955());
-      var4.method_8361(this.field_41768, var4, var1, this);
+      class_2522 var4 = this.world.method_28262(var1.method_43955());
+      var4.method_8361(this.world, var4, var1, this);
    }
 
    @Override
    public void method_37162(double var1, double var3, double var5) {
       this.method_37214(var1, var3, var5);
-      if (this.field_41762 == 0.0F && this.field_41711 == 0.0F) {
+      if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
          float var9 = class_9299.method_42842(var1 * var1 + var5 * var5);
-         this.field_41755 = (float)(class_9299.method_42821(var3, (double)var9) * 180.0F / (float)Math.PI);
-         this.field_41701 = (float)(class_9299.method_42821(var1, var5) * 180.0F / (float)Math.PI);
-         this.field_41762 = this.field_41755;
-         this.field_41711 = this.field_41701;
-         this.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, this.field_41755);
+         this.rotationPitch = (float)(class_9299.method_42821(var3, (double)var9) * 180.0F / (float)Math.PI);
+         this.rotationYaw = (float)(class_9299.method_42821(var1, var5) * 180.0F / (float)Math.PI);
+         this.field_41762 = this.rotationPitch;
+         this.prevRotationYaw = this.rotationYaw;
+         this.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -141,8 +141,8 @@ public abstract class class_5783 extends Entity {
    public void method_26167() {
       class_1343 var3 = this.method_37098();
       float var4 = class_9299.method_42842(method_37266(var3));
-      this.field_41755 = method_26168(this.field_41762, (float)(class_9299.method_42821(var3.field_7333, (double)var4) * 180.0F / (float)Math.PI));
-      this.field_41701 = method_26168(this.field_41711, (float)(class_9299.method_42821(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
+      this.rotationPitch = method_26168(this.field_41762, (float)(class_9299.method_42821(var3.field_7333, (double)var4) * 180.0F / (float)Math.PI));
+      this.rotationYaw = method_26168(this.prevRotationYaw, (float)(class_9299.method_42821(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
    }
 
    public static float method_26168(float var0, float var1) {

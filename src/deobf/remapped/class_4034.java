@@ -38,7 +38,7 @@ public class class_4034 extends class_4088 {
    @Override
    public void method_18876(class_704 var1) {
       super.method_18876(var1);
-      if (!var1.field_41768.field_33055) {
+      if (!var1.world.field_33055) {
          ItemStack var4 = this.field_19587.method_35899(this.field_19587.method_35897());
          if (!var4.method_28022()) {
             var1.method_3153(var4, false);

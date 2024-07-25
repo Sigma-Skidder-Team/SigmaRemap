@@ -9,7 +9,7 @@ public class class_5937 {
    private List<class_8670> field_30284 = new ArrayList<class_8670>();
    public float field_30289 = -999.0F;
    public float field_30287 = -999.0F;
-   private class_1331 field_30285;
+   private BlockPos field_30285;
    private boolean field_30283 = true;
    public class_8670 field_30286 = null;
 
@@ -77,7 +77,7 @@ public class class_5937 {
                var14 |= var9 == class_4748.field_23004 || var9 == class_4748.field_23008;
             }
 
-            class_1331 var15 = this.field_30282.thePlayer.method_37075();
+            BlockPos var15 = this.field_30282.thePlayer.method_37075();
             if (this.field_30282.thePlayer.field_41736.field_7333 % 1.0 >= 0.93) {
                var15 = var15.method_6081();
             }
@@ -143,8 +143,8 @@ public class class_5937 {
 
             float var43 = class_7211.method_33007(this.field_30282.thePlayer.method_37245(), var8.field_44468.method_32363())[0];
             this.field_30289 = var43;
-            double var21 = Math.cos(Math.toRadians((double)(this.field_30282.thePlayer.field_41701 - var43)));
-            double var23 = Math.sin(Math.toRadians((double)(this.field_30282.thePlayer.field_41701 - var43)));
+            double var21 = Math.cos(Math.toRadians((double)(this.field_30282.thePlayer.rotationYaw - var43)));
+            double var23 = Math.sin(Math.toRadians((double)(this.field_30282.thePlayer.rotationYaw - var43)));
             boolean var25 = class_5286.method_24123(var8);
             this.field_30282.thePlayer.method_37140(var8.field_44472.isEmpty());
             double var26 = Math.min(1.0 / Math.abs(var21), 1.0 / Math.abs(var23));
@@ -172,8 +172,8 @@ public class class_5937 {
                == 0L;
             boolean var35 = false;
             boolean var36 = false;
-            float var37 = this.field_30282.thePlayer.field_41701;
-            this.field_30282.thePlayer.field_41701 = var43;
+            float var37 = this.field_30282.thePlayer.rotationYaw;
+            this.field_30282.thePlayer.rotationYaw = var43;
             switch (var9) {
                case field_23004:
                   boolean var38 = true;
@@ -210,7 +210,7 @@ public class class_5937 {
                case field_23006:
             }
 
-            this.field_30282.thePlayer.field_41701 = var37;
+            this.field_30282.thePlayer.rotationYaw = var37;
             if (var36 && !this.field_30282.thePlayer.field_41726 && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
                class_314.method_1463(0.0);
                class_314.method_1405(0.0);
@@ -232,7 +232,7 @@ public class class_5937 {
       }
    }
 
-   public boolean method_27148(class_1331 var1) {
+   public boolean method_27148(BlockPos var1) {
       float var4 = (float)var1.method_12173() + 0.5F;
       float var5 = (float)var1.method_12185() + 0.5F;
       double var6 = this.field_30282.thePlayer.method_37098().field_7336;
@@ -267,7 +267,7 @@ public class class_5937 {
             }
 
             for (long var8 : var6.field_44472) {
-               class_1331 var10 = class_1331.method_6088(var8);
+               BlockPos var10 = BlockPos.method_6088(var8);
                if (this.field_30282
                         .thePlayer
                         .method_37245()
@@ -294,17 +294,17 @@ public class class_5937 {
                            )
                      )
                      > 6.0) {
-                  this.field_30285 = (class_1331)var4.get(0);
+                  this.field_30285 = (BlockPos)var4.get(0);
                }
 
                Direction var13 = class_7494.method_34113(this.field_30285);
                float[] var11 = class_7494.method_34077(this.field_30285, var13);
                var1.method_6441(var11[0]);
                var1.method_6448(var11[1]);
-               this.field_30282.thePlayer.method_26597(class_2584.field_12791);
+               this.field_30282.thePlayer.method_26597(Hand.MAIN_HAND);
                this.field_30282.playerController.method_42163(this.field_30285, class_7494.method_34113(this.field_30285));
             } else {
-               this.field_30285 = (class_1331)var4.get(0);
+               this.field_30285 = (BlockPos)var4.get(0);
                Direction var14 = class_7494.method_34113(this.field_30285);
                float[] var15 = class_7494.method_34077(this.field_30285, var14);
                var1.method_6441(var15[0]);
@@ -364,7 +364,7 @@ public class class_5937 {
             }
          }
 
-         class_1331 var17 = class_7494.method_34083(this.field_30282.thePlayer.field_41701, this.field_30282.thePlayer.field_41755, 100.0F);
+         BlockPos var17 = class_7494.method_34083(this.field_30282.thePlayer.rotationYaw, this.field_30282.thePlayer.rotationPitch, 100.0F);
          if (var17 != null) {
             if (this.field_30284 != null && this.field_30284.size() > 0) {
                int var18 = class_314.method_1444(class_1255.field_6922.field_6917, 0.02F);
@@ -373,7 +373,7 @@ public class class_5937 {
                GL11.glDisable(2929);
 
                for (Long var8 : this.field_30284.get(0).field_44466) {
-                  class_1331 var9 = class_1331.method_6088(var8);
+                  BlockPos var9 = BlockPos.method_6088(var8);
                   if (!this.field_30282.theWorld.method_28262(var9).method_8345()) {
                      double var10 = (double)var9.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
                      double var12 = (double)var9.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
@@ -384,7 +384,7 @@ public class class_5937 {
                }
 
                for (Long var20 : this.field_30284.get(0).field_44470) {
-                  class_1331 var21 = class_1331.method_6088(var20);
+                  BlockPos var21 = BlockPos.method_6088(var20);
                   if (this.field_30282.theWorld.method_28262(var21).method_8345()) {
                      double var22 = (double)var21.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
                      double var23 = (double)var21.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();

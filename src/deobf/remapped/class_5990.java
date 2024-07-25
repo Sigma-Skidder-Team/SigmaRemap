@@ -12,9 +12,9 @@ import org.apache.logging.log4j.LogManager;
 
 public interface class_5990 extends class_6163, class_3287 {
    @Nullable
-   class_2522 method_27348(class_1331 var1, class_2522 var2, boolean var3);
+   class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3);
 
-   void method_27346(class_1331 var1, class_3757 var2);
+   void method_27346(BlockPos var1, class_3757 var2);
 
    void method_27342(Entity var1);
 
@@ -37,7 +37,7 @@ public interface class_5990 extends class_6163, class_3287 {
       return var3 != null ? var3.method_5997() : 0;
    }
 
-   Set<class_1331> method_27366();
+   Set<BlockPos> method_27366();
 
    class_1315[] method_27349();
 
@@ -84,9 +84,9 @@ public interface class_5990 extends class_6163, class_3287 {
 
    class_7335 method_27364();
 
-   void method_27370(class_1331 var1);
+   void method_27370(BlockPos var1);
 
-   default void method_27365(class_1331 var1) {
+   default void method_27365(BlockPos var1) {
       LogManager.getLogger().warn("Trying to mark a block for PostProcessing @ {}, but this operation is not supported.", var1);
    }
 
@@ -101,12 +101,12 @@ public interface class_5990 extends class_6163, class_3287 {
    }
 
    @Nullable
-   CompoundNBT method_27355(class_1331 var1);
+   CompoundNBT method_27355(BlockPos var1);
 
    @Nullable
-   CompoundNBT method_27345(class_1331 var1);
+   CompoundNBT method_27345(BlockPos var1);
 
-   Stream<class_1331> method_27360();
+   Stream<BlockPos> method_27360();
 
    class_3065<class_6414> method_27335();
 

@@ -18,7 +18,7 @@ public class class_7608<T extends Entity & class_3713> extends class_7067<T> {
    }
 
    @Override
-   public int method_32546(T var1, class_1331 var2) {
+   public int method_32546(T var1, BlockPos var2) {
       return !this.field_38729 ? super.method_32546((T)var1, var2) : 15;
    }
 

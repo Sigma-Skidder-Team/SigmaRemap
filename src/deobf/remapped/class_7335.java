@@ -68,7 +68,7 @@ public class class_7335 {
       0,
       field_37507,
       class_5592.field_28386,
-      (var0, var1, var2, var3) -> var1.method_29829(var0.method_3133(), var0.method_22564(), var3, class_6033.field_30811)
+      (var0, var1, var2, var3) -> var1.method_29829(var0.method_3133(), var0.getBiomeManager(), var3, class_6033.field_30811)
    );
    public static final class_7335 field_37492 = method_33462(
       "liquid_carvers",
@@ -76,7 +76,7 @@ public class class_7335 {
       0,
       field_37500,
       class_5592.field_28386,
-      (var0, var1, var2, var3) -> var1.method_29829(var0.method_3133(), var0.method_22564(), var3, class_6033.field_30813)
+      (var0, var1, var2, var3) -> var1.method_29829(var0.method_3133(), var0.getBiomeManager(), var3, class_6033.field_30813)
    );
    public static final class_7335 field_37499 = method_33457(
       "features", field_37492, 8, field_37500, class_5592.field_28386, (var0, var1, var2, var3, var4, var5, var6, var7) -> {

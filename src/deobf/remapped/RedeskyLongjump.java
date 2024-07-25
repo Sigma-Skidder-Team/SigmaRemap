@@ -32,7 +32,7 @@ public class RedeskyLongjump extends Module {
                return;
             }
          } else {
-            class_1331 var6 = new class_1331(
+            BlockPos var6 = new BlockPos(
                client.thePlayer.method_37302(), client.thePlayer.method_37309() - 0.4, client.thePlayer.method_37156()
             );
             if (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var6) && class_314.method_1434()

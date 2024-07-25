@@ -31,8 +31,8 @@ public class class_60 {
          .<class_6325>method_28813(class_8669.field_44359)
          .method_39794(var1)
          .orElseThrow(() -> field_58.create(var1));
-      class_1331 var5 = new class_1331(var0.method_42192());
-      class_1331 var6 = var0.method_42198().method_29001(var4, var5, 6400, 8);
+      BlockPos var5 = new BlockPos(var0.method_42192());
+      BlockPos var6 = var0.method_42198().method_29001(var4, var5, 6400, 8);
       String var7 = var1.toString();
       if (var6 != null) {
          return class_8295.method_38267(var0, var7, var5, var6, "commands.locatebiome.success");

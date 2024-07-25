@@ -219,7 +219,7 @@ public class class_7051 implements class_6867, class_9875 {
       for (class_2831 var4 : this.field_36407) {
          for (int var5 = 0; var5 < var4.size(); var5++) {
             if (!((ItemStack)var4.get(var5)).method_28022()) {
-               ((ItemStack)var4.get(var5)).method_28007(this.field_36409.field_41768, this.field_36409, var5, this.field_36404 == var5);
+               ((ItemStack)var4.get(var5)).method_28007(this.field_36409.world, this.field_36409, var5, this.field_36404 == var5);
             }
          }
       }
@@ -476,7 +476,7 @@ public class class_7051 implements class_6867, class_9875 {
       return this.field_36405.get(var1);
    }
 
-   public void method_32400(class_6199 var1, float var2) {
+   public void method_32400(DamageSource var1, float var2) {
       if (!(var2 <= 0.0F)) {
          var2 /= 4.0F;
          if (var2 < 1.0F) {

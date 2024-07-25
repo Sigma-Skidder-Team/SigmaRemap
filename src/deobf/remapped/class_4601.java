@@ -23,11 +23,11 @@ public class class_4601 {
 
       for (int var5 = 0; var5 < 16; var5++) {
          for (int var6 = 0; var6 < 16; var6++) {
-            class_1331 var7 = new class_1331(var3 + var5, 64, var4 + var6);
+            BlockPos var7 = new BlockPos(var3 + var5, 64, var4 + var6);
             int var8 = SigmaMainClass.getInstance()
                .method_3309()
                .method_21975(
-                  new class_1331(var7.method_12173(), this.field_22373.method_27353(class_3801.field_18592).method_9957(var5, var6) - 1, var7.method_12185()),
+                  new BlockPos(var7.method_12173(), this.field_22373.method_27353(class_3801.field_18592).method_9957(var5, var6) - 1, var7.method_12185()),
                   true
                );
             this.field_22374.put((byte)(var8 >> 16 & 0xFF));

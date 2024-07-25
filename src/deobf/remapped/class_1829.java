@@ -28,7 +28,7 @@ public abstract class class_1829 extends class_4612 {
 
    @Override
    public int method_26427(class_704 var1) {
-      return 1 + this.field_41768.field_33033.nextInt(3);
+      return 1 + this.world.field_33033.nextInt(3);
    }
 
    public void method_8085(int var1) {
@@ -36,7 +36,7 @@ public abstract class class_1829 extends class_4612 {
          this.method_37192(var1 - 1);
          if (this.method_37229() == -20) {
             this.method_37192(0);
-            this.method_37181(class_6199.field_31671, 2.0F);
+            this.attackEntityFrom(DamageSource.field_31671, 2.0F);
          }
       } else {
          this.method_37192(300);

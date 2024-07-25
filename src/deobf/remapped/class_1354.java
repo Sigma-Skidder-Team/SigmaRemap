@@ -9,9 +9,9 @@ public class class_1354 extends class_5788<class_9504> {
       super(var1);
    }
 
-   public Stream<class_1331> method_6253(class_6680 var1, Random var2, class_9504 var3, class_1331 var4) {
+   public Stream<BlockPos> method_6253(class_6680 var1, Random var2, class_9504 var3, BlockPos var4) {
       int var7 = var1.method_30647();
       int var8 = var7 - 5 + var2.nextInt(10);
-      return Stream.<class_1331>of(new class_1331(var4.method_12173(), var8, var4.method_12185()));
+      return Stream.<BlockPos>of(new BlockPos(var4.method_12173(), var8, var4.method_12185()));
    }
 }

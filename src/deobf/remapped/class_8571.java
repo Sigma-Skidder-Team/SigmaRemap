@@ -11,7 +11,7 @@ public class class_8571 {
       this.field_43942 = var5;
    }
 
-   public class_8571(class_1331 var1) {
+   public class_8571(BlockPos var1) {
       this.field_43941 = (double)var1.method_12173();
       this.field_43940 = (double)var1.method_12165();
       this.field_43942 = (double)var1.method_12185();
@@ -37,8 +37,8 @@ public class class_8571 {
       return new class_8571(Math.floor(this.field_43941), Math.floor(this.field_43940), Math.floor(this.field_43942));
    }
 
-   public class_1331 method_39428() {
-      return new class_1331(Math.floor(this.field_43941), Math.floor(this.field_43940), Math.floor(this.field_43942));
+   public BlockPos method_39428() {
+      return new BlockPos(Math.floor(this.field_43941), Math.floor(this.field_43940), Math.floor(this.field_43942));
    }
 
    public double method_39418(class_8571 var1) {

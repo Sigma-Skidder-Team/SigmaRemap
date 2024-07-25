@@ -19,8 +19,8 @@ public class class_3060 extends class_4171 {
    }
 
    public void method_13966(Entity var1, class_7966 var2, class_2565 var3, int var4, int var5) {
-      if (Config.method_14274() && var1 instanceof class_9716) {
-         class_9716 var8 = (class_9716)var1;
+      if (Config.method_14274() && var1 instanceof AbstractClientPlayerEntity) {
+         AbstractClientPlayerEntity var8 = (AbstractClientPlayerEntity)var1;
          class_2344 var9 = this.field_15024.method_11447();
          class_2614.method_11859(var9, var8, var2, var3, var4, var5);
       }

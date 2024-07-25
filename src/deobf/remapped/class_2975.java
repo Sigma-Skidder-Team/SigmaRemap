@@ -12,9 +12,9 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
    }
 
    private int method_13617(long var1) {
-      int var5 = class_1331.method_6080(var1);
-      int var6 = class_1331.method_6067(var1);
-      int var7 = class_1331.method_6092(var1);
+      int var5 = BlockPos.method_6080(var1);
+      int var6 = BlockPos.method_6067(var1);
+      int var7 = BlockPos.method_6092(var1);
       class_6163 var8 = this.field_11553.method_23025(var5 >> 4, var7 >> 4);
       return var8 == null ? 0 : var8.method_28263(this.field_14622.method_13362(var5, var6, var7));
    }
@@ -24,9 +24,9 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
       if (var3 != Long.MAX_VALUE) {
          if (var1 != Long.MAX_VALUE) {
             if (var5 < 15) {
-               int var8 = Integer.signum(class_1331.method_6080(var3) - class_1331.method_6080(var1));
-               int var9 = Integer.signum(class_1331.method_6067(var3) - class_1331.method_6067(var1));
-               int var10 = Integer.signum(class_1331.method_6092(var3) - class_1331.method_6092(var1));
+               int var8 = Integer.signum(BlockPos.method_6080(var3) - BlockPos.method_6080(var1));
+               int var9 = Integer.signum(BlockPos.method_6067(var3) - BlockPos.method_6067(var1));
+               int var10 = Integer.signum(BlockPos.method_6092(var3) - BlockPos.method_6092(var1));
                Direction var11 = Direction.method_1032(var8, var9, var10);
                if (var11 != null) {
                   MutableInt var12 = new MutableInt();
@@ -58,7 +58,7 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
       long var7 = class_6979.method_31903(var1);
 
       for (Direction var12 : field_14623) {
-         long var13 = class_1331.method_6097(var1, var12);
+         long var13 = BlockPos.method_6097(var1, var12);
          long var15 = class_6979.method_31903(var13);
          if (var7 == var15 || this.field_11554.method_17749(var15)) {
             this.method_27687(var1, var13, var3, var4);
@@ -84,7 +84,7 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
       class_1201 var11 = this.field_11554.method_17744(var9, true);
 
       for (Direction var16 : field_14623) {
-         long var17 = class_1331.method_6097(var1, var16);
+         long var17 = BlockPos.method_6097(var1, var16);
          if (var17 != var3) {
             long var19 = class_6979.method_31903(var17);
             class_1201 var21;
@@ -111,7 +111,7 @@ public final class class_2975 extends class_2309<class_2271, class_9322> {
    }
 
    @Override
-   public void method_10624(class_1331 var1, int var2) {
+   public void method_10624(BlockPos var1, int var2) {
       this.field_11554.method_17732();
       this.method_27703(Long.MAX_VALUE, var1.method_6077(), 15 - var2, true);
    }

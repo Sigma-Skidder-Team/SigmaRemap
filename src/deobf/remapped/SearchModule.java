@@ -59,7 +59,7 @@ public class SearchModule extends Module {
       this.field_47901.clear();
    }
 
-   public List<class_1331> method_43317(class_2034 var1) {
+   public List<BlockPos> method_43317(class_2034 var1) {
       ArrayList var4 = new ArrayList();
       int var5 = var1.field_10328 * 16;
       int var6 = var1.field_10327 * 16;
@@ -71,7 +71,7 @@ public class SearchModule extends Module {
       for (float var11 = (float)var7; var11 <= (float)var10 && !(var11 > 100.0F); var11++) {
          for (float var12 = (float)var5; var12 <= (float)var8; var12++) {
             for (float var13 = (float)var6; var13 <= (float)var9; var13++) {
-               class_1331 var14 = new class_1331((double)var12, (double)var11, (double)var13);
+               BlockPos var14 = new BlockPos((double)var12, (double)var11, (double)var13);
                var4.add(var14);
             }
          }
@@ -80,14 +80,14 @@ public class SearchModule extends Module {
       return var4;
    }
 
-   public List<class_1331> method_43315(class_2034 var1) {
+   public List<BlockPos> method_43315(class_2034 var1) {
       ArrayList var4 = new ArrayList();
       if (var1 == null) {
          return null;
       } else {
          List var5 = (List)this.getSettingValueByName("Blocks");
 
-         for (class_1331 var7 : this.method_43317(var1)) {
+         for (BlockPos var7 : this.method_43317(var1)) {
             String var8 = class_8669.field_44462.method_39797(client.theWorld.method_28262(var7).method_8360()).toString();
             if (var5.contains(var8)) {
                var4.add(var7);
@@ -96,7 +96,7 @@ public class SearchModule extends Module {
 
          if (this.getBooleanValueByName("Holes")) {
             label57:
-            for (class_1331 var13 : this.method_43317(var1)) {
+            for (BlockPos var13 : this.method_43317(var1)) {
                if (client.theWorld.method_28262(var13).method_8360() == class_4783.field_23184) {
                   for (Direction var11 : Direction.values()) {
                      if (var11 != Direction.field_817
@@ -176,7 +176,7 @@ public class SearchModule extends Module {
       GL11.glDisable(2929);
 
       for (class_2953 var5 : this.field_47903) {
-         for (class_1331 var7 : var5.field_14428) {
+         for (BlockPos var7 : var5.field_14428) {
             double var8 = (double)var7.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
             double var10 = (double)var7.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
             double var12 = (double)var7.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();

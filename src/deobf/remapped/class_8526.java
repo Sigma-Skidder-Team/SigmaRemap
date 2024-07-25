@@ -16,18 +16,18 @@ public class class_8526 extends class_2654 {
    }
 
    @Override
-   public class_2522 method_28262(class_1331 var1) {
+   public class_2522 method_28262(BlockPos var1) {
       return class_4783.field_23424.method_29260();
    }
 
    @Nullable
    @Override
-   public class_2522 method_27348(class_1331 var1, class_2522 var2, boolean var3) {
+   public class_2522 method_27348(BlockPos var1, class_2522 var2, boolean var3) {
       return null;
    }
 
    @Override
-   public class_4774 method_28258(class_1331 var1) {
+   public class_4774 method_28258(BlockPos var1) {
       return class_8532.field_43673.method_10710();
    }
 
@@ -38,7 +38,7 @@ public class class_8526 extends class_2654 {
    }
 
    @Override
-   public int method_28263(class_1331 var1) {
+   public int method_28263(BlockPos var1) {
       return 0;
    }
 
@@ -56,7 +56,7 @@ public class class_8526 extends class_2654 {
 
    @Nullable
    @Override
-   public class_3757 method_11988(class_1331 var1, class_1628 var2) {
+   public class_3757 method_11988(BlockPos var1, class_1628 var2) {
       return null;
    }
 
@@ -65,11 +65,11 @@ public class class_8526 extends class_2654 {
    }
 
    @Override
-   public void method_27346(class_1331 var1, class_3757 var2) {
+   public void method_27346(BlockPos var1, class_3757 var2) {
    }
 
    @Override
-   public void method_27370(class_1331 var1) {
+   public void method_27370(BlockPos var1) {
    }
 
    @Override

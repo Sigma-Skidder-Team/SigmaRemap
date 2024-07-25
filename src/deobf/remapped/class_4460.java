@@ -8,7 +8,7 @@ import java.util.List;
 public class class_4460 {
    private static String[] field_21741;
    private class_2522 field_21749;
-   private class_1331 field_21740;
+   private BlockPos field_21740;
    private int field_21743 = -1;
    private int field_21738 = -1;
    private int field_21725 = -1;
@@ -35,12 +35,12 @@ public class class_4460 {
    private static final int field_21736 = 0;
    private static final int field_21729 = 1;
 
-   public class_4460(class_2522 var1, class_1331 var2) {
+   public class_4460(class_2522 var1, BlockPos var2) {
       this.field_21749 = var1;
       this.field_21740 = var2;
    }
 
-   public void method_20678(class_2522 var1, class_1331 var2) {
+   public void method_20678(class_2522 var1, BlockPos var2) {
       if (this.field_21749 != var1 || this.field_21740 != var2) {
          this.field_21749 = var1;
          this.field_21740 = var2;

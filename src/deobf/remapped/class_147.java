@@ -4,11 +4,11 @@ import java.util.function.Consumer;
 
 public class class_147 {
    private static String[] field_422;
-   private final class_1092 field_424;
+   private final ClientPlayNetHandler field_424;
    private int field_425 = -1;
    private Consumer<CompoundNBT> field_423;
 
-   public class_147(class_1092 var1) {
+   public class_147(ClientPlayNetHandler var1) {
       this.field_424 = var1;
    }
 
@@ -32,7 +32,7 @@ public class class_147 {
       this.field_424.method_4813(new class_6187(var5, var1));
    }
 
-   public void method_571(class_1331 var1, Consumer<CompoundNBT> var2) {
+   public void method_571(BlockPos var1, Consumer<CompoundNBT> var2) {
       int var5 = this.method_570(var2);
       this.field_424.method_4813(new class_7825(var5, var1));
    }

@@ -9,7 +9,7 @@ public final class class_8462 {
 
    public static class_7474 method_38935(Entity var0, Predicate<Entity> var1) {
       class_1343 var4 = var0.method_37098();
-      World var5 = var0.field_41768;
+      World var5 = var0.world;
       class_1343 var6 = var0.method_37245();
       class_1343 var7 = var6.method_6215(var4);
       Object var8 = var5.method_28265(new class_972(var6, var7, class_3132.field_15553, class_9583.field_48747, var0));
@@ -27,7 +27,7 @@ public final class class_8462 {
 
    @Nullable
    public static class_5631 method_38932(Entity var0, class_1343 var1, class_1343 var2, class_4092 var3, Predicate<Entity> var4, double var5) {
-      World var9 = var0.field_41768;
+      World var9 = var0.world;
       double var10 = var5;
       Entity var12 = null;
       class_1343 var13 = null;
@@ -84,37 +84,37 @@ public final class class_8462 {
       class_1343 var4 = var0.method_37098();
       if (var4.method_6221() != 0.0) {
          float var5 = class_9299.method_42842(Entity.method_37266(var4));
-         var0.field_41701 = (float)(class_9299.method_42821(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
-         var0.field_41755 = (float)(class_9299.method_42821((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
+         var0.rotationYaw = (float)(class_9299.method_42821(var4.field_7334, var4.field_7336) * 180.0F / (float)Math.PI) + 90.0F;
+         var0.rotationPitch = (float)(class_9299.method_42821((double)var5, var4.field_7333) * 180.0F / (float)Math.PI) - 90.0F;
 
-         while (var0.field_41755 - var0.field_41762 < -180.0F) {
+         while (var0.rotationPitch - var0.field_41762 < -180.0F) {
             var0.field_41762 -= 360.0F;
          }
 
-         while (var0.field_41755 - var0.field_41762 >= 180.0F) {
+         while (var0.rotationPitch - var0.field_41762 >= 180.0F) {
             var0.field_41762 += 360.0F;
          }
 
-         while (var0.field_41701 - var0.field_41711 < -180.0F) {
-            var0.field_41711 -= 360.0F;
+         while (var0.rotationYaw - var0.prevRotationYaw < -180.0F) {
+            var0.prevRotationYaw -= 360.0F;
          }
 
-         while (var0.field_41701 - var0.field_41711 >= 180.0F) {
-            var0.field_41711 += 360.0F;
+         while (var0.rotationYaw - var0.prevRotationYaw >= 180.0F) {
+            var0.prevRotationYaw += 360.0F;
          }
 
-         var0.field_41755 = class_9299.method_42795(var1, var0.field_41762, var0.field_41755);
-         var0.field_41701 = class_9299.method_42795(var1, var0.field_41711, var0.field_41701);
+         var0.rotationPitch = class_9299.method_42795(var1, var0.field_41762, var0.rotationPitch);
+         var0.rotationYaw = class_9299.method_42795(var1, var0.prevRotationYaw, var0.rotationYaw);
       }
    }
 
-   public static class_2584 method_38934(class_5834 var0, class_2451 var1) {
-      return var0.method_26446().method_27960() != var1 ? class_2584.field_12794 : class_2584.field_12791;
+   public static Hand method_38934(class_5834 var0, class_2451 var1) {
+      return var0.method_26446().method_27960() != var1 ? Hand.OFF_HAND : Hand.MAIN_HAND;
    }
 
    public static class_6749 method_38930(class_5834 var0, ItemStack var1, float var2) {
       class_603 var5 = (class_603)(!(var1.method_27960() instanceof class_603) ? class_4897.field_25024 : var1.method_27960());
-      class_6749 var6 = var5.method_2819(var0.field_41768, var1, var0);
+      class_6749 var6 = var5.method_2819(var0.world, var1, var0);
       var6.method_30937(var0, var2);
       if (var1.method_27960() == class_4897.field_25013 && var6 instanceof class_581) {
          ((class_581)var6).method_2748(var1);

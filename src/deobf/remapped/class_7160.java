@@ -11,7 +11,7 @@ public class class_7160 extends class_3200<class_1941> {
       class_6631 var10 = class_6631.method_30492(this.field_15989);
       int var11 = class_67.method_64(var4, var5, var2);
       if (var11 >= 60) {
-         class_1331 var12 = new class_1331(var4 * 16 + 8, var11, var5 * 16 + 8);
+         BlockPos var12 = new BlockPos(var4 * 16 + 8, var11, var5 * 16 + 8);
          class_8582.method_39475(var3, var12, var10, this.field_15986, this.field_15989);
          this.method_14720();
       }

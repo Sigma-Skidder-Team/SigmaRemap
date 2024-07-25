@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 
 public class class_7024 {
    public static final class_5927<?, ?> field_36146 = method_32046(
-      "end_spike", class_4285.field_20758.method_19909(new class_4069(false, ImmutableList.of(), (class_1331)null))
+      "end_spike", class_4285.field_20758.method_19909(new class_4069(false, ImmutableList.of(), (BlockPos)null))
    );
    public static final class_5927<?, ?> field_36061 = method_32046(
       "end_gateway",

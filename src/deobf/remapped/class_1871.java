@@ -23,7 +23,7 @@ public abstract class class_1871 implements class_5120 {
    }
 
    @Override
-   public void method_23468(class_3577 var1, class_1331 var2, class_6199 var3, class_704 var4) {
+   public void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, class_704 var4) {
    }
 
    @Override
@@ -46,7 +46,7 @@ public abstract class class_1871 implements class_5120 {
    }
 
    @Override
-   public float method_23467(class_6199 var1, float var2) {
+   public float method_23467(DamageSource var1, float var2) {
       return var2;
    }
 

@@ -23,7 +23,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_7909 extends class_4156 {
+public class class_7909 extends StatisticsManager {
    private static final Logger field_40431 = LogManager.getLogger();
    private final class_341 field_40435;
    private final File field_40432;

@@ -16,8 +16,8 @@ public class class_9871<T extends class_704> extends class_4171<T, class_3169<T>
       CompoundNBT var12 = !var9 ? var4.method_3171() : var4.method_3160();
       class_6629.method_30460(var12.method_25965("id")).filter(var0 -> var0 == class_6629.field_34228).ifPresent(var11 -> {
          Entity var14 = Config.method_14387().field_21016;
-         if (var4 instanceof class_9716) {
-            class_9716 var15 = (class_9716)var4;
+         if (var4 instanceof AbstractClientPlayerEntity) {
+            AbstractClientPlayerEntity var15 = (AbstractClientPlayerEntity)var4;
             class_7819 var16 = !var9 ? var15.field_49395 : var15.field_49383;
             if (var16 != null) {
                Config.method_14387().field_21016 = var16;

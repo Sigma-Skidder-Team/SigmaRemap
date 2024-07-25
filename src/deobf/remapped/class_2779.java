@@ -21,7 +21,7 @@ public class class_2779 implements class_2995 {
       Camera var11 = this.field_13571.gameRenderer.method_35949();
       ClientWorld var12 = this.field_13571.theWorld;
       class_8760 var13 = var12.method_22572();
-      class_1331 var14 = new class_1331(var11.method_41627().field_7336, 0.0, var11.method_41627().field_7334);
+      BlockPos var14 = new BlockPos(var11.method_41627().field_7336, 0.0, var11.method_41627().field_7334);
       class_7907 var15 = var2.method_11645(RenderLayer.method_16744());
       if (this.field_13570.containsKey(var13)) {
          for (class_9616 var17 : this.field_13570.get(var13).values()) {

@@ -15,7 +15,7 @@ public class class_5602 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      return !this.field_28412.field_41768.method_29602()
+      return !this.field_28412.world.method_29602()
          && this.field_28412.method_37285()
          && this.field_28412.method_37309() < (double)(this.field_28413 - 2);
    }

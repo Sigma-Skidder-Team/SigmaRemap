@@ -16,7 +16,7 @@ public class class_3820 extends class_4285<class_1941> {
       super(var1);
    }
 
-   public boolean method_17795(class_700 var1, class_6541 var2, Random var3, class_1331 var4, class_1941 var5) {
+   public boolean method_17795(class_700 var1, class_6541 var2, Random var3, BlockPos var4, class_1941 var5) {
       byte var8 = 3;
       int var9 = var3.nextInt(2) + 2;
       int var10 = -var9 - 1;
@@ -31,7 +31,7 @@ public class class_3820 extends class_4285<class_1941> {
       for (int var18 = var10; var18 <= var11; var18++) {
          for (int var19 = -1; var19 <= 4; var19++) {
             for (int var20 = var15; var20 <= var16; var20++) {
-               class_1331 var21 = var4.method_6104(var18, var19, var20);
+               BlockPos var21 = var4.method_6104(var18, var19, var20);
                class_5371 var22 = var1.method_28262(var21).method_8362();
                boolean var23 = var22.method_24499();
                if (var19 == -1 && !var23) {
@@ -56,7 +56,7 @@ public class class_3820 extends class_4285<class_1941> {
          for (int var27 = var10; var27 <= var11; var27++) {
             for (int var30 = 3; var30 >= -1; var30--) {
                for (int var32 = var15; var32 <= var16; var32++) {
-                  class_1331 var34 = var4.method_6104(var27, var30, var32);
+                  BlockPos var34 = var4.method_6104(var27, var30, var32);
                   class_2522 var36 = var1.method_28262(var34);
                   if (var27 != var10 && var30 != -1 && var32 != var15 && var27 != var11 && var30 != 4 && var32 != var16) {
                      if (!var36.method_8350(class_4783.field_23471) && !var36.method_8350(class_4783.field_23617)) {
@@ -80,7 +80,7 @@ public class class_3820 extends class_4285<class_1941> {
                int var33 = var4.method_12173() + var3.nextInt(var9 * 2 + 1) - var9;
                int var35 = var4.method_12165();
                int var37 = var4.method_12185() + var3.nextInt(var14 * 2 + 1) - var14;
-               class_1331 var38 = new class_1331(var33, var35, var37);
+               BlockPos var38 = new BlockPos(var33, var35, var37);
                if (var1.method_22548(var38)) {
                   int var24 = 0;
 

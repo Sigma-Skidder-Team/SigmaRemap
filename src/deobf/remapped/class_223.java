@@ -50,15 +50,15 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          int var3 = class_9299.method_42847(this.method_37302());
          int var4 = class_9299.method_42847(this.method_37309());
          int var5 = class_9299.method_42847(this.method_37156());
-         if (this.field_41768.method_22561(new class_1331(var3, 0, var5)).method_28865(new class_1331(var3, var4, var5)) > 1.0F) {
-            this.method_37181(class_6199.field_31665, 1.0F);
+         if (this.world.method_22561(new BlockPos(var3, 0, var5)).method_28865(new BlockPos(var3, var4, var5)) > 1.0F) {
+            this.attackEntityFrom(DamageSource.field_31665, 1.0F);
          }
 
-         if (!this.field_41768.method_29537().method_1285(class_291.field_1047)) {
+         if (!this.world.method_29537().method_1285(class_291.field_1047)) {
             return;
          }
 
@@ -68,11 +68,11 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
             var3 = class_9299.method_42847(this.method_37302() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));
             var4 = class_9299.method_42847(this.method_37309());
             var5 = class_9299.method_42847(this.method_37156() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
-            class_1331 var8 = new class_1331(var3, var4, var5);
-            if (this.field_41768.method_28262(var8).method_8345()
-               && this.field_41768.method_22561(var8).method_28865(var8) < 0.8F
-               && var6.method_8309(this.field_41768, var8)) {
-               this.field_41768.method_29594(var8, var6);
+            BlockPos var8 = new BlockPos(var3, var4, var5);
+            if (this.world.method_28262(var8).method_8345()
+               && this.world.method_22561(var8).method_28865(var8) < 0.8F
+               && var6.method_8309(this.world, var8)) {
+               this.world.method_29594(var8, var6);
             }
          }
       }
@@ -80,7 +80,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
 
    @Override
    public void method_10805(class_5834 var1, float var2) {
-      class_6889 var5 = new class_6889(this.field_41768, this);
+      class_6889 var5 = new class_6889(this.world, this);
       double var6 = var1.method_37388() - 1.1F;
       double var8 = var1.method_37302() - this.method_37302();
       double var10 = var6 - var5.method_37309();
@@ -88,7 +88,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
       float var14 = class_9299.method_42842(var8 * var8 + var12 * var12) * 0.2F;
       var5.method_26161(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
       this.method_37155(class_463.field_2565, 1.0F, 0.4F / (this.method_26594().nextFloat() * 0.4F + 0.8F));
-      this.field_41768.method_7509(var5);
+      this.world.method_7509(var5);
    }
 
    @Override
@@ -97,15 +97,15 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    }
 
    @Override
-   public class_6910 method_26857(class_704 var1, class_2584 var2) {
+   public class_6910 method_26857(class_704 var1, Hand var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24853 && this.method_45584()) {
          this.method_45583(class_562.field_3335);
-         if (!this.field_41768.field_33055) {
+         if (!this.world.field_33055) {
             var5.method_28003(1, var1, var1x -> var1x.method_26447(var2));
          }
 
-         return class_6910.method_31659(this.field_41768.field_33055);
+         return class_6910.method_31659(this.world.field_33055);
       } else {
          return class_6910.field_35521;
       }
@@ -113,8 +113,8 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
 
    @Override
    public void method_45583(class_562 var1) {
-      this.field_41768.method_29540((class_704)null, this, class_463.field_2661, var1, 1.0F, 1.0F);
-      if (!this.field_41768.method_22567()) {
+      this.world.method_29540((class_704)null, this, class_463.field_2661, var1, 1.0F, 1.0F);
+      if (!this.world.method_22567()) {
          this.method_948(false);
          this.method_37311(new ItemStack(class_4897.field_25172), 1.7F);
       }
@@ -146,7 +146,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
 
    @Nullable
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2763;
    }
 

@@ -42,7 +42,7 @@ public class class_9040 extends class_1871 {
 
    private void method_41498() {
       if (this.field_46258 != null && this.field_46258.method_18436()) {
-         class_1331 var3 = this.field_9479.field_41768.method_22563(class_3801.field_18590, new class_1331(class_8870.field_45348));
+         BlockPos var3 = this.field_9479.world.method_22563(class_3801.field_18590, new BlockPos(class_8870.field_45348));
          int var4 = this.field_9479.method_12622() != null ? this.field_9479.method_12622().method_12784() : 0;
          if (this.field_9479.method_26594().nextInt(var4 + 3) == 0) {
             this.field_9479.method_12611().method_29422(class_8978.field_45996);
@@ -51,7 +51,7 @@ public class class_9040 extends class_1871 {
 
          double var5 = 64.0;
          class_704 var7 = this.field_9479
-            .field_41768
+            .world
             .method_25858(field_46257, (double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
          if (var7 != null) {
             var5 = var3.method_12179(var7.method_37245(), true) / 512.0;
@@ -106,7 +106,7 @@ public class class_9040 extends class_1871 {
 
    private void method_41499() {
       if (this.field_46258 != null && !this.field_46258.method_18436()) {
-         class_1331 var3 = this.field_46258.method_18449();
+         BlockPos var3 = this.field_46258.method_18449();
          this.field_46258.method_18434();
          double var4 = (double)var3.method_12173();
          double var6 = (double)var3.method_12185();
@@ -121,7 +121,7 @@ public class class_9040 extends class_1871 {
    }
 
    @Override
-   public void method_23468(class_3577 var1, class_1331 var2, class_6199 var3, class_704 var4) {
+   public void method_23468(class_3577 var1, BlockPos var2, DamageSource var3, class_704 var4) {
       if (var4 != null && !var4.playerAbilities.disableDamage) {
          this.method_41500(var4);
       }

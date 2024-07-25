@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.AbstractIterator;
 import java.util.Random;
 
-public final class class_3436 extends AbstractIterator<class_1331> {
+public final class class_3436 extends AbstractIterator<BlockPos> {
    private static String[] field_16894;
    public final class_2921 field_16890;
    public int field_16898;
@@ -21,7 +21,7 @@ public final class class_3436 extends AbstractIterator<class_1331> {
       this.field_16898 = this.field_16899;
    }
 
-   public class_1331 computeNext() {
+   public BlockPos computeNext() {
       if (this.field_16898 > 0) {
          class_2921 var3 = this.field_16890
             .method_13362(
@@ -32,7 +32,7 @@ public final class class_3436 extends AbstractIterator<class_1331> {
          this.field_16898--;
          return var3;
       } else {
-         return (class_1331)this.endOfData();
+         return (BlockPos)this.endOfData();
       }
    }
 }

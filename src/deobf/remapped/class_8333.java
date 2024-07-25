@@ -24,8 +24,8 @@ public class class_8333 extends class_3599 {
 
    @Override
    public boolean method_16799() {
-      class_1331 var3 = this.field_42658.method_2163();
-      return !new class_1331((double)var3.method_12173(), this.field_42658.method_37309(), (double)var3.method_12185())
+      BlockPos var3 = this.field_42658.method_2163();
+      return !new BlockPos((double)var3.method_12173(), this.field_42658.method_37309(), (double)var3.method_12185())
             .method_12170(this.field_42658.method_37245(), 4.0)
          && !this.field_42660
          && this.field_42658.method_37229() >= 100;
@@ -33,18 +33,18 @@ public class class_8333 extends class_3599 {
 
    @Override
    public void method_16796() {
-      if (this.field_42658.field_41768 instanceof class_6331) {
-         class_6331 var3 = (class_6331)this.field_42658.field_41768;
+      if (this.field_42658.world instanceof class_6331) {
+         class_6331 var3 = (class_6331)this.field_42658.world;
          this.field_42660 = false;
          this.field_42658.method_26927().method_5620();
-         class_1331 var4 = this.field_42658.method_37075();
+         BlockPos var4 = this.field_42658.method_37075();
          class_5390 var5 = !((double)var3.field_33033.nextFloat() >= 0.5) ? class_5390.field_27508 : class_5390.field_27495;
-         class_1331 var6 = var3.method_29000(var5, var4, 50, false);
+         BlockPos var6 = var3.method_29000(var5, var4, 50, false);
          if (var6 != null) {
             this.field_42658.method_2155(var6);
          } else {
             class_5390 var7 = !var5.equals(class_5390.field_27495) ? class_5390.field_27495 : class_5390.field_27508;
-            class_1331 var8 = var3.method_29000(var7, var4, 50, false);
+            BlockPos var8 = var3.method_29000(var7, var4, 50, false);
             if (var8 == null) {
                this.field_42660 = true;
                return;
@@ -59,8 +59,8 @@ public class class_8333 extends class_3599 {
 
    @Override
    public void method_16793() {
-      class_1331 var3 = this.field_42658.method_2163();
-      if (new class_1331((double)var3.method_12173(), this.field_42658.method_37309(), (double)var3.method_12185())
+      BlockPos var3 = this.field_42658.method_2163();
+      if (new BlockPos((double)var3.method_12173(), this.field_42658.method_37309(), (double)var3.method_12185())
             .method_12170(this.field_42658.method_37245(), 4.0)
          || this.field_42660) {
          this.field_42658.method_2153(false);
@@ -69,7 +69,7 @@ public class class_8333 extends class_3599 {
 
    @Override
    public void method_16794() {
-      World var3 = this.field_42658.field_41768;
+      World var3 = this.field_42658.world;
       if (this.field_42658.method_2162() || this.field_42658.method_26927().method_5591()) {
          class_1343 var4 = class_1343.method_6216(this.field_42658.method_2163());
          class_1343 var5 = class_3425.method_15841(this.field_42658, 16, 1, var4, (float) (Math.PI / 8));
@@ -78,7 +78,7 @@ public class class_8333 extends class_3599 {
          }
 
          if (var5 != null) {
-            class_1331 var6 = new class_1331(var5);
+            BlockPos var6 = new BlockPos(var5);
             if (!var3.method_28258(var6).method_22007(class_6503.field_33094) || !var3.method_28262(var6).method_8319(var3, var6, class_2929.field_14272)) {
                var5 = class_3425.method_15837(this.field_42658, 8, 5, var4);
             }

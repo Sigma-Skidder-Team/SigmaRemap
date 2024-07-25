@@ -82,18 +82,18 @@ public abstract class class_6749 extends class_5783 {
       super.method_37123();
       boolean var3 = this.method_30926();
       class_1343 var4 = this.method_37098();
-      if (this.field_41762 == 0.0F && this.field_41711 == 0.0F) {
+      if (this.field_41762 == 0.0F && this.prevRotationYaw == 0.0F) {
          float var5 = class_9299.method_42842(method_37266(var4));
-         this.field_41701 = (float)(class_9299.method_42821(var4.field_7336, var4.field_7334) * 180.0F / (float)Math.PI);
-         this.field_41755 = (float)(class_9299.method_42821(var4.field_7333, (double)var5) * 180.0F / (float)Math.PI);
-         this.field_41711 = this.field_41701;
-         this.field_41762 = this.field_41755;
+         this.rotationYaw = (float)(class_9299.method_42821(var4.field_7336, var4.field_7334) * 180.0F / (float)Math.PI);
+         this.rotationPitch = (float)(class_9299.method_42821(var4.field_7333, (double)var5) * 180.0F / (float)Math.PI);
+         this.prevRotationYaw = this.rotationYaw;
+         this.field_41762 = this.rotationPitch;
       }
 
-      class_1331 var32 = this.method_37075();
-      class_2522 var6 = this.field_41768.method_28262(var32);
+      BlockPos var32 = this.method_37075();
+      class_2522 var6 = this.world.method_28262(var32);
       if (!var6.method_8345() && !var3) {
-         class_4190 var7 = var6.method_8324(this.field_41768, var32);
+         class_4190 var7 = var6.method_8324(this.world, var32);
          if (!var7.method_19485()) {
             class_1343 var8 = this.method_37245();
 
@@ -117,7 +117,7 @@ public abstract class class_6749 extends class_5783 {
       if (this.field_34834 && !var3) {
          if (this.field_34836 != var6 && this.method_30923()) {
             this.method_30930();
-         } else if (!this.field_41768.field_33055) {
+         } else if (!this.world.field_33055) {
             this.method_30932();
          }
 
@@ -126,7 +126,7 @@ public abstract class class_6749 extends class_5783 {
          this.field_34840 = 0;
          class_1343 var33 = this.method_37245();
          class_1343 var34 = var33.method_6215(var4);
-         Object var35 = this.field_41768.method_28265(new class_972(var33, var34, class_3132.field_15553, class_9583.field_48747, this));
+         Object var35 = this.world.method_28265(new class_972(var33, var34, class_3132.field_15553, class_9583.field_48747, this));
          if (((class_7474)var35).method_33990() != class_1430.field_7721) {
             var34 = ((class_7474)var35).method_33993();
          }
@@ -164,7 +164,7 @@ public abstract class class_6749 extends class_5783 {
          double var14 = var4.field_7334;
          if (this.method_30931()) {
             for (int var26 = 0; var26 < 4; var26++) {
-               this.field_41768
+               this.world
                   .method_43361(
                      class_3090.field_15322,
                      this.method_37302() + var10 * (double)var26 / 4.0,
@@ -182,20 +182,20 @@ public abstract class class_6749 extends class_5783 {
          double var20 = this.method_37156() + var14;
          float var22 = class_9299.method_42842(method_37266(var4));
          if (!var3) {
-            this.field_41701 = (float)(class_9299.method_42821(var10, var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(class_9299.method_42821(var10, var14) * 180.0F / (float)Math.PI);
          } else {
-            this.field_41701 = (float)(class_9299.method_42821(-var10, -var14) * 180.0F / (float)Math.PI);
+            this.rotationYaw = (float)(class_9299.method_42821(-var10, -var14) * 180.0F / (float)Math.PI);
          }
 
-         this.field_41755 = (float)(class_9299.method_42821(var12, (double)var22) * 180.0F / (float)Math.PI);
-         this.field_41755 = method_26168(this.field_41762, this.field_41755);
-         this.field_41701 = method_26168(this.field_41711, this.field_41701);
+         this.rotationPitch = (float)(class_9299.method_42821(var12, (double)var22) * 180.0F / (float)Math.PI);
+         this.rotationPitch = method_26168(this.field_41762, this.rotationPitch);
+         this.rotationYaw = method_26168(this.prevRotationYaw, this.rotationYaw);
          float var27 = 0.99F;
          float var28 = 0.05F;
          if (this.method_37285()) {
             for (int var29 = 0; var29 < 4; var29++) {
                float var30 = 0.25F;
-               this.field_41768.method_43361(class_3090.field_15340, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
+               this.world.method_43361(class_3090.field_15340, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
             }
 
             var27 = this.method_30920();
@@ -213,7 +213,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    private boolean method_30923() {
-      return this.field_34834 && this.field_41768.method_6681(new class_4092(this.method_37245(), this.method_37245()).method_18898(0.06));
+      return this.field_34834 && this.world.method_6681(new class_4092(this.method_37245(), this.method_37245()).method_18898(0.06));
    }
 
    private void method_30930() {
@@ -281,14 +281,14 @@ public abstract class class_6749 extends class_5783 {
       }
 
       Entity var7 = this.method_26166();
-      class_6199 var8;
+      DamageSource var8;
       if (var7 != null) {
-         var8 = class_6199.method_28379(this, var7);
+         var8 = DamageSource.method_28379(this, var7);
          if (var7 instanceof class_5834) {
             ((class_5834)var7).method_26510(var4);
          }
       } else {
-         var8 = class_6199.method_28379(this, this);
+         var8 = DamageSource.method_28379(this, this);
       }
 
       boolean var11 = var4.method_37387() == class_6629.field_34308;
@@ -297,12 +297,12 @@ public abstract class class_6749 extends class_5783 {
          var4.method_37178(5);
       }
 
-      if (!var4.method_37181(var8, (float)var6)) {
+      if (!var4.attackEntityFrom(var8, (float)var6)) {
          var4.method_37164(var12);
          this.method_37215(this.method_37098().method_6209(-0.1));
-         this.field_41701 += 180.0F;
-         this.field_41711 += 180.0F;
-         if (!this.field_41768.field_33055 && this.method_37098().method_6221() < 1.0E-7) {
+         this.rotationYaw += 180.0F;
+         this.prevRotationYaw += 180.0F;
+         if (!this.world.field_33055 && this.method_37098().method_6221() < 1.0E-7) {
             if (this.field_34835 == class_4237.field_20563) {
                this.method_37311(this.method_30925(), 0.1F);
             }
@@ -316,7 +316,7 @@ public abstract class class_6749 extends class_5783 {
 
          if (var4 instanceof class_5834) {
             class_5834 var13 = (class_5834)var4;
-            if (!this.field_41768.field_33055 && this.method_30936() <= 0) {
+            if (!this.world.field_33055 && this.method_30936() <= 0) {
                var13.method_26508(var13.method_26569() + 1);
             }
 
@@ -327,7 +327,7 @@ public abstract class class_6749 extends class_5783 {
                }
             }
 
-            if (!this.field_41768.field_33055 && var7 instanceof class_5834) {
+            if (!this.world.field_33055 && var7 instanceof class_5834) {
                class_2931.method_13429(var13, var7);
                class_2931.method_13406((class_5834)var7, var13);
             }
@@ -341,7 +341,7 @@ public abstract class class_6749 extends class_5783 {
                this.field_34841.add(var13);
             }
 
-            if (!this.field_41768.field_33055 && var7 instanceof class_9359) {
+            if (!this.world.field_33055 && var7 instanceof class_9359) {
                class_9359 var15 = (class_9359)var7;
                if (this.field_34841 != null && this.method_30927()) {
                   class_8807.field_45057.method_21226(var15, this.field_34841);
@@ -360,7 +360,7 @@ public abstract class class_6749 extends class_5783 {
 
    @Override
    public void method_26165(class_9529 var1) {
-      this.field_34836 = this.field_41768.method_28262(var1.method_43955());
+      this.field_34836 = this.world.method_28262(var1.method_43955());
       super.method_26165(var1);
       class_1343 var4 = var1.method_33993().method_6193(this.method_37302(), this.method_37309(), this.method_37156());
       this.method_37215(var4);
@@ -390,7 +390,7 @@ public abstract class class_6749 extends class_5783 {
    @Nullable
    public class_5631 method_30939(class_1343 var1, class_1343 var2) {
       return class_8462.method_38931(
-         this.field_41768, this, var1, var2, this.method_37241().method_18929(this.method_37098()).method_18898(1.0), this::method_26164
+         this.world, this, var1, var2, this.method_37241().method_18929(this.method_37098()).method_18898(1.0), this::method_26164
       );
    }
 
@@ -458,7 +458,7 @@ public abstract class class_6749 extends class_5783 {
 
    @Override
    public void method_37347(class_704 var1) {
-      if (!this.field_41768.field_33055 && (this.field_34834 || this.method_30926()) && this.field_34831 <= 0) {
+      if (!this.world.field_33055 && (this.field_34834 || this.method_30926()) && this.field_34831 <= 0) {
          boolean var4 = this.field_34835 == class_4237.field_20563
             || this.field_34835 == class_4237.field_20565 && var1.playerAbilities.isCreativeMode
             || this.method_30926() && this.method_26166().method_37328() == var1.method_37328();
@@ -536,7 +536,7 @@ public abstract class class_6749 extends class_5783 {
    public void method_30937(class_5834 var1, float var2) {
       int var5 = class_2931.method_13399(class_3668.field_17850, var1);
       int var6 = class_2931.method_13399(class_3668.field_17845, var1);
-      this.method_30924((double)(var2 * 2.0F) + this.field_41717.nextGaussian() * 0.25 + (double)((float)this.field_41768.method_43370().method_2097() * 0.11F));
+      this.method_30924((double)(var2 * 2.0F) + this.field_41717.nextGaussian() * 0.25 + (double)((float)this.world.method_43370().method_2097() * 0.11F));
       if (var5 > 0) {
          this.method_30924(this.method_30928() + (double)var5 * 0.5 + 0.5);
       }
@@ -560,7 +560,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    public boolean method_30926() {
-      return this.field_41768.field_33055 ? (this.field_41735.<Byte>method_36640(field_34839) & 2) != 0 : this.field_41731;
+      return this.world.field_33055 ? (this.field_41735.<Byte>method_36640(field_34839) & 2) != 0 : this.field_41731;
    }
 
    public void method_30934(boolean var1) {

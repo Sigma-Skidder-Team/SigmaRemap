@@ -60,7 +60,7 @@ public class class_3099 extends class_9686 {
    @Override
    public boolean method_27719(
       class_5990 var1,
-      Function<class_1331, class_6325> var2,
+      Function<BlockPos, class_6325> var2,
       BitSet var3,
       Random var4,
       class_2921 var5,

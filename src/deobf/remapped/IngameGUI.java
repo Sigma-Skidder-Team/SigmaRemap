@@ -287,7 +287,7 @@ public class IngameGUI extends AbstractGui {
          RenderSystem.method_16489();
          var28 = var17.method_4833(0);
          if (this.mc.gameOptions.keyPlayerList.isKeyDown()
-            && (!this.mc.method_8566() || this.mc.thePlayer.field_30532.method_4798().size() > 1 || var28 != null)) {
+            && (!this.mc.method_8566() || this.mc.thePlayer.connection.method_4798().size() > 1 || var28 != null)) {
             this.overlayPlayerList.method_9944(true);
             this.overlayPlayerList.method_9940(matrixStack, this.scaledWidth, var17, var28);
          } else {
@@ -354,7 +354,7 @@ public class IngameGUI extends AbstractGui {
             if (var1.method_33990() != class_1430.field_7717) {
                return false;
             } else {
-               class_1331 var4 = ((class_9529)var1).method_43955();
+               BlockPos var4 = ((class_9529)var1).method_43955();
                ClientWorld var5 = this.mc.theWorld;
                return var5.method_28262(var4).method_8317(var5, var4) != null;
             }
@@ -794,7 +794,7 @@ public class IngameGUI extends AbstractGui {
             }
 
             byte var30 = 0;
-            if (var4.field_41768.method_43366().method_8659()) {
+            if (var4.world.method_43366().method_8659()) {
                var30 = 5;
             }
 

@@ -21,7 +21,7 @@ public class class_1890 extends class_3429 {
          double var4 = 0.08;
 
          for (int var6 = 0; var6 < 8; var6++) {
-            this.field_41768
+            this.world
                .method_43361(
                   new class_8661(class_3090.field_15351, this.method_17246()),
                   this.method_37302(),
@@ -38,13 +38,13 @@ public class class_1890 extends class_3429 {
    @Override
    public void method_26163(class_5631 var1) {
       super.method_26163(var1);
-      var1.method_25524().method_37181(class_6199.method_28355(this, this.method_26166()), 0.0F);
+      var1.method_25524().attackEntityFrom(DamageSource.method_28355(this, this.method_26166()), 0.0F);
    }
 
    @Override
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
-      if (!this.field_41768.field_33055) {
+      if (!this.world.field_33055) {
          if (this.field_41717.nextInt(8) == 0) {
             byte var4 = 1;
             if (this.field_41717.nextInt(32) == 0) {
@@ -52,14 +52,14 @@ public class class_1890 extends class_3429 {
             }
 
             for (int var5 = 0; var5 < var4; var5++) {
-               class_3024 var6 = class_6629.field_34263.method_30484(this.field_41768);
+               class_3024 var6 = class_6629.field_34263.method_30484(this.world);
                var6.method_8635(-24000);
-               var6.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, 0.0F);
-               this.field_41768.method_7509(var6);
+               var6.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, 0.0F);
+               this.world.method_7509(var6);
             }
          }
 
-         this.field_41768.method_29587(this, (byte)3);
+         this.world.method_29587(this, (byte)3);
          this.method_37204();
       }
    }

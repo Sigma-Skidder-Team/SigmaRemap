@@ -42,9 +42,9 @@ public class class_4341 extends class_1871 {
    private void method_20193() {
       if (this.field_21093 == null || this.field_21093.method_18436()) {
          int var3 = this.field_9479.method_12606();
-         class_1331 var4 = this.field_9479.field_41768.method_22563(class_3801.field_18590, class_8870.field_45348);
+         BlockPos var4 = this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348);
          class_704 var5 = this.field_9479
-            .field_41768
+            .world
             .method_25858(field_21092, (double)var4.method_12173(), (double)var4.method_12165(), (double)var4.method_12185());
          int var6;
          if (var5 == null) {
@@ -69,7 +69,7 @@ public class class_4341 extends class_1871 {
 
    private void method_20194() {
       if (this.field_21093 != null && !this.field_21093.method_18436()) {
-         class_1331 var3 = this.field_21093.method_18449();
+         BlockPos var3 = this.field_21093.method_18449();
          this.field_21093.method_18434();
          double var4 = (double)var3.method_12173();
          double var6 = (double)var3.method_12185();

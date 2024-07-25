@@ -14,7 +14,7 @@ public class class_7695 extends class_4569 {
       return new class_7695(class_8938.field_45798, var0.method_30856());
    }
 
-   public boolean method_34865(class_9359 var1, class_6199 var2, float var3, float var4, boolean var5) {
+   public boolean method_34865(class_9359 var1, DamageSource var2, float var3, float var4, boolean var5) {
       return this.field_39069.method_37842(var1, var2, var3, var4, var5);
    }
 

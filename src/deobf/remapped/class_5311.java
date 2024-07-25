@@ -10,7 +10,7 @@ public class class_5311 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      return this.field_27111.field_41768.method_29602()
+      return this.field_27111.world.method_29602()
          && this.field_27111.method_26520(class_6943.field_35704).method_28022()
          && class_3613.method_16840(this.field_27111);
    }

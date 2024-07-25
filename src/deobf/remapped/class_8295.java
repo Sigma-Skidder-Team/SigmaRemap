@@ -30,8 +30,8 @@ public class class_8295 {
    }
 
    private static int method_38269(class_9155 var0, class_5390<?> var1) throws CommandSyntaxException {
-      class_1331 var4 = new class_1331(var0.method_42192());
-      class_1331 var5 = var0.method_42198().method_29000(var1, var4, 100, false);
+      BlockPos var4 = new BlockPos(var0.method_42192());
+      BlockPos var5 = var0.method_42198().method_29000(var1, var4, 100, false);
       if (var5 != null) {
          return method_38267(var0, var1.method_24556(), var4, var5, "commands.locate.success");
       } else {
@@ -39,7 +39,7 @@ public class class_8295 {
       }
    }
 
-   public static int method_38267(class_9155 var0, String var1, class_1331 var2, class_1331 var3, String var4) {
+   public static int method_38267(class_9155 var0, String var1, BlockPos var2, BlockPos var3, String var4) {
       int var7 = class_9299.method_42848(method_38270(var2.method_12173(), var2.method_12185(), var3.method_12173(), var3.method_12185()));
       IFormattableTextComponent var8 = TextComponentUtils.wrapWithSquareBrackets(
             new TranslationTextComponent("chat.coordinates", var3.method_12173(), "~", var3.method_12185())

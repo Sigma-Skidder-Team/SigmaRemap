@@ -59,7 +59,7 @@ public class SigmaIRC {
          Iterator var5 = var4.iterator();
 
          while (var5.hasNext()) {
-            class_9716 var6 = (class_9716)var5.next();
+            AbstractClientPlayerEntity var6 = (AbstractClientPlayerEntity)var5.next();
             if (this.field_21928.contains(var6.method_37328())
                || SigmaMainClass.getInstance().method_3331().method_20495(var6)
                || var6.method_45509().getUnformattedComponentText().equals("")) {

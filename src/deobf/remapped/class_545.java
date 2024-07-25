@@ -32,9 +32,9 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       ItemStack var9 = var4.method_26617(var5);
-      if (var5 == class_2584.field_12791 && !method_2639(var9) && method_2639(var4.method_26617(class_2584.field_12794))) {
+      if (var5 == Hand.MAIN_HAND && !method_2639(var9) && method_2639(var4.method_26617(Hand.OFF_HAND))) {
          return class_6910.field_35521;
       } else if (method_2639(var9) && method_2636(var1)) {
          method_2634(var2, var3, var1);
@@ -84,7 +84,7 @@ public class class_545 extends class_6414 {
       return var0.<Integer>method_10313(field_3268) < 4;
    }
 
-   private static boolean method_2638(class_1331 var0, World var1) {
+   private static boolean method_2638(BlockPos var0, World var1) {
       class_4774 var4 = var1.method_28258(var0);
       if (var4.method_22007(class_6503.field_33094)) {
          if (!var4.method_21993()) {
@@ -103,14 +103,14 @@ public class class_545 extends class_6414 {
       }
    }
 
-   private void method_2641(class_2522 var1, World var2, class_1331 var3) {
+   private void method_2641(class_2522 var1, World var2, BlockPos var3) {
       var2.method_7508(var3, false);
-      boolean var6 = class_9594.field_48893.method_44315().<class_1331>map(var3::method_6098).anyMatch(var1x -> method_2638(var1x, var2));
+      boolean var6 = class_9594.field_48893.method_44315().<BlockPos>map(var3::method_6098).anyMatch(var1x -> method_2638(var1x, var2));
       boolean var7 = var6 || var2.method_28258(var3.method_6081()).method_22007(class_6503.field_33094);
       class_4294 var8 = new class_4294(this, var7);
       var2.method_29575(
          (Entity)null,
-         class_6199.method_28378(),
+         DamageSource.method_28378(),
          var8,
          (double)var3.method_12173() + 0.5,
          (double)var3.method_12165() + 0.5,
@@ -125,7 +125,7 @@ public class class_545 extends class_6414 {
       return var0.method_22572().method_40219();
    }
 
-   public static void method_2634(World var0, class_1331 var1, class_2522 var2) {
+   public static void method_2634(World var0, BlockPos var1, class_2522 var2) {
       var0.method_7513(var1, var2.method_10308(field_3268, Integer.valueOf(var2.<Integer>method_10313(field_3268) + 1)), 3);
       var0.method_29528(
          (class_704)null,
@@ -140,7 +140,7 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public void method_29280(class_2522 var1, World var2, class_1331 var3, Random var4) {
+   public void method_29280(class_2522 var1, World var2, BlockPos var3, Random var4) {
       if (var1.<Integer>method_10313(field_3268) != 0) {
          if (var4.nextInt(100) == 0) {
             var2.method_29528(
@@ -178,16 +178,16 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public int method_10795(class_2522 var1, World var2, class_1331 var3) {
+   public int method_10795(class_2522 var1, World var2, BlockPos var3) {
       return method_2637(var1, 15);
    }
 
-   public static Optional<class_1343> method_2633(class_6629<?> var0, class_1449 var1, class_1331 var2) {
+   public static Optional<class_1343> method_2633(class_6629<?> var0, class_1449 var1, BlockPos var2) {
       Optional var5 = method_2635(var0, var1, var2, true);
       return !var5.isPresent() ? method_2635(var0, var1, var2, false) : var5;
    }
 
-   private static Optional<class_1343> method_2635(class_6629<?> var0, class_1449 var1, class_1331 var2, boolean var3) {
+   private static Optional<class_1343> method_2635(class_6629<?> var0, class_1449 var1, BlockPos var2, boolean var3) {
       class_2921 var6 = new class_2921();
       UnmodifiableIterator var7 = field_3270.iterator();
 
@@ -204,7 +204,7 @@ public class class_545 extends class_6414 {
    }
 
    @Override
-   public boolean method_10793(class_2522 var1, class_6163 var2, class_1331 var3, class_2929 var4) {
+   public boolean method_10793(class_2522 var1, class_6163 var2, BlockPos var3, class_2929 var4) {
       return false;
    }
 }

@@ -117,7 +117,7 @@ public class class_3973 extends class_4088 {
                return ItemStack.EMPTY;
             }
          } else {
-            var8.method_11236(var7, var1.field_41768, var1);
+            var8.method_11236(var7, var1.world, var1);
             if (!this.method_18892(var7, 3, 39, true)) {
                return ItemStack.EMPTY;
             }
@@ -145,6 +145,6 @@ public class class_3973 extends class_4088 {
    public void method_18876(class_704 var1) {
       super.method_18876(var1);
       this.field_19281.method_31507(2);
-      this.field_19280.method_42533((var2, var3) -> this.method_18887(var1, var1.field_41768, this.field_19279));
+      this.field_19280.method_42533((var2, var3) -> this.method_18887(var1, var1.world, this.field_19279));
    }
 }

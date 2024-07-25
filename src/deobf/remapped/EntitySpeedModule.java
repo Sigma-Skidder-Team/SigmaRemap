@@ -18,7 +18,7 @@ public class EntitySpeedModule extends Module {
          if (client.gameOptions.keyJump.isKeyDown() && !client.thePlayer.method_37243().field_41726) {
          }
 
-         class_8859 var4 = client.thePlayer.field_30533;
+         MovementInput var4 = client.thePlayer.movementInput;
          float var5 = var4.field_45287;
          float var6 = var4.field_45282;
          if (!client.thePlayer.method_37243().field_41744
@@ -52,7 +52,7 @@ public class EntitySpeedModule extends Module {
             if (client.thePlayer.method_37243() instanceof class_3551) {
                class_3551 var15 = (class_3551) client.thePlayer.method_37243();
                if (var15.field_41726 && client.gameOptions.keyJump.isKeyDown()) {
-                  client.thePlayer.field_30501 = 1.0F;
+                  client.thePlayer.horseJumpPower = 1.0F;
                }
             }
 

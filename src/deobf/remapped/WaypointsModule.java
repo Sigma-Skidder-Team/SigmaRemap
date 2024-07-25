@@ -102,7 +102,7 @@ public class WaypointsModule extends Module {
    public void method_42053(class_3368 var1) {
       if (this.method_42015()) {
          for (class_4333 var5 : this.method_42044(SigmaMainClass.getInstance().method_3309().method_21960())) {
-            class_1331 var6 = new class_1331(
+            BlockPos var6 = new BlockPos(
                (double)(var5.field_21071 - (var5.field_21071 <= 0 ? 1 : 0)),
                (double)var5.field_21077,
                (double)(var5.field_21073 - (var5.field_21073 <= 0 ? 1 : 0))

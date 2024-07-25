@@ -25,7 +25,7 @@ public class class_8073 {
    private boolean field_41299 = true;
    private boolean field_41297;
    public class_6325 field_41296 = class_5630.field_28568;
-   public class_1331 field_41301 = class_1331.field_7306;
+   public BlockPos field_41301 = BlockPos.field_7306;
 
    public class_8073(Entity var1) {
       this.field_41298 = var1;

@@ -14,7 +14,7 @@ public class class_7297 extends class_4314 {
    }
 
    @Override
-   public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
+   public class_6910 method_10777(class_2522 var1, World var2, BlockPos var3, class_704 var4, Hand var5, class_9529 var6) {
       class_3757 var9 = var2.method_28260(var3);
       if (!(var9 instanceof class_945)) {
          return class_6910.field_35521;
@@ -24,7 +24,7 @@ public class class_7297 extends class_4314 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
+   public void method_29257(World var1, BlockPos var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       if (!var1.field_33055 && var4 != null) {
          class_3757 var8 = var1.method_28260(var2);
          if (var8 instanceof class_945) {
@@ -49,7 +49,7 @@ public class class_7297 extends class_4314 {
    }
 
    @Override
-   public void method_10801(class_2522 var1, World var2, class_1331 var3, class_6414 var4, class_1331 var5, boolean var6) {
+   public void method_10801(class_2522 var1, World var2, BlockPos var3, class_6414 var4, BlockPos var5, boolean var6) {
       if (var2 instanceof class_6331) {
          class_3757 var9 = var2.method_28260(var3);
          if (var9 instanceof class_945) {

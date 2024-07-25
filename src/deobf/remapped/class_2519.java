@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_2519 extends class_1173 {
    public static final class_7821<Byte> field_12483 = class_8073.<Byte>method_36641(class_2519.class, class_2734.field_13361);
    private class_5886 field_12485;
-   private class_1331 field_12486;
+   private BlockPos field_12486;
    private boolean field_12482;
    private int field_12484;
 
@@ -29,7 +29,7 @@ public class class_2519 extends class_1173 {
       this.method_37182(true);
       if (this.field_12482 && --this.field_12484 <= 0) {
          this.field_12484 = 20;
-         this.method_37181(class_6199.field_31694, 1.0F);
+         this.attackEntityFrom(DamageSource.field_31694, 1.0F);
       }
    }
 
@@ -60,7 +60,7 @@ public class class_2519 extends class_1173 {
    public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25938("BoundX")) {
-         this.field_12486 = new class_1331(var1.method_25947("BoundX"), var1.method_25947("BoundY"), var1.method_25947("BoundZ"));
+         this.field_12486 = new BlockPos(var1.method_25947("BoundX"), var1.method_25947("BoundY"), var1.method_25947("BoundZ"));
       }
 
       if (var1.method_25938("LifeTicks")) {
@@ -87,11 +87,11 @@ public class class_2519 extends class_1173 {
    }
 
    @Nullable
-   public class_1331 method_11466() {
+   public BlockPos method_11466() {
       return this.field_12486;
    }
 
-   public void method_11470(class_1331 var1) {
+   public void method_11470(BlockPos var1) {
       this.field_12486 = var1;
    }
 
@@ -139,7 +139,7 @@ public class class_2519 extends class_1173 {
    }
 
    @Override
-   public class_8461 method_26541(class_6199 var1) {
+   public class_8461 method_26541(DamageSource var1) {
       return class_463.field_2843;
    }
 

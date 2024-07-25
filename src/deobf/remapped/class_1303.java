@@ -8,7 +8,7 @@ public class class_1303 {
    private static RenderLayer[] field_7220 = null;
    public static boolean field_7218 = false;
 
-   public static RenderLayer method_5950(class_6163 var0, class_2522 var1, class_1331 var2) {
+   public static RenderLayer method_5950(class_6163 var0, class_2522 var1, BlockPos var2) {
       if (field_7220 != null) {
          if (var1.method_8321(var0, var2)) {
             return null;

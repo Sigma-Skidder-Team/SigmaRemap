@@ -24,7 +24,7 @@ public class class_9163 {
    }
 
    public void method_42228(class_704 var1) {
-      class_423 var4 = var1.field_41768.method_43370();
+      class_423 var4 = var1.world.method_43370();
       this.field_46895 = this.field_46890;
       if (this.field_46892 > 4.0F) {
          this.field_46892 -= 4.0F;
@@ -37,19 +37,19 @@ public class class_9163 {
          }
       }
 
-      boolean var5 = var1.field_41768.method_29537().method_1285(class_291.field_1049);
+      boolean var5 = var1.world.method_29537().method_1285(class_291.field_1049);
       if (var5 && this.field_46891 > 0.0F && var1.method_3246() && this.field_46890 >= 20) {
          this.field_46894++;
          if (this.field_46894 >= 10) {
             float var6 = Math.min(this.field_46891, 6.0F);
-            var1.method_26457(var6 / 6.0F);
+            var1.heal(var6 / 6.0F);
             this.method_42229(var6);
             this.field_46894 = 0;
          }
       } else if (var5 && this.field_46890 >= 18 && var1.method_3246()) {
          this.field_46894++;
          if (this.field_46894 >= 80) {
-            var1.method_26457(1.0F);
+            var1.heal(1.0F);
             this.method_42229(6.0F);
             this.field_46894 = 0;
          }
@@ -59,7 +59,7 @@ public class class_9163 {
          this.field_46894++;
          if (this.field_46894 >= 80) {
             if (var1.method_26551() > 10.0F || var4 == class_423.field_1782 || var1.method_26551() > 1.0F && var4 == class_423.field_1789) {
-               var1.method_37181(class_6199.field_31694, 1.0F);
+               var1.attackEntityFrom(DamageSource.field_31694, 1.0F);
             }
 
             this.field_46894 = 0;

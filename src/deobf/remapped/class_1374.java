@@ -38,7 +38,7 @@ public class class_1374 extends class_2103 {
    }
 
    @Override
-   public class_4099 method_9859(class_4924 var1, class_1331 var2, class_1331 var3, class_4099 var4, class_4099 var5, class_8478 var6) {
+   public class_4099 method_9859(class_4924 var1, BlockPos var2, BlockPos var3, class_4099 var4, class_4099 var5, class_8478 var6) {
       class_6414 var9 = this.field_7455.get(var5.field_19967.method_8360());
       if (var9 != null) {
          class_2522 var10 = var5.field_19967;

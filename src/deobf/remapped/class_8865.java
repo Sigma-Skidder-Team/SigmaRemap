@@ -67,21 +67,21 @@ public class class_8865 {
    }
 
    public static float[] method_40773() {
-      class_8859 var2 = field_45329.thePlayer.field_30533;
+      MovementInput var2 = field_45329.thePlayer.movementInput;
       float var3 = var2.field_45287;
       float var4 = var2.field_45282;
       return method_40774(var3, var4);
    }
 
    public static float[] method_40787() {
-      class_8859 var2 = field_45329.thePlayer.field_30533;
+      MovementInput var2 = field_45329.thePlayer.movementInput;
       float var3 = var2.field_45287;
       float var4 = var2.field_45282;
       return method_40788(var3, var4);
    }
 
    public static float[] method_40774(float var0, float var1) {
-      float var4 = field_45329.thePlayer.field_41701 + 90.0F;
+      float var4 = field_45329.thePlayer.rotationYaw + 90.0F;
       if (SigmaMainClass.getInstance().method_3301().method_27147() != -999.0F) {
          var4 = SigmaMainClass.getInstance().method_3301().method_27147() + 90.0F;
       }
@@ -116,7 +116,7 @@ public class class_8865 {
    }
 
    public static float[] method_40788(float var0, float var1) {
-      float var4 = field_45329.thePlayer.field_41701 + 90.0F;
+      float var4 = field_45329.thePlayer.rotationYaw + 90.0F;
       if (var0 == 0.0F) {
          if (var1 != 0.0F) {
             var4 += (float)(!(var1 > 0.0F) ? 90 : -90);
@@ -149,7 +149,7 @@ public class class_8865 {
    public static float method_40785() {
       float var2 = field_45329.thePlayer.field_29673;
       float var3 = field_45329.thePlayer.field_29676;
-      float var4 = field_45329.thePlayer.field_41701 + 90.0F;
+      float var4 = field_45329.thePlayer.rotationYaw + 90.0F;
       if (var2 > 0.0F && field_45329.gameOptions.keyBack.isKeyDown()) {
          var2 = -1.0F;
       }
@@ -291,8 +291,8 @@ public class class_8865 {
          ? (double)field_45329.thePlayer.field_29674
          : (double)(field_45329.thePlayer.method_26423() * (0.21600002F / (var10 * var10 * var10)));
       class_1343 var13 = (!(var8 > 1.0) ? var7 : var7.method_6213()).method_6209(var11);
-      float var14 = class_9299.method_42818(field_45329.thePlayer.field_41701 * (float) (Math.PI / 180.0));
-      float var15 = class_9299.method_42840(field_45329.thePlayer.field_41701 * (float) (Math.PI / 180.0));
+      float var14 = class_9299.method_42818(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
+      float var15 = class_9299.method_42840(field_45329.thePlayer.rotationYaw * (float) (Math.PI / 180.0));
       return new class_1343(
          var13.field_7336 * (double)var15 - var13.field_7334 * (double)var14,
          var13.field_7333,
@@ -301,9 +301,9 @@ public class class_8865 {
    }
 
    public static void method_40781(double var0) {
-      double var4 = (double)field_45329.thePlayer.field_30533.field_45287;
-      double var6 = (double)field_45329.thePlayer.field_30533.field_45282;
-      float var8 = field_45329.thePlayer.field_41701;
+      double var4 = (double)field_45329.thePlayer.movementInput.field_45287;
+      double var6 = (double)field_45329.thePlayer.movementInput.field_45282;
+      float var8 = field_45329.thePlayer.rotationYaw;
       if (var4 != 0.0) {
          if (!(var6 > 0.0)) {
             if (var6 < 0.0) {

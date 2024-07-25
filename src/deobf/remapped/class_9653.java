@@ -62,7 +62,7 @@ public class class_9653 extends class_9883 {
    }
 
    private void method_44534() {
-      if (class_1331.field_7306.equals(class_9825.method_45298(this.field_49164))) {
+      if (BlockPos.field_7306.equals(class_9825.method_45298(this.field_49164))) {
          class_9825.method_45297(this.field_49164, this.field_49164.method_37075());
       }
 

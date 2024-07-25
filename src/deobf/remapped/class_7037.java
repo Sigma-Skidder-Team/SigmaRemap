@@ -11,7 +11,7 @@ public class class_7037 extends class_3599 {
 
    public class_7037(class_5886 var1) {
       this.field_36247 = var1;
-      this.field_36246 = var1.field_41768;
+      this.field_36246 = var1.world;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
    }
 
