@@ -18,7 +18,7 @@ public class class_1091 {
       return !MinecraftClient.getInstance().field_9577.field_45554 ? TextFormatting.getTextWithoutFormattingCodes(var0) : var0;
    }
 
-   public static List<class_7107> method_4783(ITextProperties var0, int var1, class_9854 var2) {
+   public static List<class_7107> method_4783(ITextProperties var0, int var1, TextRenderer var2) {
       TextPropertiesManager var5 = new TextPropertiesManager();
       var0.func_230439_a_((var1x, var2x) -> {
          var5.func_238155_a_(ITextProperties.func_240653_a_(method_4785(var2x), var1x));

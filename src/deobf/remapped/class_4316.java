@@ -1079,8 +1079,8 @@ public class class_4316 implements class_6491, AutoCloseable {
       }
    }
 
-   public void method_20059(class_7966 var1, float var2, long var3, boolean var5, class_9071 var6, class_7941 var7, class_5778 var8, class_8107 var9) {
-      class_3569.field_17468.method_16590(this.field_20970, this.field_20994.method_8577(), this.field_20994.field_9668, var6, this.field_20994.field_9587);
+   public void method_20059(class_7966 var1, float var2, long var3, boolean var5, class_9071 var6, GameRenderer var7, class_5778 var8, class_8107 var9) {
+      class_3569.field_17468.method_16590(this.field_20970, this.field_20994.method_8577(), this.field_20994.textRenderer, var6, this.field_20994.field_9587);
       this.field_20988.method_28116(this.field_20970, var6, this.field_20994.field_9662);
       class_3492 var10 = this.field_20970.method_29599();
       var10.method_16050("light_updates");
@@ -2015,7 +2015,7 @@ public class class_4316 implements class_6491, AutoCloseable {
             class_6588.method_30299();
          }
 
-         class_1343 var4 = this.field_20970.method_750(this.field_20994.field_9590.method_35949().method_41630(), var2);
+         class_1343 var4 = this.field_20970.method_750(this.field_20994.gameRenderer.method_35949().method_41630(), var2);
          var4 = class_9300.method_42885(
             var4,
             this.field_20994.field_9601,
@@ -2967,7 +2967,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
    @Nullable
    private class_9733 method_20063(class_5079 var1, boolean var2, boolean var3, double var4, double var6, double var8, double var10, double var12, double var14) {
-      class_9071 var16 = this.field_20994.field_9590.method_35949();
+      class_9071 var16 = this.field_20994.gameRenderer.method_35949();
       if (this.field_20994 != null && var16.method_41642() && this.field_20994.field_9572 != null) {
          class_9761 var17 = this.method_20020(var3);
          if (var1 == class_3090.field_15377 && !class_3111.method_14418()) {
@@ -3075,7 +3075,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          case 1023:
          case 1028:
          case 1038:
-            class_9071 var4 = this.field_20994.field_9590.method_35949();
+            class_9071 var4 = this.field_20994.gameRenderer.method_35949();
             if (var4.method_41642()) {
                double var5 = (double)var2.method_12173() - var4.method_41627().field_7336;
                double var7 = (double)var2.method_12165() - var4.method_41627().field_7333;

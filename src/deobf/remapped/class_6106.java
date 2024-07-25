@@ -5,7 +5,7 @@ import java.util.List;
 public final class class_6106 implements class_416 {
    private static String[] field_31234;
 
-   public class_6106(List var1, class_9854 var2) {
+   public class_6106(List var1, TextRenderer var2) {
       this.field_31233 = var1;
       this.field_31235 = var2;
    }

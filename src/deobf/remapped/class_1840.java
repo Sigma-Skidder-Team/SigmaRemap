@@ -177,25 +177,25 @@ public class class_1840 extends class_266 {
       this.method_8132(this.field_943);
       this.method_1183(var1);
       if (this.field_9318 != null) {
-         method_9771(var1, this.field_943.field_9668, this.field_9318, this.method_8127() + 8, 35, -1);
+         method_9771(var1, this.field_943.textRenderer, this.field_9318, this.method_8127() + 8, 35, -1);
       }
 
       if (!this.field_9335.method_13678()) {
          this.field_9335.method_6767(var1, var2, var3, var4);
       } else if (!this.field_9324.method_8246().isEmpty()) {
-         method_9788(var1, this.field_943.field_9668, field_9332, this.field_941 / 2, (78 + this.method_8135()) / 2, -1);
+         method_9788(var1, this.field_943.textRenderer, field_9332, this.field_941 / 2, (78 + this.method_8135()) / 2, -1);
       } else {
          switch (this.field_9342) {
             case field_25920:
-               method_9788(var1, this.field_943.field_9668, field_9339, this.field_941 / 2, (78 + this.method_8135()) / 2, -1);
+               method_9788(var1, this.field_943.textRenderer, field_9339, this.field_941 / 2, (78 + this.method_8135()) / 2, -1);
                break;
             case field_25922:
-               method_9788(var1, this.field_943.field_9668, field_9333, this.field_941 / 2, (78 + this.method_8135()) / 2, -1);
+               method_9788(var1, this.field_943.textRenderer, field_9333, this.field_941 / 2, (78 + this.method_8135()) / 2, -1);
          }
       }
 
       if (!this.field_9324.method_32691() && this.field_9324.method_8246().isEmpty()) {
-         method_9771(var1, this.field_943.field_9668, field_9329, this.field_9324.field_36670, this.field_9324.field_36674, -1);
+         method_9771(var1, this.field_943.textRenderer, field_9329, this.field_9324.field_36670, this.field_9324.field_36674, -1);
       } else {
          this.field_9324.method_6767(var1, var2, var3, var4);
       }

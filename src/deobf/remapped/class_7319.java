@@ -198,6 +198,6 @@ public class class_7319 extends class_9521 implements class_1200 {
       }
 
       method_9778(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
-      method_9787(var1, var19.field_9668, var7, var2 + 40, var3 + 66, 16777215);
+      method_9787(var1, var19.textRenderer, var7, var2 + 40, var3 + 66, 16777215);
    }
 }

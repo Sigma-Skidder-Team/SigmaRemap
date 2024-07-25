@@ -110,18 +110,18 @@ public class class_9543 extends class_367 {
       GL11.glDisable(2929);
 
       for (class_1331 var6 : this.field_48551) {
-         double var7 = (double)var6.method_12173() - field_46692.field_9590.method_35949().method_41627().method_61();
-         double var9 = (double)var6.method_12165() - field_46692.field_9590.method_35949().method_41627().method_60();
-         double var11 = (double)var6.method_12185() - field_46692.field_9590.method_35949().method_41627().method_62();
+         double var7 = (double)var6.method_12173() - field_46692.gameRenderer.method_35949().method_41627().method_61();
+         double var9 = (double)var6.method_12165() - field_46692.gameRenderer.method_35949().method_41627().method_60();
+         double var11 = (double)var6.method_12185() - field_46692.gameRenderer.method_35949().method_41627().method_62();
          class_8194 var13 = new class_8194(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
          class_73.method_83(var13, var4);
       }
 
       var4 = class_314.method_1444(9000000, 1.0F);
       if (this.field_48550 != null) {
-         double var14 = this.field_48550.method_37302() - field_46692.field_9590.method_35949().method_41627().method_61();
-         double var19 = this.field_48550.method_37309() - field_46692.field_9590.method_35949().method_41627().method_60() + 0.5;
-         double var20 = this.field_48550.method_37156() - field_46692.field_9590.method_35949().method_41627().method_62();
+         double var14 = this.field_48550.method_37302() - field_46692.gameRenderer.method_35949().method_41627().method_61();
+         double var19 = this.field_48550.method_37309() - field_46692.gameRenderer.method_35949().method_41627().method_60() + 0.5;
+         double var20 = this.field_48550.method_37156() - field_46692.gameRenderer.method_35949().method_41627().method_62();
          float var16 = 0.3F;
          class_8194 var17 = new class_8194(var14 - (double)var16, var19 + 0.9, var20 - (double)var16, var14 + (double)var16, var19 + 1.0, var20 + (double)var16);
          class_73.method_83(var17, var4);

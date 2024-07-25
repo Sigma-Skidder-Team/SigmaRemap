@@ -204,7 +204,7 @@ public class class_7680 extends class_266 {
                int var10 = var8 / 9;
                if (var10 >= 0 && var10 < this.field_39033.size()) {
                   class_7107 var11 = this.field_39033.get(var10);
-                  return this.field_943.field_9668.method_45381().func_243239_a(var11, var7);
+                  return this.field_943.textRenderer.method_45381().func_243239_a(var11, var7);
                } else {
                   return null;
                }

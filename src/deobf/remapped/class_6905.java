@@ -26,7 +26,7 @@ public class class_6905 extends class_4232 {
    public void method_1163() {
       this.<class_5932>method_1186(new class_5932(0, this.field_941 / 2 - 100, this.field_940 / 6 + 96, this.field_35495));
       this.field_35497.clear();
-      this.field_35497.addAll(this.field_943.field_9668.method_45391(this.field_35498, this.field_941 - 50));
+      this.field_35497.addAll(this.field_943.textRenderer.method_45391(this.field_35498, this.field_941 - 50));
    }
 
    @Override

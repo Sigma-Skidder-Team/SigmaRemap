@@ -129,7 +129,7 @@ public class class_3511 {
    }
 
    public double method_16184() {
-      class_9071 var3 = MinecraftClient.getInstance().field_9590.method_35949();
+      class_9071 var3 = MinecraftClient.getInstance().gameRenderer.method_35949();
       double var4 = this.field_17221.field_19941 + 8.0 - var3.method_41627().field_7336;
       double var6 = this.field_17221.field_19937 + 8.0 - var3.method_41627().field_7333;
       double var8 = this.field_17221.field_19938 + 8.0 - var3.method_41627().field_7334;

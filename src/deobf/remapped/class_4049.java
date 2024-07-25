@@ -70,7 +70,7 @@ public class class_4049 extends class_2089 {
                         var1.method_36063();
                         var1.method_36065(0.0, 0.0, 50.0);
                         if (this.field_19686.field_9577.field_45574 == 5) {
-                           var11 = this.field_19686.field_9668.method_45400((class_7107)var22.method_39608()) - 2;
+                           var11 = this.field_19686.textRenderer.method_45400((class_7107)var22.method_39608()) - 2;
                         }
 
                         if (this.field_19686.field_9577.field_45574 != 3) {
@@ -81,11 +81,11 @@ public class class_4049 extends class_2089 {
                         var1.method_36065(0.0, 0.0, 50.0);
                         if (this.field_19686.field_9577.field_45472) {
                            this.field_19686
-                              .field_9668
+                              .textRenderer
                               .method_45402(var1, (class_7107)var22.method_39608(), 0.0F, (float)((int)(var29 + var18)), 16777215 + (var26 << 24));
                         } else {
                            this.field_19686
-                              .field_9668
+                              .textRenderer
                               .method_45382(var1, (class_7107)var22.method_39608(), 0.0F, (float)((int)(var29 + var18)), 16777215 + (var26 << 24));
                         }
 
@@ -106,7 +106,7 @@ public class class_4049 extends class_2089 {
                class_3542.method_16488();
                var1.method_36065(0.0, 0.0, 50.0);
                this.field_19686
-                  .field_9668
+                  .textRenderer
                   .method_45392(var1, new TranslationTextComponent("chat.queue", this.field_19692.size()), 0.0F, 1.0F, 16777215 + (var33 << 24));
                var1.method_36064();
                class_3542.method_16458();
@@ -169,7 +169,7 @@ public class class_4049 extends class_2089 {
       }
 
       int var7 = class_9299.method_42847((double)this.method_18700() / this.method_18689());
-      List var8 = class_1091.method_4783(var1, var7, this.field_19686.field_9668);
+      List var8 = class_1091.method_4783(var1, var7, this.field_19686.textRenderer);
       boolean var9 = this.method_18695();
 
       for (class_7107 var11 : var8) {
@@ -263,7 +263,7 @@ public class class_4049 extends class_2089 {
                int var12 = (int)(var9 / 9.0 + (double)this.field_19689);
                if (var12 >= 0 && var12 < this.field_19694.size()) {
                   class_8618 var13 = this.field_19694.get(var12);
-                  return this.field_19686.field_9668.method_45381().func_243239_a((class_7107)var13.method_39608(), (int)var7);
+                  return this.field_19686.textRenderer.method_45381().func_243239_a((class_7107)var13.method_39608(), (int)var7);
                }
             }
 

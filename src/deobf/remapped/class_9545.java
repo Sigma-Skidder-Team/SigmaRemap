@@ -18,9 +18,9 @@ public class class_9545 extends class_2840<List<String>> {
    private static final class_4639 field_48562 = new class_4639("texts/splashes.txt");
    private static final Random field_48564 = new Random();
    private final List<String> field_48561 = Lists.newArrayList();
-   private final class_1210 field_48563;
+   private final Session field_48563;
 
-   public class_9545(class_1210 var1) {
+   public class_9545(Session var1) {
       this.field_48563 = var1;
    }
 

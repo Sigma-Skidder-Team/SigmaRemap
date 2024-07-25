@@ -53,14 +53,14 @@ public class class_5292 extends class_1094 {
       });
       this.<class_9521>method_1186(var5);
       this.field_27040 = new class_1863(
-         this.field_943.field_9668, var3, method_4819(4), 212, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.name")
+         this.field_943.textRenderer, var3, method_4819(4), 212, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.name")
       );
       this.field_27040.method_8255(32);
       this.field_27040.method_8281(this.field_27036.method_34772());
       this.<class_1863>method_1159(this.field_27040);
       this.method_41184(this.field_27040);
       this.field_27037 = new class_1863(
-         this.field_943.field_9668, var3, method_4819(8), 212, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.description")
+         this.field_943.textRenderer, var3, method_4819(8), 212, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.description")
       );
       this.field_27037.method_8255(32);
       this.field_27037.method_8281(this.field_27036.method_34769());

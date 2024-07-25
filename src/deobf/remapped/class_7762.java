@@ -146,8 +146,8 @@ public class class_7762 extends class_341 {
    }
 
    @Override
-   public void method_19826(class_3320 var1) {
-      super.method_19826(var1);
+   public void addSnooperInfo(Snooper var1) {
+      super.addSnooperInfo(var1);
       var1.method_15252("snooper_partner", this.field_39353.method_8611().method_15249());
    }
 

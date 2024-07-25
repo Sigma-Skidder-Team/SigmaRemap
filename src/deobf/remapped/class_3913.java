@@ -36,7 +36,7 @@ public class class_3913 extends class_2255<class_8398> {
       this.field_19008.field_34523.method_7060(var3, var12, var5, var6);
       var3.method_36064();
       if (method_18119(var1)) {
-         class_9854 var13 = this.field_11222.method_16591();
+         TextRenderer var13 = this.field_11222.method_16591();
          float var14 = 0.010416667F;
          var3.method_36065(0.0, 0.33333334F, 0.046666667F);
          var3.method_36062(0.010416667F, -0.010416667F, 0.010416667F);

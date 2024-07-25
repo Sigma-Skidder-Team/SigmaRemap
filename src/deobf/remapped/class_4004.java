@@ -80,7 +80,7 @@ public class class_4004 extends class_9128 {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      field_46692.field_9590.field_40623.method_26122();
+      field_46692.gameRenderer.field_40623.method_26122();
    }
 
    private void method_18484() {
@@ -93,6 +93,6 @@ public class class_4004 extends class_9128 {
       class_7889 var10000 = field_46692.method_8577();
       field_46692.method_8577();
       var10000.method_35674(class_7889.field_40364);
-      field_46692.field_9590.field_40623.method_26126();
+      field_46692.gameRenderer.field_40623.method_26126();
    }
 }

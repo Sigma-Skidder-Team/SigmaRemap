@@ -111,7 +111,7 @@ public class class_2977 extends class_1094 {
       }
 
       this.field_14663 = new class_1863(
-         this.field_943.field_9668,
+         this.field_943.textRenderer,
          this.field_14652 + 2,
          method_4819(1),
          this.field_14648 - 4,

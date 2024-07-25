@@ -6,14 +6,14 @@ public class class_5778 implements AutoCloseable {
    private final class_4639 field_29192;
    private boolean field_29190;
    private float field_29182;
-   private final class_7941 field_29185;
+   private final GameRenderer field_29185;
    private final MinecraftClient field_29184;
    private boolean field_29191 = true;
    private boolean field_29183 = false;
    private class_2426 field_29189 = new class_2426();
    public static final int field_29187 = method_26127(15, 15);
 
-   public class_5778(class_7941 var1, MinecraftClient var2) {
+   public class_5778(GameRenderer var1, MinecraftClient var2) {
       this.field_29185 = var1;
       this.field_29184 = var2;
       this.field_29181 = new class_7884(16, 16, false);
@@ -108,7 +108,7 @@ public class class_5778 implements AutoCloseable {
                   var8 = 0.0F;
                }
             } else {
-               var8 = class_7941.method_35954(this.field_29184.field_9632, var1);
+               var8 = GameRenderer.method_35954(this.field_29184.field_9632, var1);
             }
 
             class_2426 var9 = new class_2426(var24, var24, 1.0F);

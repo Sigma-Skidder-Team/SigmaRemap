@@ -924,7 +924,7 @@ public class class_8881 {
          }
 
          this.field_45528 = class_3111.method_14263(this.field_45528, 1, 16);
-         this.field_45495.method_8488();
+         this.field_45495.reloadResourcesConcurrently();
       }
 
       if (var1 == class_1013.field_5297) {
@@ -1133,7 +1133,7 @@ public class class_8881 {
          if (this.field_45529 == 2) {
             this.field_45495.field_9657.method_19998();
          } else {
-            this.field_45495.method_8488();
+            this.field_45495.reloadResourcesConcurrently();
          }
       }
 
@@ -1211,7 +1211,7 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5249) {
          this.field_45417 = !this.field_45417;
-         this.field_45495.method_8488();
+         this.field_45495.reloadResourcesConcurrently();
       }
 
       if (var1 == class_1013.field_5253) {
@@ -1231,7 +1231,7 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5247) {
          this.field_45431 = !this.field_45431;
-         this.field_45495.method_8488();
+         this.field_45495.reloadResourcesConcurrently();
       }
 
       if (var1 == class_1013.field_5235) {
@@ -1294,7 +1294,7 @@ public class class_8881 {
 
       if (var1 == class_1013.field_5302) {
          this.field_45539 = !this.field_45539;
-         this.field_45495.method_8488();
+         this.field_45495.reloadResourcesConcurrently();
       }
 
       if (var1 == class_1013.field_5315) {
@@ -2209,7 +2209,7 @@ public class class_8881 {
       class_6588.field_33631 = 0;
       class_6588.method_30259();
       class_6588.method_30272();
-      this.field_45495.method_8488();
+      this.field_45495.reloadResourcesConcurrently();
       this.method_40873();
    }
 
@@ -2221,7 +2221,7 @@ public class class_8881 {
 
    public void method_40879() {
       this.field_45495.method_8571(this.field_45577);
-      this.field_45495.method_8488();
+      this.field_45495.reloadResourcesConcurrently();
    }
 
    public void method_40896(boolean var1) {

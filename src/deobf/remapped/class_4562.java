@@ -236,7 +236,7 @@ public class class_4562 implements class_2995 {
    }
 
    private class_9071 method_21176() {
-      return this.field_22226.field_9590.method_35949();
+      return this.field_22226.gameRenderer.method_35949();
    }
 
    private String method_21173(class_1236 var1, class_1331 var2) {

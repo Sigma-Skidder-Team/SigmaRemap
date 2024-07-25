@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 public class class_4232 extends class_266 {
    private static String[] field_20541;
    public List<class_7114> field_20540 = this.field_950;
-   public class_9854 field_20538 = MinecraftClient.getInstance().field_9668;
+   public TextRenderer field_20538 = MinecraftClient.getInstance().textRenderer;
    public boolean field_20539 = false;
 
    public class_4232(ITextComponent var1) {
@@ -77,7 +77,7 @@ public class class_4232 extends class_266 {
       return null;
    }
 
-   public static void method_19730(class_7966 var0, class_9854 var1, class_7107 var2, int var3, int var4, int var5) {
+   public static void method_19730(class_7966 var0, TextRenderer var1, class_7107 var2, int var3, int var4, int var5) {
       var1.method_45402(var0, var2, (float)(var3 - var1.method_45400(var2) / 2), (float)var4, var5);
    }
 }

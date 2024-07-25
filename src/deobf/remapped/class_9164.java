@@ -115,7 +115,7 @@ public class class_9164 {
       var8.method_35762(var9, 135.0F, -7.0F, 0.0F).method_35743(255, 255, 255, 255).method_35745(1.0F, 0.0F).method_35747(var3).method_35735();
       var8.method_35762(var9, -7.0F, -7.0F, 0.0F).method_35743(255, 255, 255, 255).method_35745(0.0F, 0.0F).method_35747(var3).method_35735();
       if (var7 != null) {
-         this.field_46897.field_9590.method_35928().method_38860(var1, var2, var7, false, var3);
+         this.field_46897.gameRenderer.method_35928().method_38860(var1, var2, var7, false, var3);
       }
    }
 

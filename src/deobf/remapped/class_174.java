@@ -503,7 +503,7 @@ public class class_174 extends class_6486 {
 
    @Override
    public void method_29527(double var1, double var3, double var5, class_8461 var7, class_562 var8, float var9, float var10, boolean var11) {
-      double var14 = this.field_578.field_9590.method_35949().method_41627().method_6203(var1, var3, var5);
+      double var14 = this.field_578.gameRenderer.method_35949().method_41627().method_6203(var1, var3, var5);
       class_4949 var16 = new class_4949(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;

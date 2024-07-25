@@ -32,7 +32,7 @@ public class class_5904 extends class_266 {
       this.field_29970 = new class_6935(() -> this.field_29972[this.field_29971], var1 -> {
          this.field_29972[this.field_29971] = var1;
          this.field_29973.method_38677(this.field_29971, new StringTextComponent(var1));
-      }, class_6935.method_31712(this.field_943), class_6935.method_31713(this.field_943), var1 -> this.field_943.field_9668.method_45395(var1) <= 90);
+      }, class_6935.method_31712(this.field_943), class_6935.method_31713(this.field_943), var1 -> this.field_943.textRenderer.method_45395(var1) <= 90);
    }
 
    @Override
@@ -132,15 +132,15 @@ public class class_5904 extends class_266 {
                var22 = this.field_948.method_45403(var22);
             }
 
-            float var23 = (float)(-this.field_943.field_9668.method_45395(var22) / 2);
+            float var23 = (float)(-this.field_943.textRenderer.method_45395(var22) / 2);
             this.field_943
-               .field_9668
+               .textRenderer
                .method_45396(var22, var23, (float)(var21 * 10 - this.field_29972.length * 5), var16, false, var20, var12, false, 0, 15728880, false);
             if (var21 == this.field_29971 && var17 >= 0 && var10) {
-               int var24 = this.field_943.field_9668.method_45395(var22.substring(0, Math.max(Math.min(var17, var22.length()), 0)));
-               int var25 = var24 - this.field_943.field_9668.method_45395(var22) / 2;
+               int var24 = this.field_943.textRenderer.method_45395(var22.substring(0, Math.max(Math.min(var17, var22.length()), 0)));
+               int var25 = var24 - this.field_943.textRenderer.method_45395(var22) / 2;
                if (var17 >= var22.length()) {
-                  this.field_943.field_9668.method_45396("_", (float)var25, (float)var19, var16, false, var20, var12, false, 0, 15728880, false);
+                  this.field_943.textRenderer.method_45396("_", (float)var25, (float)var19, var16, false, var20, var12, false, 0, 15728880, false);
                }
             }
          }
@@ -151,8 +151,8 @@ public class class_5904 extends class_266 {
       for (int var33 = 0; var33 < this.field_29972.length; var33++) {
          String var34 = this.field_29972[var33];
          if (var34 != null && var33 == this.field_29971 && var17 >= 0) {
-            int var35 = this.field_943.field_9668.method_45395(var34.substring(0, Math.max(Math.min(var17, var34.length()), 0)));
-            int var36 = var35 - this.field_943.field_9668.method_45395(var34) / 2;
+            int var35 = this.field_943.textRenderer.method_45395(var34.substring(0, Math.max(Math.min(var17, var34.length()), 0)));
+            int var36 = var35 - this.field_943.textRenderer.method_45395(var34) / 2;
             if (var10 && var17 < var34.length()) {
                method_9774(var1, var36, var19 - 1, var36 + 1, var19 + 9, 0xFF000000 | var16);
             }
@@ -160,8 +160,8 @@ public class class_5904 extends class_266 {
             if (var18 != var17) {
                int var37 = Math.min(var17, var18);
                int var26 = Math.max(var17, var18);
-               int var27 = this.field_943.field_9668.method_45395(var34.substring(0, var37)) - this.field_943.field_9668.method_45395(var34) / 2;
-               int var28 = this.field_943.field_9668.method_45395(var34.substring(0, var26)) - this.field_943.field_9668.method_45395(var34) / 2;
+               int var27 = this.field_943.textRenderer.method_45395(var34.substring(0, var37)) - this.field_943.textRenderer.method_45395(var34) / 2;
+               int var28 = this.field_943.textRenderer.method_45395(var34.substring(0, var26)) - this.field_943.textRenderer.method_45395(var34) / 2;
                int var29 = Math.min(var27, var28);
                int var30 = Math.max(var27, var28);
                class_8042 var31 = class_8042.method_36499();

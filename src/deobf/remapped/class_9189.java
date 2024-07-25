@@ -29,17 +29,17 @@ public class class_9189 {
    public static class_8328 method_42353(class_8145 var0) {
       class_8328 var3 = method_42357(var0);
       return new class_8328(
-         var3.field_42648 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_61(),
-         var3.field_42646 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_60(),
-         var3.field_42649 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_62()
+         var3.field_42648 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61(),
+         var3.field_42646 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60(),
+         var3.field_42649 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62()
       );
    }
 
    public static class_8328 method_42356(class_1331 var0) {
       return new class_8328(
-         (double)var0.method_12173() - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_61(),
-         (double)var0.method_12165() - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_60(),
-         (double)var0.method_12185() - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_62()
+         (double)var0.method_12173() - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61(),
+         (double)var0.method_12165() - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60(),
+         (double)var0.method_12185() - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62()
       );
    }
 }

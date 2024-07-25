@@ -27,8 +27,8 @@ public class class_4678 implements class_6406 {
          var2.method_42327().method_8577().method_35674(field_32696);
          class_3542.method_16404(1.0F, 1.0F, 1.0F);
          var2.method_9781(var1, 0, 0, 0, 32, this.method_29239(), this.method_29238());
-         var2.method_42327().field_9668.method_45378(var1, field_22802, 30.0F, 7.0F, -11534256);
-         var2.method_42327().field_9668.method_45378(var1, field_22803, 30.0F, 18.0F, -16777216);
+         var2.method_42327().textRenderer.method_45378(var1, field_22802, 30.0F, 7.0F, -11534256);
+         var2.method_42327().textRenderer.method_45378(var1, field_22803, 30.0F, 18.0F, -16777216);
          class_8932 var7 = this.field_22800.get((int)(var3 / Math.max(1L, 5000L / (long)this.field_22800.size()) % (long)this.field_22800.size()));
          class_6098 var8 = var7.method_41049();
          class_3542.method_16438();

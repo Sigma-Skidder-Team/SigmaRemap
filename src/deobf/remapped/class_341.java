@@ -68,7 +68,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    );
    public final class_3676 field_1339;
    public final class_5645 field_1337;
-   private final class_3320 field_1307 = new class_3320("server", this, class_9665.method_44650());
+   private final Snooper field_1307 = new Snooper("server", this, class_9665.method_44650());
    private final List<Runnable> field_1330 = Lists.newArrayList();
    private final class_2434 field_1293 = new class_2434(class_9665.field_49234, this::method_1682);
    private class_3492 field_1295 = class_8677.field_44535;
@@ -924,7 +924,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    }
 
    @Override
-   public void method_19826(class_3320 var1) {
+   public void addSnooperInfo(Snooper var1) {
       var1.method_15252("whitelist_enabled", false);
       var1.method_15252("whitelist_count", 0);
       if (this.field_1322 != null) {
@@ -1055,7 +1055,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       return this.field_1314;
    }
 
-   public class_3320 method_1756() {
+   public Snooper method_1756() {
       return this.field_1307;
    }
 

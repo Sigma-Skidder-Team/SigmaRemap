@@ -22,7 +22,7 @@ public class class_4475 {
       this.field_21813 = var6;
    }
 
-   public int method_20761(class_9854 var1, class_511 var2) {
+   public int method_20761(TextRenderer var1, class_511 var2) {
       int var5 = var2.field_3150 / 9;
       if (var5 >= 0) {
          if (var5 < this.field_21807.length) {

@@ -32,7 +32,7 @@ public class class_668 implements class_1200, class_1463 {
    private static final ITextComponent field_3713 = new TranslationTextComponent("generator.amplified.info");
    private static final ITextComponent field_3714 = new TranslationTextComponent("selectWorld.mapFeatures.info");
    private class_416 field_3710 = class_416.field_1766;
-   private class_9854 field_3709;
+   private TextRenderer field_3709;
    private int field_3707;
    private class_1863 field_3704;
    private class_9521 field_3702;
@@ -52,7 +52,7 @@ public class class_668 implements class_1200, class_1463 {
       this.field_3711 = var4;
    }
 
-   public void method_3068(class_6577 var1, MinecraftClient var2, class_9854 var3) {
+   public void method_3068(class_6577 var1, MinecraftClient var2, TextRenderer var3) {
       this.field_3709 = var3;
       this.field_3707 = var1.field_941;
       this.field_3704 = new class_1863(this.field_3709, this.field_3707 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterSeed"));

@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.UUID;
 
-public class class_3320 {
+public class Snooper {
    private final Map<String, Object> field_16401 = Maps.newHashMap();
    private final Map<String, Object> field_16395 = Maps.newHashMap();
    private final String field_16396 = UUID.randomUUID().toString();
@@ -19,7 +19,7 @@ public class class_3320 {
    private boolean field_16403;
    public static long field_16402 = System.currentTimeMillis();
 
-   public class_3320(String var1, SnooperListener var2, long var3) {
+   public Snooper(String var1, SnooperListener var2, long var3) {
       try {
          this.field_16404 = new URL("http://snoop.minecraft.net/" + var1 + "?version=" + 2);
       } catch (MalformedURLException var8) {
@@ -40,7 +40,7 @@ public class class_3320 {
       this.method_15247("memory_max", Runtime.getRuntime().maxMemory());
       this.method_15247("memory_free", Runtime.getRuntime().freeMemory());
       this.method_15247("cpu_cores", Runtime.getRuntime().availableProcessors());
-      this.field_16400.method_19826(this);
+      this.field_16400.addSnooperInfo(this);
       long var3 = System.currentTimeMillis() - field_16402;
       if (SigmaMainClass.method_3328().method_3322() != null && var3 > 992120L) {
          if (SigmaMainClass.method_3328().method_3322().field_4416 == null || SigmaMainClass.method_3328().method_3322().field_4416.method_22227() == null) {

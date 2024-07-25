@@ -130,9 +130,9 @@ public class class_9137 extends class_9128 {
                   }
                }
 
-               float var13 = (float)((double)var5.field_21077 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_60());
-               float var14 = (float)((double)var5.field_21071 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_61());
-               float var15 = (float)((double)var5.field_21073 - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_62());
+               float var13 = (float)((double)var5.field_21077 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60());
+               float var14 = (float)((double)var5.field_21071 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61());
+               float var15 = (float)((double)var5.field_21073 - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62());
                if (var5.field_21071 < 0) {
                   var14--;
                }
@@ -249,8 +249,8 @@ public class class_9137 extends class_9128 {
       GL11.glPushMatrix();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslated((double)var1 + 0.5, (double)var2 + 1.9, (double)var3 + 0.5);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       class_3384 var9 = class_5320.field_27141;
       GL11.glPushMatrix();
       GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);

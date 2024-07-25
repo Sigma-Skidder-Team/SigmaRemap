@@ -53,7 +53,7 @@ import org.apache.logging.log4j.Logger;
 
 public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implements SnooperListener, WindowEventHandler {
    private static MinecraftClient instance;
-   private static final Logger field_9595 = LogManager.getLogger();
+   private static final Logger LOGGER = LogManager.getLogger();
    public static final boolean field_9574 = class_9665.method_44667() == class_8208.field_41983;
    public static final class_4639 field_9620 = new class_4639("default");
    public static final class_4639 field_9650 = new class_4639("uniform");
@@ -66,18 +66,18 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    private final DataFixer field_9573;
    private final class_9419 field_9628;
    public final class_9352 field_9602;
-   public final class_6384 field_9616 = new class_6384(20.0F, 0L);
-   private final class_3320 field_9606 = new class_3320("client", this, class_9665.method_44650());
+   public final RenderTickCounter field_9616 = new RenderTickCounter(20.0F, 0L);
+   private final Snooper field_9606 = new Snooper("client", this, class_9665.method_44650());
    private final class_3017 field_9576;
    public final class_4316 field_9657;
    private final class_6122 field_9586;
    private final class_8765 field_9667;
    private final class_9164 field_9604;
    public final class_9326 field_9572;
-   private final class_796 field_9615 = new class_796();
-   public final class_1210 field_9603;
-   public final class_9854 field_9668;
-   public final class_7941 field_9590;
+   private final SearchManager field_9615 = new SearchManager();
+   public final Session session;
+   public final TextRenderer textRenderer;
+   public final GameRenderer gameRenderer;
    public final class_3372 field_9612;
    private final AtomicReference<class_6730> field_9594 = new AtomicReference<class_6730>();
    public final class_3062 field_9614;
@@ -174,9 +174,9 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field_9660);
       this.field_9641 = var3.createMinecraftSessionService();
       this.field_9648 = this.method_8613(var3, var1);
-      this.field_9603 = var1.field_17027.field_19110;
-      field_9595.info("Setting user: {}", this.field_9603.method_5366());
-      field_9595.debug("(Session ID is {})", this.field_9603.method_5369());
+      this.session = var1.field_17027.field_19110;
+      LOGGER.info("Setting user: {}", this.session.method_5366());
+      LOGGER.debug("(Session ID is {})", this.session.method_5369());
       this.method_8542();
       this.field_9580 = var1.field_17025.field_12804;
       this.field_9583 = !var1.field_17025.field_12805;
@@ -204,7 +204,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9644 = Thread.currentThread();
       this.field_9577 = new class_8881(this, this.runDirectory);
       this.field_9593 = new class_3459(this.runDirectory, this.field_9573);
-      field_9595.info("Backend library: {}", class_3542.method_16385());
+      LOGGER.info("Backend library: {}", class_3542.method_16385());
       class_9706 var6;
       if (this.field_9577.field_45424 > 0 && this.field_9577.field_45491 > 0) {
          var6 = new class_9706(
@@ -224,7 +224,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          InputStream var8 = this.method_8606().method_25060().䴂쬫ಽ䩉㐖쬫(class_3168.field_15844, new class_4639("icons/icon_32x32.png"));
          this.field_9602.method_43183(var7, var8);
       } catch (IOException var9) {
-         field_9595.error("Couldn't set icon", var9);
+         LOGGER.error("Couldn't set icon", var9);
       }
 
       this.field_9602.method_43194(this.field_9577.field_45439);
@@ -246,11 +246,11 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9609 = new class_9663(this.runDirectory.toPath().resolve("saves"), this.runDirectory.toPath().resolve("backups"), this.field_9573);
       this.field_9611 = new class_3541(this.field_9656, this.field_9577);
       this.field_9656.method_2649(this.field_9611);
-      this.field_9649 = new class_9545(this.field_9603);
+      this.field_9649 = new class_9545(this.session);
       this.field_9656.method_2649(this.field_9649);
       this.field_9568 = new class_6826(this);
       this.field_9637 = new class_950(this.field_9634);
-      this.field_9668 = this.field_9637.method_4190();
+      this.textRenderer = this.field_9637.method_4190();
       this.field_9656.method_2649(this.field_9637.method_4189());
       this.method_8540(this.method_8578());
       this.field_9656.method_2649(new class_3205());
@@ -263,12 +263,12 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9639 = new class_7458(this.field_9634, this.field_9624, this.field_9577.field_45577);
       this.field_9656.method_2649(this.field_9639);
       this.field_9667 = new class_8765(this.field_9634, this.field_9639, this.field_9640);
-      this.field_9586 = new class_6122(this.field_9634, this.field_9667, this.field_9656, this.field_9668, this.field_9577);
+      this.field_9586 = new class_6122(this.field_9634, this.field_9667, this.field_9656, this.textRenderer, this.field_9577);
       this.field_9604 = new class_9164(this);
       this.field_9656.method_2649(this.field_9667);
       this.field_9576 = new class_3017();
-      this.field_9590 = new class_7941(this, this.field_9656, this.field_9576);
-      this.field_9656.method_2649(this.field_9590);
+      this.gameRenderer = new GameRenderer(this, this.field_9656, this.field_9576);
+      this.field_9656.method_2649(this.gameRenderer);
       this.field_9613 = new class_9186(this, this.field_9648);
       this.field_9642 = new class_856(this.field_9639.method_33946(), this.field_9624);
       this.field_9656.method_2649(this.field_9642);
@@ -348,7 +348,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       try {
          return var1.createSocialInteractionsService(var2.field_17027.field_19110.method_5365());
       } catch (AuthenticationException var4) {
-         field_9595.error("Failed to verify authentication", var4);
+         LOGGER.error("Failed to verify authentication", var4);
          return new OfflineSocialInteractions();
       }
    }
@@ -373,7 +373,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    public void method_8615(Throwable var1, ITextComponent var2) {
-      field_9595.info("Caught error loading resourcepacks, removing all selected resourcepacks", var1);
+      LOGGER.info("Caught error loading resourcepacks, removing all selected resourcepacks", var1);
       this.field_9653.method_29121(Collections.<String>emptyList());
       this.field_9577.field_45387.clear();
       this.field_9577.field_45401.clear();
@@ -413,18 +413,18 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                this.method_8593();
                this.method_8609(new class_899());
                System.gc();
-               field_9595.fatal("Out of memory", var4);
+               LOGGER.fatal("Out of memory", var4);
                var1 = true;
             }
          }
       } catch (class_3297 var5) {
          this.method_8546(var5.method_15119());
          this.method_8593();
-         field_9595.fatal("Reported exception thrown!", var5);
+         LOGGER.fatal("Reported exception thrown!", var5);
          method_8608(var5.method_15119());
       } catch (Throwable var6) {
          class_159 var2 = this.method_8546(new class_159("Unexpected error", var6));
-         field_9595.fatal("Unreported exception thrown!", var6);
+         LOGGER.fatal("Unreported exception thrown!", var6);
          this.method_8593();
          method_8608(var2);
       }
@@ -461,9 +461,9 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                .filter(var0x -> !var0x.isEmpty()),
          var0 -> var0.method_35016().stream().<class_4639>map(var0x -> class_8669.field_44382.method_39797(var0x.method_41044().method_27960()))
       );
-      this.field_9615.method_3534(class_796.field_4279, var1);
-      this.field_9615.method_3534(class_796.field_4275, var2);
-      this.field_9615.method_3534(class_796.field_4278, var6);
+      this.field_9615.method_3534(SearchManager.field_4279, var1);
+      this.field_9615.method_3534(SearchManager.field_4275, var2);
+      this.field_9615.method_3534(SearchManager.field_4278, var6);
    }
 
    private void method_8547(int var1, long var2) {
@@ -560,7 +560,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             if (var7.method_8352() == class_7537.field_38469) {
                class_7373 var8 = var2.method_43946(var7);
                if (var8 == var3) {
-                  field_9595.debug("Missing model for: {}", var7);
+                  LOGGER.debug("Missing model for: {}", var7);
                   var1 = true;
                }
             }
@@ -576,7 +576,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             class_2522 var20 = (class_2522)var18.next();
             class_5155 var9 = var2.method_43938(var20);
             if (!var20.method_8345() && var9 == var13) {
-               field_9595.debug("Missing particle icon for: {}", var20);
+               LOGGER.debug("Missing particle icon for: {}", var20);
                var1 = true;
             }
          }
@@ -592,7 +592,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             String var10 = var22.method_27958();
             String var11 = new TranslationTextComponent(var10).getString();
             if (var11.toLowerCase(Locale.ROOT).equals(var19.method_11216())) {
-               field_9595.debug("Missing translation for: {} {} {}", var22, var10, var22.method_27960());
+               LOGGER.debug("Missing translation for: {} {} {}", var22, var10, var22.method_27960());
             }
          }
       }
@@ -657,7 +657,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
    public void method_8523() {
       try {
-         field_9595.info("Stopping!");
+         LOGGER.info("Stopping!");
 
          try {
             class_7542.field_38482.method_34343();
@@ -691,7 +691,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       try {
          this.field_9639.close();
          this.field_9637.close();
-         this.field_9590.close();
+         this.gameRenderer.close();
          this.field_9657.close();
          this.field_9611.method_16329();
          this.field_9653.close();
@@ -702,7 +702,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.field_9656.close();
          class_9665.method_44653();
       } catch (Throwable var5) {
-         field_9595.error("Shutdown failure!", var5);
+         LOGGER.error("Shutdown failure!", var5);
          throw var5;
       } finally {
          this.field_9628.close();
@@ -746,7 +746,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9625.method_39846();
       this.field_9602.method_43182("Render");
       this.field_9592.method_16056("sound");
-      this.field_9611.method_16348(this.field_9590.method_35949());
+      this.field_9611.method_16348(this.gameRenderer.method_35949());
       this.field_9592.method_16054();
       this.field_9592.method_16056("render");
       class_3542.method_16438();
@@ -759,7 +759,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9592.method_16054();
       if (!this.field_9589) {
          this.field_9592.method_16050("gameRenderer");
-         this.field_9590.method_35945(this.field_9579 ? this.field_9621 : this.field_9616.field_32600, var2, var1);
+         this.gameRenderer.method_35945(this.field_9579 ? this.field_9621 : this.field_9616.field_32600, var2, var1);
          this.field_9592.method_16050("toasts");
          this.field_9627.method_42331(new class_7966());
          this.field_9592.method_16054();
@@ -875,7 +875,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
       class_4230 var2 = this.method_8584();
       var2.method_19708(this.field_9602.method_43178(), this.field_9602.method_43198(), field_9574);
-      this.field_9590.method_35943(this.field_9602.method_43178(), this.field_9602.method_43198());
+      this.gameRenderer.method_35943(this.field_9602.method_43178(), this.field_9602.method_43198());
       this.field_9625.method_39833();
    }
 
@@ -1016,9 +1016,9 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       int var28 = 16777215;
-      this.field_9668.method_45390(var1, var25, (float)(var8 - 160), (float)(var9 - 80 - 16), 16777215);
+      this.textRenderer.method_45390(var1, var25, (float)(var8 - 160), (float)(var9 - 80 - 16), 16777215);
       var25 = var23.format(var4.field_3802) + "%";
-      this.field_9668.method_45390(var1, var25, (float)(var8 + 160 - this.field_9668.method_45395(var25)), (float)(var9 - 80 - 16), 16777215);
+      this.textRenderer.method_45390(var1, var25, (float)(var8 + 160 - this.textRenderer.method_45395(var25)), (float)(var9 - 80 - 16), 16777215);
 
       for (int var29 = 0; var29 < var3.size(); var29++) {
          class_692 var30 = (class_692)var3.get(var29);
@@ -1030,13 +1030,13 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          }
 
          String var33 = var31.append(var30.field_3801).toString();
-         this.field_9668.method_45390(var1, var33, (float)(var8 - 160), (float)(var9 + 80 + var29 * 8 + 20), var30.method_3124());
+         this.textRenderer.method_45390(var1, var33, (float)(var8 - 160), (float)(var9 + 80 + var29 * 8 + 20), var30.method_3124());
          var33 = var23.format(var30.field_3803) + "%";
-         this.field_9668
-            .method_45390(var1, var33, (float)(var8 + 160 - 50 - this.field_9668.method_45395(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.method_3124());
+         this.textRenderer
+            .method_45390(var1, var33, (float)(var8 + 160 - 50 - this.textRenderer.method_45395(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.method_3124());
          var33 = var23.format(var30.field_3802) + "%";
-         this.field_9668
-            .method_45390(var1, var33, (float)(var8 + 160 - this.field_9668.method_45395(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.method_3124());
+         this.textRenderer
+            .method_45390(var1, var33, (float)(var8 + 160 - this.textRenderer.method_45395(var33)), (float)(var9 + 80 + var29 * 8 + 20), var30.method_3124());
       }
    }
 
@@ -1094,7 +1094,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       if (!var1.method_29716()) {
          if (this.field_9582 <= 0) {
             if (this.field_9587 == null) {
-               field_9595.error("Null returned as 'hitResult', this shouldn't happen!");
+               LOGGER.error("Null returned as 'hitResult', this shouldn't happen!");
                if (this.field_9647.method_42149()) {
                   this.field_9582 = 10;
                }
@@ -1154,7 +1154,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             this.field_9570 = 4;
             if (!this.field_9632.method_27320()) {
                if (this.field_9587 == null) {
-                  field_9595.warn("Null returned as 'hitResult', this shouldn't happen!");
+                  LOGGER.warn("Null returned as 'hitResult', this shouldn't happen!");
                }
 
                for (class_2584 var5 : class_2584.values()) {
@@ -1185,7 +1185,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                               if (var12.method_31661()) {
                                  this.field_9632.method_26597(var5);
                                  if (!var6.method_28022() && (var6.method_27997() != var11 || this.field_9647.method_42140())) {
-                                    this.field_9590.field_40622.method_42250(var5);
+                                    this.gameRenderer.field_40622.method_42250(var5);
                                  }
                               }
 
@@ -1205,7 +1205,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                            this.field_9632.method_26597(var5);
                         }
 
-                        this.field_9590.field_40622.method_42250(var5);
+                        this.gameRenderer.field_40622.method_42250(var5);
                         return;
                      }
                   }
@@ -1230,7 +1230,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       this.field_9592.method_16054();
-      this.field_9590.method_35938(1.0F);
+      this.gameRenderer.method_35938(1.0F);
       this.field_9578.method_40534(this.field_9601, this.field_9587);
       this.field_9592.method_16056("gameMode");
       if (!this.field_9579 && this.field_9601 != null) {
@@ -1275,7 +1275,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       if (this.field_9601 != null) {
          this.field_9592.method_16050("gameRenderer");
          if (!this.field_9579) {
-            this.field_9590.method_35958();
+            this.gameRenderer.method_35958();
          }
 
          this.field_9592.method_16050("levelRenderer");
@@ -1291,8 +1291,8 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
             this.field_9601.method_737();
          }
-      } else if (this.field_9590.method_35930() != null) {
-         this.field_9590.method_35922();
+      } else if (this.gameRenderer.method_35930() != null) {
+         this.gameRenderer.method_35922();
       }
 
       if (!this.field_9579) {
@@ -1363,7 +1363,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          class_9193 var1 = this.field_9577.method_40867();
          this.field_9577.method_40884(this.field_9577.method_40867().method_42382());
          if (var1.method_42383() != this.field_9577.method_40867().method_42383()) {
-            this.field_9590.method_35951(this.field_9577.method_40867().method_42383() ? this.method_8516() : null);
+            this.gameRenderer.method_35951(this.field_9577.method_40867().method_42383() ? this.method_8516() : null);
          }
 
          this.field_9657.method_20018();
@@ -1511,7 +1511,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                .encodeStart(var7, var4)
                .setLifecycle(Lifecycle.stable())
                .flatMap(var1xx -> class_2904.field_14169.parse(var8, var1xx));
-            class_2904 var10 = var9.resultOrPartial(class_9665.method_44690("Error reading worldgen settings after loading data packs: ", field_9595::error))
+            class_2904 var10 = var9.resultOrPartial(class_9665.method_44690("Error reading worldgen settings after loading data packs: ", LOGGER::error))
                .orElse(var4);
             return new class_5056(var2, var10, var9.lifecycle());
          },
@@ -1532,7 +1532,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       try {
          var7 = this.field_9609.method_44633(var1);
       } catch (IOException var21) {
-         field_9595.warn("Failed to read level {} data", var1, var21);
+         LOGGER.warn("Failed to read level {} data", var1, var21);
          class_4201.method_19563(this, var1);
          this.method_8609((class_266)null);
          return;
@@ -1542,13 +1542,13 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       try {
          var8 = this.method_8572(var2, var3, var4, var5, var7);
       } catch (Exception var20) {
-         field_9595.warn("Failed to load datapacks, can't proceed with server load", var20);
+         LOGGER.warn("Failed to load datapacks, can't proceed with server load", var20);
          this.method_8609(new class_9588(() -> this.method_8513(var1, var2, var3, var4, true, var6)));
 
          try {
             var7.close();
          } catch (IOException var16) {
-            field_9595.warn("Failed to unlock access to level {}", var1, var16);
+            LOGGER.warn("Failed to unlock access to level {}", var1, var16);
          }
 
          return;
@@ -1626,7 +1626,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          try {
             var7.close();
          } catch (IOException var17) {
-            field_9595.warn("Failed to unlock access to level {}", var1, var17);
+            LOGGER.warn("Failed to unlock access to level {}", var1, var17);
          }
       }
    }
@@ -1663,7 +1663,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                         var4x.method_17074();
                      } catch (IOException var17) {
                         class_4201.method_19560(this, var2);
-                        field_9595.error("Failed to delete world {}", var2, var17);
+                        LOGGER.error("Failed to delete world {}", var2, var17);
                      }
                   }
                },
@@ -1730,7 +1730,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
       class_7762 var3 = this.field_9646;
       this.field_9646 = null;
-      this.field_9590.method_35925();
+      this.gameRenderer.method_35925();
       this.field_9647 = null;
       class_7542.field_38482.method_34347();
       this.method_8600(var1);
@@ -1915,7 +1915,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   var10 = class_8669.field_44400.method_39797(((class_5631)this.field_9587).method_25524().method_37387()).toString();
                }
 
-               field_9595.warn("Picking on: [{}] {} gave null item", var4, var10);
+               LOGGER.warn("Picking on: [{}] {} gave null item", var4, var10);
             } else {
                class_7051 var11 = this.field_9632.field_3853;
                if (var3 != null) {
@@ -2023,12 +2023,12 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       return instance;
    }
 
-   public CompletableFuture<Void> method_8488() {
+   public CompletableFuture<Void> reloadResourcesConcurrently() {
       return this.<CompletableFuture<Void>>method_34452(this::method_8524).<Void>thenCompose(var0 -> (CompletionStage<Void>)var0);
    }
 
    @Override
-   public void method_19826(class_3320 var1) {
+   public void addSnooperInfo(Snooper var1) {
       var1.method_15252("fps", field_9626);
       var1.method_15252("vsync_enabled", this.field_9577.field_45502);
       var1.method_15252("display_frequency", this.field_9602.method_43197());
@@ -2120,17 +2120,17 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       return this.field_9646;
    }
 
-   public class_3320 method_8611() {
+   public Snooper method_8611() {
       return this.field_9606;
    }
 
-   public class_1210 method_8502() {
-      return this.field_9603;
+   public Session method_8502() {
+      return this.session;
    }
 
    public PropertyMap method_8579() {
       if (this.field_9635.isEmpty()) {
-         GameProfile var1 = this.method_8517().fillProfileProperties(this.field_9603.method_5370(), false);
+         GameProfile var1 = this.method_8517().fillProfileProperties(this.session.method_5370(), false);
          this.field_9635.putAll(var1.getProperties());
       }
 
@@ -2224,7 +2224,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
    public void method_8550(class_8145 var1) {
       this.field_9669 = var1;
-      this.field_9590.method_35951(var1);
+      this.gameRenderer.method_35951(var1);
    }
 
    public boolean method_8563(class_8145 var1) {

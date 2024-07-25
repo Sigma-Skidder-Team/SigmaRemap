@@ -43,7 +43,7 @@ import org.lwjgl.opengl.GLCapabilities;
 
 public class class_6588 {
    public static MinecraftClient field_33837;
-   public static class_7941 field_33681;
+   public static GameRenderer field_33681;
    public static boolean field_33664 = false;
    public static boolean field_33648 = false;
    public static GLCapabilities field_33895;
@@ -817,7 +817,7 @@ public class class_6588 {
       }
 
       if ((var4 || var5) && field_33837.method_8498() != null) {
-         field_33837.method_8488();
+         field_33837.reloadResourcesConcurrently();
       }
    }
 
@@ -3195,7 +3195,7 @@ public class class_6588 {
       method_30223(field_33837.field_9601);
       field_33837 = var0;
       field_33837.method_8562().method_16056("init");
-      field_33681 = field_33837.field_9590;
+      field_33681 = field_33837.gameRenderer;
       if (!field_33648) {
          try {
             method_30098();
@@ -3271,8 +3271,8 @@ public class class_6588 {
                class_5834 var12 = (class_5834)var8;
                field_33933 = 0.0F;
                if (var12.method_26480(class_4054.field_19746)) {
-                  class_7941 var13 = field_33681;
-                  field_33933 = class_7941.method_35954(var12, var2);
+                  GameRenderer var13 = field_33681;
+                  field_33933 = GameRenderer.method_35954(var12, var2);
                }
 
                field_33718 = 0.0F;

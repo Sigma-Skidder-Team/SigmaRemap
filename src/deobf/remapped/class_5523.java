@@ -48,7 +48,7 @@ public class class_5523 {
          class_1920.method_8793(16640);
          var8.method_8584().method_19717(true);
          class_1920.method_8843();
-         var8.field_9590.method_35945(var8.method_8554(), System.nanoTime(), true);
+         var8.gameRenderer.method_35945(var8.method_8554(), System.nanoTime(), true);
       }
 
       class_5797 var17 = method_25038(var2, var3, var4);

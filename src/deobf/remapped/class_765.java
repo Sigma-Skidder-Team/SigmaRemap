@@ -273,7 +273,7 @@ public class class_765 extends class_4232 {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
-      method_9788(var1, this.field_943.field_9668, this.field_947, this.field_941 / 2, 15, 16777215);
+      method_9788(var1, this.field_943.textRenderer, this.field_947, this.field_941 / 2, 15, 16777215);
       String var7 = class_3111.method_14314();
       String var8 = "HD_U";
       if (var8.equals("HD")) {
@@ -288,10 +288,10 @@ public class class_765 extends class_4232 {
          var7 = "OptiFine G5 Light";
       }
 
-      method_9770(var1, this.field_943.field_9668, var7, 2, this.field_940 - 10, 8421504);
+      method_9770(var1, this.field_943.textRenderer, var7, 2, this.field_940 - 10, 8421504);
       String var9 = "Minecraft 1.16.4";
-      int var10 = this.field_943.field_9668.method_45395(var9);
-      method_9770(var1, this.field_943.field_9668, var9, this.field_941 - var10 - 2, this.field_940 - 10, 8421504);
+      int var10 = this.field_943.textRenderer.method_45395(var9);
+      method_9770(var1, this.field_943.textRenderer, var9, this.field_941 - var10 - 2, this.field_940 - 10, 8421504);
       super.method_6767(var1, var2, var3, var4);
       this.field_4144.method_31255(var1, var2, var3, this.field_4146);
    }

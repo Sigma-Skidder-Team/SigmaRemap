@@ -850,7 +850,7 @@ public class class_1092 implements class_392 {
                this.field_6021
                   .method_29527(var4.method_37302(), var4.method_37309(), var4.method_37156(), class_463.field_2834, var4.method_37197(), 1.0F, 1.0F, false);
                if (var4 == this.field_6026.field_9632) {
-                  this.field_6026.field_9590.method_35946(method_4816(this.field_6026.field_9632));
+                  this.field_6026.gameRenderer.method_35946(method_4816(this.field_6026.field_9632));
                }
             }
          } else {
@@ -1238,7 +1238,7 @@ public class class_1092 implements class_392 {
    @Override
    public void method_1963(class_1053 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      class_8451 var4 = this.field_6026.field_9590.method_35928();
+      class_8451 var4 = this.field_6026.gameRenderer.method_35928();
       String var5 = class_2143.method_10015(var1.method_4633());
       class_2134 var6 = this.field_6026.field_9601.method_29533(var5);
       if (var6 == null) {
@@ -1307,7 +1307,7 @@ public class class_1092 implements class_392 {
    public void method_1946(class_6621 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       this.field_6024.method_23140(var1.method_30439());
-      class_1272 var4 = this.field_6026.<class_7735>method_8532(class_796.field_4278);
+      class_1272 var4 = this.field_6026.<class_7735>method_8532(SearchManager.field_4278);
       var4.method_5711();
       class_2716 var5 = this.field_6026.field_9632.method_27334();
       var5.method_12235(this.field_6024.method_23141());
@@ -1409,7 +1409,7 @@ public class class_1092 implements class_392 {
             var4.method_29395();
          }
 
-         this.field_6026.<class_6098>method_8532(class_796.field_4275).method_5710();
+         this.field_6026.<class_6098>method_8532(SearchManager.field_4275).method_5710();
       } else {
          field_6038.warn("Incomplete server tags, disconnecting. Missing: {}", var5);
          this.field_6035.method_23482(new TranslationTextComponent("multiplayer.disconnect.missing_tags"));

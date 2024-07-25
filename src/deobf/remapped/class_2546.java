@@ -312,10 +312,10 @@ public class class_2546 extends class_9331<class_7333> {
       if (!var3.isEmpty()) {
          class_1272 var4;
          if (!var3.startsWith("#")) {
-            var4 = this.field_943.<class_6098>method_8532(class_796.field_4279);
+            var4 = this.field_943.<class_6098>method_8532(SearchManager.field_4279);
          } else {
             var3 = var3.substring(1);
-            var4 = this.field_943.<class_6098>method_8532(class_796.field_4275);
+            var4 = this.field_943.<class_6098>method_8532(SearchManager.field_4275);
             this.method_11587(var3);
          }
 

@@ -338,11 +338,11 @@ public class class_8765 implements class_6491 {
       }
    }
 
-   public void method_40281(class_9854 var1, class_6098 var2, int var3, int var4) {
+   public void method_40281(TextRenderer var1, class_6098 var2, int var3, int var4) {
       this.method_40265(var1, var2, var3, var4, (String)null);
    }
 
-   public void method_40265(class_9854 var1, class_6098 var2, int var3, int var4, String var5) {
+   public void method_40265(TextRenderer var1, class_6098 var2, int var3, int var4, String var5) {
       if (!var2.method_28022()) {
          class_7966 var8 = new class_7966();
          if (var2.method_27997() != 1 || var5 != null) {

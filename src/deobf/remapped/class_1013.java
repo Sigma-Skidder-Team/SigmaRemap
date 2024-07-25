@@ -94,7 +94,7 @@ public abstract class class_1013 {
       var0 -> Math.pow((double)var0.field_45386, 2.0),
       (var0, var1) -> var0.field_45386 = class_9299.method_42842(var1),
       (var0, var1) -> {
-         var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5262, 200));
+         var1.method_4487(MinecraftClient.getInstance().textRenderer.method_45391(field_5262, 200));
          double var4 = var1.method_38566(var1.method_38570(var0));
          return var4 != 0.0 ? var1.method_4490(var4) : var1.method_4492(new TranslationTextComponent("options.fovEffectScale.off"));
       }
@@ -102,7 +102,7 @@ public abstract class class_1013 {
    private static final ITextComponent field_5268 = new TranslationTextComponent("options.screenEffectScale.tooltip");
    public static final class_8369 field_5259 = new class_8369(
       "options.screenEffectScale", 0.0, 1.0, 0.0F, var0 -> (double)var0.field_45469, (var0, var1) -> var0.field_45469 = var1.floatValue(), (var0, var1) -> {
-         var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5268, 200));
+         var1.method_4487(MinecraftClient.getInstance().textRenderer.method_45391(field_5268, 200));
          double var4 = var1.method_38566(var1.method_38570(var0));
          return var4 != 0.0 ? var1.method_4490(var4) : var1.method_4492(new TranslationTextComponent("options.screenEffectScale.off"));
       }
@@ -240,13 +240,13 @@ public abstract class class_1013 {
    }, (var0, var1) -> {
       switch (var0.field_45397) {
          case field_22434:
-            var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5219, 200));
+            var1.method_4487(MinecraftClient.getInstance().textRenderer.method_45391(field_5219, 200));
             break;
          case field_22437:
-            var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5270, 200));
+            var1.method_4487(MinecraftClient.getInstance().textRenderer.method_45391(field_5270, 200));
             break;
          case field_22433:
-            var1.method_4487(MinecraftClient.getInstance().field_9668.method_45391(field_5281, 200));
+            var1.method_4487(MinecraftClient.getInstance().textRenderer.method_45391(field_5281, 200));
       }
 
       TranslationTextComponent var4 = new TranslationTextComponent(var0.field_45397.method_21387());

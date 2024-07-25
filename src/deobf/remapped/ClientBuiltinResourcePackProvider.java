@@ -132,7 +132,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
          this.field_28113 = null;
          if (this.field_28118 != null) {
             this.field_28118 = null;
-            MinecraftClient.getInstance().method_8488();
+            MinecraftClient.getInstance().reloadResourcesConcurrently();
          }
       } finally {
          this.field_28119.unlock();
@@ -195,7 +195,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
          true,
          var2
       );
-      return MinecraftClient.getInstance().method_8488();
+      return MinecraftClient.getInstance().reloadResourcesConcurrently();
    }
 
    @Nullable

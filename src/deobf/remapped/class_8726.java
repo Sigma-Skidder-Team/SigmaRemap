@@ -111,9 +111,9 @@ public class class_8726 extends class_9128 {
          if (this.field_44720 != null) {
             GL11.glAlphaFunc(516, 0.0F);
             class_1331 var4 = this.field_44720;
-            double var5 = (double)var4.method_12173() - field_46692.field_9590.method_35949().method_41627().method_61();
-            double var7 = (double)var4.method_12165() - field_46692.field_9590.method_35949().method_41627().method_60();
-            double var9 = (double)var4.method_12185() - field_46692.field_9590.method_35949().method_41627().method_62();
+            double var5 = (double)var4.method_12173() - field_46692.gameRenderer.method_35949().method_41627().method_61();
+            double var7 = (double)var4.method_12165() - field_46692.gameRenderer.method_35949().method_41627().method_60();
+            double var9 = (double)var4.method_12185() - field_46692.gameRenderer.method_35949().method_41627().method_62();
             class_73.method_83(
                new class_8194(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), class_314.method_1444(class_1255.field_6922.field_6917, 0.3F)
             );

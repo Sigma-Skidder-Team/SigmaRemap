@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_6384 {
+public class RenderTickCounter {
    private static String[] field_32598;
    public float field_32600;
    public float field_32599;
@@ -8,7 +8,7 @@ public class class_6384 {
    private final float field_32601;
    public float field_32603 = 1.0F;
 
-   public class_6384(float var1, long var2) {
+   public RenderTickCounter(float var1, long var2) {
       this.field_32601 = 1000.0F / var1;
       this.field_32602 = var2;
    }

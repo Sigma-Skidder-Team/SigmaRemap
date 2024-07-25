@@ -149,9 +149,9 @@ public class class_8057 extends class_367 {
    }
 
    public static void method_36547(class_1331 var0) {
-      double var3 = (double)((float)var0.method_12173() + 0.5F) - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_61();
-      double var5 = (double)((float)var0.method_12165() + 1.0F) - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_60();
-      double var7 = (double)((float)var0.method_12185() + 0.5F) - MinecraftClient.getInstance().field_9590.method_35949().method_41627().method_62();
+      double var3 = (double)((float)var0.method_12173() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_61();
+      double var5 = (double)((float)var0.method_12165() + 1.0F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_60();
+      double var7 = (double)((float)var0.method_12185() + 0.5F) - MinecraftClient.getInstance().gameRenderer.method_35949().method_41627().method_62();
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -226,13 +226,13 @@ public class class_8057 extends class_367 {
       GL11.glDepthMask(false);
       GL11.glPushMatrix();
       GL11.glTranslated(
-         var1 - field_46692.field_9590.method_35949().method_41627().method_61() + 0.5,
-         var3 - field_46692.field_9590.method_35949().method_41627().method_60() + 1.0,
-         var5 - field_46692.field_9590.method_35949().method_41627().method_62() + 0.5
+         var1 - field_46692.gameRenderer.method_35949().method_41627().method_61() + 0.5,
+         var3 - field_46692.gameRenderer.method_35949().method_41627().method_60() + 1.0,
+         var5 - field_46692.gameRenderer.method_35949().method_41627().method_62() + 0.5
       );
       GL11.glAlphaFunc(519, 0.0F);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       class_3384 var10 = class_5320.field_27141;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);

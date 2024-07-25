@@ -75,7 +75,7 @@ public class class_8927 extends class_3403 {
    }
 
    private String[] method_41031(int var1, List<String> var2) {
-      class_9854 var5 = class_3111.method_14327().field_9668;
+      TextRenderer var5 = class_3111.method_14327().textRenderer;
       ArrayList var6 = new ArrayList();
 
       for (int var7 = 0; var7 < var2.size(); var7++) {

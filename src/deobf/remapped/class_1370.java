@@ -51,7 +51,7 @@ public class class_1370 extends class_9128 {
                   GL11.glTranslated(var6, var8, var10);
                   GL11.glTranslatef(0.0F, var3x.method_37074(), 0.0F);
                   GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                  GL11.glRotatef(field_46692.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+                  GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
                   GL11.glScalef(-0.11F, -0.11F, -0.11F);
                   class_73.method_102(
                      -var3x.method_37086() * 22.0F,
@@ -92,7 +92,7 @@ public class class_1370 extends class_9128 {
       for (class_8145 var10 : field_46692.field_9601.method_736()) {
          if (this.method_6344(var10)) {
             GL11.glPushMatrix();
-            class_1343 var11 = field_46692.field_9590.method_35949().method_41627();
+            class_1343 var11 = field_46692.gameRenderer.method_35949().method_41627();
             double var12 = var11.method_61();
             double var14 = var11.method_60();
             double var16 = var11.method_62();
@@ -182,7 +182,7 @@ public class class_1370 extends class_9128 {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      field_46692.field_9590.field_40623.method_26122();
+      field_46692.gameRenderer.field_40623.method_26122();
    }
 
    private void method_6346() {
@@ -195,7 +195,7 @@ public class class_1370 extends class_9128 {
       class_7889 var10000 = field_46692.method_8577();
       field_46692.method_8577();
       var10000.method_35674(class_7889.field_40364);
-      field_46692.field_9590.field_40623.method_26126();
+      field_46692.gameRenderer.field_40623.method_26126();
       GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
       field_7448 = class_4719.field_22895;
    }

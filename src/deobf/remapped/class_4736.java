@@ -25,10 +25,10 @@ public class class_4736 extends class_2089 {
             this.field_22948.method_8577().method_35674(field_22950);
             this.method_21871(var1, var8, var5, var7);
             ITextComponent var9 = var7.method_43453();
-            int var10 = this.field_22948.field_9668.method_45379(var9);
+            int var10 = this.field_22948.textRenderer.method_45379(var9);
             int var11 = var4 / 2 - var10 / 2;
             int var12 = var5 - 9;
-            this.field_22948.field_9668.method_45392(var1, var9, (float)var11, (float)var12, 16777215);
+            this.field_22948.textRenderer.method_45392(var1, var9, (float)var11, (float)var12, 16777215);
             var5 += 19;
             if (var5 >= this.field_22948.method_8552().method_43177() / 3) {
                break;

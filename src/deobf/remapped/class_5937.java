@@ -375,9 +375,9 @@ public class class_5937 {
                for (Long var8 : this.field_30284.get(0).field_44466) {
                   class_1331 var9 = class_1331.method_6088(var8);
                   if (!this.field_30282.field_9601.method_28262(var9).method_8345()) {
-                     double var10 = (double)var9.method_12173() - this.field_30282.field_9590.method_35949().method_41627().method_61();
-                     double var12 = (double)var9.method_12165() - this.field_30282.field_9590.method_35949().method_41627().method_60();
-                     double var14 = (double)var9.method_12185() - this.field_30282.field_9590.method_35949().method_41627().method_62();
+                     double var10 = (double)var9.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
+                     double var12 = (double)var9.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
+                     double var14 = (double)var9.method_12185() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();
                      class_8194 var16 = new class_8194(var10, var12, var14, var10 + 1.0, var12 + 1.0, var14 + 1.0);
                      class_73.method_83(var16, var18);
                   }
@@ -386,9 +386,9 @@ public class class_5937 {
                for (Long var20 : this.field_30284.get(0).field_44470) {
                   class_1331 var21 = class_1331.method_6088(var20);
                   if (this.field_30282.field_9601.method_28262(var21).method_8345()) {
-                     double var22 = (double)var21.method_12173() - this.field_30282.field_9590.method_35949().method_41627().method_61();
-                     double var23 = (double)var21.method_12165() - this.field_30282.field_9590.method_35949().method_41627().method_60();
-                     double var24 = (double)var21.method_12185() - this.field_30282.field_9590.method_35949().method_41627().method_62();
+                     double var22 = (double)var21.method_12173() - this.field_30282.gameRenderer.method_35949().method_41627().method_61();
+                     double var23 = (double)var21.method_12165() - this.field_30282.gameRenderer.method_35949().method_41627().method_60();
+                     double var24 = (double)var21.method_12185() - this.field_30282.gameRenderer.method_35949().method_41627().method_62();
                      class_8194 var25 = new class_8194(var22, var23, var24, var22 + 1.0, var23 + 1.0, var24 + 1.0);
                      class_73.method_83(var25, var6);
                   }
@@ -412,13 +412,13 @@ public class class_5937 {
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glPushMatrix();
       GL11.glTranslated(
-         var1 - this.field_30282.field_9590.method_35949().method_41627().method_61() + 0.5,
-         var3 - this.field_30282.field_9590.method_35949().method_41627().method_60(),
-         var5 - this.field_30282.field_9590.method_35949().method_41627().method_62() + 0.5
+         var1 - this.field_30282.gameRenderer.method_35949().method_41627().method_61() + 0.5,
+         var3 - this.field_30282.gameRenderer.method_35949().method_41627().method_60(),
+         var5 - this.field_30282.gameRenderer.method_35949().method_41627().method_62() + 0.5
       );
       GL11.glAlphaFunc(519, 0.0F);
-      GL11.glRotatef(this.field_30282.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(this.field_30282.field_9590.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(this.field_30282.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(this.field_30282.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       class_3384 var10 = class_5320.field_27141;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);

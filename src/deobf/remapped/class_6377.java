@@ -136,7 +136,7 @@ public class class_6377 {
 
       if (!var7.method_22007(class_6503.field_33094)) {
          if (var0.method_41633() instanceof class_5834 && ((class_5834)var0.method_41633()).method_26480(class_4054.field_19746)) {
-            float var27 = class_7941.method_35954((class_5834)var0.method_41633(), var1);
+            float var27 = GameRenderer.method_35954((class_5834)var0.method_41633(), var1);
             float var33 = Math.min(1.0F / field_32578, Math.min(1.0F / field_32585, 1.0F / field_32584));
             if (Float.isInfinite(var33)) {
                var33 = Math.nextAfter(var33, 0.0);

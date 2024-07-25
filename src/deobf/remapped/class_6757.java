@@ -51,16 +51,16 @@ public class class_6757 extends class_2269 {
       }
 
       boolean var13 = this.field_34866.field_12663 != class_7665.method_34674().getProtocolVersion();
-      this.field_34865.field_9668.method_45385(var1, this.field_34866.field_12670, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
-      List var14 = this.field_34865.field_9668.method_45391(this.field_34866.field_12672, var5 - 32 - 2);
+      this.field_34865.textRenderer.method_45385(var1, this.field_34866.field_12670, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
+      List var14 = this.field_34865.textRenderer.method_45391(this.field_34866.field_12672, var5 - 32 - 2);
 
       for (int var15 = 0; var15 < Math.min(var14.size(), 2); var15++) {
-         this.field_34865.field_9668.method_45382(var1, (class_7107)var14.get(var15), (float)(var4 + 32 + 3), (float)(var3 + 12 + 9 * var15), 8421504);
+         this.field_34865.textRenderer.method_45382(var1, (class_7107)var14.get(var15), (float)(var4 + 32 + 3), (float)(var3 + 12 + 9 * var15), 8421504);
       }
 
       Object var26 = !var13 ? this.field_34866.field_12671 : this.field_34866.field_12666.deepCopy().mergeStyle(TextFormatting.RED);
-      int var16 = this.field_34865.field_9668.method_45379((ITextProperties)var26);
-      this.field_34865.field_9668.method_45378(var1, (ITextComponent)var26, (float)(var4 + var5 - var16 - 15 - 2), (float)(var3 + 1), 8421504);
+      int var16 = this.field_34865.textRenderer.method_45379((ITextProperties)var26);
+      this.field_34865.textRenderer.method_45378(var1, (ITextComponent)var26, (float)(var4 + var5 - var16 - 15 - 2), (float)(var3 + 1), 8421504);
       byte var17 = 0;
       int var18;
       Object var19;

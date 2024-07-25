@@ -89,7 +89,7 @@ public class class_3062 extends class_2089 {
    public void method_13997(class_7966 var1, float var2) {
       this.field_15028 = this.field_15040.method_8552().method_43165();
       this.field_15049 = this.field_15040.method_8552().method_43177();
-      class_9854 var5 = this.method_13975();
+      TextRenderer var5 = this.method_13975();
       class_3542.method_16488();
       if (!class_3111.method_14292()) {
          class_3542.method_16428();
@@ -298,7 +298,7 @@ public class class_3062 extends class_2089 {
       class_3542.method_16374();
    }
 
-   private void method_14005(class_7966 var1, class_9854 var2, int var3, int var4, int var5) {
+   private void method_14005(class_7966 var1, TextRenderer var2, int var3, int var4, int var5) {
       int var8 = this.field_15040.field_9577.method_40888(0.0F);
       if (var8 != 0) {
          int var9 = -var4 / 2;
@@ -313,7 +313,7 @@ public class class_3062 extends class_2089 {
          if (var4.field_45470 && !var4.field_45567 && !this.field_15040.field_9632.method_3179() && !var4.field_45500) {
             class_3542.method_16438();
             class_3542.method_16413((float)(this.field_15028 / 2), (float)(this.field_15049 / 2), (float)this.method_9777());
-            class_9071 var11 = this.field_15040.field_9590.method_35949();
+            class_9071 var11 = this.field_15040.gameRenderer.method_35949();
             class_3542.method_16410(var11.method_41638(), -1.0F, 0.0F, 0.0F);
             class_3542.method_16410(var11.method_41640(), 0.0F, 1.0F, 0.0F);
             class_3542.method_16403(-1.0F, -1.0F, -1.0F);
@@ -583,9 +583,9 @@ public class class_3062 extends class_2089 {
             class_3542.method_16488();
             class_3542.method_16437();
             method_9774(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field_15040.field_9577.method_40881(0));
-            class_9854 var10 = null;
+            TextRenderer var10 = null;
             if (class_7860.field_40211.method_3596()) {
-               var10 = (class_9854)class_7860.method_35555(this.field_15039.method_27960(), class_7860.field_40211, this.field_15039);
+               var10 = (TextRenderer)class_7860.method_35555(this.field_15039.method_27960(), class_7860.field_40211, this.field_15039);
             }
 
             if (var10 == null) {
@@ -1031,7 +1031,7 @@ public class class_3062 extends class_2089 {
             class_3542.method_16489();
          }
 
-         this.field_15030.method_40281(this.field_15040.field_9668, var5, var1, var2);
+         this.field_15030.method_40281(this.field_15040.textRenderer, var5, var1, var2);
       }
    }
 
@@ -1147,8 +1147,8 @@ public class class_3062 extends class_2089 {
       return this.field_15042;
    }
 
-   public class_9854 method_13975() {
-      return this.field_15040.field_9668;
+   public TextRenderer method_13975() {
+      return this.field_15040.textRenderer;
    }
 
    public class_8368 method_14004() {

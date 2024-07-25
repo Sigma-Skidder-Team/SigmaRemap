@@ -47,10 +47,10 @@ public class class_2130 extends class_2089 {
       int var10 = 0;
 
       for (class_753 var12 : var8) {
-         int var13 = this.field_10666.field_9668.method_45379(this.method_9938(var12));
+         int var13 = this.field_10666.textRenderer.method_45379(this.method_9938(var12));
          var9 = Math.max(var9, var13);
          if (var4 != null && var4.method_20483() != class_8792.field_44982) {
-            var13 = this.field_10666.field_9668.method_45395(" " + var3.method_4855(var12.method_3392().getName(), var4).method_38146());
+            var13 = this.field_10666.textRenderer.method_45395(" " + var3.method_4855(var12.method_3392().getName(), var4).method_38146());
             var10 = Math.max(var10, var13);
          }
       }
@@ -80,19 +80,19 @@ public class class_2130 extends class_2089 {
       int var19 = var16 * var40 + (var40 - 1) * 5;
       List var20 = null;
       if (this.field_10662 != null) {
-         var20 = this.field_10666.field_9668.method_45391(this.field_10662, var2 - 50);
+         var20 = this.field_10666.textRenderer.method_45391(this.field_10662, var2 - 50);
 
          for (class_7107 var22 : var20) {
-            var19 = Math.max(var19, this.field_10666.field_9668.method_45400(var22));
+            var19 = Math.max(var19, this.field_10666.textRenderer.method_45400(var22));
          }
       }
 
       List var42 = null;
       if (this.field_10665 != null) {
-         var42 = this.field_10666.field_9668.method_45391(this.field_10665, var2 - 50);
+         var42 = this.field_10666.textRenderer.method_45391(this.field_10665, var2 - 50);
 
          for (class_7107 var23 : var42) {
-            var19 = Math.max(var19, this.field_10666.field_9668.method_45400(var23));
+            var19 = Math.max(var19, this.field_10666.textRenderer.method_45400(var23));
          }
       }
 
@@ -100,8 +100,8 @@ public class class_2130 extends class_2089 {
          method_9774(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var20.size() * 9, Integer.MIN_VALUE);
 
          for (class_7107 var46 : var20) {
-            int var24 = this.field_10666.field_9668.method_45400(var46);
-            this.field_10666.field_9668.method_45402(var1, var46, (float)(var2 / 2 - var24 / 2), (float)var18, -1);
+            int var24 = this.field_10666.textRenderer.method_45400(var46);
+            this.field_10666.textRenderer.method_45402(var1, var46, (float)(var2 / 2 - var24 / 2), (float)var18, -1);
             var18 += 9;
          }
 
@@ -143,7 +143,7 @@ public class class_2130 extends class_2089 {
             }
 
             this.field_10666
-               .field_9668
+               .textRenderer
                .method_45392(var1, this.method_9938(var28), (float)var26, (float)var27, var28.method_3393() != class_4666.field_22756 ? -1 : -1862270977);
             if (var4 != null && var28.method_3393() != class_4666.field_22756) {
                int var52 = var26 + var9 + 1;
@@ -162,8 +162,8 @@ public class class_2130 extends class_2089 {
          method_9774(var1, var2 / 2 - var19 / 2 - 1, var18 - 1, var2 / 2 + var19 / 2 + 1, var18 + var42.size() * 9, Integer.MIN_VALUE);
 
          for (class_7107 var50 : var42) {
-            int var51 = this.field_10666.field_9668.method_45400(var50);
-            this.field_10666.field_9668.method_45402(var1, var50, (float)(var2 / 2 - var51 / 2), (float)var18, -1);
+            int var51 = this.field_10666.textRenderer.method_45400(var50);
+            this.field_10666.textRenderer.method_45402(var1, var50, (float)(var2 / 2 - var51 / 2), (float)var18, -1);
             var18 += 9;
          }
       }
@@ -205,7 +205,7 @@ public class class_2130 extends class_2089 {
       int var10 = var1.method_20486().method_4855(var3, var1).method_38146();
       if (var1.method_20483() != class_8792.field_44982) {
          String var11 = TextFormatting.YELLOW + "" + var10;
-         this.field_10666.field_9668.method_45390(var7, var11, (float)(var5 - this.field_10666.field_9668.method_45395(var11)), (float)var2, 16777215);
+         this.field_10666.textRenderer.method_45390(var7, var11, (float)(var5 - this.field_10666.textRenderer.method_45395(var11)), (float)var2, 16777215);
       } else {
          this.field_10666.method_8577().method_35674(field_10507);
          long var12 = class_9665.method_44650();
@@ -239,13 +239,13 @@ public class class_2130 extends class_2089 {
                float var18 = class_9299.method_42828((float)var10 / 20.0F, 0.0F, 1.0F);
                int var19 = (int)((1.0F - var18) * 255.0F) << 16 | (int)(var18 * 255.0F) << 8;
                String var20 = "" + (float)var10 / 2.0F;
-               if (var5 - this.field_10666.field_9668.method_45395(var20 + "hp") >= var4) {
+               if (var5 - this.field_10666.textRenderer.method_45395(var20 + "hp") >= var4) {
                   var20 = var20 + "hp";
                }
 
                this.field_10666
-                  .field_9668
-                  .method_45390(var7, var20, (float)((var5 + var4) / 2 - this.field_10666.field_9668.method_45395(var20) / 2), (float)var2, var19);
+                  .textRenderer
+                  .method_45390(var7, var20, (float)((var5 + var4) / 2 - this.field_10666.textRenderer.method_45395(var20) / 2), (float)var2, var19);
             } else {
                for (int var21 = var14; var21 < var15; var21++) {
                   this.method_9781(var7, var4 + var21 * var17, var2, !var16 ? 16 : 25, 0, 9, 9);

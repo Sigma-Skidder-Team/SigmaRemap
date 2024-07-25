@@ -84,7 +84,7 @@ public class class_3129 extends class_266 {
                      var8 = var10 + TextFormatting.WHITE + TextFormatting.OBFUSCATED + "XXXXXXXX".substring(0, var7.nextInt(4) + 3) + var11;
                   }
 
-                  this.field_15535.addAll(this.field_943.field_9668.method_45391(new StringTextComponent(var8), 274));
+                  this.field_15535.addAll(this.field_943.textRenderer.method_45391(new StringTextComponent(var8), 274));
                   this.field_15535.add(class_7107.field_36653);
                }
 
@@ -110,7 +110,7 @@ public class class_3129 extends class_266 {
                   var23 = false;
                }
 
-               for (class_7107 var26 : this.field_943.field_9668.method_45391(new StringTextComponent(var19), 274)) {
+               for (class_7107 var26 : this.field_943.textRenderer.method_45391(new StringTextComponent(var19), 274)) {
                   if (var23) {
                      this.field_15532.add(this.field_15535.size());
                   }

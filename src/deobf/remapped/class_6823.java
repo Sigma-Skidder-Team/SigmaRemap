@@ -71,7 +71,7 @@ public class class_6823 extends class_7067<class_7451> {
                class_2134 var18 = class_8835.method_40647(var19, var1.field_41768);
                var4.method_36065(0.0, 0.0, -1.0);
                if (var18 != null) {
-                  this.field_35169.field_9590.method_35928().method_38860(var4, var5, var18, true, var6);
+                  this.field_35169.gameRenderer.method_35928().method_38860(var4, var5, var18, true, var6);
                }
             }
          }

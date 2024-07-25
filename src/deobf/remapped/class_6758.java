@@ -35,7 +35,7 @@ public class class_6758 extends class_1094 {
       this.field_34873 = new class_8949(new TranslationTextComponent("mco.reset.world.generate"), this.field_941 / 2, 17, 16777215);
       this.<class_8949>method_1159(this.field_34873);
       this.field_34875 = new class_1863(
-         this.field_943.field_9668, this.field_941 / 2 - 100, method_4819(2), 200, 20, (class_1863)null, new TranslationTextComponent("mco.reset.world.seed")
+         this.field_943.textRenderer, this.field_941 / 2 - 100, method_4819(2), 200, 20, (class_1863)null, new TranslationTextComponent("mco.reset.world.seed")
       );
       this.field_34875.method_8255(32);
       this.<class_1863>method_1159(this.field_34875);

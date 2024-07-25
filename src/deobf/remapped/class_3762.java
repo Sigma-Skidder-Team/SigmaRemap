@@ -31,7 +31,7 @@ public class class_3762 implements class_5255 {
       this.field_18381.add(var1);
    }
 
-   public class_3762(class_9854 var1, class_2565 var2, float var3, float var4, int var5, boolean var6, class_8107 var7, boolean var8, int var9) {
+   public class_3762(TextRenderer var1, class_2565 var2, float var3, float var4, int var5, boolean var6, class_8107 var7, boolean var8, int var9) {
       this.field_18391 = var1;
       this.field_18384 = var2;
       this.field_18389 = var3;
@@ -72,7 +72,7 @@ public class class_3762 implements class_5255 {
          float var18 = !var9 ? 0.0F : var7.method_25218();
          float var16 = !this.field_18395 ? 0.0F : var7.method_25217();
          class_7907 var17 = this.field_18384.method_11645(var8.method_31740(this.field_18394));
-         class_9854.method_45388(
+         TextRenderer.method_45388(
             this.field_18391,
             var8,
             var9,
@@ -140,7 +140,7 @@ public class class_3762 implements class_5255 {
       }
 
       if (this.field_18381 != null) {
-         class_6938 var9 = class_9854.method_45406(this.field_18391, Style.DEFAULT_FONT).method_31975();
+         class_6938 var9 = TextRenderer.method_45406(this.field_18391, Style.DEFAULT_FONT).method_31975();
          class_7907 var10 = this.field_18384.method_11645(var9.method_31740(this.field_18394));
 
          for (class_4598 var12 : this.field_18381) {
@@ -154,7 +154,7 @@ public class class_3762 implements class_5255 {
    private class_6988 method_17429(Style var1) {
       if (var1 != this.field_18380) {
          this.field_18380 = var1;
-         this.field_18385 = class_9854.method_45406(this.field_18391, var1.getFontId());
+         this.field_18385 = TextRenderer.method_45406(this.field_18391, var1.getFontId());
          return this.field_18385;
       } else {
          return this.field_18385;

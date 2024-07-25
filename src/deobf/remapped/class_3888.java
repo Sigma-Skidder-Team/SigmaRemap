@@ -33,7 +33,7 @@ public class class_3888 extends class_2089 {
       }
    );
    private final MinecraftClient field_18930;
-   private final class_9854 field_18918;
+   private final TextRenderer field_18918;
    private class_7474 field_18928;
    private class_7474 field_18929;
    private class_2034 field_18921;
@@ -47,7 +47,7 @@ public class class_3888 extends class_2089 {
 
    public class_3888(MinecraftClient var1) {
       this.field_18930 = var1;
-      this.field_18918 = var1.field_9668;
+      this.field_18918 = var1.textRenderer;
    }
 
    public void method_17995() {
@@ -429,7 +429,7 @@ public class class_3888 extends class_2089 {
             }
          }
 
-         class_4067 var32 = this.field_18930.field_9590.method_35930();
+         class_4067 var32 = this.field_18930.gameRenderer.method_35930();
          if (var32 != null) {
             var16.add("Shader: " + var32.method_18752());
          }

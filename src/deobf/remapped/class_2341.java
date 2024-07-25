@@ -44,12 +44,12 @@ public class class_2341 extends class_1094 {
       );
       this.field_11683.field_36675 = false;
       this.field_11684 = new class_1863(
-         this.field_943.field_9668, this.field_941 / 2 - 100, 65, 200, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.name")
+         this.field_943.textRenderer, this.field_941 / 2 - 100, 65, 200, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.name")
       );
       this.<class_1863>method_1159(this.field_11684);
       this.method_41178(this.field_11684);
       this.field_11678 = new class_1863(
-         this.field_943.field_9668, this.field_941 / 2 - 100, 115, 200, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.description")
+         this.field_943.textRenderer, this.field_941 / 2 - 100, 115, 200, 20, (class_1863)null, new TranslationTextComponent("mco.configure.world.description")
       );
       this.<class_1863>method_1159(this.field_11678);
       this.field_11680 = new class_8949(new TranslationTextComponent("mco.selectServer.create"), this.field_941 / 2, 11, 16777215);

@@ -97,20 +97,20 @@ public abstract class class_2089 {
       var1.method_35762(var0, (float)var4, (float)var5, (float)var6).method_35742(var16, var17, var18, var15).method_35735();
    }
 
-   public static void method_9787(class_7966 var0, class_9854 var1, String var2, int var3, int var4, int var5) {
+   public static void method_9787(class_7966 var0, TextRenderer var1, String var2, int var3, int var4, int var5) {
       var1.method_45390(var0, var2, (float)(var3 - var1.method_45395(var2) / 2), (float)var4, var5);
    }
 
-   public static void method_9788(class_7966 var0, class_9854 var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void method_9788(class_7966 var0, TextRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
       class_7107 var8 = var2.func_241878_f();
       var1.method_45402(var0, var8, (float)(var3 - var1.method_45400(var8) / 2), (float)var4, var5);
    }
 
-   public static void method_9770(class_7966 var0, class_9854 var1, String var2, int var3, int var4, int var5) {
+   public static void method_9770(class_7966 var0, TextRenderer var1, String var2, int var3, int var4, int var5) {
       var1.method_45390(var0, var2, (float)var3, (float)var4, var5);
    }
 
-   public static void method_9771(class_7966 var0, class_9854 var1, ITextComponent var2, int var3, int var4, int var5) {
+   public static void method_9771(class_7966 var0, TextRenderer var1, ITextComponent var2, int var3, int var4, int var5) {
       var1.method_45392(var0, var2, (float)var3, (float)var4, var5);
    }
 

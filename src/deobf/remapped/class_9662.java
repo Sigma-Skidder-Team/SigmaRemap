@@ -48,9 +48,9 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       }
 
       ITextComponent var15 = this.field_49209.method_2205();
-      this.field_49207.field_9668.method_45385(var1, var13, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
-      this.field_49207.field_9668.method_45385(var1, var14, (float)(var4 + 32 + 3), (float)(var3 + 9 + 3), 8421504);
-      this.field_49207.field_9668.method_45378(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
+      this.field_49207.textRenderer.method_45385(var1, var13, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
+      this.field_49207.textRenderer.method_45385(var1, var14, (float)(var4 + 32 + 3), (float)(var3 + 9 + 3), 8421504);
+      this.field_49207.textRenderer.method_45378(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       this.field_49207.method_8577().method_35674(this.field_49210 == null ? class_8224.method_37657() : this.field_49211);
       class_3542.method_16488();
@@ -85,7 +85,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
          } else {
             class_2089.method_9778(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
             if (var17) {
-               this.field_49213.method_35708(this.field_49207.field_9668.method_45391(class_8224.method_37653(), 175));
+               this.field_49213.method_35708(this.field_49207.textRenderer.method_45391(class_8224.method_37653(), 175));
             }
          }
       }

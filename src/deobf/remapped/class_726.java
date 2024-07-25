@@ -82,7 +82,7 @@ public class class_726 {
       return field_3945;
    }
 
-   public ITextProperties method_3295(class_9854 var1, int var2) {
+   public ITextProperties method_3295(TextRenderer var1, int var2) {
       StringBuilder var5 = new StringBuilder();
       int var6 = this.field_3947.nextInt(2) + 3;
 

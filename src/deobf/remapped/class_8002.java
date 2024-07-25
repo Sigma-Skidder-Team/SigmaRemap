@@ -57,7 +57,7 @@ public class class_8002 extends class_2089 implements class_1463, class_5888, cl
       this.field_41006.field_9632.field_3853.method_32409(this.field_40995);
       this.field_41004.method_18269(this.field_40995);
       String var6 = this.field_41002 == null ? "" : this.field_41002.method_8246();
-      this.field_41002 = new class_1863(this.field_41006.field_9668, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
+      this.field_41002 = new class_1863(this.field_41006.textRenderer, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
       this.field_41002.method_8255(50);
       this.field_41002.method_8258(false);
       this.field_41002.method_8270(true);
@@ -151,7 +151,7 @@ public class class_8002 extends class_2089 implements class_1463, class_5888, cl
       String var6 = this.field_41002.method_8246();
       if (!var6.isEmpty()) {
          ObjectLinkedOpenHashSet var7 = new ObjectLinkedOpenHashSet(
-            this.field_41006.<class_7735>method_8532(class_796.field_4278).method_14476(var6.toLowerCase(Locale.ROOT))
+            this.field_41006.<class_7735>method_8532(SearchManager.field_4278).method_14476(var6.toLowerCase(Locale.ROOT))
          );
          var5.removeIf(var1x -> !var7.contains(var1x));
       }
@@ -210,7 +210,7 @@ public class class_8002 extends class_2089 implements class_1463, class_5888, cl
          int var8 = (this.field_41009 - 166) / 2;
          this.method_9781(var1, var7, var8, 1, 1, 147, 166);
          if (!this.field_41002.method_32691() && this.field_41002.method_8246().isEmpty()) {
-            method_9771(var1, this.field_41006.field_9668, field_41003, var7 + 25, var8 + 14, -1);
+            method_9771(var1, this.field_41006.textRenderer, field_41003, var7 + 25, var8 + 14, -1);
          } else {
             this.field_41002.method_6767(var1, var2, var3, var4);
          }

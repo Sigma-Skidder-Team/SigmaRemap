@@ -87,7 +87,7 @@ public abstract class class_7114 extends class_2089 implements class_1463, class
 
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       MinecraftClient var7 = MinecraftClient.getInstance();
-      class_9854 var8 = var7.field_9668;
+      TextRenderer var8 = var7.textRenderer;
       var7.method_8577().method_35674(field_36678);
       class_3542.method_16480(1.0F, 1.0F, 1.0F, this.field_36680);
       int var9 = this.method_32684(this.method_32703());

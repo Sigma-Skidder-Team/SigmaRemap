@@ -169,7 +169,7 @@ public class class_1789 extends class_4232 {
                   }
 
                   class_6588.method_30259();
-                  this.field_943.method_8488();
+                  this.field_943.reloadResourcesConcurrently();
                   break;
                case field_21419:
                   class_6588.field_33634 = !class_6588.field_33634;
@@ -178,7 +178,7 @@ public class class_1789 extends class_4232 {
                   }
 
                   class_6588.method_30259();
-                  this.field_943.method_8488();
+                  this.field_943.reloadResourcesConcurrently();
                   break;
                case field_21420:
                   class_6588.field_33825 = this.method_7975(class_6588.field_33825, field_9144, field_9147, !var2, method_1190());
@@ -210,7 +210,7 @@ public class class_1789 extends class_4232 {
 
                   class_6588.method_30268();
                   class_6588.method_30259();
-                  this.field_943.method_8488();
+                  this.field_943.reloadResourcesConcurrently();
                   break;
                case field_21425:
                   class_6588.field_33794 = !class_6588.field_33794;

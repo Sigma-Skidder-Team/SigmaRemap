@@ -12,7 +12,7 @@ public class class_5629 extends class_1942 {
    public class_5629(class_4892 var1, ITextComponent var2) {
       this.field_28563 = var1;
       this.field_28564 = var2;
-      this.field_28562 = var1.field_40883.field_9668.method_45379(this.field_28564);
+      this.field_28562 = var1.field_40883.textRenderer.method_45379(this.field_28564);
    }
 
    @Override

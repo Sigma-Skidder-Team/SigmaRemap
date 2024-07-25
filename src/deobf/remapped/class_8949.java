@@ -17,7 +17,7 @@ public class class_8949 implements class_5888 {
    }
 
    public void method_41093(class_266 var1, class_7966 var2) {
-      class_266.method_9788(var2, MinecraftClient.getInstance().field_9668, this.field_45872, this.field_45874, this.field_45873, this.field_45871);
+      class_266.method_9788(var2, MinecraftClient.getInstance().textRenderer, this.field_45872, this.field_45874, this.field_45873, this.field_45871);
    }
 
    public String method_41091() {

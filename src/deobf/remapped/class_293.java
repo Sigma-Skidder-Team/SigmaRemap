@@ -51,7 +51,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1318(class_7941 var0, class_7966 var1, class_9071 var2, float var3) {
+   public static void method_1318(GameRenderer var0, class_7966 var1, class_9071 var2, float var3) {
       if (!class_6588.field_33945) {
          boolean var6 = class_6588.method_30123();
          boolean var7 = class_6588.method_30246();
@@ -68,7 +68,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1310(class_7941 var0, class_7966 var1, class_9071 var2, float var3) {
+   public static void method_1310(GameRenderer var0, class_7966 var1, class_9071 var2, float var3) {
       if (!class_6588.field_33945 && !class_6588.method_30321()) {
          class_6588.method_30141();
          class_1920.method_8829();
@@ -101,7 +101,7 @@ public class class_293 {
       var0.method_42243(var1, var2, var3, var4, var5);
    }
 
-   public static void method_1314(class_7941 var0, class_7966 var1, class_9071 var2, float var3) {
+   public static void method_1314(GameRenderer var0, class_7966 var1, class_9071 var2, float var3) {
       if (!class_6588.field_33945) {
          class_6588.method_30239();
          var0.method_35924(var1, var2, var3, false, true, false);
@@ -126,7 +126,7 @@ public class class_293 {
       }
    }
 
-   public static void method_1322(class_7941 var0, class_9071 var1, int var2, float var3, long var4) {
+   public static void method_1322(GameRenderer var0, class_9071 var1, int var2, float var3, long var4) {
       if (class_6588.field_33846 > 0 && --class_6588.field_33861 <= 0) {
          MinecraftClient var8 = MinecraftClient.getInstance();
          var8.method_8562().method_16050("shadow pass");

@@ -24,7 +24,7 @@ public class class_4892 extends class_4855<class_1942> {
          }
 
          TranslationTextComponent var12 = new TranslationTextComponent(var10.method_27055());
-         int var13 = var2.field_9668.method_45379(var12);
+         int var13 = var2.textRenderer.method_45379(var12);
          if (var13 > this.field_24310) {
             this.field_24310 = var13;
          }

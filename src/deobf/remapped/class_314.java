@@ -668,7 +668,7 @@ public class class_314 {
       return var3;
    }
 
-   public static class_1210 method_1439(String var0, String var1) {
+   public static Session method_1439(String var0, String var1) {
       YggdrasilAuthenticationService var4 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, "");
       YggdrasilUserAuthentication var5 = (YggdrasilUserAuthentication)var4.createUserAuthentication(Agent.MINECRAFT);
       var5.setUsername(var0);
@@ -676,7 +676,7 @@ public class class_314 {
 
       try {
          var5.logIn();
-         return new class_1210(var5.getSelectedProfile().getName(), var5.getSelectedProfile().getId().toString(), var5.getAuthenticatedToken(), "mojang");
+         return new Session(var5.getSelectedProfile().getName(), var5.getSelectedProfile().getId().toString(), var5.getAuthenticatedToken(), "mojang");
       } catch (AuthenticationException var7) {
          var7.printStackTrace();
          return null;
@@ -788,11 +788,11 @@ public class class_314 {
 
    public static void method_1403() {
       if (field_1158.method_8516() instanceof class_704 && SigmaMainClass.method_3328().method_3299().method_31000()) {
-         if (field_1158.field_9590.field_40620 != null) {
-            field_1158.field_9590.field_40620.close();
+         if (field_1158.gameRenderer.field_40620 != null) {
+            field_1158.gameRenderer.field_40620.close();
          }
 
-         field_1158.field_9590.method_35934(field_1160);
+         field_1158.gameRenderer.method_35934(field_1160);
       }
 
       method_1400(20);
@@ -803,17 +803,17 @@ public class class_314 {
    }
 
    public static void method_1400(int var0) {
-      if (field_1158.field_9590.field_40620 != null) {
-         field_1158.field_9590.field_40620.field_19813.get(0).method_33272().method_19853("Radius").method_32385((float)var0);
-         field_1158.field_9590.field_40620.field_19813.get(1).method_33272().method_19853("Radius").method_32385((float)var0);
+      if (field_1158.gameRenderer.field_40620 != null) {
+         field_1158.gameRenderer.field_40620.field_19813.get(0).method_33272().method_19853("Radius").method_32385((float)var0);
+         field_1158.gameRenderer.field_40620.field_19813.get(1).method_33272().method_19853("Radius").method_32385((float)var0);
       }
    }
 
    public static void method_1430() {
-      if (field_1158.field_9590.field_40626 == class_7941.field_40631) {
-         field_1158.field_9590.field_40620 = null;
+      if (field_1158.gameRenderer.field_40626 == GameRenderer.field_40631) {
+         field_1158.gameRenderer.field_40620 = null;
       } else {
-         field_1158.field_9590.method_35934(class_7941.field_40635[field_1158.field_9590.field_40626]);
+         field_1158.gameRenderer.method_35934(GameRenderer.field_40635[field_1158.gameRenderer.field_40626]);
       }
    }
 

@@ -121,10 +121,10 @@ public class class_7696 extends class_266 {
       if (this.field_39074 == null) {
          return null;
       } else {
-         int var4 = this.field_943.field_9668.method_45379(this.field_39074);
+         int var4 = this.field_943.textRenderer.method_45379(this.field_39074);
          int var5 = this.field_941 / 2 - var4 / 2;
          int var6 = this.field_941 / 2 + var4 / 2;
-         return var1 >= var5 && var1 <= var6 ? this.field_943.field_9668.method_45381().func_238357_a_(this.field_39074, var1 - var5) : null;
+         return var1 >= var5 && var1 <= var6 ? this.field_943.textRenderer.method_45381().func_238357_a_(this.field_39074, var1 - var5) : null;
       }
    }
 

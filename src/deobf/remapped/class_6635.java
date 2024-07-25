@@ -26,19 +26,19 @@ public class class_6635 extends class_4785<class_6635> {
    }
 
    private static class_7107 method_30497(MinecraftClient var0, ITextComponent var1) {
-      int var4 = var0.field_9668.method_45379(var1);
+      int var4 = var0.textRenderer.method_45379(var1);
       if (var4 <= 157) {
          return var1.func_241878_f();
       } else {
          ITextProperties var5 = ITextProperties.func_240655_a_(
-            var0.field_9668.method_45399(var1, 157 - var0.field_9668.method_45395("...")), ITextProperties.func_240652_a_("...")
+            var0.textRenderer.method_45399(var1, 157 - var0.textRenderer.method_45395("...")), ITextProperties.func_240652_a_("...")
          );
          return LanguageMap.getInstance().func_241870_a(var5);
       }
    }
 
    private static class_416 method_30499(MinecraftClient var0, ITextComponent var1) {
-      return class_416.method_2069(var0.field_9668, var1, 157, 2);
+      return class_416.method_2069(var0.textRenderer, var1, 157, 2);
    }
 
    @Override
@@ -96,7 +96,7 @@ public class class_6635 extends class_4785<class_6635> {
          }
       }
 
-      this.field_34349.field_9668.method_45402(var1, var14, (float)(var4 + 32 + 2), (float)(var3 + 1), 16777215);
+      this.field_34349.textRenderer.method_45402(var1, var14, (float)(var4 + 32 + 2), (float)(var3 + 1), 16777215);
       var15.method_2074(var1, var4 + 32 + 2, var3 + 12, 10, 8421504);
    }
 

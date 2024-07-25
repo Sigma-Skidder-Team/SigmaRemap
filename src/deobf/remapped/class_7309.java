@@ -37,11 +37,11 @@ public class class_7309 {
    private Thread field_37372;
    private static Date field_37380 = new Date();
 
-   public static class_1210 method_33347(String var0, String var1) throws AuthenticationException {
+   public static Session method_33347(String var0, String var1) throws AuthenticationException {
       return method_33348(new class_7309(var0, var1));
    }
 
-   public static class_1210 method_33348(class_7309 var0) throws AuthenticationException {
+   public static Session method_33348(class_7309 var0) throws AuthenticationException {
       if (!var0.method_33338()) {
          String var3 = "-";
          YggdrasilAuthenticationService var4 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, var3);
@@ -50,11 +50,11 @@ public class class_7309 {
          var5.setPassword(var0.method_33341());
          var5.logIn();
          var0.method_33320();
-         return new class_1210(
+         return new Session(
             var5.getSelectedProfile().getName(), var5.getSelectedProfile().getId().toString(), var5.getAuthenticatedToken(), var0.method_33343().name()
          );
       } else {
-         return new class_1210(var0.method_33344(), "", "", "mojang");
+         return new Session(var0.method_33344(), "", "", "mojang");
       }
    }
 
@@ -249,7 +249,7 @@ public class class_7309 {
       return !this.field_37381.contains("@") ? class_9075.field_46454 : class_9075.field_46455;
    }
 
-   public class_1210 method_33346() throws AuthenticationException {
+   public Session method_33346() throws AuthenticationException {
       if (!this.method_33338()) {
          String var3 = "-";
          YggdrasilAuthenticationService var4 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, var3);
@@ -261,7 +261,7 @@ public class class_7309 {
          this.method_33330(var5.getSelectedProfile().getId().toString());
          this.method_33334();
          this.field_37378 = System.currentTimeMillis();
-         return new class_1210(
+         return new Session(
             var5.getSelectedProfile().getName(),
             var5.getSelectedProfile().getId().toString().replaceAll("-", ""),
             var5.getAuthenticatedToken(),
@@ -269,7 +269,7 @@ public class class_7309 {
          );
       } else {
          this.method_33337(this.method_33344());
-         return new class_1210(this.method_33344(), "", "", "mojang");
+         return new Session(this.method_33344(), "", "", "mojang");
       }
    }
 

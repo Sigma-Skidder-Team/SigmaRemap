@@ -82,9 +82,9 @@ public class class_7072 extends class_9128 {
       GL11.glDepthMask(false);
       GL11.glPushMatrix();
       GL11.glTranslated(
-         var0 - field_46692.field_9590.method_35949().method_41627().method_61(),
-         var2 - field_46692.field_9590.method_35949().method_41627().method_60(),
-         var4 - field_46692.field_9590.method_35949().method_41627().method_62()
+         var0 - field_46692.gameRenderer.method_35949().method_41627().method_61(),
+         var2 - field_46692.gameRenderer.method_35949().method_41627().method_60(),
+         var4 - field_46692.gameRenderer.method_35949().method_41627().method_62()
       );
       GL11.glRotated((double)(var6.field_41697 % 180 * 2), 0.0, -1.0, 0.0);
       float var9 = (float)(var6.field_41697 % 100 - 50);

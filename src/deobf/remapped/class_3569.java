@@ -8,7 +8,7 @@ public class class_3569 {
    public final Map<class_133<?>, class_2255<?>> field_17471 = Maps.newHashMap();
    public static final class_3569 field_17468 = new class_3569();
    private final class_9633 field_17465 = new class_9633(256);
-   private class_9854 field_17464;
+   private TextRenderer field_17464;
    public class_7889 field_17470;
    public class_6486 field_17466;
    public class_9071 field_17463;
@@ -46,7 +46,7 @@ public class class_3569 {
       return (class_2255<E>)this.field_17471.get(var1.method_17405());
    }
 
-   public void method_16590(class_6486 var1, class_7889 var2, class_9854 var3, class_9071 var4, class_7474 var5) {
+   public void method_16590(class_6486 var1, class_7889 var2, TextRenderer var3, class_9071 var4, class_7474 var5) {
       if (this.field_17466 != var1) {
          this.method_16588(var1);
       }
@@ -137,7 +137,7 @@ public class class_3569 {
       }
    }
 
-   public class_9854 method_16591() {
+   public TextRenderer method_16591() {
       return this.field_17464;
    }
 

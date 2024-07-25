@@ -27,8 +27,8 @@ public class class_950 implements AutoCloseable {
       this.field_4896 = var1;
    }
 
-   public class_9854 method_4190() {
-      return new class_9854(var1 -> this.field_4892.getOrDefault(this.field_4896.getOrDefault(var1, var1), this.field_4895));
+   public TextRenderer method_4190() {
+      return new TextRenderer(var1 -> this.field_4892.getOrDefault(this.field_4896.getOrDefault(var1, var1), this.field_4895));
    }
 
    public class_2231 method_4189() {

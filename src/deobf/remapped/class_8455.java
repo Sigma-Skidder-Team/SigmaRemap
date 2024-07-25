@@ -380,8 +380,8 @@ public class class_8455 {
          if (this.field_43225.field_9623 == null || this.field_43225.field_9623.field_951) {
             class_3654 var16 = class_9732.method_44940(var3, var4);
             if (var5 != 0) {
-               if (var3 == 293 && this.field_43225.field_9590 != null) {
-                  this.field_43225.field_9590.method_35948();
+               if (var3 == 293 && this.field_43225.gameRenderer != null) {
+                  this.field_43225.gameRenderer.method_35948();
                }
 
                boolean var12 = false;

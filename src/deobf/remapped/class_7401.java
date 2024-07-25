@@ -136,18 +136,18 @@ public class class_7401 extends class_9128 {
 
             for (class_4714 var7 : var5) {
                GL11.glVertex3d(
-                  var7.method_21803() - field_46692.field_9590.method_35949().method_41627().method_61(),
-                  var7.method_21801() - field_46692.field_9590.method_35949().method_41627().method_60(),
-                  var7.method_21799() - field_46692.field_9590.method_35949().method_41627().method_62()
+                  var7.method_21803() - field_46692.gameRenderer.method_35949().method_41627().method_61(),
+                  var7.method_21801() - field_46692.gameRenderer.method_35949().method_41627().method_60(),
+                  var7.method_21799() - field_46692.gameRenderer.method_35949().method_41627().method_62()
                );
             }
 
             GL11.glEnd();
             GL11.glPushMatrix();
             GL11.glTranslated(
-               field_46692.field_9590.method_35949().method_41627().method_61(),
-               field_46692.field_9590.method_35949().method_41627().method_60(),
-               field_46692.field_9590.method_35949().method_41627().method_62()
+               field_46692.gameRenderer.method_35949().method_41627().method_61(),
+               field_46692.gameRenderer.method_35949().method_41627().method_60(),
+               field_46692.gameRenderer.method_35949().method_41627().method_62()
             );
             GL11.glPopMatrix();
             GL11.glDisable(3042);

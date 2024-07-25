@@ -76,8 +76,8 @@ public class class_8368 extends class_2089 implements class_3796 {
          if (var9 > 3 && var6.method_35793()) {
             ITextComponent var11 = this.field_42841.field_9577.field_45393[var2].method_27061();
             this.field_42841
-               .field_9668
-               .method_45392(var1, var11, (float)(var3 + 19 - 2 - this.field_42841.field_9668.method_45379(var11)), var4 + 6.0F + 3.0F, 16777215 + (var9 << 24));
+               .textRenderer
+               .method_45392(var1, var11, (float)(var3 + 19 - 2 - this.field_42841.textRenderer.method_45379(var11)), var4 + 6.0F + 3.0F, 16777215 + (var9 << 24));
          }
       }
    }
@@ -88,12 +88,12 @@ public class class_8368 extends class_2089 implements class_3796 {
          class_7912 var5 = this.field_42844.method_15810();
          ITextComponent var6 = var5 != class_3421.field_16839 ? var5.method_35794() : this.field_42844.method_15805().method_20602();
          if (var6 != null) {
-            int var7 = (this.field_42841.method_8552().method_43165() - this.field_42841.field_9668.method_45379(var6)) / 2;
+            int var7 = (this.field_42841.method_8552().method_43165() - this.field_42841.textRenderer.method_45379(var6)) / 2;
             int var8 = this.field_42841.method_8552().method_43177() - 35;
             class_3542.method_16438();
             class_3542.method_16488();
             class_3542.method_16437();
-            this.field_42841.field_9668.method_45392(var1, var6, (float)var7, (float)var8, 16777215 + (var4 << 24));
+            this.field_42841.textRenderer.method_45392(var1, var6, (float)var7, (float)var8, 16777215 + (var4 << 24));
             class_3542.method_16448();
             class_3542.method_16489();
          }

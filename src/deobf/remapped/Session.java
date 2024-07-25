@@ -4,13 +4,13 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.util.UUIDTypeAdapter;
 import java.util.UUID;
 
-public class class_1210 {
+public class Session {
    public String field_6749;
    public String field_6748;
    public String field_6746;
    private final class_9075 field_6750;
 
-   public class_1210(String var1, String var2, String var3, String var4) {
+   public Session(String var1, String var2, String var3, String var4) {
       this.field_6749 = var1;
       this.field_6748 = var2;
       this.field_6746 = var3;

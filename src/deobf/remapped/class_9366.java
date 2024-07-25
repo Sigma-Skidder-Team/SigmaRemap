@@ -177,9 +177,9 @@ public class class_9366 extends class_9128 {
 
       for (class_2953 var5 : this.field_47903) {
          for (class_1331 var7 : var5.field_14428) {
-            double var8 = (double)var7.method_12173() - field_46692.field_9590.method_35949().method_41627().method_61();
-            double var10 = (double)var7.method_12165() - field_46692.field_9590.method_35949().method_41627().method_60();
-            double var12 = (double)var7.method_12185() - field_46692.field_9590.method_35949().method_41627().method_62();
+            double var8 = (double)var7.method_12173() - field_46692.gameRenderer.method_35949().method_41627().method_61();
+            double var10 = (double)var7.method_12165() - field_46692.gameRenderer.method_35949().method_41627().method_60();
+            double var12 = (double)var7.method_12185() - field_46692.gameRenderer.method_35949().method_41627().method_62();
             class_8194 var14 = new class_8194(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
             class_73.method_83(var14, var3);
          }

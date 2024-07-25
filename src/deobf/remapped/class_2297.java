@@ -27,10 +27,10 @@ public class class_2297 implements class_6406 {
       var2.method_9781(var1, 0, 0, 0, 96, this.method_29239(), this.method_29238());
       this.field_11472.method_35534(var1, var2, 6, 6);
       if (this.field_11471 != null) {
-         var2.method_42327().field_9668.method_45378(var1, this.field_11474, 30.0F, 7.0F, -11534256);
-         var2.method_42327().field_9668.method_45378(var1, this.field_11471, 30.0F, 18.0F, -16777216);
+         var2.method_42327().textRenderer.method_45378(var1, this.field_11474, 30.0F, 7.0F, -11534256);
+         var2.method_42327().textRenderer.method_45378(var1, this.field_11471, 30.0F, 18.0F, -16777216);
       } else {
-         var2.method_42327().field_9668.method_45378(var1, this.field_11474, 30.0F, 12.0F, -11534256);
+         var2.method_42327().textRenderer.method_45378(var1, this.field_11474, 30.0F, 12.0F, -11534256);
       }
 
       if (this.field_11476) {

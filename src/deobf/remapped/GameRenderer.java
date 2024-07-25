@@ -14,7 +14,7 @@ import net.minecraft.util.text.event.ClickEvent$class_47;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_7941 implements class_6491, AutoCloseable {
+public class GameRenderer implements class_6491, AutoCloseable {
    private static final class_4639 field_40614 = new class_4639("textures/misc/nausea.png");
    private static final Logger field_40642 = LogManager.getLogger();
    private final MinecraftClient field_40612;
@@ -86,7 +86,7 @@ public class class_7941 implements class_6491, AutoCloseable {
    private class_4067[] field_40609 = new class_4067[10];
    private boolean field_40616 = false;
 
-   public class_7941(MinecraftClient var1, class_7832 var2, class_3017 var3) {
+   public GameRenderer(MinecraftClient var1, class_7832 var2, class_3017 var3) {
       this.field_40612 = var1;
       this.field_40604 = var2;
       this.field_40622 = var1.method_8574();

@@ -319,9 +319,9 @@ public class class_2534 extends class_9128 {
          var1.field_41724 + (var1.method_37156() - var1.field_41724) * var4
       );
       GL11.glTranslated(
-         -field_46692.field_9590.method_35949().method_41627().method_61(),
-         -field_46692.field_9590.method_35949().method_41627().method_60(),
-         -field_46692.field_9590.method_35949().method_41627().method_62()
+         -field_46692.gameRenderer.method_35949().method_41627().method_61(),
+         -field_46692.gameRenderer.method_35949().method_41627().method_60(),
+         -field_46692.gameRenderer.method_35949().method_41627().method_62()
       );
       GL11.glEnable(32823);
       GL11.glEnable(3008);
@@ -336,9 +336,9 @@ public class class_2534 extends class_9128 {
       this.method_11554(var8, 0.45F * var9, 0.6F, 0.35F * var9, this.field_12568.get(var1).method_11123());
       GL11.glPushMatrix();
       GL11.glTranslated(
-         field_46692.field_9590.method_35949().method_41627().method_61(),
-         field_46692.field_9590.method_35949().method_41627().method_60(),
-         field_46692.field_9590.method_35949().method_41627().method_62()
+         field_46692.gameRenderer.method_35949().method_41627().method_61(),
+         field_46692.gameRenderer.method_35949().method_41627().method_60(),
+         field_46692.gameRenderer.method_35949().method_41627().method_62()
       );
       GL11.glPopMatrix();
       GL11.glEnable(3553);

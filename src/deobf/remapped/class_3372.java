@@ -99,7 +99,7 @@ public class class_3372 {
    }
 
    public static void method_15561(class_1331 var0, class_1331 var1, float var2, float var3, float var4, float var5) {
-      class_9071 var8 = MinecraftClient.getInstance().field_9590.method_35949();
+      class_9071 var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
          class_4092 var10 = new class_4092(var0, var1).method_18920(var9);
@@ -108,7 +108,7 @@ public class class_3372 {
    }
 
    public static void method_15560(class_1331 var0, float var1, float var2, float var3, float var4, float var5) {
-      class_9071 var8 = MinecraftClient.getInstance().field_9590.method_35949();
+      class_9071 var8 = MinecraftClient.getInstance().gameRenderer.method_35949();
       if (var8.method_41642()) {
          class_1343 var9 = var8.method_41627().method_6207();
          class_4092 var10 = new class_4092(var0).method_18920(var9).method_18898((double)var1);
@@ -144,9 +144,9 @@ public class class_3372 {
 
    public static void method_15555(String var0, double var1, double var3, double var5, int var7, float var8, boolean var9, float var10, boolean var11) {
       MinecraftClient var14 = MinecraftClient.getInstance();
-      class_9071 var15 = var14.field_9590.method_35949();
+      class_9071 var15 = var14.gameRenderer.method_35949();
       if (var15.method_41642() && var14.method_8587().field_31304 != null) {
-         class_9854 var16 = var14.field_9668;
+         TextRenderer var16 = var14.textRenderer;
          double var17 = var15.method_41627().field_7336;
          double var19 = var15.method_41627().field_7333;
          double var21 = var15.method_41627().field_7334;

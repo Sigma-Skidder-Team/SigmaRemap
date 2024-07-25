@@ -19,7 +19,7 @@ import joptsimple.OptionSet;
 import joptsimple.OptionSpec;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import remapped.class_1210;
+import remapped.Session;
 import remapped.class_1274;
 import remapped.class_1505;
 import remapped.class_159;
@@ -122,7 +122,7 @@ public class Main {
       class_2557.method_11618();
       class_2557.method_11617();
       class_9665.method_44679();
-      class_1210 var54 = new class_1210((String)var14.value(var28), var50, (String)var16.value(var28), (String)var25.value(var28));
+      Session var54 = new Session((String)var14.value(var28), var50, (String)var16.value(var28), (String)var25.value(var28));
       RunArgs var55 = new RunArgs(
          new class_3934(var54, var44, var45, var31),
          new class_9706(var34, var35, var36, var37, var38),

@@ -13,7 +13,7 @@ import net.minecraft.util.text.LanguageMap;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextProcessing;
 
-public class class_9854 {
+public class TextRenderer {
    private static String[] field_49883;
    private static final class_2426 field_49884 = new class_2426(0.0F, 0.0F, 0.03F);
    public final int field_49880 = 9;
@@ -24,7 +24,7 @@ public class class_9854 {
    private class_3525 field_49885 = new class_3525();
    private class_5543 field_49882 = new class_1095(4.0F);
 
-   public class_9854(Function<class_4639, class_6988> var1) {
+   public TextRenderer(Function<class_4639, class_6988> var1) {
       this.field_49886 = var1;
       this.field_49881 = new CharacterManager((var1x, var2) -> this.method_45393(var2.getFontId()).method_31974(var1x).method_25221(var2.getBold()));
    }

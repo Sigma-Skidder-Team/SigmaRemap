@@ -197,9 +197,9 @@ public class class_9468 extends class_9128 {
    }
 
    private void method_43745() {
-      double var3 = field_46692.field_9590.method_35949().method_41627().method_61();
-      double var5 = field_46692.field_9590.method_35949().method_41627().method_60();
-      double var7 = field_46692.field_9590.method_35949().method_41627().method_62();
+      double var3 = field_46692.gameRenderer.method_35949().method_41627().method_61();
+      double var5 = field_46692.gameRenderer.method_35949().method_41627().method_60();
+      double var7 = field_46692.gameRenderer.method_35949().method_41627().method_62();
       field_48289.clear();
       field_48288.clear();
       float var9 = field_46692.field_9616.field_32600;

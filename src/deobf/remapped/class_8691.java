@@ -68,8 +68,8 @@ public class class_8691 {
    public boolean method_39906(class_7309 var1) {
       try {
          class_7039.field_36337 = null;
-         class_1210 var4 = MinecraftClient.getInstance().field_9603;
-         class_1210 var5 = var1.method_33346();
+         Session var4 = MinecraftClient.getInstance().session;
+         Session var5 = var1.method_33346();
          var4.field_6749 = var5.method_5366();
          var4.field_6748 = var5.method_5367();
          var4.field_6746 = var5.method_5365();

@@ -51,7 +51,7 @@ public class class_4033 extends class_9128 {
                      GL11.glTranslated(var7, var9, var11);
                      GL11.glTranslatef(0.0F, var2.method_37074(), 0.0F);
                      GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                     GL11.glRotatef(field_46692.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+                     GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
                      GL11.glScalef(-0.11F, -0.11F, -0.11F);
                      class_73.method_102(
                         -var2.method_37086() * 22.0F,
@@ -80,9 +80,9 @@ public class class_4033 extends class_9128 {
             if ((var7 || var6 || var8) && var9 && var5 != field_46692.field_9632) {
                GL11.glPushMatrix();
                GL11.glTranslated(
-                  -field_46692.field_9590.method_35949().method_41627().method_61(),
-                  -field_46692.field_9590.method_35949().method_41627().method_60(),
-                  -field_46692.field_9590.method_35949().method_41627().method_62()
+                  -field_46692.gameRenderer.method_35949().method_41627().method_61(),
+                  -field_46692.gameRenderer.method_35949().method_41627().method_60(),
+                  -field_46692.gameRenderer.method_35949().method_41627().method_62()
                );
                GL11.glDisable(2929);
                GL11.glEnable(3042);
@@ -116,7 +116,7 @@ public class class_4033 extends class_9128 {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      field_46692.field_9590.field_40623.method_26122();
+      field_46692.gameRenderer.field_40623.method_26122();
    }
 
    private void method_18560() {
@@ -129,6 +129,6 @@ public class class_4033 extends class_9128 {
       class_7889 var10000 = field_46692.method_8577();
       field_46692.method_8577();
       var10000.method_35674(class_7889.field_40364);
-      field_46692.field_9590.field_40623.method_26126();
+      field_46692.gameRenderer.field_40623.method_26126();
    }
 }

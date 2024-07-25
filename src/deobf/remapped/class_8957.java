@@ -19,7 +19,7 @@ public class class_8957 implements class_2995 {
          class_3542.method_16486(7425);
          class_3542.method_16374();
          class_3542.method_16433();
-         class_8145 var11 = this.field_45893.field_9590.method_35949().method_41633();
+         class_8145 var11 = this.field_45893.gameRenderer.method_35949().method_41633();
          class_8042 var12 = class_8042.method_36499();
          class_9633 var13 = var12.method_36501();
          double var14 = 0.0 - var5;

@@ -113,10 +113,10 @@ public class class_5099 {
          class_1920.method_8843();
          int var22 = var7 - 80;
          int var24 = var7 - 160;
-         field_26314.field_9668.method_45385(var0, "30", 2.0F, (float)(var24 + 1), -8947849);
-         field_26314.field_9668.method_45385(var0, "30", 1.0F, (float)var24, -3881788);
-         field_26314.field_9668.method_45385(var0, "60", 2.0F, (float)(var22 + 1), -8947849);
-         field_26314.field_9668.method_45385(var0, "60", 1.0F, (float)var22, -3881788);
+         field_26314.textRenderer.method_45385(var0, "30", 2.0F, (float)(var24 + 1), -8947849);
+         field_26314.textRenderer.method_45385(var0, "30", 1.0F, (float)var24, -3881788);
+         field_26314.textRenderer.method_45385(var0, "60", 2.0F, (float)(var22 + 1), -8947849);
+         field_26314.textRenderer.method_45385(var0, "60", 1.0F, (float)var22, -3881788);
          class_1920.method_8842(5889);
          class_1920.method_8761();
          class_1920.method_8842(5888);
@@ -132,7 +132,7 @@ public class class_5099 {
          int var18 = var7 / var1 - 8;
          class_3062 var19 = field_26314.field_9614;
          class_3062.method_9774(var0, var17 - 1, var18 - 1, var17 + 50, var18 + 10, -1605349296);
-         field_26314.field_9668.method_45385(var0, " " + class_5849.method_26673() + " MB/s", (float)var17, (float)var18, var16);
+         field_26314.textRenderer.method_45385(var0, " " + class_5849.method_26673() + " MB/s", (float)var17, (float)var18, var16);
          field_26309 = System.nanoTime() - var4;
       }
    }

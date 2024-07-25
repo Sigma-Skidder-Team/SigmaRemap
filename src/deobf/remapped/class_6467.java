@@ -46,7 +46,7 @@ public class class_6467 extends class_9128 {
       for (class_8145 var9 : field_46692.field_9601.method_736()) {
          if (this.method_29451(var9)) {
             GL11.glPushMatrix();
-            class_1343 var10 = field_46692.field_9590.method_35949().method_41627();
+            class_1343 var10 = field_46692.gameRenderer.method_35949().method_41627();
             double var11 = var10.method_61();
             double var13 = var10.method_60();
             double var15 = var10.method_62();
@@ -123,7 +123,7 @@ public class class_6467 extends class_9128 {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      field_46692.field_9590.field_40623.method_26122();
+      field_46692.gameRenderer.field_40623.method_26122();
    }
 
    private void method_29450() {
@@ -136,7 +136,7 @@ public class class_6467 extends class_9128 {
       class_7889 var10000 = field_46692.method_8577();
       field_46692.method_8577();
       var10000.method_35674(class_7889.field_40364);
-      field_46692.field_9590.field_40623.method_26126();
+      field_46692.gameRenderer.field_40623.method_26126();
       GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
    }
 }

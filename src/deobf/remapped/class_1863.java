@@ -10,7 +10,7 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_1863 extends class_7114 implements class_1463, class_5888 {
-   private final class_9854 field_9461;
+   private final TextRenderer field_9461;
    private String field_9449 = "";
    private int field_9459 = 32;
    private int field_9445;
@@ -28,11 +28,11 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
    private Predicate<String> field_9448 = Objects::nonNull;
    private BiFunction<String, Integer, class_7107> field_9451 = (var0, var1x) -> class_7107.method_32662(var0, Style.EMPTY);
 
-   public class_1863(class_9854 var1, int var2, int var3, int var4, int var5, ITextComponent var6) {
+   public class_1863(TextRenderer var1, int var2, int var3, int var4, int var5, ITextComponent var6) {
       this(var1, var2, var3, var4, var5, (class_1863)null, var6);
    }
 
-   public class_1863(class_9854 var1, int var2, int var3, int var4, int var5, class_1863 var6, ITextComponent var7) {
+   public class_1863(TextRenderer var1, int var2, int var3, int var4, int var5, class_1863 var6, ITextComponent var7) {
       super(var2, var3, var4, var5, var7);
       this.field_9461 = var1;
       if (var6 != null) {

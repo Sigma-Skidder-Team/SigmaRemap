@@ -31,13 +31,13 @@ public class class_4604 extends class_2089 {
       this.field_22400 = var3;
       this.field_22398 = var4;
       this.field_22406 = var2;
-      this.field_22408 = LanguageMap.getInstance().func_241870_a(var2.field_9668.method_45399(var4.method_35160(), 163));
+      this.field_22408 = LanguageMap.getInstance().func_241870_a(var2.textRenderer.method_45399(var4.method_35160(), 163));
       this.field_22402 = class_9299.method_42848(var4.method_35153() * 28.0F);
       this.field_22409 = class_9299.method_42848(var4.method_35162() * 27.0F);
       int var7 = var3.method_14513();
       int var8 = String.valueOf(var7).length();
-      int var9 = var7 <= 1 ? 0 : var2.field_9668.method_45395("  ") + var2.field_9668.method_45395("0") * var8 * 2 + var2.field_9668.method_45395("/");
-      int var10 = 29 + var2.field_9668.method_45400(this.field_22408) + var9;
+      int var9 = var7 <= 1 ? 0 : var2.textRenderer.method_45395("  ") + var2.textRenderer.method_45395("0") * var8 * 2 + var2.textRenderer.method_45395("/");
+      int var10 = 29 + var2.textRenderer.method_45400(this.field_22408) + var9;
       this.field_22397 = LanguageMap.getInstance()
          .func_244260_a(
             this.method_21346(
@@ -46,7 +46,7 @@ public class class_4604 extends class_2089 {
          );
 
       for (class_7107 var12 : this.field_22397) {
-         var10 = Math.max(var10, var2.field_9668.method_45400(var12));
+         var10 = Math.max(var10, var2.textRenderer.method_45400(var12));
       }
 
       this.field_22403 = var10 + 3 + 5;
@@ -57,7 +57,7 @@ public class class_4604 extends class_2089 {
    }
 
    private List<ITextProperties> method_21346(ITextComponent var1, int var2) {
-      CharacterManager var5 = this.field_22406.field_9668.method_45381();
+      CharacterManager var5 = this.field_22406.textRenderer.method_45381();
       List var6 = null;
       float var7 = Float.MAX_VALUE;
 
@@ -148,7 +148,7 @@ public class class_4604 extends class_2089 {
    public void method_21335(class_7966 var1, int var2, int var3, float var4, int var5, int var6) {
       boolean var9 = var5 + var2 + this.field_22402 + this.field_22403 + 26 >= this.field_22404.method_35362().field_941;
       String var10 = this.field_22399 != null ? this.field_22399.method_16806() : null;
-      int var11 = var10 != null ? this.field_22406.field_9668.method_45395(var10) : 0;
+      int var11 = var10 != null ? this.field_22406.textRenderer.method_45395(var10) : 0;
       boolean var12 = 113 - var3 - this.field_22409 - 26 <= 6 + this.field_22397.size() * 9;
       float var13 = this.field_22399 != null ? this.field_22399.method_16805() : 0.0F;
       int var14 = class_9299.method_42848(var13 * (float)this.field_22403);
@@ -207,29 +207,29 @@ public class class_4604 extends class_2089 {
          var1, var2 + this.field_22402 + 3, var3 + this.field_22409, this.field_22398.method_35157().method_15382(), 128 + var17.method_9998() * 26, 26, 26
       );
       if (!var9) {
-         this.field_22406.field_9668.method_45402(var1, this.field_22408, (float)(var2 + this.field_22402 + 32), (float)(var3 + this.field_22409 + 9), -1);
+         this.field_22406.textRenderer.method_45402(var1, this.field_22408, (float)(var2 + this.field_22402 + 32), (float)(var3 + this.field_22409 + 9), -1);
          if (var10 != null) {
             this.field_22406
-               .field_9668
+               .textRenderer
                .method_45390(var1, var10, (float)(var2 + this.field_22402 + this.field_22403 - var11 - 5), (float)(var3 + this.field_22409 + 9), -1);
          }
       } else {
-         this.field_22406.field_9668.method_45402(var1, this.field_22408, (float)(var20 + 5), (float)(var3 + this.field_22409 + 9), -1);
+         this.field_22406.textRenderer.method_45402(var1, this.field_22408, (float)(var20 + 5), (float)(var3 + this.field_22409 + 9), -1);
          if (var10 != null) {
-            this.field_22406.field_9668.method_45390(var1, var10, (float)(var2 + this.field_22402 - var11), (float)(var3 + this.field_22409 + 9), -1);
+            this.field_22406.textRenderer.method_45390(var1, var10, (float)(var2 + this.field_22402 - var11), (float)(var3 + this.field_22409 + 9), -1);
          }
       }
 
       if (!var12) {
          for (int var22 = 0; var22 < this.field_22397.size(); var22++) {
             this.field_22406
-               .field_9668
+               .textRenderer
                .method_45382(var1, this.field_22397.get(var22), (float)(var20 + 5), (float)(var3 + this.field_22409 + 9 + 17 + var22 * 9), -5592406);
          }
       } else {
          for (int var23 = 0; var23 < this.field_22397.size(); var23++) {
             this.field_22406
-               .field_9668
+               .textRenderer
                .method_45382(var1, this.field_22397.get(var23), (float)(var20 + 5), (float)(var19 + 26 - var21 + 7 + var23 * 9), -5592406);
          }
       }

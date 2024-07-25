@@ -14,12 +14,12 @@ public class class_8624 extends class_3384 {
    }
 
    private int method_39615(char var1) {
-      return this.field_44253.field_9668.method_45395(String.valueOf(var1)) * this.field_44252;
+      return this.field_44253.textRenderer.method_45395(String.valueOf(var1)) * this.field_44252;
    }
 
    @Override
    public int method_18547(String var1) {
-      return this.field_44253.field_9668.method_45395(var1) * this.field_44252;
+      return this.field_44253.textRenderer.method_45395(var1) * this.field_44252;
    }
 
    @Override
@@ -48,7 +48,7 @@ public class class_8624 extends class_3384 {
       GL11.glScalef((float)this.field_44252, (float)this.field_44252, 0.0F);
       GL11.glTranslatef(-var1 / (float)this.field_44252, -var2 / (float)this.field_44252 + 1.0F, 0.0F);
       this.field_44253
-         .field_9668
+         .textRenderer
          .method_45410(
             var3,
             var1,

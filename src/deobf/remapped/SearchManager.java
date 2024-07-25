@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.Maps;
 import java.util.Map;
 
-public class class_796 implements class_6491 {
+public class SearchManager implements class_6491 {
    private static String[] field_4276;
    public static final class_8358<class_6098> field_4279 = new class_8358<class_6098>();
    public static final class_8358<class_6098> field_4275 = new class_8358<class_6098>();

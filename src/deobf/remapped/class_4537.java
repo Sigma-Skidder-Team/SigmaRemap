@@ -33,7 +33,7 @@ public class class_4537 implements class_2995 {
          class_3542.method_16354();
          class_3542.method_16387(false);
          Map var26 = (Map)class_4812.method_22182(this.field_22140).getNow((Map)null);
-         double var14 = this.field_22142.field_9590.method_35949().method_41627().field_7333 * 0.85;
+         double var14 = this.field_22142.gameRenderer.method_35949().method_41627().field_7333 * 0.85;
 
          for (Entry var17 : class_4812.method_22183(this.field_22140).entrySet()) {
             class_2034 var18 = (class_2034)var17.getKey();

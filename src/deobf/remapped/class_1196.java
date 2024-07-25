@@ -258,9 +258,9 @@ public class class_1196 extends class_9128 {
          var7 = var2.field_7295.field_31206 + " " + var2.field_7295.method_28008();
       }
 
-      float var8 = (float)((double)var1.method_12173() - field_46692.field_9590.method_35949().method_41627().method_61() + 0.5);
-      float var9 = (float)((double)var1.method_12165() - field_46692.field_9590.method_35949().method_41627().method_60() + 1.0);
-      float var10 = (float)((double)var1.method_12185() - field_46692.field_9590.method_35949().method_41627().method_62() + 0.5);
+      float var8 = (float)((double)var1.method_12173() - field_46692.gameRenderer.method_35949().method_41627().method_61() + 0.5);
+      float var9 = (float)((double)var1.method_12165() - field_46692.gameRenderer.method_35949().method_41627().method_60() + 1.0);
+      float var10 = (float)((double)var1.method_12185() - field_46692.gameRenderer.method_35949().method_41627().method_62() + 0.5);
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -274,8 +274,8 @@ public class class_1196 extends class_9128 {
       GL11.glPushMatrix();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslated((double)var8, (double)(var9 + 0.6F - 0.33333334F * (1.0F - var3)), (double)var10);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       GL11.glPushMatrix();
       float var14 = 0.008F;
       GL11.glScalef(-var14 * var3, -var14 * var3, -var14 * var3);
@@ -329,9 +329,9 @@ public class class_1196 extends class_9128 {
       }
 
       if (var13.length() != 0) {
-         float var14 = (float)(var1 - field_46692.field_9590.method_35949().method_41627().method_61());
-         float var15 = (float)(var3 - field_46692.field_9590.method_35949().method_41627().method_60());
-         float var16 = (float)(var5 - field_46692.field_9590.method_35949().method_41627().method_62());
+         float var14 = (float)(var1 - field_46692.gameRenderer.method_35949().method_41627().method_61());
+         float var15 = (float)(var3 - field_46692.gameRenderer.method_35949().method_41627().method_60());
+         float var16 = (float)(var5 - field_46692.gameRenderer.method_35949().method_41627().method_62());
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(3042);
          GL11.glEnable(2848);
@@ -343,8 +343,8 @@ public class class_1196 extends class_9128 {
          GL11.glPushMatrix();
          GL11.glAlphaFunc(519, 0.0F);
          GL11.glTranslated((double)var14, (double)(var15 + 0.6F - 0.33333334F * (1.0F - var8)), (double)var16);
-         GL11.glRotatef(field_46692.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-         GL11.glRotatef(field_46692.field_9590.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+         GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+         GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
          GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
          int var19 = this.field_6702;
          if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {

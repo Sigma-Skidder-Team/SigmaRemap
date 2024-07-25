@@ -79,8 +79,8 @@ public class class_65 {
    public void method_45(class_7966 var1, int var2, int var3, int var4, int var5, float var6) {
       if (this.field_74 > 1) {
          String var9 = this.field_75 + 1 + "/" + this.field_74;
-         int var10 = this.field_81.field_9668.method_45395(var9);
-         this.field_81.field_9668.method_45385(var1, var9, (float)(var2 - var10 / 2 + 73), (float)(var3 + 141), -1);
+         int var10 = this.field_81.textRenderer.method_45395(var9);
+         this.field_81.textRenderer.method_45385(var1, var9, (float)(var2 - var10 / 2 + 73), (float)(var3 + 141), -1);
       }
 
       this.field_82 = null;

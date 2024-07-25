@@ -4,7 +4,7 @@ import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_6173 extends class_1863 {
-   public class_6173(class_1840 var1, class_9854 var2, int var3, int var4, int var5, int var6, ITextComponent var7) {
+   public class_6173(class_1840 var1, TextRenderer var2, int var3, int var4, int var5, int var6, ITextComponent var7) {
       super(var2, var3, var4, var5, var6, var7);
       this.field_31578 = var1;
    }

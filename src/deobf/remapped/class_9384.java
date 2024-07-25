@@ -40,7 +40,7 @@ public class class_9384 {
       .setConnectTimeout((int)TimeUnit.SECONDS.toMillis(15L))
       .build();
 
-   public class_9384(File var1, long var2, int var4, class_7219 var5, class_1210 var6, String var7, class_1938 var8) {
+   public class_9384(File var1, long var2, int var4, class_7219 var5, Session var6, String var7, class_1938 var8) {
       this.field_47960 = var1;
       this.field_47967 = var2;
       this.field_47964 = var4;

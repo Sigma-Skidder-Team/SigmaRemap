@@ -31,7 +31,7 @@ public class class_8387 extends class_7430 {
       MinecraftClient var7 = MinecraftClient.getInstance();
       var7.method_8577().method_35674(field_42906);
       class_3542.method_16428();
-      class_9854 var8 = var7.field_9668;
+      TextRenderer var8 = var7.textRenderer;
       class_3542.method_16480(1.0F, 1.0F, 1.0F, this.field_36680);
       class_3542.method_16488();
       class_3542.method_16437();

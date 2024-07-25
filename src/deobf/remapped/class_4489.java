@@ -154,14 +154,14 @@ public class class_4489 {
    }
 
    private void method_20854(GameProfile var1, String var2) throws AuthenticationException, IOException {
-      String var5 = this.field_21934.field_9603.method_5365();
+      String var5 = this.field_21934.session.method_5365();
       YggdrasilAuthenticationService var6 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, var5);
       YggdrasilMinecraftSessionService var7 = (YggdrasilMinecraftSessionService)var6.createMinecraftSessionService();
       var7.joinServer(var1, var5, var2);
       SigmaMainClass.method_3328();
       SigmaMainClass.method_3306().method_12863("Jello Connect: successfully reached out mojangs servers " + var2);
       System.out
-         .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field_21934.field_9603.method_5366());
+         .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field_21934.session.method_5366());
    }
 
    private String method_20851(String var1) {

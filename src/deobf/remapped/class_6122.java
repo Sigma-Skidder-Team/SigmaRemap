@@ -9,7 +9,7 @@ public class class_6122 {
    private final Map<class_6629<?>, class_7067<?>> field_31308 = Maps.newHashMap();
    private final Map<String, class_6670> field_31301 = Maps.newHashMap();
    private final class_6670 field_31307;
-   private final class_9854 field_31302;
+   private final TextRenderer field_31302;
    public final class_7889 field_31309;
    private class_6486 field_31314;
    public class_9071 field_31311;
@@ -143,7 +143,7 @@ public class class_6122 {
       this.method_28118(class_6629.field_34233, new class_737(this));
    }
 
-   public class_6122(class_7889 var1, class_8765 var2, class_550 var3, class_9854 var4, class_8881 var5) {
+   public class_6122(class_7889 var1, class_8765 var2, class_550 var3, TextRenderer var4, class_8881 var5) {
       this.field_31309 = var1;
       this.field_31302 = var4;
       this.field_31304 = var5;
@@ -476,7 +476,7 @@ public class class_6122 {
       return this.field_31312;
    }
 
-   public class_9854 method_28134() {
+   public TextRenderer method_28134() {
       return this.field_31302;
    }
 

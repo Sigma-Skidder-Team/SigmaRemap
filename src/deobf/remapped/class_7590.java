@@ -59,7 +59,7 @@ public class class_7590 {
          class_2089.method_9774(var1, var11, var12, var11 + 16, var12 + 16, 822083583);
          class_3542.method_16457(515);
          if (var9 == 0) {
-            var14.method_40281(var2.field_9668, var13, var11, var12);
+            var14.method_40281(var2.textRenderer, var13, var11, var12);
          }
       }
    }

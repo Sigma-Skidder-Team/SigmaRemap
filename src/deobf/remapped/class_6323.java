@@ -39,6 +39,6 @@ public class class_6323 implements class_2995 {
    }
 
    private class_9071 method_28820() {
-      return this.field_32283.field_9590.method_35949();
+      return this.field_32283.gameRenderer.method_35949();
    }
 }

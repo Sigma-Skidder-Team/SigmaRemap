@@ -266,10 +266,10 @@ public class class_4497 extends class_341 implements class_8685 {
    }
 
    @Override
-   public void method_19826(class_3320 var1) {
+   public void addSnooperInfo(Snooper var1) {
       var1.method_15252("whitelist_enabled", this.method_20890().method_39997());
       var1.method_15252("whitelist_count", this.method_20890().method_39994().length);
-      super.method_19826(var1);
+      super.addSnooperInfo(var1);
    }
 
    public void method_20898(String var1, class_9155 var2) {

@@ -90,7 +90,7 @@ public class class_4061 extends class_2208<class_3973> {
          class_3542.method_16413((float)var2, (float)var3, 1.0F);
          class_3542.method_16403(var4, var4, 1.0F);
          class_3758 var7 = class_2565.method_11648(class_8042.method_36499().method_36501());
-         this.field_943.field_9590.method_35928().method_38860(new class_7966(), var7, var1, true, 15728880);
+         this.field_943.gameRenderer.method_35928().method_38860(new class_7966(), var7, var1, true, 15728880);
          var7.method_17415();
          class_3542.method_16489();
       }

@@ -86,9 +86,9 @@ public class class_9437 extends class_9128 {
          int var4 = class_314.method_1444(this.method_41993("Color"), 0.4F);
          GL11.glPushMatrix();
          GL11.glDisable(2929);
-         double var5 = (double)this.field_48181.method_12173() - field_46692.field_9590.method_35949().method_41627().method_61();
-         double var7 = (double)this.field_48181.method_12165() - field_46692.field_9590.method_35949().method_41627().method_60();
-         double var9 = (double)this.field_48181.method_12185() - field_46692.field_9590.method_35949().method_41627().method_62();
+         double var5 = (double)this.field_48181.method_12173() - field_46692.gameRenderer.method_35949().method_41627().method_61();
+         double var7 = (double)this.field_48181.method_12165() - field_46692.gameRenderer.method_35949().method_41627().method_60();
+         double var9 = (double)this.field_48181.method_12185() - field_46692.gameRenderer.method_35949().method_41627().method_62();
          class_4092 var11 = field_46692.field_9601.method_28262(this.field_48181).method_8324(field_46692.field_9601, this.field_48181).method_19483();
          class_8194 var12 = new class_8194(
             var5 + var11.field_19941,

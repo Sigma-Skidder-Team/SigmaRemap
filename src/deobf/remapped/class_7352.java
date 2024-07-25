@@ -30,7 +30,7 @@ public class class_7352 extends class_1094 {
    public void method_1163() {
       this.field_943.field_9600.method_38887(true);
       this.field_37581 = new class_1863(
-         this.field_943.field_9668,
+         this.field_943.textRenderer,
          this.field_941 / 2 - 100,
          method_4819(2),
          200,

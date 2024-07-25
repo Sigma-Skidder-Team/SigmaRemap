@@ -84,7 +84,7 @@ public class class_587 extends class_4232 {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
-      method_9788(var1, this.field_943.field_9668, this.field_947, this.field_941 / 2, 15, 16777215);
+      method_9788(var1, this.field_943.textRenderer, this.field_947, this.field_941 / 2, 15, 16777215);
       super.method_6767(var1, var2, var3, var4);
    }
 }

@@ -74,7 +74,7 @@ public abstract class class_7067<T extends class_8145> {
 
    public abstract class_4639 method_11446(T var1);
 
-   public class_9854 method_32553() {
+   public TextRenderer method_32553() {
       return this.field_36493.method_28134();
    }
 
@@ -96,7 +96,7 @@ public abstract class class_7067<T extends class_8145> {
          class_8107 var14 = var3.method_36058().method_28620();
          float var15 = MinecraftClient.getInstance().field_9577.method_40872(0.25F);
          int var16 = (int)(var15 * 255.0F) << 24;
-         class_9854 var17 = this.method_32553();
+         TextRenderer var17 = this.method_32553();
          float var18 = (float)(-var17.method_45379(var2) / 2);
          var17.method_45405(var2, var18, (float)var13, 553648127, false, var14, var4, var11, var16, var5);
          if (var11) {

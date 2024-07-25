@@ -19,7 +19,7 @@ public class class_4201 implements class_6406 {
    }
 
    public static class_4201 method_19556(MinecraftClient var0, class_200 var1, ITextComponent var2, ITextComponent var3) {
-      class_9854 var6 = var0.field_9668;
+      TextRenderer var6 = var0.textRenderer;
       List var7 = var6.method_45391(var3, 200);
       int var8 = Math.max(200, var7.stream().mapToInt(var6::method_45400).max().orElse(200));
       return new class_4201(var1, var2, var7, var8 + 30);
@@ -68,13 +68,13 @@ public class class_4201 implements class_6406 {
       }
 
       if (this.field_20427 != null) {
-         var2.method_42327().field_9668.method_45378(var1, this.field_20430, 18.0F, 7.0F, -256);
+         var2.method_42327().textRenderer.method_45378(var1, this.field_20430, 18.0F, 7.0F, -256);
 
          for (int var13 = 0; var13 < this.field_20427.size(); var13++) {
-            var2.method_42327().field_9668.method_45382(var1, this.field_20427.get(var13), 18.0F, (float)(18 + var13 * 12), -1);
+            var2.method_42327().textRenderer.method_45382(var1, this.field_20427.get(var13), 18.0F, (float)(18 + var13 * 12), -1);
          }
       } else {
-         var2.method_42327().field_9668.method_45378(var1, this.field_20430, 18.0F, 12.0F, -256);
+         var2.method_42327().textRenderer.method_45378(var1, this.field_20430, 18.0F, 12.0F, -256);
       }
 
       return var3 - this.field_20428 >= 5000L ? class_5068.field_26190 : class_5068.field_26192;

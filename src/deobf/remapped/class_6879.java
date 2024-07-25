@@ -47,9 +47,9 @@ public class class_6879 extends class_9128 {
                   0.8F
                );
                if (this.method_31556(var6)) {
-                  double var7 = class_9189.method_42357(var5).field_42648 - field_46692.field_9590.method_35949().method_41627().method_61();
-                  double var9 = class_9189.method_42357(var5).field_42646 - field_46692.field_9590.method_35949().method_41627().method_60();
-                  double var11 = class_9189.method_42357(var5).field_42649 - field_46692.field_9590.method_35949().method_41627().method_62();
+                  double var7 = class_9189.method_42357(var5).field_42648 - field_46692.gameRenderer.method_35949().method_41627().method_61();
+                  double var9 = class_9189.method_42357(var5).field_42646 - field_46692.gameRenderer.method_35949().method_41627().method_60();
+                  double var11 = class_9189.method_42357(var5).field_42649 - field_46692.gameRenderer.method_35949().method_41627().method_62();
                   float var13 = 0.3F;
                   GL11.glEnable(3042);
                   GL11.glAlphaFunc(516, 0.0F);
@@ -110,9 +110,9 @@ public class class_6879 extends class_9128 {
    public void method_31552(double var1, double var3, double var5, class_8145 var7, float var8) {
       class_3384 var11 = class_5320.field_27141;
       String var12 = var7.method_45509().getUnformattedComponentText();
-      float var13 = (float)(var1 - field_46692.field_9590.method_35949().method_41627().method_61());
-      float var14 = (float)(var3 - field_46692.field_9590.method_35949().method_41627().method_60());
-      float var15 = (float)(var5 - field_46692.field_9590.method_35949().method_41627().method_62());
+      float var13 = (float)(var1 - field_46692.gameRenderer.method_35949().method_41627().method_61());
+      float var14 = (float)(var3 - field_46692.gameRenderer.method_35949().method_41627().method_60());
+      float var15 = (float)(var5 - field_46692.gameRenderer.method_35949().method_41627().method_62());
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -123,8 +123,8 @@ public class class_6879 extends class_9128 {
       GL11.glPushMatrix();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslated((double)var13, (double)(var14 + 0.6F - 0.33333334F * (1.0F - var8)), (double)var15);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(field_46692.field_9590.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(field_46692.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
       GL11.glTranslated((double)(-var11.method_18547(var12) / 2), 0.0, 0.0);
       List var16 = this.method_31557(((class_91)var7).method_264());
@@ -242,11 +242,11 @@ public class class_6879 extends class_9128 {
          int var27 = var1 + var8 + var23 % 9 * (var10 + var11);
          if (var23 == this.field_35424 && var5) {
             class_3542.method_16487();
-            int var29 = field_46692.field_9668.method_45395(var24.method_28008().getUnformattedComponentText());
+            int var29 = field_46692.textRenderer.method_45395(var24.method_28008().getUnformattedComponentText());
             List var32 = this.method_31554(var24);
 
             for (int var20 = 0; var20 < var32.size(); var20++) {
-               var29 = Math.max(var29, field_46692.field_9668.method_45395((String)var32.get(var20)));
+               var29 = Math.max(var29, field_46692.textRenderer.method_45395((String)var32.get(var20)));
             }
 
             var29 = (int)((float)var29 * class_73.method_106());
@@ -267,7 +267,7 @@ public class class_6879 extends class_9128 {
 
             for (int var21 = 0; var21 < var32.size(); var21++) {
                String var22 = (String)var32.get(var21);
-               field_46692.field_9668
+               field_46692.textRenderer
                   .method_45410(
                      var22,
                      (float)(var27 + 5),

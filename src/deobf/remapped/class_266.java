@@ -32,7 +32,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
    public int field_940;
    public final List<class_7114> field_950 = Lists.newArrayList();
    public boolean field_951;
-   public class_9854 field_948;
+   public TextRenderer field_948;
    private URI field_949;
 
    public class_266(ITextComponent var1) {
@@ -186,7 +186,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
             if (var9 == null) {
                ITextComponent var10 = var7.<ITextComponent>getParameter(HoverEvent$class_48.SHOW_TEXT);
                if (var10 != null) {
-                  this.method_1175(var1, this.field_943.field_9668.method_45391(var10, Math.max(this.field_941 / 2, 200)), var3, var4);
+                  this.method_1175(var1, this.field_943.textRenderer.method_45391(var10, Math.max(this.field_941 / 2, 200)), var3, var4);
                }
             } else if (this.field_943.field_9577.field_45482) {
                this.method_1160(var1, var9.getTooltip(), var3, var4);
@@ -270,7 +270,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
    public void method_1164(MinecraftClient var1, int var2, int var3) {
       this.field_943 = var1;
       this.field_945 = var1.method_8511();
-      this.field_948 = var1.field_9668;
+      this.field_948 = var1.textRenderer;
       this.field_941 = var2;
       this.field_940 = var3;
       this.field_950.clear();
