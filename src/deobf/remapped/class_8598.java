@@ -8,8 +8,8 @@ public class class_8598 {
    private static final Logger field_44027 = LogManager.getLogger();
    public class_6331 field_44037;
    public class_9359 field_44036;
-   private GameType field_44033 = GameType.field_22762;
-   private GameType field_44030 = GameType.field_22762;
+   private GameType field_44033 = GameType.NOT_SET;
+   private GameType field_44030 = GameType.NOT_SET;
    private boolean field_44040;
    private int field_44032;
    private class_1331 field_44038 = class_1331.field_7306;
@@ -30,7 +30,7 @@ public class class_8598 {
    public void method_39516(GameType var1, GameType var2) {
       this.field_44030 = var2;
       this.field_44033 = var1;
-      var1.method_21584(this.field_44036.field_3876);
+      var1.configurePlayerCapabilities(this.field_44036.field_3876);
       this.field_44036.method_3216();
       this.field_44036.field_47801.method_1600().method_39972(new class_7867(class_2236.field_11147, this.field_44036));
       this.field_44037.method_28928();
@@ -53,7 +53,7 @@ public class class_8598 {
    }
 
    public void method_39521(GameType var1) {
-      if (this.field_44033 == GameType.field_22762) {
+      if (this.field_44033 == GameType.NOT_SET) {
          this.field_44033 = var1;
       }
 

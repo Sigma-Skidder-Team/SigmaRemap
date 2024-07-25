@@ -9,8 +9,8 @@ public class class_7216 {
       LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)class_465.method_2231("defaultgamemode").requires(var0x -> var0x.method_40314(2));
 
       for (GameType var7 : GameType.values()) {
-         if (var7 != GameType.field_22762) {
-            var3.then(class_465.method_2231(var7.method_21588()).executes(var1 -> method_33056((class_9155)var1.getSource(), var7)));
+         if (var7 != GameType.NOT_SET) {
+            var3.then(class_465.method_2231(var7.getName()).executes(var1 -> method_33056((class_9155)var1.getSource(), var7)));
          }
       }
 
@@ -30,7 +30,7 @@ public class class_7216 {
          }
       }
 
-      var0.method_42196(new TranslationTextComponent("commands.defaultgamemode.success", var1.method_21592()), true);
+      var0.method_42196(new TranslationTextComponent("commands.defaultgamemode.success", var1.getDisplayName()), true);
       return var4;
    }
 }

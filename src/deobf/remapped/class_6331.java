@@ -140,7 +140,7 @@ public class class_6331 extends World implements class_700 {
    public void method_28982(BooleanSupplier var1) {
       class_3492 var4 = this.method_29599();
       this.field_32349 = true;
-      var4.method_16056("world border");
+      var4.startSection("world border");
       this.method_6673().method_9805();
       var4.method_16050("weather");
       boolean var5 = this.method_29561();
@@ -277,12 +277,12 @@ public class class_6331 extends World implements class_700 {
                var17.method_37204();
             }
 
-            var4.method_16056("checkDespawn");
+            var4.startSection("checkDespawn");
             if (!var17.field_41751) {
                var17.method_37233();
             }
 
-            var4.method_16054();
+            var4.endSection();
             if (var20 != null) {
                if (!var20.field_41751 && var20.method_37072(var17)) {
                   continue;
@@ -291,20 +291,20 @@ public class class_6331 extends World implements class_700 {
                var17.method_37390();
             }
 
-            var4.method_16056("tick");
+            var4.startSection("tick");
             if (!var17.field_41751 && !(var17 instanceof class_5708)) {
                this.method_29532(this::method_28997, var17);
             }
 
-            var4.method_16054();
-            var4.method_16056("remove");
+            var4.endSection();
+            var4.startSection("remove");
             if (var17.field_41751) {
                this.method_28952(var17);
                var15.remove();
                this.method_28979(var17);
             }
 
-            var4.method_16054();
+            var4.endSection();
          }
 
          this.field_32334 = false;
@@ -317,7 +317,7 @@ public class class_6331 extends World implements class_700 {
          this.method_29547();
       }
 
-      var4.method_16054();
+      var4.endSection();
    }
 
    public void method_28999() {
@@ -351,7 +351,7 @@ public class class_6331 extends World implements class_700 {
       int var7 = var5.method_9535();
       int var8 = var5.method_9545();
       class_3492 var9 = this.method_29599();
-      var9.method_16056("thunder");
+      var9.startSection("thunder");
       if (var6 && this.method_29570() && this.field_33033.nextInt(100000) == 0) {
          class_1331 var10 = this.method_28993(this.method_29596(var7, 0, var8, 15));
          if (this.method_29569(var10)) {
@@ -398,7 +398,7 @@ public class class_6331 extends World implements class_700 {
 
                for (int var15 = 0; var15 < var2; var15++) {
                   class_1331 var16 = this.method_29596(var7, var14, var8, 15);
-                  var9.method_16056("randomTick");
+                  var9.startSection("randomTick");
                   class_2522 var17 = var26.method_5999(var16.method_12173() - var7, var16.method_12165() - var14, var16.method_12185() - var8);
                   if (var17.method_8331()) {
                      var17.method_8373(this, var16, this.field_33033);
@@ -409,13 +409,13 @@ public class class_6331 extends World implements class_700 {
                      var18.method_21999(this, var16, this.field_33033);
                   }
 
-                  var9.method_16054();
+                  var9.endSection();
                }
             }
          }
       }
 
-      var9.method_16054();
+      var9.endSection();
    }
 
    public class_1331 method_28993(class_1331 var1) {
@@ -501,7 +501,7 @@ public class class_6331 extends World implements class_700 {
             var4.method_16057(() -> class_8669.field_44400.method_39797(var1.method_37387()).toString());
             var4.method_16055("tickNonPassenger");
             var1.method_37123();
-            var4.method_16054();
+            var4.endSection();
          }
 
          this.method_28987(var1);
@@ -526,7 +526,7 @@ public class class_6331 extends World implements class_700 {
             var5.method_16057(() -> class_8669.field_44400.method_39797(var2.method_37387()).toString());
             var5.method_16055("tickPassenger");
             var2.method_37189();
-            var5.method_16054();
+            var5.endSection();
          }
 
          this.method_28987(var2);
@@ -540,7 +540,7 @@ public class class_6331 extends World implements class_700 {
 
    public void method_28987(Entity var1) {
       if (var1.method_37251()) {
-         this.method_29599().method_16056("chunkCheck");
+         this.method_29599().startSection("chunkCheck");
          int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
          int var5 = class_9299.method_42847(var1.method_37309() / 16.0);
          int var6 = class_9299.method_42847(var1.method_37156() / 16.0);
@@ -560,7 +560,7 @@ public class class_6331 extends World implements class_700 {
             }
          }
 
-         this.method_29599().method_16054();
+         this.method_29599().endSection();
       }
    }
 

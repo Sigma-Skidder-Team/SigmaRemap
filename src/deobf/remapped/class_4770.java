@@ -60,7 +60,7 @@ public class class_4770 extends class_446 {
          GameProfile var20 = new GameProfile(var8, this.field_23119.method_33321());
          if (this.field_23115 == null || !this.field_23115.method_19839().getString().equals(this.field_23119.method_33321())) {
             this.field_23115 = new class_9298(field_23116, new GameProfile(var8, this.field_23119.method_33321()));
-            this.field_23115.field_49385 = new class_753(new class_5902(var20, 0, GameType.field_22761, this.field_23115.method_19839()));
+            this.field_23115.field_49385 = new class_753(new class_5902(var20, 0, GameType.CREATIVE, this.field_23115.method_19839()));
          }
 
          this.field_23115.method_37377(var8);

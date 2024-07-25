@@ -55,7 +55,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       this.field_49207.getTextureManager().bindTexture(this.field_49210 == null ? class_8224.method_37657() : this.field_49211);
       RenderSystem.enableBlend();
       AbstractGui.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       if (this.field_49207.gameOptions.field_45570 || var9) {
          this.field_49207.getTextureManager().bindTexture(class_8224.method_37654());
          AbstractGui.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);

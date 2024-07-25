@@ -138,7 +138,7 @@ public class class_9044 extends Screen implements class_4361 {
             var9.method_35365(var2, var3, this.field_945);
          }
 
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
       }
 
       this.field_948.method_45378(var1, field_46298, (float)(var2 + 8), (float)(var3 + 6), 4210752);

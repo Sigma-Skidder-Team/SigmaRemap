@@ -24,18 +24,18 @@ public abstract class class_4240 extends class_2840<class_3930> implements AutoC
 
    public class_3930 method_19781(class_7832 var1, class_3492 var2) {
       var2.method_16059();
-      var2.method_16056("stitching");
+      var2.startSection("stitching");
       class_3930 var5 = this.field_20575.method_38516(var1, this.method_19778().<Identifier>map(this::method_19779), var2, 0);
-      var2.method_16054();
+      var2.endSection();
       var2.method_16052();
       return var5;
    }
 
    public void method_19777(class_3930 var1, class_7832 var2, class_3492 var3) {
       var3.method_16059();
-      var3.method_16056("upload");
+      var3.startSection("upload");
       this.field_20575.method_38520(var1);
-      var3.method_16054();
+      var3.endSection();
       var3.method_16052();
    }
 

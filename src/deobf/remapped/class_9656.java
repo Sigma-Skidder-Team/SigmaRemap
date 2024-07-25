@@ -130,7 +130,7 @@ public class class_9656 extends class_1094 {
    }
 
    private static ITextComponent method_44559(class_460 var0) {
-      return var0.method_2211().method_21592();
+      return var0.method_2211().getDisplayName();
    }
 
    private static String method_44565(class_460 var0) {

@@ -242,9 +242,9 @@ public class class_2599 extends class_6993 implements class_3832 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().method_16056("piglinBrain");
+      this.field_41768.method_29599().startSection("piglinBrain");
       this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
       class_134.method_534(this);
       super.method_26919();
    }

@@ -42,7 +42,7 @@ public abstract class class_9716 extends class_704 {
    @Override
    public boolean method_3186() {
       class_753 var3 = MinecraftClient.getInstance().method_8614().method_4800(this.method_3247().getId());
-      return var3 != null && var3.method_3393() == GameType.field_22761;
+      return var3 != null && var3.method_3393() == GameType.CREATIVE;
    }
 
    public boolean method_44885() {
@@ -125,7 +125,7 @@ public abstract class class_9716 extends class_704 {
 
    public float method_44876() {
       float var3 = 1.0F;
-      if (this.field_3876.field_4942) {
+      if (this.field_3876.isFlying) {
          var3 *= 1.1F;
       }
 

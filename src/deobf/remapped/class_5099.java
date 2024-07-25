@@ -31,7 +31,7 @@ public class class_5099 {
       if (field_26314 == null) {
          field_26314 = MinecraftClient.getInstance();
          field_26299 = field_26314.gameOptions;
-         field_26295 = field_26314.method_8562();
+         field_26295 = field_26314.getProfiler();
       }
 
       if (field_26299.field_45470 && (field_26299.field_45509 || field_26299.field_45549)) {

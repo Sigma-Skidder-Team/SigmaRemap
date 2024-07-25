@@ -254,7 +254,7 @@ public abstract class class_4088 {
                }
             }
          } else if (var3 != class_6269.field_32026) {
-            if (var3 == class_6269.field_32025 && var4.field_3876.field_4944 && var8.method_32424().method_28022() && var1 >= 0) {
+            if (var3 == class_6269.field_32025 && var4.field_3876.isCreativeMode && var8.method_32424().method_28022() && var1 >= 0) {
                class_7934 var21 = this.field_19926.get(var1);
                if (var21 != null && var21.method_35884()) {
                   ItemStack var28 = var21.method_35898().method_27973();
@@ -552,7 +552,7 @@ public abstract class class_4088 {
 
    public static boolean method_18864(int var0, class_704 var1) {
       if (var0 != 0) {
-         return var0 == 1 ? true : var0 == 2 && var1.field_3876.field_4944;
+         return var0 == 1 ? true : var0 == 2 && var1.field_3876.isCreativeMode;
       } else {
          return true;
       }

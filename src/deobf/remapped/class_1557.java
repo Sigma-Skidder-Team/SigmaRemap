@@ -43,7 +43,7 @@ public class class_1557 extends class_2451 {
          ItemStack var6 = var2.method_26617(var3);
          if (!var1.field_33055) {
             var1.method_7509(new class_8612(var1, var6, var2));
-            if (!var2.field_3876.field_4944) {
+            if (!var2.field_3876.isCreativeMode) {
                var6.method_27970(1);
             }
          }

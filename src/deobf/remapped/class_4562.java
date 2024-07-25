@@ -47,7 +47,7 @@ public class class_4562 implements class_2995 {
       this.method_21171();
       this.method_21180();
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16489();
       if (!this.field_22226.thePlayer.method_37221()) {
          this.method_21170();

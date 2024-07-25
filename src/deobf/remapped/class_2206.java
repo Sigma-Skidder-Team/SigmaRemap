@@ -192,10 +192,10 @@ public class class_2206 extends class_3232 {
          this.field_10943.method_42699(class_5032.field_26024, var7, var10, var7);
          if (this.method_10181(var11, var10)) {
             class_3492 var12 = this.field_10944.method_29599();
-            var12.method_16056("chunkLoad");
+            var12.startSection("chunkLoad");
             this.method_10202();
             var11 = this.method_10194(var8);
-            var12.method_16054();
+            var12.endSection();
             if (this.method_10181(var11, var10)) {
                throw (IllegalStateException) Util.method_44658(new IllegalStateException("No chunk holder after ticket has been added"));
             }
@@ -300,14 +300,14 @@ public class class_2206 extends class_3232 {
    }
 
    public void method_10174(BooleanSupplier var1) {
-      this.field_10944.method_29599().method_16056("purge");
+      this.field_10944.method_29599().startSection("purge");
       this.field_10943.method_42708();
       this.method_10202();
       this.field_10944.method_29599().method_16050("chunks");
       this.method_10201();
       this.field_10944.method_29599().method_16050("unload");
       this.field_10934.method_3997(var1);
-      this.field_10944.method_29599().method_16054();
+      this.field_10944.method_29599().endSection();
       this.method_10198();
    }
 
@@ -319,22 +319,22 @@ public class class_2206 extends class_3232 {
       boolean var8 = this.field_10944.method_29581();
       boolean var9 = this.field_10944.method_29537().method_1285(class_291.field_1028);
       if (!var8) {
-         this.field_10944.method_29599().method_16056("pollingChunks");
+         this.field_10944.method_29599().startSection("pollingChunks");
          int var10 = this.field_10944.method_29537().method_1295(class_291.field_1040);
          boolean var11 = var7.method_8658() % 400L == 0L;
-         this.field_10944.method_29599().method_16056("naturalSpawnCount");
+         this.field_10944.method_29599().startSection("naturalSpawnCount");
          int var12 = this.field_10943.method_42677();
          class_1728 var13 = class_3815.method_17773(var12, this.field_10944.method_28938(), this::method_10196);
          this.field_10931 = var13;
-         this.field_10944.method_29599().method_16054();
+         this.field_10944.method_29599().endSection();
          ArrayList var14 = Lists.newArrayList(this.field_10934.method_3988());
          Collections.shuffle(var14);
          var14.forEach(var7x -> {
             Optional var10x = var7x.method_24350().getNow(class_5344.field_27243).left();
             if (var10x.isPresent()) {
-               this.field_10944.method_29599().method_16056("broadcast");
+               this.field_10944.method_29599().startSection("broadcast");
                var7x.method_24342((class_2654)var10x.get());
-               this.field_10944.method_29599().method_16054();
+               this.field_10944.method_29599().endSection();
                Optional var11x = var7x.method_24353().getNow(class_5344.field_27243).left();
                if (var11x.isPresent()) {
                   class_2654 var12x = (class_2654)var11x.get();
@@ -350,13 +350,13 @@ public class class_2206 extends class_3232 {
                }
             }
          });
-         this.field_10944.method_29599().method_16056("customSpawners");
+         this.field_10944.method_29599().startSection("customSpawners");
          if (var9) {
             this.field_10944.method_28942(this.field_10945, this.field_10946);
          }
 
-         this.field_10944.method_29599().method_16054();
-         this.field_10944.method_29599().method_16054();
+         this.field_10944.method_29599().endSection();
+         this.field_10944.method_29599().endSection();
       }
 
       this.field_10934.method_4011();

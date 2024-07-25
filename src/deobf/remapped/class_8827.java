@@ -103,7 +103,7 @@ public class class_8827 {
    }
 
    public GameType method_40539() {
-      return this.field_45147.playerController != null ? this.field_45147.playerController.getCurrentGameType() : GameType.field_22762;
+      return this.field_45147.playerController != null ? this.field_45147.playerController.getCurrentGameType() : GameType.NOT_SET;
    }
 
    public static ITextComponent method_40532(String var0) {

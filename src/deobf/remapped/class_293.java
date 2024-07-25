@@ -129,7 +129,7 @@ public class class_293 {
    public static void method_1322(GameRenderer var0, Camera var1, int var2, float var3, long var4) {
       if (class_6588.field_33846 > 0 && --class_6588.field_33861 <= 0) {
          MinecraftClient var8 = MinecraftClient.getInstance();
-         var8.method_8562().method_16050("shadow pass");
+         var8.getProfiler().method_16050("shadow pass");
          WorldRenderer var9 = var8.worldRenderer;
          class_6588.field_33945 = true;
          class_6588.field_33861 = class_6588.field_33897;
@@ -138,10 +138,10 @@ public class class_293 {
          GL11.glPushMatrix();
          GL30.glMatrixMode(5888);
          GL11.glPushMatrix();
-         var8.method_8562().method_16050("shadow clear");
+         var8.getProfiler().method_16050("shadow clear");
          EXTFramebufferObject.glBindFramebufferEXT(36160, class_6588.field_33779);
          class_6588.method_30273("shadow bind sfb");
-         var8.method_8562().method_16050("shadow camera");
+         var8.getProfiler().method_16050("shadow camera");
          method_1309(var1, var8, var3);
          class_7966 var10 = new class_7966();
          class_6588.method_30214(var10, var1, var3);
@@ -160,9 +160,9 @@ public class class_293 {
          GL30.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
          GL30.glClear(class_6588.field_33722 == 0 ? 256 : 16640);
          class_6588.method_30273("shadow clear");
-         var8.method_8562().method_16050("shadow frustum");
+         var8.getProfiler().method_16050("shadow frustum");
          class_8934 var11 = new class_8934();
-         var8.method_8562().method_16050("shadow culling");
+         var8.getProfiler().method_16050("shadow culling");
          class_1343 var12 = var1.method_41627();
          var11.method_10820(var12.field_7336, var12.field_7333, var12.field_7334);
          GlStateManager.method_8932(7425);
@@ -172,13 +172,13 @@ public class class_293 {
          GlStateManager.method_8895(true, true, true, true);
          GlStateManager.method_8772(new class_9777(false));
          GlStateManager.method_8831(new class_3525(false));
-         var8.method_8562().method_16050("shadow prepareterrain");
+         var8.getProfiler().method_16050("shadow prepareterrain");
          var8.getTextureManager().bindTexture(class_8359.field_42824);
-         var8.method_8562().method_16050("shadow setupterrain");
+         var8.getProfiler().method_16050("shadow setupterrain");
          int var13 = var8.worldRenderer.method_20049();
          var9.method_20016(var1, var11, false, var13, var8.thePlayer.method_37221());
-         var8.method_8562().method_16050("shadow updatechunks");
-         var8.method_8562().method_16050("shadow terrain");
+         var8.getProfiler().method_16050("shadow updatechunks");
+         var8.getProfiler().method_16050("shadow terrain");
          double var14 = var12.method_61();
          double var16 = var12.method_60();
          double var18 = var12.method_62();
@@ -199,7 +199,7 @@ public class class_293 {
          GlStateManager.method_8842(5888);
          GlStateManager.method_8761();
          GlStateManager.method_8757();
-         var8.method_8562().method_16050("shadow entities");
+         var8.getProfiler().method_16050("shadow entities");
          WorldRenderer var20 = var8.worldRenderer;
          EntityRenderDispatcher var21 = var8.method_8587();
          class_3758 var22 = var20.method_20017().method_13796();
@@ -294,7 +294,7 @@ public class class_293 {
          class_6588.method_30273("shadow drawbuffers pre-translucent");
          class_6588.method_30142("shadow pre-translucent");
          if (class_6588.method_30172()) {
-            var8.method_8562().method_16050("shadow translucent");
+            var8.getProfiler().method_16050("shadow translucent");
             var9.method_20045(class_6727.field_34740, var10, var14, var16, var18);
             class_6588.method_30273("shadow translucent");
          }
@@ -307,7 +307,7 @@ public class class_293 {
          GL30.glFlush();
          class_6588.method_30273("shadow flush");
          class_6588.field_33945 = false;
-         var8.method_8562().method_16050("shadow postprocess");
+         var8.getProfiler().method_16050("shadow postprocess");
          if (class_6588.field_33761) {
             if (class_6588.field_33846 >= 1) {
                if (class_6588.field_33795[0]) {

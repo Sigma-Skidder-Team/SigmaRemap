@@ -110,7 +110,7 @@ public class OtherActiveModsModule extends Module {
                      new class_8709(160, 160, 160)
                   );
                class_73.method_141();
-               RenderSystem.method_16448();
+               RenderSystem.disableBlend();
                var6 += var20;
                RenderSystem.method_16489();
                var11 = var19;

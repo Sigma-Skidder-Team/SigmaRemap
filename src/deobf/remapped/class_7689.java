@@ -182,7 +182,7 @@ public class class_7689 extends class_6414 implements class_8660 {
          if (var9 < 7 && !var2.field_33055) {
             class_2522 var11 = method_34844(var1, var2, var3, var10);
             var2.method_43364(1500, var3, var1 == var11 ? 0 : 1);
-            if (!var4.field_3876.field_4944) {
+            if (!var4.field_3876.isCreativeMode) {
                var10.method_27970(1);
             }
          }

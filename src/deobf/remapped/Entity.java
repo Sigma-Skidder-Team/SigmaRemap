@@ -284,7 +284,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37219() {
-      this.field_41768.method_29599().method_16056("entityBaseTick");
+      this.field_41768.method_29599().startSection("entityBaseTick");
       if (this.method_37070() && this.method_37243().field_41751) {
          this.method_37390();
       }
@@ -337,7 +337,7 @@ public abstract class Entity implements class_9875, class_5801 {
       }
 
       this.field_41716 = false;
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
    }
 
    public void method_37157() {
@@ -432,7 +432,7 @@ public abstract class Entity implements class_9875, class_5801 {
             }
          }
 
-         this.field_41768.method_29599().method_16056("move");
+         this.field_41768.method_29599().startSection("move");
          if (this.field_41729.method_6221() > 1.0E-7) {
             var2 = var2.method_6211(this.field_41729);
             this.field_41729 = class_1343.field_7335;
@@ -446,8 +446,8 @@ public abstract class Entity implements class_9875, class_5801 {
             this.method_37298();
          }
 
-         this.field_41768.method_29599().method_16054();
-         this.field_41768.method_29599().method_16056("rest");
+         this.field_41768.method_29599().endSection();
+         this.field_41768.method_29599().startSection("rest");
          this.field_41744 = !class_9299.method_42855(var2.field_7336, var25.field_7336) || !class_9299.method_42855(var2.field_7334, var25.field_7334);
          this.field_41774 = var2.field_7333 != var25.field_7333;
          this.field_41726 = this.field_41774 && var2.field_7333 < 0.0;
@@ -528,7 +528,7 @@ public abstract class Entity implements class_9875, class_5801 {
             this.method_37164(-this.method_37112());
          }
 
-         this.field_41768.method_29599().method_16054();
+         this.field_41768.method_29599().endSection();
       }
    }
 
@@ -1710,11 +1710,11 @@ public abstract class Entity implements class_9875, class_5801 {
             class_5621 var6 = this.field_41768.method_29545() != World.field_33029 ? World.field_33029 : World.field_33048;
             class_6331 var7 = var5.method_1697(var6);
             if (var7 != null && var5.method_1741() && !this.method_37070() && this.field_41709++ >= var3) {
-               this.field_41768.method_29599().method_16056("portal");
+               this.field_41768.method_29599().startSection("portal");
                this.field_41709 = var3;
                this.method_37157();
                this.method_37326(var7);
-               this.field_41768.method_29599().method_16054();
+               this.field_41768.method_29599().endSection();
             }
 
             this.field_41772 = false;
@@ -2053,9 +2053,9 @@ public abstract class Entity implements class_9875, class_5801 {
    @Nullable
    public Entity method_37326(class_6331 var1) {
       if (this.field_41768 instanceof class_6331 && !this.field_41751) {
-         this.field_41768.method_29599().method_16056("changeDimension");
+         this.field_41768.method_29599().startSection("changeDimension");
          this.method_37269();
-         this.field_41768.method_29599().method_16056("reposition");
+         this.field_41768.method_29599().startSection("reposition");
          class_9606 var4 = this.method_37081(var1);
          if (var4 != null) {
             this.field_41768.method_29599().method_16050("reloading");
@@ -2071,10 +2071,10 @@ public abstract class Entity implements class_9875, class_5801 {
             }
 
             this.method_37247();
-            this.field_41768.method_29599().method_16054();
+            this.field_41768.method_29599().endSection();
             ((class_6331)this.field_41768).method_28932();
             var1.method_28932();
-            this.field_41768.method_29599().method_16054();
+            this.field_41768.method_29599().endSection();
             return var5;
          } else {
             return null;

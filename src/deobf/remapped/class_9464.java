@@ -91,7 +91,7 @@ public class class_9464 extends class_5877 implements class_724 {
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      if (var4.field_3876.field_4938) {
+      if (var4.field_3876.allowEdit) {
          var1 = var1.method_10317(field_48280);
          float var9 = var1.method_10313(field_48280) != class_9607.field_48960 ? 0.5F : 0.55F;
          var2.method_43359(var4, var3, class_463.field_2263, class_562.field_3322, 0.3F, var9);

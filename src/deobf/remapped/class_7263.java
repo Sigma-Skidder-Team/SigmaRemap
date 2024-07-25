@@ -84,9 +84,9 @@ public class class_7263 extends class_6993 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().method_16056("piglinBruteBrain");
+      this.field_41768.method_29599().startSection("piglinBruteBrain");
       this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
       class_9544.method_44044(this);
       class_9544.method_44043(this);
       super.method_26919();

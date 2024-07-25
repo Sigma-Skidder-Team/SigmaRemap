@@ -38,17 +38,17 @@ public class class_3541 extends class_2840<class_5408> {
       var2.method_16059();
 
       for (String var7 : var1.method_35455()) {
-         var2.method_16056(var7);
+         var2.startSection(var7);
 
          try {
             for (class_4038 var9 : var1.method_35457(new Identifier(var7, "sounds.json"))) {
-               var2.method_16056(var9.method_18579());
+               var2.startSection(var9.method_18579());
 
                try (
                   InputStream var10 = var9.method_18576();
                   InputStreamReader var12 = new InputStreamReader(var10, StandardCharsets.UTF_8);
                ) {
-                  var2.method_16056("parse");
+                  var2.startSection("parse");
                   Map var14 = class_6539.<Map>method_29764(field_17317, var12, field_17315);
                   var2.method_16050("register");
 
@@ -56,17 +56,17 @@ public class class_3541 extends class_2840<class_5408> {
                      class_5408.method_24610(var5, new Identifier(var7, (String)var16.getKey()), (class_7874)var16.getValue(), var1);
                   }
 
-                  var2.method_16054();
+                  var2.endSection();
                } catch (RuntimeException var46) {
                   field_17313.warn("Invalid sounds.json in resourcepack: '{}'", var9.method_18579(), var46);
                }
 
-               var2.method_16054();
+               var2.endSection();
             }
          } catch (IOException var47) {
          }
 
-         var2.method_16054();
+         var2.endSection();
       }
 
       var2.method_16052();

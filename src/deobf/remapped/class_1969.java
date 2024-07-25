@@ -13,7 +13,7 @@ public class class_1969 extends class_1280<class_9574> {
 
    @Override
    public void method_10221(class_7966 var1, int var2, int var3) {
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       super.method_10221(var1, var2, var3);
    }
 }

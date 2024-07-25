@@ -15,8 +15,8 @@ public class class_9153 {
    private float field_46825;
    public int field_46831;
    private boolean field_46829;
-   private GameType field_46833 = GameType.field_22764;
-   private GameType field_46828 = GameType.field_22762;
+   private GameType field_46833 = GameType.SURVIVAL;
+   private GameType field_46828 = GameType.NOT_SET;
    private final Object2ObjectLinkedOpenHashMap<Pair<class_1331, class_7500>, class_1343> field_46830 = new Object2ObjectLinkedOpenHashMap();
    private int field_46834;
 
@@ -26,7 +26,7 @@ public class class_9153 {
    }
 
    public void method_42136(class_704 var1) {
-      this.field_46833.method_21584(var1.field_3876);
+      this.field_46833.configurePlayerCapabilities(var1.field_3876);
    }
 
    public void method_42141(GameType var1) {
@@ -39,10 +39,10 @@ public class class_9153 {
       }
 
       this.field_46833 = var1;
-      this.field_46833.method_21584(this.field_46835.thePlayer.field_3876);
+      this.field_46833.configurePlayerCapabilities(this.field_46835.thePlayer.field_3876);
    }
 
-   public boolean method_42162() {
+   public boolean shouldDrawHUD() {
       return this.field_46833.method_21593();
    }
 
@@ -338,7 +338,7 @@ public class class_9153 {
       var1.method_26474();
    }
 
-   public boolean method_42133() {
+   public boolean gameIsSurvivalOrAdventure() {
       return this.field_46833.method_21593();
    }
 

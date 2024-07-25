@@ -73,13 +73,13 @@ public class class_2713 extends class_1280<class_6600> {
 
    @Override
    public void method_10221(class_7966 var1, int var2, int var3) {
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       super.method_10221(var1, var2, var3);
       int var6 = this.field_10956.method_30385();
       if (var6 > 0) {
          int var7 = 8453920;
          Object var8;
-         if (var6 >= 40 && !this.field_943.thePlayer.field_3876.field_4944) {
+         if (var6 >= 40 && !this.field_943.thePlayer.field_3876.isCreativeMode) {
             var8 = field_13263;
             var7 = 16736352;
          } else if (this.field_10956.method_18878(2).method_35884()) {

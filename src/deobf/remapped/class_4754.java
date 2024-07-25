@@ -9,7 +9,7 @@ public class class_4754 {
    }
 
    public static ItemStack method_21942(ItemStack var0, class_704 var1, ItemStack var2, boolean var3) {
-      boolean var6 = var1.field_3876.field_4944;
+      boolean var6 = var1.field_3876.isCreativeMode;
       if (var3 && var6) {
          if (!var1.inventory.method_32405(var2)) {
             var1.inventory.method_32414(var2);

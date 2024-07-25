@@ -44,7 +44,7 @@ public class class_7539 implements class_2995 {
       RenderSystem.method_16484(6.0F);
       method_34330(var0, var1, var2, var3, var4, var6, var8);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16489();
    }
 

@@ -40,7 +40,7 @@ public class class_3634 extends class_2840<Map<Identifier, List<class_3293>>> {
                   InputStream var14 = var13.method_18576();
                   BufferedReader var16 = new BufferedReader(new InputStreamReader(var14, StandardCharsets.UTF_8));
                ) {
-                  var2.method_16056("reading");
+                  var2.startSection("reading");
                   JsonArray var18 = class_6539.method_29787(class_6539.<JsonObject>method_29801(var5, var16, JsonObject.class), "providers");
                   var2.method_16050("parsing");
 
@@ -50,32 +50,32 @@ public class class_3634 extends class_2840<Map<Identifier, List<class_3293>>> {
                      try {
                         String var21 = class_6539.method_29796(var20, "type");
                         class_2397 var22 = class_2397.method_10928(var21);
-                        var2.method_16056(var21);
+                        var2.startSection(var21);
                         class_3293 var23 = var22.method_10926(var20).method_16786(var1);
                         if (var23 != null) {
                            var11.add(var23);
                         }
 
-                        var2.method_16054();
+                        var2.endSection();
                      } catch (RuntimeException var51) {
                         class_950.method_4194()
                            .warn("Unable to read definition '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.method_18579(), var51.getMessage());
                      }
                   }
 
-                  var2.method_16054();
+                  var2.endSection();
                } catch (RuntimeException var56) {
                   class_950.method_4194()
                      .warn("Unable to load font '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.method_18579(), var56.getMessage());
                }
 
-               var2.method_16054();
+               var2.endSection();
             }
          } catch (IOException var57) {
             class_950.method_4194().warn("Unable to load font '{}' in fonts.json: {}", var10, var57.getMessage());
          }
 
-         var2.method_16056("caching");
+         var2.startSection("caching");
          IntOpenHashSet var58 = new IntOpenHashSet();
 
          for (class_3293 var60 : var11) {
@@ -91,8 +91,8 @@ public class class_3634 extends class_2840<Map<Identifier, List<class_3293>>> {
                }
             }
          });
-         var2.method_16054();
-         var2.method_16054();
+         var2.endSection();
+         var2.endSection();
       }
 
       var2.method_16052();
@@ -101,7 +101,7 @@ public class class_3634 extends class_2840<Map<Identifier, List<class_3293>>> {
 
    public void method_16943(Map<Identifier, List<class_3293>> var1, class_7832 var2, class_3492 var3) {
       var3.method_16059();
-      var3.method_16056("closing");
+      var3.startSection("closing");
       class_950.method_4193(this.field_17739).values().forEach(class_6988::close);
       class_950.method_4193(this.field_17739).clear();
       var3.method_16050("reloading");
@@ -110,7 +110,7 @@ public class class_3634 extends class_2840<Map<Identifier, List<class_3293>>> {
          var5.method_31979(Lists.reverse(var2x));
          class_950.method_4193(this.field_17739).put(var1x, var5);
       });
-      var3.method_16054();
+      var3.endSection();
       var3.method_16052();
    }
 

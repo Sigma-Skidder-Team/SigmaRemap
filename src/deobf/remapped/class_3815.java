@@ -51,7 +51,7 @@ public final class class_3815 {
    }
 
    public static void method_17763(class_6331 var0, class_2654 var1, class_1728 var2, boolean var3, boolean var4, boolean var5) {
-      var0.method_29599().method_16056("spawner");
+      var0.method_29599().startSection("spawner");
 
       for (class_4565 var11 : field_18662) {
          if ((var3 || !var11.method_21203()) && (var4 || var11.method_21203()) && (var5 || !var11.method_21199()) && class_1728.method_7726(var2, var11)) {
@@ -65,7 +65,7 @@ public final class class_3815 {
          }
       }
 
-      var0.method_29599().method_16054();
+      var0.method_29599().endSection();
    }
 
    public static void method_17774(class_4565 var0, class_6331 var1, class_2654 var2, class_3712 var3, class_6453 var4) {

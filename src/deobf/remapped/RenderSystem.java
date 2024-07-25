@@ -212,7 +212,7 @@ public class RenderSystem {
       GlStateManager.method_8829();
    }
 
-   public static void method_16448() {
+   public static void disableBlend() {
       method_16431(RenderSystem::method_16429);
       GlStateManager.method_8775();
    }

@@ -108,7 +108,7 @@ public class class_9183 extends class_7651 {
             AbstractGui.method_9778(var2, var15 + var13 / 2, var16, (float)(200 - var13 / 2), (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
             AbstractGui.method_9778(var2, var15, var16 + 8, 0.0F, (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
             AbstractGui.method_9778(var2, var15 + var13 / 2, var16 + 8, (float)(200 - var13 / 2), (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
-            RenderSystem.method_16448();
+            RenderSystem.disableBlend();
             int var19 = var4 + 11 + 5;
             int var20 = !var17 ? 16777215 : 16777120;
             class_7039.method_32239(this.field_46988).method_45378(var2, var23, (float)(var3 + 2), (float)(var19 + 1), 15553363);

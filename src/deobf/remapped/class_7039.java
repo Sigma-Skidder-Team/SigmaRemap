@@ -668,7 +668,7 @@ public class class_7039 extends class_1094 {
       boolean var10 = false;
       byte var9 = 32;
       AbstractGui.method_9778(var1, 0, 32, 0.0F, 0.0F, this.field_941, this.field_940 - 40 - 32, 310, 166);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.field_943.getTextureManager().bindTexture(field_36353);
       AbstractGui.method_9778(var1, var6, var7, 0.0F, 0.0F, 310, 166, 310, 166);

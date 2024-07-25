@@ -73,7 +73,7 @@ public class class_4380 extends class_551 implements class_1538 {
    private static boolean method_20410(class_5834 var0, ItemStack var1) {
       int var4 = class_2931.method_13423(class_3668.field_17875, var1);
       int var5 = var4 != 0 ? 3 : 1;
-      boolean var6 = var0 instanceof class_704 && ((class_704)var0).field_3876.field_4944;
+      boolean var6 = var0 instanceof class_704 && ((class_704)var0).field_3876.isCreativeMode;
       ItemStack var7 = var0.method_26475(var1);
       ItemStack var8 = var7.method_27973();
 
@@ -227,7 +227,7 @@ public class class_4380 extends class_551 implements class_1538 {
 
       for (int var10 = 0; var10 < var8.size(); var10++) {
          ItemStack var11 = (ItemStack)var8.get(var10);
-         boolean var12 = var1 instanceof class_704 && ((class_704)var1).field_3876.field_4944;
+         boolean var12 = var1 instanceof class_704 && ((class_704)var1).field_3876.isCreativeMode;
          if (!var11.method_28022()) {
             if (var10 != 0) {
                if (var10 != 1) {

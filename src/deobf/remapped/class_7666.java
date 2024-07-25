@@ -176,9 +176,9 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().method_16056("villagerBrain");
+      this.field_41768.method_29599().startSection("villagerBrain");
       this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
       if (this.field_38966) {
          this.field_38966 = false;
       }

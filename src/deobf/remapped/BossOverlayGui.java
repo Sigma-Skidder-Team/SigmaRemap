@@ -14,7 +14,7 @@ public class BossOverlayGui extends AbstractGui {
       this.field_22948 = var1;
    }
 
-   public void method_21875(class_7966 var1) {
+   public void func_238484_a_(class_7966 var1) {
       if (!this.field_22947.isEmpty()) {
          int var4 = this.field_22948.getMainWindow().getScaledWidth();
          byte var5 = 12;

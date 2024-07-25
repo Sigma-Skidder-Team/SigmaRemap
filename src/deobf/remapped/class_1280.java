@@ -31,7 +31,7 @@ public class class_1280<T extends class_2875> extends class_2208<T> implements c
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
       super.method_6767(var1, var2, var3, var4);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       this.method_5725(var1, var2, var3, var4);
       this.method_10214(var1, var2, var3);
    }

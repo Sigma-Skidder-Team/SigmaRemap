@@ -41,7 +41,7 @@ public class AutoMLGModule extends PremiumModule {
    @EventListen
    @class_7664
    private void method_16779(class_1393 var1) {
-      if (this.method_42015() && client.playerController.method_42133()) {
+      if (this.method_42015() && client.playerController.gameIsSurvivalOrAdventure()) {
          if (var1.method_6449() && field_17597 >= 0) {
             field_17597++;
             float[] var4 = class_7211.method_33006(

@@ -155,7 +155,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
          var16.method_44487();
          class_138.method_554(var16);
          RenderSystem.method_16486(7424);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.method_16432();
          class_3758 var18 = class_2565.method_11648(class_8042.method_36499().method_36501());
          var1.method_36065(0.0, 0.0, 400.0);

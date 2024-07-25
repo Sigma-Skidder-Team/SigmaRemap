@@ -62,7 +62,7 @@ public class class_2973 implements class_2995 {
       this.method_13605();
       this.method_13595(var3, var5, var7);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16489();
       if (!this.field_14620.thePlayer.method_37221()) {
          this.method_13608();

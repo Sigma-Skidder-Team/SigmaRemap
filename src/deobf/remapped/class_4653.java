@@ -221,7 +221,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                      if (var31 != this && var31.method_37330() && this.method_26420(var31)) {
                         if (!(var31 instanceof class_704)) {
                            this.method_21512(var3, var31.method_37145());
-                        } else if (!((class_704)var31).field_3876.field_4940) {
+                        } else if (!((class_704)var31).field_3876.disableDamage) {
                            this.method_21512(var3, var31.method_37145());
                         }
                         break;
@@ -233,7 +233,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                   Entity var26 = this.field_41768.method_29534(var23);
                   if (var26 == null || !var26.method_37330() || this.method_37275(var26) > 900.0 || !this.method_26420(var26)) {
                      this.method_21512(var3, 0);
-                  } else if (var26 instanceof class_704 && ((class_704)var26).field_3876.field_4940) {
+                  } else if (var26 instanceof class_704 && ((class_704)var26).field_3876.disableDamage) {
                      this.method_21512(var3, 0);
                   } else {
                      this.method_21519(var3 + 1, (class_5834)var26);

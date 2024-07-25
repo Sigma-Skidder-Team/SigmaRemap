@@ -38,7 +38,7 @@ public class class_8448 implements class_2995 {
       }
 
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16489();
    }
 }

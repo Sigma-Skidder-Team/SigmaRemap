@@ -101,13 +101,13 @@ public abstract class class_1249 {
                if (this.field_6887 != null && !this.field_6887.method_18436() && var1.contains(this.field_6872)) {
                   return this.field_6887;
                } else {
-                  this.field_6882.method_29599().method_16056("pathfind");
+                  this.field_6882.method_29599().startSection("pathfind");
                   float var7 = (float)this.field_6877.method_26575(class_7331.field_37471);
                   class_1331 var8 = !var3 ? this.field_6877.method_37075() : this.field_6877.method_37075().method_6081();
                   int var9 = (int)(var7 + (float)var2);
                   class_9525 var10 = new class_9525(this.field_6882, var8.method_6104(-var9, -var9, -var9), var8.method_6104(var9, var9, var9));
                   class_3998 var11 = this.field_6873.method_41159(var10, this.field_6877, var1, var7, var4, this.field_6883);
-                  this.field_6882.method_29599().method_16054();
+                  this.field_6882.method_29599().endSection();
                   if (var11 != null && var11.method_18426() != null) {
                      this.field_6872 = var11.method_18426();
                      this.field_6878 = var4;

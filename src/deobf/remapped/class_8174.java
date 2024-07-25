@@ -46,7 +46,7 @@ public class class_8174 implements class_2274 {
 
    public void 錌圭훔곻瀧쿨() {
       this.field_41848++;
-      if (this.field_41851.method_40539() == GameType.field_22764) {
+      if (this.field_41851.method_40539() == GameType.SURVIVAL) {
          if (this.field_41848 == 1) {
             class_5989 var3 = this.field_41851.method_40530().thePlayer;
             if (var3 != null) {

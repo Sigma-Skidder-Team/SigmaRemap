@@ -134,7 +134,7 @@ public class class_6560 {
 
    public void method_29955(class_3492 var1, int var2) {
       class_7860.field_40039.method_3590();
-      var1.method_16056("missing_model");
+      var1.startSection("missing_model");
 
       try {
          this.field_33436.put(field_33445, this.method_29952(field_33445));
@@ -189,11 +189,11 @@ public class class_6560 {
          this.field_33430.put((Identifier)var9.getKey(), Pair.of(var10, var11));
       }
 
-      var1.method_16054();
+      var1.endSection();
    }
 
    public class_6885 method_29938(TextureManager var1, class_3492 var2) {
-      var2.method_16056("atlas");
+      var2.startSection("atlas");
 
       for (Pair var6 : this.field_33430.values()) {
          class_8359 var7 = (class_8359)var6.getFirst();
@@ -219,7 +219,7 @@ public class class_6560 {
             this.field_33449.put(var1x, var4);
          }
       });
-      var2.method_16054();
+      var2.endSection();
       return this.field_33444;
    }
 

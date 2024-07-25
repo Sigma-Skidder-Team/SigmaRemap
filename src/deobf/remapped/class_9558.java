@@ -177,13 +177,13 @@ public class class_9558 {
                }
 
                for (GameType var11 : GameType.values()) {
-                  if (var11 != GameType.field_22762 && var11.method_21588().toLowerCase(Locale.ROOT).startsWith(var5x)) {
+                  if (var11 != GameType.NOT_SET && var11.getName().toLowerCase(Locale.ROOT).startsWith(var5x)) {
                      if (var7) {
-                        var1.suggest('!' + var11.method_21588());
+                        var1.suggest('!' + var11.getName());
                      }
 
                      if (var6x) {
-                        var1.suggest(var11.method_21588());
+                        var1.suggest(var11.getName());
                      }
                   }
                }
@@ -197,8 +197,8 @@ public class class_9558 {
                throw field_48625.createWithContext(var0.method_22749(), "gamemode");
             } else {
                String var5 = var0.method_22749().readUnquotedString();
-               GameType var6 = GameType.method_21595(var5, GameType.field_22762);
-               if (var6 != GameType.field_22762) {
+               GameType var6 = GameType.method_21595(var5, GameType.NOT_SET);
+               if (var6 != GameType.NOT_SET) {
                   var0.method_22768(false);
                   var0.method_22758(var2 -> {
                      if (var2 instanceof class_9359) {

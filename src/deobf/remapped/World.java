@@ -142,9 +142,9 @@ public abstract class World implements class_9379, AutoCloseable {
                      || var10.method_8358()
                      || var9.method_8358()
                )) {
-               this.method_29599().method_16056("queueCheckLight");
+               this.method_29599().startSection("queueCheckLight");
                this.method_43363().method_14813().method_21566(var1);
-               this.method_29599().method_16054();
+               this.method_29599().endSection();
             }
 
             if (var10 == var2) {
@@ -388,7 +388,7 @@ public abstract class World implements class_9379, AutoCloseable {
 
    public void method_29547() {
       class_3492 var3 = this.method_29599();
-      var3.method_16056("blockEntities");
+      var3.startSection("blockEntities");
       if (!this.field_33037.isEmpty()) {
          this.field_33031.removeAll(this.field_33037);
          this.field_33053.removeAll(this.field_33037);
@@ -411,7 +411,7 @@ public abstract class World implements class_9379, AutoCloseable {
                      var5.method_17411();
                   }
 
-                  var3.method_16054();
+                  var3.endSection();
                } catch (Throwable var10) {
                   class_159 var8 = class_159.method_643(var10, "Ticking block entity");
                   class_6544 var9 = var8.method_639("Block entity being ticked");
@@ -452,7 +452,7 @@ public abstract class World implements class_9379, AutoCloseable {
          this.field_33030.clear();
       }
 
-      var3.method_16054();
+      var3.endSection();
    }
 
    public void method_29532(Consumer<Entity> var1, Entity var2) {

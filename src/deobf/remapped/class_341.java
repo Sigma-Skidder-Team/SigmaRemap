@@ -64,7 +64,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    private static final Logger field_1316 = LogManager.getLogger();
    public static final File field_1312 = new File("usercache.json");
    public static final class_6292 field_1290 = new class_6292(
-      "Demo World", GameType.field_22764, false, class_423.field_1789, false, new class_291(), class_2805.field_13766
+      "Demo World", GameType.SURVIVAL, false, class_423.field_1789, false, new class_291(), class_2805.field_13766
    );
    public final class_3676 field_1339;
    public final class_5645 field_1337;
@@ -518,13 +518,13 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
                class_8576 var51 = class_8576.method_39452("Server");
                this.method_1693(var51);
                this.field_1295.method_16059();
-               this.field_1295.method_16056("tick");
+               this.field_1295.startSection("tick");
                this.method_1658(this::method_1609);
                this.field_1295.method_16050("nextTickWait");
                this.field_1283 = true;
                this.field_1332 = Math.max(Util.getMeasuringTimeMs() + 50L, this.field_1331);
                this.method_1737();
-               this.field_1295.method_16054();
+               this.field_1295.endSection();
                this.field_1295.method_16052();
                this.method_1619(var51);
                this.field_1296 = true;
@@ -671,14 +671,14 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
 
       if (this.field_1314 % 6000 == 0) {
          field_1316.debug("Autosave started");
-         this.field_1295.method_16056("save");
+         this.field_1295.startSection("save");
          this.field_1322.method_39964();
          this.method_1635(true, false, false);
-         this.field_1295.method_16054();
+         this.field_1295.endSection();
          field_1316.debug("Autosave finished");
       }
 
-      this.field_1295.method_16056("snooper");
+      this.field_1295.startSection("snooper");
       if (!this.field_1307.method_15248() && this.field_1314 > 100) {
          this.field_1307.method_15250();
       }
@@ -687,32 +687,32 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
          this.field_1307.method_15246();
       }
 
-      this.field_1295.method_16054();
-      this.field_1295.method_16056("tallying");
+      this.field_1295.endSection();
+      this.field_1295.startSection("tallying");
       long var6 = this.field_1286[this.field_1314 % 100] = Util.getMeasuringTimeNano() - var4;
       this.field_1304 = this.field_1304 * 0.8F + (float)var6 / 1000000.0F * 0.19999999F;
       long var8 = Util.getMeasuringTimeNano();
       this.field_1335.method_44836(var8 - var4);
-      this.field_1295.method_16054();
+      this.field_1295.endSection();
    }
 
    public void method_1630(BooleanSupplier var1) {
-      this.field_1295.method_16056("commandFunctions");
+      this.field_1295.startSection("commandFunctions");
       this.method_1642().method_7255();
       this.field_1295.method_16050("levels");
 
       for (class_6331 var5 : this.method_1719()) {
          this.field_1295.method_16057(() -> var5 + " " + var5.method_29545().method_25499());
          if (this.field_1314 % 20 == 0) {
-            this.field_1295.method_16056("timeSync");
+            this.field_1295.startSection("timeSync");
             this.field_1322
                .method_39958(
                   new class_8508(var5.method_29546(), var5.method_29584(), var5.method_29537().method_1285(class_291.field_1037)), var5.method_29545()
                );
-            this.field_1295.method_16054();
+            this.field_1295.endSection();
          }
 
-         this.field_1295.method_16056("tick");
+         this.field_1295.startSection("tick");
 
          try {
             var5.method_28982(var1);
@@ -722,8 +722,8 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
             throw new class_3297(var7);
          }
 
-         this.field_1295.method_16054();
-         this.field_1295.method_16054();
+         this.field_1295.endSection();
+         this.field_1295.endSection();
       }
 
       this.field_1295.method_16050("connection");
@@ -740,7 +740,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
          this.field_1330.get(var9).run();
       }
 
-      this.field_1295.method_16054();
+      this.field_1295.endSection();
    }
 
    public boolean method_1741() {

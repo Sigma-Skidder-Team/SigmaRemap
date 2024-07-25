@@ -60,7 +60,7 @@ public class SpectatorGui extends AbstractGui implements class_3796 {
       }
 
       RenderSystem.method_16443();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    private void method_38565(class_7966 var1, int var2, int var3, float var4, float var5, class_7912 var6) {
@@ -94,7 +94,7 @@ public class SpectatorGui extends AbstractGui implements class_3796 {
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
             this.field_42841.textRenderer.method_45392(var1, var6, (float)var7, (float)var8, 16777215 + (var4 << 24));
-            RenderSystem.method_16448();
+            RenderSystem.disableBlend();
             RenderSystem.method_16489();
          }
       }

@@ -69,11 +69,11 @@ public class class_7762 extends class_341 {
       this.field_39352 = MinecraftClient.getInstance().method_8614() != null && MinecraftClient.getInstance().method_8564();
       class_3492 var5 = this.method_1704();
       if (!var4 && this.field_39352) {
-         var5.method_16056("autoSave");
+         var5.startSection("autoSave");
          field_39350.info("Saving and pausing game...");
          this.method_1600().method_39964();
          this.method_1635(false, false, false);
-         var5.method_16054();
+         var5.endSection();
       }
 
       if (!this.field_39352) {
@@ -287,7 +287,7 @@ public class class_7762 extends class_341 {
    }
 
    private void method_35212(class_6331 var1) {
-      if (this.method_1602() == GameType.field_22761) {
+      if (this.method_1602() == GameType.CREATIVE) {
          long var4 = var1.method_29584();
          long var6 = var4 % 24000L;
          if (Config.method_14406()) {

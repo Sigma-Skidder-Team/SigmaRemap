@@ -190,9 +190,9 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().method_16056("zoglinBrain");
+      this.field_41768.method_29599().startSection("zoglinBrain");
       this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
       this.method_18036();
    }
 

@@ -90,7 +90,7 @@ public class class_5530 extends class_7807<class_5530> {
       AbstractGui.method_9780(var1, var13, var14, 24, 24, 8.0F, 8.0F, 8, 8, 64, 64);
       RenderSystem.enableBlend();
       AbstractGui.method_9780(var1, var13, var14, 24, 24, 40.0F, 8.0F, 8, 8, 64, 64);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       this.field_28199.textRenderer.method_45385(var1, this.field_28191, (float)var15, (float)var17, field_28189);
       if (this.field_28195) {
          AbstractGui.method_9774(var1, var13, var14, var13 + 24, var14 + 24, field_28187);

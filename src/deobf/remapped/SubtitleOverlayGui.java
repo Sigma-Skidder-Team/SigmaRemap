@@ -98,7 +98,7 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
             var8++;
          }
 
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.method_16489();
       }
    }

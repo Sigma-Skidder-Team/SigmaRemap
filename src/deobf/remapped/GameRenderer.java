@@ -223,7 +223,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    public void method_35938(float var1) {
       Entity var4 = this.field_40612.getRenderViewEntity();
       if (var4 != null && this.field_40612.field_9601 != null) {
-         this.field_40612.method_8562().method_16056("pick");
+         this.field_40612.getProfiler().startSection("pick");
          this.field_40612.field_9662 = null;
          double var5 = (double)this.field_40612.playerController.method_42146();
          this.field_40612.field_9587 = var4.method_37201(var5, var1, false);
@@ -268,7 +268,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             }
          }
 
-         this.field_40612.method_8562().method_16054();
+         this.field_40612.getProfiler().endSection();
       }
    }
 
@@ -515,7 +515,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                / (double)this.field_40612.getMainWindow().method_43163()
          );
          if (var4 && this.field_40612.field_9601 != null && !Config.method_14350()) {
-            this.field_40612.method_8562().method_16056("level");
+            this.field_40612.getProfiler().startSection("level");
             SigmaMainClass.getInstance().getEventManager().call(new class_1711(var1, var2));
             this.method_35950(var1, var2, new class_7966());
             if (this.field_40612.method_8520() && this.field_40646 < Util.getMeasuringTimeMs() - 1000L) {
@@ -527,7 +527,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
             this.field_40612.worldRenderer.method_20069();
             if (this.field_40620 != null && this.field_40610) {
-               RenderSystem.method_16448();
+               RenderSystem.disableBlend();
                RenderSystem.method_16491();
                RenderSystem.method_16458();
                RenderSystem.method_16432();
@@ -559,7 +559,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
 
          if (var4 && this.field_40612.field_9601 != null) {
-            this.field_40612.method_8562().method_16050("gui");
+            this.field_40612.getProfiler().method_16050("gui");
             if (this.field_40612.thePlayer != null) {
                float var11 = class_9299.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal);
                if (var11 > 0.0F && this.field_40612.thePlayer.isPotionActive(Effects.NAUSEA) && this.field_40612.gameOptions.field_45469 < 1.0F) {
@@ -583,7 +583,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
             }
 
-            this.field_40612.method_8562().method_16054();
+            this.field_40612.getProfiler().endSection();
          }
 
          RenderSystem.method_16438();
@@ -697,7 +697,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       } else {
          Entity var3 = this.field_40612.getRenderViewEntity();
          boolean var4 = var3 instanceof class_704 && !this.field_40612.gameOptions.hideGUI;
-         if (var4 && !((class_704)var3).field_3876.field_4938) {
+         if (var4 && !((class_704)var3).field_3876.allowEdit) {
             ItemStack var5 = ((class_5834)var3).method_26446();
             class_7474 var6 = this.field_40612.field_9587;
             if (var6 != null && var6.method_33990() == class_1430.field_7717) {
@@ -731,14 +731,14 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_6588.method_30311(this.field_40612, this.field_40648, var1, var2);
       }
 
-      this.field_40612.method_8562().method_16056("center");
+      this.field_40612.getProfiler().startSection("center");
       boolean var7 = Config.method_14424();
       if (var7) {
          class_6588.method_30139(var1, var2);
       }
 
       boolean var8 = this.method_35926();
-      this.field_40612.method_8562().method_16050("camera");
+      this.field_40612.getProfiler().method_16050("camera");
       Camera var9 = this.field_40648;
       this.field_40640 = (float)(this.field_40612.gameOptions.field_45537 * 16);
       if (Config.method_14324()) {
@@ -801,11 +801,11 @@ public class GameRenderer implements class_6491, AutoCloseable {
       var4.method_36060(class_2426.field_12074.method_11074(var9.method_41640() + 180.0F));
       this.field_40612.worldRenderer.method_20059(var4, var1, var2, var8, var9, this, this.field_40623, var18);
       if (class_7860.field_40045.method_3596()) {
-         this.field_40612.method_8562().method_16050("forge_render_last");
+         this.field_40612.getProfiler().method_16050("forge_render_last");
          class_7860.method_35547(class_7860.field_40045, this.field_40612.worldRenderer, var4, var1, var18, var2);
       }
 
-      this.field_40612.method_8562().method_16050("hand");
+      this.field_40612.getProfiler().method_16050("hand");
       RenderSystem.method_16438();
       RenderSystem.method_16358(var4.method_36058().method_28620());
       SigmaMainClass.getInstance().method_3316();
@@ -828,7 +828,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          class_6588.method_30103();
       }
 
-      this.field_40612.method_8562().method_16054();
+      this.field_40612.getProfiler().endSection();
    }
 
    public void method_35925() {
@@ -1091,7 +1091,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       var19.method_36500();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.defaultBlendFunc();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16387(true);
       RenderSystem.enableDepthTest();
    }

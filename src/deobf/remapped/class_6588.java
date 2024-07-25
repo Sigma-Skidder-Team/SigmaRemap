@@ -3194,7 +3194,7 @@ public class class_6588 {
       method_30273("pre beginRender");
       method_30223(field_33837.field_9601);
       field_33837 = var0;
-      field_33837.method_8562().method_16056("init");
+      field_33837.getProfiler().startSection("init");
       field_33681 = field_33837.gameRenderer;
       if (!field_33648) {
          try {
@@ -3313,7 +3313,7 @@ public class class_6588 {
       ((Buffer)field_33727).position(0);
       method_30273("beginRender");
       class_293.method_1322(field_33681, var1, 0, var2, var3);
-      field_33837.method_8562().method_16054();
+      field_33837.getProfiler().endSection();
       EXTFramebufferObject.glBindFramebufferEXT(36160, field_33619);
 
       for (int var15 = 0; var15 < field_33893; var15++) {
@@ -4486,7 +4486,7 @@ public class class_6588 {
    }
 
    public static void method_30205() {
-      field_33837.method_8562().method_16054();
+      field_33837.getProfiler().endSection();
    }
 
    public static String method_30235() {

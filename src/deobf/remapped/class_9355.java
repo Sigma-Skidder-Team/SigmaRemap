@@ -95,7 +95,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       } else if (!this.isPotionActive(Effects.field_19737)) {
          return class_6910.field_35518;
       } else {
-         if (!var1.field_3876.field_4944) {
+         if (!var1.field_3876.isCreativeMode) {
             var5.method_27970(1);
          }
 

@@ -112,7 +112,7 @@ public class class_7867 implements Packet<class_392> {
                   }
                }
 
-               var1.method_37743(var5.method_27003().method_21589());
+               var1.method_37743(var5.method_27003().getID());
                var1.method_37743(var5.method_27002());
                if (var5.method_27001() == null) {
                   var1.writeBoolean(false);
@@ -123,7 +123,7 @@ public class class_7867 implements Packet<class_392> {
                break;
             case field_11147:
                var1.method_37746(var5.method_27005().getId());
-               var1.method_37743(var5.method_27003().method_21589());
+               var1.method_37743(var5.method_27003().getID());
                break;
             case field_11141:
                var1.method_37746(var5.method_27005().getId());

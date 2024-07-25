@@ -53,7 +53,7 @@ public class class_4537 implements class_2995 {
 
          RenderSystem.method_16387(true);
          RenderSystem.method_16432();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
       }
    }
 }

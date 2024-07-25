@@ -126,27 +126,27 @@ public class IngameGUI extends AbstractGui {
          this.func_238456_d_(matrixStack);
          GlStateManager.enableAlphaTest();
          RenderSystem.defaultBlendFunc();
-         this.mc.method_8562().method_16056("bossHealth");
-         this.overlayBoss.method_21875(matrixStack);
-         this.mc.method_8562().method_16054();
+         this.mc.getProfiler().startSection("bossHealth");
+         this.overlayBoss.func_238484_a_(matrixStack);
+         this.mc.getProfiler().endSection();
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.mc.getTextureManager().bindTexture(GUI_ICONS_LOCATION);
-         if (this.mc.playerController.method_42162()) {
-            this.method_13994(matrixStack);
+         if (this.mc.playerController.shouldDrawHUD()) {
+            this.func_238457_e_(matrixStack);
          }
 
-         this.method_14000(matrixStack);
-         RenderSystem.method_16448();
+         this.func_238458_f_(matrixStack);
+         RenderSystem.disableBlend();
          int var8 = this.scaledWidth / 2 - 91;
-         if (!this.mc.thePlayer.method_27317()) {
-            if (this.mc.playerController.method_42133()) {
-               this.method_14003(matrixStack, var8);
+         if (!this.mc.thePlayer.isRidingHorse()) {
+            if (this.mc.playerController.gameIsSurvivalOrAdventure()) {
+               this.func_238454_b_(matrixStack, var8);
             }
          } else {
-            this.method_13999(matrixStack, var8);
+            this.renderHorseJumpBar(matrixStack, var8);
          }
 
-         if (this.mc.gameOptions.field_45477 && this.mc.playerController.getCurrentGameType() != GameType.SPECTATOR) {
+         if (this.mc.gameOptions.heldItemTooltips && this.mc.playerController.getCurrentGameType() != GameType.SPECTATOR) {
             this.method_13993(matrixStack);
          } else if (this.mc.thePlayer.method_37221()) {
             this.spectatorGui.method_38563(matrixStack);
@@ -154,7 +154,7 @@ public class IngameGUI extends AbstractGui {
       }
 
       if (this.mc.thePlayer.method_3202() > 0) {
-         this.mc.method_8562().method_16056("sleep");
+         this.mc.getProfiler().startSection("sleep");
          RenderSystem.method_16491();
          RenderSystem.method_16458();
          float var14 = (float)this.mc.thePlayer.method_3202();
@@ -167,7 +167,7 @@ public class IngameGUI extends AbstractGui {
          method_9774(matrixStack, 0, 0, this.scaledWidth, this.scaledHeight, var10);
          RenderSystem.enableAlphaTest();
          RenderSystem.enableDepthTest();
-         this.mc.method_8562().method_16054();
+         this.mc.getProfiler().endSection();
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
@@ -182,7 +182,7 @@ public class IngameGUI extends AbstractGui {
 
       if (!this.mc.gameOptions.hideGUI) {
          if (this.overlayMessage != null && this.overlayMessageTime > 0) {
-            this.mc.method_8562().method_16056("overlayMessage");
+            this.mc.getProfiler().startSection("overlayMessage");
             float var15 = (float)this.overlayMessageTime - partialTicks;
             int var18 = (int)(var15 * 255.0F / 20.0F);
             if (var18 > 255) {
@@ -203,15 +203,15 @@ public class IngameGUI extends AbstractGui {
                int var12 = var5.method_45379(this.overlayMessage);
                this.method_14005(matrixStack, var5, -4, var12, 16777215 | var11);
                var5.method_45378(matrixStack, this.overlayMessage, (float)(-var12 / 2), -4.0F, var22 | var11);
-               RenderSystem.method_16448();
+               RenderSystem.disableBlend();
                RenderSystem.method_16489();
             }
 
-            this.mc.method_8562().method_16054();
+            this.mc.getProfiler().endSection();
          }
 
          if (this.displayedTitle != null && this.titlesTimer > 0) {
-            this.mc.method_8562().method_16056("titleAndSubtitle");
+            this.mc.getProfiler().startSection("titleAndSubtitle");
             float var16 = (float)this.titlesTimer - partialTicks;
             int var19 = 255;
             if (this.titlesTimer > this.titleFadeOut + this.titleDisplayTime) {
@@ -245,11 +245,11 @@ public class IngameGUI extends AbstractGui {
                   RenderSystem.method_16489();
                }
 
-               RenderSystem.method_16448();
+               RenderSystem.disableBlend();
                RenderSystem.method_16489();
             }
 
-            this.mc.method_8562().method_16054();
+            this.mc.getProfiler().endSection();
          }
 
          this.overlaySubtitle.method_20416(matrixStack);
@@ -281,9 +281,9 @@ public class IngameGUI extends AbstractGui {
          RenderSystem.method_16458();
          RenderSystem.method_16438();
          RenderSystem.method_16413(0.0F, (float)(this.scaledHeight - 48), 0.0F);
-         this.mc.method_8562().method_16056("chat");
+         this.mc.getProfiler().startSection("chat");
          this.persistantChatGUI.method_18678(matrixStack, this.ticks);
-         this.mc.method_8562().method_16054();
+         this.mc.getProfiler().endSection();
          RenderSystem.method_16489();
          var28 = var17.method_4833(0);
          if (this.mc.gameOptions.keyPlayerList.isKeyDown()
@@ -499,12 +499,12 @@ public class IngameGUI extends AbstractGui {
          }
 
          RenderSystem.method_16443();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
       }
    }
 
-   public void method_13999(class_7966 var1, int var2) {
-      this.mc.method_8562().method_16056("jumpBar");
+   public void renderHorseJumpBar(class_7966 var1, int var2) {
+      this.mc.getProfiler().startSection("jumpBar");
       this.mc.getTextureManager().bindTexture(AbstractGui.GUI_ICONS_LOCATION);
       float var5 = this.mc.thePlayer.method_27313();
       short var6 = 182;
@@ -515,11 +515,11 @@ public class IngameGUI extends AbstractGui {
          this.method_9781(var1, var2, var8, 0, 89, var7, 5);
       }
 
-      this.mc.method_8562().method_16054();
+      this.mc.getProfiler().endSection();
    }
 
-   public void method_14003(class_7966 var1, int var2) {
-      this.mc.method_8562().method_16056("expBar");
+   public void func_238454_b_(class_7966 var1, int var2) {
+      this.mc.getProfiler().startSection("expBar");
       this.mc.getTextureManager().bindTexture(AbstractGui.GUI_ICONS_LOCATION);
       int var5 = this.mc.thePlayer.method_3194();
       if (var5 > 0) {
@@ -532,9 +532,9 @@ public class IngameGUI extends AbstractGui {
          }
       }
 
-      this.mc.method_8562().method_16054();
+      this.mc.getProfiler().endSection();
       if (this.mc.thePlayer.field_3840 > 0) {
-         this.mc.method_8562().method_16056("expLevel");
+         this.mc.getProfiler().startSection("expLevel");
          int var10 = 8453920;
          if (Config.method_14438()) {
             var10 = class_9300.method_42858(var10);
@@ -548,12 +548,12 @@ public class IngameGUI extends AbstractGui {
          this.getFontRenderer().method_45385(var1, var11, (float)var12, (float)(var9 + 1), 0);
          this.getFontRenderer().method_45385(var1, var11, (float)var12, (float)(var9 - 1), 0);
          this.getFontRenderer().method_45385(var1, var11, (float)var12, (float)var9, var10);
-         this.mc.method_8562().method_16054();
+         this.mc.getProfiler().endSection();
       }
    }
 
    public void method_13993(class_7966 var1) {
-      this.mc.method_8562().method_16056("selectedItemName");
+      this.mc.getProfiler().startSection("selectedItemName");
       if (this.remainingHighlightTicks > 0 && !this.highlightingItemStack.method_28022()) {
          IFormattableTextComponent var4 = new StringTextComponent("")
             .append(this.highlightingItemStack.method_28008())
@@ -570,7 +570,7 @@ public class IngameGUI extends AbstractGui {
          int var6 = this.getFontRenderer().method_45379((ITextProperties)var5);
          int var7 = (this.scaledWidth - var6) / 2;
          int var8 = this.scaledHeight - 59;
-         if (!this.mc.playerController.method_42162()) {
+         if (!this.mc.playerController.shouldDrawHUD()) {
             var8 += 14;
          }
 
@@ -596,16 +596,16 @@ public class IngameGUI extends AbstractGui {
                var10.method_45382(var1, ((ITextComponent)var5).func_241878_f(), (float)var7, (float)var8, 16777215 + (var9 << 24));
             }
 
-            RenderSystem.method_16448();
+            RenderSystem.disableBlend();
             RenderSystem.method_16489();
          }
       }
 
-      this.mc.method_8562().method_16054();
+      this.mc.getProfiler().endSection();
    }
 
    public void method_13971(class_7966 var1) {
-      this.mc.method_8562().method_16056("demo");
+      this.mc.getProfiler().startSection("demo");
       Object var4;
       if (this.mc.field_9601.method_29546() < 120500L) {
          var4 = new TranslationTextComponent("demo.remainingTime", class_6660.method_30575((int)(120500L - this.mc.field_9601.method_29546())));
@@ -615,7 +615,7 @@ public class IngameGUI extends AbstractGui {
 
       int var5 = this.getFontRenderer().method_45379((ITextProperties)var4);
       this.getFontRenderer().method_45392(var1, (ITextComponent)var4, (float)(this.scaledWidth - var5 - 10), 5.0F, 16777215);
-      this.mc.method_8562().method_16054();
+      this.mc.getProfiler().endSection();
    }
 
    private void method_13977(class_7966 var1, class_4399 var2) {
@@ -705,7 +705,7 @@ public class IngameGUI extends AbstractGui {
       return (int)Math.ceil((double)var1 / 10.0);
    }
 
-   private void method_13994(class_7966 var1) {
+   private void func_238457_e_(class_7966 var1) {
       class_704 var4 = this.method_13976();
       if (var4 != null) {
          int var5 = class_9299.method_42816(var4.method_26551());
@@ -746,7 +746,7 @@ public class IngameGUI extends AbstractGui {
             var23 = this.ticks % class_9299.method_42816(var15 + 5.0F);
          }
 
-         this.mc.method_8562().method_16056("armor");
+         this.mc.getProfiler().startSection("armor");
 
          for (int var24 = 0; var24 < 10; var24++) {
             if (var22 > 0) {
@@ -765,7 +765,7 @@ public class IngameGUI extends AbstractGui {
             }
          }
 
-         this.mc.method_8562().method_16050("health");
+         this.mc.getProfiler().method_16050("health");
 
          for (int var33 = class_9299.method_42816((var15 + (float)var16) / 2.0F) - 1; var33 >= 0; var33--) {
             byte var35 = 16;
@@ -829,7 +829,7 @@ public class IngameGUI extends AbstractGui {
          class_5834 var34 = this.method_13981();
          int var36 = this.method_13980(var34);
          if (var36 == 0) {
-            this.mc.method_8562().method_16050("food");
+            this.mc.getProfiler().method_16050("food");
 
             for (int var37 = 0; var37 < 10; var37++) {
                int var39 = var14;
@@ -858,7 +858,7 @@ public class IngameGUI extends AbstractGui {
             var20 -= 10;
          }
 
-         this.mc.method_8562().method_16050("air");
+         this.mc.getProfiler().method_16050("air");
          int var38 = var4.method_37099();
          int var40 = Math.min(var4.method_37229(), var38);
          if (var4.method_37261(class_6503.field_33094) || var40 < var38) {
@@ -876,17 +876,17 @@ public class IngameGUI extends AbstractGui {
             }
          }
 
-         this.mc.method_8562().method_16054();
+         this.mc.getProfiler().endSection();
       }
    }
 
-   private void method_14000(class_7966 var1) {
+   private void func_238458_f_(class_7966 var1) {
       class_5834 var4 = this.method_13981();
       if (var4 != null) {
          int var5 = this.method_13980(var4);
          if (var5 != 0) {
             int var6 = (int)Math.ceil((double)var4.method_26551());
-            this.mc.method_8562().method_16050("mountHealth");
+            this.mc.getProfiler().method_16050("mountHealth");
             int var7 = this.scaledHeight - 39;
             int var8 = this.scaledWidth / 2 + 91;
             int var9 = var7;

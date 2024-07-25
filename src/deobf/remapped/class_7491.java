@@ -18,7 +18,7 @@ public class class_7491 implements GameSession {
       if (var6 == null) {
          this.field_38226 = "unknown";
       } else {
-         this.field_38226 = var6.method_3393().method_21588();
+         this.field_38226 = var6.method_3393().getName();
       }
 
       this.field_38225 = var3.method_4815();

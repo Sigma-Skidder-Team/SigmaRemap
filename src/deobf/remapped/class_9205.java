@@ -120,7 +120,7 @@ public class class_9205 extends AbstractGui implements IRenderable, class_5888 {
          byte var12 = 82;
          short var13 = 208;
          this.method_42469(var1, var8, var9, 24, 4, 82, 208);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
 
          for (class_2285 var15 : this.field_47099) {
             var15.method_6767(var1, var2, var3, var4);

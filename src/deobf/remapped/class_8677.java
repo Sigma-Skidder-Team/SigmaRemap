@@ -18,7 +18,7 @@ public class class_8677 implements class_3025 {
    }
 
    @Override
-   public void method_16056(String var1) {
+   public void startSection(String var1) {
    }
 
    @Override
@@ -26,7 +26,7 @@ public class class_8677 implements class_3025 {
    }
 
    @Override
-   public void method_16054() {
+   public void endSection() {
    }
 
    @Override

@@ -60,7 +60,7 @@ public class class_8603 implements class_2274 {
       }
 
       if (this.field_44049 != -1 && this.field_44062 != -1) {
-         if (this.field_44059.method_40539() != GameType.field_22764) {
+         if (this.field_44059.method_40539() != GameType.SURVIVAL) {
             this.field_44059.method_40538(class_6240.field_31929);
          } else {
             this.field_44059.method_40538(class_6240.field_31930);

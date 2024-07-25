@@ -54,11 +54,11 @@ public enum class_531 {
       switch (var0) {
          case SPECTATOR:
             return Optional.<class_531>of(field_3233);
-         case field_22764:
+         case SURVIVAL:
             return Optional.<class_531>of(field_3227);
-         case field_22761:
+         case CREATIVE:
             return Optional.<class_531>of(field_3234);
-         case field_22760:
+         case ADVENTURE:
             return Optional.<class_531>of(field_3229);
          default:
             return Optional.<class_531>empty();

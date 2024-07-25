@@ -334,7 +334,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          RenderSystem.method_16361();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.method_16433();
          RenderSystem.method_16458();
          var1.method_26122();
@@ -510,7 +510,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          RenderSystem.enableBlend();
          RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
          this.field_21000.method_19714(this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198(), false);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
       }
    }
 
@@ -773,7 +773,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.method_19998();
       }
 
-      this.field_20970.method_29599().method_16056("camera");
+      this.field_20970.method_29599().startSection("camera");
       double var7 = this.client.thePlayer.method_37302() - this.field_20964;
       double var9 = this.client.thePlayer.method_37309() - this.field_21002;
       double var11 = this.client.thePlayer.method_37156() - this.field_20954;
@@ -796,7 +796,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       this.field_20968.method_30739(var6);
       this.field_20970.method_29599().method_16050("cull");
-      this.client.method_8562().method_16050("culling");
+      this.client.getProfiler().method_16050("culling");
       class_1331 var13 = var1.method_41630();
       class_3511 var14 = this.field_20966.method_34563(var13);
       byte var15 = 16;
@@ -819,7 +819,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.field_20978 = var6.field_7334;
       this.field_20993 = (double)var17;
       this.field_20995 = (double)var18;
-      this.client.method_8562().method_16050("update");
+      this.client.getProfiler().method_16050("update");
       class_5099.field_26297.method_24314();
       int var19 = this.method_20027();
       if (var19 != this.field_20963) {
@@ -955,7 +955,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
          }
 
-         this.client.method_8562().method_16056("iteration");
+         this.client.getProfiler().startSection("iteration");
          boolean var50 = Config.method_14420();
 
          while (!var41.isEmpty()) {
@@ -990,14 +990,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
          }
 
-         this.client.method_8562().method_16054();
+         this.client.getProfiler().endSection();
       }
 
       class_5099.field_26297.method_24313();
       if (class_6588.field_33945) {
          class_6588.method_30205();
       } else {
-         this.client.method_8562().method_16050("rebuildNear");
+         this.client.getProfiler().method_16050("rebuildNear");
          Set var42 = this.field_20924;
          this.field_20924 = this.field_20983;
          this.field_20983 = var42;
@@ -1020,17 +1020,17 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                } else if (!var47.method_16160()) {
                   this.field_20921.add(var47);
                } else {
-                  this.client.method_8562().method_16056("build near");
+                  this.client.getProfiler().startSection("build near");
                   this.field_20968.method_30726(var47);
                   var47.method_16135();
-                  this.client.method_8562().method_16054();
+                  this.client.getProfiler().endSection();
                }
             }
          }
 
          class_5099.field_26292.method_24313();
          this.field_20924.addAll(var42);
-         this.client.method_8562().method_16054();
+         this.client.getProfiler().endSection();
       }
    }
 
@@ -1101,7 +1101,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var20.method_10820(var12, var14, var16);
       }
 
-      this.client.method_8562().method_16050("captureFrustum");
+      this.client.getProfiler().method_16050("captureFrustum");
       if (this.field_20987) {
          this.method_20067(var18, var9, var11.field_7336, var11.field_7333, var11.field_7334, var19 ? new class_2359(var18, var9) : var20);
          this.field_20987 = false;
@@ -1170,9 +1170,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       var10.method_16050("terrain");
       class_5099.field_26298.method_24314();
       if (this.client.gameOptions.field_45432) {
-         this.client.method_8562().method_16050("finish");
+         this.client.getProfiler().method_16050("finish");
          GL11.glFinish();
-         this.client.method_8562().method_16050("terrain");
+         this.client.getProfiler().method_16050("terrain");
       }
 
       if (Config.method_14365() && class_6377.field_32581) {
@@ -1559,7 +1559,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.method_20035(var6);
       RenderSystem.method_16486(7424);
       RenderSystem.method_16387(true);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16489();
       class_6377.method_29162();
    }
@@ -1582,7 +1582,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       var1.method_24420();
       boolean var9 = Config.method_14424();
       if (var1 == class_3581.method_16762() && !class_6588.field_33945) {
-         this.client.method_8562().method_16056("translucent_sort");
+         this.client.getProfiler().startSection("translucent_sort");
          double var10 = var3 - this.field_20952;
          double var12 = var5 - this.field_20991;
          double var14 = var7 - this.field_20939;
@@ -1603,10 +1603,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
          }
 
-         this.client.method_8562().method_16054();
+         this.client.getProfiler().endSection();
       }
 
-      this.client.method_8562().method_16056("filterempty");
+      this.client.getProfiler().startSection("filterempty");
       if (var9) {
          class_293.method_1326(var1);
       }
@@ -1615,7 +1615,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       RenderSystem.method_16438();
       RenderSystem.method_16476();
       RenderSystem.method_16358(var2.method_36058().method_28620());
-      this.client.method_8562().method_16051(() -> "render_" + var1);
+      this.client.getProfiler().method_16051(() -> "render_" + var1);
       boolean var11 = var1 != class_3581.method_16762();
       ObjectListIterator var30 = this.field_20982.listIterator(var11 ? 0 : this.field_20982.size());
       if (Config.method_14351()) {
@@ -1704,7 +1704,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       class_7995.method_36279();
       RenderSystem.method_16473();
       class_7985.field_40918.method_13173();
-      this.client.method_8562().method_16054();
+      this.client.getProfiler().endSection();
       if (var9) {
          class_293.method_1323(var1);
       }
@@ -1814,7 +1814,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          RenderSystem.method_16387(true);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.method_16361();
          RenderSystem.method_16432();
       }
@@ -1870,7 +1870,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var2.method_36500();
          RenderSystem.method_16489();
          RenderSystem.method_16387(true);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.method_16361();
          RenderSystem.method_16432();
          RenderSystem.method_16484(1.0F);
@@ -1992,7 +1992,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          RenderSystem.method_16387(true);
          RenderSystem.method_16432();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.enableAlphaTest();
       }
    }
@@ -2161,7 +2161,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.enableAlphaTest();
          RenderSystem.method_16353();
          if (var20) {
@@ -2295,7 +2295,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.method_16458();
             RenderSystem.method_16361();
-            RenderSystem.method_16448();
+            RenderSystem.disableBlend();
             RenderSystem.method_16367();
             if (Config.method_14424()) {
                class_6588.method_30198();
@@ -2679,7 +2679,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          RenderSystem.method_16382();
          RenderSystem.enableAlphaTest();
          RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          RenderSystem.method_16489();
          RenderSystem.method_16387(true);
          if (Config.method_14424()) {

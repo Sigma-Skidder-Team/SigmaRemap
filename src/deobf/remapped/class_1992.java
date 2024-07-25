@@ -89,8 +89,8 @@ public class class_1992 implements Packet<class_392> {
    public void method_28776(class_8248 var1) throws IOException {
       var1.writeInt(this.field_10122);
       var1.writeBoolean(this.field_10117);
-      var1.writeByte(this.field_10115.method_21589());
-      var1.writeByte(this.field_10109.method_21589());
+      var1.writeByte(this.field_10115.getID());
+      var1.writeByte(this.field_10109.getID());
       var1.method_37743(this.field_10112.size());
 
       for (class_5621 var5 : this.field_10112) {

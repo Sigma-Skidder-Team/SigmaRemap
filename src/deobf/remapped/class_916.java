@@ -299,14 +299,14 @@ public class class_916 extends class_4037 implements class_6510 {
 
    public void method_3997(BooleanSupplier var1) {
       class_3492 var4 = this.field_4703.method_29599();
-      var4.method_16056("poi");
+      var4.startSection("poi");
       this.field_4706.method_45259(var1);
       var4.method_16050("chunk_unload");
       if (!this.field_4703.method_29590()) {
          this.method_3985(var1);
       }
 
-      var4.method_16054();
+      var4.endSection();
    }
 
    private void method_3985(BooleanSupplier var1) {

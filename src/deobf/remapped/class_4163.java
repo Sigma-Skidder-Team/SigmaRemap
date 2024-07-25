@@ -4,7 +4,7 @@ public final class class_4163 implements class_7154 {
    @Override
    public void method_32845(class_9633 var1, TextureManager var2) {
       RenderSystem.method_16387(true);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    @Override

@@ -11,17 +11,17 @@ public class class_7646 {
       }
 
       try {
-         field_38863[GameType.field_22764.ordinal()] = 2;
+         field_38863[GameType.SURVIVAL.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field_38863[GameType.field_22761.ordinal()] = 3;
+         field_38863[GameType.CREATIVE.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field_38863[GameType.field_22760.ordinal()] = 4;
+         field_38863[GameType.ADVENTURE.ordinal()] = 4;
       } catch (NoSuchFieldError var6) {
       }
 

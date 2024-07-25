@@ -666,7 +666,7 @@ public abstract class class_8704 {
    private void method_39980(class_9359 var1, class_9359 var2, class_6331 var3) {
       if (var2 == null) {
          if (this.field_44625 != null) {
-            var1.field_47807.method_39516(this.field_44625, GameType.field_22762);
+            var1.field_47807.method_39516(this.field_44625, GameType.NOT_SET);
          }
       } else {
          var1.field_47807.method_39516(var2.field_47807.method_39517(), var2.field_47807.method_39524());

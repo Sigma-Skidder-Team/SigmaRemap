@@ -165,13 +165,13 @@ public abstract class class_5886 extends class_5834 {
    @Override
    public void method_37219() {
       super.method_37219();
-      this.field_41768.method_29599().method_16056("mobBaseTick");
+      this.field_41768.method_29599().startSection("mobBaseTick");
       if (this.method_37330() && this.field_41717.nextInt(1000) < this.field_29913++) {
          this.method_26877();
          this.method_26853();
       }
 
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
    }
 
    @Override
@@ -444,7 +444,7 @@ public abstract class class_5886 extends class_5834 {
    @Override
    public void method_26606() {
       super.method_26606();
-      this.field_41768.method_29599().method_16056("looting");
+      this.field_41768.method_29599().startSection("looting");
       boolean var3 = this.field_41768.method_29537().method_1285(class_291.field_1047);
       if (class_7860.field_40243.method_3596()) {
          var3 = class_7860.method_35566(class_7860.field_40243, this.field_41768, this);
@@ -458,7 +458,7 @@ public abstract class class_5886 extends class_5834 {
          }
       }
 
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
    }
 
    public void method_26902(class_91 var1) {
@@ -632,30 +632,30 @@ public abstract class class_5886 extends class_5834 {
    @Override
    public final void method_26417() {
       this.field_29658++;
-      this.field_41768.method_29599().method_16056("sensing");
+      this.field_41768.method_29599().startSection("sensing");
       this.field_29898.method_36737();
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("targetSelector");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("targetSelector");
       this.field_29908.method_3489();
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("goalSelector");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("goalSelector");
       this.field_29916.method_3489();
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("navigation");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("navigation");
       this.field_29904.method_5612();
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("mob tick");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("mob tick");
       this.method_26919();
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("controls");
-      this.field_41768.method_29599().method_16056("move");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("controls");
+      this.field_41768.method_29599().startSection("move");
       this.field_29900.method_12883();
       this.field_41768.method_29599().method_16050("look");
       this.field_29919.method_17234();
       this.field_41768.method_29599().method_16050("jump");
       this.field_29914.method_18771();
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().endSection();
       this.method_26929();
    }
 
@@ -1029,7 +1029,7 @@ public abstract class class_5886 extends class_5834 {
                return var5;
             }
          } else {
-            this.method_26916(true, !var1.field_3876.field_4944);
+            this.method_26916(true, !var1.field_3876.isCreativeMode);
             return class_6910.method_31659(this.field_41768.field_33055);
          }
       } else {
@@ -1335,7 +1335,7 @@ public abstract class class_5886 extends class_5834 {
 
    @Override
    public boolean method_26608(class_5834 var1) {
-      return var1.method_37387() == class_6629.field_34300 && ((class_704)var1).field_3876.field_4940 ? false : super.method_26608(var1);
+      return var1.method_37387() == class_6629.field_34300 && ((class_704)var1).field_3876.disableDamage ? false : super.method_26608(var1);
    }
 
    @Override

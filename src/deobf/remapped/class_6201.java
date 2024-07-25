@@ -49,7 +49,7 @@ public class class_6201 extends class_2451 {
 
                class_4618 var12 = var10.method_8316();
                var7.method_43359(var8, var6, this.method_28393(var10), class_562.field_3322, (var12.method_21395() + 1.0F) / 2.0F, var12.method_21393() * 0.8F);
-               if (var8 == null || !var8.field_3876.field_4944) {
+               if (var8 == null || !var8.field_3876.isCreativeMode) {
                   var9.method_27970(1);
                }
 

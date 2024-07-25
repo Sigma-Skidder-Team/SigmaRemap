@@ -139,9 +139,9 @@ public class class_9326 implements class_2231 {
       return CompletableFuture.allOf(var10)
          .<class_3930>thenApplyAsync(var4x -> {
             var3.method_16059();
-            var3.method_16056("stitching");
+            var3.startSection("stitching");
             class_3930 var7 = this.field_47616.method_38516(var2, var9.values().stream().<Identifier>flatMap(Collection::stream), var3, 0);
-            var3.method_16054();
+            var3.endSection();
             var3.method_16052();
             return var7;
          }, var5)
@@ -150,7 +150,7 @@ public class class_9326 implements class_2231 {
             var3x -> {
                this.field_47619.clear();
                var4.method_16059();
-               var4.method_16056("upload");
+               var4.startSection("upload");
                this.field_47616.method_38520(var3x);
                var4.method_16050("bindSpriteSets");
                class_5155 var6x = this.field_47616.method_38528(class_2008.method_9327());
@@ -162,7 +162,7 @@ public class class_9326 implements class_2231 {
                      this.field_47622.get(var2xx).method_45331(var6xx);
                   }
                );
-               var4.method_16054();
+               var4.endSection();
                var4.method_16052();
             },
             var6
@@ -235,9 +235,9 @@ public class class_9326 implements class_2231 {
 
    public void method_43057() {
       this.field_47619.forEach((var1, var2) -> {
-         this.field_47617.method_29599().method_16056(var1.toString());
+         this.field_47617.method_29599().startSection(var1.toString());
          this.method_43043(var2);
-         this.field_47617.method_29599().method_16054();
+         this.field_47617.method_29599().endSection();
       });
       if (!this.field_47621.isEmpty()) {
          ArrayList var3 = Lists.newArrayList();
@@ -366,7 +366,7 @@ public class class_9326 implements class_2231 {
       RenderSystem.method_16489();
       RenderSystem.method_16387(true);
       RenderSystem.method_16457(515);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16433();
       var3.method_26122();
       RenderSystem.method_16367();

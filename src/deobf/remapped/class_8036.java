@@ -53,12 +53,12 @@ public class class_8036 extends class_2451 implements class_1538 {
          var5.method_43359((class_704)null, var4, class_463.field_2193, class_562.field_3335, 1.0F, 1.0F);
          class_704 var6 = var1.method_21868();
          ItemStack var7 = var1.method_21867();
-         boolean var8 = !var6.field_3876.field_4944 && var7.method_27997() == 1;
+         boolean var8 = !var6.field_3876.isCreativeMode && var7.method_27997() == 1;
          if (!var8) {
             ItemStack var9 = new ItemStack(class_4897.field_24830, 1);
             class_5734 var10 = !var7.method_28002() ? new class_5734() : var7.method_27990().method_25944();
             var9.method_27965(var10);
-            if (!var6.field_3876.field_4944) {
+            if (!var6.field_3876.isCreativeMode) {
                var7.method_27970(1);
             }
 

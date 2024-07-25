@@ -21,7 +21,7 @@ public class class_6218 extends class_5877 {
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      if (var4.field_3876.field_4938) {
+      if (var4.field_3876.allowEdit) {
          var2.method_7513(var3, var1.method_10317(field_31756), 3);
          return class_6910.method_31659(var2.field_33055);
       } else {

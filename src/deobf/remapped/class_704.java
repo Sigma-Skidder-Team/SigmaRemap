@@ -55,7 +55,7 @@ public abstract class class_704 extends class_5834 {
    public double field_3858;
    private int field_3848;
    public boolean field_3850;
-   public final class_964 field_3876 = new class_964();
+   public final PlayerAbilities field_3876 = new PlayerAbilities();
    public int field_3840;
    public int field_3862;
    public float field_3842;
@@ -264,7 +264,7 @@ public abstract class class_704 extends class_5834 {
             if (!this.method_26507()) {
                if (!this.method_37113()) {
                   if (!this.method_26600()) {
-                     if (this.method_37252() && !this.field_3876.field_4942) {
+                     if (this.method_37252() && !this.field_3876.isFlying) {
                         var3 = class_7653.field_38881;
                      } else {
                         var3 = class_7653.field_38885;
@@ -297,7 +297,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public int method_37244() {
-      return !this.field_3876.field_4940 ? 80 : 1;
+      return !this.field_3876.disableDamage ? 80 : 1;
    }
 
    @Override
@@ -456,7 +456,7 @@ public abstract class class_704 extends class_5834 {
 
       this.method_3222(this.method_3160());
       this.method_3222(this.method_3171());
-      if (!this.field_41768.field_33055 && (this.field_41706 > 0.5F || this.method_37285()) || this.field_3876.field_4942 || this.method_26507()) {
+      if (!this.field_41768.field_33055 && (this.field_41706 > 0.5F || this.method_37285()) || this.field_3876.isFlying || this.method_26507()) {
          this.method_3157();
       }
    }
@@ -746,7 +746,7 @@ public abstract class class_704 extends class_5834 {
    @Override
    public boolean method_37181(class_6199 var1, float var2) {
       if (!this.method_37180(var1)) {
-         if (this.field_3876.field_4940 && !var1.method_28346()) {
+         if (this.field_3876.disableDamage && !var1.method_28346()) {
             return false;
          } else {
             this.field_29658 = 0;
@@ -850,7 +850,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_26444() {
-      return !this.field_3876.field_4942 && super.method_26444();
+      return !this.field_3876.isFlying && super.method_26444();
    }
 
    public void method_3244(class_8398 var1) {
@@ -888,13 +888,13 @@ public abstract class class_704 extends class_5834 {
          class_6910 var7 = var1.method_37128(this, var2);
          if (!var7.method_31662()) {
             if (!var5.method_28022() && var1 instanceof class_5834) {
-               if (this.field_3876.field_4944) {
+               if (this.field_3876.isCreativeMode) {
                   var5 = var6;
                }
 
                class_6910 var8 = var5.method_28000(this, (class_5834)var1, var2);
                if (var8.method_31662()) {
-                  if (var5.method_28022() && !this.field_3876.field_4944) {
+                  if (var5.method_28022() && !this.field_3876.isCreativeMode) {
                      this.method_26615(var2, ItemStack.EMPTY);
                   }
 
@@ -904,7 +904,7 @@ public abstract class class_704 extends class_5834 {
 
             return class_6910.field_35521;
          } else {
-            if (this.field_3876.field_4944 && var5 == this.method_26617(var2) && var5.method_27997() < var6.method_27997()) {
+            if (this.field_3876.isCreativeMode && var5 == this.method_26617(var2) && var5.method_27997() < var6.method_27997()) {
                var5.method_28017(var6.method_27997());
             }
 
@@ -937,7 +937,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_26498() {
-      return !this.field_3876.field_4942;
+      return !this.field_3876.isFlying;
    }
 
    @Override
@@ -945,7 +945,7 @@ public abstract class class_704 extends class_5834 {
       class_7982 var5 = new class_7982(true);
       SigmaMainClass.getInstance().getEventManager().call(var5);
       if (var5.method_36185() == class_9528.field_48495
-         || !this.field_3876.field_4942 && (var2 == class_7412.field_37839 || var2 == class_7412.field_37842) && this.method_3178() && this.method_3217()) {
+         || !this.field_3876.isFlying && (var2 == class_7412.field_37839 || var2 == class_7412.field_37842) && this.method_3178() && this.method_3217()) {
          double var6 = var1.field_7336;
          double var8 = var1.field_7334;
          double var10 = 0.05;
@@ -1371,7 +1371,7 @@ public abstract class class_704 extends class_5834 {
          }
       }
 
-      if (this.field_3876.field_4942 && !this.method_37070()) {
+      if (this.field_3876.isFlying && !this.method_37070()) {
          double var17 = this.method_37098().field_7333;
          float var15 = this.field_29674;
          this.field_29674 = this.field_3876.method_4230() * (float)(!this.method_37321() ? 1 : 2);
@@ -1390,7 +1390,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public void method_37337() {
-      if (!this.field_3876.field_4942) {
+      if (!this.field_3876.isFlying) {
          super.method_37337();
       } else {
          this.method_37260(false);
@@ -1496,7 +1496,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_37270(float var1, float var2) {
-      if (!this.field_3876.field_4941) {
+      if (!this.field_3876.allowFlying) {
          if (var1 >= 2.0F) {
             this.method_3210(class_6234.field_31902, (int)Math.round((double)var1 * 100.0));
          }
@@ -1547,7 +1547,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public void method_37130(class_2522 var1, class_1343 var2) {
-      if (!this.field_3876.field_4942) {
+      if (!this.field_3876.isFlying) {
          super.method_37130(var1, var2);
       }
    }
@@ -1617,7 +1617,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    public void method_3170(float var1) {
-      if (!this.field_3876.field_4940 && !this.field_41768.field_33055) {
+      if (!this.field_3876.disableDamage && !this.field_41768.field_33055) {
          this.field_3867.method_42229(var1);
       }
    }
@@ -1627,7 +1627,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    public boolean method_3231(boolean var1) {
-      return this.field_3876.field_4940 || var1 || this.field_3867.method_42227();
+      return this.field_3876.disableDamage || var1 || this.field_3867.method_42227();
    }
 
    public boolean method_3246() {
@@ -1635,11 +1635,11 @@ public abstract class class_704 extends class_5834 {
    }
 
    public boolean method_3181() {
-      return this.field_3876.field_4938;
+      return this.field_3876.allowEdit;
    }
 
    public boolean method_3208(class_1331 var1, Direction var2, ItemStack var3) {
-      if (!this.field_3876.field_4938) {
+      if (!this.field_3876.allowEdit) {
          class_1331 var6 = var1.method_6098(var2.method_1046());
          class_9115 var7 = new class_9115(this.field_41768, var6, false);
          return var3.method_28027(this.field_41768.method_29600(), var7);
@@ -1670,7 +1670,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_37126() {
-      return !this.field_3876.field_4942 && (!this.field_41726 || !this.method_37073());
+      return !this.field_3876.isFlying && (!this.field_41726 || !this.method_37073());
    }
 
    public void method_3216() {
@@ -1777,14 +1777,14 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_37113() {
-      return !this.field_3876.field_4942 && !this.method_37221() && super.method_37113();
+      return !this.field_3876.isFlying && !this.method_37221() && super.method_37113();
    }
 
    public abstract boolean method_3186();
 
    @Override
    public boolean method_37107() {
-      return !this.field_3876.field_4942;
+      return !this.field_3876.isFlying;
    }
 
    public class_1097 method_3219() {
@@ -1924,7 +1924,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public void method_37164(int var1) {
-      super.method_37164(!this.field_3876.field_4940 ? var1 : Math.min(var1, 1));
+      super.method_37164(!this.field_3876.disableDamage ? var1 : Math.min(var1, 1));
    }
 
    @Override
@@ -1970,7 +1970,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public float method_37364() {
-      return !this.field_3876.field_4942 && !this.method_26618() ? super.method_37364() : 1.0F;
+      return !this.field_3876.isFlying && !this.method_26618() ? super.method_37364() : 1.0F;
    }
 
    public float method_3234() {
@@ -1978,7 +1978,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    public boolean method_3184() {
-      return this.field_3876.field_4944 && this.method_37352() >= 2;
+      return this.field_3876.isCreativeMode && this.method_37352() >= 2;
    }
 
    @Override
@@ -2016,7 +2016,7 @@ public abstract class class_704 extends class_5834 {
                }
             }
 
-            return !this.field_3876.field_4944 ? ItemStack.EMPTY : new ItemStack(class_4897.field_25024);
+            return !this.field_3876.isCreativeMode ? ItemStack.EMPTY : new ItemStack(class_4897.field_25024);
          }
       }
    }
@@ -2044,7 +2044,7 @@ public abstract class class_704 extends class_5834 {
 
    @Override
    public boolean method_26485(class_2522 var1) {
-      return this.field_3876.field_4942 || super.method_26485(var1);
+      return this.field_3876.isFlying || super.method_26485(var1);
    }
 
    @Override

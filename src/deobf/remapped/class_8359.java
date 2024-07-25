@@ -189,7 +189,7 @@ public class class_8359 extends class_8143 implements class_72 {
       this.field_42812.clear();
       this.field_42804.clear();
       this.field_42806.method_33084();
-      var3.method_16056("preparing");
+      var3.startSection("preparing");
       Set var8 = var2.peek(var0 -> {
          if (var0 == null) {
             throw new IllegalArgumentException("Location cannot be null!");
@@ -292,7 +292,7 @@ public class class_8359 extends class_8143 implements class_72 {
 
       var3.method_16050("loading");
       List var28 = this.method_38527(var1, var11, var25);
-      var3.method_16054();
+      var3.endSection();
       return new class_3930(var8, var11.method_36992(), var11.method_36994(), var25, var28);
    }
 

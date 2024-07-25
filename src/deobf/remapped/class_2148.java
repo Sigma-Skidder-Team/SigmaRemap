@@ -51,6 +51,6 @@ public class class_2148 {
       var9.method_44487();
       class_138.method_554(var9);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 }

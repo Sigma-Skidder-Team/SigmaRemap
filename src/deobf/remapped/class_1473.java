@@ -23,7 +23,7 @@ public final class class_1473 implements class_3492 {
    }
 
    @Override
-   public void method_16056(String var1) {
+   public void startSection(String var1) {
       this.field_7901.method_16056(var1);
       this.field_7902.method_16056(var1);
    }
@@ -35,7 +35,7 @@ public final class class_1473 implements class_3492 {
    }
 
    @Override
-   public void method_16054() {
+   public void endSection() {
       this.field_7901.method_16054();
       this.field_7902.method_16054();
    }

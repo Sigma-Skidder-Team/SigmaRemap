@@ -23,7 +23,7 @@ public class NukerModule extends Module {
          this.field_48180 = this.method_43660(this.getFloatValueByName("Range") / 2.0F);
          if (this.field_48180.isEmpty()) {
             this.field_48181 = null;
-         } else if (client.playerController.getCurrentGameType() != GameType.field_22761) {
+         } else if (client.playerController.getCurrentGameType() != GameType.CREATIVE) {
             if (this.field_48181 != null) {
                if (client.field_9601.method_28262(this.field_48181).method_8345()
                   || Math.sqrt(

@@ -125,7 +125,7 @@ public class class_8455 {
                } else if (!this.field_43225.thePlayer.method_37221()) {
                   this.field_43225.thePlayer.method_27307("/gamemode spectator");
                } else {
-                  this.field_43225.thePlayer.method_27307("/gamemode " + this.field_43225.playerController.method_42132().method_21588());
+                  this.field_43225.thePlayer.method_27307("/gamemode " + this.field_43225.playerController.method_42132().getName());
                }
 
                return true;

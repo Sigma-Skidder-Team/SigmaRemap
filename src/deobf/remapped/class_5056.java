@@ -214,7 +214,7 @@ public class class_5056 implements class_7203, class_5684 {
          .encodeStart(var8, this.field_26134)
          .resultOrPartial(Util.method_44690("WorldGenSettings: ", field_26153::error))
          .ifPresent(var1x -> var2.method_25946("WorldGenSettings", var1x));
-      var2.method_25931("GameType", this.field_26154.method_28720().method_21589());
+      var2.method_25931("GameType", this.field_26154.method_28720().getID());
       var2.method_25931("SpawnX", this.field_26152);
       var2.method_25931("SpawnY", this.field_26135);
       var2.method_25931("SpawnZ", this.field_26138);

@@ -486,7 +486,7 @@ public class class_9301 extends class_6414 {
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      if (!var4.field_3876.field_4938) {
+      if (!var4.field_3876.allowEdit) {
          return class_6910.field_35521;
       } else {
          if (method_42938(var1) || method_42941(var1)) {

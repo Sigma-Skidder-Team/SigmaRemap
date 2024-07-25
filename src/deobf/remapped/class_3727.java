@@ -14,11 +14,11 @@ public class class_3727 implements Packet<class_392> {
    public class_3727() {
    }
 
-   public class_3727(class_964 var1) {
-      this.field_18239 = var1.field_4940;
-      this.field_18237 = var1.field_4942;
-      this.field_18236 = var1.field_4941;
-      this.field_18238 = var1.field_4944;
+   public class_3727(PlayerAbilities var1) {
+      this.field_18239 = var1.disableDamage;
+      this.field_18237 = var1.isFlying;
+      this.field_18236 = var1.allowFlying;
+      this.field_18238 = var1.isCreativeMode;
       this.field_18233 = var1.method_4230();
       this.field_18235 = var1.method_4229();
    }

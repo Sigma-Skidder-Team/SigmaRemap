@@ -187,7 +187,7 @@ public class class_107 extends class_7819 implements class_674 {
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
       ItemStack var5 = var1.method_26617(var2);
       if (!this.method_41215() && field_273.contains(var5.method_27960())) {
-         if (!var1.field_3876.field_4944) {
+         if (!var1.field_3876.isCreativeMode) {
             var5.method_27970(1);
          }
 
@@ -226,7 +226,7 @@ public class class_107 extends class_7819 implements class_674 {
             return super.method_26857(var1, var2);
          }
       } else {
-         if (!var1.field_3876.field_4944) {
+         if (!var1.field_3876.isCreativeMode) {
             var5.method_27970(1);
          }
 

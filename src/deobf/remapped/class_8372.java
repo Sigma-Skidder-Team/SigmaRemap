@@ -124,11 +124,11 @@ public class class_8372 extends class_4088 {
       ItemStack var5 = this.field_42869.method_31498(0);
       ItemStack var6 = this.field_42869.method_31498(1);
       int var7 = var2 + 1;
-      if ((var6.method_28022() || var6.method_27997() < var7) && !var1.field_3876.field_4944) {
+      if ((var6.method_28022() || var6.method_27997() < var7) && !var1.field_3876.isCreativeMode) {
          return false;
       } else if (this.field_42870[var2] > 0
          && !var5.method_28022()
-         && (var1.field_3840 >= var7 && var1.field_3840 >= this.field_42870[var2] || var1.field_3876.field_4944)) {
+         && (var1.field_3840 >= var7 && var1.field_3840 >= this.field_42870[var2] || var1.field_3876.isCreativeMode)) {
          this.field_42865.method_42533((var6x, var7x) -> {
             ItemStack var10 = var5;
             List var11 = this.method_38580(var5, var2, this.field_42870[var2]);
@@ -154,7 +154,7 @@ public class class_8372 extends class_4088 {
                   }
                }
 
-               if (!var1.field_3876.field_4944) {
+               if (!var1.field_3876.isCreativeMode) {
                   var6.method_27970(var7);
                   if (var6.method_28022()) {
                      this.field_42869.method_31503(1, ItemStack.EMPTY);

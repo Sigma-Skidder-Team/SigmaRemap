@@ -354,7 +354,7 @@ public class class_9399 extends class_5834 {
          return false;
       } else if (var7.method_28022() && (this.field_48051 & 1 << var2.method_31773() + 16) != 0) {
          return false;
-      } else if (var1.field_3876.field_4944 && var7.method_28022() && !var3.method_28022()) {
+      } else if (var1.field_3876.isCreativeMode && var7.method_28022() && !var3.method_28022()) {
          ItemStack var9 = var3.method_27973();
          var9.method_28017(1);
          this.method_37349(var2, var9);
@@ -397,7 +397,7 @@ public class class_9399 extends class_5834 {
             boolean var7 = "player".equals(var1.method_28347());
             if (!var7 && !var5) {
                return false;
-            } else if (var1.method_28372() instanceof class_704 && !((class_704)var1.method_28372()).field_3876.field_4938) {
+            } else if (var1.method_28372() instanceof class_704 && !((class_704)var1.method_28372()).field_3876.allowEdit) {
                return false;
             } else if (var1.method_28349()) {
                this.method_43496();

@@ -228,7 +228,7 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
          RenderSystem.method_16432();
          RenderSystem.method_16486(7424);
          RenderSystem.enableAlphaTest();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
       }
    }
 

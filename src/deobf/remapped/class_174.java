@@ -78,9 +78,9 @@ public class class_174 extends World {
    public void method_751(BooleanSupplier var1) {
       this.method_6673().method_9805();
       this.method_722();
-      this.method_29599().method_16056("blocks");
+      this.method_29599().startSection("blocks");
       this.field_577.method_24472(var1);
-      this.method_29599().method_16054();
+      this.method_29599().endSection();
    }
 
    private void method_722() {
@@ -111,31 +111,31 @@ public class class_174 extends World {
 
    public void method_737() {
       class_3492 var3 = this.method_29599();
-      var3.method_16056("entities");
+      var3.startSection("entities");
       ObjectIterator var4 = this.field_568.int2ObjectEntrySet().iterator();
 
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
          Entity var6 = (Entity)var5.getValue();
          if (!var6.method_37070()) {
-            var3.method_16056("tick");
+            var3.startSection("tick");
             if (!var6.field_41751) {
                this.method_29532(this::method_755, var6);
             }
 
-            var3.method_16054();
-            var3.method_16056("remove");
+            var3.endSection();
+            var3.startSection("remove");
             if (var6.field_41751) {
                var4.remove();
                this.method_757(var6);
             }
 
-            var3.method_16054();
+            var3.endSection();
          }
       }
 
       this.method_29547();
-      var3.method_16054();
+      var3.endSection();
    }
 
    public void method_755(Entity var1) {
@@ -152,7 +152,7 @@ public class class_174 extends World {
                var1.method_37123();
             }
 
-            this.method_29599().method_16054();
+            this.method_29599().endSection();
          }
 
          this.method_728(var1);
@@ -187,7 +187,7 @@ public class class_174 extends World {
 
    private void method_728(Entity var1) {
       if (var1.method_37251()) {
-         this.method_29599().method_16056("chunkCheck");
+         this.method_29599().startSection("chunkCheck");
          int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
          int var5 = class_9299.method_42847(var1.method_37309() / 16.0);
          int var6 = class_9299.method_42847(var1.method_37156() / 16.0);
@@ -207,7 +207,7 @@ public class class_174 extends World {
             }
          }
 
-         this.method_29599().method_16054();
+         this.method_29599().endSection();
       }
    }
 
@@ -325,7 +325,7 @@ public class class_174 extends World {
       byte var6 = 32;
       Random var7 = new Random();
       boolean var8 = false;
-      if (this.field_578.playerController.getCurrentGameType() == GameType.field_22761) {
+      if (this.field_578.playerController.getCurrentGameType() == GameType.CREATIVE) {
          for (ItemStack var10 : this.field_578.thePlayer.method_37294()) {
             if (var10.method_27960() == class_4783.field_23207.method_10803()) {
                var8 = true;

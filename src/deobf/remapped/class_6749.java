@@ -452,7 +452,7 @@ public abstract class class_6749 extends class_5783 {
    public void method_26159(Entity var1) {
       super.method_26159(var1);
       if (var1 instanceof class_704) {
-         this.field_34835 = !((class_704)var1).field_3876.field_4944 ? class_4237.field_20563 : class_4237.field_20565;
+         this.field_34835 = !((class_704)var1).field_3876.isCreativeMode ? class_4237.field_20563 : class_4237.field_20565;
       }
    }
 
@@ -460,7 +460,7 @@ public abstract class class_6749 extends class_5783 {
    public void method_37347(class_704 var1) {
       if (!this.field_41768.field_33055 && (this.field_34834 || this.method_30926()) && this.field_34831 <= 0) {
          boolean var4 = this.field_34835 == class_4237.field_20563
-            || this.field_34835 == class_4237.field_20565 && var1.field_3876.field_4944
+            || this.field_34835 == class_4237.field_20565 && var1.field_3876.isCreativeMode
             || this.method_30926() && this.method_26166().method_37328() == var1.method_37328();
          if (this.field_34835 == class_4237.field_20563 && !var1.inventory.method_32414(this.method_30925())) {
             var4 = false;

@@ -179,7 +179,7 @@ public class class_6757 extends class_2269 {
       this.field_34865.getTextureManager().bindTexture(var4);
       RenderSystem.enableBlend();
       AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 32, 32, 32, 32);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    private boolean method_30967() {

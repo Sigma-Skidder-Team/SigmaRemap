@@ -34,7 +34,7 @@ public class class_782 {
 
    public void method_3489() {
       class_3492 var3 = this.field_4203.get();
-      var3.method_16056("goalCleanup");
+      var3.startSection("goalCleanup");
       if (this.field_4207.size() > 0) {
          for (class_3556 var5 : this.field_4207) {
             if (var5.method_16536() && (!var5.method_16536() || class_2922.method_13372(var5.method_16797(), this.field_4205) || !var5.method_16799())) {
@@ -51,8 +51,8 @@ public class class_782 {
          });
       }
 
-      var3.method_16054();
-      var3.method_16056("goalUpdate");
+      var3.endSection();
+      var3.startSection("goalUpdate");
       if (this.field_4207.size() > 0) {
          for (class_3556 var8 : this.field_4207) {
             if (!var8.method_16536()
@@ -65,8 +65,8 @@ public class class_782 {
          }
       }
 
-      var3.method_16054();
-      var3.method_16056("goalTick");
+      var3.endSection();
+      var3.startSection("goalTick");
       if (this.field_4207.size() > 0) {
          for (class_3556 var9 : this.field_4207) {
             if (var9.method_16536()) {
@@ -75,7 +75,7 @@ public class class_782 {
          }
       }
 
-      var3.method_16054();
+      var3.endSection();
    }
 
    private static boolean method_3486(class_3556 var0, EnumSet<class_1891> var1, Map<class_1891, class_3556> var2) {

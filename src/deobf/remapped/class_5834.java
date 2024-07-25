@@ -206,7 +206,7 @@ public abstract class class_5834 extends Entity {
       }
 
       super.method_37219();
-      this.field_41768.method_29599().method_16056("livingEntityBaseTick");
+      this.field_41768.method_29599().startSection("livingEntityBaseTick");
       boolean var3 = this instanceof class_704;
       if (this.method_37330()) {
          if (!this.method_37153()) {
@@ -228,7 +228,7 @@ public abstract class class_5834 extends Entity {
          this.method_37136();
       }
 
-      boolean var8 = var3 && ((class_704)this).field_3876.field_4940;
+      boolean var8 = var3 && ((class_704)this).field_3876.disableDamage;
       if (this.method_37330()) {
          if (this.method_37261(class_6503.field_33094)
             && !this.field_41768
@@ -318,7 +318,7 @@ public abstract class class_5834 extends Entity {
       this.field_29657 = this.field_29618;
       this.field_41711 = this.field_41701;
       this.field_41762 = this.field_41755;
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
    }
 
    public boolean method_26412() {
@@ -2152,10 +2152,10 @@ public abstract class class_5834 extends Entity {
       }
 
       this.field_29660 = this.field_29660 + (var10 - this.field_29660) * 0.3F;
-      this.field_41768.method_29599().method_16056("headTurn");
+      this.field_41768.method_29599().startSection("headTurn");
       var9 = this.method_26582(var8, var9);
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("rangeChecks");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("rangeChecks");
 
       while (this.field_41701 - this.field_41711 < -180.0F) {
          this.field_41711 -= 360.0F;
@@ -2189,7 +2189,7 @@ public abstract class class_5834 extends Entity {
          this.field_29657 += 360.0F;
       }
 
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
       this.field_29672 += var9;
       if (!this.method_26618()) {
          this.field_29661 = 0;
@@ -2369,12 +2369,12 @@ public abstract class class_5834 extends Entity {
       }
 
       this.method_37214(var4, var6, var8);
-      this.field_41768.method_29599().method_16056("ai");
+      this.field_41768.method_29599().startSection("ai");
       if (!this.method_26468()) {
          if (this.method_26530()) {
-            this.field_41768.method_29599().method_16056("newAi");
+            this.field_41768.method_29599().startSection("newAi");
             this.method_26417();
-            this.field_41768.method_29599().method_16054();
+            this.field_41768.method_29599().endSection();
          }
       } else {
          this.field_29654 = false;
@@ -2382,8 +2382,8 @@ public abstract class class_5834 extends Entity {
          this.field_29673 = 0.0F;
       }
 
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("jump");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("jump");
       if (this.field_29654 && this.method_26498()) {
          double var18;
          if (!this.method_37370()) {
@@ -2410,22 +2410,22 @@ public abstract class class_5834 extends Entity {
          this.field_29600 = 0;
       }
 
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("travel");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("travel");
       this.field_29676 *= 0.98F;
       this.field_29673 *= 0.98F;
       this.method_26571();
       class_4092 var23 = this.method_37241();
       this.method_26431(new class_1343((double)this.field_29676, (double)this.field_29651, (double)this.field_29673));
-      this.field_41768.method_29599().method_16054();
-      this.field_41768.method_29599().method_16056("push");
+      this.field_41768.method_29599().endSection();
+      this.field_41768.method_29599().startSection("push");
       if (this.field_29630 > 0) {
          this.field_29630--;
          this.method_26542(var23, this.method_37241());
       }
 
       this.method_26428();
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
       if (!this.field_41768.field_33055 && this.method_26537() && this.method_37110()) {
          this.method_37181(class_6199.field_31671, 1.0F);
       }
@@ -3060,7 +3060,7 @@ public abstract class class_5834 extends Entity {
             1.0F + (var1.field_33033.nextFloat() - var1.field_33033.nextFloat()) * 0.4F
          );
          this.method_26497(var2, var1, this);
-         if (!(this instanceof class_704) || !((class_704)this).field_3876.field_4944) {
+         if (!(this instanceof class_704) || !((class_704)this).field_3876.isCreativeMode) {
             var2.method_27970(1);
          }
       }

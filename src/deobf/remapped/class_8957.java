@@ -25,7 +25,7 @@ public class class_8957 implements class_2995 {
          double var14 = 0.0 - var5;
          double var16 = 256.0 - var5;
          RenderSystem.method_16354();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          double var18 = (double)(var11.field_41742 << 4) - var3;
          double var20 = (double)(var11.field_41714 << 4) - var7;
          RenderSystem.method_16484(1.0F);

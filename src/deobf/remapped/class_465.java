@@ -128,7 +128,7 @@ public class class_465 {
          var5.skip();
       }
 
-      var1.method_42177().method_1704().method_16056(var2);
+      var1.method_42177().method_1704().startSection(var2);
 
       byte var22;
       try {
@@ -185,7 +185,7 @@ public class class_465 {
 
          var22 = 0;
       } finally {
-         var1.method_42177().method_1704().method_16054();
+         var1.method_42177().method_1704().endSection();
       }
 
       return var22;

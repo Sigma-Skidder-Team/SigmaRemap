@@ -238,7 +238,7 @@ public class class_8671 {
             }
          }
 
-         this.field_44499.method_8562().method_16056("mouse");
+         this.field_44499.getProfiler().startSection("mouse");
          if (this.method_39843() && this.field_44499.method_8558()) {
             this.field_44498 = this.field_44498 + (var3 - this.field_44482);
             this.field_44487 = this.field_44487 + (var5 - this.field_44493);
@@ -247,7 +247,7 @@ public class class_8671 {
          this.method_39846();
          this.field_44482 = var3;
          this.field_44493 = var5;
-         this.field_44499.method_8562().method_16054();
+         this.field_44499.getProfiler().endSection();
       }
    }
 

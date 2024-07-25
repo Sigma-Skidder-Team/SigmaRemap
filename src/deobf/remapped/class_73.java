@@ -190,7 +190,7 @@ public class class_73 {
       var12.method_35761((double)var0, (double)var1, 0.0).method_35735();
       var11.method_36500();
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_129(float var0, float var1, float var2, float var3, class_4230 var4) {
@@ -212,7 +212,7 @@ public class class_73 {
       var4.method_19717(true);
       var4.method_19713((int)var0 - (int)var2, (int)var1 - (int)var3);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_109(float var0, float var1, float var2, float var3, int var4) {
@@ -257,7 +257,7 @@ public class class_73 {
       var17.method_35761((double)var2, (double)var3, 0.0).method_35742(var13, var14, var15, var12).method_35735();
       var16.method_36500();
       RenderSystem.method_16486(7424);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.enableAlphaTest();
       RenderSystem.method_16432();
    }
@@ -293,7 +293,7 @@ public class class_73 {
       var27.method_35761((double)var2, (double)var3, 0.0).method_35742(var19, var20, var21, var18).method_35735();
       var26.method_36500();
       RenderSystem.method_16486(7424);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.enableAlphaTest();
       RenderSystem.method_16432();
    }
@@ -319,7 +319,7 @@ public class class_73 {
       var12.method_36500();
       GL11.glDisable(2848);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_142(float var0, float var1, float var2, float var3, float var4, float var5, int var6) {
@@ -342,7 +342,7 @@ public class class_73 {
       GL11.glVertex2f(var0, var1);
       GL11.glEnd();
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_152(float var0, float var1, float var2, int var3, int var4) {
@@ -376,7 +376,7 @@ public class class_73 {
       GL11.glEnd();
       GL11.glDisable(2881);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_124(float var0, float var1, float var2, int var3) {
@@ -408,7 +408,7 @@ public class class_73 {
       GL11.glDisable(2832);
       GL11.glDisable(3042);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_87(class_3384 var0, float var1, float var2, String var3, int var4) {
@@ -491,7 +491,7 @@ public class class_73 {
          var0.method_18545((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new class_8709(var13, var14, var15, var12));
       }
 
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       GL11.glPopMatrix();
    }
 
@@ -534,7 +534,7 @@ public class class_73 {
       GL11.glBlendFunc(770, 771);
       class_9162.method_42217();
       var0.method_18545((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new class_8709(var13, var14, var15, var12));
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_134(float var0, float var1, float var2, float var3, float var4, int var5) {
@@ -586,7 +586,7 @@ public class class_73 {
 
       GL11.glEnd();
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_105(float var0, float var1, float[] var2, float[] var3, int var4) {
@@ -610,7 +610,7 @@ public class class_73 {
 
       GL11.glEnd();
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_153(float var0, float var1, float var2, float var3, class_8343 var4, int var5) {
@@ -676,7 +676,7 @@ public class class_73 {
          GL11.glDisable(3553);
          GL11.glDisable(3042);
          RenderSystem.method_16432();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
       }
    }
 
@@ -726,7 +726,7 @@ public class class_73 {
          GL11.glDisable(3553);
          GL11.glDisable(3042);
          RenderSystem.method_16432();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
       }
    }
 
@@ -788,7 +788,7 @@ public class class_73 {
       GL11.glDisable(3553);
       GL11.glDisable(3042);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public static void method_119(float var0, float var1, float var2, int var3) {

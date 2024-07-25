@@ -107,9 +107,9 @@ public class class_6704 extends class_5467 implements class_1869, class_9479 {
 
    @Override
    public void method_26919() {
-      this.field_41768.method_29599().method_16056("hoglinBrain");
+      this.field_41768.method_29599().startSection("hoglinBrain");
       this.method_26525().method_5141((class_6331)this.field_41768, this);
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
       class_6902.method_31614(this);
       if (!this.method_30710()) {
          this.field_34612 = 0;

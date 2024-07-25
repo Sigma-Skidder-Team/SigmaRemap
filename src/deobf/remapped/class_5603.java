@@ -28,11 +28,11 @@ public class class_5603 extends Screen {
    private GameType method_25423() {
       GameType var3 = MinecraftClient.getInstance().playerController.getCurrentGameType();
       GameType var4 = MinecraftClient.getInstance().playerController.method_42132();
-      if (var4 == GameType.field_22762) {
-         if (var3 != GameType.field_22761) {
-            var4 = GameType.field_22761;
+      if (var4 == GameType.NOT_SET) {
+         if (var3 != GameType.CREATIVE) {
+            var4 = GameType.CREATIVE;
          } else {
-            var4 = GameType.field_22764;
+            var4 = GameType.SURVIVAL;
          }
       }
 

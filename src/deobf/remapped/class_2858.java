@@ -43,7 +43,7 @@ public class class_2858<T> implements class_3065<T> {
 
          class_2206 var4 = this.field_13997.method_28945();
          Iterator var5 = this.field_14000.iterator();
-         this.field_13997.method_29599().method_16056("cleaning");
+         this.field_13997.method_29599().startSection("cleaning");
 
          while (var3 > 0 && var5.hasNext()) {
             class_4110 var6 = (class_4110)var5.next();
@@ -78,7 +78,7 @@ public class class_2858<T> implements class_3065<T> {
             }
          }
 
-         this.field_13997.method_29599().method_16054();
+         this.field_13997.method_29599().endSection();
          this.field_14003.clear();
          this.field_13999.clear();
       }

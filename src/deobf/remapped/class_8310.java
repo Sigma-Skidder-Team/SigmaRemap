@@ -104,7 +104,7 @@ public class class_8310 extends class_1859 {
       GL11.glVertex2f(var6, 0.0F);
       GL11.glVertex2f((float)(this.field_42564.method_32132() - var5 + 5), (float)(this.field_42564.method_32173() - var5 + 5));
       GL11.glEnd();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16432();
       GL11.glPopMatrix();
       super.method_32178(var1);

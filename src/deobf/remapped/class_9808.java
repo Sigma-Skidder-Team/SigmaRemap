@@ -9,8 +9,8 @@ public class class_9808 implements Packet<class_1243> {
    public class_9808() {
    }
 
-   public class_9808(class_964 var1) {
-      this.field_49726 = var1.field_4942;
+   public class_9808(PlayerAbilities var1) {
+      this.field_49726 = var1.isFlying;
    }
 
    @Override

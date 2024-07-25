@@ -192,7 +192,7 @@ public abstract class class_1080 extends Entity {
          this.method_4749(10);
          this.method_37138();
          this.method_4742(this.method_4736() + var2 * 10.0F);
-         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).field_3876.field_4944;
+         boolean var5 = var1.method_28372() instanceof class_704 && ((class_704)var1.method_28372()).field_3876.isCreativeMode;
          if (var5 || this.method_4736() > 40.0F) {
             this.method_37305();
             if (var5 && !this.method_45507()) {

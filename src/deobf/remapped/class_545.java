@@ -38,7 +38,7 @@ public class class_545 extends class_6414 {
          return class_6910.field_35521;
       } else if (method_2639(var9) && method_2636(var1)) {
          method_2634(var2, var3, var1);
-         if (!var4.field_3876.field_4944) {
+         if (!var4.field_3876.isCreativeMode) {
             var9.method_27970(1);
          }
 

@@ -48,7 +48,7 @@ public class class_1626 {
          this.method_7251(var6, this.method_7248());
       }
 
-      this.field_8466.method_1704().method_16054();
+      this.field_8466.method_1704().endSection();
    }
 
    public int method_7251(class_2581 var1, class_9155 var2) {
@@ -84,7 +84,7 @@ public class class_1626 {
                      this.field_8464.clear();
                   }
                } finally {
-                  this.field_8466.method_1704().method_16054();
+                  this.field_8466.method_1704().endSection();
                }
             } while (++var6 < var5);
 

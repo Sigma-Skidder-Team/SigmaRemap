@@ -55,7 +55,7 @@ public class class_7780 {
          class_9359 var4 = (class_9359)var1;
          if (!this.field_39436.method_35307(var4.field_3840)) {
             return false;
-         } else if (this.field_39433 != GameType.field_22762 && this.field_39433 != var4.field_47807.method_39517()) {
+         } else if (this.field_39433 != GameType.NOT_SET && this.field_39433 != var4.field_47807.method_39517()) {
             return false;
          } else {
             class_7909 var5 = var4.method_43271();
@@ -99,7 +99,7 @@ public class class_7780 {
          JsonObject var3 = class_6539.method_29782(var0, "player");
          class_7781 var4 = class_7781.method_35310(var3.get("level"));
          String var5 = class_6539.method_29797(var3, "gamemode", "");
-         GameType var6 = GameType.method_21595(var5, GameType.field_22762);
+         GameType var6 = GameType.method_21595(var5, GameType.NOT_SET);
          HashMap var7 = Maps.newHashMap();
          JsonArray var8 = class_6539.method_29788(var3, "stats", (JsonArray)null);
          if (var8 != null) {
@@ -160,8 +160,8 @@ public class class_7780 {
       if (this != field_39437) {
          JsonObject var3 = new JsonObject();
          var3.add("level", this.field_39436.method_27853());
-         if (this.field_39433 != GameType.field_22762) {
-            var3.addProperty("gamemode", this.field_39433.method_21588());
+         if (this.field_39433 != GameType.NOT_SET) {
+            var3.addProperty("gamemode", this.field_39433.getName());
          }
 
          if (!this.field_39438.isEmpty()) {

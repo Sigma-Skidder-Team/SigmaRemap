@@ -4,73 +4,74 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public enum GameType {
-   field_22762(-1, ""),
-   field_22764(0, "survival"),
-   field_22761(1, "creative"),
-   field_22760(2, "adventure"),
+   NOT_SET(-1, ""),
+   SURVIVAL(0, "survival"),
+   CREATIVE(1, "creative"),
+   ADVENTURE(2, "adventure"),
    SPECTATOR(3, "spectator");
 
-   private final int field_22758;
-   private final String field_22763;
+   private final int id;
+   private final String name;
 
-   private GameType(int var3, String var4) {
-      this.field_22758 = var3;
-      this.field_22763 = var4;
+   private GameType(int gameTypeId, String gameTypeName)
+   {
+      this.id = gameTypeId;
+      this.name = gameTypeName;
    }
 
-   public int method_21589() {
-      return this.field_22758;
+   public int getID() {
+      return this.id;
    }
 
-   public String method_21588() {
-      return this.field_22763;
+   public String getName() {
+      return this.name;
    }
 
-   public ITextComponent method_21592() {
-      return new TranslationTextComponent("gameMode." + this.field_22763);
+   public ITextComponent getDisplayName() {
+      return new TranslationTextComponent("gameMode." + this.name);
    }
 
-   public void method_21584(class_964 var1) {
-      if (this != field_22761) {
+   public void configurePlayerCapabilities(PlayerAbilities capabilities) {
+      if (this != CREATIVE) {
          if (this != SPECTATOR) {
-            var1.field_4941 = false;
-            var1.field_4944 = false;
-            var1.field_4940 = false;
-            var1.field_4942 = false;
+            capabilities.allowFlying = false;
+            capabilities.isCreativeMode = false;
+            capabilities.disableDamage = false;
+            capabilities.isFlying = false;
          } else {
-            var1.field_4941 = true;
-            var1.field_4944 = false;
-            var1.field_4940 = true;
-            var1.field_4942 = true;
+            capabilities.allowFlying = true;
+            capabilities.isCreativeMode = false;
+            capabilities.disableDamage = true;
+            capabilities.isFlying = true;
          }
       } else {
-         var1.field_4941 = true;
-         var1.field_4944 = true;
-         var1.field_4940 = true;
+         capabilities.allowFlying = true;
+         capabilities.isCreativeMode = true;
+         capabilities.disableDamage = true;
       }
 
-      var1.field_4938 = !this.method_21591();
+      capabilities.allowEdit = !this.method_21591();
    }
 
    public boolean method_21591() {
-      return this == field_22760 || this == SPECTATOR;
+      return this == ADVENTURE || this == SPECTATOR;
    }
 
    public boolean method_21587() {
-      return this == field_22761;
+      return this == CREATIVE;
    }
 
    public boolean method_21593() {
-      return this == field_22764 || this == field_22760;
+      return this == SURVIVAL || this == ADVENTURE;
    }
 
    public static GameType method_21590(int var0) {
-      return method_21594(var0, field_22764);
+      return method_21594(var0, SURVIVAL);
    }
 
    public static GameType method_21594(int var0, GameType var1) {
       for (GameType var7 : values()) {
-         if (var7.field_22758 == var0) {
+         if (var7.id == var0) {
             return var7;
          }
       }
@@ -79,12 +80,12 @@ public enum GameType {
    }
 
    public static GameType method_21586(String var0) {
-      return method_21595(var0, field_22764);
+      return method_21595(var0, SURVIVAL);
    }
 
    public static GameType method_21595(String var0, GameType var1) {
       for (GameType var7 : values()) {
-         if (var7.field_22763.equals(var0)) {
+         if (var7.name.equals(var0)) {
             return var7;
          }
       }

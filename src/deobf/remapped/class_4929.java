@@ -55,7 +55,7 @@ public class class_4929 implements class_3025 {
          this.field_25507 = true;
          this.field_25512 = "";
          this.field_25506.clear();
-         this.method_16056("root");
+         this.startSection("root");
       } else {
          field_25519.error("Profiler tick already started - missing endTick()?");
       }
@@ -64,7 +64,7 @@ public class class_4929 implements class_3025 {
    @Override
    public void method_16052() {
       if (this.field_25507) {
-         this.method_16054();
+         this.endSection();
          this.field_25507 = false;
          if (!this.field_25512.isEmpty()) {
             field_25519.error(
@@ -78,7 +78,7 @@ public class class_4929 implements class_3025 {
    }
 
    @Override
-   public void method_16056(String var1) {
+   public void startSection(String var1) {
       if (this.field_25514) {
          int var4 = var1.hashCode();
          if (var4 == field_25503 && var1.equals("scheduledExecutables")) {
@@ -105,11 +105,11 @@ public class class_4929 implements class_3025 {
 
    @Override
    public void method_16057(java.util.function.Supplier<String> var1) {
-      this.method_16056((String)var1.get());
+      this.startSection((String)var1.get());
    }
 
    @Override
-   public void method_16054() {
+   public void endSection() {
       if (this.field_25507) {
          if (!this.field_25517.isEmpty()) {
             long var3 = Util.getMeasuringTimeNano();
@@ -145,13 +145,13 @@ public class class_4929 implements class_3025 {
          }
       }
 
-      this.method_16054();
-      this.method_16056(var1);
+      this.endSection();
+      this.startSection(var1);
    }
 
    @Override
    public void method_16051(java.util.function.Supplier<String> var1) {
-      this.method_16054();
+      this.endSection();
       this.method_16057(var1);
    }
 

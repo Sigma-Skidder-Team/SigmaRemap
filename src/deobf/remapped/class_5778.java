@@ -75,7 +75,7 @@ public class class_5778 implements AutoCloseable {
    public void method_26128(float var1) {
       if (this.field_29190) {
          this.field_29190 = false;
-         this.field_29184.method_8562().method_16056("lightTex");
+         this.field_29184.getProfiler().startSection("lightTex");
          class_174 var4 = this.field_29184.field_9601;
          if (var4 != null) {
             this.field_29183 = false;
@@ -85,7 +85,7 @@ public class class_5778 implements AutoCloseable {
                if (class_9300.method_42873(var4, this.field_29182, this.field_29188, var5, var1)) {
                   this.field_29181.method_35650();
                   this.field_29190 = false;
-                  this.field_29184.method_8562().method_16054();
+                  this.field_29184.getProfiler().endSection();
                   this.field_29183 = true;
                   return;
                }
@@ -165,7 +165,7 @@ public class class_5778 implements AutoCloseable {
             }
 
             this.field_29181.method_35650();
-            this.field_29184.method_8562().method_16054();
+            this.field_29184.getProfiler().endSection();
          }
       }
    }

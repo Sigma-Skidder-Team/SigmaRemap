@@ -23,8 +23,8 @@ public interface class_7203 extends class_1137 {
          "Level game mode",
          () -> String.format(
                "Game mode: %s (ID %d). Hardcore: %b. Cheats: %b",
-               this.method_25709().method_21588(),
-               this.method_25709().method_21589(),
+               this.method_25709().getName(),
+               this.method_25709().getID(),
                this.method_8659(),
                this.method_25714()
             )

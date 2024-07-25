@@ -176,7 +176,7 @@ public class class_7451 extends class_4641 {
          if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
             if (var1 instanceof class_704) {
                class_704 var6 = (class_704)var1;
-               if (var6.field_3876.field_4944) {
+               if (var6.field_3876.isCreativeMode) {
                   this.method_33911(var5);
                   return;
                }
@@ -322,7 +322,7 @@ public class class_7451 extends class_4641 {
                this.method_33910(this.method_33907() + 1);
             } else if (var7 && !this.field_41751) {
                this.method_33912(var5);
-               if (!var1.field_3876.field_4944) {
+               if (!var1.field_3876.isCreativeMode) {
                   var5.method_27970(1);
                }
             }

@@ -82,7 +82,7 @@ public class class_4393 extends class_2803 implements class_9897 {
             }
 
             Pair var7 = (Pair)var6.get();
-            if (!var1.field_3876.field_4944) {
+            if (!var1.field_3876.isCreativeMode) {
                var5.method_27970(1);
             }
 

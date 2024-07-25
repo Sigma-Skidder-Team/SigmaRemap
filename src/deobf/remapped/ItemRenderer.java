@@ -368,7 +368,7 @@ public class ItemRenderer implements class_6491 {
             RenderSystem.method_16491();
             RenderSystem.method_16354();
             RenderSystem.method_16458();
-            RenderSystem.method_16448();
+            RenderSystem.disableBlend();
             class_8042 var19 = class_8042.method_36499();
             class_9633 var21 = var19.method_36501();
             float var11 = (float)var2.method_28026();

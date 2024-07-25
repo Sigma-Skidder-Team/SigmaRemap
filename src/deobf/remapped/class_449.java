@@ -266,7 +266,7 @@ public class class_449 extends class_1829 {
          }
 
          this.method_2153(true);
-         if (!var1.field_3876.field_4944) {
+         if (!var1.field_3876.isCreativeMode) {
             var5.method_27970(1);
          }
 

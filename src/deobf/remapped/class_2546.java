@@ -351,7 +351,7 @@ public class class_2546 extends class_9331<class_7333> {
    public void method_10221(class_7966 var1, int var2, int var3) {
       class_8230 var6 = class_8230.field_42279[field_12605];
       if (var6.method_37694()) {
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          this.field_948.method_45378(var1, var6.method_37699(), 8.0F, 6.0F, 4210752);
       }
    }

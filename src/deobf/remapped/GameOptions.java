@@ -54,7 +54,7 @@ public class GameOptions {
    public class_1736 field_45569 = class_1736.field_8943;
    public int field_45491;
    public int field_45424;
-   public boolean field_45477 = true;
+   public boolean heldItemTooltips = true;
    public double field_45419 = 1.0;
    public double field_45388 = 1.0;
    public double field_45488 = 0.44366196F;
@@ -580,7 +580,7 @@ public class GameOptions {
                }
 
                if ("heldItemTooltips".equals(var4)) {
-                  this.field_45477 = "true".equals(var5);
+                  this.heldItemTooltips = "true".equals(var5);
                }
 
                if ("chatHeightFocused".equals(var4)) {
@@ -778,7 +778,7 @@ public class GameOptions {
             var1.println("pauseOnLostFocus:" + this.field_45426);
             var1.println("overrideWidth:" + this.field_45491);
             var1.println("overrideHeight:" + this.field_45424);
-            var1.println("heldItemTooltips:" + this.field_45477);
+            var1.println("heldItemTooltips:" + this.heldItemTooltips);
             var1.println("chatHeightFocused:" + this.field_45480);
             var1.println("chatDelay: " + this.field_45479);
             var1.println("chatHeightUnfocused:" + this.field_45488);
@@ -1307,7 +1307,7 @@ public class GameOptions {
       }
 
       if (var1 == class_1013.field_5263) {
-         this.field_45477 = !this.field_45477;
+         this.heldItemTooltips = !this.heldItemTooltips;
       }
 
       if (var1 == class_1013.field_5200) {
@@ -1629,7 +1629,7 @@ public class GameOptions {
       } else if (var1 == class_1013.field_5313) {
          return this.field_45558 ? var2 + class_3458.method_15907() : var2 + class_3458.method_15902();
       } else if (var1 == class_1013.field_5263) {
-         return this.field_45477 ? var2 + class_3458.method_15907() : var2 + class_3458.method_15902();
+         return this.heldItemTooltips ? var2 + class_3458.method_15907() : var2 + class_3458.method_15902();
       } else if (var1 == class_1013.field_5200) {
          return this.field_45482 ? var2 + class_3458.method_15907() : var2 + class_3458.method_15902();
       } else if (var1 == class_1013.field_5277) {
@@ -2132,7 +2132,7 @@ public class GameOptions {
       this.brightnessGamma = 0.0;
       this.field_45484 = 0;
       this.field_45505 = class_9761.field_49571;
-      this.field_45477 = true;
+      this.heldItemTooltips = true;
       this.field_45463 = false;
       this.field_45497 = 1;
       this.field_45428 = 0.8F;

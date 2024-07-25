@@ -104,7 +104,7 @@ public class class_460 implements Comparable<class_460> {
       if (!this.method_2208()) {
          if (!this.method_2199()) {
             Object var3 = !this.method_2197()
-               ? new TranslationTextComponent("gameMode." + this.method_2211().method_21588())
+               ? new TranslationTextComponent("gameMode." + this.method_2211().getName())
                : new StringTextComponent("").append(new TranslationTextComponent("gameMode.hardcore").mergeStyle(TextFormatting.DARK_RED));
             if (this.method_2200()) {
                ((IFormattableTextComponent)var3).appendString(", ").append(new TranslationTextComponent("selectWorld.cheats"));

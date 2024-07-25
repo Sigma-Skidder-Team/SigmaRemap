@@ -187,7 +187,7 @@ public class class_3129 extends Screen {
          this.method_9781(var1, var2x + 0, var3x, 0, 0, 155, 44);
          this.method_9781(var1, var2x + 155, var3x, 0, 45, 155, 44);
       });
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       this.field_943.getTextureManager().bindTexture(field_15531);
       method_9778(var1, var8 + 88, var9 + 37, 0.0F, 0.0F, 98, 14, 128, 16);
       RenderSystem.method_16458();
@@ -228,7 +228,7 @@ public class class_3129 extends Screen {
       var15.method_35761((double)var16, 0.0, (double)this.method_9777()).method_35745(1.0F, 0.0F).method_35742(1.0F, 1.0F, 1.0F, 1.0F).method_35735();
       var15.method_35761(0.0, 0.0, (double)this.method_9777()).method_35745(0.0F, 0.0F).method_35742(1.0F, 1.0F, 1.0F, 1.0F).method_35735();
       var14.method_36500();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       super.method_6767(var1, var2, var3, var4);
    }
 }

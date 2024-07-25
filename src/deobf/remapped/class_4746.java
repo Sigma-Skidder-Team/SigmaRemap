@@ -58,7 +58,7 @@ public class class_4746 {
          RenderSystem.enableBlend();
          GL11.glDisable(2929);
          GL11.glDisable(3008);
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          field_22996.method_19712(true);
          field_23002.method_19712(true);
          RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);

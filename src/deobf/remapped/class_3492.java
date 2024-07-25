@@ -7,11 +7,11 @@ public interface class_3492 {
 
    void method_16052();
 
-   void method_16056(String var1);
+   void startSection(String var1);
 
    void method_16057(Supplier<String> var1);
 
-   void method_16054();
+   void endSection();
 
    void method_16050(String var1);
 

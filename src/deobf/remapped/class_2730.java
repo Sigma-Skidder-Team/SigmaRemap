@@ -176,7 +176,7 @@ public class class_2730 {
                   var35.method_37215(var35.method_37098().method_6214(var38 * var50, var40 * var50, var42 * var50));
                   if (var35 instanceof class_704) {
                      class_704 var52 = (class_704)var35;
-                     if (!var52.method_37221() && (!var52.method_3186() || !var52.field_3876.field_4942)) {
+                     if (!var52.method_37221() && (!var52.method_3186() || !var52.field_3876.isFlying)) {
                         this.field_13331.put(var52, new class_1343(var38 * var48, var40 * var48, var42 * var48));
                      }
                   }
@@ -219,7 +219,7 @@ public class class_2730 {
             class_6414 var9 = var8.method_8360();
             if (!var8.method_8345()) {
                class_1331 var10 = var7.method_6072();
-               this.field_13330.method_29599().method_16056("explosion_blocks");
+               this.field_13330.method_29599().startSection("explosion_blocks");
                if (var9.method_29256(this) && this.field_13330 instanceof class_6331) {
                   class_3757 var11 = !var9.method_10802() ? null : this.field_13330.method_28260(var7);
                   class_8480 var12 = new class_8480((class_6331)this.field_13330)
@@ -237,7 +237,7 @@ public class class_2730 {
 
                this.field_13330.method_7513(var7, class_4783.field_23184.method_29260(), 3);
                var9.method_29279(this.field_13330, var7, this);
-               this.field_13330.method_29599().method_16054();
+               this.field_13330.method_29599().endSection();
             }
          }
 

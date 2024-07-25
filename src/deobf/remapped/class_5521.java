@@ -140,7 +140,7 @@ public abstract class class_5521 extends class_4109 {
          if (!this.method_25017() && var5.method_27960() == class_4783.field_23471.method_10803()) {
             this.method_25016(true);
             this.method_25020();
-            if (!var1.field_3876.field_4944) {
+            if (!var1.field_3876.isCreativeMode) {
                var5.method_27970(1);
             }
 

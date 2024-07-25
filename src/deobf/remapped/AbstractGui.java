@@ -62,7 +62,7 @@ public abstract class AbstractGui {
       var12.method_44487();
       class_138.method_554(var12);
       RenderSystem.method_16432();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public void method_9772(class_7966 var1, int var2, int var3, int var4, int var5, int var6, int var7) {
@@ -77,7 +77,7 @@ public abstract class AbstractGui {
       method_9773(var1.method_36058().method_28620(), var11, var2, var3, var4, var5, this.field_10504, var6, var7);
       var10.method_36500();
       RenderSystem.method_16486(7424);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.enableAlphaTest();
       RenderSystem.method_16432();
    }

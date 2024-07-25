@@ -21,8 +21,8 @@ public class class_9782 {
             if (this.field_49646 == 2) {
                boolean var4 = class_314.method_1387();
                if (var4) {
-                  class_964 var5 = new class_964();
-                  var5.field_4942 = true;
+                  PlayerAbilities var5 = new PlayerAbilities();
+                  var5.isFlying = true;
                   Entity var6 = null;
 
                   for (Entity var8 : class_314.method_1440()) {
@@ -87,8 +87,8 @@ public class class_9782 {
                         this.field_49645.thePlayer.method_37256(var4x.field_22878, var4x.field_22880, var4x.field_22879);
                         this.field_49648 = null;
                         if (var4) {
-                           class_964 var12 = new class_964();
-                           var12.field_4942 = false;
+                           PlayerAbilities var12 = new PlayerAbilities();
+                           var12.isFlying = false;
                            this.field_49645.method_8614().method_4813(new class_9808(var12));
                         }
                      } catch (Exception var11) {

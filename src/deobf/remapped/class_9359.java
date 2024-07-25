@@ -79,7 +79,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    private void method_43254(class_6331 var1) {
       class_1331 var4 = var1.method_28998();
-      if (var1.method_22572().method_40229() && var1.method_29522().method_1601().method_25709() != GameType.field_22760) {
+      if (var1.method_22572().method_40229() && var1.method_29522().method_1601().method_25709() != GameType.ADVENTURE) {
          int var5 = Math.max(0, this.field_47801.method_1720(var1));
          int var6 = class_9299.method_42847(var1.method_6673().method_9808((double)var4.method_12173(), (double)var4.method_12185()));
          if (var6 < var5) {
@@ -130,11 +130,11 @@ public class class_9359 extends class_704 implements class_117 {
                .method_39516(
                   GameType.method_21590(var1.method_25947("playerGameType")),
                   !var1.method_25939("previousPlayerGameType", 3)
-                     ? GameType.field_22762
+                     ? GameType.NOT_SET
                      : GameType.method_21590(var1.method_25947("previousPlayerGameType"))
                );
          } else {
-            this.field_47807.method_39516(this.method_37268().method_1602(), GameType.field_22762);
+            this.field_47807.method_39516(this.method_37268().method_1602(), GameType.NOT_SET);
          }
       }
 
@@ -168,8 +168,8 @@ public class class_9359 extends class_704 implements class_117 {
    @Override
    public void method_37376(class_5734 var1) {
       super.method_37376(var1);
-      var1.method_25931("playerGameType", this.field_47807.method_39517().method_21589());
-      var1.method_25931("previousPlayerGameType", this.field_47807.method_39524().method_21589());
+      var1.method_25931("playerGameType", this.field_47807.method_39517().getID());
+      var1.method_25931("previousPlayerGameType", this.field_47807.method_39524().getID());
       var1.method_25934("seenCredits", this.field_47783);
       if (this.field_47793 != null) {
          class_5734 var4 = new class_5734();
@@ -568,20 +568,20 @@ public class class_9359 extends class_704 implements class_117 {
          this.field_41751 = false;
          class_9606 var8 = this.method_37081(var1);
          if (var8 != null) {
-            var4.method_29599().method_16056("moving");
+            var4.method_29599().startSection("moving");
             if (var5 == World.field_33048 && var1.method_29545() == World.field_33029) {
                this.field_47793 = this.method_37245();
             } else if (var1.method_29545() == World.field_33038) {
                this.method_43239(var1, new class_1331(var8.field_48952));
             }
 
-            var4.method_29599().method_16054();
-            var4.method_29599().method_16056("placing");
+            var4.method_29599().endSection();
+            var4.method_29599().startSection("placing");
             this.method_37120(var1);
             var1.method_28989(this);
             this.method_37395(var8.field_48956, var8.field_48953);
             this.method_37195(var8.field_48952.field_7336, var8.field_48952.field_7333, var8.field_48952.field_7334);
-            var4.method_29599().method_16054();
+            var4.method_29599().endSection();
             this.method_43269(var4);
             this.field_47807.method_39527(var1);
             this.field_47794.method_4156(new class_3727(this.field_3876));
@@ -777,7 +777,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public boolean method_37180(class_6199 var1) {
-      return super.method_37180(var1) || this.method_43262() || this.field_3876.field_4940 && var1 == class_6199.field_31669;
+      return super.method_37180(var1) || this.method_43262() || this.field_3876.disableDamage && var1 == class_6199.field_31669;
    }
 
    @Override
@@ -1109,7 +1109,7 @@ public class class_9359 extends class_704 implements class_117 {
    @Override
    public void method_3155(GameType var1) {
       this.field_47807.method_39526(var1);
-      this.field_47794.method_4156(new class_2161(class_2161.field_10791, (float)var1.method_21589()));
+      this.field_47794.method_4156(new class_2161(class_2161.field_10791, (float)var1.getID()));
       if (var1 != GameType.SPECTATOR) {
          this.method_43284(this);
       } else {
@@ -1128,7 +1128,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public boolean method_3186() {
-      return this.field_47807.method_39517() == GameType.field_22761;
+      return this.field_47807.method_39517() == GameType.CREATIVE;
    }
 
    @Override

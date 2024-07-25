@@ -150,7 +150,7 @@ public class RearViewModule extends PremiumModule {
       RenderSystem.method_16432();
       RenderSystem.method_16487();
       RenderSystem.method_16458();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16481();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       var1.method_19715();

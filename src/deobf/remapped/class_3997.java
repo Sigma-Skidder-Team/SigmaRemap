@@ -62,7 +62,7 @@ public class class_3997 extends class_2451 {
    }
 
    public ItemStack method_18423(ItemStack var1, class_704 var2) {
-      return var2.field_3876.field_4944 ? var1 : new ItemStack(class_4897.field_24548);
+      return var2.field_3876.isCreativeMode ? var1 : new ItemStack(class_4897.field_24548);
    }
 
    public void method_18422(World var1, ItemStack var2, class_1331 var3) {

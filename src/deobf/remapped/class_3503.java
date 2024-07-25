@@ -15,7 +15,7 @@ public class class_3503 extends class_2451 {
          var6.method_3211(class_6234.field_31907.method_43790(this));
       }
 
-      if (var3 instanceof class_704 && !((class_704)var3).field_3876.field_4944) {
+      if (var3 instanceof class_704 && !((class_704)var3).field_3876.isCreativeMode) {
          var1.method_27970(1);
       }
 

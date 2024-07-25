@@ -94,7 +94,7 @@ public class class_1092 implements class_392 {
       class_784 var9 = new class_784(class_423.field_1789, var1.method_9231(), var8);
       this.field_6025 = var9;
       this.field_6021 = new class_174(
-         this, var9, var5, var6, this.field_6023, this.field_6026::method_8562, this.field_6026.worldRenderer, var7, var1.method_9235()
+         this, var9, var5, var6, this.field_6023, this.field_6026::getProfiler, this.field_6026.worldRenderer, var7, var1.method_9235()
       );
       this.field_6026.method_8508(this.field_6021);
       if (this.field_6026.thePlayer == null) {
@@ -888,7 +888,7 @@ public class class_1092 implements class_392 {
          class_784 var11 = new class_784(this.field_6025.method_8661(), this.field_6025.method_8659(), var10);
          this.field_6025 = var11;
          this.field_6021 = new class_174(
-            this, var11, var4, var5, this.field_6023, this.field_6026::method_8562, this.field_6026.worldRenderer, var9, var1.method_35332()
+            this, var11, var4, var5, this.field_6023, this.field_6026::getProfiler, this.field_6026.worldRenderer, var9, var1.method_35332()
          );
          this.field_6021.method_756(var8);
          this.field_6026.method_8508(this.field_6021);
@@ -1540,10 +1540,10 @@ public class class_1092 implements class_392 {
    public void method_1969(class_3727 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       class_5989 var4 = this.field_6026.thePlayer;
-      var4.field_3876.field_4942 = var1.method_17271();
-      var4.field_3876.field_4944 = var1.method_17274();
-      var4.field_3876.field_4940 = var1.method_17273();
-      var4.field_3876.field_4941 = var1.method_17272();
+      var4.field_3876.isFlying = var1.method_17271();
+      var4.field_3876.isCreativeMode = var1.method_17274();
+      var4.field_3876.disableDamage = var1.method_17273();
+      var4.field_3876.allowFlying = var1.method_17272();
       var4.field_3876.method_4233(var1.method_17275());
       var4.field_3876.method_4231(var1.method_17276());
    }

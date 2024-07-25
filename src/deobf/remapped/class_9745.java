@@ -67,9 +67,9 @@ public class class_9745 extends class_9716 {
       }
 
       this.field_3859 = this.field_3859 + (var3 - this.field_3859) * 0.4F;
-      this.field_41768.method_29599().method_16056("push");
+      this.field_41768.method_29599().startSection("push");
       this.method_26428();
-      this.field_41768.method_29599().method_16054();
+      this.field_41768.method_29599().endSection();
    }
 
    @Override

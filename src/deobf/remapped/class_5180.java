@@ -89,11 +89,11 @@ public class class_5180 extends class_2840<class_192> {
       var2.method_16059();
       JsonObject var8 = method_23755(var1, var2);
       if (var8 != null) {
-         var2.method_16056("compile_regex");
+         var2.startSection("compile_regex");
          method_23754(var8.getAsJsonArray("renderer"), var5);
          method_23754(var8.getAsJsonArray("version"), var6);
          method_23754(var8.getAsJsonArray("vendor"), var7);
-         var2.method_16054();
+         var2.endSection();
       }
 
       var2.method_16052();
@@ -110,7 +110,7 @@ public class class_5180 extends class_2840<class_192> {
 
    @Nullable
    private static JsonObject method_23755(class_7832 var0, class_3492 var1) {
-      var1.method_16056("parse_json");
+      var1.startSection("parse_json");
       JsonObject var4 = null;
 
       try (
@@ -122,7 +122,7 @@ public class class_5180 extends class_2840<class_192> {
          field_26661.warn("Failed to load GPU warnlist");
       }
 
-      var1.method_16054();
+      var1.endSection();
       return var4;
    }
 }

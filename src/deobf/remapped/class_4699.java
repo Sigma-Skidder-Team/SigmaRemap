@@ -36,6 +36,6 @@ public class class_4699 extends class_2451 {
          }
       }
 
-      return var3 instanceof class_704 && ((class_704)var3).field_3876.field_4944 ? var6 : new ItemStack(class_4897.field_24454);
+      return var3 instanceof class_704 && ((class_704)var3).field_3876.isCreativeMode ? var6 : new ItemStack(class_4897.field_24454);
    }
 }

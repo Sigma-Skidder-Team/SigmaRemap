@@ -56,7 +56,7 @@ public class DebugOverlayGui extends AbstractGui {
    }
 
    public void method_17982(class_7966 var1) {
-      this.field_18930.method_8562().method_16056("debug");
+      this.field_18930.getProfiler().startSection("debug");
       RenderSystem.method_16438();
       Entity var4 = this.field_18930.getRenderViewEntity();
       this.field_18928 = var4.method_37201(20.0, 0.0F, false);
@@ -73,7 +73,7 @@ public class DebugOverlayGui extends AbstractGui {
          }
       }
 
-      this.field_18930.method_8562().method_16054();
+      this.field_18930.getProfiler().endSection();
    }
 
    public void method_17993(class_7966 var1) {
@@ -659,7 +659,7 @@ public class DebugOverlayGui extends AbstractGui {
          var33.method_44487();
          class_138.method_554(var33);
          RenderSystem.method_16432();
-         RenderSystem.method_16448();
+         RenderSystem.disableBlend();
          if (!var5) {
             method_9774(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
             this.field_18918.method_45385(var1, "20 TPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);

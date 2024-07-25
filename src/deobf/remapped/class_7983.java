@@ -274,7 +274,7 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
       RenderSystem.method_16432();
       RenderSystem.method_16486(7424);
       RenderSystem.enableAlphaTest();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    public void method_36189(E var1) {

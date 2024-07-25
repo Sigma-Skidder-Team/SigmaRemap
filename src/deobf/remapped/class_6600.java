@@ -29,12 +29,12 @@ public class class_6600 extends class_2875 {
 
    @Override
    public boolean method_13210(class_704 var1, boolean var2) {
-      return (var1.field_3876.field_4944 || var1.field_3840 >= this.field_34038.method_43085()) && this.field_34038.method_43085() > 0;
+      return (var1.field_3876.isCreativeMode || var1.field_3840 >= this.field_34038.method_43085()) && this.field_34038.method_43085() > 0;
    }
 
    @Override
    public ItemStack method_13209(class_704 var1, ItemStack var2) {
-      if (!var1.field_3876.field_4944) {
+      if (!var1.field_3876.isCreativeMode) {
          var1.method_3220(-this.field_34038.method_43085());
       }
 
@@ -54,7 +54,7 @@ public class class_6600 extends class_2875 {
       this.field_34038.method_43087(0);
       this.field_14086.method_42533((var1x, var2x) -> {
          class_2522 var5x = var1x.method_28262(var2x);
-         if (!var1.field_3876.field_4944 && var5x.method_8349(class_2351.field_11799) && var1.method_26594().nextFloat() < 0.12F) {
+         if (!var1.field_3876.isCreativeMode && var5x.method_8349(class_2351.field_11799) && var1.method_26594().nextFloat() < 0.12F) {
             class_2522 var6 = class_7372.method_33579(var5x);
             if (var6 != null) {
                var1x.method_7513(var2x, var6, 2);
@@ -138,7 +138,7 @@ public class class_6600 extends class_2875 {
                      int var17 = (Integer)var23.get(var30);
                      var17 = var16 == var17 ? var17 + 1 : Math.max(var17, var16);
                      boolean var18 = var30.method_20430(var3);
-                     if (this.field_14088.field_3876.field_4944 || var3.method_27960() == class_4897.field_24879) {
+                     if (this.field_14088.field_3876.isCreativeMode || var3.method_27960() == class_4897.field_24879) {
                         var18 = true;
                      }
 
@@ -214,7 +214,7 @@ public class class_6600 extends class_2875 {
             this.field_34038.method_43087(39);
          }
 
-         if (this.field_34038.method_43085() >= 40 && !this.field_14088.field_3876.field_4944) {
+         if (this.field_34038.method_43085() >= 40 && !this.field_14088.field_3876.isCreativeMode) {
             var7 = ItemStack.EMPTY;
          }
 

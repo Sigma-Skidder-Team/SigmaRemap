@@ -13,7 +13,7 @@ public class class_2331 extends class_3599 {
    @Override
    public boolean method_16795() {
       class_9359 var3 = (class_9359)this.field_11641.method_41207();
-      boolean var4 = var3 != null && !var3.method_37221() && !var3.field_3876.field_4942 && !var3.method_37285();
+      boolean var4 = var3 != null && !var3.method_37221() && !var3.field_3876.isFlying && !var3.method_37285();
       return !this.field_11641.method_41216() && var4 && this.field_11641.method_35417();
    }
 

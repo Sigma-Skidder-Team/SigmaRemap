@@ -41,7 +41,7 @@ public class class_7458 extends class_2840<class_6560> implements AutoCloseable 
 
    public void method_33945(class_6560 var1, class_7832 var2, class_3492 var3) {
       var3.method_16059();
-      var3.method_16056("upload");
+      var3.startSection("upload");
       if (this.field_38007 != null) {
          this.field_38007.close();
       }
@@ -52,7 +52,7 @@ public class class_7458 extends class_2840<class_6560> implements AutoCloseable 
       this.field_38001 = this.field_37999.get(class_6560.field_33445);
       var3.method_16050("cache");
       this.field_38002.method_43943();
-      var3.method_16054();
+      var3.endSection();
       var3.method_16052();
    }
 

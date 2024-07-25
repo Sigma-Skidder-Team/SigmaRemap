@@ -48,7 +48,7 @@ public class class_939 extends class_6414 {
                if (var11 != class_4897.field_24812) {
                   if (var11 == class_4897.field_25157 && class_9541.method_43990(var9) == class_3697.field_18108) {
                      if (var10 < 3 && !var2.field_33055) {
-                        if (!var4.field_3876.field_4944) {
+                        if (!var4.field_3876.isCreativeMode) {
                            ItemStack var17 = new ItemStack(class_4897.field_24812);
                            var4.method_3209(class_6234.field_31841);
                            var4.method_26615(var5, var17);
@@ -79,7 +79,7 @@ public class class_939 extends class_6414 {
                            var16.method_28017(1);
                            class_8837.method_40661(var16);
                            var4.method_3209(class_6234.field_31888);
-                           if (!var4.field_3876.field_4944) {
+                           if (!var4.field_3876.isCreativeMode) {
                               var9.method_27970(1);
                               this.method_4060(var2, var3, var1, var10 - 1);
                            }
@@ -119,7 +119,7 @@ public class class_939 extends class_6414 {
                   }
                } else {
                   if (var10 > 0 && !var2.field_33055) {
-                     if (!var4.field_3876.field_4944) {
+                     if (!var4.field_3876.isCreativeMode) {
                         ItemStack var12 = class_9541.method_43999(new ItemStack(class_4897.field_25157), class_3697.field_18108);
                         var4.method_3209(class_6234.field_31841);
                         var9.method_27970(1);
@@ -144,7 +144,7 @@ public class class_939 extends class_6414 {
                }
             } else {
                if (var10 == 3 && !var2.field_33055) {
-                  if (!var4.field_3876.field_4944) {
+                  if (!var4.field_3876.isCreativeMode) {
                      var9.method_27970(1);
                      if (!var9.method_28022()) {
                         if (!var4.inventory.method_32414(new ItemStack(class_4897.field_24999))) {
@@ -164,7 +164,7 @@ public class class_939 extends class_6414 {
             }
          } else {
             if (var10 < 3 && !var2.field_33055) {
-               if (!var4.field_3876.field_4944) {
+               if (!var4.field_3876.isCreativeMode) {
                   var4.method_26615(var5, new ItemStack(class_4897.field_24548));
                }
 

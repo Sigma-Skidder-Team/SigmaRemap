@@ -232,7 +232,7 @@ public class class_8127 extends class_608 implements class_6250 {
          if (this.method_26551() != var7) {
             float var8 = 1.0F + (this.field_41717.nextFloat() - this.field_41717.nextFloat()) * 0.2F;
             this.method_37155(class_463.field_1936, 1.0F, var8);
-            if (!var1.field_3876.field_4944) {
+            if (!var1.field_3876.isCreativeMode) {
                var5.method_27970(1);
             }
 

@@ -354,7 +354,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    public class_6910 method_19079(class_704 var1, ItemStack var2) {
       boolean var5 = this.method_19060(var1, var2);
-      if (!var1.field_3876.field_4944) {
+      if (!var1.field_3876.isCreativeMode) {
          var2.method_27970(1);
       }
 

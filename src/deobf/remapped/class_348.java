@@ -39,7 +39,7 @@ public class class_348 {
          if (field_1368 == null || this.field_1367 != field_1368.method_1772()) {
             field_1368 = this;
             if (this.field_1367) {
-               RenderSystem.method_16448();
+               RenderSystem.disableBlend();
                return;
             }
 

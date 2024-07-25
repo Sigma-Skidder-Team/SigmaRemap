@@ -95,7 +95,7 @@ public class class_8224 extends class_8374<class_9662> {
                         var4.method_2206(),
                         new Date(var4.method_2210()),
                         !var4.method_2197()
-                           ? new TranslationTextComponent("gameMode." + var4.method_2211().method_21588())
+                           ? new TranslationTextComponent("gameMode." + var4.method_2211().getName())
                            : new TranslationTextComponent("gameMode.hardcore"),
                         !var4.method_2200() ? StringTextComponent.EMPTY : new TranslationTextComponent("selectWorld.cheats"),
                         var4.method_2207()

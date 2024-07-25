@@ -81,7 +81,7 @@ public class class_5490 extends class_4641 {
          this.method_37155(class_463.field_2198, 1.0F, 1.0F);
          if (var1 instanceof class_704) {
             class_704 var4 = (class_704)var1;
-            if (var4.field_3876.field_4944) {
+            if (var4.field_3876.isCreativeMode) {
                return;
             }
          }

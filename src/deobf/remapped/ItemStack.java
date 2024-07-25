@@ -135,7 +135,7 @@ public final class ItemStack {
       class_704 var4 = var1.method_21868();
       class_1331 var5 = var1.method_21858();
       class_9115 var6 = new class_9115(var1.method_21862(), var5, false);
-      if (var4 != null && !var4.field_3876.field_4938 && !this.method_28027(var1.method_21862().method_29600(), var6)) {
+      if (var4 != null && !var4.field_3876.allowEdit && !this.method_28027(var1.method_21862().method_29600(), var6)) {
          return class_6910.field_35521;
       } else {
          class_2451 var7 = this.method_27960();
@@ -236,7 +236,7 @@ public final class ItemStack {
 
    public <T extends class_5834> void method_28003(int var1, T var2, Consumer<T> var3) {
       if (!var2.field_41768.field_33055
-         && (!(var2 instanceof class_704) || !((class_704)var2).field_3876.field_4944)
+         && (!(var2 instanceof class_704) || !((class_704)var2).field_3876.isCreativeMode)
          && this.method_27959()
          && this.method_27996(var1, var2.method_26594(), !(var2 instanceof class_9359) ? null : (class_9359)var2)) {
          var3.accept(var2);

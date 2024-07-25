@@ -49,8 +49,8 @@ public class class_7786 implements Packet<class_392> {
       var1.method_37786(class_8760.field_44831, () -> this.field_39457);
       var1.method_37780(this.field_39456.method_25499());
       var1.writeLong(this.field_39461);
-      var1.writeByte(this.field_39454.method_21589());
-      var1.writeByte(this.field_39459.method_21589());
+      var1.writeByte(this.field_39454.getID());
+      var1.writeByte(this.field_39459.getID());
       var1.writeBoolean(this.field_39458);
       var1.writeBoolean(this.field_39455);
       var1.writeBoolean(this.field_39460);

@@ -28,7 +28,7 @@ public final class class_6292 {
          var4,
          var0.get("hardcore").asBoolean(false),
          var0.get("Difficulty").asNumber().map(var0x -> class_423.method_2100(var0x.byteValue())).result().orElse(class_423.field_1789),
-         var0.get("allowCommands").asBoolean(var4 == GameType.field_22761),
+         var0.get("allowCommands").asBoolean(var4 == GameType.CREATIVE),
          new class_291(var0.get("GameRules")),
          var1
       );

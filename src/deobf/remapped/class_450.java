@@ -119,7 +119,7 @@ public class class_450 {
       var4.method_35762(var14, -1.0F, 1.0F, -0.5F).method_35742(var5, var5, var5, 0.1F).method_35745(4.0F + var12, 0.0F + var13).method_35735();
       var4.method_44487();
       class_138.method_554(var4);
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
    }
 
    private static void method_2169(MinecraftClient var0, class_7966 var1) {
@@ -170,7 +170,7 @@ public class class_450 {
          var1.method_36064();
       }
 
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       RenderSystem.method_16387(true);
       RenderSystem.method_16457(515);
    }

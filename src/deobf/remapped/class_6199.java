@@ -211,7 +211,7 @@ public class class_6199 {
 
    public boolean method_28349() {
       Entity var3 = this.method_28372();
-      return var3 instanceof class_704 && ((class_704)var3).field_3876.field_4944;
+      return var3 instanceof class_704 && ((class_704)var3).field_3876.isCreativeMode;
    }
 
    @Nullable

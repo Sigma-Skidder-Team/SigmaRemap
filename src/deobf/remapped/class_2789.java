@@ -95,7 +95,7 @@ public class class_2789 extends class_7621 {
 
       RenderSystem.defaultBlendFunc();
       RenderSystem.method_16433();
-      RenderSystem.method_16448();
+      RenderSystem.disableBlend();
       int var23 = (int)((double)this.field_13696.getMainWindow().getScaledHeight() * 0.8325);
       float var24 = this.field_13700.method_19969();
       this.field_13697 = class_9299.method_42828(this.field_13697 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);

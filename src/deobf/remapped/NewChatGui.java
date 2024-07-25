@@ -90,7 +90,7 @@ public class NewChatGui extends AbstractGui {
                         }
 
                         RenderSystem.method_16458();
-                        RenderSystem.method_16448();
+                        RenderSystem.disableBlend();
                         var1.method_36064();
                      }
                   }
@@ -110,7 +110,7 @@ public class NewChatGui extends AbstractGui {
                   .method_45392(var1, new TranslationTextComponent("chat.queue", this.field_19692.size()), 0.0F, 1.0F, 16777215 + (var33 << 24));
                var1.method_36064();
                RenderSystem.method_16458();
-               RenderSystem.method_16448();
+               RenderSystem.disableBlend();
             }
 
             if (var8) {

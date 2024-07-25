@@ -350,7 +350,7 @@ public class class_5583 extends class_8990 {
             class_9077 var7 = ((class_239)var6).method_1015();
             if (var7 != this.method_25360()) {
                this.method_25351(var7);
-               if (!var1.field_3876.field_4944) {
+               if (!var1.field_3876.isCreativeMode) {
                   var5.method_27970(1);
                }
 
