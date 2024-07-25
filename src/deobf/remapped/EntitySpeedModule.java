@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_6592 extends Module {
+public class EntitySpeedModule extends Module {
    public float field_34011 = 3.0F;
    public int field_34012 = 0;
 
-   public class_6592() {
+   public EntitySpeedModule() {
       super(Category.MOVEMENT, "EntitySpeed", "Speed up your rideable entities");
    }
 

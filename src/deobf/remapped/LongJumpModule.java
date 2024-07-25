@@ -1,8 +1,8 @@
 package remapped;
 
-public class class_1213 extends SecondModule {
-   public class_1213() {
-      super(Category.MOVEMENT, "LongJump", "Makes you jump far away", new class_583(), new CubeCraftLongJumpModule(), new class_4452(), new class_4211());
+public class LongJumpModule extends SecondModule {
+   public LongJumpModule() {
+      super(Category.MOVEMENT, "LongJump", "Makes you jump far away", new NCPLongjump(), new CubeCraftLongjump(), new MineplexLongjump(), new RedeskyLongjump());
       this.addSetting(new BooleanSetting("Auto Disable", "Disable Longjump when landing", true));
       this.addSetting(new BooleanSetting("BorderJump", "Jumps when you are close to a border", true));
       this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps when you can", true));

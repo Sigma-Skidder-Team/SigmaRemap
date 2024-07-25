@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4452 extends Module {
+public class MineplexLongjump extends Module {
    private double field_21693;
    private double field_21694;
    private int field_21695;
@@ -8,7 +8,7 @@ public class class_4452 extends Module {
    private int field_21690;
    private boolean field_21696;
 
-   public class_4452() {
+   public MineplexLongjump() {
       super(Category.MOVEMENT, "Mineplex", "Mineplex longjump.");
    }
 

@@ -42,8 +42,8 @@ public class ModuleManager {
       this.method_852(new BlockFlyModule());
       this.method_852(new FlyModule());
       this.method_852(new SpeedModule());
-      this.method_852(new class_6592());
-      this.method_852(new class_1213());
+      this.method_852(new EntitySpeedModule());
+      this.method_852(new LongJumpModule());
       this.method_852(new class_7033());
       this.method_852(new class_8968());
       this.method_852(new class_9704());

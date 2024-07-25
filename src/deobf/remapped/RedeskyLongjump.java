@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_4211 extends Module {
+public class RedeskyLongjump extends Module {
    private int field_20459;
    private double field_20458;
 
-   public class_4211() {
+   public RedeskyLongjump() {
       super(Category.MOVEMENT, "Redesky", "Longjump for Redesky.");
       this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));

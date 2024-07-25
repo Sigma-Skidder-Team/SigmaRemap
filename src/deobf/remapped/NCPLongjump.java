@@ -1,12 +1,12 @@
 package remapped;
 
-public class class_583 extends Module {
+public class NCPLongjump extends Module {
    private int field_3397;
    private int field_3400;
    private boolean field_3399;
    private double field_3398;
 
-   public class_583() {
+   public NCPLongjump() {
       super(Category.MOVEMENT, "NCP", "Longjump for NoCheatPlus.");
       this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
@@ -91,10 +91,10 @@ public class class_583 extends Module {
                   String var13 = this.getStringValueByName("Glide Mode");
                   switch (var13) {
                      case "Basic":
-                        var1.method_35235(((class_1213)this.method_42017()).method_5380(this.field_3400));
+                        var1.method_35235(((LongJumpModule)this.method_42017()).method_5380(this.field_3400));
                         break;
                      case "High":
-                        var1.method_35235(((class_1213)this.method_42017()).method_5381(this.field_3400));
+                        var1.method_35235(((LongJumpModule)this.method_42017()).method_5381(this.field_3400));
                         if (class_314.method_1387()
                            && SigmaMainClass.getInstance().getModuleManager().method_847(class_3095.class).method_42015()
                            && (this.field_3400 == 8 || this.field_3400 == 21)) {
