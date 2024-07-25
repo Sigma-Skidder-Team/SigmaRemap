@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_5694 extends class_9128 {
+public class class_5694 extends Module {
    public String field_28841 = null;
    public List<String> field_28840 = new ArrayList<String>();
    public List<String> field_28842 = new ArrayList<String>();

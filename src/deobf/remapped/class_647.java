@@ -3,7 +3,7 @@ package remapped;
 import com.mentalfrostbyte.jello.mods.util.InDevelopment;
 
 @InDevelopment
-public class class_647 extends class_9128 {
+public class class_647 extends Module {
    public class_647() {
       super(class_5664.field_28717, "BedRockFinder", "Finds cords based on bedrock patterns");
    }

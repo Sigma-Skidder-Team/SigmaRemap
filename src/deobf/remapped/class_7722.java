@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7722 extends class_9128 {
+public class class_7722 extends Module {
    public static int field_39147;
    public float field_39149;
    public float field_39148;

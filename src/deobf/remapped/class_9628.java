@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import org.apache.commons.lang3.reflect.FieldUtils;
 
-public class class_9628 extends class_9128 {
+public class class_9628 extends Module {
    public FileWriter field_49040;
 
    public class_9628() {

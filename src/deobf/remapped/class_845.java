@@ -31,7 +31,7 @@ public class class_845 {
    }
 
    public void method_3688() {
-      class_4489.method_20850();
+      SigmaIRC.method_20850();
    }
 
    public synchronized void method_3691() {

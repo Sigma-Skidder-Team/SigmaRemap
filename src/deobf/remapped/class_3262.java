@@ -10,7 +10,7 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$class_47;
 import org.apache.commons.lang3.StringUtils;
 
-public class class_3262 extends class_9128 {
+public class class_3262 extends Module {
    private class_7376 field_16172;
 
    public class_3262() {

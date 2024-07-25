@@ -25,16 +25,16 @@ public class class_1235 implements Runnable {
                boolean var3 = false;
                boolean var4 = false;
                if (SigmaMainClass.method_3328().method_3298() != null) {
-                  ArrayList var5 = new ArrayList<class_9128>(SigmaMainClass.method_3328().method_3298().method_843().values());
+                  ArrayList var5 = new ArrayList<Module>(SigmaMainClass.method_3328().method_3298().method_843().values());
 
-                  for (class_9128 var7 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+                  for (Module var7 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
                      if (var7 instanceof class_3620) {
                         var5.addAll(Arrays.asList(((class_3620)var7).field_17661));
                      }
                   }
 
-                  for (class_9128 var10 : var5) {
-                     if (var10.getClass().getSuperclass() != class_9128.class && var10.getClass().getSuperclass() != class_3620.class) {
+                  for (Module var10 : var5) {
+                     if (var10.getClass().getSuperclass() != Module.class && var10.getClass().getSuperclass() != class_3620.class) {
                         var3 = true;
                         if (field_6813.containsKey(var10) && field_6813.get(var10) != var10.method_41990()) {
                            var4 = true;

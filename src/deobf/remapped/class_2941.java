@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class class_2941 extends class_9128 {
+public class class_2941 extends Module {
    private List<Entity> field_14300 = new ArrayList<Entity>();
 
    public class_2941() {

@@ -3,7 +3,7 @@ package remapped;
 import java.awt.Color;
 import java.io.IOException;
 
-public class class_4137 extends class_9128 {
+public class class_4137 extends Module {
    public class_4895 field_20135 = new class_4895(1.0F, 1.0F);
    public float field_20136;
    public float field_20137 = 0.0F;

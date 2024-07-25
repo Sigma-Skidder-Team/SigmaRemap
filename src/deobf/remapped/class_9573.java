@@ -7,7 +7,7 @@ public class class_9573 extends class_4098 {
    public class_9573(class_7038 var1, String var2, int var3, int var4, class_5664[] var5) {
       super(var1, var2, var3 - 296, var4 - 346, 592, 692);
 
-      for (class_9128 var9 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+      for (Module var9 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          if (var9.method_42013()) {
             for (class_5664 var13 : var5) {
                if (var9.method_42004().equals(var13)) {
@@ -29,7 +29,7 @@ public class class_9573 extends class_4098 {
       this.method_32105(false);
    }
 
-   private void method_44238(class_9128 var1) {
+   private void method_44238(Module var1) {
       int var4 = this.field_48701 % 3;
       int var5 = (int)Math.floor((double)((float)this.field_48701 / 3.0F));
       short var6 = 170;
@@ -38,7 +38,7 @@ public class class_9573 extends class_4098 {
       this.field_48701++;
    }
 
-   public void method_44239(class_9128 var1) {
+   public void method_44239(Module var1) {
       this.method_32102(() -> {
          if (this.field_48702 == null) {
             this.method_32148(this.field_48702 = new class_5329(this, "settings", 5, 70, this.method_32109() - 10, this.method_32137() - 75, var1));

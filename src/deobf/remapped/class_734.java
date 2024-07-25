@@ -27,7 +27,7 @@ public class class_734 extends class_2596 {
       this.method_32148(this.field_4010 = new class_5572(this, "brainFreeze"));
       class_734 var5 = this;
 
-      for (class_9128 var7 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+      for (Module var7 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          if (!this.field_4003.containsKey(var7.method_42004())) {
             class_3407 var8 = new class_3407(this, var7.method_42004().method_25628(), var3, var4, var7.method_42004());
             this.field_4003.put(var7.method_42004(), var8);

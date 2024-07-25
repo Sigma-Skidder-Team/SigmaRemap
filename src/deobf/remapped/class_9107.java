@@ -9,11 +9,11 @@ public class class_9107 extends class_1859 {
    public int field_46629;
    public String field_46625;
    public class_273 field_46623;
-   public final class_9128 field_46630;
+   public final Module field_46630;
    public class_8343 field_46622;
    public boolean field_46621 = false;
 
-   public class_9107(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_9128 var7) {
+   public class_9107(class_7038 var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field_46624 = 500;
       this.field_46629 = (int)Math.min(600.0F, (float)var6 * 0.7F);

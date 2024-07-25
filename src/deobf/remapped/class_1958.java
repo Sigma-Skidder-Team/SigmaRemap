@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.glfw.GLFW;
 
-public class class_1958 extends class_9128 {
+public class class_1958 extends Module {
    public class_1958() {
       super(class_5664.field_28710, "AutoWalk", "Automatically walks forward");
    }

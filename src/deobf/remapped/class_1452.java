@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1452 extends class_9128 {
+public class class_1452 extends Module {
    public class_1452() {
       super(class_5664.field_28710, "NoViewReset", "Prevents the server from resetting your client yaw/pitch");
    }

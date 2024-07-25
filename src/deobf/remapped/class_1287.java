@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1287 extends class_9128 {
+public class class_1287 extends Module {
    public class_1287() {
       super(class_5664.field_28718, "AutoFish", "Automatically catches fish for you");
    }

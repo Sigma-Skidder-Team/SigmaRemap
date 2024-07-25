@@ -3,12 +3,12 @@ package remapped;
 import java.util.HashMap;
 
 public class class_5329 extends class_2612 {
-   private class_9128 field_27182;
+   private Module field_27182;
    public class_3384 field_27184 = class_3054.field_14994;
    public class_2440 field_27181 = new class_2440(150, 150);
-   public HashMap<class_9128, class_7038> field_27185 = new HashMap<class_9128, class_7038>();
+   public HashMap<Module, class_7038> field_27185 = new HashMap<Module, class_7038>();
 
-   public class_5329(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_9128 var7) {
+   public class_5329(class_7038 var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field_27182 = var7;
       this.method_32105(false);
@@ -157,7 +157,7 @@ public class class_5329 extends class_2612 {
       if (this.field_27182 instanceof class_3620) {
          class_3620 var16 = (class_3620)this.field_27182;
 
-         for (class_9128 var11 : var16.field_17661) {
+         for (Module var11 : var16.field_17661) {
             int var12 = 10;
             class_7038 var13 = new class_7038(this, var11.method_41992() + "SubView", 0, var6, this.field_36278, this.field_36257 - var6);
             var13.method_32135((var0, var1) -> var0.method_32142(var1.method_32109()));

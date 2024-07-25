@@ -1,10 +1,10 @@
 package remapped;
 
 public class class_1226 {
-   public class_9128 field_6787;
+   public Module field_6787;
    public Class<? extends Screen> field_6788;
 
-   public class_1226(class_9128 var1) {
+   public class_1226(Module var1) {
       this.field_6787 = var1;
    }
 

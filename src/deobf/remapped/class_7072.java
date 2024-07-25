@@ -3,7 +3,7 @@ package remapped;
 import java.awt.Color;
 import org.lwjgl.opengl.GL11;
 
-public class class_7072 extends class_9128 {
+public class class_7072 extends Module {
    public class_7072() {
       super(class_5664.field_28709, "Sims", "You know what it is");
    }

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_2670 extends class_9128 {
+public class class_2670 extends Module {
    public class_2670() {
       super(class_5664.field_28711, "PortalGui", "Allows GUIs while in nether portal");
    }

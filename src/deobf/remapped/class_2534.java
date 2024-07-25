@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
-public class class_2534 extends class_9128 {
+public class class_2534 extends Module {
    public static boolean field_12548 = false;
    private class_8734 field_12561;
    private int field_12546;

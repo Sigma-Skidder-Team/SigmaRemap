@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5291 extends class_9128 {
+public class class_5291 extends Module {
    public class_5291() {
       super(class_5664.field_28716, "FullBlock", "Basic phase");
    }

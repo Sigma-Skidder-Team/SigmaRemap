@@ -3,10 +3,10 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_9743 extends Screen {
-   private static String[] field_49504;
+   private static String[] TITLE;
 
-   public class_9743(ITextComponent var1) {
-      super(var1);
+   public class_9743(ITextComponent textComponent) {
+      super(textComponent);
    }
 
    @Override

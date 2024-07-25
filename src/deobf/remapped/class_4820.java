@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class class_4820 extends class_9128 {
+public class class_4820 extends Module {
    public static class_1331 field_24090;
 
    public class_4820() {

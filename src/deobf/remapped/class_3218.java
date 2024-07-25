@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_3218 extends class_9128 {
+public class class_3218 extends Module {
    public class_3218() {
       super(class_5664.field_28710, "Parkour", "Automatically jumps at the edge of blocks");
    }

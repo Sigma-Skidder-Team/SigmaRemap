@@ -5,7 +5,7 @@ import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_8444 extends class_9128 {
+public class class_8444 extends Module {
    private List<UUID> field_43195 = new CopyOnWriteArrayList<UUID>();
    private int field_43197 = -3200;
 

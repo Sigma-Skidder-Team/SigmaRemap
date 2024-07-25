@@ -8,7 +8,7 @@ public class class_3158 {
       this.method_14558(var1);
    }
 
-   public class_3158(int var1, class_9128 var2) {
+   public class_3158(int var1, Module var2) {
       this.field_15688 = var1;
       this.field_15686 = var2;
    }
@@ -28,7 +28,7 @@ public class class_3158 {
             String var4 = var1.method_5861("type");
             switch (var4) {
                case "mod":
-                  for (class_9128 var7 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+                  for (Module var7 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
                      if (var1.method_5861("target").equals(var7.method_41992())) {
                         this.field_15686 = var7;
                      }
@@ -50,7 +50,7 @@ public class class_3158 {
       switch (this.method_14566()) {
          case field_25372:
             var3.method_5820("type", "mod");
-            var3.method_5820("target", ((class_9128)this.field_15686).method_41992());
+            var3.method_5820("target", ((Module)this.field_15686).method_41992());
             break;
          case field_25373:
             var3.method_5820("type", "screen");
@@ -74,7 +74,7 @@ public class class_3158 {
    }
 
    public class_4906 method_14566() {
-      return !(this.field_15686 instanceof class_9128) ? class_4906.field_25373 : class_4906.field_25372;
+      return !(this.field_15686 instanceof Module) ? class_4906.field_25373 : class_4906.field_25372;
    }
 
    public Object method_14567() {
@@ -85,8 +85,8 @@ public class class_3158 {
       return (Class<? extends Screen>)this.field_15686;
    }
 
-   public class_9128 method_14560() {
-      return (class_9128)this.field_15686;
+   public Module method_14560() {
+      return (Module)this.field_15686;
    }
 
    @Override

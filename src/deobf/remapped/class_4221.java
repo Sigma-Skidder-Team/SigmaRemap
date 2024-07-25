@@ -5,8 +5,8 @@ import java.util.TreeMap;
 import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
-public class class_4221 extends class_9128 {
-   private TreeMap<class_9128, class_2440> field_20487 = new TreeMap<class_9128, class_2440>();
+public class class_4221 extends Module {
+   private TreeMap<Module, class_2440> field_20487 = new TreeMap<Module, class_2440>();
    private class_3384 field_20484;
    private class_3384 field_20488;
    private class_2440 field_20486;
@@ -32,7 +32,7 @@ public class class_4221 extends class_9128 {
       this.field_20487.clear();
       this.field_20484 = class_3054.field_14998;
       this.field_20488 = class_3054.field_14990;
-      this.field_20487 = new TreeMap<class_9128, class_2440>(new class_3896(this));
+      this.field_20487 = new TreeMap<Module, class_2440>(new class_3896(this));
    }
 
    @class_9148
@@ -55,7 +55,7 @@ public class class_4221 extends class_9128 {
 
          for (Entry var14 : this.field_20487.entrySet()) {
             class_2440 var15 = (class_2440)var14.getValue();
-            class_9128 var16 = (class_9128)var14.getKey();
+            Module var16 = (Module)var14.getKey();
             if (var16.method_42015() || var15.method_11123() != 1.0F && !var4.equalsIgnoreCase("None")) {
                boolean var17 = true;
                boolean var18 = true;
@@ -131,7 +131,7 @@ public class class_4221 extends class_9128 {
       if (this.field_20487.isEmpty()) {
          this.field_20487.clear();
 
-         for (class_9128 var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+         for (Module var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
             if (var4 != this && var4.method_41998() != class_5664.field_28708) {
                class_2440 var5 = new class_2440(200, 200, !var4.method_42015() ? class_4043.field_19620 : class_4043.field_19618);
                var5.method_11122(!var4.method_42015() ? 1.0F : 0.0F);
@@ -150,13 +150,13 @@ public class class_4221 extends class_9128 {
       }
 
       for (Entry var8 : this.field_20487.entrySet()) {
-         class_9128 var9 = (class_9128)var8.getKey();
+         Module var9 = (Module)var8.getKey();
          class_2440 var11 = (class_2440)var8.getValue();
          var11.method_11119(!var9.method_42015() ? class_4043.field_19620 : class_4043.field_19618);
       }
    }
 
-   private String method_19655(class_9128 var1) {
+   private String method_19655(Module var1) {
       String var4 = "";
       if (var1.method_42016("Type") == null) {
          if (var1.method_42016("Mode") != null) {
@@ -169,7 +169,7 @@ public class class_4221 extends class_9128 {
       return var4;
    }
 
-   private int method_19660(class_9128 var1) {
+   private int method_19660(Module var1) {
       String var4 = var1.method_41987();
       String var5 = this.method_19655(var1);
       return this.field_20484.method_18547(var4) + this.field_20488.method_18547(var5);

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7218 extends class_9128 {
+public class class_7218 extends Module {
    private double[] field_37059 = new double[]{0.0, 0.0};
    private boolean field_37058;
 
@@ -13,7 +13,7 @@ public class class_7218 extends class_9128 {
    public void method_33059(class_5596 var1) {
       if (this.method_42015()) {
          class_3620 var4 = (class_3620) SigmaMainClass.method_3328().method_3298().method_847(class_3709.class);
-         class_9128 var5 = var4.field_17664;
+         Module var5 = var4.field_17664;
          if (var5 == null || !var5.method_42015() || !(var5 instanceof class_2461) || var5.method_42007("Haphe (AACAP)")) {
             if (field_46692.field_9632.field_29673 > 0.0F && !((class_3709) SigmaMainClass.method_3328().method_3298().method_847(class_3709.class)).method_17212()) {
                field_46692.field_9632.method_37140(true);

@@ -3,7 +3,7 @@ package remapped;
 import com.mentalfrostbyte.jello.mods.util.InDevelopment;
 
 @InDevelopment
-public class class_7232 extends class_9128 {
+public class class_7232 extends Module {
    private double field_37111;
    private int field_37112;
    private int field_37110;
@@ -36,9 +36,9 @@ public class class_7232 extends class_9128 {
          }
 
          if (this.field_37110 <= 0) {
-            class_9128 var4 = SigmaMainClass.method_3328().method_3298().method_847(class_2368.class);
+            Module var4 = SigmaMainClass.method_3328().method_3298().method_847(class_2368.class);
             String var5 = var4.method_42016("Type");
-            class_9128 var6 = SigmaMainClass.method_3328().method_3298().method_847(class_5838.class);
+            Module var6 = SigmaMainClass.method_3328().method_3298().method_847(class_5838.class);
             String var7 = var6.method_42016("Type");
             boolean var8 = var4.method_42015();
             if (var5.equals("Cubecraft") && var1.method_35236() < -0.4) {

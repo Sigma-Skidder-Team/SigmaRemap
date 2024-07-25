@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class class_7684 extends class_9128 {
+public class class_7684 extends Module {
    public float field_39044 = 0.0F;
 
    public class_7684() {

@@ -3,7 +3,7 @@ package remapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_3854 extends class_9128 {
+public class class_3854 extends Module {
    private short field_18796;
    private double field_18795;
    private float field_18794;

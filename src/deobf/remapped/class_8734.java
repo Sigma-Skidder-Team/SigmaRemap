@@ -9,12 +9,12 @@ import java.util.List;
 public class class_8734 {
    private float[] field_44745;
    public final int field_44746 = 3;
-   private class_9128 field_44747;
+   private Module field_44747;
    public MinecraftClient field_44744 = MinecraftClient.getInstance();
    public boolean field_44749;
    public HashMap<Entity, List<class_9097<class_1343, Long>>> field_44743 = new HashMap<Entity, List<class_9097<class_1343, Long>>>();
 
-   public class_8734(class_9128 var1) {
+   public class_8734(Module var1) {
       this.field_44747 = var1;
       this.method_40098();
    }

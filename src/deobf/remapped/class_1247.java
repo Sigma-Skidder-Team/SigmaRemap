@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1247 extends class_9128 {
+public class class_1247 extends Module {
    public class_1247() {
       super(class_5664.field_28716, "Jetpack", "A jetpack type fly");
    }

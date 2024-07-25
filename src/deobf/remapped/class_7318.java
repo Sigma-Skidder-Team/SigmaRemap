@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7318 extends class_9128 {
+public class class_7318 extends Module {
    private double field_37414;
    private float field_37407;
    private float field_37408;

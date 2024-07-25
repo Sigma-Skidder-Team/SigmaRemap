@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_9093 extends class_9128 {
+public class class_9093 extends Module {
    private List<class_7606> field_46576;
    private class_6009 field_46580;
    private class_1331 field_46570;

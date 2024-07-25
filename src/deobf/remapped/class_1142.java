@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1142 extends class_9128 {
+public class class_1142 extends Module {
    public class_1142() {
       super(class_5664.field_28709, "Streaming", "Useful module when recording or streaming");
       this.method_42010(new class_8563("Hide skins", "Spoof all players skin", true));

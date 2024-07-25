@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Random;
 
-public class class_6613 extends class_9128 {
+public class class_6613 extends Module {
    private int field_34164;
 
    public class_6613() {

@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class class_6467 extends class_9128 {
+public class class_6467 extends Module {
    public boolean field_32957 = false;
    public class_3758 field_32955 = class_2565.method_11647(field_46692.method_8589().field_14810, new class_9633(256));
 

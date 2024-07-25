@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class class_4270 extends class_9128 {
+public class class_4270 extends Module {
    public class_4270() {
       super(class_5664.field_28709, "Tracers", "Shows players");
       this.method_42010(new class_976("Color", "The tracers color", class_1255.field_6918.field_6917));

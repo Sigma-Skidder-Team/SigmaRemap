@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4835 extends class_9128 {
+public class class_4835 extends Module {
    public class_4835() {
       super(class_5664.field_28716, "Minemen", "Speed for AGC");
    }

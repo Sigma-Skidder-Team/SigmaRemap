@@ -3,7 +3,7 @@ package remapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_6295 extends class_9128 {
+public class class_6295 extends Module {
    private List<class_6310<?>> field_32171 = new ArrayList<class_6310<?>>();
    public int field_32172 = 0;
 

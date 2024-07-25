@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_6378 extends class_9128 {
+public class class_6378 extends Module {
    public class_6378() {
       super(class_5664.field_28718, "AntiCactus", "Prevent you from taking damage from cactus");
       this.method_42010(new class_8563("Above", "Avoid damage above cactus also", true));

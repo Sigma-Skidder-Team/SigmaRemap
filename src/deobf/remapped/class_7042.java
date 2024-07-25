@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7042 extends class_9128 {
+public class class_7042 extends Module {
    public class_7042() {
       super(class_5664.field_28709, "AntiBlind", "Disables bad visual potion effects");
    }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class class_2016 extends class_9128 {
+public class class_2016 extends Module {
    public static boolean field_10220 = false;
    private boolean field_10221;
 

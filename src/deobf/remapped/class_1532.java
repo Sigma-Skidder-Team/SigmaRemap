@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_1532 extends class_9128 {
+public class class_1532 extends Module {
    public class_1532() {
       super(class_5664.field_28714, "AutoLog", "Automatically logs out");
       this.method_42010(new class_2748<Float>("Min Health", "Minimum health before it logs you out", 2.5F, Float.class, 0.0F, 10.0F, 0.01F));

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_2633 extends class_9128 {
+public class class_2633 extends Module {
    public class_2633() {
       super(class_5664.field_28708, "KeyStrokes", "Shows what keybind you are pressing");
    }

@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_6370 extends class_9128 {
+public class class_6370 extends Module {
    public int field_32565;
    private List<class_8670> field_32567;
    private class_7047 field_32561;

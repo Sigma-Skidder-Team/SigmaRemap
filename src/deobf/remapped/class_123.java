@@ -18,7 +18,7 @@ public class class_123 {
    public JTouchBar field_299;
    private LinkedHashSet<class_3158> field_297 = new LinkedHashSet<class_3158>();
    public boolean field_298 = false;
-   public HashMap<class_9128, TouchBarButton> field_301 = new HashMap<class_9128, TouchBarButton>();
+   public HashMap<Module, TouchBarButton> field_301 = new HashMap<Module, TouchBarButton>();
 
    public class_123() {
       SigmaMainClass.method_3328().method_3302().method_7908(this);
@@ -31,7 +31,7 @@ public class class_123 {
       return this.field_297;
    }
 
-   public void method_368(int var1, class_9128 var2) {
+   public void method_368(int var1, Module var2) {
       this.method_383(var2);
       class_3158 var5 = new class_3158(var1, var2);
       this.field_297.add(var5);
@@ -65,7 +65,7 @@ public class class_123 {
       return -1;
    }
 
-   public int method_381(class_9128 var1) {
+   public int method_381(Module var1) {
       for (class_3158 var5 : this.field_297) {
          if (var5.method_14566() == class_4906.field_25372 && var5.method_14560() == var1) {
             return var5.method_14565();
@@ -172,7 +172,7 @@ public class class_123 {
       }
    }
 
-   public void method_370(class_9128 var1) {
+   public void method_370(Module var1) {
       if (this.field_299 != null) {
          for (TouchBarItem var5 : this.field_299.getItems()) {
             if (var5.getView() instanceof TouchBarButton && var1.method_41992().equals(var5.getIdentifier())) {
@@ -222,7 +222,7 @@ public class class_123 {
       }
    }
 
-   public Color method_371(class_9128 var1) {
+   public Color method_371(Module var1) {
       Color var4 = new Color(0.0F, 0.0F, 0.0F, 0.0F);
       if (var1.method_42004() != class_5664.field_28714) {
          if (var1.method_42004() != class_5664.field_28708) {

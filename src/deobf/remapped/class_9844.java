@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.glfw.GLFW;
 
-public class class_9844 extends class_9128 {
+public class class_9844 extends Module {
    public int field_49843 = 0;
    private float field_49839;
    private float field_49840;

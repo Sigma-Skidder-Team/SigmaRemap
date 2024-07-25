@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.ArrayList;
 
-public class class_2419 extends class_9128 {
+public class class_2419 extends Module {
    private int field_12048;
    private ArrayList<class_6287> field_12047 = new ArrayList<class_6287>();
 

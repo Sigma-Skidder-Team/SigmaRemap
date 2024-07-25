@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1071 extends class_9128 {
+public class class_1071 extends Module {
    public class_1071(class_5664 var1, String var2, String var3) {
       super(var1, var2, var3);
    }

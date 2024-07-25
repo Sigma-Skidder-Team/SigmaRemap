@@ -19,17 +19,17 @@ public class class_3116 {
       if (var1.method_29384() == this.field_15500.field_9577.field_45541.field_30027.field_17800
          && this.field_15500.field_9662 != null
          && this.field_15500.field_9662.method_45509() != null) {
-         class_4946 var4 = SigmaMainClass.method_3328().method_3325();
-         var4.method_22653();
+         CommandManager var4 = SigmaMainClass.method_3328().getCommandManager();
+         var4.usePrefix();
          if (this.method_14460(this.field_15500.field_9662)) {
             this.method_14467(this.field_15500.field_9662.method_45509().getUnformattedComponentText());
             class_6324.method_28832(
-               "" + var4.method_22662() + " " + this.field_15500.field_9662.method_45509().getUnformattedComponentText() + " is no longer your friend."
+               "" + var4.getCommandPrefix() + " " + this.field_15500.field_9662.method_45509().getUnformattedComponentText() + " is no longer your friend."
             );
          } else {
             this.method_14464(this.field_15500.field_9662.method_45509().getUnformattedComponentText());
             class_6324.method_28832(
-               "" + var4.method_22662() + " " + this.field_15500.field_9662.method_45509().getUnformattedComponentText() + " is now your friend."
+               "" + var4.getCommandPrefix() + " " + this.field_15500.field_9662.method_45509().getUnformattedComponentText() + " is now your friend."
             );
          }
 

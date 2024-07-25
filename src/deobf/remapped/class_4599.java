@@ -1,9 +1,9 @@
 package remapped;
 
 public class class_4599 extends class_1859 {
-   public class_9128 field_22361;
+   public Module field_22361;
 
-   public class_4599(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_9128 var7) {
+   public class_4599(class_7038 var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field_22361 = var7;
       class_3540 var10;

@@ -57,7 +57,7 @@ public class class_8441 extends class_2596 {
    public static ArrayList<class_1226> method_38833() {
       ArrayList var2 = new ArrayList();
 
-      for (class_9128 var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+      for (Module var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          var2.add(new class_1226(var4));
       }
 

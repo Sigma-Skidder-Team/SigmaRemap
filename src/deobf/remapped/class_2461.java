@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.List;
 
-public class class_2461 extends class_9128 {
+public class class_2461 extends Module {
    private float field_12315;
    private float field_12313;
    private int field_12316 = 0;

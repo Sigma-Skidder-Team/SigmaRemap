@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-public class class_669 extends class_9128 {
+public class class_669 extends Module {
    private boolean field_3720;
    private int field_3718;
 

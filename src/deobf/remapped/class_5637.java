@@ -20,7 +20,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
 @InDevelopment
-public class class_5637 extends class_9128 {
+public class class_5637 extends Module {
    public HttpClient field_28593 = null;
    public CookieStore field_28591 = new BasicCookieStore();
    public HttpClientBuilder field_28594 = HttpClientBuilder.create().setDefaultCookieStore(this.field_28591);

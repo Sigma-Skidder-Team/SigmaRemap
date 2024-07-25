@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4624 extends class_9128 {
+public class class_4624 extends Module {
    public class_4624() {
       super(class_5664.field_28718, "AutoFarm", "Automatically breaks and replants crops");
    }

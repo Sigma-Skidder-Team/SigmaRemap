@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.HashMap;
 
-public class class_3546 extends class_9128 {
+public class class_3546 extends Module {
    private HashMap<Integer, Integer> field_17352 = new HashMap<Integer, Integer>();
 
    public class_3546() {

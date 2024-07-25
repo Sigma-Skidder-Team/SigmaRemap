@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7342 extends class_9128 {
+public class class_7342 extends Module {
    public class_7342() {
       super(class_5664.field_28711, "AntiLevitation", "Removes levitation effects");
    }

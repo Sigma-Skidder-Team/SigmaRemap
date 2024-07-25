@@ -3,7 +3,7 @@ package remapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_7031 extends class_9128 {
+public class class_7031 extends Module {
    private List<class_6310<?>> field_36206 = new ArrayList<class_6310<?>>();
    private boolean field_36207;
    private class_3223 field_36204 = new class_3223();

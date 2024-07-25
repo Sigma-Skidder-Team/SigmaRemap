@@ -4,12 +4,12 @@ import java.util.HashMap;
 
 public class class_6427 {
    private static String[] field_32836;
-   private MinecraftClient field_32834 = MinecraftClient.getInstance();
-   private class_4489 field_32835;
+   private MinecraftClient mcInstance = MinecraftClient.getInstance();
+   private SigmaIRC irc;
    private HashMap<String, class_4828> field_32837 = new HashMap<String, class_4828>();
 
-   public class_6427(class_4489 var1) {
-      this.field_32835 = var1;
+   public class_6427(SigmaIRC var1) {
+      this.irc = var1;
    }
 
    public void method_29367(String var1, String var2, long var3) {

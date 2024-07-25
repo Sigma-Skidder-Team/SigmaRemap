@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class class_4033 extends class_9128 {
+public class class_4033 extends Module {
    public int field_19585 = class_314.method_1444(class_1255.field_6918.field_6917, 0.8F);
 
    public class_4033() {

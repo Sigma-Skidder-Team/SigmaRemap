@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4342 extends class_9128 {
+public class class_4342 extends Module {
    public class_4342() {
       super(class_5664.field_28710, "FastEat", "Allows you to eat faster");
       this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Hypixel").method_12861("Hypixel"));

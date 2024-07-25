@@ -5,17 +5,17 @@ import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
 public class class_273 extends class_2612 implements class_1768 {
-   private class_9128 field_977;
+   private Module field_977;
    private boolean field_983;
    private boolean field_984;
    public int field_982 = 200;
    private HashMap<class_1552, class_5004> field_976 = new HashMap<class_1552, class_5004>();
-   public HashMap<class_9128, class_7038> field_978 = new HashMap<class_9128, class_7038>();
+   public HashMap<Module, class_7038> field_978 = new HashMap<Module, class_7038>();
    public class_2440 field_979 = new class_2440(114, 114);
    private String field_981 = "";
    private String field_980 = "";
 
-   public class_273(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_9128 var7) {
+   public class_273(class_7038 var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field_977 = var7;
       this.method_32105(false);
@@ -264,7 +264,7 @@ public class class_273 extends class_2612 implements class_1768 {
       if (this.field_977 instanceof class_3620) {
          class_3620 var18 = (class_3620)this.field_977;
 
-         for (class_9128 var10 : var18.field_17661) {
+         for (Module var10 : var18.field_17661) {
             int var11 = 0;
             class_7038 var12 = new class_7038(this, var10.method_41992() + "SubView", 0, var17, this.field_36278, this.field_36257 - var4);
             var12.method_32135((var0, var1) -> var0.method_32142(var1.method_32109()));

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class class_3177 extends class_9128 {
+public class class_3177 extends Module {
    public boolean field_15894;
    private ConcurrentHashMap<class_7099, Boolean> field_15896;
    private class_3223 field_15895 = new class_3223();

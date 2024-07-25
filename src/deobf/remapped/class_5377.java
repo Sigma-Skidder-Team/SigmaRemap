@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5377 extends class_9128 {
+public class class_5377 extends Module {
    public class_5377() {
       super(class_5664.field_28716, "FastLadder", "Allows you to climp ladders faster");
       this.method_42010(new class_2748<Float>("Motion", "Climbing motion", 0.35F, Float.class, 0.2F, 1.0F, 0.05F));

@@ -3,7 +3,7 @@ package remapped;
 import com.mojang.datafixers.util.Pair;
 import java.io.IOException;
 
-public class class_1886 extends class_9128 {
+public class class_1886 extends Module {
    public String field_9548 = "IBreakerman";
    private class_8343 field_9549;
    private boolean field_9546 = true;

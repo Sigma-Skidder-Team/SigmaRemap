@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.lwjgl.opengl.GL11;
 
-public class class_2481 extends class_9128 {
+public class class_2481 extends Module {
    private ArrayList<class_2034> field_12372 = new ArrayList<class_2034>();
    private ArrayList<class_2034> field_12370 = new ArrayList<class_2034>();
 

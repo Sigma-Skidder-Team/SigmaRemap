@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_8234 extends class_9128 {
+public class class_8234 extends Module {
    public class_8234() {
       super(class_5664.field_28716, "AAC", "Step for AAC");
    }

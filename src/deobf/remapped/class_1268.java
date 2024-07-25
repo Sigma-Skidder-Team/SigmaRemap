@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1268 extends class_9128 {
+public class class_1268 extends Module {
    public class_1268() {
       super(class_5664.field_28714, "HitSounds", "Changes the player hurting sounds client side.");
    }

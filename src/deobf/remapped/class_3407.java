@@ -147,7 +147,7 @@ public class class_3407 extends class_4178 {
       this.field_16771.add(var1);
    }
 
-   public final void method_15729(class_9128 var1) {
+   public final void method_15729(Module var1) {
       for (class_8524 var5 : this.field_16771) {
          var5.method_39240(var1);
       }

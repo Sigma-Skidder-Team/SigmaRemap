@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Iterator;
 
-public class class_1113 extends class_9128 {
+public class class_1113 extends Module {
    private int field_6382;
    private int field_6384;
    private boolean field_6385;

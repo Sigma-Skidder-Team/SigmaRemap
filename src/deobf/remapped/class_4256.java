@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$class_47;
 
-public class class_4256 extends class_9128 {
+public class class_4256 extends Module {
    private class_7376 field_20629;
 
    public class_4256() {

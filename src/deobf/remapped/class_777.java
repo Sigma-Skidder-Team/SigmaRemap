@@ -1,8 +1,8 @@
 package remapped;
 
-public class class_777 extends class_9128 {
+public class class_777 extends Module {
    public class_5664 field_4192;
-   public class_9128 field_4193;
+   public Module field_4193;
    private String field_4194 = ">";
 
    public class_777() {

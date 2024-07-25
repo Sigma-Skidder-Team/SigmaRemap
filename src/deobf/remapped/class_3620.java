@@ -5,18 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @InDevelopment
-public class class_3620 extends class_9128 {
-   public class_9128[] field_17661;
-   public class_9128 field_17664;
+public class class_3620 extends Module {
+   public Module[] field_17661;
+   public Module field_17664;
    private List<String> field_17660 = new ArrayList<String>();
    public class_2826 field_17659;
    private final List<class_713> field_17662 = new ArrayList<class_713>();
 
-   public class_3620(class_5664 var1, String var2, String var3, class_9128... var4) {
+   public class_3620(class_5664 var1, String var2, String var3, Module... var4) {
       super(var1, var2, var3);
       this.field_17661 = var4;
 
-      for (class_9128 var10 : this.field_17661) {
+      for (Module var10 : this.field_17661) {
          SigmaMainClass.method_3328().method_3302().method_7908(var10);
          this.field_17660.add(var10.method_41992());
          var10.method_41995(this);
@@ -30,7 +30,7 @@ public class class_3620 extends class_9128 {
    public void method_16866() {
       this.method_16862();
 
-      for (class_9128 var6 : this.field_17661) {
+      for (Module var6 : this.field_17661) {
          boolean var7 = this.method_42016("Type").equals(var6.field_46702);
          if (this.method_42015() && field_46692.field_9632 != null) {
             var6.method_42023(var7);
@@ -48,7 +48,7 @@ public class class_3620 extends class_9128 {
    private void method_16862() {
       boolean var3 = false;
 
-      for (class_9128 var7 : this.field_17661) {
+      for (Module var7 : this.field_17661) {
          if (this.method_42016("Type").equals(var7.field_46702)) {
             var3 = true;
          }
@@ -59,10 +59,10 @@ public class class_3620 extends class_9128 {
       }
    }
 
-   public class_9128 method_16864() {
+   public Module method_16864() {
       this.method_16862();
 
-      for (class_9128 var6 : this.field_17661) {
+      for (Module var6 : this.field_17661) {
          if (this.method_42016("Type").equals(var6.field_46702)) {
             return var6;
          }
@@ -84,7 +84,7 @@ public class class_3620 extends class_9128 {
    public class_1293 method_42021(class_1293 var1) {
       class_1293 var4 = class_3332.method_15287(var1, "sub-options");
       if (var4 != null) {
-         for (class_9128 var8 : this.field_17661) {
+         for (Module var8 : this.field_17661) {
             class_1336 var9 = class_3332.method_15293(var4, var8.method_41992());
             if (var9 != null) {
                for (int var10 = 0; var10 < var9.method_6142(); var10++) {
@@ -125,7 +125,7 @@ public class class_3620 extends class_9128 {
    public class_1293 method_42014(class_1293 var1) {
       class_1293 var4 = new class_1293();
 
-      for (class_9128 var8 : this.field_17661) {
+      for (Module var8 : this.field_17661) {
          class_1336 var9 = new class_1336();
 
          for (class_5004 var11 : var8.field_46697.values()) {
@@ -149,14 +149,14 @@ public class class_3620 extends class_9128 {
 
    @Override
    public void method_42020() {
-      for (class_9128 var6 : this.field_17661) {
+      for (Module var6 : this.field_17661) {
          var6.method_41991(false);
       }
    }
 
    @Override
    public void method_42019() {
-      for (class_9128 var6 : this.field_17661) {
+      for (Module var6 : this.field_17661) {
          var6.method_42023(false);
       }
 
@@ -168,7 +168,7 @@ public class class_3620 extends class_9128 {
       return this;
    }
 
-   public final void method_16863(class_9128 var1, boolean var2) {
+   public final void method_16863(Module var1, boolean var2) {
       for (class_713 var6 : this.field_17662) {
          var6.method_3268(this, var1, var2);
       }
@@ -178,7 +178,7 @@ public class class_3620 extends class_9128 {
    public void method_42012() {
       super.method_42012();
 
-      for (class_9128 var6 : this.field_17661) {
+      for (Module var6 : this.field_17661) {
          var6.method_42012();
       }
    }

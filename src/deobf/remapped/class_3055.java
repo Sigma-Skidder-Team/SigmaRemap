@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
-public class class_3055 extends class_9128 {
+public class class_3055 extends Module {
    private HashMap<class_704, class_4895> field_15013 = new HashMap<class_704, class_4895>();
    public static class_3055 field_15012;
 

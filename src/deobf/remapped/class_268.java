@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class class_268 extends class_9128 {
+public class class_268 extends Module {
    public static final class_2440 field_955 = new class_2440(200, 200, class_4043.field_19618);
    public class_2440 field_957 = new class_2440(500, 0, class_4043.field_19618);
    private class_2440 field_956 = new class_2440(300, 300, class_4043.field_19618);
@@ -82,7 +82,7 @@ public class class_268 extends class_9128 {
                      class_2990 var12 = (class_2990)field_960.get(0);
                      class_2990 var15 = (class_2990)var6;
                      class_5664 var16 = this.field_958.get(var12.field_14700);
-                     class_9128 var17 = SigmaMainClass.method_3328().method_3298().method_844(var16).get(var15.field_14700);
+                     Module var17 = SigmaMainClass.method_3328().method_3298().method_844(var16).get(var15.field_14700);
                      this.method_1205(var17);
                   } else if (var5 == 3) {
                      this.method_1203(true);
@@ -93,7 +93,7 @@ public class class_268 extends class_9128 {
                      class_2990 var7 = (class_2990)field_960.get(0);
                      class_2990 var8 = (class_2990)var6;
                      class_5664 var9 = this.field_958.get(var7.field_14700);
-                     class_9128 var10 = SigmaMainClass.method_3328().method_3298().method_844(var9).get(var8.field_14700);
+                     Module var10 = SigmaMainClass.method_3328().method_3298().method_844(var9).get(var8.field_14700);
                      var10.method_41991(!var10.method_42015());
                   }
             }
@@ -106,7 +106,7 @@ public class class_268 extends class_9128 {
       class_2990 var5 = (class_2990)field_960.get(1);
       class_2990 var6 = (class_2990)field_960.get(2);
       class_5664 var7 = this.field_958.get(var4.field_14700);
-      class_9128 var8 = SigmaMainClass.method_3328().method_3298().method_844(var7).get(var5.field_14700);
+      Module var8 = SigmaMainClass.method_3328().method_3298().method_844(var7).get(var5.field_14700);
       class_5004 var9 = this.method_1206(var8).get(var6.field_14700);
       if (!(var9 instanceof class_2826)) {
          if (!(var9 instanceof class_8563)) {
@@ -190,7 +190,7 @@ public class class_268 extends class_9128 {
          class_5664 var5 = this.field_958.get(var4.field_14700);
          int var6 = 0;
 
-         for (class_9128 var8 : SigmaMainClass.method_3328().method_3298().method_844(var5)) {
+         for (Module var8 : SigmaMainClass.method_3328().method_3298().method_844(var5)) {
             var3.method_13685(var6++, (!var8.method_42015() ? "§7" : "") + var8.method_41987());
          }
       }
@@ -216,7 +216,7 @@ public class class_268 extends class_9128 {
          }
 
          class_5664 var9 = this.field_958.get(var5.field_14700);
-         class_9128 var10 = SigmaMainClass.method_3328().method_3298().method_844(var9).get(var6.field_14700);
+         Module var10 = SigmaMainClass.method_3328().method_3298().method_844(var9).get(var6.field_14700);
          String var11 = var10.method_42001();
          if (var4 == 3) {
             class_5004 var12 = this.method_1206(var10).get(var7.field_14700);
@@ -286,7 +286,7 @@ public class class_268 extends class_9128 {
    public void method_1200(class_5664 var1) {
       ArrayList var4 = new ArrayList();
 
-      for (class_9128 var6 : SigmaMainClass.method_3328().method_3298().method_844(var1)) {
+      for (Module var6 : SigmaMainClass.method_3328().method_3298().method_844(var1)) {
          var4.add(var6.method_41987());
       }
 
@@ -294,7 +294,7 @@ public class class_268 extends class_9128 {
       field_960.add(1, new class_2990(var4, 1));
    }
 
-   public void method_1205(class_9128 var1) {
+   public void method_1205(Module var1) {
       List var4 = this.method_1207(var1);
       if (var4.size() != 0) {
          this.method_1202(2);
@@ -324,7 +324,7 @@ public class class_268 extends class_9128 {
       this.field_959 = 40;
    }
 
-   public List<String> method_1207(class_9128 var1) {
+   public List<String> method_1207(Module var1) {
       ArrayList var4 = new ArrayList();
 
       for (class_5004 var6 : this.method_1206(var1)) {
@@ -334,7 +334,7 @@ public class class_268 extends class_9128 {
       return var4;
    }
 
-   public List<class_5004> method_1206(class_9128 var1) {
+   public List<class_5004> method_1206(Module var1) {
       ArrayList var4 = new ArrayList<class_5004>(var1.method_41996().values());
       if (var1 instanceof class_3620) {
          class_3620 var5 = (class_3620)var1;

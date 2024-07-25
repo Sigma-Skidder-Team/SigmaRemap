@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.lwjgl.opengl.GL11;
 
-public class class_4304 extends class_9128 {
+public class class_4304 extends Module {
    private static Map<class_704, float[][]> field_20882 = new HashMap<class_704, float[][]>();
 
    public class_4304() {

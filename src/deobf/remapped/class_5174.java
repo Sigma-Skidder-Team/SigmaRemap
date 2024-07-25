@@ -110,7 +110,7 @@ public class class_5174 extends class_367 {
 
    public static boolean method_23720(class_6098 var0) {
       float var3 = method_23718(var0);
-      class_9128 var4 = SigmaMainClass.method_3328().method_3298().method_847(class_5174.class);
+      Module var4 = SigmaMainClass.method_3328().method_3298().method_847(class_5174.class);
 
       for (int var5 = 9; var5 < 45; var5++) {
          if (field_46692.field_9632.field_3869.method_18878(var5).method_35884()) {

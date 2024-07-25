@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4248 extends class_9128 {
+public class class_4248 extends Module {
    public class_4248() {
       super(class_5664.field_28714, "Regen", "Regenerates hearts faster than ever (1.8 only)");
       this.method_42010(new class_2748<Float>("Packet amount", "Number of packets sent", 50.0F, Float.class, 1.0F, 100.0F, 1.0F));

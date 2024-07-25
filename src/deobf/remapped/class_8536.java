@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_8536 extends class_9128 {
+public class class_8536 extends Module {
    public class_8536() {
       super(class_5664.field_28717, "Ghostly", "Disable ghostly's anticheat.");
    }

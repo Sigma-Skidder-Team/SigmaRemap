@@ -9,11 +9,11 @@ import java.util.HashMap;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_8438 extends class_9128 {
-   private List<class_9128> field_43173 = new ArrayList<class_9128>();
+public class class_8438 extends Module {
+   private List<Module> field_43173 = new ArrayList<Module>();
    public int field_43171 = 0;
    public int field_43170;
-   public HashMap<class_9128, class_2440> field_43168 = new HashMap<class_9128, class_2440>();
+   public HashMap<Module, class_2440> field_43168 = new HashMap<Module, class_2440>();
    public class_3384 field_43169 = class_5320.field_27152;
 
    public class_8438() {
@@ -48,7 +48,7 @@ public class class_8438 extends class_9128 {
    public void method_42012() {
       this.field_43173.clear();
 
-      for (class_9128 var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+      for (Module var4 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          if (var4.method_42004() != class_5664.field_28708) {
             this.field_43173.add(var4);
             this.field_43168.put(var4, new class_2440(150, 150, class_4043.field_19618));
@@ -81,7 +81,7 @@ public class class_8438 extends class_9128 {
             Collection var8 = var4.method_4863(var14);
             int var9 = 0;
 
-            for (class_9128 var11 : this.field_43173) {
+            for (Module var11 : this.field_43173) {
                if (var11.method_42015()) {
                   var9++;
                }
@@ -104,7 +104,7 @@ public class class_8438 extends class_9128 {
    @class_9148
    private void method_38819(class_3278 var1) {
       if (this.method_42015() && field_46692.field_9632 != null) {
-         for (class_9128 var5 : this.field_43168.keySet()) {
+         for (Module var5 : this.field_43168.keySet()) {
             if (this.method_42007("Animations")) {
                this.field_43168.get(var5).method_11119(!var5.method_42015() ? class_4043.field_19618 : class_4043.field_19620);
             }
@@ -128,7 +128,7 @@ public class class_8438 extends class_9128 {
             byte var10 = 0;
             int var11 = class_314.method_1444(-1, 0.95F);
 
-            for (class_9128 var13 : this.field_43173) {
+            for (Module var13 : this.field_43173) {
                float var14 = 1.0F;
                float var15 = 1.0F;
                if (!this.method_42007("Animations")) {

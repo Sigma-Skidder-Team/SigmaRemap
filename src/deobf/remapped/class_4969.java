@@ -10,7 +10,7 @@ import java.util.List;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 
-public class class_4969 extends class_9128 {
+public class class_4969 extends Module {
    public ByteBuffer field_25730 = null;
    public BufferedImage field_25742 = null;
    private int field_25739 = 95;

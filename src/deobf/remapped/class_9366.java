@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import org.lwjgl.opengl.GL11;
 
-public class class_9366 extends class_9128 {
+public class class_9366 extends Module {
    public List<class_2953> field_47903 = new ArrayList<class_2953>();
    public Set<class_2034> field_47901 = new HashSet<class_2034>();
 

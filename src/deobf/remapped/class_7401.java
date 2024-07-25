@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_7401 extends class_9128 {
+public class class_7401 extends Module {
    private int field_37778;
    private boolean field_37780;
    private float field_37779;

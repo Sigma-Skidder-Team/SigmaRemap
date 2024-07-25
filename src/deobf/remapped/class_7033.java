@@ -3,7 +3,7 @@ package remapped;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class class_7033 extends class_9128 {
+public class class_7033 extends Module {
    public int field_36213;
    public int field_36210;
    public int field_36212;

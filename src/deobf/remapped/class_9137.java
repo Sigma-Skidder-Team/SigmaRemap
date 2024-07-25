@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.UUID;
 import org.lwjgl.opengl.GL11;
 
-public class class_9137 extends class_9128 {
+public class class_9137 extends Module {
    public HashMap<UUID, class_4333> field_46733 = new HashMap<UUID, class_4333>();
    private class_5664 field_46735 = class_5664.field_28710;
 

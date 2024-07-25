@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_9439 extends class_9128 {
+public class class_9439 extends Module {
    public class_9439() {
       super(class_5664.field_28717, "Null", "Makes you invisible for the anticheat.");
       this.method_42010(new class_8563("Inv Bypass", "Avoid inventory glitchs on some servers", false));

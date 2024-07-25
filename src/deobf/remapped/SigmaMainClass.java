@@ -24,7 +24,7 @@ public class SigmaMainClass {
    private class_201 field_3961;
    private class_1772 field_3972;
    private class_191 field_3978;
-   private class_4946 field_3965;
+   private CommandManager commandManager;
    private class_6763 field_3977;
    private class_3116 field_3958;
    private class_4400 field_3952;
@@ -33,8 +33,8 @@ public class SigmaMainClass {
    private class_5571 field_3954;
    private class_8691 field_3981;
    private class_4746 field_3967;
-   private class_4489 field_3955;
-   private class_5014 field_3971;
+   private SigmaIRC field_3955;
+   private SigmaLoginStuff field_3971;
    private class_845 field_3970;
    private class_4566 field_3980;
    private class_6080 field_3949;
@@ -75,10 +75,10 @@ public class SigmaMainClass {
 
       this.field_3961 = class_201.method_866();
       this.field_3972 = new class_1772();
-      this.field_3965 = new class_4946();
-      this.field_3965.method_22654();
+      this.commandManager = new CommandManager();
+      this.commandManager.method_22654();
       class_2209.method_10227();
-      this.field_3971 = new class_5014();
+      this.field_3971 = new SigmaLoginStuff();
       this.field_3971.method_23087();
       this.field_3970 = new class_845();
       this.field_3970.method_3693();
@@ -320,7 +320,7 @@ public class SigmaMainClass {
       return this.field_3973;
    }
 
-   public class_5014 method_3332() {
+   public SigmaLoginStuff method_3332() {
       return this.field_3971;
    }
 
@@ -332,8 +332,8 @@ public class SigmaMainClass {
       return this.field_3970;
    }
 
-   public class_4946 method_3325() {
-      return this.field_3965;
+   public CommandManager getCommandManager() {
+      return this.commandManager;
    }
 
    public class_5937 method_3301() {

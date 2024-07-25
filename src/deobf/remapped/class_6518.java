@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.Random;
 
-public class class_6518 extends class_9128 {
+public class class_6518 extends Module {
    private Random field_33187 = new Random();
    private boolean field_33189;
    private int field_33188;

@@ -9,7 +9,7 @@ import java.util.UUID;
 import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
-public class class_1196 extends class_9128 {
+public class class_1196 extends Module {
    private HashMap<class_1331, class_1325> field_6693 = new HashMap<class_1331, class_1325>();
    private class_1331 field_6694;
    private static class_5023 field_6699 = new class_5023();

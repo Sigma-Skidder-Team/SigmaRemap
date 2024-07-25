@@ -59,7 +59,7 @@ public class class_1675 {
                SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            for (class_9128 var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+            for (Module var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
                if (var8.method_41992().equals(var6) && var8.method_42004() != class_5664.field_28708 && var8.method_42004() != class_5664.field_28709) {
                   var5.method_5820("enabled", "false");
                }
@@ -68,7 +68,7 @@ public class class_1675 {
       }
    }
 
-   public void method_7502(class_1293 var1, class_9128 var2) {
+   public void method_7502(class_1293 var1, Module var2) {
       class_1336 var5 = null;
 
       try {
@@ -103,7 +103,7 @@ public class class_1675 {
       }
    }
 
-   public class_1293 method_7501(class_9128 var1) {
+   public class_1293 method_7501(Module var1) {
       class_1336 var4 = null;
 
       try {

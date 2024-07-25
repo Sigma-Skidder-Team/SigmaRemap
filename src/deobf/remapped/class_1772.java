@@ -13,7 +13,7 @@ import java.util.Map.Entry;
 
 public class class_1772 {
    public final Map<Class<? extends class_8142>, class_4182[]> field_9081 = new HashMap<Class<? extends class_8142>, class_4182[]>();
-   public final Map<Class<? extends class_9128>, Map<Class<? extends class_8142>, List<class_4182>>> field_9083 = new HashMap<Class<? extends class_9128>, Map<Class<? extends class_8142>, List<class_4182>>>();
+   public final Map<Class<? extends Module>, Map<Class<? extends class_8142>, List<class_4182>>> field_9083 = new HashMap<Class<? extends Module>, Map<Class<? extends class_8142>, List<class_4182>>>();
    public int field_9082 = 0;
    public long field_9084 = System.currentTimeMillis();
 
@@ -73,7 +73,7 @@ public class class_1772 {
       }
    }
 
-   public void method_7917(class_9128 var1) {
+   public void method_7917(Module var1) {
       Map var4 = this.field_9083.get(var1.getClass());
       if (var4 != null) {
          for (Entry var6 : var4.entrySet()) {
@@ -86,7 +86,7 @@ public class class_1772 {
       }
    }
 
-   public void method_7915(class_9128 var1) {
+   public void method_7915(Module var1) {
       Map var4 = this.field_9083.get(var1.getClass());
       if (var4 != null) {
          for (Entry var6 : var4.entrySet()) {
@@ -118,7 +118,7 @@ public class class_1772 {
 
                   class_4182 var13 = new class_4182(var1, var5, var9, var10);
                   if (this.method_7916(var12, var5, var13)) {
-                     boolean var14 = class_9128.class.isAssignableFrom(var5) && !var9.isAnnotationPresent(class_3932.class);
+                     boolean var14 = Module.class.isAssignableFrom(var5) && !var9.isAnnotationPresent(class_3932.class);
                      if (!var14) {
                         var12 = Arrays.<class_4182>copyOf(var12, var12.length + 1);
                         var12[var12.length - 1] = var13;

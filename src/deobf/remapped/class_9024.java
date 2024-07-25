@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class class_9024 extends class_9128 {
+public class class_9024 extends Module {
    private static final int field_46184 = 3;
    private Color[] field_46174 = new Color[3];
    private Color[] field_46173 = new Color[3];
@@ -19,7 +19,7 @@ public class class_9024 extends class_9128 {
    private int field_46178 = 150;
    public List<class_5664> field_46170 = new ArrayList<class_5664>();
    public HashMap<class_5664, Float> field_46155 = new HashMap<class_5664, Float>();
-   public HashMap<class_9128, Float> field_46167 = new HashMap<class_9128, Float>();
+   public HashMap<Module, Float> field_46167 = new HashMap<Module, Float>();
    private int field_46179 = 0;
    private int field_46180 = 0;
    private int field_46177 = 0;
@@ -30,7 +30,7 @@ public class class_9024 extends class_9128 {
    private class_5664 field_46172;
    private int field_46160 = 0;
    private int field_46176;
-   private class_9128 field_46187;
+   private Module field_46187;
    private int field_46161 = 170;
    private float field_46175 = 0.0F;
    public static class_9024 field_46156;
@@ -104,20 +104,20 @@ public class class_9024 extends class_9128 {
       return Math.max(this.field_46179 * this.field_46159 - 4 * this.field_46159, 0);
    }
 
-   private List<class_9128> method_41400(class_5664 var1) {
+   private List<Module> method_41400(class_5664 var1) {
       ArrayList var4 = new ArrayList();
 
-      for (class_9128 var6 : SigmaMainClass.method_3328().method_3298().method_844(var1)) {
+      for (Module var6 : SigmaMainClass.method_3328().method_3298().method_844(var1)) {
          var4.add(var6);
       }
 
       return var4;
    }
 
-   private void method_41394(int var1, int var2, List<class_9128> var3, float var4) {
+   private void method_41394(int var1, int var2, List<Module> var3, float var4) {
       int var7 = 0;
 
-      for (class_9128 var9 : var3) {
+      for (Module var9 : var3) {
          if (this.field_46176 == var7) {
             this.field_46187 = var9;
          }

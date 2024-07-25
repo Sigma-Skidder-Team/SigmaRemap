@@ -90,7 +90,7 @@ public class class_3969 {
       var5.method_7503();
       class_1675 var6 = new class_1675("settings", this.method_18325(var2).method_5848("modConfig"));
 
-      for (class_9128 var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+      for (Module var8 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
          class_1293 var9 = var6.method_7501(var8);
          if (var9 != null) {
             var5.method_7502(var9, var8);

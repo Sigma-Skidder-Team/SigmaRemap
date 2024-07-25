@@ -2,7 +2,7 @@ package remapped;
 
 import com.mojang.authlib.GameProfile;
 
-public class class_9598 extends class_9128 {
+public class class_9598 extends Module {
    public static class_704 field_48917;
    private double field_48921;
    private double field_48927;

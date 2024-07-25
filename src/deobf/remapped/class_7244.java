@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7244 extends class_9128 {
+public class class_7244 extends Module {
    public class_7244() {
       super(class_5664.field_28714, "Basic", "Places block underneath");
       this.method_42010(new class_8563("Explosions", "Cancels Explosions knockback", true));

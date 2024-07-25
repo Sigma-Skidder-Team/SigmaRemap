@@ -8,20 +8,20 @@ import java.util.List;
 import java.util.Map;
 
 public class class_191 {
-   private Map<Class<? extends class_9128>, class_9128> field_637 = new LinkedHashMap<Class<? extends class_9128>, class_9128>();
+   private Map<Class<? extends Module>, Module> field_637 = new LinkedHashMap<Class<? extends Module>, Module>();
    private class_986 field_638;
    private class_123 field_639;
-   private List<class_9128> field_641;
+   private List<Module> field_641;
 
    private void method_837() {
-      this.field_641 = new ArrayList<class_9128>();
+      this.field_641 = new ArrayList<Module>();
    }
 
-   private void method_852(class_9128 var1) {
+   private void method_852(Module var1) {
       this.field_641.add(var1);
    }
 
-   private void method_841(Class<? extends class_9128> var1) {
+   private void method_841(Class<? extends Module> var1) {
       SigmaMainClass.method_3328().method_3302().method_7911(var1);
       this.field_637.remove(var1);
    }
@@ -29,9 +29,9 @@ public class class_191 {
    private void method_851() {
       Collections.sort(this.field_641, new class_5309(this));
 
-      for (class_9128 var4 : this.field_641) {
+      for (Module var4 : this.field_641) {
          SigmaMainClass.method_3328().method_3302().method_7908(var4);
-         this.field_637.put((Class<? extends class_9128>)var4.getClass(), var4);
+         this.field_637.put((Class<? extends Module>)var4.getClass(), var4);
       }
 
       class_890.field_4585 = true;
@@ -115,7 +115,7 @@ public class class_191 {
       this.method_852(new class_2481());
       this.method_852(new class_6378());
       this.method_852(new class_9357());
-      this.method_852(new class_1089());
+      this.method_852(new FastBreakModule());
       this.method_852(new class_8444());
       this.method_852(new class_2739());
       this.method_852(new class_1355());
@@ -141,7 +141,7 @@ public class class_191 {
          this.method_852(new class_9024());
          this.method_852(new class_9134());
          this.method_852(new class_1964());
-         this.method_852(new class_6879());
+         this.method_852(new ShulkerInfoModule());
          this.method_852(new class_7693());
          this.method_852(new class_4969());
          this.method_852(new class_8438());
@@ -173,7 +173,7 @@ public class class_191 {
       } catch (class_7584 var14) {
       }
 
-      for (class_9128 var6 : this.field_637.values()) {
+      for (Module var6 : this.field_637.values()) {
          var6.method_42019();
       }
 
@@ -188,7 +188,7 @@ public class class_191 {
                SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            for (class_9128 var9 : this.field_637.values()) {
+            for (Module var9 : this.field_637.values()) {
                if (var9.method_41992().equals(var7)) {
                   try {
                      var9.method_42021(var17);
@@ -205,7 +205,7 @@ public class class_191 {
          SigmaMainClass.method_3328().method_3326().method_12863("Mods array does not exist in config. Assuming a blank profile...");
       }
 
-      for (class_9128 var18 : this.field_637.values()) {
+      for (Module var18 : this.field_637.values()) {
          if (var18.method_42015()) {
             SigmaMainClass.method_3328().method_3302().method_7917(var18);
             if (var18 instanceof class_3620) {
@@ -219,7 +219,7 @@ public class class_191 {
             if (var18 instanceof class_3620) {
                class_3620 var19 = (class_3620)var18;
 
-               for (class_9128 var11 : var19.field_17661) {
+               for (Module var11 : var19.field_17661) {
                   SigmaMainClass.method_3328().method_3302().method_7915(var11);
                }
             }
@@ -234,7 +234,7 @@ public class class_191 {
    public class_1293 method_839(class_1293 var1) {
       class_1336 var4 = new class_1336();
 
-      for (class_9128 var6 : this.field_637.values()) {
+      for (Module var6 : this.field_637.values()) {
          var4.method_6159(var6.method_42014(new class_1293()));
       }
 
@@ -245,14 +245,14 @@ public class class_191 {
    public void method_846() {
       long var3 = (long)this.method_840();
 
-      for (class_9128 var6 : this.field_637.values()) {
+      for (Module var6 : this.field_637.values()) {
          for (class_5004 var8 : var6.method_41996().values()) {
             if (var8.method_23043()) {
                var3++;
             }
 
             if (var6 instanceof class_3620) {
-               for (class_9128 var12 : ((class_3620)var6).field_17661) {
+               for (Module var12 : ((class_3620)var6).field_17661) {
                   for (class_5004 var14 : var12.method_41996().values()) {
                      if (var14.method_23043()) {
                         var3++;
@@ -312,15 +312,15 @@ public class class_191 {
       return 0;
    }
 
-   public class_9128 method_847(Class<? extends class_9128> var1) {
+   public Module method_847(Class<? extends Module> var1) {
       return this.field_637.get(var1);
    }
 
-   public class_9128 method_850(Class<? extends class_9128> var1) {
+   public Module method_850(Class<? extends Module> var1) {
       if (var1.getSuperclass() == class_3620.class) {
          class_3620 var4 = (class_3620)this.field_637.get(var1.getSuperclass());
 
-         for (class_9128 var8 : var4.field_17661) {
+         for (Module var8 : var4.field_17661) {
             if (var8.getClass() == var1) {
                return var8;
             }
@@ -330,14 +330,14 @@ public class class_191 {
       return this.field_637.get(var1);
    }
 
-   public Map<Class<? extends class_9128>, class_9128> method_843() {
+   public Map<Class<? extends Module>, Module> method_843() {
       return this.field_637;
    }
 
-   public List<class_9128> method_844(class_5664 var1) {
+   public List<Module> method_844(class_5664 var1) {
       ArrayList var4 = new ArrayList();
 
-      for (class_9128 var6 : this.field_637.values()) {
+      for (Module var6 : this.field_637.values()) {
          if (var6.method_42004().equals(var1)) {
             var4.add(var6);
          }
@@ -346,10 +346,10 @@ public class class_191 {
       return var4;
    }
 
-   public List<class_9128> method_836() {
+   public List<Module> method_836() {
       ArrayList var3 = new ArrayList();
 
-      for (class_9128 var5 : this.field_637.values()) {
+      for (Module var5 : this.field_637.values()) {
          if (var5.method_42015()) {
             var3.add(var5);
          }

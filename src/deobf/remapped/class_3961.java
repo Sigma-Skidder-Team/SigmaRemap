@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_3961 extends class_9128 {
+public class class_3961 extends Module {
    public EntityRenderDispatcher field_19184 = field_46692.method_8587();
    public class_1934 field_19188 = new class_1934(0.0F, 0.0F, 0.0F);
    public class_1934 field_19186 = new class_1934(0.0F, 0.0F, 0.0F);

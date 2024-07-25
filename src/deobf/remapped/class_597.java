@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_597 extends class_9128 {
+public class class_597 extends Module {
    public static boolean field_3439 = false;
 
    public class_597() {

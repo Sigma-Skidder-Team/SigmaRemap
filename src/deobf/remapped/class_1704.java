@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class class_1704 extends class_9128 {
+public class class_1704 extends Module {
    private double field_8815;
    private double field_8828;
    private double field_8819;

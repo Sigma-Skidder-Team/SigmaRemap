@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_2458 extends class_9128 {
+public class class_2458 extends Module {
    public class_2458() {
       super(class_5664.field_28709, "NoServerInfo", "Hides the server scoreboard and boss bar at top");
    }

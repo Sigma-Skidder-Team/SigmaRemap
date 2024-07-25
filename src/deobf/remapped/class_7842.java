@@ -52,13 +52,13 @@ public class class_7842 {
 
             SigmaMainClass.method_3328().method_3302().method_7913();
 
-            for (class_9128 var23 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
+            for (Module var23 : SigmaMainClass.method_3328().method_3298().method_843().values()) {
                for (class_5004 var28 : var23.method_41996().values()) {
                   var28.method_23040();
                }
 
                if (var23 instanceof class_3620) {
-                  for (class_9128 var33 : ((class_3620)var23).field_17661) {
+                  for (Module var33 : ((class_3620)var23).field_17661) {
                      for (class_5004 var37 : var33.method_41996().values()) {
                         var37.method_23040();
                      }
@@ -78,7 +78,7 @@ public class class_7842 {
                   if (var23 instanceof class_3620) {
                      class_3620 var26 = (class_3620)var23;
 
-                     for (class_9128 var36 : var26.field_17661) {
+                     for (Module var36 : var26.field_17661) {
                         SigmaMainClass.method_3328().method_3302().method_7915(var36);
                      }
                   }

@@ -2,7 +2,7 @@ package remapped;
 
 import org.lwjgl.glfw.GLFW;
 
-public class class_5787 extends class_9128 {
+public class class_5787 extends Module {
    private boolean field_29226;
 
    public class_5787() {
