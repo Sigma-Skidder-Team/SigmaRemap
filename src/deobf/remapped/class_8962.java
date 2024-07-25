@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class class_8962<E extends class_5886> extends class_5920<E> {
+public class class_8962<E extends MobEntity> extends class_5920<E> {
    private static String[] field_45912;
    private final Predicate<E> field_45913;
    private final Function<E, Optional<? extends class_5834>> field_45911;

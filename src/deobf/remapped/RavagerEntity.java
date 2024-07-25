@@ -21,17 +21,17 @@ public class RavagerEntity extends AbstractRaiderEntity {
       this.goalSelector.addGoal(0, new class_787(this));
       this.goalSelector.addGoal(4, new class_829(this));
       this.goalSelector.addGoal(5, new class_2889(this, 0.4));
-      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 6.0F));
-      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 8.0F));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
       this.targetSelector.addGoal(2, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<class_405>(this, class_405.class, true));
-      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<AbstractVillagerEntity>(this, AbstractVillagerEntity.class, true));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    @Override
    public void method_26872() {
-      boolean var3 = !(this.method_37259() instanceof class_5886) || this.method_37259().method_37387().method_30453(class_5218.field_26788);
+      boolean var3 = !(this.method_37259() instanceof MobEntity) || this.method_37259().method_37387().method_30453(class_5218.field_26788);
       boolean var4 = !(this.method_37243() instanceof BoatEntity);
       this.goalSelector.method_3493(class_1891.field_9564, var3);
       this.goalSelector.method_3493(class_1891.field_9561, var3 && var4);

@@ -133,8 +133,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<class_2547> field_34270 = method_30457(
       "illusioner", class_6238.<class_2547>method_28492(class_2547::new, class_4565.field_22247).method_28489(0.6F, 1.95F).method_28499(8)
    );
-   public static final EntityType<class_8127> field_34298 = method_30457(
-      "iron_golem", class_6238.<class_8127>method_28492(class_8127::new, class_4565.field_22251).method_28489(1.4F, 2.7F).method_28499(10)
+   public static final EntityType<IronGolemEntity> field_34298 = method_30457(
+      "iron_golem", class_6238.<IronGolemEntity>method_28492(IronGolemEntity::new, class_4565.field_22251).method_28489(1.4F, 2.7F).method_28499(10)
    );
    public static final EntityType<class_91> field_34208 = method_30457(
       "item", class_6238.<class_91>method_28492(class_91::new, class_4565.field_22251).method_28489(0.25F, 0.25F).method_28499(6).method_28500(20)
@@ -464,8 +464,8 @@ public class EntityType<T extends Entity> {
             class_9299.method_42810(var1.field_33033.nextFloat() * 360.0F),
             0.0F
          );
-         if (var11 instanceof class_5886) {
-            class_5886 var14 = (class_5886)var11;
+         if (var11 instanceof MobEntity) {
+            MobEntity var14 = (MobEntity)var11;
             var14.field_29618 = var14.rotationYaw;
             var14.field_29605 = var14.rotationYaw;
             var14.method_26864(var1, var1.method_43368(var14.method_37075()), var6, (class_8733)null, var2);

@@ -4,9 +4,9 @@ import java.util.EnumSet;
 
 public class class_7713 extends class_3599 {
    private static String[] field_39122;
-   private final class_405 field_39121;
+   private final AbstractVillagerEntity field_39121;
 
-   public class_7713(class_405 var1) {
+   public class_7713(AbstractVillagerEntity var1) {
       this.field_39121 = var1;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9561, class_1891.field_9564));
    }

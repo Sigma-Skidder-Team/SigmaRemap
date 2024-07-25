@@ -1,14 +1,14 @@
 package remapped;
 
-public class class_2322 extends class_4171<class_8127, class_7946<class_8127>> {
+public class class_2322 extends class_4171<IronGolemEntity, class_7946<IronGolemEntity>> {
    private static String[] field_11621;
 
-   public class_2322(class_2514<class_8127, class_7946<class_8127>> var1) {
+   public class_2322(class_2514<IronGolemEntity, class_7946<IronGolemEntity>> var1) {
       super(var1);
    }
 
    public void method_10667(
-      class_7966 var1, class_2565 var2, int var3, class_8127 var4, float var5, float var6, float var7, float var8, float var9, float var10
+           class_7966 var1, class_2565 var2, int var3, IronGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10
    ) {
       if (var4.method_36978() != 0) {
          var1.method_36063();

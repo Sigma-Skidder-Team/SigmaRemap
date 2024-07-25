@@ -238,8 +238,8 @@ public class class_7772 {
          var1.accept(new class_4597(this.field_39387.method_37243()));
       }
 
-      if (this.field_39387 instanceof class_5886) {
-         class_5886 var14 = (class_5886)this.field_39387;
+      if (this.field_39387 instanceof MobEntity) {
+         MobEntity var14 = (MobEntity)this.field_39387;
          if (var14.method_26920()) {
             var1.accept(new class_2708(var14, var14.method_26922()));
          }

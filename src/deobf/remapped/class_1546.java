@@ -5,7 +5,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 public abstract class class_1546 {
    public class_9525 field_8165;
-   public class_5886 field_8166;
+   public MobEntity field_8166;
    public final Int2ObjectMap<class_5851> field_8161 = new Int2ObjectOpenHashMap();
    public int field_8164;
    public int field_8163;
@@ -14,7 +14,7 @@ public abstract class class_1546 {
    public boolean field_8168;
    public boolean field_8162;
 
-   public void method_7014(class_9525 var1, class_5886 var2) {
+   public void method_7014(class_9525 var1, MobEntity var2) {
       this.field_8165 = var1;
       this.field_8166 = var2;
       this.field_8161.clear();
@@ -43,7 +43,7 @@ public abstract class class_1546 {
    public abstract int method_7002(class_5851[] var1, class_5851 var2);
 
    public abstract class_1108 method_7011(
-      class_6163 var1, int var2, int var3, int var4, class_5886 var5, int var6, int var7, int var8, boolean var9, boolean var10
+           class_6163 var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10
    );
 
    public abstract class_1108 method_7010(class_6163 var1, int var2, int var3, int var4);

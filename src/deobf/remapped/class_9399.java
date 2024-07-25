@@ -141,7 +141,7 @@ public class class_9399 extends class_5834 {
          var5 = class_6943.field_35707;
       }
 
-      if (!var2.method_28022() && !class_5886.method_26868(var5, var2) && var5 != class_6943.field_35704) {
+      if (!var2.method_28022() && !MobEntity.method_26868(var5, var2) && var5 != class_6943.field_35704) {
          return false;
       } else {
          this.method_37349(var5, var2);
@@ -151,7 +151,7 @@ public class class_9399 extends class_5834 {
 
    @Override
    public boolean method_26612(ItemStack var1) {
-      class_6943 var4 = class_5886.method_26896(var1);
+      class_6943 var4 = MobEntity.method_26896(var1);
       return this.method_26520(var4).method_28022() && !this.method_43504(var4);
    }
 
@@ -297,7 +297,7 @@ public class class_9399 extends class_5834 {
       } else if (var1.method_37221()) {
          return class_6910.field_35520;
       } else if (!var1.world.field_33055) {
-         class_6943 var7 = class_5886.method_26896(var6);
+         class_6943 var7 = MobEntity.method_26896(var6);
          if (!var6.method_28022()) {
             if (this.method_43504(var7)) {
                return class_6910.field_35517;

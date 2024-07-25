@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class class_3528 extends class_6127<class_5886> {
+public class class_3528 extends class_6127<MobEntity> {
    private static String[] field_17286;
    private final Long2LongMap field_17285 = new Long2LongOpenHashMap();
    private int field_17283;
@@ -23,7 +23,7 @@ public class class_3528 extends class_6127<class_5886> {
       return ImmutableSet.of(class_6044.field_30910);
    }
 
-   public void method_16299(class_6331 var1, class_5886 var2) {
+   public void method_16299(class_6331 var1, MobEntity var2) {
       if (var2.method_26449()) {
          this.field_17283 = 0;
          this.field_17284 = var1.method_29546() + (long)var1.method_43360().nextInt(20);

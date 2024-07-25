@@ -63,7 +63,7 @@ public class class_8031 extends class_5467 implements class_9897 {
       this.goalSelector.addGoal(4, new class_8676(this, 1.1));
       this.goalSelector.addGoal(5, this.field_41105);
       this.goalSelector.addGoal(6, new class_2889(this, 1.0));
-      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
    }
 
@@ -83,7 +83,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    public static class_1313 method_36475() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 8.0).method_5984(class_7331.field_37465, 0.23F);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 8.0).method_5984(class_7331.field_37465, 0.23F);
    }
 
    @Override

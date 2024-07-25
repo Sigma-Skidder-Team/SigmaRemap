@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public abstract class class_1249 {
-   public final class_5886 field_6877;
+   public final MobEntity field_6877;
    public final World field_6882;
    public class_3998 field_6887;
    public double field_6871;
@@ -28,7 +28,7 @@ public abstract class class_1249 {
    private final class_8976 field_6873;
    private boolean field_6881;
 
-   public class_1249(class_5886 var1, World var2) {
+   public class_1249(MobEntity var1, World var2) {
       this.field_6877 = var1;
       this.field_6882 = var2;
       int var5 = class_9299.method_42847(var1.method_26575(class_7331.field_37471) * 16.0);

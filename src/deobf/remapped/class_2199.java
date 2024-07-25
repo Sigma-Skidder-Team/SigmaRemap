@@ -20,7 +20,7 @@ public class class_2199 extends HurtByTargetGoal {
    }
 
    @Override
-   public void method_38756(class_5886 var1, class_5834 var2) {
+   public void method_38756(MobEntity var1, class_5834 var2) {
       if (var1 instanceof class_496 && ((class_496)var1).method_26892()) {
          var1.method_26860(var2);
       }

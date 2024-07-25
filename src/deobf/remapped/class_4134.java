@@ -20,12 +20,12 @@ public class class_4134 extends class_7637 implements class_3832 {
       this.goalSelector.addGoal(2, new class_1052(this, this, 10.0F));
       this.goalSelector.addGoal(3, new class_1801<class_4134>(this, 1.0, 8.0F));
       this.goalSelector.addGoal(8, new class_8285(this, 0.6));
-      this.goalSelector.addGoal(9, new class_4407(this, PlayerEntity.class, 15.0F, 1.0F));
-      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 15.0F));
+      this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 15.0F, 1.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 15.0F));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_405>(this, class_405.class, false));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<AbstractVillagerEntity>(this, AbstractVillagerEntity.class, false));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    public static class_1313 method_19206() {

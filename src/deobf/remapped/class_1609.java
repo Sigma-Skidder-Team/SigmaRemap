@@ -26,7 +26,7 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
       this.goalSelector.addGoal(1, new class_787(this));
       this.goalSelector.addGoal(2, new class_1837(this, 1.0, 60, 10.0F));
       this.goalSelector.addGoal(2, new class_2889(this, 1.0));
-      this.goalSelector.addGoal(3, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(3, new class_9691(this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class));
       this.targetSelector.addGoal(2, this.field_8348);

@@ -65,13 +65,13 @@ public class HurtByTargetGoal extends class_956 {
       Iterator var7 = var6.iterator();
 
       while (true) {
-         class_5886 var8;
+         MobEntity var8;
          while (true) {
             if (!var7.hasNext()) {
                return;
             }
 
-            var8 = (class_5886)var7.next();
+            var8 = (MobEntity)var7.next();
             if (this.field_4915 != var8
                && var8.method_17809() == null
                && (!(this.field_4915 instanceof class_8990) || ((class_8990)this.field_4915).method_41207() == ((class_8990)var8).method_41207())
@@ -99,7 +99,7 @@ public class HurtByTargetGoal extends class_956 {
       }
    }
 
-   public void method_38756(class_5886 var1, class_5834 var2) {
+   public void method_38756(MobEntity var1, class_5834 var2) {
       var1.method_26860(var2);
    }
 }

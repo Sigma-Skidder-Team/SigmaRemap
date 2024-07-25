@@ -352,7 +352,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    public boolean method_11787(ItemStack var1) {
-      class_6943 var4 = class_5886.method_26896(var1);
+      class_6943 var4 = MobEntity.method_26896(var1);
       ItemStack var5 = this.method_26520(var4);
       return this.method_26881(var1, var5);
    }

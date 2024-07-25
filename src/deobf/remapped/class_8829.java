@@ -417,7 +417,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    public static class_1313 method_40625() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5984(class_7331.field_37468, 10.0)
          .method_5984(class_7331.field_37474, 0.6F)
          .method_5984(class_7331.field_37465, 0.3F)

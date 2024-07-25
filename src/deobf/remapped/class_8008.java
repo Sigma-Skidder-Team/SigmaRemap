@@ -85,8 +85,8 @@ public class class_8008 extends class_4641 {
          boolean var5 = false;
          double var6 = 7.0;
          List var8 = this.world
-            .<class_5886>method_25868(
-               class_5886.class,
+            .<MobEntity>method_25868(
+               MobEntity.class,
                new Box(
                   this.getPosX() - 7.0,
                   this.method_37309() - 7.0,
@@ -97,7 +97,7 @@ public class class_8008 extends class_4641 {
                )
             );
 
-         for (class_5886 var10 : var8) {
+         for (MobEntity var10 : var8) {
             if (var10.method_26922() == var1) {
                var10.method_26901(this, true);
                var5 = true;
@@ -107,7 +107,7 @@ public class class_8008 extends class_4641 {
          if (!var5) {
             this.method_37204();
             if (var1.playerAbilities.isCreativeMode) {
-               for (class_5886 var12 : var8) {
+               for (MobEntity var12 : var8) {
                   if (var12.method_26920() && var12.method_26922() == this) {
                      var12.method_26916(true, false);
                   }

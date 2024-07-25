@@ -23,12 +23,12 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
       this.goalSelector.addGoal(4, new class_7228(this, 1.2, false, field_48085));
       this.goalSelector.addGoal(5, new class_8676(this, 1.1));
       this.goalSelector.addGoal(6, new class_2889(this, 1.0));
-      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
    }
 
    public static class_1313 method_43571() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 10.0).method_5984(class_7331.field_37465, 0.25);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 10.0).method_5984(class_7331.field_37465, 0.25);
    }
 
    @Nullable

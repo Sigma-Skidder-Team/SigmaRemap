@@ -5,7 +5,7 @@ public class class_2112 extends class_2833 {
    private final int field_10596;
    private final boolean field_10595;
 
-   public class_2112(class_5886 var1, int var2, boolean var3) {
+   public class_2112(MobEntity var1, int var2, boolean var3) {
       super(var1);
       this.field_10596 = var2;
       this.field_10595 = var3;

@@ -4,7 +4,7 @@ public class class_8696 extends class_8985 {
    private static String[] field_44592;
    private BlockPos field_44593;
 
-   public class_8696(class_5886 var1, World var2) {
+   public class_8696(MobEntity var1, World var2) {
       super(var1, var2);
    }
 

@@ -820,8 +820,8 @@ public class ClientPlayNetHandler implements class_392 {
    public void method_1910(class_2708 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       Entity var4 = this.field_6021.method_29534(var1.method_12206());
-      if (var4 instanceof class_5886) {
-         ((class_5886)var4).method_26894(var1.method_12204());
+      if (var4 instanceof MobEntity) {
+         ((MobEntity)var4).method_26894(var1.method_12204());
       }
    }
 

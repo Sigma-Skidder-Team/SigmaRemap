@@ -16,7 +16,7 @@ public abstract class class_3578 extends class_1829 {
    }
 
    public static class_1313 method_16629() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 3.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 3.0);
    }
 
    @Override

@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_9595 extends class_4407 {
+public class class_9595 extends LookAtGoal {
    private static String[] field_48900;
-   private final class_405 field_48899;
+   private final AbstractVillagerEntity field_48899;
 
-   public class_9595(class_405 var1) {
+   public class_9595(AbstractVillagerEntity var1) {
       super(var1, PlayerEntity.class, 8.0F);
       this.field_48899 = var1;
    }

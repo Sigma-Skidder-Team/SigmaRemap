@@ -2,15 +2,15 @@ package remapped;
 
 import java.util.UUID;
 
-public class class_8127 extends class_608 implements class_6250 {
-   public static final class_7821<Byte> field_41629 = class_8073.<Byte>method_36641(class_8127.class, class_2734.field_13361);
+public class IronGolemEntity extends class_608 implements class_6250 {
+   public static final class_7821<Byte> field_41629 = class_8073.<Byte>method_36641(IronGolemEntity.class, class_2734.field_13361);
    private int field_41632;
    private int field_41631;
    private static final class_4376 field_41633 = class_5804.method_26295(20, 39);
    private int field_41635;
    private UUID field_41630;
 
-   public class_8127(EntityType<? extends class_8127> var1, World var2) {
+   public IronGolemEntity(EntityType<? extends IronGolemEntity> var1, World var2) {
       super(var1, var2);
       this.field_41733 = 1.0F;
    }
@@ -22,16 +22,16 @@ public class class_8127 extends class_608 implements class_6250 {
       this.goalSelector.addGoal(2, new class_7000(this, 0.6, false));
       this.goalSelector.addGoal(4, new class_7253(this, 0.6));
       this.goalSelector.addGoal(5, new class_6405(this));
-      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
       this.targetSelector.addGoal(1, new class_4337(this));
       this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method_28534));
       this.targetSelector
          .addGoal(
-            3, new NearestAttackableTargetGoal<class_5886>(this, class_5886.class, 5, false, false, var0 -> var0 instanceof class_1869 && !(var0 instanceof class_9490))
+            3, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 5, false, false, var0 -> var0 instanceof class_1869 && !(var0 instanceof class_9490))
          );
-      this.targetSelector.addGoal(4, new class_6474<class_8127>(this, false));
+      this.targetSelector.addGoal(4, new class_6474<IronGolemEntity>(this, false));
    }
 
    @Override
@@ -41,7 +41,7 @@ public class class_8127 extends class_608 implements class_6250 {
    }
 
    public static class_1313 method_36980() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5984(class_7331.field_37468, 100.0)
          .method_5984(class_7331.field_37465, 0.25)
          .method_5984(class_7331.field_37463, 1.0)

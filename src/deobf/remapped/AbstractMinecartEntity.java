@@ -307,7 +307,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                for (int var26 = 0; var26 < var25.size(); var26++) {
                   Entity var24 = (Entity)var25.get(var26);
                   if (!(var24 instanceof PlayerEntity)
-                     && !(var24 instanceof class_8127)
+                     && !(var24 instanceof IronGolemEntity)
                      && !(var24 instanceof AbstractMinecartEntity)
                      && !this.method_37151()
                      && !var24.isPassenger()) {

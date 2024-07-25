@@ -64,7 +64,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       this.goalSelector.addGoal(4, new class_9513(this, 1.0));
       this.goalSelector.addGoal(5, new class_8676(this, 1.0));
       this.goalSelector.addGoal(6, new class_2889(this, 0.7));
-      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
       this.targetSelector.addGoal(1, new class_5145(this));
       this.targetSelector.addGoal(2, new class_2712(this));

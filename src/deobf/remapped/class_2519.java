@@ -4,7 +4,7 @@ import javax.annotation.Nullable;
 
 public class class_2519 extends class_1173 {
    public static final class_7821<Byte> field_12483 = class_8073.<Byte>method_36641(class_2519.class, class_2734.field_13361);
-   private class_5886 field_12485;
+   private MobEntity field_12485;
    private BlockPos field_12486;
    private boolean field_12482;
    private int field_12484;
@@ -39,8 +39,8 @@ public class class_2519 extends class_1173 {
       this.goalSelector.addGoal(0, new class_787(this));
       this.goalSelector.addGoal(4, new class_768(this));
       this.goalSelector.addGoal(8, new class_2940(this));
-      this.goalSelector.addGoal(9, new class_4407(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 8.0F));
+      this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
       this.targetSelector.addGoal(2, new class_5960(this, this));
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
@@ -82,7 +82,7 @@ public class class_2519 extends class_1173 {
       }
    }
 
-   public class_5886 method_11454() {
+   public MobEntity method_11454() {
       return this.field_12485;
    }
 
@@ -119,7 +119,7 @@ public class class_2519 extends class_1173 {
       this.method_11455(1, var1);
    }
 
-   public void method_11469(class_5886 var1) {
+   public void method_11469(MobEntity var1) {
       this.field_12485 = var1;
    }
 

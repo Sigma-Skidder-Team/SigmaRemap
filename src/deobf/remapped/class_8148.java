@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.List;
 
-public class class_8148<E extends class_5886> extends class_5920<E> {
+public class class_8148<E extends MobEntity> extends class_5920<E> {
    private static String[] field_41777;
    private final int field_41776;
    private final float field_41778;

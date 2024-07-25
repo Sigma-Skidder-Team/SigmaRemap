@@ -25,7 +25,7 @@ public class class_3024 extends class_5467 {
       this.goalSelector.addGoal(3, new class_7228(this, 1.0, false, field_14826));
       this.goalSelector.addGoal(4, new class_8676(this, 1.1));
       this.goalSelector.addGoal(5, new class_2889(this, 1.0));
-      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(7, new class_9691(this));
    }
 
@@ -35,7 +35,7 @@ public class class_3024 extends class_5467 {
    }
 
    public static class_1313 method_13807() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 4.0).method_5984(class_7331.field_37465, 0.25);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 4.0).method_5984(class_7331.field_37465, 0.25);
    }
 
    @Override

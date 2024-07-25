@@ -2,10 +2,10 @@ package remapped;
 
 public class class_4072 {
    private static String[] field_19831;
-   private final class_5886 field_19832;
+   private final MobEntity field_19832;
    public boolean field_19833;
 
-   public class_4072(class_5886 var1) {
+   public class_4072(MobEntity var1) {
       this.field_19832 = var1;
    }
 

@@ -93,9 +93,9 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       this.goalSelector.addGoal(4, new class_1476(this, 1.5, null));
       this.goalSelector.addGoal(5, new class_8676(this, 1.1));
       this.goalSelector.addGoal(7, new class_8285(this, 1.0, 60));
-      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
-      this.goalSelector.addGoal(9, new class_4407(this, class_1775.class, 8.0F));
+      this.goalSelector.addGoal(9, new LookAtGoal(this, class_1775.class, 8.0F));
    }
 
    public void method_7921(boolean var1) {
@@ -275,7 +275,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    public static class_1313 method_7928() {
-      return class_5886.method_26846().method_5984(class_7331.field_37465, 0.175F).method_5984(class_7331.field_37471, 16.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37465, 0.175F).method_5984(class_7331.field_37471, 16.0);
    }
 
    @Override
@@ -392,7 +392,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
                var8 = this.method_7927(var1, var2, var9, (class_8733)null);
             }
          } else {
-            class_5886 var10 = EntityType.field_34234.method_30484(var1.method_7066());
+            MobEntity var10 = EntityType.field_34234.method_30484(var1.method_7066());
             var8 = this.method_7927(var1, var2, var10, new class_2582(class_2811.method_12789(this.field_41717), false));
             var10.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24651));
             this.method_43358((class_562)null);
@@ -404,7 +404,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       }
    }
 
-   private class_8733 method_7927(class_1556 var1, class_9589 var2, class_5886 var3, class_8733 var4) {
+   private class_8733 method_7927(class_1556 var1, class_9589 var2, MobEntity var3, class_8733 var4) {
       var3.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, 0.0F);
       var3.method_26864(var1, var2, class_2417.field_12037, var4, (CompoundNBT)null);
       var3.startRiding(this, true);

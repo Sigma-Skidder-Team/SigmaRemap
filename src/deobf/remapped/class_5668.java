@@ -9,12 +9,12 @@ public class class_5668 extends class_1820 {
    public int field_28744 = -1;
    public int field_28745 = -1;
 
-   public class_5668(class_5886 var1, Predicate<class_423> var2) {
+   public class_5668(MobEntity var1, Predicate<class_423> var2) {
       super(var1);
       this.field_28742 = var2;
    }
 
-   public class_5668(class_5886 var1, int var2, Predicate<class_423> var3) {
+   public class_5668(MobEntity var1, int var2, Predicate<class_423> var3) {
       this(var1, var3);
       this.field_28745 = var2;
    }

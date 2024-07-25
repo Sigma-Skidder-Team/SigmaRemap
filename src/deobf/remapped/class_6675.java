@@ -12,8 +12,8 @@ public class class_6675 extends class_2451 {
       if (var1.method_28018() && !(var3 instanceof PlayerEntity)) {
          if (!var2.world.field_33055 && var3.isAlive()) {
             var3.method_37303(var1.method_28008());
-            if (var3 instanceof class_5886) {
-               ((class_5886)var3).method_26883();
+            if (var3 instanceof MobEntity) {
+               ((MobEntity)var3).method_26883();
             }
 
             var1.method_27970(1);

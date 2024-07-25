@@ -4,11 +4,11 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 public class class_8091 {
-   private final class_5886 field_41441;
+   private final MobEntity field_41441;
    private final List<Entity> field_41442 = Lists.newArrayList();
    private final List<Entity> field_41439 = Lists.newArrayList();
 
-   public class_8091(class_5886 var1) {
+   public class_8091(MobEntity var1) {
       this.field_41441 = var1;
    }
 

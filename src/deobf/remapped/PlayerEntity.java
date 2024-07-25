@@ -1899,7 +1899,7 @@ public abstract class PlayerEntity extends class_5834 {
                      if (var5 != class_6943.field_35704) {
                         return false;
                      }
-                  } else if (class_5886.method_26896(var2) != var5) {
+                  } else if (MobEntity.method_26896(var2) != var5) {
                      return false;
                   }
                }
@@ -1983,7 +1983,7 @@ public abstract class PlayerEntity extends class_5834 {
 
    @Override
    public boolean method_26612(ItemStack var1) {
-      class_6943 var4 = class_5886.method_26896(var1);
+      class_6943 var4 = MobEntity.method_26896(var1);
       return this.method_26520(var4).method_28022();
    }
 

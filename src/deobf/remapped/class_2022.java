@@ -61,7 +61,7 @@ public class class_2022 extends class_1944 {
    }
 
    public static class_1313 method_9394() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 6.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 6.0);
    }
 
    public boolean method_9392() {

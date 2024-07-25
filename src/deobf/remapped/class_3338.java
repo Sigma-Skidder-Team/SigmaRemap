@@ -66,8 +66,8 @@ public class class_3338 {
             return var1x;
          });
          if (var10 != null) {
-            if (var4 && var10 instanceof class_5886) {
-               ((class_5886)var10)
+            if (var4 && var10 instanceof MobEntity) {
+               ((MobEntity)var10)
                   .method_26864(
                      var0.method_42198(), var0.method_42198().method_43368(var10.method_37075()), class_2417.field_12028, (class_8733)null, (CompoundNBT)null
                   );

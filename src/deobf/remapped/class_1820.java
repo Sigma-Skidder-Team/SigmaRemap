@@ -1,14 +1,14 @@
 package remapped;
 
 public abstract class class_1820 extends class_3599 {
-   public class_5886 field_9241;
+   public MobEntity field_9241;
    public BlockPos field_9240 = BlockPos.field_7306;
    public boolean field_9242;
    private boolean field_9239;
    private float field_9238;
    private float field_9237;
 
-   public class_1820(class_5886 var1) {
+   public class_1820(MobEntity var1) {
       this.field_9241 = var1;
       if (!class_3613.method_16840(var1)) {
          throw new IllegalArgumentException("Unsupported mob type for DoorInteractGoal");

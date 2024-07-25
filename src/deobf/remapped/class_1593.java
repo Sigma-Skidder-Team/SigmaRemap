@@ -41,7 +41,7 @@ public class class_1593 extends class_2550 {
       super.method_26165(var1);
       if (!this.world.field_33055) {
          Entity var4 = this.method_26166();
-         if (var4 == null || !(var4 instanceof class_5886) || this.world.method_29537().method_1285(class_291.field_1047)) {
+         if (var4 == null || !(var4 instanceof MobEntity) || this.world.method_29537().method_1285(class_291.field_1047)) {
             BlockPos var5 = var1.method_43955().method_6098(var1.method_43956());
             if (this.world.method_22548(var5)) {
                this.world.method_29594(var5, class_9476.method_43768(this.world, var5));

@@ -24,12 +24,12 @@ public class class_298 extends class_7637 {
       this.goalSelector.addGoal(4, new class_2959(this, this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).setCallsForHelp());
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_405>(this, class_405.class, true));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<AbstractVillagerEntity>(this, AbstractVillagerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
       this.targetSelector.addGoal(4, new class_8642(this));
       this.goalSelector.addGoal(8, new class_8285(this, 0.6));
-      this.goalSelector.addGoal(9, new class_4407(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 8.0F));
+      this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
    }
 
    @Override

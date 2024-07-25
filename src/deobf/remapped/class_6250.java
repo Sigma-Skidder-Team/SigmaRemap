@@ -30,8 +30,8 @@ public interface class_6250 {
          this.method_28531(var5);
          Entity var6 = var1.method_28925(var5);
          if (var6 != null) {
-            if (var6 instanceof class_5886) {
-               this.method_26511((class_5886)var6);
+            if (var6 instanceof MobEntity) {
+               this.method_26511((MobEntity)var6);
             }
 
             if (var6.method_37387() == EntityType.field_34300) {
@@ -46,7 +46,7 @@ public interface class_6250 {
    default void method_28530(class_6331 var1, boolean var2) {
       class_5834 var5 = this.method_17809();
       UUID var6 = this.method_28535();
-      if ((var5 == null || var5.method_26450()) && var6 != null && var1.method_28925(var6) instanceof class_5886) {
+      if ((var5 == null || var5.method_26450()) && var6 != null && var1.method_28925(var6) instanceof MobEntity) {
          this.method_28538();
       } else {
          if (var5 != null && !Objects.equals(var6, var5.method_37328())) {

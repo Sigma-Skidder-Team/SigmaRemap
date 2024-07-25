@@ -8,7 +8,7 @@ public class class_929 extends class_2266 {
    private float field_4763;
 
    @Override
-   public void method_7014(class_9525 var1, class_5886 var2) {
+   public void method_7014(class_9525 var1, MobEntity var2) {
       super.method_7014(var1, var2);
       var2.method_26895(class_1108.field_6359, 0.0F);
       this.field_4762 = var2.method_26931(class_1108.field_6343);

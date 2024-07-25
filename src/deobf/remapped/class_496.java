@@ -37,7 +37,7 @@ public class class_496 extends class_5467 {
 
    @Override
    public boolean method_26612(ItemStack var1) {
-      class_6943 var4 = class_5886.method_26896(var1);
+      class_6943 var4 = MobEntity.method_26896(var1);
       return !this.method_26520(var4).method_28022() ? false : var4 == class_6943.field_35707 && super.method_26612(var1);
    }
 
@@ -204,7 +204,7 @@ public class class_496 extends class_5467 {
    }
 
    public static class_1313 method_2413() {
-      return class_5886.method_26846().method_5984(class_7331.field_37465, 0.15F).method_5984(class_7331.field_37462, 6.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37465, 0.15F).method_5984(class_7331.field_37462, 6.0);
    }
 
    public class_1360 method_2448() {

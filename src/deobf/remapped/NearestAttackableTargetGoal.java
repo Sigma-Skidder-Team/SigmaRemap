@@ -10,15 +10,15 @@ public class NearestAttackableTargetGoal<T extends class_5834> extends class_956
    public class_5834 field_20146;
    public class_4931 field_20144;
 
-   public NearestAttackableTargetGoal(class_5886 var1, Class<T> var2, boolean var3) {
+   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, boolean var3) {
       this(var1, var2, var3, false);
    }
 
-   public NearestAttackableTargetGoal(class_5886 var1, Class<T> var2, boolean var3, boolean var4) {
+   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, boolean var3, boolean var4) {
       this(var1, var2, 10, var3, var4, (Predicate<class_5834>)null);
    }
 
-   public NearestAttackableTargetGoal(class_5886 var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<class_5834> var6) {
+   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<class_5834> var6) {
       super(var1, var4, var5);
       this.field_20142 = var2;
       this.field_20145 = var3;

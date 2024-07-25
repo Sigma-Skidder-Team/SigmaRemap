@@ -443,7 +443,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
    private void method_43256() {
       Box var3 = new Box(this.method_37075()).method_18899(32.0, 10.0, 32.0);
       this.world
-         .<class_5886>method_25874(class_5886.class, var3)
+         .<MobEntity>method_25874(MobEntity.class, var3)
          .stream()
          .filter(var0 -> var0 instanceof class_6250)
          .forEach(var1 -> ((class_6250)var1).method_28526(this));

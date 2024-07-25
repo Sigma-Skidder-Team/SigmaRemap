@@ -3,7 +3,7 @@ package remapped;
 import java.util.EnumSet;
 
 public class class_1837 extends class_3599 {
-   private final class_5886 field_9305;
+   private final MobEntity field_9305;
    private final class_2354 field_9311;
    private class_5834 field_9303;
    private int field_9302 = -1;
@@ -21,7 +21,7 @@ public class class_1837 extends class_3599 {
    public class_1837(class_2354 var1, double var2, int var4, int var5, float var6) {
       if (var1 instanceof class_5834) {
          this.field_9311 = var1;
-         this.field_9305 = (class_5886)var1;
+         this.field_9305 = (MobEntity)var1;
          this.field_9308 = var2;
          this.field_9306 = var4;
          this.field_9310 = var5;

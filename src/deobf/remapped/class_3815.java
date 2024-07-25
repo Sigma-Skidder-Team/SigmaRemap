@@ -21,8 +21,8 @@ public final class class_3815 {
       Object2IntOpenHashMap var6 = new Object2IntOpenHashMap();
 
       for (Entity var8 : var1) {
-         if (var8 instanceof class_5886) {
-            class_5886 var9 = (class_5886)var8;
+         if (var8 instanceof MobEntity) {
+            MobEntity var9 = (MobEntity)var8;
             if (var9.method_26925() || var9.method_26915()) {
                continue;
             }
@@ -113,7 +113,7 @@ public final class class_3815 {
                      }
 
                      if (method_17775(var1, var0, var8, var9, var18, var12, var28) && var4.method_17245(var18.field_16053, var12, var2)) {
-                        class_5886 var30 = method_17777(var1, var18.field_16053);
+                        MobEntity var30 = method_17777(var1, var18.field_16053);
                         if (var30 == null) {
                            return;
                         }
@@ -178,13 +178,13 @@ public final class class_3815 {
    }
 
    @Nullable
-   private static class_5886 method_17777(class_6331 var0, EntityType<?> var1) {
+   private static MobEntity method_17777(class_6331 var0, EntityType<?> var1) {
       try {
          Entity var4 = var1.method_30484(var0);
-         if (!(var4 instanceof class_5886)) {
+         if (!(var4 instanceof MobEntity)) {
             throw new IllegalStateException("Trying to spawn a non-mob: " + class_8669.field_44400.method_39797(var1));
          } else {
-            return (class_5886)var4;
+            return (MobEntity)var4;
          }
       } catch (Exception var5) {
          field_18664.warn("Failed to create mob", var5);
@@ -192,7 +192,7 @@ public final class class_3815 {
       }
    }
 
-   private static boolean method_17771(class_6331 var0, class_5886 var1, double var2) {
+   private static boolean method_17771(class_6331 var0, MobEntity var1, double var2) {
       return var2 > (double)(var1.method_37387().method_30476().method_21200() * var1.method_37387().method_30476().method_21200()) && var1.method_26911(var2)
          ? false
          : var1.method_26889(var0, class_2417.field_12031) && var1.method_26855(var0);
@@ -314,8 +314,8 @@ public final class class_3815 {
                      }
 
                      var27.method_37144(var23, (double)var21.method_12165(), var25, var4.nextFloat() * 360.0F, 0.0F);
-                     if (var27 instanceof class_5886) {
-                        class_5886 var28 = (class_5886)var27;
+                     if (var27 instanceof MobEntity) {
+                        MobEntity var28 = (MobEntity)var27;
                         if (var28.method_26889(var0, class_2417.field_12034) && var28.method_26855(var0)) {
                            var13 = var28.method_26864(var0, var0.method_43368(var28.method_37075()), class_2417.field_12034, var13, (CompoundNBT)null);
                            var0.method_7065(var28);

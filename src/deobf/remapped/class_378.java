@@ -6,7 +6,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_378 extends class_5886 implements class_1869 {
+public class class_378 extends MobEntity implements class_1869 {
    private static final class_7821<Integer> field_1534 = class_8073.<Integer>method_36641(class_378.class, class_2734.field_13366);
    public float field_1537;
    public float field_1538;
@@ -26,7 +26,7 @@ public class class_378 extends class_5886 implements class_1869 {
       this.goalSelector.addGoal(5, new class_9836(this));
       this.targetSelector
          .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.method_37309() - this.method_37309()) <= 4.0));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    @Override
@@ -183,7 +183,7 @@ public class class_378 extends class_5886 implements class_1869 {
    @Override
    public void method_37183(Entity var1) {
       super.method_37183(var1);
-      if (var1 instanceof class_8127 && this.method_1857()) {
+      if (var1 instanceof IronGolemEntity && this.method_1857()) {
          this.method_1856((class_5834)var1);
       }
    }

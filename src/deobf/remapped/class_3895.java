@@ -70,8 +70,8 @@ public class class_3895 extends class_1173 implements class_1869, class_9479 {
          10,
          ImmutableList.of(
             new class_1005(1.0F),
-            new class_2214<class_5886>(class_3895::method_18039, new class_5488(40)),
-            new class_2214<class_5886>(class_3895::method_26449, new class_5488(15)),
+            new class_2214<MobEntity>(class_3895::method_18039, new class_5488(40)),
+            new class_2214<MobEntity>(class_3895::method_26449, new class_5488(15)),
             new class_5443()
          ),
          class_6044.field_30884

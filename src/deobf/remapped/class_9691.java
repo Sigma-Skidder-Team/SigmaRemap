@@ -4,12 +4,12 @@ import java.util.EnumSet;
 
 public class class_9691 extends class_3599 {
    private static String[] field_49304;
-   private final class_5886 field_49308;
+   private final MobEntity field_49308;
    private double field_49306;
    private double field_49305;
    private int field_49307;
 
-   public class_9691(class_5886 var1) {
+   public class_9691(MobEntity var1) {
       this.field_49308 = var1;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
    }

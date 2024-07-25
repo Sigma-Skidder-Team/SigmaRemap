@@ -5,11 +5,11 @@ import java.util.EnumSet;
 public class class_7037 extends class_3599 {
    private static String[] field_36245;
    private final class_6163 field_36246;
-   private final class_5886 field_36247;
+   private final MobEntity field_36247;
    private class_5834 field_36249;
    private int field_36248;
 
-   public class_7037(class_5886 var1) {
+   public class_7037(MobEntity var1) {
       this.field_36247 = var1;
       this.field_36246 = var1.world;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));

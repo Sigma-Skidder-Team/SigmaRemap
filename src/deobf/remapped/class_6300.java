@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_6300<T extends class_5886 & class_2354> extends class_2344<T> {
+public class class_6300<T extends MobEntity & class_2354> extends class_2344<T> {
    private static String[] field_32192;
 
    public class_6300() {

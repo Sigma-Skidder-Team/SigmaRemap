@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class class_6597 extends class_6127<class_5886> {
+public class class_6597 extends class_6127<MobEntity> {
    private static String[] field_34031;
 
    @Override
@@ -14,7 +14,7 @@ public class class_6597 extends class_6127<class_5886> {
       return ImmutableSet.of(class_6044.field_30869);
    }
 
-   public void method_30377(class_6331 var1, class_5886 var2) {
+   public void method_30377(class_6331 var1, MobEntity var2) {
       class_1150 var5 = var2.method_26525();
       List var6 = var1.<class_91>method_25869(class_91.class, var2.method_37241().method_18899(8.0, 4.0, 8.0), var0 -> true);
       var6.sort(Comparator.comparingDouble(var2::method_37275));

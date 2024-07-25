@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableMap;
 
-public class class_885<E extends class_5886> extends class_5920<E> {
+public class class_885<E extends MobEntity> extends class_5920<E> {
    private static String[] field_4555;
 
    public class_885() {

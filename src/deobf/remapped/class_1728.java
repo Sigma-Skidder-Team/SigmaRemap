@@ -36,7 +36,7 @@ public class class_1728 {
       }
    }
 
-   private void method_7731(class_5886 var1, class_5990 var2) {
+   private void method_7731(MobEntity var1, class_5990 var2) {
       EntityType var5 = var1.method_37387();
       BlockPos var6 = var1.method_37075();
       double var8;

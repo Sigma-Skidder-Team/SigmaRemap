@@ -2,9 +2,9 @@ package remapped;
 
 import java.util.EnumSet;
 
-public class class_4407 extends class_3599 {
+public class LookAtGoal extends class_3599 {
    private static String[] field_21570;
-   public final class_5886 field_21568;
+   public final MobEntity field_21568;
    public Entity field_21563;
    public final float field_21566;
    private int field_21564;
@@ -12,11 +12,11 @@ public class class_4407 extends class_3599 {
    public final Class<? extends class_5834> field_21567;
    public final class_4931 field_21569;
 
-   public class_4407(class_5886 var1, Class<? extends class_5834> var2, float var3) {
+   public LookAtGoal(MobEntity var1, Class<? extends class_5834> var2, float var3) {
       this(var1, var2, var3, 0.02F);
    }
 
-   public class_4407(class_5886 var1, Class<? extends class_5834> var2, float var3, float var4) {
+   public LookAtGoal(MobEntity var1, Class<? extends class_5834> var2, float var3, float var4) {
       this.field_21568 = var1;
       this.field_21567 = var2;
       this.field_21566 = var3;

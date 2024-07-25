@@ -365,8 +365,8 @@ public class class_6561 {
                float var9 = var6x.method_37152(var3);
                var9 += var6x.rotationYaw - var6x.method_37317(var4);
                var6x.method_37144(var15.field_7336, var15.field_7333, var15.field_7334, var9, var6x.rotationPitch);
-               if (var7 && var6x instanceof class_5886) {
-                  ((class_5886)var6x).method_26864(var1, var1.method_43368(new BlockPos(var15)), class_2417.field_12033, (class_8733)null, var13);
+               if (var7 && var6x instanceof MobEntity) {
+                  ((MobEntity)var6x).method_26864(var1, var1.method_43368(new BlockPos(var15)), class_2417.field_12033, (class_8733)null, var13);
                }
 
                var1.method_7065(var6x);

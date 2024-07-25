@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_2770 extends class_5886 implements class_1869 {
+public class class_2770 extends MobEntity implements class_1869 {
    private static final Logger field_13523 = LogManager.getLogger();
    public static final class_7821<Integer> field_13536 = class_8073.<Integer>method_36641(class_2770.class, class_2734.field_13366);
    private static final class_4931 field_13522 = new class_4931().method_22607(64.0);
@@ -62,7 +62,7 @@ public class class_2770 extends class_5886 implements class_1869 {
    }
 
    public static class_1313 method_12605() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 200.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 200.0);
    }
 
    @Override

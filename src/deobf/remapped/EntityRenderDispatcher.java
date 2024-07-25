@@ -384,8 +384,8 @@ public class EntityRenderDispatcher {
    private static void method_28137(class_7966 var0, class_2565 var1, Entity var2, float var3, float var4, class_4924 var5, float var6) {
       if (!Config.method_14424() || !class_6588.field_33671) {
          float var9 = var6;
-         if (var2 instanceof class_5886) {
-            class_5886 var25 = (class_5886)var2;
+         if (var2 instanceof MobEntity) {
+            MobEntity var25 = (MobEntity)var2;
             if (var25.method_26449()) {
                var9 = var6 * 0.5F;
             }

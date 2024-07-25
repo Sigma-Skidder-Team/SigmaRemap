@@ -19,11 +19,11 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
       this.goalSelector.addGoal(3, new class_2829(this, 1.0));
       this.goalSelector.addGoal(3, new class_6837<class_9408>(this, class_9408.class, 6.0F, 1.0, 1.2));
       this.goalSelector.addGoal(5, new class_2889(this, 1.0));
-      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(6, new class_9691(this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_3845>(this, class_3845.class, 10, true, false, class_3845.field_18768));
    }
 

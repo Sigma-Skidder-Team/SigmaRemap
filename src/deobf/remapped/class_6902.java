@@ -53,8 +53,8 @@ public class class_6902 {
             new class_3631(class_6044.field_30905, 200),
             new class_3669(EntityType.field_34306, 0.6F),
             new class_1005(1.0F),
-            new class_2214<class_5886>(class_6704::method_30714, new class_5488(40)),
-            new class_2214<class_5886>(class_1899::method_26449, new class_5488(15)),
+            new class_2214<MobEntity>(class_6704::method_30714, new class_5488(40)),
+            new class_2214<MobEntity>(class_1899::method_26449, new class_5488(15)),
             new class_5443(),
             new class_345<class_6704>(class_6902::method_31605, class_6044.field_30884)
          ),

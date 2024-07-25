@@ -1,7 +1,7 @@
 package remapped;
 
 public abstract class class_956 extends class_3599 {
-   public final class_5886 field_4915;
+   public final MobEntity field_4915;
    public final boolean field_4921;
    private final boolean field_4916;
    private int field_4917;
@@ -10,11 +10,11 @@ public abstract class class_956 extends class_3599 {
    public class_5834 field_4918;
    public int field_4922 = 60;
 
-   public class_956(class_5886 var1, boolean var2) {
+   public class_956(MobEntity var1, boolean var2) {
       this(var1, var2, false);
    }
 
-   public class_956(class_5886 var1, boolean var2, boolean var3) {
+   public class_956(MobEntity var1, boolean var2, boolean var3) {
       this.field_4915 = var1;
       this.field_4921 = var2;
       this.field_4916 = var3;

@@ -1,6 +1,6 @@
 package remapped;
 
-public abstract class class_7164<T extends class_5886, M extends class_6521<T>> extends class_6353<T, M> {
+public abstract class class_7164<T extends MobEntity, M extends class_6521<T>> extends class_6353<T, M> {
    public class_7164(EntityRenderDispatcher var1, M var2, float var3) {
       super(var1, (M)var2, var3);
    }

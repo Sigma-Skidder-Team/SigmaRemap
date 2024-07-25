@@ -65,8 +65,8 @@ public class class_5103<T extends Entity> extends class_5272<T> implements class
    @Override
    public void method_29700(T var1, float var2, float var3, float var4, float var5, float var6) {
       boolean var9 = false;
-      if (var1 instanceof class_405) {
-         var9 = ((class_405)var1).method_2026() > 0;
+      if (var1 instanceof AbstractVillagerEntity) {
+         var9 = ((AbstractVillagerEntity)var1).method_2026() > 0;
       }
 
       this.field_26323.field_8190 = var5 * (float) (Math.PI / 180.0);

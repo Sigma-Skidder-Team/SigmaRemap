@@ -117,14 +117,14 @@ public abstract class class_3521 {
                      }
 
                      var24.method_37144(var24.getPosX(), var24.method_37309(), var24.getPosZ(), var3.field_33033.nextFloat() * 360.0F, 0.0F);
-                     if (var24 instanceof class_5886) {
-                        class_5886 var26 = (class_5886)var24;
+                     if (var24 instanceof MobEntity) {
+                        MobEntity var26 = (MobEntity)var24;
                         if (!var26.method_26889(var3, class_2417.field_12024) || !var26.method_26855(var3)) {
                            continue;
                         }
 
                         if (this.field_17261.method_22391().method_25924() == 1 && this.field_17261.method_22391().contains("id", 8)) {
-                           ((class_5886)var24)
+                           ((MobEntity)var24)
                               .method_26864(var23, var3.method_43368(var24.method_37075()), class_2417.field_12024, (class_8733)null, (CompoundNBT)null);
                         }
                      }
@@ -135,8 +135,8 @@ public abstract class class_3521 {
                      }
 
                      var3.method_43364(2004, var4, 0);
-                     if (var24 instanceof class_5886) {
-                        ((class_5886)var24).method_26909();
+                     if (var24 instanceof MobEntity) {
+                        ((MobEntity)var24).method_26909();
                      }
 
                      var5 = true;
@@ -252,7 +252,7 @@ public abstract class class_3521 {
          this.field_17254 = EntityType.method_30455(this.field_17261.method_22391(), this.method_16252(), Function.<Entity>identity());
          if (this.field_17261.method_22391().method_25924() == 1
             && this.field_17261.method_22391().contains("id", 8)
-            && !(this.field_17254 instanceof class_5886)) {
+            && !(this.field_17254 instanceof MobEntity)) {
          }
       }
 

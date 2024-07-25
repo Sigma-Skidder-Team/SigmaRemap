@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_3964<T extends class_5886 & class_2354, M extends class_6521<T>> extends class_4171<T, M> {
+public class class_3964<T extends MobEntity & class_2354, M extends class_6521<T>> extends class_4171<T, M> {
    private static final Identifier field_19200 = new Identifier("textures/entity/skeleton/stray_overlay.png");
    private final class_6300<T> field_19199 = new class_6300<T>(0.25F, true);
 

@@ -98,7 +98,7 @@ public class class_449 extends class_1829 {
       this.goalSelector.addGoal(2, new class_8214(this, 4.0));
       this.goalSelector.addGoal(4, new class_6585(this, 1.0, 10));
       this.goalSelector.addGoal(4, new class_9691(this));
-      this.goalSelector.addGoal(5, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(5, new class_5131(this, 10));
       this.goalSelector.addGoal(6, new class_9037(this, 1.2F, true));
       this.goalSelector.addGoal(8, new class_7878(this, null));
@@ -108,7 +108,7 @@ public class class_449 extends class_1829 {
    }
 
    public static class_1313 method_2164() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5984(class_7331.field_37468, 10.0)
          .method_5984(class_7331.field_37465, 1.2F)
          .method_5984(class_7331.field_37462, 3.0);
@@ -162,7 +162,7 @@ public class class_449 extends class_1829 {
 
    @Override
    public boolean method_26612(ItemStack var1) {
-      class_6943 var4 = class_5886.method_26896(var1);
+      class_6943 var4 = MobEntity.method_26896(var1);
       return !this.method_26520(var4).method_28022() ? false : var4 == class_6943.field_35707 && super.method_26612(var1);
    }
 

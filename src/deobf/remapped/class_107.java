@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 
 public class class_107 extends class_7819 implements class_674 {
    private static final class_7821<Integer> field_267 = class_8073.<Integer>method_36641(class_107.class, class_2734.field_13366);
-   private static final Predicate<class_5886> field_271 = new class_5179();
+   private static final Predicate<MobEntity> field_271 = new class_5179();
    private static final class_2451 field_261 = class_4897.field_24763;
    private static final Set<class_2451> field_273 = Sets.newHashSet(
       new class_2451[]{class_4897.field_24621, class_4897.field_24435, class_4897.field_24480, class_4897.field_24883}
@@ -89,7 +89,7 @@ public class class_107 extends class_7819 implements class_674 {
    public void registerGoals() {
       this.goalSelector.addGoal(0, new class_518(this, 1.25));
       this.goalSelector.addGoal(0, new class_787(this));
-      this.goalSelector.addGoal(1, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(1, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(2, new class_8453(this));
       this.goalSelector.addGoal(2, new class_5591(this, 1.0, 5.0F, 1.0F, true));
       this.goalSelector.addGoal(2, new class_3539(this, 1.0));
@@ -98,7 +98,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    public static class_1313 method_331() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5984(class_7331.field_37468, 6.0)
          .method_5984(class_7331.field_37474, 0.4F)
          .method_5984(class_7331.field_37465, 0.2F);
@@ -165,9 +165,9 @@ public class class_107 extends class_7819 implements class_674 {
 
    public static boolean method_325(World var0, Entity var1) {
       if (var1.isAlive() && !var1.method_37378() && var0.field_33033.nextInt(2) == 0) {
-         List var4 = var0.<class_5886>method_25869(class_5886.class, var1.method_37241().method_18898(20.0), field_271);
+         List var4 = var0.<MobEntity>method_25869(MobEntity.class, var1.method_37241().method_18898(20.0), field_271);
          if (!var4.isEmpty()) {
-            class_5886 var5 = (class_5886)var4.get(var0.field_33033.nextInt(var4.size()));
+            MobEntity var5 = (MobEntity)var4.get(var0.field_33033.nextInt(var4.size()));
             if (!var5.method_37378()) {
                class_8461 var6 = method_326(var5.method_37387());
                var0.method_29528(

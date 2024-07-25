@@ -103,7 +103,7 @@ public class class_2960 extends class_3578 {
    public void method_26606() {
       super.method_26606();
       if (this.isAlive() && this.method_13537() > 0) {
-         for (class_5886 var4 : this.world.<class_5834>method_25869(class_5886.class, this.method_37241().method_18898(0.3), field_14454)) {
+         for (MobEntity var4 : this.world.<class_5834>method_25869(MobEntity.class, this.method_37241().method_18898(0.3), field_14454)) {
             if (var4.isAlive()) {
                this.method_13536(var4);
             }
@@ -111,7 +111,7 @@ public class class_2960 extends class_3578 {
       }
    }
 
-   private void method_13536(class_5886 var1) {
+   private void method_13536(MobEntity var1) {
       int var4 = this.method_13537();
       if (var1.attackEntityFrom(DamageSource.method_28345(this), (float)(1 + var4))) {
          var1.method_26558(new class_2250(Effects.field_19718, 60 * var4, 0));

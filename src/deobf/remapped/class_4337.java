@@ -5,11 +5,11 @@ import java.util.List;
 
 public class class_4337 extends class_956 {
    private static String[] field_21081;
-   private final class_8127 field_21080;
+   private final IronGolemEntity field_21080;
    private class_5834 field_21083;
    private final class_4931 field_21082 = new class_4931().method_22607(64.0);
 
-   public class_4337(class_8127 var1) {
+   public class_4337(IronGolemEntity var1) {
       super(var1, false, true);
       this.field_21080 = var1;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9563));

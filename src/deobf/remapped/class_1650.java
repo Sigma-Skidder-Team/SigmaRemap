@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
-public class class_1650 extends class_4171<class_8127, class_7946<class_8127>> {
+public class class_1650 extends class_4171<IronGolemEntity, class_7946<IronGolemEntity>> {
    private static final Map<class_440, Identifier> field_8577 = ImmutableMap.of(
       class_440.field_1840,
       new Identifier("textures/entity/iron_golem/iron_golem_crackiness_low.png"),
@@ -13,11 +13,11 @@ public class class_1650 extends class_4171<class_8127, class_7946<class_8127>> {
       new Identifier("textures/entity/iron_golem/iron_golem_crackiness_high.png")
    );
 
-   public class_1650(class_2514<class_8127, class_7946<class_8127>> var1) {
+   public class_1650(class_2514<IronGolemEntity, class_7946<IronGolemEntity>> var1) {
       super(var1);
    }
 
-   public void method_7375(class_7966 var1, class_2565 var2, int var3, class_8127 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method_7375(class_7966 var1, class_2565 var2, int var3, IronGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.method_37109()) {
          class_440 var13 = var4.method_36976();
          if (var13 != class_440.field_1847) {

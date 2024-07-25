@@ -86,7 +86,7 @@ public abstract class class_1173 extends class_4612 implements class_1869 {
    }
 
    public static class_1313 method_5201() {
-      return class_5886.method_26846().method_5983(class_7331.field_37462);
+      return MobEntity.method_26846().method_5983(class_7331.field_37462);
    }
 
    @Override

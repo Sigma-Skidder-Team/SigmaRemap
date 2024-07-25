@@ -2,7 +2,7 @@ package remapped;
 
 public class class_2833 {
    private static String[] field_13883;
-   public final class_5886 field_13879;
+   public final MobEntity field_13879;
    public double field_13884;
    public double field_13886;
    public double field_13880;
@@ -11,7 +11,7 @@ public class class_2833 {
    public float field_13882;
    public class_1737 field_13878 = class_1737.field_8945;
 
-   public class_2833(class_5886 var1) {
+   public class_2833(MobEntity var1) {
       this.field_13879 = var1;
    }
 

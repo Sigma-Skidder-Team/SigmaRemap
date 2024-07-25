@@ -32,7 +32,7 @@ public class class_6011 extends class_1829 {
    }
 
    public static class_1313 method_27440() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 10.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 10.0);
    }
 
    @Override

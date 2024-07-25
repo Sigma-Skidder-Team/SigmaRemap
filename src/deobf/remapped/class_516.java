@@ -1,6 +1,6 @@
 package remapped;
 
-public abstract class class_516 extends class_5886 {
+public abstract class class_516 extends MobEntity {
    public class_516(EntityType<? extends class_516> var1, World var2) {
       super(var1, var2);
    }

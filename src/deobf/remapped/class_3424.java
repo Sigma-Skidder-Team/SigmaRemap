@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableMap;
 
-public class class_3424<E extends class_5886 & class_3832, T extends class_5834> extends class_5920<E> {
+public class class_3424<E extends MobEntity & class_3832, T extends class_5834> extends class_5920<E> {
    private static String[] field_16857;
    private int field_16856;
    private class_2151 field_16858 = class_2151.field_10757;
@@ -74,7 +74,7 @@ public class class_3424<E extends class_5886 & class_3832, T extends class_5834>
       }
    }
 
-   private void method_15829(class_5886 var1, class_5834 var2) {
+   private void method_15829(MobEntity var1, class_5834 var2) {
       var1.method_26525().method_5105(class_6044.field_30874, new class_4843(var2, true));
    }
 

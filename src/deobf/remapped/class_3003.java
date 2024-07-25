@@ -126,39 +126,39 @@ public class class_3003 extends class_2451 {
       return this.field_14737;
    }
 
-   public Optional<class_5886> method_13714(
-           PlayerEntity var1, class_5886 var2, EntityType<? extends class_5886> var3, class_6331 var4, class_1343 var5, ItemStack var6
+   public Optional<MobEntity> method_13714(
+           PlayerEntity var1, MobEntity var2, EntityType<? extends MobEntity> var3, class_6331 var4, class_1343 var5, ItemStack var6
    ) {
       if (this.method_13717(var6.method_27990(), var3)) {
          Object var9;
          if (!(var2 instanceof class_1899)) {
-            var9 = (class_5886)var3.method_30484(var4);
+            var9 = (MobEntity)var3.method_30484(var4);
          } else {
             var9 = ((class_1899)var2).method_8638(var4, (class_1899)var2);
          }
 
          if (var9 != null) {
-            ((class_5886)var9).method_26910(true);
-            if (((class_5886)var9).method_26449()) {
-               ((class_5886)var9).method_37144(var5.method_61(), var5.method_60(), var5.method_62(), 0.0F, 0.0F);
+            ((MobEntity)var9).method_26910(true);
+            if (((MobEntity)var9).method_26449()) {
+               ((MobEntity)var9).method_37144(var5.method_61(), var5.method_60(), var5.method_62(), 0.0F, 0.0F);
                var4.method_7065((Entity)var9);
                if (var6.method_28018()) {
-                  ((class_5886)var9).method_37303(var6.method_28008());
+                  ((MobEntity)var9).method_37303(var6.method_28008());
                }
 
                if (!var1.playerAbilities.isCreativeMode) {
                   var6.method_27970(1);
                }
 
-               return Optional.<class_5886>of((class_5886)var9);
+               return Optional.<MobEntity>of((MobEntity)var9);
             } else {
-               return Optional.<class_5886>empty();
+               return Optional.<MobEntity>empty();
             }
          } else {
-            return Optional.<class_5886>empty();
+            return Optional.<MobEntity>empty();
          }
       } else {
-         return Optional.<class_5886>empty();
+         return Optional.<MobEntity>empty();
       }
    }
 }

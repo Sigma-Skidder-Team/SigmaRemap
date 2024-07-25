@@ -4,13 +4,13 @@ import com.google.common.collect.Sets;
 import java.util.HashSet;
 import javax.annotation.Nullable;
 
-public abstract class class_405 extends class_1899 implements class_5908, class_233 {
-   private static final class_7821<Integer> field_1686 = class_8073.<Integer>method_36641(class_405.class, class_2734.field_13366);
+public abstract class AbstractVillagerEntity extends class_1899 implements class_5908, class_233 {
+   private static final class_7821<Integer> field_1686 = class_8073.<Integer>method_36641(AbstractVillagerEntity.class, class_2734.field_13366);
    private PlayerEntity field_1684;
    public class_2795 field_1687;
    private final class_4657 field_1685 = new class_4657(8);
 
-   public class_405(EntityType<? extends class_405> var1, World var2) {
+   public AbstractVillagerEntity(EntityType<? extends AbstractVillagerEntity> var1, World var2) {
       super(var1, var2);
       this.method_26895(class_1108.field_6357, 16.0F);
       this.method_26895(class_1108.field_6352, -1.0F);

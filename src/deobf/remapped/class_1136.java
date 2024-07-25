@@ -7,7 +7,7 @@ import java.util.Random;
 public class class_1136 {
    private static final Map<EntityType<?>, class_8092> field_6455 = Maps.newHashMap();
 
-   private static <T extends class_5886> void method_4981(EntityType<T> var0, class_1257 var1, class_3801 var2, class_6147<T> var3) {
+   private static <T extends MobEntity> void method_4981(EntityType<T> var0, class_1257 var1, class_3801 var2, class_6147<T> var3) {
       class_8092 var6 = field_6455.put(var0, new class_8092(var2, var1, var3));
       if (var6 != null) {
          throw new IllegalStateException("Duplicate registration for type " + class_8669.field_44400.method_39797(var0));
@@ -47,12 +47,12 @@ public class class_1136 {
       method_4981(EntityType.field_34248, class_1257.field_6935, class_3801.field_18590, class_5467::method_24872);
       method_4981(EntityType.field_34308, class_1257.field_6935, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34264, class_1257.field_6935, class_3801.field_18590, class_2667::method_12024);
-      method_4981(EntityType.field_34310, class_1257.field_6935, class_3801.field_18590, class_5886::method_26908);
+      method_4981(EntityType.field_34310, class_1257.field_6935, class_3801.field_18590, MobEntity::method_26908);
       method_4981(EntityType.field_34281, class_1257.field_6935, class_3801.field_18590, class_4206::method_19574);
       method_4981(EntityType.field_34294, class_1257.field_6935, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34286, class_1257.field_6935, class_3801.field_18590, class_5467::method_24872);
       method_4981(EntityType.field_34266, class_1257.field_6935, class_3801.field_18590, class_8170::method_37471);
-      method_4981(EntityType.field_34298, class_1257.field_6935, class_3801.field_18590, class_5886::method_26908);
+      method_4981(EntityType.field_34298, class_1257.field_6935, class_3801.field_18590, MobEntity::method_26908);
       method_4981(EntityType.field_34327, class_1257.field_6935, class_3801.field_18590, class_5467::method_24872);
       method_4981(EntityType.field_34295, class_1257.field_6935, class_3801.field_18590, class_3252::method_14865);
       method_4981(EntityType.field_34269, class_1257.field_6935, class_3801.field_18590, class_4393::method_20460);
@@ -70,12 +70,12 @@ public class class_1136 {
       method_4981(EntityType.field_34241, class_1257.field_6935, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34261, class_1257.field_6935, class_3801.field_18590, class_5467::method_24872);
       method_4981(EntityType.field_34222, class_1257.field_6935, class_3801.field_18590, class_378::method_1853);
-      method_4981(EntityType.field_34253, class_1257.field_6935, class_3801.field_18590, class_5886::method_26908);
+      method_4981(EntityType.field_34253, class_1257.field_6935, class_3801.field_18590, MobEntity::method_26908);
       method_4981(EntityType.field_34223, class_1257.field_6935, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34322, class_1257.field_6935, class_3801.field_18590, class_4180::method_19449);
       method_4981(EntityType.field_34233, class_1257.field_6937, class_3801.field_18590, class_1775::method_7926);
       method_4981(EntityType.field_34283, class_1257.field_6935, class_3801.field_18590, class_3845::method_17861);
-      method_4981(EntityType.field_34276, class_1257.field_6935, class_3801.field_18590, class_5886::method_26908);
+      method_4981(EntityType.field_34276, class_1257.field_6935, class_3801.field_18590, MobEntity::method_26908);
       method_4981(EntityType.field_34220, class_1257.field_6935, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34212, class_1257.field_6935, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34317, class_1257.field_6935, class_3801.field_18590, class_1173::method_5199);
@@ -90,12 +90,12 @@ public class class_1136 {
       method_4981(EntityType.field_34250, class_1257.field_6939, class_3801.field_18590, class_5467::method_24872);
       method_4981(EntityType.field_34270, class_1257.field_6939, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34232, class_1257.field_6939, class_3801.field_18590, class_5467::method_24872);
-      method_4981(EntityType.field_34246, class_1257.field_6939, class_3801.field_18590, class_5886::method_26908);
+      method_4981(EntityType.field_34246, class_1257.field_6939, class_3801.field_18590, MobEntity::method_26908);
       method_4981(EntityType.field_34318, class_1257.field_6939, class_3801.field_18590, class_1173::method_5199);
-      method_4981(EntityType.field_34231, class_1257.field_6939, class_3801.field_18590, class_5886::method_26908);
+      method_4981(EntityType.field_34231, class_1257.field_6939, class_3801.field_18590, MobEntity::method_26908);
       method_4981(EntityType.field_34230, class_1257.field_6939, class_3801.field_18590, class_5467::method_24872);
       method_4981(EntityType.field_34277, class_1257.field_6939, class_3801.field_18590, class_1173::method_5199);
       method_4981(EntityType.field_34255, class_1257.field_6939, class_3801.field_18590, class_1173::method_5199);
-      method_4981(EntityType.field_34303, class_1257.field_6939, class_3801.field_18590, class_5886::method_26908);
+      method_4981(EntityType.field_34303, class_1257.field_6939, class_3801.field_18590, MobEntity::method_26908);
    }
 }

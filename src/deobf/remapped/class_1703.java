@@ -47,7 +47,7 @@ public class class_1703 extends class_1546 {
    }
 
    @Override
-   public class_1108 method_7011(class_6163 var1, int var2, int var3, int var4, class_5886 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public class_1108 method_7011(class_6163 var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       return this.method_7010(var1, var2, var3, var4);
    }
 

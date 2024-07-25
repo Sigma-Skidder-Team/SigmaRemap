@@ -55,7 +55,7 @@ public class class_5583 extends class_8990 {
       this.goalSelector.addGoal(9, new class_7037(this));
       this.goalSelector.addGoal(10, new class_9513(this, 0.8));
       this.goalSelector.addGoal(11, new class_2889(this, 0.8, 1.0000001E-5F));
-      this.goalSelector.addGoal(12, new class_4407(this, PlayerEntity.class, 10.0F));
+      this.goalSelector.addGoal(12, new LookAtGoal(this, PlayerEntity.class, 10.0F));
       this.targetSelector.addGoal(1, new class_5327<class_7272>(this, class_7272.class, false, (Predicate<class_5834>)null));
       this.targetSelector.addGoal(1, new class_5327<class_3845>(this, class_3845.class, false, class_3845.field_18768));
    }
@@ -175,7 +175,7 @@ public class class_5583 extends class_8990 {
    }
 
    public static class_1313 method_25354() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5984(class_7331.field_37468, 10.0)
          .method_5984(class_7331.field_37465, 0.3F)
          .method_5984(class_7331.field_37462, 3.0);

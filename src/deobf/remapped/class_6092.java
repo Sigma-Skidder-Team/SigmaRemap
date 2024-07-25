@@ -24,7 +24,7 @@ public class class_6092 extends class_608 implements class_1869 {
 
    @Override
    public void registerGoals() {
-      this.goalSelector.addGoal(1, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(1, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(4, new class_2478(this));
       this.goalSelector.addGoal(7, new class_864(this, null));
       this.goalSelector.addGoal(8, new class_9691(this));
@@ -75,7 +75,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    public static class_1313 method_27908() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 30.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 30.0);
    }
 
    @Override

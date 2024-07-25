@@ -37,7 +37,7 @@ public class class_9408 extends class_8990 implements class_6250 {
       this.goalSelector.addGoal(7, new class_9513(this, 1.0));
       this.goalSelector.addGoal(8, new class_2889(this, 1.0));
       this.goalSelector.addGoal(9, new class_5809(this, 8.0F));
-      this.goalSelector.addGoal(10, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(10, new class_9691(this));
       this.targetSelector.addGoal(1, new class_5184(this));
       this.targetSelector.addGoal(2, new class_3800(this));
@@ -50,7 +50,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    public static class_1313 method_43585() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5984(class_7331.field_37465, 0.3F)
          .method_5984(class_7331.field_37468, 8.0)
          .method_5984(class_7331.field_37462, 2.0);

@@ -32,8 +32,8 @@ public class class_8187 extends class_2451 {
       int var10 = var2.method_12165();
       int var11 = var2.method_12185();
 
-      for (class_5886 var13 : var1.<class_5886>method_25868(
-         class_5886.class,
+      for (MobEntity var13 : var1.<MobEntity>method_25868(
+         MobEntity.class,
          new Box((double)var9 - 7.0, (double)var10 - 7.0, (double)var11 - 7.0, (double)var9 + 7.0, (double)var10 + 7.0, (double)var11 + 7.0)
       )) {
          if (var13.method_26922() == var0) {

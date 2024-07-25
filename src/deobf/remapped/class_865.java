@@ -120,7 +120,7 @@ public class class_865 {
                      if (!this.field_4477.method_25539(var3)) {
                         return false;
                      } else if (this.field_4478.method_3736(var1, var2, var3.method_37243())) {
-                        if (!this.field_4490.method_3736(var1, var2, !(var3 instanceof class_5886) ? null : ((class_5886)var3).method_17809())) {
+                        if (!this.field_4490.method_3736(var1, var2, !(var3 instanceof MobEntity) ? null : ((MobEntity)var3).method_17809())) {
                            return false;
                         } else {
                            if (this.field_4484 != null) {

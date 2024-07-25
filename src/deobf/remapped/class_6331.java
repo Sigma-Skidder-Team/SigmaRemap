@@ -810,8 +810,8 @@ public class class_6331 extends World implements class_700 {
       }
 
       this.method_28959().method_4866(var1);
-      if (var1 instanceof class_5886) {
-         this.field_32338.remove(((class_5886)var1).method_26927());
+      if (var1 instanceof MobEntity) {
+         this.field_32338.remove(((MobEntity)var1).method_26927());
       }
    }
 
@@ -826,8 +826,8 @@ public class class_6331 extends World implements class_700 {
 
          this.field_32341.put(var1.method_37328(), var1);
          this.method_28945().method_10180(var1);
-         if (var1 instanceof class_5886) {
-            this.field_32338.add(((class_5886)var1).method_26927());
+         if (var1 instanceof MobEntity) {
+            this.field_32338.add(((MobEntity)var1).method_26927());
          }
       } else {
          this.field_32336.add(var1);

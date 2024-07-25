@@ -2,7 +2,7 @@ package remapped;
 
 import com.google.common.collect.ImmutableList;
 
-public class class_7019<T extends class_5886 & class_9479> extends class_1498<T> {
+public class class_7019<T extends MobEntity & class_9479> extends class_1498<T> {
    private static String[] field_35980;
    private final class_1549 field_35982;
    private final class_1549 field_35977;

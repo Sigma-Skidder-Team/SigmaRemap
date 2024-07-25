@@ -4,7 +4,7 @@ public class class_9650 extends class_2833 {
    private static String[] field_49155;
    private float field_49156;
 
-   public class_9650(class_9825 var1, class_5886 var2) {
+   public class_9650(class_9825 var1, MobEntity var2) {
       super(var2);
       this.field_49154 = var1;
       this.field_49156 = 0.1F;

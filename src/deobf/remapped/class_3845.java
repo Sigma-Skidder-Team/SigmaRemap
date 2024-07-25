@@ -128,12 +128,12 @@ public class class_3845 extends class_5467 {
       this.goalSelector.addGoal(3, new class_6549(this, 1.0, null));
       this.goalSelector.addGoal(4, new class_7698(this, 1.0));
       this.goalSelector.addGoal(7, new class_59(this, 1.0));
-      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(9, new class_8373(this, 1.0, 100, null));
    }
 
    public static class_1313 method_17860() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 30.0).method_5984(class_7331.field_37465, 0.25);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 30.0).method_5984(class_7331.field_37465, 0.25);
    }
 
    @Override

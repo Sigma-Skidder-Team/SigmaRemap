@@ -31,7 +31,7 @@ public class class_2811 extends class_1173 {
    @Override
    public void registerGoals() {
       this.goalSelector.addGoal(4, new class_3607(this, this, 1.0, 3));
-      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
       this.method_12800();
    }
@@ -42,8 +42,8 @@ public class class_2811 extends class_1173 {
       this.goalSelector.addGoal(7, new class_2889(this, 1.0));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp(class_1918.class));
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_405>(this, class_405.class, false));
-      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<class_8127>(this, class_8127.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<AbstractVillagerEntity>(this, AbstractVillagerEntity.class, false));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
       this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<class_3845>(this, class_3845.class, 10, true, false, class_3845.field_18768));
    }
 

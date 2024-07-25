@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.Optional;
 
-public class class_8418 extends class_5920<class_5886> {
+public class class_8418 extends class_5920<MobEntity> {
    private static String[] field_43048;
    private final float field_43051;
    private BlockPos field_43050;
@@ -16,11 +16,11 @@ public class class_8418 extends class_5920<class_5886> {
       this.field_43051 = var1;
    }
 
-   public boolean method_38752(class_6331 var1, class_5886 var2) {
+   public boolean method_38752(class_6331 var1, MobEntity var2) {
       return var2.method_26449() && this.method_38746(var1, var2);
    }
 
-   public void method_38743(class_6331 var1, class_5886 var2, long var3) {
+   public void method_38743(class_6331 var1, MobEntity var2, long var3) {
       super.method_27080(var1, var2, var3);
       this.method_38753(var2).ifPresent(var3x -> {
          this.field_43050 = var3x;
@@ -31,7 +31,7 @@ public class class_8418 extends class_5920<class_5886> {
       });
    }
 
-   public void method_38747(class_6331 var1, class_5886 var2, long var3) {
+   public void method_38747(class_6331 var1, MobEntity var2, long var3) {
       super.method_27081(var1, var2, var3);
       this.field_43050 = null;
       this.field_43047 = 0;
@@ -39,7 +39,7 @@ public class class_8418 extends class_5920<class_5886> {
       this.field_43046 = 0;
    }
 
-   public boolean method_38751(class_6331 var1, class_5886 var2, long var3) {
+   public boolean method_38751(class_6331 var1, MobEntity var2, long var3) {
       return var2.method_26449()
          && this.field_43050 != null
          && this.method_38749(var1, this.field_43050)
@@ -52,7 +52,7 @@ public class class_8418 extends class_5920<class_5886> {
       return false;
    }
 
-   public void method_38742(class_6331 var1, class_5886 var2, long var3) {
+   public void method_38742(class_6331 var1, MobEntity var2, long var3) {
       if (this.method_38741(var1, var2)) {
          if (this.field_43046 <= 0) {
             if (this.method_38745(var1, var2)) {
@@ -68,21 +68,21 @@ public class class_8418 extends class_5920<class_5886> {
       }
    }
 
-   private void method_38748(class_5886 var1, BlockPos var2) {
+   private void method_38748(MobEntity var1, BlockPos var2) {
       var1.method_26525().method_5105(class_6044.field_30889, new class_6651(var2, this.field_43051, 0));
    }
 
-   private boolean method_38746(class_6331 var1, class_5886 var2) {
+   private boolean method_38746(class_6331 var1, MobEntity var2) {
       return this.method_38741(var1, var2) || this.method_38753(var2).isPresent();
    }
 
-   private boolean method_38741(class_6331 var1, class_5886 var2) {
+   private boolean method_38741(class_6331 var1, MobEntity var2) {
       BlockPos var5 = var2.method_37075();
       BlockPos var6 = var5.method_6100();
       return this.method_38749(var1, var5) || this.method_38749(var1, var6);
    }
 
-   private boolean method_38745(class_6331 var1, class_5886 var2) {
+   private boolean method_38745(class_6331 var1, MobEntity var2) {
       return this.method_38749(var1, var2.method_37075());
    }
 
@@ -90,15 +90,15 @@ public class class_8418 extends class_5920<class_5886> {
       return var1.method_28262(var2).method_8349(class_2351.field_11784);
    }
 
-   private Optional<BlockPos> method_38753(class_5886 var1) {
+   private Optional<BlockPos> method_38753(MobEntity var1) {
       return var1.method_26525().<BlockPos>method_5138(class_6044.field_30910);
    }
 
-   private boolean method_38744(class_6331 var1, class_5886 var2) {
+   private boolean method_38744(class_6331 var1, MobEntity var2) {
       return !this.method_38741(var1, var2) && this.field_43047 <= 0;
    }
 
-   private boolean method_38750(class_6331 var1, class_5886 var2) {
+   private boolean method_38750(class_6331 var1, MobEntity var2) {
       return this.method_38741(var1, var2) && this.field_43049 <= 0;
    }
 }

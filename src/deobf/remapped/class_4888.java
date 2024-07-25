@@ -41,7 +41,7 @@ public class class_4888 extends class_380 implements class_9866 {
             }
 
             BlockPos var12 = var5.method_31795(1, 2, 0).method_41966();
-            class_8127 var15 = EntityType.field_34298.method_30484(var1);
+            IronGolemEntity var15 = EntityType.field_34298.method_30484(var1);
             var15.method_36979(true);
             var15.method_37144((double)var12.method_12173() + 0.5, (double)var12.method_12165() + 0.05, (double)var12.method_12185() + 0.5, 0.0F, 0.0F);
             var1.method_7509(var15);

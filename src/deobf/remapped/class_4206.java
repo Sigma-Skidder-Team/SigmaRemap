@@ -59,7 +59,7 @@ public class class_4206 extends class_516 implements class_1869 {
    }
 
    public static class_1313 method_19571() {
-      return class_5886.method_26846().method_5984(class_7331.field_37468, 10.0).method_5984(class_7331.field_37471, 100.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37468, 10.0).method_5984(class_7331.field_37471, 100.0);
    }
 
    @Override

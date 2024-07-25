@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 public class class_5661 extends class_6967 {
    private static String[] field_28703;
    private final class_6414 field_28701;
-   private final class_5886 field_28700;
+   private final MobEntity field_28700;
    private int field_28702;
 
    public class_5661(class_6414 var1, class_4612 var2, double var3, int var5) {

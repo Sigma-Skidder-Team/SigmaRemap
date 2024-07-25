@@ -51,7 +51,7 @@ public class class_2987 extends class_6127<class_5834> {
                            var10 = Optional.<class_5834>of(var17);
                         }
                      } else {
-                        var6 = Optional.<class_5834>of((class_5886)var17);
+                        var6 = Optional.<class_5834>of((MobEntity)var17);
                      }
                   } else {
                      PlayerEntity var22 = (PlayerEntity)var17;

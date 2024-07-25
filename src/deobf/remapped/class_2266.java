@@ -14,7 +14,7 @@ public class class_2266 extends class_1546 {
    private final Object2BooleanMap<Box> field_11278 = new Object2BooleanOpenHashMap();
 
    @Override
-   public void method_7014(class_9525 var1, class_5886 var2) {
+   public void method_7014(class_9525 var1, MobEntity var2) {
       super.method_7014(var1, var2);
       this.field_11276 = var2.method_26931(class_1108.field_6359);
    }
@@ -321,7 +321,7 @@ public class class_2266 extends class_1546 {
    }
 
    @Override
-   public class_1108 method_7011(class_6163 var1, int var2, int var3, int var4, class_5886 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public class_1108 method_7011(class_6163 var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet var13 = EnumSet.<class_1108>noneOf(class_1108.class);
       class_1108 var14 = class_1108.field_6365;
       BlockPos var15 = var5.method_37075();
@@ -403,11 +403,11 @@ public class class_2266 extends class_1546 {
       return var5;
    }
 
-   private class_1108 method_10456(class_5886 var1, BlockPos var2) {
+   private class_1108 method_10456(MobEntity var1, BlockPos var2) {
       return this.method_10454(var1, var2.method_12173(), var2.method_12165(), var2.method_12185());
    }
 
-   private class_1108 method_10454(class_5886 var1, int var2, int var3, int var4) {
+   private class_1108 method_10454(MobEntity var1, int var2, int var3, int var4) {
       return (class_1108)this.field_11279
          .computeIfAbsent(
             BlockPos.method_6107(var2, var3, var4),

@@ -43,7 +43,7 @@ public class class_6044<U> {
    public static final class_6044<Long> field_30881 = method_27595("last_worked_at_poi", Codec.LONG);
    public static final class_6044<class_1899> field_30885 = method_27596("nearest_visible_adult");
    public static final class_6044<class_91> field_30869 = method_27596("nearest_visible_wanted_item");
-   public static final class_6044<class_5886> field_30891 = method_27596("nearest_visible_nemesis");
+   public static final class_6044<MobEntity> field_30891 = method_27596("nearest_visible_nemesis");
    public static final class_6044<UUID> field_30866 = method_27595("angry_at", class_5753.field_29117);
    public static final class_6044<Boolean> field_30880 = method_27595("universal_anger", Codec.BOOL);
    public static final class_6044<Boolean> field_30897 = method_27595("admiring_item", Codec.BOOL);

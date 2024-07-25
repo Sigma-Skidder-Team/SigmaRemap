@@ -2,7 +2,7 @@ package remapped;
 
 public class class_3711 {
    private static String[] field_18210;
-   public final class_5886 field_18205;
+   public final MobEntity field_18205;
    public float field_18208;
    public float field_18207;
    public boolean field_18204;
@@ -10,7 +10,7 @@ public class class_3711 {
    public double field_18203;
    public double field_18206;
 
-   public class_3711(class_5886 var1) {
+   public class_3711(MobEntity var1) {
       this.field_18205 = var1;
    }
 

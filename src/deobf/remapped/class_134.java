@@ -373,10 +373,10 @@ public class class_134 {
    }
 
    private static boolean method_503(class_2599 var0, Entity var1) {
-      if (!(var1 instanceof class_5886)) {
+      if (!(var1 instanceof MobEntity)) {
          return false;
       } else {
-         class_5886 var4 = (class_5886)var1;
+         MobEntity var4 = (MobEntity)var1;
          return !var4.method_26449()
             || !var4.isAlive()
             || method_543(var0)
@@ -413,7 +413,7 @@ public class class_134 {
                }
             }
 
-            Optional var7 = var3.<class_5886>method_5138(class_6044.field_30891);
+            Optional var7 = var3.<MobEntity>method_5138(class_6044.field_30891);
             if (var7.isPresent()) {
                return var7;
             } else {

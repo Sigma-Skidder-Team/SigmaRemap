@@ -3,7 +3,7 @@ package remapped;
 public class class_9052 extends class_8985 {
    private static String[] field_46358;
 
-   public class_9052(class_5886 var1, World var2) {
+   public class_9052(MobEntity var1, World var2) {
       super(var1, var2);
    }
 

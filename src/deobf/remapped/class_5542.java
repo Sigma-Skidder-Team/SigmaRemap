@@ -201,7 +201,7 @@ public class class_5542 extends class_5467 {
    }
 
    public static class_1313 method_25204() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5984(class_7331.field_37465, 0.3F)
          .method_5984(class_7331.field_37468, 10.0)
          .method_5984(class_7331.field_37471, 32.0)
@@ -375,7 +375,7 @@ public class class_5542 extends class_5467 {
 
    @Override
    public boolean method_26612(ItemStack var1) {
-      class_6943 var4 = class_5886.method_26896(var1);
+      class_6943 var4 = MobEntity.method_26896(var1);
       return !this.method_26520(var4).method_28022() ? false : var4 == class_6943.field_35707 && super.method_26612(var1);
    }
 
@@ -470,7 +470,7 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public void method_26874(PlayerEntity var1, class_5886 var2) {
+   public void method_26874(PlayerEntity var1, MobEntity var2) {
       ((class_5542)var2).method_25189(var1.method_37328());
    }
 

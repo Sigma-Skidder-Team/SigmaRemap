@@ -18,7 +18,7 @@ public class class_1327 extends class_7934 {
 
    @Override
    public boolean method_35889(ItemStack var1) {
-      return this.field_7298 == class_5886.method_26896(var1);
+      return this.field_7298 == MobEntity.method_26896(var1);
    }
 
    @Override

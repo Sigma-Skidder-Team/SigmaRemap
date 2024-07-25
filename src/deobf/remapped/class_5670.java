@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_5670 extends class_4407 {
+public class class_5670 extends LookAtGoal {
    private static String[] field_28748;
    private final class_496 field_28747;
 

@@ -34,8 +34,8 @@ public class class_337 extends class_1173 {
       this.goalSelector.addGoal(4, new class_9868(this));
       this.goalSelector.addGoal(5, var3);
       this.goalSelector.addGoal(7, this.field_1260);
-      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
-      this.goalSelector.addGoal(8, new class_4407(this, class_337.class, 12.0F, 0.01F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, class_337.class, 12.0F, 0.01F));
       this.goalSelector.addGoal(9, new class_9691(this));
       this.field_1260.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));
       var3.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560));

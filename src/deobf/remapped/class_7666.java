@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_7666 extends class_405 implements class_5545, class_3449 {
+public class class_7666 extends AbstractVillagerEntity implements class_5545, class_3449 {
    private static final class_7821<class_3047> field_38975 = class_8073.<class_3047>method_36641(class_7666.class, class_2734.field_13360);
    public static final Map<class_2451, Integer> field_38968 = ImmutableMap.of(
       class_4897.field_24456, 4, class_4897.field_25273, 1, class_4897.field_25136, 1, class_4897.field_24362, 1
@@ -167,7 +167,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    }
 
    public static class_1313 method_34690() {
-      return class_5886.method_26846().method_5984(class_7331.field_37465, 0.5).method_5984(class_7331.field_37471, 48.0);
+      return MobEntity.method_26846().method_5984(class_7331.field_37465, 0.5).method_5984(class_7331.field_37471, 48.0);
    }
 
    public boolean method_34698() {
@@ -789,7 +789,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          List var8 = var1.<class_7666>method_25868(class_7666.class, var7);
          List var9 = var8.stream().filter(var2x -> var2x.method_34697(var2)).limit(5L).collect(Collectors.toList());
          if (var9.size() >= var4) {
-            class_8127 var10 = this.method_34714(var1);
+            IronGolemEntity var10 = this.method_34714(var1);
             if (var10 != null) {
                var8.forEach(class_9886::method_45543);
             }
@@ -802,7 +802,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    }
 
    @Nullable
-   private class_8127 method_34714(class_6331 var1) {
+   private IronGolemEntity method_34714(class_6331 var1) {
       BlockPos var4 = this.method_37075();
 
       for (int var5 = 0; var5 < 10; var5++) {
@@ -810,7 +810,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          double var8 = (double)(var1.field_33033.nextInt(16) - 8);
          BlockPos var10 = this.method_34701(var4, var6, var8);
          if (var10 != null) {
-            class_8127 var11 = EntityType.field_34298
+            IronGolemEntity var11 = EntityType.field_34298
                .method_30483(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, class_2417.field_12027, false, false);
             if (var11 != null) {
                if (var11.method_26889(var1, class_2417.field_12027) && var11.method_26855(var1)) {

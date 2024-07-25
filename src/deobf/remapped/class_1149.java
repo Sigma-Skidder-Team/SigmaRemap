@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.Random;
 
-public class class_1149<E extends class_5886> extends class_5920<E> {
+public class class_1149<E extends MobEntity> extends class_5920<E> {
    private static String[] field_6536;
    private final int field_6535;
    private final float field_6537;
@@ -25,7 +25,7 @@ public class class_1149<E extends class_5886> extends class_5920<E> {
       this.field_6537 = var2;
    }
 
-   public void method_5094(class_6331 var1, class_5886 var2, long var3) {
+   public void method_5094(class_6331 var1, MobEntity var2, long var3) {
       BlockPos var7 = method_5092(var2);
       boolean var8 = var7.method_12171(var2.method_37075(), (double)this.field_6535);
       if (!var8) {
@@ -33,7 +33,7 @@ public class class_1149<E extends class_5886> extends class_5920<E> {
       }
    }
 
-   private static BlockPos method_5091(class_5886 var0, BlockPos var1) {
+   private static BlockPos method_5091(MobEntity var0, BlockPos var1) {
       Random var4 = var0.world.field_33033;
       return var1.method_6104(method_5093(var4), 0, method_5093(var4));
    }
@@ -42,7 +42,7 @@ public class class_1149<E extends class_5886> extends class_5920<E> {
       return var0.nextInt(3) - 1;
    }
 
-   private static BlockPos method_5092(class_5886 var0) {
+   private static BlockPos method_5092(MobEntity var0) {
       return var0.method_26525().<BlockPos>method_5138(class_6044.field_30895).get();
    }
 }

@@ -2,11 +2,11 @@ package remapped;
 
 public class class_1902 {
    private static String[] field_9710;
-   private final class_5886 field_9712;
+   private final MobEntity field_9712;
    private int field_9711;
    private float field_9709;
 
-   public class_1902(class_5886 var1) {
+   public class_1902(MobEntity var1) {
       this.field_9712 = var1;
    }
 
@@ -48,7 +48,7 @@ public class class_1902 {
    }
 
    private boolean method_8647() {
-      return this.field_9712.method_37114().isEmpty() || !(this.field_9712.method_37114().get(0) instanceof class_5886);
+      return this.field_9712.method_37114().isEmpty() || !(this.field_9712.method_37114().get(0) instanceof MobEntity);
    }
 
    private boolean method_8643() {

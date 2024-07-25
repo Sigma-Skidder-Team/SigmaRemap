@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_2160<T extends class_5886, M extends class_2344<T>> extends class_7164<T, M> {
+public class class_2160<T extends MobEntity, M extends class_2344<T>> extends class_7164<T, M> {
    private static final Identifier field_10775 = new Identifier("textures/entity/steve.png");
 
    public class_2160(EntityRenderDispatcher var1, M var2, float var3) {

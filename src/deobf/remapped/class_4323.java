@@ -4,7 +4,7 @@ public class class_4323 extends class_3711 {
    private static String[] field_21034;
    private final int field_21035;
 
-   public class_4323(class_5886 var1, int var2) {
+   public class_4323(MobEntity var1, int var2) {
       super(var1);
       this.field_21035 = var2;
    }

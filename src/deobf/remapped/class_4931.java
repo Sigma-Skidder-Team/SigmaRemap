@@ -81,7 +81,7 @@ public class class_4931 {
                         }
                      }
 
-                     if (!this.field_25527 && var1 instanceof class_5886 && !((class_5886)var1).method_26928().method_36736(var2)) {
+                     if (!this.field_25527 && var1 instanceof MobEntity && !((MobEntity)var1).method_26928().method_36736(var2)) {
                         return false;
                      }
                   }

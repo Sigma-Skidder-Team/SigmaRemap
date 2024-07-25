@@ -25,7 +25,7 @@ public class class_3191 {
       var7.field_8191 = class_9299.method_42795(var10, var7.field_8191, (float) (-Math.PI / 2));
    }
 
-   public static <T extends class_5886> void method_14684(class_1549 var0, class_1549 var1, T var2, float var3, float var4) {
+   public static <T extends MobEntity> void method_14684(class_1549 var0, class_1549 var1, T var2, float var3, float var4) {
       float var7 = class_9299.method_42818(var3 * (float) Math.PI);
       float var8 = class_9299.method_42818((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
       var0.field_8185 = 0.0F;

@@ -4,7 +4,7 @@ public class class_8985 extends class_1249 {
    private static String[] field_46022;
    private boolean field_46023;
 
-   public class_8985(class_5886 var1, World var2) {
+   public class_8985(MobEntity var1, World var2) {
       super(var1, var2);
    }
 

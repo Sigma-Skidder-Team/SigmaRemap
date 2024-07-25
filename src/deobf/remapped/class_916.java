@@ -996,7 +996,7 @@ public class class_916 extends class_4037 implements class_6510 {
          Entity var10 = class_6650.method_30547(var9);
          if (var10 != var1 && var10.field_41742 == var3.method_27352().field_10328 && var10.field_41714 == var3.method_27352().field_10327) {
             var9.method_30550(var1);
-            if (var10 instanceof class_5886 && ((class_5886)var10).method_26922() != null) {
+            if (var10 instanceof MobEntity && ((MobEntity)var10).method_26922() != null) {
                var6.add(var10);
             }
 
@@ -1008,7 +1008,7 @@ public class class_916 extends class_4037 implements class_6510 {
 
       if (!var6.isEmpty()) {
          for (Entity var13 : var6) {
-            var1.field_47794.method_4156(new class_2708(var13, ((class_5886)var13).method_26922()));
+            var1.field_47794.method_4156(new class_2708(var13, ((MobEntity)var13).method_26922()));
          }
       }
 

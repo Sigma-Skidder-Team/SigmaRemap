@@ -6,11 +6,11 @@ import java.util.function.Predicate;
 public class class_5296 extends class_3599 {
    private static String[] field_27051;
    private static final Predicate<class_2522> field_27052 = class_2263.method_10400(class_4783.field_23868);
-   private final class_5886 field_27053;
+   private final MobEntity field_27053;
    private final World field_27050;
    private int field_27054;
 
-   public class_5296(class_5886 var1) {
+   public class_5296(MobEntity var1) {
       this.field_27053 = var1;
       this.field_27050 = var1.world;
       this.method_16800(EnumSet.<class_1891>of(class_1891.field_9564, class_1891.field_9560, class_1891.field_9561));

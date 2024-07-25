@@ -52,7 +52,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       this.goalSelector.addGoal(2, new class_9513(this, 1.0, class_4109.class));
       this.goalSelector.addGoal(4, new class_8676(this, 1.0));
       this.goalSelector.addGoal(6, new class_2889(this, 0.7));
-      this.goalSelector.addGoal(7, new class_4407(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
       this.method_19063();
    }
@@ -321,7 +321,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    public static class_1313 method_19064() {
-      return class_5886.method_26846()
+      return MobEntity.method_26846()
          .method_5983(class_7331.field_37464)
          .method_5984(class_7331.field_37468, 53.0)
          .method_5984(class_7331.field_37465, 0.225F);
@@ -863,8 +863,8 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    @Override
    public void method_37340(Entity var1) {
       super.method_37340(var1);
-      if (var1 instanceof class_5886) {
-         class_5886 var4 = (class_5886)var1;
+      if (var1 instanceof MobEntity) {
+         MobEntity var4 = (MobEntity)var1;
          this.field_29605 = var4.field_29605;
       }
 

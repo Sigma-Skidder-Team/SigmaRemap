@@ -88,7 +88,7 @@ public class class_3683 extends class_3954<class_6946> {
       if (var6 != null && var6.method_35884()) {
          ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
-         class_6943 var8 = class_5886.method_26896(var5);
+         class_6943 var8 = MobEntity.method_26896(var5);
          if (var2 != 0) {
             if (var2 >= 1 && var2 < 5) {
                if (!this.method_18892(var7, 9, 45, false)) {

@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.function.Predicate;
 
-public class class_7018<T extends class_5886> extends class_3599 {
+public class class_7018<T extends MobEntity> extends class_3599 {
    private static String[] field_35968;
    private final T field_35971;
    private final ItemStack field_35970;

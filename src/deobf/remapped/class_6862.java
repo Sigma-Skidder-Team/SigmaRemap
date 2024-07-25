@@ -2,7 +2,7 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public class class_6862 extends class_405 {
+public class class_6862 extends AbstractVillagerEntity {
    private BlockPos field_35357;
    private int field_35359;
 
@@ -45,7 +45,7 @@ public class class_6862 extends class_405 {
       this.goalSelector.addGoal(4, new class_3537(this, 0.35));
       this.goalSelector.addGoal(8, new class_2889(this, 0.35));
       this.goalSelector.addGoal(9, new class_7699(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.goalSelector.addGoal(10, new class_4407(this, class_5886.class, 8.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
    }
 
    @Nullable

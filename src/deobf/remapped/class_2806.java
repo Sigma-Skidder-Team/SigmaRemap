@@ -20,7 +20,7 @@ public class class_2806 extends class_1173 {
       this.goalSelector.addGoal(4, new class_666(this));
       this.goalSelector.addGoal(5, new class_3537(this, 1.0));
       this.goalSelector.addGoal(7, new class_2889(this, 1.0, 0.0F));
-      this.goalSelector.addGoal(8, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(8, new class_9691(this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this).setCallsForHelp());
       this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));

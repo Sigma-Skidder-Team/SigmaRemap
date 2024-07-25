@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class class_5443<E extends class_5886> extends class_5920<E> {
+public class class_5443<E extends MobEntity> extends class_5920<E> {
    private static String[] field_27718;
    private final Predicate<class_5834> field_27719;
 

@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.Optional;
 
-public class class_1657 extends class_5920<class_5886> {
+public class class_1657 extends class_5920<MobEntity> {
    private static String[] field_8598;
    private int field_8600;
    private class_3998 field_8601;
@@ -24,7 +24,7 @@ public class class_1657 extends class_5920<class_5886> {
       );
    }
 
-   public boolean method_7389(class_6331 var1, class_5886 var2) {
+   public boolean method_7389(class_6331 var1, MobEntity var2) {
       if (this.field_8600 <= 0) {
          class_1150 var5 = var2.method_26525();
          class_6651 var6 = var5.<class_6651>method_5138(class_6044.field_30889).get();
@@ -46,7 +46,7 @@ public class class_1657 extends class_5920<class_5886> {
       }
    }
 
-   public boolean method_7388(class_6331 var1, class_5886 var2, long var3) {
+   public boolean method_7388(class_6331 var1, MobEntity var2, long var3) {
       if (this.field_8601 != null && this.field_8597 != null) {
          Optional var7 = var2.method_26525().<class_6651>method_5138(class_6044.field_30889);
          class_1249 var8 = var2.method_26927();
@@ -56,7 +56,7 @@ public class class_1657 extends class_5920<class_5886> {
       }
    }
 
-   public void method_7386(class_6331 var1, class_5886 var2, long var3) {
+   public void method_7386(class_6331 var1, MobEntity var2, long var3) {
       if (var2.method_26525().method_5117(class_6044.field_30889)
          && !this.method_7387(var2, var2.method_26525().<class_6651>method_5138(class_6044.field_30889).get())
          && var2.method_26927().method_5597()) {
@@ -69,12 +69,12 @@ public class class_1657 extends class_5920<class_5886> {
       this.field_8601 = null;
    }
 
-   public void method_7385(class_6331 var1, class_5886 var2, long var3) {
+   public void method_7385(class_6331 var1, MobEntity var2, long var3) {
       var2.method_26525().method_5105(class_6044.field_30888, this.field_8601);
       var2.method_26927().method_5607(this.field_8601, (double)this.field_8599);
    }
 
-   public void method_7384(class_6331 var1, class_5886 var2, long var3) {
+   public void method_7384(class_6331 var1, MobEntity var2, long var3) {
       class_3998 var7 = var2.method_26927().method_5594();
       class_1150 var8 = var2.method_26525();
       if (this.field_8601 != var7) {
@@ -91,7 +91,7 @@ public class class_1657 extends class_5920<class_5886> {
       }
    }
 
-   private boolean method_7390(class_5886 var1, class_6651 var2, long var3) {
+   private boolean method_7390(MobEntity var1, class_6651 var2, long var3) {
       BlockPos var7 = var2.method_30562().method_35462();
       this.field_8601 = var1.method_26927().method_5615(var7, 0);
       this.field_8599 = var2.method_30559();
@@ -122,7 +122,7 @@ public class class_1657 extends class_5920<class_5886> {
       return false;
    }
 
-   private boolean method_7387(class_5886 var1, class_6651 var2) {
+   private boolean method_7387(MobEntity var1, class_6651 var2) {
       return var2.method_30562().method_35462().method_12176(var1.method_37075()) <= var2.method_30560();
    }
 }

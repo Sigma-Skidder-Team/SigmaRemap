@@ -24,7 +24,7 @@ public class class_5275 extends class_6127<class_5834> {
 
       for (class_5834 var9 : var5.<List<class_5834>>method_5138(class_6044.field_30901).orElse(ImmutableList.of())) {
          if (var9 instanceof class_3204 || var9 instanceof class_4653) {
-            var6 = Optional.<class_5834>of((class_5886)var9);
+            var6 = Optional.<class_5834>of((MobEntity)var9);
             break;
          }
       }

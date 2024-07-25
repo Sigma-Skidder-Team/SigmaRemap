@@ -70,7 +70,7 @@ public class class_1225 {
       return class_6979.method_31906(var1, var2).filter(var2x -> var0.method_28956(var2x) < var5).min(Comparator.comparingInt(var0::method_28956)).orElse(var1);
    }
 
-   public static boolean method_5451(class_5886 var0, class_5834 var1, int var2) {
+   public static boolean method_5451(MobEntity var0, class_5834 var1, int var2) {
       class_2451 var5 = var0.method_26446().method_27960();
       if (var5 instanceof class_551 && var0.method_26878((class_551)var5)) {
          int var6 = ((class_551)var5).method_2654() - var2;

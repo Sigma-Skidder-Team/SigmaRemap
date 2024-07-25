@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.List;
 
-public class class_6474<T extends class_5886 & class_6250> extends class_3599 {
+public class class_6474<T extends MobEntity & class_6250> extends class_3599 {
    private static String[] field_32996;
    private final T field_32994;
    private final boolean field_32995;
@@ -35,9 +35,9 @@ public class class_6474<T extends class_5886 & class_6250> extends class_3599 {
       super.method_16796();
    }
 
-   private List<class_5886> method_29487() {
+   private List<MobEntity> method_29487() {
       double var3 = this.field_32994.method_26575(class_7331.field_37471);
       Box var5 = Box.method_18911(this.field_32994.method_37245()).method_18899(var3, 10.0, var3);
-      return this.field_32994.world.<class_5886>method_25874((Class<? extends class_5886>)this.field_32994.getClass(), var5);
+      return this.field_32994.world.<MobEntity>method_25874((Class<? extends MobEntity>)this.field_32994.getClass(), var5);
    }
 }

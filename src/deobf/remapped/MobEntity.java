@@ -9,8 +9,8 @@ import java.util.Random;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
-public abstract class class_5886 extends class_5834 {
-   private static final class_7821<Byte> field_29912 = class_8073.<Byte>method_36641(class_5886.class, class_2734.field_13361);
+public abstract class MobEntity extends class_5834 {
+   private static final class_7821<Byte> field_29912 = class_8073.<Byte>method_36641(MobEntity.class, class_2734.field_13361);
    public int field_29913;
    public int field_29915;
    public class_3711 field_29919;
@@ -37,7 +37,7 @@ public abstract class class_5886 extends class_5834 {
    private BlockPos field_29909 = BlockPos.field_7306;
    private float field_29907 = -1.0F;
 
-   public class_5886(EntityType<? extends class_5886> var1, World var2) {
+   public MobEntity(EntityType<? extends MobEntity> var1, World var2) {
       super(var1, var2);
       this.goalSelector = new class_782(var2.method_29559());
       this.targetSelector = new class_782(var2.method_29559());
@@ -70,9 +70,9 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public float method_26931(class_1108 var1) {
-      class_5886 var4;
-      if (this.method_37243() instanceof class_5886 && ((class_5886)this.method_37243()).method_26924()) {
-         var4 = (class_5886)this.method_37243();
+      MobEntity var4;
+      if (this.method_37243() instanceof MobEntity && ((MobEntity)this.method_37243()).method_26924()) {
+         var4 = (MobEntity)this.method_37243();
       } else {
          var4 = this;
       }
@@ -98,8 +98,8 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public class_2833 method_26905() {
-      if (this.isPassenger() && this.method_37243() instanceof class_5886) {
-         class_5886 var3 = (class_5886)this.method_37243();
+      if (this.isPassenger() && this.method_37243() instanceof MobEntity) {
+         MobEntity var3 = (MobEntity)this.method_37243();
          return var3.method_26905();
       } else {
          return this.field_29900;
@@ -111,8 +111,8 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public class_1249 method_26927() {
-      if (this.isPassenger() && this.method_37243() instanceof class_5886) {
-         class_5886 var3 = (class_5886)this.method_37243();
+      if (this.isPassenger() && this.method_37243() instanceof MobEntity) {
+         MobEntity var3 = (MobEntity)this.method_37243();
          return var3.method_26927();
       } else {
          return this.field_29904;
@@ -255,7 +255,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public void method_26872() {
-      boolean var3 = !(this.method_37259() instanceof class_5886);
+      boolean var3 = !(this.method_37259() instanceof MobEntity);
       boolean var4 = !(this.method_37243() instanceof BoatEntity);
       this.goalSelector.method_3493(class_1891.field_9564, var3);
       this.goalSelector.method_3493(class_1891.field_9561, var3 && var4);
@@ -709,7 +709,7 @@ public abstract class class_5886 extends class_5834 {
       return var1 + var6;
    }
 
-   public static boolean method_26908(EntityType<? extends class_5886> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
+   public static boolean method_26908(EntityType<? extends MobEntity> var0, class_9379 var1, class_2417 var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.method_6100();
       return var2 == class_2417.field_12024 || var1.method_28262(var7).method_8305(var1, var7, var0);
    }
@@ -1058,7 +1058,7 @@ public abstract class class_5886 extends class_5834 {
          } else {
             class_3003 var8 = (class_3003)var5.method_27960();
             Optional var7 = var8.method_13714(
-               var1, this, (EntityType<? extends class_5886>)this.method_37387(), (class_6331)this.world, this.method_37245(), var5
+               var1, this, (EntityType<? extends MobEntity>)this.method_37387(), (class_6331)this.world, this.method_37245(), var5
             );
             var7.ifPresent(var2x -> this.method_26874(var1, var2x));
             return !var7.isPresent() ? class_6910.field_35521 : class_6910.field_35520;
@@ -1066,7 +1066,7 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public void method_26874(PlayerEntity var1, class_5886 var2) {
+   public void method_26874(PlayerEntity var1, MobEntity var2) {
    }
 
    public class_6910 method_26857(PlayerEntity var1, Hand var2) {
@@ -1099,11 +1099,11 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Nullable
-   public <T extends class_5886> T method_26898(EntityType<T> var1, boolean var2) {
+   public <T extends MobEntity> T method_26898(EntityType<T> var1, boolean var2) {
       if (this.field_41751) {
          return null;
       } else {
-         class_5886 var5 = (class_5886)var1.method_30484(this.world);
+         MobEntity var5 = (MobEntity)var1.method_30484(this.world);
          var5.method_37299(this);
          var5.method_26910(this.method_26449());
          var5.method_26888(this.method_26859());

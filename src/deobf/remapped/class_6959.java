@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableMap;
 import java.util.function.Predicate;
 
-public class class_6959<E extends class_5886, T> extends class_5920<E> {
+public class class_6959<E extends MobEntity, T> extends class_5920<E> {
    private static String[] field_35770;
    private final Predicate<E> field_35766;
    private final class_6044<? extends T> field_35769;

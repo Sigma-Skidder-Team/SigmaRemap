@@ -34,10 +34,10 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
       this.goalSelector.addGoal(0, new class_2552(this));
       this.goalSelector.addGoal(2, new class_1837(this, 1.0, 40, 20.0F));
       this.goalSelector.addGoal(5, new class_2889(this, 1.0));
-      this.goalSelector.addGoal(6, new class_4407(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
       this.goalSelector.addGoal(7, new class_9691(this));
       this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<class_5886>(this, class_5886.class, 0, false, false, field_22697));
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 0, false, false, field_22697));
    }
 
    @Override

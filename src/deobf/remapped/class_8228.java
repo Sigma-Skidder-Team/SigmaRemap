@@ -26,12 +26,12 @@ public class class_8228 extends class_2451 implements class_9866 {
       List var5 = var0.method_40140().<Entity>method_25869(class_5834.class, new Box(var4), class_3572.field_17483.and(new class_8389(var1)));
       if (!var5.isEmpty()) {
          class_5834 var6 = (class_5834)var5.get(0);
-         class_6943 var7 = class_5886.method_26896(var1);
+         class_6943 var7 = MobEntity.method_26896(var1);
          ItemStack var8 = var1.method_27953(1);
          var6.method_37349(var7, var8);
-         if (var6 instanceof class_5886) {
-            ((class_5886)var6).method_26861(var7, 2.0F);
-            ((class_5886)var6).method_26883();
+         if (var6 instanceof MobEntity) {
+            ((MobEntity)var6).method_26861(var7, 2.0F);
+            ((MobEntity)var6).method_26883();
          }
 
          return true;
@@ -80,7 +80,7 @@ public class class_8228 extends class_2451 implements class_9866 {
    @Override
    public class_954<ItemStack> method_11231(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.method_26617(var3);
-      class_6943 var7 = class_5886.method_26896(var6);
+      class_6943 var7 = MobEntity.method_26896(var6);
       ItemStack var8 = var2.method_26520(var7);
       if (!var8.method_28022()) {
          return class_954.<ItemStack>method_4202(var6);
