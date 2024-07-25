@@ -6,7 +6,7 @@ public class class_2040 extends class_446 {
    private static String[] field_10342;
    public MinecraftClient field_10344 = MinecraftClient.getInstance();
    public class_4655 field_10343;
-   public class_3223 field_10345 = new class_3223();
+   public Timer field_10345 = new Timer();
    public int field_10341;
 
    public class_2040(class_7038 var1, String var2, int var3, int var4, int var5, int var6, int var7) {

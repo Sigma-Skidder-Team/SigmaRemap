@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_8857 extends Module {
+public class CubeCraftLongJumpModule extends Module {
    private int field_45277;
    private double field_45278;
 
-   public class_8857() {
+   public CubeCraftLongJumpModule() {
       super(Category.MOVEMENT, "Cubecraft", "Longjump for Cubecraft.");
       this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
    }

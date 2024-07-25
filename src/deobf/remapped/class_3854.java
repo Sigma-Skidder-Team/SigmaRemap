@@ -9,7 +9,7 @@ public class class_3854 extends Module {
    private float field_18794;
    private boolean field_18798;
    private int field_18800;
-   private class_3223 field_18799;
+   private Timer field_18799;
    private List<Short> field_18793 = new ArrayList<Short>();
 
    public class_3854() {
@@ -67,7 +67,7 @@ public class class_3854 extends Module {
    @class_3932
    public void method_17885(class_717 var1) {
       this.field_18796 = 0;
-      this.field_18799 = new class_3223();
+      this.field_18799 = new Timer();
       this.field_18793 = null;
    }
 

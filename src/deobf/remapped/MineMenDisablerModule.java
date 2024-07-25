@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_7847 extends Module {
+public class MineMenDisablerModule extends Module {
    private boolean field_39769 = false;
    private boolean field_39768;
 
-   public class_7847() {
+   public MineMenDisablerModule() {
       super(Category.COMBAT, "Minemen", "Minemen Club bypass");
    }
 

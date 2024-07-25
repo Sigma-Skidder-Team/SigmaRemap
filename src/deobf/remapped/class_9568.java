@@ -5,7 +5,7 @@ public class class_9568 extends class_446 implements class_475 {
    public float field_48688;
    public boolean field_48685;
    public final class_8737 field_48683;
-   public class_3223 field_48686 = new class_3223();
+   public Timer field_48686 = new Timer();
 
    public class_9568(class_7038 var1, int var2) {
       super(var1, "verticalScrollBar", var1.method_32109() - var2 - 5, 5, var2, var1.method_32137() - 10, false);

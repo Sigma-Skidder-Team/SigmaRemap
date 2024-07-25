@@ -7,7 +7,7 @@ public class class_5174 extends class_367 {
    public static int field_26635 = 37;
    public static int field_26631 = 38;
    public static int field_26634 = 39;
-   private class_3223 field_26629 = new class_3223();
+   private Timer field_26629 = new Timer();
    private boolean field_26630;
    private boolean field_26637;
    public ArrayList<Integer> field_26636 = new ArrayList<Integer>();
@@ -40,7 +40,7 @@ public class class_5174 extends class_367 {
          this.field_26629.method_14776();
       }
 
-      if (this.method_42015() && !class_1853.field_9392) {
+      if (this.method_42015() && !AutoArmorModule.field_9392) {
          String var4 = this.method_42016("Mode");
          if (!this.method_42016("Mode").equals("OpenInv") || mcInstance.field_9623 instanceof class_3431) {
             long var5 = (long)(this.method_42002("Delay") * 20.0F);

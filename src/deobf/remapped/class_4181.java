@@ -4,7 +4,7 @@ public class class_4181 extends SecondModule {
    public static int field_20352;
 
    public class_4181() {
-      super(Category.MOVEMENT, "Step", "Allows you to step up more than 0.5 block", new class_6659(), new class_9637(), new class_8234(), new class_9661());
+      super(Category.MOVEMENT, "Step", "Allows you to step up more than 0.5 block", new VanillaStepModule(), new class_9637(), new class_8234(), new class_9661());
    }
 
    @Override

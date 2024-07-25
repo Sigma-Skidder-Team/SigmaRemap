@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_452 extends Module {
-   public class_452() {
+public class VanillaShaderESPModule extends Module {
+   public VanillaShaderESPModule() {
       super(Category.RENDER, "Vanilla", "Draws a line arround players");
    }
 

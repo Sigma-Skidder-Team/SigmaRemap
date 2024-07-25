@@ -6,7 +6,7 @@ import java.util.List;
 public class HypixelDisablerModule extends Module {
    private List<class_6310<?>> field_36206 = new ArrayList<class_6310<?>>();
    private boolean field_36207;
-   private class_3223 field_36204 = new class_3223();
+   private Timer field_36204 = new Timer();
 
    public HypixelDisablerModule() {
       super(Category.EXPLOIT, "Hypixel", "Disable watchdog.");

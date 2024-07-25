@@ -10,7 +10,7 @@ public class class_8235 {
    public String field_42299;
    public class_8343 field_42301;
    public int field_42296;
-   public class_3223 field_42297 = new class_3223();
+   public Timer field_42297 = new Timer();
    public Color[] field_42293 = new Color[3];
    public Color[] field_42292 = new Color[3];
    public int field_42291 = 0;

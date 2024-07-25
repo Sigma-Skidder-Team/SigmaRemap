@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class class_3177 extends Module {
+public class ChestStealerModule extends Module {
    public boolean field_15894;
    private ConcurrentHashMap<class_7099, Boolean> field_15896;
-   private class_3223 field_15895 = new class_3223();
-   private class_3223 field_15893 = new class_3223();
+   private Timer field_15895 = new Timer();
+   private Timer field_15893 = new Timer();
    private class_7099 field_15892;
 
-   public class_3177() {
+   public ChestStealerModule() {
       super(Category.ITEM, "ChestStealer", "Steals items from chest");
       this.addSetting(new BooleanSetting("Aura", "Automatically open chests near you.", false));
       this.addSetting(new BooleanSetting("Ignore Junk", "Ignores useless items.", true));

@@ -2,8 +2,8 @@ package remapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class class_4270 extends Module {
-   public class_4270() {
+public class TracersModule extends Module {
+   public TracersModule() {
       super(Category.RENDER, "Tracers", "Shows players");
       this.addSetting(new ColorSetting("Color", "The tracers color", class_1255.field_6918.field_6917));
    }

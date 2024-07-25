@@ -1,9 +1,9 @@
 package remapped;
 
-public class class_8204 extends Module {
+public class AutoTotemModule extends Module {
    public int field_41968 = -1;
 
-   public class_8204() {
+   public AutoTotemModule() {
       super(Category.ITEM, "AutoTotem", "Automatically equips a totem in your second hand");
    }
 

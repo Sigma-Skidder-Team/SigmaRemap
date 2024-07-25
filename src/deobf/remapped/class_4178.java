@@ -16,7 +16,7 @@ public class class_4178 extends class_7038 implements class_333 {
    public boolean field_20336 = true;
    public boolean field_20340 = true;
    public boolean field_20347 = false;
-   public final class_3223 field_20334 = new class_3223();
+   public final Timer field_20334 = new Timer();
    public int field_20346 = 300;
    public int field_20337 = 2;
    private final List<class_918> field_20335 = new ArrayList<class_918>();

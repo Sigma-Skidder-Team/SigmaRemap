@@ -22,7 +22,7 @@ public class class_3004 extends class_446 {
    private boolean field_14740;
    private boolean field_14741 = false;
    private String field_14745 = Character.toString('·');
-   private class_3223 field_14742 = new class_3223();
+   private Timer field_14742 = new Timer();
    private final List<class_2999> field_14749 = new ArrayList<class_2999>();
    private boolean field_14747 = true;
 

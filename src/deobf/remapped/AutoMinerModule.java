@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 import org.lwjgl.opengl.GL11;
 
-public class class_4972 extends Module {
+public class AutoMinerModule extends Module {
    public List<class_522> field_25751 = new ArrayList<class_522>();
    public Set<class_2034> field_25748 = new HashSet<class_2034>();
    public class_9806 field_25755;
@@ -19,7 +19,7 @@ public class class_4972 extends Module {
    public List<class_7047> field_25752 = new ArrayList<class_7047>();
    public List<class_7047> field_25753 = new ArrayList<class_7047>();
 
-   public class_4972() {
+   public AutoMinerModule() {
       super(Category.WORLD, "AutoMiner", "Automatically mines blocks");
    }
 

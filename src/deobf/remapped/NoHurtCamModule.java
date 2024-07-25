@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_3733 extends Module {
-   public class_3733() {
+public class NoHurtCamModule extends Module {
+   public NoHurtCamModule() {
       super(Category.RENDER, "NoHurtCam", "Disables the hurt animation");
    }
 

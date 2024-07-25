@@ -1,9 +1,9 @@
 package remapped;
 
-public class class_6501 extends Module {
+public class AutoToolsModule extends Module {
    public int field_33089 = -1;
 
-   public class_6501() {
+   public AutoToolsModule() {
       super(Category.ITEM, "AutoTools", "Picks the best tool when breaking blocks");
       this.addSetting(new ModeSetting("Inv Mode", "The way it will move tools in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
    }

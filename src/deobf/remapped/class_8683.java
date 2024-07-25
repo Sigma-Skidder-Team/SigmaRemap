@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8683 extends Module {
-   private class_3223 field_44552 = new class_3223();
+   private Timer field_44552 = new Timer();
    private boolean field_44554;
 
    public class_8683() {

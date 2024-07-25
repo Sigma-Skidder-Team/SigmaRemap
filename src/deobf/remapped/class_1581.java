@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_1581 extends class_446 {
    private static String[] field_8282;
-   public class_3223 field_8281 = new class_3223();
+   public Timer field_8281 = new Timer();
    public float field_8280 = 0.0F;
 
    public class_1581(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {

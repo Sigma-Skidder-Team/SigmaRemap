@@ -9,7 +9,7 @@ public class class_8625 extends SecondModule {
          new class_5291(),
          new class_2738(),
          new NoClipModule(),
-         new class_1394(),
+         new HypixelVClipModule(),
          new class_1917()
       );
    }

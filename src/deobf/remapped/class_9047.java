@@ -2,7 +2,7 @@ package remapped;
 
 public class class_9047 extends class_2596 {
    public MinecraftClient field_46319 = MinecraftClient.getInstance();
-   public class_3223 field_46314 = new class_3223();
+   public Timer field_46314 = new Timer();
    public class_2040 field_46317;
    public class_2440 field_46318;
    public int field_46313;

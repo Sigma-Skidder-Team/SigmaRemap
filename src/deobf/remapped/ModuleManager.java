@@ -69,17 +69,17 @@ public class ModuleManager {
       this.method_852(new class_5981());
       this.method_852(new class_9824());
       this.method_852(new class_2739());
-      this.method_852(new class_1532());
+      this.method_852(new AutoLogModule());
       this.method_852(new class_3595());
       this.method_852(new AntiVoidModule());
       this.method_852(new class_1931());
       this.method_852(new class_4557());
       this.method_852(new class_2656());
       this.method_852(new class_4137());
-      this.method_852(new class_1853());
-      this.method_852(new class_6501());
+      this.method_852(new AutoArmorModule());
+      this.method_852(new AutoToolsModule());
       this.method_852(new class_3588());
-      this.method_852(new class_3177());
+      this.method_852(new ChestStealerModule());
       this.method_852(new AutoPotionModule());
       this.method_852(new class_5174());
       this.method_852(new class_5870());
@@ -99,12 +99,12 @@ public class ModuleManager {
       this.method_852(new class_9495());
       this.method_852(new class_914());
       this.method_852(new class_9598());
-      this.method_852(new class_3733());
+      this.method_852(new NoHurtCamModule());
       this.method_852(new class_2689());
       this.method_852(new class_4711());
       this.method_852(new AntiBlindModule());
       this.method_852(new XRayModule());
-      this.method_852(new class_4270());
+      this.method_852(new TracersModule());
       this.method_852(new class_2191());
       this.method_852(new class_9366());
       this.method_852(new class_597());
@@ -113,7 +113,7 @@ public class ModuleManager {
       this.method_852(new FastPlaceModule());
       this.method_852(new class_4624());
       this.method_852(new class_2481());
-      this.method_852(new class_6378());
+      this.method_852(new AntiCactusModule());
       this.method_852(new class_9357());
       this.method_852(new FastBreakModule());
       this.method_852(new class_8444());
@@ -146,18 +146,18 @@ public class ModuleManager {
          this.method_852(new class_4969());
          this.method_852(new class_8438());
          this.method_852(new class_9522());
-         this.method_852(new class_1196());
+         this.method_852(new NameTagsModule());
          this.method_852(new class_9137());
          this.method_852(new class_3961());
          this.method_852(new class_7723());
          this.method_852(new class_8726());
-         this.method_852(new class_2670());
+         this.method_852(new PortalGUIModule());
          this.method_852(new class_428());
          this.method_852(new class_2590());
          this.method_852(new class_4243());
-         this.method_852(new class_1287());
+         this.method_852(new AutoFishModule());
          this.method_852(new class_9543());
-         this.method_852(new class_8204());
+         this.method_852(new AutoTotemModule());
          this.method_852(new class_8057());
       }
 

@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_6378 extends Module {
-   public class_6378() {
+public class AntiCactusModule extends Module {
+   public AntiCactusModule() {
       super(Category.WORLD, "AntiCactus", "Prevent you from taking damage from cactus");
       this.addSetting(new BooleanSetting("Above", "Avoid damage above cactus also", true));
    }

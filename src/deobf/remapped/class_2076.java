@@ -2,8 +2,8 @@ package remapped;
 
 public class class_2076 extends class_367 {
    private int field_10453;
-   private class_3223 field_10449 = new class_3223();
-   private class_3223 field_10450 = new class_3223();
+   private Timer field_10449 = new Timer();
+   private Timer field_10450 = new Timer();
    private boolean field_10452;
 
    public class_2076() {

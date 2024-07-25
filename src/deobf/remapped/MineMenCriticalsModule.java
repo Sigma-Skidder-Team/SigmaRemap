@@ -1,9 +1,9 @@
 package remapped;
 
-public class class_5586 extends Module {
+public class MineMenCriticalsModule extends Module {
    private int field_28365;
 
-   public class_5586() {
+   public MineMenCriticalsModule() {
       super(Category.COMBAT, "Minemen", "Criticals for Anti Gaming Chair");
    }
 

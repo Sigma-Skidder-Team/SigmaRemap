@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_5520 extends Module {
+public class LibreCraftFlyModule extends Module {
    private int field_28095;
    private boolean field_28094;
 
-   public class_5520() {
+   public LibreCraftFlyModule() {
       super(Category.MOVEMENT, "LibreCraft", "A fly for LibreCraft");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 10.0F, 0.1F));
    }

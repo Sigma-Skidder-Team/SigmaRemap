@@ -7,9 +7,9 @@ public class class_4557 extends SecondModule {
          "Disabler",
          "Disables some anticheats",
          new class_2791(),
-         new class_9439(),
+         new NullDisablerModule(),
          new HypixelDisablerModule(),
-         new class_6526(),
+         new TeleportDisablerModule(),
          new GhostlyDisablerModule()
       );
    }

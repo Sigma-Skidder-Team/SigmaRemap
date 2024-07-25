@@ -12,7 +12,7 @@ public class class_1742 {
    private boolean field_8981 = true;
    private class_7162 field_8974;
    private class_798 field_8969;
-   private class_3223 field_8976 = new class_3223();
+   private Timer field_8976 = new Timer();
    private int field_8979;
    private int field_8968 = 1;
    private class_2440 field_8980;

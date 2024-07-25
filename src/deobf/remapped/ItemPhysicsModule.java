@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_1231 extends Module {
-   public class_1231() {
+public class ItemPhysicsModule extends Module {
+   public ItemPhysicsModule() {
       super(Category.RENDER, "ItemPhysics", "Better phyisics for items");
    }
 }

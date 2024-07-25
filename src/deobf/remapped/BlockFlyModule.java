@@ -11,7 +11,7 @@ public class BlockFlyModule extends SecondModule {
    public int field_18193 = 0;
 
    public BlockFlyModule() {
-      super(Category.MOVEMENT, "BlockFly", "Allows you to automatically bridge", new class_6049(), new class_2461(), new class_8083(), new class_6205());
+      super(Category.MOVEMENT, "BlockFly", "Allows you to automatically bridge", new class_6049(), new class_2461(), new BlockFlyPartModule(), new class_6205());
       this.addSetting(new ModeSetting("ItemSpoof", "Item spoofing mode", 2, "None", "Switch", "Spoof", "LiteSpoof"));
       this.addSetting(new ModeSetting("Tower Mode", "Tower mode", 1, "None", "NCP", "AAC", "Vanilla"));
       this.addSetting(new ModeSetting("Picking mode", "The way it will move blocks in your inventory.", 0, "Basic", "FakeInv", "OpenInv"));

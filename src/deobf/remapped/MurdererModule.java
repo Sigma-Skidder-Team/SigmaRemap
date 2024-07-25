@@ -3,13 +3,13 @@ package remapped;
 import com.mojang.datafixers.util.Pair;
 import java.io.IOException;
 
-public class class_1886 extends Module {
+public class MurdererModule extends Module {
    public String field_9548 = "IBreakerman";
    private class_8343 field_9549;
    private boolean field_9546 = true;
    private boolean field_9550;
 
-   public class_1886() {
+   public MurdererModule() {
       super(Category.MISC, "Murderer", "Detects murderer in murder mystery minigame on hypixel");
       this.addSetting(new BooleanSetting("GUI", "Shows a GUI with info on the murderer", true));
       this.addSetting(new BooleanSetting("Chat Message", "Sends a message with the murderer's name", true));

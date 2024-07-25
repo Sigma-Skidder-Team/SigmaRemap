@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class class_2656 extends Module {
    private ArrayList<class_6310<?>> field_13091 = new ArrayList<class_6310<?>>();
-   private class_3223 field_13090 = new class_3223();
+   private Timer field_13090 = new Timer();
    private boolean field_13092;
 
    public class_2656() {

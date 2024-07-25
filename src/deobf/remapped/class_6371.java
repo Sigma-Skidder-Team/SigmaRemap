@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_6371 extends Module {
    private List<class_4714> field_32569 = new ArrayList<class_4714>();
-   private class_3223 field_32570 = new class_3223();
+   private Timer field_32570 = new Timer();
 
    public class_6371() {
       super(Category.MOVEMENT, "Basic", "Basic click tp");

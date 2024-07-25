@@ -1,13 +1,13 @@
 package remapped;
 
-public class class_1853 extends Module {
-   private class_3223 field_9397 = new class_3223();
+public class AutoArmorModule extends Module {
+   private Timer field_9397 = new Timer();
    private boolean field_9393;
    public static boolean field_9392;
    public boolean field_9396 = false;
    public boolean field_9395 = false;
 
-   public class_1853() {
+   public AutoArmorModule() {
       super(Category.ITEM, "AutoArmor", "Automaticly equips your armor");
       this.addSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
       this.addSetting(new FloatSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.0F, 1.0F, 0.01F));
@@ -104,7 +104,7 @@ public class class_1853 extends Module {
                   class_3286 var13 = (class_3286)var9.method_27960();
                   if (class_6943.field_35708 == var7
                      && (
-                        !SigmaMainClass.method_3328().getModuleManager().method_847(class_1853.class).method_42007("Fake Items")
+                        !SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).method_42007("Fake Items")
                            || SigmaMainClass.method_3328().method_3319().method_30523(var12) >= 1500L
                      )) {
                      this.method_8196(var1);
@@ -120,7 +120,7 @@ public class class_1853 extends Module {
                         mcInstance.field_9632.method_37220(7, true);
                      }
 
-                     if (SigmaMainClass.method_3328().getModuleManager().method_847(class_1853.class).method_42002("Delay") > 0.0F) {
+                     if (SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).method_42002("Delay") > 0.0F) {
                         return;
                      }
                   }
@@ -130,7 +130,7 @@ public class class_1853 extends Module {
                      && class_2740.method_12364(var9)
                      && class_2740.method_12323(var9) > 0
                      && (
-                        !SigmaMainClass.method_3328().getModuleManager().method_847(class_1853.class).method_42007("Fake Items")
+                        !SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).method_42007("Fake Items")
                            || SigmaMainClass.method_3328().method_3319().method_30523(var12) >= 1500L
                      )) {
                      this.method_8196(var1);
@@ -146,7 +146,7 @@ public class class_1853 extends Module {
                      class_2740.method_12356(mcInstance.field_9632.field_3869.field_19925, var12, 0, class_6269.field_32019, mcInstance.field_9632, true);
                      this.field_9397.method_14773();
                      field_9392 = true;
-                     if (SigmaMainClass.method_3328().getModuleManager().method_847(class_1853.class).method_42002("Delay") > 0.0F) {
+                     if (SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).method_42002("Delay") > 0.0F) {
                         return;
                      }
                   }

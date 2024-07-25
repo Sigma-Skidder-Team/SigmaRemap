@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_1394 extends Module {
+public class HypixelVClipModule extends Module {
    private int field_7607;
    private double field_7608;
 
-   public class_1394() {
+   public HypixelVClipModule() {
       super(Category.MOVEMENT, "Unfull", "Weird Hypixel VClip for some blocks");
    }
 

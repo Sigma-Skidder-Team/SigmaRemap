@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 import org.lwjgl.opengl.GL11;
 
-public class class_4304 extends Module {
+public class SkeletonESPModule extends Module {
    private static Map<class_704, float[][]> field_20882 = new HashMap<class_704, float[][]>();
 
-   public class_4304() {
+   public SkeletonESPModule() {
       super(Category.RENDER, "Skeleton", "Skeleton ESP.");
       this.addSetting(new ColorSetting("Color", "The Skeleton color", class_1255.field_6918.field_6917));
       this.addSetting(new BooleanSetting("CSGO", "Add a CSGO look.", true));

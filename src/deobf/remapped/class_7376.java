@@ -8,7 +8,7 @@ public class class_7376 extends SecondModule {
    private ArrayList<String> field_37694 = new ArrayList<String>();
    private ArrayList<String> field_37690 = new ArrayList<String>();
    private class_1508 field_37692;
-   private class_3223 field_37691;
+   private Timer field_37691;
    private int field_37693;
 
    public class_7376() {
@@ -16,7 +16,7 @@ public class class_7376 extends SecondModule {
          Category.MISC,
          "GamePlay",
          "Manage your gameplay experience just for you.",
-         new class_3262(),
+         new HypixelGameplayModule(),
          new class_5579(),
          new class_6505(),
          new class_8454(),
@@ -28,7 +28,7 @@ public class class_7376 extends SecondModule {
       this.addSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
       this.addSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));
       this.addSetting(new FloatSetting<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
-      this.field_37691 = new class_3223();
+      this.field_37691 = new Timer();
    }
 
    @Override

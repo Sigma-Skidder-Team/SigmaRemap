@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import org.lwjgl.opengl.GL11;
 
 public class class_9543 extends class_367 {
-   private class_3223 field_48556 = new class_3223();
+   private Timer field_48556 = new Timer();
    private static float field_48553;
    private static float field_48549;
    private static boolean field_48558;

@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_2670 extends Module {
-   public class_2670() {
+public class PortalGUIModule extends Module {
+   public PortalGUIModule() {
       super(Category.MISC, "PortalGui", "Allows GUIs while in nether portal");
    }
 

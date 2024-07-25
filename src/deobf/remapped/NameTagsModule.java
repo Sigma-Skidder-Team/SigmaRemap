@@ -9,18 +9,18 @@ import java.util.UUID;
 import java.util.Map.Entry;
 import org.lwjgl.opengl.GL11;
 
-public class class_1196 extends Module {
+public class NameTagsModule extends Module {
    private HashMap<class_1331, class_1325> field_6693 = new HashMap<class_1331, class_1325>();
    private class_1331 field_6694;
    private static class_5023 field_6699 = new class_5023();
    private static HashMap<String, class_8343> field_6698 = new HashMap<String, class_8343>();
-   public static class_1196 field_6701;
+   public static NameTagsModule field_6701;
    private List<Entity> field_6696 = new ArrayList<Entity>();
    private boolean field_6697 = false;
    private HashMap<UUID, String> field_6695 = new HashMap<UUID, String>();
    public int field_6702 = class_314.method_1444(class_314.method_1442(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917, 75.0F), 0.5F);
 
-   public class_1196() {
+   public NameTagsModule() {
       super(Category.RENDER, "NameTags", "Render better name tags");
       this.addSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
       this.addSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));

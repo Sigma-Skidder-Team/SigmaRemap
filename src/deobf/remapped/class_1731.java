@@ -2,7 +2,7 @@ package remapped;
 
 public class class_1731 extends Module {
    private int field_8926;
-   private class_3223 field_8927 = new class_3223();
+   private Timer field_8927 = new Timer();
 
    public class_1731() {
       super(Category.MOVEMENT, "Bow", "Fly for Bow");

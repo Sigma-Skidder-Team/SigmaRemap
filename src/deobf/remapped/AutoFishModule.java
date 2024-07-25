@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_1287 extends Module {
-   public class_1287() {
+public class AutoFishModule extends Module {
+   public AutoFishModule() {
       super(Category.WORLD, "AutoFish", "Automatically catches fish for you");
    }
 

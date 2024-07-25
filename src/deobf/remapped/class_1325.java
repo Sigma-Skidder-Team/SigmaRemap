@@ -64,14 +64,14 @@ public class class_1325 {
       if (this.field_7295 == null) {
          return null;
       } else {
-         if (!class_1196.method_5291()
+         if (!NameTagsModule.method_5291()
             .<class_6867, class_3001>method_23138(
-               class_1510.field_7995, new class_4657(new class_6098(class_4897.field_24403)), class_1196.method_5301().field_9601
+               class_1510.field_7995, new class_4657(new class_6098(class_4897.field_24403)), NameTagsModule.method_5301().field_9601
             )
             .isPresent()) {
             class_9483 var3 = new class_9483(class_3168.field_15843);
 
-            for (class_8169 var6 : class_1196.method_5296()
+            for (class_8169 var6 : NameTagsModule.method_5296()
                .field_9653
                .method_29125()
                .stream()
@@ -81,12 +81,12 @@ public class class_1325 {
             }
 
             class_1397 var9 = new class_1397(this);
-            class_1196.method_5291()
-               .method_10277(var9, var3, class_8677.field_44535, class_8677.field_44535, Util.getMainWorkerExecutor(), class_1196.method_5295());
+            NameTagsModule.method_5291()
+               .method_10277(var9, var3, class_8677.field_44535, class_8677.field_44535, Util.getMainWorkerExecutor(), NameTagsModule.method_5295());
          }
 
-         Optional var7 = class_1196.method_5291()
-            .<class_6867, class_3001>method_23138(class_1510.field_7995, new class_4657(this.field_7295), class_1196.method_5300().field_9601);
+         Optional var7 = NameTagsModule.method_5291()
+            .<class_6867, class_3001>method_23138(class_1510.field_7995, new class_4657(this.field_7295), NameTagsModule.method_5300().field_9601);
          if (var7.isPresent()) {
             class_6098 var8 = ((class_3001)var7.get()).method_41044();
             if (!var8.method_28022()) {

@@ -10,10 +10,10 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$class_47;
 import org.apache.commons.lang3.StringUtils;
 
-public class class_3262 extends Module {
+public class HypixelGameplayModule extends Module {
    private class_7376 field_16172;
 
-   public class_3262() {
+   public HypixelGameplayModule() {
       super(Category.MISC, "Hypixel", "Gameplay for Hypixel");
       this.addSetting(new BooleanSetting("FriendAccept", "Automatically accept friend requests", false));
       this.addSetting(new BooleanSetting("Hide infos", "Hide scoreboard server informations & date when ingame", false));

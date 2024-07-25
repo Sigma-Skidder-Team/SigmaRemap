@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_8083 extends Module {
+public class BlockFlyPartModule extends Module {
    private float field_41376;
    private float field_41370;
    private class_2899 field_41372;
@@ -14,7 +14,7 @@ public class class_8083 extends Module {
    private double field_41371;
    private int field_41375 = 0;
 
-   public class_8083() {
+   public BlockFlyPartModule() {
       super(Category.MOVEMENT, "Smooth", "Places block underneath");
       this.addSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
    }

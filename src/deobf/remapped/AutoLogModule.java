@@ -3,8 +3,8 @@ package remapped;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_1532 extends Module {
-   public class_1532() {
+public class AutoLogModule extends Module {
+   public AutoLogModule() {
       super(Category.COMBAT, "AutoLog", "Automatically logs out");
       this.addSetting(new FloatSetting<Float>("Min Health", "Minimum health before it logs you out", 2.5F, Float.class, 0.0F, 10.0F, 0.01F));
       this.addSetting(new BooleanSetting("No Totems", "Logs out when you have no totems in inventory", false));

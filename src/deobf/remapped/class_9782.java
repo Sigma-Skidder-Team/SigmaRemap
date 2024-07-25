@@ -3,13 +3,13 @@ package remapped;
 import java.util.ArrayList;
 
 public class class_9782 {
-   public class_3223 field_49649;
+   public Timer field_49649;
    public int field_49646;
    public Entity field_49648;
    public MinecraftClient field_49645 = MinecraftClient.getInstance();
 
    public class_9782() {
-      this.field_49649 = new class_3223();
+      this.field_49649 = new Timer();
       SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 

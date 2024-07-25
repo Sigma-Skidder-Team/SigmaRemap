@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_3223 {
+public class Timer {
    private static String[] field_16060;
    private long field_16058 = 0L;
    private long field_16061 = 0L;

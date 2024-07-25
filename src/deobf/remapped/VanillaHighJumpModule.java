@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_7790 extends Module {
-   public class_7790() {
+public class VanillaHighJumpModule extends Module {
+   public VanillaHighJumpModule() {
       super(Category.MOVEMENT, "Vanilla", "Highjump for minecraft vanilla");
       this.addSetting(new FloatSetting<Float>("Motion", "Highjump motion", 0.75F, Float.class, 0.42F, 5.0F, 0.05F));
    }
