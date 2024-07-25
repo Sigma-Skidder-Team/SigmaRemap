@@ -92,30 +92,30 @@ public class GameOptions {
    public boolean field_45552;
    public boolean field_45481;
    public boolean field_45405 = true;
-   public final class_5916 field_45416 = new class_5916("key.forward", 87, "key.categories.movement");
-   public final class_5916 field_45504 = new class_5916("key.left", 65, "key.categories.movement");
-   public final class_5916 field_45434 = new class_5916("key.back", 83, "key.categories.movement");
-   public final class_5916 field_45411 = new class_5916("key.right", 68, "key.categories.movement");
-   public final class_5916 field_45450 = new class_5916("key.jump", 32, "key.categories.movement");
-   public final class_5916 field_45560 = new class_2949("key.sneak", 340, "key.categories.movement", () -> this.field_45464);
-   public final class_5916 field_45444 = new class_2949("key.sprint", 341, "key.categories.movement", () -> this.field_45552);
-   public final class_5916 field_45575 = new class_5916("key.inventory", 69, "key.categories.inventory");
-   public final class_5916 field_45415 = new class_5916("key.swapOffhand", 70, "key.categories.inventory");
-   public final class_5916 field_45451 = new class_5916("key.drop", 81, "key.categories.inventory");
-   public final class_5916 field_45559 = new class_5916("key.use", class_8863.field_45320, 1, "key.categories.gameplay");
-   public final class_5916 field_45530 = new class_5916("key.attack", class_8863.field_45320, 0, "key.categories.gameplay");
-   public final class_5916 field_45541 = new class_5916("key.pickItem", class_8863.field_45320, 2, "key.categories.gameplay");
-   public final class_5916 field_45420 = new class_5916("key.chat", 84, "key.categories.multiplayer");
-   public final class_5916 field_45564 = new class_5916("key.playerlist", 258, "key.categories.multiplayer");
-   public final class_5916 field_45467 = new class_5916("key.command", 47, "key.categories.multiplayer");
-   public final class_5916 field_45421 = new class_5916("key.socialInteractions", 80, "key.categories.multiplayer");
-   public final class_5916 field_45496 = new class_5916("key.screenshot", 291, "key.categories.misc");
-   public final class_5916 field_45441 = new class_5916("key.togglePerspective", 294, "key.categories.misc");
-   public final class_5916 field_45556 = new class_5916("key.smoothCamera", class_9732.field_49455.method_16988(), "key.categories.misc");
-   public final class_5916 field_45460 = new class_5916("key.fullscreen", 300, "key.categories.misc");
-   public final class_5916 field_45565 = new class_5916("key.spectatorOutlines", class_9732.field_49455.method_16988(), "key.categories.misc");
-   public final class_5916 field_45534 = new class_5916("key.advancements", 76, "key.categories.misc");
-   public final class_5916[] field_45393 = new class_5916[]{
+   public final class_5916 keyForward = new class_5916("key.forward", 87, "key.categories.movement");
+   public final class_5916 keyLeft = new class_5916("key.left", 65, "key.categories.movement");
+   public final class_5916 keyBack = new class_5916("key.back", 83, "key.categories.movement");
+   public final class_5916 keyRight = new class_5916("key.right", 68, "key.categories.movement");
+   public final class_5916 keyJump = new class_5916("key.jump", 32, "key.categories.movement");
+   public final class_5916 keySneak = new class_2949("key.sneak", 340, "key.categories.movement", () -> this.field_45464);
+   public final class_5916 keySprint = new class_2949("key.sprint", 341, "key.categories.movement", () -> this.field_45552);
+   public final class_5916 keyInventory = new class_5916("key.inventory", 69, "key.categories.inventory");
+   public final class_5916 keySwapOffHand = new class_5916("key.swapOffhand", 70, "key.categories.inventory");
+   public final class_5916 keyDrop = new class_5916("key.drop", 81, "key.categories.inventory");
+   public final class_5916 keyUse = new class_5916("key.use", class_8863.field_45320, 1, "key.categories.gameplay");
+   public final class_5916 keyAttack = new class_5916("key.attack", class_8863.field_45320, 0, "key.categories.gameplay");
+   public final class_5916 keyPickItem = new class_5916("key.pickItem", class_8863.field_45320, 2, "key.categories.gameplay");
+   public final class_5916 keyOpenChat = new class_5916("key.chat", 84, "key.categories.multiplayer");
+   public final class_5916 keyPlayerList = new class_5916("key.playerlist", 258, "key.categories.multiplayer");
+   public final class_5916 keyTypeCommand = new class_5916("key.command", 47, "key.categories.multiplayer");
+   public final class_5916 keySnowflakeMenu = new class_5916("key.socialInteractions", 80, "key.categories.multiplayer");
+   public final class_5916 keyScreenshot = new class_5916("key.screenshot", 291, "key.categories.misc");
+   public final class_5916 keyPerspectiveSwitch = new class_5916("key.togglePerspective", 294, "key.categories.misc");
+   public final class_5916 keySmoothCamera = new class_5916("key.smoothCamera", class_9732.field_49455.method_16988(), "key.categories.misc");
+   public final class_5916 keyFullScreen = new class_5916("key.fullscreen", 300, "key.categories.misc");
+   public final class_5916 keySpectatorOutlines = new class_5916("key.spectatorOutlines", class_9732.field_49455.method_16988(), "key.categories.misc");
+   public final class_5916 keyAdvancements = new class_5916("key.advancements", 76, "key.categories.misc");
+   public final class_5916[] hotbarKeys = new class_5916[]{
       new class_5916("key.hotbar.1", 49, "key.categories.inventory"),
       new class_5916("key.hotbar.2", 50, "key.categories.inventory"),
       new class_5916("key.hotbar.3", 51, "key.categories.inventory"),
@@ -130,33 +130,33 @@ public class GameOptions {
    public final class_5916 field_45486 = new class_5916("key.loadToolbarActivator", 88, "key.categories.creative");
    public class_5916[] field_45395 = (class_5916[])ArrayUtils.addAll(
       new class_5916[]{
-         this.field_45530,
-         this.field_45559,
-         this.field_45416,
-         this.field_45504,
-         this.field_45434,
-         this.field_45411,
-         this.field_45450,
-         this.field_45560,
-         this.field_45444,
-         this.field_45451,
-         this.field_45575,
-         this.field_45420,
-         this.field_45564,
-         this.field_45541,
-         this.field_45467,
-         this.field_45421,
-         this.field_45496,
-         this.field_45441,
-         this.field_45556,
-         this.field_45460,
-         this.field_45565,
-         this.field_45415,
+         this.keyAttack,
+         this.keyUse,
+         this.keyForward,
+         this.keyLeft,
+         this.keyBack,
+         this.keyRight,
+         this.keyJump,
+         this.keySneak,
+         this.keySprint,
+         this.keyDrop,
+         this.keyInventory,
+         this.keyOpenChat,
+         this.keyPlayerList,
+         this.keyPickItem,
+         this.keyTypeCommand,
+         this.keySnowflakeMenu,
+         this.keyScreenshot,
+         this.keyPerspectiveSwitch,
+         this.keySmoothCamera,
+         this.keyFullScreen,
+         this.keySpectatorOutlines,
+         this.keySwapOffHand,
          this.field_45562,
          this.field_45486,
-         this.field_45534
+         this.keyAdvancements
       },
-      this.field_45393
+      this.hotbarKeys
    );
    public MinecraftClient field_45495;
    private final File field_45579;
@@ -2285,19 +2285,19 @@ public class GameOptions {
    private void method_40876() {
       if (class_7860.field_40013.method_7978() && class_7860.field_40068.method_3596()) {
          Object var1 = class_7860.method_35559(class_7860.field_40013);
-         class_7860.method_35555(this.field_45416, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45504, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45434, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45411, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45450, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45560, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45444, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45530, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45420, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45564, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45467, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45441, class_7860.field_40068, var1);
-         class_7860.method_35555(this.field_45556, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyForward, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyLeft, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyBack, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyRight, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyJump, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keySneak, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keySprint, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyAttack, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyOpenChat, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyPlayerList, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyTypeCommand, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keyPerspectiveSwitch, class_7860.field_40068, var1);
+         class_7860.method_35555(this.keySmoothCamera, class_7860.field_40068, var1);
       }
    }
 

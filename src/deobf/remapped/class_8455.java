@@ -310,14 +310,14 @@ public class class_8455 {
                   ((class_8590)this.field_43225.field_9623).field_44013 = null;
                }
             } else {
-               if (this.field_43225.gameOptions.field_45460.method_27062(var3, var4)) {
+               if (this.field_43225.gameOptions.keyFullScreen.method_27062(var3, var4)) {
                   this.field_43225.method_8552().method_43156();
                   this.field_43225.gameOptions.field_45453 = this.field_43225.method_8552().method_43174();
                   this.field_43225.gameOptions.method_40873();
                   return;
                }
 
-               if (this.field_43225.gameOptions.field_45496.method_27062(var3, var4)) {
+               if (this.field_43225.gameOptions.keyScreenshot.method_27062(var3, var4)) {
                   if (!Screen.method_1185()) {
                   }
 

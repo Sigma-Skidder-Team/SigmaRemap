@@ -91,7 +91,7 @@ public class KillauraModule extends Module {
       this.field_12561
          .method_40099(
             mcInstance.field_9632.method_26617(class_2584.field_12791).method_27960() instanceof class_2235
-               && mcInstance.gameOptions.field_45559.method_27060()
+               && mcInstance.gameOptions.keyUse.isKeyDown()
          );
       this.field_12564 = false;
       this.field_12552 = -1;
@@ -439,7 +439,7 @@ public class KillauraModule extends Module {
             && var9
             && !mcInstance.field_9632.field_29654
             && !mcInstance.field_9632.method_37285()
-            && !mcInstance.gameOptions.field_45450.method_27060()) {
+            && !mcInstance.gameOptions.keyJump.isKeyDown()) {
             if (!(var6 > 0.001)) {
                field_12548 = false;
             } else {
@@ -469,7 +469,7 @@ public class KillauraModule extends Module {
          this.method_42006();
       }
 
-      if (var6 != null && var6.size() != 0 && !mcInstance.gameOptions.field_45530.method_27074()) {
+      if (var6 != null && var6.size() != 0 && !mcInstance.gameOptions.keyAttack.isPressed()) {
          field_12558 = this.method_11557(var6);
          var6 = this.field_12561.method_40091(var4);
          if (var5.equals("Single") || var5.equals("Multi")) {

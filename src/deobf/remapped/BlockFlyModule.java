@@ -282,7 +282,7 @@ public class BlockFlyModule extends SecondModule {
 
                   if (mcInstance.field_9632.method_37309() == (double)((int) mcInstance.field_9632.method_37309())
                      && class_314.method_1413(mcInstance.field_9632, 0.001F)) {
-                     if (mcInstance.gameOptions.field_45450.field_30024) {
+                     if (mcInstance.gameOptions.keyJump.pressed) {
                         if (!class_314.method_1434()) {
                            class_8865.method_40776(0.0);
                            class_8865.method_40777(var1, 0.0);
@@ -297,7 +297,7 @@ public class BlockFlyModule extends SecondModule {
                case "AAC":
                   if (var1.method_35236() > 0.247 && var1.method_35236() < 0.249) {
                      var1.method_35235((double)((int)(mcInstance.field_9632.method_37309() + var1.method_35236())) - mcInstance.field_9632.method_37309());
-                     if (mcInstance.gameOptions.field_45450.field_30024 && !class_314.method_1434()) {
+                     if (mcInstance.gameOptions.keyJump.pressed && !class_314.method_1434()) {
                         class_8865.method_40776(0.0);
                         class_8865.method_40777(var1, 0.0);
                      }
@@ -307,7 +307,7 @@ public class BlockFlyModule extends SecondModule {
                   }
                   break;
                case "Vanilla":
-                  if (mcInstance.gameOptions.field_45450.field_30024
+                  if (mcInstance.gameOptions.keyJump.pressed
                      && class_314.method_1413(mcInstance.field_9632, 0.001F)
                      && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, 1.0, 0.0)).count()
                         == 0L) {
@@ -321,11 +321,11 @@ public class BlockFlyModule extends SecondModule {
          }
       } else if (!this.getStringValueByName("Tower Mode").equals("AAC")
          || !class_314.method_1413(mcInstance.field_9632, 0.001F)
-         || !mcInstance.gameOptions.field_45450.field_30024) {
+         || !mcInstance.gameOptions.keyJump.pressed) {
          if (!this.getStringValueByName("Tower Mode").equals("NCP")
             && !this.getStringValueByName("Tower Mode").equals("Vanilla")
             && class_314.method_1413(mcInstance.field_9632, 0.001F)
-            && mcInstance.gameOptions.field_45450.field_30024) {
+            && mcInstance.gameOptions.keyJump.pressed) {
             mcInstance.field_9632.field_29600 = 20;
             var1.method_35235(class_8865.method_40786());
          }

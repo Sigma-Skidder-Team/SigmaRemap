@@ -12,7 +12,7 @@ public class class_5377 extends Module {
       if (this.method_42015() && mcInstance.field_9632.method_26505()) {
          boolean var4 = class_3347.method_15349() >= class_412.field_1724.method_2055() || mcInstance.method_8530() == null;
          if (!mcInstance.field_9632.field_41744 && (!mcInstance.field_9632.field_29654 || !var4)) {
-            if (this.getStringValueByName("Down mode").equals("OnSneak") && mcInstance.gameOptions.field_45560.method_27060()
+            if (this.getStringValueByName("Down mode").equals("OnSneak") && mcInstance.gameOptions.keySneak.isKeyDown()
                || this.getStringValueByName("Down mode").equals("Always")) {
                var1.method_35235((double)(-this.getFloatValueByName("Motion")));
             }

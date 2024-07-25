@@ -25,10 +25,10 @@ public class MineMenSpiderModule extends Module {
       if (var6) {
          if (!mcInstance.field_9632.field_41744) {
             if (!mcInstance.field_9632.field_41726) {
-               var1.method_35235(!mcInstance.gameOptions.field_45560.method_27060() ? 0.0 : var1.method_35236());
+               var1.method_35235(!mcInstance.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
             }
-         } else if (!this.getBooleanValueByName("AutoClimb") && !mcInstance.gameOptions.field_45450.method_27060()) {
-            var1.method_35235(!mcInstance.gameOptions.field_45560.method_27060() ? 0.0 : var1.method_35236());
+         } else if (!this.getBooleanValueByName("AutoClimb") && !mcInstance.gameOptions.keyJump.isKeyDown()) {
+            var1.method_35235(!mcInstance.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
          } else {
             var1.method_35235(0.6);
          }
@@ -37,7 +37,7 @@ public class MineMenSpiderModule extends Module {
       }
 
       if (class_314.method_1413(mcInstance.field_9632, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
-         if (mcInstance.gameOptions.field_45560.method_27060()
+         if (mcInstance.gameOptions.keySneak.isKeyDown()
             && !this.field_27443
             && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
             mcInstance.method_8614()
@@ -55,7 +55,7 @@ public class MineMenSpiderModule extends Module {
                   mcInstance.field_9632.method_37245().field_7333 - 2.8,
                   mcInstance.field_9632.method_37245().field_7334
                );
-            mcInstance.gameOptions.field_45560.field_30024 = false;
+            mcInstance.gameOptions.keySneak.pressed = false;
             mcInstance.field_9632.field_41726 = false;
             mcInstance.field_9616.field_32603 = 0.08F;
             var1.method_29715(true);
@@ -64,7 +64,7 @@ public class MineMenSpiderModule extends Module {
          }
       } else {
          if (this.getBooleanValueByName("Ceiling")
-            && !mcInstance.gameOptions.field_45560.method_27060()
+            && !mcInstance.gameOptions.keySneak.isKeyDown()
             && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);

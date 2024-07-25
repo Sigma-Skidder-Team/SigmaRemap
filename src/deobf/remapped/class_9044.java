@@ -65,7 +65,7 @@ public class class_9044 extends Screen implements class_4361 {
 
    @Override
    public boolean method_26946(int var1, int var2, int var3) {
-      if (!this.field_943.gameOptions.field_45534.method_27062(var1, var2)) {
+      if (!this.field_943.gameOptions.keyAdvancements.method_27062(var1, var2)) {
          return super.method_26946(var1, var2, var3);
       } else {
          this.field_943.method_8609((Screen)null);

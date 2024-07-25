@@ -629,7 +629,7 @@ public class class_5989 extends class_9716 {
          && var7
          && !this.method_26554()
          && !this.method_26480(Effects.field_19736)) {
-         if (this.field_30526 <= 0 && !this.field_30523.gameOptions.field_45444.method_27060()) {
+         if (this.field_30526 <= 0 && !this.field_30523.gameOptions.keySprint.isKeyDown()) {
             this.field_30526 = 7;
          } else {
             this.method_37140(true);
@@ -642,7 +642,7 @@ public class class_5989 extends class_9716 {
          && var7
          && !this.method_26554()
          && !this.method_26480(Effects.field_19736)
-         && this.field_30523.gameOptions.field_45444.method_27060()) {
+         && this.field_30523.gameOptions.keySprint.isKeyDown()) {
          this.method_37140(true);
       }
 

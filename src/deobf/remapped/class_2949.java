@@ -12,11 +12,11 @@ public class class_2949 extends class_5916 {
    }
 
    @Override
-   public void method_27056(boolean var1) {
+   public void setPressed(boolean var1) {
       if (!this.field_14418.getAsBoolean()) {
-         super.method_27056(var1);
+         super.setPressed(var1);
       } else if (var1) {
-         super.method_27056(!this.method_27060());
+         super.setPressed(!this.isKeyDown());
       }
    }
 }

@@ -285,7 +285,7 @@ public class class_3062 extends class_2089 {
          this.field_15040.method_8562().method_16054();
          class_3542.method_16489();
          var28 = var17.method_4833(0);
-         if (this.field_15040.gameOptions.field_45564.method_27060()
+         if (this.field_15040.gameOptions.keyPlayerList.isKeyDown()
             && (!this.field_15040.method_8566() || this.field_15040.field_9632.field_30532.method_4798().size() > 1 || var28 != null)) {
             this.field_15053.method_9944(true);
             this.field_15053.method_9940(var1, this.field_15028, var17, var28);

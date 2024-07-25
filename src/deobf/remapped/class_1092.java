@@ -807,7 +807,7 @@ public class class_1092 implements class_392 {
                if (var10 == this.field_6026.field_9632 && !var5) {
                   this.field_6026
                      .field_9614
-                     .method_13982(new TranslationTextComponent("mount.onboard", this.field_6026.gameOptions.field_45560.method_27061()), false);
+                     .method_13982(new TranslationTextComponent("mount.onboard", this.field_6026.gameOptions.keySneak.method_27061()), false);
                }
             }
          }
@@ -1178,19 +1178,19 @@ public class class_1092 implements class_392 {
                                        this.field_6026
                                           .field_9614
                                           .method_13991()
-                                          .method_18676(new TranslationTextComponent("demo.day.6", var8.field_45496.method_27061()));
+                                          .method_18676(new TranslationTextComponent("demo.day.6", var8.keyScreenshot.method_27061()));
                                     }
                                  } else {
                                     this.field_6026
                                        .field_9614
                                        .method_13991()
-                                       .method_18676(new TranslationTextComponent("demo.help.inventory", var8.field_45575.method_27061()));
+                                       .method_18676(new TranslationTextComponent("demo.help.inventory", var8.keyInventory.method_27061()));
                                  }
                               } else {
                                  this.field_6026
                                     .field_9614
                                     .method_13991()
-                                    .method_18676(new TranslationTextComponent("demo.help.jump", var8.field_45450.method_27061()));
+                                    .method_18676(new TranslationTextComponent("demo.help.jump", var8.keyJump.method_27061()));
                               }
                            } else {
                               this.field_6026
@@ -1199,10 +1199,10 @@ public class class_1092 implements class_392 {
                                  .method_18676(
                                     new TranslationTextComponent(
                                        "demo.help.movement",
-                                       var8.field_45416.method_27061(),
-                                       var8.field_45504.method_27061(),
-                                       var8.field_45434.method_27061(),
-                                       var8.field_45411.method_27061()
+                                       var8.keyForward.method_27061(),
+                                       var8.keyLeft.method_27061(),
+                                       var8.keyBack.method_27061(),
+                                       var8.keyRight.method_27061()
                                     )
                                  );
                            }

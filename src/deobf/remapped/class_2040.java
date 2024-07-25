@@ -58,10 +58,10 @@ public class class_2040 extends class_446 {
    @Override
    public void method_29509(int var1) {
       super.method_29509(var1);
-      if (var1 != this.field_10344.gameOptions.field_45416.field_30027.field_17800) {
-         if (var1 != this.field_10344.gameOptions.field_45434.field_30027.field_17800) {
-            if (var1 != this.field_10344.gameOptions.field_45504.field_30027.field_17800) {
-               if (var1 == this.field_10344.gameOptions.field_45411.field_30027.field_17800) {
+      if (var1 != this.field_10344.gameOptions.keyForward.field_30027.field_17800) {
+         if (var1 != this.field_10344.gameOptions.keyBack.field_30027.field_17800) {
+            if (var1 != this.field_10344.gameOptions.keyLeft.field_30027.field_17800) {
+               if (var1 == this.field_10344.gameOptions.keyRight.field_30027.field_17800) {
                   this.field_10343.method_21530().method_21229(class_3122.field_15516);
                }
             } else {

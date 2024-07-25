@@ -27,10 +27,10 @@ public class class_9740 extends Module {
    @EventListen
    public void method_44975(class_6435 var1) {
       if (this.method_42015()) {
-         int var4 = mcInstance.gameOptions.field_45393.length;
+         int var4 = mcInstance.gameOptions.hotbarKeys.length;
 
          for (int var5 = 0; var5 < var4; var5++) {
-            class_5916 var6 = mcInstance.gameOptions.field_45393[var5];
+            class_5916 var6 = mcInstance.gameOptions.hotbarKeys[var5];
             String var7 = var6.method_27055();
             int var8 = Integer.parseInt(String.valueOf(var7.charAt(var7.length() - 1)));
             if (var1.method_29384() == var6.field_30027.field_17800 && var8 - 1 != mcInstance.field_9632.field_3853.field_36404) {

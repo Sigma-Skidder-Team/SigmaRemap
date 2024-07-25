@@ -14,12 +14,12 @@ public class class_7693 extends Module {
    }
 
    public class_6849 method_34853(int var1) {
-      if (var1 != mcInstance.gameOptions.field_45504.field_30027.field_17800) {
-         if (var1 != mcInstance.gameOptions.field_45411.field_30027.field_17800) {
-            if (var1 != mcInstance.gameOptions.field_45416.field_30027.field_17800) {
-               if (var1 != mcInstance.gameOptions.field_45434.field_30027.field_17800) {
-                  if (var1 != mcInstance.gameOptions.field_45530.field_30027.field_17800) {
-                     return var1 != mcInstance.gameOptions.field_45559.field_30027.field_17800 ? null : class_6849.field_35322;
+      if (var1 != mcInstance.gameOptions.keyLeft.field_30027.field_17800) {
+         if (var1 != mcInstance.gameOptions.keyRight.field_30027.field_17800) {
+            if (var1 != mcInstance.gameOptions.keyForward.field_30027.field_17800) {
+               if (var1 != mcInstance.gameOptions.keyBack.field_30027.field_17800) {
+                  if (var1 != mcInstance.gameOptions.keyAttack.field_30027.field_17800) {
+                     return var1 != mcInstance.gameOptions.keyUse.field_30027.field_17800 ? null : class_6849.field_35322;
                   } else {
                      return class_6849.field_35323;
                   }
@@ -70,8 +70,8 @@ public class class_7693 extends Module {
                   }
 
                   String var12 = class_314.method_1451(var19.field_35319.field_30027.field_17800);
-                  if (var19.field_35319 != mcInstance.gameOptions.field_45530) {
-                     if (var19.field_35319 == mcInstance.gameOptions.field_45559) {
+                  if (var19.field_35319 != mcInstance.gameOptions.keyAttack) {
+                     if (var19.field_35319 == mcInstance.gameOptions.keyUse) {
                         var12 = "R";
                      }
                   } else {
@@ -124,7 +124,7 @@ public class class_7693 extends Module {
                      }
                   }
 
-                  if (var18.method_31425().method_27060() && var16.field_15112.method_11123() >= var24 && var25 < 2) {
+                  if (var18.method_31425().isKeyDown() && var16.field_15112.method_11123() >= var24 && var25 < 2) {
                      var16.field_15112.method_11122(var24);
                   }
 

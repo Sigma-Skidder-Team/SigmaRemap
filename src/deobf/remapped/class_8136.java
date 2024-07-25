@@ -25,10 +25,10 @@ public class class_8136 extends Module {
                var1.method_35235((double)((int) mcInstance.field_9632.method_37245().field_7333) - mcInstance.field_9632.method_37245().field_7333);
                this.field_41672 = true;
             }
-         } else if (this.getBooleanValueByName("AutoJump") || mcInstance.gameOptions.field_45450.method_27060()) {
+         } else if (this.getBooleanValueByName("AutoJump") || mcInstance.gameOptions.keyJump.isKeyDown()) {
             mcInstance.field_9632.method_26595();
             var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
-         } else if (!mcInstance.gameOptions.field_45560.method_27060()) {
+         } else if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
             class_8865.method_40777(var1, 0.28 + (double)class_8865.method_40770() * 0.05);
             var1.method_35235(0.0);
          } else {
@@ -65,7 +65,7 @@ public class class_8136 extends Module {
             }
 
             if (this.field_41672) {
-               if (this.getBooleanValueByName("AutoJump") || mcInstance.gameOptions.field_45450.method_27060()) {
+               if (this.getBooleanValueByName("AutoJump") || mcInstance.gameOptions.keyJump.isKeyDown()) {
                   this.field_41672 = !this.field_41672;
                }
 

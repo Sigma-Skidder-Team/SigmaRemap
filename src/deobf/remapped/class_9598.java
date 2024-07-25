@@ -94,30 +94,30 @@ public class class_9598 extends Module {
       field_48917.field_29605 = this.field_48915;
       field_48917.field_29611 = this.field_48915;
       mcInstance.field_9601.method_725(this.field_48925 = (int)(Math.random() * -10000.0), field_48917);
-      this.field_48929 = mcInstance.gameOptions.field_45416.method_27060();
-      this.field_48924 = mcInstance.gameOptions.field_45434.method_27060();
-      this.field_48913 = mcInstance.gameOptions.field_45504.method_27060();
-      this.field_48923 = mcInstance.gameOptions.field_45411.method_27060();
+      this.field_48929 = mcInstance.gameOptions.keyForward.isKeyDown();
+      this.field_48924 = mcInstance.gameOptions.keyBack.isKeyDown();
+      this.field_48913 = mcInstance.gameOptions.keyLeft.isKeyDown();
+      this.field_48923 = mcInstance.gameOptions.keyRight.isKeyDown();
       this.field_48922 = this.field_48929 != this.field_48924 ? (float)(!this.field_48929 ? -1 : 1) : 0.0F;
       this.field_48928 = this.field_48913 != this.field_48923 ? (float)(!this.field_48913 ? -1 : 1) : 0.0F;
-      this.field_48919 = mcInstance.gameOptions.field_45450.method_27060();
-      this.field_48911 = mcInstance.gameOptions.field_45560.method_27060();
-      mcInstance.gameOptions.field_45416.field_30024 = false;
-      mcInstance.gameOptions.field_45434.field_30024 = false;
-      mcInstance.gameOptions.field_45504.field_30024 = false;
-      mcInstance.gameOptions.field_45411.field_30024 = false;
-      mcInstance.gameOptions.field_45450.field_30024 = false;
-      mcInstance.gameOptions.field_45560.field_30024 = false;
+      this.field_48919 = mcInstance.gameOptions.keyJump.isKeyDown();
+      this.field_48911 = mcInstance.gameOptions.keySneak.isKeyDown();
+      mcInstance.gameOptions.keyForward.pressed = false;
+      mcInstance.gameOptions.keyBack.pressed = false;
+      mcInstance.gameOptions.keyLeft.pressed = false;
+      mcInstance.gameOptions.keyRight.pressed = false;
+      mcInstance.gameOptions.keyJump.pressed = false;
+      mcInstance.gameOptions.keySneak.pressed = false;
    }
 
    @Override
    public void method_42020() {
-      mcInstance.gameOptions.field_45416.field_30024 = this.field_48929;
-      mcInstance.gameOptions.field_45434.field_30024 = this.field_48924;
-      mcInstance.gameOptions.field_45504.field_30024 = this.field_48913;
-      mcInstance.gameOptions.field_45411.field_30024 = this.field_48923;
-      mcInstance.gameOptions.field_45450.field_30024 = this.field_48919;
-      mcInstance.gameOptions.field_45560.field_30024 = this.field_48911;
+      mcInstance.gameOptions.keyForward.pressed = this.field_48929;
+      mcInstance.gameOptions.keyBack.pressed = this.field_48924;
+      mcInstance.gameOptions.keyLeft.pressed = this.field_48913;
+      mcInstance.gameOptions.keyRight.pressed = this.field_48923;
+      mcInstance.gameOptions.keyJump.pressed = this.field_48919;
+      mcInstance.gameOptions.keySneak.pressed = this.field_48911;
       mcInstance.field_9601.method_754(this.field_48925);
       mcInstance.field_9632.method_37298();
       if (field_48917 != null) {
@@ -137,12 +137,12 @@ public class class_9598 extends Module {
    @EventListen
    private void method_44329(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() != mcInstance.gameOptions.field_45560.field_30027.field_17800) {
-            if (var1.method_29384() != mcInstance.gameOptions.field_45450.field_30027.field_17800) {
-               if (var1.method_29384() != mcInstance.gameOptions.field_45416.field_30027.field_17800) {
-                  if (var1.method_29384() != mcInstance.gameOptions.field_45434.field_30027.field_17800) {
-                     if (var1.method_29384() != mcInstance.gameOptions.field_45504.field_30027.field_17800) {
-                        if (var1.method_29384() == mcInstance.gameOptions.field_45411.field_30027.field_17800) {
+         if (var1.method_29384() != mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+            if (var1.method_29384() != mcInstance.gameOptions.keyJump.field_30027.field_17800) {
+               if (var1.method_29384() != mcInstance.gameOptions.keyForward.field_30027.field_17800) {
+                  if (var1.method_29384() != mcInstance.gameOptions.keyBack.field_30027.field_17800) {
+                     if (var1.method_29384() != mcInstance.gameOptions.keyLeft.field_30027.field_17800) {
+                        if (var1.method_29384() == mcInstance.gameOptions.keyRight.field_30027.field_17800) {
                            var1.method_29715(true);
                            this.field_48923 = true;
                         }
@@ -175,12 +175,12 @@ public class class_9598 extends Module {
    @EventListen
    private void method_44328(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() != mcInstance.gameOptions.field_45560.field_30027.field_17800) {
-            if (var1.method_1364() != mcInstance.gameOptions.field_45450.field_30027.field_17800) {
-               if (var1.method_1364() != mcInstance.gameOptions.field_45416.field_30027.field_17800) {
-                  if (var1.method_1364() != mcInstance.gameOptions.field_45434.field_30027.field_17800) {
-                     if (var1.method_1364() != mcInstance.gameOptions.field_45504.field_30027.field_17800) {
-                        if (var1.method_1364() == mcInstance.gameOptions.field_45411.field_30027.field_17800) {
+         if (var1.method_1364() != mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+            if (var1.method_1364() != mcInstance.gameOptions.keyJump.field_30027.field_17800) {
+               if (var1.method_1364() != mcInstance.gameOptions.keyForward.field_30027.field_17800) {
+                  if (var1.method_1364() != mcInstance.gameOptions.keyBack.field_30027.field_17800) {
+                     if (var1.method_1364() != mcInstance.gameOptions.keyLeft.field_30027.field_17800) {
+                        if (var1.method_1364() == mcInstance.gameOptions.keyRight.field_30027.field_17800) {
                            var1.method_29715(true);
                            this.field_48923 = false;
                         }

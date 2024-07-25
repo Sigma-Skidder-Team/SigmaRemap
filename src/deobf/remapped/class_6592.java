@@ -15,7 +15,7 @@ public class class_6592 extends Module {
    @EventListen
    public void method_30357(class_5088 var1) {
       if (this.method_42015()) {
-         if (mcInstance.gameOptions.field_45450.method_27060() && !mcInstance.field_9632.method_37243().field_41726) {
+         if (mcInstance.gameOptions.keyJump.isKeyDown() && !mcInstance.field_9632.method_37243().field_41726) {
          }
 
          class_8859 var4 = mcInstance.field_9632.field_30533;
@@ -51,7 +51,7 @@ public class class_6592 extends Module {
             float var12 = this.field_34011;
             if (mcInstance.field_9632.method_37243() instanceof class_3551) {
                class_3551 var15 = (class_3551) mcInstance.field_9632.method_37243();
-               if (var15.field_41726 && mcInstance.gameOptions.field_45450.method_27060()) {
+               if (var15.field_41726 && mcInstance.gameOptions.keyJump.isKeyDown()) {
                   mcInstance.field_9632.field_30501 = 1.0F;
                }
             }

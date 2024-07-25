@@ -33,7 +33,7 @@ public class class_3721 extends class_367 {
       if (this.method_42015()) {
          if (mcInstance.field_9632.method_37243() != null) {
             if (!mcInstance.field_9632.method_37243().field_41726) {
-               if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+               if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = true;
                }
@@ -45,13 +45,13 @@ public class class_3721 extends class_367 {
    @EventListen
    private void method_17261(class_307 var1) {
       if (this.method_42015()) {
-         if (this.field_18223 && var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+         if (this.field_18223 && var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
             this.field_18223 = false;
          }
 
          if (mcInstance.field_9632.method_37243() != null) {
             if (!mcInstance.field_9632.method_37243().field_41726) {
-               if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+               if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = false;
                }
@@ -62,18 +62,18 @@ public class class_3721 extends class_367 {
 
    @Override
    public void method_42006() {
-      if (!mcInstance.gameOptions.field_45560.method_27060()) {
-         if (!mcInstance.gameOptions.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
+         if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
             this.field_18223 = false;
          }
       } else {
-         mcInstance.gameOptions.field_45560.field_30024 = false;
+         mcInstance.gameOptions.keySneak.pressed = false;
          this.field_18223 = true;
       }
    }
 
    @Override
    public void method_42020() {
-      mcInstance.gameOptions.field_45560.field_30024 = this.field_18223;
+      mcInstance.gameOptions.keySneak.pressed = this.field_18223;
    }
 }

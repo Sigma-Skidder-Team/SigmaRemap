@@ -1360,7 +1360,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    private void method_8556() {
-      while (this.gameOptions.field_45441.method_27074()) {
+      while (this.gameOptions.keyPerspectiveSwitch.isPressed()) {
          class_9193 var1 = this.gameOptions.method_40867();
          this.gameOptions.method_40884(this.gameOptions.method_40867().method_42382());
          if (var1.method_42383() != this.gameOptions.method_40867().method_42383()) {
@@ -1370,14 +1370,14 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.worldRenderer.method_20018();
       }
 
-      while (this.gameOptions.field_45556.method_27074()) {
+      while (this.gameOptions.keySmoothCamera.isPressed()) {
          this.gameOptions.field_45499 = !this.gameOptions.field_45499;
       }
 
       for (int var4 = 0; var4 < 9; var4++) {
-         boolean var2 = this.gameOptions.field_45562.method_27060();
-         boolean var3 = this.gameOptions.field_45486.method_27060();
-         if (this.gameOptions.field_45393[var4].method_27074()) {
+         boolean var2 = this.gameOptions.field_45562.isKeyDown();
+         boolean var3 = this.gameOptions.field_45486.isKeyDown();
+         if (this.gameOptions.hotbarKeys[var4].isPressed()) {
             if (this.field_9632.method_37221()) {
                this.field_9614.method_14004().method_38560(var4);
             } else if (this.field_9632.method_3186() && this.field_9623 == null && (var3 || var2)) {
@@ -1388,7 +1388,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          }
       }
 
-      while (this.gameOptions.field_45421.method_27074()) {
+      while (this.gameOptions.keySnowflakeMenu.isPressed()) {
          if (!this.method_8612()) {
             this.field_9632.method_3251(field_9671, true);
             class_7542.field_38482.method_34341(field_9671.getString());
@@ -1402,7 +1402,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          }
       }
 
-      while (this.gameOptions.field_45575.method_27074()) {
+      while (this.gameOptions.keyInventory.isPressed()) {
          if (this.field_9647.method_42161()) {
             this.field_9632.method_27311();
          } else {
@@ -1411,17 +1411,17 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          }
       }
 
-      while (this.gameOptions.field_45534.method_27074()) {
+      while (this.gameOptions.keyAdvancements.isPressed()) {
          this.method_8609(new class_9044(this.field_9632.field_30532.method_4796()));
       }
 
-      while (this.gameOptions.field_45415.method_27074()) {
+      while (this.gameOptions.keySwapOffHand.isPressed()) {
          if (!this.field_9632.method_37221()) {
             this.method_8614().method_4813(new class_1586(class_7500.field_38260, class_1331.field_7306, Direction.field_802));
          }
       }
 
-      while (this.gameOptions.field_45451.method_27074()) {
+      while (this.gameOptions.keyDrop.isPressed()) {
          if (!this.field_9632.method_37221() && this.field_9632.method_3235(Screen.method_1185())) {
             this.field_9632.method_26597(class_2584.field_12791);
          }
@@ -1429,17 +1429,17 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
       boolean var5 = this.gameOptions.field_45443 != class_1803.field_9186;
       if (var5) {
-         while (this.gameOptions.field_45420.method_27074()) {
+         while (this.gameOptions.keyOpenChat.isPressed()) {
             this.method_8548("");
          }
 
-         if (this.field_9623 == null && this.field_9610 == null && this.gameOptions.field_45467.method_27074()) {
+         if (this.field_9623 == null && this.field_9610 == null && this.gameOptions.keyTypeCommand.isPressed()) {
             this.method_8548("/");
          }
       }
 
       if (this.field_9632.method_26554()) {
-         if (!this.gameOptions.field_45559.method_27060()) {
+         if (!this.gameOptions.keyUse.isKeyDown()) {
             class_4996 var6 = new class_4996();
             SigmaMainClass.getInstance().method_3302().method_7914(var6);
             if (!var6.method_29716()) {
@@ -1447,33 +1447,33 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             }
          }
 
-         while (this.gameOptions.field_45530.method_27074()) {
+         while (this.gameOptions.keyAttack.isPressed()) {
          }
 
-         while (this.gameOptions.field_45559.method_27074()) {
+         while (this.gameOptions.keyUse.isPressed()) {
          }
 
-         while (this.gameOptions.field_45541.method_27074()) {
+         while (this.gameOptions.keyPickItem.isPressed()) {
          }
       } else {
-         while (this.gameOptions.field_45530.method_27074()) {
+         while (this.gameOptions.keyAttack.isPressed()) {
             this.method_8610();
          }
 
-         while (this.gameOptions.field_45559.method_27074()) {
+         while (this.gameOptions.keyUse.isPressed()) {
             this.method_8565();
          }
 
-         while (this.gameOptions.field_45541.method_27074()) {
+         while (this.gameOptions.keyPickItem.isPressed()) {
             this.method_8543();
          }
       }
 
-      if (this.gameOptions.field_45559.method_27060() && this.field_9570 == 0 && !this.field_9632.method_26554()) {
+      if (this.gameOptions.keyUse.isKeyDown() && this.field_9570 == 0 && !this.field_9632.method_26554()) {
          this.method_8565();
       }
 
-      this.method_8553(this.field_9623 == null && this.gameOptions.field_45530.method_27060() && this.field_9625.method_39843());
+      this.method_8553(this.field_9623 == null && this.gameOptions.keyAttack.isKeyDown() && this.field_9625.method_39843());
    }
 
    public static class_2805 method_8582(class_3676 var0) {
@@ -2232,7 +2232,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       return var1.method_37116()
          || this.field_9632 != null
             && this.field_9632.method_37221()
-            && this.gameOptions.field_45565.method_27060()
+            && this.gameOptions.keySpectatorOutlines.isKeyDown()
             && var1.method_37387() == class_6629.field_34300;
    }
 

@@ -15,10 +15,10 @@ public class class_2850 extends Module {
    public void method_42006() {
       this.field_13969 = false;
       this.field_13966 = -10.0;
-      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
          this.field_13967 = false;
       } else {
-         mcInstance.gameOptions.field_45560.field_30024 = false;
+         mcInstance.gameOptions.keySneak.pressed = false;
          this.field_13967 = true;
       }
    }
@@ -26,7 +26,7 @@ public class class_2850 extends Module {
    @EventListen
    private void method_12962(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_13967 = true;
          }
@@ -36,7 +36,7 @@ public class class_2850 extends Module {
    @EventListen
    private void method_12964(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_13967 = false;
          }
@@ -88,7 +88,7 @@ public class class_2850 extends Module {
                } else {
                   mcInstance.field_9632.method_26595();
                   var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
-                  this.field_13966 = !mcInstance.gameOptions.field_45450.method_27060()
+                  this.field_13966 = !mcInstance.gameOptions.keyJump.isKeyDown()
                      ? (!this.field_13967 ? mcInstance.field_9632.method_37245().field_7333 : mcInstance.field_9632.method_37245().field_7333 - 1.0)
                      : (!this.field_13967 ? mcInstance.field_9632.method_37245().field_7333 + 1.0 : mcInstance.field_9632.method_37245().field_7333);
                   class_8865.method_40777(var1, 0.35);
@@ -98,7 +98,7 @@ public class class_2850 extends Module {
             mcInstance.field_9632.method_26595();
             var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
             class_8865.method_40777(var1, 0.35);
-            this.field_13966 = !mcInstance.gameOptions.field_45450.method_27060()
+            this.field_13966 = !mcInstance.gameOptions.keyJump.isKeyDown()
                ? (!this.field_13967 ? mcInstance.field_9632.method_37245().field_7333 : mcInstance.field_9632.method_37245().field_7333 - 1.0)
                : (!this.field_13967 ? mcInstance.field_9632.method_37245().field_7333 + 1.0 : mcInstance.field_9632.method_37245().field_7333);
          }
