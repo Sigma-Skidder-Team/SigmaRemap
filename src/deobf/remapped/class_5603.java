@@ -7,7 +7,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_5603 extends class_266 {
+public class class_5603 extends Screen {
    private static final class_4639 field_28419 = new class_4639("textures/gui/container/gamemode_switcher.png");
    private static final int field_28417 = class_531.values().length * 30 - 5;
    private static final ITextComponent field_28420 = new TranslationTextComponent(
@@ -101,7 +101,7 @@ public class class_5603 extends class_266 {
          return false;
       } else {
          this.method_25426();
-         this.field_943.method_8609((class_266)null);
+         this.field_943.method_8609((Screen)null);
          return true;
       }
    }

@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 public class class_9043 extends class_1094 {
    private static final Logger field_46269 = LogManager.getLogger();
    private static final ReentrantLock field_46279 = new ReentrantLock();
-   private final class_266 field_46277;
+   private final Screen field_46277;
    private final class_8105 field_46280;
    private final ITextComponent field_46282;
    private final RateLimiter field_46283;
@@ -40,7 +40,7 @@ public class class_9043 extends class_1094 {
    private boolean field_46284;
    private final BooleanConsumer field_46281;
 
-   public class_9043(class_266 var1, class_8105 var2, String var3, BooleanConsumer var4) {
+   public class_9043(Screen var1, class_8105 var2, String var3, BooleanConsumer var4) {
       this.field_46281 = var4;
       this.field_46277 = var1;
       this.field_46292 = var3;

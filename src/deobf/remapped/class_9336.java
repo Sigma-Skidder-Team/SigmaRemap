@@ -5,16 +5,16 @@ import java.util.function.Consumer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_9336 extends class_266 {
+public class class_9336 extends Screen {
    private static final ITextComponent field_47653 = new TranslationTextComponent("createWorld.customize.buffet.biome");
-   private final class_266 field_47652;
+   private final Screen field_47652;
    private final Consumer<class_6325> field_47654;
    private final class_6433<class_6325> field_47658;
    private class_4213 field_47659;
    private class_6325 field_47655;
    private class_9521 field_47656;
 
-   public class_9336(class_266 var1, class_6322 var2, Consumer<class_6325> var3, class_6325 var4) {
+   public class_9336(Screen var1, class_6322 var2, Consumer<class_6325> var3, class_6325 var4) {
       super(new TranslationTextComponent("createWorld.customize.buffet.title"));
       this.field_47652 = var1;
       this.field_47654 = var3;

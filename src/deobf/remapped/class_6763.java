@@ -13,8 +13,8 @@ import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;
 
 public class class_6763 {
-   private static final Map<Class<? extends class_266>, Class<? extends class_2596>> field_34895 = new HashMap<Class<? extends class_266>, Class<? extends class_2596>>();
-   public static final Map<Class<? extends class_266>, String> field_34911 = new HashMap<Class<? extends class_266>, String>();
+   private static final Map<Class<? extends Screen>, Class<? extends class_2596>> field_34895 = new HashMap<Class<? extends Screen>, Class<? extends class_2596>>();
+   public static final Map<Class<? extends Screen>, String> field_34911 = new HashMap<Class<? extends Screen>, String>();
    private List<Integer> field_34909 = new ArrayList<Integer>();
    private List<Integer> field_34910 = new ArrayList<Integer>();
    private List<Integer> field_34908 = new ArrayList<Integer>();
@@ -77,7 +77,7 @@ public class class_6763 {
       }
    }
 
-   public static boolean method_30997(class_266 var0) {
+   public static boolean method_30997(Screen var0) {
       if (var0 instanceof class_4145 && !(var0 instanceof class_9888)) {
          MinecraftClient.getInstance().field_9623 = null;
          MinecraftClient.getInstance().method_8609(new class_9888(((class_4145)var0).field_20176));
@@ -95,7 +95,7 @@ public class class_6763 {
       }
    }
 
-   public static class_2596 method_30995(class_266 var0) {
+   public static class_2596 method_30995(Screen var0) {
       if (var0 == null) {
          return null;
       } else if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30640) {
@@ -318,17 +318,17 @@ public class class_6763 {
       }
    }
 
-   public Class<? extends class_266> method_31007(String var1) {
+   public Class<? extends Screen> method_31007(String var1) {
       for (Entry var5 : field_34911.entrySet()) {
          if (var1.equals(var5.getValue())) {
-            return (Class<? extends class_266>)var5.getKey();
+            return (Class<? extends Screen>)var5.getKey();
          }
       }
 
       return null;
    }
 
-   public String method_31010(Class<? extends class_266> var1) {
+   public String method_31010(Class<? extends Screen> var1) {
       if (var1 == null) {
          return "";
       } else {
@@ -390,14 +390,14 @@ public class class_6763 {
       }
    }
 
-   public void method_30989(class_266 var1) {
+   public void method_30989(Screen var1) {
       if (var1 != null) {
          MinecraftClient.getInstance().field_9623 = null;
          MinecraftClient.getInstance().method_8609(var1);
       }
    }
 
-   public boolean method_31008(class_266 var1) {
+   public boolean method_31008(Screen var1) {
       return field_34895.containsKey(var1.getClass());
    }
 

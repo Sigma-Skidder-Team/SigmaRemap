@@ -3,7 +3,7 @@ package remapped;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class class_2577 extends class_2198 implements class_1463 {
+public abstract class class_2577 extends FocusableGui implements IRenderable {
    public static final int field_12759 = -1;
    public static final int field_12766 = -2;
    public final MinecraftClient field_12768;

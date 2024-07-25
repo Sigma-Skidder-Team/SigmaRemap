@@ -5,13 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class class_6809 {
-   private class_266 field_35120;
+   private Screen field_35120;
    private class_2168 field_35121;
    private int field_35119 = 0;
    private int field_35124 = 0;
    private long field_35122 = 0L;
 
-   public class_6809(class_266 var1, class_2168 var2) {
+   public class_6809(Screen var1, class_2168 var2) {
       this.field_35120 = var1;
       this.field_35121 = var2;
    }

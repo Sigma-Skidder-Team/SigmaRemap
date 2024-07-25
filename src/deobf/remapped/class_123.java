@@ -38,7 +38,7 @@ public class class_123 {
       this.method_375();
    }
 
-   public void method_367(int var1, Class<? extends class_266> var2) {
+   public void method_367(int var1, Class<? extends Screen> var2) {
       this.method_383(var2);
       class_3158 var5 = new class_3158(var1, var2);
       this.field_297.add(var5);
@@ -55,7 +55,7 @@ public class class_123 {
       }
    }
 
-   public int method_380(Class<? extends class_266> var1) {
+   public int method_380(Class<? extends Screen> var1) {
       for (class_3158 var5 : this.field_297) {
          if (var5.method_14566() == class_4906.field_25373 && var5.method_14559() == var1) {
             return var5.method_14565();

@@ -3,7 +3,7 @@ package remapped;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_9640 extends class_266 {
+public class class_9640 extends Screen {
    private final ITextComponent field_49116;
    private class_416 field_49117 = class_416.field_1766;
    public ITextComponent field_49114;

@@ -4,7 +4,7 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 public class class_3403 implements class_2168 {
-   public Rectangle 酭浣属홵ぶ娍(class_266 var1, int var2, int var3) {
+   public Rectangle 酭浣属홵ぶ娍(Screen var1, int var2, int var3) {
       int var6 = var1.field_941 / 2 - 150;
       int var7 = var1.field_940 / 6 - 7;
       if (var3 <= var7 + 98) {

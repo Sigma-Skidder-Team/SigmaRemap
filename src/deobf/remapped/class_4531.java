@@ -14,10 +14,10 @@ public class class_4531 extends class_1094 {
       new TranslationTextComponent("mco.client.incompatible.msg.line2"),
       new TranslationTextComponent("mco.client.incompatible.msg.line3")
    };
-   private final class_266 field_22106;
+   private final Screen field_22106;
    private final boolean field_22107;
 
-   public class_4531(class_266 var1, boolean var2) {
+   public class_4531(Screen var1, boolean var2) {
       this.field_22106 = var1;
       this.field_22107 = var2;
    }

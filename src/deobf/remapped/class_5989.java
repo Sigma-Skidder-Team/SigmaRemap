@@ -256,7 +256,7 @@ public class class_5989 extends class_9716 {
    public void method_27327() {
       this.field_3853.method_32408(class_6098.field_31203);
       super.method_3207();
-      this.field_30523.method_8609((class_266)null);
+      this.field_30523.method_8609((Screen)null);
    }
 
    public void method_27310(float var1) {
@@ -775,7 +775,7 @@ public class class_5989 extends class_9716 {
                this.method_3207();
             }
 
-            this.field_30523.method_8609((class_266)null);
+            this.field_30523.method_8609((Screen)null);
          }
 
          if (this.field_30510 == 0.0F) {

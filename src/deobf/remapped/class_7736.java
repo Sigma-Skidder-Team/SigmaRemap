@@ -6,11 +6,11 @@ import org.apache.logging.log4j.Logger;
 
 public class class_7736 {
    private static final Logger field_39232 = LogManager.getLogger();
-   private final class_266 field_39231;
+   private final Screen field_39231;
    private volatile boolean field_39228;
    private class_5121 field_39229;
 
-   public class_7736(class_266 var1) {
+   public class_7736(Screen var1) {
       this.field_39231 = var1;
    }
 

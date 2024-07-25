@@ -19,7 +19,7 @@ import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_6577 extends class_266 {
+public class class_6577 extends Screen {
    private static final Logger field_33549 = LogManager.getLogger();
    private static final ITextComponent field_33536 = new TranslationTextComponent("selectWorld.gameMode");
    private static final ITextComponent field_33534 = new TranslationTextComponent("selectWorld.enterSeed");
@@ -27,7 +27,7 @@ public class class_6577 extends class_266 {
    private static final ITextComponent field_33519 = new TranslationTextComponent(field_33537[2]);
    private static final ITextComponent field_33541 = new TranslationTextComponent("selectWorld.resultFolder");
    private static final ITextComponent field_33546 = new TranslationTextComponent("selectWorld.allowCommands.info");
-   private final class_266 field_33525;
+   private final Screen field_33525;
    private class_1863 field_33552;
    private String field_33529;
    private class_8026 field_33526 = class_8026.field_41090;
@@ -54,7 +54,7 @@ public class class_6577 extends class_266 {
    private class_291 field_33550 = new class_291();
    public final class_668 field_33523;
 
-   public class_6577(class_266 var1, class_6292 var2, class_2904 var3, Path var4, class_2805 var5, class_7522 var6) {
+   public class_6577(Screen var1, class_6292 var2, class_2904 var3, Path var4, class_2805 var5, class_7522 var6) {
       this(var1, var5, new class_668(var6, var3, class_7149.method_32812(var3), OptionalLong.of(var3.method_13295())));
       this.field_33522 = var2.method_28716();
       this.field_33540 = var2.method_28719();
@@ -77,7 +77,7 @@ public class class_6577 extends class_266 {
       this.field_33544 = var4;
    }
 
-   public static class_6577 method_30058(class_266 var0) {
+   public static class_6577 method_30058(Screen var0) {
       class_7522 var3 = class_6322.method_28810();
       return new class_6577(
          var0,
@@ -95,7 +95,7 @@ public class class_6577 extends class_266 {
       );
    }
 
-   private class_6577(class_266 var1, class_2805 var2, class_668 var3) {
+   private class_6577(Screen var1, class_2805 var2, class_668 var3) {
       super(new TranslationTextComponent("selectWorld.create"));
       this.field_33525 = var1;
       this.field_33522 = class_6956.method_31803("selectWorld.newWorld");

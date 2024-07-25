@@ -16,7 +16,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_6107 extends class_266 {
+public class class_6107 extends Screen {
    private static final Logger field_31237 = LogManager.getLogger();
    private static final List<class_382> field_31244 = Lists.newArrayList();
    private final class_9675 field_31240;

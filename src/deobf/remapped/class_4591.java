@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public abstract class class_4591 extends class_266 {
+public abstract class class_4591 extends Screen {
    private static final ITextComponent field_22322 = new TranslationTextComponent("advMode.setCommand");
    private static final ITextComponent field_22320 = new TranslationTextComponent("advMode.command");
    private static final ITextComponent field_22317 = new TranslationTextComponent("advMode.previousOutput");
@@ -88,7 +88,7 @@ public abstract class class_4591 extends class_266 {
          var3.method_36937((ITextComponent)null);
       }
 
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    @Override
@@ -101,7 +101,7 @@ public abstract class class_4591 extends class_266 {
    @Override
    public void method_1156() {
       this.method_21257().method_36935(this.field_22324);
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    private void method_21258(String var1) {

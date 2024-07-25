@@ -4,7 +4,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_2681 extends class_266 {
+public class class_2681 extends Screen {
    private final class_6730 field_13149;
    private long field_13150 = -1L;
    private static final Object2IntMap<class_7335> field_13148 = class_9665.<Object2IntMap<class_7335>>method_44659(new Object2IntOpenHashMap(), var0 -> {

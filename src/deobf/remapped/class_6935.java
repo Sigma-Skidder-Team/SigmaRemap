@@ -49,39 +49,39 @@ public class class_6935 {
    }
 
    public boolean method_31732(int var1) {
-      if (!class_266.method_1174(var1)) {
-         if (!class_266.method_1182(var1)) {
-            if (!class_266.method_1173(var1)) {
-               if (!class_266.method_1166(var1)) {
+      if (!Screen.method_1174(var1)) {
+         if (!Screen.method_1182(var1)) {
+            if (!Screen.method_1173(var1)) {
+               if (!Screen.method_1166(var1)) {
                   if (var1 != 259) {
                      if (var1 != 261) {
                         if (var1 == 263) {
-                           if (!class_266.method_1185()) {
-                              this.method_31706(-1, class_266.method_1190());
+                           if (!Screen.method_1185()) {
+                              this.method_31706(-1, Screen.method_1190());
                            } else {
-                              this.method_31725(-1, class_266.method_1190());
+                              this.method_31725(-1, Screen.method_1190());
                            }
 
                            return true;
                         }
 
                         if (var1 == 262) {
-                           if (!class_266.method_1185()) {
-                              this.method_31706(1, class_266.method_1190());
+                           if (!Screen.method_1185()) {
+                              this.method_31706(1, Screen.method_1190());
                            } else {
-                              this.method_31725(1, class_266.method_1190());
+                              this.method_31725(1, Screen.method_1190());
                            }
 
                            return true;
                         }
 
                         if (var1 == 268) {
-                           this.method_31708(class_266.method_1190());
+                           this.method_31708(Screen.method_1190());
                            return true;
                         }
 
                         if (var1 == 269) {
-                           this.method_31722(class_266.method_1190());
+                           this.method_31722(Screen.method_1190());
                            return true;
                         }
                      } else {

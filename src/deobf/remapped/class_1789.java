@@ -6,7 +6,7 @@ import java.net.URI;
 import net.minecraft.util.text.StringTextComponent;
 
 public class class_1789 extends class_4232 {
-   public class_266 field_9150;
+   public Screen field_9150;
    private class_6809 field_9143 = new class_6809(this, new class_9657());
    private int field_9152 = -1;
    private class_6244 field_9142;
@@ -23,7 +23,7 @@ public class class_1789 extends class_4232 {
    public static final int field_9145 = 3;
    public static final int field_9138 = 4;
 
-   public class_1789(class_266 var1, class_8881 var2) {
+   public class_1789(Screen var1, class_8881 var2) {
       super(new StringTextComponent(class_6956.method_31803("of.options.shadersTitle")));
       this.field_9150 = var1;
    }

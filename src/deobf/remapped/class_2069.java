@@ -47,7 +47,7 @@ public class class_2069 extends class_7114 {
 
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
-      if (!class_266.method_1185()) {
+      if (!Screen.method_1185()) {
          this.field_10440 += var4;
       }
 
@@ -107,7 +107,7 @@ public class class_2069 extends class_7114 {
       return (class_8932<?>)var3.get(this.field_10436);
    }
 
-   public List<ITextComponent> method_9665(class_266 var1) {
+   public List<ITextComponent> method_9665(Screen var1) {
       class_6098 var4 = this.method_9664().get(this.field_10436).method_41044();
       ArrayList var5 = Lists.newArrayList(var1.method_1179(var4));
       if (this.field_10433.method_35017(this.field_10435.method_5079(this.field_10434)).size() > 1) {

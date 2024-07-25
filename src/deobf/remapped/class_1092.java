@@ -35,7 +35,7 @@ public class class_1092 implements class_392 {
    private static final ITextComponent field_6028 = new TranslationTextComponent("disconnect.lost");
    private final class_5121 field_6035;
    private final GameProfile field_6022;
-   private final class_266 field_6041;
+   private final Screen field_6041;
    private MinecraftClient field_6026;
    private class_174 field_6021;
    private class_784 field_6025;
@@ -53,7 +53,7 @@ public class class_1092 implements class_392 {
    private Set<class_5621<class_6486>> field_6029;
    public class_6322 field_6037 = class_6322.method_28810();
 
-   public class_1092(MinecraftClient var1, class_266 var2, class_5121 var3, GameProfile var4) {
+   public class_1092(MinecraftClient var1, Screen var2, class_5121 var3, GameProfile var4) {
       this.field_6026 = var1;
       this.field_6041 = var2;
       this.field_6035 = var3;
@@ -560,7 +560,7 @@ public class class_1092 implements class_392 {
       this.field_6035.method_23485(new class_1514(var4.method_37302(), var4.method_37309(), var4.method_37156(), var4.field_41701, var4.field_41755, false));
       if (!this.field_6030) {
          this.field_6030 = true;
-         this.field_6026.method_8609((class_266)null);
+         this.field_6026.method_8609((Screen)null);
       }
    }
 
@@ -922,7 +922,7 @@ public class class_1092 implements class_392 {
       var13.method_3151(var6.method_3179());
       var13.method_27333(var6.method_27329());
       if (this.field_6026.field_9623 instanceof class_7696) {
-         this.field_6026.method_8609((class_266)null);
+         this.field_6026.method_8609((Screen)null);
       }
 
       this.field_6026.field_9647.method_42126(var1.method_35334());
@@ -1645,7 +1645,7 @@ public class class_1092 implements class_392 {
                      }
 
                      class_3187.method_14669(var6x);
-                     this.field_6026.method_8609((class_266)null);
+                     this.field_6026.method_8609((Screen)null);
                   }, new TranslationTextComponent("multiplayer.texturePrompt.line1"), new TranslationTextComponent("multiplayer.texturePrompt.line2"))));
             }
          }

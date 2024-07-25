@@ -13,7 +13,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$class_47;
 
-public class class_7680 extends class_266 {
+public class class_7680 extends Screen {
    public static final class_8668 field_39032 = new class_9531();
    public static final class_4639 field_39030 = new class_4639("textures/gui/book.png");
    private class_8668 field_39029;
@@ -70,7 +70,7 @@ public class class_7680 extends class_266 {
 
    public void method_34807() {
       this.<class_9521>method_1186(
-         new class_9521(this.field_941 / 2 - 100, 196, 200, 20, class_1402.field_7625, var1 -> this.field_943.method_8609((class_266)null))
+         new class_9521(this.field_941 / 2 - 100, 196, 200, 20, class_1402.field_7625, var1 -> this.field_943.method_8609((Screen)null))
       );
    }
 
@@ -186,7 +186,7 @@ public class class_7680 extends class_266 {
       } else {
          boolean var5 = super.method_1187(var1);
          if (var5 && var4.getAction() == ClickEvent$class_47.RUN_COMMAND) {
-            this.field_943.method_8609((class_266)null);
+            this.field_943.method_8609((Screen)null);
          }
 
          return var5;

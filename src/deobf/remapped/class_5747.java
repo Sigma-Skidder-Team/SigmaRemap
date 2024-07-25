@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_5747 extends class_1094 {
    private static final Logger field_29095 = LogManager.getLogger();
-   private final class_266 field_29099;
+   private final Screen field_29099;
    private final class_7039 field_29100;
    private class_7675 field_29097;
    private final long field_29094;
@@ -25,7 +25,7 @@ public class class_5747 extends class_1094 {
    private final List<Integer> field_29096 = Lists.newArrayList();
    private int field_29092;
 
-   public class_5747(class_266 var1, class_7039 var2, long var3, boolean var5) {
+   public class_5747(Screen var1, class_7039 var2, long var3, boolean var5) {
       this.field_29099 = var1;
       this.field_29100 = var2;
       this.field_29094 = var3;

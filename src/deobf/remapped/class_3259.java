@@ -5,12 +5,12 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_3259 extends class_266 {
+public class class_3259 extends Screen {
    private static String[] field_16163;
-   public final class_266 field_16162;
+   public final Screen field_16162;
    public final class_8881 field_16164;
 
-   public class_3259(class_266 var1, class_8881 var2, ITextComponent var3) {
+   public class_3259(Screen var1, class_8881 var2, ITextComponent var3) {
       super(var3);
       this.field_16162 = var1;
       this.field_16164 = var2;

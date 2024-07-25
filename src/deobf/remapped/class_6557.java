@@ -4,8 +4,8 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_6557 extends class_266 {
-   private final class_266 field_33426;
+public class class_6557 extends Screen {
+   private final Screen field_33426;
    private static final ITextComponent field_33423 = new TranslationTextComponent("multiplayerWarning.header").mergeStyle(TextFormatting.BOLD);
    private static final ITextComponent field_33422 = new TranslationTextComponent("multiplayerWarning.message");
    private static final ITextComponent field_33419 = new TranslationTextComponent("multiplayerWarning.check");
@@ -13,7 +13,7 @@ public class class_6557 extends class_266 {
    private class_8387 field_33420;
    private class_416 field_33425 = class_416.field_1766;
 
-   public class_6557(class_266 var1) {
+   public class_6557(Screen var1) {
       super(class_7542.field_38486);
       this.field_33426 = var1;
    }

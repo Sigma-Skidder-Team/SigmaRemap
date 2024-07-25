@@ -40,9 +40,9 @@ public class class_7860 {
    public static class_817 field_39893 = new class_817(field_40180, "generateEnhancedStackTrace", new Class[]{Throwable.class});
    public static class_817 field_40244 = new class_817(field_40180, "generateEnhancedStackTrace", new Class[]{StackTraceElement[].class});
    public static class_9859 field_39864 = new class_9859("net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Pre");
-   public static class_4911 field_39910 = new class_4911(field_39864, new Class[]{class_266.class, class_7966.class, int.class, int.class, float.class});
+   public static class_4911 field_39910 = new class_4911(field_39864, new Class[]{Screen.class, class_7966.class, int.class, int.class, float.class});
    public static class_9859 field_39881 = new class_9859("net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Post");
-   public static class_4911 field_39859 = new class_4911(field_39881, new Class[]{class_266.class, class_7966.class, int.class, int.class, float.class});
+   public static class_4911 field_39859 = new class_4911(field_39881, new Class[]{Screen.class, class_7966.class, int.class, int.class, float.class});
    public static class_9859 field_40227 = new class_9859("net.minecraftforge.fml.loading.progress.EarlyProgressVisualization");
    public static class_1790 field_40082 = new class_1790(field_40227, "INSTANCE");
    public static class_817 field_40035 = new class_817(field_40227, "handOffWindow");
@@ -235,7 +235,7 @@ public class class_7860 {
    public static class_9859 field_40193 = new class_9859("net.minecraftforge.client.model.ModelLoaderRegistry");
    public static class_817 field_40039 = field_40193.method_45473("onModelLoadingStart");
    public static class_9859 field_40166 = new class_9859("net.minecraftforge.fml.client.gui.screen.ModListScreen");
-   public static class_4911 field_39987 = new class_4911(field_40166, new Class[]{class_266.class});
+   public static class_4911 field_39987 = new class_4911(field_40166, new Class[]{Screen.class});
    public static class_9859 field_39858 = new class_9859("net.minecraftforge.client.gui.NotificationModUpdateScreen");
    public static class_817 field_40098 = new class_817(field_39858, "init", new Class[]{class_1876.class, class_9521.class});
    public static class_9859 field_39969 = new class_9859("net.minecraftforge.event.entity.PlaySoundAtEntityEvent");

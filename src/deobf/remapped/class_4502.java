@@ -12,7 +12,7 @@ public class class_4502 extends class_1094 {
    private static final ITextComponent field_22020 = new TranslationTextComponent("mco.invites.nopending");
    private static final ITextComponent field_22024 = new TranslationTextComponent(field_22023[1]);
    private static final ITextComponent field_22021 = new TranslationTextComponent(field_22023[2]);
-   private final class_266 field_22015;
+   private final Screen field_22015;
    private ITextComponent field_22013;
    private boolean field_22027;
    private class_2707 field_22019;
@@ -21,7 +21,7 @@ public class class_4502 extends class_1094 {
    private class_9521 field_22018;
    private class_9521 field_22026;
 
-   public class_4502(class_266 var1) {
+   public class_4502(Screen var1) {
       this.field_22015 = var1;
    }
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_2113 extends class_2596 {
+public class AltManagerMenu extends class_2596 {
    private int field_10607;
    private float field_10602;
    private float field_10601 = 0.75F;
@@ -29,7 +29,7 @@ public class class_2113 extends class_2596 {
    private boolean field_10618 = false;
    private class_3004 field_10604;
 
-   public class_2113() {
+   public AltManagerMenu() {
       super("Alt Manager");
       this.method_32105(false);
       ArrayList var3 = new ArrayList();

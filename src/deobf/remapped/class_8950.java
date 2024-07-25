@@ -6,9 +6,9 @@ public class class_8950 extends class_5875 {
    private final String field_45876;
    private final String field_45879;
    private final long field_45878;
-   private final class_266 field_45877;
+   private final Screen field_45877;
 
-   public class_8950(long var1, String var3, String var4, class_266 var5) {
+   public class_8950(long var1, String var3, String var4, Screen var5) {
       this.field_45878 = var1;
       this.field_45876 = var3;
       this.field_45879 = var4;

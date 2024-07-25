@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_2413 extends class_266 {
+public class class_2413 extends Screen {
    private static final ITextComponent field_12004 = new TranslationTextComponent(field_12008[1]);
    private static final ITextComponent field_12001 = new TranslationTextComponent(field_12008[2]);
    private class_9521 field_12003;
@@ -15,7 +15,7 @@ public class class_2413 extends class_266 {
    private class_1863 field_12007;
    private class_1863 field_12005;
    private class_9521 field_12006;
-   private final class_266 field_12002;
+   private final Screen field_12002;
    private final Predicate<String> field_12000 = var0 -> {
       if (class_6660.method_30576(var0)) {
          return true;
@@ -34,7 +34,7 @@ public class class_2413 extends class_266 {
       }
    };
 
-   public class_2413(class_266 var1, BooleanConsumer var2, class_2560 var3) {
+   public class_2413(Screen var1, BooleanConsumer var2, class_2560 var3) {
       super(new TranslationTextComponent("addServer.title"));
       this.field_12002 = var1;
       this.field_11999 = var2;

@@ -39,7 +39,7 @@ public class class_4718 extends class_7680 implements class_4378<class_6360> {
          super.method_34807();
       } else {
          this.<class_9521>method_1186(
-            new class_9521(this.field_941 / 2 - 100, 196, 98, 20, class_1402.field_7625, var1 -> this.field_943.method_8609((class_266)null))
+            new class_9521(this.field_941 / 2 - 100, 196, 98, 20, class_1402.field_7625, var1 -> this.field_943.method_8609((Screen)null))
          );
          this.<class_9521>method_1186(
             new class_9521(this.field_941 / 2 + 2, 196, 98, 20, new TranslationTextComponent("lectern.take_book"), var1 -> this.method_21817(3))

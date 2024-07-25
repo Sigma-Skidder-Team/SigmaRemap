@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public abstract class class_7983<E extends class_4686<E>> extends class_2198 implements class_1463 {
+public abstract class class_7983<E extends class_4686<E>> extends FocusableGui implements IRenderable {
    public final MinecraftClient field_40883;
    public final int field_40878;
    private final List<E> field_40888 = new class_631(this, null);

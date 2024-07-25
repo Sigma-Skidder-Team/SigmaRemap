@@ -173,7 +173,7 @@ public class class_4374 {
                }
             } else {
                if (this.field_21462) {
-                  this.method_20378(!class_266.method_1190() ? 1 : -1);
+                  this.method_20378(!Screen.method_1190() ? 1 : -1);
                }
 
                this.method_20385();

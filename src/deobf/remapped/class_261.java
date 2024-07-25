@@ -20,12 +20,12 @@ import org.apache.logging.log4j.Logger;
 public class class_261 implements class_8886 {
    private static final Logger field_918 = LogManager.getLogger();
    private final MinecraftClient field_915;
-   private final class_266 field_917;
+   private final Screen field_917;
    private final Consumer<ITextComponent> field_914;
    private final class_5121 field_920;
    private GameProfile field_916;
 
-   public class_261(class_5121 var1, MinecraftClient var2, class_266 var3, Consumer<ITextComponent> var4) {
+   public class_261(class_5121 var1, MinecraftClient var2, Screen var3, Consumer<ITextComponent> var4) {
       this.field_920 = var1;
       this.field_915 = var2;
       this.field_917 = var3;

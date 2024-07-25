@@ -15,7 +15,7 @@ public class class_765 extends class_4232 {
    private static class_1013[] field_4131;
    private class_2825 field_4130;
    private int field_4142;
-   private class_266 field_4136;
+   private Screen field_4136;
    private class_8881 field_4133;
    private static class_1013[] field_4141 = new class_1013[]{
       class_1013.field_5207,
@@ -93,7 +93,7 @@ public class class_765 extends class_4232 {
       return super.method_26941(var1, var3, var5);
    }
 
-   public class_765(class_266 var1, class_8881 var2) {
+   public class_765(Screen var1, class_8881 var2) {
       super(new TranslationTextComponent("options.videoTitle"));
       this.field_4136 = var1;
       this.field_4133 = var2;

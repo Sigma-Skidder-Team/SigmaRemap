@@ -2,7 +2,7 @@ package remapped;
 
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_207 extends class_266 {
+public class class_207 extends Screen {
    private static final class_4639 field_693 = new class_4639("textures/gui/demo_background.png");
    private class_416 field_692 = class_416.field_1766;
    private class_416 field_694 = class_416.field_1766;
@@ -22,7 +22,7 @@ public class class_207 extends class_266 {
       );
       this.<class_9521>method_1186(
          new class_9521(this.field_941 / 2 + 2, this.field_940 / 2 + 62 + -16, 114, 20, new TranslationTextComponent("demo.help.later"), var1 -> {
-            this.field_943.method_8609((class_266)null);
+            this.field_943.method_8609((Screen)null);
             this.field_943.field_9625.method_39834();
          })
       );

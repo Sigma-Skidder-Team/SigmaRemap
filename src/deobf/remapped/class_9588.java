@@ -2,7 +2,7 @@ package remapped;
 
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_9588 extends class_266 {
+public class class_9588 extends Screen {
    private class_416 field_48766 = class_416.field_1766;
    private final Runnable field_48765;
 
@@ -32,7 +32,7 @@ public class class_9588 extends class_266 {
             150,
             20,
             new TranslationTextComponent("gui.toTitle"),
-            var1 -> this.field_943.method_8609((class_266)null)
+            var1 -> this.field_943.method_8609((Screen)null)
          )
       );
    }

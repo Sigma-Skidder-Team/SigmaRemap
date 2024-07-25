@@ -7,14 +7,14 @@ import net.minecraft.util.text.LanguageMap;
 public class class_6635 extends class_4785<class_6635> {
    private class_895 field_34353;
    public final MinecraftClient field_34349;
-   public final class_266 field_34351;
+   public final Screen field_34351;
    private final class_3178 field_34352;
    private final class_7107 field_34348;
    private final class_416 field_34350;
    private final class_7107 field_34347;
    private final class_416 field_34345;
 
-   public class_6635(MinecraftClient var1, class_895 var2, class_266 var3, class_3178 var4) {
+   public class_6635(MinecraftClient var1, class_895 var2, Screen var3, class_3178 var4) {
       this.field_34349 = var1;
       this.field_34351 = var3;
       this.field_34352 = var4;

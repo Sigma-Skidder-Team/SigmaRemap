@@ -7,13 +7,13 @@ import java.util.Random;
 import net.minecraft.util.text.StringTextComponent;
 
 public class class_5224 extends class_4232 {
-   private final class_266 field_26813;
+   private final Screen field_26813;
    private String field_26815;
    private long field_26816;
    private String field_26814;
    private class_5932 field_26818;
 
-   public class_5224(class_266 var1) {
+   public class_5224(Screen var1) {
       super(new StringTextComponent(class_6956.method_31803("of.options.capeOF.title")));
       this.field_26813 = var1;
    }

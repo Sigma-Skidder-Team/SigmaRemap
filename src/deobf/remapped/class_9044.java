@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_9044 extends class_266 implements class_4361 {
+public class class_9044 extends Screen implements class_4361 {
    private static final class_4639 field_46301 = new class_4639("textures/gui/advancements/window.png");
    private static final class_4639 field_46297 = new class_4639("textures/gui/advancements/tabs.png");
    private static final ITextComponent field_46295 = new TranslationTextComponent("advancements.sad_label");
@@ -65,7 +65,7 @@ public class class_9044 extends class_266 implements class_4361 {
       if (!this.field_943.field_9577.field_45534.method_27062(var1, var2)) {
          return super.method_26946(var1, var2, var3);
       } else {
-         this.field_943.method_8609((class_266)null);
+         this.field_943.method_8609((Screen)null);
          this.field_943.field_9625.method_39834();
          return true;
       }

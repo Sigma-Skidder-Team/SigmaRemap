@@ -11,7 +11,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_2387 extends class_266 {
+public class class_2387 extends Screen {
    private static final Logger field_11903 = LogManager.getLogger();
    private static final Object2IntMap<class_5621<class_6486>> field_11904 = class_9665.<Object2IntMap<class_5621<class_6486>>>method_44659(
       new Object2IntOpenCustomHashMap(class_9665.method_44698()), var0 -> {

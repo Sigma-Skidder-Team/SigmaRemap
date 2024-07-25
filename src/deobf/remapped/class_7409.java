@@ -21,14 +21,14 @@ public class class_7409 extends class_1094 {
    private static final ITextComponent field_37819 = new TranslationTextComponent("mco.configure.world.subscription.months");
    private static final ITextComponent field_37827 = new TranslationTextComponent("mco.configure.world.subscription.day");
    private static final ITextComponent field_37820 = new TranslationTextComponent("mco.configure.world.subscription.days");
-   private final class_266 field_37823;
+   private final Screen field_37823;
    private final class_7675 field_37833;
-   private final class_266 field_37828;
+   private final Screen field_37828;
    private ITextComponent field_37830;
    private String field_37824;
    private class_8489 field_37822;
 
-   public class_7409(class_266 var1, class_7675 var2, class_266 var3) {
+   public class_7409(Screen var1, class_7675 var2, Screen var3) {
       this.field_37823 = var1;
       this.field_37833 = var2;
       this.field_37828 = var3;

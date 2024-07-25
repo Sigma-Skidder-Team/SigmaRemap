@@ -15,7 +15,7 @@ public class class_1322 {
 
    public static class_4639 method_6042(class_4639 var0) {
       if (field_7281 != null) {
-         class_266 var3 = field_7279.field_9623;
+         Screen var3 = field_7279.field_9623;
          if (var3 instanceof class_2208) {
             if (!var0.method_21461().equals("minecraft") || !var0.method_21456().startsWith("textures/gui/")) {
                return var0;
@@ -95,7 +95,7 @@ public class class_1322 {
       }
    }
 
-   private static class_4639 method_6039(class_1614 var0, class_1331 var1, class_4924 var2, class_4639 var3, class_266 var4) {
+   private static class_4639 method_6039(class_1614 var0, class_1331 var1, class_4924 var2, class_4639 var3, Screen var4) {
       class_3739[] var7 = field_7281[var0.ordinal()];
       if (var7 == null) {
          return var3;

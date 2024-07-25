@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1633 extends class_7038 {
+public class SigmaMainMenu extends class_7038 {
    public final class_5228 field_8491;
    public final class_5228 field_8493;
    public final class_5228 field_8489;
@@ -9,7 +9,7 @@ public class class_1633 extends class_7038 {
    public final class_5228 field_8490;
    public final class_5228 field_8495;
 
-   public class_1633(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
+   public SigmaMainMenu(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       int var9 = 0;
       byte var10 = 114;
@@ -30,7 +30,7 @@ public class class_1633 extends class_7038 {
       this.field_8491.method_32100((var1x, var2x) -> this.method_7274(new class_7899(MinecraftClient.getInstance().field_9623)));
       this.field_8490.method_32100((var1x, var2x) -> this.method_7274(new class_9888(MinecraftClient.getInstance().field_9623)));
       this.field_8492
-         .method_32100((var1x, var2x) -> this.method_7274(new class_8534(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577)));
+         .method_32100((var1x, var2x) -> this.method_7274(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577)));
       this.field_8496.method_32100((var1x, var2x) -> this.method_7275(new class_2135()));
       this.field_8489
          .method_32100(
@@ -41,7 +41,7 @@ public class class_1633 extends class_7038 {
       this.field_8493.method_32100((var0, var1x) -> MinecraftClient.getInstance().method_8512());
    }
 
-   public void method_7274(class_266 var1) {
+   public void method_7274(Screen var1) {
       MinecraftClient.getInstance().method_8609(var1);
       this.method_7276();
    }

@@ -2,7 +2,7 @@ package remapped;
 
 import net.minecraft.util.text.ITextComponent;
 
-public class class_4780 extends class_266 {
+public class class_4780 extends Screen {
    private static String[] field_23152;
    private final Runnable field_23155;
    public final ITextComponent field_23151;

@@ -55,7 +55,7 @@ public class class_8224 extends class_8374<class_9662> {
       }
 
       if (this.field_42217.isEmpty()) {
-         this.field_40883.method_8609(class_6577.method_30058((class_266)null));
+         this.field_40883.method_8609(class_6577.method_30058((Screen)null));
       } else {
          String var6 = ((String)var1.get()).toLowerCase(Locale.ROOT);
 

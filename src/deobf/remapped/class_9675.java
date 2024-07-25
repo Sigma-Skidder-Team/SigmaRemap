@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_9675 extends class_266 {
+public class class_9675 extends Screen {
    public final class_6577 field_49281;
    private final Consumer<class_9512> field_49280;
    private class_9512 field_49279;

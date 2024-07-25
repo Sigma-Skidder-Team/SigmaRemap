@@ -6,10 +6,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_4145 extends class_266 {
+public class class_4145 extends Screen {
    private static final Logger field_20164 = LogManager.getLogger();
    private final class_7081 field_20175 = new class_7081();
-   public final class_266 field_20176;
+   public final Screen field_20176;
    public class_4116 field_20163;
    private class_3187 field_20166;
    private class_9521 field_20167;
@@ -21,7 +21,7 @@ public class class_4145 extends class_266 {
    private class_3406 field_20169;
    private boolean field_20171;
 
-   public class_4145(class_266 var1) {
+   public class_4145(Screen var1) {
       super(new TranslationTextComponent("multiplayer.title"));
       this.field_20176 = var1;
    }

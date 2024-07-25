@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.StringTextComponent;
 
 public class class_587 extends class_4232 {
-   private class_266 field_3406;
+   private Screen field_3406;
    private class_8881 field_3409;
    private static class_1013[] field_3408 = new class_1013[]{
       class_1013.field_5318,
@@ -26,7 +26,7 @@ public class class_587 extends class_4232 {
       class_1013.field_5275
    };
 
-   public class_587(class_266 var1, class_8881 var2) {
+   public class_587(Screen var1, class_8881 var2) {
       super(new StringTextComponent(class_6956.method_31803("of.options.animationsTitle")));
       this.field_3406 = var1;
       this.field_3409 = var2;

@@ -1,6 +1,6 @@
 package remapped;
 
 @FunctionalInterface
-public interface class_1200 {
+public interface IScreen {
    void method_5312();
 }

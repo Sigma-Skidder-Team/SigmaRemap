@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-public abstract class class_2208<T extends class_4088> extends class_266 implements class_4378<T> {
+public abstract class class_2208<T extends class_4088> extends Screen implements class_4378<T> {
    public static final class_4639 field_10969 = new class_4639("textures/gui/container/inventory.png");
    public int field_10981 = 176;
    public int field_10973 = 166;
@@ -277,7 +277,7 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
             }
 
             if (this.field_943.field_9577.field_45570 && var14 && this.field_943.field_9632.field_3853.method_32424().method_28022()) {
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
                return true;
             }
 

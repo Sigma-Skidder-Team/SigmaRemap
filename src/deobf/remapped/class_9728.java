@@ -18,7 +18,7 @@ public class class_9728 extends class_8446 {
       class_1013.field_5224
    };
 
-   public class_9728(class_266 var1, class_8881 var2) {
+   public class_9728(Screen var1, class_8881 var2) {
       super(var1, var2, new TranslationTextComponent("options.accessibility.title"), field_49446);
    }
 

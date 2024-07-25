@@ -19,7 +19,7 @@ public class class_5618 extends class_8393 {
          .field_9632
          .field_30532
          .method_4813(new class_1194(class_340.method_1580(this.field_28526).field_9632.field_3874.field_19925));
-      class_340.method_1576(this.field_28526).method_8609((class_266)null);
+      class_340.method_1576(this.field_28526).method_8609((Screen)null);
    }
 
    @Override

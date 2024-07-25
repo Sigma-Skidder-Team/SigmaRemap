@@ -241,7 +241,7 @@ public class class_3739 {
       }
    }
 
-   public boolean method_17316(class_1614 var1, class_1331 var2, class_4924 var3, class_266 var4) {
+   public boolean method_17316(class_1614 var1, class_1331 var2, class_4924 var3, Screen var4) {
       if (!this.method_17332(var1, var2, var3)) {
          return false;
       } else {
@@ -267,7 +267,7 @@ public class class_3739 {
       }
    }
 
-   public static String method_17337(class_266 var0) {
+   public static String method_17337(Screen var0) {
       ITextComponent var3 = var0.method_1168();
       return var3 != null ? var3.getUnformattedComponentText() : null;
    }

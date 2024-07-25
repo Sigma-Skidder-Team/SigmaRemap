@@ -7,14 +7,14 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_6905 extends class_4232 {
-   private class_266 field_35500;
+   private Screen field_35500;
    private ITextComponent field_35499;
    private ITextComponent field_35498;
    private final List<class_7107> field_35497 = Lists.newArrayList();
    public String field_35495;
    private int field_35501;
 
-   public class_6905(class_266 var1, String var2, String var3) {
+   public class_6905(Screen var1, String var2, String var3) {
       super(new TranslationTextComponent("of.options.detailsTitle"));
       this.field_35500 = var1;
       this.field_35499 = new StringTextComponent(var2);

@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_881 extends class_266 {
+public class class_881 extends Screen {
    private static final ITextComponent field_4540 = new TranslationTextComponent("multiplayer.downloadingTerrain");
    private class_1433 field_4539 = class_5609.method_25460();
 

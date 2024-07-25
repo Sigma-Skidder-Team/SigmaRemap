@@ -10,7 +10,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_8002 extends class_2089 implements class_1463, class_5888, class_5140, class_2855<class_8137> {
+public class class_8002 extends class_2089 implements IRenderable, class_5888, class_5140, class_2855<class_8137> {
    public static final class_4639 field_40990 = new class_4639("textures/gui/recipe_book.png");
    private static final ITextComponent field_41003 = new TranslationTextComponent("gui.recipebook.search_hint")
       .mergeStyle(TextFormatting.ITALIC)
@@ -280,7 +280,7 @@ public class class_8002 extends class_2089 implements class_1463, class_5888, cl
                }
 
                this.field_41000.method_34484();
-               this.field_41006.field_9647.method_42151(this.field_41006.field_9632.field_3874.field_19925, var11, class_266.method_1190());
+               this.field_41006.field_9647.method_42151(this.field_41006.field_9632.field_3874.field_19925, var11, Screen.method_1190());
                if (!this.method_36307()) {
                   this.method_36324(false);
                }

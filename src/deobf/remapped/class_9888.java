@@ -13,7 +13,7 @@ public class class_9888 extends class_4145 {
       super(new class_1876());
    }
 
-   public class_9888(class_266 var1) {
+   public class_9888(Screen var1) {
       super(var1);
    }
 

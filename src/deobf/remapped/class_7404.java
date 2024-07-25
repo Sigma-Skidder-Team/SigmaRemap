@@ -21,7 +21,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_7404 extends class_266 {
+public class class_7404 extends Screen {
    private static final Logger field_37786 = LogManager.getLogger();
    private static final Gson field_37790 = new GsonBuilder().setPrettyPrinting().serializeNulls().disableHtmlEscaping().create();
    private static final ITextComponent field_37788 = new TranslationTextComponent(field_37789[9]);

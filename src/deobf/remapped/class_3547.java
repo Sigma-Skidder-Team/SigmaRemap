@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_3547 extends class_266 {
+public class class_3547 extends Screen {
    private final Consumer<Optional<class_291>> field_17355;
    private class_5414 field_17358;
    private final Set<class_3268> field_17357 = Sets.newHashSet();

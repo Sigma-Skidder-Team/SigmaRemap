@@ -5,10 +5,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_5495 extends class_5875 {
    private final long field_27985;
    private final int field_27984;
-   private final class_266 field_27988;
+   private final Screen field_27988;
    private final String field_27987;
 
-   public class_5495(long var1, int var3, String var4, class_266 var5) {
+   public class_5495(long var1, int var3, String var4, Screen var5) {
       this.field_27985 = var1;
       this.field_27984 = var3;
       this.field_27988 = var5;

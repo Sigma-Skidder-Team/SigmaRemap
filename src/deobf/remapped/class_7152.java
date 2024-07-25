@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_7152 extends class_266 implements class_1215 {
+public class class_7152 extends Screen implements class_1215 {
    private ITextComponent field_36839;
    private ITextComponent field_36836;
    private int field_36835;
@@ -70,7 +70,7 @@ public class class_7152 extends class_266 implements class_1215 {
 
          super.method_6767(var1, var2, var3, var4);
       } else if (!this.field_943.method_8534()) {
-         this.field_943.method_8609((class_266)null);
+         this.field_943.method_8609((Screen)null);
       }
    }
 }

@@ -12,10 +12,10 @@ public class class_7352 extends class_1094 {
    private class_1863 field_37581;
    private final class_7675 field_37585;
    private final class_2866 field_37583;
-   private final class_266 field_37586;
+   private final Screen field_37586;
    private ITextComponent field_37584;
 
-   public class_7352(class_2866 var1, class_266 var2, class_7675 var3) {
+   public class_7352(class_2866 var1, Screen var2, class_7675 var3) {
       this.field_37583 = var1;
       this.field_37586 = var2;
       this.field_37585 = var3;

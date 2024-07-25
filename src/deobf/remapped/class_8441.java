@@ -62,7 +62,7 @@ public class class_8441 extends class_2596 {
       }
 
       for (Entry var6 : class_6763.field_34911.entrySet()) {
-         var2.add(new class_1226((Class<? extends class_266>)var6.getKey()));
+         var2.add(new class_1226((Class<? extends Screen>)var6.getKey()));
       }
 
       return var2;

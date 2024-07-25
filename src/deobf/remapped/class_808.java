@@ -22,7 +22,7 @@ public class class_808 extends class_1188 {
    @Override
    public void method_32706(class_7966 var1, MinecraftClient var2, int var3, int var4) {
       if (this.field_36677) {
-         if (this.field_4312 && !class_266.method_1190()) {
+         if (this.field_4312 && !Screen.method_1190()) {
             this.field_4311 = (float)(var3 - (this.field_36670 + 4)) / (float)(this.field_36671 - 8);
             this.field_4311 = class_9299.method_42828(this.field_4311, 0.0F, 1.0F);
             this.field_4310.method_31393(this.field_4311);

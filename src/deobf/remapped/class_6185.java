@@ -6,10 +6,10 @@ public class class_6185 extends class_1094 {
    private final ITextComponent field_31607;
    private final ITextComponent field_31604;
    private class_416 field_31606 = class_416.field_1766;
-   private final class_266 field_31605;
+   private final Screen field_31605;
    private int field_31608;
 
-   public class_6185(class_266 var1, ITextComponent var2, ITextComponent var3) {
+   public class_6185(Screen var1, ITextComponent var2, ITextComponent var3) {
       this.field_31605 = var1;
       this.field_31607 = var2;
       this.field_31604 = var3;

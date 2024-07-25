@@ -13,7 +13,7 @@ public class class_6470 extends class_2596 {
    private int field_32971 = 0;
    private int field_32974 = 0;
    private boolean field_32964 = true;
-   public class_1686 field_32978;
+   public AnotherSigmaMainMenu field_32978;
    public ChangelogClass field_32967;
    public class_7852 field_32959;
    public class_2440 field_32963 = new class_2440(200, 200, class_4043.field_19618);
@@ -82,7 +82,7 @@ public class class_6470 extends class_2596 {
          this.field_32962.add(new class_3670(this, Integer.toString(var5), var6, var7, var8, var9, var10));
       }
 
-      this.method_32148(this.field_32978 = new class_1686(this, "main", 0, 0, this.field_36278, this.field_36257));
+      this.method_32148(this.field_32978 = new AnotherSigmaMainMenu(this, "main", 0, 0, this.field_36278, this.field_36257));
       this.method_32148(this.field_32967 = new ChangelogClass(this, "changelog", 0, 0, this.field_36278, this.field_36257));
       this.method_32148(this.field_32959 = new class_7852(this, "redeem", 0, 0, this.field_36278, this.field_36257));
       this.field_32967.method_32119(false);

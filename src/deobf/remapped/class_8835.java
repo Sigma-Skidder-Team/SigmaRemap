@@ -105,7 +105,7 @@ public class class_8835 {
    public static class_9521 method_40638(class_1876 var0, int var1, int var2) {
       return class_7860.field_39987.method_22501()
          ? new class_9521(var0.field_941 / 2 - 100, var1 + var2 * 2, 98, 20, new TranslationTextComponent("fml.menu.mods"), var1x -> {
-            class_266 var4 = (class_266)class_7860.field_39987.method_22500(var0);
+         Screen var4 = (Screen)class_7860.field_39987.method_22500(var0);
             MinecraftClient.getInstance().method_8609(var4);
          })
          : null;

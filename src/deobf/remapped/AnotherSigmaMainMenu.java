@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1686 extends class_7038 {
+public class AnotherSigmaMainMenu extends class_7038 {
    private final class_6220 field_8718;
    private final class_6220 field_8721;
    private final class_6220 field_8713;
@@ -14,7 +14,7 @@ public class class_1686 extends class_7038 {
    private final class_8223 field_8714;
    public int field_8712 = 0;
 
-   public class_1686(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
+   public AnotherSigmaMainMenu(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method_32105(false);
       boolean var9 = false;
@@ -154,8 +154,8 @@ public class class_1686 extends class_7038 {
       this.field_8718.method_32100((var1x, var2x) -> this.method_7600(new class_7899(MinecraftClient.getInstance().field_9623)));
       this.field_8721.method_32100((var1x, var2x) -> this.method_7600(new class_9888(MinecraftClient.getInstance().field_9623)));
       this.field_8717
-         .method_32100((var1x, var2x) -> this.method_7600(new class_8534(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577)));
-      this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new class_2113()));
+         .method_32100((var1x, var2x) -> this.method_7600(new OptionsScreen(MinecraftClient.getInstance().field_9623, MinecraftClient.getInstance().field_9577)));
+      this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new AltManagerMenu()));
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {
          if (SigmaMainClass.method_3328().method_3332().method_23081() != null) {
@@ -213,7 +213,7 @@ public class class_1686 extends class_7038 {
       SigmaMainClass.method_3328().method_3315().method_21206("clicksound");
    }
 
-   public void method_7600(class_266 var1) {
+   public void method_7600(Screen var1) {
       MinecraftClient.getInstance().method_8609(var1);
       this.method_7598();
    }

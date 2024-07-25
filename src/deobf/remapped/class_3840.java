@@ -58,7 +58,7 @@ public abstract class class_3840 extends class_8002 {
    public void method_36322(class_7966 var1, int var2, int var3, boolean var4, float var5) {
       super.method_36322(var1, var2, var3, var4, var5);
       if (this.field_18748 != null) {
-         if (!class_266.method_1185()) {
+         if (!Screen.method_1185()) {
             this.field_18750 += var5;
          }
 

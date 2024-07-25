@@ -14,13 +14,13 @@ public class class_9016 extends class_1094 {
    private static final ITextComponent field_46128 = new TranslationTextComponent("mco.terms.sentence.1");
    private static final ITextComponent field_46119 = new StringTextComponent(field_46124[5])
       .append(new TranslationTextComponent("mco.terms.sentence.2").mergeStyle(Style.EMPTY.func_244282_c(true)));
-   private final class_266 field_46122;
+   private final Screen field_46122;
    private final class_7039 field_46123;
    private final class_7675 field_46121;
    private boolean field_46120;
    private final String field_46125 = "https://aka.ms/MinecraftRealmsTerms";
 
-   public class_9016(class_266 var1, class_7039 var2, class_7675 var3) {
+   public class_9016(Screen var1, class_7039 var2, class_7675 var3) {
       this.field_46122 = var1;
       this.field_46123 = var2;
       this.field_46121 = var3;

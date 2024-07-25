@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_1863 extends class_7114 implements class_1463, class_5888 {
+public class class_1863 extends class_7114 implements IRenderable, class_5888 {
    private final TextRenderer field_9461;
    private String field_9449 = "";
    private int field_9459 = 32;
@@ -115,7 +115,7 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
    }
 
    private void method_8285(int var1) {
-      if (!class_266.method_1185()) {
+      if (!Screen.method_1185()) {
          this.method_8282(var1);
       } else {
          this.method_8272(var1);
@@ -223,21 +223,21 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
       if (!this.method_8275()) {
          return false;
       } else {
-         this.field_9453 = class_266.method_1190();
-         if (class_266.method_1174(var1)) {
+         this.field_9453 = Screen.method_1190();
+         if (Screen.method_1174(var1)) {
             this.method_8278();
             this.method_8248(0);
             return true;
-         } else if (class_266.method_1182(var1)) {
+         } else if (Screen.method_1182(var1)) {
             MinecraftClient.getInstance().field_9600.method_38891(this.method_8280());
             return true;
-         } else if (class_266.method_1173(var1)) {
+         } else if (Screen.method_1173(var1)) {
             if (this.field_9458) {
                this.method_8268(MinecraftClient.getInstance().field_9600.method_38883());
             }
 
             return true;
-         } else if (class_266.method_1166(var1)) {
+         } else if (Screen.method_1166(var1)) {
             MinecraftClient.getInstance().field_9600.method_38891(this.method_8280());
             if (this.field_9458) {
                this.method_8268("");
@@ -250,7 +250,7 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
                   if (this.field_9458) {
                      this.field_9453 = false;
                      this.method_8285(-1);
-                     this.field_9453 = class_266.method_1190();
+                     this.field_9453 = Screen.method_1190();
                   }
 
                   return true;
@@ -265,12 +265,12 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
                   if (this.field_9458) {
                      this.field_9453 = false;
                      this.method_8285(1);
-                     this.field_9453 = class_266.method_1190();
+                     this.field_9453 = Screen.method_1190();
                   }
 
                   return true;
                case 262:
-                  if (class_266.method_1185()) {
+                  if (Screen.method_1185()) {
                      this.method_8284(this.method_8259(1));
                   } else {
                      this.method_8260(1);
@@ -278,7 +278,7 @@ public class class_1863 extends class_7114 implements class_1463, class_5888 {
 
                   return true;
                case 263:
-                  if (class_266.method_1185()) {
+                  if (Screen.method_1185()) {
                      this.method_8284(this.method_8259(-1));
                   } else {
                      this.method_8260(-1);

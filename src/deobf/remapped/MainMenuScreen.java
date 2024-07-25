@@ -110,7 +110,7 @@ public class MainMenuScreen extends Screen {
             98,
             20,
             new TranslationTextComponent("menu.options"),
-            var1 -> this.field_943.method_8609(new class_8534(this, this.field_943.field_9577))
+            var1 -> this.field_943.method_8609(new OptionsScreen(this, this.field_943.field_9577))
          )
       );
       this.<class_9521>method_1186(

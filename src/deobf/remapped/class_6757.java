@@ -218,7 +218,7 @@ public class class_6757 extends class_2269 {
 
    @Override
    public boolean method_26946(int var1, int var2, int var3) {
-      if (class_266.method_1190()) {
+      if (Screen.method_1190()) {
          class_4116 var6 = this.field_34870.field_20163;
          int var7 = var6.method_41183().indexOf(this);
          if (var1 == 264 && var7 < this.field_34870.method_19242().method_14671() - 1 || var1 == 265 && var7 > 0) {

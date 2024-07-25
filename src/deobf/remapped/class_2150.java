@@ -29,7 +29,7 @@ public class class_2150 {
       return (class_4668<T, ?>)field_10756.get(var0);
    }
 
-   private static <M extends class_4088, U extends class_266 & class_4378<M>> void method_10034(class_4165<? extends M> var0, class_4668<M, U> var1) {
+   private static <M extends class_4088, U extends Screen & class_4378<M>> void method_10034(class_4165<? extends M> var0, class_4668<M, U> var1) {
       class_4668 var4 = field_10756.put(var0, var1);
       if (var4 != null) {
          throw new IllegalStateException("Duplicate registration for " + class_8669.field_44402.method_39797(var0));

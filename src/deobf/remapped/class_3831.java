@@ -2,7 +2,7 @@ package remapped;
 
 import net.minecraft.util.text.ITextComponent;
 
-public class class_3831 extends class_266 {
+public class class_3831 extends Screen {
    private static String[] field_18718;
    private final ITextComponent field_18719;
 
@@ -15,7 +15,7 @@ public class class_3831 extends class_266 {
    public void method_1163() {
       super.method_1163();
       this.<class_9521>method_1186(
-         new class_9521(this.field_941 / 2 - 100, 140, 200, 20, class_1402.field_7633, var1 -> this.field_943.method_8609((class_266)null))
+         new class_9521(this.field_941 / 2 - 100, 140, 200, 20, class_1402.field_7633, var1 -> this.field_943.method_8609((Screen)null))
       );
    }
 

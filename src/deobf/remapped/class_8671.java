@@ -98,13 +98,13 @@ public class class_8671 {
                      * (double)this.field_44499.method_8552().method_43177()
                      / (double)this.field_44499.method_8552().method_43163();
                   if (!var16) {
-                     class_266.method_1181(
+                     Screen.method_1181(
                         () -> var10[0] = this.field_44499.field_9623.method_26941(var11, var13, var9),
                         "mouseReleased event handler",
                         this.field_44499.field_9623.getClass().getCanonicalName()
                      );
                   } else {
-                     class_266.method_1181(
+                     Screen.method_1181(
                         () -> var10[0] = this.field_44499.field_9623.method_26940(var11, var13, var9),
                         "mouseClicked event handler",
                         this.field_44499.field_9623.getClass().getCanonicalName()
@@ -220,11 +220,11 @@ public class class_8671 {
             this.field_44489 = false;
          }
 
-         class_266 var9 = this.field_44499.field_9623;
+         Screen var9 = this.field_44499.field_9623;
          if (var9 != null && this.field_44499.field_9610 == null) {
             double var10 = var3 * (double)this.field_44499.method_8552().method_43165() / (double)this.field_44499.method_8552().method_43166();
             double var12 = var5 * (double)this.field_44499.method_8552().method_43177() / (double)this.field_44499.method_8552().method_43163();
-            class_266.method_1181(() -> var9.method_26943(var10, var12), "mouseMoved event handler", var9.getClass().getCanonicalName());
+            Screen.method_1181(() -> var9.method_26943(var10, var12), "mouseMoved event handler", var9.getClass().getCanonicalName());
             if (this.field_44490 != -1 && this.field_44483 > 0.0) {
                double var14 = (var3 - this.field_44482)
                   * (double)this.field_44499.method_8552().method_43165()
@@ -232,7 +232,7 @@ public class class_8671 {
                double var16 = (var5 - this.field_44493)
                   * (double)this.field_44499.method_8552().method_43177()
                   / (double)this.field_44499.method_8552().method_43163();
-               class_266.method_1181(
+               Screen.method_1181(
                   () -> var9.method_26944(var10, var12, this.field_44490, var14, var16), "mouseDragged event handler", var9.getClass().getCanonicalName()
                );
             }
@@ -323,7 +323,7 @@ public class class_8671 {
          this.field_44482 = (double)(this.field_44499.method_8552().method_43166() / 2);
          this.field_44493 = (double)(this.field_44499.method_8552().method_43163() / 2);
          class_9732.method_44937(this.field_44499.method_8552().method_43181(), 212995, this.field_44482, this.field_44493);
-         this.field_44499.method_8609((class_266)null);
+         this.field_44499.method_8609((Screen)null);
          this.field_44499.field_9582 = 10000;
          this.field_44489 = true;
       }

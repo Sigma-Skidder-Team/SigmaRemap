@@ -5,21 +5,21 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_9306 extends class_1094 {
-   private final class_266 field_47531;
+   private final Screen field_47531;
    private ITextComponent field_47530;
    private ITextComponent field_47529;
 
-   public class_9306(class_3900 var1, class_266 var2) {
+   public class_9306(class_3900 var1, Screen var2) {
       this.field_47531 = var2;
       this.method_42964(var1);
    }
 
-   public class_9306(ITextComponent var1, class_266 var2) {
+   public class_9306(ITextComponent var1, Screen var2) {
       this.field_47531 = var2;
       this.method_42963(var1);
    }
 
-   public class_9306(ITextComponent var1, ITextComponent var2, class_266 var3) {
+   public class_9306(ITextComponent var1, ITextComponent var2, Screen var3) {
       this.field_47531 = var3;
       this.method_42965(var1, var2);
    }

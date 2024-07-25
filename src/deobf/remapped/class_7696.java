@@ -8,7 +8,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.ClickEvent$class_47;
 
-public class class_7696 extends class_266 {
+public class class_7696 extends Screen {
    private int field_39072;
    private final ITextComponent field_39074;
    private final boolean field_39073;
@@ -32,7 +32,7 @@ public class class_7696 extends class_266 {
             !this.field_39073 ? new TranslationTextComponent("deathScreen.respawn") : new TranslationTextComponent("deathScreen.spectate"),
             var1 -> {
                this.field_943.field_9632.method_3205();
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
             }
          )
       );
@@ -81,7 +81,7 @@ public class class_7696 extends class_266 {
    private void method_34869(boolean var1) {
       if (!var1) {
          this.field_943.field_9632.method_3205();
-         this.field_943.method_8609((class_266)null);
+         this.field_943.method_8609((Screen)null);
       } else {
          this.method_34868();
       }

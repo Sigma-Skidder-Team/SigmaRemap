@@ -7,7 +7,7 @@ public class class_4758 extends class_5875 {
    private final class_7675 field_23040;
    private final class_7798 field_23039;
 
-   public class_4758(class_266 var1, class_7675 var2, class_7798 var3) {
+   public class_4758(Screen var1, class_7675 var2, class_7798 var3) {
       this.field_23040 = var2;
       this.field_23039 = var3;
       this.field_23041 = new class_7736(var1);

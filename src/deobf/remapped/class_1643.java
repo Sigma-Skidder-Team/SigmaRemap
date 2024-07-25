@@ -9,7 +9,7 @@ public class class_1643 extends class_2596 {
    public static class_2440 field_8537 = new class_2440(300, 200);
    private class_8343 field_8540;
    private class_434 field_8534;
-   public static class_266 field_8538 = null;
+   public static Screen field_8538 = null;
 
    public class_1643() {
       super("options");
@@ -86,7 +86,7 @@ public class class_1643 extends class_2596 {
       }
    }
 
-   public static void method_7362(class_266 var0) {
+   public static void method_7362(Screen var0) {
       field_8538 = var0;
       field_8537.method_11119(class_4043.field_19618);
    }

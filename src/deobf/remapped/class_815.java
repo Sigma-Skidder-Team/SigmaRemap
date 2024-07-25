@@ -5,10 +5,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_815 extends class_1094 {
    private static final ITextComponent field_4327 = new TranslationTextComponent("mco.account.privacyinfo");
-   private final class_266 field_4329;
+   private final Screen field_4329;
    private class_416 field_4330 = class_416.field_1766;
 
-   public class_815(class_266 var1) {
+   public class_815(Screen var1) {
       this.field_4329 = var1;
    }
 

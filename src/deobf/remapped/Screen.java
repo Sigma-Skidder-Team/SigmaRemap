@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.event.ClickEvent;
@@ -21,7 +22,7 @@ import net.minecraft.util.text.event.HoverEvent$class_50;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public abstract class class_266 extends class_2198 implements class_1200, class_1463 {
+public abstract class Screen extends FocusableGui implements IScreen, IRenderable {
    private static final Logger field_944 = LogManager.getLogger();
    private static final Set<String> field_946 = Sets.newHashSet(new String[]{"http", "https"});
    public final ITextComponent field_947;
@@ -35,7 +36,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
    public TextRenderer field_948;
    private URI field_949;
 
-   public class_266(ITextComponent var1) {
+   public Screen(ITextComponent var1) {
       this.field_947 = var1;
    }
 
@@ -76,7 +77,7 @@ public abstract class class_266 extends class_2198 implements class_1200, class_
    }
 
    public void method_1156() {
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    public <T extends class_7114> T method_1186(T var1) {

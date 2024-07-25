@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_4232 extends class_266 {
+public class class_4232 extends Screen {
    private static String[] field_20541;
    public List<class_7114> field_20540 = this.field_950;
    public TextRenderer field_20538 = MinecraftClient.getInstance().textRenderer;

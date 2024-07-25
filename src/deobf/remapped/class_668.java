@@ -26,7 +26,7 @@ import org.apache.logging.log4j.Logger;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.util.tinyfd.TinyFileDialogs;
 
-public class class_668 implements class_1200, class_1463 {
+public class class_668 implements IScreen, IRenderable {
    private static final Logger field_3706 = LogManager.getLogger();
    private static final ITextComponent field_3712 = new TranslationTextComponent("generator.custom");
    private static final ITextComponent field_3713 = new TranslationTextComponent("generator.amplified.info");
@@ -88,7 +88,7 @@ public class class_668 implements class_1200, class_1463 {
                   this.field_3717 = var6x.method_32810(
                      this.field_3703, this.field_3717.method_13295(), this.field_3717.method_13287(), this.field_3717.method_13293()
                   );
-                  if (!this.field_3717.method_13290() || class_266.method_1190()) {
+                  if (!this.field_3717.method_13290() || Screen.method_1190()) {
                      break;
                   }
                }

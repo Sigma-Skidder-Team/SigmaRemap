@@ -4,9 +4,9 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_3231 extends class_266 implements class_2092 {
+public class class_3231 extends Screen implements class_2092 {
    private static final ITextComponent field_16083 = new TranslationTextComponent("multiplayer.downloadingStats");
-   public final class_266 field_16078;
+   public final Screen field_16078;
    private class_8512 field_16080;
    private class_2605 field_16082;
    private class_7904 field_16085;
@@ -14,7 +14,7 @@ public class class_3231 extends class_266 implements class_2092 {
    private class_8374<?> field_16084;
    private boolean field_16081 = true;
 
-   public class_3231(class_266 var1, class_4156 var2) {
+   public class_3231(Screen var1, class_4156 var2) {
       super(new TranslationTextComponent("gui.stats"));
       this.field_16078 = var1;
       this.field_16077 = var2;

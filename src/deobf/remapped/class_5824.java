@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_5824 extends class_7875 {
    private static final Logger field_29554 = LogManager.getLogger();
-   private final class_266 field_29551;
+   private final Screen field_29551;
    private final class_7675 field_29546;
    private class_8949 field_29563;
    private class_8949 field_29567;
@@ -34,14 +34,14 @@ public class class_5824 extends class_7875 {
    private final Runnable field_29564;
    private final Runnable field_29568;
 
-   public class_5824(class_266 var1, class_7675 var2, Runnable var3, Runnable var4) {
+   public class_5824(Screen var1, class_7675 var2, Runnable var3, Runnable var4) {
       this.field_29551 = var1;
       this.field_29546 = var2;
       this.field_29564 = var3;
       this.field_29568 = var4;
    }
 
-   public class_5824(class_266 var1, class_7675 var2, ITextComponent var3, ITextComponent var4, int var5, ITextComponent var6, Runnable var7, Runnable var8) {
+   public class_5824(Screen var1, class_7675 var2, ITextComponent var3, ITextComponent var4, int var5, ITextComponent var6, Runnable var7, Runnable var8) {
       this(var1, var2, var7, var8);
       this.field_29556 = var3;
       this.field_29545 = var4;

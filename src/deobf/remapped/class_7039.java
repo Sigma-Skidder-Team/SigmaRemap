@@ -62,11 +62,11 @@ public class class_7039 extends class_1094 {
    private static volatile boolean field_36290;
    private static volatile boolean field_36297;
    private static volatile boolean field_36351;
-   public static class_266 field_36337;
+   public static Screen field_36337;
    private static boolean field_36366;
    private final RateLimiter field_36355;
    private boolean field_36347;
-   private final class_266 field_36314;
+   private final Screen field_36314;
    private volatile class_2311 field_36346;
    private long field_36310 = -1L;
    private class_9521 field_36294;
@@ -101,7 +101,7 @@ public class class_7039 extends class_1094 {
    private class_9521 field_36319;
    private class_9521 field_36303;
 
-   public class_7039(class_266 var1) {
+   public class_7039(Screen var1) {
       this.field_36314 = var1;
       this.field_36355 = RateLimiter.create(0.016666668F);
    }
@@ -753,7 +753,7 @@ public class class_7039 extends class_1094 {
       return (double)var7 <= var1 && var1 <= (double)var8 && (double)var9 <= var3 && var3 <= (double)var10;
    }
 
-   public void method_32260(class_7675 var1, class_266 var2) {
+   public void method_32260(class_7675 var1, Screen var2) {
       if (var1 != null) {
          try {
             if (!this.field_36300.tryLock(1L, TimeUnit.SECONDS)) {

@@ -507,11 +507,11 @@ public class class_2866 extends class_7875 {
       this.field_943.method_8609(this);
    }
 
-   public void method_13142(boolean var1, class_266 var2) {
+   public void method_13142(boolean var1, Screen var2) {
       this.field_943.method_8609(new class_1065(var2, new class_5894(this.field_14024, this, this.field_14042, var1)));
    }
 
-   public void method_13145(class_266 var1) {
+   public void method_13145(Screen var1) {
       this.field_943.method_8609(new class_1065(var1, new class_7093(this.field_14024, this)));
    }
 

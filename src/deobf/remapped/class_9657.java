@@ -3,7 +3,7 @@ package remapped;
 import java.awt.Rectangle;
 
 public class class_9657 implements class_2168 {
-   public Rectangle 酭浣属홵ぶ娍(class_266 var1, int var2, int var3) {
+   public Rectangle 酭浣属홵ぶ娍(Screen var1, int var2, int var3) {
       int var6 = var1.field_941 - 450;
       byte var7 = 35;
       if (var6 < 10) {

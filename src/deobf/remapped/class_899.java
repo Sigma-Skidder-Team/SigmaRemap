@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_899 extends class_266 {
+public class class_899 extends Screen {
    public class_899() {
       super(new StringTextComponent("Out of memory!"));
    }

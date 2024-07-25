@@ -15,7 +15,7 @@ public class class_1709 extends class_3259 {
    private class_2116 field_8846;
    private class_9521 field_8847;
 
-   public class_1709(class_266 var1, class_8881 var2, class_2435 var3) {
+   public class_1709(Screen var1, class_8881 var2, class_2435 var3) {
       super(var1, var2, new TranslationTextComponent("options.language"));
       this.field_8843 = var3;
    }

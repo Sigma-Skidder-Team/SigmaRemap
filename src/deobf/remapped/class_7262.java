@@ -3,15 +3,15 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_7262 extends class_266 {
-   private final class_266 field_37207;
+public class class_7262 extends Screen {
+   private final Screen field_37207;
    public final class_3201 field_37203;
    private final ITextComponent field_37208;
    private final boolean field_37205;
    private class_416 field_37202 = class_416.field_1766;
    private class_8387 field_37204;
 
-   public class_7262(class_266 var1, class_3201 var2, ITextComponent var3, ITextComponent var4, boolean var5) {
+   public class_7262(Screen var1, class_3201 var2, ITextComponent var3, ITextComponent var4, boolean var5) {
       super(var3);
       this.field_37207 = var1;
       this.field_37203 = var2;

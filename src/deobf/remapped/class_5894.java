@@ -4,11 +4,11 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_5894 extends class_5875 {
    private final class_7675 field_29937;
-   private final class_266 field_29938;
+   private final Screen field_29938;
    private final boolean field_29934;
    private final class_7039 field_29936;
 
-   public class_5894(class_7675 var1, class_266 var2, class_7039 var3, boolean var4) {
+   public class_5894(class_7675 var1, Screen var2, class_7039 var3, boolean var4) {
       this.field_29937 = var1;
       this.field_29938 = var2;
       this.field_29934 = var4;

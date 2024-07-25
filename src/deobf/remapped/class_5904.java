@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_5904 extends class_266 {
+public class class_5904 extends Screen {
    private final class_6679 field_29968 = new class_6679();
    private final class_8398 field_29973;
    private int field_29969;
@@ -56,7 +56,7 @@ public class class_5904 extends class_266 {
 
    private void method_27012() {
       this.field_29973.method_17407();
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    @Override

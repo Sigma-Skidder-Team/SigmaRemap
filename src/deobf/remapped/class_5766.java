@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_5766 extends class_266 {
+public class class_5766 extends Screen {
    private String field_29144 = "";
    private int field_29146 = -1;
    public class_1863 field_29142;
@@ -66,7 +66,7 @@ public class class_5766 extends class_266 {
                      this.method_1171(var6);
                   }
 
-                  this.field_943.method_8609((class_266)null);
+                  this.field_943.method_8609((Screen)null);
                   return true;
                } else if (var1 == 265) {
                   this.method_26071(-1);
@@ -84,7 +84,7 @@ public class class_5766 extends class_266 {
                   return true;
                }
             } else {
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
                return true;
             }
          } else {

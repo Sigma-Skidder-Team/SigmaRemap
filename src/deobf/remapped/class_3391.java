@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_3391 extends class_266 {
+public class class_3391 extends Screen {
    private static final ITextComponent field_16701 = new TranslationTextComponent("jigsaw_block.joint_label");
    private static final ITextComponent field_16705 = new TranslationTextComponent(field_16714[0]);
    private static final ITextComponent field_16710 = new TranslationTextComponent(field_16714[1]);
@@ -36,11 +36,11 @@ public class class_3391 extends class_266 {
 
    private void method_15677() {
       this.method_15676();
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    private void method_15674() {
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    private void method_15676() {

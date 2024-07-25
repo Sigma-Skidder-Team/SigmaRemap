@@ -6,7 +6,7 @@ import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;
 
-public class class_8889 extends class_266 {
+public class class_8889 extends Screen {
    private final ITextProperties field_45600;
    private final ImmutableList<class_3337> field_45603;
    private class_416 field_45601 = class_416.field_1766;

@@ -7,7 +7,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_5445 extends class_266 {
+public class class_5445 extends Screen {
    private static final ITextComponent field_27734 = new TranslationTextComponent(field_27755[13]);
    private static final ITextComponent field_27751 = new TranslationTextComponent("structure_block.position");
    private static final ITextComponent field_27744 = new TranslationTextComponent("structure_block.size");
@@ -72,7 +72,7 @@ public class class_5445 extends class_266 {
 
    private void method_24822() {
       if (this.method_24821(class_6664.field_34457)) {
-         this.field_943.method_8609((class_266)null);
+         this.field_943.method_8609((Screen)null);
       }
    }
 
@@ -83,7 +83,7 @@ public class class_5445 extends class_266 {
       this.field_27753.method_4110(this.field_27747);
       this.field_27753.method_4101(this.field_27757);
       this.field_27753.method_4123(this.field_27721);
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    @Override
@@ -97,7 +97,7 @@ public class class_5445 extends class_266 {
          new class_9521(this.field_941 / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.save"), var1 -> {
             if (this.field_27753.method_4085() == class_589.field_3417) {
                this.method_24821(class_6664.field_34460);
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
             }
          })
       );
@@ -105,7 +105,7 @@ public class class_5445 extends class_266 {
          new class_9521(this.field_941 / 2 + 4 + 100, 185, 50, 20, new TranslationTextComponent("structure_block.button.load"), var1 -> {
             if (this.field_27753.method_4085() == class_589.field_3414) {
                this.method_24821(class_6664.field_34462);
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
             }
          })
       );
@@ -117,7 +117,7 @@ public class class_5445 extends class_266 {
          new class_9521(this.field_941 / 2 + 4 + 100, 120, 50, 20, new TranslationTextComponent("structure_block.button.detect_size"), var1 -> {
             if (this.field_27753.method_4085() == class_589.field_3417) {
                this.method_24821(class_6664.field_34459);
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
             }
          })
       );

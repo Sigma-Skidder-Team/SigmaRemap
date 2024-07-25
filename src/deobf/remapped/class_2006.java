@@ -4,15 +4,15 @@ import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_2006 extends class_266 {
+public class class_2006 extends Screen {
    private static final ITextComponent field_10183 = new TranslationTextComponent(field_10184[2]);
    private class_9521 field_10186;
    private final class_2560 field_10182;
    private class_1863 field_10181;
    private final BooleanConsumer field_10180;
-   private final class_266 field_10185;
+   private final Screen field_10185;
 
-   public class_2006(class_266 var1, BooleanConsumer var2, class_2560 var3) {
+   public class_2006(Screen var1, BooleanConsumer var2, class_2560 var3) {
       super(new TranslationTextComponent("selectServer.direct"));
       this.field_10185 = var1;
       this.field_10182 = var3;

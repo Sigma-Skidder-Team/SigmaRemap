@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_988 extends class_9521 implements class_1200 {
+public class class_988 extends class_9521 implements IScreen {
    public class_988(class_7039 var1) {
       super(var1.field_941 / 2 + 47, 6, 22, 22, StringTextComponent.EMPTY, null);
       this.field_5033 = var1;

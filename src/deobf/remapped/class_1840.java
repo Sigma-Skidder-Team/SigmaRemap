@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_1840 extends class_266 {
+public class class_1840 extends Screen {
    public static final class_4639 field_9330 = new class_4639("textures/gui/social_interactions.png");
    private static final ITextComponent field_9319 = new TranslationTextComponent("gui.socialInteractions.tab_all");
    private static final ITextComponent field_9327 = new TranslationTextComponent("gui.socialInteractions.tab_hidden");
@@ -219,7 +219,7 @@ public class class_1840 extends class_266 {
    @Override
    public boolean method_26946(int var1, int var2, int var3) {
       if (!this.field_9324.method_32691() && this.field_943.field_9577.field_45421.method_27062(var1, var2)) {
-         this.field_943.method_8609((class_266)null);
+         this.field_943.method_8609((Screen)null);
          return true;
       } else {
          return super.method_26946(var1, var2, var3);

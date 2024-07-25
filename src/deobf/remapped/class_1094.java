@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class class_1094 extends class_266 {
+public abstract class class_1094 extends Screen {
    public class_1094() {
       super(class_7542.field_38486);
    }
@@ -15,8 +15,8 @@ public abstract class class_1094 extends class_266 {
    @Override
    public void method_5312() {
       for (class_7114 var4 : this.field_950) {
-         if (var4 instanceof class_1200) {
-            ((class_1200)var4).method_5312();
+         if (var4 instanceof IScreen) {
+            ((IScreen)var4).method_5312();
          }
       }
    }

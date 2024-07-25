@@ -16,7 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.commons.lang3.mutable.MutableInt;
 
-public class class_4047 extends class_266 {
+public class class_4047 extends Screen {
    private static final ITextComponent field_19664 = new TranslationTextComponent("book.editTitle");
    private static final ITextComponent field_19663 = new TranslationTextComponent("book.finalizeWarning");
    private static final class_7107 field_19667 = class_7107.method_32662(field_19658[8], Style.EMPTY.setFormatting(TextFormatting.BLACK));
@@ -104,14 +104,14 @@ public class class_4047 extends class_266 {
          })
       );
       this.field_19675 = this.<class_9521>method_1186(new class_9521(this.field_941 / 2 + 2, 196, 98, 20, class_1402.field_7625, var1 -> {
-         this.field_943.method_8609((class_266)null);
+         this.field_943.method_8609((Screen)null);
          this.method_18649(false);
       }));
       this.field_19656 = this.<class_9521>method_1186(
          new class_9521(this.field_941 / 2 - 100, 196, 98, 20, new TranslationTextComponent("book.finalizeButton"), var1 -> {
             if (this.field_19676) {
                this.method_18649(true);
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
             }
          })
       );
@@ -247,16 +247,16 @@ public class class_4047 extends class_266 {
    }
 
    private boolean method_18667(int var1, int var2, int var3) {
-      if (class_266.method_1174(var1)) {
+      if (Screen.method_1174(var1)) {
          this.field_19674.method_31724();
          return true;
-      } else if (class_266.method_1182(var1)) {
+      } else if (Screen.method_1182(var1)) {
          this.field_19674.method_31707();
          return true;
-      } else if (class_266.method_1173(var1)) {
+      } else if (Screen.method_1173(var1)) {
          this.field_19674.method_31727();
          return true;
-      } else if (class_266.method_1166(var1)) {
+      } else if (Screen.method_1166(var1)) {
          this.field_19674.method_31709();
          return true;
       } else {
@@ -272,10 +272,10 @@ public class class_4047 extends class_266 {
                this.field_19674.method_31726(1);
                return true;
             case 262:
-               this.field_19674.method_31706(1, class_266.method_1190());
+               this.field_19674.method_31706(1, Screen.method_1190());
                return true;
             case 263:
-               this.field_19674.method_31706(-1, class_266.method_1190());
+               this.field_19674.method_31706(-1, Screen.method_1190());
                return true;
             case 264:
                this.method_18648();
@@ -312,20 +312,20 @@ public class class_4047 extends class_266 {
    private void method_18646(int var1) {
       int var4 = this.field_19674.method_31729();
       int var5 = this.method_18670().method_20763(var4, var1);
-      this.field_19674.method_31731(var5, class_266.method_1190());
+      this.field_19674.method_31731(var5, Screen.method_1190());
    }
 
    private void method_18673() {
       int var3 = this.field_19674.method_31729();
       int var4 = this.method_18670().method_20768(var3);
-      this.field_19674.method_31731(var4, class_266.method_1190());
+      this.field_19674.method_31731(var4, Screen.method_1190());
    }
 
    private void method_18660() {
       class_4475 var3 = this.method_18670();
       int var4 = this.field_19674.method_31729();
       int var5 = var3.method_20760(var4);
-      this.field_19674.method_31731(var5, class_266.method_1190());
+      this.field_19674.method_31731(var5, Screen.method_1190());
    }
 
    private boolean method_18654(int var1, int var2, int var3) {
@@ -334,7 +334,7 @@ public class class_4047 extends class_266 {
          case 335:
             if (!this.field_19680.isEmpty()) {
                this.method_18649(true);
-               this.field_943.method_8609((class_266)null);
+               this.field_943.method_8609((Screen)null);
             }
 
             return true;
@@ -451,7 +451,7 @@ public class class_4047 extends class_266 {
             int var11 = var10.method_20761(this.field_948, this.method_18658(new class_511((int)var1, (int)var3)));
             if (var11 >= 0) {
                if (var11 != this.field_19666 || var8 - this.field_19655 >= 250L) {
-                  this.field_19674.method_31731(var11, class_266.method_1190());
+                  this.field_19674.method_31731(var11, Screen.method_1190());
                } else if (this.field_19674.method_31720()) {
                   this.field_19674.method_31724();
                } else {

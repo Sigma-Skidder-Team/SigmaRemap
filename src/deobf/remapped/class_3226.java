@@ -7,11 +7,11 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_3226 extends class_5875 {
    private final class_7675 field_16065;
-   private final class_266 field_16067;
+   private final Screen field_16067;
    private final class_7039 field_16064;
    private final ReentrantLock field_16068;
 
-   public class_3226(class_7039 var1, class_266 var2, class_7675 var3, ReentrantLock var4) {
+   public class_3226(class_7039 var1, Screen var2, class_7675 var3, ReentrantLock var4) {
       this.field_16067 = var2;
       this.field_16064 = var1;
       this.field_16065 = var3;

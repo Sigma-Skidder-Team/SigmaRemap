@@ -5,11 +5,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
 public class class_6420 extends class_1094 {
-   private final class_266 field_32783;
+   private final Screen field_32783;
    private final class_8960 field_32784;
    private class_5529 field_32781;
 
-   public class_6420(class_266 var1, class_8960 var2) {
+   public class_6420(Screen var1, class_8960 var2) {
       this.field_32783 = var1;
       this.field_32784 = var2;
    }

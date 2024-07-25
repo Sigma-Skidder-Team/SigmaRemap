@@ -21,7 +21,7 @@ public class class_4233 {
                         break;
                      case field_25373:
                         try {
-                           class_266 var6 = var5.method_14559()
+                           Screen var6 = var5.method_14559()
                               .getDeclaredConstructor(ITextComponent.class)
                               .newInstance(new StringTextComponent(class_6763.field_34911.get(var5.method_14559())));
                            if (SigmaMainClass.method_3328().method_3299().method_31008(var6)) {

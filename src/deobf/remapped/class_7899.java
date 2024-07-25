@@ -3,8 +3,8 @@ package remapped;
 import java.util.List;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_7899 extends class_266 {
-   public final class_266 field_40393;
+public class class_7899 extends Screen {
+   public final Screen field_40393;
    private List<class_7107> field_40389;
    private class_9521 field_40395;
    private class_9521 field_40388;
@@ -13,7 +13,7 @@ public class class_7899 extends class_266 {
    public class_1863 field_40390;
    private class_8224 field_40391;
 
-   public class_7899(class_266 var1) {
+   public class_7899(Screen var1) {
       super(new TranslationTextComponent("selectWorld.title"));
       this.field_40393 = var1;
    }

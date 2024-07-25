@@ -137,7 +137,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    private long field_9661;
    private int field_9617;
    public boolean field_9589;
-   public class_266 field_9623;
+   public Screen field_9623;
    public class_7621 field_9610;
    private boolean field_9654;
    private Thread field_9644;
@@ -615,7 +615,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
    }
 
-   public void method_8609(class_266 var1) {
+   public void method_8609(Screen var1) {
       if (this.field_9623 != null) {
          this.field_9623.method_1162();
       }
@@ -635,14 +635,14 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.field_9614.method_13991().method_18690(true);
       }
 
-      this.field_9623 = (class_266)var1;
+      this.field_9623 = (Screen)var1;
       SigmaMainClass.method_3328().method_3299().method_30988();
       if (var1 != null) {
          this.field_9625.method_39844();
          class_5916.method_27064();
-         ((class_266)var1).method_1164(this, this.field_9602.method_43165(), this.field_9602.method_43177());
+         ((Screen)var1).method_1164(this, this.field_9602.method_43165(), this.field_9602.method_43177());
          this.field_9589 = false;
-         class_7542.field_38482.method_34341(((class_266)var1).method_1165());
+         class_7542.field_38482.method_34341(((Screen)var1).method_1165());
       } else {
          this.field_9611.method_16346();
          this.field_9625.method_39834();
@@ -1244,12 +1244,12 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
       if (this.field_9623 == null && this.field_9632 != null) {
          if (this.field_9632.method_26450() && !(this.field_9623 instanceof class_7696)) {
-            this.method_8609((class_266)null);
+            this.method_8609((Screen)null);
          } else if (this.field_9632.method_26507() && this.field_9601 != null) {
             this.method_8609(new class_1086());
          }
       } else if (this.field_9623 != null && this.field_9623 instanceof class_1086 && !this.field_9632.method_26507()) {
-         this.method_8609((class_266)null);
+         this.method_8609((Screen)null);
       }
 
       if (this.field_9623 != null) {
@@ -1257,7 +1257,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       if (this.field_9623 != null) {
-         class_266.method_1181(() -> this.field_9623.method_5312(), "Ticking screen", this.field_9623.getClass().getCanonicalName());
+         Screen.method_1181(() -> this.field_9623.method_5312(), "Ticking screen", this.field_9623.getClass().getCanonicalName());
       }
 
       if (!this.field_9577.field_45470) {
@@ -1421,7 +1421,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       }
 
       while (this.field_9577.field_45451.method_27074()) {
-         if (!this.field_9632.method_37221() && this.field_9632.method_3235(class_266.method_1185())) {
+         if (!this.field_9632.method_37221() && this.field_9632.method_3235(Screen.method_1185())) {
             this.field_9632.method_26597(class_2584.field_12791);
          }
       }
@@ -1534,7 +1534,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       } catch (IOException var21) {
          LOGGER.warn("Failed to read level {} data", var1, var21);
          class_4201.method_19563(this, var1);
-         this.method_8609((class_266)null);
+         this.method_8609((Screen)null);
          return;
       }
 
@@ -1614,7 +1614,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          this.field_9592.method_16054();
          SocketAddress var24 = this.field_9646.method_1679().method_30821();
          class_5121 var26 = class_5121.method_23484(var24);
-         var26.method_23495(new class_261(var26, this, (class_266)null, var0 -> {
+         var26.method_23495(new class_261(var26, this, (Screen)null, var0 -> {
          }));
          var26.method_23485(new class_8135(var24.toString(), 0, class_5776.field_29174));
          var26.method_23485(new class_4014(this.method_8502().method_5370()));
@@ -1643,7 +1643,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
             var6 = new TranslationTextComponent("selectWorld.backupWarning.experimental");
          }
 
-         this.method_8609(new class_7262((class_266)null, (var3x, var4x) -> {
+         this.method_8609(new class_7262((Screen)null, (var3x, var4x) -> {
             if (var3x) {
                class_7404.method_33719(this.field_9609, var2);
             }
@@ -1657,7 +1657,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   if (var3x) {
                      var4.run();
                   } else {
-                     this.method_8609((class_266)null);
+                     this.method_8609((Screen)null);
 
                      try (class_3676 var4x = this.field_9609.method_44633(var2)) {
                         var4x.method_17074();
@@ -1721,7 +1721,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.method_8500(new class_7152());
    }
 
-   public void method_8500(class_266 var1) {
+   public void method_8500(Screen var1) {
       class_1092 var2 = this.method_8614();
       if (var2 != null) {
          this.method_34459();
@@ -1757,7 +1757,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9632 = null;
    }
 
-   private void method_8600(class_266 var1) {
+   private void method_8600(Screen var1) {
       this.field_9592.method_16056("forcedTick");
       this.field_9611.method_16335();
       this.field_9669 = null;
@@ -1767,7 +1767,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9592.method_16054();
    }
 
-   public void method_8580(class_266 var1) {
+   public void method_8580(Screen var1) {
       this.field_9592.method_16056("forcedTick");
       this.method_8609(var1);
       this.method_8544(false);
@@ -1844,7 +1844,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                   return;
                }
 
-               if (var2 && class_266.method_1185() && var8.method_10802()) {
+               if (var2 && Screen.method_1185() && var8.method_10802()) {
                   var3 = this.field_9601.method_28260(var6);
                }
             } else {

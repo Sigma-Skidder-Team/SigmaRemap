@@ -15,7 +15,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_3129 extends class_266 {
+public class class_3129 extends Screen {
    private static final Logger field_15534 = LogManager.getLogger();
    private static final class_4639 field_15538 = new class_4639("textures/gui/title/minecraft.png");
    private static final class_4639 field_15531 = new class_4639("textures/gui/title/edition.png");
@@ -55,7 +55,7 @@ public class class_3129 extends class_266 {
 
    private void method_14490() {
       this.field_15541.run();
-      this.field_943.method_8609((class_266)null);
+      this.field_943.method_8609((Screen)null);
    }
 
    @Override

@@ -54,7 +54,7 @@ public class class_9186 {
          this.field_47002.put(var4.getName(), var4.getId());
       }
 
-      class_266 var5 = this.field_47003.field_9623;
+      Screen var5 = this.field_47003.field_9623;
       if (var5 instanceof class_1840) {
          class_1840 var6 = (class_1840)var5;
          var6.method_8133(var1);
@@ -62,7 +62,7 @@ public class class_9186 {
    }
 
    public void method_42341(UUID var1) {
-      class_266 var4 = this.field_47003.field_9623;
+      Screen var4 = this.field_47003.field_9623;
       if (var4 instanceof class_1840) {
          class_1840 var5 = (class_1840)var4;
          var5.method_8134(var1);

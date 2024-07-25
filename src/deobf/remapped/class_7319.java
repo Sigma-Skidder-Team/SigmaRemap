@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_7319 extends class_9521 implements class_1200 {
+public class class_7319 extends class_9521 implements IScreen {
    public static final class_4639 field_37415 = new class_4639("realms", "textures/gui/realms/slot_frame.png");
    public static final class_4639 field_37418 = new class_4639("realms", "textures/gui/realms/empty_frame.png");
    public static final class_4639 field_37425 = new class_4639("minecraft", "textures/gui/title/background/panorama_0.png");

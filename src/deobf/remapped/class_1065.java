@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_1065 extends class_1094 implements class_8266 {
    private static final Logger field_5838 = LogManager.getLogger();
-   private final class_266 field_5840;
+   private final Screen field_5840;
    private volatile ITextComponent field_5833 = StringTextComponent.EMPTY;
    private volatile ITextComponent field_5836;
    private volatile boolean field_5832;
@@ -39,7 +39,7 @@ public class class_1065 extends class_1094 implements class_8266 {
       "▄ ▅ ▆ ▇ █ ▇ ▆ ▅ ▄ ▃ _"
    };
 
-   public class_1065(class_266 var1, class_5875 var2) {
+   public class_1065(Screen var1, class_5875 var2) {
       this.field_5840 = var1;
       this.field_5841 = var2;
       var2.method_26753(this);

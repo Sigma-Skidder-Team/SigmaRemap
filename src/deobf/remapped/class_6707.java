@@ -21,13 +21,13 @@ import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_6707 extends class_266 {
+public class class_6707 extends Screen {
    private static final Logger field_34642 = LogManager.getLogger();
    private static final ITextComponent field_34641 = new TranslationTextComponent("pack.dropInfo").mergeStyle(TextFormatting.GRAY);
    private static final ITextComponent field_34643 = new TranslationTextComponent("pack.folderInfo");
    private static final class_4639 field_34649 = new class_4639("textures/misc/unknown_pack.png");
    private final class_5655 field_34640;
-   private final class_266 field_34644;
+   private final Screen field_34644;
    private class_1515 field_34647;
    private long field_34645;
    private class_895 field_34637;
@@ -36,7 +36,7 @@ public class class_6707 extends class_266 {
    private class_9521 field_34636;
    private final Map<String, class_4639> field_34638 = Maps.newHashMap();
 
-   public class_6707(class_266 var1, class_6354 var2, Consumer<class_6354> var3, File var4, ITextComponent var5) {
+   public class_6707(Screen var1, class_6354 var2, Consumer<class_6354> var3, File var4, ITextComponent var5) {
       super(var5);
       this.field_34644 = var1;
       this.field_34640 = new class_5655(this::method_30762, this::method_30760, var2, var3);

@@ -14,7 +14,7 @@ public class class_9289 extends class_2596 {
    private class_2440 field_47376 = new class_2440(325, 325);
    private class_2440 field_47379 = new class_2440(800, 800);
    private class_4879 field_47382;
-   private class_1633 field_47389;
+   private SigmaMainMenu field_47389;
    private float field_47386;
    private float field_47385;
    private static long field_47377 = System.nanoTime();
@@ -61,7 +61,7 @@ public class class_9289 extends class_2596 {
       this.method_32148(this.field_47382 = new class_4879(this, "particles"));
       short var13 = 480;
       short var14 = 480;
-      this.method_32148(this.field_47389 = new class_1633(this, "group", (this.method_32109() - var13) / 2, this.method_32137() / 2 - 230, var13, var14));
+      this.method_32148(this.field_47389 = new SigmaMainMenu(this, "group", (this.method_32109() - var13) / 2, this.method_32137() / 2 - 230, var13, var14));
       this.method_32148(
          this.field_47381 = new class_1552(
             this, "Copyright", 10, 8, var9.method_18547(var11), 140, new class_590(class_1255.field_6918.field_6917), var11, class_5320.field_27139
@@ -98,7 +98,7 @@ public class class_9289 extends class_2596 {
       this.field_47385 = (float)(this.method_32137() / 2);
    }
 
-   public void method_42761(class_266 var1) {
+   public void method_42761(Screen var1) {
       MinecraftClient.getInstance().method_8609(var1);
       this.method_42758();
    }

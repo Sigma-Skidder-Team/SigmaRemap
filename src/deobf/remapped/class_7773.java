@@ -3,13 +3,13 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_7773 extends class_266 {
+public class class_7773 extends Screen {
    private final ITextComponent field_39404;
    private class_416 field_39403 = class_416.field_1766;
-   private final class_266 field_39402;
+   private final Screen field_39402;
    private int field_39401;
 
-   public class_7773(class_266 var1, ITextComponent var2, ITextComponent var3) {
+   public class_7773(Screen var1, ITextComponent var2, ITextComponent var3) {
       super(var2);
       this.field_39402 = var1;
       this.field_39404 = var3;

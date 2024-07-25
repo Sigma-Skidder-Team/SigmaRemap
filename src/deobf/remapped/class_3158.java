@@ -13,7 +13,7 @@ public class class_3158 {
       this.field_15686 = var2;
    }
 
-   public class_3158(int var1, Class<? extends class_266> var2) {
+   public class_3158(int var1, Class<? extends Screen> var2) {
       this.field_15688 = var1;
       this.field_15686 = var2;
    }
@@ -54,7 +54,7 @@ public class class_3158 {
             break;
          case field_25373:
             var3.method_5820("type", "screen");
-            var3.method_5820("target", SigmaMainClass.method_3328().method_3299().method_31010((Class<? extends class_266>)this.field_15686));
+            var3.method_5820("target", SigmaMainClass.method_3328().method_3299().method_31010((Class<? extends Screen>)this.field_15686));
       }
 
       var3.method_5818("key", this.field_15688);
@@ -81,8 +81,8 @@ public class class_3158 {
       return this.field_15686;
    }
 
-   public Class<? extends class_266> method_14559() {
-      return (Class<? extends class_266>)this.field_15686;
+   public Class<? extends Screen> method_14559() {
+      return (Class<? extends Screen>)this.field_15686;
    }
 
    public class_9128 method_14560() {

@@ -2,7 +2,7 @@ package remapped;
 
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_2794 extends class_266 {
+public class class_2794 extends Screen {
    private final boolean field_13725;
 
    public class_2794(boolean var1) {
@@ -22,7 +22,7 @@ public class class_2794 extends class_266 {
       byte var4 = 98;
       this.<class_9521>method_1186(
          new class_9521(this.field_941 / 2 - 102, this.field_940 / 4 + 24 + -16, 204, 20, new TranslationTextComponent("menu.returnToGame"), var1 -> {
-            this.field_943.method_8609((class_266)null);
+            this.field_943.method_8609((Screen)null);
             this.field_943.field_9625.method_39834();
          })
       );
@@ -86,7 +86,7 @@ public class class_2794 extends class_266 {
             98,
             20,
             new TranslationTextComponent("menu.options"),
-            var1 -> this.field_943.method_8609(new class_8534(this, this.field_943.field_9577))
+            var1 -> this.field_943.method_8609(new OptionsScreen(this, this.field_943.field_9577))
          )
       );
       class_9521 var6 = this.<class_9521>method_1186(

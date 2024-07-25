@@ -246,7 +246,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
                .method_8609(
                   new class_9640(
                      var6x -> this.field_49207
-                           .method_8609((class_266)(!var6x ? this.field_49213 : new class_6577(this.field_49213, var8, var10, var11, var9, var3))),
+                           .method_8609((Screen)(!var6x ? this.field_49213 : new class_6577(this.field_49213, var8, var10, var11, var9, var3))),
                      new TranslationTextComponent("selectWorld.recreate.customized.title"),
                      new TranslationTextComponent("selectWorld.recreate.customized.text"),
                      class_1402.field_7631,

@@ -2,13 +2,13 @@ package remapped;
 
 public class class_1226 {
    public class_9128 field_6787;
-   public Class<? extends class_266> field_6788;
+   public Class<? extends Screen> field_6788;
 
    public class_1226(class_9128 var1) {
       this.field_6787 = var1;
    }
 
-   public class_1226(Class<? extends class_266> var1) {
+   public class_1226(Class<? extends Screen> var1) {
       this.field_6788 = var1;
    }
 
