@@ -17,8 +17,8 @@ public class class_1609 extends AbstractRaiderEntity implements class_2354 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
+   public void registerGoals() {
+      super.registerGoals();
       this.field_8348 = new class_9625<AbstractRaiderEntity>(
          this, AbstractRaiderEntity.class, true, var1 -> var1 != null && this.method_18600() && var1.method_37387() != EntityType.field_34220
       );

@@ -183,7 +183,7 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       this.field_29916.method_3485(0, new class_787(this));
       this.field_29916.method_3485(2, new class_4520(this, 2.0));
       this.field_29916.method_3485(2, new class_3031(this, this, 1.0));

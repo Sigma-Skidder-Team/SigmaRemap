@@ -86,7 +86,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       this.field_29916.method_3485(0, new class_518(this, 1.25));
       this.field_29916.method_3485(0, new class_787(this));
       this.field_29916.method_3485(1, new class_4407(this, class_704.class, 8.0F));

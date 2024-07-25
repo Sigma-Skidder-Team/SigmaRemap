@@ -65,8 +65,8 @@ public abstract class class_3578 extends class_1829 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
+   public void registerGoals() {
+      super.registerGoals();
       this.field_29916.method_3485(0, new class_518(this, 1.25));
       this.field_29916.method_3485(2, new class_6837<class_704>(this, class_704.class, 8.0F, 1.6, 1.4, class_3572.field_17483::test));
       this.field_29916.method_3485(4, new class_7239(this));

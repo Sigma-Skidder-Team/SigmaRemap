@@ -18,8 +18,8 @@ public abstract class AbstractRaiderEntity extends class_4607 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
+   public void registerGoals() {
+      super.registerGoals();
       this.field_29916.method_3485(1, new class_9110<AbstractRaiderEntity>(this, this));
       this.field_29916.method_3485(3, new class_3230<AbstractRaiderEntity>(this));
       this.field_29916.method_3485(4, new class_3882(this, 1.05F, 1));

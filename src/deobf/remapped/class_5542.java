@@ -52,7 +52,7 @@ public class class_5542 extends class_5467 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       this.field_28246 = new class_4138<class_5467>(this, class_5467.class, 10, false, false, var0 -> var0 instanceof class_3024 || var0 instanceof class_7272);
       this.field_28251 = new class_4138<class_3845>(this, class_3845.class, 10, false, false, class_3845.field_18768);
       this.field_28250 = new class_4138<class_3578>(this, class_3578.class, 20, false, false, var0 -> var0 instanceof class_8574);

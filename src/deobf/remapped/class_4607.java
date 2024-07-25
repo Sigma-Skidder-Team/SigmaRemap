@@ -13,8 +13,8 @@ public abstract class class_4607 extends class_1173 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
+   public void registerGoals() {
+      super.registerGoals();
       this.field_29916.method_3485(4, new class_646<class_4607>(this, 0.7, 0.595));
    }
 

@@ -34,8 +34,8 @@ public class class_9629 extends class_9310 {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
+   public void registerGoals() {
+      super.registerGoals();
       this.field_29916.method_3485(1, new class_518(this, 2.0));
       this.field_29908.method_3485(1, new class_3949(this, this));
    }

@@ -28,7 +28,7 @@ public class class_337 extends class_1173 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       class_3537 var3 = new class_3537(this, 1.0);
       this.field_1260 = new class_8285(this, 1.0, 80);
       this.field_29916.method_3485(4, new class_9868(this));

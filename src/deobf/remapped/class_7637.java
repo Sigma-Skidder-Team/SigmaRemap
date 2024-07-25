@@ -6,8 +6,8 @@ public abstract class class_7637 extends AbstractRaiderEntity {
    }
 
    @Override
-   public void method_26851() {
-      super.method_26851();
+   public void registerGoals() {
+      super.registerGoals();
    }
 
    @Override

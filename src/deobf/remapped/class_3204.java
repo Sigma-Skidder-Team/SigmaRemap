@@ -11,9 +11,9 @@ public class class_3204 extends class_1595 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       this.field_29908.method_3485(3, new class_4138<class_6993>(this, class_6993.class, true));
-      super.method_26851();
+      super.registerGoals();
    }
 
    @Override

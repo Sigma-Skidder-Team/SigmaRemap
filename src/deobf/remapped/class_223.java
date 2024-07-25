@@ -10,7 +10,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    }
 
    @Override
-   public void method_26851() {
+   public void registerGoals() {
       this.field_29916.method_3485(1, new class_1837(this, 1.25, 20, 10.0F));
       this.field_29916.method_3485(2, new class_2889(this, 1.0, 1.0000001E-5F));
       this.field_29916.method_3485(3, new class_4407(this, class_704.class, 6.0F));
