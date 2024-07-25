@@ -88,8 +88,8 @@ public class class_5329 extends class_2612 {
             var24.method_32144(class_5320.field_27139);
             var24.method_13721(var1x -> var2.method_23037(var1x.method_32165()));
             var2.method_23029(var2x -> {
-               if (var24.method_32165() != ((TextInputSetting)var2).method_23031()) {
-                  var24.method_32186(((TextInputSetting)var2).method_23031());
+               if (var24.method_32165() != ((HippieModeValue)var2).method_23031()) {
+                  var24.method_32186(((HippieModeValue)var2).method_23031());
                }
             });
             var4 += var20 + var5;

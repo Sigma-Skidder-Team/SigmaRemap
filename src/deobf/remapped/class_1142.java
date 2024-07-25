@@ -5,7 +5,7 @@ public class class_1142 extends Module {
       super(Category.RENDER, "Streaming", "Useful module when recording or streaming");
       this.addSetting(new BooleanSetting("Hide skins", "Spoof all players skin", true));
       this.addSetting(new BooleanSetting("Hide server name", "Spoof server name", false));
-      this.addSetting(new TextInputSetting("Server name", "The server name that you need to hide", "servernamehere"));
+      this.addSetting(new HippieModeValue("Server name", "The server name that you need to hide", "servernamehere"));
       this.addSetting(new BooleanSetting("Hide date", "Hide date on scoreboard", false));
    }
 
