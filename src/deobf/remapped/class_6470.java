@@ -14,7 +14,7 @@ public class class_6470 extends class_2596 {
    private int field_32974 = 0;
    private boolean field_32964 = true;
    public class_1686 field_32978;
-   public class_996 field_32967;
+   public ChangelogClass field_32967;
    public class_7852 field_32959;
    public class_2440 field_32963 = new class_2440(200, 200, class_4043.field_19618);
    public class_2440 field_32975 = new class_2440(200, 200, class_4043.field_19618);
@@ -83,7 +83,7 @@ public class class_6470 extends class_2596 {
       }
 
       this.method_32148(this.field_32978 = new class_1686(this, "main", 0, 0, this.field_36278, this.field_36257));
-      this.method_32148(this.field_32967 = new class_996(this, "changelog", 0, 0, this.field_36278, this.field_36257));
+      this.method_32148(this.field_32967 = new ChangelogClass(this, "changelog", 0, 0, this.field_36278, this.field_36257));
       this.method_32148(this.field_32959 = new class_7852(this, "redeem", 0, 0, this.field_36278, this.field_36257));
       this.field_32967.method_32119(false);
       this.field_32967.method_32091(true);
@@ -222,7 +222,7 @@ public class class_6470 extends class_2596 {
          for (class_7038 var24 : this.method_32134()) {
             if (var24.method_32126()) {
                GL11.glPushMatrix();
-               if (var24 instanceof class_996) {
+               if (var24 instanceof ChangelogClass) {
                   if (var4 > 0.0F) {
                      var24.method_32178(var1);
                   }

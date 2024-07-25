@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_4910 implements Runnable {
-   public class_4910(class_996 var1, class_1336 var2) {
+   public class_4910(ChangelogClass var1, class_1336 var2) {
       this.field_25417 = var1;
       this.field_25415 = var2;
    }

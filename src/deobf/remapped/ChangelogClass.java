@@ -8,12 +8,12 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 
-public class class_996 extends class_7038 {
+public class ChangelogClass extends class_7038 {
    public class_2440 field_5072 = new class_2440(380, 200, class_4043.field_19618);
    public class_2612 field_5070;
    private static class_1336 field_5071;
 
-   public class_996(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
+   public ChangelogClass(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method_32105(false);
       this.field_5070 = new class_2612(this, "scroll", 100, 200, var5 - 200, var6 - 200);
