@@ -25,7 +25,7 @@ public enum class_1800 {
 
          for (class_3577 var11 : var3) {
             var11.method_16625((BlockPos)null);
-            var1.method_29573(var11, var11.method_37302(), var11.method_37309(), var11.method_37156(), 6.0F, class_7298.field_37310);
+            var1.method_29573(var11, var11.getPosX(), var11.method_37309(), var11.getPosZ(), 6.0F, class_7298.field_37310);
             var11.method_37204();
          }
       }

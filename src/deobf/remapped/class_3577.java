@@ -73,7 +73,7 @@ public class class_3577 extends Entity {
             if (!this.field_41751 && !this.world.field_33055) {
                this.method_37204();
                if (!var1.method_28367()) {
-                  this.world.method_29573((Entity)null, this.method_37302(), this.method_37309(), this.method_37156(), 6.0F, class_7298.field_37311);
+                  this.world.method_29573((Entity)null, this.getPosX(), this.method_37309(), this.getPosZ(), 6.0F, class_7298.field_37311);
                }
 
                this.method_16628(var1);

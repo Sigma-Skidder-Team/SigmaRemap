@@ -3555,8 +3555,8 @@ public class class_6588 {
          field_33593 = 0;
          field_33701 = 0;
       } else {
-         field_33593 = (int)var0.method_37302() / 1000 * 1000;
-         field_33701 = (int)var0.method_37156() / 1000 * 1000;
+         field_33593 = (int)var0.getPosX() / 1000 * 1000;
+         field_33701 = (int)var0.getPosZ() / 1000 * 1000;
       }
    }
 

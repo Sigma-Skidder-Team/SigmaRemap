@@ -190,7 +190,7 @@ public class class_4047 extends Screen {
          }
 
          int var5 = this.field_19669 != Hand.MAIN_HAND ? 40 : this.field_19681.inventory.field_36404;
-         this.field_943.method_8614().method_4813(new class_703(this.field_19670, var1, var5));
+         this.field_943.method_8614().sendPacket(new class_703(this.field_19670, var1, var5));
       }
    }
 

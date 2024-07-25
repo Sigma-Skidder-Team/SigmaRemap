@@ -11,7 +11,7 @@ public class class_1573 {
    }
 
    public static void method_7105(World var0, Entity var1, class_6867 var2) {
-      method_7103(var0, var1.method_37302(), var1.method_37309(), var1.method_37156(), var2);
+      method_7103(var0, var1.getPosX(), var1.method_37309(), var1.getPosZ(), var2);
    }
 
    private static void method_7103(World var0, double var1, double var3, double var5, class_6867 var7) {

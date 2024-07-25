@@ -845,7 +845,7 @@ public class GameOptions {
          this.field_45495
             .thePlayer
             .connection
-            .method_4813(new class_8244(this.field_45437, this.field_45537, this.field_45443, this.field_45554, var1, this.field_45569));
+            .sendPacket(new class_8244(this.field_45437, this.field_45537, this.field_45443, this.field_45554, var1, this.field_45569));
       }
    }
 

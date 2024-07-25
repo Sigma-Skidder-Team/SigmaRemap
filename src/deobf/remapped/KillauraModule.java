@@ -97,7 +97,7 @@ public class KillauraModule extends Module {
       this.field_12552 = -1;
       this.field_12561.field_44743.clear();
       this.field_12568.clear();
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          this.field_12545 = 1;
       }
 
@@ -314,9 +314,9 @@ public class KillauraModule extends Module {
       }
 
       GL11.glTranslated(
-         var1.field_41754 + (var1.method_37302() - var1.field_41754) * var4,
+         var1.field_41754 + (var1.getPosX() - var1.field_41754) * var4,
          var1.field_41713 + (var1.method_37309() - var1.field_41713) * var4,
-         var1.field_41724 + (var1.method_37156() - var1.field_41724) * var4
+         var1.field_41724 + (var1.getPosZ() - var1.field_41724) * var4
       );
       GL11.glTranslated(
          -client.gameRenderer.method_35949().method_41627().method_61(),
@@ -419,12 +419,12 @@ public class KillauraModule extends Module {
          this.field_12553 = 0;
          var8 = false;
          if (var2.equals("Hypixel") && this.field_12550 != null && client.thePlayer.method_37098().field_7333 < 0.0) {
-            client.method_8614().method_4813(new class_9515(this.field_12550[0], this.field_12550[1], this.field_12550[2], false));
+            client.method_8614().sendPacket(new class_9515(this.field_12550[0], this.field_12550[1], this.field_12550[2], false));
             this.field_12550 = null;
          }
       }
 
-      boolean var9 = !JesusModule.method_32081() && (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F));
+      boolean var9 = !JesusModule.method_32081() && (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F));
       if (!var9) {
          this.field_12545 = 0;
          this.field_12553 = 0;
@@ -642,13 +642,13 @@ public class KillauraModule extends Module {
             break;
          case "AAC":
             if (!class_7211.method_32997(
-               new class_1343(var3.method_37302(), var3.method_37309() - 1.6 - this.field_12549 + (double)var3.method_37277(), var3.method_37156())
+               new class_1343(var3.getPosX(), var3.method_37309() - 1.6 - this.field_12549 + (double)var3.method_37277(), var3.getPosZ())
             )) {
             }
 
             float var29 = this.field_12562 / Math.max(1.0F, this.field_12547);
-            double var33 = var3.method_37302() - var3.field_41754;
-            double var34 = var3.method_37156() - var3.field_41724;
+            double var33 = var3.getPosX() - var3.field_41754;
+            double var34 = var3.getPosZ() - var3.field_41724;
             float var35 = (float)Math.sqrt(var33 * var33 + var34 * var34);
             float var36 = class_5181.method_23766(var29, 0.57, -0.135, 0.095, -0.3);
             float var37 = Math.min(1.0F, class_5181.method_23766(var29, 0.57, -0.135, 0.095, -0.3));
@@ -715,8 +715,8 @@ public class KillauraModule extends Module {
             }
 
             float var10 = this.field_12562 / Math.max(1.0F, this.field_12547);
-            double var15 = var3.method_37302() - var3.field_41754;
-            double var17 = var3.method_37156() - var3.field_41724;
+            double var15 = var3.getPosX() - var3.field_41754;
+            double var17 = var3.getPosZ() - var3.field_41724;
             float var19 = (float)Math.sqrt(var15 * var15 + var17 * var17);
             float var20 = class_5181.method_23766(var10, 0.57, -0.135, 0.095, -0.3);
             float var21 = Math.min(1.0F, class_5181.method_23766(var10, 0.57, -0.135, 0.095, -0.3));

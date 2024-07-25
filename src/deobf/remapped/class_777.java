@@ -43,7 +43,7 @@ public class class_777 extends Module {
          double var9 = (double)(class_9299.method_42840(var8) * (float)var7);
          double var11 = (double)(class_9299.method_42818(var8) * (float)var7);
          client.thePlayer
-            .method_37256(client.thePlayer.method_37302() + var9, client.thePlayer.method_37309(), client.thePlayer.method_37156() + var11);
+            .method_37256(client.thePlayer.getPosX() + var9, client.thePlayer.method_37309(), client.thePlayer.getPosZ() + var11);
       }
    }
 
@@ -57,7 +57,7 @@ public class class_777 extends Module {
 
       for (int var5 = 0; var5 < 10; var5++) {
          BlockPos var6 = new BlockPos(
-            client.thePlayer.method_37302(), client.thePlayer.method_37309() - (double)var5, client.thePlayer.method_37156()
+            client.thePlayer.getPosX(), client.thePlayer.method_37309() - (double)var5, client.thePlayer.getPosZ()
          );
          if (client.theWorld.method_28262(var6).method_8302() && var3) {
             var4 = -var5;
@@ -76,7 +76,7 @@ public class class_777 extends Module {
 
       for (int var5 = 10; var5 > 0; var5--) {
          BlockPos var6 = new BlockPos(
-            client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var5, client.thePlayer.method_37156()
+            client.thePlayer.getPosX(), client.thePlayer.method_37309() + (double)var5, client.thePlayer.getPosZ()
          );
          if (client.theWorld.method_28262(var6).method_8302() && var3 && !client.theWorld.method_28262(var6.method_6100()).method_8302()) {
             var4 = var5;
@@ -94,13 +94,13 @@ public class class_777 extends Module {
          class_314.method_1443("§cCouldn't VClip");
       } else {
          client.method_8614()
-            .method_4813(
+            .sendPacket(
                new class_9515(
-                  client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var1, client.thePlayer.method_37156(), false
+                  client.thePlayer.getPosX(), client.thePlayer.method_37309() + (double)var1, client.thePlayer.getPosZ(), false
                )
             );
          client.thePlayer
-            .method_37256(client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var1, client.thePlayer.method_37156());
+            .method_37256(client.thePlayer.getPosX(), client.thePlayer.method_37309() + (double)var1, client.thePlayer.getPosZ());
          SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, NotificationIcons.field_10993));
       }
    }

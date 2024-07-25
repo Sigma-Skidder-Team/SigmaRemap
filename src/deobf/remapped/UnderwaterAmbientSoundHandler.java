@@ -12,7 +12,7 @@ public class UnderwaterAmbientSoundHandler implements IAmbientSoundHandler {
    }
 
    @Override
-   public void method_17366() {
+   public void tick() {
       this.field_17423--;
       if (this.field_17423 <= 0 && this.field_17425.method_37179()) {
          float var3 = this.field_17425.world.field_33033.nextFloat();

@@ -40,8 +40,8 @@ public class SkeletonESPModule extends Module {
             GL11.glTranslated(var8, var10, var12);
             float var14 = var2.field_29611 + (var2.field_29605 - var2.field_29611) * client.method_8554();
             GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
-            GL11.glTranslated(0.0, 0.0, !var2.method_37252() ? 0.0 : -0.235);
-            float var15 = !var2.method_37252() ? 0.75F : 0.6F;
+            GL11.glTranslated(0.0, 0.0, !var2.isSneaking() ? 0.0 : -0.235);
+            float var15 = !var2.isSneaking() ? 0.75F : 0.6F;
             GL11.glPushMatrix();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             GL11.glTranslated(-0.125, (double)var15, 0.0);
@@ -82,10 +82,10 @@ public class SkeletonESPModule extends Module {
             GL11.glVertex3d(0.0, (double)(-var15), 0.0);
             GL11.glEnd();
             GL11.glPopMatrix();
-            GL11.glTranslated(0.0, 0.0, !var2.method_37252() ? 0.0 : 0.25);
+            GL11.glTranslated(0.0, 0.0, !var2.isSneaking() ? 0.0 : 0.25);
             GL11.glPushMatrix();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            GL11.glTranslated(0.0, !var2.method_37252() ? 0.0 : -0.05, !var2.method_37252() ? 0.0 : -0.01725);
+            GL11.glTranslated(0.0, !var2.isSneaking() ? 0.0 : -0.05, !var2.isSneaking() ? 0.0 : -0.01725);
             GL11.glPushMatrix();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             GL11.glTranslated(-0.375, (double)var15 + 0.55, 0.0);
@@ -139,8 +139,8 @@ public class SkeletonESPModule extends Module {
             GL11.glEnd();
             GL11.glPopMatrix();
             GL11.glPopMatrix();
-            GL11.glRotatef(!var2.method_37252() ? 0.0F : 25.0F, 1.0F, 0.0F, 0.0F);
-            GL11.glTranslated(0.0, !var2.method_37252() ? 0.0 : -0.16175, !var2.method_37252() ? 0.0 : -0.48025);
+            GL11.glRotatef(!var2.isSneaking() ? 0.0F : 25.0F, 1.0F, 0.0F, 0.0F);
+            GL11.glTranslated(0.0, !var2.isSneaking() ? 0.0 : -0.16175, !var2.isSneaking() ? 0.0 : -0.48025);
             GL11.glPushMatrix();
             GL11.glTranslated(0.0, (double)var15, 0.0);
             GL11.glBegin(3);
@@ -171,9 +171,9 @@ public class SkeletonESPModule extends Module {
 
    private class_4714 method_19975(class_3368 var1, class_704 var2) {
       float var5 = client.method_8554();
-      double var6 = var2.field_41754 + (var2.method_37302() - var2.field_41754) * (double)var5;
+      double var6 = var2.field_41754 + (var2.getPosX() - var2.field_41754) * (double)var5;
       double var8 = var2.field_41713 + (var2.method_37309() - var2.field_41713) * (double)var5;
-      double var10 = var2.field_41724 + (var2.method_37156() - var2.field_41724) * (double)var5;
+      double var10 = var2.field_41724 + (var2.getPosZ() - var2.field_41724) * (double)var5;
       return new class_4714(var6, var8, var10);
    }
 

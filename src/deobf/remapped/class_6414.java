@@ -53,7 +53,7 @@ public class class_6414 extends class_2353 implements class_8525 {
 
       for (Entity var8 : var2.method_25870((Entity)null, var6.method_19483())) {
          double var9 = class_3370.method_15520(class_9249.field_47216, var8.method_37241().method_18918(0.0, 1.0, 0.0), Stream.<class_4190>of(var6), -1.0);
-         var8.method_37254(var8.method_37302(), var8.method_37309() + 1.0 + var9, var8.method_37156());
+         var8.method_37254(var8.getPosX(), var8.method_37309() + 1.0 + var9, var8.getPosZ());
       }
 
       return var1;

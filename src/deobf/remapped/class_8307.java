@@ -11,14 +11,14 @@ public class class_8307 extends class_2451 {
    public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
       ItemStack var6 = super.method_11242(var1, var2, var3);
       if (!var2.field_33055) {
-         double var7 = var3.method_37302();
+         double var7 = var3.getPosX();
          double var9 = var3.method_37309();
-         double var11 = var3.method_37156();
+         double var11 = var3.getPosZ();
 
          for (int var13 = 0; var13 < 16; var13++) {
-            double var14 = var3.method_37302() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
+            double var14 = var3.getPosX() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
             double var16 = class_9299.method_42827(var3.method_37309() + (double)(var3.method_26594().nextInt(16) - 8), 0.0, (double)(var2.method_43371() - 1));
-            double var18 = var3.method_37156() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
+            double var18 = var3.getPosZ() + (var3.method_26594().nextDouble() - 0.5) * 16.0;
             if (var3.isPassenger()) {
                var3.method_37390();
             }

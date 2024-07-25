@@ -49,7 +49,7 @@ public class NukerModule extends Module {
                if (!this.getBooleanValueByName("NoSwing")) {
                   client.thePlayer.method_26597(Hand.MAIN_HAND);
                } else {
-                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
                }
             } else {
                this.field_48181 = this.field_48180.get(0);
@@ -64,16 +64,16 @@ public class NukerModule extends Module {
                if (!this.getBooleanValueByName("NoSwing")) {
                   client.thePlayer.method_26597(Hand.MAIN_HAND);
                } else {
-                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
                }
             }
          } else {
             for (BlockPos var9 : this.field_48180) {
-               client.method_8614().method_4813(new class_1586(class_7500.field_38263, var9, class_7494.method_34113(var9)));
+               client.method_8614().sendPacket(new class_1586(class_7500.field_38263, var9, class_7494.method_34113(var9)));
                if (!this.getBooleanValueByName("NoSwing")) {
                   client.thePlayer.method_26597(Hand.MAIN_HAND);
                } else {
-                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
                }
             }
          }
@@ -105,8 +105,8 @@ public class NukerModule extends Module {
    }
 
    public static void method_43657(BlockPos var0) {
-      client.method_8614().method_4813(new class_1586(class_7500.field_38263, var0, Direction.field_817));
-      client.method_8614().method_4813(new class_1586(class_7500.field_38258, var0, Direction.field_817));
+      client.method_8614().sendPacket(new class_1586(class_7500.field_38263, var0, Direction.field_817));
+      client.method_8614().sendPacket(new class_1586(class_7500.field_38258, var0, Direction.field_817));
       client.theWorld.method_29594(var0, class_4783.field_23184.method_29260());
    }
 
@@ -122,9 +122,9 @@ public class NukerModule extends Module {
          for (float var6 = -var1; var6 <= var1; var6++) {
             for (float var7 = -var1; var7 <= var1; var7++) {
                BlockPos var8 = new BlockPos(
-                  client.thePlayer.method_37302() + (double)var6,
+                  client.thePlayer.getPosX() + (double)var6,
                   client.thePlayer.method_37309() + (double)var5,
-                  client.thePlayer.method_37156() + (double)var7
+                  client.thePlayer.getPosZ() + (double)var7
                );
                if (!client.theWorld.method_28262(var8).method_8345()
                   && client.theWorld.method_28262(var8).method_8364().method_22001()

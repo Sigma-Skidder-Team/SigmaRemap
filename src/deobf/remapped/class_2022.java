@@ -84,7 +84,7 @@ public class class_2022 extends class_1944 {
          this.method_37215(this.method_37098().method_6210(1.0, 0.6, 1.0));
       } else {
          this.method_37215(class_1343.field_7335);
-         this.method_37222(this.method_37302(), (double)class_9299.method_42847(this.method_37309()) + 1.0 - (double)this.method_37074(), this.method_37156());
+         this.method_37222(this.getPosX(), (double)class_9299.method_42847(this.method_37309()) + 1.0 - (double)this.method_37074(), this.getPosZ());
       }
    }
 
@@ -100,15 +100,15 @@ public class class_2022 extends class_1944 {
 
          if (this.field_10246 == null || this.field_41717.nextInt(30) == 0 || this.field_10246.method_12170(this.method_37245(), 2.0)) {
             this.field_10246 = new BlockPos(
-               this.method_37302() + (double)this.field_41717.nextInt(7) - (double)this.field_41717.nextInt(7),
+               this.getPosX() + (double)this.field_41717.nextInt(7) - (double)this.field_41717.nextInt(7),
                this.method_37309() + (double)this.field_41717.nextInt(6) - 2.0,
-               this.method_37156() + (double)this.field_41717.nextInt(7) - (double)this.field_41717.nextInt(7)
+               this.getPosZ() + (double)this.field_41717.nextInt(7) - (double)this.field_41717.nextInt(7)
             );
          }
 
-         double var6 = (double)this.field_10246.method_12173() + 0.5 - this.method_37302();
+         double var6 = (double)this.field_10246.method_12173() + 0.5 - this.getPosX();
          double var8 = (double)this.field_10246.method_12165() + 0.1 - this.method_37309();
-         double var10 = (double)this.field_10246.method_12185() + 0.5 - this.method_37156();
+         double var10 = (double)this.field_10246.method_12185() + 0.5 - this.getPosZ();
          class_1343 var12 = this.method_37098();
          class_1343 var13 = var12.method_6214(
             (Math.signum(var6) * 0.5 - var12.field_7336) * 0.1F,

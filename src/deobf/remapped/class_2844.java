@@ -23,7 +23,7 @@ public class class_2844 extends class_8388 {
       Entity var4 = this.method_26166();
       if ((var1.method_33990() != class_1430.field_7718 || !((class_5631)var1).method_25524().method_37171(var4)) && !this.world.field_33055) {
          List var5 = this.world.<class_5834>method_25868(class_5834.class, this.method_37241().method_18899(4.0, 2.0, 4.0));
-         class_4478 var6 = new class_4478(this.world, this.method_37302(), this.method_37309(), this.method_37156());
+         class_4478 var6 = new class_4478(this.world, this.getPosX(), this.method_37309(), this.getPosZ());
          if (var4 instanceof class_5834) {
             var6.method_20782((class_5834)var4);
          }
@@ -37,7 +37,7 @@ public class class_2844 extends class_8388 {
             for (class_5834 var8 : var5) {
                double var9 = this.method_37275(var8);
                if (var9 < 16.0) {
-                  var6.method_37256(var8.method_37302(), var8.method_37309(), var8.method_37156());
+                  var6.method_37256(var8.getPosX(), var8.method_37309(), var8.getPosZ());
                   break;
                }
             }

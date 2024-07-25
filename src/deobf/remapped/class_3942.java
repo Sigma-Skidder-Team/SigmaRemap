@@ -35,9 +35,9 @@ public class class_3942 extends class_5783 {
    public class_3942(World var1, class_704 var2, double var3, double var5, double var7) {
       this(var1, var2, 0, 0);
       this.method_37256(var3, var5, var7);
-      this.field_41767 = this.method_37302();
+      this.field_41767 = this.getPosX();
       this.field_41698 = this.method_37309();
-      this.field_41725 = this.method_37156();
+      this.field_41725 = this.getPosZ();
    }
 
    public class_3942(class_704 var1, World var2, int var3, int var4) {
@@ -48,9 +48,9 @@ public class class_3942 extends class_5783 {
       float var10 = class_9299.method_42818(-var8 * (float) (Math.PI / 180.0) - (float) Math.PI);
       float var11 = -class_9299.method_42840(-var7 * (float) (Math.PI / 180.0));
       float var12 = class_9299.method_42818(-var7 * (float) (Math.PI / 180.0));
-      double var13 = var1.method_37302() - (double)var10 * 0.3;
+      double var13 = var1.getPosX() - (double)var10 * 0.3;
       double var15 = var1.method_37388();
-      double var17 = var1.method_37156() - (double)var9 * 0.3;
+      double var17 = var1.getPosZ() - (double)var9 * 0.3;
       this.method_37144(var13, var15, var17, var8, var7);
       class_1343 var19 = new class_1343((double)(-var10), (double)class_9299.method_42828(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
       double var20 = var19.method_6217();
@@ -108,7 +108,7 @@ public class class_3942 extends class_5783 {
       class_704 var3 = this.method_18219();
       if (var3 != null) {
          if (this.world.field_33055 || !this.method_18225(var3)) {
-            if (!this.field_41726) {
+            if (!this.onGround) {
                this.field_19148 = 0;
             } else {
                this.field_19148++;
@@ -130,7 +130,7 @@ public class class_3942 extends class_5783 {
                if (this.field_19135 == class_2753.field_13474) {
                   if (this.field_19144 != null) {
                      if (!this.field_19144.field_41751) {
-                        this.method_37256(this.field_19144.method_37302(), this.field_19144.method_37080(0.8), this.field_19144.method_37156());
+                        this.method_37256(this.field_19144.getPosX(), this.field_19144.method_37080(0.8), this.field_19144.getPosZ());
                      } else {
                         this.field_19144 = null;
                         this.field_19135 = class_2753.field_13471;
@@ -191,7 +191,7 @@ public class class_3942 extends class_5783 {
 
             this.method_37226(class_7412.field_37839, this.method_37098());
             this.method_26167();
-            if (this.field_19135 == class_2753.field_13471 && (this.field_41726 || this.field_41744)) {
+            if (this.field_19135 == class_2753.field_13471 && (this.onGround || this.field_41744)) {
                this.method_37215(class_1343.field_7335);
             }
 
@@ -281,9 +281,9 @@ public class class_3942 extends class_5783 {
                if (this.field_41717.nextFloat() < var9) {
                   float var10 = class_9299.method_42819(this.field_41717, 0.0F, 360.0F) * (float) (Math.PI / 180.0);
                   float var11 = class_9299.method_42819(this.field_41717, 25.0F, 60.0F);
-                  double var12 = this.method_37302() + (double)(class_9299.method_42818(var10) * var11 * 0.1F);
+                  double var12 = this.getPosX() + (double)(class_9299.method_42818(var10) * var11 * 0.1F);
                   double var14 = (double)((float)class_9299.method_42847(this.method_37309()) + 1.0F);
-                  double var16 = this.method_37156() + (double)(class_9299.method_42840(var10) * var11 * 0.1F);
+                  double var16 = this.getPosZ() + (double)(class_9299.method_42840(var10) * var11 * 0.1F);
                   class_2522 var18 = var4.method_28262(new BlockPos(var12, var14 - 1.0, var16));
                   if (var18.method_8350(class_4783.field_23900)) {
                      var4.method_28957(class_3090.field_15346, var12, var14, var16, 2 + this.field_41717.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
@@ -302,9 +302,9 @@ public class class_3942 extends class_5783 {
                double var7 = this.method_37309() + 0.5;
                var4.method_28957(
                   class_3090.field_15340,
-                  this.method_37302(),
+                  this.getPosX(),
                   var7,
-                  this.method_37156(),
+                  this.getPosZ(),
                   (int)(1.0F + this.method_37086() * 20.0F),
                   (double)this.method_37086(),
                   0.0,
@@ -313,9 +313,9 @@ public class class_3942 extends class_5783 {
                );
                var4.method_28957(
                   class_3090.field_15341,
-                  this.method_37302(),
+                  this.getPosX(),
                   var7,
-                  this.method_37156(),
+                  this.getPosZ(),
                   (int)(1.0F + this.method_37086() * 20.0F),
                   (double)this.method_37086(),
                   0.0,
@@ -329,9 +329,9 @@ public class class_3942 extends class_5783 {
                float var21 = this.field_19136 * (float) (Math.PI / 180.0);
                float var22 = class_9299.method_42818(var21);
                float var23 = class_9299.method_42840(var21);
-               double var24 = this.method_37302() + (double)(var22 * (float)this.field_19137 * 0.1F);
+               double var24 = this.getPosX() + (double)(var22 * (float)this.field_19137 * 0.1F);
                double var25 = (double)((float)class_9299.method_42847(this.method_37309()) + 1.0F);
-               double var26 = this.method_37156() + (double)(var23 * (float)this.field_19137 * 0.1F);
+               double var26 = this.getPosZ() + (double)(var23 * (float)this.field_19137 * 0.1F);
                class_2522 var27 = var4.method_28262(new BlockPos(var24, var25 - 1.0, var26));
                if (var27.method_8350(class_4783.field_23900)) {
                   if (this.field_41717.nextFloat() < 0.15F) {
@@ -428,17 +428,17 @@ public class class_3942 extends class_5783 {
                class_8807.field_45056.method_6617((class_9359)var4, var1, this, var8);
 
                for (ItemStack var10 : var8) {
-                  class_91 var11 = new class_91(this.world, this.method_37302(), this.method_37309(), this.method_37156(), var10);
-                  double var12 = var4.method_37302() - this.method_37302();
+                  class_91 var11 = new class_91(this.world, this.getPosX(), this.method_37309(), this.getPosZ(), var10);
+                  double var12 = var4.getPosX() - this.getPosX();
                   double var14 = var4.method_37309() - this.method_37309();
-                  double var16 = var4.method_37156() - this.method_37156();
+                  double var16 = var4.getPosZ() - this.getPosZ();
                   double var18 = 0.1;
                   var11.method_37214(var12 * 0.1, var14 * 0.1 + Math.sqrt(Math.sqrt(var12 * var12 + var14 * var14 + var16 * var16)) * 0.08, var16 * 0.1);
                   this.world.method_7509(var11);
                   var4.world
                      .method_7509(
                         new class_5614(
-                           var4.world, var4.method_37302(), var4.method_37309() + 0.5, var4.method_37156() + 0.5, this.field_41717.nextInt(6) + 1
+                           var4.world, var4.getPosX(), var4.method_37309() + 0.5, var4.getPosZ() + 0.5, this.field_41717.nextInt(6) + 1
                         )
                      );
                   if (var10.method_27960().method_11250(class_391.field_1613)) {
@@ -455,7 +455,7 @@ public class class_3942 extends class_5783 {
             var5 = !(this.field_19144 instanceof class_91) ? 5 : 3;
          }
 
-         if (this.field_41726) {
+         if (this.onGround) {
             var5 = 2;
          }
 
@@ -479,7 +479,7 @@ public class class_3942 extends class_5783 {
       Entity var3 = this.method_26166();
       if (var3 != null) {
          class_1343 var4 = new class_1343(
-               var3.method_37302() - this.method_37302(), var3.method_37309() - this.method_37309(), var3.method_37156() - this.method_37156()
+               var3.getPosX() - this.getPosX(), var3.method_37309() - this.method_37309(), var3.getPosZ() - this.getPosZ()
             )
             .method_6209(0.1);
          this.field_19144.method_37215(this.field_19144.method_37098().method_6215(var4));

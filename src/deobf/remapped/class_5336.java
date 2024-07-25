@@ -25,7 +25,7 @@ public class class_5336 extends class_2451 {
                }
 
                if (var1.method_28258(var9).method_22007(class_6503.field_33094)) {
-                  var1.method_29528(var2, var2.method_37302(), var2.method_37309(), var2.method_37156(), class_463.field_2054, class_562.field_3328, 1.0F, 1.0F);
+                  var1.method_29528(var2, var2.getPosX(), var2.method_37309(), var2.getPosZ(), class_463.field_2054, class_562.field_3328, 1.0F, 1.0F);
                   return class_954.<ItemStack>method_4208(
                      this.method_24320(var7, var2, class_9541.method_43999(new ItemStack(class_4897.field_25157), class_3697.field_18108)),
                      var1.method_22567()
@@ -41,7 +41,7 @@ public class class_5336 extends class_2451 {
          class_4478 var8 = (class_4478)var6.get(0);
          var8.method_20781(var8.method_20783() - 0.5F);
          var1.method_29528(
-            (class_704)null, var2.method_37302(), var2.method_37309(), var2.method_37156(), class_463.field_2366, class_562.field_3328, 1.0F, 1.0F
+            (class_704)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), class_463.field_2366, class_562.field_3328, 1.0F, 1.0F
          );
          return class_954.<ItemStack>method_4208(this.method_24320(var7, var2, new ItemStack(class_4897.field_25220)), var1.method_22567());
       }

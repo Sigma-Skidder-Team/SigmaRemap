@@ -71,9 +71,9 @@ public abstract class class_7429 extends class_7637 {
          this.world
             .method_43361(
                class_3090.field_15353,
-               this.method_37302() + (double)var11 * 0.6,
+               this.getPosX() + (double)var11 * 0.6,
                this.method_37309() + 1.8,
-               this.method_37156() + (double)var12 * 0.6,
+               this.getPosZ() + (double)var12 * 0.6,
                var4,
                var6,
                var8
@@ -81,9 +81,9 @@ public abstract class class_7429 extends class_7637 {
          this.world
             .method_43361(
                class_3090.field_15353,
-               this.method_37302() - (double)var11 * 0.6,
+               this.getPosX() - (double)var11 * 0.6,
                this.method_37309() + 1.8,
-               this.method_37156() - (double)var12 * 0.6,
+               this.getPosZ() - (double)var12 * 0.6,
                var4,
                var6,
                var8

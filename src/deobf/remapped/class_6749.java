@@ -31,7 +31,7 @@ public abstract class class_6749 extends class_5783 {
    }
 
    public class_6749(class_6629<? extends class_6749> var1, class_5834 var2, World var3) {
-      this(var1, var2.method_37302(), var2.method_37388() - 0.1F, var2.method_37156(), var3);
+      this(var1, var2.getPosX(), var2.method_37388() - 0.1F, var2.getPosZ(), var3);
       this.method_26159(var2);
       if (var2 instanceof class_704) {
          this.field_34835 = class_4237.field_20563;
@@ -167,9 +167,9 @@ public abstract class class_6749 extends class_5783 {
                this.world
                   .method_43361(
                      class_3090.field_15322,
-                     this.method_37302() + var10 * (double)var26 / 4.0,
+                     this.getPosX() + var10 * (double)var26 / 4.0,
                      this.method_37309() + var12 * (double)var26 / 4.0,
-                     this.method_37156() + var14 * (double)var26 / 4.0,
+                     this.getPosZ() + var14 * (double)var26 / 4.0,
                      -var10,
                      -var12 + 0.2,
                      -var14
@@ -177,9 +177,9 @@ public abstract class class_6749 extends class_5783 {
             }
          }
 
-         double var16 = this.method_37302() + var10;
+         double var16 = this.getPosX() + var10;
          double var18 = this.method_37309() + var12;
-         double var20 = this.method_37156() + var14;
+         double var20 = this.getPosZ() + var14;
          float var22 = class_9299.method_42842(method_37266(var4));
          if (!var3) {
             this.rotationYaw = (float)(class_9299.method_42821(var10, var14) * 180.0F / (float)Math.PI);
@@ -362,10 +362,10 @@ public abstract class class_6749 extends class_5783 {
    public void method_26165(class_9529 var1) {
       this.field_34836 = this.world.method_28262(var1.method_43955());
       super.method_26165(var1);
-      class_1343 var4 = var1.method_33993().method_6193(this.method_37302(), this.method_37309(), this.method_37156());
+      class_1343 var4 = var1.method_33993().method_6193(this.getPosX(), this.method_37309(), this.getPosZ());
       this.method_37215(var4);
       class_1343 var5 = var4.method_6213().method_6209(0.05F);
-      this.method_37222(this.method_37302() - var5.field_7336, this.method_37309() - var5.field_7333, this.method_37156() - var5.field_7334);
+      this.method_37222(this.getPosX() - var5.field_7336, this.method_37309() - var5.field_7333, this.getPosZ() - var5.field_7334);
       this.method_37155(this.method_30938(), 1.0F, 1.2F / (this.field_41717.nextFloat() * 0.2F + 0.9F));
       this.field_34834 = true;
       this.field_34831 = 7;

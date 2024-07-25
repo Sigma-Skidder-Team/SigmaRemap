@@ -89,7 +89,7 @@ public class class_7808 extends class_4591 {
    public void method_21259(class_8116 var1) {
       this.field_943
          .method_8614()
-         .method_4813(
+         .sendPacket(
             new class_6066(
                new BlockPos(var1.method_36923()), this.field_22318.method_8246(), this.field_39525, var1.method_36927(), this.field_39527, this.field_39528
             )

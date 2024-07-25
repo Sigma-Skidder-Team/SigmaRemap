@@ -16,8 +16,8 @@ public class DebugSpeedModule extends Module {
    @EventListen
    public void method_45511(class_5596 var1) {
       if (this.method_42015()) {
-         class_1343 var4 = new class_1343(client.thePlayer.method_37302(), 0.0, client.thePlayer.method_37156());
-         if (client.thePlayer.field_41726 && this.field_49933 != null) {
+         class_1343 var4 = new class_1343(client.thePlayer.getPosX(), 0.0, client.thePlayer.getPosZ());
+         if (client.thePlayer.onGround && this.field_49933 != null) {
             double var5 = var4.method_6195(this.field_49933) / (double)this.field_49934;
             var5 *= (double) client.theTimer.timerSpeed;
             boolean var7 = SigmaMainClass.getInstance().method_3310().method_25293() > 1 && client.thePlayer.field_29600 == 0;
@@ -45,7 +45,7 @@ public class DebugSpeedModule extends Module {
             );
          }
 
-         this.field_49934 = !client.thePlayer.field_41726 ? this.field_49934++ : 1;
+         this.field_49934 = !client.thePlayer.onGround ? this.field_49934++ : 1;
          this.field_49933 = var4;
       }
    }

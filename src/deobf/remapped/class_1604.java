@@ -10,11 +10,11 @@ public class class_1604 extends ClientPlayerEntity {
    }
 
    @Override
-   public void method_27305() {
+   public void onUpdateWalkingPlayer() {
       class_4868 var3 = new class_4868();
       SigmaMainClass.getInstance().getEventManager().call(var3);
       if (!var3.method_29716()) {
-         super.method_27305();
+         super.onUpdateWalkingPlayer();
       }
    }
 

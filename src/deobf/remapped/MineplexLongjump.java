@@ -35,7 +35,7 @@ public class MineplexLongjump extends Module {
    @EventListen
    public void method_20638(class_7767 var1) {
       if (this.method_42015() && client.thePlayer != null) {
-         if (!client.thePlayer.field_41726) {
+         if (!client.thePlayer.onGround) {
             if (this.field_21695 >= 0) {
                if (this.field_21696 && !class_314.method_1434()) {
                   this.field_21696 = !this.field_21696;
@@ -92,7 +92,7 @@ public class MineplexLongjump extends Module {
 
             this.field_21696 = class_314.method_1434();
             BlockPos var4 = new BlockPos(
-               client.thePlayer.method_37302(), client.thePlayer.method_37309() - 0.4, client.thePlayer.method_37156()
+               client.thePlayer.getPosX(), client.thePlayer.method_37309() - 0.4, client.thePlayer.getPosZ()
             );
             if (class_314.method_1434()
                && (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) || this.method_42017().getBooleanValueByName("Auto Jump"))) {

@@ -58,8 +58,8 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
          this.field_40564 += 0.02F;
          this.field_40572 -= 0.1F;
       } else {
-         double var4 = var3.method_37302() - ((double)this.field_18358.method_12173() + 0.5);
-         double var6 = var3.method_37156() - ((double)this.field_18358.method_12185() + 0.5);
+         double var4 = var3.getPosX() - ((double)this.field_18358.method_12173() + 0.5);
+         double var6 = var3.getPosZ() - ((double)this.field_18358.method_12185() + 0.5);
          this.field_40564 = (float)class_9299.method_42821(var6, var4);
          this.field_40572 += 0.1F;
          if (this.field_40572 < 0.5F || field_40566.nextInt(40) == 0) {

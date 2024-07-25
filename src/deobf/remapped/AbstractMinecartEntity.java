@@ -265,9 +265,9 @@ public abstract class AbstractMinecartEntity extends Entity {
             this.method_37215(this.method_37098().method_6214(0.0, -0.04, 0.0));
          }
 
-         int var3 = class_9299.method_42847(this.method_37302());
+         int var3 = class_9299.method_42847(this.getPosX());
          int var4 = class_9299.method_42847(this.method_37309());
-         int var5 = class_9299.method_42847(this.method_37156());
+         int var5 = class_9299.method_42847(this.getPosZ());
          if (this.world.method_28262(new BlockPos(var3, var4 - 1, var5)).method_8349(class_2351.field_11745)) {
             var4--;
          }
@@ -285,8 +285,8 @@ public abstract class AbstractMinecartEntity extends Entity {
 
          this.method_37097();
          this.rotationPitch = 0.0F;
-         double var16 = this.field_41767 - this.method_37302();
-         double var18 = this.field_41725 - this.method_37156();
+         double var16 = this.field_41767 - this.getPosX();
+         double var18 = this.field_41725 - this.getPosZ();
          if (var16 * var16 + var18 * var18 > 0.001) {
             this.rotationYaw = (float)(class_9299.method_42821(var18, var16) * 180.0 / Math.PI);
             if (this.field_5893) {
@@ -336,9 +336,9 @@ public abstract class AbstractMinecartEntity extends Entity {
          this.method_37351();
          this.method_37395(this.rotationYaw, this.rotationPitch);
       } else {
-         double var8 = this.method_37302() + (this.field_5889 - this.method_37302()) / (double)this.field_5892;
+         double var8 = this.getPosX() + (this.field_5889 - this.getPosX()) / (double)this.field_5892;
          double var10 = this.method_37309() + (this.field_5884 - this.method_37309()) / (double)this.field_5892;
-         double var12 = this.method_37156() + (this.field_5891 - this.method_37156()) / (double)this.field_5892;
+         double var12 = this.getPosZ() + (this.field_5891 - this.getPosZ()) / (double)this.field_5892;
          double var14 = class_9299.method_42809(this.field_5888 - (double)this.rotationYaw);
          this.rotationYaw = (float)((double)this.rotationYaw + var14 / (double)this.field_5892);
          this.rotationPitch = (float)((double)this.rotationPitch + (this.field_5896 - (double)this.rotationPitch) / (double)this.field_5892);
@@ -359,12 +359,12 @@ public abstract class AbstractMinecartEntity extends Entity {
       double var3 = this.method_4757();
       class_1343 var5 = this.method_37098();
       this.method_37214(class_9299.method_42827(var5.field_7336, -var3, var3), var5.field_7333, class_9299.method_42827(var5.field_7334, -var3, var3));
-      if (this.field_41726) {
+      if (this.onGround) {
          this.method_37215(this.method_37098().method_6209(0.5));
       }
 
       this.method_37226(class_7412.field_37839, this.method_37098());
-      if (!this.field_41726) {
+      if (!this.onGround) {
          this.method_37215(this.method_37098().method_6209(0.95));
       }
    }
@@ -373,9 +373,9 @@ public abstract class AbstractMinecartEntity extends Entity {
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public void method_4750(BlockPos var1, class_2522 var2) {
       this.field_41706 = 0.0F;
-      double var5 = this.method_37302();
+      double var5 = this.getPosX();
       double var7 = this.method_37309();
-      double var9 = this.method_37156();
+      double var9 = this.getPosZ();
       class_1343 var11 = this.method_4748(var5, var7, var9);
       var7 = (double)var1.method_12165();
       boolean var12 = false;
@@ -471,17 +471,17 @@ public abstract class AbstractMinecartEntity extends Entity {
          new class_1343(class_9299.method_42827(var76 * var17.field_7336, -var77, var77), 0.0, class_9299.method_42827(var76 * var17.field_7334, -var77, var77))
       );
       if (var20.method_12165() != 0
-         && class_9299.method_42847(this.method_37302()) - var1.method_12173() == var20.method_12173()
-         && class_9299.method_42847(this.method_37156()) - var1.method_12185() == var20.method_12185()) {
-         this.method_37256(this.method_37302(), this.method_37309() + (double)var20.method_12165(), this.method_37156());
+         && class_9299.method_42847(this.getPosX()) - var1.method_12173() == var20.method_12173()
+         && class_9299.method_42847(this.getPosZ()) - var1.method_12185() == var20.method_12185()) {
+         this.method_37256(this.getPosX(), this.method_37309() + (double)var20.method_12165(), this.getPosZ());
       } else if (var21.method_12165() != 0
-         && class_9299.method_42847(this.method_37302()) - var1.method_12173() == var21.method_12173()
-         && class_9299.method_42847(this.method_37156()) - var1.method_12185() == var21.method_12185()) {
-         this.method_37256(this.method_37302(), this.method_37309() + (double)var21.method_12165(), this.method_37156());
+         && class_9299.method_42847(this.getPosX()) - var1.method_12173() == var21.method_12173()
+         && class_9299.method_42847(this.getPosZ()) - var1.method_12185() == var21.method_12185()) {
+         this.method_37256(this.getPosX(), this.method_37309() + (double)var21.method_12165(), this.getPosZ());
       }
 
       this.method_4755();
-      class_1343 var52 = this.method_4748(this.method_37302(), this.method_37309(), this.method_37156());
+      class_1343 var52 = this.method_4748(this.getPosX(), this.method_37309(), this.getPosZ());
       if (var52 != null && var11 != null) {
          double var53 = (var11.field_7333 - var52.field_7333) * 0.05;
          class_1343 var55 = this.method_37098();
@@ -490,11 +490,11 @@ public abstract class AbstractMinecartEntity extends Entity {
             this.method_37215(var55.method_6210((var56 + var53) / var56, 1.0, (var56 + var53) / var56));
          }
 
-         this.method_37256(this.method_37302(), var52.field_7333, this.method_37156());
+         this.method_37256(this.getPosX(), var52.field_7333, this.getPosZ());
       }
 
-      int var58 = class_9299.method_42847(this.method_37302());
-      int var59 = class_9299.method_42847(this.method_37156());
+      int var58 = class_9299.method_42847(this.getPosX());
+      int var59 = class_9299.method_42847(this.getPosZ());
       if (var58 != var1.method_12173() || var59 != var1.method_12185()) {
          class_1343 var78 = this.method_37098();
          double var80 = Math.sqrt(method_37266(var78));
@@ -666,8 +666,8 @@ public abstract class AbstractMinecartEntity extends Entity {
    @Override
    public void method_37183(Entity var1) {
       if (!this.world.field_33055 && !var1.field_41731 && !this.field_41731 && !this.method_37072(var1)) {
-         double var4 = var1.method_37302() - this.method_37302();
-         double var6 = var1.method_37156() - this.method_37156();
+         double var4 = var1.getPosX() - this.getPosX();
+         double var6 = var1.getPosZ() - this.getPosZ();
          double var8 = var4 * var4 + var6 * var6;
          if (var8 >= 1.0E-4F) {
             var8 = (double)class_9299.method_42842(var8);
@@ -690,8 +690,8 @@ public abstract class AbstractMinecartEntity extends Entity {
                this.method_37186(-var4, 0.0, -var6);
                var1.method_37186(var4 / 4.0, 0.0, var6 / 4.0);
             } else {
-               double var12 = var1.method_37302() - this.method_37302();
-               double var14 = var1.method_37156() - this.method_37156();
+               double var12 = var1.getPosX() - this.getPosX();
+               double var14 = var1.getPosZ() - this.getPosZ();
                class_1343 var16 = new class_1343(var12, 0.0, var14).method_6213();
                class_1343 var17 = new class_1343(
                      (double)class_9299.method_42840(this.rotationYaw * (float) (Math.PI / 180.0)),

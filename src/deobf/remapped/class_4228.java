@@ -25,9 +25,9 @@ public class class_4228 implements Packet<class_392> {
       this.field_20522 = var1.method_37145();
       this.field_20515 = var1.method_37328();
       this.field_20516 = class_8669.field_44400.method_14041(var1.method_37387());
-      this.field_20512 = var1.method_37302();
+      this.field_20512 = var1.getPosX();
       this.field_20511 = var1.method_37309();
-      this.field_20513 = var1.method_37156();
+      this.field_20513 = var1.getPosZ();
       this.field_20514 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
       this.field_20519 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
       this.field_20523 = (byte)((int)(var1.field_29618 * 256.0F / 360.0F));

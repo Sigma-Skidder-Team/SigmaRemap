@@ -157,9 +157,9 @@ public class class_2730 {
          if (!var35.method_37085()) {
             double var36 = (double)(class_9299.method_42842(var35.method_37274(var13)) / var53);
             if (var36 <= 1.0) {
-               double var38 = var35.method_37302() - this.field_13322;
+               double var38 = var35.getPosX() - this.field_13322;
                double var40 = (!(var35 instanceof class_1356) ? var35.method_37388() : var35.method_37309()) - this.field_13336;
-               double var42 = var35.method_37156() - this.field_13326;
+               double var42 = var35.getPosZ() - this.field_13326;
                double var44 = (double)class_9299.method_42842(var38 * var38 + var40 * var40 + var42 * var42);
                if (var44 != 0.0) {
                   var38 /= var44;

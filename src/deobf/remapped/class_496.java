@@ -353,7 +353,7 @@ public class class_496 extends class_5467 {
             double var5 = (double)(-this.field_41717.nextFloat()) * 0.6 - 0.3;
             class_1343 var7 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.8, var5, 1.0 + ((double)this.field_41717.nextFloat() - 0.5) * 0.4);
             var7 = var7.method_6192(-this.field_29605 * (float) (Math.PI / 180.0));
-            var7 = var7.method_6214(this.method_37302(), this.method_37388() + 1.0, this.method_37156());
+            var7 = var7.method_6214(this.getPosX(), this.method_37388() + 1.0, this.getPosZ());
             this.world
                .method_43361(
                   new class_8661(class_3090.field_15351, this.method_26520(class_6943.field_35707)),
@@ -416,7 +416,7 @@ public class class_496 extends class_5467 {
                if ((float)this.field_3086 != 7.0F && (float)this.field_3086 != 15.0F && (float)this.field_3086 != 23.0F) {
                   this.method_37214(this.field_3080.field_7336, var3.field_7333, this.field_3080.field_7334);
                } else {
-                  this.method_37214(0.0, !this.field_41726 ? var3.field_7333 : 0.27, 0.0);
+                  this.method_37214(0.0, !this.onGround ? var3.field_7333 : 0.27, 0.0);
                }
             } else {
                float var4 = this.rotationYaw * (float) (Math.PI / 180.0);
@@ -437,9 +437,9 @@ public class class_496 extends class_5467 {
       this.world
          .method_43361(
             class_3090.field_15326,
-            this.method_37302() - (double)(this.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0)),
+            this.getPosX() - (double)(this.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0)),
             this.method_37388() - 0.1F,
-            this.method_37156() + (double)(this.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0)),
+            this.getPosZ() + (double)(this.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42840(this.field_29605 * (float) (Math.PI / 180.0)),
             var3.field_7336,
             0.0,
             var3.field_7334
@@ -447,7 +447,7 @@ public class class_496 extends class_5467 {
       this.method_37155(class_463.field_2410, 1.0F, 1.0F);
 
       for (class_496 var5 : this.world.<class_496>method_25868(class_496.class, this.method_37241().method_18898(10.0))) {
-         if (!var5.method_26449() && var5.field_41726 && !var5.method_37285() && var5.method_2451()) {
+         if (!var5.method_26449() && var5.onGround && !var5.method_37285() && var5.method_2451()) {
             var5.method_26595();
          }
       }

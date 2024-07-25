@@ -32,7 +32,7 @@ public class MovementAntibot extends class_5676 {
                || !class_314.method_1413(var5, 0.01F)
                || var5.method_37109()
                || !(var5.method_37175(field_28769.thePlayer) > 5.0F)
-                  && (var5.method_37302() != var5.field_41754 || var5.method_37156() != var5.field_41724 || var5.method_37309() != var5.field_41713)) {
+                  && (var5.getPosX() != var5.field_41754 || var5.getPosZ() != var5.field_41724 || var5.method_37309() != var5.field_41713)) {
                if (this.field_8305.getOrDefault(var5, 0) < this.field_8303) {
                   this.field_8305.put(var5, 0);
                }
@@ -144,7 +144,7 @@ public class MovementAntibot extends class_5676 {
 
       for (float var5 = (float)(-var4); var5 <= (float)var4; var5++) {
          for (float var6 = (float)(-var4); var6 <= (float)var4; var6++) {
-            BlockPos var7 = new BlockPos(var0.method_37302() + (double)var5, var0.method_37309() - 1.0, var0.method_37156() + (double)var6);
+            BlockPos var7 = new BlockPos(var0.getPosX() + (double)var5, var0.method_37309() - 1.0, var0.getPosZ() + (double)var6);
             var3.add(var7);
          }
       }

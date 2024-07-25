@@ -31,7 +31,7 @@ public class SmoothBlockFly extends Module {
       ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       this.field_41371 = -1.0;
       this.field_41377 = false;
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          this.field_41371 = client.thePlayer.method_37309();
       }
 
@@ -46,7 +46,7 @@ public class SmoothBlockFly extends Module {
 
       this.field_41378 = -1;
       if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
-         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+         client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
          ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
@@ -71,7 +71,7 @@ public class SmoothBlockFly extends Module {
                && client.thePlayer.field_41706 < 1.0F) {
                var1.method_36186(true);
             }
-         } else if (client.thePlayer.field_41726 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()) {
+         } else if (client.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -92,7 +92,7 @@ public class SmoothBlockFly extends Module {
 
                   if (var13.method_43956() == Direction.field_817
                      && (double)var13.method_43955().method_12165() <= client.thePlayer.method_37309() - 1.0
-                     && client.thePlayer.field_41726) {
+                     && client.thePlayer.onGround) {
                      return;
                   }
 
@@ -109,7 +109,7 @@ public class SmoothBlockFly extends Module {
                   if (!this.method_42017().method_42007("NoSwing")) {
                      client.thePlayer.method_26597(this.field_41379);
                   } else {
-                     client.method_8614().method_4813(new class_3195(this.field_41379));
+                     client.method_8614().sendPacket(new class_3195(this.field_41379));
                   }
 
                   if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
@@ -188,7 +188,7 @@ public class SmoothBlockFly extends Module {
    @class_315
    public void method_36705(class_7767 var1) {
       if (this.method_42015() && this.field_41373.method_17219() != 0) {
-         if (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.01F)) {
+         if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.01F)) {
             this.field_41371 = client.thePlayer.method_37309();
          }
 
@@ -196,7 +196,7 @@ public class SmoothBlockFly extends Module {
             client.thePlayer.method_37140(false);
          }
 
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             this.field_41381 = 0;
          } else if (this.field_41381 >= 0) {
             this.field_41381++;
@@ -209,7 +209,7 @@ public class SmoothBlockFly extends Module {
          String var4 = this.getStringValueByName("Speed Mode");
          switch (var4) {
             case "Jump":
-               if (client.thePlayer.field_41726 && class_314.method_1434() && !client.thePlayer.method_37252() && !this.field_41374) {
+               if (client.thePlayer.onGround && class_314.method_1434() && !client.thePlayer.isSneaking() && !this.field_41374) {
                   this.field_41377 = false;
                   client.thePlayer.method_26595();
                   ((SpeedModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class)).method_31653();
@@ -220,7 +220,7 @@ public class SmoothBlockFly extends Module {
                }
                break;
             case "AAC":
-               if (this.field_41380 == 0 && client.thePlayer.field_41726) {
+               if (this.field_41380 == 0 && client.thePlayer.onGround) {
                   class_8865.method_40777(var1, class_8865.method_40775() * 0.82);
                }
                break;
@@ -229,8 +229,8 @@ public class SmoothBlockFly extends Module {
                float var8 = this.method_36706(class_9299.method_42810(client.thePlayer.rotationYaw));
                if (client.gameOptions.keyJump.isKeyDown()) {
                   client.theTimer.timerSpeed = 1.0F;
-               } else if (client.thePlayer.field_41726) {
-                  if (class_314.method_1434() && !client.thePlayer.method_37252() && !this.field_41374) {
+               } else if (client.thePlayer.onGround) {
+                  if (class_314.method_1434() && !client.thePlayer.isSneaking() && !this.field_41374) {
                      var1.method_35235(1.00000000000001);
                   }
                } else if (this.field_41381 == 1) {
@@ -269,7 +269,7 @@ public class SmoothBlockFly extends Module {
                class_314.method_1408(var1.method_35236());
                break;
             case "Slow":
-               if (client.thePlayer.field_41726) {
+               if (client.thePlayer.onGround) {
                   var1.method_35232(var1.method_35234() * 0.75);
                   var1.method_35229(var1.method_35231() * 0.75);
                } else {
@@ -278,7 +278,7 @@ public class SmoothBlockFly extends Module {
                }
                break;
             case "Sneak":
-               if (client.thePlayer.field_41726) {
+               if (client.thePlayer.onGround) {
                   var1.method_35232(var1.method_35234() * 0.65);
                   var1.method_35229(var1.method_35231() * 0.65);
                } else {
@@ -331,8 +331,8 @@ public class SmoothBlockFly extends Module {
    }
 
    public double[] method_36710() {
-      double var3 = client.thePlayer.method_37302();
-      double var5 = client.thePlayer.method_37156();
+      double var3 = client.thePlayer.getPosX();
+      double var5 = client.thePlayer.getPosZ();
       double var7 = (double) client.thePlayer.movementInput.field_45287;
       double var9 = (double) client.thePlayer.movementInput.field_45282;
       float var11 = client.thePlayer.rotationYaw;

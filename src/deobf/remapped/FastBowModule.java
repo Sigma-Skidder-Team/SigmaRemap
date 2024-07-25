@@ -12,12 +12,12 @@ public class FastBowModule extends Module {
       if (this.method_42015()) {
          if (client.thePlayer.method_26446() != null
             && client.thePlayer.method_26446().method_27960() instanceof class_2100
-            && client.thePlayer.field_41726) {
+            && client.thePlayer.onGround) {
             for (int var4 = 0; var4 < 25; var4++) {
-               client.method_8614().method_4813(new class_4609(true));
+               client.method_8614().sendPacket(new class_4609(true));
             }
 
-            client.method_8614().method_4813(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
+            client.method_8614().sendPacket(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
          }
       }
    }

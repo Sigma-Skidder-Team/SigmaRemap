@@ -19,13 +19,13 @@ public class ElytraFlyModule extends Module {
    public void method_45348(class_5596 var1) {
       if (this.method_42015()) {
          client.gameOptions.keySneak.pressed = false;
-         if (!(client.thePlayer.method_37098().field_7333 < 0.08) || client.thePlayer.field_41726) {
+         if (!(client.thePlayer.method_37098().field_7333 < 0.08) || client.thePlayer.onGround) {
             client.thePlayer.method_37220(7, false);
-            if (client.thePlayer.method_37252()) {
+            if (client.thePlayer.isSneaking()) {
                this.setEnabled2(false);
             }
          } else if (!client.thePlayer.method_26618()) {
-            client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20093));
+            client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.field_20093));
             client.thePlayer.method_37220(7, true);
          }
       }
@@ -36,7 +36,7 @@ public class ElytraFlyModule extends Module {
       if (this.method_42015()) {
          double var4 = class_8865.method_40775();
          boolean var6 = class_314.method_1434();
-         if (!this.getBooleanValueByName("NCP") && client.thePlayer.method_37252()) {
+         if (!this.getBooleanValueByName("NCP") && client.thePlayer.isSneaking()) {
             var4 *= 2.5;
          }
 
@@ -64,7 +64,7 @@ public class ElytraFlyModule extends Module {
          int var7 = GLFW.glfwGetKey(client.window.method_43181(), client.gameOptions.keySneak.field_30027.field_17800);
          if (var7 == 1 && this.getBooleanValueByName("NCP")) {
             var1.method_35235(-0.9F);
-         } else if (!client.thePlayer.method_37252()) {
+         } else if (!client.thePlayer.isSneaking()) {
             if (client.thePlayer.field_29654 && !this.getBooleanValueByName("NCP")) {
                var1.method_35235(1.4F);
             }
@@ -107,12 +107,12 @@ public class ElytraFlyModule extends Module {
             int var5 = class_2740.method_12336(class_4897.field_24479);
             if (var5 >= 0) {
                if (var5 != client.thePlayer.inventory.field_36404) {
-                  client.method_8614().method_4813(new class_7371(var5));
+                  client.method_8614().sendPacket(new class_7371(var5));
                }
 
-               client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+               client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
                if (var5 != client.thePlayer.inventory.field_36404) {
-                  client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+                  client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
                }
             }
          }
@@ -146,7 +146,7 @@ public class ElytraFlyModule extends Module {
 
    @Override
    public void onEnable() {
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          class_314.method_1408(0.3994F);
       }
    }

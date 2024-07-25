@@ -21,16 +21,16 @@ public class FastEatModule extends Module {
                      int var7 = client.thePlayer.method_26466() + 2;
 
                      for (int var8 = 0; var8 < var7; var8++) {
-                        client.method_8614().method_4813(new class_4609(client.thePlayer.field_41726));
+                        client.method_8614().sendPacket(new class_4609(client.thePlayer.onGround));
                         client.thePlayer.method_26474();
                      }
                      break;
                   case "Hypixel":
                      client.method_8614()
-                        .method_4813(
+                        .sendPacket(
                            new class_7371(client.thePlayer.inventory.field_36404 + 1 >= 9 ? 0 : client.thePlayer.inventory.field_36404 + 1)
                         );
-                     client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+                     client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
                }
             }
          }

@@ -148,15 +148,15 @@ public class class_107 extends class_7819 implements class_674 {
    private void method_328() {
       this.field_269 = this.field_262;
       this.field_263 = this.field_270;
-      this.field_270 = (float)((double)this.field_270 + (double)(!this.field_41726 && !this.isPassenger() ? 4 : -1) * 0.3);
+      this.field_270 = (float)((double)this.field_270 + (double)(!this.onGround && !this.isPassenger() ? 4 : -1) * 0.3);
       this.field_270 = class_9299.method_42828(this.field_270, 0.0F, 1.0F);
-      if (!this.field_41726 && this.field_272 < 1.0F) {
+      if (!this.onGround && this.field_272 < 1.0F) {
          this.field_272 = 1.0F;
       }
 
       this.field_272 = (float)((double)this.field_272 * 0.9);
       class_1343 var3 = this.method_37098();
-      if (!this.field_41726 && var3.field_7333 < 0.0) {
+      if (!this.onGround && var3.field_7333 < 0.0) {
          this.method_37215(var3.method_6210(1.0, 0.6, 1.0));
       }
 
@@ -171,7 +171,7 @@ public class class_107 extends class_7819 implements class_674 {
             if (!var5.method_37378()) {
                class_8461 var6 = method_326(var5.method_37387());
                var0.method_29528(
-                  (class_704)null, var1.method_37302(), var1.method_37309(), var1.method_37156(), var6, var1.method_37197(), 0.7F, method_324(var0.field_33033)
+                  (class_704)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), var6, var1.method_37197(), 0.7F, method_324(var0.field_33033)
                );
                return true;
             }
@@ -195,9 +195,9 @@ public class class_107 extends class_7819 implements class_674 {
             this.world
                .method_29528(
                   (class_704)null,
-                  this.method_37302(),
+                  this.getPosX(),
                   this.method_37309(),
-                  this.method_37156(),
+                  this.getPosZ(),
                   class_463.field_2094,
                   this.method_37197(),
                   1.0F,
@@ -388,7 +388,7 @@ public class class_107 extends class_7819 implements class_674 {
    }
 
    public boolean method_323() {
-      return !this.field_41726;
+      return !this.onGround;
    }
 
    @Override

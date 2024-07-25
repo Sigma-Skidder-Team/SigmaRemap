@@ -60,9 +60,9 @@ public class TestModule extends Module {
       this.field_8832 = class_9299.method_42810(client.thePlayer.rotationYaw);
       this.field_8832 = 39.0F;
       this.field_8826 = client.thePlayer.rotationPitch;
-      double var3 = client.thePlayer.method_37302();
+      double var3 = client.thePlayer.getPosX();
       double var5 = client.thePlayer.method_37309();
-      double var7 = client.thePlayer.method_37156();
+      double var7 = client.thePlayer.getPosZ();
       double var9 = 3200000.000000002;
       this.field_8831 = false;
       this.field_8825 = 0.0;
@@ -390,8 +390,8 @@ public class TestModule extends Module {
    }
 
    public static float[] method_7647(Entity var0) {
-      double var3 = var0.method_37302() - client.thePlayer.method_37302();
-      double var5 = var0.method_37156() - client.thePlayer.method_37156();
+      double var3 = var0.getPosX() - client.thePlayer.getPosX();
+      double var5 = var0.getPosZ() - client.thePlayer.getPosZ();
       double var7 = client.thePlayer.method_37309() + (double) client.thePlayer.method_37277() - (var0.method_37309() + (double)var0.method_37277());
       float var9 = (float)Math.toDegrees(Math.atan2(var5, var3)) - 90.0F;
       double var10 = (double)class_9299.method_42842(var3 * var3 + var5 * var5);
@@ -400,8 +400,8 @@ public class TestModule extends Module {
    }
 
    public static float method_7657(float var0, double var1, double var3) {
-      double var7 = var1 - client.thePlayer.method_37302();
-      double var9 = var3 - client.thePlayer.method_37156();
+      double var7 = var1 - client.thePlayer.getPosX();
+      double var9 = var3 - client.thePlayer.getPosZ();
       double var11 = 0.0;
       if (var9 < 0.0 && var7 < 0.0) {
          if (var7 != 0.0) {
@@ -423,8 +423,8 @@ public class TestModule extends Module {
    }
 
    public static float method_7649(float var0, Entity var1, double var2) {
-      double var6 = var1.method_37302() - client.thePlayer.method_37302();
-      double var8 = var1.method_37156() - client.thePlayer.method_37156();
+      double var6 = var1.getPosX() - client.thePlayer.getPosX();
+      double var8 = var1.getPosZ() - client.thePlayer.getPosZ();
       double var10 = var2 - 2.2 + (double)var1.method_37277() - client.thePlayer.method_37309();
       double var12 = (double)class_9299.method_42842(var6 * var6 + var8 * var8);
       double var14 = -Math.toDegrees(Math.atan(var10 / var12));

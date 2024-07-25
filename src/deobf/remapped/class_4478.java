@@ -60,9 +60,9 @@ public class class_4478 extends Entity {
 
    @Override
    public void method_37187() {
-      double var3 = this.method_37302();
+      double var3 = this.getPosX();
       double var5 = this.method_37309();
-      double var7 = this.method_37156();
+      double var7 = this.getPosZ();
       super.method_37187();
       this.method_37256(var3, var5, var7);
    }
@@ -178,8 +178,8 @@ public class class_4478 extends Entity {
                if (!var30.isEmpty()) {
                   for (class_5834 var10 : var30) {
                      if (!this.field_21829.containsKey(var10) && var10.method_26611()) {
-                        double var16 = var10.method_37302() - this.method_37302();
-                        double var18 = var10.method_37156() - this.method_37156();
+                        double var16 = var10.getPosX() - this.getPosX();
+                        double var18 = var10.getPosZ() - this.getPosZ();
                         double var20 = var16 * var16 + var18 * var18;
                         if (var20 <= (double)(var4 * var4)) {
                            this.field_21829.put(var10, this.field_41697 + this.field_21828);
@@ -231,9 +231,9 @@ public class class_4478 extends Entity {
                   this.world
                      .method_29551(
                         var24,
-                        this.method_37302() + (double)var36,
+                        this.getPosX() + (double)var36,
                         this.method_37309(),
-                        this.method_37156() + (double)var11,
+                        this.getPosZ() + (double)var11,
                         (0.5 - this.field_41717.nextDouble()) * 0.15,
                         0.01F,
                         (0.5 - this.field_41717.nextDouble()) * 0.15
@@ -246,9 +246,9 @@ public class class_4478 extends Entity {
                   this.world
                      .method_29551(
                         var24,
-                        this.method_37302() + (double)var36,
+                        this.getPosX() + (double)var36,
                         this.method_37309(),
-                        this.method_37156() + (double)var11,
+                        this.getPosZ() + (double)var11,
                         (double)((float)var13 / 255.0F),
                         (double)((float)var14 / 255.0F),
                         (double)((float)var15 / 255.0F)
@@ -263,7 +263,7 @@ public class class_4478 extends Entity {
                float var37 = class_9299.method_42818(var29) * var32;
                if (var24.method_23357() != class_3090.field_15353) {
                   this.world
-                     .method_29551(var24, this.method_37302() + (double)var35, this.method_37309(), this.method_37156() + (double)var37, 0.0, 0.0, 0.0);
+                     .method_29551(var24, this.getPosX() + (double)var35, this.method_37309(), this.getPosZ() + (double)var37, 0.0, 0.0, 0.0);
                } else {
                   int var38 = !this.field_41717.nextBoolean() ? this.method_20790() : 16777215;
                   int var39 = var38 >> 16 & 0xFF;
@@ -272,9 +272,9 @@ public class class_4478 extends Entity {
                   this.world
                      .method_29551(
                         var24,
-                        this.method_37302() + (double)var35,
+                        this.getPosX() + (double)var35,
                         this.method_37309(),
-                        this.method_37156() + (double)var37,
+                        this.getPosZ() + (double)var37,
                         (double)((float)var39 / 255.0F),
                         (double)((float)var40 / 255.0F),
                         (double)((float)var41 / 255.0F)

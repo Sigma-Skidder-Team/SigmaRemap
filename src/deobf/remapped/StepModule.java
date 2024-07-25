@@ -30,8 +30,8 @@ public class StepModule extends SecondModule {
    }
 
    public class_1380 method_19450(class_8544 var1) {
-      double var4 = client.thePlayer.method_37302() + var1.method_39325().field_7336;
-      double var6 = client.thePlayer.method_37156() + var1.method_39325().field_7334;
+      double var4 = client.thePlayer.getPosX() + var1.method_39325().field_7336;
+      double var6 = client.thePlayer.getPosZ() + var1.method_39325().field_7334;
       double var8 = 0.41;
       double var10 = var1.method_39326() - var1.method_39323();
       class_4092 var12 = new class_4092(
@@ -63,7 +63,7 @@ public class StepModule extends SecondModule {
 
       if (!client.thePlayer.method_37285() && !client.thePlayer.method_37370()) {
          if (var15 != null) {
-            if (!client.thePlayer.field_41726) {
+            if (!client.thePlayer.onGround) {
                if (var15.method_8360() instanceof class_6344) {
                   class_4190 var24 = var15.method_8334(client.theWorld, var16);
                   if (var24.method_19483().field_19939 == 1.0) {

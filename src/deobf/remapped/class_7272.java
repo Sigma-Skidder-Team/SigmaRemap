@@ -110,7 +110,7 @@ public class class_7272 extends class_5467 {
          }
       }
 
-      if (this.field_41726) {
+      if (this.onGround) {
          if (!this.field_37239) {
             this.method_26528(false);
             this.method_33232();
@@ -119,8 +119,8 @@ public class class_7272 extends class_5467 {
          if (this.method_33239() == 99 && this.field_37233 == 0) {
             class_5834 var3 = this.method_17809();
             if (var3 != null && this.method_37275(var3) < 16.0) {
-               this.method_33243(var3.method_37302(), var3.method_37156());
-               this.field_29900.method_12879(var3.method_37302(), var3.method_37309(), var3.method_37156(), this.field_29900.method_12880());
+               this.method_33243(var3.getPosX(), var3.getPosZ());
+               this.field_29900.method_12879(var3.getPosX(), var3.method_37309(), var3.getPosZ(), this.field_29900.method_12880());
                this.method_33225();
                this.field_37239 = true;
             }
@@ -143,7 +143,7 @@ public class class_7272 extends class_5467 {
          }
       }
 
-      this.field_37239 = this.field_41726;
+      this.field_37239 = this.onGround;
    }
 
    @Override
@@ -152,7 +152,7 @@ public class class_7272 extends class_5467 {
    }
 
    private void method_33243(double var1, double var3) {
-      this.rotationYaw = (float)(class_9299.method_42821(var3 - this.method_37156(), var1 - this.method_37302()) * 180.0F / (float)Math.PI) - 90.0F;
+      this.rotationYaw = (float)(class_9299.method_42821(var3 - this.getPosZ(), var1 - this.getPosX()) * 180.0F / (float)Math.PI) - 90.0F;
    }
 
    private void method_33228() {

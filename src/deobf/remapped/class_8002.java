@@ -447,7 +447,7 @@ public class class_8002 extends AbstractGui implements IRenderable, class_5888, 
          class_4269 var3 = this.field_41004.method_18263();
          boolean var4 = this.field_40992.method_5074().method_34301(var3);
          boolean var5 = this.field_40992.method_5074().method_34305(var3);
-         this.field_41006.method_8614().method_4813(new class_9066(var3, var4, var5));
+         this.field_41006.method_8614().sendPacket(new class_9066(var3, var4, var5));
       }
    }
 }

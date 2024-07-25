@@ -32,9 +32,9 @@ public class NCPStep extends Module {
          double var4 = var1.method_39326();
          if (class_314.method_1413(client.thePlayer, 1.0E-4F) && !class_8865.method_40771()) {
             if (var4 >= 0.625) {
-               double var6 = client.thePlayer.method_37302();
+               double var6 = client.thePlayer.getPosX();
                double var8 = client.thePlayer.method_37309();
-               double var10 = client.thePlayer.method_37156();
+               double var10 = client.thePlayer.getPosZ();
                this.field_49103 = 1;
                if (!(var4 < 1.1)) {
                   if (!(var4 < 1.6)) {

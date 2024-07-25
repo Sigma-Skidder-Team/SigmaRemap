@@ -43,7 +43,7 @@ public class class_1656 extends class_9513 {
          this.field_48435.method_24876();
          this.field_48441.method_24876();
          var4.method_8635(-24000);
-         var4.method_37144(this.field_48435.method_37302(), this.field_48435.method_37309(), this.field_48435.method_37156(), 0.0F, 0.0F);
+         var4.method_37144(this.field_48435.getPosX(), this.field_48435.method_37309(), this.field_48435.getPosZ(), 0.0F, 0.0F);
          var3.method_7065(var4);
          this.field_48439.method_29587(this.field_48435, (byte)18);
          if (this.field_48439.method_29537().method_1285(class_291.field_1033)) {
@@ -51,9 +51,9 @@ public class class_1656 extends class_9513 {
                .method_7509(
                   new class_5614(
                      this.field_48439,
-                     this.field_48435.method_37302(),
+                     this.field_48435.getPosX(),
                      this.field_48435.method_37309(),
-                     this.field_48435.method_37156(),
+                     this.field_48435.getPosZ(),
                      this.field_48435.method_26594().nextInt(7) + 1
                   )
                );

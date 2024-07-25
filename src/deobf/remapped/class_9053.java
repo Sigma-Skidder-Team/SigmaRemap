@@ -23,9 +23,9 @@ public class class_9053 extends class_2550 {
          this.world
             .method_29574(
                (Entity)null,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309(),
-               this.method_37156(),
+               this.getPosZ(),
                (float)this.field_46360,
                var4,
                !var4 ? class_7298.field_37310 : class_7298.field_37311

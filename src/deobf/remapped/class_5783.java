@@ -62,7 +62,7 @@ public abstract class class_5783 extends Entity {
       if (var3 != null) {
          for (Entity var5 : this.world
             .method_25867(this, this.method_37241().method_18929(this.method_37098()).method_18898(1.0), var0 -> !var0.method_37221() && var0.method_37167())) {
-            if (var5.method_37240() == var3.method_37240()) {
+            if (var5.getLowestRidingEntity() == var3.getLowestRidingEntity()) {
                return false;
             }
          }
@@ -125,7 +125,7 @@ public abstract class class_5783 extends Entity {
          this.rotationYaw = (float)(class_9299.method_42821(var1, var5) * 180.0F / (float)Math.PI);
          this.field_41762 = this.rotationPitch;
          this.prevRotationYaw = this.rotationYaw;
-         this.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
+         this.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 

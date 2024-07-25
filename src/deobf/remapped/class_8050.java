@@ -57,9 +57,9 @@ public class class_8050 extends class_9335 {
       class_5834 var3 = this.field_41216.method_17809();
       this.field_41216.method_26865().method_17240(var3, 60.0F, 30.0F);
       class_1343 var4 = new class_1343(
-            var3.method_37302() - this.field_41216.method_37302(),
+            var3.getPosX() - this.field_41216.method_37302(),
             var3.method_37309() - this.field_41216.method_37309(),
-            var3.method_37156() - this.field_41216.method_37156()
+            var3.getPosZ() - this.field_41216.method_37156()
          )
          .method_6213();
       this.field_41216.method_37215(this.field_41216.method_37098().method_6214(var4.field_7336 * 0.8, 0.9, var4.field_7334 * 0.8));

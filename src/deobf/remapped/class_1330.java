@@ -31,11 +31,11 @@ public class class_1330 extends class_2451 {
 
                var11.method_7065(var12);
                float var13 = (float)class_9299.method_42848((class_9299.method_42810(var1.method_21861() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
-               var12.method_37144(var12.method_37302(), var12.method_37309(), var12.method_37156(), var13, 0.0F);
+               var12.method_37144(var12.getPosX(), var12.method_37309(), var12.getPosZ(), var13, 0.0F);
                this.method_6059(var12, var5.field_33033);
                var5.method_7509(var12);
                var5.method_29528(
-                  (class_704)null, var12.method_37302(), var12.method_37309(), var12.method_37156(), class_463.field_2444, class_562.field_3322, 0.75F, 0.8F
+                  (class_704)null, var12.getPosX(), var12.method_37309(), var12.getPosZ(), class_463.field_2444, class_562.field_3322, 0.75F, 0.8F
                );
             }
 

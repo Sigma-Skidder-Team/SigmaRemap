@@ -18,7 +18,7 @@ public class class_8136 extends Module {
    private void method_37009(class_7767 var1) {
       if (!client.thePlayer.field_41744) {
          this.field_41672 = false;
-      } else if (!client.thePlayer.field_41726) {
+      } else if (!client.thePlayer.onGround) {
          if (client.thePlayer.method_37245().field_7333 != (double)((int) client.thePlayer.method_37245().field_7333)) {
             if (var1.method_35236() < 0.0
                && client.thePlayer.method_37245().field_7333 + var1.method_35236() < (double)((int) client.thePlayer.method_37245().field_7333)) {
@@ -48,7 +48,7 @@ public class class_8136 extends Module {
          class_9097 var4 = class_314.method_1462(1.0E-4);
          String var5 = this.getStringValueByName("Mode");
          if (this.getBooleanValueByName("Ceiling")
-            && !client.thePlayer.field_41726
+            && !client.thePlayer.onGround
             && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }

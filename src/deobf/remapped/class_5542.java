@@ -140,7 +140,7 @@ public class class_5542 extends class_5467 {
    }
 
    private boolean method_25176(ItemStack var1) {
-      return var1.method_27960().method_11247() && this.method_17809() == null && this.field_41726 && !this.method_26507();
+      return var1.method_27960().method_11247() && this.method_17809() == null && this.onGround && !this.method_26507();
    }
 
    @Override
@@ -188,9 +188,9 @@ public class class_5542 extends class_5467 {
                this.world
                   .method_43361(
                      new class_8661(class_3090.field_15351, var4),
-                     this.method_37302() + this.method_37246().field_7336 / 2.0,
+                     this.getPosX() + this.method_37246().field_7336 / 2.0,
                      this.method_37309(),
-                     this.method_37156() + this.method_37246().field_7334 / 2.0,
+                     this.getPosZ() + this.method_37246().field_7334 / 2.0,
                      var6.field_7336,
                      var6.field_7333 + 0.05,
                      var6.field_7334
@@ -390,9 +390,9 @@ public class class_5542 extends class_5467 {
       if (!var1.method_28022() && !this.world.field_33055) {
          class_91 var4 = new class_91(
             this.world,
-            this.method_37302() + this.method_37246().field_7336,
+            this.getPosX() + this.method_37246().field_7336,
             this.method_37309() + 1.0,
-            this.method_37156() + this.method_37246().field_7334,
+            this.getPosZ() + this.method_37246().field_7334,
             var1
          );
          var4.method_254(40);
@@ -403,7 +403,7 @@ public class class_5542 extends class_5467 {
    }
 
    private void method_25209(ItemStack var1) {
-      class_91 var4 = new class_91(this.world, this.method_37302(), this.method_37309(), this.method_37156(), var1);
+      class_91 var4 = new class_91(this.world, this.getPosX(), this.method_37309(), this.getPosZ(), var1);
       this.world.method_7509(var4);
    }
 
@@ -597,8 +597,8 @@ public class class_5542 extends class_5467 {
    }
 
    public static boolean method_25207(class_5542 var0, class_5834 var1) {
-      double var4 = var1.method_37156() - var0.method_37156();
-      double var6 = var1.method_37302() - var0.method_37302();
+      double var4 = var1.getPosZ() - var0.getPosZ();
+      double var6 = var1.getPosX() - var0.getPosX();
       double var8 = var4 / var6;
       byte var10 = 6;
 
@@ -608,7 +608,7 @@ public class class_5542 extends class_5467 {
 
          for (int var16 = 1; var16 < 4; var16++) {
             if (!var0.world
-               .method_28262(new BlockPos(var0.method_37302() + var14, var0.method_37309() + (double)var16, var0.method_37156() + var12))
+               .method_28262(new BlockPos(var0.getPosX() + var14, var0.method_37309() + (double)var16, var0.getPosZ() + var12))
                .method_8362()
                .method_24497()) {
                return false;

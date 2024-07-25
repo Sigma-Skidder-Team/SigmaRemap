@@ -51,9 +51,9 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    public void method_26606() {
       super.method_26606();
       if (!this.world.field_33055) {
-         int var3 = class_9299.method_42847(this.method_37302());
+         int var3 = class_9299.method_42847(this.getPosX());
          int var4 = class_9299.method_42847(this.method_37309());
-         int var5 = class_9299.method_42847(this.method_37156());
+         int var5 = class_9299.method_42847(this.getPosZ());
          if (this.world.method_22561(new BlockPos(var3, 0, var5)).method_28865(new BlockPos(var3, var4, var5)) > 1.0F) {
             this.attackEntityFrom(DamageSource.field_31665, 1.0F);
          }
@@ -65,9 +65,9 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
          class_2522 var6 = class_4783.field_23552.method_29260();
 
          for (int var7 = 0; var7 < 4; var7++) {
-            var3 = class_9299.method_42847(this.method_37302() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));
+            var3 = class_9299.method_42847(this.getPosX() + (double)((float)(var7 % 2 * 2 - 1) * 0.25F));
             var4 = class_9299.method_42847(this.method_37309());
-            var5 = class_9299.method_42847(this.method_37156() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
+            var5 = class_9299.method_42847(this.getPosZ() + (double)((float)(var7 / 2 % 2 * 2 - 1) * 0.25F));
             BlockPos var8 = new BlockPos(var3, var4, var5);
             if (this.world.method_28262(var8).method_8345()
                && this.world.method_22561(var8).method_28865(var8) < 0.8F
@@ -82,9 +82,9 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
    public void method_10805(class_5834 var1, float var2) {
       class_6889 var5 = new class_6889(this.world, this);
       double var6 = var1.method_37388() - 1.1F;
-      double var8 = var1.method_37302() - this.method_37302();
+      double var8 = var1.getPosX() - this.getPosX();
       double var10 = var6 - var5.method_37309();
-      double var12 = var1.method_37156() - this.method_37156();
+      double var12 = var1.getPosZ() - this.getPosZ();
       float var14 = class_9299.method_42842(var8 * var8 + var12 * var12) * 0.2F;
       var5.method_26161(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
       this.method_37155(class_463.field_2565, 1.0F, 0.4F / (this.method_26594().nextFloat() * 0.4F + 0.8F));

@@ -37,6 +37,6 @@ public class class_9691 extends class_3599 {
       this.field_49307--;
       this.field_49308
          .method_26865()
-         .method_17230(this.field_49308.method_37302() + this.field_49306, this.field_49308.method_37388(), this.field_49308.method_37156() + this.field_49305);
+         .method_17230(this.field_49308.getPosX() + this.field_49306, this.field_49308.method_37388(), this.field_49308.getPosZ() + this.field_49305);
    }
 }

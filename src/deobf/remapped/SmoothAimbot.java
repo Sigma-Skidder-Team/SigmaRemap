@@ -25,8 +25,8 @@ public class SmoothAimbot extends Module {
                   var5 *= -1.0;
                }
 
-               double var9 = var4.method_37302() - var4.field_41754;
-               double var11 = var4.method_37156() - var4.field_41724;
+               double var9 = var4.getPosX() - var4.field_41754;
+               double var11 = var4.getPosZ() - var4.field_41724;
                double var13 = var9 * 2.14 + var11 * 2.14;
                if (var13 < 0.0) {
                   var13 *= -1.0;
@@ -61,9 +61,9 @@ public class SmoothAimbot extends Module {
       }
 
       this.field_28608 = client.field_9662;
-      double var4 = var1.method_37302() - client.thePlayer.method_37302() + Math.cos((double)(var1.method_37267() + 90.0F) * Math.PI / 180.0) * 0.14;
+      double var4 = var1.getPosX() - client.thePlayer.getPosX() + Math.cos((double)(var1.method_37267() + 90.0F) * Math.PI / 180.0) * 0.14;
       double var6 = var1.method_37309() - 1.6 - this.field_28607 + (double)var1.method_37277() - client.thePlayer.method_37309();
-      double var8 = var1.method_37156() - client.thePlayer.method_37156() + Math.sin((double)(var1.method_37267() + 90.0F) * Math.PI / 180.0) * 0.14;
+      double var8 = var1.getPosZ() - client.thePlayer.getPosZ() + Math.sin((double)(var1.method_37267() + 90.0F) * Math.PI / 180.0) * 0.14;
       double var10 = (double)class_9299.method_42842(var4 * var4 + var8 * var8);
       float var12 = this.method_25541(client.thePlayer.rotationYaw, (float)(Math.atan2(var8, var4) * 180.0 / Math.PI) - 90.0F, 360.0F);
       float var13 = this.method_25541(client.thePlayer.rotationPitch, (float)(-(Math.atan2(var6, var10) * 180.0 / Math.PI)), 360.0F);

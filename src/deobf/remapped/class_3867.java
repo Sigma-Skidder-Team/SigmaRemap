@@ -89,9 +89,9 @@ public class class_3867 extends class_7067<class_2770> {
       var4.method_36064();
       if (var1.field_13548 != null) {
          var4.method_36063();
-         float var25 = (float)(var1.field_13548.method_37302() - class_9299.method_42794((double)var3, var1.field_41767, var1.method_37302()));
+         float var25 = (float)(var1.field_13548.getPosX() - class_9299.method_42794((double)var3, var1.field_41767, var1.getPosX()));
          float var27 = (float)(var1.field_13548.method_37309() - class_9299.method_42794((double)var3, var1.field_41698, var1.method_37309()));
-         float var28 = (float)(var1.field_13548.method_37156() - class_9299.method_42794((double)var3, var1.field_41725, var1.method_37156()));
+         float var28 = (float)(var1.field_13548.getPosZ() - class_9299.method_42794((double)var3, var1.field_41725, var1.getPosZ()));
          method_17915(var25, var27 + class_8205.method_37574(var1.field_13548, var3), var28, var3, var1.field_41697, var4, var5, var6);
          var4.method_36064();
       }

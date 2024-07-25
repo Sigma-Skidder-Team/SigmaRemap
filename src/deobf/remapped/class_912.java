@@ -104,7 +104,7 @@ public class class_912 extends class_1173 implements class_6250 {
          this.field_4679 = this.field_41697;
          if (!this.method_37378()) {
             this.world
-               .method_29527(this.method_37302(), this.method_37388(), this.method_37156(), class_463.field_2369, this.method_37197(), 2.5F, 1.0F, false);
+               .method_29527(this.getPosX(), this.method_37388(), this.getPosZ(), class_463.field_2369, this.method_37197(), 2.5F, 1.0F, false);
          }
       }
    }
@@ -149,7 +149,7 @@ public class class_912 extends class_1173 implements class_6250 {
       if (var4.method_27960() != class_4783.field_23281.method_10803()) {
          class_1343 var5 = var1.method_37307(1.0F).method_6213();
          class_1343 var6 = new class_1343(
-            this.method_37302() - var1.method_37302(), this.method_37388() - var1.method_37388(), this.method_37156() - var1.method_37156()
+            this.getPosX() - var1.getPosX(), this.method_37388() - var1.method_37388(), this.getPosZ() - var1.getPosZ()
          );
          double var7 = var6.method_6217();
          var6 = var6.method_6213();
@@ -210,9 +210,9 @@ public class class_912 extends class_1173 implements class_6250 {
 
    public boolean method_3914() {
       if (!this.world.method_22567() && this.method_37330()) {
-         double var3 = this.method_37302() + (this.field_41717.nextDouble() - 0.5) * 64.0;
+         double var3 = this.getPosX() + (this.field_41717.nextDouble() - 0.5) * 64.0;
          double var5 = this.method_37309() + (double)(this.field_41717.nextInt(64) - 32);
-         double var7 = this.method_37156() + (this.field_41717.nextDouble() - 0.5) * 64.0;
+         double var7 = this.getPosZ() + (this.field_41717.nextDouble() - 0.5) * 64.0;
          return this.method_3912(var3, var5, var7);
       } else {
          return false;
@@ -221,13 +221,13 @@ public class class_912 extends class_1173 implements class_6250 {
 
    private boolean method_3911(Entity var1) {
       class_1343 var4 = new class_1343(
-         this.method_37302() - var1.method_37302(), this.method_37080(0.5) - var1.method_37388(), this.method_37156() - var1.method_37156()
+         this.getPosX() - var1.getPosX(), this.method_37080(0.5) - var1.method_37388(), this.getPosZ() - var1.getPosZ()
       );
       var4 = var4.method_6213();
       double var5 = 16.0;
-      double var7 = this.method_37302() + (this.field_41717.nextDouble() - 0.5) * 8.0 - var4.field_7336 * 16.0;
+      double var7 = this.getPosX() + (this.field_41717.nextDouble() - 0.5) * 8.0 - var4.field_7336 * 16.0;
       double var9 = this.method_37309() + (double)(this.field_41717.nextInt(16) - 8) - var4.field_7333 * 16.0;
-      double var11 = this.method_37156() + (this.field_41717.nextDouble() - 0.5) * 8.0 - var4.field_7334 * 16.0;
+      double var11 = this.getPosZ() + (this.field_41717.nextDouble() - 0.5) * 8.0 - var4.field_7334 * 16.0;
       return this.method_3912(var7, var9, var11);
    }
 

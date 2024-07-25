@@ -31,7 +31,7 @@ public class class_59 extends class_3599 {
       }
 
       BlockPos var9 = new BlockPos(
-         (double)var6 + this.field_53.method_37302(), (double)var7 + this.field_53.method_37309(), (double)var8 + this.field_53.method_37156()
+         (double)var6 + this.field_53.getPosX(), (double)var7 + this.field_53.method_37309(), (double)var8 + this.field_53.getPosZ()
       );
       class_3845.method_17869(this.field_53, var9);
       class_3845.method_17855(this.field_53, true);

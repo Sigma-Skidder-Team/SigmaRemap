@@ -14,11 +14,11 @@ public class SimsESP extends Module {
          for (Entity var5 : class_7494.method_34088(class_314.method_1435())) {
             if (var5 != client.thePlayer && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                method_32571(
-                  var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double) MinecraftClient.getInstance().theTimer.field_32600,
+                  var5.field_41754 + (var5.getPosX() - var5.field_41754) * (double) MinecraftClient.getInstance().theTimer.field_32600,
                   var5.field_41713
                      + (double)var5.method_37074()
                      + (var5.method_37309() - var5.field_41713) * (double) MinecraftClient.getInstance().theTimer.field_32600,
-                  var5.field_41724 + (var5.method_37156() - var5.field_41724) * (double) MinecraftClient.getInstance().theTimer.field_32600,
+                  var5.field_41724 + (var5.getPosZ() - var5.field_41724) * (double) MinecraftClient.getInstance().theTimer.field_32600,
                   var5
                );
             }

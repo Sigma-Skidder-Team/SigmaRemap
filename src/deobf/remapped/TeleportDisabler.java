@@ -47,7 +47,7 @@ public class TeleportDisabler extends Module {
             this.field_33210 = 0;
             boolean var8 = this.method_42007("OnGround");
             if (this.method_42007("More Packets")) {
-               client.method_8614().method_4813(new class_9515(client.thePlayer.method_37302(), var4, client.thePlayer.method_37302(), var8));
+               client.method_8614().sendPacket(new class_9515(client.thePlayer.getPosX(), var4, client.thePlayer.getPosX(), var8));
             } else {
                var1.method_6455(var4);
                var1.method_6451(var8);

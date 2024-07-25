@@ -87,9 +87,9 @@ public class BoxOutlineESP extends Module {
                GL11.glDisable(2929);
                GL11.glEnable(3042);
                int var10 = this.getIntValueByName("Color");
-               double var11 = (var5.method_37302() - var5.field_41754) * (double) client.theTimer.field_32600 - (var5.method_37302() - var5.field_41754);
+               double var11 = (var5.getPosX() - var5.field_41754) * (double) client.theTimer.field_32600 - (var5.getPosX() - var5.field_41754);
                double var13 = (var5.method_37309() - var5.field_41713) * (double) client.theTimer.field_32600 - (var5.method_37309() - var5.field_41713);
-               double var15 = (var5.method_37156() - var5.field_41724) * (double) client.theTimer.field_32600 - (var5.method_37156() - var5.field_41724);
+               double var15 = (var5.getPosZ() - var5.field_41724) * (double) client.theTimer.field_32600 - (var5.getPosZ() - var5.field_41724);
                class_8194 var17 = new class_8194(var5.method_37241().method_18918(var11, var13, var15)).method_37547(0.1F);
                if (var1) {
                   class_73.method_130(var17, 3.0F, class_314.method_1444(var10, SigmaMainClass.getInstance().method_3312() != class_6015.field_30645 ? 0.8F : 0.35F));

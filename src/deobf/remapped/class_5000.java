@@ -19,9 +19,9 @@ public class class_5000 implements Packet<class_392> {
    public class_5000(class_704 var1) {
       this.field_25871 = var1.method_37145();
       this.field_25869 = var1.method_3247().getId();
-      this.field_25868 = var1.method_37302();
+      this.field_25868 = var1.getPosX();
       this.field_25867 = var1.method_37309();
-      this.field_25870 = var1.method_37156();
+      this.field_25870 = var1.getPosZ();
       this.field_25874 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
       this.field_25873 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
    }

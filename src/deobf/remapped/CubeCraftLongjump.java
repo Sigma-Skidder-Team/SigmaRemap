@@ -42,17 +42,17 @@ public class CubeCraftLongjump extends Module {
                this.field_45277 = 0;
             }
 
-            double var4 = client.thePlayer.method_37302();
+            double var4 = client.thePlayer.getPosX();
             double var6 = client.thePlayer.method_37309();
-            double var8 = client.thePlayer.method_37156();
+            double var8 = client.thePlayer.getPosZ();
             int var10 = 49 + class_8865.method_40769() * 17;
 
             for (int var11 = 0; var11 < var10; var11++) {
-               client.method_8614().method_4813(new class_9515(var4, var6 + 0.06248, var8, false));
-               client.method_8614().method_4813(new class_9515(var4, var6, var8, false));
+               client.method_8614().sendPacket(new class_9515(var4, var6 + 0.06248, var8, false));
+               client.method_8614().sendPacket(new class_9515(var4, var6, var8, false));
             }
 
-            client.method_8614().method_4813(new class_9515(var4, var6, var8, true));
+            client.method_8614().sendPacket(new class_9515(var4, var6, var8, true));
             class_314.method_1408(class_8865.method_40786());
             this.field_45277 = 0;
             this.field_45278 = (double)(this.getFloatValueByName("Boost") / 2.0F);

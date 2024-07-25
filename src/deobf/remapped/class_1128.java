@@ -11,7 +11,7 @@ public final class class_1128 extends class_9446 {
          var5, (double)var6.method_12173() + 0.5, (double)var6.method_12165(), (double)var6.method_12185() + 0.5, (class_5834)null
       );
       var5.method_7509(var7);
-      var5.method_29528((class_704)null, var7.method_37302(), var7.method_37309(), var7.method_37156(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F);
+      var5.method_29528((class_704)null, var7.getPosX(), var7.method_37309(), var7.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F);
       var2.method_27970(1);
       return var2;
    }

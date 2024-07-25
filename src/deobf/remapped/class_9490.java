@@ -174,9 +174,9 @@ public class class_9490 extends class_1173 implements class_7187 {
          this.world
             .method_29528(
                var1,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309(),
-               this.method_37156(),
+               this.getPosZ(),
                class_463.field_2235,
                this.method_37197(),
                1.0F,
@@ -196,7 +196,7 @@ public class class_9490 extends class_1173 implements class_7187 {
          class_7298 var3 = !this.world.method_29537().method_1285(class_291.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
          float var4 = !this.method_32928() ? 1.0F : 2.0F;
          this.field_29659 = true;
-         this.world.method_29573(this, this.method_37302(), this.method_37309(), this.method_37156(), (float)this.field_48357 * var4, var3);
+         this.world.method_29573(this, this.getPosX(), this.method_37309(), this.getPosZ(), (float)this.field_48357 * var4, var3);
          this.method_37204();
          this.method_43828();
       }
@@ -205,7 +205,7 @@ public class class_9490 extends class_1173 implements class_7187 {
    private void method_43828() {
       Collection var3 = this.method_26503();
       if (!var3.isEmpty()) {
-         class_4478 var4 = new class_4478(this.world, this.method_37302(), this.method_37309(), this.method_37156());
+         class_4478 var4 = new class_4478(this.world, this.getPosX(), this.method_37309(), this.getPosZ());
          var4.method_20781(2.5F);
          var4.method_20779(-0.5F);
          var4.method_20796(10);

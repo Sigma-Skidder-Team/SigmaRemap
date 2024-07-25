@@ -382,7 +382,7 @@ public class class_5445 extends Screen {
       long var7 = this.method_24826(this.field_27748.method_8246());
       this.field_943
          .method_8614()
-         .method_4813(
+         .sendPacket(
             new class_6971(
                this.field_27753.method_17399(),
                var1,

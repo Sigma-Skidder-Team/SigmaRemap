@@ -181,7 +181,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
       } else {
          class_1918 var5 = class_6629.field_34234.method_30484(var1);
          var5.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25057));
-         var5.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
+         var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method_26888(this.method_26859());
          var5.method_26910(this.method_26449());
          if (this.method_45507()) {

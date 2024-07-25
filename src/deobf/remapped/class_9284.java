@@ -16,11 +16,11 @@ public class class_9284 extends class_4171<AbstractClientPlayerEntity, class_316
             var1.method_36063();
             var1.method_36065(0.0, 0.0, 0.125);
             double var14 = class_9299.method_42794((double)var7, var4.field_3849, var4.field_3868)
-               - class_9299.method_42794((double)var7, var4.field_41767, var4.method_37302());
+               - class_9299.method_42794((double)var7, var4.field_41767, var4.getPosX());
             double var16 = class_9299.method_42794((double)var7, var4.field_3854, var4.field_3864)
                - class_9299.method_42794((double)var7, var4.field_41698, var4.method_37309());
             double var18 = class_9299.method_42794((double)var7, var4.field_3843, var4.field_3858)
-               - class_9299.method_42794((double)var7, var4.field_41725, var4.method_37156());
+               - class_9299.method_42794((double)var7, var4.field_41725, var4.getPosZ());
             float var20 = var4.field_29611 + (var4.field_29605 - var4.field_29611);
             double var21 = (double)class_9299.method_42818(var20 * (float) (Math.PI / 180.0));
             double var23 = (double)(-class_9299.method_42840(var20 * (float) (Math.PI / 180.0)));

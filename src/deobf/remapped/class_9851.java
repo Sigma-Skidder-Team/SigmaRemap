@@ -15,9 +15,9 @@ public class class_9851 extends class_2833 {
       if (this.field_13878 == class_1737.field_8946 && this.field_49860-- <= 0) {
          this.field_49860 = this.field_49860 + this.field_49858.method_26594().nextInt(5) + 2;
          class_1343 var3 = new class_1343(
-            this.field_13884 - this.field_49858.method_37302(),
+            this.field_13884 - this.field_49858.getPosX(),
             this.field_13886 - this.field_49858.method_37309(),
-            this.field_13880 - this.field_49858.method_37156()
+            this.field_13880 - this.field_49858.getPosZ()
          );
          double var4 = var3.method_6217();
          var3 = var3.method_6213();

@@ -15,9 +15,9 @@ public class class_5536 extends class_1871 {
    public void method_23466() {
       class_1343 var3 = this.field_9479.method_12609(1.0F).method_6213();
       var3.method_6192((float) (-Math.PI / 4));
-      double var4 = this.field_9479.field_13542.method_37302();
+      double var4 = this.field_9479.field_13542.getPosX();
       double var6 = this.field_9479.field_13542.method_37080(0.5);
-      double var8 = this.field_9479.field_13542.method_37156();
+      double var8 = this.field_9479.field_13542.getPosZ();
 
       for (int var10 = 0; var10 < 8; var10++) {
          Random var11 = this.field_9479.method_26594();
@@ -46,7 +46,7 @@ public class class_5536 extends class_1871 {
          this.field_28217 = class_1343.method_6200(this.field_9479.world.method_22563(class_3801.field_18590, class_8870.field_45348));
       }
 
-      if (this.field_28217.method_6203(this.field_9479.method_37302(), this.field_9479.method_37309(), this.field_9479.method_37156()) < 1.0) {
+      if (this.field_28217.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ()) < 1.0) {
          this.field_9479.method_12611().<class_7659>method_29420(class_8978.field_45997).method_34666();
          this.field_9479.method_12611().method_29422(class_8978.field_45998);
       }

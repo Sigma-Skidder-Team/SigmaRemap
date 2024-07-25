@@ -43,15 +43,15 @@ public class class_3024 extends class_5467 {
       super.method_26606();
       this.field_14829 = this.field_14831;
       this.field_14830 = this.field_14827;
-      this.field_14827 = (float)((double)this.field_14827 + (double)(!this.field_41726 ? 4 : -1) * 0.3);
+      this.field_14827 = (float)((double)this.field_14827 + (double)(!this.onGround ? 4 : -1) * 0.3);
       this.field_14827 = class_9299.method_42828(this.field_14827, 0.0F, 1.0F);
-      if (!this.field_41726 && this.field_14825 < 1.0F) {
+      if (!this.onGround && this.field_14825 < 1.0F) {
          this.field_14825 = 1.0F;
       }
 
       this.field_14825 = (float)((double)this.field_14825 * 0.9);
       class_1343 var3 = this.method_37098();
-      if (!this.field_41726 && var3.field_7333 < 0.0) {
+      if (!this.onGround && var3.field_7333 < 0.0) {
          this.method_37215(var3.method_6210(1.0, 0.6, 1.0));
       }
 
@@ -131,7 +131,7 @@ public class class_3024 extends class_5467 {
       float var6 = 0.1F;
       float var7 = 0.0F;
       var1.method_37256(
-         this.method_37302() + (double)(0.1F * var4), this.method_37080(0.5) + var1.method_37106() + 0.0, this.method_37156() - (double)(0.1F * var5)
+         this.getPosX() + (double)(0.1F * var4), this.method_37080(0.5) + var1.method_37106() + 0.0, this.getPosZ() - (double)(0.1F * var5)
       );
       if (var1 instanceof class_5834) {
          ((class_5834)var1).field_29605 = this.field_29605;

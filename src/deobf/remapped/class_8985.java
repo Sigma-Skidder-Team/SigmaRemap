@@ -22,7 +22,7 @@ public class class_8985 extends class_1249 {
 
    @Override
    public class_1343 method_5596() {
-      return new class_1343(this.field_6877.method_37302(), (double)this.method_41196(), this.field_6877.method_37156());
+      return new class_1343(this.field_6877.getPosX(), (double)this.method_41196(), this.field_6877.getPosZ());
    }
 
    @Override
@@ -67,12 +67,12 @@ public class class_8985 extends class_1249 {
       if (this.field_6877.method_37285() && this.method_5602()) {
          int var3 = class_9299.method_42847(this.field_6877.method_37309());
          class_6414 var4 = this.field_6882
-            .method_28262(new BlockPos(this.field_6877.method_37302(), (double)var3, this.field_6877.method_37156()))
+            .method_28262(new BlockPos(this.field_6877.getPosX(), (double)var3, this.field_6877.getPosZ()))
             .method_8360();
          int var5 = 0;
 
          while (var4 == class_4783.field_23900) {
-            var4 = this.field_6882.method_28262(new BlockPos(this.field_6877.method_37302(), (double)(++var3), this.field_6877.method_37156())).method_8360();
+            var4 = this.field_6882.method_28262(new BlockPos(this.field_6877.getPosX(), (double)(++var3), this.field_6877.getPosZ())).method_8360();
             if (++var5 > 16) {
                return class_9299.method_42847(this.field_6877.method_37309());
             }
@@ -88,7 +88,7 @@ public class class_8985 extends class_1249 {
    public void method_5618() {
       super.method_5618();
       if (this.field_46023) {
-         if (this.field_6882.method_25263(new BlockPos(this.field_6877.method_37302(), this.field_6877.method_37309() + 0.5, this.field_6877.method_37156()))
+         if (this.field_6882.method_25263(new BlockPos(this.field_6877.getPosX(), this.field_6877.method_37309() + 0.5, this.field_6877.getPosZ()))
             )
           {
             return;

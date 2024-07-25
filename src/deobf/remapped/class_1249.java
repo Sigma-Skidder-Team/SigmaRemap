@@ -209,9 +209,9 @@ public abstract class class_1249 {
       class_1343 var3 = this.method_5596();
       this.field_6889 = !(this.field_6877.method_37086() > 0.75F) ? 0.75F - this.field_6877.method_37086() / 2.0F : this.field_6877.method_37086() / 2.0F;
       BlockPos var4 = this.field_6887.method_18449();
-      double var5 = Math.abs(this.field_6877.method_37302() - ((double)var4.method_12173() + 0.5));
+      double var5 = Math.abs(this.field_6877.getPosX() - ((double)var4.method_12173() + 0.5));
       double var7 = Math.abs(this.field_6877.method_37309() - (double)var4.method_12165());
-      double var9 = Math.abs(this.field_6877.method_37156() - ((double)var4.method_12185() + 0.5));
+      double var9 = Math.abs(this.field_6877.getPosZ() - ((double)var4.method_12185() + 0.5));
       boolean var11 = var5 < (double)this.field_6889 && var9 < (double)this.field_6889 && var7 < 1.0;
       if (var11 || this.field_6877.method_26854(this.field_6887.method_18438().field_29730) && this.method_5593(var3)) {
          this.field_6887.method_18434();
@@ -338,9 +338,9 @@ public abstract class class_1249 {
       if (this.field_6887 != null && !this.field_6887.method_18436() && this.field_6887.method_18437() != 0) {
          class_5851 var4 = this.field_6887.method_18448();
          class_1343 var5 = new class_1343(
-            ((double)var4.field_29731 + this.field_6877.method_37302()) / 2.0,
+            ((double)var4.field_29731 + this.field_6877.getPosX()) / 2.0,
             ((double)var4.field_29735 + this.field_6877.method_37309()) / 2.0,
-            ((double)var4.field_29736 + this.field_6877.method_37156()) / 2.0
+            ((double)var4.field_29736 + this.field_6877.getPosZ()) / 2.0
          );
          if (var1.method_12170(var5, (double)(this.field_6887.method_18437() - this.field_6887.method_18429()))) {
             this.method_5621();

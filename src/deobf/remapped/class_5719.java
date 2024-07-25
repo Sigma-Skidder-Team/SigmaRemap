@@ -89,7 +89,7 @@ public interface class_5719 {
 
    @Nullable
    default class_704 method_25861(Entity var1, double var2) {
-      return this.method_25857(var1.method_37302(), var1.method_37309(), var1.method_37156(), var2, false);
+      return this.method_25857(var1.getPosX(), var1.method_37309(), var1.getPosZ(), var2, false);
    }
 
    @Nullable
@@ -113,7 +113,7 @@ public interface class_5719 {
 
    @Nullable
    default class_704 method_25859(class_4931 var1, class_5834 var2) {
-      return this.<class_704>method_25864(this.method_25873(), var1, var2, var2.method_37302(), var2.method_37309(), var2.method_37156());
+      return this.<class_704>method_25864(this.method_25873(), var1, var2, var2.getPosX(), var2.method_37309(), var2.getPosZ());
    }
 
    @Nullable
@@ -162,7 +162,7 @@ public interface class_5719 {
       ArrayList var6 = Lists.newArrayList();
 
       for (class_704 var8 : this.method_25873()) {
-         if (var3.method_18902(var8.method_37302(), var8.method_37309(), var8.method_37156()) && var1.method_22604(var2, var8)) {
+         if (var3.method_18902(var8.getPosX(), var8.method_37309(), var8.getPosZ()) && var1.method_22604(var2, var8)) {
             var6.add(var8);
          }
       }

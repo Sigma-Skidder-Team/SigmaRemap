@@ -30,6 +30,6 @@ public class class_990 extends class_3599 {
 
    @Override
    public void method_16794() {
-      this.field_5040.method_26865().method_17230(this.field_5042.method_37302(), this.field_5042.method_37388(), this.field_5042.method_37156());
+      this.field_5040.method_26865().method_17230(this.field_5042.getPosX(), this.field_5042.method_37388(), this.field_5042.getPosZ());
    }
 }

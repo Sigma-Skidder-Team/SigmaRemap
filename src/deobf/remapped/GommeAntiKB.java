@@ -18,7 +18,7 @@ public class GommeAntiKB extends Module {
    @EventListen
    private void method_19788(class_7767 var1) {
       double var4 = this.field_20589 * (double)(1.0F - this.getFloatValueByName("Delay")) - this.field_20589 / 2.0;
-      if (client.thePlayer.field_41726 && this.field_20590 <= 0) {
+      if (client.thePlayer.onGround && this.field_20590 <= 0) {
       }
 
       if (this.field_20590 == 1 && var1.method_35236() < var4) {

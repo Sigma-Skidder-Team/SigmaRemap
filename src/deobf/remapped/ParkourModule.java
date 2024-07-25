@@ -8,7 +8,7 @@ public class ParkourModule extends Module {
    @EventListen
    public void method_14758(class_4868 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             if (!class_314.method_1452()) {
                client.thePlayer.method_26595();
             }

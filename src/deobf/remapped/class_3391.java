@@ -46,7 +46,7 @@ public class class_3391 extends Screen {
    private void method_15676() {
       this.field_943
          .method_8614()
-         .method_4813(
+         .sendPacket(
             new class_1074(
                this.field_16700.method_17399(),
                new Identifier(this.field_16708.method_8246()),
@@ -59,7 +59,7 @@ public class class_3391 extends Screen {
    }
 
    private void method_15675() {
-      this.field_943.method_8614().method_4813(new class_9054(this.field_16700.method_17399(), this.field_16709, this.field_16711));
+      this.field_943.method_8614().sendPacket(new class_9054(this.field_16700.method_17399(), this.field_16709, this.field_16711));
    }
 
    @Override

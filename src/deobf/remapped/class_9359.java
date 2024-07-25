@@ -112,7 +112,7 @@ public class class_9359 extends class_704 implements class_117 {
          this.method_37253(var4, 0.0F, 0.0F);
 
          while (!var1.method_6682(this) && this.method_37309() < 255.0) {
-            this.method_37256(this.method_37302(), this.method_37309() + 1.0, this.method_37156());
+            this.method_37256(this.getPosX(), this.method_37309() + 1.0, this.getPosZ());
          }
       }
    }
@@ -179,7 +179,7 @@ public class class_9359 extends class_704 implements class_117 {
          var1.put("enteredNetherPosition", var4);
       }
 
-      Entity var8 = this.method_37240();
+      Entity var8 = this.getLowestRidingEntity();
       Entity var5 = this.method_37243();
       if (var5 != null && var8 != this && var8.method_37172()) {
          CompoundNBT var6 = new CompoundNBT();
@@ -288,7 +288,7 @@ public class class_9359 extends class_704 implements class_117 {
          if (!var7.method_37330()) {
             this.method_43284(this);
          } else {
-            this.method_37249(var7.method_37302(), var7.method_37309(), var7.method_37156(), var7.rotationYaw, var7.rotationPitch);
+            this.method_37249(var7.getPosX(), var7.method_37309(), var7.getPosZ(), var7.rotationYaw, var7.rotationPitch);
             this.method_43235().method_28945().method_10186(this);
             if (this.method_3199()) {
                this.method_43284(this);
@@ -728,9 +728,9 @@ public class class_9359 extends class_704 implements class_117 {
 
    private boolean method_43258(BlockPos var1) {
       class_1343 var4 = class_1343.method_6200(var1);
-      return Math.abs(this.method_37302() - var4.method_61()) <= 3.0
+      return Math.abs(this.getPosX() - var4.method_61()) <= 3.0
          && Math.abs(this.method_37309() - var4.method_60()) <= 2.0
-         && Math.abs(this.method_37156() - var4.method_62()) <= 3.0;
+         && Math.abs(this.getPosZ() - var4.method_62()) <= 3.0;
    }
 
    private boolean method_43245(BlockPos var1, Direction var2) {
@@ -746,7 +746,7 @@ public class class_9359 extends class_704 implements class_117 {
 
       super.method_3162(var1, var2);
       if (this.field_47794 != null) {
-         this.field_47794.method_4170(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
+         this.field_47794.method_4170(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -756,7 +756,7 @@ public class class_9359 extends class_704 implements class_117 {
       if (super.startRiding(var1, var2)) {
          Entity var6 = this.method_37243();
          if (var6 != var5 && this.field_47794 != null) {
-            this.field_47794.method_4170(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
+            this.field_47794.method_4170(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          }
 
          return true;
@@ -771,7 +771,7 @@ public class class_9359 extends class_704 implements class_117 {
       super.method_37390();
       Entity var4 = this.method_37243();
       if (var4 != var3 && this.field_47794 != null) {
-         this.field_47794.method_4170(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
+         this.field_47794.method_4170(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
       }
    }
 
@@ -1225,7 +1225,7 @@ public class class_9359 extends class_704 implements class_117 {
       this.field_47802 = (Entity)(var1 != null ? var1 : this);
       if (var4 != this.field_47802) {
          this.field_47794.method_4156(new class_8101(this.field_47802));
-         this.method_37254(this.field_47802.method_37302(), this.field_47802.method_37309(), this.field_47802.method_37156());
+         this.method_37254(this.field_47802.getPosX(), this.field_47802.method_37309(), this.field_47802.getPosZ());
       }
    }
 
@@ -1365,7 +1365,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public void method_3172(class_8461 var1, class_562 var2, float var3, float var4) {
-      this.field_47794.method_4156(new class_3740(var1, var2, this.method_37302(), this.method_37309(), this.method_37156(), var3, var4));
+      this.field_47794.method_4156(new class_3740(var1, var2, this.getPosX(), this.method_37309(), this.getPosZ(), var3, var4));
    }
 
    @Override

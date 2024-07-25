@@ -101,7 +101,7 @@ public class class_1453 extends Entity {
                }
             }
 
-            if (!this.field_41726 && !var6) {
+            if (!this.onGround && !var6) {
                if (!this.world.field_33055
                   && (this.field_7827 > 100 && (var18.method_12165() < 1 || var18.method_12165() > 256) || this.field_7827 > 600)) {
                   if (this.field_7818 && this.world.method_29537().method_1285(class_291.field_1024)) {

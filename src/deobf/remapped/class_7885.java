@@ -127,7 +127,7 @@ public class class_7885 extends class_4040 {
                }
             }
 
-            if (!var7 && this.field_41726) {
+            if (!var7 && this.onGround) {
                this.method_26595();
             }
          }
@@ -156,11 +156,11 @@ public class class_7885 extends class_4040 {
 
    private void method_35659() {
       if (this.field_41717.nextInt(6) == 0) {
-         double var3 = this.method_37302()
+         double var3 = this.getPosX()
             - (double)this.method_37086() * Math.sin((double)(this.field_29605 * (float) (Math.PI / 180.0)))
             + (this.field_41717.nextDouble() * 0.6 - 0.3);
          double var5 = this.method_37309() + (double)this.method_37074() - 0.3;
-         double var7 = this.method_37156()
+         double var7 = this.getPosZ()
             + (double)this.method_37086() * Math.cos((double)(this.field_29605 * (float) (Math.PI / 180.0)))
             + (this.field_41717.nextDouble() * 0.6 - 0.3);
          this.world.method_43361(class_3090.field_15353, var3, var5, var7, 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
@@ -215,8 +215,8 @@ public class class_7885 extends class_4040 {
    }
 
    private void method_35658(Entity var1) {
-      double var4 = var1.method_37302() - this.method_37302();
-      double var6 = var1.method_37156() - this.method_37156();
+      double var4 = var1.getPosX() - this.getPosX();
+      double var6 = var1.getPosZ() - this.getPosZ();
       double var8 = Math.max(var4 * var4 + var6 * var6, 0.001);
       var1.method_37186(var4 / var8 * 4.0, 0.2, var6 / var8 * 4.0);
    }

@@ -45,7 +45,7 @@ public class CakeEaterModule extends Module {
          if (!var1.method_6449()) {
             if (field_24090 != null) {
                if (this.getBooleanValueByName("No Swing") && !this.getBooleanValueByName("Mineplex")) {
-                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
                } else if (!this.getBooleanValueByName("No Swing")) {
                   client.thePlayer.method_26597(Hand.MAIN_HAND);
                }
@@ -60,7 +60,7 @@ public class CakeEaterModule extends Module {
                   field_24090,
                   false
                );
-               client.method_8614().method_4813(new class_8585(Hand.MAIN_HAND, var7));
+               client.method_8614().sendPacket(new class_8585(Hand.MAIN_HAND, var7));
             }
          } else {
             List var8 = this.method_22209(!this.getBooleanValueByName("Mineplex") ? client.playerController.method_42146() : 6.0F);
@@ -88,9 +88,9 @@ public class CakeEaterModule extends Module {
          for (float var6 = -var1; var6 <= var1; var6++) {
             for (float var7 = -var1; var7 <= var1; var7++) {
                BlockPos var8 = new BlockPos(
-                  client.thePlayer.method_37302() + (double)var6,
+                  client.thePlayer.getPosX() + (double)var6,
                   client.thePlayer.method_37309() + (double)var5,
-                  client.thePlayer.method_37156() + (double)var7
+                  client.thePlayer.getPosZ() + (double)var7
                );
                if (client.theWorld.method_28262(var8).method_8360() instanceof class_6726
                   && Math.sqrt(

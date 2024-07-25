@@ -120,7 +120,7 @@ public class class_8011 extends class_3429 implements class_3713 {
    }
 
    private void method_36347(ItemStack var1, class_6004 var2) {
-      class_4478 var5 = new class_4478(this.world, this.method_37302(), this.method_37309(), this.method_37156());
+      class_4478 var5 = new class_4478(this.world, this.getPosX(), this.method_37309(), this.getPosZ());
       Entity var6 = this.method_26166();
       if (var6 instanceof class_5834) {
          var5.method_20782((class_5834)var6);

@@ -33,7 +33,7 @@ public class class_9037 extends class_3599 {
             if (var5.method_37330()) {
                this.field_46242 = this.field_46244.method_26927().method_5598(var5, 0);
                return this.field_46242 == null
-                  ? this.method_41492(var5) >= this.field_46244.method_37273(var5.method_37302(), var5.method_37309(), var5.method_37156())
+                  ? this.method_41492(var5) >= this.field_46244.method_37273(var5.getPosX(), var5.method_37309(), var5.getPosZ())
                   : true;
             } else {
                return false;
@@ -87,7 +87,7 @@ public class class_9037 extends class_3599 {
    public void method_16794() {
       class_5834 var3 = this.field_46244.method_17809();
       this.field_46244.method_26865().method_17240(var3, 30.0F, 30.0F);
-      double var4 = this.field_46244.method_37273(var3.method_37302(), var3.method_37309(), var3.method_37156());
+      double var4 = this.field_46244.method_37273(var3.getPosX(), var3.method_37309(), var3.getPosZ());
       this.field_46237 = Math.max(this.field_46237 - 1, 0);
       if ((this.field_46246 || this.field_46244.method_26928().method_36736(var3))
          && this.field_46237 <= 0
@@ -96,9 +96,9 @@ public class class_9037 extends class_3599 {
                || var3.method_37273(this.field_46247, this.field_46239, this.field_46245) >= 1.0
                || this.field_46244.method_26594().nextFloat() < 0.05F
          )) {
-         this.field_46247 = var3.method_37302();
+         this.field_46247 = var3.getPosX();
          this.field_46239 = var3.method_37309();
-         this.field_46245 = var3.method_37156();
+         this.field_46245 = var3.getPosZ();
          this.field_46237 = 4 + this.field_46244.method_26594().nextInt(7);
          if (!(var4 > 1024.0)) {
             if (var4 > 256.0) {

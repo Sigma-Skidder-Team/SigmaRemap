@@ -11,9 +11,9 @@ public class class_7548 extends class_5783 {
       this(class_6629.field_34328, var1);
       super.method_26159(var2);
       this.method_37256(
-         var2.method_37302() - (double)(var2.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(var2.field_29605 * (float) (Math.PI / 180.0)),
+         var2.getPosX() - (double)(var2.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42818(var2.field_29605 * (float) (Math.PI / 180.0)),
          var2.method_37388() - 0.1F,
-         var2.method_37156() + (double)(var2.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42840(var2.field_29605 * (float) (Math.PI / 180.0))
+         var2.getPosZ() + (double)(var2.method_37086() + 1.0F) * 0.5 * (double)class_9299.method_42840(var2.field_29605 * (float) (Math.PI / 180.0))
       );
    }
 
@@ -38,9 +38,9 @@ public class class_7548 extends class_5783 {
          this.method_26160(var4);
       }
 
-      double var5 = this.method_37302() + var3.field_7336;
+      double var5 = this.getPosX() + var3.field_7336;
       double var7 = this.method_37309() + var3.field_7333;
-      double var9 = this.method_37156() + var3.field_7334;
+      double var9 = this.getPosZ() + var3.field_7334;
       this.method_26167();
       float var11 = 0.99F;
       float var12 = 0.06F;

@@ -104,7 +104,7 @@ public class class_5591 extends class_3599 {
    }
 
    private boolean method_25394(int var1, int var2, int var3) {
-      if (Math.abs((double)var1 - this.field_28374.method_37302()) < 2.0 && Math.abs((double)var3 - this.field_28374.method_37156()) < 2.0) {
+      if (Math.abs((double)var1 - this.field_28374.getPosX()) < 2.0 && Math.abs((double)var3 - this.field_28374.getPosZ()) < 2.0) {
          return false;
       } else if (this.method_25395(new BlockPos(var1, var2, var3))) {
          this.field_28380.method_37144((double)var1 + 0.5, (double)var2, (double)var3 + 0.5, this.field_28380.rotationYaw, this.field_28380.rotationPitch);

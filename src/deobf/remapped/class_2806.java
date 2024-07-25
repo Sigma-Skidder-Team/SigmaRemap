@@ -61,7 +61,7 @@ public class class_2806 extends class_1173 {
 
    @Override
    public void method_26606() {
-      if (!this.field_41726 && this.method_37098().field_7333 < 0.0) {
+      if (!this.onGround && this.method_37098().field_7333 < 0.0) {
          this.method_37215(this.method_37098().method_6210(1.0, 0.6, 1.0));
       }
 
@@ -69,9 +69,9 @@ public class class_2806 extends class_1173 {
          if (this.field_41717.nextInt(24) == 0 && !this.method_37378()) {
             this.world
                .method_29527(
-                  this.method_37302() + 0.5,
+                  this.getPosX() + 0.5,
                   this.method_37309() + 0.5,
-                  this.method_37156() + 0.5,
+                  this.getPosZ() + 0.5,
                   class_463.field_2019,
                   this.method_37197(),
                   1.0F + this.field_41717.nextFloat(),

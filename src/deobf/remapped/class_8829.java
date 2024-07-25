@@ -144,10 +144,10 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
          for (int var3 = 0; var3 < this.field_41717.nextInt(2) + 1; var3++) {
             this.method_40585(
                this.world,
-               this.method_37302() - 0.3F,
-               this.method_37302() + 0.3F,
-               this.method_37156() - 0.3F,
-               this.method_37156() + 0.3F,
+               this.getPosX() - 0.3F,
+               this.getPosX() + 0.3F,
+               this.getPosZ() - 0.3F,
+               this.getPosZ() + 0.3F,
                this.method_37080(0.5),
                class_3090.field_15344
             );

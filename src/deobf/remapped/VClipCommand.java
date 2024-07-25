@@ -19,9 +19,9 @@ public class VClipCommand extends Command {
                field_18219.method_8614()
                   .method_1894(
                      new class_509(
-                        field_18219.thePlayer.method_37302(),
+                        field_18219.thePlayer.getPosX(),
                         field_18219.thePlayer.method_37309() + var2[0].method_24062(),
-                        field_18219.thePlayer.method_37156(),
+                        field_18219.thePlayer.getPosZ(),
                         field_18219.thePlayer.rotationYaw,
                         field_18219.thePlayer.rotationPitch,
                         Collections.<class_8089>emptySet(),

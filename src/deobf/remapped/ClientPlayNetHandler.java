@@ -432,7 +432,7 @@ public class ClientPlayNetHandler implements class_392 {
          double var7 = var1.method_10085();
          double var9 = var1.method_10081();
          var4.method_37223(var5, var7, var9);
-         if (!var4.method_37069()) {
+         if (!var4.canPassengerSteer()) {
             float var11 = (float)(var1.method_10088() * 360) / 256.0F;
             float var12 = (float)(var1.method_10086() * 360) / 256.0F;
             var4.method_37318(var5, var7, var9, var11, var12, 3, true);
@@ -453,12 +453,12 @@ public class ClientPlayNetHandler implements class_392 {
    public void method_1962(class_527 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
       Entity var4 = var1.method_2564(this.field_6021);
-      if (var4 != null && !var4.method_37069()) {
+      if (var4 != null && !var4.canPassengerSteer()) {
          if (!var1.method_2565()) {
             if (var1.method_2560()) {
                float var5 = (float)(var1.method_2557() * 360) / 256.0F;
                float var6 = (float)(var1.method_2561() * 360) / 256.0F;
-               var4.method_37318(var4.method_37302(), var4.method_37309(), var4.method_37156(), var5, var6, 3, false);
+               var4.method_37318(var4.getPosX(), var4.method_37309(), var4.getPosZ(), var5, var6, 3, false);
             }
          } else {
             class_1343 var8 = var1.method_2558(var4.method_37103());
@@ -508,7 +508,7 @@ public class ClientPlayNetHandler implements class_392 {
          var4.field_41754 = var11;
       } else {
          var9 = var5.method_61();
-         var11 = var4.method_37302() + var1.method_2520();
+         var11 = var4.getPosX() + var1.method_2520();
          var4.field_41754 = var4.field_41754 + var1.method_2520();
       }
 
@@ -532,7 +532,7 @@ public class ClientPlayNetHandler implements class_392 {
          var4.field_41724 = var19;
       } else {
          var17 = var5.method_62();
-         var19 = var4.method_37156() + var1.method_2519();
+         var19 = var4.getPosZ() + var1.method_2519();
          var4.field_41724 = var4.field_41724 + var1.method_2519();
       }
 
@@ -557,7 +557,7 @@ public class ClientPlayNetHandler implements class_392 {
 
       var4.method_37249(var11, var15, var19, var21, var22);
       this.field_6035.method_23485(new class_2492(var1.method_2521()));
-      this.field_6035.method_23485(new class_1514(var4.method_37302(), var4.method_37309(), var4.method_37156(), var4.rotationYaw, var4.rotationPitch, false));
+      this.field_6035.method_23485(new class_1514(var4.getPosX(), var4.method_37309(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field_6030) {
          this.field_6030 = true;
          this.field_6026.method_8609((Screen)null);
@@ -639,7 +639,7 @@ public class ClientPlayNetHandler implements class_392 {
       }
    }
 
-   public void method_4813(Packet<?> var1) {
+   public void sendPacket(Packet<?> var1) {
       this.field_6035.method_23485(var1);
    }
 
@@ -656,9 +656,9 @@ public class ClientPlayNetHandler implements class_392 {
          if (!(var4 instanceof class_5614)) {
             this.field_6021
                .method_29527(
-                  var4.method_37302(),
+                  var4.getPosX(),
                   var4.method_37309(),
-                  var4.method_37156(),
+                  var4.getPosZ(),
                   class_463.field_2732,
                   class_562.field_3335,
                   0.2F,
@@ -668,9 +668,9 @@ public class ClientPlayNetHandler implements class_392 {
          } else {
             this.field_6021
                .method_29527(
-                  var4.method_37302(),
+                  var4.getPosX(),
                   var4.method_37309(),
-                  var4.method_37156(),
+                  var4.getPosZ(),
                   class_463.field_2688,
                   class_562.field_3335,
                   0.1F,
@@ -848,7 +848,7 @@ public class ClientPlayNetHandler implements class_392 {
                byte var5 = 40;
                this.field_6026.field_9572.method_43042(var4, class_3090.field_15334, 30);
                this.field_6021
-                  .method_29527(var4.method_37302(), var4.method_37309(), var4.method_37156(), class_463.field_2834, var4.method_37197(), 1.0F, 1.0F, false);
+                  .method_29527(var4.getPosX(), var4.method_37309(), var4.getPosZ(), class_463.field_2834, var4.method_37197(), 1.0F, 1.0F, false);
                if (var4 == this.field_6026.thePlayer) {
                   this.field_6026.gameRenderer.method_35946(method_4816(this.field_6026.thePlayer));
                }
@@ -900,7 +900,7 @@ public class ClientPlayNetHandler implements class_392 {
       this.field_6026.field_9669 = null;
       ClientPlayerEntity var13 = this.field_6026
          .playerController
-         .method_42130(this.field_6021, var6.method_27331(), var6.method_27334(), var6.method_37252(), var6.method_37321());
+         .method_42130(this.field_6021, var6.method_27331(), var6.method_27334(), var6.isSneaking(), var6.method_37321());
       var13.method_37091(var7);
       this.field_6026.thePlayer = var13;
       if (var4 != var6.world.method_29545()) {
@@ -1012,7 +1012,7 @@ public class ClientPlayNetHandler implements class_392 {
       }
 
       if (var4 != null && !var1.method_40997()) {
-         this.method_4813(new class_3835(var1.method_40994(), var1.method_40996(), true));
+         this.sendPacket(new class_3835(var1.method_40994(), var1.method_40996(), true));
       }
    }
 
@@ -1128,14 +1128,14 @@ public class ClientPlayNetHandler implements class_392 {
                                        }
                                     } else {
                                        this.field_6021
-                                          .method_43361(class_3090.field_15335, var4.method_37302(), var4.method_37309(), var4.method_37156(), 0.0, 0.0, 0.0);
+                                          .method_43361(class_3090.field_15335, var4.getPosX(), var4.method_37309(), var4.getPosZ(), 0.0, 0.0, 0.0);
                                        if (var7 == 1) {
                                           this.field_6021
                                              .method_29528(
                                                 var4,
-                                                var4.method_37302(),
+                                                var4.getPosX(),
                                                 var4.method_37309(),
-                                                var4.method_37156(),
+                                                var4.getPosZ(),
                                                 class_463.field_2239,
                                                 class_562.field_3332,
                                                 1.0F,
@@ -1147,9 +1147,9 @@ public class ClientPlayNetHandler implements class_392 {
                                     this.field_6021
                                        .method_29528(
                                           var4,
-                                          var4.method_37302(),
+                                          var4.getPosX(),
                                           var4.method_37309(),
-                                          var4.method_37156(),
+                                          var4.getPosZ(),
                                           class_463.field_1961,
                                           class_562.field_3328,
                                           1.0F,
@@ -1165,7 +1165,7 @@ public class ClientPlayNetHandler implements class_392 {
                         } else {
                            this.field_6021
                               .method_29528(
-                                 var4, var4.method_37302(), var4.method_37388(), var4.method_37156(), class_463.field_2743, class_562.field_3335, 0.18F, 0.45F
+                                 var4, var4.getPosX(), var4.method_37388(), var4.getPosZ(), class_463.field_2743, class_562.field_3335, 0.18F, 0.45F
                               );
                         }
                      } else {
@@ -1213,10 +1213,10 @@ public class ClientPlayNetHandler implements class_392 {
                   } else if (var7 != 0) {
                      if (var7 == 1) {
                         this.field_6026
-                           .method_8609(new class_3129(true, () -> this.field_6026.thePlayer.connection.method_4813(new class_8559(class_2105.field_10549))));
+                           .method_8609(new class_3129(true, () -> this.field_6026.thePlayer.connection.sendPacket(new class_8559(class_2105.field_10549))));
                      }
                   } else {
-                     this.field_6026.thePlayer.connection.method_4813(new class_8559(class_2105.field_10549));
+                     this.field_6026.thePlayer.connection.sendPacket(new class_8559(class_2105.field_10549));
                      this.field_6026.method_8609(new class_881());
                   }
                } else {
@@ -1533,7 +1533,7 @@ public class ClientPlayNetHandler implements class_392 {
 
    @Override
    public void method_1937(class_7573 var1) {
-      this.method_4813(new class_2669(var1.method_34428()));
+      this.sendPacket(new class_2669(var1.method_34428()));
    }
 
    @Override
@@ -1700,10 +1700,10 @@ public class ClientPlayNetHandler implements class_392 {
    @Override
    public void method_1980(class_3931 var1) {
       class_5965.method_27246(var1, this, this.field_6026);
-      Entity var4 = this.field_6026.thePlayer.method_37240();
-      if (var4 != this.field_6026.thePlayer && var4.method_37069()) {
+      Entity var4 = this.field_6026.thePlayer.getLowestRidingEntity();
+      if (var4 != this.field_6026.thePlayer && var4.canPassengerSteer()) {
          var4.method_37249(var1.method_18197(), var1.method_18199(), var1.method_18196(), var1.method_18201(), var1.method_18195());
-         this.field_6035.method_23485(new class_4148(var4));
+         this.field_6035.method_23485(new CMoveVehiclePacket(var4));
       }
    }
 

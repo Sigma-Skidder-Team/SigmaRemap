@@ -74,17 +74,17 @@ public class class_8127 extends class_608 implements class_6250 {
       }
 
       if (method_37266(this.method_37098()) > 2.5000003E-7F && this.field_41717.nextInt(5) == 0) {
-         int var3 = class_9299.method_42847(this.method_37302());
+         int var3 = class_9299.method_42847(this.getPosX());
          int var4 = class_9299.method_42847(this.method_37309() - 0.2F);
-         int var5 = class_9299.method_42847(this.method_37156());
+         int var5 = class_9299.method_42847(this.getPosZ());
          class_2522 var6 = this.world.method_28262(new BlockPos(var3, var4, var5));
          if (!var6.method_8345()) {
             this.world
                .method_43361(
                   new class_7110(class_3090.field_15325, var6),
-                  this.method_37302() + ((double)this.field_41717.nextFloat() - 0.5) * (double)this.method_37086(),
+                  this.getPosX() + ((double)this.field_41717.nextFloat() - 0.5) * (double)this.method_37086(),
                   this.method_37309() + 0.1,
-                  this.method_37156() + ((double)this.field_41717.nextFloat() - 0.5) * (double)this.method_37086(),
+                  this.getPosZ() + ((double)this.field_41717.nextFloat() - 0.5) * (double)this.method_37086(),
                   4.0 * ((double)this.field_41717.nextFloat() - 0.5),
                   0.5,
                   ((double)this.field_41717.nextFloat() - 0.5) * 4.0

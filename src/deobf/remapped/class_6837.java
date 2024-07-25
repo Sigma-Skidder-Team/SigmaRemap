@@ -46,9 +46,9 @@ public class class_6837<T extends class_5834> extends class_3599 {
             this.field_35259,
             this.field_35260,
             this.field_35261,
-            this.field_35261.method_37302(),
+            this.field_35261.getPosX(),
             this.field_35261.method_37309(),
-            this.field_35261.method_37156(),
+            this.field_35261.getPosZ(),
             this.field_35261.method_37241().method_18899((double)this.field_35250, 3.0, (double)this.field_35250)
          );
       if (this.field_35258 != null) {

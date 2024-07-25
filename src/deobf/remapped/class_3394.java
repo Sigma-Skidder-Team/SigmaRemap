@@ -20,17 +20,17 @@ public class class_3394 extends class_1871 {
    public void method_23473() {
       if (this.field_16723 != null) {
          if (this.field_16719 != null && this.field_16719.method_18436()) {
-            double var3 = this.field_16723.method_37302();
-            double var5 = this.field_16723.method_37156();
-            double var7 = var3 - this.field_9479.method_37302();
-            double var9 = var5 - this.field_9479.method_37156();
+            double var3 = this.field_16723.getPosX();
+            double var5 = this.field_16723.getPosZ();
+            double var7 = var3 - this.field_9479.getPosX();
+            double var9 = var5 - this.field_9479.getPosZ();
             double var11 = (double)class_9299.method_42842(var7 * var7 + var9 * var9);
             double var13 = Math.min(0.4F + var11 / 80.0 - 1.0, 10.0);
             this.field_16718 = new class_1343(var3, this.field_16723.method_37309() + var13, var5);
          }
 
          double var33 = this.field_16718 != null
-            ? this.field_16718.method_6203(this.field_9479.method_37302(), this.field_9479.method_37309(), this.field_9479.method_37156())
+            ? this.field_16718.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ())
             : 0.0;
          if (var33 < 100.0 || var33 > 22500.0) {
             this.method_15685();
@@ -48,7 +48,7 @@ public class class_3394 extends class_1871 {
          } else {
             this.field_16721++;
             class_1343 var15 = new class_1343(
-                  this.field_16723.method_37302() - this.field_9479.method_37302(), 0.0, this.field_16723.method_37156() - this.field_9479.method_37156()
+                  this.field_16723.getPosX() - this.field_9479.getPosX(), 0.0, this.field_16723.getPosZ() - this.field_9479.getPosZ()
                )
                .method_6213();
             class_1343 var16 = new class_1343(
@@ -63,12 +63,12 @@ public class class_3394 extends class_1871 {
             if (this.field_16721 >= 5 && var18 >= 0.0F && var18 < 10.0F) {
                double var35 = 1.0;
                class_1343 var19 = this.field_9479.method_37307(1.0F);
-               double var20 = this.field_9479.field_13542.method_37302() - var19.field_7336 * 1.0;
+               double var20 = this.field_9479.field_13542.getPosX() - var19.field_7336 * 1.0;
                double var22 = this.field_9479.field_13542.method_37080(0.5) + 0.5;
-               double var24 = this.field_9479.field_13542.method_37156() - var19.field_7334 * 1.0;
-               double var26 = this.field_16723.method_37302() - var20;
+               double var24 = this.field_9479.field_13542.getPosZ() - var19.field_7334 * 1.0;
+               double var26 = this.field_16723.getPosX() - var20;
                double var28 = this.field_16723.method_37080(0.5) - var22;
-               double var30 = this.field_16723.method_37156() - var24;
+               double var30 = this.field_16723.getPosZ() - var24;
                if (!this.field_9479.method_37378()) {
                   this.field_9479.world.method_43365((class_704)null, 1017, this.field_9479.method_37075(), 0);
                }
@@ -154,11 +154,11 @@ public class class_3394 extends class_1871 {
    public void method_15684(class_5834 var1) {
       this.field_16723 = var1;
       int var4 = this.field_9479.method_12606();
-      int var5 = this.field_9479.method_12614(this.field_16723.method_37302(), this.field_16723.method_37309(), this.field_16723.method_37156());
-      int var6 = class_9299.method_42847(this.field_16723.method_37302());
-      int var7 = class_9299.method_42847(this.field_16723.method_37156());
-      double var8 = (double)var6 - this.field_9479.method_37302();
-      double var10 = (double)var7 - this.field_9479.method_37156();
+      int var5 = this.field_9479.method_12614(this.field_16723.getPosX(), this.field_16723.method_37309(), this.field_16723.getPosZ());
+      int var6 = class_9299.method_42847(this.field_16723.getPosX());
+      int var7 = class_9299.method_42847(this.field_16723.getPosZ());
+      double var8 = (double)var6 - this.field_9479.getPosX();
+      double var10 = (double)var7 - this.field_9479.getPosZ();
       double var12 = (double)class_9299.method_42842(var8 * var8 + var10 * var10);
       double var14 = Math.min(0.4F + var12 / 80.0 - 1.0, 10.0);
       int var16 = class_9299.method_42847(this.field_16723.method_37309() + var14);

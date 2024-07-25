@@ -58,7 +58,7 @@ public class class_1837 extends class_3599 {
 
    @Override
    public void method_16794() {
-      double var3 = this.field_9305.method_37273(this.field_9303.method_37302(), this.field_9303.method_37309(), this.field_9303.method_37156());
+      double var3 = this.field_9305.method_37273(this.field_9303.getPosX(), this.field_9303.method_37309(), this.field_9303.getPosZ());
       boolean var5 = this.field_9305.method_26928().method_36736(this.field_9303);
       if (!var5) {
          this.field_9307 = 0;

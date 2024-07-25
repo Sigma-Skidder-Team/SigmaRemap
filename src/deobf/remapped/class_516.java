@@ -19,9 +19,9 @@ public abstract class class_516 extends class_5886 {
       if (!this.method_37285()) {
          if (!this.method_37370()) {
             float var4 = 0.91F;
-            if (this.field_41726) {
+            if (this.onGround) {
                var4 = this.world
-                     .method_28262(new BlockPos(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
+                     .method_28262(new BlockPos(this.getPosX(), this.method_37309() - 1.0, this.getPosZ()))
                      .method_8360()
                      .method_29308()
                   * 0.91F;
@@ -29,15 +29,15 @@ public abstract class class_516 extends class_5886 {
 
             float var5 = 0.16277137F / (var4 * var4 * var4);
             var4 = 0.91F;
-            if (this.field_41726) {
+            if (this.onGround) {
                var4 = this.world
-                     .method_28262(new BlockPos(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
+                     .method_28262(new BlockPos(this.getPosX(), this.method_37309() - 1.0, this.getPosZ()))
                      .method_8360()
                      .method_29308()
                   * 0.91F;
             }
 
-            this.method_37092(!this.field_41726 ? 0.02F : 0.1F * var5, var1);
+            this.method_37092(!this.onGround ? 0.02F : 0.1F * var5, var1);
             this.method_37226(class_7412.field_37839, this.method_37098());
             this.method_37215(this.method_37098().method_6209((double)var4));
          } else {

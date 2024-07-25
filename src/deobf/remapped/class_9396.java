@@ -29,9 +29,9 @@ public class class_9396 {
          this.field_48017 = var4;
       }
 
-      double var39 = this.field_48018.method_37302() - 0.5;
+      double var39 = this.field_48018.getPosX() - 0.5;
       double var6 = this.field_48018.method_37309() - 0.5 + this.field_48010;
-      double var8 = this.field_48018.method_37156() - 0.5;
+      double var8 = this.field_48018.getPosZ() - 0.5;
       int var10 = class_8421.method_38772(this.field_48018);
       double var11 = var39 - this.field_48016;
       double var13 = var6 - this.field_48015;

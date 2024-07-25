@@ -33,7 +33,7 @@ public interface class_1243 extends class_1977 {
 
    void method_5575(class_2317 var1);
 
-   void method_5546(class_758 var1);
+   void method_5546(CInputPacket var1);
 
    void method_5560(class_7371 var1);
 
@@ -51,7 +51,7 @@ public interface class_1243 extends class_1977 {
 
    void method_5553(class_8125 var1);
 
-   void method_5539(class_4148 var1);
+   void method_5539(CMoveVehiclePacket var1);
 
    void method_5576(class_2492 var1);
 

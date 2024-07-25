@@ -88,9 +88,9 @@ public abstract class class_8704 {
          var2.method_45509().getString(),
          var13,
          var2.method_37145(),
-         var2.method_37302(),
+         var2.getPosX(),
          var2.method_37309(),
-         var2.method_37156()
+         var2.getPosZ()
       );
       class_1906 var14 = var12.method_43366();
       this.method_39980(var2, (class_9359)null, var12);
@@ -136,7 +136,7 @@ public abstract class class_8704 {
       }
 
       this.method_39983(var19.mergeStyle(TextFormatting.YELLOW), ChatType.SYSTEM, Util.NIL_UUID);
-      var15.method_4170(var2.method_37302(), var2.method_37309(), var2.method_37156(), var2.rotationYaw, var2.rotationPitch);
+      var15.method_4170(var2.getPosX(), var2.method_37309(), var2.getPosZ(), var2.rotationYaw, var2.rotationPitch);
       this.field_44632.add(var2);
       this.field_44619.put(var2.method_37328(), var2);
       this.method_39972(new class_7867(class_2236.field_11144, var2));
@@ -248,7 +248,7 @@ public abstract class class_8704 {
       var1.method_3209(class_6234.field_31854);
       this.method_39967(var1);
       if (var1.isPassenger()) {
-         Entity var5 = var1.method_37240();
+         Entity var5 = var1.getLowestRidingEntity();
          if (var5.method_37172()) {
             field_44623.debug("Removing player mount");
             var1.method_37390();
@@ -396,7 +396,7 @@ public abstract class class_8704 {
       }
 
       while (!var10.method_6682(var12) && var12.method_37309() < 256.0) {
-         var12.method_37256(var12.method_37302(), var12.method_37309() + 1.0, var12.method_37156());
+         var12.method_37256(var12.getPosX(), var12.method_37309() + 1.0, var12.getPosZ());
       }
 
       class_1906 var21 = var12.world.method_43366();
@@ -413,7 +413,7 @@ public abstract class class_8704 {
                var2
             )
          );
-      var12.field_47794.method_4170(var12.method_37302(), var12.method_37309(), var12.method_37156(), var12.rotationYaw, var12.rotationPitch);
+      var12.field_47794.method_4170(var12.getPosX(), var12.method_37309(), var12.getPosZ(), var12.rotationYaw, var12.rotationPitch);
       var12.field_47794.method_4156(new class_2073(var10.method_28998(), var10.method_28988()));
       var12.field_47794.method_4156(new class_9275(var21.method_8661(), var21.method_8662()));
       var12.field_47794.method_4156(new class_8175(var12.field_3842, var12.field_3862, var12.field_3840));
@@ -566,9 +566,9 @@ public abstract class class_8704 {
       for (int var14 = 0; var14 < this.field_44632.size(); var14++) {
          class_9359 var15 = this.field_44632.get(var14);
          if (var15 != var1 && var15.world.method_29545() == var10) {
-            double var16 = var2 - var15.method_37302();
+            double var16 = var2 - var15.getPosX();
             double var18 = var4 - var15.method_37309();
-            double var20 = var6 - var15.method_37156();
+            double var20 = var6 - var15.getPosZ();
             if (var16 * var16 + var18 * var18 + var20 * var20 < var8 * var8) {
                var15.field_47794.method_4156(var11);
             }

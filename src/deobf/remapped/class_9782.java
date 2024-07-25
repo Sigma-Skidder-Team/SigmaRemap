@@ -33,21 +33,21 @@ public class class_9782 {
                      }
                   }
 
-                  this.field_49645.method_8614().method_4813(new class_3835(0, (short)-1, false));
-                  this.field_49645.method_8614().method_4813(new class_9808(var5));
+                  this.field_49645.method_8614().sendPacket(new class_3835(0, (short)-1, false));
+                  this.field_49645.method_8614().sendPacket(new class_9808(var5));
                   if (var6 != null) {
-                     this.field_49645.method_8614().method_4813(new class_6404(var6.method_37328()));
+                     this.field_49645.method_8614().sendPacket(new class_6404(var6.method_37328()));
                   }
 
-                  this.field_49645.method_8614().method_4813(new class_758(0.98F, 0.98F, false, false));
+                  this.field_49645.method_8614().sendPacket(new CInputPacket(0.98F, 0.98F, false, false));
                }
 
                Thread var9 = new Thread(
                   () -> {
                      try {
-                        class_4714 var4x = new class_4714(this.field_49648.method_37302(), this.field_49648.method_37309(), this.field_49648.method_37156());
+                        class_4714 var4x = new class_4714(this.field_49648.getPosX(), this.field_49648.method_37309(), this.field_49648.getPosZ());
                         class_4714 var5x = new class_4714(
-                           this.field_49645.thePlayer.method_37302(), this.field_49645.thePlayer.method_37309(), this.field_49645.thePlayer.method_37156()
+                           this.field_49645.thePlayer.getPosX(), this.field_49645.thePlayer.method_37309(), this.field_49645.thePlayer.getPosZ()
                         );
                         ArrayList var6x = class_6306.method_28770(var5x, var4x);
                         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Teleport", "Successfully teleported !"));
@@ -58,30 +58,30 @@ public class class_9782 {
                               var7.field_41736.field_7336 = var9x.method_21803() + 0.5;
                               var7.field_41736.field_7333 = var9x.method_21801();
                               var7.field_41736.field_7334 = var9x.method_21799() + 0.5;
-                              this.field_49645.method_8614().method_4813(new class_8125(false, false));
+                              this.field_49645.method_8614().sendPacket(new class_8125(false, false));
                               this.field_49645
                                  .method_8614()
-                                 .method_4813(new class_3616(this.field_49645.thePlayer.rotationYaw, this.field_49645.thePlayer.rotationPitch, false));
-                              this.field_49645.method_8614().method_4813(new class_758(0.0F, 1.0F, false, false));
+                                 .sendPacket(new RotationPacket(this.field_49645.thePlayer.rotationYaw, this.field_49645.thePlayer.rotationPitch, false));
+                              this.field_49645.method_8614().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
                               BoatEntity var10 = new BoatEntity(
                                  this.field_49645.theWorld, var9x.method_21803() + 0.5, var9x.method_21801(), var9x.method_21799() + 0.5
                               );
                               var10.rotationYaw = var7.rotationYaw;
                               var10.rotationPitch = var7.rotationPitch;
-                              this.field_49645.method_8614().method_4813(new class_4148(var10));
+                              this.field_49645.method_8614().sendPacket(new CMoveVehiclePacket(var10));
                            } else if (var4) {
                               this.field_49645
                                  .method_8614()
-                                 .method_4813(new class_9515(var9x.method_21803(), var9x.method_21801(), var9x.method_21799(), false));
+                                 .sendPacket(new class_9515(var9x.method_21803(), var9x.method_21801(), var9x.method_21799(), false));
                            } else {
                               this.field_49645
                                  .method_8614()
-                                 .method_4813(new class_9515(var9x.method_21803(), var9x.method_21801(), var9x.method_21799(), true));
+                                 .sendPacket(new class_9515(var9x.method_21803(), var9x.method_21801(), var9x.method_21799(), true));
                            }
                         }
 
                         if (var4) {
-                           this.field_49645.method_8614().method_4813(new class_9515(var4x.field_22878, var4x.field_22880, var4x.field_22879, false));
+                           this.field_49645.method_8614().sendPacket(new class_9515(var4x.field_22878, var4x.field_22880, var4x.field_22879, false));
                         }
 
                         this.field_49645.thePlayer.method_37256(var4x.field_22878, var4x.field_22880, var4x.field_22879);
@@ -89,7 +89,7 @@ public class class_9782 {
                         if (var4) {
                            PlayerAbilities var12 = new PlayerAbilities();
                            var12.isFlying = false;
-                           this.field_49645.method_8614().method_4813(new class_9808(var12));
+                           this.field_49645.method_8614().sendPacket(new class_9808(var12));
                         }
                      } catch (Exception var11) {
                         var11.printStackTrace();
@@ -116,7 +116,7 @@ public class class_9782 {
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Teleport", "Target lost"));
             this.field_49646 = 0;
             this.field_49648 = null;
-         } else if (!this.field_49645.thePlayer.method_37252()) {
+         } else if (!this.field_49645.thePlayer.isSneaking()) {
             double var4 = this.field_49648.method_37309() - this.field_49648.field_41713;
             if (var4 < -2.0 && class_314.method_1432(this.field_49648) && this.field_49648.method_37309() - this.field_49645.thePlayer.method_37309() < -10.0) {
                this.field_49646 = 0;

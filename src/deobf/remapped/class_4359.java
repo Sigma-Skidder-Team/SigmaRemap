@@ -190,9 +190,9 @@ public class class_4359 extends class_2811 implements class_2354 {
    @Override
    public void method_10805(class_5834 var1, float var2) {
       class_3348 var5 = new class_3348(this.world, this, new ItemStack(class_4897.field_25086));
-      double var6 = var1.method_37302() - this.method_37302();
+      double var6 = var1.getPosX() - this.getPosX();
       double var8 = var1.method_37080(0.3333333333333333) - var5.method_37309();
-      double var10 = var1.method_37156() - this.method_37156();
+      double var10 = var1.getPosZ() - this.getPosZ();
       double var12 = (double)class_9299.method_42842(var6 * var6 + var10 * var10);
       var5.method_26161(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
       this.method_37155(class_463.field_2187, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));

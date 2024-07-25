@@ -94,6 +94,6 @@ public final class class_9757 implements class_3825 {
    }
 
    private double method_45034(class_1343 var1, Entity var2) {
-      return Math.atan2(var1.method_62() - var2.method_37156(), var1.method_61() - var2.method_37302());
+      return Math.atan2(var1.method_62() - var2.getPosZ(), var1.method_61() - var2.getPosX());
    }
 }

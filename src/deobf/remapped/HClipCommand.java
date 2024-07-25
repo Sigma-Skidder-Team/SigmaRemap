@@ -22,9 +22,9 @@ public class HClipCommand extends Command {
                field_18219.method_8614()
                   .method_1894(
                      new class_509(
-                        field_18219.thePlayer.method_37302() + var7,
+                        field_18219.thePlayer.getPosX() + var7,
                         field_18219.thePlayer.method_37309(),
-                        field_18219.thePlayer.method_37156() + var9,
+                        field_18219.thePlayer.getPosZ() + var9,
                         field_18219.thePlayer.rotationYaw,
                         field_18219.thePlayer.rotationPitch,
                         Collections.<class_8089>emptySet(),

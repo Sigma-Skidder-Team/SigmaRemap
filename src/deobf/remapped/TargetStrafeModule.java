@@ -55,14 +55,14 @@ public class TargetStrafeModule extends Module {
 
    public void method_45282(Entity var1, double var2, double var4, class_7767 var6) {
       double var9 = var2 / (var4 * Math.PI * 2.0) * 360.0 * (double)this.field_49775;
-      double var11 = client.thePlayer.method_37302() - var1.method_37302();
-      double var13 = client.thePlayer.method_37156() - var1.method_37156();
+      double var11 = client.thePlayer.getPosX() - var1.getPosX();
+      double var13 = client.thePlayer.getPosZ() - var1.getPosZ();
       double var15 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
       double var17 = (var15 + var9) * Math.PI / 180.0;
       double var19 = var1.method_37245().field_7336 - Math.sin(var17) * var4;
       double var21 = var1.method_37245().field_7334 + Math.cos(var17) * var4;
-      var11 = var19 - client.thePlayer.method_37302();
-      var13 = var21 - client.thePlayer.method_37156();
+      var11 = var19 - client.thePlayer.getPosX();
+      var13 = var21 - client.thePlayer.getPosZ();
       double var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
       var17 = var23 * Math.PI / 180.0;
       var6.method_35232(-Math.sin(var17) * var2);
@@ -74,8 +74,8 @@ public class TargetStrafeModule extends Module {
          var17 = (var15 + var9) * Math.PI / 180.0;
          var19 = var1.method_37245().field_7336 - Math.sin(var17) * var4;
          var21 = var1.method_37245().field_7334 + Math.cos(var17) * var4;
-         var11 = var19 - client.thePlayer.method_37302();
-         var13 = var21 - client.thePlayer.method_37156();
+         var11 = var19 - client.thePlayer.getPosX();
+         var13 = var21 - client.thePlayer.getPosZ();
          var23 = Math.atan2(var13, var11) * 180.0 / Math.PI - 90.0;
          var17 = var23 * Math.PI / 180.0;
          var6.method_35232(-Math.sin(var17) * var2);

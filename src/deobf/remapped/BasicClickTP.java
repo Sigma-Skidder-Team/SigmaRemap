@@ -24,7 +24,7 @@ public class BasicClickTP extends Module {
 
    @EventListen
    private void method_29151(class_8706 var1) {
-      if (this.method_42015() && (client.thePlayer.method_37252() || !this.method_42017().getBooleanValueByName("Sneak"))) {
+      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.method_42017().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
                client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.method_42017().getFloatValueByName("Maximum range")
@@ -41,8 +41,8 @@ public class BasicClickTP extends Module {
             double var6 = (double)var5.method_12173() + 0.5;
             double var8 = (double)(var5.method_12165() + 1);
             double var10 = (double)var5.method_12185() + 0.5;
-            double var12 = client.thePlayer.method_37302() - var6;
-            double var14 = client.thePlayer.method_37156() - var10;
+            double var12 = client.thePlayer.getPosX() - var6;
+            double var14 = client.thePlayer.getPosZ() - var10;
             double var16 = client.thePlayer.method_37309() - var8;
             double var18 = var12 * var12 + var14 * var14;
             double var20 = Math.sqrt(var18) + Math.abs(var16);
@@ -50,8 +50,8 @@ public class BasicClickTP extends Module {
             double var24 = var12 / var22;
             double var26 = var14 / var22;
             double var28 = var16 / var22;
-            double var30 = client.thePlayer.method_37302();
-            double var32 = client.thePlayer.method_37156();
+            double var30 = client.thePlayer.getPosX();
+            double var32 = client.thePlayer.getPosZ();
             double var34 = client.thePlayer.method_37309();
             this.field_32569.clear();
             this.field_32569.add(new class_4714(var30, var34, var32));
@@ -63,7 +63,7 @@ public class BasicClickTP extends Module {
                double var37 = 0.3;
                class_4092 var39 = new class_4092(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
                if (client.theWorld.method_6680(client.thePlayer, var39).count() == 0L) {
-                  client.method_8614().method_4813(new class_9515(var30, var34, var32, true));
+                  client.method_8614().sendPacket(new class_9515(var30, var34, var32, true));
                }
 
                this.field_32569.add(new class_4714(var30, var34, var32));

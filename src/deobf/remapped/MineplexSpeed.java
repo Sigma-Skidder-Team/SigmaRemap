@@ -17,7 +17,7 @@ public class MineplexSpeed extends Module {
    public void onDisable() {
       class_8865.method_40776(class_8865.method_40775() * 0.7);
       if (client.thePlayer.inventory.field_36404 != this.field_29133) {
-         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+         client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
          this.field_29133 = client.thePlayer.inventory.field_36404;
       }
    }
@@ -37,7 +37,7 @@ public class MineplexSpeed extends Module {
          && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).method_42015()
          && !class_314.method_1437(client.thePlayer)) {
          double var4 = (double)this.getFloatValueByName("OnGround Speed");
-         if (!client.thePlayer.field_41726) {
+         if (!client.thePlayer.onGround) {
             if (client.thePlayer.field_41744) {
                this.field_29130 = 0.35;
                this.field_29132 = 1;
@@ -84,7 +84,7 @@ public class MineplexSpeed extends Module {
             BlockPos var8 = new BlockPos(client.thePlayer.method_37075()).method_6104(0, -1, 0);
             class_9529 var9 = new class_9529(var7, Direction.field_817, var8, false);
             class_8585 var10 = new class_8585(Hand.MAIN_HAND, var9);
-            client.method_8614().method_4813(var10);
+            client.method_8614().sendPacket(var10);
             this.field_29130 += var4 / 4.0;
             if (client.thePlayer.field_41744) {
                this.field_29130 /= 2.0;
@@ -120,7 +120,7 @@ public class MineplexSpeed extends Module {
          var1.method_13315(0.0);
          var1.method_13313(0.4199998);
          if (client.thePlayer.inventory.field_36404 != this.field_29133) {
-            client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+            client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
             this.field_29133 = client.thePlayer.inventory.field_36404;
          }
       }
@@ -154,7 +154,7 @@ public class MineplexSpeed extends Module {
             int var4 = var3 - 36;
             if (client.thePlayer.field_3869.method_18878(var3).method_35898().method_28022()) {
                if (client.thePlayer.inventory.field_36404 != var4 && this.field_29133 != var4) {
-                  client.method_8614().method_4813(new class_7371(var4));
+                  client.method_8614().sendPacket(new class_7371(var4));
                   this.field_29133 = var4;
                }
 
@@ -166,7 +166,7 @@ public class MineplexSpeed extends Module {
          if (client.thePlayer.field_3869.method_18878(42).method_35898().method_28022()
             && client.thePlayer.inventory.field_36404 != 6
             && this.field_29133 != 6) {
-            client.method_8614().method_4813(new class_7371(6));
+            client.method_8614().sendPacket(new class_7371(6));
             this.field_29133 = 6;
             return 6;
          } else {

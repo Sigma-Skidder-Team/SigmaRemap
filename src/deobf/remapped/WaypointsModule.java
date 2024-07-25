@@ -60,9 +60,9 @@ public class WaypointsModule extends Module {
                         var9.method_37328(),
                         new class_4333(
                            var9.method_45509().getUnformattedComponentText() + " Unspawn",
-                           (int)var9.method_37302(),
+                           (int)var9.getPosX(),
                            (int)var9.method_37309(),
-                           (int)var9.method_37156(),
+                           (int)var9.getPosZ(),
                            class_1255.field_6923.field_6917
                         )
                      );

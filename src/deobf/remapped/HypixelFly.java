@@ -26,11 +26,11 @@ public class HypixelFly extends Module {
       String var3 = this.getStringValueByName("Mode");
       this.field_18794 = 1.0F;
       this.field_18800 = -1;
-      if (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F)) {
+      if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F)) {
          this.field_18794 = this.getFloatValueByName("Timer Boost");
       }
 
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          switch (var3) {
             case "Basic":
                this.field_18795 = 0.0;
@@ -177,14 +177,14 @@ public class HypixelFly extends Module {
          }
 
          class_8865.method_40777(var1, this.field_18795);
-         if (!client.thePlayer.field_41726 || !class_314.method_1413(client.thePlayer, 0.001F)) {
+         if (!client.thePlayer.onGround || !class_314.method_1413(client.thePlayer, 0.001F)) {
             this.field_18800++;
             var1.method_35235(0.0);
             class_314.method_1408(0.0);
             if (this.field_18800 % 5 < 4) {
-               double var12 = client.thePlayer.method_37302();
+               double var12 = client.thePlayer.getPosX();
                double var14 = client.thePlayer.method_37309();
-               double var16 = client.thePlayer.method_37156();
+               double var16 = client.thePlayer.getPosZ();
                client.thePlayer.method_37256(var12, var14 + 1.0E-14, var16);
             }
          }

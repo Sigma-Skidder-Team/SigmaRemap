@@ -56,7 +56,7 @@ public class SpartanFly extends Module {
    @EventListen
    public void method_12965(class_7767 var1) {
       if (this.method_42015()) {
-         boolean var4 = client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F);
+         boolean var4 = client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F);
          if (!var4) {
             if (var1.method_35236() < 0.0) {
                if (this.field_13966 != client.thePlayer.method_37245().field_7333) {
@@ -65,7 +65,7 @@ public class SpartanFly extends Module {
                      int var5 = this.method_12961();
                      boolean var6 = this.getBooleanValueByName("Fake Block");
                      if (var5 >= 0 && var6) {
-                        client.method_8614().method_4813(new class_7371(var5));
+                        client.method_8614().sendPacket(new class_7371(var5));
                      }
 
                      if (var6 && (var5 >= 0 || client.thePlayer.method_26617(Hand.MAIN_HAND).method_27960() instanceof class_6201)) {
@@ -76,11 +76,11 @@ public class SpartanFly extends Module {
                            false
                         );
                         class_8585 var8 = new class_8585(Hand.MAIN_HAND, var7);
-                        client.method_8614().method_4813(var8);
+                        client.method_8614().sendPacket(var8);
                      }
 
                      if (var5 >= 0 && var6) {
-                        client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+                        client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
                      }
 
                      var1.method_35235(this.field_13966 - client.thePlayer.method_37245().field_7333);

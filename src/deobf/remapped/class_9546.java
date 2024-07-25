@@ -25,13 +25,13 @@ public class class_9546 extends class_2266 {
       int var3;
       if (this.method_7015() && this.field_8166.method_37285()) {
          var3 = class_9299.method_42847(this.field_8166.method_37309());
-         class_2921 var4 = new class_2921(this.field_8166.method_37302(), (double)var3, this.field_8166.method_37156());
+         class_2921 var4 = new class_2921(this.field_8166.getPosX(), (double)var3, this.field_8166.getPosZ());
 
          for (class_6414 var5 = this.field_8165.method_28262(var4).method_8360();
             var5 == class_4783.field_23900;
             var5 = this.field_8165.method_28262(var4).method_8360()
          ) {
-            var4.method_13361(this.field_8166.method_37302(), (double)(++var3), this.field_8166.method_37156());
+            var4.method_13361(this.field_8166.getPosX(), (double)(++var3), this.field_8166.getPosZ());
          }
       } else {
          var3 = class_9299.method_42847(this.field_8166.method_37309() + 0.5);

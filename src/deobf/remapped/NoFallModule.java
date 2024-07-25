@@ -27,7 +27,7 @@ public class NoFallModule extends Module {
       if (this.method_42015()) {
          if (var1.method_35236() < -0.5
             && (double) client.thePlayer.field_41706 > 2.0 + (double)class_8865.method_40769() * 0.5
-            && !client.thePlayer.field_41726
+            && !client.thePlayer.onGround
             && this.getStringValueByName("Mode").equals("Hypixel")
             && class_314.method_1387()) {
             double[] var4 = class_314.method_1466();
@@ -103,7 +103,7 @@ public class NoFallModule extends Module {
                case "Hypixel":
                   if (var1.method_6449()
                      && client.thePlayer.method_37098().field_7333 < 0.0
-                     && !client.thePlayer.field_41726
+                     && !client.thePlayer.onGround
                      && class_314.method_1387()) {
                      for (double var10 : class_314.method_1466()) {
                         if ((double)((int)var1.method_6454()) - var1.method_6454() + var10 == 0.0) {
@@ -123,7 +123,7 @@ public class NoFallModule extends Module {
                      if (client.thePlayer.method_37098().field_7333 < -0.1 && client.thePlayer.field_41706 > 3.0F) {
                         this.field_15404++;
                         if (this.field_15404 == 1.0) {
-                           client.method_8614().method_4813(new class_4609(true));
+                           client.method_8614().sendPacket(new class_4609(true));
                         } else if (this.field_15404 > 1.0) {
                            this.field_15404 = 0.0;
                         }
@@ -138,8 +138,8 @@ public class NoFallModule extends Module {
 
                      if (!this.field_15401 && client.thePlayer.field_41706 > 3.0F && this.getStringValueByName("Mode").equals("AAC")) {
                         this.field_15401 = !this.field_15401;
-                        class_9515 var7 = new class_9515(client.thePlayer.method_37302(), Double.NaN, client.thePlayer.method_37156(), true);
-                        client.method_8614().method_4813(var7);
+                        class_9515 var7 = new class_9515(client.thePlayer.getPosX(), Double.NaN, client.thePlayer.getPosZ(), true);
+                        client.method_8614().sendPacket(var7);
                      }
                   }
                   break;
@@ -157,13 +157,13 @@ public class NoFallModule extends Module {
                      this.field_15403 = true;
                   }
 
-                  if (this.field_15403 && client.thePlayer.field_41726 && !client.thePlayer.method_37285()) {
-                     double var12 = client.thePlayer.method_37302();
+                  if (this.field_15403 && client.thePlayer.onGround && !client.thePlayer.method_37285()) {
+                     double var12 = client.thePlayer.getPosX();
                      double var14 = client.thePlayer.method_37309();
-                     double var16 = client.thePlayer.method_37156();
-                     client.method_8614().method_4813(new class_9515(var12, var14 + 3.01, var16, false));
-                     client.method_8614().method_4813(new class_9515(var12, var14, var16, false));
-                     client.method_8614().method_4813(new class_9515(var12, var14, var16, true));
+                     double var16 = client.thePlayer.getPosZ();
+                     client.method_8614().sendPacket(new class_9515(var12, var14 + 3.01, var16, false));
+                     client.method_8614().sendPacket(new class_9515(var12, var14, var16, false));
+                     client.method_8614().sendPacket(new class_9515(var12, var14, var16, true));
                      System.out.println("sent");
                      this.field_15403 = false;
                   }
@@ -174,7 +174,7 @@ public class NoFallModule extends Module {
                         this.field_15405 = true;
                      }
 
-                     if (this.field_15405 && SigmaMainClass.getInstance().method_3310().method_25293() == 0 && client.thePlayer.field_41726) {
+                     if (this.field_15405 && SigmaMainClass.getInstance().method_3310().method_25293() == 0 && client.thePlayer.onGround) {
                         var1.method_6455(var1.method_6454() - 11.0);
                         this.field_15405 = false;
                      }

@@ -43,9 +43,9 @@ public class class_900 extends Entity {
          this.world
             .method_29528(
                (class_704)null,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309(),
-               this.method_37156(),
+               this.getPosZ(),
                class_463.field_1955,
                class_562.field_3330,
                10000.0F,
@@ -54,9 +54,9 @@ public class class_900 extends Entity {
          this.world
             .method_29528(
                (class_704)null,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309(),
-               this.method_37156(),
+               this.getPosZ(),
                class_463.field_2042,
                class_562.field_3330,
                2.0F,
@@ -86,12 +86,12 @@ public class class_900 extends Entity {
                   .method_25867(
                      this,
                      new class_4092(
-                        this.method_37302() - 3.0,
+                        this.getPosX() - 3.0,
                         this.method_37309() - 3.0,
-                        this.method_37156() - 3.0,
-                        this.method_37302() + 3.0,
+                        this.getPosZ() - 3.0,
+                        this.getPosX() + 3.0,
                         this.method_37309() + 6.0 + 3.0,
-                        this.method_37156() + 3.0
+                        this.getPosZ() + 3.0
                      ),
                      Entity::method_37330
                   );

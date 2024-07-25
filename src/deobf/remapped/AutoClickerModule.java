@@ -22,10 +22,10 @@ public class AutoClickerModule extends Module {
             this.field_34164 = 0;
             if (class_314.method_1458(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, 4.6F, 0.0) != null) {
                client.method_8614()
-                  .method_4813(
+                  .sendPacket(
                      new class_3398(
                         class_314.method_1458(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, 4.6F, 0.0),
-                        client.thePlayer.method_37252()
+                        client.thePlayer.isSneaking()
                      )
                   );
                client.thePlayer.method_26597(Hand.MAIN_HAND);

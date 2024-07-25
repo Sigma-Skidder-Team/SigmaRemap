@@ -41,7 +41,7 @@ public class class_1857 {
    public void method_8222(class_6435 var1) {
       if (var1.method_29384() == this.field_9415.gameOptions.keyInventory.field_30027.method_16988()
          && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-         this.field_9415.method_8614().method_4813(new class_8559(class_2105.field_10551));
+         this.field_9415.method_8614().sendPacket(new class_8559(class_2105.field_10551));
       }
 
       if (class_3347.method_15349() == class_412.field_1747.method_2055()
@@ -265,7 +265,7 @@ public class class_1857 {
                var8 = 3.0F;
             }
 
-            if (!this.field_9415.thePlayer.field_41726) {
+            if (!this.field_9415.thePlayer.onGround) {
                var8 *= 0.5F;
             }
 
@@ -282,7 +282,7 @@ public class class_1857 {
                this.field_9415.thePlayer.method_37140(true);
             }
 
-            var7 *= !this.field_9415.thePlayer.method_37321() ? 1.0F : (!this.field_9415.thePlayer.field_41726 ? 1.3F : 1.5F);
+            var7 *= !this.field_9415.thePlayer.method_37321() ? 1.0F : (!this.field_9415.thePlayer.onGround ? 1.3F : 1.5F);
             class_7194.method_32939(
                this.field_9415.thePlayer.field_29676, this.field_9415.thePlayer.field_29651, this.field_9415.thePlayer.field_29673, var7
             );

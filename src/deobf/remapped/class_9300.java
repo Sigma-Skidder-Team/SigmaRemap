@@ -947,7 +947,7 @@ public class class_9300 {
          if (!class_4869.method_22376(var1)) {
             return !class_4869.method_22378(var1) ? var0 : method_42899(var0);
          } else {
-            return method_42920(var0, var6.theWorld, var2.method_37302(), var2.method_37309() + 1.0, var2.method_37156());
+            return method_42920(var0, var6.theWorld, var2.getPosX(), var2.method_37309() + 1.0, var2.getPosZ());
          }
       } else {
          return method_42924(var0);
@@ -959,7 +959,7 @@ public class class_9300 {
       if (!class_4869.method_22376(var1)) {
          return !class_4869.method_22378(var1) ? var0 : method_42884(var0);
       } else {
-         return method_42885(var0, var6.theWorld, var2.method_37302(), var2.method_37309() + 1.0, var2.method_37156());
+         return method_42885(var0, var6.theWorld, var2.getPosX(), var2.method_37309() + 1.0, var2.getPosZ());
       }
    }
 

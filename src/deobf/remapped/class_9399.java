@@ -45,9 +45,9 @@ public class class_9399 extends class_5834 {
 
    @Override
    public void method_37187() {
-      double var3 = this.method_37302();
+      double var3 = this.getPosX();
       double var5 = this.method_37309();
-      double var7 = this.method_37156();
+      double var7 = this.getPosZ();
       super.method_37187();
       this.method_37256(var3, var5, var7);
    }
@@ -435,7 +435,7 @@ public class class_9399 extends class_5834 {
          super.method_37336(var1);
       } else if (this.world.field_33055) {
          this.world
-            .method_29527(this.method_37302(), this.method_37309(), this.method_37156(), class_463.field_2551, this.method_37197(), 0.3F, 1.0F, false);
+            .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2551, this.method_37197(), 0.3F, 1.0F, false);
          this.field_48050 = this.world.method_29546();
       }
    }
@@ -456,9 +456,9 @@ public class class_9399 extends class_5834 {
          ((class_6331)this.world)
             .method_28957(
                new class_7110(class_3090.field_15325, class_4783.field_23893.method_29260()),
-               this.method_37302(),
+               this.getPosX(),
                this.method_37080(0.6666666666666666),
-               this.method_37156(),
+               this.getPosZ(),
                10,
                (double)(this.method_37086() / 4.0F),
                (double)(this.method_37074() / 4.0F),
@@ -507,7 +507,7 @@ public class class_9399 extends class_5834 {
 
    private void method_43496() {
       this.world
-         .method_29528((class_704)null, this.method_37302(), this.method_37309(), this.method_37156(), class_463.field_2298, this.method_37197(), 1.0F, 1.0F);
+         .method_29528((class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2298, this.method_37197(), 1.0F, 1.0F);
    }
 
    @Override

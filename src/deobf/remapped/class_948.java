@@ -80,9 +80,9 @@ public class class_948 implements class_1243 {
 
    public void method_4160() {
       this.method_4165();
-      this.field_4880.field_41767 = this.field_4880.method_37302();
+      this.field_4880.field_41767 = this.field_4880.getPosX();
       this.field_4880.field_41698 = this.field_4880.method_37309();
-      this.field_4880.field_41725 = this.field_4880.method_37156();
+      this.field_4880.field_41725 = this.field_4880.getPosZ();
       this.field_4880.method_43233();
       this.field_4880.method_37249(this.field_4853, this.field_4881, this.field_4856, this.field_4880.rotationYaw, this.field_4880.rotationPitch);
       this.field_4862++;
@@ -98,15 +98,15 @@ public class class_948 implements class_1243 {
          this.field_4857 = 0;
       }
 
-      this.field_4854 = this.field_4880.method_37240();
+      this.field_4854 = this.field_4880.getLowestRidingEntity();
       if (this.field_4854 != this.field_4880 && this.field_4854.method_37259() == this.field_4880) {
-         this.field_4865 = this.field_4854.method_37302();
+         this.field_4865 = this.field_4854.getPosX();
          this.field_4875 = this.field_4854.method_37309();
-         this.field_4871 = this.field_4854.method_37156();
-         this.field_4873 = this.field_4854.method_37302();
+         this.field_4871 = this.field_4854.getPosZ();
+         this.field_4873 = this.field_4854.getPosX();
          this.field_4882 = this.field_4854.method_37309();
-         this.field_4883 = this.field_4854.method_37156();
-         if (this.field_4851 && this.field_4880.method_37240().method_37259() == this.field_4880) {
+         this.field_4883 = this.field_4854.getPosZ();
+         if (this.field_4851 && this.field_4880.getLowestRidingEntity().method_37259() == this.field_4880) {
             if (++this.field_4878 > 80) {
                field_4870.warn("{} was kicked for floating a vehicle too long!", this.field_4880.method_45509().getString());
                this.method_4161(new TranslationTextComponent("multiplayer.disconnect.flying"));
@@ -152,12 +152,12 @@ public class class_948 implements class_1243 {
    }
 
    public void method_4165() {
-      this.field_4853 = this.field_4880.method_37302();
+      this.field_4853 = this.field_4880.getPosX();
       this.field_4881 = this.field_4880.method_37309();
-      this.field_4856 = this.field_4880.method_37156();
-      this.field_4859 = this.field_4880.method_37302();
+      this.field_4856 = this.field_4880.getPosZ();
+      this.field_4859 = this.field_4880.getPosX();
       this.field_4863 = this.field_4880.method_37309();
-      this.field_4855 = this.field_4880.method_37156();
+      this.field_4855 = this.field_4880.getPosZ();
    }
 
    @Override
@@ -201,7 +201,7 @@ public class class_948 implements class_1243 {
    }
 
    @Override
-   public void method_5546(class_758 var1) {
+   public void method_5546(CInputPacket var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       this.field_4880.method_43249(var1.method_3426(), var1.method_3427(), var1.method_3430(), var1.method_3428());
    }
@@ -216,7 +216,7 @@ public class class_948 implements class_1243 {
          : true;
    }
 
-   private static boolean method_4173(class_4148 var0) {
+   private static boolean method_4173(CMoveVehiclePacket var0) {
       return !Doubles.isFinite(var0.method_19261())
          || !Doubles.isFinite(var0.method_19258())
          || !Doubles.isFinite(var0.method_19262())
@@ -225,15 +225,15 @@ public class class_948 implements class_1243 {
    }
 
    @Override
-   public void method_5539(class_4148 var1) {
+   public void method_5539(CMoveVehiclePacket var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (!method_4173(var1)) {
-         Entity var4 = this.field_4880.method_37240();
+         Entity var4 = this.field_4880.getLowestRidingEntity();
          if (var4 != this.field_4880 && var4.method_37259() == this.field_4880 && var4 == this.field_4854) {
             class_6331 var5 = this.field_4880.method_43235();
-            double var6 = var4.method_37302();
+            double var6 = var4.getPosX();
             double var8 = var4.method_37309();
-            double var10 = var4.method_37156();
+            double var10 = var4.getPosZ();
             double var12 = var1.method_19261();
             double var14 = var1.method_19258();
             double var16 = var1.method_19262();
@@ -262,13 +262,13 @@ public class class_948 implements class_1243 {
             var22 = var14 - this.field_4882 - 1.0E-6;
             var24 = var16 - this.field_4883;
             var4.method_37226(class_7412.field_37842, new class_1343(var20, var22, var24));
-            var20 = var12 - var4.method_37302();
+            var20 = var12 - var4.getPosX();
             var22 = var14 - var4.method_37309();
             if (var22 > -0.5 || var22 < 0.5) {
                var22 = 0.0;
             }
 
-            var24 = var16 - var4.method_37156();
+            var24 = var16 - var4.getPosZ();
             var28 = var20 * var20 + var22 * var22 + var24 * var24;
             boolean var31 = false;
             if (var28 > 0.0625) {
@@ -287,11 +287,11 @@ public class class_948 implements class_1243 {
             }
 
             this.field_4880.method_43235().method_28945().method_10186(this.field_4880);
-            this.field_4880.method_3214(this.field_4880.method_37302() - var6, this.field_4880.method_37309() - var8, this.field_4880.method_37156() - var10);
+            this.field_4880.method_3214(this.field_4880.getPosX() - var6, this.field_4880.method_37309() - var8, this.field_4880.getPosZ() - var10);
             this.field_4851 = var22 >= -0.03125 && !this.field_4877.method_1632() && this.method_4166(var4);
-            this.field_4873 = var4.method_37302();
+            this.field_4873 = var4.getPosX();
             this.field_4882 = var4.method_37309();
-            this.field_4883 = var4.method_37156();
+            this.field_4883 = var4.getPosZ();
          }
       } else {
          this.method_4161(new TranslationTextComponent("multiplayer.disconnect.invalid_vehicle_movement"));
@@ -685,13 +685,13 @@ public class class_948 implements class_1243 {
             if (this.field_4874 == null) {
                this.field_4858 = this.field_4862;
                if (!this.field_4880.isPassenger()) {
-                  double var5 = this.field_4880.method_37302();
+                  double var5 = this.field_4880.getPosX();
                   double var7 = this.field_4880.method_37309();
-                  double var9 = this.field_4880.method_37156();
+                  double var9 = this.field_4880.getPosZ();
                   double var11 = this.field_4880.method_37309();
-                  double var13 = var1.method_21364(this.field_4880.method_37302());
+                  double var13 = var1.method_21364(this.field_4880.getPosX());
                   double var15 = var1.method_21368(this.field_4880.method_37309());
-                  double var17 = var1.method_21367(this.field_4880.method_37156());
+                  double var17 = var1.method_21367(this.field_4880.getPosZ());
                   float var19 = var1.method_21366(this.field_4880.rotationYaw);
                   float var20 = var1.method_21369(this.field_4880.rotationPitch);
                   double var21 = var13 - this.field_4853;
@@ -715,9 +715,9 @@ public class class_948 implements class_1243 {
                         if (var29 - var27 > (double)(var32 * (float)var31) && !this.method_4159()) {
                            field_4870.warn("{} moved too quickly! {},{},{}", this.field_4880.method_45509().getString(), var21, var23, var25);
                            this.method_4170(
-                              this.field_4880.method_37302(),
+                              this.field_4880.getPosX(),
                               this.field_4880.method_37309(),
-                              this.field_4880.method_37156(),
+                              this.field_4880.getPosZ(),
                               this.field_4880.rotationYaw,
                               this.field_4880.rotationPitch
                            );
@@ -735,13 +735,13 @@ public class class_948 implements class_1243 {
                      }
 
                      this.field_4880.method_37226(class_7412.field_37842, new class_1343(var21, var23, var25));
-                     var21 = var13 - this.field_4880.method_37302();
+                     var21 = var13 - this.field_4880.getPosX();
                      var23 = var15 - this.field_4880.method_37309();
                      if (var23 > -0.5 || var23 < 0.5) {
                         var23 = 0.0;
                      }
 
-                     var25 = var17 - this.field_4880.method_37156();
+                     var25 = var17 - this.field_4880.getPosZ();
                      var29 = var21 * var21 + var23 * var23 + var25 * var25;
                      boolean var34 = false;
                      if (!this.field_4880.method_43262()
@@ -772,18 +772,18 @@ public class class_948 implements class_1243 {
                         }
 
                         this.field_4880
-                           .method_3214(this.field_4880.method_37302() - var5, this.field_4880.method_37309() - var7, this.field_4880.method_37156() - var9);
-                        this.field_4859 = this.field_4880.method_37302();
+                           .method_3214(this.field_4880.getPosX() - var5, this.field_4880.method_37309() - var7, this.field_4880.getPosZ() - var9);
+                        this.field_4859 = this.field_4880.getPosX();
                         this.field_4863 = this.field_4880.method_37309();
-                        this.field_4855 = this.field_4880.method_37156();
+                        this.field_4855 = this.field_4880.getPosZ();
                      } else {
                         this.method_4170(var5, var7, var9, var19, var20);
                      }
                   } else if (var29 > 1.0) {
                      this.method_4170(
-                        this.field_4880.method_37302(),
+                        this.field_4880.getPosX(),
                         this.field_4880.method_37309(),
-                        this.field_4880.method_37156(),
+                        this.field_4880.getPosZ(),
                         var1.method_21366(this.field_4880.rotationYaw),
                         var1.method_21369(this.field_4880.rotationPitch)
                      );
@@ -791,9 +791,9 @@ public class class_948 implements class_1243 {
                } else {
                   this.field_4880
                      .method_37249(
-                        this.field_4880.method_37302(),
+                        this.field_4880.getPosX(),
                         this.field_4880.method_37309(),
-                        this.field_4880.method_37156(),
+                        this.field_4880.getPosZ(),
                         var1.method_21366(this.field_4880.rotationYaw),
                         var1.method_21369(this.field_4880.rotationPitch)
                      );
@@ -822,9 +822,9 @@ public class class_948 implements class_1243 {
    }
 
    public void method_4171(double var1, double var3, double var5, float var7, float var8, Set<class_8089> var9) {
-      double var12 = !var9.contains(class_8089.field_41423) ? 0.0 : this.field_4880.method_37302();
+      double var12 = !var9.contains(class_8089.field_41423) ? 0.0 : this.field_4880.getPosX();
       double var14 = !var9.contains(class_8089.field_41427) ? 0.0 : this.field_4880.method_37309();
-      double var16 = !var9.contains(class_8089.field_41424) ? 0.0 : this.field_4880.method_37156();
+      double var16 = !var9.contains(class_8089.field_41424) ? 0.0 : this.field_4880.getPosZ();
       float var18 = !var9.contains(class_8089.field_41428) ? 0.0F : this.field_4880.rotationYaw;
       float var19 = !var9.contains(class_8089.field_41429) ? 0.0F : this.field_4880.rotationPitch;
       this.field_4874 = new class_1343(var1, var3, var5);
@@ -941,7 +941,7 @@ public class class_948 implements class_1243 {
          for (class_6331 var5 : this.field_4877.method_1719()) {
             Entity var6 = var1.method_29233(var5);
             if (var6 != null) {
-               this.field_4880.method_43274(var5, var6.method_37302(), var6.method_37309(), var6.method_37156(), var6.rotationYaw, var6.rotationPitch);
+               this.field_4880.method_43274(var5, var6.getPosX(), var6.method_37309(), var6.getPosZ(), var6.rotationYaw, var6.rotationPitch);
                return;
             }
          }
@@ -1083,16 +1083,16 @@ public class class_948 implements class_1243 {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       this.field_4880.method_43237();
       switch (var1.method_10650()) {
-         case field_20098:
+         case RELEASE_SHIFT_KEY:
             this.field_4880.method_37234(true);
             break;
-         case field_20097:
+         case PRESS_SHIFT_KEY:
             this.field_4880.method_37234(false);
             break;
-         case field_20099:
+         case STOP_SPRINTING:
             this.field_4880.method_37140(true);
             break;
-         case field_20100:
+         case START_SPRINTING:
             this.field_4880.method_37140(false);
             break;
          case field_20102:

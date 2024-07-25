@@ -102,9 +102,9 @@ public class class_9310 extends class_5521 implements class_2354 {
          float var5 = class_9299.method_42818(this.field_29605 * (float) (Math.PI / 180.0));
          float var6 = 0.3F;
          var1.method_37256(
-            this.method_37302() + (double)(0.3F * var5),
+            this.getPosX() + (double)(0.3F * var5),
             this.method_37309() + this.method_37149() + var1.method_37106(),
-            this.method_37156() - (double)(0.3F * var4)
+            this.getPosZ() - (double)(0.3F * var4)
          );
       }
    }
@@ -174,9 +174,9 @@ public class class_9310 extends class_5521 implements class_2354 {
             this.world
                .method_29528(
                   (class_704)null,
-                  this.method_37302(),
+                  this.getPosX(),
                   this.method_37309(),
-                  this.method_37156(),
+                  this.getPosZ(),
                   this.method_19083(),
                   this.method_37197(),
                   1.0F,
@@ -343,18 +343,18 @@ public class class_9310 extends class_5521 implements class_2354 {
 
    private void method_42985(class_5834 var1) {
       class_7548 var4 = new class_7548(this.world, this);
-      double var5 = var1.method_37302() - this.method_37302();
+      double var5 = var1.getPosX() - this.getPosX();
       double var7 = var1.method_37080(0.3333333333333333) - var4.method_37309();
-      double var9 = var1.method_37156() - this.method_37156();
+      double var9 = var1.getPosZ() - this.getPosZ();
       float var11 = class_9299.method_42842(var5 * var5 + var9 * var9) * 0.2F;
       var4.method_26161(var5, var7 + (double)var11, var9, 1.5F, 10.0F);
       if (!this.method_37378()) {
          this.world
             .method_29528(
                (class_704)null,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309(),
-               this.method_37156(),
+               this.getPosZ(),
                class_463.field_2821,
                this.method_37197(),
                1.0F,

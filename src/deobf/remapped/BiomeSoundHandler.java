@@ -28,9 +28,9 @@ public class BiomeSoundHandler implements IAmbientSoundHandler {
    }
 
    @Override
-   public void method_17366() {
+   public void tick() {
       this.field_34967.values().removeIf(class_6165::method_29512);
-      class_6325 var3 = this.field_34960.method_3724(this.field_34963.method_37302(), this.field_34963.method_37309(), this.field_34963.method_37156());
+      class_6325 var3 = this.field_34960.method_3724(this.field_34963.getPosX(), this.field_34963.method_37309(), this.field_34963.getPosZ());
       if (var3 != this.field_34958) {
          this.field_34958 = var3;
          this.field_34962 = var3.method_28878();
@@ -60,9 +60,9 @@ public class BiomeSoundHandler implements IAmbientSoundHandler {
                World var4 = this.field_34963.world;
                int var5 = var1.method_14589() * 2 + 1;
                BlockPos var6 = new BlockPos(
-                  this.field_34963.method_37302() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589(),
+                  this.field_34963.getPosX() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589(),
                   this.field_34963.method_37388() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589(),
-                  this.field_34963.method_37156() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589()
+                  this.field_34963.getPosZ() + (double)this.field_34961.nextInt(var5) - (double)var1.method_14589()
                );
                int var7 = var4.method_25266(class_2957.field_14437, var6);
                if (var7 <= 0) {
@@ -77,16 +77,16 @@ public class BiomeSoundHandler implements IAmbientSoundHandler {
                   double var8 = (double)var6.method_12173() + 0.5;
                   double var10 = (double)var6.method_12165() + 0.5;
                   double var12 = (double)var6.method_12185() + 0.5;
-                  double var14 = var8 - this.field_34963.method_37302();
+                  double var14 = var8 - this.field_34963.getPosX();
                   double var16 = var10 - this.field_34963.method_37388();
-                  double var18 = var12 - this.field_34963.method_37156();
+                  double var18 = var12 - this.field_34963.getPosZ();
                   double var20 = (double)class_9299.method_42842(var14 * var14 + var16 * var16 + var18 * var18);
                   double var22 = var20 + var1.method_14591();
                   class_4949 var24 = class_4949.method_22677(
                      var1.method_14592(),
-                     this.field_34963.method_37302() + var14 / var20 * var22,
+                     this.field_34963.getPosX() + var14 / var20 * var22,
                      this.field_34963.method_37388() + var16 / var20 * var22,
-                     this.field_34963.method_37156() + var18 / var20 * var22
+                     this.field_34963.getPosZ() + var18 / var20 * var22
                   );
                   this.field_34964.play(var24);
                   this.field_34959 = 0.0F;

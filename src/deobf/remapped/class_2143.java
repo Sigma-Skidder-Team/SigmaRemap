@@ -60,8 +60,8 @@ public class class_2143 extends class_6249 {
          int var6 = 1 << var3.field_10678;
          int var7 = var3.field_10689;
          int var8 = var3.field_10677;
-         int var9 = class_9299.method_42847(var2.method_37302() - (double)var7) / var6 + 64;
-         int var10 = class_9299.method_42847(var2.method_37156() - (double)var8) / var6 + 64;
+         int var9 = class_9299.method_42847(var2.getPosX() - (double)var7) / var6 + 64;
+         int var10 = class_9299.method_42847(var2.getPosZ() - (double)var8) / var6 + 64;
          int var11 = 128 / var6;
          if (var1.method_22572().method_40244()) {
             var11 /= 2;

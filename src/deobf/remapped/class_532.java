@@ -23,7 +23,7 @@ public class class_532 extends class_3558 {
       class_5834 var3 = this.field_3238.method_17809();
       double var4 = Math.min(var3.method_37309(), this.field_3238.method_37309());
       double var6 = Math.max(var3.method_37309(), this.field_3238.method_37309()) + 1.0;
-      float var8 = (float)class_9299.method_42821(var3.method_37156() - this.field_3238.method_37156(), var3.method_37302() - this.field_3238.method_37302());
+      float var8 = (float)class_9299.method_42821(var3.getPosZ() - this.field_3238.method_37156(), var3.getPosX() - this.field_3238.method_37302());
       if (!(this.field_3238.method_37275(var3) < 9.0)) {
          for (int var9 = 0; var9 < 16; var9++) {
             double var11 = 1.25 * (double)(var9 + 1);

@@ -13,9 +13,9 @@ public class class_1008 extends class_2833 {
    public void method_12883() {
       if (this.field_13878 == class_1737.field_8946 && !this.field_5182.method_26927().method_5591()) {
          class_1343 var3 = new class_1343(
-            this.field_13884 - this.field_5182.method_37302(),
+            this.field_13884 - this.field_5182.getPosX(),
             this.field_13886 - this.field_5182.method_37309(),
-            this.field_13880 - this.field_5182.method_37156()
+            this.field_13880 - this.field_5182.getPosZ()
          );
          double var4 = var3.method_6217();
          double var6 = var3.field_7336 / var4;
@@ -34,9 +34,9 @@ public class class_1008 extends class_2833 {
          this.field_5182
             .method_37215(this.field_5182.method_37098().method_6214(var15 * var17, var21 * (var19 + var17) * 0.25 + (double)var14 * var8 * 0.1, var15 * var19));
          class_3711 var23 = this.field_5182.method_26865();
-         double var24 = this.field_5182.method_37302() + var6 * 2.0;
+         double var24 = this.field_5182.getPosX() + var6 * 2.0;
          double var26 = this.field_5182.method_37388() + var8 / var4;
-         double var28 = this.field_5182.method_37156() + var10 * 2.0;
+         double var28 = this.field_5182.getPosZ() + var10 * 2.0;
          double var30 = var23.method_17237();
          double var32 = var23.method_17244();
          double var34 = var23.method_17242();

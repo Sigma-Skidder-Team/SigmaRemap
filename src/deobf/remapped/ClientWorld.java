@@ -142,7 +142,7 @@ public class ClientWorld extends World {
       if (!(var1 instanceof class_704) && !this.method_745().method_14824(var1)) {
          this.method_728(var1);
       } else {
-         var1.method_37306(var1.method_37302(), var1.method_37309(), var1.method_37156());
+         var1.method_37306(var1.getPosX(), var1.method_37309(), var1.getPosZ());
          var1.prevRotationYaw = var1.rotationYaw;
          var1.field_41762 = var1.rotationPitch;
          if (var1.field_41727 || var1.method_37221()) {
@@ -168,7 +168,7 @@ public class ClientWorld extends World {
       if (var2.field_41751 || var2.method_37243() != var1) {
          var2.method_37390();
       } else if (var2 instanceof class_704 || this.method_745().method_14824(var2)) {
-         var2.method_37306(var2.method_37302(), var2.method_37309(), var2.method_37156());
+         var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.field_41762 = var2.rotationPitch;
          if (var2.field_41727) {
@@ -188,9 +188,9 @@ public class ClientWorld extends World {
    private void method_728(Entity var1) {
       if (var1.method_37251()) {
          this.method_29599().startSection("chunkCheck");
-         int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
+         int var4 = class_9299.method_42847(var1.getPosX() / 16.0);
          int var5 = class_9299.method_42847(var1.method_37309() / 16.0);
-         int var6 = class_9299.method_42847(var1.method_37156() / 16.0);
+         int var6 = class_9299.method_42847(var1.getPosZ() / 16.0);
          if (!var1.field_41727 || var1.field_41742 != var4 || var1.field_41747 != var5 || var1.field_41714 != var6) {
             if (var1.field_41727 && this.method_22560(var1.field_41742, var1.field_41714)) {
                this.method_29554(var1.field_41742, var1.field_41714).method_12000(var1, var1.field_41747);
@@ -255,7 +255,7 @@ public class ClientWorld extends World {
          this.field_568.put(var1, var2);
          this.method_745()
             .method_24468(
-               class_9299.method_42847(var2.method_37302() / 16.0), class_9299.method_42847(var2.method_37156() / 16.0), class_7335.field_37514, true
+               class_9299.method_42847(var2.getPosX() / 16.0), class_9299.method_42847(var2.getPosZ() / 16.0), class_7335.field_37514, true
             )
             .method_27342(var2);
          if (class_7860.field_40228.method_3596()) {
@@ -298,8 +298,8 @@ public class ClientWorld extends World {
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
          Entity var6 = (Entity)var5.getValue();
-         int var7 = class_9299.method_42847(var6.method_37302() / 16.0);
-         int var8 = class_9299.method_42847(var6.method_37156() / 16.0);
+         int var7 = class_9299.method_42847(var6.getPosX() / 16.0);
+         int var8 = class_9299.method_42847(var6.getPosZ() / 16.0);
          if (var7 == var1.method_27352().field_10328 && var8 == var1.method_27352().field_10327) {
             var1.method_27342(var6);
          }
@@ -520,7 +520,7 @@ public class ClientWorld extends World {
 
    @Override
    public void method_29535(Packet<?> var1) {
-      this.field_576.method_4813(var1);
+      this.field_576.sendPacket(var1);
    }
 
    @Override

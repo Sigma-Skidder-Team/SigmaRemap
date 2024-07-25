@@ -42,9 +42,9 @@ public class class_5123 {
                var1.world
                   .method_29528(
                      (class_704)null,
-                     var1.method_37302(),
+                     var1.getPosX(),
                      var1.method_37309(),
-                     var1.method_37156(),
+                     var1.getPosZ(),
                      class_463.field_2732,
                      class_562.field_3335,
                      0.2F,

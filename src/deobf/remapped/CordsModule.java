@@ -21,7 +21,7 @@ public class CordsModule extends Module {
             this.field_9984--;
          }
 
-         boolean var4 = class_8865.method_40772() || client.thePlayer.field_29654 || client.thePlayer.method_37252();
+         boolean var4 = class_8865.method_40772() || client.thePlayer.field_29654 || client.thePlayer.isSneaking();
          if (!var4) {
             if (this.field_9983.method_11123() == 1.0F && this.field_9983.method_11128() == class_4043.field_19620) {
                this.field_9983.method_11119(class_4043.field_19618);

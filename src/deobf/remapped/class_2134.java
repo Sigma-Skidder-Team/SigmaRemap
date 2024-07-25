@@ -157,8 +157,8 @@ public class class_2134 extends class_7186 {
                   class_8086.field_41393,
                   var6.field_25824.world,
                   var7,
-                  var6.field_25824.method_37302(),
-                  var6.field_25824.method_37156(),
+                  var6.field_25824.getPosX(),
+                  var6.field_25824.getPosZ(),
                   (double)var6.field_25824.rotationYaw,
                   (ITextComponent)null
                );

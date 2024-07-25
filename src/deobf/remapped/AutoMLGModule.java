@@ -32,7 +32,7 @@ public class AutoMLGModule extends PremiumModule {
    @EventListen
    private void method_16782(class_7767 var1) {
       if (this.method_42015()) {
-         if (field_17597 > 0 && !client.thePlayer.field_41726) {
+         if (field_17597 > 0 && !client.thePlayer.onGround) {
             class_8865.method_40777(var1, 0.0);
          }
       }
@@ -58,8 +58,8 @@ public class AutoMLGModule extends PremiumModule {
                client.playerController.method_42129();
             }
 
-            client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
-            client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+            client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
+            client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
             field_17597 = -1;
             this.field_17596 = null;
             client.thePlayer.inventory.field_36404 = this.field_17600;
@@ -68,7 +68,7 @@ public class AutoMLGModule extends PremiumModule {
          int var7 = this.method_16778();
          if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()
             && var7 != -1
-            && !client.thePlayer.field_41726
+            && !client.thePlayer.onGround
             && client.thePlayer.field_41706 > 3.0F) {
             BlockPos var5 = this.method_16780();
             if (var5 != null) {
@@ -91,8 +91,8 @@ public class AutoMLGModule extends PremiumModule {
                }
 
                if (this.field_17596 != null) {
-                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
-                  client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
                }
             }
          }
@@ -115,11 +115,11 @@ public class AutoMLGModule extends PremiumModule {
                ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
                if (var6.method_27960() == class_4897.field_24999) {
                   if (class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-                     client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                     client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
                   }
 
                   class_2740.method_12312(var5, 6);
-                  client.method_8614().method_4813(new class_1194(-1));
+                  client.method_8614().sendPacket(new class_1194(-1));
                   return 6;
                }
             }

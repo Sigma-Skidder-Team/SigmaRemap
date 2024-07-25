@@ -39,7 +39,7 @@ public class HypixelSpeed extends Module {
    @EventListen
    @class_7664
    public void method_11348(class_1393 var1) {
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42003()
             || KillauraModule.field_12558 == null && KillauraModule.field_12556 == null
             || this.field_12321 != class_8988.field_46026) {
@@ -47,7 +47,7 @@ public class HypixelSpeed extends Module {
          } else if (var1.method_6449()) {
             if (this.field_12319 > 3.0) {
                this.field_12319 = 0.0;
-               client.method_8614().method_4813(new class_4609(true));
+               client.method_8614().sendPacket(new class_4609(true));
             }
 
             var1.method_6451(false);
@@ -60,14 +60,14 @@ public class HypixelSpeed extends Module {
    @class_315
    public void method_11349(class_7767 var1) {
       if (!this.method_42015()) {
-         if (client.thePlayer.field_41726
+         if (client.thePlayer.onGround
             || class_314.method_1413(client.thePlayer, 0.001F)
             || client.thePlayer.method_37309() < this.field_12324) {
             this.field_12324 = -1.0;
          }
       } else {
          client.thePlayer.field_29600 = 0;
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             this.field_12324 = client.thePlayer.method_37309();
             if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TimerModule.class).method_42015()) {
                client.theTimer.timerSpeed = 1.0F;
@@ -125,7 +125,7 @@ public class HypixelSpeed extends Module {
 
                   if (this.field_12319 > 3.0) {
                      this.field_12319 = 0.0;
-                     client.method_8614().method_4813(new class_4609(true));
+                     client.method_8614().sendPacket(new class_4609(true));
                   }
                   break;
                case field_46026:
@@ -189,7 +189,7 @@ public class HypixelSpeed extends Module {
    @EventListen
    @class_3932
    public void method_11345(class_1711 var1) {
-      if (!client.thePlayer.field_41726
+      if (!client.thePlayer.onGround
          && !class_314.method_1413(client.thePlayer, 1.0E-4F)
          && class_314.method_1413(client.thePlayer, (float)(class_8865.method_40786() + 1.0E-5 + 0.0625))
          && StepModule.field_20352 >= 2
@@ -210,7 +210,7 @@ public class HypixelSpeed extends Module {
    public boolean method_42003() {
       return this.method_42015()
          && (
-            !client.thePlayer.field_41726
+            !client.thePlayer.onGround
                || client.thePlayer.field_29654
                || this.getBooleanValueByName("AutoJump")
                || this.field_12321 == class_8988.field_46026

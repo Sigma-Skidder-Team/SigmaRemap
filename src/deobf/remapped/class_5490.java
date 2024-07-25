@@ -102,7 +102,7 @@ public class class_5490 extends class_4641 {
 
    @Override
    public void method_37318(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
-      BlockPos var13 = this.field_22661.method_6103(var1 - this.method_37302(), var3 - this.method_37309(), var5 - this.method_37156());
+      BlockPos var13 = this.field_22661.method_6103(var1 - this.getPosX(), var3 - this.method_37309(), var5 - this.getPosZ());
       this.method_37256((double)var13.method_12173(), (double)var13.method_12165(), (double)var13.method_12185());
    }
 

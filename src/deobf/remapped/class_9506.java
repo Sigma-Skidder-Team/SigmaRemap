@@ -11,7 +11,7 @@ public abstract class class_9506 extends class_5783 {
    }
 
    public class_9506(class_6629<? extends class_9506> var1, class_5834 var2, World var3) {
-      this(var1, var2.method_37302(), var2.method_37388() - 0.1F, var2.method_37156(), var3);
+      this(var1, var2.getPosX(), var2.method_37388() - 0.1F, var2.getPosZ(), var3);
       this.method_26159(var2);
    }
 
@@ -55,9 +55,9 @@ public abstract class class_9506 extends class_5783 {
 
       this.method_37097();
       class_1343 var17 = this.method_37098();
-      double var6 = this.method_37302() + var17.field_7336;
+      double var6 = this.getPosX() + var17.field_7336;
       double var8 = this.method_37309() + var17.field_7333;
-      double var10 = this.method_37156() + var17.field_7334;
+      double var10 = this.getPosZ() + var17.field_7334;
       this.method_26167();
       float var12;
       if (!this.method_37285()) {

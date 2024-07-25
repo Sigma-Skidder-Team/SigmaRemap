@@ -297,9 +297,9 @@ public class DebugOverlayGui extends AbstractGui {
             String.format(
                Locale.ROOT,
                "XYZ: %.3f / %.5f / %.3f",
-               this.field_18930.getRenderViewEntity().method_37302(),
+               this.field_18930.getRenderViewEntity().getPosX(),
                this.field_18930.getRenderViewEntity().method_37309(),
-               this.field_18930.getRenderViewEntity().method_37156()
+               this.field_18930.getRenderViewEntity().getPosZ()
             )
          );
          var16.add(String.format("Block: %d %d %d", var8.method_12173(), var8.method_12165(), var8.method_12185()));

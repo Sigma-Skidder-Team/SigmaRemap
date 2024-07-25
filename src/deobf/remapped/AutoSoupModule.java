@@ -75,7 +75,7 @@ public class AutoSoupModule extends Module {
       if (this.getStringValueByName("Refill mode").equals("FakeInv")
          && !(client.field_9623 instanceof class_3431)
          && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-         client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+         client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
          this.field_29810 = true;
       }
 
@@ -141,7 +141,7 @@ public class AutoSoupModule extends Module {
       if (!this.getStringValueByName("Soup mode").equals("Instant")) {
          if (this.field_29806 >= 0) {
             if (var5) {
-               client.method_8614().method_4813(new class_1586(class_7500.field_38266, BlockPos.field_7306, Direction.field_802));
+               client.method_8614().sendPacket(new class_1586(class_7500.field_38266, BlockPos.field_7306, Direction.field_802));
             }
 
             client.thePlayer.inventory.field_36404 = this.field_29806;
@@ -156,22 +156,22 @@ public class AutoSoupModule extends Module {
             this.field_29806 = client.thePlayer.inventory.field_36404;
             client.thePlayer.inventory.field_36404 = var3;
             client.playerController.method_42129();
-            client.method_8614().method_4813(new class_1022(Hand.OFF_HAND));
-            client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+            client.method_8614().sendPacket(new class_1022(Hand.OFF_HAND));
+            client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
          }
       } else {
          if (var3 < 0 || this.field_29805 <= 3 || client.thePlayer.method_26551() > this.getFloatValueByName("Health")) {
             return;
          }
 
-         client.method_8614().method_4813(new class_7371(var3));
-         client.method_8614().method_4813(new class_1022(Hand.OFF_HAND));
-         client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+         client.method_8614().sendPacket(new class_7371(var3));
+         client.method_8614().sendPacket(new class_1022(Hand.OFF_HAND));
+         client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
          if (var5) {
-            client.method_8614().method_4813(new class_1586(class_7500.field_38266, BlockPos.field_7306, Direction.field_802));
+            client.method_8614().sendPacket(new class_1586(class_7500.field_38266, BlockPos.field_7306, Direction.field_802));
          }
 
-         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+         client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
          this.field_29805 = 0;
       }
    }

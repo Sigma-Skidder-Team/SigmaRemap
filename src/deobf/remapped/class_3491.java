@@ -15,9 +15,9 @@ public class class_3491 implements Packet<class_392> {
 
    public class_3491(class_5614 var1) {
       this.field_17139 = var1.method_37145();
-      this.field_17140 = var1.method_37302();
+      this.field_17140 = var1.getPosX();
       this.field_17144 = var1.method_37309();
-      this.field_17141 = var1.method_37156();
+      this.field_17141 = var1.getPosZ();
       this.field_17143 = var1.method_25471();
    }
 

@@ -51,20 +51,20 @@ public class class_6296 extends class_7067<class_3942> {
             var35 = var35.method_6192(-class_9299.method_42795(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
             var35 = var35.method_6192(var17 * 0.5F);
             var35 = var35.method_6212(-var17 * 0.7F);
-            var27 = class_9299.method_42794((double)var3, var9.field_41767, var9.method_37302()) + var35.field_7336;
+            var27 = class_9299.method_42794((double)var3, var9.field_41767, var9.getPosX()) + var35.field_7336;
             var29 = class_9299.method_42794((double)var3, var9.field_41698, var9.method_37309()) + var35.field_7333;
-            var31 = class_9299.method_42794((double)var3, var9.field_41725, var9.method_37156()) + var35.field_7334;
+            var31 = class_9299.method_42794((double)var3, var9.field_41725, var9.getPosZ()) + var35.field_7334;
             var36 = var9.method_37277();
          } else {
-            var27 = class_9299.method_42794((double)var3, var9.field_41767, var9.method_37302()) - var21 * var23 - var19 * 0.8;
+            var27 = class_9299.method_42794((double)var3, var9.field_41767, var9.getPosX()) - var21 * var23 - var19 * 0.8;
             var29 = var9.field_41698 + (double)var9.method_37277() + (var9.method_37309() - var9.field_41698) * (double)var3 - 0.45;
-            var31 = class_9299.method_42794((double)var3, var9.field_41725, var9.method_37156()) - var19 * var23 + var21 * 0.8;
+            var31 = class_9299.method_42794((double)var3, var9.field_41725, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
             var36 = !var9.method_37382() ? 0.0F : -0.1875F;
          }
 
-         double var49 = class_9299.method_42794((double)var3, var1.field_41767, var1.method_37302());
+         double var49 = class_9299.method_42794((double)var3, var1.field_41767, var1.getPosX());
          double var37 = class_9299.method_42794((double)var3, var1.field_41698, var1.method_37309()) + 0.25;
-         double var39 = class_9299.method_42794((double)var3, var1.field_41725, var1.method_37156());
+         double var39 = class_9299.method_42794((double)var3, var1.field_41725, var1.getPosZ());
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);

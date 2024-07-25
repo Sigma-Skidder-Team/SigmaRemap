@@ -84,9 +84,9 @@ public class class_1511 extends Entity {
          this.field_8001--;
          if (this.field_8001 == 14) {
             for (int var17 = 0; var17 < 12; var17++) {
-               double var4 = this.method_37302() + (this.field_41717.nextDouble() * 2.0 - 1.0) * (double)this.method_37086() * 0.5;
+               double var4 = this.getPosX() + (this.field_41717.nextDouble() * 2.0 - 1.0) * (double)this.method_37086() * 0.5;
                double var6 = this.method_37309() + 0.05 + this.field_41717.nextDouble();
-               double var8 = this.method_37156() + (this.field_41717.nextDouble() * 2.0 - 1.0) * (double)this.method_37086() * 0.5;
+               double var8 = this.getPosZ() + (this.field_41717.nextDouble() * 2.0 - 1.0) * (double)this.method_37086() * 0.5;
                double var10 = (this.field_41717.nextDouble() * 2.0 - 1.0) * 0.3;
                double var12 = 0.3 + this.field_41717.nextDouble() * 0.3;
                double var14 = (this.field_41717.nextDouble() * 2.0 - 1.0) * 0.3;
@@ -119,9 +119,9 @@ public class class_1511 extends Entity {
          if (!this.method_37378()) {
             this.world
                .method_29527(
-                  this.method_37302(),
+                  this.getPosX(),
                   this.method_37309(),
-                  this.method_37156(),
+                  this.getPosZ(),
                   class_463.field_2633,
                   this.method_37197(),
                   1.0F,

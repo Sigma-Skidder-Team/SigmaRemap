@@ -117,7 +117,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    @Override
    public void method_26606() {
       super.method_26606();
-      if (!this.world.field_33055 && this.field_48106 && !this.field_48103 && !this.method_21379() && this.field_41726) {
+      if (!this.world.field_33055 && this.field_48106 && !this.field_48103 && !this.method_21379() && this.onGround) {
          this.field_48103 = true;
          this.field_48110 = 0.0F;
          this.field_48113 = 0.0F;
@@ -166,9 +166,9 @@ public class class_9408 extends class_8990 implements class_6250 {
                      this.world
                         .method_43361(
                            class_3090.field_15346,
-                           this.method_37302() + (double)var7,
+                           this.getPosX() + (double)var7,
                            (double)(var3 + 0.8F),
-                           this.method_37156() + (double)var8,
+                           this.getPosZ() + (double)var8,
                            var5.field_7336,
                            var5.field_7333,
                            var5.field_7334

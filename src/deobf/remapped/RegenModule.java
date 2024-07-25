@@ -14,9 +14,9 @@ public class RegenModule extends Module {
             && client.thePlayer.method_3161().method_42238() > 17
             && client.thePlayer.method_26551() < 20.0F
             && client.thePlayer.method_26551() != 0.0F
-            && (client.thePlayer.field_41726 || !this.getBooleanValueByName("Only OnGround"))) {
+            && (client.thePlayer.onGround || !this.getBooleanValueByName("Only OnGround"))) {
             for (int var4 = 0; (float)var4 < this.getFloatValueByName("Packet amount"); var4++) {
-               client.method_8614().method_4813(new class_4609(client.thePlayer.field_41726));
+               client.method_8614().sendPacket(new class_4609(client.thePlayer.onGround));
             }
          }
       }

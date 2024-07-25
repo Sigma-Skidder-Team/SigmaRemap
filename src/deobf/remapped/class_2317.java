@@ -5,17 +5,17 @@ import java.io.IOException;
 public class class_2317 implements Packet<class_1243> {
    private static String[] field_11606;
    private int field_11607;
-   private class_4127 field_11608;
+   private Action field_11608;
    private int field_11609;
 
    public class_2317() {
    }
 
-   public class_2317(Entity var1, class_4127 var2) {
+   public class_2317(Entity var1, Action var2) {
       this(var1, var2, 0);
    }
 
-   public class_2317(Entity var1, class_4127 var2, int var3) {
+   public class_2317(Entity var1, Action var2, int var3) {
       this.field_11607 = var1.method_37145();
       this.field_11608 = var2;
       this.field_11609 = var3;
@@ -24,7 +24,7 @@ public class class_2317 implements Packet<class_1243> {
    @Override
    public void method_28775(class_8248 var1) throws IOException {
       this.field_11607 = var1.method_37778();
-      this.field_11608 = var1.<class_4127>method_37787(class_4127.class);
+      this.field_11608 = var1.<Action>method_37787(Action.class);
       this.field_11609 = var1.method_37778();
    }
 
@@ -39,7 +39,7 @@ public class class_2317 implements Packet<class_1243> {
       var1.method_5575(this);
    }
 
-   public class_4127 method_10650() {
+   public Action method_10650() {
       return this.field_11608;
    }
 

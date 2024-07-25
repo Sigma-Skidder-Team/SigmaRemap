@@ -138,9 +138,9 @@ public class BoatEntity extends Entity {
       this.world
          .method_43361(
             class_3090.field_15346,
-            this.method_37302() + (double)this.field_41717.nextFloat(),
+            this.getPosX() + (double)this.field_41717.nextFloat(),
             this.method_37309() + 0.7,
-            this.method_37156() + (double)this.field_41717.nextFloat(),
+            this.getPosZ() + (double)this.field_41717.nextFloat(),
             0.0,
             0.0,
             0.0
@@ -148,9 +148,9 @@ public class BoatEntity extends Entity {
       if (this.field_41717.nextInt(20) == 0) {
          this.world
             .method_29527(
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309(),
-               this.method_37156(),
+               this.getPosZ(),
                this.method_37133(),
                this.method_37197(),
                1.0F,
@@ -242,7 +242,7 @@ public class BoatEntity extends Entity {
 
       super.method_37123();
       this.method_42088();
-      if (!this.method_37069()) {
+      if (!this.canPassengerSteer()) {
          this.method_37215(class_1343.field_7335);
       } else {
          if (this.method_37114().isEmpty() || !(this.method_37114().get(0) instanceof class_704)) {
@@ -275,9 +275,9 @@ public class BoatEntity extends Entity {
                   this.world
                      .method_29528(
                         (class_704)null,
-                        this.method_37302() + var6,
+                        this.getPosX() + var6,
                         this.method_37309(),
-                        this.method_37156() + var8,
+                        this.getPosZ() + var8,
                         var4,
                         this.method_37197(),
                         1.0F,
@@ -369,15 +369,15 @@ public class BoatEntity extends Entity {
    }
 
    private void method_42088() {
-      if (this.method_37069()) {
+      if (this.canPassengerSteer()) {
          this.field_46790 = 0;
-         this.method_37223(this.method_37302(), this.method_37309(), this.method_37156());
+         this.method_37223(this.getPosX(), this.method_37309(), this.getPosZ());
       }
 
       if (this.field_46790 > 0) {
-         double var3 = this.method_37302() + (this.field_46806 - this.method_37302()) / (double)this.field_46790;
+         double var3 = this.getPosX() + (this.field_46806 - this.getPosX()) / (double)this.field_46790;
          double var5 = this.method_37309() + (this.field_46817 - this.method_37309()) / (double)this.field_46790;
-         double var7 = this.method_37156() + (this.field_46800 - this.method_37156()) / (double)this.field_46790;
+         double var7 = this.getPosZ() + (this.field_46800 - this.getPosZ()) / (double)this.field_46790;
          double var9 = class_9299.method_42809(this.field_46795 - (double)this.rotationYaw);
          this.rotationYaw = (float)((double)this.rotationYaw + var9 / (double)this.field_46790);
          this.rotationPitch = (float)((double)this.rotationPitch + (this.field_46816 - (double)this.rotationPitch) / (double)this.field_46790);
@@ -560,7 +560,7 @@ public class BoatEntity extends Entity {
       this.field_46801 = 0.05F;
       if (this.field_46808 == class_1038.field_5730 && this.field_46802 != class_1038.field_5730 && this.field_46802 != class_1038.field_5729) {
          this.field_46791 = this.method_37080(1.0);
-         this.method_37256(this.method_37302(), (double)(this.method_42103() - this.method_37074()) + 0.101, this.method_37156());
+         this.method_37256(this.getPosX(), (double)(this.method_42103() - this.method_37074()) + 0.101, this.getPosZ());
          this.method_37215(this.method_37098().method_6210(1.0, 0.0, 1.0));
          this.field_46788 = 0.0;
          this.field_46802 = class_1038.field_5732;
@@ -656,7 +656,7 @@ public class BoatEntity extends Entity {
          }
 
          class_1343 var8 = new class_1343((double)var4, 0.0, 0.0).method_6192(-this.rotationYaw * (float) (Math.PI / 180.0) - (float) (Math.PI / 2));
-         var1.method_37256(this.method_37302() + var8.field_7336, this.method_37309() + (double)var5, this.method_37156() + var8.field_7334);
+         var1.method_37256(this.getPosX() + var8.field_7336, this.method_37309() + (double)var5, this.getPosZ() + var8.field_7334);
          var1.rotationYaw = var1.rotationYaw + this.field_46789;
          var1.setRotationYawHead(var1.method_37267() + this.field_46789);
          this.method_42105(var1);
@@ -671,8 +671,8 @@ public class BoatEntity extends Entity {
    @Override
    public class_1343 method_37282(class_5834 var1) {
       class_1343 var4 = method_37373((double)(this.method_37086() * class_9299.field_47448), (double)var1.method_37086(), this.rotationYaw);
-      double var5 = this.method_37302() + var4.field_7336;
-      double var7 = this.method_37156() + var4.field_7334;
+      double var5 = this.getPosX() + var4.field_7336;
+      double var7 = this.getPosZ() + var4.field_7334;
       BlockPos var9 = new BlockPos(var5, this.method_37241().field_19939, var7);
       BlockPos var10 = var9.method_6100();
       if (!this.world.method_22565(var10)) {

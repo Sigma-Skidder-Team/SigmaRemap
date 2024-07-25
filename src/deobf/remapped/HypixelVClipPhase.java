@@ -15,11 +15,11 @@ public class HypixelVClipPhase extends Module {
             class_314.method_1408(-2.0);
          }
 
-         if (client.thePlayer.method_37309() > (double)this.field_7607 && client.thePlayer.field_29654 && !client.thePlayer.method_37252()) {
+         if (client.thePlayer.method_37309() > (double)this.field_7607 && client.thePlayer.field_29654 && !client.thePlayer.isSneaking()) {
             this.field_7607++;
          }
 
-         if (client.thePlayer.method_37309() % 1.0 == 0.0 && client.thePlayer.method_37252()) {
+         if (client.thePlayer.method_37309() % 1.0 == 0.0 && client.thePlayer.isSneaking()) {
             this.field_7607--;
          }
       }

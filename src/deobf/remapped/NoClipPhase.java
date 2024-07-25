@@ -26,15 +26,15 @@ public class NoClipPhase extends Module {
       if (this.method_42015()) {
          client.thePlayer.field_29600 = 3;
          if (client.thePlayer.field_41697 % 2 == 0) {
-            if (client.thePlayer.field_41726) {
+            if (client.thePlayer.onGround) {
                if (!client.thePlayer.field_29654) {
-                  if (client.thePlayer.method_37252()) {
+                  if (client.thePlayer.isSneaking()) {
                      client.thePlayer
-                        .method_37256(client.thePlayer.method_37302(), client.thePlayer.method_37309() - 1.0, client.thePlayer.method_37156());
+                        .method_37256(client.thePlayer.getPosX(), client.thePlayer.method_37309() - 1.0, client.thePlayer.getPosZ());
                   }
                } else {
                   client.thePlayer
-                     .method_37256(client.thePlayer.method_37302(), client.thePlayer.method_37309() + 1.0, client.thePlayer.method_37156());
+                     .method_37256(client.thePlayer.getPosX(), client.thePlayer.method_37309() + 1.0, client.thePlayer.getPosZ());
                }
             }
          }

@@ -262,7 +262,7 @@ public class class_2206 extends class_3232 {
 
    @Override
    public boolean method_14824(Entity var1) {
-      long var4 = class_2034.method_9540(class_9299.method_42847(var1.method_37302()) >> 4, class_9299.method_42847(var1.method_37156()) >> 4);
+      long var4 = class_2034.method_9540(class_9299.method_42847(var1.getPosX()) >> 4, class_9299.method_42847(var1.getPosZ()) >> 4);
       return this.method_10208(var4, class_5344::method_24353);
    }
 

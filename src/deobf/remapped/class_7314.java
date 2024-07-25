@@ -13,7 +13,7 @@ public class class_7314 extends class_9733 {
    }
 
    private class_7314(EntityRenderDispatcher var1, class_3017 var2, ClientWorld var3, Entity var4, Entity var5, class_1343 var6) {
-      super(var3, var4.method_37302(), var4.method_37309(), var4.method_37156(), var6.field_7336, var6.field_7333, var6.field_7334);
+      super(var3, var4.getPosX(), var4.method_37309(), var4.getPosZ(), var6.field_7336, var6.field_7333, var6.field_7334);
       this.field_37396 = var2;
       this.field_37398 = this.method_33357(var4);
       this.field_37395 = var5;
@@ -39,12 +39,12 @@ public class class_7314 extends class_9733 {
 
       float var7 = ((float)this.field_37399 + var3) / 3.0F;
       var7 *= var7;
-      double var8 = class_9299.method_42794((double)var3, this.field_37395.field_41754, this.field_37395.method_37302());
+      double var8 = class_9299.method_42794((double)var3, this.field_37395.field_41754, this.field_37395.getPosX());
       double var10 = class_9299.method_42794((double)var3, this.field_37395.field_41713, this.field_37395.method_37309()) + 0.5;
-      double var12 = class_9299.method_42794((double)var3, this.field_37395.field_41724, this.field_37395.method_37156());
-      double var14 = class_9299.method_42794((double)var7, this.field_37398.method_37302(), var8);
+      double var12 = class_9299.method_42794((double)var3, this.field_37395.field_41724, this.field_37395.getPosZ());
+      double var14 = class_9299.method_42794((double)var7, this.field_37398.getPosX(), var8);
       double var16 = class_9299.method_42794((double)var7, this.field_37398.method_37309(), var10);
-      double var18 = class_9299.method_42794((double)var7, this.field_37398.method_37156(), var12);
+      double var18 = class_9299.method_42794((double)var7, this.field_37398.getPosZ(), var12);
       class_3758 var20 = this.field_37396.method_13796();
       class_1343 var21 = var2.method_41627();
       this.field_37400

@@ -59,7 +59,7 @@ public class class_5479<T extends class_1173 & class_2354> extends class_3599 {
    public void method_16794() {
       class_5834 var3 = this.field_27913.method_17809();
       if (var3 != null) {
-         double var4 = this.field_27913.method_37273(var3.method_37302(), var3.method_37309(), var3.method_37156());
+         double var4 = this.field_27913.method_37273(var3.getPosX(), var3.method_37309(), var3.getPosZ());
          boolean var6 = this.field_27913.method_26928().method_36736(var3);
          boolean var7 = this.field_27907 > 0;
          if (var6 != var7) {

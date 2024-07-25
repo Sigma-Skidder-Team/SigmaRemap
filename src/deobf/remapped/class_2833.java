@@ -53,8 +53,8 @@ public class class_2833 {
             }
          } else {
             this.field_13878 = class_1737.field_8945;
-            double var12 = this.field_13884 - this.field_13879.method_37302();
-            double var14 = this.field_13880 - this.field_13879.method_37156();
+            double var12 = this.field_13884 - this.field_13879.getPosX();
+            double var14 = this.field_13880 - this.field_13879.getPosZ();
             double var16 = this.field_13886 - this.field_13879.method_37309();
             double var18 = var12 * var12 + var16 * var16 + var14 * var14;
             if (var18 < 2.5000003E-7F) {
@@ -114,9 +114,9 @@ public class class_2833 {
          if (var6 != null
             && var6.method_7010(
                   this.field_13879.world,
-                  class_9299.method_42847(this.field_13879.method_37302() + (double)var1),
+                  class_9299.method_42847(this.field_13879.getPosX() + (double)var1),
                   class_9299.method_42847(this.field_13879.method_37309()),
-                  class_9299.method_42847(this.field_13879.method_37156() + (double)var2)
+                  class_9299.method_42847(this.field_13879.getPosZ() + (double)var2)
                )
                != class_1108.field_6343) {
             return false;

@@ -28,7 +28,7 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
          class_1343 var4 = new class_1343(
-            this.field_21493.thePlayer.method_37302(), this.field_21493.thePlayer.method_37388(), this.field_21493.thePlayer.method_37156()
+            this.field_21493.thePlayer.getPosX(), this.field_21493.thePlayer.method_37388(), this.field_21493.thePlayer.getPosZ()
          );
          class_1343 var5 = new class_1343(0.0, 0.0, -1.0)
             .method_6212(-this.field_21493.thePlayer.rotationPitch * (float) (Math.PI / 180.0))

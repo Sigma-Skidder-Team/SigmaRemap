@@ -38,7 +38,7 @@ public class class_2098 {
    }
 
    public double method_9809(Entity var1) {
-      return this.method_9808(var1.method_37302(), var1.method_37156());
+      return this.method_9808(var1.getPosX(), var1.getPosZ());
    }
 
    public class_4190 method_9820() {

@@ -23,7 +23,7 @@ public class class_3231 extends Screen implements class_2092 {
    @Override
    public void method_1163() {
       this.field_16081 = true;
-      this.field_943.method_8614().method_4813(new class_8559(class_2105.field_10550));
+      this.field_943.method_8614().sendPacket(new class_8559(class_2105.field_10550));
    }
 
    public void method_14807() {

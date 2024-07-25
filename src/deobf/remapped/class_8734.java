@@ -35,8 +35,8 @@ public class class_8734 {
          if (var6 != null) {
             this.field_44744
                .method_8614()
-               .method_4813(new class_3398(var6.method_25524(), Hand.MAIN_HAND, var6.method_33993(), this.field_44744.thePlayer.method_37252()));
-            this.field_44744.method_8614().method_4813(new class_3398(var6.method_25524(), Hand.MAIN_HAND, this.field_44744.thePlayer.method_37252()));
+               .sendPacket(new class_3398(var6.method_25524(), Hand.MAIN_HAND, var6.method_33993(), this.field_44744.thePlayer.isSneaking()));
+            this.field_44744.method_8614().sendPacket(new class_3398(var6.method_25524(), Hand.MAIN_HAND, this.field_44744.thePlayer.isSneaking()));
          }
       }
 

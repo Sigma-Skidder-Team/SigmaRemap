@@ -154,12 +154,12 @@ public class BlockFlyModule extends SecondModule {
 
                if (var5 >= 0) {
                   if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
-                     client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                     client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
                   }
 
                   this.method_17221(var5, var4 - 36);
                   if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
-                     client.method_8614().method_4813(new class_1194(-1));
+                     client.method_8614().sendPacket(new class_1194(-1));
                   }
                }
             }
@@ -192,12 +192,12 @@ public class BlockFlyModule extends SecondModule {
                if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv") && class_3347.method_15349() <= class_412.field_1752.method_2055()
                   )
                 {
-                  client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                  client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
                }
 
                this.method_17221(var8, var4 - 36);
                if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
-                  client.method_8614().method_4813(new class_1194(-1));
+                  client.method_8614().sendPacket(new class_1194(-1));
                }
             }
          }
@@ -312,7 +312,7 @@ public class BlockFlyModule extends SecondModule {
                      && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0, 0.0)).count()
                         == 0L) {
                      client.thePlayer
-                        .method_37256(client.thePlayer.method_37302(), client.thePlayer.method_37309() + 1.0, client.thePlayer.method_37156());
+                        .method_37256(client.thePlayer.getPosX(), client.thePlayer.method_37309() + 1.0, client.thePlayer.getPosZ());
                      var1.method_35235(0.0);
                      class_8865.method_40777(var1, 0.0);
                      client.theTimer.timerSpeed = 0.8038576F;

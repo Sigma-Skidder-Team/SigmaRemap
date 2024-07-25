@@ -196,11 +196,11 @@ public abstract class class_5467 extends class_1899 {
          this.method_24876();
          var2.method_24876();
          var5.method_26910(true);
-         var5.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), 0.0F, 0.0F);
+         var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), 0.0F, 0.0F);
          var1.method_7065(var5);
          var1.method_29587(this, (byte)18);
          if (var1.method_29537().method_1285(class_291.field_1033)) {
-            var1.method_7509(new class_5614(var1, this.method_37302(), this.method_37309(), this.method_37156(), this.method_26594().nextInt(7) + 1));
+            var1.method_7509(new class_5614(var1, this.getPosX(), this.method_37309(), this.getPosZ(), this.method_26594().nextInt(7) + 1));
          }
       }
    }

@@ -175,7 +175,7 @@ public class class_337 extends class_1173 {
                class_1343 var3 = this.method_37098();
                if (var3.field_7333 > 0.0 && this.field_1251 && !this.method_37378()) {
                   this.world
-                     .method_29527(this.method_37302(), this.method_37309(), this.method_37156(), this.method_1554(), this.method_37197(), 1.0F, 1.0F, false);
+                     .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), this.method_1554(), this.method_37197(), 1.0F, 1.0F, false);
                }
 
                this.field_1251 = var3.field_7333 < 0.0 && this.world.method_29518(this.method_37075().method_6100(), this);
@@ -220,9 +220,9 @@ public class class_337 extends class_1173 {
                   this.method_26865().method_17240(var18, 90.0F, 90.0F);
                   this.method_26865().method_17234();
                   double var5 = (double)this.method_1546(0.0F);
-                  double var7 = var18.method_37302() - this.method_37302();
+                  double var7 = var18.getPosX() - this.getPosX();
                   double var9 = var18.method_37080(0.5) - this.method_37388();
-                  double var11 = var18.method_37156() - this.method_37156();
+                  double var11 = var18.getPosZ() - this.getPosZ();
                   double var13 = Math.sqrt(var7 * var7 + var9 * var9 + var11 * var11);
                   var7 /= var13;
                   var9 /= var13;
@@ -234,9 +234,9 @@ public class class_337 extends class_1173 {
                      this.world
                         .method_43361(
                            class_3090.field_15340,
-                           this.method_37302() + var7 * var15,
+                           this.getPosX() + var7 * var15,
                            this.method_37388() + var9 * var15,
-                           this.method_37156() + var11 * var15,
+                           this.getPosZ() + var11 * var15,
                            0.0,
                            0.0,
                            0.0
@@ -247,7 +247,7 @@ public class class_337 extends class_1173 {
          }
 
          if (!this.method_37134()) {
-            if (this.field_41726) {
+            if (this.onGround) {
                this.method_37215(
                   this.method_37098()
                      .method_6214(
@@ -255,7 +255,7 @@ public class class_337 extends class_1173 {
                      )
                );
                this.rotationYaw = this.field_41717.nextFloat() * 360.0F;
-               this.field_41726 = false;
+               this.onGround = false;
                this.field_41763 = true;
             }
          } else {

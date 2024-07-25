@@ -137,9 +137,9 @@ public class class_9355 extends class_2811 implements class_3449 {
       } else if (!this.method_37378()) {
          this.world
             .method_29527(
-               this.method_37302(),
+               this.getPosX(),
                this.method_37388(),
-               this.method_37156(),
+               this.getPosZ(),
                class_463.field_2499,
                this.method_37197(),
                1.0F + this.field_41717.nextFloat(),
@@ -197,9 +197,9 @@ public class class_9355 extends class_2811 implements class_3449 {
          int var4 = 0;
          class_2921 var5 = new class_2921();
 
-         for (int var6 = (int)this.method_37302() - 4; var6 < (int)this.method_37302() + 4 && var4 < 14; var6++) {
+         for (int var6 = (int)this.getPosX() - 4; var6 < (int)this.getPosX() + 4 && var4 < 14; var6++) {
             for (int var7 = (int)this.method_37309() - 4; var7 < (int)this.method_37309() + 4 && var4 < 14; var7++) {
-               for (int var8 = (int)this.method_37156() - 4; var8 < (int)this.method_37156() + 4 && var4 < 14; var8++) {
+               for (int var8 = (int)this.getPosZ() - 4; var8 < (int)this.getPosZ() + 4 && var4 < 14; var8++) {
                   class_6414 var9 = this.world.method_28262(var5.method_13362(var6, var7, var8)).method_8360();
                   if (var9 == class_4783.field_23817 || var9 instanceof class_3633) {
                      if (this.field_41717.nextFloat() < 0.3F) {

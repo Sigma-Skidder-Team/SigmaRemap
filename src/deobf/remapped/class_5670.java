@@ -29,16 +29,16 @@ public class class_5670 extends class_4407 {
                      this.field_21567,
                      this.field_21569,
                      this.field_21568,
-                     this.field_21568.method_37302(),
+                     this.field_21568.getPosX(),
                      this.field_21568.method_37388(),
-                     this.field_21568.method_37156(),
+                     this.field_21568.getPosZ(),
                      this.field_21568.method_37241().method_18899((double)this.field_21566, 3.0, (double)this.field_21566)
                   );
             } else {
                this.field_21563 = this.field_21568
                   .world
                   .method_25860(
-                     this.field_21569, this.field_21568, this.field_21568.method_37302(), this.field_21568.method_37388(), this.field_21568.method_37156()
+                     this.field_21569, this.field_21568, this.field_21568.getPosX(), this.field_21568.method_37388(), this.field_21568.getPosZ()
                   );
             }
          }

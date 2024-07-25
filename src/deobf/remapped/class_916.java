@@ -108,8 +108,8 @@ public class class_916 extends class_4037 implements class_6510 {
    private static double method_3984(class_2034 var0, Entity var1) {
       double var4 = (double)(var0.field_10328 * 16 + 8);
       double var6 = (double)(var0.field_10327 * 16 + 8);
-      double var8 = var4 - var1.method_37302();
-      double var10 = var6 - var1.method_37156();
+      double var8 = var4 - var1.getPosX();
+      double var10 = var6 - var1.getPosZ();
       return var8 * var8 + var10 * var10;
    }
 
@@ -117,8 +117,8 @@ public class class_916 extends class_4037 implements class_6510 {
       int var5;
       int var6;
       if (!var2) {
-         var5 = class_9299.method_42847(var1.method_37302() / 16.0);
-         var6 = class_9299.method_42847(var1.method_37156() / 16.0);
+         var5 = class_9299.method_42847(var1.getPosX() / 16.0);
+         var6 = class_9299.method_42847(var1.getPosZ() / 16.0);
       } else {
          class_6979 var7 = var1.method_43238();
          var5 = var7.method_31930();
@@ -769,8 +769,8 @@ public class class_916 extends class_4037 implements class_6510 {
    public void method_4012(class_9359 var1, boolean var2) {
       boolean var5 = this.method_4015(var1);
       boolean var6 = this.field_4705.method_4612(var1);
-      int var7 = class_9299.method_42847(var1.method_37302()) >> 4;
-      int var8 = class_9299.method_42847(var1.method_37156()) >> 4;
+      int var7 = class_9299.method_42847(var1.getPosX()) >> 4;
+      int var8 = class_9299.method_42847(var1.getPosZ()) >> 4;
       if (!var2) {
          class_6979 var9 = var1.method_43238();
          this.field_4705.method_4617(var9.method_31917().method_9539(), var1);
@@ -812,8 +812,8 @@ public class class_916 extends class_4037 implements class_6510 {
          }
       }
 
-      int var26 = class_9299.method_42847(var1.method_37302()) >> 4;
-      int var27 = class_9299.method_42847(var1.method_37156()) >> 4;
+      int var26 = class_9299.method_42847(var1.getPosX()) >> 4;
+      int var27 = class_9299.method_42847(var1.getPosZ()) >> 4;
       class_6979 var6 = var1.method_43238();
       class_6979 var7 = class_6979.method_31923(var1);
       long var8 = var6.method_31917().method_9539();

@@ -683,7 +683,7 @@ public class class_2740 {
          var8 = var10;
       }
 
-      field_13375.method_8614().method_4813(new class_5955(var0, var1, var2, var3, var8, var9));
+      field_13375.method_8614().sendPacket(new class_5955(var0, var1, var2, var3, var8, var9));
       return var10;
    }
 

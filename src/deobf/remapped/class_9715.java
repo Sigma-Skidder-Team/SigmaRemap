@@ -58,7 +58,7 @@ public class class_9715 extends class_292 implements class_4511 {
 
    @Override
    public double method_20973() {
-      return this.method_37302();
+      return this.getPosX();
    }
 
    @Override
@@ -68,7 +68,7 @@ public class class_9715 extends class_292 implements class_4511 {
 
    @Override
    public double method_20975() {
-      return this.method_37156();
+      return this.getPosZ();
    }
 
    @Override

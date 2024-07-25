@@ -21,6 +21,6 @@ public class class_1663 extends class_8273<class_2270> {
    }
 
    public void method_7409(class_9359 var1) {
-      this.method_38137(var1, var1x -> var1x.method_10473(var1.method_43235(), var1.method_37302(), var1.method_37309(), var1.method_37156()));
+      this.method_38137(var1, var1x -> var1x.method_10473(var1.method_43235(), var1.getPosX(), var1.method_37309(), var1.getPosZ()));
    }
 }

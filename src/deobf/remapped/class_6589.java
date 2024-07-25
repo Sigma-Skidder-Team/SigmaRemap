@@ -44,9 +44,9 @@ public class class_6589 implements Packet<class_392> {
       this(
          var1.method_37145(),
          var1.method_37328(),
-         var1.method_37302(),
+         var1.getPosX(),
          var1.method_37309(),
-         var1.method_37156(),
+         var1.getPosZ(),
          var1.rotationPitch,
          var1.rotationYaw,
          var1.method_37387(),

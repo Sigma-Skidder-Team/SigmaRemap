@@ -21,9 +21,9 @@ public class class_3936 extends class_1871 {
             .world
             .method_43361(
                class_3090.field_15377,
-               this.field_9479.method_37302() + (double)var3,
+               this.field_9479.getPosX() + (double)var3,
                this.field_9479.method_37309() + 2.0 + (double)var4,
-               this.field_9479.method_37156() + (double)var5,
+               this.field_9479.getPosZ() + (double)var5,
                0.0,
                0.0,
                0.0
@@ -39,7 +39,7 @@ public class class_3936 extends class_1871 {
          this.field_19125 = class_1343.method_6200(var5);
       }
 
-      double var3 = this.field_19125.method_6203(this.field_9479.method_37302(), this.field_9479.method_37309(), this.field_9479.method_37156());
+      double var3 = this.field_19125.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ());
       if (!(var3 < 100.0) && !(var3 > 22500.0) && !this.field_9479.field_41744 && !this.field_9479.field_41774) {
          this.field_9479.method_26456(1.0F);
       } else {

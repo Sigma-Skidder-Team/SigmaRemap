@@ -116,7 +116,7 @@ public abstract class class_3521 {
                         return;
                      }
 
-                     var24.method_37144(var24.method_37302(), var24.method_37309(), var24.method_37156(), var3.field_33033.nextFloat() * 360.0F, 0.0F);
+                     var24.method_37144(var24.getPosX(), var24.method_37309(), var24.getPosZ(), var3.field_33033.nextFloat() * 360.0F, 0.0F);
                      if (var24 instanceof class_5886) {
                         class_5886 var26 = (class_5886)var24;
                         if (!var26.method_26889(var3, class_2417.field_12024) || !var26.method_26855(var3)) {

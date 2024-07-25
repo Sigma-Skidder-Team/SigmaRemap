@@ -18,7 +18,7 @@ public class MineMenCriticalsModule extends Module {
       if (var1.method_6449()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AntiKnockbackModule.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("Minemen")) {
-            if (!client.thePlayer.field_41726) {
+            if (!client.thePlayer.onGround) {
                this.field_28365 = 0;
             } else {
                if (this.field_28365 > 0) {
@@ -33,7 +33,7 @@ public class MineMenCriticalsModule extends Module {
                var1.method_6444(true);
             }
 
-            if (client.playerController.method_42156() && client.thePlayer.field_41726) {
+            if (client.playerController.method_42156() && client.thePlayer.onGround) {
                this.field_28365 = 0;
                var1.method_6455(client.thePlayer.method_37309());
                var1.method_6451(true);

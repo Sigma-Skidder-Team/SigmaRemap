@@ -49,9 +49,9 @@ public class class_3348 extends class_6749 {
          } else if (var4 > 0) {
             this.method_30919(true);
             class_1343 var5 = new class_1343(
-               var3.method_37302() - this.method_37302(), var3.method_37388() - this.method_37309(), var3.method_37156() - this.method_37156()
+               var3.getPosX() - this.getPosX(), var3.method_37388() - this.method_37309(), var3.getPosZ() - this.getPosZ()
             );
-            this.method_37222(this.method_37302(), this.method_37309() + var5.field_7333 * 0.015 * (double)var4, this.method_37156());
+            this.method_37222(this.getPosX(), this.method_37309() + var5.field_7333 * 0.015 * (double)var4, this.getPosZ());
             if (this.world.field_33055) {
                this.field_41713 = this.method_37309();
             }

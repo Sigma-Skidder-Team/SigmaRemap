@@ -35,7 +35,7 @@ public class class_6093 extends class_3429 {
          while (var4 > 0) {
             int var5 = class_5614.method_25476(var4);
             var4 -= var5;
-            this.world.method_7509(new class_5614(this.world, this.method_37302(), this.method_37309(), this.method_37156(), var5));
+            this.world.method_7509(new class_5614(this.world, this.getPosX(), this.method_37309(), this.getPosZ(), var5));
          }
 
          this.method_37204();

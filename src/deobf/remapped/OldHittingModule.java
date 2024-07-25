@@ -24,7 +24,7 @@ public class OldHittingModule extends Module {
             boolean var4 = client.thePlayer.method_26446() != null && client.thePlayer.method_26446().method_27960() instanceof class_2235;
             boolean var5 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(KillauraModule.class).method_42003();
             boolean var6 = true;
-            if (!client.thePlayer.method_37252()
+            if (!client.thePlayer.isSneaking()
                && client.field_9587.method_33990() == class_1430.field_7717
                && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(KillauraModule.class).method_42003()) {
                class_9529 var7 = (class_9529) client.field_9587;

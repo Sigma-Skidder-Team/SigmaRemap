@@ -18,9 +18,9 @@ public class class_9239 extends class_2833 {
       if (this.field_13878 == class_1737.field_8946 && !this.field_47202.method_26927().method_5591()) {
          float var3 = (float)(this.field_13885 * this.field_47202.method_26575(class_7331.field_37465));
          this.field_47202.method_26461(class_9299.method_42795(0.125F, this.field_47202.method_26423(), var3));
-         double var4 = this.field_13884 - this.field_47202.method_37302();
+         double var4 = this.field_13884 - this.field_47202.getPosX();
          double var6 = this.field_13886 - this.field_47202.method_37309();
-         double var8 = this.field_13880 - this.field_47202.method_37156();
+         double var8 = this.field_13880 - this.field_47202.getPosZ();
          if (var6 != 0.0) {
             double var11 = (double)class_9299.method_42842(var4 * var4 + var6 * var6 + var8 * var8);
             this.field_47202

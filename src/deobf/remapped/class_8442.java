@@ -19,9 +19,9 @@ public class class_8442 extends class_4041 {
    public class_954<ItemStack> method_11231(World var1, class_704 var2, Hand var3) {
       var1.method_29528(
          (class_704)null,
-         var2.method_37302(),
+         var2.getPosX(),
          var2.method_37309(),
-         var2.method_37156(),
+         var2.getPosZ(),
          class_463.field_2383,
          class_562.field_3328,
          0.5F,

@@ -42,7 +42,7 @@ public class class_1937 extends class_3599 {
    public void method_16796() {
       class_1343 var3 = this.field_9897.method_37098();
       class_1343 var4 = new class_1343(
-         this.field_9899.method_37302() - this.field_9897.method_37302(), 0.0, this.field_9899.method_37156() - this.field_9897.method_37156()
+         this.field_9899.getPosX() - this.field_9897.getPosX(), 0.0, this.field_9899.getPosZ() - this.field_9897.getPosZ()
       );
       if (var4.method_6221() > 1.0E-7) {
          var4 = var4.method_6213().method_6209(0.4).method_6215(var3.method_6209(0.2));

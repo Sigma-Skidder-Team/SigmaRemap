@@ -66,7 +66,7 @@ public class class_4745 extends class_4314 {
          if (var9.method_27960() != class_4897.field_24853) {
             if (var9.method_27960() == class_4897.field_24812) {
                var9.method_27970(1);
-               var2.method_29528(var4, var4.method_37302(), var4.method_37309(), var4.method_37156(), class_463.field_2054, class_562.field_3328, 1.0F, 1.0F);
+               var2.method_29528(var4, var4.getPosX(), var4.method_37309(), var4.getPosZ(), class_463.field_2054, class_562.field_3328, 1.0F, 1.0F);
                if (!var9.method_28022()) {
                   if (!var4.inventory.method_32414(new ItemStack(class_4897.field_24773))) {
                      var4.method_3153(new ItemStack(class_4897.field_24773), false);
@@ -78,7 +78,7 @@ public class class_4745 extends class_4314 {
                var11 = true;
             }
          } else {
-            var2.method_29528(var4, var4.method_37302(), var4.method_37309(), var4.method_37156(), class_463.field_2271, class_562.field_3328, 1.0F, 1.0F);
+            var2.method_29528(var4, var4.getPosX(), var4.method_37309(), var4.getPosZ(), class_463.field_2271, class_562.field_3328, 1.0F, 1.0F);
             method_21913(var2, var3);
             var9.method_28003(1, var4, var1x -> var1x.method_26447(var5));
             var11 = true;

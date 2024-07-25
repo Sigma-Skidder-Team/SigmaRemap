@@ -98,7 +98,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
             }
 
             var3 = new class_1343(var3.field_7336, var5, var3.field_7334);
-            class_1343 var7 = new class_1343(var4.method_37302() - this.method_37302(), 0.0, var4.method_37156() - this.method_37156());
+            class_1343 var7 = new class_1343(var4.getPosX() - this.getPosX(), 0.0, var4.getPosZ() - this.getPosZ());
             if (method_37266(var7) > 9.0) {
                class_1343 var8 = var7.method_6213();
                var3 = var3.method_6214(var8.field_7336 * 0.3 - var3.field_7336 * 0.6, 0.0, var8.field_7334 * 0.3 - var3.field_7334 * 0.6);
@@ -131,9 +131,9 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
             double var11 = this.method_21520(var34 + 1);
             double var13 = this.method_21510(var34 + 1);
             double var15 = this.method_21518(var34 + 1);
-            double var17 = var10.method_37302() - var11;
+            double var17 = var10.getPosX() - var11;
             double var19 = var10.method_37388() - var13;
-            double var21 = var10.method_37156() - var15;
+            double var21 = var10.getPosZ() - var15;
             double var23 = (double)class_9299.method_42842(var17 * var17 + var21 * var21);
             float var25 = (float)(class_9299.method_42821(var21, var17) * 180.0F / (float)Math.PI) - 90.0F;
             float var26 = (float)(-(class_9299.method_42821(var19, var23) * 180.0F / (float)Math.PI));
@@ -177,9 +177,9 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
             this.world
                .method_43361(
                   class_3090.field_15353,
-                  this.method_37302() + this.field_41717.nextGaussian(),
+                  this.getPosX() + this.field_41717.nextGaussian(),
                   this.method_37309() + (double)(this.field_41717.nextFloat() * 3.3F),
-                  this.method_37156() + this.field_41717.nextGaussian(),
+                  this.getPosZ() + this.field_41717.nextGaussian(),
                   0.7F,
                   0.7F,
                   0.9F
@@ -203,9 +203,9 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
                   if (var5 > 15) {
                      float var6 = 10.0F;
                      float var7 = 5.0F;
-                     double var8 = class_9299.method_42832(this.field_41717, this.method_37302() - 10.0, this.method_37302() + 10.0);
+                     double var8 = class_9299.method_42832(this.field_41717, this.getPosX() - 10.0, this.getPosX() + 10.0);
                      double var10 = class_9299.method_42832(this.field_41717, this.method_37309() - 5.0, this.method_37309() + 5.0);
-                     double var12 = class_9299.method_42832(this.field_41717, this.method_37156() - 10.0, this.method_37156() + 10.0);
+                     double var12 = class_9299.method_42832(this.field_41717, this.getPosZ() - 10.0, this.getPosZ() + 10.0);
                      this.method_21515(var3 + 1, var8, var10, var12, true);
                      this.field_22694[var3 - 1] = 0;
                   }
@@ -254,8 +254,8 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
             this.field_22699--;
             if (this.field_22699 == 0 && this.world.method_29537().method_1285(class_291.field_1047)) {
                int var21 = class_9299.method_42847(this.method_37309());
-               int var24 = class_9299.method_42847(this.method_37302());
-               int var28 = class_9299.method_42847(this.method_37156());
+               int var24 = class_9299.method_42847(this.getPosX());
+               int var28 = class_9299.method_42847(this.getPosZ());
                boolean var30 = false;
 
                for (int var32 = -1; var32 <= 1; var32++) {
@@ -288,7 +288,7 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
          int var22 = this.method_21507() - 1;
          if (var22 <= 0) {
             class_7298 var25 = !this.world.method_29537().method_1285(class_291.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
-            this.world.method_29574(this, this.method_37302(), this.method_37388(), this.method_37156(), 7.0F, false, var25);
+            this.world.method_29574(this, this.getPosX(), this.method_37388(), this.getPosZ(), 7.0F, false, var25);
             if (!this.method_37378()) {
                this.world.method_29589(1023, this.method_37075(), 0);
             }
@@ -330,9 +330,9 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
       if (var1 > 0) {
          float var4 = (this.field_29605 + (float)(180 * (var1 - 1))) * (float) (Math.PI / 180.0);
          float var5 = class_9299.method_42840(var4);
-         return this.method_37302() + (double)var5 * 1.3;
+         return this.getPosX() + (double)var5 * 1.3;
       } else {
-         return this.method_37302();
+         return this.getPosX();
       }
    }
 
@@ -344,9 +344,9 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
       if (var1 > 0) {
          float var4 = (this.field_29605 + (float)(180 * (var1 - 1))) * (float) (Math.PI / 180.0);
          float var5 = class_9299.method_42818(var4);
-         return this.method_37156() + (double)var5 * 1.3;
+         return this.getPosZ() + (double)var5 * 1.3;
       } else {
-         return this.method_37156();
+         return this.getPosZ();
       }
    }
 
@@ -366,9 +366,9 @@ public class class_4653 extends class_1173 implements class_7187, class_2354 {
    private void method_21519(int var1, class_5834 var2) {
       this.method_21515(
          var1,
-         var2.method_37302(),
+         var2.getPosX(),
          var2.method_37309() + (double)var2.method_37277() * 0.5,
-         var2.method_37156(),
+         var2.getPosZ(),
          var1 == 0 && this.field_41717.nextFloat() < 0.001F
       );
    }

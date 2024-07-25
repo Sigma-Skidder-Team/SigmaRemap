@@ -17,7 +17,7 @@ public class class_4574 extends class_3599 {
    public boolean method_16795() {
       return this.field_22274.method_17809() == null
          && (
-            this.field_22274.field_41726
+            this.field_22274.onGround
                || this.field_22274.method_37285()
                || this.field_22274.method_37370()
                || this.field_22274.isPotionActive(Effects.LevitationEffect)

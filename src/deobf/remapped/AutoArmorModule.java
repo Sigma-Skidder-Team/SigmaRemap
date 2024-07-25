@@ -49,9 +49,9 @@ public class AutoArmorModule extends Module {
                   this.field_9396 = true;
                   break;
                case "On Use":
-                  if (!client.thePlayer.field_41726 && client.thePlayer.field_29600 == 0 && client.thePlayer.field_29654 && !this.field_9395) {
+                  if (!client.thePlayer.onGround && client.thePlayer.field_29600 == 0 && client.thePlayer.field_29654 && !this.field_9395) {
                      this.field_9396 = true;
-                  } else if (client.thePlayer.field_41726) {
+                  } else if (client.thePlayer.onGround) {
                      this.field_9396 = false;
                   }
             }
@@ -80,7 +80,7 @@ public class AutoArmorModule extends Module {
 
             if (!this.field_9393 && !(client.field_9623 instanceof class_3431) && this.field_9397.method_14772() > 0L) {
                this.field_9393 = true;
-               client.method_8614().method_4813(new class_1194(-1));
+               client.method_8614().sendPacket(new class_1194(-1));
             }
          }
       }
@@ -116,7 +116,7 @@ public class AutoArmorModule extends Module {
                      this.field_9397.method_14773();
                      field_9392 = true;
                      if (this.getStringValueByName("Elytra").equals("On Use")) {
-                        client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20093));
+                        client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.field_20093));
                         client.thePlayer.method_37220(7, true);
                      }
 
@@ -158,7 +158,7 @@ public class AutoArmorModule extends Module {
 
    private void method_8196(boolean var1) {
       if (var1 && this.field_9393 && !(client.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-         client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+         client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
          this.field_9393 = false;
       }
    }

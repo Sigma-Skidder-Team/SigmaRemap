@@ -47,8 +47,8 @@ public class class_5864 extends class_3333 {
          if (var2.method_37098().field_7333 >= -0.08) {
             return false;
          } else {
-            double var5 = Math.abs((double)var1.method_12173() + 0.5 - var2.method_37302());
-            double var7 = Math.abs((double)var1.method_12185() + 0.5 - var2.method_37156());
+            double var5 = Math.abs((double)var1.method_12173() + 0.5 - var2.getPosX());
+            double var7 = Math.abs((double)var1.method_12185() + 0.5 - var2.getPosZ());
             double var9 = 0.4375 + (double)(var2.method_37086() / 2.0F);
             return var5 + 1.0E-7 > var9 || var7 + 1.0E-7 > var9;
          }
@@ -101,7 +101,7 @@ public class class_5864 extends class_3333 {
 
          for (int var5 = 0; var5 < var1; var5++) {
             var0.world
-               .method_43361(new class_7110(class_3090.field_15325, var4), var0.method_37302(), var0.method_37309(), var0.method_37156(), 0.0, 0.0, 0.0);
+               .method_43361(new class_7110(class_3090.field_15325, var4), var0.getPosX(), var0.method_37309(), var0.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

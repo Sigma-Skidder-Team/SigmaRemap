@@ -2,17 +2,17 @@ package remapped;
 
 import java.io.IOException;
 
-public class class_758 implements Packet<class_1243> {
+public class CInputPacket implements Packet<class_1243> {
    private static String[] field_4111;
    private float field_4109;
    private float field_4110;
    private boolean field_4108;
    private boolean field_4107;
 
-   public class_758() {
+   public CInputPacket() {
    }
 
-   public class_758(float var1, float var2, boolean var3, boolean var4) {
+   public CInputPacket(float var1, float var2, boolean var3, boolean var4) {
       this.field_4109 = var1;
       this.field_4110 = var2;
       this.field_4108 = var3;
@@ -25,7 +25,7 @@ public class class_758 implements Packet<class_1243> {
       this.field_4109 = var1.readFloat();
       this.field_4110 = var1.readFloat();
       byte var4 = var1.readByte();
-      class_758 var10000 = this;
+      CInputPacket var10000 = this;
 
       do {
          if ((var2 & 512) != 0) {

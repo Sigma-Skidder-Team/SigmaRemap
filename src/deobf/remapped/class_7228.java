@@ -51,9 +51,9 @@ public class class_7228 extends class_3599 {
    public boolean method_16799() {
       if (this.method_33090()) {
          if (!(this.field_37092.method_37275(this.field_37102) < 36.0)) {
-            this.field_37090 = this.field_37102.method_37302();
+            this.field_37090 = this.field_37102.getPosX();
             this.field_37091 = this.field_37102.method_37309();
-            this.field_37094 = this.field_37102.method_37156();
+            this.field_37094 = this.field_37102.getPosZ();
          } else {
             if (this.field_37102.method_37273(this.field_37090, this.field_37091, this.field_37094) > 0.010000000000000002) {
                return false;
@@ -78,9 +78,9 @@ public class class_7228 extends class_3599 {
 
    @Override
    public void method_16796() {
-      this.field_37090 = this.field_37102.method_37302();
+      this.field_37090 = this.field_37102.getPosX();
       this.field_37091 = this.field_37102.method_37309();
-      this.field_37094 = this.field_37102.method_37156();
+      this.field_37094 = this.field_37102.getPosZ();
       this.field_37101 = true;
    }
 

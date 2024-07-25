@@ -11,9 +11,9 @@ public class class_826 extends class_6165 {
       this.field_5768 = true;
       this.field_5764 = 0;
       this.field_5766 = 0.0F;
-      this.field_5761 = (double)((float)var1.method_37302());
+      this.field_5761 = (double)((float)var1.getPosX());
       this.field_5765 = (double)((float)var1.method_37309());
-      this.field_5762 = (double)((float)var1.method_37156());
+      this.field_5762 = (double)((float)var1.getPosZ());
    }
 
    @Override
@@ -29,9 +29,9 @@ public class class_826 extends class_6165 {
    @Override
    public void method_29511() {
       if (!this.field_4360.field_41751) {
-         this.field_5761 = (double)((float)this.field_4360.method_37302());
+         this.field_5761 = (double)((float)this.field_4360.getPosX());
          this.field_5765 = (double)((float)this.field_4360.method_37309());
-         this.field_5762 = (double)((float)this.field_4360.method_37156());
+         this.field_5762 = (double)((float)this.field_4360.getPosZ());
          float var3 = class_9299.method_42842(Entity.method_37266(this.field_4360.method_37098()));
          if (!((double)var3 >= 0.01)) {
             this.field_4358 = 0.0F;

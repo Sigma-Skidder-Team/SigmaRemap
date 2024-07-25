@@ -54,7 +54,7 @@ public class class_2727 extends class_6414 {
          class_1356 var5 = new class_1356(var0, (double)var1.method_12173() + 0.5, (double)var1.method_12165(), (double)var1.method_12185() + 0.5, var2);
          var0.method_7509(var5);
          var0.method_29528(
-            (class_704)null, var5.method_37302(), var5.method_37309(), var5.method_37156(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
+            (class_704)null, var5.getPosX(), var5.method_37309(), var5.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
          );
       }
    }

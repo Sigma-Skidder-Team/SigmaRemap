@@ -41,7 +41,7 @@ public class HypixelBlockFly extends Module {
 
       this.field_31717 = -1.0;
       this.field_31715 = false;
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          this.field_31717 = client.thePlayer.method_37309();
       }
 
@@ -56,7 +56,7 @@ public class HypixelBlockFly extends Module {
 
       this.field_31713 = -1;
       if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
-         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+         client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
          ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
@@ -81,7 +81,7 @@ public class HypixelBlockFly extends Module {
                && client.thePlayer.field_41706 < 1.0F) {
                var1.method_36186(true);
             }
-         } else if (client.thePlayer.field_41726
+         } else if (client.thePlayer.onGround
             && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()
             && (!this.field_31719 || !this.getBooleanValueByName("Downwards"))) {
             var1.method_36186(true);
@@ -133,7 +133,7 @@ public class HypixelBlockFly extends Module {
                   if (!this.method_42017().getBooleanValueByName("NoSwing")) {
                      client.thePlayer.method_26597(this.field_31708);
                   } else {
-                     client.method_8614().method_4813(new class_3195(this.field_31708));
+                     client.method_8614().sendPacket(new class_3195(this.field_31708));
                   }
 
                   if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
@@ -184,9 +184,9 @@ public class HypixelBlockFly extends Module {
                   if (var12 != null) {
                      float[] var13 = class_7494.method_34077(this.field_31718.field_14163, this.field_31718.field_14162);
                      if ((double)var12.field_14163.field_13230 - client.thePlayer.method_37309() < 0.0) {
-                        double var14 = client.thePlayer.method_37302()
+                        double var14 = client.thePlayer.getPosX()
                            - ((double)var12.field_14163.field_13231 + 0.5 + (double)var12.field_14162.method_1041() / 2.0);
-                        double var16 = client.thePlayer.method_37156()
+                        double var16 = client.thePlayer.getPosZ()
                            - ((double)var12.field_14163.field_13229 + 0.5 + (double)var12.field_14162.method_1034() / 2.0);
                         double var18 = Math.sqrt(var14 * var14 + var16 * var16);
                         if (var18 < 2.0) {
@@ -221,7 +221,7 @@ public class HypixelBlockFly extends Module {
    @class_315
    public void method_28400(class_7767 var1) {
       if (this.method_42015() && this.field_31710.method_17219() != 0) {
-         if (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.01F)) {
+         if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.01F)) {
             this.field_31717 = client.thePlayer.method_37309();
          }
 
@@ -229,7 +229,7 @@ public class HypixelBlockFly extends Module {
             client.thePlayer.method_37140(false);
          }
 
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             this.field_31716 = 0;
          } else if (this.field_31716 >= 0) {
             this.field_31716++;
@@ -242,7 +242,7 @@ public class HypixelBlockFly extends Module {
          String var4 = this.getStringValueByName("Speed Mode");
          switch (var4) {
             case "Jump":
-               if (client.thePlayer.field_41726 && class_314.method_1434() && !client.thePlayer.method_37252() && !this.field_31719) {
+               if (client.thePlayer.onGround && class_314.method_1434() && !client.thePlayer.isSneaking() && !this.field_31719) {
                   this.field_31715 = false;
                   client.thePlayer.method_26595();
                   ((SpeedModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class)).method_31653();
@@ -253,7 +253,7 @@ public class HypixelBlockFly extends Module {
                }
                break;
             case "AAC":
-               if (this.field_31714 == 0 && client.thePlayer.field_41726) {
+               if (this.field_31714 == 0 && client.thePlayer.onGround) {
                   class_8865.method_40777(var1, class_8865.method_40775() * 0.82);
                }
                break;
@@ -262,8 +262,8 @@ public class HypixelBlockFly extends Module {
                float var8 = this.method_28399(class_9299.method_42810(client.thePlayer.rotationYaw));
                if (client.gameOptions.keyJump.isKeyDown()) {
                   client.theTimer.timerSpeed = 1.0F;
-               } else if (client.thePlayer.field_41726) {
-                  if (class_314.method_1434() && !client.thePlayer.method_37252() && !this.field_31719) {
+               } else if (client.thePlayer.onGround) {
+                  if (class_314.method_1434() && !client.thePlayer.isSneaking() && !this.field_31719) {
                      var1.method_35235(1.00000000000001);
                   }
                } else if (this.field_31716 == 1) {
@@ -302,7 +302,7 @@ public class HypixelBlockFly extends Module {
                class_314.method_1408(var1.method_35236());
                break;
             case "Slow":
-               if (client.thePlayer.field_41726) {
+               if (client.thePlayer.onGround) {
                   var1.method_35232(var1.method_35234() * 0.75);
                   var1.method_35229(var1.method_35231() * 0.75);
                } else {
@@ -311,7 +311,7 @@ public class HypixelBlockFly extends Module {
                }
                break;
             case "Sneak":
-               if (client.thePlayer.field_41726) {
+               if (client.thePlayer.onGround) {
                   var1.method_35232(var1.method_35234() * 0.65);
                   var1.method_35229(var1.method_35231() * 0.65);
                } else {

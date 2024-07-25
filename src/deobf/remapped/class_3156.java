@@ -22,8 +22,8 @@ public class class_3156 extends class_3599 {
          class_5834 var3 = this.field_15684.method_17809();
          double var4 = 64.0;
          if (var3.method_37275(this.field_15684) < 4096.0) {
-            double var6 = var3.method_37302() - this.field_15684.method_37302();
-            double var8 = var3.method_37156() - this.field_15684.method_37156();
+            double var6 = var3.getPosX() - this.field_15684.getPosX();
+            double var8 = var3.getPosZ() - this.field_15684.getPosZ();
             this.field_15684.rotationYaw = -((float)class_9299.method_42821(var6, var8)) * (180.0F / (float)Math.PI);
             this.field_15684.field_29605 = this.field_15684.rotationYaw;
          }

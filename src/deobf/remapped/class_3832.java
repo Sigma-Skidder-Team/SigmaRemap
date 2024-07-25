@@ -23,8 +23,8 @@ public interface class_3832 extends class_2354 {
    }
 
    default void method_17811(class_5834 var1, class_5834 var2, class_5783 var3, float var4, float var5) {
-      double var8 = var2.method_37302() - var1.method_37302();
-      double var10 = var2.method_37156() - var1.method_37156();
+      double var8 = var2.getPosX() - var1.getPosX();
+      double var10 = var2.getPosZ() - var1.getPosZ();
       double var12 = (double)class_9299.method_42842(var8 * var8 + var10 * var10);
       double var14 = var2.method_37080(0.3333333333333333) - var3.method_37309() + var12 * 0.2F;
       class_2426 var16 = this.method_17813(var1, new class_1343(var8, var14, var10), var4);

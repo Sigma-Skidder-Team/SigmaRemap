@@ -24,7 +24,7 @@ public class MineMenSpiderModule extends Module {
          > 0L;
       if (var6) {
          if (!client.thePlayer.field_41744) {
-            if (!client.thePlayer.field_41726) {
+            if (!client.thePlayer.onGround) {
                var1.method_35235(!client.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
             }
          } else if (!this.getBooleanValueByName("AutoClimb") && !client.gameOptions.keyJump.isKeyDown()) {
@@ -41,7 +41,7 @@ public class MineMenSpiderModule extends Module {
             && !this.field_27443
             && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
             client.method_8614()
-               .method_4813(
+               .sendPacket(
                   new class_9515(
                      client.thePlayer.method_37245().field_7336,
                      client.thePlayer.method_37245().field_7333 - 1.0E-14,
@@ -56,7 +56,7 @@ public class MineMenSpiderModule extends Module {
                   client.thePlayer.method_37245().field_7334
                );
             client.gameOptions.keySneak.pressed = false;
-            client.thePlayer.field_41726 = false;
+            client.thePlayer.onGround = false;
             client.theTimer.timerSpeed = 0.08F;
             var1.method_29715(true);
             this.field_27443 = true;
@@ -86,7 +86,7 @@ public class MineMenSpiderModule extends Module {
       if (this.method_42015() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
          if (this.getBooleanValueByName("Ceiling")
-            && !client.thePlayer.field_41726
+            && !client.thePlayer.onGround
             && client.theWorld.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }

@@ -32,7 +32,7 @@ public class MineplexFly extends PremiumModule {
       double var3 = class_8865.method_40775() * 0.5;
       class_8865.method_40776(var3);
       if (this.field_46846 != -1) {
-         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+         client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
          this.field_46846 = client.thePlayer.inventory.field_36404;
       }
 
@@ -60,14 +60,14 @@ public class MineplexFly extends PremiumModule {
       return this.method_42015()
          && this.field_46846 != -1
          && this.field_46845 < (double)this.getFloatValueByName("Boost")
-         && (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F))
+         && (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F))
          && !this.field_46839;
    }
 
    @EventListen
    public void method_42170(class_7982 var1) {
       if (this.method_42015() && this.field_46839 && client.thePlayer != null) {
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             var1.method_36186(true);
          }
       }
@@ -80,7 +80,7 @@ public class MineplexFly extends PremiumModule {
             class_8865.method_40777(var1, 0.01);
          } else {
             float var4 = client.thePlayer.rotationYaw + 90.0F;
-            if (!client.thePlayer.field_41726 && !class_314.method_1413(client.thePlayer, 0.001F)) {
+            if (!client.thePlayer.onGround && !class_314.method_1413(client.thePlayer, 0.001F)) {
                if (this.field_46840 != -1) {
                   if (this.field_46838 && !class_314.method_1434()) {
                      this.field_46838 = !this.field_46838;
@@ -132,7 +132,7 @@ public class MineplexFly extends PremiumModule {
                BlockPos var7 = new BlockPos(client.thePlayer.method_37075()).method_6104(0, -1, 0);
                class_9529 var8 = new class_9529(var6, Direction.field_817, var7, false);
                class_8585 var9 = new class_8585(Hand.MAIN_HAND, var8);
-               client.method_8614().method_4813(var9);
+               client.method_8614().sendPacket(var9);
                if (!(this.field_46845 < (double)this.getFloatValueByName("Boost"))) {
                   class_8865.method_40777(var1, 0.0);
                   client.thePlayer.method_26595();
@@ -178,7 +178,7 @@ public class MineplexFly extends PremiumModule {
          if (var1.method_10047() instanceof class_7371
             && this.field_46846 != -1
             && this.field_46845 < (double)this.getFloatValueByName("Boost")
-            && (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F))
+            && (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F))
             && !this.field_46839) {
             var1.method_29715(true);
          }
@@ -194,7 +194,7 @@ public class MineplexFly extends PremiumModule {
             int var4 = var3 - 36;
             if (client.thePlayer.field_3869.method_18878(var3).method_35898().method_28022()) {
                if (client.thePlayer.inventory.field_36404 != var4 && this.field_46846 != var4) {
-                  client.method_8614().method_4813(new class_7371(var4));
+                  client.method_8614().sendPacket(new class_7371(var4));
                   this.field_46846 = var4;
                }
 
@@ -206,7 +206,7 @@ public class MineplexFly extends PremiumModule {
          if (!client.thePlayer.field_3869.method_18878(42).method_35898().method_28022()) {
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
          } else if (client.thePlayer.inventory.field_36404 != 6 && this.field_46846 != 6) {
-            client.method_8614().method_4813(new class_7371(6));
+            client.method_8614().sendPacket(new class_7371(6));
             this.field_46846 = 6;
             return 6;
          }

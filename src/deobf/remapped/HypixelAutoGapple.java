@@ -53,9 +53,9 @@ public class HypixelAutoGapple extends PremiumModule {
 
             if (this.field_3479 != 1) {
                if (this.field_3479 >= 3) {
-                  client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
-                  client.method_8614().method_4813(new class_7371(this.field_3481 + (this.field_3481 != 8 ? 1 : -1)));
-                  client.method_8614().method_4813(new class_7371(this.field_3481));
+                  client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_7371(this.field_3481 + (this.field_3481 != 8 ? 1 : -1)));
+                  client.method_8614().sendPacket(new class_7371(this.field_3481));
                   client.thePlayer.inventory.field_36404 = this.field_3482;
                   this.field_3482 = -1;
                   this.field_3479 = -1;

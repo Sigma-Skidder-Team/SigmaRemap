@@ -18,7 +18,7 @@ public class BreadcrumbsModule extends Module {
       if (this.method_42015()) {
          if (var1.method_35234() != 0.0 || var1.method_35236() != 0.0 || var1.method_35231() != 0.0) {
             this.field_13172
-               .add(new class_1343(client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156()));
+               .add(new class_1343(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ()));
          }
       }
    }
@@ -50,11 +50,11 @@ public class BreadcrumbsModule extends Module {
       if (this.method_42015()) {
          class_1343 var4 = new class_1343(
             client.thePlayer.field_41754
-               - (client.thePlayer.field_41754 - client.thePlayer.method_37302()) * (double) client.method_8554(),
+               - (client.thePlayer.field_41754 - client.thePlayer.getPosX()) * (double) client.method_8554(),
             client.thePlayer.field_41713
                - (client.thePlayer.field_41713 - client.thePlayer.method_37309()) * (double) client.method_8554(),
             client.thePlayer.field_41724
-               - (client.thePlayer.field_41724 - client.thePlayer.method_37156()) * (double) client.method_8554()
+               - (client.thePlayer.field_41724 - client.thePlayer.getPosZ()) * (double) client.method_8554()
          );
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(3042);

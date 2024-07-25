@@ -56,9 +56,9 @@ public class class_2100 extends class_551 implements class_1538 {
 
                var2.method_29528(
                   (class_704)null,
-                  var7.method_37302(),
+                  var7.getPosX(),
                   var7.method_37309(),
-                  var7.method_37156(),
+                  var7.getPosZ(),
                   class_463.field_2702,
                   class_562.field_3335,
                   1.0F,

@@ -132,7 +132,7 @@ public class class_6415 extends class_4088 {
          Entity var3 = (Entity)this.field_32763;
          this.field_32763
             .method_972()
-            .method_29527(var3.method_37302(), var3.method_37309(), var3.method_37156(), this.field_32763.method_976(), class_562.field_3328, 1.0F, 1.0F, false);
+            .method_29527(var3.getPosX(), var3.method_37309(), var3.getPosZ(), this.field_32763.method_976(), class_562.field_3328, 1.0F, 1.0F, false);
       }
    }
 

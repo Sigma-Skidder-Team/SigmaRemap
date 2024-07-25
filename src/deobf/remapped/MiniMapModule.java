@@ -46,11 +46,11 @@ public class MiniMapModule extends Module {
    private void method_22829(class_5596 var1) {
       if (this.method_42015() && client.thePlayer != null && client.theWorld != null) {
          this.field_25741++;
-         if ((double)field_25738 < client.thePlayer.method_37309() && client.thePlayer.field_41726) {
+         if ((double)field_25738 < client.thePlayer.method_37309() && client.thePlayer.onGround) {
             field_25738 += 0.5F;
          }
 
-         if ((double)field_25738 > client.thePlayer.method_37309() && client.thePlayer.field_41726) {
+         if ((double)field_25738 > client.thePlayer.method_37309() && client.thePlayer.onGround) {
             field_25738 -= 0.5F;
          }
 
@@ -97,8 +97,8 @@ public class MiniMapModule extends Module {
                var16.method_21318();
             }
 
-            this.field_25736 = (client.thePlayer.method_37302() - (double)(client.thePlayer.field_41742 * 16)) / 16.0;
-            this.field_25734 = (client.thePlayer.method_37156() - (double)(client.thePlayer.field_41714 * 16)) / 16.0;
+            this.field_25736 = (client.thePlayer.getPosX() - (double)(client.thePlayer.field_41742 * 16)) / 16.0;
+            this.field_25734 = (client.thePlayer.getPosZ() - (double)(client.thePlayer.field_41714 * 16)) / 16.0;
             this.field_25730 = this.method_22831(this.field_25739);
             this.field_25727 = client.thePlayer.method_37075();
             this.field_25741 = 0;

@@ -211,7 +211,7 @@ public class class_9153 {
       int var3 = this.field_46835.thePlayer.inventory.field_36404;
       if (var3 != this.field_46834) {
          this.field_46834 = var3;
-         this.field_46837.method_4813(new class_7371(this.field_46834));
+         this.field_46837.sendPacket(new class_7371(this.field_46834));
       }
    }
 
@@ -221,7 +221,7 @@ public class class_9153 {
       if (this.field_46835.theWorld.method_6673().method_9813(var7)) {
          ItemStack var8 = var1.method_26617(var3);
          if (this.field_46833 == GameType.SPECTATOR) {
-            this.field_46837.method_4813(new class_8585(var3, var4));
+            this.field_46837.sendPacket(new class_8585(var3, var4));
             return class_6910.field_35520;
          } else {
             boolean var9 = !var1.method_26446().method_28022() || !var1.method_26568().method_28022();
@@ -229,12 +229,12 @@ public class class_9153 {
             if (!var10) {
                class_6910 var11 = var2.method_28262(var7).method_8322(var2, var1, var3, var4);
                if (var11.method_31662()) {
-                  this.field_46837.method_4813(new class_8585(var3, var4));
+                  this.field_46837.sendPacket(new class_8585(var3, var4));
                   return var11;
                }
             }
 
-            this.field_46837.method_4813(new class_8585(var3, var4));
+            this.field_46837.sendPacket(new class_8585(var3, var4));
             if (!var8.method_28022() && !var1.method_3173().method_32954(var8.method_27960())) {
                class_4734 var14 = new class_4734(var1, var3, var4);
                class_6910 var12;
@@ -259,7 +259,7 @@ public class class_9153 {
    public class_6910 method_42155(class_704 var1, World var2, Hand var3) {
       if (this.field_46833 != GameType.SPECTATOR) {
          this.method_42129();
-         this.field_46837.method_4813(new class_1022(var3));
+         this.field_46837.sendPacket(new class_1022(var3));
          ItemStack var6 = var1.method_26617(var3);
          if (!var1.method_3173().method_32954(var6.method_27960())) {
             int var7 = var6.method_27997();
@@ -288,7 +288,7 @@ public class class_9153 {
 
    public void method_42138(class_704 var1, Entity var2) {
       this.method_42129();
-      this.field_46837.method_4813(new class_3398(var2, var1.method_37252()));
+      this.field_46837.sendPacket(new class_3398(var2, var1.isSneaking()));
       if (this.field_46833 != GameType.SPECTATOR) {
          var1.method_3158(var2);
          var1.method_3164();
@@ -297,14 +297,14 @@ public class class_9153 {
 
    public class_6910 method_42144(class_704 var1, Entity var2, Hand var3) {
       this.method_42129();
-      this.field_46837.method_4813(new class_3398(var2, var3, var1.method_37252()));
+      this.field_46837.sendPacket(new class_3398(var2, var3, var1.isSneaking()));
       return this.field_46833 != GameType.SPECTATOR ? var1.method_3204(var2, var3) : class_6910.field_35521;
    }
 
    public class_6910 method_42145(class_704 var1, Entity var2, class_5631 var3, Hand var4) {
       this.method_42129();
-      class_1343 var7 = var3.method_33993().method_6193(var2.method_37302(), var2.method_37309(), var2.method_37156());
-      this.field_46837.method_4813(new class_3398(var2, var4, var7, var1.method_37252()));
+      class_1343 var7 = var3.method_33993().method_6193(var2.getPosX(), var2.method_37309(), var2.getPosZ());
+      this.field_46837.sendPacket(new class_3398(var2, var4, var7, var1.isSneaking()));
       return this.field_46833 != GameType.SPECTATOR ? var2.method_37227(var1, var7, var4) : class_6910.field_35521;
    }
 
@@ -313,28 +313,28 @@ public class class_9153 {
    }
 
    public void method_42151(int var1, class_8932<?> var2, boolean var3) {
-      this.field_46837.method_4813(new class_6072(var1, var2, var3));
+      this.field_46837.sendPacket(new class_6072(var1, var2, var3));
    }
 
    public void method_42154(int var1, int var2) {
-      this.field_46837.method_4813(new class_8635(var1, var2));
+      this.field_46837.sendPacket(new class_8635(var1, var2));
    }
 
    public void method_42148(ItemStack var1, int var2) {
       if (this.field_46833.method_21587()) {
-         this.field_46837.method_4813(new class_6362(var2, var1));
+         this.field_46837.sendPacket(new class_6362(var2, var1));
       }
    }
 
    public void method_42157(ItemStack var1) {
       if (this.field_46833.method_21587() && !var1.method_28022()) {
-         this.field_46837.method_4813(new class_6362(-1, var1));
+         this.field_46837.sendPacket(new class_6362(-1, var1));
       }
    }
 
    public void method_42139(class_704 var1) {
       this.method_42129();
-      this.field_46837.method_4813(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
+      this.field_46837.sendPacket(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
       var1.method_26474();
    }
 
@@ -375,13 +375,13 @@ public class class_9153 {
    }
 
    public void method_42128(int var1) {
-      this.field_46837.method_4813(new class_4006(var1));
+      this.field_46837.sendPacket(new class_4006(var1));
    }
 
    private void method_42127(class_7500 var1, BlockPos var2, Direction var3) {
       ClientPlayerEntity var6 = this.field_46835.thePlayer;
       this.field_46830.put(Pair.of(var2, var1), var6.method_37245());
-      this.field_46837.method_4813(new class_1586(var1, var2, var3));
+      this.field_46837.sendPacket(new class_1586(var1, var2, var3));
    }
 
    public void method_42159(ClientWorld var1, BlockPos var2, class_2522 var3, class_7500 var4, boolean var5) {

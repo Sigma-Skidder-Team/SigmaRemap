@@ -43,18 +43,18 @@ public abstract class class_4612 extends class_5886 {
                this.field_29916.method_3491(class_1891.field_9564);
                float var5 = 2.0F;
                class_1343 var6 = new class_1343(
-                     var3.method_37302() - this.method_37302(), var3.method_37309() - this.method_37309(), var3.method_37156() - this.method_37156()
+                     var3.getPosX() - this.getPosX(), var3.method_37309() - this.method_37309(), var3.getPosZ() - this.getPosZ()
                   )
                   .method_6213()
                   .method_6209((double)Math.max(var4 - 2.0F, 0.0F));
                this.method_26927()
                   .method_5595(
-                     this.method_37302() + var6.field_7336, this.method_37309() + var6.field_7333, this.method_37156() + var6.field_7334, this.method_21378()
+                     this.getPosX() + var6.field_7336, this.method_37309() + var6.field_7333, this.getPosZ() + var6.field_7334, this.method_21378()
                   );
             } else {
-               double var7 = (var3.method_37302() - this.method_37302()) / (double)var4;
+               double var7 = (var3.getPosX() - this.getPosX()) / (double)var4;
                double var9 = (var3.method_37309() - this.method_37309()) / (double)var4;
-               double var11 = (var3.method_37156() - this.method_37156()) / (double)var4;
+               double var11 = (var3.getPosZ() - this.getPosZ()) / (double)var4;
                this.method_37215(
                   this.method_37098()
                      .method_6214(Math.copySign(var7 * var7 * 0.4, var7), Math.copySign(var9 * var9 * 0.4, var9), Math.copySign(var11 * var11 * 0.4, var11))

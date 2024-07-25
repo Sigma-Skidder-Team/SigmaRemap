@@ -2,7 +2,7 @@ package remapped;
 
 import java.io.IOException;
 
-public class class_4148 implements Packet<class_1243> {
+public class CMoveVehiclePacket implements Packet<class_1243> {
    private static String[] field_20184;
    private double field_20185;
    private double field_20182;
@@ -10,13 +10,13 @@ public class class_4148 implements Packet<class_1243> {
    private float field_20186;
    private float field_20181;
 
-   public class_4148() {
+   public CMoveVehiclePacket() {
    }
 
-   public class_4148(Entity var1) {
-      this.field_20185 = var1.method_37302();
+   public CMoveVehiclePacket(Entity var1) {
+      this.field_20185 = var1.getPosX();
       this.field_20182 = var1.method_37309();
-      this.field_20183 = var1.method_37156();
+      this.field_20183 = var1.getPosZ();
       this.field_20186 = var1.rotationYaw;
       this.field_20181 = var1.rotationPitch;
    }

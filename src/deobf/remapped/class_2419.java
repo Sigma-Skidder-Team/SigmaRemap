@@ -34,9 +34,9 @@ public class class_2419 extends Module {
                boolean var6 = var5 > 2 && var5 < 8;
                double var7 = !var6 ? -0.2 : 0.2;
                class_9515 var9 = new class_9515(
-                  client.thePlayer.method_37302(), client.thePlayer.method_37309() + var7, client.thePlayer.method_37156(), true
+                  client.thePlayer.getPosX(), client.thePlayer.method_37309() + var7, client.thePlayer.getPosZ(), true
                );
-               client.method_8614().method_4813(var9);
+               client.method_8614().sendPacket(var9);
             }
 
             client.thePlayer.lastReportedPosY = 0.0;
@@ -48,7 +48,7 @@ public class class_2419 extends Module {
                for (int var10 = 0; var10 < this.field_12047.size(); var10++) {
                   class_6287 var11 = this.field_12047.get(var10);
                   if (var11.method_28689()) {
-                     client.method_8614().method_4813(var11.method_28687());
+                     client.method_8614().sendPacket(var11.method_28687());
                      this.field_12047.remove(var10);
                   }
                }

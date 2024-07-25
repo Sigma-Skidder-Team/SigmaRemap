@@ -41,7 +41,7 @@ public class AutoPotionModule extends Module {
                var5[2] = 1;
             }
 
-            if (!client.thePlayer.field_41726) {
+            if (!client.thePlayer.onGround) {
                this.field_13557 = 0;
             } else {
                this.field_13557++;
@@ -71,16 +71,16 @@ public class AutoPotionModule extends Module {
                }
             } else {
                this.field_13559++;
-               client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+               client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
             }
          }
       }
    }
 
    public float[] method_12644() {
-      double var3 = client.thePlayer.method_37302() + client.thePlayer.method_37098().field_7336 * 26.0;
+      double var3 = client.thePlayer.getPosX() + client.thePlayer.method_37098().field_7336 * 26.0;
       double var5 = client.thePlayer.field_41712.field_19937 - 3.6;
-      double var7 = client.thePlayer.method_37156() + client.thePlayer.method_37098().field_7334 * 26.0;
+      double var7 = client.thePlayer.getPosZ() + client.thePlayer.method_37098().field_7334 * 26.0;
       return !this.getBooleanValueByName("Predict") ? new float[]{client.thePlayer.rotationYaw, 90.0F} : class_7211.method_33006(var3, var7, var5);
    }
 
@@ -174,9 +174,9 @@ public class AutoPotionModule extends Module {
                var1.method_6441(var9[0]);
                var1.method_6448(var9[1]);
             } else {
-               client.method_8614().method_4813(new class_3616(var9[0], var9[1], !var8 && client.thePlayer.field_41726));
-               client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
-               client.method_8614().method_4813(new class_1022(Hand.OFF_HAND));
+               client.method_8614().sendPacket(new RotationPacket(var9[0], var9[1], !var8 && client.thePlayer.onGround));
+               client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
+               client.method_8614().sendPacket(new class_1022(Hand.OFF_HAND));
                client.thePlayer.inventory.field_36404 = var7;
                client.playerController.method_42129();
                KillauraModule.field_12551 = 1;

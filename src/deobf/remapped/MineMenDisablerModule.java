@@ -33,7 +33,7 @@ public class MineMenDisablerModule extends Module {
    @EventListen
    public void method_35498(class_7767 var1) {
       if (this.field_39768) {
-         if (!client.thePlayer.field_41726) {
+         if (!client.thePlayer.onGround) {
             if (client.thePlayer.field_41706 > 1.0F) {
                this.field_39768 = false;
             }
@@ -50,7 +50,7 @@ public class MineMenDisablerModule extends Module {
    private void method_35497(PacketEvent var1) {
       if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
          class_4548 var5 = (class_4548)var1.method_557();
-         if (var5.method_21093() == client.thePlayer.method_37145() && var5.field_22168 < 0 && client.thePlayer.field_41726) {
+         if (var5.method_21093() == client.thePlayer.method_37145() && var5.field_22168 < 0 && client.thePlayer.onGround) {
             var1.method_29715(true);
          }
       } else if (var1.method_557() instanceof class_509) {

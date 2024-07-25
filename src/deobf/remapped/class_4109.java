@@ -174,9 +174,9 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             this.world
                .method_29528(
                   (class_704)null,
-                  this.method_37302(),
+                  this.getPosX(),
                   this.method_37309(),
-                  this.method_37156(),
+                  this.getPosZ(),
                   var3,
                   this.method_37197(),
                   1.0F,
@@ -513,7 +513,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       if (this.method_19044() && this.method_26449() && !this.method_19086()) {
          class_5834 var3 = this.world
             .<class_4109>method_25865(
-               class_4109.class, field_20015, this, this.method_37302(), this.method_37309(), this.method_37156(), this.method_37241().method_18898(16.0)
+               class_4109.class, field_20015, this, this.getPosX(), this.method_37309(), this.getPosZ(), this.method_37241().method_18898(16.0)
             );
          if (var3 != null && this.method_37275(var3) > 4.0) {
             this.field_29904.method_5598(var3, 0);
@@ -533,7 +533,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
          this.method_19077(64, false);
       }
 
-      if ((this.method_37069() || this.method_26530()) && this.field_20026 > 0 && ++this.field_20026 > 20) {
+      if ((this.canPassengerSteer() || this.method_26530()) && this.field_20026 > 0 && ++this.field_20026 > 20) {
          this.field_20026 = 0;
          this.method_19068(false);
       }
@@ -612,7 +612,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    private void method_19065() {
-      if (this.method_37069() || this.method_26530()) {
+      if (this.canPassengerSteer() || this.method_26530()) {
          this.field_20026 = 1;
          this.method_19068(true);
       }
@@ -657,12 +657,12 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
                this.field_20023 = 0;
             }
 
-            if (this.field_41726 && this.field_20019 == 0.0F && this.method_19057() && !this.field_20014) {
+            if (this.onGround && this.field_20019 == 0.0F && this.method_19057() && !this.field_20014) {
                var5 = 0.0F;
                var6 = 0.0F;
             }
 
-            if (this.field_20019 > 0.0F && !this.method_19047() && this.field_41726) {
+            if (this.field_20019 > 0.0F && !this.method_19047() && this.onGround) {
                double var7 = this.method_19078() * (double)this.field_20019 * (double)this.method_37281();
                double var9;
                if (!this.isPotionActive(Effects.field_19730)) {
@@ -685,7 +685,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             }
 
             this.field_29674 = this.method_26423() * 0.1F;
-            if (!this.method_37069()) {
+            if (!this.canPassengerSteer()) {
                if (var4 instanceof class_704) {
                   this.method_37215(class_1343.field_7335);
                }
@@ -694,7 +694,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
                super.method_26431(new class_1343((double)var5, var1.field_7333, (double)var6));
             }
 
-            if (this.field_41726) {
+            if (this.onGround) {
                this.field_20019 = 0.0F;
                this.method_19080(false);
             }
@@ -874,9 +874,9 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
          float var6 = 0.7F * this.field_20010;
          float var7 = 0.15F * this.field_20010;
          var1.method_37256(
-            this.method_37302() + (double)(var6 * var8),
+            this.getPosX() + (double)(var6 * var8),
             this.method_37309() + this.method_37149() + var1.method_37106() + (double)var7,
-            this.method_37156() - (double)(var6 * var5)
+            this.getPosZ() - (double)(var6 * var5)
          );
          if (var1 instanceof class_5834) {
             ((class_5834)var1).field_29605 = this.field_29605;
@@ -950,9 +950,9 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Nullable
    private class_1343 method_19059(class_1343 var1, class_5834 var2) {
-      double var5 = this.method_37302() + var1.field_7336;
+      double var5 = this.getPosX() + var1.field_7336;
       double var7 = this.method_37241().field_19937;
-      double var9 = this.method_37156() + var1.field_7334;
+      double var9 = this.getPosZ() + var1.field_7334;
       class_2921 var11 = new class_2921();
       UnmodifiableIterator var12 = var2.method_26454().iterator();
 

@@ -40,7 +40,7 @@ public final class class_8462 {
                class_1343 var18 = (class_1343)var17.get();
                double var19 = var1.method_6204(var18);
                if (var19 < var10 || var10 == 0.0) {
-                  if (var15.method_37240() != var0.method_37240()) {
+                  if (var15.getLowestRidingEntity() != var0.getLowestRidingEntity()) {
                      var12 = var15;
                      var13 = var18;
                      var10 = var19;

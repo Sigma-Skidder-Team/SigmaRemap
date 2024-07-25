@@ -25,9 +25,9 @@ public class class_1607 extends class_3599 {
       class_5834 var3 = this.field_8338.method_26531();
       if (var3 != null) {
          class_1343 var4 = new class_1343(
-            this.field_8338.method_37302() - var3.method_37302(),
+            this.field_8338.method_37302() - var3.getPosX(),
             this.field_8338.method_37309() - var3.method_37309(),
-            this.field_8338.method_37156() - var3.method_37156()
+            this.field_8338.method_37156() - var3.getPosZ()
          );
          class_2522 var5 = this.field_8338
             .field_41768

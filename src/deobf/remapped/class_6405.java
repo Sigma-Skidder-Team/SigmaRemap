@@ -24,9 +24,9 @@ public class class_6405 extends class_3599 {
                   class_7666.class,
                   field_32690,
                   this.field_32694,
-                  this.field_32694.method_37302(),
+                  this.field_32694.getPosX(),
                   this.field_32694.method_37309(),
-                  this.field_32694.method_37156(),
+                  this.field_32694.getPosZ(),
                   this.field_32694.method_37241().method_18899(6.0, 2.0, 6.0)
                );
             return this.field_32691 != null;

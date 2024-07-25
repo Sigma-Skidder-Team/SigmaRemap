@@ -92,7 +92,7 @@ public class CubecraftSpeed extends Module {
                }
                break;
             case "YPort":
-               if (client.thePlayer.field_41726) {
+               if (client.thePlayer.onGround) {
                   if (class_314.method_1434()) {
                      var1.method_35235(0.53000000000001);
                      class_8865.method_40777(var1, 3.67 * (double)this.getFloatValueByName("Speed"));
@@ -122,7 +122,7 @@ public class CubecraftSpeed extends Module {
    @EventListen
    public void method_38351(class_1711 var1) {
       if (this.method_42015() && !(this.field_42612 < 0.0) && this.getStringValueByName("Mode").equals("YPort")) {
-         if (client.thePlayer.field_41726 && class_314.method_1413(client.thePlayer, 0.001F)) {
+         if (client.thePlayer.onGround && class_314.method_1413(client.thePlayer, 0.001F)) {
             this.field_42612 = client.thePlayer.method_37309();
          }
 

@@ -35,7 +35,7 @@ public class UnstuckModule extends Module {
    @EventListen
    public void method_8072(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
-         if (!client.thePlayer.field_41726 && !class_314.method_1413(client.thePlayer, 0.001F)) {
+         if (!client.thePlayer.onGround && !class_314.method_1413(client.thePlayer, 0.001F)) {
             if ((float)this.field_9265 >= this.getFloatValueByName("Flags") && this.field_9264 == 0) {
                this.field_9264 = 60;
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Unstuck", "Trying to unstuck you.."));

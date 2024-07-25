@@ -53,8 +53,8 @@ public class ChestStealerModule extends Module {
                   && var4.method_43955().method_12165() == this.field_15892.method_17399().method_12165()
                   && var4.method_43955().method_12185() == this.field_15892.method_17399().method_12185()) {
                   this.field_15894 = true;
-                  client.method_8614().method_4813(new class_8585(Hand.MAIN_HAND, var4));
-                  client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
+                  client.method_8614().sendPacket(new class_8585(Hand.MAIN_HAND, var4));
+                  client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
                   this.field_15893.method_14773();
                }
             }

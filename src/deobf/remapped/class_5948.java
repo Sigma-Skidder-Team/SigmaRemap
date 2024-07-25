@@ -44,7 +44,7 @@ public class class_5948 extends class_4109 {
 
    @Override
    public class_8461 method_37239() {
-      if (this.field_41726) {
+      if (this.onGround) {
          if (!this.method_37151()) {
             return class_463.field_2087;
          }
@@ -64,7 +64,7 @@ public class class_5948 extends class_4109 {
 
    @Override
    public void method_37203(float var1) {
-      if (!this.field_41726) {
+      if (!this.onGround) {
          super.method_37203(Math.min(0.1F, var1 * 25.0F));
       } else {
          super.method_37203(0.3F);

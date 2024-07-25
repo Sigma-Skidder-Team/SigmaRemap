@@ -7,7 +7,7 @@ public class SafeWalkModule extends Module {
 
    @EventListen
    public void method_6465(class_7982 var1) {
-      if (this.method_42015() && client.thePlayer.field_41726) {
+      if (this.method_42015() && client.thePlayer.onGround) {
          Module var4 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class);
          if (!var4.method_42015()) {
             var1.method_36186(true);

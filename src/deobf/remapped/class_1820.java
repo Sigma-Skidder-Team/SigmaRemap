@@ -82,14 +82,14 @@ public abstract class class_1820 extends class_3599 {
    @Override
    public void method_16796() {
       this.field_9239 = false;
-      this.field_9238 = (float)((double)this.field_9240.method_12173() + 0.5 - this.field_9241.method_37302());
-      this.field_9237 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.method_37156());
+      this.field_9238 = (float)((double)this.field_9240.method_12173() + 0.5 - this.field_9241.getPosX());
+      this.field_9237 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.getPosZ());
    }
 
    @Override
    public void method_16794() {
-      float var3 = (float)((double)this.field_9240.method_12173() + 0.5 - this.field_9241.method_37302());
-      float var4 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.method_37156());
+      float var3 = (float)((double)this.field_9240.method_12173() + 0.5 - this.field_9241.getPosX());
+      float var4 = (float)((double)this.field_9240.method_12185() + 0.5 - this.field_9241.getPosZ());
       float var5 = this.field_9238 * var3 + this.field_9237 * var4;
       if (var5 < 0.0F) {
          this.field_9239 = true;

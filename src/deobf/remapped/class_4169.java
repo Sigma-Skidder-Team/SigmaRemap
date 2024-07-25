@@ -73,11 +73,11 @@ public enum class_4169 implements class_6839 {
                      case field_20281:
                         return var5.field_29676;
                      case field_20286:
-                        return (float)var5.method_37302();
+                        return (float)var5.getPosX();
                      case field_20293:
                         return (float)var5.method_37309();
                      case field_20280:
-                        return (float)var5.method_37156();
+                        return (float)var5.getPosZ();
                      case field_20289:
                         return (float)var5.method_26577();
                      case field_20282:

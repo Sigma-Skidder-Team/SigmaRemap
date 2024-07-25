@@ -59,7 +59,7 @@ public class VanillaFly extends Module {
    @EventListen
    public void method_3074(class_1393 var1) {
       if (this.method_42015()) {
-         if (!client.thePlayer.field_41726 && this.getBooleanValueByName("Kick bypass")) {
+         if (!client.thePlayer.onGround && this.getBooleanValueByName("Kick bypass")) {
             if (this.field_3718 > 0 && this.field_3718 % 30 == 0 && !class_314.method_1413(client.thePlayer, 0.01F)) {
                if (class_3347.method_15349() != class_412.field_1747.method_2055()) {
                   var1.method_6455(var1.method_6454() - 0.04);
@@ -72,26 +72,26 @@ public class VanillaFly extends Module {
                   double var6 = var1.method_6454();
                   ArrayList var8 = new ArrayList();
                   if (!(var6 - var4 > 9.0)) {
-                     client.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
+                     client.method_8614().sendPacket(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
                   } else {
                      while (var6 > var4 + 9.0) {
                         var6 -= 9.0;
                         var8.add(var6);
-                        client.method_8614().method_4813(new class_9515(var1.method_6450(), var6, var1.method_6438(), true));
+                        client.method_8614().sendPacket(new class_9515(var1.method_6450(), var6, var1.method_6438(), true));
                      }
 
                      for (Double var10 : var8) {
-                        client.method_8614().method_4813(new class_9515(var1.method_6450(), var10, var1.method_6438(), true));
+                        client.method_8614().sendPacket(new class_9515(var1.method_6450(), var10, var1.method_6438(), true));
                      }
 
-                     client.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
+                     client.method_8614().sendPacket(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
                      Collections.reverse(var8);
 
                      for (Double var12 : var8) {
-                        client.method_8614().method_4813(new class_9515(var1.method_6450(), var12, var1.method_6438(), true));
+                        client.method_8614().sendPacket(new class_9515(var1.method_6450(), var12, var1.method_6438(), true));
                      }
 
-                     client.method_8614().method_4813(new class_9515(var1.method_6450(), var1.method_6454(), var1.method_6438(), true));
+                     client.method_8614().sendPacket(new class_9515(var1.method_6450(), var1.method_6454(), var1.method_6438(), true));
                   }
 
                   this.field_3718 = 0;
@@ -130,7 +130,7 @@ public class VanillaFly extends Module {
 
    private double method_3073() {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
-         if (!client.thePlayer.field_41726) {
+         if (!client.thePlayer.onGround) {
             class_4092 var3 = client.thePlayer.field_41712.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             Iterator var4 = client.theWorld.method_6680(client.thePlayer, var3).iterator();
             double var5 = -1.0;

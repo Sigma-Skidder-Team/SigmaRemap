@@ -185,9 +185,9 @@ public abstract class class_4641 extends Entity {
    public class_91 method_37311(ItemStack var1, float var2) {
       class_91 var5 = new class_91(
          this.world,
-         this.method_37302() + (double)((float)this.field_22663.method_1041() * 0.15F),
+         this.getPosX() + (double)((float)this.field_22663.method_1041() * 0.15F),
          this.method_37309() + (double)var2,
-         this.method_37156() + (double)((float)this.field_22663.method_1034() * 0.15F),
+         this.getPosZ() + (double)((float)this.field_22663.method_1034() * 0.15F),
          var1
       );
       var5.method_257();

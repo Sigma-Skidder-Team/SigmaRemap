@@ -51,7 +51,7 @@ public class OptionsScreen extends Screen {
             new class_9521(
                this.field_941 / 2 - 155 + var3 % 2 * 160, this.field_940 / 6 - 12 + 24 * (var3 >> 1), 150, 20, this.method_39304(this.field_43680), var1 -> {
                   this.field_43680 = class_423.method_2100(this.field_43680.method_2097() + 1);
-                  this.field_943.method_8614().method_4813(new class_3005(this.field_43680));
+                  this.field_943.method_8614().sendPacket(new class_3005(this.field_43680));
                   this.field_43679.method_32687(this.method_39304(this.field_43680));
                }
             )
@@ -207,7 +207,7 @@ public class OptionsScreen extends Screen {
    private void method_39305(boolean var1) {
       this.field_943.method_8609(this);
       if (var1 && this.field_943.theWorld != null) {
-         this.field_943.method_8614().method_4813(new class_3196(true));
+         this.field_943.method_8614().sendPacket(new class_3196(true));
          this.field_43681.method_5222(true);
          this.field_43681.field_36675 = false;
          this.field_43679.field_36675 = false;

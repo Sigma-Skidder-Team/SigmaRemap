@@ -298,8 +298,8 @@ public class class_2654 implements class_5990 {
    @Override
    public void method_27342(Entity var1) {
       this.field_13087 = true;
-      int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
-      int var5 = class_9299.method_42847(var1.method_37156() / 16.0);
+      int var4 = class_9299.method_42847(var1.getPosX() / 16.0);
+      int var5 = class_9299.method_42847(var1.getPosZ() / 16.0);
       if (var4 != this.field_13067.field_10328 || var5 != this.field_13067.field_10327) {
          field_13080.warn("Wrong location! ({}, {}) should be ({}, {}), {}", var4, var5, this.field_13067.field_10328, this.field_13067.field_10327, var1);
          var1.field_41751 = true;

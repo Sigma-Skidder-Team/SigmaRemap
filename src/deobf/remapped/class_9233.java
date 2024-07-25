@@ -20,7 +20,7 @@ public class class_9233 extends Module {
 
    @EventListen
    public void method_42589(class_7982 var1) {
-      if (this.method_42015() && client.thePlayer.field_41726) {
+      if (this.method_42015() && client.thePlayer.onGround) {
          var1.method_36186(true);
       }
    }
@@ -32,7 +32,7 @@ public class class_9233 extends Module {
             this.method_42017().method_41999();
          }
 
-         if (!client.thePlayer.field_41726 && this.field_47194) {
+         if (!client.thePlayer.onGround && this.field_47194) {
             this.field_47196 = Math.max(this.field_47196, 0.499);
             class_8865.method_40777(var1, this.field_47196);
             this.field_47196 -= 0.007;
@@ -55,7 +55,7 @@ public class class_9233 extends Module {
    @EventListen
    public void method_42590(class_4868 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             if (this.field_47194) {
                this.field_47194 = !this.field_47194;
                class_8865.method_40776(0.0);
@@ -66,8 +66,8 @@ public class class_9233 extends Module {
                return;
             }
 
-            double var4 = client.thePlayer.method_37302();
-            double var6 = client.thePlayer.method_37156();
+            double var4 = client.thePlayer.getPosX();
+            double var6 = client.thePlayer.getPosZ();
             double var8 = client.thePlayer.method_37309();
             double var10 = (double) client.thePlayer.movementInput.field_45287;
             double var12 = (double) client.thePlayer.movementInput.field_45282;
@@ -85,8 +85,8 @@ public class class_9233 extends Module {
                   var19 = 312.7;
                   class_9515 var26 = new class_9515(var17, var24 - var22, var19, true);
                   class_9515 var27 = new class_9515(var17, var24, var19, true);
-                  client.method_8614().method_4813(var27);
-                  client.method_8614().method_4813(var26);
+                  client.method_8614().sendPacket(var27);
+                  client.method_8614().sendPacket(var26);
                   this.field_47192 = var24 + 0.42;
                   client.thePlayer.method_37256(var17, var24, var19);
                   this.field_47195 = (double)this.getFloatValueByName("Motion");

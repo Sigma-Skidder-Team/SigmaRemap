@@ -117,7 +117,7 @@ public class AGCFly extends Module {
 
    private double method_4927() {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
-         if (!client.thePlayer.field_41726) {
+         if (!client.thePlayer.onGround) {
             class_4092 var3 = client.thePlayer.field_41712.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             Iterator var4 = client.theWorld.method_6680(client.thePlayer, var3).iterator();
             double var5 = -1.0;

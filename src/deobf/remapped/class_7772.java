@@ -263,9 +263,9 @@ public class class_7772 {
    }
 
    private void method_35256() {
-      this.field_39386 = class_527.method_2563(this.field_39387.method_37302());
+      this.field_39386 = class_527.method_2563(this.field_39387.getPosX());
       this.field_39392 = class_527.method_2563(this.field_39387.method_37309());
-      this.field_39400 = class_527.method_2563(this.field_39387.method_37156());
+      this.field_39400 = class_527.method_2563(this.field_39387.getPosZ());
    }
 
    public class_1343 method_35255() {

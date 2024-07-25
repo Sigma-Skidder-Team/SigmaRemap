@@ -114,7 +114,7 @@ public class class_7937 extends class_1173 {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (var1.method_43360().nextInt(100) == 0) {
          class_6778 var8 = class_6629.field_34241.method_30484(this.world);
-         var8.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, 0.0F);
+         var8.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, 0.0F);
          var8.method_26864(var1, var2, var3, (class_8733)null, (CompoundNBT)null);
          var8.method_37353(this);
       }

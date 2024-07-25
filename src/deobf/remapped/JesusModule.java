@@ -29,7 +29,7 @@ public class JesusModule extends Module {
                   >= client.thePlayer.method_37309() - (double)(client.thePlayer.method_37309() % 0.5 != 0.0 ? 0.0F : 0.5F)
             )) {
                if (!this.method_32078(client.thePlayer.field_41712)) {
-                  if (!client.thePlayer.method_37252()) {
+                  if (!client.thePlayer.isSneaking()) {
                      if (!(client.thePlayer.field_41706 > 10.0F)) {
                         class_2522 var4 = client.theWorld.method_28262(var1.method_23989());
                         int var5 = var4.method_8364().method_21996();
@@ -69,7 +69,7 @@ public class JesusModule extends Module {
                var1.method_6455(var1.method_6454() - 0.001);
             }
          } else {
-            this.field_36213 = !client.thePlayer.field_41726 ? 1 : 0;
+            this.field_36213 = !client.thePlayer.onGround ? 1 : 0;
          }
       }
    }
@@ -78,7 +78,7 @@ public class JesusModule extends Module {
    @class_7664
    public void method_32079(class_7767 var1) {
       if (this.method_42015() && client.theWorld != null && !AutoMLGModule.method_16781()) {
-         if (this.method_32078(client.thePlayer.field_41712) && !client.thePlayer.method_37252()) {
+         if (this.method_32078(client.thePlayer.field_41712) && !client.thePlayer.isSneaking()) {
             class_2522 var4 = client.theWorld.method_28262(client.thePlayer.method_37075());
             if (var4 != null && !var4.method_8364().method_22001()) {
                double var5 = (double)var4.method_8364().method_21998();
@@ -92,7 +92,7 @@ public class JesusModule extends Module {
                      double var8 = (double)((int) client.thePlayer.method_37309() + 1);
                      double var10 = var8 - client.thePlayer.method_37309();
                      var1.method_35235(var10);
-                     client.thePlayer.field_41726 = true;
+                     client.thePlayer.onGround = true;
                      this.field_36213 = 1;
                   }
                }
@@ -107,7 +107,7 @@ public class JesusModule extends Module {
                   if (class_314.method_1413(client.thePlayer, 0.001F)) {
                      this.field_36210 = 0;
                   } else {
-                     if (client.thePlayer.method_37252() || client.thePlayer.field_41774) {
+                     if (client.thePlayer.isSneaking() || client.thePlayer.field_41774) {
                         this.field_36210 = 0;
                         return;
                      }

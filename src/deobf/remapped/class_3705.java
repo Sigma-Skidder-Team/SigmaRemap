@@ -16,7 +16,7 @@ public class class_3705 extends class_3289 {
    }
 
    private class_3705(ClientWorld var1, Entity var2, class_5079 var3, int var4, class_1343 var5) {
-      super(var1, var2.method_37302(), var2.method_37080(0.5), var2.method_37156(), var5.field_7336, var5.field_7333, var5.field_7334);
+      super(var1, var2.getPosX(), var2.method_37080(0.5), var2.getPosZ(), var5.field_7336, var5.field_7333, var5.field_7334);
       this.field_18186 = var2;
       this.field_18185 = var4;
       this.field_18183 = var3;

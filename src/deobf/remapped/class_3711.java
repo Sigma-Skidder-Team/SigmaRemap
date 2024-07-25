@@ -19,7 +19,7 @@ public class class_3711 {
    }
 
    public void method_17240(Entity var1, float var2, float var3) {
-      this.method_17231(var1.method_37302(), method_17238(var1), var1.method_37156(), var2, var3);
+      this.method_17231(var1.getPosX(), method_17238(var1), var1.getPosZ(), var2, var3);
    }
 
    public void method_17230(double var1, double var3, double var5) {
@@ -76,16 +76,16 @@ public class class_3711 {
    }
 
    public float method_17233() {
-      double var3 = this.field_18209 - this.field_18205.method_37302();
+      double var3 = this.field_18209 - this.field_18205.getPosX();
       double var5 = this.field_18203 - this.field_18205.method_37388();
-      double var7 = this.field_18206 - this.field_18205.method_37156();
+      double var7 = this.field_18206 - this.field_18205.getPosZ();
       double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
       return (float)(-(class_9299.method_42821(var5, var9) * 180.0F / (float)Math.PI));
    }
 
    public float method_17243() {
-      double var3 = this.field_18209 - this.field_18205.method_37302();
-      double var5 = this.field_18206 - this.field_18205.method_37156();
+      double var3 = this.field_18209 - this.field_18205.getPosX();
+      double var5 = this.field_18206 - this.field_18205.getPosZ();
       return (float)(class_9299.method_42821(var5, var3) * 180.0F / (float)Math.PI) - 90.0F;
    }
 

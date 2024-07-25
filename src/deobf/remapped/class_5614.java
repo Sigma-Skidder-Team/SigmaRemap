@@ -41,9 +41,9 @@ public class class_5614 extends Entity {
          this.field_28509--;
       }
 
-      this.field_41767 = this.method_37302();
+      this.field_41767 = this.getPosX();
       this.field_41698 = this.method_37309();
-      this.field_41725 = this.method_37156();
+      this.field_41725 = this.getPosZ();
       if (!this.method_37261(class_6503.field_33094)) {
          if (!this.method_37078()) {
             this.method_37215(this.method_37098().method_6214(0.0, -0.03, 0.0));
@@ -62,7 +62,7 @@ public class class_5614 extends Entity {
       }
 
       if (!this.world.method_6681(this.method_37241())) {
-         this.method_37160(this.method_37302(), (this.method_37241().field_19937 + this.method_37241().field_19939) / 2.0, this.method_37156());
+         this.method_37160(this.getPosX(), (this.method_37241().field_19937 + this.method_37241().field_19939) / 2.0, this.getPosZ());
       }
 
       double var3 = 8.0;
@@ -80,9 +80,9 @@ public class class_5614 extends Entity {
 
       if (this.field_28507 != null) {
          class_1343 var5 = new class_1343(
-            this.field_28507.method_37302() - this.method_37302(),
+            this.field_28507.getPosX() - this.getPosX(),
             this.field_28507.method_37309() + (double)this.field_28507.method_37277() / 2.0 - this.method_37309(),
-            this.field_28507.method_37156() - this.method_37156()
+            this.field_28507.getPosZ() - this.getPosZ()
          );
          double var6 = var5.method_6221();
          if (var6 < 64.0) {
@@ -93,16 +93,16 @@ public class class_5614 extends Entity {
 
       this.method_37226(class_7412.field_37839, this.method_37098());
       float var10 = 0.98F;
-      if (this.field_41726) {
+      if (this.onGround) {
          var10 = this.world
-               .method_28262(new BlockPos(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
+               .method_28262(new BlockPos(this.getPosX(), this.method_37309() - 1.0, this.getPosZ()))
                .method_8360()
                .method_29308()
             * 0.98F;
       }
 
       this.method_37215(this.method_37098().method_6210((double)var10, 0.98, (double)var10));
-      if (this.field_41726) {
+      if (this.onGround) {
          this.method_37215(this.method_37098().method_6210(1.0, -0.9, 1.0));
       }
 

@@ -90,9 +90,9 @@ public class class_4393 extends class_2803 implements class_9897 {
                this.world
                   .method_43361(
                      class_3090.field_15338,
-                     this.method_37302() + this.field_41717.nextDouble() / 2.0,
+                     this.getPosX() + this.field_41717.nextDouble() / 2.0,
                      this.method_37080(0.5),
-                     this.method_37156() + this.field_41717.nextDouble() / 2.0,
+                     this.getPosZ() + this.field_41717.nextDouble() / 2.0,
                      0.0,
                      this.field_41717.nextDouble() / 5.0,
                      0.0
@@ -107,9 +107,9 @@ public class class_4393 extends class_2803 implements class_9897 {
                this.world
                   .method_43361(
                      class_3090.field_15376,
-                     this.method_37302() + this.field_41717.nextDouble() / 2.0,
+                     this.getPosX() + this.field_41717.nextDouble() / 2.0,
                      this.method_37080(0.5),
-                     this.method_37156() + this.field_41717.nextDouble() / 2.0,
+                     this.getPosZ() + this.field_41717.nextDouble() / 2.0,
                      0.0,
                      this.field_41717.nextDouble() / 5.0,
                      0.0
@@ -128,10 +128,10 @@ public class class_4393 extends class_2803 implements class_9897 {
       this.world.method_29540((class_704)null, this, class_463.field_2892, var1, 1.0F, 1.0F);
       if (!this.world.method_22567()) {
          ((class_6331)this.world)
-            .method_28957(class_3090.field_15339, this.method_37302(), this.method_37080(0.5), this.method_37156(), 1, 0.0, 0.0, 0.0, 0.0);
+            .method_28957(class_3090.field_15339, this.getPosX(), this.method_37080(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.method_37204();
          class_2803 var4 = class_6629.field_34325.method_30484(this.world);
-         var4.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
+         var4.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var4.method_26456(this.method_26551());
          var4.field_29605 = this.field_29605;
          if (this.method_45507()) {
@@ -151,9 +151,9 @@ public class class_4393 extends class_2803 implements class_9897 {
                .method_7509(
                   new class_91(
                      this.world,
-                     this.method_37302(),
+                     this.getPosX(),
                      this.method_37080(1.0),
-                     this.method_37156(),
+                     this.getPosZ(),
                      new ItemStack(class_2066.method_9650(this.method_20463()).method_8360())
                   )
                );

@@ -68,9 +68,9 @@ public class NoteblockPlayerModule extends PremiumModule {
                                     var9 = class_7494.method_34077(var8.field_3674, Direction.field_802);
                                  }
 
-                                 client.method_8614().method_4813(new class_3616(var9[0], var9[1], client.thePlayer.field_41726));
-                                 client.method_8614().method_4813(new class_1586(class_7500.field_38263, var8.field_3674, Direction.field_817));
-                                 client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
+                                 client.method_8614().sendPacket(new RotationPacket(var9[0], var9[1], client.thePlayer.onGround));
+                                 client.method_8614().sendPacket(new class_1586(class_7500.field_38263, var8.field_3674, Direction.field_817));
+                                 client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
                                  this.field_41246.add(var8.field_3674);
                               }
                            }
@@ -101,8 +101,8 @@ public class NoteblockPlayerModule extends PremiumModule {
          if (var5.field_3677 == -1.0F
             && Math.sqrt(client.thePlayer.method_37075().method_12180(var5.field_3674)) < (double) client.playerController.method_42146()) {
             float[] var6 = class_7494.method_34077(var5.field_3674, Direction.field_817);
-            client.method_8614().method_4813(new class_3616(var6[0], var6[1], client.thePlayer.field_41726));
-            client.method_8614().method_4813(new class_1586(class_7500.field_38263, var5.field_3674, Direction.field_817));
+            client.method_8614().sendPacket(new RotationPacket(var6[0], var6[1], client.thePlayer.onGround));
+            client.method_8614().sendPacket(new class_1586(class_7500.field_38263, var5.field_3674, Direction.field_817));
             this.field_41246.clear();
             this.field_41246.add(var5.field_3674);
             return true;
@@ -119,9 +119,9 @@ public class NoteblockPlayerModule extends PremiumModule {
             if (client.thePlayer.field_41697 % 1 == 0) {
                float[] var6 = class_7494.method_34077(var5.field_3674, Direction.field_817);
                client.thePlayer.method_26597(Hand.MAIN_HAND);
-               client.method_8614().method_4813(new class_3616(var6[0], var6[1], client.thePlayer.field_41726));
+               client.method_8614().sendPacket(new RotationPacket(var6[0], var6[1], client.thePlayer.onGround));
                client.method_8614()
-                  .method_4813(new class_8585(Hand.MAIN_HAND, class_7494.method_34079(var6[0], var6[1], client.playerController.method_42146() + 1.0F)));
+                  .sendPacket(new class_8585(Hand.MAIN_HAND, class_7494.method_34079(var6[0], var6[1], client.playerController.method_42146() + 1.0F)));
                this.field_41246.clear();
                this.field_41246.add(var5.field_3674);
             }

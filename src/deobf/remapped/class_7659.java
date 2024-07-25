@@ -16,9 +16,9 @@ public class class_7659 extends class_6017 {
       if (this.field_38908 % 2 == 0 && this.field_38908 < 10) {
          class_1343 var3 = this.field_9479.method_12609(1.0F).method_6213();
          var3.method_6192((float) (-Math.PI / 4));
-         double var4 = this.field_9479.field_13542.method_37302();
+         double var4 = this.field_9479.field_13542.getPosX();
          double var6 = this.field_9479.field_13542.method_37080(0.5);
-         double var8 = this.field_9479.field_13542.method_37156();
+         double var8 = this.field_9479.field_13542.getPosZ();
 
          for (int var10 = 0; var10 < 8; var10++) {
             double var11 = var4 + this.field_9479.method_26594().nextGaussian() / 2.0;
@@ -50,14 +50,14 @@ public class class_7659 extends class_6017 {
       if (this.field_38908 < 200) {
          if (this.field_38908 == 10) {
             class_1343 var3 = new class_1343(
-                  this.field_9479.field_13542.method_37302() - this.field_9479.method_37302(),
+                  this.field_9479.field_13542.getPosX() - this.field_9479.getPosX(),
                   0.0,
-                  this.field_9479.field_13542.method_37156() - this.field_9479.method_37156()
+                  this.field_9479.field_13542.getPosZ() - this.field_9479.getPosZ()
                )
                .method_6213();
             float var4 = 5.0F;
-            double var5 = this.field_9479.field_13542.method_37302() + var3.field_7336 * 5.0 / 2.0;
-            double var7 = this.field_9479.field_13542.method_37156() + var3.field_7334 * 5.0 / 2.0;
+            double var5 = this.field_9479.field_13542.getPosX() + var3.field_7336 * 5.0 / 2.0;
+            double var7 = this.field_9479.field_13542.getPosZ() + var3.field_7334 * 5.0 / 2.0;
             double var9 = this.field_9479.field_13542.method_37080(0.5);
             double var11 = var9;
             class_2921 var13 = new class_2921(var5, var9, var7);

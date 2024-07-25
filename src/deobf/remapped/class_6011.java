@@ -152,7 +152,7 @@ public class class_6011 extends class_1829 {
 
    private void method_27438() {
       this.method_37155(class_463.field_2032, this.method_26439(), this.method_26547());
-      class_1343 var3 = this.method_27441(new class_1343(0.0, -1.0, 0.0)).method_6214(this.method_37302(), this.method_37309(), this.method_37156());
+      class_1343 var3 = this.method_27441(new class_1343(0.0, -1.0, 0.0)).method_6214(this.getPosX(), this.method_37309(), this.getPosZ());
 
       for (int var4 = 0; var4 < 30; var4++) {
          class_1343 var5 = this.method_27441(

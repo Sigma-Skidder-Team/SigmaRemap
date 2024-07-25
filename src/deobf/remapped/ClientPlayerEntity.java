@@ -107,21 +107,21 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method_37123() {
-      if (this.world.isBlockLoaded(new BlockPos(this.method_37302(), 0.0, this.method_37156()))) {
+      if (this.world.isBlockLoaded(new BlockPos(this.getPosX(), 0.0, this.getPosZ()))) {
          super.method_37123();
          if (!this.isPassenger()) {
-            this.method_27305();
+            this.onUpdateWalkingPlayer();
          } else {
-            this.connection.method_4813(new class_3616(this.rotationYaw, this.rotationPitch, this.field_41726));
-            this.connection.method_4813(new class_758(this.field_29676, this.field_29673, this.movementInput.field_45284, this.movementInput.field_45289));
-            Entity var3 = this.method_37240();
-            if (var3 != this && var3.method_37069()) {
-               this.connection.method_4813(new class_4148(var3));
+            this.connection.sendPacket(new RotationPacket(this.rotationYaw, this.rotationPitch, this.onGround));
+            this.connection.sendPacket(new CInputPacket(this.field_29676, this.field_29673, this.movementInput.field_45284, this.movementInput.field_45289));
+            Entity var3 = this.getLowestRidingEntity();
+            if (var3 != this && var3.canPassengerSteer()) {
+               this.connection.sendPacket(new CMoveVehiclePacket(var3));
             }
          }
 
          for (IAmbientSoundHandler var4 : this.ambientSoundHandlers) {
-            var4.method_17366();
+            var4.tick();
          }
       }
    }
@@ -136,23 +136,24 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       return 0.0F;
    }
 
-   public void method_27305() {
+   public void onUpdateWalkingPlayer() {
       class_4092 var3 = this.method_37241();
-      class_1393 var4 = new class_1393(this.method_37302(), var3.field_19937, this.method_37156(), this.rotationPitch, this.rotationYaw, this.field_41726);
+      class_1393 var4 = new class_1393(this.getPosX(), var3.field_19937, this.getPosZ(), this.rotationPitch, this.rotationYaw, this.onGround);
       SigmaMainClass.getInstance().getEventManager().call(var4);
+
       if (!var4.method_29716()) {
          boolean var5 = this.method_37321();
          if (var5 != this.serverSprintState) {
-            class_4127 var6 = !var5 ? class_4127.field_20100 : class_4127.field_20099;
-            this.connection.method_4813(new class_2317(this, var6));
+            Action var6 = !var5 ? Action.START_SPRINTING : Action.STOP_SPRINTING;
+            this.connection.sendPacket(new class_2317(this, var6));
             this.serverSprintState = var5;
          }
 
-         boolean var31 = this.method_37252();
-         if (var31 != this.clientSneakState) {
-            class_4127 var7 = !var31 ? class_4127.field_20097 : class_4127.field_20098;
-            this.connection.method_4813(new class_2317(this, var7));
-            this.clientSneakState = var31;
+         boolean flag3 = this.isSneaking();
+         if (flag3 != this.clientSneakState) {
+            Action centityactionpacket$action1 = !flag3 ? Action.PRESS_SHIFT_KEY : Action.RELEASE_SHIFT_KEY;
+            this.connection.sendPacket(new class_2317(this, centityactionpacket$action1));
+            this.clientSneakState = flag3;
          }
 
          if (this.method_27308()) {
@@ -172,21 +173,21 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             boolean var28 = var23 != 0.0 || var25 != 0.0;
             if (!this.isPassenger()) {
                if (var27 && var28) {
-                  this.connection.method_4813(new class_1514(var8, var10, var12, var15, var14, var16));
+                  this.connection.sendPacket(new class_1514(var8, var10, var12, var15, var14, var16));
                } else if (!var27) {
                   if (!var28) {
-                     if (this.prevOnGround != this.field_41726 || class_3347.method_15348() == class_412.field_1747) {
-                        this.connection.method_4813(new class_4609(var16));
+                     if (this.prevOnGround != this.onGround || class_3347.method_15348() == class_412.field_1747) {
+                        this.connection.sendPacket(new class_4609(var16));
                      }
                   } else {
-                     this.connection.method_4813(new class_3616(var15, var14, var16));
+                     this.connection.sendPacket(new RotationPacket(var15, var14, var16));
                   }
                } else {
-                  this.connection.method_4813(new class_9515(var8, var10, var12, var16));
+                  this.connection.sendPacket(new class_9515(var8, var10, var12, var16));
                }
             } else {
                class_1343 var29 = this.method_37098();
-               this.connection.method_4813(new class_1514(var29.field_7336, -999.0, var29.field_7334, var15, var14, var16));
+               this.connection.sendPacket(new class_1514(var29.field_7336, -999.0, var29.field_7334, var15, var14, var16));
                var27 = false;
             }
 
@@ -202,7 +203,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                this.lastReportedPitch = var14;
             }
 
-            this.prevOnGround = this.field_41726;
+            this.prevOnGround = this.onGround;
             this.autoJumpEnabled = this.client.gameOptions.field_45412;
          }
 
@@ -218,7 +219,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public boolean method_3235(boolean var1) {
       class_7500 var4 = !var1 ? class_7500.field_38266 : class_7500.field_38265;
-      this.connection.method_4813(new class_1586(var4, BlockPos.field_7306, Direction.field_802));
+      this.connection.sendPacket(new class_1586(var4, BlockPos.field_7306, Direction.field_802));
       return this.inventory
             .method_31497(
                this.inventory.field_36404, var1 && !this.inventory.method_32403().method_28022() ? this.inventory.method_32403().method_27997() : 1
@@ -227,18 +228,18 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method_27307(String var1) {
-      this.connection.method_4813(new class_3211(var1));
+      this.connection.sendPacket(new class_3211(var1));
    }
 
    @Override
    public void method_26597(Hand var1) {
       super.method_26597(var1);
-      this.connection.method_4813(new class_3195(var1));
+      this.connection.sendPacket(new class_3195(var1));
    }
 
    @Override
    public void method_3205() {
-      this.connection.method_4813(new class_8559(class_2105.field_10549));
+      this.connection.sendPacket(new class_8559(class_2105.field_10549));
    }
 
    @Override
@@ -250,7 +251,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method_3207() {
-      this.connection.method_4813(new class_1194(this.field_3874.field_19925));
+      this.connection.sendPacket(new class_1194(this.field_3874.field_19925));
       this.method_27327();
    }
 
@@ -284,7 +285,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method_3216() {
-      this.connection.method_4813(new class_9808(this.playerAbilities));
+      this.connection.sendPacket(new class_9808(this.playerAbilities));
    }
 
    @Override
@@ -308,11 +309,11 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    public void method_27321() {
-      this.connection.method_4813(new class_2317(this, class_4127.field_20103, class_9299.method_42848(this.method_27313() * 100.0F)));
+      this.connection.sendPacket(new class_2317(this, Action.field_20103, class_9299.method_42848(this.method_27313() * 100.0F)));
    }
 
    public void method_27311() {
-      this.connection.method_4813(new class_2317(this, class_4127.field_20101));
+      this.connection.sendPacket(new class_2317(this, Action.field_20101));
    }
 
    public void method_27315(String var1) {
@@ -334,7 +335,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public void method_27326(class_8932<?> var1) {
       if (this.recipeBook.method_5081(var1)) {
          this.recipeBook.method_5088(var1);
-         this.connection.method_4813(new class_6074(var1));
+         this.connection.sendPacket(new class_6074(var1));
       }
    }
 
@@ -435,12 +436,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method_37155(class_8461 var1, float var2, float var3) {
-      this.world.method_29527(this.method_37302(), this.method_37309(), this.method_37156(), var1, this.method_37197(), var2, var3, false);
+      this.world.method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), var1, this.method_37197(), var2, var3, false);
    }
 
    @Override
    public void method_3172(class_8461 var1, class_562 var2, float var3, float var4) {
-      this.world.method_29527(this.method_37302(), this.method_37309(), this.method_37156(), var1, var2, var3, var4, false);
+      this.world.method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), var1, var2, var3, var4, false);
    }
 
    @Override
@@ -545,7 +546,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean method_37252() {
+   public boolean isSneaking() {
       return this.movementInput != null && this.movementInput.field_45289;
    }
 
@@ -590,7 +591,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       this.isCrouching = !this.playerAbilities.isFlying
          && !this.method_37113()
          && this.method_37115(class_7653.field_38881)
-         && (this.method_37252() || !this.method_26507() && !this.method_37115(class_7653.field_38885));
+         && (this.isSneaking() || !this.method_26507() && !this.method_37115(class_7653.field_38885));
       this.movementInput.method_40743(this.method_27323());
       this.client.method_8531().method_40529(this.movementInput);
       if (this.method_26554() && !this.isPassenger()) {
@@ -611,10 +612,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       if (!this.field_41731) {
-         this.method_27324(this.method_37302() - (double)this.method_37086() * 0.35, this.method_37156() + (double)this.method_37086() * 0.35);
-         this.method_27324(this.method_37302() - (double)this.method_37086() * 0.35, this.method_37156() - (double)this.method_37086() * 0.35);
-         this.method_27324(this.method_37302() + (double)this.method_37086() * 0.35, this.method_37156() - (double)this.method_37086() * 0.35);
-         this.method_27324(this.method_37302() + (double)this.method_37086() * 0.35, this.method_37156() + (double)this.method_37086() * 0.35);
+         this.method_27324(this.getPosX() - (double)this.method_37086() * 0.35, this.getPosZ() + (double)this.method_37086() * 0.35);
+         this.method_27324(this.getPosX() - (double)this.method_37086() * 0.35, this.getPosZ() - (double)this.method_37086() * 0.35);
+         this.method_27324(this.getPosX() + (double)this.method_37086() * 0.35, this.getPosZ() - (double)this.method_37086() * 0.35);
+         this.method_27324(this.getPosX() + (double)this.method_37086() * 0.35, this.getPosZ() + (double)this.method_37086() * 0.35);
       }
 
       if (var4) {
@@ -622,7 +623,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       boolean var7 = (float)this.method_3161().method_42238() > 6.0F || this.playerAbilities.allowFlying;
-      if ((this.field_41726 || this.method_37179())
+      if ((this.onGround || this.method_37179())
          && !var4
          && !var5
          && this.method_27319()
@@ -654,7 +655,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             if (var9) {
                this.method_37140(false);
             }
-         } else if (!this.field_41726 && !this.movementInput.field_45289 && var8 || !this.method_37285()) {
+         } else if (!this.onGround && !this.movementInput.field_45289 && var8 || !this.method_37285()) {
             this.method_37140(false);
          }
       }
@@ -684,7 +685,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (this.movementInput.field_45284 && !var11 && !var3 && !this.playerAbilities.isFlying && !this.isPassenger() && !this.method_26505()) {
          ItemStack var12 = this.method_26520(class_6943.field_35708);
          if (var12.method_27960() == class_4897.field_24503 && class_3286.method_15061(var12) && this.method_3190()) {
-            this.connection.method_4813(new class_2317(this, class_4127.field_20093));
+            this.connection.sendPacket(new class_2317(this, Action.field_20093));
          }
       }
 
@@ -747,7 +748,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       super.method_26606();
-      if (this.field_41726 && this.playerAbilities.isFlying && !this.client.playerController.method_42153()) {
+      if (this.onGround && this.playerAbilities.isFlying && !this.client.playerController.method_42153()) {
          this.playerAbilities.isFlying = false;
          this.method_3216();
       }
@@ -823,10 +824,10 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method_37226(class_7412 var1, class_1343 var2) {
-      double var5 = this.method_37302();
-      double var7 = this.method_37156();
+      double var5 = this.getPosX();
+      double var7 = this.getPosZ();
       super.method_37226(var1, var2);
-      this.method_27316((float)(this.method_37302() - var5), (float)(this.method_37156() - var7));
+      this.method_27316((float)(this.getPosX() - var5), (float)(this.getPosZ() - var7));
    }
 
    public boolean method_27322() {
@@ -859,7 +860,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          float var45 = (float)(var44.field_7336 * var43.field_7336 + var44.field_7334 * var43.field_7334);
          if (!(var45 < -0.15F)) {
             class_214 var46 = class_214.method_926(this);
-            BlockPos var15 = new BlockPos(this.method_37302(), this.method_37241().field_19939, this.method_37156());
+            BlockPos var15 = new BlockPos(this.getPosX(), this.method_37241().field_19939, this.getPosZ());
             class_2522 var16 = this.world.method_28262(var15);
             if (var16.method_8325(this.world, var15, var46).method_19485()) {
                var15 = var15.method_6081();
@@ -932,7 +933,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    private boolean method_27325() {
       return this.method_27322()
          && this.autoJumpTime <= 0
-         && this.field_41726
+         && this.onGround
          && !this.method_3178()
          && !this.isPassenger()
          && this.method_27332()
@@ -977,13 +978,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       if (!this.method_37221()) {
          if (!var3 && var4) {
             this.world
-               .method_29527(this.method_37302(), this.method_37309(), this.method_37156(), class_463.field_2053, class_562.field_3325, 1.0F, 1.0F, false);
+               .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2053, class_562.field_3325, 1.0F, 1.0F, false);
             this.client.getSoundHandler().play(new class_5211(this));
          }
 
          if (var3 && !var4) {
             this.world
-               .method_29527(this.method_37302(), this.method_37309(), this.method_37156(), class_463.field_2030, class_562.field_3325, 1.0F, 1.0F, false);
+               .method_29527(this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2030, class_562.field_3325, 1.0F, 1.0F, false);
          }
 
          return this.field_3850;

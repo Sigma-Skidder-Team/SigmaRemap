@@ -30,7 +30,7 @@ public class class_2048 extends AbstractMinecartEntity {
          }
       } else {
          this.field_10361--;
-         this.world.method_43361(class_3090.field_15376, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), 0.0, 0.0, 0.0);
+         this.world.method_43361(class_3090.field_15376, this.getPosX(), this.method_37309() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
       }
 
       if (this.field_41744) {
@@ -78,9 +78,9 @@ public class class_2048 extends AbstractMinecartEntity {
          this.world
             .method_29573(
                this,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309(),
-               this.method_37156(),
+               this.getPosZ(),
                (float)(4.0 + this.field_41717.nextDouble() * 1.5 * var5),
                class_7298.field_37309
             );
@@ -121,7 +121,7 @@ public class class_2048 extends AbstractMinecartEntity {
          if (!this.method_37378()) {
             this.world
                .method_29528(
-                  (class_704)null, this.method_37302(), this.method_37309(), this.method_37156(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
+                  (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2660, class_562.field_3322, 1.0F, 1.0F
                );
          }
       }

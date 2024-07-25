@@ -30,7 +30,7 @@ public class class_4348 extends class_4591 {
    public void method_21259(class_8116 var1) {
       if (var1 instanceof class_3444) {
          class_3444 var4 = (class_3444)var1;
-         this.field_943.method_8614().method_4813(new class_685(var4.method_15881().method_37145(), this.field_22318.method_8246(), var1.method_36927()));
+         this.field_943.method_8614().sendPacket(new class_685(var4.method_15881().method_37145(), this.field_22318.method_8246(), var1.method_36927()));
       }
    }
 }

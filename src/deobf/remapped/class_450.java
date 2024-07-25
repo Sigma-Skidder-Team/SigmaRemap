@@ -52,9 +52,9 @@ public class class_450 {
       class_2921 var3 = new class_2921();
 
       for (int var4 = 0; var4 < 8; var4++) {
-         double var5 = var0.method_37302() + (double)(((float)((var4 >> 0) % 2) - 0.5F) * var0.method_37086() * 0.8F);
+         double var5 = var0.getPosX() + (double)(((float)((var4 >> 0) % 2) - 0.5F) * var0.method_37086() * 0.8F);
          double var7 = var0.method_37388() + (double)(((float)((var4 >> 1) % 2) - 0.5F) * 0.1F);
-         double var9 = var0.method_37156() + (double)(((float)((var4 >> 2) % 2) - 0.5F) * var0.method_37086() * 0.8F);
+         double var9 = var0.getPosZ() + (double)(((float)((var4 >> 2) % 2) - 0.5F) * var0.method_37086() * 0.8F);
          var3.method_13361(var5, var7, var9);
          class_2522 var11 = var0.world.method_28262(var3);
          if (var11.method_8352() != class_7537.field_38470 && var11.method_8330(var0.world, var3)) {

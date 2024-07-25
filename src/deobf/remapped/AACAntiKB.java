@@ -20,10 +20,10 @@ public class AACAntiKB extends Module {
    private void method_34927(class_7767 var1) {
       if (this.method_42015() && client.thePlayer != null) {
          if (this.method_34925()) {
-            if (field_39147 == 0 && !client.thePlayer.field_41726 && client.thePlayer.field_29645 > 0 && client.thePlayer.field_41706 < 2.0F) {
+            if (field_39147 == 0 && !client.thePlayer.onGround && client.thePlayer.field_29645 > 0 && client.thePlayer.field_41706 < 2.0F) {
                client.thePlayer.method_37186(0.0, -1.0, 0.0);
                class_314.method_1408(client.thePlayer.method_37098().method_60());
-               client.thePlayer.field_41726 = true;
+               client.thePlayer.onGround = true;
                field_39147 = 20;
             }
          } else {

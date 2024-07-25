@@ -31,7 +31,7 @@ public class class_6889 extends class_3429 {
          class_5079 var4 = this.method_31573();
 
          for (int var5 = 0; var5 < 8; var5++) {
-            this.world.method_43361(var4, this.method_37302(), this.method_37309(), this.method_37156(), 0.0, 0.0, 0.0);
+            this.world.method_43361(var4, this.getPosX(), this.method_37309(), this.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

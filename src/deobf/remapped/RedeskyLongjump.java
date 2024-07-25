@@ -24,7 +24,7 @@ public class RedeskyLongjump extends Module {
    @EventListen
    public void method_19581(class_7767 var1) {
       double var4 = Math.sqrt(var1.method_35234() * var1.method_35234() + var1.method_35231() * var1.method_35231());
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          if (this.field_20459 > 0) {
             this.field_20459 = 0;
             if (this.method_42017().getBooleanValueByName("Auto Disable")) {
@@ -33,7 +33,7 @@ public class RedeskyLongjump extends Module {
             }
          } else {
             BlockPos var6 = new BlockPos(
-               client.thePlayer.method_37302(), client.thePlayer.method_37309() - 0.4, client.thePlayer.method_37156()
+               client.thePlayer.getPosX(), client.thePlayer.method_37309() - 0.4, client.thePlayer.getPosZ()
             );
             if (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var6) && class_314.method_1434()
                || this.method_42017().getBooleanValueByName("Auto Jump") && class_314.method_1434()

@@ -208,8 +208,8 @@ public class class_9468 extends Module {
          if (var11 instanceof class_704 && !(var11 instanceof ClientPlayerEntity)) {
             class_704 var12 = (class_704)var11;
             double var13 = var12.field_41713 + (var12.method_37309() - var12.field_41713) * (double)var9 - var5;
-            double var15 = var12.field_41754 + (var12.method_37302() + 10.0 - (var12.field_41754 + 10.0)) * (double)var9 - var3;
-            double var17 = var12.field_41724 + (var12.method_37156() + 10.0 - (var12.field_41724 + 10.0)) * (double)var9 - var7;
+            double var15 = var12.field_41754 + (var12.getPosX() + 10.0 - (var12.field_41754 + 10.0)) * (double)var9 - var3;
+            double var17 = var12.field_41724 + (var12.getPosZ() + 10.0 - (var12.field_41724 + 10.0)) * (double)var9 - var7;
             var13 += (double)var12.method_37074() + 0.2;
             double[] var19 = class_73.method_143(var15, var13, var17);
             double var20 = Math.abs(class_73.method_143(var15, var13 + 1.0, var17)[1] - class_73.method_143(var15, var13, var17)[1]);

@@ -62,7 +62,7 @@ public class AutoCrystalModule extends PremiumModule {
                .<class_3577>map(var0 -> (class_3577)var0)
                .filter(var0 -> var0.method_37175(client.thePlayer) < 6.0F)
                .filter(var1x -> (double)var1x.method_37175(this.field_48550) < 3.6)
-               .min(Comparator.comparing(var1x -> method_44033(var1x.method_37302(), var1x.method_37309(), var1x.method_37156(), this.field_48550)))
+               .min(Comparator.comparing(var1x -> method_44033(var1x.getPosX(), var1x.method_37309(), var1x.getPosZ(), this.field_48550)))
                .orElse(null);
             if (var5 != null) {
                class_1988 var9 = class_7211.method_33015(var5.field_41736);
@@ -119,9 +119,9 @@ public class AutoCrystalModule extends PremiumModule {
 
       var4 = class_314.method_1444(9000000, 1.0F);
       if (this.field_48550 != null) {
-         double var14 = this.field_48550.method_37302() - client.gameRenderer.method_35949().method_41627().method_61();
+         double var14 = this.field_48550.getPosX() - client.gameRenderer.method_35949().method_41627().method_61();
          double var19 = this.field_48550.method_37309() - client.gameRenderer.method_35949().method_41627().method_60() + 0.5;
-         double var20 = this.field_48550.method_37156() - client.gameRenderer.method_35949().method_41627().method_62();
+         double var20 = this.field_48550.getPosZ() - client.gameRenderer.method_35949().method_41627().method_62();
          float var16 = 0.3F;
          class_8194 var17 = new class_8194(var14 - (double)var16, var19 + 0.9, var20 - (double)var16, var14 + (double)var16, var19 + 1.0, var20 + (double)var16);
          class_73.method_83(var17, var4);
@@ -133,9 +133,9 @@ public class AutoCrystalModule extends PremiumModule {
 
    public static BlockPos method_44011() {
       return new BlockPos(
-         Math.floor(client.thePlayer.method_37302()),
+         Math.floor(client.thePlayer.getPosX()),
          Math.floor(client.thePlayer.method_37309()),
-         Math.floor(client.thePlayer.method_37156())
+         Math.floor(client.thePlayer.getPosZ())
       );
    }
 
@@ -309,11 +309,11 @@ public class AutoCrystalModule extends PremiumModule {
             ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (var6.method_27960() == class_4897.field_24665) {
                if (class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-                  client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                  client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
                }
 
                class_2740.method_12312(var5, 8);
-               client.method_8614().method_4813(new class_1194(-1));
+               client.method_8614().sendPacket(new class_1194(-1));
                return 5;
             }
          }

@@ -24,9 +24,9 @@ public class class_1890 extends class_3429 {
             this.world
                .method_43361(
                   new class_8661(class_3090.field_15351, this.method_17246()),
-                  this.method_37302(),
+                  this.getPosX(),
                   this.method_37309(),
-                  this.method_37156(),
+                  this.getPosZ(),
                   ((double)this.field_41717.nextFloat() - 0.5) * 0.08,
                   ((double)this.field_41717.nextFloat() - 0.5) * 0.08,
                   ((double)this.field_41717.nextFloat() - 0.5) * 0.08
@@ -54,7 +54,7 @@ public class class_1890 extends class_3429 {
             for (int var5 = 0; var5 < var4; var5++) {
                class_3024 var6 = class_6629.field_34263.method_30484(this.world);
                var6.method_8635(-24000);
-               var6.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, 0.0F);
+               var6.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, 0.0F);
                this.world.method_7509(var6);
             }
          }

@@ -157,7 +157,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
       class_2921 var10 = new class_2921();
 
       for (class_1343 var14 : var4) {
-         var10.method_13361(this.method_37302() + var14.field_7336, var6, this.method_37156() + var14.field_7334);
+         var10.method_13361(this.getPosX() + var14.field_7336, var6, this.getPosZ() + var14.field_7334);
 
          for (double var15 = var6; var15 > var8; var15--) {
             var5.add(var10.method_6072());
@@ -184,7 +184,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          }
       }
 
-      return new class_1343(this.method_37302(), this.method_37241().field_19939, this.method_37156());
+      return new class_1343(this.getPosX(), this.method_37241().field_19939, this.getPosZ());
    }
 
    @Override
@@ -267,7 +267,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          class_214 var3 = class_214.method_926(this);
          if (var3.method_927(class_7855.field_39807, this.method_37075(), true)
             && !this.world.method_28258(this.method_37075().method_6081()).method_22007(class_6503.field_33095)) {
-            this.field_41726 = true;
+            this.onGround = true;
          } else {
             this.method_37215(this.method_37098().method_6209(0.5).method_6214(0.0, 0.05, 0.0));
          }
@@ -355,9 +355,9 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
                this.world
                   .method_29528(
                      (class_704)null,
-                     this.method_37302(),
+                     this.getPosX(),
                      this.method_37309(),
-                     this.method_37156(),
+                     this.getPosZ(),
                      class_463.field_2762,
                      this.method_37197(),
                      1.0F,
@@ -405,7 +405,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    private class_8733 method_7927(class_1556 var1, class_9589 var2, class_5886 var3, class_8733 var4) {
-      var3.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, 0.0F);
+      var3.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, 0.0F);
       var3.method_26864(var1, var2, class_2417.field_12037, var4, (CompoundNBT)null);
       var3.startRiding(this, true);
       return new class_1821(0.0F);

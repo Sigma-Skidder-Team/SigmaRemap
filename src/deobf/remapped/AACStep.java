@@ -14,14 +14,14 @@ public class AACStep extends Module {
             var1.method_29715(true);
          } else {
             if (!class_8865.method_40771() && var4 >= 0.625) {
-               double var6 = client.thePlayer.method_37302();
+               double var6 = client.thePlayer.getPosX();
                double var8 = client.thePlayer.method_37309();
-               double var10 = client.thePlayer.method_37156();
+               double var10 = client.thePlayer.getPosZ();
                if (var4 < 1.1) {
                   double[] var12 = new double[]{0.41999998688698 * var4, 0.754 * var4};
 
                   for (double var16 : var12) {
-                     client.method_8614().method_4813(new class_9515(var6, var8 + var16, var10, false));
+                     client.method_8614().sendPacket(new class_9515(var6, var8 + var16, var10, false));
                   }
                }
             }

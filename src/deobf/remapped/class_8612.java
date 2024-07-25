@@ -34,7 +34,7 @@ public class class_8612 extends class_5783 implements class_3713 {
    }
 
    public class_8612(World var1, ItemStack var2, class_5834 var3) {
-      this(var1, var3, var3.method_37302(), var3.method_37309(), var3.method_37156(), var2);
+      this(var1, var3, var3.getPosX(), var3.method_37309(), var3.getPosZ(), var2);
       this.field_41735.method_36633(field_44171, OptionalInt.of(var3.method_37145()));
       this.field_44173 = var3;
    }
@@ -104,7 +104,7 @@ public class class_8612 extends class_5783 implements class_3713 {
                   );
             }
 
-            this.method_37256(this.field_44173.method_37302(), this.field_44173.method_37309(), this.field_44173.method_37156());
+            this.method_37256(this.field_44173.getPosX(), this.field_44173.method_37309(), this.field_44173.getPosZ());
             this.method_37215(this.field_44173.method_37098());
          }
       }
@@ -119,7 +119,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       if (this.field_44170 == 0 && !this.method_37378()) {
          this.world
             .method_29528(
-               (class_704)null, this.method_37302(), this.method_37309(), this.method_37156(), class_463.field_2316, class_562.field_3325, 3.0F, 1.0F
+               (class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), class_463.field_2316, class_562.field_3325, 3.0F, 1.0F
             );
       }
 
@@ -128,9 +128,9 @@ public class class_8612 extends class_5783 implements class_3713 {
          this.world
             .method_43361(
                class_3090.field_15366,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309() - 0.3,
-               this.method_37156(),
+               this.getPosZ(),
                this.field_41717.nextGaussian() * 0.05,
                -this.method_37098().field_7333 * 0.5,
                this.field_41717.nextGaussian() * 0.05
@@ -196,7 +196,7 @@ public class class_8612 extends class_5783 implements class_3713 {
                boolean var12 = false;
 
                for (int var13 = 0; var13 < 2; var13++) {
-                  class_1343 var14 = new class_1343(var11.method_37302(), var11.method_37080(0.5 * (double)var13), var11.method_37156());
+                  class_1343 var14 = new class_1343(var11.getPosX(), var11.method_37080(0.5 * (double)var13), var11.getPosZ());
                   class_9529 var15 = this.world.method_28265(new class_972(var9, var14, class_3132.field_15553, class_9583.field_48747, this));
                   if (var15.method_33990() == class_1430.field_7721) {
                      var12 = true;
@@ -229,15 +229,15 @@ public class class_8612 extends class_5783 implements class_3713 {
             CompoundNBT var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
             class_1343 var6 = this.method_37098();
             this.world
-               .method_29536(this.method_37302(), this.method_37309(), this.method_37156(), var6.field_7336, var6.field_7333, var6.field_7334, var5);
+               .method_29536(this.getPosX(), this.method_37309(), this.getPosZ(), var6.field_7336, var6.field_7333, var6.field_7334, var5);
          } else {
             for (int var7 = 0; var7 < this.field_41717.nextInt(3) + 2; var7++) {
                this.world
                   .method_43361(
                      class_3090.field_15343,
-                     this.method_37302(),
+                     this.getPosX(),
                      this.method_37309(),
-                     this.method_37156(),
+                     this.getPosZ(),
                      this.field_41717.nextGaussian() * 0.05,
                      0.005,
                      this.field_41717.nextGaussian() * 0.05

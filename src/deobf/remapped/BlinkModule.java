@@ -16,7 +16,7 @@ public class BlinkModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_27899 = new class_1343(client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156());
+      this.field_27899 = new class_1343(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ());
       this.field_27900 = client.thePlayer.rotationYaw;
       this.field_27901 = client.thePlayer.rotationPitch;
       field_27898 = new class_9745(client.theWorld, client.thePlayer.method_3247());
@@ -31,7 +31,7 @@ public class BlinkModule extends Module {
       int var3 = this.packetList.size();
 
       for (int var4 = 0; var4 < var3; var4++) {
-         client.method_8614().method_4813(this.packetList.get(var4));
+         client.method_8614().sendPacket(this.packetList.get(var4));
       }
 
       this.packetList.clear();

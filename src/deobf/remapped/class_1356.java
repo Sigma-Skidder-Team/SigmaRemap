@@ -47,7 +47,7 @@ public class class_1356 extends Entity {
 
       this.method_37226(class_7412.field_37839, this.method_37098());
       this.method_37215(this.method_37098().method_6209(0.98));
-      if (this.field_41726) {
+      if (this.onGround) {
          this.method_37215(this.method_37098().method_6210(0.7, -0.5, 0.7));
       }
 
@@ -55,7 +55,7 @@ public class class_1356 extends Entity {
       if (this.field_7390 > 0) {
          this.method_37228();
          if (this.world.field_33055) {
-            this.world.method_43361(class_3090.field_15376, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), 0.0, 0.0, 0.0);
+            this.world.method_43361(class_3090.field_15376, this.getPosX(), this.method_37309() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
          }
       } else {
          this.method_37204();
@@ -67,7 +67,7 @@ public class class_1356 extends Entity {
 
    private void method_6259() {
       float var3 = 4.0F;
-      this.world.method_29573(this, this.method_37302(), this.method_37080(0.0625), this.method_37156(), 4.0F, class_7298.field_37309);
+      this.world.method_29573(this, this.getPosX(), this.method_37080(0.0625), this.getPosZ(), 4.0F, class_7298.field_37309);
    }
 
    @Override

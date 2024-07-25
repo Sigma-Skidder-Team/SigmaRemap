@@ -679,8 +679,8 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public void method_26914(Entity var1, float var2, float var3) {
-      double var6 = var1.method_37302() - this.method_37302();
-      double var8 = var1.method_37156() - this.method_37156();
+      double var6 = var1.getPosX() - this.getPosX();
+      double var8 = var1.getPosZ() - this.getPosZ();
       double var10;
       if (!(var1 instanceof class_5834)) {
          var10 = (var1.method_37241().field_19937 + var1.method_37241().field_19939) / 2.0 - this.method_37388();
@@ -1282,8 +1282,8 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public boolean method_37069() {
-      return this.method_26863() && super.method_37069();
+   public boolean canPassengerSteer() {
+      return this.method_26863() && super.canPassengerSteer();
    }
 
    public static boolean method_26868(class_6943 var0, ItemStack var1) {
@@ -1390,8 +1390,8 @@ public abstract class class_5886 extends class_5834 {
       if (this.world.method_29602() && !this.world.field_33055) {
          float var3 = this.method_37193();
          BlockPos var4 = !(this.method_37243() instanceof BoatEntity)
-            ? new BlockPos(this.method_37302(), (double)Math.round(this.method_37309()), this.method_37156())
-            : new BlockPos(this.method_37302(), (double)Math.round(this.method_37309()), this.method_37156()).method_6081();
+            ? new BlockPos(this.getPosX(), (double)Math.round(this.method_37309()), this.getPosZ())
+            : new BlockPos(this.getPosX(), (double)Math.round(this.method_37309()), this.getPosZ()).method_6081();
          if (var3 > 0.5F && this.field_41717.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F && this.world.method_25263(var4)) {
             return true;
          }
@@ -1423,8 +1423,8 @@ public abstract class class_5886 extends class_5834 {
                if (var3 != null) {
                   if (var3.size() == 1) {
                      Entity var4 = (Entity)var3.get(0);
-                     double var5 = Math.max(Math.abs(this.method_37302() - var4.method_37302()) - 16.0, 0.0);
-                     double var7 = Math.max(Math.abs(this.method_37156() - var4.method_37156()) - 16.0, 0.0);
+                     double var5 = Math.max(Math.abs(this.getPosX() - var4.getPosX()) - 16.0, 0.0);
+                     double var7 = Math.max(Math.abs(this.getPosZ() - var4.getPosZ()) - 16.0, 0.0);
                      double var9 = var5 * var5 + var7 * var7;
                      return !this.method_37176(var9);
                   } else {

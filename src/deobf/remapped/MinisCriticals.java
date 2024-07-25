@@ -12,8 +12,8 @@ public class MinisCriticals extends Module {
       if (this.method_42015()) {
          if (KillauraModule.field_12548) {
             client.method_8614()
-               .method_4813(
-                  new class_9515(client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156(), true)
+               .sendPacket(
+                  new class_9515(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ(), true)
                );
          }
       }

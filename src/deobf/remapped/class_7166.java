@@ -54,7 +54,7 @@ public class class_7166 extends class_2451 {
                .method_10189()
                .method_29820((class_6331)var1, class_5390.field_27511, var2.method_37075(), 100, false);
             if (var8 != null) {
-               class_7483 var9 = new class_7483(var1, var2.method_37302(), var2.method_37080(0.5), var2.method_37156());
+               class_7483 var9 = new class_7483(var1, var2.getPosX(), var2.method_37080(0.5), var2.getPosZ());
                var9.method_34038(var6);
                var9.method_34037(var8);
                var1.method_7509(var9);
@@ -64,9 +64,9 @@ public class class_7166 extends class_2451 {
 
                var1.method_29528(
                   (class_704)null,
-                  var2.method_37302(),
+                  var2.getPosX(),
                   var2.method_37309(),
-                  var2.method_37156(),
+                  var2.getPosZ(),
                   class_463.field_1994,
                   class_562.field_3328,
                   0.5F,

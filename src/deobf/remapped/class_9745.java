@@ -36,9 +36,9 @@ public class class_9745 extends AbstractClientPlayerEntity {
    @Override
    public void method_26606() {
       if (this.field_29612 > 0) {
-         double var4 = this.method_37302() + (this.field_29597 - this.method_37302()) / (double)this.field_29612;
+         double var4 = this.getPosX() + (this.field_29597 - this.getPosX()) / (double)this.field_29612;
          double var6 = this.method_37309() + (this.field_29609 - this.method_37309()) / (double)this.field_29612;
-         double var8 = this.method_37156() + (this.field_29650 - this.method_37156()) / (double)this.field_29612;
+         double var8 = this.getPosZ() + (this.field_29650 - this.getPosZ()) / (double)this.field_29612;
          this.rotationYaw = (float)((double)this.rotationYaw + class_9299.method_42809(this.field_29604 - (double)this.rotationYaw) / (double)this.field_29612);
          this.rotationPitch = (float)((double)this.rotationPitch + (this.field_29625 - (double)this.rotationPitch) / (double)this.field_29612);
          this.field_29612--;
@@ -54,13 +54,13 @@ public class class_9745 extends AbstractClientPlayerEntity {
       this.field_3857 = this.field_3859;
       this.method_26489();
       float var3;
-      if (this.field_41726 && !this.method_26450()) {
+      if (this.onGround && !this.method_26450()) {
          var3 = Math.min(0.1F, class_9299.method_42842(method_37266(this.method_37098())));
       } else {
          var3 = 0.0F;
       }
 
-      if (!this.field_41726 && !this.method_26450()) {
+      if (!this.onGround && !this.method_26450()) {
          float var11 = (float)Math.atan(-this.method_37098().field_7333 * 0.2F) * 15.0F;
       } else {
          float var10 = 0.0F;

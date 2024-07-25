@@ -23,9 +23,9 @@ public class class_2112 extends class_2833 {
       } else {
          this.field_13878 = class_1737.field_8945;
          this.field_13879.method_37182(true);
-         double var3 = this.field_13884 - this.field_13879.method_37302();
+         double var3 = this.field_13884 - this.field_13879.getPosX();
          double var5 = this.field_13886 - this.field_13879.method_37309();
-         double var7 = this.field_13880 - this.field_13879.method_37156();
+         double var7 = this.field_13880 - this.field_13879.getPosZ();
          double var9 = var3 * var3 + var5 * var5 + var7 * var7;
          if (var9 < 2.5000003E-7F) {
             this.field_13879.method_26845(0.0F);

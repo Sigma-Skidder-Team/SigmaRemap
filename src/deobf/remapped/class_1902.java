@@ -52,8 +52,8 @@ public class class_1902 {
    }
 
    private boolean method_8643() {
-      double var3 = this.field_9712.method_37302() - this.field_9712.field_41767;
-      double var5 = this.field_9712.method_37156() - this.field_9712.field_41725;
+      double var3 = this.field_9712.getPosX() - this.field_9712.field_41767;
+      double var5 = this.field_9712.getPosZ() - this.field_9712.field_41725;
       return var3 * var3 + var5 * var5 > 2.5000003E-7F;
    }
 }

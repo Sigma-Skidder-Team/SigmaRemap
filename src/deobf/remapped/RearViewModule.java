@@ -51,7 +51,7 @@ public class RearViewModule extends PremiumModule {
 
    public boolean method_43929(class_5834 var1) {
       float var4 = class_7211.method_33014(
-         var1, client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156()
+         var1, client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ()
       )[0];
       return this.method_43925(client.thePlayer.rotationYaw, var4) <= 90.0F;
    }

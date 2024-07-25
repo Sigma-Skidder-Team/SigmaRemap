@@ -233,8 +233,8 @@ public class class_702 implements class_700 {
 
    @Override
    public boolean method_7509(Entity var1) {
-      int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
-      int var5 = class_9299.method_42847(var1.method_37156() / 16.0);
+      int var4 = class_9299.method_42847(var1.getPosX() / 16.0);
+      int var5 = class_9299.method_42847(var1.getPosZ() / 16.0);
       this.method_22553(var4, var5).method_27342(var1);
       return true;
    }

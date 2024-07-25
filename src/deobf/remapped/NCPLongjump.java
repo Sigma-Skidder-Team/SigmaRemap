@@ -30,7 +30,7 @@ public class NCPLongjump extends Module {
    @EventListen
    public void method_2758(class_7767 var1) {
       if (this.method_42015() && client.thePlayer != null) {
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             this.field_3400 = 0;
             this.field_3397++;
             if (this.field_3399 && var1.method_35236() != 0.599 && this.method_42017().getBooleanValueByName("Auto Disable")) {
@@ -40,7 +40,7 @@ public class NCPLongjump extends Module {
             }
 
             BlockPos var4 = new BlockPos(
-               client.thePlayer.method_37302(), client.thePlayer.method_37309() - 0.4, client.thePlayer.method_37156()
+               client.thePlayer.getPosX(), client.thePlayer.method_37309() - 0.4, client.thePlayer.getPosZ()
             );
             if (StepModule.field_20352 > 1) {
                if (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) && this.field_3397 > 0 && class_314.method_1434()) {
@@ -141,23 +141,23 @@ public class NCPLongjump extends Module {
             }
 
             client.method_8614()
-               .method_4813(
+               .sendPacket(
                   new class_9515(
-                     client.thePlayer.method_37302(), client.thePlayer.method_37309() + 0.425, client.thePlayer.method_37156(), false
+                     client.thePlayer.getPosX(), client.thePlayer.method_37309() + 0.425, client.thePlayer.getPosZ(), false
                   )
                );
             client.method_8614()
-               .method_4813(
+               .sendPacket(
                   new class_9515(
-                     client.thePlayer.method_37302(), client.thePlayer.method_37309() + 0.425 + 0.396, client.thePlayer.method_37156(), false
+                     client.thePlayer.getPosX(), client.thePlayer.method_37309() + 0.425 + 0.396, client.thePlayer.getPosZ(), false
                   )
                );
             client.method_8614()
-               .method_4813(
+               .sendPacket(
                   new class_9515(
-                     client.thePlayer.method_37302(),
+                     client.thePlayer.getPosX(),
                      client.thePlayer.method_37309() + 0.425 + 0.396 - 0.122,
-                     client.thePlayer.method_37156(),
+                     client.thePlayer.getPosZ(),
                      false
                   )
                );

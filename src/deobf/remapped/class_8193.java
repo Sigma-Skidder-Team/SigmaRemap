@@ -24,7 +24,7 @@ public class class_8193 extends Module {
          this.field_41931 = true;
       }
 
-      if (client.thePlayer.field_41726) {
+      if (client.thePlayer.onGround) {
          this.field_41934 = this.field_41933 = false;
       }
 
@@ -67,7 +67,7 @@ public class class_8193 extends Module {
    @class_3932
    public void method_37542(class_7767 var1) {
       if (!this.method_42015()) {
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             this.field_41934 = this.field_41933 = false;
          }
       } else if (class_314.method_1392()) {
@@ -110,7 +110,7 @@ public class class_8193 extends Module {
                   var1.method_35235(0.0);
                   class_8865.method_40777(var1, 0.0);
                   if (client.thePlayer.field_41706 > 4.0F) {
-                     client.method_8614().method_4813(new class_4609(true));
+                     client.method_8614().sendPacket(new class_4609(true));
                      this.field_41933 = true;
                   }
                } else {
@@ -128,13 +128,13 @@ public class class_8193 extends Module {
                var1.method_35235(0.0);
                long var14 = class_314.method_1418() % 90L;
                double var15 = 0.016 + (double)var14 / 10000.0;
-               double var16 = client.thePlayer.method_37302();
+               double var16 = client.thePlayer.getPosX();
                double var10 = client.thePlayer.method_37309() + 0.022;
-               double var12 = client.thePlayer.method_37156();
-               client.method_8614().method_4813(new class_9515(var16, var10, var12, false));
-               client.method_8614().method_4813(new class_9515(var16, var10, var12 + 0.07, false));
-               client.method_8614().method_4813(new class_9515(var16, var10, var12, false));
-               client.method_8614().method_4813(new class_9515(var16, var10 + 3.0, var12, false));
+               double var12 = client.thePlayer.getPosZ();
+               client.method_8614().sendPacket(new class_9515(var16, var10, var12, false));
+               client.method_8614().sendPacket(new class_9515(var16, var10, var12 + 0.07, false));
+               client.method_8614().sendPacket(new class_9515(var16, var10, var12, false));
+               client.method_8614().sendPacket(new class_9515(var16, var10 + 3.0, var12, false));
             }
 
             class_314.method_1408(var1.method_35236());
@@ -143,9 +143,9 @@ public class class_8193 extends Module {
          class_8865.method_40777(var1, class_8865.method_40775());
          var1.method_35235(0.0);
          if (client.thePlayer.field_41697 % 2 == 0) {
-            double var4 = client.thePlayer.method_37302();
+            double var4 = client.thePlayer.getPosX();
             double var6 = client.thePlayer.method_37309();
-            double var8 = client.thePlayer.method_37156();
+            double var8 = client.thePlayer.getPosZ();
             client.thePlayer.method_37256(var4, var6 + 1.0E-10, var8);
          }
       }

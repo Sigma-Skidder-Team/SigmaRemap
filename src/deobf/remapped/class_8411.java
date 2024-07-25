@@ -13,9 +13,9 @@ public class class_8411 extends class_2451 implements class_1538 {
       if (var2.field_3841 == null) {
          var1.method_29528(
             (class_704)null,
-            var2.method_37302(),
+            var2.getPosX(),
             var2.method_37309(),
-            var2.method_37156(),
+            var2.getPosZ(),
             class_463.field_2140,
             class_562.field_3328,
             0.5F,
@@ -36,9 +36,9 @@ public class class_8411 extends class_2451 implements class_1538 {
 
          var1.method_29528(
             (class_704)null,
-            var2.method_37302(),
+            var2.getPosX(),
             var2.method_37309(),
-            var2.method_37156(),
+            var2.getPosZ(),
             class_463.field_2388,
             class_562.field_3328,
             1.0F,

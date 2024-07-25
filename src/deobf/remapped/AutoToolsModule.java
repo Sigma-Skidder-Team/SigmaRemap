@@ -52,12 +52,12 @@ public class AutoToolsModule extends Module {
                }
 
                if (var6.equals("FakeInv") && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-                  client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                  client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
                }
 
                client.thePlayer.inventory.field_36404 = class_2740.method_12363(var5);
                if (var6.equals("FakeInv")) {
-                  client.method_8614().method_4813(new class_1194(-1));
+                  client.method_8614().sendPacket(new class_1194(-1));
                }
             }
          }

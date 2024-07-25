@@ -58,9 +58,9 @@ public class class_91 extends Entity {
             this.field_174--;
          }
 
-         this.field_41767 = this.method_37302();
+         this.field_41767 = this.getPosX();
          this.field_41698 = this.method_37309();
-         this.field_41725 = this.method_37156();
+         this.field_41725 = this.getPosZ();
          class_1343 var3 = this.method_37098();
          float var4 = this.method_37277() - 0.11111111F;
          if (this.method_37285() && this.method_37284(class_6503.field_33094) > (double)var4) {
@@ -74,25 +74,25 @@ public class class_91 extends Entity {
          if (!this.world.field_33055) {
             this.field_41731 = !this.world.method_6682(this);
             if (this.field_41731) {
-               this.method_37160(this.method_37302(), (this.method_37241().field_19937 + this.method_37241().field_19939) / 2.0, this.method_37156());
+               this.method_37160(this.getPosX(), (this.method_37241().field_19937 + this.method_37241().field_19939) / 2.0, this.getPosZ());
             }
          } else {
             this.field_41731 = false;
          }
 
-         if (!this.field_41726 || method_37266(this.method_37098()) > 1.0E-5F || (this.field_41697 + this.method_37145()) % 4 == 0) {
+         if (!this.onGround || method_37266(this.method_37098()) > 1.0E-5F || (this.field_41697 + this.method_37145()) % 4 == 0) {
             this.method_37226(class_7412.field_37839, this.method_37098());
             float var5 = 0.98F;
-            if (this.field_41726) {
+            if (this.onGround) {
                var5 = this.world
-                     .method_28262(new BlockPos(this.method_37302(), this.method_37309() - 1.0, this.method_37156()))
+                     .method_28262(new BlockPos(this.getPosX(), this.method_37309() - 1.0, this.getPosZ()))
                      .method_8360()
                      .method_29308()
                   * 0.98F;
             }
 
             this.method_37215(this.method_37098().method_6210((double)var5, 0.98, (double)var5));
-            if (this.field_41726) {
+            if (this.onGround) {
                class_1343 var6 = this.method_37098();
                if (var6.field_7333 < 0.0) {
                   this.method_37215(var6.method_6210(1.0, -0.5, 1.0));
@@ -100,9 +100,9 @@ public class class_91 extends Entity {
             }
          }
 
-         boolean var9 = class_9299.method_42847(this.field_41767) != class_9299.method_42847(this.method_37302())
+         boolean var9 = class_9299.method_42847(this.field_41767) != class_9299.method_42847(this.getPosX())
             || class_9299.method_42847(this.field_41698) != class_9299.method_42847(this.method_37309())
-            || class_9299.method_42847(this.field_41725) != class_9299.method_42847(this.method_37156());
+            || class_9299.method_42847(this.field_41725) != class_9299.method_42847(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
          if (this.field_41697 % var10 == 0) {
             if (this.world.method_28258(this.method_37075()).method_22007(class_6503.field_33095) && !this.method_37087()) {

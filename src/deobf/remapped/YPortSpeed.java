@@ -16,7 +16,7 @@ public class YPortSpeed extends Module {
    @EventListen
    public void method_12600(class_1393 var1) {
       if (this.method_42015() && client.thePlayer != null && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
-         if (client.thePlayer.field_41726 && var1.method_6449() && class_314.method_1387()) {
+         if (client.thePlayer.onGround && var1.method_6449() && class_314.method_1387()) {
             var1.method_6455(var1.method_6454() + 1.0E-14);
          }
       }
@@ -46,7 +46,7 @@ public class YPortSpeed extends Module {
             String var4 = this.getStringValueByName("Mode");
             switch (var4) {
                case "NCP":
-                  if (class_8865.method_40772() && client.thePlayer.field_41726) {
+                  if (class_8865.method_40772() && client.thePlayer.onGround) {
                      client.thePlayer.method_26595();
                      var1.method_35235(client.thePlayer.method_37098().field_7333);
                      class_8865.method_40777(var1, 0.461);
@@ -65,7 +65,7 @@ public class YPortSpeed extends Module {
                   }
                   break;
                case "OldNCP":
-                  if (client.thePlayer.field_41726 && class_314.method_1434()) {
+                  if (client.thePlayer.onGround && class_314.method_1434()) {
                      this.field_13516 = 2;
                   }
 
@@ -117,13 +117,13 @@ public class YPortSpeed extends Module {
                && !class_8865.method_40771()
                && !client.thePlayer.method_37285()
                && class_314.method_1413(client.thePlayer, 1.0F)
-               && !client.thePlayer.field_41726
+               && !client.thePlayer.onGround
                && this.field_13516 == 3) {
                class_314.method_1408(-0.3994);
             }
 
-            double var4 = client.thePlayer.method_37302() - client.thePlayer.field_41767;
-            double var6 = client.thePlayer.method_37156() - client.thePlayer.field_41725;
+            double var4 = client.thePlayer.getPosX() - client.thePlayer.field_41767;
+            double var6 = client.thePlayer.getPosZ() - client.thePlayer.field_41725;
             this.field_13514 = Math.sqrt(var4 * var4 + var6 * var6);
          }
       }
@@ -137,7 +137,7 @@ public class YPortSpeed extends Module {
          && this.getBooleanValueByName("OnGround")
          && !client.gameOptions.keyJump.pressed
          && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
-         if (client.thePlayer.field_41726 && class_314.method_1413(client.thePlayer, 0.001F)) {
+         if (client.thePlayer.onGround && class_314.method_1413(client.thePlayer, 0.001F)) {
             this.field_13513 = client.thePlayer.method_37309();
          }
 

@@ -223,9 +223,9 @@ public class class_2811 extends class_1173 {
             && this.world.method_43370() == class_423.field_1782
             && (double)this.field_41717.nextFloat() < this.method_26575(class_7331.field_37470)
             && this.world.method_29537().method_1285(class_291.field_1028)) {
-            int var7 = class_9299.method_42847(this.method_37302());
+            int var7 = class_9299.method_42847(this.getPosX());
             int var8 = class_9299.method_42847(this.method_37309());
-            int var9 = class_9299.method_42847(this.method_37156());
+            int var9 = class_9299.method_42847(this.getPosZ());
             class_2811 var10 = new class_2811(this.world);
 
             for (int var11 = 0; var11 < 50; var11++) {
@@ -385,7 +385,7 @@ public class class_2811 extends class_1173 {
                if (!((double)var1.method_43360().nextFloat() < 0.05)) {
                   if ((double)var1.method_43360().nextFloat() < 0.05) {
                      class_3024 var10 = class_6629.field_34263.method_30484(this.world);
-                     var10.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, 0.0F);
+                     var10.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, 0.0F);
                      var10.method_26864(var1, var2, class_2417.field_12037, (class_8733)null, (CompoundNBT)null);
                      var10.method_13808(true);
                      this.method_37353(var10);

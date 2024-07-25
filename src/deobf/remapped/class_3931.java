@@ -14,9 +14,9 @@ public class class_3931 implements Packet<class_392> {
    }
 
    public class_3931(Entity var1) {
-      this.field_19108 = var1.method_37302();
+      this.field_19108 = var1.getPosX();
       this.field_19105 = var1.method_37309();
-      this.field_19107 = var1.method_37156();
+      this.field_19107 = var1.getPosZ();
       this.field_19103 = var1.rotationYaw;
       this.field_19104 = var1.rotationPitch;
    }

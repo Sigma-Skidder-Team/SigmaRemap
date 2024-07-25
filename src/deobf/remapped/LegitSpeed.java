@@ -16,7 +16,7 @@ public class LegitSpeed extends Module {
    @EventListen
    public void method_31490(class_7767 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41726
+         if (client.thePlayer.onGround
             && client.thePlayer.field_41774
             && (client.thePlayer.field_29673 != 0.0F || client.thePlayer.field_29676 != 0.0F)
             && this.getBooleanValueByName("AutoJump")) {
@@ -50,7 +50,7 @@ public class LegitSpeed extends Module {
             this.field_35372 = Math.min(1.0F, this.field_35372 + 0.1F);
          }
 
-         if (client.thePlayer.field_41726 && !this.field_35371) {
+         if (client.thePlayer.onGround && !this.field_35371) {
             this.field_35375 = 0.0F;
             this.field_35370 = 0.0F;
             this.field_35372 = Math.min(1.0F, this.field_35372 + 0.33F);

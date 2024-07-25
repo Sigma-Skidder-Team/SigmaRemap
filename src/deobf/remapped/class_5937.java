@@ -87,7 +87,7 @@ public class class_5937 {
                var16 |= var8.field_44468.method_32355().method_6081().equals(var15);
             }
 
-            if (this.field_30282.thePlayer.field_41726 || this.field_30286 != null && this.field_30286.field_44477 == class_4748.field_23004) {
+            if (this.field_30282.thePlayer.onGround || this.field_30286 != null && this.field_30286.field_44477 == class_4748.field_23004) {
                if (this.method_27160() != null && this.method_27160().field_44478.size() > 0) {
                   var16 &= var10 < 0.1;
                }
@@ -127,8 +127,8 @@ public class class_5937 {
                float var18 = class_7211.method_33007(this.field_30282.thePlayer.method_37245(), var8.field_44468.method_32363())[0];
                float var19 = class_7211.method_33007(new class_1343(0.0, 0.0, 0.0), this.field_30282.thePlayer.method_37098().method_6213())[0];
                float var20 = Math.abs(class_314.method_1422(var19, var18));
-               if (!this.field_30282.thePlayer.field_41726 && var20 > 60.0F
-                  || !this.field_30282.thePlayer.field_41726 && var20 > 45.0F && this.field_30282.thePlayer.method_37098().method_6217() > 0.24
+               if (!this.field_30282.thePlayer.onGround && var20 > 60.0F
+                  || !this.field_30282.thePlayer.onGround && var20 > 45.0F && this.field_30282.thePlayer.method_37098().method_6217() > 0.24
                   || var20 > 110.0F) {
                   class_314.method_1463(this.field_30282.thePlayer.method_37098().field_7336 * 0.25);
                   class_314.method_1405(this.field_30282.thePlayer.method_37098().field_7334 * 0.25);
@@ -148,7 +148,7 @@ public class class_5937 {
             boolean var25 = class_5286.method_24123(var8);
             this.field_30282.thePlayer.method_37140(var8.field_44472.isEmpty());
             double var26 = Math.min(1.0 / Math.abs(var21), 1.0 / Math.abs(var23));
-            boolean var28 = !this.field_30282.thePlayer.field_41726 && this.field_30282.thePlayer.field_41744 && var9 == class_4748.field_23004;
+            boolean var28 = !this.field_30282.thePlayer.onGround && this.field_30282.thePlayer.field_41744 && var9 == class_4748.field_23004;
             if (!var28) {
                this.field_30282.thePlayer.field_29673 = (float)(var21 * var26);
                this.field_30282.thePlayer.field_29676 = (float)(var23 * var26);
@@ -211,7 +211,7 @@ public class class_5937 {
             }
 
             this.field_30282.thePlayer.rotationYaw = var37;
-            if (var36 && !this.field_30282.thePlayer.field_41726 && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+            if (var36 && !this.field_30282.thePlayer.onGround && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
                class_314.method_1463(0.0);
                class_314.method_1405(0.0);
             } else {
@@ -237,8 +237,8 @@ public class class_5937 {
       float var5 = (float)var1.method_12185() + 0.5F;
       double var6 = this.field_30282.thePlayer.method_37098().field_7336;
       double var8 = this.field_30282.thePlayer.method_37098().field_7334;
-      double var10 = this.field_30282.thePlayer.method_37302();
-      double var12 = this.field_30282.thePlayer.method_37156();
+      double var10 = this.field_30282.thePlayer.getPosX();
+      double var12 = this.field_30282.thePlayer.getPosZ();
 
       while (Math.abs(var6) + Math.abs(var8) > 0.05) {
          var6 *= 0.9F;
@@ -335,7 +335,7 @@ public class class_5937 {
 
    @EventListen
    public void method_27157(class_7982 var1) {
-      if (this.method_27159() && this.field_30282.thePlayer.field_41726) {
+      if (this.method_27159() && this.field_30282.thePlayer.onGround) {
          int var4 = this.field_30284.size() - 1;
          class_8670 var5 = this.field_30284.get(var4);
          if (var5.field_44477 == class_4748.field_23009) {

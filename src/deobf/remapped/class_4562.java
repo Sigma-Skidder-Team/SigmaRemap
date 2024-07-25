@@ -251,7 +251,7 @@ public class class_4562 implements class_2995 {
 
    private boolean method_21174(class_1236 var1) {
       ClientPlayerEntity var4 = this.field_22226.thePlayer;
-      BlockPos var5 = new BlockPos(var4.method_37302(), var1.field_6819.method_60(), var4.method_37156());
+      BlockPos var5 = new BlockPos(var4.getPosX(), var1.field_6819.method_60(), var4.getPosZ());
       BlockPos var6 = new BlockPos(var1.field_6819);
       return var5.method_12171(var6, 30.0);
    }

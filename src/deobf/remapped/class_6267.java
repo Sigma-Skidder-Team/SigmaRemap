@@ -37,7 +37,7 @@ public class class_6267 extends class_5920<class_7666> {
          class_9077 var8 = Util.<class_9077>method_44697(class_9077.values(), var7);
          int var9 = var7.nextInt(3);
          ItemStack var10 = this.method_28581(var8, var9);
-         class_8612 var11 = new class_8612(var2.world, var2, var2.method_37302(), var2.method_37388(), var2.method_37156(), var10);
+         class_8612 var11 = new class_8612(var2.world, var2, var2.getPosX(), var2.method_37388(), var2.getPosZ(), var10);
          var2.world.method_7509(var11);
       }
    }

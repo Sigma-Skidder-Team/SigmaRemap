@@ -101,14 +101,14 @@ public class class_865 {
          } else if (this.field_4487.method_29249(var3.method_37387())) {
             if (var2 != null) {
                if (!this.field_4489
-                  .method_28548(var2.field_7336, var2.field_7333, var2.field_7334, var3.method_37302(), var3.method_37309(), var3.method_37156())) {
+                  .method_28548(var2.field_7336, var2.field_7333, var2.field_7334, var3.getPosX(), var3.method_37309(), var3.getPosZ())) {
                   return false;
                }
             } else if (this.field_4489 != class_6254.field_31981) {
                return false;
             }
 
-            if (!this.field_4491.method_23401(var1, var3.method_37302(), var3.method_37309(), var3.method_37156())) {
+            if (!this.field_4491.method_23401(var1, var3.getPosX(), var3.method_37309(), var3.getPosZ())) {
                return false;
             } else if (this.field_4481.method_38241(var3)) {
                if (!this.field_4486.method_27392(var3)) {

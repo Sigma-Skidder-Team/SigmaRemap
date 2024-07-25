@@ -239,7 +239,7 @@ public class EntityRenderDispatcher {
 
                var10.method_36065(-var16.method_61(), -var16.method_60(), -var16.method_62());
                if (this.gameOptions.field_45568 && this.field_31303 && var15.field_36492 > 0.0F && !var1.method_37109()) {
-                  double var23 = this.method_28139(var1.method_37302(), var1.method_37309(), var1.method_37156());
+                  double var23 = this.method_28139(var1.getPosX(), var1.method_37309(), var1.getPosZ());
                   float var25 = (float)((1.0 - var23 / 256.0) * (double)var15.field_36494);
                   if (var25 > 0.0F) {
                      method_28137(var10, var11, var1, var25, var9, this.world, var15.field_36492);
@@ -271,15 +271,15 @@ public class EntityRenderDispatcher {
          float var7 = var3.method_37086() / 2.0F;
          this.method_28132(var1, var2, var3, 1.0F, 1.0F, 1.0F);
          if (var3 instanceof class_2770) {
-            double var10 = -class_9299.method_42794((double)var4, var3.field_41754, var3.method_37302());
+            double var10 = -class_9299.method_42794((double)var4, var3.field_41754, var3.getPosX());
             double var12 = -class_9299.method_42794((double)var4, var3.field_41713, var3.method_37309());
-            double var14 = -class_9299.method_42794((double)var4, var3.field_41724, var3.method_37156());
+            double var14 = -class_9299.method_42794((double)var4, var3.field_41724, var3.getPosZ());
 
             for (class_5708 var19 : ((class_2770)var3).method_12615()) {
                var1.method_36063();
-               double var20 = var10 + class_9299.method_42794((double)var4, var19.field_41754, var19.method_37302());
+               double var20 = var10 + class_9299.method_42794((double)var4, var19.field_41754, var19.getPosX());
                double var22 = var12 + class_9299.method_42794((double)var4, var19.field_41713, var19.method_37309());
-               double var24 = var14 + class_9299.method_42794((double)var4, var19.field_41724, var19.method_37156());
+               double var24 = var14 + class_9299.method_42794((double)var4, var19.field_41724, var19.getPosZ());
                var1.method_36065(var20, var22, var24);
                this.method_28132(var1, var2, var19, 0.25F, 1.0F, 0.0F);
                var1.method_36064();
@@ -316,7 +316,7 @@ public class EntityRenderDispatcher {
    }
 
    private void method_28132(class_7966 var1, class_7907 var2, Entity var3, float var4, float var5, float var6) {
-      class_4092 var9 = var3.method_37241().method_18918(-var3.method_37302(), -var3.method_37309(), -var3.method_37156());
+      class_4092 var9 = var3.method_37241().method_18918(-var3.getPosX(), -var3.method_37309(), -var3.getPosZ());
       WorldRenderer.method_20014(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
@@ -391,9 +391,9 @@ public class EntityRenderDispatcher {
             }
          }
 
-         double var10 = class_9299.method_42794((double)var4, var2.field_41754, var2.method_37302());
+         double var10 = class_9299.method_42794((double)var4, var2.field_41754, var2.getPosX());
          double var12 = class_9299.method_42794((double)var4, var2.field_41713, var2.method_37309());
-         double var14 = class_9299.method_42794((double)var4, var2.field_41724, var2.method_37156());
+         double var14 = class_9299.method_42794((double)var4, var2.field_41724, var2.getPosZ());
          int var16 = class_9299.method_42847(var10 - (double)var9);
          int var17 = class_9299.method_42847(var10 + (double)var9);
          int var18 = class_9299.method_42847(var12 - (double)var9);

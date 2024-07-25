@@ -48,15 +48,15 @@ public class class_4138<T extends class_5834> extends class_956 {
                this.field_20142,
                this.field_20144,
                this.field_4915,
-               this.field_4915.method_37302(),
+               this.field_4915.getPosX(),
                this.field_4915.method_37388(),
-               this.field_4915.method_37156(),
+               this.field_4915.getPosZ(),
                this.method_19212(this.method_4211())
             );
       } else {
          this.field_20146 = this.field_4915
             .world
-            .method_25860(this.field_20144, this.field_4915, this.field_4915.method_37302(), this.field_4915.method_37388(), this.field_4915.method_37156());
+            .method_25860(this.field_20144, this.field_4915, this.field_4915.getPosX(), this.field_4915.method_37388(), this.field_4915.getPosZ());
       }
    }
 

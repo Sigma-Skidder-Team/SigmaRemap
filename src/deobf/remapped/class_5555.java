@@ -74,7 +74,7 @@ public class class_5555 extends class_9795 implements class_3745 {
    }
 
    public static boolean method_25250(Entity var0) {
-      return class_3572.field_17483.test(var0) && !var0.method_37240().method_37121();
+      return class_3572.field_17483.test(var0) && !var0.getLowestRidingEntity().method_37121();
    }
 
    public boolean method_25241() {
@@ -133,7 +133,7 @@ public class class_5555 extends class_9795 implements class_3745 {
             BlockPos var4 = !this.field_28269 ? this.method_25254() : this.field_28268;
             Entity var5;
             if (!(var1 instanceof class_1537)) {
-               var5 = var1.method_37240();
+               var5 = var1.getLowestRidingEntity();
             } else {
                Entity var6 = ((class_1537)var1).method_26166();
                if (var6 instanceof class_9359) {

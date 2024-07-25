@@ -15,7 +15,7 @@ public class InvMoveModule extends Module {
    private void method_26179(class_6435 var1) {
       if (this.method_42015()) {
          if (var1.method_29384() == client.gameOptions.keyInventory.field_30027.field_17800 && client.thePlayer.method_37321()) {
-            client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20100));
+            client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.START_SPRINTING));
          }
       }
    }
@@ -25,7 +25,7 @@ public class InvMoveModule extends Module {
       if (this.method_42015()) {
          if (this.field_29226 && var1.method_10047() instanceof class_2317 && this.getBooleanValueByName("AACP")) {
             class_2317 var4 = (class_2317)var1.method_10047();
-            if (var4.method_10650() == class_4127.field_20099) {
+            if (var4.method_10650() == Action.STOP_SPRINTING) {
                var1.method_29715(true);
             }
          }
@@ -40,12 +40,12 @@ public class InvMoveModule extends Module {
             if (this.field_29226 && !var4) {
                this.field_29226 = !this.field_29226;
                if (client.thePlayer.method_37321()) {
-                  client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20099));
+                  client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.STOP_SPRINTING));
                }
             } else if (!this.field_29226 && var4) {
                this.field_29226 = !this.field_29226;
                if (client.thePlayer.method_37321()) {
-                  client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20100));
+                  client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.START_SPRINTING));
                }
             }
          }

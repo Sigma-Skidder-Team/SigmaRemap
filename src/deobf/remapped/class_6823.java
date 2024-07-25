@@ -106,7 +106,7 @@ public class class_6823 extends class_7067<class_7451> {
       if (!class_6588.field_33945) {
          if (!Config.field_15481) {
             Entity var4 = this.field_35169.getRenderViewEntity();
-            double var5 = var1.method_37273(var4.method_37302(), var4.method_37309(), var4.method_37156());
+            double var5 = var1.method_37273(var4.getPosX(), var4.method_37309(), var4.getPosZ());
             if (var5 > field_35171) {
                return false;
             }

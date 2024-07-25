@@ -17,9 +17,9 @@ public class class_5229 extends class_2451 {
       ItemStack var6 = var2.method_26617(var3);
       var1.method_29528(
          (class_704)null,
-         var2.method_37302(),
+         var2.getPosX(),
          var2.method_37309(),
-         var2.method_37156(),
+         var2.getPosZ(),
          class_463.field_2319,
          class_562.field_3328,
          0.5F,

@@ -14,15 +14,15 @@ public class HypixelDisabler extends Module {
 
    @Override
    public void onEnable() {
-      if (!client.thePlayer.field_41726) {
+      if (!client.thePlayer.onGround) {
          this.field_36207 = false;
       } else {
-         double var3 = client.thePlayer.method_37302();
+         double var3 = client.thePlayer.getPosX();
          double var5 = client.thePlayer.method_37309();
-         double var7 = client.thePlayer.method_37156();
+         double var7 = client.thePlayer.getPosZ();
          this.field_36207 = false;
-         client.method_8614().method_4813(new class_9515(var3, var5 + 0.2, var7, false));
-         client.method_8614().method_4813(new class_9515(var3, var5 + 0.1, var7, false));
+         client.method_8614().sendPacket(new class_9515(var3, var5 + 0.2, var7, false));
+         client.method_8614().sendPacket(new class_9515(var3, var5 + 0.1, var7, false));
          this.field_36207 = true;
          this.field_36204.method_14773();
          this.field_36204.method_14776();
@@ -42,7 +42,7 @@ public class HypixelDisabler extends Module {
          int var3 = this.field_36206.size();
 
          for (int var4 = 0; var4 < var3; var4++) {
-            client.method_8614().method_4813(this.field_36206.get(var4));
+            client.method_8614().sendPacket(this.field_36206.get(var4));
          }
 
          SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Disabler canceled"));
@@ -54,7 +54,7 @@ public class HypixelDisabler extends Module {
    @EventListen
    public void method_32068(class_1393 var1) {
       if (client.thePlayer != null) {
-         if (!this.field_36207 && client.thePlayer.field_41726) {
+         if (!this.field_36207 && client.thePlayer.onGround) {
             if (!this.getBooleanValueByName("Instant")) {
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Hypixel disabler", "Wait 5s..."));
             } else {
@@ -82,7 +82,7 @@ public class HypixelDisabler extends Module {
             int var4 = this.field_36206.size();
 
             for (int var5 = 0; var5 < var4; var5++) {
-               client.method_8614().method_4813(this.field_36206.get(var5));
+               client.method_8614().sendPacket(this.field_36206.get(var5));
             }
 
             this.field_36206.clear();
@@ -125,11 +125,11 @@ public class HypixelDisabler extends Module {
                   class_509 var4 = (class_509)var1.method_557();
                   var1.method_29715(true);
                   client.method_8614()
-                     .method_4813(new class_1514(var4.field_3139, var4.field_3144, var4.field_3141, var4.field_3143, var4.field_3140, false));
+                     .sendPacket(new class_1514(var4.field_3139, var4.field_3144, var4.field_3141, var4.field_3143, var4.field_3140, false));
                   int var5 = this.field_36206.size();
 
                   for (int var6 = 0; var6 < var5; var6++) {
-                     client.method_8614().method_4813(this.field_36206.get(var6));
+                     client.method_8614().sendPacket(this.field_36206.get(var6));
                   }
 
                   this.field_36206.clear();

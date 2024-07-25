@@ -53,7 +53,7 @@ public abstract class Entity implements class_9875, class_5801 {
    public float prevRotationYaw;
    public float field_41762;
    public class_4092 field_41712 = field_41769;
-   public boolean field_41726;
+   public boolean onGround;
    public boolean field_41744;
    public boolean field_41774;
    public boolean field_41743;
@@ -217,7 +217,7 @@ public abstract class Entity implements class_9875, class_5801 {
    public void method_37100() {
       if (this.world != null) {
          for (double var3 = this.method_37309(); var3 > 0.0 && var3 < 256.0; var3++) {
-            this.method_37256(this.method_37302(), var3, this.method_37156());
+            this.method_37256(this.getPosX(), var3, this.getPosZ());
             if (this.world.method_6682(this)) {
                break;
             }
@@ -401,11 +401,11 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37386(boolean var1) {
-      this.field_41726 = var1;
+      this.onGround = var1;
    }
 
    public boolean method_37360() {
-      return this.field_41726;
+      return this.onGround;
    }
 
    public void method_37226(class_7412 var1, class_1343 var2) {
@@ -450,10 +450,10 @@ public abstract class Entity implements class_9875, class_5801 {
          this.world.method_29599().startSection("rest");
          this.field_41744 = !class_9299.method_42855(var2.field_7336, var25.field_7336) || !class_9299.method_42855(var2.field_7334, var25.field_7334);
          this.field_41774 = var2.field_7333 != var25.field_7333;
-         this.field_41726 = this.field_41774 && var2.field_7333 < 0.0;
+         this.onGround = this.field_41774 && var2.field_7333 < 0.0;
          BlockPos var6 = this.method_37341();
          class_2522 var7 = this.world.method_28262(var6);
-         this.method_37105(var25.field_7333, this.field_41726, var7, var6);
+         this.method_37105(var25.field_7333, this.onGround, var7, var6);
          class_1343 var8 = this.method_37098();
          if (var2.field_7336 != var25.field_7336) {
             this.method_37214(0.0, var8.field_7333, var8.field_7334);
@@ -468,7 +468,7 @@ public abstract class Entity implements class_9875, class_5801 {
             var9.method_29297(this.world, this);
          }
 
-         if (this.field_41726 && !this.method_37117()) {
+         if (this.onGround && !this.method_37117()) {
             var9.method_29286(this.world, var6, this);
          }
 
@@ -623,7 +623,7 @@ public abstract class Entity implements class_9875, class_5801 {
       boolean var11 = var1.field_7336 != var10.field_7336;
       boolean var12 = var1.field_7333 != var10.field_7333;
       boolean var13 = var1.field_7334 != var10.field_7334;
-      boolean var14 = this.field_41726 || var12 && var1.field_7333 < 0.0;
+      boolean var14 = this.onGround || var12 && var1.field_7333 < 0.0;
       if (this.field_41733 > 0.0F && var14 && (var11 || var13)) {
          class_1343 var15 = method_37301(this, new class_1343(var1.field_7336, (double)this.field_41733, var1.field_7334), var4, this.world, var5, var9);
          class_1343 var16 = method_37301(
@@ -814,7 +814,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public void method_37155(class_8461 var1, float var2, float var3) {
       if (!this.method_37378()) {
-         this.world.method_29528((class_704)null, this.method_37302(), this.method_37309(), this.method_37156(), var1, this.method_37197(), var2, var3);
+         this.world.method_29528((class_704)null, this.getPosX(), this.method_37309(), this.getPosZ(), var1, this.method_37197(), var2, var3);
       }
    }
 
@@ -942,7 +942,7 @@ public abstract class Entity implements class_9875, class_5801 {
          }
       }
 
-      BlockPos var12 = new BlockPos(this.method_37302(), var3, this.method_37156());
+      BlockPos var12 = new BlockPos(this.getPosX(), var3, this.getPosZ());
       class_4774 var7 = this.world.method_28258(var12);
 
       for (class_2307 var9 : class_6503.method_29650()) {
@@ -983,9 +983,9 @@ public abstract class Entity implements class_9875, class_5801 {
          this.world
             .method_43361(
                class_3090.field_15340,
-               this.method_37302() + var9,
+               this.getPosX() + var9,
                (double)(var7 + 1.0F),
-               this.method_37156() + var11,
+               this.getPosZ() + var11,
                var5.field_7336,
                var5.field_7333 - this.field_41717.nextDouble() * 0.2F,
                var5.field_7334
@@ -998,9 +998,9 @@ public abstract class Entity implements class_9875, class_5801 {
          this.world
             .method_43361(
                class_3090.field_15346,
-               this.method_37302() + var14,
+               this.getPosX() + var14,
                (double)(var7 + 1.0F),
-               this.method_37156() + var15,
+               this.getPosZ() + var15,
                var5.field_7336,
                var5.field_7333,
                var5.field_7334
@@ -1017,9 +1017,9 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37343() {
-      int var3 = class_9299.method_42847(this.method_37302());
+      int var3 = class_9299.method_42847(this.getPosX());
       int var4 = class_9299.method_42847(this.method_37309() - 0.2F);
-      int var5 = class_9299.method_42847(this.method_37156());
+      int var5 = class_9299.method_42847(this.getPosZ());
       BlockPos var6 = new BlockPos(var3, var4, var5);
       class_2522 var7 = this.world.method_28262(var6);
       if (var7.method_8352() != class_7537.field_38470) {
@@ -1027,9 +1027,9 @@ public abstract class Entity implements class_9875, class_5801 {
          this.world
             .method_43361(
                new class_7110(class_3090.field_15325, var7),
-               this.method_37302() + (this.field_41717.nextDouble() - 0.5) * (double)this.field_41758.field_31199,
+               this.getPosX() + (this.field_41717.nextDouble() - 0.5) * (double)this.field_41758.field_31199,
                this.method_37309() + 0.1,
-               this.method_37156() + (this.field_41717.nextDouble() - 0.5) * (double)this.field_41758.field_31199,
+               this.getPosZ() + (this.field_41717.nextDouble() - 0.5) * (double)this.field_41758.field_31199,
                var8.field_7336 * -4.0,
                1.5,
                var8.field_7334 * -4.0
@@ -1065,7 +1065,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public float method_37193() {
-      class_2921 var3 = new class_2921(this.method_37302(), 0.0, this.method_37156());
+      class_2921 var3 = new class_2921(this.getPosX(), 0.0, this.getPosZ());
       if (!this.world.isBlockLoaded(var3)) {
          return 0.0F;
       } else {
@@ -1125,16 +1125,16 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public float method_37175(Entity var1) {
-      float var4 = (float)(this.method_37302() - var1.method_37302());
+      float var4 = (float)(this.getPosX() - var1.getPosX());
       float var5 = (float)(this.method_37309() - var1.method_37309());
-      float var6 = (float)(this.method_37156() - var1.method_37156());
+      float var6 = (float)(this.getPosZ() - var1.getPosZ());
       return class_9299.method_42843(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
    public double method_37273(double var1, double var3, double var5) {
-      double var9 = this.method_37302() - var1;
+      double var9 = this.getPosX() - var1;
       double var11 = this.method_37309() - var3;
-      double var13 = this.method_37156() - var5;
+      double var13 = this.getPosZ() - var5;
       return var9 * var9 + var11 * var11 + var13 * var13;
    }
 
@@ -1143,9 +1143,9 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public double method_37274(class_1343 var1) {
-      double var4 = this.method_37302() - var1.field_7336;
+      double var4 = this.getPosX() - var1.field_7336;
       double var6 = this.method_37309() - var1.field_7333;
-      double var8 = this.method_37156() - var1.field_7334;
+      double var8 = this.getPosZ() - var1.field_7334;
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 
@@ -1154,8 +1154,8 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public void method_37183(Entity var1) {
       if (!this.method_37308(var1) && !var1.field_41731 && !this.field_41731) {
-         double var4 = var1.method_37302() - this.method_37302();
-         double var6 = var1.method_37156() - this.method_37156();
+         double var4 = var1.getPosX() - this.getPosX();
+         double var6 = var1.getPosZ() - this.getPosZ();
          double var8 = class_9299.method_42812(var4, var6);
          if (var8 >= 0.01F) {
             var8 = (double)class_9299.method_42842(var8);
@@ -1233,12 +1233,12 @@ public abstract class Entity implements class_9875, class_5801 {
 
    public final class_1343 method_37335(float var1) {
       if (var1 != 1.0F) {
-         double var4 = class_9299.method_42794((double)var1, this.field_41767, this.method_37302());
+         double var4 = class_9299.method_42794((double)var1, this.field_41767, this.getPosX());
          double var6 = class_9299.method_42794((double)var1, this.field_41698, this.method_37309()) + (double)this.method_37277();
-         double var8 = class_9299.method_42794((double)var1, this.field_41725, this.method_37156());
+         double var8 = class_9299.method_42794((double)var1, this.field_41725, this.getPosZ());
          return new class_1343(var4, var6, var8);
       } else {
-         return new class_1343(this.method_37302(), this.method_37388(), this.method_37156());
+         return new class_1343(this.getPosX(), this.method_37388(), this.getPosZ());
       }
    }
 
@@ -1247,9 +1247,9 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public final class_1343 method_37280(float var1) {
-      double var4 = class_9299.method_42794((double)var1, this.field_41767, this.method_37302());
+      double var4 = class_9299.method_42794((double)var1, this.field_41767, this.getPosX());
       double var6 = class_9299.method_42794((double)var1, this.field_41698, this.method_37309());
-      double var8 = class_9299.method_42794((double)var1, this.field_41725, this.method_37156());
+      double var8 = class_9299.method_42794((double)var1, this.field_41725, this.getPosZ());
       return new class_1343(var4, var6, var8);
    }
 
@@ -1275,9 +1275,9 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean method_37185(double var1, double var3, double var5) {
-      double var9 = this.method_37302() - var1;
+      double var9 = this.getPosX() - var1;
       double var11 = this.method_37309() - var3;
-      double var13 = this.method_37156() - var5;
+      double var13 = this.getPosZ() - var5;
       double var15 = var9 * var9 + var11 * var11 + var13 * var13;
       return this.method_37176(var15);
    }
@@ -1310,9 +1310,9 @@ public abstract class Entity implements class_9875, class_5801 {
    public CompoundNBT method_37258(CompoundNBT var1) {
       try {
          if (this.field_41739 != null) {
-            var1.put("Pos", this.method_37272(this.field_41739.method_37302(), this.method_37309(), this.field_41739.method_37156()));
+            var1.put("Pos", this.method_37272(this.field_41739.getPosX(), this.method_37309(), this.field_41739.getPosZ()));
          } else {
-            var1.put("Pos", this.method_37272(this.method_37302(), this.method_37309(), this.method_37156()));
+            var1.put("Pos", this.method_37272(this.getPosX(), this.method_37309(), this.getPosZ()));
          }
 
          class_1343 var4 = this.method_37098();
@@ -1321,7 +1321,7 @@ public abstract class Entity implements class_9875, class_5801 {
          var1.putFloat("FallDistance", this.field_41706);
          var1.method_25958("Fire", (short)this.field_41728);
          var1.method_25958("Air", (short)this.method_37229());
-         var1.putBoolean("OnGround", this.field_41726);
+         var1.putBoolean("OnGround", this.onGround);
          var1.putBoolean("Invulnerable", this.field_41704);
          var1.method_25931("PortalCooldown", this.field_41771);
          var1.method_25964("UUID", this.method_37328());
@@ -1400,7 +1400,7 @@ public abstract class Entity implements class_9875, class_5801 {
          this.field_41706 = var1.getFloat("FallDistance");
          this.field_41728 = var1.method_25956("Fire");
          this.method_37192(var1.method_25956("Air"));
-         this.field_41726 = var1.getBoolean("OnGround");
+         this.onGround = var1.getBoolean("OnGround");
          this.field_41704 = var1.getBoolean("Invulnerable");
          this.field_41771 = var1.method_25947("PortalCooldown");
          if (var1.method_25954("UUID")) {
@@ -1408,7 +1408,7 @@ public abstract class Entity implements class_9875, class_5801 {
             this.field_41730 = this.field_41738.toString();
          }
 
-         if (!Double.isFinite(this.method_37302()) || !Double.isFinite(this.method_37309()) || !Double.isFinite(this.method_37156())) {
+         if (!Double.isFinite(this.getPosX()) || !Double.isFinite(this.method_37309()) || !Double.isFinite(this.getPosZ())) {
             throw new IllegalStateException("Entity has invalid position");
          } else if (Double.isFinite((double)this.rotationYaw) && Double.isFinite((double)this.rotationPitch)) {
             this.method_37351();
@@ -1506,7 +1506,7 @@ public abstract class Entity implements class_9875, class_5801 {
    public class_91 method_37311(ItemStack var1, float var2) {
       if (!var1.method_28022()) {
          if (!this.world.field_33055) {
-            class_91 var5 = new class_91(this.world, this.method_37302(), this.method_37309() + (double)var2, this.method_37156(), var1);
+            class_91 var5 = new class_91(this.world, this.getPosX(), this.method_37309() + (double)var2, this.getPosZ(), var1);
             var5.method_257();
             this.world.method_7509(var5);
             return var5;
@@ -1527,7 +1527,7 @@ public abstract class Entity implements class_9875, class_5801 {
          float var3 = 0.1F;
          float var4 = this.field_41758.field_31199 * 0.8F;
          class_4092 var5 = class_4092.method_18913((double)var4, 0.1F, (double)var4)
-            .method_18918(this.method_37302(), this.method_37388(), this.method_37156());
+            .method_18918(this.getPosX(), this.method_37388(), this.getPosZ());
          return this.world.method_6674(this, var5, (var1, var2) -> var1.method_8313(this.world, var2)).findAny().isPresent();
       } else {
          return false;
@@ -1561,7 +1561,7 @@ public abstract class Entity implements class_9875, class_5801 {
    private void method_37125(Entity var1, class_8015 var2) {
       if (this.method_37072(var1)) {
          double var5 = this.method_37309() + this.method_37149() + var1.method_37106();
-         var2.method_36384(var1, this.method_37302(), var5, this.method_37156());
+         var2.method_36384(var1, this.getPosX(), var5, this.getPosZ());
       }
    }
 
@@ -1606,7 +1606,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean method_37158(Entity var1) {
-      return !this.method_37252() && this.field_41773 <= 0;
+      return !this.isSneaking() && this.field_41773 <= 0;
    }
 
    public boolean method_37115(class_7653 var1) {
@@ -1778,24 +1778,24 @@ public abstract class Entity implements class_9875, class_5801 {
       this.method_37220(1, var1);
    }
 
-   public boolean method_37252() {
+   public boolean isSneaking() {
       return this.method_37385(1);
    }
 
    public boolean method_37117() {
-      return this.method_37252();
+      return this.isSneaking();
    }
 
    public boolean method_37154() {
-      return this.method_37252();
+      return this.isSneaking();
    }
 
    public boolean method_37073() {
-      return this.method_37252();
+      return this.isSneaking();
    }
 
    public boolean method_37283() {
-      return this.method_37252();
+      return this.isSneaking();
    }
 
    public boolean method_37382() {
@@ -2020,9 +2020,9 @@ public abstract class Entity implements class_9875, class_5801 {
          this.method_45509().getString(),
          this.field_41740,
          this.world != null ? this.world.toString() : "~NULL~",
-         this.method_37302(),
+         this.getPosX(),
          this.method_37309(),
-         this.method_37156()
+         this.getPosZ()
       );
    }
 
@@ -2039,7 +2039,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37299(Entity var1) {
-      this.method_37144(var1.method_37302(), var1.method_37309(), var1.method_37156(), var1.rotationYaw, var1.rotationPitch);
+      this.method_37144(var1.getPosX(), var1.method_37309(), var1.getPosZ(), var1.rotationYaw, var1.rotationPitch);
    }
 
    public void method_37199(Entity var1) {
@@ -2104,9 +2104,9 @@ public abstract class Entity implements class_9875, class_5801 {
             double var14 = Math.min(2.9999872E7, var7.method_9816() - 16.0);
             double var16 = class_8760.method_40232(this.world.method_22572(), var1.method_22572());
             BlockPos var18 = new BlockPos(
-               class_9299.method_42827(this.method_37302() * var16, var8, var12),
+               class_9299.method_42827(this.getPosX() * var16, var8, var12),
                this.method_37309(),
-               class_9299.method_42827(this.method_37156() * var16, var10, var14)
+               class_9299.method_42827(this.getPosZ() * var16, var10, var14)
             );
             return this.method_37111(var1, var18, var19)
                .<class_9606>map(
@@ -2182,12 +2182,12 @@ public abstract class Entity implements class_9875, class_5801 {
       var1.method_29850("Entity ID", this.field_41740);
       var1.method_29851("Entity Name", () -> this.method_45509().getString());
       var1.method_29850(
-         "Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.method_37302(), this.method_37309(), this.method_37156())
+         "Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.method_37309(), this.getPosZ())
       );
       var1.method_29850(
          "Entity's Block location",
          class_6544.method_29845(
-            class_9299.method_42847(this.method_37302()), class_9299.method_42847(this.method_37309()), class_9299.method_42847(this.method_37156())
+            class_9299.method_42847(this.getPosX()), class_9299.method_42847(this.method_37309()), class_9299.method_42847(this.getPosZ())
          )
       );
       class_1343 var4 = this.method_37098();
@@ -2318,12 +2318,12 @@ public abstract class Entity implements class_9875, class_5801 {
          double var7 = (double)var5.field_31199 / 2.0;
          this.method_37094(
             new class_4092(
-               this.method_37302() - var7,
+               this.getPosX() - var7,
                this.method_37309(),
-               this.method_37156() - var7,
-               this.method_37302() + var7,
+               this.getPosZ() - var7,
+               this.getPosX() + var7,
                this.method_37309() + (double)var5.field_31200,
-               this.method_37156() + var7
+               this.getPosZ() + var7
             )
          );
       }
@@ -2356,8 +2356,8 @@ public abstract class Entity implements class_9875, class_5801 {
    public class_4092 method_37242(class_7653 var1) {
       class_6097 var4 = this.method_37190(var1);
       float var5 = var4.field_31199 / 2.0F;
-      class_1343 var6 = new class_1343(this.method_37302() - (double)var5, this.method_37309(), this.method_37156() - (double)var5);
-      class_1343 var7 = new class_1343(this.method_37302() + (double)var5, this.method_37309() + (double)var4.field_31200, this.method_37156() + (double)var5);
+      class_1343 var6 = new class_1343(this.getPosX() - (double)var5, this.method_37309(), this.getPosZ() - (double)var5);
+      class_1343 var7 = new class_1343(this.getPosX() + (double)var5, this.method_37309() + (double)var4.field_31200, this.getPosZ() + (double)var5);
       return new class_4092(var6, var7);
    }
 
@@ -2526,7 +2526,7 @@ public abstract class Entity implements class_9875, class_5801 {
       }
    }
 
-   public Entity method_37240() {
+   public Entity getLowestRidingEntity() {
       Entity var3 = this;
 
       while (var3.isPassenger()) {
@@ -2537,7 +2537,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public boolean method_37308(Entity var1) {
-      return this.method_37240() == var1.method_37240();
+      return this.getLowestRidingEntity() == var1.getLowestRidingEntity();
    }
 
    public boolean method_37315(Entity var1) {
@@ -2554,7 +2554,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return false;
    }
 
-   public boolean method_37069() {
+   public boolean canPassengerSteer() {
       Entity var3 = this.method_37259();
       return !(var3 instanceof class_704) ? !this.world.field_33055 : ((class_704)var3).method_3183();
    }
@@ -2568,7 +2568,7 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public class_1343 method_37282(class_5834 var1) {
-      return new class_1343(this.method_37302(), this.method_37241().field_19939, this.method_37156());
+      return new class_1343(this.getPosX(), this.method_37241().field_19939, this.getPosZ());
    }
 
    @Nullable
@@ -2747,7 +2747,7 @@ public abstract class Entity implements class_9875, class_5801 {
       this.method_37215(new class_1343(var1, var3, var5));
    }
 
-   public final double method_37302() {
+   public final double getPosX() {
       return this.field_41736.field_7336;
    }
 
@@ -2775,7 +2775,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return this.field_41736.field_7333 + (double)this.field_41710;
    }
 
-   public final double method_37156() {
+   public final double getPosZ() {
       return this.field_41736.field_7334;
    }
 

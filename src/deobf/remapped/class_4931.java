@@ -75,7 +75,7 @@ public class class_4931 {
                      if (this.field_25525 > 0.0) {
                         double var5 = !this.field_25530 ? 1.0 : var2.method_26516(var1);
                         double var7 = Math.max(this.field_25525 * var5, 2.0);
-                        double var9 = var1.method_37273(var2.method_37302(), var2.method_37309(), var2.method_37156());
+                        double var9 = var1.method_37273(var2.getPosX(), var2.method_37309(), var2.getPosZ());
                         if (var9 > var7 * var7) {
                            return false;
                         }

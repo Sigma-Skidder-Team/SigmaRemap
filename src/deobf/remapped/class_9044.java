@@ -42,7 +42,7 @@ public class class_9044 extends Screen implements class_4361 {
       this.field_46303.method_25747((class_4361)null);
       ClientPlayNetHandler var3 = this.field_943.method_8614();
       if (var3 != null) {
-         var3.method_4813(class_3906.method_18086());
+         var3.sendPacket(class_3906.method_18086());
       }
    }
 

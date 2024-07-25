@@ -20,9 +20,9 @@ public class class_2704 extends class_6165 {
    @Override
    public void method_29511() {
       if (!this.field_13244.field_41751 && this.field_13244.method_17809() == null) {
-         this.field_5761 = (double)((float)this.field_13244.method_37302());
+         this.field_5761 = (double)((float)this.field_13244.getPosX());
          this.field_5765 = (double)((float)this.field_13244.method_37309());
-         this.field_5762 = (double)((float)this.field_13244.method_37156());
+         this.field_5762 = (double)((float)this.field_13244.getPosZ());
          float var3 = this.field_13244.method_1546(0.0F);
          this.field_5766 = 0.0F + 1.0F * var3 * var3;
          this.field_5773 = 0.7F + 0.5F * var3;

@@ -18,7 +18,7 @@ public class TestSpeed extends Module {
    @EventListen
    public void method_33363(class_1393 var1) {
       if (this.method_42015() && client.thePlayer != null && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
-         if (client.thePlayer.field_41726 && var1.method_6449()) {
+         if (client.thePlayer.onGround && var1.method_6449()) {
             var1.method_6455(var1.method_6454() + 1.0E-14);
          }
       }
@@ -27,7 +27,7 @@ public class TestSpeed extends Module {
    @EventListen
    public void method_33366(class_7767 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41726
+         if (client.thePlayer.onGround
             && client.thePlayer.field_41774
             && (client.thePlayer.field_29673 != 0.0F || client.thePlayer.field_29676 != 0.0F)
             && this.getBooleanValueByName("AutoJump")) {
@@ -48,7 +48,7 @@ public class TestSpeed extends Module {
             this.field_37409 = Math.min(1.0F, this.field_37409 + 0.1F);
          }
 
-         if (client.thePlayer.field_41726 && !this.field_37413) {
+         if (client.thePlayer.onGround && !this.field_37413) {
             this.field_37407 = 0.0F;
             this.field_37408 = 0.0F;
             this.field_37409 = Math.min(1.0F, this.field_37409 + 0.33F);

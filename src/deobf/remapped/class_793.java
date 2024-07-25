@@ -70,7 +70,7 @@ public class class_793 implements class_8773 {
 
       this.field_4261 = new CompletableFuture<Suggestions>();
       int var5 = ++this.field_4262;
-      this.field_4260.method_4813(new class_6248(var5, var1.getInput()));
+      this.field_4260.sendPacket(new class_6248(var5, var1.getInput()));
       return this.field_4261;
    }
 

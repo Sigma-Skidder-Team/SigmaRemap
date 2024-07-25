@@ -16,9 +16,9 @@ public class TestFly extends Module {
 
    @Override
    public void onEnable() {
-      this.field_6680 = client.thePlayer.method_37302();
+      this.field_6680 = client.thePlayer.getPosX();
       this.field_6674 = client.thePlayer.method_37309();
-      this.field_6678 = client.thePlayer.method_37156();
+      this.field_6678 = client.thePlayer.getPosZ();
       this.field_6673 = 0.0;
       this.field_6675 = 2;
       this.field_6681 = 0;

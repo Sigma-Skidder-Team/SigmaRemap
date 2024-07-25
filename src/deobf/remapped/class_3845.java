@@ -159,7 +159,7 @@ public class class_3845 extends class_5467 {
    @Nullable
    @Override
    public class_8461 method_26918() {
-      return !this.method_37285() && this.field_41726 && !this.method_26449() ? class_463.field_2278 : super.method_26918();
+      return !this.method_37285() && this.onGround && !this.method_26449() ? class_463.field_2278 : super.method_26918();
    }
 
    @Override

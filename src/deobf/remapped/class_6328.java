@@ -56,9 +56,9 @@ public class class_6328 {
                var7.world
                   .method_29528(
                      (class_704)null,
-                     var7.method_37302(),
+                     var7.getPosX(),
                      var7.method_37309(),
-                     var7.method_37156(),
+                     var7.getPosZ(),
                      class_463.field_2732,
                      class_562.field_3335,
                      0.2F,

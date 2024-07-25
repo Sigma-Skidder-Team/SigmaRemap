@@ -46,7 +46,7 @@ public class NoGroundCriticals extends Module {
    @class_315
    private void method_34125(class_1393 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41726) {
+         if (client.thePlayer.onGround) {
             this.field_38246 = false;
             if (this.field_38244 && this.field_38243 != 1) {
                this.field_38244 = !this.field_38244;

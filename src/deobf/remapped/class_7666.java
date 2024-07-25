@@ -495,7 +495,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       }
 
       if (var1.method_36374()) {
-         this.world.method_7509(new class_5614(this.world, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), var4));
+         this.world.method_7509(new class_5614(this.world, this.getPosX(), this.method_37309() + 0.5, this.getPosZ(), var4));
       }
    }
 
@@ -690,7 +690,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       } else {
          field_41741.info("Villager {} was struck by lightning {}.", this, var2);
          class_1609 var5 = class_6629.field_34220.method_30484(var1);
-         var5.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.rotationYaw, this.rotationPitch);
+         var5.method_37144(this.getPosX(), this.method_37309(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12041, (class_8733)null, (CompoundNBT)null);
          var5.method_26888(this.method_26859());
          if (this.method_45507()) {

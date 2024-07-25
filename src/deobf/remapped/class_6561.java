@@ -109,9 +109,9 @@ public class class_6561 {
 
       for (Entity var8 : var6) {
          class_1343 var9 = new class_1343(
-            var8.method_37302() - (double)var2.method_12173(),
+            var8.getPosX() - (double)var2.method_12173(),
             var8.method_37309() - (double)var2.method_12165(),
-            var8.method_37156() - (double)var2.method_12185()
+            var8.getPosZ() - (double)var2.method_12185()
          );
          CompoundNBT var10 = new CompoundNBT();
          var8.method_37350(var10);

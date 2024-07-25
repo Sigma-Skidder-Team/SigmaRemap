@@ -1335,9 +1335,9 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          if (!this.field_9579 && this.theWorld != null) {
             this.theWorld
                .method_732(
-                  class_9299.method_42847(this.thePlayer.method_37302()),
+                  class_9299.method_42847(this.thePlayer.getPosX()),
                   class_9299.method_42847(this.thePlayer.method_37309()),
-                  class_9299.method_42847(this.thePlayer.method_37156())
+                  class_9299.method_42847(this.thePlayer.getPosZ())
                );
          }
 
@@ -1417,7 +1417,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
       while (this.gameOptions.keySwapOffHand.isPressed()) {
          if (!this.thePlayer.method_37221()) {
-            this.method_8614().method_4813(new class_1586(class_7500.field_38260, BlockPos.field_7306, Direction.field_802));
+            this.method_8614().sendPacket(new class_1586(class_7500.field_38260, BlockPos.field_7306, Direction.field_802));
          }
       }
 

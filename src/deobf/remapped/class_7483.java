@@ -54,16 +54,16 @@ public class class_7483 extends Entity implements class_3713 {
       double var4 = (double)var1.method_12173();
       int var6 = var1.method_12165();
       double var7 = (double)var1.method_12185();
-      double var9 = var4 - this.method_37302();
-      double var11 = var7 - this.method_37156();
+      double var9 = var4 - this.getPosX();
+      double var11 = var7 - this.getPosZ();
       float var13 = class_9299.method_42842(var9 * var9 + var11 * var11);
       if (!(var13 > 12.0F)) {
          this.field_38206 = var4;
          this.field_38204 = (double)var6;
          this.field_38205 = var7;
       } else {
-         this.field_38206 = this.method_37302() + var9 / (double)var13 * 12.0;
-         this.field_38205 = this.method_37156() + var11 / (double)var13 * 12.0;
+         this.field_38206 = this.getPosX() + var9 / (double)var13 * 12.0;
+         this.field_38205 = this.getPosZ() + var11 / (double)var13 * 12.0;
          this.field_38204 = this.method_37309() + 8.0;
       }
 
@@ -87,9 +87,9 @@ public class class_7483 extends Entity implements class_3713 {
    public void method_37123() {
       super.method_37123();
       class_1343 var3 = this.method_37098();
-      double var4 = this.method_37302() + var3.field_7336;
+      double var4 = this.getPosX() + var3.field_7336;
       double var6 = this.method_37309() + var3.field_7333;
-      double var8 = this.method_37156() + var3.field_7334;
+      double var8 = this.getPosZ() + var3.field_7334;
       float var10 = class_9299.method_42842(method_37266(var3));
       this.rotationPitch = class_5783.method_26168(this.field_41762, (float)(class_9299.method_42821(var3.field_7333, (double)var10) * 180.0F / (float)Math.PI));
       this.rotationYaw = class_5783.method_26168(this.prevRotationYaw, (float)(class_9299.method_42821(var3.field_7336, var3.field_7334) * 180.0F / (float)Math.PI));
@@ -148,7 +148,7 @@ public class class_7483 extends Entity implements class_3713 {
             if (!this.field_38202) {
                this.world.method_43364(2003, this.method_37075(), 0);
             } else {
-               this.world.method_7509(new class_91(this.world, this.method_37302(), this.method_37309(), this.method_37156(), this.method_17246()));
+               this.world.method_7509(new class_91(this.world, this.getPosX(), this.method_37309(), this.getPosZ(), this.method_17246()));
             }
          }
       }

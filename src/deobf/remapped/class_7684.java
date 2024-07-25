@@ -40,16 +40,16 @@ public class class_7684 extends Module {
 
    public String method_34826(boolean var1) {
       return !var1
-         ? Math.round(client.thePlayer.method_37302())
+         ? Math.round(client.thePlayer.getPosX())
             + " "
             + Math.round(client.thePlayer.method_37309())
             + " "
-            + Math.round(client.thePlayer.method_37156())
-         : (float)Math.round(client.thePlayer.method_37302() * 10.0) / 10.0F
+            + Math.round(client.thePlayer.getPosZ())
+         : (float)Math.round(client.thePlayer.getPosX() * 10.0) / 10.0F
             + " "
             + (float)Math.round(client.thePlayer.method_37309() * 10.0) / 10.0F
             + " "
-            + (float)Math.round(client.thePlayer.method_37156() * 10.0) / 10.0F;
+            + (float)Math.round(client.thePlayer.getPosZ() * 10.0) / 10.0F;
    }
 
    public int method_34824(int var1, int var2) {

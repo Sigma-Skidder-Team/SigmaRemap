@@ -30,11 +30,11 @@ public class class_7494 {
    }
 
    public static void method_34094(BlockPos var0) {
-      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37302();
+      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosX();
       double var5 = (double)var0.method_12165()
          + 0.5
          - (MinecraftClient.getInstance().thePlayer.method_37309() + (double) MinecraftClient.getInstance().thePlayer.method_37277());
-      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37156();
+      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosZ();
       double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
@@ -45,31 +45,31 @@ public class class_7494 {
    }
 
    public static void method_34111(BlockPos var0) {
-      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37302();
+      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosX();
       double var5 = (double)var0.method_12165()
          + 0.5
          - (MinecraftClient.getInstance().thePlayer.method_37309() + (double) MinecraftClient.getInstance().thePlayer.method_37277());
-      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37156();
+      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosZ();
       double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
       MinecraftClient.getInstance()
          .method_8614()
-         .method_4813(
-            new class_3616(
+         .sendPacket(
+            new RotationPacket(
                MinecraftClient.getInstance().thePlayer.rotationYaw + class_9299.method_42810(var11 - MinecraftClient.getInstance().thePlayer.rotationYaw),
                MinecraftClient.getInstance().thePlayer.rotationPitch + class_9299.method_42810(var12 - MinecraftClient.getInstance().thePlayer.rotationPitch),
-               MinecraftClient.getInstance().thePlayer.field_41726
+               MinecraftClient.getInstance().thePlayer.onGround
             )
          );
    }
 
    public static float[] method_34076(BlockPos var0) {
-      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37302();
+      double var3 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosX();
       double var5 = (double)var0.method_12165()
          - 0.25
          - (MinecraftClient.getInstance().thePlayer.method_37309() + (double) MinecraftClient.getInstance().thePlayer.method_37277());
-      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37156();
+      double var7 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosZ();
       double var9 = (double)class_9299.method_42842(var3 * var3 + var7 * var7);
       float var11 = (float)(Math.atan2(var7, var3) * 180.0 / Math.PI) - 90.0F;
       float var12 = (float)(-(Math.atan2(var5, var9) * 180.0 / Math.PI));
@@ -102,12 +102,12 @@ public class class_7494 {
             var6++;
       }
 
-      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37302() + (double)var4;
+      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosX() + (double)var4;
       double var9 = (double)var0.method_12165()
          - 0.02
          - (MinecraftClient.getInstance().thePlayer.method_37309() + (double) MinecraftClient.getInstance().thePlayer.method_37277())
          + (double)var6;
-      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37156() + (double)var5;
+      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosZ() + (double)var5;
       double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
@@ -156,12 +156,12 @@ public class class_7494 {
          var6 = (float)(0.6F - Math.sin((double)(System.currentTimeMillis() - 500L) / 1600.0) * 0.2);
       }
 
-      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37302() + (double)var4;
+      double var7 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosX() + (double)var4;
       double var9 = (double)var0.method_12165()
          - 0.02
          - (MinecraftClient.getInstance().thePlayer.method_37309() + (double) MinecraftClient.getInstance().thePlayer.method_37277())
          + (double)var6;
-      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37156() + (double)var5;
+      double var11 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosZ() + (double)var5;
       double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
       float var15 = (float)(Math.atan2(var11, var7) * 180.0 / Math.PI) - 90.0F;
       float var16 = (float)(-(Math.atan2(var9, var13) * 180.0 / Math.PI));
@@ -188,8 +188,8 @@ public class class_7494 {
             var4 -= 0.49F;
       }
 
-      double var6 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37302() + (double)var4;
-      double var8 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.method_37156() + (double)var5;
+      double var6 = (double)var0.method_12173() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosX() + (double)var4;
+      double var8 = (double)var0.method_12185() + 0.5 - MinecraftClient.getInstance().thePlayer.getPosZ() + (double)var5;
       double var10 = (double)var0.method_12165()
          - 0.02
          - (MinecraftClient.getInstance().thePlayer.method_37309() + (double) MinecraftClient.getInstance().thePlayer.method_37277())
@@ -262,9 +262,9 @@ public class class_7494 {
    }
 
    public static float method_34107(Entity var0, double var1, double var3, double var5) {
-      float var9 = (float)(var0.method_37302() - var1);
+      float var9 = (float)(var0.getPosX() - var1);
       float var10 = (float)(var0.method_37309() - var3);
-      float var11 = (float)(var0.method_37156() - var5);
+      float var11 = (float)(var0.getPosZ() - var5);
       return method_34103(var9, var10, var11);
    }
 
@@ -311,9 +311,9 @@ public class class_7494 {
          for (float var5 = -var0; var5 <= var0; var5++) {
             for (float var6 = -var0; var6 <= var0; var6++) {
                BlockPos var7 = new BlockPos(
-                  field_38239.thePlayer.method_37302() + (double)var5,
+                  field_38239.thePlayer.getPosX() + (double)var5,
                   field_38239.thePlayer.method_37309() + (double)var4,
-                  field_38239.thePlayer.method_37156() + (double)var6
+                  field_38239.thePlayer.getPosZ() + (double)var6
                );
                var3.add(var7);
             }
@@ -347,9 +347,9 @@ public class class_7494 {
          for (float var6 = (float)(-var4); var6 <= (float)var4; var6++) {
             for (float var7 = (float)(-var4); var7 <= (float)var4; var7++) {
                BlockPos var8 = new BlockPos(
-                  field_38239.thePlayer.method_37302() + (double)var6,
+                  field_38239.thePlayer.getPosX() + (double)var6,
                   field_38239.thePlayer.method_37309() + (double)var5,
-                  field_38239.thePlayer.method_37156() + (double)var7
+                  field_38239.thePlayer.getPosZ() + (double)var7
                );
                if (field_38239.theWorld.method_28262(var8).method_8360() instanceof class_285) {
                   var2.add(var8);
@@ -372,11 +372,11 @@ public class class_7494 {
          double var3 = var2.method_33993().field_7336 - (double)var2.method_43955().method_12173();
          double var5 = var2.method_33993().field_7334 - (double)var2.method_43955().method_12185();
          double var7 = var2.method_33993().field_7333 - (double)var2.method_43955().method_12165();
-         double var9 = (double)var2.method_43955().method_12173() - MinecraftClient.getInstance().thePlayer.method_37302() + var3;
+         double var9 = (double)var2.method_43955().method_12173() - MinecraftClient.getInstance().thePlayer.getPosX() + var3;
          double var11 = (double)var2.method_43955().method_12165()
             - (MinecraftClient.getInstance().thePlayer.method_37309() + (double) MinecraftClient.getInstance().thePlayer.method_37277())
             + var7;
-         double var13 = (double)var2.method_43955().method_12185() - MinecraftClient.getInstance().thePlayer.method_37156() + var5;
+         double var13 = (double)var2.method_43955().method_12185() - MinecraftClient.getInstance().thePlayer.getPosZ() + var5;
          double var15 = (double)class_9299.method_42842(var9 * var9 + var13 * var13);
          float var17 = (float)(Math.atan2(var13, var9) * 180.0 / Math.PI) - 90.0F;
          float var18 = (float)(-(Math.atan2(var11, var15) * 180.0 / Math.PI));
@@ -453,9 +453,9 @@ public class class_7494 {
       double var6 = Math.cos((double)class_8865.method_40785() * Math.PI / 180.0) * (double)var3;
       double var8 = Math.sin((double)class_8865.method_40785() * Math.PI / 180.0) * (double)var3;
       class_1343 var10 = new class_1343(
-         field_38239.thePlayer.method_37302() + var6,
+         field_38239.thePlayer.getPosX() + var6,
          field_38239.thePlayer.method_37309() + (double)field_38239.thePlayer.method_37277(),
-         field_38239.thePlayer.method_37156() + var8
+         field_38239.thePlayer.getPosZ() + var8
       );
       var0 = (float)Math.toRadians((double)var0);
       var1 = (float)Math.toRadians((double)var1);
@@ -477,9 +477,9 @@ public class class_7494 {
 
    public static class_7474 method_34100(BlockPos var0) {
       class_1343 var3 = new class_1343(
-         field_38239.thePlayer.method_37302(),
+         field_38239.thePlayer.getPosX(),
          field_38239.thePlayer.method_37309() + (double)field_38239.thePlayer.method_37277(),
-         field_38239.thePlayer.method_37156()
+         field_38239.thePlayer.getPosZ()
       );
       class_1343 var4 = new class_1343(
          (double)var0.method_12173() + 0.5 + RandomUtils.nextDouble(0.01, 0.04),
@@ -491,9 +491,9 @@ public class class_7494 {
 
    private boolean method_34093(class_7606 var1, float var2, float var3) {
       class_1343 var6 = new class_1343(
-         field_38239.thePlayer.method_37302(),
+         field_38239.thePlayer.getPosX(),
          field_38239.thePlayer.method_37309() + (double)field_38239.thePlayer.method_37277(),
-         field_38239.thePlayer.method_37156()
+         field_38239.thePlayer.getPosZ()
       );
       var2 = (float)Math.toRadians((double)var2);
       var3 = (float)Math.toRadians((double)var3);
@@ -502,9 +502,9 @@ public class class_7494 {
       float var9 = class_9299.method_42840(var2) * class_9299.method_42840(var3);
       float var10 = field_38239.playerController.method_42146();
       class_1343 var11 = new class_1343(
-         field_38239.thePlayer.method_37302() + (double)(var7 * var10),
+         field_38239.thePlayer.getPosX() + (double)(var7 * var10),
          field_38239.thePlayer.method_37309() + (double)(var8 * var10) + (double)field_38239.thePlayer.method_37277(),
-         field_38239.thePlayer.method_37156() + (double)(var9 * var10)
+         field_38239.thePlayer.getPosZ() + (double)(var9 * var10)
       );
       Entity var12 = field_38239.getRenderViewEntity();
       class_9529 var13 = field_38239.theWorld.method_28265(new class_972(var6, var11, class_3132.field_15549, class_9583.field_48752, var12));
@@ -583,7 +583,7 @@ public class class_7494 {
 
       for (BlockPos var8 : method_34087(
          method_34089(var0),
-         new class_1343(field_38239.thePlayer.method_37302(), field_38239.thePlayer.method_37309(), field_38239.thePlayer.method_37156()),
+         new class_1343(field_38239.thePlayer.getPosX(), field_38239.thePlayer.method_37309(), field_38239.thePlayer.getPosZ()),
          var2
       )) {
          for (Direction var12 : Direction.values()) {
@@ -663,8 +663,8 @@ public class class_7494 {
    }
 
    public static float[] method_34121(BlockPos var0, Direction var1) {
-      double var4 = (double)var0.method_12173() + 0.5 - field_38239.thePlayer.method_37302() + (double)var1.method_1041() / 2.0;
-      double var6 = (double)var0.method_12185() + 0.5 - field_38239.thePlayer.method_37156() + (double)var1.method_1034() / 2.0;
+      double var4 = (double)var0.method_12173() + 0.5 - field_38239.thePlayer.getPosX() + (double)var1.method_1041() / 2.0;
+      double var6 = (double)var0.method_12185() + 0.5 - field_38239.thePlayer.getPosZ() + (double)var1.method_1034() / 2.0;
       double var8 = field_38239.thePlayer.method_37309() + (double)field_38239.thePlayer.method_37277() - ((double)var0.method_12165() + 0.5);
       double var10 = (double)class_9299.method_42842(var4 * var4 + var6 * var6);
       float var12 = (float)(Math.atan2(var6, var4) * 180.0 / Math.PI) - 90.0F;
@@ -686,9 +686,9 @@ public class class_7494 {
       if (!var1.method_37085()) {
          double var11 = (double)(class_9299.method_42842(var1.method_37274(var10)) / var9);
          if (var11 <= 1.0) {
-            double var13 = var1.method_37302() - (double)var6;
+            double var13 = var1.getPosX() - (double)var6;
             double var15 = var1.method_37388() - (double)var7;
-            double var17 = var1.method_37156() - (double)var8;
+            double var17 = var1.getPosZ() - (double)var8;
             double var19 = (double)class_9299.method_42842(var13 * var13 + var15 * var15 + var17 * var17);
             if (var19 != 0.0) {
                var13 /= var19;

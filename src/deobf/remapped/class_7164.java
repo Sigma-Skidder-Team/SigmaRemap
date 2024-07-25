@@ -34,9 +34,9 @@ public abstract class class_7164<T extends class_5886, M extends class_6521<T>> 
          class_1343 var11 = var1.method_37323();
          double var12 = Math.cos(var9) * var11.field_7334 + Math.sin(var9) * var11.field_7336;
          double var14 = Math.sin(var9) * var11.field_7334 - Math.cos(var9) * var11.field_7336;
-         double var16 = class_9299.method_42794((double)var2, var1.field_41767, var1.method_37302()) + var12;
+         double var16 = class_9299.method_42794((double)var2, var1.field_41767, var1.getPosX()) + var12;
          double var18 = class_9299.method_42794((double)var2, var1.field_41698, var1.method_37309()) + var11.field_7333;
-         double var20 = class_9299.method_42794((double)var2, var1.field_41725, var1.method_37156()) + var14;
+         double var20 = class_9299.method_42794((double)var2, var1.field_41725, var1.getPosZ()) + var14;
          var3.method_36065(var12, var11.field_7333, var14);
          float var22 = (float)(var8.field_7336 - var16);
          float var23 = (float)(var8.field_7333 - var18);

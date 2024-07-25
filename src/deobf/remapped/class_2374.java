@@ -28,7 +28,7 @@ public class class_2374 implements class_7912 {
 
    @Override
    public void method_35792(class_3421 var1) {
-      MinecraftClient.getInstance().method_8614().method_4813(new class_6404(this.field_11877.getId()));
+      MinecraftClient.getInstance().method_8614().sendPacket(new class_6404(this.field_11877.getId()));
    }
 
    @Override

@@ -26,10 +26,10 @@ public class Camera {
       this.field_46409 = var4;
       this.method_41637(var2.getYaw(var5), var2.getPitch(var5));
       this.method_41628(
-         class_9299.method_42794((double)var5, var2.field_41767, var2.method_37302()),
+         class_9299.method_42794((double)var5, var2.field_41767, var2.getPosX()),
          class_9299.method_42794((double)var5, var2.field_41698, var2.method_37309())
             + (double)class_9299.method_42795(var5, this.field_46420, this.field_46413),
-         class_9299.method_42794((double)var5, var2.field_41725, var2.method_37156())
+         class_9299.method_42794((double)var5, var2.field_41725, var2.getPosZ())
       );
       if (!var3) {
          if (var2 instanceof class_5834 && ((class_5834)var2).method_26507()) {

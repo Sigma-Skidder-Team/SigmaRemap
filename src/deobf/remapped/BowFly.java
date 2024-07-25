@@ -92,7 +92,7 @@ public class BowFly extends Module {
 
                var1.method_6448(var6);
                var1.method_6441(var5);
-               if (client.thePlayer.field_41726 && client.thePlayer.field_41774) {
+               if (client.thePlayer.onGround && client.thePlayer.field_41774) {
                   client.thePlayer.method_26595();
                } else if (!(client.thePlayer.method_37098().field_7333 < 0.0)) {
                   if (client.theTimer.timerSpeed == 0.1F) {
@@ -105,10 +105,10 @@ public class BowFly extends Module {
                this.field_8926++;
                if (this.field_8926 < 4) {
                   if (this.field_8926 == 1) {
-                     client.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
+                     client.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
                   }
                } else {
-                  client.method_8614().method_4813(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
+                  client.method_8614().sendPacket(new class_1586(class_7500.field_38259, BlockPos.field_7306, Direction.field_802));
                   this.field_8926 = 0;
                }
             }

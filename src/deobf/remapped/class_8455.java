@@ -71,9 +71,9 @@ public class class_8455 {
                         Locale.ROOT,
                         "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f",
                         this.field_43225.thePlayer.world.method_29545().method_25499(),
-                        this.field_43225.thePlayer.method_37302(),
+                        this.field_43225.thePlayer.getPosX(),
                         this.field_43225.thePlayer.method_37309(),
-                        this.field_43225.thePlayer.method_37156(),
+                        this.field_43225.thePlayer.getPosZ(),
                         this.field_43225.thePlayer.rotationYaw,
                         this.field_43225.thePlayer.rotationPitch
                      )

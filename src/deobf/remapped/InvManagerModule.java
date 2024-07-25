@@ -101,7 +101,7 @@ public class InvManagerModule extends PremiumModule {
 
                if (!this.field_26630 && !(client.field_9623 instanceof class_3431) && this.field_26629.method_14772() > 0L && !this.field_26637) {
                   this.field_26630 = true;
-                  client.method_8614().method_4813(new class_1194(-1));
+                  client.method_8614().sendPacket(new class_1194(-1));
                }
             }
          }
@@ -478,7 +478,7 @@ public class InvManagerModule extends PremiumModule {
 
    private void method_23712(boolean var1) {
       if (var1 && this.field_26630 && !(client.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-         client.method_8614().method_4813(new class_8559(class_2105.field_10551));
+         client.method_8614().sendPacket(new class_8559(class_2105.field_10551));
          this.field_26630 = false;
       }
    }

@@ -190,7 +190,7 @@ public class class_449 extends class_1829 {
                this.attackEntityFrom(DamageSource.field_31688, 1.0F);
             }
 
-            if (this.field_41726) {
+            if (this.onGround) {
                this.method_37215(
                   this.method_37098()
                      .method_6214(
@@ -198,7 +198,7 @@ public class class_449 extends class_1829 {
                      )
                );
                this.rotationYaw = this.field_41717.nextFloat() * 360.0F;
-               this.field_41726 = false;
+               this.onGround = false;
                this.field_41763 = true;
             }
          } else {
@@ -215,9 +215,9 @@ public class class_449 extends class_1829 {
                this.world
                   .method_43361(
                      class_3090.field_15378,
-                     this.method_37302() - var3.field_7336 * (double)var6 + (double)var4,
+                     this.getPosX() - var3.field_7336 * (double)var6 + (double)var4,
                      this.method_37309() - var3.field_7333,
-                     this.method_37156() - var3.field_7334 * (double)var6 + (double)var5,
+                     this.getPosZ() - var3.field_7334 * (double)var6 + (double)var5,
                      0.0,
                      0.0,
                      0.0
@@ -225,9 +225,9 @@ public class class_449 extends class_1829 {
                this.world
                   .method_43361(
                      class_3090.field_15378,
-                     this.method_37302() - var3.field_7336 * (double)var6 - (double)var4,
+                     this.getPosX() - var3.field_7336 * (double)var6 - (double)var4,
                      this.method_37309() - var3.field_7333,
-                     this.method_37156() - var3.field_7334 * (double)var6 - (double)var5,
+                     this.getPosZ() - var3.field_7334 * (double)var6 - (double)var5,
                      0.0,
                      0.0,
                      0.0

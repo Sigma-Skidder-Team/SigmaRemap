@@ -52,9 +52,9 @@ public class class_8205 extends class_7067<class_3577> {
          float var15 = (float)var14.method_12173() + 0.5F;
          float var16 = (float)var14.method_12165() + 0.5F;
          float var17 = (float)var14.method_12185() + 0.5F;
-         float var18 = (float)((double)var15 - var1.method_37302());
+         float var18 = (float)((double)var15 - var1.getPosX());
          float var19 = (float)((double)var16 - var1.method_37309());
-         float var20 = (float)((double)var17 - var1.method_37156());
+         float var20 = (float)((double)var17 - var1.getPosZ());
          var4.method_36065((double)var18, (double)var19, (double)var20);
          class_3867.method_17915(-var18, -var19 + var9, -var20, var3, var1.field_17510, var4, var5, var6);
       }

@@ -45,7 +45,7 @@ public class class_7037 extends class_3599 {
    public void method_16794() {
       this.field_36247.method_26865().method_17240(this.field_36249, 30.0F, 30.0F);
       double var3 = (double)(this.field_36247.method_37086() * 2.0F * this.field_36247.method_37086() * 2.0F);
-      double var5 = this.field_36247.method_37273(this.field_36249.method_37302(), this.field_36249.method_37309(), this.field_36249.method_37156());
+      double var5 = this.field_36247.method_37273(this.field_36249.getPosX(), this.field_36249.method_37309(), this.field_36249.getPosZ());
       double var7 = 0.8;
       if (var5 > var3 && var5 < 16.0) {
          var7 = 1.33;

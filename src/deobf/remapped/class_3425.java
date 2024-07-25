@@ -33,25 +33,25 @@ public class class_3425 {
 
    @Nullable
    public static class_1343 method_15838(class_4612 var0, int var1, int var2, class_1343 var3) {
-      class_1343 var6 = var3.method_6193(var0.method_37302(), var0.method_37309(), var0.method_37156());
+      class_1343 var6 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::method_21375, true, 0, 0, true);
    }
 
    @Nullable
    public static class_1343 method_15837(class_4612 var0, int var1, int var2, class_1343 var3) {
-      class_1343 var6 = var3.method_6193(var0.method_37302(), var0.method_37309(), var0.method_37156());
+      class_1343 var6 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::method_21375, false, 0, 0, true);
    }
 
    @Nullable
    public static class_1343 method_15841(class_4612 var0, int var1, int var2, class_1343 var3, double var4) {
-      class_1343 var8 = var3.method_6193(var0.method_37302(), var0.method_37309(), var0.method_37156());
+      class_1343 var8 = var3.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, 0, var8, true, var4, var0::method_21375, false, 0, 0, true);
    }
 
    @Nullable
    public static class_1343 method_15847(class_4612 var0, int var1, int var2, int var3, class_1343 var4, double var5) {
-      class_1343 var9 = var4.method_6193(var0.method_37302(), var0.method_37309(), var0.method_37156());
+      class_1343 var9 = var4.method_6193(var0.getPosX(), var0.method_37309(), var0.getPosZ());
       return method_15833(var0, var1, var2, var3, var9, false, var5, var0::method_21375, true, 0, 0, false);
    }
 
@@ -103,20 +103,20 @@ public class class_3425 {
             int var26 = var23.method_12185();
             if (var0.method_26848() && var1 > 1) {
                BlockPos var27 = var0.method_26885();
-               if (!(var0.method_37302() > (double)var27.method_12173())) {
+               if (!(var0.getPosX() > (double)var27.method_12173())) {
                   var24 += var16.nextInt(var1 / 2);
                } else {
                   var24 -= var16.nextInt(var1 / 2);
                }
 
-               if (!(var0.method_37156() > (double)var27.method_12185())) {
+               if (!(var0.getPosZ() > (double)var27.method_12185())) {
                   var26 += var16.nextInt(var1 / 2);
                } else {
                   var26 -= var16.nextInt(var1 / 2);
                }
             }
 
-            BlockPos var31 = new BlockPos((double)var24 + var0.method_37302(), (double)var25 + var0.method_37309(), (double)var26 + var0.method_37156());
+            BlockPos var31 = new BlockPos((double)var24 + var0.getPosX(), (double)var25 + var0.method_37309(), (double)var26 + var0.getPosZ());
             if (var31.method_12165() >= 0
                && var31.method_12165() <= var0.world.method_28261()
                && (!var17 || var0.method_26880(var31))

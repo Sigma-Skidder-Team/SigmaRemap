@@ -127,9 +127,9 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    public void method_10805(class_5834 var1, float var2) {
       ItemStack var5 = this.method_26475(this.method_26617(class_8462.method_38934(this, class_4897.field_25206)));
       class_6749 var6 = this.method_7152(var5, var2);
-      double var7 = var1.method_37302() - this.method_37302();
+      double var7 = var1.getPosX() - this.getPosX();
       double var9 = var1.method_37080(0.3333333333333333) - var6.method_37309();
-      double var11 = var1.method_37156() - this.method_37156();
+      double var11 = var1.getPosZ() - this.getPosZ();
       double var13 = (double)class_9299.method_42842(var7 * var7 + var11 * var11);
       var6.method_26161(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method_43370().method_2097() * 4));
       this.method_37155(class_463.field_2526, 1.0F, 1.0F / (this.method_26594().nextFloat() * 0.4F + 0.8F));

@@ -69,9 +69,9 @@ public class class_9093 extends Module {
          if (this.field_46580.method_27431() && this.field_46580.method_27432().size() > 0) {
             class_314.method_1443(this.field_46580.method_27432().size() + " blocks loaded from schematic");
             this.field_46570 = new BlockPos(
-               client.thePlayer.method_37302() + this.field_46580.method_27435().method_19594() * 0.0,
+               client.thePlayer.getPosX() + this.field_46580.method_27435().method_19594() * 0.0,
                client.thePlayer.method_37309() + this.field_46580.method_27435().method_19634() * 0.0,
-               client.thePlayer.method_37156() + this.field_46580.method_27435().method_19612() * 0.0
+               client.thePlayer.getPosZ() + this.field_46580.method_27435().method_19612() * 0.0
             );
             this.method_41925();
          } else {

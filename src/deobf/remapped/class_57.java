@@ -24,7 +24,7 @@ public class class_57 extends class_2208<class_6415> {
    private void method_16() {
       this.field_10956.method_29323(this.field_47);
       this.field_10956.method_29313(this.field_47);
-      this.field_943.method_8614().method_4813(new class_7028(this.field_47));
+      this.field_943.method_8614().sendPacket(new class_7028(this.field_47));
    }
 
    @Override

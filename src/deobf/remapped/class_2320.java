@@ -11,7 +11,7 @@ public class class_2320 extends class_2833 {
 
    private void method_10665() {
       if (!this.field_11617.method_37285()) {
-         if (this.field_11617.field_41726) {
+         if (this.field_11617.onGround) {
             this.field_11617.method_26461(Math.max(this.field_11617.method_26423() / 2.0F, 0.06F));
          }
       } else {
@@ -30,9 +30,9 @@ public class class_2320 extends class_2833 {
    public void method_12883() {
       this.method_10665();
       if (this.field_13878 == class_1737.field_8946 && !this.field_11617.method_26927().method_5591()) {
-         double var3 = this.field_13884 - this.field_11617.method_37302();
+         double var3 = this.field_13884 - this.field_11617.getPosX();
          double var5 = this.field_13886 - this.field_11617.method_37309();
-         double var7 = this.field_13880 - this.field_11617.method_37156();
+         double var7 = this.field_13880 - this.field_11617.getPosZ();
          double var9 = (double)class_9299.method_42842(var3 * var3 + var5 * var5 + var7 * var7);
          var5 /= var9;
          float var11 = (float)(class_9299.method_42821(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;

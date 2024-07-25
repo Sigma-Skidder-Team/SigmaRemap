@@ -67,7 +67,7 @@ public class InfiniteAuraModule extends Module {
                         }
 
                         class_4714 var9 = new class_4714(var5.method_37302(), var5.method_37309(), var5.method_37156());
-                        class_4714 var10 = new class_4714(var8.method_37302(), var8.method_37309(), var8.method_37156());
+                        class_4714 var10 = new class_4714(var8.getPosX(), var8.method_37309(), var8.getPosZ());
                         ArrayList var11 = class_6306.method_28770(var10, var9);
                         this.field_37777.add(var11);
                         Collections.reverse(var11);
@@ -98,24 +98,24 @@ public class InfiniteAuraModule extends Module {
       for (class_4714 var8 : var1) {
          var6 = var8;
          if (var5 == null) {
-            client.method_8614().method_4813(new class_9515(var8.method_21803(), var8.method_21801(), var8.method_21799(), true));
+            client.method_8614().sendPacket(new class_9515(var8.method_21803(), var8.method_21801(), var8.method_21799(), true));
          } else {
             var5.field_41736.field_7336 = var8.method_21803() + 0.5;
             var5.field_41736.field_7333 = var8.method_21801();
             var5.field_41736.field_7334 = var8.method_21799() + 0.5;
-            client.method_8614().method_4813(new class_8125(false, false));
-            client.method_8614().method_4813(new class_3616(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, false));
-            client.method_8614().method_4813(new class_758(0.0F, 1.0F, false, false));
+            client.method_8614().sendPacket(new class_8125(false, false));
+            client.method_8614().sendPacket(new RotationPacket(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, false));
+            client.method_8614().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
             BoatEntity var9 = new BoatEntity(client.theWorld, var8.method_21803() + 0.5, var8.method_21801(), var8.method_21799() + 0.5);
             var9.rotationYaw = var5.rotationYaw;
             var9.rotationPitch = var5.rotationPitch;
-            client.method_8614().method_4813(new class_4148(var9));
+            client.method_8614().sendPacket(new CMoveVehiclePacket(var9));
          }
       }
 
       if (var2 && var6 != null) {
-         client.method_8614().method_4813(new class_9515(var6.method_21803(), var6.method_21801() + 1.0E-14, var6.method_21799(), false));
-         client.method_8614().method_4813(new class_9515(var6.method_21803(), var6.method_21801(), var6.method_21799(), false));
+         client.method_8614().sendPacket(new class_9515(var6.method_21803(), var6.method_21801() + 1.0E-14, var6.method_21799(), false));
+         client.method_8614().sendPacket(new class_9515(var6.method_21803(), var6.method_21801(), var6.method_21799(), false));
       }
    }
 

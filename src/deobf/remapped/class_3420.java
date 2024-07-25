@@ -177,10 +177,10 @@ public class class_3420 extends class_3757 implements class_3745 {
    private static boolean method_15790(class_4092 var0, Entity var1) {
       return var1.method_37132() == class_718.field_3913
          && var1.method_37360()
-         && var1.method_37302() >= var0.field_19941
-         && var1.method_37302() <= var0.field_19940
-         && var1.method_37156() >= var0.field_19938
-         && var1.method_37156() <= var0.field_19942;
+         && var1.getPosX() >= var0.field_19941
+         && var1.getPosX() <= var0.field_19940
+         && var1.getPosZ() >= var0.field_19938
+         && var1.getPosZ() <= var0.field_19942;
    }
 
    private boolean method_15793() {

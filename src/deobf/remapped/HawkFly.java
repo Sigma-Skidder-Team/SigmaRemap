@@ -12,9 +12,9 @@ public class HawkFly extends Module {
 
    @Override
    public void onEnable() {
-      this.field_16753 = client.thePlayer.method_37302();
+      this.field_16753 = client.thePlayer.getPosX();
       this.field_16751 = client.thePlayer.method_37309();
-      this.field_16755 = client.thePlayer.method_37156();
+      this.field_16755 = client.thePlayer.getPosZ();
       this.field_16754 = 0;
    }
 

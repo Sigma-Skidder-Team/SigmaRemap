@@ -16,8 +16,8 @@ public class class_5027 extends class_8273<class_6338> {
    }
 
    public void method_23185(class_9359 var1, BlockPos var2) {
-      double var5 = var1.method_37302() - (double)var2.method_12173();
-      double var7 = var1.method_37156() - (double)var2.method_12185();
+      double var5 = var1.getPosX() - (double)var2.method_12173();
+      double var7 = var1.getPosZ() - (double)var2.method_12185();
       double var9 = var5 * var5 + var7 * var7;
       this.method_38137(var1, var2x -> var2x.method_29010(var9));
    }

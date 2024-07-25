@@ -72,22 +72,22 @@ public class class_2652 extends class_3599 {
          this.field_13054.method_26865().method_17240(this.field_13055, 10.0F, (float)this.field_13054.method_26862());
          if (--this.field_13059 <= 0) {
             this.field_13059 = 10;
-            double var3 = this.field_13054.method_37302() - this.field_13055.method_37302();
+            double var3 = this.field_13054.getPosX() - this.field_13055.getPosX();
             double var5 = this.field_13054.method_37309() - this.field_13055.method_37309();
-            double var7 = this.field_13054.method_37156() - this.field_13055.method_37156();
+            double var7 = this.field_13054.getPosZ() - this.field_13055.getPosZ();
             double var9 = var3 * var3 + var5 * var5 + var7 * var7;
             if (var9 <= (double)(this.field_13060 * this.field_13060)) {
                this.field_13063.method_5620();
                class_3711 var11 = this.field_13055.method_26865();
                if (var9 <= (double)this.field_13060
-                  || var11.method_17237() == this.field_13054.method_37302()
+                  || var11.method_17237() == this.field_13054.getPosX()
                      && var11.method_17244() == this.field_13054.method_37309()
-                     && var11.method_17242() == this.field_13054.method_37156()) {
-                  double var12 = this.field_13055.method_37302() - this.field_13054.method_37302();
-                  double var14 = this.field_13055.method_37156() - this.field_13054.method_37156();
+                     && var11.method_17242() == this.field_13054.getPosZ()) {
+                  double var12 = this.field_13055.getPosX() - this.field_13054.getPosX();
+                  double var14 = this.field_13055.getPosZ() - this.field_13054.getPosZ();
                   this.field_13063
                      .method_5595(
-                        this.field_13054.method_37302() - var12, this.field_13054.method_37309(), this.field_13054.method_37156() - var14, this.field_13058
+                        this.field_13054.getPosX() - var12, this.field_13054.method_37309(), this.field_13054.getPosZ() - var14, this.field_13058
                      );
                }
             } else {

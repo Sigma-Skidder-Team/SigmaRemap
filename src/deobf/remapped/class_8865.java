@@ -17,7 +17,7 @@ public class class_8865 {
          var4 = (float)((double)var4 - 0.03000002 * (double)(field_45329.thePlayer.method_26553(Effects.field_19739).method_10333() + 1));
       }
 
-      if (field_45329.thePlayer.method_37252()) {
+      if (field_45329.thePlayer.isSneaking()) {
          var2 *= 0.25;
       }
 
@@ -30,7 +30,7 @@ public class class_8865 {
 
    public static double method_40767() {
       double var2 = 0.2873 + (double)method_40770() * 0.057;
-      if (field_45329.thePlayer.method_37252()) {
+      if (field_45329.thePlayer.isSneaking()) {
          var2 *= 0.25;
       }
 
@@ -39,7 +39,7 @@ public class class_8865 {
 
    public static double method_40783() {
       double var2 = 0.2873;
-      if (field_45329.thePlayer.method_37252()) {
+      if (field_45329.thePlayer.isSneaking()) {
          var2 *= 0.25;
       }
 
@@ -241,16 +241,16 @@ public class class_8865 {
    }
 
    public static void method_40784() {
-      double var2 = field_45329.thePlayer.method_37302();
+      double var2 = field_45329.thePlayer.getPosX();
       double var4 = field_45329.thePlayer.method_37309();
-      double var6 = field_45329.thePlayer.method_37156();
+      double var6 = field_45329.thePlayer.getPosZ();
 
       for (int var8 = 0; var8 < 49 + method_40769() * 17; var8++) {
-         field_45329.method_8614().method_4813(new class_9515(var2, var4 + 0.06248, var6, false));
-         field_45329.method_8614().method_4813(new class_9515(var2, var4, var6, false));
+         field_45329.method_8614().sendPacket(new class_9515(var2, var4 + 0.06248, var6, false));
+         field_45329.method_8614().sendPacket(new class_9515(var2, var4, var6, false));
       }
 
-      field_45329.method_8614().method_4813(new class_9515(var2, var4, var6, true));
+      field_45329.method_8614().sendPacket(new class_9515(var2, var4, var6, true));
    }
 
    public static float method_40780(class_7767 var0, double var1, float var3, float var4, float var5) {
@@ -323,9 +323,9 @@ public class class_8865 {
          }
       }
 
-      double var9 = field_45329.thePlayer.method_37302();
+      double var9 = field_45329.thePlayer.getPosX();
       double var11 = field_45329.thePlayer.method_37309();
-      double var13 = field_45329.thePlayer.method_37156();
+      double var13 = field_45329.thePlayer.getPosZ();
       double var15 = var4 * var0 * Math.cos(Math.toRadians((double)(var8 + 90.0F))) + var6 * var0 * Math.sin(Math.toRadians((double)(var8 + 90.0F)));
       double var17 = var4 * var0 * Math.sin(Math.toRadians((double)(var8 + 90.0F))) - var6 * var0 * Math.cos(Math.toRadians((double)(var8 + 90.0F)));
       field_45329.thePlayer.method_37256(var9 + var15, var11, var13 + var17);

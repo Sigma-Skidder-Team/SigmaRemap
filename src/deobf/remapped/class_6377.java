@@ -166,7 +166,7 @@ public class class_6377 {
       if (!var7.method_22007(class_6503.field_33094)) {
          if (var7.method_22007(class_6503.field_33095)) {
             Entity var29 = var0.method_41633();
-            class_1343 var36 = class_9300.method_42928(var2, var29.method_37302(), var29.method_37309() + 1.0, var29.method_37156());
+            class_1343 var36 = class_9300.method_42928(var2, var29.getPosX(), var29.method_37309() + 1.0, var29.getPosZ());
             if (var36 != null) {
                field_32578 = (float)var36.field_7336;
                field_32585 = (float)var36.field_7333;
@@ -175,7 +175,7 @@ public class class_6377 {
          }
       } else {
          Entity var30 = var0.method_41633();
-         class_1343 var37 = class_9300.method_42917(var2, var30.method_37302(), var30.method_37309() + 1.0, var30.method_37156());
+         class_1343 var37 = class_9300.method_42917(var2, var30.getPosX(), var30.method_37309() + 1.0, var30.getPosZ());
          if (var37 != null) {
             field_32578 = (float)var37.field_7336;
             field_32585 = (float)var37.field_7333;

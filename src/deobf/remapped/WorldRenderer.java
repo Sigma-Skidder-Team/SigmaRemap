@@ -710,7 +710,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          if (this.field_20970 != null) {
             Entity var4 = this.client.getRenderViewEntity();
             if (var4 != null) {
-               this.field_20966.method_34566(var4.method_37302(), var4.method_37156());
+               this.field_20966.method_34566(var4.getPosX(), var4.getPosZ());
             }
          }
       }
@@ -774,20 +774,20 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       this.field_20970.method_29599().startSection("camera");
-      double var7 = this.client.thePlayer.method_37302() - this.field_20964;
+      double var7 = this.client.thePlayer.getPosX() - this.field_20964;
       double var9 = this.client.thePlayer.method_37309() - this.field_21002;
-      double var11 = this.client.thePlayer.method_37156() - this.field_20954;
+      double var11 = this.client.thePlayer.getPosZ() - this.field_20954;
       if (this.field_20933 != this.client.thePlayer.field_41742
          || this.field_21007 != this.client.thePlayer.field_41747
          || this.field_21013 != this.client.thePlayer.field_41714
          || var7 * var7 + var9 * var9 + var11 * var11 > 16.0) {
-         this.field_20964 = this.client.thePlayer.method_37302();
+         this.field_20964 = this.client.thePlayer.getPosX();
          this.field_21002 = this.client.thePlayer.method_37309();
-         this.field_20954 = this.client.thePlayer.method_37156();
+         this.field_20954 = this.client.thePlayer.getPosZ();
          this.field_20933 = this.client.thePlayer.field_41742;
          this.field_21007 = this.client.thePlayer.field_41747;
          this.field_21013 = this.client.thePlayer.field_41714;
-         this.field_20966.method_34566(this.client.thePlayer.method_37302(), this.client.thePlayer.method_37156());
+         this.field_20966.method_34566(this.client.thePlayer.getPosX(), this.client.thePlayer.getPosZ());
       }
 
       if (Config.method_14326()) {
@@ -837,7 +837,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var21 = class_5161.method_23653(this.field_20970, var20, this.field_20922);
       }
 
-      class_3511 var22 = this.field_20966.method_34563(new BlockPos(var20.method_37302(), var20.method_37309(), var20.method_37156()));
+      class_3511 var22 = this.field_20966.method_34563(new BlockPos(var20.getPosX(), var20.method_37309(), var20.getPosZ()));
       if (class_6588.field_33945) {
          this.field_20982 = this.field_21015;
          this.field_20961 = this.field_20940;
@@ -1254,9 +1254,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          for (Entity var65 : var58) {
             this.field_20937++;
             if (var65.field_41697 == 0) {
-               var65.field_41754 = var65.method_37302();
+               var65.field_41754 = var65.getPosX();
                var65.field_41713 = var65.method_37309();
-               var65.field_41724 = var65.method_37156();
+               var65.field_41724 = var65.getPosZ();
             }
 
             Object var71;
@@ -1571,9 +1571,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    public void method_20009(Entity var1, double var2, double var4, double var6, float var8, class_7966 var9, class_2565 var10) {
-      double var11 = class_9299.method_42794((double)var8, var1.field_41754, var1.method_37302());
+      double var11 = class_9299.method_42794((double)var8, var1.field_41754, var1.getPosX());
       double var13 = class_9299.method_42794((double)var8, var1.field_41713, var1.method_37309());
-      double var15 = class_9299.method_42794((double)var8, var1.field_41724, var1.method_37156());
+      double var15 = class_9299.method_42794((double)var8, var1.field_41724, var1.getPosZ());
       float var17 = class_9299.method_42795(var8, var1.prevRotationYaw, var1.rotationYaw);
       this.field_20988.method_28115(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field_20988.method_28120(var1, var8));
    }
@@ -2019,9 +2019,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var4 = class_9300.method_42885(
             var4,
             this.client.theWorld,
-            this.client.getRenderViewEntity().method_37302(),
+            this.client.getRenderViewEntity().getPosX(),
             this.client.getRenderViewEntity().method_37309() + 1.0,
-            this.client.getRenderViewEntity().method_37156()
+            this.client.getRenderViewEntity().getPosZ()
          );
          if (var20) {
             class_6588.method_30238(var4);

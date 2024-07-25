@@ -43,7 +43,7 @@ public class class_7194 {
    }
 
    public static void method_32938(float var0, float var1, float var2) {
-      if ((field_36996.thePlayer.method_26530() || field_36996.thePlayer.method_37069()) && field_36996.thePlayer.method_37285()) {
+      if ((field_36996.thePlayer.method_26530() || field_36996.thePlayer.canPassengerSteer()) && field_36996.thePlayer.method_37285()) {
          double var5 = field_36996.thePlayer.method_37309();
          float var7 = method_32937();
          float var8 = 0.02F;
@@ -52,7 +52,7 @@ public class class_7194 {
             var9 = 3.0F;
          }
 
-         if (!field_36996.thePlayer.field_41726) {
+         if (!field_36996.thePlayer.onGround) {
             var9 *= 0.5F;
          }
 

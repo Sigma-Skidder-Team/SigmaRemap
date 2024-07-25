@@ -19,7 +19,7 @@ public class KillPotionCommand extends Command {
             class_3416 var8 = new class_3416();
             var8.add(var7);
             var6.method_27954("CustomPotionEffects", var8);
-            field_18219.method_8614().method_4813(new class_6362(36 + class_2740.method_12347(), var6));
+            field_18219.method_8614().sendPacket(new class_6362(36 + class_2740.method_12347(), var6));
             var3.method_3731("Requested server a killpotion!");
          } else {
             throw new class_2900("Creative mode only!");

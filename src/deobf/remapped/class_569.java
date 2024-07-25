@@ -13,9 +13,9 @@ public class class_569 extends class_6165 {
       this.field_5766 = var3;
       this.field_5773 = var4;
       this.field_3354 = var5;
-      this.field_5761 = (double)((float)this.field_3354.method_37302());
+      this.field_5761 = (double)((float)this.field_3354.getPosX());
       this.field_5765 = (double)((float)this.field_3354.method_37309());
-      this.field_5762 = (double)((float)this.field_3354.method_37156());
+      this.field_5762 = (double)((float)this.field_3354.getPosZ());
    }
 
    @Override
@@ -26,9 +26,9 @@ public class class_569 extends class_6165 {
    @Override
    public void method_29511() {
       if (!this.field_3354.field_41751) {
-         this.field_5761 = (double)((float)this.field_3354.method_37302());
+         this.field_5761 = (double)((float)this.field_3354.getPosX());
          this.field_5765 = (double)((float)this.field_3354.method_37309());
-         this.field_5762 = (double)((float)this.field_3354.method_37156());
+         this.field_5762 = (double)((float)this.field_3354.getPosZ());
       } else {
          this.method_28267();
       }

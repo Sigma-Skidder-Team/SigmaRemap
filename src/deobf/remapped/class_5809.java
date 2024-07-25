@@ -53,7 +53,7 @@ public class class_5809 extends class_3599 {
       this.field_29320
          .method_26865()
          .method_17231(
-            this.field_29325.method_37302(), this.field_29325.method_37388(), this.field_29325.method_37156(), 10.0F, (float)this.field_29320.method_26862()
+            this.field_29325.getPosX(), this.field_29325.method_37388(), this.field_29325.getPosZ(), 10.0F, (float)this.field_29320.method_26862()
          );
       this.field_29322--;
    }

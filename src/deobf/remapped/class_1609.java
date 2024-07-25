@@ -101,9 +101,9 @@ public class class_1609 extends class_4040 implements class_2354 {
                   this.world
                      .method_29528(
                         (class_704)null,
-                        this.method_37302(),
+                        this.getPosX(),
                         this.method_37309(),
-                        this.method_37156(),
+                        this.getPosZ(),
                         class_463.field_2010,
                         this.method_37197(),
                         1.0F,
@@ -153,9 +153,9 @@ public class class_1609 extends class_4040 implements class_2354 {
             this.world
                .method_43361(
                   class_3090.field_15342,
-                  this.method_37302() + this.field_41717.nextGaussian() * 0.13F,
+                  this.getPosX() + this.field_41717.nextGaussian() * 0.13F,
                   this.method_37241().field_19939 + 0.5 + this.field_41717.nextGaussian() * 0.13F,
-                  this.method_37156() + this.field_41717.nextGaussian() * 0.13F,
+                  this.getPosZ() + this.field_41717.nextGaussian() * 0.13F,
                   0.0,
                   0.0,
                   0.0
@@ -182,9 +182,9 @@ public class class_1609 extends class_4040 implements class_2354 {
    public void method_10805(class_5834 var1, float var2) {
       if (!this.method_7190()) {
          class_1343 var5 = var1.method_37098();
-         double var6 = var1.method_37302() + var5.field_7336 - this.method_37302();
+         double var6 = var1.getPosX() + var5.field_7336 - this.getPosX();
          double var8 = var1.method_37388() - 1.1F - this.method_37309();
-         double var10 = var1.method_37156() + var5.field_7334 - this.method_37156();
+         double var10 = var1.getPosZ() + var5.field_7334 - this.getPosZ();
          float var12 = class_9299.method_42842(var6 * var6 + var10 * var10);
          class_6004 var13 = class_3697.field_18138;
          if (!(var1 instanceof class_4040)) {
@@ -213,9 +213,9 @@ public class class_1609 extends class_4040 implements class_2354 {
             this.world
                .method_29528(
                   (class_704)null,
-                  this.method_37302(),
+                  this.getPosX(),
                   this.method_37309(),
-                  this.method_37156(),
+                  this.getPosZ(),
                   class_463.field_2818,
                   this.method_37197(),
                   1.0F,

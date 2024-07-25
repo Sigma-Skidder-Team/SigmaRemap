@@ -212,7 +212,7 @@ public class Auto32KModule extends Module {
                         client.thePlayer.method_26597(Hand.MAIN_HAND);
                         if (var9 == class_6910.field_35520) {
                            this.field_44724++;
-                           client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20098));
+                           client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.RELEASE_SHIFT_KEY));
                            client.thePlayer.movementInput.field_45289 = true;
                            client.thePlayer.inventory.field_36404 = this.field_44721;
                            class_1343 var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
@@ -220,7 +220,7 @@ public class Auto32KModule extends Module {
                            client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var11);
                            client.thePlayer.method_26597(Hand.MAIN_HAND);
                            client.thePlayer.movementInput.field_45289 = false;
-                           client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20097));
+                           client.method_8614().sendPacket(new class_2317(client.thePlayer, Action.PRESS_SHIFT_KEY));
                            client.playerController.method_42147(client.thePlayer, client.theWorld, Hand.MAIN_HAND, var11);
                         }
                      }
@@ -257,7 +257,7 @@ public class Auto32KModule extends Module {
             int var7 = var4.method_24952();
             if (this.field_44717 == var7 && var5 == 0 && var6.method_27960() != class_4897.field_25302 && !this.field_44719) {
                var1.method_29715(true);
-               client.method_8614().method_4813(new class_5955(var7, var5, 1, class_6269.field_32019, var6, this.field_44723++));
+               client.method_8614().sendPacket(new class_5955(var7, var5, 1, class_6269.field_32019, var6, this.field_44723++));
                int var8 = -1;
 
                for (int var9 = 44; var9 > 9; var9--) {

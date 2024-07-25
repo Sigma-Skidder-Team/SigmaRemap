@@ -46,9 +46,9 @@ public class class_7086 extends class_2830 implements class_3978 {
          var4.method_37130(var1, new class_1343(0.8F, 0.75, 0.8F));
          if (!var2.field_33055
             && var1.<Integer>method_10313(field_36577) > 0
-            && (var4.field_41754 != var4.method_37302() || var4.field_41724 != var4.method_37156())) {
-            double var7 = Math.abs(var4.method_37302() - var4.field_41754);
-            double var9 = Math.abs(var4.method_37156() - var4.field_41724);
+            && (var4.field_41754 != var4.getPosX() || var4.field_41724 != var4.getPosZ())) {
+            double var7 = Math.abs(var4.getPosX() - var4.field_41754);
+            double var9 = Math.abs(var4.getPosZ() - var4.field_41724);
             if (var7 >= 0.003F || var9 >= 0.003F) {
                var4.attackEntityFrom(DamageSource.field_31687, 1.0F);
             }

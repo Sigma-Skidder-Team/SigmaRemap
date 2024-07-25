@@ -19,7 +19,7 @@ public class TeleportCommand extends Command {
          throw new class_2900();
       } else if (var2.length > 1) {
          throw new class_2900("Too many arguments");
-      } else if (!field_18219.thePlayer.field_41726 && class_314.method_1387()) {
+      } else if (!field_18219.thePlayer.onGround && class_314.method_1387()) {
          throw new class_2900("Use this command on ground");
       } else if (var2[0].method_24060().equalsIgnoreCase(field_18219.method_8502().field_6749)) {
          throw new class_2900("You can not tp to yourself");
@@ -41,11 +41,11 @@ public class TeleportCommand extends Command {
                this.field_19500.field_49649.method_14774();
                this.field_19500.field_49646 = 2;
             } else {
-               double var9 = field_18219.thePlayer.method_37302();
+               double var9 = field_18219.thePlayer.getPosX();
                double var11 = field_18219.thePlayer.method_37309();
-               double var13 = field_18219.thePlayer.method_37156();
-               field_18219.method_8614().method_4813(new class_9515(var9, var11 + 0.2, var13, false));
-               field_18219.method_8614().method_4813(new class_9515(var9, var11 + 0.1, var13, false));
+               double var13 = field_18219.thePlayer.getPosZ();
+               field_18219.method_8614().sendPacket(new class_9515(var9, var11 + 0.2, var13, false));
+               field_18219.method_8614().sendPacket(new class_9515(var9, var11 + 0.1, var13, false));
                this.field_19500.field_49646 = 1;
                SigmaMainClass.getInstance()
                   .getNotificationManager()

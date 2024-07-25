@@ -32,7 +32,7 @@ public class class_4492 extends class_5920<class_7666> {
          for (int var6 = -1; var6 <= 1; var6++) {
             for (int var7 = -1; var7 <= 1; var7++) {
                for (int var8 = -1; var8 <= 1; var8++) {
-                  var5.method_13361(var2.method_37302() + (double)var6, var2.method_37309() + (double)var7, var2.method_37156() + (double)var8);
+                  var5.method_13361(var2.getPosX() + (double)var6, var2.method_37309() + (double)var7, var2.getPosZ() + (double)var8);
                   if (this.method_20879(var5, var1)) {
                      this.field_21962.add(new BlockPos(var5));
                   }

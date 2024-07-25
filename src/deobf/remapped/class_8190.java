@@ -23,7 +23,7 @@ public interface class_8190 {
                var2.field_3773 = false;
             }
 
-            if (!var1.method_37069()) {
+            if (!var1.canPassengerSteer()) {
                var1.method_26418(var1, false);
                var1.method_37215(class_1343.field_7335);
             } else {

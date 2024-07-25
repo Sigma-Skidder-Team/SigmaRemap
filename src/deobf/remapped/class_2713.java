@@ -67,7 +67,7 @@ public class class_2713 extends class_1280<class_6600> {
          }
 
          this.field_10956.method_30384(var4);
-         this.field_943.thePlayer.connection.method_4813(new class_5912(var4));
+         this.field_943.thePlayer.connection.sendPacket(new class_5912(var4));
       }
    }
 

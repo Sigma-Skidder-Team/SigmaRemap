@@ -17,9 +17,9 @@ public class class_5161 {
    private static int field_26574 = Integer.MIN_VALUE;
 
    public static int method_23653(World var0, Entity var1, int var2) {
-      int var5 = class_9299.method_42847(var1.method_37302()) >> 4;
+      int var5 = class_9299.method_42847(var1.getPosX()) >> 4;
       int var6 = class_9299.method_42847(var1.method_37309()) >> 4;
-      int var7 = class_9299.method_42847(var1.method_37156()) >> 4;
+      int var7 = class_9299.method_42847(var1.getPosZ()) >> 4;
       var6 = Config.method_14263(var6, 0, 15);
       class_2654 var8 = var0.method_29554(var5, var7);
       int var9 = var5 - var2;

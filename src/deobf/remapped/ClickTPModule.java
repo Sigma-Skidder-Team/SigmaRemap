@@ -12,7 +12,7 @@ public class ClickTPModule extends SecondModule {
 
    @EventListen
    public void method_41139(class_3368 var1) {
-      if (this.method_42015() && (client.thePlayer.method_37252() || !this.getBooleanValueByName("Sneak"))) {
+      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.getBooleanValueByName("Sneak"))) {
          class_9529 var4 = class_7494.method_34079(client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.getFloatValueByName("Maximum range"));
          BlockPos var5 = null;
          if (var4 != null) {

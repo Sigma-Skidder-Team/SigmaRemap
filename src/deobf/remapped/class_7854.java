@@ -17,9 +17,9 @@ public class class_7854 extends class_6165 {
    public void method_29511() {
       this.field_39800++;
       if (!this.field_39802.field_41751 && (this.field_39800 <= 20 || this.field_39802.method_26618())) {
-         this.field_5761 = (double)((float)this.field_39802.method_37302());
+         this.field_5761 = (double)((float)this.field_39802.getPosX());
          this.field_5765 = (double)((float)this.field_39802.method_37309());
-         this.field_5762 = (double)((float)this.field_39802.method_37156());
+         this.field_5762 = (double)((float)this.field_39802.getPosZ());
          float var3 = (float)this.field_39802.method_37098().method_6221();
          if (!((double)var3 >= 1.0E-7)) {
             this.field_5766 = 0.0F;

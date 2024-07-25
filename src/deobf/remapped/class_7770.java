@@ -88,7 +88,7 @@ public class class_7770 extends class_5920<class_7666> {
          var2.method_8635(6000);
          var3.method_8635(6000);
          var6.method_8635(-24000);
-         var6.method_37144(var2.method_37302(), var2.method_37309(), var2.method_37156(), 0.0F, 0.0F);
+         var6.method_37144(var2.getPosX(), var2.method_37309(), var2.getPosZ(), 0.0F, 0.0F);
          var1.method_7065(var6);
          var1.method_29587(var6, (byte)12);
          return Optional.<class_7666>of(var6);

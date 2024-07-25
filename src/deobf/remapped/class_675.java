@@ -36,7 +36,7 @@ public class class_675 extends class_9513 {
          this.field_48439
             .method_7509(
                new class_5614(
-                  this.field_48439, this.field_48435.method_37302(), this.field_48435.method_37309(), this.field_48435.method_37156(), var4.nextInt(7) + 1
+                  this.field_48439, this.field_48435.getPosX(), this.field_48435.method_37309(), this.field_48435.getPosZ(), var4.nextInt(7) + 1
                )
             );
       }

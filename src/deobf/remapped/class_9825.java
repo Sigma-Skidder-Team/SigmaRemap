@@ -73,9 +73,9 @@ public class class_9825 extends class_516 implements class_1869 {
          if (var3 > 0.0F && var4 <= 0.0F) {
             this.world
                .method_29527(
-                  this.method_37302(),
+                  this.getPosX(),
                   this.method_37309(),
-                  this.method_37156(),
+                  this.getPosZ(),
                   class_463.field_2067,
                   this.method_37197(),
                   0.95F + this.field_41717.nextFloat() * 0.05F,
@@ -91,9 +91,9 @@ public class class_9825 extends class_516 implements class_1869 {
          this.world
             .method_43361(
                class_3090.field_15328,
-               this.method_37302() + (double)var6,
+               this.getPosX() + (double)var6,
                this.method_37309() + (double)var8,
-               this.method_37156() + (double)var7,
+               this.getPosZ() + (double)var7,
                0.0,
                0.0,
                0.0
@@ -101,9 +101,9 @@ public class class_9825 extends class_516 implements class_1869 {
          this.world
             .method_43361(
                class_3090.field_15328,
-               this.method_37302() - (double)var6,
+               this.getPosX() - (double)var6,
                this.method_37309() + (double)var8,
-               this.method_37156() - (double)var7,
+               this.getPosZ() - (double)var7,
                0.0,
                0.0,
                0.0

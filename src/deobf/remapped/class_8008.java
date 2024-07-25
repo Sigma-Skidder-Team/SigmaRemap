@@ -17,12 +17,12 @@ public class class_8008 extends class_4641 {
       float var7 = 0.25F;
       this.method_37094(
          new class_4092(
-            this.method_37302() - 0.1875,
+            this.getPosX() - 0.1875,
             this.method_37309() - 0.25 + 0.125,
-            this.method_37156() - 0.1875,
-            this.method_37302() + 0.1875,
+            this.getPosZ() - 0.1875,
+            this.getPosX() + 0.1875,
             this.method_37309() + 0.25 + 0.125,
-            this.method_37156() + 0.1875
+            this.getPosZ() + 0.1875
          )
       );
       this.field_41722 = true;
@@ -88,12 +88,12 @@ public class class_8008 extends class_4641 {
             .<class_5886>method_25868(
                class_5886.class,
                new class_4092(
-                  this.method_37302() - 7.0,
+                  this.getPosX() - 7.0,
                   this.method_37309() - 7.0,
-                  this.method_37156() - 7.0,
-                  this.method_37302() + 7.0,
+                  this.getPosZ() - 7.0,
+                  this.getPosX() + 7.0,
                   this.method_37309() + 7.0,
-                  this.method_37156() + 7.0
+                  this.getPosZ() + 7.0
                )
             );
 

@@ -23,9 +23,9 @@ public class class_6766 extends class_3599 {
    public void method_16794() {
       Random var3 = this.field_34923.method_26594();
       World var4 = this.field_34923.world;
-      int var5 = class_9299.method_42847(this.field_34923.method_37302() - 1.0 + var3.nextDouble() * 2.0);
+      int var5 = class_9299.method_42847(this.field_34923.getPosX() - 1.0 + var3.nextDouble() * 2.0);
       int var6 = class_9299.method_42847(this.field_34923.method_37309() + var3.nextDouble() * 2.0);
-      int var7 = class_9299.method_42847(this.field_34923.method_37156() - 1.0 + var3.nextDouble() * 2.0);
+      int var7 = class_9299.method_42847(this.field_34923.getPosZ() - 1.0 + var3.nextDouble() * 2.0);
       BlockPos var8 = new BlockPos(var5, var6, var7);
       class_2522 var9 = var4.method_28262(var8);
       BlockPos var10 = var8.method_6100();

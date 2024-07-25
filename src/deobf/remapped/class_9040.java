@@ -21,7 +21,7 @@ public class class_9040 extends class_1871 {
    @Override
    public void method_23473() {
       double var3 = this.field_46259 != null
-         ? this.field_46259.method_6203(this.field_9479.method_37302(), this.field_9479.method_37309(), this.field_9479.method_37156())
+         ? this.field_46259.method_6203(this.field_9479.getPosX(), this.field_9479.method_37309(), this.field_9479.getPosZ())
          : 0.0;
       if (var3 < 100.0 || var3 > 22500.0 || this.field_9479.field_41744 || this.field_9479.field_41774) {
          this.method_41498();

@@ -21,7 +21,7 @@ public class class_5571 {
       this.field_28308++;
       this.field_28311++;
       this.field_28310++;
-      if (!this.field_28312.thePlayer.field_41726) {
+      if (!this.field_28312.thePlayer.onGround) {
          this.field_28308 = 0;
       }
 

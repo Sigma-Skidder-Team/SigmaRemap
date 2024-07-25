@@ -492,7 +492,7 @@ public class class_6331 extends World implements class_700 {
       if (!(var1 instanceof class_704) && !this.method_28945().method_14824(var1)) {
          this.method_28987(var1);
       } else {
-         var1.method_37306(var1.method_37302(), var1.method_37309(), var1.method_37156());
+         var1.method_37306(var1.getPosX(), var1.method_37309(), var1.getPosZ());
          var1.prevRotationYaw = var1.rotationYaw;
          var1.field_41762 = var1.rotationPitch;
          if (var1.field_41727) {
@@ -517,7 +517,7 @@ public class class_6331 extends World implements class_700 {
       if (var2.field_41751 || var2.method_37243() != var1) {
          var2.method_37390();
       } else if (var2 instanceof class_704 || this.method_28945().method_14824(var2)) {
-         var2.method_37306(var2.method_37302(), var2.method_37309(), var2.method_37156());
+         var2.method_37306(var2.getPosX(), var2.method_37309(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.field_41762 = var2.rotationPitch;
          if (var2.field_41727) {
@@ -541,9 +541,9 @@ public class class_6331 extends World implements class_700 {
    public void method_28987(Entity var1) {
       if (var1.method_37251()) {
          this.method_29599().startSection("chunkCheck");
-         int var4 = class_9299.method_42847(var1.method_37302() / 16.0);
+         int var4 = class_9299.method_42847(var1.getPosX() / 16.0);
          int var5 = class_9299.method_42847(var1.method_37309() / 16.0);
-         int var6 = class_9299.method_42847(var1.method_37156() / 16.0);
+         int var6 = class_9299.method_42847(var1.getPosZ() / 16.0);
          if (!var1.field_41727 || var1.field_41742 != var4 || var1.field_41747 != var5 || var1.field_41714 != var6) {
             if (var1.field_41727 && this.method_22560(var1.field_41742, var1.field_41714)) {
                this.method_29554(var1.field_41742, var1.field_41714).method_12000(var1, var1.field_41747);
@@ -601,7 +601,7 @@ public class class_6331 extends World implements class_700 {
       while (var7.hasNext()) {
          Entity var8 = (Entity)var7.next();
          if ((var1 == null || var8.method_37387() == var1)
-            && var6.method_14816(class_9299.method_42847(var8.method_37302()) >> 4, class_9299.method_42847(var8.method_37156()) >> 4)
+            && var6.method_14816(class_9299.method_42847(var8.getPosX()) >> 4, class_9299.method_42847(var8.getPosZ()) >> 4)
             && var2.test(var8)) {
             var5.add(var8);
          }
@@ -688,7 +688,7 @@ public class class_6331 extends World implements class_700 {
       this.field_32340.add(var1);
       this.method_28928();
       class_5990 var5 = this.method_22555(
-         class_9299.method_42847(var1.method_37302() / 16.0), class_9299.method_42847(var1.method_37156() / 16.0), class_7335.field_37514, true
+         class_9299.method_42847(var1.getPosX() / 16.0), class_9299.method_42847(var1.getPosZ() / 16.0), class_7335.field_37514, true
       );
       if (var5 instanceof class_2654) {
          var5.method_27342(var1);
@@ -701,8 +701,8 @@ public class class_6331 extends World implements class_700 {
       if (!var1.field_41751) {
          if (!this.method_28922(var1)) {
             class_5990 var4 = this.method_22555(
-               class_9299.method_42847(var1.method_37302() / 16.0),
-               class_9299.method_42847(var1.method_37156() / 16.0),
+               class_9299.method_42847(var1.getPosX() / 16.0),
+               class_9299.method_42847(var1.getPosZ() / 16.0),
                class_7335.field_37514,
                var1.field_41722
             );
@@ -861,9 +861,9 @@ public class class_6331 extends World implements class_700 {
    public void method_29568(int var1, BlockPos var2, int var3) {
       for (class_9359 var7 : this.field_32343.method_1600().method_39951()) {
          if (var7 != null && var7.world == this && var7.method_37145() != var1) {
-            double var8 = (double)var2.method_12173() - var7.method_37302();
+            double var8 = (double)var2.method_12173() - var7.getPosX();
             double var10 = (double)var2.method_12165() - var7.method_37309();
-            double var12 = (double)var2.method_12185() - var7.method_37156();
+            double var12 = (double)var2.method_12185() - var7.getPosZ();
             if (var8 * var8 + var10 * var10 + var12 * var12 < 1024.0) {
                var7.field_47794.method_4156(new class_4729(var1, var2, var3));
             }
@@ -892,9 +892,9 @@ public class class_6331 extends World implements class_700 {
          .method_1600()
          .method_39996(
             var1,
-            var2.method_37302(),
+            var2.getPosX(),
             var2.method_37309(),
-            var2.method_37156(),
+            var2.getPosZ(),
             !(var5 > 1.0F) ? 16.0 : (double)(16.0F * var5),
             this.method_29545(),
             new class_2404(var3, var4, var2, var5, var6)
@@ -1290,9 +1290,9 @@ public class class_6331 extends World implements class_700 {
          ITextComponent var7 = var6.method_45508();
          ITextComponent var8 = var6.method_19839();
          var4.method_32024(
-            var6.method_37302(),
+            var6.getPosX(),
             var6.method_37309(),
-            var6.method_37156(),
+            var6.getPosZ(),
             var6.method_37328(),
             class_8669.field_44400.method_39797(var6.method_37387()),
             var6.method_37330(),

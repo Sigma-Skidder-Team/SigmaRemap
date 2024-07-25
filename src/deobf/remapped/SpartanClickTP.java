@@ -24,7 +24,7 @@ public class SpartanClickTP extends Module {
 
    @EventListen
    private void method_11040(class_8706 var1) {
-      if (this.method_42015() && (client.thePlayer.method_37252() || !this.method_42017().getBooleanValueByName("Sneak"))) {
+      if (this.method_42015() && (client.thePlayer.isSneaking() || !this.method_42017().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
                client.thePlayer.rotationYaw, client.thePlayer.rotationPitch, this.method_42017().getFloatValueByName("Maximum range")
@@ -40,7 +40,7 @@ public class SpartanClickTP extends Module {
 
             this.field_12051 = var5;
             client.method_8614()
-               .method_4813(
+               .sendPacket(
                   new class_9515(
                      (double)this.field_12051.method_12173() + 0.5,
                      (double)(this.field_12051.method_12165() + 1),
@@ -90,11 +90,11 @@ public class SpartanClickTP extends Module {
             }
 
             client.method_8614()
-               .method_4813(
-                  new class_9515(client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156(), true)
+               .sendPacket(
+                  new class_9515(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ(), true)
                );
             client.method_8614()
-               .method_4813(
+               .sendPacket(
                   new class_9515(
                      (double)this.field_12051.method_12173() + 0.5,
                      (double)(this.field_12051.method_12165() + 1),

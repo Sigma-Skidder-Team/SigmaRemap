@@ -103,18 +103,18 @@ public class class_3078 extends class_3599 {
          double var4 = (double)this.field_15140.method_37175(var3);
          float var6 = 2.0F;
          class_1343 var7 = new class_1343(
-               var3.method_37302() - this.field_15140.method_37302(),
+               var3.getPosX() - this.field_15140.getPosX(),
                var3.method_37309() - this.field_15140.method_37309(),
-               var3.method_37156() - this.field_15140.method_37156()
+               var3.getPosZ() - this.field_15140.getPosZ()
             )
             .method_6213()
             .method_6209(Math.max(var4 - 2.0, 0.0));
          this.field_15140
             .method_26927()
             .method_5595(
-               this.field_15140.method_37302() + var7.field_7336,
+               this.field_15140.getPosX() + var7.field_7336,
                this.field_15140.method_37309() + var7.field_7333,
-               this.field_15140.method_37156() + var7.field_7334,
+               this.field_15140.getPosZ() + var7.field_7334,
                this.field_15139
             );
       }

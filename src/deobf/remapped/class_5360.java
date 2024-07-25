@@ -184,6 +184,6 @@ public class class_5360 extends class_3232 {
 
    @Override
    public boolean method_14824(Entity var1) {
-      return this.method_14816(class_9299.method_42847(var1.method_37302()) >> 4, class_9299.method_42847(var1.method_37156()) >> 4);
+      return this.method_14816(class_9299.method_42847(var1.getPosX()) >> 4, class_9299.method_42847(var1.getPosZ()) >> 4);
    }
 }

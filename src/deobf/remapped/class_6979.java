@@ -24,9 +24,9 @@ public class class_6979 extends class_2700 {
 
    public static class_6979 method_31923(Entity var0) {
       return new class_6979(
-         method_31915(class_9299.method_42847(var0.method_37302())),
+         method_31915(class_9299.method_42847(var0.getPosX())),
          method_31915(class_9299.method_42847(var0.method_37309())),
-         method_31915(class_9299.method_42847(var0.method_37156()))
+         method_31915(class_9299.method_42847(var0.getPosZ()))
       );
    }
 

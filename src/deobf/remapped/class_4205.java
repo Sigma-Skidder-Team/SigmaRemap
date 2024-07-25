@@ -13,7 +13,7 @@ public class class_4205 extends class_3599 {
 
    @Override
    public boolean method_16795() {
-      if ((this.field_20446.method_26449() || this.field_20446.method_2423()) && this.field_20446.field_41726) {
+      if ((this.field_20446.method_26449() || this.field_20446.method_2423()) && this.field_20446.onGround) {
          if (this.field_20446.method_2451()) {
             float var3 = this.field_20446.rotationYaw * (float) (Math.PI / 180.0);
             int var4 = 0;

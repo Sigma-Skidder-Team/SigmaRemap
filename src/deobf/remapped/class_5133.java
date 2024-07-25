@@ -40,9 +40,9 @@ public class class_5133 extends class_1249 {
          if (!this.method_5601()) {
             if (this.field_6887 != null && !this.field_6887.method_18436()) {
                class_1343 var3 = this.field_6887.method_18439(this.field_6877);
-               if (class_9299.method_42847(this.field_6877.method_37302()) == class_9299.method_42847(var3.field_7336)
+               if (class_9299.method_42847(this.field_6877.getPosX()) == class_9299.method_42847(var3.field_7336)
                   && class_9299.method_42847(this.field_6877.method_37309()) == class_9299.method_42847(var3.field_7333)
-                  && class_9299.method_42847(this.field_6877.method_37156()) == class_9299.method_42847(var3.field_7334)) {
+                  && class_9299.method_42847(this.field_6877.getPosZ()) == class_9299.method_42847(var3.field_7334)) {
                   this.field_6887.method_18434();
                }
             }

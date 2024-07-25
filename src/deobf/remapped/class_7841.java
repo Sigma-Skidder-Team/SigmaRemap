@@ -19,7 +19,7 @@ public class class_7841 extends class_6749 {
    public void method_37123() {
       super.method_37123();
       if (this.world.field_33055 && !this.field_34834) {
-         this.world.method_43361(class_3090.field_15324, this.method_37302(), this.method_37309(), this.method_37156(), 0.0, 0.0, 0.0);
+         this.world.method_43361(class_3090.field_15324, this.getPosX(), this.method_37309(), this.getPosZ(), 0.0, 0.0, 0.0);
       }
    }
 

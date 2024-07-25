@@ -33,9 +33,9 @@ public class class_763 extends class_7164<class_337, class_2574> {
    }
 
    private class_1343 method_3438(class_5834 var1, double var2, float var4) {
-      double var7 = class_9299.method_42794((double)var4, var1.field_41754, var1.method_37302());
+      double var7 = class_9299.method_42794((double)var4, var1.field_41754, var1.getPosX());
       double var9 = class_9299.method_42794((double)var4, var1.field_41713, var1.method_37309()) + var2;
-      double var11 = class_9299.method_42794((double)var4, var1.field_41724, var1.method_37156());
+      double var11 = class_9299.method_42794((double)var4, var1.field_41724, var1.getPosZ());
       return new class_1343(var7, var9, var11);
    }
 

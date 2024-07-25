@@ -40,7 +40,7 @@ public class class_5904 extends Screen {
       this.field_943.field_9600.method_38887(false);
       ClientPlayNetHandler var3 = this.field_943.method_8614();
       if (var3 != null) {
-         var3.method_4813(new class_1020(this.field_29973.method_17399(), this.field_29972[0], this.field_29972[1], this.field_29972[2], this.field_29972[3]));
+         var3.sendPacket(new class_1020(this.field_29973.method_17399(), this.field_29972[0], this.field_29972[1], this.field_29972[2], this.field_29972[3]));
       }
 
       this.field_29973.method_38676(true);

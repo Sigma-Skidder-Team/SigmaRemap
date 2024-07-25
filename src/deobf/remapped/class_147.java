@@ -29,11 +29,11 @@ public class class_147 {
 
    public void method_572(int var1, Consumer<CompoundNBT> var2) {
       int var5 = this.method_570(var2);
-      this.field_424.method_4813(new class_6187(var5, var1));
+      this.field_424.sendPacket(new class_6187(var5, var1));
    }
 
    public void method_571(BlockPos var1, Consumer<CompoundNBT> var2) {
       int var5 = this.method_570(var2);
-      this.field_424.method_4813(new class_7825(var5, var1));
+      this.field_424.sendPacket(new class_7825(var5, var1));
    }
 }

@@ -121,7 +121,7 @@ public class AutoMinerModule extends Module {
                break;
             }
 
-            if (!var14 && client.thePlayer.field_41726 && !SigmaMainClass.getInstance().method_3301().method_27149() && this.field_25750 == null) {
+            if (!var14 && client.thePlayer.onGround && !SigmaMainClass.getInstance().method_3301().method_27149() && this.field_25750 == null) {
                List var15 = this.method_22863();
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoMiner", "Computing...", NotificationIcons.field_10993));
                this.field_25750 = new Thread(

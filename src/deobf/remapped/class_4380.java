@@ -59,9 +59,9 @@ public class class_4380 extends class_551 implements class_1538 {
          class_562 var9 = !(var3 instanceof class_704) ? class_562.field_3332 : class_562.field_3335;
          var2.method_29528(
             (class_704)null,
-            var3.method_37302(),
+            var3.getPosX(),
             var3.method_37309(),
-            var3.method_37156(),
+            var3.getPosZ(),
             class_463.field_2703,
             var9,
             1.0F,
@@ -181,7 +181,7 @@ public class class_4380 extends class_551 implements class_1538 {
                ((class_6749)var13).field_34835 = class_4237.field_20565;
             }
          } else {
-            var13 = new class_8612(var0, var4, var1, var1.method_37302(), var1.method_37388() - 0.15F, var1.method_37156(), true);
+            var13 = new class_8612(var0, var4, var1, var1.getPosX(), var1.method_37388() - 0.15F, var1.getPosZ(), true);
          }
 
          if (!(var1 instanceof class_3832)) {
@@ -199,7 +199,7 @@ public class class_4380 extends class_551 implements class_1538 {
          var3.method_28003(!var12 ? 1 : 3, var1, var1x -> var1x.method_26447(var2));
          var0.method_7509((Entity)var13);
          var0.method_29528(
-            (class_704)null, var1.method_37302(), var1.method_37309(), var1.method_37156(), class_463.field_2025, class_562.field_3335, 1.0F, var5
+            (class_704)null, var1.getPosX(), var1.method_37309(), var1.getPosZ(), class_463.field_2025, class_562.field_3335, 1.0F, var5
          );
       }
    }
@@ -283,12 +283,12 @@ public class class_4380 extends class_551 implements class_1538 {
 
          if (var10 >= 0.2F && !this.field_21489) {
             this.field_21489 = true;
-            var1.method_29528((class_704)null, var2.method_37302(), var2.method_37309(), var2.method_37156(), var8, class_562.field_3335, 0.5F, 1.0F);
+            var1.method_29528((class_704)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var8, class_562.field_3335, 0.5F, 1.0F);
          }
 
          if (var10 >= 0.5F && var9 != null && !this.field_21488) {
             this.field_21488 = true;
-            var1.method_29528((class_704)null, var2.method_37302(), var2.method_37309(), var2.method_37156(), var9, class_562.field_3335, 0.5F, 1.0F);
+            var1.method_29528((class_704)null, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var9, class_562.field_3335, 0.5F, 1.0F);
          }
       }
    }

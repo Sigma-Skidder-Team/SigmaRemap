@@ -15,50 +15,50 @@ public class class_9411 {
       } catch (NoSuchFieldError var22) {
       }
 
-      field_48128 = new int[class_4127.values().length];
+      field_48128 = new int[Action.values().length];
 
       try {
-         field_48128[class_4127.field_20098.ordinal()] = 1;
+         field_48128[Action.RELEASE_SHIFT_KEY.ordinal()] = 1;
       } catch (NoSuchFieldError var21) {
       }
 
       try {
-         field_48128[class_4127.field_20097.ordinal()] = 2;
+         field_48128[Action.PRESS_SHIFT_KEY.ordinal()] = 2;
       } catch (NoSuchFieldError var20) {
       }
 
       try {
-         field_48128[class_4127.field_20099.ordinal()] = 3;
+         field_48128[Action.STOP_SPRINTING.ordinal()] = 3;
       } catch (NoSuchFieldError var19) {
       }
 
       try {
-         field_48128[class_4127.field_20100.ordinal()] = 4;
+         field_48128[Action.START_SPRINTING.ordinal()] = 4;
       } catch (NoSuchFieldError var18) {
       }
 
       try {
-         field_48128[class_4127.field_20102.ordinal()] = 5;
+         field_48128[Action.field_20102.ordinal()] = 5;
       } catch (NoSuchFieldError var17) {
       }
 
       try {
-         field_48128[class_4127.field_20103.ordinal()] = 6;
+         field_48128[Action.field_20103.ordinal()] = 6;
       } catch (NoSuchFieldError var16) {
       }
 
       try {
-         field_48128[class_4127.field_20096.ordinal()] = 7;
+         field_48128[Action.field_20096.ordinal()] = 7;
       } catch (NoSuchFieldError var15) {
       }
 
       try {
-         field_48128[class_4127.field_20101.ordinal()] = 8;
+         field_48128[Action.field_20101.ordinal()] = 8;
       } catch (NoSuchFieldError var14) {
       }
 
       try {
-         field_48128[class_4127.field_20093.ordinal()] = 9;
+         field_48128[Action.field_20093.ordinal()] = 9;
       } catch (NoSuchFieldError var13) {
       }
 

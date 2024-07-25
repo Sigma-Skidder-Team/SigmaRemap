@@ -27,11 +27,11 @@ public class ProjectilesModule extends Module {
                double var11 = (double)class_9299.method_42840(var5) * var9;
                double var13 = (double)class_9299.method_42818(var5) * var9;
                double var15 = client.thePlayer.field_41754
-                  + (client.thePlayer.method_37302() - client.thePlayer.field_41754) * (double) client.theTimer.field_32600;
+                  + (client.thePlayer.getPosX() - client.thePlayer.field_41754) * (double) client.theTimer.field_32600;
                double var17 = client.thePlayer.field_41713
                   + (client.thePlayer.method_37309() - client.thePlayer.field_41713) * (double) client.theTimer.field_32600;
                double var19 = client.thePlayer.field_41724
-                  + (client.thePlayer.method_37156() - client.thePlayer.field_41724) * (double) client.theTimer.field_32600;
+                  + (client.thePlayer.getPosZ() - client.thePlayer.field_41724) * (double) client.theTimer.field_32600;
                GL11.glPushMatrix();
                GL11.glEnable(2848);
                GL11.glBlendFunc(770, 771);
@@ -86,13 +86,13 @@ public class ProjectilesModule extends Module {
                if (var4.field_16463 == null) {
                   if (var4.field_16449 != null) {
                      double var31 = var4.field_16449.field_41754
-                        + (var4.field_16449.method_37302() - var4.field_16449.field_41754) * (double) client.theTimer.field_32600
+                        + (var4.field_16449.getPosX() - var4.field_16449.field_41754) * (double) client.theTimer.field_32600
                         - client.gameRenderer.method_35949().method_41627().method_61();
                      double var41 = var4.field_16449.field_41713
                         + (var4.field_16449.method_37309() - var4.field_16449.field_41713) * (double) client.theTimer.field_32600
                         - client.gameRenderer.method_35949().method_41627().method_60();
                      double var44 = var4.field_16449.field_41724
-                        + (var4.field_16449.method_37156() - var4.field_16449.field_41724) * (double) client.theTimer.field_32600
+                        + (var4.field_16449.getPosZ() - var4.field_16449.field_41724) * (double) client.theTimer.field_32600
                         - client.gameRenderer.method_35949().method_41627().method_62();
                      double var47 = (double)(var4.field_16449.method_37086() / 2.0F + 0.2F);
                      double var35 = (double)(var4.field_16449.method_37074() + 0.1F);

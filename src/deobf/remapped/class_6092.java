@@ -193,12 +193,12 @@ public class class_6092 extends class_608 implements class_1869 {
          Direction var11 = this.method_27914().method_1046();
          this.method_37094(
             new class_4092(
-                  this.method_37302() - 0.5,
+                  this.getPosX() - 0.5,
                   this.method_37309(),
-                  this.method_37156() - 0.5,
-                  this.method_37302() + 0.5,
+                  this.getPosZ() - 0.5,
+                  this.getPosX() + 0.5,
                   this.method_37309() + 1.0,
-                  this.method_37156() + 0.5
+                  this.getPosZ() + 0.5
                )
                .method_18928((double)var11.method_1041() * var7, (double)var11.method_1054() * var7, (double)var11.method_1034() * var7)
          );

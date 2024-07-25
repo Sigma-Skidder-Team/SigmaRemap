@@ -77,9 +77,9 @@ public class FreeCamModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_48921 = client.thePlayer.method_37302();
+      this.field_48921 = client.thePlayer.getPosX();
       this.field_48927 = client.thePlayer.method_37309();
-      this.field_48914 = client.thePlayer.method_37156();
+      this.field_48914 = client.thePlayer.getPosZ();
       this.field_48915 = client.thePlayer.rotationYaw;
       this.field_48920 = client.thePlayer.rotationPitch;
       String var3 = client.thePlayer.method_45509().getString();

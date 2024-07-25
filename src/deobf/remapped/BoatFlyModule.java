@@ -32,7 +32,7 @@ public class BoatFlyModule extends PremiumModule {
    private void method_17262(class_6435 var1) {
       if (this.method_42015()) {
          if (client.thePlayer.method_37243() != null) {
-            if (!client.thePlayer.method_37243().field_41726) {
+            if (!client.thePlayer.method_37243().onGround) {
                if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = true;
@@ -50,7 +50,7 @@ public class BoatFlyModule extends PremiumModule {
          }
 
          if (client.thePlayer.method_37243() != null) {
-            if (!client.thePlayer.method_37243().field_41726) {
+            if (!client.thePlayer.method_37243().onGround) {
                if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = false;

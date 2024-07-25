@@ -22,7 +22,7 @@ public abstract class class_8388 extends class_5783 {
    }
 
    public class_8388(class_6629<? extends class_8388> var1, class_5834 var2, double var3, double var5, double var7, World var9) {
-      this(var1, var2.method_37302(), var2.method_37309(), var2.method_37156(), var3, var5, var7, var9);
+      this(var1, var2.getPosX(), var2.method_37309(), var2.getPosZ(), var3, var5, var7, var9);
       this.method_26159(var2);
       this.method_37395(var2.rotationYaw, var2.rotationPitch);
    }
@@ -58,9 +58,9 @@ public abstract class class_8388 extends class_5783 {
 
          this.method_37097();
          class_1343 var5 = this.method_37098();
-         double var6 = this.method_37302() + var5.field_7336;
+         double var6 = this.getPosX() + var5.field_7336;
          double var8 = this.method_37309() + var5.field_7333;
-         double var10 = this.method_37156() + var5.field_7334;
+         double var10 = this.getPosZ() + var5.field_7334;
          class_8462.method_38933(this, 0.2F);
          float var12 = this.method_38644();
          if (this.method_37285()) {
@@ -168,9 +168,9 @@ public abstract class class_8388 extends class_5783 {
       return new class_6589(
          this.method_37145(),
          this.method_37328(),
-         this.method_37302(),
+         this.getPosX(),
          this.method_37309(),
-         this.method_37156(),
+         this.getPosZ(),
          this.rotationPitch,
          this.rotationYaw,
          this.method_37387(),

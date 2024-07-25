@@ -38,7 +38,7 @@ public class GommeSpeed extends Module {
    @EventListen
    public void method_31148(class_7767 var1) {
       if (this.method_42015()) {
-         if (!client.thePlayer.field_41726) {
+         if (!client.thePlayer.onGround) {
             if (this.field_35041 > 0.0 && this.field_35037 > 0) {
                this.field_35038++;
                if (this.field_35038 != 1) {

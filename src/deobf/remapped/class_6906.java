@@ -18,9 +18,9 @@ public class class_6906<T extends AbstractMinecartEntity> extends class_7067<T> 
       float var12 = (((float)(var9 >> 20 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
       float var13 = (((float)(var9 >> 24 & 7L) + 0.5F) / 8.0F - 0.5F) * 0.004F;
       var4.method_36065((double)var11, (double)var12, (double)var13);
-      double var14 = class_9299.method_42794((double)var3, var1.field_41754, var1.method_37302());
+      double var14 = class_9299.method_42794((double)var3, var1.field_41754, var1.getPosX());
       double var16 = class_9299.method_42794((double)var3, var1.field_41713, var1.method_37309());
-      double var18 = class_9299.method_42794((double)var3, var1.field_41724, var1.method_37156());
+      double var18 = class_9299.method_42794((double)var3, var1.field_41724, var1.getPosZ());
       double var20 = 0.3F;
       class_1343 var22 = var1.method_4748(var14, var16, var18);
       float var23 = class_9299.method_42795(var3, var1.field_41762, var1.rotationPitch);

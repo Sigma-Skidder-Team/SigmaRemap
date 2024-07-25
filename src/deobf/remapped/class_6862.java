@@ -130,7 +130,7 @@ public class class_6862 extends class_405 {
    public void method_2023(class_8014 var1) {
       if (var1.method_36374()) {
          int var4 = 3 + this.field_41717.nextInt(4);
-         this.world.method_7509(new class_5614(this.world, this.method_37302(), this.method_37309() + 0.5, this.method_37156(), var4));
+         this.world.method_7509(new class_5614(this.world, this.getPosX(), this.method_37309() + 0.5, this.getPosZ(), var4));
       }
    }
 

@@ -36,10 +36,10 @@ public class class_2076 extends PremiumModule {
          class_8865.method_40776(0.0);
          class_314.method_1408(-0.0789);
       } else {
-         double var3 = client.thePlayer.method_37302();
+         double var3 = client.thePlayer.getPosX();
          double var5 = client.thePlayer.method_37309();
-         double var7 = client.thePlayer.method_37156();
-         client.method_8614().method_4813(new class_9515(var3, -150.0, var7, false));
+         double var7 = client.thePlayer.getPosZ();
+         client.method_8614().sendPacket(new class_9515(var3, -150.0, var7, false));
          class_8865.method_40776(0.0);
          class_314.method_1408(0.0);
          this.field_10453 = -3;

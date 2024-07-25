@@ -54,7 +54,7 @@ public class class_314 {
    }
 
    public static void method_1423(String var0) {
-      field_1158.method_8614().method_4813(new class_3211(var0));
+      field_1158.method_8614().sendPacket(new class_3211(var0));
    }
 
    public static List<class_704> method_1435() {
@@ -127,9 +127,9 @@ public class class_314 {
    }
 
    public static final boolean method_1385(Entity var0) {
-      double var3 = var0.method_37302() - var0.field_41754;
+      double var3 = var0.getPosX() - var0.field_41754;
       double var5 = var0.method_37309() - var0.field_41713;
-      double var7 = var0.method_37156() - var0.field_41724;
+      double var7 = var0.getPosZ() - var0.field_41724;
       return var3 != 0.0 || var5 != 0.0 || var7 != 0.0;
    }
 
@@ -138,9 +138,9 @@ public class class_314 {
    }
 
    public static float[] method_1424(double var0, double var2, double var4) {
-      double var8 = var0 - field_1158.thePlayer.method_37302();
+      double var8 = var0 - field_1158.thePlayer.getPosX();
       double var10 = var2 - (field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277());
-      double var12 = var4 - field_1158.thePlayer.method_37156();
+      double var12 = var4 - field_1158.thePlayer.getPosZ();
       double var14 = (double)class_9299.method_42842(var8 * var8 + var12 * var12);
       float var16 = (float)(Math.atan2(var12, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
@@ -462,9 +462,9 @@ public class class_314 {
 
    public static class_5631 method_1461(float var0, float var1, float var2, double var3) {
       class_1343 var7 = new class_1343(
-         field_1158.thePlayer.method_37302(),
+         field_1158.thePlayer.getPosX(),
          field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277(),
-         field_1158.thePlayer.method_37156()
+         field_1158.thePlayer.getPosZ()
       );
       Entity var8 = field_1158.getRenderViewEntity();
       if (var8 != null && field_1158.theWorld != null) {
@@ -516,9 +516,9 @@ public class class_314 {
       Entity var10 = null;
       class_1343 var11 = null;
       class_1343 var12 = new class_1343(
-         field_1158.thePlayer.method_37302(),
+         field_1158.thePlayer.getPosX(),
          field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277(),
-         field_1158.thePlayer.method_37156()
+         field_1158.thePlayer.getPosZ()
       );
       class_1343 var13 = method_1449(var2, var1);
       class_1343 var14 = var12.method_6214(var13.field_7336 * var8, var13.field_7333 * var8, var13.field_7334 * var8);
@@ -530,7 +530,7 @@ public class class_314 {
          if (var18.isPresent()) {
             double var19 = var12.method_6204((class_1343)var18.get());
             if (var19 < var8 && (var16 == var0 || var0 == null)) {
-               var11 = ((class_1343)var18.get()).method_6193(var16.method_37302(), var16.method_37309(), var16.method_37156());
+               var11 = ((class_1343)var18.get()).method_6193(var16.getPosX(), var16.method_37309(), var16.getPosZ());
                var10 = var16;
                var8 = var19;
             }
@@ -632,8 +632,8 @@ public class class_314 {
    public static boolean method_1452() {
       class_4092 var2 = field_1158.thePlayer.field_41712.method_18918(0.0, -1.0, 0.0);
       if (field_1158.thePlayer.method_37243() != null) {
-         double var4 = field_1158.thePlayer.method_37243().field_41767 - field_1158.thePlayer.method_37243().method_37302();
-         double var6 = field_1158.thePlayer.method_37243().field_41725 - field_1158.thePlayer.method_37243().method_37156();
+         double var4 = field_1158.thePlayer.method_37243().field_41767 - field_1158.thePlayer.method_37243().getPosX();
+         double var6 = field_1158.thePlayer.method_37243().field_41725 - field_1158.thePlayer.method_37243().getPosZ();
          var2 = field_1158.thePlayer.method_37243().field_41712.method_18928(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
@@ -660,7 +660,7 @@ public class class_314 {
 
       for (float var5 = (float)(-var4); var5 <= (float)var4; var5++) {
          for (float var6 = (float)(-var4); var6 <= (float)var4; var6++) {
-            BlockPos var7 = new BlockPos(var0.method_37302() + (double)var5, var0.method_37309() - 1.0, var0.method_37156() + (double)var6);
+            BlockPos var7 = new BlockPos(var0.getPosX() + (double)var5, var0.method_37309() - 1.0, var0.getPosZ() + (double)var6);
             var3.add(var7);
          }
       }
@@ -684,12 +684,12 @@ public class class_314 {
    }
 
    public static void method_1396() {
-      field_1158.method_8614().method_4813(new class_1022(Hand.MAIN_HAND));
-      field_1158.method_8614().method_4813(new class_1022(Hand.OFF_HAND));
+      field_1158.method_8614().sendPacket(new class_1022(Hand.MAIN_HAND));
+      field_1158.method_8614().sendPacket(new class_1022(Hand.OFF_HAND));
    }
 
    public static void method_1459() {
-      field_1158.method_8614().method_4813(new class_1586(class_7500.field_38259, new BlockPos(0, 0, 0), Direction.field_802));
+      field_1158.method_8614().sendPacket(new class_1586(class_7500.field_38259, new BlockPos(0, 0, 0), Direction.field_802));
    }
 
    public static void method_1431(Entity var0, boolean var1) {
@@ -701,7 +701,7 @@ public class class_314 {
             field_1158.thePlayer.method_26597(Hand.MAIN_HAND);
          }
 
-         field_1158.method_8614().method_4813(new class_3398(var5.method_16973(), field_1158.thePlayer.method_37252()));
+         field_1158.method_8614().sendPacket(new class_3398(var5.method_16973(), field_1158.thePlayer.isSneaking()));
          if (class_2931.method_13423(class_4382.method_20431(12), field_1158.thePlayer.method_26617(Hand.MAIN_HAND)) > 0) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15360);
          }
@@ -709,12 +709,12 @@ public class class_314 {
          boolean var6 = (double)field_1158.thePlayer.method_3203(0.5F) > 0.9 || var4;
          boolean var7 = var6
             && field_1158.thePlayer.field_41706 > 0.0F
-            && !field_1158.thePlayer.field_41726
+            && !field_1158.thePlayer.onGround
             && !field_1158.thePlayer.method_26505()
             && !field_1158.thePlayer.method_37285()
             && !field_1158.thePlayer.isPotionActive(Effects.field_19736)
             && !field_1158.thePlayer.isPassenger();
-         if (var7 || field_1158.thePlayer.field_41726 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015()) {
+         if (var7 || field_1158.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015()) {
             field_1158.field_9572.method_43051(var5.method_16973(), class_3090.field_15322);
          }
 
@@ -1060,22 +1060,22 @@ public class class_314 {
    }
 
    public static void method_1450(boolean var0) {
-      double var3 = field_1158.thePlayer.method_37302();
+      double var3 = field_1158.thePlayer.getPosX();
       double var5 = field_1158.thePlayer.method_37309();
-      double var7 = field_1158.thePlayer.method_37156();
+      double var7 = field_1158.thePlayer.getPosZ();
       int var9 = 49 + class_8865.method_40769() * 17;
 
       for (int var10 = 0; var10 < var9; var10++) {
          double var11 = !var0 ? 0.0 : method_1397();
-         field_1158.method_8614().method_4813(new class_9515(var3 + var11, var5 + 0.06248 + method_1397(), var7 + var11, false));
+         field_1158.method_8614().sendPacket(new class_9515(var3 + var11, var5 + 0.06248 + method_1397(), var7 + var11, false));
          if (method_1387()) {
-            field_1158.method_8614().method_4813(new class_9515(var3 + var11, var5 + 0.05 + method_1397(), var7 + var11, false));
+            field_1158.method_8614().sendPacket(new class_9515(var3 + var11, var5 + 0.05 + method_1397(), var7 + var11, false));
          }
 
-         field_1158.method_8614().method_4813(new class_9515(var3 + var11, var5, var7 + var11, false));
+         field_1158.method_8614().sendPacket(new class_9515(var3 + var11, var5, var7 + var11, false));
       }
 
-      field_1158.method_8614().method_4813(new class_4609(true));
+      field_1158.method_8614().sendPacket(new class_4609(true));
    }
 
    public static double method_1397() {
@@ -1094,8 +1094,8 @@ public class class_314 {
       double var11 = (var0.field_19940 - var0.field_19941) * 0.95;
       double var13 = (var0.field_19942 - var0.field_19938) * 0.95;
       double var15 = Math.max(var5, Math.min(var5 + var9, field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277()));
-      double var17 = Math.max(var3 - var11 / 2.0, Math.min(var3 + var11 / 2.0, field_1158.thePlayer.method_37302()));
-      double var19 = Math.max(var7 - var13 / 2.0, Math.min(var7 + var13 / 2.0, field_1158.thePlayer.method_37156()));
+      double var17 = Math.max(var3 - var11 / 2.0, Math.min(var3 + var11 / 2.0, field_1158.thePlayer.getPosX()));
+      double var19 = Math.max(var7 - var13 / 2.0, Math.min(var7 + var13 / 2.0, field_1158.thePlayer.getPosZ()));
       return new class_1343(var17, var15, var19);
    }
 
@@ -1144,9 +1144,9 @@ public class class_314 {
    }
 
    public static double method_1419(class_1343 var0) {
-      double var3 = field_1158.thePlayer.method_37302() - var0.field_7336;
+      double var3 = field_1158.thePlayer.getPosX() - var0.field_7336;
       double var5 = field_1158.thePlayer.method_37309() + (double)field_1158.thePlayer.method_37277() - var0.field_7333;
-      double var7 = field_1158.thePlayer.method_37156() - var0.field_7334;
+      double var7 = field_1158.thePlayer.getPosZ() - var0.field_7334;
       return Math.sqrt(var3 * var3 + var5 * var5 + var7 * var7);
    }
 
@@ -1249,7 +1249,7 @@ public class class_314 {
 
    public static boolean method_1432(Entity var0) {
       if (!(var0.method_37309() < 1.0)) {
-         if (!var0.field_41726) {
+         if (!var0.onGround) {
             class_4092 var3 = var0.method_37241();
             var3 = var3.method_18928(0.0, -var0.method_37309(), 0.0);
             return field_1158.theWorld.method_6680(field_1158.thePlayer, var3).count() == 0L;

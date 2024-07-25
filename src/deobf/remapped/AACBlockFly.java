@@ -34,7 +34,7 @@ public class AACBlockFly extends Module {
 
       this.field_12311 = -1;
       if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
-         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+         client.method_8614().sendPacket(new class_7371(client.thePlayer.inventory.field_36404));
          ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
@@ -64,7 +64,7 @@ public class AACBlockFly extends Module {
    @EventListen
    public void method_11342(class_7982 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41726 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()) {
+         if (client.thePlayer.onGround && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -84,7 +84,7 @@ public class AACBlockFly extends Module {
 
          ((BlockFlyModule)this.method_42017()).method_17220(var1);
          if (this.getBooleanValueByName("Haphe (AACAP)")) {
-            if (!client.thePlayer.field_41726 || client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F) {
+            if (!client.thePlayer.onGround || client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F) {
                if (this.field_12318 >= 0) {
                   this.field_12318++;
                }
@@ -131,7 +131,7 @@ public class AACBlockFly extends Module {
             }
          }
 
-         if (this.getBooleanValueByName("Haphe (AACAP)") && !client.thePlayer.field_29654 && !client.thePlayer.field_41726) {
+         if (this.getBooleanValueByName("Haphe (AACAP)") && !client.thePlayer.field_29654 && !client.thePlayer.onGround) {
             if (var3.method_43956() == Direction.field_817) {
                return false;
             }
@@ -166,7 +166,7 @@ public class AACBlockFly extends Module {
             if (!this.method_42017().getBooleanValueByName("NoSwing")) {
                client.thePlayer.method_26597(Hand.MAIN_HAND);
             } else {
-               client.method_8614().method_4813(new class_3195(Hand.MAIN_HAND));
+               client.method_8614().sendPacket(new class_3195(Hand.MAIN_HAND));
             }
 
             if (var3.method_43956() == Direction.field_817) {
@@ -198,7 +198,7 @@ public class AACBlockFly extends Module {
    private void method_11336(class_1393 var1) {
       if (this.method_42015()) {
          if (!var1.method_6449()) {
-            if (class_8865.method_40772() && client.thePlayer.field_41726 && this.getBooleanValueByName("Haphe (AACAP)") && !client.thePlayer.field_29654) {
+            if (class_8865.method_40772() && client.thePlayer.onGround && this.getBooleanValueByName("Haphe (AACAP)") && !client.thePlayer.field_29654) {
                client.thePlayer.method_26595();
             }
 
@@ -219,7 +219,7 @@ public class AACBlockFly extends Module {
                var4 = (double)this.field_12316;
             }
 
-            BlockPos var6 = new BlockPos(client.thePlayer.method_37302(), (double)Math.round(var4 - 1.0), client.thePlayer.method_37156());
+            BlockPos var6 = new BlockPos(client.thePlayer.getPosX(), (double)Math.round(var4 - 1.0), client.thePlayer.getPosZ());
             List var7 = this.method_11334(class_4783.field_23644, var6);
             if (!var7.isEmpty()) {
                class_7606 var8 = (class_7606)var7.get(var7.size() - 1);

@@ -44,6 +44,6 @@ public class class_1086 extends class_5766 {
 
    private void method_4763() {
       ClientPlayNetHandler var3 = this.field_943.thePlayer.connection;
-      var3.method_4813(new class_2317(this.field_943.thePlayer, class_4127.field_20102));
+      var3.sendPacket(new class_2317(this.field_943.thePlayer, Action.field_20102));
    }
 }

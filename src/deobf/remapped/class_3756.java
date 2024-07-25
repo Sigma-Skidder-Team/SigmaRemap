@@ -172,9 +172,9 @@ public class class_3756 extends class_3757 implements class_3745 {
          this.field_18364
             .method_29528(
                (class_704)null,
-               this.field_18356.method_37302(),
+               this.field_18356.getPosX(),
                this.field_18356.method_37309(),
-               this.field_18356.method_37156(),
+               this.field_18356.getPosZ(),
                class_463.field_2692,
                class_562.field_3322,
                1.0F,
@@ -237,7 +237,7 @@ public class class_3756 extends class_3757 implements class_3745 {
       }
 
       if (this.field_18356 != null) {
-         class_1343 var15 = new class_1343(this.field_18356.method_37302(), this.field_18356.method_37388(), this.field_18356.method_37156());
+         class_1343 var15 = new class_1343(this.field_18356.getPosX(), this.field_18356.method_37388(), this.field_18356.getPosZ());
          float var16 = (-0.5F + var3.nextFloat()) * (3.0F + this.field_18356.method_37086());
          float var17 = -1.0F + var3.nextFloat() * this.field_18356.method_37074();
          float var18 = (-0.5F + var3.nextFloat()) * (3.0F + this.field_18356.method_37086());

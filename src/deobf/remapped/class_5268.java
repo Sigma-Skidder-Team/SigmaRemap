@@ -108,9 +108,9 @@ public class class_5268 {
       int var12 = 0;
 
       for (class_9359 var14 : var1) {
-         double var15 = var4.field_7336 - var14.method_37302();
+         double var15 = var4.field_7336 - var14.getPosX();
          double var17 = var4.field_7333 - var14.method_37309();
-         double var19 = var4.field_7334 - var14.method_37156();
+         double var19 = var4.field_7334 - var14.getPosZ();
          double var21 = var15 * var15 + var17 * var17 + var19 * var19;
          class_1343 var23 = var4;
          float var24 = var5;
@@ -121,7 +121,7 @@ public class class_5268 {
 
             double var25 = (double)class_9299.method_42842(var21);
             var23 = new class_1343(
-               var14.method_37302() + var15 / var25 * 2.0, var14.method_37309() + var17 / var25 * 2.0, var14.method_37156() + var19 / var25 * 2.0
+               var14.getPosX() + var15 / var25 * 2.0, var14.method_37309() + var17 / var25 * 2.0, var14.getPosZ() + var19 / var25 * 2.0
             );
             var24 = var7;
          }

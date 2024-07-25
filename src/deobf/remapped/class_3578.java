@@ -93,14 +93,14 @@ public abstract class class_3578 extends class_1829 {
 
    @Override
    public void method_26606() {
-      if (!this.method_37285() && this.field_41726 && this.field_41774) {
+      if (!this.method_37285() && this.onGround && this.field_41774) {
          this.method_37215(
             this.method_37098()
                .method_6214(
                   (double)((this.field_41717.nextFloat() * 2.0F - 1.0F) * 0.05F), 0.4F, (double)((this.field_41717.nextFloat() * 2.0F - 1.0F) * 0.05F)
                )
          );
-         this.field_41726 = false;
+         this.onGround = false;
          this.field_41763 = true;
          this.method_37155(this.method_16632(), this.method_26439(), this.method_26547());
       }

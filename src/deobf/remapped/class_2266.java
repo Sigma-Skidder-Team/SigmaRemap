@@ -31,7 +31,7 @@ public class class_2266 extends class_1546 {
    public class_5851 method_7003() {
       class_2921 var3 = new class_2921();
       int var4 = class_9299.method_42847(this.field_8166.method_37309());
-      class_2522 var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.method_37302(), (double)var4, this.field_8166.method_37156()));
+      class_2522 var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.getPosX(), (double)var4, this.field_8166.getPosZ()));
       if (!this.field_8166.method_26496(var5.method_8364().method_22005())) {
          if (this.method_7015() && this.field_8166.method_37285()) {
             while (true) {
@@ -40,7 +40,7 @@ public class class_2266 extends class_1546 {
                   break;
                }
 
-               var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.method_37302(), (double)(++var4), this.field_8166.method_37156()));
+               var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.getPosX(), (double)(++var4), this.field_8166.getPosZ()));
             }
          } else if (!this.field_8166.method_37360()) {
             BlockPos var6 = this.field_8166.method_37075();
@@ -61,7 +61,7 @@ public class class_2266 extends class_1546 {
          }
       } else {
          while (this.field_8166.method_26496(var5.method_8364().method_22005())) {
-            var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.method_37302(), (double)(++var4), this.field_8166.method_37156()));
+            var5 = this.field_8165.method_28262(var3.method_13361(this.field_8166.getPosX(), (double)(++var4), this.field_8166.getPosZ()));
          }
 
          var4--;
@@ -175,9 +175,9 @@ public class class_2266 extends class_1546 {
 
    private boolean method_10451(class_5851 var1) {
       class_1343 var4 = new class_1343(
-         (double)var1.field_29731 - this.field_8166.method_37302(),
+         (double)var1.field_29731 - this.field_8166.getPosX(),
          (double)var1.field_29735 - this.field_8166.method_37309(),
-         (double)var1.field_29736 - this.field_8166.method_37156()
+         (double)var1.field_29736 - this.field_8166.getPosZ()
       );
       class_4092 var5 = this.field_8166.method_37241();
       int var6 = class_9299.method_42815(var4.method_6217() / var5.method_18906());

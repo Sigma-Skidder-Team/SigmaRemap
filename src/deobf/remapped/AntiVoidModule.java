@@ -18,17 +18,17 @@ public class AntiVoidModule extends Module {
       this.field_37111 = 0.0;
       this.field_37110 = 0;
       this.field_37112 = 0;
-      if (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F)) {
-         this.field_37114 = new class_1343(client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156());
+      if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F)) {
+         this.field_37114 = new class_1343(client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ());
       }
    }
 
    @EventListen
    private void method_33097(class_7767 var1) {
       if (this.method_42015()) {
-         if (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F)) {
+         if (client.thePlayer.onGround || class_314.method_1413(client.thePlayer, 0.001F)) {
             this.field_37114 = new class_1343(
-               client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156()
+               client.thePlayer.getPosX(), client.thePlayer.method_37309(), client.thePlayer.getPosZ()
             );
          }
 
@@ -48,7 +48,7 @@ public class AntiVoidModule extends Module {
 
             if (client.thePlayer.method_37098().field_7333 < -0.08 && !var8) {
                this.field_37111 = this.field_37111 - client.thePlayer.method_37098().field_7333;
-            } else if (client.thePlayer.field_41726) {
+            } else if (client.thePlayer.onGround) {
                this.field_37111 = 0.0;
             }
          } else {
@@ -88,7 +88,7 @@ public class AntiVoidModule extends Module {
 
    private boolean method_33100() {
       if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
-         if (!client.thePlayer.field_41726) {
+         if (!client.thePlayer.onGround) {
             class_4092 var3 = client.thePlayer.field_41712;
             var3 = var3.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
             return client.theWorld.method_6680(client.thePlayer, var3).count() == 0L;
@@ -110,7 +110,7 @@ public class AntiVoidModule extends Module {
 
       switch (var1) {
          case "Hypixel":
-            client.method_8614().method_4813(new class_9515(0.0, -999.0, 0.0, true));
+            client.method_8614().sendPacket(new class_9515(0.0, -999.0, 0.0, true));
             break;
          case "Motion":
             var2.method_35235(0.1);
@@ -118,7 +118,7 @@ public class AntiVoidModule extends Module {
             break;
          case "Cubecraft":
             double var13 = 3.2E7;
-            client.method_8614().method_4813(new class_9515(var5, var13, var9, false));
+            client.method_8614().sendPacket(new class_9515(var5, var13, var9, false));
             SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).setEnabled2(false);
             break;
          case "Legit":

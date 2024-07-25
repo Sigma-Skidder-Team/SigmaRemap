@@ -12,7 +12,7 @@ public class class_1830 extends class_2833 {
 
    @Override
    public void method_12883() {
-      if (this.field_9283.field_41726 && !this.field_9283.field_29654 && !((class_3143)class_7272.method_33230(this.field_9283)).method_14532()) {
+      if (this.field_9283.onGround && !this.field_9283.field_29654 && !((class_3143)class_7272.method_33230(this.field_9283)).method_14532()) {
          this.field_9283.method_33227(0.0);
       } else if (this.method_12877()) {
          this.field_9283.method_33227(this.field_9281);

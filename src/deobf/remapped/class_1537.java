@@ -37,9 +37,9 @@ public class class_1537 extends class_3429 {
          this.world
             .method_43361(
                class_3090.field_15356,
-               this.method_37302(),
+               this.getPosX(),
                this.method_37309() + this.field_41717.nextDouble() * 2.0,
-               this.method_37156(),
+               this.getPosZ(),
                this.field_41717.nextGaussian(),
                0.0,
                this.field_41717.nextGaussian()
@@ -49,7 +49,7 @@ public class class_1537 extends class_3429 {
       if (!this.world.field_33055 && !this.field_41751) {
          if (!(var4 instanceof class_9359)) {
             if (var4 != null) {
-               var4.method_37254(this.method_37302(), this.method_37309(), this.method_37156());
+               var4.method_37254(this.getPosX(), this.method_37309(), this.getPosZ());
                var4.field_41706 = 0.0F;
             }
          } else {
@@ -58,7 +58,7 @@ public class class_1537 extends class_3429 {
                if (this.field_41717.nextFloat() < 0.05F && this.world.method_29537().method_1285(class_291.field_1028)) {
                   class_2667 var6 = class_6629.field_34264.method_30484(this.world);
                   var6.method_12025(true);
-                  var6.method_37144(var4.method_37302(), var4.method_37309(), var4.method_37156(), var4.rotationYaw, var4.rotationPitch);
+                  var6.method_37144(var4.getPosX(), var4.method_37309(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch);
                   this.world.method_7509(var6);
                }
 
@@ -66,7 +66,7 @@ public class class_1537 extends class_3429 {
                   var4.method_37390();
                }
 
-               var4.method_37254(this.method_37302(), this.method_37309(), this.method_37156());
+               var4.method_37254(this.getPosX(), this.method_37309(), this.getPosZ());
                var4.field_41706 = 0.0F;
                var4.attackEntityFrom(DamageSource.field_31684, 5.0F);
             }

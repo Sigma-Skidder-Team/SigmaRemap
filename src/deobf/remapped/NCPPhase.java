@@ -17,11 +17,11 @@ public class NCPPhase extends PremiumModule {
          this.field_13371 = -1;
       } else {
          this.field_13371 = 0;
-         if (client.thePlayer.field_41726) {
-            double var3 = client.thePlayer.method_37302();
+         if (client.thePlayer.onGround) {
+            double var3 = client.thePlayer.getPosX();
             double var5 = client.thePlayer.method_37309();
-            double var7 = client.thePlayer.method_37156();
-            client.method_8614().method_4813(new class_9515(var3, var5 + 0.0626, var7, false));
+            double var7 = client.thePlayer.getPosZ();
+            client.method_8614().sendPacket(new class_9515(var3, var5 + 0.0626, var7, false));
          }
       }
    }
@@ -30,9 +30,9 @@ public class NCPPhase extends PremiumModule {
    private void method_12308(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          if (client.gameOptions.keySneak.isKeyDown()) {
-            double var4 = client.thePlayer.method_37302();
+            double var4 = client.thePlayer.getPosX();
             double var6 = client.thePlayer.method_37309();
-            double var8 = client.thePlayer.method_37156();
+            double var8 = client.thePlayer.getPosZ();
             if (!class_314.method_1434()) {
                if (class_314.method_1413(client.thePlayer, 0.001F) && !class_314.method_1383()) {
                   client.thePlayer.method_37256(var4, var6 - 1.0, var8);
@@ -65,11 +65,11 @@ public class NCPPhase extends PremiumModule {
       if (this.method_42015()) {
          if (client.thePlayer.field_41744 && this.field_13371 != 0) {
             this.field_13371 = 0;
-            if (client.thePlayer.field_41726) {
-               double var4 = client.thePlayer.method_37302();
+            if (client.thePlayer.onGround) {
+               double var4 = client.thePlayer.getPosX();
                double var6 = client.thePlayer.method_37309();
-               double var8 = client.thePlayer.method_37156();
-               client.method_8614().method_4813(new class_9515(var4, var6 + 0.0626, var8, false));
+               double var8 = client.thePlayer.getPosZ();
+               client.method_8614().sendPacket(new class_9515(var4, var6 + 0.0626, var8, false));
             }
          }
 
