@@ -141,7 +141,7 @@ public class class_5329 extends class_2612 {
 
    private void method_24301() {
       class_1552 var3 = new class_1552(
-         this, "settingsname", 12, 2, this.field_36278, 20, class_1552.field_8208, this.field_27182.method_41987() + " Settings", this.field_27184
+         this, "settingsname", 12, 2, this.field_36278, 20, class_1552.field_8208, this.field_27182.getName2() + " Settings", this.field_27184
       );
       this.method_32148(var3);
       byte var4 = 20;
@@ -159,7 +159,7 @@ public class class_5329 extends class_2612 {
 
          for (Module var11 : var16.field_17661) {
             int var12 = 10;
-            class_7038 var13 = new class_7038(this, var11.method_41992() + "SubView", 0, var6, this.field_36278, this.field_36257 - var6);
+            class_7038 var13 = new class_7038(this, var11.getName() + "SubView", 0, var6, this.field_36278, this.field_36257 - var6);
             var13.method_32135((var0, var1) -> var0.method_32142(var1.method_32109()));
 
             for (Setting var15 : var11.method_41996().values()) {

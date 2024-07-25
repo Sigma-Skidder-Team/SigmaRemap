@@ -62,7 +62,7 @@ public class class_4221 extends Module {
                var9 = Color.HSBtoRGB(var12, 1.0F, 1.0F);
                var10 = Color.HSBtoRGB(var12, 1.0F, 1.0F);
                int var19 = this.method_19660(var16);
-               int var20 = this.field_20484.method_18548(var16.method_41987()) + var8;
+               int var20 = this.field_20484.method_18548(var16.getName2()) + var8;
                float var21 = 1.0F - class_9681.method_44756(var15.method_11123(), 0.0F, 1.0F, 1.0F);
                if (var4.equalsIgnoreCase("Smooth") || var4.equalsIgnoreCase("Both")) {
                   var20 = (int)((float)var20 * var21);
@@ -101,7 +101,7 @@ public class class_4221 extends Module {
                   (float)var7,
                   (float)(var6 + var20) - class_9681.method_44756(var15.method_11123(), 0.0F, 1.0F, 1.0F)
                );
-               this.field_20484.method_18545((float)(var7 - var19), (float)var6, var16.method_41987(), new class_8709(var9));
+               this.field_20484.method_18545((float)(var7 - var19), (float)var6, var16.getName2(), new class_8709(var9));
                this.field_20488
                   .method_18545(
                      (float)(var7 - this.field_20488.method_18547(this.method_19655(var16))),
@@ -170,7 +170,7 @@ public class class_4221 extends Module {
    }
 
    private int method_19660(Module var1) {
-      String var4 = var1.method_41987();
+      String var4 = var1.getName2();
       String var5 = this.method_19655(var1);
       return this.field_20484.method_18547(var4) + this.field_20488.method_18547(var5);
    }

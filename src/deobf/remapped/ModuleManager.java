@@ -189,13 +189,13 @@ public class ModuleManager {
             }
 
             for (Module var9 : this.field_637.values()) {
-               if (var9.method_41992().equals(var7)) {
+               if (var9.getName().equals(var7)) {
                   try {
                      var9.saveToJson(var17);
                   } catch (class_7584 var12) {
                      SigmaMainClass.getInstance()
                         .method_3326()
-                        .method_12862("Could not initialize mod " + var9.method_41992() + " from config. All settings for this mod have been erased.");
+                        .method_12862("Could not initialize mod " + var9.getName() + " from config. All settings for this mod have been erased.");
                   }
                   break;
                }

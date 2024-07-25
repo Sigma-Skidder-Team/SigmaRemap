@@ -145,7 +145,7 @@ public class class_8438 extends Module {
                   var14 = 0.86F + 0.14F * var15;
                }
 
-               String var22 = var13.method_41987();
+               String var22 = var13.getName2();
                GL11.glAlphaFunc(519, 0.0F);
                GL11.glPushMatrix();
                int var17 = var6 - var20 - var8.method_18547(var22) / 2;

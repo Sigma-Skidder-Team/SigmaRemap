@@ -175,7 +175,7 @@ public class class_123 {
    public void method_370(Module var1) {
       if (this.field_299 != null) {
          for (TouchBarItem var5 : this.field_299.getItems()) {
-            if (var5.getView() instanceof TouchBarButton && var1.method_41992().equals(var5.getIdentifier())) {
+            if (var5.getView() instanceof TouchBarButton && var1.getName().equals(var5.getIdentifier())) {
                ((TouchBarButton)var5.getView()).setBezelColor(this.method_371(var1));
                new Thread(() -> {
                   try {
@@ -212,12 +212,12 @@ public class class_123 {
       for (class_3158 var4 : this.field_297) {
          if (var4.method_14566() == class_4906.field_25372 && var4.method_14565() > 0) {
             TouchBarButton var5 = new TouchBarButton();
-            var5.setTitle(var4.method_14560().method_41992());
+            var5.setTitle(var4.method_14560().getName());
             var5.setBezelColor(this.method_371(var4.method_14560()));
             var5.setType(TouchBarButton$class_33.TOGGLE);
             var5.setAction(new class_6285(this, var4));
             this.field_301.put(var4.method_14560(), var5);
-            this.field_299.addItem(new TouchBarItem(var4.method_14560().method_41992(), var5, true));
+            this.field_299.addItem(new TouchBarItem(var4.method_14560().getName(), var5, true));
          }
       }
    }

@@ -16,7 +16,7 @@ public class SecondModule extends Module {
 
       for (Module var10 : this.field_17661) {
          SigmaMainClass.getInstance().method_3302().method_7908(var10);
-         this.field_17660.add(var10.method_41992());
+         this.field_17660.add(var10.getName());
          var10.method_41995(this);
       }
 
@@ -29,7 +29,7 @@ public class SecondModule extends Module {
       this.method_16862();
 
       for (Module var6 : this.field_17661) {
-         boolean var7 = this.getStringValueByName("Type").equals(var6.field_46702);
+         boolean var7 = this.getStringValueByName("Type").equals(var6.name);
          if (this.method_42015() && mcInstance.field_9632 != null) {
             var6.method_42023(var7);
             if (var7) {
@@ -47,13 +47,13 @@ public class SecondModule extends Module {
       boolean var3 = false;
 
       for (Module var7 : this.field_17661) {
-         if (this.getStringValueByName("Type").equals(var7.field_46702)) {
+         if (this.getStringValueByName("Type").equals(var7.name)) {
             var3 = true;
          }
       }
 
       if (!var3) {
-         this.isValueString("Type", this.field_17661[0].field_46702);
+         this.isValueString("Type", this.field_17661[0].name);
       }
    }
 
@@ -61,7 +61,7 @@ public class SecondModule extends Module {
       this.method_16862();
 
       for (Module var6 : this.field_17661) {
-         if (this.getStringValueByName("Type").equals(var6.field_46702)) {
+         if (this.getStringValueByName("Type").equals(var6.name)) {
             return var6;
          }
       }
@@ -83,7 +83,7 @@ public class SecondModule extends Module {
       JSONObjectImpl var4 = JSONWriter.saveStringValue(var1, "sub-options");
       if (var4 != null) {
          for (Module var8 : this.field_17661) {
-            JSONArray var9 = JSONWriter.saveStringValue2ig(var4, var8.method_41992());
+            JSONArray var9 = JSONWriter.saveStringValue2ig(var4, var8.getName());
             if (var9 != null) {
                for (int var10 = 0; var10 < var9.method_6142(); var10++) {
                   JSONObjectImpl var11 = var9.method_6143(var10);
@@ -101,7 +101,7 @@ public class SecondModule extends Module {
                         } catch (class_7584 var16) {
                            SigmaMainClass.getInstance()
                               .method_3326()
-                              .method_12862("Could not initialize settings of " + var8.method_41992() + "." + var14.method_23032() + " from config.");
+                              .method_12862("Could not initialize settings of " + var8.getName() + "." + var14.method_23032() + " from config.");
                         }
                         break;
                      }
@@ -130,7 +130,7 @@ public class SecondModule extends Module {
             var9.method_6159(var11.loadDataFromJson(new JSONObjectImpl()));
          }
 
-         var4.method_5820(var8.method_41992(), var9);
+         var4.method_5820(var8.getName(), var9);
       }
 
       var1.method_5820("sub-options", var4);

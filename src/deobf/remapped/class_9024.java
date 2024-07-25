@@ -137,7 +137,7 @@ public class class_9024 extends Module {
                class_5320.field_27161,
                (float)(var1 + 11) + this.field_46167.get(var9),
                (float)(var2 + this.field_46159 / 2 - class_5320.field_27161.method_15654() / 2 + 3 + var7 * this.field_46159),
-               var9.method_41992(),
+               var9.getName(),
                class_1255.field_6918.field_6917
             );
          } else {
@@ -145,7 +145,7 @@ public class class_9024 extends Module {
                class_5320.field_27152,
                (float)(var1 + 11) + this.field_46167.get(var9),
                (float)(var2 + this.field_46159 / 2 - class_5320.field_27152.method_15654() / 2 + 2 + var7 * this.field_46159),
-               var9.method_41992(),
+               var9.getName(),
                class_1255.field_6918.field_6917
             );
          }

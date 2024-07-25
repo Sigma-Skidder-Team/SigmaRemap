@@ -34,13 +34,13 @@ public class class_1996 extends class_2612 implements class_1768 {
             .method_32148(
                var13 = new class_6220(
                   this.method_11850(),
-                  var5.method_41992() + "Button",
+                  var5.getName() + "Button",
                   0,
                   var3 * 30,
                   this.method_32109(),
                   30,
                   var12,
-                  var5.method_41992(),
+                  var5.getName(),
                   class_5320.field_27152
                )
             );
@@ -159,7 +159,7 @@ public class class_1996 extends class_2612 implements class_1768 {
 
       for (class_6220 var6 : this.field_10142) {
          var4++;
-         if (var6.method_32176().equals(var1.method_41992() + "Button")) {
+         if (var6.method_32176().equals(var1.getName() + "Button")) {
             break;
          }
       }

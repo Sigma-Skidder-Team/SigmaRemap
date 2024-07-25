@@ -12,7 +12,7 @@ public class class_3896 implements Comparator<Module> {
    public int compare(Module var1, Module var2) {
       if (class_4221.method_19658(this.field_18954, var1) <= class_4221.method_19658(this.field_18954, var2)) {
          return class_4221.method_19658(this.field_18954, var1) >= class_4221.method_19658(this.field_18954, var2)
-            ? var1.method_41987().compareTo(var2.method_41987())
+            ? var1.getName2().compareTo(var2.getName2())
             : 1;
       } else {
          return -1;

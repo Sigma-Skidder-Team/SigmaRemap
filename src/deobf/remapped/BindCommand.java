@@ -39,10 +39,10 @@ public class BindCommand extends Command {
 
                if (var14 != -1) {
                   SigmaMainClass.getInstance().getModuleManager().method_835().method_368(var14, (Module)var6);
-                  var3.method_3731("Key " + var2[1].method_24060() + " was set for module " + ((Module)var6).method_41987());
+                  var3.method_3731("Key " + var2[1].method_24060() + " was set for module " + ((Module)var6).getName2());
                } else {
                   SigmaMainClass.getInstance().getModuleManager().method_835().method_383(var6);
-                  var3.method_3731("Keybind was reset for module " + ((Module)var6).method_41987());
+                  var3.method_3731("Keybind was reset for module " + ((Module)var6).getName2());
                }
             }
          } else {
@@ -62,9 +62,9 @@ public class BindCommand extends Command {
             }
 
             if (var9 != null) {
-               var3.method_3731(((Module)var6).method_41987() + " is bound to : " + var9);
+               var3.method_3731(((Module)var6).getName2() + " is bound to : " + var9);
             } else {
-               var3.method_3731("§c[Error] " + ((Module)var6).method_41987() + " is bound to an unknown key");
+               var3.method_3731("§c[Error] " + ((Module)var6).getName2() + " is bound to an unknown key");
             }
          }
       }
@@ -93,7 +93,7 @@ public class BindCommand extends Command {
 
    public Module method_3683(String var1) {
       for (Module var5 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
-         if (var5.method_41992().replace(" ", "").equalsIgnoreCase(var1)) {
+         if (var5.getName().replace(" ", "").equalsIgnoreCase(var1)) {
             return var5;
          }
       }

@@ -266,7 +266,7 @@ public class class_273 extends class_2612 implements class_1768 {
 
          for (Module var10 : var18.field_17661) {
             int var11 = 0;
-            class_7038 var12 = new class_7038(this, var10.method_41992() + "SubView", 0, var17, this.field_36278, this.field_36257 - var4);
+            class_7038 var12 = new class_7038(this, var10.getName() + "SubView", 0, var17, this.field_36278, this.field_36257 - var4);
             var12.method_32135((var0, var1) -> var0.method_32142(var1.method_32109()));
 
             for (Setting var14 : var10.method_41996().values()) {

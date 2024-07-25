@@ -7,8 +7,8 @@ import java.util.Map;
 
 public abstract class Module {
    public static MinecraftClient mcInstance = MinecraftClient.getInstance();
-   public String field_46702;
-   public String field_46701;
+   public String name;
+   public String description;
    public Category field_46696;
    public boolean field_46700;
    public boolean field_46699;
@@ -20,8 +20,8 @@ public abstract class Module {
 
    public Module(Category var1, String var2, String var3) {
       this.field_46696 = var1;
-      this.field_46702 = var2;
-      this.field_46701 = var3;
+      this.name = var2;
+      this.description = var3;
    }
 
    public void addSetting(Setting var1) {
@@ -144,7 +144,7 @@ public abstract class Module {
                   } catch (class_7584 var11) {
                      SigmaMainClass.getInstance()
                         .method_3326()
-                        .method_12862("Could not initialize settings of " + this.method_41992() + "." + var9.method_23032() + " from config.");
+                        .method_12862("Could not initialize settings of " + this.getName() + "." + var9.method_23032() + " from config.");
                   }
                   break;
                }
@@ -160,7 +160,7 @@ public abstract class Module {
    }
 
    public JSONObjectImpl loadFromJson(JSONObjectImpl var1) {
-      var1.method_5820("name", this.method_41992());
+      var1.method_5820("name", this.getName());
       var1.method_5823("enabled", this.field_46700);
       var1.method_5823("allowed", this.method_41994());
       JSONArray var4 = new JSONArray();
@@ -191,16 +191,16 @@ public abstract class Module {
       return this.settingMap;
    }
 
-   public String method_41987() {
-      return this.field_46702;
+   public String getName2() {
+      return this.name;
    }
 
-   public String method_41992() {
-      return this.field_46702;
+   public String getName() {
+      return this.name;
    }
 
-   public String method_42001() {
-      return this.field_46701;
+   public String getDescription() {
+      return this.description;
    }
 
    public Category method_42004() {

@@ -81,7 +81,7 @@ public class class_9107 extends class_1859 {
          class_5320.field_27147,
          (float)this.field_46626,
          (float)(this.field_46627 - 60),
-         this.field_46630.method_41992(),
+         this.field_46630.getName(),
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
       byte var5 = 30;
@@ -90,7 +90,7 @@ public class class_9107 extends class_1859 {
          class_5320.field_27152,
          (float)(var5 + this.field_46626),
          (float)(var5 + this.field_46627),
-         this.field_46630.method_42001(),
+         this.field_46630.getDescription(),
          class_314.method_1444(class_1255.field_6929.field_6917, var1 * 0.7F)
       );
       class_73.method_141();

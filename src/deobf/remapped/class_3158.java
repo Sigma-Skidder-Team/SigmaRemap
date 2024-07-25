@@ -29,7 +29,7 @@ public class class_3158 {
             switch (var4) {
                case "mod":
                   for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
-                     if (var1.method_5861("target").equals(var7.method_41992())) {
+                     if (var1.method_5861("target").equals(var7.getName())) {
                         this.field_15686 = var7;
                      }
                   }
@@ -50,7 +50,7 @@ public class class_3158 {
       switch (this.method_14566()) {
          case field_25372:
             var3.method_5820("type", "mod");
-            var3.method_5820("target", ((Module)this.field_15686).method_41992());
+            var3.method_5820("target", ((Module)this.field_15686).getName());
             break;
          case field_25373:
             var3.method_5820("type", "screen");

@@ -73,13 +73,13 @@ public class class_8914 extends class_1859 {
          this.field_45699
             .method_32148(
                var21 = new class_6220(
-                  this.field_45699, var19.method_41992(), 0, var11++ * 40, this.field_45699.method_32109(), 40, var20, new class_1226(var19).method_5460()
+                  this.field_45699, var19.getName(), 0, var11++ * 40, this.field_45699.method_32109(), 40, var20, new class_1226(var19).method_5460()
                )
             );
          var21.method_28444(10);
          var21.method_32100((var2x, var3x) -> {
             for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
-               if (var7.method_41992().equals(var21.method_32165()) && !this.field_45702) {
+               if (var7.getName().equals(var21.method_32165()) && !this.field_45702) {
                   this.field_45694 = new class_1226(var7);
                   this.field_45702 = true;
                   break;
