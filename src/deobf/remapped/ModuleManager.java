@@ -53,9 +53,9 @@ public class ModuleManager {
       this.method_852(new class_4181());
       this.method_852(new class_3721());
       this.method_852(new class_5377());
-      this.method_852(new class_5838());
+      this.method_852(new HighJumpModule());
       this.method_852(new ElytraFlyModule());
-      this.method_852(new class_1715());
+      this.method_852(new SpiderModule());
       this.method_852(new KillauraModule());
       this.method_852(new class_9758());
       this.method_852(new class_9801());
@@ -64,7 +64,7 @@ public class ModuleManager {
       this.method_852(new RegenModule());
       this.method_852(new class_7401());
       this.method_852(new class_5741());
-      this.method_852(new class_7169());
+      this.method_852(new WTapModule());
       this.method_852(new class_2941());
       this.method_852(new class_5981());
       this.method_852(new class_9824());
@@ -111,7 +111,7 @@ public class ModuleManager {
       this.method_852(new class_6803());
       this.method_852(new class_9437());
       this.method_852(new FastPlaceModule());
-      this.method_852(new class_4624());
+      this.method_852(new AutoFarmModule());
       this.method_852(new class_2481());
       this.method_852(new AntiCactusModule());
       this.method_852(new class_9357());

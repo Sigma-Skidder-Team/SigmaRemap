@@ -35,7 +35,7 @@ public class AntiVoidModule extends Module {
          if (this.field_37110 <= 0) {
             Module var4 = SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class);
             String var5 = var4.getStringValueByName("Type");
-            Module var6 = SigmaMainClass.getInstance().getModuleManager().method_847(class_5838.class);
+            Module var6 = SigmaMainClass.getInstance().getModuleManager().method_847(HighJumpModule.class);
             String var7 = var6.getStringValueByName("Type");
             boolean var8 = var4.method_42015();
             if (var5.equals("Cubecraft") && var1.method_35236() < -0.4) {

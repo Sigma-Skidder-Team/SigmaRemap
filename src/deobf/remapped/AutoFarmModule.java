@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_4624 extends Module {
-   public class_4624() {
+public class AutoFarmModule extends Module {
+   public AutoFarmModule() {
       super(Category.WORLD, "AutoFarm", "Automatically breaks and replants crops");
    }
 
