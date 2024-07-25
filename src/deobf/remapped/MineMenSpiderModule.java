@@ -18,17 +18,17 @@ public class MineMenSpiderModule extends Module {
    @EventListen
    private void method_24505(class_7767 var1) {
       double var4 = 1.0E-5;
-      boolean var6 = mcInstance.field_9601
-            .method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18928(var4, 0.0, var4).method_18928(-var4, 0.0, -var4))
+      boolean var6 = mc.field_9601
+            .method_6680(mc.field_9632, mc.field_9632.field_41712.method_18928(var4, 0.0, var4).method_18928(-var4, 0.0, -var4))
             .count()
          > 0L;
       if (var6) {
-         if (!mcInstance.field_9632.field_41744) {
-            if (!mcInstance.field_9632.field_41726) {
-               var1.method_35235(!mcInstance.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
+         if (!mc.field_9632.field_41744) {
+            if (!mc.field_9632.field_41726) {
+               var1.method_35235(!mc.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
             }
-         } else if (!this.getBooleanValueByName("AutoClimb") && !mcInstance.gameOptions.keyJump.isKeyDown()) {
-            var1.method_35235(!mcInstance.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
+         } else if (!this.getBooleanValueByName("AutoClimb") && !mc.gameOptions.keyJump.isKeyDown()) {
+            var1.method_35235(!mc.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
          } else {
             var1.method_35235(0.6);
          }
@@ -36,42 +36,42 @@ public class MineMenSpiderModule extends Module {
          class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);
       }
 
-      if (class_314.method_1413(mcInstance.field_9632, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
-         if (mcInstance.gameOptions.keySneak.isKeyDown()
+      if (class_314.method_1413(mc.field_9632, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
+         if (mc.gameOptions.keySneak.isKeyDown()
             && !this.field_27443
-            && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
-            mcInstance.method_8614()
+            && mc.field_9601.method_6680(mc.field_9632, mc.field_9632.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
+            mc.method_8614()
                .method_4813(
                   new class_9515(
-                     mcInstance.field_9632.method_37245().field_7336,
-                     mcInstance.field_9632.method_37245().field_7333 - 1.0E-14,
-                     mcInstance.field_9632.method_37245().field_7334,
+                     mc.field_9632.method_37245().field_7336,
+                     mc.field_9632.method_37245().field_7333 - 1.0E-14,
+                     mc.field_9632.method_37245().field_7334,
                      false
                   )
                );
-            mcInstance.field_9632
+            mc.field_9632
                .method_37256(
-                  mcInstance.field_9632.method_37245().field_7336,
-                  mcInstance.field_9632.method_37245().field_7333 - 2.8,
-                  mcInstance.field_9632.method_37245().field_7334
+                  mc.field_9632.method_37245().field_7336,
+                  mc.field_9632.method_37245().field_7333 - 2.8,
+                  mc.field_9632.method_37245().field_7334
                );
-            mcInstance.gameOptions.keySneak.pressed = false;
-            mcInstance.field_9632.field_41726 = false;
-            mcInstance.field_9616.field_32603 = 0.08F;
+            mc.gameOptions.keySneak.pressed = false;
+            mc.field_9632.field_41726 = false;
+            mc.field_9616.field_32603 = 0.08F;
             var1.method_29715(true);
             this.field_27443 = true;
             var1.method_35235(1.0E-14);
          }
       } else {
          if (this.getBooleanValueByName("Ceiling")
-            && !mcInstance.gameOptions.keySneak.isKeyDown()
-            && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
+            && !mc.gameOptions.keySneak.isKeyDown()
+            && mc.field_9601.method_6680(mc.field_9632, mc.field_9632.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);
          }
 
          if (this.field_27443) {
-            mcInstance.field_9616.field_32603 = 1.0F;
+            mc.field_9616.field_32603 = 1.0F;
             this.field_27443 = false;
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.28);
@@ -86,18 +86,18 @@ public class MineMenSpiderModule extends Module {
       if (this.method_42015() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
          if (this.getBooleanValueByName("Ceiling")
-            && !mcInstance.field_9632.field_41726
-            && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
+            && !mc.field_9632.field_41726
+            && mc.field_9601.method_6680(mc.field_9632, mc.field_9632.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }
 
          double var5 = 1.0E-5;
          if (var4 != null
-            && mcInstance.field_9601
-                  .method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18928(var5, 0.0, var5).method_18928(-var5, 0.0, -var5))
+            && mc.field_9601
+                  .method_6680(mc.field_9632, mc.field_9632.field_41712.method_18928(var5, 0.0, var5).method_18928(-var5, 0.0, -var5))
                   .count()
                > 0L) {
-            if (!class_314.method_1413(mcInstance.field_9632, 1.0E-4F)) {
+            if (!class_314.method_1413(mc.field_9632, 1.0E-4F)) {
                var1.method_6451(true);
             }
 
@@ -119,10 +119,10 @@ public class MineMenSpiderModule extends Module {
 
    @EventListen
    private void method_24503(class_5243 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          if (var1.method_23988() != null
             && !var1.method_23988().method_19485()
-            && var1.method_23988().method_19483().field_19937 > mcInstance.field_9632.field_41712.field_19937 + 1.0) {
+            && var1.method_23988().method_19483().field_19937 > mc.field_9632.field_41712.field_19937 + 1.0) {
             var1.method_29715(true);
          }
       }

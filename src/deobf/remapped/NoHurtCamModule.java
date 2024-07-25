@@ -8,7 +8,7 @@ public class NoHurtCamModule extends Module {
    @EventListen
    private void method_17287(class_1711 var1) {
       if (this.method_42015()) {
-         mcInstance.field_9632.field_29645 = 0;
+         mc.field_9632.field_29645 = 0;
       }
    }
 }

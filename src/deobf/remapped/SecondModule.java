@@ -30,7 +30,7 @@ public class SecondModule extends Module {
 
       for (Module var6 : this.field_17661) {
          boolean var7 = this.getStringValueByName("Type").equals(var6.name);
-         if (this.method_42015() && mcInstance.field_9632 != null) {
+         if (this.method_42015() && mc.field_9632 != null) {
             var6.method_42023(var7);
             if (var7) {
                this.field_17664 = var6;
@@ -140,7 +140,7 @@ public class SecondModule extends Module {
    @Override
    public void onEnable() {
       this.method_16866();
-      if (this.field_17664 instanceof class_367 && !SigmaMainClass.getInstance().method_3332().method_23084()) {
+      if (this.field_17664 instanceof PremiumModule && !SigmaMainClass.getInstance().getAccountManager().method_23084()) {
          this.method_42018(false);
       }
    }
@@ -155,7 +155,7 @@ public class SecondModule extends Module {
    @Override
    public void method_42019() {
       for (Module var6 : this.field_17661) {
-         var6.method_42023(false);
+         var6.setEnabled(false);
       }
 
       super.method_42019();

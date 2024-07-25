@@ -24,7 +24,7 @@ public class class_2167 extends Module {
          var3 = this.method_10074();
       }
 
-      mcInstance.field_9632.method_27307("" + var3);
+      mc.field_9632.method_27307("" + var3);
       this.method_42023(false);
    }
 

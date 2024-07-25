@@ -49,7 +49,7 @@ public class class_6356 extends class_2596 {
       byte var3 = 55;
       System.out.println("loading");
 
-      for (Entry var5 : SigmaMainClass.getInstance().method_3332().field_25933.method_20859().entrySet()) {
+      for (Entry var5 : SigmaMainClass.getInstance().getAccountManager().field_25933.method_20859().entrySet()) {
          System.out.println("added " + ((class_4567)var5.getValue()).field_22260);
          this.field_32507
             .method_32148(

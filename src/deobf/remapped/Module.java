@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class Module {
-   public static MinecraftClient mcInstance = MinecraftClient.getInstance();
+   public static MinecraftClient mc = MinecraftClient.getInstance();
    public String name;
    public String description;
    public Category field_46696;
@@ -152,7 +152,7 @@ public abstract class Module {
          }
       }
 
-      if (this.moduleEnabled && mcInstance.field_9601 != null) {
+      if (this.moduleEnabled && mc.field_9601 != null) {
          this.onEnable();
       }
 
@@ -235,7 +235,7 @@ public abstract class Module {
             SigmaMainClass.getInstance().getEventManager().subscribe(this);
             this.onDisable();
          } else {
-            SigmaMainClass.getInstance().getEventManager().unsubscribeEvent(this);
+            SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
             this.onEnable();
          }
       }
@@ -246,16 +246,16 @@ public abstract class Module {
    public void method_42018(boolean var1) {
       this.moduleEnabled = var1;
       if (!this.moduleEnabled) {
-         SigmaMainClass.getInstance().eventManager().subscribeEvent(this);
+         SigmaMainClass.getInstance().getEventManager().subscribe(this);
       } else {
-         SigmaMainClass.getInstance().eventManager().unsubscribeEvent(this);
+         SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
       }
    }
 
    public void method_41991(boolean var1) {
       if (this.moduleEnabled != var1) {
          if (!(this.moduleEnabled = var1)) {
-            SigmaMainClass.getInstance().eventManager().subscribeEvent(this);
+            SigmaMainClass.getInstance().getEventManager().subscribe(this);
             if (!(this instanceof SecondModule)) {
                if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
                   && SigmaMainClass.getInstance().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
@@ -270,7 +270,7 @@ public abstract class Module {
 
             this.onDisable();
          } else {
-            SigmaMainClass.getInstance().eventManager().unsubscribeEvent(this);
+            SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
             if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
                && SigmaMainClass.getInstance().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
                SigmaMainClass.getInstance().method_3315().method_21206("activate");

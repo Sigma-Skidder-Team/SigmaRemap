@@ -3,22 +3,20 @@ package remapped;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class EventManager {
-   public final Map<Class<? extends class_8142>, class_4182[]> field_9081 = new HashMap<Class<? extends class_8142>, class_4182[]>();
-   public final Map<Class<? extends Module>, Map<Class<? extends class_8142>, List<class_4182>>> field_9083 = new HashMap<Class<? extends Module>, Map<Class<? extends class_8142>, List<class_4182>>>();
+   public final Map<Class<? extends literalNothingClass>, class_4182[]> field_9081 = new HashMap<>();
+   public final Map<Class<? extends Module>, Map<Class<? extends literalNothingClass>, List<class_4182>>> moduleList = new HashMap<>();
    public int field_9082 = 0;
    public long field_9084 = System.currentTimeMillis();
 
    public boolean method_7910(Method var1) {
-      return var1.isAnnotationPresent(EventListen.class) && var1.getParameterCount() == 1 && class_8142.class.isAssignableFrom(var1.getParameterTypes()[0]);
+      return var1.isAnnotationPresent(EventListen.class) && var1.getParameterCount() == 1 && literalNothingClass.class.isAssignableFrom(var1.getParameterTypes()[0]);
    }
 
    public class_4182[] method_7912(class_4182[] var1) {
@@ -32,7 +30,7 @@ public class EventManager {
          }
       }
 
-      return var4.<class_4182>toArray(new class_4182[0]);
+      return (class_4182[]) var4.<class_4182>toArray(new class_4182[0]);
    }
 
    public boolean method_7918(class_4182[] var1, class_4182 var2) {
@@ -73,28 +71,28 @@ public class EventManager {
       }
    }
 
-   public void method_7917(Module var1) {
-      Map var4 = this.field_9083.get(var1.getClass());
-      if (var4 != null) {
-         for (Entry var6 : var4.entrySet()) {
-            Class var7 = (Class)var6.getKey();
-            LinkedHashSet var8 = new LinkedHashSet((Collection)var6.getValue());
+   public void method_7917(Module module) {
+      Map moduleMap = this.moduleList.get(module.getClass());
+      if (moduleMap != null) {
+         for (Object var6 : moduleMap.entrySet()) {
+            Class var7 = var6.getClass();
+            LinkedHashSet var8 = new LinkedHashSet(var6.getClass().getModifiers());
             class_4182[] var9 = this.field_9081.getOrDefault(var7, new class_4182[0]);
             var8.addAll(Arrays.asList(var9));
-            this.field_9081.put(var7, this.method_7912(var8.<class_4182>toArray(var9)));
+            this.field_9081.put(var7, this.method_7912((class_4182[]) var8.<class_4182>toArray(var9)));
          }
       }
    }
 
-   public void method_7915(Module var1) {
-      Map var4 = this.field_9083.get(var1.getClass());
-      if (var4 != null) {
-         for (Entry var6 : var4.entrySet()) {
-            Class var7 = (Class)var6.getKey();
-            List var8 = (List)var6.getValue();
-            LinkedHashSet var9 = new LinkedHashSet<class_4182>(Arrays.asList(this.field_9081.getOrDefault(var7, new class_4182[0])));
-            var9.removeAll(var8);
-            this.field_9081.put(var7, var9.<class_4182>toArray(new class_4182[0]));
+   public void method_7915(Module module) {
+      Map moduleMap = this.moduleList.get(module.getClass());
+      if (moduleMap != null) {
+         for (Object var6 : moduleMap.entrySet()) {
+            Class var7 = var6.getClass();
+            LinkedHashSet var8 = new LinkedHashSet(var6.getClass().getModifiers());
+            class_4182[] var9 = this.field_9081.getOrDefault(var7, new class_4182[0]);
+            var8.addAll(Arrays.asList(var9));
+            this.field_9081.put(var7, this.method_7912((class_4182[]) var8.<class_4182>toArray(var9)));
          }
       }
 
@@ -125,7 +123,7 @@ public class EventManager {
                         this.field_9081.put(var11, this.method_7912(var12));
                         var4 = true;
                      } else if (!var13.method_19454()) {
-                        Map var15 = this.field_9083.getOrDefault(var5, new HashMap<Class<? extends class_8142>, List<class_4182>>());
+                        Map var15 = this.moduleList.getOrDefault(var5, new HashMap<Class<? extends literalNothingClass>, List<class_4182>>());
                         Object var16 = (List)var15.get(var11);
                         if (var16 == null) {
                            var15.put(var11, var16 = new ArrayList());
@@ -133,7 +131,7 @@ public class EventManager {
 
                         var16.add(var13);
                         var15.put(var11, var16);
-                        this.field_9083.put(var5, var15);
+                        this.moduleList.put(var5, var15);
                      } else {
                         class_890.field_4584.add(var1);
                      }
@@ -144,7 +142,7 @@ public class EventManager {
       }
    }
 
-   public void method_7911(Object var1) {
+   public void unsubscribe(Object var1) {
       if (var1 == null) {
          ;
       }
@@ -161,7 +159,7 @@ public class EventManager {
       }
    }
 
-   public void method_7914(class_8142 var1) {
+   public void method_7914(literalNothingClass var1) {
       if (var1 != null) {
          class_4182[] var4 = this.field_9081.get(var1.getClass());
          if (var4 != null) {

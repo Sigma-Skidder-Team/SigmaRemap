@@ -79,7 +79,7 @@ public class class_943 extends class_1859 {
       super.method_32130();
       byte var4 = 28;
       class_73.method_97((float)(this.field_36270 + var4), (float)(this.field_36261 + var4 + 10), 160.0F, 160.0F, NotificationIcons.field_11049, var1);
-      class_8646 var5 = SigmaMainClass.getInstance().method_3332().method_23083();
+      class_8646 var5 = SigmaMainClass.getInstance().getAccountManager().method_23083();
       if (var5 != null) {
          this.field_4818.method_32104(var5.method_39653());
          if (var5.method_39653()) {
@@ -102,13 +102,13 @@ public class class_943 extends class_1859 {
       new Thread(() -> {
          this.field_4812.method_32119(true);
          this.field_4816.method_32104(false);
-         class_8646 var3 = SigmaMainClass.getInstance().method_3332().method_23083();
+         class_8646 var3 = SigmaMainClass.getInstance().getAccountManager().method_23083();
          if (var3 != null) {
             var3.method_39656(this.field_4818.method_32165());
          }
 
-         SigmaMainClass.getInstance().method_3332().method_23089();
-         String var4 = SigmaMainClass.getInstance().method_3332().method_23079(this.field_4817.method_32165(), this.field_4814.method_32165(), var3);
+         SigmaMainClass.getInstance().getAccountManager().method_23089();
+         String var4 = SigmaMainClass.getInstance().getAccountManager().method_23079(this.field_4817.method_32165(), this.field_4814.method_32165(), var3);
          if (var4 != null) {
             class_5702 var5 = (class_5702)this.method_32167();
             var5.method_25789("Error", var4);

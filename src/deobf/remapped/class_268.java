@@ -167,7 +167,7 @@ public class class_268 extends Module {
    @EventListen
    @class_5355
    private void method_1196(class_3278 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
             if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                this.method_1208();

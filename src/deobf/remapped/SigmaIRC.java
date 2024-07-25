@@ -27,16 +27,16 @@ public class SigmaIRC {
    private List<UUID> field_21928 = new ArrayList<UUID>();
    public HashMap<UUID, class_4567> field_21927 = new HashMap<UUID, class_4567>();
    public HttpClient field_21931;
-   private SigmaLoginStuff field_21930;
+   private AccountManager field_21930;
    public class_3484 field_21933;
    public class_6427 field_21936;
 
-   public SigmaIRC(SigmaLoginStuff var1) {
+   public SigmaIRC(AccountManager var1) {
       SigmaMainClass.getInstance().getEventManager().subscribe(this);
       this.field_21931 = HttpClients.createDefault();
       this.field_21930 = var1;
       this.field_21936 = new class_6427(this);
-      class_1235.field_6811 = class_1235.field_6811 | SigmaMainClass.getInstance().method_3332().field_25929 != null;
+      class_1235.field_6811 = class_1235.field_6811 | SigmaMainClass.getInstance().getAccountManager().field_25929 != null;
    }
 
    public HashMap<UUID, class_4567> method_20859() {
@@ -135,7 +135,7 @@ public class SigmaIRC {
    }
 
    public static void method_20850() {
-      SigmaMainClass.getInstance().method_3332().method_23092();
+      SigmaMainClass.getInstance().getAccountManager().method_23092();
    }
 
    public static String method_20853(String var0) {

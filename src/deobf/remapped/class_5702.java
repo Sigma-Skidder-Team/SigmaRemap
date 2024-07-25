@@ -142,7 +142,7 @@ public class class_5702 extends class_2596 {
       }
 
       if (this.field_28864) {
-         String var6 = SigmaMainClass.getInstance().method_3332().method_23081().field_19615;
+         String var6 = SigmaMainClass.getInstance().getAccountManager().method_23081().field_19615;
          String var7 = "Welcome back";
          byte var8 = 100;
          byte var9 = 10;

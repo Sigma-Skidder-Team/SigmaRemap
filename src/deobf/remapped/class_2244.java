@@ -23,8 +23,8 @@ public class class_2244 extends Module {
    }
 
    public Entity method_10319() {
-      ArrayList var3 = Lists.newArrayList(mcInstance.field_9601.method_736());
-      var3.remove(mcInstance.field_9632);
+      ArrayList var3 = Lists.newArrayList(mc.field_9601.method_736());
+      var3.remove(mc.field_9632);
       Iterator var4 = var3.iterator();
 
       while (var4.hasNext()) {
@@ -44,8 +44,8 @@ public class class_2244 extends Module {
 
    @EventListen
    public void method_10321(class_5596 var1) {
-      if (mcInstance.field_9632 != null) {
-         if (mcInstance.field_9632.field_41697 % 14 == 0) {
+      if (mc.field_9632 != null) {
+         if (mc.field_9632.field_41697 % 14 == 0) {
             Entity var4 = this.method_10319();
             if (this.field_11172 == null
                && (this.field_11176 == null || this.field_11176.isEmpty() || (var4 != this.field_11174 || this.method_10320()) && var4 != null)) {
@@ -55,7 +55,7 @@ public class class_2244 extends Module {
 
                   try {
                      class_9806 var4x = new class_9806();
-                     class_8670 var5 = new class_8670(new class_7047(mcInstance.field_9632.method_37075()));
+                     class_8670 var5 = new class_8670(new class_7047(mc.field_9632.method_37075()));
                      class_4265 var6 = new class_4265(this.field_11174 = var4);
                      this.field_11171 = this.field_11174.field_41736;
                      class_1623 var7 = new class_1623(var5, var6);

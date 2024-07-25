@@ -18,7 +18,7 @@ public class MineMenCriticalsModule extends Module {
       if (var1.method_6449()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_9758.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("Minemen")) {
-            if (!mcInstance.field_9632.field_41726) {
+            if (!mc.field_9632.field_41726) {
                this.field_28365 = 0;
             } else {
                if (this.field_28365 > 0) {
@@ -33,9 +33,9 @@ public class MineMenCriticalsModule extends Module {
                var1.method_6444(true);
             }
 
-            if (mcInstance.field_9647.method_42156() && mcInstance.field_9632.field_41726) {
+            if (mc.field_9647.method_42156() && mc.field_9632.field_41726) {
                this.field_28365 = 0;
-               var1.method_6455(mcInstance.field_9632.method_37309());
+               var1.method_6455(mc.field_9632.method_37309());
                var1.method_6451(true);
             }
          }

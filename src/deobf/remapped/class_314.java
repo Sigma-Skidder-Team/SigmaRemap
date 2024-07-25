@@ -1048,7 +1048,7 @@ public class class_314 {
                return !var0.method_37367()
                   ? !(var0 instanceof class_704)
                      || !class_5876.method_26760((class_704)var0)
-                     || !SigmaMainClass.getInstance().getModuleManager().method_847(class_3595.class).method_42015()
+                     || !SigmaMainClass.getInstance().getModuleManager().method_847(TeamsModule.class).method_42015()
                   : false;
             }
          } else {

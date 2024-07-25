@@ -22,7 +22,7 @@ public class ModuleManager {
    }
 
    private void method_841(Class<? extends Module> var1) {
-      SigmaMainClass.getInstance().getEventManager().method_7911(var1);
+      SigmaMainClass.getInstance().getEventManager().unsubscribe(var1);
       this.field_637.remove(var1);
    }
 
@@ -41,7 +41,7 @@ public class ModuleManager {
       this.method_837();
       this.method_852(new BlockFlyModule());
       this.method_852(new FlyModule());
-      this.method_852(new class_6908());
+      this.method_852(new SpeedModule());
       this.method_852(new class_6592());
       this.method_852(new class_1213());
       this.method_852(new class_7033());
@@ -68,11 +68,11 @@ public class ModuleManager {
       this.method_852(new class_2941());
       this.method_852(new class_5981());
       this.method_852(new class_9824());
-      this.method_852(new class_2739());
+      this.method_852(new InteractRangeModule());
       this.method_852(new AutoLogModule());
-      this.method_852(new class_3595());
+      this.method_852(new TeamsModule());
       this.method_852(new AntiVoidModule());
-      this.method_852(new class_1931());
+      this.method_852(new ServerCrashesModule());
       this.method_852(new class_4557());
       this.method_852(new class_2656());
       this.method_852(new class_4137());
@@ -85,7 +85,7 @@ public class ModuleManager {
       this.method_852(new class_5870());
       this.method_852(new class_7218());
       this.method_852(new class_9459());
-      this.method_852(new class_1452());
+      this.method_852(new NoViewResetModule());
       this.method_852(new SneakModule());
       this.method_852(new DerpModule());
       this.method_852(new class_3095());
@@ -117,7 +117,7 @@ public class ModuleManager {
       this.method_852(new class_9357());
       this.method_852(new FastBreakModule());
       this.method_852(new class_8444());
-      this.method_852(new class_2739());
+      this.method_852(new InteractRangeModule());
       this.method_852(new class_1355());
       this.method_852(new class_2167());
       this.method_852(new class_652());
@@ -126,7 +126,7 @@ public class ModuleManager {
       this.method_852(new class_7376());
       this.method_852(new class_8726());
       this.method_852(new class_4820());
-      this.method_852(new class_1826());
+      this.method_852(new UnstuckModule());
       this.method_852(new AntiLevitationModule());
       this.method_852(new FakeForgeModule());
       if (var1 != class_6015.field_30645) {
@@ -154,7 +154,7 @@ public class ModuleManager {
          this.method_852(new PortalGUIModule());
          this.method_852(new class_428());
          this.method_852(new class_2590());
-         this.method_852(new class_4243());
+         this.method_852(new ESPModule());
          this.method_852(new AutoFishModule());
          this.method_852(new class_9543());
          this.method_852(new AutoTotemModule());
@@ -308,7 +308,7 @@ public class ModuleManager {
       Setting var3 = this.method_847(class_7033.class).method_41996().get("Mode");
       String var4 = (String)var3.field_25890;
       var3.method_23037("Dolphin");
-      var3.field_25890 = (T)var4;
+      var3.field_25890 = var4;
       return 0;
    }
 

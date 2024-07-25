@@ -10,8 +10,8 @@ public class class_6424 extends SecondModule {
 
    public int method_29349(boolean var1) {
       for (int var4 = 36; var4 < 45; var4++) {
-         if (mcInstance.field_9632.field_3869.method_18878(var4).method_35884()) {
-            class_6098 var5 = mcInstance.field_9632.field_3869.method_18878(var4).method_35898();
+         if (mc.field_9632.field_3869.method_18878(var4).method_35884()) {
+            class_6098 var5 = mc.field_9632.field_3869.method_18878(var4).method_35898();
             if (var5 != null) {
                if (!var1) {
                   if (var5.method_27960() == class_4897.field_25037 || var5.method_27960() == class_4897.field_24966) {
@@ -32,8 +32,8 @@ public class class_6424 extends SecondModule {
       }
 
       for (int var9 = 9; var9 < 36; var9++) {
-         if (mcInstance.field_9632.field_3869.method_18878(var9).method_35884()) {
-            class_6098 var10 = mcInstance.field_9632.field_3869.method_18878(var9).method_35898();
+         if (mc.field_9632.field_3869.method_18878(var9).method_35884()) {
+            class_6098 var10 = mc.field_9632.field_3869.method_18878(var9).method_35898();
             if (!var1) {
                if (var10.method_27960() == class_4897.field_25037 || var10.method_27960() == class_4897.field_24966) {
                   class_2740.method_12312(var9, 4);

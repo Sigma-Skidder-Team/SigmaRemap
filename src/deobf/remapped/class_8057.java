@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.lwjgl.opengl.GL11;
 
-public class class_8057 extends class_367 {
+public class class_8057 extends PremiumModule {
    public int field_41247;
    private class_2800 field_41249;
    private List<String> field_41251 = new ArrayList<String>();
@@ -39,16 +39,16 @@ public class class_8057 extends class_367 {
    private void method_36555(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_41249 != null) {
-            if (mcInstance.field_9647.method_42140()) {
+            if (mc.field_9647.method_42140()) {
                class_314.method_1443("§cNoteBlockPlayer isn't available in creative mode!");
                this.method_41991(false);
             } else {
-               if (!this.method_36552(this.field_41248) && mcInstance.field_9632.field_41697 % 4 == 0) {
+               if (!this.method_36552(this.field_41248) && mc.field_9632.field_41697 % 4 == 0) {
                   this.method_36551(this.field_41248);
                }
 
                if (this.method_36554(this.field_41248)) {
-                  if (Math.floor((double)((float) mcInstance.field_9632.field_41697 % this.field_41249.method_12744())) / 20.0 == 0.0) {
+                  if (Math.floor((double)((float) mc.field_9632.field_41697 % this.field_41249.method_12744())) / 20.0 == 0.0) {
                      if (this.field_41247 > this.field_41249.method_12736()) {
                         this.field_41247 = 0;
                      }
@@ -61,16 +61,16 @@ public class class_8057 extends class_367 {
                            for (class_663 var8 : this.field_41248) {
                               if ((var6.method_18719() != 3 && this.method_36553(var8) == 0 || var8.method_3033() == var6.method_18719())
                                  && class_1269.method_5703(var8.field_3677) == (float)(var6.method_18715() - 33)
-                                 && Math.sqrt(mcInstance.field_9632.method_37075().method_12180(var8.field_3674))
-                                    < (double) mcInstance.field_9647.method_42146()) {
+                                 && Math.sqrt(mc.field_9632.method_37075().method_12180(var8.field_3674))
+                                    < (double) mc.field_9647.method_42146()) {
                                  float[] var9 = class_7494.method_34077(var8.field_3674, Direction.field_817);
-                                 if ((double)var8.field_3674.method_12165() > mcInstance.field_9632.method_37309() + 1.0) {
+                                 if ((double)var8.field_3674.method_12165() > mc.field_9632.method_37309() + 1.0) {
                                     var9 = class_7494.method_34077(var8.field_3674, Direction.field_802);
                                  }
 
-                                 mcInstance.method_8614().method_4813(new class_3616(var9[0], var9[1], mcInstance.field_9632.field_41726));
-                                 mcInstance.method_8614().method_4813(new class_1586(class_7500.field_38263, var8.field_3674, Direction.field_817));
-                                 mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                                 mc.method_8614().method_4813(new class_3616(var9[0], var9[1], mc.field_9632.field_41726));
+                                 mc.method_8614().method_4813(new class_1586(class_7500.field_38263, var8.field_3674, Direction.field_817));
+                                 mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
                                  this.field_41246.add(var8.field_3674);
                               }
                            }
@@ -88,7 +88,7 @@ public class class_8057 extends class_367 {
    public boolean method_36554(List<class_663> var1) {
       for (class_663 var5 : var1) {
          if ((var5.field_3677 == -1.0F || this.method_36550(var5.field_3677, var5.field_3676))
-            && Math.sqrt(mcInstance.field_9632.method_37075().method_12180(var5.field_3674)) < (double) mcInstance.field_9647.method_42146()) {
+            && Math.sqrt(mc.field_9632.method_37075().method_12180(var5.field_3674)) < (double) mc.field_9647.method_42146()) {
             return false;
          }
       }
@@ -99,10 +99,10 @@ public class class_8057 extends class_367 {
    public boolean method_36552(List<class_663> var1) {
       for (class_663 var5 : var1) {
          if (var5.field_3677 == -1.0F
-            && Math.sqrt(mcInstance.field_9632.method_37075().method_12180(var5.field_3674)) < (double) mcInstance.field_9647.method_42146()) {
+            && Math.sqrt(mc.field_9632.method_37075().method_12180(var5.field_3674)) < (double) mc.field_9647.method_42146()) {
             float[] var6 = class_7494.method_34077(var5.field_3674, Direction.field_817);
-            mcInstance.method_8614().method_4813(new class_3616(var6[0], var6[1], mcInstance.field_9632.field_41726));
-            mcInstance.method_8614().method_4813(new class_1586(class_7500.field_38263, var5.field_3674, Direction.field_817));
+            mc.method_8614().method_4813(new class_3616(var6[0], var6[1], mc.field_9632.field_41726));
+            mc.method_8614().method_4813(new class_1586(class_7500.field_38263, var5.field_3674, Direction.field_817));
             this.field_41246.clear();
             this.field_41246.add(var5.field_3674);
             return true;
@@ -115,13 +115,13 @@ public class class_8057 extends class_367 {
    public boolean method_36551(List<class_663> var1) {
       for (class_663 var5 : var1) {
          if (this.method_36550(var5.field_3677, var5.field_3676)
-            && Math.sqrt(mcInstance.field_9632.method_37075().method_12180(var5.field_3674)) < (double) mcInstance.field_9647.method_42146()) {
-            if (mcInstance.field_9632.field_41697 % 1 == 0) {
+            && Math.sqrt(mc.field_9632.method_37075().method_12180(var5.field_3674)) < (double) mc.field_9647.method_42146()) {
+            if (mc.field_9632.field_41697 % 1 == 0) {
                float[] var6 = class_7494.method_34077(var5.field_3674, Direction.field_817);
-               mcInstance.field_9632.method_26597(class_2584.field_12791);
-               mcInstance.method_8614().method_4813(new class_3616(var6[0], var6[1], mcInstance.field_9632.field_41726));
-               mcInstance.method_8614()
-                  .method_4813(new class_8585(class_2584.field_12791, class_7494.method_34079(var6[0], var6[1], mcInstance.field_9647.method_42146() + 1.0F)));
+               mc.field_9632.method_26597(class_2584.field_12791);
+               mc.method_8614().method_4813(new class_3616(var6[0], var6[1], mc.field_9632.field_41726));
+               mc.method_8614()
+                  .method_4813(new class_8585(class_2584.field_12791, class_7494.method_34079(var6[0], var6[1], mc.field_9647.method_42146() + 1.0F)));
                this.field_41246.clear();
                this.field_41246.add(var5.field_3674);
             }
@@ -226,13 +226,13 @@ public class class_8057 extends class_367 {
       GL11.glDepthMask(false);
       GL11.glPushMatrix();
       GL11.glTranslated(
-         var1 - mcInstance.gameRenderer.method_35949().method_41627().method_61() + 0.5,
-         var3 - mcInstance.gameRenderer.method_35949().method_41627().method_60() + 1.0,
-         var5 - mcInstance.gameRenderer.method_35949().method_41627().method_62() + 0.5
+         var1 - mc.gameRenderer.method_35949().method_41627().method_61() + 0.5,
+         var3 - mc.gameRenderer.method_35949().method_41627().method_60() + 1.0,
+         var5 - mc.gameRenderer.method_35949().method_41627().method_62() + 0.5
       );
       GL11.glAlphaFunc(519, 0.0F);
-      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(mc.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(mc.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       class_3384 var10 = class_5320.field_27141;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
@@ -256,7 +256,7 @@ public class class_8057 extends class_367 {
 
    @Override
    public void onEnable() {
-      if (!mcInstance.field_9647.method_42140()) {
+      if (!mc.field_9647.method_42140()) {
          if (this.field_41251.isEmpty()) {
             class_314.method_1443("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
             class_314.method_1443("§cPlaying the only integrated demo song!");
@@ -285,8 +285,8 @@ public class class_8057 extends class_367 {
          this.field_41247 = 0;
          this.field_41248.clear();
 
-         for (class_1331 var4 : class_7494.method_34110(mcInstance.field_9647.method_42146())) {
-            class_2522 var5 = mcInstance.field_9601.method_28262(var4);
+         for (class_1331 var4 : class_7494.method_34110(mc.field_9647.method_42146())) {
+            class_2522 var5 = mc.field_9601.method_28262(var4);
             if (var5.method_8360() instanceof class_5128) {
                class_663 var6 = new class_663(var4);
                if (this.method_36553(var6) <= 24) {

@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_4975 implements class_8142 {
+public class class_4975 implements literalNothingClass {
    private static String[] field_25760;
    private final JSONObjectImpl field_25759;
 

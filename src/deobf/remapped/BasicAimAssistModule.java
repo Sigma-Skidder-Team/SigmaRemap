@@ -12,8 +12,8 @@ public class BasicAimAssistModule extends Module {
          Entity var4 = ((class_2329)this.method_42017()).method_10678(this.getFloatValueByName("Range"));
          if (var4 != null) {
             float[] var5 = class_7211.method_33013(var4);
-            mcInstance.field_9632.field_41701 = var5[0];
-            mcInstance.field_9632.field_41755 = var5[1];
+            mc.field_9632.field_41701 = var5[0];
+            mc.field_9632.field_41755 = var5[1];
          }
       }
    }

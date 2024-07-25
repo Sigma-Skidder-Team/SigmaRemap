@@ -23,7 +23,7 @@ public class class_9137 extends Module {
 
    @EventListen
    public void method_42048(class_139 var1) {
-      if (mcInstance.field_9601 != null) {
+      if (mc.field_9601 != null) {
          if (!(var1.method_557() instanceof class_3985)) {
             if (!(var1.method_557() instanceof class_6589)) {
                if (!(var1.method_557() instanceof class_4228)) {
@@ -49,7 +49,7 @@ public class class_9137 extends Module {
             class_3985 var12 = (class_3985)var1.method_557();
 
             for (int var8 : var12.method_18381()) {
-               Entity var9 = mcInstance.field_9601.method_29534(var8);
+               Entity var9 = mc.field_9601.method_29534(var8);
                if (var9 != null && var9 instanceof class_704) {
                   if (this.field_46733.containsKey(var9.method_37328())) {
                      this.field_46733.remove(var9.method_37328());
@@ -89,8 +89,8 @@ public class class_9137 extends Module {
 
       var4.sort(
          (var0, var1x) -> !(
-                  mcInstance.field_9632.method_37273((double)var0.field_21071, (double)var0.field_21077, (double)var0.field_21073)
-                     < mcInstance.field_9632.method_37273((double)var1x.field_21071, (double)var1x.field_21077, (double)var1x.field_21073)
+                  mc.field_9632.method_37273((double)var0.field_21071, (double)var0.field_21077, (double)var0.field_21073)
+                     < mc.field_9632.method_37273((double)var1x.field_21071, (double)var1x.field_21077, (double)var1x.field_21073)
                )
                ? -1
                : 1
@@ -109,7 +109,7 @@ public class class_9137 extends Module {
             );
             double var7 = Math.sqrt(class_9189.method_42355(var6));
             if (!(var7 > 300.0)) {
-               if (mcInstance.field_9601.method_22556(var6) != null && var5.field_21076) {
+               if (mc.field_9601.method_22556(var6) != null && var5.field_21076) {
                   int var9 = var6.method_12173() % 16;
                   int var10 = var6.method_12185() % 16;
                   if (var10 < 0) {
@@ -120,7 +120,7 @@ public class class_9137 extends Module {
                      var9 += 16;
                   }
 
-                  int var11 = mcInstance.field_9601.method_22556(var6).method_27353(class_3801.field_18592).method_9957(var9, var10);
+                  int var11 = mc.field_9601.method_22556(var6).method_27353(class_3801.field_18592).method_9957(var9, var10);
                   if (var11 == 0) {
                      var11 = 64;
                   }
@@ -149,8 +149,8 @@ public class class_9137 extends Module {
 
          class_3542.method_16420(33986, 240.0F, 240.0F);
          class_9162.method_42212();
-         TextureManager var10000 = mcInstance.method_8577();
-         mcInstance.method_8577();
+         TextureManager var10000 = mc.method_8577();
+         mc.method_8577();
          var10000.method_35674(TextureManager.field_40364);
       }
    }
@@ -237,20 +237,20 @@ public class class_9137 extends Module {
       GL11.glPushMatrix();
       GL11.glColor4fv(class_314.method_1412(var5));
       GL11.glTranslated((double)var1 + 0.5, (double)(var2 + 0.7F), (double)var3 + 0.5);
-      GL11.glRotatef((float)(mcInstance.field_9632.field_41697 % 90 * 4), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef((float)(mc.field_9632.field_41697 % 90 * 4), 0.0F, -1.0F, 0.0F);
       GL11.glLineWidth(1.4F + 1.0F / var6 * 1.4F);
       this.method_42046(0.6F);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslated((double)var1 + 0.5, (double)(var2 + 0.7F), (double)var3 + 0.5);
-      GL11.glRotatef((float)(mcInstance.field_9632.field_41697 % 90 * 4), 0.0F, 1.0F, 0.0F);
+      GL11.glRotatef((float)(mc.field_9632.field_41697 % 90 * 4), 0.0F, 1.0F, 0.0F);
       this.method_42050(var5);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslated((double)var1 + 0.5, (double)var2 + 1.9, (double)var3 + 0.5);
-      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(mcInstance.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(mc.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(mc.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       class_3384 var9 = class_5320.field_27141;
       GL11.glPushMatrix();
       GL11.glScalef(-0.009F * var6, -0.009F * var6, -0.009F * var6);

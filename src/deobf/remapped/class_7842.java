@@ -35,8 +35,8 @@ public class class_7842 {
                         class_4182 var18 = new class_4182(var9, var11, var15, var16);
                         Map var19 = SigmaMainClass.getInstance()
                            .getEventManager()
-                           .field_9083
-                           .getOrDefault(var11, new HashMap<Class<? extends class_8142>, List<class_4182>>());
+                           .moduleList
+                           .getOrDefault(var11, new HashMap<Class<? extends literalNothingClass>, List<class_4182>>());
                         Object var20 = (List)var19.get(var17);
                         if (var20 == null) {
                            var19.put(var17, var20 = new ArrayList());
@@ -44,7 +44,7 @@ public class class_7842 {
 
                         var20.add(var18);
                         var19.put(var17, var20);
-                        SigmaMainClass.getInstance().getEventManager().field_9083.put(var11, var19);
+                        SigmaMainClass.getInstance().getEventManager().moduleList.put(var11, var19);
                      }
                   }
                }

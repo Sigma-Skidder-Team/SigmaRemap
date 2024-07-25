@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class class_2590 extends class_367 {
+public class class_2590 extends PremiumModule {
    public long field_12812 = 0L;
    private List<class_385> field_12813 = new ArrayList<class_385>();
 
@@ -15,7 +15,7 @@ public class class_2590 extends class_367 {
 
    @EventListen
    private void method_11764(class_3278 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          if (SigmaMainClass.getInstance().method_3300().method_9486() && SigmaMainClass.getInstance().method_3300().field_10297.size() != 0) {
             long var4 = System.nanoTime() - this.field_12812;
             float var6 = Math.min(10.0F, Math.max(0.0F, (float)var4 / 1.810361E7F));

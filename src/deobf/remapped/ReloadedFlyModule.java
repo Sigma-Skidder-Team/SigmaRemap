@@ -14,14 +14,14 @@ public class ReloadedFlyModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_28771 = mcInstance.field_9632.method_37309();
+      this.field_28771 = mc.field_9632.method_37309();
       this.field_28770 = 0;
-      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
-         if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
+      if (!mc.gameOptions.keySneak.isKeyDown()) {
+         if (!mc.gameOptions.keySneak.isKeyDown()) {
             this.field_28772 = false;
          }
       } else {
-         mcInstance.gameOptions.keySneak.pressed = false;
+         mc.gameOptions.keySneak.pressed = false;
          this.field_28772 = true;
       }
    }
@@ -29,7 +29,7 @@ public class ReloadedFlyModule extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(0.0);
-      if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
+      if (mc.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
    }
@@ -37,7 +37,7 @@ public class ReloadedFlyModule extends Module {
    @EventListen
    private void method_25672(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28772 = true;
          }
@@ -47,7 +47,7 @@ public class ReloadedFlyModule extends Module {
    @EventListen
    private void method_25673(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28772 = false;
          }
@@ -73,7 +73,7 @@ public class ReloadedFlyModule extends Module {
                var4 -= (double)(this.getFloatValueByName("Speed") / 2.0F);
             }
 
-            if (mcInstance.gameOptions.keyJump.isKeyDown()) {
+            if (mc.gameOptions.keyJump.isKeyDown()) {
                var4 += (double)(this.getFloatValueByName("Speed") / 2.0F);
             }
 
@@ -115,8 +115,8 @@ public class ReloadedFlyModule extends Module {
             }
 
             this.field_28771 = var5.field_3144;
-            var5.field_3143 = mcInstance.field_9632.field_41701;
-            var5.field_3140 = mcInstance.field_9632.field_41755;
+            var5.field_3143 = mc.field_9632.field_41701;
+            var5.field_3140 = mc.field_9632.field_41755;
          }
       }
    }
@@ -138,10 +138,10 @@ public class ReloadedFlyModule extends Module {
    public void method_25678(class_1711 var1) {
       if (this.method_42015()) {
          double var4 = this.field_28771;
-         mcInstance.field_9632.field_41736.field_7333 = var4;
-         mcInstance.field_9632.field_41713 = var4;
-         mcInstance.field_9632.field_3864 = var4;
-         mcInstance.field_9632.field_41698 = var4;
+         mc.field_9632.field_41736.field_7333 = var4;
+         mc.field_9632.field_41713 = var4;
+         mc.field_9632.field_3864 = var4;
+         mc.field_9632.field_41698 = var4;
       }
    }
 }

@@ -7,7 +7,7 @@ public class class_1071 extends Module {
 
    @Override
    public void onEnable() {
-      String var3 = "op " + mcInstance.field_9632.method_45509();
+      String var3 = "op " + mc.field_9632.method_45509();
       var3.replace("&", "§");
       this.onDisable();
    }

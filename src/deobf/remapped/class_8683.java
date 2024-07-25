@@ -18,8 +18,8 @@ public class class_8683 extends Module {
             && var4.field_41749 <= (int)this.getFloatValueByName("HurtTime")
             && class_4181.field_20352 > 1
             && (this.field_44552.method_14772() > 200L || var4.field_41749 > 0)
-            && mcInstance.field_9632.field_41726
-            && mcInstance.field_9632.field_41774) {
+            && mc.field_9632.field_41726
+            && mc.field_9632.field_41774) {
             double[] var5 = new double[]{0.2, 0.0};
             if (this.getStringValueByName("Mode").equals("Hypixel")) {
                var5 = new double[]{
@@ -28,10 +28,10 @@ public class class_8683 extends Module {
             }
 
             for (int var6 = 0; var6 < var5.length; var6++) {
-               mcInstance.method_8614()
+               mc.method_8614()
                   .method_4813(
                      new class_9515(
-                        mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() + var5[var6], mcInstance.field_9632.method_37156(), false
+                        mc.field_9632.method_37302(), mc.field_9632.method_37309() + var5[var6], mc.field_9632.method_37156(), false
                      )
                   );
             }
@@ -51,7 +51,7 @@ public class class_8683 extends Module {
                this.field_44552.method_14776();
             }
 
-            if (this.field_44554 && mcInstance.field_9632.field_41726) {
+            if (this.field_44554 && mc.field_9632.field_41726) {
                var1.method_29715(true);
                this.field_44554 = false;
             }

@@ -12,12 +12,12 @@ public class LibreCraftFlyModule extends Module {
    @Override
    public void onEnable() {
       this.field_28095 = 0;
-      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
-         if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
+      if (!mc.gameOptions.keySneak.isKeyDown()) {
+         if (!mc.gameOptions.keySneak.isKeyDown()) {
             this.field_28094 = false;
          }
       } else {
-         mcInstance.gameOptions.keySneak.pressed = false;
+         mc.gameOptions.keySneak.pressed = false;
          this.field_28094 = true;
       }
    }
@@ -25,7 +25,7 @@ public class LibreCraftFlyModule extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(0.0);
-      if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
+      if (mc.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
    }
@@ -33,7 +33,7 @@ public class LibreCraftFlyModule extends Module {
    @EventListen
    private void method_25014(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28094 = true;
          }
@@ -43,7 +43,7 @@ public class LibreCraftFlyModule extends Module {
    @EventListen
    private void method_25015(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_28094 = false;
          }
@@ -97,14 +97,14 @@ public class LibreCraftFlyModule extends Module {
    public void method_25013(class_139 var1) {
       if (this.method_42015()) {
          Packet var4 = var1.method_557();
-         if (mcInstance.field_9632 != null && var4 instanceof class_509) {
+         if (mc.field_9632 != null && var4 instanceof class_509) {
             class_509 var5 = (class_509)var4;
             if (this.field_28095 >= 1) {
                this.field_28095 = -1;
             }
 
-            var5.field_3143 = mcInstance.field_9632.field_41701;
-            var5.field_3140 = mcInstance.field_9632.field_41755;
+            var5.field_3143 = mc.field_9632.field_41701;
+            var5.field_3140 = mc.field_9632.field_41755;
          }
       }
    }

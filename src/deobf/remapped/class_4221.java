@@ -37,7 +37,7 @@ public class class_4221 extends Module {
 
    @EventListen
    private void method_19656(class_3278 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          String var4 = this.getStringValueByName("Animation");
          String var5 = this.getStringValueByName("Outline");
          this.method_19659();

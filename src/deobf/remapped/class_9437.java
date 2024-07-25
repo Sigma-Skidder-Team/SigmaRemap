@@ -23,11 +23,11 @@ public class class_9437 extends Module {
          this.field_48180 = this.method_43660(this.getFloatValueByName("Range") / 2.0F);
          if (this.field_48180.isEmpty()) {
             this.field_48181 = null;
-         } else if (mcInstance.field_9647.method_42158() != class_4666.field_22761) {
+         } else if (mc.field_9647.method_42158() != class_4666.field_22761) {
             if (this.field_48181 != null) {
-               if (mcInstance.field_9601.method_28262(this.field_48181).method_8345()
+               if (mc.field_9601.method_28262(this.field_48181).method_8345()
                   || Math.sqrt(
-                        mcInstance.field_9632
+                        mc.field_9632
                            .method_37273(
                               (double)this.field_48181.method_12173() + 0.5,
                               (double)this.field_48181.method_12165() + 0.5,
@@ -45,11 +45,11 @@ public class class_9437 extends Module {
                var1.method_6448(var4[1]);
                class_6435 var5 = new class_6435(0, false, this.field_48181);
                SigmaMainClass.getInstance().getEventManager().method_7914(var5);
-               mcInstance.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
+               mc.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.getBooleanValueByName("NoSwing")) {
-                  mcInstance.field_9632.method_26597(class_2584.field_12791);
+                  mc.field_9632.method_26597(class_2584.field_12791);
                } else {
-                  mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
                }
             } else {
                this.field_48181 = this.field_48180.get(0);
@@ -60,20 +60,20 @@ public class class_9437 extends Module {
                var1.method_6448(var6[1]);
                class_6435 var8 = new class_6435(0, false, this.field_48181);
                SigmaMainClass.getInstance().getEventManager().method_7914(var8);
-               mcInstance.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
+               mc.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.getBooleanValueByName("NoSwing")) {
-                  mcInstance.field_9632.method_26597(class_2584.field_12791);
+                  mc.field_9632.method_26597(class_2584.field_12791);
                } else {
-                  mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
                }
             }
          } else {
             for (class_1331 var9 : this.field_48180) {
-               mcInstance.method_8614().method_4813(new class_1586(class_7500.field_38263, var9, class_7494.method_34113(var9)));
+               mc.method_8614().method_4813(new class_1586(class_7500.field_38263, var9, class_7494.method_34113(var9)));
                if (!this.getBooleanValueByName("NoSwing")) {
-                  mcInstance.field_9632.method_26597(class_2584.field_12791);
+                  mc.field_9632.method_26597(class_2584.field_12791);
                } else {
-                  mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
                }
             }
          }
@@ -82,14 +82,14 @@ public class class_9437 extends Module {
 
    @EventListen
    public void method_43659(class_3368 var1) {
-      if (this.field_48181 != null && !mcInstance.field_9601.method_28262(this.field_48181).method_8345()) {
+      if (this.field_48181 != null && !mc.field_9601.method_28262(this.field_48181).method_8345()) {
          int var4 = class_314.method_1444(this.getIntValueByName("Color"), 0.4F);
          GL11.glPushMatrix();
          GL11.glDisable(2929);
-         double var5 = (double)this.field_48181.method_12173() - mcInstance.gameRenderer.method_35949().method_41627().method_61();
-         double var7 = (double)this.field_48181.method_12165() - mcInstance.gameRenderer.method_35949().method_41627().method_60();
-         double var9 = (double)this.field_48181.method_12185() - mcInstance.gameRenderer.method_35949().method_41627().method_62();
-         class_4092 var11 = mcInstance.field_9601.method_28262(this.field_48181).method_8324(mcInstance.field_9601, this.field_48181).method_19483();
+         double var5 = (double)this.field_48181.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61();
+         double var7 = (double)this.field_48181.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60();
+         double var9 = (double)this.field_48181.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62();
+         class_4092 var11 = mc.field_9601.method_28262(this.field_48181).method_8324(mc.field_9601, this.field_48181).method_19483();
          class_8194 var12 = new class_8194(
             var5 + var11.field_19941,
             var7 + var11.field_19937,
@@ -105,14 +105,14 @@ public class class_9437 extends Module {
    }
 
    public static void method_43657(class_1331 var0) {
-      mcInstance.method_8614().method_4813(new class_1586(class_7500.field_38263, var0, Direction.field_817));
-      mcInstance.method_8614().method_4813(new class_1586(class_7500.field_38258, var0, Direction.field_817));
-      mcInstance.field_9601.method_29594(var0, class_4783.field_23184.method_29260());
+      mc.method_8614().method_4813(new class_1586(class_7500.field_38263, var0, Direction.field_817));
+      mc.method_8614().method_4813(new class_1586(class_7500.field_38258, var0, Direction.field_817));
+      mc.field_9601.method_29594(var0, class_4783.field_23184.method_29260());
    }
 
    private boolean method_43658(class_1331 var1) {
-      class_6414 var4 = mcInstance.field_9601.method_28262(var1).method_8360();
-      return mcInstance.field_9601.method_28262(var1).method_8362().method_24497() || var4 instanceof class_2830;
+      class_6414 var4 = mc.field_9601.method_28262(var1).method_8360();
+      return mc.field_9601.method_28262(var1).method_8362().method_24497() || var4 instanceof class_2830;
    }
 
    private List<class_1331> method_43660(float var1) {
@@ -122,14 +122,14 @@ public class class_9437 extends Module {
          for (float var6 = -var1; var6 <= var1; var6++) {
             for (float var7 = -var1; var7 <= var1; var7++) {
                class_1331 var8 = new class_1331(
-                  mcInstance.field_9632.method_37302() + (double)var6,
-                  mcInstance.field_9632.method_37309() + (double)var5,
-                  mcInstance.field_9632.method_37156() + (double)var7
+                  mc.field_9632.method_37302() + (double)var6,
+                  mc.field_9632.method_37309() + (double)var5,
+                  mc.field_9632.method_37156() + (double)var7
                );
-               if (!mcInstance.field_9601.method_28262(var8).method_8345()
-                  && mcInstance.field_9601.method_28262(var8).method_8364().method_22001()
+               if (!mc.field_9601.method_28262(var8).method_8345()
+                  && mc.field_9601.method_28262(var8).method_8364().method_22001()
                   && Math.sqrt(
-                        mcInstance.field_9632
+                        mc.field_9632
                            .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
                      )
                      < (double)var1) {
@@ -141,12 +141,12 @@ public class class_9437 extends Module {
                         }
                         break;
                      case "Bed":
-                        if (!(mcInstance.field_9601.method_28262(var8).method_8360() instanceof class_3633)) {
+                        if (!(mc.field_9601.method_28262(var8).method_8360() instanceof class_3633)) {
                            continue;
                         }
                         break;
                      case "Egg":
-                        if (!(mcInstance.field_9601.method_28262(var8).method_8360() instanceof class_5730)) {
+                        if (!(mc.field_9601.method_28262(var8).method_8360() instanceof class_5730)) {
                            continue;
                         }
                   }

@@ -11,9 +11,9 @@ public class class_7244 extends Module {
    @EventListen
    private void method_33141(class_139 var1) {
       if (this.method_42015()) {
-         if (mcInstance.field_9632 != null && var1.method_557() instanceof class_4548) {
+         if (mc.field_9632 != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
-            if (var4.method_21093() == mcInstance.field_9632.method_37145()) {
+            if (var4.method_21093() == mc.field_9632.method_37145()) {
                if (this.getFloatValueByName("H-Multiplier") == 0.0F && this.getFloatValueByName("V-Multiplier") == 0.0F) {
                   var1.method_29715(true);
                }

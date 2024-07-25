@@ -9,7 +9,7 @@ public class class_9357 extends Module {
       this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
       this.addSetting(new FloatSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method_23029(var1 -> {
          if (this.getBooleanValueByName("Custom time") && this.method_42015()) {
-            mcInstance.field_9601.method_719(-((long)this.getFloatValueByName("Time")));
+            mc.field_9601.method_719(-((long)this.getFloatValueByName("Time")));
          }
       }));
       this.addSetting(new BooleanSetting("Disable rain", "Disable rain", true));
@@ -17,16 +17,16 @@ public class class_9357 extends Module {
 
    @Override
    public void onEnable() {
-      this.field_47767 = mcInstance.field_9601.method_29578(1.0F);
-      if (mcInstance.field_9601.method_29578(1.0F) != 1.0F) {
-         if (mcInstance.field_9601.method_29578(1.0F) == 0.0F) {
+      this.field_47767 = mc.field_9601.method_29578(1.0F);
+      if (mc.field_9601.method_29578(1.0F) != 1.0F) {
+         if (mc.field_9601.method_29578(1.0F) == 0.0F) {
             this.field_47768 = false;
          }
       } else {
          this.field_47768 = true;
       }
 
-      mcInstance.field_9601.method_719((long)this.getFloatValueByName("Time"));
+      mc.field_9601.method_719((long)this.getFloatValueByName("Time"));
    }
 
    @EventListen
@@ -50,8 +50,8 @@ public class class_9357 extends Module {
             this.field_47767 = (float)((double)this.field_47767 - 0.05);
          }
 
-         mcInstance.field_9601.method_29582(this.field_47767);
-         mcInstance.field_9601.method_29560(this.field_47767);
+         mc.field_9601.method_29582(this.field_47767);
+         mc.field_9601.method_29560(this.field_47767);
       }
    }
 

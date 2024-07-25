@@ -17,30 +17,30 @@ public class class_2419 extends Module {
 
    @EventListen
    public void method_11038(class_1393 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          this.field_12048++;
-         boolean var4 = var1.method_6454() > mcInstance.field_9632.method_37309() - 1.0E-6
-            && var1.method_6454() < mcInstance.field_9632.method_37309() + 1.0E-6;
+         boolean var4 = var1.method_6454() > mc.field_9632.method_37309() - 1.0E-6
+            && var1.method_6454() < mc.field_9632.method_37309() + 1.0E-6;
          if (var4) {
-            var1.method_6455(mcInstance.field_9632.method_37309() + 0.4);
+            var1.method_6455(mc.field_9632.method_37309() + 0.4);
             var1.method_6451(false);
          }
 
          if (this.field_12048 > 60) {
-            var1.method_6455(mcInstance.field_9632.method_37309() + 0.4);
+            var1.method_6455(mc.field_9632.method_37309() + 0.4);
             var1.method_6451(false);
          } else {
             for (int var5 = 0; var5 < 10; var5++) {
                boolean var6 = var5 > 2 && var5 < 8;
                double var7 = !var6 ? -0.2 : 0.2;
                class_9515 var9 = new class_9515(
-                  mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() + var7, mcInstance.field_9632.method_37156(), true
+                  mc.field_9632.method_37302(), mc.field_9632.method_37309() + var7, mc.field_9632.method_37156(), true
                );
-               mcInstance.method_8614().method_4813(var9);
+               mc.method_8614().method_4813(var9);
             }
 
-            mcInstance.field_9632.field_30502 = 0.0;
-            if (mcInstance.field_9632.field_41697 <= 1) {
+            mc.field_9632.field_30502 = 0.0;
+            if (mc.field_9632.field_41697 <= 1) {
                this.field_12047.clear();
             }
 
@@ -48,7 +48,7 @@ public class class_2419 extends Module {
                for (int var10 = 0; var10 < this.field_12047.size(); var10++) {
                   class_6287 var11 = this.field_12047.get(var10);
                   if (var11.method_28689()) {
-                     mcInstance.method_8614().method_4813(var11.method_28687());
+                     mc.method_8614().method_4813(var11.method_28687());
                      this.field_12047.remove(var10);
                   }
                }

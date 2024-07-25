@@ -26,11 +26,11 @@ public class class_3854 extends Module {
       String var3 = this.getStringValueByName("Mode");
       this.field_18794 = 1.0F;
       this.field_18800 = -1;
-      if (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F)) {
+      if (mc.field_9632.field_41726 || class_314.method_1413(mc.field_9632, 0.001F)) {
          this.field_18794 = this.getFloatValueByName("Timer Boost");
       }
 
-      if (mcInstance.field_9632.field_41726) {
+      if (mc.field_9632.field_41726) {
          switch (var3) {
             case "Basic":
                this.field_18795 = 0.0;
@@ -59,7 +59,7 @@ public class class_3854 extends Module {
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3 * 0.7);
       this.field_18794 = 1.0F;
-      mcInstance.field_9616.field_32603 = 1.0F;
+      mc.field_9616.field_32603 = 1.0F;
       this.field_18800 = -1;
    }
 
@@ -88,7 +88,7 @@ public class class_3854 extends Module {
    @class_3932
    @class_5355
    public void method_17884(class_139 var1) {
-      if (mcInstance.method_8614() != null && class_314.method_1387()) {
+      if (mc.method_8614() != null && class_314.method_1387()) {
          Packet var4 = var1.method_557();
          if (this.method_42015()) {
             if (var4 instanceof class_509) {
@@ -127,7 +127,7 @@ public class class_3854 extends Module {
       }
 
       if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
-         mcInstance.field_9616.field_32603 = this.field_18794;
+         mc.field_9616.field_32603 = this.field_18794;
       }
 
       if (this.field_18798) {
@@ -165,7 +165,7 @@ public class class_3854 extends Module {
 
          double var6 = 0.99375 - (double)this.field_18800 * 1.0E-13;
          this.field_18795 *= var6;
-         if (mcInstance.field_9632.field_41744 || mcInstance.field_9632.field_41774) {
+         if (mc.field_9632.field_41744 || mc.field_9632.field_41774) {
             this.field_18795 = 0.0;
          }
 
@@ -177,19 +177,19 @@ public class class_3854 extends Module {
          }
 
          class_8865.method_40777(var1, this.field_18795);
-         if (!mcInstance.field_9632.field_41726 || !class_314.method_1413(mcInstance.field_9632, 0.001F)) {
+         if (!mc.field_9632.field_41726 || !class_314.method_1413(mc.field_9632, 0.001F)) {
             this.field_18800++;
             var1.method_35235(0.0);
             class_314.method_1408(0.0);
             if (this.field_18800 % 5 < 4) {
-               double var12 = mcInstance.field_9632.method_37302();
-               double var14 = mcInstance.field_9632.method_37309();
-               double var16 = mcInstance.field_9632.method_37156();
-               mcInstance.field_9632.method_37256(var12, var14 + 1.0E-14, var16);
+               double var12 = mc.field_9632.method_37302();
+               double var14 = mc.field_9632.method_37309();
+               double var16 = mc.field_9632.method_37156();
+               mc.field_9632.method_37256(var12, var14 + 1.0E-14, var16);
             }
          }
 
-         class_1343 var18 = mcInstance.field_9632.method_37287(var1.method_35233().method_6214(0.0, -var1.method_35233().method_60(), 0.0));
+         class_1343 var18 = mc.field_9632.method_37287(var1.method_35233().method_6214(0.0, -var1.method_35233().method_60(), 0.0));
          double var19 = Math.abs(Math.sqrt(var18.method_6221()) - this.field_18795);
          boolean var21 = var19 < 1.0E-4;
          if (this.getBooleanValueByName("No Collision") && this.field_18795 > var10) {
@@ -218,11 +218,11 @@ public class class_3854 extends Module {
             }
 
             var1.method_35230(var18);
-            if (!var21 && mcInstance.field_9632.method_37309() % 1.0 > 0.1F && class_8865.method_40772()) {
+            if (!var21 && mc.field_9632.method_37309() % 1.0 > 0.1F && class_8865.method_40772()) {
                for (class_1343 var25 : var22) {
                   var25.field_7336 = var25.field_7336 * this.field_18795;
                   var25.field_7334 = var25.field_7334 * this.field_18795;
-                  double var26 = Math.abs(Math.sqrt(mcInstance.field_9632.method_37287(var25).method_6221()) - this.field_18795);
+                  double var26 = Math.abs(Math.sqrt(mc.field_9632.method_37287(var25).method_6221()) - this.field_18795);
                   var21 = var26 < 1.0E-4;
                   if (var21) {
                      var1.method_35230(var25);
@@ -232,7 +232,7 @@ public class class_3854 extends Module {
             }
          }
 
-         if (mcInstance.gameOptions.keyJump.pressed) {
+         if (mc.gameOptions.keyJump.pressed) {
             var1.method_35235(0.25);
          }
       }

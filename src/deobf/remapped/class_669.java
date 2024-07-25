@@ -16,12 +16,12 @@ public class class_669 extends Module {
 
    @Override
    public void onEnable() {
-      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
-         if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
+      if (!mc.gameOptions.keySneak.isKeyDown()) {
+         if (!mc.gameOptions.keySneak.isKeyDown()) {
             this.field_3720 = false;
          }
       } else {
-         mcInstance.gameOptions.keySneak.pressed = false;
+         mc.gameOptions.keySneak.pressed = false;
          this.field_3720 = true;
       }
    }
@@ -32,14 +32,14 @@ public class class_669 extends Module {
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3);
       if (this.field_3720) {
-         mcInstance.gameOptions.keySneak.pressed = true;
+         mc.gameOptions.keySneak.pressed = true;
       }
    }
 
    @EventListen
    private void method_3072(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = true;
          }
@@ -49,7 +49,7 @@ public class class_669 extends Module {
    @EventListen
    private void method_3075(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = false;
          }
@@ -59,8 +59,8 @@ public class class_669 extends Module {
    @EventListen
    public void method_3074(class_1393 var1) {
       if (this.method_42015()) {
-         if (!mcInstance.field_9632.field_41726 && this.getBooleanValueByName("Kick bypass")) {
-            if (this.field_3718 > 0 && this.field_3718 % 30 == 0 && !class_314.method_1413(mcInstance.field_9632, 0.01F)) {
+         if (!mc.field_9632.field_41726 && this.getBooleanValueByName("Kick bypass")) {
+            if (this.field_3718 > 0 && this.field_3718 % 30 == 0 && !class_314.method_1413(mc.field_9632, 0.01F)) {
                if (class_3347.method_15349() != class_412.field_1747.method_2055()) {
                   var1.method_6455(var1.method_6454() - 0.04);
                } else {
@@ -72,26 +72,26 @@ public class class_669 extends Module {
                   double var6 = var1.method_6454();
                   ArrayList var8 = new ArrayList();
                   if (!(var6 - var4 > 9.0)) {
-                     mcInstance.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
+                     mc.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
                   } else {
                      while (var6 > var4 + 9.0) {
                         var6 -= 9.0;
                         var8.add(var6);
-                        mcInstance.method_8614().method_4813(new class_9515(var1.method_6450(), var6, var1.method_6438(), true));
+                        mc.method_8614().method_4813(new class_9515(var1.method_6450(), var6, var1.method_6438(), true));
                      }
 
                      for (Double var10 : var8) {
-                        mcInstance.method_8614().method_4813(new class_9515(var1.method_6450(), var10, var1.method_6438(), true));
+                        mc.method_8614().method_4813(new class_9515(var1.method_6450(), var10, var1.method_6438(), true));
                      }
 
-                     mcInstance.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
+                     mc.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
                      Collections.reverse(var8);
 
                      for (Double var12 : var8) {
-                        mcInstance.method_8614().method_4813(new class_9515(var1.method_6450(), var12, var1.method_6438(), true));
+                        mc.method_8614().method_4813(new class_9515(var1.method_6450(), var12, var1.method_6438(), true));
                      }
 
-                     mcInstance.method_8614().method_4813(new class_9515(var1.method_6450(), var1.method_6454(), var1.method_6438(), true));
+                     mc.method_8614().method_4813(new class_9515(var1.method_6450(), var1.method_6454(), var1.method_6438(), true));
                   }
 
                   this.field_3718 = 0;
@@ -104,18 +104,18 @@ public class class_669 extends Module {
    @EventListen
    public void method_3071(class_7767 var1) {
       if (this.method_42015()) {
-         if (!class_314.method_1413(mcInstance.field_9632, 0.01F)) {
+         if (!class_314.method_1413(mc.field_9632, 0.01F)) {
             this.field_3718++;
          } else {
             this.field_3718 = 0;
          }
 
          double var4 = (double)this.getFloatValueByName("Speed");
-         double var6 = !mcInstance.gameOptions.keyJump.pressed ? 0.0 : var4 / 2.0;
-         if (mcInstance.gameOptions.keyJump.pressed && mcInstance.gameOptions.keySneak.pressed) {
+         double var6 = !mc.gameOptions.keyJump.pressed ? 0.0 : var4 / 2.0;
+         if (mc.gameOptions.keyJump.pressed && mc.gameOptions.keySneak.pressed) {
             var6 = 0.0;
          } else if (!this.field_3720) {
-            if (mcInstance.gameOptions.keyJump.pressed) {
+            if (mc.gameOptions.keyJump.pressed) {
                var6 = var4 / 2.0;
             }
          } else {
@@ -129,10 +129,10 @@ public class class_669 extends Module {
    }
 
    private double method_3073() {
-      if (!(mcInstance.field_9632.method_37245().field_7333 < 1.0)) {
-         if (!mcInstance.field_9632.field_41726) {
-            class_4092 var3 = mcInstance.field_9632.field_41712.method_18928(0.0, -mcInstance.field_9632.method_37245().field_7333, 0.0);
-            Iterator var4 = mcInstance.field_9601.method_6680(mcInstance.field_9632, var3).iterator();
+      if (!(mc.field_9632.method_37245().field_7333 < 1.0)) {
+         if (!mc.field_9632.field_41726) {
+            class_4092 var3 = mc.field_9632.field_41712.method_18928(0.0, -mc.field_9632.method_37245().field_7333, 0.0);
+            Iterator var4 = mc.field_9601.method_6680(mc.field_9632, var3).iterator();
             double var5 = -1.0;
 
             while (var4.hasNext()) {
@@ -144,7 +144,7 @@ public class class_669 extends Module {
 
             return var5;
          } else {
-            return mcInstance.field_9632.method_37309();
+            return mc.field_9632.method_37309();
          }
       } else {
          return -1.0;

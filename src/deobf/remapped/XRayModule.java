@@ -10,7 +10,7 @@ public class XRayModule extends Module {
 
    @Override
    public void onEnable() {
-      mcInstance.worldRenderer.method_19998();
+      mc.worldRenderer.method_19998();
       FullbrightModule var3 = (FullbrightModule) SigmaMainClass.getInstance().getModuleManager().method_847(FullbrightModule.class);
       if (!var3.method_42015()) {
          var3.method_42023(true);
@@ -19,7 +19,7 @@ public class XRayModule extends Module {
 
    @Override
    public void onDisable() {
-      mcInstance.worldRenderer.method_19998();
+      mc.worldRenderer.method_19998();
    }
 
    @EventListen

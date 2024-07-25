@@ -16,11 +16,11 @@ public class DebugSpeedModule extends Module {
    @EventListen
    public void method_45511(class_5596 var1) {
       if (this.method_42015()) {
-         class_1343 var4 = new class_1343(mcInstance.field_9632.method_37302(), 0.0, mcInstance.field_9632.method_37156());
-         if (mcInstance.field_9632.field_41726 && this.field_49933 != null) {
+         class_1343 var4 = new class_1343(mc.field_9632.method_37302(), 0.0, mc.field_9632.method_37156());
+         if (mc.field_9632.field_41726 && this.field_49933 != null) {
             double var5 = var4.method_6195(this.field_49933) / (double)this.field_49934;
-            var5 *= (double) mcInstance.field_9616.field_32603;
-            boolean var7 = SigmaMainClass.getInstance().method_3310().method_25293() > 1 && mcInstance.field_9632.field_29600 == 0;
+            var5 *= (double) mc.field_9616.field_32603;
+            boolean var7 = SigmaMainClass.getInstance().method_3310().method_25293() > 1 && mc.field_9632.field_29600 == 0;
             double var8 = !var7 ? 0.312948 : 0.280616;
             double var10 = var5 / var8;
             BigDecimal var12 = new BigDecimal(var10);
@@ -45,7 +45,7 @@ public class DebugSpeedModule extends Module {
             );
          }
 
-         this.field_49934 = !mcInstance.field_9632.field_41726 ? this.field_49934++ : 1;
+         this.field_49934 = !mc.field_9632.field_41726 ? this.field_49934++ : 1;
          this.field_49933 = var4;
       }
    }

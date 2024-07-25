@@ -144,7 +144,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.method_32148(this.field_8716 = new class_7400(this, "Account", 0, var19, 0, var18, "Log in"));
       this.method_32148(this.field_8719 = new class_8911(this, "pre", 0, 0, 240, 100));
       this.field_8719.method_32184((var1x, var2x) -> {
-         if (SigmaMainClass.getInstance().method_3332().method_23081() != null) {
+         if (SigmaMainClass.getInstance().getAccountManager().method_23081() != null) {
             ((ExitScreenMenu)this.method_32167()).method_29468();
          } else {
             this.method_7601(new class_5702());
@@ -158,7 +158,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new AltManagerMenu()));
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {
-         if (SigmaMainClass.getInstance().method_3332().method_23081() != null) {
+         if (SigmaMainClass.getInstance().getAccountManager().method_23081() != null) {
             ((ExitScreenMenu)this.method_32167()).method_29469();
          } else {
             this.method_7601(new class_5702());
@@ -201,11 +201,11 @@ public class AnotherSigmaMainMenu extends class_7038 {
 
    @Override
    public void method_32145(int var1, int var2) {
-      this.field_8719.method_32104(!SigmaMainClass.getInstance().method_3332().method_23084());
+      this.field_8719.method_32104(!SigmaMainClass.getInstance().getAccountManager().method_23084());
       byte var5 = 30;
       byte var6 = 90;
-      this.field_8724.method_32175(var6 + (!SigmaMainClass.getInstance().method_3332().method_23084() ? 202 : 0));
-      this.field_8714.method_32175(var5 + (!SigmaMainClass.getInstance().method_3332().method_23084() ? 202 : 0));
+      this.field_8724.method_32175(var6 + (!SigmaMainClass.getInstance().getAccountManager().method_23084() ? 202 : 0));
+      this.field_8714.method_32175(var5 + (!SigmaMainClass.getInstance().getAccountManager().method_23084() ? 202 : 0));
       super.method_32145(var1, var2);
    }
 

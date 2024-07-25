@@ -13,9 +13,9 @@ public class class_1213 extends SecondModule {
       double[] var5 = new double[]{0.345, 0.2699, 0.183, 0.103, 0.024, -0.008, -0.04, -0.072, -0.14, -0.17, -0.019, -0.13};
       var1--;
       if (var1 < 0 || var1 >= var4.length) {
-         return mcInstance.field_9632.method_37098().field_7333;
+         return mc.field_9632.method_37098().field_7333;
       } else {
-         return class_314.method_1434() && !mcInstance.field_9632.field_41744 ? var4[var1] : var5[var1];
+         return class_314.method_1434() && !mc.field_9632.field_41744 ? var4[var1] : var5[var1];
       }
    }
 
@@ -50,6 +50,6 @@ public class class_1213 extends SecondModule {
          -0.426
       };
       var1--;
-      return var1 >= 0 && var1 < var4.length ? var4[var1] : mcInstance.field_9632.method_37098().field_7333;
+      return var1 >= 0 && var1 < var4.length ? var4[var1] : mc.field_9632.method_37098().field_7333;
    }
 }

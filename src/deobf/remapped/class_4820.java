@@ -45,9 +45,9 @@ public class class_4820 extends Module {
          if (!var1.method_6449()) {
             if (field_24090 != null) {
                if (this.getBooleanValueByName("No Swing") && !this.getBooleanValueByName("Mineplex")) {
-                  mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
                } else if (!this.getBooleanValueByName("No Swing")) {
-                  mcInstance.field_9632.method_26597(class_2584.field_12791);
+                  mc.field_9632.method_26597(class_2584.field_12791);
                }
 
                class_9529 var7 = new class_9529(
@@ -60,10 +60,10 @@ public class class_4820 extends Module {
                   field_24090,
                   false
                );
-               mcInstance.method_8614().method_4813(new class_8585(class_2584.field_12791, var7));
+               mc.method_8614().method_4813(new class_8585(class_2584.field_12791, var7));
             }
          } else {
-            List var8 = this.method_22209(!this.getBooleanValueByName("Mineplex") ? mcInstance.field_9647.method_42146() : 6.0F);
+            List var8 = this.method_22209(!this.getBooleanValueByName("Mineplex") ? mc.field_9647.method_42146() : 6.0F);
             if (var8.isEmpty()) {
                field_24090 = null;
             } else {
@@ -88,13 +88,13 @@ public class class_4820 extends Module {
          for (float var6 = -var1; var6 <= var1; var6++) {
             for (float var7 = -var1; var7 <= var1; var7++) {
                class_1331 var8 = new class_1331(
-                  mcInstance.field_9632.method_37302() + (double)var6,
-                  mcInstance.field_9632.method_37309() + (double)var5,
-                  mcInstance.field_9632.method_37156() + (double)var7
+                  mc.field_9632.method_37302() + (double)var6,
+                  mc.field_9632.method_37309() + (double)var5,
+                  mc.field_9632.method_37156() + (double)var7
                );
-               if (mcInstance.field_9601.method_28262(var8).method_8360() instanceof class_6726
+               if (mc.field_9601.method_28262(var8).method_8360() instanceof class_6726
                   && Math.sqrt(
-                        mcInstance.field_9632
+                        mc.field_9632
                            .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
                      )
                      < (double)var1) {

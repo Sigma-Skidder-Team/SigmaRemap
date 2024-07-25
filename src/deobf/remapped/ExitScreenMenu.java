@@ -325,7 +325,7 @@ public class ExitScreenMenu extends class_2596 {
                      var4.printStackTrace();
                   }
                }).start());
-            this.field_32976.method_8236(var0 -> SigmaMainClass.getInstance().method_3332().method_23089());
+            this.field_32976.method_8236(var0 -> SigmaMainClass.getInstance().getAccountManager().method_23089());
             this.field_32976.method_44406(true);
          });
       }

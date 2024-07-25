@@ -82,7 +82,7 @@ public class class_299 extends class_446 {
                var5x.method_32102(() -> var5x.method_9847());
 
                for (Module var7x : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
-                  if (var7x instanceof class_367 && !SigmaMainClass.getInstance().method_3332().method_23084()) {
+                  if (var7x instanceof PremiumModule && !SigmaMainClass.getInstance().getAccountManager().method_23084()) {
                      var7x.method_42018(false);
                   }
                }

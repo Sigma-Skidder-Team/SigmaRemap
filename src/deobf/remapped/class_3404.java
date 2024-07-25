@@ -12,16 +12,16 @@ public class class_3404 extends Module {
 
    @Override
    public void onEnable() {
-      this.field_16753 = mcInstance.field_9632.method_37302();
-      this.field_16751 = mcInstance.field_9632.method_37309();
-      this.field_16755 = mcInstance.field_9632.method_37156();
+      this.field_16753 = mc.field_9632.method_37302();
+      this.field_16751 = mc.field_9632.method_37309();
+      this.field_16755 = mc.field_9632.method_37156();
       this.field_16754 = 0;
    }
 
    @Override
    public void onDisable() {
       class_8865.method_40776(0.0);
-      if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
+      if (mc.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
    }
@@ -72,8 +72,8 @@ public class class_3404 extends Module {
             this.field_16753 = var5.field_3139;
             this.field_16751 = var5.field_3144;
             this.field_16755 = var5.field_3141;
-            var5.field_3143 = mcInstance.field_9632.field_41701;
-            var5.field_3140 = mcInstance.field_9632.field_41755;
+            var5.field_3143 = mc.field_9632.field_41701;
+            var5.field_3140 = mc.field_9632.field_41755;
          }
       }
    }
@@ -84,18 +84,18 @@ public class class_3404 extends Module {
          double var4 = this.field_16751;
          double var6 = this.field_16753;
          double var8 = this.field_16755;
-         mcInstance.field_9632.field_41736.field_7333 = var4;
-         mcInstance.field_9632.field_41713 = var4;
-         mcInstance.field_9632.field_3864 = var4;
-         mcInstance.field_9632.field_41698 = var4;
-         mcInstance.field_9632.field_41736.field_7336 = var6;
-         mcInstance.field_9632.field_41754 = var6;
-         mcInstance.field_9632.field_3868 = var6;
-         mcInstance.field_9632.field_41767 = var6;
-         mcInstance.field_9632.field_41736.field_7334 = var8;
-         mcInstance.field_9632.field_41724 = var8;
-         mcInstance.field_9632.field_3858 = var8;
-         mcInstance.field_9632.field_41725 = var8;
+         mc.field_9632.field_41736.field_7333 = var4;
+         mc.field_9632.field_41713 = var4;
+         mc.field_9632.field_3864 = var4;
+         mc.field_9632.field_41698 = var4;
+         mc.field_9632.field_41736.field_7336 = var6;
+         mc.field_9632.field_41754 = var6;
+         mc.field_9632.field_3868 = var6;
+         mc.field_9632.field_41767 = var6;
+         mc.field_9632.field_41736.field_7334 = var8;
+         mc.field_9632.field_41724 = var8;
+         mc.field_9632.field_3858 = var8;
+         mc.field_9632.field_41725 = var8;
       }
    }
 }

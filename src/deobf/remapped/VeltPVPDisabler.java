@@ -14,7 +14,7 @@ public class VeltPVPDisabler extends Module {
 
    @EventListen
    public void method_7848(class_1393 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449()) {
+      if (this.method_42015() && mc.field_9632 != null && var1.method_6449()) {
          this.field_9020++;
          double var4 = -0.1;
          if (this.field_9020 >= 20) {

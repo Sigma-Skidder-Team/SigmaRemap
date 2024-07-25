@@ -14,14 +14,14 @@ public class VeltPVPFlyModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_17460 = mcInstance.field_9632.method_37309();
+      this.field_17460 = mc.field_9632.method_37309();
       this.field_17458 = 0;
-      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
-         if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
+      if (!mc.gameOptions.keySneak.isKeyDown()) {
+         if (!mc.gameOptions.keySneak.isKeyDown()) {
             this.field_17456 = false;
          }
       } else {
-         mcInstance.gameOptions.keySneak.pressed = false;
+         mc.gameOptions.keySneak.pressed = false;
          this.field_17456 = true;
       }
    }
@@ -29,7 +29,7 @@ public class VeltPVPFlyModule extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(0.0);
-      if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
+      if (mc.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
    }
@@ -37,7 +37,7 @@ public class VeltPVPFlyModule extends Module {
    @EventListen
    private void method_16579(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_17456 = true;
          }
@@ -47,7 +47,7 @@ public class VeltPVPFlyModule extends Module {
    @EventListen
    private void method_16578(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_17456 = false;
          }
@@ -62,7 +62,7 @@ public class VeltPVPFlyModule extends Module {
          if (this.field_17458 <= 0) {
             if (this.field_17458 != -1) {
                if (this.field_17458 == 0) {
-                  if (!mcInstance.gameOptions.keyJump.isKeyDown() && var1.method_35236() > 0.0) {
+                  if (!mc.gameOptions.keyJump.isKeyDown() && var1.method_35236() > 0.0) {
                      var1.method_35235(-class_8865.method_40786());
                   }
 
@@ -70,12 +70,12 @@ public class VeltPVPFlyModule extends Module {
                   class_8865.method_40777(var1, var4 - 0.1);
                }
             } else {
-               if (!mcInstance.gameOptions.keyJump.isKeyDown()) {
+               if (!mc.gameOptions.keyJump.isKeyDown()) {
                   var1.method_35235(!this.field_17456 ? class_8865.method_40786() : -var4 / 2.0);
                } else {
                   var1.method_35235(!this.field_17456 ? var4 / 2.0 : class_8865.method_40786());
                   this.field_17459 = this.field_17460;
-                  this.field_17460 = !this.field_17456 ? mcInstance.field_9632.method_37309() + var1.method_35236() : this.field_17460;
+                  this.field_17460 = !this.field_17456 ? mc.field_9632.method_37309() + var1.method_35236() : this.field_17460;
                }
 
                class_314.method_1408(var1.method_35236());
@@ -156,10 +156,10 @@ public class VeltPVPFlyModule extends Module {
    public void method_16582(class_1711 var1) {
       if (this.method_42015()) {
          double var4 = this.field_17460;
-         mcInstance.field_9632.field_41736.field_7333 = var4;
-         mcInstance.field_9632.field_41713 = var4;
-         mcInstance.field_9632.field_3864 = var4;
-         mcInstance.field_9632.field_41698 = var4;
+         mc.field_9632.field_41736.field_7333 = var4;
+         mc.field_9632.field_41713 = var4;
+         mc.field_9632.field_3864 = var4;
+         mc.field_9632.field_41698 = var4;
       }
    }
 }

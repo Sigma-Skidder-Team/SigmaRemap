@@ -19,11 +19,11 @@ public class class_1903 extends Module {
 
    @EventListen
    public void method_8648(class_7767 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (mcInstance.field_9632.field_41706 > 3.0F + this.getFloatValueByName("Motion") * 4.0F && var1.method_35236() < -0.3) {
+      if (this.method_42015() && mc.field_9632 != null) {
+         if (mc.field_9632.field_41706 > 3.0F + this.getFloatValueByName("Motion") * 4.0F && var1.method_35236() < -0.3) {
             if (this.field_9713) {
-               if (mcInstance.field_9632.method_37309() + var1.method_35236() < this.field_9715) {
-                  var1.method_35235(this.field_9715 - mcInstance.field_9632.method_37309());
+               if (mc.field_9632.method_37309() + var1.method_35236() < this.field_9715) {
+                  var1.method_35235(this.field_9715 - mc.field_9632.method_37309());
                   this.field_9713 = false;
                }
             } else {
@@ -37,11 +37,11 @@ public class class_1903 extends Module {
             class_8865.method_40777(var1, 0.0);
             var1.method_35235((double)this.getFloatValueByName("Motion"));
             this.field_9713 = true;
-            this.field_9715 = mcInstance.field_9632.method_37309();
+            this.field_9715 = mc.field_9632.method_37309();
             this.field_9716 = -1;
          }
 
-         if (this.field_9713 && class_314.method_1413(mcInstance.field_9632, 0.001F)) {
+         if (this.field_9713 && class_314.method_1413(mc.field_9632, 0.001F)) {
             this.field_9713 = !this.field_9713;
          }
 

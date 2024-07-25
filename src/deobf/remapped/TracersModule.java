@@ -22,7 +22,7 @@ public class TracersModule extends Module {
          GL11.glShadeModel(7425);
 
          for (Entity var5 : class_314.method_1435()) {
-            if (var5 != mcInstance.field_9632
+            if (var5 != mc.field_9632
                && var5.method_37330()
                && var5.field_41712.method_18906() > 0.8
                && var5.field_41697 > 30

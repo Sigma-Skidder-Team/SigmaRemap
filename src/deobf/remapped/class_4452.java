@@ -34,8 +34,8 @@ public class class_4452 extends Module {
 
    @EventListen
    public void method_20638(class_7767 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (!mcInstance.field_9632.field_41726) {
+      if (this.method_42015() && mc.field_9632 != null) {
+         if (!mc.field_9632.field_41726) {
             if (this.field_21695 >= 0) {
                if (this.field_21696 && !class_314.method_1434()) {
                   this.field_21696 = !this.field_21696;
@@ -57,12 +57,12 @@ public class class_4452 extends Module {
                   this.field_21694 -= 0.05;
                }
 
-               if (mcInstance.field_9632.field_41744) {
+               if (mc.field_9632.field_41744) {
                   this.field_21693 = 0.35;
                   this.field_21691 = 1;
                }
 
-               if (mcInstance.field_9632.field_41774) {
+               if (mc.field_9632.field_41774) {
                   this.field_21694 = -0.078;
                   this.field_21695 = 23;
                }
@@ -92,12 +92,12 @@ public class class_4452 extends Module {
 
             this.field_21696 = class_314.method_1434();
             class_1331 var4 = new class_1331(
-               mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() - 0.4, mcInstance.field_9632.method_37156()
+               mc.field_9632.method_37302(), mc.field_9632.method_37309() - 0.4, mc.field_9632.method_37156()
             );
             if (class_314.method_1434()
                && (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) || this.method_42017().getBooleanValueByName("Auto Jump"))) {
-               mcInstance.field_9632.method_26595();
-               var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
+               mc.field_9632.method_26595();
+               var1.method_35235(mc.field_9632.method_37098().field_7333);
                class_8865.method_40777(var1, 0.0);
             }
          }
@@ -106,9 +106,9 @@ public class class_4452 extends Module {
 
    @EventListen
    public void method_20636(class_2911 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          this.field_21693 = 0.81 + (double)this.field_21691 * 0.095;
-         if (mcInstance.field_9632.method_37309() != (double)((int) mcInstance.field_9632.method_37309())) {
+         if (mc.field_9632.method_37309() != (double)((int) mc.field_9632.method_37309())) {
             this.field_21693 = 0.52;
             this.field_21691 = 1;
          }
@@ -127,7 +127,7 @@ public class class_4452 extends Module {
 
    @EventListen
    public void method_20635(class_139 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          if (var1.method_557() instanceof class_509) {
             this.field_21695 = -1;
             this.field_21691 = 0;

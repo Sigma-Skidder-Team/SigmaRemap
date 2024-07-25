@@ -28,7 +28,7 @@ public class class_2941 extends Module {
    @EventListen
    private void method_13455(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
-         if (!(mcInstance.field_9632.method_26576().method_27960() instanceof class_2100)) {
+         if (!(mc.field_9632.method_26576().method_27960() instanceof class_2100)) {
             this.field_14300.clear();
          } else {
             this.field_14300 = this.method_13451(this.method_42017().getFloatValueByName("Range"));
@@ -47,8 +47,8 @@ public class class_2941 extends Module {
       if (this.method_42015() && !this.getBooleanValueByName("Silent")) {
          if (!this.field_14300.isEmpty()) {
             float[] var4 = class_7211.method_33005((class_5834)this.field_14300.get(0));
-            mcInstance.field_9632.field_41701 = var4[0];
-            mcInstance.field_9632.field_41755 = var4[1];
+            mc.field_9632.field_41701 = var4[0];
+            mc.field_9632.field_41755 = var4[1];
          }
       }
    }
@@ -59,7 +59,7 @@ public class class_2941 extends Module {
 
       while (var5.hasNext()) {
          Entity var6 = (Entity)var5.next();
-         if (var6 == mcInstance.field_9632) {
+         if (var6 == mc.field_9632) {
             var5.remove();
          } else if (SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
             var5.remove();
@@ -67,9 +67,9 @@ public class class_2941 extends Module {
             var5.remove();
          } else if (((class_5834)var6).method_26551() == 0.0F) {
             var5.remove();
-         } else if (mcInstance.field_9632.method_37175(var6) > var1) {
+         } else if (mc.field_9632.method_37175(var6) > var1) {
             var5.remove();
-         } else if (!mcInstance.field_9632.method_26608((class_5834)var6)) {
+         } else if (!mc.field_9632.method_26608((class_5834)var6)) {
             var5.remove();
          } else if (var6 instanceof class_9399) {
             var5.remove();
@@ -81,7 +81,7 @@ public class class_2941 extends Module {
             var5.remove();
          } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof class_704)) {
             var5.remove();
-         } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var6)) {
+         } else if (mc.field_9632.method_37243() != null && mc.field_9632.method_37243().equals(var6)) {
             var5.remove();
          } else if (var6.method_37367()) {
             var5.remove();

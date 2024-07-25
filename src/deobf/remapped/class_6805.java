@@ -11,9 +11,9 @@ public class class_6805 extends Module {
    private void method_31154(class_2911 var1) {
       if (this.method_42015()) {
          if (KillauraModule.field_12548) {
-            mcInstance.method_8614()
+            mc.method_8614()
                .method_4813(
-                  new class_9515(mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309(), mcInstance.field_9632.method_37156(), true)
+                  new class_9515(mc.field_9632.method_37302(), mc.field_9632.method_37309(), mc.field_9632.method_37156(), true)
                );
          }
       }

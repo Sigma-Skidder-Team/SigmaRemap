@@ -21,12 +21,12 @@ public class class_6505 extends Module {
 
    @EventListen
    private void method_29653(class_139 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;
             String var6 = var5.method_23768().getString();
-            String var7 = mcInstance.field_9632.method_45509().getString().toLowerCase();
+            String var7 = mc.field_9632.method_45509().getString().toLowerCase();
             if (this.field_33098.getBooleanValueByName("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
                this.field_33098.method_33596(var6);
             }

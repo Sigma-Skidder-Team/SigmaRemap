@@ -16,7 +16,7 @@ public class class_7480 extends Module {
       this.field_38166 = -1;
       double var3 = this.field_38169[0];
       int var5 = this.field_38169.length;
-      double var6 = mcInstance.field_9632.method_37245().field_7333 - (double)((int) mcInstance.field_9632.method_37245().field_7333);
+      double var6 = mc.field_9632.method_37245().field_7333 - (double)((int) mc.field_9632.method_37245().field_7333);
 
       for (int var8 = 1; var8 < var5; var8++) {
          double var9 = this.field_38169[var8] - var6;
@@ -25,14 +25,14 @@ public class class_7480 extends Module {
          }
       }
 
-      this.field_38165 = (double)((int) mcInstance.field_9632.method_37245().field_7333) + var3;
-      mcInstance.field_9632.method_37256(mcInstance.field_9632.method_37245().field_7336, this.field_38165, mcInstance.field_9632.method_37245().field_7334);
+      this.field_38165 = (double)((int) mc.field_9632.method_37245().field_7333) + var3;
+      mc.field_9632.method_37256(mc.field_9632.method_37245().field_7336, this.field_38165, mc.field_9632.method_37245().field_7334);
    }
 
    @Override
    public void onDisable() {
       class_8865.method_40776(0.2);
-      if (mcInstance.field_9632.method_37098().field_7333 > 0.03) {
+      if (mc.field_9632.method_37098().field_7333 > 0.03) {
          class_314.method_1408(-0.0784);
       }
    }
@@ -43,7 +43,7 @@ public class class_7480 extends Module {
       this.field_38166 = -1;
       double var4 = this.field_38169[0];
       int var6 = this.field_38169.length;
-      double var7 = mcInstance.field_9632.method_37245().field_7333 - (double)((int) mcInstance.field_9632.method_37245().field_7333);
+      double var7 = mc.field_9632.method_37245().field_7333 - (double)((int) mc.field_9632.method_37245().field_7333);
 
       for (int var9 = 1; var9 < var6; var9++) {
          double var10 = this.field_38169[var9] - var7;
@@ -52,8 +52,8 @@ public class class_7480 extends Module {
          }
       }
 
-      this.field_38165 = (double)((int) mcInstance.field_9632.method_37245().field_7333) + var4;
-      mcInstance.field_9632.method_37256(mcInstance.field_9632.method_37245().field_7336, this.field_38165, mcInstance.field_9632.method_37245().field_7334);
+      this.field_38165 = (double)((int) mc.field_9632.method_37245().field_7333) + var4;
+      mc.field_9632.method_37256(mc.field_9632.method_37245().field_7336, this.field_38165, mc.field_9632.method_37245().field_7334);
    }
 
    @EventListen
@@ -81,21 +81,21 @@ public class class_7480 extends Module {
       var1.method_35235(0.0);
       if (this.field_38166 != 1) {
          if (this.field_38166 > 1) {
-            mcInstance.field_9632
-               .method_37256(mcInstance.field_9632.method_37245().field_7336, this.field_38165, mcInstance.field_9632.method_37245().field_7334);
-            double var4 = !mcInstance.gameOptions.keySneak.isKeyDown() ? 0.405 + (double)class_8865.method_40770() * 0.02 : 0.25;
+            mc.field_9632
+               .method_37256(mc.field_9632.method_37245().field_7336, this.field_38165, mc.field_9632.method_37245().field_7334);
+            double var4 = !mc.gameOptions.keySneak.isKeyDown() ? 0.405 + (double)class_8865.method_40770() * 0.02 : 0.25;
             class_8865.method_40777(var1, var4);
             this.field_38166 = 0;
          }
       } else {
-         if (mcInstance.gameOptions.keyJump.isKeyDown() && this.field_38168 == 0) {
+         if (mc.gameOptions.keyJump.isKeyDown() && this.field_38168 == 0) {
             var1.method_35235(0.5);
             this.field_38165 = this.field_38165 + var1.method_35236();
             this.field_38168 = 3;
             this.field_38166 = 0;
          }
 
-         double var6 = !mcInstance.gameOptions.keySneak.isKeyDown() ? 0.6 : 0.25;
+         double var6 = !mc.gameOptions.keySneak.isKeyDown() ? 0.6 : 0.25;
          class_8865.method_40777(var1, var6);
       }
 

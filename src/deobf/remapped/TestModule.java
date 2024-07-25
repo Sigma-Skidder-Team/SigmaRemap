@@ -57,12 +57,12 @@ public class TestModule extends Module {
    public void onEnable() {
       this.field_8821 = 0.0;
       this.field_8816 = new class_2440(1000, 100000, class_4043.field_19620);
-      this.field_8832 = class_9299.method_42810(mcInstance.field_9632.field_41701);
+      this.field_8832 = class_9299.method_42810(mc.field_9632.field_41701);
       this.field_8832 = 39.0F;
-      this.field_8826 = mcInstance.field_9632.field_41755;
-      double var3 = mcInstance.field_9632.method_37302();
-      double var5 = mcInstance.field_9632.method_37309();
-      double var7 = mcInstance.field_9632.method_37156();
+      this.field_8826 = mc.field_9632.field_41755;
+      double var3 = mc.field_9632.method_37302();
+      double var5 = mc.field_9632.method_37309();
+      double var7 = mc.field_9632.method_37156();
       double var9 = 3200000.000000002;
       this.field_8831 = false;
       this.field_8825 = 0.0;
@@ -70,7 +70,7 @@ public class TestModule extends Module {
 
    @Override
    public void onDisable() {
-      mcInstance.field_9616.field_32603 = 1.0F;
+      mc.field_9616.field_32603 = 1.0F;
    }
 
    @EventListen
@@ -137,7 +137,7 @@ public class TestModule extends Module {
    @EventListen
    @class_4249
    public void method_7650(class_8706 var1) {
-      if (!this.method_42015() || mcInstance.field_9623 != null) {
+      if (!this.method_42015() || mc.field_9623 != null) {
          ;
       }
    }
@@ -150,7 +150,7 @@ public class TestModule extends Module {
    @class_4249
    public void method_7655(class_2157 var1) {
       Packet var4 = var1.method_10047();
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          if (!(var4 instanceof class_3398)) {
             if (!(var4 instanceof class_4609)) {
                if (!(var4 instanceof class_7371)) {
@@ -202,7 +202,7 @@ public class TestModule extends Module {
             }
          } else {
             class_3398 var18 = (class_3398)var4;
-            Entity var6 = var18.method_15695(mcInstance.field_9601);
+            Entity var6 = var18.method_15695(mc.field_9601);
             if (var6 != null) {
                var6.method_45509().getString();
             } else {
@@ -237,7 +237,7 @@ public class TestModule extends Module {
                               }
                            } else {
                               class_4548 var8 = (class_4548)var1.method_557();
-                              if (var8.method_21093() != mcInstance.field_9632.method_37145()) {
+                              if (var8.method_21093() != mc.field_9632.method_37145()) {
                               }
                            }
                         } else {
@@ -293,16 +293,16 @@ public class TestModule extends Module {
 
       while (var5.hasNext()) {
          Entity var6 = (Entity)var5.next();
-         if (var6 != mcInstance.field_9632) {
+         if (var6 != mc.field_9632) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
                if (var6 instanceof class_5834) {
                   if (((class_5834)var6).method_26551() != 0.0F) {
-                     if (!(mcInstance.field_9632.method_37175(var6) > var1)) {
-                        if (mcInstance.field_9632.method_26608((class_5834)var6)) {
+                     if (!(mc.field_9632.method_37175(var6) > var1)) {
+                        if (mc.field_9632.method_26608((class_5834)var6)) {
                            if (!(var6 instanceof class_9399) && !(var6 instanceof class_704)) {
                               if (var6 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
                                  var5.remove();
-                              } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var6)) {
+                              } else if (mc.field_9632.method_37243() != null && mc.field_9632.method_37243().equals(var6)) {
                                  var5.remove();
                               } else if (!var6.method_37367()) {
                                  if (var6 instanceof class_704 && class_5876.method_26760((class_704)var6)) {
@@ -345,19 +345,19 @@ public class TestModule extends Module {
 
       while (var6.hasNext()) {
          Entity var7 = (Entity)var6.next();
-         if (var7 != mcInstance.field_9632) {
+         if (var7 != mc.field_9632) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var7)) {
                if (var7 instanceof class_5834) {
                   if (((class_5834)var7).method_26551() != 0.0F) {
-                     if (!(mcInstance.field_9632.method_37175(var7) > var1)) {
-                        if (mcInstance.field_9632.method_26608((class_5834)var7)) {
+                     if (!(mc.field_9632.method_37175(var7) > var1)) {
+                        if (mc.field_9632.method_26608((class_5834)var7)) {
                            if (!(var7 instanceof class_9399)) {
                               if (var7 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var7)) {
                                  var6.remove();
-                              } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var7)) {
+                              } else if (mc.field_9632.method_37243() != null && mc.field_9632.method_37243().equals(var7)) {
                                  var6.remove();
                               } else if (!var7.method_37367()) {
-                                 if (var5 == null || mcInstance.field_9632.method_37175(var7) < mcInstance.field_9632.method_37175(var5)) {
+                                 if (var5 == null || mc.field_9632.method_37175(var7) < mc.field_9632.method_37175(var5)) {
                                     var5 = var7;
                                  }
                               } else {
@@ -390,9 +390,9 @@ public class TestModule extends Module {
    }
 
    public static float[] method_7647(Entity var0) {
-      double var3 = var0.method_37302() - mcInstance.field_9632.method_37302();
-      double var5 = var0.method_37156() - mcInstance.field_9632.method_37156();
-      double var7 = mcInstance.field_9632.method_37309() + (double) mcInstance.field_9632.method_37277() - (var0.method_37309() + (double)var0.method_37277());
+      double var3 = var0.method_37302() - mc.field_9632.method_37302();
+      double var5 = var0.method_37156() - mc.field_9632.method_37156();
+      double var7 = mc.field_9632.method_37309() + (double) mc.field_9632.method_37277() - (var0.method_37309() + (double)var0.method_37277());
       float var9 = (float)Math.toDegrees(Math.atan2(var5, var3)) - 90.0F;
       double var10 = (double)class_9299.method_42842(var3 * var3 + var5 * var5);
       float var12 = (float)(-(Math.atan2(var7, var10) * 180.0 / Math.PI));
@@ -400,8 +400,8 @@ public class TestModule extends Module {
    }
 
    public static float method_7657(float var0, double var1, double var3) {
-      double var7 = var1 - mcInstance.field_9632.method_37302();
-      double var9 = var3 - mcInstance.field_9632.method_37156();
+      double var7 = var1 - mc.field_9632.method_37302();
+      double var9 = var3 - mc.field_9632.method_37156();
       double var11 = 0.0;
       if (var9 < 0.0 && var7 < 0.0) {
          if (var7 != 0.0) {
@@ -423,9 +423,9 @@ public class TestModule extends Module {
    }
 
    public static float method_7649(float var0, Entity var1, double var2) {
-      double var6 = var1.method_37302() - mcInstance.field_9632.method_37302();
-      double var8 = var1.method_37156() - mcInstance.field_9632.method_37156();
-      double var10 = var2 - 2.2 + (double)var1.method_37277() - mcInstance.field_9632.method_37309();
+      double var6 = var1.method_37302() - mc.field_9632.method_37302();
+      double var8 = var1.method_37156() - mc.field_9632.method_37156();
+      double var10 = var2 - 2.2 + (double)var1.method_37277() - mc.field_9632.method_37309();
       double var12 = (double)class_9299.method_42842(var6 * var6 + var8 * var8);
       double var14 = -Math.toDegrees(Math.atan(var10 / var12));
       return -class_9299.method_42810(var0 - (float)var14) - 2.5F;

@@ -14,12 +14,12 @@ public class class_7693 extends Module {
    }
 
    public class_6849 method_34853(int var1) {
-      if (var1 != mcInstance.gameOptions.keyLeft.field_30027.field_17800) {
-         if (var1 != mcInstance.gameOptions.keyRight.field_30027.field_17800) {
-            if (var1 != mcInstance.gameOptions.keyForward.field_30027.field_17800) {
-               if (var1 != mcInstance.gameOptions.keyBack.field_30027.field_17800) {
-                  if (var1 != mcInstance.gameOptions.keyAttack.field_30027.field_17800) {
-                     return var1 != mcInstance.gameOptions.keyUse.field_30027.field_17800 ? null : class_6849.field_35322;
+      if (var1 != mc.gameOptions.keyLeft.field_30027.field_17800) {
+         if (var1 != mc.gameOptions.keyRight.field_30027.field_17800) {
+            if (var1 != mc.gameOptions.keyForward.field_30027.field_17800) {
+               if (var1 != mc.gameOptions.keyBack.field_30027.field_17800) {
+                  if (var1 != mc.gameOptions.keyAttack.field_30027.field_17800) {
+                     return var1 != mc.gameOptions.keyUse.field_30027.field_17800 ? null : class_6849.field_35322;
                   } else {
                      return class_6849.field_35323;
                   }
@@ -39,7 +39,7 @@ public class class_7693 extends Module {
 
    @EventListen
    private void method_34855(class_3278 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
             if (!MinecraftClient.getInstance().gameOptions.field_45567) {
                this.field_39066 = var1.method_14966();
@@ -70,8 +70,8 @@ public class class_7693 extends Module {
                   }
 
                   String var12 = class_314.method_1451(var19.field_35319.field_30027.field_17800);
-                  if (var19.field_35319 != mcInstance.gameOptions.keyAttack) {
-                     if (var19.field_35319 == mcInstance.gameOptions.keyUse) {
+                  if (var19.field_35319 != mc.gameOptions.keyAttack) {
+                     if (var19.field_35319 == mc.gameOptions.keyUse) {
                         var12 = "R";
                      }
                   } else {
@@ -154,7 +154,7 @@ public class class_7693 extends Module {
 
    @EventListen
    private void method_34861(class_6435 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null) {
+      if (this.method_42015() && mc.field_9632 != null) {
          if (this.method_34853(var1.method_29384()) != null && !var1.method_29385()) {
             this.field_39064.add(new class_3074(this, this.method_34853(var1.method_29384())));
          }
@@ -163,7 +163,7 @@ public class class_7693 extends Module {
 
    @EventListen
    private void method_34850(class_8706 var1) {
-      if (!this.method_42015() || mcInstance.field_9632 == null) {
+      if (!this.method_42015() || mc.field_9632 == null) {
          ;
       }
    }

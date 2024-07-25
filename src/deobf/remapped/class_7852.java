@@ -29,17 +29,17 @@ public class class_7852 extends class_7038 {
       this.field_39795.method_32144(class_5320.field_27139);
       this.field_39795.method_32104(false);
       var10.method_32100((var2x, var3x) -> new Thread(() -> {
-            class_8646 var4x = SigmaMainClass.getInstance().method_3332().method_23083();
+            class_8646 var4x = SigmaMainClass.getInstance().getAccountManager().method_23083();
             if (var4x != null) {
                var4x.method_39656(this.field_39795.method_32165());
             }
 
-            this.field_39791 = SigmaMainClass.getInstance().method_3332().method_23085(var9.method_32165(), SigmaMainClass.getInstance().method_3332().method_23083());
+            this.field_39791 = SigmaMainClass.getInstance().getAccountManager().method_23085(var9.method_32165(), SigmaMainClass.getInstance().getAccountManager().method_23083());
             if (this.field_39791 == null) {
                this.field_39791 = "";
             }
 
-            if (SigmaMainClass.getInstance().method_3332().method_23084()) {
+            if (SigmaMainClass.getInstance().getAccountManager().method_23084()) {
                this.method_32102(() -> ((ExitScreenMenu)this.method_32167()).method_29470());
             }
          }).start());
@@ -57,7 +57,7 @@ public class class_7852 extends class_7038 {
 
       this.method_32124((int)(150.0F * (1.0F - var4)));
       this.method_32130();
-      class_8646 var5 = SigmaMainClass.getInstance().method_3332().method_23083();
+      class_8646 var5 = SigmaMainClass.getInstance().getAccountManager().method_23083();
       if (var5 != null) {
          this.field_39795.method_32104(var5.method_39653());
          if (var5.method_39654() != null) {

@@ -16,7 +16,7 @@ public class class_5291 extends Module {
    private void method_24134(class_7767 var1) {
       if (this.method_42015()) {
          if (!class_314.method_1383()) {
-            if (mcInstance.field_9632.field_41744) {
+            if (mc.field_9632.field_41744) {
                class_8865.method_40777(var1, 0.0);
                class_8865.method_40781(1.1920931E-8);
             }

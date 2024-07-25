@@ -9,10 +9,10 @@ public class FastLadderModule extends Module {
 
    @EventListen
    private void method_24511(class_7767 var1) {
-      if (this.method_42015() && mcInstance.field_9632.method_26505()) {
-         boolean var4 = class_3347.method_15349() >= class_412.field_1724.method_2055() || mcInstance.method_8530() == null;
-         if (!mcInstance.field_9632.field_41744 && (!mcInstance.field_9632.field_29654 || !var4)) {
-            if (this.getStringValueByName("Down mode").equals("OnSneak") && mcInstance.gameOptions.keySneak.isKeyDown()
+      if (this.method_42015() && mc.field_9632.method_26505()) {
+         boolean var4 = class_3347.method_15349() >= class_412.field_1724.method_2055() || mc.method_8530() == null;
+         if (!mc.field_9632.field_41744 && (!mc.field_9632.field_29654 || !var4)) {
+            if (this.getStringValueByName("Down mode").equals("OnSneak") && mc.gameOptions.keySneak.isKeyDown()
                || this.getStringValueByName("Down mode").equals("Always")) {
                var1.method_35235((double)(-this.getFloatValueByName("Motion")));
             }

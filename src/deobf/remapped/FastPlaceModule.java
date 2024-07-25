@@ -9,13 +9,13 @@ public class FastPlaceModule extends Module {
    @EventListen
    private void method_2745(class_5596 var1) {
       if (this.method_42015()) {
-         if (mcInstance.field_9632.method_26446() != null) {
-            if (mcInstance.field_9632.method_26446().method_27960() instanceof class_6201) {
-               if (mcInstance.field_9587 instanceof class_9529) {
+         if (mc.field_9632.method_26446() != null) {
+            if (mc.field_9632.method_26446().method_27960() instanceof class_6201) {
+               if (mc.field_9587 instanceof class_9529) {
                   if (!this.getBooleanValueByName("Reduce Delay")) {
-                     mcInstance.field_9570 = 0;
+                     mc.field_9570 = 0;
                   } else {
-                     mcInstance.field_9570--;
+                     mc.field_9570--;
                   }
                }
             }

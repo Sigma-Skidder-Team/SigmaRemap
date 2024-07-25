@@ -34,7 +34,7 @@ public class SigmaMainClass {
    private class_8691 field_3981;
    private class_4746 field_3967;
    private SigmaIRC field_3955;
-   private SigmaLoginStuff field_3971;
+   private AccountManager accountManager;
    private class_845 field_3970;
    private class_4566 field_3980;
    private class_6080 notificationManager;
@@ -78,8 +78,8 @@ public class SigmaMainClass {
       this.commandManager = new CommandManager();
       this.commandManager.method_22654();
       NotificationIcons.method_10227();
-      this.field_3971 = new SigmaLoginStuff();
-      this.field_3971.method_23087();
+      this.accountManager = new AccountManager();
+      this.accountManager.method_23087();
       this.field_3970 = new class_845();
       this.field_3970.method_3693();
       this.field_3977 = new class_6763();
@@ -132,7 +132,7 @@ public class SigmaMainClass {
 
             try {
                Thread.sleep(2000L);
-               if (getInstance().method_3332().method_23084() && (var7.smallImageKey == null || var7.smallImageKey.equals("premium"))) {
+               if (getInstance().getAccountManager().method_23084() && (var7.smallImageKey == null || var7.smallImageKey.equals("premium"))) {
                   var7.smallImageKey = "premium";
                   var7.smallImageText = "Premium";
                   var3.Discord_UpdatePresence(var7);
@@ -320,8 +320,8 @@ public class SigmaMainClass {
       return this.field_3973;
    }
 
-   public SigmaLoginStuff method_3332() {
-      return this.field_3971;
+   public AccountManager getAccountManager() {
+      return this.accountManager;
    }
 
    public class_201 method_3308() {

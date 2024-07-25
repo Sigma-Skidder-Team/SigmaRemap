@@ -35,8 +35,8 @@ public class class_2791 extends Module {
       }
 
       this.field_13711++;
-      if (mcInstance.field_9632 != null && mcInstance.method_8530() != null) {
-         if (mcInstance.field_9632.field_41697 <= 1) {
+      if (mc.field_9632 != null && mc.method_8530() != null) {
+         if (mc.field_9632.field_41697 <= 1) {
             this.field_13712.clear();
          }
 
@@ -46,8 +46,8 @@ public class class_2791 extends Module {
             for (int var5 = 0; var5 < var7; var5++) {
                class_5840 var6 = this.field_13712.get(var5);
                if (var6.method_26634()) {
-                  mcInstance.method_8614().method_9091();
-                  class_5121.method_23491(var6.method_26633(), mcInstance.method_8614().method_9091().field_26435);
+                  mc.method_8614().method_9091();
+                  class_5121.method_23491(var6.method_26633(), mc.method_8614().method_9091().field_26435);
                   this.field_13712.remove(var5);
                   var7--;
                   var5--;
@@ -75,7 +75,7 @@ public class class_2791 extends Module {
          }
       }
 
-      if (mcInstance.method_8530() != null) {
+      if (mc.method_8530() != null) {
          Packet var7 = var1.method_557();
          if (!(var7 instanceof class_7573)) {
             if (!(var7 instanceof class_8913)) {

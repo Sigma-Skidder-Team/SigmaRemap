@@ -98,6 +98,6 @@ public class DumperModule extends Module {
 
    private void method_25757(String var1) {
       this.field_28841 = var1;
-      mcInstance.method_8614().method_4813(new class_6248(0, "/" + var1));
+      mc.method_8614().method_4813(new class_6248(0, "/" + var1));
    }
 }

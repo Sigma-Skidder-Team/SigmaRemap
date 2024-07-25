@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1711 implements class_8142 {
+public class class_1711 implements literalNothingClass {
    private static String[] field_8850;
    public final float field_8848;
    public final long field_8849;

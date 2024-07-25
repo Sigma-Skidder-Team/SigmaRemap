@@ -18,7 +18,7 @@ public class class_5569 implements Runnable {
                break;
             }
          } else {
-            SigmaLoginStuff.field_25938 = this.field_28296;
+            AccountManager.field_25938 = this.field_28296;
             break;
          }
       }

@@ -8,15 +8,15 @@ public class class_4244 extends Module {
    @EventListen
    private void method_19784(class_5596 var1) {
       if (this.method_42015()) {
-         mcInstance.gameOptions.keySprint.pressed = true;
-         if (mcInstance.field_9632.field_29666 != 1) {
-            if (mcInstance.field_9632.field_29666 == 0) {
-               mcInstance.gameOptions.keyForward.pressed = class_9732.method_44934(
-                  MinecraftClient.getInstance().window.method_43181(), mcInstance.gameOptions.keyForward.field_30027.field_17800
+         mc.gameOptions.keySprint.pressed = true;
+         if (mc.field_9632.field_29666 != 1) {
+            if (mc.field_9632.field_29666 == 0) {
+               mc.gameOptions.keyForward.pressed = class_9732.method_44934(
+                  MinecraftClient.getInstance().window.method_43181(), mc.gameOptions.keyForward.field_30027.field_17800
                );
             }
          } else {
-            mcInstance.gameOptions.keyForward.pressed = false;
+            mc.gameOptions.keyForward.pressed = false;
          }
       }
    }
