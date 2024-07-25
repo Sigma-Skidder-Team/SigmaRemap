@@ -5,10 +5,10 @@ import com.google.gson.JsonSyntaxException;
 import javax.annotation.Nullable;
 
 public class class_2319 extends class_8273<class_5972> {
-   private static final class_4639 field_11615 = new class_4639("placed_block");
+   private static final Identifier field_11615 = new Identifier("placed_block");
 
    @Override
-   public class_4639 method_3899() {
+   public Identifier method_3899() {
       return field_11615;
    }
 
@@ -31,7 +31,7 @@ public class class_2319 extends class_8273<class_5972> {
       if (!var0.has("block")) {
          return null;
       } else {
-         class_4639 var3 = new class_4639(class_6539.method_29796(var0, "block"));
+         Identifier var3 = new Identifier(class_6539.method_29796(var0, "block"));
          return class_8669.field_44462.method_39794(var3).orElseThrow(() -> new JsonSyntaxException("Unknown block type '" + var3 + "'"));
       }
    }

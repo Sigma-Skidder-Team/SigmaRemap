@@ -1,10 +1,10 @@
 package remapped;
 
 public class class_326 extends class_7164<class_5542, class_6980<class_5542>> {
-   private static final class_4639 field_1215 = new class_4639("textures/entity/fox/fox.png");
-   private static final class_4639 field_1217 = new class_4639("textures/entity/fox/fox_sleep.png");
-   private static final class_4639 field_1214 = new class_4639("textures/entity/fox/snow_fox.png");
-   private static final class_4639 field_1213 = new class_4639("textures/entity/fox/snow_fox_sleep.png");
+   private static final Identifier field_1215 = new Identifier("textures/entity/fox/fox.png");
+   private static final Identifier field_1217 = new Identifier("textures/entity/fox/fox_sleep.png");
+   private static final Identifier field_1214 = new Identifier("textures/entity/fox/snow_fox.png");
+   private static final Identifier field_1213 = new Identifier("textures/entity/fox/snow_fox_sleep.png");
 
    public class_326(class_6122 var1) {
       super(var1, new class_6980<class_5542>(), 0.4F);
@@ -19,7 +19,7 @@ public class class_326 extends class_7164<class_5542, class_6980<class_5542>> {
       }
    }
 
-   public class_4639 method_1512(class_5542 var1) {
+   public Identifier method_1512(class_5542 var1) {
       if (var1.method_25199() != class_2715.field_13271) {
          return !var1.method_26507() ? field_1214 : field_1213;
       } else {

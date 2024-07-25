@@ -61,7 +61,7 @@ public class class_2870 {
       class_7507 var9 = class_7507.field_38322;
       Object var10 = null;
       boolean var11 = true;
-      class_4639 var12 = var1.method_23644();
+      Identifier var12 = var1.method_23644();
       class_7265 var13 = new class_7265();
       return var13.method_33202(var5, var6, var8, var1, var0, var9, (class_1868)var10, var11, var12);
    }

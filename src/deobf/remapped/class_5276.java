@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class class_5276 {
-   public static final class_4639 field_26958 = new class_4639("textures/atlas/shulker_boxes.png");
-   public static final class_4639 field_26970 = new class_4639("textures/atlas/beds.png");
-   public static final class_4639 field_26965 = new class_4639("textures/atlas/banner_patterns.png");
-   public static final class_4639 field_26973 = new class_4639("textures/atlas/shield_patterns.png");
-   public static final class_4639 field_26955 = new class_4639("textures/atlas/signs.png");
-   public static final class_4639 field_26980 = new class_4639("textures/atlas/chest.png");
+   public static final Identifier field_26958 = new Identifier("textures/atlas/shulker_boxes.png");
+   public static final Identifier field_26970 = new Identifier("textures/atlas/beds.png");
+   public static final Identifier field_26965 = new Identifier("textures/atlas/banner_patterns.png");
+   public static final Identifier field_26973 = new Identifier("textures/atlas/shield_patterns.png");
+   public static final Identifier field_26955 = new Identifier("textures/atlas/signs.png");
+   public static final Identifier field_26980 = new Identifier("textures/atlas/chest.png");
    private static final class_3581 field_26971 = class_3581.method_16755(field_26958);
    private static final class_3581 field_26962 = class_3581.method_16734(field_26970);
    private static final class_3581 field_26966 = class_3581.method_16750(field_26965);
@@ -27,17 +27,17 @@ public class class_5276 {
    private static final class_3581 field_26977 = class_3581.method_16747(class_8359.field_42824);
    private static final class_3581 field_26961 = class_3581.method_16766(class_8359.field_42824);
    private static final class_3581 field_26954 = class_3581.method_16735(class_8359.field_42824);
-   public static final class_2843 field_26968 = new class_2843(field_26958, new class_4639("entity/shulker/shulker"));
+   public static final class_2843 field_26968 = new class_2843(field_26958, new Identifier("entity/shulker/shulker"));
    public static final List<class_2843> field_26969 = Stream.<String>of(
          "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"
       )
-      .<class_2843>map(var0 -> new class_2843(field_26958, new class_4639("entity/shulker/shulker_" + var0)))
+      .<class_2843>map(var0 -> new class_2843(field_26958, new Identifier("entity/shulker/shulker_" + var0)))
       .collect(ImmutableList.toImmutableList());
    public static final Map<class_9271, class_2843> field_26953 = class_9271.method_42720()
       .collect(Collectors.toMap(Function.<class_9271>identity(), class_5276::method_24073));
    public static final class_2843[] field_26956 = Arrays.<class_9077>stream(class_9077.values())
       .sorted(Comparator.comparingInt(class_9077::method_41794))
-      .<class_2843>map(var0 -> new class_2843(field_26970, new class_4639("entity/bed/" + var0.method_41796())))
+      .<class_2843>map(var0 -> new class_2843(field_26970, new Identifier("entity/bed/" + var0.method_41796())))
       .<class_2843>toArray(class_2843[]::new);
    public static final class_2843 field_26960 = method_24077("trapped");
    public static final class_2843 field_26957 = method_24077("trapped_left");
@@ -118,11 +118,11 @@ public class class_5276 {
    }
 
    public static class_2843 method_24073(class_9271 var0) {
-      return new class_2843(field_26955, new class_4639("entity/signs/" + var0.method_42719()));
+      return new class_2843(field_26955, new Identifier("entity/signs/" + var0.method_42719()));
    }
 
    private static class_2843 method_24077(String var0) {
-      return new class_2843(field_26980, new class_4639("entity/chest/" + var0));
+      return new class_2843(field_26980, new Identifier("entity/chest/" + var0));
    }
 
    public static class_2843 method_24078(class_3757 var0, class_9264 var1, boolean var2) {

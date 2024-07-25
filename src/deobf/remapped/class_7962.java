@@ -45,7 +45,7 @@ public class class_7962 {
    }
 
    @Nullable
-   public class_2078 method_36022(class_9352 var1) {
+   public class_2078 method_36022(Window var1) {
       long var4 = GLFW.glfwGetWindowMonitor(var1.method_43181());
       if (var4 == 0L) {
          int var6 = var1.method_43171();

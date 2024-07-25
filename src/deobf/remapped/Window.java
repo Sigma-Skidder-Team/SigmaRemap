@@ -25,7 +25,7 @@ import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
 import org.lwjgl.util.tinyfd.TinyFileDialogs;
 
-public final class class_9352 implements AutoCloseable {
+public final class Window implements AutoCloseable {
    private static final Logger field_47718 = LogManager.getLogger();
    private final GLFWErrorCallback field_47714 = GLFWErrorCallback.create(this::method_43190);
    private final WindowEventHandler field_47731;
@@ -53,7 +53,7 @@ public final class class_9352 implements AutoCloseable {
    private boolean field_47732;
    private boolean field_47728;
 
-   public class_9352(WindowEventHandler var1, class_7962 var2, class_9706 var3, String var4, String var5) {
+   public Window(WindowEventHandler var1, class_7962 var2, class_9706 var3, String var4, String var5) {
       class_3542.method_16431(class_3542::method_16395);
       this.field_47734 = var2;
       this.method_43191();
@@ -253,7 +253,7 @@ public final class class_9352 implements AutoCloseable {
 
    private void method_43191() {
       class_3542.method_16431(class_3542::method_16395);
-      GLFW.glfwSetErrorCallback(class_9352::method_43196);
+      GLFW.glfwSetErrorCallback(Window::method_43196);
    }
 
    private static void method_43196(int var0, long var1) {

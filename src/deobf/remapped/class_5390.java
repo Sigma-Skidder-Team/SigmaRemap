@@ -36,12 +36,12 @@ public abstract class class_5390<C extends class_6157> {
    public static final class_5390<class_1941> field_27503 = method_24553("Nether_Fossil", new class_1769(class_1941.field_9913), class_1841.field_9352);
    public static final class_5390<class_7805> field_27514 = method_24553("Bastion_Remnant", new class_5827(class_7805.field_39518), class_1841.field_9349);
    public static final List<class_5390<?>> field_27502 = ImmutableList.of(field_27518, field_27516, field_27503);
-   private static final class_4639 field_27505 = new class_4639("jigsaw");
-   private static final Map<class_4639, class_4639> field_27499 = ImmutableMap.builder()
-      .put(new class_4639("nvi"), field_27505)
-      .put(new class_4639("pcp"), field_27505)
-      .put(new class_4639("bastionremnant"), field_27505)
-      .put(new class_4639("runtime"), field_27505)
+   private static final Identifier field_27505 = new Identifier("jigsaw");
+   private static final Map<Identifier, Identifier> field_27499 = ImmutableMap.builder()
+      .put(new Identifier("nvi"), field_27505)
+      .put(new Identifier("pcp"), field_27505)
+      .put(new Identifier("bastionremnant"), field_27505)
+      .put(new Identifier("runtime"), field_27505)
       .build();
    private final Codec<class_7865<C, class_5390<C>>> field_27507;
 
@@ -68,7 +68,7 @@ public abstract class class_5390<C extends class_6157> {
       if ("INVALID".equals(var6)) {
          return class_3200.field_15991;
       } else {
-         class_5390 var7 = class_8669.field_44457.method_39806(new class_4639(var6.toLowerCase(Locale.ROOT)));
+         class_5390 var7 = class_8669.field_44457.method_39806(new Identifier(var6.toLowerCase(Locale.ROOT)));
          if (var7 == null) {
             field_27496.error("Unknown feature id: {}", var6);
             return null;
@@ -85,8 +85,8 @@ public abstract class class_5390<C extends class_6157> {
                for (int var14 = 0; var14 < var12.size(); var14++) {
                   class_5734 var15 = var12.method_15764(var14);
                   String var16 = var15.method_25965("id").toLowerCase(Locale.ROOT);
-                  class_4639 var17 = new class_4639(var16);
-                  class_4639 var18 = field_27499.getOrDefault(var17, var17);
+                  Identifier var17 = new Identifier(var16);
+                  Identifier var18 = field_27499.getOrDefault(var17, var17);
                   class_2746 var19 = class_8669.field_44364.method_39806(var18);
                   if (var19 == null) {
                      field_27496.error("Unknown structure piece id: {}", var18);

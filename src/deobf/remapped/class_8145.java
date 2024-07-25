@@ -1459,7 +1459,7 @@ public abstract class class_8145 implements class_9875, class_5801 {
    @Nullable
    public final String method_37271() {
       class_6629 var3 = this.method_37387();
-      class_4639 var4 = class_6629.method_30472(var3);
+      Identifier var4 = class_6629.method_30472(var3);
       return var3.method_30471() && var4 != null ? var4.toString() : null;
    }
 

@@ -2,8 +2,8 @@ package remapped;
 
 public class class_7416<T extends class_4393> extends class_4171<T, class_2611<T>> {
    private class_1549 field_37850;
-   private static final class_4639 field_37853 = new class_4639("textures/entity/cow/red_mushroom.png");
-   private static final class_4639 field_37849 = new class_4639("textures/entity/cow/brown_mushroom.png");
+   private static final Identifier field_37853 = new Identifier("textures/entity/cow/red_mushroom.png");
+   private static final Identifier field_37849 = new Identifier("textures/entity/cow/brown_mushroom.png");
    private static boolean field_37852 = false;
    private static boolean field_37854 = false;
 
@@ -25,7 +25,7 @@ public class class_7416<T extends class_4393> extends class_4171<T, class_2611<T
       if (!var4.method_26449() && !var4.method_37109()) {
          class_856 var13 = MinecraftClient.getInstance().method_8505();
          class_2522 var14 = var4.method_20463().method_9649();
-         class_4639 var15 = this.method_33784(var14);
+         Identifier var15 = this.method_33784(var14);
          class_7907 var16 = null;
          if (var15 != null) {
             var16 = var2.method_11645(class_3581.method_16747(var15));
@@ -74,7 +74,7 @@ public class class_7416<T extends class_4393> extends class_4171<T, class_2611<T
       }
    }
 
-   private class_4639 method_33784(class_2522 var1) {
+   private Identifier method_33784(class_2522 var1) {
       class_6414 var4 = var1.method_8360();
       if (var4 == class_4783.field_23594 && field_37852) {
          return field_37853;

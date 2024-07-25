@@ -164,7 +164,7 @@ public abstract class class_1013 {
    );
    public static final class_4802 field_5299 = new class_4802("options.rawMouseInput", var0 -> var0.field_45409, (var0, var1) -> {
       var0.field_45409 = var1;
-      class_9352 var4 = MinecraftClient.getInstance().method_8552();
+      Window var4 = MinecraftClient.getInstance().method_8552();
       if (var4 != null) {
          var4.method_43176(var1);
       }

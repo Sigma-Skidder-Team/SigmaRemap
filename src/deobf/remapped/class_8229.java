@@ -24,17 +24,17 @@ public class class_8229 implements class_2231 {
    private static final Logger field_42251 = LogManager.getLogger();
    private static final int field_42252 = "functions/".length();
    private static final int field_42253 = field_42254[5].length();
-   private volatile Map<class_4639, class_2581> field_42250 = ImmutableMap.of();
+   private volatile Map<Identifier, class_2581> field_42250 = ImmutableMap.of();
    private final class_9639<class_2581> field_42249 = new class_9639<class_2581>(this::method_37679, "tags/functions", "function");
    private volatile class_9349<class_2581> field_42255 = class_9349.<class_2581>method_43146();
    private final int field_42257;
    private final CommandDispatcher<class_9155> field_42256;
 
-   public Optional<class_2581> method_37679(class_4639 var1) {
+   public Optional<class_2581> method_37679(Identifier var1) {
       return Optional.<class_2581>ofNullable(this.field_42250.get(var1));
    }
 
-   public Map<class_4639, class_2581> method_37681() {
+   public Map<Identifier, class_2581> method_37681() {
       return this.field_42250;
    }
 
@@ -42,7 +42,7 @@ public class class_8229 implements class_2231 {
       return this.field_42255;
    }
 
-   public class_2307<class_2581> method_37680(class_4639 var1) {
+   public class_2307<class_2581> method_37680(Identifier var1) {
       return this.field_42255.method_43145(var1);
    }
 
@@ -54,7 +54,7 @@ public class class_8229 implements class_2231 {
    @Override
    public CompletableFuture<Void> method_10277(class_6895 var1, class_7832 var2, class_3492 var3, class_3492 var4, Executor var5, Executor var6) {
       CompletableFuture var9 = this.field_42249.method_44502(var2, var5);
-      CompletableFuture var10 = CompletableFuture.<Collection<class_4639>>supplyAsync(
+      CompletableFuture var10 = CompletableFuture.<Collection<Identifier>>supplyAsync(
             () -> var2.method_35460("functions", var0x -> var0x.endsWith(".mcfunction")), var5
          )
          .<Map>thenCompose(
@@ -72,9 +72,9 @@ public class class_8229 implements class_2231 {
                   (class_8145)null
                );
 
-               for (class_4639 var9x : var3x) {
+               for (Identifier var9x : var3x) {
                   String var10x = var9x.method_21456();
-                  class_4639 var11 = new class_4639(var9x.method_21461(), var10x.substring(field_42252, var10x.length() - field_42253));
+                  Identifier var11 = new Identifier(var9x.method_21461(), var10x.substring(field_42252, var10x.length() - field_42253));
                   var6x.put(var11, CompletableFuture.<class_2581>supplyAsync(() -> {
                      List var7x = method_37678(var2, var9x);
                      return class_2581.method_11750(var11, this.field_42256, var7, var7x);
@@ -98,11 +98,11 @@ public class class_8229 implements class_2231 {
                return null;
             }).join());
          this.field_42250 = var5x.build();
-         this.field_42255 = this.field_42249.method_44503((Map<class_4639, class_1079>)var1x.getFirst());
+         this.field_42255 = this.field_42249.method_44503((Map<Identifier, class_1079>)var1x.getFirst());
       }, var6);
    }
 
-   private static List<String> method_37678(class_7832 var0, class_4639 var1) {
+   private static List<String> method_37678(class_7832 var0, Identifier var1) {
       try (class_4038 var4 = var0.method_35458(var1)) {
          return IOUtils.readLines(var4.method_18576(), StandardCharsets.UTF_8);
       } catch (IOException var18) {

@@ -15,18 +15,18 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 public class class_3300 implements class_8169 {
-   private static final Map<String, Pair<class_9264, class_4639>> field_16332 = Util.<Map<String, Pair<class_9264, class_4639>>>method_44659(
+   private static final Map<String, Pair<class_9264, Identifier>> field_16332 = Util.<Map<String, Pair<class_9264, Identifier>>>method_44659(
       Maps.newHashMap(), var0 -> {
-         var0.put("textures/entity/chest/normal_left.png", new Pair(class_9264.field_47279, new class_4639("textures/entity/chest/normal_double.png")));
-         var0.put("textures/entity/chest/normal_right.png", new Pair(class_9264.field_47277, new class_4639("textures/entity/chest/normal_double.png")));
-         var0.put("textures/entity/chest/normal.png", new Pair(class_9264.field_47274, new class_4639("textures/entity/chest/normal.png")));
-         var0.put("textures/entity/chest/trapped_left.png", new Pair(class_9264.field_47279, new class_4639("textures/entity/chest/trapped_double.png")));
-         var0.put("textures/entity/chest/trapped_right.png", new Pair(class_9264.field_47277, new class_4639("textures/entity/chest/trapped_double.png")));
-         var0.put("textures/entity/chest/trapped.png", new Pair(class_9264.field_47274, new class_4639("textures/entity/chest/trapped.png")));
-         var0.put("textures/entity/chest/christmas_left.png", new Pair(class_9264.field_47279, new class_4639("textures/entity/chest/christmas_double.png")));
-         var0.put("textures/entity/chest/christmas_right.png", new Pair(class_9264.field_47277, new class_4639("textures/entity/chest/christmas_double.png")));
-         var0.put("textures/entity/chest/christmas.png", new Pair(class_9264.field_47274, new class_4639("textures/entity/chest/christmas.png")));
-         var0.put("textures/entity/chest/ender.png", new Pair(class_9264.field_47274, new class_4639("textures/entity/chest/ender.png")));
+         var0.put("textures/entity/chest/normal_left.png", new Pair(class_9264.field_47279, new Identifier("textures/entity/chest/normal_double.png")));
+         var0.put("textures/entity/chest/normal_right.png", new Pair(class_9264.field_47277, new Identifier("textures/entity/chest/normal_double.png")));
+         var0.put("textures/entity/chest/normal.png", new Pair(class_9264.field_47274, new Identifier("textures/entity/chest/normal.png")));
+         var0.put("textures/entity/chest/trapped_left.png", new Pair(class_9264.field_47279, new Identifier("textures/entity/chest/trapped_double.png")));
+         var0.put("textures/entity/chest/trapped_right.png", new Pair(class_9264.field_47277, new Identifier("textures/entity/chest/trapped_double.png")));
+         var0.put("textures/entity/chest/trapped.png", new Pair(class_9264.field_47274, new Identifier("textures/entity/chest/trapped.png")));
+         var0.put("textures/entity/chest/christmas_left.png", new Pair(class_9264.field_47279, new Identifier("textures/entity/chest/christmas_double.png")));
+         var0.put("textures/entity/chest/christmas_right.png", new Pair(class_9264.field_47277, new Identifier("textures/entity/chest/christmas_double.png")));
+         var0.put("textures/entity/chest/christmas.png", new Pair(class_9264.field_47274, new Identifier("textures/entity/chest/christmas.png")));
+         var0.put("textures/entity/chest/ender.png", new Pair(class_9264.field_47274, new Identifier("textures/entity/chest/ender.png")));
       }
    );
    private static final List<String> field_16333 = Lists.newArrayList(
@@ -79,9 +79,9 @@ public class class_3300 implements class_8169 {
    private static final Set<String> field_16327 = field_16333.stream()
       .<String>map(var0 -> "textures/entity/banner/" + var0 + ".png")
       .collect(Collectors.<String>toSet());
-   public static final class_4639 field_16329 = new class_4639("textures/entity/shield_base.png");
-   public static final class_4639 field_16331 = new class_4639("textures/entity/banner_base.png");
-   public static final class_4639 field_16326 = new class_4639("textures/entity/iron_golem.png");
+   public static final Identifier field_16329 = new Identifier("textures/entity/shield_base.png");
+   public static final Identifier field_16331 = new Identifier("textures/entity/banner_base.png");
+   public static final Identifier field_16326 = new Identifier("textures/entity/iron_golem.png");
    private final class_8169 field_16334;
 
    public class_3300(class_8169 var1) {
@@ -92,7 +92,7 @@ public class class_3300 implements class_8169 {
       return this.field_16334.method_37465(var1);
    }
 
-   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, class_4639 var2) {
+   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, Identifier var2) {
       if (!"minecraft".equals(var2.method_21461())) {
          return this.field_16334.method_37467(var1, var2);
       } else {
@@ -108,7 +108,7 @@ public class class_3300 implements class_8169 {
                return this.field_16334.method_37467(var1, field_16331) && this.field_16334.method_37467(var1, var2);
             } else {
                Pair var6 = field_16332.get(var5);
-               return var6 != null && this.field_16334.method_37467(var1, (class_4639)var6.getSecond()) ? true : this.field_16334.method_37467(var1, var2);
+               return var6 != null && this.field_16334.method_37467(var1, (Identifier)var6.getSecond()) ? true : this.field_16334.method_37467(var1, var2);
             }
          } else {
             return false;
@@ -116,7 +116,7 @@ public class class_3300 implements class_8169 {
       }
    }
 
-   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, class_4639 var2) throws IOException {
+   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, Identifier var2) throws IOException {
       if (!"minecraft".equals(var2.method_21461())) {
          return this.field_16334.method_37466(var1, var2);
       } else {
@@ -159,7 +159,7 @@ public class class_3300 implements class_8169 {
                Pair var6 = field_16332.get(var5);
                if (var6 != null) {
                   class_9264 var7 = (class_9264)var6.getFirst();
-                  InputStream var8 = this.field_16334.method_37466(var1, (class_4639)var6.getSecond());
+                  InputStream var8 = this.field_16334.method_37466(var1, (Identifier)var6.getSecond());
                   if (var7 == class_9264.field_47274) {
                      return method_15137(var8);
                   }
@@ -322,7 +322,7 @@ public class class_3300 implements class_8169 {
       return var10;
    }
 
-   public Collection<class_4639> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<Identifier> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
       return this.field_16334.method_37464(var1, var2, var3, var4, var5);
    }
 

@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_6906<T extends class_1080> extends class_7067<T> {
-   private static final class_4639 field_35502 = new class_4639("textures/entity/minecart.png");
+   private static final Identifier field_35502 = new Identifier("textures/entity/minecart.png");
    public final class_6521<T> field_35503 = new class_1921<T>();
 
    public class_6906(class_6122 var1) {
@@ -76,7 +76,7 @@ public class class_6906<T extends class_1080> extends class_7067<T> {
       var4.method_36064();
    }
 
-   public class_4639 method_31644(T var1) {
+   public Identifier method_31644(T var1) {
       return field_35502;
    }
 

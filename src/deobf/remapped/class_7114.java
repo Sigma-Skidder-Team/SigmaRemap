@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class class_7114 extends class_2089 implements class_1463, class_5888 {
-   public static final class_4639 field_36678 = new class_4639("textures/gui/widgets.png");
+   public static final Identifier field_36678 = new Identifier("textures/gui/widgets.png");
    public int field_36671;
    public int field_36681;
    public int field_36670;

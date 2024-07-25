@@ -6,8 +6,8 @@ import com.mojang.datafixers.util.Pair;
 public class class_1292 {
    public static final class_8115 field_7111 = class_9863.method_45479(
       new class_8115(
-         new class_4639("village/snowy/town_centers"),
-         new class_4639("empty"),
+         new Identifier("village/snowy/town_centers"),
+         new Identifier("empty"),
          ImmutableList.of(
             Pair.of(class_2609.method_11826("village/snowy/town_centers/snowy_meeting_point_1"), 100),
             Pair.of(class_2609.method_11826("village/snowy/town_centers/snowy_meeting_point_2"), 50),
@@ -26,8 +26,8 @@ public class class_1292 {
    static {
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/streets"),
-            new class_4639("village/snowy/terminators"),
+            new Identifier("village/snowy/streets"),
+            new Identifier("village/snowy/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/snowy/streets/corner_01", class_4932.field_25560), 2),
                Pair.of(class_2609.method_11835("village/snowy/streets/corner_02", class_4932.field_25560), 2),
@@ -53,8 +53,8 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/zombie/streets"),
-            new class_4639("village/snowy/terminators"),
+            new Identifier("village/snowy/zombie/streets"),
+            new Identifier("village/snowy/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/snowy/zombie/streets/corner_01", class_4932.field_25560), 2),
                Pair.of(class_2609.method_11835("village/snowy/zombie/streets/corner_02", class_4932.field_25560), 2),
@@ -80,8 +80,8 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/houses"),
-            new class_4639("village/snowy/terminators"),
+            new Identifier("village/snowy/houses"),
+            new Identifier("village/snowy/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/snowy/houses/snowy_small_house_1"), 2),
                Pair.of(class_2609.method_11826("village/snowy/houses/snowy_small_house_2"), 2),
@@ -122,8 +122,8 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/zombie/houses"),
-            new class_4639("village/snowy/terminators"),
+            new Identifier("village/snowy/zombie/houses"),
+            new Identifier("village/snowy/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/snowy/zombie/houses/snowy_small_house_1", class_4932.field_25562), 2),
                Pair.of(class_2609.method_11835("village/snowy/zombie/houses/snowy_small_house_2", class_4932.field_25562), 2),
@@ -164,8 +164,8 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/terminators"),
-            new class_4639("empty"),
+            new Identifier("village/snowy/terminators"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_01", class_4932.field_25560), 1),
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_02", class_4932.field_25560), 1),
@@ -177,16 +177,16 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/trees"),
-            new class_4639("empty"),
+            new Identifier("village/snowy/trees"),
+            new Identifier("empty"),
             ImmutableList.of(Pair.of(class_2609.method_11830(class_7024.field_36170), 1)),
             class_7599.field_38708
          )
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/decor"),
-            new class_4639("empty"),
+            new Identifier("village/snowy/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/snowy/snowy_lamp_post_01"), 4),
                Pair.of(class_2609.method_11826("village/snowy/snowy_lamp_post_02"), 4),
@@ -201,8 +201,8 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/zombie/decor"),
-            new class_4639("empty"),
+            new Identifier("village/snowy/zombie/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/snowy/snowy_lamp_post_01", class_4932.field_25562), 1),
                Pair.of(class_2609.method_11835("village/snowy/snowy_lamp_post_02", class_4932.field_25562), 1),
@@ -217,8 +217,8 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/snowy/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/snowy/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/snowy/villagers/baby"), 1),
@@ -229,8 +229,8 @@ public class class_1292 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/snowy/zombie/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/snowy/zombie/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/snowy/zombie/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/snowy/zombie/villagers/unemployed"), 10)

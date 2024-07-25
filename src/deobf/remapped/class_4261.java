@@ -39,7 +39,7 @@ public class class_4261 implements class_2072, AutoCloseable {
    private final class_3710 field_20637;
 
    public class_4261(class_7832 var1, String var2) throws IOException {
-      class_4639 var5 = new class_4639("shaders/program/" + var2 + ".json");
+      Identifier var5 = new Identifier("shaders/program/" + var2 + ".json");
       this.field_20638 = var2;
       class_4038 var6 = null;
 
@@ -137,7 +137,7 @@ public class class_4261 implements class_2072, AutoCloseable {
    public static class_3710 method_19844(class_7832 var0, class_7667 var1, String var2) throws IOException {
       class_3710 var5 = var1.method_34733().get(var2);
       if (var5 == null) {
-         class_4639 var6 = new class_4639("shaders/program/" + var2 + var1.method_34737());
+         Identifier var6 = new Identifier("shaders/program/" + var2 + var1.method_34737());
          class_4038 var7 = var0.method_35458(var6);
 
          try {

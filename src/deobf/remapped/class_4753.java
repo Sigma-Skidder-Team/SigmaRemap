@@ -6,8 +6,8 @@ import com.mojang.datafixers.util.Pair;
 public class class_4753 {
    public static final class_8115 field_23026 = class_9863.method_45479(
       new class_8115(
-         new class_4639("village/taiga/town_centers"),
-         new class_4639("empty"),
+         new Identifier("village/taiga/town_centers"),
+         new Identifier("empty"),
          ImmutableList.of(
             Pair.of(class_2609.method_11835("village/taiga/town_centers/taiga_meeting_point_1", class_4932.field_25551), 49),
             Pair.of(class_2609.method_11835("village/taiga/town_centers/taiga_meeting_point_2", class_4932.field_25551), 49),
@@ -24,8 +24,8 @@ public class class_4753 {
    static {
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/streets"),
-            new class_4639("village/taiga/terminators"),
+            new Identifier("village/taiga/streets"),
+            new Identifier("village/taiga/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/taiga/streets/corner_01", class_4932.field_25560), 2),
                Pair.of(class_2609.method_11835("village/taiga/streets/corner_02", class_4932.field_25560), 2),
@@ -51,8 +51,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/zombie/streets"),
-            new class_4639("village/taiga/terminators"),
+            new Identifier("village/taiga/zombie/streets"),
+            new Identifier("village/taiga/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/taiga/zombie/streets/corner_01", class_4932.field_25560), 2),
                Pair.of(class_2609.method_11835("village/taiga/zombie/streets/corner_02", class_4932.field_25560), 2),
@@ -78,8 +78,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/houses"),
-            new class_4639("village/taiga/terminators"),
+            new Identifier("village/taiga/houses"),
+            new Identifier("village/taiga/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/taiga/houses/taiga_small_house_1", class_4932.field_25551), 4),
                Pair.of(class_2609.method_11835("village/taiga/houses/taiga_small_house_2", class_4932.field_25551), 4),
@@ -117,8 +117,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/zombie/houses"),
-            new class_4639("village/taiga/terminators"),
+            new Identifier("village/taiga/zombie/houses"),
+            new Identifier("village/taiga/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/taiga/zombie/houses/taiga_small_house_1", class_4932.field_25536), 4),
                Pair.of(class_2609.method_11835("village/taiga/zombie/houses/taiga_small_house_2", class_4932.field_25536), 4),
@@ -155,8 +155,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/terminators"),
-            new class_4639("empty"),
+            new Identifier("village/taiga/terminators"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_01", class_4932.field_25560), 1),
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_02", class_4932.field_25560), 1),
@@ -168,8 +168,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/decor"),
-            new class_4639("empty"),
+            new Identifier("village/taiga/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/taiga/taiga_lamp_post_1"), 10),
                Pair.of(class_2609.method_11826("village/taiga/taiga_decoration_1"), 4),
@@ -190,8 +190,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/zombie/decor"),
-            new class_4639("empty"),
+            new Identifier("village/taiga/zombie/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/taiga/taiga_decoration_1"), 4),
                Pair.of(class_2609.method_11826("village/taiga/taiga_decoration_2"), 1),
@@ -209,8 +209,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/taiga/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/taiga/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/taiga/villagers/baby"), 1),
@@ -221,8 +221,8 @@ public class class_4753 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/taiga/zombie/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/taiga/zombie/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/taiga/zombie/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/taiga/zombie/villagers/unemployed"), 10)

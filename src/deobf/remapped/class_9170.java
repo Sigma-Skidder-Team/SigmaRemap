@@ -1,10 +1,10 @@
 package remapped;
 
 public class class_9170 extends class_5837 {
-   private final class_4639 field_46929;
+   private final Identifier field_46929;
    private final long field_46927;
 
-   private class_9170(class_7279[] var1, class_4639 var2, long var3) {
+   private class_9170(class_7279[] var1, Identifier var2, long var3) {
       super(var1);
       this.field_46929 = var2;
       this.field_46927 = var3;

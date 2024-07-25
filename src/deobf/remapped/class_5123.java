@@ -8,13 +8,13 @@ import com.google.gson.JsonParseException;
 import java.util.Arrays;
 
 public class class_5123 {
-   public static final class_5123 field_26441 = new class_5123(0, new class_4639[0], new class_4639[0], class_7181.field_36927);
+   public static final class_5123 field_26441 = new class_5123(0, new Identifier[0], new Identifier[0], class_7181.field_36927);
    private final int field_26445;
-   private final class_4639[] field_26443;
-   private final class_4639[] field_26446;
+   private final Identifier[] field_26443;
+   private final Identifier[] field_26446;
    private final class_7181 field_26444;
 
-   public class_5123(int var1, class_4639[] var2, class_4639[] var3, class_7181 var4) {
+   public class_5123(int var1, Identifier[] var2, Identifier[] var3, class_7181 var4) {
       this.field_26445 = var1;
       this.field_26443 = var2;
       this.field_26446 = var3;
@@ -30,7 +30,7 @@ public class class_5123 {
          .method_39064(class_4933.field_25568);
       boolean var5 = false;
 
-      for (class_4639 var9 : this.field_26443) {
+      for (Identifier var9 : this.field_26443) {
          for (class_6098 var11 : var1.field_47801.method_1722().method_4604(var9).method_7862(var4)) {
             if (!var1.method_3245(var11)) {
                class_91 var12 = var1.method_3153(var11, false);
@@ -92,7 +92,7 @@ public class class_5123 {
          if (this.field_26443.length > 0) {
             JsonArray var4 = new JsonArray();
 
-            for (class_4639 var8 : this.field_26443) {
+            for (Identifier var8 : this.field_26443) {
                var4.add(var8.toString());
             }
 
@@ -102,7 +102,7 @@ public class class_5123 {
          if (this.field_26446.length > 0) {
             JsonArray var9 = new JsonArray();
 
-            for (class_4639 var13 : this.field_26446) {
+            for (Identifier var13 : this.field_26446) {
                var9.add(var13.toString());
             }
 
@@ -122,24 +122,24 @@ public class class_5123 {
    public static class_5123 method_23511(JsonObject var0) throws JsonParseException {
       int var3 = class_6539.method_29768(var0, "experience", 0);
       JsonArray var4 = class_6539.method_29788(var0, "loot", new JsonArray());
-      class_4639[] var5 = new class_4639[var4.size()];
+      Identifier[] var5 = new Identifier[var4.size()];
 
       for (int var6 = 0; var6 < var5.length; var6++) {
-         var5[var6] = new class_4639(class_6539.method_29795(var4.get(var6), "loot[" + var6 + "]"));
+         var5[var6] = new Identifier(class_6539.method_29795(var4.get(var6), "loot[" + var6 + "]"));
       }
 
       JsonArray var9 = class_6539.method_29788(var0, "recipes", new JsonArray());
-      class_4639[] var7 = new class_4639[var9.size()];
+      Identifier[] var7 = new Identifier[var9.size()];
 
       for (int var8 = 0; var8 < var7.length; var8++) {
-         var7[var8] = new class_4639(class_6539.method_29795(var9.get(var8), "recipes[" + var8 + "]"));
+         var7[var8] = new Identifier(class_6539.method_29795(var9.get(var8), "recipes[" + var8 + "]"));
       }
 
       class_7181 var10;
       if (!var0.has("function")) {
          var10 = class_7181.field_36927;
       } else {
-         var10 = new class_7181(new class_4639(class_6539.method_29796(var0, "function")));
+         var10 = new class_7181(new Identifier(class_6539.method_29796(var0, "function")));
       }
 
       return new class_5123(var3, var5, var7, var10);

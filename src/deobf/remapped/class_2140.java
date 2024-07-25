@@ -98,12 +98,12 @@ public class class_2140 extends class_3736 {
       }
    }
 
-   public Collection<class_4639> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<Identifier> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
       ZipFile var8;
       try {
          var8 = this.method_9999();
       } catch (IOException var17) {
-         return Collections.<class_4639>emptySet();
+         return Collections.<Identifier>emptySet();
       }
 
       Enumeration var9 = var8.entries();
@@ -119,7 +119,7 @@ public class class_2140 extends class_3736 {
                String var15 = var14.substring(var11.length());
                String[] var16 = var15.split("/");
                if (var16.length >= var4 + 1 && var5.test(var16[var16.length - 1])) {
-                  var10.add(new class_4639(var2, var15));
+                  var10.add(new Identifier(var2, var15));
                }
             }
          }

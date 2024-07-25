@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
 public abstract class class_2208<T extends class_4088> extends class_266 implements class_4378<T> {
-   public static final class_4639 field_10969 = new class_4639("textures/gui/container/inventory.png");
+   public static final Identifier field_10969 = new Identifier("textures/gui/container/inventory.png");
    public int field_10981 = 176;
    public int field_10973 = 166;
    public int field_10959;
@@ -194,7 +194,7 @@ public abstract class class_2208<T extends class_4088> extends class_266 impleme
       if (var7.method_28022() && var2.method_35886()) {
          Pair var14 = var2.method_35900();
          if (var14 != null) {
-            class_5155 var13 = this.field_943.method_8490((class_4639)var14.getFirst()).apply((class_4639)var14.getSecond());
+            class_5155 var13 = this.field_943.method_8490((Identifier)var14.getFirst()).apply((Identifier)var14.getSecond());
             this.field_943.method_8577().method_35674(var13.method_23608().method_38519());
             method_9782(var1, var5, var6, this.method_9777(), 16, 16, var13);
             var9 = true;

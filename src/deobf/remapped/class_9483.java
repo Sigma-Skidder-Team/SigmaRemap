@@ -55,7 +55,7 @@ public class class_9483 implements class_550 {
    }
 
    @Override
-   public class_4038 method_35458(class_4639 var1) throws IOException {
+   public class_4038 method_35458(Identifier var1) throws IOException {
       class_7832 var4 = this.field_48325.get(var1.method_21461());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());
@@ -65,13 +65,13 @@ public class class_9483 implements class_550 {
    }
 
    @Override
-   public boolean method_35456(class_4639 var1) {
+   public boolean method_35456(Identifier var1) {
       class_7832 var4 = this.field_48325.get(var1.method_21461());
       return var4 == null ? false : var4.method_35456(var1);
    }
 
    @Override
-   public List<class_4038> method_35457(class_4639 var1) throws IOException {
+   public List<class_4038> method_35457(Identifier var1) throws IOException {
       class_7832 var4 = this.field_48325.get(var1.method_21461());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());
@@ -81,7 +81,7 @@ public class class_9483 implements class_550 {
    }
 
    @Override
-   public Collection<class_4639> method_35460(String var1, Predicate<String> var2) {
+   public Collection<Identifier> method_35460(String var1, Predicate<String> var2) {
       HashSet var5 = Sets.newHashSet();
 
       for (class_3797 var7 : this.field_48325.values()) {
@@ -111,7 +111,7 @@ public class class_9483 implements class_550 {
       this.field_48332.add(var1);
    }
 
-   public class_4302 method_43804(Executor var1, Executor var2, List<class_2231> var3, CompletableFuture<class_3256> var4) {
+   public class_4302 method_43804(Executor var1, Executor var2, List<class_2231> var3, CompletableFuture<Unit> var4) {
       Object var7;
       if (!field_48328.isDebugEnabled()) {
          var7 = class_6535.method_29756(this, Lists.newArrayList(var3), var1, var2, var4);
@@ -124,7 +124,7 @@ public class class_9483 implements class_550 {
    }
 
    @Override
-   public class_4302 method_2650(Executor var1, Executor var2, CompletableFuture<class_3256> var3, List<class_8169> var4) {
+   public class_4302 method_2650(Executor var1, Executor var2, CompletableFuture<Unit> var3, List<class_8169> var4) {
       this.method_43803();
       field_48328.info(
          "Reloading ResourceManager: {}", new Supplier[]{() -> var4.stream().<CharSequence>map(class_8169::method_37470).collect(Collectors.joining(", "))}

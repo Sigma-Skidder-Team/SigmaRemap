@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_6339 extends class_6499<class_2547> {
-   private static final class_4639 field_32363 = new class_4639("textures/entity/illager/illusioner.png");
+   private static final Identifier field_32363 = new Identifier("textures/entity/illager/illusioner.png");
 
    public class_6339(class_6122 var1) {
       super(var1, new class_5723<class_2547>(0.0F, 0.0F, 64, 64), 0.5F);
@@ -9,7 +9,7 @@ public class class_6339 extends class_6499<class_2547> {
       this.field_32487.method_25894().field_8200 = true;
    }
 
-   public class_4639 method_29012(class_2547 var1) {
+   public Identifier method_29012(class_2547 var1) {
       return field_32363;
    }
 

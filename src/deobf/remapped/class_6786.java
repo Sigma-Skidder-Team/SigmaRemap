@@ -6,9 +6,9 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public class class_6786 extends class_3757 {
-   private class_4639 field_34997 = new class_4639("empty");
-   private class_4639 field_34998 = new class_4639("empty");
-   private class_4639 field_34995 = new class_4639("empty");
+   private Identifier field_34997 = new Identifier("empty");
+   private Identifier field_34998 = new Identifier("empty");
+   private Identifier field_34995 = new Identifier("empty");
    private class_1252 field_34996 = class_1252.field_6897;
    private String field_34994 = "minecraft:air";
 
@@ -20,15 +20,15 @@ public class class_6786 extends class_3757 {
       this(class_133.field_355);
    }
 
-   public class_4639 method_31111() {
+   public Identifier method_31111() {
       return this.field_34997;
    }
 
-   public class_4639 method_31102() {
+   public Identifier method_31102() {
       return this.field_34998;
    }
 
-   public class_4639 method_31108() {
+   public Identifier method_31108() {
       return this.field_34995;
    }
 
@@ -40,15 +40,15 @@ public class class_6786 extends class_3757 {
       return this.field_34996;
    }
 
-   public void method_31105(class_4639 var1) {
+   public void method_31105(Identifier var1) {
       this.field_34997 = var1;
    }
 
-   public void method_31109(class_4639 var1) {
+   public void method_31109(Identifier var1) {
       this.field_34998 = var1;
    }
 
-   public void method_31104(class_4639 var1) {
+   public void method_31104(Identifier var1) {
       this.field_34995 = var1;
    }
 
@@ -74,9 +74,9 @@ public class class_6786 extends class_3757 {
    @Override
    public void method_17394(class_2522 var1, class_5734 var2) {
       super.method_17394(var1, var2);
-      this.field_34997 = new class_4639(var2.method_25965("name"));
-      this.field_34998 = new class_4639(var2.method_25965("target"));
-      this.field_34995 = new class_4639(var2.method_25965("pool"));
+      this.field_34997 = new Identifier(var2.method_25965("name"));
+      this.field_34998 = new Identifier(var2.method_25965("target"));
+      this.field_34995 = new Identifier(var2.method_25965("pool"));
       this.field_34994 = var2.method_25965("final_state");
       this.field_34996 = class_1252.method_5640(var2.method_25965("joint"))
          .orElseGet(() -> !class_195.method_860(var1).method_1029().method_42629() ? class_1252.field_6897 : class_1252.field_6898);

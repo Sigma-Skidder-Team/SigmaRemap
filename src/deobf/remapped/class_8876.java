@@ -25,7 +25,7 @@ public class class_8876<T> extends class_3766<T> {
          Optional var9 = var8.method_39800(var1);
          if (var9.isPresent()) {
             class_5621 var10 = (class_5621)var9.get();
-            return class_4639.field_22655.encode(var10.method_25499(), this.field_18419, var2);
+            return Identifier.field_22655.encode(var10.method_25499(), this.field_18419, var2);
          }
       }
 

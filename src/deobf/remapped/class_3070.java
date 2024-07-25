@@ -2,9 +2,9 @@ package remapped;
 
 public class class_3070 {
    private static String[] field_15084;
-   private final class_4639 field_15086;
+   private final Identifier field_15086;
 
-   public class_3070(class_8261 var1, class_4639 var2, class_6414 var3) {
+   public class_3070(class_8261 var1, Identifier var2, class_6414 var3) {
       this.field_15085 = var1;
       this.field_15086 = class_9590.field_48844.method_34878(var2, class_1685.method_7543(var3), class_8261.method_38027(var1));
    }

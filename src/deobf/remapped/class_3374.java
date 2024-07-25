@@ -9,5 +9,5 @@ public interface class_3374 {
 
    void method_15565(JsonObject var1, JsonSerializationContext var2);
 
-   class_4639 method_15563();
+   Identifier method_15563();
 }

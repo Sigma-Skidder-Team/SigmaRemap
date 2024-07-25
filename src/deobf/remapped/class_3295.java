@@ -7,12 +7,12 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import java.io.IOException;
 
 public class class_3295<T extends class_5834 & class_3449, M extends class_6521<T> & class_6582> extends class_4171<T, M> implements class_6491 {
-   private static final Int2ObjectMap<class_4639> field_16305 = Util.<Int2ObjectMap<class_4639>>method_44659(new Int2ObjectOpenHashMap(), var0 -> {
-      var0.put(1, new class_4639("stone"));
-      var0.put(2, new class_4639("iron"));
-      var0.put(3, new class_4639("gold"));
-      var0.put(4, new class_4639("emerald"));
-      var0.put(5, new class_4639("diamond"));
+   private static final Int2ObjectMap<Identifier> field_16305 = Util.<Int2ObjectMap<Identifier>>method_44659(new Int2ObjectOpenHashMap(), var0 -> {
+      var0.put(1, new Identifier("stone"));
+      var0.put(2, new Identifier("iron"));
+      var0.put(3, new Identifier("gold"));
+      var0.put(4, new Identifier("emerald"));
+      var0.put(5, new Identifier("diamond"));
    });
    private final Object2ObjectMap<class_8853, class_1646> field_16310 = new Object2ObjectOpenHashMap();
    private final Object2ObjectMap<class_4466, class_1646> field_16308 = new Object2ObjectOpenHashMap();
@@ -35,15 +35,15 @@ public class class_3295<T extends class_5834 & class_3449, M extends class_6521<
          class_1646 var17 = this.method_15115(this.field_16308, "profession", class_8669.field_44425, var15);
          class_6521 var18 = this.method_19347();
          ((class_6582)var18).method_30080(var17 == class_1646.field_8566 || var17 == class_1646.field_8567 && var16 != class_1646.field_8565);
-         class_4639 var19 = this.method_15116("type", class_8669.field_44375.method_39797(var14));
+         Identifier var19 = this.method_15116("type", class_8669.field_44375.method_39797(var14));
          method_19348(var18, var19, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
          ((class_6582)var18).method_30080(true);
          if (var15 != class_4466.field_21775 && !var4.method_26449()) {
-            class_4639 var20 = this.method_15116("profession", class_8669.field_44425.method_39797(var15));
+            Identifier var20 = this.method_15116("profession", class_8669.field_44425.method_39797(var15));
             method_19348(var18, var20, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             if (var15 != class_4466.field_21771) {
-               class_4639 var21 = this.method_15116(
-                  "profession_level", (class_4639)field_16305.get(class_9299.method_42829(var13.method_13906(), 1, field_16305.size()))
+               Identifier var21 = this.method_15116(
+                  "profession_level", (Identifier)field_16305.get(class_9299.method_42829(var13.method_13906(), 1, field_16305.size()))
                );
                method_19348(var18, var21, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             }
@@ -51,8 +51,8 @@ public class class_3295<T extends class_5834 & class_3449, M extends class_6521<
       }
    }
 
-   private class_4639 method_15116(String var1, class_4639 var2) {
-      return new class_4639(var2.method_21461(), "textures/entity/" + this.field_16307 + "/" + var1 + "/" + var2.method_21456() + ".png");
+   private Identifier method_15116(String var1, Identifier var2) {
+      return new Identifier(var2.method_21461(), "textures/entity/" + this.field_16307 + "/" + var1 + "/" + var2.method_21456() + ".png");
    }
 
    public <K> class_1646 method_15115(Object2ObjectMap<K, class_1646> var1, String var2, class_3991<K> var3, K var4) {

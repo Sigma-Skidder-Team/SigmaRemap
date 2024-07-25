@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_5420 extends class_2255<class_9317> {
-   public static final class_2843 field_27614 = new class_2843(class_8359.field_42824, new class_4639("entity/bell/bell_body"));
+   public static final class_2843 field_27614 = new class_2843(class_8359.field_42824, new Identifier("entity/bell/bell_body"));
    private final class_1549 field_27615 = new class_1549(32, 32, 0, 0);
 
    public class_5420(class_3569 var1) {

@@ -4,16 +4,16 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import java.util.Map;
 
 public class class_7458 extends class_2840<class_6560> implements AutoCloseable {
-   private Map<class_4639, class_7373> field_37999;
+   private Map<Identifier, class_7373> field_37999;
    private class_6885 field_38007;
    private final class_9524 field_38002;
-   private final class_7889 field_38005;
+   private final TextureManager field_38005;
    private final class_4468 field_38006;
    private int field_38004;
    private class_7373 field_38001;
    private Object2IntMap<class_2522> field_38003;
 
-   public class_7458(class_7889 var1, class_4468 var2, int var3) {
+   public class_7458(TextureManager var1, class_4468 var2, int var3) {
       this.field_38005 = var1;
       this.field_38006 = var2;
       this.field_38004 = var3;
@@ -74,7 +74,7 @@ public class class_7458 extends class_2840<class_6560> implements AutoCloseable 
       }
    }
 
-   public class_8359 method_33947(class_4639 var1) {
+   public class_8359 method_33947(Identifier var1) {
       return this.field_38007.method_31569(var1);
    }
 

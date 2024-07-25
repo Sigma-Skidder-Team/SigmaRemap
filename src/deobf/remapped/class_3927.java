@@ -3,7 +3,7 @@ package remapped;
 import javax.annotation.Nullable;
 
 public class class_3927 extends class_6353<class_9399, class_8108> {
-   public static final class_4639 field_19079 = new class_4639("textures/entity/armorstand/wood.png");
+   public static final Identifier field_19079 = new Identifier("textures/entity/armorstand/wood.png");
 
    public class_3927(class_6122 var1) {
       super(var1, new class_3851(), 0.0F);
@@ -13,7 +13,7 @@ public class class_3927 extends class_6353<class_9399, class_8108> {
       this.method_29100(new class_8386<class_9399, class_8108>(this));
    }
 
-   public class_4639 method_18159(class_9399 var1) {
+   public Identifier method_18159(class_9399 var1) {
       return field_19079;
    }
 
@@ -34,7 +34,7 @@ public class class_3927 extends class_6353<class_9399, class_8108> {
    @Nullable
    public class_3581 method_18160(class_9399 var1, boolean var2, boolean var3, boolean var4) {
       if (var1.method_43493()) {
-         class_4639 var7 = this.method_18159(var1);
+         Identifier var7 = this.method_18159(var1);
          if (!var3) {
             return !var2 ? null : class_3581.method_16737(var7, false);
          } else {

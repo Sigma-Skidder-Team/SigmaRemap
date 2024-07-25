@@ -10,7 +10,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_1840 extends class_266 {
-   public static final class_4639 field_9330 = new class_4639("textures/gui/social_interactions.png");
+   public static final Identifier field_9330 = new Identifier("textures/gui/social_interactions.png");
    private static final ITextComponent field_9319 = new TranslationTextComponent("gui.socialInteractions.tab_all");
    private static final ITextComponent field_9327 = new TranslationTextComponent("gui.socialInteractions.tab_hidden");
    private static final ITextComponent field_9323 = new TranslationTextComponent("gui.socialInteractions.tab_blocked");

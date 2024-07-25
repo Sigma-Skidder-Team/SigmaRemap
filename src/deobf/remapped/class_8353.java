@@ -1,20 +1,20 @@
 package remapped;
 
 public final class class_8353 {
-   private final class_4639 field_42773;
+   private final Identifier field_42773;
    private int field_42774;
    private int field_42772;
    private final class_4016 field_42770;
    private double field_42769 = 1.0;
 
-   public class_8353(class_4639 var1, int var2, int var3, class_4016 var4) {
+   public class_8353(Identifier var1, int var2, int var3, class_4016 var4) {
       this.field_42773 = var1;
       this.field_42774 = var2;
       this.field_42772 = var3;
       this.field_42770 = var4;
    }
 
-   public class_4639 method_38459() {
+   public Identifier method_38459() {
       return this.field_42773;
    }
 

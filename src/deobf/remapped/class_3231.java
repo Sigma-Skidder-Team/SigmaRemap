@@ -115,8 +115,8 @@ public class class_3231 extends class_266 implements class_2092 {
       }
    }
 
-   private static String method_14802(class_6676<class_4639> var0) {
-      return "stat." + ((class_4639)var0.method_30630()).toString().replace(':', '.');
+   private static String method_14802(class_6676<Identifier> var0) {
+      return "stat." + ((Identifier)var0.method_30630()).toString().replace(':', '.');
    }
 
    private int method_14810(int var1) {

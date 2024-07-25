@@ -15,9 +15,9 @@ import org.apache.logging.log4j.Logger;
 
 public class class_1991 extends class_1094 {
    private static final Logger field_10098 = LogManager.getLogger();
-   private static final class_4639 field_10085 = new class_4639("realms", "textures/gui/realms/link_icons.png");
-   private static final class_4639 field_10093 = new class_4639("realms", "textures/gui/realms/trailer_icons.png");
-   private static final class_4639 field_10106 = new class_4639("realms", "textures/gui/realms/slot_frame.png");
+   private static final Identifier field_10085 = new Identifier("realms", "textures/gui/realms/link_icons.png");
+   private static final Identifier field_10093 = new Identifier("realms", "textures/gui/realms/trailer_icons.png");
+   private static final Identifier field_10106 = new Identifier("realms", "textures/gui/realms/slot_frame.png");
    private static final ITextComponent field_10086 = new TranslationTextComponent("mco.template.info.tooltip");
    private static final ITextComponent field_10095 = new TranslationTextComponent("mco.template.trailer.tooltip");
    private final class_7875 field_10091;

@@ -4,7 +4,7 @@ public class class_3240 extends class_446 {
    private static String[] field_16109;
 
    public class_3240(class_734 var1, class_7038 var2, String var3) {
-      super(var2, var3, 0, 0, MinecraftClient.getInstance().field_9602.method_43166(), MinecraftClient.getInstance().field_9602.method_43163(), false);
+      super(var2, var3, 0, 0, MinecraftClient.getInstance().window.method_43166(), MinecraftClient.getInstance().window.method_43163(), false);
       this.field_16108 = var1;
    }
 

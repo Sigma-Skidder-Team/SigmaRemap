@@ -5,7 +5,7 @@ public class class_7265 {
    private static final float field_37215 = 1.0F / (float)Math.cos((float) (Math.PI / 4)) - 1.0F;
 
    public class_5024 method_33202(
-      class_2426 var1, class_2426 var2, class_7300 var3, class_5155 var4, class_240 var5, class_5598 var6, class_1868 var7, boolean var8, class_4639 var9
+      class_2426 var1, class_2426 var2, class_7300 var3, class_5155 var4, class_240 var5, class_5598 var6, class_1868 var7, boolean var8, Identifier var9
    ) {
       class_9874 var12 = var3.field_37314;
       if (var6.method_25404()) {
@@ -37,7 +37,7 @@ public class class_7265 {
       }
    }
 
-   public static class_9874 method_33203(class_9874 var0, class_240 var1, class_1221 var2, class_4639 var3) {
+   public static class_9874 method_33203(class_9874 var0, class_240 var1, class_1221 var2, Identifier var3) {
       class_8107 var6 = class_4977.method_22874(var2, var1, () -> "Unable to resolve UVLock for model: " + var3).method_5410();
       float var7 = var0.method_45503(var0.method_45505(0));
       float var8 = var0.method_45501(var0.method_45505(0));

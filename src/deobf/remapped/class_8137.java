@@ -150,7 +150,7 @@ public final class class_8137 implements Predicate<class_6098> {
          if (!var0.has("tag")) {
             throw new JsonParseException("An ingredient entry needs either a tag or an item");
          } else {
-            class_4639 var5 = new class_4639(class_6539.method_29796(var0, "tag"));
+            Identifier var5 = new Identifier(class_6539.method_29796(var0, "tag"));
             class_2307 var6 = class_8410.method_38721().method_29393().method_43140(var5);
             if (var6 != null) {
                return new class_8953(var6, null);
@@ -159,7 +159,7 @@ public final class class_8137 implements Predicate<class_6098> {
             }
          }
       } else {
-         class_4639 var3 = new class_4639(class_6539.method_29796(var0, "item"));
+         Identifier var3 = new Identifier(class_6539.method_29796(var0, "item"));
          class_2451 var4 = class_8669.field_44382.method_39794(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
          return new class_3092(new class_6098(var4), null);
       }

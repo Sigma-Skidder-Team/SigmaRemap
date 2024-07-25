@@ -54,11 +54,11 @@ public class class_7248 extends class_3200<class_1267> {
          var10.field_20271 = 0.0F;
       }
 
-      class_4639 var26;
+      Identifier var26;
       if (!(this.field_15989.nextFloat() < 0.05F)) {
-         var26 = new class_4639(class_4721.method_21826()[this.field_15989.nextInt(class_4721.method_21826().length)]);
+         var26 = new Identifier(class_4721.method_21826()[this.field_15989.nextInt(class_4721.method_21826().length)]);
       } else {
-         var26 = new class_4639(class_4721.method_21825()[this.field_15989.nextInt(class_4721.method_21825().length)]);
+         var26 = new Identifier(class_4721.method_21825()[this.field_15989.nextInt(class_4721.method_21825().length)]);
       }
 
       class_6561 var13 = var3.method_26279(var26);

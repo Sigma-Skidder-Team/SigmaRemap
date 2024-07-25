@@ -212,7 +212,7 @@ public class class_8455 {
                break;
             case field_7718:
                class_8145 var8 = ((class_5631)var5).method_25524();
-               class_4639 var9 = class_8669.field_44400.method_39797(var8.method_37387());
+               Identifier var9 = class_8669.field_44400.method_39797(var8.method_37387());
                if (var1) {
                   if (var2) {
                      this.field_43225.field_9632.field_30532.method_4809().method_572(var8.method_37145(), var3 -> {
@@ -249,7 +249,7 @@ public class class_8455 {
       this.method_38891(var7);
    }
 
-   private void method_38885(class_4639 var1, class_1343 var2, class_5734 var3) {
+   private void method_38885(Identifier var1, class_1343 var2, class_5734 var3) {
       String var6;
       if (var3 == null) {
          var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", var1.toString(), var2.field_7336, var2.field_7333, var2.field_7334);

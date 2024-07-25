@@ -6,14 +6,14 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class class_3833 implements class_5503 {
-   private final class_4639 field_18721;
+   private final Identifier field_18721;
 
-   public class_3833(class_4639 var1) {
+   public class_3833(Identifier var1) {
       this.field_18721 = var1;
    }
 
    @Override
-   public <T> boolean method_24969(Function<class_4639, class_2307<T>> var1, Function<class_4639, T> var2, Consumer<T> var3) {
+   public <T> boolean method_24969(Function<Identifier, class_2307<T>> var1, Function<Identifier, T> var2, Consumer<T> var3) {
       Object var6 = var2.apply(this.field_18721);
       if (var6 != null) {
          var3.accept(var6);

@@ -4,9 +4,9 @@ import net.minecraft.util.text.ITextComponent;
 
 public class class_1280<T extends class_2875> extends class_2208<T> implements class_117 {
    private static String[] field_7042;
-   private class_4639 field_7041;
+   private Identifier field_7041;
 
-   public class_1280(T var1, class_7051 var2, ITextComponent var3, class_4639 var4) {
+   public class_1280(T var1, class_7051 var2, ITextComponent var3, Identifier var4) {
       super((T)var1, var2, var3);
       this.field_7041 = var4;
    }

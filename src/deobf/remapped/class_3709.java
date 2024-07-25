@@ -368,14 +368,14 @@ public class class_3709 extends class_3620 {
          if (this.method_42007("Show Block Amount")) {
             if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
                this.method_17222(
-                  field_46692.field_9602.method_43166() / 2,
-                  field_46692.field_9602.method_43163() / 2 + 15 - (int)(10.0F * this.field_18194.method_11123()),
+                  field_46692.window.method_43166() / 2,
+                  field_46692.window.method_43163() / 2 + 15 - (int)(10.0F * this.field_18194.method_11123()),
                   this.field_18194.method_11123()
                );
             } else {
                this.method_17223(
-                  field_46692.field_9602.method_43166() / 2,
-                  field_46692.field_9602.method_43163() - 138 - (int)(25.0F * class_3483.method_15985(this.field_18194.method_11123(), 0.0F, 1.0F, 1.0F)),
+                  field_46692.window.method_43166() / 2,
+                  field_46692.window.method_43163() - 138 - (int)(25.0F * class_3483.method_15985(this.field_18194.method_11123(), 0.0F, 1.0F, 1.0F)),
                   this.field_18194.method_11123()
                );
             }

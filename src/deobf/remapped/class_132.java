@@ -19,7 +19,7 @@ import org.apache.logging.log4j.MarkerManager;
 public class class_132 {
    private static final Marker field_339 = MarkerManager.getMarker("SOUNDS");
    private static final Logger field_330 = LogManager.getLogger();
-   private static final Set<class_4639> field_342 = Sets.newHashSet();
+   private static final Set<Identifier> field_342 = Sets.newHashSet();
    private final class_3541 field_341;
    private final class_8881 field_334;
    private boolean field_329;
@@ -48,7 +48,7 @@ public class class_132 {
       field_342.clear();
 
       for (class_8461 var4 : class_8669.field_44369) {
-         class_4639 var5 = var4.method_38928();
+         Identifier var5 = var4.method_38928();
          if (this.field_341.method_16334(var5) == null) {
             field_330.warn("Missing sound for event: {}", class_8669.field_44369.method_39797(var4));
             field_342.add(var5);
@@ -245,7 +245,7 @@ public class class_132 {
    public void method_435(class_3560 var1) {
       if (this.field_329 && var1.method_16554()) {
          class_7633 var4 = var1.method_16553(this.field_341);
-         class_4639 var5 = var1.method_16556();
+         Identifier var5 = var1.method_16556();
          if (var4 != null) {
             class_2049 var6 = var1.method_16551();
             if (var6 != class_3541.field_17316) {
@@ -369,7 +369,7 @@ public class class_132 {
       }
    }
 
-   public void method_424(class_4639 var1, class_562 var2) {
+   public void method_424(Identifier var1, class_562 var2) {
       if (var2 == null) {
          if (var1 != null) {
             for (class_3560 var6 : this.field_344.keySet()) {

@@ -15,7 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class GameRenderer implements class_6491, AutoCloseable {
-   private static final class_4639 field_40614 = new class_4639("textures/misc/nausea.png");
+   private static final Identifier field_40614 = new Identifier("textures/misc/nausea.png");
    private static final Logger field_40642 = LogManager.getLogger();
    private final MinecraftClient field_40612;
    private final class_7832 field_40604;
@@ -44,31 +44,31 @@ public class GameRenderer implements class_6491, AutoCloseable {
    private float field_40629;
    private float field_40637;
    public class_4067 field_40620;
-   public static final class_4639[] field_40635 = new class_4639[]{
-      new class_4639("shaders/post/notch.json"),
-      new class_4639("shaders/post/fxaa.json"),
-      new class_4639("shaders/post/art.json"),
-      new class_4639("shaders/post/bumpy.json"),
-      new class_4639("shaders/post/blobs2.json"),
-      new class_4639("shaders/post/pencil.json"),
-      new class_4639("shaders/post/color_convolve.json"),
-      new class_4639("shaders/post/deconverge.json"),
-      new class_4639("shaders/post/flip.json"),
-      new class_4639(field_40613[2]),
-      new class_4639("shaders/post/ntsc.json"),
-      new class_4639("shaders/post/outline.json"),
-      new class_4639("shaders/post/phosphor.json"),
-      new class_4639("shaders/post/scan_pincushion.json"),
-      new class_4639("shaders/post/sobel.json"),
-      new class_4639("shaders/post/bits.json"),
-      new class_4639("shaders/post/desaturate.json"),
-      new class_4639("shaders/post/green.json"),
-      new class_4639("shaders/post/blur.json"),
-      new class_4639("shaders/post/wobble.json"),
-      new class_4639("shaders/post/blobs.json"),
-      new class_4639("shaders/post/antialias.json"),
-      new class_4639(field_40613[0]),
-      new class_4639(field_40613[1])
+   public static final Identifier[] field_40635 = new Identifier[]{
+      new Identifier("shaders/post/notch.json"),
+      new Identifier("shaders/post/fxaa.json"),
+      new Identifier("shaders/post/art.json"),
+      new Identifier("shaders/post/bumpy.json"),
+      new Identifier("shaders/post/blobs2.json"),
+      new Identifier("shaders/post/pencil.json"),
+      new Identifier("shaders/post/color_convolve.json"),
+      new Identifier("shaders/post/deconverge.json"),
+      new Identifier("shaders/post/flip.json"),
+      new Identifier(field_40613[2]),
+      new Identifier("shaders/post/ntsc.json"),
+      new Identifier("shaders/post/outline.json"),
+      new Identifier("shaders/post/phosphor.json"),
+      new Identifier("shaders/post/scan_pincushion.json"),
+      new Identifier("shaders/post/sobel.json"),
+      new Identifier("shaders/post/bits.json"),
+      new Identifier("shaders/post/desaturate.json"),
+      new Identifier("shaders/post/green.json"),
+      new Identifier("shaders/post/blur.json"),
+      new Identifier("shaders/post/wobble.json"),
+      new Identifier("shaders/post/blobs.json"),
+      new Identifier("shaders/post/antialias.json"),
+      new Identifier(field_40613[0]),
+      new Identifier(field_40613[1])
    };
    public static final int field_40631 = field_40635.length;
    public int field_40626 = field_40631;
@@ -130,17 +130,17 @@ public class GameRenderer implements class_6491, AutoCloseable {
                   class_7860.method_35556(class_7860.field_40090, var1, this);
                }
             } else {
-               this.method_35934(new class_4639("shaders/post/invert.json"));
+               this.method_35934(new Identifier("shaders/post/invert.json"));
             }
          } else {
-            this.method_35934(new class_4639("shaders/post/spider.json"));
+            this.method_35934(new Identifier("shaders/post/spider.json"));
          }
       } else {
-         this.method_35934(new class_4639("shaders/post/creeper.json"));
+         this.method_35934(new Identifier("shaders/post/creeper.json"));
       }
    }
 
-   public void method_35934(class_4639 var1) {
+   public void method_35934(Identifier var1) {
       if (class_3776.method_17487()) {
          if (this.field_40620 != null) {
             this.field_40620.close();
@@ -544,7 +544,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             class_3542.method_16392(0, 0, this.field_40612.method_8552().method_43178(), this.field_40612.method_8552().method_43198());
          }
 
-         class_9352 var9 = this.field_40612.method_8552();
+         Window var9 = this.field_40612.method_8552();
          class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
          class_3542.method_16463(5889);
          class_3542.method_16476();
@@ -1004,7 +1004,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          } else if (this.field_40620 != null && this.field_40620 == this.field_40609[var1]) {
             return true;
          } else if (this.field_40612.field_9601 != null) {
-            this.method_35934(new class_4639("shaders/post/fxaa_of_" + var1 + "x.json"));
+            this.method_35934(new Identifier("shaders/post/fxaa_of_" + var1 + "x.json"));
             this.field_40609[var1] = this.field_40620;
             return this.field_40610;
          } else {

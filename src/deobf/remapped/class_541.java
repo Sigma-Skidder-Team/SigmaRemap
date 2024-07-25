@@ -6,7 +6,7 @@ public class class_541 implements class_5154 {
    private static String[] field_3258;
 
    @Override
-   public class_4639 method_23585() {
+   public Identifier method_23585() {
       return class_5656.method_25587();
    }
 

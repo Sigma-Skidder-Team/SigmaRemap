@@ -19,9 +19,9 @@ public final class class_8472 {
             )
             .apply(var0, var0.stable(class_8472::new))
    );
-   public static final class_5621<class_8472> field_43412 = class_5621.<class_8472>method_25497(class_8669.field_44420, new class_4639("overworld"));
-   public static final class_5621<class_8472> field_43413 = class_5621.<class_8472>method_25497(class_8669.field_44420, new class_4639("the_nether"));
-   public static final class_5621<class_8472> field_43410 = class_5621.<class_8472>method_25497(class_8669.field_44420, new class_4639("the_end"));
+   public static final class_5621<class_8472> field_43412 = class_5621.<class_8472>method_25497(class_8669.field_44420, new Identifier("overworld"));
+   public static final class_5621<class_8472> field_43413 = class_5621.<class_8472>method_25497(class_8669.field_44420, new Identifier("the_nether"));
+   public static final class_5621<class_8472> field_43410 = class_5621.<class_8472>method_25497(class_8669.field_44420, new Identifier("the_end"));
    private static final LinkedHashSet<class_5621<class_8472>> field_43411 = Sets.newLinkedHashSet(ImmutableList.of(field_43412, field_43413, field_43410));
    private final Supplier<class_8760> field_43414;
    private final class_6541 field_43415;

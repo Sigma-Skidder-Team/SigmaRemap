@@ -347,7 +347,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       class_2206 var6 = var4.method_28945();
       var6.method_10175().method_9764(500);
       this.field_1331 = Util.getMeasuringTimeMs();
-      var6.method_10177(class_5032.field_26021, new class_2034(var5), 11, class_3256.field_16155);
+      var6.method_10177(class_5032.field_26021, new class_2034(var5), 11, Unit.INSTANCE);
 
       while (var6.method_10207() != 441) {
          this.field_1331 = Util.getMeasuringTimeMs() + 10L;
@@ -1347,7 +1347,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       Path var4 = var1.resolve("levels");
 
       for (Entry var6 : this.field_1318.entrySet()) {
-         class_4639 var7 = ((class_5621)var6.getKey()).method_25499();
+         Identifier var7 = ((class_5621)var6.getKey()).method_25499();
          Path var8 = var4.resolve(var7.method_21461()).resolve(var7.method_21456());
          Files.createDirectories(var8);
          ((class_6331)var6.getValue()).method_28992(var8);

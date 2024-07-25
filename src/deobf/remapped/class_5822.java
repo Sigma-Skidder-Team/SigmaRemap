@@ -5,10 +5,10 @@ public abstract class class_5822 implements class_8932<class_6867> {
    public final class_6098 field_29534;
    private final class_1510<?> field_29537;
    private final class_2994<?> field_29535;
-   public final class_4639 field_29536;
+   public final Identifier field_29536;
    public final String field_29538;
 
-   public class_5822(class_1510<?> var1, class_2994<?> var2, class_4639 var3, String var4, class_8137 var5, class_6098 var6) {
+   public class_5822(class_1510<?> var1, class_2994<?> var2, Identifier var3, String var4, class_8137 var5, class_6098 var6) {
       this.field_29537 = var1;
       this.field_29535 = var2;
       this.field_29536 = var3;
@@ -28,7 +28,7 @@ public abstract class class_5822 implements class_8932<class_6867> {
    }
 
    @Override
-   public class_4639 method_41050() {
+   public Identifier method_41050() {
       return this.field_29536;
    }
 

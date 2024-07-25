@@ -13,11 +13,11 @@ public class class_5655 {
    private final class_6354 field_28677;
    private final List<class_5522> field_28678;
    private final List<class_5522> field_28680;
-   private final Function<class_5522, class_4639> field_28679;
+   private final Function<class_5522, Identifier> field_28679;
    private final Runnable field_28681;
    private final Consumer<class_6354> field_28682;
 
-   public class_5655(Runnable var1, Function<class_5522, class_4639> var2, class_6354 var3, Consumer<class_6354> var4) {
+   public class_5655(Runnable var1, Function<class_5522, Identifier> var2, class_6354 var3, Consumer<class_6354> var4) {
       this.field_28681 = var1;
       this.field_28679 = var2;
       this.field_28677 = var3;

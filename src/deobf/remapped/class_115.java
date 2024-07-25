@@ -6,7 +6,7 @@ public class class_115 {
    private static String[] field_283;
 
    @Deprecated
-   public static int[] method_343(class_7832 var0, class_4639 var1) throws IOException {
+   public static int[] method_343(class_7832 var0, Identifier var1) throws IOException {
       int[] var8;
       try (
          class_4038 var4 = var0.method_35458(var1);

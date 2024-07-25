@@ -83,10 +83,10 @@ public class class_6044<U> {
    }
 
    private static <U> class_6044<U> method_27595(String var0, Codec<U> var1) {
-      return class_8669.<class_6044<?>, class_6044<U>>method_39792(class_8669.field_44431, new class_4639(var0), new class_6044<U>(Optional.<Codec<U>>of(var1)));
+      return class_8669.<class_6044<?>, class_6044<U>>method_39792(class_8669.field_44431, new Identifier(var0), new class_6044<U>(Optional.<Codec<U>>of(var1)));
    }
 
    private static <U> class_6044<U> method_27596(String var0) {
-      return class_8669.<class_6044<?>, class_6044<U>>method_39792(class_8669.field_44431, new class_4639(var0), new class_6044<U>(Optional.<Codec<U>>empty()));
+      return class_8669.<class_6044<?>, class_6044<U>>method_39792(class_8669.field_44431, new Identifier(var0), new class_6044<U>(Optional.<Codec<U>>empty()));
    }
 }

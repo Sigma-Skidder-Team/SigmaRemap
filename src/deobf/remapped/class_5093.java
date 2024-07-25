@@ -191,7 +191,7 @@ public class class_5093 {
          class_6115 var7 = class_6115.method_28093(var4.get("z"));
          class_5621 var8 = !var3.has("dimension")
             ? null
-            : class_4639.field_22655
+            : Identifier.field_22655
                .parse(JsonOps.INSTANCE, var3.get("dimension"))
                .resultOrPartial(field_26280::error)
                .<class_5621>map(var0x -> class_5621.<class_6486>method_25497(class_8669.field_44372, var0x))
@@ -199,7 +199,7 @@ public class class_5093 {
          class_5390 var9 = !var3.has("feature") ? null : (class_5390)class_5390.field_27500.get(class_6539.method_29796(var3, "feature"));
          class_5621 var10 = null;
          if (var3.has("biome")) {
-            class_4639 var11 = new class_4639(class_6539.method_29796(var3, "biome"));
+            Identifier var11 = new Identifier(class_6539.method_29796(var3, "biome"));
             var10 = class_5621.<class_6325>method_25497(class_8669.field_44359, var11);
          }
 

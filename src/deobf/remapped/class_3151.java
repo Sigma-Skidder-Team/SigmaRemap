@@ -2,14 +2,14 @@ package remapped;
 
 public abstract class class_3151 implements class_8932<class_6867> {
    public final class_1510<?> field_15673;
-   public final class_4639 field_15670;
+   public final Identifier field_15670;
    public final String field_15674;
    public final class_8137 field_15675;
    public final class_6098 field_15669;
    public final float field_15671;
    public final int field_15672;
 
-   public class_3151(class_1510<?> var1, class_4639 var2, String var3, class_8137 var4, class_6098 var5, float var6, int var7) {
+   public class_3151(class_1510<?> var1, Identifier var2, String var3, class_8137 var4, class_6098 var5, float var6, int var7) {
       this.field_15673 = var1;
       this.field_15670 = var2;
       this.field_15674 = var3;
@@ -60,7 +60,7 @@ public abstract class class_3151 implements class_8932<class_6867> {
    }
 
    @Override
-   public class_4639 method_41050() {
+   public Identifier method_41050() {
       return this.field_15670;
    }
 

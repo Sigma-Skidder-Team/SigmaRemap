@@ -59,7 +59,7 @@ public class class_5490 extends class_4641 {
 
    @Override
    public void method_37314(class_5734 var1) {
-      this.field_27978 = class_8669.field_44450.method_39806(class_4639.method_21455(var1.method_25965("Motive")));
+      this.field_27978 = class_8669.field_44450.method_39806(Identifier.method_21455(var1.method_25965("Motive")));
       this.field_22663 = class_240.method_1040(var1.method_25950("Facing"));
       super.method_37314(var1);
       this.method_21468(this.field_22663);

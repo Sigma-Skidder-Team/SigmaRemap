@@ -36,17 +36,17 @@ public final class class_126 implements class_3940 {
    }
 
    @Override
-   public Collection<class_4639> method_18209(class_5621<? extends class_8669<?>> var1) {
+   public Collection<Identifier> method_18209(class_5621<? extends class_8669<?>> var1) {
       return this.field_307
          .keySet()
          .stream()
          .filter(var1x -> var1x.method_25498(var1))
-         .<class_4639>map(
-            var1x -> new class_4639(
+         .<Identifier>map(
+            var1x -> new Identifier(
                   var1x.method_25499().method_21461(), var1.method_25499().method_21456() + "/" + var1x.method_25499().method_21456() + ".json"
                )
          )
-         .collect(Collectors.<class_4639>toList());
+         .collect(Collectors.<Identifier>toList());
    }
 
    @Override

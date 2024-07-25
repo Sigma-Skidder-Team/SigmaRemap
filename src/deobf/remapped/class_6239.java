@@ -54,7 +54,7 @@ public class class_6239 extends class_7934 {
 
    @Nullable
    @Override
-   public Pair<class_4639, class_4639> method_35900() {
+   public Pair<Identifier, Identifier> method_35900() {
       return this.field_31927.method_35900();
    }
 

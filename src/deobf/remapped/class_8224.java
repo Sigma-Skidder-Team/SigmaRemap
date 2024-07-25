@@ -18,8 +18,8 @@ import org.apache.logging.log4j.Logger;
 public class class_8224 extends class_8374<class_9662> {
    private static final Logger field_42216 = LogManager.getLogger();
    private static final DateFormat field_42215 = new SimpleDateFormat();
-   private static final class_4639 field_42213 = new class_4639("textures/misc/unknown_server.png");
-   private static final class_4639 field_42214 = new class_4639("textures/gui/world_selection.png");
+   private static final Identifier field_42213 = new Identifier("textures/misc/unknown_server.png");
+   private static final Identifier field_42214 = new Identifier("textures/gui/world_selection.png");
    private static final ITextComponent field_42221 = new TranslationTextComponent("selectWorld.tooltip.fromNewerVersion1").mergeStyle(TextFormatting.RED);
    private static final ITextComponent field_42219 = new TranslationTextComponent("selectWorld.tooltip.fromNewerVersion2").mergeStyle(TextFormatting.RED);
    private static final ITextComponent field_42222 = new TranslationTextComponent("selectWorld.tooltip.snapshot1").mergeStyle(TextFormatting.GOLD);

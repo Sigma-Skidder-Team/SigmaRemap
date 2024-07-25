@@ -95,7 +95,7 @@ public class class_8031 extends class_5467 implements class_9897 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public class_4639 method_26934() {
+   public Identifier method_26934() {
       if (this.method_36478()) {
          return this.method_37387().method_30480();
       } else {

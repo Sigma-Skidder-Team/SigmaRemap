@@ -17,7 +17,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
    private final MinecraftClient field_49207;
    private final class_7899 field_49213;
    private final class_460 field_49209;
-   private final class_4639 field_49211;
+   private final Identifier field_49211;
    private File field_49212;
    private final class_7884 field_49210;
    private long field_49214;
@@ -28,8 +28,8 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       this.field_49209 = var3;
       this.field_49207 = MinecraftClient.getInstance();
       String var6 = var3.method_2203();
-      this.field_49211 = new class_4639(
-         "minecraft", "worlds/" + Util.method_44678(var6, class_4639::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var6) + "/icon"
+      this.field_49211 = new Identifier(
+         "minecraft", "worlds/" + Util.method_44678(var6, Identifier::method_21460) + "/" + Hashing.sha1().hashUnencodedChars(var6) + "/icon"
       );
       this.field_49212 = var3.method_2196();
       if (!this.field_49212.isFile()) {

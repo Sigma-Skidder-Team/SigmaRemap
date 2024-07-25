@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_5038 extends class_7164<class_3252, class_7307<class_3252>> {
-   private static final class_4639 field_26063 = new class_4639("textures/entity/slime/magmacube.png");
+   private static final Identifier field_26063 = new Identifier("textures/entity/slime/magmacube.png");
 
    public class_5038(class_6122 var1) {
       super(var1, new class_7307<class_3252>(), 0.25F);
@@ -11,7 +11,7 @@ public class class_5038 extends class_7164<class_3252, class_7307<class_3252>> {
       return 15;
    }
 
-   public class_4639 method_23210(class_3252 var1) {
+   public Identifier method_23210(class_3252 var1) {
       return field_26063;
    }
 

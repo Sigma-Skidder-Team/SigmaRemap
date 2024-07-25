@@ -3,7 +3,7 @@ package remapped;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class class_3234 implements Consumer<BiConsumer<class_4639, class_8843>> {
+public class class_3234 implements Consumer<BiConsumer<Identifier, class_8843>> {
    public static final class_5704 field_16087 = class_1600.method_7177(class_6352.method_29094().method_29093(class_8606.field_44078));
    public static final class_5704 field_16090 = class_1600.method_7177(class_6352.method_29094().method_29093(class_8606.field_44114));
    public static final class_5704 field_16094 = class_1600.method_7177(class_6352.method_29094().method_29093(class_8606.field_44080));
@@ -12,7 +12,7 @@ public class class_3234 implements Consumer<BiConsumer<class_4639, class_8843>> 
    public static final class_5704 field_16088 = class_1600.method_7177(class_6352.method_29094().method_29093(class_8606.field_44140));
    public static final class_5704 field_16089 = class_1600.method_7177(class_6352.method_29094().method_29093(class_8606.field_44148));
 
-   public void accept(BiConsumer<class_4639, class_8843> var1) {
+   public void accept(BiConsumer<Identifier, class_8843> var1) {
       var1.accept(
          class_5931.field_30096,
          class_1758.method_7864()

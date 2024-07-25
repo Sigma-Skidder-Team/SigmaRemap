@@ -31,12 +31,12 @@ public final class class_7902 {
    private final int field_40414;
    private final int field_40403;
    private final boolean field_40399;
-   public static final class_5621<class_7902> field_40411 = class_5621.<class_7902>method_25497(class_8669.field_44360, new class_4639("overworld"));
-   public static final class_5621<class_7902> field_40407 = class_5621.<class_7902>method_25497(class_8669.field_44360, new class_4639("amplified"));
-   public static final class_5621<class_7902> field_40413 = class_5621.<class_7902>method_25497(class_8669.field_44360, new class_4639("nether"));
-   public static final class_5621<class_7902> field_40410 = class_5621.<class_7902>method_25497(class_8669.field_44360, new class_4639("end"));
-   public static final class_5621<class_7902> field_40408 = class_5621.<class_7902>method_25497(class_8669.field_44360, new class_4639("caves"));
-   public static final class_5621<class_7902> field_40402 = class_5621.<class_7902>method_25497(class_8669.field_44360, new class_4639("floating_islands"));
+   public static final class_5621<class_7902> field_40411 = class_5621.<class_7902>method_25497(class_8669.field_44360, new Identifier("overworld"));
+   public static final class_5621<class_7902> field_40407 = class_5621.<class_7902>method_25497(class_8669.field_44360, new Identifier("amplified"));
+   public static final class_5621<class_7902> field_40413 = class_5621.<class_7902>method_25497(class_8669.field_44360, new Identifier("nether"));
+   public static final class_5621<class_7902> field_40410 = class_5621.<class_7902>method_25497(class_8669.field_44360, new Identifier("end"));
+   public static final class_5621<class_7902> field_40408 = class_5621.<class_7902>method_25497(class_8669.field_44360, new Identifier("caves"));
+   public static final class_5621<class_7902> field_40402 = class_5621.<class_7902>method_25497(class_8669.field_44360, new Identifier("floating_islands"));
    private static final class_7902 field_40401 = method_35720(field_40411, method_35718(new class_9610(true), false, field_40411.method_25499()));
 
    private class_7902(class_9610 var1, class_8822 var2, class_2522 var3, class_2522 var4, int var5, int var6, int var7, boolean var8) {
@@ -96,7 +96,7 @@ public final class class_7902 {
       return field_40401;
    }
 
-   private static class_7902 method_35716(class_9610 var0, class_2522 var1, class_2522 var2, class_4639 var3, boolean var4, boolean var5) {
+   private static class_7902 method_35716(class_9610 var0, class_2522 var1, class_2522 var2, Identifier var3, boolean var4, boolean var5) {
       return new class_7902(
          var0,
          new class_8822(
@@ -111,7 +111,7 @@ public final class class_7902 {
       );
    }
 
-   private static class_7902 method_35715(class_9610 var0, class_2522 var1, class_2522 var2, class_4639 var3) {
+   private static class_7902 method_35715(class_9610 var0, class_2522 var1, class_2522 var2, Identifier var3) {
       HashMap var6 = Maps.newHashMap(class_9610.field_48975);
       var6.put(class_5390.field_27512, new class_4757(25, 10, 34222645));
       return new class_7902(
@@ -139,7 +139,7 @@ public final class class_7902 {
       );
    }
 
-   private static class_7902 method_35718(class_9610 var0, boolean var1, class_4639 var2) {
+   private static class_7902 method_35718(class_9610 var0, boolean var1, Identifier var2) {
       double var5 = 0.9999999814507745;
       return new class_7902(
          var0,

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class class_5869<T extends class_8145> extends class_6353<class_9716, class_3169<class_9716>> {
-   public static HashMap<UUID, class_4639> field_29802 = new HashMap<UUID, class_4639>();
+   public static HashMap<UUID, Identifier> field_29802 = new HashMap<UUID, Identifier>();
 
    public class_5869(class_6122 var1) {
       this(var1, false);
@@ -36,13 +36,13 @@ public class class_5869<T extends class_8145> extends class_6353<class_9716, cla
       return super.method_32555(var1, var2);
    }
 
-   public class_4639 method_26731(class_9716 var1) {
-      boolean var4 = field_29802.containsKey(var1.method_3247().getId()) && field_29802.get(var1.method_3247().getId()).equals(new class_4639(""));
+   public Identifier method_26731(class_9716 var1) {
+      boolean var4 = field_29802.containsKey(var1.method_3247().getId()) && field_29802.get(var1.method_3247().getId()).equals(new Identifier(""));
       if (!var4 && field_29802.containsKey(var1.method_3247().getId())) {
          return field_29802.get(var1.method_3247().getId());
       } else {
          if (!var1.method_44885() && !var4) {
-            field_29802.put(var1.method_3247().getId(), new class_4639(""));
+            field_29802.put(var1.method_3247().getId(), new Identifier(""));
             MinecraftClient.getInstance().method_8557().method_44309(var1.method_3247(), (var1x, var2, var3) -> {
                if (var1x == Type.SKIN) {
                   field_29802.put(var1.method_3247().getId(), var2);

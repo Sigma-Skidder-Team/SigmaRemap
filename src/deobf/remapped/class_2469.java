@@ -56,7 +56,7 @@ public class class_2469 {
          for (class_2729 var5 : var0) {
             Map var6 = (Map)class_7860.method_35557(var5, class_7860.field_40172);
 
-            for (class_4639 var8 : var6.keySet()) {
+            for (Identifier var8 : var6.keySet()) {
                Float var9 = (Float)var6.get(var8);
                if (var9 != null) {
                   Object var10 = (Set)var3.get(var8);
@@ -72,7 +72,7 @@ public class class_2469 {
 
          ArrayList var11 = new ArrayList();
 
-         for (class_4639 var14 : var3.keySet()) {
+         for (Identifier var14 : var3.keySet()) {
             Set var16 = (Set)var3.get(var14);
             float[] var17 = Floats.toArray(var16);
             class_9304 var18 = new class_9304(var14, var17);

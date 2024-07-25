@@ -8,10 +8,10 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class class_4577 extends class_8273<class_9370> {
-   private static final class_4639 field_22279 = new class_4639("killed_by_crossbow");
+   private static final Identifier field_22279 = new Identifier("killed_by_crossbow");
 
    @Override
-   public class_4639 method_3899() {
+   public Identifier method_3899() {
       return field_22279;
    }
 

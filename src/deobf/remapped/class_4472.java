@@ -5,12 +5,12 @@ import javax.annotation.Nullable;
 
 public class class_4472 implements class_6310<class_392> {
    private static String[] field_21801;
-   private class_4639 field_21800;
+   private Identifier field_21800;
 
    public class_4472() {
    }
 
-   public class_4472(class_4639 var1) {
+   public class_4472(Identifier var1) {
       this.field_21800 = var1;
    }
 
@@ -34,7 +34,7 @@ public class class_4472 implements class_6310<class_392> {
    }
 
    @Nullable
-   public class_4639 method_20755() {
+   public Identifier method_20755() {
       return this.field_21800;
    }
 }

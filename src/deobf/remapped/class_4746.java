@@ -39,7 +39,7 @@ public class class_4746 {
       if (SigmaMainClass.method_3328().method_3299().method_30987() && field_22995 < field_23000 && field_22999 < field_23001) {
          if (field_22996 == null) {
             try {
-               field_22994 = new class_4067(field_22998.method_8577(), new class_4660(), field_22998.method_8584(), new class_4639("jelloblur"));
+               field_22994 = new class_4067(field_22998.method_8577(), new class_4660(), field_22998.method_8584(), new Identifier("jelloblur"));
                field_22994.method_18750(field_22998.field_9596.field_20526, field_22998.field_9596.field_20534);
                field_22994.field_19813.get(0).method_33272().method_19853("Radius").method_32385(35.0F);
                field_22994.field_19813.get(1).method_33272().method_19853("Radius").method_32385(35.0F);
@@ -66,8 +66,8 @@ public class class_4746 {
          class_3542.method_16476();
          class_3542.method_16376(
             0.0,
-            (double)field_22998.field_9602.method_43178() / field_22998.field_9602.method_43189(),
-            (double)field_22998.field_9602.method_43198() / field_22998.field_9602.method_43189(),
+            (double)field_22998.window.method_43178() / field_22998.window.method_43189(),
+            (double)field_22998.window.method_43198() / field_22998.window.method_43189(),
             0.0,
             1000.0,
             3000.0
@@ -76,8 +76,8 @@ public class class_4746 {
          class_3542.method_16476();
          class_3542.method_16413(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / field_22998.field_9602.method_43189() * (double)class_6763.field_34898,
-            1.0 / field_22998.field_9602.method_43189() * (double)class_6763.field_34898,
+            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
+            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
             1.0
          );
          byte var4 = 35;
@@ -106,8 +106,8 @@ public class class_4746 {
          class_3542.method_16476();
          class_3542.method_16376(
             0.0,
-            (double)field_22998.field_9602.method_43178() / field_22998.field_9602.method_43189(),
-            (double)field_22998.field_9602.method_43198() / field_22998.field_9602.method_43189(),
+            (double)field_22998.window.method_43178() / field_22998.window.method_43189(),
+            (double)field_22998.window.method_43198() / field_22998.window.method_43189(),
             0.0,
             1000.0,
             3000.0
@@ -116,8 +116,8 @@ public class class_4746 {
          class_3542.method_16476();
          class_3542.method_16413(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / field_22998.field_9602.method_43189() * (double)class_6763.field_34898,
-            1.0 / field_22998.field_9602.method_43189() * (double)class_6763.field_34898,
+            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
+            1.0 / field_22998.window.method_43189() * (double)class_6763.field_34898,
             1.0
          );
          field_22998.field_9596.method_19717(true);

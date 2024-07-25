@@ -6,8 +6,8 @@ import com.mojang.datafixers.util.Pair;
 public class class_9856 {
    public static final class_8115 field_49891 = class_9863.method_45479(
       new class_8115(
-         new class_4639("village/savanna/town_centers"),
-         new class_4639("empty"),
+         new Identifier("village/savanna/town_centers"),
+         new Identifier("empty"),
          ImmutableList.of(
             Pair.of(class_2609.method_11826("village/savanna/town_centers/savanna_meeting_point_1"), 100),
             Pair.of(class_2609.method_11826("village/savanna/town_centers/savanna_meeting_point_2"), 50),
@@ -28,8 +28,8 @@ public class class_9856 {
    static {
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/streets"),
-            new class_4639("village/savanna/terminators"),
+            new Identifier("village/savanna/streets"),
+            new Identifier("village/savanna/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/savanna/streets/corner_01", class_4932.field_25554), 2),
                Pair.of(class_2609.method_11835("village/savanna/streets/corner_03", class_4932.field_25554), 2),
@@ -58,8 +58,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/zombie/streets"),
-            new class_4639("village/savanna/zombie/terminators"),
+            new Identifier("village/savanna/zombie/streets"),
+            new Identifier("village/savanna/zombie/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/savanna/zombie/streets/corner_01", class_4932.field_25554), 2),
                Pair.of(class_2609.method_11835("village/savanna/zombie/streets/corner_03", class_4932.field_25554), 2),
@@ -88,8 +88,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/houses"),
-            new class_4639("village/savanna/terminators"),
+            new Identifier("village/savanna/houses"),
+            new Identifier("village/savanna/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/savanna/houses/savanna_small_house_1"), 2),
                Pair.of(class_2609.method_11826("village/savanna/houses/savanna_small_house_2"), 2),
@@ -131,8 +131,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/zombie/houses"),
-            new class_4639("village/savanna/zombie/terminators"),
+            new Identifier("village/savanna/zombie/houses"),
+            new Identifier("village/savanna/zombie/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/savanna/zombie/houses/savanna_small_house_1", class_4932.field_25539), 2),
                Pair.of(class_2609.method_11835("village/savanna/zombie/houses/savanna_small_house_2", class_4932.field_25539), 2),
@@ -174,8 +174,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/terminators"),
-            new class_4639("empty"),
+            new Identifier("village/savanna/terminators"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_01", class_4932.field_25554), 1),
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_02", class_4932.field_25554), 1),
@@ -188,8 +188,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/zombie/terminators"),
-            new class_4639("empty"),
+            new Identifier("village/savanna/zombie/terminators"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_01", class_4932.field_25554), 1),
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_02", class_4932.field_25554), 1),
@@ -202,16 +202,16 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/trees"),
-            new class_4639("empty"),
+            new Identifier("village/savanna/trees"),
+            new Identifier("empty"),
             ImmutableList.of(Pair.of(class_2609.method_11830(class_7024.field_36133), 1)),
             class_7599.field_38708
          )
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/decor"),
-            new class_4639("empty"),
+            new Identifier("village/savanna/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/savanna/savanna_lamp_post_01"), 4),
                Pair.of(class_2609.method_11830(class_7024.field_36133), 4),
@@ -224,8 +224,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/zombie/decor"),
-            new class_4639("empty"),
+            new Identifier("village/savanna/zombie/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/savanna/savanna_lamp_post_01", class_4932.field_25539), 4),
                Pair.of(class_2609.method_11830(class_7024.field_36133), 4),
@@ -238,8 +238,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/savanna/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/savanna/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/savanna/villagers/baby"), 1),
@@ -250,8 +250,8 @@ public class class_9856 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/savanna/zombie/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/savanna/zombie/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/savanna/zombie/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/savanna/zombie/villagers/unemployed"), 10)

@@ -48,7 +48,7 @@ public class class_965 extends class_2596 {
          String var5x = "";
 
          try {
-            var5x = GLFW.glfwGetClipboardString(MinecraftClient.getInstance().field_9602.method_43181());
+            var5x = GLFW.glfwGetClipboardString(MinecraftClient.getInstance().window.method_43181());
          } catch (Exception var7x) {
          }
 

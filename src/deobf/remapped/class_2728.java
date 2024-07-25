@@ -16,7 +16,7 @@ public final class class_2728 implements class_3254 {
    }
 
    @Override
-   public class_4639 method_14869() {
+   public Identifier method_14869() {
       return field_16149;
    }
 

@@ -52,13 +52,13 @@ public class class_8431 {
          class_6000 var4 = class_6000.method_27395(var3.get("nbt"));
          class_6414 var5 = null;
          if (var3.has("block")) {
-            class_4639 var6 = new class_4639(class_6539.method_29796(var3, "block"));
+            Identifier var6 = new Identifier(class_6539.method_29796(var3, "block"));
             var5 = class_8669.field_44462.method_39806(var6);
          }
 
          class_2307 var8 = null;
          if (var3.has("tag")) {
-            class_4639 var7 = new class_4639(class_6539.method_29796(var3, "tag"));
+            Identifier var7 = new Identifier(class_6539.method_29796(var3, "tag"));
             var8 = class_8410.method_38721().method_29392().method_43140(var7);
             if (var8 == null) {
                throw new JsonSyntaxException("Unknown block tag '" + var7 + "'");

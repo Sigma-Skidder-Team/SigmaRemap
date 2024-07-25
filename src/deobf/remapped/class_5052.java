@@ -13,9 +13,9 @@ public class class_5052 {
    private static boolean field_26103 = false;
    private static boolean field_26104 = false;
    private static final String field_26113 = ".png";
-   private static final class_4639 field_26107 = class_5525.field_28154;
-   private static final class_4639 field_26106 = class_5525.field_28139;
-   private static class_7889 field_26105;
+   private static final Identifier field_26107 = class_5525.field_28154;
+   private static final Identifier field_26106 = class_5525.field_28139;
+   private static TextureManager field_26105;
    private static int field_26112 = 0;
 
    public static boolean method_23281() {
@@ -35,10 +35,10 @@ public class class_5052 {
       }
    }
 
-   public static class_4639 method_23273(class_4639 var0) {
+   public static Identifier method_23273(Identifier var0) {
       if (field_26109) {
          class_8143 var3 = field_26105.method_35679(var0);
-         class_4639 var4 = null;
+         Identifier var4 = null;
          if (var3 instanceof class_1809) {
             var4 = ((class_1809)var3).field_9205;
          }
@@ -134,7 +134,7 @@ public class class_5052 {
       if (class_3111.method_14328()) {
          try {
             String var2 = "optifine/emissive.properties";
-            class_4639 var3 = new class_4639(var2);
+            Identifier var3 = new Identifier(var2);
             InputStream var4 = class_3111.method_14374(var3);
             if (var4 == null) {
                return;
@@ -158,19 +158,19 @@ public class class_5052 {
       }
    }
 
-   public static void method_23274(class_8359 var0, Set<class_4639> var1) {
+   public static void method_23274(class_8359 var0, Set<Identifier> var1) {
       if (field_26111) {
-         for (class_4639 var5 : var1) {
+         for (Identifier var5 : var1) {
             method_23280(var0, var5);
          }
       }
    }
 
-   private static void method_23280(class_8359 var0, class_4639 var1) {
+   private static void method_23280(class_8359 var0, Identifier var1) {
       String var4 = method_23267();
       if (var4 != null && !var1.method_21456().endsWith(var4)) {
-         class_4639 var5 = new class_4639(var1.method_21461(), var1.method_21456() + var4);
-         class_4639 var6 = var0.method_38503(var5);
+         Identifier var5 = new Identifier(var1.method_21461(), var1.method_21456() + var4);
+         Identifier var6 = var0.method_38503(var5);
          if (class_3111.method_14362(var6)) {
             class_5155 var7 = var0.method_38515(var1);
             class_5155 var8 = var0.method_38515(var5);
@@ -208,11 +208,11 @@ public class class_5052 {
       class_3111.method_14317("EmissiveTextures: " + var0);
    }
 
-   public static boolean method_23285(class_4639 var0) {
+   public static boolean method_23285(Identifier var0) {
       return field_26108 != null ? var0.method_21456().endsWith(field_26108) : false;
    }
 
-   public static void method_23283(class_4639 var0, class_1809 var1) {
+   public static void method_23283(Identifier var0, class_1809 var1) {
       if (var0 != null && var1 != null) {
          var1.field_9204 = false;
          var1.field_9205 = null;
@@ -221,7 +221,7 @@ public class class_5052 {
             if (var4.endsWith(".png")) {
                if (!var4.endsWith(field_26108)) {
                   String var5 = var4.substring(0, var4.length() - ".png".length()) + field_26108;
-                  class_4639 var6 = new class_4639(var0.method_21461(), var5);
+                  Identifier var6 = new Identifier(var0.method_21461(), var5);
                   if (class_3111.method_14362(var6)) {
                      var1.field_9205 = var6;
                   }

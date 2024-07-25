@@ -257,8 +257,8 @@ public class class_734 extends class_2596 {
       }
 
       for (class_7038 var9 : this.method_32134()) {
-         float var10 = (float)(var9.method_32173() + var9.method_32137() / 2 - field_4009.field_9602.method_43163() / 2) * (1.0F - var4) * 0.5F;
-         float var11 = (float)(var9.method_32132() + var9.method_32109() / 2 - field_4009.field_9602.method_43166() / 2) * (1.0F - var4) * 0.5F;
+         float var10 = (float)(var9.method_32173() + var9.method_32137() / 2 - field_4009.window.method_43163() / 2) * (1.0F - var4) * 0.5F;
+         float var11 = (float)(var9.method_32132() + var9.method_32109() / 2 - field_4009.window.method_43166() / 2) * (1.0F - var4) * 0.5F;
          var9.method_32138((int)var11, (int)var10);
          var9.method_32111(1.5F - var4 * 0.5F, 1.5F - var4 * 0.5F);
       }

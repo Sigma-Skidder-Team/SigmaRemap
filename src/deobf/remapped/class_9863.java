@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.ImmutableList;
 
 public class class_9863 {
-   public static final class_5621<class_8115> field_49908 = class_5621.<class_8115>method_25497(class_8669.field_44413, new class_4639("empty"));
+   public static final class_5621<class_8115> field_49908 = class_5621.<class_8115>method_25497(class_8669.field_44413, new Identifier("empty"));
    private static final class_8115 field_49906 = method_45479(
       new class_8115(field_49908.method_25499(), field_49908.method_25499(), ImmutableList.of(), class_7599.field_38708)
    );

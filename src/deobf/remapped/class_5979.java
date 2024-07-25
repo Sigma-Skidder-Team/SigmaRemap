@@ -17,8 +17,8 @@ public abstract class class_5979 implements class_3178 {
    public abstract List<class_5522> method_27285();
 
    @Override
-   public class_4639 method_14642() {
-      return (class_4639)class_5655.method_25584(this.field_30480).apply(this.field_30481);
+   public Identifier method_14642() {
+      return (Identifier)class_5655.method_25584(this.field_30480).apply(this.field_30481);
    }
 
    @Override

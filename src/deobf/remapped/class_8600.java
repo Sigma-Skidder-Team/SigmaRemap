@@ -29,7 +29,7 @@ public class class_8600 extends class_8131 {
    }
 
    private void method_39533(class_5799 var1) {
-      class_6561 var4 = var1.method_26279(new class_4639("woodland_mansion/" + this.field_44044));
+      class_6561 var4 = var1.method_26279(new Identifier("woodland_mansion/" + this.field_44044));
       class_8478 var5 = new class_8478().method_39045(true).method_39053(this.field_44042).method_39055(this.field_44043).method_39048(class_2010.field_10194);
       this.method_36998(var4, this.field_41648, var5);
    }

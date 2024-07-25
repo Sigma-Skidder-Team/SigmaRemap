@@ -19,22 +19,22 @@ public enum class_3144 implements class_7832 {
    }
 
    @Override
-   public class_4038 method_35458(class_4639 var1) throws IOException {
+   public class_4038 method_35458(Identifier var1) throws IOException {
       throw new FileNotFoundException(var1.toString());
    }
 
    @Override
-   public boolean method_35456(class_4639 var1) {
+   public boolean method_35456(Identifier var1) {
       return false;
    }
 
    @Override
-   public List<class_4038> method_35457(class_4639 var1) {
+   public List<class_4038> method_35457(Identifier var1) {
       return ImmutableList.of();
    }
 
    @Override
-   public Collection<class_4639> method_35460(String var1, Predicate<String> var2) {
+   public Collection<Identifier> method_35460(String var1, Predicate<String> var2) {
       return ImmutableSet.of();
    }
 

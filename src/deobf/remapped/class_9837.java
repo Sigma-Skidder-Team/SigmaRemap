@@ -32,11 +32,11 @@ public class class_9837 extends class_446 {
 
    @Override
    public void method_32178(float var1) {
-      double var4 = MinecraftClient.getInstance().field_9625.method_39835() - (double)(MinecraftClient.getInstance().field_9602.method_43166() / 2);
-      var4 /= (double)(MinecraftClient.getInstance().field_9602.method_43166() / 2);
+      double var4 = MinecraftClient.getInstance().field_9625.method_39835() - (double)(MinecraftClient.getInstance().window.method_43166() / 2);
+      var4 /= (double)(MinecraftClient.getInstance().window.method_43166() / 2);
       var4 = Math.max(-1.0, Math.min(1.0, var4));
-      double var6 = MinecraftClient.getInstance().field_9625.method_39832() - (double)(MinecraftClient.getInstance().field_9602.method_43163() / 2);
-      var6 /= (double)(MinecraftClient.getInstance().field_9602.method_43163() / 2);
+      double var6 = MinecraftClient.getInstance().field_9625.method_39832() - (double)(MinecraftClient.getInstance().window.method_43163() / 2);
+      var6 /= (double)(MinecraftClient.getInstance().window.method_43163() / 2);
       var6 = Math.max(-1.0, Math.min(1.0, var6));
       GL11.glPushMatrix();
       GL11.glMatrixMode(5888);

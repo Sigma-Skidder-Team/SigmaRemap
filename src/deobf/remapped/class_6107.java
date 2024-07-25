@@ -53,7 +53,7 @@ public class class_6107 extends class_266 {
 
       class_6414 var9;
       try {
-         var9 = class_8669.field_44462.method_39794(new class_4639(var8)).orElse((class_6414)null);
+         var9 = class_8669.field_44462.method_39794(new Identifier(var8)).orElse((class_6414)null);
       } catch (Exception var11) {
          field_31237.error("Error while parsing flat world string => {}", var11.getMessage());
          return null;
@@ -100,7 +100,7 @@ public class class_6107 extends class_266 {
             class_5621 var8 = class_8606.field_44136;
             if (var5.hasNext()) {
                try {
-                  class_4639 var9 = new class_4639((String)var5.next());
+                  Identifier var9 = new Identifier((String)var5.next());
                   var8 = class_5621.<class_6325>method_25497(class_8669.field_44359, var9);
                   var0.method_39802(var8).orElseThrow(() -> new IllegalArgumentException("Invalid Biome: " + var9));
                } catch (Exception var10) {

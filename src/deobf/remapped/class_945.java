@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 public class class_945 extends class_3757 {
-   private class_4639 field_4835;
+   private Identifier field_4835;
    private String field_4827 = "";
    private String field_4838 = "";
    private class_1331 field_4836 = new class_1331(0, 1, 0);
@@ -151,10 +151,10 @@ public class class_945 extends class_3757 {
    }
 
    public void method_4098(String var1) {
-      this.method_4099(!class_6660.method_30576(var1) ? class_4639.method_21455(var1) : null);
+      this.method_4099(!class_6660.method_30576(var1) ? Identifier.method_21455(var1) : null);
    }
 
-   public void method_4099(class_4639 var1) {
+   public void method_4099(Identifier var1) {
       this.field_4835 = var1;
    }
 

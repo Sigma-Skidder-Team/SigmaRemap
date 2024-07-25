@@ -28,16 +28,16 @@ import org.apache.logging.log4j.Logger;
 public class class_8359 extends class_8143 implements class_72 {
    private static final Logger field_42813 = LogManager.getLogger();
    /** @deprecated */
-   public static final class_4639 field_42824 = class_3683.field_18059;
+   public static final Identifier field_42824 = class_3683.field_18059;
    /** @deprecated */
-   public static final class_4639 field_42805 = new class_4639("textures/atlas/particles.png");
+   public static final Identifier field_42805 = new Identifier("textures/atlas/particles.png");
    private final List<class_5155> field_42802 = Lists.newArrayList();
-   private final Set<class_4639> field_42821 = Sets.newHashSet();
-   private final Map<class_4639, class_5155> field_42817 = Maps.newHashMap();
-   private final class_4639 field_42808;
+   private final Set<Identifier> field_42821 = Sets.newHashSet();
+   private final Map<Identifier, class_5155> field_42817 = Maps.newHashMap();
+   private final Identifier field_42808;
    private final int field_42823;
-   private Map<class_4639, class_5155> field_42812 = new LinkedHashMap<class_4639, class_5155>();
-   private Map<class_4639, class_5155> field_42804 = new LinkedHashMap<class_4639, class_5155>();
+   private Map<Identifier, class_5155> field_42812 = new LinkedHashMap<Identifier, class_5155>();
+   private Map<Identifier, class_5155> field_42804 = new LinkedHashMap<Identifier, class_5155>();
    private class_5155[] field_42815 = null;
    private int field_42801 = -1;
    private int field_42820 = -1;
@@ -53,7 +53,7 @@ public class class_8359 extends class_8143 implements class_72 {
    private boolean field_42825;
    private boolean field_42810;
 
-   public class_8359(class_4639 var1) {
+   public class_8359(Identifier var1) {
       this.field_42808 = var1;
       this.field_42823 = class_3542.method_16477();
       this.field_42811 = var1.equals(field_42824);
@@ -181,7 +181,7 @@ public class class_8359 extends class_8143 implements class_72 {
       }
    }
 
-   public class_3930 method_38516(class_7832 var1, Stream<class_4639> var2, class_3492 var3, int var4) {
+   public class_3930 method_38516(class_7832 var1, Stream<Identifier> var2, class_3492 var3, int var4) {
       this.field_42811 = this.field_42808.equals(field_42824);
       this.field_42825 = class_3111.method_14424();
       this.field_42810 = class_3111.method_14405();
@@ -296,14 +296,14 @@ public class class_8359 extends class_8143 implements class_72 {
       return new class_3930(var8, var11.method_36992(), var11.method_36994(), var25, var28);
    }
 
-   private Collection<class_8353> method_38532(class_7832 var1, Set<class_4639> var2) {
+   private Collection<class_8353> method_38532(class_7832 var1, Set<Identifier> var2) {
       ArrayList var5 = Lists.newArrayList();
       ConcurrentLinkedQueue var6 = new ConcurrentLinkedQueue();
 
-      for (class_4639 var8 : var2) {
+      for (Identifier var8 : var2) {
          if (!class_2008.method_9327().equals(var8)) {
             var5.add(CompletableFuture.runAsync(() -> {
-               class_4639 var6x = this.method_38503(var8);
+               Identifier var6x = this.method_38503(var8);
 
                class_8353 var12;
                try (class_4038 var7 = var1.method_35458(var6x)) {
@@ -357,7 +357,7 @@ public class class_8359 extends class_8143 implements class_72 {
 
    @Nullable
    private class_5155 method_38531(class_7832 var1, class_8353 var2, int var3, int var4, int var5, int var6, int var7) {
-      class_4639 var10 = this.method_38503(var2.method_38459());
+      Identifier var10 = this.method_38503(var2.method_38459());
 
       try (class_4038 var11 = var1.method_35458(var10)) {
          class_5797 var13 = class_5797.method_26230(var11.method_18576());
@@ -373,10 +373,10 @@ public class class_8359 extends class_8143 implements class_72 {
       }
    }
 
-   public class_4639 method_38503(class_4639 var1) {
+   public Identifier method_38503(Identifier var1) {
       return !this.method_38514(var1)
-         ? new class_4639(var1.method_21461(), String.format("textures/%s%s", var1.method_21456(), ".png"))
-         : new class_4639(var1.method_21461(), var1.method_21456() + ".png");
+         ? new Identifier(var1.method_21461(), String.format("textures/%s%s", var1.method_21456(), ".png"))
+         : new Identifier(var1.method_21461(), var1.method_21456() + ".png");
    }
 
    public void method_38526() {
@@ -476,7 +476,7 @@ public class class_8359 extends class_8143 implements class_72 {
       }
    }
 
-   public class_5155 method_38528(class_4639 var1) {
+   public class_5155 method_38528(Identifier var1) {
       class_5155 var4 = this.field_42817.get(var1);
       return var4 != null ? var4 : this.field_42817.get(class_2008.method_9327());
    }
@@ -496,7 +496,7 @@ public class class_8359 extends class_8143 implements class_72 {
       this.field_42802.clear();
    }
 
-   public class_4639 method_38519() {
+   public Identifier method_38519() {
       return this.field_42808;
    }
 
@@ -504,7 +504,7 @@ public class class_8359 extends class_8143 implements class_72 {
       this.method_37049(false, var1.field_19101 > 0);
    }
 
-   private boolean method_38514(class_4639 var1) {
+   private boolean method_38514(Identifier var1) {
       String var4 = var1.method_21456();
       return this.method_38505(var4);
    }
@@ -515,20 +515,20 @@ public class class_8359 extends class_8143 implements class_72 {
    }
 
    public class_5155 method_38509(String var1) {
-      class_4639 var4 = new class_4639(var1);
+      Identifier var4 = new Identifier(var1);
       return this.method_38510(var4);
    }
 
-   public class_5155 method_38510(class_4639 var1) {
+   public class_5155 method_38510(Identifier var1) {
       return this.field_42812.get(var1);
    }
 
    public class_5155 method_38522(String var1) {
-      class_4639 var4 = new class_4639(var1);
+      Identifier var4 = new Identifier(var1);
       return this.method_38523(var4);
    }
 
-   public class_5155 method_38523(class_4639 var1) {
+   public class_5155 method_38523(Identifier var1) {
       return this.field_42817.get(var1);
    }
 
@@ -558,7 +558,7 @@ public class class_8359 extends class_8143 implements class_72 {
       return this.field_42806.method_33085();
    }
 
-   private int method_38517(Set<class_4639> var1, class_7832 var2) {
+   private int method_38517(Set<Identifier> var1, class_7832 var2) {
       int var5 = this.method_38502(var1, var2, 20);
       if (var5 < 16) {
          var5 = 16;
@@ -577,11 +577,11 @@ public class class_8359 extends class_8143 implements class_72 {
       return var6;
    }
 
-   private int method_38502(Set<class_4639> var1, class_7832 var2, int var3) {
+   private int method_38502(Set<Identifier> var1, class_7832 var2, int var3) {
       HashMap var6 = new HashMap();
 
-      for (class_4639 var8 : var1) {
-         class_4639 var9 = this.method_38503(var8);
+      for (Identifier var8 : var1) {
+         Identifier var9 = this.method_38503(var8);
 
          try {
             class_4038 var10 = var2.method_35458(var9);
@@ -719,7 +719,7 @@ public class class_8359 extends class_8143 implements class_72 {
       return this.field_42809;
    }
 
-   public class_5155 method_38515(class_4639 var1) {
+   public class_5155 method_38515(Identifier var1) {
       if (var1 != null) {
          class_5155 var4 = this.field_42812.get(var1);
          if (var4 == null) {
@@ -748,7 +748,7 @@ public class class_8359 extends class_8143 implements class_72 {
       return this.field_42806;
    }
 
-   private void method_38512(class_4639 var1) {
+   private void method_38512(Identifier var1) {
       class_5155 var4 = this.field_42812.get(var1);
       if (var4 != null) {
          this.field_42804.put(var1, var4);

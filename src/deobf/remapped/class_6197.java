@@ -3,30 +3,30 @@ package remapped;
 import java.io.IOException;
 
 public class class_6197 implements class_6310<class_392> {
-   public static final class_4639 field_31656 = new class_4639("brand");
-   public static final class_4639 field_31651 = new class_4639("debug/path");
-   public static final class_4639 field_31652 = new class_4639("debug/neighbors_update");
-   public static final class_4639 field_31654 = new class_4639("debug/caves");
-   public static final class_4639 field_31655 = new class_4639("debug/structures");
-   public static final class_4639 field_31639 = new class_4639("debug/worldgen_attempt");
-   public static final class_4639 field_31649 = new class_4639("debug/poi_ticket_count");
-   public static final class_4639 field_31646 = new class_4639("debug/poi_added");
-   public static final class_4639 field_31642 = new class_4639("debug/poi_removed");
-   public static final class_4639 field_31645 = new class_4639("debug/village_sections");
-   public static final class_4639 field_31647 = new class_4639("debug/goal_selector");
-   public static final class_4639 field_31657 = new class_4639("debug/brain");
-   public static final class_4639 field_31650 = new class_4639("debug/bee");
-   public static final class_4639 field_31641 = new class_4639("debug/hive");
-   public static final class_4639 field_31648 = new class_4639("debug/game_test_add_marker");
-   public static final class_4639 field_31640 = new class_4639("debug/game_test_clear");
-   public static final class_4639 field_31638 = new class_4639("debug/raids");
-   private class_4639 field_31644;
+   public static final Identifier field_31656 = new Identifier("brand");
+   public static final Identifier field_31651 = new Identifier("debug/path");
+   public static final Identifier field_31652 = new Identifier("debug/neighbors_update");
+   public static final Identifier field_31654 = new Identifier("debug/caves");
+   public static final Identifier field_31655 = new Identifier("debug/structures");
+   public static final Identifier field_31639 = new Identifier("debug/worldgen_attempt");
+   public static final Identifier field_31649 = new Identifier("debug/poi_ticket_count");
+   public static final Identifier field_31646 = new Identifier("debug/poi_added");
+   public static final Identifier field_31642 = new Identifier("debug/poi_removed");
+   public static final Identifier field_31645 = new Identifier("debug/village_sections");
+   public static final Identifier field_31647 = new Identifier("debug/goal_selector");
+   public static final Identifier field_31657 = new Identifier("debug/brain");
+   public static final Identifier field_31650 = new Identifier("debug/bee");
+   public static final Identifier field_31641 = new Identifier("debug/hive");
+   public static final Identifier field_31648 = new Identifier("debug/game_test_add_marker");
+   public static final Identifier field_31640 = new Identifier("debug/game_test_clear");
+   public static final Identifier field_31638 = new Identifier("debug/raids");
+   private Identifier field_31644;
    private class_8248 field_31643;
 
    public class_6197() {
    }
 
-   public class_6197(class_4639 var1, class_8248 var2) {
+   public class_6197(Identifier var1, class_8248 var2) {
       this.field_31644 = var1;
       this.field_31643 = var2;
       if (var2.writerIndex() > 1048576) {
@@ -55,7 +55,7 @@ public class class_6197 implements class_6310<class_392> {
       var1.method_1915(this);
    }
 
-   public class_4639 method_28332() {
+   public Identifier method_28332() {
       return this.field_31644;
    }
 

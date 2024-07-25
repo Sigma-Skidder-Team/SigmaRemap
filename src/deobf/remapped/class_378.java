@@ -235,7 +235,7 @@ public class class_378 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public class_4639 method_26934() {
+   public Identifier method_26934() {
       return this.method_1860() != 1 ? class_5931.field_30157 : this.method_37387().method_30480();
    }
 

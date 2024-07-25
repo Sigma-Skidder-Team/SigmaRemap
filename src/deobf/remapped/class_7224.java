@@ -1,8 +1,8 @@
 package remapped;
 
 public class class_7224 extends class_2160<class_2519, class_8071> {
-   private static final class_4639 field_37078 = new class_4639("textures/entity/illager/vex.png");
-   private static final class_4639 field_37079 = new class_4639("textures/entity/illager/vex_charging.png");
+   private static final Identifier field_37078 = new Identifier("textures/entity/illager/vex.png");
+   private static final Identifier field_37079 = new Identifier("textures/entity/illager/vex_charging.png");
 
    public class_7224(class_6122 var1) {
       super(var1, new class_8071(), 0.3F);
@@ -12,7 +12,7 @@ public class class_7224 extends class_2160<class_2519, class_8071> {
       return 15;
    }
 
-   public class_4639 method_33080(class_2519 var1) {
+   public Identifier method_33080(class_2519 var1) {
       return !var1.method_11463() ? field_37078 : field_37079;
    }
 

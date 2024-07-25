@@ -1121,8 +1121,8 @@ public class class_6331 extends class_6486 implements class_700 {
    public void method_28941(class_1331 var1, float var2) {
       class_2034 var5 = new class_2034(new class_1331(this.field_33035.method_8654(), 0, this.field_33035.method_8655()));
       this.field_33035.method_4988(var1, var2);
-      this.method_28945().method_10193(class_5032.field_26021, var5, 11, class_3256.field_16155);
-      this.method_28945().method_10177(class_5032.field_26021, new class_2034(var1), 11, class_3256.field_16155);
+      this.method_28945().method_10193(class_5032.field_26021, var5, 11, Unit.INSTANCE);
+      this.method_28945().method_10177(class_5032.field_26021, new class_2034(var1), 11, Unit.INSTANCE);
       this.method_29522().method_1600().method_39972(new class_2073(var1, var2));
    }
 
@@ -1376,12 +1376,12 @@ public class class_6331 extends class_6486 implements class_700 {
       );
    }
 
-   private static <T> String method_28930(Collection<T> var0, Function<T, class_4639> var1) {
+   private static <T> String method_28930(Collection<T> var0, Function<T, Identifier> var1) {
       try {
          Object2IntOpenHashMap var4 = new Object2IntOpenHashMap();
 
          for (Object var6 : var0) {
-            class_4639 var7 = (class_4639)var1.apply(var6);
+            Identifier var7 = (Identifier)var1.apply(var6);
             var4.addTo(var7, 1);
          }
 

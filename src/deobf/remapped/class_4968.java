@@ -87,14 +87,14 @@ public class class_4968 extends class_3736 {
    public void close() {
    }
 
-   public Collection<class_4639> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<Identifier> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
       File var8 = new File(this.field_18260, var1.method_14619());
       ArrayList var9 = Lists.newArrayList();
       this.method_22827(new File(new File(var8, var2), var3), var4, var2, var9, var3 + "/", var5);
       return var9;
    }
 
-   private void method_22827(File var1, int var2, String var3, List<class_4639> var4, String var5, Predicate<String> var6) {
+   private void method_22827(File var1, int var2, String var3, List<Identifier> var4, String var5, Predicate<String> var6) {
       File[] var9 = var1.listFiles();
       if (var9 != null) {
          for (File var13 : var9) {
@@ -104,7 +104,7 @@ public class class_4968 extends class_3736 {
                }
             } else if (!var13.getName().endsWith(".mcmeta") && var6.test(var13.getName())) {
                try {
-                  var4.add(new class_4639(var3, var5 + var13.getName()));
+                  var4.add(new Identifier(var3, var5 + var13.getName()));
                } catch (class_7485 var15) {
                   field_25724.error(var15.getMessage());
                }

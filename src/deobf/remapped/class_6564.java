@@ -28,7 +28,7 @@ public class class_6564 implements class_5998 {
    private static <T> JsonElement method_30002(class_8669<T> var0) {
       JsonObject var3 = new JsonObject();
       if (var0 instanceof class_3991) {
-         class_4639 var4 = ((class_3991)var0).method_18397();
+         Identifier var4 = ((class_3991)var0).method_18397();
          var3.addProperty("default", var4.toString());
       }
 
@@ -36,7 +36,7 @@ public class class_6564 implements class_5998 {
       var3.addProperty("protocol_id", var11);
       JsonObject var5 = new JsonObject();
 
-      for (class_4639 var7 : var0.method_39805()) {
+      for (Identifier var7 : var0.method_39805()) {
          Object var8 = var0.method_39806(var7);
          int var9 = var0.method_14041(var8);
          JsonObject var10 = new JsonObject();

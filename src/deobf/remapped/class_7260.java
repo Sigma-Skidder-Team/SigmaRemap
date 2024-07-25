@@ -6,8 +6,8 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class class_7260<T extends class_9795> extends class_2255<T> {
-   public static final class_4639 field_37199 = new class_4639("textures/environment/end_sky.png");
-   public static final class_4639 field_37196 = new class_4639("textures/entity/end_portal.png");
+   public static final Identifier field_37199 = new Identifier("textures/environment/end_sky.png");
+   public static final Identifier field_37196 = new Identifier("textures/entity/end_portal.png");
    private static final Random field_37198 = new Random(31100L);
    private static final List<class_3581> field_37197 = IntStream.range(0, 16)
       .<class_3581>mapToObj(var0 -> class_3581.method_16712(var0 + 1))

@@ -4,12 +4,12 @@ import it.unimi.dsi.fastutil.ints.IntList;
 
 public class class_3197 implements class_1504 {
    private static String[] field_15969;
-   private final class_4639 field_15968;
+   private final Identifier field_15968;
    private final String field_15970;
    private final class_6098 field_15967;
    private final class_2831<class_8137> field_15966;
 
-   public class_3197(class_4639 var1, String var2, class_6098 var3, class_2831<class_8137> var4) {
+   public class_3197(Identifier var1, String var2, class_6098 var3, class_2831<class_8137> var4) {
       this.field_15968 = var1;
       this.field_15970 = var2;
       this.field_15967 = var3;
@@ -17,7 +17,7 @@ public class class_3197 implements class_1504 {
    }
 
    @Override
-   public class_4639 method_41050() {
+   public Identifier method_41050() {
       return this.field_15968;
    }
 

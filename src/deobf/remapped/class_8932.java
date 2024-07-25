@@ -38,7 +38,7 @@ public interface class_8932<C extends class_6867> {
       return new class_6098(class_4783.field_23794);
    }
 
-   class_4639 method_41050();
+   Identifier method_41050();
 
    class_2994<?> method_41048();
 

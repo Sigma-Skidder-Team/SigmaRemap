@@ -16,7 +16,7 @@ public class class_865 {
       class_7780.field_39437,
       class_5640.field_28605,
       (String)null,
-      (class_4639)null
+      (Identifier)null
    );
    private final class_6411 field_4487;
    private final class_6254 field_4489;
@@ -30,7 +30,7 @@ public class class_865 {
    private final class_865 field_4478;
    private final class_865 field_4490;
    private final String field_4484;
-   private final class_4639 field_4483;
+   private final Identifier field_4483;
 
    private class_865(
       class_6411 var1,
@@ -43,7 +43,7 @@ public class class_865 {
       class_7780 var8,
       class_5640 var9,
       String var10,
-      class_4639 var11
+      Identifier var11
    ) {
       this.field_4487 = var1;
       this.field_4489 = var2;
@@ -73,7 +73,7 @@ public class class_865 {
       class_865 var10,
       class_865 var11,
       String var12,
-      class_4639 var13
+      Identifier var13
    ) {
       this.field_4487 = var1;
       this.field_4489 = var2;
@@ -167,7 +167,7 @@ public class class_865 {
          class_865 var13 = method_3740(var3.get("vehicle"));
          class_865 var14 = method_3740(var3.get("targeted_entity"));
          String var15 = class_6539.method_29797(var3, "team", (String)null);
-         class_4639 var16 = !var3.has("catType") ? null : new class_4639(class_6539.method_29796(var3, "catType"));
+         Identifier var16 = !var3.has("catType") ? null : new Identifier(class_6539.method_29796(var3, "catType"));
          return new class_2184()
             .method_10133(var4)
             .method_10128(var5)

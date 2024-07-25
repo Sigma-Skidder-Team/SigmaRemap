@@ -9,7 +9,7 @@ public class class_2522 extends class_1873 {
    public static final Codec<class_2522> field_12489 = method_10312(class_8669.field_44462, class_6414::method_29260).stable();
    private int field_12495 = -1;
    private int field_12490 = -1;
-   private class_4639 field_12492;
+   private Identifier field_12492;
    private int field_12493 = -1;
    private static final AtomicInteger field_12491 = new AtomicInteger(0);
 
@@ -33,7 +33,7 @@ public class class_2522 extends class_1873 {
       return this.field_12490;
    }
 
-   public class_4639 method_11474() {
+   public Identifier method_11474() {
       if (this.field_12492 == null) {
          this.field_12492 = class_8669.field_44462.method_39797(this.method_8360());
       }

@@ -11,7 +11,7 @@ public abstract class class_9716 extends class_704 {
    public float field_49394;
    public float field_49384;
    public final class_174 field_49392;
-   private class_4639 field_49387 = null;
+   private Identifier field_49387 = null;
    private long field_49390 = 0L;
    private boolean field_49382 = false;
    private String field_49389 = null;
@@ -20,7 +20,7 @@ public abstract class class_9716 extends class_704 {
    public float field_49393;
    public float field_49381;
    public float field_49386;
-   private static final class_4639 field_49388 = new class_4639("textures/entity/elytra.png");
+   private static final Identifier field_49388 = new Identifier("textures/entity/elytra.png");
 
    public class_9716(class_174 var1, GameProfile var2) {
       super(var1, var1.method_758(), var1.method_734(), var2);
@@ -63,13 +63,13 @@ public abstract class class_9716 extends class_704 {
       return var3 != null && var3.method_3404();
    }
 
-   public class_4639 method_44889() {
+   public Identifier method_44889() {
       class_753 var3 = this.method_44881();
       return var3 != null ? var3.method_3402() : class_1512.method_6921(this.method_37328());
    }
 
    @Nullable
-   public class_4639 method_44891() {
+   public Identifier method_44891() {
       if (class_3111.method_14274()) {
          if (this.field_49390 != 0L && System.currentTimeMillis() > this.field_49390) {
             class_3773.method_17459(this);
@@ -92,13 +92,13 @@ public abstract class class_9716 extends class_704 {
    }
 
    @Nullable
-   public class_4639 method_44883() {
+   public Identifier method_44883() {
       class_753 var3 = this.method_44881();
       return var3 != null ? var3.method_3413() : null;
    }
 
-   public static class_9211 method_44882(class_4639 var0, String var1) {
-      class_7889 var4 = MinecraftClient.getInstance().method_8577();
+   public static class_9211 method_44882(Identifier var0, String var1) {
+      TextureManager var4 = MinecraftClient.getInstance().method_8577();
       Object var5 = var4.method_35679(var0);
       if (var5 == null) {
          var5 = new class_9211(
@@ -114,8 +114,8 @@ public abstract class class_9716 extends class_704 {
       return (class_9211)var5;
    }
 
-   public static class_4639 method_44890(String var0) {
-      return new class_4639("skins/" + Hashing.sha1().hashUnencodedChars(class_6660.method_30578(var0)));
+   public static Identifier method_44890(String var0) {
+      return new Identifier("skins/" + Hashing.sha1().hashUnencodedChars(class_6660.method_30578(var0)));
    }
 
    public String method_44874() {
@@ -156,16 +156,16 @@ public abstract class class_9716 extends class_704 {
       return this.field_49389;
    }
 
-   public class_4639 method_44877() {
+   public Identifier method_44877() {
       return this.field_49387;
    }
 
-   public void method_44886(class_4639 var1) {
+   public void method_44886(Identifier var1) {
       this.field_49387 = var1;
    }
 
    public boolean method_44887() {
-      class_4639 var3 = this.method_44891();
+      Identifier var3 = this.method_44891();
       if (var3 != null) {
          return var3 != this.field_49387 ? true : this.field_49382;
       } else {

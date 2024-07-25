@@ -3,9 +3,9 @@ package remapped;
 import java.util.function.Consumer;
 
 public class class_4889 extends class_8457 {
-   private final class_4639 field_24306;
+   private final Identifier field_24306;
 
-   private class_4889(class_4639 var1, int var2, int var3, class_7279[] var4, class_2913[] var5) {
+   private class_4889(Identifier var1, int var2, int var3, class_7279[] var4, class_2913[] var5) {
       super(var2, var3, var4, var5);
       this.field_24306 = var1;
    }
@@ -36,7 +36,7 @@ public class class_4889 extends class_8457 {
       }
    }
 
-   public static class_7550<?> method_22426(class_4639 var0) {
+   public static class_7550<?> method_22426(Identifier var0) {
       return method_38895((var1, var2, var3, var4) -> new class_4889(var0, var1, var2, var3, var4));
    }
 }

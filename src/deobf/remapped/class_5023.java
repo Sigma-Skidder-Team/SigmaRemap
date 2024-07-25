@@ -26,19 +26,19 @@ import org.apache.logging.log4j.Logger;
 public class class_5023 extends class_7648 {
    private static final Gson field_25985 = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
    private static final Logger field_25981 = LogManager.getLogger();
-   private Map<class_1510<?>, Map<class_4639, class_8932<?>>> field_25982 = ImmutableMap.of();
+   private Map<class_1510<?>, Map<Identifier, class_8932<?>>> field_25982 = ImmutableMap.of();
    private boolean field_25983;
 
    public class_5023() {
       super(field_25985, "recipes");
    }
 
-   public void method_23144(Map<class_4639, JsonElement> var1, class_7832 var2, class_3492 var3) {
+   public void method_23144(Map<Identifier, JsonElement> var1, class_7832 var2, class_3492 var3) {
       this.field_25983 = false;
       HashMap var6 = Maps.newHashMap();
 
       for (Entry var8 : var1.entrySet()) {
-         class_4639 var9 = (class_4639)var8.getKey();
+         Identifier var9 = (Identifier)var8.getKey();
 
          try {
             class_8932 var10 = method_23146(var9, class_6539.method_29782((JsonElement)var8.getValue(), "top element"));
@@ -73,8 +73,8 @@ public class class_5023 extends class_7648 {
          .collect(Collectors.<T>toList());
    }
 
-   private <C extends class_6867, T extends class_8932<C>> Map<class_4639, class_8932<C>> method_23142(class_1510<T> var1) {
-      return (Map<class_4639, class_8932<C>>)this.field_25982.getOrDefault(var1, Collections.<class_4639, class_8932<?>>emptyMap());
+   private <C extends class_6867, T extends class_8932<C>> Map<Identifier, class_8932<C>> method_23142(class_1510<T> var1) {
+      return (Map<Identifier, class_8932<C>>)this.field_25982.getOrDefault(var1, Collections.<Identifier, class_8932<?>>emptyMap());
    }
 
    public <C extends class_6867, T extends class_8932<C>> class_2831<class_6098> method_23147(class_1510<T> var1, C var2, class_6486 var3) {
@@ -92,7 +92,7 @@ public class class_5023 extends class_7648 {
       }
    }
 
-   public Optional<? extends class_8932<?>> method_23139(class_4639 var1) {
+   public Optional<? extends class_8932<?>> method_23139(Identifier var1) {
       return this.field_25982.values().stream().<class_8932<?>>map(var1x -> var1x.get(var1)).filter(Objects::nonNull).findFirst();
    }
 
@@ -100,14 +100,14 @@ public class class_5023 extends class_7648 {
       return this.field_25982.values().stream().<class_8932<?>>flatMap(var0 -> var0.values().stream()).collect(Collectors.<class_8932<?>>toSet());
    }
 
-   public Stream<class_4639> method_23145() {
-      return this.field_25982.values().stream().<class_4639>flatMap(var0 -> var0.keySet().stream());
+   public Stream<Identifier> method_23145() {
+      return this.field_25982.values().stream().<Identifier>flatMap(var0 -> var0.keySet().stream());
    }
 
-   public static class_8932<?> method_23146(class_4639 var0, JsonObject var1) {
+   public static class_8932<?> method_23146(Identifier var0, JsonObject var1) {
       String var4 = class_6539.method_29796(var1, "type");
       return class_8669.field_44414
-         .method_39794(new class_4639(var4))
+         .method_39794(new Identifier(var4))
          .orElseThrow(() -> new JsonSyntaxException("Invalid or unsupported recipe type '" + var4 + "'"))
          .method_13696(var0, var1);
    }

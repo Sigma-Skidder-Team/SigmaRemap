@@ -6,77 +6,77 @@ import java.util.List;
 import java.util.Random;
 
 public class class_9834 {
-   private static final class_4639[] field_49805 = new class_4639[]{
-      new class_4639("underwater_ruin/warm_1"),
-      new class_4639("underwater_ruin/warm_2"),
-      new class_4639("underwater_ruin/warm_3"),
-      new class_4639("underwater_ruin/warm_4"),
-      new class_4639("underwater_ruin/warm_5"),
-      new class_4639("underwater_ruin/warm_6"),
-      new class_4639("underwater_ruin/warm_7"),
-      new class_4639("underwater_ruin/warm_8")
+   private static final Identifier[] field_49805 = new Identifier[]{
+      new Identifier("underwater_ruin/warm_1"),
+      new Identifier("underwater_ruin/warm_2"),
+      new Identifier("underwater_ruin/warm_3"),
+      new Identifier("underwater_ruin/warm_4"),
+      new Identifier("underwater_ruin/warm_5"),
+      new Identifier("underwater_ruin/warm_6"),
+      new Identifier("underwater_ruin/warm_7"),
+      new Identifier("underwater_ruin/warm_8")
    };
-   private static final class_4639[] field_49802 = new class_4639[]{
-      new class_4639("underwater_ruin/brick_1"),
-      new class_4639("underwater_ruin/brick_2"),
-      new class_4639("underwater_ruin/brick_3"),
-      new class_4639("underwater_ruin/brick_4"),
-      new class_4639("underwater_ruin/brick_5"),
-      new class_4639("underwater_ruin/brick_6"),
-      new class_4639("underwater_ruin/brick_7"),
-      new class_4639("underwater_ruin/brick_8")
+   private static final Identifier[] field_49802 = new Identifier[]{
+      new Identifier("underwater_ruin/brick_1"),
+      new Identifier("underwater_ruin/brick_2"),
+      new Identifier("underwater_ruin/brick_3"),
+      new Identifier("underwater_ruin/brick_4"),
+      new Identifier("underwater_ruin/brick_5"),
+      new Identifier("underwater_ruin/brick_6"),
+      new Identifier("underwater_ruin/brick_7"),
+      new Identifier("underwater_ruin/brick_8")
    };
-   private static final class_4639[] field_49803 = new class_4639[]{
-      new class_4639("underwater_ruin/cracked_1"),
-      new class_4639("underwater_ruin/cracked_2"),
-      new class_4639("underwater_ruin/cracked_3"),
-      new class_4639("underwater_ruin/cracked_4"),
-      new class_4639("underwater_ruin/cracked_5"),
-      new class_4639("underwater_ruin/cracked_6"),
-      new class_4639("underwater_ruin/cracked_7"),
-      new class_4639("underwater_ruin/cracked_8")
+   private static final Identifier[] field_49803 = new Identifier[]{
+      new Identifier("underwater_ruin/cracked_1"),
+      new Identifier("underwater_ruin/cracked_2"),
+      new Identifier("underwater_ruin/cracked_3"),
+      new Identifier("underwater_ruin/cracked_4"),
+      new Identifier("underwater_ruin/cracked_5"),
+      new Identifier("underwater_ruin/cracked_6"),
+      new Identifier("underwater_ruin/cracked_7"),
+      new Identifier("underwater_ruin/cracked_8")
    };
-   private static final class_4639[] field_49806 = new class_4639[]{
-      new class_4639("underwater_ruin/mossy_1"),
-      new class_4639("underwater_ruin/mossy_2"),
-      new class_4639("underwater_ruin/mossy_3"),
-      new class_4639("underwater_ruin/mossy_4"),
-      new class_4639("underwater_ruin/mossy_5"),
-      new class_4639("underwater_ruin/mossy_6"),
-      new class_4639("underwater_ruin/mossy_7"),
-      new class_4639("underwater_ruin/mossy_8")
+   private static final Identifier[] field_49806 = new Identifier[]{
+      new Identifier("underwater_ruin/mossy_1"),
+      new Identifier("underwater_ruin/mossy_2"),
+      new Identifier("underwater_ruin/mossy_3"),
+      new Identifier("underwater_ruin/mossy_4"),
+      new Identifier("underwater_ruin/mossy_5"),
+      new Identifier("underwater_ruin/mossy_6"),
+      new Identifier("underwater_ruin/mossy_7"),
+      new Identifier("underwater_ruin/mossy_8")
    };
-   private static final class_4639[] field_49804 = new class_4639[]{
-      new class_4639("underwater_ruin/big_brick_1"),
-      new class_4639("underwater_ruin/big_brick_2"),
-      new class_4639("underwater_ruin/big_brick_3"),
-      new class_4639("underwater_ruin/big_brick_8")
+   private static final Identifier[] field_49804 = new Identifier[]{
+      new Identifier("underwater_ruin/big_brick_1"),
+      new Identifier("underwater_ruin/big_brick_2"),
+      new Identifier("underwater_ruin/big_brick_3"),
+      new Identifier("underwater_ruin/big_brick_8")
    };
-   private static final class_4639[] field_49808 = new class_4639[]{
-      new class_4639("underwater_ruin/big_mossy_1"),
-      new class_4639("underwater_ruin/big_mossy_2"),
-      new class_4639("underwater_ruin/big_mossy_3"),
-      new class_4639("underwater_ruin/big_mossy_8")
+   private static final Identifier[] field_49808 = new Identifier[]{
+      new Identifier("underwater_ruin/big_mossy_1"),
+      new Identifier("underwater_ruin/big_mossy_2"),
+      new Identifier("underwater_ruin/big_mossy_3"),
+      new Identifier("underwater_ruin/big_mossy_8")
    };
-   private static final class_4639[] field_49809 = new class_4639[]{
-      new class_4639("underwater_ruin/big_cracked_1"),
-      new class_4639("underwater_ruin/big_cracked_2"),
-      new class_4639("underwater_ruin/big_cracked_3"),
-      new class_4639("underwater_ruin/big_cracked_8")
+   private static final Identifier[] field_49809 = new Identifier[]{
+      new Identifier("underwater_ruin/big_cracked_1"),
+      new Identifier("underwater_ruin/big_cracked_2"),
+      new Identifier("underwater_ruin/big_cracked_3"),
+      new Identifier("underwater_ruin/big_cracked_8")
    };
-   private static final class_4639[] field_49807 = new class_4639[]{
-      new class_4639("underwater_ruin/big_warm_4"),
-      new class_4639("underwater_ruin/big_warm_5"),
-      new class_4639("underwater_ruin/big_warm_6"),
-      new class_4639("underwater_ruin/big_warm_7")
+   private static final Identifier[] field_49807 = new Identifier[]{
+      new Identifier("underwater_ruin/big_warm_4"),
+      new Identifier("underwater_ruin/big_warm_5"),
+      new Identifier("underwater_ruin/big_warm_6"),
+      new Identifier("underwater_ruin/big_warm_7")
    };
 
-   private static class_4639 method_45325(Random var0) {
-      return Util.<class_4639>method_44697(field_49805, var0);
+   private static Identifier method_45325(Random var0) {
+      return Util.<Identifier>method_44697(field_49805, var0);
    }
 
-   private static class_4639 method_45324(Random var0) {
-      return Util.<class_4639>method_44697(field_49807, var0);
+   private static Identifier method_45324(Random var0) {
+      return Util.<Identifier>method_44697(field_49807, var0);
    }
 
    public static void method_45328(class_5799 var0, class_1331 var1, class_6631 var2, List<class_7060> var3, Random var4, class_8401 var5) {
@@ -132,16 +132,16 @@ public class class_9834 {
    ) {
       if (var5.field_42983 != class_4161.field_20226) {
          if (var5.field_42983 == class_4161.field_20229) {
-            class_4639[] var10 = !var6 ? field_49802 : field_49804;
-            class_4639[] var11 = !var6 ? field_49803 : field_49809;
-            class_4639[] var12 = !var6 ? field_49806 : field_49808;
+            Identifier[] var10 = !var6 ? field_49802 : field_49804;
+            Identifier[] var11 = !var6 ? field_49803 : field_49809;
+            Identifier[] var12 = !var6 ? field_49806 : field_49808;
             int var13 = var4.nextInt(var10.length);
             var3.add(new class_4664(var0, var10[var13], var1, var2, var7, var5.field_42983, var6));
             var3.add(new class_4664(var0, var11[var13], var1, var2, 0.7F, var5.field_42983, var6));
             var3.add(new class_4664(var0, var12[var13], var1, var2, 0.5F, var5.field_42983, var6));
          }
       } else {
-         class_4639 var14 = !var6 ? method_45325(var4) : method_45324(var4);
+         Identifier var14 = !var6 ? method_45325(var4) : method_45324(var4);
          var3.add(new class_4664(var0, var14, var1, var2, var7, var5.field_42983, var6));
       }
    }

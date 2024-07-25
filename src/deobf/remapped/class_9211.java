@@ -27,7 +27,7 @@ public class class_9211 extends class_1809 {
    public boolean field_47109 = false;
    private boolean field_47115 = false;
 
-   public class_9211(File var1, String var2, class_4639 var3, boolean var4, Runnable var5) {
+   public class_9211(File var1, String var2, Identifier var3, boolean var4, Runnable var5) {
       super(var3);
       this.field_47113 = var1;
       this.field_47110 = var2;

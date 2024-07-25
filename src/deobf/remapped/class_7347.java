@@ -5,7 +5,7 @@ public class class_7347 extends class_7157 {
    private static final class_8137 field_37567 = class_8137.method_37019(class_4897.field_24581);
    private static final class_8137 field_37569 = class_8137.method_37019(class_4897.field_24554);
 
-   public class_7347(class_4639 var1) {
+   public class_7347(Identifier var1) {
       super(var1);
    }
 

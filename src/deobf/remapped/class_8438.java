@@ -89,7 +89,7 @@ public class class_8438 extends class_9128 {
 
             int var15 = 23 + var9 * (this.field_43169.method_15654() + 1);
             int var16 = var8.size();
-            int var12 = MinecraftClient.getInstance().field_9602.method_43163();
+            int var12 = MinecraftClient.getInstance().window.method_43163();
             int var13 = var12 / 2 - (9 + 5) * (var16 - 3 + 2);
             if (var15 <= var13) {
                this.field_43170 = 0;
@@ -113,7 +113,7 @@ public class class_8438 extends class_9128 {
          if (!MinecraftClient.getInstance().field_9577.field_45567) {
             byte var20 = 10;
             byte var21 = 1;
-            int var6 = MinecraftClient.getInstance().field_9602.method_43166();
+            int var6 = MinecraftClient.getInstance().window.method_43166();
             class_3384 var8 = this.field_43169;
             byte var9 = -1;
             int var7 = var20 - 4;
@@ -122,7 +122,7 @@ public class class_8438 extends class_9128 {
             }
 
             if (MinecraftClient.getInstance().field_9577.field_45470) {
-               var7 = (int)((double)(field_46692.field_9614.field_15026.field_18917.size() * 9) * field_46692.field_9602.method_43189() + 7.0);
+               var7 = (int)((double)(field_46692.field_9614.field_15026.field_18917.size() * 9) * field_46692.window.method_43189() + 7.0);
             }
 
             byte var10 = 0;
@@ -182,7 +182,7 @@ public class class_8438 extends class_9128 {
    private Color method_38823(int var1, int var2, Color var3) {
       ByteBuffer var6 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
-      GL11.glReadPixels(var1, MinecraftClient.getInstance().field_9602.method_43163() - var2, 1, 1, 6407, 5120, var6);
+      GL11.glReadPixels(var1, MinecraftClient.getInstance().window.method_43163() - var2, 1, 1, 6407, 5120, var6);
       Color var7 = new Color(var6.get(0) * 2, var6.get(1) * 2, var6.get(2) * 2, 1);
       if (var3 != null) {
          var7 = class_314.method_1388(var7, var3, 0.08F);

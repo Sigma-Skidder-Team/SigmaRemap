@@ -29,14 +29,14 @@ public class class_9326 implements class_2231 {
    public class_174 field_47617;
    private final Map<class_7154, Queue<class_9733>> field_47619 = Maps.newIdentityHashMap();
    private final Queue<class_3705> field_47621 = Queues.newArrayDeque();
-   private final class_7889 field_47623;
+   private final TextureManager field_47623;
    private final Random field_47620 = new Random();
-   private final Map<class_4639, class_5256<?>> field_47624 = new HashMap<class_4639, class_5256<?>>();
+   private final Map<Identifier, class_5256<?>> field_47624 = new HashMap<Identifier, class_5256<?>>();
    private final Queue<class_9733> field_47625 = Queues.newArrayDeque();
-   private final Map<class_4639, class_9838> field_47622 = Maps.newHashMap();
+   private final Map<Identifier, class_9838> field_47622 = Maps.newHashMap();
    private final class_8359 field_47616 = new class_8359(class_8359.field_42805);
 
-   public class_9326(class_174 var1, class_7889 var2) {
+   public class_9326(class_174 var1, TextureManager var2) {
       var2.method_35682(this.field_47616.method_38519(), this.field_47616);
       this.field_47617 = var1;
       this.field_47623 = var2;
@@ -140,7 +140,7 @@ public class class_9326 implements class_2231 {
          .<class_3930>thenApplyAsync(var4x -> {
             var3.method_16059();
             var3.method_16056("stitching");
-            class_3930 var7 = this.field_47616.method_38516(var2, var9.values().stream().<class_4639>flatMap(Collection::stream), var3, 0);
+            class_3930 var7 = this.field_47616.method_38516(var2, var9.values().stream().<Identifier>flatMap(Collection::stream), var3, 0);
             var3.method_16054();
             var3.method_16052();
             return var7;
@@ -173,8 +173,8 @@ public class class_9326 implements class_2231 {
       this.field_47616.method_38518();
    }
 
-   private void method_43047(class_7832 var1, class_4639 var2, Map<class_4639, List<class_4639>> var3) {
-      class_4639 var6 = new class_4639(var2.method_21461(), "particles/" + var2.method_21456() + ".json");
+   private void method_43047(class_7832 var1, Identifier var2, Map<Identifier, List<Identifier>> var3) {
+      Identifier var6 = new Identifier(var2.method_21461(), "particles/" + var2.method_21456() + ".json");
 
       try (
          class_4038 var7 = var1.method_35458(var6);
@@ -194,7 +194,7 @@ public class class_9326 implements class_2231 {
 
             var3.put(
                var2,
-               var12.stream().<class_4639>map(var0 -> new class_4639(var0.method_21461(), "particle/" + var0.method_21456())).collect(Collectors.toList())
+               var12.stream().<Identifier>map(var0 -> new Identifier(var0.method_21461(), "particle/" + var0.method_21456())).collect(Collectors.toList())
             );
          }
       } catch (IOException var41) {

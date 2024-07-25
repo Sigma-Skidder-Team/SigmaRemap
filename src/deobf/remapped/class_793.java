@@ -47,12 +47,12 @@ public class class_793 implements class_8773 {
    }
 
    @Override
-   public Collection<class_4639> method_40309() {
+   public Collection<Identifier> method_40309() {
       return this.field_4259.method_8590().method_16338();
    }
 
    @Override
-   public Stream<class_4639> method_40326() {
+   public Stream<Identifier> method_40326() {
       return this.field_4260.method_4812().method_23145();
    }
 

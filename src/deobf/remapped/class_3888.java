@@ -549,7 +549,7 @@ public class class_3888 extends class_2089 {
                var30 = (Collection)class_7860.method_35555(var27.method_8360(), class_7860.field_40138);
             }
 
-            for (class_4639 var23 : var30) {
+            for (Identifier var23 : var30) {
                var11.add("#" + var23);
             }
          }
@@ -574,7 +574,7 @@ public class class_3888 extends class_2089 {
                var32 = (Collection)class_7860.method_35555(var28.method_22005(), class_7860.field_39971);
             }
 
-            for (class_4639 var36 : var32) {
+            for (Identifier var36 : var32) {
                var11.add("#" + var36);
             }
          }

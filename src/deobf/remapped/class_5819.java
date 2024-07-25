@@ -5,11 +5,11 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_5819 extends class_8369 {
-   public class_5819(class_9352 var1) {
+   public class_5819(Window var1) {
       this(var1, var1.method_43192());
    }
 
-   private class_5819(class_9352 var1, class_2078 var2) {
+   private class_5819(Window var1, class_2078 var2) {
       super(
          "options.fullscreen.resolution",
          -1.0,

@@ -28,7 +28,7 @@ public class class_4039 implements class_6310<class_392> {
       int var4 = var1.readInt();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         class_4639 var6 = var1.method_37768();
+         Identifier var6 = var1.method_37768();
          class_225 var7 = class_8669.field_44403.method_39806(var6);
          double var8 = var1.readDouble();
          ArrayList var10 = Lists.newArrayList();

@@ -3,19 +3,19 @@ package remapped;
 import java.util.Objects;
 
 public class class_8338 implements class_5598 {
-   private final class_4639 field_42729;
+   private final Identifier field_42729;
    private final class_1221 field_42730;
    private final boolean field_42731;
    private final int field_42732;
 
-   public class_8338(class_4639 var1, class_1221 var2, boolean var3, int var4) {
+   public class_8338(Identifier var1, class_1221 var2, boolean var3, int var4) {
       this.field_42729 = var1;
       this.field_42730 = var2;
       this.field_42731 = var3;
       this.field_42732 = var4;
    }
 
-   public class_4639 method_38399() {
+   public Identifier method_38399() {
       return this.field_42729;
    }
 

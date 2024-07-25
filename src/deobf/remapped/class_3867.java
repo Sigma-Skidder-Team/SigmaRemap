@@ -3,10 +3,10 @@ package remapped;
 import java.util.Random;
 
 public class class_3867 extends class_7067<class_2770> {
-   public static final class_4639 field_18844 = new class_4639("textures/entity/end_crystal/end_crystal_beam.png");
-   private static final class_4639 field_18838 = new class_4639("textures/entity/enderdragon/dragon_exploding.png");
-   private static final class_4639 field_18841 = new class_4639("textures/entity/enderdragon/dragon.png");
-   private static final class_4639 field_18837 = new class_4639("textures/entity/enderdragon/dragon_eyes.png");
+   public static final Identifier field_18844 = new Identifier("textures/entity/end_crystal/end_crystal_beam.png");
+   private static final Identifier field_18838 = new Identifier("textures/entity/enderdragon/dragon_exploding.png");
+   private static final Identifier field_18841 = new Identifier("textures/entity/enderdragon/dragon.png");
+   private static final Identifier field_18837 = new Identifier("textures/entity/enderdragon/dragon_eyes.png");
    private static final class_3581 field_18842 = class_3581.method_16755(field_18841);
    private static final class_3581 field_18836 = class_3581.method_16727(field_18841);
    private static final class_3581 field_18843 = class_3581.method_16769(field_18837);
@@ -174,7 +174,7 @@ public class class_3867 extends class_7067<class_2770> {
       var5.method_36064();
    }
 
-   public class_4639 method_17918(class_2770 var1) {
+   public Identifier method_17918(class_2770 var1) {
       return field_18841;
    }
 }

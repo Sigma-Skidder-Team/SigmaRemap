@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_1506 extends class_4171<class_8031, class_8216<class_8031>> {
-   private static final class_4639 field_7978 = new class_4639("textures/entity/sheep/sheep_fur.png");
+   private static final Identifier field_7978 = new Identifier("textures/entity/sheep/sheep_fur.png");
    public class_1286<class_8031> field_7980 = new class_1286<class_8031>();
 
    public class_1506(class_2514<class_8031, class_8216<class_8031>> var1) {

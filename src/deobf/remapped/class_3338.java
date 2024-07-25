@@ -55,7 +55,7 @@ public class class_3338 {
       );
    }
 
-   private static int method_15315(class_9155 var0, class_4639 var1, class_1343 var2, class_5734 var3, boolean var4) throws CommandSyntaxException {
+   private static int method_15315(class_9155 var0, Identifier var1, class_1343 var2, class_5734 var3, boolean var4) throws CommandSyntaxException {
       class_1331 var7 = new class_1331(var2);
       if (class_6486.method_29593(var7)) {
          class_5734 var8 = var3.method_25944();

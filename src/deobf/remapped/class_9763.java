@@ -33,10 +33,10 @@ public class class_9763 {
             var3.putAll(field_49591);
             var4.putAll(field_49590);
             if (class_3111.method_14409()) {
-               class_4639[] var5 = method_45063();
+               Identifier[] var5 = method_45063();
 
                for (int var6 = 0; var6 < var5.length; var6++) {
-                  class_4639 var7 = var5[var6];
+                  Identifier var7 = var5[var6];
                   class_3111.method_14277("CustomEntityModel: " + var7.method_21456());
                   class_8599 var8 = method_45061(var7);
                   if (var8 != null) {
@@ -100,7 +100,7 @@ public class class_9763 {
       return (Map<class_558, class_9873>)var2;
    }
 
-   private static class_4639[] method_45063() {
+   private static Identifier[] method_45063() {
       String var2 = "optifine/cem/";
       String var3 = ".jem";
       ArrayList var4 = new ArrayList();
@@ -109,16 +109,16 @@ public class class_9763 {
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
          String var8 = var2 + var7 + var3;
-         class_4639 var9 = new class_4639(var8);
+         Identifier var9 = new Identifier(var8);
          if (class_3111.method_14362(var9)) {
             var4.add(var9);
          }
       }
 
-      return var4.<class_4639>toArray(new class_4639[var4.size()]);
+      return var4.<Identifier>toArray(new Identifier[var4.size()]);
    }
 
-   private static class_8599 method_45061(class_4639 var0) {
+   private static class_8599 method_45061(Identifier var0) {
       try {
          JsonObject var3 = class_4296.method_19954(var0);
          return method_45060(var3, var0.method_21456());
@@ -151,7 +151,7 @@ public class class_9763 {
    }
 
    private static class_8599 method_45052(class_2733 var0, class_7175 var1) {
-      class_4639 var4 = var1.method_32884();
+      Identifier var4 = var1.method_32884();
       class_9514[] var5 = var1.method_32883();
       float var6 = var1.method_32879();
       if (var6 < 0.0F) {

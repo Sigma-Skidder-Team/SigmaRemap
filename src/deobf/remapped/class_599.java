@@ -79,7 +79,7 @@ public class class_599 implements class_8169 {
       }
    }
 
-   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, class_4639 var2) throws IOException {
+   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, Identifier var2) throws IOException {
       InputStream var5 = this.method_2812(var1, var2);
       if (var5 == null) {
          throw new FileNotFoundException(var2.method_21456());
@@ -88,7 +88,7 @@ public class class_599 implements class_8169 {
       }
    }
 
-   public Collection<class_4639> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<Identifier> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
       HashSet var8 = Sets.newHashSet();
       if (field_3445 != null) {
          try {
@@ -142,18 +142,18 @@ public class class_599 implements class_8169 {
       return var8;
    }
 
-   private static void method_2806(Collection<class_4639> var0, int var1, String var2, Path var3, String var4, Predicate<String> var5) throws IOException {
+   private static void method_2806(Collection<Identifier> var0, int var1, String var2, Path var3, String var4, Predicate<String> var5) throws IOException {
       Path var8 = var3.resolve(var2);
 
       try (Stream var9 = Files.walk(var8.resolve(var4), var1)) {
          var9.filter(var1x -> !var1x.endsWith(".mcmeta") && Files.isRegularFile(var1x) && var5.test(var1x.getFileName().toString()))
-            .<class_4639>map(var2x -> new class_4639(var2, var8.relativize(var2x).toString().replaceAll("\\\\", "/")))
+            .<Identifier>map(var2x -> new Identifier(var2, var8.relativize(var2x).toString().replaceAll("\\\\", "/")))
             .forEach(var0::add);
       }
    }
 
    @Nullable
-   public InputStream method_2812(class_3168 var1, class_4639 var2) {
+   public InputStream method_2812(class_3168 var1, Identifier var2) {
       String var5 = method_2808(var1, var2);
       InputStream var6 = class_8835.method_40637(var5);
       if (var6 != null) {
@@ -178,7 +178,7 @@ public class class_599 implements class_8169 {
       }
    }
 
-   private static String method_2808(class_3168 var0, class_4639 var1) {
+   private static String method_2808(class_3168 var0, Identifier var1) {
       return "/" + var0.method_14619() + "/" + var1.method_21461() + "/" + var1.method_21456();
    }
 
@@ -191,7 +191,7 @@ public class class_599 implements class_8169 {
       return !field_3443 ? class_599.class.getResourceAsStream("/" + var1) : this.method_2807(class_3168.field_15843, "/" + var1);
    }
 
-   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, class_4639 var2) {
+   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, Identifier var2) {
       String var5 = method_2808(var1, var2);
       InputStream var6 = class_8835.method_40637(var5);
       if (var6 != null) {

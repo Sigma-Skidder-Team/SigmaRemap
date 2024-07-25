@@ -3,8 +3,8 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_8368 extends class_2089 implements class_3796 {
-   private static final class_4639 field_42843 = new class_4639("textures/gui/widgets.png");
-   public static final class_4639 field_42845 = new class_4639("textures/gui/spectator_widgets.png");
+   private static final Identifier field_42843 = new Identifier("textures/gui/widgets.png");
+   public static final Identifier field_42845 = new Identifier("textures/gui/spectator_widgets.png");
    private final MinecraftClient field_42841;
    private long field_42842;
    private class_3421 field_42844;

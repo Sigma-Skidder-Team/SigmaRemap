@@ -36,7 +36,7 @@ public class class_7608<T extends class_8145 & class_3713> extends class_7067<T>
    }
 
    @Override
-   public class_4639 method_11446(class_8145 var1) {
+   public Identifier method_11446(class_8145 var1) {
       return class_8359.field_42824;
    }
 }

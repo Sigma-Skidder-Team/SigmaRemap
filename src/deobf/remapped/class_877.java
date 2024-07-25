@@ -43,7 +43,7 @@ public class class_877 {
       for (int var3 = 0; var3 < 100; var3++) {
          String var4 = "optifine/gui/background" + var3;
          String var5 = var4 + "/panorama_0.png";
-         class_4639 var6 = new class_4639(var5);
+         Identifier var6 = new Identifier(var5);
          if (class_3111.method_14362(var6)) {
             var2.add(var4);
          }
@@ -63,7 +63,7 @@ public class class_877 {
             class_3111.method_14277("CustomPanorama: " + var5);
          }
 
-         class_4639 var6 = new class_4639(var5 + "/background.properties");
+         Identifier var6 = new Identifier(var5 + "/background.properties");
 
          try {
             InputStream var7 = class_3111.method_14374(var6);

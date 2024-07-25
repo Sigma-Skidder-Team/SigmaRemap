@@ -241,7 +241,7 @@ public class class_7335 {
    }
 
    public static class_7335 method_33461(String var0) {
-      return class_8669.field_44381.method_39806(class_4639.method_21455(var0));
+      return class_8669.field_44381.method_39806(Identifier.method_21455(var0));
    }
 
    public EnumSet<class_3801> method_33447() {

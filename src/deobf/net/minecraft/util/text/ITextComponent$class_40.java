@@ -18,7 +18,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.Map.Entry;
 import javax.annotation.Nullable;
-import remapped.class_4639;
+import remapped.Identifier;
 import remapped.class_6539;
 import remapped.class_9303;
 import remapped.Util;
@@ -126,7 +126,7 @@ public class ITextComponent$class_40 implements JsonDeserializer<IFormattableTex
                   throw new JsonParseException("Don't know how to turn " + p_deserialize_1_ + " into a Component");
                }
 
-               jsonarray2 = new NBTTextComponent$class_45(var16, var19, new class_4639(class_6539.method_29796(iformattabletextcomponent, "storage")));
+               jsonarray2 = new NBTTextComponent$class_45(var16, var19, new Identifier(class_6539.method_29796(iformattabletextcomponent, "storage")));
             }
          }
 

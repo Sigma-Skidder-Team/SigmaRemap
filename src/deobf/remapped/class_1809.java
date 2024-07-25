@@ -7,12 +7,12 @@ import org.apache.logging.log4j.Logger;
 public class class_1809 extends class_8143 {
    private static String[] field_9202;
    private static final Logger field_9203 = LogManager.getLogger();
-   public final class_4639 field_9206;
+   public final Identifier field_9206;
    private class_7832 field_9207;
-   public class_4639 field_9205;
+   public Identifier field_9205;
    public boolean field_9204;
 
-   public class_1809(class_4639 var1) {
+   public class_1809(Identifier var1) {
       this.field_9206 = var1;
    }
 

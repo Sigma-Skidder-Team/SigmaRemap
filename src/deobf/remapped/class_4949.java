@@ -44,7 +44,7 @@ public class class_4949 extends class_1050 {
    }
 
    public class_4949(
-      class_4639 var1, class_562 var2, float var3, float var4, boolean var5, int var6, class_6656 var7, double var8, double var10, double var12, boolean var14
+           Identifier var1, class_562 var2, float var3, float var4, boolean var5, int var6, class_6656 var7, double var8, double var10, double var12, boolean var14
    ) {
       super(var1, var2);
       this.field_5766 = var3;

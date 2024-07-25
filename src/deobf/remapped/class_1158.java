@@ -4,7 +4,7 @@ import java.util.Properties;
 
 public class class_1158 {
    private String field_6573;
-   private class_4639[] field_6580;
+   private Identifier[] field_6580;
    private int field_6578 = 1;
    private int field_6582 = 64;
    private int field_6579 = 3;
@@ -17,10 +17,10 @@ public class class_1158 {
    public class_1158(String var1, Properties var2) {
       class_6284 var5 = new class_6284("CustomPanorama");
       this.field_6573 = var1;
-      this.field_6580 = new class_4639[6];
+      this.field_6580 = new Identifier[6];
 
       for (int var6 = 0; var6 < this.field_6580.length; var6++) {
-         this.field_6580[var6] = new class_4639(var1 + "/panorama_" + var6 + ".png");
+         this.field_6580[var6] = new Identifier(var1 + "/panorama_" + var6 + ".png");
       }
 
       this.field_6578 = var5.method_28676(var2.getProperty("weight"), 1);
@@ -33,7 +33,7 @@ public class class_1158 {
       this.field_6574 = class_6284.method_28664(var2.getProperty("overlay2.bottom"), Integer.MIN_VALUE);
    }
 
-   public class_4639[] method_5162() {
+   public Identifier[] method_5162() {
       return this.field_6580;
    }
 

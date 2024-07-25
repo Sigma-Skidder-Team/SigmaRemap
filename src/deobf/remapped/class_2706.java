@@ -10,8 +10,8 @@ public class class_2706 extends class_2451 {
       this.field_13249 = "textures/entity/horse/armor/horse_armor_" + var2 + ".png";
    }
 
-   public class_4639 method_12199() {
-      return new class_4639(this.field_13249);
+   public Identifier method_12199() {
+      return new Identifier(this.field_13249);
    }
 
    public int method_12198() {

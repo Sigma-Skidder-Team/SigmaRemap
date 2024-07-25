@@ -4,11 +4,11 @@ public class class_7175 {
    private static String[] field_36911;
    private String field_36909 = null;
    private String field_36912 = null;
-   private class_4639 field_36908 = null;
+   private Identifier field_36908 = null;
    private class_9514[] field_36910 = null;
    private float field_36913 = 0.0F;
 
-   public class_7175(String var1, String var2, class_4639 var3, class_9514[] var4, float var5) {
+   public class_7175(String var1, String var2, Identifier var3, class_9514[] var4, float var5) {
       this.field_36909 = var1;
       this.field_36912 = var2;
       this.field_36908 = var3;
@@ -24,7 +24,7 @@ public class class_7175 {
       return this.field_36912;
    }
 
-   public class_4639 method_32884() {
+   public Identifier method_32884() {
       return this.field_36908;
    }
 

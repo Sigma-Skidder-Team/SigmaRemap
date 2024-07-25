@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_6296 extends class_7067<class_3942> {
-   private static final class_4639 field_32174 = new class_4639("textures/entity/fishing_hook.png");
+   private static final Identifier field_32174 = new Identifier("textures/entity/fishing_hook.png");
    private static final class_3581 field_32173 = class_3581.method_16747(field_32174);
 
    public class_6296(class_6122 var1) {
@@ -100,7 +100,7 @@ public class class_6296 extends class_7067<class_3942> {
       var3.method_35762(var4, var0 * var5, var1 * (var5 * var5 + var5) * 0.5F + 0.25F, var2 * var5).method_35743(0, 0, 0, 255).method_35735();
    }
 
-   public class_4639 method_28733(class_3942 var1) {
+   public Identifier method_28733(class_3942 var1) {
       return field_32174;
    }
 }

@@ -20,7 +20,7 @@ public final class class_9410 implements class_3940 {
    }
 
    @Override
-   public Collection<class_4639> method_18209(class_5621<? extends class_8669<?>> var1) {
+   public Collection<Identifier> method_18209(class_5621<? extends class_8669<?>> var1) {
       return this.field_48125.method_35460(var1.method_25499().method_21456(), var0 -> var0.endsWith(".json"));
    }
 
@@ -28,8 +28,8 @@ public final class class_9410 implements class_3940 {
    public <E> DataResult<Pair<E, OptionalInt>> method_18208(
       DynamicOps<JsonElement> var1, class_5621<? extends class_8669<E>> var2, class_5621<E> var3, Decoder<E> var4
    ) {
-      class_4639 var7 = var3.method_25499();
-      class_4639 var8 = new class_4639(var7.method_21461(), var2.method_25499().method_21456() + "/" + var7.method_21456() + ".json");
+      Identifier var7 = var3.method_25499();
+      Identifier var8 = new Identifier(var7.method_21461(), var2.method_25499().method_21456() + "/" + var7.method_21456() + ".json");
 
       try (
          class_4038 var9 = this.field_48125.method_35458(var8);

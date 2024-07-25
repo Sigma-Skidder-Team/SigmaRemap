@@ -14,21 +14,21 @@ public class class_2792 {
    private final Random field_13723;
    private final float field_13722;
    private final class_6331 field_13721;
-   private final Function<class_4639, class_1758> field_13716;
+   private final Function<Identifier, class_1758> field_13716;
    private final Set<class_1758> field_13714 = Sets.newLinkedHashSet();
-   private final Function<class_4639, class_7279> field_13720;
+   private final Function<Identifier, class_7279> field_13720;
    private final Set<class_7279> field_13718 = Sets.newLinkedHashSet();
    private final Map<class_9791<?>, Object> field_13717;
-   private final Map<class_4639, class_7006> field_13719;
+   private final Map<Identifier, class_7006> field_13719;
 
    private class_2792(
       Random var1,
       float var2,
       class_6331 var3,
-      Function<class_4639, class_1758> var4,
-      Function<class_4639, class_7279> var5,
+      Function<Identifier, class_1758> var4,
+      Function<Identifier, class_7279> var5,
       Map<class_9791<?>, Object> var6,
-      Map<class_4639, class_7006> var7
+      Map<Identifier, class_7006> var7
    ) {
       this.field_13723 = var1;
       this.field_13722 = var2;
@@ -43,7 +43,7 @@ public class class_2792 {
       return this.field_13717.containsKey(var1);
    }
 
-   public void method_12697(class_4639 var1, Consumer<class_6098> var2) {
+   public void method_12697(Identifier var1, Consumer<class_6098> var2) {
       class_7006 var5 = this.field_13719.get(var1);
       if (var5 != null) {
          var5.method_32019(this, var2);
@@ -71,11 +71,11 @@ public class class_2792 {
       this.field_13718.remove(var1);
    }
 
-   public class_1758 method_12686(class_4639 var1) {
+   public class_1758 method_12686(Identifier var1) {
       return this.field_13716.apply(var1);
    }
 
-   public class_7279 method_12692(class_4639 var1) {
+   public class_7279 method_12692(Identifier var1) {
       return this.field_13720.apply(var1);
    }
 

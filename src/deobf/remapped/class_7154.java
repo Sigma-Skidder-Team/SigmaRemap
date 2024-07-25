@@ -8,7 +8,7 @@ public interface class_7154 {
    class_7154 field_36844 = new class_4163();
    class_7154 field_36842 = new class_4214();
 
-   void method_32845(class_9633 var1, class_7889 var2);
+   void method_32845(class_9633 var1, TextureManager var2);
 
    void method_32846(class_8042 var1);
 }

@@ -58,7 +58,7 @@ public class class_2304 implements class_5998 {
                   return;
                }
 
-               class_4639 var6x = class_6856.method_31450(var5x);
+               Identifier var6x = class_6856.method_31450(var5x);
                if (!var7.containsKey(var6x)) {
                   var7.put(var6x, new class_7503(class_6856.method_31446(var2)));
                }
@@ -84,11 +84,11 @@ public class class_2304 implements class_5998 {
    }
 
    private static Path method_10594(Path var0, class_6414 var1) {
-      class_4639 var4 = class_8669.field_44462.method_39797(var1);
+      Identifier var4 = class_8669.field_44462.method_39797(var1);
       return var0.resolve("assets/" + var4.method_21461() + "/blockstates/" + var4.method_21456() + ".json");
    }
 
-   private static Path method_10596(Path var0, class_4639 var1) {
+   private static Path method_10596(Path var0, Identifier var1) {
       return var0.resolve("assets/" + var1.method_21461() + "/models/" + var1.method_21456() + ".json");
    }
 

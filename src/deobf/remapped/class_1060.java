@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_1060 extends class_7067<class_5614> {
-   private static final class_4639 field_5816 = new class_4639("textures/entity/experience_orb.png");
+   private static final Identifier field_5816 = new Identifier("textures/entity/experience_orb.png");
    private static final class_3581 field_5818 = class_3581.method_16766(field_5816);
 
    public class_1060(class_6122 var1) {
@@ -74,7 +74,7 @@ public class class_1060 extends class_7067<class_5614> {
          .method_35735();
    }
 
-   public class_4639 method_4658(class_5614 var1) {
+   public Identifier method_4658(class_5614 var1) {
       return field_5816;
    }
 }

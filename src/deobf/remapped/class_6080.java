@@ -63,8 +63,8 @@ public class class_6080 {
          for (int var4 = 0; var4 < this.field_31118.size(); var4++) {
             class_8235 var5 = this.field_31118.get(var4);
             float var6 = this.method_27838(var5);
-            int var7 = MinecraftClient.getInstance().field_9602.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var6 * var6);
-            int var8 = this.field_31116.field_9602.method_43163()
+            int var7 = MinecraftClient.getInstance().window.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var6 * var6);
+            int var8 = this.field_31116.window.method_43163()
                - this.field_31121
                - this.field_31117
                - var4 * (int)((float)this.field_31121 * this.method_27837(var4) + (float)this.field_31119 * this.method_27837(var4));
@@ -126,8 +126,8 @@ public class class_6080 {
       for (int var3 = 0; var3 < this.field_31118.size(); var3++) {
          class_8235 var4 = this.field_31118.get(var3);
          float var5 = this.method_27838(var4);
-         int var6 = MinecraftClient.getInstance().field_9602.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var5 * var5);
-         int var7 = this.field_31116.field_9602.method_43163()
+         int var6 = MinecraftClient.getInstance().window.method_43166() - this.field_31113 - (int)((float)this.field_31110 * var5 * var5);
+         int var7 = this.field_31116.window.method_43163()
             - this.field_31121
             - this.field_31117
             - var3 * (int)((float)this.field_31121 * this.method_27837(var3) + (float)this.field_31119 * this.method_27837(var3));

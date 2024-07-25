@@ -9,13 +9,13 @@ import javax.annotation.Nullable;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.StringUtils;
 
-public class class_4639 implements Comparable<class_4639> {
-   public static final Codec<class_4639> field_22655 = Codec.STRING.comapFlatMap(class_4639::method_21454, class_4639::toString).stable();
+public class Identifier implements Comparable<Identifier> {
+   public static final Codec<Identifier> field_22655 = Codec.STRING.comapFlatMap(Identifier::method_21454, Identifier::toString).stable();
    private static final SimpleCommandExceptionType field_22658 = new SimpleCommandExceptionType(new TranslationTextComponent("argument.id.invalid"));
    public final String field_22654;
    public final String field_22657;
 
-   public class_4639(String[] var1) {
+   public Identifier(String[] var1) {
       this.field_22654 = !StringUtils.isEmpty(var1[0]) ? var1[0] : "minecraft";
       this.field_22657 = var1[1];
       if (this.field_22657.equals("DUMMY")) {
@@ -29,22 +29,22 @@ public class class_4639 implements Comparable<class_4639> {
       }
    }
 
-   public class_4639(String var1) {
+   public Identifier(String var1) {
       this(method_21452(var1, ':'));
    }
 
-   public class_4639(String var1, String var2) {
+   public Identifier(String var1, String var2) {
       this(new String[]{var1, var2});
    }
 
-   public static class_4639 method_21459(String var0, char var1) {
-      return new class_4639(method_21452(var0, var1));
+   public static Identifier method_21459(String var0, char var1) {
+      return new Identifier(method_21452(var0, var1));
    }
 
    @Nullable
-   public static class_4639 method_21455(String var0) {
+   public static Identifier method_21455(String var0) {
       try {
-         return new class_4639(var0);
+         return new Identifier(var0);
       } catch (class_7485 var4) {
          return null;
       }
@@ -63,9 +63,9 @@ public class class_4639 implements Comparable<class_4639> {
       return var4;
    }
 
-   private static DataResult<class_4639> method_21454(String var0) {
+   private static DataResult<Identifier> method_21454(String var0) {
       try {
-         return DataResult.success(new class_4639(var0));
+         return DataResult.success(new Identifier(var0));
       } catch (class_7485 var4) {
          return DataResult.error("Not a valid resource location: " + var0 + " " + var4.getMessage());
       }
@@ -87,10 +87,10 @@ public class class_4639 implements Comparable<class_4639> {
    @Override
    public boolean equals(Object var1) {
       if (this != var1) {
-         if (!(var1 instanceof class_4639)) {
+         if (!(var1 instanceof Identifier)) {
             return false;
          } else {
-            class_4639 var4 = (class_4639)var1;
+            Identifier var4 = (Identifier)var1;
             return this.field_22654.equals(var4.field_22654) && this.field_22657.equals(var4.field_22657);
          }
       } else {
@@ -103,7 +103,7 @@ public class class_4639 implements Comparable<class_4639> {
       return 31 * this.field_22654.hashCode() + this.field_22657.hashCode();
    }
 
-   public int compareTo(class_4639 var1) {
+   public int compareTo(Identifier var1) {
       int var4 = this.field_22657.compareTo(var1.field_22657);
       if (var4 == 0) {
          var4 = this.field_22654.compareTo(var1.field_22654);
@@ -112,7 +112,7 @@ public class class_4639 implements Comparable<class_4639> {
       return var4;
    }
 
-   public static class_4639 method_21464(StringReader var0) throws CommandSyntaxException {
+   public static Identifier method_21464(StringReader var0) throws CommandSyntaxException {
       int var3 = var0.getCursor();
 
       while (var0.canRead() && method_21462(var0.peek())) {
@@ -122,7 +122,7 @@ public class class_4639 implements Comparable<class_4639> {
       String var4 = var0.getString().substring(var3, var0.getCursor());
 
       try {
-         return new class_4639(var4);
+         return new Identifier(var4);
       } catch (class_7485 var6) {
          var0.setCursor(var3);
          throw field_22658.createWithContext(var0);
@@ -166,7 +166,7 @@ public class class_4639 implements Comparable<class_4639> {
       return method_21463(!StringUtils.isEmpty(var3[0]) ? var3[0] : "minecraft") && method_21458(var3[1]);
    }
 
-   public int method_21457(class_4639 var1) {
+   public int method_21457(Identifier var1) {
       int var4 = this.field_22654.compareTo(var1.field_22654);
       return var4 == 0 ? this.field_22657.compareTo(var1.field_22657) : var4;
    }

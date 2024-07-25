@@ -14,7 +14,7 @@ public class class_2184 {
    private class_865 field_10862 = class_865.field_4485;
    private class_865 field_10861 = class_865.field_4485;
    private String field_10866;
-   private class_4639 field_10853;
+   private Identifier field_10853;
 
    public static class_2184 method_10127() {
       return new class_2184();
@@ -30,7 +30,7 @@ public class class_2184 {
       return this;
    }
 
-   public class_2184 method_10138(class_4639 var1) {
+   public class_2184 method_10138(Identifier var1) {
       this.field_10853 = var1;
       return this;
    }
@@ -95,7 +95,7 @@ public class class_2184 {
       return this;
    }
 
-   public class_2184 method_10135(class_4639 var1) {
+   public class_2184 method_10135(Identifier var1) {
       this.field_10853 = var1;
       return this;
    }

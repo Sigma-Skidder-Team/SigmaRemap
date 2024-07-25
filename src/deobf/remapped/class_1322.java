@@ -13,7 +13,7 @@ public class class_1322 {
    private static class_3739[][] field_7281 = (class_3739[][])null;
    public static boolean field_7282 = method_6036();
 
-   public static class_4639 method_6042(class_4639 var0) {
+   public static Identifier method_6042(Identifier var0) {
       if (field_7281 != null) {
          class_266 var3 = field_7279.field_9623;
          if (var3 instanceof class_2208) {
@@ -95,7 +95,7 @@ public class class_1322 {
       }
    }
 
-   private static class_4639 method_6039(class_1614 var0, class_1331 var1, class_4924 var2, class_4639 var3, class_266 var4) {
+   private static Identifier method_6039(class_1614 var0, class_1331 var1, class_4924 var2, Identifier var3, class_266 var4) {
       class_3739[] var7 = field_7281[var0.ordinal()];
       if (var7 == null) {
          return var3;
@@ -111,7 +111,7 @@ public class class_1322 {
       }
    }
 
-   private static class_4639 method_6044(class_1614 var0, class_8145 var1, class_4924 var2, class_4639 var3) {
+   private static Identifier method_6044(class_1614 var0, class_8145 var1, class_4924 var2, Identifier var3) {
       class_3739[] var6 = field_7281[var0.ordinal()];
       if (var6 == null) {
          return var3;
@@ -171,7 +171,7 @@ public class class_1322 {
          class_3111.method_14277("CustomGuis: " + var6);
 
          try {
-            class_4639 var7 = new class_4639(var6);
+            Identifier var7 = new Identifier(var6);
             InputStream var8 = var0.method_37466(class_3168.field_15844, var7);
             if (var8 == null) {
                class_3111.method_14317("CustomGuis file not found: " + var6);

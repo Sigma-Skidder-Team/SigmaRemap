@@ -4,11 +4,11 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
 public class class_1973 {
-   private final class_4639[] field_10002 = new class_4639[6];
+   private final Identifier[] field_10002 = new Identifier[6];
 
-   public class_1973(class_4639 var1) {
+   public class_1973(Identifier var1) {
       for (int var4 = 0; var4 < 6; var4++) {
-         this.field_10002[var4] = new class_4639(var1.method_21461(), var1.method_21456() + '_' + var4 + ".png");
+         this.field_10002[var4] = new Identifier(var1.method_21461(), var1.method_21456() + '_' + var4 + ".png");
       }
    }
 
@@ -103,7 +103,7 @@ public class class_1973 {
       class_3542.method_16428();
    }
 
-   public CompletableFuture<Void> method_9075(class_7889 var1, Executor var2) {
+   public CompletableFuture<Void> method_9075(TextureManager var1, Executor var2) {
       CompletableFuture[] var5 = new CompletableFuture[6];
 
       for (int var6 = 0; var6 < var5.length; var6++) {

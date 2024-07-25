@@ -5,7 +5,7 @@ import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_408 extends class_2208<class_3682> {
-   private static final class_4639 field_1707 = new class_4639("textures/gui/container/loom.png");
+   private static final Identifier field_1707 = new Identifier("textures/gui/container/loom.png");
    private static final int field_1704 = (class_8427.field_43117 - class_8427.field_43108 - 1 + 4 - 1) / 4;
    private final class_1549 field_1711;
    private List<Pair<class_8427, class_9077>> field_1702;

@@ -85,7 +85,7 @@ public class class_7909 extends class_4156 {
                   for (String var11 : var9.method_25952()) {
                      if (var9.method_25939(var11, 10)) {
                         Util.<class_9478<?>>method_44691(
-                           class_8669.field_44376.method_39794(new class_4639(var11)),
+                           class_8669.field_44376.method_39794(new Identifier(var11)),
                            var3 -> {
                               class_5734 var6x = var9.method_25937(var11);
 
@@ -135,7 +135,7 @@ public class class_7909 extends class_4156 {
    }
 
    private <T> Optional<class_6676<T>> method_35772(class_9478<T> var1, String var2) {
-      return Optional.<class_4639>ofNullable(class_4639.method_21455(var2))
+      return Optional.<Identifier>ofNullable(Identifier.method_21455(var2))
          .<T>flatMap(var1.method_43788()::method_39794)
          .<class_6676<T>>map(var1::method_43790);
    }
@@ -182,7 +182,7 @@ public class class_7909 extends class_4156 {
       return var9.toString();
    }
 
-   private static <T> class_4639 method_35777(class_6676<T> var0) {
+   private static <T> Identifier method_35777(class_6676<T> var0) {
       return var0.method_30631().method_43788().method_39797(var0.method_30630());
    }
 

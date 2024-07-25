@@ -23,9 +23,9 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.StringUtils;
 
 public class class_3062 extends class_2089 {
-   private static final class_4639 field_15059 = new class_4639("textures/misc/vignette.png");
-   private static final class_4639 field_15056 = new class_4639("textures/gui/widgets.png");
-   private static final class_4639 field_15038 = new class_4639("textures/misc/pumpkinblur.png");
+   private static final Identifier field_15059 = new Identifier("textures/misc/vignette.png");
+   private static final Identifier field_15056 = new Identifier("textures/gui/widgets.png");
+   private static final Identifier field_15038 = new Identifier("textures/misc/pumpkinblur.png");
    private static final ITextComponent field_15033 = new TranslationTextComponent("demo.demoExpired");
    private final Random field_15058 = new Random();
    private final MinecraftClient field_15040;

@@ -11,7 +11,7 @@ public class class_3334 extends class_7746<class_4889> {
    }
 
    public class_4889 method_15295(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, class_7279[] var5, class_2913[] var6) {
-      class_4639 var9 = new class_4639(class_6539.method_29796(var1, "name"));
+      Identifier var9 = new Identifier(class_6539.method_29796(var1, "name"));
       return new class_4889(var9, var3, var4, var5, var6, null);
    }
 }

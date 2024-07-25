@@ -9,7 +9,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_1321 {
    public static void method_6034(CommandDispatcher<class_9155> var0) {
       RequiredArgumentBuilder var3 = (RequiredArgumentBuilder)((RequiredArgumentBuilder)class_465.method_2236("targets", class_5601.method_25409())
-            .executes(var0x -> method_6033((class_9155)var0x.getSource(), class_5601.method_25412(var0x, "targets"), (class_562)null, (class_4639)null)))
+            .executes(var0x -> method_6033((class_9155)var0x.getSource(), class_5601.method_25412(var0x, "targets"), (class_562)null, (Identifier)null)))
          .then(
             class_465.method_2231("*")
                .then(
@@ -29,7 +29,7 @@ public class class_1321 {
       for (class_562 var7 : class_562.values()) {
          var3.then(
             ((LiteralArgumentBuilder)class_465.method_2231(var7.method_2681())
-                  .executes(var1 -> method_6033((class_9155)var1.getSource(), class_5601.method_25412(var1, "targets"), var7, (class_4639)null)))
+                  .executes(var1 -> method_6033((class_9155)var1.getSource(), class_5601.method_25412(var1, "targets"), var7, (Identifier)null)))
                .then(
                   class_465.method_2236("sound", class_4195.method_19515())
                      .suggests(class_7510.field_38351)
@@ -45,7 +45,7 @@ public class class_1321 {
       var0.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)class_465.method_2231("stopsound").requires(var0x -> var0x.method_40314(2))).then(var3));
    }
 
-   private static int method_6033(class_9155 var0, Collection<class_9359> var1, class_562 var2, class_4639 var3) {
+   private static int method_6033(class_9155 var0, Collection<class_9359> var1, class_562 var2, Identifier var3) {
       class_4935 var6 = new class_4935(var3, var2);
 
       for (class_9359 var8 : var1) {

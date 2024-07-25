@@ -15,13 +15,13 @@ public class class_5824 extends class_7875 {
    private ITextComponent field_29545 = new TranslationTextComponent("mco.reset.world.warning");
    private ITextComponent field_29553 = class_1402.field_7633;
    private int field_29555 = 16711680;
-   private static final class_4639 field_29552 = new class_4639("realms", "textures/gui/realms/slot_frame.png");
-   private static final class_4639 field_29549 = new class_4639("realms", "textures/gui/realms/upload.png");
-   private static final class_4639 field_29543 = new class_4639("realms", "textures/gui/realms/adventure.png");
-   private static final class_4639 field_29560 = new class_4639("realms", "textures/gui/realms/survival_spawn.png");
-   private static final class_4639 field_29557 = new class_4639("realms", "textures/gui/realms/new_world.png");
-   private static final class_4639 field_29559 = new class_4639("realms", "textures/gui/realms/experience.png");
-   private static final class_4639 field_29562 = new class_4639("realms", "textures/gui/realms/inspiration.png");
+   private static final Identifier field_29552 = new Identifier("realms", "textures/gui/realms/slot_frame.png");
+   private static final Identifier field_29549 = new Identifier("realms", "textures/gui/realms/upload.png");
+   private static final Identifier field_29543 = new Identifier("realms", "textures/gui/realms/adventure.png");
+   private static final Identifier field_29560 = new Identifier("realms", "textures/gui/realms/survival_spawn.png");
+   private static final Identifier field_29557 = new Identifier("realms", "textures/gui/realms/new_world.png");
+   private static final Identifier field_29559 = new Identifier("realms", "textures/gui/realms/experience.png");
+   private static final Identifier field_29562 = new Identifier("realms", "textures/gui/realms/inspiration.png");
    private class_480 field_29544;
    private class_480 field_29561;
    private class_480 field_29569;
@@ -148,7 +148,7 @@ public class class_5824 extends class_7875 {
       super.method_6767(var1, var2, var3, var4);
    }
 
-   private void method_26361(class_7966 var1, int var2, int var3, ITextComponent var4, class_4639 var5, boolean var6, boolean var7) {
+   private void method_26361(class_7966 var1, int var2, int var3, ITextComponent var4, Identifier var5, boolean var6, boolean var7) {
       this.field_943.method_8577().method_35674(var5);
       if (!var6) {
          class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);

@@ -1,19 +1,19 @@
 package remapped;
 
 public class class_1677 extends class_7164<class_107, class_151> {
-   public static final class_4639[] field_8682 = new class_4639[]{
-      new class_4639("textures/entity/parrot/parrot_red_blue.png"),
-      new class_4639("textures/entity/parrot/parrot_blue.png"),
-      new class_4639("textures/entity/parrot/parrot_green.png"),
-      new class_4639("textures/entity/parrot/parrot_yellow_blue.png"),
-      new class_4639("textures/entity/parrot/parrot_grey.png")
+   public static final Identifier[] field_8682 = new Identifier[]{
+      new Identifier("textures/entity/parrot/parrot_red_blue.png"),
+      new Identifier("textures/entity/parrot/parrot_blue.png"),
+      new Identifier("textures/entity/parrot/parrot_green.png"),
+      new Identifier("textures/entity/parrot/parrot_yellow_blue.png"),
+      new Identifier("textures/entity/parrot/parrot_grey.png")
    };
 
    public class_1677(class_6122 var1) {
       super(var1, new class_151(), 0.3F);
    }
 
-   public class_4639 method_7506(class_107 var1) {
+   public Identifier method_7506(class_107 var1) {
       return field_8682[var1.method_330()];
    }
 

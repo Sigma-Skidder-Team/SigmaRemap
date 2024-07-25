@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_1399 extends class_2208<class_7249> {
-   private static final class_4639 field_7616 = new class_4639("textures/gui/container/dispenser.png");
+   private static final Identifier field_7616 = new Identifier("textures/gui/container/dispenser.png");
 
    public class_1399(class_7249 var1, class_7051 var2, ITextComponent var3) {
       super(var1, var2, var3);

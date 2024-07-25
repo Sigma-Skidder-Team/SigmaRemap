@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 public class class_455<C> {
    private static final Logger field_1889 = LogManager.getLogger();
    public static final class_455<class_341> field_1893 = new class_455<class_341>().method_2186(new class_1148()).method_2186(new class_6977());
-   private final Map<class_4639, class_5923<C, ?>> field_1890 = Maps.newHashMap();
+   private final Map<Identifier, class_5923<C, ?>> field_1890 = Maps.newHashMap();
    private final Map<Class<?>, class_5923<C, ?>> field_1892 = Maps.newHashMap();
 
    public class_455<C> method_2186(class_5923<C, ?> var1) {
@@ -32,7 +32,7 @@ public class class_455<C> {
 
    @Nullable
    public class_7803<C> method_2185(class_5734 var1) {
-      class_4639 var4 = class_4639.method_21455(var1.method_25965("Type"));
+      Identifier var4 = Identifier.method_21455(var1.method_25965("Type"));
       class_5923 var5 = this.field_1890.get(var4);
       if (var5 == null) {
          field_1889.error("Failed to deserialize timer callback: " + var1);

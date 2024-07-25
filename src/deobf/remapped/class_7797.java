@@ -72,9 +72,9 @@ public class class_7797 extends class_2089 {
       class_3542.method_16457(518);
       method_9774(var1, 234, 113, 0, 0, -16777216);
       class_3542.method_16457(515);
-      class_4639 var4 = this.field_39484.method_35164();
+      Identifier var4 = this.field_39484.method_35164();
       if (var4 == null) {
-         this.field_39488.method_8577().method_35674(class_7889.field_40364);
+         this.field_39488.method_8577().method_35674(TextureManager.field_40364);
       } else {
          this.field_39488.method_8577().method_35674(var4);
       }

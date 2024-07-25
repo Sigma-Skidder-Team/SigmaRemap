@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class class_6190 implements class_6310<class_8886> {
    private int field_31620;
-   private class_4639 field_31618;
+   private Identifier field_31618;
    private class_8248 field_31617;
 
    @Override

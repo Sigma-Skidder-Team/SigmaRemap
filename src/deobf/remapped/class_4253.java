@@ -12,7 +12,7 @@ public class class_4253 implements class_6478<class_5805> {
    }
 
    public class_5805 method_19830(JsonObject var1, JsonDeserializationContext var2) {
-      class_4639 var5 = new class_4639(class_6539.method_29796(var1, "block"));
+      Identifier var5 = new Identifier(class_6539.method_29796(var1, "block"));
       class_6414 var6 = class_8669.field_44462.method_39794(var5).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var5));
       class_1827 var7 = class_1827.method_8079(var1.get("properties"));
       var7.method_8075(var6.method_29306(), var1x -> {

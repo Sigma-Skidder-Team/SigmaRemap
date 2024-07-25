@@ -6,10 +6,10 @@ public class class_1347 {
    private Dimension field_7353 = null;
    private boolean field_7352 = false;
    private class_3142[] field_7357 = new class_3142[0];
-   private class_4639 field_7366 = null;
+   private Identifier field_7366 = null;
    private class_5797 field_7355 = null;
    private class_7884 field_7364 = null;
-   private class_4639 field_7359 = new class_4639("textures/block/red_wool.png");
+   private Identifier field_7359 = new Identifier("textures/block/red_wool.png");
    public static final int field_7361 = 0;
    public static final int field_7363 = 1;
    public static final int field_7360 = 2;
@@ -25,7 +25,7 @@ public class class_1347 {
    }
 
    public void method_6231(class_2344 var1, class_9716 var2, class_7966 var3, class_2565 var4, int var5, int var6) {
-      class_4639 var9 = this.field_7359;
+      Identifier var9 = this.field_7359;
       if (!this.field_7352) {
          if (this.field_7366 == null) {
             var9 = this.field_7359;
@@ -82,11 +82,11 @@ public class class_1347 {
       return this.field_7364;
    }
 
-   public class_4639 method_6232() {
+   public Identifier method_6232() {
       return this.field_7366;
    }
 
-   public void method_6234(class_4639 var1) {
+   public void method_6234(Identifier var1) {
       this.field_7366 = var1;
    }
 

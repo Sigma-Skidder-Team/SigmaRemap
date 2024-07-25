@@ -10,7 +10,7 @@ public class class_2919 {
    public static class_4382 method_13357(String var0) {
       class_4382 var3 = field_14246.get(var0);
       if (var3 == null) {
-         class_4639 var4 = new class_4639(var0);
+         Identifier var4 = new Identifier(var0);
          if (class_8669.field_44445.method_39814(var4)) {
             var3 = class_8669.field_44445.method_39806(var4);
          }
@@ -21,7 +21,7 @@ public class class_2919 {
       return var3;
    }
 
-   public static class_4382 method_13358(class_4639 var0) {
+   public static class_4382 method_13358(Identifier var0) {
       return class_8669.field_44445.method_39814(var0) ? class_8669.field_44445.method_39806(var0) : null;
    }
 }

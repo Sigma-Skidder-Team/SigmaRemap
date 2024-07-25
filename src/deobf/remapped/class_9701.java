@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_9701 extends class_7067<class_3348> {
-   public static final class_4639 field_49344 = new class_4639("textures/entity/trident.png");
+   public static final Identifier field_49344 = new Identifier("textures/entity/trident.png");
    private final class_8825 field_49346 = new class_8825();
 
    public class_9701(class_6122 var1) {
@@ -18,7 +18,7 @@ public class class_9701 extends class_7067<class_3348> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_44828(class_3348 var1) {
+   public Identifier method_44828(class_3348 var1) {
       return field_49344;
    }
 }

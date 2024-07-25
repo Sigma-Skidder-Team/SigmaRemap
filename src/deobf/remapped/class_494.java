@@ -1,14 +1,14 @@
 package remapped;
 
 public class class_494 extends class_7164<class_9825, class_5861<class_9825>> {
-   private static final class_4639 field_3073 = new class_4639("textures/entity/phantom.png");
+   private static final Identifier field_3073 = new Identifier("textures/entity/phantom.png");
 
    public class_494(class_6122 var1) {
       super(var1, new class_5861<class_9825>(), 0.75F);
       this.method_29100(new class_1519<class_9825>(this));
    }
 
-   public class_4639 method_2401(class_9825 var1) {
+   public Identifier method_2401(class_9825 var1) {
       return field_3073;
    }
 

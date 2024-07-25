@@ -17,7 +17,7 @@ public class class_3073 {
    private float field_15089 = 0.6F;
    private float field_15105 = 1.0F;
    private float field_15109 = 1.0F;
-   private class_4639 field_15108;
+   private Identifier field_15108;
    private boolean field_15110 = true;
    private boolean field_15111;
    private class_9778<class_6629<?>> field_15101 = (var0, var1x, var2x, var3) -> var0.method_8308(var1x, var2x, class_240.field_817) && var0.method_8339() < 14;

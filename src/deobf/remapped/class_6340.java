@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import org.lwjgl.opengl.GL11;
 
 public class class_6340 extends class_7621 {
-   private static final class_4639 field_32380 = new class_4639("textures/gui/title/mojang.png");
+   private static final Identifier field_32380 = new Identifier("textures/gui/title/mojang.png");
    private final MinecraftClient field_32368;
    private final class_4302 field_32373;
    private final Consumer<Optional<Throwable>> field_32375;
@@ -37,8 +37,8 @@ public class class_6340 extends class_7621 {
 
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
-      int var7 = this.field_32368.field_9602.method_43165();
-      int var8 = this.field_32368.field_9602.method_43177();
+      int var7 = this.field_32368.window.method_43165();
+      int var8 = this.field_32368.window.method_43177();
       long var9 = Util.getMeasuringTimeMs();
       if (this.field_32378 && (this.field_32373.method_19968() || this.field_32368.field_9623 != null) && this.field_32366 == -1L) {
          this.field_32366 = var9;
@@ -47,17 +47,17 @@ public class class_6340 extends class_7621 {
       float var11 = this.field_32364 > -1L ? (float)(var9 - this.field_32364) / 200.0F : -1.0F;
       float var12 = this.field_32366 > -1L ? (float)(var9 - this.field_32366) / 100.0F : -1.0F;
       float var13 = 1.0F;
-      int var14 = (this.field_32368.field_9602.method_43165() - 256) / 2;
-      int var15 = (this.field_32368.field_9602.method_43177() - 256) / 2;
+      int var14 = (this.field_32368.window.method_43165() - 256) / 2;
+      int var15 = (this.field_32368.window.method_43177() - 256) / 2;
       float var16 = this.field_32373.method_19969();
       this.field_32377 = this.field_32377 * 0.95F + var16 * 0.050000012F;
       GL11.glPushMatrix();
       float var17 = 1111.0F;
-      if (this.field_32368.field_9602.method_43166() != 0) {
-         var17 = (float)(this.field_32368.field_9602.method_43178() / this.field_32368.field_9602.method_43166());
+      if (this.field_32368.window.method_43166() != 0) {
+         var17 = (float)(this.field_32368.window.method_43178() / this.field_32368.window.method_43166());
       }
 
-      float var18 = (float)this.field_32368.field_9602.method_43164(this.field_32368.field_9577.field_45484, this.field_32368.method_8578()) * var17;
+      float var18 = (float)this.field_32368.window.method_43164(this.field_32368.field_9577.field_45484, this.field_32368.method_8578()) * var17;
       GL11.glScalef(1.0F / var18, 1.0F / var18, 0.0F);
       method_29014(var13, this.field_32377);
       GL11.glPopMatrix();
@@ -90,25 +90,25 @@ public class class_6340 extends class_7621 {
       GL11.glEnable(3008);
       GL11.glEnable(3042);
       class_73.method_97(
-         0.0F, 0.0F, (float) MinecraftClient.getInstance().field_9602.method_43166(), (float) MinecraftClient.getInstance().field_9602.method_43163(), field_32371, var0
+         0.0F, 0.0F, (float) MinecraftClient.getInstance().window.method_43166(), (float) MinecraftClient.getInstance().window.method_43163(), field_32371, var0
       );
       class_73.method_103(
          0.0F,
          0.0F,
-         (float) MinecraftClient.getInstance().field_9602.method_43166(),
-         (float) MinecraftClient.getInstance().field_9602.method_43163(),
+         (float) MinecraftClient.getInstance().window.method_43166(),
+         (float) MinecraftClient.getInstance().window.method_43163(),
          class_314.method_1444(0, 0.75F)
       );
       short var4 = 455;
       byte var5 = 78;
-      int var6 = (MinecraftClient.getInstance().field_9602.method_43166() - var4) / 2;
-      int var7 = Math.round((float)((MinecraftClient.getInstance().field_9602.method_43163() - var5) / 2) - 14.0F * var0);
+      int var6 = (MinecraftClient.getInstance().window.method_43166() - var4) / 2;
+      int var7 = Math.round((float)((MinecraftClient.getInstance().window.method_43163() - var5) / 2) - 14.0F * var0);
       float var8 = 0.75F + var0 * var0 * var0 * var0 * 0.25F;
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(MinecraftClient.getInstance().field_9602.method_43166() / 2), (float)(MinecraftClient.getInstance().field_9602.method_43163() / 2), 0.0F);
+      GL11.glTranslatef((float)(MinecraftClient.getInstance().window.method_43166() / 2), (float)(MinecraftClient.getInstance().window.method_43163() / 2), 0.0F);
       GL11.glScalef(var8, var8, 0.0F);
       GL11.glTranslatef(
-         (float)(-MinecraftClient.getInstance().field_9602.method_43166() / 2), (float)(-MinecraftClient.getInstance().field_9602.method_43163() / 2), 0.0F
+         (float)(-MinecraftClient.getInstance().window.method_43166() / 2), (float)(-MinecraftClient.getInstance().window.method_43163() / 2), 0.0F
       );
       class_73.method_99((float)var6, (float)var7, (float)var4, (float)var5, field_32372, class_314.method_1444(class_1255.field_6918.field_6917, var0));
       float var9 = Math.min(1.0F, var1 * 1.02F);

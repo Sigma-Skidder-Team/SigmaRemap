@@ -98,9 +98,9 @@ public class class_9582 {
       if (var4 == null) {
          return null;
       } else {
-         class_4639 var5 = new class_4639("blockstates/" + var0 + "_leaves.json");
+         Identifier var5 = new Identifier("blockstates/" + var0 + "_leaves.json");
          if (class_3111.method_14247(var5)) {
-            class_4639 var6 = new class_4639("models/block/" + var0 + "_leaves.json");
+            Identifier var6 = new Identifier("models/block/" + var0 + "_leaves.json");
             if (!class_3111.method_14247(var6)) {
                return null;
             } else {

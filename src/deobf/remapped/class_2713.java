@@ -5,7 +5,7 @@ import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_2713 extends class_1280<class_6600> {
-   private static final class_4639 field_13264 = new class_4639("textures/gui/container/anvil.png");
+   private static final Identifier field_13264 = new Identifier("textures/gui/container/anvil.png");
    private static final ITextComponent field_13263 = new TranslationTextComponent("container.repair.expensive");
    private class_1863 field_13261;
 

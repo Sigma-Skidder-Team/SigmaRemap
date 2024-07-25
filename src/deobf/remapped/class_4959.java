@@ -22,7 +22,7 @@ public class class_4959 implements class_5998 {
    private static final Logger field_25651 = LogManager.getLogger();
    private static final Gson field_25653 = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
    private final class_6901 field_25654;
-   private final List<Pair<Supplier<Consumer<BiConsumer<class_4639, class_8843>>>, class_2144>> field_25652 = ImmutableList.of(
+   private final List<Pair<Supplier<Consumer<BiConsumer<Identifier, class_8843>>>, class_2144>> field_25652 = ImmutableList.of(
       Pair.of(class_3234::new, class_4933.field_25570),
       Pair.of(class_1531::new, class_4933.field_25565),
       Pair.of(class_770::new, class_4933.field_25566),
@@ -48,7 +48,7 @@ public class class_4959 implements class_5998 {
       UnmodifiableIterator var7 = Sets.difference(class_5931.method_27116(), var5.keySet()).iterator();
 
       while (var7.hasNext()) {
-         class_4639 var8 = (class_4639)var7.next();
+         Identifier var8 = (Identifier)var7.next();
          var6.method_21892("Missing built-in table: " + var8);
       }
 
@@ -70,7 +70,7 @@ public class class_4959 implements class_5998 {
       }
    }
 
-   private static Path method_22715(Path var0, class_4639 var1) {
+   private static Path method_22715(Path var0, Identifier var1) {
       return var0.resolve("data/" + var1.method_21461() + "/loot_tables/" + var1.method_21456() + ".json");
    }
 

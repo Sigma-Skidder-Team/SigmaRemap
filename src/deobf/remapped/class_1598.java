@@ -9,13 +9,13 @@ import org.apache.logging.log4j.Logger;
 
 public class class_1598 extends class_8131 {
    private static final Logger field_8320 = LogManager.getLogger();
-   private final class_4639 field_8322;
+   private final Identifier field_8322;
    private final class_6631 field_8318;
    private final class_9022 field_8316;
    private final class_3487 field_8319;
    private final class_4168 field_8321;
 
-   public class_1598(class_1331 var1, class_3487 var2, class_4168 var3, class_4639 var4, class_6561 var5, class_6631 var6, class_9022 var7, class_1331 var8) {
+   public class_1598(class_1331 var1, class_3487 var2, class_4168 var3, Identifier var4, class_6561 var5, class_6631 var6, class_9022 var7, class_1331 var8) {
       super(class_2746.field_13398, 0);
       this.field_41648 = var1;
       this.field_8322 = var4;
@@ -28,7 +28,7 @@ public class class_1598 extends class_8131 {
 
    public class_1598(class_5799 var1, class_5734 var2) {
       super(class_2746.field_13398, var2);
-      this.field_8322 = new class_4639(var2.method_25965("Template"));
+      this.field_8322 = new Identifier(var2.method_25965("Template"));
       this.field_8318 = class_6631.valueOf(var2.method_25965("Rotation"));
       this.field_8316 = class_9022.valueOf(var2.method_25965("Mirror"));
       this.field_8319 = class_3487.method_16036(var2.method_25965("VerticalPlacement"));

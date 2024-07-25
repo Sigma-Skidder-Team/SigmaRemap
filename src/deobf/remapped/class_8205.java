@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8205 extends class_7067<class_3577> {
-   private static final class_4639 field_41973 = new class_4639("textures/entity/end_crystal/end_crystal.png");
+   private static final Identifier field_41973 = new Identifier("textures/entity/end_crystal/end_crystal.png");
    private static final class_3581 field_41970 = class_3581.method_16755(field_41973);
    private static final float field_41974 = (float)Math.sin(Math.PI / 4);
    private final class_1549 field_41972;
@@ -69,7 +69,7 @@ public class class_8205 extends class_7067<class_3577> {
       return var5 - 1.4F;
    }
 
-   public class_4639 method_37572(class_3577 var1) {
+   public Identifier method_37572(class_3577 var1) {
       return field_41973;
    }
 

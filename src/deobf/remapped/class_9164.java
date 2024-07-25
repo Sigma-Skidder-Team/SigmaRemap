@@ -4,8 +4,8 @@ import com.google.common.base.MoreObjects;
 import java.util.Objects;
 
 public class class_9164 {
-   private static final class_3581 field_46903 = class_3581.method_16732(new class_4639("textures/map/map_background.png"));
-   private static final class_3581 field_46896 = class_3581.method_16732(new class_4639("textures/map/map_background_checkerboard.png"));
+   private static final class_3581 field_46903 = class_3581.method_16732(new Identifier("textures/map/map_background.png"));
+   private static final class_3581 field_46896 = class_3581.method_16732(new Identifier("textures/map/map_background_checkerboard.png"));
    private final MinecraftClient field_46897;
    private class_6098 field_46899 = class_6098.field_31203;
    private class_6098 field_46898 = class_6098.field_31203;

@@ -26,7 +26,7 @@ public class class_5748<T> {
 
    @SafeVarargs
    public final class_5748<T> method_26026(T... var1) {
-      Stream.<Object>of(var1).<class_4639>map(this.field_29105::method_39797).forEach(var1x -> this.field_29103.method_4730(var1x, this.field_29106));
+      Stream.<Object>of(var1).<Identifier>map(this.field_29105::method_39797).forEach(var1x -> this.field_29103.method_4730(var1x, this.field_29106));
       return this;
    }
 }

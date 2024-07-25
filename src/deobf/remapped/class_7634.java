@@ -11,7 +11,7 @@ public final class class_7634 extends class_3581 {
    private final int field_38838;
    private final Optional<class_3581> field_38837;
    private final boolean field_38841;
-   private Map<class_4639, class_7634> field_38840 = new HashMap<class_4639, class_7634>();
+   private Map<Identifier, class_7634> field_38840 = new HashMap<Identifier, class_7634>();
 
    private class_7634(String var1, class_2868 var2, int var3, int var4, boolean var5, boolean var6, class_8570 var7) {
       super(
@@ -61,11 +61,11 @@ public final class class_7634 extends class_3581 {
       return "RenderType[" + this.field_38839 + ", " + ']';
    }
 
-   public class_7634 method_34592(class_4639 var1) {
+   public class_7634 method_34592(Identifier var1) {
       if (var1 != null) {
          Optional var4 = class_8570.method_39409(this.field_38839).method_17452();
          if (var4.isPresent()) {
-            class_4639 var5 = (class_4639)var4.get();
+            Identifier var5 = (Identifier)var4.get();
             if (var5 != null) {
                if (!var1.equals(var5)) {
                   class_7634 var6 = this.field_38840.get(var1);
@@ -97,8 +97,8 @@ public final class class_7634 extends class_3581 {
    }
 
    @Override
-   public class_4639 method_16758() {
+   public Identifier method_16758() {
       Optional var3 = class_8570.method_39409(this.field_38839).method_17452();
-      return var3.isPresent() ? (class_4639)var3.get() : null;
+      return var3.isPresent() ? (Identifier)var3.get() : null;
    }
 }

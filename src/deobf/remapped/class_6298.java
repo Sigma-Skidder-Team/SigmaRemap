@@ -6,7 +6,7 @@ import java.util.concurrent.Executor;
 
 public class class_6298 implements AutoCloseable {
    private static String[] field_32181;
-   private static final CompletableFuture<class_3256> field_32184 = CompletableFuture.<class_3256>completedFuture(class_3256.field_16155);
+   private static final CompletableFuture<Unit> field_32184 = CompletableFuture.<Unit>completedFuture(Unit.INSTANCE);
    private final class_550 field_32188 = new class_9483(class_3168.field_15843);
    private final class_465 field_32179;
    private final class_5023 field_32186 = new class_5023();

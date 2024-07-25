@@ -14,18 +14,18 @@ import org.apache.logging.log4j.Logger;
 public class class_264 extends class_7648 {
    private static final Logger field_935 = LogManager.getLogger();
    private static final Gson field_937 = class_5746.method_26000().create();
-   private Map<class_4639, class_7279> field_936 = ImmutableMap.of();
+   private Map<Identifier, class_7279> field_936 = ImmutableMap.of();
 
    public class_264() {
       super(field_937, "predicates");
    }
 
    @Nullable
-   public class_7279 method_1146(class_4639 var1) {
+   public class_7279 method_1146(Identifier var1) {
       return this.field_936.get(var1);
    }
 
-   public void method_1147(Map<class_4639, JsonElement> var1, class_7832 var2, class_3492 var3) {
+   public void method_1147(Map<Identifier, JsonElement> var1, class_7832 var2, class_3492 var3) {
       Builder var6 = ImmutableMap.builder();
       var1.forEach((var1x, var2x) -> {
          try {
@@ -47,7 +47,7 @@ public class class_264 extends class_7648 {
       this.field_936 = var7;
    }
 
-   public Set<class_4639> method_1145() {
-      return Collections.<class_4639>unmodifiableSet(this.field_936.keySet());
+   public Set<Identifier> method_1145() {
+      return Collections.<Identifier>unmodifiableSet(this.field_936.keySet());
    }
 }

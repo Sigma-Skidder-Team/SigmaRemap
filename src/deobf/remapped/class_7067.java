@@ -7,7 +7,7 @@ public abstract class class_7067<T extends class_8145> {
    public float field_36492;
    public float field_36494 = 1.0F;
    private class_6629 field_36490 = null;
-   private class_4639 field_36491 = null;
+   private Identifier field_36491 = null;
 
    public class_7067(class_6122 var1) {
       this.field_36493 = var1;
@@ -72,7 +72,7 @@ public abstract class class_7067<T extends class_8145> {
       return var1.method_37141() && var1.method_45507();
    }
 
-   public abstract class_4639 method_11446(T var1);
+   public abstract Identifier method_11446(T var1);
 
    public TextRenderer method_32553() {
       return this.field_36493.method_28134();
@@ -119,11 +119,11 @@ public abstract class class_7067<T extends class_8145> {
       this.field_36490 = (class_6629)var1.method_940().get();
    }
 
-   public class_4639 method_32556() {
+   public Identifier method_32556() {
       return this.field_36491;
    }
 
-   public void method_32544(class_4639 var1) {
+   public void method_32544(Identifier var1) {
       this.field_36491 = var1;
    }
 }

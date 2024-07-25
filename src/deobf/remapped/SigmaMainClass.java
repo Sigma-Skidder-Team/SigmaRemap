@@ -107,7 +107,7 @@ public class SigmaMainClass {
       this.field_3967.method_21923();
       this.field_3979 = new class_5937();
       this.field_3979.method_27158();
-      GLFW.glfwSetWindowTitle(field_3950.field_9602.method_43181(), "Sigma 5.0");
+      GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Sigma 5.0");
       long var6 = System.currentTimeMillis();
       this.method_3321();
       this.field_3953.method_12863("Initialized.");
@@ -186,7 +186,7 @@ public class SigmaMainClass {
 
    public void method_3333() {
       GL11.glPushMatrix();
-      double var3 = field_3950.field_9602.method_43189() / (double)((float)Math.pow(field_3950.field_9602.method_43189(), 2.0));
+      double var3 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
       GL11.glScaled(var3, var3, var3);
       GL11.glScaled((double)class_6763.field_34898, (double)class_6763.field_34898, (double)class_6763.field_34898);
       GL11.glDisable(2912);
@@ -224,7 +224,7 @@ public class SigmaMainClass {
       }
 
       if (method_3328().method_3312() != class_6015.field_30642) {
-         double var5 = field_3950.field_9602.method_43189() / (double)((float)Math.pow(field_3950.field_9602.method_43189(), 2.0));
+         double var5 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
          GL11.glScaled(var5, var5, 1.0);
          GL11.glScaled((double)class_6763.field_34898, (double)class_6763.field_34898, 1.0);
          class_3542.method_16491();
@@ -235,9 +235,9 @@ public class SigmaMainClass {
          class_3542.method_16428();
          class_3542.method_16374();
          GL11.glAlphaFunc(518, 0.1F);
-         class_7889 var10000 = field_3950.method_8577();
+         TextureManager var10000 = field_3950.method_8577();
          field_3950.method_8577();
-         var10000.method_35674(class_7889.field_40364);
+         var10000.method_35674(TextureManager.field_40364);
       }
    }
 
@@ -250,9 +250,9 @@ public class SigmaMainClass {
          this.field_3972.method_7914(new class_3368());
          class_3542.method_16428();
          class_3542.method_16387(true);
-         class_7889 var10000 = field_3950.method_8577();
+         TextureManager var10000 = field_3950.method_8577();
          field_3950.method_8577();
-         var10000.method_35674(class_7889.field_40364);
+         var10000.method_35674(TextureManager.field_40364);
       }
    }
 
@@ -361,12 +361,12 @@ public class SigmaMainClass {
       if (var1 != class_6015.field_30644) {
          if (var1 == class_6015.field_30645) {
             this.method_3336();
-            GLFW.glfwSetWindowTitle(field_3950.field_9602.method_43181(), "Jello for Sigma 5.0");
+            GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Jello for Sigma 5.0");
          }
       } else {
          class_3054.method_13951();
          method_3328().method_3299().method_31006();
-         GLFW.glfwSetWindowTitle(field_3950.field_9602.method_43181(), "Classic Sigma 5.0");
+         GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Classic Sigma 5.0");
       }
 
       if (this.field_3978 == null && class_1235.field_6812 != null) {

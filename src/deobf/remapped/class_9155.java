@@ -368,12 +368,12 @@ public class class_9155 implements class_8773 {
    }
 
    @Override
-   public Collection<class_4639> method_40309() {
+   public Collection<Identifier> method_40309() {
       return class_8669.field_44369.method_39805();
    }
 
    @Override
-   public Stream<class_4639> method_40326() {
+   public Stream<Identifier> method_40326() {
       return this.field_46856.method_1705().method_23145();
    }
 

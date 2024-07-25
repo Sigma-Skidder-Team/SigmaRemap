@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_3904 {
    private static final Logger field_18986 = LogManager.getLogger();
-   private final Map<class_4639, class_3139> field_18984 = Maps.newHashMap();
+   private final Map<Identifier, class_3139> field_18984 = Maps.newHashMap();
    private final Set<class_3139> field_18987 = Sets.newLinkedHashSet();
    private final Set<class_3139> field_18983 = Sets.newLinkedHashSet();
    private class_3869 field_18985;
@@ -40,8 +40,8 @@ public class class_3904 {
       }
    }
 
-   public void method_18081(Set<class_4639> var1) {
-      for (class_4639 var5 : var1) {
+   public void method_18081(Set<Identifier> var1) {
+      for (Identifier var5 : var1) {
          class_3139 var6 = this.field_18984.get(var5);
          if (var6 != null) {
             this.method_18074(var6);
@@ -51,7 +51,7 @@ public class class_3904 {
       }
    }
 
-   public void method_18079(Map<class_4639, class_3321> var1) {
+   public void method_18079(Map<Identifier, class_3321> var1) {
       Function var4 = Functions.forMap(this.field_18984, (class_3139)null);
 
       while (!var1.isEmpty()) {
@@ -60,7 +60,7 @@ public class class_3904 {
 
          while (var6.hasNext()) {
             Entry var7 = (Entry)var6.next();
-            class_4639 var8 = (class_4639)var7.getKey();
+            Identifier var8 = (Identifier)var7.getKey();
             class_3321 var9 = (class_3321)var7.getValue();
             if (var9.method_15264(var4)) {
                class_3139 var10 = var9.method_15268(var8);
@@ -110,7 +110,7 @@ public class class_3904 {
    }
 
    @Nullable
-   public class_3139 method_18078(class_4639 var1) {
+   public class_3139 method_18078(Identifier var1) {
       return this.field_18984.get(var1);
    }
 

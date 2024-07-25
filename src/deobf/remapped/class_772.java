@@ -1,9 +1,9 @@
 package remapped;
 
 public class class_772 extends class_1094 {
-   private static final class_4639 field_4181 = new class_4639("realms", "textures/gui/realms/invite_icon.png");
-   private static final class_4639 field_4180 = new class_4639("realms", "textures/gui/realms/trial_icon.png");
-   private static final class_4639 field_4177 = new class_4639("realms", "textures/gui/realms/news_notification_mainscreen.png");
+   private static final Identifier field_4181 = new Identifier("realms", "textures/gui/realms/invite_icon.png");
+   private static final Identifier field_4180 = new Identifier("realms", "textures/gui/realms/trial_icon.png");
+   private static final Identifier field_4177 = new Identifier("realms", "textures/gui/realms/news_notification_mainscreen.png");
    private static final class_8264 field_4172 = new class_8264();
    private volatile int field_4174;
    private static boolean field_4175;

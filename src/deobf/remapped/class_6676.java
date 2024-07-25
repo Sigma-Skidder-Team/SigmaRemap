@@ -18,7 +18,7 @@ public class class_6676<T> extends class_6810 {
       return method_30629(class_8669.field_44376.method_39797(var0)) + ":" + method_30629(var0.method_43788().method_39797(var1));
    }
 
-   private static <T> String method_30629(class_4639 var0) {
+   private static <T> String method_30629(Identifier var0) {
       return var0.toString().replace(':', '.');
    }
 

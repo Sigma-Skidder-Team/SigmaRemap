@@ -74,7 +74,7 @@ public class class_6539 {
       } else {
          String var4 = var0.getAsString();
          return class_8669.field_44382
-            .method_39794(new class_4639(var4))
+            .method_39794(new Identifier(var4))
             .orElseThrow(() -> new JsonSyntaxException("Expected " + var1 + " to be an item, was unknown string '" + var4 + "'"));
       }
    }

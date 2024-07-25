@@ -379,7 +379,7 @@ public class class_1367 {
       return var3.size();
    }
 
-   private static int method_6327(class_9155 var0, class_4639 var1, ITextComponent var2) throws CommandSyntaxException {
+   private static int method_6327(class_9155 var0, Identifier var1, ITextComponent var2) throws CommandSyntaxException {
       class_4543 var5 = var0.method_42177().method_1699();
       if (var5.method_21079(var1) == null) {
          class_87 var6 = var5.method_21081(var1, TextComponentUtils.func_240645_a_(var0, var2, (class_8145)null, 0));
@@ -399,7 +399,7 @@ public class class_1367 {
    }
 
    public static class_87 method_6329(CommandContext<class_9155> var0) throws CommandSyntaxException {
-      class_4639 var3 = class_4195.method_19511(var0, "id");
+      Identifier var3 = class_4195.method_19511(var0, "id");
       class_87 var4 = ((class_9155)var0.getSource()).method_42177().method_1699().method_21079(var3);
       if (var4 != null) {
          return var4;

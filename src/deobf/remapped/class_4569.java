@@ -3,16 +3,16 @@ package remapped;
 import com.google.gson.JsonObject;
 
 public abstract class class_4569 implements class_5154 {
-   private final class_4639 field_22263;
+   private final Identifier field_22263;
    private final class_8938 field_22262;
 
-   public class_4569(class_4639 var1, class_8938 var2) {
+   public class_4569(Identifier var1, class_8938 var2) {
       this.field_22263 = var1;
       this.field_22262 = var2;
    }
 
    @Override
-   public class_4639 method_23585() {
+   public Identifier method_23585() {
       return this.field_22263;
    }
 

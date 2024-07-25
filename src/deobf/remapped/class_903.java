@@ -18,12 +18,12 @@ public class class_903 extends class_2255<class_4797> {
       var0.put(class_8469.field_43282, var3);
       var0.put(class_8469.field_43286, var5);
    });
-   private static final Map<class_558, class_4639> field_4632 = Util.<Map<class_558, class_4639>>method_44659(Maps.newHashMap(), var0 -> {
-      var0.put(class_8469.field_43284, new class_4639("textures/entity/skeleton/skeleton.png"));
-      var0.put(class_8469.field_43285, new class_4639("textures/entity/skeleton/wither_skeleton.png"));
-      var0.put(class_8469.field_43281, new class_4639("textures/entity/zombie/zombie.png"));
-      var0.put(class_8469.field_43282, new class_4639("textures/entity/creeper/creeper.png"));
-      var0.put(class_8469.field_43286, new class_4639("textures/entity/enderdragon/dragon.png"));
+   private static final Map<class_558, Identifier> field_4632 = Util.<Map<class_558, Identifier>>method_44659(Maps.newHashMap(), var0 -> {
+      var0.put(class_8469.field_43284, new Identifier("textures/entity/skeleton/skeleton.png"));
+      var0.put(class_8469.field_43285, new Identifier("textures/entity/skeleton/wither_skeleton.png"));
+      var0.put(class_8469.field_43281, new Identifier("textures/entity/zombie/zombie.png"));
+      var0.put(class_8469.field_43282, new Identifier("textures/entity/creeper/creeper.png"));
+      var0.put(class_8469.field_43286, new Identifier("textures/entity/enderdragon/dragon.png"));
       var0.put(class_8469.field_43283, class_1512.method_6922());
    });
 
@@ -58,7 +58,7 @@ public class class_903 extends class_2255<class_4797> {
    }
 
    private static class_3581 method_3868(class_558 var0, GameProfile var1) {
-      class_4639 var4 = field_4632.get(var0);
+      Identifier var4 = field_4632.get(var0);
       if (var0 == class_8469.field_43283 && var1 != null) {
          MinecraftClient var5 = MinecraftClient.getInstance();
          Map var6 = var5.method_8557().method_44310(var1);

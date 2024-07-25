@@ -250,7 +250,7 @@ public class class_6262 extends class_462 {
    }
 
    @Override
-   public boolean method_32525(class_700 var1, class_9616 var2, Random var3, int var4, int var5, int var6, class_4639 var7) {
+   public boolean method_32525(class_700 var1, class_9616 var2, Random var3, int var4, int var5, int var6, Identifier var7) {
       class_1331 var10 = new class_1331(this.method_32530(var4, var6), this.method_32507(var5), this.method_32523(var4, var6));
       if (var2.method_44395(var10) && var1.method_28262(var10).method_8345() && !var1.method_28262(var10.method_6100()).method_8345()) {
          class_2522 var11 = class_4783.field_23540

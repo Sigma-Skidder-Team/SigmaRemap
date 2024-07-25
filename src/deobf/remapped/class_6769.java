@@ -420,7 +420,7 @@ public class class_6769 {
 
    private static int method_31076(class_9155 var0, String var1) {
       Path var4 = Paths.get(class_2765.field_13510);
-      class_4639 var5 = new class_4639("minecraft", var1);
+      Identifier var5 = new Identifier("minecraft", var1);
       Path var6 = var0.method_42198().method_28978().method_26274(var5, ".nbt");
       Path var7 = class_3916.method_18125(var6, var1, var4);
       if (var7 == null) {
@@ -442,7 +442,7 @@ public class class_6769 {
 
    private static int method_31057(class_9155 var0, String var1) {
       Path var4 = Paths.get(class_2765.field_13510, var1 + ".snbt");
-      class_4639 var5 = new class_4639("minecraft", var1);
+      Identifier var5 = new Identifier("minecraft", var1);
       Path var6 = var0.method_42198().method_28978().method_26274(var5, ".nbt");
 
       try {

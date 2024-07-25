@@ -24,7 +24,7 @@ public class class_9599 {
    private final Map<class_5019<?>, Comparable<?>> field_48932 = Maps.newHashMap();
    private class_2451 field_48935;
    private class_5734 field_48938;
-   private class_4639 field_48930 = new class_4639("");
+   private Identifier field_48930 = new Identifier("");
    private int field_48940;
    private BiFunction<SuggestionsBuilder, class_9349<class_2451>, CompletableFuture<Suggestions>> field_48937 = field_48941;
 
@@ -42,13 +42,13 @@ public class class_9599 {
       return this.field_48938;
    }
 
-   public class_4639 method_44334() {
+   public Identifier method_44334() {
       return this.field_48930;
    }
 
    public void method_44337() throws CommandSyntaxException {
       int var3 = this.field_48936.getCursor();
-      class_4639 var4 = class_4639.method_21464(this.field_48936);
+      Identifier var4 = Identifier.method_21464(this.field_48936);
       this.field_48935 = class_8669.field_44382.method_39794(var4).orElseThrow(() -> {
          this.field_48936.setCursor(var3);
          return field_48939.createWithContext(this.field_48936, var4.toString());
@@ -60,7 +60,7 @@ public class class_9599 {
          this.field_48937 = this::method_44340;
          this.field_48936.expect('#');
          this.field_48940 = this.field_48936.getCursor();
-         this.field_48930 = class_4639.method_21464(this.field_48936);
+         this.field_48930 = Identifier.method_21464(this.field_48936);
       } else {
          throw field_48931.create();
       }

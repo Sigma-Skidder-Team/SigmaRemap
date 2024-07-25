@@ -1,12 +1,12 @@
 package remapped;
 
 public class class_4859 {
-   private final class_4639 field_24200;
+   private final Identifier field_24200;
    private class_174 field_24199;
    private class_6325 field_24201;
    private static MinecraftClient field_24202 = MinecraftClient.getInstance();
 
-   private class_4859(class_4639 var1) {
+   private class_4859(Identifier var1) {
       this.field_24200 = var1;
       this.field_24199 = field_24202.field_9601;
       this.method_22351();
@@ -29,7 +29,7 @@ public class class_4859 {
       return this.field_24201;
    }
 
-   public class_4639 method_22352() {
+   public Identifier method_22352() {
       return this.field_24200;
    }
 
@@ -38,7 +38,7 @@ public class class_4859 {
       return "" + this.field_24200;
    }
 
-   public static class_4859 method_22353(class_4639 var0) {
+   public static class_4859 method_22353(Identifier var0) {
       class_4859 var3 = new class_4859(var0);
       return var3.field_24201 != null ? var3 : null;
    }

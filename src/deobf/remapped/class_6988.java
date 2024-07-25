@@ -15,8 +15,8 @@ public class class_6988 implements AutoCloseable {
    private static final class_6575 field_35879 = new class_6575();
    private static final class_5543 field_35888 = () -> 4.0F;
    private static final Random field_35890 = new Random();
-   private final class_7889 field_35889;
-   private final class_4639 field_35881;
+   private final TextureManager field_35889;
+   private final Identifier field_35881;
    private class_6938 field_35882;
    private class_6938 field_35886;
    private final List<class_3293> field_35880 = Lists.newArrayList();
@@ -25,7 +25,7 @@ public class class_6988 implements AutoCloseable {
    private final Int2ObjectMap<IntList> field_35884 = new Int2ObjectOpenHashMap();
    private final List<class_7079> field_35887 = Lists.newArrayList();
 
-   public class_6988(class_7889 var1, class_4639 var2) {
+   public class_6988(TextureManager var1, Identifier var2) {
       this.field_35889 = var1;
       this.field_35881 = var2;
    }
@@ -135,7 +135,7 @@ public class class_6988 implements AutoCloseable {
       }
 
       class_7079 var7 = new class_7079(
-         new class_4639(this.field_35881.method_21461(), this.field_35881.method_21456() + "/" + this.field_35887.size()), var1.method_15370()
+         new Identifier(this.field_35881.method_21461(), this.field_35881.method_21456() + "/" + this.field_35887.size()), var1.method_15370()
       );
       this.field_35887.add(var7);
       this.field_35889.method_35682(var7.method_32578(), var7);

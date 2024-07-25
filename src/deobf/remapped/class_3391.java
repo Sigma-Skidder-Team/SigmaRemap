@@ -49,9 +49,9 @@ public class class_3391 extends class_266 {
          .method_4813(
             new class_1074(
                this.field_16700.method_17399(),
-               new class_4639(this.field_16708.method_8246()),
-               new class_4639(this.field_16712.method_8246()),
-               new class_4639(this.field_16715.method_8246()),
+               new Identifier(this.field_16708.method_8246()),
+               new Identifier(this.field_16712.method_8246()),
+               new Identifier(this.field_16715.method_8246()),
                this.field_16707.method_8246(),
                this.field_16706
             )
@@ -120,9 +120,9 @@ public class class_3391 extends class_266 {
    }
 
    private void method_15678() {
-      this.field_16703.field_36675 = class_4639.method_21453(this.field_16708.method_8246())
-         && class_4639.method_21453(this.field_16712.method_8246())
-         && class_4639.method_21453(this.field_16715.method_8246());
+      this.field_16703.field_36675 = Identifier.method_21453(this.field_16708.method_8246())
+         && Identifier.method_21453(this.field_16712.method_8246())
+         && Identifier.method_21453(this.field_16715.method_8246());
    }
 
    @Override

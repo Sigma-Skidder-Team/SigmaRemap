@@ -27,10 +27,10 @@ public class class_4428 implements class_2231 {
          .<Void>thenCompose(var1::method_31587)
          .thenAcceptAsync(
             var5x -> {
-               class_9349 var8 = this.field_21633.method_44503((Map<class_4639, class_1079>)var9.join());
-               class_9349 var9x = this.field_21630.method_44503((Map<class_4639, class_1079>)var10.join());
-               class_9349 var10x = this.field_21634.method_44503((Map<class_4639, class_1079>)var11.join());
-               class_9349 var11x = this.field_21632.method_44503((Map<class_4639, class_1079>)var12.join());
+               class_9349 var8 = this.field_21633.method_44503((Map<Identifier, class_1079>)var9.join());
+               class_9349 var9x = this.field_21630.method_44503((Map<Identifier, class_1079>)var10.join());
+               class_9349 var10x = this.field_21634.method_44503((Map<Identifier, class_1079>)var11.join());
+               class_9349 var11x = this.field_21632.method_44503((Map<Identifier, class_1079>)var12.join());
                class_6437 var12x = class_6437.method_29388(var8, var9x, var10x, var11x);
                Multimap var13 = class_4438.method_20601(var12x);
                if (var13.isEmpty()) {

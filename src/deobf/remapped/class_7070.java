@@ -32,7 +32,7 @@ public class class_7070 {
    static {
       for (class_6629 var7 : class_8669.field_44400) {
          int var8 = class_8669.field_44400.method_14041(var7);
-         class_4639 var9 = class_8669.field_44400.method_39797(var7);
+         Identifier var9 = class_8669.field_44400.method_39797(var7);
          String var10 = var9.toString();
          String var11 = var9.method_21456();
          if (field_36499.containsKey(var7)) {

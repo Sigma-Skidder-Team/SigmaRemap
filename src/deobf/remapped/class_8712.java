@@ -13,6 +13,6 @@ public class class_8712 {
    public static final class_9791<Float> field_44672 = method_40046("explosion_radius");
 
    private static <T> class_9791<T> method_40046(String var0) {
-      return new class_9791<T>(new class_4639(var0));
+      return new class_9791<T>(new Identifier(var0));
    }
 }

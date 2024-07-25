@@ -10,9 +10,9 @@ import java.util.concurrent.CompletableFuture;
 public class class_8300 implements SuggestionProvider<class_8773> {
    private static String[] field_42532;
    private final SuggestionProvider<class_8773> field_42533;
-   private final class_4639 field_42531;
+   private final Identifier field_42531;
 
-   public class_8300(class_4639 var1, SuggestionProvider<class_8773> var2) {
+   public class_8300(Identifier var1, SuggestionProvider<class_8773> var2) {
       this.field_42533 = var2;
       this.field_42531 = var1;
    }

@@ -10,11 +10,11 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7319 extends class_9521 implements class_1200 {
-   public static final class_4639 field_37415 = new class_4639("realms", "textures/gui/realms/slot_frame.png");
-   public static final class_4639 field_37418 = new class_4639("realms", "textures/gui/realms/empty_frame.png");
-   public static final class_4639 field_37425 = new class_4639("minecraft", "textures/gui/title/background/panorama_0.png");
-   public static final class_4639 field_37417 = new class_4639("minecraft", "textures/gui/title/background/panorama_2.png");
-   public static final class_4639 field_37422 = new class_4639("minecraft", "textures/gui/title/background/panorama_3.png");
+   public static final Identifier field_37415 = new Identifier("realms", "textures/gui/realms/slot_frame.png");
+   public static final Identifier field_37418 = new Identifier("realms", "textures/gui/realms/empty_frame.png");
+   public static final Identifier field_37425 = new Identifier("minecraft", "textures/gui/title/background/panorama_0.png");
+   public static final Identifier field_37417 = new Identifier("minecraft", "textures/gui/title/background/panorama_2.png");
+   public static final Identifier field_37422 = new Identifier("minecraft", "textures/gui/title/background/panorama_3.png");
    private static final ITextComponent field_37420 = new TranslationTextComponent("mco.configure.world.slot.tooltip.active");
    private static final ITextComponent field_37421 = new TranslationTextComponent("mco.configure.world.slot.tooltip.minigame");
    private static final ITextComponent field_37427 = new TranslationTextComponent("mco.configure.world.slot.tooltip");
@@ -154,7 +154,7 @@ public class class_7319 extends class_9521 implements class_1200 {
       }
 
       MinecraftClient var19 = MinecraftClient.getInstance();
-      class_7889 var20 = var19.method_8577();
+      TextureManager var20 = var19.method_8577();
       if (!var13) {
          if (!var12) {
             if (var11 != null && var9 != -1L) {

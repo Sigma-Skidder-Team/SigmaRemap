@@ -183,7 +183,7 @@ public class class_133<T extends class_3757> {
    private final Type<?> field_385;
 
    @Nullable
-   public static class_4639 method_445(class_133<?> var0) {
+   public static Identifier method_445(class_133<?> var0) {
       return class_8669.field_44426.method_39797(var0);
    }
 

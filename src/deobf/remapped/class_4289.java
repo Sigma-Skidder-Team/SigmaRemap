@@ -6,14 +6,14 @@ import java.util.function.Function;
 
 public class class_4289 implements class_5503 {
    private static String[] field_20813;
-   private final class_4639 field_20812;
+   private final Identifier field_20812;
 
-   public class_4289(class_4639 var1) {
+   public class_4289(Identifier var1) {
       this.field_20812 = var1;
    }
 
    @Override
-   public <T> boolean method_24969(Function<class_4639, class_2307<T>> var1, Function<class_4639, T> var2, Consumer<T> var3) {
+   public <T> boolean method_24969(Function<Identifier, class_2307<T>> var1, Function<Identifier, T> var2, Consumer<T> var3) {
       Object var6 = var2.apply(this.field_20812);
       if (var6 != null) {
          var3.accept(var6);

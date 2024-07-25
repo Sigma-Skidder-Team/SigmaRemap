@@ -13,13 +13,13 @@ public class class_4737 {
    private final Multimap<String, String> field_22952;
    private final Supplier<String> field_22957;
    private final class_2144 field_22958;
-   private final Function<class_4639, class_7279> field_22951;
-   private final Set<class_4639> field_22959;
-   private final Function<class_4639, class_1758> field_22956;
-   private final Set<class_4639> field_22953;
+   private final Function<Identifier, class_7279> field_22951;
+   private final Set<Identifier> field_22959;
+   private final Function<Identifier, class_1758> field_22956;
+   private final Set<Identifier> field_22953;
    private String field_22955;
 
-   public class_4737(class_2144 var1, Function<class_4639, class_7279> var2, Function<class_4639, class_1758> var3) {
+   public class_4737(class_2144 var1, Function<Identifier, class_7279> var2, Function<Identifier, class_1758> var3) {
       this(HashMultimap.create(), () -> "", var1, var2, ImmutableSet.of(), var3, ImmutableSet.of());
    }
 
@@ -27,10 +27,10 @@ public class class_4737 {
       Multimap<String, String> var1,
       Supplier<String> var2,
       class_2144 var3,
-      Function<class_4639, class_7279> var4,
-      Set<class_4639> var5,
-      Function<class_4639, class_1758> var6,
-      Set<class_4639> var7
+      Function<Identifier, class_7279> var4,
+      Set<Identifier> var5,
+      Function<Identifier, class_1758> var6,
+      Set<Identifier> var7
    ) {
       this.field_22952 = var1;
       this.field_22957 = var2;
@@ -59,21 +59,21 @@ public class class_4737 {
       );
    }
 
-   public class_4737 method_21894(String var1, class_4639 var2) {
+   public class_4737 method_21894(String var1, Identifier var2) {
       ImmutableSet var5 = ImmutableSet.builder().addAll(this.field_22953).add(var2).build();
       return new class_4737(this.field_22952, () -> this.method_21889() + var1, this.field_22958, this.field_22951, this.field_22959, this.field_22956, var5);
    }
 
-   public class_4737 method_21887(String var1, class_4639 var2) {
+   public class_4737 method_21887(String var1, Identifier var2) {
       ImmutableSet var5 = ImmutableSet.builder().addAll(this.field_22959).add(var2).build();
       return new class_4737(this.field_22952, () -> this.method_21889() + var1, this.field_22958, this.field_22951, var5, this.field_22956, this.field_22953);
    }
 
-   public boolean method_21890(class_4639 var1) {
+   public boolean method_21890(Identifier var1) {
       return this.field_22953.contains(var1);
    }
 
-   public boolean method_21882(class_4639 var1) {
+   public boolean method_21882(Identifier var1) {
       return this.field_22959.contains(var1);
    }
 
@@ -86,12 +86,12 @@ public class class_4737 {
    }
 
    @Nullable
-   public class_1758 method_21886(class_4639 var1) {
+   public class_1758 method_21886(Identifier var1) {
       return this.field_22956.apply(var1);
    }
 
    @Nullable
-   public class_7279 method_21893(class_4639 var1) {
+   public class_7279 method_21893(Identifier var1) {
       return this.field_22951.apply(var1);
    }
 

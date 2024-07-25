@@ -12,13 +12,13 @@ import org.apache.commons.io.IOUtils;
 public class class_4481 implements class_4038 {
    private static String[] field_21849;
    private final String field_21847;
-   private final class_4639 field_21850;
+   private final Identifier field_21850;
    private final InputStream field_21852;
    private final InputStream field_21848;
    private boolean field_21851;
    private JsonObject field_21853;
 
-   public class_4481(String var1, class_4639 var2, InputStream var3, InputStream var4) {
+   public class_4481(String var1, Identifier var2, InputStream var3, InputStream var4) {
       this.field_21847 = var1;
       this.field_21850 = var2;
       this.field_21852 = var3;
@@ -26,7 +26,7 @@ public class class_4481 implements class_4038 {
    }
 
    @Override
-   public class_4639 method_18578() {
+   public Identifier method_18578() {
       return this.field_21850;
    }
 

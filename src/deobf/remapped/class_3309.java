@@ -3,8 +3,8 @@ package remapped;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class class_3309 implements Consumer<BiConsumer<class_4639, class_8843>> {
-   public void accept(BiConsumer<class_4639, class_8843> var1) {
+public class class_3309 implements Consumer<BiConsumer<Identifier, class_8843>> {
+   public void accept(BiConsumer<Identifier, class_8843> var1) {
       var1.accept(
          class_5931.field_30100,
          class_1758.method_7864()

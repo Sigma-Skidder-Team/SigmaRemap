@@ -72,7 +72,7 @@ public final class class_8853 {
    }
 
    private static class_8853 method_40720(String var0) {
-      return class_8669.<class_8853, class_8853>method_39792(class_8669.field_44375, new class_4639(var0), new class_8853(var0));
+      return class_8669.<class_8853, class_8853>method_39792(class_8669.field_44375, new Identifier(var0), new class_8853(var0));
    }
 
    public static class_8853 method_40719(Optional<class_5621<class_6325>> var0) {

@@ -53,7 +53,7 @@ public class class_1090 {
 
    public static class_1090 method_4770(JsonObject var0, JsonDeserializationContext var1) {
       String var4 = class_6539.method_29796(var0, "name");
-      class_4639 var5 = new class_4639(class_6539.method_29796(var0, "attribute"));
+      Identifier var5 = new Identifier(class_6539.method_29796(var0, "attribute"));
       class_225 var6 = class_8669.field_44403.method_39806(var5);
       if (var6 == null) {
          throw new JsonSyntaxException("Unknown attribute: " + var5);

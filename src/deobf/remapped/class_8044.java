@@ -9,7 +9,7 @@ import java.util.Optional;
 public final class class_8044 {
    public static final MapCodec<class_8044> field_41202 = RecordCodecBuilder.mapCodec(
       var0 -> var0.group(
-               class_4639.field_22655
+               Identifier.field_22655
                   .flatXmap(
                      var0x -> Optional.<Object>ofNullable(class_8796.method_40440().get(var0x))
                            .<DataResult>map(DataResult::success)

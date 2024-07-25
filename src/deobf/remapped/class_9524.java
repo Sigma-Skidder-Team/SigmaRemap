@@ -44,7 +44,7 @@ public class class_9524 {
       return method_43942(class_8669.field_44462.method_39797(var0.method_8360()), var0);
    }
 
-   public static class_454 method_43942(class_4639 var0, class_2522 var1) {
+   public static class_454 method_43942(Identifier var0, class_2522 var1) {
       return new class_454(var0, method_43939(var1.method_10316()));
    }
 

@@ -64,9 +64,9 @@ public enum class_8427 {
       this.field_43134 = var5;
    }
 
-   public class_4639 method_38784(boolean var1) {
+   public Identifier method_38784(boolean var1) {
       String var4 = !var1 ? "shield" : "banner";
-      return new class_4639("entity/" + var4 + "/" + this.method_38785());
+      return new Identifier("entity/" + var4 + "/" + this.method_38785());
    }
 
    public String method_38785() {

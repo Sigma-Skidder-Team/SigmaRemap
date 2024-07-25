@@ -67,7 +67,7 @@ public class class_8421 {
          String var4 = var2[var3];
 
          try {
-            class_4639 var5 = new class_4639(var4, "optifine/dynamic_lights.properties");
+            Identifier var5 = new Identifier(var4, "optifine/dynamic_lights.properties");
             InputStream var6 = class_3111.method_14374(var5);
             method_38762(var6, var5.toString(), var4);
          } catch (IOException var7) {
@@ -110,7 +110,7 @@ public class class_8421 {
                String var12 = var11[0];
                String var13 = var11[1];
                String var14 = var5 + ":" + var12;
-               class_4639 var15 = new class_4639(var14);
+               Identifier var15 = new Identifier(var14);
                Object var16 = var2.method_43654(var15);
                if (var16 != null) {
                   int var17 = var3.method_28676(var13, -1);

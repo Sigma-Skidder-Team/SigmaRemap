@@ -19,7 +19,7 @@ public class class_2366<T> {
    }
 
    public class_8813<T> method_10843(String var1) {
-      class_8658 var4 = new class_8658(new class_4639(var1), null);
+      class_8658 var4 = new class_8658(new Identifier(var1), null);
       this.field_11855.add(var4);
       return var4;
    }
@@ -44,9 +44,9 @@ public class class_2366<T> {
       return this.field_11855;
    }
 
-   public Set<class_4639> method_10841(class_6437 var1) {
+   public Set<Identifier> method_10841(class_6437 var1) {
       class_9349 var4 = this.field_11856.apply(var1);
-      Set var5 = this.field_11855.stream().<class_4639>map(class_8658::method_40487).collect(Collectors.toSet());
+      Set var5 = this.field_11855.stream().<Identifier>map(class_8658::method_40487).collect(Collectors.toSet());
       ImmutableSet var6 = ImmutableSet.copyOf(var4.method_43141());
       return Sets.difference(var5, var6);
    }

@@ -7,10 +7,10 @@ import org.apache.logging.log4j.Logger;
 
 public class class_2866 extends class_7875 {
    private static final Logger field_14039 = LogManager.getLogger();
-   private static final class_4639 field_14027 = new class_4639("realms", "textures/gui/realms/on_icon.png");
-   private static final class_4639 field_14028 = new class_4639("realms", "textures/gui/realms/off_icon.png");
-   private static final class_4639 field_14040 = new class_4639("realms", "textures/gui/realms/expired_icon.png");
-   private static final class_4639 field_14047 = new class_4639("realms", "textures/gui/realms/expires_soon_icon.png");
+   private static final Identifier field_14027 = new Identifier("realms", "textures/gui/realms/on_icon.png");
+   private static final Identifier field_14028 = new Identifier("realms", "textures/gui/realms/off_icon.png");
+   private static final Identifier field_14040 = new Identifier("realms", "textures/gui/realms/expired_icon.png");
+   private static final Identifier field_14047 = new Identifier("realms", "textures/gui/realms/expires_soon_icon.png");
    private static final ITextComponent field_14032 = new TranslationTextComponent("mco.configure.worlds.title");
    private static final ITextComponent field_14041 = new TranslationTextComponent("mco.configure.world.title");
    private static final ITextComponent field_14029 = new TranslationTextComponent("mco.configure.current.minigame").appendString(": ");

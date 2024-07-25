@@ -15,27 +15,27 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class class_8781 extends class_2609 {
-   private static final Codec<Either<class_4639, class_6561>> field_44938 = Codec.of(class_8781::method_40364, class_4639.field_22655.map(Either::left));
+   private static final Codec<Either<Identifier, class_6561>> field_44938 = Codec.of(class_8781::method_40364, Identifier.field_22655.map(Either::left));
    public static final Codec<class_8781> field_44941 = RecordCodecBuilder.create(
       var0 -> var0.group(method_40367(), method_40366(), method_11825()).apply(var0, class_8781::new)
    );
-   public final Either<class_4639, class_6561> field_44942;
+   public final Either<Identifier, class_6561> field_44942;
    public final Supplier<class_86> field_44940;
 
-   private static <T> DataResult<T> method_40364(Either<class_4639, class_6561> var0, DynamicOps<T> var1, T var2) {
+   private static <T> DataResult<T> method_40364(Either<Identifier, class_6561> var0, DynamicOps<T> var1, T var2) {
       Optional var5 = var0.left();
-      return var5.isPresent() ? class_4639.field_22655.encode(var5.get(), var1, var2) : DataResult.error("Can not serialize a runtime pool element");
+      return var5.isPresent() ? Identifier.field_22655.encode(var5.get(), var1, var2) : DataResult.error("Can not serialize a runtime pool element");
    }
 
    public static <E extends class_8781> RecordCodecBuilder<E, Supplier<class_86>> method_40366() {
       return class_2111.field_10583.fieldOf("processors").forGetter(var0 -> var0.field_44940);
    }
 
-   public static <E extends class_8781> RecordCodecBuilder<E, Either<class_4639, class_6561>> method_40367() {
+   public static <E extends class_8781> RecordCodecBuilder<E, Either<Identifier, class_6561>> method_40367() {
       return field_44938.fieldOf("location").forGetter(var0 -> var0.field_44942);
    }
 
-   public class_8781(Either<class_4639, class_6561> var1, Supplier<class_86> var2, class_7599 var3) {
+   public class_8781(Either<Identifier, class_6561> var1, Supplier<class_86> var2, class_7599 var3) {
       super(var3);
       this.field_44942 = var1;
       this.field_44940 = var2;

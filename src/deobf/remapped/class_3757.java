@@ -41,7 +41,7 @@ public abstract class class_3757 {
    }
 
    private class_5734 method_17401(class_5734 var1) {
-      class_4639 var4 = class_133.method_445(this.method_17405());
+      Identifier var4 = class_133.method_445(this.method_17405());
       if (var4 != null) {
          var1.method_25941("id", var4.toString());
          var1.method_25931("x", this.field_18358.method_12173());
@@ -56,7 +56,7 @@ public abstract class class_3757 {
    @Nullable
    public static class_3757 method_17410(class_2522 var0, class_5734 var1) {
       String var4 = var1.method_25965("id");
-      return class_8669.field_44426.method_39794(new class_4639(var4)).<class_3757>map(var1x -> {
+      return class_8669.field_44426.method_39794(new Identifier(var4)).<class_3757>map(var1x -> {
          try {
             return var1x.method_449();
          } catch (Throwable var5) {

@@ -7,12 +7,12 @@ import javax.annotation.Nonnull;
 
 public class class_3991<T> extends class_5383<T> {
    private static String[] field_19394;
-   private final class_4639 field_19395;
+   private final Identifier field_19395;
    private T field_19396;
 
    public class_3991(String var1, class_5621<? extends class_8669<T>> var2, Lifecycle var3) {
       super(var2, var3);
-      this.field_19395 = new class_4639(var1);
+      this.field_19395 = new Identifier(var1);
    }
 
    @Override
@@ -32,20 +32,20 @@ public class class_3991<T> extends class_5383<T> {
 
    @Nonnull
    @Override
-   public class_4639 method_39797(T var1) {
-      class_4639 var4 = super.method_39797((T)var1);
+   public Identifier method_39797(T var1) {
+      Identifier var4 = super.method_39797((T)var1);
       return var4 != null ? var4 : this.field_19395;
    }
 
    @Nonnull
    @Override
-   public T method_39806(class_4639 var1) {
+   public T method_39806(Identifier var1) {
       Object var4 = super.method_39806(var1);
       return (T)(var4 != null ? var4 : this.field_19396);
    }
 
    @Override
-   public Optional<T> method_39794(class_4639 var1) {
+   public Optional<T> method_39794(Identifier var1) {
       return Optional.<T>ofNullable(super.method_39806(var1));
    }
 
@@ -63,7 +63,7 @@ public class class_3991<T> extends class_5383<T> {
       return (T)(var4 != null ? var4 : this.field_19396);
    }
 
-   public class_4639 method_18397() {
+   public Identifier method_18397() {
       return this.field_19395;
    }
 }

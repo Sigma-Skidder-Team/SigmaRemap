@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7272 extends class_5467 {
    private static final class_7821<Integer> field_37232 = class_8073.<Integer>method_36641(class_7272.class, class_2734.field_13366);
-   private static final class_4639 field_37238 = new class_4639("killer_bunny");
+   private static final Identifier field_37238 = new Identifier("killer_bunny");
    private int field_37237;
    private int field_37236;
    private boolean field_37239;

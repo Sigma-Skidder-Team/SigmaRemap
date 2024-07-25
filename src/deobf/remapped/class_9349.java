@@ -13,20 +13,20 @@ import java.util.Map.Entry;
 import javax.annotation.Nullable;
 
 public interface class_9349<T> {
-   Map<class_4639, class_2307<T>> method_43137();
+   Map<Identifier, class_2307<T>> method_43137();
 
    @Nullable
-   default class_2307<T> method_43140(class_4639 var1) {
+   default class_2307<T> method_43140(Identifier var1) {
       return this.method_43137().get(var1);
    }
 
-   class_2307<T> method_43145(class_4639 var1);
+   class_2307<T> method_43145(Identifier var1);
 
    @Nullable
-   class_4639 method_43144(class_2307<T> var1);
+   Identifier method_43144(class_2307<T> var1);
 
-   default class_4639 method_43147(class_2307<T> var1) {
-      class_4639 var4 = this.method_43144(var1);
+   default Identifier method_43147(class_2307<T> var1) {
+      Identifier var4 = this.method_43144(var1);
       if (var4 != null) {
          return var4;
       } else {
@@ -34,11 +34,11 @@ public interface class_9349<T> {
       }
    }
 
-   default Collection<class_4639> method_43141() {
+   default Collection<Identifier> method_43141() {
       return this.method_43137().keySet();
    }
 
-   default Collection<class_4639> method_43143(T var1) {
+   default Collection<Identifier> method_43143(T var1) {
       ArrayList var4 = Lists.newArrayList();
 
       for (Entry var6 : this.method_43137().entrySet()) {
@@ -55,7 +55,7 @@ public interface class_9349<T> {
       var1.method_37743(var5.size());
 
       for (Entry var7 : var5.entrySet()) {
-         var1.method_37780((class_4639)var7.getKey());
+         var1.method_37780((Identifier)var7.getKey());
          var1.method_37743(((class_2307)var7.getValue()).method_10608().size());
 
          for (Object var9 : ((class_2307)var7.getValue()).method_10608()) {
@@ -69,7 +69,7 @@ public interface class_9349<T> {
       int var5 = var0.method_37778();
 
       for (int var6 = 0; var6 < var5; var6++) {
-         class_4639 var7 = var0.method_37768();
+         Identifier var7 = var0.method_37768();
          int var8 = var0.method_37778();
          Builder var9 = ImmutableSet.builder();
 
@@ -87,7 +87,7 @@ public interface class_9349<T> {
       return method_43138(ImmutableBiMap.of());
    }
 
-   static <T> class_9349<T> method_43138(Map<class_4639, class_2307<T>> var0) {
+   static <T> class_9349<T> method_43138(Map<Identifier, class_2307<T>> var0) {
       ImmutableBiMap var3 = ImmutableBiMap.copyOf(var0);
       return new class_3247(var3);
    }

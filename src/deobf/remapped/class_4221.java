@@ -46,7 +46,7 @@ public class class_4221 extends class_9128 {
          }
 
          int var6 = -2;
-         int var7 = MinecraftClient.getInstance().field_9602.method_43166() - 2;
+         int var7 = MinecraftClient.getInstance().window.method_43166() - 2;
          byte var8 = -2;
          int var9 = new Color(0, 192, 255, 255).getRGB();
          int var10 = new Color(0, 192, 255, 255).getRGB();

@@ -20,7 +20,7 @@ public abstract class class_3736 implements class_8169 {
       this.field_18260 = var1;
    }
 
-   private static String method_17310(class_3168 var0, class_4639 var1) {
+   private static String method_17310(class_3168 var0, Identifier var1) {
       return String.format("%s/%s/%s", var0.method_14619(), var1.method_21461(), var1.method_21456());
    }
 
@@ -28,11 +28,11 @@ public abstract class class_3736 implements class_8169 {
       return var0.toURI().relativize(var1.toURI()).getPath();
    }
 
-   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, class_4639 var2) throws IOException {
+   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, Identifier var2) throws IOException {
       return this.method_17304(method_17310(var1, var2));
    }
 
-   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, class_4639 var2) {
+   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, Identifier var2) {
       return this.method_17308(method_17310(var1, var2));
    }
 

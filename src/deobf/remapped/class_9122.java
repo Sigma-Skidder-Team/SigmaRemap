@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_9122 extends class_7164<class_7666, class_5103<class_7666>> {
-   private static final class_4639 field_46680 = new class_4639("textures/entity/villager/villager.png");
+   private static final Identifier field_46680 = new Identifier("textures/entity/villager/villager.png");
 
    public class_9122(class_6122 var1, class_550 var2) {
       super(var1, new class_5103<class_7666>(0.0F), 0.5F);
@@ -10,7 +10,7 @@ public class class_9122 extends class_7164<class_7666, class_5103<class_7666>> {
       this.method_29100(new class_6741<class_7666, class_5103<class_7666>>(this));
    }
 
-   public class_4639 method_41977(class_7666 var1) {
+   public Identifier method_41977(class_7666 var1) {
       return field_46680;
    }
 

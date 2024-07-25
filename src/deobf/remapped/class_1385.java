@@ -506,7 +506,7 @@ public class class_1385 {
       String var3 = "block_";
       if (this.field_7563.startsWith(var3)) {
          String var4 = this.field_7563.substring(var3.length());
-         class_4639 var5 = new class_4639(var4);
+         Identifier var5 = new Identifier(var4);
          class_6414 var6 = class_9451.method_43712(var5);
          if (var6 != null) {
             int var7 = class_9451.method_43710(var6);
@@ -807,7 +807,7 @@ public class class_1385 {
          for (int var5 = 0; var5 < var1.length; var5++) {
             class_5155 var6 = var1[var5];
             if (var6 != null) {
-               class_4639 var7 = var6.method_23644();
+               Identifier var7 = var6.method_23644();
                class_5155 var8 = var2.method_38528(var7);
                if (var8 == null || var8 instanceof class_2008) {
                   class_3111.method_14317("Missing CTM sprite: " + var7 + ", properties: " + this.field_7541);
@@ -840,7 +840,7 @@ public class class_1385 {
 
          for (int var7 = 0; var7 < var0.length; var7++) {
             String var8 = var0[var7];
-            class_4639 var9 = new class_4639(var8);
+            Identifier var9 = new Identifier(var8);
             String var10 = var9.method_21461();
             String var11 = var9.method_21456();
             if (!var11.contains("/")) {
@@ -853,7 +853,7 @@ public class class_1385 {
             } else if (var3 && var12.endsWith("<default>.png")) {
                var6.add(class_9049.field_46340);
             } else {
-               class_4639 var13 = new class_4639(var10, var12);
+               Identifier var13 = new Identifier(var10, var12);
                boolean var14 = class_3111.method_14362(var13);
                if (!var14) {
                   class_3111.method_14317("File not found: " + var12);
@@ -865,7 +865,7 @@ public class class_1385 {
                   var16 = var11.substring(var15.length());
                }
 
-               class_4639 var17 = new class_4639(var10, var16);
+               Identifier var17 = new Identifier(var10, var16);
                class_5155 var18 = var1.method_38515(var17);
                var6.add(var18);
             }

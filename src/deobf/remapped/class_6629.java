@@ -389,19 +389,19 @@ public class class_6629<T extends class_8145> {
    private final int field_34256;
    private String field_34226;
    private ITextComponent field_34293;
-   private class_4639 field_34285;
+   private Identifier field_34285;
    private final class_6097 field_34235;
 
    private static <T extends class_8145> class_6629<T> method_30457(String var0, class_6238<T> var1) {
       return class_8669.<class_6629<T>>method_39791(class_8669.field_44400, var0, var1.method_28496(var0));
    }
 
-   public static class_4639 method_30472(class_6629<?> var0) {
+   public static Identifier method_30472(class_6629<?> var0) {
       return class_8669.field_44400.method_39797(var0);
    }
 
    public static Optional<class_6629<?>> method_30460(String var0) {
-      return class_8669.field_44400.method_39794(class_4639.method_21455(var0));
+      return class_8669.field_44400.method_39794(Identifier.method_21455(var0));
    }
 
    public class_6629(
@@ -547,10 +547,10 @@ public class class_6629<T extends class_8145> {
       return this.method_30469();
    }
 
-   public class_4639 method_30480() {
+   public Identifier method_30480() {
       if (this.field_34285 == null) {
-         class_4639 var3 = class_8669.field_44400.method_39797(this);
-         this.field_34285 = new class_4639(var3.method_21461(), "entities/" + var3.method_21456());
+         Identifier var3 = class_8669.field_44400.method_39797(this);
+         this.field_34285 = new Identifier(var3.method_21461(), "entities/" + var3.method_21456());
       }
 
       return this.field_34285;
@@ -611,7 +611,7 @@ public class class_6629<T extends class_8145> {
    }
 
    public static Optional<class_6629<?>> method_30474(class_5734 var0) {
-      return class_8669.field_44400.method_39794(new class_4639(var0.method_25965("id")));
+      return class_8669.field_44400.method_39794(new Identifier(var0.method_25965("id")));
    }
 
    @Nullable

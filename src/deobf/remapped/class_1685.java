@@ -7,10 +7,10 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public class class_1685 {
-   private final Map<class_8940, class_4639> field_8709 = Maps.newHashMap();
+   private final Map<class_8940, Identifier> field_8709 = Maps.newHashMap();
    private final Set<class_8940> field_8711 = Sets.newHashSet();
 
-   public class_1685 method_7551(class_8940 var1, class_4639 var2) {
+   public class_1685 method_7551(class_8940 var1, Identifier var2) {
       this.field_8709.put(var1, var2);
       return this;
    }
@@ -25,9 +25,9 @@ public class class_1685 {
       return this;
    }
 
-   public class_4639 method_7556(class_8940 var1) {
+   public Identifier method_7556(class_8940 var1) {
       for (class_8940 var4 = var1; var4 != null; var4 = var4.method_41077()) {
-         class_4639 var5 = this.field_8709.get(var4);
+         Identifier var5 = this.field_8709.get(var4);
          if (var5 != null) {
             return var5;
          }
@@ -36,7 +36,7 @@ public class class_1685 {
       throw new IllegalStateException("Can't find texture for slot " + var1);
    }
 
-   public class_1685 method_7531(class_8940 var1, class_4639 var2) {
+   public class_1685 method_7531(class_8940 var1, Identifier var2) {
       class_1685 var5 = new class_1685();
       var5.field_8709.putAll(this.field_8709);
       var5.field_8711.addAll(this.field_8711);
@@ -45,20 +45,20 @@ public class class_1685 {
    }
 
    public static class_1685 method_7564(class_6414 var0) {
-      class_4639 var3 = method_7540(var0);
+      Identifier var3 = method_7540(var0);
       return method_7574(var3);
    }
 
    public static class_1685 method_7552(class_6414 var0) {
-      class_4639 var3 = method_7540(var0);
+      Identifier var3 = method_7540(var0);
       return method_7542(var3);
    }
 
-   public static class_1685 method_7542(class_4639 var0) {
+   public static class_1685 method_7542(Identifier var0) {
       return new class_1685().method_7551(class_8940.field_45837, var0);
    }
 
-   public static class_1685 method_7574(class_4639 var0) {
+   public static class_1685 method_7574(Identifier var0) {
       return new class_1685().method_7551(class_8940.field_45843, var0);
    }
 
@@ -66,7 +66,7 @@ public class class_1685 {
       return method_7549(class_8940.field_45826, method_7540(var0));
    }
 
-   public static class_1685 method_7560(class_4639 var0) {
+   public static class_1685 method_7560(Identifier var0) {
       return method_7549(class_8940.field_45826, var0);
    }
 
@@ -74,7 +74,7 @@ public class class_1685 {
       return method_7549(class_8940.field_45841, method_7540(var0));
    }
 
-   public static class_1685 method_7535(class_4639 var0) {
+   public static class_1685 method_7535(Identifier var0) {
       return method_7549(class_8940.field_45841, var0);
    }
 
@@ -82,7 +82,7 @@ public class class_1685 {
       return method_7549(class_8940.field_45814, method_7540(var0));
    }
 
-   public static class_1685 method_7568(class_4639 var0) {
+   public static class_1685 method_7568(Identifier var0) {
       return method_7549(class_8940.field_45814, var0);
    }
 
@@ -106,7 +106,7 @@ public class class_1685 {
       return method_7549(class_8940.field_45816, method_7540(var0));
    }
 
-   public static class_1685 method_7541(class_4639 var0) {
+   public static class_1685 method_7541(Identifier var0) {
       return method_7549(class_8940.field_45835, var0);
    }
 
@@ -114,7 +114,7 @@ public class class_1685 {
       return new class_1685().method_7551(class_8940.field_45811, method_7540(var0)).method_7551(class_8940.field_45845, method_7533(var1, "_top"));
    }
 
-   public static class_1685 method_7549(class_8940 var0, class_4639 var1) {
+   public static class_1685 method_7549(class_8940 var0, Identifier var1) {
       return new class_1685().method_7551(var0, var1);
    }
 
@@ -130,7 +130,7 @@ public class class_1685 {
       return new class_1685().method_7551(class_8940.field_45813, method_7540(var0)).method_7551(class_8940.field_45830, method_7533(var0, "_top"));
    }
 
-   public static class_1685 method_7569(class_4639 var0, class_4639 var1) {
+   public static class_1685 method_7569(Identifier var0, Identifier var1) {
       return new class_1685().method_7551(class_8940.field_45813, var0).method_7551(class_8940.field_45830, var1);
    }
 
@@ -142,7 +142,7 @@ public class class_1685 {
    }
 
    public static class_1685 method_7537(class_6414 var0) {
-      class_4639 var3 = method_7540(var0);
+      Identifier var3 = method_7540(var0);
       return new class_1685()
          .method_7551(class_8940.field_45831, var3)
          .method_7551(class_8940.field_45813, var3)
@@ -151,7 +151,7 @@ public class class_1685 {
    }
 
    public static class_1685 method_7576(class_6414 var0) {
-      class_4639 var3 = method_7540(var0);
+      Identifier var3 = method_7540(var0);
       return new class_1685()
          .method_7551(class_8940.field_45831, var3)
          .method_7551(class_8940.field_45813, var3)
@@ -166,7 +166,7 @@ public class class_1685 {
       return new class_1685().method_7551(class_8940.field_45832, method_7540(var0));
    }
 
-   public static class_1685 method_7567(class_4639 var0) {
+   public static class_1685 method_7567(Identifier var0) {
       return new class_1685().method_7551(class_8940.field_45832, var0);
    }
 
@@ -186,7 +186,7 @@ public class class_1685 {
       return new class_1685().method_7551(class_8940.field_45819, method_7540(var0));
    }
 
-   public static class_1685 method_7584(class_4639 var0) {
+   public static class_1685 method_7584(Identifier var0) {
       return new class_1685().method_7551(class_8940.field_45819, var0);
    }
 
@@ -263,27 +263,27 @@ public class class_1685 {
       return new class_1685().method_7551(class_8940.field_45827, method_7540(var0));
    }
 
-   public static class_1685 method_7544(class_4639 var0) {
+   public static class_1685 method_7544(Identifier var0) {
       return new class_1685().method_7551(class_8940.field_45827, var0);
    }
 
-   public static class_4639 method_7540(class_6414 var0) {
-      class_4639 var3 = class_8669.field_44462.method_39797(var0);
-      return new class_4639(var3.method_21461(), "block/" + var3.method_21456());
+   public static Identifier method_7540(class_6414 var0) {
+      Identifier var3 = class_8669.field_44462.method_39797(var0);
+      return new Identifier(var3.method_21461(), "block/" + var3.method_21456());
    }
 
-   public static class_4639 method_7533(class_6414 var0, String var1) {
-      class_4639 var4 = class_8669.field_44462.method_39797(var0);
-      return new class_4639(var4.method_21461(), "block/" + var4.method_21456() + var1);
+   public static Identifier method_7533(class_6414 var0, String var1) {
+      Identifier var4 = class_8669.field_44462.method_39797(var0);
+      return new Identifier(var4.method_21461(), "block/" + var4.method_21456() + var1);
    }
 
-   public static class_4639 method_7546(class_2451 var0) {
-      class_4639 var3 = class_8669.field_44382.method_39797(var0);
-      return new class_4639(var3.method_21461(), "item/" + var3.method_21456());
+   public static Identifier method_7546(class_2451 var0) {
+      Identifier var3 = class_8669.field_44382.method_39797(var0);
+      return new Identifier(var3.method_21461(), "item/" + var3.method_21456());
    }
 
-   public static class_4639 method_7539(class_2451 var0, String var1) {
-      class_4639 var4 = class_8669.field_44382.method_39797(var0);
-      return new class_4639(var4.method_21461(), "item/" + var4.method_21456() + var1);
+   public static Identifier method_7539(class_2451 var0, String var1) {
+      Identifier var4 = class_8669.field_44382.method_39797(var0);
+      return new Identifier(var4.method_21461(), "item/" + var4.method_21456() + var1);
    }
 }

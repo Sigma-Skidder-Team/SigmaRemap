@@ -4,14 +4,14 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public abstract class class_2358 extends class_8346 {
-   public class_4639 field_11837;
+   public Identifier field_11837;
    public long field_11836;
 
    public class_2358(class_133<?> var1) {
       super(var1);
    }
 
-   public static void method_10817(class_6163 var0, Random var1, class_1331 var2, class_4639 var3) {
+   public static void method_10817(class_6163 var0, Random var1, class_1331 var2, Identifier var3) {
       class_3757 var6 = var0.method_28260(var2);
       if (var6 instanceof class_2358) {
          ((class_2358)var6).method_10816(var3, var1.nextLong());
@@ -22,7 +22,7 @@ public abstract class class_2358 extends class_8346 {
       if (!var1.method_25939("LootTable", 8)) {
          return false;
       } else {
-         this.field_11837 = new class_4639(var1.method_25965("LootTable"));
+         this.field_11837 = new Identifier(var1.method_25965("LootTable"));
          this.field_11836 = var1.method_25948("LootTableSeed");
          return true;
       }
@@ -60,7 +60,7 @@ public abstract class class_2358 extends class_8346 {
       }
    }
 
-   public void method_10816(class_4639 var1, long var2) {
+   public void method_10816(Identifier var1, long var2) {
       this.field_11837 = var1;
       this.field_11836 = var2;
    }

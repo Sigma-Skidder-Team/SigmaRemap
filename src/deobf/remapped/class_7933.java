@@ -21,7 +21,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    private int field_40582;
    private int field_40577;
    public final class_6844 field_40580 = new class_7306(this);
-   private final Object2IntOpenHashMap<class_4639> field_40586 = new Object2IntOpenHashMap();
+   private final Object2IntOpenHashMap<Identifier> field_40586 = new Object2IntOpenHashMap();
    public final class_1510<? extends class_3151> field_40581;
 
    public class_7933(class_133<?> var1, class_1510<? extends class_3151> var2) {
@@ -137,7 +137,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       class_5734 var5 = var2.method_25937("RecipesUsed");
 
       for (String var7 : var5.method_25952()) {
-         this.field_40586.put(new class_4639(var7), var5.method_25947(var7));
+         this.field_40586.put(new Identifier(var7), var5.method_25947(var7));
       }
    }
 
@@ -382,7 +382,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    @Override
    public void method_41427(class_8932<?> var1) {
       if (var1 != null) {
-         class_4639 var4 = var1.method_41050();
+         Identifier var4 = var1.method_41050();
          this.field_40586.addTo(var4, 1);
       }
    }
@@ -409,7 +409,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
 
       while (var6.hasNext()) {
          Entry var7 = (Entry)var6.next();
-         var1.method_29549().method_23139((class_4639)var7.getKey()).ifPresent(var4 -> {
+         var1.method_29549().method_23139((Identifier)var7.getKey()).ifPresent(var4 -> {
             var5.add(var4);
             method_35868(var1, var2, var7.getIntValue(), ((class_3151)var4).method_14548());
          });

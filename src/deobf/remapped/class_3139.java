@@ -19,13 +19,13 @@ public class class_3139 {
    private final class_3139 field_15625;
    private final class_7750 field_15620;
    private final class_5123 field_15626;
-   private final class_4639 field_15623;
+   private final Identifier field_15623;
    private final Map<String, class_7353> field_15627;
    private final String[][] field_15622;
    private final Set<class_3139> field_15619 = Sets.newLinkedHashSet();
    private final ITextComponent field_15621;
 
-   public class_3139(class_4639 var1, class_3139 var2, class_7750 var3, class_5123 var4, Map<String, class_7353> var5, String[][] var6) {
+   public class_3139(Identifier var1, class_3139 var2, class_7750 var3, class_5123 var4, Map<String, class_7353> var5, String[][] var6) {
       this.field_15623 = var1;
       this.field_15620 = var3;
       this.field_15627 = ImmutableMap.copyOf(var5);
@@ -102,7 +102,7 @@ public class class_3139 {
       this.field_15619.add(var1);
    }
 
-   public class_4639 method_14520() {
+   public Identifier method_14520() {
       return this.field_15623;
    }
 

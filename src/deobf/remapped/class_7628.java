@@ -12,7 +12,7 @@ public class class_7628 extends class_446 {
    private class_8343 field_38816;
 
    public class_7628(class_7038 var1, String var2) {
-      super(var1, var2, 0, MinecraftClient.getInstance().field_9602.method_43163() - 70, MinecraftClient.getInstance().field_9602.method_43166(), 110, false);
+      super(var1, var2, 0, MinecraftClient.getInstance().window.method_43163() - 70, MinecraftClient.getInstance().window.method_43166(), 110, false);
       this.method_32187(true);
       this.method_32105(false);
    }
@@ -26,7 +26,7 @@ public class class_7628 extends class_446 {
       super.method_32145(var1, var2);
       byte var5 = 20;
       if (this.field_38819 == class_3246.field_16133
-         && Math.abs(MinecraftClient.getInstance().field_9602.method_43163() - var2) < var5
+         && Math.abs(MinecraftClient.getInstance().window.method_43163() - var2) < var5
          && !this.field_36283.method_32116(((class_734)this.field_36283).field_4006)) {
          this.field_38819 = class_3246.field_16135;
       }
@@ -43,7 +43,7 @@ public class class_7628 extends class_446 {
          this.field_38819 = class_3246.field_16133;
       }
 
-      if (MinecraftClient.getInstance().field_9602.method_43163() - var2 > this.method_32137()) {
+      if (MinecraftClient.getInstance().window.method_43163() - var2 > this.method_32137()) {
          this.field_38819 = class_3246.field_16137;
       }
 
@@ -52,7 +52,7 @@ public class class_7628 extends class_446 {
          var7 = class_9556.method_44078(this.field_38818, 0.0F, 1.0F, 1.0F);
       }
 
-      this.method_32117(MinecraftClient.getInstance().field_9602.method_43163() - (int)((float)this.method_32137() * var7));
+      this.method_32117(MinecraftClient.getInstance().window.method_43163() - (int)((float)this.method_32137() * var7));
    }
 
    @Override

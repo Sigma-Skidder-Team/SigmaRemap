@@ -3,10 +3,10 @@ package remapped;
 import com.google.gson.JsonObject;
 
 public class class_2074 extends class_8273<class_8367> {
-   private static final class_4639 field_10447 = new class_4639("used_totem");
+   private static final Identifier field_10447 = new Identifier("used_totem");
 
    @Override
-   public class_4639 method_3899() {
+   public Identifier method_3899() {
       return field_10447;
    }
 

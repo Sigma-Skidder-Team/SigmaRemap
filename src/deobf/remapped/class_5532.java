@@ -6,8 +6,8 @@ import com.mojang.datafixers.util.Pair;
 public class class_5532 {
    public static final class_8115 field_28209 = class_9863.method_45479(
       new class_8115(
-         new class_4639("pillager_outpost/base_plates"),
-         new class_4639("empty"),
+         new Identifier("pillager_outpost/base_plates"),
+         new Identifier("empty"),
          ImmutableList.of(Pair.of(class_2609.method_11826("pillager_outpost/base_plate"), 1)),
          class_7599.field_38708
       )
@@ -19,8 +19,8 @@ public class class_5532 {
    static {
       class_9863.method_45479(
          new class_8115(
-            new class_4639("pillager_outpost/towers"),
-            new class_4639("empty"),
+            new Identifier("pillager_outpost/towers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(
                   class_2609.method_11838(
@@ -37,16 +37,16 @@ public class class_5532 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("pillager_outpost/feature_plates"),
-            new class_4639("empty"),
+            new Identifier("pillager_outpost/feature_plates"),
+            new Identifier("empty"),
             ImmutableList.of(Pair.of(class_2609.method_11826("pillager_outpost/feature_plate"), 1)),
             class_7599.field_38703
          )
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("pillager_outpost/features"),
-            new class_4639("empty"),
+            new Identifier("pillager_outpost/features"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("pillager_outpost/feature_cage1"), 1),
                Pair.of(class_2609.method_11826("pillager_outpost/feature_cage2"), 1),

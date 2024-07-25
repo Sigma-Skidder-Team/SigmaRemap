@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8263 extends class_1171 {
-   private static final class_4639 field_42389 = new class_4639("textures/entity/zombie/husk.png");
+   private static final Identifier field_42389 = new Identifier("textures/entity/zombie/husk.png");
 
    public class_8263(class_6122 var1) {
       super(var1);
@@ -14,7 +14,7 @@ public class class_8263 extends class_1171 {
    }
 
    @Override
-   public class_4639 method_7987(class_2811 var1) {
+   public Identifier method_7987(class_2811 var1) {
       return field_42389;
    }
 }

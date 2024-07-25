@@ -4,24 +4,24 @@ import javax.annotation.Nullable;
 
 public class class_8477 extends class_8574 {
    private static final class_7821<Integer> field_43436 = class_8073.<Integer>method_36641(class_8477.class, class_2734.field_13366);
-   private static final class_4639[] field_43433 = new class_4639[]{
-      new class_4639("textures/entity/fish/tropical_a.png"), new class_4639("textures/entity/fish/tropical_b.png")
+   private static final Identifier[] field_43433 = new Identifier[]{
+      new Identifier("textures/entity/fish/tropical_a.png"), new Identifier("textures/entity/fish/tropical_b.png")
    };
-   private static final class_4639[] field_43437 = new class_4639[]{
-      new class_4639("textures/entity/fish/tropical_a_pattern_1.png"),
-      new class_4639("textures/entity/fish/tropical_a_pattern_2.png"),
-      new class_4639("textures/entity/fish/tropical_a_pattern_3.png"),
-      new class_4639("textures/entity/fish/tropical_a_pattern_4.png"),
-      new class_4639("textures/entity/fish/tropical_a_pattern_5.png"),
-      new class_4639("textures/entity/fish/tropical_a_pattern_6.png")
+   private static final Identifier[] field_43437 = new Identifier[]{
+      new Identifier("textures/entity/fish/tropical_a_pattern_1.png"),
+      new Identifier("textures/entity/fish/tropical_a_pattern_2.png"),
+      new Identifier("textures/entity/fish/tropical_a_pattern_3.png"),
+      new Identifier("textures/entity/fish/tropical_a_pattern_4.png"),
+      new Identifier("textures/entity/fish/tropical_a_pattern_5.png"),
+      new Identifier("textures/entity/fish/tropical_a_pattern_6.png")
    };
-   private static final class_4639[] field_43435 = new class_4639[]{
-      new class_4639("textures/entity/fish/tropical_b_pattern_1.png"),
-      new class_4639("textures/entity/fish/tropical_b_pattern_2.png"),
-      new class_4639("textures/entity/fish/tropical_b_pattern_3.png"),
-      new class_4639("textures/entity/fish/tropical_b_pattern_4.png"),
-      new class_4639("textures/entity/fish/tropical_b_pattern_5.png"),
-      new class_4639("textures/entity/fish/tropical_b_pattern_6.png")
+   private static final Identifier[] field_43435 = new Identifier[]{
+      new Identifier("textures/entity/fish/tropical_b_pattern_1.png"),
+      new Identifier("textures/entity/fish/tropical_b_pattern_2.png"),
+      new Identifier("textures/entity/fish/tropical_b_pattern_3.png"),
+      new Identifier("textures/entity/fish/tropical_b_pattern_4.png"),
+      new Identifier("textures/entity/fish/tropical_b_pattern_5.png"),
+      new Identifier("textures/entity/fish/tropical_b_pattern_6.png")
    };
    public static final int[] field_43434 = new int[]{
       method_39028(class_8922.field_45754, class_9077.field_46486, class_9077.field_46498),
@@ -166,11 +166,11 @@ public class class_8477 extends class_8574 {
       return Math.min((var0 & 0xFF00) >> 8, 5);
    }
 
-   public class_4639 method_39020() {
+   public Identifier method_39020() {
       return method_39027(this.method_39018()) != 0 ? field_43435[method_39022(this.method_39018())] : field_43437[method_39022(this.method_39018())];
    }
 
-   public class_4639 method_39029() {
+   public Identifier method_39029() {
       return field_43433[method_39027(this.method_39018())];
    }
 

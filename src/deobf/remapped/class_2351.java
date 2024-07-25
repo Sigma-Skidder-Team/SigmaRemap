@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 
 public final class class_2351 {
-   public static final class_2366<class_6414> field_11742 = class_4438.<class_6414>method_20597(new class_4639("block"), class_6437::method_29392);
+   public static final class_2366<class_6414> field_11742 = class_4438.<class_6414>method_20597(new Identifier("block"), class_6437::method_29392);
    public static final class_8813<class_6414> field_11738 = method_10754("wool");
    public static final class_8813<class_6414> field_11762 = method_10754("planks");
    public static final class_8813<class_6414> field_11761 = method_10754("stone_bricks");

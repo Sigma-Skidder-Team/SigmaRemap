@@ -6,7 +6,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_57 extends class_2208<class_6415> {
-   private static final class_4639 field_48 = new class_4639("textures/gui/container/villager2.png");
+   private static final Identifier field_48 = new Identifier("textures/gui/container/villager2.png");
    private static final ITextComponent field_46 = new TranslationTextComponent("merchant.trades");
    private static final ITextComponent field_51 = new StringTextComponent(" - ");
    private static final ITextComponent field_43 = new TranslationTextComponent("merchant.deprecated");

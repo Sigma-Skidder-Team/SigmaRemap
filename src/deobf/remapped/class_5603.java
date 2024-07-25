@@ -8,7 +8,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_5603 extends class_266 {
-   private static final class_4639 field_28419 = new class_4639("textures/gui/container/gamemode_switcher.png");
+   private static final Identifier field_28419 = new Identifier("textures/gui/container/gamemode_switcher.png");
    private static final int field_28417 = class_531.values().length * 30 - 5;
    private static final ITextComponent field_28420 = new TranslationTextComponent(
       "debug.gamemodes.select_next", new TranslationTextComponent("debug.gamemodes.press_f4").mergeStyle(TextFormatting.AQUA)

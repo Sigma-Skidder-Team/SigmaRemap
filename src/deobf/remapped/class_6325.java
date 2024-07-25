@@ -301,7 +301,7 @@ public final class class_6325 {
 
    @Override
    public String toString() {
-      class_4639 var3 = class_889.field_4582.method_39797(this);
+      Identifier var3 = class_889.field_4582.method_39797(this);
       return var3 != null ? var3.toString() : super.toString();
    }
 }

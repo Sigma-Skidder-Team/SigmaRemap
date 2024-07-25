@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 public class class_4077 {
-   public static Properties method_18799(class_4639 var0) {
+   public static Properties method_18799(Identifier var0) {
       String var3 = var0.method_21456();
       class_8407 var4 = new class_8407();
       String var5 = ".png";
@@ -19,7 +19,7 @@ public class class_4077 {
          String var6 = var3.substring(0, var3.length() - var5.length()) + ".properties";
 
          try {
-            class_4639 var7 = new class_4639(var0.method_21461(), var6);
+            Identifier var7 = new Identifier(var0.method_21461(), var6);
             InputStream var8 = class_3111.method_14375(class_3111.method_14450(), var7);
             if (var8 == null) {
                return var4;
@@ -91,7 +91,7 @@ public class class_4077 {
       }
    }
 
-   public static class_4639 method_18801(class_4639 var0) {
+   public static Identifier method_18801(Identifier var0) {
       if (class_3111.method_14360()) {
          if (var0 != null) {
             if (class_3111.method_14272()) {
@@ -101,7 +101,7 @@ public class class_4077 {
                if (var3.startsWith(var4)) {
                   var3 = var3.substring(var4.length());
                   var3 = var5 + var3;
-                  class_4639 var6 = new class_4639(var0.method_21461(), var3);
+                  Identifier var6 = new Identifier(var0.method_21461(), var3);
                   return !class_3111.method_14363(class_3111.method_14450(), var6) ? var0 : var6;
                } else {
                   return var0;

@@ -42,11 +42,11 @@ public class class_4104 {
    private final boolean field_19984;
    private final Map<class_5019<?>, Comparable<?>> field_19989 = Maps.newHashMap();
    private final Map<String, String> field_19981 = Maps.newHashMap();
-   private class_4639 field_19980 = new class_4639("");
+   private Identifier field_19980 = new Identifier("");
    private class_8021<class_6414, class_2522> field_19978;
    private class_2522 field_19988;
    private class_5734 field_19983;
-   private class_4639 field_19976 = new class_4639("");
+   private Identifier field_19976 = new Identifier("");
    private int field_19991;
    private BiFunction<SuggestionsBuilder, class_9349<class_6414>, CompletableFuture<Suggestions>> field_19990 = field_19987;
 
@@ -70,7 +70,7 @@ public class class_4104 {
    }
 
    @Nullable
-   public class_4639 method_18971() {
+   public Identifier method_18971() {
       return this.field_19976;
    }
 
@@ -293,7 +293,7 @@ public class class_4104 {
 
    public void method_18979() throws CommandSyntaxException {
       int var3 = this.field_19992.getCursor();
-      this.field_19980 = class_4639.method_21464(this.field_19992);
+      this.field_19980 = Identifier.method_21464(this.field_19992);
       class_6414 var4 = class_8669.field_44462.method_39794(this.field_19980).orElseThrow(() -> {
          this.field_19992.setCursor(var3);
          return field_19982.createWithContext(this.field_19992, this.field_19980.toString());
@@ -307,7 +307,7 @@ public class class_4104 {
          this.field_19990 = this::method_18976;
          this.field_19992.expect('#');
          this.field_19991 = this.field_19992.getCursor();
-         this.field_19976 = class_4639.method_21464(this.field_19992);
+         this.field_19976 = Identifier.method_21464(this.field_19992);
       } else {
          throw field_19995.create();
       }

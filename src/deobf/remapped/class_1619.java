@@ -6,15 +6,15 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 public class class_1619 implements class_4219 {
-   private final class_4639 field_8421;
+   private final Identifier field_8421;
    private final class_2451 field_8419;
    private final int field_8418;
    private final String field_8420;
    private final List<class_8137> field_8414;
    private final class_3321 field_8416;
-   private final class_4639 field_8417;
+   private final Identifier field_8417;
 
-   public class_1619(class_4639 var1, class_2451 var2, int var3, String var4, List<class_8137> var5, class_3321 var6, class_4639 var7) {
+   public class_1619(Identifier var1, class_2451 var2, int var3, String var4, List<class_8137> var5, class_3321 var6, Identifier var7) {
       this.field_8421 = var1;
       this.field_8419 = var2;
       this.field_8418 = var3;
@@ -52,7 +52,7 @@ public class class_1619 implements class_4219 {
    }
 
    @Override
-   public class_4639 method_19650() {
+   public Identifier method_19650() {
       return this.field_8421;
    }
 
@@ -64,7 +64,7 @@ public class class_1619 implements class_4219 {
 
    @Nullable
    @Override
-   public class_4639 method_19646() {
+   public Identifier method_19646() {
       return this.field_8417;
    }
 }

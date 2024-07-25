@@ -24,7 +24,7 @@ public class class_9522 extends class_367 {
    public void method_43924(class_5596 var1) {
       if (this.method_42015()) {
          if (field_48470 != null
-            && (field_48470.field_20526 != field_46692.field_9602.method_43178() || field_48470.field_20534 != field_46692.field_9602.method_43198())) {
+            && (field_48470.field_20526 != field_46692.window.method_43178() || field_48470.field_20534 != field_46692.window.method_43198())) {
             this.method_42006();
          }
 
@@ -73,7 +73,7 @@ public class class_9522 extends class_367 {
                   this.field_48469.method_11119(this.field_48467 <= 0 ? class_4043.field_19618 : class_4043.field_19620);
                }
 
-               float var4 = (float)field_46692.field_9602.method_43166() / (float)field_46692.field_9602.method_43163();
+               float var4 = (float)field_46692.window.method_43166() / (float)field_46692.window.method_43163();
                int var5 = (int)this.method_42002("Size");
                int var6 = (int)((float)var5 / var4);
                int var7 = 10;
@@ -89,8 +89,8 @@ public class class_9522 extends class_367 {
                }
 
                class_73.method_128(
-                  (float)(field_46692.field_9602.method_43166() - var7 - var5),
-                  (float)(field_46692.field_9602.method_43163() + var8),
+                  (float)(field_46692.window.method_43166() - var7 - var5),
+                  (float)(field_46692.window.method_43163() + var8),
                   (float)var5,
                   (float)(var6 - 1),
                   14.0F,
@@ -105,8 +105,8 @@ public class class_9522 extends class_367 {
                   field_48470,
                   var5,
                   var6,
-                  (double)(field_46692.field_9602.method_43178() - var7 - var5),
-                  (double)(field_46692.field_9602.method_43198() + var8)
+                  (double)(field_46692.window.method_43178() - var7 - var5),
+                  (double)(field_46692.window.method_43198() + var8)
                );
                class_3542.method_16489();
                class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
@@ -114,8 +114,8 @@ public class class_9522 extends class_367 {
                class_3542.method_16476();
                class_3542.method_16376(
                   0.0,
-                  (double)field_46692.field_9602.method_43178() / field_46692.field_9602.method_43189(),
-                  (double)field_46692.field_9602.method_43198() / field_46692.field_9602.method_43189(),
+                  (double)field_46692.window.method_43178() / field_46692.window.method_43189(),
+                  (double)field_46692.window.method_43198() / field_46692.window.method_43189(),
                   0.0,
                   1000.0,
                   3000.0
@@ -124,8 +124,8 @@ public class class_9522 extends class_367 {
                class_3542.method_16476();
                class_3542.method_16413(0.0F, 0.0F, -2000.0F);
                GL11.glScaled(
-                  1.0 / field_46692.field_9602.method_43189() * (double)class_6763.field_34898,
-                  1.0 / field_46692.field_9602.method_43189() * (double)class_6763.field_34898,
+                  1.0 / field_46692.window.method_43189() * (double)class_6763.field_34898,
+                  1.0 / field_46692.window.method_43189() * (double)class_6763.field_34898,
                   1.0
                );
                field_48470.method_19723();
@@ -136,7 +136,7 @@ public class class_9522 extends class_367 {
    }
 
    public void method_43927(class_4230 var1, int var2, int var3, double var4, double var6) {
-      var6 = var6 - (double)field_46692.field_9602.method_43198() + (double)var3;
+      var6 = var6 - (double)field_46692.window.method_43198() + (double)var3;
       class_3542.method_16405(true, true, true, false);
       class_3542.method_16491();
       class_3542.method_16387(false);
@@ -214,7 +214,7 @@ public class class_9522 extends class_367 {
    @Override
    public void method_42006() {
       class_73.method_95(field_46692.method_8584());
-      field_48470 = new class_4230(field_46692.field_9602.method_43178(), field_46692.field_9602.method_43198(), true, MinecraftClient.IS_SYSTEM_MAC);
+      field_48470 = new class_4230(field_46692.window.method_43178(), field_46692.window.method_43198(), true, MinecraftClient.IS_SYSTEM_MAC);
       field_48470.method_19709(1.0F, 1.0F, 1.0F, 1.0F);
    }
 

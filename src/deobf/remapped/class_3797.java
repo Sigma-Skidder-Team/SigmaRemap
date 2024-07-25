@@ -36,10 +36,10 @@ public class class_3797 implements class_7832 {
    }
 
    @Override
-   public class_4038 method_35458(class_4639 var1) throws IOException {
+   public class_4038 method_35458(Identifier var1) throws IOException {
       this.method_17634(var1);
       class_8169 var4 = null;
-      class_4639 var5 = method_17630(var1);
+      Identifier var5 = method_17630(var1);
 
       for (int var6 = this.field_18527.size() - 1; var6 >= 0; var6--) {
          class_8169 var7 = this.field_18527.get(var6);
@@ -61,7 +61,7 @@ public class class_3797 implements class_7832 {
    }
 
    @Override
-   public boolean method_35456(class_4639 var1) {
+   public boolean method_35456(Identifier var1) {
       if (!this.method_17631(var1)) {
          return false;
       } else {
@@ -76,26 +76,26 @@ public class class_3797 implements class_7832 {
       }
    }
 
-   public InputStream method_17635(class_4639 var1, class_8169 var2) throws IOException {
+   public InputStream method_17635(Identifier var1, class_8169 var2) throws IOException {
       InputStream var5 = var2.method_37466(this.field_18526, var1);
       return (InputStream)(!field_18529.isDebugEnabled() ? var5 : new class_8790(var5, var1, var2.method_37470()));
    }
 
-   private void method_17634(class_4639 var1) throws IOException {
+   private void method_17634(Identifier var1) throws IOException {
       if (!this.method_17631(var1)) {
          throw new IOException("Invalid relative path to resource: " + var1);
       }
    }
 
-   private boolean method_17631(class_4639 var1) {
+   private boolean method_17631(Identifier var1) {
       return !var1.method_21456().contains("..");
    }
 
    @Override
-   public List<class_4038> method_35457(class_4639 var1) throws IOException {
+   public List<class_4038> method_35457(Identifier var1) throws IOException {
       this.method_17634(var1);
       ArrayList var4 = Lists.newArrayList();
-      class_4639 var5 = method_17630(var1);
+      Identifier var5 = method_17630(var1);
 
       for (class_8169 var7 : this.field_18527) {
          if (var7.method_37467(this.field_18526, var1)) {
@@ -112,7 +112,7 @@ public class class_3797 implements class_7832 {
    }
 
    @Override
-   public Collection<class_4639> method_35460(String var1, Predicate<String> var2) {
+   public Collection<Identifier> method_35460(String var1, Predicate<String> var2) {
       ArrayList var5 = Lists.newArrayList();
 
       for (class_8169 var7 : this.field_18527) {
@@ -128,7 +128,7 @@ public class class_3797 implements class_7832 {
       return this.field_18527.stream();
    }
 
-   public static class_4639 method_17630(class_4639 var0) {
-      return new class_4639(var0.method_21461(), var0.method_21456() + ".mcmeta");
+   public static Identifier method_17630(Identifier var0) {
+      return new Identifier(var0.method_21461(), var0.method_21456() + ".mcmeta");
    }
 }

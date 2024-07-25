@@ -14,12 +14,12 @@ import javax.annotation.Nullable;
 
 public class class_2127 implements class_8169 {
    private final class_8169 field_10650;
-   private final Map<class_4639, class_4639> field_10651;
-   public static final Map<class_4639, class_4639> field_10649 = Util.<Map<class_4639, class_4639>>method_44660(() -> {
+   private final Map<Identifier, Identifier> field_10651;
+   public static final Map<Identifier, Identifier> field_10649 = Util.<Map<Identifier, Identifier>>method_44660(() -> {
       Builder var2 = ImmutableMap.builder();
       BiConsumer var3 = (var1, var2x) -> {
-         class_4639 var5 = new class_4639(var1);
-         class_4639 var6 = new class_4639(var2x);
+         Identifier var5 = new Identifier(var1);
+         Identifier var6 = new Identifier(var2x);
          var2.put(var5, var6);
          var2.put(method_9932(var5), method_9932(var6));
       };
@@ -880,16 +880,16 @@ public class class_2127 implements class_8169 {
       return var2.build();
    });
 
-   private static class_4639 method_9932(class_4639 var0) {
-      return new class_4639(var0.method_21461(), var0.method_21456() + ".mcmeta");
+   private static Identifier method_9932(Identifier var0) {
+      return new Identifier(var0.method_21461(), var0.method_21456() + ".mcmeta");
    }
 
-   public class_2127(class_8169 var1, Map<class_4639, class_4639> var2) {
+   public class_2127(class_8169 var1, Map<Identifier, Identifier> var2) {
       this.field_10650 = var1;
       this.field_10651 = var2;
    }
 
-   private class_4639 method_9934(class_4639 var1) {
+   private Identifier method_9934(Identifier var1) {
       return this.field_10651.getOrDefault(var1, var1);
    }
 
@@ -897,15 +897,15 @@ public class class_2127 implements class_8169 {
       return this.field_10650.method_37465(var1);
    }
 
-   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, class_4639 var2) throws IOException {
+   public InputStream 䴂쬫ಽ䩉㐖쬫(class_3168 var1, Identifier var2) throws IOException {
       return this.field_10650.method_37466(var1, this.method_9934(var2));
    }
 
-   public Collection<class_4639> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
-      return Collections.<class_4639>emptyList();
+   public Collection<Identifier> ศ哝呓뎫顸瀳(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5) {
+      return Collections.<Identifier>emptyList();
    }
 
-   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, class_4639 var2) {
+   public boolean 郝䡸㹔柿Ꮺ쟗(class_3168 var1, Identifier var2) {
       return this.field_10650.method_37467(var1, this.method_9934(var2));
    }
 

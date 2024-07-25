@@ -18,10 +18,10 @@ public class class_644 implements class_1504 {
    private final int field_3607;
    private final class_2831<class_8137> field_3606;
    private final class_6098 field_3603;
-   private final class_4639 field_3605;
+   private final Identifier field_3605;
    private final String field_3602;
 
-   public class_644(class_4639 var1, String var2, int var3, int var4, class_2831<class_8137> var5, class_6098 var6) {
+   public class_644(Identifier var1, String var2, int var3, int var4, class_2831<class_8137> var5, class_6098 var6) {
       this.field_3605 = var1;
       this.field_3602 = var2;
       this.field_3604 = var3;
@@ -31,7 +31,7 @@ public class class_644 implements class_1504 {
    }
 
    @Override
-   public class_4639 method_41050() {
+   public Identifier method_41050() {
       return this.field_3605;
    }
 
@@ -237,7 +237,7 @@ public class class_644 implements class_1504 {
 
    public static class_6098 method_2961(JsonObject var0) {
       String var3 = class_6539.method_29796(var0, "item");
-      class_2451 var4 = class_8669.field_44382.method_39794(new class_4639(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
+      class_2451 var4 = class_8669.field_44382.method_39794(new Identifier(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
       if (!var0.has("data")) {
          int var5 = class_6539.method_29768(var0, "count", 1);
          return new class_6098(var4, var5);

@@ -16,7 +16,7 @@ public abstract class class_6411 {
       if (var0 != null && !var0.isJsonNull()) {
          String var3 = class_6539.method_29795(var0, "type");
          if (!var3.startsWith("#")) {
-            class_4639 var6 = new class_4639(var3);
+            Identifier var6 = new Identifier(var3);
             class_6629 var5 = class_8669.field_44400
                .method_39794(var6)
                .orElseThrow(
@@ -26,7 +26,7 @@ public abstract class class_6411 {
                );
             return new class_7009(var5);
          } else {
-            class_4639 var4 = new class_4639(var3.substring(1));
+            Identifier var4 = new Identifier(var3.substring(1));
             return new class_8118(class_8410.method_38721().method_29389().method_43145(var4));
          }
       } else {

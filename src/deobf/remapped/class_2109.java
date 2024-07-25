@@ -50,11 +50,11 @@ public class class_2109 {
       return this;
    }
 
-   public class_4639 method_9873(class_6414 var1, BiConsumer<class_4639, Supplier<JsonElement>> var2) {
+   public Identifier method_9873(class_6414 var1, BiConsumer<Identifier, Supplier<JsonElement>> var2) {
       return this.field_10560.method_34883(var1, this.field_10574, var2);
    }
 
-   public class_4639 method_9867(class_6414 var1, String var2, BiConsumer<class_4639, Supplier<JsonElement>> var3) {
+   public Identifier method_9867(class_6414 var1, String var2, BiConsumer<Identifier, Supplier<JsonElement>> var3) {
       return this.field_10560.method_34882(var1, var2, this.field_10574, var3);
    }
 
@@ -62,7 +62,7 @@ public class class_2109 {
       return var2 -> new class_2109((class_1685)var0.apply(var2), var1);
    }
 
-   public static class_2109 method_9869(class_4639 var0) {
+   public static class_2109 method_9869(Identifier var0) {
       return new class_2109(class_1685.method_7574(var0), class_9590.field_48833);
    }
 }

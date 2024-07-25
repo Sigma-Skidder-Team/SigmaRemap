@@ -14,18 +14,18 @@ public final class class_3247 implements class_9349<T> {
    }
 
    @Override
-   public class_2307<T> method_43145(class_4639 var1) {
+   public class_2307<T> method_43145(Identifier var1) {
       return (class_2307<T>)this.field_16138.getOrDefault(var1, this.field_16139);
    }
 
    @Nullable
    @Override
-   public class_4639 method_43144(class_2307<T> var1) {
-      return !(var1 instanceof class_8813) ? (class_4639)this.field_16138.inverse().get(var1) : ((class_8813)var1).method_40487();
+   public Identifier method_43144(class_2307<T> var1) {
+      return !(var1 instanceof class_8813) ? (Identifier)this.field_16138.inverse().get(var1) : ((class_8813)var1).method_40487();
    }
 
    @Override
-   public Map<class_4639, class_2307<T>> method_43137() {
+   public Map<Identifier, class_2307<T>> method_43137() {
       return this.field_16138;
    }
 }

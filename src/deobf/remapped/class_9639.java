@@ -26,24 +26,24 @@ public class class_9639<T> {
    private static final Logger field_49106 = LogManager.getLogger();
    private static final Gson field_49110 = new Gson();
    private static final int field_49105 = field_49111[5].length();
-   private final Function<class_4639, Optional<T>> field_49109;
+   private final Function<Identifier, Optional<T>> field_49109;
    private final String field_49108;
    private final String field_49107;
 
-   public class_9639(Function<class_4639, Optional<T>> var1, String var2, String var3) {
+   public class_9639(Function<Identifier, Optional<T>> var1, String var2, String var3) {
       this.field_49109 = var1;
       this.field_49108 = var2;
       this.field_49107 = var3;
    }
 
-   public CompletableFuture<Map<class_4639, class_1079>> method_44502(class_7832 var1, Executor var2) {
-      return CompletableFuture.<Map<class_4639, class_1079>>supplyAsync(
+   public CompletableFuture<Map<Identifier, class_1079>> method_44502(class_7832 var1, Executor var2) {
+      return CompletableFuture.<Map<Identifier, class_1079>>supplyAsync(
          () -> {
             HashMap var4 = Maps.newHashMap();
 
-            for (class_4639 var6 : var1.method_35460(this.field_49108, var0 -> var0.endsWith(".json"))) {
+            for (Identifier var6 : var1.method_35460(this.field_49108, var0 -> var0.endsWith(".json"))) {
                String var7 = var6.method_21456();
-               class_4639 var8 = new class_4639(var6.method_21461(), var7.substring(this.field_49108.length() + 1, var7.length() - field_49105));
+               Identifier var8 = new Identifier(var6.method_21461(), var7.substring(this.field_49108.length() + 1, var7.length() - field_49105));
 
                try {
                   for (class_4038 var10 : var1.method_35457(var6)) {
@@ -76,7 +76,7 @@ public class class_9639<T> {
       );
    }
 
-   public class_9349<T> method_44503(Map<class_4639, class_1079> var1) {
+   public class_9349<T> method_44503(Map<Identifier, class_1079> var1) {
       HashMap var4 = Maps.newHashMap();
       Function var5 = var4::get;
       Function var6 = var1x -> this.field_49109.apply(var1x).orElse(null);

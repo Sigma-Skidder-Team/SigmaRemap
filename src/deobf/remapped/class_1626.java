@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class class_1626 {
-   private static final class_4639 field_8472 = new class_4639("tick");
-   private static final class_4639 field_8471 = new class_4639("load");
+   private static final Identifier field_8472 = new Identifier("tick");
+   private static final Identifier field_8471 = new Identifier("load");
    private final class_341 field_8466;
    private boolean field_8468;
    private final ArrayDeque<class_1446> field_8465 = new ArrayDeque<class_1446>();
@@ -41,7 +41,7 @@ public class class_1626 {
       }
    }
 
-   private void method_7245(Collection<class_2581> var1, class_4639 var2) {
+   private void method_7245(Collection<class_2581> var1, Identifier var2) {
       this.field_8466.method_1704().method_16057(var2::toString);
 
       for (class_2581 var6 : var1) {
@@ -114,19 +114,19 @@ public class class_1626 {
       return this.field_8466.method_1730().method_42194(2).method_42185();
    }
 
-   public Optional<class_2581> method_7252(class_4639 var1) {
+   public Optional<class_2581> method_7252(Identifier var1) {
       return this.field_8469.method_37679(var1);
    }
 
-   public class_2307<class_2581> method_7249(class_4639 var1) {
+   public class_2307<class_2581> method_7249(Identifier var1) {
       return this.field_8469.method_37680(var1);
    }
 
-   public Iterable<class_4639> method_7247() {
+   public Iterable<Identifier> method_7247() {
       return this.field_8469.method_37681().keySet();
    }
 
-   public Iterable<class_4639> method_7244() {
+   public Iterable<Identifier> method_7244() {
       return this.field_8469.method_37682().method_43141();
    }
 }

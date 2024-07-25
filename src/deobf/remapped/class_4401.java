@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_4401 extends class_2208<class_7741> {
-   private static final class_4639 field_21541 = new class_4639("textures/gui/container/horse.png");
+   private static final Identifier field_21541 = new Identifier("textures/gui/container/horse.png");
    private final class_4109 field_21543;
    private float field_21539;
    private float field_21542;

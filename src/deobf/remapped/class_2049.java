@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_2049 implements class_6798<class_2049> {
-   private final class_4639 field_10363;
+   private final Identifier field_10363;
    private final float field_10362;
    private final float field_10365;
    private final int field_10366;
@@ -11,7 +11,7 @@ public class class_2049 implements class_6798<class_2049> {
    private final int field_10369;
 
    public class_2049(String var1, float var2, float var3, int var4, class_2031 var5, boolean var6, boolean var7, int var8) {
-      this.field_10363 = new class_4639(var1);
+      this.field_10363 = new Identifier(var1);
       this.field_10362 = var2;
       this.field_10365 = var3;
       this.field_10366 = var4;
@@ -21,12 +21,12 @@ public class class_2049 implements class_6798<class_2049> {
       this.field_10369 = var8;
    }
 
-   public class_4639 method_9578() {
+   public Identifier method_9578() {
       return this.field_10363;
    }
 
-   public class_4639 method_9577() {
-      return new class_4639(this.field_10363.method_21461(), "sounds/" + this.field_10363.method_21456() + ".ogg");
+   public Identifier method_9577() {
+      return new Identifier(this.field_10363.method_21461(), "sounds/" + this.field_10363.method_21456() + ".ogg");
    }
 
    public float method_9584() {

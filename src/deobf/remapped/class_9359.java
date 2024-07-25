@@ -198,7 +198,7 @@ public class class_9359 extends class_704 implements class_117 {
          var1.method_25931("SpawnZ", this.field_47779.method_12185());
          var1.method_25934("SpawnForced", this.field_47787);
          var1.method_25920("SpawnAngle", this.field_47808);
-         class_4639.field_22655
+         Identifier.field_22655
             .encodeStart(class_3504.field_17178, this.field_47782.method_25499())
             .resultOrPartial(field_47780::error)
             .ifPresent(var1x -> var1.method_25946("SpawnDimension", var1x));
@@ -669,7 +669,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public Either<class_8614, class_3256> method_3200(class_1331 var1) {
+   public Either<class_8614, Unit> method_3200(class_1331 var1) {
       class_240 var4 = this.field_41768.method_28262(var1).<class_240>method_10313(class_380.field_1543);
       if (this.method_26507() || !this.method_37330()) {
          return Either.left(class_8614.field_44186);
@@ -947,10 +947,10 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_3224(class_4639[] var1) {
+   public void method_3224(Identifier[] var1) {
       ArrayList var4 = Lists.newArrayList();
 
-      for (class_4639 var8 : var1) {
+      for (Identifier var8 : var1) {
          this.field_47801.method_1705().method_23139(var8).ifPresent(var4::add);
       }
 

@@ -113,9 +113,9 @@ public class class_2810 {
       }
 
       if (this.field_13802.method_2406().isEmpty()) {
-         this.field_13790.method_28945().method_10193(class_5032.field_26023, new class_2034(0, 0), 9, class_3256.field_16155);
+         this.field_13790.method_28945().method_10193(class_5032.field_26023, new class_2034(0, 0), 9, Unit.INSTANCE);
       } else {
-         this.field_13790.method_28945().method_10177(class_5032.field_26023, new class_2034(0, 0), 9, class_3256.field_16155);
+         this.field_13790.method_28945().method_10177(class_5032.field_26023, new class_2034(0, 0), 9, Unit.INSTANCE);
          boolean var3 = this.method_12778();
          if (this.field_13788 && var3) {
             this.method_12771();

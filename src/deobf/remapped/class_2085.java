@@ -76,10 +76,10 @@ public class class_2085 {
       );
    }
 
-   private static int method_9730(class_9155 var0, Pair<class_4639, Either<class_2581, class_2307<class_2581>>> var1, int var2, boolean var3) throws CommandSyntaxException {
+   private static int method_9730(class_9155 var0, Pair<Identifier, Either<class_2581, class_2307<class_2581>>> var1, int var2, boolean var3) throws CommandSyntaxException {
       if (var2 != 0) {
          long var6 = var0.method_42198().method_29546() + (long)var2;
-         class_4639 var8 = (class_4639)var1.getFirst();
+         Identifier var8 = (Identifier)var1.getFirst();
          class_5026 var9 = var0.method_42177().method_1601().method_25706().method_32969();
          ((Either)var1.getSecond()).ifLeft(var7 -> {
             String var10 = var8.toString();

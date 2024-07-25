@@ -9,14 +9,14 @@ import java.util.List;
 public class class_6791 implements class_6310<class_392> {
    private static String[] field_35016;
    private class_6265 field_35017;
-   private List<class_4639> field_35018;
-   private List<class_4639> field_35015;
+   private List<Identifier> field_35018;
+   private List<Identifier> field_35015;
    private class_7529 field_35014;
 
    public class_6791() {
    }
 
-   public class_6791(class_6265 var1, Collection<class_4639> var2, Collection<class_4639> var3, class_7529 var4) {
+   public class_6791(class_6265 var1, Collection<Identifier> var2, Collection<Identifier> var3, class_7529 var4) {
       this.field_35017 = var1;
       this.field_35018 = ImmutableList.copyOf(var2);
       this.field_35015 = ImmutableList.copyOf(var3);
@@ -54,24 +54,24 @@ public class class_6791 implements class_6310<class_392> {
       this.field_35014.method_34303(var1);
       var1.method_37743(this.field_35018.size());
 
-      for (class_4639 var5 : this.field_35018) {
+      for (Identifier var5 : this.field_35018) {
          var1.method_37780(var5);
       }
 
       if (this.field_35017 == class_6265.field_32013) {
          var1.method_37743(this.field_35015.size());
 
-         for (class_4639 var7 : this.field_35015) {
+         for (Identifier var7 : this.field_35015) {
             var1.method_37780(var7);
          }
       }
    }
 
-   public List<class_4639> method_31127() {
+   public List<Identifier> method_31127() {
       return this.field_35018;
    }
 
-   public List<class_4639> method_31129() {
+   public List<Identifier> method_31129() {
       return this.field_35015;
    }
 

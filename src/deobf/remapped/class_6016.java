@@ -21,7 +21,7 @@ public class class_6016 implements class_5998 {
       JsonObject var4 = new JsonObject();
 
       for (class_6414 var6 : class_8669.field_44462) {
-         class_4639 var7 = class_8669.field_44462.method_39797(var6);
+         Identifier var7 = class_8669.field_44462.method_39797(var6);
          JsonObject var8 = new JsonObject();
          class_8021 var9 = var6.method_29306();
          if (!var9.method_36444().isEmpty()) {

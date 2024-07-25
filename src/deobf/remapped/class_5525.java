@@ -65,8 +65,8 @@ public class class_5525 {
    public static class_5155 field_28171;
    public static final String field_28126 = "minecraft:block/";
    public static final String field_28149 = "minecraft:item/";
-   public static final class_4639 field_28139 = new class_4639("optifine/ctm/default/empty");
-   public static final class_4639 field_28154 = new class_4639("optifine/ctm/default/empty.png");
+   public static final Identifier field_28139 = new Identifier("optifine/ctm/default/empty");
+   public static final Identifier field_28154 = new Identifier("optifine/ctm/default/empty.png");
    private static IntBuffer field_28165 = class_3111.method_14260(256);
    private static int field_28146 = -1;
 
@@ -156,7 +156,7 @@ public class class_5525 {
       return var3;
    }
 
-   public static class_8143 method_25065(class_4639 var0) {
+   public static class_8143 method_25065(Identifier var0) {
       class_8143 var3 = class_3111.method_14266().method_35679(var0);
       if (var3 == null) {
          if (class_3111.method_14362(var0)) {
@@ -218,7 +218,7 @@ public class class_5525 {
 
    public static void method_25071() {
       class_4192 var2 = new class_4192();
-      class_4639 var3 = new class_4639("optifine/tickable_textures");
+      Identifier var3 = new Identifier("optifine/tickable_textures");
       class_3111.method_14266().method_35682(var3, var2);
    }
 
@@ -245,12 +245,12 @@ public class class_5525 {
       class_5052.method_23279(var0);
    }
 
-   public static class_4639 method_25064(class_4639 var0, String var1) {
+   public static Identifier method_25064(Identifier var0, String var1) {
       if (var0.method_21461().equals("minecraft")) {
          String var4 = var0.method_21456();
          String var5 = method_25096(var4, var1);
          if (var5 != var4) {
-            var0 = new class_4639(var0.method_21461(), var5);
+            var0 = new Identifier(var0.method_21461(), var5);
          }
 
          return var0;

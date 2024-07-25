@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_2207 extends class_7164<class_2960, class_6521<class_2960>> {
-   private static final class_4639 field_10949 = new class_4639("textures/entity/fish/pufferfish.png");
+   private static final Identifier field_10949 = new Identifier("textures/entity/fish/pufferfish.png");
    private int field_10950;
    private final class_6802<class_2960> field_10947 = new class_6802<class_2960>();
    private final class_1652<class_2960> field_10951 = new class_1652<class_2960>();
@@ -12,7 +12,7 @@ public class class_2207 extends class_7164<class_2960, class_6521<class_2960>> {
       this.field_10950 = 3;
    }
 
-   public class_4639 method_10211(class_2960 var1) {
+   public Identifier method_10211(class_2960 var1) {
       return field_10949;
    }
 

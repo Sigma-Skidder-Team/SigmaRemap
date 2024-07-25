@@ -28,7 +28,7 @@ public class class_4067 implements AutoCloseable {
    private float field_19809;
    private float field_19807;
 
-   public class_4067(class_7889 var1, class_7832 var2, class_4230 var3, class_4639 var4) throws IOException, JsonSyntaxException {
+   public class_4067(TextureManager var1, class_7832 var2, class_4230 var3, Identifier var4) throws IOException, JsonSyntaxException {
       this.field_19812 = var2;
       this.field_19806 = var3;
       this.field_19809 = 0.0F;
@@ -40,7 +40,7 @@ public class class_4067 implements AutoCloseable {
       this.method_18756(var1, var4);
    }
 
-   private void method_18756(class_7889 var1, class_4639 var2) throws IOException, JsonSyntaxException {
+   private void method_18756(TextureManager var1, Identifier var2) throws IOException, JsonSyntaxException {
       class_4038 var5 = null;
 
       try {
@@ -111,7 +111,7 @@ public class class_4067 implements AutoCloseable {
       }
    }
 
-   private void method_18747(class_7889 var1, JsonElement var2) throws IOException {
+   private void method_18747(TextureManager var1, JsonElement var2) throws IOException {
       JsonObject var5 = class_6539.method_29782(var2, "pass");
       String var6 = class_6539.method_29796(var5, "name");
       String var7 = class_6539.method_29796(var5, "intarget");
@@ -149,7 +149,7 @@ public class class_4067 implements AutoCloseable {
                         throw new class_4573("Render target '" + var20 + "' can't be used as depth buffer");
                      }
 
-                     class_4639 var22 = new class_4639("textures/effect/" + var20 + ".png");
+                     Identifier var22 = new Identifier("textures/effect/" + var20 + ".png");
                      class_4038 var23 = null;
 
                      try {

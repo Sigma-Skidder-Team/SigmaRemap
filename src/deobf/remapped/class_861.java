@@ -3,10 +3,10 @@ package remapped;
 import java.util.Random;
 
 public class class_861 extends class_8131 {
-   private final class_4639 field_4464;
+   private final Identifier field_4464;
    private final class_6631 field_4465;
 
-   public class_861(class_5799 var1, class_4639 var2, class_1331 var3, class_6631 var4, int var5) {
+   public class_861(class_5799 var1, Identifier var2, class_1331 var3, class_6631 var4, int var5) {
       super(class_2746.field_13438, 0);
       this.field_4464 = var2;
       class_1331 var8 = (class_1331)class_71.method_77().get(var2);
@@ -17,7 +17,7 @@ public class class_861 extends class_8131 {
 
    public class_861(class_5799 var1, class_5734 var2) {
       super(class_2746.field_13438, var2);
-      this.field_4464 = new class_4639(var2.method_25965("Template"));
+      this.field_4464 = new Identifier(var2.method_25965("Template"));
       this.field_4465 = class_6631.valueOf(var2.method_25965("Rot"));
       this.method_3732(var1);
    }

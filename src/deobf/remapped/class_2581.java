@@ -10,14 +10,14 @@ import java.util.List;
 
 public class class_2581 {
    private final class_3315[] field_12779;
-   private final class_4639 field_12780;
+   private final Identifier field_12780;
 
-   public class_2581(class_4639 var1, class_3315[] var2) {
+   public class_2581(Identifier var1, class_3315[] var2) {
       this.field_12780 = var1;
       this.field_12779 = var2;
    }
 
-   public class_4639 method_11746() {
+   public Identifier method_11746() {
       return this.field_12780;
    }
 
@@ -25,7 +25,7 @@ public class class_2581 {
       return this.field_12779;
    }
 
-   public static class_2581 method_11750(class_4639 var0, CommandDispatcher<class_9155> var1, class_9155 var2, List<String> var3) {
+   public static class_2581 method_11750(Identifier var0, CommandDispatcher<class_9155> var1, class_9155 var2, List<String> var3) {
       ArrayList var6 = Lists.newArrayListWithCapacity(var3.size());
 
       for (int var7 = 0; var7 < var3.size(); var7++) {

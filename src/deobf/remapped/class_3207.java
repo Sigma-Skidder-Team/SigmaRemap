@@ -6,24 +6,24 @@ import java.util.Properties;
 public class class_3207 {
    public String field_16008 = null;
    public String field_16007 = null;
-   public class_4639[] field_16009 = null;
+   public Identifier[] field_16009 = null;
    public class_974[] field_16006 = null;
 
-   public class_3207(String var1, class_4639[] var2) {
+   public class_3207(String var1, Identifier[] var2) {
       class_6284 var5 = new class_6284("RandomEntities");
       this.field_16008 = var5.method_28678(var1);
       this.field_16007 = var5.method_28649(var1);
       this.field_16009 = var2;
    }
 
-   public class_3207(Properties var1, String var2, class_4639 var3) {
+   public class_3207(Properties var1, String var2, Identifier var3) {
       class_6284 var6 = new class_6284("RandomEntities");
       this.field_16008 = var6.method_28678(var2);
       this.field_16007 = var6.method_28649(var2);
       this.field_16006 = this.method_14743(var1, var2, var3, var6);
    }
 
-   public class_4639 method_14746(class_4639 var1, class_1979 var2) {
+   public Identifier method_14746(Identifier var1, class_1979 var2) {
       if (this.field_16006 != null) {
          for (int var5 = 0; var5 < this.field_16006.length; var5++) {
             class_974 var6 = this.field_16006[var5];
@@ -42,7 +42,7 @@ public class class_3207 {
       }
    }
 
-   private class_974[] method_14743(Properties var1, String var2, class_4639 var3, class_6284 var4) {
+   private class_974[] method_14743(Properties var1, String var2, Identifier var3, class_6284 var4) {
       ArrayList var7 = new ArrayList();
       int var8 = var1.size();
 
@@ -80,7 +80,7 @@ public class class_3207 {
 
          if (this.field_16009 != null) {
             for (int var6 = 0; var6 < this.field_16009.length; var6++) {
-               class_4639 var7 = this.field_16009[var6];
+               Identifier var7 = this.field_16009[var6];
                if (!class_3111.method_14362(var7)) {
                   class_3111.method_14317("Texture not found: " + var7.method_21456());
                   return false;

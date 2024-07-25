@@ -101,13 +101,13 @@ public class class_8192 {
       field_41916.method_22088((class_3757)null);
    }
 
-   public static class_4639 method_37530(class_4639 var0) {
+   public static Identifier method_37530(Identifier var0) {
       if (!field_41919) {
          return var0;
       } else if (field_41917) {
          return var0;
       } else {
-         class_4639 var5;
+         Identifier var5;
          try {
             field_41917 = true;
             class_1979 var3 = method_37525();
@@ -170,9 +170,9 @@ public class class_8192 {
       }
    }
 
-   private static class_3207 method_37523(class_4639 var0, boolean var1) {
+   private static class_3207 method_37523(Identifier var0, boolean var1) {
       String var4 = var0.method_21456();
-      class_4639 var5 = method_37532(var0, var1);
+      Identifier var5 = method_37532(var0, var1);
       if (var5 != null) {
          class_3207 var6 = method_37538(var5, var0);
          if (var6 != null) {
@@ -180,11 +180,11 @@ public class class_8192 {
          }
       }
 
-      class_4639[] var7 = method_37535(var0, var1);
+      Identifier[] var7 = method_37535(var0, var1);
       return var7 != null ? new class_3207(var4, var7) : null;
    }
 
-   private static class_3207 method_37538(class_4639 var0, class_4639 var1) {
+   private static class_3207 method_37538(Identifier var0, Identifier var1) {
       try {
          String var4 = var0.method_21456();
          method_37526(var1.method_21456() + ", properties: " + var4);
@@ -208,18 +208,18 @@ public class class_8192 {
       }
    }
 
-   private static class_4639 method_37532(class_4639 var0, boolean var1) {
-      class_4639 var4 = method_37527(var0, var1);
+   private static Identifier method_37532(Identifier var0, boolean var1) {
+      Identifier var4 = method_37527(var0, var1);
       if (var4 != null) {
          String var5 = var4.method_21461();
          String var6 = var4.method_21456();
          String var7 = class_8251.method_37822(var6, ".png");
          String var8 = var7 + ".properties";
-         class_4639 var9 = new class_4639(var5, var8);
+         Identifier var9 = new Identifier(var5, var8);
          if (!class_3111.method_14362(var9)) {
             String var10 = method_37537(var7);
             if (var10 != null) {
-               class_4639 var11 = new class_4639(var5, var10 + ".properties");
+               Identifier var11 = new Identifier(var5, var10 + ".properties");
                return !class_3111.method_14362(var11) ? null : var11;
             } else {
                return null;
@@ -232,7 +232,7 @@ public class class_8192 {
       }
    }
 
-   public static class_4639 method_37527(class_4639 var0, boolean var1) {
+   public static Identifier method_37527(Identifier var0, boolean var1) {
       String var4 = var0.method_21461();
       String var5 = var0.method_21456();
       String var6 = "textures/";
@@ -244,7 +244,7 @@ public class class_8192 {
 
       if (var5.startsWith(var6)) {
          String var8 = class_8251.method_37807(var5, var6, var7);
-         return new class_4639(var4, var8);
+         return new Identifier(var4, var8);
       } else {
          return null;
       }
@@ -258,7 +258,7 @@ public class class_8192 {
       }
    }
 
-   public static class_4639 method_37539(class_4639 var0, int var1) {
+   public static Identifier method_37539(Identifier var0, int var1) {
       if (var0 != null) {
          String var4 = var0.method_21456();
          int var5 = var4.lastIndexOf(46);
@@ -266,7 +266,7 @@ public class class_8192 {
             String var6 = var4.substring(0, var5);
             String var7 = var4.substring(var5);
             String var8 = var6 + var1 + var7;
-            return new class_4639(var0.method_21461(), var8);
+            return new Identifier(var0.method_21461(), var8);
          } else {
             return null;
          }
@@ -286,21 +286,21 @@ public class class_8192 {
       return null;
    }
 
-   private static class_4639[] method_37535(class_4639 var0, boolean var1) {
+   private static Identifier[] method_37535(Identifier var0, boolean var1) {
       ArrayList var4 = new ArrayList();
       var4.add(var0);
-      class_4639 var5 = method_37527(var0, var1);
+      Identifier var5 = method_37527(var0, var1);
       if (var5 != null) {
          for (int var6 = 1; var6 < var4.size() + 10; var6++) {
             int var7 = var6 + 1;
-            class_4639 var8 = method_37539(var5, var7);
+            Identifier var8 = method_37539(var5, var7);
             if (class_3111.method_14362(var8)) {
                var4.add(var8);
             }
          }
 
          if (var4.size() > 1) {
-            class_4639[] var9 = var4.<class_4639>toArray(new class_4639[var4.size()]);
+            Identifier[] var9 = var4.<Identifier>toArray(new Identifier[var4.size()]);
             method_37526(var0.method_21456() + ", variants: " + var9.length);
             return var9;
          } else {
@@ -335,7 +335,7 @@ public class class_8192 {
          String var8 = method_37521(var7);
          if (!var5.contains(var8)) {
             var5.add(var8);
-            class_4639 var9 = new class_4639(var8);
+            Identifier var9 = new Identifier(var8);
             if (class_3111.method_14362(var9)) {
                class_3207 var10 = field_41923.get(var8);
                if (var10 == null) {

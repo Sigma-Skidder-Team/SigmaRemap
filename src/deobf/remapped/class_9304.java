@@ -3,10 +3,10 @@ package remapped;
 import java.util.Arrays;
 
 public class class_9304 {
-   private class_4639 field_47528;
+   private Identifier field_47528;
    private float[] field_47527;
 
-   public class_9304(class_4639 var1, float[] var2) {
+   public class_9304(Identifier var1, float[] var2) {
       this.field_47528 = var1;
       this.field_47527 = (float[])var2.clone();
       Arrays.sort(this.field_47527);
@@ -24,7 +24,7 @@ public class class_9304 {
       }
    }
 
-   public class_4639 method_42960() {
+   public Identifier method_42960() {
       return this.field_47528;
    }
 

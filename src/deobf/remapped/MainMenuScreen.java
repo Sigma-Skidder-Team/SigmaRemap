@@ -12,14 +12,14 @@ import org.apache.logging.log4j.Logger;
 
 public class MainMenuScreen extends Screen {
    private static final Logger field_9517 = LogManager.getLogger();
-   public static final class_1973 field_9509 = new class_1973(new class_4639("textures/gui/title/background/panorama"));
-   private static final class_4639 field_9511 = new class_4639("textures/gui/title/background/panorama_overlay.png");
-   private static final class_4639 field_9502 = new class_4639("textures/gui/accessibility.png");
+   public static final class_1973 field_9509 = new class_1973(new Identifier("textures/gui/title/background/panorama"));
+   private static final Identifier field_9511 = new Identifier("textures/gui/title/background/panorama_overlay.png");
+   private static final Identifier field_9502 = new Identifier("textures/gui/accessibility.png");
    private final boolean field_9501;
    private String field_9506;
    private class_9521 field_9500;
-   private static final class_4639 field_9513 = new class_4639("textures/gui/title/minecraft.png");
-   private static final class_4639 field_9510 = new class_4639("textures/gui/title/edition.png");
+   private static final Identifier field_9513 = new Identifier("textures/gui/title/minecraft.png");
+   private static final Identifier field_9510 = new Identifier("textures/gui/title/edition.png");
    private boolean field_9507;
    private Screen field_9508;
    private int field_9516;
@@ -50,7 +50,7 @@ public class MainMenuScreen extends Screen {
       }
    }
 
-   public static CompletableFuture<Void> method_8397(class_7889 var0, Executor var1) {
+   public static CompletableFuture<Void> method_8397(TextureManager var0, Executor var1) {
       return CompletableFuture.allOf(
          var0.method_35676(field_9513, var1), var0.method_35676(field_9510, var1), var0.method_35676(field_9511, var1), field_9509.method_9075(var0, var1)
       );

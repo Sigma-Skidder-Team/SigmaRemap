@@ -6,8 +6,8 @@ import com.mojang.datafixers.util.Pair;
 public class class_4282 {
    public static final class_8115 field_20740 = class_9863.method_45479(
       new class_8115(
-         new class_4639("village/plains/town_centers"),
-         new class_4639("empty"),
+         new Identifier("village/plains/town_centers"),
+         new Identifier("empty"),
          ImmutableList.of(
             Pair.of(class_2609.method_11835("village/plains/town_centers/plains_fountain_01", class_4932.field_25561), 50),
             Pair.of(class_2609.method_11835("village/plains/town_centers/plains_meeting_point_1", class_4932.field_25561), 50),
@@ -28,8 +28,8 @@ public class class_4282 {
    static {
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/streets"),
-            new class_4639("village/plains/terminators"),
+            new Identifier("village/plains/streets"),
+            new Identifier("village/plains/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/streets/corner_01", class_4932.field_25549), 2),
                Pair.of(class_2609.method_11835("village/plains/streets/corner_02", class_4932.field_25549), 2),
@@ -55,8 +55,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/zombie/streets"),
-            new class_4639("village/plains/terminators"),
+            new Identifier("village/plains/zombie/streets"),
+            new Identifier("village/plains/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/zombie/streets/corner_01", class_4932.field_25549), 2),
                Pair.of(class_2609.method_11835("village/plains/zombie/streets/corner_02", class_4932.field_25549), 2),
@@ -82,8 +82,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/houses"),
-            new class_4639("village/plains/terminators"),
+            new Identifier("village/plains/houses"),
+            new Identifier("village/plains/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/houses/plains_small_house_1", class_4932.field_25551), 2),
                Pair.of(class_2609.method_11835("village/plains/houses/plains_small_house_2", class_4932.field_25551), 2),
@@ -130,8 +130,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/zombie/houses"),
-            new class_4639("village/plains/terminators"),
+            new Identifier("village/plains/zombie/houses"),
+            new Identifier("village/plains/terminators"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/zombie/houses/plains_small_house_1", class_4932.field_25532), 2),
                Pair.of(class_2609.method_11835("village/plains/zombie/houses/plains_small_house_2", class_4932.field_25532), 2),
@@ -177,8 +177,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/terminators"),
-            new class_4639("empty"),
+            new Identifier("village/plains/terminators"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_01", class_4932.field_25549), 1),
                Pair.of(class_2609.method_11835("village/plains/terminators/terminator_02", class_4932.field_25549), 1),
@@ -190,16 +190,16 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/trees"),
-            new class_4639("empty"),
+            new Identifier("village/plains/trees"),
+            new Identifier("empty"),
             ImmutableList.of(Pair.of(class_2609.method_11830(class_7024.field_36148), 1)),
             class_7599.field_38708
          )
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/decor"),
-            new class_4639("empty"),
+            new Identifier("village/plains/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/plains/plains_lamp_1"), 2),
                Pair.of(class_2609.method_11830(class_7024.field_36148), 1),
@@ -212,8 +212,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/zombie/decor"),
-            new class_4639("empty"),
+            new Identifier("village/plains/zombie/decor"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11835("village/plains/plains_lamp_1", class_4932.field_25532), 1),
                Pair.of(class_2609.method_11830(class_7024.field_36148), 1),
@@ -226,8 +226,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/plains/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/plains/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/plains/villagers/baby"), 1),
@@ -238,8 +238,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/plains/zombie/villagers"),
-            new class_4639("empty"),
+            new Identifier("village/plains/zombie/villagers"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/plains/zombie/villagers/nitwit"), 1),
                Pair.of(class_2609.method_11826("village/plains/zombie/villagers/unemployed"), 10)
@@ -249,8 +249,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/common/animals"),
-            new class_4639("empty"),
+            new Identifier("village/common/animals"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/common/animals/cows_1"), 7),
                Pair.of(class_2609.method_11826("village/common/animals/pigs_1"), 7),
@@ -268,8 +268,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/common/sheep"),
-            new class_4639("empty"),
+            new Identifier("village/common/sheep"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/common/animals/sheep_1"), 1), Pair.of(class_2609.method_11826("village/common/animals/sheep_2"), 1)
             ),
@@ -278,8 +278,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/common/cats"),
-            new class_4639("empty"),
+            new Identifier("village/common/cats"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/common/animals/cat_black"), 1),
                Pair.of(class_2609.method_11826("village/common/animals/cat_british"), 1),
@@ -298,8 +298,8 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/common/butcher_animals"),
-            new class_4639("empty"),
+            new Identifier("village/common/butcher_animals"),
+            new Identifier("empty"),
             ImmutableList.of(
                Pair.of(class_2609.method_11826("village/common/animals/cows_1"), 3),
                Pair.of(class_2609.method_11826("village/common/animals/pigs_1"), 3),
@@ -311,16 +311,16 @@ public class class_4282 {
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/common/iron_golem"),
-            new class_4639("empty"),
+            new Identifier("village/common/iron_golem"),
+            new Identifier("empty"),
             ImmutableList.of(Pair.of(class_2609.method_11826("village/common/iron_golem"), 1)),
             class_7599.field_38708
          )
       );
       class_9863.method_45479(
          new class_8115(
-            new class_4639("village/common/well_bottoms"),
-            new class_4639("empty"),
+            new Identifier("village/common/well_bottoms"),
+            new Identifier("empty"),
             ImmutableList.of(Pair.of(class_2609.method_11826("village/common/well_bottom"), 1)),
             class_7599.field_38708
          )

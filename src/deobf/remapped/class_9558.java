@@ -259,7 +259,7 @@ public class class_9558 {
                }
 
                if (!var0.method_22774()) {
-                  class_4639 var5 = class_4639.method_21464(var0.method_22749());
+                  Identifier var5 = Identifier.method_21464(var0.method_22749());
                   class_6629 var6 = class_8669.field_44400.method_39794(var5).orElseThrow(() -> {
                      var0.method_22749().setCursor(var3);
                      return field_48633.createWithContext(var0.method_22749(), var5.toString());
@@ -273,7 +273,7 @@ public class class_9558 {
                      var0.method_22751(var6);
                   }
                } else {
-                  class_4639 var7 = class_4639.method_21464(var0.method_22749());
+                  Identifier var7 = Identifier.method_21464(var0.method_22749());
                   var0.method_22758(var2 -> var2.method_37268().method_1754().method_29389().method_43145(var7).method_10609(var2.method_37387()) != var4);
                }
             }
@@ -355,7 +355,7 @@ public class class_9558 {
 
             while (var3.canRead() && var3.peek() != '}') {
                var3.skipWhitespace();
-               class_4639 var5 = class_4639.method_21464(var3);
+               Identifier var5 = Identifier.method_21464(var3);
                var3.skipWhitespace();
                var3.expect('=');
                var3.skipWhitespace();
@@ -414,7 +414,7 @@ public class class_9558 {
                      class_8873 var6x = var4x.method_37268().method_1703();
 
                      for (Entry var8x : var4.entrySet()) {
-                        class_3139 var9x = var6x.method_40818((class_4639)var8x.getKey());
+                        class_3139 var9x = var6x.method_40818((Identifier)var8x.getKey());
                         if (var9x == null || !((Predicate)var8x.getValue()).test(var5x.method_15389(var9x))) {
                            return false;
                         }
@@ -432,7 +432,7 @@ public class class_9558 {
             "predicate",
             var0 -> {
                boolean var3 = var0.method_22796();
-               class_4639 var4 = class_4639.method_21464(var0.method_22749());
+               Identifier var4 = Identifier.method_21464(var0.method_22749());
                var0.method_22758(
                   var2 -> {
                      if (var2.field_41768 instanceof class_6331) {

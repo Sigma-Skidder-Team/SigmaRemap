@@ -10,7 +10,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_3153 extends class_4314 {
    public static final class_7360<class_240> field_15681 = class_3266.field_16180;
-   public static final class_4639 field_15682 = new class_4639("contents");
+   public static final Identifier field_15682 = new Identifier("contents");
    private final class_9077 field_15680;
 
    public class_3153(class_9077 var1, class_3073 var2) {

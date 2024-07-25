@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class class_9069 extends class_7157 {
    private static final class_8137 field_46405 = class_8137.method_37019(class_4897.field_24554);
 
-   public class_9069(class_4639 var1) {
+   public class_9069(Identifier var1) {
       super(var1);
    }
 

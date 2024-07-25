@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8179 extends class_7164<class_7549, class_2344<class_7549>> {
-   private static final class_4639 field_41870 = new class_4639("textures/entity/zombie/zombie.png");
+   private static final Identifier field_41870 = new Identifier("textures/entity/zombie/zombie.png");
    private final float field_41871;
 
    public class_8179(class_6122 var1, float var2) {
@@ -15,7 +15,7 @@ public class class_8179 extends class_7164<class_7549, class_2344<class_7549>> {
       var2.method_36062(this.field_41871, this.field_41871, this.field_41871);
    }
 
-   public class_4639 method_37496(class_7549 var1) {
+   public Identifier method_37496(class_7549 var1) {
       return field_41870;
    }
 }

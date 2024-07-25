@@ -3,7 +3,7 @@ package remapped;
 public class class_6302 extends class_7157 {
    private static String[] field_32195;
 
-   public class_6302(class_4639 var1) {
+   public class_6302(Identifier var1) {
       super(var1);
    }
 

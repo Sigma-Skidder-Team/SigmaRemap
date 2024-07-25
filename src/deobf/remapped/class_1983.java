@@ -127,7 +127,7 @@ public class class_1983 implements AutoCloseable {
    public void close() throws IOException {
       if (this.field_10052.compareAndSet(false, true)) {
          CompletableFuture var3 = this.field_10049
-            .method_40493(var0 -> new class_9465(class_2632.field_12967.ordinal(), () -> var0.method_40495(class_3256.field_16155)));
+            .method_40493(var0 -> new class_9465(class_2632.field_12967.ordinal(), () -> var0.method_40495(Unit.INSTANCE)));
 
          try {
             var3.join();

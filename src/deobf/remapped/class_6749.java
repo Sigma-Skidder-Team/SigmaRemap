@@ -442,7 +442,7 @@ public abstract class class_6749 extends class_5783 {
       this.method_30918(var1.method_25933("crit"));
       this.method_30922(var1.method_25950("PierceLevel"));
       if (var1.method_25939("SoundEvent", 8)) {
-         this.field_34843 = class_8669.field_44369.method_39794(new class_4639(var1.method_25965("SoundEvent"))).orElse(this.method_30933());
+         this.field_34843 = class_8669.field_44369.method_39794(new Identifier(var1.method_25965("SoundEvent"))).orElse(this.method_30933());
       }
 
       this.method_30934(var1.method_25933("ShotFromCrossbow"));

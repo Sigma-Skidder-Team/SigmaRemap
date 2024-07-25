@@ -4,10 +4,10 @@ import com.google.gson.JsonObject;
 import java.util.Collection;
 
 public class class_1441 extends class_8273<class_1691> {
-   private static final class_4639 field_7768 = new class_4639("fishing_rod_hooked");
+   private static final Identifier field_7768 = new Identifier("fishing_rod_hooked");
 
    @Override
-   public class_4639 method_3899() {
+   public Identifier method_3899() {
       return field_7768;
    }
 

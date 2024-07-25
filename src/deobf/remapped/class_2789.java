@@ -6,7 +6,7 @@ import java.util.Properties;
 import java.util.function.Consumer;
 
 public class class_2789 extends class_7621 {
-   private static final class_4639 field_13703 = new class_4639("textures/gui/title/mojangstudios.png");
+   private static final Identifier field_13703 = new Identifier("textures/gui/title/mojangstudios.png");
    private static final int field_13709 = class_8496.method_39154(255, 239, 50, 61);
    private static final int field_13698 = field_13709 & 16777215;
    private final MinecraftClient field_13696;
@@ -165,7 +165,7 @@ public class class_2789 extends class_7621 {
       if (class_3111.method_14438()) {
          try {
             String var3 = "optifine/color.properties";
-            class_4639 var4 = new class_4639(var3);
+            Identifier var4 = new Identifier(var3);
             if (!class_3111.method_14362(var4)) {
                return;
             }

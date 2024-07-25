@@ -39,20 +39,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class class_6560 {
-   public static final class_2843 field_33455 = new class_2843(class_8359.field_42824, new class_4639("block/fire_0"));
-   public static final class_2843 field_33441 = new class_2843(class_8359.field_42824, new class_4639("block/fire_1"));
-   public static final class_2843 field_33438 = new class_2843(class_8359.field_42824, new class_4639("block/lava_flow"));
-   public static final class_2843 field_33450 = new class_2843(class_8359.field_42824, new class_4639("block/water_flow"));
-   public static final class_2843 field_33464 = new class_2843(class_8359.field_42824, new class_4639("block/water_overlay"));
-   public static final class_2843 field_33431 = new class_2843(class_8359.field_42824, new class_4639("entity/banner_base"));
-   public static final class_2843 field_33440 = new class_2843(class_8359.field_42824, new class_4639("entity/shield_base"));
-   public static final class_2843 field_33457 = new class_2843(class_8359.field_42824, new class_4639("entity/shield_base_nopattern"));
-   public static final List<class_4639> field_33432 = IntStream.range(0, 10)
-      .<class_4639>mapToObj(var0 -> new class_4639("block/destroy_stage_" + var0))
-      .collect(Collectors.<class_4639>toList());
-   public static final List<class_4639> field_33451 = field_33432.stream()
-      .<class_4639>map(var0 -> new class_4639("textures/" + var0.method_21456() + ".png"))
-      .collect(Collectors.<class_4639>toList());
+   public static final class_2843 field_33455 = new class_2843(class_8359.field_42824, new Identifier("block/fire_0"));
+   public static final class_2843 field_33441 = new class_2843(class_8359.field_42824, new Identifier("block/fire_1"));
+   public static final class_2843 field_33438 = new class_2843(class_8359.field_42824, new Identifier("block/lava_flow"));
+   public static final class_2843 field_33450 = new class_2843(class_8359.field_42824, new Identifier("block/water_flow"));
+   public static final class_2843 field_33464 = new class_2843(class_8359.field_42824, new Identifier("block/water_overlay"));
+   public static final class_2843 field_33431 = new class_2843(class_8359.field_42824, new Identifier("entity/banner_base"));
+   public static final class_2843 field_33440 = new class_2843(class_8359.field_42824, new Identifier("entity/shield_base"));
+   public static final class_2843 field_33457 = new class_2843(class_8359.field_42824, new Identifier("entity/shield_base_nopattern"));
+   public static final List<Identifier> field_33432 = IntStream.range(0, 10)
+      .<Identifier>mapToObj(var0 -> new Identifier("block/destroy_stage_" + var0))
+      .collect(Collectors.<Identifier>toList());
+   public static final List<Identifier> field_33451 = field_33432.stream()
+      .<Identifier>map(var0 -> new Identifier("textures/" + var0.method_21456() + ".png"))
+      .collect(Collectors.<Identifier>toList());
    public static final List<class_3581> field_33452 = field_33451.stream().<class_3581>map(class_3581::method_16719).collect(Collectors.<class_3581>toList());
    private static final Set<class_2843> field_33456 = Util.<Set<class_2843>>method_44659(Sets.newHashSet(), var0 -> {
       var0.add(field_33450);
@@ -72,7 +72,7 @@ public class class_6560 {
       var0.add(field_33440);
       var0.add(field_33457);
 
-      for (class_4639 var4 : field_33432) {
+      for (Identifier var4 : field_33432) {
          var0.add(new class_2843(class_8359.field_42824, var4));
       }
 
@@ -105,22 +105,22 @@ public class class_6560 {
       .method_10162(class_6720.method_30845("map"))
       .method_10164(class_6414::method_29260, class_2522::new);
    private static final class_4644 field_33458 = new class_4644();
-   private static final Map<class_4639, class_8021<class_6414, class_2522>> field_33435 = ImmutableMap.of(new class_4639("item_frame"), field_33434);
+   private static final Map<Identifier, class_8021<class_6414, class_2522>> field_33435 = ImmutableMap.of(new Identifier("item_frame"), field_33434);
    private final class_7832 field_33463;
    private class_6885 field_33444;
    private final class_4468 field_33460;
-   private final Set<class_4639> field_33448 = Sets.newHashSet();
+   private final Set<Identifier> field_33448 = Sets.newHashSet();
    private final class_9695 field_33437 = new class_9695();
-   private final Map<class_4639, class_2053> field_33436 = Maps.newHashMap();
-   private final Map<Triple<class_4639, class_1221, Boolean>, class_7373> field_33461 = Maps.newHashMap();
-   private final Map<class_4639, class_2053> field_33433 = Maps.newHashMap();
-   private final Map<class_4639, class_7373> field_33449 = Maps.newHashMap();
-   private Map<class_4639, Pair<class_8359, class_3930>> field_33430;
+   private final Map<Identifier, class_2053> field_33436 = Maps.newHashMap();
+   private final Map<Triple<Identifier, class_1221, Boolean>, class_7373> field_33461 = Maps.newHashMap();
+   private final Map<Identifier, class_2053> field_33433 = Maps.newHashMap();
+   private final Map<Identifier, class_7373> field_33449 = Maps.newHashMap();
+   private Map<Identifier, Pair<class_8359, class_3930>> field_33430;
    private int field_33454 = 1;
    private final Object2IntMap<class_2522> field_33447 = Util.<Object2IntMap<class_2522>>method_44659(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );
-   public Map<class_4639, class_2053> field_33467;
+   public Map<Identifier, class_2053> field_33467;
 
    public class_6560(class_7832 var1, class_4468 var2, class_3492 var3, int var4) {
       this(var1, var2, true);
@@ -154,14 +154,14 @@ public class class_6560 {
 
       var1.method_16050("items");
 
-      for (class_4639 var16 : class_8669.field_44382.method_39805()) {
+      for (Identifier var16 : class_8669.field_44382.method_39805()) {
          this.method_29953(new class_454(var16, "inventory"));
       }
 
       var1.method_16050("special");
       this.method_29953(new class_454("minecraft:trident_in_hand#inventory"));
 
-      for (class_4639 var17 : this.method_29946()) {
+      for (Identifier var17 : this.method_29946()) {
          this.method_29942(var17);
       }
 
@@ -184,15 +184,15 @@ public class class_6560 {
       this.field_33430 = Maps.newHashMap();
 
       for (Entry var9 : var7.entrySet()) {
-         class_8359 var10 = new class_8359((class_4639)var9.getKey());
-         class_3930 var11 = var10.method_38516(this.field_33463, ((List)var9.getValue()).stream().<class_4639>map(class_2843::method_12948), var1, var2);
-         this.field_33430.put((class_4639)var9.getKey(), Pair.of(var10, var11));
+         class_8359 var10 = new class_8359((Identifier)var9.getKey());
+         class_3930 var11 = var10.method_38516(this.field_33463, ((List)var9.getValue()).stream().<Identifier>map(class_2843::method_12948), var1, var2);
+         this.field_33430.put((Identifier)var9.getKey(), Pair.of(var10, var11));
       }
 
       var1.method_16054();
    }
 
-   public class_6885 method_29938(class_7889 var1, class_3492 var2) {
+   public class_6885 method_29938(TextureManager var1, class_3492 var2) {
       var2.method_16056("atlas");
 
       for (Pair var6 : this.field_33430.values()) {
@@ -266,7 +266,7 @@ public class class_6560 {
       return (T)var0.method_23108(var1).orElse(null);
    }
 
-   public class_2053 method_29951(class_4639 var1) {
+   public class_2053 method_29951(Identifier var1) {
       if (this.field_33436.containsKey(var1)) {
          return this.field_33436.get(var1);
       } else if (this.field_33448.contains(var1)) {
@@ -276,7 +276,7 @@ public class class_6560 {
          class_2053 var4 = this.field_33436.get(field_33445);
 
          while (!this.field_33448.isEmpty()) {
-            class_4639 var5 = this.field_33448.iterator().next();
+            Identifier var5 = this.field_33448.iterator().next();
 
             try {
                if (!this.field_33436.containsKey(var5)) {
@@ -298,13 +298,13 @@ public class class_6560 {
       }
    }
 
-   private void method_29948(class_4639 var1) throws Exception {
+   private void method_29948(Identifier var1) throws Exception {
       if (!(var1 instanceof class_454)) {
          this.method_29940(var1, this.method_29952(var1));
       } else {
          class_454 var4 = (class_454)var1;
          if (!Objects.equals(var4.method_2184(), "inventory")) {
-            class_4639 var31 = new class_4639(var1.method_21461(), var1.method_21456());
+            Identifier var31 = new Identifier(var1.method_21461(), var1.method_21456());
             class_8021 var32 = Optional.<class_8021<class_6414, class_2522>>ofNullable(field_33435.get(var31))
                .orElseGet(() -> class_8669.field_44462.method_39806(var31).method_29306());
             this.field_33437.method_44799(var32);
@@ -315,7 +315,7 @@ public class class_6560 {
                class_2522 var5x = var9.put(class_9524.method_43942(var31, var2), var2);
             });
             HashMap var10 = Maps.newHashMap();
-            class_4639 var11 = new class_4639(var1.method_21461(), "blockstates/" + var1.method_21456() + ".json");
+            Identifier var11 = new Identifier(var1.method_21461(), "blockstates/" + var1.method_21456() + ".json");
             class_2053 var12 = this.field_33436.get(field_33445);
             class_8198 var13 = new class_8198(ImmutableList.of(var12), ImmutableList.of());
             Pair var14 = Pair.of(var12, (Supplier<class_8198>)() -> var13);
@@ -444,7 +444,7 @@ public class class_6560 {
             }
          }
 
-         class_4639 var5 = new class_4639(var1.method_21461(), "item/" + var1.method_21456());
+         Identifier var5 = new Identifier(var1.method_21461(), "item/" + var1.method_21456());
          String var6 = var1.method_21456();
          if (var6.startsWith("optifine/") || var6.startsWith("item/")) {
             var5 = var1;
@@ -456,12 +456,12 @@ public class class_6560 {
       }
    }
 
-   private void method_29940(class_4639 var1, class_2053 var2) {
+   private void method_29940(Identifier var1, class_2053 var2) {
       this.field_33436.put(var1, var2);
       this.field_33448.addAll(var2.method_9589());
    }
 
-   private void method_29942(class_4639 var1) {
+   private void method_29942(Identifier var1) {
       class_2053 var4 = this.method_29951(var1);
       this.field_33436.put(var1, var4);
       this.field_33433.put(var1, var4);
@@ -479,11 +479,11 @@ public class class_6560 {
    }
 
    @Nullable
-   public class_7373 method_29939(class_4639 var1, class_5598 var2) {
+   public class_7373 method_29939(Identifier var1, class_5598 var2) {
       return this.method_29949(var1, var2, this.field_33444::method_31568);
    }
 
-   public class_7373 method_29949(class_4639 var1, class_5598 var2, Function<class_2843, class_5155> var3) {
+   public class_7373 method_29949(Identifier var1, class_5598 var2, Function<class_2843, class_5155> var3) {
       Triple var6 = Triple.of(var1, var2.method_25403(), var2.method_25404());
       if (!this.field_33461.containsKey(var6)) {
          if (this.field_33444 != null) {
@@ -515,14 +515,14 @@ public class class_6560 {
       }
    }
 
-   private class_9403 method_29952(class_4639 var1) throws IOException {
+   private class_9403 method_29952(Identifier var1) throws IOException {
       Object var4 = null;
       class_4038 var5 = null;
 
       class_9403 var10;
       try {
          String var6 = var1.method_21456();
-         class_4639 var7 = var1;
+         Identifier var7 = var1;
          if ("builtin/generated".equals(var6)) {
             return field_33462;
          }
@@ -558,7 +558,7 @@ public class class_6560 {
       return var10;
    }
 
-   public Map<class_4639, class_7373> method_29936() {
+   public Map<Identifier, class_7373> method_29936() {
       return this.field_33449;
    }
 
@@ -566,13 +566,13 @@ public class class_6560 {
       return this.field_33447;
    }
 
-   private class_4639 method_29956(class_4639 var1) {
+   private Identifier method_29956(Identifier var1) {
       String var4 = var1.method_21456();
       if (!var4.startsWith("optifine/")) {
-         return new class_4639(var1.method_21461(), "models/" + var1.method_21456() + ".json");
+         return new Identifier(var1.method_21461(), "models/" + var1.method_21456() + ".json");
       } else {
          if (!var4.endsWith(".json")) {
-            var1 = new class_4639(var1.method_21461(), var4 + ".json");
+            var1 = new Identifier(var1.method_21461(), var4 + ".json");
          }
 
          return var1;
@@ -580,7 +580,7 @@ public class class_6560 {
    }
 
    public static void method_29957(class_9403 var0, String var1) {
-      class_4639 var4 = method_29945(var0.field_48072, var1);
+      Identifier var4 = method_29945(var0.field_48072, var1);
       if (var4 != var0.field_48072) {
          var0.field_48072 = var4;
       }
@@ -591,11 +591,11 @@ public class class_6560 {
             Optional var8 = var7.left();
             if (var8.isPresent()) {
                class_2843 var9 = (class_2843)var8.get();
-               class_4639 var10 = var9.method_12948();
+               Identifier var10 = var9.method_12948();
                String var11 = var10.method_21456();
                String var12 = method_29954(var11, var1);
                if (!var12.equals(var11)) {
-                  class_4639 var13 = new class_4639(var10.method_21461(), var12);
+                  Identifier var13 = new Identifier(var10.method_21461(), var12);
                   class_2843 var14 = new class_2843(var9.method_12946(), var13);
                   Either var15 = Either.left(var14);
                   var6.setValue(var15);
@@ -605,13 +605,13 @@ public class class_6560 {
       }
    }
 
-   public static class_4639 method_29945(class_4639 var0, String var1) {
+   public static Identifier method_29945(Identifier var0, String var1) {
       if (var0 != null && var1 != null) {
          if (var0.method_21461().equals("minecraft")) {
             String var4 = var0.method_21456();
             String var5 = method_29954(var4, var1);
             if (var5 != var4) {
-               var0 = new class_4639(var0.method_21461(), var5);
+               var0 = new Identifier(var0.method_21461(), var5);
             }
 
             return var0;
@@ -629,8 +629,8 @@ public class class_6560 {
       return class_8251.method_37822(var0, ".png");
    }
 
-   public Set<class_4639> method_29946() {
-      return Collections.<class_4639>emptySet();
+   public Set<Identifier> method_29946() {
+      return Collections.<Identifier>emptySet();
    }
 
    public class_6885 method_29943() {

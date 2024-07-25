@@ -18,9 +18,9 @@ public class class_3910 extends class_7789<class_5695> {
    }
 
    public class_5695 method_18108(JsonObject var1, JsonDeserializationContext var2, class_7279[] var3) {
-      class_4639 var6 = new class_4639(class_6539.method_29796(var1, "enchantment"));
+      Identifier var6 = new Identifier(class_6539.method_29796(var1, "enchantment"));
       class_4382 var7 = class_8669.field_44445.method_39794(var6).orElseThrow(() -> new JsonParseException("Invalid enchantment id: " + var6));
-      class_4639 var8 = new class_4639(class_6539.method_29796(var1, "formula"));
+      Identifier var8 = new Identifier(class_6539.method_29796(var1, "formula"));
       class_4503 var9 = (class_4503)class_5695.method_25767().get(var8);
       if (var9 != null) {
          class_3374 var10;

@@ -74,7 +74,7 @@ public abstract class class_8143 implements AutoCloseable {
       }
    }
 
-   public void method_37054(class_7889 var1, class_7832 var2, class_4639 var3, Executor var4) {
+   public void method_37054(TextureManager var1, class_7832 var2, Identifier var3, Executor var4) {
       var1.method_35682(var3, this);
    }
 

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_2819 implements ArgumentType<class_4639> {
+public class class_2819 implements ArgumentType<Identifier> {
    private static final Collection<String> field_13840 = Arrays.<String>asList("minecraft:pig", "cow");
    public static final DynamicCommandExceptionType field_13842 = new DynamicCommandExceptionType(var0 -> new TranslationTextComponent("entity.notFound", var0));
 
@@ -17,17 +17,17 @@ public class class_2819 implements ArgumentType<class_4639> {
       return new class_2819();
    }
 
-   public static class_4639 method_12843(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
-      return method_12844((class_4639)var0.getArgument(var1, class_4639.class));
+   public static Identifier method_12843(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+      return method_12844((Identifier)var0.getArgument(var1, Identifier.class));
    }
 
-   private static class_4639 method_12844(class_4639 var0) throws CommandSyntaxException {
+   private static Identifier method_12844(Identifier var0) throws CommandSyntaxException {
       class_8669.field_44400.method_39794(var0).filter(class_6629::method_30465).orElseThrow(() -> field_13842.create(var0));
       return var0;
    }
 
-   public class_4639 parse(StringReader var1) throws CommandSyntaxException {
-      return method_12844(class_4639.method_21464(var1));
+   public Identifier parse(StringReader var1) throws CommandSyntaxException {
+      return method_12844(Identifier.method_21464(var1));
    }
 
    public Collection<String> getExamples() {

@@ -41,16 +41,16 @@ import org.lwjgl.opengl.GL11;
 
 public class class_4316 implements class_6491, AutoCloseable {
    private static final Logger field_21017 = LogManager.getLogger();
-   private static final class_4639 field_20928 = new class_4639("textures/environment/moon_phases.png");
-   private static final class_4639 field_20977 = new class_4639("textures/environment/sun.png");
-   private static final class_4639 field_20935 = new class_4639("textures/environment/clouds.png");
-   private static final class_4639 field_20938 = new class_4639("textures/environment/end_sky.png");
-   private static final class_4639 field_20936 = new class_4639("textures/misc/forcefield.png");
-   private static final class_4639 field_20990 = new class_4639("textures/environment/rain.png");
-   private static final class_4639 field_21008 = new class_4639("textures/environment/snow.png");
+   private static final Identifier field_20928 = new Identifier("textures/environment/moon_phases.png");
+   private static final Identifier field_20977 = new Identifier("textures/environment/sun.png");
+   private static final Identifier field_20935 = new Identifier("textures/environment/clouds.png");
+   private static final Identifier field_20938 = new Identifier("textures/environment/end_sky.png");
+   private static final Identifier field_20936 = new Identifier("textures/misc/forcefield.png");
+   private static final Identifier field_20990 = new Identifier("textures/environment/rain.png");
+   private static final Identifier field_21008 = new Identifier("textures/environment/snow.png");
    public static final class_240[] field_20942 = class_240.values();
    private final MinecraftClient field_20994;
-   private final class_7889 field_20951;
+   private final TextureManager field_20951;
    public final class_6122 field_20988;
    private final class_3017 field_20973;
    private class_174 field_20970;
@@ -428,7 +428,7 @@ public class class_4316 implements class_6491, AutoCloseable {
          this.field_20926.close();
       }
 
-      class_4639 var1 = new class_4639("shaders/post/entity_outline.json");
+      Identifier var1 = new Identifier("shaders/post/entity_outline.json");
 
       try {
          this.field_20926 = new class_4067(this.field_20994.method_8577(), this.field_20994.method_8498(), this.field_20994.method_8584(), var1);
@@ -447,7 +447,7 @@ public class class_4316 implements class_6491, AutoCloseable {
 
    private void method_20048() {
       this.method_20021();
-      class_4639 var1 = new class_4639("shaders/post/transparency.json");
+      Identifier var1 = new Identifier("shaders/post/transparency.json");
 
       try {
          class_4067 var2 = new class_4067(this.field_20994.method_8577(), this.field_20994.method_8498(), this.field_20994.method_8584(), var1);

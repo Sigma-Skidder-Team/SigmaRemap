@@ -24,11 +24,11 @@ public abstract class class_3521 {
    private int field_17263 = 4;
 
    @Nullable
-   private class_4639 method_16256() {
+   private Identifier method_16256() {
       String var3 = this.field_17261.method_22391().method_25965("id");
 
       try {
-         return class_6660.method_30576(var3) ? null : new class_4639(var3);
+         return class_6660.method_30576(var3) ? null : new Identifier(var3);
       } catch (class_7485 var6) {
          class_1331 var5 = this.method_16261();
          field_17257.warn(
@@ -220,7 +220,7 @@ public abstract class class_3521 {
    }
 
    public class_5734 method_16258(class_5734 var1) {
-      class_4639 var4 = this.method_16256();
+      Identifier var4 = this.method_16256();
       if (var4 == null) {
          return var1;
       } else {

@@ -19,8 +19,8 @@ public class class_7359 implements class_4219 {
    }
 
    @Override
-   public class_4639 method_19650() {
-      return new class_4639(this.field_37617);
+   public Identifier method_19650() {
+      return new Identifier(this.field_37617);
    }
 
    @Nullable
@@ -30,7 +30,7 @@ public class class_7359 implements class_4219 {
    }
 
    @Override
-   public class_4639 method_19646() {
-      return new class_4639("");
+   public Identifier method_19646() {
+      return new Identifier("");
    }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_1599 extends class_2208<class_338> {
-   private static final class_4639 field_8323 = new class_4639("textures/gui/container/stonecutter.png");
+   private static final Identifier field_8323 = new Identifier("textures/gui/container/stonecutter.png");
    private float field_8328;
    private boolean field_8327;
    private int field_8326;

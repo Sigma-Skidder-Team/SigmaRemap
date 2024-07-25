@@ -30,13 +30,13 @@ public class class_4643 extends class_6220 {
 
       class_73.method_135((float)this.method_32132(), (float)this.method_32173() - var4 * 3.0F, (float)this.method_32109(), (float)this.method_32137());
       byte var5 = 40;
-      float var6 = -class_3778.field_18442 / (float) MinecraftClient.getInstance().field_9602.method_43166();
-      float var7 = -class_3778.field_18444 / (float) MinecraftClient.getInstance().field_9602.method_43163();
+      float var6 = -class_3778.field_18442 / (float) MinecraftClient.getInstance().window.method_43166();
+      float var7 = -class_3778.field_18444 / (float) MinecraftClient.getInstance().window.method_43163();
       class_73.method_96(
          (float)var5 * var6,
          (float)var5 * var7,
-         (float)(MinecraftClient.getInstance().field_9602.method_43166() + var5),
-         (float)(MinecraftClient.getInstance().field_9602.method_43163() + var5),
+         (float)(MinecraftClient.getInstance().window.method_43166() + var5),
+         (float)(MinecraftClient.getInstance().window.method_43163() + var5),
          class_6340.field_32371
       );
       class_73.method_141();

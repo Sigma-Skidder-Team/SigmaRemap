@@ -30,7 +30,7 @@ public class class_9049 {
    private static final int field_46341 = 2;
    public static final class_2522 field_46332 = class_4783.field_23184.method_29260();
    private static class_5155 field_46349 = null;
-   public static class_4639 field_46323 = class_5525.field_28139;
+   public static Identifier field_46323 = class_5525.field_28139;
    private static final class_4536[] field_46321 = new class_4536[]{
       class_4536.field_22117, class_4536.field_22131, class_4536.field_22133, class_4536.field_22120
    };
@@ -67,7 +67,7 @@ public class class_9049 {
    private static final class_4536[] field_46334 = new class_4536[]{
       class_4536.field_22122, class_4536.field_22116, class_4536.field_22128, class_4536.field_22135
    };
-   public static final class_5155 field_46340 = new class_5155(new class_4639("default"));
+   public static final class_5155 field_46340 = new class_5155(new Identifier("default"));
    private static final Random field_46331 = new Random(0L);
 
    public static class_5024[] method_41550(class_5561 var0, class_2522 var1, class_1331 var2, class_5024 var3, class_4460 var4) {
@@ -1529,7 +1529,7 @@ public class class_9049 {
          class_3111.method_14277("ConnectedTextures: " + var6);
 
          try {
-            class_4639 var7 = new class_4639(var6);
+            Identifier var7 = new Identifier(var6);
             InputStream var8 = var1.method_37466(class_3168.field_15844, var7);
             if (var8 == null) {
                class_3111.method_14317("ConnectedTextures file not found: " + var6);
@@ -1563,7 +1563,7 @@ public class class_9049 {
       field_46349 = method_41580(var0, field_46323);
    }
 
-   private static class_5155 method_41580(class_8359 var0, class_4639 var1) {
+   private static class_5155 method_41580(class_8359 var0, Identifier var1) {
       class_5155 var2 = var0.method_38528(var1);
       if (var2 == null || var2 instanceof class_2008) {
          class_3111.method_14317("Missing CTM sprite: " + var1);
@@ -1723,7 +1723,7 @@ public class class_9049 {
 
    private static void method_41581(List var0, String var1, String var2) {
       String var3 = "optifine/ctm/default/";
-      class_4639 var4 = new class_4639(var1);
+      Identifier var4 = new Identifier(var1);
       class_8169 var5 = class_3111.method_14233(var4);
       if (var5 != null) {
          if (var5.method_37470().equals("Programmer Art")) {

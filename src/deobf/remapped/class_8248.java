@@ -359,11 +359,11 @@ public class class_8248 extends ByteBuf {
       }
    }
 
-   public class_4639 method_37768() {
-      return new class_4639(this.method_37784(32767));
+   public Identifier method_37768() {
+      return new Identifier(this.method_37784(32767));
    }
 
-   public class_8248 method_37780(class_4639 var1) {
+   public class_8248 method_37780(Identifier var1) {
       this.method_37760(var1.toString());
       return this;
    }

@@ -11,7 +11,7 @@ public class class_7622<T> extends class_4594<T> {
    public class_2566<T> field_38781 = new class_2566<T>();
    private final Function<T, Stream<String>> field_38780;
 
-   public class_7622(Function<T, Stream<String>> var1, Function<T, Stream<class_4639>> var2) {
+   public class_7622(Function<T, Stream<String>> var1, Function<T, Stream<Identifier>> var2) {
       super(var2);
       this.field_38780 = var1;
    }

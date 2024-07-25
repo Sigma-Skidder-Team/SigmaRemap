@@ -16,10 +16,10 @@ import java.util.stream.IntStream;
 
 public class class_8261 {
    private final Consumer<class_8740> field_42380;
-   private final BiConsumer<class_4639, Supplier<JsonElement>> field_42378;
+   private final BiConsumer<Identifier, Supplier<JsonElement>> field_42378;
    private final Consumer<class_2451> field_42377;
 
-   public class_8261(Consumer<class_8740> var1, BiConsumer<class_4639, Supplier<JsonElement>> var2, Consumer<class_2451> var3) {
+   public class_8261(Consumer<class_8740> var1, BiConsumer<Identifier, Supplier<JsonElement>> var2, Consumer<class_2451> var3) {
       this.field_42380 = var1;
       this.field_42378 = var2;
       this.field_42377 = var3;
@@ -29,11 +29,11 @@ public class class_8261 {
       this.field_42377.accept(var1.method_10803());
    }
 
-   private void method_37966(class_6414 var1, class_4639 var2) {
+   private void method_37966(class_6414 var1, Identifier var2) {
       this.field_42378.accept(class_6856.method_31450(var1.method_10803()), new class_7503(var2));
    }
 
-   private void method_38020(class_2451 var1, class_4639 var2) {
+   private void method_38020(class_2451 var1, Identifier var2) {
       this.field_42378.accept(class_6856.method_31450(var1), new class_7503(var2));
    }
 
@@ -87,11 +87,11 @@ public class class_8261 {
          .method_45275(class_240.field_804, class_265.method_1150().method_1151(class_1120.field_6402, class_6466.field_32954));
    }
 
-   private static class_6065 method_38071(class_6414 var0, class_4639 var1) {
+   private static class_6065 method_38071(class_6414 var0, Identifier var1) {
       return class_6065.method_27777(var0, method_38037(var1));
    }
 
-   private static class_265[] method_38037(class_4639 var0) {
+   private static class_265[] method_38037(Identifier var0) {
       return new class_265[]{
          class_265.method_1150().method_1151(class_1120.field_6404, var0),
          class_265.method_1150().method_1151(class_1120.field_6404, var0).method_1151(class_1120.field_6402, class_6466.field_32954),
@@ -100,7 +100,7 @@ public class class_8261 {
       };
    }
 
-   private static class_6065 method_37968(class_6414 var0, class_4639 var1, class_4639 var2) {
+   private static class_6065 method_37968(class_6414 var0, Identifier var1, Identifier var2) {
       return class_6065.method_27777(
          var0,
          class_265.method_1150().method_1151(class_1120.field_6404, var1),
@@ -110,24 +110,24 @@ public class class_8261 {
       );
    }
 
-   private static class_121 method_37981(class_6720 var0, class_4639 var1, class_4639 var2) {
+   private static class_121 method_37981(class_6720 var0, Identifier var1, Identifier var2) {
       return class_121.<Boolean>method_360(var0)
          .method_45275(true, class_265.method_1150().method_1151(class_1120.field_6404, var1))
          .method_45275(false, class_265.method_1150().method_1151(class_1120.field_6404, var2));
    }
 
    private void method_38033(class_6414 var1) {
-      class_4639 var4 = class_2109.field_10567.method_11640(var1, this.field_42378);
-      class_4639 var5 = class_2109.field_10561.method_11640(var1, this.field_42378);
+      Identifier var4 = class_2109.field_10567.method_11640(var1, this.field_42378);
+      Identifier var5 = class_2109.field_10561.method_11640(var1, this.field_42378);
       this.field_42380.accept(method_37968(var1, var4, var5));
    }
 
    private void method_38052(class_6414 var1) {
-      class_4639 var4 = class_2109.field_10567.method_11640(var1, this.field_42378);
+      Identifier var4 = class_2109.field_10567.method_11640(var1, this.field_42378);
       this.field_42380.accept(method_38071(var1, var4));
    }
 
-   private static class_8740 method_37924(class_6414 var0, class_4639 var1, class_4639 var2) {
+   private static class_8740 method_37924(class_6414 var0, Identifier var1, Identifier var2) {
       return class_6065.method_27776(var0)
          .method_27775(
             class_121.<Boolean>method_360(class_6023.field_30696)
@@ -189,7 +189,7 @@ public class class_8261 {
    }
 
    private static class_544<class_240, class_7422, class_4340, Boolean> method_38054(
-      class_544<class_240, class_7422, class_4340, Boolean> var0, class_7422 var1, class_4639 var2, class_4639 var3
+           class_544<class_240, class_7422, class_4340, Boolean> var0, class_7422 var1, Identifier var2, Identifier var3
    ) {
       return var0.method_2630(class_240.field_804, var1, class_4340.field_21090, false, class_265.method_1150().method_1151(class_1120.field_6404, var2))
          .method_2630(
@@ -281,7 +281,7 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_38050(class_6414 var0, class_4639 var1, class_4639 var2, class_4639 var3, class_4639 var4) {
+   private static class_8740 method_38050(class_6414 var0, Identifier var1, Identifier var2, Identifier var3, Identifier var4) {
       return class_6065.method_27776(var0)
          .method_27775(
             method_38054(
@@ -300,7 +300,7 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_37991(class_6414 var0, class_4639 var1, class_4639 var2) {
+   private static class_8740 method_37991(class_6414 var0, Identifier var1, Identifier var2) {
       return class_1744.method_7785(var0)
          .method_7787(class_265.method_1150().method_1151(class_1120.field_6404, var1))
          .method_7786(
@@ -330,7 +330,7 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_37989(class_6414 var0, class_4639 var1, class_4639 var2, class_4639 var3) {
+   private static class_8740 method_37989(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_1744.method_7785(var0)
          .method_7786(class_5496.method_24962().method_6792(class_6023.field_30711, true), class_265.method_1150().method_1151(class_1120.field_6404, var1))
          .method_7786(
@@ -385,7 +385,7 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_38069(class_6414 var0, class_4639 var1, class_4639 var2, class_4639 var3, class_4639 var4) {
+   private static class_8740 method_38069(class_6414 var0, Identifier var1, Identifier var2, Identifier var3, Identifier var4) {
       return class_6065.method_27778(var0, class_265.method_1150().method_1151(class_1120.field_6403, true))
          .method_27775(method_38015())
          .method_27775(
@@ -397,7 +397,7 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_37922(class_6414 var0, class_4639 var1, class_4639 var2, class_4639 var3) {
+   private static class_8740 method_37922(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_6065.method_27776(var0)
          .method_27775(
             class_121.<class_240, class_5122, class_476>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30756)
@@ -749,7 +749,7 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_38044(class_6414 var0, class_4639 var1, class_4639 var2, class_4639 var3) {
+   private static class_8740 method_38044(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_6065.method_27776(var0)
          .method_27775(
             class_121.<class_240, class_5122, Boolean>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30688)
@@ -849,7 +849,7 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_37927(class_6414 var0, class_4639 var1, class_4639 var2, class_4639 var3) {
+   private static class_8740 method_37927(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_6065.method_27776(var0)
          .method_27775(
             class_121.<class_240, class_5122, Boolean>method_363(class_6023.field_30701, class_6023.field_30709, class_6023.field_30688)
@@ -902,7 +902,7 @@ public class class_8261 {
          );
    }
 
-   private static class_6065 method_38073(class_6414 var0, class_4639 var1) {
+   private static class_6065 method_38073(class_6414 var0, Identifier var1) {
       return class_6065.method_27778(var0, class_265.method_1150().method_1151(class_1120.field_6404, var1));
    }
 
@@ -916,25 +916,25 @@ public class class_8261 {
          );
    }
 
-   private static class_8740 method_37937(class_6414 var0, class_4639 var1) {
+   private static class_8740 method_37937(class_6414 var0, Identifier var1) {
       return class_6065.method_27778(var0, class_265.method_1150().method_1151(class_1120.field_6404, var1)).method_27775(method_37979());
    }
 
-   private void method_37957(class_6414 var1, class_4639 var2) {
+   private void method_37957(class_6414 var1, Identifier var2) {
       this.field_42380.accept(method_37937(var1, var2));
    }
 
    private void method_37976(class_6414 var1, class_2562 var2) {
-      class_4639 var5 = var2.method_11640(var1, this.field_42378);
+      Identifier var5 = var2.method_11640(var1, this.field_42378);
       this.field_42380.accept(method_37937(var1, var5));
    }
 
    private void method_37911(class_6414 var1, class_2562 var2) {
-      class_4639 var5 = var2.method_11640(var1, this.field_42378);
+      Identifier var5 = var2.method_11640(var1, this.field_42378);
       this.field_42380.accept(class_6065.method_27778(var1, class_265.method_1150().method_1151(class_1120.field_6404, var5)).method_27775(method_37994()));
    }
 
-   private static class_8740 method_37920(class_6414 var0, class_4639 var1, class_4639 var2) {
+   private static class_8740 method_37920(class_6414 var0, Identifier var1, Identifier var2) {
       return class_6065.method_27776(var0)
          .method_27775(
             class_121.<class_9249>method_360(class_6023.field_30682)
@@ -954,20 +954,20 @@ public class class_8261 {
    }
 
    private void method_37934(class_6414 var1, class_2562 var2, class_2562 var3) {
-      class_4639 var6 = var2.method_11640(var1, this.field_42378);
-      class_4639 var7 = var3.method_11640(var1, this.field_42378);
+      Identifier var6 = var2.method_11640(var1, this.field_42378);
+      Identifier var7 = var3.method_11640(var1, this.field_42378);
       this.field_42380.accept(method_37920(var1, var6, var7));
    }
 
-   private class_4639 method_37910(class_6414 var1, String var2, class_7701 var3, Function<class_4639, class_1685> var4) {
+   private Identifier method_37910(class_6414 var1, String var2, class_7701 var3, Function<Identifier, class_1685> var4) {
       return var3.method_34882(var1, var2, (class_1685)var4.apply(class_1685.method_7533(var1, var2)), this.field_42378);
    }
 
-   private static class_8740 method_38058(class_6414 var0, class_4639 var1, class_4639 var2) {
+   private static class_8740 method_38058(class_6414 var0, Identifier var1, Identifier var2) {
       return class_6065.method_27776(var0).method_27775(method_37981(class_6023.field_30696, var2, var1));
    }
 
-   private static class_8740 method_38026(class_6414 var0, class_4639 var1, class_4639 var2, class_4639 var3) {
+   private static class_8740 method_38026(class_6414 var0, Identifier var1, Identifier var2, Identifier var3) {
       return class_6065.method_27776(var0)
          .method_27775(
             class_121.<class_6666>method_360(class_6023.field_30748)
@@ -986,7 +986,7 @@ public class class_8261 {
    }
 
    private void method_37949(class_6414 var1, class_1685 var2, class_7701 var3) {
-      class_4639 var6 = var3.method_34883(var1, var2, this.field_42378);
+      Identifier var6 = var3.method_34883(var1, var2, this.field_42378);
       this.field_42380.accept(method_38073(var1, var6));
    }
 
@@ -1009,28 +1009,28 @@ public class class_8261 {
 
    private void method_38043(class_6414 var1) {
       class_1685 var4 = class_1685.method_7536(var1);
-      class_4639 var5 = class_9590.field_48838.method_34883(var1, var4, this.field_42378);
-      class_4639 var6 = class_9590.field_48848.method_34883(var1, var4, this.field_42378);
-      class_4639 var7 = class_9590.field_48782.method_34883(var1, var4, this.field_42378);
-      class_4639 var8 = class_9590.field_48822.method_34883(var1, var4, this.field_42378);
+      Identifier var5 = class_9590.field_48838.method_34883(var1, var4, this.field_42378);
+      Identifier var6 = class_9590.field_48848.method_34883(var1, var4, this.field_42378);
+      Identifier var7 = class_9590.field_48782.method_34883(var1, var4, this.field_42378);
+      Identifier var8 = class_9590.field_48822.method_34883(var1, var4, this.field_42378);
       this.method_38060(var1.method_10803());
       this.field_42380.accept(method_38050(var1, var5, var6, var7, var8));
    }
 
    private void method_38039(class_6414 var1) {
       class_1685 var4 = class_1685.method_7552(var1);
-      class_4639 var5 = class_9590.field_48779.method_34883(var1, var4, this.field_42378);
-      class_4639 var6 = class_9590.field_48788.method_34883(var1, var4, this.field_42378);
-      class_4639 var7 = class_9590.field_48842.method_34883(var1, var4, this.field_42378);
+      Identifier var5 = class_9590.field_48779.method_34883(var1, var4, this.field_42378);
+      Identifier var6 = class_9590.field_48788.method_34883(var1, var4, this.field_42378);
+      Identifier var7 = class_9590.field_48842.method_34883(var1, var4, this.field_42378);
       this.field_42380.accept(method_38044(var1, var5, var6, var7));
       this.method_37966(var1, var6);
    }
 
    private void method_37953(class_6414 var1) {
       class_1685 var4 = class_1685.method_7552(var1);
-      class_4639 var5 = class_9590.field_48816.method_34883(var1, var4, this.field_42378);
-      class_4639 var6 = class_9590.field_48832.method_34883(var1, var4, this.field_42378);
-      class_4639 var7 = class_9590.field_48795.method_34883(var1, var4, this.field_42378);
+      Identifier var5 = class_9590.field_48816.method_34883(var1, var4, this.field_42378);
+      Identifier var6 = class_9590.field_48832.method_34883(var1, var4, this.field_42378);
+      Identifier var7 = class_9590.field_48795.method_34883(var1, var4, this.field_42378);
       this.field_42380.accept(method_37927(var1, var5, var6, var7));
       this.method_37966(var1, var6);
    }
@@ -1063,22 +1063,22 @@ public class class_8261 {
    }
 
    private void method_37978(class_6414 var1, class_933 var2, class_1685 var3) {
-      class_4639 var6 = var2.method_4054().method_34883(var1, var3, this.field_42378);
+      Identifier var6 = var2.method_4054().method_34883(var1, var3, this.field_42378);
       this.field_42380.accept(method_38073(var1, var6));
    }
 
    private void method_38035(class_6414 var1, class_6414 var2, class_933 var3) {
       this.method_37936(var1, var3);
       class_1685 var6 = class_1685.method_7573(var1);
-      class_4639 var7 = var3.method_4055().method_34883(var2, var6, this.field_42378);
+      Identifier var7 = var3.method_4055().method_34883(var2, var6, this.field_42378);
       this.field_42380.accept(method_38073(var2, var7));
    }
 
    private void method_38011(class_6414 var1, class_6414 var2) {
       class_2109 var5 = class_2109.field_10559.method_11639(var1);
-      class_4639 var6 = var5.method_9873(var1, this.field_42378);
+      Identifier var6 = var5.method_9873(var1, this.field_42378);
       this.field_42380.accept(method_38073(var1, var6));
-      class_4639 var7 = class_9590.field_48823.method_34883(var2, var5.method_9870(), this.field_42378);
+      Identifier var7 = class_9590.field_48823.method_34883(var2, var5.method_9870(), this.field_42378);
       this.field_42380.accept(class_6065.method_27778(var2, class_265.method_1150().method_1151(class_1120.field_6404, var7)).method_27775(method_37994()));
       this.method_37914(var1);
    }
@@ -1087,7 +1087,7 @@ public class class_8261 {
       this.method_38060(var1.method_10803());
       class_1685 var5 = class_1685.method_7550(var1);
       class_1685 var6 = class_1685.method_7553(var1, var2);
-      class_4639 var7 = class_9590.field_48809.method_34883(var2, var6, this.field_42378);
+      Identifier var7 = class_9590.field_48809.method_34883(var2, var6, this.field_42378);
       this.field_42380
          .accept(
             class_6065.method_27778(var2, class_265.method_1150().method_1151(class_1120.field_6404, var7))
@@ -1125,25 +1125,25 @@ public class class_8261 {
 
    private void method_38018(class_6414 var1, class_933 var2) {
       this.method_38057(var1, "_top");
-      class_4639 var5 = this.method_37910(var1, "_top", var2.method_4054(), class_1685::method_7560);
-      class_4639 var6 = this.method_37910(var1, "_bottom", var2.method_4054(), class_1685::method_7560);
+      Identifier var5 = this.method_37910(var1, "_top", var2.method_4054(), class_1685::method_7560);
+      Identifier var6 = this.method_37910(var1, "_bottom", var2.method_4054(), class_1685::method_7560);
       this.method_37930(var1, var5, var6);
    }
 
    private void method_38030() {
       this.method_38057(class_4783.field_23554, "_front");
-      class_4639 var3 = class_6856.method_31445(class_4783.field_23554, "_top");
-      class_4639 var4 = this.method_37910(class_4783.field_23554, "_bottom", class_933.field_4774.method_4054(), class_1685::method_7560);
+      Identifier var3 = class_6856.method_31445(class_4783.field_23554, "_top");
+      Identifier var4 = this.method_37910(class_4783.field_23554, "_bottom", class_933.field_4774.method_4054(), class_1685::method_7560);
       this.method_37930(class_4783.field_23554, var3, var4);
    }
 
    private void method_38000() {
-      class_4639 var3 = this.method_37910(class_4783.field_23535, "_top", class_9590.field_48821, class_1685::method_7542);
-      class_4639 var4 = this.method_37910(class_4783.field_23535, "_bottom", class_9590.field_48821, class_1685::method_7542);
+      Identifier var3 = this.method_37910(class_4783.field_23535, "_top", class_9590.field_48821, class_1685::method_7542);
+      Identifier var4 = this.method_37910(class_4783.field_23535, "_bottom", class_9590.field_48821, class_1685::method_7542);
       this.method_37930(class_4783.field_23535, var3, var4);
    }
 
-   private void method_37930(class_6414 var1, class_4639 var2, class_4639 var3) {
+   private void method_37930(class_6414 var1, Identifier var2, Identifier var3) {
       this.field_42380
          .accept(
             class_6065.method_27776(var1)
@@ -1158,10 +1158,10 @@ public class class_8261 {
    private void method_38002(class_6414 var1) {
       class_1685 var4 = class_1685.method_7581(var1);
       class_1685 var5 = class_1685.method_7568(class_1685.method_7533(var1, "_corner"));
-      class_4639 var6 = class_9590.field_48793.method_34883(var1, var4, this.field_42378);
-      class_4639 var7 = class_9590.field_48851.method_34883(var1, var5, this.field_42378);
-      class_4639 var8 = class_9590.field_48820.method_34883(var1, var4, this.field_42378);
-      class_4639 var9 = class_9590.field_48812.method_34883(var1, var4, this.field_42378);
+      Identifier var6 = class_9590.field_48793.method_34883(var1, var4, this.field_42378);
+      Identifier var7 = class_9590.field_48851.method_34883(var1, var5, this.field_42378);
+      Identifier var8 = class_9590.field_48820.method_34883(var1, var4, this.field_42378);
+      Identifier var9 = class_9590.field_48812.method_34883(var1, var4, this.field_42378);
       this.method_37914(var1);
       this.field_42380
          .accept(
@@ -1201,12 +1201,12 @@ public class class_8261 {
    }
 
    private void method_37938(class_6414 var1) {
-      class_4639 var4 = this.method_37910(var1, "", class_9590.field_48793, class_1685::method_7568);
-      class_4639 var5 = this.method_37910(var1, "", class_9590.field_48820, class_1685::method_7568);
-      class_4639 var6 = this.method_37910(var1, "", class_9590.field_48812, class_1685::method_7568);
-      class_4639 var7 = this.method_37910(var1, "_on", class_9590.field_48793, class_1685::method_7568);
-      class_4639 var8 = this.method_37910(var1, "_on", class_9590.field_48820, class_1685::method_7568);
-      class_4639 var9 = this.method_37910(var1, "_on", class_9590.field_48812, class_1685::method_7568);
+      Identifier var4 = this.method_37910(var1, "", class_9590.field_48793, class_1685::method_7568);
+      Identifier var5 = this.method_37910(var1, "", class_9590.field_48820, class_1685::method_7568);
+      Identifier var6 = this.method_37910(var1, "", class_9590.field_48812, class_1685::method_7568);
+      Identifier var7 = this.method_37910(var1, "_on", class_9590.field_48793, class_1685::method_7568);
+      Identifier var8 = this.method_37910(var1, "_on", class_9590.field_48820, class_1685::method_7568);
+      Identifier var9 = this.method_37910(var1, "_on", class_9590.field_48812, class_1685::method_7568);
       class_121 var10 = class_121.<Boolean, class_3665>method_357(class_6023.field_30696, class_6023.field_30760)
          .method_232(
             (var6x, var7x) -> {
@@ -1238,7 +1238,7 @@ public class class_8261 {
       this.field_42380.accept(class_6065.method_27776(var1).method_27775(var10));
    }
 
-   private class_3070 method_37928(class_4639 var1, class_6414 var2) {
+   private class_3070 method_37928(Identifier var1, class_6414 var2) {
       return new class_3070(this, var1, var2);
    }
 
@@ -1247,31 +1247,31 @@ public class class_8261 {
    }
 
    private void method_37933(class_6414 var1, class_2451 var2) {
-      class_4639 var5 = class_9590.field_48844.method_34883(var1, class_1685.method_7571(var2), this.field_42378);
+      Identifier var5 = class_9590.field_48844.method_34883(var1, class_1685.method_7571(var2), this.field_42378);
       this.field_42380.accept(method_38073(var1, var5));
    }
 
-   private void method_38045(class_6414 var1, class_4639 var2) {
-      class_4639 var5 = class_9590.field_48844.method_34883(var1, class_1685.method_7567(var2), this.field_42378);
+   private void method_38045(class_6414 var1, Identifier var2) {
+      Identifier var5 = class_9590.field_48844.method_34883(var1, class_1685.method_7567(var2), this.field_42378);
       this.field_42380.accept(method_38073(var1, var5));
    }
 
    private void method_38019(class_6414 var1, class_6414 var2) {
       this.method_38068(var1, class_2109.field_10567);
-      class_4639 var5 = class_2109.field_10558.method_11639(var1).method_9873(var2, this.field_42378);
+      Identifier var5 = class_2109.field_10558.method_11639(var1).method_9873(var2, this.field_42378);
       this.field_42380.accept(method_38073(var2, var5));
    }
 
    private void method_38009(class_2562 var1, class_6414... var2) {
       for (class_6414 var8 : var2) {
-         class_4639 var9 = var1.method_11640(var8, this.field_42378);
+         Identifier var9 = var1.method_11640(var8, this.field_42378);
          this.field_42380.accept(method_38071(var8, var9));
       }
    }
 
    private void method_37955(class_2562 var1, class_6414... var2) {
       for (class_6414 var8 : var2) {
-         class_4639 var9 = var1.method_11640(var8, this.field_42378);
+         Identifier var9 = var1.method_11640(var8, this.field_42378);
          this.field_42380.accept(class_6065.method_27778(var8, class_265.method_1150().method_1151(class_1120.field_6404, var9)).method_27775(method_38015()));
       }
    }
@@ -1279,11 +1279,11 @@ public class class_8261 {
    private void method_38014(class_6414 var1, class_6414 var2) {
       this.method_38023(var1);
       class_1685 var5 = class_1685.method_7532(var1, var2);
-      class_4639 var6 = class_9590.field_48792.method_34883(var2, var5, this.field_42378);
-      class_4639 var7 = class_9590.field_48856.method_34883(var2, var5, this.field_42378);
-      class_4639 var8 = class_9590.field_48813.method_34883(var2, var5, this.field_42378);
-      class_4639 var9 = class_9590.field_48780.method_34883(var2, var5, this.field_42378);
-      class_4639 var10 = class_9590.field_48850.method_34883(var2, var5, this.field_42378);
+      Identifier var6 = class_9590.field_48792.method_34883(var2, var5, this.field_42378);
+      Identifier var7 = class_9590.field_48856.method_34883(var2, var5, this.field_42378);
+      Identifier var8 = class_9590.field_48813.method_34883(var2, var5, this.field_42378);
+      Identifier var9 = class_9590.field_48780.method_34883(var2, var5, this.field_42378);
+      Identifier var10 = class_9590.field_48850.method_34883(var2, var5, this.field_42378);
       class_2451 var11 = var2.method_10803();
       class_9590.field_48797.method_34878(class_6856.method_31450(var11), class_1685.method_7578(var1), this.field_42378);
       this.field_42380
@@ -1323,13 +1323,13 @@ public class class_8261 {
 
    private void method_37919(class_6414 var1) {
       class_1685 var4 = class_1685.method_7534(var1);
-      class_4639 var5 = class_9590.field_48826.method_34883(var1, var4, this.field_42378);
-      class_4639 var6 = this.method_37910(var1, "_conditional", class_9590.field_48826, var1x -> var4.method_7531(class_8940.field_45813, var1x));
+      Identifier var5 = class_9590.field_48826.method_34883(var1, var4, this.field_42378);
+      Identifier var6 = this.method_37910(var1, "_conditional", class_9590.field_48826, var1x -> var4.method_7531(class_8940.field_45813, var1x));
       this.field_42380.accept(class_6065.method_27776(var1).method_27775(method_37981(class_6023.field_30715, var6, var5)).method_27775(method_37913()));
    }
 
    private void method_37970(class_6414 var1) {
-      class_4639 var4 = class_2109.field_10562.method_11640(var1, this.field_42378);
+      Identifier var4 = class_2109.field_10562.method_11640(var1, this.field_42378);
       this.field_42380.accept(method_38073(var1, var4).method_27775(method_38015()));
    }
 
@@ -1380,7 +1380,7 @@ public class class_8261 {
    }
 
    private void method_38029() {
-      class_4639 var3 = class_1685.method_7533(class_4783.field_23641, "_top_open");
+      Identifier var3 = class_1685.method_7533(class_4783.field_23641, "_top_open");
       this.field_42380
          .accept(
             class_6065.method_27776(class_4783.field_23641)
@@ -1407,7 +1407,7 @@ public class class_8261 {
          );
    }
 
-   private static <T extends Comparable<T>> class_121 method_38048(class_5019<T> var0, T var1, class_4639 var2, class_4639 var3) {
+   private static <T extends Comparable<T>> class_121 method_38048(class_5019<T> var0, T var1, Identifier var2, Identifier var3) {
       class_265 var6 = class_265.method_1150().method_1151(class_1120.field_6404, var2);
       class_265 var7 = class_265.method_1150().method_1151(class_1120.field_6404, var3);
       return class_121.method_360(var0).method_45276(var3x -> {
@@ -1419,8 +1419,8 @@ public class class_8261 {
    private void method_37926(class_6414 var1, Function<class_6414, class_1685> var2) {
       class_1685 var5 = ((class_1685)var2.apply(var1)).method_7548(class_8940.field_45813, class_8940.field_45832);
       class_1685 var6 = var5.method_7531(class_8940.field_45833, class_1685.method_7533(var1, "_front_honey"));
-      class_4639 var7 = class_9590.field_48817.method_34883(var1, var5, this.field_42378);
-      class_4639 var8 = class_9590.field_48817.method_34882(var1, "_honey", var6, this.field_42378);
+      Identifier var7 = class_9590.field_48817.method_34883(var1, var5, this.field_42378);
+      Identifier var8 = class_9590.field_48817.method_34882(var1, "_honey", var6, this.field_42378);
       this.field_42380.accept(class_6065.method_27776(var1).method_27775(method_37994()).method_27775(method_38048(class_6023.field_30749, 5, var8, var7)));
    }
 
@@ -1431,7 +1431,7 @@ public class class_8261 {
             .method_45276(
                var4 -> {
                   int var7x = var3[var4];
-                  class_4639 var8 = (class_4639)var6.computeIfAbsent(
+                  Identifier var8 = (Identifier)var6.computeIfAbsent(
                      var7x, var3xx -> this.method_37910(var1, "_stage" + var7x, class_9590.field_48804, class_1685::method_7541)
                   );
                   return class_265.method_1150().method_1151(class_1120.field_6404, var8);
@@ -1445,10 +1445,10 @@ public class class_8261 {
    }
 
    private void method_38072() {
-      class_4639 var3 = class_6856.method_31445(class_4783.field_23870, "_floor");
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23870, "_ceiling");
-      class_4639 var5 = class_6856.method_31445(class_4783.field_23870, "_wall");
-      class_4639 var6 = class_6856.method_31445(class_4783.field_23870, "_between_walls");
+      Identifier var3 = class_6856.method_31445(class_4783.field_23870, "_floor");
+      Identifier var4 = class_6856.method_31445(class_4783.field_23870, "_ceiling");
+      Identifier var5 = class_6856.method_31445(class_4783.field_23870, "_wall");
+      Identifier var6 = class_6856.method_31445(class_4783.field_23870, "_between_walls");
       this.method_38060(class_4897.field_24737);
       this.field_42380
          .accept(
@@ -1584,19 +1584,19 @@ public class class_8261 {
    }
 
    private void method_38053(class_6414 var1, class_2562 var2) {
-      class_4639 var5 = var2.method_11640(var1, this.field_42378);
-      class_4639 var6 = class_1685.method_7533(var1, "_front_on");
-      class_4639 var7 = var2.method_11639(var1)
+      Identifier var5 = var2.method_11640(var1, this.field_42378);
+      Identifier var6 = class_1685.method_7533(var1, "_front_on");
+      Identifier var7 = var2.method_11639(var1)
          .method_9874(var1x -> var1x.method_7551(class_8940.field_45833, var6))
          .method_9867(var1, "_on", this.field_42378);
       this.field_42380.accept(class_6065.method_27776(var1).method_27775(method_37981(class_6023.field_30732, var7, var5)).method_27775(method_37994()));
    }
 
    private void method_37974(class_6414... var1) {
-      class_4639 var4 = class_6856.method_31449("campfire_off");
+      Identifier var4 = class_6856.method_31449("campfire_off");
 
       for (class_6414 var8 : var1) {
-         class_4639 var9 = class_9590.field_48772.method_34883(var8, class_1685.method_7572(var8), this.field_42378);
+         Identifier var9 = class_9590.field_48772.method_34883(var8, class_1685.method_7572(var8), this.field_42378);
          this.method_38060(var8.method_10803());
          this.field_42380.accept(class_6065.method_27776(var8).method_27775(method_37981(class_6023.field_30732, var9, var4)).method_27775(method_38015()));
       }
@@ -1604,7 +1604,7 @@ public class class_8261 {
 
    private void method_38065() {
       class_1685 var3 = class_1685.method_7569(class_1685.method_7540(class_4783.field_23313), class_1685.method_7540(class_4783.field_23893));
-      class_4639 var4 = class_9590.field_48862.method_34883(class_4783.field_23313, var3, this.field_42378);
+      Identifier var4 = class_9590.field_48862.method_34883(class_4783.field_23313, var3, this.field_42378);
       this.field_42380.accept(method_38073(class_4783.field_23313, var4));
    }
 
@@ -1715,9 +1715,9 @@ public class class_8261 {
    private void method_37951() {
       class_1685 var3 = class_1685.method_7564(class_4783.field_23468);
       class_1685 var4 = class_1685.method_7569(class_1685.method_7533(class_4783.field_23547, "_side"), var3.method_7556(class_8940.field_45810));
-      class_4639 var5 = class_9590.field_48803.method_34883(class_4783.field_23547, var4, this.field_42378);
-      class_4639 var6 = class_9590.field_48861.method_34883(class_4783.field_23547, var4, this.field_42378);
-      class_4639 var7 = class_9590.field_48862.method_34881(class_4783.field_23547, "_double", var4, this.field_42378);
+      Identifier var5 = class_9590.field_48803.method_34883(class_4783.field_23547, var4, this.field_42378);
+      Identifier var6 = class_9590.field_48861.method_34883(class_4783.field_23547, var4, this.field_42378);
+      Identifier var7 = class_9590.field_48862.method_34881(class_4783.field_23547, "_double", var4, this.field_42378);
       this.field_42380.accept(method_38026(class_4783.field_23547, var5, var6, var7));
       this.field_42380.accept(method_38073(class_4783.field_23468, class_9590.field_48833.method_34883(class_4783.field_23468, var3, this.field_42378)));
    }
@@ -1756,8 +1756,8 @@ public class class_8261 {
    }
 
    private void method_38017(class_6414 var1) {
-      class_4639 var4 = class_9590.field_48814.method_34883(var1, class_1685.method_7552(var1), this.field_42378);
-      class_4639 var5 = class_6856.method_31449("mushroom_block_inside");
+      Identifier var4 = class_9590.field_48814.method_34883(var1, class_1685.method_7552(var1), this.field_42378);
+      Identifier var5 = class_6856.method_31449("mushroom_block_inside");
       this.field_42380
          .accept(
             class_1744.method_7785(var1)
@@ -1896,7 +1896,7 @@ public class class_8261 {
    }
 
    private void method_37952(class_6414 var1, class_1685 var2) {
-      class_4639 var5 = class_9590.field_48837.method_34883(var1, var2.method_7531(class_8940.field_45833, class_1685.method_7540(var1)), this.field_42378);
+      Identifier var5 = class_9590.field_48837.method_34883(var1, var2.method_7531(class_8940.field_45833, class_1685.method_7540(var1)), this.field_42378);
       this.field_42380.accept(class_6065.method_27778(var1, class_265.method_1150().method_1151(class_1120.field_6404, var5)).method_27775(method_37994()));
    }
 
@@ -1924,8 +1924,8 @@ public class class_8261 {
 
    private void method_37947() {
       class_1685 var3 = class_1685.method_7552(class_4783.field_23650);
-      class_4639 var4 = class_9590.field_48785.method_34883(class_4783.field_23650, var3, this.field_42378);
-      class_4639 var5 = this.method_37910(class_4783.field_23650, "_dead", class_9590.field_48785, var1 -> var3.method_7531(class_8940.field_45837, var1));
+      Identifier var4 = class_9590.field_48785.method_34883(class_4783.field_23650, var3, this.field_42378);
+      Identifier var5 = this.method_37910(class_4783.field_23650, "_dead", class_9590.field_48785, var1 -> var3.method_7531(class_8940.field_45837, var1));
       this.field_42380.accept(class_6065.method_27776(class_4783.field_23650).method_27775(method_38048(class_6023.field_30708, 5, var5, var4)));
    }
 
@@ -1937,8 +1937,8 @@ public class class_8261 {
       class_1685 var5 = new class_1685()
          .method_7551(class_8940.field_45813, class_1685.method_7533(class_4783.field_23883, "_top"))
          .method_7551(class_8940.field_45833, class_1685.method_7533(var1, "_front_vertical"));
-      class_4639 var6 = class_9590.field_48837.method_34883(var1, var4, this.field_42378);
-      class_4639 var7 = class_9590.field_48778.method_34883(var1, var5, this.field_42378);
+      Identifier var6 = class_9590.field_48837.method_34883(var1, var4, this.field_42378);
+      Identifier var7 = class_9590.field_48778.method_34883(var1, var5, this.field_42378);
       this.field_42380
          .accept(
             class_6065.method_27776(var1)
@@ -1967,8 +1967,8 @@ public class class_8261 {
    }
 
    private void method_38051() {
-      class_4639 var3 = class_6856.method_31446(class_4783.field_23491);
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23491, "_filled");
+      Identifier var3 = class_6856.method_31446(class_4783.field_23491);
+      Identifier var4 = class_6856.method_31445(class_4783.field_23491, "_filled");
       this.field_42380
          .accept(
             class_6065.method_27776(class_4783.field_23491)
@@ -1982,11 +1982,11 @@ public class class_8261 {
    }
 
    private void method_37983() {
-      class_4639 var3 = class_6856.method_31445(class_4783.field_23634, "_side");
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23634, "_noside");
-      class_4639 var5 = class_6856.method_31445(class_4783.field_23634, "_noside1");
-      class_4639 var6 = class_6856.method_31445(class_4783.field_23634, "_noside2");
-      class_4639 var7 = class_6856.method_31445(class_4783.field_23634, "_noside3");
+      Identifier var3 = class_6856.method_31445(class_4783.field_23634, "_side");
+      Identifier var4 = class_6856.method_31445(class_4783.field_23634, "_noside");
+      Identifier var5 = class_6856.method_31445(class_4783.field_23634, "_noside1");
+      Identifier var6 = class_6856.method_31445(class_4783.field_23634, "_noside2");
+      Identifier var7 = class_6856.method_31445(class_4783.field_23634, "_noside3");
       this.field_42380
          .accept(
             class_1744.method_7785(class_4783.field_23634)
@@ -2187,7 +2187,7 @@ public class class_8261 {
    }
 
    private void method_37995() {
-      class_4639 var3 = class_1685.method_7533(class_4783.field_23220, "_side");
+      Identifier var3 = class_1685.method_7533(class_4783.field_23220, "_side");
       class_1685 var4 = new class_1685()
          .method_7551(class_8940.field_45810, class_1685.method_7533(class_4783.field_23220, "_top"))
          .method_7551(class_8940.field_45813, var3);
@@ -2231,34 +2231,34 @@ public class class_8261 {
       class_1685 var4 = new class_1685()
          .method_7551(class_8940.field_45815, class_1685.method_7540(class_4783.field_23592))
          .method_7551(class_8940.field_45810, class_1685.method_7533(class_4783.field_23421, "_moist"));
-      class_4639 var5 = class_9590.field_48834.method_34883(class_4783.field_23421, var3, this.field_42378);
-      class_4639 var6 = class_9590.field_48834.method_34878(class_1685.method_7533(class_4783.field_23421, "_moist"), var4, this.field_42378);
+      Identifier var5 = class_9590.field_48834.method_34883(class_4783.field_23421, var3, this.field_42378);
+      Identifier var6 = class_9590.field_48834.method_34878(class_1685.method_7533(class_4783.field_23421, "_moist"), var4, this.field_42378);
       this.field_42380.accept(class_6065.method_27776(class_4783.field_23421).method_27775(method_38048(class_6023.field_30702, 7, var6, var5)));
    }
 
-   private List<class_4639> method_38059(class_6414 var1) {
-      class_4639 var4 = class_9590.field_48824.method_34878(class_6856.method_31445(var1, "_floor0"), class_1685.method_7555(var1), this.field_42378);
-      class_4639 var5 = class_9590.field_48824.method_34878(class_6856.method_31445(var1, "_floor1"), class_1685.method_7582(var1), this.field_42378);
+   private List<Identifier> method_38059(class_6414 var1) {
+      Identifier var4 = class_9590.field_48824.method_34878(class_6856.method_31445(var1, "_floor0"), class_1685.method_7555(var1), this.field_42378);
+      Identifier var5 = class_9590.field_48824.method_34878(class_6856.method_31445(var1, "_floor1"), class_1685.method_7582(var1), this.field_42378);
       return ImmutableList.of(var4, var5);
    }
 
-   private List<class_4639> method_38010(class_6414 var1) {
-      class_4639 var4 = class_9590.field_48811.method_34878(class_6856.method_31445(var1, "_side0"), class_1685.method_7555(var1), this.field_42378);
-      class_4639 var5 = class_9590.field_48811.method_34878(class_6856.method_31445(var1, "_side1"), class_1685.method_7582(var1), this.field_42378);
-      class_4639 var6 = class_9590.field_48829.method_34878(class_6856.method_31445(var1, "_side_alt0"), class_1685.method_7555(var1), this.field_42378);
-      class_4639 var7 = class_9590.field_48829.method_34878(class_6856.method_31445(var1, "_side_alt1"), class_1685.method_7582(var1), this.field_42378);
+   private List<Identifier> method_38010(class_6414 var1) {
+      Identifier var4 = class_9590.field_48811.method_34878(class_6856.method_31445(var1, "_side0"), class_1685.method_7555(var1), this.field_42378);
+      Identifier var5 = class_9590.field_48811.method_34878(class_6856.method_31445(var1, "_side1"), class_1685.method_7582(var1), this.field_42378);
+      Identifier var6 = class_9590.field_48829.method_34878(class_6856.method_31445(var1, "_side_alt0"), class_1685.method_7555(var1), this.field_42378);
+      Identifier var7 = class_9590.field_48829.method_34878(class_6856.method_31445(var1, "_side_alt1"), class_1685.method_7582(var1), this.field_42378);
       return ImmutableList.of(var4, var5, var6, var7);
    }
 
-   private List<class_4639> method_38031(class_6414 var1) {
-      class_4639 var4 = class_9590.field_48840.method_34878(class_6856.method_31445(var1, "_up0"), class_1685.method_7555(var1), this.field_42378);
-      class_4639 var5 = class_9590.field_48840.method_34878(class_6856.method_31445(var1, "_up1"), class_1685.method_7582(var1), this.field_42378);
-      class_4639 var6 = class_9590.field_48846.method_34878(class_6856.method_31445(var1, "_up_alt0"), class_1685.method_7555(var1), this.field_42378);
-      class_4639 var7 = class_9590.field_48846.method_34878(class_6856.method_31445(var1, "_up_alt1"), class_1685.method_7582(var1), this.field_42378);
+   private List<Identifier> method_38031(class_6414 var1) {
+      Identifier var4 = class_9590.field_48840.method_34878(class_6856.method_31445(var1, "_up0"), class_1685.method_7555(var1), this.field_42378);
+      Identifier var5 = class_9590.field_48840.method_34878(class_6856.method_31445(var1, "_up1"), class_1685.method_7582(var1), this.field_42378);
+      Identifier var6 = class_9590.field_48846.method_34878(class_6856.method_31445(var1, "_up_alt0"), class_1685.method_7555(var1), this.field_42378);
+      Identifier var7 = class_9590.field_48846.method_34878(class_6856.method_31445(var1, "_up_alt1"), class_1685.method_7582(var1), this.field_42378);
       return ImmutableList.of(var4, var5, var6, var7);
    }
 
-   private static List<class_265> method_37984(List<class_4639> var0, UnaryOperator<class_265> var1) {
+   private static List<class_265> method_37984(List<Identifier> var0, UnaryOperator<class_265> var1) {
       return var0.stream()
          .<class_265>map(var0x -> class_265.method_1150().method_1151(class_1120.field_6404, var0x))
          .<class_265>map(var1)
@@ -2313,8 +2313,8 @@ public class class_8261 {
    }
 
    private void method_38062(class_6414 var1) {
-      class_4639 var4 = class_2109.field_10566.method_11640(var1, this.field_42378);
-      class_4639 var5 = class_2109.field_10570.method_11640(var1, this.field_42378);
+      Identifier var4 = class_2109.field_10566.method_11640(var1, this.field_42378);
+      Identifier var5 = class_2109.field_10570.method_11640(var1, this.field_42378);
       this.method_38060(var1.method_10803());
       this.field_42380.accept(class_6065.method_27776(var1).method_27775(method_37981(class_6023.field_30742, var5, var4)));
    }
@@ -2350,7 +2350,7 @@ public class class_8261 {
    }
 
    private void method_37982() {
-      class_4639 var3 = class_1685.method_7540(class_4783.field_23592);
+      Identifier var3 = class_1685.method_7540(class_4783.field_23592);
       class_1685 var4 = new class_1685()
          .method_7551(class_8940.field_45822, var3)
          .method_7548(class_8940.field_45822, class_8940.field_45832)
@@ -2359,19 +2359,19 @@ public class class_8261 {
       class_265 var5 = class_265.method_1150()
          .method_1151(class_1120.field_6404, class_9590.field_48789.method_34882(class_4783.field_23259, "_snow", var4, this.field_42378));
       this.method_37943(class_4783.field_23259, class_6856.method_31446(class_4783.field_23259), var5);
-      class_4639 var6 = class_2109.field_10580
+      Identifier var6 = class_2109.field_10580
          .method_11639(class_4783.field_23162)
          .method_9874(var1 -> var1.method_7551(class_8940.field_45822, var3))
          .method_9873(class_4783.field_23162, this.field_42378);
       this.method_37943(class_4783.field_23162, var6, var5);
-      class_4639 var7 = class_2109.field_10580
+      Identifier var7 = class_2109.field_10580
          .method_11639(class_4783.field_23201)
          .method_9874(var1 -> var1.method_7551(class_8940.field_45822, var3))
          .method_9873(class_4783.field_23201, this.field_42378);
       this.method_37943(class_4783.field_23201, var7, var5);
    }
 
-   private void method_37943(class_6414 var1, class_4639 var2, class_265 var3) {
+   private void method_37943(class_6414 var1, Identifier var2, class_265 var3) {
       List var6 = Arrays.<class_265>asList(method_38037(var2));
       this.field_42380
          .accept(
@@ -2401,14 +2401,14 @@ public class class_8261 {
 
    private void method_37925(class_6414 var1, class_6414 var2) {
       class_1685 var5 = class_1685.method_7552(var2);
-      class_4639 var6 = class_9590.field_48857.method_34883(var1, var5, this.field_42378);
-      class_4639 var7 = class_9590.field_48818.method_34883(var1, var5, this.field_42378);
+      Identifier var6 = class_9590.field_48857.method_34883(var1, var5, this.field_42378);
+      Identifier var7 = class_9590.field_48818.method_34883(var1, var5, this.field_42378);
       this.field_42380.accept(class_6065.method_27776(var1).method_27775(method_38048(class_6023.field_30758, 1, var7, var6)));
    }
 
    private void method_38007() {
-      class_4639 var3 = class_6856.method_31446(class_4783.field_23698);
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23698, "_side");
+      Identifier var3 = class_6856.method_31446(class_4783.field_23698);
+      Identifier var4 = class_6856.method_31445(class_4783.field_23698, "_side");
       this.method_38060(class_4897.field_25087);
       this.field_42380
          .accept(
@@ -2434,18 +2434,18 @@ public class class_8261 {
    }
 
    private void method_38021(class_6414 var1, class_6414 var2) {
-      class_4639 var5 = class_6856.method_31446(var1);
+      Identifier var5 = class_6856.method_31446(var1);
       this.field_42380.accept(class_6065.method_27778(var2, class_265.method_1150().method_1151(class_1120.field_6404, var5)));
       this.method_37966(var2, var5);
    }
 
    private void method_37939() {
-      class_4639 var3 = class_6856.method_31445(class_4783.field_23817, "_post_ends");
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23817, "_post");
-      class_4639 var5 = class_6856.method_31445(class_4783.field_23817, "_cap");
-      class_4639 var6 = class_6856.method_31445(class_4783.field_23817, "_cap_alt");
-      class_4639 var7 = class_6856.method_31445(class_4783.field_23817, "_side");
-      class_4639 var8 = class_6856.method_31445(class_4783.field_23817, "_side_alt");
+      Identifier var3 = class_6856.method_31445(class_4783.field_23817, "_post_ends");
+      Identifier var4 = class_6856.method_31445(class_4783.field_23817, "_post");
+      Identifier var5 = class_6856.method_31445(class_4783.field_23817, "_cap");
+      Identifier var6 = class_6856.method_31445(class_4783.field_23817, "_cap_alt");
+      Identifier var7 = class_6856.method_31445(class_4783.field_23817, "_side");
+      Identifier var8 = class_6856.method_31445(class_4783.field_23817, "_side_alt");
       this.field_42380
          .accept(
             class_1744.method_7785(class_4783.field_23817)
@@ -2517,8 +2517,8 @@ public class class_8261 {
    }
 
    private void method_38081() {
-      class_4639 var3 = class_6856.method_31446(class_4783.field_23806);
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23806, "_on");
+      Identifier var3 = class_6856.method_31446(class_4783.field_23806);
+      Identifier var4 = class_6856.method_31445(class_4783.field_23806, "_on");
       this.method_37914(class_4783.field_23806);
       this.field_42380
          .accept(
@@ -2602,7 +2602,7 @@ public class class_8261 {
    }
 
    private void method_38008() {
-      class_4639 var3 = class_2109.field_10567.method_11640(class_4783.field_23700, this.field_42378);
+      Identifier var3 = class_2109.field_10567.method_11640(class_4783.field_23700, this.field_42378);
       this.field_42380
          .accept(
             class_6065.method_27777(
@@ -2655,8 +2655,8 @@ public class class_8261 {
    }
 
    private void method_38077() {
-      class_4639 var3 = class_6856.method_31446(class_4783.field_23367);
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23367, "_on");
+      Identifier var3 = class_6856.method_31446(class_4783.field_23367);
+      Identifier var4 = class_6856.method_31445(class_4783.field_23367, "_on");
       this.field_42380
          .accept(class_6065.method_27776(class_4783.field_23367).method_27775(method_37981(class_6023.field_30696, var4, var3)).method_27775(method_37913()));
    }
@@ -2665,23 +2665,23 @@ public class class_8261 {
       class_1685 var3 = new class_1685()
          .method_7551(class_8940.field_45822, class_1685.method_7533(class_4783.field_23649, "_bottom"))
          .method_7551(class_8940.field_45813, class_1685.method_7533(class_4783.field_23649, "_side"));
-      class_4639 var4 = class_1685.method_7533(class_4783.field_23649, "_top_sticky");
-      class_4639 var5 = class_1685.method_7533(class_4783.field_23649, "_top");
+      Identifier var4 = class_1685.method_7533(class_4783.field_23649, "_top_sticky");
+      Identifier var5 = class_1685.method_7533(class_4783.field_23649, "_top");
       class_1685 var6 = var3.method_7531(class_8940.field_45812, var4);
       class_1685 var7 = var3.method_7531(class_8940.field_45812, var5);
-      class_4639 var8 = class_6856.method_31445(class_4783.field_23649, "_base");
+      Identifier var8 = class_6856.method_31445(class_4783.field_23649, "_base");
       this.method_37969(class_4783.field_23649, var8, var7);
       this.method_37969(class_4783.field_23861, var8, var6);
-      class_4639 var9 = class_9590.field_48789
+      Identifier var9 = class_9590.field_48789
          .method_34882(class_4783.field_23649, "_inventory", var3.method_7531(class_8940.field_45810, var5), this.field_42378);
-      class_4639 var10 = class_9590.field_48789
+      Identifier var10 = class_9590.field_48789
          .method_34882(class_4783.field_23861, "_inventory", var3.method_7531(class_8940.field_45810, var4), this.field_42378);
       this.method_37966(class_4783.field_23649, var9);
       this.method_37966(class_4783.field_23861, var10);
    }
 
-   private void method_37969(class_6414 var1, class_4639 var2, class_1685 var3) {
-      class_4639 var6 = class_9590.field_48853.method_34883(var1, var3, this.field_42378);
+   private void method_37969(class_6414 var1, Identifier var2, class_1685 var3) {
+      Identifier var6 = class_9590.field_48853.method_34883(var1, var3, this.field_42378);
       this.field_42380.accept(class_6065.method_27776(var1).method_27775(method_37981(class_6023.field_30672, var2, var6)).method_27775(method_37913()));
    }
 
@@ -2732,15 +2732,15 @@ public class class_8261 {
    }
 
    private void method_37931() {
-      class_4639 var3 = class_6856.method_31445(class_4783.field_23348, "_stable");
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23348, "_unstable");
+      Identifier var3 = class_6856.method_31445(class_4783.field_23348, "_stable");
+      Identifier var4 = class_6856.method_31445(class_4783.field_23348, "_unstable");
       this.method_37966(class_4783.field_23348, var3);
       this.field_42380.accept(class_6065.method_27776(class_4783.field_23348).method_27775(method_37981(class_6023.field_30712, var4, var3)));
    }
 
    private void method_38042() {
-      class_4639 var3 = class_2109.field_10567.method_11640(class_4783.field_23541, this.field_42378);
-      class_4639 var4 = this.method_37910(class_4783.field_23541, "_on", class_9590.field_48833, class_1685::method_7574);
+      Identifier var3 = class_2109.field_10567.method_11640(class_4783.field_23541, this.field_42378);
+      Identifier var4 = this.method_37910(class_4783.field_23541, "_on", class_9590.field_48833, class_1685::method_7574);
       this.field_42380.accept(class_6065.method_27776(class_4783.field_23541).method_27775(method_37981(class_6023.field_30732, var4, var3)));
    }
 
@@ -2761,11 +2761,11 @@ public class class_8261 {
    private void method_37980() {
       class_1685 var3 = class_1685.method_7565(class_4783.field_23834);
       class_1685 var4 = class_1685.method_7584(class_1685.method_7533(class_4783.field_23834, "_off"));
-      class_4639 var5 = class_9590.field_48845.method_34883(class_4783.field_23834, var3, this.field_42378);
-      class_4639 var6 = class_9590.field_48845.method_34882(class_4783.field_23834, "_off", var4, this.field_42378);
+      Identifier var5 = class_9590.field_48845.method_34883(class_4783.field_23834, var3, this.field_42378);
+      Identifier var6 = class_9590.field_48845.method_34882(class_4783.field_23834, "_off", var4, this.field_42378);
       this.field_42380.accept(class_6065.method_27776(class_4783.field_23834).method_27775(method_37981(class_6023.field_30732, var5, var6)));
-      class_4639 var7 = class_9590.field_48859.method_34883(class_4783.field_23366, var3, this.field_42378);
-      class_4639 var8 = class_9590.field_48859.method_34882(class_4783.field_23366, "_off", var4, this.field_42378);
+      Identifier var7 = class_9590.field_48859.method_34883(class_4783.field_23366, var3, this.field_42378);
+      Identifier var8 = class_9590.field_48859.method_34882(class_4783.field_23366, "_off", var4, this.field_42378);
       this.field_42380
          .accept(class_6065.method_27776(class_4783.field_23366).method_27775(method_37981(class_6023.field_30732, var7, var8)).method_27775(method_38034()));
       this.method_37914(class_4783.field_23834);
@@ -2818,7 +2818,7 @@ public class class_8261 {
 
    private void method_37958() {
       class_1685 var3 = class_1685.method_7564(class_4783.field_23552);
-      class_4639 var4 = class_9590.field_48833.method_34883(class_4783.field_23813, var3, this.field_42378);
+      Identifier var4 = class_9590.field_48833.method_34883(class_4783.field_23813, var3, this.field_42378);
       this.field_42380
          .accept(
             class_6065.method_27776(class_4783.field_23552)
@@ -2845,7 +2845,7 @@ public class class_8261 {
    }
 
    private void method_37954() {
-      class_4639 var3 = class_2109.field_10567.method_11640(class_4783.field_23846, this.field_42378);
+      Identifier var3 = class_2109.field_10567.method_11640(class_4783.field_23846, this.field_42378);
       this.method_37966(class_4783.field_23846, var3);
       this.field_42380
          .accept(
@@ -3208,7 +3208,7 @@ public class class_8261 {
          );
    }
 
-   private class_4639 method_37942(int var1, String var2, class_1685 var3) {
+   private Identifier method_37942(int var1, String var2, class_1685 var3) {
       switch (var1) {
          case 1:
             return class_9590.field_48794.method_34878(class_6856.method_31449(var2 + "turtle_egg"), var3, this.field_42378);
@@ -3223,7 +3223,7 @@ public class class_8261 {
       }
    }
 
-   private class_4639 method_37964(Integer var1, Integer var2) {
+   private Identifier method_37964(Integer var1, Integer var2) {
       switch (var2) {
          case 0:
             return this.method_37942(var1, "", class_1685.method_7574(class_1685.method_7540(class_4783.field_23741)));
@@ -3582,8 +3582,8 @@ public class class_8261 {
    }
 
    private void method_38046() {
-      class_4639 var3 = class_6856.method_31446(class_4783.field_23644);
-      class_4639 var4 = class_6856.method_31445(class_4783.field_23644, "_mirrored");
+      Identifier var3 = class_6856.method_31446(class_4783.field_23644);
+      Identifier var4 = class_6856.method_31445(class_4783.field_23644, "_mirrored");
       this.field_42380.accept(method_37968(class_4783.field_23896, var3, var4));
       this.method_37966(class_4783.field_23896, var3);
    }
@@ -3591,15 +3591,15 @@ public class class_8261 {
    private void method_37988(class_6414 var1, class_6414 var2) {
       this.method_37936(var1, class_933.field_4774);
       class_1685 var5 = class_1685.method_7535(class_1685.method_7533(var1, "_pot"));
-      class_4639 var6 = class_933.field_4774.method_4055().method_34883(var2, var5, this.field_42378);
+      Identifier var6 = class_933.field_4774.method_4055().method_34883(var2, var5, this.field_42378);
       this.field_42380.accept(method_38073(var2, var6));
    }
 
    private void method_37986() {
-      class_4639 var3 = class_1685.method_7533(class_4783.field_23807, "_bottom");
-      class_4639 var4 = class_1685.method_7533(class_4783.field_23807, "_top_off");
-      class_4639 var5 = class_1685.method_7533(class_4783.field_23807, "_top");
-      class_4639[] var6 = new class_4639[5];
+      Identifier var3 = class_1685.method_7533(class_4783.field_23807, "_bottom");
+      Identifier var4 = class_1685.method_7533(class_4783.field_23807, "_top_off");
+      Identifier var5 = class_1685.method_7533(class_4783.field_23807, "_top");
+      Identifier[] var6 = new Identifier[5];
 
       for (int var7 = 0; var7 < 5; var7++) {
          class_1685 var8 = new class_1685()
@@ -3654,10 +3654,10 @@ public class class_8261 {
    }
 
    private void method_37967() {
-      class_4639 var3 = class_1685.method_7533(class_4783.field_23319, "_top");
-      class_4639 var4 = class_1685.method_7533(class_4783.field_23319, "_bottom");
-      class_4639 var5 = class_1685.method_7533(class_4783.field_23319, "_side");
-      class_4639 var6 = class_1685.method_7533(class_4783.field_23319, "_lock");
+      Identifier var3 = class_1685.method_7533(class_4783.field_23319, "_top");
+      Identifier var4 = class_1685.method_7533(class_4783.field_23319, "_bottom");
+      Identifier var5 = class_1685.method_7533(class_4783.field_23319, "_side");
+      Identifier var6 = class_1685.method_7533(class_4783.field_23319, "_lock");
       class_1685 var7 = new class_1685()
          .method_7551(class_8940.field_45839, var5)
          .method_7551(class_8940.field_45836, var5)
@@ -3666,7 +3666,7 @@ public class class_8261 {
          .method_7551(class_8940.field_45825, var3)
          .method_7551(class_8940.field_45840, var4)
          .method_7551(class_8940.field_45817, var6);
-      class_4639 var8 = class_9590.field_48866.method_34883(class_4783.field_23319, var7, this.field_42378);
+      Identifier var8 = class_9590.field_48866.method_34883(class_4783.field_23319, var7, this.field_42378);
       this.field_42380
          .accept(
             class_6065.method_27778(class_4783.field_23319, class_265.method_1150().method_1151(class_1120.field_6404, var8))
@@ -4255,8 +4255,8 @@ public class class_8261 {
       this.method_37940(class_4783.field_23585, class_933.field_4774);
       this.method_38060(class_4897.field_24950);
       this.method_37985(class_1685.method_7564(class_4783.field_23644)).method_24632(var1 -> {
-         class_4639 var4 = class_9590.field_48833.method_34883(class_4783.field_23644, var1, this.field_42378);
-         class_4639 var5 = class_9590.field_48781.method_34883(class_4783.field_23644, var1, this.field_42378);
+         Identifier var4 = class_9590.field_48833.method_34883(class_4783.field_23644, var1, this.field_42378);
+         Identifier var5 = class_9590.field_48781.method_34883(class_4783.field_23644, var1, this.field_42378);
          this.field_42380.accept(method_37968(class_4783.field_23644, var4, var5));
          return var4;
       }).method_24635(class_4783.field_23326).method_24628(class_4783.field_23820).method_24634(class_4783.field_23448).method_24638(class_4783.field_23502);

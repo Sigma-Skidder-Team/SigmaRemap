@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_5799 {
    private static final Logger field_29290 = LogManager.getLogger();
-   private final Map<class_4639, class_6561> field_29291 = Maps.newHashMap();
+   private final Map<Identifier, class_6561> field_29291 = Maps.newHashMap();
    private final DataFixer field_29292;
    private class_7832 field_29288;
    private final Path field_29289;
@@ -28,7 +28,7 @@ public class class_5799 {
       this.field_29289 = var2.method_17064(class_263.field_931).normalize();
    }
 
-   public class_6561 method_26279(class_4639 var1) {
+   public class_6561 method_26279(Identifier var1) {
       class_6561 var4 = this.method_26270(var1);
       if (var4 == null) {
          var4 = new class_6561();
@@ -39,7 +39,7 @@ public class class_5799 {
    }
 
    @Nullable
-   public class_6561 method_26270(class_4639 var1) {
+   public class_6561 method_26270(Identifier var1) {
       return this.field_29291.computeIfAbsent(var1, var1x -> {
          class_6561 var4 = this.method_26268(var1x);
          return var4 == null ? this.method_26271(var1x) : var4;
@@ -52,8 +52,8 @@ public class class_5799 {
    }
 
    @Nullable
-   private class_6561 method_26271(class_4639 var1) {
-      class_4639 var4 = new class_4639(var1.method_21461(), "structures/" + var1.method_21456() + ".nbt");
+   private class_6561 method_26271(Identifier var1) {
+      Identifier var4 = new Identifier(var1.method_21461(), "structures/" + var1.method_21456() + ".nbt");
 
       try (class_4038 var5 = this.field_29288.method_35458(var4)) {
          return this.method_26276(var5.method_18576());
@@ -66,7 +66,7 @@ public class class_5799 {
    }
 
    @Nullable
-   private class_6561 method_26268(class_4639 var1) {
+   private class_6561 method_26268(Identifier var1) {
       if (!this.field_29289.toFile().isDirectory()) {
          return null;
       } else {
@@ -98,7 +98,7 @@ public class class_5799 {
       return var4;
    }
 
-   public boolean method_26272(class_4639 var1) {
+   public boolean method_26272(Identifier var1) {
       class_6561 var4 = this.field_29291.get(var1);
       if (var4 == null) {
          return false;
@@ -127,7 +127,7 @@ public class class_5799 {
       }
    }
 
-   public Path method_26274(class_4639 var1, String var2) {
+   public Path method_26274(Identifier var1, String var2) {
       try {
          Path var5 = this.field_29289.resolve(var1.method_21461());
          Path var6 = var5.resolve("structures");
@@ -137,7 +137,7 @@ public class class_5799 {
       }
    }
 
-   private Path method_26273(class_4639 var1, String var2) {
+   private Path method_26273(Identifier var1, String var2) {
       if (!var1.method_21456().contains("//")) {
          Path var5 = this.method_26274(var1, var2);
          if (var5.startsWith(this.field_29289) && class_6494.method_29616(var5) && class_6494.method_29613(var5)) {
@@ -150,7 +150,7 @@ public class class_5799 {
       }
    }
 
-   public void method_26277(class_4639 var1) {
+   public void method_26277(Identifier var1) {
       this.field_29291.remove(var1);
    }
 }

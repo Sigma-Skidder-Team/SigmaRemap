@@ -25,7 +25,7 @@ public class class_9185 extends class_8131 {
    }
 
    private void method_42333(class_5799 var1) {
-      class_6561 var4 = var1.method_26279(new class_4639("end_city/" + this.field_46997));
+      class_6561 var4 = var1.method_26279(new Identifier("end_city/" + this.field_46997));
       class_8478 var5 = (!this.field_46995 ? class_8582.method_39478() : class_8582.method_39472()).method_39047().method_39053(this.field_46996);
       this.method_36998(var4, this.field_41648, var5);
    }

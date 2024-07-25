@@ -16,7 +16,7 @@ public class class_7868 extends class_1859 {
 
    public class_7868(class_7038 var1, String var2, int var3, int var4, int var5, String var6) {
       super(var1, var2, var3 - 125, var4, 250, 330, class_590.field_3421, var6, false);
-      if (this.field_36261 + this.field_36257 <= MinecraftClient.getInstance().field_9602.method_43163()) {
+      if (this.field_36261 + this.field_36257 <= MinecraftClient.getInstance().window.method_43163()) {
          this.field_36261 += 10;
       } else {
          this.field_36261 -= 400;

@@ -139,15 +139,15 @@ public class class_2026 {
          if (this.field_10271 != null) {
             if (this.field_10293.size() != 0) {
                float var3 = 114.0F;
-               float var4 = (float)Math.ceil((double)((float)field_10270.field_9602.method_43166() / var3));
+               float var4 = (float)Math.ceil((double)((float)field_10270.window.method_43166() / var3));
 
                for (int var5 = 0; (float)var5 < var3; var5++) {
                   float var6 = 1.0F - (float)(var5 + 1) / var3;
-                  float var7 = (float)field_10270.field_9602.method_43163() / 1080.0F;
+                  float var7 = (float)field_10270.window.method_43163() / 1080.0F;
                   float var8 = ((float)(Math.sqrt(this.field_10293.get(var5)) / 12.0) - 5.0F) * var7;
                   class_73.method_103(
                      (float)var5 * var4,
-                     (float)field_10270.field_9602.method_43163() - var8,
+                     (float)field_10270.window.method_43163() - var8,
                      var4,
                      var8,
                      class_314.method_1444(class_1255.field_6920.field_6917, 0.2F * var6)
@@ -157,15 +157,15 @@ public class class_2026 {
                class_73.method_107();
 
                for (int var13 = 0; (float)var13 < var3; var13++) {
-                  float var14 = (float)field_10270.field_9602.method_43163() / 1080.0F;
+                  float var14 = (float)field_10270.window.method_43163() / 1080.0F;
                   float var15 = ((float)(Math.sqrt(this.field_10293.get(var13)) / 12.0) - 5.0F) * var14;
-                  class_73.method_103((float)var13 * var4, (float)field_10270.field_9602.method_43163() - var15, var4, var15, class_1255.field_6918.field_6917);
+                  class_73.method_103((float)var13 * var4, (float)field_10270.window.method_43163() - var15, var4, var15, class_1255.field_6918.field_6917);
                }
 
                class_73.method_85(class_3118.field_15505);
                if (this.field_10271 != null && this.field_10292 != null) {
                   class_73.method_97(
-                     0.0F, 0.0F, (float)field_10270.field_9602.method_43166(), (float)field_10270.field_9602.method_43163(), this.field_10292, 0.4F
+                     0.0F, 0.0F, (float)field_10270.window.method_43166(), (float)field_10270.window.method_43163(), this.field_10292, 0.4F
                   );
                }
 
@@ -179,11 +179,11 @@ public class class_2026 {
 
                float var18 = 1.0F + (float)Math.round((float)(var9 / (double)(var16 - 1000)) * 0.14F * 75.0F) / 75.0F;
                GL11.glPushMatrix();
-               GL11.glTranslated(60.0, (double)(field_10270.field_9602.method_43163() - 55), 0.0);
+               GL11.glTranslated(60.0, (double)(field_10270.window.method_43163() - 55), 0.0);
                GL11.glScalef(var18, var18, 0.0F);
-               GL11.glTranslated(-60.0, (double)(-(field_10270.field_9602.method_43163() - 55)), 0.0);
-               class_73.method_96(10.0F, (float)(field_10270.field_9602.method_43163() - 110), 100.0F, 100.0F, this.field_10271);
-               class_73.method_128(10.0F, (float)(field_10270.field_9602.method_43163() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
+               GL11.glTranslated(-60.0, (double)(-(field_10270.window.method_43163() - 55)), 0.0);
+               class_73.method_96(10.0F, (float)(field_10270.window.method_43163() - 110), 100.0F, 100.0F, this.field_10271);
+               class_73.method_128(10.0F, (float)(field_10270.window.method_43163() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
                GL11.glPopMatrix();
                String[] var11 = this.field_10291.split(" - ");
                byte var12 = 30;
@@ -191,14 +191,14 @@ public class class_2026 {
                   class_73.method_87(
                      class_5320.field_27146,
                      130.0F,
-                     (float)(field_10270.field_9602.method_43163() - 70),
+                     (float)(field_10270.window.method_43163() - 70),
                      var11[0],
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.5F)
                   );
                   class_73.method_87(
                      class_5320.field_27139,
                      130.0F,
-                     (float)(field_10270.field_9602.method_43163() - 70),
+                     (float)(field_10270.window.method_43163() - 70),
                      var11[0],
                      class_314.method_1444(class_1255.field_6918.field_6917, 0.7F)
                   );
@@ -206,28 +206,28 @@ public class class_2026 {
                   class_73.method_87(
                      class_5320.field_27149,
                      130.0F,
-                     (float)(field_10270.field_9602.method_43163() - 81),
+                     (float)(field_10270.window.method_43163() - 81),
                      var11[0],
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.4F)
                   );
                   class_73.method_87(
                      class_5320.field_27146,
                      130.0F,
-                     (float)(field_10270.field_9602.method_43163() - 56),
+                     (float)(field_10270.window.method_43163() - 56),
                      var11[1],
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.5F)
                   );
                   class_73.method_87(
                      class_5320.field_27139,
                      130.0F,
-                     (float)(field_10270.field_9602.method_43163() - 56),
+                     (float)(field_10270.window.method_43163() - 56),
                      var11[1],
                      class_314.method_1444(class_1255.field_6918.field_6917, 0.7F)
                   );
                   class_73.method_87(
                      class_5320.field_27161,
                      130.0F,
-                     (float)(field_10270.field_9602.method_43163() - 81),
+                     (float)(field_10270.window.method_43163() - 81),
                      var11[0],
                      class_314.method_1444(class_1255.field_6918.field_6917, 0.6F)
                   );

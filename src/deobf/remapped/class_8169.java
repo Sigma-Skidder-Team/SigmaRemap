@@ -10,11 +10,11 @@ import javax.annotation.Nullable;
 public interface class_8169 extends AutoCloseable {
    InputStream method_37465(String var1) throws IOException;
 
-   InputStream method_37466(class_3168 var1, class_4639 var2) throws IOException;
+   InputStream method_37466(class_3168 var1, Identifier var2) throws IOException;
 
-   Collection<class_4639> method_37464(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5);
+   Collection<Identifier> method_37464(class_3168 var1, String var2, String var3, int var4, Predicate<String> var5);
 
-   boolean method_37467(class_3168 var1, class_4639 var2);
+   boolean method_37467(class_3168 var1, Identifier var2);
 
    Set<String> method_37468(class_3168 var1);
 

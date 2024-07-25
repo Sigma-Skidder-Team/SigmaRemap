@@ -4,20 +4,20 @@ import java.util.Objects;
 import java.util.function.Function;
 
 public class class_2843 {
-   private final class_4639 field_13941;
-   private final class_4639 field_13943;
+   private final Identifier field_13941;
+   private final Identifier field_13943;
    private class_3581 field_13944;
 
-   public class_2843(class_4639 var1, class_4639 var2) {
+   public class_2843(Identifier var1, Identifier var2) {
       this.field_13941 = var1;
       this.field_13943 = var2;
    }
 
-   public class_4639 method_12946() {
+   public Identifier method_12946() {
       return this.field_13941;
    }
 
-   public class_4639 method_12948() {
+   public Identifier method_12948() {
       return this.field_13943;
    }
 
@@ -30,7 +30,7 @@ public class class_2843 {
       return var3;
    }
 
-   public class_3581 method_12945(Function<class_4639, class_3581> var1) {
+   public class_3581 method_12945(Function<Identifier, class_3581> var1) {
       if (this.field_13944 == null) {
          this.field_13944 = (class_3581)var1.apply(this.field_13941);
       }
@@ -38,7 +38,7 @@ public class class_2843 {
       return this.field_13944;
    }
 
-   public class_7907 method_12943(class_2565 var1, Function<class_4639, class_3581> var2) {
+   public class_7907 method_12943(class_2565 var1, Function<Identifier, class_3581> var2) {
       class_5155 var5 = this.method_12947();
       class_3581 var6 = this.method_12945(var2);
       if (var5.field_26528 && var6.method_16717()) {
@@ -48,7 +48,7 @@ public class class_2843 {
       return var5.method_23601(var1.method_11645(var6));
    }
 
-   public class_7907 method_12944(class_2565 var1, Function<class_4639, class_3581> var2, boolean var3) {
+   public class_7907 method_12944(class_2565 var1, Function<Identifier, class_3581> var2, boolean var3) {
       return this.method_12947().method_23601(class_8765.method_40275(var1, this.method_12945(var2), true, var3));
    }
 

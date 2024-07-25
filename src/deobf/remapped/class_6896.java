@@ -31,18 +31,18 @@ public class class_6896 {
    }
 
    public void method_31589(Consumer<class_4219> var1, String var2) {
-      class_4639 var5 = class_8669.field_44382.method_39797(this.field_35462);
-      if (!new class_4639(var2).equals(var5)) {
-         this.method_31590(var1, new class_4639(var2));
+      Identifier var5 = class_8669.field_44382.method_39797(this.field_35462);
+      if (!new Identifier(var2).equals(var5)) {
+         this.method_31590(var1, new Identifier(var2));
       } else {
          throw new IllegalStateException("Single Item Recipe " + var2 + " should remove its 'save' argument");
       }
    }
 
-   public void method_31590(Consumer<class_4219> var1, class_4639 var2) {
+   public void method_31590(Consumer<class_4219> var1, Identifier var2) {
       this.method_31594(var2);
       this.field_35467
-         .method_15260(new class_4639("recipes/root"))
+         .method_15260(new Identifier("recipes/root"))
          .method_15272("has_the_recipe", class_8435.method_38807(var2))
          .method_15258(class_7365.method_33536(var2))
          .method_15271(class_6701.field_34598);
@@ -55,12 +55,12 @@ public class class_6896 {
             this.field_35462,
             this.field_35466,
             this.field_35467,
-            new class_4639(var2.method_21461(), "recipes/" + this.field_35462.method_11226().method_37691() + "/" + var2.method_21456())
+            new Identifier(var2.method_21461(), "recipes/" + this.field_35462.method_11226().method_37691() + "/" + var2.method_21456())
          )
       );
    }
 
-   private void method_31594(class_4639 var1) {
+   private void method_31594(Identifier var1) {
       if (this.field_35467.method_15255().isEmpty()) {
          throw new IllegalStateException("No way of obtaining recipe " + var1);
       }

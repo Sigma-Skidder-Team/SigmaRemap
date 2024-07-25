@@ -62,7 +62,7 @@ public class class_3290 {
 
    private static void method_15093(String var0) {
       try {
-         class_4639 var3 = new class_4639(var0);
+         Identifier var3 = new Identifier(var0);
          InputStream var4 = class_3111.method_14374(var3);
          if (var4 == null) {
             return;
@@ -104,7 +104,7 @@ public class class_3290 {
             }
 
             if (var9 == null) {
-               class_4639 var10 = new class_4639(var8);
+               Identifier var10 = new Identifier(var8);
                InputStream var11 = var0.method_37466(class_3168.field_15844, var10);
                if (var11 == null) {
                   class_3111.method_14317("CustomItems file not found: " + var8);
@@ -210,7 +210,7 @@ public class class_3290 {
       return var3;
    }
 
-   private static Map<String, class_3580> method_15095(class_8169 var0, String var1, class_4639 var2) {
+   private static Map<String, class_3580> method_15095(class_8169 var0, String var1, Identifier var2) {
       HashMap var5 = new HashMap();
       String var6 = var1 + "/";
       String[] var7 = new String[]{"optifine/cit/potion/" + var6, "optifine/cit/Potion/" + var6};
@@ -231,7 +231,7 @@ public class class_3290 {
       return var5;
    }
 
-   private static Properties method_15086(String var0, String var1, class_4639 var2, String var3) {
+   private static Properties method_15086(String var0, String var1, Identifier var2, String var3) {
       if (class_8251.method_37815(var0, new String[]{"_n", "_s"})) {
          return null;
       } else if (var0.equals("empty") && var1.equals("normal")) {
@@ -335,7 +335,7 @@ public class class_3290 {
    private static int method_15085(String var0) {
       String var3 = "effect." + var0;
 
-      for (class_4639 var5 : class_8669.field_44436.method_39805()) {
+      for (Identifier var5 : class_8669.field_44436.method_39805()) {
          if (class_8669.field_44436.method_39814(var5)) {
             class_1425 var6 = class_8669.field_44436.method_39806(var5);
             String var7 = var6.method_6540();
@@ -432,7 +432,7 @@ public class class_3290 {
       var5.add(var0);
    }
 
-   public static class_7373 method_15078(class_6098 var0, class_7373 var1, class_4639 var2, boolean var3) {
+   public static class_7373 method_15078(class_6098 var0, class_7373 var1, Identifier var2, boolean var3) {
       if (!var3 && var1.method_33583()) {
          return var1;
       } else if (field_16293 != null) {
@@ -448,16 +448,16 @@ public class class_3290 {
       }
    }
 
-   public static class_4639 method_15106(class_6098 var0, class_6943 var1, String var2, class_4639 var3) {
+   public static Identifier method_15106(class_6098 var0, class_6943 var1, String var2, Identifier var3) {
       if (field_16293 != null) {
-         class_4639 var6 = method_15097(var0, var1, var2);
+         Identifier var6 = method_15097(var0, var1, var2);
          return var6 != null ? var6 : var3;
       } else {
          return var3;
       }
    }
 
-   private static class_4639 method_15097(class_6098 var0, class_6943 var1, String var2) {
+   private static Identifier method_15097(class_6098 var0, class_6943 var1, String var2) {
       class_3580 var5 = method_15069(var0, 3);
       if (var5 != null) {
          if (var5.field_17514 != null) {
@@ -477,7 +477,7 @@ public class class_3290 {
                }
 
                String var11 = var10.toString();
-               class_4639 var12 = (class_4639)var5.field_17514.get(var11);
+               Identifier var12 = (Identifier)var5.field_17514.get(var11);
                return var12 != null ? var12 : var5.field_17524;
             } else {
                return null;
@@ -490,7 +490,7 @@ public class class_3290 {
       }
    }
 
-   public static class_4639 method_15089(class_6098 var0, class_4639 var1) {
+   public static Identifier method_15089(class_6098 var0, Identifier var1) {
       if (field_16293 != null) {
          class_3580 var4 = method_15069(var0, 4);
          if (var4 != null) {
@@ -729,7 +729,7 @@ public class class_3290 {
          } else {
             HashSet var6 = null;
             boolean var7 = false;
-            class_7889 var8 = class_3111.method_14266();
+            TextureManager var8 = class_3111.method_14266();
 
             for (int var9 = 0; var9 < var5.length; var9++) {
                int var10 = var5[var9][0];
@@ -799,7 +799,7 @@ public class class_3290 {
          } else {
             HashSet var13 = null;
             boolean var14 = false;
-            class_7889 var15 = class_3111.method_14266();
+            TextureManager var15 = class_3111.method_14266();
 
             for (int var16 = 0; var16 < var12.length; var16++) {
                int var17 = var12[var16][0];

@@ -19,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_5180 extends class_2840<class_192> {
    private static final Logger field_26661 = LogManager.getLogger();
-   private static final class_4639 field_26664 = new class_4639("gpu_warnlist.json");
+   private static final Identifier field_26664 = new Identifier("gpu_warnlist.json");
    private ImmutableMap<String, String> field_26662 = ImmutableMap.of();
    private boolean field_26659;
    private boolean field_26663;

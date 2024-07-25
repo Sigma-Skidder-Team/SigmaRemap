@@ -7,7 +7,7 @@ import com.google.gson.JsonSerializationContext;
 public class class_1228 extends class_7746<class_3399> {
    public void method_5471(JsonObject var1, class_3399 var2, JsonSerializationContext var3) {
       super.method_35073(var1, var2, var3);
-      class_4639 var6 = class_8669.field_44382.method_39797(class_3399.method_15700(var2));
+      Identifier var6 = class_8669.field_44382.method_39797(class_3399.method_15700(var2));
       if (var6 != null) {
          var1.addProperty("name", var6.toString());
       } else {

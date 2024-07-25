@@ -13,18 +13,18 @@ import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$class_48;
 
 public class class_87 extends class_495 {
-   private final class_4639 field_165;
+   private final Identifier field_165;
    private final Set<UUID> field_162 = Sets.newHashSet();
    private int field_163;
    private int field_164 = 100;
 
-   public class_87(class_4639 var1, ITextComponent var2) {
+   public class_87(Identifier var1, ITextComponent var2) {
       super(var2, class_1062.field_5823, class_2976.field_14631);
       this.field_165 = var1;
       this.method_43459(0.0F);
    }
 
-   public class_4639 method_216() {
+   public Identifier method_216() {
       return this.field_165;
    }
 
@@ -150,7 +150,7 @@ public class class_87 extends class_495 {
       return var3;
    }
 
-   public static class_87 method_220(class_5734 var0, class_4639 var1) {
+   public static class_87 method_220(class_5734 var0, Identifier var1) {
       class_87 var4 = new class_87(var1, ITextComponent$class_40.func_240643_a_(var0.method_25965("Name")));
       var4.method_2404(var0.method_25933("Visible"));
       var4.method_212(var0.method_25947("Value"));

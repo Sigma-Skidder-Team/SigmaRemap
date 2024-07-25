@@ -43,7 +43,7 @@ public class class_7711 extends class_7186 {
       this.method_32923();
    }
 
-   public Stream<class_4639> method_34897(String var1) {
-      return this.field_39117.keySet().stream().<class_4639>map(var1x -> new class_4639(var1, var1x));
+   public Stream<Identifier> method_34897(String var1) {
+      return this.field_39117.keySet().stream().<Identifier>map(var1x -> new Identifier(var1, var1x));
    }
 }

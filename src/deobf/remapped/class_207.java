@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_207 extends class_266 {
-   private static final class_4639 field_693 = new class_4639("textures/gui/demo_background.png");
+   private static final Identifier field_693 = new Identifier("textures/gui/demo_background.png");
    private class_416 field_692 = class_416.field_1766;
    private class_416 field_694 = class_416.field_1766;
 

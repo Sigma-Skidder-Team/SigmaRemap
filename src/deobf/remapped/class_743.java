@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_743 extends class_7164<class_8127, class_7946<class_8127>> {
-   private static final class_4639 field_4046 = new class_4639("textures/entity/iron_golem/iron_golem.png");
+   private static final Identifier field_4046 = new Identifier("textures/entity/iron_golem/iron_golem.png");
 
    public class_743(class_6122 var1) {
       super(var1, new class_7946<class_8127>(), 0.7F);
@@ -9,7 +9,7 @@ public class class_743 extends class_7164<class_8127, class_7946<class_8127>> {
       this.method_29100(new class_2322(this));
    }
 
-   public class_4639 method_3373(class_8127 var1) {
+   public Identifier method_3373(class_8127 var1) {
       return field_4046;
    }
 

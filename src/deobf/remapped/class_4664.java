@@ -5,11 +5,11 @@ import java.util.Random;
 public class class_4664 extends class_8131 {
    private final class_4161 field_22747;
    private final float field_22749;
-   private final class_4639 field_22750;
+   private final Identifier field_22750;
    private final class_6631 field_22745;
    private final boolean field_22748;
 
-   public class_4664(class_5799 var1, class_4639 var2, class_1331 var3, class_6631 var4, float var5, class_4161 var6, boolean var7) {
+   public class_4664(class_5799 var1, Identifier var2, class_1331 var3, class_6631 var4, float var5, class_4161 var6, boolean var7) {
       super(class_2746.field_13429, 0);
       this.field_22750 = var2;
       this.field_41648 = var3;
@@ -22,7 +22,7 @@ public class class_4664 extends class_8131 {
 
    public class_4664(class_5799 var1, class_5734 var2) {
       super(class_2746.field_13429, var2);
-      this.field_22750 = new class_4639(var2.method_25965("Template"));
+      this.field_22750 = new Identifier(var2.method_25965("Template"));
       this.field_22745 = class_6631.valueOf(var2.method_25965("Rot"));
       this.field_22749 = var2.method_25955("Integrity");
       this.field_22747 = class_4161.valueOf(var2.method_25965("BiomeType"));

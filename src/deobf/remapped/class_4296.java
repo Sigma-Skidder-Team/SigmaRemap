@@ -66,7 +66,7 @@ public class class_4296 {
       }
 
       class_9514[] var16 = var12.<class_9514>toArray(new class_9514[var12.size()]);
-      class_4639 var17 = null;
+      Identifier var17 = null;
       if (var7 != null) {
          var17 = method_19951(var6, var7, ".png");
       }
@@ -89,7 +89,7 @@ public class class_4296 {
    private static void method_19955(JsonObject var0, Map var1, String var2) {
       String var5 = class_9235.method_42595(var0, "model");
       if (var5 != null) {
-         class_4639 var6 = method_19951(var2, var5, ".jpm");
+         Identifier var6 = method_19951(var2, var5, ".jpm");
 
          try {
             JsonObject var7 = method_19954(var6);
@@ -117,7 +117,7 @@ public class class_4296 {
       }
    }
 
-   public static class_4639 method_19951(String var0, String var1, String var2) {
+   public static Identifier method_19951(String var0, String var1, String var2) {
       if (!var1.endsWith(var2)) {
          var1 = var1 + var2;
       }
@@ -134,7 +134,7 @@ public class class_4296 {
          var1 = var0 + "/" + var1;
       }
 
-      return new class_4639(var1);
+      return new Identifier(var1);
    }
 
    private static void method_19950(JsonObject var0, Map var1) {
@@ -194,7 +194,7 @@ public class class_4296 {
       }
    }
 
-   public static JsonObject method_19954(class_4639 var0) throws IOException, JsonParseException {
+   public static JsonObject method_19954(Identifier var0) throws IOException, JsonParseException {
       InputStream var3 = class_3111.method_14374(var0);
       if (var3 != null) {
          String var4 = class_3111.method_14271(var3, "ASCII");

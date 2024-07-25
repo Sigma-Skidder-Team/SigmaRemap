@@ -15,17 +15,17 @@ public class class_602 {
    private final List<class_2729> field_3454 = Lists.newArrayList();
    private final List<class_7373> field_3458;
    private class_2469 field_3457;
-   public static class_4639 field_3456 = null;
+   public static Identifier field_3456 = null;
 
    private class_602() {
       this.field_3458 = Collections.<class_7373>emptyList();
    }
 
-   public class_602(class_6560 var1, class_9403 var2, Function<class_4639, class_2053> var3, List<class_2729> var4) {
+   public class_602(class_6560 var1, class_9403 var2, Function<Identifier, class_2053> var3, List<class_2729> var4) {
       this(var1, var2, var3, var1.method_29943()::method_31568, var4);
    }
 
-   public class_602(class_6560 var1, class_2053 var2, Function<class_4639, class_2053> var3, Function<class_2843, class_5155> var4, List<class_2729> var5) {
+   public class_602(class_6560 var1, class_2053 var2, Function<Identifier, class_2053> var3, Function<class_2843, class_5155> var4, List<class_2729> var5) {
       this.field_3458 = var5.stream().<class_7373>map(var4x -> {
          class_2053 var7 = (class_2053)var3.apply(var4x.method_12263());
          return !Objects.equals(var7, var2) ? var1.method_29949(var4x.method_12263(), class_7507.field_38322, var4) : null;

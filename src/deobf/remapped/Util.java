@@ -63,7 +63,7 @@ public class Util {
       return var0.method_23110((T)var1);
    }
 
-   public static String createTranslationKey(String var0, class_4639 var1) {
+   public static String createTranslationKey(String var0, Identifier var1) {
       return var1 != null ? var0 + '.' + var1.method_21461() + '.' + var1.method_21456().replace('/', '.') : var0 + ".unregistered_sadface";
    }
 

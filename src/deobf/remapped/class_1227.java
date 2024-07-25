@@ -3,7 +3,7 @@ package remapped;
 import java.util.List;
 
 public class class_1227 extends class_2255<class_1100> {
-   public static final class_4639 field_6790 = new class_4639("textures/entity/beacon_beam.png");
+   public static final Identifier field_6790 = new Identifier("textures/entity/beacon_beam.png");
 
    public class_1227(class_3569 var1) {
       super(var1);
@@ -26,7 +26,7 @@ public class class_1227 extends class_2255<class_1100> {
    }
 
    public static void method_5466(
-      class_7966 var0, class_2565 var1, class_4639 var2, float var3, float var4, long var5, int var7, int var8, float[] var9, float var10, float var11
+           class_7966 var0, class_2565 var1, Identifier var2, float var3, float var4, long var5, int var7, int var8, float[] var9, float var10, float var11
    ) {
       int var14 = var7 + var8;
       var0.method_36063();

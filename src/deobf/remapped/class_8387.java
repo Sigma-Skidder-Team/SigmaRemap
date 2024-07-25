@@ -3,7 +3,7 @@ package remapped;
 import net.minecraft.util.text.ITextComponent;
 
 public class class_8387 extends class_7430 {
-   private static final class_4639 field_42906 = new class_4639("textures/gui/checkbox.png");
+   private static final Identifier field_42906 = new Identifier("textures/gui/checkbox.png");
    private boolean field_42907;
    private final boolean field_42905;
 

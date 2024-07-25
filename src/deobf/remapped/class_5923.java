@@ -1,15 +1,15 @@
 package remapped;
 
 public abstract class class_5923<T, C extends class_7803<T>> {
-   private final class_4639 field_30051;
+   private final Identifier field_30051;
    private final Class<?> field_30050;
 
-   public class_5923(class_4639 var1, Class<?> var2) {
+   public class_5923(Identifier var1, Class<?> var2) {
       this.field_30051 = var1;
       this.field_30050 = var2;
    }
 
-   public class_4639 method_27097() {
+   public Identifier method_27097() {
       return this.field_30051;
    }
 

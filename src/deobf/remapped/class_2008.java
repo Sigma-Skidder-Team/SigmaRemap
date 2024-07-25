@@ -3,7 +3,7 @@ package remapped;
 import com.google.common.collect.Lists;
 
 public final class class_2008 extends class_5155 {
-   private static final class_4639 field_10189 = new class_4639("missingno");
+   private static final Identifier field_10189 = new Identifier("missingno");
    private static class_7884 field_10188;
    private static final class_3642<class_5797> field_10190 = new class_3642<class_5797>(() -> {
       class_5797 var2 = new class_5797(16, 16, false);
@@ -37,7 +37,7 @@ public final class class_2008 extends class_5155 {
       return new class_2008(var0, var1, var2, var3, var4, var5);
    }
 
-   public static class_4639 method_9327() {
+   public static Identifier method_9327() {
       return field_10189;
    }
 

@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 
 public class class_2858<T> implements class_3065<T> {
    public final Predicate<T> field_14002;
-   private final Function<T, class_4639> field_13998;
+   private final Function<T, Identifier> field_13998;
    private final Set<class_4110<T>> field_14001 = Sets.newHashSet();
    private final TreeSet<class_4110<T>> field_14000 = Sets.newTreeSet(class_4110.method_19094());
    private final class_6331 field_13997;
@@ -25,7 +25,7 @@ public class class_2858<T> implements class_3065<T> {
    private final List<class_4110<T>> field_14003 = Lists.newArrayList();
    private final Consumer<class_4110<T>> field_13995;
 
-   public class_2858(class_6331 var1, Predicate<T> var2, Function<T, class_4639> var3, Consumer<class_4110<T>> var4) {
+   public class_2858(class_6331 var1, Predicate<T> var2, Function<T, Identifier> var3, Consumer<class_4110<T>> var4) {
       this.field_14002 = var2;
       this.field_13998 = var3;
       this.field_13997 = var1;
@@ -152,12 +152,12 @@ public class class_2858<T> implements class_3065<T> {
       return method_13090(this.field_13998, var4, this.field_13997.method_29546());
    }
 
-   private static <T> class_3416 method_13090(Function<T, class_4639> var0, Iterable<class_4110<T>> var1, long var2) {
+   private static <T> class_3416 method_13090(Function<T, Identifier> var0, Iterable<class_4110<T>> var1, long var2) {
       class_3416 var6 = new class_3416();
 
       for (class_4110 var8 : var1) {
          class_5734 var9 = new class_5734();
-         var9.method_25941("i", ((class_4639)var0.apply(var8.method_19096())).toString());
+         var9.method_25941("i", ((Identifier)var0.apply(var8.method_19096())).toString());
          var9.method_25931("x", var8.field_20034.method_12173());
          var9.method_25931("y", var8.field_20034.method_12165());
          var9.method_25931("z", var8.field_20034.method_12185());

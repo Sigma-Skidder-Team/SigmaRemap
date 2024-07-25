@@ -94,7 +94,7 @@ public class class_1957 extends class_7067<class_91> {
       super.method_32551(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_9055(class_91 var1) {
+   public Identifier method_9055(class_91 var1) {
       return class_8359.field_42824;
    }
 

@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_8317 extends class_7164<class_9490, class_7236<class_9490>> {
-   private static final class_4639 field_42610 = new class_4639("textures/entity/creeper/creeper.png");
+   private static final Identifier field_42610 = new Identifier("textures/entity/creeper/creeper.png");
 
    public class_8317(class_6122 var1) {
       super(var1, new class_7236<class_9490>(), 0.5F);
@@ -24,7 +24,7 @@ public class class_8317 extends class_7164<class_9490, class_7236<class_9490>> {
       return (int)(var5 * 10.0F) % 2 != 0 ? class_9299.method_42828(var5, 0.5F, 1.0F) : 0.0F;
    }
 
-   public class_4639 method_38347(class_9490 var1) {
+   public Identifier method_38347(class_9490 var1) {
       return field_42610;
    }
 }

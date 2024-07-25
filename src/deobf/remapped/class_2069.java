@@ -8,7 +8,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_2069 extends class_7114 {
-   private static final class_4639 field_10438 = new class_4639("textures/gui/recipe_book.png");
+   private static final Identifier field_10438 = new Identifier("textures/gui/recipe_book.png");
    private static final ITextComponent field_10441 = new TranslationTextComponent("gui.recipebook.moreRecipes");
    private class_3954<?> field_10434;
    private class_1147 field_10435;

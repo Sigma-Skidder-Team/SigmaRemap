@@ -2,10 +2,10 @@ package remapped;
 
 public class class_4551<T extends class_8145 & class_9378, M extends class_6521<T>> extends class_4171<T, M> {
    private static String[] field_22187;
-   private final class_4639 field_22189;
+   private final Identifier field_22189;
    private final M field_22188;
 
-   public class_4551(class_2514<T, M> var1, M var2, class_4639 var3) {
+   public class_4551(class_2514<T, M> var1, M var2, Identifier var3) {
       super(var1);
       this.field_22188 = (M)var2;
       this.field_22189 = var3;

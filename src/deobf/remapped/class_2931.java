@@ -18,12 +18,12 @@ import org.apache.commons.lang3.mutable.MutableInt;
 public class class_2931 {
    public static int method_13423(class_4382 var0, class_6098 var1) {
       if (!var1.method_28022()) {
-         class_4639 var4 = class_8669.field_44445.method_39797(var0);
+         Identifier var4 = class_8669.field_44445.method_39797(var0);
          class_3416 var5 = var1.method_27983();
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
             class_5734 var7 = var5.method_15764(var6);
-            class_4639 var8 = class_4639.method_21455(var7.method_25965("id"));
+            Identifier var8 = Identifier.method_21455(var7.method_25965("id"));
             if (var8 != null && var8.equals(var4)) {
                return class_9299.method_42829(var7.method_25947("lvl"), 0, 255);
             }
@@ -45,7 +45,7 @@ public class class_2931 {
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
          class_5734 var5 = var0.method_15764(var4);
-         class_8669.field_44445.method_39794(class_4639.method_21455(var5.method_25965("id"))).ifPresent(var2 -> {
+         class_8669.field_44445.method_39794(Identifier.method_21455(var5.method_25965("id"))).ifPresent(var2 -> {
             Integer var5x = var3.put(var2, var5.method_25947("lvl"));
          });
       }
@@ -86,7 +86,7 @@ public class class_2931 {
          for (int var5 = 0; var5 < var4.size(); var5++) {
             String var6 = var4.method_15764(var5).method_25965("id");
             int var7 = var4.method_15764(var5).method_25947("lvl");
-            class_8669.field_44445.method_39794(class_4639.method_21455(var6)).ifPresent(var2 -> var0.method_22120(var2, var7));
+            class_8669.field_44445.method_39794(Identifier.method_21455(var6)).ifPresent(var2 -> var0.method_22120(var2, var7));
          }
       }
    }

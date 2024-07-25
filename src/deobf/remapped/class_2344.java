@@ -25,7 +25,7 @@ public class class_2344<T extends class_5834> extends class_1498<T> implements c
       this(class_3581::method_16755, var1, var2, var3, var4);
    }
 
-   public class_2344(Function<class_4639, class_3581> var1, float var2, float var3, int var4, int var5) {
+   public class_2344(Function<Identifier, class_3581> var1, float var2, float var3, int var4, int var5) {
       super(var1, true, 16.0F, 0.0F, 2.0F, 2.0F, 24.0F);
       this.field_49928 = var4;
       this.field_49927 = var5;

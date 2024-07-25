@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_2401<T extends class_5834> extends class_4171<T, class_3169<T>> {
-   public static final class_4639 field_11975 = new class_4639("textures/entity/trident_riptide.png");
+   public static final Identifier field_11975 = new Identifier("textures/entity/trident_riptide.png");
    private final class_1549 field_11974 = new class_1549(64, 64, 0, 0);
 
    public class_2401(class_2514<T, class_3169<T>> var1) {

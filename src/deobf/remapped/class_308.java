@@ -41,8 +41,8 @@ public class class_308 {
    }
 
    public void method_1368(Consumer<class_4219> var1, String var2) {
-      class_4639 var5 = class_8669.field_44382.method_39797(this.field_1130);
-      class_4639 var6 = new class_4639(var2);
+      Identifier var5 = class_8669.field_44382.method_39797(this.field_1130);
+      Identifier var6 = new Identifier(var2);
       if (!var6.equals(var5)) {
          this.method_1369(var1, var6);
       } else {
@@ -50,10 +50,10 @@ public class class_308 {
       }
    }
 
-   public void method_1369(Consumer<class_4219> var1, class_4639 var2) {
+   public void method_1369(Consumer<class_4219> var1, Identifier var2) {
       this.method_1372(var2);
       this.field_1133
-         .method_15260(new class_4639("recipes/root"))
+         .method_15260(new Identifier("recipes/root"))
          .method_15272("has_the_recipe", class_8435.method_38807(var2))
          .method_15258(class_7365.method_33536(var2))
          .method_15271(class_6701.field_34598);
@@ -66,13 +66,13 @@ public class class_308 {
             this.field_1132,
             this.field_1131,
             this.field_1133,
-            new class_4639(var2.method_21461(), "recipes/" + this.field_1130.method_11226().method_37691() + "/" + var2.method_21456()),
+            new Identifier(var2.method_21461(), "recipes/" + this.field_1130.method_11226().method_37691() + "/" + var2.method_21456()),
             (class_2994<? extends class_3151>)this.field_1128
          )
       );
    }
 
-   private void method_1372(class_4639 var1) {
+   private void method_1372(Identifier var1) {
       if (this.field_1133.method_15255().isEmpty()) {
          throw new IllegalStateException("No way of obtaining recipe " + var1);
       }

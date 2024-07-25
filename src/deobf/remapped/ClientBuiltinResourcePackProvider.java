@@ -201,7 +201,7 @@ public class ClientBuiltinResourcePackProvider implements class_3026 {
    @Nullable
    private class_5522 method_25062(class_7953 var1) {
       class_5522 var4 = null;
-      File var5 = this.field_28114.method_23900(new class_4639("resourcepacks/programmer_art.zip"));
+      File var5 = this.field_28114.method_23900(new Identifier("resourcepacks/programmer_art.zip"));
       if (var5 != null && var5.isFile()) {
          var4 = method_25057(var1, () -> method_25061(var5));
       }

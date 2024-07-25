@@ -32,8 +32,8 @@ public class class_9717 implements Runnable {
                   "alts",
                   0,
                   114,
-                  (int)((float) MinecraftClient.getInstance().field_9602.method_43166() * class_2113.method_9905(this.field_49398)) - 4,
-                  MinecraftClient.getInstance().field_9602.method_43163() - 119 - class_2113.method_9894(this.field_49398)
+                  (int)((float) MinecraftClient.getInstance().window.method_43166() * class_2113.method_9905(this.field_49398)) - 4,
+                  MinecraftClient.getInstance().window.method_43163() - 119 - class_2113.method_9894(this.field_49398)
                )
             )
          );

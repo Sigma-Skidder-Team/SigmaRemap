@@ -10,7 +10,7 @@ public class class_7686 implements class_4038 {
    }
 
    @Override
-   public class_4639 method_18578() {
+   public Identifier method_18578() {
       return null;
    }
 

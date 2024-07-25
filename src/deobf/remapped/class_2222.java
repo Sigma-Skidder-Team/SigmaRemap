@@ -27,19 +27,19 @@ public class class_2222 implements ArgumentType<class_9638> {
    public class_9638 parse(StringReader var1) throws CommandSyntaxException {
       if (var1.canRead() && var1.peek() == '#') {
          var1.skip();
-         class_4639 var5 = class_4639.method_21464(var1);
+         Identifier var5 = Identifier.method_21464(var1);
          return new class_1854(this, var5);
       } else {
-         class_4639 var4 = class_4639.method_21464(var1);
+         Identifier var4 = Identifier.method_21464(var1);
          return new class_5835(this, var4);
       }
    }
 
-   private static class_2581 method_10259(CommandContext<class_9155> var0, class_4639 var1) throws CommandSyntaxException {
+   private static class_2581 method_10259(CommandContext<class_9155> var0, Identifier var1) throws CommandSyntaxException {
       return ((class_9155)var0.getSource()).method_42177().method_1642().method_7252(var1).orElseThrow(() -> field_11108.create(var1.toString()));
    }
 
-   private static class_2307<class_2581> method_10257(CommandContext<class_9155> var0, class_4639 var1) throws CommandSyntaxException {
+   private static class_2307<class_2581> method_10257(CommandContext<class_9155> var0, Identifier var1) throws CommandSyntaxException {
       class_2307 var4 = ((class_9155)var0.getSource()).method_42177().method_1642().method_7249(var1);
       if (var4 != null) {
          return var4;
@@ -52,7 +52,7 @@ public class class_2222 implements ArgumentType<class_9638> {
       return ((class_9638)var0.getArgument(var1, class_9638.class)).method_44495(var0);
    }
 
-   public static Pair<class_4639, Either<class_2581, class_2307<class_2581>>> method_10258(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+   public static Pair<Identifier, Either<class_2581, class_2307<class_2581>>> method_10258(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
       return ((class_9638)var0.getArgument(var1, class_9638.class)).method_44494(var0);
    }
 

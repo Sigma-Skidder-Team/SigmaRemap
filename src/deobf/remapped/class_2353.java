@@ -19,7 +19,7 @@ public abstract class class_2353 {
    public final float field_11825;
    public final boolean field_11823;
    public final class_3073 field_11821;
-   public class_4639 field_11815;
+   public Identifier field_11815;
 
    public class_2353(class_3073 var1) {
       this.field_11820 = class_3073.method_14064(var1);
@@ -147,7 +147,7 @@ public abstract class class_2353 {
 
    @Deprecated
    public List<class_6098> method_10796(class_2522 var1, class_8480 var2) {
-      class_4639 var5 = this.method_10786();
+      Identifier var5 = this.method_10786();
       if (var5 != class_5931.field_30157) {
          class_2792 var6 = var2.method_39065(class_8712.field_44677, var1).method_39064(class_4933.field_25572);
          class_6331 var7 = var6.method_12694();
@@ -269,10 +269,10 @@ public abstract class class_2353 {
       return this instanceof class_724;
    }
 
-   public final class_4639 method_10786() {
+   public final Identifier method_10786() {
       if (this.field_11815 == null) {
-         class_4639 var3 = class_8669.field_44462.method_39797(this.method_10792());
-         this.field_11815 = new class_4639(var3.method_21461(), "blocks/" + var3.method_21456());
+         Identifier var3 = class_8669.field_44462.method_39797(this.method_10792());
+         this.field_11815 = new Identifier(var3.method_21461(), "blocks/" + var3.method_21456());
       }
 
       return this.field_11815;

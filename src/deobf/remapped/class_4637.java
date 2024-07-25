@@ -15,7 +15,7 @@ public class class_4637 extends class_3720 {
                class_4382 var6 = null;
                class_6098 var7 = field_18219.field_9632.method_26446().method_27973();
 
-               for (class_4639 var9 : class_8669.field_44445.method_39805()) {
+               for (Identifier var9 : class_8669.field_44445.method_39805()) {
                   if (var2[0].method_24060().equals(var9.method_21456())) {
                      var6 = class_8669.field_44445.method_39806(var9);
                   }

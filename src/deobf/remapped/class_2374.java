@@ -10,7 +10,7 @@ import net.minecraft.util.text.StringTextComponent;
 public class class_2374 implements class_7912 {
    private static String[] field_11874;
    private final GameProfile field_11877;
-   private final class_4639 field_11876;
+   private final Identifier field_11876;
    private final StringTextComponent field_11875;
 
    public class_2374(GameProfile var1) {

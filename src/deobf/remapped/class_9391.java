@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_9391 extends class_7164<class_3845, class_7677<class_3845>> {
-   private static final class_4639 field_47992 = new class_4639("textures/entity/turtle/big_sea_turtle.png");
+   private static final Identifier field_47992 = new Identifier("textures/entity/turtle/big_sea_turtle.png");
 
    public class_9391(class_6122 var1) {
       super(var1, new class_7677<class_3845>(0.0F), 0.7F);
@@ -15,7 +15,7 @@ public class class_9391 extends class_7164<class_3845, class_7677<class_3845>> {
       super.method_32866(var1, var2, var3, var4, var5, var6);
    }
 
-   public class_4639 method_43445(class_3845 var1) {
+   public Identifier method_43445(class_3845 var1) {
       return field_47992;
    }
 }

@@ -32,7 +32,7 @@ public class class_8347 extends class_7157 {
    });
    private static final class_8137 field_42751 = class_8137.method_37019(class_4897.field_24581);
 
-   public class_8347(class_4639 var1) {
+   public class_8347(Identifier var1) {
       super(var1);
    }
 

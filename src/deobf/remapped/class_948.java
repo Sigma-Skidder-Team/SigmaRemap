@@ -337,7 +337,7 @@ public class class_948 implements class_1243 {
    public void method_5579(class_3906 var1) {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (var1.method_18087() == class_4756.field_23031) {
-         class_4639 var4 = var1.method_18085();
+         Identifier var4 = var1.method_18085();
          class_3139 var5 = this.field_4877.method_1703().method_40818(var4);
          if (var5 != null) {
             this.field_4880.method_43253().method_15406(var5);

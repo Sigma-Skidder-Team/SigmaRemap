@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class class_8480 {
    private final class_6331 field_43453;
    private final Map<class_9791<?>, Object> field_43455 = Maps.newIdentityHashMap();
-   private final Map<class_4639, class_7006> field_43456 = Maps.newHashMap();
+   private final Map<Identifier, class_7006> field_43456 = Maps.newHashMap();
    private Random field_43451;
    private float field_43454;
 
@@ -61,7 +61,7 @@ public class class_8480 {
       return this;
    }
 
-   public class_8480 method_39066(class_4639 var1, class_7006 var2) {
+   public class_8480 method_39066(Identifier var1, class_7006 var2) {
       class_7006 var5 = this.field_43456.put(var1, var2);
       if (var5 == null) {
          return this;

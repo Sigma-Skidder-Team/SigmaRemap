@@ -177,7 +177,7 @@ public final class class_4338 {
       if (!var0.method_25939("Name", 8)) {
          return class_4783.field_23184.method_29260();
       } else {
-         class_6414 var3 = class_8669.field_44462.method_39806(new class_4639(var0.method_25965("Name")));
+         class_6414 var3 = class_8669.field_44462.method_39806(new Identifier(var0.method_25965("Name")));
          class_2522 var4 = var3.method_29260();
          if (var0.method_25939("Properties", 10)) {
             class_5734 var5 = var0.method_25937("Properties");

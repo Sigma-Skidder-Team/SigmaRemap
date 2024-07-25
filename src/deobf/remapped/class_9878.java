@@ -13,7 +13,7 @@ public class class_9878 extends class_6535<class_6396> {
    private static final Logger field_49939 = LogManager.getLogger();
    private final Stopwatch field_49938 = Stopwatch.createUnstarted();
 
-   public class_9878(class_7832 var1, List<class_2231> var2, Executor var3, Executor var4, CompletableFuture<class_3256> var5) {
+   public class_9878(class_7832 var1, List<class_2231> var2, Executor var3, Executor var4, CompletableFuture<Unit> var5) {
       super(
          var3,
          var4,

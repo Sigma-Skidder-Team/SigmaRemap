@@ -40,7 +40,7 @@ public class class_1723 extends class_1859 {
 
          for (class_2451 var13 : method_7720(var5, var1)) {
             if (var13 != class_4897.field_25302 && (!this.field_8899 || var13 instanceof class_6201)) {
-               class_4639 var8 = class_8669.field_44382.method_39797(var13);
+               Identifier var8 = class_8669.field_44382.method_39797(var13);
                String var9;
                if (var13 instanceof class_6201 && var8.method_21456().equals("air")) {
                   var9 = class_8669.field_44462.method_39797(((class_6201)var13).method_28392()).toString();

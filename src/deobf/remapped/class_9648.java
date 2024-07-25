@@ -33,7 +33,7 @@ public class class_9648 extends LanguageMap {
 
          for (String var10 : var0.method_35455()) {
             try {
-               class_4639 var11 = new class_4639(var10, var8);
+               Identifier var11 = new Identifier(var10, var8);
                method_44524(var0.method_35457(var11), var4);
                class_3458.method_15909(var0, var7.getCode(), var4);
             } catch (FileNotFoundException var12) {

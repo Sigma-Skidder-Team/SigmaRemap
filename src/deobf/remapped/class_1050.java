@@ -3,7 +3,7 @@ package remapped;
 public abstract class class_1050 implements class_3560 {
    public class_2049 field_5770;
    public final class_562 field_5772;
-   public final class_4639 field_5771;
+   public final Identifier field_5771;
    public float field_5766 = 1.0F;
    public float field_5773 = 1.0F;
    public double field_5761;
@@ -19,13 +19,13 @@ public abstract class class_1050 implements class_3560 {
       this(var1.method_38928(), var2);
    }
 
-   public class_1050(class_4639 var1, class_562 var2) {
+   public class_1050(Identifier var1, class_562 var2) {
       this.field_5771 = var1;
       this.field_5772 = var2;
    }
 
    @Override
-   public class_4639 method_16556() {
+   public Identifier method_16556() {
       return this.field_5771;
    }
 

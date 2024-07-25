@@ -5,9 +5,9 @@ import org.apache.logging.log4j.Logger;
 
 public class class_1130 implements class_7279 {
    private static final Logger field_6442 = LogManager.getLogger();
-   private final class_4639 field_6441;
+   private final Identifier field_6441;
 
-   private class_1130(class_4639 var1) {
+   private class_1130(Identifier var1) {
       this.field_6441 = var1;
    }
 

@@ -1,17 +1,17 @@
 package remapped;
 
 public class class_737 extends class_7164<class_1775, class_2210<class_1775>> {
-   private static final class_4639 field_4017 = new class_4639("textures/entity/strider/strider.png");
-   private static final class_4639 field_4016 = new class_4639("textures/entity/strider/strider_cold.png");
+   private static final Identifier field_4017 = new Identifier("textures/entity/strider/strider.png");
+   private static final Identifier field_4016 = new Identifier("textures/entity/strider/strider_cold.png");
 
    public class_737(class_6122 var1) {
       super(var1, new class_2210<class_1775>(), 0.5F);
       this.method_29100(
-         new class_4551<class_1775, class_2210<class_1775>>(this, new class_2210<class_1775>(), new class_4639("textures/entity/strider/strider_saddle.png"))
+         new class_4551<class_1775, class_2210<class_1775>>(this, new class_2210<class_1775>(), new Identifier("textures/entity/strider/strider_saddle.png"))
       );
    }
 
-   public class_4639 method_3361(class_1775 var1) {
+   public Identifier method_3361(class_1775 var1) {
       return !var1.method_7924() ? field_4017 : field_4016;
    }
 

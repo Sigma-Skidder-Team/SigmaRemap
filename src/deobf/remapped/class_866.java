@@ -12,13 +12,13 @@ import java.util.concurrent.CompletionException;
 public class class_866 {
    private static String[] field_4494;
    private final class_7832 field_4493;
-   private final Map<class_4639, CompletableFuture<class_7493>> field_4492 = Maps.newHashMap();
+   private final Map<Identifier, CompletableFuture<class_7493>> field_4492 = Maps.newHashMap();
 
    public class_866(class_7832 var1) {
       this.field_4493 = var1;
    }
 
-   public CompletableFuture<class_7493> method_3748(class_4639 var1) {
+   public CompletableFuture<class_7493> method_3748(Identifier var1) {
       return this.field_4492.computeIfAbsent(var1, var1x -> CompletableFuture.<class_7493>supplyAsync(() -> {
             try (
                class_4038 var4 = this.field_4493.method_35458(var1x);
@@ -33,7 +33,7 @@ public class class_866 {
          }, Util.getMainWorkerExecutor()));
    }
 
-   public CompletableFuture<class_2613> method_3747(class_4639 var1, boolean var2) {
+   public CompletableFuture<class_2613> method_3747(Identifier var1, boolean var2) {
       return CompletableFuture.<class_2613>supplyAsync(() -> {
          try {
             class_4038 var5 = this.field_4493.method_35458(var1);

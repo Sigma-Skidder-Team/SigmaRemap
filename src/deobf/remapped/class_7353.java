@@ -24,7 +24,7 @@ public class class_7353 {
    }
 
    public static class_7353 method_33504(JsonObject var0, class_8096 var1) {
-      class_4639 var4 = new class_4639(class_6539.method_29796(var0, "trigger"));
+      Identifier var4 = new Identifier(class_6539.method_29796(var0, "trigger"));
       class_911 var5 = class_8807.method_40478(var4);
       if (var5 != null) {
          class_5154 var6 = var5.method_3898(class_6539.method_29784(var0, "conditions", new JsonObject()), var1);

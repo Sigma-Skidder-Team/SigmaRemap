@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_1312 extends class_7067<class_1511> {
-   private static final class_4639 field_7249 = new class_4639("textures/entity/illager/evoker_fangs.png");
+   private static final Identifier field_7249 = new Identifier("textures/entity/illager/evoker_fangs.png");
    private final class_8883<class_1511> field_7248 = new class_8883<class_1511>();
 
    public class_1312(class_6122 var1) {
@@ -30,7 +30,7 @@ public class class_1312 extends class_7067<class_1511> {
       }
    }
 
-   public class_4639 method_5977(class_1511 var1) {
+   public Identifier method_5977(class_1511 var1) {
       return field_7249;
    }
 }

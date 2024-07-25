@@ -102,7 +102,7 @@ public class class_5268 {
    }
 
    private static int method_24041(
-      class_9155 var0, Collection<class_9359> var1, class_4639 var2, class_562 var3, class_1343 var4, float var5, float var6, float var7
+           class_9155 var0, Collection<class_9359> var1, Identifier var2, class_562 var3, class_1343 var4, float var5, float var6, float var7
    ) throws CommandSyntaxException {
       double var10 = Math.pow(!(var5 > 1.0F) ? 16.0 : (double)(var5 * 16.0F), 2.0);
       int var12 = 0;
