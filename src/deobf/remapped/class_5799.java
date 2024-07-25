@@ -84,11 +84,11 @@ public class class_5799 {
    }
 
    private class_6561 method_26276(InputStream var1) throws IOException {
-      class_5734 var4 = class_5957.method_27219(var1);
+      CompoundNBT var4 = class_5957.method_27219(var1);
       return this.method_26269(var4);
    }
 
-   public class_6561 method_26269(class_5734 var1) {
+   public class_6561 method_26269(CompoundNBT var1) {
       if (!var1.method_25939("DataVersion", 99)) {
          var1.method_25931("DataVersion", 500);
       }
@@ -115,7 +115,7 @@ public class class_5799 {
                return false;
             }
 
-            class_5734 var7 = var4.method_29993(new class_5734());
+            CompoundNBT var7 = var4.method_29993(new CompoundNBT());
 
             try (FileOutputStream var8 = new FileOutputStream(var5.toFile())) {
                class_5957.method_27217(var7, var8);

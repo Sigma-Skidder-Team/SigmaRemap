@@ -11,13 +11,13 @@ public abstract class class_8549 extends class_7060 {
       super(var1, var2);
    }
 
-   public class_8549(class_2746 var1, class_5734 var2) {
+   public class_8549(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field_43750 = class_4030.valueOf(var2.method_25965("EntryDoor"));
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       var1.method_25941("EntryDoor", this.field_43750.name());
    }
 

@@ -57,7 +57,7 @@ public class class_2452 {
       this.field_12198 = class_4264.field_20669;
    }
 
-   public class_2452(class_6331 var1, class_5734 var2) {
+   public class_2452(class_6331 var1, CompoundNBT var2) {
       this.field_12189 = var1;
       this.field_12180 = var2.method_25947("Id");
       this.field_12188 = var2.method_25933("Started");
@@ -469,7 +469,7 @@ public class class_2452 {
          var2.method_18588(0);
          if (!var4 && var3 != null) {
             var2.method_37256((double)var3.method_12173() + 0.5, (double)var3.method_12165() + 1.0, (double)var3.method_12185() + 0.5);
-            var2.method_26864(this.field_12189, this.field_12189.method_43368(var3), class_2417.field_12040, (class_8733)null, (class_5734)null);
+            var2.method_26864(this.field_12189, this.field_12189.method_43368(var3), class_2417.field_12040, (class_8733)null, (CompoundNBT)null);
             var2.method_18602(var1, false);
             var2.method_37386(true);
             this.field_12189.method_7065(var2);
@@ -523,7 +523,7 @@ public class class_2452 {
 
    public static ItemStack method_11292() {
       ItemStack var2 = new ItemStack(class_4897.field_24696);
-      class_5734 var3 = var2.method_27978("BlockEntityTag");
+      CompoundNBT var3 = var2.method_27978("BlockEntityTag");
       class_3416 var4 = new class_1697()
          .method_7624(class_8427.field_43102, class_9077.field_46501)
          .method_7624(class_8427.field_43103, class_9077.field_46503)
@@ -676,7 +676,7 @@ public class class_2452 {
       return this.field_12200;
    }
 
-   public class_5734 method_11279(class_5734 var1) {
+   public CompoundNBT method_11279(CompoundNBT var1) {
       var1.method_25931("Id", this.field_12180);
       var1.method_25934("Started", this.field_12188);
       var1.method_25934("Active", this.field_12200);

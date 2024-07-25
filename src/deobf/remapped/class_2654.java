@@ -27,7 +27,7 @@ public class class_2654 implements class_5990 {
    public static final class_1315 field_13073 = null;
    private final class_1315[] field_13068 = new class_1315[16];
    private class_546 field_13076;
-   private final Map<class_1331, class_5734> field_13082 = Maps.newHashMap();
+   private final Map<class_1331, CompoundNBT> field_13082 = Maps.newHashMap();
    public boolean field_13081;
    private final World field_13074;
    private final Map<class_3801, class_2131> field_13066 = Maps.newEnumMap(class_3801.class);
@@ -115,7 +115,7 @@ public class class_2654 implements class_5990 {
          (Consumer<class_2654>)null
       );
 
-      for (class_5734 var6 : var2.method_34027()) {
+      for (CompoundNBT var6 : var2.method_34027()) {
          class_6629.method_30455(var6, var1, var1x -> {
             this.method_27342(var1x);
             return var1x;
@@ -364,7 +364,7 @@ public class class_2654 implements class_5990 {
    public class_3757 method_11988(class_1331 var1, class_1628 var2) {
       class_3757 var5 = this.field_13088.get(var1);
       if (var5 == null) {
-         class_5734 var6 = this.field_13082.remove(var1);
+         CompoundNBT var6 = this.field_13082.remove(var1);
          if (var6 != null) {
             class_3757 var7 = this.method_11980(var1, var6);
             if (var7 != null) {
@@ -406,20 +406,20 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public void method_27347(class_5734 var1) {
+   public void method_27347(CompoundNBT var1) {
       this.field_13082.put(new class_1331(var1.method_25947("x"), var1.method_25947("y"), var1.method_25947("z")), var1);
    }
 
    @Nullable
    @Override
-   public class_5734 method_27345(class_1331 var1) {
+   public CompoundNBT method_27345(class_1331 var1) {
       class_3757 var4 = this.method_28260(var1);
       if (var4 != null && !var4.method_17395()) {
-         class_5734 var6 = var4.method_17396(new class_5734());
+         CompoundNBT var6 = var4.method_17396(new CompoundNBT());
          var6.method_25934("keepPacked", false);
          return var6;
       } else {
-         class_5734 var5 = this.field_13082.get(var1);
+         CompoundNBT var5 = this.field_13082.get(var1);
          if (var5 != null) {
             var5 = var5.method_25944();
             var5.method_25934("keepPacked", true);
@@ -519,7 +519,7 @@ public class class_2654 implements class_5990 {
       return this.field_13067;
    }
 
-   public void method_11984(class_546 var1, class_8248 var2, class_5734 var3, int var4) {
+   public void method_11984(class_546 var1, class_8248 var2, CompoundNBT var3, int var4) {
       boolean var7 = var1 != null;
       Predicate var8 = !var7 ? var1x -> (var4 & 1 << (var1x.method_12165() >> 4)) != 0 : var0 -> true;
       Sets.newHashSet(this.field_13088.keySet()).stream().filter(var8).forEach(this.field_13074::method_29597);
@@ -581,7 +581,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Override
-   public class_5734 method_27355(class_1331 var1) {
+   public CompoundNBT method_27355(class_1331 var1) {
       return this.field_13082.get(var1);
    }
 
@@ -709,7 +709,7 @@ public class class_2654 implements class_5990 {
    }
 
    @Nullable
-   private class_3757 method_11980(class_1331 var1, class_5734 var2) {
+   private class_3757 method_11980(class_1331 var1, CompoundNBT var2) {
       class_2522 var5 = this.method_28262(var1);
       class_3757 var6;
       if (!"DUMMY".equals(var2.method_25965("id"))) {

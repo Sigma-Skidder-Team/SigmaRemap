@@ -12,8 +12,8 @@ public class class_5427<T> implements class_5021<T> {
    private final class_2874<T> field_27646;
    private final class_5021<T> field_27648 = (var0, var1x) -> 0;
    private final class_95<T> field_27645;
-   private final Function<class_5734, T> field_27641;
-   private final Function<T, class_5734> field_27642;
+   private final Function<CompoundNBT, T> field_27641;
+   private final Function<T, CompoundNBT> field_27642;
    private final T field_27649;
    public class_2721 field_27639;
    private class_2874<T> field_27647;
@@ -45,7 +45,7 @@ public class class_5427<T> implements class_5021<T> {
       this.field_27644.unlock();
    }
 
-   public class_5427(class_2874<T> var1, class_95<T> var2, Function<class_5734, T> var3, Function<T, class_5734> var4, T var5) {
+   public class_5427(class_2874<T> var1, class_95<T> var2, Function<CompoundNBT, T> var3, Function<T, CompoundNBT> var4, T var5) {
       this.field_27646 = var1;
       this.field_27645 = var2;
       this.field_27641 = var3;
@@ -180,7 +180,7 @@ public class class_5427<T> implements class_5021<T> {
       this.method_24687();
    }
 
-   public void method_24683(class_5734 var1, String var2, String var3) {
+   public void method_24683(CompoundNBT var1, String var2, String var3) {
       this.method_24691();
       class_4371 var6 = new class_4371<T>(this.field_27645, this.field_27640, this.field_27648, this.field_27641, this.field_27642);
       Object var7 = this.field_27649;

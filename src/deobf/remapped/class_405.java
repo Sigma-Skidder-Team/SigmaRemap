@@ -17,7 +17,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new class_1821(false);
       }
@@ -121,7 +121,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       class_2795 var4 = this.method_974();
       if (!var4.isEmpty()) {
@@ -132,7 +132,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("Offers", 10)) {
          this.field_1687 = new class_2795(var1.method_25937("Offers"));

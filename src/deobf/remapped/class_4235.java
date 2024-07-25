@@ -60,7 +60,7 @@ public class class_4235 implements ArgumentType<class_9257> {
             var0.skip();
             char var5 = var0.peek();
             if (var5 == '{') {
-               class_5734 var9 = new class_2392(var0).method_10905();
+               CompoundNBT var9 = new class_2392(var0).method_10905();
                var0.expect(']');
                return new class_8867(var9);
             } else {
@@ -78,7 +78,7 @@ public class class_4235 implements ArgumentType<class_9257> {
                throw field_20556.createWithContext(var0);
             }
 
-            class_5734 var6 = new class_2392(var0).method_10905();
+            CompoundNBT var6 = new class_2392(var0).method_10905();
             return new class_5183(var6);
          default:
             String var7 = method_19752(var0);
@@ -88,7 +88,7 @@ public class class_4235 implements ArgumentType<class_9257> {
 
    private static class_4885 method_19753(StringReader var0, String var1) throws CommandSyntaxException {
       if (var0.canRead() && var0.peek() == '{') {
-         class_5734 var4 = new class_2392(var0).method_10905();
+         CompoundNBT var4 = new class_2392(var0).method_10905();
          return new class_6861(var1, var4);
       } else {
          return new class_6333(var1);
@@ -117,7 +117,7 @@ public class class_4235 implements ArgumentType<class_9257> {
       return var0 != ' ' && var0 != '"' && var0 != '[' && var0 != ']' && var0 != '.' && var0 != '{' && var0 != '}';
    }
 
-   private static Predicate<class_8406> method_19747(class_5734 var0) {
+   private static Predicate<class_8406> method_19747(CompoundNBT var0) {
       return var1 -> class_4338.method_20182(var0, var1, true);
    }
 }

@@ -25,7 +25,7 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (this.method_45507()) {
          var1.method_25941("CustomName", ITextComponent$class_40.toJson(this.field_40576));
@@ -35,7 +35,7 @@ public class class_7932 extends class_3757 implements class_9875, class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       if (var2.method_25939("CustomName", 8)) {
          this.field_40576 = ITextComponent$class_40.func_240643_a_(var2.method_25965("CustomName"));

@@ -12,13 +12,13 @@ public class class_1443 extends class_6315 {
       this.field_36435 = var2;
    }
 
-   public class_1443(class_5799 var1, class_5734 var2) {
+   public class_1443(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13421, var2);
       this.field_7772 = var2.method_25933("Mob");
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25934("Mob", this.field_7772);
    }

@@ -22,11 +22,11 @@ public class class_8757 extends class_6315 {
       }
    }
 
-   public class_8757(class_2746 var1, class_5734 var2) {
+   public class_8757(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
    }
 
-   public class_8757(class_5799 var1, class_5734 var2) {
+   public class_8757(class_5799 var1, CompoundNBT var2) {
       this(class_2746.field_13395, var2);
    }
 

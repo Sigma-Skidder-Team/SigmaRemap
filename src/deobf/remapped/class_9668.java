@@ -64,13 +64,13 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_28533((class_6331)this.field_41768, var1);
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       this.method_28528(var1);
    }
@@ -197,7 +197,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new class_1821(1.0F);
       }

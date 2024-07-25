@@ -34,8 +34,8 @@ public class class_6940 implements class_5998 {
       return this;
    }
 
-   private class_5734 method_31750(String var1, class_5734 var2) {
-      class_5734 var5 = var2;
+   private CompoundNBT method_31750(String var1, CompoundNBT var2) {
+      CompoundNBT var5 = var2;
 
       for (class_2017 var7 : this.field_35677) {
          var5 = var7.method_9366(var1, var5);
@@ -76,7 +76,7 @@ public class class_6940 implements class_5998 {
    private class_9797 method_31752(Path var1, String var2) {
       try (BufferedReader var5 = Files.newBufferedReader(var1)) {
          String var7 = IOUtils.toString(var5);
-         class_5734 var8 = this.method_31750(var2, class_2392.method_10916(var7));
+         CompoundNBT var8 = this.method_31750(var2, class_2392.method_10916(var7));
          ByteArrayOutputStream var9 = new ByteArrayOutputStream();
          class_5957.method_27217(var8, var9);
          byte[] var10 = var9.toByteArray();

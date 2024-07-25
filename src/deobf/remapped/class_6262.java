@@ -9,7 +9,7 @@ public class class_6262 extends class_462 {
    private boolean field_32004;
    private final int field_32001;
 
-   public class_6262(class_5799 var1, class_5734 var2) {
+   public class_6262(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13447, var2);
       this.field_32003 = var2.method_25933("hr");
       this.field_32000 = var2.method_25933("sc");
@@ -18,7 +18,7 @@ public class class_6262 extends class_462 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25934("hr", this.field_32003);
       var1.method_25934("sc", this.field_32000);

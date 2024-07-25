@@ -21,9 +21,9 @@ public class class_3148 extends class_5837 {
       if (!var1.method_28022()) {
          class_2831 var5 = class_2831.method_12874();
          this.field_15658.forEach(var2x -> var2x.method_4277(var2, var2xx -> var2xx.method_10529(class_1758.method_7861(var5::add), var2)));
-         class_5734 var6 = new class_5734();
+         CompoundNBT var6 = new CompoundNBT();
          class_3037.method_13878(var6, var5);
-         class_5734 var7 = var1.method_27994();
+         CompoundNBT var7 = var1.method_27994();
          var7.method_25946("BlockEntityTag", var6.method_25925(var7.method_25937("BlockEntityTag")));
          return var1;
       } else {

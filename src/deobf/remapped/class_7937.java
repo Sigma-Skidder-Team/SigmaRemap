@@ -110,12 +110,12 @@ public class class_7937 extends class_1173 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (var1.method_43360().nextInt(100) == 0) {
          class_6778 var8 = class_6629.field_34241.method_30484(this.field_41768);
          var8.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, 0.0F);
-         var8.method_26864(var1, var2, var3, (class_8733)null, (class_5734)null);
+         var8.method_26864(var1, var2, var3, (class_8733)null, (CompoundNBT)null);
          var8.method_37353(this);
       }
 

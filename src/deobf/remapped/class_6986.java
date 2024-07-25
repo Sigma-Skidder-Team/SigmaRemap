@@ -6,9 +6,9 @@ import java.util.function.Predicate;
 public class class_6986 implements Predicate<class_9115> {
    private final class_2522 field_35869;
    private final Set<class_5019<?>> field_35870;
-   private final class_5734 field_35871;
+   private final CompoundNBT field_35871;
 
-   public class_6986(class_2522 var1, Set<class_5019<?>> var2, class_5734 var3) {
+   public class_6986(class_2522 var1, Set<class_5019<?>> var2, CompoundNBT var3) {
       this.field_35869 = var1;
       this.field_35870 = var2;
       this.field_35871 = var3;
@@ -33,7 +33,7 @@ public class class_6986 implements Predicate<class_9115> {
             return true;
          } else {
             class_3757 var7 = var1.method_41967();
-            return var7 != null && class_4338.method_20182(this.field_35871, var7.method_17396(new class_5734()), true);
+            return var7 != null && class_4338.method_20182(this.field_35871, var7.method_17396(new CompoundNBT()), true);
          }
       }
    }
@@ -48,7 +48,7 @@ public class class_6986 implements Predicate<class_9115> {
          if (this.field_35871 != null) {
             class_3757 var7 = var1.method_28260(var2);
             if (var7 != null) {
-               class_5734 var8 = this.field_35871.method_25944();
+               CompoundNBT var8 = this.field_35871.method_25944();
                var8.method_25931("x", var2.method_12173());
                var8.method_25931("y", var2.method_12165());
                var8.method_25931("z", var2.method_12185());

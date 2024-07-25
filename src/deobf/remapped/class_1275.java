@@ -86,7 +86,7 @@ public class class_1275 implements class_1517 {
          class_2811 var5;
          try {
             var5 = new class_2811(var1);
-            var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12040, (class_8733)null, (class_5734)null);
+            var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12040, (class_8733)null, (CompoundNBT)null);
          } catch (Exception var7) {
             field_7020.warn("Failed to create zombie for village siege at {}", var4, var7);
             return;

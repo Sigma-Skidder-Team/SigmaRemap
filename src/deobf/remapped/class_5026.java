@@ -31,8 +31,8 @@ public class class_5026<T> {
       this.field_26000.clear();
       this.field_26002 = UnsignedLong.ZERO;
       var2.forEach(var1x -> {
-         if (var1x.getValue() instanceof class_5734) {
-            this.method_23178((class_5734)var1x.getValue());
+         if (var1x.getValue() instanceof CompoundNBT) {
+            this.method_23178((CompoundNBT)var1x.getValue());
          } else {
             field_25999.warn("Invalid format of events: {}", var1x);
          }
@@ -77,8 +77,8 @@ public class class_5026<T> {
       return Collections.<String>unmodifiableSet(this.field_26000.rowKeySet());
    }
 
-   private void method_23178(class_5734 var1) {
-      class_5734 var4 = var1.method_25937("Callback");
+   private void method_23178(CompoundNBT var1) {
+      CompoundNBT var4 = var1.method_25937("Callback");
       class_7803 var5 = this.field_25997.method_2185(var4);
       if (var5 != null) {
          String var6 = var1.method_25965("Name");
@@ -87,8 +87,8 @@ public class class_5026<T> {
       }
    }
 
-   private class_5734 method_23176(class_6529<T> var1) {
-      class_5734 var4 = new class_5734();
+   private CompoundNBT method_23176(class_6529<T> var1) {
+      CompoundNBT var4 = new CompoundNBT();
       var4.method_25941("Name", var1.field_33222);
       var4.method_25949("TriggerTime", var1.field_33220);
       var4.method_25946("Callback", this.field_25997.method_2187(var1.field_33223));
@@ -97,7 +97,7 @@ public class class_5026<T> {
 
    public class_3416 method_23181() {
       class_3416 var3 = new class_3416();
-      this.field_26001.stream().sorted(method_23177()).<class_5734>map(this::method_23176).forEach(var3::add);
+      this.field_26001.stream().sorted(method_23177()).<CompoundNBT>map(this::method_23176).forEach(var3::add);
       return var3;
    }
 }

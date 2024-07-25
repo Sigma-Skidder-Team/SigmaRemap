@@ -16,7 +16,7 @@ public abstract class class_8131 extends class_7060 {
       super(var1, var2);
    }
 
-   public class_8131(class_2746 var1, class_5734 var2) {
+   public class_8131(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field_41648 = new class_1331(var2.method_25947("TPX"), var2.method_25947("TPY"), var2.method_25947("TPZ"));
    }
@@ -30,7 +30,7 @@ public abstract class class_8131 extends class_7060 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       var1.method_25931("TPX", this.field_41648.method_12173());
       var1.method_25931("TPY", this.field_41648.method_12165());
       var1.method_25931("TPZ", this.field_41648.method_12185());

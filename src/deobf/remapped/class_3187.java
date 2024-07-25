@@ -19,7 +19,7 @@ public class class_3187 {
    public void method_14670() {
       try {
          this.field_15916.clear();
-         class_5734 var3 = class_5957.method_27223(new File(this.field_15915.runDirectory, "servers.dat"));
+         CompoundNBT var3 = class_5957.method_27223(new File(this.field_15915.runDirectory, "servers.dat"));
          if (var3 == null) {
             return;
          }
@@ -42,7 +42,7 @@ public class class_3187 {
             var3.add(var5.method_11627());
          }
 
-         class_5734 var9 = new class_5734();
+         CompoundNBT var9 = new CompoundNBT();
          var9.method_25946("servers", var3);
          File var10 = File.createTempFile("servers", ".dat", this.field_15915.runDirectory);
          class_5957.method_27225(var9, var10);

@@ -593,7 +593,7 @@ public class class_948 implements class_1243 {
    public void method_5561(class_703 var1) {
       ItemStack var4 = var1.method_3145();
       if (var4.method_27960() == class_4897.field_24805) {
-         class_5734 var5 = var4.method_27990();
+         CompoundNBT var5 = var4.method_27990();
          if (class_7702.method_34884(var5)) {
             ArrayList var6 = Lists.newArrayList();
             boolean var7 = var1.method_3142();
@@ -630,7 +630,7 @@ public class class_948 implements class_1243 {
       ItemStack var6 = this.field_4880.inventory.method_31498(var3);
       if (var6.method_27960() == class_4897.field_24805) {
          ItemStack var7 = new ItemStack(class_4897.field_24698);
-         class_5734 var8 = var6.method_27990();
+         CompoundNBT var8 = var6.method_27990();
          if (var8 != null) {
             var7.method_27965(var8.method_25944());
          }
@@ -656,7 +656,7 @@ public class class_948 implements class_1243 {
       if (this.field_4880.method_37163(2)) {
          Entity var4 = this.field_4880.method_43235().method_29534(var1.method_28315());
          if (var4 != null) {
-            class_5734 var5 = var4.method_37258(new class_5734());
+            CompoundNBT var5 = var4.method_37258(new CompoundNBT());
             this.field_4880.field_47794.method_4156(new class_4798(var1.method_28314(), var5));
          }
       }
@@ -667,7 +667,7 @@ public class class_948 implements class_1243 {
       class_5965.method_27245(var1, this, this.field_4880.method_43235());
       if (this.field_4880.method_37163(2)) {
          class_3757 var4 = this.field_4880.method_43235().method_28260(var1.method_35429());
-         class_5734 var5 = var4 == null ? null : var4.method_17396(new class_5734());
+         CompoundNBT var5 = var4 == null ? null : var4.method_17396(new CompoundNBT());
          this.field_4880.field_47794.method_4156(new class_4798(var1.method_35431(), var5));
       }
    }
@@ -1277,12 +1277,12 @@ public class class_948 implements class_1243 {
       if (this.field_4880.field_47807.method_39519()) {
          boolean var4 = var1.method_29139() < 0;
          ItemStack var5 = var1.method_29138();
-         class_5734 var6 = var5.method_28021("BlockEntityTag");
+         CompoundNBT var6 = var5.method_28021("BlockEntityTag");
          if (!var5.method_28022() && var6 != null && var6.method_25938("x") && var6.method_25938("y") && var6.method_25938("z")) {
             class_1331 var7 = new class_1331(var6.method_25947("x"), var6.method_25947("y"), var6.method_25947("z"));
             class_3757 var8 = this.field_4880.field_41768.method_28260(var7);
             if (var8 != null) {
-               class_5734 var9 = var8.method_17396(new class_5734());
+               CompoundNBT var9 = var8.method_17396(new CompoundNBT());
                var9.method_25959("x");
                var9.method_25959("y");
                var9.method_25959("z");

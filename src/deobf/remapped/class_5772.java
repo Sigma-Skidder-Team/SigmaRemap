@@ -18,7 +18,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_29157 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!this.method_10811(var2)) {
@@ -29,7 +29,7 @@ public class class_5772 extends class_2358 implements class_4511, class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (!this.method_10815(var1)) {
          class_3037.method_13878(var1, this.field_29157);

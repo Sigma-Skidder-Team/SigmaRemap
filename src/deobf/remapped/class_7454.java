@@ -14,7 +14,7 @@ public class class_7454 extends class_3757 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       this.field_37990.method_36938(var1);
       var1.method_25934("powered", this.method_33935());
@@ -24,7 +24,7 @@ public class class_7454 extends class_3757 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_37990.method_36924(var2);
       this.field_37993 = var2.method_25933("powered");
@@ -39,7 +39,7 @@ public class class_7454 extends class_3757 {
          return null;
       } else {
          this.method_33933(false);
-         class_5734 var3 = this.method_17396(new class_5734());
+         CompoundNBT var3 = this.method_17396(new CompoundNBT());
          return new class_5029(this.field_18358, 2, var3);
       }
    }

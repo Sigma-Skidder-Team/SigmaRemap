@@ -106,14 +106,14 @@ public class class_5583 extends class_8990 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("CatType", this.method_25353());
       var1.method_25921("CollarColor", (byte)this.method_25360().method_41794());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_25356(var1.method_25947("CatType"));
       if (var1.method_25939("CollarColor", 99)) {
@@ -295,7 +295,7 @@ public class class_5583 extends class_8990 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (!(var1.method_13576() > 0.9F)) {
          this.method_25356(this.field_41717.nextInt(10));

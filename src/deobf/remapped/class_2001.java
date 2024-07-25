@@ -17,7 +17,7 @@ public class class_2001 {
       this.field_10166 = var3;
    }
 
-   public static class_2001 method_9288(class_5734 var0) {
+   public static class_2001 method_9288(CompoundNBT var0) {
       class_1331 var3 = class_4338.method_20189(var0.method_25937("Pos"));
       class_9077 var4 = class_9077.method_41788(var0.method_25965("Color"), class_9077.field_46493);
       IFormattableTextComponent var5 = !var0.method_25938("Name") ? null : ITextComponent$class_40.func_240643_a_(var0.method_25965("Name"));
@@ -105,8 +105,8 @@ public class class_2001 {
       return Objects.hash(this.field_10165, this.field_10163, this.field_10166);
    }
 
-   public class_5734 method_9290() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_9290() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25946("Pos", class_4338.method_20190(this.field_10165));
       var3.method_25941("Color", this.field_10163.method_41796());
       if (this.field_10166 != null) {

@@ -120,7 +120,7 @@ public final class class_3815 {
 
                         var30.method_37144(var23, (double)var10, var25, var1.field_33033.nextFloat() * 360.0F, 0.0F);
                         if (method_17771(var1, var30, var28)) {
-                           var19 = var30.method_26864(var1, var1.method_43368(var30.method_37075()), class_2417.field_12031, var19, (class_5734)null);
+                           var19 = var30.method_26864(var1, var1.method_43368(var30.method_37075()), class_2417.field_12031, var19, (CompoundNBT)null);
                            var13++;
                            var21++;
                            var1.method_7065(var30);
@@ -317,7 +317,7 @@ public final class class_3815 {
                      if (var27 instanceof class_5886) {
                         class_5886 var28 = (class_5886)var27;
                         if (var28.method_26889(var0, class_2417.field_12034) && var28.method_26855(var0)) {
-                           var13 = var28.method_26864(var0, var0.method_43368(var28.method_37075()), class_2417.field_12034, var13, (class_5734)null);
+                           var13 = var28.method_26864(var0, var0.method_43368(var28.method_37075()), class_2417.field_12034, var13, (CompoundNBT)null);
                            var0.method_7065(var28);
                            var19 = true;
                         }

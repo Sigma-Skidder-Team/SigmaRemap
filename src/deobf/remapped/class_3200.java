@@ -63,8 +63,8 @@ public abstract class class_3200<C extends class_6157> {
       }
    }
 
-   public class_5734 method_14734(int var1, int var2) {
-      class_5734 var5 = new class_5734();
+   public CompoundNBT method_14734(int var1, int var2) {
+      CompoundNBT var5 = new CompoundNBT();
       if (this.method_14731()) {
          var5.method_25941("id", class_8669.field_44457.method_39797(this.method_14727()).toString());
          var5.method_25931("ChunkX", var1);

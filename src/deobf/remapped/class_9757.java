@@ -74,7 +74,7 @@ public final class class_9757 implements class_3825 {
    }
 
    @Nullable
-   private class_1331 method_45036(World var1, class_5734 var2) {
+   private class_1331 method_45036(World var1, CompoundNBT var2) {
       boolean var5 = var2.method_25938("LodestonePos");
       boolean var6 = var2.method_25938("LodestoneDimension");
       if (var5 && var6) {

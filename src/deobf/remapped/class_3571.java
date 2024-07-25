@@ -15,10 +15,10 @@ public class class_3571 extends class_741 {
    public ITextComponent method_11249(ItemStack var1) {
       if (var1.method_27960() == class_4897.field_24749 && var1.method_28002()) {
          String var4 = null;
-         class_5734 var5 = var1.method_27990();
+         CompoundNBT var5 = var1.method_27990();
          if (!var5.method_25939("SkullOwner", 8)) {
             if (var5.method_25939("SkullOwner", 10)) {
-               class_5734 var6 = var5.method_25937("SkullOwner");
+               CompoundNBT var6 = var5.method_25937("SkullOwner");
                if (var6.method_25939("Name", 8)) {
                   var4 = var6.method_25965("Name");
                }
@@ -36,12 +36,12 @@ public class class_3571 extends class_741 {
    }
 
    @Override
-   public boolean method_11215(class_5734 var1) {
+   public boolean method_11215(CompoundNBT var1) {
       super.method_11215(var1);
       if (var1.method_25939("SkullOwner", 8) && !StringUtils.isBlank(var1.method_25965("SkullOwner"))) {
          GameProfile var4 = new GameProfile((UUID)null, var1.method_25965("SkullOwner"));
          var4 = class_4797.method_22108(var4);
-         var1.method_25946("SkullOwner", class_4338.method_20177(new class_5734(), var4));
+         var1.method_25946("SkullOwner", class_4338.method_20177(new CompoundNBT(), var4));
          return true;
       } else {
          return false;

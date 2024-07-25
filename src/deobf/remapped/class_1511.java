@@ -45,7 +45,7 @@ public class class_1511 extends Entity {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.field_8003 = var1.method_25947("Warmup");
       if (var1.method_25954("Owner")) {
          this.field_8007 = var1.method_25926("Owner");
@@ -53,7 +53,7 @@ public class class_1511 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       var1.method_25931("Warmup", this.field_8003);
       if (this.field_8007 != null) {
          var1.method_25964("Owner", this.field_8007);

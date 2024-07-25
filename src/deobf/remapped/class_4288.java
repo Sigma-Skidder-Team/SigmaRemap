@@ -18,7 +18,7 @@ public class class_4288 implements class_1429 {
    }
 
    @Override
-   public void method_6572(class_5734 var1) throws CommandSyntaxException {
+   public void method_6572(CompoundNBT var1) throws CommandSyntaxException {
       if (!(this.field_20811 instanceof class_704)) {
          UUID var4 = this.field_20811.method_37328();
          this.field_20811.method_37393(var1);
@@ -29,7 +29,7 @@ public class class_4288 implements class_1429 {
    }
 
    @Override
-   public class_5734 method_6573() {
+   public CompoundNBT method_6573() {
       return class_6000.method_27394(this.field_20811);
    }
 

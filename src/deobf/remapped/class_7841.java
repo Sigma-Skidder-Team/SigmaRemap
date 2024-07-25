@@ -36,7 +36,7 @@ public class class_7841 extends class_6749 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25938("Duration")) {
          this.field_39755 = var1.method_25947("Duration");
@@ -44,7 +44,7 @@ public class class_7841 extends class_6749 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Duration", this.field_39755);
    }

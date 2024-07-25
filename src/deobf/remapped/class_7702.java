@@ -25,7 +25,7 @@ public class class_7702 extends class_2451 {
       return class_954.<ItemStack>method_4208(var6, var1.method_22567());
    }
 
-   public static boolean method_34884(class_5734 var0) {
+   public static boolean method_34884(CompoundNBT var0) {
       if (var0 == null) {
          return false;
       } else if (!var0.method_25939("pages", 9)) {

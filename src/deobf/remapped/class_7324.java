@@ -48,7 +48,7 @@ public class class_7324 implements class_1517 {
                                  for (int var20 = 0; var20 < var19; var20++) {
                                     class_9825 var21 = class_6629.field_34246.method_30484(var1);
                                     var21.method_37253(var15, 0.0F, 0.0F);
-                                    var18 = var21.method_26864(var1, var11, class_2417.field_12031, var18, (class_5734)null);
+                                    var18 = var21.method_26864(var1, var11, class_2417.field_12031, var18, (CompoundNBT)null);
                                     var1.method_7065(var21);
                                  }
 

@@ -13,7 +13,7 @@ public class class_823 extends class_462 {
       this.field_36435 = new class_9616(var3, 50, var4, var3 + 7 + var2.nextInt(6), 54 + var2.nextInt(6), var4 + 7 + var2.nextInt(6));
    }
 
-   public class_823(class_5799 var1, class_5734 var2) {
+   public class_823(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13425, var2);
       class_3416 var5 = var2.method_25927("Entrances", 11);
 
@@ -229,7 +229,7 @@ public class class_823 extends class_462 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       class_3416 var4 = new class_3416();
 

@@ -70,14 +70,14 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25921("CollarColor", (byte)this.method_43584().method_41794());
       this.method_28528(var1);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("CollarColor", 99)) {
          this.method_43582(class_9077.method_41789(var1.method_25947("CollarColor")));

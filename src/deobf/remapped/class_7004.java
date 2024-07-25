@@ -14,13 +14,13 @@ public class class_7004 extends class_2451 {
 
    @Override
    public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
-      class_5734 var7 = var1.method_28021("Explosion");
+      CompoundNBT var7 = var1.method_28021("Explosion");
       if (var7 != null) {
          method_32017(var7, var3);
       }
    }
 
-   public static void method_32017(class_5734 var0, List<ITextComponent> var1) {
+   public static void method_32017(CompoundNBT var0, List<ITextComponent> var1) {
       class_3917 var4 = class_3917.method_18129(var0.method_25950("Type"));
       var1.add(new TranslationTextComponent("item.minecraft.firework_star.shape." + var4.method_18130()).mergeStyle(TextFormatting.GRAY));
       int[] var5 = var0.method_25922("Colors");

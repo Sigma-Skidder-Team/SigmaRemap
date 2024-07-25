@@ -23,7 +23,7 @@ public class class_3338 {
                               (class_9155)var0x.getSource(),
                               class_2819.method_12843(var0x, "entity"),
                               ((class_9155)var0x.getSource()).method_42192(),
-                              new class_5734(),
+                              new CompoundNBT(),
                               true
                            )
                      ))
@@ -34,7 +34,7 @@ public class class_3338 {
                                     (class_9155)var0x.getSource(),
                                     class_2819.method_12843(var0x, "entity"),
                                     class_1029.method_4555(var0x, "pos"),
-                                    new class_5734(),
+                                    new CompoundNBT(),
                                     true
                                  )
                            ))
@@ -55,10 +55,10 @@ public class class_3338 {
       );
    }
 
-   private static int method_15315(class_9155 var0, Identifier var1, class_1343 var2, class_5734 var3, boolean var4) throws CommandSyntaxException {
+   private static int method_15315(class_9155 var0, Identifier var1, class_1343 var2, CompoundNBT var3, boolean var4) throws CommandSyntaxException {
       class_1331 var7 = new class_1331(var2);
       if (World.method_29593(var7)) {
-         class_5734 var8 = var3.method_25944();
+         CompoundNBT var8 = var3.method_25944();
          var8.method_25941("id", var1.toString());
          class_6331 var9 = var0.method_42198();
          Entity var10 = class_6629.method_30455(var8, var9, var1x -> {
@@ -69,7 +69,7 @@ public class class_3338 {
             if (var4 && var10 instanceof class_5886) {
                ((class_5886)var10)
                   .method_26864(
-                     var0.method_42198(), var0.method_42198().method_43368(var10.method_37075()), class_2417.field_12028, (class_8733)null, (class_5734)null
+                     var0.method_42198(), var0.method_42198().method_43368(var10.method_37075()), class_2417.field_12028, (class_8733)null, (CompoundNBT)null
                   );
             }
 

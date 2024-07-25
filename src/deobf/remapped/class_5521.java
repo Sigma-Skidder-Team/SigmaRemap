@@ -54,7 +54,7 @@ public abstract class class_5521 extends class_4109 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25934("ChestedHorse", this.method_25017());
       if (this.method_25017()) {
@@ -63,7 +63,7 @@ public abstract class class_5521 extends class_4109 {
          for (int var5 = 2; var5 < this.field_20021.method_31505(); var5++) {
             ItemStack var6 = this.field_20021.method_31498(var5);
             if (!var6.method_28022()) {
-               class_5734 var7 = new class_5734();
+               CompoundNBT var7 = new CompoundNBT();
                var7.method_25921("Slot", (byte)var5);
                var6.method_27998(var7);
                var4.add(var7);
@@ -75,7 +75,7 @@ public abstract class class_5521 extends class_4109 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_25016(var1.method_25933("ChestedHorse"));
       if (this.method_25017()) {
@@ -83,7 +83,7 @@ public abstract class class_5521 extends class_4109 {
          this.method_19072();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            class_5734 var6 = var4.method_15764(var5);
+            CompoundNBT var6 = var4.method_15764(var5);
             int var7 = var6.method_25950("Slot") & 255;
             if (var7 >= 2 && var7 < this.field_20021.method_31505()) {
                this.field_20021.method_31503(var7, ItemStack.method_28015(var6));

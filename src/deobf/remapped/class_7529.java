@@ -72,7 +72,7 @@ public final class class_7529 {
       }
    }
 
-   public static class_7529 method_34304(class_5734 var0) {
+   public static class_7529 method_34304(CompoundNBT var0) {
       EnumMap var3 = Maps.newEnumMap(class_4269.class);
       field_38446.forEach((var2, var3x) -> {
          boolean var6 = var0.method_25933((String)var3x.getFirst());
@@ -82,7 +82,7 @@ public final class class_7529 {
       return new class_7529(var3);
    }
 
-   public void method_34309(class_5734 var1) {
+   public void method_34309(CompoundNBT var1) {
       field_38446.forEach((var2, var3) -> {
          class_7670 var6 = this.field_38444.get(var2);
          var1.method_25934((String)var3.getFirst(), class_7670.method_34758(var6));

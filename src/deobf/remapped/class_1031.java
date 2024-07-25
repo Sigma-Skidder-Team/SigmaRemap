@@ -18,7 +18,7 @@ public class class_1031 extends class_4657 {
       }
 
       for (int var7 = 0; var7 < var1.size(); var7++) {
-         class_5734 var5 = var1.method_15764(var7);
+         CompoundNBT var5 = var1.method_15764(var7);
          int var6 = var5.method_25950("Slot") & 255;
          if (var6 >= 0 && var6 < this.method_31505()) {
             this.method_31503(var6, ItemStack.method_28015(var5));
@@ -33,7 +33,7 @@ public class class_1031 extends class_4657 {
       for (int var4 = 0; var4 < this.method_31505(); var4++) {
          ItemStack var5 = this.method_31498(var4);
          if (!var5.method_28022()) {
-            class_5734 var6 = new class_5734();
+            CompoundNBT var6 = new CompoundNBT();
             var6.method_25921("Slot", (byte)var4);
             var5.method_27998(var6);
             var3.add(var6);

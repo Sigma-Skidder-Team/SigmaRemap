@@ -25,7 +25,7 @@ public class class_4648 extends class_1080 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_22683.method_36924(var1);
       this.method_37372().method_36633(field_22685, this.method_21499().method_36920());
@@ -33,7 +33,7 @@ public class class_4648 extends class_1080 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       this.field_22683.method_36938(var1);
    }

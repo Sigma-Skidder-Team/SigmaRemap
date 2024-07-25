@@ -166,7 +166,7 @@ public class class_702 implements class_700 {
       class_5990 var4 = this.method_22556(var1);
       class_3757 var5 = var4.method_28260(var1);
       if (var5 == null) {
-         class_5734 var6 = var4.method_27355(var1);
+         CompoundNBT var6 = var4.method_27355(var1);
          class_2522 var7 = var4.method_28262(var1);
          if (var6 != null) {
             if (!"DUMMY".equals(var6.method_25965("id"))) {
@@ -210,7 +210,7 @@ public class class_702 implements class_700 {
             var7.method_27370(var1);
          }
       } else if (var7.method_27364().method_33446() != class_5592.field_28385) {
-         class_5734 var10 = new class_5734();
+         CompoundNBT var10 = new CompoundNBT();
          var10.method_25931("x", var1.method_12173());
          var10.method_25931("y", var1.method_12165());
          var10.method_25931("z", var1.method_12185());

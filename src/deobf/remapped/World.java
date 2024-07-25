@@ -896,7 +896,7 @@ public abstract class World implements class_9379, AutoCloseable {
 
    public abstract void method_29568(int var1, class_1331 var2, int var3);
 
-   public void method_29536(double var1, double var3, double var5, double var7, double var9, double var11, class_5734 var13) {
+   public void method_29536(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
    }
 
    public abstract class_1097 method_29562();

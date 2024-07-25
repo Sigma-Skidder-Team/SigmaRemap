@@ -123,26 +123,26 @@ public class class_8996 extends class_7186 {
    }
 
    @Override
-   public void method_32924(class_5734 var1) {
+   public void method_32924(CompoundNBT var1) {
       this.field_46057 = var1.method_25947("NextAvailableID");
       this.field_46055 = var1.method_25947("Tick");
       class_3416 var4 = var1.method_25927("Raids", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         class_5734 var6 = var4.method_15764(var5);
+         CompoundNBT var6 = var4.method_15764(var5);
          class_2452 var7 = new class_2452(this.field_46054, var6);
          this.field_46053.put(var7.method_11288(), var7);
       }
    }
 
    @Override
-   public class_5734 method_32920(class_5734 var1) {
+   public CompoundNBT method_32920(CompoundNBT var1) {
       var1.method_25931("NextAvailableID", this.field_46057);
       var1.method_25931("Tick", this.field_46055);
       class_3416 var4 = new class_3416();
 
       for (class_2452 var6 : this.field_46053.values()) {
-         class_5734 var7 = new class_5734();
+         CompoundNBT var7 = new CompoundNBT();
          var6.method_11279(var7);
          var4.add(var7);
       }

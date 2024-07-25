@@ -67,7 +67,7 @@ public class class_9163 {
       }
    }
 
-   public void method_42230(class_5734 var1) {
+   public void method_42230(CompoundNBT var1) {
       if (var1.method_25939("foodLevel", 99)) {
          this.field_46890 = var1.method_25947("foodLevel");
          this.field_46894 = var1.method_25947("foodTickTimer");
@@ -76,7 +76,7 @@ public class class_9163 {
       }
    }
 
-   public void method_42233(class_5734 var1) {
+   public void method_42233(CompoundNBT var1) {
       var1.method_25931("foodLevel", this.field_46890);
       var1.method_25931("foodTickTimer", this.field_46894);
       var1.method_25920("foodSaturationLevel", this.field_46891);

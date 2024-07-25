@@ -34,13 +34,13 @@ public class class_2392 {
    private static final Pattern field_11940 = Pattern.compile("[-+]?(?:0|[1-9][0-9]*)");
    private final StringReader field_11943;
 
-   public static class_5734 method_10916(String var0) throws CommandSyntaxException {
+   public static CompoundNBT method_10916(String var0) throws CommandSyntaxException {
       return new class_2392(new StringReader(var0)).method_10906();
    }
 
    @VisibleForTesting
-   public class_5734 method_10906() throws CommandSyntaxException {
-      class_5734 var3 = this.method_10905();
+   public CompoundNBT method_10906() throws CommandSyntaxException {
+      CompoundNBT var3 = this.method_10905();
       this.field_11943.skipWhitespace();
       if (!this.field_11943.canRead()) {
          return var3;
@@ -141,9 +141,9 @@ public class class_2392 {
          : this.method_10910();
    }
 
-   public class_5734 method_10905() throws CommandSyntaxException {
+   public CompoundNBT method_10905() throws CommandSyntaxException {
       this.method_10912('{');
-      class_5734 var3 = new class_5734();
+      CompoundNBT var3 = new CompoundNBT();
       this.field_11943.skipWhitespace();
 
       while (this.field_11943.canRead() && this.field_11943.peek() != '}') {

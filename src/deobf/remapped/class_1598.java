@@ -26,7 +26,7 @@ public class class_1598 extends class_8131 {
       this.method_7168(var5, var8);
    }
 
-   public class_1598(class_5799 var1, class_5734 var2) {
+   public class_1598(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13398, var2);
       this.field_8322 = new Identifier(var2.method_25965("Template"));
       this.field_8318 = class_6631.valueOf(var2.method_25965("Rotation"));
@@ -40,7 +40,7 @@ public class class_1598 extends class_8131 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25941("Template", this.field_8322.toString());
       var1.method_25941("Rotation", this.field_8318.name());

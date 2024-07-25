@@ -119,7 +119,7 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       class_2522 var4 = this.method_3913();
       if (var4 != null) {
@@ -130,7 +130,7 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       class_2522 var4 = null;
       if (var1.method_25939("carriedBlockState", 10)) {

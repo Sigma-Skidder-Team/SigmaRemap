@@ -9,7 +9,7 @@ public class class_543 extends class_7896 {
       super(class_2746.field_13428, var1, var2, 64, var3, 21, 15, 21);
    }
 
-   public class_543(class_5799 var1, class_5734 var2) {
+   public class_543(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13428, var2);
       this.field_3261[0] = var2.method_25933("hasPlacedChest0");
       this.field_3261[1] = var2.method_25933("hasPlacedChest1");
@@ -18,7 +18,7 @@ public class class_543 extends class_7896 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25934("hasPlacedChest0", this.field_3261[0]);
       var1.method_25934("hasPlacedChest1", this.field_3261[1]);

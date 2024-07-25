@@ -43,7 +43,7 @@ public class class_2588 extends class_2451 {
          Collection var11 = var10.method_36444();
          String var12 = class_8669.field_44462.method_39797(var9).toString();
          if (!var11.isEmpty()) {
-            class_5734 var13 = var6.method_27978("DebugProperty");
+            CompoundNBT var13 = var6.method_27978("DebugProperty");
             String var14 = var13.method_25965(var12);
             class_5019 var15 = var10.method_36440(var14);
             if (!var5) {

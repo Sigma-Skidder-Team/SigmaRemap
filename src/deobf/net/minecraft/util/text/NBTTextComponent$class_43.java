@@ -9,7 +9,7 @@ import remapped.class_1024;
 import remapped.class_1331;
 import remapped.class_1808;
 import remapped.class_3757;
-import remapped.class_5734;
+import remapped.CompoundNBT;
 import remapped.class_6331;
 import remapped.class_9155;
 import remapped.class_9257;
@@ -49,19 +49,19 @@ public class NBTTextComponent$class_43 extends NBTTextComponent {
    }
 
    @Override
-   public Stream<class_5734> func_218673_a(class_9155 p_218673_1_) {
+   public Stream<CompoundNBT> func_218673_a(class_9155 p_218673_1_) {
       if (this.field_218685_f != null) {
          class_6331 blockpos = p_218673_1_.method_42198();
          class_1331 tileentity = this.field_218685_f.method_8024(p_218673_1_);
          if (blockpos.method_29585(tileentity)) {
             class_3757 var6 = blockpos.method_28260(tileentity);
             if (var6 != null) {
-               return Stream.<class_5734>of(var6.method_17396(new class_5734()));
+               return Stream.<CompoundNBT>of(var6.method_17396(new CompoundNBT()));
             }
          }
       }
 
-      return Stream.<class_5734>empty();
+      return Stream.<CompoundNBT>empty();
    }
 
    @Override

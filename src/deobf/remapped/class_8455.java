@@ -201,12 +201,12 @@ public class class_8455 {
                      });
                   } else {
                      class_3757 var11 = this.field_43225.thePlayer.field_41768.method_28260(var6);
-                     class_5734 var12 = var11 != null ? var11.method_17396(new class_5734()) : null;
+                     CompoundNBT var12 = var11 != null ? var11.method_17396(new CompoundNBT()) : null;
                      this.method_38880(var7, var6, var12);
                      this.method_38881("debug.inspect.client.block");
                   }
                } else {
-                  this.method_38880(var7, var6, (class_5734)null);
+                  this.method_38880(var7, var6, (CompoundNBT)null);
                   this.method_38881("debug.inspect.client.block");
                }
                break;
@@ -220,19 +220,19 @@ public class class_8455 {
                         this.method_38881("debug.inspect.server.entity");
                      });
                   } else {
-                     class_5734 var10 = var8.method_37258(new class_5734());
+                     CompoundNBT var10 = var8.method_37258(new CompoundNBT());
                      this.method_38885(var9, var8.method_37245(), var10);
                      this.method_38881("debug.inspect.client.entity");
                   }
                } else {
-                  this.method_38885(var9, var8.method_37245(), (class_5734)null);
+                  this.method_38885(var9, var8.method_37245(), (CompoundNBT)null);
                   this.method_38881("debug.inspect.client.entity");
                }
          }
       }
    }
 
-   private void method_38880(class_2522 var1, class_1331 var2, class_5734 var3) {
+   private void method_38880(class_2522 var1, class_1331 var2, CompoundNBT var3) {
       if (var3 != null) {
          var3.method_25959("x");
          var3.method_25959("y");
@@ -249,7 +249,7 @@ public class class_8455 {
       this.method_38891(var7);
    }
 
-   private void method_38885(Identifier var1, class_1343 var2, class_5734 var3) {
+   private void method_38885(Identifier var1, class_1343 var2, CompoundNBT var3) {
       String var6;
       if (var3 == null) {
          var6 = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", var1.toString(), var2.field_7336, var2.field_7333, var2.field_7334);

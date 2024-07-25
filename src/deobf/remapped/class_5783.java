@@ -29,7 +29,7 @@ public abstract class class_5783 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       if (this.field_29207 != null) {
          var1.method_25964("Owner", this.field_29207);
       }
@@ -40,7 +40,7 @@ public abstract class class_5783 extends Entity {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       if (var1.method_25954("Owner")) {
          this.field_29207 = var1.method_25926("Owner");
       }

@@ -62,14 +62,14 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       class_3416 var4 = new class_3416();
 
       for (int var5 = 0; var5 < this.field_20123.method_31505(); var5++) {
          ItemStack var6 = this.field_20123.method_31498(var5);
          if (!var6.method_28022()) {
-            var4.add(var6.method_27998(new class_5734()));
+            var4.add(var6.method_27998(new CompoundNBT()));
          }
       }
 
@@ -90,7 +90,7 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       class_3416 var4 = var1.method_25927("Inventory", 10);
 
@@ -117,7 +117,7 @@ public class class_4134 extends class_7637 implements class_3832 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       this.method_26870(var2);
       this.method_26893(var2);
       return super.method_26864(var1, var2, var3, var4, var5);

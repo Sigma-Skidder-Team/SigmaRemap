@@ -26,7 +26,7 @@ public class class_7624 extends class_7060 {
       this.field_36435 = var6;
    }
 
-   public class_7624(class_5799 var1, class_5734 var2) {
+   public class_7624(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13430, var2);
       this.field_38793 = var1;
       this.field_38792 = new class_1331(var2.method_25947("PosX"), var2.method_25947("PosY"), var2.method_25947("PosZ"));
@@ -43,7 +43,7 @@ public class class_7624 extends class_7060 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       var1.method_25931("PosX", this.field_38792.method_12173());
       var1.method_25931("PosY", this.field_38792.method_12165());
       var1.method_25931("PosZ", this.field_38792.method_12185());

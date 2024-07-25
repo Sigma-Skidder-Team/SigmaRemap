@@ -234,7 +234,7 @@ public class class_91 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       var1.method_25958("Health", (short)this.field_177);
       var1.method_25958("Age", (short)this.field_178);
       var1.method_25958("PickupDelay", (short)this.field_174);
@@ -247,12 +247,12 @@ public class class_91 extends Entity {
       }
 
       if (!this.method_264().method_28022()) {
-         var1.method_25946("Item", this.method_264().method_27998(new class_5734()));
+         var1.method_25946("Item", this.method_264().method_27998(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.field_177 = var1.method_25956("Health");
       this.field_178 = var1.method_25956("Age");
       if (var1.method_25938("PickupDelay")) {
@@ -267,7 +267,7 @@ public class class_91 extends Entity {
          this.field_176 = var1.method_25926("Thrower");
       }
 
-      class_5734 var4 = var1.method_25937("Item");
+      CompoundNBT var4 = var1.method_25937("Item");
       this.method_248(ItemStack.method_28015(var4));
       if (this.method_264().method_28022()) {
          this.method_37204();

@@ -27,7 +27,7 @@ public class class_5056 implements class_7203, class_5684 {
    private final DataFixer field_26136;
    private final int field_26158;
    private boolean field_26148;
-   private class_5734 field_26155;
+   private CompoundNBT field_26155;
    private final int field_26147;
    private int field_26143;
    private boolean field_26133;
@@ -37,8 +37,8 @@ public class class_5056 implements class_7203, class_5684 {
    private boolean field_26139;
    private boolean field_26149;
    private class_1572 field_26162;
-   private class_5734 field_26157;
-   private class_5734 field_26163;
+   private CompoundNBT field_26157;
+   private CompoundNBT field_26163;
    private int field_26151;
    private int field_26146;
    private UUID field_26145;
@@ -49,7 +49,7 @@ public class class_5056 implements class_7203, class_5684 {
    private class_5056(
       DataFixer var1,
       int var2,
-      class_5734 var3,
+      CompoundNBT var3,
       boolean var4,
       int var5,
       int var6,
@@ -71,8 +71,8 @@ public class class_5056 implements class_7203, class_5684 {
       UUID var24,
       LinkedHashSet<String> var25,
       class_5026<class_341> var26,
-      class_5734 var27,
-      class_5734 var28,
+      CompoundNBT var27,
+      CompoundNBT var28,
       class_6292 var29,
       class_2904 var30,
       Lifecycle var31
@@ -112,7 +112,7 @@ public class class_5056 implements class_7203, class_5684 {
       this(
          (DataFixer)null,
          class_7665.method_34674().getWorldVersion(),
-         (class_5734)null,
+         (CompoundNBT)null,
          false,
          0,
          0,
@@ -134,8 +134,8 @@ public class class_5056 implements class_7203, class_5684 {
          (UUID)null,
          Sets.newLinkedHashSet(),
          new class_5026<class_341>(class_455.field_1893),
-         (class_5734)null,
-         new class_5734(),
+         (CompoundNBT)null,
+         new CompoundNBT(),
          var1.clone(),
          var2,
          var3
@@ -143,10 +143,10 @@ public class class_5056 implements class_7203, class_5684 {
    }
 
    public static class_5056 method_23310(
-      Dynamic<class_8406> var0, DataFixer var1, int var2, class_5734 var3, class_6292 var4, class_4922 var5, class_2904 var6, Lifecycle var7
+           Dynamic<class_8406> var0, DataFixer var1, int var2, CompoundNBT var3, class_6292 var4, class_4922 var5, class_2904 var6, Lifecycle var7
    ) {
       long var10 = var0.get("Time").asLong(0L);
-      class_5734 var12 = (class_5734)var0.get("DragonFight")
+      CompoundNBT var12 = (CompoundNBT)var0.get("DragonFight")
          .result()
          .<class_8406>map(Dynamic::getValue)
          .orElseGet(() -> (class_8406)var0.get("DimensionData").get("1").get("DragonFight").orElseEmptyMap().getValue());
@@ -178,7 +178,7 @@ public class class_5056 implements class_7203, class_5684 {
             .<String>flatMap(var0x -> Util.method_44689(var0x.asString().result()))
             .collect(Collectors.<String, LinkedHashSet<String>>toCollection(Sets::newLinkedHashSet)),
          new class_5026<class_341>(class_455.field_1893, var0.get("ScheduledEvents").asStream()),
-         (class_5734)var0.get("CustomBossEvents").orElseEmptyMap().getValue(),
+         (CompoundNBT)var0.get("CustomBossEvents").orElseEmptyMap().getValue(),
          var12,
          var4,
          var6,
@@ -187,23 +187,23 @@ public class class_5056 implements class_7203, class_5684 {
    }
 
    @Override
-   public class_5734 method_25713(class_6322 var1, class_5734 var2) {
+   public CompoundNBT method_25713(class_6322 var1, CompoundNBT var2) {
       this.method_23313();
       if (var2 == null) {
          var2 = this.field_26155;
       }
 
-      class_5734 var5 = new class_5734();
+      CompoundNBT var5 = new CompoundNBT();
       this.method_23312(var1, var5, var2);
       return var5;
    }
 
-   private void method_23312(class_6322 var1, class_5734 var2, class_5734 var3) {
+   private void method_23312(class_6322 var1, CompoundNBT var2, CompoundNBT var3) {
       class_3416 var6 = new class_3416();
       this.field_26144.stream().<class_473>map(class_473::method_2261).forEach(var6::add);
       var2.method_25946("ServerBrands", var6);
       var2.method_25934("WasModded", this.field_26161);
-      class_5734 var7 = new class_5734();
+      CompoundNBT var7 = new CompoundNBT();
       var7.method_25941("Name", class_7665.method_34674().getName());
       var7.method_25931("Id", class_7665.method_34674().getWorldVersion());
       var7.method_25934("Snapshot", !class_7665.method_34674().isStable());
@@ -304,7 +304,7 @@ public class class_5056 implements class_7203, class_5684 {
    }
 
    @Override
-   public class_5734 method_25712() {
+   public CompoundNBT method_25712() {
       this.method_23313();
       return this.field_26155;
    }
@@ -494,12 +494,12 @@ public class class_5056 implements class_7203, class_5684 {
    }
 
    @Override
-   public class_5734 method_25717() {
+   public CompoundNBT method_25717() {
       return this.field_26157;
    }
 
    @Override
-   public void method_25705(class_5734 var1) {
+   public void method_25705(CompoundNBT var1) {
       this.field_26157 = var1;
    }
 
@@ -515,12 +515,12 @@ public class class_5056 implements class_7203, class_5684 {
 
    @Nullable
    @Override
-   public class_5734 method_25708() {
+   public CompoundNBT method_25708() {
       return this.field_26163;
    }
 
    @Override
-   public void method_25698(class_5734 var1) {
+   public void method_25698(CompoundNBT var1) {
       this.field_26163 = var1;
    }
 

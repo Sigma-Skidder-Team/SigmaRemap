@@ -18,7 +18,7 @@ public final class class_4338 {
    private static final Logger field_21085 = LogManager.getLogger();
 
    @Nullable
-   public static GameProfile method_20184(class_5734 var0) {
+   public static GameProfile method_20184(CompoundNBT var0) {
       String var3 = null;
       UUID var4 = null;
       if (var0.method_25939("Name", 8)) {
@@ -32,13 +32,13 @@ public final class class_4338 {
       try {
          GameProfile var5 = new GameProfile(var4, var3);
          if (var0.method_25939("Properties", 10)) {
-            class_5734 var6 = var0.method_25937("Properties");
+            CompoundNBT var6 = var0.method_25937("Properties");
 
             for (String var8 : var6.method_25952()) {
                class_3416 var9 = var6.method_25927(var8, 10);
 
                for (int var10 = 0; var10 < var9.size(); var10++) {
-                  class_5734 var11 = var9.method_15764(var10);
+                  CompoundNBT var11 = var9.method_15764(var10);
                   String var12 = var11.method_25965("Value");
                   if (var11.method_25939("Signature", 8)) {
                      var5.getProperties().put(var8, new Property(var8, var12, var11.method_25965("Signature")));
@@ -55,7 +55,7 @@ public final class class_4338 {
       }
    }
 
-   public static class_5734 method_20177(class_5734 var0, GameProfile var1) {
+   public static CompoundNBT method_20177(CompoundNBT var0, GameProfile var1) {
       if (!class_6660.method_30576(var1.getName())) {
          var0.method_25941("Name", var1.getName());
       }
@@ -65,13 +65,13 @@ public final class class_4338 {
       }
 
       if (!var1.getProperties().isEmpty()) {
-         class_5734 var4 = new class_5734();
+         CompoundNBT var4 = new CompoundNBT();
 
          for (String var6 : var1.getProperties().keySet()) {
             class_3416 var7 = new class_3416();
 
             for (Property var9 : var1.getProperties().get(var6)) {
-               class_5734 var10 = new class_5734();
+               CompoundNBT var10 = new CompoundNBT();
                var10.method_25941("Value", var9.getValue());
                if (var9.hasSignature()) {
                   var10.method_25941("Signature", var9.getSignature());
@@ -99,7 +99,7 @@ public final class class_4338 {
          return false;
       } else if (!var0.getClass().equals(var1.getClass())) {
          return false;
-      } else if (!(var0 instanceof class_5734)) {
+      } else if (!(var0 instanceof CompoundNBT)) {
          if (var0 instanceof class_3416 && var2) {
             class_3416 var11 = (class_3416)var0;
             class_3416 var12 = (class_3416)var1;
@@ -128,8 +128,8 @@ public final class class_4338 {
             return var0.equals(var1);
          }
       } else {
-         class_5734 var5 = (class_5734)var0;
-         class_5734 var6 = (class_5734)var1;
+         CompoundNBT var5 = (CompoundNBT)var0;
+         CompoundNBT var6 = (CompoundNBT)var1;
 
          for (String var8 : var5.method_25952()) {
             class_8406 var9 = var5.method_25929(var8);
@@ -161,26 +161,26 @@ public final class class_4338 {
       }
    }
 
-   public static class_1331 method_20189(class_5734 var0) {
+   public static class_1331 method_20189(CompoundNBT var0) {
       return new class_1331(var0.method_25947("X"), var0.method_25947("Y"), var0.method_25947("Z"));
    }
 
-   public static class_5734 method_20190(class_1331 var0) {
-      class_5734 var3 = new class_5734();
+   public static CompoundNBT method_20190(class_1331 var0) {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25931("X", var0.method_12173());
       var3.method_25931("Y", var0.method_12165());
       var3.method_25931("Z", var0.method_12185());
       return var3;
    }
 
-   public static class_2522 method_20185(class_5734 var0) {
+   public static class_2522 method_20185(CompoundNBT var0) {
       if (!var0.method_25939("Name", 8)) {
          return class_4783.field_23184.method_29260();
       } else {
          class_6414 var3 = class_8669.field_44462.method_39806(new Identifier(var0.method_25965("Name")));
          class_2522 var4 = var3.method_29260();
          if (var0.method_25939("Properties", 10)) {
-            class_5734 var5 = var0.method_25937("Properties");
+            CompoundNBT var5 = var0.method_25937("Properties");
             class_8021 var6 = var3.method_29306();
 
             for (String var8 : var5.method_25952()) {
@@ -196,7 +196,7 @@ public final class class_4338 {
    }
 
    private static <S extends class_2243<?, S>, T extends Comparable<T>> S method_20186(
-      S var0, class_5019<T> var1, String var2, class_5734 var3, class_5734 var4
+           S var0, class_5019<T> var1, String var2, CompoundNBT var3, CompoundNBT var4
    ) {
       Optional var7 = var1.method_23108(var3.method_25965(var2));
       if (!var7.isPresent()) {
@@ -207,12 +207,12 @@ public final class class_4338 {
       }
    }
 
-   public static class_5734 method_20187(class_2522 var0) {
-      class_5734 var3 = new class_5734();
+   public static CompoundNBT method_20187(class_2522 var0) {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("Name", class_8669.field_44462.method_39797(var0.method_8360()).toString());
       ImmutableMap var4 = var0.method_10316();
       if (!var4.isEmpty()) {
-         class_5734 var5 = new class_5734();
+         CompoundNBT var5 = new CompoundNBT();
          UnmodifiableIterator var6 = var4.entrySet().iterator();
 
          while (var6.hasNext()) {
@@ -231,11 +231,11 @@ public final class class_4338 {
       return var0.method_23110((T)var1);
    }
 
-   public static class_5734 method_20179(DataFixer var0, class_5397 var1, class_5734 var2, int var3) {
+   public static CompoundNBT method_20179(DataFixer var0, class_5397 var1, CompoundNBT var2, int var3) {
       return method_20180(var0, var1, var2, var3, class_7665.method_34674().getWorldVersion());
    }
 
-   public static class_5734 method_20180(DataFixer var0, class_5397 var1, class_5734 var2, int var3, int var4) {
-      return (class_5734)var0.update(var1.method_24571(), new Dynamic(class_3504.field_17178, var2), var3, var4).getValue();
+   public static CompoundNBT method_20180(DataFixer var0, class_5397 var1, CompoundNBT var2, int var3, int var4) {
+      return (CompoundNBT)var0.update(var1.method_24571(), new Dynamic(class_3504.field_17178, var2), var3, var4).getValue();
    }
 }

@@ -25,11 +25,11 @@ public class class_3551 extends class_4109 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Variant", this.method_16529());
       if (!this.field_20021.method_31498(1).method_28022()) {
-         var1.method_25946("ArmorItem", this.field_20021.method_31498(1).method_27998(new class_5734()));
+         var1.method_25946("ArmorItem", this.field_20021.method_31498(1).method_27998(new CompoundNBT()));
       }
    }
 
@@ -43,7 +43,7 @@ public class class_3551 extends class_4109 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_16525(var1.method_25947("Variant"));
       if (var1.method_25939("ArmorItem", 10)) {
@@ -250,7 +250,7 @@ public class class_3551 extends class_4109 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       class_2185 var8;
       if (!(var4 instanceof class_3075)) {
          var8 = Util.<class_2185>method_44697(class_2185.values(), this.field_41717);

@@ -26,8 +26,8 @@ public class class_2560 {
       this.field_12673 = var3;
    }
 
-   public class_5734 method_11627() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_11627() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("name", this.field_12670);
       var3.method_25941("ip", this.field_12675);
       if (this.field_12665 != null) {
@@ -53,7 +53,7 @@ public class class_2560 {
       this.field_12669 = var1;
    }
 
-   public static class_2560 method_11625(class_5734 var0) {
+   public static class_2560 method_11625(CompoundNBT var0) {
       class_2560 var3 = new class_2560(var0.method_25965("name"), var0.method_25965("ip"), false);
       if (var0.method_25939("icon", 8)) {
          var3.method_11623(var0.method_25965("icon"));

@@ -29,7 +29,7 @@ public class class_1983 implements AutoCloseable {
       this.field_10049 = new class_2696<class_9465>(new class_5943(class_2632.values().length), Util.getIoWorkerExecutor(), "IOWorker-" + var3);
    }
 
-   public CompletableFuture<Void> method_9152(class_2034 var1, class_5734 var2) {
+   public CompletableFuture<Void> method_9152(class_2034 var1, CompoundNBT var2) {
       return this.method_9153(() -> {
          class_9443 var5 = this.field_10048.computeIfAbsent(var1, var1xx -> new class_9443(var2));
          class_9443.method_43680(var5, var2);
@@ -38,14 +38,14 @@ public class class_1983 implements AutoCloseable {
    }
 
    @Nullable
-   public class_5734 method_9148(class_2034 var1) throws IOException {
+   public CompoundNBT method_9148(class_2034 var1) throws IOException {
       CompletableFuture var4 = this.method_9153(() -> {
          class_9443 var4x = this.field_10048.get(var1);
          if (var4x != null) {
             return Either.left(class_9443.method_43677(var4x));
          } else {
             try {
-               class_5734 var5 = this.field_10047.method_45249(var1);
+               CompoundNBT var5 = this.field_10047.method_45249(var1);
                return Either.left(var5);
             } catch (Exception var6x) {
                field_10051.warn("Failed to read chunk {}", var1, var6x);
@@ -55,7 +55,7 @@ public class class_1983 implements AutoCloseable {
       });
 
       try {
-         return (class_5734)var4.join();
+         return (CompoundNBT)var4.join();
       } catch (CompletionException var6) {
          if (var6.getCause() instanceof IOException) {
             throw (IOException)var6.getCause();

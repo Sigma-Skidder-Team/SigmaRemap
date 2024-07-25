@@ -3,7 +3,7 @@ package net.minecraft.util.text;
 import java.util.Objects;
 import java.util.stream.Stream;
 import remapped.Identifier;
-import remapped.class_5734;
+import remapped.CompoundNBT;
 import remapped.class_9155;
 import remapped.class_9257;
 
@@ -29,9 +29,9 @@ public class NBTTextComponent$class_45 extends NBTTextComponent {
    }
 
    @Override
-   public Stream<class_5734> func_218673_a(class_9155 p_218673_1_) {
-      class_5734 var4 = p_218673_1_.method_42177().method_1678().method_29742(this.field_229725_e_);
-      return Stream.<class_5734>of(var4);
+   public Stream<CompoundNBT> func_218673_a(class_9155 p_218673_1_) {
+      CompoundNBT var4 = p_218673_1_.method_42177().method_1678().method_29742(this.field_229725_e_);
+      return Stream.<CompoundNBT>of(var4);
    }
 
    @Override

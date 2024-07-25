@@ -70,7 +70,7 @@ public abstract class class_3521 {
             boolean var5 = false;
 
             for (int var6 = 0; var6 < this.field_17260; var6++) {
-               class_5734 var13 = this.field_17261.method_22391();
+               CompoundNBT var13 = this.field_17261.method_22391();
                Optional var14 = class_6629.method_30474(var13);
                if (!var14.isPresent()) {
                   this.method_16265();
@@ -125,7 +125,7 @@ public abstract class class_3521 {
 
                         if (this.field_17261.method_22391().method_25924() == 1 && this.field_17261.method_22391().method_25939("id", 8)) {
                            ((class_5886)var24)
-                              .method_26864(var23, var3.method_43368(var24.method_37075()), class_2417.field_12024, (class_8733)null, (class_5734)null);
+                              .method_26864(var23, var3.method_43368(var24.method_37075()), class_2417.field_12024, (class_8733)null, (CompoundNBT)null);
                         }
                      }
 
@@ -180,7 +180,7 @@ public abstract class class_3521 {
       this.method_16254(1);
    }
 
-   public void method_16255(class_5734 var1) {
+   public void method_16255(CompoundNBT var1) {
       this.field_17251 = var1.method_25956("Delay");
       this.field_17258.clear();
       if (var1.method_25939("SpawnPotentials", 9)) {
@@ -219,7 +219,7 @@ public abstract class class_3521 {
       }
    }
 
-   public class_5734 method_16258(class_5734 var1) {
+   public CompoundNBT method_16258(CompoundNBT var1) {
       Identifier var4 = this.method_16256();
       if (var4 == null) {
          return var1;

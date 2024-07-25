@@ -13,7 +13,7 @@ public class class_9089 extends class_2609 {
       var0 -> var0.group(class_5927.field_30061.fieldOf("feature").forGetter(var0x -> var0x.field_46546), method_11825()).apply(var0, class_9089::new)
    );
    private final Supplier<class_5927<?, ?>> field_46546;
-   private final class_5734 field_46544;
+   private final CompoundNBT field_46544;
 
    public class_9089(Supplier<class_5927<?, ?>> var1, class_7599 var2) {
       super(var2);
@@ -21,8 +21,8 @@ public class class_9089 extends class_2609 {
       this.field_46544 = this.method_41856();
    }
 
-   private class_5734 method_41856() {
-      class_5734 var3 = new class_5734();
+   private CompoundNBT method_41856() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("name", "minecraft:bottom");
       var3.method_25941("final_state", "minecraft:air");
       var3.method_25941("pool", "minecraft:empty");

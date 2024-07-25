@@ -195,14 +195,14 @@ public class class_7272 extends class_5467 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("RabbitType", this.method_33239());
       var1.method_25931("MoreCarrotTicks", this.field_37234);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_33231(var1.method_25947("RabbitType"));
       this.field_37234 = var1.method_25947("MoreCarrotTicks");
@@ -292,7 +292,7 @@ public class class_7272 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       int var8 = this.method_33236(var1);
       if (!(var4 instanceof class_5715)) {
          var4 = new class_5715(var8);

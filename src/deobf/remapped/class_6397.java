@@ -20,10 +20,10 @@ public class class_6397 {
    private class_6397() {
    }
 
-   public class_6397(class_5734 var1) {
+   public class_6397(CompoundNBT var1) {
       this();
       if (var1.method_25939("Indices", 10)) {
-         class_5734 var4 = var1.method_25937("Indices");
+         CompoundNBT var4 = var1.method_25937("Indices");
 
          for (int var5 = 0; var5 < this.field_32663.length; var5++) {
             String var6 = String.valueOf(var5);
@@ -143,9 +143,9 @@ public class class_6397 {
       return this.field_32665.isEmpty();
    }
 
-   public class_5734 method_29205() {
-      class_5734 var3 = new class_5734();
-      class_5734 var4 = new class_5734();
+   public CompoundNBT method_29205() {
+      CompoundNBT var3 = new CompoundNBT();
+      CompoundNBT var4 = new CompoundNBT();
 
       for (int var5 = 0; var5 < this.field_32663.length; var5++) {
          String var6 = String.valueOf(var5);

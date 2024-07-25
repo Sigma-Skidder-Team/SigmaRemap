@@ -18,14 +18,14 @@ public class class_6532 {
       return var5;
    }
 
-   public class_5734 method_29742(Identifier var1) {
+   public CompoundNBT method_29742(Identifier var1) {
       String var4 = var1.method_21461();
       String var5 = method_29740(var4);
       class_7711 var6 = this.field_33230.<class_7711>method_18707(() -> this.method_29744(var4, var5), var5);
-      return var6 == null ? new class_5734() : var6.method_34898(var1.method_21456());
+      return var6 == null ? new CompoundNBT() : var6.method_34898(var1.method_21456());
    }
 
-   public void method_29743(Identifier var1, class_5734 var2) {
+   public void method_29743(Identifier var1, CompoundNBT var2) {
       String var5 = var1.method_21461();
       String var6 = method_29740(var5);
       this.field_33230.<class_7711>method_18708(() -> this.method_29744(var5, var6), var6).method_34896(var1.method_21456(), var2);

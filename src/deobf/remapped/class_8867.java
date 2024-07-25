@@ -7,10 +7,10 @@ import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public class class_8867 implements class_4885 {
    private static String[] field_45332;
-   private final class_5734 field_45334;
+   private final CompoundNBT field_45334;
    private final Predicate<class_8406> field_45333;
 
-   public class_8867(class_5734 var1) {
+   public class_8867(CompoundNBT var1) {
       this.field_45334 = var1;
       this.field_45333 = class_4235.method_19749(var1);
    }
@@ -33,7 +33,7 @@ public class class_8867 implements class_4885 {
             var6.setTrue();
          });
          if (var6.isFalse()) {
-            class_5734 var8 = this.field_45334.method_25944();
+            CompoundNBT var8 = this.field_45334.method_25944();
             var7.add(var8);
             var3.add(var8);
          }

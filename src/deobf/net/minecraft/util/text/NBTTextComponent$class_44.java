@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import remapped.class_4550;
 import remapped.class_4964;
-import remapped.class_5734;
+import remapped.CompoundNBT;
 import remapped.class_6000;
 import remapped.class_9155;
 import remapped.class_9257;
@@ -48,12 +48,12 @@ public class NBTTextComponent$class_44 extends NBTTextComponent {
    }
 
    @Override
-   public Stream<class_5734> func_218673_a(class_9155 p_218673_1_) throws CommandSyntaxException {
+   public Stream<CompoundNBT> func_218673_a(class_9155 p_218673_1_) throws CommandSyntaxException {
       if (this.field_218689_f != null) {
          List var4 = this.field_218689_f.method_21106(p_218673_1_);
-         return var4.stream().<class_5734>map(class_6000::method_27394);
+         return var4.stream().<CompoundNBT>map(class_6000::method_27394);
       } else {
-         return Stream.<class_5734>empty();
+         return Stream.<CompoundNBT>empty();
       }
    }
 

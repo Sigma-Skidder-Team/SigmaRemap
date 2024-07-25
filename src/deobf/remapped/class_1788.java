@@ -98,7 +98,7 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       if (!var2.method_25939("Book", 10)) {
          this.field_9134 = ItemStack.EMPTY;
@@ -111,10 +111,10 @@ public class class_1788 extends class_3757 implements class_5507, class_4259 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (!this.method_7958().method_28022()) {
-         var1.method_25946("Book", this.method_7958().method_27998(new class_5734()));
+         var1.method_25946("Book", this.method_7958().method_27998(new CompoundNBT()));
          var1.method_25931("Page", this.field_9135);
       }
 

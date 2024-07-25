@@ -410,7 +410,7 @@ public class class_916 extends class_4037 implements class_6510 {
       return CompletableFuture.<Either<class_5990, class_1361>>supplyAsync(() -> {
          try {
             this.field_4703.method_29599().method_16055("chunkLoad");
-            class_5734 var4 = this.method_4027(var1);
+            CompoundNBT var4 = this.method_4027(var1);
             if (var4 != null) {
                boolean var9 = var4.method_25939("Level", 10) && var4.method_25937("Level").method_25939("Status", 8);
                if (var9) {
@@ -599,7 +599,7 @@ public class class_916 extends class_4037 implements class_6510 {
             }
 
             this.field_4703.method_29599().method_16055("chunkSave");
-            class_5734 var6 = class_9477.method_43779(this.field_4703, var1);
+            CompoundNBT var6 = class_9477.method_43779(this.field_4703, var1);
             if (class_7860.field_39941.method_22501()) {
                World var7 = (World)class_7860.method_35555(var1, class_7860.field_40175);
                class_7860.method_35568(class_7860.field_39941, var1, var7 != null ? var7 : this.field_4703, var6);
@@ -620,7 +620,7 @@ public class class_916 extends class_4037 implements class_6510 {
       if (var4 != 0) {
          return var4 == 1;
       } else {
-         class_5734 var5;
+         CompoundNBT var5;
          try {
             var5 = this.method_4027(var1);
             if (var5 == null) {
@@ -750,8 +750,8 @@ public class class_916 extends class_4037 implements class_6510 {
    }
 
    @Nullable
-   private class_5734 method_4027(class_2034 var1) throws IOException {
-      class_5734 var4 = this.method_18575(var1);
+   private CompoundNBT method_4027(class_2034 var1) throws IOException {
+      CompoundNBT var4 = this.method_18575(var1);
       return var4 != null ? this.method_18573(this.field_4703.method_29545(), this.field_4695, var4) : null;
    }
 

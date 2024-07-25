@@ -54,7 +54,7 @@ public class class_1557 extends class_2451 {
 
    @Override
    public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
-      class_5734 var7 = var1.method_28021("Fireworks");
+      CompoundNBT var7 = var1.method_28021("Fireworks");
       if (var7 != null) {
          if (var7.method_25939("Flight", 99)) {
             var3.add(
@@ -68,7 +68,7 @@ public class class_1557 extends class_2451 {
          class_3416 var8 = var7.method_25927("Explosions", 10);
          if (!var8.isEmpty()) {
             for (int var9 = 0; var9 < var8.size(); var9++) {
-               class_5734 var10 = var8.method_15764(var9);
+               CompoundNBT var10 = var8.method_15764(var9);
                ArrayList var11 = Lists.newArrayList();
                class_7004.method_32017(var10, var11);
                if (!var11.isEmpty()) {

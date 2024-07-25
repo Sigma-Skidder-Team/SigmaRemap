@@ -65,12 +65,12 @@ public abstract class class_1279 extends class_7060 {
       }
    }
 
-   public class_1279(class_2746 var1, class_5734 var2) {
+   public class_1279(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
    }
 
    public void method_5718(class_700 var1, class_9616 var2, int var3, int var4, int var5, int var6, int var7, int var8) {
@@ -135,7 +135,7 @@ public abstract class class_1279 extends class_7060 {
          class_4965 var11 = class_6629.field_34324.method_30484(var1.method_7066());
          var11.method_26457(var11.method_26465());
          var11.method_37144((double)var8 + 0.5, (double)var9, (double)var10 + 0.5, 0.0F, 0.0F);
-         var11.method_26864(var1, var1.method_43368(var11.method_37075()), class_2417.field_12033, (class_8733)null, (class_5734)null);
+         var11.method_26864(var1, var1.method_43368(var11.method_37075()), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
          var1.method_7065(var11);
          return true;
       }

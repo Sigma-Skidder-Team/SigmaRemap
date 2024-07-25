@@ -116,17 +116,17 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    public static boolean method_20408(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       return var3 != null && var3.method_25933("Charged");
    }
 
    public static void method_20412(ItemStack var0, boolean var1) {
-      class_5734 var4 = var0.method_27994();
+      CompoundNBT var4 = var0.method_27994();
       var4.method_25934("Charged", var1);
    }
 
    private static void method_20409(ItemStack var0, ItemStack var1) {
-      class_5734 var4 = var0.method_27994();
+      CompoundNBT var4 = var0.method_27994();
       class_3416 var5;
       if (!var4.method_25939("ChargedProjectiles", 9)) {
          var5 = new class_3416();
@@ -134,7 +134,7 @@ public class class_4380 extends class_551 implements class_1538 {
          var5 = var4.method_25927("ChargedProjectiles", 10);
       }
 
-      class_5734 var6 = new class_5734();
+      CompoundNBT var6 = new CompoundNBT();
       var1.method_27998(var6);
       var5.add(var6);
       var4.method_25946("ChargedProjectiles", var5);
@@ -142,12 +142,12 @@ public class class_4380 extends class_551 implements class_1538 {
 
    private static List<ItemStack> method_20411(ItemStack var0) {
       ArrayList var3 = Lists.newArrayList();
-      class_5734 var4 = var0.method_27990();
+      CompoundNBT var4 = var0.method_27990();
       if (var4 != null && var4.method_25939("ChargedProjectiles", 9)) {
          class_3416 var5 = var4.method_25927("ChargedProjectiles", 10);
          if (var5 != null) {
             for (int var6 = 0; var6 < var5.size(); var6++) {
-               class_5734 var7 = var5.method_15764(var6);
+               CompoundNBT var7 = var5.method_15764(var6);
                var3.add(ItemStack.method_28015(var7));
             }
          }
@@ -157,7 +157,7 @@ public class class_4380 extends class_551 implements class_1538 {
    }
 
    private static void method_20399(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       if (var3 != null) {
          class_3416 var4 = var3.method_25927("ChargedProjectiles", 9);
          var4.clear();

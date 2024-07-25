@@ -315,7 +315,7 @@ public class class_4478 extends Entity {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.field_41697 = var1.method_25947("Age");
       this.field_21826 = var1.method_25947("Duration");
       this.field_21824 = var1.method_25947("WaitTime");
@@ -358,7 +358,7 @@ public class class_4478 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       var1.method_25931("Age", this.field_41697);
       var1.method_25931("Duration", this.field_21826);
       var1.method_25931("WaitTime", this.field_21824);
@@ -384,7 +384,7 @@ public class class_4478 extends Entity {
          class_3416 var4 = new class_3416();
 
          for (class_2250 var6 : this.field_21833) {
-            var4.add(var6.method_10345(new class_5734()));
+            var4.add(var6.method_10345(new CompoundNBT()));
          }
 
          var1.method_25946("Effects", var4);

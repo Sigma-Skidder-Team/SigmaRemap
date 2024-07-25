@@ -67,11 +67,11 @@ public class class_2013 extends class_4314 {
    public class_2522 method_29302(class_353 var1) {
       World var4 = var1.method_21862();
       ItemStack var5 = var1.method_21867();
-      class_5734 var6 = var5.method_27990();
+      CompoundNBT var6 = var5.method_27990();
       class_704 var7 = var1.method_21868();
       boolean var8 = false;
       if (!var4.field_33055 && var7 != null && var6 != null && var7.method_3184() && var6.method_25938("BlockEntityTag")) {
-         class_5734 var9 = var6.method_25937("BlockEntityTag");
+         CompoundNBT var9 = var6.method_25937("BlockEntityTag");
          if (var9.method_25938("Book")) {
             var8 = true;
          }

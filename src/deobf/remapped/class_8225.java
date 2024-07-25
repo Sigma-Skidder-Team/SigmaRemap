@@ -13,13 +13,13 @@ public class class_8225 extends class_8549 {
       this.field_42225 = var3 != Direction.field_818 && var3 != Direction.field_800 ? var2.method_44393() : var2.method_44387();
    }
 
-   public class_8225(class_5799 var1, class_5734 var2) {
+   public class_8225(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13435, var2);
       this.field_42225 = var2.method_25947("Steps");
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25931("Steps", this.field_42225);
    }

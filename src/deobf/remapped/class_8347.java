@@ -91,7 +91,7 @@ public class class_8347 extends class_7157 {
 
    public ItemStack method_38436(class_6946 var1) {
       ItemStack var4 = new ItemStack(class_4897.field_24554);
-      class_5734 var5 = var4.method_27978("Explosion");
+      CompoundNBT var5 = var4.method_27978("Explosion");
       class_3917 var6 = class_3917.field_19023;
       ArrayList var7 = Lists.newArrayList();
 

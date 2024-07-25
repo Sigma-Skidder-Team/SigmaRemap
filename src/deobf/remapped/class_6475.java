@@ -9,11 +9,11 @@ public class class_6475<T> implements class_2874<T> {
    private final class_95<T> field_33003;
    private final T[] field_33001;
    private final class_5021<T> field_32998;
-   private final Function<class_5734, T> field_32999;
+   private final Function<CompoundNBT, T> field_32999;
    private final int field_33002;
    private int field_33000;
 
-   public class_6475(class_95<T> var1, int var2, class_5021<T> var3, Function<class_5734, T> var4) {
+   public class_6475(class_95<T> var1, int var2, class_5021<T> var3, Function<CompoundNBT, T> var4) {
       this.field_33003 = var1;
       this.field_33001 = (T[])(new Object[1 << var2]);
       this.field_33002 = var2;

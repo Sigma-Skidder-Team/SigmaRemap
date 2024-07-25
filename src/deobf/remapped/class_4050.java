@@ -56,7 +56,7 @@ public class class_4050 {
          File var5 = this.method_18701(var2);
          if (var5.exists()) {
             class_7186 var6 = (class_7186)var1.get();
-            class_5734 var7 = this.method_18704(var2, class_7665.method_34674().getWorldVersion());
+            CompoundNBT var7 = this.method_18704(var2, class_7665.method_34674().getWorldVersion());
             var6.method_32924(var7.method_25937("data"));
             return (T)var6;
          }
@@ -71,15 +71,15 @@ public class class_4050 {
       this.field_19696.put(var1.method_32926(), var1);
    }
 
-   public class_5734 method_18704(String var1, int var2) throws IOException {
+   public CompoundNBT method_18704(String var1, int var2) throws IOException {
       File var5 = this.method_18701(var1);
 
-      class_5734 var16;
+      CompoundNBT var16;
       try (
          FileInputStream var6 = new FileInputStream(var5);
          PushbackInputStream var8 = new PushbackInputStream(var6, 2);
       ) {
-         class_5734 var10;
+         CompoundNBT var10;
          if (this.method_18709(var8)) {
             var10 = class_5957.method_27219(var8);
          } else {

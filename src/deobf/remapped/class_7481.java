@@ -30,9 +30,9 @@ public class class_7481 implements class_5990 {
    private final Map<class_3801, class_2131> field_38183 = Maps.newEnumMap(class_3801.class);
    private volatile class_7335 field_38182 = class_7335.field_37504;
    private final Map<class_1331, class_3757> field_38187 = Maps.newHashMap();
-   private final Map<class_1331, class_5734> field_38180 = Maps.newHashMap();
+   private final Map<class_1331, CompoundNBT> field_38180 = Maps.newHashMap();
    private final class_1315[] field_38175 = new class_1315[16];
-   private final List<class_5734> field_38179 = Lists.newArrayList();
+   private final List<CompoundNBT> field_38179 = Lists.newArrayList();
    private final List<class_1331> field_38171 = Lists.newArrayList();
    private final ShortList[] field_38178 = new ShortList[16];
    private final Map<class_5390<?>, class_3200<?>> field_38189 = Maps.newHashMap();
@@ -205,20 +205,20 @@ public class class_7481 implements class_5990 {
       return this.field_38187;
    }
 
-   public void method_34020(class_5734 var1) {
+   public void method_34020(CompoundNBT var1) {
       this.field_38179.add(var1);
    }
 
    @Override
    public void method_27342(Entity var1) {
       if (!var1.method_37070()) {
-         class_5734 var4 = new class_5734();
+         CompoundNBT var4 = new CompoundNBT();
          var1.method_37350(var4);
          this.method_34020(var4);
       }
    }
 
-   public List<class_5734> method_34027() {
+   public List<CompoundNBT> method_34027() {
       return this.field_38179;
    }
 
@@ -402,24 +402,24 @@ public class class_7481 implements class_5990 {
    }
 
    @Override
-   public void method_27347(class_5734 var1) {
+   public void method_27347(CompoundNBT var1) {
       this.field_38180.put(new class_1331(var1.method_25947("x"), var1.method_25947("y"), var1.method_25947("z")), var1);
    }
 
-   public Map<class_1331, class_5734> method_34022() {
-      return Collections.<class_1331, class_5734>unmodifiableMap(this.field_38180);
+   public Map<class_1331, CompoundNBT> method_34022() {
+      return Collections.<class_1331, CompoundNBT>unmodifiableMap(this.field_38180);
    }
 
    @Override
-   public class_5734 method_27355(class_1331 var1) {
+   public CompoundNBT method_27355(class_1331 var1) {
       return this.field_38180.get(var1);
    }
 
    @Nullable
    @Override
-   public class_5734 method_27345(class_1331 var1) {
+   public CompoundNBT method_27345(class_1331 var1) {
       class_3757 var4 = this.method_28260(var1);
-      return var4 == null ? this.field_38180.get(var1) : var4.method_17396(new class_5734());
+      return var4 == null ? this.field_38180.get(var1) : var4.method_17396(new CompoundNBT());
    }
 
    @Override

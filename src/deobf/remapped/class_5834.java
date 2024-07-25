@@ -520,7 +520,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       var1.method_25920("Health", this.method_26551());
       var1.method_25958("HurtTime", (short)this.field_29645);
       var1.method_25931("HurtByTimestamp", this.field_29636);
@@ -531,7 +531,7 @@ public abstract class class_5834 extends Entity {
          class_3416 var4 = new class_3416();
 
          for (class_2250 var6 : this.field_29642.values()) {
-            var4.add(var6.method_10345(new class_5734()));
+            var4.add(var6.method_10345(new CompoundNBT()));
          }
 
          var1.method_25946("ActiveEffects", var4);
@@ -548,7 +548,7 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.method_26460(var1.method_25955("AbsorptionAmount"));
       if (var1.method_25939("Attributes", 9) && this.field_41768 != null && !this.field_41768.field_33055) {
          this.method_26590().method_30812(var1.method_25927("Attributes", 10));
@@ -558,7 +558,7 @@ public abstract class class_5834 extends Entity {
          class_3416 var4 = var1.method_25927("ActiveEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            class_5734 var6 = var4.method_15764(var5);
+            CompoundNBT var6 = var4.method_15764(var5);
             class_2250 var7 = class_2250.method_10343(var6);
             if (var7 != null) {
                this.field_29642.put(var7.method_10339(), var7);

@@ -61,7 +61,7 @@ public class class_6786 extends class_3757 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25941("name", this.field_34997.toString());
       var1.method_25941("target", this.field_34998.toString());
@@ -72,7 +72,7 @@ public class class_6786 extends class_3757 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_34997 = new Identifier(var2.method_25965("name"));
       this.field_34998 = new Identifier(var2.method_25965("target"));
@@ -89,8 +89,8 @@ public class class_6786 extends class_3757 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    public void method_31112(class_6331 var1, int var2, boolean var3) {

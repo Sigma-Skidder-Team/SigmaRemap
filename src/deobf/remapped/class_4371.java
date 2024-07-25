@@ -9,11 +9,11 @@ public class class_4371<T> implements class_2874<T> {
    private final class_95<T> field_21445;
    private final class_6834<T> field_21448;
    private final class_5021<T> field_21449;
-   private final Function<class_5734, T> field_21447;
-   private final Function<T, class_5734> field_21444;
+   private final Function<CompoundNBT, T> field_21447;
+   private final Function<T, CompoundNBT> field_21444;
    private final int field_21450;
 
-   public class_4371(class_95<T> var1, int var2, class_5021<T> var3, Function<class_5734, T> var4, Function<T, class_5734> var5) {
+   public class_4371(class_95<T> var1, int var2, class_5021<T> var3, Function<CompoundNBT, T> var4, Function<T, CompoundNBT> var5) {
       this.field_21445 = var1;
       this.field_21450 = var2;
       this.field_21449 = var3;

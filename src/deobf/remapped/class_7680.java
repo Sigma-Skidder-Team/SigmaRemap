@@ -219,7 +219,7 @@ public class class_7680 extends Screen {
       }
    }
 
-   public static List<String> method_34805(class_5734 var0) {
+   public static List<String> method_34805(CompoundNBT var0) {
       class_3416 var3 = var0.method_25927("pages", 8).method_15768();
       Builder var4 = ImmutableList.builder();
 

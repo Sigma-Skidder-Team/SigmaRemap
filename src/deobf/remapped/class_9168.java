@@ -4,17 +4,17 @@ import java.util.List;
 
 public interface class_9168 {
    default boolean method_42263(ItemStack var1) {
-      class_5734 var4 = var1.method_28021("display");
+      CompoundNBT var4 = var1.method_28021("display");
       return var4 != null && var4.method_25939("color", 99);
    }
 
    default int method_42261(ItemStack var1) {
-      class_5734 var4 = var1.method_28021("display");
+      CompoundNBT var4 = var1.method_28021("display");
       return var4 != null && var4.method_25939("color", 99) ? var4.method_25947("color") : 10511680;
    }
 
    default void method_42260(ItemStack var1) {
-      class_5734 var4 = var1.method_28021("display");
+      CompoundNBT var4 = var1.method_28021("display");
       if (var4 != null && var4.method_25938("color")) {
          var4.method_25959("color");
       }

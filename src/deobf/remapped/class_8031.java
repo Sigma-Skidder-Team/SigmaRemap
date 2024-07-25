@@ -208,14 +208,14 @@ public class class_8031 extends class_5467 implements class_9897 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25934("Sheared", this.method_36478());
       var1.method_25921("Color", (byte)this.method_36474().method_41794());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_36469(var1.method_25933("Sheared"));
       this.method_36471(class_9077.method_41789(var1.method_25950("Color")));
@@ -301,7 +301,7 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       this.method_36471(method_36470(var1.method_43360()));
       return super.method_26864(var1, var2, var3, var4, var5);
    }

@@ -22,16 +22,16 @@ public class class_455<C> {
       return (class_5923<C, T>)this.field_1892.get(var1);
    }
 
-   public <T extends class_7803<C>> class_5734 method_2187(T var1) {
+   public <T extends class_7803<C>> CompoundNBT method_2187(T var1) {
       class_5923 var4 = this.method_2188(var1.getClass());
-      class_5734 var5 = new class_5734();
+      CompoundNBT var5 = new CompoundNBT();
       var4.method_27093(var5, (C)var1);
       var5.method_25941("Type", var4.method_27097().toString());
       return var5;
    }
 
    @Nullable
-   public class_7803<C> method_2185(class_5734 var1) {
+   public class_7803<C> method_2185(CompoundNBT var1) {
       Identifier var4 = Identifier.method_21455(var1.method_25965("Type"));
       class_5923 var5 = this.field_1890.get(var4);
       if (var5 == null) {

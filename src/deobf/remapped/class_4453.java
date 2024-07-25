@@ -12,13 +12,13 @@ public class class_4453 extends class_7186 {
    }
 
    @Override
-   public void method_32924(class_5734 var1) {
+   public void method_32924(CompoundNBT var1) {
       this.field_21699 = new LongOpenHashSet(var1.method_25942("All"));
       this.field_21697 = new LongOpenHashSet(var1.method_25942("Remaining"));
    }
 
    @Override
-   public class_5734 method_32920(class_5734 var1) {
+   public CompoundNBT method_32920(CompoundNBT var1) {
       var1.method_25962("All", this.field_21699.toLongArray());
       var1.method_25962("Remaining", this.field_21697.toLongArray());
       return var1;

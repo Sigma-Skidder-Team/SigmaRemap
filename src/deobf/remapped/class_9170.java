@@ -18,7 +18,7 @@ public class class_9170 extends class_5837 {
    @Override
    public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (!var1.method_28022()) {
-         class_5734 var5 = new class_5734();
+         CompoundNBT var5 = new CompoundNBT();
          var5.method_25941("LootTable", this.field_46929.toString());
          if (this.field_46927 != 0L) {
             var5.method_25949("LootTableSeed", this.field_46927);

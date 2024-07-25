@@ -129,8 +129,8 @@ public class class_87 extends class_495 {
       return !var4.isEmpty() || !var5.isEmpty();
    }
 
-   public class_5734 method_223() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_223() {
+      CompoundNBT var3 = new CompoundNBT();
       var3.method_25941("Name", ITextComponent$class_40.toJson(this.field_48006));
       var3.method_25934("Visible", this.method_2409());
       var3.method_25931("Value", this.field_163);
@@ -150,7 +150,7 @@ public class class_87 extends class_495 {
       return var3;
    }
 
-   public static class_87 method_220(class_5734 var0, Identifier var1) {
+   public static class_87 method_220(CompoundNBT var0, Identifier var1) {
       class_87 var4 = new class_87(var1, ITextComponent$class_40.func_240643_a_(var0.method_25965("Name")));
       var4.method_2404(var0.method_25933("Visible"));
       var4.method_212(var0.method_25947("Value"));

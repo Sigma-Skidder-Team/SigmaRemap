@@ -19,7 +19,7 @@ public class class_7597 extends class_2451 {
    }
 
    public static class_3416 method_34501(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       return var3 == null ? new class_3416() : var3.method_25927("StoredEnchantments", 10);
    }
 
@@ -35,7 +35,7 @@ public class class_7597 extends class_2451 {
       Identifier var6 = class_8669.field_44445.method_39797(var1.field_49312);
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
-         class_5734 var8 = var4.method_15764(var7);
+         CompoundNBT var8 = var4.method_15764(var7);
          Identifier var9 = Identifier.method_21455(var8.method_25965("id"));
          if (var9 != null && var9.equals(var6)) {
             if (var8.method_25947("lvl") < var1.field_49313) {
@@ -48,7 +48,7 @@ public class class_7597 extends class_2451 {
       }
 
       if (var5) {
-         class_5734 var10 = new class_5734();
+         CompoundNBT var10 = new CompoundNBT();
          var10.method_25941("id", String.valueOf(var6));
          var10.method_25958("lvl", (short)var1.field_49313);
          var4.add(var10);

@@ -75,12 +75,12 @@ public class class_8192 {
                var5.field_49395 = null;
             }
          } else {
-            class_5734 var9 = var5.method_3160();
+            CompoundNBT var9 = var5.method_3160();
             if (var9 != null && var9.method_25938("UUID") && Config.equals(var9.method_25926("UUID"), var6)) {
                var5.field_49383 = var0;
             }
 
-            class_5734 var11 = var5.method_3171();
+            CompoundNBT var11 = var5.method_3171();
             if (var11 != null && var11.method_25938("UUID") && Config.equals(var11.method_25926("UUID"), var6)) {
                var5.field_49395 = var0;
             }

@@ -66,11 +66,11 @@ public class class_1719 {
       this.field_8874 = var2;
    }
 
-   public boolean method_7705(class_5734 var1) {
+   public boolean method_7705(CompoundNBT var1) {
       return !this.field_8883 ? this.method_7703(var1) : !this.method_7703(var1);
    }
 
-   public boolean method_7703(class_5734 var1) {
+   public boolean method_7703(CompoundNBT var1) {
       if (var1 == null) {
          return false;
       } else {
@@ -94,8 +94,8 @@ public class class_1719 {
    }
 
    private boolean method_7704(class_8406 var1) {
-      if (var1 instanceof class_5734) {
-         class_5734 var4 = (class_5734)var1;
+      if (var1 instanceof CompoundNBT) {
+         CompoundNBT var4 = (CompoundNBT)var1;
 
          for (String var6 : var4.method_25952()) {
             class_8406 var7 = var4.method_25929(var6);
@@ -121,8 +121,8 @@ public class class_1719 {
    }
 
    private static class_8406 method_7701(class_8406 var0, String var1) {
-      if (var0 instanceof class_5734) {
-         class_5734 var6 = (class_5734)var0;
+      if (var0 instanceof CompoundNBT) {
+         CompoundNBT var6 = (CompoundNBT)var0;
          return var6.method_25929(var1);
       } else if (!(var0 instanceof class_3416)) {
          return null;

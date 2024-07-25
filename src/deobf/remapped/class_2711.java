@@ -156,18 +156,18 @@ public class class_2711 extends class_7481 {
    }
 
    @Override
-   public void method_27347(class_5734 var1) {
+   public void method_27347(CompoundNBT var1) {
    }
 
    @Nullable
    @Override
-   public class_5734 method_27355(class_1331 var1) {
+   public CompoundNBT method_27355(class_1331 var1) {
       return this.field_13258.method_27355(var1);
    }
 
    @Nullable
    @Override
-   public class_5734 method_27345(class_1331 var1) {
+   public CompoundNBT method_27345(class_1331 var1) {
       return this.field_13258.method_27345(var1);
    }
 

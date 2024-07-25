@@ -23,14 +23,14 @@ public class ShulkerPeekCommand extends Command {
    }
 
    public static void method_30370(ItemStack var0) {
-      class_5734 var3 = new class_5734();
+      CompoundNBT var3 = new CompoundNBT();
       if (var0.method_27990() != null) {
          var3 = var0.method_27990().method_25944();
       }
 
       class_2831 var4 = class_2831.<ItemStack>method_12872(27, new ItemStack(class_4897.field_25302));
       if (var3 != null && var3.method_25938("BlockEntityTag")) {
-         class_5734 var5 = var3.method_25937("BlockEntityTag");
+         CompoundNBT var5 = var3.method_25937("BlockEntityTag");
          method_30371(var5);
          if (var5.method_25938("Items")) {
             class_3037.method_13882(var5, var4);
@@ -45,24 +45,24 @@ public class ShulkerPeekCommand extends Command {
       );
    }
 
-   public static void method_30371(class_5734 var0) {
+   public static void method_30371(CompoundNBT var0) {
       if (var0.method_25938("Items")) {
          class_3416 var3 = var0.method_25927("Items", 10);
 
          for (int var4 = 0; var4 < var3.size(); var4++) {
-            class_5734 var5 = var3.method_15764(var4);
-            class_5734 var6 = var5.method_25937("tag");
+            CompoundNBT var5 = var3.method_15764(var4);
+            CompoundNBT var6 = var5.method_25937("tag");
             if (var6.method_25938("ench")) {
                class_3416 var7 = var6.method_25927("ench", 10);
                class_3416 var8 = new class_3416();
 
                for (int var9 = 0; var9 < var7.size(); var9++) {
-                  class_5734 var10 = var7.method_15764(var9);
+                  CompoundNBT var10 = var7.method_15764(var9);
                   short var11 = var10.method_25956("lvl");
                   short var12 = var10.method_25956("id");
                   if (class_9333.field_47642 != null) {
                      String var13 = (String)class_9333.field_47642.get(var12);
-                     class_5734 var14 = new class_5734();
+                     CompoundNBT var14 = new CompoundNBT();
                      var14.method_25958("lvl", var11);
                      var14.method_25941("id", var13);
                      var8.add(var14);

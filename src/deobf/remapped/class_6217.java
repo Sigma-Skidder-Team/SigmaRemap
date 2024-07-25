@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_6217 extends class_8704 {
-   private class_5734 field_31754;
+   private CompoundNBT field_31754;
 
    public class_6217(class_7762 var1, class_7522 var2, class_5645 var3) {
       super(var1, var2, var3, 8);
@@ -16,7 +16,7 @@ public class class_6217 extends class_8704 {
    @Override
    public void method_39967(class_9359 var1) {
       if (var1.method_45509().getString().equals(this.method_28433().method_1674())) {
-         this.field_31754 = var1.method_37258(new class_5734());
+         this.field_31754 = var1.method_37258(new CompoundNBT());
       }
 
       super.method_39967(var1);
@@ -34,7 +34,7 @@ public class class_6217 extends class_8704 {
    }
 
    @Override
-   public class_5734 method_39949() {
+   public CompoundNBT method_39949() {
       return this.field_31754;
    }
 }

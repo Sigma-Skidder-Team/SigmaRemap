@@ -22,7 +22,7 @@ public class class_2931 {
          class_3416 var5 = var1.method_27983();
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
-            class_5734 var7 = var5.method_15764(var6);
+            CompoundNBT var7 = var5.method_15764(var6);
             Identifier var8 = Identifier.method_21455(var7.method_25965("id"));
             if (var8 != null && var8.equals(var4)) {
                return class_9299.method_42829(var7.method_25947("lvl"), 0, 255);
@@ -44,7 +44,7 @@ public class class_2931 {
       LinkedHashMap var3 = Maps.newLinkedHashMap();
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
-         class_5734 var5 = var0.method_15764(var4);
+         CompoundNBT var5 = var0.method_15764(var4);
          class_8669.field_44445.method_39794(Identifier.method_21455(var5.method_25965("id"))).ifPresent(var2 -> {
             Integer var5x = var3.put(var2, var5.method_25947("lvl"));
          });
@@ -60,7 +60,7 @@ public class class_2931 {
          class_4382 var7 = (class_4382)var6.getKey();
          if (var7 != null) {
             int var8 = (Integer)var6.getValue();
-            class_5734 var9 = new class_5734();
+            CompoundNBT var9 = new CompoundNBT();
             var9.method_25941("id", String.valueOf(class_8669.field_44445.method_39797(var7)));
             var9.method_25958("lvl", (short)var8);
             var4.add(var9);

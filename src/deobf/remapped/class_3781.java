@@ -112,23 +112,23 @@ public class class_3781 {
                               )
                         )
                         .then(class_465.method_2231("merge").then(var1.method_11967((var0xx, var1x, var2, var3x) -> {
-                           List var6 = var2.method_42651(var1x, class_5734::new);
+                           List var6 = var2.method_42651(var1x, CompoundNBT::new);
                            int var7 = 0;
 
                            for (class_8406 var9 : var6) {
-                              if (!(var9 instanceof class_5734)) {
+                              if (!(var9 instanceof CompoundNBT)) {
                                  throw field_18453.create(var9);
                               }
 
-                              class_5734 var10 = (class_5734)var9;
-                              class_5734 var11 = var10.method_25944();
+                              CompoundNBT var10 = (CompoundNBT)var9;
+                              CompoundNBT var11 = var10.method_25944();
 
                               for (class_8406 var13 : var3x) {
-                                 if (!(var13 instanceof class_5734)) {
+                                 if (!(var13 instanceof CompoundNBT)) {
                                     throw field_18453.create(var13);
                                  }
 
-                                 var10.method_25925((class_5734)var13);
+                                 var10.method_25925((CompoundNBT)var13);
                               }
 
                               var7 += !var11.equals(var10) ? 1 : 0;
@@ -143,7 +143,7 @@ public class class_3781 {
       var0.register(var3);
    }
 
-   private static int method_17542(int var0, class_5734 var1, class_9257 var2, List<class_8406> var3) throws CommandSyntaxException {
+   private static int method_17542(int var0, CompoundNBT var1, class_9257 var2, List<class_8406> var3) throws CommandSyntaxException {
       List var6 = var2.method_42651(var1, class_3416::new);
       int var7 = 0;
 
@@ -182,7 +182,7 @@ public class class_3781 {
 
             for (class_5098 var7 : field_18457) {
                var0.accept(var5x, var2x -> var7.method_23414(class_465.method_2231("from"), var3x -> var3x.executes(var3xx -> {
-                        List var6 = Collections.<class_5734>singletonList(var7.method_23413(var3xx).method_6573());
+                        List var6 = Collections.<CompoundNBT>singletonList(var7.method_23413(var3xx).method_6573());
                         return method_17543(var3xx, var5, var2x, var6);
                      }).then(class_465.method_2236("sourcePath", class_4235.method_19750()).executes(var3xx -> {
                         class_1429 var6 = var7.method_23413(var3xx);
@@ -206,7 +206,7 @@ public class class_3781 {
    private static int method_17543(CommandContext<class_9155> var0, class_5098 var1, class_2823 var2, List<class_8406> var3) throws CommandSyntaxException {
       class_1429 var6 = var1.method_23413(var0);
       class_9257 var7 = class_4235.method_19748(var0, "targetPath");
-      class_5734 var8 = var6.method_6573();
+      CompoundNBT var8 = var6.method_6573();
       int var9 = var2.method_12850(var0, var8, var7, var3);
       if (var9 != 0) {
          var6.method_6572(var8);
@@ -218,7 +218,7 @@ public class class_3781 {
    }
 
    private static int method_17539(class_9155 var0, class_1429 var1, class_9257 var2) throws CommandSyntaxException {
-      class_5734 var5 = var1.method_6573();
+      CompoundNBT var5 = var1.method_6573();
       int var6 = var2.method_42646(var5);
       if (var6 != 0) {
          var1.method_6572(var5);
@@ -245,14 +245,14 @@ public class class_3781 {
       int var6;
       if (!(var5 instanceof class_5841)) {
          if (!(var5 instanceof class_6850)) {
-            if (!(var5 instanceof class_5734)) {
+            if (!(var5 instanceof CompoundNBT)) {
                if (!(var5 instanceof class_473)) {
                   throw field_18456.create(var2.toString());
                }
 
                var6 = var5.method_38710().length();
             } else {
-               var6 = ((class_5734)var5).method_25924();
+               var6 = ((CompoundNBT)var5).method_25924();
             }
          } else {
             var6 = ((class_6850)var5).size();
@@ -281,9 +281,9 @@ public class class_3781 {
       return 1;
    }
 
-   private static int method_17544(class_9155 var0, class_1429 var1, class_5734 var2) throws CommandSyntaxException {
-      class_5734 var5 = var1.method_6573();
-      class_5734 var6 = var5.method_25944().method_25925(var2);
+   private static int method_17544(class_9155 var0, class_1429 var1, CompoundNBT var2) throws CommandSyntaxException {
+      CompoundNBT var5 = var1.method_6573();
+      CompoundNBT var6 = var5.method_25944().method_25925(var2);
       if (!var5.equals(var6)) {
          var1.method_6572(var6);
          var0.method_42196(var1.method_6570(), true);

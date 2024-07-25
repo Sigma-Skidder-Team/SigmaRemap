@@ -16,7 +16,7 @@ public class class_4037 implements AutoCloseable {
       this.field_19599 = new class_1983(var1, var3, "chunk");
    }
 
-   public class_5734 method_18573(class_5621<World> var1, Supplier<class_4050> var2, class_5734 var3) {
+   public CompoundNBT method_18573(class_5621<World> var1, Supplier<class_4050> var2, CompoundNBT var3) {
       int var6 = method_18574(var3);
       short var7 = 1493;
       if (var6 < 1493) {
@@ -38,16 +38,16 @@ public class class_4037 implements AutoCloseable {
       return var3;
    }
 
-   public static int method_18574(class_5734 var0) {
+   public static int method_18574(CompoundNBT var0) {
       return !var0.method_25939("DataVersion", 99) ? -1 : var0.method_25947("DataVersion");
    }
 
    @Nullable
-   public class_5734 method_18575(class_2034 var1) throws IOException {
+   public CompoundNBT method_18575(class_2034 var1) throws IOException {
       return this.field_19599.method_9148(var1);
    }
 
-   public void method_18571(class_2034 var1, class_5734 var2) {
+   public void method_18571(class_2034 var1, CompoundNBT var2) {
       this.field_19599.method_9152(var1, var2);
       if (this.field_19600 != null) {
          this.field_19600.method_21035(var1.method_9539());

@@ -178,13 +178,13 @@ public class class_2022 extends class_1944 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_41735.method_36633(field_10248, var1.method_25950("BatFlags"));
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25921("BatFlags", this.field_41735.<Byte>method_36640(field_10248));
    }

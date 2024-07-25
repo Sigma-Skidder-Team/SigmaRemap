@@ -46,7 +46,7 @@ public class class_7263 extends class_6993 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       class_9544.method_44041(this);
       this.method_26870(var2);
       return super.method_26864(var1, var2, var3, var4, var5);

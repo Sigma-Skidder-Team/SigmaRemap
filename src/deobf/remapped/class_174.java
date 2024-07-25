@@ -514,7 +514,7 @@ public class class_174 extends World {
    }
 
    @Override
-   public void method_29536(double var1, double var3, double var5, double var7, double var9, double var11, class_5734 var13) {
+   public void method_29536(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
       this.field_578.field_9572.method_43044(new class_4498(this, var1, var3, var5, var7, var9, var11, this.field_578.field_9572, var13));
    }
 

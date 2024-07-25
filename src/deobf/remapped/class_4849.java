@@ -27,10 +27,10 @@ public class class_4849 extends class_5837 {
    public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       class_2522 var5 = var2.<class_2522>method_12698(class_8712.field_44677);
       if (var5 != null) {
-         class_5734 var6 = var1.method_27994();
-         class_5734 var7;
+         CompoundNBT var6 = var1.method_27994();
+         CompoundNBT var7;
          if (!var6.method_25939("BlockStateTag", 10)) {
-            var7 = new class_5734();
+            var7 = new CompoundNBT();
             var6.method_25946("BlockStateTag", var7);
          } else {
             var7 = var6.method_25937("BlockStateTag");

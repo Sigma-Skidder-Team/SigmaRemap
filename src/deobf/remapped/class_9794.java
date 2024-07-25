@@ -11,7 +11,7 @@ public class class_9794 extends class_1279 {
       this.field_49683 = var3 & 1;
    }
 
-   public class_9794(class_5799 var1, class_5734 var2) {
+   public class_9794(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13420, var2);
    }
 

@@ -220,7 +220,7 @@ public class class_4657 implements class_6867, class_3957 {
       for (int var4 = 0; var4 < this.method_31505(); var4++) {
          ItemStack var5 = this.method_31498(var4);
          if (!var5.method_28022()) {
-            var3.add(var5.method_27998(new class_5734()));
+            var3.add(var5.method_27998(new CompoundNBT()));
          }
       }
 

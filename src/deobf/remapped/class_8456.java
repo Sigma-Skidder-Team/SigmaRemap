@@ -28,7 +28,7 @@ public class class_8456 extends class_5837 {
          Entity var5 = var2.<Entity>method_12698(this.field_43232.method_26666());
          if (var5 instanceof class_704) {
             GameProfile var6 = ((class_704)var5).method_3247();
-            var1.method_27994().method_25946("SkullOwner", class_4338.method_20177(new class_5734(), var6));
+            var1.method_27994().method_25946("SkullOwner", class_4338.method_20177(new CompoundNBT(), var6));
          }
       }
 

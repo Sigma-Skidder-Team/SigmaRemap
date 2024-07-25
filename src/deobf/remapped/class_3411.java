@@ -16,7 +16,7 @@ public class class_3411 {
    private static final Dynamic2CommandExceptionType field_16796 = new Dynamic2CommandExceptionType(
       (var0, var1) -> new TranslationTextComponent("commands.fill.toobig", var0, var1)
    );
-   private static final class_6986 field_16795 = new class_6986(class_4783.field_23184.method_29260(), Collections.<class_5019<?>>emptySet(), (class_5734)null);
+   private static final class_6986 field_16795 = new class_6986(class_4783.field_23184.method_29260(), Collections.<class_5019<?>>emptySet(), (CompoundNBT)null);
    private static final SimpleCommandExceptionType field_16794 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.fill.failed"));
 
    public static void method_15748(CommandDispatcher<class_9155> var0) {

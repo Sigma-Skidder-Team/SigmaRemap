@@ -243,7 +243,7 @@ public class class_2811 extends class_1173 {
                      && this.field_41768.method_6682(var10)
                      && !this.field_41768.method_22550(var10.method_37241())) {
                      var10.method_26860(var6);
-                     var10.method_26864(var5, this.field_41768.method_43368(var10.method_37075()), class_2417.field_12039, (class_8733)null, (class_5734)null);
+                     var10.method_26864(var5, this.field_41768.method_43368(var10.method_37075()), class_2417.field_12039, (class_8733)null, (CompoundNBT)null);
                      var5.method_7065(var10);
                      this.method_26561(class_7331.field_37470)
                         .method_45005(new class_9343("Zombie reinforcement caller charge", -0.05F, class_9342.field_47679));
@@ -317,7 +317,7 @@ public class class_2811 extends class_1173 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25934("IsBaby", this.method_26449());
       var1.method_25934("CanBreakDoors", this.method_12793());
@@ -326,7 +326,7 @@ public class class_2811 extends class_1173 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_26910(var1.method_25933("IsBaby"));
       this.method_12799(var1.method_25933("CanBreakDoors"));
@@ -346,7 +346,7 @@ public class class_2811 extends class_1173 {
 
          class_7666 var5 = (class_7666)var2;
          class_9355 var6 = var5.<class_9355>method_26898(class_6629.field_34227, false);
-         var6.method_26864(var1, var1.method_43368(var6.method_37075()), class_2417.field_12041, new class_2582(false, true), (class_5734)null);
+         var6.method_26864(var1, var1.method_43368(var6.method_37075()), class_2417.field_12041, new class_2582(false, true), (CompoundNBT)null);
          var6.method_43207(var5.method_15891());
          var6.method_43205((class_8406)var5.method_34709().method_11515(class_3504.field_17178).getValue());
          var6.method_43206(var5.method_974().method_12711());
@@ -369,7 +369,7 @@ public class class_2811 extends class_1173 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       float var8 = var2.method_44284();
       this.method_26871(this.field_41717.nextFloat() < 0.55F * var8);
@@ -386,7 +386,7 @@ public class class_2811 extends class_1173 {
                   if ((double)var1.method_43360().nextFloat() < 0.05) {
                      class_3024 var10 = class_6629.field_34263.method_30484(this.field_41768);
                      var10.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, 0.0F);
-                     var10.method_26864(var1, var2, class_2417.field_12037, (class_8733)null, (class_5734)null);
+                     var10.method_26864(var1, var2, class_2417.field_12037, (class_8733)null, (CompoundNBT)null);
                      var10.method_13808(true);
                      this.method_37353(var10);
                      var1.method_7509(var10);

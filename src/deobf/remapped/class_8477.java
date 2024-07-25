@@ -82,13 +82,13 @@ public class class_8477 extends class_8574 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Variant", this.method_39018());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_39025(var1.method_25947("Variant"));
    }
@@ -109,7 +109,7 @@ public class class_8477 extends class_8574 {
    @Override
    public void method_16630(ItemStack var1) {
       super.method_16630(var1);
-      class_5734 var4 = var1.method_27994();
+      CompoundNBT var4 = var1.method_27994();
       var4.method_25931("BucketVariantTag", this.method_39018());
    }
 
@@ -176,7 +176,7 @@ public class class_8477 extends class_8574 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (var5 != null && var5.method_25939("BucketVariantTag", 3)) {
          this.method_39025(var5.method_25947("BucketVariantTag"));

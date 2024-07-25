@@ -29,7 +29,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    @Nullable
    public static class_3416 method_40656(ItemStack var0) {
       class_3416 var3 = null;
-      class_5734 var4 = var0.method_28021("BlockEntityTag");
+      CompoundNBT var4 = var0.method_28021("BlockEntityTag");
       if (var4 != null && var4.method_25939("Patterns", 9)) {
          var3 = var4.method_25927("Patterns", 10).method_15768();
       }
@@ -61,7 +61,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (this.field_45199 != null) {
          var1.method_25946("Patterns", this.field_45199);
@@ -75,7 +75,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       if (var2.method_25939("CustomName", 8)) {
          this.field_45198 = ITextComponent$class_40.func_240643_a_(var2.method_25965("CustomName"));
@@ -99,12 +99,12 @@ public class class_8837 extends class_3757 implements class_9875 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    public static int method_40660(ItemStack var0) {
-      class_5734 var3 = var0.method_28021("BlockEntityTag");
+      CompoundNBT var3 = var0.method_28021("BlockEntityTag");
       return var3 != null && var3.method_25938("Patterns") ? var3.method_25927("Patterns", 10).size() : 0;
    }
 
@@ -121,7 +121,7 @@ public class class_8837 extends class_3757 implements class_9875 {
       var4.add(Pair.of(class_8427.field_43111, var0));
       if (var1 != null) {
          for (int var5 = 0; var5 < var1.size(); var5++) {
-            class_5734 var6 = var1.method_15764(var5);
+            CompoundNBT var6 = var1.method_15764(var5);
             class_8427 var7 = class_8427.method_38788(var6.method_25965("Pattern"));
             if (var7 != null) {
                int var8 = var6.method_25947("Color");
@@ -134,7 +134,7 @@ public class class_8837 extends class_3757 implements class_9875 {
    }
 
    public static void method_40661(ItemStack var0) {
-      class_5734 var3 = var0.method_28021("BlockEntityTag");
+      CompoundNBT var3 = var0.method_28021("BlockEntityTag");
       if (var3 != null && var3.method_25939("Patterns", 9)) {
          class_3416 var4 = var3.method_25927("Patterns", 10);
          if (!var4.isEmpty()) {

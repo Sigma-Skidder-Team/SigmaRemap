@@ -38,7 +38,7 @@ public class class_2065 extends class_3599 {
 
    private class_4109 method_9647(class_9589 var1) {
       class_5948 var4 = class_6629.field_34261.method_30484(this.field_10424.field_41768);
-      var4.method_26864((class_6331)this.field_10424.field_41768, var1, class_2417.field_12032, (class_8733)null, (class_5734)null);
+      var4.method_26864((class_6331)this.field_10424.field_41768, var1, class_2417.field_12032, (class_8733)null, (CompoundNBT)null);
       var4.method_37256(this.field_10424.method_37302(), this.field_10424.method_37309(), this.field_10424.method_37156());
       var4.field_41749 = 60;
       var4.method_26883();
@@ -49,7 +49,7 @@ public class class_2065 extends class_3599 {
 
    private class_6778 method_9646(class_9589 var1, class_4109 var2) {
       class_6778 var5 = class_6629.field_34241.method_30484(var2.field_41768);
-      var5.method_26864((class_6331)var2.field_41768, var1, class_2417.field_12032, (class_8733)null, (class_5734)null);
+      var5.method_26864((class_6331)var2.field_41768, var1, class_2417.field_12032, (class_8733)null, (CompoundNBT)null);
       var5.method_37256(var2.method_37302(), var2.method_37309(), var2.method_37156());
       var5.field_41749 = 60;
       var5.method_26883();

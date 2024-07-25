@@ -318,7 +318,7 @@ public class GameOptions {
          }
 
          this.field_45576.clear();
-         class_5734 var1 = new class_5734();
+         CompoundNBT var1 = new CompoundNBT();
 
          try (BufferedReader var2 = Files.newReader(this.field_45579, Charsets.UTF_8)) {
             var2.lines().forEach(var1x -> {
@@ -331,7 +331,7 @@ public class GameOptions {
             });
          }
 
-         class_5734 var23 = this.method_40868(var1);
+         CompoundNBT var23 = this.method_40868(var1);
          if (!var23.method_25938("graphicsMode") && var23.method_25938("fancyGraphics")) {
             if ("true".equals(var23.method_25965("fancyGraphics"))) {
                this.field_45397 = class_4615.field_22437;
@@ -693,7 +693,7 @@ public class GameOptions {
       this.method_40865();
    }
 
-   private class_5734 method_40868(class_5734 var1) {
+   private CompoundNBT method_40868(CompoundNBT var1) {
       int var2 = 0;
 
       try {

@@ -151,7 +151,7 @@ public class class_5678 extends class_8346 implements class_372, class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_28776 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       class_3037.method_13882(var2, this.field_28776);
@@ -160,7 +160,7 @@ public class class_5678 extends class_8346 implements class_372, class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25958("BrewTime", (short)this.field_28779);
       class_3037.method_13878(var1, this.field_28776);

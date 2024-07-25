@@ -11,12 +11,12 @@ public class class_2497 extends class_7186 {
    }
 
    @Override
-   public void method_32924(class_5734 var1) {
+   public void method_32924(CompoundNBT var1) {
       this.field_12424 = new LongOpenHashSet(var1.method_25942("Forced"));
    }
 
    @Override
-   public class_5734 method_32920(class_5734 var1) {
+   public CompoundNBT method_32920(CompoundNBT var1) {
       var1.method_25962("Forced", this.field_12424.toLongArray());
       return var1;
    }

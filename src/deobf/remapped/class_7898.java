@@ -14,7 +14,7 @@ public class class_7898 extends class_7789<class_6382> {
 
    public class_6382 method_35697(JsonObject var1, JsonDeserializationContext var2, class_7279[] var3) {
       try {
-         class_5734 var6 = class_2392.method_10916(class_6539.method_29796(var1, "tag"));
+         CompoundNBT var6 = class_2392.method_10916(class_6539.method_29796(var1, "tag"));
          return new class_6382(var3, var6, null);
       } catch (CommandSyntaxException var7) {
          throw new JsonSyntaxException(var7.getMessage());

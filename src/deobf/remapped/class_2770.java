@@ -735,13 +735,13 @@ public class class_2770 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("DragonPhase", this.field_13534.method_29421().method_23464().method_41171());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25938("DragonPhase")) {
          this.field_13534.method_29422(class_8978.method_41168(var1.method_25947("DragonPhase")));

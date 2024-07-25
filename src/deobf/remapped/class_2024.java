@@ -15,7 +15,7 @@ public class class_2024 extends ForwardingList<ItemStack> {
       class_3416 var3 = new class_3416();
 
       for (ItemStack var5 : this.delegate()) {
-         var3.add(var5.method_27998(new class_5734()));
+         var3.add(var5.method_27998(new CompoundNBT()));
       }
 
       return var3;

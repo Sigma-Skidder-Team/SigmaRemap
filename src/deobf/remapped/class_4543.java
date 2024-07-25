@@ -33,8 +33,8 @@ public class class_4543 {
       return this.field_22153.values();
    }
 
-   public class_5734 method_21082() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_21082() {
+      CompoundNBT var3 = new CompoundNBT();
 
       for (class_87 var5 : this.field_22153.values()) {
          var3.method_25946(var5.method_216().toString(), var5.method_223());
@@ -43,7 +43,7 @@ public class class_4543 {
       return var3;
    }
 
-   public void method_21077(class_5734 var1) {
+   public void method_21077(CompoundNBT var1) {
       for (String var5 : var1.method_25952()) {
          Identifier var6 = new Identifier(var5);
          this.field_22153.put(var6, class_87.method_220(var1.method_25937(var5), var6));

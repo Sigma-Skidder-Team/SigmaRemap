@@ -84,7 +84,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_41735.method_36633(field_31172, Direction.method_1033(var1.method_25950("AttachFace")));
       this.field_41735.method_36633(field_31170, var1.method_25950("Peek"));
@@ -100,7 +100,7 @@ public class class_6092 extends class_608 implements class_1869 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25921("AttachFace", (byte)this.field_41735.<Direction>method_36640(field_31172).method_1050());
       var1.method_25921("Peek", this.field_41735.<Byte>method_36640(field_31170));

@@ -13,7 +13,7 @@ public class class_81 {
       class_5064.field_26180,
       class_473.field_2955,
       class_3416.field_16815,
-      class_5734.field_28976,
+      CompoundNBT.field_28976,
       class_6222.field_31787,
       class_1129.field_6440
    };

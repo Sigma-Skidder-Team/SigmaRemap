@@ -96,15 +96,15 @@ public interface class_5990 extends class_6163, class_3287 {
       method_27337(this.method_27359(), var2).add(var1);
    }
 
-   default void method_27347(class_5734 var1) {
+   default void method_27347(CompoundNBT var1) {
       LogManager.getLogger().warn("Trying to set a BlockEntity, but this operation is not supported.");
    }
 
    @Nullable
-   class_5734 method_27355(class_1331 var1);
+   CompoundNBT method_27355(class_1331 var1);
 
    @Nullable
-   class_5734 method_27345(class_1331 var1);
+   CompoundNBT method_27345(class_1331 var1);
 
    Stream<class_1331> method_27360();
 

@@ -590,7 +590,7 @@ public class class_1092 implements class_392 {
          this.field_6021.method_720(var4, var8, var5);
       }
 
-      for (class_5734 var9 : var1.method_22143()) {
+      for (CompoundNBT var9 : var1.method_22143()) {
          class_1331 var10 = new class_1331(var9.method_25947("x"), var9.method_25947("y"), var9.method_25947("z"));
          class_3757 var11 = this.field_6021.method_28260(var10);
          if (var11 != null) {

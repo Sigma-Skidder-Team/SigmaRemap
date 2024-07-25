@@ -26,7 +26,7 @@ public class class_7860 {
    public static class_817 field_39853 = new class_817(field_40171, "isLoading");
    public static class_817 field_40010 = new class_817(field_40171, "renderProgressText");
    public static class_9859 field_40206 = new class_9859("net.minecraftforge.event.world.ChunkDataEvent$Save");
-   public static class_4911 field_39941 = new class_4911(field_40206, new Class[]{class_5990.class, class_9379.class, class_5734.class});
+   public static class_4911 field_39941 = new class_4911(field_40206, new Class[]{class_5990.class, class_9379.class, CompoundNBT.class});
    public static class_9859 field_39913 = new class_9859("net.minecraftforge.event.world.ChunkEvent$Load");
    public static class_4911 field_39925 = new class_4911(field_39913, new Class[]{class_5990.class});
    public static class_9859 field_40159 = new class_9859("net.minecraftforge.event.world.ChunkEvent$Unload");

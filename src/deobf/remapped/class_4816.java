@@ -210,25 +210,25 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.method_22198(var2);
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       return this.method_22202(var1);
    }
 
-   public void method_22198(class_5734 var1) {
+   public void method_22198(CompoundNBT var1) {
       this.field_24083 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!this.method_10811(var1) && var1.method_25939("Items", 9)) {
          class_3037.method_13882(var1, this.field_24083);
       }
    }
 
-   public class_5734 method_22202(class_5734 var1) {
+   public CompoundNBT method_22202(CompoundNBT var1) {
       if (!this.method_10815(var1)) {
          class_3037.method_13879(var1, this.field_24083, false);
       }

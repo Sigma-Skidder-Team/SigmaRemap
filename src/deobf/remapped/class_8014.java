@@ -12,7 +12,7 @@ public class class_8014 {
    private float field_41044;
    private int field_41049 = 1;
 
-   public class_8014(class_5734 var1) {
+   public class_8014(CompoundNBT var1) {
       this.field_41051 = ItemStack.method_28015(var1.method_25937("buy"));
       this.field_41050 = ItemStack.method_28015(var1.method_25937("buyB"));
       this.field_41052 = ItemStack.method_28015(var1.method_25937("sell"));
@@ -150,11 +150,11 @@ public class class_8014 {
       return this.field_41053;
    }
 
-   public class_5734 method_36383() {
-      class_5734 var3 = new class_5734();
-      var3.method_25946("buy", this.field_41051.method_27998(new class_5734()));
-      var3.method_25946("sell", this.field_41052.method_27998(new class_5734()));
-      var3.method_25946("buyB", this.field_41050.method_27998(new class_5734()));
+   public CompoundNBT method_36383() {
+      CompoundNBT var3 = new CompoundNBT();
+      var3.method_25946("buy", this.field_41051.method_27998(new CompoundNBT()));
+      var3.method_25946("sell", this.field_41052.method_27998(new CompoundNBT()));
+      var3.method_25946("buyB", this.field_41050.method_27998(new CompoundNBT()));
       var3.method_25931("uses", this.field_41048);
       var3.method_25931("maxUses", this.field_41047);
       var3.method_25934("rewardExp", this.field_41053);

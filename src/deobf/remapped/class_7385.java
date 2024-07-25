@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 public class class_7385 extends class_7186 {
    private static final Logger field_37715 = LogManager.getLogger();
    private class_1097 field_37713;
-   private class_5734 field_37716;
+   private CompoundNBT field_37716;
 
    public class_7385() {
       super("scoreboard");
@@ -23,7 +23,7 @@ public class class_7385 extends class_7186 {
    }
 
    @Override
-   public void method_32924(class_5734 var1) {
+   public void method_32924(CompoundNBT var1) {
       if (this.field_37713 != null) {
          this.method_33641(var1.method_25927("Objectives", 10));
          this.field_37713.method_4856(var1.method_25927("PlayerScores", 10));
@@ -41,7 +41,7 @@ public class class_7385 extends class_7186 {
 
    public void method_33637(class_3416 var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         class_5734 var5 = var1.method_15764(var4);
+         CompoundNBT var5 = var1.method_15764(var4);
          String var6 = var5.method_25965("Name");
          if (var6.length() > 16) {
             var6 = var6.substring(0, 16);
@@ -110,7 +110,7 @@ public class class_7385 extends class_7186 {
       }
    }
 
-   public void method_33635(class_5734 var1) {
+   public void method_33635(CompoundNBT var1) {
       for (int var4 = 0; var4 < 19; var4++) {
          if (var1.method_25939("slot_" + var4, 8)) {
             String var5 = var1.method_25965("slot_" + var4);
@@ -122,7 +122,7 @@ public class class_7385 extends class_7186 {
 
    public void method_33641(class_3416 var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         class_5734 var5 = var1.method_15764(var4);
+         CompoundNBT var5 = var1.method_15764(var4);
          class_6810.method_31260(var5.method_25965("CriteriaName")).ifPresent(var2 -> {
             String var5x = var5.method_25965("Name");
             if (var5x.length() > 16) {
@@ -137,7 +137,7 @@ public class class_7385 extends class_7186 {
    }
 
    @Override
-   public class_5734 method_32920(class_5734 var1) {
+   public CompoundNBT method_32920(CompoundNBT var1) {
       if (this.field_37713 != null) {
          var1.method_25946("Objectives", this.method_33638());
          var1.method_25946("PlayerScores", this.field_37713.method_4837());
@@ -154,7 +154,7 @@ public class class_7385 extends class_7186 {
       class_3416 var3 = new class_3416();
 
       for (class_3903 var5 : this.field_37713.method_4841()) {
-         class_5734 var6 = new class_5734();
+         CompoundNBT var6 = new CompoundNBT();
          var6.method_25941("Name", var5.method_23383());
          var6.method_25941("DisplayName", ITextComponent$class_40.toJson(var5.method_18066()));
          if (var5.method_23381().getColorIndex() >= 0) {
@@ -181,8 +181,8 @@ public class class_7385 extends class_7186 {
       return var3;
    }
 
-   public void method_33636(class_5734 var1) {
-      class_5734 var4 = new class_5734();
+   public void method_33636(CompoundNBT var1) {
+      CompoundNBT var4 = new CompoundNBT();
       boolean var5 = false;
 
       for (int var6 = 0; var6 < 19; var6++) {
@@ -203,7 +203,7 @@ public class class_7385 extends class_7186 {
 
       for (class_4399 var5 : this.field_37713.method_4836()) {
          if (var5.method_20491() != null) {
-            class_5734 var6 = new class_5734();
+            CompoundNBT var6 = new CompoundNBT();
             var6.method_25941("Name", var5.method_20490());
             var6.method_25941("CriteriaName", var5.method_20491().method_31262());
             var6.method_25941("DisplayName", ITextComponent$class_40.toJson(var5.method_20488()));

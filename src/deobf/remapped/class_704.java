@@ -35,8 +35,8 @@ public abstract class class_704 extends class_5834 {
    private static final class_7821<Integer> field_3863 = class_8073.<Integer>method_36641(class_704.class, class_2734.field_13366);
    public static final class_7821<Byte> field_3873 = class_8073.<Byte>method_36641(class_704.class, class_2734.field_13361);
    public static final class_7821<Byte> field_3852 = class_8073.<Byte>method_36641(class_704.class, class_2734.field_13361);
-   public static final class_7821<class_5734> field_3871 = class_8073.<class_5734>method_36641(class_704.class, class_2734.field_13346);
-   public static final class_7821<class_5734> field_3870 = class_8073.<class_5734>method_36641(class_704.class, class_2734.field_13346);
+   public static final class_7821<CompoundNBT> field_3871 = class_8073.<CompoundNBT>method_36641(class_704.class, class_2734.field_13346);
+   public static final class_7821<CompoundNBT> field_3870 = class_8073.<CompoundNBT>method_36641(class_704.class, class_2734.field_13346);
    private long field_3861;
    public class_7051 inventory = new class_7051(this);
    public class_1031 field_3860 = new class_1031();
@@ -108,8 +108,8 @@ public abstract class class_704 extends class_5834 {
       this.field_41735.method_36634(field_3863, 0);
       this.field_41735.method_36634(field_3873, (byte)0);
       this.field_41735.method_36634(field_3852, (byte)1);
-      this.field_41735.method_36634(field_3871, new class_5734());
-      this.field_41735.method_36634(field_3870, new class_5734());
+      this.field_41735.method_36634(field_3871, new CompoundNBT());
+      this.field_41735.method_36634(field_3870, new CompoundNBT());
    }
 
    @Override
@@ -461,7 +461,7 @@ public abstract class class_704 extends class_5834 {
       }
    }
 
-   private void method_3222(class_5734 var1) {
+   private void method_3222(CompoundNBT var1) {
       if (var1 != null && (!var1.method_25938("Silent") || !var1.method_25933("Silent")) && this.field_41768.field_33033.nextInt(200) == 0) {
          String var4 = var1.method_25965("id");
          class_6629.method_30460(var4)
@@ -670,7 +670,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_37377(method_3242(this.field_3872));
       class_3416 var4 = var1.method_25927("Inventory", 10);
@@ -703,7 +703,7 @@ public abstract class class_704 extends class_5834 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
       var1.method_25946("Inventory", this.inventory.method_32396(new class_3416()));
@@ -715,7 +715,7 @@ public abstract class class_704 extends class_5834 {
       var1.method_25931("XpSeed", this.field_3847);
       var1.method_25931("Score", this.method_3227());
       this.field_3867.method_42233(var1);
-      this.field_3876.method_4234(var1);
+      this.field_3876.write(var1);
       var1.method_25946("EnderItems", this.field_3860.method_21552());
       if (!this.method_3160().method_25940()) {
          var1.method_25946("ShoulderEntityLeft", this.method_3160());
@@ -1734,7 +1734,7 @@ public abstract class class_704 extends class_5834 {
       return this.inventory.field_36405;
    }
 
-   public boolean method_3225(class_5734 var1) {
+   public boolean method_3225(CompoundNBT var1) {
       if (this.method_37070() || !this.field_41726 || this.method_37285()) {
          return false;
       } else if (this.method_3160().method_25940()) {
@@ -1753,13 +1753,13 @@ public abstract class class_704 extends class_5834 {
    public void method_3157() {
       if (this.field_3861 + 20L < this.field_41768.method_29546()) {
          this.method_3189(this.method_3160());
-         this.method_3241(new class_5734());
+         this.method_3241(new CompoundNBT());
          this.method_3189(this.method_3171());
-         this.method_3165(new class_5734());
+         this.method_3165(new CompoundNBT());
       }
    }
 
-   private void method_3189(class_5734 var1) {
+   private void method_3189(CompoundNBT var1) {
       if (!this.field_41768.field_33055 && !var1.method_25940()) {
          class_6629.method_30475(var1, this.field_41768).ifPresent(var1x -> {
             if (var1x instanceof class_8990) {
@@ -1936,19 +1936,19 @@ public abstract class class_704 extends class_5834 {
       this.field_41735.method_36633(field_3852, (byte)(var1 != class_1736.field_8940 ? 1 : 0));
    }
 
-   public class_5734 method_3160() {
-      return this.field_41735.<class_5734>method_36640(field_3871);
+   public CompoundNBT method_3160() {
+      return this.field_41735.<CompoundNBT>method_36640(field_3871);
    }
 
-   public void method_3241(class_5734 var1) {
+   public void method_3241(CompoundNBT var1) {
       this.field_41735.method_36633(field_3871, var1);
    }
 
-   public class_5734 method_3171() {
-      return this.field_41735.<class_5734>method_36640(field_3870);
+   public CompoundNBT method_3171() {
+      return this.field_41735.<CompoundNBT>method_36640(field_3870);
    }
 
-   public void method_3165(class_5734 var1) {
+   public void method_3165(CompoundNBT var1) {
       this.field_41735.method_36633(field_3870, var1);
    }
 

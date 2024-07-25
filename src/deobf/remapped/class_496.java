@@ -157,14 +157,14 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25941("MainGene", this.method_2467().method_6269());
       var1.method_25941("HiddenGene", this.method_2435().method_6269());
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_2415(class_1360.method_6262(var1.method_25965("MainGene")));
       this.method_2424(class_1360.method_6262(var1.method_25965("HiddenGene")));
@@ -477,7 +477,7 @@ public class class_496 extends class_5467 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       this.method_2415(class_1360.method_6270(this.field_41717));
       this.method_2424(class_1360.method_6270(this.field_41717));
       this.method_2455();

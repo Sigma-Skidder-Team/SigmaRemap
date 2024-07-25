@@ -28,7 +28,7 @@ public class class_3756 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       if (!var2.method_25954("Target")) {
          this.field_18351 = null;
@@ -38,7 +38,7 @@ public class class_3756 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       if (this.field_18356 != null) {
          var1.method_25964("Target", this.field_18356.method_37328());
@@ -54,8 +54,8 @@ public class class_3756 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    @Override

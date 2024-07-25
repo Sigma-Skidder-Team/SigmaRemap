@@ -712,7 +712,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25934("EatingHaystack", this.method_19086());
       var1.method_25934("Bred", this.method_19044());
@@ -723,12 +723,12 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
 
       if (!this.field_20021.method_31498(0).method_28022()) {
-         var1.method_25946("SaddleItem", this.field_20021.method_31498(0).method_27998(new class_5734()));
+         var1.method_25946("SaddleItem", this.field_20021.method_31498(0).method_27998(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_19054(var1.method_25933("EatingHaystack"));
       this.method_19066(var1.method_25933("Bred"));
@@ -1005,7 +1005,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new class_1821(0.2F);
       }

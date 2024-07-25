@@ -11,9 +11,9 @@ public class class_3995 extends class_4314 {
    @Override
    public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       super.method_29257(var1, var2, var3, var4, var5);
-      class_5734 var8 = var5.method_27994();
+      CompoundNBT var8 = var5.method_27994();
       if (var8.method_25938("BlockEntityTag")) {
-         class_5734 var9 = var8.method_25937("BlockEntityTag");
+         CompoundNBT var9 = var8.method_25937("BlockEntityTag");
          if (var9.method_25938("RecordItem")) {
             var1.method_7513(var2, var3.method_10308(field_19411, Boolean.valueOf(true)), 2);
          }

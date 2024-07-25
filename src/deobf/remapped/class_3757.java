@@ -32,15 +32,15 @@ public abstract class class_3757 {
       return this.field_18364 != null;
    }
 
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       this.field_18358 = new class_1331(var2.method_25947("x"), var2.method_25947("y"), var2.method_25947("z"));
    }
 
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       return this.method_17401(var1);
    }
 
-   private class_5734 method_17401(class_5734 var1) {
+   private CompoundNBT method_17401(CompoundNBT var1) {
       Identifier var4 = class_133.method_445(this.method_17405());
       if (var4 != null) {
          var1.method_25941("id", var4.toString());
@@ -54,7 +54,7 @@ public abstract class class_3757 {
    }
 
    @Nullable
-   public static class_3757 method_17410(class_2522 var0, class_5734 var1) {
+   public static class_3757 method_17410(class_2522 var0, CompoundNBT var1) {
       String var4 = var1.method_25965("id");
       return class_8669.field_44426.method_39794(new Identifier(var4)).<class_3757>map(var1x -> {
          try {
@@ -108,8 +108,8 @@ public abstract class class_3757 {
       return null;
    }
 
-   public class_5734 method_17414() {
-      return this.method_17401(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17401(new CompoundNBT());
    }
 
    public boolean method_17395() {

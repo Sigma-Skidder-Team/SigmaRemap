@@ -90,7 +90,7 @@ public abstract class class_8574 extends class_3578 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       super.method_26864(var1, var2, var3, (class_8733)var4, var5);
       if (var4 != null) {
          this.method_39443(((class_7287)var4).field_37285);

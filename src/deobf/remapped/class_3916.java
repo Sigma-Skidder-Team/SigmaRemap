@@ -39,7 +39,7 @@ public class class_3916 implements class_5998 {
    @Nullable
    public static Path method_18125(Path var0, String var1, Path var2) {
       try {
-         class_5734 var5 = class_5957.method_27219(Files.newInputStream(var0));
+         CompoundNBT var5 = class_5957.method_27219(Files.newInputStream(var0));
          ITextComponent var6 = var5.method_38712("    ", 0);
          String var7 = var6.getString() + "\n";
          Path var8 = var2.resolve(var1 + ".snbt");

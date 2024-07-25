@@ -11,7 +11,7 @@ public class class_1453 extends Entity {
    private boolean field_7825;
    private int field_7823 = 40;
    private float field_7826 = 2.0F;
-   public class_5734 field_7819;
+   public CompoundNBT field_7819;
    public static final class_7821<class_1331> field_7821 = class_8073.<class_1331>method_36641(class_1453.class, class_2734.field_13353);
 
    public class_1453(class_6629<? extends class_1453> var1, World var2) {
@@ -143,7 +143,7 @@ public class class_1453 extends Entity {
                            if (this.field_7819 != null && var3 instanceof class_724) {
                               class_3757 var13 = this.field_41768.method_28260(var18);
                               if (var13 != null) {
-                                 class_5734 var14 = var13.method_17396(new class_5734());
+                                 CompoundNBT var14 = var13.method_17396(new CompoundNBT());
 
                                  for (String var16 : this.field_7819.method_25952()) {
                                     class_8406 var17 = this.field_7819.method_25929(var16);
@@ -199,7 +199,7 @@ public class class_1453 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       var1.method_25946("BlockState", class_4338.method_20187(this.field_7822));
       var1.method_25931("Time", this.field_7827);
       var1.method_25934("DropItem", this.field_7818);
@@ -212,7 +212,7 @@ public class class_1453 extends Entity {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.field_7822 = class_4338.method_20185(var1.method_25937("BlockState"));
       this.field_7827 = var1.method_25947("Time");
       if (!var1.method_25939("HurtEntities", 99)) {

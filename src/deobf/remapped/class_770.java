@@ -750,7 +750,7 @@ public class class_770 implements Consumer<BiConsumer<Identifier, class_8843>> {
                         .method_34360(class_660.method_3018(class_7986.method_36238(0.0F, 1.0F)).method_33995(1))
                         .method_34360(
                            class_6382.method_29169(
-                              Util.<class_5734>method_44659(new class_5734(), var0 -> var0.method_25941("Potion", "minecraft:slowness"))
+                              Util.<CompoundNBT>method_44659(new CompoundNBT(), var0 -> var0.method_25941("Potion", "minecraft:slowness"))
                            )
                         )
                   )

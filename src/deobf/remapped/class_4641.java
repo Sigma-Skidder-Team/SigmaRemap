@@ -161,7 +161,7 @@ public abstract class class_4641 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       class_1331 var4 = this.method_21469();
       var1.method_25931("TileX", var4.method_12173());
       var1.method_25931("TileY", var4.method_12165());
@@ -169,7 +169,7 @@ public abstract class class_4641 extends Entity {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.field_22661 = new class_1331(var1.method_25947("TileX"), var1.method_25947("TileY"), var1.method_25947("TileZ"));
    }
 

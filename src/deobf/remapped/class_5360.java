@@ -66,7 +66,7 @@ public class class_5360 extends class_3232 {
    }
 
    @Nullable
-   public class_2654 method_24465(int var1, int var2, class_546 var3, class_8248 var4, class_5734 var5, int var6, boolean var7) {
+   public class_2654 method_24465(int var1, int var2, class_546 var3, class_8248 var4, CompoundNBT var5, int var6, boolean var7) {
       if (!class_6007.method_27425(this.field_27356, var1, var2)) {
          field_27353.warn("Ignoring chunk since it's not in the view range: {}, {}", var1, var2);
          return null;

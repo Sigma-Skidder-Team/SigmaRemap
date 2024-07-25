@@ -86,7 +86,7 @@ public class class_7682 {
             for (int var15 = 0; var15 < 32; var15++) {
                class_2034 var16 = new class_2034(var14, var15);
                if (var10.method_5351(var16) && !var12.method_5351(var16)) {
-                  class_5734 var20;
+                  CompoundNBT var20;
                   try (DataInputStream var17 = var10.method_5344(var16)) {
                      if (var17 == null) {
                         field_39040.warn("Failed to fetch input stream for chunk {}", var16);
@@ -99,10 +99,10 @@ public class class_7682 {
                      continue;
                   }
 
-                  class_5734 var117 = var20.method_25937("Level");
+                  CompoundNBT var117 = var20.method_25937("Level");
                   class_6744 var118 = class_2371.method_10851(var117);
-                  class_5734 var19 = new class_5734();
-                  class_5734 var21 = new class_5734();
+                  CompoundNBT var19 = new CompoundNBT();
+                  CompoundNBT var21 = new CompoundNBT();
                   var19.method_25946("Level", var21);
                   class_2371.method_10849(var0, var118, var21, var3);
 

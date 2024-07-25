@@ -6,12 +6,12 @@ public class class_5029 implements Packet<class_392> {
    private static String[] field_26008;
    private class_1331 field_26011;
    private int field_26009;
-   private class_5734 field_26010;
+   private CompoundNBT field_26010;
 
    public class_5029() {
    }
 
-   public class_5029(class_1331 var1, int var2, class_5734 var3) {
+   public class_5029(class_1331 var1, int var2, CompoundNBT var3) {
       this.field_26011 = var1;
       this.field_26009 = var2;
       this.field_26010 = var3;
@@ -43,7 +43,7 @@ public class class_5029 implements Packet<class_392> {
       return this.field_26009;
    }
 
-   public class_5734 method_23191() {
+   public CompoundNBT method_23191() {
       return this.field_26010;
    }
 }

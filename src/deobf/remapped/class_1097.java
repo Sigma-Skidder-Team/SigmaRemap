@@ -339,7 +339,7 @@ public class class_1097 {
          .stream()
          .<Collection>map(Map::values)
          .forEach(var1 -> var1.stream().filter(var0x -> var0x.method_38149() != null).forEach(var1x -> {
-               class_5734 var4 = new class_5734();
+               CompoundNBT var4 = new CompoundNBT();
                var4.method_25941("Name", var1x.method_38147());
                var4.method_25941("Objective", var1x.method_38149().method_20490());
                var4.method_25931("Score", var1x.method_38146());
@@ -351,7 +351,7 @@ public class class_1097 {
 
    public void method_4856(class_3416 var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         class_5734 var5 = var1.method_15764(var4);
+         CompoundNBT var5 = var1.method_15764(var4);
          class_4399 var6 = this.method_4849(var5.method_25965("Objective"));
          String var7 = var5.method_25965("Name");
          if (var7.length() > 40) {

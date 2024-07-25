@@ -218,32 +218,32 @@ public class class_2250 implements Comparable<class_2250> {
       return 31 * var3 + (!this.field_11191 ? 0 : 1);
    }
 
-   public class_5734 method_10345(class_5734 var1) {
+   public CompoundNBT method_10345(CompoundNBT var1) {
       var1.method_25921("Id", (byte)class_1425.method_6536(this.method_10339()));
       this.method_10344(var1);
       return var1;
    }
 
-   private void method_10344(class_5734 var1) {
+   private void method_10344(CompoundNBT var1) {
       var1.method_25921("Amplifier", (byte)this.method_10333());
       var1.method_25931("Duration", this.method_10347());
       var1.method_25934("Ambient", this.method_10338());
       var1.method_25934("ShowParticles", this.method_10336());
       var1.method_25934("ShowIcon", this.method_10342());
       if (this.field_11196 != null) {
-         class_5734 var4 = new class_5734();
+         CompoundNBT var4 = new CompoundNBT();
          this.field_11196.method_10345(var4);
          var1.method_25946("HiddenEffect", var4);
       }
    }
 
-   public static class_2250 method_10343(class_5734 var0) {
+   public static class_2250 method_10343(CompoundNBT var0) {
       byte var3 = var0.method_25950("Id");
       class_1425 var4 = class_1425.method_6538(var3);
       return var4 != null ? method_10334(var4, var0) : null;
    }
 
-   private static class_2250 method_10334(class_1425 var0, class_5734 var1) {
+   private static class_2250 method_10334(class_1425 var0, CompoundNBT var1) {
       byte var4 = var1.method_25950("Amplifier");
       int var5 = var1.method_25947("Duration");
       boolean var6 = var1.method_25933("Ambient");

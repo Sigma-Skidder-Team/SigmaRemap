@@ -8,7 +8,7 @@ public abstract class class_7819 extends class_8990 {
    }
 
    public boolean method_35416(class_9359 var1) {
-      class_5734 var4 = new class_5734();
+      CompoundNBT var4 = new CompoundNBT();
       var4.method_25941("id", this.method_37271());
       this.method_37258(var4);
       if (!var1.method_3225(var4)) {

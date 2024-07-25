@@ -374,7 +374,7 @@ public class class_7051 implements class_6867, class_9875 {
    public class_3416 method_32396(class_3416 var1) {
       for (int var4 = 0; var4 < this.field_36401.size(); var4++) {
          if (!this.field_36401.get(var4).method_28022()) {
-            class_5734 var5 = new class_5734();
+            CompoundNBT var5 = new CompoundNBT();
             var5.method_25921("Slot", (byte)var4);
             this.field_36401.get(var4).method_27998(var5);
             var1.add(var5);
@@ -383,7 +383,7 @@ public class class_7051 implements class_6867, class_9875 {
 
       for (int var6 = 0; var6 < this.field_36405.size(); var6++) {
          if (!this.field_36405.get(var6).method_28022()) {
-            class_5734 var8 = new class_5734();
+            CompoundNBT var8 = new CompoundNBT();
             var8.method_25921("Slot", (byte)(var6 + 100));
             this.field_36405.get(var6).method_27998(var8);
             var1.add(var8);
@@ -392,7 +392,7 @@ public class class_7051 implements class_6867, class_9875 {
 
       for (int var7 = 0; var7 < this.field_36406.size(); var7++) {
          if (!this.field_36406.get(var7).method_28022()) {
-            class_5734 var9 = new class_5734();
+            CompoundNBT var9 = new CompoundNBT();
             var9.method_25921("Slot", (byte)(var7 + 150));
             this.field_36406.get(var7).method_27998(var9);
             var1.add(var9);
@@ -408,7 +408,7 @@ public class class_7051 implements class_6867, class_9875 {
       this.field_36406.clear();
 
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         class_5734 var5 = var1.method_15764(var4);
+         CompoundNBT var5 = var1.method_15764(var4);
          int var6 = var5.method_25950("Slot") & 255;
          ItemStack var7 = ItemStack.method_28015(var5);
          if (!var7.method_28022()) {

@@ -85,7 +85,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       this.method_26870(var2);
       this.method_26893(var2);
@@ -146,7 +146,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_7153();
    }

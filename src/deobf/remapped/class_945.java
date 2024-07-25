@@ -35,7 +35,7 @@ public class class_945 extends class_3757 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25941("name", this.method_4113());
       var1.method_25941("author", this.field_4827);
@@ -59,7 +59,7 @@ public class class_945 extends class_3757 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.method_4098(var2.method_25965("name"));
       this.field_4827 = var2.method_25965("author");
@@ -122,8 +122,8 @@ public class class_945 extends class_3757 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    public boolean method_4125(class_704 var1) {

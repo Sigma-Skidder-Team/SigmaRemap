@@ -86,7 +86,7 @@ public class class_1572 {
       return new class_1572(var4, var6, var16, var14, var18, var19, var8, var10, var12);
    }
 
-   public void method_7093(class_5734 var1) {
+   public void method_7093(CompoundNBT var1) {
       var1.method_25923("BorderCenterX", this.field_8262);
       var1.method_25923("BorderCenterZ", this.field_8261);
       var1.method_25923("BorderSize", this.field_8264);

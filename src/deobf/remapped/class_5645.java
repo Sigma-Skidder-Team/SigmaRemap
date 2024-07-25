@@ -19,7 +19,7 @@ public class class_5645 {
 
    public void method_25559(class_704 var1) {
       try {
-         class_5734 var4 = var1.method_37258(new class_5734());
+         CompoundNBT var4 = var1.method_37258(new CompoundNBT());
          File var5 = File.createTempFile(var1.method_37225() + "-", ".dat", this.field_28617);
          class_5957.method_27218(var4, var5);
          File var6 = new File(this.field_28617, var1.method_37225() + ".dat");
@@ -31,8 +31,8 @@ public class class_5645 {
    }
 
    @Nullable
-   public class_5734 method_25558(class_704 var1) {
-      class_5734 var4 = null;
+   public CompoundNBT method_25558(class_704 var1) {
+      CompoundNBT var4 = null;
 
       try {
          File var5 = new File(this.field_28617, var1.method_37225() + ".dat");

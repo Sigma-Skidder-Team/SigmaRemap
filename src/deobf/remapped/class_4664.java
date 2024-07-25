@@ -20,7 +20,7 @@ public class class_4664 extends class_8131 {
       this.method_21572(var1);
    }
 
-   public class_4664(class_5799 var1, class_5734 var2) {
+   public class_4664(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13429, var2);
       this.field_22750 = new Identifier(var2.method_25965("Template"));
       this.field_22745 = class_6631.valueOf(var2.method_25965("Rot"));
@@ -37,7 +37,7 @@ public class class_4664 extends class_8131 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25941("Template", this.field_22750.toString());
       var1.method_25941("Rot", this.field_22745.name());
@@ -53,7 +53,7 @@ public class class_4664 extends class_8131 {
             class_4359 var8 = class_6629.field_34211.method_30484(var3.method_7066());
             var8.method_26883();
             var8.method_37253(var2, 0.0F, 0.0F);
-            var8.method_26864(var3, var3.method_43368(var2), class_2417.field_12033, (class_8733)null, (class_5734)null);
+            var8.method_26864(var3, var3.method_43368(var2), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
             var3.method_7065(var8);
             if (var2.method_12165() <= var3.method_22552()) {
                var3.method_7513(var2, class_4783.field_23900.method_29260(), 2);

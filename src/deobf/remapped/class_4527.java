@@ -32,7 +32,7 @@ public class class_4527 {
       var0.put("TeSH", "Swamp_Hut");
    });
    private final boolean field_22098;
-   private final Map<String, Long2ObjectMap<class_5734>> field_22103 = Maps.newHashMap();
+   private final Map<String, Long2ObjectMap<CompoundNBT>> field_22103 = Maps.newHashMap();
    private final Map<String, class_4453> field_22099 = Maps.newHashMap();
    private final List<String> field_22102;
    private final List<String> field_22100;
@@ -60,15 +60,15 @@ public class class_4527 {
       }
    }
 
-   public class_5734 method_21033(class_5734 var1) {
-      class_5734 var4 = var1.method_25937("Level");
+   public CompoundNBT method_21033(CompoundNBT var1) {
+      CompoundNBT var4 = var1.method_25937("Level");
       class_2034 var5 = new class_2034(var4.method_25947("xPos"), var4.method_25947("zPos"));
       if (this.method_21031(var5.field_10328, var5.field_10327)) {
          var1 = this.method_21030(var1, var5);
       }
 
-      class_5734 var6 = var4.method_25937("Structures");
-      class_5734 var7 = var6.method_25937("References");
+      CompoundNBT var6 = var4.method_25937("Structures");
+      CompoundNBT var7 = var6.method_25937("References");
 
       for (String var9 : this.field_22100) {
          class_5390 var10 = (class_5390)class_5390.field_27500.get(var9.toLowerCase(Locale.ROOT));
@@ -114,17 +114,17 @@ public class class_4527 {
       }
    }
 
-   private class_5734 method_21030(class_5734 var1, class_2034 var2) {
-      class_5734 var5 = var1.method_25937("Level");
-      class_5734 var6 = var5.method_25937("Structures");
-      class_5734 var7 = var6.method_25937("Starts");
+   private CompoundNBT method_21030(CompoundNBT var1, class_2034 var2) {
+      CompoundNBT var5 = var1.method_25937("Level");
+      CompoundNBT var6 = var5.method_25937("Structures");
+      CompoundNBT var7 = var6.method_25937("Starts");
 
       for (String var9 : this.field_22100) {
          Long2ObjectMap var10 = this.field_22103.get(var9);
          if (var10 != null) {
             long var11 = var2.method_9539();
             if (this.field_22099.get(field_22097.get(var9)).method_20640(var11)) {
-               class_5734 var13 = (class_5734)var10.get(var11);
+               CompoundNBT var13 = (CompoundNBT)var10.get(var11);
                if (var13 != null) {
                   var7.method_25946(var9, var13);
                }
@@ -144,14 +144,14 @@ public class class_4527 {
 
          while (true) {
             String var5;
-            class_5734 var6;
+            CompoundNBT var6;
             while (true) {
                if (!var4.hasNext()) {
                   return;
                }
 
                var5 = (String)var4.next();
-               var6 = new class_5734();
+               var6 = new CompoundNBT();
 
                try {
                   var6 = var1.method_18704(var5, 1493).method_25937("data").method_25937("Features");
@@ -164,7 +164,7 @@ public class class_4527 {
             }
 
             for (String var8 : var6.method_25952()) {
-               class_5734 var9 = var6.method_25937(var8);
+               CompoundNBT var9 = var6.method_25937(var8);
                long var10 = class_2034.method_9540(var9.method_25947("ChunkX"), var9.method_25947("ChunkZ"));
                class_3416 var12 = var9.method_25927("Children", 10);
                if (!var12.isEmpty()) {
@@ -188,7 +188,7 @@ public class class_4527 {
                this.field_22099.put(var5, var20);
 
                for (String var16 : var6.method_25952()) {
-                  class_5734 var21 = var6.method_25937(var16);
+                  CompoundNBT var21 = var6.method_25937(var16);
                   var20.method_20642(class_2034.method_9540(var21.method_25947("ChunkX"), var21.method_25947("ChunkZ")));
                }
 

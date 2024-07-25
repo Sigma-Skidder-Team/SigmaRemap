@@ -33,7 +33,7 @@ public class class_7035 extends class_1694 {
       }
    }
 
-   public class_5531 method_32088(class_5734 var1) {
+   public class_5531 method_32088(CompoundNBT var1) {
       if (var1 == null) {
          return null;
       } else {

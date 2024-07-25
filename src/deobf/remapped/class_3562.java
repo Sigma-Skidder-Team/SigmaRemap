@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public class class_3562 implements MapLike<class_8406> {
-   public class_3562(class_3504 var1, class_5734 var2) {
+   public class_3562(class_3504 var1, CompoundNBT var2) {
       this.field_17444 = var1;
       this.field_17445 = var2;
    }

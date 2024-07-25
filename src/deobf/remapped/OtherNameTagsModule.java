@@ -50,7 +50,7 @@ public class OtherNameTagsModule extends Module {
                      int var21 = var13 - Math.max(0, var20.size() - 4) * 8 - 2;
 
                      for (int var22 = 0; var22 < var20.size(); var22++) {
-                        class_5734 var23 = var20.method_15764(var22);
+                        CompoundNBT var23 = var20.method_15764(var22);
                         int var24 = var22 * 8 + 10;
                         class_8669.field_44445.method_39794(Identifier.method_21455(var23.method_25965("id"))).ifPresent(var1x -> {
                            String var4x = var1x.method_20423(1).getUnformattedComponentText();

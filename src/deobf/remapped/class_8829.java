@@ -69,7 +69,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.method_40588()) {
          var1.method_25946("HivePos", class_4338.method_20190(this.method_40605()));
@@ -88,7 +88,7 @@ public class class_8829 extends class_5467 implements class_6250, class_674 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       this.field_45160 = null;
       if (var1.method_25938("HivePos")) {
          this.field_45160 = class_4338.method_20189(var1.method_25937("HivePos"));

@@ -5,9 +5,9 @@ import java.util.function.Predicate;
 public class class_4177 implements Predicate<ItemStack> {
    private static String[] field_20331;
    private final class_2307<class_2451> field_20329;
-   private final class_5734 field_20330;
+   private final CompoundNBT field_20330;
 
-   public class_4177(class_2307<class_2451> var1, class_5734 var2) {
+   public class_4177(class_2307<class_2451> var1, CompoundNBT var2) {
       this.field_20329 = var1;
       this.field_20330 = var2;
    }

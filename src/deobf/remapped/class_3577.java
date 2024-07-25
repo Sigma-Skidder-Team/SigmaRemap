@@ -42,7 +42,7 @@ public class class_3577 extends Entity {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       if (this.method_16624() != null) {
          var1.method_25946("BeamTarget", class_4338.method_20190(this.method_16624()));
       }
@@ -51,7 +51,7 @@ public class class_3577 extends Entity {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       if (var1.method_25939("BeamTarget", 10)) {
          this.method_16625(class_4338.method_20189(var1.method_25937("BeamTarget")));
       }

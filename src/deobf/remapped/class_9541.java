@@ -27,7 +27,7 @@ public class class_9541 {
       return var4;
    }
 
-   public static List<class_2250> method_43991(class_5734 var0) {
+   public static List<class_2250> method_43991(CompoundNBT var0) {
       ArrayList var3 = Lists.newArrayList();
       var3.addAll(method_43989(var0).method_27404());
       method_43986(var0, var3);
@@ -38,18 +38,18 @@ public class class_9541 {
       return method_43998(var0.method_27990());
    }
 
-   public static List<class_2250> method_43998(class_5734 var0) {
+   public static List<class_2250> method_43998(CompoundNBT var0) {
       ArrayList var3 = Lists.newArrayList();
       method_43986(var0, var3);
       return var3;
    }
 
-   public static void method_43986(class_5734 var0, List<class_2250> var1) {
+   public static void method_43986(CompoundNBT var0, List<class_2250> var1) {
       if (var0 != null && var0.method_25939("CustomPotionEffects", 9)) {
          class_3416 var4 = var0.method_25927("CustomPotionEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            class_5734 var6 = var4.method_15764(var5);
+            CompoundNBT var6 = var4.method_15764(var5);
             class_2250 var7 = class_2250.method_10343(var6);
             if (var7 != null) {
                var1.add(var7);
@@ -59,7 +59,7 @@ public class class_9541 {
    }
 
    public static int method_43987(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       if (var3 != null && var3.method_25939("CustomPotionColor", 99)) {
          return var3.method_25947("CustomPotionColor");
       } else {
@@ -111,7 +111,7 @@ public class class_9541 {
       return method_43989(var0.method_27990());
    }
 
-   public static class_6004 method_43989(class_5734 var0) {
+   public static class_6004 method_43989(CompoundNBT var0) {
       return var0 != null ? class_6004.method_27403(var0.method_25965("Potion")) : class_3697.field_18134;
    }
 
@@ -130,11 +130,11 @@ public class class_9541 {
       if (var1.isEmpty()) {
          return var0;
       } else {
-         class_5734 var4 = var0.method_27994();
+         CompoundNBT var4 = var0.method_27994();
          class_3416 var5 = var4.method_25927("CustomPotionEffects", 9);
 
          for (class_2250 var7 : var1) {
-            var5.add(var7.method_10345(new class_5734()));
+            var5.add(var7.method_10345(new CompoundNBT()));
          }
 
          var4.method_25946("CustomPotionEffects", var5);

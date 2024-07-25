@@ -31,7 +31,7 @@ public class class_9518 {
       return this;
    }
 
-   public class_9518 method_43916(class_5734 var1) {
+   public class_9518 method_43916(CompoundNBT var1) {
       this.field_48459 = new class_6000(var1);
       return this;
    }

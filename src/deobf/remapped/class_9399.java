@@ -156,12 +156,12 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       class_3416 var4 = new class_3416();
 
       for (ItemStack var6 : this.field_48054) {
-         class_5734 var7 = new class_5734();
+         CompoundNBT var7 = new CompoundNBT();
          if (!var6.method_28022()) {
             var6.method_27998(var7);
          }
@@ -173,7 +173,7 @@ public class class_9399 extends class_5834 {
       class_3416 var9 = new class_3416();
 
       for (ItemStack var11 : this.field_48058) {
-         class_5734 var8 = new class_5734();
+         CompoundNBT var8 = new CompoundNBT();
          if (!var11.method_28022()) {
             var11.method_27998(var8);
          }
@@ -195,7 +195,7 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("ArmorItems", 9)) {
          class_3416 var4 = var1.method_25927("ArmorItems", 10);
@@ -220,11 +220,11 @@ public class class_9399 extends class_5834 {
       this.method_43519(var1.method_25933("NoBasePlate"));
       this.method_43515(var1.method_25933("Marker"));
       this.field_41731 = !this.method_43497();
-      class_5734 var7 = var1.method_25937("Pose");
+      CompoundNBT var7 = var1.method_25937("Pose");
       this.method_43506(var7);
    }
 
-   private void method_43506(class_5734 var1) {
+   private void method_43506(CompoundNBT var1) {
       class_3416 var4 = var1.method_25927("Head", 5);
       this.method_43509(!var4.isEmpty() ? new class_1366(var4) : field_48039);
       class_3416 var5 = var1.method_25927("Body", 5);
@@ -239,8 +239,8 @@ public class class_9399 extends class_5834 {
       this.method_43494(!var9.isEmpty() ? new class_1366(var9) : field_48043);
    }
 
-   private class_5734 method_43518() {
-      class_5734 var3 = new class_5734();
+   private CompoundNBT method_43518() {
+      CompoundNBT var3 = new CompoundNBT();
       if (!field_48039.equals(this.field_48044)) {
          var3.method_25946("Head", this.field_48044.method_6282());
       }

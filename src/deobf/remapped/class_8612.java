@@ -169,7 +169,7 @@ public class class_8612 extends class_5783 implements class_3713 {
 
    private boolean method_39587() {
       ItemStack var3 = this.field_41735.<ItemStack>method_36640(field_44174);
-      class_5734 var4 = !var3.method_28022() ? var3.method_28021("Fireworks") : null;
+      CompoundNBT var4 = !var3.method_28022() ? var3.method_28021("Fireworks") : null;
       class_3416 var5 = var4 == null ? null : var4.method_25927("Explosions", 10);
       return var5 != null && !var5.isEmpty();
    }
@@ -177,7 +177,7 @@ public class class_8612 extends class_5783 implements class_3713 {
    private void method_39585() {
       float var3 = 0.0F;
       ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
-      class_5734 var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
+      CompoundNBT var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
       class_3416 var6 = var5 == null ? null : var5.method_25927("Explosions", 10);
       if (var6 != null && !var6.isEmpty()) {
          var3 = 5.0F + (float)(var6.size() * 2);
@@ -226,7 +226,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       if (var1 == 17 && this.field_41768.field_33055) {
          if (this.method_39587()) {
             ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
-            class_5734 var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
+            CompoundNBT var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
             class_1343 var6 = this.method_37098();
             this.field_41768
                .method_29536(this.method_37302(), this.method_37309(), this.method_37156(), var6.field_7336, var6.field_7333, var6.field_7334, var5);
@@ -250,20 +250,20 @@ public class class_8612 extends class_5783 implements class_3713 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Life", this.field_44170);
       var1.method_25931("LifeTime", this.field_44172);
       ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
       if (!var4.method_28022()) {
-         var1.method_25946("FireworksItem", var4.method_27998(new class_5734()));
+         var1.method_25946("FireworksItem", var4.method_27998(new CompoundNBT()));
       }
 
       var1.method_25934("ShotAtAngle", this.field_41735.<Boolean>method_36640(field_44176));
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_44170 = var1.method_25947("Life");
       this.field_44172 = var1.method_25947("LifeTime");

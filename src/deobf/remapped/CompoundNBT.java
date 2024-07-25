@@ -26,21 +26,21 @@ import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_5734 implements class_8406 {
-   public static final Codec<class_5734> field_28974 = Codec.PASSTHROUGH.comapFlatMap(var0 -> {
+public class CompoundNBT implements class_8406 {
+   public static final Codec<CompoundNBT> field_28974 = Codec.PASSTHROUGH.comapFlatMap(var0 -> {
       class_8406 var3 = (class_8406)var0.convert(class_3504.field_17178).getValue();
-      return !(var3 instanceof class_5734) ? DataResult.error("Not a compound tag: " + var3) : DataResult.success((class_5734)var3);
+      return !(var3 instanceof CompoundNBT) ? DataResult.error("Not a compound tag: " + var3) : DataResult.success((CompoundNBT)var3);
    }, var0 -> new Dynamic(class_3504.field_17178, var0));
    private static final Logger field_28972 = LogManager.getLogger();
    private static final Pattern field_28971 = Pattern.compile("[A-Za-z0-9._+-]+");
-   public static final class_3265<class_5734> field_28976 = new class_2782();
+   public static final class_3265<CompoundNBT> field_28976 = new class_2782();
    private final Map<String, class_8406> field_28975;
 
-   public class_5734(Map<String, class_8406> var1) {
+   public CompoundNBT(Map<String, class_8406> var1) {
       this.field_28975 = var1;
    }
 
-   public class_5734() {
+   public CompoundNBT() {
       this(Maps.newHashMap());
    }
 
@@ -64,7 +64,7 @@ public class class_5734 implements class_8406 {
    }
 
    @Override
-   public class_3265<class_5734> method_38709() {
+   public class_3265<CompoundNBT> method_38709() {
       return field_28976;
    }
 
@@ -278,16 +278,16 @@ public class class_5734 implements class_8406 {
       return new long[0];
    }
 
-   public class_5734 method_25937(String var1) {
+   public CompoundNBT method_25937(String var1) {
       try {
          if (this.method_25939(var1, 10)) {
-            return (class_5734)this.field_28975.get(var1);
+            return (CompoundNBT)this.field_28975.get(var1);
          }
       } catch (ClassCastException var5) {
          throw new class_3297(this.method_25960(var1, field_28976, var5));
       }
 
-      return new class_5734();
+      return new CompoundNBT();
    }
 
    public class_3416 method_25927(String var1, int var2) {
@@ -349,14 +349,14 @@ public class class_5734 implements class_8406 {
       return var6;
    }
 
-   public class_5734 method_25944() {
+   public CompoundNBT method_25944() {
       HashMap var3 = Maps.newHashMap(Maps.transformValues(this.field_28975, class_8406::method_38708));
-      return new class_5734(var3);
+      return new CompoundNBT(var3);
    }
 
    @Override
    public boolean equals(Object var1) {
-      return this == var1 ? true : var1 instanceof class_5734 && Objects.equals(this.field_28975, ((class_5734)var1).field_28975);
+      return this == var1 ? true : var1 instanceof CompoundNBT && Objects.equals(this.field_28975, ((CompoundNBT)var1).field_28975);
    }
 
    @Override
@@ -392,7 +392,7 @@ public class class_5734 implements class_8406 {
       }
    }
 
-   public class_5734 method_25925(class_5734 var1) {
+   public CompoundNBT method_25925(CompoundNBT var1) {
       for (String var5 : var1.field_28975.keySet()) {
          class_8406 var6 = var1.field_28975.get(var5);
          if (var6.method_38706() != 10) {
@@ -400,8 +400,8 @@ public class class_5734 implements class_8406 {
          } else if (!this.method_25939(var5, 10)) {
             this.method_25946(var5, var6.method_38708());
          } else {
-            class_5734 var7 = this.method_25937(var5);
-            var7.method_25925((class_5734)var6);
+            CompoundNBT var7 = this.method_25937(var5);
+            var7.method_25925((CompoundNBT)var6);
          }
       }
 

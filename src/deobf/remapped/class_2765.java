@@ -181,7 +181,7 @@ public class class_2765 {
       if (var5 == null) {
          String var6 = var0 + ".snbt";
          Path var7 = Paths.get(field_13510, var6);
-         class_5734 var8 = method_12581(var7);
+         CompoundNBT var8 = method_12581(var7);
          if (var8 != null) {
             return var4.method_26269(var8);
          } else {
@@ -214,7 +214,7 @@ public class class_2765 {
    }
 
    @Nullable
-   private static class_5734 method_12581(Path var0) {
+   private static CompoundNBT method_12581(Path var0) {
       try {
          BufferedReader var3 = Files.newBufferedReader(var0);
          String var4 = IOUtils.toString(var3);
@@ -248,7 +248,7 @@ public class class_2765 {
          var5 = class_4783.field_23184.method_29260();
       }
 
-      class_6986 var8 = new class_6986(var5, Collections.<class_5019<?>>emptySet(), (class_5734)null);
+      class_6986 var8 = new class_6986(var5, Collections.<class_5019<?>>emptySet(), (CompoundNBT)null);
       var8.method_31964(var2, var1, 2);
       var2.method_43369(var1, var5.method_8360());
    }

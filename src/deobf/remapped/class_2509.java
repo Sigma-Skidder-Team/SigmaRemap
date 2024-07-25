@@ -31,7 +31,7 @@ public class class_2509 extends class_2451 {
             var10 = new class_5490(var9, var6, var5);
          }
 
-         class_5734 var11 = var8.method_27990();
+         CompoundNBT var11 = var8.method_27990();
          if (var11 != null) {
             class_6629.method_30458(var9, var7, (Entity)var10, var11);
          }

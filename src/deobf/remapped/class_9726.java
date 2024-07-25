@@ -10,14 +10,14 @@ public class class_9726 extends class_7896 {
       super(class_2746.field_13404, var1, var2, 64, var3, 7, 7, 9);
    }
 
-   public class_9726(class_5799 var1, class_5734 var2) {
+   public class_9726(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13404, var2);
       this.field_49438 = var2.method_25933("Witch");
       this.field_49439 = var2.method_25933("Cat");
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25934("Witch", this.field_49438);
       var1.method_25934("Cat", this.field_49439);
@@ -77,7 +77,7 @@ public class class_9726 extends class_7896 {
                class_1609 var17 = class_6629.field_34220.method_30484(var1.method_7066());
                var17.method_26883();
                var17.method_37144((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
-               var17.method_26864(var1, var1.method_43368(new class_1331(var18, var19, var16)), class_2417.field_12033, (class_8733)null, (class_5734)null);
+               var17.method_26864(var1, var1.method_43368(new class_1331(var18, var19, var16)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
                var1.method_7065(var17);
             }
          }
@@ -97,7 +97,7 @@ public class class_9726 extends class_7896 {
             class_5583 var8 = class_6629.field_34249.method_30484(var1.method_7066());
             var8.method_26883();
             var8.method_37144((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
-            var8.method_26864(var1, var1.method_43368(new class_1331(var5, var6, var7)), class_2417.field_12033, (class_8733)null, (class_5734)null);
+            var8.method_26864(var1, var1.method_43368(new class_1331(var5, var6, var7)), class_2417.field_12033, (class_8733)null, (CompoundNBT)null);
             var1.method_7065(var8);
          }
       }

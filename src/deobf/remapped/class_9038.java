@@ -13,7 +13,7 @@ public class class_9038 implements class_8668 {
    }
 
    private static List<String> method_41495(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       return (List<String>)(var3 == null ? ImmutableList.of() : class_7680.method_34805(var3));
    }
 

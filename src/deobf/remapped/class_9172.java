@@ -26,7 +26,7 @@ public class class_9172 extends class_2103 {
             throw new RuntimeException(var13);
          }
 
-         return var11.method_18967().method_8350(class_4783.field_23227) ? null : new class_4099(var5.field_19965, var11.method_18967(), (class_5734)null);
+         return var11.method_18967().method_8350(class_4783.field_23227) ? null : new class_4099(var5.field_19965, var11.method_18967(), (CompoundNBT)null);
       } else {
          return var5;
       }

@@ -53,25 +53,25 @@ public class class_2649 extends class_5837 {
 
    @Nullable
    private class_3416 method_11960(ItemStack var1, boolean var2) {
-      class_5734 var5;
+      CompoundNBT var5;
       if (!var1.method_28002()) {
          if (!var2) {
             return null;
          }
 
-         var5 = new class_5734();
+         var5 = new CompoundNBT();
          var1.method_27965(var5);
       } else {
          var5 = var1.method_27990();
       }
 
-      class_5734 var6;
+      CompoundNBT var6;
       if (!var5.method_25939("display", 10)) {
          if (!var2) {
             return null;
          }
 
-         var6 = new class_5734();
+         var6 = new CompoundNBT();
          var5.method_25946("display", var6);
       } else {
          var6 = var5.method_25937("display");

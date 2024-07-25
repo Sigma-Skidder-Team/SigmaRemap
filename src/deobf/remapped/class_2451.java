@@ -51,7 +51,7 @@ public class class_2451 implements class_8525 {
    public void method_11228(World var1, class_5834 var2, ItemStack var3, int var4) {
    }
 
-   public boolean method_11215(class_5734 var1) {
+   public boolean method_11215(CompoundNBT var1) {
       return false;
    }
 

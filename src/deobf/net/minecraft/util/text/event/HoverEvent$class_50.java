@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 import remapped.class_2392;
 import remapped.class_2451;
 import remapped.Identifier;
-import remapped.class_5734;
+import remapped.CompoundNBT;
 import remapped.ItemStack;
 import remapped.class_6539;
 import remapped.class_8669;
@@ -17,10 +17,10 @@ import remapped.class_8669;
 public class HoverEvent$class_50 {
    private final class_2451 item;
    private final int count;
-   private final class_5734 tag;
+   private final CompoundNBT tag;
    private ItemStack stack;
 
-   public HoverEvent$class_50(class_2451 item, int count, class_5734 tag) {
+   public HoverEvent$class_50(class_2451 item, int count, CompoundNBT tag) {
       this.item = item;
       this.count = count;
       this.tag = tag;
@@ -62,7 +62,7 @@ public class HoverEvent$class_50 {
 
    private static HoverEvent$class_50 deserialize(JsonElement element) {
       if (element.isJsonPrimitive()) {
-         return new HoverEvent$class_50(class_8669.field_44382.method_39806(new Identifier(element.getAsString())), 1, (class_5734)null);
+         return new HoverEvent$class_50(class_8669.field_44382.method_39806(new Identifier(element.getAsString())), 1, (CompoundNBT)null);
       } else {
          JsonObject item = class_6539.method_29782(element, "item");
          class_2451 i = class_8669.field_44382.method_39806(new Identifier(class_6539.method_29796(item, "id")));
@@ -71,21 +71,21 @@ public class HoverEvent$class_50 {
             String commandsyntaxexception = class_6539.method_29796(item, "tag");
 
             try {
-               class_5734 var7 = class_2392.method_10916(commandsyntaxexception);
+               CompoundNBT var7 = class_2392.method_10916(commandsyntaxexception);
                return new HoverEvent$class_50(i, s, var7);
             } catch (CommandSyntaxException var8) {
                HoverEvent.access$400().warn("Failed to parse tag: {}", commandsyntaxexception, var8);
             }
          }
 
-         return new HoverEvent$class_50(i, s, (class_5734)null);
+         return new HoverEvent$class_50(i, s, (CompoundNBT)null);
       }
    }
 
    @Nullable
    private static HoverEvent$class_50 deserialize(ITextComponent component) {
       try {
-         class_5734 var3 = class_2392.method_10916(component.getString());
+         CompoundNBT var3 = class_2392.method_10916(component.getString());
          return new HoverEvent$class_50(ItemStack.method_28015(var3));
       } catch (CommandSyntaxException var4) {
          HoverEvent.access$400().warn("Failed to parse item tag: {}", component, var4);

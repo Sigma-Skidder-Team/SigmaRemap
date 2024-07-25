@@ -10,13 +10,13 @@ public class class_1896 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_9684.method_16255(var2);
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       this.field_9684.method_16258(var1);
       return var1;
@@ -34,8 +34,8 @@ public class class_1896 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      class_5734 var3 = this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      CompoundNBT var3 = this.method_17396(new CompoundNBT());
       var3.method_25959("SpawnPotentials");
       return var3;
    }

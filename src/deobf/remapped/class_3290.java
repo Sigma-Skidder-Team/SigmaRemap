@@ -596,7 +596,7 @@ public class class_3290 {
          }
 
          if (var0.field_17522 != null) {
-            class_5734 var13 = var1.method_27990();
+            CompoundNBT var13 = var1.method_27990();
 
             for (int var15 = 0; var15 < var0.field_17522.length; var15++) {
                class_1719 var17 = var0.field_17522[var15];
@@ -626,7 +626,7 @@ public class class_3290 {
    }
 
    private static int method_15081(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       if (var3 != null) {
          String var4 = var3.method_25965("Potion");
          if (var4 != null && !var4.equals("")) {
@@ -700,7 +700,7 @@ public class class_3290 {
          int[][] var6 = new int[var4.size()][2];
 
          for (int var7 = 0; var7 < var13.size(); var7++) {
-            class_5734 var8 = var13.method_15764(var7);
+            CompoundNBT var8 = var13.method_15764(var7);
             String var9 = var8.method_25965("id");
             int var10 = var8.method_25947("lvl");
             class_4382 var11 = class_2919.method_13357(var9);

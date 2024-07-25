@@ -93,7 +93,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_3312.clear();
       class_3037.method_13882(var2, this.field_3312);
@@ -109,14 +109,14 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       this.method_2673(var1);
       var1.method_25969("CookingTimes", this.field_3311);
       var1.method_25969("CookingTotalTimes", this.field_3310);
       return var1;
    }
 
-   private class_5734 method_2673(class_5734 var1) {
+   private CompoundNBT method_2673(CompoundNBT var1) {
       super.method_17396(var1);
       class_3037.method_13879(var1, this.field_3312, true);
       return var1;
@@ -129,8 +129,8 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_2673(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_2673(new CompoundNBT());
    }
 
    public Optional<class_5917> method_2672(ItemStack var1) {

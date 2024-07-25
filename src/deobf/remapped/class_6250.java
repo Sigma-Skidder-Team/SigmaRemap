@@ -16,14 +16,14 @@ public interface class_6250 {
 
    void method_28529();
 
-   default void method_28528(class_5734 var1) {
+   default void method_28528(CompoundNBT var1) {
       var1.method_25931("AngerTime", this.method_28539());
       if (this.method_28535() != null) {
          var1.method_25964("AngryAt", this.method_28535());
       }
    }
 
-   default void method_28533(class_6331 var1, class_5734 var2) {
+   default void method_28533(class_6331 var1, CompoundNBT var2) {
       this.method_28532(var2.method_25947("AngerTime"));
       if (var2.method_25954("AngryAt")) {
          UUID var5 = var2.method_25926("AngryAt");

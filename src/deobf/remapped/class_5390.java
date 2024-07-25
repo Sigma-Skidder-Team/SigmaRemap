@@ -63,7 +63,7 @@ public abstract class class_5390<C extends class_6157> {
    }
 
    @Nullable
-   public static class_3200<?> method_24555(class_5799 var0, class_5734 var1, long var2) {
+   public static class_3200<?> method_24555(class_5799 var0, CompoundNBT var1, long var2) {
       String var6 = var1.method_25965("id");
       if ("INVALID".equals(var6)) {
          return class_3200.field_15991;
@@ -83,7 +83,7 @@ public abstract class class_5390<C extends class_6157> {
                class_3200 var13 = var7.method_24545(var8, var9, var11, var10, var2);
 
                for (int var14 = 0; var14 < var12.size(); var14++) {
-                  class_5734 var15 = var12.method_15764(var14);
+                  CompoundNBT var15 = var12.method_15764(var14);
                   String var16 = var15.method_25965("id").toLowerCase(Locale.ROOT);
                   Identifier var17 = new Identifier(var16);
                   Identifier var18 = field_27499.getOrDefault(var17, var17);

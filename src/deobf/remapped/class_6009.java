@@ -20,7 +20,7 @@ public class class_6009 {
    }
 
    public boolean method_27431() {
-      class_5734 var3 = null;
+      CompoundNBT var3 = null;
 
       try {
          var3 = class_5957.method_27219(new FileInputStream(this.field_30603));

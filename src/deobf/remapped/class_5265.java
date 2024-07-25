@@ -14,7 +14,7 @@ public class class_5265 extends class_7186 {
    }
 
    @Override
-   public void method_32924(class_5734 var1) {
+   public void method_32924(CompoundNBT var1) {
       this.field_26920.clear();
 
       for (String var5 : var1.method_25952()) {
@@ -25,7 +25,7 @@ public class class_5265 extends class_7186 {
    }
 
    @Override
-   public class_5734 method_32920(class_5734 var1) {
+   public CompoundNBT method_32920(CompoundNBT var1) {
       ObjectIterator var4 = this.field_26920.object2IntEntrySet().iterator();
 
       while (var4.hasNext()) {

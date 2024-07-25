@@ -14,7 +14,7 @@ public abstract class class_8346 extends class_3757 implements class_6867, class
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_42749 = class_3186.method_14664(var2);
       if (var2.method_25939("CustomName", 8)) {
@@ -23,7 +23,7 @@ public abstract class class_8346 extends class_3757 implements class_6867, class
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       this.field_42749.method_14666(var1);
       if (this.field_42748 != null) {

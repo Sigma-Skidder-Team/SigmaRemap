@@ -8,13 +8,13 @@ public abstract class class_462 extends class_7060 {
       this.field_1919 = var3;
    }
 
-   public class_462(class_2746 var1, class_5734 var2) {
+   public class_462(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field_1919 = class_1143.method_5008(var2.method_25947("MST"));
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       var1.method_25931("MST", this.field_1919.ordinal());
    }
 

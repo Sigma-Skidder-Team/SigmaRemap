@@ -51,7 +51,7 @@ public class class_298 extends class_7637 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.field_1083) {
          var1.method_25934("Johnny", true);
@@ -68,7 +68,7 @@ public class class_298 extends class_7637 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("Johnny", 99)) {
          this.field_1083 = var1.method_25933("Johnny");
@@ -82,7 +82,7 @@ public class class_298 extends class_7637 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       class_8733 var8 = super.method_26864(var1, var2, var3, var4, var5);
       ((class_8985)this.method_26927()).method_41199(true);
       this.method_26870(var2);

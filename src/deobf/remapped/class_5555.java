@@ -18,7 +18,7 @@ public class class_5555 extends class_9795 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25949("Age", this.field_28273);
       if (this.field_28268 != null) {
@@ -33,7 +33,7 @@ public class class_5555 extends class_9795 implements class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_28273 = var2.method_25948("Age");
       if (var2.method_25939("ExitPortal", 10)) {
@@ -100,8 +100,8 @@ public class class_5555 extends class_9795 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    public void method_25242() {

@@ -13,7 +13,7 @@ public abstract class class_1899 extends class_4612 {
    }
 
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var4 == null) {
          var4 = new class_1821(true);
       }
@@ -83,14 +83,14 @@ public abstract class class_1899 extends class_4612 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Age", this.method_8634());
       var1.method_25931("ForcedAge", this.field_9697);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.method_8635(var1.method_25947("Age"));
       this.field_9697 = var1.method_25947("ForcedAge");

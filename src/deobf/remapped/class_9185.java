@@ -16,7 +16,7 @@ public class class_9185 extends class_8131 {
       this.method_42333(var1);
    }
 
-   public class_9185(class_5799 var1, class_5734 var2) {
+   public class_9185(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13441, var2);
       this.field_46997 = var2.method_25965("Template");
       this.field_46996 = class_6631.valueOf(var2.method_25965("Rot"));
@@ -31,7 +31,7 @@ public class class_9185 extends class_8131 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25941("Template", this.field_46997);
       var1.method_25941("Rot", this.field_46996.name());

@@ -57,8 +57,8 @@ public class class_9358 extends class_7157 {
       }
 
       if (!var5.method_28022()) {
-         class_5734 var8 = var4.method_28021("BlockEntityTag");
-         class_5734 var9 = var8 != null ? var8.method_25944() : new class_5734();
+         CompoundNBT var8 = var4.method_28021("BlockEntityTag");
+         CompoundNBT var9 = var8 != null ? var8.method_25944() : new CompoundNBT();
          var9.method_25931("Base", ((class_1967)var4.method_27960()).method_9065().method_41794());
          var5.method_27954("BlockEntityTag", var9);
          return var5;

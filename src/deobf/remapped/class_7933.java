@@ -126,7 +126,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_40579 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       class_3037.method_13882(var2, this.field_40579);
@@ -134,7 +134,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       this.field_40582 = var2.method_25956("CookTime");
       this.field_40577 = var2.method_25956("CookTimeTotal");
       this.field_40587 = this.method_35874(this.field_40579.get(1));
-      class_5734 var5 = var2.method_25937("RecipesUsed");
+      CompoundNBT var5 = var2.method_25937("RecipesUsed");
 
       for (String var7 : var5.method_25952()) {
          this.field_40586.put(new Identifier(var7), var5.method_25947(var7));
@@ -142,13 +142,13 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25958("BurnTime", (short)this.field_40584);
       var1.method_25958("CookTime", (short)this.field_40582);
       var1.method_25958("CookTimeTotal", (short)this.field_40577);
       class_3037.method_13878(var1, this.field_40579);
-      class_5734 var4 = new class_5734();
+      CompoundNBT var4 = new CompoundNBT();
       this.field_40586.forEach((var1x, var2) -> var4.method_25931(var1x.toString(), var2));
       var1.method_25946("RecipesUsed", var4);
       return var1;

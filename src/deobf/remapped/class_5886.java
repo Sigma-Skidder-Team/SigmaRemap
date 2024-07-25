@@ -33,7 +33,7 @@ public abstract class class_5886 extends class_5834 {
    private long field_29910;
    private Entity field_29911;
    private int field_29901;
-   private class_5734 field_29899;
+   private CompoundNBT field_29899;
    private class_1331 field_29909 = class_1331.field_7306;
    private float field_29907 = -1.0F;
 
@@ -274,14 +274,14 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25934("CanPickUpLoot", this.method_26930());
       var1.method_25934("PersistenceRequired", this.field_29920);
       class_3416 var4 = new class_3416();
 
       for (ItemStack var6 : this.field_29922) {
-         class_5734 var7 = new class_5734();
+         CompoundNBT var7 = new CompoundNBT();
          if (!var6.method_28022()) {
             var6.method_27998(var7);
          }
@@ -293,7 +293,7 @@ public abstract class class_5886 extends class_5834 {
       class_3416 var12 = new class_3416();
 
       for (ItemStack var15 : this.field_29903) {
-         class_5734 var8 = new class_5734();
+         CompoundNBT var8 = new CompoundNBT();
          if (!var15.method_28022()) {
             var15.method_27998(var8);
          }
@@ -321,7 +321,7 @@ public abstract class class_5886 extends class_5834 {
             var1.method_25946("Leash", this.field_29899.method_25944());
          }
       } else {
-         class_5734 var20 = new class_5734();
+         CompoundNBT var20 = new CompoundNBT();
          if (!(this.field_29911 instanceof class_5834)) {
             if (this.field_29911 instanceof class_4641) {
                class_1331 var22 = ((class_4641)this.field_29911).method_21469();
@@ -351,7 +351,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("CanPickUpLoot", 1)) {
          this.method_26871(var1.method_25933("CanPickUpLoot"));
@@ -967,7 +967,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Nullable
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       this.method_26561(class_7331.field_37471)
          .method_45005(new class_9343("Random spawn bonus", this.field_41717.nextGaussian() * 0.05, class_9342.field_47678));
       if (!(this.field_41717.nextFloat() < 0.05F)) {

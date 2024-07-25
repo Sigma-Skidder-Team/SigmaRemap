@@ -113,7 +113,7 @@ public class class_408 extends class_2208<class_3682> {
 
    private void method_2029(int var1, int var2, int var3) {
       ItemStack var6 = new ItemStack(class_4897.field_25216);
-      class_5734 var7 = var6.method_27978("BlockEntityTag");
+      CompoundNBT var7 = var6.method_27978("BlockEntityTag");
       class_3416 var8 = new class_1697()
          .method_7624(class_8427.field_43111, class_9077.field_46498)
          .method_7624(class_8427.values()[var1], class_9077.field_46493)
@@ -213,7 +213,7 @@ public class class_408 extends class_2208<class_3682> {
       ItemStack var4 = this.field_10956.method_17092().method_35898();
       ItemStack var5 = this.field_10956.method_17096().method_35898();
       ItemStack var6 = this.field_10956.method_17094().method_35898();
-      class_5734 var7 = var4.method_27978("BlockEntityTag");
+      CompoundNBT var7 = var4.method_27978("BlockEntityTag");
       this.field_1714 = var7.method_25939("Patterns", 9) && !var4.method_28022() && var7.method_25927("Patterns", 10).size() >= 6;
       if (this.field_1714) {
          this.field_1702 = null;

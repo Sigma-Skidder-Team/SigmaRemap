@@ -385,7 +385,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
@@ -403,7 +403,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
@@ -649,7 +649,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var3 == class_2417.field_12038) {
          this.method_34716(this.method_15891().method_13909(class_4466.field_21775));
       }
@@ -679,7 +679,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
       }
 
       class_7666 var8 = new class_7666(class_6629.field_34276, var1, var7);
-      var8.method_26864(var1, var1.method_43368(var8.method_37075()), class_2417.field_12038, (class_8733)null, (class_5734)null);
+      var8.method_26864(var1, var1.method_43368(var8.method_37075()), class_2417.field_12038, (class_8733)null, (CompoundNBT)null);
       return var8;
    }
 
@@ -691,7 +691,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          field_41741.info("Villager {} was struck by lightning {}.", this, var2);
          class_1609 var5 = class_6629.field_34220.method_30484(var1);
          var5.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, this.field_41755);
-         var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12041, (class_8733)null, (class_5734)null);
+         var5.method_26864(var1, var1.method_43368(var5.method_37075()), class_2417.field_12041, (class_8733)null, (CompoundNBT)null);
          var5.method_26888(this.method_26859());
          if (this.method_45507()) {
             var5.method_37303(this.method_45508());
@@ -811,7 +811,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          class_1331 var10 = this.method_34701(var4, var6, var8);
          if (var10 != null) {
             class_8127 var11 = class_6629.field_34298
-               .method_30483(var1, (class_5734)null, (ITextComponent)null, (class_704)null, var10, class_2417.field_12027, false, false);
+               .method_30483(var1, (CompoundNBT)null, (ITextComponent)null, (class_704)null, var10, class_2417.field_12027, false, false);
             if (var11 != null) {
                if (var11.method_26889(var1, class_2417.field_12027) && var11.method_26855(var1)) {
                   var1.method_7065(var11);

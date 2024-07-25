@@ -13,7 +13,7 @@ public class class_9622 extends class_6315 {
       this.field_49017 = var2.nextInt();
    }
 
-   public class_9622(class_5799 var1, class_5734 var2) {
+   public class_9622(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13392, var2);
       this.field_49017 = var2.method_25947("Seed");
    }
@@ -24,7 +24,7 @@ public class class_9622 extends class_6315 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25931("Seed", this.field_49017);
    }

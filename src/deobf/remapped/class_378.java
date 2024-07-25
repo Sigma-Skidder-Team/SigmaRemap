@@ -54,14 +54,14 @@ public class class_378 extends class_5886 implements class_1869 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("Size", this.method_1860() - 1);
       var1.method_25934("wasOnGround", this.field_1535);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       int var4 = var1.method_25947("Size");
       if (var4 < 0) {
          var4 = 0;
@@ -287,7 +287,7 @@ public class class_378 extends class_5886 implements class_1869 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       int var8 = this.field_41717.nextInt(3);
       if (var8 < 2 && this.field_41717.nextFloat() < 0.5F * var2.method_44284()) {
          var8++;

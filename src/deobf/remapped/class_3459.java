@@ -23,7 +23,7 @@ public class class_3459 {
 
    private void method_15916() {
       try {
-         class_5734 var3 = class_5957.method_27223(this.field_16952);
+         CompoundNBT var3 = class_5957.method_27223(this.field_16952);
          if (var3 == null) {
             return;
          }
@@ -44,7 +44,7 @@ public class class_3459 {
 
    public void method_15917() {
       try {
-         class_5734 var3 = new class_5734();
+         CompoundNBT var3 = new CompoundNBT();
          var3.method_25931("DataVersion", class_7665.method_34674().getWorldVersion());
 
          for (int var4 = 0; var4 < 9; var4++) {

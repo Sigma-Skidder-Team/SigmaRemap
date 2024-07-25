@@ -356,7 +356,7 @@ public class class_488 {
    private static class_9155 method_2387(class_9155 var0, class_1429 var1, class_9257 var2, IntFunction<class_8406> var3, boolean var4) {
       return var0.method_42187((var4x, var5, var6) -> {
          try {
-            class_5734 var9 = var1.method_6573();
+            CompoundNBT var9 = var1.method_6573();
             int var10 = var4 ? var6 : (var5 ? 1 : 0);
             var2.method_42653(var9, () -> (class_8406)var3.apply(var10));
             var1.method_6572(var9);
@@ -661,11 +661,11 @@ public class class_488 {
                            return OptionalInt.empty();
                         }
 
-                        class_5734 var20 = var18.method_17396(new class_5734());
+                        CompoundNBT var20 = var18.method_17396(new CompoundNBT());
                         var20.method_25959("x");
                         var20.method_25959("y");
                         var20.method_25959("z");
-                        class_5734 var21 = var19.method_17396(new class_5734());
+                        CompoundNBT var21 = var19.method_17396(new CompoundNBT());
                         var21.method_25959("x");
                         var21.method_25959("y");
                         var21.method_25959("z");

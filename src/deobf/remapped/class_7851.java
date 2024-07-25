@@ -111,7 +111,7 @@ public class class_7851 extends class_1080 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25923("PushX", this.field_39788);
       var1.method_25923("PushZ", this.field_39786);
@@ -119,7 +119,7 @@ public class class_7851 extends class_1080 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_39788 = var1.method_25932("PushX");
       this.field_39786 = var1.method_25932("PushZ");

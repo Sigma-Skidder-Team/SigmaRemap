@@ -92,7 +92,7 @@ public class class_5354 extends class_3757 implements class_3745 {
       if (this.field_27341.size() < 3) {
          var1.method_37390();
          var1.method_37305();
-         class_5734 var6 = new class_5734();
+         CompoundNBT var6 = new CompoundNBT();
          var1.method_37350(var6);
          this.field_27341.add(new class_7955(var6, var3, !var2 ? 600 : 2400, null));
          if (this.field_18364 != null) {
@@ -126,7 +126,7 @@ public class class_5354 extends class_3757 implements class_3745 {
          return false;
       } else {
          class_1331 var7 = this.method_17399();
-         class_5734 var8 = class_7955.method_35994(var2);
+         CompoundNBT var8 = class_7955.method_35994(var2);
          var8.method_25959("Passengers");
          var8.method_25959("Leash");
          var8.method_25959("UUID");
@@ -235,13 +235,13 @@ public class class_5354 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_27341.clear();
       class_3416 var5 = var2.method_25927("Bees", 10);
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
-         class_5734 var7 = var5.method_15764(var6);
+         CompoundNBT var7 = var5.method_15764(var6);
          class_7955 var8 = new class_7955(var7.method_25937("EntityData"), var7.method_25947("TicksInHive"), var7.method_25947("MinOccupationTicks"), null);
          this.field_27341.add(var8);
       }
@@ -253,7 +253,7 @@ public class class_5354 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25946("Bees", this.method_24439());
       if (this.method_24440()) {
@@ -268,7 +268,7 @@ public class class_5354 extends class_3757 implements class_3745 {
 
       for (class_7955 var5 : this.field_27341) {
          class_7955.method_35994(var5).method_25959("UUID");
-         class_5734 var6 = new class_5734();
+         CompoundNBT var6 = new CompoundNBT();
          var6.method_25946("EntityData", class_7955.method_35994(var5));
          var6.method_25931("TicksInHive", class_7955.method_35996(var5));
          var6.method_25931("MinOccupationTicks", class_7955.method_35993(var5));

@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import remapped.class_4235;
-import remapped.class_5734;
+import remapped.CompoundNBT;
 import remapped.Entity;
 import remapped.class_8406;
 import remapped.class_9155;
@@ -39,7 +39,7 @@ public abstract class NBTTextComponent extends TextComponent implements ITargete
       this.field_218678_b = p_i50782_3_;
    }
 
-   public abstract Stream<class_5734> func_218673_a(class_9155 var1) throws CommandSyntaxException;
+   public abstract Stream<CompoundNBT> func_218673_a(class_9155 var1) throws CommandSyntaxException;
 
    public String func_218676_i() {
       return this.field_218679_c;

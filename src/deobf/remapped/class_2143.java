@@ -36,7 +36,7 @@ public class class_2143 extends class_6249 {
    }
 
    public static int method_10009(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       return var3 != null && var3.method_25939("map", 99) ? var3.method_25947("map") : 0;
    }
 
@@ -315,7 +315,7 @@ public class class_2143 extends class_6249 {
 
    @Override
    public void method_11236(ItemStack var1, World var2, class_704 var3) {
-      class_5734 var6 = var1.method_27990();
+      CompoundNBT var6 = var1.method_27990();
       if (var6 != null && var6.method_25939("map_scale_direction", 99)) {
          method_10008(var1, var2, var6.method_25947("map_scale_direction"));
          var6.method_25959("map_scale_direction");
@@ -368,7 +368,7 @@ public class class_2143 extends class_6249 {
    }
 
    public static int method_10017(ItemStack var0) {
-      class_5734 var3 = var0.method_28021("display");
+      CompoundNBT var3 = var0.method_28021("display");
       if (var3 != null && var3.method_25939("MapColor", 99)) {
          int var4 = var3.method_25947("MapColor");
          return 0xFF000000 | var4 & 16777215;

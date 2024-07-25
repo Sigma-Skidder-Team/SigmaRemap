@@ -43,7 +43,7 @@ public class class_968<T> implements class_3065<T> {
       class_3416 var3 = new class_3416();
 
       for (class_723 var5 : this.field_4962) {
-         class_5734 var6 = new class_5734();
+         CompoundNBT var6 = new CompoundNBT();
          var6.method_25941("i", this.field_4961.apply((T)class_723.method_3280(var5)).toString());
          var6.method_25931("x", var5.field_3928.method_12173());
          var6.method_25931("y", var5.field_3928.method_12165());
@@ -60,7 +60,7 @@ public class class_968<T> implements class_3065<T> {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var0.size(); var6++) {
-         class_5734 var7 = var0.method_15764(var6);
+         CompoundNBT var7 = var0.method_15764(var6);
          Object var8 = var2.apply(new Identifier(var7.method_25965("i")));
          if (var8 != null) {
             class_1331 var9 = new class_1331(var7.method_25947("x"), var7.method_25947("y"), var7.method_25947("z"));

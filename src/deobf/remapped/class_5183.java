@@ -8,13 +8,13 @@ public class class_5183 implements class_4885 {
    private static String[] field_26674;
    private final Predicate<class_8406> field_26673;
 
-   public class_5183(class_5734 var1) {
+   public class_5183(CompoundNBT var1) {
       this.field_26673 = class_4235.method_19749(var1);
    }
 
    @Override
    public void method_22411(class_8406 var1, List<class_8406> var2) {
-      if (var1 instanceof class_5734 && this.field_26673.test(var1)) {
+      if (var1 instanceof CompoundNBT && this.field_26673.test(var1)) {
          var2.add(var1);
       }
    }
@@ -26,7 +26,7 @@ public class class_5183 implements class_4885 {
 
    @Override
    public class_8406 method_22407() {
-      return new class_5734();
+      return new CompoundNBT();
    }
 
    @Override

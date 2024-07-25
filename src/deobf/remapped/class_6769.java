@@ -214,7 +214,7 @@ public class class_6769 {
             for (int var11 = 0; var11 < var4; var11++) {
                class_1331 var12 = new class_1331(var9.method_12173() + var10, var9.method_12165() + 1, var9.method_12185() + var11);
                class_6414 var13 = class_4783.field_23582;
-               class_6986 var14 = new class_6986(var13.method_29260(), Collections.EMPTY_SET, (class_5734)null);
+               class_6986 var14 = new class_6986(var13.method_29260(), Collections.EMPTY_SET, (CompoundNBT)null);
                var14.method_31964(var7, var12, 2);
             }
          }

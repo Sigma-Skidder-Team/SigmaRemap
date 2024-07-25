@@ -61,7 +61,7 @@ public abstract class class_8704 {
       GameProfile var7 = var6.method_27254(var5.getId());
       String var8 = var7 != null ? var7.getName() : var5.getName();
       var6.method_27258(var5);
-      class_5734 var9 = this.method_39975(var2);
+      CompoundNBT var9 = this.method_39975(var2);
       class_5621 var10 = var9 == null
          ? World.field_33048
          : class_8760.method_40243(new Dynamic(class_3504.field_17178, var9.method_25929("Dimension")))
@@ -157,7 +157,7 @@ public abstract class class_8704 {
       }
 
       if (var9 != null && var9.method_25939("RootVehicle", 10)) {
-         class_5734 var26 = var9.method_25937("RootVehicle");
+         CompoundNBT var26 = var9.method_25937("RootVehicle");
          Entity var27 = class_6629.method_30455(var26.method_25937("Entity"), var12, var1x -> var12.method_28972(var1x) ? var1x : null);
          if (var27 != null) {
             UUID var22;
@@ -216,9 +216,9 @@ public abstract class class_8704 {
    }
 
    @Nullable
-   public class_5734 method_39975(class_9359 var1) {
-      class_5734 var4 = this.field_44631.method_1601().method_25712();
-      class_5734 var5;
+   public CompoundNBT method_39975(class_9359 var1) {
+      CompoundNBT var4 = this.field_44631.method_1601().method_25712();
+      CompoundNBT var5;
       if (var1.method_45509().getString().equals(this.field_44631.method_1674()) && var4 != null) {
          var5 = var4;
          var1.method_37393(var4);
@@ -655,7 +655,7 @@ public abstract class class_8704 {
       return this.field_44631;
    }
 
-   public class_5734 method_39949() {
+   public CompoundNBT method_39949() {
       return null;
    }
 

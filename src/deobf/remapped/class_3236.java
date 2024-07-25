@@ -26,17 +26,17 @@ public class class_3236 extends class_8549 {
       this.field_36435 = var3;
    }
 
-   public class_3236(class_2746 var1, class_5734 var2) {
+   public class_3236(class_2746 var1, CompoundNBT var2) {
       super(var1, var2);
       this.field_16095 = var2.method_25933("Source");
    }
 
-   public class_3236(class_5799 var1, class_5734 var2) {
+   public class_3236(class_5799 var1, CompoundNBT var2) {
       this(class_2746.field_13417, var2);
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25934("Source", this.field_16095);
    }

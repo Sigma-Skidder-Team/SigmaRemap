@@ -110,7 +110,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       if (this.field_1063 == null) {
          class_3037.method_13878(var1, this.field_1062);
@@ -123,7 +123,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       this.field_1062 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!var1.method_25939("LootTable", 8)) {

@@ -163,8 +163,8 @@ public class class_9663 {
    @Nullable
    private static class_2805 method_44624(File var0, DataFixer var1) {
       try {
-         class_5734 var4 = class_5957.method_27227(var0);
-         class_5734 var5 = var4.method_25937("Data");
+         CompoundNBT var4 = class_5957.method_27227(var0);
+         CompoundNBT var5 = var4.method_25937("Data");
          var5.method_25959("Player");
          int var6 = var5.method_25939("DataVersion", 99) ? var5.method_25947("DataVersion") : -1;
          Dynamic var7 = var1.update(
@@ -180,9 +180,9 @@ public class class_9663 {
    private static BiFunction<File, DataFixer, class_5056> method_44622(DynamicOps<class_8406> var0, class_2805 var1) {
       return (var2, var3) -> {
          try {
-            class_5734 var6 = class_5957.method_27227(var2);
-            class_5734 var7 = var6.method_25937("Data");
-            class_5734 var8 = var7.method_25939("Player", 10) ? var7.method_25937("Player") : null;
+            CompoundNBT var6 = class_5957.method_27227(var2);
+            CompoundNBT var7 = var6.method_25937("Data");
+            CompoundNBT var8 = var7.method_25939("Player", 10) ? var7.method_25937("Player") : null;
             var7.method_25959("Player");
             int var9 = var7.method_25939("DataVersion", 99) ? var7.method_25947("DataVersion") : -1;
             Dynamic var10 = var3.update(class_5397.field_27548.method_24571(), new Dynamic(var0, var7), var9, class_7665.method_34674().getWorldVersion());
@@ -200,8 +200,8 @@ public class class_9663 {
    private BiFunction<File, DataFixer, class_460> method_44620(File var1, boolean var2) {
       return (var3, var4) -> {
          try {
-            class_5734 var7 = class_5957.method_27227(var3);
-            class_5734 var8 = var7.method_25937("Data");
+            CompoundNBT var7 = class_5957.method_27227(var3);
+            CompoundNBT var8 = var7.method_25937("Data");
             var8.method_25959("Player");
             int var9 = var8.method_25939("DataVersion", 99) ? var8.method_25947("DataVersion") : -1;
             Dynamic var10 = var4.update(

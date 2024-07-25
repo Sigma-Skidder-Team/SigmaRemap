@@ -84,9 +84,9 @@ public class class_6201 extends class_2451 {
 
    private class_2522 method_28386(class_1331 var1, World var2, ItemStack var3, class_2522 var4) {
       class_2522 var7 = var4;
-      class_5734 var8 = var3.method_27990();
+      CompoundNBT var8 = var3.method_27990();
       if (var8 != null) {
-         class_5734 var9 = var8.method_25937("BlockStateTag");
+         CompoundNBT var9 = var8.method_25937("BlockStateTag");
          class_8021 var10 = var4.method_8360().method_29306();
 
          for (String var12 : var9.method_25952()) {
@@ -129,7 +129,7 @@ public class class_6201 extends class_2451 {
       if (var6 == null) {
          return false;
       } else {
-         class_5734 var7 = var3.method_28021("BlockEntityTag");
+         CompoundNBT var7 = var3.method_28021("BlockEntityTag");
          if (var7 != null) {
             class_3757 var8 = var0.method_28260(var2);
             if (var8 != null) {
@@ -137,8 +137,8 @@ public class class_6201 extends class_2451 {
                   return false;
                }
 
-               class_5734 var9 = var8.method_17396(new class_5734());
-               class_5734 var10 = var9.method_25944();
+               CompoundNBT var9 = var8.method_17396(new CompoundNBT());
+               CompoundNBT var10 = var9.method_25944();
                var9.method_25925(var7);
                var9.method_25931("x", var2.method_12173());
                var9.method_25931("y", var2.method_12165());

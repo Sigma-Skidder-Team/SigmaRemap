@@ -27,8 +27,8 @@ public class class_3420 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17414() {
-      return this.method_17396(new class_5734());
+   public CompoundNBT method_17414() {
+      return this.method_17396(new CompoundNBT());
    }
 
    public boolean method_15786() {
@@ -293,7 +293,7 @@ public class class_3420 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public void method_17394(class_2522 var1, class_5734 var2) {
+   public void method_17394(class_2522 var1, CompoundNBT var2) {
       super.method_17394(var1, var2);
       this.field_16829 = class_4338.method_20185(var2.method_25937("blockState"));
       this.field_16834 = Direction.method_1033(var2.method_25947("facing"));
@@ -304,7 +304,7 @@ public class class_3420 extends class_3757 implements class_3745 {
    }
 
    @Override
-   public class_5734 method_17396(class_5734 var1) {
+   public CompoundNBT method_17396(CompoundNBT var1) {
       super.method_17396(var1);
       var1.method_25946("blockState", class_4338.method_20187(this.field_16829));
       var1.method_25931("facing", this.field_16834.method_1050());

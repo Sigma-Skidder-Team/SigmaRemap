@@ -41,7 +41,7 @@ public class class_2810 {
    private int field_13795;
    private List<class_3577> field_13793;
 
-   public class_2810(class_6331 var1, long var2, class_5734 var4) {
+   public class_2810(class_6331 var1, long var2, CompoundNBT var4) {
       this.field_13790 = var1;
       if (!var4.method_25939("DragonKilled", 99)) {
          this.field_13796 = true;
@@ -83,8 +83,8 @@ public class class_2810 {
          .method_42571();
    }
 
-   public class_5734 method_12785() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_12785() {
+      CompoundNBT var3 = new CompoundNBT();
       if (this.field_13804 != null) {
          var3.method_25964("Dragon", this.field_13804);
       }

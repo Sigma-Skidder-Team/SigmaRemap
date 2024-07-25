@@ -53,9 +53,9 @@ public class class_6561 {
                class_3757 var18 = var1.method_28260(var15);
                class_4099 var19;
                if (var18 == null) {
-                  var19 = new class_4099(var16, var17, (class_5734)null);
+                  var19 = new class_4099(var16, var17, (CompoundNBT)null);
                } else {
-                  class_5734 var20 = var18.method_17396(new class_5734());
+                  CompoundNBT var20 = var18.method_17396(new CompoundNBT());
                   var20.method_25959("x");
                   var20.method_25959("y");
                   var20.method_25959("z");
@@ -113,7 +113,7 @@ public class class_6561 {
             var8.method_37309() - (double)var2.method_12165(),
             var8.method_37156() - (double)var2.method_12185()
          );
-         class_5734 var10 = new class_5734();
+         CompoundNBT var10 = new CompoundNBT();
          var8.method_37350(var10);
          class_1331 var11;
          if (!(var8 instanceof class_5490)) {
@@ -352,7 +352,7 @@ public class class_6561 {
       for (class_8833 var11 : this.field_33470) {
          class_1331 var12 = method_29966(var11.field_45183, var3, var4, var5).method_6105(var2);
          if (var6 == null || var6.method_44395(var12)) {
-            class_5734 var13 = var11.field_45182.method_25944();
+            CompoundNBT var13 = var11.field_45182.method_25944();
             class_1343 var14 = method_29967(var11.field_45180, var3, var4, var5);
             class_1343 var15 = var14.method_6214((double)var2.method_12173(), (double)var2.method_12165(), (double)var2.method_12185());
             class_3416 var16 = new class_3416();
@@ -375,7 +375,7 @@ public class class_6561 {
       }
    }
 
-   private static Optional<Entity> method_29991(class_1556 var0, class_5734 var1) {
+   private static Optional<Entity> method_29991(class_1556 var0, CompoundNBT var1) {
       try {
          return class_6629.method_30475(var1, var0.method_7066());
       } catch (Exception var5) {
@@ -532,7 +532,7 @@ public class class_6561 {
       var4.method_44391(var9.method_12173(), 0, var9.method_12185());
    }
 
-   public class_5734 method_29993(class_5734 var1) {
+   public CompoundNBT method_29993(CompoundNBT var1) {
       if (!this.field_33468.isEmpty()) {
          ArrayList var4 = Lists.newArrayList();
          class_2947 var5 = new class_2947(null);
@@ -547,7 +547,7 @@ public class class_6561 {
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
             class_4099 var9 = (class_4099)var7.get(var8);
-            class_5734 var10 = new class_5734();
+            CompoundNBT var10 = new CompoundNBT();
             var10.method_25946("pos", this.method_29983(var9.field_19965.method_12173(), var9.field_19965.method_12165(), var9.field_19965.method_12185()));
             int var11 = var5.method_13475(var9.field_19967);
             var10.method_25931("state", var11);
@@ -595,7 +595,7 @@ public class class_6561 {
       class_3416 var14 = new class_3416();
 
       for (class_8833 var17 : this.field_33470) {
-         class_5734 var18 = new class_5734();
+         CompoundNBT var18 = new CompoundNBT();
          var18.method_25946("pos", this.method_29972(var17.field_45180.field_7336, var17.field_45180.field_7333, var17.field_45180.field_7334));
          var18.method_25946("blockPos", this.method_29983(var17.field_45183.method_12173(), var17.field_45183.method_12165(), var17.field_45183.method_12185()));
          if (var17.field_45182 != null) {
@@ -611,7 +611,7 @@ public class class_6561 {
       return var1;
    }
 
-   public void method_29990(class_5734 var1) {
+   public void method_29990(CompoundNBT var1) {
       this.field_33468.clear();
       this.field_33470.clear();
       class_3416 var4 = var1.method_25927("size", 3);
@@ -630,13 +630,13 @@ public class class_6561 {
       class_3416 var14 = var1.method_25927("entities", 10);
 
       for (int var15 = 0; var15 < var14.size(); var15++) {
-         class_5734 var8 = var14.method_15764(var15);
+         CompoundNBT var8 = var14.method_15764(var15);
          class_3416 var9 = var8.method_25927("pos", 6);
          class_1343 var10 = new class_1343(var9.method_15763(0), var9.method_15763(1), var9.method_15763(2));
          class_3416 var11 = var8.method_25927("blockPos", 3);
          class_1331 var12 = new class_1331(var11.method_15762(0), var11.method_15762(1), var11.method_15762(2));
          if (var8.method_25938("nbt")) {
-            class_5734 var13 = var8.method_25937("nbt");
+            CompoundNBT var13 = var8.method_25937("nbt");
             this.field_33470.add(new class_8833(var10, var12, var13));
          }
       }
@@ -654,11 +654,11 @@ public class class_6561 {
       ArrayList var8 = Lists.newArrayList();
 
       for (int var9 = 0; var9 < var2.size(); var9++) {
-         class_5734 var10 = var2.method_15764(var9);
+         CompoundNBT var10 = var2.method_15764(var9);
          class_3416 var11 = var10.method_25927("pos", 3);
          class_1331 var12 = new class_1331(var11.method_15762(0), var11.method_15762(1), var11.method_15762(2));
          class_2522 var13 = var5.method_13477(var10.method_25947("state"));
-         class_5734 var14;
+         CompoundNBT var14;
          if (!var10.method_25938("nbt")) {
             var14 = null;
          } else {

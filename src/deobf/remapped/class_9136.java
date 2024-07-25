@@ -11,7 +11,7 @@ public class class_9136 extends class_1279 {
       this.field_46731 = var3.nextInt(3);
    }
 
-   public class_9136(class_5799 var1, class_5734 var2) {
+   public class_9136(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13411, var2);
    }
 

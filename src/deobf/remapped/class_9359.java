@@ -122,7 +122,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("playerGameType", 99)) {
          if (!this.method_37268().method_1621()) {
@@ -139,7 +139,7 @@ public class class_9359 extends class_704 implements class_117 {
       }
 
       if (var1.method_25939("enteredNetherPosition", 10)) {
-         class_5734 var4 = var1.method_25937("enteredNetherPosition");
+         CompoundNBT var4 = var1.method_25937("enteredNetherPosition");
          this.field_47793 = new class_1343(var4.method_25932("x"), var4.method_25932("y"), var4.method_25932("z"));
       }
 
@@ -166,13 +166,13 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("playerGameType", this.field_47807.method_39517().getID());
       var1.method_25931("previousPlayerGameType", this.field_47807.method_39524().getID());
       var1.method_25934("seenCredits", this.field_47783);
       if (this.field_47793 != null) {
-         class_5734 var4 = new class_5734();
+         CompoundNBT var4 = new CompoundNBT();
          var4.method_25923("x", this.field_47793.field_7336);
          var4.method_25923("y", this.field_47793.field_7333);
          var4.method_25923("z", this.field_47793.field_7334);
@@ -182,8 +182,8 @@ public class class_9359 extends class_704 implements class_117 {
       Entity var8 = this.method_37240();
       Entity var5 = this.method_37243();
       if (var5 != null && var8 != this && var8.method_37172()) {
-         class_5734 var6 = new class_5734();
-         class_5734 var7 = new class_5734();
+         CompoundNBT var6 = new CompoundNBT();
+         CompoundNBT var7 = new CompoundNBT();
          var8.method_37350(var7);
          var6.method_25964("Attach", var5.method_37328());
          var6.method_25946("Entity", var7);

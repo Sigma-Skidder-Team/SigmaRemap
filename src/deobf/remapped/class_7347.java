@@ -39,7 +39,7 @@ public class class_7347 extends class_7157 {
 
    public ItemStack method_33487(class_6946 var1) {
       ItemStack var4 = new ItemStack(class_4897.field_24479, 3);
-      class_5734 var5 = var4.method_27978("Fireworks");
+      CompoundNBT var5 = var4.method_27978("Fireworks");
       class_3416 var6 = new class_3416();
       int var7 = 0;
 
@@ -48,7 +48,7 @@ public class class_7347 extends class_7157 {
          if (!var9.method_28022()) {
             if (!field_37567.test(var9)) {
                if (field_37569.test(var9)) {
-                  class_5734 var10 = var9.method_28021("Explosion");
+                  CompoundNBT var10 = var9.method_28021("Explosion");
                   if (var10 != null) {
                      var6.add(var10);
                   }

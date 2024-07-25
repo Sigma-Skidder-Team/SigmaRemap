@@ -298,9 +298,9 @@ public class ShulkerInfoModule extends Module {
 
    private List<ItemStack> method_31557(ItemStack var1) {
       ArrayList var4 = new ArrayList();
-      class_5734 var5 = var1.method_27990();
+      CompoundNBT var5 = var1.method_27990();
       if (var5 != null && var5.method_25939("BlockEntityTag", 10)) {
-         class_5734 var6 = var5.method_25937("BlockEntityTag");
+         CompoundNBT var6 = var5.method_25937("BlockEntityTag");
          ShulkerPeekCommand.method_30371(var6);
          if (var6.method_25939("Items", 9)) {
             class_2831 var7 = class_2831.<ItemStack>method_12872(27, ItemStack.EMPTY);

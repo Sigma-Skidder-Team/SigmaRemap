@@ -22,7 +22,7 @@ public class class_667 implements class_8932<class_6867> {
    @Override
    public ItemStack method_41042(class_6867 var1) {
       ItemStack var4 = this.field_3698.method_27973();
-      class_5734 var5 = var1.method_31498(0).method_27990();
+      CompoundNBT var5 = var1.method_31498(0).method_27990();
       if (var5 != null) {
          var4.method_27965(var5.method_25944());
       }

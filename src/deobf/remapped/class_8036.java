@@ -12,7 +12,7 @@ public class class_8036 extends class_2451 implements class_1538 {
    }
 
    public static boolean method_36487(ItemStack var0) {
-      class_5734 var3 = var0.method_27990();
+      CompoundNBT var3 = var0.method_27990();
       return var3 != null && (var3.method_25938("LodestoneDimension") || var3.method_25938("LodestonePos"));
    }
 
@@ -21,14 +21,14 @@ public class class_8036 extends class_2451 implements class_1538 {
       return method_36487(var1) || super.method_11252(var1);
    }
 
-   public static Optional<class_5621<World>> method_36488(class_5734 var0) {
+   public static Optional<class_5621<World>> method_36488(CompoundNBT var0) {
       return World.field_33043.parse(class_3504.field_17178, var0.method_25929("LodestoneDimension")).result();
    }
 
    @Override
    public void method_11214(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.field_33055 && method_36487(var1)) {
-         class_5734 var8 = var1.method_27994();
+         CompoundNBT var8 = var1.method_27994();
          if (var8.method_25938("LodestoneTracked") && !var8.method_25933("LodestoneTracked")) {
             return;
          }
@@ -56,7 +56,7 @@ public class class_8036 extends class_2451 implements class_1538 {
          boolean var8 = !var6.field_3876.isCreativeMode && var7.method_27997() == 1;
          if (!var8) {
             ItemStack var9 = new ItemStack(class_4897.field_24830, 1);
-            class_5734 var10 = !var7.method_28002() ? new class_5734() : var7.method_27990().method_25944();
+            CompoundNBT var10 = !var7.method_28002() ? new CompoundNBT() : var7.method_27990().method_25944();
             var9.method_27965(var10);
             if (!var6.field_3876.isCreativeMode) {
                var7.method_27970(1);
@@ -74,7 +74,7 @@ public class class_8036 extends class_2451 implements class_1538 {
       }
    }
 
-   private void method_36486(class_5621<World> var1, class_1331 var2, class_5734 var3) {
+   private void method_36486(class_5621<World> var1, class_1331 var2, CompoundNBT var3) {
       var3.method_25946("LodestonePos", class_4338.method_20190(var2));
       World.field_33043
          .encodeStart(class_3504.field_17178, var1)

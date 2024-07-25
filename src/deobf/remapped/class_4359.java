@@ -35,7 +35,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (this.method_26520(class_6943.field_35701).method_28022() && this.field_41717.nextFloat() < 0.03F) {
          this.method_37349(class_6943.field_35701, new ItemStack(class_4897.field_24828));

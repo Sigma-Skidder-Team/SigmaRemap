@@ -92,8 +92,8 @@ public class class_291 {
       return (T)this.field_1050.get(var1);
    }
 
-   public class_5734 method_1284() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_1284() {
+      CompoundNBT var3 = new CompoundNBT();
       this.field_1050.forEach((var1, var2) -> var3.method_25941(class_7505.method_34216(var1), var2.method_42124()));
       return var3;
    }

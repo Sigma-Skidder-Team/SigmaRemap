@@ -11,7 +11,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    private int field_47746;
    private UUID field_47750;
    private class_8406 field_47744;
-   private class_5734 field_47748;
+   private CompoundNBT field_47748;
    private int field_47751;
 
    public class_9355(class_6629<? extends class_9355> var1, World var2) {
@@ -27,7 +27,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       class_3047.field_14935
          .encodeStart(class_3504.field_17178, this.method_15891())
@@ -50,7 +50,7 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("VillagerData", 10)) {
          DataResult var4 = class_3047.field_14935.parse(new Dynamic(class_3504.field_17178, var1.method_25929("VillagerData")));
@@ -176,7 +176,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       }
 
       var4.method_34713(this.field_47751);
-      var4.method_26864(var1, var1.method_43368(var4.method_37075()), class_2417.field_12041, (class_8733)null, (class_5734)null);
+      var4.method_26864(var1, var1.method_43368(var4.method_37075()), class_2417.field_12041, (class_8733)null, (CompoundNBT)null);
       if (this.field_47750 != null) {
          class_704 var12 = var1.method_25862(this.field_47750);
          if (var12 instanceof class_9359) {
@@ -248,7 +248,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       return ItemStack.EMPTY;
    }
 
-   public void method_43206(class_5734 var1) {
+   public void method_43206(CompoundNBT var1) {
       this.field_47748 = var1;
    }
 
@@ -258,7 +258,7 @@ public class class_9355 extends class_2811 implements class_3449 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       this.method_43207(this.method_15891().method_13914(class_8853.method_40719(var1.method_2754(this.method_37075()))));
       return super.method_26864(var1, var2, var3, var4, var5);
    }

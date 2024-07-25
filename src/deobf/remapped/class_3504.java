@@ -162,12 +162,12 @@ public class class_3504 implements DynamicOps<class_8406> {
    }
 
    public DataResult<class_8406> mergeToMap(class_8406 var1, class_8406 var2, class_8406 var3) {
-      if (!(var1 instanceof class_5734) && !(var1 instanceof class_8944)) {
+      if (!(var1 instanceof CompoundNBT) && !(var1 instanceof class_8944)) {
          return DataResult.error("mergeToMap called with not a map: " + var1, var1);
       } else if (var2 instanceof class_473) {
-         class_5734 var6 = new class_5734();
-         if (var1 instanceof class_5734) {
-            class_5734 var7 = (class_5734)var1;
+         CompoundNBT var6 = new CompoundNBT();
+         if (var1 instanceof CompoundNBT) {
+            CompoundNBT var7 = (CompoundNBT)var1;
             var7.method_25952().forEach(var2x -> var6.method_25946(var2x, var7.method_25929(var2x)));
          }
 
@@ -179,12 +179,12 @@ public class class_3504 implements DynamicOps<class_8406> {
    }
 
    public DataResult<class_8406> mergeToMap(class_8406 var1, MapLike<class_8406> var2) {
-      if (!(var1 instanceof class_5734) && !(var1 instanceof class_8944)) {
+      if (!(var1 instanceof CompoundNBT) && !(var1 instanceof class_8944)) {
          return DataResult.error("mergeToMap called with not a map: " + var1, var1);
       } else {
-         class_5734 var5 = new class_5734();
-         if (var1 instanceof class_5734) {
-            class_5734 var6 = (class_5734)var1;
+         CompoundNBT var5 = new CompoundNBT();
+         if (var1 instanceof CompoundNBT) {
+            CompoundNBT var6 = (CompoundNBT)var1;
             var6.method_25952().forEach(var2x -> var5.method_25946(var2x, var6.method_25929(var2x)));
          }
 
@@ -202,8 +202,8 @@ public class class_3504 implements DynamicOps<class_8406> {
    }
 
    public DataResult<Stream<Pair<class_8406, class_8406>>> getMapValues(class_8406 var1) {
-      if (var1 instanceof class_5734) {
-         class_5734 var4 = (class_5734)var1;
+      if (var1 instanceof CompoundNBT) {
+         CompoundNBT var4 = (CompoundNBT)var1;
          return DataResult.success(var4.method_25952().stream().<Pair>map(var2 -> Pair.of(this.createString(var2), var4.method_25929(var2))));
       } else {
          return DataResult.error("Not a map: " + var1);
@@ -211,8 +211,8 @@ public class class_3504 implements DynamicOps<class_8406> {
    }
 
    public DataResult<Consumer<BiConsumer<class_8406, class_8406>>> getMapEntries(class_8406 var1) {
-      if (var1 instanceof class_5734) {
-         class_5734 var4 = (class_5734)var1;
+      if (var1 instanceof CompoundNBT) {
+         CompoundNBT var4 = (CompoundNBT)var1;
          return DataResult.success(
             (Consumer<BiConsumer>)var2 -> var4.method_25952().forEach(var3 -> var2.accept(this.createString(var3), var4.method_25929(var3)))
          );
@@ -222,8 +222,8 @@ public class class_3504 implements DynamicOps<class_8406> {
    }
 
    public DataResult<MapLike<class_8406>> getMap(class_8406 var1) {
-      if (var1 instanceof class_5734) {
-         class_5734 var4 = (class_5734)var1;
+      if (var1 instanceof CompoundNBT) {
+         CompoundNBT var4 = (CompoundNBT)var1;
          return DataResult.success(new class_3562(this, var4));
       } else {
          return DataResult.error("Not a map: " + var1);
@@ -231,7 +231,7 @@ public class class_3504 implements DynamicOps<class_8406> {
    }
 
    public class_8406 createMap(Stream<Pair<class_8406, class_8406>> var1) {
-      class_5734 var4 = new class_5734();
+      CompoundNBT var4 = new CompoundNBT();
       var1.forEach(var1x -> var4.method_25946(((class_8406)var1x.getFirst()).method_38710(), (class_8406)var1x.getSecond()));
       return var4;
    }
@@ -308,11 +308,11 @@ public class class_3504 implements DynamicOps<class_8406> {
    }
 
    public class_8406 remove(class_8406 var1, String var2) {
-      if (!(var1 instanceof class_5734)) {
+      if (!(var1 instanceof CompoundNBT)) {
          return var1;
       } else {
-         class_5734 var5 = (class_5734)var1;
-         class_5734 var6 = new class_5734();
+         CompoundNBT var5 = (CompoundNBT)var1;
+         CompoundNBT var6 = new CompoundNBT();
          var5.method_25952().stream().filter(var1x -> !Objects.equals(var1x, var2)).forEach(var2x -> var6.method_25946(var2x, var5.method_25929(var2x)));
          return var6;
       }

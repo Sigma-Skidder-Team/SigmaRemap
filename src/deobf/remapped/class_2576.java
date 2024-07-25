@@ -16,7 +16,7 @@ public class class_2576 extends class_8131 {
       this.method_11701(var1);
    }
 
-   public class_2576(class_5799 var1, class_5734 var2) {
+   public class_2576(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13423, var2);
       this.field_12751 = new Identifier(var2.method_25965("Template"));
       this.field_12753 = var2.method_25933("isBeached");
@@ -25,7 +25,7 @@ public class class_2576 extends class_8131 {
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25941("Template", this.field_12751.toString());
       var1.method_25934("isBeached", this.field_12753);

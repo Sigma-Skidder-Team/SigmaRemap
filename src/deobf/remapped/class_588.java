@@ -17,7 +17,7 @@ public class class_588 extends class_3725 {
          class_4797 var9 = (class_4797)var8;
          GameProfile var10 = null;
          if (var5.method_28002()) {
-            class_5734 var11 = var5.method_27990();
+            CompoundNBT var11 = var5.method_27990();
             if (!var11.method_25939("SkullOwner", 10)) {
                if (var11.method_25939("SkullOwner", 8) && !StringUtils.isBlank(var11.method_25965("SkullOwner"))) {
                   var10 = new GameProfile((UUID)null, var11.method_25965("SkullOwner"));

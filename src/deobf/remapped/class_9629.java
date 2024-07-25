@@ -20,13 +20,13 @@ public class class_9629 extends class_9310 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("DespawnDelay", this.field_49042);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25939("DespawnDelay", 99)) {
          this.field_49042 = var1.method_25947("DespawnDelay");
@@ -80,7 +80,7 @@ public class class_9629 extends class_9310 {
 
    @Nullable
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       if (var3 == class_2417.field_12040) {
          this.method_8635(0);
       }

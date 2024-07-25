@@ -285,13 +285,13 @@ public class class_9558 {
          }, var0 -> true, new TranslationTextComponent("argument.entity.options.tag.description"));
          method_44159("nbt", var0 -> {
             boolean var3 = var0.method_22796();
-            class_5734 var4 = new class_2392(var0.method_22749()).method_10905();
+            CompoundNBT var4 = new class_2392(var0.method_22749()).method_10905();
             var0.method_22758(var2 -> {
-               class_5734 var5 = var2.method_37258(new class_5734());
+               CompoundNBT var5 = var2.method_37258(new CompoundNBT());
                if (var2 instanceof class_9359) {
                   ItemStack var6 = ((class_9359)var2).inventory.method_32403();
                   if (!var6.method_28022()) {
-                     var5.method_25946("SelectedItem", var6.method_27998(new class_5734()));
+                     var5.method_25946("SelectedItem", var6.method_27998(new CompoundNBT()));
                   }
                }
 

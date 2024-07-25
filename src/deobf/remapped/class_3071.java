@@ -53,8 +53,8 @@ public class class_3071 extends class_1147 {
       var2.field_47794.method_4156(new class_6791(var1, var3, Collections.<Identifier>emptyList(), this.method_5074()));
    }
 
-   public class_5734 method_14033() {
-      class_5734 var3 = new class_5734();
+   public CompoundNBT method_14033() {
+      CompoundNBT var3 = new CompoundNBT();
       this.method_5074().method_34309(var3);
       class_3416 var4 = new class_3416();
 
@@ -73,7 +73,7 @@ public class class_3071 extends class_1147 {
       return var3;
    }
 
-   public void method_14034(class_5734 var1, class_5023 var2) {
+   public void method_14034(CompoundNBT var1, class_5023 var2) {
       this.method_5080(class_7529.method_34304(var1));
       class_3416 var5 = var1.method_25927("recipes", 8);
       this.method_14036(var5, this::method_5084, var2);

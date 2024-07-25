@@ -14,13 +14,13 @@ public class class_5271 extends class_8549 {
       this.field_26945 = var2.nextInt(5);
    }
 
-   public class_5271(class_5799 var1, class_5734 var2) {
+   public class_5271(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13432, var2);
       this.field_26945 = var2.method_25947("Type");
    }
 
    @Override
-   public void method_32517(class_5734 var1) {
+   public void method_32517(CompoundNBT var1) {
       super.method_32517(var1);
       var1.method_25931("Type", this.field_26945);
    }

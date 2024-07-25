@@ -14,7 +14,7 @@ public class class_4960 extends class_3236 {
       super(class_2746.field_13418, 0, var1, var2, var3);
    }
 
-   public class_4960(class_5799 var1, class_5734 var2) {
+   public class_4960(class_5799 var1, CompoundNBT var2) {
       super(class_2746.field_13418, var2);
    }
 }

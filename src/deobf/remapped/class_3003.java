@@ -98,7 +98,7 @@ public class class_3003 extends class_2451 {
       }
    }
 
-   public boolean method_13717(class_5734 var1, class_6629<?> var2) {
+   public boolean method_13717(CompoundNBT var1, class_6629<?> var2) {
       return Objects.equals(this.method_13719(var1), var2);
    }
 
@@ -115,9 +115,9 @@ public class class_3003 extends class_2451 {
       return Iterables.unmodifiableIterable(field_14733.values());
    }
 
-   public class_6629<?> method_13719(class_5734 var1) {
+   public class_6629<?> method_13719(CompoundNBT var1) {
       if (var1 != null && var1.method_25939("EntityTag", 10)) {
-         class_5734 var4 = var1.method_25937("EntityTag");
+         CompoundNBT var4 = var1.method_25937("EntityTag");
          if (var4.method_25939("id", 8)) {
             return class_6629.method_30460(var4.method_25965("id")).orElse(this.field_14737);
          }

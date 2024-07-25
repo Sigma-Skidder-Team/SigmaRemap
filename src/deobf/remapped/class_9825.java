@@ -126,14 +126,14 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
+   public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, CompoundNBT var5) {
       this.field_49779 = this.method_37075().method_6082(5);
       this.method_45299(0);
       return super.method_26864(var1, var2, var3, var4, var5);
    }
 
    @Override
-   public void method_37314(class_5734 var1) {
+   public void method_37314(CompoundNBT var1) {
       super.method_37314(var1);
       if (var1.method_25938("AX")) {
          this.field_49779 = new class_1331(var1.method_25947("AX"), var1.method_25947("AY"), var1.method_25947("AZ"));
@@ -143,7 +143,7 @@ public class class_9825 extends class_516 implements class_1869 {
    }
 
    @Override
-   public void method_37376(class_5734 var1) {
+   public void method_37376(CompoundNBT var1) {
       super.method_37376(var1);
       var1.method_25931("AX", this.field_49779.method_12173());
       var1.method_25931("AY", this.field_49779.method_12165());

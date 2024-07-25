@@ -30,7 +30,7 @@ public abstract class class_8116 implements class_5801 {
       return this.field_41597 != null ? this.field_41597 : StringTextComponent.EMPTY;
    }
 
-   public class_5734 method_36938(class_5734 var1) {
+   public CompoundNBT method_36938(CompoundNBT var1) {
       var1.method_25941("Command", this.field_41599);
       var1.method_25931("SuccessCount", this.field_41602);
       var1.method_25941("CustomName", ITextComponent$class_40.toJson(this.field_41603));
@@ -47,7 +47,7 @@ public abstract class class_8116 implements class_5801 {
       return var1;
    }
 
-   public void method_36924(class_5734 var1) {
+   public void method_36924(CompoundNBT var1) {
       this.field_41599 = var1.method_25965("Command");
       this.field_41602 = var1.method_25947("SuccessCount");
       if (var1.method_25939("CustomName", 8)) {

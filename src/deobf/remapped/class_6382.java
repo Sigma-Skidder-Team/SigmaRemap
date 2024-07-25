@@ -2,9 +2,9 @@ package remapped;
 
 public class class_6382 extends class_5837 {
    private static String[] field_32594;
-   private final class_5734 field_32593;
+   private final CompoundNBT field_32593;
 
-   private class_6382(class_7279[] var1, class_5734 var2) {
+   private class_6382(class_7279[] var1, CompoundNBT var2) {
       super(var1);
       this.field_32593 = var2;
    }
@@ -20,7 +20,7 @@ public class class_6382 extends class_5837 {
       return var1;
    }
 
-   public static class_5363<?> method_29169(class_5734 var0) {
+   public static class_5363<?> method_29169(CompoundNBT var0) {
       return method_26628(var1 -> new class_6382(var1, var0));
    }
 }

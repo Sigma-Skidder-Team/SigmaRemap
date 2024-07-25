@@ -57,7 +57,7 @@ public class class_4047 extends Screen {
       this.field_19681 = var1;
       this.field_19670 = var2;
       this.field_19669 = var3;
-      class_5734 var6 = var2.method_27990();
+      CompoundNBT var6 = var2.method_27990();
       if (var6 != null) {
          class_3416 var7 = var6.method_25927("pages", 8).method_15768();
 
