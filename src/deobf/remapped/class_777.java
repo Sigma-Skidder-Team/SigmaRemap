@@ -9,7 +9,7 @@ public class class_777 extends Module {
       super(Category.MOVEMENT, "VClip", "Climp Walls like spiders!");
    }
 
-   @class_9148
+   @EventListen
    private void method_3476(class_8706 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9577.field_45560.method_27060() && var1.method_40004() == class_3237.field_16101) {
@@ -22,7 +22,7 @@ public class class_777 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_3475(class_2157 var1) {
       if (var1.method_10047() instanceof class_3211) {
          class_3211 var4 = (class_3211)var1.method_10047();

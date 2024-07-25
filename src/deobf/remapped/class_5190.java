@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class class_5190 {
    public MinecraftClient field_26705 = MinecraftClient.getInstance();
 
-   @class_9148
+   @EventListen
    private void method_23849(class_139 var1) {
       if (this.field_26705.method_8530() != null) {
          if (var1.method_557() instanceof class_5182) {

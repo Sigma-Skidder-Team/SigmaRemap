@@ -14,7 +14,7 @@ public class class_3116 {
       this.method_14463();
    }
 
-   @class_9148
+   @EventListen
    private void method_14474(class_6435 var1) {
       if (var1.method_29384() == this.field_15500.field_9577.field_45541.field_30027.field_17800
          && this.field_15500.field_9662 != null

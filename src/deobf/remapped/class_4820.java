@@ -18,7 +18,7 @@ public class class_4820 extends Module {
       field_24090 = null;
    }
 
-   @class_9148
+   @EventListen
    private void method_22206(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_5182) {
@@ -30,7 +30,7 @@ public class class_4820 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_22207(class_1393 var1) {
       if (this.method_42015()) {

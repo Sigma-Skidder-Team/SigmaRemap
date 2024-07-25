@@ -9,7 +9,7 @@ public class AutoClickerModule extends Module {
       super(Category.COMBAT, "AutoClicker", "Longpress your attack keybind to hit entities automaticly");
    }
 
-   @class_9148
+   @EventListen
    private void method_30401(class_5596 var1) {
       if (this.method_42015()) {
          this.field_34164++;

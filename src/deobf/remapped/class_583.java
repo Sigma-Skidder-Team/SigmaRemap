@@ -27,7 +27,7 @@ public class class_583 extends Module {
       this.field_3397 = 0;
    }
 
-   @class_9148
+   @EventListen
    public void method_2758(class_7767 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (mcInstance.field_9632.field_41726) {
@@ -122,7 +122,7 @@ public class class_583 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_2756(class_2911 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          this.field_3399 = true;
@@ -165,7 +165,7 @@ public class class_583 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_2757(class_7982 var1) {
       if (!this.method_42015() || !this.method_42016("Glide Mode").equals("High")) {
          ;

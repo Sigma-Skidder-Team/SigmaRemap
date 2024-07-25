@@ -9,7 +9,7 @@ public class class_7218 extends Module {
       this.addSetting(new BooleanSetting("Keep Sprint", "Keep Sprinting after hitting a player", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_33059(class_5596 var1) {
       if (this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class);
@@ -24,7 +24,7 @@ public class class_7218 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_33060(class_8128 var1) {
       if (this.method_42015()
          && !(mcInstance.field_9632.field_29673 <= 0.0F)
@@ -40,7 +40,7 @@ public class class_7218 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_33058(class_3645 var1) {
       if (this.method_42015() && this.method_42007("Keep Sprint")) {
          if (!var1.method_16971()) {

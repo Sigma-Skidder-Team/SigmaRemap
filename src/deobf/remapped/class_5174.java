@@ -34,7 +34,7 @@ public class class_5174 extends class_367 {
       this.field_26637 = false;
    }
 
-   @class_9148
+   @EventListen
    public void method_23709(class_5596 var1) {
       if (!this.field_26629.method_14771()) {
          this.field_26629.method_14776();

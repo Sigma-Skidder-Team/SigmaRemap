@@ -5,7 +5,7 @@ public class class_4624 extends Module {
       super(Category.WORLD, "AutoFarm", "Automatically breaks and replants crops");
    }
 
-   @class_9148
+   @EventListen
    public void method_21418(class_1393 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null && mcInstance.field_9601 != null) {

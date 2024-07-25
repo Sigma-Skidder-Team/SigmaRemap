@@ -30,7 +30,7 @@ public class class_5761 extends Module {
       this.field_29130 = (double)(this.method_42002("OnGround Speed") * 1.0F / 4.0F);
    }
 
-   @class_9148
+   @EventListen
    @class_315
    public void method_26048(class_7767 var1) {
       if (this.method_42015()
@@ -103,7 +103,7 @@ public class class_5761 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_26052(class_2911 var1) {
       if (this.method_42015()) {
          this.field_29130 = 0.81 + (double)this.field_29132 * 0.095;
@@ -126,7 +126,7 @@ public class class_5761 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_26050(class_139 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (var1.method_557() instanceof class_509) {
@@ -136,7 +136,7 @@ public class class_5761 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_26051(class_8544 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (var1.method_39326() > 0.2) {

@@ -26,7 +26,7 @@ public class class_6799 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_31147(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {
@@ -35,7 +35,7 @@ public class class_6799 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_31148(class_7767 var1) {
       if (this.method_42015()) {
          if (!mcInstance.field_9632.field_41726) {

@@ -7,12 +7,12 @@ public class AutoTotemModule extends Module {
       super(Category.ITEM, "AutoTotem", "Automatically equips a totem in your second hand");
    }
 
-   @class_9148
+   @EventListen
    private void method_37570(class_5596 var1) {
       this.method_37568();
    }
 
-   @class_9148
+   @EventListen
    private void method_37569(class_1393 var1) {
       if (!var1.method_6449()) {
          this.method_37568();

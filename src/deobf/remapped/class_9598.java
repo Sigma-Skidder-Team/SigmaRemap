@@ -27,7 +27,7 @@ public class class_9598 extends Module {
       this.addSetting(new FloatSetting<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
    }
 
-   @class_9148
+   @EventListen
    public void method_44323(class_5278 var1) {
       if (this.method_42015()) {
          if (var1.method_24098() instanceof class_5989 && var1.method_24098() != field_48917) {
@@ -36,7 +36,7 @@ public class class_9598 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44321(class_1711 var1) {
       if (this.method_42015()) {
          if (field_48917 == null) {
@@ -67,7 +67,7 @@ public class class_9598 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44322(class_3368 var1) {
       if (this.method_42015()) {
          field_48917.method_37298();
@@ -127,14 +127,14 @@ public class class_9598 extends Module {
       field_48917 = null;
    }
 
-   @class_9148
+   @EventListen
    private void method_44330(class_3574 var1) {
       if (this.method_42015()) {
          var1.method_29715(true);
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44329(class_6435 var1) {
       if (this.method_42015()) {
          if (var1.method_29384() != mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -172,7 +172,7 @@ public class class_9598 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44328(class_307 var1) {
       if (this.method_42015()) {
          if (var1.method_1364() != mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -210,14 +210,14 @@ public class class_9598 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44320(class_2911 var1) {
       if (this.method_42015()) {
          var1.method_29715(true);
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44319(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          var1.method_6441(this.field_48915 % 360.0F);
@@ -246,7 +246,7 @@ public class class_9598 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44326(class_139 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null) {
@@ -272,7 +272,7 @@ public class class_9598 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44327(class_2157 var1) {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_3195) {
@@ -288,14 +288,14 @@ public class class_9598 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44325(class_9081 var1) {
       if (this.method_42015()) {
          var1.method_29715(true);
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44324(class_717 var1) {
       if (this.method_42015()) {
          this.method_42023(false);

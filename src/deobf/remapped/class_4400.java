@@ -20,13 +20,13 @@ public class class_4400 {
       this.field_21536.clear();
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    private void method_20497(class_717 var1) {
       this.field_21536.clear();
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    private void method_20496(class_5596 var1) {
       if (this.field_21538 != null) {

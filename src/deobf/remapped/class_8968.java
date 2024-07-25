@@ -10,7 +10,7 @@ public class class_8968 extends SecondModule {
       this.addSetting(new FloatSetting<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));
    }
 
-   @class_9148
+   @EventListen
    public void method_41139(class_3368 var1) {
       if (this.method_42015() && (mcInstance.field_9632.method_37252() || !this.method_42007("Sneak"))) {
          class_9529 var4 = class_7494.method_34079(mcInstance.field_9632.field_41701, mcInstance.field_9632.field_41755, this.method_42002("Maximum range"));

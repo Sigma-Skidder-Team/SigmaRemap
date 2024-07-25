@@ -34,7 +34,7 @@ public class ReloadedFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_25672(class_6435 var1) {
       if (this.method_42015()) {
          if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -44,7 +44,7 @@ public class ReloadedFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_25673(class_307 var1) {
       if (this.method_42015()) {
          if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -54,7 +54,7 @@ public class ReloadedFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_25676(class_7767 var1) {
       if (this.method_42015()) {
@@ -84,7 +84,7 @@ public class ReloadedFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_25677(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          this.field_28770++;
@@ -104,7 +104,7 @@ public class ReloadedFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_25674(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();
@@ -121,7 +121,7 @@ public class ReloadedFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_25675(class_2157 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_10047();
@@ -134,7 +134,7 @@ public class ReloadedFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_25678(class_1711 var1) {
       if (this.method_42015()) {
          double var4 = this.field_28771;

@@ -55,7 +55,7 @@ public class class_6080 {
       return var4 / (float)var1;
    }
 
-   @class_9148
+   @EventListen
    private void method_27845(class_3278 var1) {
       if (!MinecraftClient.getInstance().field_9577.field_45567) {
          this.field_31115 = Math.max(Math.round((float)(6 - MinecraftClient.method_8501() / 10)), 1);
@@ -103,7 +103,7 @@ public class class_6080 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_27840(class_5596 var1) {
       Iterator var4 = this.field_31118.iterator();
 
@@ -115,7 +115,7 @@ public class class_6080 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_27844(class_3368 var1) {
       if (this.field_31116.field_9632 == null) {
          ;

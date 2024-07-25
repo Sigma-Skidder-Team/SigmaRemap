@@ -11,7 +11,7 @@ public class class_5787 extends Module {
       this.field_29226 = false;
    }
 
-   @class_9148
+   @EventListen
    private void method_26179(class_6435 var1) {
       if (this.method_42015()) {
          if (var1.method_29384() == mcInstance.field_9577.field_45575.field_30027.field_17800 && mcInstance.field_9632.method_37321()) {
@@ -20,7 +20,7 @@ public class class_5787 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_26177(class_2157 var1) {
       if (this.method_42015()) {
          if (this.field_29226 && var1.method_10047() instanceof class_2317 && this.method_42007("AACP")) {
@@ -32,7 +32,7 @@ public class class_5787 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_26178(class_5596 var1) {
       if (this.method_42015()) {
          if (this.method_42007("AACP")) {

@@ -8,7 +8,7 @@ public class class_7244 extends Module {
       this.addSetting(new FloatSetting<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
-   @class_9148
+   @EventListen
    private void method_33141(class_139 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null && var1.method_557() instanceof class_4548) {

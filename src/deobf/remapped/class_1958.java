@@ -7,7 +7,7 @@ public class class_1958 extends Module {
       super(Category.PLAYER, "AutoWalk", "Automatically walks forward");
    }
 
-   @class_9148
+   @EventListen
    private void method_9058(class_5596 var1) {
       if (this.method_42015()) {
          mcInstance.field_9577.field_45416.field_30024 = true;

@@ -13,7 +13,7 @@ public class class_4181 extends SecondModule {
       mcInstance.field_9632.field_41733 = 0.6F;
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    private void method_19452(class_8544 var1) {
       if (!(var1.method_39326() < 0.1)) {
@@ -21,7 +21,7 @@ public class class_4181 extends SecondModule {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    private void method_19451(class_1393 var1) {
       if (var1.method_6449()) {

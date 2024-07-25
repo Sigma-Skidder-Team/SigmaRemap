@@ -77,21 +77,21 @@ public class PacketDumperModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44435(class_2157 var1) {
       if (this.method_42015()) {
          this.method_44432(var1.method_10047(), true);
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44431(class_139 var1) {
       if (this.method_42015()) {
          this.method_44432(var1.method_557(), false);
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44434(class_4975 var1) {
       try {
          this.field_49040.close();

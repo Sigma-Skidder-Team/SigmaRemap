@@ -63,7 +63,7 @@ public class class_3854 extends Module {
       this.field_18800 = -1;
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_17885(class_717 var1) {
       this.field_18796 = 0;
@@ -71,7 +71,7 @@ public class class_3854 extends Module {
       this.field_18793 = null;
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    @class_3932
    public void method_17886(class_2157 var1) {
@@ -84,7 +84,7 @@ public class class_3854 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    @class_5355
    public void method_17884(class_139 var1) {
@@ -98,12 +98,12 @@ public class class_3854 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_17887(class_5596 var1) {
    }
 
-   @class_9148
+   @EventListen
    public void method_17888(class_1393 var1) {
       if (var1.method_6449()) {
          for (double var7 : class_314.method_1466()) {
@@ -117,7 +117,7 @@ public class class_3854 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_17889(class_7767 var1) {
       String var4 = this.method_42016("Mode");
       float var5 = this.method_42002("Timer Boost");

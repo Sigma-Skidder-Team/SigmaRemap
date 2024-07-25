@@ -43,7 +43,7 @@ public class class_8193 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_37543(class_6435 var1) {
       if (this.method_42015()) {
          if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -53,7 +53,7 @@ public class class_8193 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_37545(class_307 var1) {
       if (this.method_42015()) {
          if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -63,7 +63,7 @@ public class class_8193 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_37542(class_7767 var1) {
       if (!this.method_42015()) {
@@ -151,7 +151,7 @@ public class class_8193 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_37544(class_1393 var1) {
       if (var1.method_6449() && class_314.method_1392()) {
          var1.method_6444(true);
@@ -165,7 +165,7 @@ public class class_8193 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_37541(class_139 var1) {
       if (mcInstance.field_9601 != null && mcInstance.method_8614() != null && class_314.method_1392()) {
          class_6310 var4 = var1.method_557();

@@ -18,7 +18,7 @@ public class class_6370 extends Module {
       super(Category.RENDER, "PathFinder", "You know what it is");
    }
 
-   @class_9148
+   @EventListen
    public void method_29149(class_5596 var1) {
       this.field_32562 = class_7494.method_34079(mcInstance.field_9632.field_41701, mcInstance.field_9632.field_41755, 200.0F);
       if (this.field_32558 != null && this.field_32566 != null) {
@@ -28,7 +28,7 @@ public class class_6370 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_29148(class_3368 var1) {
       if (this.method_42015()) {
          if (this.field_32562 != null) {

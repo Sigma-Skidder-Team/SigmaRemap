@@ -22,7 +22,7 @@ public class class_2894 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_13255(class_7767 var1) {
       if (this.method_42015()) {
@@ -50,7 +50,7 @@ public class class_2894 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_13257(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          this.field_14150++;
@@ -66,7 +66,7 @@ public class class_2894 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_13253(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();
@@ -83,7 +83,7 @@ public class class_2894 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_13254(class_2157 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_10047();
@@ -96,7 +96,7 @@ public class class_2894 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_13256(class_1711 var1) {
       if (this.method_42015()) {
          double var4 = this.field_14151;

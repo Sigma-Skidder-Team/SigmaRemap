@@ -8,7 +8,7 @@ public class HypixelVClipModule extends Module {
       super(Category.MOVEMENT, "Unfull", "Weird Hypixel VClip for some blocks");
    }
 
-   @class_9148
+   @EventListen
    private void method_6457(class_4868 var1) {
       if (this.method_42015()) {
          if ((int) mcInstance.field_9632.method_37309() == this.field_7607 && !mcInstance.field_9632.field_29654) {
@@ -25,7 +25,7 @@ public class HypixelVClipModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_6458(class_5243 var1) {
       if (this.method_42015()) {
          if (var1.method_23988() != null && var1.method_23989().method_12165() == this.field_7607 - 1
@@ -41,7 +41,7 @@ public class HypixelVClipModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_6456(class_3574 var1) {
       if (this.method_42015()) {
          var1.method_29715(true);

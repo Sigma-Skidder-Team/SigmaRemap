@@ -25,7 +25,7 @@ public class AutoPotionModule extends Module {
       this.field_13559 = 0;
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    private void method_12642(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {

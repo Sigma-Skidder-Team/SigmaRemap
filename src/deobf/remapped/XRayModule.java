@@ -22,7 +22,7 @@ public class XRayModule extends Module {
       mcInstance.worldRenderer.method_19998();
    }
 
-   @class_9148
+   @EventListen
    public void method_33542(class_3310 var1) {
       if (this.method_42015()) {
          class_1873 var4 = var1.method_15183();

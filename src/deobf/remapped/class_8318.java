@@ -27,7 +27,7 @@ public class class_8318 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_38349(class_7767 var1) {
       if (this.method_42015()
          && !SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class).method_42015()
@@ -119,7 +119,7 @@ public class class_8318 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_38351(class_1711 var1) {
       if (this.method_42015() && !(this.field_42612 < 0.0) && this.method_42016("Mode").equals("YPort")) {
          if (mcInstance.field_9632.field_41726 && class_314.method_1413(mcInstance.field_9632, 0.001F)) {
@@ -136,7 +136,7 @@ public class class_8318 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_38350(class_2911 var1) {
       if (this.method_42015()) {
          var1.method_13313(0.4);

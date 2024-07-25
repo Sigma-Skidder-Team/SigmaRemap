@@ -5,7 +5,7 @@ public class class_7057 extends Module {
       super(Category.MISC, "NickNameDetector", "Detect if a player has a custom name");
    }
 
-   @class_9148
+   @EventListen
    private void method_32448(class_5596 var1) {
       if (this.method_42015()) {
          for (Entity var5 : class_314.method_1435()) {

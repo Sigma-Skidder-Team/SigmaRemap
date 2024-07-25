@@ -10,7 +10,7 @@ public class class_1964 extends Module {
       super(Category.GUI, "Cords", "Displays coordinates");
    }
 
-   @class_9148
+   @EventListen
    private void method_9061(class_5596 var1) {
       if (this.method_42015()) {
          if (class_314.method_1448() > this.field_9984 && mcInstance.field_9632.field_41697 % 3 == 0) {
@@ -32,7 +32,7 @@ public class class_1964 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    private void method_9062(class_3278 var1) {
       if (this.method_42015()) {

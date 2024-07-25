@@ -35,7 +35,7 @@ public class class_4221 extends Module {
       this.field_20487 = new TreeMap<Module, class_2440>(new class_3896(this));
    }
 
-   @class_9148
+   @EventListen
    private void method_19656(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          String var4 = this.method_42016("Animation");

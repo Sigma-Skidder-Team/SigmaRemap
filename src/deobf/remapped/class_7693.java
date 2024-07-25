@@ -37,7 +37,7 @@ public class class_7693 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_34855(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!MinecraftClient.getInstance().field_9577.field_45470) {
@@ -152,7 +152,7 @@ public class class_7693 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_34861(class_6435 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (this.method_34853(var1.method_29384()) != null && !var1.method_29385()) {
@@ -161,7 +161,7 @@ public class class_7693 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_34850(class_8706 var1) {
       if (!this.method_42015() || mcInstance.field_9632 == null) {
          ;

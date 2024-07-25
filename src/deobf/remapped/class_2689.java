@@ -13,7 +13,7 @@ public class class_2689 extends Module {
       this.addSetting(new ColorSetting("Color", "The crumbs color", class_1255.field_6918.field_6917));
    }
 
-   @class_9148
+   @EventListen
    public void method_12071(class_7767 var1) {
       if (this.method_42015()) {
          if (var1.method_35234() != 0.0 || var1.method_35236() != 0.0 || var1.method_35231() != 0.0) {
@@ -23,7 +23,7 @@ public class class_2689 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_12070(class_717 var1) {
       if (this.method_42015()) {
          this.field_13172.clear();
@@ -45,7 +45,7 @@ public class class_2689 extends Module {
       );
    }
 
-   @class_9148
+   @EventListen
    public void method_12069(class_3368 var1) {
       if (this.method_42015()) {
          class_1343 var4 = new class_1343(

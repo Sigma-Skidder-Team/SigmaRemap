@@ -113,7 +113,7 @@ public class KillauraModule extends Module {
       super.method_42020();
    }
 
-   @class_9148
+   @EventListen
    public void method_11541(class_717 var1) {
       if (this.method_42015() && this.method_42007("Disable on death")) {
          SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
@@ -121,7 +121,7 @@ public class KillauraModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11558(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_12562 != -1.0F) {
@@ -137,7 +137,7 @@ public class KillauraModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11535(class_4996 var1) {
       if (this.method_42015()) {
          if (!this.method_42016("Autoblock Mode").equals("None")
@@ -150,7 +150,7 @@ public class KillauraModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    public void method_11549(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
@@ -227,7 +227,7 @@ public class KillauraModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11551(class_3278 var1) {
       if (field_12556 != null && !this.method_42007("Silent") && !this.method_42016("Rotation Mode").equals("None")) {
          float var4 = class_9299.method_42810(
@@ -241,7 +241,7 @@ public class KillauraModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11552(class_3368 var1) {
       if (this.field_12560 != null) {
          Iterator var4 = this.field_12568.entrySet().iterator();
@@ -276,7 +276,7 @@ public class KillauraModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11537(class_139 var1) {
       class_6310 var4 = var1.method_557();
       if (!(var4 instanceof class_527)) {

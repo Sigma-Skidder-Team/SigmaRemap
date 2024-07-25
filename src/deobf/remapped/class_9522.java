@@ -20,7 +20,7 @@ public class class_9522 extends class_367 {
       this.method_42011(false);
    }
 
-   @class_9148
+   @EventListen
    public void method_43924(class_5596 var1) {
       if (this.method_42015()) {
          if (field_48470 != null
@@ -61,7 +61,7 @@ public class class_9522 extends class_367 {
       return !(var5 > 180.0F) ? var5 : 360.0F - var5;
    }
 
-   @class_9148
+   @EventListen
    public void method_43926(class_3278 var1) {
       if (field_48470 != null) {
          if (this.method_42015()) {
@@ -171,7 +171,7 @@ public class class_9522 extends class_367 {
       class_3542.method_16405(true, true, true, true);
    }
 
-   @class_9148
+   @EventListen
    public void method_43928(class_1711 var1) {
       if (this.method_42015()) {
          if (field_48470 != null) {

@@ -28,12 +28,12 @@ public class class_6908 extends SecondModule {
       field_35509 = 0;
    }
 
-   @class_9148
+   @EventListen
    public void method_31652(class_5596 var1) {
       field_35509++;
    }
 
-   @class_9148
+   @EventListen
    public void method_31654(class_139 var1) {
       if (var1.method_557() instanceof class_509 && mcInstance.field_9632 != null) {
          field_35509 = 0;

@@ -57,7 +57,7 @@ public class class_5937 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   @class_9148
+   @EventListen
    private void method_27156(class_4218 var1) {
       if (this.method_27159()) {
          if (this.field_30285 == null) {
@@ -256,7 +256,7 @@ public class class_5937 {
       return false;
    }
 
-   @class_9148
+   @EventListen
    private void method_27155(class_1393 var1) {
       if (var1.method_6449()) {
          if (this.method_27159()) {
@@ -321,7 +321,7 @@ public class class_5937 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27154(class_5243 var1) {
       if (this.method_27159()) {
          int var4 = this.field_30284.size() - 1;
@@ -333,7 +333,7 @@ public class class_5937 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27157(class_7982 var1) {
       if (this.method_27159() && this.field_30282.field_9632.field_41726) {
          int var4 = this.field_30284.size() - 1;
@@ -353,7 +353,7 @@ public class class_5937 {
       return this.field_30284.size() <= 1 ? null : this.field_30284.get(this.field_30284.size() - 2);
    }
 
-   @class_9148
+   @EventListen
    public void method_27150(class_3368 var1) {
       if (this.method_27159()) {
          if (this.field_30284 != null) {

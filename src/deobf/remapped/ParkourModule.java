@@ -5,7 +5,7 @@ public class ParkourModule extends Module {
       super(Category.PLAYER, "Parkour", "Automatically jumps at the edge of blocks");
    }
 
-   @class_9148
+   @EventListen
    public void method_14758(class_4868 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41726) {

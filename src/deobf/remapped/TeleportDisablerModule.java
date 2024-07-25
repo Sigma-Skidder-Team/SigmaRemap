@@ -17,7 +17,7 @@ public class TeleportDisablerModule extends Module {
       this.field_33210 = 0;
    }
 
-   @class_9148
+   @EventListen
    public void method_29713(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449() && mcInstance.method_8530() != null) {
          this.field_33210++;

@@ -61,7 +61,7 @@ public class class_8438 extends Module {
       Collections.sort(this.field_43173, new class_7327(this));
    }
 
-   @class_9148
+   @EventListen
    private void method_38820(class_4459 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_20668()) {
@@ -101,7 +101,7 @@ public class class_8438 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_38819(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          for (Module var5 : this.field_43168.keySet()) {

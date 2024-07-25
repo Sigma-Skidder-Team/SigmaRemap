@@ -29,7 +29,7 @@ public class NameTagsModule extends Module {
       field_6701 = this;
    }
 
-   @class_9148
+   @EventListen
    private void method_5292(class_5596 var1) {
       if (this.method_42015()) {
          this.field_6697 = this.method_42007("Furnaces");
@@ -62,7 +62,7 @@ public class NameTagsModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_5299(class_2157 var1) {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_8585) {
@@ -90,7 +90,7 @@ public class NameTagsModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_5298(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_5149) {
@@ -155,7 +155,7 @@ public class NameTagsModule extends Module {
       return null;
    }
 
-   @class_9148
+   @EventListen
    public void method_5293(class_3368 var1) {
       if (this.method_42015()) {
          class_3542.method_16420(33986, 240.0F, 240.0F);
@@ -417,7 +417,7 @@ public class NameTagsModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_5294(class_2563 var1) {
       if (this.method_42015() && var1.method_11643() instanceof class_704) {
          var1.method_29715(true);

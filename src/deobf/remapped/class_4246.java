@@ -10,12 +10,12 @@ public class class_4246 extends Module {
       this.addSetting(new FloatSetting<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
    }
 
-   @class_9148
+   @EventListen
    private void method_19787(class_717 var1) {
       this.field_20590 = 0;
    }
 
-   @class_9148
+   @EventListen
    private void method_19788(class_7767 var1) {
       double var4 = this.field_20589 * (double)(1.0F - this.method_42002("Delay")) - this.field_20589 / 2.0;
       if (mcInstance.field_9632.field_41726 && this.field_20590 <= 0) {
@@ -31,7 +31,7 @@ public class class_4246 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_19786(class_139 var1) {
       if (var1.method_557() instanceof class_4548) {
          class_4548 var4 = (class_4548)var1.method_557();

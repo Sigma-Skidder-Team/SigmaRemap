@@ -10,7 +10,7 @@ public class class_8683 extends Module {
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel"));
    }
 
-   @class_9148
+   @EventListen
    private void method_39870(class_3645 var1) {
       if (this.method_42015() && var1.method_16973() != null && var1.method_16971()) {
          Entity var4 = var1.method_16973();
@@ -42,7 +42,7 @@ public class class_8683 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_39871(class_2157 var1) {
       if (this.method_42015()) {

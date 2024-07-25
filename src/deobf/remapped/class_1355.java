@@ -9,7 +9,7 @@ public class class_1355 extends Module {
       this.addSetting(new FloatSetting<Float>("Messages delay", "Delay between messages", 3.0F, Float.class, 0.1F, 10.0F, 0.1F));
    }
 
-   @class_9148
+   @EventListen
    public void method_6254(class_5596 var1) {
       if (this.method_42015()) {
          this.field_7386++;

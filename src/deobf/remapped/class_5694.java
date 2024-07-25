@@ -68,7 +68,7 @@ public class class_5694 extends Module {
       return !this.field_28841.equals("") ? (!this.field_28841.equals("z") ? Character.toString((char)(this.field_28841.charAt(0) + 1)) : null) : "a";
    }
 
-   @class_9148
+   @EventListen
    private void method_25759(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_2610) {

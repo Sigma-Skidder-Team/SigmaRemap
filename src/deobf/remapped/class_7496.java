@@ -22,7 +22,7 @@ public class class_7496 extends Module {
       this.field_38244 = false;
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_34126(class_8544 var1) {
       if (this.method_42015() && !(var1.method_39326() < 0.625)) {
@@ -32,7 +32,7 @@ public class class_7496 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_34124(class_2911 var1) {
       if (this.method_42015()) {
          if (this.field_38243 == 1) {
@@ -42,7 +42,7 @@ public class class_7496 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_34125(class_1393 var1) {
       if (this.method_42015()) {

@@ -6,7 +6,7 @@ public class class_1319 extends Module {
       this.addSetting(new FloatSetting<Float>("Motion", "Spider motion", 0.35F, Float.class, 0.2F, 1.0F, 0.05F));
    }
 
-   @class_9148
+   @EventListen
    private void method_6026(class_7767 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41744) {

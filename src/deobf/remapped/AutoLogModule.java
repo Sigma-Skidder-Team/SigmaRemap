@@ -11,7 +11,7 @@ public class AutoLogModule extends Module {
       this.addSetting(new BooleanSetting("One Time Use", "Disables the mod every time it saves you.", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_6969(class_5596 var1) {
       if (this.method_42015() && mcInstance.field_9632.field_41697 > 10 && mcInstance.method_8515() == null && mcInstance.method_8530() != null) {
          float var4 = mcInstance.field_9632.method_26551() / mcInstance.field_9632.method_26465() * 10.0F;

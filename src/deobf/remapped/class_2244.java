@@ -42,7 +42,7 @@ public class class_2244 extends Module {
       return this.field_11174 == null || this.field_11174.field_41736.method_6195(this.field_11171) > 6.0;
    }
 
-   @class_9148
+   @EventListen
    public void method_10321(class_5596 var1) {
       if (mcInstance.field_9632 != null) {
          if (mcInstance.field_9632.field_41697 % 14 == 0) {

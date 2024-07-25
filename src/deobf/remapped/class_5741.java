@@ -7,7 +7,7 @@ public class class_5741 extends Module {
       super(Category.COMBAT, "FastBow", "Shoots arrows faster");
    }
 
-   @class_9148
+   @EventListen
    private void method_25988(class_5596 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.method_26446() != null

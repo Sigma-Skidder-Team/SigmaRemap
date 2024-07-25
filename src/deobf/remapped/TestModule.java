@@ -73,7 +73,7 @@ public class TestModule extends Module {
       mcInstance.field_9616.field_32603 = 1.0F;
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_7654(class_7767 var1) {
       if (this.method_42015()) {
@@ -82,51 +82,51 @@ public class TestModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7665(class_1393 var1) {
       if (!this.method_42015() || !var1.method_6449()) {
          ;
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7653(class_5596 var1) {
       if (!this.method_42015()) {
          ;
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7651(class_3278 var1) {
       if (!this.method_42015()) {
          ;
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7652(class_3368 var1) {
    }
 
-   @class_9148
+   @EventListen
    public void method_7660(class_4996 var1) {
       if (!this.method_42015()) {
          ;
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7658(class_7982 var1) {
       if (!this.method_42015()) {
          ;
       }
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    public void method_7662(class_717 var1) {
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    public void method_7663(class_6435 var1) {
       if (!this.method_42015()) {
@@ -134,7 +134,7 @@ public class TestModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    public void method_7650(class_8706 var1) {
       if (!this.method_42015() || mcInstance.field_9623 != null) {
@@ -142,11 +142,11 @@ public class TestModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7648(class_3368 var1) {
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    public void method_7655(class_2157 var1) {
       class_6310 var4 = var1.method_10047();
@@ -218,7 +218,7 @@ public class TestModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7659(class_139 var1) {
       class_6310 var4 = var1.method_557();
       if (this.method_42015()) {

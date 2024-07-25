@@ -13,7 +13,7 @@ public class class_2766 extends Module {
       this.addSetting(new BooleanSetting("OnGround", "See yourself on ground", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_12600(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (mcInstance.field_9632.field_41726 && var1.method_6449() && class_314.method_1387()) {
@@ -39,7 +39,7 @@ public class class_2766 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_12598(class_7767 var1) {
       if (this.method_42015() && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (!mcInstance.field_9632.field_29654) {
@@ -106,7 +106,7 @@ public class class_2766 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_12602(class_4868 var1) {
       if (this.method_42015()
          && !this.method_42016("Mode").equalsIgnoreCase("NCP")
@@ -129,7 +129,7 @@ public class class_2766 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_12599(class_1711 var1) {
       if (this.method_42015()
          && class_314.method_1413(mcInstance.field_9632, 0.43F)
@@ -151,7 +151,7 @@ public class class_2766 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_12601(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {

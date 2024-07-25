@@ -9,7 +9,7 @@ public class class_5641 extends Module {
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
    }
 
-   @class_9148
+   @EventListen
    private void method_25540(class_3368 var1) {
       if (this.method_42015()) {
          if (!(mcInstance.field_9632.field_41755 > 45.0F)) {

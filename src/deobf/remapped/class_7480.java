@@ -37,7 +37,7 @@ public class class_7480 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_34006(class_717 var1) {
       this.field_38168 = 0;
       this.field_38166 = -1;
@@ -56,7 +56,7 @@ public class class_7480 extends Module {
       mcInstance.field_9632.method_37256(mcInstance.field_9632.method_37245().field_7336, this.field_38165, mcInstance.field_9632.method_37245().field_7334);
    }
 
-   @class_9148
+   @EventListen
    public void method_34007(class_1393 var1) {
       if (var1.method_6449()) {
          var1.method_6444(true);
@@ -71,7 +71,7 @@ public class class_7480 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_34005(class_7767 var1) {
       this.field_38166++;
       if (this.field_38168 > 0) {
@@ -104,7 +104,7 @@ public class class_7480 extends Module {
       class_314.method_1405(var1.method_35231());
    }
 
-   @class_9148
+   @EventListen
    public void method_34004(class_139 var1) {
       if (var1.method_557() instanceof class_509) {
          class_509 var4 = (class_509)var1.method_557();

@@ -103,7 +103,7 @@ public class class_4763 {
       this.field_23053.remove(var1);
    }
 
-   @class_9148
+   @EventListen
    public void method_21970(class_717 var1) {
       try {
          this.method_21964();
@@ -120,7 +120,7 @@ public class class_4763 {
       this.field_23053.clear();
    }
 
-   @class_9148
+   @EventListen
    private void method_21961(class_5596 var1) {
       if (this.field_23056.field_9601 != null) {
          if (this.field_23065 != null) {

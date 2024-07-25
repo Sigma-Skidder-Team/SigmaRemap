@@ -25,7 +25,7 @@ public class class_9366 extends Module {
       var4.method_23029(var1 -> this.field_47903.clear());
    }
 
-   @class_9148
+   @EventListen
    public void method_43312(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
@@ -53,7 +53,7 @@ public class class_9366 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_43311(class_717 var1) {
       this.field_47903.clear();
       this.field_47901.clear();
@@ -115,7 +115,7 @@ public class class_9366 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_43316(class_5596 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41697 < 20) {
@@ -163,7 +163,7 @@ public class class_9366 extends Module {
       this.field_47901.clear();
    }
 
-   @class_9148
+   @EventListen
    public void method_43314(class_3368 var1) {
       if (this.method_42015()) {
          this.method_43313();

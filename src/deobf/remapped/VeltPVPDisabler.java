@@ -12,7 +12,7 @@ public class VeltPVPDisabler extends Module {
       this.field_9020 = 0;
    }
 
-   @class_9148
+   @EventListen
    public void method_7848(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449()) {
          this.field_9020++;
@@ -25,7 +25,7 @@ public class VeltPVPDisabler extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_7847(class_139 var1) {
       if (!this.method_42015()) {
          ;

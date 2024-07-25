@@ -1,11 +1,11 @@
 package remapped;
 
-public class class_4658 extends Module {
-   public class_4658() {
+public class ChatCleanerModule extends Module {
+   public ChatCleanerModule() {
       super(Category.MISC, "ChatCleaner", "Cleans chat in atempt to avoid spam on anarchy servers");
    }
 
-   @class_9148
+   @EventListen
    private void method_21556(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_5182) {

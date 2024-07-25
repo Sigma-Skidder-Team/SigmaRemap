@@ -13,7 +13,7 @@ public class class_2590 extends class_367 {
       this.method_42011(false);
    }
 
-   @class_9148
+   @EventListen
    private void method_11764(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (SigmaMainClass.method_3328().method_3300().method_9486() && SigmaMainClass.method_3328().method_3300().field_10297.size() != 0) {

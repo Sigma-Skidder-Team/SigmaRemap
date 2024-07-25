@@ -8,7 +8,7 @@ public class class_7072 extends Module {
       super(Category.RENDER, "Sims", "You know what it is");
    }
 
-   @class_9148
+   @EventListen
    public void method_32570(class_3368 var1) {
       if (this.method_42015()) {
          for (Entity var5 : class_7494.method_34088(class_314.method_1435())) {

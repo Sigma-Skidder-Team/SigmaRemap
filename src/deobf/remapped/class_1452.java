@@ -5,7 +5,7 @@ public class class_1452 extends Module {
       super(Category.PLAYER, "NoViewReset", "Prevents the server from resetting your client yaw/pitch");
    }
 
-   @class_9148
+   @EventListen
    private void method_6686(class_139 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null) {

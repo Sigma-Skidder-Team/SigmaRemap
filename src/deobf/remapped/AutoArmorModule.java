@@ -30,7 +30,7 @@ public class AutoArmorModule extends Module {
       field_9392 = false;
    }
 
-   @class_9148
+   @EventListen
    @class_315
    public void method_8194(class_5596 var1) {
       if (this.method_42015()) {

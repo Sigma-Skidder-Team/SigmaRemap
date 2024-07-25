@@ -13,7 +13,7 @@ public class class_6865 extends Module {
       this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_31490(class_7767 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41726
@@ -60,7 +60,7 @@ public class class_6865 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_31489(class_139 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null && var1.method_557() instanceof class_4548) {

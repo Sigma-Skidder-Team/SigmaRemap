@@ -5,7 +5,7 @@ public class class_652 extends Module {
       super(Category.MISC, "ChatFilter", "Bypasse chat filters");
    }
 
-   @class_9148
+   @EventListen
    private void method_2982(class_2157 var1) {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_3211) {

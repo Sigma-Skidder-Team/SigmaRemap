@@ -131,7 +131,7 @@ public class class_123 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_384(class_5596 var1) {
       if (MinecraftClient.getInstance().field_9601 == null && this.field_298) {
          this.method_378();

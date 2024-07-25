@@ -20,7 +20,7 @@ public class class_609 extends class_367 {
       this.field_3481 = -1;
    }
 
-   @class_9148
+   @EventListen
    public void method_2870(class_1393 var1) {
       if (this.method_42015() && var1.method_6449() && !(mcInstance.field_9623 instanceof class_2141)) {
          if (this.field_3483 < 20) {

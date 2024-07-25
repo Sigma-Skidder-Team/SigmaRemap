@@ -21,7 +21,7 @@ public class class_4211 extends Module {
       this.field_20458 = 0.0;
    }
 
-   @class_9148
+   @EventListen
    public void method_19581(class_7767 var1) {
       double var4 = Math.sqrt(var1.method_35234() * var1.method_35234() + var1.method_35231() * var1.method_35231());
       if (mcInstance.field_9632.field_41726) {
@@ -84,7 +84,7 @@ public class class_4211 extends Module {
       class_314.method_1408(var1.method_35236());
    }
 
-   @class_9148
+   @EventListen
    public void method_19580(class_1393 var1) {
       if (this.method_42007("NoFall")) {
          if (this.field_20458 > 3.0) {

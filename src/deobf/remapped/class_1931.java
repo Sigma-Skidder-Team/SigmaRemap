@@ -13,7 +13,7 @@ public class class_1931 extends class_367 {
       this.field_9875 = 0;
    }
 
-   @class_9148
+   @EventListen
    private void method_8971(class_5596 var1) {
       if (this.method_42015()) {
          if (mcInstance.method_8520()) {

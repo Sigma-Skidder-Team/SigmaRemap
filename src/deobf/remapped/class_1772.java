@@ -18,7 +18,7 @@ public class class_1772 {
    public long field_9084 = System.currentTimeMillis();
 
    public boolean method_7910(Method var1) {
-      return var1.isAnnotationPresent(class_9148.class) && var1.getParameterCount() == 1 && class_8142.class.isAssignableFrom(var1.getParameterTypes()[0]);
+      return var1.isAnnotationPresent(EventListen.class) && var1.getParameterCount() == 1 && class_8142.class.isAssignableFrom(var1.getParameterTypes()[0]);
    }
 
    public class_4182[] method_7912(class_4182[] var1) {

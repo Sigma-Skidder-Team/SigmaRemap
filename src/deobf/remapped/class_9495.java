@@ -9,14 +9,14 @@ public class class_9495 extends Module {
       this.addSetting(new HippieModeValue("Username", "The name which your username is replaced with", "Me"));
    }
 
-   @class_9148
+   @EventListen
    public void method_43855(class_4981 var1) {
       if (this.method_42015()) {
          var1.method_22940(var1.method_22941().replaceAll(mcInstance.method_8502().method_5366(), this.method_42016("Username")));
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_43854(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();

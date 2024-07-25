@@ -57,7 +57,7 @@ public class BlockFlyPartModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_36707(class_7982 var1) {
       if (this.method_42015()) {
          if (this.method_42016("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
@@ -77,7 +77,7 @@ public class BlockFlyPartModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_36714(class_1393 var1) {
       if (this.method_42015() && this.field_41373.method_17219() != 0) {
@@ -184,7 +184,7 @@ public class BlockFlyPartModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    public void method_36705(class_7767 var1) {
       if (this.method_42015() && this.field_41373.method_17219() != 0) {
@@ -291,7 +291,7 @@ public class BlockFlyPartModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_36713(class_2157 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
@@ -301,7 +301,7 @@ public class BlockFlyPartModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_36709(class_2911 var1) {
       if (this.method_42015() && this.field_41377) {
          if (this.method_42017().method_42016("Tower Mode").equalsIgnoreCase("Vanilla")
@@ -311,7 +311,7 @@ public class BlockFlyPartModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_36708(class_1711 var1) {
       if (this.method_42015() && this.method_42016("Speed Mode").equals("Cubecraft") && this.field_41381 >= 0) {
          if (!(mcInstance.field_9632.field_41706 > 1.2F)) {

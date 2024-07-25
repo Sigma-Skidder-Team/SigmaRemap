@@ -18,7 +18,7 @@ public class class_1467 extends Module {
       this.field_7882 = Math.sqrt(var3 * var3 + var5 * var5);
    }
 
-   @class_9148
+   @EventListen
    public void method_6779(class_1393 var1) {
       if (this.method_42015()
          && mcInstance.field_9632 != null
@@ -36,7 +36,7 @@ public class class_1467 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_6782(class_7767 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!class_7033.method_32081() && !mcInstance.field_9632.method_37285()) {
@@ -72,7 +72,7 @@ public class class_1467 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_6780(class_2911 var1) {
       if (this.method_42015() && !class_7033.method_32081()) {
@@ -94,7 +94,7 @@ public class class_1467 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_6781(class_8544 var1) {
       if (this.method_42015() && !(var1.method_39326() < 0.9)) {
          this.field_7883 = 0;

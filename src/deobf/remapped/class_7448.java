@@ -22,7 +22,7 @@ public class class_7448 extends Module {
       this.field_37947 = class_8865.method_40787()[0];
    }
 
-   @class_9148
+   @EventListen
    public void method_33889(class_7767 var1) {
       if (this.method_42015()) {
          if (!mcInstance.field_9632.field_41726) {
@@ -58,7 +58,7 @@ public class class_7448 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_33888(class_2911 var1) {
       if (this.method_42015()) {
          if (this.field_37951 < 2) {
@@ -80,7 +80,7 @@ public class class_7448 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_33887(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {

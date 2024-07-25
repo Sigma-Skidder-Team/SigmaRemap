@@ -16,7 +16,7 @@ public class class_5579 extends Module {
       this.field_28338 = (class_7376)this.method_42017();
    }
 
-   @class_9148
+   @EventListen
    private void method_25345(class_139 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          class_6310 var4 = var1.method_557();

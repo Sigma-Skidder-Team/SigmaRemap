@@ -30,7 +30,7 @@ public class class_6053 extends Module {
       class_8865.method_40779(0.27, class_8865.method_40787()[0], this.field_30965, 45.0F);
    }
 
-   @class_9148
+   @EventListen
    public void method_27636(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {
@@ -39,7 +39,7 @@ public class class_6053 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27641(class_7767 var1) {
       if (this.method_42015()) {
          String var4 = this.method_42016("Mode");
@@ -98,7 +98,7 @@ public class class_6053 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27639(class_1711 var1) {
       if (this.method_42015()) {
          if (this.method_42007("Fluid Fix")) {
@@ -127,7 +127,7 @@ public class class_6053 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27637(class_2911 var1) {
       this.field_30964 = 0;
       this.field_30960 = 0;

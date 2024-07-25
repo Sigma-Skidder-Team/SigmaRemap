@@ -6,7 +6,7 @@ public class class_1631 extends Module {
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
    }
 
-   @class_9148
+   @EventListen
    private void method_7262(class_3368 var1) {
       if (this.method_42015()) {
          Entity var4 = ((class_2329)this.method_42017()).method_10678(this.method_42002("Range"));

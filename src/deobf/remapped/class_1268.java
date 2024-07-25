@@ -5,7 +5,7 @@ public class class_1268 extends Module {
       super(Category.COMBAT, "HitSounds", "Changes the player hurting sounds client side.");
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    private void method_5701(class_139 var1) {
       if (this.method_42015()) {

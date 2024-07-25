@@ -39,14 +39,14 @@ public class class_9154 extends class_367 {
       mcInstance.field_9616.field_32603 = 1.0F;
    }
 
-   @class_9148
+   @EventListen
    public void method_42168(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          var1.method_6444(true);
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42167(class_717 var1) {
       if (this.method_42015()) {
          this.field_46844 = (double)(this.field_46840 = this.field_46846 = -1);
@@ -64,7 +64,7 @@ public class class_9154 extends class_367 {
          && !this.field_46839;
    }
 
-   @class_9148
+   @EventListen
    public void method_42170(class_7982 var1) {
       if (this.method_42015() && this.field_46839 && mcInstance.field_9632 != null) {
          if (mcInstance.field_9632.field_41726) {
@@ -73,7 +73,7 @@ public class class_9154 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42169(class_7767 var1) {
       if (this.method_42015()) {
          if (this.field_46839) {
@@ -162,7 +162,7 @@ public class class_9154 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42165(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {
@@ -172,7 +172,7 @@ public class class_9154 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42166(class_2157 var1) {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_7371
@@ -215,7 +215,7 @@ public class class_9154 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42171(class_1711 var1) {
       if (this.method_42015() && this.method_42007("Fake") && !(this.field_46844 < 0.0) && !(mcInstance.field_9632.method_37309() < this.field_46844)) {
          mcInstance.field_9632.field_41736.field_7333 = this.field_46844;

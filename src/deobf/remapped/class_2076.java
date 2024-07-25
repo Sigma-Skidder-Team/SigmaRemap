@@ -48,7 +48,7 @@ public class class_2076 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_9689(class_6435 var1) {
       if (this.method_42015()) {
          if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -58,7 +58,7 @@ public class class_2076 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_9690(class_307 var1) {
       if (this.method_42015()) {
          if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -68,7 +68,7 @@ public class class_2076 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_9687(class_7767 var1) {
       if (this.method_42015()) {
@@ -117,7 +117,7 @@ public class class_2076 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_9691(class_1393 var1) {
       if (this.field_10453 == -3) {
          var1.method_29715(true);
@@ -142,7 +142,7 @@ public class class_2076 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_9688(class_139 var1) {
       if (this.method_42015() || this.field_10453 < 0) {
          class_6310 var4 = var1.method_557();

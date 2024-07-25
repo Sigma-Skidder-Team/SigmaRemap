@@ -18,14 +18,14 @@ public class class_9233 extends Module {
       this.field_47194 = false;
    }
 
-   @class_9148
+   @EventListen
    public void method_42589(class_7982 var1) {
       if (this.method_42015() && mcInstance.field_9632.field_41726) {
          var1.method_36186(true);
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42588(class_7767 var1) {
       if (this.method_42015()) {
          if (this.field_47194 && mcInstance.field_9632.method_37309() + 0.42 < this.field_47192) {
@@ -52,7 +52,7 @@ public class class_9233 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42590(class_4868 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41726) {
@@ -97,7 +97,7 @@ public class class_9233 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42592(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();
@@ -107,7 +107,7 @@ public class class_9233 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_42587(class_1711 var1) {
       if (this.method_42015() && this.field_47194 && !(mcInstance.field_9632.method_37309() < this.field_47192) && this.method_42007("Fake fly")) {
          mcInstance.field_9632.field_41736.field_7333 = this.field_47192;

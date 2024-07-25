@@ -15,7 +15,7 @@ public class class_5571 {
       SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
-   @class_9148
+   @EventListen
    private void method_25296(class_5596 var1) {
       this.field_28315++;
       this.field_28308++;
@@ -39,14 +39,14 @@ public class class_5571 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_25298(class_2157 var1) {
       if (var1.method_10047() instanceof class_5955) {
          this.field_28310 = 0;
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_25297(class_139 var1) {
       if (var1.method_557() instanceof class_7573) {
          long var4 = System.currentTimeMillis() - this.field_28313;

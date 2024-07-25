@@ -5,7 +5,7 @@ public class class_4835 extends Module {
       super(Category.MOVEMENT, "Minemen", "Speed for AGC");
    }
 
-   @class_9148
+   @EventListen
    @class_315
    public void method_22255(class_7767 var1) {
       if (mcInstance.field_9632.field_41726) {

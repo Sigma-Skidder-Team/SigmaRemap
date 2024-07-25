@@ -7,7 +7,7 @@ public class class_6805 extends Module {
       this.addSetting(new BooleanSetting("Avoid Fall Damage", "Avoid fall damages", false));
    }
 
-   @class_9148
+   @EventListen
    private void method_31154(class_2911 var1) {
       if (this.method_42015()) {
          if (KillauraModule.field_12548) {
@@ -19,7 +19,7 @@ public class class_6805 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_31155(class_8544 var1) {
       if (this.method_42015()) {
          if (KillauraModule.field_12548) {

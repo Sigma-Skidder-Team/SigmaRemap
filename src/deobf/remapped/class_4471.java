@@ -14,7 +14,7 @@ public class class_4471 extends class_367 {
       super("FightBot", "Jello AI Fight Bot", Category.WORLD);
    }
 
-   @class_9148
+   @EventListen
    public void method_20753(class_5596 var1) {
       if (!this.method_42015()) {
          ;

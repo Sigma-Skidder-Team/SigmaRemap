@@ -15,7 +15,7 @@ public class class_2419 extends Module {
       this.field_12048 = 0;
    }
 
-   @class_9148
+   @EventListen
    public void method_11038(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          this.field_12048++;
@@ -57,7 +57,7 @@ public class class_2419 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11039(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();

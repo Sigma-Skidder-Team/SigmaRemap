@@ -15,7 +15,7 @@ public class OldHittingModule extends Module {
       this.method_42011(true);
    }
 
-   @class_9148
+   @EventListen
    @class_315
    @class_3932
    private void method_9353(class_1393 var1) {
@@ -82,7 +82,7 @@ public class OldHittingModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    @class_3932
    private void method_9364(class_139 var1) {
@@ -106,7 +106,7 @@ public class OldHittingModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    @class_3932
    private void method_9357(class_5396 var1) {

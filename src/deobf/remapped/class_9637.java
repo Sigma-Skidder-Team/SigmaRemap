@@ -19,13 +19,13 @@ public class class_9637 extends Module {
       this.field_49103 = 0;
    }
 
-   @class_9148
+   @EventListen
    private void method_44492(class_717 var1) {
       this.field_49103 = 0;
       this.field_49102.clear();
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    private void method_44493(class_8544 var1) {
       if (this.method_42015() && !var1.method_29716()) {
@@ -84,7 +84,7 @@ public class class_9637 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44491(class_7982 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (this.field_49103 > 0) {
@@ -103,7 +103,7 @@ public class class_9637 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_44490(class_2157 var1) {
       if (var1.method_10047() instanceof class_4609 && !this.field_49102.isEmpty()) {
          this.field_49102.add(var1.method_10047());

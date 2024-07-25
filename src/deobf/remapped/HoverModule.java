@@ -12,7 +12,7 @@ public class HoverModule extends Module {
       this.field_13568 = 1.0E-11;
    }
 
-   @class_9148
+   @EventListen
    public void method_12646(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();
@@ -22,7 +22,7 @@ public class HoverModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_12647(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {

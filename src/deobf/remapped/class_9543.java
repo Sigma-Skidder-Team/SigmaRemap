@@ -37,7 +37,7 @@ public class class_9543 extends class_367 {
       this.field_48554 = null;
    }
 
-   @class_9148
+   @EventListen
    public void method_44021(class_1393 var1) {
       if (!var1.method_6449()) {
          if (this.field_48554 != null) {
@@ -103,7 +103,7 @@ public class class_9543 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44030(class_3368 var1) {
       int var4 = class_314.method_1444(100000000, 0.2F);
       GL11.glPushMatrix();

@@ -21,7 +21,7 @@ public class class_3095 extends Module {
       this.field_15404 = 0.0;
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    private void method_14177(class_7767 var1) {
       if (this.method_42015()) {
@@ -70,7 +70,7 @@ public class class_3095 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_14176(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!(mcInstance.field_9632.method_37309() < 2.0)) {

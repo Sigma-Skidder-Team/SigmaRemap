@@ -20,7 +20,7 @@ public class class_1590 extends class_5676 {
       return this.field_8305.getOrDefault(var1, 0) < this.field_8303;
    }
 
-   @class_9148
+   @EventListen
    private void method_7143(class_5596 var1) {
       if (field_28769.field_9632.field_41697 < 10) {
          this.field_8305.clear();
@@ -43,7 +43,7 @@ public class class_1590 extends class_5676 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_7140(class_139 var1) {
       if (field_28769.field_9632 != null && this.field_8305 != null) {
          if (field_28769.field_9632.field_41697 < 10) {

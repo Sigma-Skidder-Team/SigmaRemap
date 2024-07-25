@@ -13,7 +13,7 @@ public class class_7684 extends Module {
       this.method_42011(false);
    }
 
-   @class_9148
+   @EventListen
    private void method_34825(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!MinecraftClient.getInstance().field_9577.field_45567) {

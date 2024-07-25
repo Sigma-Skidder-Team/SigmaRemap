@@ -9,7 +9,7 @@ public class StaffRepealerModule extends Module {
       super(Category.MISC, "StaffRepealer", "Repeals hypixel's staff ban laws with a simple rage quit!");
    }
 
-   @class_9148
+   @EventListen
    private void method_16497(class_5596 var1) {
       if (this.method_42015()) {
          if (class_314.method_1387()) {
@@ -18,7 +18,7 @@ public class StaffRepealerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_16498(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_527) {

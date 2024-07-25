@@ -14,7 +14,7 @@ public class DelayModule extends Module {
       this.addSetting(new FloatSetting<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
-   @class_9148
+   @EventListen
    private void method_28731(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_1897) {
@@ -36,7 +36,7 @@ public class DelayModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_28732(class_2157 var1) {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_3398) {
@@ -48,7 +48,7 @@ public class DelayModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_28730(class_5596 var1) {
       if (this.field_32172 != 0) {
          if (this.field_32172 > 0) {

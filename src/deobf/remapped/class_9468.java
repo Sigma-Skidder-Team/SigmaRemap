@@ -16,14 +16,14 @@ public class class_9468 extends Module {
       this.addSetting(new BooleanSetting("Show Health", "Shows a health bar", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_43747(class_3368 var1) {
       if (this.method_42015()) {
          this.method_43745();
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_43746(class_7285 var1) {
       if (this.method_42015()) {
          boolean var4 = this.method_42017().method_42007("Show Invisibles");

@@ -14,7 +14,7 @@ public class class_8136 extends Module {
       this.field_41672 = false;
    }
 
-   @class_9148
+   @EventListen
    private void method_37009(class_7767 var1) {
       if (!mcInstance.field_9632.field_41744) {
          this.field_41672 = false;
@@ -42,7 +42,7 @@ public class class_8136 extends Module {
       class_314.method_1408(var1.method_35236());
    }
 
-   @class_9148
+   @EventListen
    private void method_37010(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
@@ -94,7 +94,7 @@ public class class_8136 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_37008(class_5243 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (var1.method_23988() != null

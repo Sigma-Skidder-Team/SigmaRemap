@@ -13,7 +13,7 @@ public class class_3907 extends Module {
       field_18992 = 0;
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    private void method_18089(class_8544 var1) {
       if (this.method_42015() && !(var1.method_39326() < 0.625)) {
@@ -21,14 +21,14 @@ public class class_3907 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_18090(class_2911 var1) {
       if (field_18992 == 2) {
          var1.method_29715(true);
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_18092(class_1393 var1) {
       if (!this.method_42015() || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42015()) {

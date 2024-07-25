@@ -5,7 +5,7 @@ public class AutoFishModule extends Module {
       super(Category.WORLD, "AutoFish", "Automatically catches fish for you");
    }
 
-   @class_9148
+   @EventListen
    public void method_5738(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_3740 || var1.method_557() instanceof class_8283) {

@@ -14,7 +14,7 @@ public class class_9824 extends Module {
       );
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_45280(class_7767 var1) {
       if (this.method_42015()) {

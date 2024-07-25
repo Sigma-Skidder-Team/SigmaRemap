@@ -8,7 +8,7 @@ public class AutoToolsModule extends Module {
       this.addSetting(new ModeSetting("Inv Mode", "The way it will move tools in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
    }
 
-   @class_9148
+   @EventListen
    public void method_29644(class_307 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && var1.method_1364() == 0) {
          if (this.field_33089 != -1) {
@@ -18,14 +18,14 @@ public class AutoToolsModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_29646(class_6435 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && var1.method_29384() == 0) {
          this.method_29647(var1.method_29386());
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_29645(class_5596 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9577.field_45530.method_27060()) {
          this.method_29647(null);

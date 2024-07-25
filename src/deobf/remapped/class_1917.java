@@ -5,7 +5,7 @@ public class class_1917 extends Module {
       super(Category.MOVEMENT, "Vanilla", "Vanilla phase");
    }
 
-   @class_9148
+   @EventListen
    private void method_8717(class_1393 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41744) {
@@ -26,7 +26,7 @@ public class class_1917 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_8718(class_7767 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41744 || class_314.method_1383()) {
@@ -36,7 +36,7 @@ public class class_1917 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_8719(class_3574 var1) {
       if (this.method_42015()) {
          var1.method_29715(true);

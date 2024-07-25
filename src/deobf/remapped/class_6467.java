@@ -11,7 +11,7 @@ public class class_6467 extends Module {
       this.addSetting(new ColorSetting("Color", "The tracers color", class_1255.field_6918.field_6917));
    }
 
-   @class_9148
+   @EventListen
    private void method_29452(class_3368 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
@@ -75,7 +75,7 @@ public class class_6467 extends Module {
       this.field_32957 = false;
    }
 
-   @class_9148
+   @EventListen
    public void method_29454(class_2563 var1) {
       if (this.method_42015() && this.field_32957 && var1.method_11643() instanceof class_704) {
          var1.method_29715(true);
@@ -90,7 +90,7 @@ public class class_6467 extends Module {
       mcInstance.worldRenderer.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
    }
 
-   @class_9148
+   @EventListen
    public void method_29449(class_5278 var1) {
       if (this.method_42015()) {
          if (this.field_32957) {

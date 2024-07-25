@@ -33,7 +33,7 @@ public class class_268 extends Module {
       field_960.add(0, new class_2990(var3, 0));
    }
 
-   @class_9148
+   @EventListen
    private void method_1204(class_6435 var1) {
       if (this.method_42015()) {
          class_8404 var4 = method_1209(var1.method_29384());
@@ -152,7 +152,7 @@ public class class_268 extends Module {
       var6.method_13684(this.method_1207(var8));
    }
 
-   @class_9148
+   @EventListen
    private void method_1197(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_959 <= 0) {
@@ -164,7 +164,7 @@ public class class_268 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    private void method_1196(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {

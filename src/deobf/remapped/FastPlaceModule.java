@@ -6,7 +6,7 @@ public class FastPlaceModule extends Module {
       this.addSetting(new BooleanSetting("Reduce Delay", "Makes block placement faster, but not too much!", true));
    }
 
-   @class_9148
+   @EventListen
    private void method_2745(class_5596 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.method_26446() != null) {

@@ -49,7 +49,7 @@ public class class_7376 extends SecondModule {
       this.field_37692 = null;
    }
 
-   @class_9148
+   @EventListen
    private void method_33595(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_37692 != null) {

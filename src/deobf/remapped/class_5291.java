@@ -5,14 +5,14 @@ public class class_5291 extends Module {
       super(Category.MOVEMENT, "FullBlock", "Basic phase");
    }
 
-   @class_9148
+   @EventListen
    private void method_24133(class_1393 var1) {
       if (this.method_42015() && class_314.method_1383()) {
          var1.method_6444(true);
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_24134(class_7767 var1) {
       if (this.method_42015()) {
          if (!class_314.method_1383()) {
@@ -26,7 +26,7 @@ public class class_5291 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_24132(class_3574 var1) {
       if (this.method_42015()) {
          var1.method_29715(true);

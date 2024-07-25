@@ -14,7 +14,7 @@ public class class_3961 extends Module {
       this.method_42011(false);
    }
 
-   @class_9148
+   @EventListen
    public void method_18289(class_3368 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.method_26446() != null) {

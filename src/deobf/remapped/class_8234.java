@@ -5,7 +5,7 @@ public class class_8234 extends Module {
       super(Category.MOVEMENT, "AAC", "Step for AAC");
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    private void method_37719(class_8544 var1) {
       if (this.method_42015() && !var1.method_29716()) {
@@ -29,7 +29,7 @@ public class class_8234 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_37718(class_7982 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_36184()) {

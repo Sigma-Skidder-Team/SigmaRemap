@@ -13,7 +13,7 @@ public class class_9782 {
       SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_45154(class_1393 var1) {
       if (this.field_49648 != null) {
@@ -105,7 +105,7 @@ public class class_9782 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_45152(class_7767 var1) {
       if (this.field_49646 == 1) {
@@ -137,7 +137,7 @@ public class class_9782 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_45155(class_139 var1) {
       if (this.field_49646 == 1) {

@@ -7,7 +7,7 @@ public class class_5377 extends Module {
       this.addSetting(new ModeSetting("Down mode", "The way you will go down on ladders", 0, "None", "OnSneak", "Always"));
    }
 
-   @class_9148
+   @EventListen
    private void method_24511(class_7767 var1) {
       if (this.method_42015() && mcInstance.field_9632.method_26505()) {
          boolean var4 = class_3347.method_15349() >= class_412.field_1724.method_2055() || mcInstance.method_8530() == null;

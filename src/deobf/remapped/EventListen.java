@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
-public @interface class_9148 {
+public @interface EventListen {
    @Deprecated
    boolean method_42085() default false;
 }

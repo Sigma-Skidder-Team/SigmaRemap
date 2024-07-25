@@ -17,7 +17,7 @@ public class class_1903 extends Module {
       this.field_9715 = 999.0;
    }
 
-   @class_9148
+   @EventListen
    public void method_8648(class_7767 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (mcInstance.field_9632.field_41706 > 3.0F + this.method_42002("Motion") * 4.0F && var1.method_35236() < -0.3) {
@@ -49,7 +49,7 @@ public class class_1903 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_8649(class_1393 var1) {
       if (this.method_42015()) {
          if (this.field_9716 >= 0) {

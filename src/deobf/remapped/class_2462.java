@@ -36,7 +36,7 @@ public class class_2462 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_11348(class_1393 var1) {
       if (mcInstance.field_9632.field_41726) {
@@ -55,7 +55,7 @@ public class class_2462 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    @class_315
    public void method_11349(class_7767 var1) {
@@ -160,7 +160,7 @@ public class class_2462 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_11346(class_2911 var1) {
       if (!class_7033.method_32081() && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
@@ -172,7 +172,7 @@ public class class_2462 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11343(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {
@@ -181,12 +181,12 @@ public class class_2462 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11350(class_717 var1) {
       this.field_12324 = -1.0;
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_11345(class_1711 var1) {
       if (!mcInstance.field_9632.field_41726

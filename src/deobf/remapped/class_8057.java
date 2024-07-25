@@ -35,7 +35,7 @@ public class class_8057 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_36555(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_41249 != null) {
@@ -133,7 +133,7 @@ public class class_8057 extends class_367 {
       return false;
    }
 
-   @class_9148
+   @EventListen
    private void method_36548(class_3368 var1) {
       if (this.method_42015()) {
          if (this.field_41248 != null) {
@@ -186,7 +186,7 @@ public class class_8057 extends class_367 {
       return var5 > 1;
    }
 
-   @class_9148
+   @EventListen
    private void method_36546(class_139 var1) {
       if (this.method_42015()) {
          if (this.field_41248 != null) {

@@ -13,7 +13,7 @@ public class class_2791 extends Module {
       this.addSetting(new BooleanSetting("Inv Bypass", "Avoid inventory glitchs on some servers", false));
    }
 
-   @class_9148
+   @EventListen
    public void method_12682(class_717 var1) {
       if (!this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
@@ -25,7 +25,7 @@ public class class_2791 extends Module {
       this.field_13712.clear();
    }
 
-   @class_9148
+   @EventListen
    public void method_12683(class_5596 var1) {
       if (!this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
@@ -57,7 +57,7 @@ public class class_2791 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_12685(class_2157 var1) {
       class_6310 var4 = var1.method_10047();
       if (var4 instanceof class_5955) {
@@ -66,7 +66,7 @@ public class class_2791 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_12684(class_139 var1) {
       if (!this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);

@@ -23,7 +23,7 @@ public class AutoMinerModule extends Module {
       super(Category.WORLD, "AutoMiner", "Automatically mines blocks");
    }
 
-   @class_9148
+   @EventListen
    public void method_22860(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
@@ -51,7 +51,7 @@ public class AutoMinerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_22855(class_717 var1) {
       this.field_25751.clear();
       this.field_25748.clear();
@@ -80,7 +80,7 @@ public class AutoMinerModule extends Module {
       return var4;
    }
 
-   @class_9148
+   @EventListen
    public void method_22861(class_5596 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41697 < 20) {
@@ -299,7 +299,7 @@ public class AutoMinerModule extends Module {
       GL11.glEnd();
    }
 
-   @class_9148
+   @EventListen
    public void method_22858(class_3368 var1) {
       if (this.method_42015()) {
          this.method_22857();

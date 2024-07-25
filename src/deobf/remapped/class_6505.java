@@ -19,7 +19,7 @@ public class class_6505 extends Module {
       this.field_33096 = false;
    }
 
-   @class_9148
+   @EventListen
    private void method_29653(class_139 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          class_6310 var4 = var1.method_557();
@@ -43,14 +43,14 @@ public class class_6505 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_29654(class_717 var1) {
       if (this.method_42015()) {
          this.field_33096 = false;
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_29652(class_5596 var1) {
       if (this.method_42015()) {
          if (this.method_42007("AutoGG") && this.field_33097.method_14772() > 5000L && this.field_33096) {

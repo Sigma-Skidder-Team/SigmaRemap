@@ -5,7 +5,7 @@ public class class_4244 extends Module {
       super(Category.COMBAT, "Legit", "Increase the knockback you give to players");
    }
 
-   @class_9148
+   @EventListen
    private void method_19784(class_5596 var1) {
       if (this.method_42015()) {
          mcInstance.field_9577.field_45444.field_30024 = true;

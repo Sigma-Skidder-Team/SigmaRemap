@@ -12,7 +12,7 @@ public class MineMenCriticalsModule extends Module {
       this.field_28365 = 0;
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_25379(class_1393 var1) {
       if (var1.method_6449()) {

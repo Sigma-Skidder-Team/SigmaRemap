@@ -33,7 +33,7 @@ public class ChestStealerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_14639(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          if (this.method_42007("Aura")) {
@@ -98,14 +98,14 @@ public class ChestStealerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_14640(class_717 var1) {
       if (!this.field_15896.isEmpty()) {
          this.field_15896.clear();
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_14635(class_3278 var1) {
       if (this.method_42015()) {
          if (!(mcInstance.field_9623 instanceof class_2141)) {

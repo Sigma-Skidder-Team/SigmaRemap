@@ -18,7 +18,7 @@ public class class_7033 extends Module {
    public void method_42020() {
    }
 
-   @class_9148
+   @EventListen
    public void method_32082(class_5243 var1) {
       if (this.method_42015() && mcInstance.field_9601 != null && !class_3588.method_16781()) {
          if (mcInstance.field_9601.method_28262(var1.method_23989()).method_8362() == class_5371.field_27410
@@ -52,7 +52,7 @@ public class class_7033 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_32076(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9601 != null && var1.method_6449() && mcInstance.method_8530() != null) {
          if (method_32081() && !this.method_32078(mcInstance.field_9632.field_41712)) {
@@ -74,7 +74,7 @@ public class class_7033 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_32079(class_7767 var1) {
       if (this.method_42015() && mcInstance.field_9601 != null && !class_3588.method_16781()) {
@@ -138,7 +138,7 @@ public class class_7033 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_32085(class_2911 var1) {
       if (this.method_42015() && mcInstance.field_9601 != null && mcInstance.method_8530() != null) {
          if (method_32081()) {
@@ -151,7 +151,7 @@ public class class_7033 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_32084(class_8544 var1) {
       if (this.method_42015() && !(var1.method_39326() < 0.2)) {
          if (method_32081()) {

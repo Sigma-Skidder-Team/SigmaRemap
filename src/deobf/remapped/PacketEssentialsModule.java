@@ -6,7 +6,7 @@ public class PacketEssentialsModule extends Module {
       super(Category.MISC, "PacketEssentials", "Ignores all types of junk cosmetic packets to improve fps");
    }
 
-   @class_9148
+   @EventListen
    private void method_24957(class_139 var1) {
       if (this.method_42015()) {
          if (!(var1.method_557() instanceof class_6589)) {

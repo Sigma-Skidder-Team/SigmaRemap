@@ -6,7 +6,7 @@ public class VanillaStepModule extends Module {
       this.addSetting(new FloatSetting<Float>("Maximum heigh", "Maximum heigh", 2.0F, Float.class, 1.0F, 10.0F, 0.5F));
    }
 
-   @class_9148
+   @EventListen
    private void method_30574(class_7982 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_36184()) {

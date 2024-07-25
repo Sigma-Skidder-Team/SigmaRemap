@@ -11,7 +11,7 @@ public class class_3921 extends Module {
       super(Category.MOVEMENT, "Strafe", "Strafe in mid air");
    }
 
-   @class_9148
+   @EventListen
    public void method_18146(class_7767 var1) {
       if (this.method_42015()) {
          this.field_19049 = class_8865.method_40775();

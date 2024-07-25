@@ -16,7 +16,7 @@ public class class_4292 {
       SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_19938(class_717 var1) {
       this.field_20823.clear();
@@ -24,12 +24,12 @@ public class class_4292 {
       this.field_20824 = false;
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_19939(class_5596 var1) {
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_19936(class_2157 var1) {
       if (!class_314.method_1445() && class_314.method_1392()) {
@@ -50,7 +50,7 @@ public class class_4292 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_3932
    public void method_19935(class_139 var1) {
       if (!class_314.method_1445() && class_314.method_1392()) {

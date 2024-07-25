@@ -25,7 +25,7 @@ public class class_2941 extends Module {
       this.field_14300.clear();
    }
 
-   @class_9148
+   @EventListen
    private void method_13455(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          if (!(mcInstance.field_9632.method_26576().method_27960() instanceof class_2100)) {
@@ -42,7 +42,7 @@ public class class_2941 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_13456(class_3278 var1) {
       if (this.method_42015() && !this.method_42007("Silent")) {
          if (!this.field_14300.isEmpty()) {

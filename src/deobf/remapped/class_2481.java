@@ -12,7 +12,7 @@ public class class_2481 extends Module {
       super(Category.WORLD, "NewChunks", "Detects new chunks on non vanilla servers");
    }
 
-   @class_9148
+   @EventListen
    private void method_11373(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4808) {
@@ -25,7 +25,7 @@ public class class_2481 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_11374(class_3368 var1) {
       if (this.method_42015()) {
          for (Iterator var4 = this.field_12370.iterator(); var4.hasNext(); var4.remove()) {

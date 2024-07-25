@@ -346,7 +346,7 @@ public class BlockFlyModule extends SecondModule {
       return SigmaMainClass.method_3328().method_3312() != class_6015.field_30644 ? super.method_41987() : "Scaffold";
    }
 
-   @class_9148
+   @EventListen
    public void method_17218(class_5596 var1) {
       if (this.method_42015()) {
          if (this.method_42007("Show Block Amount")) {
@@ -361,7 +361,7 @@ public class BlockFlyModule extends SecondModule {
       super.method_42020();
    }
 
-   @class_9148
+   @EventListen
    public void method_17213(class_3278 var1) {
       this.field_18194.method_11119(class_4043.field_19620);
       if (this.field_18194.method_11123() != 0.0F) {

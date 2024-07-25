@@ -13,7 +13,7 @@ public class DebugSpeedModule extends Module {
       super(Category.MISC, "DebugSpeed", "");
    }
 
-   @class_9148
+   @EventListen
    public void method_45511(class_5596 var1) {
       if (this.method_42015()) {
          class_1343 var4 = new class_1343(mcInstance.field_9632.method_37302(), 0.0, mcInstance.field_9632.method_37156());

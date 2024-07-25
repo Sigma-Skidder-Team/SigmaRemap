@@ -121,7 +121,7 @@ public class ModuleManager {
       this.method_852(new class_1355());
       this.method_852(new class_2167());
       this.method_852(new class_652());
-      this.method_852(new class_4658());
+      this.method_852(new ChatCleanerModule());
       this.method_852(new class_9604());
       this.method_852(new class_7376());
       this.method_852(new class_8726());

@@ -46,7 +46,7 @@ public class class_9024 extends Module {
       field_46156 = this;
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    private void method_41399(class_1711 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
@@ -63,7 +63,7 @@ public class class_9024 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    private void method_41401(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
@@ -298,7 +298,7 @@ public class class_9024 extends Module {
       return var3;
    }
 
-   @class_9148
+   @EventListen
    private void method_41396(class_3368 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          this.method_41405();
@@ -306,7 +306,7 @@ public class class_9024 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_41404(class_6435 var1) {
       if (this.method_42015()) {
          switch (var1.method_29384()) {

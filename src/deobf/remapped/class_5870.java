@@ -27,7 +27,7 @@ public class class_5870 extends Module {
       this.field_29806 = -1;
    }
 
-   @class_9148
+   @EventListen
    private void method_26741(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          this.field_29805++;
@@ -58,7 +58,7 @@ public class class_5870 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_26740(class_2157 var1) {
       if (this.method_42015()) {
          if (this.field_29810 && var1.method_10047() instanceof class_8559) {

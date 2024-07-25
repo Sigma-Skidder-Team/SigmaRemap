@@ -15,7 +15,7 @@ public class DerpModule extends Module {
       this.addSetting(new BooleanSetting("Sneak", "Randomly sneak", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_29695(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          if (this.method_42007("Sneak")) {

@@ -15,7 +15,7 @@ public class class_9740 extends Module {
       this.field_49495 = 20;
    }
 
-   @class_9148
+   @EventListen
    public void method_44976(class_4996 var1) {
       if (this.method_42015()) {
          if (this.field_49494 >= 0) {
@@ -24,7 +24,7 @@ public class class_9740 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44975(class_6435 var1) {
       if (this.method_42015()) {
          int var4 = mcInstance.field_9577.field_45393.length;
@@ -41,7 +41,7 @@ public class class_9740 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44977(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_49495 < 20) {
@@ -79,7 +79,7 @@ public class class_9740 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_44978(class_139 var1) {
       if (this.method_42015() && this.field_49494 > 1) {
          class_6310 var4 = var1.method_557();

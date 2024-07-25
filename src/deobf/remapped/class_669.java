@@ -36,7 +36,7 @@ public class class_669 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_3072(class_6435 var1) {
       if (this.method_42015()) {
          if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -46,7 +46,7 @@ public class class_669 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_3075(class_307 var1) {
       if (this.method_42015()) {
          if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -56,7 +56,7 @@ public class class_669 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_3074(class_1393 var1) {
       if (this.method_42015()) {
          if (!mcInstance.field_9632.field_41726 && this.method_42007("Kick bypass")) {
@@ -101,7 +101,7 @@ public class class_669 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_3071(class_7767 var1) {
       if (this.method_42015()) {
          if (!class_314.method_1413(mcInstance.field_9632, 0.01F)) {

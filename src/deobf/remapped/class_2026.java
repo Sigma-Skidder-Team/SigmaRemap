@@ -96,7 +96,7 @@ public class class_2026 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_9493(class_3278 var1) {
       if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645) {
          if (this.field_10295 && this.field_10297.size() != 0) {
@@ -127,7 +127,7 @@ public class class_2026 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_9494(class_7285 var1) {
       if (this.field_10295 && this.field_10297.size() != 0 && this.field_10279) {
          this.method_9469();
@@ -237,7 +237,7 @@ public class class_2026 {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_9502(class_5596 var1) {
       if (!this.field_10295) {
          this.field_10297.clear();

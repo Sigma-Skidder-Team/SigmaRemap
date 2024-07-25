@@ -51,7 +51,7 @@ public class SigmaIRC {
       return this.field_21927.get(var1.method_37328());
    }
 
-   @class_9148
+   @EventListen
    private void method_20858(class_5596 var1) {
       if (this.field_21934.field_9632.field_41697 % 100 == 0) {
          this.method_20857();
@@ -112,7 +112,7 @@ public class SigmaIRC {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_20855(class_139 var1) {
       if (var1.method_557() instanceof class_1490) {
          class_1490 var4 = (class_1490)var1.method_557();

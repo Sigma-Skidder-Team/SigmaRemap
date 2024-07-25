@@ -15,7 +15,7 @@ public class MurdererModule extends Module {
       this.addSetting(new BooleanSetting("Chat Message", "Sends a message with the murderer's name", true));
    }
 
-   @class_9148
+   @EventListen
    private void method_8421(class_139 var1) throws IOException {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_9014) {
@@ -47,7 +47,7 @@ public class MurdererModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_8422(class_3278 var1) throws IOException {
       if (this.method_42015()) {
          if (this.field_9550) {

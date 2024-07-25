@@ -32,7 +32,7 @@ public class class_4969 extends Module {
       this.method_42011(false);
    }
 
-   @class_9148
+   @EventListen
    public void method_22834(class_717 var1) {
       this.field_25735.clear();
    }
@@ -42,7 +42,7 @@ public class class_4969 extends Module {
       this.field_25735.clear();
    }
 
-   @class_9148
+   @EventListen
    private void method_22829(class_5596 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
          this.field_25741++;
@@ -106,7 +106,7 @@ public class class_4969 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_22828(class_3278 var1) throws IOException {
       if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9601 != null) {

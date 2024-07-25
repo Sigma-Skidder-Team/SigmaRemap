@@ -6,7 +6,7 @@ public class class_6803 extends Module {
       this.addSetting(new FloatSetting<Float>("Timer", "Timer value", 0.1F, Float.class, 0.1F, 10.0F, 0.1F));
    }
 
-   @class_9148
+   @EventListen
    private void method_31152(class_5596 var1) {
       if (this.method_42015()) {
          mcInstance.field_9616.field_32603 = this.method_42002("Timer");

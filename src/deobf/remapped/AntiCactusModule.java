@@ -6,7 +6,7 @@ public class AntiCactusModule extends Module {
       this.addSetting(new BooleanSetting("Above", "Avoid damage above cactus also", true));
    }
 
-   @class_9148
+   @EventListen
    private void method_29163(class_5243 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_4309) {

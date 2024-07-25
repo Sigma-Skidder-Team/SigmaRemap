@@ -15,7 +15,7 @@ public class ShulkerInfoModule extends Module {
       this.method_42011(false);
    }
 
-   @class_9148
+   @EventListen
    private void method_31555(class_1523 var1) {
       this.field_35423 = this.field_35423 - var1.method_6955();
    }
@@ -26,7 +26,7 @@ public class ShulkerInfoModule extends Module {
       return var3;
    }
 
-   @class_9148
+   @EventListen
    public void method_31553(class_3368 var1) {
       if (this.method_42015()) {
          class_3542.method_16420(33986, 240.0F, 240.0F);
@@ -137,7 +137,7 @@ public class ShulkerInfoModule extends Module {
       GL11.glDisable(3042);
    }
 
-   @class_9148
+   @EventListen
    private void method_31551(class_2532 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9623 instanceof class_2208) {

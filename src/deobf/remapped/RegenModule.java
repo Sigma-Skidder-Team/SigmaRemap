@@ -7,7 +7,7 @@ public class RegenModule extends Module {
       this.addSetting(new BooleanSetting("Only OnGround", "Regen only when on ground", false));
    }
 
-   @class_9148
+   @EventListen
    private void method_19790(class_5596 var1) {
       if (this.method_42015()) {
          if (!mcInstance.field_9632.field_3876.field_4944

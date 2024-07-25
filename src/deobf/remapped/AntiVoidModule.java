@@ -23,7 +23,7 @@ public class AntiVoidModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_33097(class_7767 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F)) {
@@ -69,14 +69,14 @@ public class AntiVoidModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_33099(class_1393 var1) {
       if (this.method_42015() && var1.method_6449() && this.field_37110 != 0) {
          var1.method_29715(true);
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_33098(class_139 var1) {
       if (this.method_42015() && this.field_37110 != 0) {
          if (var1.method_557() instanceof class_509) {

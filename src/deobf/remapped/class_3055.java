@@ -14,7 +14,7 @@ public class class_3055 extends Module {
       field_15012 = this;
    }
 
-   @class_9148
+   @EventListen
    public void method_13955(class_7285 var1) {
       if (this.method_42015()) {
          byte var4 = 20;
@@ -91,7 +91,7 @@ public class class_3055 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_13953(class_3368 var1) {
       if (this.method_42015()) {
          this.field_15013.clear();
@@ -109,7 +109,7 @@ public class class_3055 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_13954(class_2563 var1) {
       if (this.method_42015() && var1.method_11643() instanceof class_704) {
          var1.method_29715(true);

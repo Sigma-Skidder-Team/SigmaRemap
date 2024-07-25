@@ -38,7 +38,7 @@ public class class_7565 extends class_367 {
    public void method_42006() {
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    private void method_34401(class_1711 var1) {
       if (this.field_38555 != null) {
@@ -67,7 +67,7 @@ public class class_7565 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_34402(class_3278 var1) {
    }

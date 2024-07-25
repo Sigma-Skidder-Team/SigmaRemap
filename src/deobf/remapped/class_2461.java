@@ -41,7 +41,7 @@ public class class_2461 extends Module {
       mcInstance.field_9616.field_32603 = 1.0F;
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_11335(class_2157 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
@@ -51,7 +51,7 @@ public class class_2461 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11338(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();
@@ -61,7 +61,7 @@ public class class_2461 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11342(class_7982 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632.field_41726 && SigmaMainClass.method_3328().getModuleManager().method_847(class_1396.class).method_42015()) {
@@ -70,7 +70,7 @@ public class class_2461 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11337(class_7767 var1) {
       if (this.method_42015()) {
          if (this.method_42017().method_42007("No Sprint")) {
@@ -109,7 +109,7 @@ public class class_2461 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_11341(class_8128 var1) {
       if (this.method_42015() && mcInstance.field_9601 != null && mcInstance.field_9632 != null) {
          if (this.method_42007("Haphe (AACAP)") && class_8865.method_40772() && !mcInstance.field_9632.method_37321()) {
@@ -184,7 +184,7 @@ public class class_2461 extends Module {
       return class_7829.method_35452(var1, var2, (int) mcInstance.field_9647.method_42146());
    }
 
-   @class_9148
+   @EventListen
    public void method_11339(class_1711 var1) {
       if (this.method_42015()) {
          if (!this.method_42007("Haphe (AACAP)")) {
@@ -193,7 +193,7 @@ public class class_2461 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    private void method_11336(class_1393 var1) {
       if (this.method_42015()) {
@@ -237,7 +237,7 @@ public class class_2461 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_11340(class_2911 var1) {
       if (this.method_42015()) {
          if (this.method_42017().method_42016("Tower Mode").equalsIgnoreCase("Vanilla")

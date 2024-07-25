@@ -14,7 +14,7 @@ public class SkeletonESPModule extends Module {
       this.addSetting(new BooleanSetting("CSGO", "Add a CSGO look.", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_19976(class_3368 var1) {
       if (!this.method_42015()) {
          ;

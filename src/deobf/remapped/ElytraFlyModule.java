@@ -15,7 +15,7 @@ public class ElytraFlyModule extends Module {
       this.addSetting(new BooleanSetting("NCP", "Bypass NCP", true));
    }
 
-   @class_9148
+   @EventListen
    public void method_45348(class_5596 var1) {
       if (this.method_42015()) {
          mcInstance.field_9577.field_45560.field_30024 = false;
@@ -31,7 +31,7 @@ public class ElytraFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_45349(class_7767 var1) {
       if (this.method_42015()) {
          double var4 = class_8865.method_40775();
@@ -76,7 +76,7 @@ public class ElytraFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_45346(class_139 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null && var1.method_557() instanceof class_4548) {
@@ -95,7 +95,7 @@ public class ElytraFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_45345(class_1393 var1) {
       if (this.method_42015()) {
          byte var4 = 65;
@@ -129,7 +129,7 @@ public class ElytraFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    private void method_45347(class_2157 var1) {
       if (!this.method_42015()) {
@@ -137,7 +137,7 @@ public class ElytraFlyModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_45344(class_307 var1) {
       if (!this.method_42015()) {
          ;

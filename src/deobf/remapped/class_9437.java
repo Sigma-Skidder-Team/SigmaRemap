@@ -17,7 +17,7 @@ public class class_9437 extends Module {
       this.addSetting(new ColorSetting("Color", "The rendered block color", class_1255.field_6920.field_6917, true));
    }
 
-   @class_9148
+   @EventListen
    private void method_43656(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          this.field_48180 = this.method_43660(this.method_42002("Range") / 2.0F);
@@ -80,7 +80,7 @@ public class class_9437 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_43659(class_3368 var1) {
       if (this.field_48181 != null && !mcInstance.field_9601.method_28262(this.field_48181).method_8345()) {
          int var4 = class_314.method_1444(this.method_41993("Color"), 0.4F);

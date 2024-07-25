@@ -8,7 +8,7 @@ public class class_7303 {
       SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
-   @class_9148
+   @EventListen
    private void method_33303(class_5596 var1) {
    }
 }

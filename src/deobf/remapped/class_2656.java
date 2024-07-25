@@ -31,7 +31,7 @@ public class class_2656 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_12007(class_717 var1) {
       if (this.method_42015()) {
          this.field_13091.clear();
@@ -40,7 +40,7 @@ public class class_2656 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_12006(class_2157 var1) {
       if (this.method_42015() && mcInstance.method_8614() != null) {
          if (!this.field_13092) {

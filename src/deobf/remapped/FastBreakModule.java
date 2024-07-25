@@ -5,7 +5,7 @@ public class FastBreakModule extends Module {
       super(Category.WORLD, "FastBreak", "Break blocks faster");
    }
 
-   @class_9148
+   @EventListen
    private void method_4769(class_5596 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9647.field_46832 > 0.7F) {

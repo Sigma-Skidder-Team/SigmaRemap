@@ -5,7 +5,7 @@ public class VanillaShaderESPModule extends Module {
       super(Category.RENDER, "Vanilla", "Draws a line arround players");
    }
 
-   @class_9148
+   @EventListen
    public void method_2176(class_5596 var1) {
       if (this.method_42015()) {
          for (Entity var5 : mcInstance.field_9601.method_736()) {

@@ -21,7 +21,7 @@ public class CubeCraftLongJumpModule extends Module {
       mcInstance.field_9616.field_32603 = 0.3F;
    }
 
-   @class_9148
+   @EventListen
    public void method_40742(class_5596 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!class_314.method_1413(mcInstance.field_9632, 0.001F)) {

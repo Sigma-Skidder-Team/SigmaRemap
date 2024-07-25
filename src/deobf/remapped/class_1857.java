@@ -28,7 +28,7 @@ public class class_1857 {
       new class_3347(null);
    }
 
-   @class_9148
+   @EventListen
    public void method_8230(class_4996 var1) {
       if (class_3347.method_15349() == class_412.field_1747.method_2055()) {
          if (this.field_9415.field_9632.method_26613() <= 1) {
@@ -37,7 +37,7 @@ public class class_1857 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_8222(class_6435 var1) {
       if (var1.method_29384() == this.field_9415.field_9577.field_45575.field_30027.method_16988()
          && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
@@ -53,14 +53,14 @@ public class class_1857 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_8229(class_717 var1) {
       field_9414 = 0;
       this.field_9417.method_30353();
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_8232(class_3278 var1) {
       if (this.field_9415.field_9632 != null
@@ -70,7 +70,7 @@ public class class_1857 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_8224(class_5243 var1) {
       if (this.field_9415.field_9601 != null && this.field_9415.field_9632 != null) {
@@ -92,7 +92,7 @@ public class class_1857 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_8225(class_5596 var1) {
       if (this.method_8231()) {
@@ -150,7 +150,7 @@ public class class_1857 {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_8228(class_2157 var1) {
       if (var1.method_10047() instanceof class_7371) {
          int var4 = ((class_7371)var1.method_10047()).method_33575();
@@ -169,7 +169,7 @@ public class class_1857 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_8221(class_139 var1) {
       if (!SigmaMainClass.method_3328().getModuleManager().method_847(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
@@ -251,7 +251,7 @@ public class class_1857 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_8223(class_7767 var1) {
       if (class_3347.method_15349() < class_412.field_1751.method_2055() || class_314.method_1387()) {
@@ -345,7 +345,7 @@ public class class_1857 {
       return class_3347.method_15349() <= class_412.field_1728.method_2055();
    }
 
-   @class_9148
+   @EventListen
    @class_5355
    public void method_8233(class_5278 var1) {
       if (var1.method_24098() == this.field_9415.field_9632 || var1.method_24098() == class_9598.field_48917 || var1.method_24098() == class_5477.field_27898) {

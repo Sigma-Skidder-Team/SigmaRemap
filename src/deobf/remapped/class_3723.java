@@ -7,7 +7,7 @@ public class class_3723 extends Module {
       super(Category.RENDER, "Box", "Draws a box where chests are");
    }
 
-   @class_9148
+   @EventListen
    private void method_17266(class_3368 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null && mcInstance.field_9601 != null) {

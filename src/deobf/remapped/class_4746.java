@@ -26,14 +26,14 @@ public class class_4746 {
       field_23001 = Math.max(var1 + var3, field_23001);
    }
 
-   @class_9148
+   @EventListen
    public void method_21921(class_139 var1) {
       if (var1.method_557() instanceof class_5257) {
          class_314.method_1430();
       }
    }
 
-   @class_9148
+   @EventListen
    @class_4249
    public void method_21927(class_3368 var1) {
       if (SigmaMainClass.method_3328().method_3299().method_30987() && field_22995 < field_23000 && field_22999 < field_23001) {

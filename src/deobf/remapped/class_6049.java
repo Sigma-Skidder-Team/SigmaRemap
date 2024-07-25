@@ -68,7 +68,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27618(class_7982 var1) {
       if (this.method_42015()) {
          if (this.method_42016("Speed Mode").equals("Cubecraft") && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
@@ -90,7 +90,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_27627(class_6435 var1) {
       if (this.method_42015() && this.method_42007("Downwards")) {
          if (var1.method_29384() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -100,7 +100,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_27626(class_307 var1) {
       if (this.method_42015() && this.method_42007("Downwards")) {
          if (var1.method_1364() == mcInstance.field_9577.field_45560.field_30027.field_17800) {
@@ -110,7 +110,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_27623(class_1393 var1) {
       if (this.method_42015() && this.field_30936.method_17219() != 0) {
@@ -206,7 +206,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_315
    public void method_27619(class_7767 var1) {
       if (this.method_42015() && this.field_30936.method_17219() != 0) {
@@ -313,7 +313,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_27624(class_2157 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
@@ -323,7 +323,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27621(class_2911 var1) {
       if (this.method_42015() && this.field_30941) {
          if (this.method_42017().method_42016("Tower Mode").equalsIgnoreCase("Vanilla")
@@ -333,7 +333,7 @@ public class class_6049 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_27616(class_1711 var1) {
       if (this.method_42015() && this.method_42016("Speed Mode").equals("Cubecraft") && this.field_30939 >= 0) {
          if (!(mcInstance.field_9632.field_41706 > 1.2F)) {

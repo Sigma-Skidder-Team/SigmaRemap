@@ -12,7 +12,7 @@ public class class_6645 {
       SigmaMainClass.method_3328().method_3302().method_7908(this);
    }
 
-   @class_9148
+   @EventListen
    private void method_30525(class_139 var1) {
       if (var1.method_557() instanceof class_5491) {
          class_5491 var4 = (class_5491)var1.method_557();

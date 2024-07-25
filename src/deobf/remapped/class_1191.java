@@ -34,7 +34,7 @@ public class class_1191 extends Module {
       mcInstance.field_9616.field_32603 = 1.0F;
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_5276(class_7767 var1) {
       if (this.method_42015()) {
@@ -62,7 +62,7 @@ public class class_1191 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_5280(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          this.field_6675++;
@@ -82,7 +82,7 @@ public class class_1191 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_5278(class_139 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_557();
@@ -103,7 +103,7 @@ public class class_1191 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_5279(class_2157 var1) {
       if (this.method_42015()) {
          class_6310 var4 = var1.method_10047();
@@ -116,7 +116,7 @@ public class class_1191 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_5277(class_1711 var1) {
       if (!this.method_42015()) {
          ;

@@ -24,7 +24,7 @@ public class class_4137 extends Module {
       this.method_19211();
    }
 
-   @class_9148
+   @EventListen
    private void method_19210(class_3278 var1) throws IOException {
       if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.field_9601 != null) {
          int var4 = mcInstance.window.method_43163();

@@ -22,7 +22,7 @@ public class class_6371 extends Module {
       this.field_32569.clear();
    }
 
-   @class_9148
+   @EventListen
    private void method_29151(class_8706 var1) {
       if (this.method_42015() && (mcInstance.field_9632.method_37252() || !this.method_42017().method_42007("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
@@ -80,7 +80,7 @@ public class class_6371 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_29150(class_3368 var1) {
       if (this.method_42015() && this.field_32569 != null && this.field_32569.size() != 0) {
          if (this.field_32570.method_14772() > 4000L) {

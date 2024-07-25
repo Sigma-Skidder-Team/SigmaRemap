@@ -7,7 +7,7 @@ public class class_4342 extends Module {
       this.addSetting(new FloatSetting<Float>("Speed", "Eating speed.", 0.55F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
-   @class_9148
+   @EventListen
    public void method_20195(class_5596 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (mcInstance.field_9632.method_26554()) {

@@ -40,7 +40,7 @@ public class class_7401 extends Module {
       this.field_37781 = null;
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    public void method_33698(class_5596 var1) {
       if (this.method_42015()) {
@@ -119,7 +119,7 @@ public class class_7401 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_33699(class_3368 var1) {
       if (this.method_42015() && this.field_37777 != null && this.field_37777.size() != 0) {
          for (List var5 : this.field_37777) {

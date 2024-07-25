@@ -16,12 +16,12 @@ public class class_9137 extends Module {
       this.method_42011(false);
    }
 
-   @class_9148
+   @EventListen
    public void method_42047(class_717 var1) {
       this.field_46733.clear();
    }
 
-   @class_9148
+   @EventListen
    public void method_42048(class_139 var1) {
       if (mcInstance.field_9601 != null) {
          if (!(var1.method_557() instanceof class_3985)) {
@@ -98,7 +98,7 @@ public class class_9137 extends Module {
       return var4;
    }
 
-   @class_9148
+   @EventListen
    public void method_42053(class_3368 var1) {
       if (this.method_42015()) {
          for (class_4333 var5 : this.method_42044(SigmaMainClass.method_3328().method_3309().method_21960())) {

@@ -105,7 +105,7 @@ public class class_8726 extends Module {
    public void method_42020() {
    }
 
-   @class_9148
+   @EventListen
    private void method_40073(class_3368 var1) {
       if (this.method_42015()) {
          if (this.field_44720 != null) {
@@ -192,7 +192,7 @@ public class class_8726 extends Module {
       GL11.glEnd();
    }
 
-   @class_9148
+   @EventListen
    private void method_40075(class_1393 var1) {
       if (this.method_42015()) {
          if (this.field_44718 != -1) {
@@ -237,7 +237,7 @@ public class class_8726 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_40077(class_139 var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_5149) {
@@ -285,7 +285,7 @@ public class class_8726 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_40076(class_2157 var1) {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_1194) {

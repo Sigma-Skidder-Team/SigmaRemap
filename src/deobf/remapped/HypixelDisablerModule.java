@@ -51,7 +51,7 @@ public class HypixelDisablerModule extends Module {
       this.field_36206.clear();
    }
 
-   @class_9148
+   @EventListen
    public void method_32068(class_1393 var1) {
       if (mcInstance.field_9632 != null) {
          if (!this.field_36207 && mcInstance.field_9632.field_41726) {
@@ -68,7 +68,7 @@ public class HypixelDisablerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_32071(class_7767 var1) {
       if (mcInstance.field_9632 != null) {
          if (!this.method_42007("Instant") && this.field_36207) {
@@ -94,7 +94,7 @@ public class HypixelDisablerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_32070(class_2157 var1) {
       if (mcInstance.method_8614() != null) {
          if (this.field_36207) {
@@ -113,7 +113,7 @@ public class HypixelDisablerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_32069(class_139 var1) {
       if (mcInstance.field_9632 != null && this.field_36207) {
          if (this.method_42015() || this.method_42007("Instant")) {

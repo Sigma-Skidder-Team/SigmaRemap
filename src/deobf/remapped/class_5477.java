@@ -38,7 +38,7 @@ public class class_5477 extends Module {
       mcInstance.field_9601.method_754(-1);
    }
 
-   @class_9148
+   @EventListen
    private void method_24894(class_2157 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null && var1.method_10047() instanceof class_2317

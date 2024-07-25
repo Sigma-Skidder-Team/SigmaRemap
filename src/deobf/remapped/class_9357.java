@@ -29,7 +29,7 @@ public class class_9357 extends Module {
       mcInstance.field_9601.method_719((long)this.method_42002("Time"));
    }
 
-   @class_9148
+   @EventListen
    private void method_43220(class_5596 var1) {
       if (this.method_42015()) {
          if (!this.method_42007("Disable rain")) {
@@ -55,7 +55,7 @@ public class class_9357 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_43219(class_139 var1) {
       if (this.method_42015()) {
          if (!(var1.method_557() instanceof class_8508)) {

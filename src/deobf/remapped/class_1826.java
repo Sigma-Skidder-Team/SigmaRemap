@@ -14,7 +14,7 @@ public class class_1826 extends Module {
       this.field_9265 = 0;
    }
 
-   @class_9148
+   @EventListen
    public void method_8070(class_7767 var1) {
       if (this.method_42015()) {
          if ((float)this.field_9265 >= this.method_42002("Flags")) {
@@ -25,14 +25,14 @@ public class class_1826 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_8069(class_717 var1) {
       if (this.method_42015()) {
          this.field_9265 = 0;
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_8072(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          if (!mcInstance.field_9632.field_41726 && !class_314.method_1413(mcInstance.field_9632, 0.001F)) {
@@ -55,7 +55,7 @@ public class class_1826 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_8071(class_139 var1) {
       if (this.method_42015()) {
          if (mcInstance.field_9632 != null) {

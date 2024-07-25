@@ -84,7 +84,7 @@ public class class_9093 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    private void method_41924(class_3368 var1) {
       if (this.method_42015()) {
          GL11.glAlphaFunc(516, 0.0F);

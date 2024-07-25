@@ -29,7 +29,7 @@ public class class_3588 extends class_367 {
       field_17597 = -1;
    }
 
-   @class_9148
+   @EventListen
    private void method_16782(class_7767 var1) {
       if (this.method_42015()) {
          if (field_17597 > 0 && !mcInstance.field_9632.field_41726) {
@@ -38,7 +38,7 @@ public class class_3588 extends class_367 {
       }
    }
 
-   @class_9148
+   @EventListen
    @class_7664
    private void method_16779(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9647.method_42133()) {

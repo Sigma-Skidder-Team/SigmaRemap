@@ -22,7 +22,7 @@ public class class_914 extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_3924(class_5596 var1) {
       if (this.method_42015()) {
          mcInstance.field_9577.field_45391 = 999.0;

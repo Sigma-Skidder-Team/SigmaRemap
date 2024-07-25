@@ -14,7 +14,7 @@ public class MineMenDisablerModule extends Module {
       this.field_39768 = true;
    }
 
-   @class_9148
+   @EventListen
    public void method_35496(class_1393 var1) {
       if (var1.method_6449()) {
          if (class_314.method_1413(mcInstance.field_9632, 1.0E-5F)) {
@@ -30,7 +30,7 @@ public class MineMenDisablerModule extends Module {
       }
    }
 
-   @class_9148
+   @EventListen
    public void method_35498(class_7767 var1) {
       if (this.field_39768) {
          if (!mcInstance.field_9632.field_41726) {
@@ -46,7 +46,7 @@ public class MineMenDisablerModule extends Module {
       class_314.method_1408(var1.method_35236());
    }
 
-   @class_9148
+   @EventListen
    private void method_35497(class_139 var1) {
       if (mcInstance.field_9632 != null && var1.method_557() instanceof class_4548) {
          class_4548 var5 = (class_4548)var1.method_557();
