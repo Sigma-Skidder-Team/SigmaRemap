@@ -12,9 +12,9 @@ public class class_2167 extends Module {
    @Override
    public void method_42006() {
       String var3 = "Error";
-      if (!this.method_42016("Jargon").equals("Excuse")) {
-         if (!this.method_42016("Jargon").equals("Techincal")) {
-            if (this.method_42016("Jargon").equals("Audio")) {
+      if (!this.getStringValueByName("Jargon").equals("Excuse")) {
+         if (!this.getStringValueByName("Jargon").equals("Techincal")) {
+            if (this.getStringValueByName("Jargon").equals("Audio")) {
                var3 = this.method_10073();
             }
          } else {

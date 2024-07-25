@@ -58,7 +58,7 @@ public class class_7657 extends Module {
    @class_7664
    public void method_34660(class_7767 var1) {
       if (this.method_42015()) {
-         double var4 = (double)this.method_42002("Speed");
+         double var4 = (double)this.getFloatValueByName("Speed");
          if (this.field_38901 <= 0) {
             if (this.field_38901 != -1) {
                if (this.field_38901 == 0) {

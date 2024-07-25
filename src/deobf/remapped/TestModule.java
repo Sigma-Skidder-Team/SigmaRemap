@@ -232,7 +232,7 @@ public class TestModule extends Module {
                      if (!(var4 instanceof class_624)) {
                         if (!(var4 instanceof class_8077)) {
                            if (!(var4 instanceof class_4548)) {
-                              if (var4 instanceof class_1897 && this.method_42007("Explosions")) {
+                              if (var4 instanceof class_1897 && this.getBooleanValueByName("Explosions")) {
                                  class_1897 var5 = (class_1897)var1.method_557();
                               }
                            } else {

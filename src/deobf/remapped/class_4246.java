@@ -17,7 +17,7 @@ public class class_4246 extends Module {
 
    @EventListen
    private void method_19788(class_7767 var1) {
-      double var4 = this.field_20589 * (double)(1.0F - this.method_42002("Delay")) - this.field_20589 / 2.0;
+      double var4 = this.field_20589 * (double)(1.0F - this.getFloatValueByName("Delay")) - this.field_20589 / 2.0;
       if (mcInstance.field_9632.field_41726 && this.field_20590 <= 0) {
       }
 
@@ -27,7 +27,7 @@ public class class_4246 extends Module {
          var1.method_35229(var1.method_35231() * 0.5);
       } else if (this.field_20590 == 2) {
          this.field_20590++;
-         class_8865.method_40777(var1, (double)this.method_42002("Boost"));
+         class_8865.method_40777(var1, (double)this.getFloatValueByName("Boost"));
       }
    }
 

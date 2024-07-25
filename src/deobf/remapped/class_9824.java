@@ -19,7 +19,7 @@ public class class_9824 extends Module {
    public void method_45280(class_7767 var1) {
       if (this.method_42015()) {
          Entity var4 = null;
-         if (SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42003() || !this.method_42007("Only speed")) {
+         if (SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42003() || !this.getBooleanValueByName("Only speed")) {
             if (KillauraModule.field_12556 != null) {
                var4 = KillauraModule.field_12556.method_15377();
             } else if (KillauraModule.field_12558 != null) {
@@ -29,8 +29,8 @@ public class class_9824 extends Module {
 
          if (var4 != null) {
             double var5 = Math.sqrt(var1.method_35234() * var1.method_35234() + var1.method_35231() * var1.method_35231());
-            float var7 = this.method_42002("Radius");
-            String var8 = this.method_42016("Mode");
+            float var7 = this.getFloatValueByName("Radius");
+            String var8 = this.getStringValueByName("Mode");
             switch (var8) {
                case "Basic":
                   this.method_45282(var4, var5, (double)var7, var1);
@@ -87,7 +87,7 @@ public class class_9824 extends Module {
          mcInstance.field_9632.method_37245().field_7333 + var6.method_35236(),
          mcInstance.field_9632.method_37245().field_7334 + var6.method_35231()
       );
-      String var27 = this.method_42016("AntiVoid");
+      String var27 = this.getStringValueByName("AntiVoid");
       if (!var27.equals("None")) {
          if (!this.field_49776 && this.method_45278(var26) && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
             this.field_49775 *= -1;
@@ -97,7 +97,7 @@ public class class_9824 extends Module {
          }
       }
 
-      if (this.field_49776 && mcInstance.field_9632.method_37175(var1) > this.method_42002("Radius")) {
+      if (this.field_49776 && mcInstance.field_9632.method_37175(var1) > this.getFloatValueByName("Radius")) {
          if (!var27.equals("Halt")) {
             class_8865.method_40777(var6, var2);
             if (var27.equals("Smart")) {

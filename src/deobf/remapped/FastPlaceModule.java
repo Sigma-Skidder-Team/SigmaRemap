@@ -12,7 +12,7 @@ public class FastPlaceModule extends Module {
          if (mcInstance.field_9632.method_26446() != null) {
             if (mcInstance.field_9632.method_26446().method_27960() instanceof class_6201) {
                if (mcInstance.field_9587 instanceof class_9529) {
-                  if (!this.method_42007("Reduce Delay")) {
+                  if (!this.getBooleanValueByName("Reduce Delay")) {
                      mcInstance.field_9570 = 0;
                   } else {
                      mcInstance.field_9570--;

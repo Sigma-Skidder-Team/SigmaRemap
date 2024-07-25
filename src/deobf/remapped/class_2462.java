@@ -74,23 +74,23 @@ public class class_2462 extends Module {
             }
 
             if (this.field_12323 >= 0 && class_4181.field_20352 >= 2) {
-               if ((var1.method_35236() > 0.0 || this.method_42007("AutoJump") && class_314.method_1434()) && !class_314.method_1437(mcInstance.field_9632)) {
+               if ((var1.method_35236() > 0.0 || this.getBooleanValueByName("AutoJump") && class_314.method_1434()) && !class_314.method_1437(mcInstance.field_9632)) {
                   mcInstance.field_9632.method_26595();
                   var1.method_35235(class_8865.method_40786());
                   class_8865.method_40777(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double)class_8865.method_40770() * 0.13);
-                  if (this.method_42007("Timer") && !SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
+                  if (this.getBooleanValueByName("Timer") && !SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
                      mcInstance.field_9616.field_32603 = 1.4123F;
                   }
 
                   this.field_12323 = 0;
                   this.field_12321 = class_8988.field_46028;
-               } else if (class_314.method_1434() && this.method_42007("GroundSpeed") && !class_314.method_1437(mcInstance.field_9632)) {
+               } else if (class_314.method_1434() && this.getBooleanValueByName("GroundSpeed") && !class_314.method_1437(mcInstance.field_9632)) {
                   mcInstance.field_9632.field_41733 = 0.5F;
                   mcInstance.field_9632.method_26595();
                   var1.method_35235(0.399 + (double)class_8865.method_40769() * 0.1 + 1.0E-14);
                   class_8865.method_40777(var1, 0.51 + Math.random() * 1.0E-6 + (double)class_8865.method_40770() * 0.098);
                   this.field_12323 = 0;
-                  if (this.method_42007("Timer") && !SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
+                  if (this.getBooleanValueByName("Timer") && !SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
                      mcInstance.field_9616.field_32603 = 1.1123F;
                   }
 
@@ -131,7 +131,7 @@ public class class_2462 extends Module {
                case field_46026:
                   if (this.field_12323 == 0) {
                      double var6 = 0.399 + (double)class_8865.method_40769() * 0.1 + 1.0E-5;
-                     if (this.method_42007("BorderJump")
+                     if (this.getBooleanValueByName("BorderJump")
                         && mcInstance.field_9601
                               .method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18928(0.0, -var6 - 0.0625, 0.0))
                               .count()
@@ -164,7 +164,7 @@ public class class_2462 extends Module {
    @class_7664
    public void method_11346(class_2911 var1) {
       if (!class_7033.method_32081() && !SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_42015()) {
-         if (this.method_42007("Auto Jump") || mcInstance.field_9632.field_29654) {
+         if (this.getBooleanValueByName("Auto Jump") || mcInstance.field_9632.field_29654) {
             if (this.field_12323 < 0) {
                var1.method_29715(true);
             }
@@ -212,7 +212,7 @@ public class class_2462 extends Module {
          && (
             !mcInstance.field_9632.field_41726
                || mcInstance.field_9632.field_29654
-               || this.method_42007("AutoJump")
+               || this.getBooleanValueByName("AutoJump")
                || this.field_12321 == class_8988.field_46026
          );
    }

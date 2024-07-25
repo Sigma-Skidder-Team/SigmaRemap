@@ -10,7 +10,7 @@ public class VanillaStepModule extends Module {
    private void method_30574(class_7982 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!var1.method_36184()) {
-            mcInstance.field_9632.field_41733 = this.method_42002("Maximum heigh");
+            mcInstance.field_9632.field_41733 = this.getFloatValueByName("Maximum heigh");
          } else {
             mcInstance.field_9632.field_41733 = 0.5F;
          }

@@ -85,7 +85,7 @@ public class class_9366 extends Module {
       if (var1 == null) {
          return null;
       } else {
-         List var5 = (List)this.method_41997("Blocks");
+         List var5 = (List)this.getSettingValueByName("Blocks");
 
          for (class_1331 var7 : this.method_43317(var1)) {
             String var8 = class_8669.field_44462.method_39797(mcInstance.field_9601.method_28262(var7).method_8360()).toString();
@@ -94,7 +94,7 @@ public class class_9366 extends Module {
             }
          }
 
-         if (this.method_42007("Holes")) {
+         if (this.getBooleanValueByName("Holes")) {
             label57:
             for (class_1331 var13 : this.method_43317(var1)) {
                if (mcInstance.field_9601.method_28262(var13).method_8360() == class_4783.field_23184) {
@@ -121,7 +121,7 @@ public class class_9366 extends Module {
          if (mcInstance.field_9632.field_41697 < 20) {
             this.field_47903.clear();
          } else {
-            int var4 = (int)this.method_42002("Chunk Range");
+            int var4 = (int)this.getFloatValueByName("Chunk Range");
             ArrayList var5 = new ArrayList();
 
             for (int var6 = -5; var6 < 5; var6++) {
@@ -171,7 +171,7 @@ public class class_9366 extends Module {
    }
 
    public void method_43313() {
-      int var3 = class_314.method_1444(this.method_41993("Color"), 0.14F);
+      int var3 = class_314.method_1444(this.getIntValueByName("Color"), 0.14F);
       GL11.glPushMatrix();
       GL11.glDisable(2929);
 

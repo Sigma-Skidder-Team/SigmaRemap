@@ -17,7 +17,7 @@ public class class_1826 extends Module {
    @EventListen
    public void method_8070(class_7767 var1) {
       if (this.method_42015()) {
-         if ((float)this.field_9265 >= this.method_42002("Flags")) {
+         if ((float)this.field_9265 >= this.getFloatValueByName("Flags")) {
             class_8865.method_40777(var1, 0.0);
             var1.method_35235(0.0);
             mcInstance.field_9632.method_37214(0.0, 0.0, 0.0);
@@ -36,7 +36,7 @@ public class class_1826 extends Module {
    public void method_8072(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          if (!mcInstance.field_9632.field_41726 && !class_314.method_1413(mcInstance.field_9632, 0.001F)) {
-            if ((float)this.field_9265 >= this.method_42002("Flags") && this.field_9264 == 0) {
+            if ((float)this.field_9265 >= this.getFloatValueByName("Flags") && this.field_9264 == 0) {
                this.field_9264 = 60;
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Unstuck", "Trying to unstuck you.."));
             }
@@ -61,7 +61,7 @@ public class class_1826 extends Module {
          if (mcInstance.field_9632 != null) {
             if (var1.method_557() instanceof class_509 && !class_314.method_1413(mcInstance.field_9632, 0.3F) && mcInstance.field_9632.field_41697 > 10) {
                this.field_9265++;
-               if ((float)this.field_9265 > this.method_42002("Flags")) {
+               if ((float)this.field_9265 > this.getFloatValueByName("Flags")) {
                   var1.method_29715(true);
                }
             }

@@ -49,7 +49,7 @@ public class class_9740 extends Module {
          }
 
          int var4 = -1;
-         if (mcInstance.field_9632.method_26551() <= this.method_42017().method_42002("Health") * 2.0F) {
+         if (mcInstance.field_9632.method_26551() <= this.method_42017().getFloatValueByName("Health") * 2.0F) {
             var4 = ((class_6424)this.method_42017()).method_29349(false);
             if (this.field_49494 == -1 && this.field_49495 >= 20 && var4 != -1) {
                this.field_49494 = 0;

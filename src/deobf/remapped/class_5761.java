@@ -27,7 +27,7 @@ public class class_5761 extends Module {
       this.field_29132 = 0;
       this.field_29131 = 0;
       this.field_29133 = -1;
-      this.field_29130 = (double)(this.method_42002("OnGround Speed") * 1.0F / 4.0F);
+      this.field_29130 = (double)(this.getFloatValueByName("OnGround Speed") * 1.0F / 4.0F);
    }
 
    @EventListen
@@ -36,7 +36,7 @@ public class class_5761 extends Module {
       if (this.method_42015()
          && !SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class).method_42015()
          && !class_314.method_1437(mcInstance.field_9632)) {
-         double var4 = (double)this.method_42002("OnGround Speed");
+         double var4 = (double)this.getFloatValueByName("OnGround Speed");
          if (!mcInstance.field_9632.field_41726) {
             if (mcInstance.field_9632.field_41744) {
                this.field_29130 = 0.35;
@@ -60,7 +60,7 @@ public class class_5761 extends Module {
                this.field_29131++;
             }
 
-            if (this.method_42007("AutoJump") && class_314.method_1434()) {
+            if (this.getBooleanValueByName("AutoJump") && class_314.method_1434()) {
                mcInstance.field_9632.method_26595();
                var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
             }
@@ -70,7 +70,7 @@ public class class_5761 extends Module {
                return;
             }
 
-            if (!this.method_42007("OnGround")) {
+            if (!this.getBooleanValueByName("OnGround")) {
                return;
             }
 
@@ -140,7 +140,7 @@ public class class_5761 extends Module {
    public void method_26051(class_8544 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (var1.method_39326() > 0.2) {
-            this.field_29130 = this.field_29130 - (double)(this.method_42002("OnGround Speed") / 4.0F);
+            this.field_29130 = this.field_29130 - (double)(this.getFloatValueByName("OnGround Speed") / 4.0F);
          }
       }
    }

@@ -42,7 +42,7 @@ public class class_6053 extends Module {
    @EventListen
    public void method_27641(class_7767 var1) {
       if (this.method_42015()) {
-         String var4 = this.method_42016("Mode");
+         String var4 = this.getStringValueByName("Mode");
          if (class_314.method_1413(mcInstance.field_9632, 0.01F)) {
             if (this.field_30960 <= 1) {
                this.field_30960++;
@@ -51,7 +51,7 @@ public class class_6053 extends Module {
                this.field_30964 = -1;
             }
 
-            if (class_314.method_1434() && this.method_42007("Auto Jump")) {
+            if (class_314.method_1434() && this.getBooleanValueByName("Auto Jump")) {
                mcInstance.field_9632.method_26595();
                var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
             }
@@ -101,9 +101,9 @@ public class class_6053 extends Module {
    @EventListen
    public void method_27639(class_1711 var1) {
       if (this.method_42015()) {
-         if (this.method_42007("Fluid Fix")) {
+         if (this.getBooleanValueByName("Fluid Fix")) {
             if (!mcInstance.field_9632.field_41744 && !mcInstance.field_9632.field_41774) {
-               String var4 = this.method_42016("Mode");
+               String var4 = this.getStringValueByName("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
                   if (var4.equals("Basic")) {
@@ -132,7 +132,7 @@ public class class_6053 extends Module {
       this.field_30964 = 0;
       this.field_30960 = 0;
       this.field_30965 = class_8865.method_40787()[0];
-      String var4 = this.method_42016("Mode");
+      String var4 = this.getStringValueByName("Mode");
       switch (var4) {
          case "Basic":
             if (this.field_30963 < 3) {

@@ -46,7 +46,7 @@ public class TracersModule extends Module {
       class_1343 var10 = new class_1343(0.0, 0.0, 10.0)
          .method_6212(-((float)Math.toRadians((double) MinecraftClient.getInstance().field_9632.field_41755)))
          .method_6192(-((float)Math.toRadians((double) MinecraftClient.getInstance().field_9632.field_41701)));
-      int var11 = this.method_41993("Color");
+      int var11 = this.getIntValueByName("Color");
       GL11.glBegin(1);
       GL11.glColor4fv(class_314.method_1412(class_314.method_1444(var11, 0.45F)));
       GL11.glVertex3d(var10.field_7336, var10.field_7333, var10.field_7334);

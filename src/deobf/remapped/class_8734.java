@@ -28,9 +28,9 @@ public class class_8734 {
    }
 
    public void method_40101(Entity var1, float var2, float var3) {
-      if (this.field_44747.method_42007("Interact autoblock")) {
+      if (this.field_44747.getBooleanValueByName("Interact autoblock")) {
          class_5631 var6 = class_314.method_1410(
-            !this.field_44747.method_42007("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.field_44747.method_42002("Range")
+            !this.field_44747.getBooleanValueByName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.field_44747.getFloatValueByName("Range")
          );
          if (var6 != null) {
             this.field_44744
@@ -50,15 +50,15 @@ public class class_8734 {
    }
 
    public boolean method_40097() {
-      return !this.field_44747.method_42016("Autoblock Mode").equals("None")
+      return !this.field_44747.getStringValueByName("Autoblock Mode").equals("None")
          && this.field_44744.field_9632.method_26446().method_27960() instanceof class_2235
          && !this.method_40094();
    }
 
    public void method_40098() {
       this.field_44745 = new float[3];
-      float var3 = 20.0F / this.field_44747.method_42002("Min CPS");
-      float var4 = 20.0F / this.field_44747.method_42002("Max CPS");
+      float var3 = 20.0F / this.field_44747.getFloatValueByName("Min CPS");
+      float var4 = 20.0F / this.field_44747.getFloatValueByName("Max CPS");
       if (var3 > var4) {
          float var5 = var3;
          var3 = var4;
@@ -77,12 +77,12 @@ public class class_8734 {
 
    public boolean method_40089(int var1) {
       int var4 = (int)this.method_40095(0) - var1;
-      boolean var5 = this.field_44747.method_42016("Attack Mode").equals("Pre");
+      boolean var5 = this.field_44747.getStringValueByName("Attack Mode").equals("Pre");
       if (!var5) {
          var4++;
       }
 
-      if (this.field_44744.field_9632.method_3163() > 1.26F && this.field_44747.method_42007("Cooldown")) {
+      if (this.field_44744.field_9632.method_3163() > 1.26F && this.field_44747.getBooleanValueByName("Cooldown")) {
          int var11 = !var5 ? 1 : 2;
          float var12 = this.field_44744.field_9632.method_3163() - (float)this.field_44744.field_9632.field_29620 - (float)var11;
          return var12 <= 0.0F && var12 > -1.0F;
@@ -113,8 +113,8 @@ public class class_8734 {
    }
 
    public void method_40092() {
-      float var3 = 20.0F / this.field_44747.method_42002("Min CPS");
-      float var4 = 20.0F / this.field_44747.method_42002("Max CPS");
+      float var3 = 20.0F / this.field_44747.getFloatValueByName("Min CPS");
+      float var4 = 20.0F / this.field_44747.getFloatValueByName("Max CPS");
       if (var3 > var4) {
          float var5 = var3;
          var3 = var4;
@@ -140,8 +140,8 @@ public class class_8734 {
       Iterator var24 = var4.iterator();
       SecondModule var25 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
       float var7 = 150.0F;
-      if (var25.method_42015() && var25.method_42016("Type").equalsIgnoreCase("PingSpoof")) {
-         var7 += var25.method_16864().method_42002("Lag");
+      if (var25.method_42015() && var25.getStringValueByName("Type").equalsIgnoreCase("PingSpoof")) {
+         var7 += var25.method_16864().getFloatValueByName("Lag");
       }
 
       while (var24.hasNext()) {
@@ -159,15 +159,15 @@ public class class_8734 {
             var24.remove();
          } else if (var9 instanceof class_9399) {
             var24.remove();
-         } else if (!this.field_44747.method_42007("Players") && var9 instanceof class_704) {
+         } else if (!this.field_44747.getBooleanValueByName("Players") && var9 instanceof class_704) {
             var24.remove();
          } else if (var9 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var9)) {
             var24.remove();
-         } else if (!this.field_44747.method_42007("Invisible") && var9.method_37109()) {
+         } else if (!this.field_44747.getBooleanValueByName("Invisible") && var9.method_37109()) {
             var24.remove();
-         } else if (!this.field_44747.method_42007("Animals") && (var9 instanceof class_5467 || var9 instanceof class_7666)) {
+         } else if (!this.field_44747.getBooleanValueByName("Animals") && (var9 instanceof class_5467 || var9 instanceof class_7666)) {
             var24.remove();
-         } else if (!this.field_44747.method_42007("Monsters") && var9 instanceof class_1173) {
+         } else if (!this.field_44747.getBooleanValueByName("Monsters") && var9 instanceof class_1173) {
             var24.remove();
          } else if (this.field_44744.field_9632.method_37243() != null && this.field_44744.field_9632.method_37243().equals(var9)) {
             var24.remove();
@@ -203,7 +203,7 @@ public class class_8734 {
 
             if (!(class_314.method_1419(var10) > 8.0)) {
                boolean var26 = true;
-               if (this.field_44747.method_42007("Smart Reach")) {
+               if (this.field_44747.getBooleanValueByName("Smart Reach")) {
                   List var27 = this.field_44743.get(var9);
                   if (var27 != null) {
                      for (class_9097 var30 : var27) {
@@ -227,7 +227,7 @@ public class class_8734 {
 
                if (var26 && class_314.method_1419(var10) > (double)var1) {
                   var24.remove();
-               } else if (!this.field_44747.method_42007("Through walls")) {
+               } else if (!this.field_44747.getBooleanValueByName("Through walls")) {
                   class_1988 var28 = class_7211.method_33010(var9, true);
                   if (var28 == null) {
                      var24.remove();
@@ -246,7 +246,7 @@ public class class_8734 {
    }
 
    public List<class_3357> method_40100(List<class_3357> var1) {
-      String var4 = this.field_44747.method_42016("Sort Mode");
+      String var4 = this.field_44747.getStringValueByName("Sort Mode");
       switch (var4) {
          case "Range":
             Collections.sort(var1, new class_6917(this));

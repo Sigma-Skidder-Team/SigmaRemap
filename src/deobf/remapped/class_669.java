@@ -59,7 +59,7 @@ public class class_669 extends Module {
    @EventListen
    public void method_3074(class_1393 var1) {
       if (this.method_42015()) {
-         if (!mcInstance.field_9632.field_41726 && this.method_42007("Kick bypass")) {
+         if (!mcInstance.field_9632.field_41726 && this.getBooleanValueByName("Kick bypass")) {
             if (this.field_3718 > 0 && this.field_3718 % 30 == 0 && !class_314.method_1413(mcInstance.field_9632, 0.01F)) {
                if (class_3347.method_15349() != class_412.field_1747.method_2055()) {
                   var1.method_6455(var1.method_6454() - 0.04);
@@ -110,7 +110,7 @@ public class class_669 extends Module {
             this.field_3718 = 0;
          }
 
-         double var4 = (double)this.method_42002("Speed");
+         double var4 = (double)this.getFloatValueByName("Speed");
          double var6 = !mcInstance.field_9577.field_45450.field_30024 ? 0.0 : var4 / 2.0;
          if (mcInstance.field_9577.field_45450.field_30024 && mcInstance.field_9577.field_45560.field_30024) {
             var6 = 0.0;

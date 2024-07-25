@@ -325,7 +325,7 @@ public class NameTagsModule extends Module {
       class_3384 var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
       if (SigmaMainClass.method_3328().getModuleManager().method_847(class_9495.class).method_42015() && var13.equals(mcInstance.method_8502().method_5366())) {
-         var13 = SigmaMainClass.method_3328().getModuleManager().method_847(class_9495.class).method_42016("Username");
+         var13 = SigmaMainClass.method_3328().getModuleManager().method_847(class_9495.class).getStringValueByName("Username");
       }
 
       if (var13.length() != 0) {

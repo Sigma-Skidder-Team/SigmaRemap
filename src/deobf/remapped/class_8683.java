@@ -15,13 +15,13 @@ public class class_8683 extends Module {
       if (this.method_42015() && var1.method_16973() != null && var1.method_16971()) {
          Entity var4 = var1.method_16973();
          if (var4 instanceof class_5834
-            && var4.field_41749 <= (int)this.method_42002("HurtTime")
+            && var4.field_41749 <= (int)this.getFloatValueByName("HurtTime")
             && class_4181.field_20352 > 1
             && (this.field_44552.method_14772() > 200L || var4.field_41749 > 0)
             && mcInstance.field_9632.field_41726
             && mcInstance.field_9632.field_41774) {
             double[] var5 = new double[]{0.2, 0.0};
-            if (this.method_42016("Mode").equals("Hypixel")) {
+            if (this.getStringValueByName("Mode").equals("Hypixel")) {
                var5 = new double[]{
                   0.0624 + class_314.method_1397(), 1.0E-14 + class_314.method_1397(), 0.0624 + class_314.method_1397(), 1.0E-14 + class_314.method_1397()
                };

@@ -40,8 +40,8 @@ public class class_4033 extends Module {
             .field_568
             .forEach(
                (var1, var2) -> {
-                  boolean var5 = class_314.method_1426(var2) == class_9374.field_47922 && this.method_42017().method_42007("Show Players");
-                  boolean var6 = !var2.method_37109() || this.method_42017().method_42007("Show Invisibles");
+                  boolean var5 = class_314.method_1426(var2) == class_9374.field_47922 && this.method_42017().getBooleanValueByName("Show Players");
+                  boolean var6 = !var2.method_37109() || this.method_42017().getBooleanValueByName("Show Invisibles");
                   if (!SigmaMainClass.method_3328().method_3331().method_20495(var2) && var5 && var6 && var2 != mcInstance.field_9632) {
                      double var7 = class_9189.method_42353(var2).field_42648;
                      double var9 = class_9189.method_42353(var2).field_42646;
@@ -73,10 +73,10 @@ public class class_4033 extends Module {
    private void method_18558(boolean var1) {
       for (Entity var5 : mcInstance.field_9601.method_736()) {
          if (!SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
-            boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().method_42007("Show Players");
-            boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().method_42007("Show Mobs");
-            boolean var8 = class_314.method_1426(var5) == class_9374.field_47923 && this.method_42017().method_42007("Show Passives");
-            boolean var9 = !var5.method_37109() || this.method_42017().method_42007("Show Invisibles");
+            boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().getBooleanValueByName("Show Players");
+            boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().getBooleanValueByName("Show Mobs");
+            boolean var8 = class_314.method_1426(var5) == class_9374.field_47923 && this.method_42017().getBooleanValueByName("Show Passives");
+            boolean var9 = !var5.method_37109() || this.method_42017().getBooleanValueByName("Show Invisibles");
             if ((var7 || var6 || var8) && var9 && var5 != mcInstance.field_9632) {
                GL11.glPushMatrix();
                GL11.glTranslated(
@@ -86,7 +86,7 @@ public class class_4033 extends Module {
                );
                GL11.glDisable(2929);
                GL11.glEnable(3042);
-               int var10 = this.method_41993("Color");
+               int var10 = this.getIntValueByName("Color");
                double var11 = (var5.method_37302() - var5.field_41754) * (double) mcInstance.field_9616.field_32600 - (var5.method_37302() - var5.field_41754);
                double var13 = (var5.method_37309() - var5.field_41713) * (double) mcInstance.field_9616.field_32600 - (var5.method_37309() - var5.field_41713);
                double var15 = (var5.method_37156() - var5.field_41724) * (double) mcInstance.field_9616.field_32600 - (var5.method_37156() - var5.field_41724);

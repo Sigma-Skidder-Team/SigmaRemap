@@ -26,7 +26,7 @@ public class class_5981 extends Module {
 
    private void method_27290() {
       SigmaMainClass.method_3328().method_3331().field_21536.clear();
-      String var3 = this.method_42016("Mode");
+      String var3 = this.getStringValueByName("Mode");
       switch (var3) {
          case "Advanced":
             SigmaMainClass.method_3328().method_3331().field_21538 = new class_1590();

@@ -45,7 +45,7 @@ public class class_2850 extends Module {
 
    @EventListen
    public void method_12963(class_1393 var1) {
-      if (this.method_42015() && var1.method_6449() && this.method_42007("Ground Spoof")) {
+      if (this.method_42015() && var1.method_6449() && this.getBooleanValueByName("Ground Spoof")) {
          if (this.field_13969) {
             this.field_13969 = !this.field_13969;
             var1.method_6451(true);
@@ -63,7 +63,7 @@ public class class_2850 extends Module {
                   if (mcInstance.field_9632.method_37245().field_7333 + var1.method_35236() < this.field_13966) {
                      this.field_13969 = true;
                      int var5 = this.method_12961();
-                     boolean var6 = this.method_42007("Fake Block");
+                     boolean var6 = this.getBooleanValueByName("Fake Block");
                      if (var5 >= 0 && var6) {
                         mcInstance.method_8614().method_4813(new class_7371(var5));
                      }

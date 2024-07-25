@@ -13,7 +13,7 @@ public class class_5641 extends Module {
    private void method_25540(class_3368 var1) {
       if (this.method_42015()) {
          if (!(mcInstance.field_9632.field_41755 > 45.0F)) {
-            Entity var4 = ((class_2329)this.method_42017()).method_10678(this.method_42002("Range"));
+            Entity var4 = ((class_2329)this.method_42017()).method_10678(this.getFloatValueByName("Range"));
             if (var4 != null) {
                double var5 = (double)(mcInstance.field_9632.field_41755 - this.method_25542(var4)[1]);
                double var7 = (double)(mcInstance.field_9632.field_41701 - this.method_25542(var4)[0]);

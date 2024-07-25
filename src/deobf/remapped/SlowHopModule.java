@@ -24,7 +24,7 @@ public class SlowHopModule extends Module {
    @EventListen
    public void method_14501(class_7767 var1) {
       if (this.method_42015()) {
-         boolean var4 = this.method_42007("AutoJump");
+         boolean var4 = this.getBooleanValueByName("AutoJump");
          double var5 = class_8865.method_40775();
          boolean var7 = class_314.method_1434();
          if (!mcInstance.field_9632.field_41726) {

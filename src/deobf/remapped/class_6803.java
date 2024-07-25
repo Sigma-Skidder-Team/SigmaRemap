@@ -9,7 +9,7 @@ public class class_6803 extends Module {
    @EventListen
    private void method_31152(class_5596 var1) {
       if (this.method_42015()) {
-         mcInstance.field_9616.field_32603 = this.method_42002("Timer");
+         mcInstance.field_9616.field_32603 = this.getFloatValueByName("Timer");
       }
    }
 

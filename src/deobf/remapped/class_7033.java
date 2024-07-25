@@ -83,7 +83,7 @@ public class class_7033 extends Module {
             if (var4 != null && !var4.method_8364().method_22001()) {
                double var5 = (double)var4.method_8364().method_21998();
                if (var5 > 0.4) {
-                  if (this.method_42007("Swim up")) {
+                  if (this.getBooleanValueByName("Swim up")) {
                      var1.method_35235(0.13);
                   }
 
@@ -102,7 +102,7 @@ public class class_7033 extends Module {
                var1.method_35235(-0.078);
             }
 
-            if (this.method_42016("Mode").equals("Dolphin")) {
+            if (this.getStringValueByName("Mode").equals("Dolphin")) {
                if (this.field_36210 > 0) {
                   if (class_314.method_1413(mcInstance.field_9632, 0.001F)) {
                      this.field_36210 = 0;

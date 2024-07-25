@@ -37,7 +37,7 @@ public class class_9233 extends Module {
             class_8865.method_40777(var1, this.field_47196);
             this.field_47196 -= 0.007;
             double var4 = 0.5;
-            if (this.method_42002("Motion") > 3.0F) {
+            if (this.getFloatValueByName("Motion") > 3.0F) {
                var4 -= 0.8;
             }
 
@@ -59,7 +59,7 @@ public class class_9233 extends Module {
             if (this.field_47194) {
                this.field_47194 = !this.field_47194;
                class_8865.method_40776(0.0);
-               if (this.method_42007("Disable")) {
+               if (this.getBooleanValueByName("Disable")) {
                   this.method_42017().method_41999();
                }
 
@@ -89,7 +89,7 @@ public class class_9233 extends Module {
                   mcInstance.method_8614().method_4813(var26);
                   this.field_47192 = var24 + 0.42;
                   mcInstance.field_9632.method_37256(var17, var24, var19);
-                  this.field_47195 = (double)this.method_42002("Motion");
+                  this.field_47195 = (double)this.getFloatValueByName("Motion");
                   this.field_47196 = 0.81;
                }
             }
@@ -109,7 +109,7 @@ public class class_9233 extends Module {
 
    @EventListen
    public void method_42587(class_1711 var1) {
-      if (this.method_42015() && this.field_47194 && !(mcInstance.field_9632.method_37309() < this.field_47192) && this.method_42007("Fake fly")) {
+      if (this.method_42015() && this.field_47194 && !(mcInstance.field_9632.method_37309() < this.field_47192) && this.getBooleanValueByName("Fake fly")) {
          mcInstance.field_9632.field_41736.field_7333 = this.field_47192;
          mcInstance.field_9632.field_41713 = this.field_47192;
          mcInstance.field_9632.field_3864 = this.field_47192;

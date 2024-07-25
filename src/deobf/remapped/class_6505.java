@@ -27,7 +27,7 @@ public class class_6505 extends Module {
             class_5182 var5 = (class_5182)var4;
             String var6 = var5.method_23768().getString();
             String var7 = mcInstance.field_9632.method_45509().getString().toLowerCase();
-            if (this.field_33098.method_42007("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
+            if (this.field_33098.getBooleanValueByName("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
                this.field_33098.method_33596(var6);
             }
 
@@ -53,7 +53,7 @@ public class class_6505 extends Module {
    @EventListen
    private void method_29652(class_5596 var1) {
       if (this.method_42015()) {
-         if (this.method_42007("AutoGG") && this.field_33097.method_14772() > 5000L && this.field_33096) {
+         if (this.getBooleanValueByName("AutoGG") && this.field_33097.method_14772() > 5000L && this.field_33096) {
             this.field_33096 = false;
             this.field_33097.method_14773();
             this.field_33098.method_33593();

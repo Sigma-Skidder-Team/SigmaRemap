@@ -44,9 +44,9 @@ public class class_4820 extends Module {
 
          if (!var1.method_6449()) {
             if (field_24090 != null) {
-               if (this.method_42007("No Swing") && !this.method_42007("Mineplex")) {
+               if (this.getBooleanValueByName("No Swing") && !this.getBooleanValueByName("Mineplex")) {
                   mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
-               } else if (!this.method_42007("No Swing")) {
+               } else if (!this.getBooleanValueByName("No Swing")) {
                   mcInstance.field_9632.method_26597(class_2584.field_12791);
                }
 
@@ -63,13 +63,13 @@ public class class_4820 extends Module {
                mcInstance.method_8614().method_4813(new class_8585(class_2584.field_12791, var7));
             }
          } else {
-            List var8 = this.method_22209(!this.method_42007("Mineplex") ? mcInstance.field_9647.method_42146() : 6.0F);
+            List var8 = this.method_22209(!this.getBooleanValueByName("Mineplex") ? mcInstance.field_9647.method_42146() : 6.0F);
             if (var8.isEmpty()) {
                field_24090 = null;
             } else {
                Collections.sort(var8, new class_9688(this));
                field_24090 = (class_1331)var8.get(0);
-               if (!this.method_42007("Mineplex")) {
+               if (!this.getBooleanValueByName("Mineplex")) {
                   float[] var6 = class_7211.method_33006(
                      (double)field_24090.method_12173() + 0.5, (double)field_24090.method_12185() + 0.5, (double)field_24090.method_12165()
                   );

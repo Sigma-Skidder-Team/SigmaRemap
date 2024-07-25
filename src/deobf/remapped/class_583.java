@@ -33,7 +33,7 @@ public class class_583 extends Module {
          if (mcInstance.field_9632.field_41726) {
             this.field_3400 = 0;
             this.field_3397++;
-            if (this.field_3399 && var1.method_35236() != 0.599 && this.method_42017().method_42007("Auto Disable")) {
+            if (this.field_3399 && var1.method_35236() != 0.599 && this.method_42017().getBooleanValueByName("Auto Disable")) {
                this.method_42017().method_41999();
                class_8865.method_40777(var1, class_8865.method_40767() * 0.8);
                return;
@@ -43,12 +43,12 @@ public class class_583 extends Module {
                mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() - 0.4, mcInstance.field_9632.method_37156()
             );
             if (class_4181.field_20352 > 1) {
-               if (this.method_42017().method_42007("BorderJump") && !class_7494.method_34090(var4) && this.field_3397 > 0 && class_314.method_1434()) {
+               if (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) && this.field_3397 > 0 && class_314.method_1434()) {
                   mcInstance.field_9632.method_26595();
                   var1.method_35232(mcInstance.field_9632.method_37098().field_7336);
                   var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
                   var1.method_35229(mcInstance.field_9632.method_37098().field_7334);
-               } else if (this.method_42017().method_42007("Auto Jump") && this.field_3397 > (this.field_3399 ? 1 : 0) && class_314.method_1434()) {
+               } else if (this.method_42017().getBooleanValueByName("Auto Jump") && this.field_3397 > (this.field_3399 ? 1 : 0) && class_314.method_1434()) {
                   mcInstance.field_9632.method_26595();
                   var1.method_35232(mcInstance.field_9632.method_37098().field_7336);
                   var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
@@ -61,11 +61,11 @@ public class class_583 extends Module {
             if (this.field_3399) {
                double var5 = class_8865.method_40767() * 0.95;
                if (this.field_3400 == 1) {
-                  this.field_3398 = (double)this.method_42002("Boost") * 0.4 + (double)class_8865.method_40770() * 0.05;
-               } else if ((float)this.field_3400 > this.method_42002("Duration") + (float)class_8865.method_40770()) {
+                  this.field_3398 = (double)this.getFloatValueByName("Boost") * 0.4 + (double)class_8865.method_40770() * 0.05;
+               } else if ((float)this.field_3400 > this.getFloatValueByName("Duration") + (float)class_8865.method_40770()) {
                   this.field_3398 = var5;
                } else if (this.field_3398 > var5) {
-                  String var7 = this.method_42016("Speed Mode");
+                  String var7 = this.getStringValueByName("Speed Mode");
                   switch (var7) {
                      case "Basic":
                         this.field_3398 *= 0.987;
@@ -88,7 +88,7 @@ public class class_583 extends Module {
 
                class_8865.method_40777(var1, this.field_3398);
                if (class_8865.method_40769() == 0) {
-                  String var13 = this.method_42016("Glide Mode");
+                  String var13 = this.getStringValueByName("Glide Mode");
                   switch (var13) {
                      case "Basic":
                         var1.method_35235(((class_1213)this.method_42017()).method_5380(this.field_3400));
@@ -113,7 +113,7 @@ public class class_583 extends Module {
                }
             }
 
-            if (this.field_3397 == 1 && mcInstance.field_9632.method_37098().field_7333 < 0.0 && this.method_42017().method_42007("Auto Jump")) {
+            if (this.field_3397 == 1 && mcInstance.field_9632.method_37098().field_7333 < 0.0 && this.method_42017().getBooleanValueByName("Auto Jump")) {
                class_8865.method_40777(var1, class_8865.method_40767() * 0.2);
             }
          }
@@ -129,14 +129,14 @@ public class class_583 extends Module {
          this.field_3398 = class_8865.method_40767();
          var1.method_13315(this.field_3398);
          var1.method_13313(0.425 + (double)class_8865.method_40769() * 0.1);
-         if (this.method_42016("Glide Mode").equals("High") && class_8865.method_40769() == 0) {
+         if (this.getStringValueByName("Glide Mode").equals("High") && class_8865.method_40769() == 0) {
             var1.method_13313(0.599);
             var1.method_13315(0.0);
-            if ((double)this.method_42002("Boost") > 1.5) {
-               var1.method_13315(0.28 + (double)this.method_42002("Boost") * 0.1 + (double)class_8865.method_40770() * 0.05);
+            if ((double)this.getFloatValueByName("Boost") > 1.5) {
+               var1.method_13315(0.28 + (double)this.getFloatValueByName("Boost") * 0.1 + (double)class_8865.method_40770() * 0.05);
             }
 
-            if (this.method_42016("Speed Mode").equals("Hypixel") && (double)this.method_42002("Boost") > 1.75) {
+            if (this.getStringValueByName("Speed Mode").equals("Hypixel") && (double)this.getFloatValueByName("Boost") > 1.75) {
                class_314.method_1450(true);
             }
 
@@ -167,7 +167,7 @@ public class class_583 extends Module {
 
    @EventListen
    public void method_2757(class_7982 var1) {
-      if (!this.method_42015() || !this.method_42016("Glide Mode").equals("High")) {
+      if (!this.method_42015() || !this.getStringValueByName("Glide Mode").equals("High")) {
          ;
       }
    }

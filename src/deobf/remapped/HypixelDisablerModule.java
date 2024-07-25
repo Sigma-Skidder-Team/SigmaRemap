@@ -26,7 +26,7 @@ public class HypixelDisablerModule extends Module {
          this.field_36207 = true;
          this.field_36204.method_14773();
          this.field_36204.method_14776();
-         if (!this.method_42007("Instant")) {
+         if (!this.getBooleanValueByName("Instant")) {
             SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
          } else {
             SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
@@ -55,7 +55,7 @@ public class HypixelDisablerModule extends Module {
    public void method_32068(class_1393 var1) {
       if (mcInstance.field_9632 != null) {
          if (!this.field_36207 && mcInstance.field_9632.field_41726) {
-            if (!this.method_42007("Instant")) {
+            if (!this.getBooleanValueByName("Instant")) {
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Wait 5s..."));
             } else {
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "Move where you want"));
@@ -71,7 +71,7 @@ public class HypixelDisablerModule extends Module {
    @EventListen
    public void method_32071(class_7767 var1) {
       if (mcInstance.field_9632 != null) {
-         if (!this.method_42007("Instant") && this.field_36207) {
+         if (!this.getBooleanValueByName("Instant") && this.field_36207) {
             var1.method_35232(0.0);
             var1.method_35235(0.0);
             var1.method_35229(0.0);
@@ -103,7 +103,7 @@ public class HypixelDisablerModule extends Module {
                || var1.method_10047() instanceof class_3398
                || var1.method_10047() instanceof class_3195
                || var1.method_10047() instanceof class_1022) {
-               if (this.method_42007("Instant")) {
+               if (this.getBooleanValueByName("Instant")) {
                   this.field_36206.add(var1.method_10047());
                }
 
@@ -116,10 +116,10 @@ public class HypixelDisablerModule extends Module {
    @EventListen
    public void method_32069(class_139 var1) {
       if (mcInstance.field_9632 != null && this.field_36207) {
-         if (this.method_42015() || this.method_42007("Instant")) {
+         if (this.method_42015() || this.getBooleanValueByName("Instant")) {
             if (var1.method_557() instanceof class_509) {
                this.method_42017().method_41999();
-               if (!this.method_42007("Instant")) {
+               if (!this.getBooleanValueByName("Instant")) {
                   SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Hypixel disabler", "You can do what you want for 5s"));
                } else {
                   class_509 var4 = (class_509)var1.method_557();

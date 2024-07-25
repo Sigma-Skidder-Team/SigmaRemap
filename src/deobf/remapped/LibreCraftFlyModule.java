@@ -64,7 +64,7 @@ public class LibreCraftFlyModule extends Module {
             } else {
                var1.method_35235(0.299);
                class_314.method_1408(var1.method_35236());
-               class_8865.method_40777(var1, (double)this.method_42002("Speed"));
+               class_8865.method_40777(var1, (double)this.getFloatValueByName("Speed"));
             }
          } else {
             var1.method_35235(0.0);

@@ -25,7 +25,7 @@ public class class_6467 extends Module {
 
    private void method_29453() {
       this.field_32957 = true;
-      int var3 = this.method_41993("Color");
+      int var3 = this.getIntValueByName("Color");
       float var4 = (float)(var3 >> 24 & 0xFF) / 255.0F;
       float var5 = (float)(var3 >> 16 & 0xFF) / 255.0F;
       float var6 = (float)(var3 >> 8 & 0xFF) / 255.0F;

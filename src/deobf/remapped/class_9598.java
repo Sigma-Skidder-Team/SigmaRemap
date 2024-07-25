@@ -230,7 +230,7 @@ public class class_9598 extends Module {
          float var7 = var4[0];
          double var8 = Math.cos(Math.toRadians((double)var7));
          double var10 = Math.sin(Math.toRadians((double)var7));
-         double var12 = (double)(this.method_42002("Speed") / 2.0F);
+         double var12 = (double)(this.getFloatValueByName("Speed") / 2.0F);
          this.field_48912 = this.field_48921;
          this.field_48916 = this.field_48914;
          this.field_48926 = this.field_48927;

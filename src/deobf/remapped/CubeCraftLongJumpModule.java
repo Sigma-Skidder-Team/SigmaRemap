@@ -55,7 +55,7 @@ public class CubeCraftLongJumpModule extends Module {
             mcInstance.method_8614().method_4813(new class_9515(var4, var6, var8, true));
             class_314.method_1408(class_8865.method_40786());
             this.field_45277 = 0;
-            this.field_45278 = (double)(this.method_42002("Boost") / 2.0F);
+            this.field_45278 = (double)(this.getFloatValueByName("Boost") / 2.0F);
             class_8865.method_40776(this.field_45278);
          }
       }

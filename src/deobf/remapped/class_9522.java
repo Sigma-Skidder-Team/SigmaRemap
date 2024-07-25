@@ -28,7 +28,7 @@ public class class_9522 extends class_367 {
             this.method_42006();
          }
 
-         if (this.method_42007("Smart Visibility")) {
+         if (this.getBooleanValueByName("Smart Visibility")) {
             List var4 = mcInstance.field_9601
                .<class_704>method_25869(
                   class_704.class,
@@ -66,15 +66,15 @@ public class class_9522 extends class_367 {
       if (field_48470 != null) {
          if (this.method_42015()) {
             if (!MinecraftClient.getInstance().field_9577.field_45567) {
-               if (!this.method_42007("Smart Visibility")) {
+               if (!this.getBooleanValueByName("Smart Visibility")) {
                   this.field_48469
-                     .method_11119(mcInstance.field_9623 != null && !this.method_42007("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
+                     .method_11119(mcInstance.field_9623 != null && !this.getBooleanValueByName("Show in GUI") ? class_4043.field_19618 : class_4043.field_19620);
                } else {
                   this.field_48469.method_11119(this.field_48467 <= 0 ? class_4043.field_19618 : class_4043.field_19620);
                }
 
                float var4 = (float) mcInstance.window.method_43166() / (float) mcInstance.window.method_43163();
-               int var5 = (int)this.method_42002("Size");
+               int var5 = (int)this.getFloatValueByName("Size");
                int var6 = (int)((float)var5 / var4);
                int var7 = 10;
                int var8 = -var7 - var6;
@@ -175,7 +175,7 @@ public class class_9522 extends class_367 {
    public void method_43928(class_1711 var1) {
       if (this.method_42015()) {
          if (field_48470 != null) {
-            if (mcInstance.field_9623 == null || this.method_42007("Show in GUI") || this.field_48467 != 0) {
+            if (mcInstance.field_9623 == null || this.getBooleanValueByName("Show in GUI") || this.field_48467 != 0) {
                class_73.method_127();
                class_3542.method_16438();
                class_3542.method_16402(16640, false);

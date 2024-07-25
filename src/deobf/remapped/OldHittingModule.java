@@ -117,7 +117,7 @@ public class OldHittingModule extends Module {
          } else if (var1.method_24567() != class_1736.field_8940 || !field_10220) {
             if (field_10220 && var1.method_24570()) {
                var1.method_29715(true);
-               String var5 = this.method_42016("Animation");
+               String var5 = this.getStringValueByName("Animation");
                switch (var5) {
                   case "Vanilla":
                      this.method_9352(0.0F, var4, var1.method_24566());

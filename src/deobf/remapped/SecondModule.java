@@ -29,7 +29,7 @@ public class SecondModule extends Module {
       this.method_16862();
 
       for (Module var6 : this.field_17661) {
-         boolean var7 = this.method_42016("Type").equals(var6.field_46702);
+         boolean var7 = this.getStringValueByName("Type").equals(var6.field_46702);
          if (this.method_42015() && mcInstance.field_9632 != null) {
             var6.method_42023(var7);
             if (var7) {
@@ -47,7 +47,7 @@ public class SecondModule extends Module {
       boolean var3 = false;
 
       for (Module var7 : this.field_17661) {
-         if (this.method_42016("Type").equals(var7.field_46702)) {
+         if (this.getStringValueByName("Type").equals(var7.field_46702)) {
             var3 = true;
          }
       }
@@ -61,7 +61,7 @@ public class SecondModule extends Module {
       this.method_16862();
 
       for (Module var6 : this.field_17661) {
-         if (this.method_42016("Type").equals(var6.field_46702)) {
+         if (this.getStringValueByName("Type").equals(var6.field_46702)) {
             return var6;
          }
       }

@@ -19,7 +19,7 @@ public class class_1931 extends class_367 {
          if (mcInstance.method_8520()) {
             this.method_41999();
          } else {
-            String var4 = this.method_42016("Mode");
+            String var4 = this.getStringValueByName("Mode");
             switch (var4) {
                case "Flying Enabled":
                   double var6 = mcInstance.field_9632.method_37302();

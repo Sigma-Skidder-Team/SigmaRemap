@@ -20,8 +20,8 @@ public class class_5870 extends Module {
 
    @Override
    public void method_42006() {
-      this.field_29805 = (int)this.method_42002("Refill delay");
-      this.field_29804 = (int)this.method_42002("Refill delay");
+      this.field_29805 = (int)this.getFloatValueByName("Refill delay");
+      this.field_29804 = (int)this.getFloatValueByName("Refill delay");
       this.field_29808 = false;
       this.field_29810 = false;
       this.field_29806 = -1;
@@ -32,7 +32,7 @@ public class class_5870 extends Module {
       if (this.method_42015() && var1.method_6449()) {
          this.field_29805++;
          this.field_29804++;
-         String var4 = this.method_42016("Refill mode");
+         String var4 = this.getStringValueByName("Refill mode");
          if (!this.field_29808) {
             if (this.method_26734(class_4897.field_24719) == 0) {
                if (var4.equals("OpenInv") && !(mcInstance.field_9623 instanceof class_3431)) {
@@ -72,14 +72,14 @@ public class class_5870 extends Module {
 
    private void method_26736() {
       this.field_29808 = true;
-      if (this.method_42016("Refill mode").equals("FakeInv")
+      if (this.getStringValueByName("Refill mode").equals("FakeInv")
          && !(mcInstance.field_9623 instanceof class_3431)
          && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
          mcInstance.method_8614().method_4813(new class_8559(class_2105.field_10551));
          this.field_29810 = true;
       }
 
-      if (this.method_42016("Bowls").equals("Stack")) {
+      if (this.getStringValueByName("Bowls").equals("Stack")) {
          int var3 = this.method_26734(class_4897.field_24454);
          if (var3 > 0) {
             int var4 = this.method_26735(var3);
@@ -96,12 +96,12 @@ public class class_5870 extends Module {
    }
 
    private void method_26739() {
-      int var3 = (int)this.method_42002("Refill delay");
+      int var3 = (int)this.getFloatValueByName("Refill delay");
       if (this.field_29804 >= var3 && SigmaMainClass.method_3328().method_3310().method_25303() >= var3) {
          while (this.field_29807 < 36) {
             boolean var4 = false;
             if (class_2740.method_12311(this.field_29807).method_27960() == class_4897.field_24719
-               && Math.random() * 100.0 > (double)this.method_42002("Refill accuracy")) {
+               && Math.random() * 100.0 > (double)this.getFloatValueByName("Refill accuracy")) {
                class_2740.method_12356(mcInstance.field_9632.field_3869.field_19925, this.field_29807, 0, class_6269.field_32019, mcInstance.field_9632, true);
                this.field_29804 = 0;
                var4 = true;
@@ -137,8 +137,8 @@ public class class_5870 extends Module {
          }
       }
 
-      boolean var5 = this.method_42016("Bowls").equals("Drop");
-      if (!this.method_42016("Soup mode").equals("Instant")) {
+      boolean var5 = this.getStringValueByName("Bowls").equals("Drop");
+      if (!this.getStringValueByName("Soup mode").equals("Instant")) {
          if (this.field_29806 >= 0) {
             if (var5) {
                mcInstance.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
@@ -149,7 +149,7 @@ public class class_5870 extends Module {
             this.field_29805 = 0;
             this.field_29806 = -1;
          } else {
-            if (var3 < 0 || this.field_29805 <= 3 || mcInstance.field_9632.method_26551() > this.method_42002("Health")) {
+            if (var3 < 0 || this.field_29805 <= 3 || mcInstance.field_9632.method_26551() > this.getFloatValueByName("Health")) {
                return;
             }
 
@@ -160,7 +160,7 @@ public class class_5870 extends Module {
             mcInstance.method_8614().method_4813(new class_1022(class_2584.field_12791));
          }
       } else {
-         if (var3 < 0 || this.field_29805 <= 3 || mcInstance.field_9632.method_26551() > this.method_42002("Health")) {
+         if (var3 < 0 || this.field_29805 <= 3 || mcInstance.field_9632.method_26551() > this.getFloatValueByName("Health")) {
             return;
          }
 

@@ -14,21 +14,21 @@ public class class_7244 extends Module {
          if (mcInstance.field_9632 != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
             if (var4.method_21093() == mcInstance.field_9632.method_37145()) {
-               if (this.method_42002("H-Multiplier") == 0.0F && this.method_42002("V-Multiplier") == 0.0F) {
+               if (this.getFloatValueByName("H-Multiplier") == 0.0F && this.getFloatValueByName("V-Multiplier") == 0.0F) {
                   var1.method_29715(true);
                }
 
-               var4.field_22171 = (int)((float)var4.field_22171 * this.method_42002("H-Multiplier"));
-               var4.field_22167 = (int)((float)var4.field_22167 * this.method_42002("H-Multiplier"));
-               var4.field_22168 = (int)((float)var4.field_22168 * this.method_42002("V-Multiplier"));
+               var4.field_22171 = (int)((float)var4.field_22171 * this.getFloatValueByName("H-Multiplier"));
+               var4.field_22167 = (int)((float)var4.field_22167 * this.getFloatValueByName("H-Multiplier"));
+               var4.field_22168 = (int)((float)var4.field_22168 * this.getFloatValueByName("V-Multiplier"));
             }
          }
 
-         if (var1.method_557() instanceof class_1897 && this.method_42007("Explosions")) {
+         if (var1.method_557() instanceof class_1897 && this.getBooleanValueByName("Explosions")) {
             class_1897 var5 = (class_1897)var1.method_557();
-            var5.field_9687 = var5.field_9687 * this.method_42002("H-Multiplier");
-            var5.field_9693 = var5.field_9693 * this.method_42002("H-Multiplier");
-            var5.field_9692 = var5.field_9692 * this.method_42002("V-Multiplier");
+            var5.field_9687 = var5.field_9687 * this.getFloatValueByName("H-Multiplier");
+            var5.field_9693 = var5.field_9693 * this.getFloatValueByName("H-Multiplier");
+            var5.field_9692 = var5.field_9692 * this.getFloatValueByName("V-Multiplier");
          }
       }
    }

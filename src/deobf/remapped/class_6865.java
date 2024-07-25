@@ -19,7 +19,7 @@ public class class_6865 extends Module {
          if (mcInstance.field_9632.field_41726
             && mcInstance.field_9632.field_41774
             && (mcInstance.field_9632.field_29673 != 0.0F || mcInstance.field_9632.field_29676 != 0.0F)
-            && this.method_42007("AutoJump")) {
+            && this.getBooleanValueByName("AutoJump")) {
             mcInstance.field_9632.method_26595();
             var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
          }

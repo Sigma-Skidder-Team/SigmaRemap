@@ -1,11 +1,9 @@
 package remapped;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public abstract class Module {
    public static MinecraftClient mcInstance = MinecraftClient.getInstance();
@@ -34,48 +32,48 @@ public abstract class Module {
       }
    }
 
-   public Object method_41997(String var1) {
+   public Object getSettingValueByName(String var1) {
       return this.settingMap.get(var1).method_23031();
    }
 
-   public boolean method_42007(String var1) {
+   public boolean getBooleanValueByName(String var1) {
       try {
-         return Boolean.parseBoolean(this.method_41997(var1).toString());
+         return Boolean.parseBoolean(this.getSettingValueByName(var1).toString());
       } catch (Exception var5) {
          return false;
       }
    }
 
-   public float[] method_42024(String var1) {
-      Setting var4 = (Setting)this.method_41997(var1);
+   public float[] getMultiFloatValueByName(String var1) {
+      Setting var4 = (Setting)this.getSettingValueByName(var1);
       return !(var4 instanceof SomeWeirdMultiFloatSetting) ? null : ((SomeWeirdMultiFloatSetting)var4).method_2111();
    }
 
-   public int method_41993(String var1) {
+   public int getIntValueByName(String var1) {
       try {
-         return Integer.parseInt(this.method_41997(var1).toString());
+         return Integer.parseInt(this.getSettingValueByName(var1).toString());
       } catch (Exception var5) {
          return -1;
       }
    }
 
-   public float method_42002(String var1) {
+   public float getFloatValueByName(String var1) {
       try {
-         return Float.parseFloat(this.method_41997(var1).toString());
+         return Float.parseFloat(this.getSettingValueByName(var1).toString());
       } catch (Exception var5) {
          return -1.0F;
       }
    }
 
-   public String method_42016(String var1) {
+   public String getStringValueByName(String var1) {
       try {
-         return (String)this.method_41997(var1);
+         return (String)this.getSettingValueByName(var1);
       } catch (Exception var5) {
          return null;
       }
    }
 
-   public List<Setting> method_41988(String var1) {
+   public List<Setting> getListValueByName(String var1) {
       try {
          return ((class_4978)this.settingMap.get(var1)).method_9875();
       } catch (Exception var5) {
@@ -260,12 +258,12 @@ public abstract class Module {
             SigmaMainClass.method_3328().method_3302().method_7915(this);
             if (!(this instanceof SecondModule)) {
                if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
-                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).method_42007("Sound")) {
+                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
                   SigmaMainClass.method_3328().method_3315().method_21206("deactivate");
                }
 
                if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
-                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).method_42007("Sound")) {
+                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
                   MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
                }
             }
@@ -274,12 +272,12 @@ public abstract class Module {
          } else {
             SigmaMainClass.method_3328().method_3302().method_7917(this);
             if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
-               && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).method_42007("Sound")) {
+               && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
                SigmaMainClass.method_3328().method_3315().method_21206("activate");
             }
 
             if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
-               && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).method_42007("Sound")) {
+               && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 

@@ -46,7 +46,7 @@ public class AutoToolsModule extends Module {
             if (var5 >= 36 && var5 <= 44) {
                mcInstance.field_9632.field_3853.field_36404 = var5 % 9;
             } else if (SigmaMainClass.method_3328().method_3310().method_25303() > 1) {
-               String var6 = this.method_42016("Inv Mode");
+               String var6 = this.getStringValueByName("Inv Mode");
                if (var6.equals("OpenInv") && !(mcInstance.field_9623 instanceof class_3431)) {
                   return;
                }

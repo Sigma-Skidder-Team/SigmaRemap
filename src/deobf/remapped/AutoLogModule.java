@@ -15,7 +15,7 @@ public class AutoLogModule extends Module {
    public void method_6969(class_5596 var1) {
       if (this.method_42015() && mcInstance.field_9632.field_41697 > 10 && mcInstance.method_8515() == null && mcInstance.method_8530() != null) {
          float var4 = mcInstance.field_9632.method_26551() / mcInstance.field_9632.method_26465() * 10.0F;
-         if (var4 < this.method_42002("Min Health") || class_2740.method_12345(class_4897.field_24472) == 0) {
+         if (var4 < this.getFloatValueByName("Min Health") || class_2740.method_12345(class_4897.field_24472) == 0) {
             boolean var5 = this.method_42007("One Time Use");
             mcInstance.field_9601.method_29519();
             mcInstance.method_8499();

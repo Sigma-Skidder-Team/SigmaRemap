@@ -27,7 +27,7 @@ public class class_5372 extends Module {
             if (!mcInstance.field_9632.field_41726) {
                var1.method_35235(!mcInstance.field_9577.field_45560.method_27060() ? 0.0 : var1.method_35236());
             }
-         } else if (!this.method_42007("AutoClimb") && !mcInstance.field_9577.field_45450.method_27060()) {
+         } else if (!this.getBooleanValueByName("AutoClimb") && !mcInstance.field_9577.field_45450.method_27060()) {
             var1.method_35235(!mcInstance.field_9577.field_45560.method_27060() ? 0.0 : var1.method_35236());
          } else {
             var1.method_35235(0.6);
@@ -36,7 +36,7 @@ public class class_5372 extends Module {
          class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);
       }
 
-      if (class_314.method_1413(mcInstance.field_9632, 0.001F) && this.method_42007("SneakVClip")) {
+      if (class_314.method_1413(mcInstance.field_9632, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
          if (mcInstance.field_9577.field_45560.method_27060()
             && !this.field_27443
             && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
@@ -63,7 +63,7 @@ public class class_5372 extends Module {
             var1.method_35235(1.0E-14);
          }
       } else {
-         if (this.method_42007("Ceiling")
+         if (this.getBooleanValueByName("Ceiling")
             && !mcInstance.field_9577.field_45560.method_27060()
             && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
             var1.method_35235(1.0E-14);
@@ -85,7 +85,7 @@ public class class_5372 extends Module {
    private void method_24504(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
-         if (this.method_42007("Ceiling")
+         if (this.getBooleanValueByName("Ceiling")
             && !mcInstance.field_9632.field_41726
             && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);

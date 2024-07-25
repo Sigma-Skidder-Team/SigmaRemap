@@ -63,15 +63,15 @@ public class class_2689 extends Module {
          GL11.glDisable(3553);
          GL11.glDisable(2929);
          GL11.glDepthMask(false);
-         GL11.glColor4fv(class_314.method_1412(class_314.method_1444(this.method_41993("Color"), 0.5F)));
+         GL11.glColor4fv(class_314.method_1412(class_314.method_1444(this.getIntValueByName("Color"), 0.5F)));
          GL11.glBegin(3);
 
          for (class_1343 var6 : this.field_13172) {
             class_1343 var7 = this.method_12072(var6);
             double var8 = var6.method_6195(var4);
-            double var10 = !this.method_42007("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, var8 / 14.0);
+            double var10 = !this.getBooleanValueByName("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, var8 / 14.0);
             if (!(var8 > 24.0)) {
-               GL11.glColor4fv(class_314.method_1412(class_314.method_1444(this.method_41993("Color"), (float)var10)));
+               GL11.glColor4fv(class_314.method_1412(class_314.method_1444(this.getIntValueByName("Color"), (float)var10)));
                GL11.glVertex3d(var7.field_7336, var7.field_7333, var7.field_7334);
             }
          }

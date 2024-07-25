@@ -38,8 +38,8 @@ public class class_4221 extends Module {
    @EventListen
    private void method_19656(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         String var4 = this.method_42016("Animation");
-         String var5 = this.method_42016("Outline");
+         String var4 = this.getStringValueByName("Animation");
+         String var5 = this.getStringValueByName("Outline");
          this.method_19659();
          if (this.field_20486.method_11123() == 1.0F) {
             this.field_20486.method_11122(0.0F);
@@ -158,12 +158,12 @@ public class class_4221 extends Module {
 
    private String method_19655(Module var1) {
       String var4 = "";
-      if (var1.method_42016("Type") == null) {
-         if (var1.method_42016("Mode") != null) {
-            var4 = var4 + " " + var1.method_42016("Mode");
+      if (var1.getStringValueByName("Type") == null) {
+         if (var1.getStringValueByName("Mode") != null) {
+            var4 = var4 + " " + var1.getStringValueByName("Mode");
          }
       } else {
-         var4 = var4 + " " + var1.method_42016("Type");
+         var4 = var4 + " " + var1.getStringValueByName("Type");
       }
 
       return var4;

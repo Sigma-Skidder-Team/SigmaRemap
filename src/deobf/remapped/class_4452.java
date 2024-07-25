@@ -84,7 +84,7 @@ public class class_4452 extends Module {
 
             if (this.field_21695 > 0) {
                this.field_21695 = -1;
-               if (this.method_42017().method_42007("Auto Disable")) {
+               if (this.method_42017().getBooleanValueByName("Auto Disable")) {
                   this.method_42017().method_41999();
                   return;
                }
@@ -95,7 +95,7 @@ public class class_4452 extends Module {
                mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() - 0.4, mcInstance.field_9632.method_37156()
             );
             if (class_314.method_1434()
-               && (this.method_42017().method_42007("BorderJump") && !class_7494.method_34090(var4) || this.method_42017().method_42007("Auto Jump"))) {
+               && (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) || this.method_42017().getBooleanValueByName("Auto Jump"))) {
                mcInstance.field_9632.method_26595();
                var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
                class_8865.method_40777(var1, 0.0);

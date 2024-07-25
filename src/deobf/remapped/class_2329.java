@@ -25,13 +25,13 @@ public class class_2329 extends SecondModule {
                      if (!(mcInstance.field_9632.method_37175(var7) > var1)) {
                         if (mcInstance.field_9632.method_26608((class_5834)var7)) {
                            if (!(var7 instanceof class_9399)) {
-                              if (!this.method_42007("Players") && var7 instanceof class_704) {
+                              if (!this.getBooleanValueByName("Players") && var7 instanceof class_704) {
                                  var6.remove();
                               } else if (var7 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var7)) {
                                  var6.remove();
-                              } else if (!this.method_42007("Invisible") && var7.method_37109()) {
+                              } else if (!this.getBooleanValueByName("Invisible") && var7.method_37109()) {
                                  var6.remove();
-                              } else if (!this.method_42007("Animals/Monsters") && !(var7 instanceof class_704)) {
+                              } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var7 instanceof class_704)) {
                                  var6.remove();
                               } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var7)) {
                                  var6.remove();

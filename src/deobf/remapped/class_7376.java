@@ -74,7 +74,7 @@ public class class_7376 extends SecondModule {
          }
 
          if (!this.field_37690.isEmpty()) {
-            String var4 = this.method_42016("Type");
+            String var4 = this.getStringValueByName("Type");
 
             try {
                if (mcInstance.field_9632.field_41697 <= 3) {
@@ -124,14 +124,14 @@ public class class_7376 extends SecondModule {
    public void method_33596(String var1) {
       String[] var4 = var1.split(" ");
       String var5 = var4[0];
-      if (this.method_42016("Type").equals("Mineplex") || this.method_42016("Type").equals("Funcraft")) {
+      if (this.getStringValueByName("Type").equals("Mineplex") || this.getStringValueByName("Type").equals("Funcraft")) {
          var5 = var4[1];
       }
 
-      String var6 = this.method_42016("AutoL Mode");
+      String var6 = this.getStringValueByName("AutoL Mode");
       switch (var6) {
          case "Basic":
-            this.field_37690.add(this.method_42016("First character") + "L " + var5);
+            this.field_37690.add(this.getStringValueByName("First character") + "L " + var5);
             break;
          case "Sigmeme":
             if (this.field_37694.isEmpty()) {
@@ -140,12 +140,12 @@ public class class_7376 extends SecondModule {
             }
 
             String var11 = this.field_37694.get(0);
-            if (this.method_42016("Type").equals("Cubecraft")) {
+            if (this.getStringValueByName("Type").equals("Cubecraft")) {
                var11 = var11.replaceAll("sigma", "ＳＩＧＭＡ");
                var11 = var11.replaceAll("Sigma", "ＳＩＧＭＡ");
             }
 
-            var11 = this.method_42016("First character") + var11;
+            var11 = this.getStringValueByName("First character") + var11;
             this.field_37690.add(var11);
             this.field_37694.remove(0);
             break;
@@ -156,12 +156,12 @@ public class class_7376 extends SecondModule {
             }
 
             String var8 = this.field_37694.get(0);
-            if (this.method_42016("Type").equals("Cubecraft")) {
+            if (this.getStringValueByName("Type").equals("Cubecraft")) {
                var8 = var8.replaceAll("sigma", "ＳＩＧＭＡ");
                var8 = var8.replaceAll("Sigma", "ＳＩＧＭＡ");
             }
 
-            var8 = this.method_42016("First character") + var8;
+            var8 = this.getStringValueByName("First character") + var8;
             this.field_37690.add(var8);
             this.field_37694.remove(0);
       }

@@ -38,7 +38,7 @@ public class class_3907 extends Module {
             field_18992 = 0;
          }
 
-         boolean var4 = !this.method_42007("KillAura") || KillauraModule.field_12558 != null || KillauraModule.field_12556 != null;
+         boolean var4 = !this.getBooleanValueByName("KillAura") || KillauraModule.field_12558 != null || KillauraModule.field_12556 != null;
          if (mcInstance.field_9632.field_41726 && mcInstance.field_9632.field_41774 && var4) {
             field_18992++;
             mcInstance.field_9632.field_30502 = 0.0;

@@ -53,7 +53,7 @@ public class class_9543 extends class_367 {
          }
 
          this.field_48550 = (Entity)var4.get(0);
-         if ((float)this.field_48557 >= 20.0F / this.method_42002("CPS")) {
+         if ((float)this.field_48557 >= 20.0F / this.getFloatValueByName("CPS")) {
             class_3577 var5 = mcInstance.field_9601
                .<Entity>method_25869(
                   Entity.class, this.field_48550.field_41712.method_18928(2.0, 4.0, 2.0).method_18928(-2.0, -3.0, -2.0), var0 -> var0 instanceof class_3577
@@ -248,13 +248,13 @@ public class class_9543 extends class_367 {
                      if (!(mcInstance.field_9632.method_37175(var6) > var1)) {
                         if (mcInstance.field_9632.method_26608((class_5834)var6)) {
                            if (!(var6 instanceof class_9399)) {
-                              if (!this.method_42007("Players") && var6 instanceof class_704) {
+                              if (!this.getBooleanValueByName("Players") && var6 instanceof class_704) {
                                  var5.remove();
                               } else if (var6 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var6)) {
                                  var5.remove();
-                              } else if (!this.method_42007("Invisible") && var6.method_37109()) {
+                              } else if (!this.getBooleanValueByName("Invisible") && var6.method_37109()) {
                                  var5.remove();
-                              } else if (!this.method_42007("Animals/Monsters") && !(var6 instanceof class_704)) {
+                              } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof class_704)) {
                                  var5.remove();
                               } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var6)) {
                                  var5.remove();

@@ -8,8 +8,8 @@ public class class_9357 extends Module {
       super(Category.WORLD, "Weather", "Removes rain and changes the world's time");
       this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
       this.addSetting(new FloatSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method_23029(var1 -> {
-         if (this.method_42007("Custom time") && this.method_42015()) {
-            mcInstance.field_9601.method_719(-((long)this.method_42002("Time")));
+         if (this.getBooleanValueByName("Custom time") && this.method_42015()) {
+            mcInstance.field_9601.method_719(-((long)this.getFloatValueByName("Time")));
          }
       }));
       this.addSetting(new BooleanSetting("Disable rain", "Disable rain", true));
@@ -26,13 +26,13 @@ public class class_9357 extends Module {
          this.field_47768 = true;
       }
 
-      mcInstance.field_9601.method_719((long)this.method_42002("Time"));
+      mcInstance.field_9601.method_719((long)this.getFloatValueByName("Time"));
    }
 
    @EventListen
    private void method_43220(class_5596 var1) {
       if (this.method_42015()) {
-         if (!this.method_42007("Disable rain")) {
+         if (!this.getBooleanValueByName("Disable rain")) {
             if (this.field_47768) {
                if (!(this.field_47767 < 1.0F)) {
                   if (this.field_47767 > 1.0F) {
@@ -70,7 +70,7 @@ public class class_9357 extends Module {
                      this.field_47768 = true;
                   }
 
-                  if (!this.method_42007("Disable rain")) {
+                  if (!this.getBooleanValueByName("Disable rain")) {
                      this.field_47767 = var4.method_10055();
                   } else {
                      var1.method_556(new class_2161(var4.method_10056(), 0.0F));
@@ -78,8 +78,8 @@ public class class_9357 extends Module {
                   }
                }
             }
-         } else if (this.method_42007("Custom time")) {
-            var1.method_556(new class_8508(-((long)this.method_42002("Time")), -((long)this.method_42002("Time")), true));
+         } else if (this.getBooleanValueByName("Custom time")) {
+            var1.method_556(new class_8508(-((long)this.getFloatValueByName("Time")), -((long)this.getFloatValueByName("Time")), true));
          }
       }
    }

@@ -23,11 +23,11 @@ public class class_3854 extends Module {
 
    @Override
    public void method_42006() {
-      String var3 = this.method_42016("Mode");
+      String var3 = this.getStringValueByName("Mode");
       this.field_18794 = 1.0F;
       this.field_18800 = -1;
       if (mcInstance.field_9632.field_41726 || class_314.method_1413(mcInstance.field_9632, 0.001F)) {
-         this.field_18794 = this.method_42002("Timer Boost");
+         this.field_18794 = this.getFloatValueByName("Timer Boost");
       }
 
       if (mcInstance.field_9632.field_41726) {
@@ -119,10 +119,10 @@ public class class_3854 extends Module {
 
    @EventListen
    public void method_17889(class_7767 var1) {
-      String var4 = this.method_42016("Mode");
-      float var5 = this.method_42002("Timer Boost");
+      String var4 = this.getStringValueByName("Mode");
+      float var5 = this.getFloatValueByName("Timer Boost");
       this.field_18794 = (float)((double)this.field_18794 - 0.01);
-      if (this.field_18794 < var5 - this.method_42002("Timer Duration") || this.field_18794 < 1.0F) {
+      if (this.field_18794 < var5 - this.getFloatValueByName("Timer Duration") || this.field_18794 < 1.0F) {
          this.field_18794 = 1.0F;
       }
 
@@ -144,7 +144,7 @@ public class class_3854 extends Module {
                var1.method_35235(class_8865.method_40786());
                class_8865.method_40777(var1, var28);
                this.field_18798 = !this.field_18798;
-               this.field_18795 = 0.51 + (double)this.method_42002("Speed") + 0.015 * (double)class_8865.method_40770();
+               this.field_18795 = 0.51 + (double)this.getFloatValueByName("Speed") + 0.015 * (double)class_8865.method_40770();
                break;
             case "NoDmg":
                var1.method_35235(class_8865.method_40786());
@@ -156,7 +156,7 @@ public class class_3854 extends Module {
                var1.method_35235(class_8865.method_40786());
                class_8865.method_40777(var1, var28);
                this.field_18798 = !this.field_18798;
-               this.field_18795 = 0.51 + (double)this.method_42002("Speed");
+               this.field_18795 = 0.51 + (double)this.getFloatValueByName("Speed");
          }
       } else {
          if (var4.equals("NoDmg") && this.field_18800 > 20) {
@@ -192,7 +192,7 @@ public class class_3854 extends Module {
          class_1343 var18 = mcInstance.field_9632.method_37287(var1.method_35233().method_6214(0.0, -var1.method_35233().method_60(), 0.0));
          double var19 = Math.abs(Math.sqrt(var18.method_6221()) - this.field_18795);
          boolean var21 = var19 < 1.0E-4;
-         if (this.method_42007("No Collision") && this.field_18795 > var10) {
+         if (this.getBooleanValueByName("No Collision") && this.field_18795 > var10) {
             ArrayList var22 = new ArrayList();
             float var23 = class_9299.method_42810(class_8865.method_40785());
             if (var23 > 0.0F && var23 < 90.0F) {

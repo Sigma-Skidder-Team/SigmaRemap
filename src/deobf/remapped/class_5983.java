@@ -27,7 +27,7 @@ public class class_5983 extends Module {
                if (this.field_30487 >= 3) {
                   this.field_30487 = 0;
                   mcInstance.field_9616.field_32603 = 0.25F;
-                  class_8865.method_40777(var1, (double)this.method_42002("Speed"));
+                  class_8865.method_40777(var1, (double)this.getFloatValueByName("Speed"));
                }
             } else {
                mcInstance.field_9616.field_32603 = 2.0F;

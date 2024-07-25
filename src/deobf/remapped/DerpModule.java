@@ -18,7 +18,7 @@ public class DerpModule extends Module {
    @EventListen
    public void method_29695(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
-         if (this.method_42007("Sneak")) {
+         if (this.getBooleanValueByName("Sneak")) {
             if (this.field_33189) {
                mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20097));
             } else {
@@ -28,13 +28,13 @@ public class DerpModule extends Module {
 
          this.field_33189 = !this.field_33189;
          this.field_33188++;
-         if (this.method_42007("Hit") && this.field_33188 > this.random.nextInt(5) + 3) {
+         if (this.getBooleanValueByName("Hit") && this.field_33188 > this.random.nextInt(5) + 3) {
             this.field_33188 = 0;
             class_2584 var4 = class_2584.values()[this.random.nextInt(1)];
             mcInstance.field_9632.method_26597(var4);
          }
 
-         String var6 = this.method_42016("Rotation Mode");
+         String var6 = this.getStringValueByName("Rotation Mode");
          switch (var6) {
             case "Random":
                var1.method_6441(this.random.nextFloat() * 360.0F);

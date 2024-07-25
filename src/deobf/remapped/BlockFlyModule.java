@@ -65,7 +65,7 @@ public class BlockFlyModule extends SecondModule {
    }
 
    public boolean method_17212() {
-      return this.method_42007("No Sprint") && this.method_42015();
+      return this.getBooleanValueByName("No Sprint") && this.method_42015();
    }
 
    public static boolean method_17216(class_2451 var0) {
@@ -100,7 +100,7 @@ public class BlockFlyModule extends SecondModule {
                }
 
                mcInstance.field_9632.field_3853.field_36404 = var4;
-               if (this.method_42016("ItemSpoof").equals("LiteSpoof") && (this.field_18196 < 0 || this.field_18196 != var4)) {
+               if (this.getStringValueByName("ItemSpoof").equals("LiteSpoof") && (this.field_18196 < 0 || this.field_18196 != var4)) {
                   mcInstance.method_8614().method_9091().method_23485(new class_7371(var4));
                   this.field_18196 = var4;
                }
@@ -128,10 +128,10 @@ public class BlockFlyModule extends SecondModule {
    }
 
    public void method_17215() {
-      String var3 = this.method_42016("Picking mode");
+      String var3 = this.getStringValueByName("Picking mode");
       if ((!var3.equals("OpenInv") || mcInstance.field_9623 instanceof class_3431) && this.method_17219() != 0) {
          int var4 = 43;
-         if (!this.method_42007("Intelligent Block Picker")) {
+         if (!this.getBooleanValueByName("Intelligent Block Picker")) {
             if (!this.method_17217()) {
                int var5 = -1;
 
@@ -239,7 +239,7 @@ public class BlockFlyModule extends SecondModule {
    }
 
    public boolean method_17224(class_2584 var1) {
-      if (!this.method_42017().method_42016("ItemSpoof").equals("None")) {
+      if (!this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
          if (this.method_17219() == 0) {
             return false;
          }
@@ -259,9 +259,9 @@ public class BlockFlyModule extends SecondModule {
          mcInstance.field_9616.field_32603 = 1.0F;
       }
 
-      if (this.method_17219() != 0 && (!mcInstance.field_9632.field_41774 || this.method_42016("Tower Mode").equalsIgnoreCase("Vanilla"))) {
-         if (!class_314.method_1434() || this.method_42007("Tower while moving")) {
-            String var4 = this.method_42016("Tower Mode");
+      if (this.method_17219() != 0 && (!mcInstance.field_9632.field_41774 || this.getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
+         if (!class_314.method_1434() || this.getBooleanValueByName("Tower while moving")) {
+            String var4 = this.getStringValueByName("Tower Mode");
             switch (var4) {
                case "NCP":
                   if (var1.method_35236() > 0.0) {
@@ -319,24 +319,24 @@ public class BlockFlyModule extends SecondModule {
                   }
             }
          }
-      } else if (!this.method_42016("Tower Mode").equals("AAC")
+      } else if (!this.getStringValueByName("Tower Mode").equals("AAC")
          || !class_314.method_1413(mcInstance.field_9632, 0.001F)
          || !mcInstance.field_9577.field_45450.field_30024) {
-         if (!this.method_42016("Tower Mode").equals("NCP")
-            && !this.method_42016("Tower Mode").equals("Vanilla")
+         if (!this.getStringValueByName("Tower Mode").equals("NCP")
+            && !this.getStringValueByName("Tower Mode").equals("Vanilla")
             && class_314.method_1413(mcInstance.field_9632, 0.001F)
             && mcInstance.field_9577.field_45450.field_30024) {
             mcInstance.field_9632.field_29600 = 20;
             var1.method_35235(class_8865.method_40786());
          }
-      } else if (!class_314.method_1434() || this.method_42007("Tower while moving")) {
+      } else if (!class_314.method_1434() || this.getBooleanValueByName("Tower while moving")) {
          mcInstance.field_9632.field_29600 = 0;
          mcInstance.field_9632.method_26595();
          class_8865.method_40777(var1, class_8865.method_40775());
          class_8865.method_40776(class_8865.method_40775());
       }
 
-      if (!this.method_42016("Tower Mode").equalsIgnoreCase("Vanilla")) {
+      if (!this.getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla")) {
          class_314.method_1408(var1.method_35236());
       }
    }
@@ -349,7 +349,7 @@ public class BlockFlyModule extends SecondModule {
    @EventListen
    public void method_17218(class_5596 var1) {
       if (this.method_42015()) {
-         if (this.method_42007("Show Block Amount")) {
+         if (this.getBooleanValueByName("Show Block Amount")) {
             this.field_18193 = this.method_17219();
          }
       }
@@ -365,7 +365,7 @@ public class BlockFlyModule extends SecondModule {
    public void method_17213(class_3278 var1) {
       this.field_18194.method_11119(class_4043.field_19620);
       if (this.field_18194.method_11123() != 0.0F) {
-         if (this.method_42007("Show Block Amount")) {
+         if (this.getBooleanValueByName("Show Block Amount")) {
             if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
                this.method_17222(
                   mcInstance.window.method_43166() / 2,

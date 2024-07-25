@@ -24,10 +24,10 @@ public class class_2420 extends Module {
 
    @EventListen
    private void method_11040(class_8706 var1) {
-      if (this.method_42015() && (mcInstance.field_9632.method_37252() || !this.method_42017().method_42007("Sneak"))) {
+      if (this.method_42015() && (mcInstance.field_9632.method_37252() || !this.method_42017().getBooleanValueByName("Sneak"))) {
          if (var1.method_40004() == class_3237.field_16101) {
             class_9529 var4 = class_7494.method_34079(
-               mcInstance.field_9632.field_41701, mcInstance.field_9632.field_41755, this.method_42017().method_42002("Maximum range")
+               mcInstance.field_9632.field_41701, mcInstance.field_9632.field_41755, this.method_42017().getFloatValueByName("Maximum range")
             );
             class_1331 var5 = null;
             if (var4 != null) {
@@ -62,7 +62,7 @@ public class class_2420 extends Module {
                && var4.field_3144 == (double)(this.field_12051.method_12165() + 1)
                && var4.field_3141 == (double)this.field_12051.method_12185() + 0.5) {
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("ClickTP", "Successfully teleported"));
-               if (!this.method_42017().method_42007("Auto Disable")) {
+               if (!this.method_42017().getBooleanValueByName("Auto Disable")) {
                   this.field_12052 = -1;
                   this.field_12051 = null;
                   class_314.method_1408(-0.08);

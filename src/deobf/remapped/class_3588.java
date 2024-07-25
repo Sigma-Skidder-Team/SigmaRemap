@@ -51,7 +51,7 @@ public class class_3588 extends class_367 {
             var1.method_6448(var4[1]);
          }
 
-         if (field_17597 == (!this.method_42007("Cubecraft") ? 3 : 5)) {
+         if (field_17597 == (!this.getBooleanValueByName("Cubecraft") ? 3 : 5)) {
             if (mcInstance.field_9632.field_3853.field_36404 != this.field_17598) {
                this.field_17600 = mcInstance.field_9632.field_3853.field_36404;
                mcInstance.field_9632.field_3853.field_36404 = this.field_17598;

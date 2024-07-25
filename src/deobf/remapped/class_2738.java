@@ -82,7 +82,7 @@ public class class_2738 extends class_367 {
                }
 
                if (!this.field_13372) {
-                  class_8865.method_40777(var1, !this.method_42007("Hypixel") ? 0.0031 : 0.03);
+                  class_8865.method_40777(var1, !this.getBooleanValueByName("Hypixel") ? 0.0031 : 0.03);
                } else {
                   class_8865.method_40777(var1, 0.617);
                }

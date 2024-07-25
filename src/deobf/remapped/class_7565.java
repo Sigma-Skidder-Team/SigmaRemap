@@ -42,11 +42,11 @@ public class class_7565 extends class_367 {
    @class_5355
    private void method_34401(class_1711 var1) {
       if (this.field_38555 != null) {
-         this.field_38556 = (this.method_42007("Head") ? 100 : 0)
+         this.field_38556 = (this.getBooleanValueByName("Head") ? 100 : 0)
             + Math.max(95, class_5320.field_27152.method_18547(this.field_38555.method_45509().getString()))
-            + (this.method_42007("Armor") ? 80 : 0)
+            + (this.getBooleanValueByName("Armor") ? 80 : 0)
             + 20;
-         String var4 = this.method_42016("Position");
+         String var4 = this.getStringValueByName("Position");
          switch (var4) {
             case "Center":
                this.field_38545 = MinecraftClient.getInstance().window.method_43166() / 2 - this.field_38556 / 2;

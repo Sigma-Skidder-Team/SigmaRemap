@@ -83,7 +83,7 @@ public class class_9137 extends Module {
 
    public List<class_4333> method_42044(List<class_4333> var1) {
       ArrayList var4 = new ArrayList(var1);
-      if (this.method_42007("Unspawn Positions")) {
+      if (this.getBooleanValueByName("Unspawn Positions")) {
          var4.addAll(this.field_46733.values());
       }
 

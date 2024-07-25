@@ -27,7 +27,7 @@ public class class_4211 extends Module {
       if (mcInstance.field_9632.field_41726) {
          if (this.field_20459 > 0) {
             this.field_20459 = 0;
-            if (this.method_42017().method_42007("Auto Disable")) {
+            if (this.method_42017().getBooleanValueByName("Auto Disable")) {
                this.method_42017().method_41999();
                return;
             }
@@ -35,8 +35,8 @@ public class class_4211 extends Module {
             class_1331 var6 = new class_1331(
                mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309() - 0.4, mcInstance.field_9632.method_37156()
             );
-            if (this.method_42017().method_42007("BorderJump") && !class_7494.method_34090(var6) && class_314.method_1434()
-               || this.method_42017().method_42007("Auto Jump") && class_314.method_1434()
+            if (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var6) && class_314.method_1434()
+               || this.method_42017().getBooleanValueByName("Auto Jump") && class_314.method_1434()
                || var1.method_35236() == class_8865.method_40786()) {
                this.field_20459 = 1;
                var1.method_35235(class_8865.method_40786());
@@ -73,8 +73,8 @@ public class class_4211 extends Module {
                   var7 = 1.32;
             }
 
-            class_8865.method_40777(var1, (double)this.method_42002("Boost") * var7);
-            var1.method_35235((double)this.method_42002("Heigh") * class_8865.method_40786());
+            class_8865.method_40777(var1, (double)this.getFloatValueByName("Boost") * var7);
+            var1.method_35235((double)this.getFloatValueByName("Heigh") * class_8865.method_40786());
             this.field_20458 = 1.0;
          } else if (var1.method_35236() < 0.0 && mcInstance.field_9632.field_41706 < 3.0F) {
             this.field_20458 = this.field_20458 - var1.method_35236();
@@ -86,7 +86,7 @@ public class class_4211 extends Module {
 
    @EventListen
    public void method_19580(class_1393 var1) {
-      if (this.method_42007("NoFall")) {
+      if (this.getBooleanValueByName("NoFall")) {
          if (this.field_20458 > 3.0) {
             var1.method_6451(true);
             this.field_20458 = 0.0;

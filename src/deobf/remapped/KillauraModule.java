@@ -115,7 +115,7 @@ public class KillauraModule extends Module {
 
    @EventListen
    public void method_11541(class_717 var1) {
-      if (this.method_42015() && this.method_42007("Disable on death")) {
+      if (this.method_42015() && this.getBooleanValueByName("Disable on death")) {
          SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
          this.method_41999();
       }
@@ -128,7 +128,7 @@ public class KillauraModule extends Module {
             this.field_12562++;
          }
 
-         if (this.method_42007("Disable on death")) {
+         if (this.getBooleanValueByName("Disable on death")) {
             if (!mcInstance.field_9632.method_37330()) {
                this.method_41999();
                SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
@@ -140,7 +140,7 @@ public class KillauraModule extends Module {
    @EventListen
    public void method_11535(class_4996 var1) {
       if (this.method_42015()) {
-         if (!this.method_42016("Autoblock Mode").equals("None")
+         if (!this.getStringValueByName("Autoblock Mode").equals("None")
             && (mcInstance.field_9632.method_26446().method_27960() instanceof class_2235 || this.field_12565 != mcInstance.field_9632.field_3853.field_36404)
             && field_12558 != null) {
             var1.method_29715(true);
@@ -164,7 +164,7 @@ public class KillauraModule extends Module {
                this.field_12555--;
             }
 
-            if (field_12558 != null && this.field_12561.method_40094() && class_8865.method_40772() && this.method_42016("Autoblock Mode").equals("NCP")) {
+            if (field_12558 != null && this.field_12561.method_40094() && class_8865.method_40772() && this.getStringValueByName("Autoblock Mode").equals("NCP")) {
                this.field_12561.method_40093();
             }
 
@@ -184,10 +184,10 @@ public class KillauraModule extends Module {
             this.method_11546();
             if (this.field_12560 != null && !this.field_12560.isEmpty()) {
                this.field_12546++;
-               float var4 = this.method_42002("Hit box expand");
+               float var4 = this.getFloatValueByName("Hit box expand");
                SecondModule var5 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class);
-               if (var5.method_42015() && var5.method_42016("Type").equalsIgnoreCase("Minis")) {
-                  this.method_11542(var1, var5.method_16864().method_42016("Mode"), var5.method_16864().method_42007("Avoid Fall Damage"));
+               if (var5.method_42015() && var5.getStringValueByName("Type").equalsIgnoreCase("Minis")) {
+                  this.method_11542(var1, var5.method_16864().getStringValueByName("Mode"), var5.method_16864().getBooleanValueByName("Avoid Fall Damage"));
                }
 
                this.method_11545();
@@ -199,7 +199,7 @@ public class KillauraModule extends Module {
                var1.method_6441(this.field_12567.field_10069);
                var1.method_6448(this.field_12567.field_10067);
                boolean var6 = this.field_12561.method_40090(this.field_12546);
-               float var7 = !((double) mcInstance.field_9632.method_3163() < 1.26) && this.method_42007("Cooldown")
+               float var7 = !((double) mcInstance.field_9632.method_3163() < 1.26) && this.getBooleanValueByName("Cooldown")
                   ? mcInstance.field_9632.method_3203(0.0F)
                   : 1.0F;
                boolean var8 = field_12551 == 0 && var6 && var7 >= 1.0F;
@@ -209,7 +209,7 @@ public class KillauraModule extends Module {
 
                if (var8) {
                   KillauraManager var9 = new KillauraManager(this, var4);
-                  boolean var10 = this.method_42016("Attack Mode").equals("Pre");
+                  boolean var10 = this.getStringValueByName("Attack Mode").equals("Pre");
                   if (!var10) {
                      var1.method_6445(var9);
                   } else {
@@ -229,7 +229,7 @@ public class KillauraModule extends Module {
 
    @EventListen
    public void method_11551(class_3278 var1) {
-      if (field_12556 != null && !this.method_42007("Silent") && !this.method_42016("Rotation Mode").equals("None")) {
+      if (field_12556 != null && !this.getBooleanValueByName("Silent") && !this.getStringValueByName("Rotation Mode").equals("None")) {
          float var4 = class_9299.method_42810(
             this.field_12569.field_10069 + (this.field_12567.field_10069 - this.field_12569.field_10069) * mcInstance.method_8554()
          );
@@ -353,7 +353,7 @@ public class KillauraModule extends Module {
       GL11.glDisable(2929);
       GL11.glBegin(5);
       int var8 = (int)(360.0F / (40.0F * var3));
-      Color var9 = new Color(this.method_41993("ESP Color"));
+      Color var9 = new Color(this.getIntValueByName("ESP Color"));
       float var10 = (float)var9.getRed() / 255.0F;
       float var11 = (float)var9.getGreen() / 255.0F;
       float var12 = (float)var9.getBlue() / 255.0F;
@@ -397,7 +397,7 @@ public class KillauraModule extends Module {
       return field_12558 != null
          && mcInstance.field_9632.method_26446() != null
          && mcInstance.field_9632.method_26446().method_27960() instanceof class_2235
-         && !this.method_42016("Autoblock Mode").equals("None");
+         && !this.getStringValueByName("Autoblock Mode").equals("None");
    }
 
    @Override
@@ -432,8 +432,8 @@ public class KillauraModule extends Module {
          this.field_12545++;
          if ((
                !SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42015()
-                  || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Cubecraft")
-                  || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42016("Type").equalsIgnoreCase("Vanilla")
+                  || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).getStringValueByName("Type").equalsIgnoreCase("Cubecraft")
+                  || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).getStringValueByName("Type").equalsIgnoreCase("Vanilla")
             )
             && mcInstance.field_9632.field_41774
             && var9
@@ -454,15 +454,15 @@ public class KillauraModule extends Module {
 
    private Entity method_11557(List<class_3357> var1) {
       var1 = this.field_12561.method_40100(var1);
-      return !var1.isEmpty() && ((class_3357)var1.get(0)).method_15377().method_37175(mcInstance.field_9632) <= this.method_42002("Block Range")
+      return !var1.isEmpty() && ((class_3357)var1.get(0)).method_15377().method_37175(mcInstance.field_9632) <= this.getFloatValueByName("Block Range")
          ? ((class_3357)var1.get(0)).method_15377()
          : null;
    }
 
    private void method_11546() {
-      float var3 = this.method_42002("Block Range");
-      float var4 = this.method_42002("Range");
-      String var5 = this.method_42016("Mode");
+      float var3 = this.getFloatValueByName("Block Range");
+      float var4 = this.getFloatValueByName("Range");
+      String var5 = this.getStringValueByName("Mode");
       List var6 = this.field_12561.method_40091(Math.max(var3, var4));
       var6 = this.field_12561.method_40100(var6);
       if (this.field_12567 == null) {
@@ -545,7 +545,7 @@ public class KillauraModule extends Module {
                this.field_12547 = var9 * 1.95F / 50.0F;
                this.field_12549 = Math.random();
                field_12556 = new class_3357(
-                  this.field_12560.get(this.field_12570).method_15377(), new class_8594(!this.method_42016("Rotation Mode").equals("NCP") ? 500L : 270L)
+                  this.field_12560.get(this.field_12570).method_15377(), new class_8594(!this.getStringValueByName("Rotation Mode").equals("NCP") ? 500L : 270L)
                );
             }
 
@@ -580,10 +580,10 @@ public class KillauraModule extends Module {
 
    private void method_11545() {
       Entity var3 = field_12556.method_15377();
-      class_1988 var4 = class_7211.method_33010(var3, !this.method_42007("Through walls"));
+      class_1988 var4 = class_7211.method_33010(var3, !this.getBooleanValueByName("Through walls"));
       float var5 = class_7211.method_33009(this.field_12567.field_10069, var4.field_10069);
       float var6 = var4.field_10067 - this.field_12567.field_10067;
-      String var7 = this.method_42016("Rotation Mode");
+      String var7 = this.getStringValueByName("Rotation Mode");
       switch (var7) {
          case "Test":
             this.field_12569.field_10069 = this.field_12567.field_10069;
@@ -600,7 +600,7 @@ public class KillauraModule extends Module {
                this.field_12566 = var31;
             } else if (Math.abs(var5) > 10.0F) {
                Entity var27 = class_314.method_1458(
-                  this.field_12567.field_10067, this.field_12567.field_10069, this.method_42002("Range"), (double)this.method_42002("Hit box expand")
+                  this.field_12567.field_10067, this.field_12567.field_10069, this.getFloatValueByName("Range"), (double)this.getFloatValueByName("Hit box expand")
                );
                double var11 = var27 == null ? 13.4 : 1.4;
                this.field_12566 = (float)((double)this.field_12566 * 0.5296666666666666);
@@ -628,7 +628,7 @@ public class KillauraModule extends Module {
             }
 
             Entity var28 = class_314.method_1458(
-               this.field_12569.field_10067, this.field_12569.field_10069, this.method_42002("Range"), (double)this.method_42002("Hit box expand")
+               this.field_12569.field_10067, this.field_12569.field_10069, this.getFloatValueByName("Range"), (double)this.getFloatValueByName("Hit box expand")
             );
             if (var28 != null && (double)this.field_12559 > this.method_11543(2.0, 5.0)) {
                this.field_12559 = 0;
@@ -694,7 +694,7 @@ public class KillauraModule extends Module {
             this.field_12569.field_10069 = this.field_12567.field_10069;
             this.field_12569.field_10067 = this.field_12567.field_10067;
             class_5631 var40 = class_314.method_1410(
-               var3, this.field_12567.field_10069, this.field_12567.field_10067, var0 -> true, (double)this.method_42002("Range")
+               var3, this.field_12567.field_10069, this.field_12567.field_10067, var0 -> true, (double)this.getFloatValueByName("Range")
             );
             if (var40 == null || var40.method_25524() != var3) {
                this.field_12567 = var4;
@@ -702,7 +702,7 @@ public class KillauraModule extends Module {
             break;
          case "Test2":
             class_5631 var24 = class_314.method_1410(
-               var3, this.field_12567.field_10069, this.field_12567.field_10067, var0 -> true, (double)this.method_42002("Range")
+               var3, this.field_12567.field_10069, this.field_12567.field_10067, var0 -> true, (double)this.getFloatValueByName("Range")
             );
             if (var24 != null && var24.method_25524() == var3) {
                this.field_12569.field_10069 = this.field_12567.field_10069;

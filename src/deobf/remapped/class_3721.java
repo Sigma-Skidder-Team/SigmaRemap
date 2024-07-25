@@ -13,7 +13,7 @@ public class class_3721 extends class_367 {
       if (this.method_42015()) {
          if (mcInstance.field_9632.method_37243() != null) {
             float var4 = class_8865.method_40785();
-            float var5 = this.method_42002("Speed");
+            float var5 = this.getFloatValueByName("Speed");
             double var6 = Math.cos(Math.toRadians((double)var4)) * (double)var5;
             double var8 = Math.sin(Math.toRadians((double)var4)) * (double)var5;
             if (!class_8865.method_40772()) {

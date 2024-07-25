@@ -37,7 +37,7 @@ public class class_4599 extends class_1859 {
          class_3054.field_15006,
          (float)(this.field_36270 + 15),
          (float)(this.field_36261 + 52),
-         class_314.method_1451(this.field_22361.method_41993("Keybind")),
+         class_314.method_1451(this.field_22361.getIntValueByName("Keybind")),
          class_314.method_1444(class_1255.field_6929.field_6917, 0.7F)
       );
       if (this.field_22361.method_41996().size() > 1) {

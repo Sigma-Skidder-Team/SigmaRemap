@@ -14,8 +14,8 @@ public class class_4342 extends Module {
             class_6098 var4 = mcInstance.field_9632.method_26576();
             if (var4 != null
                && (var4.method_27952() == class_6209.field_31739 || var4.method_27952() == class_6209.field_31732)
-               && (float) mcInstance.field_9632.method_26466() < this.method_42002("Speed") * 32.0F) {
-               String var5 = this.method_42016("Mode");
+               && (float) mcInstance.field_9632.method_26466() < this.getFloatValueByName("Speed") * 32.0F) {
+               String var5 = this.getStringValueByName("Mode");
                switch (var5) {
                   case "Basic":
                      int var7 = mcInstance.field_9632.method_26466() + 2;

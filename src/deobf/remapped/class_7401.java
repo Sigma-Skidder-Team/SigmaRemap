@@ -29,7 +29,7 @@ public class class_7401 extends Module {
    @Override
    public void method_42006() {
       this.field_37780 = false;
-      this.field_37778 = (int)(20.0F / this.method_42017().method_42002("CPS"));
+      this.field_37778 = (int)(20.0F / this.method_42017().getFloatValueByName("CPS"));
       this.field_37779 = (float)this.field_37778;
    }
 
@@ -44,10 +44,10 @@ public class class_7401 extends Module {
    @class_7664
    public void method_33698(class_5596 var1) {
       if (this.method_42015()) {
-         List var4 = this.method_33696((float)((int)this.method_42002("Range")));
+         List var4 = this.method_33696((float)((int)this.getFloatValueByName("Range")));
          if (var4 != null && var4.size() != 0) {
             if (this.field_37779 < 1.0F) {
-               this.field_37779 = this.field_37779 + 20.0F / this.method_42017().method_42002("CPS");
+               this.field_37779 = this.field_37779 + 20.0F / this.method_42017().getFloatValueByName("CPS");
             }
 
             this.field_37778++;
@@ -62,7 +62,7 @@ public class class_7401 extends Module {
 
                      for (class_3357 var7 : var4) {
                         Entity var8 = var7.method_15377();
-                        if ((int)this.method_42002("Targets") < ++var5x) {
+                        if ((int)this.getFloatValueByName("Targets") < ++var5x) {
                            break;
                         }
 
@@ -72,7 +72,7 @@ public class class_7401 extends Module {
                         this.field_37777.add(var11);
                         Collections.reverse(var11);
                         this.method_33701(var11, SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42015());
-                        class_314.method_1431(var8, !this.method_42007("No Swing"));
+                        class_314.method_1431(var8, !this.getBooleanValueByName("No Swing"));
                         Collections.reverse(var11);
                         this.method_33701(var11, false);
                      }
@@ -178,13 +178,13 @@ public class class_7401 extends Module {
                      if (!(mcInstance.field_9632.method_37175(var8) > var1)) {
                         if (mcInstance.field_9632.method_26608((class_5834)var8)) {
                            if (!(var8 instanceof class_9399)) {
-                              if (!this.method_42007("Players") && var8 instanceof class_704) {
+                              if (!this.getBooleanValueByName("Players") && var8 instanceof class_704) {
                                  var7.remove();
                               } else if (var8 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var8)) {
                                  var7.remove();
-                              } else if (!this.method_42007("Invisible") && var8.method_37109()) {
+                              } else if (!this.getBooleanValueByName("Invisible") && var8.method_37109()) {
                                  var7.remove();
-                              } else if (!this.method_42007("Animals/Monsters") && !(var8 instanceof class_704)) {
+                              } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var8 instanceof class_704)) {
                                  var7.remove();
                               } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var8)) {
                                  var7.remove();

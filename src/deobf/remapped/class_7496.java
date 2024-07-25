@@ -15,7 +15,7 @@ public class class_7496 extends Module {
    @Override
    public void method_42006() {
       if (class_314.method_1413(mcInstance.field_9632, 0.001F)) {
-         this.field_38245 = this.method_42016("Offset").equals("OldHypixel");
+         this.field_38245 = this.getStringValueByName("Offset").equals("OldHypixel");
          this.field_38243 = !this.field_38245 ? 1 : 2;
       }
 
@@ -53,8 +53,8 @@ public class class_7496 extends Module {
                mcInstance.field_9632.method_26595();
             }
 
-            if (this.method_42016("Offset").equals("OldHypixel") != this.field_38245) {
-               this.field_38245 = this.method_42016("Offset").equals("OldHypixel");
+            if (this.getStringValueByName("Offset").equals("OldHypixel") != this.field_38245) {
+               this.field_38245 = this.getStringValueByName("Offset").equals("OldHypixel");
                this.field_38243 = 2;
             }
 
@@ -95,8 +95,8 @@ public class class_7496 extends Module {
             var1.method_6455(var1.method_6454() + var4);
             var1.method_6451(var6);
          } else {
-            this.field_38243 = this.method_42007("Avoid Fall Damage") && !this.field_38245 ? 3 : 0;
-            if (this.method_42007("Avoid Fall Damage") && this.field_38245 && !this.field_38246 && mcInstance.field_9632.method_37098().field_7333 < -0.1) {
+            this.field_38243 = this.getBooleanValueByName("Avoid Fall Damage") && !this.field_38245 ? 3 : 0;
+            if (this.getBooleanValueByName("Avoid Fall Damage") && this.field_38245 && !this.field_38246 && mcInstance.field_9632.method_37098().field_7333 < -0.1) {
                this.field_38246 = !this.field_38246;
                var1.method_6451(true);
             }

@@ -17,7 +17,7 @@ public class class_2791 extends Module {
    public void method_12682(class_717 var1) {
       if (!this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
-         if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("TP") || !var4.method_16864().method_42007("Ping spoof")) {
+         if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }
@@ -29,7 +29,7 @@ public class class_2791 extends Module {
    public void method_12683(class_5596 var1) {
       if (!this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
-         if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("TP") || !var4.method_16864().method_42007("Ping spoof")) {
+         if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }
@@ -70,7 +70,7 @@ public class class_2791 extends Module {
    public void method_12684(class_139 var1) {
       if (!this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_4557.class);
-         if (!var4.method_42015() || !var4.method_42016("Type").equalsIgnoreCase("TP") || !var4.method_16864().method_42007("Ping spoof")) {
+         if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }
@@ -90,14 +90,14 @@ public class class_2791 extends Module {
             } else {
                class_8913 var8 = (class_8913)var7;
                int var6 = var8.method_40996() - this.field_13713;
-               if (var6 > 0 || var6 < -20 || !this.method_42007("Inv Bypass")) {
-                  this.field_13712.add(new class_5840(this, (long)var8, (long)this.method_42002("Lag")));
+               if (var6 > 0 || var6 < -20 || !this.getBooleanValueByName("Inv Bypass")) {
+                  this.field_13712.add(new class_5840(this, (long)var8, (long)this.getFloatValueByName("Lag")));
                   var1.method_29715(true);
                }
             }
          } else {
             class_7573 var9 = (class_7573)var7;
-            this.field_13712.add(new class_5840(this, (long)var9, (long)this.method_42002("Lag")));
+            this.field_13712.add(new class_5840(this, (long)var9, (long)this.getFloatValueByName("Lag")));
             var1.method_29715(true);
          }
       }

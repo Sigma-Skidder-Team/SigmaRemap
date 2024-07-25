@@ -36,7 +36,7 @@ public class ElytraFlyModule extends Module {
       if (this.method_42015()) {
          double var4 = class_8865.method_40775();
          boolean var6 = class_314.method_1434();
-         if (!this.method_42007("NCP") && mcInstance.field_9632.method_37252()) {
+         if (!this.getBooleanValueByName("NCP") && mcInstance.field_9632.method_37252()) {
             var4 *= 2.5;
          }
 
@@ -62,10 +62,10 @@ public class ElytraFlyModule extends Module {
          }
 
          int var7 = GLFW.glfwGetKey(mcInstance.window.method_43181(), mcInstance.field_9577.field_45560.field_30027.field_17800);
-         if (var7 == 1 && this.method_42007("NCP")) {
+         if (var7 == 1 && this.getBooleanValueByName("NCP")) {
             var1.method_35235(-0.9F);
          } else if (!mcInstance.field_9632.method_37252()) {
-            if (mcInstance.field_9632.field_29654 && !this.method_42007("NCP")) {
+            if (mcInstance.field_9632.field_29654 && !this.getBooleanValueByName("NCP")) {
                var1.method_35235(1.4F);
             }
          } else {

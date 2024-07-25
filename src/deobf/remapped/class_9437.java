@@ -20,7 +20,7 @@ public class class_9437 extends Module {
    @EventListen
    private void method_43656(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
-         this.field_48180 = this.method_43660(this.method_42002("Range") / 2.0F);
+         this.field_48180 = this.method_43660(this.getFloatValueByName("Range") / 2.0F);
          if (this.field_48180.isEmpty()) {
             this.field_48181 = null;
          } else if (mcInstance.field_9647.method_42158() != class_4666.field_22761) {
@@ -46,7 +46,7 @@ public class class_9437 extends Module {
                class_6435 var5 = new class_6435(0, false, this.field_48181);
                SigmaMainClass.method_3328().method_3302().method_7914(var5);
                mcInstance.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
-               if (!this.method_42007("NoSwing")) {
+               if (!this.getBooleanValueByName("NoSwing")) {
                   mcInstance.field_9632.method_26597(class_2584.field_12791);
                } else {
                   mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
@@ -61,7 +61,7 @@ public class class_9437 extends Module {
                class_6435 var8 = new class_6435(0, false, this.field_48181);
                SigmaMainClass.method_3328().method_3302().method_7914(var8);
                mcInstance.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
-               if (!this.method_42007("NoSwing")) {
+               if (!this.getBooleanValueByName("NoSwing")) {
                   mcInstance.field_9632.method_26597(class_2584.field_12791);
                } else {
                   mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
@@ -70,7 +70,7 @@ public class class_9437 extends Module {
          } else {
             for (class_1331 var9 : this.field_48180) {
                mcInstance.method_8614().method_4813(new class_1586(class_7500.field_38263, var9, class_7494.method_34113(var9)));
-               if (!this.method_42007("NoSwing")) {
+               if (!this.getBooleanValueByName("NoSwing")) {
                   mcInstance.field_9632.method_26597(class_2584.field_12791);
                } else {
                   mcInstance.method_8614().method_4813(new class_3195(class_2584.field_12791));
@@ -83,7 +83,7 @@ public class class_9437 extends Module {
    @EventListen
    public void method_43659(class_3368 var1) {
       if (this.field_48181 != null && !mcInstance.field_9601.method_28262(this.field_48181).method_8345()) {
-         int var4 = class_314.method_1444(this.method_41993("Color"), 0.4F);
+         int var4 = class_314.method_1444(this.getIntValueByName("Color"), 0.4F);
          GL11.glPushMatrix();
          GL11.glDisable(2929);
          double var5 = (double)this.field_48181.method_12173() - mcInstance.gameRenderer.method_35949().method_41627().method_61();
@@ -133,7 +133,7 @@ public class class_9437 extends Module {
                            .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
                      )
                      < (double)var1) {
-                  String var9 = this.method_42016("Mode");
+                  String var9 = this.getStringValueByName("Mode");
                   switch (var9) {
                      case "One hit":
                         if (!this.method_43658(var8)) {

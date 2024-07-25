@@ -22,7 +22,7 @@ public class TeleportDisablerModule extends Module {
       if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449() && mcInstance.method_8530() != null) {
          this.field_33210++;
          double var4 = -4.503599627370497E15;
-         String var6 = this.method_42016("Mode");
+         String var6 = this.getStringValueByName("Mode");
          switch (var6) {
             case "Basic1":
                var4 = mcInstance.field_9632.method_37309() - 20.0;
@@ -43,7 +43,7 @@ public class TeleportDisablerModule extends Module {
                var4 = Double.MAX_VALUE;
          }
 
-         if ((float)this.field_33210 >= this.method_42002("Delay")) {
+         if ((float)this.field_33210 >= this.getFloatValueByName("Delay")) {
             this.field_33210 = 0;
             boolean var8 = this.method_42007("OnGround");
             if (this.method_42007("More Packets")) {

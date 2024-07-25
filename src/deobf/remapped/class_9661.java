@@ -49,7 +49,7 @@ public class class_9661 extends Module {
          if (this.field_49203 != 1) {
             if (this.field_49203 == 3) {
                Module var4 = SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class);
-               if (var4.method_42015() && var4.method_42016("Type").equals("NoGround")) {
+               if (var4.method_42015() && var4.getStringValueByName("Type").equals("NoGround")) {
                   var1.method_6455(var1.method_6454() + 1.0E-14);
                } else {
                   var1.method_6451(true);
@@ -76,7 +76,7 @@ public class class_9661 extends Module {
             this.field_49203++;
          } else if (this.field_49203 == 2) {
             var1.method_35235(this.field_49206 + this.field_49205 - mcInstance.field_9632.method_37309());
-            double var10 = this.method_42016("Mode").equals("AAC") ? 0.301 : class_8865.method_40775();
+            double var10 = this.getStringValueByName("Mode").equals("AAC") ? 0.301 : class_8865.method_40775();
             float var6 = this.field_49204 * (float) (Math.PI / 180.0);
             var1.method_35232((double)(-class_9299.method_42818(var6)) * var10);
             var1.method_35229((double)class_9299.method_42840(var6) * var10);
@@ -84,7 +84,7 @@ public class class_9661 extends Module {
          } else if (this.field_49203 == 3) {
             if (class_314.method_1413(mcInstance.field_9632, 0.001F)) {
                var1.method_35235(-0.078);
-               String var7 = this.method_42016("Mode");
+               String var7 = this.getStringValueByName("Mode");
                switch (var7) {
                   case "NCP":
                      class_8865.method_40777(var1, class_8865.method_40775());

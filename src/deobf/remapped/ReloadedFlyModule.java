@@ -61,25 +61,25 @@ public class ReloadedFlyModule extends Module {
          if (this.field_28770 != -1) {
             if (this.field_28770 == 0) {
                if (Math.abs(var1.method_35236()) < 0.08) {
-                  var1.method_35235(!this.method_42007("Offset") ? 0.0 : -0.01);
+                  var1.method_35235(!this.getBooleanValueByName("Offset") ? 0.0 : -0.01);
                }
 
                class_314.method_1408(var1.method_35236());
                class_8865.method_40777(var1, 0.35);
             }
          } else {
-            double var4 = !this.method_42007("Offset") ? 0.0 : 0.01;
+            double var4 = !this.getBooleanValueByName("Offset") ? 0.0 : 0.01;
             if (this.field_28772) {
-               var4 -= (double)(this.method_42002("Speed") / 2.0F);
+               var4 -= (double)(this.getFloatValueByName("Speed") / 2.0F);
             }
 
             if (mcInstance.field_9577.field_45450.method_27060()) {
-               var4 += (double)(this.method_42002("Speed") / 2.0F);
+               var4 += (double)(this.getFloatValueByName("Speed") / 2.0F);
             }
 
             var1.method_35235(var4);
             class_314.method_1408(var1.method_35236());
-            class_8865.method_40777(var1, (double)this.method_42002("Speed"));
+            class_8865.method_40777(var1, (double)this.getFloatValueByName("Speed"));
          }
       }
    }
@@ -96,7 +96,7 @@ public class ReloadedFlyModule extends Module {
             var1.method_6455(-150.0 - Math.random() * 150.0);
          }
 
-         if (this.method_42007("NoFall")) {
+         if (this.getBooleanValueByName("NoFall")) {
             var1.method_6451(true);
          }
 
@@ -127,7 +127,7 @@ public class ReloadedFlyModule extends Module {
          class_6310 var4 = var1.method_10047();
          if (var4 instanceof class_4609) {
             class_4609 var5 = (class_4609)var4;
-            if (this.field_28770 == -1 && this.method_42007("NoFall")) {
+            if (this.field_28770 == -1 && this.getBooleanValueByName("NoFall")) {
                var5.field_22416 = true;
             }
          }

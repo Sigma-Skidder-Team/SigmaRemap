@@ -31,7 +31,7 @@ public class class_8438 extends Module {
    }
 
    public void method_38821() {
-      String var3 = this.method_42016("Size");
+      String var3 = this.getStringValueByName("Size");
       switch (var3) {
          case "Normal":
             this.field_43169 = class_5320.field_27152;
@@ -52,7 +52,7 @@ public class class_8438 extends Module {
          if (var4.method_42004() != Category.GUI) {
             this.field_43173.add(var4);
             this.field_43168.put(var4, new class_2440(150, 150, class_4043.field_19618));
-            if (this.method_42007("Animations")) {
+            if (this.getBooleanValueByName("Animations")) {
                this.field_43168.get(var4).method_11119(!var4.method_42015() ? class_4043.field_19618 : class_4043.field_19620);
             }
          }
@@ -105,7 +105,7 @@ public class class_8438 extends Module {
    private void method_38819(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          for (Module var5 : this.field_43168.keySet()) {
-            if (this.method_42007("Animations")) {
+            if (this.getBooleanValueByName("Animations")) {
                this.field_43168.get(var5).method_11119(!var5.method_42015() ? class_4043.field_19618 : class_4043.field_19620);
             }
          }
@@ -131,7 +131,7 @@ public class class_8438 extends Module {
             for (Module var13 : this.field_43173) {
                float var14 = 1.0F;
                float var15 = 1.0F;
-               if (!this.method_42007("Animations")) {
+               if (!this.getBooleanValueByName("Animations")) {
                   if (!var13.method_42015()) {
                      continue;
                   }

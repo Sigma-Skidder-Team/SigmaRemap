@@ -44,11 +44,11 @@ public class class_2656 extends Module {
    private void method_12006(class_2157 var1) {
       if (this.method_42015() && mcInstance.method_8614() != null) {
          if (!this.field_13092) {
-            if ((float)this.field_13090.method_14772() > this.method_42002("Delay") * 1000.0F) {
+            if ((float)this.field_13090.method_14772() > this.getFloatValueByName("Delay") * 1000.0F) {
                this.field_13092 = true;
                this.field_13090.method_14773();
             }
-         } else if (!((float)this.field_13090.method_14772() > this.method_42002("Lag duration") * 1000.0F)) {
+         } else if (!((float)this.field_13090.method_14772() > this.getFloatValueByName("Lag duration") * 1000.0F)) {
             if (!(var1.method_10047() instanceof class_4609)) {
                if (!(var1.method_10047() instanceof class_2669) && !(var1.method_10047() instanceof class_3835)) {
                   if (!(var1.method_10047() instanceof class_3398) && !(var1.method_10047() instanceof class_3195)) {
@@ -58,13 +58,13 @@ public class class_2656 extends Module {
                         return;
                      }
 
-                     if (!this.method_42007("Blocks")) {
+                     if (!this.getBooleanValueByName("Blocks")) {
                         return;
                      }
-                  } else if (!this.method_42007("Combat")) {
+                  } else if (!this.getBooleanValueByName("Combat")) {
                      return;
                   }
-               } else if (!this.method_42007("Ping")) {
+               } else if (!this.getBooleanValueByName("Ping")) {
                   return;
                }
             }

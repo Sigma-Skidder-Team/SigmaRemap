@@ -29,15 +29,15 @@ public class AutoPotionModule extends Module {
    @class_4249
    private void method_12642(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
-         if (this.method_42007("In fight") || KillauraModule.field_12556 == null && KillauraModule.field_12558 == null) {
+         if (this.getBooleanValueByName("In fight") || KillauraModule.field_12556 == null && KillauraModule.field_12558 == null) {
             int var4 = this.method_12640();
             this.field_13560++;
             int[] var5 = new int[]{6, -1, -1};
-            if (this.method_42007("Regen")) {
+            if (this.getBooleanValueByName("Regen")) {
                var5[1] = 10;
             }
 
-            if (this.method_42007("Speed")) {
+            if (this.getBooleanValueByName("Speed")) {
                var5[2] = 1;
             }
 
@@ -63,7 +63,7 @@ public class AutoPotionModule extends Module {
                            }
                         } else if (this.field_13560 > 18
                            && !mcInstance.field_9632.method_26480(class_1425.method_6538(var5[var6]))
-                           && mcInstance.field_9632.method_26551() < this.method_42002("Health") * 2.0F) {
+                           && mcInstance.field_9632.method_26551() < this.getFloatValueByName("Health") * 2.0F) {
                            this.method_12639(var1, var4, var5[var6]);
                         }
                      }
@@ -81,7 +81,7 @@ public class AutoPotionModule extends Module {
       double var3 = mcInstance.field_9632.method_37302() + mcInstance.field_9632.method_37098().field_7336 * 26.0;
       double var5 = mcInstance.field_9632.field_41712.field_19937 - 3.6;
       double var7 = mcInstance.field_9632.method_37156() + mcInstance.field_9632.method_37098().field_7334 * 26.0;
-      return !this.method_42007("Predict") ? new float[]{mcInstance.field_9632.field_41701, 90.0F} : class_7211.method_33006(var3, var7, var5);
+      return !this.getBooleanValueByName("Predict") ? new float[]{mcInstance.field_9632.field_41701, 90.0F} : class_7211.method_33006(var3, var7, var5);
    }
 
    public int method_12640() {
@@ -109,7 +109,7 @@ public class AutoPotionModule extends Module {
             if (var9.method_27960() instanceof class_5518) {
                List var10 = class_2740.method_12313(var9);
                int var11 = this.method_12643(var10);
-               if (var10 != null && !var10.isEmpty() && (this.method_42007("Custom potion") || var11 == 1)) {
+               if (var10 != null && !var10.isEmpty() && (this.getBooleanValueByName("Custom potion") || var11 == 1)) {
                   for (class_2250 var13 : var10) {
                      int var14 = class_1425.method_6536(var13.method_10339());
                      int var15 = var13.method_10333();
@@ -165,11 +165,11 @@ public class AutoPotionModule extends Module {
             this.field_13560 = 0;
             int var7 = mcInstance.field_9632.field_3853.field_36404;
             boolean var8 = SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42015()
-               && SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42016("Type").equalsIgnoreCase("NoGround");
+               && SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
             float[] var9 = this.method_12644();
             mcInstance.field_9632.field_3853.field_36404 = var6 - 36;
             mcInstance.field_9647.method_42129();
-            if (!this.method_42007("Instant")) {
+            if (!this.getBooleanValueByName("Instant")) {
                this.field_13559 = 1;
                var1.method_6441(var9[0]);
                var1.method_6448(var9[1]);

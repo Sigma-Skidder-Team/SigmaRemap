@@ -20,7 +20,7 @@ public class class_8454 extends Module {
             class_5182 var5 = (class_5182)var4;
             String var6 = var5.method_23768().getString();
             String var7 = mcInstance.field_9632.method_45509().getString().toLowerCase();
-            if (this.field_43222.method_42007("AutoL")
+            if (this.field_43222.getBooleanValueByName("AutoL")
                && (var6.toLowerCase().contains("a été tué par " + var7) || var6.toLowerCase().contains("a été tué par le vide et " + var7))) {
                this.field_43222.method_33596(var6);
             }

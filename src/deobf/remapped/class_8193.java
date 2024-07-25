@@ -28,7 +28,7 @@ public class class_8193 extends Module {
          this.field_41934 = this.field_41933 = false;
       }
 
-      if (!this.method_42007("Damage")) {
+      if (!this.getBooleanValueByName("Damage")) {
          this.field_41933 = true;
       }
    }

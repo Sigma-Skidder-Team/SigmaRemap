@@ -31,10 +31,10 @@ public class class_2941 extends Module {
          if (!(mcInstance.field_9632.method_26576().method_27960() instanceof class_2100)) {
             this.field_14300.clear();
          } else {
-            this.field_14300 = this.method_13451(this.method_42017().method_42002("Range"));
+            this.field_14300 = this.method_13451(this.method_42017().getFloatValueByName("Range"));
          }
 
-         if (!this.field_14300.isEmpty() && this.method_42007("Silent")) {
+         if (!this.field_14300.isEmpty() && this.getBooleanValueByName("Silent")) {
             float[] var4 = class_7211.method_33005((class_5834)this.field_14300.get(0));
             var1.method_6441(var4[0]);
             var1.method_6448(var4[1]);
@@ -44,7 +44,7 @@ public class class_2941 extends Module {
 
    @EventListen
    private void method_13456(class_3278 var1) {
-      if (this.method_42015() && !this.method_42007("Silent")) {
+      if (this.method_42015() && !this.getBooleanValueByName("Silent")) {
          if (!this.field_14300.isEmpty()) {
             float[] var4 = class_7211.method_33005((class_5834)this.field_14300.get(0));
             mcInstance.field_9632.field_41701 = var4[0];
@@ -73,24 +73,24 @@ public class class_2941 extends Module {
             var5.remove();
          } else if (var6 instanceof class_9399) {
             var5.remove();
-         } else if (!this.method_42007("Players") && var6 instanceof class_704) {
+         } else if (!this.getBooleanValueByName("Players") && var6 instanceof class_704) {
             var5.remove();
-         } else if (this.method_42007("Anti-Bot") && var6 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var6)) {
+         } else if (this.getBooleanValueByName("Anti-Bot") && var6 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var6)) {
             var5.remove();
-         } else if (!this.method_42007("Invisible") && var6.method_37109()) {
+         } else if (!this.getBooleanValueByName("Invisible") && var6.method_37109()) {
             var5.remove();
-         } else if (!this.method_42007("Animals/Monsters") && !(var6 instanceof class_704)) {
+         } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof class_704)) {
             var5.remove();
          } else if (mcInstance.field_9632.method_37243() != null && mcInstance.field_9632.method_37243().equals(var6)) {
             var5.remove();
          } else if (var6.method_37367()) {
             var5.remove();
-         } else if (var6 instanceof class_704 && class_5876.method_26760((class_704)var6) && !this.method_42007("Teams")) {
+         } else if (var6 instanceof class_704 && class_5876.method_26760((class_704)var6) && !this.getBooleanValueByName("Teams")) {
             var5.remove();
          }
       }
 
-      String var8 = this.method_42016("Sort mode");
+      String var8 = this.getStringValueByName("Sort mode");
       switch (var8) {
          case "Range":
             Collections.sort(var4, new class_202(this));

@@ -22,15 +22,15 @@ public class class_7684 extends Module {
                this.field_39044 = this.field_39044 + var4 / (float) MinecraftClient.method_8501() * 1.5F;
                boolean var5 = false;
                int var6 = 14;
-               if (this.method_42007("Show Player")) {
+               if (this.getBooleanValueByName("Show Player")) {
                   var6 += this.method_34823(0, mcInstance.window.method_43163() - 23, 114);
                }
 
-               if (this.method_42007("Show Armor")) {
+               if (this.getBooleanValueByName("Show Armor")) {
                   var6 += this.method_34822(var6, mcInstance.window.method_43163() - 14) + 10;
                }
 
-               if (!this.method_42016("Cords").equals("None")) {
+               if (!this.getStringValueByName("Cords").equals("None")) {
                   var6 += this.method_34824(var6, 42) + 10;
                }
             }
@@ -54,7 +54,7 @@ public class class_7684 extends Module {
 
    public int method_34824(int var1, int var2) {
       String var5 = "Facing South";
-      String var6 = this.method_34826(this.method_42016("Cords").equals("Precise"));
+      String var6 = this.method_34826(this.getStringValueByName("Cords").equals("Precise"));
       class_73.method_87(
          class_5320.field_27161,
          (float)var1,

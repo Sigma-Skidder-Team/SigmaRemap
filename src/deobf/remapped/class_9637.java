@@ -41,7 +41,7 @@ public class class_9637 extends Module {
                      if (!(var4 < 2.1)) {
                         double[] var21 = new double[]{0.425, 0.821, 0.699, 0.599, 1.022, 1.372, 1.652, 1.869, 2.019, 1.907};
                         float var24 = 1.0F / (float)(var21.length + 1);
-                        this.field_49101 = var24 + (1.0F - var24) * this.method_42002("Timer");
+                        this.field_49101 = var24 + (1.0F - var24) * this.getFloatValueByName("Timer");
 
                         for (double var36 : var21) {
                            this.field_49102.add(new class_9515(var6, var8 + var36, var10, false));
@@ -49,7 +49,7 @@ public class class_9637 extends Module {
                      } else {
                         double[] var20 = new double[]{0.425, 0.821, 0.699, 0.599, 1.022, 1.372, 1.652, 1.869};
                         float var23 = 1.0F / (float)(var20.length + 1);
-                        this.field_49101 = var23 + (1.0F - var23) * this.method_42002("Timer");
+                        this.field_49101 = var23 + (1.0F - var23) * this.getFloatValueByName("Timer");
 
                         for (double var35 : var20) {
                            if (var35 - 0.027 <= var4) {
@@ -60,7 +60,7 @@ public class class_9637 extends Module {
                   } else {
                      double[] var19 = new double[]{0.41999998, 0.7531999805212, 1.01, 1.093, 1.015};
                      float var22 = 1.0F / (float)(var19.length + 1);
-                     this.field_49101 = var22 + (1.0F - var22) * this.method_42002("Timer");
+                     this.field_49101 = var22 + (1.0F - var22) * this.getFloatValueByName("Timer");
 
                      for (double var34 : var19) {
                         this.field_49102.add(new class_9515(var6, var8 + var34, var10, false));
@@ -69,7 +69,7 @@ public class class_9637 extends Module {
                } else {
                   double[] var12 = new double[]{0.41999998688698 * var4, 0.7531999805212 * var4};
                   float var13 = 1.0F / (float)(var12.length + 1);
-                  this.field_49101 = var13 + (1.0F - var13) * this.method_42002("Timer");
+                  this.field_49101 = var13 + (1.0F - var13) * this.getFloatValueByName("Timer");
 
                   for (double var17 : var12) {
                      this.field_49102.add(new class_9515(var6, var8 + var17, var10, false));
@@ -92,7 +92,7 @@ public class class_9637 extends Module {
          }
 
          if (!var1.method_36184()) {
-            mcInstance.field_9632.field_41733 = this.method_42002("Maximum heigh");
+            mcInstance.field_9632.field_41733 = this.getFloatValueByName("Maximum heigh");
          } else {
             mcInstance.field_9632.field_41733 = 0.5F;
             if (this.field_49101 != -1.0F) {

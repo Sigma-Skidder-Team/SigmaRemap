@@ -13,7 +13,7 @@ public class SpartanAntiKBModule extends Module {
       if (this.method_42015()) {
          if (this.field_49568 < 10) {
             this.field_49568++;
-            if (this.field_49568 == (int)this.method_42002("Ticks")) {
+            if (this.field_49568 == (int)this.getFloatValueByName("Ticks")) {
                class_8865.method_40776(0.0);
             }
          }

@@ -114,7 +114,7 @@ public class HypixelGameplayModule extends Module {
                   for (ITextComponent var32 : var5.method_23768().getSiblings()) {
                      ClickEvent var36 = var32.getStyle().getClickEvent();
                      if (var36 != null && var36.getAction() == ClickEvent$class_47.RUN_COMMAND) {
-                        class_1508 var37 = new class_1508(var36.getValue(), (long)this.field_16172.method_42002("Auto Join delay") * 1000L);
+                        class_1508 var37 = new class_1508(var36.getValue(), (long)this.field_16172.getFloatValueByName("Auto Join delay") * 1000L);
                         this.field_16172.method_33594(var37);
                      }
                   }

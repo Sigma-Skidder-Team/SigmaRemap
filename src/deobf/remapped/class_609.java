@@ -28,7 +28,7 @@ public class class_609 extends class_367 {
          }
 
          if (this.field_3481 == -1 && this.field_3483 >= 20 && this.field_3479 == -1) {
-            if (mcInstance.field_9632.method_26551() <= this.method_42017().method_42002("Health") * 2.0F && mcInstance.field_9632.method_26493() == 0.0F) {
+            if (mcInstance.field_9632.method_26551() <= this.method_42017().getFloatValueByName("Health") * 2.0F && mcInstance.field_9632.method_26493() == 0.0F) {
                this.field_3481 = ((class_6424)this.method_42017()).method_29349(false);
                if (this.field_3481 >= 0) {
                   this.field_3479 = 0;
@@ -36,7 +36,7 @@ public class class_609 extends class_367 {
                }
             }
 
-            if (this.field_3479 == -1 && this.method_42007("Fire resistance potions") && !mcInstance.field_9632.method_26480(class_1425.method_6538(12))) {
+            if (this.field_3479 == -1 && this.getBooleanValueByName("Fire resistance potions") && !mcInstance.field_9632.method_26480(class_1425.method_6538(12))) {
                this.field_3481 = ((class_6424)this.method_42017()).method_29349(true);
                if (this.field_3481 >= 0) {
                   this.field_3479 = 0;

@@ -23,7 +23,7 @@ public class class_5787 extends Module {
    @EventListen
    private void method_26177(class_2157 var1) {
       if (this.method_42015()) {
-         if (this.field_29226 && var1.method_10047() instanceof class_2317 && this.method_42007("AACP")) {
+         if (this.field_29226 && var1.method_10047() instanceof class_2317 && this.getBooleanValueByName("AACP")) {
             class_2317 var4 = (class_2317)var1.method_10047();
             if (var4.method_10650() == class_4127.field_20099) {
                var1.method_29715(true);
@@ -35,7 +35,7 @@ public class class_5787 extends Module {
    @EventListen
    private void method_26178(class_5596 var1) {
       if (this.method_42015()) {
-         if (this.method_42007("AACP")) {
+         if (this.getBooleanValueByName("AACP")) {
             boolean var4 = !(mcInstance.field_9623 instanceof class_3431) || !(mcInstance.field_9623 instanceof class_2141);
             if (this.field_29226 && !var4) {
                this.field_29226 = !this.field_29226;

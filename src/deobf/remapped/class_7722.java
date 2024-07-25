@@ -35,7 +35,7 @@ public class class_7722 extends Module {
                   float var6 = class_8865.method_40773()[0];
                   double var7 = Math.cos(Math.toRadians((double)var6));
                   double var9 = Math.sin(Math.toRadians((double)var6));
-                  double var11 = (double)((float)(7 - field_39147) * this.method_42002("Strengh")) * 0.04 * (double)this.field_39148 * 0.2;
+                  double var11 = (double)((float)(7 - field_39147) * this.getFloatValueByName("Strengh")) * 0.04 * (double)this.field_39148 * 0.2;
                   double var13 = ((double)var4 * var7 + (double)var5 * var9) * var11;
                   double var15 = ((double)var4 * var9 - (double)var5 * var7) * var11;
                   float var17 = (float)(Math.atan2(var13, var15) * 180.0 / Math.PI) - 90.0F;
@@ -81,6 +81,6 @@ public class class_7722 extends Module {
    }
 
    public boolean method_34925() {
-      return this.method_42002("Strengh") == 0.0F;
+      return this.getFloatValueByName("Strengh") == 0.0F;
    }
 }

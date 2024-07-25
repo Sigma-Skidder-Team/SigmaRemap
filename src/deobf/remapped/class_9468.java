@@ -26,8 +26,8 @@ public class class_9468 extends Module {
    @EventListen
    public void method_43746(class_7285 var1) {
       if (this.method_42015()) {
-         boolean var4 = this.method_42017().method_42007("Show Invisibles");
-         boolean var5 = this.method_42007("Show Health");
+         boolean var4 = this.method_42017().getBooleanValueByName("Show Invisibles");
+         boolean var5 = this.getBooleanValueByName("Show Health");
          class_3542.method_16438();
 
          for (Entity var7 : field_48289.keySet()) {

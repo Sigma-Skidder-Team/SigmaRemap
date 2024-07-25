@@ -267,7 +267,7 @@ public class class_8057 extends class_367 {
                return;
             }
          } else {
-            File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/nbs/" + this.method_42016("Song"));
+            File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/nbs/" + this.getStringValueByName("Song"));
             this.field_41249 = class_4713.method_21789(var3);
             if (this.field_41249 == null) {
                class_314.method_1443("§cError loading song! Make sure song is saved as <= V3 format");

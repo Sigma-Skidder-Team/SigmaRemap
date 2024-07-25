@@ -14,7 +14,7 @@ public class class_7218 extends Module {
       if (this.method_42015()) {
          SecondModule var4 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class);
          Module var5 = var4.field_17664;
-         if (var5 == null || !var5.method_42015() || !(var5 instanceof class_2461) || var5.method_42007("Haphe (AACAP)")) {
+         if (var5 == null || !var5.method_42015() || !(var5 instanceof class_2461) || var5.getBooleanValueByName("Haphe (AACAP)")) {
             if (mcInstance.field_9632.field_29673 > 0.0F && !((BlockFlyModule) SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class)).method_17212()) {
                mcInstance.field_9632.method_37140(true);
             } else {
@@ -42,7 +42,7 @@ public class class_7218 extends Module {
 
    @EventListen
    public void method_33058(class_3645 var1) {
-      if (this.method_42015() && this.method_42007("Keep Sprint")) {
+      if (this.method_42015() && this.getBooleanValueByName("Keep Sprint")) {
          if (!var1.method_16971()) {
             if (this.field_37059.length == 2) {
                double var4 = this.field_37059[0] - mcInstance.field_9632.method_37098().field_7336;

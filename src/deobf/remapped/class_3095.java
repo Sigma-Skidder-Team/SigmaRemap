@@ -28,7 +28,7 @@ public class class_3095 extends Module {
          if (var1.method_35236() < -0.5
             && (double) mcInstance.field_9632.field_41706 > 2.0 + (double)class_8865.method_40769() * 0.5
             && !mcInstance.field_9632.field_41726
-            && this.method_42016("Mode").equals("Hypixel")
+            && this.getStringValueByName("Mode").equals("Hypixel")
             && class_314.method_1387()) {
             double[] var4 = class_314.method_1466();
             int var5 = var4.length;
@@ -74,7 +74,7 @@ public class class_3095 extends Module {
    private void method_14176(class_1393 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
          if (!(mcInstance.field_9632.method_37309() < 2.0)) {
-            String var4 = this.method_42016("Mode");
+            String var4 = this.getStringValueByName("Mode");
             if (!class_314.method_1387() && var4.equals("Hypixel")) {
                var4 = "OldHypixel";
             }
@@ -136,7 +136,7 @@ public class class_3095 extends Module {
                         this.field_15401 = false;
                      }
 
-                     if (!this.field_15401 && mcInstance.field_9632.field_41706 > 3.0F && this.method_42016("Mode").equals("AAC")) {
+                     if (!this.field_15401 && mcInstance.field_9632.field_41706 > 3.0F && this.getStringValueByName("Mode").equals("AAC")) {
                         this.field_15401 = !this.field_15401;
                         class_9515 var7 = new class_9515(mcInstance.field_9632.method_37302(), Double.NaN, mcInstance.field_9632.method_37156(), true);
                         mcInstance.method_8614().method_4813(var7);

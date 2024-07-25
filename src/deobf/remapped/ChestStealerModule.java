@@ -120,7 +120,7 @@ public class ChestStealerModule extends Module {
                this.field_15895.method_14776();
             }
 
-            if (!((float) SigmaMainClass.method_3328().method_3310().method_25303() < this.method_42002("Delay") * 20.0F)) {
+            if (!((float) SigmaMainClass.method_3328().method_3310().method_25303() < this.getFloatValueByName("Delay") * 20.0F)) {
                if (class_2740.method_12366()) {
                   if (this.method_42007("Close")) {
                      mcInstance.field_9632.method_3207();
@@ -139,7 +139,7 @@ public class ChestStealerModule extends Module {
                            class_6098 var8 = var7.method_35898();
                            if (!this.method_14636(var8)) {
                               if (!this.field_15894) {
-                                 if ((float)this.field_15895.method_14772() < this.method_42002("First Item") * 1000.0F) {
+                                 if ((float)this.field_15895.method_14772() < this.getFloatValueByName("First Item") * 1000.0F) {
                                     return;
                                  }
 
@@ -156,7 +156,7 @@ public class ChestStealerModule extends Module {
 
                               this.field_15895.method_14773();
                               var5 = false;
-                              if (this.method_42002("Delay") > 0.0F) {
+                              if (this.getFloatValueByName("Delay") > 0.0F) {
                                  break;
                               }
                            }

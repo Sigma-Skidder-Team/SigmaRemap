@@ -72,7 +72,7 @@ public class class_1370 extends Module {
    private void method_6347(class_4719 var1) {
       GL11.glDepthFunc(519);
       field_7448 = var1;
-      int var4 = this.method_41993("Color");
+      int var4 = this.getIntValueByName("Color");
       float var5 = (float)(var4 >> 24 & 0xFF) / 255.0F;
       float var6 = (float)(var4 >> 16 & 0xFF) / 255.0F;
       float var7 = (float)(var4 >> 8 & 0xFF) / 255.0F;

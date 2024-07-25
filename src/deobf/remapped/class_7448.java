@@ -44,7 +44,7 @@ public class class_7448 extends Module {
 
                this.field_37947 = class_8865.method_40780(var1, this.field_37949, class_8865.method_40787()[0], this.field_37947, 45.0F);
             }
-         } else if (this.method_42007("Auto Jump") && class_314.method_1434()) {
+         } else if (this.getBooleanValueByName("Auto Jump") && class_314.method_1434()) {
             this.field_37948 = 0;
             mcInstance.field_9632.method_26595();
             var1.method_35232(mcInstance.field_9632.method_37098().field_7336);

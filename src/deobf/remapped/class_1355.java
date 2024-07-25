@@ -13,9 +13,9 @@ public class class_1355 extends Module {
    public void method_6254(class_5596 var1) {
       if (this.method_42015()) {
          this.field_7386++;
-         if ((float)this.field_7386 > this.method_42002("Messages delay") * 20.0F) {
+         if ((float)this.field_7386 > this.getFloatValueByName("Messages delay") * 20.0F) {
             this.field_7386 = 0;
-            String var4 = this.method_42016("Message").replaceAll("%r", Integer.toString(Math.round(10.0F + (float)Math.random() * 89.0F)));
+            String var4 = this.getStringValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0F + (float)Math.random() * 89.0F)));
             class_314.method_1423(var4);
          }
       }

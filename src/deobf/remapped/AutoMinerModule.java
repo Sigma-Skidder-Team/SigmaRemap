@@ -86,7 +86,7 @@ public class AutoMinerModule extends Module {
          if (mcInstance.field_9632.field_41697 < 20) {
             this.field_25751.clear();
          } else {
-            int var4 = (int)this.method_42002("Chunk Range");
+            int var4 = (int)this.getFloatValueByName("Chunk Range");
             ArrayList var5 = new ArrayList();
 
             for (int var6 = -4; var6 < 4; var6++) {

@@ -34,9 +34,9 @@ public class AntiVoidModule extends Module {
 
          if (this.field_37110 <= 0) {
             Module var4 = SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class);
-            String var5 = var4.method_42016("Type");
+            String var5 = var4.getStringValueByName("Type");
             Module var6 = SigmaMainClass.method_3328().getModuleManager().method_847(class_5838.class);
-            String var7 = var6.method_42016("Type");
+            String var7 = var6.getStringValueByName("Type");
             boolean var8 = var4.method_42015();
             if (var5.equals("Cubecraft") && var1.method_35236() < -0.4) {
                var8 = false;
@@ -57,9 +57,9 @@ public class AntiVoidModule extends Module {
             this.field_37110--;
          }
 
-         if (this.field_37111 > (double)this.method_42002("Fall Distance") && (this.method_33100() || !this.method_42007("Void"))) {
+         if (this.field_37111 > (double)this.getFloatValueByName("Fall Distance") && (this.method_33100() || !this.getBooleanValueByName("Void"))) {
             this.field_37111 = 0.0;
-            this.method_33096(this.method_42016("Mode"), var1);
+            this.method_33096(this.getStringValueByName("Mode"), var1);
          }
 
          if (this.field_37112 > 0) {

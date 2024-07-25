@@ -17,7 +17,7 @@ public class class_914 extends Module {
 
    @Override
    public void method_42006() {
-      if (this.method_42016("Type").equals("Normal")) {
+      if (this.getStringValueByName("Type").equals("Normal")) {
          mcInstance.field_9577.field_45391 = 999.0;
       }
    }
@@ -27,7 +27,7 @@ public class class_914 extends Module {
       if (this.method_42015()) {
          mcInstance.field_9577.field_45391 = 999.0;
          if (mcInstance.field_9601 != null) {
-            if (!this.method_42016("Type").equals("Normal")) {
+            if (!this.getStringValueByName("Type").equals("Normal")) {
                int var4 = 16;
                class_1331 var5 = new class_1331(
                      mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309(), mcInstance.field_9632.method_37156()

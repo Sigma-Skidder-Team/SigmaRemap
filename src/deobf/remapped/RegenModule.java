@@ -14,8 +14,8 @@ public class RegenModule extends Module {
             && mcInstance.field_9632.method_3161().method_42238() > 17
             && mcInstance.field_9632.method_26551() < 20.0F
             && mcInstance.field_9632.method_26551() != 0.0F
-            && (mcInstance.field_9632.field_41726 || !this.method_42007("Only OnGround"))) {
-            for (int var4 = 0; (float)var4 < this.method_42002("Packet amount"); var4++) {
+            && (mcInstance.field_9632.field_41726 || !this.getBooleanValueByName("Only OnGround"))) {
+            for (int var4 = 0; (float)var4 < this.getFloatValueByName("Packet amount"); var4++) {
                mcInstance.method_8614().method_4813(new class_4609(mcInstance.field_9632.field_41726));
             }
          }

@@ -38,9 +38,9 @@ public class AutoArmorModule extends Module {
             this.field_9397.method_14776();
          }
 
-         if (!this.method_42016("Mode").equals("OpenInv") || mcInstance.field_9623 instanceof class_3431) {
-            long var4 = (long)(this.method_42002("Delay") * 1000.0F);
-            String var6 = this.method_42016("Elytra");
+         if (!this.getStringValueByName("Mode").equals("OpenInv") || mcInstance.field_9623 instanceof class_3431) {
+            long var4 = (long)(this.getFloatValueByName("Delay") * 1000.0F);
+            String var6 = this.getStringValueByName("Elytra");
             switch (var6) {
                case "Ignore":
                   this.field_9396 = false;
@@ -65,7 +65,7 @@ public class AutoArmorModule extends Module {
                && this.field_9397.method_14772() > var4
                && (float) SigmaMainClass.method_3328().method_3310().method_25303() > (float)var4 / 50.0F) {
                field_9392 = false;
-               this.method_8193(this.method_42016("Mode").equalsIgnoreCase("FakeInv"));
+               this.method_8193(this.getStringValueByName("Mode").equalsIgnoreCase("FakeInv"));
             }
 
             for (class_6943 var9 : class_6943.values()) {
@@ -115,12 +115,12 @@ public class AutoArmorModule extends Module {
                      class_2740.method_12356(mcInstance.field_9632.field_3869.field_19925, var12, 0, class_6269.field_32019, mcInstance.field_9632, true);
                      this.field_9397.method_14773();
                      field_9392 = true;
-                     if (this.method_42016("Elytra").equals("On Use")) {
+                     if (this.getStringValueByName("Elytra").equals("On Use")) {
                         mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20093));
                         mcInstance.field_9632.method_37220(7, true);
                      }
 
-                     if (SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).method_42002("Delay") > 0.0F) {
+                     if (SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).getFloatValueByName("Delay") > 0.0F) {
                         return;
                      }
                   }
@@ -146,7 +146,7 @@ public class AutoArmorModule extends Module {
                      class_2740.method_12356(mcInstance.field_9632.field_3869.field_19925, var12, 0, class_6269.field_32019, mcInstance.field_9632, true);
                      this.field_9397.method_14773();
                      field_9392 = true;
-                     if (SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).method_42002("Delay") > 0.0F) {
+                     if (SigmaMainClass.method_3328().getModuleManager().method_847(AutoArmorModule.class).getFloatValueByName("Delay") > 0.0F) {
                         return;
                      }
                   }

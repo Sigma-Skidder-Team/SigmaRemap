@@ -25,7 +25,7 @@ public class class_8136 extends Module {
                var1.method_35235((double)((int) mcInstance.field_9632.method_37245().field_7333) - mcInstance.field_9632.method_37245().field_7333);
                this.field_41672 = true;
             }
-         } else if (this.method_42007("AutoJump") || mcInstance.field_9577.field_45450.method_27060()) {
+         } else if (this.getBooleanValueByName("AutoJump") || mcInstance.field_9577.field_45450.method_27060()) {
             mcInstance.field_9632.method_26595();
             var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
          } else if (!mcInstance.field_9577.field_45560.method_27060()) {
@@ -34,7 +34,7 @@ public class class_8136 extends Module {
          } else {
             var1.method_35235(-0.0784);
          }
-      } else if (this.method_42007("AutoJump")) {
+      } else if (this.getBooleanValueByName("AutoJump")) {
          mcInstance.field_9632.method_26595();
          var1.method_35235(mcInstance.field_9632.method_37098().field_7333);
       }
@@ -46,8 +46,8 @@ public class class_8136 extends Module {
    private void method_37010(class_1393 var1) {
       if (this.method_42015() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
-         String var5 = this.method_42016("Mode");
-         if (this.method_42007("Ceiling")
+         String var5 = this.getStringValueByName("Mode");
+         if (this.getBooleanValueByName("Ceiling")
             && !mcInstance.field_9632.field_41726
             && mcInstance.field_9601.method_6680(mcInstance.field_9632, mcInstance.field_9632.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
@@ -65,7 +65,7 @@ public class class_8136 extends Module {
             }
 
             if (this.field_41672) {
-               if (this.method_42007("AutoJump") || mcInstance.field_9577.field_45450.method_27060()) {
+               if (this.getBooleanValueByName("AutoJump") || mcInstance.field_9577.field_45450.method_27060()) {
                   this.field_41672 = !this.field_41672;
                }
 
