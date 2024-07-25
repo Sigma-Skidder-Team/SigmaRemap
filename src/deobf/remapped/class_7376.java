@@ -24,7 +24,7 @@ public class class_7376 extends class_3620 {
       );
       this.addSetting(new BooleanSetting("AutoL", "Automatically says L when you kill a player", true));
       this.addSetting(new ModeSetting("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen").method_23029(var1 -> this.field_37694.clear()));
-      this.addSetting(new TextInputSetting("First character", "The characters your sentences will start with.", ""));
+      this.addSetting(new HippieModeValue("First character", "The characters your sentences will start with.", ""));
       this.addSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
       this.addSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));
       this.addSetting(new FloatSetting<Float>("Auto Join delay", "Seconds before joining a new game", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
