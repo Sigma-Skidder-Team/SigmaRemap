@@ -44,7 +44,7 @@ public class ModuleManager {
       this.method_852(new SpeedModule());
       this.method_852(new EntitySpeedModule());
       this.method_852(new LongJumpModule());
-      this.method_852(new class_7033());
+      this.method_852(new JesusModule());
       this.method_852(new class_8968());
       this.method_852(new class_9704());
       this.method_852(new class_1396());
@@ -305,7 +305,7 @@ public class ModuleManager {
    }
 
    public int method_840() {
-      Setting var3 = this.method_847(class_7033.class).method_41996().get("Mode");
+      Setting var3 = this.method_847(JesusModule.class).method_41996().get("Mode");
       String var4 = (String)var3.field_25890;
       var3.method_23037("Dolphin");
       var3.field_25890 = var4;

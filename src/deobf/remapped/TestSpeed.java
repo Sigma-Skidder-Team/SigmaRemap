@@ -62,7 +62,7 @@ public class TestSpeed extends Module {
    @EventListen
    @class_7664
    public void method_33364(class_2911 var1) {
-      if (this.method_42015() && !class_7033.method_32081() && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
+      if (this.method_42015() && !JesusModule.method_32081() && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (!mc.gameOptions.keyJump.isKeyDown() || !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()) {
             this.field_37410 = class_8865.method_40787()[0];
             this.field_37411 = 0;

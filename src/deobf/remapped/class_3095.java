@@ -10,7 +10,7 @@ public class class_3095 extends Module {
       super(Category.PLAYER, "NoFall", "Avoid you from getting fall damages");
       this.addSetting(
          new ModeSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
-            .method_12861("Hypixel", "Hypixel2")
+            .setDefaultMode("Hypixel", "Hypixel2")
       );
    }
 

@@ -18,7 +18,7 @@ public class ModeSetting extends Setting<String> {
       this.field_13860 = Arrays.<String>asList(var4);
    }
 
-   public ModeSetting method_12861(String... var1) {
+   public ModeSetting setDefaultMode(String... var1) {
       this.field_13859.addAll(Arrays.asList(var1));
       return this;
    }

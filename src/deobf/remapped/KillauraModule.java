@@ -424,7 +424,7 @@ public class KillauraModule extends Module {
          }
       }
 
-      boolean var9 = !class_7033.method_32081() && (mc.field_9632.field_41726 || class_314.method_1413(mc.field_9632, 0.001F));
+      boolean var9 = !JesusModule.method_32081() && (mc.field_9632.field_41726 || class_314.method_1413(mc.field_9632, 0.001F));
       if (!var9) {
          this.field_12545 = 0;
          this.field_12553 = 0;

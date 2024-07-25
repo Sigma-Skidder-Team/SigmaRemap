@@ -3,14 +3,14 @@ package remapped;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class class_7033 extends Module {
+public class JesusModule extends Module {
    public int field_36213;
    public int field_36210;
    public int field_36212;
 
-   public class_7033() {
+   public JesusModule() {
       super(Category.MOVEMENT, "Jesus", "Where's the scientific proof?");
-      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").method_12861("Dolphin"));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").setDefaultMode("Dolphin"));
       this.addSetting(new BooleanSetting("Swim up", "Automatically swim up", true));
    }
 

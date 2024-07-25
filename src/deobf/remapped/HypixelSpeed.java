@@ -163,7 +163,7 @@ public class HypixelSpeed extends Module {
    @EventListen
    @class_7664
    public void method_11346(class_2911 var1) {
-      if (!class_7033.method_32081() && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
+      if (!JesusModule.method_32081() && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (this.getBooleanValueByName("Auto Jump") || mc.field_9632.field_29654) {
             if (this.field_12323 < 0) {
                var1.method_29715(true);

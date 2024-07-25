@@ -22,7 +22,7 @@ public class NCPSpeed extends Module {
    public void method_6779(class_1393 var1) {
       if (this.method_42015()
          && mc.field_9632 != null
-         && !class_7033.method_32081()
+         && !JesusModule.method_32081()
          && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (var1.method_6449() && SpeedModule.field_35509 > 1) {
             double var4 = mc.field_9632.method_37302() - mc.field_9632.field_30525;
@@ -39,7 +39,7 @@ public class NCPSpeed extends Module {
    @EventListen
    public void method_6782(class_7767 var1) {
       if (this.method_42015() && mc.field_9632 != null) {
-         if (!class_7033.method_32081() && !mc.field_9632.method_37285()) {
+         if (!JesusModule.method_32081() && !mc.field_9632.method_37285()) {
             if (this.field_7883 < 2) {
                this.field_7883++;
             }
@@ -75,7 +75,7 @@ public class NCPSpeed extends Module {
    @EventListen
    @class_7664
    public void method_6780(class_2911 var1) {
-      if (this.method_42015() && !class_7033.method_32081()) {
+      if (this.method_42015() && !JesusModule.method_32081()) {
          if (this.field_7881 != 0) {
             var1.method_29715(true);
          }

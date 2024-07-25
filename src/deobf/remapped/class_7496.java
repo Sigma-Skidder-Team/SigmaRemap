@@ -62,7 +62,7 @@ public class class_7496 extends Module {
             boolean var6 = false;
             boolean var7 = mc.field_9587 != null && mc.field_9587.method_33990() == class_1430.field_7717;
             boolean var8 = mc.field_9647.method_42156() || mc.gameOptions.keyAttack.isKeyDown() && var7;
-            if (!var8 && !class_7033.method_32081()) {
+            if (!var8 && !JesusModule.method_32081()) {
                switch (this.field_38243) {
                   case 0:
                      var1.method_6444(true);
