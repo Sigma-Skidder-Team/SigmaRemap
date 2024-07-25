@@ -11,7 +11,7 @@ public class XRayModule extends Module {
    @Override
    public void onEnable() {
       mcInstance.worldRenderer.method_19998();
-      class_914 var3 = (class_914) SigmaMainClass.method_3328().getModuleManager().method_847(class_914.class);
+      class_914 var3 = (class_914) SigmaMainClass.getInstance().getModuleManager().method_847(class_914.class);
       if (!var3.method_42015()) {
          var3.method_42023(true);
       }

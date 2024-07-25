@@ -158,14 +158,14 @@ public class AutoPotionModule extends Module {
       int var6 = this.method_12641(var3);
       if (var6 != -1) {
          if (var6 < 36) {
-            if (SigmaMainClass.method_3328().method_3310().method_25303() > 2) {
+            if (SigmaMainClass.getInstance().method_3310().method_25303() > 2) {
                class_2740.method_12312(var6, var2);
             }
          } else {
             this.field_13560 = 0;
             int var7 = mcInstance.field_9632.field_3853.field_36404;
-            boolean var8 = SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).method_42015()
-               && SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
+            boolean var8 = SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class).method_42015()
+               && SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
             float[] var9 = this.method_12644();
             mcInstance.field_9632.field_3853.field_36404 = var6 - 36;
             mcInstance.field_9647.method_42129();

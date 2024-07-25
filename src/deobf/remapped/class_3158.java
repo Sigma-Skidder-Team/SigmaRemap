@@ -28,13 +28,13 @@ public class class_3158 {
             String var4 = var1.method_5861("type");
             switch (var4) {
                case "mod":
-                  for (Module var7 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+                  for (Module var7 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
                      if (var1.method_5861("target").equals(var7.method_41992())) {
                         this.field_15686 = var7;
                      }
                   }
                case "screen":
-                  Class var8 = SigmaMainClass.method_3328().method_3299().method_31007(var1.method_5861("target"));
+                  Class var8 = SigmaMainClass.getInstance().method_3299().method_31007(var1.method_5861("target"));
                   if (var8 != null) {
                      this.field_15686 = var8;
                   }
@@ -54,7 +54,7 @@ public class class_3158 {
             break;
          case field_25373:
             var3.method_5820("type", "screen");
-            var3.method_5820("target", SigmaMainClass.method_3328().method_3299().method_31010((Class<? extends Screen>)this.field_15686));
+            var3.method_5820("target", SigmaMainClass.getInstance().method_3299().method_31010((Class<? extends Screen>)this.field_15686));
       }
 
       var3.method_5818("key", this.field_15688);

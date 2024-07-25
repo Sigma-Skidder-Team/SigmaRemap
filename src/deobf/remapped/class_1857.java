@@ -24,7 +24,7 @@ public class class_1857 {
    }
 
    public void method_8226() {
-      SigmaMainClass.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().method_3302().method_7908(this);
       new class_3347(null);
    }
 
@@ -172,7 +172,7 @@ public class class_1857 {
    @EventListen
    @class_5355
    public void method_8221(class_139 var1) {
-      if (!SigmaMainClass.method_3328().getModuleManager().method_847(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
+      if (!SigmaMainClass.getInstance().getModuleManager().method_847(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
          )
        {
          if (!field_9416.isEmpty()) {
@@ -185,7 +185,7 @@ public class class_1857 {
             if (var6.getFirst() == class_6943.field_35701
                && var6.getSecond() != null
                && (
-                  SigmaMainClass.method_3328().getModuleManager().method_847(OldHittingModule.class).method_42015()
+                  SigmaMainClass.getInstance().getModuleManager().method_847(OldHittingModule.class).method_42015()
                      || class_3347.method_15349() == class_412.field_1747.method_2055()
                )) {
                if (!(((class_6098)var6.getSecond()).method_27960() instanceof class_8440)) {

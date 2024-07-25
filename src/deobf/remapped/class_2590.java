@@ -16,17 +16,17 @@ public class class_2590 extends class_367 {
    @EventListen
    private void method_11764(class_3278 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (SigmaMainClass.method_3328().method_3300().method_9486() && SigmaMainClass.method_3328().method_3300().field_10297.size() != 0) {
+         if (SigmaMainClass.getInstance().method_3300().method_9486() && SigmaMainClass.getInstance().method_3300().field_10297.size() != 0) {
             long var4 = System.nanoTime() - this.field_12812;
             float var6 = Math.min(10.0F, Math.max(0.0F, (float)var4 / 1.810361E7F));
             double var7 = 0.0;
             short var9 = 4750;
-            if (SigmaMainClass.method_3328().method_3300().field_10293.size() == 0) {
+            if (SigmaMainClass.getInstance().method_3300().field_10293.size() == 0) {
                return;
             }
 
             for (int var10 = 0; var10 < 3; var10++) {
-               var7 = Math.max(var7, Math.sqrt(SigmaMainClass.method_3328().method_3300().field_10293.get(var10)) - 1000.0);
+               var7 = Math.max(var7, Math.sqrt(SigmaMainClass.getInstance().method_3300().field_10293.get(var10)) - 1000.0);
             }
 
             float var14 = 0.7F + (float)(var7 / (double)(var9 - 1000)) * 8.14F;

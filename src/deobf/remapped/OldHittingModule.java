@@ -22,11 +22,11 @@ public class OldHittingModule extends Module {
       if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
          if (var1.method_6449()) {
             boolean var4 = mcInstance.field_9632.method_26446() != null && mcInstance.field_9632.method_26446().method_27960() instanceof class_2235;
-            boolean var5 = SigmaMainClass.method_3328().getModuleManager().method_847(KillauraModule.class).method_42003();
+            boolean var5 = SigmaMainClass.getInstance().getModuleManager().method_847(KillauraModule.class).method_42003();
             boolean var6 = true;
             if (!mcInstance.field_9632.method_37252()
                && mcInstance.field_9587.method_33990() == class_1430.field_7717
-               && !SigmaMainClass.method_3328().getModuleManager().method_847(KillauraModule.class).method_42003()) {
+               && !SigmaMainClass.getInstance().getModuleManager().method_847(KillauraModule.class).method_42003()) {
                class_9529 var7 = (class_9529) mcInstance.field_9587;
                class_1331 var8 = var7.method_43955();
                class_6414 var9 = mcInstance.field_9601.method_28262(var8).method_8360();

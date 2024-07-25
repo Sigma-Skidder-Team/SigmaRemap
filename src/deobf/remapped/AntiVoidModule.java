@@ -33,9 +33,9 @@ public class AntiVoidModule extends Module {
          }
 
          if (this.field_37110 <= 0) {
-            Module var4 = SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class);
+            Module var4 = SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class);
             String var5 = var4.getStringValueByName("Type");
-            Module var6 = SigmaMainClass.method_3328().getModuleManager().method_847(class_5838.class);
+            Module var6 = SigmaMainClass.getInstance().getModuleManager().method_847(class_5838.class);
             String var7 = var6.getStringValueByName("Type");
             boolean var8 = var4.method_42015();
             if (var5.equals("Cubecraft") && var1.method_35236() < -0.4) {
@@ -119,7 +119,7 @@ public class AntiVoidModule extends Module {
          case "Cubecraft":
             double var13 = 3.2E7;
             mcInstance.method_8614().method_4813(new class_9515(var5, var13, var9, false));
-            SigmaMainClass.method_3328().getModuleManager().method_847(FlyModule.class).method_41991(false);
+            SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_41991(false);
             break;
          case "Legit":
             this.field_37110 = 200;

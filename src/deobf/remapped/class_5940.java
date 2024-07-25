@@ -46,7 +46,7 @@ public class class_5940 extends class_2612 {
          });
          var7.method_8236(
             var3x -> {
-               SigmaMainClass.method_3328()
+               SigmaMainClass.getInstance()
                   .method_3309()
                   .method_21972(new class_4333(var7.field_41209, var7.field_41210.method_12173(), var7.field_41210.method_12185(), var7.field_41206));
                this.field_12901.method_32106(var7);
@@ -94,17 +94,17 @@ public class class_5940 extends class_2612 {
          }
 
          if (!var11.method_1535() && this.field_30293.method_11128() == class_4043.field_19620) {
-            SigmaMainClass.method_3328().method_3309().method_21960().clear();
+            SigmaMainClass.getInstance().method_3309().method_21960().clear();
 
             for (class_8046 var9 : this.field_30296) {
-               SigmaMainClass.method_3328()
+               SigmaMainClass.getInstance()
                   .method_3309()
                   .method_21960()
                   .add(new class_4333(var9.field_41209, var9.field_41210.method_12173(), var9.field_41210.method_12185(), var9.field_41206));
             }
 
-            Collections.reverse(SigmaMainClass.method_3328().method_3309().method_21960());
-            SigmaMainClass.method_3328().method_3309().method_21964();
+            Collections.reverse(SigmaMainClass.getInstance().method_3309().method_21960());
+            SigmaMainClass.getInstance().method_3309().method_21964();
          }
 
          this.field_30293.method_11119(class_4043.field_19618);

@@ -48,7 +48,7 @@ public class class_5174 extends class_367 {
                this.field_26630 = false;
             }
 
-            if (this.field_26637 && (long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5) {
+            if (this.field_26637 && (long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5) {
                this.field_26637 = !this.field_26637;
                this.method_23712(this.field_26630);
                class_2740.method_12356(mcInstance.field_9632.field_3869.field_19925, 45, 0, class_6269.field_32027, mcInstance.field_9632, true);
@@ -66,23 +66,23 @@ public class class_5174 extends class_367 {
                   }
 
                   boolean var7 = this.getStringValueByName("Tools").equals("Organize");
-                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && field_26635 >= 36 && var7) {
+                  if ((long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5 && field_26635 >= 36 && var7) {
                      this.method_23716(field_26635, var4.equals("FakeInv"));
                   }
 
-                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && field_26634 >= 36 && var7) {
+                  if ((long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5 && field_26634 >= 36 && var7) {
                      this.method_23724(field_26634, var4.equals("FakeInv"));
                   }
 
-                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && field_26631 >= 36 && var7) {
+                  if ((long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5 && field_26631 >= 36 && var7) {
                      this.method_23714(field_26631, var4.equals("FakeInv"));
                   }
 
-                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && this.getBooleanValueByName("Auto Shield")) {
+                  if ((long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5 && this.getBooleanValueByName("Auto Shield")) {
                      this.method_23717(var4.equals("FakeInv"));
                   }
 
-                  if ((long) SigmaMainClass.method_3328().method_3310().method_25303() >= var5 && this.getBooleanValueByName("Cleaner")) {
+                  if ((long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5 && this.getBooleanValueByName("Cleaner")) {
                      for (int var8 = 9; var8 < 45; var8++) {
                         if (mcInstance.field_9632.field_3869.method_18878(var8).method_35884()) {
                            class_6098 var9 = mcInstance.field_9632.field_3869.method_18878(var8).method_35898();
@@ -110,7 +110,7 @@ public class class_5174 extends class_367 {
 
    public static boolean method_23720(class_6098 var0) {
       float var3 = method_23718(var0);
-      Module var4 = SigmaMainClass.method_3328().getModuleManager().method_847(class_5174.class);
+      Module var4 = SigmaMainClass.getInstance().getModuleManager().method_847(class_5174.class);
 
       for (int var5 = 9; var5 < 45; var5++) {
          if (mcInstance.field_9632.field_3869.method_18878(var5).method_35884()) {
@@ -199,9 +199,9 @@ public class class_5174 extends class_367 {
          if (var5 instanceof class_6201
             && (this.method_23721() > (int)this.getFloatValueByName("Block Cap") || BlockFlyModule.field_18195.contains(((class_6201)var5).method_28392()))) {
             return true;
-         } else if (var5 == class_4897.field_24999 && SigmaMainClass.method_3328().getModuleManager().method_847(class_3588.class).method_42015()) {
+         } else if (var5 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().method_847(class_3588.class).method_42015()) {
             return method_23723(class_4897.field_24999) > 1;
-         } else if (var5 == class_4897.field_24548 && SigmaMainClass.method_3328().getModuleManager().method_847(class_3588.class).method_42015()) {
+         } else if (var5 == class_4897.field_24548 && SigmaMainClass.getInstance().getModuleManager().method_847(class_3588.class).method_42015()) {
             return method_23723(class_4897.field_24548) > 1;
          } else if (var5 instanceof class_5518 && class_2740.method_12360(var1)) {
             return true;

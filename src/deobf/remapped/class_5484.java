@@ -18,7 +18,7 @@ public class class_5484 extends class_446 {
    private class_2612 field_27937;
    private class_2612 field_27939;
    private class_7038 field_27945;
-   private class_2026 field_27956 = SigmaMainClass.method_3328().method_3300();
+   private class_2026 field_27956 = SigmaMainClass.getInstance().method_3300();
    public static Map<String, class_8896> field_27926 = new LinkedHashMap<String, class_8896>();
    public static String field_27946;
    public static class_8896 field_27942;

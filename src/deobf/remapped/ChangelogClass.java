@@ -63,7 +63,7 @@ public class ChangelogClass extends class_7038 {
       class_73.method_87(class_5320.field_27140, 100.0F, 100.0F, "Changelog", class_314.method_1444(class_1255.field_6918.field_6917, var1));
       class_3384 var10000 = class_5320.field_27141;
       StringBuilder var10003 = new StringBuilder().append("You're currently using Sigma ");
-      SigmaMainClass.method_3328();
+      SigmaMainClass.getInstance();
       class_73.method_87(
          var10000, 100.0F, 150.0F, var10003.append(SigmaMainClass.field_3957).toString(), class_314.method_1444(class_1255.field_6918.field_6917, 0.6F * var1)
       );

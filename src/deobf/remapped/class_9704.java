@@ -18,7 +18,7 @@ public class class_9704 extends Module {
    @EventListen
    private void method_44840(class_1393 var1) {
       if (this.method_42015()) {
-         boolean var4 = SigmaMainClass.method_3328().getModuleManager().method_847(KillauraModule.class).method_42003();
+         boolean var4 = SigmaMainClass.getInstance().getModuleManager().method_847(KillauraModule.class).method_42003();
          boolean var5 = mcInstance.field_9632.method_26446() != null && mcInstance.field_9632.method_26446().method_27960() instanceof class_2235;
          if (!var1.method_6449()) {
             if (var5 && mcInstance.field_9577.field_45559.method_27060() && !this.field_49354 && !var4 && this.getStringValueByName("Mode").equals("NCP")) {

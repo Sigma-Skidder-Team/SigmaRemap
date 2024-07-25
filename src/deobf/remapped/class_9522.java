@@ -36,7 +36,7 @@ public class class_9522 extends class_367 {
                   var1x -> var1x.method_37175(mcInstance.field_9632) < 12.0F
                         && !this.method_43929(var1x)
                         && mcInstance.field_9632 != var1x
-                        && !SigmaMainClass.method_3328().method_3331().method_20495(var1x)
+                        && !SigmaMainClass.getInstance().method_3331().method_20495(var1x)
                );
             if (var4.isEmpty()) {
                if (this.field_48467 > 0) {

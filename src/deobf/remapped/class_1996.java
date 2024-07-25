@@ -23,7 +23,7 @@ public class class_1996 extends class_2612 implements class_1768 {
    public void method_9266() {
       int var3 = 0;
 
-      for (Module var5 : SigmaMainClass.method_3328().getModuleManager().method_844(this.field_10143)) {
+      for (Module var5 : SigmaMainClass.getInstance().getModuleManager().method_844(this.field_10143)) {
          int var9 = class_314.method_1444(-3487030, 0.0F);
          byte var10 = 30;
          class_590 var12 = new class_590(!var5.method_42015() ? 1895167477 : -14047489, !var5.method_42015() ? var9 : -14042881)

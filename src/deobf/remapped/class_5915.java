@@ -2,7 +2,7 @@ package remapped;
 
 public class class_5915 extends class_1859 {
    private static String[] field_30017;
-   private class_2026 field_30018 = SigmaMainClass.method_3328().method_3300();
+   private class_2026 field_30018 = SigmaMainClass.getInstance().method_3300();
    public float field_30016 = -1.0F;
 
    public class_5915(class_7038 var1, String var2, int var3, int var4, int var5, int var6) {

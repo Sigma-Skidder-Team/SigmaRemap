@@ -13,7 +13,7 @@ public class PacketDumperModule extends Module {
       super(Category.MISC, "Packet dumper", "Dumps packets sent to and fro from the client and server");
 
       try {
-         File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/latest_packets.txt");
+         File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/latest_packets.txt");
          if (!var3.exists()) {
             var3.createNewFile();
          }

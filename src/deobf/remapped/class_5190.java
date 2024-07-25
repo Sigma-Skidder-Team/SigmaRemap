@@ -25,12 +25,12 @@ public class class_5190 {
             if (!var4.method_23768().getSiblings().isEmpty()
                && var5.contains(var4.method_23768().getString())
                && var4.method_23768().getSiblings().get(0).getStyle().getColor().toString().equalsIgnoreCase("red")) {
-               class_7309 var6 = SigmaMainClass.method_3328().method_3303().method_39912();
+               class_7309 var6 = SigmaMainClass.getInstance().method_3303().method_39912();
                if (var6 != null) {
                   class_5933 var7 = new class_5933(this.field_26705.method_8530().field_12675, new Date(Long.MAX_VALUE));
                   var6.method_33331(var7);
-                  SigmaMainClass.method_3328().method_3303().method_39911(var6);
-                  SigmaMainClass.method_3328().method_3303().method_39909();
+                  SigmaMainClass.getInstance().method_3303().method_39911(var6);
+                  SigmaMainClass.getInstance().method_3303().method_39909();
                }
             }
          }
@@ -44,11 +44,11 @@ public class class_5190 {
                   }
 
                   class_5933 var15 = new class_5933(this.field_26705.method_8530().field_12675, new Date(var11));
-                  class_7309 var16 = SigmaMainClass.method_3328().method_3303().method_39912();
+                  class_7309 var16 = SigmaMainClass.getInstance().method_3303().method_39912();
                   if (var16 != null) {
                      var16.method_33331(var15);
-                     SigmaMainClass.method_3328().method_3303().method_39911(var16);
-                     SigmaMainClass.method_3328().method_3303().method_39909();
+                     SigmaMainClass.getInstance().method_3303().method_39911(var16);
+                     SigmaMainClass.getInstance().method_3303().method_39909();
                   }
                }
             } else {
@@ -59,11 +59,11 @@ public class class_5190 {
                }
 
                class_5933 var17 = new class_5933(this.field_26705.method_8530().field_12675, new Date(var8));
-               class_7309 var10 = SigmaMainClass.method_3328().method_3303().method_39912();
+               class_7309 var10 = SigmaMainClass.getInstance().method_3303().method_39912();
                if (var10 != null) {
                   var10.method_33331(var17);
-                  SigmaMainClass.method_3328().method_3303().method_39911(var10);
-                  SigmaMainClass.method_3328().method_3303().method_39909();
+                  SigmaMainClass.getInstance().method_3303().method_39911(var10);
+                  SigmaMainClass.getInstance().method_3303().method_39909();
                }
             }
          } else {
@@ -74,11 +74,11 @@ public class class_5190 {
             }
 
             class_5933 var18 = new class_5933(this.field_26705.method_8530().field_12675, new Date(var19));
-            class_7309 var20 = SigmaMainClass.method_3328().method_3303().method_39912();
+            class_7309 var20 = SigmaMainClass.getInstance().method_3303().method_39912();
             if (var20 != null) {
                var20.method_33331(var18);
-               SigmaMainClass.method_3328().method_3303().method_39911(var20);
-               SigmaMainClass.method_3328().method_3303().method_39909();
+               SigmaMainClass.getInstance().method_3303().method_39911(var20);
+               SigmaMainClass.getInstance().method_3303().method_39909();
             }
          }
       }

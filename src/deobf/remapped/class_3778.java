@@ -24,15 +24,15 @@ public class class_3778 extends class_2596 {
       this.method_32148(var11 = new class_4643(this, "pb2", var7, var5 + var8 + 9, var4, var6, class_2209.field_11003));
       this.method_32148(var10 = new class_4643(this, "pb3", var7 + var4 + 9, var5 + var8 + 9, var4, var6, class_2209.field_11035));
       var9.method_32100((var0, var1) -> {
-         SigmaMainClass.method_3328().method_3327(class_6015.field_30642);
+         SigmaMainClass.getInstance().method_3327(class_6015.field_30642);
          MinecraftClient.getInstance().method_8609(new class_1876());
       });
       var10.method_32100((var0, var1) -> {
-         SigmaMainClass.method_3328().method_3327(class_6015.field_30645);
+         SigmaMainClass.getInstance().method_3327(class_6015.field_30645);
          MinecraftClient.getInstance().method_8609(new class_1876());
       });
       var11.method_32100((var0, var1) -> {
-         SigmaMainClass.method_3328().method_3327(class_6015.field_30644);
+         SigmaMainClass.getInstance().method_3327(class_6015.field_30644);
          MinecraftClient.getInstance().method_8609(new class_1876());
       });
       class_7038 var12 = new class_7038(this, "socialbtns", (this.method_32109() - 174) / 2, this.method_32137() - 70, 174, 34);

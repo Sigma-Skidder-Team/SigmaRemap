@@ -12,7 +12,7 @@ public class class_7072 extends Module {
    public void method_32570(class_3368 var1) {
       if (this.method_42015()) {
          for (Entity var5 : class_7494.method_34088(class_314.method_1435())) {
-            if (var5 != mcInstance.field_9632 && !SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
+            if (var5 != mcInstance.field_9632 && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                method_32571(
                   var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double) MinecraftClient.getInstance().field_9616.field_32600,
                   var5.field_41713

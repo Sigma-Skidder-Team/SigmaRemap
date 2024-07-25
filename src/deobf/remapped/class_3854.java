@@ -126,7 +126,7 @@ public class class_3854 extends Module {
          this.field_18794 = 1.0F;
       }
 
-      if (!SigmaMainClass.method_3328().getModuleManager().method_847(class_6803.class).method_42015()) {
+      if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_6803.class).method_42015()) {
          mcInstance.field_9616.field_32603 = this.field_18794;
       }
 

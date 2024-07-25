@@ -22,7 +22,7 @@ public class class_986 {
    }
 
    public boolean method_4303(class_1675 var1) {
-      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && var1.field_8677.equals("Classic")) {
+      if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && var1.field_8677.equals("Classic")) {
          return false;
       } else if (this.field_5025.size() <= 1) {
          return false;
@@ -57,7 +57,7 @@ public class class_986 {
    }
 
    public void method_4304(String var1) throws IOException {
-      File var4 = new File(SigmaMainClass.method_3328().method_3334() + "/profiles/");
+      File var4 = new File(SigmaMainClass.getInstance().method_3334() + "/profiles/");
       if (!var4.exists()) {
          var4.mkdirs();
       }
@@ -74,7 +74,7 @@ public class class_986 {
                this.field_5020 = var11;
             }
          } catch (class_7584 var12) {
-            SigmaMainClass.method_3328().method_3326().method_12862("Unable to load profile from " + var9.getName());
+            SigmaMainClass.getInstance().method_3326().method_12862("Unable to load profile from " + var9.getName());
          }
       }
 
@@ -86,7 +86,7 @@ public class class_986 {
          this.field_5025.add(this.field_5020 = new class_1675(var1, new JSONObjectImpl()));
       }
 
-      SigmaMainClass.method_3328().getModuleManager().method_838(this.field_5020.field_8678);
+      SigmaMainClass.getInstance().getModuleManager().method_838(this.field_5020.field_8678);
    }
 
    public boolean method_4299(String var1) {
@@ -100,8 +100,8 @@ public class class_986 {
    }
 
    public void method_4306() throws IOException {
-      this.field_5020.field_8678 = SigmaMainClass.method_3328().getModuleManager().method_839(new JSONObjectImpl());
-      File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/profiles/");
+      this.field_5020.field_8678 = SigmaMainClass.getInstance().getModuleManager().method_839(new JSONObjectImpl());
+      File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/profiles/");
       if (!var3.exists()) {
          var3.mkdirs();
       }
@@ -113,7 +113,7 @@ public class class_986 {
       }
 
       for (class_1675 var10 : this.field_5025) {
-         File var11 = new File(SigmaMainClass.method_3328().method_3334() + "/profiles/" + var10.field_8677 + ".profile");
+         File var11 = new File(SigmaMainClass.getInstance().method_3334() + "/profiles/" + var10.field_8677 + ".profile");
          if (!var11.exists()) {
             var11.createNewFile();
          }
@@ -127,19 +127,19 @@ public class class_986 {
    }
 
    public void method_4300(class_1675 var1) {
-      SigmaMainClass.method_3328().method_3318();
+      SigmaMainClass.getInstance().method_3318();
       class_1235.field_6813 = new HashMap<Object, Integer>();
-      if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30644) {
-         this.field_5020.field_8678 = SigmaMainClass.method_3328().getModuleManager().method_839(new JSONObjectImpl());
+      if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30644) {
+         this.field_5020.field_8678 = SigmaMainClass.getInstance().getModuleManager().method_839(new JSONObjectImpl());
          this.field_5020 = var1;
-         SigmaMainClass.method_3328().method_3304().method_5820("profile", var1.field_8677);
-         SigmaMainClass.method_3328().getModuleManager().method_838(var1.field_8678);
-         SigmaMainClass.method_3328().method_3318();
+         SigmaMainClass.getInstance().method_3304().method_5820("profile", var1.field_8677);
+         SigmaMainClass.getInstance().getModuleManager().method_838(var1.field_8678);
+         SigmaMainClass.getInstance().method_3318();
       } else {
          this.field_5020.field_8678 = var1.method_7499();
-         SigmaMainClass.method_3328().method_3304().method_5820("profile", "Classic");
-         SigmaMainClass.method_3328().getModuleManager().method_838(var1.field_8678);
-         SigmaMainClass.method_3328().method_3318();
+         SigmaMainClass.getInstance().method_3304().method_5820("profile", "Classic");
+         SigmaMainClass.getInstance().getModuleManager().method_838(var1.field_8678);
+         SigmaMainClass.getInstance().method_3318();
       }
    }
 

@@ -23,7 +23,7 @@ public class SkeletonESPModule extends Module {
 
    private void method_19977(class_3368 var1, class_704 var2) {
       Color var5 = new Color(
-         !SigmaMainClass.method_3328().method_3307().method_14459(var2.method_45509().getString())
+         !SigmaMainClass.getInstance().method_3307().method_14459(var2.method_45509().getString())
             ? (!var2.method_45509().getString().equalsIgnoreCase(mcInstance.field_9632.method_45509().getString()) ? new Color(16775672).getRGB() : -6684775)
             : -8401409
       );

@@ -19,7 +19,7 @@ public class class_2329 extends SecondModule {
       while (var6.hasNext()) {
          Entity var7 = (Entity)var6.next();
          if (var7 != mcInstance.field_9632) {
-            if (!SigmaMainClass.method_3328().method_3307().method_14460(var7)) {
+            if (!SigmaMainClass.getInstance().method_3307().method_14460(var7)) {
                if (var7 instanceof class_5834) {
                   if (((class_5834)var7).method_26551() != 0.0F) {
                      if (!(mcInstance.field_9632.method_37175(var7) > var1)) {
@@ -27,7 +27,7 @@ public class class_2329 extends SecondModule {
                            if (!(var7 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var7 instanceof class_704) {
                                  var6.remove();
-                              } else if (var7 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var7)) {
+                              } else if (var7 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var7)) {
                                  var6.remove();
                               } else if (!this.getBooleanValueByName("Invisible") && var7.method_37109()) {
                                  var6.remove();
@@ -38,7 +38,7 @@ public class class_2329 extends SecondModule {
                               } else if (!var7.method_37367()) {
                                  if (var7 instanceof class_704
                                     && class_5876.method_26760((class_704)var7)
-                                    && SigmaMainClass.method_3328().getModuleManager().method_847(class_3595.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().method_847(class_3595.class).method_42015()) {
                                     var6.remove();
                                  } else if (var5 == null || mcInstance.field_9632.method_37175(var7) < mcInstance.field_9632.method_37175(var5)) {
                                     var5 = var7;

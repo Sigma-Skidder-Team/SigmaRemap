@@ -56,10 +56,10 @@ public class class_1675 {
             try {
                var6 = JSONWriter.saveStringValue(var5, "name", null);
             } catch (class_7584 var9) {
-               SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
+               SigmaMainClass.getInstance().method_3326().method_12862("Invalid name in mod list config");
             }
 
-            for (Module var8 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+            for (Module var8 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
                if (var8.method_41992().equals(var6) && var8.method_42004() != Category.GUI && var8.method_42004() != Category.RENDER) {
                   var5.method_5820("enabled", "false");
                }
@@ -85,7 +85,7 @@ public class class_1675 {
             try {
                var9 = JSONWriter.saveStringValue(var8, "name", null);
             } catch (class_7584 var11) {
-               SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
+               SigmaMainClass.getInstance().method_3326().method_12862("Invalid name in mod list config");
             }
 
             if (var2.method_41992().equals(var9)) {
@@ -119,7 +119,7 @@ public class class_1675 {
             try {
                var7 = JSONWriter.saveStringValue(var6, "name", null);
             } catch (class_7584 var9) {
-               SigmaMainClass.method_3328().method_3326().method_12862("Invalid name in mod list config");
+               SigmaMainClass.getInstance().method_3326().method_12862("Invalid name in mod list config");
             }
 
             if (var1.method_41992().equals(var7)) {

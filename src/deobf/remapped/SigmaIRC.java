@@ -32,11 +32,11 @@ public class SigmaIRC {
    public class_6427 field_21936;
 
    public SigmaIRC(SigmaLoginStuff var1) {
-      SigmaMainClass.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().method_3302().method_7908(this);
       this.field_21931 = HttpClients.createDefault();
       this.field_21930 = var1;
       this.field_21936 = new class_6427(this);
-      class_1235.field_6811 = class_1235.field_6811 | SigmaMainClass.method_3328().method_3332().field_25929 != null;
+      class_1235.field_6811 = class_1235.field_6811 | SigmaMainClass.getInstance().method_3332().field_25929 != null;
    }
 
    public HashMap<UUID, class_4567> method_20859() {
@@ -61,7 +61,7 @@ public class SigmaIRC {
          while (var5.hasNext()) {
             class_9716 var6 = (class_9716)var5.next();
             if (this.field_21928.contains(var6.method_37328())
-               || SigmaMainClass.method_3328().method_3331().method_20495(var6)
+               || SigmaMainClass.getInstance().method_3331().method_20495(var6)
                || var6.method_45509().getUnformattedComponentText().equals("")) {
                var5.remove();
             }
@@ -135,7 +135,7 @@ public class SigmaIRC {
    }
 
    public static void method_20850() {
-      SigmaMainClass.method_3328().method_3332().method_23092();
+      SigmaMainClass.getInstance().method_3332().method_23092();
    }
 
    public static String method_20853(String var0) {
@@ -158,7 +158,7 @@ public class SigmaIRC {
       YggdrasilAuthenticationService var6 = new YggdrasilAuthenticationService(Proxy.NO_PROXY, var5);
       YggdrasilMinecraftSessionService var7 = (YggdrasilMinecraftSessionService)var6.createMinecraftSessionService();
       var7.joinServer(var1, var5, var2);
-      SigmaMainClass.method_3328();
+      SigmaMainClass.getInstance();
       SigmaMainClass.method_3306().method_12863("Jello Connect: successfully reached out mojangs servers " + var2);
       System.out
          .println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + var2 + "&username=" + this.field_21934.session.method_5366());

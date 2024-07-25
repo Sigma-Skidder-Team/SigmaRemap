@@ -86,7 +86,7 @@ public class class_6763 {
          MinecraftClient.getInstance().field_9623 = null;
          MinecraftClient.getInstance().method_8609(new class_9140());
          return true;
-      } else if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30642 && var0 instanceof class_1876 && !(var0 instanceof class_6186)) {
+      } else if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30642 && var0 instanceof class_1876 && !(var0 instanceof class_6186)) {
          MinecraftClient.getInstance().field_9623 = null;
          MinecraftClient.getInstance().method_8609(new class_6186());
          return true;
@@ -98,7 +98,7 @@ public class class_6763 {
    public static class_2596 method_30995(Screen var0) {
       if (var0 == null) {
          return null;
-      } else if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30640) {
+      } else if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30640) {
          return new class_3778();
       } else if (method_30997(var0)) {
          return null;
@@ -200,7 +200,7 @@ public class class_6763 {
             var3 = MinecraftClient.getInstance().window.method_43166() / 2 - var5 / 2;
          }
 
-         if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30645) {
+         if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30645) {
             float var7 = 0.5F + class_268.field_955.method_11123() * 0.5F;
             GL11.glAlphaFunc(516, 0.1F);
             class_73.method_103(4.0F, 2.0F, 106.0F, 28.0F, class_314.method_1444(class_1255.field_6929.field_6917, 0.6F * var7));
@@ -216,7 +216,7 @@ public class class_6763 {
             class_73.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? class_2209.field_10995 : class_2209.field_11024);
          }
 
-         SigmaMainClass.method_3328().method_3302().method_7914(new class_3278());
+         SigmaMainClass.getInstance().method_3302().method_7914(new class_3278());
       }
 
       if (this.field_34904 != null && MinecraftClient.getInstance().field_9610 == null) {
@@ -284,7 +284,7 @@ public class class_6763 {
       MinecraftClient.getInstance();
       if (MinecraftClient.IS_SYSTEM_MAC) {
          try {
-            JSONObjectImpl var2 = class_357.method_1789(new File(SigmaMainClass.method_3328().method_3334() + "/config.json"));
+            JSONObjectImpl var2 = class_357.method_1789(new File(SigmaMainClass.getInstance().method_3334() + "/config.json"));
             if (var2.method_5850("hidpicocoa")) {
                field_34914 = var2.method_5826("hidpicocoa");
             }
@@ -301,7 +301,7 @@ public class class_6763 {
          JSONObjectImpl var4 = null;
 
          try {
-            var4 = SigmaMainClass.method_3328().method_3304().method_5848(this.field_34904.method_32176());
+            var4 = SigmaMainClass.getInstance().method_3304().method_5848(this.field_34904.method_32176());
          } catch (Exception var9) {
             var4 = new JSONObjectImpl();
          } finally {
@@ -344,7 +344,7 @@ public class class_6763 {
 
    public void method_30991() {
       if (this.field_34904 != null) {
-         this.method_31013(SigmaMainClass.method_3328().method_3304());
+         this.method_31013(SigmaMainClass.getInstance().method_3304());
 
          try {
             this.field_34904 = (class_2596)this.field_34904.getClass().newInstance();
@@ -352,7 +352,7 @@ public class class_6763 {
             var4.printStackTrace();
          }
 
-         this.method_30994(SigmaMainClass.method_3328().method_3304());
+         this.method_30994(SigmaMainClass.getInstance().method_3304());
       }
 
       if (MinecraftClient.getInstance().window.method_43166() != 0 && MinecraftClient.getInstance().window.method_43163() != 0) {
@@ -375,18 +375,18 @@ public class class_6763 {
 
    public void method_30990(class_2596 var1) {
       if (this.field_34904 != null) {
-         this.method_31013(SigmaMainClass.method_3328().method_3304());
+         this.method_31013(SigmaMainClass.getInstance().method_3304());
       }
 
       this.field_34904 = var1;
       this.field_34900 = field_34907;
-      this.method_30994(SigmaMainClass.method_3328().method_3304());
+      this.method_30994(SigmaMainClass.getInstance().method_3304());
       if (this.field_34904 != null) {
          this.field_34904.method_32145(this.field_34894[0], this.field_34894[1]);
       }
 
-      if (SigmaMainClass.method_3328().getModuleManager() != null) {
-         SigmaMainClass.method_3328().getModuleManager().method_835().method_384(null);
+      if (SigmaMainClass.getInstance().getModuleManager() != null) {
+         SigmaMainClass.getInstance().getModuleManager().method_835().method_384(null);
       }
    }
 

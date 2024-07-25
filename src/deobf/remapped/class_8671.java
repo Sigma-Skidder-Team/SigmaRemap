@@ -31,14 +31,14 @@ public class class_8671 {
    }
 
    private void method_39836(long var1, int var3, int var4, int var5) {
-      if (SigmaMainClass.method_3328().method_3299().method_31001() != null) {
-         SigmaMainClass.method_3328().method_3299().method_30982(var3, var4);
+      if (SigmaMainClass.getInstance().method_3299().method_31001() != null) {
+         SigmaMainClass.getInstance().method_3299().method_30982(var3, var4);
       } else {
          if (this.field_44499.field_9623 == null) {
             if (var4 != 1 && var4 != 2) {
                if (var4 == 0) {
                   class_307 var15 = new class_307(var3);
-                  SigmaMainClass.method_3328().method_3302().method_7914(var15);
+                  SigmaMainClass.getInstance().method_3302().method_7914(var15);
                   if (var15.method_29716()) {
                      return;
                   }
@@ -49,7 +49,7 @@ public class class_8671 {
                }
 
                class_6435 var8 = new class_6435(var3, var4 == 2, null);
-               SigmaMainClass.method_3328().method_3302().method_7914(var8);
+               SigmaMainClass.getInstance().method_3302().method_7914(var8);
                if (var8.method_29716()) {
                   return;
                }
@@ -142,9 +142,9 @@ public class class_8671 {
    }
 
    private void method_39841(long var1, double var3, double var5) {
-      if (SigmaMainClass.method_3328().method_3299().method_31001() == null) {
+      if (SigmaMainClass.getInstance().method_3299().method_31001() == null) {
          class_1523 var9 = new class_1523(var5);
-         SigmaMainClass.method_3328().method_3302().method_7914(var9);
+         SigmaMainClass.getInstance().method_3302().method_7914(var9);
          if (!var9.method_29716()) {
             if (var1 == MinecraftClient.getInstance().method_8552().method_43181()) {
                double var10 = (!this.field_44499.field_9577.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.field_9577.field_45578;
@@ -184,7 +184,7 @@ public class class_8671 {
             }
          }
       } else {
-         SigmaMainClass.method_3328().method_3299().method_31011(var3, var5);
+         SigmaMainClass.getInstance().method_3299().method_31011(var3, var5);
       }
    }
 

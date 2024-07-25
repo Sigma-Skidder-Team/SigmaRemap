@@ -35,14 +35,14 @@ public class class_4033 extends Module {
    }
 
    private void method_18561() {
-      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645) {
+      if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645) {
          mcInstance.field_9601
             .field_568
             .forEach(
                (var1, var2) -> {
                   boolean var5 = class_314.method_1426(var2) == class_9374.field_47922 && this.method_42017().getBooleanValueByName("Show Players");
                   boolean var6 = !var2.method_37109() || this.method_42017().getBooleanValueByName("Show Invisibles");
-                  if (!SigmaMainClass.method_3328().method_3331().method_20495(var2) && var5 && var6 && var2 != mcInstance.field_9632) {
+                  if (!SigmaMainClass.getInstance().method_3331().method_20495(var2) && var5 && var6 && var2 != mcInstance.field_9632) {
                      double var7 = class_9189.method_42353(var2).field_42648;
                      double var9 = class_9189.method_42353(var2).field_42646;
                      double var11 = class_9189.method_42353(var2).field_42649;
@@ -72,7 +72,7 @@ public class class_4033 extends Module {
 
    private void method_18558(boolean var1) {
       for (Entity var5 : mcInstance.field_9601.method_736()) {
-         if (!SigmaMainClass.method_3328().method_3331().method_20495(var5)) {
+         if (!SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
             boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().getBooleanValueByName("Show Players");
             boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().getBooleanValueByName("Show Mobs");
             boolean var8 = class_314.method_1426(var5) == class_9374.field_47923 && this.method_42017().getBooleanValueByName("Show Passives");
@@ -92,7 +92,7 @@ public class class_4033 extends Module {
                double var15 = (var5.method_37156() - var5.field_41724) * (double) mcInstance.field_9616.field_32600 - (var5.method_37156() - var5.field_41724);
                class_8194 var17 = new class_8194(var5.method_37241().method_18918(var11, var13, var15)).method_37547(0.1F);
                if (var1) {
-                  class_73.method_130(var17, 3.0F, class_314.method_1444(var10, SigmaMainClass.method_3328().method_3312() != class_6015.field_30645 ? 0.8F : 0.35F));
+                  class_73.method_130(var17, 3.0F, class_314.method_1444(var10, SigmaMainClass.getInstance().method_3312() != class_6015.field_30645 ? 0.8F : 0.35F));
                } else {
                   class_73.method_83(var17, class_1255.field_6918.field_6917);
                }

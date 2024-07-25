@@ -329,7 +329,7 @@ public final class Window implements AutoCloseable {
    private void method_43155(long var1, int var3, int var4) {
       this.field_47736 = var3;
       this.field_47724 = var4;
-      SigmaMainClass.method_3328().method_3299().method_30991();
+      SigmaMainClass.getInstance().method_3299().method_30991();
    }
 
    private void method_43173(long var1, boolean var3) {

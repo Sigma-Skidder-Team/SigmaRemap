@@ -61,7 +61,7 @@ public class class_2941 extends Module {
          Entity var6 = (Entity)var5.next();
          if (var6 == mcInstance.field_9632) {
             var5.remove();
-         } else if (SigmaMainClass.method_3328().method_3307().method_14460(var6)) {
+         } else if (SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
             var5.remove();
          } else if (!(var6 instanceof class_5834)) {
             var5.remove();
@@ -75,7 +75,7 @@ public class class_2941 extends Module {
             var5.remove();
          } else if (!this.getBooleanValueByName("Players") && var6 instanceof class_704) {
             var5.remove();
-         } else if (this.getBooleanValueByName("Anti-Bot") && var6 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var6)) {
+         } else if (this.getBooleanValueByName("Anti-Bot") && var6 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
             var5.remove();
          } else if (!this.getBooleanValueByName("Invisible") && var6.method_37109()) {
             var5.remove();

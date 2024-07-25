@@ -11,7 +11,7 @@ public class class_5569 implements Runnable {
    @Override
    public void run() {
       while (!Thread.interrupted()) {
-         if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30640) {
+         if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30640) {
             try {
                Thread.sleep(200L);
             } catch (InterruptedException var4) {

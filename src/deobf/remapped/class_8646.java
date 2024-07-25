@@ -32,7 +32,7 @@ public class class_8646 {
    public void finalize() throws Throwable {
       try {
          if (this.field_44306 != null) {
-            SigmaMainClass.method_3328().method_3329(this.field_44306);
+            SigmaMainClass.getInstance().method_3329(this.field_44306);
          }
       } finally {
          super.finalize();

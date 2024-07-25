@@ -63,7 +63,7 @@ public class class_4491 extends AbstractSpliterator<class_4190> {
                   class_4190 var10 = var9.method_8325(this.field_21952, this.field_21957, this.field_21955);
                   if (this.field_21953 instanceof class_704) {
                      class_5243 var11 = new class_5243(this.field_21957, var10);
-                     SigmaMainClass.method_3328().method_3302().method_7914(var11);
+                     SigmaMainClass.getInstance().method_3302().method_7914(var11);
                      var10 = var11.method_23988();
                      if (var11.method_29716()) {
                         return false;

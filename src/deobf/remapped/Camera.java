@@ -70,7 +70,7 @@ public class Camera {
          class_9529 var11 = this.field_46410.method_28265(new class_972(var9, var10, class_3132.field_15552, class_9583.field_48747, this.field_46419));
          if (var11.method_33990() != class_1430.field_7721) {
             double var12 = var11.method_33993().method_6195(this.field_46411);
-            if (var12 < var1 && !SigmaMainClass.method_3328().getModuleManager().method_847(class_2191.class).method_42015()) {
+            if (var12 < var1 && !SigmaMainClass.getInstance().getModuleManager().method_847(class_2191.class).method_42015()) {
                var1 = var12;
             }
          }

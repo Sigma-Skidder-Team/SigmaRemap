@@ -36,7 +36,7 @@ public class HypixelGameplayModule extends Module {
             }
 
             String var7 = mcInstance.field_9632.method_45509().getString().toLowerCase();
-            if (SigmaMainClass.method_3328().getModuleManager().method_847(class_9495.class).method_42015()) {
+            if (SigmaMainClass.getInstance().getModuleManager().method_847(class_9495.class).method_42015()) {
             }
 
             if (this.field_16172.method_42007("AutoL")) {

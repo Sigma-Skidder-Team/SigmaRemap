@@ -34,7 +34,7 @@ public class class_5761 extends Module {
    @class_315
    public void method_26048(class_7767 var1) {
       if (this.method_42015()
-         && !SigmaMainClass.method_3328().getModuleManager().method_847(BlockFlyModule.class).method_42015()
+         && !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()
          && !class_314.method_1437(mcInstance.field_9632)) {
          double var4 = (double)this.getFloatValueByName("OnGround Speed");
          if (!mcInstance.field_9632.field_41726) {

@@ -70,7 +70,7 @@ public class class_6086 extends class_1859 {
    public ArrayList<Module> method_27867() {
       ArrayList var3 = new ArrayList();
       if (this.field_31143 != null && this.field_31143.length() != 0) {
-         for (Module var5 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+         for (Module var5 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
             if (this.method_27865(this.field_31143, var5.method_41992())) {
                var3.add(var5);
             }

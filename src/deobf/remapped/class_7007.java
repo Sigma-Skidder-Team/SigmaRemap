@@ -5,7 +5,7 @@ public class class_7007 extends class_2596 {
    public class_9486 field_35940;
    public class_4636 field_35937;
    public class_4636 field_35936;
-   public class_8691 field_35939 = SigmaMainClass.method_3328().method_3303();
+   public class_8691 field_35939 = SigmaMainClass.getInstance().method_3303();
    private String field_35938 = "§7Waiting...";
 
    public class_7007(class_7309 var1) {
@@ -39,7 +39,7 @@ public class class_7007 extends class_2596 {
          var1.method_33327(this.field_35940.method_32165());
          this.field_35938 = "Edited!";
       });
-      this.field_35936.method_32100((var0, var1x) -> SigmaMainClass.method_3328().method_3299().method_30990(new class_2135()));
+      this.field_35936.method_32100((var0, var1x) -> SigmaMainClass.getInstance().method_3299().method_30990(new class_2135()));
    }
 
    @Override
@@ -73,7 +73,7 @@ public class class_7007 extends class_2596 {
    public void method_29509(int var1) {
       super.method_29509(var1);
       if (var1 == 256) {
-         SigmaMainClass.method_3328().method_3299().method_30990(new class_2135());
+         SigmaMainClass.getInstance().method_3299().method_30990(new class_2135());
       }
    }
 }

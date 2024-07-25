@@ -96,7 +96,7 @@ public class class_583 extends Module {
                      case "High":
                         var1.method_35235(((class_1213)this.method_42017()).method_5381(this.field_3400));
                         if (class_314.method_1387()
-                           && SigmaMainClass.method_3328().getModuleManager().method_847(class_3095.class).method_42015()
+                           && SigmaMainClass.getInstance().getModuleManager().method_847(class_3095.class).method_42015()
                            && (this.field_3400 == 8 || this.field_3400 == 21)) {
                            double var9 = mcInstance.field_9632.method_37309() + var1.method_35236();
                            double var11 = var9 - (double)((int)(var9 + 0.001));

@@ -103,7 +103,7 @@ public class class_993 extends class_1859 {
       }
 
       if (this.field_5049 == null || this.field_5048 != this.field_5059 || !this.field_5053.equals(var5)) {
-         this.field_5049 = SigmaMainClass.method_3328().method_3309().method_21974(var5, this.field_5048 * 2);
+         this.field_5049 = SigmaMainClass.getInstance().method_3309().method_21974(var5, this.field_5048 * 2);
       }
 
       if (this.field_5049 == null || this.field_5048 != this.field_5059 || this.field_5061 != this.field_5058 || this.field_5057 != this.field_5054) {
@@ -143,7 +143,7 @@ public class class_993 extends class_1859 {
       );
       GL11.glPopMatrix();
 
-      for (class_4333 var16 : SigmaMainClass.method_3328().method_3309().method_21960()) {
+      for (class_4333 var16 : SigmaMainClass.getInstance().method_3309().method_21960()) {
          float var17 = (float)(this.field_5050.field_10328 * 16) - this.field_5061 * 16.0F;
          float var18 = (float)(this.field_5050.field_10327 * 16) - this.field_5057 * 16.0F;
          float var19 = (float)var16.field_21071 - var17 + 1.0F;

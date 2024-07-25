@@ -12,21 +12,21 @@ public class class_9140 extends class_2794 {
       super(true);
       if (field_46740.before(new Date(System.currentTimeMillis() - 3000L))) {
          field_46740 = new Date();
-         SigmaMainClass.method_3328().method_3326().method_12863("Saving profiles...");
+         SigmaMainClass.getInstance().method_3326().method_12863("Saving profiles...");
 
          try {
-            SigmaMainClass.method_3328().getModuleManager().method_848().method_4306();
-            SigmaMainClass.method_3328().method_3318();
+            SigmaMainClass.getInstance().getModuleManager().method_848().method_4306();
+            SigmaMainClass.getInstance().method_3318();
          } catch (IOException var4) {
             var4.printStackTrace();
-            SigmaMainClass.method_3328().method_3326().method_12862("Unable to save mod profiles...");
+            SigmaMainClass.getInstance().method_3326().method_12862("Unable to save mod profiles...");
          }
       }
    }
 
    @Override
    public void method_1163() {
-      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645) {
+      if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645) {
          this.<class_9521>method_1186(
             new class_9521(
                this.field_941 / 2 - 102,

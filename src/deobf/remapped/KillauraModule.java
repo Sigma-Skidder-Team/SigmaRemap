@@ -116,7 +116,7 @@ public class KillauraModule extends Module {
    @EventListen
    public void method_11541(class_717 var1) {
       if (this.method_42015() && this.getBooleanValueByName("Disable on death")) {
-         SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
+         SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to respawn"));
          this.method_41999();
       }
    }
@@ -131,7 +131,7 @@ public class KillauraModule extends Module {
          if (this.getBooleanValueByName("Disable on death")) {
             if (!mcInstance.field_9632.method_37330()) {
                this.method_41999();
-               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
+               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Aura", "Aura disabled due to death"));
             }
          }
       }
@@ -185,7 +185,7 @@ public class KillauraModule extends Module {
             if (this.field_12560 != null && !this.field_12560.isEmpty()) {
                this.field_12546++;
                float var4 = this.getFloatValueByName("Hit box expand");
-               SecondModule var5 = (SecondModule) SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class);
+               SecondModule var5 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class);
                if (var5.method_42015() && var5.getStringValueByName("Type").equalsIgnoreCase("Minis")) {
                   this.method_11542(var1, var5.method_16864().getStringValueByName("Mode"), var5.method_16864().getBooleanValueByName("Avoid Fall Damage"));
                }
@@ -431,9 +431,9 @@ public class KillauraModule extends Module {
       } else {
          this.field_12545++;
          if ((
-               !SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).method_42015()
-                  || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).getStringValueByName("Type").equalsIgnoreCase("Cubecraft")
-                  || SigmaMainClass.method_3328().getModuleManager().method_847(class_6908.class).getStringValueByName("Type").equalsIgnoreCase("Vanilla")
+               !SigmaMainClass.getInstance().getModuleManager().method_847(class_6908.class).method_42015()
+                  || SigmaMainClass.getInstance().getModuleManager().method_847(class_6908.class).getStringValueByName("Type").equalsIgnoreCase("Cubecraft")
+                  || SigmaMainClass.getInstance().getModuleManager().method_847(class_6908.class).getStringValueByName("Type").equalsIgnoreCase("Vanilla")
             )
             && mcInstance.field_9632.field_41774
             && var9
@@ -533,7 +533,7 @@ public class KillauraModule extends Module {
                )
                && this.field_12560.size() > 0) {
                if (this.field_12570 + 1 < this.field_12560.size()) {
-                  if (field_12556 != null && !SigmaMainClass.method_3328().method_3307().method_14469(this.field_12560.get(this.field_12570).method_15377())) {
+                  if (field_12556 != null && !SigmaMainClass.getInstance().method_3307().method_14469(this.field_12560.get(this.field_12570).method_15377())) {
                      this.field_12570++;
                   }
                } else {

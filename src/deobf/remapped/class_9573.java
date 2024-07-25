@@ -7,7 +7,7 @@ public class class_9573 extends class_4098 {
    public class_9573(class_7038 var1, String var2, int var3, int var4, Category[] var5) {
       super(var1, var2, var3 - 296, var4 - 346, 592, 692);
 
-      for (Module var9 : SigmaMainClass.method_3328().getModuleManager().method_843().values()) {
+      for (Module var9 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
          if (var9.method_42013()) {
             for (Category var13 : var5) {
                if (var9.method_42004().equals(var13)) {

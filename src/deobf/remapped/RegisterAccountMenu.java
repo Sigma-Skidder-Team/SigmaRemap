@@ -70,7 +70,7 @@ public class RegisterAccountMenu extends class_1859 {
       class_73.method_97((float)(this.field_36270 + var4), (float)(this.field_36261 + var4 + 10), 160.0F, 160.0F, class_2209.field_11049, var1);
       short var5 = 305;
       short var6 = 316;
-      class_8646 var7 = SigmaMainClass.method_3328().method_3332().method_23083();
+      class_8646 var7 = SigmaMainClass.getInstance().method_3332().method_23083();
       if (var7 != null) {
          this.field_40937.method_32104(var7.method_39653());
          if (var7.method_39653()) {
@@ -98,13 +98,13 @@ public class RegisterAccountMenu extends class_1859 {
             () -> {
                this.field_40934.method_32119(true);
                this.field_40929.method_32104(false);
-               class_8646 var3 = SigmaMainClass.method_3328().method_3332().method_23083();
+               class_8646 var3 = SigmaMainClass.getInstance().method_3332().method_23083();
                if (var3 != null) {
                   var3.method_39656(this.field_40937.method_32165());
                }
 
-               SigmaMainClass.method_3328().method_3332().method_23089();
-               String var4 = SigmaMainClass.method_3328()
+               SigmaMainClass.getInstance().method_3332().method_23089();
+               String var4 = SigmaMainClass.getInstance()
                   .method_3332()
                   .method_23082(this.field_40936.method_32165(), this.field_40933.method_32165(), this.field_40935.method_32165(), var3);
                class_5702 var5 = (class_5702)this.method_32167();

@@ -97,7 +97,7 @@ public class class_5870 extends Module {
 
    private void method_26739() {
       int var3 = (int)this.getFloatValueByName("Refill delay");
-      if (this.field_29804 >= var3 && SigmaMainClass.method_3328().method_3310().method_25303() >= var3) {
+      if (this.field_29804 >= var3 && SigmaMainClass.getInstance().method_3310().method_25303() >= var3) {
          while (this.field_29807 < 36) {
             boolean var4 = false;
             if (class_2740.method_12311(this.field_29807).method_27960() == class_4897.field_24719
@@ -131,7 +131,7 @@ public class class_5870 extends Module {
 
       for (int var4 = 36; var4 < 45; var4++) {
          if (mcInstance.field_9632.field_3869.method_18878(var4).method_35898().method_27960() == class_4897.field_24719
-            && SigmaMainClass.method_3328().method_3319().method_30523(var4) > 100L) {
+            && SigmaMainClass.getInstance().method_3319().method_30523(var4) > 100L) {
             var3 = var4 - 36;
             break;
          }

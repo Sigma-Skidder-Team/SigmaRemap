@@ -82,7 +82,7 @@ public class class_268 extends Module {
                      class_2990 var12 = (class_2990)field_960.get(0);
                      class_2990 var15 = (class_2990)var6;
                      Category var16 = this.field_958.get(var12.field_14700);
-                     Module var17 = SigmaMainClass.method_3328().getModuleManager().method_844(var16).get(var15.field_14700);
+                     Module var17 = SigmaMainClass.getInstance().getModuleManager().method_844(var16).get(var15.field_14700);
                      this.method_1205(var17);
                   } else if (var5 == 3) {
                      this.method_1203(true);
@@ -93,7 +93,7 @@ public class class_268 extends Module {
                      class_2990 var7 = (class_2990)field_960.get(0);
                      class_2990 var8 = (class_2990)var6;
                      Category var9 = this.field_958.get(var7.field_14700);
-                     Module var10 = SigmaMainClass.method_3328().getModuleManager().method_844(var9).get(var8.field_14700);
+                     Module var10 = SigmaMainClass.getInstance().getModuleManager().method_844(var9).get(var8.field_14700);
                      var10.method_41991(!var10.method_42015());
                   }
             }
@@ -106,7 +106,7 @@ public class class_268 extends Module {
       class_2990 var5 = (class_2990)field_960.get(1);
       class_2990 var6 = (class_2990)field_960.get(2);
       Category var7 = this.field_958.get(var4.field_14700);
-      Module var8 = SigmaMainClass.method_3328().getModuleManager().method_844(var7).get(var5.field_14700);
+      Module var8 = SigmaMainClass.getInstance().getModuleManager().method_844(var7).get(var5.field_14700);
       Setting var9 = this.method_1206(var8).get(var6.field_14700);
       if (!(var9 instanceof ModeSetting)) {
          if (!(var9 instanceof BooleanSetting)) {
@@ -190,7 +190,7 @@ public class class_268 extends Module {
          Category var5 = this.field_958.get(var4.field_14700);
          int var6 = 0;
 
-         for (Module var8 : SigmaMainClass.method_3328().getModuleManager().method_844(var5)) {
+         for (Module var8 : SigmaMainClass.getInstance().getModuleManager().method_844(var5)) {
             var3.method_13685(var6++, (!var8.method_42015() ? "§7" : "") + var8.method_41987());
          }
       }
@@ -216,7 +216,7 @@ public class class_268 extends Module {
          }
 
          Category var9 = this.field_958.get(var5.field_14700);
-         Module var10 = SigmaMainClass.method_3328().getModuleManager().method_844(var9).get(var6.field_14700);
+         Module var10 = SigmaMainClass.getInstance().getModuleManager().method_844(var9).get(var6.field_14700);
          String var11 = var10.method_42001();
          if (var4 == 3) {
             Setting var12 = this.method_1206(var10).get(var7.field_14700);
@@ -286,7 +286,7 @@ public class class_268 extends Module {
    public void method_1200(Category var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Module var6 : SigmaMainClass.method_3328().getModuleManager().method_844(var1)) {
+      for (Module var6 : SigmaMainClass.getInstance().getModuleManager().method_844(var1)) {
          var4.add(var6.method_41987());
       }
 

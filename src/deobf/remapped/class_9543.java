@@ -242,7 +242,7 @@ public class class_9543 extends class_367 {
       while (var5.hasNext()) {
          Entity var6 = (Entity)var5.next();
          if (var6 != mcInstance.field_9632) {
-            if (!SigmaMainClass.method_3328().method_3307().method_14460(var6)) {
+            if (!SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
                if (var6 instanceof class_5834) {
                   if (((class_5834)var6).method_26551() != 0.0F) {
                      if (!(mcInstance.field_9632.method_37175(var6) > var1)) {
@@ -250,7 +250,7 @@ public class class_9543 extends class_367 {
                            if (!(var6 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var6 instanceof class_704) {
                                  var5.remove();
-                              } else if (var6 instanceof class_704 && SigmaMainClass.method_3328().method_3331().method_20495(var6)) {
+                              } else if (var6 instanceof class_704 && SigmaMainClass.getInstance().method_3331().method_20495(var6)) {
                                  var5.remove();
                               } else if (!this.getBooleanValueByName("Invisible") && var6.method_37109()) {
                                  var5.remove();
@@ -261,7 +261,7 @@ public class class_9543 extends class_367 {
                               } else if (!var6.method_37367()) {
                                  if (var6 instanceof class_704
                                     && class_5876.method_26760((class_704)var6)
-                                    && SigmaMainClass.method_3328().getModuleManager().method_847(class_3595.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().method_847(class_3595.class).method_42015()) {
                                     var5.remove();
                                  }
                               } else {

@@ -38,7 +38,7 @@ public class class_6908 extends SecondModule {
       if (var1.method_557() instanceof class_509 && mcInstance.field_9632 != null) {
          field_35509 = 0;
          if (this.getBooleanValueByName("Lag back checker") && this.method_42015() && mcInstance.field_9632.field_41697 > 2) {
-            SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("Speed", "Disabled speed due to lagback."));
+            SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("Speed", "Disabled speed due to lagback."));
             this.method_41999();
          }
       }

@@ -44,7 +44,7 @@ public class class_5579 extends Module {
                   ClickEvent var11 = var10.getStyle().getClickEvent();
                   if (var11 != null && var11.getAction() == ClickEvent$class_47.RUN_COMMAND && var11.getValue().contains("playagain")) {
                      this.field_28338.method_33594(new class_1508(var11.getValue(), (long)this.field_28338.getFloatValueByName("Auto Join delay") * 1000L));
-                     SigmaMainClass.method_3328()
+                     SigmaMainClass.getInstance()
                         .method_3335()
                         .method_27841(
                            new class_8235(

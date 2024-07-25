@@ -437,7 +437,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
          this.field_40623.method_26122();
          class_9081 var11 = new class_9081();
-         SigmaMainClass.method_3328().method_3302().method_7914(var11);
+         SigmaMainClass.getInstance().method_3302().method_7914(var11);
          if (this.field_40612.field_9577.method_40867().method_42383() && !var10 && !var11.method_29716()) {
             class_450.method_2171(this.field_40612, var1);
             this.method_35952(var1, var3);
@@ -516,7 +516,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          );
          if (var4 && this.field_40612.field_9601 != null && !class_3111.method_14350()) {
             this.field_40612.method_8562().method_16056("level");
-            SigmaMainClass.method_3328().method_3302().method_7914(new class_1711(var1, var2));
+            SigmaMainClass.getInstance().method_3302().method_7914(new class_1711(var1, var2));
             this.method_35950(var1, var2, new class_7966());
             if (this.field_40612.method_8520() && this.field_40646 < Util.getMeasuringTimeMs() - 1000L) {
                this.field_40646 = Util.getMeasuringTimeMs();
@@ -587,7 +587,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
 
          class_3542.method_16438();
-         SigmaMainClass.method_3328().method_3311();
+         SigmaMainClass.getInstance().method_3311();
          class_3542.method_16489();
          if (this.field_40616 != (this.field_40612.field_9610 != null)) {
             if (this.field_40612.field_9610 != null) {
@@ -610,13 +610,13 @@ public class GameRenderer implements class_6491, AutoCloseable {
                var13.method_29851("Overlay name", () -> this.field_40612.field_9610.getClass().getCanonicalName());
                throw new class_3297(var12);
             }
-         } else if (this.field_40612.field_9623 != null && SigmaMainClass.method_3328().method_3299().method_31001() == null) {
+         } else if (this.field_40612.field_9623 != null && SigmaMainClass.getInstance().method_3299().method_31001() == null) {
             try {
                if (class_7860.field_39933.method_3596()) {
                   class_7860.method_35547(class_7860.field_39933, this.field_40612.field_9623, var10, var7, var8, this.field_40612.method_8491());
                } else {
                   this.field_40612.field_9623.method_6767(var10, var7, var8, this.field_40612.method_8491());
-                  SigmaMainClass.method_3328().method_3302().method_7914(new class_2532());
+                  SigmaMainClass.getInstance().method_3302().method_7914(new class_2532());
                }
             } catch (Throwable var14) {
                class_159 var17 = class_159.method_643(var14, "Rendering screen");
@@ -808,7 +808,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       this.field_40612.method_8562().method_16050("hand");
       class_3542.method_16438();
       class_3542.method_16358(var4.method_36058().method_28620());
-      SigmaMainClass.method_3328().method_3316();
+      SigmaMainClass.getInstance().method_3316();
       class_3542.method_16489();
       if (this.field_40627 && !class_6588.field_33945) {
          if (var7) {

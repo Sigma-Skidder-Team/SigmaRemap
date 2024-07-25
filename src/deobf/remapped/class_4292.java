@@ -13,7 +13,7 @@ public class class_4292 {
    public MinecraftClient field_20825 = MinecraftClient.getInstance();
 
    public class_4292() {
-      SigmaMainClass.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().method_3302().method_7908(this);
    }
 
    @EventListen

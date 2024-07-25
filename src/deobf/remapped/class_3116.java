@@ -10,7 +10,7 @@ public class class_3116 {
    private MinecraftClient field_15500 = MinecraftClient.getInstance();
 
    public void method_14473() {
-      SigmaMainClass.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().method_3302().method_7908(this);
       this.method_14463();
    }
 
@@ -19,7 +19,7 @@ public class class_3116 {
       if (var1.method_29384() == this.field_15500.field_9577.field_45541.field_30027.field_17800
          && this.field_15500.field_9662 != null
          && this.field_15500.field_9662.method_45509() != null) {
-         CommandManager var4 = SigmaMainClass.method_3328().getCommandManager();
+         CommandManager var4 = SigmaMainClass.getInstance().getCommandManager();
          var4.usePrefix();
          if (this.method_14460(this.field_15500.field_9662)) {
             this.method_14467(this.field_15500.field_9662.method_45509().getUnformattedComponentText());
@@ -120,23 +120,23 @@ public class class_3116 {
    }
 
    public void method_14470() {
-      SigmaMainClass.method_3328().method_3304().method_5821("friends", this.field_15502);
+      SigmaMainClass.getInstance().method_3304().method_5821("friends", this.field_15502);
    }
 
    public void method_14462() {
-      SigmaMainClass.method_3328().method_3304().method_5821("enemies", this.field_15503);
+      SigmaMainClass.getInstance().method_3304().method_5821("enemies", this.field_15503);
    }
 
    private void method_14463() {
-      if (SigmaMainClass.method_3328().method_3304().method_5850("friends")) {
-         JSONArray var3 = SigmaMainClass.method_3328().method_3304().method_5849("friends");
+      if (SigmaMainClass.getInstance().method_3304().method_5850("friends")) {
+         JSONArray var3 = SigmaMainClass.getInstance().method_3304().method_5849("friends");
          if (var3 != null) {
             var3.forEach(var1 -> this.field_15502.add((String)var1));
          }
       }
 
-      if (SigmaMainClass.method_3328().method_3304().method_5850("enemies")) {
-         JSONArray var4 = SigmaMainClass.method_3328().method_3304().method_5849("enemies");
+      if (SigmaMainClass.getInstance().method_3304().method_5850("enemies")) {
+         JSONArray var4 = SigmaMainClass.getInstance().method_3304().method_5849("enemies");
          if (var4 != null) {
             var4.forEach(var1 -> this.field_15503.add((String)var1));
          }

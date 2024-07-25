@@ -16,7 +16,7 @@ public class class_8057 extends class_367 {
 
    public class_8057() {
       super("NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs", Category.MISC);
-      File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/nbs");
+      File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/nbs");
       if (var3.exists()) {
          this.field_41251 = new ArrayList<String>(Arrays.asList(var3.list()));
 
@@ -267,7 +267,7 @@ public class class_8057 extends class_367 {
                return;
             }
          } else {
-            File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/nbs/" + this.getStringValueByName("Song"));
+            File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/nbs/" + this.getStringValueByName("Song"));
             this.field_41249 = class_4713.method_21789(var3);
             if (this.field_41249 == null) {
                class_314.method_1443("§cError loading song! Make sure song is saved as <= V3 format");

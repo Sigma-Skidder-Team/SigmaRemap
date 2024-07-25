@@ -11,7 +11,7 @@ public class CommandManager {
    private static List<Runnable> field_25600 = new ArrayList<Runnable>();
 
    public void method_22654() {
-      SigmaMainClass.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().method_3302().method_7908(this);
       this.addCommand(new VClipCommand());
       this.addCommand(new HClipCommand());
       this.addCommand(new SelfDamageCommand());

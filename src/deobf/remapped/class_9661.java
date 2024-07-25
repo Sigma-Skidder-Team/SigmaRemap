@@ -48,7 +48,7 @@ public class class_9661 extends Module {
       if (this.method_42015() && mcInstance.field_9632 != null && var1.method_6449()) {
          if (this.field_49203 != 1) {
             if (this.field_49203 == 3) {
-               Module var4 = SigmaMainClass.method_3328().getModuleManager().method_847(class_9801.class);
+               Module var4 = SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class);
                if (var4.method_42015() && var4.getStringValueByName("Type").equals("NoGround")) {
                   var1.method_6455(var1.method_6454() + 1.0E-14);
                } else {

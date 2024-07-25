@@ -30,7 +30,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       byte var19 = 10;
       String var20 = "© Sigma Prod";
       StringBuilder var10000 = new StringBuilder().append("Jello for Sigma ");
-      SigmaMainClass.method_3328();
+      SigmaMainClass.getInstance();
       String var21 = var10000.append(SigmaMainClass.field_3957).append("  -  1.8 to ").append(class_3347.field_16514.method_2045()).toString();
       this.method_32148(
          this.field_8718 = new class_8443(
@@ -144,7 +144,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.method_32148(this.field_8716 = new class_7400(this, "Account", 0, var19, 0, var18, "Log in"));
       this.method_32148(this.field_8719 = new class_8911(this, "pre", 0, 0, 240, 100));
       this.field_8719.method_32184((var1x, var2x) -> {
-         if (SigmaMainClass.method_3328().method_3332().method_23081() != null) {
+         if (SigmaMainClass.getInstance().method_3332().method_23081() != null) {
             ((ExitScreenMenu)this.method_32167()).method_29468();
          } else {
             this.method_7601(new class_5702());
@@ -158,7 +158,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       this.field_8723.method_32100((var1x, var2x) -> this.method_7601(new AltManagerMenu()));
       this.field_8713.method_32100((var1x, var2x) -> this.method_7597());
       this.field_8716.method_32100((var1x, var2x) -> {
-         if (SigmaMainClass.method_3328().method_3332().method_23081() != null) {
+         if (SigmaMainClass.getInstance().method_3332().method_23081() != null) {
             ((ExitScreenMenu)this.method_32167()).method_29469();
          } else {
             this.method_7601(new class_5702());
@@ -166,7 +166,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
       });
       this.field_8722.method_32100((var1x, var2x) -> {
          if (this.field_8712++ > 8) {
-            SigmaMainClass.method_3328().method_3299().method_30990(new class_3829());
+            SigmaMainClass.getInstance().method_3299().method_30990(new class_3829());
          }
       });
    }
@@ -201,16 +201,16 @@ public class AnotherSigmaMainMenu extends class_7038 {
 
    @Override
    public void method_32145(int var1, int var2) {
-      this.field_8719.method_32104(!SigmaMainClass.method_3328().method_3332().method_23084());
+      this.field_8719.method_32104(!SigmaMainClass.getInstance().method_3332().method_23084());
       byte var5 = 30;
       byte var6 = 90;
-      this.field_8724.method_32175(var6 + (!SigmaMainClass.method_3328().method_3332().method_23084() ? 202 : 0));
-      this.field_8714.method_32175(var5 + (!SigmaMainClass.method_3328().method_3332().method_23084() ? 202 : 0));
+      this.field_8724.method_32175(var6 + (!SigmaMainClass.getInstance().method_3332().method_23084() ? 202 : 0));
+      this.field_8714.method_32175(var5 + (!SigmaMainClass.getInstance().method_3332().method_23084() ? 202 : 0));
       super.method_32145(var1, var2);
    }
 
    public void method_7598() {
-      SigmaMainClass.method_3328().method_3315().method_21206("clicksound");
+      SigmaMainClass.getInstance().method_3315().method_21206("clicksound");
    }
 
    public void method_7600(Screen var1) {
@@ -219,7 +219,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
    }
 
    public void method_7601(class_2596 var1) {
-      SigmaMainClass.method_3328().method_3299().method_30990(var1);
+      SigmaMainClass.getInstance().method_3299().method_30990(var1);
       this.method_7598();
    }
 

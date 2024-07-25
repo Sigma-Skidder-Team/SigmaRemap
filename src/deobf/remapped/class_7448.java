@@ -17,7 +17,7 @@ public class class_7448 extends Module {
 
    @Override
    public void onEnable() {
-      this.field_37951 = SigmaMainClass.method_3328().method_3310().method_25293() <= 0 ? 1 : 0;
+      this.field_37951 = SigmaMainClass.getInstance().method_3310().method_25293() <= 0 ? 1 : 0;
       this.field_37949 = class_8865.method_40775();
       this.field_37947 = class_8865.method_40787()[0];
    }

@@ -121,9 +121,9 @@ public class AutoMinerModule extends Module {
                break;
             }
 
-            if (!var14 && mcInstance.field_9632.field_41726 && !SigmaMainClass.method_3328().method_3301().method_27149() && this.field_25750 == null) {
+            if (!var14 && mcInstance.field_9632.field_41726 && !SigmaMainClass.getInstance().method_3301().method_27149() && this.field_25750 == null) {
                List var15 = this.method_22863();
-               SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("AutoMiner", "Computing...", class_2209.field_10993));
+               SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("AutoMiner", "Computing...", class_2209.field_10993));
                this.field_25750 = new Thread(
                   () -> {
                      boolean var4x = false;
@@ -142,8 +142,8 @@ public class AutoMinerModule extends Module {
                            var12x.field_8453 = true;
                            List var13x = this.field_25755.method_45226(var12x);
                            if (var13x.size() > 1) {
-                              SigmaMainClass.method_3328().method_3301().method_27153(var13x);
-                              SigmaMainClass.method_3328()
+                              SigmaMainClass.getInstance().method_3301().method_27153(var13x);
+                              SigmaMainClass.getInstance()
                                  .method_3335()
                                  .method_27841(
                                     new class_8235(
@@ -162,7 +162,7 @@ public class AutoMinerModule extends Module {
 
                      try {
                         if (!var4x) {
-                           SigmaMainClass.method_3328()
+                           SigmaMainClass.getInstance()
                               .method_3335()
                               .method_27841(new class_8235("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", class_2209.field_10993));
                            Thread.sleep(1000L);
@@ -182,7 +182,7 @@ public class AutoMinerModule extends Module {
                   this.field_25752 = this.method_22856();
                }
 
-               SigmaMainClass.method_3328()
+               SigmaMainClass.getInstance()
                   .method_3335()
                   .method_27841(new class_8235("AutoMiner", "Computing... (" + this.field_25755.field_49718 + ")", class_2209.field_10993));
             }
@@ -236,8 +236,8 @@ public class AutoMinerModule extends Module {
       this.field_25750 = null;
       this.field_25751.clear();
       this.field_25748.clear();
-      SigmaMainClass.method_3328().method_3301().method_27144();
-      SigmaMainClass.method_3328().method_3335().method_27841(new class_8235("AutoMiner", "Scanning Terrain..."));
+      SigmaMainClass.getInstance().method_3301().method_27144();
+      SigmaMainClass.getInstance().method_3335().method_27841(new class_8235("AutoMiner", "Scanning Terrain..."));
    }
 
    @Override
@@ -249,7 +249,7 @@ public class AutoMinerModule extends Module {
       this.field_25750 = null;
       this.field_25751.clear();
       this.field_25748.clear();
-      SigmaMainClass.method_3328().method_3301().method_27144();
+      SigmaMainClass.getInstance().method_3301().method_27144();
    }
 
    private void method_22862() {

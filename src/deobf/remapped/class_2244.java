@@ -18,7 +18,7 @@ public class class_2244 extends Module {
 
    @Override
    public void onDisable() {
-      SigmaMainClass.method_3328().method_3301().method_27144();
+      SigmaMainClass.getInstance().method_3301().method_27144();
       this.field_11172 = null;
    }
 
@@ -29,7 +29,7 @@ public class class_2244 extends Module {
 
       while (var4.hasNext()) {
          Entity var5 = (Entity)var4.next();
-         if (!(var5 instanceof class_704) || SigmaMainClass.method_3328().method_3331().method_20495(var5) || !class_314.method_1413(var5, 2.0F)) {
+         if (!(var5 instanceof class_704) || SigmaMainClass.getInstance().method_3331().method_20495(var5) || !class_314.method_1413(var5, 2.0F)) {
             var4.remove();
          }
       }
@@ -65,7 +65,7 @@ public class class_2244 extends Module {
                      var7.field_8453 = true;
                      var7.field_8455 = true;
                      this.field_11176 = var4x.method_45226(var7);
-                     SigmaMainClass.method_3328().method_3301().method_27153(this.field_11176);
+                     SigmaMainClass.getInstance().method_3301().method_27153(this.field_11176);
                      this.field_11172 = null;
                      class_314.method_1443("calc" + this.field_11176.size());
                   } catch (Exception var8) {

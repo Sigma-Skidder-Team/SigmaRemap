@@ -33,7 +33,7 @@ public class class_4763 {
    public ByteBuffer field_23059 = BufferUtils.createByteBuffer(this.field_23057 * 16 * this.field_23057 * 16 * 3);
 
    public void method_21976() {
-      SigmaMainClass.method_3328().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().method_3302().method_7908(this);
       int var3 = -7687425;
 
       for (int var4 = 0; var4 < 16; var4++) {
@@ -75,7 +75,7 @@ public class class_4763 {
          try {
             class_357.method_1791(var8, var3);
          } catch (IOException | class_7584 var7) {
-            SigmaMainClass.method_3328().method_3326().method_12864(var7.getMessage());
+            SigmaMainClass.getInstance().method_3326().method_12864(var7.getMessage());
          }
       }
    }

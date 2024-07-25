@@ -20,7 +20,7 @@ public class class_7487 {
       if (!var5.contains(var2)) {
          var5.add(var2);
       } else {
-         SigmaMainClass.method_3328().method_3326().method_12862("Registered the same method of the same instance twice. Was this intended?");
+         SigmaMainClass.getInstance().method_3326().method_12862("Registered the same method of the same instance twice. Was this intended?");
       }
    }
 

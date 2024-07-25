@@ -50,7 +50,7 @@ public class class_9024 extends Module {
    @class_5355
    private void method_41399(class_1711 var1) {
       if (this.method_42015() && mcInstance.field_9632 != null) {
-         if (SigmaMainClass.method_3328().method_3299().method_30987()) {
+         if (SigmaMainClass.getInstance().method_3299().method_30987()) {
             if (!MinecraftClient.getInstance().field_9577.field_45470) {
                if (!MinecraftClient.getInstance().field_9577.field_45567) {
                   class_4746.method_21925(this.field_46182, this.field_46185, this.field_46158, this.field_46178);
@@ -107,7 +107,7 @@ public class class_9024 extends Module {
    private List<Module> method_41400(Category var1) {
       ArrayList var4 = new ArrayList();
 
-      for (Module var6 : SigmaMainClass.method_3328().getModuleManager().method_844(var1)) {
+      for (Module var6 : SigmaMainClass.getInstance().getModuleManager().method_844(var1)) {
          var4.add(var6);
       }
 
@@ -270,7 +270,7 @@ public class class_9024 extends Module {
          if (var12.field_19050 == var6) {
             float var13 = var12.field_19052.method_11123();
             int var14 = class_314.method_1444(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
-            if (SigmaMainClass.method_3328().method_3299().method_30987()) {
+            if (SigmaMainClass.getInstance().method_3299().method_30987()) {
                var14 = class_314.method_1444(-1, (1.0F - var13) * 0.14F);
             }
 
@@ -367,7 +367,7 @@ public class class_9024 extends Module {
    }
 
    private void method_41406(int var1, int var2, int var3, int var4, Color[] var5, Color[] var6, Color[] var7, float var8) {
-      boolean var11 = SigmaMainClass.method_3328().method_3299().method_30987();
+      boolean var11 = SigmaMainClass.getInstance().method_3299().method_30987();
       Object var12 = null;
       byte var13 = 20;
       int var14 = class_314.method_1389(var5).getRGB();
@@ -392,7 +392,7 @@ public class class_9024 extends Module {
 
    private void method_41405() {
       byte var3 = 3;
-      if (!SigmaMainClass.method_3328().method_3299().method_30987()) {
+      if (!SigmaMainClass.getInstance().method_3299().method_30987()) {
          if (!MinecraftClient.getInstance().field_9577.field_45470) {
             if (!MinecraftClient.getInstance().field_9577.field_45567) {
                for (int var4 = 0; var4 < 3; var4++) {

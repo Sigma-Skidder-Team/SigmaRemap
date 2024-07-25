@@ -10,7 +10,7 @@ public abstract class Module {
    public String field_46702;
    public String field_46701;
    public Category field_46696;
-   public boolean field_46700;
+   public boolean moduleEnabled;
    public boolean field_46699;
    private boolean field_46698 = true;
    private static List<Class<? extends Module>> developmentModules = new ArrayList<Class<? extends Module>>();
@@ -81,32 +81,32 @@ public abstract class Module {
       }
    }
 
-   public void method_42022(String var1, Object var2) {
+   public void isValueObject(String var1, Object var2) {
       this.settingMap.get(var1).method_23037(var2);
    }
 
-   public void method_41986(String var1, boolean var2) {
+   public void isValueBoolean1(String var1, boolean var2) {
       this.settingMap.get(var1).method_23037(var2);
    }
 
-   public void method_42008(String var1, int var2) {
+   public void isValueInt(String var1, int var2) {
       this.settingMap.get(var1).method_23037(var2);
    }
 
-   public void method_42005(String var1, boolean var2) {
+   public void isValueBoolean2(String var1, boolean var2) {
       this.settingMap.get(var1).method_23037(var2);
    }
 
-   public void method_42009(String var1, String var2) {
+   public void isValueString(String var1, String var2) {
       this.settingMap.get(var1).method_23037(var2);
    }
 
    public void method_42019() {
-      if (this.field_46700) {
+      if (this.moduleEnabled) {
          this.onDisable();
       }
 
-      this.field_46700 = false;
+      this.moduleEnabled = false;
       this.field_46699 = true;
 
       for (Setting var4 : this.settingMap.values()) {
@@ -114,11 +114,11 @@ public abstract class Module {
       }
    }
 
-   public JSONObjectImpl method_42021(JSONObjectImpl var1) {
+   public JSONObjectImpl saveToJson(JSONObjectImpl var1) {
       JSONArray var4 = JSONWriter.saveStringValue2ig(var1, "options");
 
       try {
-         this.field_46700 = var1.method_5826("enabled");
+         this.moduleEnabled = var1.method_5826("enabled");
       } catch (class_7584 var14) {
       }
 
@@ -142,7 +142,7 @@ public abstract class Module {
                   try {
                      var9.saveDataToJson(var6);
                   } catch (class_7584 var11) {
-                     SigmaMainClass.method_3328()
+                     SigmaMainClass.getInstance()
                         .method_3326()
                         .method_12862("Could not initialize settings of " + this.method_41992() + "." + var9.method_23032() + " from config.");
                   }
@@ -152,16 +152,16 @@ public abstract class Module {
          }
       }
 
-      if (this.field_46700 && mcInstance.field_9601 != null) {
+      if (this.moduleEnabled && mcInstance.field_9601 != null) {
          this.onEnable();
       }
 
       return var1;
    }
 
-   public JSONObjectImpl method_42014(JSONObjectImpl var1) {
+   public JSONObjectImpl loadFromJson(JSONObjectImpl var1) {
       var1.method_5820("name", this.method_41992());
-      var1.method_5823("enabled", this.field_46700);
+      var1.method_5823("enabled", this.moduleEnabled);
       var1.method_5823("allowed", this.method_41994());
       JSONArray var4 = new JSONArray();
 
@@ -175,7 +175,7 @@ public abstract class Module {
 
    public void onEnable() {
       if (this.getClass().isAnnotationPresent(InDevelopment.class) && !developmentModules.contains(this.getClass())) {
-         SigmaMainClass.method_3328().method_3326().method_12862("This mod is still in development. Be careful!");
+         SigmaMainClass.getInstance().method_3326().method_12862("This mod is still in development. Be careful!");
          developmentModules.add(this.getClass());
       }
    }
@@ -204,10 +204,10 @@ public abstract class Module {
    }
 
    public Category method_42004() {
-      if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == Category.ITEM) {
+      if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && this.field_46696 == Category.ITEM) {
          return Category.PLAYER;
       } else {
-         return SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && this.field_46696 == Category.EXPLOIT
+         return SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && this.field_46696 == Category.EXPLOIT
             ? Category.MISC
             : this.field_46696;
       }
@@ -222,62 +222,62 @@ public abstract class Module {
    }
 
    public boolean method_42015() {
-      if (SigmaMainClass.method_3328().method_3312() != class_6015.field_30642) {
-         return SigmaMainClass.method_3328().method_3312() == class_6015.field_30644 && !this.method_42013() ? false : this.field_46700;
+      if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30642) {
+         return SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && !this.method_42013() ? false : this.moduleEnabled;
       } else {
          return false;
       }
    }
 
-   public void method_42023(boolean var1) {
-      if (this.field_46700 != var1) {
-         if (!(this.field_46700 = var1)) {
-            SigmaMainClass.method_3328().method_3302().method_7915(this);
+   public void setEnabled(boolean var1) {
+      if (this.moduleEnabled != var1) {
+         if (!(this.moduleEnabled = var1)) {
+            SigmaMainClass.getInstance().eventManager().subscribeEvent(this);
             this.onDisable();
          } else {
-            SigmaMainClass.method_3328().method_3302().method_7917(this);
+            SigmaMainClass.getInstance().eventManager().unsubscribeEvent(this);
             this.onEnable();
          }
       }
 
-      SigmaMainClass.method_3328().getModuleManager().method_835().method_370(this);
+      SigmaMainClass.getInstance().getModuleManager().method_835().method_370(this);
    }
 
    public void method_42018(boolean var1) {
-      this.field_46700 = var1;
-      if (!this.field_46700) {
-         SigmaMainClass.method_3328().method_3302().method_7915(this);
+      this.moduleEnabled = var1;
+      if (!this.moduleEnabled) {
+         SigmaMainClass.getInstance().eventManager().subscribeEvent(this);
       } else {
-         SigmaMainClass.method_3328().method_3302().method_7917(this);
+         SigmaMainClass.getInstance().eventManager().unsubscribeEvent(this);
       }
    }
 
    public void method_41991(boolean var1) {
-      if (this.field_46700 != var1) {
-         if (!(this.field_46700 = var1)) {
-            SigmaMainClass.method_3328().method_3302().method_7915(this);
+      if (this.moduleEnabled != var1) {
+         if (!(this.moduleEnabled = var1)) {
+            SigmaMainClass.getInstance().eventManager().subscribeEvent(this);
             if (!(this instanceof SecondModule)) {
-               if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
-                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
-                  SigmaMainClass.method_3328().method_3315().method_21206("deactivate");
+               if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
+                  && SigmaMainClass.getInstance().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
+                  SigmaMainClass.getInstance().method_3315().method_21206("deactivate");
                }
 
-               if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
-                  && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
+               if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
+                  && SigmaMainClass.getInstance().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
                   MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
                }
             }
 
             this.onDisable();
          } else {
-            SigmaMainClass.method_3328().method_3302().method_7917(this);
-            if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
-               && SigmaMainClass.method_3328().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
-               SigmaMainClass.method_3328().method_3315().method_21206("activate");
+            SigmaMainClass.getInstance().eventManager().unsubscribeEvent(this);
+            if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
+               && SigmaMainClass.getInstance().getModuleManager().method_847(class_8438.class).getBooleanValueByName("Sound")) {
+               SigmaMainClass.getInstance().method_3315().method_21206("activate");
             }
 
-            if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30644
-               && SigmaMainClass.method_3328().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
+            if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
+               && SigmaMainClass.getInstance().getModuleManager().method_847(class_4221.class).getBooleanValueByName("Sound")) {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 
@@ -286,7 +286,7 @@ public abstract class Module {
          }
       }
 
-      SigmaMainClass.method_3328().getModuleManager().method_835().method_370(this);
+      SigmaMainClass.getInstance().getModuleManager().method_835().method_370(this);
    }
 
    public void method_41999() {

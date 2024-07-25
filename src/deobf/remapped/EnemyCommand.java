@@ -25,7 +25,7 @@ public class EnemyCommand extends Command {
                   Pattern var14 = Pattern.compile("[a-zA-Z0-9_]{2,16}");
                   boolean var15 = var14.matcher(var2[1].method_24060()).matches();
                   if (var15) {
-                     boolean var16 = SigmaMainClass.method_3328().method_3307().method_14458(var2[1].method_24060());
+                     boolean var16 = SigmaMainClass.getInstance().method_3307().method_14458(var2[1].method_24060());
                      if (!var16) {
                         var3.method_3731("\"" + var2[1].method_24060() + "\" is already your enemy.");
                      } else {
@@ -40,7 +40,7 @@ public class EnemyCommand extends Command {
                if (var2.length != 2) {
                   var3.method_3731("Usage : .enemy remove <name>");
                } else {
-                  boolean var13 = SigmaMainClass.method_3328().method_3307().method_14466(var2[1].method_24060());
+                  boolean var13 = SigmaMainClass.getInstance().method_3307().method_14466(var2[1].method_24060());
                   if (!var13) {
                      var3.method_3731("\"" + var2[1].method_24060() + "\" is not your enemy.");
                   } else {
@@ -49,7 +49,7 @@ public class EnemyCommand extends Command {
                }
                break;
             case "list":
-               List var9 = SigmaMainClass.method_3328().method_3307().method_14471();
+               List var9 = SigmaMainClass.getInstance().method_3307().method_14471();
                if (var9.isEmpty()) {
                   var3.method_3731("You have no enemies");
                } else {
@@ -68,7 +68,7 @@ public class EnemyCommand extends Command {
                }
                break;
             case "clear":
-               if (SigmaMainClass.method_3328().method_3307().method_14461()) {
+               if (SigmaMainClass.getInstance().method_3307().method_14461()) {
                   var3.method_3731("Cleared all your enemies.");
                } else {
                   var3.method_3731("You have no enemies.");

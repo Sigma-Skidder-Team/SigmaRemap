@@ -39,6 +39,6 @@ public class class_870 implements class_2827 {
    }
 
    public void 躚뫤댠樽骰(String var1) {
-      SigmaMainClass.method_3328();
+      SigmaMainClass.getInstance();
    }
 }
