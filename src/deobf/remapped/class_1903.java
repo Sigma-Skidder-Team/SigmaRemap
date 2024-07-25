@@ -11,7 +11,7 @@ public class class_1903 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_9716 = -1;
       this.field_9713 = false;
       this.field_9715 = 999.0;

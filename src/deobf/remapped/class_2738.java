@@ -11,7 +11,7 @@ public class class_2738 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_13372 = false;
       if (!mcInstance.field_9632.field_41744) {
          this.field_13371 = -1;

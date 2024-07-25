@@ -12,7 +12,7 @@ public class AGCFlyModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_6382 = 0;
       if (!mcInstance.field_9577.field_45560.method_27060()) {
          this.field_6385 = false;
@@ -45,7 +45,7 @@ public class AGCFlyModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40776(0.0);
       if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);

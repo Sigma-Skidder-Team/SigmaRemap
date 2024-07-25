@@ -49,7 +49,7 @@ public class HypixelVClipModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_7607 = (int) mcInstance.field_9632.method_37309();
       this.field_7608 = (double)this.field_7607 - mcInstance.field_9632.method_37309();
    }

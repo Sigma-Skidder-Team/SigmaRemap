@@ -32,7 +32,7 @@ public class class_7376 extends SecondModule {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (!this.field_37691.method_14771()) {
          this.field_37691.method_14776();
       }
@@ -43,7 +43,7 @@ public class class_7376 extends SecondModule {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_37691.method_14773();
       this.field_37691.method_14774();
       this.field_37692 = null;

@@ -30,7 +30,7 @@ public class HypixelUnbannerModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       try {
          String var3 = "D8374378";
          String var4 = mcInstance.session.method_5366();

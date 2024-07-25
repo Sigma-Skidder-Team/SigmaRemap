@@ -7,7 +7,7 @@ public class BedrockFinderModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       int[] var3 = new int[]{
          0,
          0,

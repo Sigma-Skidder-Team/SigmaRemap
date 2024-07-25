@@ -15,14 +15,14 @@ public class class_583 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_3399 = false;
       mcInstance.field_9616.field_32603 = 1.0F;
       class_8865.method_40776(class_8865.method_40767() * 0.7);
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_3399 = false;
       this.field_3397 = 0;
    }

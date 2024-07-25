@@ -21,7 +21,7 @@ public class AutoPotionModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_13559 = 0;
    }
 

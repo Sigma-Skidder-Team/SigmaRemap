@@ -15,7 +15,7 @@ public class class_669 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (!mcInstance.field_9577.field_45560.method_27060()) {
          if (!mcInstance.field_9577.field_45560.method_27060()) {
             this.field_3720 = false;
@@ -27,7 +27,7 @@ public class class_669 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_314.method_1408(-0.08);
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3);

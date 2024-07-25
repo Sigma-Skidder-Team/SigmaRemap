@@ -19,7 +19,7 @@ public class class_5870 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_29805 = (int)this.getFloatValueByName("Refill delay");
       this.field_29804 = (int)this.getFloatValueByName("Refill delay");
       this.field_29808 = false;

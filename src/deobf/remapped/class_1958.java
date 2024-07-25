@@ -15,7 +15,7 @@ public class class_1958 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       int var3 = GLFW.glfwGetKey(mcInstance.window.method_43181(), mcInstance.field_9577.field_45416.field_30027.field_17800);
       mcInstance.field_9577.field_45416.field_30024 = var3 == 1;
    }

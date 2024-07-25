@@ -26,7 +26,7 @@ public class class_6205 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_31713 = mcInstance.field_9632.field_3853.field_36404;
       this.field_31712 = this.field_31711 = 999.0F;
       ((BlockFlyModule)this.method_42017()).field_18196 = -1;
@@ -49,7 +49,7 @@ public class class_6205 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       if (this.field_31713 != -1 && this.method_42017().getStringValueByName("ItemSpoof").equals("Switch")) {
          mcInstance.field_9632.field_3853.field_36404 = this.field_31713;
       }

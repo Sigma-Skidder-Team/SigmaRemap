@@ -73,11 +73,11 @@ public class class_9137 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_46733.clear();
    }
 

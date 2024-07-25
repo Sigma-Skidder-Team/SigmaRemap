@@ -228,7 +228,7 @@ public class AutoMinerModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (this.field_25750 != null) {
          this.field_25750.interrupt();
       }
@@ -241,7 +241,7 @@ public class AutoMinerModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       if (this.field_25750 != null) {
          this.field_25750.interrupt();
       }

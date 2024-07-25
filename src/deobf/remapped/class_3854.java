@@ -22,7 +22,7 @@ public class class_3854 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       String var3 = this.getStringValueByName("Mode");
       this.field_18794 = 1.0F;
       this.field_18800 = -1;
@@ -55,7 +55,7 @@ public class class_3854 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3 * 0.7);
       this.field_18794 = 1.0F;

@@ -11,7 +11,7 @@ public class class_7480 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_38168 = 0;
       this.field_38166 = -1;
       double var3 = this.field_38169[0];
@@ -30,7 +30,7 @@ public class class_7480 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40776(0.2);
       if (mcInstance.field_9632.method_37098().field_7333 > 0.03) {
          class_314.method_1408(-0.0784);

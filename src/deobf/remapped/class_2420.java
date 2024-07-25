@@ -9,13 +9,13 @@ public class class_2420 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_12052 = -1;
       this.field_12051 = null;
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_314.method_1408(-0.08);
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3);

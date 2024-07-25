@@ -10,7 +10,7 @@ public class class_2167 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       String var3 = "Error";
       if (!this.getStringValueByName("Jargon").equals("Excuse")) {
          if (!this.getStringValueByName("Jargon").equals("Techincal")) {

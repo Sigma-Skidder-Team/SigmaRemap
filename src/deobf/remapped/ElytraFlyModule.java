@@ -145,14 +145,14 @@ public class ElytraFlyModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (mcInstance.field_9632.field_41726) {
          class_314.method_1408(0.3994F);
       }
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       if (!class_8865.method_40772()) {
          class_314.method_1463(0.0);
          class_314.method_1405(0.0);

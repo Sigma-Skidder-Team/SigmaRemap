@@ -14,7 +14,7 @@ public class class_4820 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       field_24090 = null;
    }
 

@@ -18,7 +18,7 @@ public class class_4137 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_20136 = (float)((double)(mcInstance.window.method_43166() - this.field_20140.field_36201) * Math.random());
       this.field_20137 = (float)((double)(mcInstance.window.method_43163() - this.field_20140.field_36203) * Math.random());
       this.method_19211();

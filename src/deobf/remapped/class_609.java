@@ -14,7 +14,7 @@ public class class_609 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_3479 = -1;
       this.field_3483 = 20;
       this.field_3481 = -1;

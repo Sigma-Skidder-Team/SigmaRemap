@@ -11,14 +11,14 @@ public class class_6799 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_35038 = 0;
       this.field_35037 = 0;
       this.field_35039 = class_8865.method_40787()[0];
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       if (class_314.method_1434()) {
          class_8865.method_40779(0.27, class_8865.method_40787()[0], this.field_35039, 45.0F);
       } else {

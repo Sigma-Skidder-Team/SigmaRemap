@@ -13,13 +13,13 @@ public class class_8318 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_42613 = 0;
       this.field_42612 = -1.0;
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       mcInstance.field_9616.field_32603 = 1.0F;
       class_8865.method_40776(0.2);
       if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {

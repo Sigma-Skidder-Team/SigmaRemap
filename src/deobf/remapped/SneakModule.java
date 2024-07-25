@@ -1,12 +1,12 @@
 package remapped;
 
-public class class_9698 extends Module {
-   public class_9698() {
+public class SneakModule extends Module {
+   public SneakModule() {
       super(Category.PLAYER, "Sneak", "Always sneaks");
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       mcInstance.method_8614().method_4813(new class_2317(mcInstance.field_9632, class_4127.field_20097));
    }
 

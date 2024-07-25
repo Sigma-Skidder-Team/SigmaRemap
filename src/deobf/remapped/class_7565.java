@@ -35,7 +35,7 @@ public class class_7565 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
    }
 
    @EventListen

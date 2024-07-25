@@ -29,7 +29,7 @@ public class class_5174 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_26630 = mcInstance.field_9623 instanceof class_3431;
       this.field_26637 = false;
    }

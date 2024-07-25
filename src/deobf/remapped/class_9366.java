@@ -158,7 +158,7 @@ public class class_9366 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_47903.clear();
       this.field_47901.clear();
    }

@@ -9,7 +9,7 @@ public class class_6592 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
    }
 
    @EventListen

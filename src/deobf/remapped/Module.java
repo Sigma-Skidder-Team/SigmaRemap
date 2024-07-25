@@ -103,7 +103,7 @@ public abstract class Module {
 
    public void method_42019() {
       if (this.field_46700) {
-         this.method_42020();
+         this.onDisable();
       }
 
       this.field_46700 = false;
@@ -153,7 +153,7 @@ public abstract class Module {
       }
 
       if (this.field_46700 && mcInstance.field_9601 != null) {
-         this.method_42006();
+         this.onEnable();
       }
 
       return var1;
@@ -173,14 +173,14 @@ public abstract class Module {
       return var1;
    }
 
-   public void method_42006() {
+   public void onEnable() {
       if (this.getClass().isAnnotationPresent(InDevelopment.class) && !developmentModules.contains(this.getClass())) {
          SigmaMainClass.method_3328().method_3326().method_12862("This mod is still in development. Be careful!");
          developmentModules.add(this.getClass());
       }
    }
 
-   public void method_42020() {
+   public void onDisable() {
    }
 
    public boolean method_42003() {
@@ -233,10 +233,10 @@ public abstract class Module {
       if (this.field_46700 != var1) {
          if (!(this.field_46700 = var1)) {
             SigmaMainClass.method_3328().method_3302().method_7915(this);
-            this.method_42020();
+            this.onDisable();
          } else {
             SigmaMainClass.method_3328().method_3302().method_7917(this);
-            this.method_42006();
+            this.onEnable();
          }
       }
 
@@ -268,7 +268,7 @@ public abstract class Module {
                }
             }
 
-            this.method_42020();
+            this.onDisable();
          } else {
             SigmaMainClass.method_3328().method_3302().method_7917(this);
             if (SigmaMainClass.method_3328().method_3312() == class_6015.field_30645
@@ -281,7 +281,7 @@ public abstract class Module {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 
-            this.method_42006();
+            this.onEnable();
             this.field_46691++;
          }
       }

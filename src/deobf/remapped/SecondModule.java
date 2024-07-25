@@ -138,7 +138,7 @@ public class SecondModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.method_16866();
       if (this.field_17664 instanceof class_367 && !SigmaMainClass.method_3328().method_3332().method_23084()) {
          this.method_42018(false);
@@ -146,7 +146,7 @@ public class SecondModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       for (Module var6 : this.field_17661) {
          var6.method_41991(false);
       }

@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_1631 extends Module {
-   public class_1631() {
+public class BasicAimAssistModule extends Module {
+   public BasicAimAssistModule() {
       super(Category.COMBAT, "Basic", "Automatically aims at players");
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
    }

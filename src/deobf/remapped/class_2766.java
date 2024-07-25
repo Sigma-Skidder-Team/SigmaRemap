@@ -23,7 +23,7 @@ public class class_2766 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_13515 = false;
       this.field_13516 = 0;
       this.field_13511 = mcInstance.field_9632 != null ? class_8865.method_40775() : 0.2873;
@@ -31,7 +31,7 @@ public class class_2766 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_13515 = false;
       if (mcInstance.field_9632.method_37098().field_7333 > 0.33) {
          class_314.method_1408(-0.43 + (double)class_8865.method_40769() * 0.1);

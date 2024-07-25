@@ -13,7 +13,7 @@ public class HypixelDisablerModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (!mcInstance.field_9632.field_41726) {
          this.field_36207 = false;
       } else {
@@ -35,7 +35,7 @@ public class HypixelDisablerModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_36204.method_14773();
       this.field_36204.method_14776();
       if (this.field_36207) {

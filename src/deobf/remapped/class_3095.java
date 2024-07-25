@@ -15,7 +15,7 @@ public class class_3095 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_15401 = false;
       this.field_15405 = false;
       this.field_15404 = 0.0;

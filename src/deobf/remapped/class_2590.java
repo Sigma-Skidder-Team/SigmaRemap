@@ -52,7 +52,7 @@ public class class_2590 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_12812 = System.nanoTime();
    }
 

@@ -12,7 +12,7 @@ public class class_2850 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_13969 = false;
       this.field_13966 = -10.0;
       if (!mcInstance.field_9577.field_45560.method_27060()) {

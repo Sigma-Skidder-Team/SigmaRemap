@@ -15,7 +15,7 @@ public class class_7033 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
    }
 
    @EventListen

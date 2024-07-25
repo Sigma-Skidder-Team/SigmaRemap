@@ -6,9 +6,9 @@ public class class_1071 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       String var3 = "op " + mcInstance.field_9632.method_45509();
       var3.replace("&", "§");
-      this.method_42020();
+      this.onDisable();
    }
 }

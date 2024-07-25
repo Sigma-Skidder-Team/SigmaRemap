@@ -25,7 +25,7 @@ public class VanillaShaderESPModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       for (Entity var4 : mcInstance.field_9601.method_736()) {
          var4.method_37200(false);
       }

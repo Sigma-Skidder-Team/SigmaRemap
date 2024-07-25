@@ -9,7 +9,7 @@ public class class_3907 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       field_18992 = 0;
    }
 

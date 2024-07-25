@@ -27,14 +27,14 @@ public class class_7401 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_37780 = false;
       this.field_37778 = (int)(20.0F / this.method_42017().getFloatValueByName("CPS"));
       this.field_37779 = (float)this.field_37778;
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_37777.clear();
       this.field_37780 = false;
       this.field_37781 = null;

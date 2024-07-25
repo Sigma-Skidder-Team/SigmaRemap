@@ -14,7 +14,7 @@ public class class_6803 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       mcInstance.field_9616.field_32603 = 1.0F;
    }
 }

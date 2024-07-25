@@ -313,13 +313,13 @@ public class class_268 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       field_955.method_11119(class_4043.field_19618);
       this.field_959 = 0;
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       field_955.method_11119(class_4043.field_19620);
       this.field_959 = 40;
    }

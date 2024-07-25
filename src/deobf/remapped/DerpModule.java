@@ -53,7 +53,7 @@ public class DerpModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_33191 = (int) mcInstance.field_9632.field_41701;
    }
 }

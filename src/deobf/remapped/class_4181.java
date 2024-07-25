@@ -8,8 +8,8 @@ public class class_4181 extends SecondModule {
    }
 
    @Override
-   public void method_42020() {
-      super.method_42020();
+   public void onDisable() {
+      super.onDisable();
       mcInstance.field_9632.field_41733 = 0.6F;
    }
 

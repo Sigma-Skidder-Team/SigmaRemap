@@ -18,14 +18,14 @@ public class class_2656 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_13091.clear();
       this.field_13092 = false;
       this.field_13090.method_14773();
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       for (class_6310 var4 : this.field_13091) {
          mcInstance.method_8614().method_9091().method_23481(var4);
       }

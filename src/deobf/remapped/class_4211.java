@@ -12,11 +12,11 @@ public class class_4211 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_20459 = 0;
       this.field_20458 = 0.0;
    }

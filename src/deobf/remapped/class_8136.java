@@ -10,7 +10,7 @@ public class class_8136 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_41672 = false;
    }
 

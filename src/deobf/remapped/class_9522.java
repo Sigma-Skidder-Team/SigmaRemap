@@ -25,7 +25,7 @@ public class class_9522 extends class_367 {
       if (this.method_42015()) {
          if (field_48470 != null
             && (field_48470.field_20526 != mcInstance.window.method_43178() || field_48470.field_20534 != mcInstance.window.method_43198())) {
-            this.method_42006();
+            this.onEnable();
          }
 
          if (this.getBooleanValueByName("Smart Visibility")) {
@@ -206,20 +206,20 @@ public class class_9522 extends class_367 {
                mcInstance.method_8584().method_19717(true);
             }
          } else {
-            this.method_42006();
+            this.onEnable();
          }
       }
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       class_73.method_95(mcInstance.method_8584());
       field_48470 = new class_4230(mcInstance.window.method_43178(), mcInstance.window.method_43198(), true, MinecraftClient.IS_SYSTEM_MAC);
       field_48470.method_19709(1.0F, 1.0F, 1.0F, 1.0F);
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_48469.method_11119(class_4043.field_19618);
    }
 }

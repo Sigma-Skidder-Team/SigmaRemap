@@ -20,12 +20,12 @@ public class class_3588 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       field_17597 = -1;
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       field_17597 = -1;
    }
 

@@ -9,11 +9,11 @@ public class class_5983 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40776(0.28F);
       mcInstance.field_9616.field_32603 = 1.0F;
    }

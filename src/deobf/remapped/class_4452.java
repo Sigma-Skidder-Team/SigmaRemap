@@ -13,12 +13,12 @@ public class class_4452 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40776(class_8865.method_40775() * 0.7);
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_21696 = true;
       this.field_21695 = -1;
       this.field_21691 = 0;

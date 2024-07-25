@@ -25,7 +25,7 @@ public class ChestStealerModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_15892 = null;
       this.field_15894 = false;
       if (!this.field_15896.isEmpty()) {

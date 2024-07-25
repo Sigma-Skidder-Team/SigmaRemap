@@ -20,7 +20,7 @@ public class class_9604 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       MinecraftClient.getInstance().window.method_43194(mcInstance.field_9577.field_45439);
    }
 }

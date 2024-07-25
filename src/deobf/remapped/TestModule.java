@@ -54,7 +54,7 @@ public class TestModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_8821 = 0.0;
       this.field_8816 = new class_2440(1000, 100000, class_4043.field_19620);
       this.field_8832 = class_9299.method_42810(mcInstance.field_9632.field_41701);
@@ -69,7 +69,7 @@ public class TestModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       mcInstance.field_9616.field_32603 = 1.0F;
    }
 

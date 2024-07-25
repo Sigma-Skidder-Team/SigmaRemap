@@ -61,7 +61,7 @@ public class class_3721 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (!mcInstance.field_9577.field_45560.method_27060()) {
          if (!mcInstance.field_9577.field_45560.method_27060()) {
             this.field_18223 = false;
@@ -73,7 +73,7 @@ public class class_3721 extends class_367 {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       mcInstance.field_9577.field_45560.field_30024 = this.field_18223;
    }
 }

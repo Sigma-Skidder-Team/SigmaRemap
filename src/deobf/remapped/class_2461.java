@@ -17,7 +17,7 @@ public class class_2461 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_12311 = mcInstance.field_9632.field_3853.field_36404;
       this.field_12315 = mcInstance.field_9632.field_41701;
       this.field_12313 = mcInstance.field_9632.field_41755;
@@ -27,7 +27,7 @@ public class class_2461 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       if (this.field_12311 != -1 && this.method_42017().getStringValueByName("ItemSpoof").equals("Switch")) {
          mcInstance.field_9632.field_3853.field_36404 = this.field_12311;
       }

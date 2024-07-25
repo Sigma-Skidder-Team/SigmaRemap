@@ -86,7 +86,7 @@ public class ModuleManager {
       this.method_852(new class_7218());
       this.method_852(new class_9459());
       this.method_852(new class_1452());
-      this.method_852(new class_9698());
+      this.method_852(new SneakModule());
       this.method_852(new DerpModule());
       this.method_852(new class_3095());
       this.method_852(new ParkourModule());

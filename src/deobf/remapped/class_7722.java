@@ -12,7 +12,7 @@ public class class_7722 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       field_39147 = 20;
    }
 

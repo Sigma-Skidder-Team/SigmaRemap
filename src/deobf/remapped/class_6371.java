@@ -13,12 +13,12 @@ public class class_6371 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_32569.clear();
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_32569.clear();
    }
 

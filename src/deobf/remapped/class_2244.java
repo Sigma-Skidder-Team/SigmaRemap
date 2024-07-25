@@ -17,7 +17,7 @@ public class class_2244 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       SigmaMainClass.method_3328().method_3301().method_27144();
       this.field_11172 = null;
    }

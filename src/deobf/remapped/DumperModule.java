@@ -7,17 +7,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_5694 extends Module {
+public class DumperModule extends Module {
    public String field_28841 = null;
    public List<String> field_28840 = new ArrayList<String>();
    public List<String> field_28842 = new ArrayList<String>();
 
-   public class_5694() {
+   public DumperModule() {
       super(Category.EXPLOIT, "Dumper", "Dumps the plugins/commands from the server");
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_28841 = null;
       this.field_28840.clear();
       this.field_28842.clear();
@@ -26,7 +26,7 @@ public class class_5694 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_314.method_1443("Done.");
       class_314.method_1443("§aPlugins:");
       StringBuilder var3 = new StringBuilder();

@@ -17,7 +17,7 @@ public class class_6053 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_30964 = -1;
       this.field_30963 = 0;
       this.field_30961 = mcInstance.field_9632.method_37309();
@@ -26,7 +26,7 @@ public class class_6053 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40779(0.27, class_8865.method_40787()[0], this.field_30965, 45.0F);
    }
 

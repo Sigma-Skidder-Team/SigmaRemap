@@ -9,7 +9,7 @@ public class MineMenDisablerModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_39769 = false;
       this.field_39768 = true;
    }

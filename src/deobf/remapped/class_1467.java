@@ -11,7 +11,7 @@ public class class_1467 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_7883 = 1;
       double var3 = mcInstance.field_9632.method_37098().field_7336;
       double var5 = mcInstance.field_9632.method_37098().field_7334;

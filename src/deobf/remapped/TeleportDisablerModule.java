@@ -13,7 +13,7 @@ public class TeleportDisablerModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_33210 = 0;
    }
 

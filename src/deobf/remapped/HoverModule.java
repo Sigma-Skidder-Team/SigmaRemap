@@ -8,7 +8,7 @@ public class HoverModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_13568 = 1.0E-11;
    }
 

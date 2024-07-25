@@ -15,7 +15,7 @@ public class class_5477 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_27899 = new class_1343(mcInstance.field_9632.method_37302(), mcInstance.field_9632.method_37309(), mcInstance.field_9632.method_37156());
       this.field_27900 = mcInstance.field_9632.field_41701;
       this.field_27901 = mcInstance.field_9632.field_41755;
@@ -27,7 +27,7 @@ public class class_5477 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       int var3 = this.field_27896.size();
 
       for (int var4 = 0; var4 < var3; var4++) {

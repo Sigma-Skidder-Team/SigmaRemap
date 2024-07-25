@@ -76,7 +76,7 @@ public class KillauraModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_12560 = new ArrayList<class_3357>();
       field_12558 = null;
       field_12556 = null;
@@ -101,16 +101,16 @@ public class KillauraModule extends Module {
          this.field_12545 = 1;
       }
 
-      super.method_42006();
+      super.onEnable();
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       field_12558 = null;
       field_12556 = null;
       this.field_12560 = null;
       field_12548 = false;
-      super.method_42020();
+      super.onDisable();
    }
 
    @EventListen
@@ -466,7 +466,7 @@ public class KillauraModule extends Module {
       List var6 = this.field_12561.method_40091(Math.max(var3, var4));
       var6 = this.field_12561.method_40100(var6);
       if (this.field_12567 == null) {
-         this.method_42006();
+         this.onEnable();
       }
 
       if (var6 != null && var6.size() != 0 && !mcInstance.field_9577.field_45530.method_27074()) {

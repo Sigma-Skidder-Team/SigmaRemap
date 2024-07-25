@@ -14,7 +14,7 @@ public class AntiVoidModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_37111 = 0.0;
       this.field_37110 = 0;
       this.field_37112 = 0;

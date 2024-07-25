@@ -14,12 +14,12 @@ public class class_597 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       field_3439 = false;
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       field_3439 = true;
    }
 }

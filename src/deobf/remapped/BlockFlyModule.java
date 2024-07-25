@@ -356,9 +356,9 @@ public class BlockFlyModule extends SecondModule {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       this.field_18194.method_11119(class_4043.field_19618);
-      super.method_42020();
+      super.onDisable();
    }
 
    @EventListen

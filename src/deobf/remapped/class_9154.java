@@ -17,7 +17,7 @@ public class class_9154 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_46840 = -1;
       this.field_46845 = class_8865.method_40775();
       this.field_46843 = 0;
@@ -28,7 +28,7 @@ public class class_9154 extends class_367 {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       double var3 = class_8865.method_40775() * 0.5;
       class_8865.method_40776(var3);
       if (this.field_46846 != -1) {

@@ -31,7 +31,7 @@ public class class_9543 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_48556.method_14773();
       this.field_48556.method_14776();
       this.field_48554 = null;

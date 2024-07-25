@@ -9,7 +9,7 @@ public class class_1931 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_9875 = 0;
    }
 

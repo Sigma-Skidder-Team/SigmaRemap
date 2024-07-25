@@ -17,7 +17,7 @@ public class class_8726 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_44720 = null;
 
       for (class_1331 var4 : class_7494.method_34085(class_7494.method_34110(mcInstance.field_9647.method_42146()))) {
@@ -102,7 +102,7 @@ public class class_8726 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
    }
 
    @EventListen

@@ -16,7 +16,7 @@ public class class_2462 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_12322 = class_8865.method_40767();
       this.field_12323 = 6;
       this.field_12321 = class_8988.field_46028;
@@ -25,7 +25,7 @@ public class class_2462 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       if (this.field_12321 == class_8988.field_46026 && mcInstance.field_9632.method_37098().field_7333 > 0.0 && this.field_12323 == 0) {
          class_314.method_1408(-class_8865.method_40786() - 1.0E-5 - 0.0625);
       }

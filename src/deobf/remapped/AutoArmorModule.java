@@ -16,7 +16,7 @@ public class AutoArmorModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (!this.field_9397.method_14771()) {
          this.field_9397.method_14776();
       }
@@ -26,7 +26,7 @@ public class AutoArmorModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       field_9392 = false;
    }
 

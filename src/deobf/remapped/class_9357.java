@@ -16,7 +16,7 @@ public class class_9357 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_47767 = mcInstance.field_9601.method_29578(1.0F);
       if (mcInstance.field_9601.method_29578(1.0F) != 1.0F) {
          if (mcInstance.field_9601.method_29578(1.0F) == 0.0F) {

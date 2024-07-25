@@ -255,7 +255,7 @@ public class class_8057 extends class_367 {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (!mcInstance.field_9647.method_42140()) {
          if (this.field_41251.isEmpty()) {
             class_314.method_1443("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");

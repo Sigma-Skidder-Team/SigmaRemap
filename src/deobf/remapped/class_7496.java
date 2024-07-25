@@ -13,7 +13,7 @@ public class class_7496 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (class_314.method_1413(mcInstance.field_9632, 0.001F)) {
          this.field_38245 = this.getStringValueByName("Offset").equals("OldHypixel");
          this.field_38243 = !this.field_38245 ? 1 : 2;

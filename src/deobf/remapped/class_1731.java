@@ -9,7 +9,7 @@ public class class_1731 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       if (mcInstance.field_9616.field_32603 == 0.1F) {
          mcInstance.field_9616.field_32603 = 1.0F;
       }

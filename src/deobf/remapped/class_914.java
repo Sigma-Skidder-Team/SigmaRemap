@@ -16,7 +16,7 @@ public class class_914 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       if (this.getStringValueByName("Type").equals("Normal")) {
          mcInstance.field_9577.field_45391 = 999.0;
       }
@@ -48,7 +48,7 @@ public class class_914 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       mcInstance.field_9577.field_45391 = 1.0;
    }
 }

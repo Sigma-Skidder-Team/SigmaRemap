@@ -14,12 +14,12 @@ public class class_5981 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.method_27290();
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       SigmaMainClass.method_3328().method_3331().field_21538 = null;
       SigmaMainClass.method_3328().method_3331().field_21536.clear();
    }

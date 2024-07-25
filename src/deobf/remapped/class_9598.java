@@ -40,7 +40,7 @@ public class class_9598 extends Module {
    public void method_44321(class_1711 var1) {
       if (this.method_42015()) {
          if (field_48917 == null) {
-            this.method_42006();
+            this.onEnable();
          }
 
          mcInstance.field_9632.field_30524 = mcInstance.field_9632.field_41755;
@@ -76,7 +76,7 @@ public class class_9598 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_48921 = mcInstance.field_9632.method_37302();
       this.field_48927 = mcInstance.field_9632.method_37309();
       this.field_48914 = mcInstance.field_9632.method_37156();
@@ -111,7 +111,7 @@ public class class_9598 extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       mcInstance.field_9577.field_45416.field_30024 = this.field_48929;
       mcInstance.field_9577.field_45434.field_30024 = this.field_48924;
       mcInstance.field_9577.field_45504.field_30024 = this.field_48913;

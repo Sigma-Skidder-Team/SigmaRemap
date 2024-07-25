@@ -10,13 +10,13 @@ public class CubeCraftLongJumpModule extends Module {
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40776(class_8865.method_40775() * 0.8);
       mcInstance.field_9616.field_32603 = 1.0F;
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_45277 = -1;
       mcInstance.field_9616.field_32603 = 0.3F;
    }

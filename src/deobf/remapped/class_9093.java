@@ -62,7 +62,7 @@ public class class_9093 extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       File var3 = new File(SigmaMainClass.method_3328().method_3334() + "/shematics/" + (String)this.getSettingValueByName("Shematics"));
       if (var3.exists()) {
          this.field_46580 = new class_6009(var3);

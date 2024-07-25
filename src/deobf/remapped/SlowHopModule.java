@@ -11,13 +11,13 @@ public class SlowHopModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_15606 = class_8865.method_40775();
       this.field_15607 = 2;
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40776(class_8865.method_40775());
    }
 

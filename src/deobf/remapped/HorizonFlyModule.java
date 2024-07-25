@@ -9,14 +9,14 @@ public class HorizonFlyModule extends Module {
    }
 
    @Override
-   public void method_42006() {
+   public void onEnable() {
       this.field_13555 = mcInstance.field_9632.method_37309();
       this.field_13556 = 10;
       mcInstance.field_9616.field_32603 = 0.6F;
    }
 
    @Override
-   public void method_42020() {
+   public void onDisable() {
       class_8865.method_40776(0.0);
       if (mcInstance.field_9632.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
