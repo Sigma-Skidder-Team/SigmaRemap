@@ -24,7 +24,7 @@ public class class_1857 {
    }
 
    public void method_8226() {
-      SigmaMainClass.getInstance().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe(this);
       new class_3347(null);
    }
 

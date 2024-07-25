@@ -21,7 +21,7 @@ public class class_123 {
    public HashMap<Module, TouchBarButton> field_301 = new HashMap<Module, TouchBarButton>();
 
    public class_123() {
-      SigmaMainClass.getInstance().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe(this);
       if (class_357.field_1386) {
          this.field_297.add(new class_3158(344, class_1046.class));
       }

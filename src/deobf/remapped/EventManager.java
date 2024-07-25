@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class class_1772 {
+public class EventManager {
    public final Map<Class<? extends class_8142>, class_4182[]> field_9081 = new HashMap<Class<? extends class_8142>, class_4182[]>();
    public final Map<Class<? extends Module>, Map<Class<? extends class_8142>, List<class_4182>>> field_9083 = new HashMap<Class<? extends Module>, Map<Class<? extends class_8142>, List<class_4182>>>();
    public int field_9082 = 0;
@@ -101,7 +101,7 @@ public class class_1772 {
       this.method_7913();
    }
 
-   public void method_7908(Object var1) {
+   public void subscribe(Object var1) {
       if (var1 != null) {
          boolean var4 = false;
 

@@ -22,7 +22,7 @@ public class SigmaMainClass {
    private boolean field_3962 = true;
    private class_2827 field_3953;
    private class_201 field_3961;
-   private class_1772 field_3972;
+   private EventManager eventManager;
    private ModuleManager moduleManager;
    private CommandManager commandManager;
    private class_6763 field_3977;
@@ -74,7 +74,7 @@ public class SigmaMainClass {
       }
 
       this.field_3961 = class_201.method_866();
-      this.field_3972 = new class_1772();
+      this.eventManager = new EventManager();
       this.commandManager = new CommandManager();
       this.commandManager.method_22654();
       NotificationIcons.method_10227();
@@ -159,8 +159,8 @@ public class SigmaMainClass {
          }
 
          class_4975 var3 = new class_4975(this.field_3974);
-         if (this.field_3972 != null) {
-            this.field_3972.method_7914(var3);
+         if (this.eventManager != null) {
+            this.eventManager.method_7914(var3);
          }
 
          class_357.method_1791(var3.method_22870(), new File(this.field_3975 + "/config.json"));
@@ -198,7 +198,7 @@ public class SigmaMainClass {
       GL11.glDisable(2896);
       class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
       NotificationIcons.field_11030.method_38419();
-      getInstance().method_3302().method_7914(new class_7285());
+      getInstance().getEventManager().method_7914(new class_7285());
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       class_3542.method_16361();
       class_3542.method_16491();
@@ -247,7 +247,7 @@ public class SigmaMainClass {
          class_3542.method_16491();
          class_3542.method_16387(false);
          GL11.glDisable(2896);
-         this.field_3972.method_7914(new class_3368());
+         this.eventManager.method_7914(new class_3368());
          class_3542.method_16428();
          class_3542.method_16387(true);
          TextureManager var10000 = field_3950.method_8577();
@@ -268,8 +268,8 @@ public class SigmaMainClass {
       return this.field_3953;
    }
 
-   public class_1772 method_3302() {
-      return this.field_3972;
+   public EventManager getEventManager() {
+      return this.eventManager;
    }
 
    public ModuleManager getModuleManager() {

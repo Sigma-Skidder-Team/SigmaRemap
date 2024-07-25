@@ -22,7 +22,7 @@ public class ModuleManager {
    }
 
    private void method_841(Class<? extends Module> var1) {
-      SigmaMainClass.getInstance().method_3302().method_7911(var1);
+      SigmaMainClass.getInstance().getEventManager().method_7911(var1);
       this.field_637.remove(var1);
    }
 
@@ -30,7 +30,7 @@ public class ModuleManager {
       Collections.sort(this.field_641, new class_5309(this));
 
       for (Module var4 : this.field_641) {
-         SigmaMainClass.getInstance().method_3302().method_7908(var4);
+         SigmaMainClass.getInstance().getEventManager().subscribe(var4);
          this.field_637.put((Class<? extends Module>)var4.getClass(), var4);
       }
 
@@ -207,20 +207,20 @@ public class ModuleManager {
 
       for (Module var18 : this.field_637.values()) {
          if (var18.method_42015()) {
-            SigmaMainClass.getInstance().method_3302().method_7917(var18);
+            SigmaMainClass.getInstance().getEventManager().method_7917(var18);
             if (var18 instanceof SecondModule) {
                SecondModule var20 = (SecondModule)var18;
                if (var20.field_17664 != null) {
-                  SigmaMainClass.getInstance().method_3302().method_7917(var20.field_17664);
+                  SigmaMainClass.getInstance().getEventManager().method_7917(var20.field_17664);
                }
             }
          } else {
-            SigmaMainClass.getInstance().method_3302().method_7915(var18);
+            SigmaMainClass.getInstance().getEventManager().method_7915(var18);
             if (var18 instanceof SecondModule) {
                SecondModule var19 = (SecondModule)var18;
 
                for (Module var11 : var19.field_17661) {
-                  SigmaMainClass.getInstance().method_3302().method_7915(var11);
+                  SigmaMainClass.getInstance().getEventManager().method_7915(var11);
                }
             }
          }

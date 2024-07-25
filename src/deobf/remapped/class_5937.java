@@ -14,7 +14,7 @@ public class class_5937 {
    public class_8670 field_30286 = null;
 
    public void method_27158() {
-      SigmaMainClass.getInstance().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe(this);
    }
 
    public void method_27144() {
@@ -310,7 +310,7 @@ public class class_5937 {
                var1.method_6441(var15[0]);
                var1.method_6448(var15[1]);
                class_6435 var12 = new class_6435(0, false, this.field_30285);
-               SigmaMainClass.getInstance().method_3302().method_7914(var12);
+               SigmaMainClass.getInstance().getEventManager().method_7914(var12);
             }
 
             if (var6.field_44477 != class_4748.field_23009) {

@@ -85,7 +85,7 @@ public class TextProcessing {
 
    public static boolean func_238340_a_(String p_238340_0_, int p_238340_1_, Style p_238340_2_, Style p_238340_3_, class_5255 p_238340_4_) {
       class_4981 i = new class_4981(p_238340_0_);
-      SigmaMainClass.getInstance().method_3302().method_7914(i);
+      SigmaMainClass.getInstance().getEventManager().method_7914(i);
       p_238340_0_ = i.method_22941();
       int style = p_238340_0_.length();
       Style j = p_238340_2_;

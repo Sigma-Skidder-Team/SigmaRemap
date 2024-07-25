@@ -60,7 +60,7 @@ public class class_2026 {
    private double field_10286 = 0.0;
 
    public void method_9478() {
-      SigmaMainClass.getInstance().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe(this);
       this.method_9507();
       if (!this.method_9468()) {
          this.method_9477();

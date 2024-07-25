@@ -28,13 +28,13 @@ public class class_7842 {
 
                for (Class var11 = var9.getClass(); var11 != null; var11 = var11.getSuperclass()) {
                   for (Method var15 : var11.getDeclaredMethods()) {
-                     if (SigmaMainClass.getInstance().method_3302().method_7910(var15)) {
+                     if (SigmaMainClass.getInstance().getEventManager().method_7910(var15)) {
                         var15.setAccessible(true);
-                        class_863 var16 = SigmaMainClass.getInstance().method_3302().method_7907(var15);
+                        class_863 var16 = SigmaMainClass.getInstance().getEventManager().method_7907(var15);
                         Class var17 = var15.getParameterTypes()[0];
                         class_4182 var18 = new class_4182(var9, var11, var15, var16);
                         Map var19 = SigmaMainClass.getInstance()
-                           .method_3302()
+                           .getEventManager()
                            .field_9083
                            .getOrDefault(var11, new HashMap<Class<? extends class_8142>, List<class_4182>>());
                         Object var20 = (List)var19.get(var17);
@@ -44,13 +44,13 @@ public class class_7842 {
 
                         var20.add(var18);
                         var19.put(var17, var20);
-                        SigmaMainClass.getInstance().method_3302().field_9083.put(var11, var19);
+                        SigmaMainClass.getInstance().getEventManager().field_9083.put(var11, var19);
                      }
                   }
                }
             }
 
-            SigmaMainClass.getInstance().method_3302().method_7913();
+            SigmaMainClass.getInstance().getEventManager().method_7913();
 
             for (Module var23 : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
                for (Setting var28 : var23.method_41996().values()) {
@@ -66,20 +66,20 @@ public class class_7842 {
                }
 
                if (var23.method_42015()) {
-                  SigmaMainClass.getInstance().method_3302().method_7917(var23);
+                  SigmaMainClass.getInstance().getEventManager().method_7917(var23);
                   if (var23 instanceof SecondModule) {
                      SecondModule var27 = (SecondModule)var23;
                      if (var27.field_17664 != null) {
-                        SigmaMainClass.getInstance().method_3302().method_7917(var27.field_17664);
+                        SigmaMainClass.getInstance().getEventManager().method_7917(var27.field_17664);
                      }
                   }
                } else {
-                  SigmaMainClass.getInstance().method_3302().method_7915(var23);
+                  SigmaMainClass.getInstance().getEventManager().method_7915(var23);
                   if (var23 instanceof SecondModule) {
                      SecondModule var26 = (SecondModule)var23;
 
                      for (Module var36 : var26.field_17661) {
-                        SigmaMainClass.getInstance().method_3302().method_7915(var36);
+                        SigmaMainClass.getInstance().getEventManager().method_7915(var36);
                      }
                   }
                }

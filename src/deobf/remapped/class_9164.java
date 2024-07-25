@@ -298,7 +298,7 @@ public class class_9164 {
          } else {
             boolean var15 = var14 == class_1736.field_8943;
             class_5396 var16 = new class_5396(true, var5, var7, var14, var6, var8);
-            SigmaMainClass.getInstance().method_3302().method_7914(var16);
+            SigmaMainClass.getInstance().getEventManager().method_7914(var16);
             if (var1.method_26554() && var1.method_26466() > 0 && var1.method_26500() == var4) {
                int var29 = var15 ? 1 : -1;
                switch (var6.method_27952()) {
@@ -381,7 +381,7 @@ public class class_9164 {
             }
 
             var16 = new class_5396(false, var5, var7, var14, var6, var8);
-            SigmaMainClass.getInstance().method_3302().method_7914(var16);
+            SigmaMainClass.getInstance().getEventManager().method_7914(var16);
          }
 
          var8.method_36064();

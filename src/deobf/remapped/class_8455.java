@@ -274,7 +274,7 @@ public class class_8455 {
          if (this.field_43225.field_9623 != null) {
             if (this.field_43225.field_9623 instanceof class_5766 && var3 == 258) {
                class_6435 var14 = new class_6435(var3, var5 == 2, null);
-               SigmaMainClass.getInstance().method_3302().method_7914(var14);
+               SigmaMainClass.getInstance().getEventManager().method_7914(var14);
                if (var14.method_29716()) {
                   return;
                }
@@ -282,7 +282,7 @@ public class class_8455 {
          } else if (var5 == 1 || var5 == 2) {
             class_4233.method_19731(var3);
             class_6435 var9 = new class_6435(var3, var5 == 2, null);
-            SigmaMainClass.getInstance().method_3302().method_7914(var9);
+            SigmaMainClass.getInstance().getEventManager().method_7914(var9);
             if (var9.method_29716()) {
                return;
             }

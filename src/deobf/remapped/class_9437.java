@@ -44,7 +44,7 @@ public class class_9437 extends Module {
                var1.method_6441(var4[0]);
                var1.method_6448(var4[1]);
                class_6435 var5 = new class_6435(0, false, this.field_48181);
-               SigmaMainClass.getInstance().method_3302().method_7914(var5);
+               SigmaMainClass.getInstance().getEventManager().method_7914(var5);
                mcInstance.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.getBooleanValueByName("NoSwing")) {
                   mcInstance.field_9632.method_26597(class_2584.field_12791);
@@ -59,7 +59,7 @@ public class class_9437 extends Module {
                var1.method_6441(var6[0]);
                var1.method_6448(var6[1]);
                class_6435 var8 = new class_6435(0, false, this.field_48181);
-               SigmaMainClass.getInstance().method_3302().method_7914(var8);
+               SigmaMainClass.getInstance().getEventManager().method_7914(var8);
                mcInstance.field_9647.method_42163(this.field_48181, class_7494.method_34113(this.field_48181));
                if (!this.getBooleanValueByName("NoSwing")) {
                   mcInstance.field_9632.method_26597(class_2584.field_12791);

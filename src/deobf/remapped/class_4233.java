@@ -39,6 +39,6 @@ public class class_4233 {
 
    public static void method_19733(int var0) {
       class_307 var3 = new class_307(var0);
-      SigmaMainClass.getInstance().method_3302().method_7914(var3);
+      SigmaMainClass.getInstance().getEventManager().method_7914(var3);
    }
 }

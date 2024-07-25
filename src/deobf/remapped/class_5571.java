@@ -12,7 +12,7 @@ public class class_5571 {
    private MinecraftClient field_28312 = MinecraftClient.getInstance();
 
    public void method_25292() {
-      SigmaMainClass.getInstance().method_3302().method_7908(this);
+      SigmaMainClass.getInstance().getEventManager().subscribe(this);
    }
 
    @EventListen

@@ -695,7 +695,7 @@ public class class_314 {
    public static void method_1431(Entity var0, boolean var1) {
       boolean var4 = class_3347.method_15348().equals(class_412.field_1747);
       class_3645 var5 = new class_3645(var0, true);
-      SigmaMainClass.getInstance().method_3302().method_7914(var5);
+      SigmaMainClass.getInstance().getEventManager().method_7914(var5);
       if (!var5.method_29716()) {
          if (var4 && var1) {
             field_1158.field_9632.method_26597(class_2584.field_12791);
@@ -724,7 +724,7 @@ public class class_314 {
          }
 
          var5.method_16974();
-         SigmaMainClass.getInstance().method_3302().method_7914(var5);
+         SigmaMainClass.getInstance().getEventManager().method_7914(var5);
       }
    }
 
