@@ -163,7 +163,7 @@ public class class_4460 {
 
    public boolean method_20696() {
       if (this.field_21735 == -1) {
-         if (class_3111.method_14410() && this.field_21749.method_8360() instanceof class_4423) {
+         if (Config.method_14410() && this.field_21749.method_8360() instanceof class_4423) {
             this.field_21735 = 1;
          } else {
             this.field_21735 = 0;

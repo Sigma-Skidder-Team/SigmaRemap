@@ -16,7 +16,7 @@ public interface class_233 {
 
    void method_981(class_8014 var1);
 
-   void method_979(class_6098 var1);
+   void method_979(ItemStack var1);
 
    World method_972();
 

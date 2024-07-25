@@ -20,21 +20,21 @@ public class class_4970 {
    private static final Logger field_25744 = LogManager.getLogger();
 
    public static int method_22837() {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       if (!class_7665.field_38958) {
-         return class_1920.method_8807();
+         return GlStateManager.method_8807();
       } else {
          int[] var2 = new int[ThreadLocalRandom.current().nextInt(15) + 1];
-         class_1920.method_8906(var2);
-         int var3 = class_1920.method_8807();
-         class_1920.method_8859(var2);
+         GlStateManager.method_8906(var2);
+         int var3 = GlStateManager.method_8807();
+         GlStateManager.method_8859(var2);
          return var3;
       }
    }
 
    public static void method_22838(int var0) {
-      class_3542.method_16431(class_3542::method_16440);
-      class_1920.method_8904(var0);
+      RenderSystem.method_16431(RenderSystem::method_16440);
+      GlStateManager.method_8904(var0);
    }
 
    public static void method_22840(int var0, int var1, int var2) {
@@ -50,23 +50,23 @@ public class class_4970 {
    }
 
    public static void method_22843(class_2757 var0, int var1, int var2, int var3, int var4) {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       method_22839(var1);
       if (var2 >= 0) {
-         class_1920.method_8879(3553, 33085, var2);
-         class_1920.method_8879(3553, 33082, 0);
-         class_1920.method_8879(3553, 33083, var2);
-         class_1920.method_8878(3553, 34049, 0.0F);
+         GlStateManager.method_8879(3553, 33085, var2);
+         GlStateManager.method_8879(3553, 33082, 0);
+         GlStateManager.method_8879(3553, 33083, var2);
+         GlStateManager.method_8878(3553, 34049, 0.0F);
       }
 
       for (int var7 = 0; var7 <= var2; var7++) {
-         class_1920.method_8886(3553, var7, var0.method_12552(), var3 >> var7, var4 >> var7, 0, 6408, 5121, (IntBuffer)null);
+         GlStateManager.method_8886(3553, var7, var0.method_12552(), var3 >> var7, var4 >> var7, 0, 6408, 5121, (IntBuffer)null);
       }
    }
 
    private static void method_22839(int var0) {
-      class_3542.method_16431(class_3542::method_16440);
-      class_1920.method_8791(var0);
+      RenderSystem.method_16431(RenderSystem::method_16440);
+      GlStateManager.method_8791(var0);
    }
 
    public static ByteBuffer method_22844(InputStream var0) throws IOException {
@@ -93,7 +93,7 @@ public class class_4970 {
    }
 
    public static String method_22845(InputStream var0) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       ByteBuffer var3 = null;
 
       try {
@@ -112,7 +112,7 @@ public class class_4970 {
    }
 
    public static void method_22836(IntBuffer var0, int var1, int var2) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       GL11.glPixelStorei(3312, 0);
       GL11.glPixelStorei(3313, 0);
       GL11.glPixelStorei(3314, 0);

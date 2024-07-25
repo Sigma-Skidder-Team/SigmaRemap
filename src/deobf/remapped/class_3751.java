@@ -153,7 +153,7 @@ public class class_3751 {
       } while (var6 && var7 < 100);
 
       if (var7 >= 100) {
-         class_3111.method_14317("Too many iterations: " + var7 + ", when resolving: " + var1);
+         Config.method_14317("Too many iterations: " + var7 + ", when resolving: " + var1);
          return true;
       } else {
          try {
@@ -171,8 +171,8 @@ public class class_3751 {
                throw new class_425("Not a boolean or float expression: " + var20.method_18450());
             }
          } catch (class_425 var14) {
-            class_3111.method_14317("Invalid macro expression: " + var1);
-            class_3111.method_14317("Error: " + var14.getMessage());
+            Config.method_14317("Invalid macro expression: " + var1);
+            Config.method_14317("Error: " + var14.getMessage());
             return false;
          }
       }

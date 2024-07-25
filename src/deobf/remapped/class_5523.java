@@ -24,38 +24,38 @@ public class class_5523 {
    }
 
    public static void method_25042(File var0, String var1, int var2, int var3, class_4230 var4, Consumer<ITextComponent> var5) {
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          method_25040(var0, var1, var2, var3, var4, var5);
       } else {
-         class_3542.method_16474(() -> method_25040(var0, var1, var2, var3, var4, var5));
+         RenderSystem.method_16474(() -> method_25040(var0, var1, var2, var3, var4, var5));
       }
    }
 
    private static void method_25040(File var0, String var1, int var2, int var3, class_4230 var4, Consumer<ITextComponent> var5) {
-      MinecraftClient var8 = class_3111.method_14327();
-      Window var9 = var8.method_8552();
-      GameOptions var10 = class_3111.method_14310();
+      MinecraftClient var8 = Config.method_14327();
+      Window var9 = var8.getMainWindow();
+      GameOptions var10 = Config.method_14310();
       int var11 = var9.method_43178();
       int var12 = var9.method_43198();
       int var13 = var10.field_45484;
       int var14 = var9.method_43164(var8.gameOptions.field_45484, var8.gameOptions.field_45463);
-      int var15 = class_3111.method_14389();
+      int var15 = Config.method_14389();
       boolean var16 = class_3776.method_17487() && var15 > 1;
       if (var16) {
          var10.field_45484 = var14 * var15;
          var9.method_43161(var11 * var15, var12 * var15);
-         class_1920.method_8757();
-         class_1920.method_8793(16640);
+         GlStateManager.method_8757();
+         GlStateManager.method_8793(16640);
          var8.method_8584().method_19717(true);
-         class_1920.method_8843();
+         GlStateManager.method_8843();
          var8.gameRenderer.method_35945(var8.method_8554(), System.nanoTime(), true);
       }
 
       class_5797 var17 = method_25038(var2, var3, var4);
       if (var16) {
          var8.method_8584().method_19723();
-         class_1920.method_8761();
-         class_3111.method_14310().field_45484 = var13;
+         GlStateManager.method_8761();
+         Config.method_14310().field_45484 = var13;
          var9.method_43161(var11, var12);
       }
 
@@ -109,7 +109,7 @@ public class class_5523 {
       var0 = var2.field_20533;
       var1 = var2.field_20535;
       class_5797 var5 = new class_5797(var0, var1, false);
-      class_3542.method_16446(var2.method_19724());
+      RenderSystem.method_16446(var2.method_19724());
       var5.method_26229(0, true);
       var5.method_26256();
       return var5;

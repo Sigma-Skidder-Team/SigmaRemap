@@ -24,7 +24,7 @@ public class class_1433 {
       int var6 = method_6583(method_6580("scaleMode", var1, var2));
       int var7 = var6 != 0 ? 1 : 2;
       int var8 = method_6582(method_6580("scale", var1, var2), var7);
-      boolean var9 = class_3111.method_14257(method_6580("center", var1, var2), false);
+      boolean var9 = Config.method_14257(method_6580("center", var1, var2), false);
       return new class_1433(var5, var6, var8, var9);
    }
 
@@ -62,7 +62,7 @@ public class class_1433 {
    private static int method_6582(String var0, int var1) {
       if (var0 != null) {
          var0 = var0.trim();
-         int var4 = class_3111.method_14361(var0, -1);
+         int var4 = Config.method_14361(var0, -1);
          if (var4 >= 1) {
             return var4;
          } else {
@@ -75,12 +75,12 @@ public class class_1433 {
    }
 
    public void method_6579(int var1, int var2) {
-      class_1920.method_8912();
-      class_1920.method_8804();
+      GlStateManager.method_8912();
+      GlStateManager.method_8804();
       class_8042 var5 = class_8042.method_36499();
       class_9633 var6 = var5.method_36501();
-      class_3111.method_14266().method_35674(this.field_7736);
-      class_1920.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+      Config.method_14266().bindTexture(this.field_7736);
+      GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = (float)(16 * this.field_7735);
       float var8 = (float)var1 / var7;
       float var9 = (float)var2 / var7;

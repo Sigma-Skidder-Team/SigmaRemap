@@ -44,7 +44,7 @@ public class class_8835 {
       return !field_45191 ? var0.method_8360().method_10802() : class_7860.method_35565(var0, class_7860.field_40213);
    }
 
-   public static boolean method_40635(class_6098 var0) {
+   public static boolean method_40635(ItemStack var0) {
       return class_7860.field_40192.method_3596() ? class_7860.method_35565(var0.method_27960(), class_7860.field_40192, var0) : var0.method_27995();
    }
 
@@ -52,7 +52,7 @@ public class class_8835 {
       return !class_7860.field_40163.method_3596() ? var0.method_8339() : class_7860.method_35569(var0, class_7860.field_40163, var1, var2);
    }
 
-   public static class_2134 method_40647(class_6098 var0, World var1) {
+   public static class_2134 method_40647(ItemStack var0, World var1) {
       if (!class_7860.field_40161.method_45472()) {
          return class_2143.method_10005(var0, var1);
       } else {
@@ -90,13 +90,13 @@ public class class_8835 {
       return !class_7860.field_39999.method_3596() ? var0.method_8345() : class_7860.method_35565(var0, class_7860.field_39999, var1, var2);
    }
 
-   public static boolean method_40642(class_6098 var0, class_6098 var1, class_704 var2, class_5886 var3) {
+   public static boolean method_40642(ItemStack var0, ItemStack var1, class_704 var2, class_5886 var3) {
       return !class_7860.field_40018.method_3596()
          ? var0.method_27960() instanceof class_7938
          : class_7860.method_35565(var0, class_7860.field_40018, var1, var2, var3);
    }
 
-   public static boolean method_40651(class_6098 var0, class_704 var1) {
+   public static boolean method_40651(ItemStack var0, class_704 var1) {
       return !class_7860.field_40025.method_3596()
          ? var0.method_27960() == class_4897.field_24840
          : class_7860.method_35565(var0, class_7860.field_40025, var1);
@@ -154,7 +154,7 @@ public class class_8835 {
       return !field_45187 ? true : class_7860.method_35565(var0, class_7860.field_39966);
    }
 
-   public static boolean method_40644(class_2451 var0, class_6098 var1) {
+   public static boolean method_40644(class_2451 var0, ItemStack var1) {
       return !class_7860.field_40121.method_3596() ? var0.method_11210() : class_7860.method_35565(var0, class_7860.field_40121, var1);
    }
 }

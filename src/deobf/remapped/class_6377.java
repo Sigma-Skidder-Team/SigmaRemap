@@ -108,7 +108,7 @@ public class class_6377 {
       }
 
       double var49 = var0.method_41627().field_7333 * var2.method_749().method_3494();
-      if (var0.method_41633() instanceof class_5834 && ((class_5834)var0.method_41633()).method_26480(Effects.field_19736)) {
+      if (var0.method_41633() instanceof class_5834 && ((class_5834)var0.method_41633()).isPotionActive(Effects.field_19736)) {
          int var26 = ((class_5834)var0.method_41633()).method_26553(Effects.field_19736).method_10347();
          if (var26 >= 20) {
             var49 = 0.0;
@@ -135,7 +135,7 @@ public class class_6377 {
       }
 
       if (!var7.method_22007(class_6503.field_33094)) {
-         if (var0.method_41633() instanceof class_5834 && ((class_5834)var0.method_41633()).method_26480(Effects.field_19746)) {
+         if (var0.method_41633() instanceof class_5834 && ((class_5834)var0.method_41633()).isPotionActive(Effects.field_19746)) {
             float var27 = GameRenderer.method_35954((class_5834)var0.method_41633(), var1);
             float var33 = Math.min(1.0F / field_32578, Math.min(1.0F / field_32585, 1.0F / field_32584));
             if (Float.isInfinite(var33)) {
@@ -192,12 +192,12 @@ public class class_6377 {
       }
 
       class_6588.method_30228(field_32578, field_32585, field_32584, 0.0F);
-      class_3542.method_16391(field_32578, field_32585, field_32584, 0.0F);
+      RenderSystem.method_16391(field_32578, field_32585, field_32584, 0.0F);
    }
 
    public static void method_29162() {
-      class_3542.method_16460(0.0F);
-      class_3542.method_16365(class_5084.field_26251);
+      RenderSystem.method_16460(0.0F);
+      RenderSystem.method_16365(class_5084.field_26251);
    }
 
    public static void method_29159(Camera var0, class_1026 var1, float var2, boolean var3) {
@@ -218,7 +218,7 @@ public class class_6377 {
             float var10;
             float var11;
             if (!var7.method_22007(class_6503.field_33095)) {
-               if (var8 instanceof class_5834 && ((class_5834)var8).method_26480(Effects.field_19736)) {
+               if (var8 instanceof class_5834 && ((class_5834)var8).isPotionActive(Effects.field_19736)) {
                   int var12 = ((class_5834)var8).method_26553(Effects.field_19736).method_10347();
                   float var13 = class_9299.method_42795(Math.min(1.0F, (float)var12 / 20.0F), var2, 5.0F);
                   if (var1 != class_1026.field_5679) {
@@ -231,7 +231,7 @@ public class class_6377 {
                } else if (!var3) {
                   if (var1 != class_1026.field_5679) {
                      field_32581 = true;
-                     var10 = var2 * class_3111.method_14336();
+                     var10 = var2 * Config.method_14336();
                      var11 = var2;
                   } else {
                      field_32581 = true;
@@ -243,7 +243,7 @@ public class class_6377 {
                   var10 = var2 * 0.05F;
                   var11 = Math.min(var2, 192.0F) * 0.5F;
                }
-            } else if (var8 instanceof class_5834 && ((class_5834)var8).method_26480(Effects.field_19745)) {
+            } else if (var8 instanceof class_5834 && ((class_5834)var8).isPotionActive(Effects.field_19745)) {
                var10 = 0.0F;
                var11 = 3.0F;
             } else {
@@ -251,10 +251,10 @@ public class class_6377 {
                var11 = 1.0F;
             }
 
-            class_3542.method_16419(var10);
-            class_3542.method_16470(var11);
-            class_3542.method_16365(class_5084.field_26248);
-            class_3542.method_16396();
+            RenderSystem.method_16419(var10);
+            RenderSystem.method_16470(var11);
+            RenderSystem.method_16365(class_5084.field_26248);
+            RenderSystem.method_16396();
             if (class_7860.field_39952.method_3596()) {
                class_7860.method_35547(class_7860.field_39952, var1, var0, var4, var11);
             }
@@ -270,17 +270,17 @@ public class class_6377 {
                }
             }
 
-            class_3542.method_16460(var14);
-            class_3542.method_16365(class_5084.field_26251);
+            RenderSystem.method_16460(var14);
+            RenderSystem.method_16365(class_5084.field_26251);
          }
       } else {
-         class_1920.method_8784(var9);
+         GlStateManager.method_8784(var9);
       }
    }
 
    public static void method_29161() {
-      class_3542.method_16434(2918, field_32578, field_32585, field_32584, 1.0F);
-      if (class_3111.method_14424()) {
+      RenderSystem.method_16434(2918, field_32578, field_32585, field_32584, 1.0F);
+      if (Config.method_14424()) {
          class_6588.method_30291(field_32578, field_32585, field_32584);
       }
    }

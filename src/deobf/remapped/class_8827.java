@@ -45,7 +45,7 @@ public class class_8827 {
       }
    }
 
-   public void method_40531(class_6098 var1) {
+   public void method_40531(ItemStack var1) {
       if (this.field_45149 != null) {
          this.field_45149.method_10486(var1);
       }
@@ -102,8 +102,8 @@ public class class_8827 {
       return this.field_45147;
    }
 
-   public class_4666 method_40539() {
-      return this.field_45147.field_9647 != null ? this.field_45147.field_9647.method_42158() : class_4666.field_22762;
+   public GameType method_40539() {
+      return this.field_45147.playerController != null ? this.field_45147.playerController.getCurrentGameType() : GameType.field_22762;
    }
 
    public static ITextComponent method_40532(String var0) {

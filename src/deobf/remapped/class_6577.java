@@ -218,7 +218,7 @@ public class class_6577 extends Screen {
             class_291 var4 = new class_291();
             var4.<class_5850>method_1287(class_291.field_1037).method_26684(false, (class_341)null);
             var5 = new class_6292(
-               this.field_33552.method_8246().trim(), class_4666.field_22756, false, class_423.field_1790, true, var4, class_2805.field_13766
+               this.field_33552.method_8246().trim(), GameType.SPECTATOR, false, class_423.field_1790, true, var4, class_2805.field_13766
             );
          } else {
             var5 = new class_6292(

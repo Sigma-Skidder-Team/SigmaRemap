@@ -25,7 +25,7 @@ public class class_4745 extends class_4314 {
    }
 
    @Override
-   public void method_29298(World var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, class_6098 var6) {
+   public void method_29298(World var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, ItemStack var6) {
       super.method_29298(var1, var2, var3, var4, var5, var6);
       if (!var1.field_33055 && var5 instanceof class_5354) {
          class_5354 var9 = (class_5354)var5;
@@ -54,12 +54,12 @@ public class class_4745 extends class_4314 {
    }
 
    public static void method_21913(World var0, class_1331 var1) {
-      method_29267(var0, var1, new class_6098(class_4897.field_24747, 3));
+      method_29267(var0, var1, new ItemStack(class_4897.field_24747, 3));
    }
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      class_6098 var9 = var4.method_26617(var5);
+      ItemStack var9 = var4.method_26617(var5);
       int var10 = var1.<Integer>method_10313(field_22992);
       boolean var11 = false;
       if (var10 >= 5) {
@@ -68,11 +68,11 @@ public class class_4745 extends class_4314 {
                var9.method_27970(1);
                var2.method_29528(var4, var4.method_37302(), var4.method_37309(), var4.method_37156(), class_463.field_2054, class_562.field_3328, 1.0F, 1.0F);
                if (!var9.method_28022()) {
-                  if (!var4.field_3853.method_32414(new class_6098(class_4897.field_24773))) {
-                     var4.method_3153(new class_6098(class_4897.field_24773), false);
+                  if (!var4.inventory.method_32414(new ItemStack(class_4897.field_24773))) {
+                     var4.method_3153(new ItemStack(class_4897.field_24773), false);
                   }
                } else {
-                  var4.method_26615(var5, new class_6098(class_4897.field_24773));
+                  var4.method_26615(var5, new ItemStack(class_4897.field_24773));
                }
 
                var11 = true;
@@ -205,7 +205,7 @@ public class class_4745 extends class_4314 {
          class_3757 var7 = var1.method_28260(var2);
          if (var7 instanceof class_5354) {
             class_5354 var8 = (class_5354)var7;
-            class_6098 var9 = new class_6098(this);
+            ItemStack var9 = new ItemStack(this);
             int var10 = var3.<Integer>method_10313(field_22992);
             boolean var11 = !var8.method_24452();
             if (!var11 && var10 == 0) {
@@ -231,7 +231,7 @@ public class class_4745 extends class_4314 {
    }
 
    @Override
-   public List<class_6098> method_10796(class_2522 var1, class_8480 var2) {
+   public List<ItemStack> method_10796(class_2522 var1, class_8480 var2) {
       Entity var5 = var2.<Entity>method_39071(class_8712.field_44676);
       if (var5 instanceof class_1356 || var5 instanceof class_9490 || var5 instanceof class_1044 || var5 instanceof class_4653 || var5 instanceof class_2048) {
          class_3757 var6 = var2.<class_3757>method_39071(class_8712.field_44673);

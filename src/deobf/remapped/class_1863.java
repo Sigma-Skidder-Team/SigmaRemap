@@ -401,7 +401,7 @@ public class class_1863 extends class_7114 implements IRenderable, class_5888 {
             if (!var20) {
                this.field_9461.method_45390(var1, "_", (float)var17, (float)var14, var19);
             } else {
-               class_2089.method_9774(var1, var17, var14 - 1, var17 + 1, var14 + 1 + 9, -3092272);
+               AbstractGui.method_9774(var1, var17, var14 - 1, var17 + 1, var14 + 1 + 9, -3092272);
             }
          }
 
@@ -435,18 +435,18 @@ public class class_1863 extends class_7114 implements IRenderable, class_5888 {
 
       class_8042 var10 = class_8042.method_36499();
       class_9633 var8 = var10.method_36501();
-      class_3542.method_16480(0.0F, 0.0F, 255.0F, 255.0F);
-      class_3542.method_16354();
-      class_3542.method_16466();
-      class_3542.method_16407(class_2603.field_12871);
+      RenderSystem.color4f(0.0F, 0.0F, 255.0F, 255.0F);
+      RenderSystem.method_16354();
+      RenderSystem.method_16466();
+      RenderSystem.method_16407(class_2603.field_12871);
       var8.method_44471(7, class_7985.field_40915);
       var8.method_35761((double)var1, (double)var4, 0.0).method_35735();
       var8.method_35761((double)var3, (double)var4, 0.0).method_35735();
       var8.method_35761((double)var3, (double)var2, 0.0).method_35735();
       var8.method_35761((double)var1, (double)var2, 0.0).method_35735();
       var10.method_36500();
-      class_3542.method_16409();
-      class_3542.method_16432();
+      RenderSystem.method_16409();
+      RenderSystem.method_16432();
    }
 
    public void method_8255(int var1) {

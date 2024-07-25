@@ -85,7 +85,7 @@ public class class_4492 extends class_5920<class_7666> {
                class_4657 var10 = var2.method_2017();
 
                for (int var11 = 0; var11 < var10.method_31505(); var11++) {
-                  class_6098 var12 = var10.method_31498(var11);
+                  ItemStack var12 = var10.method_31498(var11);
                   boolean var13 = false;
                   if (!var12.method_28022()) {
                      if (var12.method_27960() != class_4897.field_24621) {
@@ -122,7 +122,7 @@ public class class_4492 extends class_5920<class_7666> {
                      );
                      var12.method_27970(1);
                      if (var12.method_28022()) {
-                        var10.method_31503(var11, class_6098.field_31203);
+                        var10.method_31503(var11, ItemStack.EMPTY);
                      }
                      break;
                   }

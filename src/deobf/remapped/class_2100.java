@@ -10,14 +10,14 @@ public class class_2100 extends class_551 implements class_1538 {
    }
 
    @Override
-   public void method_11206(class_6098 var1, World var2, class_5834 var3, int var4) {
+   public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
       if (var3 instanceof class_704) {
          class_704 var7 = (class_704)var3;
          boolean var8 = var7.field_3876.field_4944 || class_2931.method_13423(class_3668.field_17874, var1) > 0;
-         class_6098 var9 = var7.method_26475(var1);
+         ItemStack var9 = var7.method_26475(var1);
          if (!var9.method_28022() || var8) {
             if (var9.method_28022()) {
-               var9 = new class_6098(class_4897.field_25024);
+               var9 = new ItemStack(class_4897.field_25024);
             }
 
             int var10 = this.method_11230(var1) - var4;
@@ -67,7 +67,7 @@ public class class_2100 extends class_551 implements class_1538 {
                if (!var12 && !var7.field_3876.field_4944) {
                   var9.method_27970(1);
                   if (var9.method_28022()) {
-                     var7.field_3853.method_32419(var9);
+                     var7.inventory.method_32419(var9);
                   }
                }
 
@@ -88,29 +88,29 @@ public class class_2100 extends class_551 implements class_1538 {
    }
 
    @Override
-   public int method_11230(class_6098 var1) {
+   public int method_11230(ItemStack var1) {
       return 72000;
    }
 
    @Override
-   public class_6209 method_11233(class_6098 var1) {
+   public class_6209 method_11233(ItemStack var1) {
       return class_6209.field_31738;
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       boolean var7 = !var2.method_26475(var6).method_28022();
       if (!var2.field_3876.field_4944 && !var7) {
-         return class_954.<class_6098>method_4202(var6);
+         return class_954.<ItemStack>method_4202(var6);
       } else {
          var2.method_26462(var3);
-         return class_954.<class_6098>method_4206(var6);
+         return class_954.<ItemStack>method_4206(var6);
       }
    }
 
    @Override
-   public Predicate<class_6098> method_2655() {
+   public Predicate<ItemStack> method_2655() {
       return field_3286;
    }
 

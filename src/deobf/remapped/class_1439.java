@@ -34,7 +34,7 @@ public class class_1439 extends class_4785<class_1439> {
 
    public void method_6588(class_7966 var1, class_6676<?> var2, int var3, int var4, boolean var5) {
       String var8 = var2 != null ? var2.method_30627(class_3231.method_14804(this.field_7763.field_12881).method_19276(var2)) : "-";
-      class_2089.method_9770(
+      AbstractGui.method_9770(
          var1,
          this.field_7763.field_12881.field_948,
          var8,

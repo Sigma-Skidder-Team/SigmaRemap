@@ -267,7 +267,7 @@ public class class_3633 extends class_380 implements class_724 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       super.method_29257(var1, var2, var3, var4, var5);
       if (!var1.field_33055) {
          class_1331 var8 = var2.method_6098(var3.<Direction>method_10313(field_1543));

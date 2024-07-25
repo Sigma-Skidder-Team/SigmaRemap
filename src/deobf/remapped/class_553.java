@@ -62,7 +62,7 @@ public class class_553 implements class_4091 {
             }
          }
       } else {
-         String[] var4 = class_3111.method_14302(var1, ":");
+         String[] var4 = Config.method_14302(var1, ":");
          class_1549 var5 = this.method_18897(var4[0]);
 
          for (int var6 = 1; var6 < var4.length; var6++) {
@@ -81,7 +81,7 @@ public class class_553 implements class_4091 {
 
    @Override
    public class_3527 method_18896(String var1) {
-      String[] var4 = class_3111.method_14302(var1, ".");
+      String[] var4 = Config.method_14302(var1, ".");
       if (var4.length == 2) {
          String var5 = var4[0];
          String var6 = var4[1];

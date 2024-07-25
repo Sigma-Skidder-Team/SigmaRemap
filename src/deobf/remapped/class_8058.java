@@ -50,7 +50,7 @@ public class class_8058 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (this.field_41253 != null) {
          var1.method_28032(method_36559(var2, this.field_41255).apply(this.field_41253));
       }

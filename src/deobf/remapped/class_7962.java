@@ -15,7 +15,7 @@ public class class_7962 {
    private final class_1551 field_40792;
 
    public class_7962(class_1551 var1) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       this.field_40792 = var1;
       GLFW.glfwSetMonitorCallback(this::method_36020);
       PointerBuffer var4 = GLFW.glfwGetMonitors();
@@ -28,7 +28,7 @@ public class class_7962 {
    }
 
    private void method_36020(long var1, int var3) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       if (var3 != 262145) {
          if (var3 == 262146) {
             this.field_40793.remove(var1);
@@ -40,7 +40,7 @@ public class class_7962 {
 
    @Nullable
    public class_2078 method_36021(long var1) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       return (class_2078)this.field_40793.get(var1);
    }
 
@@ -90,7 +90,7 @@ public class class_7962 {
    }
 
    public void method_36025() {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       GLFWMonitorCallback var3 = GLFW.glfwSetMonitorCallback((GLFWMonitorCallbackI)null);
       if (var3 != null) {
          var3.free();

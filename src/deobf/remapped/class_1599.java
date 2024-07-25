@@ -25,8 +25,8 @@ public class class_1599 extends class_2208<class_338> {
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
       this.method_1183(var1);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_8323);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_8323);
       int var7 = this.field_10984;
       int var8 = this.field_10962;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);
@@ -102,9 +102,9 @@ public class class_1599 extends class_2208<class_338> {
             int var12 = var11 - this.field_8326;
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field_10956.method_18886(this.field_943.field_9632, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field_10956.method_18886(this.field_943.thePlayer, var11)) {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2242, 1.0F));
-               this.field_943.field_9647.method_42154(this.field_10956.field_19925, var11);
+               this.field_943.playerController.method_42154(this.field_10956.field_19925, var11);
                return true;
             }
          }

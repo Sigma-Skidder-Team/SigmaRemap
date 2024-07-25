@@ -72,8 +72,8 @@ public class class_7855 extends class_6414 implements class_5978 {
    }
 
    @Override
-   public List<class_6098> method_10796(class_2522 var1, class_8480 var2) {
-      return Collections.<class_6098>emptyList();
+   public List<ItemStack> method_10796(class_2522 var1, class_8480 var2) {
+      return Collections.<ItemStack>emptyList();
    }
 
    @Override

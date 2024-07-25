@@ -161,7 +161,7 @@ public class class_449 extends class_1829 {
    }
 
    @Override
-   public boolean method_26612(class_6098 var1) {
+   public boolean method_26612(ItemStack var1) {
       class_6943 var4 = class_5886.method_26896(var1);
       return !this.method_26520(var4).method_28022() ? false : var4 == class_6943.field_35707 && super.method_26612(var1);
    }
@@ -169,7 +169,7 @@ public class class_449 extends class_1829 {
    @Override
    public void method_26902(class_91 var1) {
       if (this.method_26520(class_6943.field_35707).method_28022()) {
-         class_6098 var4 = var1.method_264();
+         ItemStack var4 = var1.method_264();
          if (this.method_26899(var4)) {
             this.method_26562(var1);
             this.method_37349(class_6943.field_35707, var4);
@@ -259,7 +259,7 @@ public class class_449 extends class_1829 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (!var5.method_28022() && var5.method_27960().method_11250(class_391.field_1613)) {
          if (!this.field_41768.field_33055) {
             this.method_37155(class_463.field_2435, 1.0F, 1.0F);

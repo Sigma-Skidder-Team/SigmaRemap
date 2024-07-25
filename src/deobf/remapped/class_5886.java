@@ -22,9 +22,9 @@ public abstract class class_5886 extends class_5834 {
    public final class_782 field_29908;
    private class_5834 field_29905;
    private final class_8091 field_29898;
-   private final class_2831<class_6098> field_29903 = class_2831.<class_6098>method_12872(2, class_6098.field_31203);
+   private final class_2831<ItemStack> field_29903 = class_2831.<ItemStack>method_12872(2, ItemStack.EMPTY);
    public final float[] field_29923 = new float[2];
-   private final class_2831<class_6098> field_29922 = class_2831.<class_6098>method_12872(4, class_6098.field_31203);
+   private final class_2831<ItemStack> field_29922 = class_2831.<ItemStack>method_12872(4, ItemStack.EMPTY);
    public final float[] field_29918 = new float[4];
    private boolean field_29902;
    private boolean field_29920;
@@ -241,7 +241,7 @@ public abstract class class_5886 extends class_5834 {
 
    @Override
    public void method_37123() {
-      if (class_3111.method_14401() && this.method_26852()) {
+      if (Config.method_14401() && this.method_26852()) {
          this.method_26917();
       } else {
          super.method_37123();
@@ -280,7 +280,7 @@ public abstract class class_5886 extends class_5834 {
       var1.method_25934("PersistenceRequired", this.field_29920);
       class_3416 var4 = new class_3416();
 
-      for (class_6098 var6 : this.field_29922) {
+      for (ItemStack var6 : this.field_29922) {
          class_5734 var7 = new class_5734();
          if (!var6.method_28022()) {
             var6.method_27998(var7);
@@ -292,7 +292,7 @@ public abstract class class_5886 extends class_5834 {
       var1.method_25946("ArmorItems", var4);
       class_3416 var12 = new class_3416();
 
-      for (class_6098 var15 : this.field_29903) {
+      for (ItemStack var15 : this.field_29903) {
          class_5734 var8 = new class_5734();
          if (!var15.method_28022()) {
             var15.method_27998(var8);
@@ -362,7 +362,7 @@ public abstract class class_5886 extends class_5834 {
          class_3416 var4 = var1.method_25927("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field_29922.size(); var5++) {
-            this.field_29922.set(var5, class_6098.method_28015(var4.method_15764(var5)));
+            this.field_29922.set(var5, ItemStack.method_28015(var4.method_15764(var5)));
          }
       }
 
@@ -370,7 +370,7 @@ public abstract class class_5886 extends class_5834 {
          class_3416 var6 = var1.method_25927("HandItems", 10);
 
          for (int var9 = 0; var9 < this.field_29903.size(); var9++) {
-            this.field_29903.set(var9, class_6098.method_28015(var6.method_15764(var9)));
+            this.field_29903.set(var9, ItemStack.method_28015(var6.method_15764(var9)));
          }
       }
 
@@ -462,7 +462,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public void method_26902(class_91 var1) {
-      class_6098 var4 = var1.method_264();
+      ItemStack var4 = var1.method_264();
       if (this.method_26879(var4)) {
          this.method_26562(var1);
          this.method_26467(var1, var4.method_27997());
@@ -470,9 +470,9 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public boolean method_26879(class_6098 var1) {
+   public boolean method_26879(ItemStack var1) {
       class_6943 var4 = method_26896(var1);
-      class_6098 var5 = this.method_26520(var4);
+      ItemStack var5 = this.method_26520(var4);
       boolean var6 = this.method_26881(var1, var5);
       if (var6 && this.method_26899(var1)) {
          double var7 = (double)this.method_26913(var4);
@@ -488,7 +488,7 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public void method_26866(class_6943 var1, class_6098 var2) {
+   public void method_26866(class_6943 var1, ItemStack var2) {
       this.method_37349(var1, var2);
       this.method_26858(var1);
       this.field_29920 = true;
@@ -506,7 +506,7 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public boolean method_26881(class_6098 var1, class_6098 var2) {
+   public boolean method_26881(ItemStack var1, ItemStack var2) {
       if (!var2.method_28022()) {
          if (!(var1.method_27960() instanceof class_2235)) {
             if (var1.method_27960() instanceof class_2100 && var2.method_27960() instanceof class_2100) {
@@ -558,7 +558,7 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public boolean method_26900(class_6098 var1, class_6098 var2) {
+   public boolean method_26900(ItemStack var1, ItemStack var2) {
       if (var1.method_28026() >= var2.method_28026() && (!var1.method_28002() || var2.method_28002())) {
          return var1.method_28002() && var2.method_28002()
             ? var1.method_27990().method_25952().stream().anyMatch(var0 -> !var0.equals("Damage"))
@@ -569,11 +569,11 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public boolean method_26899(class_6098 var1) {
+   public boolean method_26899(ItemStack var1) {
       return true;
    }
 
-   public boolean method_26873(class_6098 var1) {
+   public boolean method_26873(ItemStack var1) {
       return this.method_26899(var1);
    }
 
@@ -746,33 +746,33 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public Iterable<class_6098> method_37294() {
+   public Iterable<ItemStack> method_37294() {
       return this.field_29903;
    }
 
    @Override
-   public Iterable<class_6098> method_37262() {
+   public Iterable<ItemStack> method_37262() {
       return this.field_29922;
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public class_6098 method_26520(class_6943 var1) {
+   public ItemStack method_26520(class_6943 var1) {
       switch (var1.method_31772()) {
          case field_37218:
             return this.field_29903.get(var1.method_31767());
          case field_37219:
             return this.field_29922.get(var1.method_31767());
          default:
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
       }
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public void method_37349(class_6943 var1, class_6098 var2) {
+   public void method_37349(class_6943 var1, ItemStack var2) {
       switch (var1.method_31772()) {
          case field_37218:
             this.field_29903.set(var1.method_31767(), var2);
@@ -787,7 +787,7 @@ public abstract class class_5886 extends class_5834 {
       super.method_26614(var1, var2, var3);
 
       for (class_6943 var9 : class_6943.values()) {
-         class_6098 var10 = this.method_26520(var9);
+         ItemStack var10 = this.method_26520(var9);
          float var11 = this.method_26913(var9);
          boolean var12 = var11 > 1.0F;
          if (!var10.method_28022()
@@ -799,7 +799,7 @@ public abstract class class_5886 extends class_5834 {
             }
 
             this.method_37310(var10);
-            this.method_37349(var9, class_6098.field_31203);
+            this.method_37349(var9, ItemStack.EMPTY);
          }
       }
    }
@@ -842,7 +842,7 @@ public abstract class class_5886 extends class_5834 {
 
          for (class_6943 var10 : class_6943.values()) {
             if (var10.method_31772() == class_7268.field_37219) {
-               class_6098 var11 = this.method_26520(var10);
+               ItemStack var11 = this.method_26520(var10);
                if (!var6 && this.field_41717.nextFloat() < var5) {
                   break;
                }
@@ -851,7 +851,7 @@ public abstract class class_5886 extends class_5834 {
                if (var11.method_28022()) {
                   class_2451 var12 = method_26875(var10, var4);
                   if (var12 != null) {
-                     this.method_37349(var10, new class_6098(var12));
+                     this.method_37349(var10, new ItemStack(var12));
                   }
                }
             }
@@ -859,7 +859,7 @@ public abstract class class_5886 extends class_5834 {
       }
    }
 
-   public static class_6943 method_26896(class_6098 var0) {
+   public static class_6943 method_26896(ItemStack var0) {
       if (class_7860.field_40096.method_3596()) {
          class_6943 var3 = (class_6943)class_7860.method_35555(var0, class_7860.field_40096);
          if (var3 != null) {
@@ -960,7 +960,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    public void method_26876(float var1, class_6943 var2) {
-      class_6098 var5 = this.method_26520(var2);
+      ItemStack var5 = this.method_26520(var2);
       if (!var5.method_28022() && this.field_41717.nextFloat() < 0.5F * var1) {
          this.method_37349(var2, class_2931.method_13426(this.field_41717, var5, (int)(5.0F + var1 * (float)this.field_41717.nextInt(18)), false));
       }
@@ -1008,7 +1008,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public boolean method_26612(class_6098 var1) {
+   public boolean method_26612(ItemStack var1) {
       class_6943 var4 = method_26896(var1);
       return this.method_26520(var4).method_28022() && this.method_26930();
    }
@@ -1038,7 +1038,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    private class_6910 method_26842(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_25274 && this.method_26887(var1)) {
          this.method_26901(var1, true);
          var5.method_27970(1);
@@ -1121,7 +1121,7 @@ public abstract class class_5886 extends class_5834 {
             var5.method_26871(this.method_26930());
 
             for (class_6943 var9 : class_6943.values()) {
-               class_6098 var10 = this.method_26520(var9);
+               ItemStack var10 = this.method_26520(var9);
                if (!var10.method_28022()) {
                   var5.method_37349(var9, var10.method_27973());
                   var5.method_26861(var9, this.method_26913(var9));
@@ -1245,7 +1245,7 @@ public abstract class class_5886 extends class_5834 {
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       class_6943 var5;
       if (var1 != 98) {
          if (var1 != 99) {
@@ -1286,7 +1286,7 @@ public abstract class class_5886 extends class_5834 {
       return this.method_26863() && super.method_37069();
    }
 
-   public static boolean method_26868(class_6943 var0, class_6098 var1) {
+   public static boolean method_26868(class_6943 var0, ItemStack var1) {
       class_6943 var4 = method_26896(var1);
       return var4 == var0
          || var4 == class_6943.field_35707 && var0 == class_6943.field_35701
@@ -1366,7 +1366,7 @@ public abstract class class_5886 extends class_5834 {
 
          if (var1 instanceof class_704) {
             class_704 var8 = (class_704)var1;
-            this.method_26882(var8, this.method_26446(), !var8.method_26554() ? class_6098.field_31203 : var8.method_26576());
+            this.method_26882(var8, this.method_26446(), !var8.method_26554() ? ItemStack.EMPTY : var8.method_26576());
          }
 
          this.method_37096(this, var1);
@@ -1376,7 +1376,7 @@ public abstract class class_5886 extends class_5834 {
       return var7;
    }
 
-   private void method_26882(class_704 var1, class_6098 var2, class_6098 var3) {
+   private void method_26882(class_704 var1, ItemStack var2, ItemStack var3) {
       if (!var2.method_28022() && !var3.method_28022() && var2.method_27960() instanceof class_7938 && var3.method_27960() == class_4897.field_24840) {
          float var6 = 0.25F + (float)class_2931.method_13414(this) * 0.05F;
          if (this.field_41717.nextFloat() < var6) {

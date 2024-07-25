@@ -23,7 +23,7 @@ public class class_6579 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       Object var5 = var2.method_12698(this.field_33556.field_48907);
       if (var5 instanceof class_9875) {
          class_9875 var6 = (class_9875)var5;

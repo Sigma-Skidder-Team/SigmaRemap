@@ -7,10 +7,10 @@ public class class_5396 extends class_7764 {
    private float field_27541;
    private float field_27538;
    private class_1736 field_27543;
-   private class_6098 field_27542;
+   private ItemStack field_27542;
    private class_7966 field_27539;
 
-   public class_5396(boolean var1, float var2, float var3, class_1736 var4, class_6098 var5, class_7966 var6) {
+   public class_5396(boolean var1, float var2, float var3, class_1736 var4, ItemStack var5, class_7966 var6) {
       this.field_27540 = var1;
       this.field_27541 = var2;
       this.field_27538 = var3;
@@ -36,7 +36,7 @@ public class class_5396 extends class_7764 {
       return this.field_27543;
    }
 
-   public class_6098 method_24564() {
+   public ItemStack method_24564() {
       return this.field_27542;
    }
 

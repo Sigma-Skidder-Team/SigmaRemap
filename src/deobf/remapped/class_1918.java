@@ -186,12 +186,12 @@ public class class_1918 extends class_2811 implements class_6250 {
 
    @Override
    public void method_26870(class_9589 var1) {
-      this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25057));
+      this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25057));
    }
 
    @Override
-   public class_6098 method_12796() {
-      return class_6098.field_31203;
+   public ItemStack method_12796() {
+      return ItemStack.EMPTY;
    }
 
    @Override

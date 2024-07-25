@@ -24,7 +24,7 @@ public class JargonModule extends Module {
          var3 = this.method_10074();
       }
 
-      mc.field_9632.method_27307("" + var3);
+      client.thePlayer.method_27307("" + var3);
       this.setEnabled(false);
    }
 

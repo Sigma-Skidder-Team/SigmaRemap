@@ -21,7 +21,7 @@ public class class_336 extends class_9873 {
          class_7860.field_40222.method_39234(var1, 2, this.field_1247);
          return var1;
       } else {
-         class_3111.method_14317("Field not found: TileEntityBannerRenderer.modelRenderers");
+         Config.method_14317("Field not found: TileEntityBannerRenderer.modelRenderers");
          return null;
       }
    }

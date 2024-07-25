@@ -55,7 +55,7 @@ public abstract class RenderLayer extends class_5348 {
       7,
       256,
       class_8570.method_39411()
-         .method_25435(new class_3771(class_8765.field_44880, true, false))
+         .method_25435(new class_3771(ItemRenderer.field_44880, true, false))
          .method_25428(field_27303)
          .method_25432(field_27319)
          .method_25439(field_27289)
@@ -70,7 +70,7 @@ public abstract class RenderLayer extends class_5348 {
       7,
       256,
       class_8570.method_39411()
-         .method_25435(new class_3771(class_8765.field_44880, true, false))
+         .method_25435(new class_3771(ItemRenderer.field_44880, true, false))
          .method_25428(field_27303)
          .method_25432(field_27319)
          .method_25439(field_27289)
@@ -85,7 +85,7 @@ public abstract class RenderLayer extends class_5348 {
       7,
       256,
       class_8570.method_39411()
-         .method_25435(new class_3771(class_8765.field_44880, true, false))
+         .method_25435(new class_3771(ItemRenderer.field_44880, true, false))
          .method_25428(field_27303)
          .method_25432(field_27319)
          .method_25439(field_27289)
@@ -100,7 +100,7 @@ public abstract class RenderLayer extends class_5348 {
       7,
       256,
       class_8570.method_39411()
-         .method_25435(new class_3771(class_8765.field_44880, true, false))
+         .method_25435(new class_3771(ItemRenderer.field_44880, true, false))
          .method_25428(field_27303)
          .method_25432(field_27319)
          .method_25439(field_27289)
@@ -114,7 +114,7 @@ public abstract class RenderLayer extends class_5348 {
       7,
       256,
       class_8570.method_39411()
-         .method_25435(new class_3771(class_8765.field_44880, true, false))
+         .method_25435(new class_3771(ItemRenderer.field_44880, true, false))
          .method_25428(field_27303)
          .method_25432(field_27319)
          .method_25439(field_27289)
@@ -128,7 +128,7 @@ public abstract class RenderLayer extends class_5348 {
       7,
       256,
       class_8570.method_39411()
-         .method_25435(new class_3771(class_8765.field_44880, true, false))
+         .method_25435(new class_3771(ItemRenderer.field_44880, true, false))
          .method_25428(field_27303)
          .method_25432(field_27319)
          .method_25439(field_27289)
@@ -143,7 +143,7 @@ public abstract class RenderLayer extends class_5348 {
       7,
       256,
       class_8570.method_39411()
-         .method_25435(new class_3771(class_8765.field_44880, true, false))
+         .method_25435(new class_3771(ItemRenderer.field_44880, true, false))
          .method_25428(field_27303)
          .method_25432(field_27319)
          .method_25439(field_27289)
@@ -801,14 +801,14 @@ public abstract class RenderLayer extends class_5348 {
 
          var1.method_44487();
          this.method_24420();
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_4811.method_22176(false);
             class_6588.method_30315();
             class_293.method_1316(this, var1);
          }
 
          class_138.method_554(var1);
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_293.method_1303(this, var1);
             class_6588.method_30118();
             class_4811.method_22176(true);
@@ -896,7 +896,7 @@ public abstract class RenderLayer extends class_5348 {
    }
 
    public static Identifier method_16768(Identifier var0) {
-      if (class_3111.method_14394()) {
+      if (Config.method_14394()) {
          var0 = class_8192.method_37530(var0);
       }
 
@@ -920,6 +920,6 @@ public abstract class RenderLayer extends class_5348 {
    }
 
    public boolean method_16733() {
-      return this.method_16758() == class_8765.field_44880;
+      return this.method_16758() == ItemRenderer.field_44880;
    }
 }

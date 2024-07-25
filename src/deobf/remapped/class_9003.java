@@ -35,11 +35,11 @@ public class class_9003 {
       long var9 = method_41320(var3, var4);
       long var11 = method_41326(var3, var4);
       long var13 = method_41319(class_2522.class, var3, var4);
-      class_3111.method_14277("New: " + var5);
-      class_3111.method_14277("Clone: " + var7);
-      class_3111.method_14277("NewObj: " + var9);
-      class_3111.method_14277("CloneObj: " + var11);
-      class_3111.method_14277("NewObjDyn: " + var13);
+      Config.method_14277("New: " + var5);
+      Config.method_14277("Clone: " + var7);
+      Config.method_14277("NewObj: " + var9);
+      Config.method_14277("CloneObj: " + var11);
+      Config.method_14277("NewObjDyn: " + var13);
    }
 
    private static long method_41324(int var0, int var1) {

@@ -80,7 +80,7 @@ public abstract class class_6993 extends class_1173 {
    public void method_31992(class_6331 var1) {
       class_1918 var4 = this.<class_1918>method_26898(class_6629.field_34234, true);
       if (var4 != null) {
-         var4.method_26558(new class_2250(Effects.field_19732, 200, 0));
+         var4.method_26558(new class_2250(Effects.NAUSEA, 200, 0));
       }
    }
 

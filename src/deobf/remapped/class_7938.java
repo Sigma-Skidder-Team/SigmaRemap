@@ -50,7 +50,7 @@ public class class_7938 extends class_3077 {
    }
 
    @Override
-   public float method_11235(class_6098 var1, class_2522 var2) {
+   public float method_11235(ItemStack var1, class_2522 var2) {
       class_5371 var5 = var2.method_8362();
       return !field_40599.contains(var5) ? super.method_11235(var1, var2) : this.field_15134;
    }

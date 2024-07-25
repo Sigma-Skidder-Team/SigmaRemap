@@ -10,7 +10,7 @@ import remapped.class_2392;
 import remapped.class_2451;
 import remapped.Identifier;
 import remapped.class_5734;
-import remapped.class_6098;
+import remapped.ItemStack;
 import remapped.class_6539;
 import remapped.class_8669;
 
@@ -18,7 +18,7 @@ public class HoverEvent$class_50 {
    private final class_2451 item;
    private final int count;
    private final class_5734 tag;
-   private class_6098 stack;
+   private ItemStack stack;
 
    public HoverEvent$class_50(class_2451 item, int count, class_5734 tag) {
       this.item = item;
@@ -26,7 +26,7 @@ public class HoverEvent$class_50 {
       this.tag = tag;
    }
 
-   public HoverEvent$class_50(class_6098 stack) {
+   public HoverEvent$class_50(ItemStack stack) {
       this(stack.method_27960(), stack.method_27997(), stack.method_27990() != null ? stack.method_27990().method_25944() : null);
    }
 
@@ -49,9 +49,9 @@ public class HoverEvent$class_50 {
       return 31 * var3 + (this.tag != null ? this.tag.hashCode() : 0);
    }
 
-   public class_6098 createStack() {
+   public ItemStack createStack() {
       if (this.stack == null) {
-         this.stack = new class_6098(this.item, this.count);
+         this.stack = new ItemStack(this.item, this.count);
          if (this.tag != null) {
             this.stack.method_27965(this.tag);
          }
@@ -86,7 +86,7 @@ public class HoverEvent$class_50 {
    private static HoverEvent$class_50 deserialize(ITextComponent component) {
       try {
          class_5734 var3 = class_2392.method_10916(component.getString());
-         return new HoverEvent$class_50(class_6098.method_28015(var3));
+         return new HoverEvent$class_50(ItemStack.method_28015(var3));
       } catch (CommandSyntaxException var4) {
          HoverEvent.access$400().warn("Failed to parse item tag: {}", component, var4);
          return null;

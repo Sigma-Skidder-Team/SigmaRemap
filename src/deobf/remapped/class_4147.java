@@ -53,13 +53,13 @@ public class class_4147 {
       );
    }
 
-   private static int method_19255(class_9155 var0, Collection<class_9359> var1, Predicate<class_6098> var2, int var3) throws CommandSyntaxException {
+   private static int method_19255(class_9155 var0, Collection<class_9359> var1, Predicate<ItemStack> var2, int var3) throws CommandSyntaxException {
       int var6 = 0;
 
       for (class_9359 var8 : var1) {
-         var6 += var8.field_3853.method_32428(var2, var3, var8.field_3869.method_17103());
+         var6 += var8.inventory.method_32428(var2, var3, var8.field_3869.method_17103());
          var8.field_3874.method_18877();
-         var8.field_3869.method_18853(var8.field_3853);
+         var8.field_3869.method_18853(var8.inventory);
          var8.method_43260();
       }
 

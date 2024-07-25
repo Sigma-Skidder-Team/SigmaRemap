@@ -59,18 +59,18 @@ public class class_974 {
       } else {
          int var7 = 0;
          if (var5 != null) {
-            var7 = class_3111.method_14361(var5, -1);
+            var7 = Config.method_14361(var5, -1);
             if (var7 < 0) {
-               class_3111.method_14317("Invalid minHeight: " + var5);
+               Config.method_14317("Invalid minHeight: " + var5);
                return null;
             }
          }
 
          int var8 = 256;
          if (var6 != null) {
-            var8 = class_3111.method_14361(var6, -1);
+            var8 = Config.method_14361(var6, -1);
             if (var8 < 0) {
-               class_3111.method_14317("Invalid maxHeight: " + var6);
+               Config.method_14317("Invalid maxHeight: " + var6);
                return null;
             }
          }
@@ -80,7 +80,7 @@ public class class_974 {
             var9.method_40162(new class_2279(var7, var8));
             return var9;
          } else {
-            class_3111.method_14317("Invalid minHeight, maxHeight: " + var5 + ", " + var6);
+            Config.method_14317("Invalid minHeight, maxHeight: " + var5 + ", " + var6);
             return null;
          }
       }
@@ -88,7 +88,7 @@ public class class_974 {
 
    public boolean method_4264(String var1) {
       if (this.field_4982 == null || this.field_4982.length == 0) {
-         class_3111.method_14317("Invalid skins for rule: " + this.field_4979);
+         Config.method_14317("Invalid skins for rule: " + this.field_4979);
          return false;
       } else if (this.field_4994 != null) {
          return true;
@@ -97,7 +97,7 @@ public class class_974 {
          boolean var4 = this.field_4992.startsWith("optifine/mob/");
          Identifier var5 = class_8192.method_37527(this.field_4986, var4);
          if (var5 == null) {
-            class_3111.method_14317("Invalid path: " + this.field_4986.method_21456());
+            Config.method_14317("Invalid path: " + this.field_4986.method_21456());
             return false;
          } else {
             for (int var6 = 0; var6 < this.field_4994.length; var6++) {
@@ -105,12 +105,12 @@ public class class_974 {
                if (var7 > 1) {
                   Identifier var8 = class_8192.method_37539(var5, var7);
                   if (var8 == null) {
-                     class_3111.method_14317("Invalid path: " + this.field_4986.method_21456());
+                     Config.method_14317("Invalid path: " + this.field_4986.method_21456());
                      return false;
                   }
 
-                  if (!class_3111.method_14362(var8)) {
-                     class_3111.method_14317("Texture not found: " + var8.method_21456());
+                  if (!Config.method_14362(var8)) {
+                     Config.method_14317("Texture not found: " + var8.method_21456());
                      return false;
                   }
 
@@ -122,14 +122,14 @@ public class class_974 {
 
             if (this.field_4976 != null) {
                if (this.field_4976.length > this.field_4994.length) {
-                  class_3111.method_14317("More weights defined than skins, trimming weights: " + var1);
+                  Config.method_14317("More weights defined than skins, trimming weights: " + var1);
                   int[] var9 = new int[this.field_4994.length];
                   System.arraycopy(this.field_4976, 0, var9, 0, var9.length);
                   this.field_4976 = var9;
                }
 
                if (this.field_4976.length < this.field_4994.length) {
-                  class_3111.method_14317("Less weights defined than skins, expanding weights: " + var1);
+                  Config.method_14317("Less weights defined than skins, expanding weights: " + var1);
                   int[] var10 = new int[this.field_4994.length];
                   System.arraycopy(this.field_4976, 0, var10, 0, this.field_4976.length);
                   int var12 = class_1750.method_7797(this.field_4976);
@@ -146,7 +146,7 @@ public class class_974 {
 
                for (int var13 = 0; var13 < this.field_4976.length; var13++) {
                   if (this.field_4976[var13] < 0) {
-                     class_3111.method_14317("Invalid weight: " + this.field_4976[var13]);
+                     Config.method_14317("Invalid weight: " + this.field_4976[var13]);
                      return false;
                   }
 
@@ -156,18 +156,18 @@ public class class_974 {
 
                this.field_4991 = var11;
                if (this.field_4991 <= 0) {
-                  class_3111.method_14317("Invalid sum of all weights: " + var11);
+                  Config.method_14317("Invalid sum of all weights: " + var11);
                   this.field_4991 = 1;
                }
             }
 
             if (this.field_4977 == class_6284.field_32117) {
-               class_3111.method_14317("Invalid professions or careers: " + var1);
+               Config.method_14317("Invalid professions or careers: " + var1);
                return false;
             } else if (this.field_4990 != class_6284.field_32118) {
                return true;
             } else {
-               class_3111.method_14317("Invalid collar colors: " + var1);
+               Config.method_14317("Invalid collar colors: " + var1);
                return false;
             }
          }
@@ -230,7 +230,7 @@ public class class_974 {
                }
 
                class_9077 var27 = var24.method_43584();
-               if (!class_3111.method_14254(var27, this.field_4990)) {
+               if (!Config.method_14254(var27, this.field_4990)) {
                   return false;
                }
             }
@@ -242,7 +242,7 @@ public class class_974 {
                }
 
                class_9077 var28 = var25.method_25360();
-               if (!class_3111.method_14254(var28, this.field_4990)) {
+               if (!Config.method_14254(var28, this.field_4990)) {
                   return false;
                }
             }
@@ -260,7 +260,7 @@ public class class_974 {
          }
 
          if (this.field_4978 != null) {
-            class_174 var15 = class_3111.method_14327().field_9601;
+            class_174 var15 = Config.method_14327().field_9601;
             if (var15 != null) {
                int var21 = var15.method_13575();
                if (!this.field_4978.method_40164(var21)) {
@@ -270,7 +270,7 @@ public class class_974 {
          }
 
          if (this.field_4987 != null) {
-            class_174 var16 = class_3111.method_14327().field_9601;
+            class_174 var16 = Config.method_14327().field_9601;
             if (var16 != null) {
                int var22 = (int)var16.method_29584();
                if (!this.field_4987.method_40164(var22)) {
@@ -280,7 +280,7 @@ public class class_974 {
          }
 
          if (this.field_4984 != null) {
-            class_174 var17 = class_3111.method_14327().field_9601;
+            class_174 var17 = Config.method_14327().field_9601;
             if (var17 != null) {
                class_9614 var23 = class_9614.method_44381(var17, 0.0F);
                if (!class_5657.method_25605(this.field_4984, var23)) {

@@ -20,14 +20,14 @@ public class class_9423<T extends class_5822> implements class_2994<T> {
 
       String var7 = class_6539.method_29796(var2, "result");
       int var8 = class_6539.method_29767(var2, "count");
-      class_6098 var9 = new class_6098(class_8669.field_44382.method_39806(new Identifier(var7)), var8);
+      ItemStack var9 = new ItemStack(class_8669.field_44382.method_39806(new Identifier(var7)), var8);
       return this.field_48148.method_1487(var1, var5, var6, var9);
    }
 
    public T method_43618(Identifier var1, class_8248 var2) {
       String var5 = var2.method_37784(32767);
       class_8137 var6 = class_8137.method_37026(var2);
-      class_6098 var7 = var2.method_37755();
+      ItemStack var7 = var2.method_37755();
       return this.field_48148.method_1487(var1, var5, var6, var7);
    }
 

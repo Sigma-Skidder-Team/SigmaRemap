@@ -187,7 +187,7 @@ public class class_5583 extends class_8990 {
    }
 
    @Override
-   public void method_24867(class_704 var1, class_6098 var2) {
+   public void method_24867(class_704 var1, ItemStack var2) {
       if (this.method_24866(var2)) {
          this.method_37155(class_463.field_2578, 1.0F, 1.0F);
       }
@@ -314,7 +314,7 @@ public class class_5583 extends class_8990 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       class_2451 var6 = var5.method_27960();
       if (!this.field_41768.field_33055) {
          if (!this.method_41215()) {
@@ -375,7 +375,7 @@ public class class_5583 extends class_8990 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return field_28348.test(var1);
    }
 

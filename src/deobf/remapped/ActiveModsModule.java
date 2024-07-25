@@ -63,13 +63,13 @@ public class ActiveModsModule extends Module {
 
    @EventListen
    private void method_38820(class_4459 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (!var1.method_20668()) {
-            class_1920.method_8897(0.0F, (float)(-this.field_43170), 0.0F);
+            GlStateManager.method_8897(0.0F, (float)(-this.field_43170), 0.0F);
          } else {
-            class_1097 var4 = mc.field_9601.method_29562();
+            class_1097 var4 = client.field_9601.method_29562();
             class_4399 var5 = null;
-            class_3903 var6 = var4.method_4848(mc.field_9632.method_37206());
+            class_3903 var6 = var4.method_4848(client.thePlayer.method_37206());
             if (var6 != null) {
                int var7 = var6.method_23381().getColorIndex();
                if (var7 >= 0) {
@@ -95,7 +95,7 @@ public class ActiveModsModule extends Module {
                this.field_43170 = 0;
             } else {
                this.field_43170 = (var15 - var13) / 2;
-               class_1920.method_8897(0.0F, (float)this.field_43170, 0.0F);
+               GlStateManager.method_8897(0.0F, (float)this.field_43170, 0.0F);
             }
          }
       }
@@ -103,14 +103,14 @@ public class ActiveModsModule extends Module {
 
    @EventListen
    private void method_38819(class_3278 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          for (Module var5 : this.field_43168.keySet()) {
             if (this.getBooleanValueByName("Animations")) {
                this.field_43168.get(var5).method_11119(!var5.method_42015() ? class_4043.field_19618 : class_4043.field_19620);
             }
          }
 
-         if (!MinecraftClient.getInstance().gameOptions.field_45567) {
+         if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
             byte var20 = 10;
             byte var21 = 1;
             int var6 = MinecraftClient.getInstance().window.method_43166();
@@ -122,7 +122,7 @@ public class ActiveModsModule extends Module {
             }
 
             if (MinecraftClient.getInstance().gameOptions.field_45470) {
-               var7 = (int)((double)(mc.field_9614.field_15026.field_18917.size() * 9) * mc.window.method_43189() + 7.0);
+               var7 = (int)((double)(client.field_9614.overlayDebug.field_18917.size() * 9) * client.window.method_43189() + 7.0);
             }
 
             byte var10 = 0;

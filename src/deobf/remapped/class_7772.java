@@ -53,7 +53,7 @@ public class class_7772 {
 
       if (this.field_39387 instanceof class_7451 && this.field_39397 % 10 == 0) {
          class_7451 var4 = (class_7451)this.field_39387;
-         class_6098 var5 = var4.method_33905();
+         ItemStack var5 = var4.method_33905();
          if (var5.method_27960() instanceof class_2143) {
             class_2134 var6 = class_2143.method_10005(var5, this.field_39389);
 
@@ -211,7 +211,7 @@ public class class_7772 {
          ArrayList var12 = Lists.newArrayList();
 
          for (class_6943 var10 : class_6943.values()) {
-            class_6098 var11 = ((class_5834)this.field_39387).method_26520(var10);
+            ItemStack var11 = ((class_5834)this.field_39387).method_26520(var10);
             if (!var11.method_28022()) {
                var12.add(Pair.of(var10, var11.method_27973()));
             }

@@ -62,10 +62,10 @@ public class class_2412 {
 
    public void method_10971() {
       if (this.field_11995) {
-         class_1920.method_8741();
-         class_1920.method_8785(this.field_11998, this.field_11996);
+         GlStateManager.enableAlphaTest();
+         GlStateManager.method_8785(this.field_11998, this.field_11996);
       } else {
-         class_1920.method_8801();
+         GlStateManager.method_8801();
       }
    }
 

@@ -21,7 +21,7 @@ public abstract class class_8446 extends class_3259 {
       this.method_38846();
       this.field_43200 = this.field_43199.method_12854(class_1013.field_5254);
       if (this.field_43200 != null) {
-         this.field_43200.field_36675 = class_7542.field_38482.method_34346();
+         this.field_43200.field_36675 = NarratorChatListener.INSTANCE.method_34346();
       }
    }
 

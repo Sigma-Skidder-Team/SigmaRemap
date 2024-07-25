@@ -600,25 +600,25 @@ public class class_6588 {
 
       switch (var0) {
          case field_21421:
-            field_33631 = class_3111.method_14361(var1, 0);
+            field_33631 = Config.method_14361(var1, 0);
             break;
          case field_21408:
-            field_33603 = class_3111.method_14257(var1, true);
+            field_33603 = Config.method_14257(var1, true);
             break;
          case field_21419:
-            field_33634 = class_3111.method_14257(var1, true);
+            field_33634 = Config.method_14257(var1, true);
             break;
          case field_21420:
-            field_33825 = class_3111.method_14445(var1, 1.0F);
+            field_33825 = Config.method_14445(var1, 1.0F);
             break;
          case field_21418:
-            field_33763 = class_3111.method_14445(var1, 1.0F);
+            field_33763 = Config.method_14445(var1, 1.0F);
             break;
          case field_21407:
-            field_33751 = class_3111.method_14445(var1, 0.125F);
+            field_33751 = Config.method_14445(var1, 0.125F);
             break;
          case field_21413:
-            field_33964 = class_3111.method_14257(var1, true);
+            field_33964 = Config.method_14257(var1, true);
             break;
          case field_21404:
             field_33652.method_28241(var1);
@@ -630,28 +630,28 @@ public class class_6588 {
             field_33597 = var1;
             break;
          case field_21425:
-            field_33794 = class_3111.method_14257(var1, true);
+            field_33794 = Config.method_14257(var1, true);
             break;
          case field_21410:
-            field_33962 = class_3111.method_14257(var1, true);
+            field_33962 = Config.method_14257(var1, true);
             break;
          case field_21416:
-            field_33621 = class_3111.method_14361(var1, 0);
+            field_33621 = Config.method_14361(var1, 0);
             break;
          case field_21403:
-            field_33785 = class_3111.method_14361(var1, 0);
+            field_33785 = Config.method_14361(var1, 0);
             break;
          case field_21414:
-            field_33611 = class_3111.method_14361(var1, 0);
+            field_33611 = Config.method_14361(var1, 0);
             break;
          case field_21423:
-            field_33747 = class_3111.method_14361(var1, 0);
+            field_33747 = Config.method_14361(var1, 0);
             break;
          case field_21417:
-            field_33747 = class_3111.method_14361(var1, 0);
+            field_33747 = Config.method_14361(var1, 0);
             break;
          case field_21405:
-            field_33747 = class_3111.method_14361(var1, 0);
+            field_33747 = Config.method_14361(var1, 0);
             break;
          default:
             throw new IllegalArgumentException("Unknown option: " + var0);
@@ -760,17 +760,17 @@ public class class_6588 {
       }
 
       boolean var2 = false;
-      if (class_3111.method_14248()) {
-         class_1910.method_8671("Shaders can not be loaded, Antialiasing is enabled: " + class_3111.method_14447() + "x");
+      if (Config.method_14248()) {
+         class_1910.method_8671("Shaders can not be loaded, Antialiasing is enabled: " + Config.method_14447() + "x");
          var2 = true;
       }
 
-      if (class_3111.method_14423()) {
-         class_1910.method_8671("Shaders can not be loaded, Anisotropic Filtering is enabled: " + class_3111.method_14412() + "x");
+      if (Config.method_14423()) {
+         class_1910.method_8671("Shaders can not be loaded, Anisotropic Filtering is enabled: " + Config.method_14412() + "x");
          var2 = true;
       }
 
-      if (class_3111.method_14355()) {
+      if (Config.method_14355()) {
          class_1910.method_8671("Shaders can not be loaded, Fabulous Graphics is enabled.");
          var2 = true;
       }
@@ -862,7 +862,7 @@ public class class_6588 {
 
       if (field_33591.size() > 0) {
          Integer[] var2 = field_33591.<Integer>toArray(new Integer[field_33591.size()]);
-         class_3111.method_14277("[Shaders] Worlds: " + class_3111.method_14289(var2));
+         Config.method_14277("[Shaders] Worlds: " + Config.method_14289(var2));
       }
    }
 
@@ -945,7 +945,7 @@ public class class_6588 {
             class_4593.method_21269(var2);
             class_4593.method_21273(var2);
          } catch (IOException var3) {
-            class_3111.method_14317("[Shaders] Error reading: " + var4);
+            Config.method_14317("[Shaders] Error reading: " + var4);
          }
       }
    }
@@ -1015,7 +1015,7 @@ public class class_6588 {
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private static class_8147 method_30232(int var0, String var1) {
       class_6284 var2 = new class_6284("Shaders");
-      String[] var3 = class_3111.method_14302(var1, " ");
+      String[] var3 = Config.method_14302(var1, " ");
       ArrayDeque var4 = new ArrayDeque<String>(Arrays.asList(var3));
       String var5 = (String)var4.poll();
       class_7705 var6 = (class_7705)var2.method_28652((String)var4.poll(), class_7705.values(), "texture type");
@@ -1088,7 +1088,7 @@ public class class_6588 {
             class_1910.method_8669("Raw texture not found: " + var2);
             return null;
          } else {
-            byte[] var12 = class_3111.method_14250(var11);
+            byte[] var12 = Config.method_14250(var11);
             IOUtils.closeQuietly(var11);
             ByteBuffer var13 = class_1423.method_6528(var12.length);
             var13.put(var12);
@@ -1272,11 +1272,11 @@ public class class_6588 {
       if (var0 != null) {
          for (int var1 = 0; var1 < var0.length; var1++) {
             class_8147 var2 = var0[var1];
-            class_1920.method_8899(33984 + var2.method_37400());
+            GlStateManager.method_8899(33984 + var2.method_37400());
             int var3 = var2.method_37397();
             int var4 = var2.method_37398();
             if (var4 == 3553) {
-               class_1920.method_8791(var3);
+               GlStateManager.method_8791(var3);
             } else {
                GL11.glBindTexture(var4, var3);
             }
@@ -1307,7 +1307,7 @@ public class class_6588 {
       if (field_33623 == null) {
          if (field_33730 != null) {
             class_4058 var9 = new class_4058(field_33730, var1);
-            var1 = (class_6843[])class_3111.method_14442(var1, var9, 0);
+            var1 = (class_6843[]) Config.method_14442(var1, var9, 0);
          }
 
          return method_30183(var1);
@@ -1420,7 +1420,7 @@ public class class_6588 {
       try {
          method_30145(var1, var2);
       } catch (IOException var5) {
-         class_3111.method_14317("[Shaders] Error saving configuration for " + field_33602.method_39507());
+         Config.method_14317("[Shaders] Error saving configuration for " + field_33602.method_39507());
          var5.printStackTrace();
       }
    }
@@ -1450,14 +1450,14 @@ public class class_6588 {
             if (var5 != null) {
                var4.method_31401();
                if (!var4.method_31398(var5)) {
-                  class_3111.method_14317("[Shaders] Invalid value, option: " + var4.method_31405() + ", value: " + var5);
+                  Config.method_14317("[Shaders] Invalid value, option: " + var4.method_31405() + ", value: " + var5);
                }
             }
          }
 
          return var1;
       } catch (IOException var6) {
-         class_3111.method_14317("[Shaders] Error reading configuration for " + field_33602.method_39507());
+         Config.method_14317("[Shaders] Error reading configuration for " + field_33602.method_39507());
          var6.printStackTrace();
          return null;
       }
@@ -1551,13 +1551,13 @@ public class class_6588 {
    }
 
    public static int method_30273(String var0) {
-      int var1 = class_1920.method_8925();
+      int var1 = GlStateManager.method_8925();
       if (var1 != 0 && class_6941.method_31754(var1)) {
-         String var2 = class_3111.method_14316(var1);
+         String var2 = Config.method_14316(var1);
          String var3 = method_30280(var1, var0);
          String var4 = String.format("OpenGL error: %s (%s)%s, at: %s", var1, var2, var3, var0);
          class_1910.method_8673(var4);
-         if (class_3111.method_14294() && class_124.method_386("ShowGlErrorShaders", 10000L)) {
+         if (Config.method_14294() && class_124.method_386("ShowGlErrorShaders", 10000L)) {
             String var5 = class_6956.method_31803("of.message.openglError", var1, var2);
             method_30158(var5);
          }
@@ -2237,7 +2237,7 @@ public class class_6588 {
                      class_6964 var9 = class_4603.method_21324(var8);
                      if (var9 != null) {
                         if (var9.method_31843("GL_ARB_geometry_shader4")) {
-                           String var10 = class_3111.method_14305(var9.method_31833());
+                           String var10 = Config.method_14305(var9.method_31833());
                            if (var10.equals("enable") || var10.equals("require") || var10.equals("warn")) {
                               field_33838 = true;
                            }
@@ -2395,7 +2395,7 @@ public class class_6588 {
                            field_33824 = var9.method_31845();
                            class_1910.method_8671("Sun path rotation: " + field_33824);
                         } else if (var9.method_31850("ambientOcclusionLevel")) {
-                           field_33599 = class_3111.method_14262(var9.method_31845(), 0.0F, 1.0F);
+                           field_33599 = Config.method_14262(var9.method_31845(), 0.0F, 1.0F);
                            class_1910.method_8671("AO Level: " + field_33599);
                         } else if (var9.method_31823("superSamplingLevel")) {
                            int var19 = var9.method_31841();
@@ -2511,9 +2511,9 @@ public class class_6588 {
       try {
          File var2 = new File(field_33909, "debug/" + var0);
          var2.getParentFile().mkdirs();
-         class_3111.method_14234(var2, var1);
+         Config.method_14234(var2, var1);
       } catch (IOException var3) {
-         class_3111.method_14317("Error saving: " + var0);
+         Config.method_14317("Error saving: " + var0);
          var3.printStackTrace();
       }
    }
@@ -2701,7 +2701,7 @@ public class class_6588 {
                   method_30211(field_33792, 15);
             }
 
-            class_6098 var3 = field_33837.field_9632 != null ? field_33837.field_9632.method_26446() : null;
+            ItemStack var3 = field_33837.thePlayer != null ? field_33837.thePlayer.method_26446() : null;
             class_2451 var4 = var3 != null ? var3.method_27960() : null;
             int var5 = -1;
             class_6414 var6 = null;
@@ -2715,7 +2715,7 @@ public class class_6588 {
             }
 
             int var7 = var6 != null ? var6.method_29260().method_8339() : 0;
-            class_6098 var8 = field_33837.field_9632 != null ? field_33837.field_9632.method_26568() : null;
+            ItemStack var8 = field_33837.thePlayer != null ? field_33837.thePlayer.method_26568() : null;
             class_2451 var9 = var8 != null ? var8.method_27960() : null;
             int var10 = -1;
             class_6414 var11 = null;
@@ -2734,7 +2734,7 @@ public class class_6588 {
                var7 = var12;
             }
 
-            float var13 = field_33837.field_9632 != null ? field_33837.field_9632.method_27306() : 0.0F;
+            float var13 = field_33837.thePlayer != null ? field_33837.thePlayer.method_27306() : 0.0F;
             method_30211(field_33940, var5);
             method_30211(field_33772, var7);
             method_30211(field_33918, var10);
@@ -2786,7 +2786,7 @@ public class class_6588 {
             method_30207(field_33925, field_33933);
             method_30207(field_33693, field_33718);
             method_30207(field_33789, (float)field_33837.gameOptions.brightnessGamma);
-            method_30211(field_33836, field_33837.gameOptions.field_45567 ? 1 : 0);
+            method_30211(field_33836, field_33837.gameOptions.hideGUI ? 1 : 0);
             method_30207(field_33632, field_33973);
             method_30111(field_33740, field_33946, field_33639);
             method_30207(field_33796, var13);
@@ -2801,21 +2801,21 @@ public class class_6588 {
 
    private static void method_30174(class_3009 var0, class_3009 var1) {
       if (var0.method_13738() != null) {
-         class_1920.method_8777();
+         GlStateManager.method_8777();
       }
 
       if (var0.method_13762() != null) {
-         class_1920.method_8855();
+         GlStateManager.method_8855();
       }
 
       class_2412 var2 = var1.method_13738();
       if (var2 != null) {
-         class_1920.method_8756(var2);
+         GlStateManager.method_8756(var2);
       }
 
       class_3525 var3 = var1.method_13762();
       if (var3 != null) {
-         class_1920.method_8831(var3);
+         GlStateManager.method_8831(var3);
       }
    }
 
@@ -2974,25 +2974,25 @@ public class class_6588 {
          }
 
          if (field_33910 != null) {
-            class_1920.method_8890(field_33910);
+            GlStateManager.method_8890(field_33910);
             method_30178(field_33910);
             method_30273("del dfbDepthTextures");
          }
 
          if (field_33826 != null) {
-            class_1920.method_8890(field_33826);
+            GlStateManager.method_8890(field_33826);
             method_30178(field_33826);
             method_30273("del dfbTextures");
          }
 
          if (field_33788 != null) {
-            class_1920.method_8890(field_33788);
+            GlStateManager.method_8890(field_33788);
             method_30178(field_33788);
             method_30273("del shadow depth");
          }
 
          if (field_33739 != null) {
-            class_1920.method_8890(field_33739);
+            GlStateManager.method_8890(field_33739);
             method_30178(field_33739);
             method_30273("del shadow color");
          }
@@ -3023,8 +3023,8 @@ public class class_6588 {
    }
 
    private static void method_30140() {
-      field_33676 = field_33837.method_8552().method_43178();
-      field_33969 = field_33837.method_8552().method_43198();
+      field_33676 = field_33837.getMainWindow().method_43178();
+      field_33969 = field_33837.getMainWindow().method_43198();
       field_33803 = Math.round((float)field_33676 * field_33825);
       field_33764 = Math.round((float)field_33969 * field_33825);
       method_30290();
@@ -3040,8 +3040,8 @@ public class class_6588 {
    private static void method_30290() {
       if (field_33619 != 0) {
          EXTFramebufferObject.glDeleteFramebuffersEXT(field_33619);
-         class_1920.method_8890(field_33910);
-         class_1920.method_8890(field_33826);
+         GlStateManager.method_8890(field_33910);
+         GlStateManager.method_8890(field_33826);
       }
 
       field_33619 = EXTFramebufferObject.glGenFramebuffersEXT();
@@ -3054,7 +3054,7 @@ public class class_6588 {
       GL32.glReadBuffer(0);
 
       for (int var0 = 0; var0 < field_33595; var0++) {
-         class_1920.method_8791(field_33910.get(var0));
+         GlStateManager.method_8791(field_33910.get(var0));
          GL32.glTexParameteri(3553, 10242, 33071);
          GL32.glTexParameteri(3553, 10243, 33071);
          GL32.glTexParameteri(3553, 10241, 9728);
@@ -3069,7 +3069,7 @@ public class class_6588 {
       method_30273("FT d");
 
       for (int var2 = 0; var2 < field_33893; var2++) {
-         class_1920.method_8791(field_33842.method_45577(var2));
+         GlStateManager.method_8791(field_33842.method_45577(var2));
          GL32.glTexParameteri(3553, 10242, 33071);
          GL32.glTexParameteri(3553, 10243, 33071);
          GL32.glTexParameteri(3553, 10241, 9729);
@@ -3080,7 +3080,7 @@ public class class_6588 {
       }
 
       for (int var3 = 0; var3 < field_33893; var3++) {
-         class_1920.method_8791(field_33842.method_45576(var3));
+         GlStateManager.method_8791(field_33842.method_45576(var3));
          GL32.glTexParameteri(3553, 10242, 33071);
          GL32.glTexParameteri(3553, 10243, 33071);
          GL32.glTexParameteri(3553, 10241, 9729);
@@ -3094,7 +3094,7 @@ public class class_6588 {
          method_30112("[Shaders] Error: Failed framebuffer incomplete formats");
 
          for (int var1 = 0; var1 < field_33893; var1++) {
-            class_1920.method_8791(field_33842.method_45577(var1));
+            GlStateManager.method_8791(field_33842.method_45577(var1));
             GL32.glTexImage2D(3553, 0, 6408, field_33803, field_33764, 0, 32993, 33639, (ByteBuffer)null);
             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var1, 3553, field_33842.method_45577(var1), 0);
             method_30273("FT c");
@@ -3106,7 +3106,7 @@ public class class_6588 {
          }
       }
 
-      class_1920.method_8791(0);
+      GlStateManager.method_8791(0);
       if (var4 != 36053) {
          method_30112("[Shaders] Error: Failed creating framebuffer! (Status " + var4 + ")");
       } else {
@@ -3134,8 +3134,8 @@ public class class_6588 {
       if (field_33846 != 0) {
          if (field_33779 != 0) {
             EXTFramebufferObject.glDeleteFramebuffersEXT(field_33779);
-            class_1920.method_8890(field_33788);
-            class_1920.method_8890(field_33739);
+            GlStateManager.method_8890(field_33788);
+            GlStateManager.method_8890(field_33739);
          }
 
          field_33779 = EXTFramebufferObject.glGenFramebuffersEXT();
@@ -3148,7 +3148,7 @@ public class class_6588 {
          ((Buffer)field_33739).position(0);
 
          for (int var0 = 0; var0 < field_33846; var0++) {
-            class_1920.method_8791(field_33788.get(var0));
+            GlStateManager.method_8791(field_33788.get(var0));
             GL32.glTexParameterf(3553, 10242, 33071.0F);
             GL32.glTexParameterf(3553, 10243, 33071.0F);
             int var1 = field_33746[var0] ? 9728 : 9729;
@@ -3165,7 +3165,7 @@ public class class_6588 {
          method_30273("FT sd");
 
          for (int var2 = 0; var2 < field_33722; var2++) {
-            class_1920.method_8791(field_33739.get(var2));
+            GlStateManager.method_8791(field_33739.get(var2));
             GL32.glTexParameterf(3553, 10242, 33071.0F);
             GL32.glTexParameterf(3553, 10243, 33071.0F);
             int var4 = field_33629[var2] ? 9728 : 9729;
@@ -3176,7 +3176,7 @@ public class class_6588 {
             method_30273("FT sc");
          }
 
-         class_1920.method_8791(0);
+         GlStateManager.method_8791(0);
          if (field_33722 > 0) {
             GL32.glDrawBuffers(field_33742);
          }
@@ -3200,7 +3200,7 @@ public class class_6588 {
          try {
             method_30098();
          } catch (IllegalStateException var14) {
-            if (class_3111.method_14305(var14.getMessage()).equals("Function is not supported")) {
+            if (Config.method_14305(var14.getMessage()).equals("Function is not supported")) {
                method_30112("[Shaders] Error: " + var14.getMessage());
                var14.printStackTrace();
                method_30319("OFF");
@@ -3209,7 +3209,7 @@ public class class_6588 {
          }
       }
 
-      if (field_33837.method_8552().method_43178() != field_33676 || field_33837.method_8552().method_43198() != field_33969) {
+      if (field_33837.getMainWindow().method_43178() != field_33676 || field_33837.getMainWindow().method_43198() != field_33969) {
          method_30140();
       }
 
@@ -3232,9 +3232,9 @@ public class class_6588 {
       field_33843 = (float)field_33903 / 1000.0F;
       field_33704 = field_33704 + field_33843;
       field_33704 %= 3600.0F;
-      class_1920.method_8757();
+      GlStateManager.method_8757();
       class_293.method_1309(var1, var0, var2);
-      class_1920.method_8761();
+      GlStateManager.method_8761();
       class_174 var5 = field_33837.field_9601;
       if (var5 != null) {
          field_33773 = var5.method_29584();
@@ -3270,15 +3270,15 @@ public class class_6588 {
             if (var8 instanceof class_5834) {
                class_5834 var12 = (class_5834)var8;
                field_33933 = 0.0F;
-               if (var12.method_26480(Effects.field_19746)) {
+               if (var12.isPotionActive(Effects.field_19746)) {
                   GameRenderer var13 = field_33681;
                   field_33933 = GameRenderer.method_35954(var12, var2);
                }
 
                field_33718 = 0.0F;
-               if (var12.method_26480(Effects.field_19736)) {
+               if (var12.isPotionActive(Effects.field_19736)) {
                   int var18 = var12.method_26553(Effects.field_19736).method_10347();
-                  field_33718 = class_3111.method_14262((float)var18 / 20.0F, 0.0F, 1.0F);
+                  field_33718 = Config.method_14262((float)var18 / 20.0F, 0.0F, 1.0F);
                }
             }
 
@@ -3325,62 +3325,62 @@ public class class_6588 {
 
    private static void method_30310() {
       if (field_33846 >= 1) {
-         class_1920.method_8899(33988);
-         class_1920.method_8791(field_33788.get(0));
+         GlStateManager.method_8899(33988);
+         GlStateManager.method_8791(field_33788.get(0));
          if (field_33846 >= 2) {
-            class_1920.method_8899(33989);
-            class_1920.method_8791(field_33788.get(1));
+            GlStateManager.method_8899(33989);
+            GlStateManager.method_8791(field_33788.get(1));
          }
       }
 
-      class_1920.method_8899(33984);
+      GlStateManager.method_8899(33984);
 
       for (int var0 = 0; var0 < field_33893; var0++) {
-         class_1920.method_8791(field_33842.method_45577(var0));
+         GlStateManager.method_8791(field_33842.method_45577(var0));
          GL11.glTexParameteri(3553, 10240, 9729);
          GL11.glTexParameteri(3553, 10241, 9729);
-         class_1920.method_8791(field_33842.method_45576(var0));
+         GlStateManager.method_8791(field_33842.method_45576(var0));
          GL11.glTexParameteri(3553, 10240, 9729);
          GL11.glTexParameteri(3553, 10241, 9729);
       }
 
-      class_1920.method_8791(0);
+      GlStateManager.method_8791(0);
 
       for (int var1 = 0; var1 < 4 && 4 + var1 < field_33893; var1++) {
-         class_1920.method_8899(33991 + var1);
-         class_1920.method_8791(field_33842.method_45577(4 + var1));
+         GlStateManager.method_8899(33991 + var1);
+         GlStateManager.method_8791(field_33842.method_45577(4 + var1));
       }
 
-      class_1920.method_8899(33990);
-      class_1920.method_8791(field_33910.get(0));
+      GlStateManager.method_8899(33990);
+      GlStateManager.method_8791(field_33910.get(0));
       if (field_33595 >= 2) {
-         class_1920.method_8899(33995);
-         class_1920.method_8791(field_33910.get(1));
+         GlStateManager.method_8899(33995);
+         GlStateManager.method_8791(field_33910.get(1));
          if (field_33595 >= 3) {
-            class_1920.method_8899(33996);
-            class_1920.method_8791(field_33910.get(2));
+            GlStateManager.method_8899(33996);
+            GlStateManager.method_8791(field_33910.get(2));
          }
       }
 
       for (int var2 = 0; var2 < field_33722; var2++) {
-         class_1920.method_8899(33997 + var2);
-         class_1920.method_8791(field_33739.get(var2));
+         GlStateManager.method_8899(33997 + var2);
+         GlStateManager.method_8791(field_33739.get(var2));
       }
 
       if (field_33811) {
-         class_1920.method_8899(33984 + field_33744.method_37400());
-         class_1920.method_8791(field_33744.method_37397());
+         GlStateManager.method_8899(33984 + field_33744.method_37400());
+         GlStateManager.method_8791(field_33744.method_37397());
       }
 
       method_30252(field_33886);
-      class_1920.method_8899(33984);
+      GlStateManager.method_8899(33984);
    }
 
    public static void method_30223(class_174 var0) {
       if (field_33680 != var0) {
          class_174 var1 = field_33680;
          field_33680 = var0;
-         method_30130(field_33837.method_8516());
+         method_30130(field_33837.getRenderViewEntity());
          int var2 = class_4869.method_22375(var1);
          int var3 = class_4869.method_22375(var0);
          if (var3 != var2) {
@@ -3407,15 +3407,15 @@ public class class_6588 {
    }
 
    public static void method_30316(int var0, int var1, int var2, int var3) {
-      class_1920.method_8895(true, true, true, true);
+      GlStateManager.method_8895(true, true, true, true);
       if (field_33945) {
          GL11.glViewport(0, 0, field_33976, field_33907);
       } else {
          GL11.glViewport(0, 0, field_33803, field_33764);
          EXTFramebufferObject.glBindFramebufferEXT(36160, field_33619);
          field_33890 = true;
-         class_1920.method_8903();
-         class_1920.method_8745();
+         GlStateManager.method_8903();
+         GlStateManager.method_8745();
          method_30190(field_33745);
          method_30236(field_33587);
          method_30273("beginRenderPass");
@@ -3576,7 +3576,7 @@ public class class_6588 {
       if (field_33651) {
          GL32.glOrtho((double)(-field_33935), (double)field_33935, (double)(-field_33935), (double)field_33935, 0.05F, 256.0);
       } else {
-         class_1920.method_8838(class_8107.method_36820((double)field_33857, (float)field_33976 / (float)field_33907, 0.05F, 256.0F));
+         GlStateManager.method_8838(class_8107.method_36820((double)field_33857, (float)field_33976 / (float)field_33907, 0.05F, 256.0F));
       }
 
       var0.method_36065(0.0, 0.0, -100.0);
@@ -3679,13 +3679,13 @@ public class class_6588 {
       if (field_33761) {
          for (int var0 = 0; var0 < field_33893; var0++) {
             if ((field_33695 & 1 << var0) != 0) {
-               class_1920.method_8899(33984 + field_33711[var0]);
+               GlStateManager.method_8899(33984 + field_33711[var0]);
                GL32.glTexParameteri(3553, 10241, 9987);
                GL32.glGenerateMipmap(3553);
             }
          }
 
-         class_1920.method_8899(33984);
+         GlStateManager.method_8899(33984);
       }
    }
 
@@ -3751,8 +3751,8 @@ public class class_6588 {
                method_30190(field_33831);
             }
 
-            class_1920.method_8899(33984);
-            field_33837.method_8577().method_35674(class_8359.field_42824);
+            GlStateManager.method_8899(33984);
+            field_33837.getTextureManager().bindTexture(class_8359.field_42824);
          }
       }
    }
@@ -3770,7 +3770,7 @@ public class class_6588 {
       Boolean[] var2 = var0.method_13748();
 
       for (int var3 = 0; var3 < field_33893; var3++) {
-         if (class_3111.method_14416(var2[var3])) {
+         if (Config.method_14416(var2[var3])) {
             field_33842.method_45579(var3);
             var1 = true;
          }
@@ -3788,46 +3788,46 @@ public class class_6588 {
          GL32.glLoadIdentity();
          GL32.glOrtho(0.0, 1.0, 0.0, 1.0, 0.0, 1.0);
          GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-         class_1920.method_8843();
-         class_1920.method_8801();
-         class_1920.method_8775();
-         class_1920.method_8745();
-         class_1920.method_8862(519);
-         class_1920.method_8867(false);
-         class_1920.method_8912();
+         GlStateManager.method_8843();
+         GlStateManager.method_8801();
+         GlStateManager.method_8775();
+         GlStateManager.method_8745();
+         GlStateManager.method_8862(519);
+         GlStateManager.method_8867(false);
+         GlStateManager.method_8912();
          if (field_33846 >= 1) {
-            class_1920.method_8899(33988);
-            class_1920.method_8791(field_33788.get(0));
+            GlStateManager.method_8899(33988);
+            GlStateManager.method_8791(field_33788.get(0));
             if (field_33846 >= 2) {
-               class_1920.method_8899(33989);
-               class_1920.method_8791(field_33788.get(1));
+               GlStateManager.method_8899(33989);
+               GlStateManager.method_8791(field_33788.get(1));
             }
          }
 
          for (int var2 = 0; var2 < field_33893; var2++) {
-            class_1920.method_8899(33984 + field_33711[var2]);
-            class_1920.method_8791(field_33842.method_45577(var2));
+            GlStateManager.method_8899(33984 + field_33711[var2]);
+            GlStateManager.method_8791(field_33842.method_45577(var2));
          }
 
-         class_1920.method_8899(33990);
-         class_1920.method_8791(field_33910.get(0));
+         GlStateManager.method_8899(33990);
+         GlStateManager.method_8791(field_33910.get(0));
          if (field_33595 >= 2) {
-            class_1920.method_8899(33995);
-            class_1920.method_8791(field_33910.get(1));
+            GlStateManager.method_8899(33995);
+            GlStateManager.method_8791(field_33910.get(1));
             if (field_33595 >= 3) {
-               class_1920.method_8899(33996);
-               class_1920.method_8791(field_33910.get(2));
+               GlStateManager.method_8899(33996);
+               GlStateManager.method_8791(field_33910.get(2));
             }
          }
 
          for (int var5 = 0; var5 < field_33722; var5++) {
-            class_1920.method_8899(33997 + var5);
-            class_1920.method_8791(field_33739.get(var5));
+            GlStateManager.method_8899(33997 + var5);
+            GlStateManager.method_8791(field_33739.get(var5));
          }
 
          if (field_33811) {
-            class_1920.method_8899(33984 + field_33744.method_37400());
-            class_1920.method_8791(field_33744.method_37397());
+            GlStateManager.method_8899(33984 + field_33744.method_37400());
+            GlStateManager.method_8791(field_33744.method_37397());
          }
 
          if (var1) {
@@ -3836,7 +3836,7 @@ public class class_6588 {
             method_30252(field_33934);
          }
 
-         class_1920.method_8899(33984);
+         GlStateManager.method_8899(33984);
 
          for (int var6 = 0; var6 < field_33893; var6++) {
             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var6, 3553, field_33842.method_45576(var6), 0);
@@ -3862,13 +3862,13 @@ public class class_6588 {
                for (int var4 = 0; var4 < field_33893; var4++) {
                   if (var3.method_13764()[var4]) {
                      field_33842.method_45579(var4);
-                     class_1920.method_8899(33984 + field_33711[var4]);
-                     class_1920.method_8791(field_33842.method_45577(var4));
+                     GlStateManager.method_8899(33984 + field_33711[var4]);
+                     GlStateManager.method_8791(field_33842.method_45577(var4));
                      EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var4, 3553, field_33842.method_45576(var4), 0);
                   }
                }
 
-               class_1920.method_8899(33984);
+               GlStateManager.method_8899(33984);
             }
          }
 
@@ -3878,12 +3878,12 @@ public class class_6588 {
             field_33834 = true;
          }
 
-         class_1920.method_8927();
-         class_1920.method_8843();
-         class_1920.method_8741();
-         class_1920.method_8829();
-         class_1920.method_8862(515);
-         class_1920.method_8867(true);
+         GlStateManager.method_8927();
+         GlStateManager.method_8843();
+         GlStateManager.enableAlphaTest();
+         GlStateManager.method_8829();
+         GlStateManager.method_8862(515);
+         GlStateManager.method_8867(true);
          GL32.glPopMatrix();
          GL32.glMatrixMode(5888);
          GL32.glPopMatrix();
@@ -3912,18 +3912,18 @@ public class class_6588 {
    private static void method_30286() {
       field_33890 = false;
       field_33837.method_8584().method_19717(true);
-      class_1920.method_8747(class_6024.field_30769, class_6024.field_30770, 3553, field_33837.method_8584().method_19724(), 0);
-      GL32.glViewport(0, 0, field_33837.method_8552().method_43178(), field_33837.method_8552().method_43198());
-      class_1920.method_8867(true);
+      GlStateManager.method_8747(class_6024.field_30769, class_6024.field_30770, 3553, field_33837.method_8584().method_19724(), 0);
+      GL32.glViewport(0, 0, field_33837.getMainWindow().method_43178(), field_33837.getMainWindow().method_43198());
+      GlStateManager.method_8867(true);
       GL32.glClearColor(field_33699, field_33959, field_33888, 1.0F);
       GL32.glClear(16640);
       GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      class_1920.method_8843();
-      class_1920.method_8801();
-      class_1920.method_8775();
-      class_1920.method_8745();
-      class_1920.method_8862(519);
-      class_1920.method_8867(false);
+      GlStateManager.method_8843();
+      GlStateManager.method_8801();
+      GlStateManager.method_8775();
+      GlStateManager.method_8745();
+      GlStateManager.method_8862(519);
+      GlStateManager.method_8867(false);
       method_30273("pre-final");
       method_30236(field_33862);
       method_30273("final");
@@ -3944,7 +3944,7 @@ public class class_6588 {
          }
 
          field_33804 = false;
-         class_1920.method_8895(true, true, true, true);
+         GlStateManager.method_8895(true, true, true, true);
          method_30236(field_33936);
          class_2083.method_9719();
          method_30273("endRender end");
@@ -3979,8 +3979,8 @@ public class class_6588 {
          var13 = -4.0;
       }
 
-      class_1920.method_8757();
-      class_1920.method_8838(var0.method_36058().method_28620());
+      GlStateManager.method_8757();
+      GlStateManager.method_8838(var0.method_36058().method_28620());
       var1.method_44471(7, class_7985.field_40915);
       var1.method_35761(var7, var13, var9).method_35735();
       var1.method_35761(var7, var11, var9).method_35735();
@@ -4019,7 +4019,7 @@ public class class_6588 {
       var1.method_35761(var3, var13, var3).method_35735();
       var1.method_35761(var3, var13, var9).method_35735();
       class_8042.method_36499().method_36500();
-      class_1920.method_8761();
+      GlStateManager.method_8761();
    }
 
    public static void method_30168(class_7966 var0) {
@@ -4108,16 +4108,16 @@ public class class_6588 {
    public static void method_30278() {
       if (field_33804 && field_33822.method_13759() != field_33936.method_13759()) {
          method_30236(field_33822);
-         class_1920.method_8741();
-         class_1920.method_8785(516, 0.0F);
-         class_1920.method_8787(770, 771);
+         GlStateManager.enableAlphaTest();
+         GlStateManager.method_8785(516, 0.0F);
+         GlStateManager.method_8787(770, 771);
       }
    }
 
    public static void method_30249() {
       if (field_33804 && field_33822.method_13759() != field_33936.method_13759()) {
          method_30236(field_33713);
-         class_1920.method_8801();
+         GlStateManager.method_8801();
       }
    }
 
@@ -4226,34 +4226,34 @@ public class class_6588 {
 
    public static void method_30101() {
       if (!field_33945) {
-         class_1920.method_8745();
-         class_1920.method_8829();
-         class_1920.method_8787(770, 771);
-         class_1920.method_8741();
+         GlStateManager.method_8745();
+         GlStateManager.method_8829();
+         GlStateManager.method_8787(770, 771);
+         GlStateManager.enableAlphaTest();
          method_30236(field_33645);
       }
    }
 
    public static void method_30217() {
-      class_1920.method_8775();
+      GlStateManager.method_8775();
       method_30236(field_33784);
    }
 
    public static void method_30137() {
       if (!field_33945 && field_33595 >= 3) {
-         class_1920.method_8899(33996);
+         GlStateManager.method_8899(33996);
          GL32.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, field_33803, field_33764);
-         class_1920.method_8899(33984);
+         GlStateManager.method_8899(33984);
       }
    }
 
    public static void method_30326() {
       if (field_33595 >= 2) {
-         class_1920.method_8899(33995);
+         GlStateManager.method_8899(33995);
          method_30273("pre copy depth");
          GL32.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, field_33803, field_33764);
          method_30273("copy depth");
-         class_1920.method_8899(33984);
+         GlStateManager.method_8899(33984);
       }
 
       class_7977.method_36178(field_33690.method_37050());
@@ -4264,10 +4264,10 @@ public class class_6588 {
          if (!field_33945) {
             method_30106();
             method_30236(field_33975);
-            class_1920.method_8829();
-            class_1920.method_8867(true);
+            GlStateManager.method_8829();
+            GlStateManager.method_8867(true);
          } else {
-            class_1920.method_8867(true);
+            GlStateManager.method_8867(true);
          }
       }
    }
@@ -4312,13 +4312,13 @@ public class class_6588 {
       GL32.glPopMatrix();
       GL32.glMatrixMode(5888);
       GL32.glPopMatrix();
-      class_1920.method_8787(770, 771);
+      GlStateManager.method_8787(770, 771);
       method_30273("endHand");
    }
 
    public static void method_30239() {
-      class_1920.method_8912();
-      class_1920.method_8775();
+      GlStateManager.method_8912();
+      GlStateManager.method_8775();
    }
 
    public static void method_30128() {
@@ -4515,7 +4515,7 @@ public class class_6588 {
       }
 
       field_33631 = field_33631 / 2 * 2;
-      field_33631 = class_3111.method_14263(field_33631, 0, 4);
+      field_33631 = Config.method_14263(field_33631, 0, 4);
    }
 
    public static void method_30166() {
@@ -4546,8 +4546,8 @@ public class class_6588 {
          String var3 = ".lang";
          var0.add(var1 + var2 + var3);
          var0.add(var1 + method_30274(var2) + var3);
-         if (!class_3111.method_14310().field_45437.equals(var2)) {
-            String var4 = class_3111.method_14310().field_45437;
+         if (!Config.method_14310().field_45437.equals(var2)) {
+            String var4 = Config.method_14310().field_45437;
             var0.add(var1 + var4 + var3);
             var0.add(var1 + method_30274(var4) + var3);
          }
@@ -4602,11 +4602,11 @@ public class class_6588 {
       return field_33948.method_35046(var0);
    }
 
-   public static void method_30156(class_6098 var0) {
+   public static void method_30156(ItemStack var0) {
       field_33617 = method_30110(var0);
    }
 
-   public static void method_30271(class_6098 var0) {
+   public static void method_30271(ItemStack var0) {
       field_33799 = method_30110(var0);
    }
 
@@ -4622,7 +4622,7 @@ public class class_6588 {
       return field_33919 && field_33682;
    }
 
-   private static boolean method_30110(class_6098 var0) {
+   private static boolean method_30110(ItemStack var0) {
       if (var0 == null) {
          return false;
       } else {

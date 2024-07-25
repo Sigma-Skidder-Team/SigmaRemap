@@ -15,7 +15,7 @@ public class class_7252 extends class_8457 {
    }
 
    @Override
-   public void method_38897(Consumer<class_6098> var1, class_2792 var2) {
+   public void method_38897(Consumer<ItemStack> var1, class_2792 var2) {
    }
 
    public static class_7550<?> method_33146() {

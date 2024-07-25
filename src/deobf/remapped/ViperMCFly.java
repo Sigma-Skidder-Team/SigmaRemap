@@ -14,14 +14,14 @@ public class ViperMCFly extends Module {
 
    @Override
    public void onEnable() {
-      this.field_38902 = mc.field_9632.method_37309();
+      this.field_38902 = client.thePlayer.method_37309();
       this.field_38901 = 0;
-      if (!mc.gameOptions.keySneak.isKeyDown()) {
-         if (!mc.gameOptions.keySneak.isKeyDown()) {
+      if (!client.gameOptions.keySneak.isKeyDown()) {
+         if (!client.gameOptions.keySneak.isKeyDown()) {
             this.field_38904 = false;
          }
       } else {
-         mc.gameOptions.keySneak.pressed = false;
+         client.gameOptions.keySneak.pressed = false;
          this.field_38904 = true;
       }
    }
@@ -29,7 +29,7 @@ public class ViperMCFly extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(0.0);
-      if (mc.field_9632.method_37098().field_7333 > 0.0) {
+      if (client.thePlayer.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
    }
@@ -37,7 +37,7 @@ public class ViperMCFly extends Module {
    @EventListen
    private void method_34659(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_38904 = true;
          }
@@ -47,7 +47,7 @@ public class ViperMCFly extends Module {
    @EventListen
    private void method_34658(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_38904 = false;
          }
@@ -62,7 +62,7 @@ public class ViperMCFly extends Module {
          if (this.field_38901 <= 0) {
             if (this.field_38901 != -1) {
                if (this.field_38901 == 0) {
-                  if (!mc.gameOptions.keyJump.isKeyDown() && var1.method_35236() > 0.0) {
+                  if (!client.gameOptions.keyJump.isKeyDown() && var1.method_35236() > 0.0) {
                      var1.method_35235(-class_8865.method_40786());
                   }
 
@@ -70,15 +70,15 @@ public class ViperMCFly extends Module {
                   class_8865.method_40777(var1, class_8865.method_40775());
                }
             } else {
-               if (mc.gameOptions.keyJump.isKeyDown()) {
+               if (client.gameOptions.keyJump.isKeyDown()) {
                   var1.method_35235(!this.field_38904 ? var4 / 2.0 : class_8865.method_40786());
                   this.field_38903 = this.field_38902;
-                  this.field_38902 = !this.field_38904 ? mc.field_9632.method_37309() + var1.method_35236() : this.field_38902;
+                  this.field_38902 = !this.field_38904 ? client.thePlayer.method_37309() + var1.method_35236() : this.field_38902;
                } else {
-                  var1.method_35235(this.field_38904 && !class_314.method_1413(mc.field_9632, 0.01F) ? -var4 / 2.0 : class_8865.method_40786());
+                  var1.method_35235(this.field_38904 && !class_314.method_1413(client.thePlayer, 0.01F) ? -var4 / 2.0 : class_8865.method_40786());
                   this.field_38903 = this.field_38902;
-                  this.field_38902 = this.field_38904 && !class_314.method_1413(mc.field_9632, 0.01F)
-                     ? mc.field_9632.method_37309() + var1.method_35236()
+                  this.field_38902 = this.field_38904 && !class_314.method_1413(client.thePlayer, 0.01F)
+                     ? client.thePlayer.method_37309() + var1.method_35236()
                      : this.field_38902;
                }
 
@@ -136,8 +136,8 @@ public class ViperMCFly extends Module {
 
             this.field_38903 = this.field_38902;
             this.field_38902 = var7.field_3144;
-            var7.field_3143 = mc.field_9632.field_41701;
-            var7.field_3140 = mc.field_9632.field_41755;
+            var7.field_3143 = client.thePlayer.field_41701;
+            var7.field_3140 = client.thePlayer.field_41755;
          }
       }
    }
@@ -160,10 +160,10 @@ public class ViperMCFly extends Module {
       if (this.method_42015()) {
          double var4 = this.field_38902 - this.field_38903;
          double var6 = this.field_38902;
-         mc.field_9632.field_41736.field_7333 = var6;
-         mc.field_9632.field_41713 = var6;
-         mc.field_9632.field_3864 = var6;
-         mc.field_9632.field_41698 = var6;
+         client.thePlayer.field_41736.field_7333 = var6;
+         client.thePlayer.field_41713 = var6;
+         client.thePlayer.field_3864 = var6;
+         client.thePlayer.field_41698 = var6;
       }
    }
 }

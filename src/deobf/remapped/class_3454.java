@@ -26,6 +26,6 @@ public class class_3454 extends class_3064 implements class_3978 {
 
    @Override
    public void method_18359(class_6331 var1, Random var2, class_1331 var3, class_2522 var4) {
-      method_29267(var1, var3, new class_6098(this));
+      method_29267(var1, var3, new ItemStack(this));
    }
 }

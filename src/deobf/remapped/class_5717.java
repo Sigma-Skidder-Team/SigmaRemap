@@ -14,7 +14,7 @@ public class class_5717 extends class_7933 {
    }
 
    @Override
-   public int method_35874(class_6098 var1) {
+   public int method_35874(ItemStack var1) {
       return super.method_35874(var1) / 2;
    }
 

@@ -204,8 +204,8 @@ public class class_1980 extends class_1094 {
       int var7 = method_4819(12) + 20;
       class_8042 var8 = class_8042.method_36499();
       class_9633 var9 = var8.method_36501();
-      this.field_943.method_8577().method_35674(field_10019);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10019);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = 32.0F;
       var9.method_44471(7, class_7985.field_40905);
       var9.method_35761(0.0, (double)this.field_940, 0.0)
@@ -258,10 +258,10 @@ public class class_1980 extends class_1094 {
 
    private void method_9115(class_7966 var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method_4819(12) + 20 && var5 > method_4819(1);
-      this.field_943.method_8577().method_35674(field_10032);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10032);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 7.0F;
-      class_2089.method_9778(var1, var2, var3, 0.0F, var9, 8, 7, 8, 14);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, var9, 8, 7, 8, 14);
       if (var8) {
          this.field_10029 = field_10036;
          this.field_10028 = class_7179.field_36921;
@@ -270,10 +270,10 @@ public class class_1980 extends class_1094 {
 
    private void method_9103(class_7966 var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method_4819(12) + 20 && var5 > method_4819(1);
-      this.field_943.method_8577().method_35674(field_10023);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10023);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
-      class_2089.method_9778(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
       if (var8) {
          this.field_10029 = field_10037;
          this.field_10028 = class_7179.field_36917;
@@ -282,10 +282,10 @@ public class class_1980 extends class_1094 {
 
    private void method_9120(class_7966 var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 9 && var5 < method_4819(12) + 20 && var5 > method_4819(1);
-      this.field_943.method_8577().method_35674(field_10039);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10039);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 8.0F;
-      class_2089.method_9778(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, var9, 8, 8, 8, 16);
       if (var8) {
          this.field_10029 = field_10031;
          this.field_10028 = class_7179.field_36917;

@@ -20,7 +20,7 @@ public class class_6370 extends Module {
 
    @EventListen
    public void method_29149(class_5596 var1) {
-      this.field_32562 = class_7494.method_34079(mc.field_9632.field_41701, mc.field_9632.field_41755, 200.0F);
+      this.field_32562 = class_7494.method_34079(client.thePlayer.field_41701, client.thePlayer.field_41755, 200.0F);
       if (this.field_32558 != null && this.field_32566 != null) {
          SigmaMainClass.getInstance()
             .getNotificationManager()
@@ -36,9 +36,9 @@ public class class_6370 extends Module {
             GL11.glPushMatrix();
             GL11.glDisable(2929);
             class_1331 var5 = this.field_32562.method_43955();
-            double var6 = (double)var5.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61();
-            double var8 = (double)var5.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60();
-            double var10 = (double)var5.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62();
+            double var6 = (double)var5.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+            double var8 = (double)var5.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
+            double var10 = (double)var5.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
             class_8194 var12 = new class_8194(var6, var8, var10, var6 + 1.0, var8 + 1.0, var10 + 1.0);
             class_73.method_83(var12, var4);
             GL11.glEnable(2929);

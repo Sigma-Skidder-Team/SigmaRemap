@@ -67,7 +67,7 @@ public class class_959 {
                }
             } else {
                class_5834 var9 = (class_5834)var8;
-               class_6098 var10 = var9.method_26446();
+               ItemStack var10 = var9.method_26446();
                if (var10.method_28022()) {
                   if (var1.size() == 1) {
                      throw field_4927.create(var9.method_45509().getString());

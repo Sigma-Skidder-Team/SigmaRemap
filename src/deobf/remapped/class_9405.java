@@ -110,7 +110,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
          if (var6.method_31662()) {
             return var6;
          } else {
-            class_6098 var7 = var1.method_26617(var2);
+            ItemStack var7 = var1.method_26617(var2);
             return var7.method_27960() != class_4897.field_24836 ? class_6910.field_35521 : var7.method_28000(var1, this, var2);
          }
       }
@@ -180,7 +180,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
          super.method_37384(var1, var2);
       } else {
          class_1918 var5 = class_6629.field_34234.method_30484(var1);
-         var5.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25057));
+         var5.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25057));
          var5.method_37144(this.method_37302(), this.method_37309(), this.method_37156(), this.field_41701, this.field_41755);
          var5.method_26888(this.method_26859());
          var5.method_26910(this.method_26449());
@@ -220,7 +220,7 @@ public class class_9405 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return field_48085.test(var1);
    }
 

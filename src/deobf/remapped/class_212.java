@@ -49,7 +49,7 @@ public class class_212 {
 
       boolean var23;
       try {
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_2448.method_11201(var7, var3);
          }
 
@@ -100,7 +100,7 @@ public class class_212 {
             double var32 = (double)(var2.method_12173() & 15);
             double var34 = (double)(var2.method_12165() & 15);
             double var36 = (double)(var2.method_12185() & 15);
-            if (class_3111.method_14351()) {
+            if (Config.method_14351()) {
                int var38 = var2.method_12173() >> 4 << 4;
                int var39 = var2.method_12165() >> 4 << 4;
                int var40 = var2.method_12185() >> 4 << 4;
@@ -334,7 +334,7 @@ public class class_212 {
 
          var23 = false;
       } finally {
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_2448.method_11191(var3);
          }
       }

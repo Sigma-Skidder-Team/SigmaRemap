@@ -182,7 +182,7 @@ public abstract class class_4641 extends Entity {
    public abstract void method_21471();
 
    @Override
-   public class_91 method_37311(class_6098 var1, float var2) {
+   public class_91 method_37311(ItemStack var1, float var2) {
       class_91 var5 = new class_91(
          this.field_41768,
          this.method_37302() + (double)((float)this.field_22663.method_1041() * 0.15F),

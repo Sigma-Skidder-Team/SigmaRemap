@@ -8,7 +8,7 @@ public class class_1387 {
    private static final List<class_7119<class_6004>> field_7568 = Lists.newArrayList();
    private static final List<class_7119<class_2451>> field_7569 = Lists.newArrayList();
    private static final List<class_8137> field_7572 = Lists.newArrayList();
-   private static final Predicate<class_6098> field_7571 = var0 -> {
+   private static final Predicate<ItemStack> field_7571 = var0 -> {
       for (class_8137 var4 : field_7572) {
          if (var4.test(var0)) {
             return true;
@@ -18,11 +18,11 @@ public class class_1387 {
       return false;
    };
 
-   public static boolean method_6428(class_6098 var0) {
+   public static boolean method_6428(ItemStack var0) {
       return method_6420(var0) || method_6423(var0);
    }
 
-   public static boolean method_6420(class_6098 var0) {
+   public static boolean method_6420(ItemStack var0) {
       int var3 = 0;
 
       for (int var4 = field_7569.size(); var3 < var4; var3++) {
@@ -34,7 +34,7 @@ public class class_1387 {
       return false;
    }
 
-   public static boolean method_6423(class_6098 var0) {
+   public static boolean method_6423(ItemStack var0) {
       int var3 = 0;
 
       for (int var4 = field_7568.size(); var3 < var4; var3++) {
@@ -58,11 +58,11 @@ public class class_1387 {
       return false;
    }
 
-   public static boolean method_6426(class_6098 var0, class_6098 var1) {
+   public static boolean method_6426(ItemStack var0, ItemStack var1) {
       return !field_7571.test(var0) ? false : method_6427(var0, var1) || method_6424(var0, var1);
    }
 
-   public static boolean method_6427(class_6098 var0, class_6098 var1) {
+   public static boolean method_6427(ItemStack var0, ItemStack var1) {
       class_2451 var4 = var0.method_27960();
       int var5 = 0;
 
@@ -76,7 +76,7 @@ public class class_1387 {
       return false;
    }
 
-   public static boolean method_6424(class_6098 var0, class_6098 var1) {
+   public static boolean method_6424(ItemStack var0, ItemStack var1) {
       class_6004 var4 = class_9541.method_43990(var0);
       int var5 = 0;
 
@@ -90,7 +90,7 @@ public class class_1387 {
       return false;
    }
 
-   public static class_6098 method_6422(class_6098 var0, class_6098 var1) {
+   public static ItemStack method_6422(ItemStack var0, ItemStack var1) {
       if (!var1.method_28022()) {
          class_6004 var4 = class_9541.method_43990(var1);
          class_2451 var5 = var1.method_27960();
@@ -99,7 +99,7 @@ public class class_1387 {
          for (int var7 = field_7569.size(); var6 < var7; var6++) {
             class_7119 var8 = field_7569.get(var6);
             if (class_7119.method_32720(var8) == var5 && class_7119.method_32719(var8).test(var0)) {
-               return class_9541.method_43999(new class_6098((class_8525)class_7119.method_32718(var8)), var4);
+               return class_9541.method_43999(new ItemStack((class_8525)class_7119.method_32718(var8)), var4);
             }
          }
 
@@ -108,7 +108,7 @@ public class class_1387 {
          for (int var10 = field_7568.size(); var6 < var10; var6++) {
             class_7119 var11 = field_7568.get(var6);
             if (class_7119.method_32720(var11) == var4 && class_7119.method_32719(var11).test(var0)) {
-               return class_9541.method_43999(new class_6098(var5), (class_6004)class_7119.method_32718(var11));
+               return class_9541.method_43999(new ItemStack(var5), (class_6004)class_7119.method_32718(var11));
             }
          }
       }

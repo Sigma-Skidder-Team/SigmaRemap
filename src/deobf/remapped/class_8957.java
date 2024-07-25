@@ -11,24 +11,24 @@ public class class_8957 implements class_2995 {
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
       if (!class_6588.field_33945) {
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_6588.method_30195();
          }
 
-         class_3542.method_16428();
-         class_3542.method_16486(7425);
-         class_3542.method_16374();
-         class_3542.method_16433();
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16486(7425);
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16433();
          Entity var11 = this.field_45893.gameRenderer.method_35949().method_41633();
          class_8042 var12 = class_8042.method_36499();
          class_9633 var13 = var12.method_36501();
          double var14 = 0.0 - var5;
          double var16 = 256.0 - var5;
-         class_3542.method_16354();
-         class_3542.method_16448();
+         RenderSystem.method_16354();
+         RenderSystem.method_16448();
          double var18 = (double)(var11.field_41742 << 4) - var3;
          double var20 = (double)(var11.field_41714 << 4) - var7;
-         class_3542.method_16484(1.0F);
+         RenderSystem.method_16484(1.0F);
          var13.method_44471(3, class_7985.field_40903);
 
          for (byte var22 = -16; var22 <= 32; var22 += 16) {
@@ -74,7 +74,7 @@ public class class_8957 implements class_2995 {
          }
 
          var12.method_36500();
-         class_3542.method_16484(2.0F);
+         RenderSystem.method_16484(2.0F);
          var13.method_44471(3, class_7985.field_40903);
 
          for (byte var29 = 0; var29 <= 16; var29 += 16) {
@@ -98,11 +98,11 @@ public class class_8957 implements class_2995 {
          }
 
          var12.method_36500();
-         class_3542.method_16484(1.0F);
-         class_3542.method_16488();
-         class_3542.method_16432();
-         class_3542.method_16486(7424);
-         if (class_3111.method_14424()) {
+         RenderSystem.method_16484(1.0F);
+         RenderSystem.enableBlend();
+         RenderSystem.method_16432();
+         RenderSystem.method_16486(7424);
+         if (Config.method_14424()) {
             class_6588.method_30104();
          }
       }

@@ -11,7 +11,7 @@ public class class_2588 extends class_2451 {
    }
 
    @Override
-   public boolean method_11252(class_6098 var1) {
+   public boolean method_11252(ItemStack var1) {
       return true;
    }
 
@@ -36,7 +36,7 @@ public class class_2588 extends class_2451 {
       return class_6910.method_31659(var5.field_33055);
    }
 
-   private void method_11756(class_704 var1, class_2522 var2, class_9379 var3, class_1331 var4, boolean var5, class_6098 var6) {
+   private void method_11756(class_704 var1, class_2522 var2, class_9379 var3, class_1331 var4, boolean var5, ItemStack var6) {
       if (var1.method_3184()) {
          class_6414 var9 = var2.method_8360();
          class_8021 var10 = var9.method_29306();

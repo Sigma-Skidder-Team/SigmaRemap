@@ -13,12 +13,12 @@ public class class_4831 extends class_4657 implements class_372 {
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1834(int var1, ItemStack var2, Direction var3) {
       return false;
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1833(int var1, ItemStack var2, Direction var3) {
       return false;
    }
 }

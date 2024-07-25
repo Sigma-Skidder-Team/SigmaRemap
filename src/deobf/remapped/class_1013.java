@@ -21,14 +21,14 @@ public abstract class class_1013 {
       MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
-      return var1.method_4489(class_4049.method_18688(var4));
+      return var1.method_4489(NewChatGui.method_18688(var4));
    });
    public static final class_8369 field_5222 = new class_8369("options.chat.height.unfocused", 0.0, 1.0, 0.0F, var0 -> var0.field_45488, (var0, var1) -> {
       var0.field_45488 = var1;
       MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
-      return var1.method_4489(class_4049.method_18688(var4));
+      return var1.method_4489(NewChatGui.method_18688(var4));
    });
    public static final class_8369 field_5203 = new class_8369("options.chat.opacity", 0.0, 1.0, 0.0F, var0 -> var0.field_45402, (var0, var1) -> {
       var0.field_45402 = var1;
@@ -50,7 +50,7 @@ public abstract class class_1013 {
       MinecraftClient.getInstance().field_9614.method_13991().method_18693();
    }, (var0, var1) -> {
       double var4 = var1.method_38566(var1.method_38570(var0));
-      return var1.method_4489(class_4049.method_18686(var4 * 4.0571431));
+      return var1.method_4489(NewChatGui.method_18686(var4 * 4.0571431));
    });
    public static final class_8369 field_5230 = new class_8369(
       "options.chat.line_spacing",
@@ -122,7 +122,7 @@ public abstract class class_1013 {
          }
 
          var0.method_40862();
-         MinecraftClient.getInstance().method_8552().method_43194(var0.field_45439);
+         MinecraftClient.getInstance().getMainWindow().method_43194(var0.field_45439);
       },
       (var0, var1) -> {
          if (!var0.field_45502) {
@@ -164,7 +164,7 @@ public abstract class class_1013 {
    );
    public static final class_4802 field_5299 = new class_4802("options.rawMouseInput", var0 -> var0.field_45409, (var0, var1) -> {
       var0.field_45409 = var1;
-      Window var4 = MinecraftClient.getInstance().method_8552();
+      Window var4 = MinecraftClient.getInstance().getMainWindow();
       if (var4 != null) {
          var4.method_43176(var1);
       }
@@ -230,7 +230,7 @@ public abstract class class_1013 {
          var5.method_23753();
       } else {
          var0.field_45397 = var0.field_45397.method_21384();
-         if (var0.field_45397 == class_4615.field_22433 && (class_3111.method_14424() || !class_1920.method_8795() || var5.method_23752())) {
+         if (var0.field_45397 == class_4615.field_22433 && (Config.method_14424() || !GlStateManager.method_8795() || var5.method_23752())) {
             var0.field_45397 = class_4615.field_22434;
          }
 
@@ -255,7 +255,7 @@ public abstract class class_1013 {
    public static final class_4001 field_5251 = new class_4001(
       "options.guiScale",
       (var0, var1) -> var0.field_45484 = class_9299.method_42788(
-            var0.field_45484 + var1, MinecraftClient.getInstance().method_8552().method_43164(0, MinecraftClient.getInstance().method_8578()) + 1
+            var0.field_45484 + var1, MinecraftClient.getInstance().getMainWindow().method_43164(0, MinecraftClient.getInstance().method_8578()) + 1
          ),
       (var0, var1) -> var0.field_45484 != 0 ? var1.method_4485(var0.field_45484) : var1.method_4492(new TranslationTextComponent("options.guiScale.auto"))
    );
@@ -265,15 +265,15 @@ public abstract class class_1013 {
    public static final class_4001 field_5254 = new class_4001(
       "options.narrator",
       (var0, var1) -> {
-         if (!class_7542.field_38482.method_34346()) {
+         if (!NarratorChatListener.INSTANCE.method_34346()) {
             var0.field_45459 = class_4066.field_19800;
          } else {
             var0.field_45459 = class_4066.method_18744(var0.field_45459.method_18743() + var1);
          }
 
-         class_7542.field_38482.method_34348(var0.field_45459);
+         NarratorChatListener.INSTANCE.method_34348(var0.field_45459);
       },
-      (var0, var1) -> !class_7542.field_38482.method_34346()
+      (var0, var1) -> !NarratorChatListener.INSTANCE.method_34346()
             ? var1.method_4492(new TranslationTextComponent("options.narrator.notavailable"))
             : var1.method_4492(var0.field_45459.method_18746())
    );
@@ -312,15 +312,15 @@ public abstract class class_1013 {
    );
    public static final class_4802 field_5258 = new class_4802("options.vsync", var0 -> var0.field_45502, (var0, var1) -> {
       var0.field_45502 = var1;
-      if (MinecraftClient.getInstance().method_8552() != null) {
-         MinecraftClient.getInstance().method_8552().method_43162(var0.field_45502);
+      if (MinecraftClient.getInstance().getMainWindow() != null) {
+         MinecraftClient.getInstance().getMainWindow().method_43162(var0.field_45502);
       }
    });
    public static final class_4802 field_5231 = new class_4802("options.entityShadows", var0 -> var0.field_45568, (var0, var1) -> var0.field_45568 = var1);
    public static final class_4802 field_5306 = new class_4802("options.forceUnicodeFont", var0 -> var0.field_45463, (var0, var1) -> {
       var0.field_45463 = var1;
       MinecraftClient var4 = MinecraftClient.getInstance();
-      if (var4.method_8552() != null) {
+      if (var4.getMainWindow() != null) {
          var4.method_8540(var1);
       }
    });
@@ -348,9 +348,9 @@ public abstract class class_1013 {
    public static final class_4802 field_5246 = new class_4802("options.fullscreen", var0 -> var0.field_45453, (var0, var1) -> {
       var0.field_45453 = var1;
       MinecraftClient var4 = MinecraftClient.getInstance();
-      if (var4.method_8552() != null && var4.method_8552().method_43174() != var0.field_45453) {
-         var4.method_8552().method_43156();
-         var0.field_45453 = var4.method_8552().method_43174();
+      if (var4.getMainWindow() != null && var4.getMainWindow().method_43174() != var0.field_45453) {
+         var4.getMainWindow().method_43156();
+         var0.field_45453 = var4.getMainWindow().method_43174();
       }
    });
    public static final class_4802 field_5272 = new class_4802("options.viewBobbing", var0 -> var0.field_45512, (var0, var1) -> var0.field_45512 = var1);

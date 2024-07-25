@@ -51,7 +51,7 @@ public interface class_7203 extends class_1137 {
 
    void method_32967(UUID var1);
 
-   class_4666 method_25709();
+   GameType method_25709();
 
    void method_32981(class_1572 var1);
 
@@ -63,7 +63,7 @@ public interface class_7203 extends class_1137 {
 
    boolean method_25714();
 
-   void method_25711(class_4666 var1);
+   void method_25711(GameType var1);
 
    class_5026<class_341> method_32969();
 

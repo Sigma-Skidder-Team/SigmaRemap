@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_7483 extends Entity implements class_3713 {
-   private static final class_7821<class_6098> field_38200 = class_8073.<class_6098>method_36641(class_7483.class, class_2734.field_13357);
+   private static final class_7821<ItemStack> field_38200 = class_8073.<ItemStack>method_36641(class_7483.class, class_2734.field_13357);
    private double field_38206;
    private double field_38204;
    private double field_38205;
@@ -18,25 +18,25 @@ public class class_7483 extends Entity implements class_3713 {
       this.method_37256(var2, var4, var6);
    }
 
-   public void method_34038(class_6098 var1) {
+   public void method_34038(ItemStack var1) {
       if (var1.method_27960() != class_4897.field_24519 || var1.method_28002()) {
-         this.method_37372().method_36633(field_38200, Util.<class_6098>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
+         this.method_37372().method_36633(field_38200, Util.<ItemStack>method_44659(var1.method_27973(), var0 -> var0.method_28017(1)));
       }
    }
 
-   private class_6098 method_34036() {
-      return this.method_37372().<class_6098>method_36640(field_38200);
+   private ItemStack method_34036() {
+      return this.method_37372().<ItemStack>method_36640(field_38200);
    }
 
    @Override
-   public class_6098 method_17246() {
-      class_6098 var3 = this.method_34036();
-      return !var3.method_28022() ? var3 : new class_6098(class_4897.field_24519);
+   public ItemStack method_17246() {
+      ItemStack var3 = this.method_34036();
+      return !var3.method_28022() ? var3 : new ItemStack(class_4897.field_24519);
    }
 
    @Override
    public void method_37329() {
-      this.method_37372().method_36634(field_38200, class_6098.field_31203);
+      this.method_37372().method_36634(field_38200, ItemStack.EMPTY);
    }
 
    @Override
@@ -156,7 +156,7 @@ public class class_7483 extends Entity implements class_3713 {
 
    @Override
    public void method_37376(class_5734 var1) {
-      class_6098 var4 = this.method_34036();
+      ItemStack var4 = this.method_34036();
       if (!var4.method_28022()) {
          var1.method_25946("Item", var4.method_27998(new class_5734()));
       }
@@ -164,7 +164,7 @@ public class class_7483 extends Entity implements class_3713 {
 
    @Override
    public void method_37314(class_5734 var1) {
-      class_6098 var4 = class_6098.method_28015(var1.method_25937("Item"));
+      ItemStack var4 = ItemStack.method_28015(var1.method_25937("Item"));
       this.method_34038(var4);
    }
 

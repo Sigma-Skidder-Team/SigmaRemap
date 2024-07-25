@@ -54,7 +54,7 @@ public class class_2065 extends class_3599 {
       var5.field_41749 = 60;
       var5.method_26883();
       if (var5.method_26520(class_6943.field_35704).method_28022()) {
-         var5.method_37349(class_6943.field_35704, new class_6098(class_4897.field_24701));
+         var5.method_37349(class_6943.field_35704, new ItemStack(class_4897.field_24701));
       }
 
       var5.method_37349(
@@ -75,7 +75,7 @@ public class class_2065 extends class_3599 {
       return var5;
    }
 
-   private class_6098 method_9648(class_6098 var1) {
+   private ItemStack method_9648(ItemStack var1) {
       var1.method_27976("Enchantments");
       return var1;
    }

@@ -56,7 +56,7 @@ public class class_8671 {
             }
          }
 
-         if (var1 == this.field_44499.method_8552().method_43181()) {
+         if (var1 == this.field_44499.getMainWindow().method_43181()) {
             boolean var16 = var4 == 1;
             if (MinecraftClient.IS_SYSTEM_MAC && var3 == 0) {
                if (!var16) {
@@ -92,11 +92,11 @@ public class class_8671 {
             if (this.field_44499.field_9610 == null) {
                if (this.field_44499.field_9623 != null) {
                   double var11 = this.field_44482
-                     * (double)this.field_44499.method_8552().method_43165()
-                     / (double)this.field_44499.method_8552().method_43166();
+                     * (double)this.field_44499.getMainWindow().getScaledWidth()
+                     / (double)this.field_44499.getMainWindow().method_43166();
                   double var13 = this.field_44493
-                     * (double)this.field_44499.method_8552().method_43177()
-                     / (double)this.field_44499.method_8552().method_43163();
+                     * (double)this.field_44499.getMainWindow().getScaledHeight()
+                     / (double)this.field_44499.getMainWindow().method_43163();
                   if (!var16) {
                      Screen.method_1181(
                         () -> var10[0] = this.field_44499.field_9623.method_26941(var11, var13, var9),
@@ -130,7 +130,7 @@ public class class_8671 {
 
                class_5916.method_27072(class_8863.field_45320.method_40758(var9), var16);
                if (var16) {
-                  if (this.field_44499.field_9632.method_37221() && var9 == 2) {
+                  if (this.field_44499.thePlayer.method_37221() && var9 == 2) {
                      this.field_44499.field_9614.method_14004().method_38559();
                   } else {
                      class_5916.method_27059(class_8863.field_45320.method_40758(var9));
@@ -146,11 +146,11 @@ public class class_8671 {
          class_1523 var9 = new class_1523(var5);
          SigmaMainClass.getInstance().getEventManager().call(var9);
          if (!var9.method_29716()) {
-            if (var1 == MinecraftClient.getInstance().method_8552().method_43181()) {
+            if (var1 == MinecraftClient.getInstance().getMainWindow().method_43181()) {
                double var10 = (!this.field_44499.gameOptions.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.gameOptions.field_45578;
                if (this.field_44499.field_9610 == null) {
                   if (this.field_44499.field_9623 == null) {
-                     if (this.field_44499.field_9632 != null) {
+                     if (this.field_44499.thePlayer != null) {
                         if (this.field_44494 != 0.0 && Math.signum(var10) != Math.signum(this.field_44494)) {
                            this.field_44494 = 0.0;
                         }
@@ -162,22 +162,22 @@ public class class_8671 {
                         }
 
                         this.field_44494 -= (double)var16;
-                        if (!this.field_44499.field_9632.method_37221()) {
-                           this.field_44499.field_9632.field_3853.method_32415((double)var16);
+                        if (!this.field_44499.thePlayer.method_37221()) {
+                           this.field_44499.thePlayer.inventory.method_32415((double)var16);
                         } else if (!this.field_44499.field_9614.method_14004().method_38557()) {
-                           float var17 = class_9299.method_42828(this.field_44499.field_9632.field_3876.method_4230() + var16 * 0.005F, 0.0F, 0.2F);
-                           this.field_44499.field_9632.field_3876.method_4233(var17);
+                           float var17 = class_9299.method_42828(this.field_44499.thePlayer.field_3876.method_4230() + var16 * 0.005F, 0.0F, 0.2F);
+                           this.field_44499.thePlayer.field_3876.method_4233(var17);
                         } else {
                            this.field_44499.field_9614.method_14004().method_38564((double)(-var16));
                         }
                      }
                   } else {
                      double var12 = this.field_44482
-                        * (double)this.field_44499.method_8552().method_43165()
-                        / (double)this.field_44499.method_8552().method_43166();
+                        * (double)this.field_44499.getMainWindow().getScaledWidth()
+                        / (double)this.field_44499.getMainWindow().method_43166();
                      double var14 = this.field_44493
-                        * (double)this.field_44499.method_8552().method_43177()
-                        / (double)this.field_44499.method_8552().method_43163();
+                        * (double)this.field_44499.getMainWindow().getScaledHeight()
+                        / (double)this.field_44499.getMainWindow().method_43163();
                      this.field_44499.field_9623.method_26945(var12, var14, var10);
                   }
                }
@@ -213,7 +213,7 @@ public class class_8671 {
    }
 
    private void method_39839(long var1, double var3, double var5) {
-      if (var1 == MinecraftClient.getInstance().method_8552().method_43181()) {
+      if (var1 == MinecraftClient.getInstance().getMainWindow().method_43181()) {
          if (this.field_44489) {
             this.field_44482 = var3;
             this.field_44493 = var5;
@@ -222,16 +222,16 @@ public class class_8671 {
 
          Screen var9 = this.field_44499.field_9623;
          if (var9 != null && this.field_44499.field_9610 == null) {
-            double var10 = var3 * (double)this.field_44499.method_8552().method_43165() / (double)this.field_44499.method_8552().method_43166();
-            double var12 = var5 * (double)this.field_44499.method_8552().method_43177() / (double)this.field_44499.method_8552().method_43163();
+            double var10 = var3 * (double)this.field_44499.getMainWindow().getScaledWidth() / (double)this.field_44499.getMainWindow().method_43166();
+            double var12 = var5 * (double)this.field_44499.getMainWindow().getScaledHeight() / (double)this.field_44499.getMainWindow().method_43163();
             Screen.method_1181(() -> var9.method_26943(var10, var12), "mouseMoved event handler", var9.getClass().getCanonicalName());
             if (this.field_44490 != -1 && this.field_44483 > 0.0) {
                double var14 = (var3 - this.field_44482)
-                  * (double)this.field_44499.method_8552().method_43165()
-                  / (double)this.field_44499.method_8552().method_43166();
+                  * (double)this.field_44499.getMainWindow().getScaledWidth()
+                  / (double)this.field_44499.getMainWindow().method_43166();
                double var16 = (var5 - this.field_44493)
-                  * (double)this.field_44499.method_8552().method_43177()
-                  / (double)this.field_44499.method_8552().method_43163();
+                  * (double)this.field_44499.getMainWindow().getScaledHeight()
+                  / (double)this.field_44499.getMainWindow().method_43163();
                Screen.method_1181(
                   () -> var9.method_26944(var10, var12, this.field_44490, var14, var16), "mouseDragged event handler", var9.getClass().getCanonicalName()
                );
@@ -280,8 +280,8 @@ public class class_8671 {
          }
 
          this.field_44499.method_8531().method_40528(var11, var13);
-         if (this.field_44499.field_9632 != null) {
-            this.field_44499.field_9632.method_37218(var11, var13 * (double)var19);
+         if (this.field_44499.thePlayer != null) {
+            this.field_44499.thePlayer.method_37218(var11, var13 * (double)var19);
          }
       } else {
          this.field_44498 = 0.0;
@@ -320,9 +320,9 @@ public class class_8671 {
          }
 
          this.field_44496 = true;
-         this.field_44482 = (double)(this.field_44499.method_8552().method_43166() / 2);
-         this.field_44493 = (double)(this.field_44499.method_8552().method_43163() / 2);
-         class_9732.method_44937(this.field_44499.method_8552().method_43181(), 212995, this.field_44482, this.field_44493);
+         this.field_44482 = (double)(this.field_44499.getMainWindow().method_43166() / 2);
+         this.field_44493 = (double)(this.field_44499.getMainWindow().method_43163() / 2);
+         class_9732.method_44937(this.field_44499.getMainWindow().method_43181(), 212995, this.field_44482, this.field_44493);
          this.field_44499.method_8609((Screen)null);
          this.field_44499.field_9582 = 10000;
          this.field_44489 = true;
@@ -332,9 +332,9 @@ public class class_8671 {
    public void method_39844() {
       if (this.field_44496) {
          this.field_44496 = false;
-         this.field_44482 = (double)(this.field_44499.method_8552().method_43166() / 2);
-         this.field_44493 = (double)(this.field_44499.method_8552().method_43163() / 2);
-         class_9732.method_44937(this.field_44499.method_8552().method_43181(), 212993, this.field_44482, this.field_44493);
+         this.field_44482 = (double)(this.field_44499.getMainWindow().method_43166() / 2);
+         this.field_44493 = (double)(this.field_44499.getMainWindow().method_43163() / 2);
+         class_9732.method_44937(this.field_44499.getMainWindow().method_43181(), 212993, this.field_44482, this.field_44493);
       }
    }
 

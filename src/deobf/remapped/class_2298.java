@@ -18,7 +18,7 @@ public class class_2298 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (!var1.method_27959()) {
          field_11480.warn("Couldn't set damage of loot item {}", var1);
       } else {

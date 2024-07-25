@@ -11,7 +11,7 @@ public interface class_8668 {
       return var1 >= 0 && var1 < this.method_39737() ? this.method_39734(var1) : ITextProperties.field_240651_c_;
    }
 
-   static class_8668 method_39736(class_6098 var0) {
+   static class_8668 method_39736(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       if (var3 != class_4897.field_24698) {
          return (class_8668)(var3 != class_4897.field_24805 ? class_7680.field_39032 : new class_9038(var0));

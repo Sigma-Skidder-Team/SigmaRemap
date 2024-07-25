@@ -35,17 +35,17 @@ public class ConfigCommand extends Command {
                         throw new class_2900();
                      }
 
-                     var3.method_3731("§l" + SigmaMainClass.getInstance().getModuleManager().method_848().method_4305().size() + " " + this.method_8240() + " :");
+                     var3.method_3731("§l" + SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4305().size() + " " + this.method_8240() + " :");
 
-                     for (class_1675 var8 : SigmaMainClass.getInstance().getModuleManager().method_848().method_4305()) {
-                        boolean var9 = SigmaMainClass.getInstance().getModuleManager().method_848().method_4301() == var8;
+                     for (class_1675 var8 : SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4305()) {
+                        boolean var9 = SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301() == var8;
                         if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30644 || !var9) {
                            var3.method_3731((!var9 ? "" : "§n") + var8.field_8677);
                         }
                      }
                   } else if (var2.length != 1) {
                      String var10 = var2[1].method_24060().toLowerCase();
-                     if (!SigmaMainClass.getInstance().getModuleManager().method_848().method_4302(var10)) {
+                     if (!SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4302(var10)) {
                         var3.method_3731(this.method_8240() + " not found!");
                      } else {
                         var3.method_3731("Removed " + this.method_8240());
@@ -55,21 +55,21 @@ public class ConfigCommand extends Command {
                   }
                } else if (var2.length != 1) {
                   String var11 = var2[1].method_24060().toLowerCase();
-                  class_1675 var13 = SigmaMainClass.getInstance().getModuleManager().method_848().method_4301();
+                  class_1675 var13 = SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301();
                   var13.field_8678 = SigmaMainClass.getInstance().getModuleManager().method_839(new JSONObjectImpl());
-                  SigmaMainClass.getInstance().getModuleManager().method_848().method_4302(var11);
-                  SigmaMainClass.getInstance().getModuleManager().method_848().method_4298(new class_1675(var11, var13.field_8678));
+                  SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4302(var11);
+                  SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4298(new class_1675(var11, var13.field_8678));
                   var3.method_3731("Saved " + this.method_8240());
                } else {
                   var3.method_3731("Usage : .config save <name>");
                }
             } else if (var2.length != 1) {
                String var12 = var2[1].method_24060().toLowerCase();
-               class_1675 var14 = SigmaMainClass.getInstance().getModuleManager().method_848().method_4307(var12);
+               class_1675 var14 = SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4307(var12);
                if (var14 == null) {
                   var3.method_3731(this.method_8240() + " not found!");
                } else {
-                  SigmaMainClass.getInstance().getModuleManager().method_848().method_4300(var14);
+                  SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4300(var14);
                   var3.method_3731(this.method_8240() + " was loaded!");
                }
             } else {

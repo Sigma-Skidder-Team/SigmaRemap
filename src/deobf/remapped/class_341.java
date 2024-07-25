@@ -64,7 +64,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
    private static final Logger field_1316 = LogManager.getLogger();
    public static final File field_1312 = new File("usercache.json");
    public static final class_6292 field_1290 = new class_6292(
-      "Demo World", class_4666.field_22764, false, class_423.field_1789, false, new class_291(), class_2805.field_13766
+      "Demo World", GameType.field_22764, false, class_423.field_1789, false, new class_291(), class_2805.field_13766
    );
    public final class_3676 field_1339;
    public final class_5645 field_1337;
@@ -336,7 +336,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       var4.method_32978(false);
       var4.method_32977(1000000000);
       var4.method_32983(6000L);
-      var4.method_25711(class_4666.field_22756);
+      var4.method_25711(GameType.SPECTATOR);
    }
 
    private void method_1743(class_1870 var1) {
@@ -390,7 +390,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       }
    }
 
-   public class_4666 method_1602() {
+   public GameType method_1602() {
       return this.field_1300.method_25709();
    }
 
@@ -1032,7 +1032,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
 
    public abstract boolean method_1624();
 
-   public void method_1716(class_4666 var1) {
+   public void method_1716(GameType var1) {
       this.field_1300.method_25711(var1);
    }
 
@@ -1049,7 +1049,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
       return false;
    }
 
-   public abstract boolean method_1625(class_4666 var1, boolean var2, int var3);
+   public abstract boolean method_1625(GameType var1, boolean var2, int var3);
 
    public int method_1682() {
       return this.field_1314;

@@ -44,7 +44,7 @@ public class class_9491 {
             }
          }
 
-         this.field_48366 = class_3111.method_14342(this.field_48366, var1);
+         this.field_48366 = Config.method_14342(this.field_48366, var1);
       }
    }
 
@@ -57,6 +57,6 @@ public class class_9491 {
 
    @Override
    public String toString() {
-      return "" + this.field_48367 + ":" + class_3111.method_14287(this.field_48366);
+      return "" + this.field_48367 + ":" + Config.method_14287(this.field_48366);
    }
 }

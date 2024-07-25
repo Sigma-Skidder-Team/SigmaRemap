@@ -8,7 +8,7 @@ public class class_2155 extends class_2509 {
    }
 
    @Override
-   public boolean method_11437(class_704 var1, Direction var2, class_6098 var3, class_1331 var4) {
+   public boolean method_11437(class_704 var1, Direction var2, ItemStack var3, class_1331 var4) {
       return !World.method_29556(var4) && var1.method_3208(var4, var2, var3);
    }
 }

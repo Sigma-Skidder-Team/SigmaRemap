@@ -40,17 +40,17 @@ public class NewChunksModule extends Module {
          while (var18.hasNext()) {
             class_2034 var6 = (class_2034)var18.next();
             if (var6 != null) {
-               double var7 = (double)var6.method_9535() - mc.gameRenderer.method_35949().method_41627().method_61();
-               double var9 = (double)var6.method_9545() - mc.gameRenderer.method_35949().method_41627().method_62();
-               double var11 = -mc.gameRenderer.method_35949().method_41627().method_60();
+               double var7 = (double)var6.method_9535() - client.gameRenderer.method_35949().method_41627().method_61();
+               double var9 = (double)var6.method_9545() - client.gameRenderer.method_35949().method_41627().method_62();
+               double var11 = -client.gameRenderer.method_35949().method_41627().method_60();
                GL11.glDisable(2929);
                class_8194 var13 = new class_8194(var7, var11, var9, var7 + 16.0, var11, var9 + 16.0);
                class_73.method_83(var13, class_314.method_1444(class_1255.field_6922.field_6917, 0.1F));
                class_73.method_131(var13, class_314.method_1444(class_1255.field_6922.field_6917, 0.1F));
                GL11.glColor3f(1.0F, 1.0F, 1.0F);
                GL11.glEnable(2929);
-               int var14 = mc.field_9632.field_41742 - var6.field_10328;
-               int var15 = mc.field_9632.field_41714 - var6.field_10327;
+               int var14 = client.thePlayer.field_41742 - var6.field_10328;
+               int var15 = client.thePlayer.field_41714 - var6.field_10327;
                double var16 = Math.sqrt((double)(var14 * var14 + var15 * var15));
                if (var16 > 30.0) {
                   var18.remove();

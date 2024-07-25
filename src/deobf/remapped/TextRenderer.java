@@ -38,32 +38,32 @@ public class TextRenderer {
    }
 
    public int method_45380(class_7966 var1, String var2, float var3, float var4, int var5, boolean var6) {
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       return this.method_45410(var2, var3, var4, var5, var1.method_36058().method_28620(), true, var6);
    }
 
    public int method_45385(class_7966 var1, String var2, float var3, float var4, int var5) {
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       return this.method_45410(var2, var3, var4, var5, var1.method_36058().method_28620(), false, this.method_45383());
    }
 
    public int method_45402(class_7966 var1, class_7107 var2, float var3, float var4, int var5) {
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       return this.method_45386(var2, var3, var4, var5, var1.method_36058().method_28620(), true);
    }
 
    public int method_45392(class_7966 var1, ITextComponent var2, float var3, float var4, int var5) {
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       return this.method_45386(var2.func_241878_f(), var3, var4, var5, var1.method_36058().method_28620(), true);
    }
 
    public int method_45382(class_7966 var1, class_7107 var2, float var3, float var4, int var5) {
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       return this.method_45386(var2, var3, var4, var5, var1.method_36058().method_28620(), false);
    }
 
    public int method_45378(class_7966 var1, ITextComponent var2, float var3, float var4, int var5) {
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       return this.method_45386(var2.func_241878_f(), var3, var4, var5, var1.method_36058().method_28620(), false);
    }
 

@@ -20,7 +20,7 @@ public class class_9231 implements class_4904 {
 
    @Override
    public class_8014 method_22451(Entity var1, Random var2) {
-      class_6098 var5 = new class_6098(this.field_47188, this.field_47191);
-      return new class_8014(var5, new class_6098(class_4897.field_24997), this.field_47189, this.field_47187, this.field_47186);
+      ItemStack var5 = new ItemStack(this.field_47188, this.field_47191);
+      return new class_8014(var5, new ItemStack(class_4897.field_24997), this.field_47189, this.field_47187, this.field_47186);
    }
 }

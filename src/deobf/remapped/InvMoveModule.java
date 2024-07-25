@@ -14,8 +14,8 @@ public class InvMoveModule extends Module {
    @EventListen
    private void method_26179(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mc.gameOptions.keyInventory.field_30027.field_17800 && mc.field_9632.method_37321()) {
-            mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20100));
+         if (var1.method_29384() == client.gameOptions.keyInventory.field_30027.field_17800 && client.thePlayer.method_37321()) {
+            client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20100));
          }
       }
    }
@@ -36,35 +36,35 @@ public class InvMoveModule extends Module {
    private void method_26178(class_5596 var1) {
       if (this.method_42015()) {
          if (this.getBooleanValueByName("AACP")) {
-            boolean var4 = !(mc.field_9623 instanceof class_3431) || !(mc.field_9623 instanceof class_2141);
+            boolean var4 = !(client.field_9623 instanceof class_3431) || !(client.field_9623 instanceof class_2141);
             if (this.field_29226 && !var4) {
                this.field_29226 = !this.field_29226;
-               if (mc.field_9632.method_37321()) {
-                  mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20099));
+               if (client.thePlayer.method_37321()) {
+                  client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20099));
                }
             } else if (!this.field_29226 && var4) {
                this.field_29226 = !this.field_29226;
-               if (mc.field_9632.method_37321()) {
-                  mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20100));
+               if (client.thePlayer.method_37321()) {
+                  client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20100));
                }
             }
          }
 
-         if (mc.field_9623 instanceof class_2208 || SigmaMainClass.getInstance().method_3310().method_25291() <= 1) {
-            if (mc.field_9623 instanceof class_5766) {
+         if (client.field_9623 instanceof class_2208 || SigmaMainClass.getInstance().method_3310().method_25291() <= 1) {
+            if (client.field_9623 instanceof class_5766) {
                return;
             }
 
-            if (mc.field_9623 instanceof class_2713) {
+            if (client.field_9623 instanceof class_2713) {
                return;
             }
 
-            if (mc.field_9623 instanceof KeybindManagerScreen) {
+            if (client.field_9623 instanceof KeybindManagerScreen) {
                return;
             }
 
-            if (mc.field_9623 instanceof class_2546) {
-               class_2546 var9 = (class_2546) mc.field_9623;
+            if (client.field_9623 instanceof class_2546) {
+               class_2546 var9 = (class_2546) client.field_9623;
                if (var9.method_11595() == 5) {
                   return;
                }
@@ -78,11 +78,11 @@ public class InvMoveModule extends Module {
                return;
             }
 
-            for (class_5916 var7 : mc.gameOptions.field_45395) {
+            for (class_5916 var7 : client.gameOptions.field_45395) {
                if (var7.field_30027.field_17800 > 0
-                  && mc.gameOptions.keySneak.field_30027.field_17800 != var7.field_30027.field_17800
+                  && client.gameOptions.keySneak.field_30027.field_17800 != var7.field_30027.field_17800
                   && var7.field_30027.field_17800 > 4) {
-                  int var8 = GLFW.glfwGetKey(mc.window.method_43181(), var7.field_30027.field_17800);
+                  int var8 = GLFW.glfwGetKey(client.window.method_43181(), var7.field_30027.field_17800);
                   var7.pressed = var8 == 1;
                }
             }

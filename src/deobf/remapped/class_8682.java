@@ -27,7 +27,7 @@ public class class_8682 extends class_2733 {
                   return null;
                } else {
                   String var14 = var2.substring(var11.length());
-                  int var10 = class_3111.method_14361(var14, -1);
+                  int var10 = Config.method_14361(var14, -1);
                   var10--;
                   return var10 >= 0 && var10 < var12.length ? var12[var10] : null;
                }
@@ -38,7 +38,7 @@ public class class_8682 extends class_2733 {
                return null;
             } else {
                String var8 = var2.substring(var6.length());
-               int var9 = class_3111.method_14361(var8, -1);
+               int var9 = Config.method_14361(var8, -1);
                var9--;
                return var9 >= 0 && var9 < var7.length ? var7[var9] : null;
             }

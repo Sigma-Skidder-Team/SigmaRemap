@@ -52,10 +52,10 @@ public class class_9211 extends class_1809 {
 
       MinecraftClient.getInstance().execute(() -> {
          this.field_47112 = true;
-         if (class_3542.method_16366()) {
+         if (RenderSystem.method_16366()) {
             this.method_42543(var1);
          } else {
-            class_3542.method_16474(() -> this.method_42543(var1));
+            RenderSystem.method_16474(() -> this.method_42543(var1));
          }
       });
    }
@@ -122,7 +122,7 @@ public class class_9211 extends class_1809 {
                      }
 
                      if (var3.getErrorStream() != null) {
-                        class_3111.method_14250(var3.getErrorStream());
+                        Config.method_14250(var3.getErrorStream());
                      }
 
                      return;

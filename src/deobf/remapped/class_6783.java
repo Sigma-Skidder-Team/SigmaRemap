@@ -24,7 +24,7 @@ public class class_6783 implements class_7279 {
    }
 
    public boolean test(class_2792 var1) {
-      class_6098 var4 = var1.<class_6098>method_12698(class_8712.field_44670);
+      ItemStack var4 = var1.<ItemStack>method_12698(class_8712.field_44670);
       int var5 = var4 == null ? 0 : class_2931.method_13423(this.field_34983, var4);
       float var6 = this.field_34984[Math.min(var5, this.field_34984.length - 1)];
       return var1.method_12693().nextFloat() < var6;

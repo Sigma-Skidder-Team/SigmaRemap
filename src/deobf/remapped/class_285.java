@@ -34,7 +34,7 @@ public class class_285 extends class_6414 {
    }
 
    @Override
-   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, class_6098 var4) {
+   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, ItemStack var4) {
       super.method_10765(var1, var2, var3, var4);
       if (class_2931.method_13423(class_3668.field_17870, var4) == 0) {
          int var7 = this.method_1266(var2.field_33033);

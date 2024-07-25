@@ -61,11 +61,11 @@ public class class_9511 extends class_2733 {
             class_7860.field_39888.method_7982(var8, var1);
             return (class_8599)var8;
          } else {
-            class_3111.method_14317("Model field not found: RenderPufferfish.modelSmall");
+            Config.method_14317("Model field not found: RenderPufferfish.modelSmall");
             return null;
          }
       } else {
-         class_3111.method_14317("Not a PufferfishRenderer: " + var6);
+         Config.method_14317("Not a PufferfishRenderer: " + var6);
          return null;
       }
    }

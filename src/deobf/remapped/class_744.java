@@ -11,8 +11,8 @@ public class class_744 {
    public static void method_3378(CommandDispatcher<class_9155> var0) {
       LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)class_465.method_2231("gamemode").requires(var0x -> var0x.method_40314(2));
 
-      for (class_4666 var7 : class_4666.values()) {
-         if (var7 != class_4666.field_22762) {
+      for (GameType var7 : GameType.values()) {
+         if (var7 != GameType.field_22762) {
             var3.then(
                ((LiteralArgumentBuilder)class_465.method_2231(var7.method_21588())
                      .executes(var1 -> method_3379(var1, Collections.<class_9359>singleton(((class_9155)var1.getSource()).method_42179()), var7)))
@@ -27,7 +27,7 @@ public class class_744 {
       var0.register(var3);
    }
 
-   private static void method_3380(class_9155 var0, class_9359 var1, class_4666 var2) {
+   private static void method_3380(class_9155 var0, class_9359 var1, GameType var2) {
       TranslationTextComponent var5 = new TranslationTextComponent("gameMode." + var2.method_21588());
       if (var0.method_42200() != var1) {
          if (var0.method_42198().method_29537().method_1285(class_291.field_1057)) {
@@ -40,7 +40,7 @@ public class class_744 {
       }
    }
 
-   private static int method_3379(CommandContext<class_9155> var0, Collection<class_9359> var1, class_4666 var2) {
+   private static int method_3379(CommandContext<class_9155> var0, Collection<class_9359> var1, GameType var2) {
       int var5 = 0;
 
       for (class_9359 var7 : var1) {

@@ -131,7 +131,7 @@ public class class_7617 extends class_5467 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if ((this.field_38766 == null || this.field_38766.method_33089()) && !this.method_34544() && this.method_24866(var5) && var1.method_37275(this) < 9.0) {
          this.method_24867(var1, var5);
          if (!this.field_41768.field_33055) {
@@ -194,7 +194,7 @@ public class class_7617 extends class_5467 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return field_38768.test(var1);
    }
 

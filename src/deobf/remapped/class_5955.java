@@ -8,13 +8,13 @@ public class class_5955 implements Packet<class_1243> {
    private int field_30355;
    private int field_30353;
    private short field_30358;
-   private class_6098 field_30354 = class_6098.field_31203;
+   private ItemStack field_30354 = ItemStack.EMPTY;
    private class_6269 field_30356;
 
    public class_5955() {
    }
 
-   public class_5955(int var1, int var2, int var3, class_6269 var4, class_6098 var5, short var6) {
+   public class_5955(int var1, int var2, int var3, class_6269 var4, ItemStack var5, short var6) {
       this.field_30357 = var1;
       this.field_30355 = var2;
       this.field_30353 = var3;
@@ -63,7 +63,7 @@ public class class_5955 implements Packet<class_1243> {
       return this.field_30358;
    }
 
-   public class_6098 method_27204() {
+   public ItemStack method_27204() {
       return this.field_30354;
    }
 

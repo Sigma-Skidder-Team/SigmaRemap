@@ -12,23 +12,23 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
    private boolean field_16869;
 
    public class_3431(class_704 var1) {
-      super(var1.field_3869, var1.field_3853, new TranslationTextComponent("container.crafting"));
+      super(var1.field_3869, var1.inventory, new TranslationTextComponent("container.crafting"));
       this.field_951 = true;
       this.field_10959 = 97;
    }
 
    @Override
    public void method_5312() {
-      if (!this.field_943.field_9647.method_42140()) {
+      if (!this.field_943.playerController.method_42140()) {
          this.field_16865.method_36315();
       } else {
-         this.field_943.method_8609(new class_2546(this.field_943.field_9632));
+         this.field_943.method_8609(new class_2546(this.field_943.thePlayer));
       }
    }
 
    @Override
    public void method_1163() {
-      if (!this.field_943.field_9647.method_42140()) {
+      if (!this.field_943.playerController.method_42140()) {
          super.method_1163();
          this.field_16863 = this.field_941 < 379;
          this.field_16865.method_36308(this.field_941, this.field_940, this.field_943, this.field_16863, this.field_10956);
@@ -44,7 +44,7 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
             this.field_16869 = true;
          }));
       } else {
-         this.field_943.method_8609(new class_2546(this.field_943.field_9632));
+         this.field_943.method_8609(new class_2546(this.field_943.thePlayer));
       }
    }
 
@@ -74,20 +74,20 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
 
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_10969);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10969);
       int var7 = this.field_10984;
       int var8 = this.field_10962;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);
-      method_15860(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field_16866, (float)(var8 + 75 - 50) - this.field_16868, this.field_943.field_9632);
+      method_15860(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field_16866, (float)(var8 + 75 - 50) - this.field_16868, this.field_943.thePlayer);
    }
 
    public static void method_15860(int var0, int var1, int var2, float var3, float var4, class_5834 var5) {
       float var8 = (float)Math.atan((double)(var3 / 40.0F));
       float var9 = (float)Math.atan((double)(var4 / 40.0F));
-      class_3542.method_16438();
-      class_3542.method_16413((float)var0, (float)var1, 1050.0F);
-      class_3542.method_16403(1.0F, 1.0F, -1.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16413((float)var0, (float)var1, 1050.0F);
+      RenderSystem.method_16403(1.0F, 1.0F, -1.0F);
       class_7966 var10 = new class_7966();
       var10.method_36065(0.0, 0.0, 1000.0);
       var10.method_36062((float)var2, (float)var2, (float)var2);
@@ -110,7 +110,7 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
       var18.method_28123(var12);
       var18.method_28136(false);
       class_3758 var19 = MinecraftClient.getInstance().method_8589().method_13796();
-      class_3542.method_16430(() -> var18.method_28115(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
+      RenderSystem.method_16430(() -> var18.method_28115(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
       var19.method_17415();
       var18.method_28136(true);
       var5.field_29605 = var13;
@@ -118,7 +118,7 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
       var5.field_41755 = var15;
       var5.field_29657 = var16;
       var5.field_29618 = var17;
-      class_3542.method_16489();
+      RenderSystem.method_16489();
    }
 
    @Override

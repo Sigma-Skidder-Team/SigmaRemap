@@ -40,8 +40,8 @@ public class class_9586 implements class_4439, class_7912 {
 
    @Override
    public void method_35795(class_7966 var1, float var2, int var3) {
-      MinecraftClient.getInstance().method_8577().method_35674(class_8368.field_42845);
-      class_2089.method_9778(var1, 0, 0, 16.0F, 0.0F, 16, 16, 256, 256);
+      MinecraftClient.getInstance().getTextureManager().bindTexture(SpectatorGui.field_42845);
+      AbstractGui.method_9778(var1, 0, 0, 16.0F, 0.0F, 16, 16, 256, 256);
    }
 
    @Override

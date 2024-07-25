@@ -47,17 +47,17 @@ public class class_7590 {
          int var11 = var10.method_15981() + var3;
          int var12 = var10.method_15979() + var4;
          if (var9 == 0 && var5) {
-            class_2089.method_9774(var1, var11 - 4, var12 - 4, var11 + 20, var12 + 20, 822018048);
+            AbstractGui.method_9774(var1, var11 - 4, var12 - 4, var11 + 20, var12 + 20, 822018048);
          } else {
-            class_2089.method_9774(var1, var11, var12, var11 + 16, var12 + 16, 822018048);
+            AbstractGui.method_9774(var1, var11, var12, var11 + 16, var12 + 16, 822018048);
          }
 
-         class_6098 var13 = var10.method_15980();
-         class_8765 var14 = var2.method_8511();
+         ItemStack var13 = var10.method_15980();
+         ItemRenderer var14 = var2.method_8511();
          var14.method_40284(var13, var11, var12);
-         class_3542.method_16457(516);
-         class_2089.method_9774(var1, var11, var12, var11 + 16, var12 + 16, 822083583);
-         class_3542.method_16457(515);
+         RenderSystem.method_16457(516);
+         AbstractGui.method_9774(var1, var11, var12, var11 + 16, var12 + 16, 822083583);
+         RenderSystem.method_16457(515);
          if (var9 == 0) {
             var14.method_40281(var2.textRenderer, var13, var11, var12);
          }

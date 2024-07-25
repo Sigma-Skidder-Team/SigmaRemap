@@ -16,7 +16,7 @@ public class class_4746 {
    public static int field_22997 = 0;
 
    public void method_21923() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
    }
 
    public static void method_21925(int var0, int var1, int var2, int var3) {
@@ -39,7 +39,7 @@ public class class_4746 {
       if (SigmaMainClass.getInstance().getGUIManager().method_30987() && field_22995 < field_23000 && field_22999 < field_23001) {
          if (field_22996 == null) {
             try {
-               field_22994 = new class_4067(field_22998.method_8577(), new class_4660(), field_22998.method_8584(), new Identifier("jelloblur"));
+               field_22994 = new class_4067(field_22998.getTextureManager(), new class_4660(), field_22998.method_8584(), new Identifier("jelloblur"));
                field_22994.method_18750(field_22998.field_9596.field_20526, field_22998.field_9596.field_20534);
                field_22994.field_19813.get(0).method_33272().method_19853("Radius").method_32385(35.0F);
                field_22994.field_19813.get(1).method_33272().method_19853("Radius").method_32385(35.0F);
@@ -54,17 +54,17 @@ public class class_4746 {
             field_22994.method_18750(field_22998.field_9596.field_20526, field_22998.field_9596.field_20534);
          }
 
-         class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-         class_3542.method_16488();
+         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.enableBlend();
          GL11.glDisable(2929);
          GL11.glDisable(3008);
-         class_3542.method_16448();
+         RenderSystem.method_16448();
          field_22996.method_19712(true);
          field_23002.method_19712(true);
-         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
-         class_3542.method_16463(5889);
-         class_3542.method_16476();
-         class_3542.method_16376(
+         RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
+         RenderSystem.method_16463(5889);
+         RenderSystem.method_16476();
+         RenderSystem.method_16376(
             0.0,
             (double)field_22998.window.method_43178() / field_22998.window.method_43189(),
             (double)field_22998.window.method_43198() / field_22998.window.method_43189(),
@@ -72,9 +72,9 @@ public class class_4746 {
             1000.0,
             3000.0
          );
-         class_3542.method_16463(5888);
-         class_3542.method_16476();
-         class_3542.method_16413(0.0F, 0.0F, -2000.0F);
+         RenderSystem.method_16463(5888);
+         RenderSystem.method_16476();
+         RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
@@ -101,10 +101,10 @@ public class class_4746 {
          field_22996.method_19715();
          field_22996.method_19713(field_22998.field_9596.field_20526, field_22998.field_9596.field_20534);
          GL11.glPopMatrix();
-         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
-         class_3542.method_16463(5889);
-         class_3542.method_16476();
-         class_3542.method_16376(
+         RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
+         RenderSystem.method_16463(5889);
+         RenderSystem.method_16476();
+         RenderSystem.method_16376(
             0.0,
             (double)field_22998.window.method_43178() / field_22998.window.method_43189(),
             (double)field_22998.window.method_43198() / field_22998.window.method_43189(),
@@ -112,9 +112,9 @@ public class class_4746 {
             1000.0,
             3000.0
          );
-         class_3542.method_16463(5888);
-         class_3542.method_16476();
-         class_3542.method_16413(0.0F, 0.0F, -2000.0F);
+         RenderSystem.method_16463(5888);
+         RenderSystem.method_16476();
+         RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,

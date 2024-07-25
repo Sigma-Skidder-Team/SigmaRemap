@@ -68,19 +68,19 @@ public abstract class class_2358 extends class_8346 {
    @Override
    public boolean method_31495() {
       this.method_10812((class_704)null);
-      return this.method_10814().stream().allMatch(class_6098::method_28022);
+      return this.method_10814().stream().allMatch(ItemStack::method_28022);
    }
 
    @Override
-   public class_6098 method_31498(int var1) {
+   public ItemStack method_31498(int var1) {
       this.method_10812((class_704)null);
       return this.method_10814().get(var1);
    }
 
    @Override
-   public class_6098 method_31497(int var1, int var2) {
+   public ItemStack method_31497(int var1, int var2) {
       this.method_10812((class_704)null);
-      class_6098 var5 = class_3037.method_13881(this.method_10814(), var1, var2);
+      ItemStack var5 = class_3037.method_13881(this.method_10814(), var1, var2);
       if (!var5.method_28022()) {
          this.method_17407();
       }
@@ -89,13 +89,13 @@ public abstract class class_2358 extends class_8346 {
    }
 
    @Override
-   public class_6098 method_31507(int var1) {
+   public ItemStack method_31507(int var1) {
       this.method_10812((class_704)null);
       return class_3037.method_13880(this.method_10814(), var1);
    }
 
    @Override
-   public void method_31503(int var1, class_6098 var2) {
+   public void method_31503(int var1, ItemStack var2) {
       this.method_10812((class_704)null);
       this.method_10814().set(var1, var2);
       if (var2.method_27997() > this.method_31506()) {
@@ -122,9 +122,9 @@ public abstract class class_2358 extends class_8346 {
       this.method_10814().clear();
    }
 
-   public abstract class_2831<class_6098> method_10814();
+   public abstract class_2831<ItemStack> method_10814();
 
-   public abstract void method_10813(class_2831<class_6098> var1);
+   public abstract void method_10813(class_2831<ItemStack> var1);
 
    @Override
    public boolean method_38430(class_704 var1) {

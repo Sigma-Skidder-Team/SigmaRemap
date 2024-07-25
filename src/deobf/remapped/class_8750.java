@@ -11,7 +11,7 @@ public class class_8750 {
    }
 
    public void method_40162(class_2279 var1) {
-      this.field_44793 = (class_2279[])class_3111.method_14441(this.field_44793, var1);
+      this.field_44793 = (class_2279[]) Config.method_14441(this.field_44793, var1);
    }
 
    public boolean method_40164(int var1) {

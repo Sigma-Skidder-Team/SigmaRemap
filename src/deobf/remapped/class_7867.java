@@ -41,7 +41,7 @@ public class class_7867 implements Packet<class_392> {
       for (int var5 = 0; var5 < var4; var5++) {
          GameProfile var6 = null;
          int var7 = 0;
-         class_4666 var8 = null;
+         GameType var8 = null;
          ITextComponent var9 = null;
          switch (this.field_40275) {
             case field_11144:
@@ -59,7 +59,7 @@ public class class_7867 implements Packet<class_392> {
                   }
                }
 
-               var8 = class_4666.method_21590(var1.method_37778());
+               var8 = GameType.method_21590(var1.method_37778());
                var7 = var1.method_37778();
                if (var1.readBoolean()) {
                   var9 = var1.method_37776();
@@ -67,7 +67,7 @@ public class class_7867 implements Packet<class_392> {
                break;
             case field_11147:
                var6 = new GameProfile(var1.method_37753(), (String)null);
-               var8 = class_4666.method_21590(var1.method_37778());
+               var8 = GameType.method_21590(var1.method_37778());
                break;
             case field_11141:
                var6 = new GameProfile(var1.method_37753(), (String)null);

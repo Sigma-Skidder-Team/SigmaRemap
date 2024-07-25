@@ -68,14 +68,14 @@ public class class_2524 {
    private List<String> method_11482(String var1) {
       List var4 = Arrays.<String>asList("clear", "rain", "thunder");
       ArrayList var5 = new ArrayList();
-      String[] var6 = class_3111.method_14302(var1, " ");
+      String[] var6 = Config.method_14302(var1, " ");
 
       for (int var7 = 0; var7 < var6.length; var7++) {
          String var8 = var6[var7];
          if (var4.contains(var8)) {
             var5.add(var8);
          } else {
-            class_3111.method_14317("Unknown weather: " + var8);
+            Config.method_14317("Unknown weather: " + var8);
          }
       }
 
@@ -84,12 +84,12 @@ public class class_2524 {
 
    private int method_11492(String var1) {
       if (var1 != null) {
-         String[] var4 = class_3111.method_14302(var1, ":");
+         String[] var4 = Config.method_14302(var1, ":");
          if (var4.length == 2) {
             String var5 = var4[0];
             String var6 = var4[1];
-            int var7 = class_3111.method_14361(var5, -1);
-            int var8 = class_3111.method_14361(var6, -1);
+            int var7 = Config.method_14361(var5, -1);
+            int var8 = Config.method_14361(var6, -1);
             if (var7 >= 0 && var7 <= 23 && var8 >= 0 && var8 <= 59) {
                var7 -= 6;
                if (var7 < 0) {
@@ -98,11 +98,11 @@ public class class_2524 {
 
                return var7 * 1000 + (int)((double)var8 / 60.0 * 1000.0);
             } else {
-               class_3111.method_14317("Invalid time: " + var1);
+               Config.method_14317("Invalid time: " + var1);
                return -1;
             }
          } else {
-            class_3111.method_14317("Invalid time: " + var1);
+            Config.method_14317("Invalid time: " + var1);
             return -1;
          }
       } else {
@@ -114,7 +114,7 @@ public class class_2524 {
       if (var1 != null) {
          if (!var1.toLowerCase().equals("true")) {
             if (!var1.toLowerCase().equals("false")) {
-               class_3111.method_14317("Unknown boolean: " + var1);
+               Config.method_14317("Unknown boolean: " + var1);
                return var2;
             } else {
                return false;
@@ -129,11 +129,11 @@ public class class_2524 {
 
    private float method_11486(String var1, float var2) {
       if (var1 != null) {
-         float var5 = class_3111.method_14445(var1, Float.MIN_VALUE);
+         float var5 = Config.method_14445(var1, Float.MIN_VALUE);
          if (var5 != Float.MIN_VALUE) {
             return var5;
          } else {
-            class_3111.method_14317("Invalid value: " + var1);
+            Config.method_14317("Invalid value: " + var1);
             return var2;
          }
       } else {
@@ -145,17 +145,17 @@ public class class_2524 {
       if (var1 == null) {
          return var2;
       } else {
-         String[] var5 = class_3111.method_14302(var1, " ");
+         String[] var5 = Config.method_14302(var1, " ");
          if (var5.length != 3) {
-            class_3111.method_14317("Invalid axis: " + var1);
+            Config.method_14317("Invalid axis: " + var1);
             return var2;
          } else {
             float[] var6 = new float[3];
 
             for (int var7 = 0; var7 < var5.length; var7++) {
-               var6[var7] = class_3111.method_14445(var5[var7], Float.MIN_VALUE);
+               var6[var7] = Config.method_14445(var5[var7], Float.MIN_VALUE);
                if (var6[var7] == Float.MIN_VALUE) {
-                  class_3111.method_14317("Invalid axis: " + var1);
+                  Config.method_14317("Invalid axis: " + var1);
                   return var2;
                }
             }
@@ -166,7 +166,7 @@ public class class_2524 {
             if (!(var10 * var10 + var8 * var8 + var9 * var9 < 1.0E-5F)) {
                return new float[]{var9, var8, -var10};
             } else {
-               class_3111.method_14317("Invalid axis values: " + var1);
+               Config.method_14317("Invalid axis values: " + var1);
                return var2;
             }
          }
@@ -190,23 +190,23 @@ public class class_2524 {
             int var7 = this.method_11494(this.field_12517 - this.field_12504);
             int var8 = var4 + var5 + var6 + var7;
             if (var8 != 24000) {
-               class_3111.method_14317("Invalid fadeIn/fadeOut times, sum is not 24h: " + var8);
+               Config.method_14317("Invalid fadeIn/fadeOut times, sum is not 24h: " + var8);
                return false;
             } else if (this.field_12519 < 0.0F) {
-               class_3111.method_14317("Invalid speed: " + this.field_12519);
+               Config.method_14317("Invalid speed: " + this.field_12519);
                return false;
             } else if (this.field_12520 > 0) {
                return true;
             } else {
-               class_3111.method_14317("Invalid daysLoop: " + this.field_12520);
+               Config.method_14317("Invalid daysLoop: " + this.field_12520);
                return false;
             }
          } else {
-            class_3111.method_14317("Invalid times, required are: startFadeIn, endFadeIn and endFadeOut.");
+            Config.method_14317("Invalid times, required are: startFadeIn, endFadeIn and endFadeOut.");
             return false;
          }
       } else {
-         class_3111.method_14317("No source texture: " + var1);
+         Config.method_14317("No source texture: " + var1);
          return false;
       }
    }
@@ -228,12 +228,12 @@ public class class_2524 {
       float var10 = this.method_11481(var5, var6);
       float var11 = this.method_11491(var3);
       float var12 = var9 * var10 * var11;
-      var12 = class_3111.method_14262(var12, 0.0F, 1.0F);
+      var12 = Config.method_14262(var12, 0.0F, 1.0F);
       if (!(var12 < 1.0E-4F)) {
-         class_1920.method_8791(this.field_12508);
+         GlStateManager.method_8791(this.field_12508);
          class_1240.method_5531(this.field_12502, var12);
-         class_1920.method_8757();
-         class_1920.method_8838(var2.method_36058().method_28620());
+         GlStateManager.method_8757();
+         GlStateManager.method_8838(var2.method_36058().method_28620());
          if (this.field_12513) {
             float var13 = 0.0F;
             if (this.field_12519 != (float)Math.round(this.field_12519)) {
@@ -243,28 +243,28 @@ public class class_2524 {
                var13 = (float)(var18 % 1.0);
             }
 
-            class_1920.method_8824(360.0F * (var13 + var4 * this.field_12519), this.field_12505[0], this.field_12505[1], this.field_12505[2]);
+            GlStateManager.method_8824(360.0F * (var13 + var4 * this.field_12519), this.field_12505[0], this.field_12505[1], this.field_12505[2]);
          }
 
          class_8042 var21 = class_8042.method_36499();
-         class_1920.method_8824(90.0F, 1.0F, 0.0F, 0.0F);
-         class_1920.method_8824(-90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method_8824(90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.method_8824(-90.0F, 0.0F, 0.0F, 1.0F);
          this.method_11483(var21, 4);
-         class_1920.method_8757();
-         class_1920.method_8824(90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.method_8757();
+         GlStateManager.method_8824(90.0F, 1.0F, 0.0F, 0.0F);
          this.method_11483(var21, 1);
-         class_1920.method_8761();
-         class_1920.method_8757();
-         class_1920.method_8824(-90.0F, 1.0F, 0.0F, 0.0F);
+         GlStateManager.method_8761();
+         GlStateManager.method_8757();
+         GlStateManager.method_8824(-90.0F, 1.0F, 0.0F, 0.0F);
          this.method_11483(var21, 0);
-         class_1920.method_8761();
-         class_1920.method_8824(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method_8761();
+         GlStateManager.method_8824(90.0F, 0.0F, 0.0F, 1.0F);
          this.method_11483(var21, 5);
-         class_1920.method_8824(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method_8824(90.0F, 0.0F, 0.0F, 1.0F);
          this.method_11483(var21, 2);
-         class_1920.method_8824(90.0F, 0.0F, 0.0F, 1.0F);
+         GlStateManager.method_8824(90.0F, 0.0F, 0.0F, 1.0F);
          this.method_11483(var21, 3);
-         class_1920.method_8761();
+         GlStateManager.method_8761();
       }
    }
 
@@ -282,7 +282,7 @@ public class class_2524 {
    }
 
    private float method_11485(World var1) {
-      Entity var4 = MinecraftClient.getInstance().method_8516();
+      Entity var4 = MinecraftClient.getInstance().getRenderViewEntity();
       if (var4 != null) {
          class_1331 var5 = var4.method_37075();
          if (this.field_12521 != null) {

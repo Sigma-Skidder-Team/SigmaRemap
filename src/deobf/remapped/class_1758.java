@@ -18,7 +18,7 @@ public class class_1758 {
    private final class_2144 field_9031;
    private final class_6282[] field_9030;
    private final class_2913[] field_9027;
-   private final BiFunction<class_6098, class_2792, class_6098> field_9028;
+   private final BiFunction<ItemStack, class_2792, ItemStack> field_9028;
 
    private class_1758(class_2144 var1, class_6282[] var2, class_2913[] var3) {
       this.field_9031 = var1;
@@ -27,13 +27,13 @@ public class class_1758 {
       this.field_9028 = class_5116.method_23457(var3);
    }
 
-   public static Consumer<class_6098> method_7861(Consumer<class_6098> var0) {
+   public static Consumer<ItemStack> method_7861(Consumer<ItemStack> var0) {
       return var1 -> {
          if (var1.method_27997() >= var1.method_28016()) {
             int var4 = var1.method_27997();
 
             while (var4 > 0) {
-               class_6098 var5 = var1.method_27973();
+               ItemStack var5 = var1.method_27973();
                var5.method_28017(Math.min(var1.method_28016(), var4));
                var4 -= var5.method_27997();
                var0.accept(var5);
@@ -44,7 +44,7 @@ public class class_1758 {
       };
    }
 
-   public void method_7874(class_2792 var1, Consumer<class_6098> var2) {
+   public void method_7874(class_2792 var1, Consumer<ItemStack> var2) {
       if (!var1.method_12688(this)) {
          field_9025.warn("Detected infinite loop in loot tables");
       } else {
@@ -58,11 +58,11 @@ public class class_1758 {
       }
    }
 
-   public void method_7863(class_2792 var1, Consumer<class_6098> var2) {
+   public void method_7863(class_2792 var1, Consumer<ItemStack> var2) {
       this.method_7874(var1, method_7861(var2));
    }
 
-   public List<class_6098> method_7862(class_2792 var1) {
+   public List<ItemStack> method_7862(class_2792 var1) {
       ArrayList var4 = Lists.newArrayList();
       this.method_7863(var1, var4::add);
       return var4;
@@ -88,7 +88,7 @@ public class class_1758 {
       List var7 = this.method_7865(var1, var6);
       this.method_7870(var5, var7.size(), var6);
 
-      for (class_6098 var9 : var5) {
+      for (ItemStack var9 : var5) {
          if (var7.isEmpty()) {
             field_9025.warn("Tried to over-fill a container");
             return;
@@ -97,17 +97,17 @@ public class class_1758 {
          if (!var9.method_28022()) {
             var1.method_31503((Integer)var7.remove(var7.size() - 1), var9);
          } else {
-            var1.method_31503((Integer)var7.remove(var7.size() - 1), class_6098.field_31203);
+            var1.method_31503((Integer)var7.remove(var7.size() - 1), ItemStack.EMPTY);
          }
       }
    }
 
-   private void method_7870(List<class_6098> var1, int var2, Random var3) {
+   private void method_7870(List<ItemStack> var1, int var2, Random var3) {
       ArrayList var6 = Lists.newArrayList();
       Iterator var7 = var1.iterator();
 
       while (var7.hasNext()) {
-         class_6098 var8 = (class_6098)var7.next();
+         ItemStack var8 = (ItemStack)var7.next();
          if (!var8.method_28022()) {
             if (var8.method_27997() > 1) {
                var6.add(var8);
@@ -119,9 +119,9 @@ public class class_1758 {
       }
 
       while (var2 - var1.size() - var6.size() > 0 && !var6.isEmpty()) {
-         class_6098 var11 = (class_6098)var6.remove(class_9299.method_42824(var3, 0, var6.size() - 1));
+         ItemStack var11 = (ItemStack)var6.remove(class_9299.method_42824(var3, 0, var6.size() - 1));
          int var9 = class_9299.method_42824(var3, 1, var11.method_27997() / 2);
-         class_6098 var10 = var11.method_27953(var9);
+         ItemStack var10 = var11.method_27953(var9);
          if (var11.method_27997() > 1 && var3.nextBoolean()) {
             var6.add(var11);
          } else {

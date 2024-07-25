@@ -21,7 +21,7 @@ public class class_8386<T extends class_5834, M extends class_6521<T> & class_86
    }
 
    public void method_38642(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      class_6098 var13 = var4.method_26520(class_6943.field_35704);
+      ItemStack var13 = var4.method_26520(class_6943.field_35704);
       if (!var13.method_28022()) {
          class_2451 var14 = var13.method_27960();
          var1.method_36063();

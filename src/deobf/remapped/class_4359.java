@@ -38,7 +38,7 @@ public class class_4359 extends class_2811 implements class_2354 {
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
       var4 = super.method_26864(var1, var2, var3, var4, var5);
       if (this.method_26520(class_6943.field_35701).method_28022() && this.field_41717.nextFloat() < 0.03F) {
-         this.method_37349(class_6943.field_35701, new class_6098(class_4897.field_24828));
+         this.method_37349(class_6943.field_35701, new ItemStack(class_4897.field_24828));
          this.field_29923[class_6943.field_35701.method_31767()] = 2.0F;
       }
 
@@ -91,8 +91,8 @@ public class class_4359 extends class_2811 implements class_2354 {
    }
 
    @Override
-   public class_6098 method_12796() {
-      return class_6098.field_31203;
+   public ItemStack method_12796() {
+      return ItemStack.EMPTY;
    }
 
    @Override
@@ -100,15 +100,15 @@ public class class_4359 extends class_2811 implements class_2354 {
       if ((double)this.field_41717.nextFloat() > 0.9) {
          int var4 = this.field_41717.nextInt(16);
          if (var4 >= 10) {
-            this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_24505));
+            this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24505));
          } else {
-            this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25086));
+            this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25086));
          }
       }
    }
 
    @Override
-   public boolean method_26881(class_6098 var1, class_6098 var2) {
+   public boolean method_26881(ItemStack var1, ItemStack var2) {
       if (var2.method_27960() != class_4897.field_24828) {
          if (var2.method_27960() != class_4897.field_25086) {
             return var1.method_27960() != class_4897.field_25086 ? super.method_26881(var1, var2) : true;
@@ -189,7 +189,7 @@ public class class_4359 extends class_2811 implements class_2354 {
 
    @Override
    public void method_10805(class_5834 var1, float var2) {
-      class_3348 var5 = new class_3348(this.field_41768, this, new class_6098(class_4897.field_25086));
+      class_3348 var5 = new class_3348(this.field_41768, this, new ItemStack(class_4897.field_25086));
       double var6 = var1.method_37302() - this.method_37302();
       double var8 = var1.method_37080(0.3333333333333333) - var5.method_37309();
       double var10 = var1.method_37156() - this.method_37156();

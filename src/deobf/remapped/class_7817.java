@@ -22,7 +22,7 @@ public class class_7817 implements class_4439, class_7912 {
 
    public class_7817(Collection<class_753> var1) {
       for (class_753 var5 : field_39661.sortedCopy(var1)) {
-         if (var5.method_3393() != class_4666.field_22756) {
+         if (var5.method_3393() != GameType.SPECTATOR) {
             this.field_39660.add(new class_2374(var5.method_3392()));
          }
       }
@@ -50,8 +50,8 @@ public class class_7817 implements class_4439, class_7912 {
 
    @Override
    public void method_35795(class_7966 var1, float var2, int var3) {
-      MinecraftClient.getInstance().method_8577().method_35674(class_8368.field_42845);
-      class_2089.method_9778(var1, 0, 0, 0.0F, 0.0F, 16, 16, 256, 256);
+      MinecraftClient.getInstance().getTextureManager().bindTexture(SpectatorGui.field_42845);
+      AbstractGui.method_9778(var1, 0, 0, 0.0F, 0.0F, 16, 16, 256, 256);
    }
 
    @Override

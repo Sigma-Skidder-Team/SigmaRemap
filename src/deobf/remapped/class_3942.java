@@ -205,8 +205,8 @@ public class class_3942 extends class_5783 {
    }
 
    private boolean method_18225(class_704 var1) {
-      class_6098 var4 = var1.method_26446();
-      class_6098 var5 = var1.method_26568();
+      ItemStack var4 = var1.method_26446();
+      ItemStack var5 = var1.method_26568();
       boolean var6 = var4.method_27960() == class_4897.field_24505;
       boolean var7 = var5.method_27960() == class_4897.field_24505;
       if (!var1.field_41751 && var1.method_37330() && (var6 || var7) && !(this.method_37275(var1) > 1024.0)) {
@@ -411,7 +411,7 @@ public class class_3942 extends class_5783 {
    public void method_37314(class_5734 var1) {
    }
 
-   public int method_18216(class_6098 var1) {
+   public int method_18216(ItemStack var1) {
       class_704 var4 = this.method_18219();
       if (!this.field_41768.field_33055 && var4 != null) {
          int var5 = 0;
@@ -427,7 +427,7 @@ public class class_3942 extends class_5783 {
                List var8 = var7.method_7862(var6.method_39064(class_4933.field_25570));
                class_8807.field_45056.method_6617((class_9359)var4, var1, this, var8);
 
-               for (class_6098 var10 : var8) {
+               for (ItemStack var10 : var8) {
                   class_91 var11 = new class_91(this.field_41768, this.method_37302(), this.method_37309(), this.method_37156(), var10);
                   double var12 = var4.method_37302() - this.method_37302();
                   double var14 = var4.method_37309() - this.method_37309();
@@ -450,7 +450,7 @@ public class class_3942 extends class_5783 {
             }
          } else {
             this.method_18224();
-            class_8807.field_45056.method_6617((class_9359)var4, var1, this, Collections.<class_6098>emptyList());
+            class_8807.field_45056.method_6617((class_9359)var4, var1, this, Collections.<ItemStack>emptyList());
             this.field_41768.method_29587(this, (byte)31);
             var5 = !(this.field_19144 instanceof class_91) ? 5 : 3;
          }

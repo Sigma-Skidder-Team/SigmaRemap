@@ -46,7 +46,7 @@ public class class_1908 extends class_2733 {
             class_7231 var7 = (class_7231)var1;
             return (class_8599)var7.method_33095((class_2255)var6);
          } else {
-            class_3111.method_14317("Not a chest model: " + var1);
+            Config.method_14317("Not a chest model: " + var1);
             return null;
          }
       } else {

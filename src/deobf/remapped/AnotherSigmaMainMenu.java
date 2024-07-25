@@ -210,7 +210,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
    }
 
    public void method_7598() {
-      SigmaMainClass.getInstance().getSoundManager().method_21206("clicksound");
+      SigmaMainClass.getInstance().getSoundManager().playSound("clicksound");
    }
 
    public void method_7600(Screen var1) {

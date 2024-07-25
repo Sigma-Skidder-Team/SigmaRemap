@@ -9,9 +9,9 @@ public class class_408 extends class_2208<class_3682> {
    private static final int field_1704 = (class_8427.field_43117 - class_8427.field_43108 - 1 + 4 - 1) / 4;
    private final class_1549 field_1711;
    private List<Pair<class_8427, class_9077>> field_1702;
-   private class_6098 field_1712 = class_6098.field_31203;
-   private class_6098 field_1708 = class_6098.field_31203;
-   private class_6098 field_1709 = class_6098.field_31203;
+   private ItemStack field_1712 = ItemStack.EMPTY;
+   private ItemStack field_1708 = ItemStack.EMPTY;
+   private ItemStack field_1709 = ItemStack.EMPTY;
    private boolean field_1703;
    private boolean field_1706;
    private boolean field_1714;
@@ -35,7 +35,7 @@ public class class_408 extends class_2208<class_3682> {
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
       this.method_1183(var1);
-      this.field_943.method_8577().method_35674(field_1707);
+      this.field_943.getTextureManager().bindTexture(field_1707);
       int var7 = this.field_10984;
       int var8 = this.field_10962;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);
@@ -79,7 +79,7 @@ public class class_408 extends class_2208<class_3682> {
          if (this.field_1706) {
             int var22 = var7 + 60;
             int var24 = var8 + 13;
-            this.field_943.method_8577().method_35674(field_1707);
+            this.field_943.getTextureManager().bindTexture(field_1707);
             this.method_9781(var1, var22, var24, 0, this.field_10973, 14, 14);
             int var16 = this.field_10956.method_17100();
             this.method_2029(var16, var22, var24);
@@ -93,7 +93,7 @@ public class class_408 extends class_2208<class_3682> {
             int var18 = var17 - this.field_1710;
             int var19 = var23 + var18 % 4 * 14;
             int var20 = var25 + var18 / 4 * 14;
-            this.field_943.method_8577().method_35674(field_1707);
+            this.field_943.getTextureManager().bindTexture(field_1707);
             int var21 = this.field_10973;
             if (var17 != this.field_10956.method_17100()) {
                if (var3 >= var19 && var4 >= var20 && var3 < var19 + 14 && var4 < var20 + 14) {
@@ -112,7 +112,7 @@ public class class_408 extends class_2208<class_3682> {
    }
 
    private void method_2029(int var1, int var2, int var3) {
-      class_6098 var6 = new class_6098(class_4897.field_25216);
+      ItemStack var6 = new ItemStack(class_4897.field_25216);
       class_5734 var7 = var6.method_27978("BlockEntityTag");
       class_3416 var8 = new class_1697()
          .method_7624(class_8427.field_43111, class_9077.field_46498)
@@ -148,9 +148,9 @@ public class class_408 extends class_2208<class_3682> {
             int var12 = var11 - this.field_1710;
             double var13 = var1 - (double)(var8 + var12 % 4 * 14);
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field_10956.method_18886(this.field_943.field_9632, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field_10956.method_18886(this.field_943.thePlayer, var11)) {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2842, 1.0F));
-               this.field_943.field_9647.method_42154(this.field_10956.field_19925, var11);
+               this.field_943.playerController.method_42154(this.field_10956.field_19925, var11);
                return true;
             }
          }
@@ -203,23 +203,23 @@ public class class_408 extends class_2208<class_3682> {
    }
 
    private void method_2030() {
-      class_6098 var3 = this.field_10956.method_17099().method_35898();
+      ItemStack var3 = this.field_10956.method_17099().method_35898();
       if (!var3.method_28022()) {
          this.field_1702 = class_8837.method_40658(((class_1967)var3.method_27960()).method_9065(), class_8837.method_40656(var3));
       } else {
          this.field_1702 = null;
       }
 
-      class_6098 var4 = this.field_10956.method_17092().method_35898();
-      class_6098 var5 = this.field_10956.method_17096().method_35898();
-      class_6098 var6 = this.field_10956.method_17094().method_35898();
+      ItemStack var4 = this.field_10956.method_17092().method_35898();
+      ItemStack var5 = this.field_10956.method_17096().method_35898();
+      ItemStack var6 = this.field_10956.method_17094().method_35898();
       class_5734 var7 = var4.method_27978("BlockEntityTag");
       this.field_1714 = var7.method_25939("Patterns", 9) && !var4.method_28022() && var7.method_25927("Patterns", 10).size() >= 6;
       if (this.field_1714) {
          this.field_1702 = null;
       }
 
-      if (!class_6098.method_27982(var4, this.field_1712) || !class_6098.method_27982(var5, this.field_1708) || !class_6098.method_27982(var6, this.field_1709)
+      if (!ItemStack.method_27982(var4, this.field_1712) || !ItemStack.method_27982(var5, this.field_1708) || !ItemStack.method_27982(var6, this.field_1709)
          )
        {
          this.field_1703 = !var4.method_28022() && !var5.method_28022() && var6.method_28022() && !this.field_1714;

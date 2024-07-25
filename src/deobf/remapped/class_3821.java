@@ -49,7 +49,7 @@ public class class_3821 extends class_9787 {
       if (!var2.field_33055) {
          return class_8187.method_37511(var4, var2, var3);
       } else {
-         class_6098 var9 = var4.method_26617(var5);
+         ItemStack var9 = var4.method_26617(var5);
          return var9.method_27960() != class_4897.field_25274 ? class_6910.field_35521 : class_6910.field_35520;
       }
    }

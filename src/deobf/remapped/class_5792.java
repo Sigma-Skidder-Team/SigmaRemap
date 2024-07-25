@@ -11,7 +11,7 @@ public class class_5792 extends class_4171<class_3551, class_3192<class_3551>> {
    public void method_26213(
       class_7966 var1, class_2565 var2, int var3, class_3551 var4, float var5, float var6, float var7, float var8, float var9, float var10
    ) {
-      class_6098 var13 = var4.method_16523();
+      ItemStack var13 = var4.method_16523();
       if (var13.method_27960() instanceof class_2706) {
          class_2706 var14 = (class_2706)var13.method_27960();
          this.method_19347().method_29701(this.field_29270);

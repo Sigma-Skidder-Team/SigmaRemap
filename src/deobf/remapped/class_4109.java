@@ -136,7 +136,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
 
    @Override
    public void method_43358(class_562 var1) {
-      this.field_20021.method_31503(0, new class_6098(class_4897.field_24836));
+      this.field_20021.method_31503(0, new ItemStack(class_4897.field_24836));
       if (var1 != null) {
          this.field_41768.method_29540((class_704)null, this, class_463.field_2063, var1, 0.5F, 1.0F);
       }
@@ -225,7 +225,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
          int var4 = Math.min(var3.method_31505(), this.field_20021.method_31505());
 
          for (int var5 = 0; var5 < var4; var5++) {
-            class_6098 var6 = var3.method_31498(var5);
+            ItemStack var6 = var3.method_31498(var5);
             if (!var6.method_28022()) {
                this.field_20021.method_31503(var5, var6.method_27973());
             }
@@ -352,7 +352,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
    }
 
-   public class_6910 method_19079(class_704 var1, class_6098 var2) {
+   public class_6910 method_19079(class_704 var1, ItemStack var2) {
       boolean var5 = this.method_19060(var1, var2);
       if (!var1.field_3876.field_4944) {
          var2.method_27970(1);
@@ -365,7 +365,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
    }
 
-   public boolean method_19060(class_704 var1, class_6098 var2) {
+   public boolean method_19060(class_704 var1, ItemStack var2) {
       boolean var5 = false;
       float var6 = 0.0F;
       short var7 = 0;
@@ -458,7 +458,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return field_20029.test(var1);
    }
 
@@ -471,7 +471,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       super.method_26522();
       if (this.field_20021 != null) {
          for (int var3 = 0; var3 < this.field_20021.method_31505(); var3++) {
-            class_6098 var4 = this.field_20021.method_31498(var3);
+            ItemStack var4 = this.field_20021.method_31498(var3);
             if (!var4.method_28022() && !class_2931.method_13408(var4)) {
                this.method_37310(var4);
             }
@@ -665,7 +665,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
             if (this.field_20019 > 0.0F && !this.method_19047() && this.field_41726) {
                double var7 = this.method_19078() * (double)this.field_20019 * (double)this.method_37281();
                double var9;
-               if (!this.method_26480(Effects.field_19730)) {
+               if (!this.isPotionActive(Effects.field_19730)) {
                   var9 = var7;
                } else {
                   var9 = var7 + (double)((float)(this.method_26553(Effects.field_19730).method_10333() + 1) * 0.1F);
@@ -747,7 +747,7 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       }
 
       if (var1.method_25939("SaddleItem", 10)) {
-         class_6098 var6 = class_6098.method_28015(var1.method_25937("SaddleItem"));
+         ItemStack var6 = ItemStack.method_28015(var1.method_25937("SaddleItem"));
          if (var6.method_27960() == class_4897.field_24836) {
             this.field_20021.method_31503(0, var6);
          }
@@ -914,12 +914,12 @@ public abstract class class_4109 extends class_5467 implements class_8129, class
       return !this.method_26520(class_6943.field_35708).method_28022();
    }
 
-   public boolean method_19069(class_6098 var1) {
+   public boolean method_19069(ItemStack var1) {
       return false;
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       int var5 = var1 - 400;
       if (var5 >= 0 && var5 < 2 && var5 < this.field_20021.method_31505()) {
          if (var5 == 0 && var2.method_27960() != class_4897.field_24836) {

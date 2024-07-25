@@ -27,7 +27,7 @@ public class class_4283 extends class_2520 {
    @Override
    public String[] method_12292() {
       String[] var3 = super.method_12292();
-      return (String[])class_3111.method_14357(var3, new String[]{"left_wing", "right_wing"});
+      return (String[]) Config.method_14357(var3, new String[]{"left_wing", "right_wing"});
    }
 
    @Override

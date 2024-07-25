@@ -462,7 +462,7 @@ public abstract class class_6749 extends class_5783 {
          boolean var4 = this.field_34835 == class_4237.field_20563
             || this.field_34835 == class_4237.field_20565 && var1.field_3876.field_4944
             || this.method_30926() && this.method_26166().method_37328() == var1.method_37328();
-         if (this.field_34835 == class_4237.field_20563 && !var1.field_3853.method_32414(this.method_30925())) {
+         if (this.field_34835 == class_4237.field_20563 && !var1.inventory.method_32414(this.method_30925())) {
             var4 = false;
          }
 
@@ -473,7 +473,7 @@ public abstract class class_6749 extends class_5783 {
       }
    }
 
-   public abstract class_6098 method_30925();
+   public abstract ItemStack method_30925();
 
    @Override
    public boolean method_37126() {

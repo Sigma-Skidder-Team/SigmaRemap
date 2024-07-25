@@ -21,9 +21,9 @@ public class class_8927 extends class_3403 {
 
    private String[] method_41032(class_6843 var1, int var2) {
       String var5 = var1.method_31378();
-      String var6 = class_3111.method_14305(var1.method_31392()).trim();
+      String var6 = Config.method_14305(var1.method_31392()).trim();
       String[] var7 = this.method_41033(var6);
-      GameOptions var8 = class_3111.method_14310();
+      GameOptions var8 = Config.method_14310();
       String var9 = null;
       if (!var5.equals(var1.method_31405()) && var8.field_45482) {
          var9 = "§8" + class_3458.method_15912("of.general.id") + ": " + var1.method_31405();
@@ -31,7 +31,7 @@ public class class_8927 extends class_3403 {
 
       String var10 = null;
       if (var1.method_31402() != null && var8.field_45482) {
-         var10 = "§8" + class_3458.method_15912("of.general.from") + ": " + class_3111.method_14289(var1.method_31402());
+         var10 = "§8" + class_3458.method_15912("of.general.from") + ": " + Config.method_14289(var1.method_31402());
       }
 
       String var11 = null;
@@ -75,7 +75,7 @@ public class class_8927 extends class_3403 {
    }
 
    private String[] method_41031(int var1, List<String> var2) {
-      TextRenderer var5 = class_3111.method_14327().textRenderer;
+      TextRenderer var5 = Config.method_14327().textRenderer;
       ArrayList var6 = new ArrayList();
 
       for (int var7 = 0; var7 < var2.size(); var7++) {

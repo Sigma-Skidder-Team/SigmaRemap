@@ -5,5 +5,5 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.function.Predicate;
 
 public interface class_6782 {
-   Predicate<class_6098> method_31094(CommandContext<class_9155> var1) throws CommandSyntaxException;
+   Predicate<ItemStack> method_31094(CommandContext<class_9155> var1) throws CommandSyntaxException;
 }

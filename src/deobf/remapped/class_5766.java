@@ -11,7 +11,7 @@ public class class_5766 extends Screen {
    private class_1027 field_29143;
 
    public class_5766(String var1) {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
       this.field_29145 = var1;
    }
 
@@ -121,7 +121,7 @@ public class class_5766 extends Screen {
    public boolean method_26940(double var1, double var3, int var5) {
       if (!this.field_29143.method_4549((double)((int)var1), (double)((int)var3), var5)) {
          if (var5 == 0) {
-            class_4049 var8 = this.field_943.field_9614.method_13991();
+            NewChatGui var8 = this.field_943.field_9614.method_13991();
             if (var8.method_18696(var1, var3)) {
                return true;
             }

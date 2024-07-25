@@ -24,21 +24,21 @@ public class SkeletonESPModule extends Module {
    private void method_19977(class_3368 var1, class_704 var2) {
       Color var5 = new Color(
          !SigmaMainClass.getInstance().method_3307().method_14459(var2.method_45509().getString())
-            ? (!var2.method_45509().getString().equalsIgnoreCase(mc.field_9632.method_45509().getString()) ? new Color(16775672).getRGB() : -6684775)
+            ? (!var2.method_45509().getString().equalsIgnoreCase(client.thePlayer.method_45509().getString()) ? new Color(16775672).getRGB() : -6684775)
             : -8401409
       );
       if (!var2.method_37109()) {
          float[][] var6 = field_20882.get(var2);
-         if (var6 != null && var2.method_37330() && var2 != mc.field_9632 && !var2.method_26507()) {
+         if (var6 != null && var2.method_37330() && var2 != client.thePlayer && !var2.method_26507()) {
             GL11.glPushMatrix();
             GL11.glLineWidth(2.0F);
             GL11.glColor4f((float)(var5.getRed() / 255), (float)(var5.getGreen() / 255), (float)(var5.getBlue() / 255), 1.0F);
             class_4714 var7 = this.method_19975(var1, var2);
-            double var8 = var7.method_21803() - mc.method_8587().camera.method_41627().field_7336;
-            double var10 = var7.method_21801() - mc.method_8587().camera.method_41627().field_7333;
-            double var12 = var7.method_21799() - mc.method_8587().camera.method_41627().field_7334;
+            double var8 = var7.method_21803() - client.method_8587().camera.method_41627().field_7336;
+            double var10 = var7.method_21801() - client.method_8587().camera.method_41627().field_7333;
+            double var12 = var7.method_21799() - client.method_8587().camera.method_41627().field_7334;
             GL11.glTranslated(var8, var10, var12);
-            float var14 = var2.field_29611 + (var2.field_29605 - var2.field_29611) * mc.method_8554();
+            float var14 = var2.field_29611 + (var2.field_29605 - var2.field_29611) * client.method_8554();
             GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
             GL11.glTranslated(0.0, 0.0, !var2.method_37252() ? 0.0 : -0.235);
             float var15 = !var2.method_37252() ? 0.75F : 0.6F;
@@ -170,7 +170,7 @@ public class SkeletonESPModule extends Module {
    }
 
    private class_4714 method_19975(class_3368 var1, class_704 var2) {
-      float var5 = mc.method_8554();
+      float var5 = client.method_8554();
       double var6 = var2.field_41754 + (var2.method_37302() - var2.field_41754) * (double)var5;
       double var8 = var2.field_41713 + (var2.method_37309() - var2.field_41713) * (double)var5;
       double var10 = var2.field_41724 + (var2.method_37156() - var2.field_41724) * (double)var5;
@@ -191,7 +191,7 @@ public class SkeletonESPModule extends Module {
    }
 
    private boolean method_19979(class_704 var1) {
-      return !mc.field_9601.method_25873().contains(var1);
+      return !client.field_9601.method_25873().contains(var1);
    }
 
    private void method_19980(boolean var1) {

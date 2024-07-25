@@ -59,7 +59,7 @@ public class class_5465 {
       .method_17197(0.1F)
       .method_17203(new class_2250(Effects.field_19718, 1200, 3), 1.0F)
       .method_17203(new class_2250(Effects.field_19747, 300, 2), 1.0F)
-      .method_17203(new class_2250(Effects.field_19732, 300, 0), 1.0F)
+      .method_17203(new class_2250(Effects.NAUSEA, 300, 0), 1.0F)
       .method_17198();
    public static final class_8341 field_27868 = new class_3702().method_17201(8).method_17197(0.3F).method_17198();
    public static final class_8341 field_27860 = new class_3702().method_17201(3).method_17197(0.3F).method_17202().method_17198();

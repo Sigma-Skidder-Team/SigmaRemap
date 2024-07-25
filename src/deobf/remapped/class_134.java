@@ -218,7 +218,7 @@ public class class_134 {
 
    public static void method_541(class_2599 var0, class_91 var1) {
       method_539(var0);
-      class_6098 var4;
+      ItemStack var4;
       if (var1.method_264().method_27960() != class_4897.field_24659) {
          var0.method_26467(var1, 1);
          var4 = method_481(var1);
@@ -245,7 +245,7 @@ public class class_134 {
       }
    }
 
-   private static void method_546(class_2599 var0, class_6098 var1) {
+   private static void method_546(class_2599 var0, ItemStack var1) {
       if (method_528(var0)) {
          var0.method_37310(var0.method_26617(class_2584.field_12794));
       }
@@ -253,9 +253,9 @@ public class class_134 {
       var0.method_11794(var1);
    }
 
-   private static class_6098 method_481(class_91 var0) {
-      class_6098 var3 = var0.method_264();
-      class_6098 var4 = var3.method_27953(1);
+   private static ItemStack method_481(class_91 var0) {
+      ItemStack var3 = var0.method_264();
+      ItemStack var4 = var3.method_27953(1);
       if (!var3.method_28022()) {
          var0.method_248(var3);
       } else {
@@ -266,14 +266,14 @@ public class class_134 {
    }
 
    public static void method_485(class_2599 var0, boolean var1) {
-      class_6098 var4 = var0.method_26617(class_2584.field_12794);
-      var0.method_26615(class_2584.field_12794, class_6098.field_31203);
+      ItemStack var4 = var0.method_26617(class_2584.field_12794);
+      var0.method_26615(class_2584.field_12794, ItemStack.EMPTY);
       if (!var0.method_31995()) {
          boolean var5 = var0.method_26879(var4);
          if (!var5) {
-            class_6098 var6 = var0.method_26446();
+            ItemStack var6 = var0.method_26446();
             if (!method_491(var6.method_27960())) {
-               method_498(var0, Collections.<class_6098>singletonList(var6));
+               method_498(var0, Collections.<ItemStack>singletonList(var6));
             } else {
                method_493(var0, var6);
             }
@@ -296,16 +296,16 @@ public class class_134 {
    public static void method_496(class_2599 var0) {
       if (method_468(var0) && !var0.method_26568().method_28022()) {
          var0.method_37310(var0.method_26568());
-         var0.method_26615(class_2584.field_12794, class_6098.field_31203);
+         var0.method_26615(class_2584.field_12794, ItemStack.EMPTY);
       }
    }
 
-   private static void method_493(class_2599 var0, class_6098 var1) {
-      class_6098 var4 = var0.method_11793(var1);
-      method_495(var0, Collections.<class_6098>singletonList(var4));
+   private static void method_493(class_2599 var0, ItemStack var1) {
+      ItemStack var4 = var0.method_11793(var1);
+      method_495(var0, Collections.<ItemStack>singletonList(var4));
    }
 
-   private static void method_498(class_2599 var0, List<class_6098> var1) {
+   private static void method_498(class_2599 var0, List<ItemStack> var1) {
       Optional var4 = var0.method_26525().<class_704>method_5138(class_6044.field_30870);
       if (!var4.isPresent()) {
          method_495(var0, var1);
@@ -314,25 +314,25 @@ public class class_134 {
       }
    }
 
-   private static void method_495(class_2599 var0, List<class_6098> var1) {
+   private static void method_495(class_2599 var0, List<ItemStack> var1) {
       method_497(var0, var1, method_464(var0));
    }
 
-   private static void method_486(class_2599 var0, class_704 var1, List<class_6098> var2) {
+   private static void method_486(class_2599 var0, class_704 var1, List<ItemStack> var2) {
       method_497(var0, var2, var1.method_37245());
    }
 
-   private static void method_497(class_2599 var0, List<class_6098> var1, class_1343 var2) {
+   private static void method_497(class_2599 var0, List<ItemStack> var1, class_1343 var2) {
       if (!var1.isEmpty()) {
          var0.method_26597(class_2584.field_12794);
 
-         for (class_6098 var6 : var1) {
+         for (ItemStack var6 : var1) {
             class_1225.method_5439(var0, var6, var2.method_6214(0.0, 1.0, 0.0));
          }
       }
    }
 
-   private static List<class_6098> method_527(class_2599 var0) {
+   private static List<ItemStack> method_527(class_2599 var0) {
       class_1758 var3 = var0.field_41768.method_29522().method_1722().method_4604(class_5931.field_30100);
       return var3.method_7862(
          new class_8480((class_6331)var0.field_41768)
@@ -346,7 +346,7 @@ public class class_134 {
       return var1.method_37387() == class_6629.field_34306 ? new Random(var0.field_41768.method_29546()).nextFloat() < 0.1F : false;
    }
 
-   public static boolean method_511(class_2599 var0, class_6098 var1) {
+   public static boolean method_511(class_2599 var0, ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       if (!var4.method_11250(class_391.field_1598)) {
          if (method_484(var0) && var0.method_26525().method_5117(class_6044.field_30884)) {
@@ -438,11 +438,11 @@ public class class_134 {
    }
 
    public static class_6910 method_518(class_2599 var0, class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (!method_515(var0, var5)) {
          return class_6910.field_35521;
       } else {
-         class_6098 var6 = var5.method_27953(1);
+         ItemStack var6 = var5.method_27953(1);
          method_546(var0, var6);
          method_482(var0);
          method_539(var0);
@@ -450,7 +450,7 @@ public class class_134 {
       }
    }
 
-   public static boolean method_515(class_2599 var0, class_6098 var1) {
+   public static boolean method_515(class_2599 var0, ItemStack var1) {
       return !method_484(var0) && !method_468(var0) && var0.method_31995() && method_513(var1.method_27960());
    }
 
@@ -550,7 +550,7 @@ public class class_134 {
    }
 
    public static boolean method_500(class_5834 var0) {
-      for (class_6098 var4 : var0.method_37262()) {
+      for (ItemStack var4 : var0.method_37262()) {
          class_2451 var5 = var4.method_27960();
          if (var5 instanceof class_8228 && ((class_8228)var5).method_37667() == class_5667.field_28729) {
             return true;

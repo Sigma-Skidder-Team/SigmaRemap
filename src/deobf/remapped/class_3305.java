@@ -56,7 +56,7 @@ public class class_3305 extends class_1859 {
                   this.method_15157(true);
                   new Thread(() -> {
                      SigmaMainClass.getInstance();
-                     class_986 var5xx = SigmaMainClass.getInstance().getModuleManager().method_848();
+                     ConfigManager var5xx = SigmaMainClass.getInstance().getModuleManager().getConfigManager();
                      class_1675 var6x = var5xx.method_4301();
                      class_1675 var7x = field_16350.method_18327(var6x, var7);
                      var5x.method_9849(var7x);

@@ -110,7 +110,7 @@ public class class_9300 {
       String[] var3 = new String[]{"water.png", "watercolorx.png"};
       field_47495 = method_42894(var2, var3, 256, 256);
       method_42896();
-      if (class_3111.method_14438()) {
+      if (Config.method_14438()) {
          String[] var4 = new String[]{"pine.png", "pinecolor.png"};
          field_47478 = method_42894(var2, var4, 256, 256);
          String[] var5 = new String[]{"birch.png", "birchcolor.png"};
@@ -149,7 +149,7 @@ public class class_9300 {
    private static String method_42878(String var0, String var1, String[] var2, String var3) {
       try {
          Identifier var6 = new Identifier(var0);
-         InputStream var7 = class_3111.method_14374(var6);
+         InputStream var7 = Config.method_14374(var6);
          if (var7 == null) {
             return var3;
          } else {
@@ -163,7 +163,7 @@ public class class_9300 {
                List var10 = Arrays.<String>asList(var2);
                if (!var10.contains(var9)) {
                   method_42898("Invalid value: " + var1 + "=" + var9);
-                  method_42898("Expected values: " + class_3111.method_14289(var2));
+                  method_42898("Expected values: " + Config.method_14289(var2));
                   return var3;
                } else {
                   method_42869("" + var1 + "=" + var9);
@@ -188,7 +188,7 @@ public class class_9300 {
       for (int var6 = 0; var6 < var4.length; var6++) {
          String var7 = var4[var6];
          String var8 = class_8251.method_37819(var7, var2, var3);
-         int var9 = class_3111.method_14361(var8, Integer.MIN_VALUE);
+         int var9 = Config.method_14361(var8, Integer.MIN_VALUE);
          if (var9 != Integer.MIN_VALUE) {
             var5.put(var9, var7);
          } else {
@@ -244,7 +244,7 @@ public class class_9300 {
 
    private static int method_42916(String var0, int var1) {
       try {
-         InputStream var4 = class_3111.method_14374(new Identifier(var0));
+         InputStream var4 = Config.method_14374(new Identifier(var0));
          if (var4 == null) {
             return var1;
          } else {
@@ -260,7 +260,7 @@ public class class_9300 {
    private static void method_42864(String var0) {
       try {
          Identifier var3 = new Identifier(var0);
-         InputStream var4 = class_3111.method_14374(var3);
+         InputStream var4 = Config.method_14374(var3);
          if (var4 == null) {
             return;
          }
@@ -294,12 +294,12 @@ public class class_9300 {
          }
 
          field_47483 = method_42902(var5, var0, "potion.", "Potion");
-         field_47456 = class_3111.method_14361(var5.getProperty("xporb.time"), -1);
+         field_47456 = Config.method_14361(var5.getProperty("xporb.time"), -1);
       } catch (FileNotFoundException var7) {
          return;
       } catch (IOException var8) {
-         class_3111.method_14317("Error parsing: " + var0);
-         class_3111.method_14317(var8.getClass().getName() + ": " + var8.getMessage());
+         Config.method_14317("Error parsing: " + var0);
+         Config.method_14317(var8.getClass().getName() + ": " + var8.getMessage());
       }
    }
 
@@ -357,7 +357,7 @@ public class class_9300 {
 
          try {
             Identifier var10 = new Identifier("minecraft", var9);
-            InputStream var11 = class_3111.method_14374(var10);
+            InputStream var11 = Config.method_14374(var10);
             if (var11 == null) {
                method_42898("File not found: " + var9);
             } else {
@@ -398,7 +398,7 @@ public class class_9300 {
             }
          }
       } else {
-         method_42898("No match blocks: " + class_3111.method_14287(var4));
+         method_42898("No match blocks: " + Config.method_14287(var4));
       }
    }
 
@@ -504,15 +504,15 @@ public class class_9300 {
    public static class_9561 method_42893(String var0, int var1, int var2) {
       try {
          Identifier var5 = new Identifier(var0);
-         if (!class_3111.method_14362(var5)) {
+         if (!Config.method_14362(var5)) {
             return null;
          } else {
             method_42869("Colormap " + var0);
             class_8407 var6 = new class_8407();
             String var7 = class_8251.method_37836(var0, ".png", ".properties");
             Identifier var8 = new Identifier(var7);
-            if (class_3111.method_14362(var8)) {
-               InputStream var9 = class_3111.method_14374(var8);
+            if (Config.method_14362(var8)) {
+               InputStream var9 = Config.method_14374(var8);
                var6.load(var9);
                var9.close();
                method_42869("Colormap properties: " + var7);
@@ -532,7 +532,7 @@ public class class_9300 {
    }
 
    public static void method_42896() {
-      field_47489 = field_47484 == null && field_47478 == null && field_47497 == null && field_47465 == null && class_3111.method_14293();
+      field_47489 = field_47484 == null && field_47478 == null && field_47497 == null && field_47465 == null && Config.method_14293();
    }
 
    public static int method_42879(class_5024 var0, class_2522 var1, class_5561 var2, class_1331 var3, class_4460 var4) {
@@ -556,7 +556,7 @@ public class class_9300 {
 
          class_9561 var9 = method_42904(var8);
          if (var9 != null) {
-            if (class_3111.method_14265() && !var9.method_43978()) {
+            if (Config.method_14265() && !var9.method_43978()) {
                return method_42857(var1, var2, var3, var9, var4.method_20673());
             }
 
@@ -603,7 +603,7 @@ public class class_9300 {
                   }
                }
 
-               return class_3111.method_14265() && !var10.method_43978()
+               return Config.method_14265() && !var10.method_43978()
                   ? method_42857(var1, var2, var3, var10, var4.method_20673())
                   : var10.method_43977(var8, var2, var3);
             }
@@ -617,7 +617,7 @@ public class class_9300 {
 
    public static class_6325 method_42872(class_5561 var0, class_1331 var1) {
       class_6325 var4 = class_5630.method_25519(var0, var1);
-      if ((var4 == class_5630.field_28566 || var4 == class_5630.field_28569) && !class_3111.method_14293()) {
+      if ((var4 == class_5630.field_28566 || var4 == class_5630.field_28569) && !Config.method_14293()) {
          var4 = class_5630.field_28568;
       }
 
@@ -662,7 +662,7 @@ public class class_9300 {
       int var11 = var2.method_12165();
       int var12 = var2.method_12185();
       class_523 var13 = var4;
-      int var14 = class_3111.method_14235();
+      int var14 = Config.method_14235();
       int var15 = var14 * 2 + 1;
       int var16 = var15 * var15;
 
@@ -692,7 +692,7 @@ public class class_9300 {
       if (var7 == null) {
          return method_42886().method_20749(var1, var0, var2, 0);
       } else {
-         return class_3111.method_14265() && !((class_9538)var7).method_43978()
+         return Config.method_14265() && !((class_9538)var7).method_43978()
             ? method_42857(var1, var0, var2, (class_9538)var7, var3.method_20673())
             : ((class_9538)var7).method_43977(var1, var0, var2);
       }
@@ -979,7 +979,7 @@ public class class_9300 {
                   var13 = class_7070.method_32563(new Identifier(var12).toString());
                }
             } catch (class_7485 var15) {
-               class_3111.method_14317("ResourceLocationException: " + var15.getMessage());
+               Config.method_14317("ResourceLocationException: " + var15.getMessage());
             }
 
             if (var13 < 0) {
@@ -1014,7 +1014,7 @@ public class class_9300 {
       }
    }
 
-   private static int method_42874(class_3003 var0, class_6098 var1, int var2, int var3) {
+   private static int method_42874(class_3003 var0, ItemStack var1, int var2, int var3) {
       if (field_47467 == null && field_47460 == null) {
          return var3;
       } else {
@@ -1042,7 +1042,7 @@ public class class_9300 {
       }
    }
 
-   public static int method_42897(class_6098 var0, int var1, int var2) {
+   public static int method_42897(ItemStack var0, int var1, int var2) {
       if (var0 != null) {
          class_2451 var5 = var0.method_27960();
          if (var5 != null) {
@@ -1123,7 +1123,7 @@ public class class_9300 {
          String var10 = var0.getProperty(var9);
          if (var9.startsWith(var2)) {
             String var11 = class_8251.method_37832(var9, var2);
-            int var12 = class_3111.method_14361(var11, -1);
+            int var12 = Config.method_14361(var11, -1);
             int var13 = method_42871(var10);
             if (var12 >= 0 && var12 < var6.length && var13 >= 0) {
                var6[var12] = var13;
@@ -1417,11 +1417,11 @@ public class class_9300 {
    }
 
    private static void method_42869(String var0) {
-      class_3111.method_14277("CustomColors: " + var0);
+      Config.method_14277("CustomColors: " + var0);
    }
 
    private static void method_42898(String var0) {
-      class_3111.method_14317("CustomColors: " + var0);
+      Config.method_14317("CustomColors: " + var0);
    }
 
    public static int method_42858(int var0) {

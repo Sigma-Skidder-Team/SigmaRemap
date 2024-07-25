@@ -11,7 +11,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_4049 extends class_2089 {
+public class NewChatGui extends AbstractGui {
    private static final Logger field_19693 = LogManager.getLogger();
    private final MinecraftClient field_19686;
    private final List<String> field_19684 = Lists.newArrayList();
@@ -23,7 +23,7 @@ public class class_4049 extends class_2089 {
    private long field_19688 = 0L;
    private int field_19690 = 0;
 
-   public class_4049(MinecraftClient var1) {
+   public NewChatGui(MinecraftClient var1) {
       this.field_19686 = var1;
    }
 
@@ -46,9 +46,9 @@ public class class_4049 extends class_2089 {
 
             double var9 = this.method_18689();
             int var11 = class_9299.method_42815((double)this.method_18700() / var9);
-            class_3542.method_16438();
-            class_3542.method_16413(2.0F, 8.0F, 0.0F);
-            class_3542.method_16356(var9, var9, 1.0);
+            RenderSystem.method_16438();
+            RenderSystem.method_16413(2.0F, 8.0F, 0.0F);
+            RenderSystem.method_16356(var9, var9, 1.0);
             double var12 = this.field_19686.gameOptions.field_45402 * 0.9F + 0.1F;
             double var14 = this.field_19686.gameOptions.field_45563;
             double var16 = 9.0 * (this.field_19686.gameOptions.field_45465 + 1.0);
@@ -77,7 +77,7 @@ public class class_4049 extends class_2089 {
                            method_9774(var1, -2, (int)(var29 - var16), 0 + var11 + 4, (int)var29, var27 << 24);
                         }
 
-                        class_3542.method_16488();
+                        RenderSystem.enableBlend();
                         var1.method_36065(0.0, 0.0, 50.0);
                         if (this.field_19686.gameOptions.field_45472) {
                            this.field_19686
@@ -89,8 +89,8 @@ public class class_4049 extends class_2089 {
                               .method_45382(var1, (class_7107)var22.method_39608(), 0.0F, (float)((int)(var29 + var18)), 16777215 + (var26 << 24));
                         }
 
-                        class_3542.method_16458();
-                        class_3542.method_16448();
+                        RenderSystem.method_16458();
+                        RenderSystem.method_16448();
                         var1.method_36064();
                      }
                   }
@@ -103,19 +103,19 @@ public class class_4049 extends class_2089 {
                var1.method_36063();
                var1.method_36065(0.0, 0.0, 50.0);
                method_9774(var1, -2, 0, var11 + 4, 9, var35 << 24);
-               class_3542.method_16488();
+               RenderSystem.enableBlend();
                var1.method_36065(0.0, 0.0, 50.0);
                this.field_19686
                   .textRenderer
                   .method_45392(var1, new TranslationTextComponent("chat.queue", this.field_19692.size()), 0.0F, 1.0F, 16777215 + (var33 << 24));
                var1.method_36064();
-               class_3542.method_16458();
-               class_3542.method_16448();
+               RenderSystem.method_16458();
+               RenderSystem.method_16448();
             }
 
             if (var8) {
                byte var34 = 9;
-               class_3542.method_16413(-3.0F, 0.0F, 0.0F);
+               RenderSystem.method_16413(-3.0F, 0.0F, 0.0F);
                int var36 = var7 * var34 + var7;
                int var37 = var20 * var34 + var20;
                int var31 = this.field_19689 * var37 / var7;
@@ -128,7 +128,7 @@ public class class_4049 extends class_2089 {
                }
             }
 
-            class_3542.method_16489();
+            RenderSystem.method_16489();
          }
       }
    }
@@ -233,9 +233,9 @@ public class class_4049 extends class_2089 {
    }
 
    public boolean method_18696(double var1, double var3) {
-      if (this.method_18695() && !this.field_19686.gameOptions.field_45567 && !this.method_18698() && !this.field_19692.isEmpty()) {
+      if (this.method_18695() && !this.field_19686.gameOptions.hideGUI && !this.method_18698() && !this.field_19692.isEmpty()) {
          double var7 = var1 - 2.0;
-         double var9 = (double)this.field_19686.method_8552().method_43177() - var3 - 40.0;
+         double var9 = (double)this.field_19686.getMainWindow().getScaledHeight() - var3 - 40.0;
          if (var7 <= (double)class_9299.method_42847((double)this.method_18700() / this.method_18689())
             && var9 < 0.0
             && var9 > (double)class_9299.method_42847(-9.0 * this.method_18689())) {
@@ -252,9 +252,9 @@ public class class_4049 extends class_2089 {
 
    @Nullable
    public Style method_18680(double var1, double var3) {
-      if (this.method_18695() && !this.field_19686.gameOptions.field_45567 && !this.method_18698()) {
+      if (this.method_18695() && !this.field_19686.gameOptions.hideGUI && !this.method_18698()) {
          double var7 = var1 - 2.0;
-         double var9 = (double)this.field_19686.method_8552().method_43177() - var3 - 40.0;
+         double var9 = (double)this.field_19686.getMainWindow().getScaledHeight() - var3 - 40.0;
          var7 = (double)class_9299.method_42847(var7 / this.method_18689());
          var9 = (double)class_9299.method_42847(var9 / (this.method_18689() * (this.field_19686.gameOptions.field_45465 + 1.0)));
          if (!(var7 < 0.0) && !(var9 < 0.0)) {
@@ -287,7 +287,7 @@ public class class_4049 extends class_2089 {
 
    public int method_18700() {
       int var3 = method_18686(this.field_19686.gameOptions.field_45388);
-      Window var4 = MinecraftClient.getInstance().method_8552();
+      Window var4 = MinecraftClient.getInstance().getMainWindow();
       int var5 = (int)((double)(var4.method_43178() - 3) / var4.method_43189());
       return class_9299.method_42829(var3, 0, var5);
    }

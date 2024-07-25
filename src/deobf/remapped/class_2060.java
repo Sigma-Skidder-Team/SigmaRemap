@@ -33,7 +33,7 @@ public class class_2060 extends class_8374<class_1127> {
    public void method_9615(class_1127 var1) {
       super.method_36197(var1);
       if (var1 != null) {
-         class_7542.field_38482.method_34341(new TranslationTextComponent("narrator.select", class_1127.method_4957(var1)).getString());
+         NarratorChatListener.INSTANCE.method_34341(new TranslationTextComponent("narrator.select", class_1127.method_4957(var1)).getString());
       }
    }
 

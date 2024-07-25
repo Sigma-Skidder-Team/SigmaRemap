@@ -98,7 +98,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24853 && this.method_45584()) {
          this.method_45583(class_562.field_3335);
          if (!this.field_41768.field_33055) {
@@ -116,7 +116,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
       this.field_41768.method_29540((class_704)null, this, class_463.field_2661, var1, 1.0F, 1.0F);
       if (!this.field_41768.method_22567()) {
          this.method_948(false);
-         this.method_37311(new class_6098(class_4897.field_25172), 1.7F);
+         this.method_37311(new ItemStack(class_4897.field_25172), 1.7F);
       }
    }
 

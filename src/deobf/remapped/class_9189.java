@@ -5,16 +5,16 @@ public class class_9189 {
    private static MinecraftClient field_47005 = MinecraftClient.getInstance();
 
    public static double method_42352(Entity var0) {
-      double var3 = method_42357(field_47005.field_9632).field_42648 - method_42357(var0).field_42648;
-      double var5 = method_42357(field_47005.field_9632).field_42646 - method_42357(var0).field_42646;
-      double var7 = method_42357(field_47005.field_9632).field_42649 - method_42357(var0).field_42649;
+      double var3 = method_42357(field_47005.thePlayer).field_42648 - method_42357(var0).field_42648;
+      double var5 = method_42357(field_47005.thePlayer).field_42646 - method_42357(var0).field_42646;
+      double var7 = method_42357(field_47005.thePlayer).field_42649 - method_42357(var0).field_42649;
       return var3 * var3 + var5 * var5 + var7 * var7;
    }
 
    public static double method_42355(class_1331 var0) {
-      double var3 = method_42357(field_47005.field_9632).field_42648 - (double)var0.method_12173();
-      double var5 = method_42357(field_47005.field_9632).field_42646 - (double)var0.method_12165();
-      double var7 = method_42357(field_47005.field_9632).field_42649 - (double)var0.method_12185();
+      double var3 = method_42357(field_47005.thePlayer).field_42648 - (double)var0.method_12173();
+      double var5 = method_42357(field_47005.thePlayer).field_42646 - (double)var0.method_12165();
+      double var7 = method_42357(field_47005.thePlayer).field_42649 - (double)var0.method_12185();
       return var3 * var3 + var5 * var5 + var7 * var7;
    }
 

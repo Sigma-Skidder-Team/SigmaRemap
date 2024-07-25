@@ -34,7 +34,7 @@ public class CakeEaterModule extends Module {
    @class_315
    private void method_22207(class_1393 var1) {
       if (this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class);
          if (var4.method_16864() instanceof MineplexFly) {
             MineplexFly var5 = (MineplexFly)var4.method_16864();
             if (var5.method_42164()) {
@@ -45,9 +45,9 @@ public class CakeEaterModule extends Module {
          if (!var1.method_6449()) {
             if (field_24090 != null) {
                if (this.getBooleanValueByName("No Swing") && !this.getBooleanValueByName("Mineplex")) {
-                  mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
                } else if (!this.getBooleanValueByName("No Swing")) {
-                  mc.field_9632.method_26597(class_2584.field_12791);
+                  client.thePlayer.method_26597(class_2584.field_12791);
                }
 
                class_9529 var7 = new class_9529(
@@ -60,10 +60,10 @@ public class CakeEaterModule extends Module {
                   field_24090,
                   false
                );
-               mc.method_8614().method_4813(new class_8585(class_2584.field_12791, var7));
+               client.method_8614().method_4813(new class_8585(class_2584.field_12791, var7));
             }
          } else {
-            List var8 = this.method_22209(!this.getBooleanValueByName("Mineplex") ? mc.field_9647.method_42146() : 6.0F);
+            List var8 = this.method_22209(!this.getBooleanValueByName("Mineplex") ? client.playerController.method_42146() : 6.0F);
             if (var8.isEmpty()) {
                field_24090 = null;
             } else {
@@ -88,13 +88,13 @@ public class CakeEaterModule extends Module {
          for (float var6 = -var1; var6 <= var1; var6++) {
             for (float var7 = -var1; var7 <= var1; var7++) {
                class_1331 var8 = new class_1331(
-                  mc.field_9632.method_37302() + (double)var6,
-                  mc.field_9632.method_37309() + (double)var5,
-                  mc.field_9632.method_37156() + (double)var7
+                  client.thePlayer.method_37302() + (double)var6,
+                  client.thePlayer.method_37309() + (double)var5,
+                  client.thePlayer.method_37156() + (double)var7
                );
-               if (mc.field_9601.method_28262(var8).method_8360() instanceof class_6726
+               if (client.field_9601.method_28262(var8).method_8360() instanceof class_6726
                   && Math.sqrt(
-                        mc.field_9632
+                        client.thePlayer
                            .method_37273((double)var8.method_12173() + 0.5, (double)var8.method_12165() + 0.5, (double)var8.method_12185() + 0.5)
                      )
                      < (double)var1) {

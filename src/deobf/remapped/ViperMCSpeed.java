@@ -15,7 +15,7 @@ public class ViperMCSpeed extends Module {
    @Override
    public void onDisable() {
       class_8865.method_40776(0.28F);
-      mc.theTimer.timerSpeed = 1.0F;
+      client.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen
@@ -28,7 +28,7 @@ public class ViperMCSpeed extends Module {
             var4 = 1.15F + (float)class_8865.method_40770() * 0.04F;
          }
 
-         if (mc.gameOptions.keyBack.pressed) {
+         if (client.gameOptions.keyBack.pressed) {
             var4 /= 1.3F;
          }
 

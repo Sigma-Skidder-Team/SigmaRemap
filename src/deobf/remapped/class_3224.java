@@ -9,7 +9,7 @@ public class class_3224 extends class_6451 {
    }
 
    @Override
-   public class_6191 method_29409(class_6098 var1) {
+   public class_6191 method_29409(ItemStack var1) {
       return field_16063;
    }
 
@@ -24,11 +24,11 @@ public class class_3224 extends class_6451 {
       class_7434 var6 = var5.<class_7434>method_40143();
       int var7 = var6.method_33831();
       if (var7 >= 0) {
-         class_6098 var8 = var6.method_31498(var7);
+         ItemStack var8 = var6.method_31498(var7);
          if (!var8.method_28022()) {
             Direction var9 = var1.method_28262(var2).<Direction>method_10313(field_32900);
             class_6867 var10 = class_5772.method_26108(var1, var2.method_6098(var9));
-            class_6098 var12;
+            ItemStack var12;
             if (var10 != null) {
                var12 = class_5772.method_26103(var6, var10, var8.method_27973().method_27953(1), var9.method_1046());
                if (!var12.method_28022()) {

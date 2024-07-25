@@ -35,7 +35,7 @@ public class class_5314 extends class_9260 {
       class_2522 var13 = var4;
 
       for (int var14 = var12 - 1; var14 >= 0 && var8 > 0; var14--) {
-         class_6098 var15 = var11.method_31498(var14);
+         ItemStack var15 = var11.method_31498(var14);
          int var16 = field_27114.indexOf(var15.method_27960());
          if (var16 != -1) {
             int var17 = var15.method_27997();
@@ -73,7 +73,7 @@ public class class_5314 extends class_9260 {
          if (var8 != 0) {
             int var9 = var8 * 3;
             var4.method_21547(class_4897.field_24813, var9);
-            class_6098 var10 = var4.method_21542(new class_6098(class_4897.field_24456, var8));
+            ItemStack var10 = var4.method_21542(new ItemStack(class_4897.field_24456, var8));
             if (!var10.method_28022()) {
                var1.method_37311(var10, 0.5F);
             }

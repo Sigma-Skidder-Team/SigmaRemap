@@ -8,8 +8,8 @@ public class AntiBlindModule extends Module {
    @EventListen
    private void method_32351(class_1711 var1) {
       if (this.method_42015()) {
-         mc.field_9632.removeEffect(Effects.field_19732);
-         mc.field_9632.removeEffect(Effects.field_19736);
+         client.thePlayer.removeEffect(Effects.NAUSEA);
+         client.thePlayer.removeEffect(Effects.field_19736);
       }
    }
 }

@@ -14,11 +14,11 @@ public class class_5101 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48752);
       if (var7.method_33990() == class_1430.field_7721) {
-         return class_954.<class_6098>method_4207(var6);
+         return class_954.<ItemStack>method_4207(var6);
       } else {
          class_1343 var8 = var2.method_37307(1.0F);
          double var9 = 5.0;
@@ -29,13 +29,13 @@ public class class_5101 extends class_2451 {
             for (Entity var14 : var11) {
                class_4092 var15 = var14.method_37241().method_18898((double)var14.method_37355());
                if (var15.method_18903(var12)) {
-                  return class_954.<class_6098>method_4207(var6);
+                  return class_954.<ItemStack>method_4207(var6);
                }
             }
          }
 
          if (var7.method_33990() != class_1430.field_7717) {
-            return class_954.<class_6098>method_4207(var6);
+            return class_954.<ItemStack>method_4207(var6);
          } else {
             class_9149 var16 = new class_9149(var1, var7.method_33993().field_7336, var7.method_33993().field_7333, var7.method_33993().field_7334);
             var16.method_42101(this.field_26315);
@@ -49,9 +49,9 @@ public class class_5101 extends class_2451 {
                }
 
                var2.method_3211(class_6234.field_31907.method_43790(this));
-               return class_954.<class_6098>method_4208(var6, var1.method_22567());
+               return class_954.<ItemStack>method_4208(var6, var1.method_22567());
             } else {
-               return class_954.<class_6098>method_4202(var6);
+               return class_954.<ItemStack>method_4202(var6);
             }
          }
       }

@@ -51,39 +51,39 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
       this.field_49207.textRenderer.method_45385(var1, var13, (float)(var4 + 32 + 3), (float)(var3 + 1), 16777215);
       this.field_49207.textRenderer.method_45385(var1, var14, (float)(var4 + 32 + 3), (float)(var3 + 9 + 3), 8421504);
       this.field_49207.textRenderer.method_45378(var1, var15, (float)(var4 + 32 + 3), (float)(var3 + 9 + 9 + 3), 8421504);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_49207.method_8577().method_35674(this.field_49210 == null ? class_8224.method_37657() : this.field_49211);
-      class_3542.method_16488();
-      class_2089.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
-      class_3542.method_16448();
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_49207.getTextureManager().bindTexture(this.field_49210 == null ? class_8224.method_37657() : this.field_49211);
+      RenderSystem.enableBlend();
+      AbstractGui.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
+      RenderSystem.method_16448();
       if (this.field_49207.gameOptions.field_45570 || var9) {
-         this.field_49207.method_8577().method_35674(class_8224.method_37654());
-         class_2089.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_49207.getTextureManager().bindTexture(class_8224.method_37654());
+         AbstractGui.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var16 = var7 - var4;
          boolean var17 = var16 < 32;
          int var18 = !var17 ? 0 : 32;
          if (!this.field_49209.method_2208()) {
             if (!this.field_49209.method_2204()) {
-               class_2089.method_9778(var1, var4, var3, 0.0F, (float)var18, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 0.0F, (float)var18, 32, 32, 256, 256);
             } else {
-               class_2089.method_9778(var1, var4, var3, 32.0F, (float)var18, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 32.0F, (float)var18, 32, 32, 256, 256);
                if (!this.field_49209.method_2201()) {
                   if (!class_7665.method_34674().isStable()) {
-                     class_2089.method_9778(var1, var4, var3, 64.0F, (float)var18, 32, 32, 256, 256);
+                     AbstractGui.method_9778(var1, var4, var3, 64.0F, (float)var18, 32, 32, 256, 256);
                      if (var17) {
                         this.field_49213.method_35708(ImmutableList.of(class_8224.method_37646().func_241878_f(), class_8224.method_37651().func_241878_f()));
                      }
                   }
                } else {
-                  class_2089.method_9778(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
+                  AbstractGui.method_9778(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
                   if (var17) {
                      this.field_49213.method_35708(ImmutableList.of(class_8224.method_37649().func_241878_f(), class_8224.method_37655().func_241878_f()));
                   }
                }
             }
          } else {
-            class_2089.method_9778(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
+            AbstractGui.method_9778(var1, var4, var3, 96.0F, (float)var18, 32, 32, 256, 256);
             if (var17) {
                this.field_49213.method_35708(this.field_49207.textRenderer.method_45391(class_8224.method_37653(), 175));
             }
@@ -290,7 +290,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
             Validate.validState(var6.method_26228() == 64, "Must be 64 pixels wide", new Object[0]);
             Validate.validState(var6.method_26253() == 64, "Must be 64 pixels high", new Object[0]);
             class_7884 var7 = new class_7884(var6);
-            this.field_49207.method_8577().method_35682(this.field_49211, var7);
+            this.field_49207.getTextureManager().method_35682(this.field_49211, var7);
             return var7;
          } catch (Throwable var20) {
             class_8224.method_37650().error("Invalid icon for world {}", this.field_49209.method_2203(), var20);
@@ -298,7 +298,7 @@ public final class class_9662 extends class_4785<class_9662> implements AutoClos
             return null;
          }
       } else {
-         this.field_49207.method_8577().method_35678(this.field_49211);
+         this.field_49207.getTextureManager().method_35678(this.field_49211);
          return null;
       }
    }

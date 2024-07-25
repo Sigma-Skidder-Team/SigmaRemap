@@ -62,7 +62,7 @@ public class class_5224 extends class_4232 {
                   String var13 = var12.toString(16);
                   this.field_943.method_8517().joinServer(this.field_943.method_8502().method_5370(), var7, var13);
                   String var14 = "https://optifine.net/capeChange?u=" + var6 + "&n=" + var5 + "&s=" + var13;
-                  boolean var15 = class_3111.method_14359(new URI(var14));
+                  boolean var15 = Config.method_14359(new URI(var14));
                   if (var15) {
                      this.method_23910(class_3458.method_15912("of.message.capeOF.openEditor"), 10000L);
                   } else {
@@ -70,23 +70,23 @@ public class class_5224 extends class_4232 {
                      this.method_23911(var14);
                   }
                } catch (InvalidCredentialsException var20) {
-                  class_3111.method_14428(
+                  Config.method_14428(
                      class_6956.method_31803("of.message.capeOF.error1"), class_6956.method_31803("of.message.capeOF.error2", var20.getMessage())
                   );
-                  class_3111.method_14317("Mojang authentication failed");
-                  class_3111.method_14317(var20.getClass().getName() + ": " + var20.getMessage());
+                  Config.method_14317("Mojang authentication failed");
+                  Config.method_14317(var20.getClass().getName() + ": " + var20.getMessage());
                } catch (Exception var21) {
-                  class_3111.method_14317("Error opening OptiFine cape link");
-                  class_3111.method_14317(var21.getClass().getName() + ": " + var21.getMessage());
+                  Config.method_14317("Error opening OptiFine cape link");
+                  Config.method_14317(var21.getClass().getName() + ": " + var21.getMessage());
                }
             }
 
             if (var4.field_30159 == 220) {
                this.method_23910(class_3458.method_15912("of.message.capeOF.reloadCape"), 15000L);
-               if (this.field_943.field_9632 != null) {
+               if (this.field_943.thePlayer != null) {
                   long var16 = 15000L;
                   long var18 = System.currentTimeMillis() + var16;
-                  this.field_943.field_9632.method_44879(var18);
+                  this.field_943.thePlayer.method_44879(var18);
                }
             }
 

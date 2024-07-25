@@ -23,7 +23,7 @@ public class class_9762 {
    private final class_4523 field_49588 = new class_4523();
    private final class_8825 field_49577 = new class_8825();
 
-   public void method_45049(class_6098 var1, class_5612 var2, class_7966 var3, class_2565 var4, int var5, int var6) {
+   public void method_45049(ItemStack var1, class_5612 var2, class_7966 var3, class_2565 var4, int var5, int var6) {
       if (class_5052.method_23281()) {
          class_5052.method_23286();
       }
@@ -40,14 +40,14 @@ public class class_9762 {
       }
    }
 
-   public void method_45050(class_6098 var1, class_7966 var2, class_2565 var3, int var4, int var5) {
+   public void method_45050(ItemStack var1, class_7966 var2, class_2565 var3, int var4, int var5) {
       class_2451 var8 = var1.method_27960();
       if (!(var8 instanceof class_6201)) {
          if (var8 != class_4897.field_24840) {
             if (var8 == class_4897.field_25086) {
                var2.method_36063();
                var2.method_36062(1.0F, -1.0F, -1.0F);
-               class_7907 var9 = class_8765.method_40275(var3, this.field_49577.method_45498(class_8825.field_45139), false, var1.method_27977());
+               class_7907 var9 = ItemRenderer.method_40275(var3, this.field_49577.method_45498(class_8825.field_45139), false, var1.method_27977());
                this.field_49577.method_45499(var2, var9, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
                var2.method_36064();
             }
@@ -57,7 +57,7 @@ public class class_9762 {
             var2.method_36062(1.0F, -1.0F, -1.0F);
             class_2843 var11 = !var13 ? class_6560.field_33457 : class_6560.field_33440;
             class_7907 var10 = var11.method_12947()
-               .method_23601(class_8765.method_40275(var3, this.field_49588.method_45498(var11.method_12946()), true, var1.method_27977()));
+               .method_23601(ItemRenderer.method_40275(var3, this.field_49588.method_45498(var11.method_12946()), true, var1.method_27977()));
             this.field_49588.method_21018().method_7061(var2, var10, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
             if (!var13) {
                this.field_49588.method_21019().method_7061(var2, var10, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);

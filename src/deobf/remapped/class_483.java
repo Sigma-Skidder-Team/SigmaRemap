@@ -24,7 +24,7 @@ public enum class_483 {
       return this.field_3005;
    }
 
-   public void method_2286(class_7966 var1, class_2089 var2, int var3, int var4, boolean var5, int var6) {
+   public void method_2286(class_7966 var1, AbstractGui var2, int var3, int var4, boolean var5, int var6) {
       int var9 = this.field_3006;
       if (var6 > 0) {
          var9 += this.field_3003;
@@ -40,7 +40,7 @@ public enum class_483 {
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public void method_2287(int var1, int var2, int var3, class_8765 var4, class_6098 var5) {
+   public void method_2287(int var1, int var2, int var3, ItemRenderer var4, ItemStack var5) {
       int var8 = var1 + this.method_2285(var3);
       int var9 = var2 + this.method_2289(var3);
       switch (this) {

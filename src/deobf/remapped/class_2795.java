@@ -16,7 +16,7 @@ public class class_2795 extends ArrayList<class_8014> {
    }
 
    @Nullable
-   public class_8014 method_12710(class_6098 var1, class_6098 var2, int var3) {
+   public class_8014 method_12710(ItemStack var1, ItemStack var2, int var3) {
       if (var3 > 0 && var3 < this.size()) {
          class_8014 var8 = this.get(var3);
          return !var8.method_36373(var1, var2) ? null : var8;
@@ -39,7 +39,7 @@ public class class_2795 extends ArrayList<class_8014> {
          class_8014 var5 = this.get(var4);
          var1.method_37764(var5.method_36365());
          var1.method_37764(var5.method_36362());
-         class_6098 var6 = var5.method_36377();
+         ItemStack var6 = var5.method_36377();
          var1.writeBoolean(!var6.method_28022());
          if (!var6.method_28022()) {
             var1.method_37764(var6);
@@ -60,9 +60,9 @@ public class class_2795 extends ArrayList<class_8014> {
       int var4 = var0.readByte() & 255;
 
       for (int var5 = 0; var5 < var4; var5++) {
-         class_6098 var6 = var0.method_37755();
-         class_6098 var7 = var0.method_37755();
-         class_6098 var8 = class_6098.field_31203;
+         ItemStack var6 = var0.method_37755();
+         ItemStack var7 = var0.method_37755();
+         ItemStack var8 = ItemStack.EMPTY;
          if (var0.readBoolean()) {
             var8 = var0.method_37755();
          }

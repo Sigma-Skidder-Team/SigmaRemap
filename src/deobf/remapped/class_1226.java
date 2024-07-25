@@ -22,15 +22,15 @@ public class class_1226 {
 
    public void method_5462(int var1) {
       if (this.field_6787 == null) {
-         SigmaMainClass.getInstance().getModuleManager().method_835().method_367(var1, this.field_6788);
+         SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_367(var1, this.field_6788);
       } else {
-         SigmaMainClass.getInstance().getModuleManager().method_835().method_368(var1, this.field_6787);
+         SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_368(var1, this.field_6787);
       }
    }
 
    public int method_5458() {
       return this.field_6787 == null
-         ? SigmaMainClass.getInstance().getModuleManager().method_835().method_380(this.field_6788)
-         : SigmaMainClass.getInstance().getModuleManager().method_835().method_381(this.field_6787);
+         ? SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_380(this.field_6788)
+         : SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_381(this.field_6787);
    }
 }

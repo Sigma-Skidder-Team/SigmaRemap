@@ -6,22 +6,22 @@ public class class_7646 {
 
    static {
       try {
-         field_38863[class_4666.field_22756.ordinal()] = 1;
+         field_38863[GameType.SPECTATOR.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field_38863[class_4666.field_22764.ordinal()] = 2;
+         field_38863[GameType.field_22764.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field_38863[class_4666.field_22761.ordinal()] = 3;
+         field_38863[GameType.field_22761.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field_38863[class_4666.field_22760.ordinal()] = 4;
+         field_38863[GameType.field_22760.ordinal()] = 4;
       } catch (NoSuchFieldError var6) {
       }
 

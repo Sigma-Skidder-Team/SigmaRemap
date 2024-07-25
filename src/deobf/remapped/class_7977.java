@@ -203,22 +203,22 @@ public class class_7977 {
       if (var4 != null) {
          var0.field_41688 = null;
          field_40859.remove(var4.field_48420);
-         class_1920.method_8904(var4.field_48418);
-         class_1920.method_8904(var4.field_48419);
+         GlStateManager.method_8904(var4.field_48418);
+         GlStateManager.method_8904(var4.field_48419);
          if (var4.field_48420 != var1) {
             class_1910.method_8669("Error : MultiTexID.base mismatch: " + var4.field_48420 + ", texid: " + var1);
-            class_1920.method_8904(var4.field_48420);
+            GlStateManager.method_8904(var4.field_48420);
          }
       }
    }
 
    public static void method_36177(int var0, int var1) {
-      if (class_6588.field_33804 && class_1920.method_8881() == 33984) {
-         class_1920.method_8899(33985);
-         class_1920.method_8791(var0);
-         class_1920.method_8899(33987);
-         class_1920.method_8791(var1);
-         class_1920.method_8899(33984);
+      if (class_6588.field_33804 && GlStateManager.method_8881() == 33984) {
+         GlStateManager.method_8899(33985);
+         GlStateManager.method_8791(var0);
+         GlStateManager.method_8899(33987);
+         GlStateManager.method_8791(var1);
+         GlStateManager.method_8899(33984);
       }
    }
 
@@ -227,39 +227,39 @@ public class class_7977 {
    }
 
    public static void method_36155(int var0, int var1, int var2) {
-      if (class_6588.field_33804 && class_1920.method_8881() == 33984) {
-         class_1920.method_8899(33985);
-         class_1920.method_8791(var1);
-         class_1920.method_8899(33987);
-         class_1920.method_8791(var2);
-         class_1920.method_8899(33984);
+      if (class_6588.field_33804 && GlStateManager.method_8881() == 33984) {
+         GlStateManager.method_8899(33985);
+         GlStateManager.method_8791(var1);
+         GlStateManager.method_8899(33987);
+         GlStateManager.method_8791(var2);
+         GlStateManager.method_8899(33984);
       }
 
-      class_1920.method_8791(var0);
+      GlStateManager.method_8791(var0);
    }
 
    public static void method_36156(class_9510 var0) {
-      if (class_6588.field_33804 && class_1920.method_8881() == 33984) {
+      if (class_6588.field_33804 && GlStateManager.method_8881() == 33984) {
          if (class_6588.field_33603) {
-            class_1920.method_8899(33985);
-            class_1920.method_8791(var0.field_48418);
+            GlStateManager.method_8899(33985);
+            GlStateManager.method_8791(var0.field_48418);
          }
 
          if (class_6588.field_33634) {
-            class_1920.method_8899(33987);
-            class_1920.method_8791(var0.field_48419);
+            GlStateManager.method_8899(33987);
+            GlStateManager.method_8791(var0.field_48419);
          }
 
-         class_1920.method_8899(33984);
+         GlStateManager.method_8899(33984);
       }
 
-      class_1920.method_8791(var0.field_48420);
+      GlStateManager.method_8791(var0.field_48420);
    }
 
    public static void method_36161(class_8143 var0) {
       int var3 = var0.method_37055();
       method_36156(var0.method_37050());
-      if (class_1920.method_8881() == 33984) {
+      if (GlStateManager.method_8881() == 33984) {
          int var4 = class_6588.field_33946;
          int var5 = class_6588.field_33639;
          if (!(var0 instanceof class_8359)) {
@@ -294,7 +294,7 @@ public class class_7977 {
       class_5797 var8 = method_36152(var5, var6, 0);
       class_4970.method_22840(var3.field_48419, var5, var6);
       var8.method_26259(0, 0, 0, 0, 0, var5, var6, false, false, false, true);
-      class_1920.method_8791(var3.field_48420);
+      GlStateManager.method_8791(var3.field_48420);
    }
 
    public static void method_36181(int[] var0, int var1, int var2, int var3, int var4, int var5) {
@@ -329,7 +329,7 @@ public class class_7977 {
          class_4970.method_22841(var6.field_48419, var0, var1, var2);
       }
 
-      class_1920.method_8791(var6.field_48420);
+      GlStateManager.method_8791(var6.field_48420);
    }
 
    private static class_5797[] method_36169(class_5797 var0, int var1) {
@@ -370,10 +370,10 @@ public class class_7977 {
 
    public static BufferedImage method_36171(Identifier var0) {
       try {
-         if (!class_3111.method_14362(var0)) {
+         if (!Config.method_14362(var0)) {
             return null;
          } else {
-            InputStream var3 = class_3111.method_14374(var0);
+            InputStream var3 = Config.method_14374(var0);
             if (var3 == null) {
                return null;
             } else {
@@ -609,7 +609,7 @@ public class class_7977 {
       ((Buffer)var11).clear();
       var11.put(var1, 0, var10);
       ((Buffer)var11).position(0).limit(var10);
-      class_1920.method_8791(var0.field_48420);
+      GlStateManager.method_8791(var0.field_48420);
       GL11.glTexParameteri(3553, 10241, 9728);
       GL11.glTexParameteri(3553, 10240, 9728);
       GL11.glTexParameteri(3553, 10242, 10497);
@@ -621,7 +621,7 @@ public class class_7977 {
          ((Buffer)var11).position(0).limit(var10);
       }
 
-      class_1920.method_8791(var0.field_48418);
+      GlStateManager.method_8791(var0.field_48418);
       GL11.glTexParameteri(3553, 10241, 9728);
       GL11.glTexParameteri(3553, 10240, 9728);
       GL11.glTexParameteri(3553, 10242, 10497);
@@ -633,13 +633,13 @@ public class class_7977 {
          ((Buffer)var11).position(0).limit(var10);
       }
 
-      class_1920.method_8791(var0.field_48419);
+      GlStateManager.method_8791(var0.field_48419);
       GL11.glTexParameteri(3553, 10241, 9728);
       GL11.glTexParameteri(3553, 10240, 9728);
       GL11.glTexParameteri(3553, 10242, 10497);
       GL11.glTexParameteri(3553, 10243, 10497);
       GL11.glTexSubImage2D(3553, 0, var4, var5, var2, var3, 32993, 33639, var11);
-      class_1920.method_8899(33984);
+      GlStateManager.method_8899(33984);
    }
 
    public static Identifier method_36172(Identifier var0, String var1) {
@@ -703,7 +703,7 @@ public class class_7977 {
       class_5797 var14 = method_36168(var4, var13, var9, var10, 0);
       class_4970.method_22841(var6.field_48419, 0, var9, var10);
       var14.method_26259(0, 0, 0, 0, 0, var9, var10, var2, var3, false, true);
-      class_1920.method_8791(var6.field_48420);
+      GlStateManager.method_8791(var6.field_48420);
    }
 
    public static void method_36166(int[] var0, int var1, int var2, int var3) {
@@ -718,20 +718,20 @@ public class class_7977 {
    }
 
    public static void method_36151() {
-      TextureManager var2 = MinecraftClient.getInstance().method_8577();
+      TextureManager var2 = MinecraftClient.getInstance().getTextureManager();
       class_8143 var3 = var2.method_35679(class_8359.field_42824);
       if (var3 != null) {
          class_9510 var4 = var3.method_37050();
-         class_1920.method_8791(var4.field_48420);
+         GlStateManager.method_8791(var4.field_48420);
          GL11.glTexParameteri(3553, 10241, class_6588.field_33782[class_6588.field_33621]);
          GL11.glTexParameteri(3553, 10240, class_6588.field_33644[class_6588.field_33747]);
-         class_1920.method_8791(var4.field_48418);
+         GlStateManager.method_8791(var4.field_48418);
          GL11.glTexParameteri(3553, 10241, class_6588.field_33782[class_6588.field_33785]);
          GL11.glTexParameteri(3553, 10240, class_6588.field_33644[class_6588.field_33922]);
-         class_1920.method_8791(var4.field_48419);
+         GlStateManager.method_8791(var4.field_48419);
          GL11.glTexParameteri(3553, 10241, class_6588.field_33782[class_6588.field_33611]);
          GL11.glTexParameteri(3553, 10240, class_6588.field_33644[class_6588.field_33750]);
-         class_1920.method_8791(0);
+         GlStateManager.method_8791(0);
       }
    }
 

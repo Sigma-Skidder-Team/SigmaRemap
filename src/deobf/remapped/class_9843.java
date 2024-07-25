@@ -20,8 +20,8 @@ public class class_9843 implements class_4904 {
    @Nullable
    @Override
    public class_8014 method_22451(Entity var1, Random var2) {
-      class_6098 var5 = new class_6098(class_4897.field_24846, 1);
+      ItemStack var5 = new ItemStack(class_4897.field_24846, 1);
       class_4699.method_21671(var5, this.field_49837, this.field_49836);
-      return new class_8014(new class_6098(class_4897.field_24997, 1), var5, 12, this.field_49838, this.field_49834);
+      return new class_8014(new ItemStack(class_4897.field_24997, 1), var5, 12, this.field_49838, this.field_49834);
    }
 }

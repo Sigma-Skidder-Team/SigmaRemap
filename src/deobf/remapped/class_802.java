@@ -9,7 +9,7 @@ public class class_802 implements class_8591 {
 
    @Override
    public InputStream method_39505(String var1) {
-      return class_3111.method_14300(var1);
+      return Config.method_14300(var1);
    }
 
    @Override

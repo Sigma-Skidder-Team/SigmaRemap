@@ -63,7 +63,7 @@ public class class_9298 extends class_9716 {
    }
 
    public static class_9211 method_42784(Identifier var0, String var1) {
-      TextureManager var4 = MinecraftClient.getInstance().method_8577();
+      TextureManager var4 = MinecraftClient.getInstance().getTextureManager();
       Object var5 = var4.method_35679(var0);
       if (var5 == null) {
          var5 = new class_9211(

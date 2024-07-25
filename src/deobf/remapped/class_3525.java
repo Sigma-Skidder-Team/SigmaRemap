@@ -109,10 +109,10 @@ public class class_3525 {
 
    public void method_16280() {
       if (this.field_17274) {
-         class_1920.method_8829();
-         class_1920.method_8816(this.field_17272, this.field_17273, this.field_17269, this.field_17271);
+         GlStateManager.method_8829();
+         GlStateManager.method_8816(this.field_17272, this.field_17273, this.field_17269, this.field_17271);
       } else {
-         class_1920.method_8775();
+         GlStateManager.method_8775();
       }
    }
 }

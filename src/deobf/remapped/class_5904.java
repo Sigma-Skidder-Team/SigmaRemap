@@ -166,9 +166,9 @@ public class class_5904 extends Screen {
                int var30 = Math.max(var27, var28);
                class_8042 var31 = class_8042.method_36499();
                class_9633 var32 = var31.method_36501();
-               class_3542.method_16354();
-               class_3542.method_16466();
-               class_3542.method_16407(class_2603.field_12871);
+               RenderSystem.method_16354();
+               RenderSystem.method_16466();
+               RenderSystem.method_16407(class_2603.field_12871);
                var32.method_44471(7, class_7985.field_40903);
                var32.method_35762(var20, (float)var29, (float)(var19 + 9), 0.0F).method_35743(0, 0, 255, 255).method_35735();
                var32.method_35762(var20, (float)var30, (float)(var19 + 9), 0.0F).method_35743(0, 0, 255, 255).method_35735();
@@ -176,8 +176,8 @@ public class class_5904 extends Screen {
                var32.method_35762(var20, (float)var29, (float)var19, 0.0F).method_35743(0, 0, 255, 255).method_35735();
                var32.method_44487();
                class_138.method_554(var32);
-               class_3542.method_16409();
-               class_3542.method_16432();
+               RenderSystem.method_16409();
+               RenderSystem.method_16432();
             }
          }
       }

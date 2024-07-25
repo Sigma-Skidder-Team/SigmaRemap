@@ -71,7 +71,7 @@ public class class_293 {
    public static void method_1310(GameRenderer var0, class_7966 var1, Camera var2, float var3) {
       if (!class_6588.field_33945 && !class_6588.method_30321()) {
          class_6588.method_30141();
-         class_1920.method_8829();
+         GlStateManager.method_8829();
          class_6588.method_30116(var1, true);
          GL30.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          class_6588.method_30234(class_6588.method_30281(), class_6588.method_30298());
@@ -83,9 +83,9 @@ public class class_293 {
    }
 
    public static void method_1301(class_9164 var0, float var1, class_7966 var2, class_3758 var3, class_5989 var4, int var5, boolean var6) {
-      class_1920.method_8867(true);
+      GlStateManager.method_8867(true);
       if (var6) {
-         class_1920.method_8862(519);
+         GlStateManager.method_8862(519);
          var2.method_36063();
          IntBuffer var9 = class_6588.field_33601;
          class_6588.method_30190(class_6588.field_33745);
@@ -96,7 +96,7 @@ public class class_293 {
          var2.method_36064();
       }
 
-      class_1920.method_8862(515);
+      GlStateManager.method_8862(515);
       GL30.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var0.method_42243(var1, var2, var3, var4, var5);
    }
@@ -114,14 +114,14 @@ public class class_293 {
          class_6588.method_30236(class_6588.field_33901);
          if (class_6588.field_33901.method_13759() == class_6588.field_33884.method_13759()) {
             class_6588.method_30190(class_6588.field_33694);
-            class_1920.method_8867(false);
+            GlStateManager.method_8867(false);
          }
       }
    }
 
    public static void method_1313() {
       if (class_6588.field_33804) {
-         class_1920.method_8867(true);
+         GlStateManager.method_8867(true);
          class_6588.method_30236(class_6588.field_33784);
       }
    }
@@ -165,52 +165,52 @@ public class class_293 {
          var8.method_8562().method_16050("shadow culling");
          class_1343 var12 = var1.method_41627();
          var11.method_10820(var12.field_7336, var12.field_7333, var12.field_7334);
-         class_1920.method_8932(7425);
-         class_1920.method_8745();
-         class_1920.method_8862(515);
-         class_1920.method_8867(true);
-         class_1920.method_8895(true, true, true, true);
-         class_1920.method_8772(new class_9777(false));
-         class_1920.method_8831(new class_3525(false));
+         GlStateManager.method_8932(7425);
+         GlStateManager.method_8745();
+         GlStateManager.method_8862(515);
+         GlStateManager.method_8867(true);
+         GlStateManager.method_8895(true, true, true, true);
+         GlStateManager.method_8772(new class_9777(false));
+         GlStateManager.method_8831(new class_3525(false));
          var8.method_8562().method_16050("shadow prepareterrain");
-         var8.method_8577().method_35674(class_8359.field_42824);
+         var8.getTextureManager().bindTexture(class_8359.field_42824);
          var8.method_8562().method_16050("shadow setupterrain");
          int var13 = var8.worldRenderer.method_20049();
-         var9.method_20016(var1, var11, false, var13, var8.field_9632.method_37221());
+         var9.method_20016(var1, var11, false, var13, var8.thePlayer.method_37221());
          var8.method_8562().method_16050("shadow updatechunks");
          var8.method_8562().method_16050("shadow terrain");
          double var14 = var12.method_61();
          double var16 = var12.method_60();
          double var18 = var12.method_62();
-         class_1920.method_8842(5888);
-         class_1920.method_8757();
-         class_1920.method_8801();
+         GlStateManager.method_8842(5888);
+         GlStateManager.method_8757();
+         GlStateManager.method_8801();
          var9.method_20045(class_6727.field_34745, var10, var14, var16, var18);
          class_6588.method_30273("shadow terrain solid");
-         class_1920.method_8741();
+         GlStateManager.enableAlphaTest();
          var9.method_20045(class_6727.field_34746, var10, var14, var16, var18);
          class_6588.method_30273("shadow terrain cutoutmipped");
-         var8.method_8577().method_35679(class_8359.field_42824).method_37049(false, false);
+         var8.getTextureManager().method_35679(class_8359.field_42824).method_37049(false, false);
          var9.method_20045(class_6727.field_34743, var10, var14, var16, var18);
          class_6588.method_30273("shadow terrain cutout");
-         var8.method_8577().method_35679(class_8359.field_42824).method_37057();
-         class_1920.method_8932(7424);
-         class_1920.method_8785(516, 0.1F);
-         class_1920.method_8842(5888);
-         class_1920.method_8761();
-         class_1920.method_8757();
+         var8.getTextureManager().method_35679(class_8359.field_42824).method_37057();
+         GlStateManager.method_8932(7424);
+         GlStateManager.method_8785(516, 0.1F);
+         GlStateManager.method_8842(5888);
+         GlStateManager.method_8761();
+         GlStateManager.method_8757();
          var8.method_8562().method_16050("shadow entities");
          WorldRenderer var20 = var8.worldRenderer;
          EntityRenderDispatcher var21 = var8.method_8587();
          class_3758 var22 = var20.method_20017().method_13796();
-         boolean var23 = class_6588.field_33945 && !var8.field_9632.method_37221();
+         boolean var23 = class_6588.field_33945 && !var8.thePlayer.method_37221();
 
          for (class_1261 var25 : var20.method_20037()) {
             class_3511 var26 = var25.field_6947;
             class_2654 var27 = var26.method_16174();
 
             for (Entity var29 : var27.method_11979()[var26.method_16189().method_12165() / 16]) {
-               if ((var21.method_28135(var29, var11, var14, var16, var18) || var29.method_37315(var8.field_9632))
+               if ((var21.method_28135(var29, var11, var14, var16, var18) || var29.method_37315(var8.thePlayer))
                   && (
                      var29 != var1.method_41633()
                         || var23
@@ -269,26 +269,26 @@ public class class_293 {
          var22.method_17415();
          class_6588.method_30256();
          class_6588.method_30273("shadow entities");
-         class_1920.method_8842(5888);
-         class_1920.method_8761();
-         class_1920.method_8867(true);
-         class_1920.method_8775();
-         class_1920.method_8918();
-         class_1920.method_8903();
-         class_1920.method_8816(770, 771, 1, 0);
-         class_1920.method_8785(516, 0.1F);
+         GlStateManager.method_8842(5888);
+         GlStateManager.method_8761();
+         GlStateManager.method_8867(true);
+         GlStateManager.method_8775();
+         GlStateManager.method_8918();
+         GlStateManager.method_8903();
+         GlStateManager.method_8816(770, 771, 1, 0);
+         GlStateManager.method_8785(516, 0.1F);
          if (class_6588.field_33846 >= 2) {
-            class_1920.method_8899(33989);
+            GlStateManager.method_8899(33989);
             class_6588.method_30273("pre copy shadow depth");
             GL11.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, class_6588.field_33976, class_6588.field_33907);
             class_6588.method_30273("copy shadow depth");
-            class_1920.method_8899(33984);
+            GlStateManager.method_8899(33984);
          }
 
-         class_1920.method_8775();
-         class_1920.method_8867(true);
-         var8.method_8577().method_35674(class_8359.field_42824);
-         class_1920.method_8932(7425);
+         GlStateManager.method_8775();
+         GlStateManager.method_8867(true);
+         var8.getTextureManager().bindTexture(class_8359.field_42824);
+         GlStateManager.method_8932(7425);
          class_6588.method_30273("shadow pre-translucent");
          GL30.glDrawBuffers(class_6588.field_33742);
          class_6588.method_30273("shadow drawbuffers pre-translucent");
@@ -299,11 +299,11 @@ public class class_293 {
             class_6588.method_30273("shadow translucent");
          }
 
-         class_1920.method_8855();
-         class_1920.method_8932(7424);
-         class_1920.method_8867(true);
-         class_1920.method_8903();
-         class_1920.method_8775();
+         GlStateManager.method_8855();
+         GlStateManager.method_8932(7424);
+         GlStateManager.method_8867(true);
+         GlStateManager.method_8903();
+         GlStateManager.method_8775();
          GL30.glFlush();
          class_6588.method_30273("shadow flush");
          class_6588.field_33945 = false;
@@ -311,38 +311,38 @@ public class class_293 {
          if (class_6588.field_33761) {
             if (class_6588.field_33846 >= 1) {
                if (class_6588.field_33795[0]) {
-                  class_1920.method_8899(33988);
-                  class_1920.method_8791(class_6588.field_33788.get(0));
+                  GlStateManager.method_8899(33988);
+                  GlStateManager.method_8791(class_6588.field_33788.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, !class_6588.field_33746[0] ? 9987 : 9984);
                }
 
                if (class_6588.field_33846 >= 2 && class_6588.field_33795[1]) {
-                  class_1920.method_8899(33989);
-                  class_1920.method_8791(class_6588.field_33788.get(1));
+                  GlStateManager.method_8899(33989);
+                  GlStateManager.method_8791(class_6588.field_33788.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, !class_6588.field_33746[1] ? 9987 : 9984);
                }
 
-               class_1920.method_8899(33984);
+               GlStateManager.method_8899(33984);
             }
 
             if (class_6588.field_33722 >= 1) {
                if (class_6588.field_33841[0]) {
-                  class_1920.method_8899(33997);
-                  class_1920.method_8791(class_6588.field_33739.get(0));
+                  GlStateManager.method_8899(33997);
+                  GlStateManager.method_8791(class_6588.field_33739.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, !class_6588.field_33629[0] ? 9987 : 9984);
                }
 
                if (class_6588.field_33722 >= 2 && class_6588.field_33841[1]) {
-                  class_1920.method_8899(33998);
-                  class_1920.method_8791(class_6588.field_33739.get(1));
+                  GlStateManager.method_8899(33998);
+                  GlStateManager.method_8791(class_6588.field_33739.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, !class_6588.field_33629[1] ? 9987 : 9984);
                }
 
-               class_1920.method_8899(33984);
+               GlStateManager.method_8899(33984);
             }
          }
 
@@ -350,7 +350,7 @@ public class class_293 {
          EXTFramebufferObject.glBindFramebufferEXT(36160, class_6588.field_33619);
          GL11.glViewport(0, 0, class_6588.field_33803, class_6588.field_33764);
          class_6588.field_33601 = null;
-         var8.method_8577().method_35674(class_8359.field_42824);
+         var8.getTextureManager().bindTexture(class_8359.field_42824);
          class_6588.method_30236(class_6588.field_33884);
          GL30.glMatrixMode(5888);
          GL11.glPopMatrix();
@@ -364,9 +364,9 @@ public class class_293 {
    public static void method_1309(Camera var0, MinecraftClient var1, float var2) {
       var0.method_41643(
          var1.field_9601,
-         (Entity)(var1.method_8516() != null ? var1.method_8516() : var1.field_9632),
-         !var1.gameOptions.method_40867().method_42383(),
-         var1.gameOptions.method_40867().method_42384(),
+         (Entity)(var1.getRenderViewEntity() != null ? var1.getRenderViewEntity() : var1.thePlayer),
+         !var1.gameOptions.getPointOfView().method_42383(),
+         var1.gameOptions.getPointOfView().method_42384(),
          var2
       );
    }
@@ -389,7 +389,7 @@ public class class_293 {
       }
 
       if (class_6588.method_30222(var0)) {
-         class_1920.method_8765();
+         GlStateManager.method_8765();
       }
 
       if (class_3776.method_17486()) {
@@ -407,7 +407,7 @@ public class class_293 {
       }
 
       if (class_6588.method_30222(var0)) {
-         class_1920.method_8903();
+         GlStateManager.method_8903();
       }
    }
 
@@ -472,7 +472,7 @@ public class class_293 {
    }
 
    public static void method_1319() {
-      class_1920.method_8775();
+      GlStateManager.method_8775();
    }
 
    public static void method_1302() {
@@ -493,7 +493,7 @@ public class class_293 {
       if (!class_6588.field_33945 && class_6588.field_33770.method_13759() == 0) {
          return false;
       } else {
-         class_1920.method_8912();
+         GlStateManager.method_8912();
          class_6279 var9 = var3.method_36058();
          class_8107 var10 = var9.method_28620();
          class_6555 var11 = var9.method_28618();
@@ -736,7 +736,7 @@ public class class_293 {
                .method_35735();
          }
 
-         class_1920.method_8927();
+         GlStateManager.method_8927();
          return true;
       }
    }

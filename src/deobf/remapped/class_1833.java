@@ -168,7 +168,7 @@ public class class_1833 {
    }
 
    private static class_3999 method_8092(class_2428 var0) throws ParseException {
-      float var3 = class_3111.method_14445(var0.method_11077(), Float.NaN);
+      float var3 = Config.method_14445(var0.method_11077(), Float.NaN);
       if (var3 != Float.NaN) {
          return new class_4570(var3);
       } else {

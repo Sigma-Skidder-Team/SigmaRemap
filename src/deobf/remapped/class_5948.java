@@ -145,7 +145,7 @@ public class class_5948 extends class_4109 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (this.method_19043()) {
          if (!this.method_26449()) {
             if (!var1.method_3236()) {

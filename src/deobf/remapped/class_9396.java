@@ -20,7 +20,7 @@ public class class_9396 {
    }
 
    public void method_43470(WorldRenderer var1) {
-      if (class_3111.method_14278()) {
+      if (Config.method_14278()) {
          long var4 = System.currentTimeMillis();
          if (var4 < this.field_48017 + 500L) {
             return;

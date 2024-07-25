@@ -28,7 +28,7 @@ public class class_9713 {
       method_44863();
       if (var0 != null) {
          if (class_7860.field_39861.method_3596() && MinecraftClient.getInstance().method_8498() == null) {
-            class_3111.method_14277("[Shaders] Delayed loading of entity mappings after resources are loaded");
+            Config.method_14277("[Shaders] Delayed loading of entity mappings after resources are loaded");
             field_49374 = true;
          } else {
             ArrayList var3 = new ArrayList();
@@ -54,7 +54,7 @@ public class class_9713 {
 
          try {
             Identifier var6 = new Identifier(var5, "shaders/entity.properties");
-            InputStream var7 = class_3111.method_14374(var6);
+            InputStream var7 = Config.method_14374(var6);
             method_44862(var7, var6.toString(), var0);
          } catch (IOException var8) {
          }
@@ -68,19 +68,19 @@ public class class_9713 {
             class_8407 var5 = new class_8407();
             var5.load(var0);
             var0.close();
-            class_3111.method_14277("[Shaders] Parsing entity mappings: " + var1);
+            Config.method_14277("[Shaders] Parsing entity mappings: " + var1);
             class_6284 var6 = new class_6284("Shaders");
 
             for (String var8 : var5.keySet()) {
                String var9 = var5.getProperty(var8);
                String var10 = "entity.";
                if (!var8.startsWith(var10)) {
-                  class_3111.method_14317("[Shaders] Invalid entity ID: " + var8);
+                  Config.method_14317("[Shaders] Invalid entity ID: " + var8);
                } else {
                   String var11 = class_8251.method_37832(var8, var10);
-                  int var12 = class_3111.method_14361(var11, -1);
+                  int var12 = Config.method_14361(var11, -1);
                   if (var12 < 0) {
-                     class_3111.method_14317("[Shaders] Invalid entity alias ID: " + var12);
+                     Config.method_14317("[Shaders] Invalid entity alias ID: " + var12);
                   } else {
                      int[] var13 = var6.method_28669(var9);
                      if (var13 != null && var13.length >= 1) {
@@ -89,13 +89,13 @@ public class class_9713 {
                            method_44860(var2, var15, var12);
                         }
                      } else {
-                        class_3111.method_14317("[Shaders] Invalid entity ID mapping: " + var8 + "=" + var9);
+                        Config.method_14317("[Shaders] Invalid entity ID mapping: " + var8 + "=" + var9);
                      }
                   }
                }
             }
          } catch (IOException var16) {
-            class_3111.method_14317("[Shaders] Error reading: " + var1);
+            Config.method_14317("[Shaders] Error reading: " + var1);
          }
       }
    }

@@ -18,15 +18,15 @@ public class ElytraFlyModule extends Module {
    @EventListen
    public void method_45348(class_5596 var1) {
       if (this.method_42015()) {
-         mc.gameOptions.keySneak.pressed = false;
-         if (!(mc.field_9632.method_37098().field_7333 < 0.08) || mc.field_9632.field_41726) {
-            mc.field_9632.method_37220(7, false);
-            if (mc.field_9632.method_37252()) {
-               this.method_41991(false);
+         client.gameOptions.keySneak.pressed = false;
+         if (!(client.thePlayer.method_37098().field_7333 < 0.08) || client.thePlayer.field_41726) {
+            client.thePlayer.method_37220(7, false);
+            if (client.thePlayer.method_37252()) {
+               this.setEnabled2(false);
             }
-         } else if (!mc.field_9632.method_26618()) {
-            mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20093));
-            mc.field_9632.method_37220(7, true);
+         } else if (!client.thePlayer.method_26618()) {
+            client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20093));
+            client.thePlayer.method_37220(7, true);
          }
       }
    }
@@ -36,12 +36,12 @@ public class ElytraFlyModule extends Module {
       if (this.method_42015()) {
          double var4 = class_8865.method_40775();
          boolean var6 = class_314.method_1434();
-         if (!this.getBooleanValueByName("NCP") && mc.field_9632.method_37252()) {
+         if (!this.getBooleanValueByName("NCP") && client.thePlayer.method_37252()) {
             var4 *= 2.5;
          }
 
          class_8865.method_40777(var1, 0.0);
-         if (!mc.field_9632.method_26618()) {
+         if (!client.thePlayer.method_26618()) {
             this.field_49843 = 0;
          } else {
             if (this.field_49843 > 0) {
@@ -56,16 +56,16 @@ public class ElytraFlyModule extends Module {
             this.field_49843++;
          }
 
-         if (this.field_49840 > 1.0001E-4F && mc.field_9632.field_29654) {
+         if (this.field_49840 > 1.0001E-4F && client.thePlayer.field_29654) {
             class_8865.method_40777(var1, var4 * 6.3F);
             var1.method_35235((double)this.field_49840);
          }
 
-         int var7 = GLFW.glfwGetKey(mc.window.method_43181(), mc.gameOptions.keySneak.field_30027.field_17800);
+         int var7 = GLFW.glfwGetKey(client.window.method_43181(), client.gameOptions.keySneak.field_30027.field_17800);
          if (var7 == 1 && this.getBooleanValueByName("NCP")) {
             var1.method_35235(-0.9F);
-         } else if (!mc.field_9632.method_37252()) {
-            if (mc.field_9632.field_29654 && !this.getBooleanValueByName("NCP")) {
+         } else if (!client.thePlayer.method_37252()) {
+            if (client.thePlayer.field_29654 && !this.getBooleanValueByName("NCP")) {
                var1.method_35235(1.4F);
             }
          } else {
@@ -79,12 +79,12 @@ public class ElytraFlyModule extends Module {
    @EventListen
    private void method_45346(PacketEvent var1) {
       if (this.method_42015()) {
-         if (mc.field_9632 != null && var1.method_557() instanceof class_4548) {
+         if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
-            Entity var5 = mc.field_9601.method_29534(var4.method_21093());
+            Entity var5 = client.field_9601.method_29534(var4.method_21093());
             if (var5 instanceof class_8612) {
                class_8612 var6 = (class_8612)var5;
-               if (var6.field_44173 != null && var6.field_44173.method_37145() == mc.field_9632.method_37145()) {
+               if (var6.field_44173 != null && var6.field_44173.method_37145() == client.thePlayer.method_37145()) {
                   this.field_49839 = this.field_49839 + (float)var4.field_22171 / 8000.0F;
                   this.field_49841 = this.field_49841 + (float)var4.field_22167 / 8000.0F;
                   this.field_49840 = this.field_49840 + (float)var4.field_22168 / 8000.0F;
@@ -100,19 +100,19 @@ public class ElytraFlyModule extends Module {
       if (this.method_42015()) {
          byte var4 = 65;
          if (this.field_49842 != var4 - 1) {
-            if (this.field_49842 <= 0 && mc.field_9632.field_29654) {
+            if (this.field_49842 <= 0 && client.thePlayer.field_29654) {
                this.field_49842 = var4;
             }
          } else {
             int var5 = class_2740.method_12336(class_4897.field_24479);
             if (var5 >= 0) {
-               if (var5 != mc.field_9632.field_3853.field_36404) {
-                  mc.method_8614().method_4813(new class_7371(var5));
+               if (var5 != client.thePlayer.inventory.field_36404) {
+                  client.method_8614().method_4813(new class_7371(var5));
                }
 
-               mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
-               if (var5 != mc.field_9632.field_3853.field_36404) {
-                  mc.method_8614().method_4813(new class_7371(mc.field_9632.field_3853.field_36404));
+               client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+               if (var5 != client.thePlayer.inventory.field_36404) {
+                  client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
                }
             }
          }
@@ -121,7 +121,7 @@ public class ElytraFlyModule extends Module {
             var1.method_6448(-90.0F);
          }
 
-         if (!mc.field_9632.field_29654) {
+         if (!client.thePlayer.field_29654) {
             this.field_49842 = 0;
          }
 
@@ -146,7 +146,7 @@ public class ElytraFlyModule extends Module {
 
    @Override
    public void onEnable() {
-      if (mc.field_9632.field_41726) {
+      if (client.thePlayer.field_41726) {
          class_314.method_1408(0.3994F);
       }
    }

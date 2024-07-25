@@ -28,8 +28,8 @@ public class class_5695 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
-      class_6098 var5 = var2.<class_6098>method_12698(class_8712.field_44670);
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
+      ItemStack var5 = var2.<ItemStack>method_12698(class_8712.field_44670);
       if (var5 != null) {
          int var6 = class_2931.method_13423(this.field_28846, var5);
          int var7 = this.field_28843.method_15564(var2.method_12693(), var1.method_27997(), var6);

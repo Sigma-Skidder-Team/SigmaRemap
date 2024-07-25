@@ -4,9 +4,9 @@ import java.util.function.Predicate;
 
 public class class_8389 implements Predicate<Entity> {
    private static String[] field_42913;
-   private final class_6098 field_42912;
+   private final ItemStack field_42912;
 
-   public class_8389(class_6098 var1) {
+   public class_8389(ItemStack var1) {
       this.field_42912 = var1;
    }
 

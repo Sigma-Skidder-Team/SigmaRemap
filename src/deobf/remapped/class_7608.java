@@ -2,18 +2,18 @@ package remapped;
 
 public class class_7608<T extends Entity & class_3713> extends class_7067<T> {
    private static String[] field_38731;
-   private final class_8765 field_38732;
+   private final ItemRenderer field_38732;
    private final float field_38730;
    private final boolean field_38729;
 
-   public class_7608(EntityRenderDispatcher var1, class_8765 var2, float var3, boolean var4) {
+   public class_7608(EntityRenderDispatcher var1, ItemRenderer var2, float var3, boolean var4) {
       super(var1);
       this.field_38732 = var2;
       this.field_38730 = var3;
       this.field_38729 = var4;
    }
 
-   public class_7608(EntityRenderDispatcher var1, class_8765 var2) {
+   public class_7608(EntityRenderDispatcher var1, ItemRenderer var2) {
       this(var1, var2, 1.0F, false);
    }
 

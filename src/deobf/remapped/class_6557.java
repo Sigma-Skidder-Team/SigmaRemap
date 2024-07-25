@@ -14,7 +14,7 @@ public class class_6557 extends Screen {
    private class_416 field_33425 = class_416.field_1766;
 
    public class_6557(Screen var1) {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
       this.field_33426 = var1;
    }
 

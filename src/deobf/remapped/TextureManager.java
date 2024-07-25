@@ -28,16 +28,16 @@ public class TextureManager implements class_2231, class_72, AutoCloseable {
       this.field_40365 = var1;
    }
 
-   public void method_35674(Identifier var1) {
-      if (class_3542.method_16366()) {
+   public void bindTexture(Identifier var1) {
+      if (RenderSystem.method_16366()) {
          this.method_35686(var1);
       } else {
-         class_3542.method_16474(() -> this.method_35686(var1));
+         RenderSystem.method_16474(() -> this.method_35686(var1));
       }
    }
 
    private void method_35686(Identifier var1) {
-      if (class_3111.method_14373()) {
+      if (Config.method_14373()) {
          var1 = class_1322.method_6042(var1);
       }
 
@@ -47,7 +47,7 @@ public class TextureManager implements class_2231, class_72, AutoCloseable {
          this.method_35682(var1, (class_8143)var4);
       }
 
-      if (!class_3111.method_14424()) {
+      if (!Config.method_14424()) {
          ((class_8143)var4).method_37048();
       } else {
          class_7977.method_36161((class_8143)var4);
@@ -133,7 +133,7 @@ public class TextureManager implements class_2231, class_72, AutoCloseable {
    }
 
    private static void method_35681(Runnable var0) {
-      MinecraftClient.getInstance().execute(() -> class_3542.method_16474(var0::run));
+      MinecraftClient.getInstance().execute(() -> RenderSystem.method_16474(var0::run));
    }
 
    @Override
@@ -161,8 +161,8 @@ public class TextureManager implements class_2231, class_72, AutoCloseable {
 
    @Override
    public CompletableFuture<Void> method_10277(class_6895 var1, class_7832 var2, class_3492 var3, class_3492 var4, Executor var5, Executor var6) {
-      class_3111.method_14277("*** Reloading textures ***");
-      class_3111.method_14280("Resource packs: " + class_3111.method_14384());
+      Config.method_14277("*** Reloading textures ***");
+      Config.method_14280("Resource packs: " + Config.method_14384());
       Iterator var9 = this.field_40366.keySet().iterator();
 
       while (var9.hasNext()) {
@@ -197,7 +197,7 @@ public class TextureManager implements class_2231, class_72, AutoCloseable {
                   var10x.method_37054(this, var2, var9x, var6);
                }
             }
-         }, var0 -> class_3542.method_16474(var0::run));
+         }, var0 -> RenderSystem.method_16474(var0::run));
    }
 
    public class_8143 method_35675() {

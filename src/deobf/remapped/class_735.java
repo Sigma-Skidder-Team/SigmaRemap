@@ -41,7 +41,7 @@ public class class_735 extends class_7398 {
          var11.method_29100(var12);
          return (class_8599)var11;
       } else {
-         class_3111.method_14317("Not a RenderSheep: " + var6);
+         Config.method_14317("Not a RenderSheep: " + var6);
          return null;
       }
    }

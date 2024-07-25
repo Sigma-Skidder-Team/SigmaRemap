@@ -42,8 +42,8 @@ public class class_3331 extends class_2830 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return new class_6098(class_4897.field_24573);
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return new ItemStack(class_4897.field_24573);
    }
 
    @Override

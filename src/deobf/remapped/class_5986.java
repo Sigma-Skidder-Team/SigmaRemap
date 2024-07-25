@@ -40,8 +40,8 @@ public class class_5986 extends class_7114 {
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       MinecraftClient var7 = MinecraftClient.getInstance();
-      var7.method_8577().method_35674(this.field_30492);
-      class_3542.method_16491();
+      var7.getTextureManager().bindTexture(this.field_30492);
+      RenderSystem.method_16491();
       int var8 = this.field_30493;
       int var9 = this.field_30494;
       if (this.field_30498) {
@@ -53,6 +53,6 @@ public class class_5986 extends class_7114 {
       }
 
       this.method_9781(var1, this.field_36670, this.field_36674, var8, var9, this.field_36671, this.field_36681);
-      class_3542.method_16428();
+      RenderSystem.enableDepthTest();
    }
 }

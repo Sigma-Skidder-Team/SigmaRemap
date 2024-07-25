@@ -48,7 +48,7 @@ public class class_9310 extends class_5521 implements class_2354 {
       super.method_37314(var1);
       this.method_42972(var1.method_25947("Variant"));
       if (var1.method_25939("DecorItem", 10)) {
-         this.field_20021.method_31503(1, class_6098.method_28015(var1.method_25937("DecorItem")));
+         this.field_20021.method_31503(1, ItemStack.method_28015(var1.method_25937("DecorItem")));
       }
 
       this.method_19070();
@@ -120,12 +120,12 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return field_47543.test(var1);
    }
 
    @Override
-   public boolean method_19060(class_704 var1, class_6098 var2) {
+   public boolean method_19060(class_704 var1, ItemStack var2) {
       byte var5 = 0;
       byte var6 = 0;
       float var7 = 0.0F;
@@ -269,7 +269,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Override
-   public boolean method_19069(class_6098 var1) {
+   public boolean method_19069(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       return class_391.field_1619.method_10609(var4);
    }
@@ -302,7 +302,7 @@ public class class_9310 extends class_5521 implements class_2354 {
    }
 
    @Nullable
-   private static class_9077 method_42978(class_6098 var0) {
+   private static class_9077 method_42978(ItemStack var0) {
       class_6414 var3 = class_6414.method_29269(var0.method_27960());
       return !(var3 instanceof class_2325) ? null : ((class_2325)var3).method_10672();
    }

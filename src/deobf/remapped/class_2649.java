@@ -32,7 +32,7 @@ public class class_2649 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       class_3416 var5 = this.method_11960(var1, !this.field_13043.isEmpty());
       if (var5 != null) {
          if (this.field_13042) {
@@ -52,7 +52,7 @@ public class class_2649 extends class_5837 {
    }
 
    @Nullable
-   private class_3416 method_11960(class_6098 var1, boolean var2) {
+   private class_3416 method_11960(ItemStack var1, boolean var2) {
       class_5734 var5;
       if (!var1.method_28002()) {
          if (!var2) {

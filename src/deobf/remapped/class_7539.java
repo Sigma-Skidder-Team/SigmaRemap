@@ -36,16 +36,16 @@ public class class_7539 implements class_2995 {
    }
 
    public static void method_34335(class_3998 var0, float var1, boolean var2, boolean var3, double var4, double var6, double var8) {
-      class_3542.method_16438();
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16480(0.0F, 1.0F, 0.0F, 0.75F);
-      class_3542.method_16354();
-      class_3542.method_16484(6.0F);
+      RenderSystem.method_16438();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.color4f(0.0F, 1.0F, 0.0F, 0.75F);
+      RenderSystem.method_16354();
+      RenderSystem.method_16484(6.0F);
       method_34330(var0, var1, var2, var3, var4, var6, var8);
-      class_3542.method_16432();
-      class_3542.method_16448();
-      class_3542.method_16489();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
+      RenderSystem.method_16489();
    }
 
    private static void method_34330(class_3998 var0, float var1, boolean var2, boolean var3, double var4, double var6, double var8) {

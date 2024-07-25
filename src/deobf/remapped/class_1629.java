@@ -53,8 +53,8 @@ public abstract class class_1629<T extends class_8383> extends class_2208<T> imp
 
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(this.field_8481);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(this.field_8481);
       int var7 = this.field_10984;
       int var8 = this.field_10962;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);

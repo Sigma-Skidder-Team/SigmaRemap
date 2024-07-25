@@ -59,10 +59,10 @@ public class class_1847 extends class_5920<class_7666> {
 
    private static void method_8166(class_7666 var0, Set<class_2451> var1, class_5834 var2) {
       class_4657 var5 = var0.method_2017();
-      class_6098 var6 = class_6098.field_31203;
+      ItemStack var6 = ItemStack.EMPTY;
 
       for (int var7 = 0; var7 < var5.method_31505(); var7++) {
-         class_6098 var8 = var5.method_31498(var7);
+         ItemStack var8 = var5.method_31498(var7);
          if (!var8.method_28022()) {
             class_2451 var9 = var8.method_27960();
             if (var1.contains(var9)) {
@@ -78,7 +78,7 @@ public class class_1847 extends class_5920<class_7666> {
                }
 
                var8.method_27970(var10);
-               var6 = new class_6098(var9, var10);
+               var6 = new ItemStack(var9, var10);
                break;
             }
          }

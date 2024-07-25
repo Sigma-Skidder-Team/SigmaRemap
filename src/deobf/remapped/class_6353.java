@@ -129,10 +129,10 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
             this.field_32488 = var3;
          }
 
-         boolean var17 = class_3111.method_14424();
+         boolean var17 = Config.method_14424();
          MinecraftClient var18 = MinecraftClient.getInstance();
          boolean var19 = this.method_29105((T)var1);
-         boolean var20 = !var19 && !var1.method_37077(var18.field_9632);
+         boolean var20 = !var19 && !var1.method_37077(var18.thePlayer);
          boolean var21 = var18.method_8563(var1);
          RenderLayer var22 = this.method_29108((T)var1, var19, var20, var21);
          if (var22 != null) {
@@ -158,7 +158,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
             }
          }
 
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_6588.method_30135(0.0F, 0.0F, 0.0F, 0.0F);
          }
 
@@ -185,7 +185,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
 
       if (!var3) {
          if (!var2) {
-            if (var1.method_37116() && !class_3111.method_14327().worldRenderer.method_20036()) {
+            if (var1.method_37116() && !Config.method_14327().worldRenderer.method_20036()) {
                return this.field_32487.method_45498(var7);
             } else {
                return !var4 ? null : RenderLayer.method_16773(var7);
@@ -303,7 +303,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
             return false;
          } else {
             MinecraftClient var8 = MinecraftClient.getInstance();
-            class_5989 var9 = var8.field_9632;
+            class_5989 var9 = var8.thePlayer;
             boolean var10 = !var1.method_37077(var9);
             if (var1 != var9) {
                class_5086 var11 = var1.method_37095();
@@ -325,7 +325,7 @@ public abstract class class_6353<T extends class_5834, M extends class_6521<T>> 
                }
             }
 
-            return MinecraftClient.method_8616() && var1 != var8.method_8516() && var10 && !var1.method_37151();
+            return MinecraftClient.method_8616() && var1 != var8.getRenderViewEntity() && var10 && !var1.method_37151();
          }
       }
    }

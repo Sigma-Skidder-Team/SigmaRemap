@@ -82,20 +82,20 @@ public class class_8316 {
 
       try {
          Identifier var4 = new Identifier(var3);
-         if (!class_3111.method_14362(var4)) {
+         if (!Config.method_14362(var4)) {
             return;
          }
 
-         InputStream var5 = class_3111.method_14374(var4);
+         InputStream var5 = Config.method_14374(var4);
          if (var5 == null) {
             return;
          }
 
-         boolean var6 = class_3111.method_14247(var4);
+         boolean var6 = Config.method_14247(var4);
          if (var6) {
-            class_3111.method_14277("BetterGrass: Parsing default configuration " + var3);
+            Config.method_14277("BetterGrass: Parsing default configuration " + var3);
          } else {
-            class_3111.method_14277("BetterGrass: Parsing configuration " + var3);
+            Config.method_14277("BetterGrass: Parsing configuration " + var3);
          }
 
          class_8407 var7 = new class_8407();
@@ -117,7 +117,7 @@ public class class_8316 {
          field_42588 = method_38340(var7, "texture.podzol", "block/podzol_top", var0);
          field_42605 = method_38340(var7, "texture.snow", "block/snow", var0);
       } catch (IOException var8) {
-         class_3111.method_14317("Error reading: " + var3 + ", " + var8.getClass().getName() + ": " + var8.getMessage());
+         Config.method_14317("Error reading: " + var3 + ", " + var8.getClass().getName() + ": " + var8.getMessage());
       }
    }
 
@@ -134,7 +134,7 @@ public class class_8316 {
    private static class_5155 method_38335(class_8359 var0, Identifier var1) {
       class_5155 var4 = var0.method_38528(var1);
       if (var4 == null || var4 instanceof class_2008) {
-         class_3111.method_14317("Missing BetterGrass sprite: " + var1);
+         Config.method_14317("Missing BetterGrass sprite: " + var1);
       }
 
       return var4;
@@ -147,8 +147,8 @@ public class class_8316 {
       }
 
       Identifier var7 = new Identifier("textures/" + var6 + ".png");
-      if (!class_3111.method_14362(var7)) {
-         class_3111.method_14317("BetterGrass texture not found: " + var7);
+      if (!Config.method_14362(var7)) {
+         Config.method_14317("BetterGrass texture not found: " + var7);
          var6 = var2;
       }
 
@@ -180,7 +180,7 @@ public class class_8316 {
    private static List method_38339(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
       class_6414 var7 = var0.method_28262(var2.method_6081()).method_8360();
       boolean var8 = var7 == class_4783.field_23813 || var7 == class_4783.field_23552;
-      if (!class_3111.method_14299()) {
+      if (!Config.method_14299()) {
          if (!var8) {
             if (field_42579) {
                return field_42581.method_33580(var1, var3, field_42589);
@@ -201,7 +201,7 @@ public class class_8316 {
 
    private static List method_38332(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
       if (field_42606) {
-         if (!class_3111.method_14299()) {
+         if (!Config.method_14299()) {
             return field_42602.method_33580(var1, var3, field_42589);
          } else {
             return method_38343(var2.method_6100(), var3, var0) != class_4783.field_23608 ? var4 : field_42602.method_33580(var1, var3, field_42589);
@@ -214,7 +214,7 @@ public class class_8316 {
    private static List method_38336(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
       class_6414 var7 = method_38343(var2, Direction.field_817, var0);
       boolean var8 = var7 == class_4783.field_23813 || var7 == class_4783.field_23552;
-      if (!class_3111.method_14299()) {
+      if (!Config.method_14299()) {
          if (!var8) {
             if (field_42595) {
                return field_42593.method_33580(var1, var3, field_42589);
@@ -247,7 +247,7 @@ public class class_8316 {
    private static List method_38333(class_6163 var0, class_2522 var1, class_1331 var2, Direction var3, List var4) {
       class_6414 var7 = var0.method_28262(var2.method_6081()).method_8360();
       boolean var8 = var7 == class_4783.field_23813 || var7 == class_4783.field_23552;
-      if (!class_3111.method_14299()) {
+      if (!Config.method_14299()) {
          if (!var8) {
             if (field_42580) {
                return field_42601.method_33580(var1, var3, field_42589);

@@ -6,7 +6,7 @@ public class class_8042 {
    private static final class_8042 field_41195 = new class_8042();
 
    public static class_8042 method_36499() {
-      class_3542.method_16431(class_3542::method_16363);
+      RenderSystem.method_16431(RenderSystem::method_16363);
       return field_41195;
    }
 

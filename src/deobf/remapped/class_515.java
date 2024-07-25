@@ -16,7 +16,7 @@ public class class_515 implements class_2274 {
 
    public void 錌圭훔곻瀧쿨() {
       this.field_3159++;
-      if (this.field_3164.method_40539() == class_4666.field_22764) {
+      if (this.field_3164.method_40539() == GameType.field_22764) {
          if (this.field_3159 >= 600 && this.field_3163 == null) {
             this.field_3163 = new class_2297(class_7856.field_39811, field_3160, field_3161, false);
             this.field_3164.method_40530().method_8519().method_42329(this.field_3163);

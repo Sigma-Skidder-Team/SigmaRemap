@@ -18,12 +18,12 @@ public class AimbotModule extends SecondModule {
 
       while (var6.hasNext()) {
          Entity var7 = (Entity)var6.next();
-         if (var7 != mc.field_9632) {
+         if (var7 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var7)) {
                if (var7 instanceof class_5834) {
                   if (((class_5834)var7).method_26551() != 0.0F) {
-                     if (!(mc.field_9632.method_37175(var7) > var1)) {
-                        if (mc.field_9632.method_26608((class_5834)var7)) {
+                     if (!(client.thePlayer.method_37175(var7) > var1)) {
+                        if (client.thePlayer.method_26608((class_5834)var7)) {
                            if (!(var7 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var7 instanceof class_704) {
                                  var6.remove();
@@ -33,14 +33,14 @@ public class AimbotModule extends SecondModule {
                                  var6.remove();
                               } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var7 instanceof class_704)) {
                                  var6.remove();
-                              } else if (mc.field_9632.method_37243() != null && mc.field_9632.method_37243().equals(var7)) {
+                              } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var7)) {
                                  var6.remove();
                               } else if (!var7.method_37367()) {
                                  if (var7 instanceof class_704
                                     && class_5876.method_26760((class_704)var7)
-                                    && SigmaMainClass.getInstance().getModuleManager().method_847(TeamsModule.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
                                     var6.remove();
-                                 } else if (var5 == null || mc.field_9632.method_37175(var7) < mc.field_9632.method_37175(var5)) {
+                                 } else if (var5 == null || client.thePlayer.method_37175(var7) < client.thePlayer.method_37175(var5)) {
                                     var5 = var7;
                                  }
                               } else {

@@ -25,18 +25,18 @@ public class class_2129 extends class_4657 implements class_372 {
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1834(int var1, ItemStack var2, Direction var3) {
       return !this.field_10657 && var3 == Direction.field_817 && class_7689.field_39051.containsKey(var2.method_27960());
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1833(int var1, ItemStack var2, Direction var3) {
       return false;
    }
 
    @Override
    public void method_17407() {
-      class_6098 var3 = this.method_31498(0);
+      ItemStack var3 = this.method_31498(0);
       if (!var3.method_28022()) {
          this.field_10657 = true;
          class_2522 var4 = class_7689.method_34841(this.field_10656, this.field_10658, this.field_10655, var3);

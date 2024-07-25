@@ -44,7 +44,7 @@ public class class_4116 extends class_8374<class_2269> {
    public void method_19114(class_2269 var1) {
       super.method_36197(var1);
       if (this.method_36226() instanceof class_6757) {
-         class_7542.field_38482
+         NarratorChatListener.INSTANCE
             .method_34341(new TranslationTextComponent("narrator.select", class_6757.method_30963((class_6757)this.method_36226()).field_12670).getString());
       }
 

@@ -7,28 +7,28 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7051 implements class_6867, class_9875 {
-   public final class_2831<class_6098> field_36401 = class_2831.<class_6098>method_12872(36, class_6098.field_31203);
-   public final class_2831<class_6098> field_36405 = class_2831.<class_6098>method_12872(4, class_6098.field_31203);
-   public final class_2831<class_6098> field_36406 = class_2831.<class_6098>method_12872(1, class_6098.field_31203);
-   private final List<class_2831<class_6098>> field_36407 = ImmutableList.of(this.field_36401, this.field_36405, this.field_36406);
+   public final class_2831<ItemStack> field_36401 = class_2831.<ItemStack>method_12872(36, ItemStack.EMPTY);
+   public final class_2831<ItemStack> field_36405 = class_2831.<ItemStack>method_12872(4, ItemStack.EMPTY);
+   public final class_2831<ItemStack> field_36406 = class_2831.<ItemStack>method_12872(1, ItemStack.EMPTY);
+   private final List<class_2831<ItemStack>> field_36407 = ImmutableList.of(this.field_36401, this.field_36405, this.field_36406);
    public int field_36404;
    public final class_704 field_36409;
-   private class_6098 field_36408 = class_6098.field_31203;
+   private ItemStack field_36408 = ItemStack.EMPTY;
    private int field_36403;
 
    public class_7051(class_704 var1) {
       this.field_36409 = var1;
    }
 
-   public class_6098 method_32403() {
-      return !method_32417(this.field_36404) ? class_6098.field_31203 : this.field_36401.get(this.field_36404);
+   public ItemStack method_32403() {
+      return !method_32417(this.field_36404) ? ItemStack.EMPTY : this.field_36401.get(this.field_36404);
    }
 
    public static int method_32422() {
       return 9;
    }
 
-   private boolean method_32406(class_6098 var1, class_6098 var2) {
+   private boolean method_32406(ItemStack var1, ItemStack var2) {
       return !var1.method_28022()
          && this.method_32412(var1, var2)
          && var1.method_28005()
@@ -36,8 +36,8 @@ public class class_7051 implements class_6867, class_9875 {
          && var1.method_27997() < this.method_31506();
    }
 
-   private boolean method_32412(class_6098 var1, class_6098 var2) {
-      return var1.method_27960() == var2.method_27960() && class_6098.method_27956(var1, var2);
+   private boolean method_32412(ItemStack var1, ItemStack var2) {
+      return var1.method_27960() == var2.method_27960() && ItemStack.method_27956(var1, var2);
    }
 
    public int method_32398() {
@@ -50,7 +50,7 @@ public class class_7051 implements class_6867, class_9875 {
       return -1;
    }
 
-   public void method_32427(class_6098 var1) {
+   public void method_32427(ItemStack var1) {
       int var4 = this.method_32407(var1);
       if (!method_32417(var4)) {
          if (var4 != -1) {
@@ -73,7 +73,7 @@ public class class_7051 implements class_6867, class_9875 {
 
    public void method_32426(int var1) {
       this.field_36404 = this.method_32401();
-      class_6098 var4 = this.field_36401.get(this.field_36404);
+      ItemStack var4 = this.field_36401.get(this.field_36404);
       this.field_36401.set(this.field_36404, this.field_36401.get(var1));
       this.field_36401.set(var1, var4);
    }
@@ -82,7 +82,7 @@ public class class_7051 implements class_6867, class_9875 {
       return var0 >= 0 && var0 < 9;
    }
 
-   public int method_32407(class_6098 var1) {
+   public int method_32407(ItemStack var1) {
       for (int var4 = 0; var4 < this.field_36401.size(); var4++) {
          if (!this.field_36401.get(var4).method_28022() && this.method_32412(var1, this.field_36401.get(var4))) {
             return var4;
@@ -92,9 +92,9 @@ public class class_7051 implements class_6867, class_9875 {
       return -1;
    }
 
-   public int method_32425(class_6098 var1) {
+   public int method_32425(ItemStack var1) {
       for (int var4 = 0; var4 < this.field_36401.size(); var4++) {
-         class_6098 var5 = this.field_36401.get(var4);
+         ItemStack var5 = this.field_36401.get(var4);
          if (!this.field_36401.get(var4).method_28022()
             && this.method_32412(var1, this.field_36401.get(var4))
             && !this.field_36401.get(var4).method_27995()
@@ -145,20 +145,20 @@ public class class_7051 implements class_6867, class_9875 {
       }
    }
 
-   public int method_32428(Predicate<class_6098> var1, int var2, class_6867 var3) {
+   public int method_32428(Predicate<ItemStack> var1, int var2, class_6867 var3) {
       int var6 = 0;
       boolean var7 = var2 == 0;
       var6 += class_3037.method_13877(this, var1, var2 - var6, var7);
       var6 += class_3037.method_13877(var3, var1, var2 - var6, var7);
       var6 += class_3037.method_13875(this.field_36408, var1, var2 - var6, var7);
       if (this.field_36408.method_28022()) {
-         this.field_36408 = class_6098.field_31203;
+         this.field_36408 = ItemStack.EMPTY;
       }
 
       return var6;
    }
 
-   private int method_32397(class_6098 var1) {
+   private int method_32397(ItemStack var1) {
       int var4 = this.method_32402(var1);
       if (var4 == -1) {
          var4 = this.method_32398();
@@ -167,12 +167,12 @@ public class class_7051 implements class_6867, class_9875 {
       return var4 != -1 ? this.method_32410(var4, var1) : var1.method_27997();
    }
 
-   private int method_32410(int var1, class_6098 var2) {
+   private int method_32410(int var1, ItemStack var2) {
       class_2451 var5 = var2.method_27960();
       int var6 = var2.method_27997();
-      class_6098 var7 = this.method_31498(var1);
+      ItemStack var7 = this.method_31498(var1);
       if (var7.method_28022()) {
-         var7 = new class_6098(var5, 0);
+         var7 = new ItemStack(var5, 0);
          if (var2.method_28002()) {
             var7.method_27965(var2.method_27990().method_25944());
          }
@@ -199,7 +199,7 @@ public class class_7051 implements class_6867, class_9875 {
       }
    }
 
-   public int method_32402(class_6098 var1) {
+   public int method_32402(ItemStack var1) {
       if (this.method_32406(this.method_31498(this.field_36404), var1)) {
          return this.field_36404;
       } else if (this.method_32406(this.method_31498(40), var1)) {
@@ -218,18 +218,18 @@ public class class_7051 implements class_6867, class_9875 {
    public void method_32429() {
       for (class_2831 var4 : this.field_36407) {
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            if (!((class_6098)var4.get(var5)).method_28022()) {
-               ((class_6098)var4.get(var5)).method_28007(this.field_36409.field_41768, this.field_36409, var5, this.field_36404 == var5);
+            if (!((ItemStack)var4.get(var5)).method_28022()) {
+               ((ItemStack)var4.get(var5)).method_28007(this.field_36409.field_41768, this.field_36409, var5, this.field_36404 == var5);
             }
          }
       }
    }
 
-   public boolean method_32414(class_6098 var1) {
+   public boolean method_32414(ItemStack var1) {
       return this.method_32404(-1, var1);
    }
 
-   public boolean method_32404(int var1, class_6098 var2) {
+   public boolean method_32404(int var1, ItemStack var2) {
       if (var2.method_28022()) {
          return false;
       } else {
@@ -279,7 +279,7 @@ public class class_7051 implements class_6867, class_9875 {
       }
    }
 
-   public void method_32395(World var1, class_6098 var2) {
+   public void method_32395(World var1, ItemStack var2) {
       if (!var1.field_33055) {
          while (!var2.method_28022()) {
             int var5 = this.method_32402(var2);
@@ -301,7 +301,7 @@ public class class_7051 implements class_6867, class_9875 {
    }
 
    @Override
-   public class_6098 method_31497(int var1, int var2) {
+   public ItemStack method_31497(int var1, int var2) {
       class_2831 var5 = null;
 
       for (class_2831 var7 : this.field_36407) {
@@ -313,14 +313,14 @@ public class class_7051 implements class_6867, class_9875 {
          var1 -= var7.size();
       }
 
-      return var5 != null && !((class_6098)var5.get(var1)).method_28022() ? class_3037.method_13881(var5, var1, var2) : class_6098.field_31203;
+      return var5 != null && !((ItemStack)var5.get(var1)).method_28022() ? class_3037.method_13881(var5, var1, var2) : ItemStack.EMPTY;
    }
 
-   public void method_32419(class_6098 var1) {
+   public void method_32419(ItemStack var1) {
       for (class_2831 var5 : this.field_36407) {
          for (int var6 = 0; var6 < var5.size(); var6++) {
             if (var5.get(var6) == var1) {
-               var5.set(var6, class_6098.field_31203);
+               var5.set(var6, ItemStack.EMPTY);
                break;
             }
          }
@@ -328,7 +328,7 @@ public class class_7051 implements class_6867, class_9875 {
    }
 
    @Override
-   public class_6098 method_31507(int var1) {
+   public ItemStack method_31507(int var1) {
       class_2831 var4 = null;
 
       for (class_2831 var6 : this.field_36407) {
@@ -340,17 +340,17 @@ public class class_7051 implements class_6867, class_9875 {
          var1 -= var6.size();
       }
 
-      if (var4 != null && !((class_6098)var4.get(var1)).method_28022()) {
-         class_6098 var7 = (class_6098)var4.get(var1);
-         var4.set(var1, class_6098.field_31203);
+      if (var4 != null && !((ItemStack)var4.get(var1)).method_28022()) {
+         ItemStack var7 = (ItemStack)var4.get(var1);
+         var4.set(var1, ItemStack.EMPTY);
          return var7;
       } else {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       }
    }
 
    @Override
-   public void method_31503(int var1, class_6098 var2) {
+   public void method_31503(int var1, ItemStack var2) {
       class_2831 var5 = null;
 
       for (class_2831 var7 : this.field_36407) {
@@ -410,7 +410,7 @@ public class class_7051 implements class_6867, class_9875 {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          class_5734 var5 = var1.method_15764(var4);
          int var6 = var5.method_25950("Slot") & 255;
-         class_6098 var7 = class_6098.method_28015(var5);
+         ItemStack var7 = ItemStack.method_28015(var5);
          if (!var7.method_28022()) {
             if (var6 >= 0 && var6 < this.field_36401.size()) {
                this.field_36401.set(var6, var7);
@@ -430,19 +430,19 @@ public class class_7051 implements class_6867, class_9875 {
 
    @Override
    public boolean method_31495() {
-      for (class_6098 var4 : this.field_36401) {
+      for (ItemStack var4 : this.field_36401) {
          if (!var4.method_28022()) {
             return false;
          }
       }
 
-      for (class_6098 var7 : this.field_36405) {
+      for (ItemStack var7 : this.field_36405) {
          if (!var7.method_28022()) {
             return false;
          }
       }
 
-      for (class_6098 var8 : this.field_36406) {
+      for (ItemStack var8 : this.field_36406) {
          if (!var8.method_28022()) {
             return false;
          }
@@ -452,7 +452,7 @@ public class class_7051 implements class_6867, class_9875 {
    }
 
    @Override
-   public class_6098 method_31498(int var1) {
+   public ItemStack method_31498(int var1) {
       class_2831 var4 = null;
 
       for (class_2831 var6 : this.field_36407) {
@@ -464,7 +464,7 @@ public class class_7051 implements class_6867, class_9875 {
          var1 -= var6.size();
       }
 
-      return var4 != null ? (class_6098)var4.get(var1) : class_6098.field_31203;
+      return var4 != null ? (ItemStack)var4.get(var1) : ItemStack.EMPTY;
    }
 
    @Override
@@ -472,7 +472,7 @@ public class class_7051 implements class_6867, class_9875 {
       return new TranslationTextComponent("container.inventory");
    }
 
-   public class_6098 method_32416(int var1) {
+   public ItemStack armorItemInSlot(int var1) {
       return this.field_36405.get(var1);
    }
 
@@ -484,7 +484,7 @@ public class class_7051 implements class_6867, class_9875 {
          }
 
          for (int var5 = 0; var5 < this.field_36405.size(); var5++) {
-            class_6098 var6 = this.field_36405.get(var5);
+            ItemStack var6 = this.field_36405.get(var5);
             if ((!var1.method_28360() || !var6.method_27960().method_11208()) && var6.method_27960() instanceof class_8228) {
                int var7 = var5;
                var6.method_28003((int)var2, this.field_36409, var1x -> var1x.method_26448(class_6943.method_31768(class_7268.field_37219, var7)));
@@ -496,10 +496,10 @@ public class class_7051 implements class_6867, class_9875 {
    public void method_32411() {
       for (List var4 : this.field_36407) {
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            class_6098 var6 = (class_6098)var4.get(var5);
+            ItemStack var6 = (ItemStack)var4.get(var5);
             if (!var6.method_28022()) {
                this.field_36409.method_3154(var6, true, false);
-               var4.set(var5, class_6098.field_31203);
+               var4.set(var5, ItemStack.EMPTY);
             }
          }
       }
@@ -514,11 +514,11 @@ public class class_7051 implements class_6867, class_9875 {
       return this.field_36403;
    }
 
-   public void method_32408(class_6098 var1) {
+   public void method_32408(ItemStack var1) {
       this.field_36408 = var1;
    }
 
-   public class_6098 method_32424() {
+   public ItemStack method_32424() {
       return this.field_36408;
    }
 
@@ -527,9 +527,9 @@ public class class_7051 implements class_6867, class_9875 {
       return !this.field_36409.field_41751 ? !(var1.method_37275(this.field_36409) > 64.0) : false;
    }
 
-   public boolean method_32405(class_6098 var1) {
+   public boolean method_32405(ItemStack var1) {
       for (List var5 : this.field_36407) {
-         for (class_6098 var7 : var5) {
+         for (ItemStack var7 : var5) {
             if (!var7.method_28022() && var7.method_27991(var1)) {
                return true;
             }
@@ -541,7 +541,7 @@ public class class_7051 implements class_6867, class_9875 {
 
    public boolean method_32418(class_2307<class_2451> var1) {
       for (List var5 : this.field_36407) {
-         for (class_6098 var7 : var5) {
+         for (ItemStack var7 : var5) {
             if (!var7.method_28022() && var1.method_10609(var7.method_27960())) {
                return true;
             }
@@ -567,7 +567,7 @@ public class class_7051 implements class_6867, class_9875 {
    }
 
    public void method_32409(class_534 var1) {
-      for (class_6098 var5 : this.field_36401) {
+      for (ItemStack var5 : this.field_36401) {
          var1.method_2606(var5);
       }
    }

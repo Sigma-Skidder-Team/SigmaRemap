@@ -78,23 +78,23 @@ public class class_1609 extends class_4040 implements class_2354 {
 
          if (!this.method_7190()) {
             class_6004 var7 = null;
-            if (this.field_41717.nextFloat() < 0.15F && this.method_37261(class_6503.field_33094) && !this.method_26480(Effects.field_19720)) {
+            if (this.field_41717.nextFloat() < 0.15F && this.method_37261(class_6503.field_33094) && !this.isPotionActive(Effects.field_19720)) {
                var7 = class_3697.field_18136;
             } else if (this.field_41717.nextFloat() < 0.15F
                && (this.method_37264() || this.method_26429() != null && this.method_26429().method_28360())
-               && !this.method_26480(Effects.field_19745)) {
+               && !this.isPotionActive(Effects.field_19745)) {
                var7 = class_3697.field_18121;
             } else if (this.field_41717.nextFloat() < 0.05F && this.method_26551() < this.method_26465()) {
                var7 = class_3697.field_18117;
             } else if (this.field_41717.nextFloat() < 0.5F
                && this.method_17809() != null
-               && !this.method_26480(Effects.field_19739)
+               && !this.isPotionActive(Effects.field_19739)
                && this.method_17809().method_37275(this) > 121.0) {
                var7 = class_3697.field_18143;
             }
 
             if (var7 != null) {
-               this.method_37349(class_6943.field_35707, class_9541.method_43999(new class_6098(class_4897.field_25157), var7));
+               this.method_37349(class_6943.field_35707, class_9541.method_43999(new ItemStack(class_4897.field_25157), var7));
                this.field_8351 = this.method_26446().method_28004();
                this.method_7189(true);
                if (!this.method_37378()) {
@@ -117,8 +117,8 @@ public class class_1609 extends class_4040 implements class_2354 {
             }
          } else if (this.field_8351-- <= 0) {
             this.method_7189(false);
-            class_6098 var3 = this.method_26446();
-            this.method_37349(class_6943.field_35707, class_6098.field_31203);
+            ItemStack var3 = this.method_26446();
+            this.method_37349(class_6943.field_35707, ItemStack.EMPTY);
             if (var3.method_27960() == class_4897.field_25157) {
                List var4 = class_9541.method_43993(var3);
                if (var4 != null) {
@@ -188,11 +188,11 @@ public class class_1609 extends class_4040 implements class_2354 {
          float var12 = class_9299.method_42842(var6 * var6 + var10 * var10);
          class_6004 var13 = class_3697.field_18138;
          if (!(var1 instanceof class_4040)) {
-            if (var12 >= 8.0F && !var1.method_26480(Effects.field_19743)) {
+            if (var12 >= 8.0F && !var1.isPotionActive(Effects.field_19743)) {
                var13 = class_3697.field_18113;
-            } else if (var1.method_26551() >= 8.0F && !var1.method_26480(Effects.field_19718)) {
+            } else if (var1.method_26551() >= 8.0F && !var1.isPotionActive(Effects.field_19718)) {
                var13 = class_3697.field_18125;
-            } else if (var12 <= 3.0F && !var1.method_26480(Effects.field_19737) && this.field_41717.nextFloat() < 0.25F) {
+            } else if (var12 <= 3.0F && !var1.isPotionActive(Effects.field_19737) && this.field_41717.nextFloat() < 0.25F) {
                var13 = class_3697.field_18112;
             }
          } else {
@@ -206,7 +206,7 @@ public class class_1609 extends class_4040 implements class_2354 {
          }
 
          class_8011 var14 = new class_8011(this.field_41768, this);
-         var14.method_15852(class_9541.method_43999(new class_6098(class_4897.field_25226), var13));
+         var14.method_15852(class_9541.method_43999(new ItemStack(class_4897.field_25226), var13));
          var14.field_41755 -= -20.0F;
          var14.method_26161(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
          if (!this.method_37378()) {

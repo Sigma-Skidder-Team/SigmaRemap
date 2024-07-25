@@ -27,15 +27,15 @@ public class class_6900 extends class_9873 {
                class_7860.method_35561(var1, class_7860.field_39986, this.field_35474);
                return var1;
             } else {
-               class_3111.method_14317("Field not found: TileEntityBedRenderer.legModels");
+               Config.method_14317("Field not found: TileEntityBedRenderer.legModels");
                return null;
             }
          } else {
-            class_3111.method_14317("Field not found: TileEntityBedRenderer.footModel");
+            Config.method_14317("Field not found: TileEntityBedRenderer.footModel");
             return null;
          }
       } else {
-         class_3111.method_14317("Field not found: TileEntityBedRenderer.head");
+         Config.method_14317("Field not found: TileEntityBedRenderer.head");
          return null;
       }
    }

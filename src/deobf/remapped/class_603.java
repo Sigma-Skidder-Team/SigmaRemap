@@ -7,7 +7,7 @@ public class class_603 extends class_2451 {
       super(var1);
    }
 
-   public class_6749 method_2819(World var1, class_6098 var2, class_5834 var3) {
+   public class_6749 method_2819(World var1, ItemStack var2, class_5834 var3) {
       class_581 var6 = new class_581(var1, var3);
       var6.method_2748(var2);
       return var6;

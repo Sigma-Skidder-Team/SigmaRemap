@@ -6,7 +6,7 @@ public class class_4790 implements class_1979 {
 
    @Override
    public int method_9095() {
-      return class_3111.method_14242(this.field_23956.method_17399(), 0);
+      return Config.method_14242(this.field_23956.method_17399(), 0);
    }
 
    @Override

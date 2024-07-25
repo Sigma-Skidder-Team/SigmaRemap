@@ -20,7 +20,7 @@ public class class_8421 {
    private static final int field_43073 = 13;
    private static final int field_43060 = 8;
    private static final int field_43061 = 8;
-   private static final class_7821<class_6098> field_43074 = (class_7821<class_6098>)class_7860.field_40217.method_7979();
+   private static final class_7821<ItemStack> field_43074 = (class_7821<ItemStack>)class_7860.field_40217.method_7979();
    private static boolean field_43059;
 
    public static void method_38758(Entity var0, WorldRenderer var1) {
@@ -68,18 +68,18 @@ public class class_8421 {
 
          try {
             Identifier var5 = new Identifier(var4, "optifine/dynamic_lights.properties");
-            InputStream var6 = class_3111.method_14374(var5);
+            InputStream var6 = Config.method_14374(var5);
             method_38762(var6, var5.toString(), var4);
          } catch (IOException var7) {
          }
       }
 
       if (field_43065.size() > 0) {
-         class_3111.method_14277("DynamicLights entities: " + field_43065.size());
+         Config.method_14277("DynamicLights entities: " + field_43065.size());
       }
 
       if (field_43069.size() > 0) {
-         class_3111.method_14277("DynamicLights items: " + field_43069.size());
+         Config.method_14277("DynamicLights items: " + field_43069.size());
       }
    }
 
@@ -89,23 +89,23 @@ public class class_8421 {
             class_8407 var5 = new class_8407();
             var5.load(var0);
             var0.close();
-            class_3111.method_14277("DynamicLights: Parsing " + var1);
+            Config.method_14277("DynamicLights: Parsing " + var1);
             class_6284 var6 = new class_6284("DynamicLights");
             method_38759(var5.getProperty("entities"), field_43065, new class_4260(), var6, var1, var2);
             method_38759(var5.getProperty("items"), field_43069, new class_438(), var6, var1, var2);
          } catch (IOException var7) {
-            class_3111.method_14317("DynamicLights: Error reading " + var1);
+            Config.method_14317("DynamicLights: Error reading " + var1);
          }
       }
    }
 
    private static <T> void method_38759(String var0, Map<T, Integer> var1, class_9434<T> var2, class_6284 var3, String var4, String var5) {
       if (var0 != null) {
-         String[] var8 = class_3111.method_14302(var0, " ");
+         String[] var8 = Config.method_14302(var0, " ");
 
          for (int var9 = 0; var9 < var8.length; var9++) {
             String var10 = var8[var9];
-            String[] var11 = class_3111.method_14302(var10, ":");
+            String[] var11 = Config.method_14302(var10, ":");
             if (var11.length == 2) {
                String var12 = var11[0];
                String var13 = var11[1];
@@ -159,7 +159,7 @@ public class class_8421 {
 
    public static int method_38766(Entity var0, int var1) {
       double var4 = method_38770(var0.method_37075());
-      if (var0 == class_3111.method_14327().field_9632) {
+      if (var0 == Config.method_14327().thePlayer) {
          double var6 = (double)method_38772(var0);
          var4 = Math.max(var4, var6);
       }
@@ -209,10 +209,10 @@ public class class_8421 {
          }
       }
 
-      return class_3111.method_14261(var3, 0.0, 15.0);
+      return Config.method_14261(var3, 0.0, 15.0);
    }
 
-   public static int method_38771(class_6098 var0) {
+   public static int method_38771(ItemStack var0) {
       if (var0 != null) {
          class_2451 var3 = var0.method_27960();
          if (var3 instanceof class_6201) {
@@ -253,7 +253,7 @@ public class class_8421 {
    }
 
    public static int method_38772(Entity var0) {
-      if (var0 == class_3111.method_14327().method_8516() && !class_3111.method_14451()) {
+      if (var0 == Config.method_14327().getRenderViewEntity() && !Config.method_14451()) {
          return 0;
       } else {
          if (var0 instanceof class_704) {
@@ -288,16 +288,16 @@ public class class_8421 {
                               return 0;
                            } else {
                               class_91 var16 = (class_91)var0;
-                              class_6098 var18 = method_38774(var16);
+                              ItemStack var18 = method_38774(var16);
                               return method_38771(var18);
                            }
                         } else {
                            class_5834 var15 = (class_5834)var0;
-                           class_6098 var17 = var15.method_26446();
+                           ItemStack var17 = var15.method_26446();
                            int var5 = method_38771(var17);
-                           class_6098 var6 = var15.method_26568();
+                           ItemStack var6 = var15.method_26568();
                            int var7 = method_38771(var6);
-                           class_6098 var8 = var15.method_26520(class_6943.field_35704);
+                           ItemStack var8 = var15.method_26520(class_6943.field_35704);
                            int var9 = method_38771(var8);
                            int var10 = Math.max(var5, var7);
                            return Math.max(var10, var9);
@@ -347,7 +347,7 @@ public class class_8421 {
       }
    }
 
-   public static class_6098 method_38774(class_91 var0) {
-      return var0.method_37372().<class_6098>method_36640(field_43074);
+   public static ItemStack method_38774(class_91 var0) {
+      return var0.method_37372().<ItemStack>method_36640(field_43074);
    }
 }

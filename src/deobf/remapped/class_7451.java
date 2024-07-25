@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class class_7451 extends class_4641 {
    private static final Logger field_37973 = LogManager.getLogger();
-   private static final class_7821<class_6098> field_37975 = class_8073.<class_6098>method_36641(class_7451.class, class_2734.field_13357);
+   private static final class_7821<ItemStack> field_37975 = class_8073.<ItemStack>method_36641(class_7451.class, class_2734.field_13357);
    private static final class_7821<Integer> field_37978 = class_8073.<Integer>method_36641(class_7451.class, class_2734.field_13366);
    private float field_37977 = 1.0F;
    private boolean field_37976;
@@ -27,7 +27,7 @@ public class class_7451 extends class_4641 {
 
    @Override
    public void method_37329() {
-      this.method_37372().method_36634(field_37975, class_6098.field_31203);
+      this.method_37372().method_36634(field_37975, ItemStack.EMPTY);
       this.method_37372().method_36634(field_37978, 0);
    }
 
@@ -171,8 +171,8 @@ public class class_7451 extends class_4641 {
 
    private void method_33908(Entity var1, boolean var2) {
       if (!this.field_37976) {
-         class_6098 var5 = this.method_33905();
-         this.method_33912(class_6098.field_31203);
+         ItemStack var5 = this.method_33905();
+         this.method_33912(ItemStack.EMPTY);
          if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
             if (var1 instanceof class_704) {
                class_704 var6 = (class_704)var1;
@@ -199,7 +199,7 @@ public class class_7451 extends class_4641 {
       }
    }
 
-   private void method_33911(class_6098 var1) {
+   private void method_33911(ItemStack var1) {
       if (var1.method_27960() == class_4897.field_25262) {
          class_2134 var4 = class_2143.method_10005(var1, this.field_41768);
          var4.method_9964(this.field_22661, this.method_37145());
@@ -209,15 +209,15 @@ public class class_7451 extends class_4641 {
       var1.method_27992((Entity)null);
    }
 
-   public class_6098 method_33905() {
-      return this.method_37372().<class_6098>method_36640(field_37975);
+   public ItemStack method_33905() {
+      return this.method_37372().<ItemStack>method_36640(field_37975);
    }
 
-   public void method_33912(class_6098 var1) {
+   public void method_33912(ItemStack var1) {
       this.method_33906(var1, true);
    }
 
-   public void method_33906(class_6098 var1, boolean var2) {
+   public void method_33906(ItemStack var1, boolean var2) {
       if (!var1.method_28022()) {
          var1 = var1.method_27973();
          var1.method_28017(1);
@@ -235,7 +235,7 @@ public class class_7451 extends class_4641 {
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       if (var1 != 0) {
          return false;
       } else {
@@ -247,7 +247,7 @@ public class class_7451 extends class_4641 {
    @Override
    public void method_37191(class_7821<?> var1) {
       if (var1.equals(field_37975)) {
-         class_6098 var4 = this.method_33905();
+         ItemStack var4 = this.method_33905();
          if (!var4.method_28022() && var4.method_27961() != this) {
             var4.method_27992(this);
          }
@@ -288,13 +288,13 @@ public class class_7451 extends class_4641 {
       super.method_37314(var1);
       class_5734 var4 = var1.method_25937("Item");
       if (var4 != null && !var4.method_25940()) {
-         class_6098 var5 = class_6098.method_28015(var4);
+         ItemStack var5 = ItemStack.method_28015(var4);
          if (var5.method_28022()) {
             field_37973.warn("Unable to load item from: {}", var4);
          }
 
-         class_6098 var6 = this.method_33905();
-         if (!var6.method_28022() && !class_6098.method_27982(var5, var6)) {
+         ItemStack var6 = this.method_33905();
+         if (!var6.method_28022() && !ItemStack.method_27982(var5, var6)) {
             this.method_33911(var6);
          }
 
@@ -312,7 +312,7 @@ public class class_7451 extends class_4641 {
 
    @Override
    public class_6910 method_37128(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       boolean var6 = !this.method_33905().method_28022();
       boolean var7 = !var5.method_28022();
       if (!this.field_37976) {

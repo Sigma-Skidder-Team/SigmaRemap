@@ -19,7 +19,7 @@ public class class_9742 extends class_2451 {
    }
 
    @Override
-   public boolean method_11223(class_6098 var1, class_6098 var2) {
+   public boolean method_11223(ItemStack var1, ItemStack var2) {
       return this.field_49502.method_6962().test(var2) || super.method_11223(var1, var2);
    }
 }

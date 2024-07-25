@@ -29,13 +29,13 @@ public class class_8387 extends class_7430 {
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       MinecraftClient var7 = MinecraftClient.getInstance();
-      var7.method_8577().method_35674(field_42906);
-      class_3542.method_16428();
+      var7.getTextureManager().bindTexture(field_42906);
+      RenderSystem.enableDepthTest();
       TextRenderer var8 = var7.textRenderer;
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, this.field_36680);
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16398(class_5033.field_26042, class_8535.field_43697);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, this.field_36680);
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
       method_9778(var1, this.field_36670, this.field_36674, !this.method_32691() ? 0.0F : 20.0F, !this.field_42907 ? 0.0F : 20.0F, 20, this.field_36681, 64, 64);
       this.method_32706(var1, var7, var2, var3);
       if (this.field_42905) {

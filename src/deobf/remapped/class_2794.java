@@ -33,7 +33,7 @@ public class class_2794 extends Screen {
             98,
             20,
             new TranslationTextComponent("gui.advancements"),
-            var1 -> this.field_943.method_8609(new class_9044(this.field_943.field_9632.field_30532.method_4796()))
+            var1 -> this.field_943.method_8609(new class_9044(this.field_943.thePlayer.field_30532.method_4796()))
          )
       );
       this.<class_9521>method_1186(
@@ -43,7 +43,7 @@ public class class_2794 extends Screen {
             98,
             20,
             new TranslationTextComponent("gui.stats"),
-            var1 -> this.field_943.method_8609(new class_3231(this, this.field_943.field_9632.method_27331()))
+            var1 -> this.field_943.method_8609(new class_3231(this, this.field_943.thePlayer.method_27331()))
          )
       );
       String var5 = !class_7665.method_34674().isStable() ? "https://aka.ms/snapshotfeedback?ref=game" : "https://aka.ms/javafeedback?ref=game";

@@ -591,8 +591,8 @@ public class class_7039 extends class_1094 {
       }
 
       if (this.field_36291 && !this.field_36301 && this.method_32211()) {
-         this.field_943.method_8577().method_35674(field_36352);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_943.getTextureManager().bindTexture(field_36352);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          byte var10 = 8;
          byte var8 = 8;
          byte var9 = 0;
@@ -600,7 +600,7 @@ public class class_7039 extends class_1094 {
             var9 = 8;
          }
 
-         class_2089.method_9778(
+         AbstractGui.method_9778(
             var1,
             this.field_36325.field_36670 + this.field_36325.method_32699() - 8 - 4,
             this.field_36325.field_36674 + this.field_36325.method_32695() / 2 - 4,
@@ -615,12 +615,12 @@ public class class_7039 extends class_1094 {
    }
 
    private void method_32262(class_7966 var1, int var2, int var3) {
-      this.field_943.method_8577().method_35674(field_36331);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16438();
-      class_3542.method_16403(0.5F, 0.5F, 0.5F);
-      class_2089.method_9778(var1, var2 * 2, var3 * 2 - 5, 0.0F, 0.0F, 200, 50, 200, 50);
-      class_3542.method_16489();
+      this.field_943.getTextureManager().bindTexture(field_36331);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16403(0.5F, 0.5F, 0.5F);
+      AbstractGui.method_9778(var1, var2 * 2, var3 * 2 - 5, 0.0F, 0.0F, 200, 50, 200, 50);
+      RenderSystem.method_16489();
    }
 
    @Override
@@ -662,20 +662,20 @@ public class class_7039 extends class_1094 {
          this.field_36308 = true;
       }
 
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 0.7F);
-      class_3542.method_16488();
-      this.field_943.method_8577().method_35674(field_36288);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 0.7F);
+      RenderSystem.enableBlend();
+      this.field_943.getTextureManager().bindTexture(field_36288);
       boolean var10 = false;
       byte var9 = 32;
-      class_2089.method_9778(var1, 0, 32, 0.0F, 0.0F, this.field_941, this.field_940 - 40 - 32, 310, 166);
-      class_3542.method_16448();
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_36353);
-      class_2089.method_9778(var1, var6, var7, 0.0F, 0.0F, 310, 166, 310, 166);
+      AbstractGui.method_9778(var1, 0, 32, 0.0F, 0.0F, this.field_941, this.field_940 - 40 - 32, 310, 166);
+      RenderSystem.method_16448();
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_36353);
+      AbstractGui.method_9778(var1, var6, var7, 0.0F, 0.0F, 310, 166, 310, 166);
       if (!field_36363.isEmpty()) {
-         this.field_943.method_8577().method_35674(field_36363.get(this.field_36289));
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_2089.method_9778(var1, var6 + 7, var7 + 7, 0.0F, 0.0F, 195, 152, 195, 152);
+         this.field_943.getTextureManager().bindTexture(field_36363.get(this.field_36289));
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         AbstractGui.method_9778(var1, var6 + 7, var7 + 7, 0.0F, 0.0F, 195, 152, 195, 152);
          if (this.field_36324 % 95 >= 5) {
             this.field_36340 = false;
          } else if (!this.field_36340) {
@@ -710,11 +710,11 @@ public class class_7039 extends class_1094 {
          this.method_9772(var1, var4 - 2, var5 + 17, var4 + 18, var5 + 18, var14, var14);
       }
 
-      this.field_943.method_8577().method_35674(field_36299);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_36299);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       boolean var20 = var7 && var6;
       float var22 = !var20 ? 0.0F : 16.0F;
-      class_2089.method_9778(var1, var4, var5 - 6, var22, 0.0F, 15, 25, 31, 25);
+      AbstractGui.method_9778(var1, var4, var5 - 6, var22, 0.0F, 15, 25, 31, 25);
       boolean var15 = var7 && var10 != 0;
       if (var15) {
          int var16 = (Math.min(var10, 6) - 1) * 8;
@@ -722,10 +722,10 @@ public class class_7039 extends class_1094 {
             Math.max(0.0F, Math.max(class_9299.method_42818((float)(10 + this.field_36364) * 0.57F), class_9299.method_42840((float)this.field_36364 * 0.35F)))
                * -6.0F
          );
-         this.field_943.method_8577().method_35674(field_36317);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_943.getTextureManager().bindTexture(field_36317);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var18 = !var11 ? 0.0F : 8.0F;
-         class_2089.method_9778(var1, var4 + 4, var5 + 4 + var17, (float)var16, var18, 8, 8, 48, 16);
+         AbstractGui.method_9778(var1, var4 + 4, var5 + 4 + var17, (float)var16, var18, 8, 8, 48, 16);
       }
 
       int var23 = var2 + 12;
@@ -781,21 +781,21 @@ public class class_7039 extends class_1094 {
    }
 
    private void method_32283(class_7966 var1, int var2, int var3, int var4, int var5) {
-      this.field_943.method_8577().method_35674(field_36369);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      this.field_943.getTextureManager().bindTexture(field_36369);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field_940 - 40 && var5 > 32 && !this.method_32211()) {
          this.method_32253(field_36349);
       }
    }
 
    private void method_32232(class_7966 var1, int var2, int var3, int var4, int var5, int var6) {
-      this.field_943.method_8577().method_35674(field_36309);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_36309);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field_36364 % 20 >= 10) {
-         class_2089.method_9778(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method_9778(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
       } else {
-         class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
       }
 
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field_940 - 40 && var5 > 32 && !this.method_32211()) {
@@ -812,18 +812,18 @@ public class class_7039 extends class_1094 {
    }
 
    private void method_32323(class_7966 var1, int var2, int var3, int var4, int var5) {
-      this.field_943.method_8577().method_35674(field_36328);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      this.field_943.getTextureManager().bindTexture(field_36328);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field_940 - 40 && var5 > 32 && !this.method_32211()) {
          this.method_32253(field_36348);
       }
    }
 
    private void method_32213(class_7966 var1, int var2, int var3, int var4, int var5) {
-      this.field_943.method_8577().method_35674(field_36318);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      this.field_943.getTextureManager().bindTexture(field_36318);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27 && var5 < this.field_940 - 40 && var5 > 32 && !this.method_32211()) {
          this.method_32253(field_36321);
       }
@@ -835,10 +835,10 @@ public class class_7039 extends class_1094 {
          var8 = true;
       }
 
-      this.field_943.method_8577().method_35674(field_36306);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_36306);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
-      class_2089.method_9778(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
+      AbstractGui.method_9778(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
       if (var8) {
          this.method_32253(field_36298);
          this.field_36322 = class_270.field_969;
@@ -851,10 +851,10 @@ public class class_7039 extends class_1094 {
          var8 = true;
       }
 
-      this.field_943.method_8577().method_35674(field_36343);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_36343);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = !var8 ? 0.0F : 28.0F;
-      class_2089.method_9778(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
+      AbstractGui.method_9778(var1, var2, var3, var9, 0.0F, 28, 28, 56, 28);
       if (var8) {
          this.method_32253(field_36341);
          this.field_36322 = class_270.field_970;
@@ -894,10 +894,10 @@ public class class_7039 extends class_1094 {
          var9 = true;
       }
 
-      this.field_943.method_8577().method_35674(field_36316);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_36316);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = !var6 ? 0.0F : 20.0F;
-      class_2089.method_9778(var1, var4, var5, var10, 0.0F, 20, 20, 40, 20);
+      AbstractGui.method_9778(var1, var4, var5, var10, 0.0F, 20, 20, 40, 20);
       if (var9) {
          this.method_32253(field_36339);
       }
@@ -909,16 +909,16 @@ public class class_7039 extends class_1094 {
          var11 = true;
       }
 
-      this.field_943.method_8577().method_35674(field_36367);
+      this.field_943.getTextureManager().bindTexture(field_36367);
       if (!var8) {
-         class_3542.method_16480(0.5F, 0.5F, 0.5F, 1.0F);
+         RenderSystem.color4f(0.5F, 0.5F, 0.5F, 1.0F);
       } else {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
       boolean var12 = var8 && var7;
       float var13 = !var12 ? 0.0F : 20.0F;
-      class_2089.method_9778(var1, var5, var6, var13, 0.0F, 20, 20, 40, 20);
+      AbstractGui.method_9778(var1, var5, var6, var13, 0.0F, 20, 20, 40, 20);
       if (var11 && var8) {
          this.method_32253(field_36368);
       }
@@ -932,32 +932,32 @@ public class class_7039 extends class_1094 {
                   * -6.0F
             )
             : 0;
-         this.field_943.method_8577().method_35674(field_36317);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_2089.method_9778(var1, var5 + 10, var6 + 2 + var14, 40.0F, 0.0F, 8, 8, 48, 16);
+         this.field_943.getTextureManager().bindTexture(field_36317);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         AbstractGui.method_9778(var1, var5 + 10, var6 + 2 + var14, 40.0F, 0.0F, 8, 8, 48, 16);
       }
    }
 
    private void method_32338(class_7966 var1) {
       String var4 = "LOCAL!";
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16438();
-      class_3542.method_16413((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
-      class_3542.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
-      class_3542.method_16403(1.5F, 1.5F, 1.5F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16413((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
+      RenderSystem.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.method_16403(1.5F, 1.5F, 1.5F);
       this.field_948.method_45385(var1, "LOCAL!", 0.0F, 0.0F, 8388479);
-      class_3542.method_16489();
+      RenderSystem.method_16489();
    }
 
    private void method_32310(class_7966 var1) {
       String var4 = "STAGE!";
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16438();
-      class_3542.method_16413((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
-      class_3542.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
-      class_3542.method_16403(1.5F, 1.5F, 1.5F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16413((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
+      RenderSystem.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.method_16403(1.5F, 1.5F, 1.5F);
       this.field_948.method_45385(var1, "STAGE!", 0.0F, 0.0F, -256);
-      class_3542.method_16489();
+      RenderSystem.method_16489();
    }
 
    public class_7039 method_32264() {

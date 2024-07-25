@@ -54,9 +54,9 @@ public class class_7804 extends class_4314 {
    }
 
    @Override
-   public List<class_6098> method_10796(class_2522 var1, class_8480 var2) {
+   public List<ItemStack> method_10796(class_2522 var1, class_8480 var2) {
       class_3420 var5 = this.method_35383(var2.method_39060(), new class_1331(var2.<class_1343>method_39062(class_8712.field_44671)));
-      return var5 != null ? var5.method_15792().method_8333(var2) : Collections.<class_6098>emptyList();
+      return var5 != null ? var5.method_15792().method_8333(var2) : Collections.<ItemStack>emptyList();
    }
 
    @Override
@@ -77,8 +77,8 @@ public class class_7804 extends class_4314 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return class_6098.field_31203;
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return ItemStack.EMPTY;
    }
 
    @Override

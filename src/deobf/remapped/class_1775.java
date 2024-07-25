@@ -327,7 +327,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return field_9091.test(var1);
    }
 
@@ -367,7 +367,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
 
             return var6;
          } else {
-            class_6098 var7 = var1.method_26617(var2);
+            ItemStack var7 = var1.method_26617(var2);
             return var7.method_27960() != class_4897.field_24836 ? class_6910.field_35521 : var7.method_28000(var1, this, var2);
          }
       }
@@ -394,7 +394,7 @@ public class class_1775 extends class_5467 implements class_8190, class_9378 {
          } else {
             class_5886 var10 = class_6629.field_34234.method_30484(var1.method_7066());
             var8 = this.method_7927(var1, var2, var10, new class_2582(class_2811.method_12789(this.field_41717), false));
-            var10.method_37349(class_6943.field_35707, new class_6098(class_4897.field_24651));
+            var10.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24651));
             this.method_43358((class_562)null);
          }
 

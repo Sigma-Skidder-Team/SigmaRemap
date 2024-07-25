@@ -10,7 +10,7 @@ public class class_9782 {
 
    public class_9782() {
       this.field_49649 = new Timer();
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
    }
 
    @EventListen
@@ -27,8 +27,8 @@ public class class_9782 {
 
                   for (Entity var8 : class_314.method_1440()) {
                      if (var8 instanceof class_704
-                        && var8 != this.field_49645.field_9632
-                        && (var6 == null || var6.method_37175(this.field_49645.field_9632) > var8.method_37175(this.field_49645.field_9632))) {
+                        && var8 != this.field_49645.thePlayer
+                        && (var6 == null || var6.method_37175(this.field_49645.thePlayer) > var8.method_37175(this.field_49645.thePlayer))) {
                         var6 = var8;
                      }
                   }
@@ -47,11 +47,11 @@ public class class_9782 {
                      try {
                         class_4714 var4x = new class_4714(this.field_49648.method_37302(), this.field_49648.method_37309(), this.field_49648.method_37156());
                         class_4714 var5x = new class_4714(
-                           this.field_49645.field_9632.method_37302(), this.field_49645.field_9632.method_37309(), this.field_49645.field_9632.method_37156()
+                           this.field_49645.thePlayer.method_37302(), this.field_49645.thePlayer.method_37309(), this.field_49645.thePlayer.method_37156()
                         );
                         ArrayList var6x = class_6306.method_28770(var5x, var4x);
                         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Teleport", "Successfully teleported !"));
-                        Entity var7 = this.field_49645.field_9632.method_37243();
+                        Entity var7 = this.field_49645.thePlayer.method_37243();
 
                         for (class_4714 var9x : var6x) {
                            if (var7 != null) {
@@ -61,7 +61,7 @@ public class class_9782 {
                               this.field_49645.method_8614().method_4813(new class_8125(false, false));
                               this.field_49645
                                  .method_8614()
-                                 .method_4813(new class_3616(this.field_49645.field_9632.field_41701, this.field_49645.field_9632.field_41755, false));
+                                 .method_4813(new class_3616(this.field_49645.thePlayer.field_41701, this.field_49645.thePlayer.field_41755, false));
                               this.field_49645.method_8614().method_4813(new class_758(0.0F, 1.0F, false, false));
                               class_9149 var10 = new class_9149(
                                  this.field_49645.field_9601, var9x.method_21803() + 0.5, var9x.method_21801(), var9x.method_21799() + 0.5
@@ -84,7 +84,7 @@ public class class_9782 {
                            this.field_49645.method_8614().method_4813(new class_9515(var4x.field_22878, var4x.field_22880, var4x.field_22879, false));
                         }
 
-                        this.field_49645.field_9632.method_37256(var4x.field_22878, var4x.field_22880, var4x.field_22879);
+                        this.field_49645.thePlayer.method_37256(var4x.field_22878, var4x.field_22880, var4x.field_22879);
                         this.field_49648 = null;
                         if (var4) {
                            class_964 var12 = new class_964();
@@ -116,9 +116,9 @@ public class class_9782 {
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Teleport", "Target lost"));
             this.field_49646 = 0;
             this.field_49648 = null;
-         } else if (!this.field_49645.field_9632.method_37252()) {
+         } else if (!this.field_49645.thePlayer.method_37252()) {
             double var4 = this.field_49648.method_37309() - this.field_49648.field_41713;
-            if (var4 < -2.0 && class_314.method_1432(this.field_49648) && this.field_49648.method_37309() - this.field_49645.field_9632.method_37309() < -10.0) {
+            if (var4 < -2.0 && class_314.method_1432(this.field_49648) && this.field_49648.method_37309() - this.field_49645.thePlayer.method_37309() < -10.0) {
                this.field_49646 = 0;
                this.field_49648 = null;
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Teleport", "Target seems to be falling in void"));

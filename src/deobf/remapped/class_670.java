@@ -127,7 +127,7 @@ public class class_670 extends class_3077 {
    }
 
    @Override
-   public float method_11235(class_6098 var1, class_2522 var2) {
+   public float method_11235(ItemStack var1, class_2522 var2) {
       class_5371 var5 = var2.method_8362();
       return var5 != class_5371.field_27408 && var5 != class_5371.field_27435 && var5 != class_5371.field_27438
          ? super.method_11235(var1, var2)

@@ -27,11 +27,11 @@ public class class_4537 implements class_2995 {
       }
 
       if (this.field_22140 != null) {
-         class_3542.method_16488();
-         class_3542.method_16437();
-         class_3542.method_16484(2.0F);
-         class_3542.method_16354();
-         class_3542.method_16387(false);
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
+         RenderSystem.method_16484(2.0F);
+         RenderSystem.method_16354();
+         RenderSystem.method_16387(false);
          Map var26 = (Map)class_4812.method_22182(this.field_22140).getNow((Map)null);
          double var14 = this.field_22142.gameRenderer.method_35949().method_41627().field_7333 * 0.85;
 
@@ -51,9 +51,9 @@ public class class_4537 implements class_2995 {
             }
          }
 
-         class_3542.method_16387(true);
-         class_3542.method_16432();
-         class_3542.method_16448();
+         RenderSystem.method_16387(true);
+         RenderSystem.method_16432();
+         RenderSystem.method_16448();
       }
    }
 }

@@ -10,7 +10,7 @@ public class class_9885 {
 
    public static void method_45538(class_7373 var0) {
       if (var0 != null) {
-         class_3111.method_14277(
+         Config.method_14277(
             "Model: "
                + var0
                + ", ao: "
@@ -42,7 +42,7 @@ public class class_9885 {
    }
 
    public static void method_45536(String var0, class_5024 var1, String var2) {
-      class_3111.method_14277(
+      Config.method_14277(
          var2
             + "Quad: "
             + var1.getClass().getName()
@@ -60,7 +60,7 @@ public class class_9885 {
 
    public static void method_45540(int[] var0, String var1) {
       int var4 = var0.length / 4;
-      class_3111.method_14277(var1 + "Length: " + var0.length + ", step: " + var4);
+      Config.method_14277(var1 + "Length: " + var0.length + ", step: " + var4);
 
       for (int var5 = 0; var5 < 4; var5++) {
          int var6 = var5 * var4;
@@ -70,7 +70,7 @@ public class class_9885 {
          int var10 = var0[var6 + 3];
          float var11 = Float.intBitsToFloat(var0[var6 + 4]);
          float var12 = Float.intBitsToFloat(var0[var6 + 5]);
-         class_3111.method_14277(var1 + var5 + " xyz: " + var7 + "," + var8 + "," + var9 + " col: " + var10 + " u,v: " + var11 + "," + var12);
+         Config.method_14277(var1 + var5 + " xyz: " + var7 + "," + var8 + "," + var9 + " col: " + var10 + " u,v: " + var11 + "," + var12);
       }
    }
 

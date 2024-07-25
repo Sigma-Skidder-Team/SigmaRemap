@@ -6,11 +6,11 @@ public class class_9358 extends class_7157 {
    }
 
    public boolean method_43222(class_6946 var1, World var2) {
-      class_6098 var5 = class_6098.field_31203;
-      class_6098 var6 = class_6098.field_31203;
+      ItemStack var5 = ItemStack.EMPTY;
+      ItemStack var6 = ItemStack.EMPTY;
 
       for (int var7 = 0; var7 < var1.method_31505(); var7++) {
-         class_6098 var8 = var1.method_31498(var7);
+         ItemStack var8 = var1.method_31498(var7);
          if (!var8.method_28022()) {
             if (!(var8.method_27960() instanceof class_1967)) {
                if (var8.method_27960() != class_4897.field_24840) {
@@ -39,12 +39,12 @@ public class class_9358 extends class_7157 {
       return !var5.method_28022() && !var6.method_28022();
    }
 
-   public class_6098 method_43221(class_6946 var1) {
-      class_6098 var4 = class_6098.field_31203;
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_43221(class_6946 var1) {
+      ItemStack var4 = ItemStack.EMPTY;
+      ItemStack var5 = ItemStack.EMPTY;
 
       for (int var6 = 0; var6 < var1.method_31505(); var6++) {
-         class_6098 var7 = var1.method_31498(var6);
+         ItemStack var7 = var1.method_31498(var6);
          if (!var7.method_28022()) {
             if (!(var7.method_27960() instanceof class_1967)) {
                if (var7.method_27960() == class_4897.field_24840) {

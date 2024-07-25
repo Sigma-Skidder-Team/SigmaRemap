@@ -2,7 +2,7 @@ package remapped;
 
 import javax.annotation.Nullable;
 
-public abstract class FocusableGui extends class_2089 implements class_8983 {
+public abstract class FocusableGui extends AbstractGui implements class_8983 {
    private class_5888 field_10912;
    private boolean field_10913;
 

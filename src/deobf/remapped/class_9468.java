@@ -28,13 +28,13 @@ public class class_9468 extends Module {
       if (this.method_42015()) {
          boolean var4 = this.method_42017().getBooleanValueByName("Show Invisibles");
          boolean var5 = this.getBooleanValueByName("Show Health");
-         class_3542.method_16438();
+         RenderSystem.method_16438();
 
          for (Entity var7 : field_48289.keySet()) {
             double[] var8 = field_48289.get(var7);
             double[] var9 = field_48288.get(var7);
             if (var8[3] > 0.0 || var8[3] <= 1.0) {
-               class_3542.method_16438();
+               RenderSystem.method_16438();
                if ((var4 || !var7.method_37109()) && var7 instanceof class_704 && !(var7 instanceof class_5989)) {
                   this.method_43744(var7);
 
@@ -49,13 +49,13 @@ public class class_9468 extends Module {
                         var13 = (float)var9[0] + var12 / 4.0F;
                      }
 
-                     class_3542.method_16438();
-                     class_3542.method_16403(2.0F, 2.0F, 2.0F);
-                     class_3542.method_16489();
+                     RenderSystem.method_16438();
+                     RenderSystem.method_16403(2.0F, 2.0F, 2.0F);
+                     RenderSystem.method_16489();
                      GL11.glEnable(3042);
                      GL11.glDisable(3553);
                      int var15 = -65536;
-                     if (!mc.field_9632.method_26420(var7)) {
+                     if (!client.thePlayer.method_26420(var7)) {
                         var15 = -256;
                      }
 
@@ -95,23 +95,23 @@ public class class_9468 extends Module {
                      float var21 = var11 + (var10 - var11) * var16 * 5.0F * 0.01F;
                      class_73.method_94(var13 - 4.0F, var11 - 1.0F, var13 - 2.0F, var21, var20.getRGB());
                      if ((int)class_9687.method_44787((double)(var16 * 5.0F), 1.0) != 100 && var5) {
-                        class_3542.method_16438();
-                        class_3542.method_16403(2.0F, 2.0F, 2.0F);
+                        RenderSystem.method_16438();
+                        RenderSystem.method_16403(2.0F, 2.0F, 2.0F);
                         String var22 = (int)class_9687.method_44787((double)(var16 * 5.0F), 1.0) + "HP";
-                        class_3542.method_16489();
+                        RenderSystem.method_16489();
                      }
                   } catch (Exception var23) {
                   }
                }
 
-               class_3542.method_16489();
+               RenderSystem.method_16489();
                GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             }
          }
 
          GL11.glScalef(1.0F, 1.0F, 1.0F);
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16489();
+         RenderSystem.method_16489();
       }
    }
 
@@ -197,14 +197,14 @@ public class class_9468 extends Module {
    }
 
    private void method_43745() {
-      double var3 = mc.gameRenderer.method_35949().method_41627().method_61();
-      double var5 = mc.gameRenderer.method_35949().method_41627().method_60();
-      double var7 = mc.gameRenderer.method_35949().method_41627().method_62();
+      double var3 = client.gameRenderer.method_35949().method_41627().method_61();
+      double var5 = client.gameRenderer.method_35949().method_41627().method_60();
+      double var7 = client.gameRenderer.method_35949().method_41627().method_62();
       field_48289.clear();
       field_48288.clear();
-      float var9 = mc.theTimer.field_32600;
+      float var9 = client.theTimer.field_32600;
 
-      for (Object var11 : mc.field_9601.method_736()) {
+      for (Object var11 : client.field_9601.method_736()) {
          if (var11 instanceof class_704 && !(var11 instanceof class_5989)) {
             class_704 var12 = (class_704)var11;
             double var13 = var12.field_41713 + (var12.method_37309() - var12.field_41713) * (double)var9 - var5;
@@ -235,13 +235,13 @@ public class class_9468 extends Module {
 
    private void method_43744(Entity var1) {
       float var4 = 1.0F;
-      float var5 = (float)((double)var4 * (mc.gameOptions.field_45543 / mc.gameOptions.field_45543));
+      float var5 = (float)((double)var4 * (client.gameOptions.field_45543 / client.gameOptions.field_45543));
       if (this.field_48287 == 0.0 || Double.isNaN(this.field_48287)) {
          this.field_48287 = (double)var5;
       }
 
       this.field_48287 = this.field_48287 + ((double)var5 - this.field_48287) / ((double) MinecraftClient.method_8501() * 0.7);
       var4 = (float)((double)var4 * this.field_48287);
-      class_3542.method_16403(var4, var4, var4);
+      RenderSystem.method_16403(var4, var4, var4);
    }
 }

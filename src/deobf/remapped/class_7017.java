@@ -6,14 +6,14 @@ public class class_7017 extends class_5348 {
    public class_7017(float var1) {
       super("alpha", () -> {
          if (!(var1 > 0.0F)) {
-            class_3542.method_16458();
+            RenderSystem.method_16458();
          } else {
-            class_3542.method_16374();
-            class_3542.method_16442(516, var1);
+            RenderSystem.enableAlphaTest();
+            RenderSystem.method_16442(516, var1);
          }
       }, () -> {
-         class_3542.method_16458();
-         class_3542.method_16433();
+         RenderSystem.method_16458();
+         RenderSystem.method_16433();
       });
       this.field_35967 = var1;
    }

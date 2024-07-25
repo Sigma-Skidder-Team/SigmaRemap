@@ -133,7 +133,7 @@ public abstract class class_5877 extends class_380 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       if (this.method_26772(var1, var2, var3)) {
          var1.method_43367().method_14011(var2, this, 1);
       }

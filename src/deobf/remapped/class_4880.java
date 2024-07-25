@@ -23,7 +23,7 @@ public class class_4880 implements class_5100 {
                class_2614.method_11860(this.field_24276, var10);
             }
          } catch (Exception var11) {
-            class_3111.method_14277("Error parsing configuration: " + var1 + ", " + var11.getClass().getName() + ": " + var11.getMessage());
+            Config.method_14277("Error parsing configuration: " + var1 + ", " + var11.getClass().getName() + ": " + var11.getMessage());
          }
       }
    }

@@ -24,7 +24,7 @@ public class class_1240 {
                            if (!var0.equals("screen")) {
                               if (!var0.equals("overlay")) {
                                  if (!var0.equals("replace")) {
-                                    class_3111.method_14317("Unknown blend: " + var0);
+                                    Config.method_14317("Unknown blend: " + var0);
                                     return 1;
                                  } else {
                                     return 8;
@@ -61,66 +61,66 @@ public class class_1240 {
    public static void method_5531(int var0, float var1) {
       switch (var0) {
          case 0:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(770, 771);
-            class_1920.method_8789(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(770, 771);
+            GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var1);
             break;
          case 1:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(770, 1);
-            class_1920.method_8789(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(770, 1);
+            GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var1);
             break;
          case 2:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(775, 0);
-            class_1920.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(775, 0);
+            GlStateManager.method_8789(var1, var1, var1, 1.0F);
             break;
          case 3:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(774, 771);
-            class_1920.method_8789(var1, var1, var1, var1);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(774, 771);
+            GlStateManager.method_8789(var1, var1, var1, var1);
             break;
          case 4:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(1, 1);
-            class_1920.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(1, 1);
+            GlStateManager.method_8789(var1, var1, var1, 1.0F);
             break;
          case 5:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(0, 769);
-            class_1920.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(0, 769);
+            GlStateManager.method_8789(var1, var1, var1, 1.0F);
             break;
          case 6:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(1, 769);
-            class_1920.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(1, 769);
+            GlStateManager.method_8789(var1, var1, var1, 1.0F);
             break;
          case 7:
-            class_1920.method_8801();
-            class_1920.method_8829();
-            class_1920.method_8787(774, 768);
-            class_1920.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.method_8801();
+            GlStateManager.method_8829();
+            GlStateManager.method_8787(774, 768);
+            GlStateManager.method_8789(var1, var1, var1, 1.0F);
             break;
          case 8:
-            class_1920.method_8741();
-            class_1920.method_8775();
-            class_1920.method_8789(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.enableAlphaTest();
+            GlStateManager.method_8775();
+            GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var1);
       }
 
-      class_1920.method_8843();
+      GlStateManager.method_8843();
    }
 
    public static void method_5533(float var0) {
-      class_1920.method_8801();
-      class_1920.method_8829();
-      class_1920.method_8787(770, 1);
-      class_1920.method_8789(1.0F, 1.0F, 1.0F, var0);
+      GlStateManager.method_8801();
+      GlStateManager.method_8829();
+      GlStateManager.method_8787(770, 1);
+      GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var0);
    }
 }

@@ -15,14 +15,14 @@ public class class_816 implements class_8147 {
       ByteBuffer var6 = BufferUtils.createByteBuffer(var5.length);
       var6.put(var5);
       ((Buffer)var6).flip();
-      class_1920.method_8791(this.field_4332);
+      GlStateManager.method_8791(this.field_4332);
       class_5525.method_25072();
       GL11.glTexImage2D(3553, 0, 6407, var1, var2, 0, 6407, 5121, var6);
       GL11.glTexParameteri(3553, 10242, 10497);
       GL11.glTexParameteri(3553, 10243, 10497);
       GL11.glTexParameteri(3553, 10240, 9729);
       GL11.glTexParameteri(3553, 10241, 9729);
-      class_1920.method_8791(0);
+      GlStateManager.method_8791(0);
    }
 
    public int method_3572() {
@@ -30,7 +30,7 @@ public class class_816 implements class_8147 {
    }
 
    public void 괠欫蛊浦室敤() {
-      class_1920.method_8904(this.field_4332);
+      GlStateManager.method_8904(this.field_4332);
       this.field_4332 = 0;
    }
 

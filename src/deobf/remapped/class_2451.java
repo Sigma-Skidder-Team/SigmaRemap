@@ -48,7 +48,7 @@ public class class_2451 implements class_8525 {
       this.field_12175 = class_317.method_1484(var1);
    }
 
-   public void method_11228(World var1, class_5834 var2, class_6098 var3, int var4) {
+   public void method_11228(World var1, class_5834 var2, ItemStack var3, int var4) {
    }
 
    public boolean method_11215(class_5734 var1) {
@@ -68,25 +68,25 @@ public class class_2451 implements class_8525 {
       return class_6910.field_35521;
    }
 
-   public float method_11235(class_6098 var1, class_2522 var2) {
+   public float method_11235(ItemStack var1, class_2522 var2) {
       return 1.0F;
    }
 
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
       if (!this.method_11247()) {
-         return class_954.<class_6098>method_4207(var2.method_26617(var3));
+         return class_954.<ItemStack>method_4207(var2.method_26617(var3));
       } else {
-         class_6098 var6 = var2.method_26617(var3);
+         ItemStack var6 = var2.method_26617(var3);
          if (!var2.method_3231(this.method_11227().method_38403())) {
-            return class_954.<class_6098>method_4202(var6);
+            return class_954.<ItemStack>method_4202(var6);
          } else {
             var2.method_26462(var3);
-            return class_954.<class_6098>method_4206(var6);
+            return class_954.<ItemStack>method_4206(var6);
          }
       }
    }
 
-   public class_6098 method_11242(class_6098 var1, World var2, class_5834 var3) {
+   public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
       return !this.method_11247() ? var1 : var3.method_26426(var2, var1);
    }
 
@@ -102,11 +102,11 @@ public class class_2451 implements class_8525 {
       return this.field_12176 > 0;
    }
 
-   public boolean method_11246(class_6098 var1, class_5834 var2, class_5834 var3) {
+   public boolean method_11246(ItemStack var1, class_5834 var2, class_5834 var3) {
       return false;
    }
 
-   public boolean method_11209(class_6098 var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
       return false;
    }
 
@@ -114,7 +114,7 @@ public class class_2451 implements class_8525 {
       return false;
    }
 
-   public class_6910 method_11202(class_6098 var1, class_704 var2, class_5834 var3, class_2584 var4) {
+   public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, class_2584 var4) {
       return class_6910.field_35521;
    }
 
@@ -139,7 +139,7 @@ public class class_2451 implements class_8525 {
       return this.method_11212();
    }
 
-   public String method_11217(class_6098 var1) {
+   public String method_11217(ItemStack var1) {
       return this.method_11216();
    }
 
@@ -156,21 +156,21 @@ public class class_2451 implements class_8525 {
       return this.field_12165 != null;
    }
 
-   public void method_11214(class_6098 var1, World var2, Entity var3, int var4, boolean var5) {
+   public void method_11214(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
    }
 
-   public void method_11236(class_6098 var1, World var2, class_704 var3) {
+   public void method_11236(ItemStack var1, World var2, class_704 var3) {
    }
 
    public boolean method_11221() {
       return false;
    }
 
-   public class_6209 method_11233(class_6098 var1) {
+   public class_6209 method_11233(ItemStack var1) {
       return !var1.method_27960().method_11247() ? class_6209.field_31737 : class_6209.field_31732;
    }
 
-   public int method_11230(class_6098 var1) {
+   public int method_11230(ItemStack var1) {
       if (!var1.method_27960().method_11247()) {
          return 0;
       } else {
@@ -178,23 +178,23 @@ public class class_2451 implements class_8525 {
       }
    }
 
-   public void method_11206(class_6098 var1, World var2, class_5834 var3, int var4) {
+   public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
    }
 
-   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
    }
 
-   public ITextComponent method_11249(class_6098 var1) {
+   public ITextComponent method_11249(ItemStack var1) {
       return new TranslationTextComponent(this.method_11217(var1));
    }
 
-   public boolean method_11252(class_6098 var1) {
+   public boolean method_11252(ItemStack var1) {
       return var1.method_28020();
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
-   public class_5053 method_11240(class_6098 var1) {
+   public class_5053 method_11240(ItemStack var1) {
       if (!var1.method_28020()) {
          return this.field_12174;
       } else {
@@ -211,7 +211,7 @@ public class class_2451 implements class_8525 {
       }
    }
 
-   public boolean method_11248(class_6098 var1) {
+   public boolean method_11248(ItemStack var1) {
       return this.method_11245() == 1 && this.method_11210();
    }
 
@@ -234,9 +234,9 @@ public class class_2451 implements class_8525 {
       return 0;
    }
 
-   public void method_11239(class_8230 var1, class_2831<class_6098> var2) {
+   public void method_11239(class_8230 var1, class_2831<ItemStack> var2) {
       if (this.method_11224(var1)) {
-         var2.add(new class_6098(this));
+         var2.add(new ItemStack(this));
       }
    }
 
@@ -250,7 +250,7 @@ public class class_2451 implements class_8525 {
       return this.field_12171;
    }
 
-   public boolean method_11223(class_6098 var1, class_6098 var2) {
+   public boolean method_11223(ItemStack var1, ItemStack var2) {
       return false;
    }
 
@@ -258,12 +258,12 @@ public class class_2451 implements class_8525 {
       return ImmutableMultimap.of();
    }
 
-   public boolean method_11204(class_6098 var1) {
+   public boolean method_11204(ItemStack var1) {
       return var1.method_27960() == class_4897.field_25030;
    }
 
-   public class_6098 method_11207() {
-      return new class_6098(this);
+   public ItemStack method_11207() {
+      return new ItemStack(this);
    }
 
    public boolean method_11250(class_2307<class_2451> var1) {

@@ -20,7 +20,7 @@ public final class class_8766 implements LongSupplier {
          try {
             return (Long)this.field_44884.invoke(this.field_44883);
          } catch (Throwable var4) {
-            class_3111.method_14317("" + var4.getClass().getName() + ": " + var4.getMessage());
+            Config.method_14317("" + var4.getClass().getName() + ": " + var4.getMessage());
             this.field_44881 = true;
             return -1L;
          }

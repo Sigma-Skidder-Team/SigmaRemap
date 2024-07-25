@@ -8,8 +8,8 @@ public class JetpackFly extends Module {
    @EventListen
    public void method_5589(class_5596 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.field_29654) {
-            mc.field_9632.method_26595();
+         if (client.thePlayer.field_29654) {
+            client.thePlayer.method_26595();
          }
       }
    }

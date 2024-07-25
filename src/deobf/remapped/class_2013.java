@@ -66,7 +66,7 @@ public class class_2013 extends class_4314 {
    @Override
    public class_2522 method_29302(class_353 var1) {
       World var4 = var1.method_21862();
-      class_6098 var5 = var1.method_21867();
+      ItemStack var5 = var1.method_21867();
       class_5734 var6 = var5.method_27990();
       class_704 var7 = var1.method_21868();
       boolean var8 = false;
@@ -124,7 +124,7 @@ public class class_2013 extends class_4314 {
       return new class_1788();
    }
 
-   public static boolean method_9334(World var0, class_1331 var1, class_2522 var2, class_6098 var3) {
+   public static boolean method_9334(World var0, class_1331 var1, class_2522 var2, ItemStack var3) {
       if (var2.<Boolean>method_10313(field_10203)) {
          return false;
       } else {
@@ -136,7 +136,7 @@ public class class_2013 extends class_4314 {
       }
    }
 
-   private static void method_9340(World var0, class_1331 var1, class_2522 var2, class_6098 var3) {
+   private static void method_9340(World var0, class_1331 var1, class_2522 var2, ItemStack var3) {
       class_3757 var6 = var0.method_28260(var1);
       if (var6 instanceof class_1788) {
          class_1788 var7 = (class_1788)var6;
@@ -191,7 +191,7 @@ public class class_2013 extends class_4314 {
       if (var6 instanceof class_1788) {
          class_1788 var7 = (class_1788)var6;
          Direction var8 = var1.<Direction>method_10313(field_10210);
-         class_6098 var9 = var7.method_7958().method_27973();
+         ItemStack var9 = var7.method_7958().method_27973();
          float var10 = 0.25F * (float)var8.method_1041();
          float var11 = 0.25F * (float)var8.method_1034();
          class_91 var12 = new class_91(
@@ -244,7 +244,7 @@ public class class_2013 extends class_4314 {
 
          return class_6910.method_31659(var2.field_33055);
       } else {
-         class_6098 var9 = var4.method_26617(var5);
+         ItemStack var9 = var4.method_26617(var5);
          return !var9.method_28022() && !var9.method_27960().method_11250(class_391.field_1614) ? class_6910.field_35518 : class_6910.field_35521;
       }
    }

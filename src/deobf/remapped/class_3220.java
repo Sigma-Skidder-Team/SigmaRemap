@@ -39,10 +39,10 @@ public class class_3220 extends Thread {
 
    private class_3548 method_14763(InputStream var1) throws IOException {
       String var4 = this.method_14764(var1);
-      String[] var5 = class_3111.method_14302(var4, " ");
+      String[] var5 = Config.method_14302(var4, " ");
       if (var5.length >= 3) {
          String var6 = var5[0];
-         int var7 = class_3111.method_14361(var5[1], 0);
+         int var7 = Config.method_14361(var5[1], 0);
          String var8 = var5[2];
          LinkedHashMap var9 = new LinkedHashMap();
 
@@ -53,11 +53,11 @@ public class class_3220 extends Thread {
                String var15 = (String)var9.get("Content-Length");
                if (var15 == null) {
                   String var16 = (String)var9.get("Transfer-Encoding");
-                  if (class_3111.equals(var16, "chunked")) {
+                  if (Config.equals(var16, "chunked")) {
                      var14 = this.method_14762(var1);
                   }
                } else {
-                  int var17 = class_3111.method_14361(var15, -1);
+                  int var17 = Config.method_14361(var15, -1);
                   if (var17 > 0) {
                      var14 = new byte[var17];
                      this.method_14761(var14, var1);
@@ -85,7 +85,7 @@ public class class_3220 extends Thread {
       int var7;
       do {
          String var5 = this.method_14764(var1);
-         String[] var6 = class_3111.method_14302(var5, "; ");
+         String[] var6 = Config.method_14302(var5, "; ");
          var7 = Integer.parseInt(var6[0], 16);
          byte[] var8 = new byte[var7];
          this.method_14761(var8, var1);

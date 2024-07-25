@@ -11,7 +11,7 @@ public class class_9284 extends class_4171<class_9716, class_3169<class_9716>> {
       class_7966 var1, class_2565 var2, int var3, class_9716 var4, float var5, float var6, float var7, float var8, float var9, float var10
    ) {
       if (var4.method_44885() && !var4.method_37109() && var4.method_3168(class_7742.field_39260) && var4.method_44891() != null) {
-         class_6098 var13 = var4.method_26520(class_6943.field_35708);
+         ItemStack var13 = var4.method_26520(class_6943.field_35708);
          if (var13.method_27960() != class_4897.field_24503) {
             var1.method_36063();
             var1.method_36065(0.0, 0.0, 0.125);
@@ -48,8 +48,8 @@ public class class_9284 extends class_4171<class_9716, class_3169<class_9716>> {
                var25 += 25.0F;
             }
 
-            float var29 = class_3111.method_14403() * 20.0F;
-            var29 = class_3111.method_14262(var29, 0.02F, 1.0F);
+            float var29 = Config.method_14403() * 20.0F;
+            var29 = Config.method_14262(var29, 0.02F, 1.0F);
             var4.field_49393 = class_9299.method_42795(var29, var4.field_49393, 6.0F + var26 / 2.0F + var25);
             var4.field_49386 = class_9299.method_42795(var29, var4.field_49386, var27 / 2.0F);
             var4.field_49381 = class_9299.method_42795(var29, var4.field_49381, 180.0F - var27 / 2.0F);

@@ -8,16 +8,16 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-public class class_2130 extends class_2089 {
+public class PlayerTabOverlayGui extends AbstractGui {
    private static final Ordering<class_753> field_10660 = Ordering.from(new class_1684(null));
    private final MinecraftClient field_10666;
-   private final class_3062 field_10663;
+   private final IngameGUI field_10663;
    private ITextComponent field_10665;
    private ITextComponent field_10662;
    private long field_10661;
    private boolean field_10664;
 
-   public class_2130(MinecraftClient var1, class_3062 var2) {
+   public PlayerTabOverlayGui(MinecraftClient var1, IngameGUI var2) {
       this.field_10666 = var1;
       this.field_10663 = var2;
    }
@@ -29,7 +29,7 @@ public class class_2130 extends class_2089 {
    }
 
    private ITextComponent method_9941(class_753 var1, IFormattableTextComponent var2) {
-      return var1.method_3393() != class_4666.field_22756 ? var2 : var2.mergeStyle(TextFormatting.ITALIC);
+      return var1.method_3393() != GameType.SPECTATOR ? var2 : var2.mergeStyle(TextFormatting.ITALIC);
    }
 
    public void method_9944(boolean var1) {
@@ -41,7 +41,7 @@ public class class_2130 extends class_2089 {
    }
 
    public void method_9940(class_7966 var1, int var2, class_1097 var3, class_4399 var4) {
-      class_1092 var7 = this.field_10666.field_9632.field_30532;
+      class_1092 var7 = this.field_10666.thePlayer.field_30532;
       List var8 = field_10660.sortedCopy(var7.method_4798());
       int var9 = 0;
       int var10 = 0;
@@ -117,10 +117,10 @@ public class class_2130 extends class_2089 {
          int var26 = var17 + var49 * var16 + var49 * 5;
          int var27 = var18 + var25 * 9;
          method_9774(var1, var26, var27, var26 + var16, var27 + 8, var45);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16374();
-         class_3542.method_16488();
-         class_3542.method_16437();
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.enableAlphaTest();
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
          if (var47 < var8.size()) {
             class_753 var28 = (class_753)var8.get(var47);
             GameProfile var29 = var28.method_3392();
@@ -129,14 +129,14 @@ public class class_2130 extends class_2089 {
                boolean var31 = var30 != null
                   && var30.method_3168(class_7742.field_39260)
                   && ("Dinnerbone".equals(var29.getName()) || "Grumm".equals(var29.getName()));
-               this.field_10666.method_8577().method_35674(var28.method_3402());
+               this.field_10666.getTextureManager().bindTexture(var28.method_3402());
                int var32 = 8 + (!var31 ? 0 : 8);
                int var33 = 8 * (!var31 ? 1 : -1);
-               class_2089.method_9780(var1, var26, var27, 8, 8, 8.0F, (float)var32, 8, var33, 64, 64);
+               AbstractGui.method_9780(var1, var26, var27, 8, 8, 8.0F, (float)var32, 8, var33, 64, 64);
                if (var30 != null && var30.method_3168(class_7742.field_39259)) {
                   int var34 = 8 + (!var31 ? 0 : 8);
                   int var35 = 8 * (!var31 ? 1 : -1);
-                  class_2089.method_9780(var1, var26, var27, 8, 8, 40.0F, (float)var34, 8, var35, 64, 64);
+                  AbstractGui.method_9780(var1, var26, var27, 8, 8, 40.0F, (float)var34, 8, var35, 64, 64);
                }
 
                var26 += 9;
@@ -144,8 +144,8 @@ public class class_2130 extends class_2089 {
 
             this.field_10666
                .textRenderer
-               .method_45392(var1, this.method_9938(var28), (float)var26, (float)var27, var28.method_3393() != class_4666.field_22756 ? -1 : -1862270977);
-            if (var4 != null && var28.method_3393() != class_4666.field_22756) {
+               .method_45392(var1, this.method_9938(var28), (float)var26, (float)var27, var28.method_3393() != GameType.SPECTATOR ? -1 : -1862270977);
+            if (var4 != null && var28.method_3393() != GameType.SPECTATOR) {
                int var52 = var26 + var9 + 1;
                int var53 = var52 + var15;
                if (var53 - var52 > 5) {
@@ -170,8 +170,8 @@ public class class_2130 extends class_2089 {
    }
 
    public void method_9943(class_7966 var1, int var2, int var3, int var4, class_753 var5) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_10666.method_8577().method_35674(field_10507);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_10666.getTextureManager().bindTexture(GUI_ICONS_LOCATION);
       boolean var8 = false;
       byte var9;
       if (var5.method_3394() >= 0) {
@@ -207,7 +207,7 @@ public class class_2130 extends class_2089 {
          String var11 = TextFormatting.YELLOW + "" + var10;
          this.field_10666.textRenderer.method_45390(var7, var11, (float)(var5 - this.field_10666.textRenderer.method_45395(var11)), (float)var2, 16777215);
       } else {
-         this.field_10666.method_8577().method_35674(field_10507);
+         this.field_10666.getTextureManager().bindTexture(GUI_ICONS_LOCATION);
          long var12 = Util.getMeasuringTimeMs();
          if (this.field_10661 == var6.method_3391()) {
             if (var10 >= var6.method_3407()) {

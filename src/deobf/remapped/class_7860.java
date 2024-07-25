@@ -172,7 +172,7 @@ public class class_7860 {
    public static class_817 field_40211 = new class_817(field_40195, "getFontRenderer");
    public static class_817 field_39949 = new class_817(field_40195, "getItemStackTileEntityRenderer");
    public static class_817 field_39876 = new class_817(field_40195, "getRGBDurabilityForDisplay");
-   public static class_817 field_40121 = new class_817(field_40195, "isDamageable", new Class[]{class_6098.class});
+   public static class_817 field_40121 = new class_817(field_40195, "isDamageable", new Class[]{ItemStack.class});
    public static class_817 field_39965 = new class_817(field_40195, "isShield");
    public static class_817 field_40238 = new class_817(field_40195, "onEntitySwing");
    public static class_817 field_40218 = new class_817(field_40195, "shouldCauseReequipAnimation");

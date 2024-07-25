@@ -368,10 +368,10 @@ public class class_5155 implements AutoCloseable {
                   return;
                }
 
-               if (class_3542.method_16366()) {
+               if (RenderSystem.method_16366()) {
                   class_7560.method_34387(this.field_26556);
                } else {
-                  class_3542.method_16474(() -> class_7560.method_34387(this.field_26556));
+                  RenderSystem.method_16474(() -> class_7560.method_34387(this.field_26556));
                }
             }
          } else {
@@ -632,8 +632,8 @@ public class class_5155 implements AutoCloseable {
          this.field_26562 = null;
       }
 
-      this.field_26542 = class_3111.method_14405();
-      this.field_26535 = class_3111.method_14424();
+      this.field_26542 = Config.method_14405();
+      this.field_26535 = Config.method_14424();
       if (this.field_26542 && !this.field_26561) {
          this.field_26548 = this.method_23621();
       }

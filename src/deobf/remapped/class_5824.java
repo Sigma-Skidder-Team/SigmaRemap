@@ -149,22 +149,22 @@ public class class_5824 extends class_7875 {
    }
 
    private void method_26361(class_7966 var1, int var2, int var3, ITextComponent var4, Identifier var5, boolean var6, boolean var7) {
-      this.field_943.method_8577().method_35674(var5);
+      this.field_943.getTextureManager().bindTexture(var5);
       if (!var6) {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       } else {
-         class_3542.method_16480(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
-      class_2089.method_9778(var1, var2 + 2, var3 + 14, 0.0F, 0.0F, 56, 56, 56, 56);
-      this.field_943.method_8577().method_35674(field_29552);
+      AbstractGui.method_9778(var1, var2 + 2, var3 + 14, 0.0F, 0.0F, 56, 56, 56, 56);
+      this.field_943.getTextureManager().bindTexture(field_29552);
       if (!var6) {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       } else {
-         class_3542.method_16480(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
-      class_2089.method_9778(var1, var2, var3 + 12, 0.0F, 0.0F, 60, 60, 60, 60);
+      AbstractGui.method_9778(var1, var2, var3 + 12, 0.0F, 0.0F, 60, 60, 60, 60);
       int var10 = !var6 ? 16777215 : 10526880;
       method_9788(var1, this.field_948, var4, var2 + 30, var3, var10);
    }

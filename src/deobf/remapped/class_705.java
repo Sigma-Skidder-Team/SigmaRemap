@@ -18,7 +18,7 @@ public class class_705<T extends class_3151> implements class_2994<T> {
       class_8137 var7 = class_8137.method_37024((JsonElement)var6);
       String var8 = class_6539.method_29796(var2, "result");
       Identifier var9 = new Identifier(var8);
-      class_6098 var10 = new class_6098(
+      ItemStack var10 = new ItemStack(
          class_8669.field_44382.method_39794(var9).orElseThrow(() -> new IllegalStateException("Item: " + var8 + " does not exist"))
       );
       float var11 = class_6539.method_29775(var2, "experience", 0.0F);
@@ -29,7 +29,7 @@ public class class_705<T extends class_3151> implements class_2994<T> {
    public T method_3256(Identifier var1, class_8248 var2) {
       String var5 = var2.method_37784(32767);
       class_8137 var6 = class_8137.method_37026(var2);
-      class_6098 var7 = var2.method_37755();
+      ItemStack var7 = var2.method_37755();
       float var8 = var2.readFloat();
       int var9 = var2.method_37778();
       return this.field_3879.method_27279(var1, var5, var6, var7, var8, var9);

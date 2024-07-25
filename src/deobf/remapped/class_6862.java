@@ -19,7 +19,7 @@ public class class_6862 extends class_405 {
             0,
             new class_7018<class_6862>(
                this,
-               class_9541.method_43999(new class_6098(class_4897.field_25157), class_3697.field_18126),
+               class_9541.method_43999(new ItemStack(class_4897.field_25157), class_3697.field_18126),
                class_463.field_2449,
                var1 -> this.field_41768.method_29544() && !var1.method_37109()
             )
@@ -28,7 +28,7 @@ public class class_6862 extends class_405 {
          .method_3485(
             0,
             new class_7018<class_6862>(
-               this, new class_6098(class_4897.field_24579), class_463.field_2362, var1 -> this.field_41768.method_29602() && var1.method_37109()
+               this, new ItemStack(class_4897.field_24579), class_463.field_2362, var1 -> this.field_41768.method_29602() && var1.method_37109()
             )
          );
       this.field_29916.method_3485(1, new class_7713(this));
@@ -61,7 +61,7 @@ public class class_6862 extends class_405 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25034 && this.method_37330() && !this.method_2024() && !this.method_26449()) {
          if (var2 == class_2584.field_12791) {
             var1.method_3209(class_6234.field_31910);
@@ -150,7 +150,7 @@ public class class_6862 extends class_405 {
    }
 
    @Override
-   public class_8461 method_26566(class_6098 var1) {
+   public class_8461 method_26566(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       return var4 != class_4897.field_24579 ? class_463.field_2699 : class_463.field_1966;
    }

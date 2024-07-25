@@ -96,13 +96,13 @@ public abstract class class_5467 extends class_1899 {
       return 1 + this.field_41768.field_33033.nextInt(3);
    }
 
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return var1.method_27960() == class_4897.field_24813;
    }
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (this.method_24866(var5)) {
          int var6 = this.method_8634();
          if (!this.field_41768.field_33055 && var6 == 0 && this.method_24870()) {
@@ -125,7 +125,7 @@ public abstract class class_5467 extends class_1899 {
       return super.method_26857(var1, var2);
    }
 
-   public void method_24867(class_704 var1, class_6098 var2) {
+   public void method_24867(class_704 var1, ItemStack var2) {
       if (!var1.field_3876.field_4944) {
          var2.method_27970(1);
       }

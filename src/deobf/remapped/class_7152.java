@@ -12,7 +12,7 @@ public class class_7152 extends Screen implements class_1215 {
    private class_1433 field_36838 = class_5609.method_25460();
 
    public class_7152() {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
    }
 
    @Override

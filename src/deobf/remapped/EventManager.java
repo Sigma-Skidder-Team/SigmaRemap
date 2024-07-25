@@ -71,7 +71,7 @@ public class EventManager {
       }
    }
 
-   public void method_7917(Module module) {
+   public void subscribe(Module module) {
       Map moduleMap = this.moduleList.get(module.getClass());
       if (moduleMap != null) {
          for (Object var6 : moduleMap.entrySet()) {
@@ -84,7 +84,7 @@ public class EventManager {
       }
    }
 
-   public void method_7915(Module module) {
+   public void unsubscribe(Module module) {
       Map moduleMap = this.moduleList.get(module.getClass());
       if (moduleMap != null) {
          for (Object var6 : moduleMap.entrySet()) {
@@ -99,7 +99,7 @@ public class EventManager {
       this.method_7913();
    }
 
-   public void subscribe(Object var1) {
+   public void method_7908(Object var1) {
       if (var1 != null) {
          boolean var4 = false;
 
@@ -142,7 +142,7 @@ public class EventManager {
       }
    }
 
-   public void unsubscribe(Object var1) {
+   public void method_7911(Object var1) {
       if (var1 == null) {
          ;
       }

@@ -36,15 +36,15 @@ public class class_3972 extends class_7049 implements AutoCloseable {
    }
 
    public static int method_18332(int var0, CharSequence var1) {
-      return class_1920.method_8900(var0, var1);
+      return GlStateManager.method_8900(var0, var1);
    }
 
    public static void method_18331(int var0, int var1) {
-      class_3542.method_16414(var0, var1);
+      RenderSystem.method_16414(var0, var1);
    }
 
    public static int method_18338(int var0, CharSequence var1) {
-      return class_1920.method_8815(var0, var1);
+      return GlStateManager.method_8815(var0, var1);
    }
 
    @Override
@@ -223,16 +223,16 @@ public class class_3972 extends class_7049 implements AutoCloseable {
       ((Buffer)this.field_19272).clear();
       switch (this.field_19274) {
          case 0:
-            class_3542.method_16379(this.field_19270, this.field_19271);
+            RenderSystem.method_16379(this.field_19270, this.field_19271);
             break;
          case 1:
-            class_3542.method_16427(this.field_19270, this.field_19271);
+            RenderSystem.method_16427(this.field_19270, this.field_19271);
             break;
          case 2:
-            class_3542.method_16384(this.field_19270, this.field_19271);
+            RenderSystem.method_16384(this.field_19270, this.field_19271);
             break;
          case 3:
-            class_3542.method_16469(this.field_19270, this.field_19271);
+            RenderSystem.method_16469(this.field_19270, this.field_19271);
             break;
          default:
             field_19267.warn("Uniform.upload called, but count value ({}) is  not in the range of 1 to 4. Ignoring.", this.field_19268);
@@ -243,16 +243,16 @@ public class class_3972 extends class_7049 implements AutoCloseable {
       ((Buffer)this.field_19272).clear();
       switch (this.field_19274) {
          case 4:
-            class_3542.method_16378(this.field_19270, this.field_19272);
+            RenderSystem.method_16378(this.field_19270, this.field_19272);
             break;
          case 5:
-            class_3542.method_16426(this.field_19270, this.field_19272);
+            RenderSystem.method_16426(this.field_19270, this.field_19272);
             break;
          case 6:
-            class_3542.method_16383(this.field_19270, this.field_19272);
+            RenderSystem.method_16383(this.field_19270, this.field_19272);
             break;
          case 7:
-            class_3542.method_16468(this.field_19270, this.field_19272);
+            RenderSystem.method_16468(this.field_19270, this.field_19272);
             break;
          default:
             field_19267.warn("Uniform.upload called, but count value ({}) is not in the range of 1 to 4. Ignoring.", this.field_19268);
@@ -263,13 +263,13 @@ public class class_3972 extends class_7049 implements AutoCloseable {
       ((Buffer)this.field_19272).clear();
       switch (this.field_19274) {
          case 8:
-            class_3542.method_16423(this.field_19270, false, this.field_19272);
+            RenderSystem.method_16423(this.field_19270, false, this.field_19272);
             break;
          case 9:
-            class_3542.method_16394(this.field_19270, false, this.field_19272);
+            RenderSystem.method_16394(this.field_19270, false, this.field_19272);
             break;
          case 10:
-            class_3542.method_16375(this.field_19270, false, this.field_19272);
+            RenderSystem.method_16375(this.field_19270, false, this.field_19272);
       }
    }
 }

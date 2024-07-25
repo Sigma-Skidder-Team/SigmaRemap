@@ -224,7 +224,7 @@ public class class_8127 extends class_608 implements class_6250 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       class_2451 var6 = var5.method_27960();
       if (var6 == class_4897.field_25021) {
          float var7 = this.method_26551();

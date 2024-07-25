@@ -61,11 +61,11 @@ public class class_3110 extends class_2733 {
             class_7860.field_39880.method_7982(var8, var1);
             return (class_8599)var8;
          } else {
-            class_3111.method_14317("Model field not found: RenderTropicalFish.modelB");
+            Config.method_14317("Model field not found: RenderTropicalFish.modelB");
             return null;
          }
       } else {
-         class_3111.method_14317("Not a TropicalFishRenderer: " + var6);
+         Config.method_14317("Not a TropicalFishRenderer: " + var6);
          return null;
       }
    }

@@ -17,18 +17,18 @@ public class AutoClickerModule extends Module {
          byte var5 = 2;
          byte var6 = 4;
          int var7 = var4.nextInt(var6 - var5) + var5;
-         if (mc.gameOptions.keyAttack.isKeyDown() && this.field_34164 >= var7) {
-            mc.field_9632.method_26597(class_2584.field_12791);
+         if (client.gameOptions.keyAttack.isKeyDown() && this.field_34164 >= var7) {
+            client.thePlayer.method_26597(class_2584.field_12791);
             this.field_34164 = 0;
-            if (class_314.method_1458(mc.field_9632.field_41701, mc.field_9632.field_41755, 4.6F, 0.0) != null) {
-               mc.method_8614()
+            if (class_314.method_1458(client.thePlayer.field_41701, client.thePlayer.field_41755, 4.6F, 0.0) != null) {
+               client.method_8614()
                   .method_4813(
                      new class_3398(
-                        class_314.method_1458(mc.field_9632.field_41701, mc.field_9632.field_41755, 4.6F, 0.0),
-                        mc.field_9632.method_37252()
+                        class_314.method_1458(client.thePlayer.field_41701, client.thePlayer.field_41755, 4.6F, 0.0),
+                        client.thePlayer.method_37252()
                      )
                   );
-               mc.field_9632.method_26597(class_2584.field_12791);
+               client.thePlayer.method_26597(class_2584.field_12791);
             }
          }
       }

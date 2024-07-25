@@ -5,7 +5,7 @@ import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import java.util.function.Predicate;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_3238 implements Predicate<class_6098> {
+public class class_3238 implements Predicate<ItemStack> {
    private static final Dynamic2CommandExceptionType field_16102 = new Dynamic2CommandExceptionType(
       (var0, var1) -> new TranslationTextComponent("arguments.item.overstacked", var0, var1)
    );
@@ -21,12 +21,12 @@ public class class_3238 implements Predicate<class_6098> {
       return this.field_16103;
    }
 
-   public boolean test(class_6098 var1) {
+   public boolean test(ItemStack var1) {
       return var1.method_27960() == this.field_16103 && class_4338.method_20182(this.field_16105, var1.method_27990(), true);
    }
 
-   public class_6098 method_14833(int var1, boolean var2) throws CommandSyntaxException {
-      class_6098 var5 = new class_6098(this.field_16103, var1);
+   public ItemStack method_14833(int var1, boolean var2) throws CommandSyntaxException {
+      ItemStack var5 = new ItemStack(this.field_16103, var1);
       if (this.field_16105 != null) {
          var5.method_27965(this.field_16105);
       }

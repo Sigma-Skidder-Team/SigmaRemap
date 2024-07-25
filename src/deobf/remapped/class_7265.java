@@ -80,7 +80,7 @@ public class class_7265 {
    }
 
    private int[] method_33200(class_9874 var1, class_5155 var2, Direction var3, float[] var4, class_1221 var5, class_1868 var6, boolean var7) {
-      int var10 = !class_3111.method_14424() ? class_7985.field_40895 : class_7985.field_40899;
+      int var10 = !Config.method_14424() ? class_7985.field_40895 : class_7985.field_40899;
       int[] var11 = new int[var10];
 
       for (int var12 = 0; var12 < 4; var12++) {

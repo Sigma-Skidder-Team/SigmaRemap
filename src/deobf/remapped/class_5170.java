@@ -37,10 +37,10 @@ public class class_5170 {
                   var10 = 1.0F;
                }
 
-               var10 = class_3111.method_14237(var10);
+               var10 = Config.method_14237(var10);
                float var11 = var10 * (float)(var8 - 1);
-               float var12 = class_3111.method_14237(var2 + 0.5F) * (float)(var8 - 1);
-               float var13 = class_3111.method_14237((float)class_3111.method_14310().brightnessGamma);
+               float var12 = Config.method_14237(var2 + 0.5F) * (float)(var8 - 1);
+               float var13 = Config.method_14237((float) Config.method_14310().brightnessGamma);
                boolean var14 = var13 > 1.0E-4F;
                float[][] var15 = this.field_26615.method_44165();
                this.method_23693(var15, var11, var9, var8, this.field_26616);
@@ -50,7 +50,7 @@ public class class_5170 {
                for (int var17 = 0; var17 < 16; var17++) {
                   for (int var18 = 0; var18 < 16; var18++) {
                      for (int var19 = 0; var19 < 3; var19++) {
-                        float var20 = class_3111.method_14237(this.field_26616[var17][var19] + this.field_26614[var18][var19]);
+                        float var20 = Config.method_14237(this.field_26616[var17][var19] + this.field_26614[var18][var19]);
                         if (var14) {
                            float var21 = 1.0F - var20;
                            var21 = 1.0F - var21 * var21 * var21 * var21;
@@ -102,10 +102,10 @@ public class class_5170 {
    }
 
    private static void method_23696(String var0) {
-      class_3111.method_14277("CustomColors: " + var0);
+      Config.method_14277("CustomColors: " + var0);
    }
 
    private static void method_23697(String var0) {
-      class_3111.method_14317("CustomColors: " + var0);
+      Config.method_14317("CustomColors: " + var0);
    }
 }

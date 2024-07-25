@@ -52,7 +52,7 @@ public class class_8951 {
       }
 
       Integer[] var7 = var3.<Integer>toArray(new Integer[var3.size()]);
-      return class_3111.method_14267(var7);
+      return Config.method_14267(var7);
    }
 
    public class_9491[] method_41100(int var1) {
@@ -70,6 +70,6 @@ public class class_8951 {
 
    @Override
    public String toString() {
-      return "block." + this.field_45883 + ":" + this.field_45882 + "=" + class_3111.method_14289(this.field_45880);
+      return "block." + this.field_45883 + ":" + this.field_45882 + "=" + Config.method_14289(this.field_45880);
    }
 }

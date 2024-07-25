@@ -12,7 +12,7 @@ public class class_9304 {
       Arrays.sort(this.field_47527);
    }
 
-   public Integer method_42959(class_6098 var1, class_174 var2, class_5834 var3) {
+   public Integer method_42959(ItemStack var1, class_174 var2, class_5834 var3) {
       class_2451 var6 = var1.method_27960();
       class_3825 var7 = class_6878.method_31546(var6, this.field_47528);
       if (var7 != null) {
@@ -34,6 +34,6 @@ public class class_9304 {
 
    @Override
    public String toString() {
-      return "location: " + this.field_47528 + ", values: [" + class_3111.method_14285(this.field_47527) + "]";
+      return "location: " + this.field_47528 + ", values: [" + Config.method_14285(this.field_47527) + "]";
    }
 }

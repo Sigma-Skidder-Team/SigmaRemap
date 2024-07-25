@@ -10,7 +10,7 @@ public class class_7383 implements class_2994<class_3197> {
       class_2831 var6 = method_33628(class_6539.method_29787(var2, "ingredients"));
       if (!var6.isEmpty()) {
          if (var6.size() <= 9) {
-            class_6098 var7 = class_644.method_2961(class_6539.method_29783(var2, "result"));
+            ItemStack var7 = class_644.method_2961(class_6539.method_29783(var2, "result"));
             return new class_3197(var1, var5, var7, var6);
          } else {
             throw new JsonParseException("Too many ingredients for shapeless recipe");
@@ -42,7 +42,7 @@ public class class_7383 implements class_2994<class_3197> {
          var7.set(var8, class_8137.method_37026(var2));
       }
 
-      class_6098 var9 = var2.method_37755();
+      ItemStack var9 = var2.method_37755();
       return new class_3197(var1, var5, var9, var7);
    }
 

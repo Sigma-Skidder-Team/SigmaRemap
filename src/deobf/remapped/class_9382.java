@@ -29,12 +29,12 @@ public class class_9382 extends class_6906<class_2048> {
          var7 = class_5367.method_24487(class_5367.method_24485(1.0F), 10);
       }
 
-      if (class_3111.method_14424() && var4) {
+      if (Config.method_14424() && var4) {
          class_6588.method_30135(1.0F, 1.0F, 1.0F, 0.5F);
       }
 
       MinecraftClient.getInstance().method_8505().method_3713(var0, var1, var2, var3, var7);
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_6588.method_30135(0.0F, 0.0F, 0.0F, 0.0F);
       }
    }

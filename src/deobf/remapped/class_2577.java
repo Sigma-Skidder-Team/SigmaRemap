@@ -146,8 +146,8 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
          this.method_11715();
          class_8042 var9 = class_8042.method_36499();
          class_9633 var10 = var9.method_36501();
-         this.field_12768.method_8577().method_35674(class_2089.field_10505);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_12768.getTextureManager().bindTexture(AbstractGui.field_10505);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
          var10.method_44471(7, class_7985.field_40905);
          var10.method_35761((double)this.field_12762, (double)this.field_12755, 0.0)
@@ -174,14 +174,14 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
          }
 
          this.method_11712(var1, var12, var13, var2, var3, var4);
-         class_3542.method_16491();
+         RenderSystem.method_16491();
          this.method_11713(0, this.field_12765, 255, 255);
          this.method_11713(this.field_12755, this.field_12757, 255, 255);
-         class_3542.method_16488();
-         class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
-         class_3542.method_16458();
-         class_3542.method_16486(7425);
-         class_3542.method_16354();
+         RenderSystem.enableBlend();
+         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
+         RenderSystem.method_16458();
+         RenderSystem.method_16486(7425);
+         RenderSystem.method_16354();
          byte var14 = 4;
          var10.method_44471(7, class_7985.field_40905);
          var10.method_35761((double)this.field_12762, (double)(this.field_12765 + 4), 0.0).method_35745(0.0F, 1.0F).method_35743(0, 0, 0, 0).method_35735();
@@ -225,10 +225,10 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
          }
 
          this.method_11731(var2, var3);
-         class_3542.method_16432();
-         class_3542.method_16486(7424);
-         class_3542.method_16374();
-         class_3542.method_16448();
+         RenderSystem.method_16432();
+         RenderSystem.method_16486(7424);
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16448();
       }
    }
 
@@ -372,23 +372,23 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
          if (this.field_12754 && this.method_11722(var12)) {
             int var15 = this.field_12762 + this.field_12760 / 2 - this.method_11732() / 2;
             int var16 = this.field_12762 + this.field_12760 / 2 + this.method_11732() / 2;
-            class_3542.method_16354();
+            RenderSystem.method_16354();
             float var17 = !this.method_11717() ? 0.5F : 1.0F;
-            class_3542.method_16480(var17, var17, var17, 1.0F);
+            RenderSystem.color4f(var17, var17, var17, 1.0F);
             var11.method_44471(7, class_7985.field_40915);
             var11.method_35761((double)var15, (double)(var13 + var14 + 2), 0.0).method_35735();
             var11.method_35761((double)var16, (double)(var13 + var14 + 2), 0.0).method_35735();
             var11.method_35761((double)var16, (double)(var13 - 2), 0.0).method_35735();
             var11.method_35761((double)var15, (double)(var13 - 2), 0.0).method_35735();
             var10.method_36500();
-            class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+            RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
             var11.method_44471(7, class_7985.field_40915);
             var11.method_35761((double)(var15 + 1), (double)(var13 + var14 + 1), 0.0).method_35735();
             var11.method_35761((double)(var16 - 1), (double)(var13 + var14 + 1), 0.0).method_35735();
             var11.method_35761((double)(var16 - 1), (double)(var13 - 1), 0.0).method_35735();
             var11.method_35761((double)(var15 + 1), (double)(var13 - 1), 0.0).method_35735();
             var10.method_36500();
-            class_3542.method_16432();
+            RenderSystem.method_16432();
          }
 
          if (var13 + this.field_12770 >= this.field_12765 && var13 <= this.field_12755) {
@@ -408,8 +408,8 @@ public abstract class class_2577 extends FocusableGui implements IRenderable {
    public void method_11713(int var1, int var2, int var3, int var4) {
       class_8042 var7 = class_8042.method_36499();
       class_9633 var8 = var7.method_36501();
-      this.field_12768.method_8577().method_35674(class_2089.field_10505);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_12768.getTextureManager().bindTexture(AbstractGui.field_10505);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var9 = 32.0F;
       var8.method_44471(7, class_7985.field_40905);
       var8.method_35761((double)this.field_12762, (double)var2, 0.0).method_35745(0.0F, (float)var2 / 32.0F).method_35743(64, 64, 64, var4).method_35735();

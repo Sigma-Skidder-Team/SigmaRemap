@@ -21,7 +21,7 @@ public class class_2701 extends class_2451 {
             var5.method_43359(var4, var8, class_463.field_2235, class_562.field_3322, 1.0F, field_12172.nextFloat() * 0.4F + 0.8F);
             class_2522 var9 = class_9476.method_43768(var5, var8);
             var5.method_7513(var8, var9, 11);
-            class_6098 var10 = var1.method_21867();
+            ItemStack var10 = var1.method_21867();
             if (var4 instanceof class_9359) {
                class_8807.field_45052.method_10661((class_9359)var4, var8, var10);
                var10.method_28003(1, var4, var1x -> var1x.method_26447(var1.method_21860()));

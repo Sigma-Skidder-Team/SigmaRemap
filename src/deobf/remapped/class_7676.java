@@ -122,7 +122,7 @@ public class class_7676 {
          String var8 = var11[var7];
          class_1549 var9 = var1.method_12291(var10, var8);
          if (var9 == null) {
-            class_3111.method_14317("Model renderer not found, model: " + var1.method_12290() + ", name: " + var8);
+            Config.method_14317("Model renderer not found, model: " + var1.method_12290() + ", name: " + var8);
          }
       }
    }
@@ -139,7 +139,7 @@ public class class_7676 {
             var5 = "" + class_133.method_445((class_133<?>)var6.method_942().get());
          }
 
-         class_3111.method_14317("Model adapter already registered for id: " + var2 + ", type: " + var5);
+         Config.method_14317("Model adapter already registered for id: " + var2 + ", type: " + var5);
       }
 
       var0.put(var2, var1);

@@ -15,7 +15,7 @@ public class SecondModule extends Module {
       this.field_17661 = var4;
 
       for (Module var10 : this.field_17661) {
-         SigmaMainClass.getInstance().getEventManager().subscribe(var10);
+         SigmaMainClass.getInstance().getEventManager().method_7908(var10);
          this.field_17660.add(var10.getName());
          var10.method_41995(this);
       }
@@ -30,13 +30,13 @@ public class SecondModule extends Module {
 
       for (Module var6 : this.field_17661) {
          boolean var7 = this.getStringValueByName("Type").equals(var6.name);
-         if (this.method_42015() && mc.field_9632 != null) {
+         if (this.method_42015() && client.thePlayer != null) {
             var6.method_42023(var7);
             if (var7) {
                this.field_17664 = var6;
             }
          } else if (this.method_42015()) {
-            var6.method_42018(var7);
+            var6.setEnabled1(var7);
          }
 
          this.method_16863(var6, var7);
@@ -141,14 +141,14 @@ public class SecondModule extends Module {
    public void onEnable() {
       this.method_16866();
       if (this.field_17664 instanceof PremiumModule && !SigmaMainClass.getInstance().getAccountManager().method_23084()) {
-         this.method_42018(false);
+         this.setEnabled1(false);
       }
    }
 
    @Override
    public void onDisable() {
       for (Module var6 : this.field_17661) {
-         var6.method_41991(false);
+         var6.setEnabled2(false);
       }
    }
 

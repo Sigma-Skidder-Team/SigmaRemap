@@ -16,7 +16,7 @@ import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public class class_2931 {
-   public static int method_13423(class_4382 var0, class_6098 var1) {
+   public static int method_13423(class_4382 var0, ItemStack var1) {
       if (!var1.method_28022()) {
          Identifier var4 = class_8669.field_44445.method_39797(var0);
          class_3416 var5 = var1.method_27983();
@@ -35,7 +35,7 @@ public class class_2931 {
       }
    }
 
-   public static Map<class_4382, Integer> method_13402(class_6098 var0) {
+   public static Map<class_4382, Integer> method_13402(ItemStack var0) {
       class_3416 var3 = var0.method_27960() != class_4897.field_24879 ? var0.method_27983() : class_7597.method_34501(var0);
       return method_13409(var3);
    }
@@ -53,7 +53,7 @@ public class class_2931 {
       return var3;
    }
 
-   public static void method_13398(Map<class_4382, Integer> var0, class_6098 var1) {
+   public static void method_13398(Map<class_4382, Integer> var0, ItemStack var1) {
       class_3416 var4 = new class_3416();
 
       for (Entry var6 : var0.entrySet()) {
@@ -79,7 +79,7 @@ public class class_2931 {
       }
    }
 
-   private static void method_13422(class_4800 var0, class_6098 var1) {
+   private static void method_13422(class_4800 var0, ItemStack var1) {
       if (!var1.method_28022()) {
          class_3416 var4 = var1.method_27983();
 
@@ -91,19 +91,19 @@ public class class_2931 {
       }
    }
 
-   private static void method_13416(class_4800 var0, Iterable<class_6098> var1) {
-      for (class_6098 var5 : var1) {
+   private static void method_13416(class_4800 var0, Iterable<ItemStack> var1) {
+      for (ItemStack var5 : var1) {
          method_13422(var0, var5);
       }
    }
 
-   public static int method_13427(Iterable<class_6098> var0, class_6199 var1) {
+   public static int method_13427(Iterable<ItemStack> var0, class_6199 var1) {
       MutableInt var4 = new MutableInt();
       method_13416((var2, var3) -> var4.add(var2.method_20438(var3, var1)), var0);
       return var4.intValue();
    }
 
-   public static float method_13425(class_6098 var0, class_2780 var1) {
+   public static float method_13425(ItemStack var0, class_2780 var1) {
       MutableFloat var4 = new MutableFloat();
       method_13422((var2, var3) -> var4.add(var2.method_20419(var3, var1)), var0);
       return var4.floatValue();
@@ -141,7 +141,7 @@ public class class_2931 {
       if (var4 != null) {
          int var5 = 0;
 
-         for (class_6098 var7 : var4) {
+         for (ItemStack var7 : var4) {
             int var8 = method_13423(var0, var7);
             if (var8 > var5) {
                var5 = var8;
@@ -174,11 +174,11 @@ public class class_2931 {
       return method_13399(class_3668.field_17879, var0);
    }
 
-   public static int method_13400(class_6098 var0) {
+   public static int method_13400(ItemStack var0) {
       return method_13423(class_3668.field_17877, var0);
    }
 
-   public static int method_13401(class_6098 var0) {
+   public static int method_13401(ItemStack var0) {
       return method_13423(class_3668.field_17852, var0);
    }
 
@@ -198,39 +198,39 @@ public class class_2931 {
       return method_13399(class_3668.field_17849, var0) > 0;
    }
 
-   public static boolean method_13421(class_6098 var0) {
+   public static boolean method_13421(ItemStack var0) {
       return method_13423(class_3668.field_17856, var0) > 0;
    }
 
-   public static boolean method_13408(class_6098 var0) {
+   public static boolean method_13408(ItemStack var0) {
       return method_13423(class_3668.field_17854, var0) > 0;
    }
 
-   public static int method_13431(class_6098 var0) {
+   public static int method_13431(ItemStack var0) {
       return method_13423(class_3668.field_17863, var0);
    }
 
-   public static int method_13415(class_6098 var0) {
+   public static int method_13415(ItemStack var0) {
       return method_13423(class_3668.field_17866, var0);
    }
 
-   public static boolean method_13424(class_6098 var0) {
+   public static boolean method_13424(ItemStack var0) {
       return method_13423(class_3668.field_17862, var0) > 0;
    }
 
    @Nullable
-   public static Entry<class_6943, class_6098> method_13412(class_4382 var0, class_5834 var1) {
+   public static Entry<class_6943, ItemStack> method_13412(class_4382 var0, class_5834 var1) {
       return method_13413(var0, var1, var0x -> true);
    }
 
    @Nullable
-   public static Entry<class_6943, class_6098> method_13413(class_4382 var0, class_5834 var1, Predicate<class_6098> var2) {
+   public static Entry<class_6943, ItemStack> method_13413(class_4382 var0, class_5834 var1, Predicate<ItemStack> var2) {
       Map var5 = var0.method_20420(var1);
       if (!var5.isEmpty()) {
          ArrayList var6 = Lists.newArrayList();
 
          for (Entry var8 : var5.entrySet()) {
-            class_6098 var9 = (class_6098)var8.getValue();
+            ItemStack var9 = (ItemStack)var8.getValue();
             if (!var9.method_28022() && method_13423(var0, var9) > 0 && var2.test(var9)) {
                var6.add(var8);
             }
@@ -242,7 +242,7 @@ public class class_2931 {
       }
    }
 
-   public static int method_13432(Random var0, int var1, int var2, class_6098 var3) {
+   public static int method_13432(Random var0, int var1, int var2, ItemStack var3) {
       class_2451 var6 = var3.method_27960();
       int var7 = var6.method_11213();
       if (var7 > 0) {
@@ -261,11 +261,11 @@ public class class_2931 {
       }
    }
 
-   public static class_6098 method_13426(Random var0, class_6098 var1, int var2, boolean var3) {
+   public static ItemStack method_13426(Random var0, ItemStack var1, int var2, boolean var3) {
       List var6 = method_13420(var0, var1, var2, var3);
       boolean var7 = var1.method_27960() == class_4897.field_24551;
       if (var7) {
-         var1 = new class_6098(class_4897.field_24879);
+         var1 = new ItemStack(class_4897.field_24879);
       }
 
       for (class_9693 var9 : var6) {
@@ -279,7 +279,7 @@ public class class_2931 {
       return var1;
    }
 
-   public static List<class_9693> method_13420(Random var0, class_6098 var1, int var2, boolean var3) {
+   public static List<class_9693> method_13420(Random var0, ItemStack var1, int var2, boolean var3) {
       ArrayList var6 = Lists.newArrayList();
       class_2451 var7 = var1.method_27960();
       int var8 = var7.method_11213();
@@ -328,7 +328,7 @@ public class class_2931 {
       return true;
    }
 
-   public static List<class_9693> method_13404(int var0, class_6098 var1, boolean var2) {
+   public static List<class_9693> method_13404(int var0, ItemStack var1, boolean var2) {
       ArrayList var5 = Lists.newArrayList();
       class_2451 var6 = var1.method_27960();
       boolean var7 = var1.method_27960() == class_4897.field_24551;

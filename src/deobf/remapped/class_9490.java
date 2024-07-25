@@ -167,7 +167,7 @@ public class class_9490 extends class_1173 implements class_7187 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25188) {
          return super.method_26857(var1, var2);
       } else {

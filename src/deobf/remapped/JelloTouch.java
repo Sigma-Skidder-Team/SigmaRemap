@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.Set;
 import org.lwjgl.glfw.GLFWNativeCocoa;
 
-public class class_123 {
+public class JelloTouch {
    public JTouchBar field_299;
    private LinkedHashSet<class_3158> field_297 = new LinkedHashSet<class_3158>();
    public boolean field_298 = false;
    public HashMap<Module, TouchBarButton> field_301 = new HashMap<Module, TouchBarButton>();
 
-   public class_123() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+   public JelloTouch() {
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
       if (class_357.field_1386) {
          this.field_297.add(new class_3158(344, ClassicClickGUI.class));
       }
@@ -172,15 +172,15 @@ public class class_123 {
       }
    }
 
-   public void method_370(Module var1) {
+   public void initDragModule(Module module) {
       if (this.field_299 != null) {
          for (TouchBarItem var5 : this.field_299.getItems()) {
-            if (var5.getView() instanceof TouchBarButton && var1.getName().equals(var5.getIdentifier())) {
-               ((TouchBarButton)var5.getView()).setBezelColor(this.method_371(var1));
+            if (var5.getView() instanceof TouchBarButton && module.getName().equals(var5.getIdentifier())) {
+               ((TouchBarButton)var5.getView()).setBezelColor(this.method_371(module));
                new Thread(() -> {
                   try {
                      Thread.sleep(200L);
-                     ((TouchBarButton)var5.getView()).setBezelColor(this.method_371(var1));
+                     ((TouchBarButton)var5.getView()).setBezelColor(this.method_371(module));
                   } catch (InterruptedException var6) {
                   }
                }).start();

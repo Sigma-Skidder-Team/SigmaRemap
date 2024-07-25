@@ -30,7 +30,7 @@ public class class_8182 extends class_9873 {
          class_7860.field_40191.method_39234(var1, 8, this.field_41879);
          return var1;
       } else {
-         class_3111.method_14317("Field not found: TileEntityChestRenderer.modelRenderers");
+         Config.method_14317("Field not found: TileEntityChestRenderer.modelRenderers");
          return null;
       }
    }

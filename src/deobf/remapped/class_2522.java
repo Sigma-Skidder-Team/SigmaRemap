@@ -25,7 +25,7 @@ public class class_2522 extends class_1873 {
       if (this.field_12490 < 0) {
          this.field_12490 = class_9451.method_43707(this);
          if (this.field_12490 < 0) {
-            class_3111.method_14317("Metadata not found, block: " + this.method_11474());
+            Config.method_14317("Metadata not found, block: " + this.method_11474());
             this.field_12490 = 0;
          }
       }

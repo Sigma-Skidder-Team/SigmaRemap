@@ -36,8 +36,8 @@ public class class_5989 extends class_9716 {
    public float field_30515;
    private int field_30514;
    public float field_30501;
-   public float field_30510;
-   public float field_30505;
+   public float timeInPortal;
+   public float prevTimeInPortal;
    private boolean field_30518;
    private class_2584 field_30511;
    private boolean field_30538;
@@ -218,11 +218,11 @@ public class class_5989 extends class_9716 {
    public boolean method_3235(boolean var1) {
       class_7500 var4 = !var1 ? class_7500.field_38266 : class_7500.field_38265;
       this.field_30532.method_4813(new class_1586(var4, class_1331.field_7306, Direction.field_802));
-      return this.field_3853
+      return this.inventory
             .method_31497(
-               this.field_3853.field_36404, var1 && !this.field_3853.method_32403().method_28022() ? this.field_3853.method_32403().method_27997() : 1
+               this.inventory.field_36404, var1 && !this.inventory.method_32403().method_28022() ? this.inventory.method_32403().method_27997() : 1
             )
-         != class_6098.field_31203;
+         != ItemStack.EMPTY;
    }
 
    public void method_27307(String var1) {
@@ -254,7 +254,7 @@ public class class_5989 extends class_9716 {
    }
 
    public void method_27327() {
-      this.field_3853.method_32408(class_6098.field_31203);
+      this.inventory.method_32408(ItemStack.EMPTY);
       super.method_3207();
       this.field_30523.method_8609((Screen)null);
    }
@@ -449,7 +449,7 @@ public class class_5989 extends class_9716 {
 
    @Override
    public void method_26462(class_2584 var1) {
-      class_6098 var4 = this.method_26617(var1);
+      ItemStack var4 = this.method_26617(var1);
       if (!var4.method_28022() && !this.method_26554()) {
          super.method_26462(var1);
          this.field_30518 = true;
@@ -526,7 +526,7 @@ public class class_5989 extends class_9716 {
    }
 
    @Override
-   public void method_3174(class_6098 var1, class_2584 var2) {
+   public void method_3174(ItemStack var1, class_2584 var2) {
       class_2451 var5 = var1.method_27960();
       if (var5 == class_4897.field_24805) {
          this.field_30523.method_8609(new class_4047(this, var1, var2));
@@ -572,7 +572,7 @@ public class class_5989 extends class_9716 {
    }
 
    public boolean method_27308() {
-      return this.field_30523.method_8516() == this;
+      return this.field_30523.getRenderViewEntity() == this;
    }
 
    @Override
@@ -628,7 +628,7 @@ public class class_5989 extends class_9716 {
          && !this.method_37321()
          && var7
          && !this.method_26554()
-         && !this.method_26480(Effects.field_19736)) {
+         && !this.isPotionActive(Effects.field_19736)) {
          if (this.field_30526 <= 0 && !this.field_30523.gameOptions.keySprint.isKeyDown()) {
             this.field_30526 = 7;
          } else {
@@ -641,7 +641,7 @@ public class class_5989 extends class_9716 {
          && this.method_27319()
          && var7
          && !this.method_26554()
-         && !this.method_26480(Effects.field_19736)
+         && !this.isPotionActive(Effects.field_19736)
          && this.field_30523.gameOptions.keySprint.isKeyDown()) {
          this.method_37140(true);
       }
@@ -660,7 +660,7 @@ public class class_5989 extends class_9716 {
 
       boolean var11 = false;
       if (this.field_3876.field_4941) {
-         if (!this.field_30523.field_9647.method_42153()) {
+         if (!this.field_30523.playerController.method_42153()) {
             if (!var3 && this.field_30533.field_45284 && !var10) {
                if (this.field_3877 != 0) {
                   if (!this.method_37113()) {
@@ -681,7 +681,7 @@ public class class_5989 extends class_9716 {
       }
 
       if (this.field_30533.field_45284 && !var11 && !var3 && !this.field_3876.field_4942 && !this.method_37070() && !this.method_26505()) {
-         class_6098 var12 = this.method_26520(class_6943.field_35708);
+         ItemStack var12 = this.method_26520(class_6943.field_35708);
          if (var12.method_27960() == class_4897.field_24503 && class_3286.method_15061(var12) && this.method_3190()) {
             this.field_30532.method_4813(new class_2317(this, class_4127.field_20093));
          }
@@ -746,27 +746,27 @@ public class class_5989 extends class_9716 {
       }
 
       super.method_26606();
-      if (this.field_41726 && this.field_3876.field_4942 && !this.field_30523.field_9647.method_42153()) {
+      if (this.field_41726 && this.field_3876.field_4942 && !this.field_30523.playerController.method_42153()) {
          this.field_3876.field_4942 = false;
          this.method_3216();
       }
    }
 
    private void method_27318() {
-      this.field_30505 = this.field_30510;
+      this.prevTimeInPortal = this.timeInPortal;
       if (!this.field_41772) {
-         if (this.method_26480(Effects.field_19732) && this.method_26553(Effects.field_19732).method_10347() > 60) {
-            this.field_30510 += 0.006666667F;
-            if (this.field_30510 > 1.0F) {
-               this.field_30510 = 1.0F;
+         if (this.isPotionActive(Effects.NAUSEA) && this.method_26553(Effects.NAUSEA).method_10347() > 60) {
+            this.timeInPortal += 0.006666667F;
+            if (this.timeInPortal > 1.0F) {
+               this.timeInPortal = 1.0F;
             }
          } else {
-            if (this.field_30510 > 0.0F) {
-               this.field_30510 -= 0.05F;
+            if (this.timeInPortal > 0.0F) {
+               this.timeInPortal -= 0.05F;
             }
 
-            if (this.field_30510 < 0.0F) {
-               this.field_30510 = 0.0F;
+            if (this.timeInPortal < 0.0F) {
+               this.timeInPortal = 0.0F;
             }
          }
       } else {
@@ -778,13 +778,13 @@ public class class_5989 extends class_9716 {
             this.field_30523.method_8609((Screen)null);
          }
 
-         if (this.field_30510 == 0.0F) {
+         if (this.timeInPortal == 0.0F) {
             this.field_30523.method_8590().method_16345(class_4949.method_22680(class_463.field_2846, this.field_41717.nextFloat() * 0.4F + 0.8F, 0.25F));
          }
 
-         this.field_30510 += 0.0125F;
-         if (this.field_30510 >= 1.0F) {
-            this.field_30510 = 1.0F;
+         this.timeInPortal += 0.0125F;
+         if (this.timeInPortal >= 1.0F) {
+            this.timeInPortal = 1.0F;
          }
 
          this.field_41772 = false;
@@ -812,9 +812,9 @@ public class class_5989 extends class_9716 {
    @Nullable
    @Override
    public class_2250 method_26421(class_1425 var1) {
-      if (var1 == Effects.field_19732) {
-         this.field_30505 = 0.0F;
-         this.field_30510 = 0.0F;
+      if (var1 == Effects.NAUSEA) {
+         this.prevTimeInPortal = 0.0F;
+         this.timeInPortal = 0.0F;
       }
 
       return super.method_26421(var1);
@@ -866,7 +866,7 @@ public class class_5989 extends class_9716 {
                if (var17.method_8325(this.field_41768, var15, var46).method_19485()) {
                   float var18 = 7.0F;
                   float var19 = 1.2F;
-                  if (this.method_26480(Effects.field_19730)) {
+                  if (this.isPotionActive(Effects.field_19730)) {
                      var19 += (float)(this.method_26553(Effects.field_19730).method_10333() + 1) * 0.75F;
                   }
 
@@ -993,7 +993,7 @@ public class class_5989 extends class_9716 {
 
    @Override
    public class_1343 method_37202(float var1) {
-      if (!this.field_30523.gameOptions.method_40867().method_42383()) {
+      if (!this.field_30523.gameOptions.getPointOfView().method_42383()) {
          return super.method_37202(var1);
       } else {
          float var4 = class_9299.method_42795(var1 * 0.5F, this.field_41701, this.field_41711) * (float) (Math.PI / 180.0);

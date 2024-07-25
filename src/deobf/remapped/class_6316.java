@@ -31,7 +31,7 @@ public class class_6316 extends class_3599 {
       }
    }
 
-   private boolean method_28788(class_6098 var1) {
+   private boolean method_28788(ItemStack var1) {
       return this.field_32261.contains(var1.method_27960());
    }
 

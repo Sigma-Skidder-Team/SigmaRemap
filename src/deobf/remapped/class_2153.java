@@ -6,12 +6,12 @@ public final class class_2153 extends class_8230 {
    }
 
    @Override
-   public class_6098 method_37693() {
-      return new class_6098(class_4783.field_23313);
+   public ItemStack method_37693() {
+      return new ItemStack(class_4783.field_23313);
    }
 
    @Override
-   public void method_37685(class_2831<class_6098> var1) {
+   public void method_37685(class_2831<ItemStack> var1) {
       throw new RuntimeException("Implement exception client-side.");
    }
 

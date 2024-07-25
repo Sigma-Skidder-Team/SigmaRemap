@@ -29,7 +29,7 @@ public class class_5784 extends class_8273<class_5130> {
       }
    }
 
-   public void method_26171(class_9359 var1, class_6414 var2, class_6098 var3, int var4) {
+   public void method_26171(class_9359 var1, class_6414 var2, ItemStack var3, int var4) {
       this.method_38137(var1, var3x -> var3x.method_23530(var2, var3, var4));
    }
 }

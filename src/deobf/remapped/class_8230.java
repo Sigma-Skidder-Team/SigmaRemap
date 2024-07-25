@@ -43,13 +43,13 @@ public abstract class class_8230 {
    private boolean field_42258 = true;
    private boolean field_42269 = true;
    private class_8718[] field_42271 = new class_8718[0];
-   private class_6098 field_42280;
+   private ItemStack field_42280;
 
    public class_8230(int var1, String var2) {
       this.field_42262 = var1;
       this.field_42268 = var2;
       this.field_42267 = new TranslationTextComponent("itemGroup." + var2);
-      this.field_42280 = class_6098.field_31203;
+      this.field_42280 = ItemStack.EMPTY;
       field_42279[var1] = this;
    }
 
@@ -65,7 +65,7 @@ public abstract class class_8230 {
       return this.field_42267;
    }
 
-   public class_6098 method_37692() {
+   public ItemStack method_37692() {
       if (this.field_42280.method_28022()) {
          this.field_42280 = this.method_37693();
       }
@@ -73,7 +73,7 @@ public abstract class class_8230 {
       return this.field_42280;
    }
 
-   public abstract class_6098 method_37693();
+   public abstract ItemStack method_37693();
 
    public String method_37703() {
       return this.field_42259;
@@ -140,7 +140,7 @@ public abstract class class_8230 {
       return false;
    }
 
-   public void method_37685(class_2831<class_6098> var1) {
+   public void method_37685(class_2831<ItemStack> var1) {
       for (class_2451 var5 : class_8669.field_44382) {
          var5.method_11239(this, var1);
       }

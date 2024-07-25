@@ -55,12 +55,12 @@ public class class_8359 extends class_8143 implements class_72 {
 
    public class_8359(Identifier var1) {
       this.field_42808 = var1;
-      this.field_42823 = class_3542.method_16477();
+      this.field_42823 = RenderSystem.method_16477();
       this.field_42811 = var1.equals(field_42824);
-      this.field_42825 = class_3111.method_14424();
-      this.field_42810 = class_3111.method_14405();
+      this.field_42825 = Config.method_14424();
+      this.field_42810 = Config.method_14405();
       if (this.field_42811) {
-         class_3111.method_14325(this);
+         Config.method_14325(this);
       }
    }
 
@@ -101,8 +101,8 @@ public class class_8359 extends class_8143 implements class_72 {
       }
 
       class_5525.method_25075(this);
-      class_3111.method_14280("Animated sprites: " + this.field_42802.size());
-      if (class_3111.method_14405()) {
+      Config.method_14280("Animated sprites: " + this.field_42802.size());
+      if (Config.method_14405()) {
          for (class_5155 var13 : var1.field_19099) {
             class_5155 var6 = var13.field_26548;
             if (var6 != null) {
@@ -112,19 +112,19 @@ public class class_8359 extends class_8143 implements class_72 {
                try {
                   var6.method_23600();
                } catch (Exception var9) {
-                  class_3111.method_14277("Error uploading sprite single: " + var6 + ", parent: " + var13);
+                  Config.method_14277("Error uploading sprite single: " + var6 + ", parent: " + var13);
                   var9.printStackTrace();
                }
             }
          }
 
-         class_1920.method_8791(this.method_37055());
+         GlStateManager.method_8791(this.method_37055());
       }
 
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          List var12 = var1.field_19099;
          if (class_6588.field_33603) {
-            class_1920.method_8791(this.method_37050().field_48418);
+            GlStateManager.method_8791(this.method_37050().field_48418);
 
             for (class_5155 var16 : var12) {
                class_5155 var18 = var16.field_26539;
@@ -135,7 +135,7 @@ public class class_8359 extends class_8143 implements class_72 {
          }
 
          if (class_6588.field_33634) {
-            class_1920.method_8791(this.method_37050().field_48419);
+            GlStateManager.method_8791(this.method_37050().field_48419);
 
             for (class_5155 var17 : var12) {
                class_5155 var19 = var17.field_26562;
@@ -145,13 +145,13 @@ public class class_8359 extends class_8143 implements class_72 {
             }
          }
 
-         class_1920.method_8791(this.method_37055());
+         GlStateManager.method_8791(this.method_37055());
       }
 
       class_7860.method_35547(class_7860.field_40114, this);
       this.method_38500(var1.field_19100, var1.field_19098);
-      if (class_3111.equals(System.getProperty("saveTextureMap"), "true")) {
-         class_3111.method_14277("Exporting texture map: " + this.field_42808);
+      if (Config.equals(System.getProperty("saveTextureMap"), "true")) {
+         Config.method_14277("Exporting texture map: " + this.field_42808);
          class_5525.method_25082(
             "debug/" + this.field_42808.method_21456().replaceAll("/", "_"), this.method_37055(), var1.field_19101, var1.field_19100, var1.field_19098
          );
@@ -176,15 +176,15 @@ public class class_8359 extends class_8143 implements class_72 {
                );
             }
 
-            class_1920.method_8791(this.method_37055());
+            GlStateManager.method_8791(this.method_37055());
          }
       }
    }
 
    public class_3930 method_38516(class_7832 var1, Stream<Identifier> var2, class_3492 var3, int var4) {
       this.field_42811 = this.field_42808.equals(field_42824);
-      this.field_42825 = class_3111.method_14424();
-      this.field_42810 = class_3111.method_14405();
+      this.field_42825 = Config.method_14424();
+      this.field_42810 = Config.method_14405();
       int var7 = var4;
       this.field_42812.clear();
       this.field_42804.clear();
@@ -195,7 +195,7 @@ public class class_8359 extends class_8143 implements class_72 {
             throw new IllegalArgumentException("Location cannot be null!");
          }
       }).collect(Collectors.toSet());
-      class_3111.method_14277("Multitexture: " + class_3111.method_14405());
+      Config.method_14277("Multitexture: " + Config.method_14405());
       class_5525.method_25073(this);
       var8.addAll(this.field_42812.keySet());
       Set var9 = method_38507(var8, this.field_42812.keySet());
@@ -203,7 +203,7 @@ public class class_8359 extends class_8143 implements class_72 {
       var8.addAll(this.field_42812.keySet());
       if (var4 >= 4) {
          var7 = this.method_38517(var8, var1);
-         class_3111.method_14280("Mipmap levels: " + var7);
+         Config.method_14280("Mipmap levels: " + var7);
       }
 
       int var10 = class_5525.method_25079();
@@ -223,9 +223,9 @@ public class class_8359 extends class_8143 implements class_72 {
                int var19 = var7 > 0 ? class_5525.method_25087(var17, var13) : class_5525.method_25069(var17, var13);
                if (var19 != var17) {
                   if (!class_5525.method_25097(var17)) {
-                     class_3111.method_14280("Scaled non power of 2: " + var16.method_38459() + ", " + var17 + " -> " + var19);
+                     Config.method_14280("Scaled non power of 2: " + var16.method_38459() + ", " + var17 + " -> " + var19);
                   } else {
-                     class_3111.method_14280("Scaled too small texture: " + var16.method_38459() + ", " + var17 + " -> " + var19);
+                     Config.method_14280("Scaled too small texture: " + var16.method_38459() + ", " + var17 + " -> " + var19);
                   }
 
                   int var20 = var18 * var19 / var17;
@@ -251,7 +251,7 @@ public class class_8359 extends class_8143 implements class_72 {
 
             var11.method_36990(var16);
          } else {
-            class_3111.method_14317("Invalid sprite size: " + var16.method_38459());
+            Config.method_14317("Invalid sprite size: " + var16.method_38459());
          }
       }
 
@@ -405,7 +405,7 @@ public class class_8359 extends class_8143 implements class_72 {
          }
       }
 
-      if (class_3111.method_14405()) {
+      if (Config.method_14405()) {
          for (class_5155 var13 : this.field_42802) {
             if (this.method_38501(var13) && var13.method_23593()) {
                class_5155 var8 = var13.field_26548;
@@ -419,12 +419,12 @@ public class class_8359 extends class_8143 implements class_72 {
             }
          }
 
-         class_1920.method_8791(this.method_37055());
+         GlStateManager.method_8791(this.method_37055());
       }
 
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          if (var3) {
-            class_1920.method_8791(this.method_37050().field_48418);
+            GlStateManager.method_8791(this.method_37050().field_48418);
 
             for (class_5155 var14 : this.field_42802) {
                if (var14.field_26539 != null && this.method_38501(var14) && var14.method_23593()) {
@@ -437,7 +437,7 @@ public class class_8359 extends class_8143 implements class_72 {
          }
 
          if (var4) {
-            class_1920.method_8791(this.method_37050().field_48419);
+            GlStateManager.method_8791(this.method_37050().field_48419);
 
             for (class_5155 var15 : this.field_42802) {
                if (var15.field_26562 != null && this.method_38501(var15) && var15.method_23593()) {
@@ -450,12 +450,12 @@ public class class_8359 extends class_8143 implements class_72 {
          }
 
          if (var3 || var4) {
-            class_1920.method_8791(this.method_37055());
+            GlStateManager.method_8791(this.method_37055());
          }
       }
 
       if (this.field_42811) {
-         int var12 = class_3111.method_14327().worldRenderer.method_20022();
+         int var12 = Config.method_14327().worldRenderer.method_20022();
          if (var12 != this.field_42818) {
             this.field_42809 = var5;
             this.field_42818 = var12;
@@ -469,10 +469,10 @@ public class class_8359 extends class_8143 implements class_72 {
 
    @Override
    public void method_80() {
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          this.method_38526();
       } else {
-         class_3542.method_16474(this::method_38526);
+         RenderSystem.method_16474(this::method_38526);
       }
    }
 
@@ -535,19 +535,19 @@ public class class_8359 extends class_8143 implements class_72 {
    private boolean method_38501(class_5155 var1) {
       if (this.field_42811) {
          if (var1 == class_5525.field_28157 || var1 == class_5525.field_28158) {
-            return class_3111.method_14380();
+            return Config.method_14380();
          } else if (var1 == class_5525.field_28138 || var1 == class_5525.field_28148) {
-            return class_3111.method_14323();
+            return Config.method_14323();
          } else if (var1 == class_5525.field_28144 || var1 == class_5525.field_28135) {
-            return class_3111.method_14251();
+            return Config.method_14251();
          } else if (var1 == class_5525.field_28132 || var1 == class_5525.field_28150) {
-            return class_3111.method_14251();
+            return Config.method_14251();
          } else if (var1 == class_5525.field_28129 || var1 == class_5525.field_28156) {
-            return class_3111.method_14251();
+            return Config.method_14251();
          } else if (var1 != class_5525.field_28162 && var1 != class_5525.field_28142) {
-            return var1 != class_5525.field_28128 ? class_3111.method_14425() : class_3111.method_14446();
+            return var1 != class_5525.field_28128 ? Config.method_14425() : Config.method_14446();
          } else {
-            return class_3111.method_14251();
+            return Config.method_14251();
          }
       } else {
          return true;
@@ -566,7 +566,7 @@ public class class_8359 extends class_8143 implements class_72 {
 
       var5 = class_9299.method_42801(var5);
       if (var5 > 16) {
-         class_3111.method_14280("Sprite size: " + var5);
+         Config.method_14280("Sprite size: " + var5);
       }
 
       int var6 = class_9299.method_42798(var5);
@@ -654,7 +654,7 @@ public class class_8359 extends class_8143 implements class_72 {
    }
 
    public boolean method_38524() {
-      int var3 = class_1920.method_8841();
+      int var3 = GlStateManager.method_8841();
       int var4 = this.method_37055();
       return var3 == var4;
    }
@@ -689,11 +689,11 @@ public class class_8359 extends class_8143 implements class_72 {
                         int var25 = var24 * this.field_42820 + var23;
                         this.field_42815[var25] = var6;
                      } else {
-                        class_3111.method_14317("Invalid grid V: " + var24 + ", icon: " + var6.method_23644());
+                        Config.method_14317("Invalid grid V: " + var24 + ", icon: " + var6.method_23644());
                      }
                   }
                } else {
-                  class_3111.method_14317("Invalid grid U: " + var23 + ", icon: " + var6.method_23644());
+                  Config.method_14317("Invalid grid U: " + var23 + ", icon: " + var6.method_23644());
                }
             }
          }

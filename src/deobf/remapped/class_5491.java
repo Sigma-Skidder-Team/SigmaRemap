@@ -6,12 +6,12 @@ public class class_5491 implements Packet<class_392> {
    private static String[] field_27979;
    private int field_27981;
    private int field_27980;
-   private class_6098 field_27982 = class_6098.field_31203;
+   private ItemStack field_27982 = ItemStack.EMPTY;
 
    public class_5491() {
    }
 
-   public class_5491(int var1, int var2, class_6098 var3) {
+   public class_5491(int var1, int var2, ItemStack var3) {
       this.field_27981 = var1;
       this.field_27980 = var2;
       this.field_27982 = var3.method_27973();
@@ -43,7 +43,7 @@ public class class_5491 implements Packet<class_392> {
       return this.field_27980;
    }
 
-   public class_6098 method_24953() {
+   public ItemStack method_24953() {
       return this.field_27982;
    }
 }

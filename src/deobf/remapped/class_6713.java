@@ -26,7 +26,7 @@ public class class_6713 extends Screen {
             this.field_943.method_8609((Screen)null);
             int var4 = class_828.method_3611();
             TranslationTextComponent var5;
-            if (!this.field_943.method_8515().method_1625(class_4666.method_21586(this.field_34691), this.field_34686, var4)) {
+            if (!this.field_943.method_8515().method_1625(GameType.method_21586(this.field_34691), this.field_34686, var4)) {
                var5 = new TranslationTextComponent("commands.publish.failed");
             } else {
                var5 = new TranslationTextComponent("commands.publish.started", var4);

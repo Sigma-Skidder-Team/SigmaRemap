@@ -22,6 +22,6 @@ public interface class_2274 {
    default void method_10485() {
    }
 
-   default void method_10486(class_6098 var1) {
+   default void method_10486(ItemStack var1) {
    }
 }

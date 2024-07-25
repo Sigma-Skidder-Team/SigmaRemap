@@ -10,12 +10,12 @@ public class class_789 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return false;
    }
 
    @Override
-   public class_6098 method_35892(class_704 var1, class_6098 var2) {
+   public ItemStack method_35892(class_704 var1, ItemStack var2) {
       class_3682.method_17097(this.field_4230).method_35899(1);
       class_3682.method_17102(this.field_4230).method_35899(1);
       if (!class_3682.method_17097(this.field_4230).method_35884() || !class_3682.method_17102(this.field_4230).method_35884()) {

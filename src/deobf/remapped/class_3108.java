@@ -13,7 +13,7 @@ public class class_3108 extends class_4314 {
    }
 
    @Override
-   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, class_6098 var4) {
+   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, ItemStack var4) {
       super.method_10765(var1, var2, var3, var4);
       int var7 = 15 + var2.field_33033.nextInt(15) + var2.field_33033.nextInt(15);
       this.method_29304(var2, var3, var7);
@@ -25,7 +25,7 @@ public class class_3108 extends class_4314 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return class_6098.field_31203;
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return ItemStack.EMPTY;
    }
 }

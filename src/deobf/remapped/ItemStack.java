@@ -36,17 +36,17 @@ import net.minecraft.util.text.event.HoverEvent$class_50;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public final class class_6098 {
-   public static final Codec<class_6098> field_31201 = RecordCodecBuilder.create(
+public final class ItemStack {
+   public static final Codec<ItemStack> field_31201 = RecordCodecBuilder.create(
       var0 -> var0.group(
                class_8669.field_44382.fieldOf("id").forGetter(var0x -> var0x.field_31210),
                Codec.INT.fieldOf("Count").forGetter(var0x -> var0x.field_31206),
                class_5734.field_28974.optionalFieldOf("tag").forGetter(var0x -> Optional.<class_5734>ofNullable(var0x.field_31204))
             )
-            .apply(var0, class_6098::new)
+            .apply(var0, ItemStack::new)
    );
    private static final Logger field_31209 = LogManager.getLogger();
-   public static final class_6098 field_31203 = new class_6098((class_2451)null);
+   public static final ItemStack EMPTY = new ItemStack((class_2451)null);
    public static final DecimalFormat field_31202 = Util.<DecimalFormat>method_44659(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
@@ -63,16 +63,16 @@ public final class class_6098 {
    private class_9115 field_31212;
    private boolean field_31205;
 
-   public class_6098(class_8525 var1) {
+   public ItemStack(class_8525 var1) {
       this(var1, 1);
    }
 
-   private class_6098(class_8525 var1, int var2, Optional<class_5734> var3) {
+   private ItemStack(class_8525 var1, int var2, Optional<class_5734> var3) {
       this(var1, var2);
       var3.ifPresent(this::method_27965);
    }
 
-   public class_6098(class_8525 var1, int var2) {
+   public ItemStack(class_8525 var1, int var2) {
       this.field_31210 = var1 != null ? var1.method_10803() : null;
       this.field_31206 = var2;
       if (this.field_31210 != null && this.field_31210.method_11210()) {
@@ -87,7 +87,7 @@ public final class class_6098 {
       this.field_31214 = this.method_28022();
    }
 
-   private class_6098(class_5734 var1) {
+   private ItemStack(class_5734 var1) {
       this.field_31210 = class_8669.field_44382.method_39806(new Identifier(var1.method_25965("id")));
       this.field_31206 = var1.method_25950("Count");
       if (var1.method_25939("tag", 10)) {
@@ -102,26 +102,26 @@ public final class class_6098 {
       this.method_27981();
    }
 
-   public static class_6098 method_28015(class_5734 var0) {
+   public static ItemStack method_28015(class_5734 var0) {
       try {
-         return new class_6098(var0);
+         return new ItemStack(var0);
       } catch (RuntimeException var4) {
          field_31209.debug("Tried to load invalid item: {}", var0, var4);
-         return field_31203;
+         return EMPTY;
       }
    }
 
    public boolean method_28022() {
-      if (this != field_31203) {
+      if (this != EMPTY) {
          return this.method_27960() != null && this.method_27960() != class_4897.field_25302 ? this.field_31206 <= 0 : true;
       } else {
          return true;
       }
    }
 
-   public class_6098 method_27953(int var1) {
+   public ItemStack method_27953(int var1) {
       int var4 = Math.min(var1, this.field_31206);
-      class_6098 var5 = this.method_27973();
+      ItemStack var5 = this.method_27973();
       var5.method_28017(var4);
       this.method_27970(var4);
       return var5;
@@ -152,11 +152,11 @@ public final class class_6098 {
       return this.method_27960().method_11235(this, var1);
    }
 
-   public class_954<class_6098> method_28006(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_28006(World var1, class_704 var2, class_2584 var3) {
       return this.method_27960().method_11231(var1, var2, var3);
    }
 
-   public class_6098 method_27971(World var1, class_5834 var2) {
+   public ItemStack method_27971(World var1, class_5834 var2) {
       return this.method_27960().method_11242(this, var1, var2);
    }
 
@@ -272,9 +272,9 @@ public final class class_6098 {
       return this.method_27960().method_11202(this, var1, var2, var3);
    }
 
-   public class_6098 method_27973() {
+   public ItemStack method_27973() {
       if (!this.method_28022()) {
-         class_6098 var3 = new class_6098(this.method_27960(), this.field_31206);
+         ItemStack var3 = new ItemStack(this.method_27960(), this.field_31206);
          var3.method_27968(this.method_27975());
          if (this.field_31204 != null) {
             var3.field_31204 = this.field_31204.method_25944();
@@ -282,11 +282,11 @@ public final class class_6098 {
 
          return var3;
       } else {
-         return field_31203;
+         return EMPTY;
       }
    }
 
-   public static boolean method_27956(class_6098 var0, class_6098 var1) {
+   public static boolean method_27956(ItemStack var0, ItemStack var1) {
       if (var0.method_28022() && var1.method_28022()) {
          return true;
       } else if (var0.method_28022() || var1.method_28022()) {
@@ -296,7 +296,7 @@ public final class class_6098 {
       }
    }
 
-   public static boolean method_27982(class_6098 var0, class_6098 var1) {
+   public static boolean method_27982(ItemStack var0, ItemStack var1) {
       if (var0.method_28022() && var1.method_28022()) {
          return true;
       } else {
@@ -304,7 +304,7 @@ public final class class_6098 {
       }
    }
 
-   private boolean method_27988(class_6098 var1) {
+   private boolean method_27988(ItemStack var1) {
       if (this.field_31206 != var1.field_31206) {
          return false;
       } else if (this.method_27960() == var1.method_27960()) {
@@ -314,7 +314,7 @@ public final class class_6098 {
       }
    }
 
-   public static boolean method_28019(class_6098 var0, class_6098 var1) {
+   public static boolean method_28019(ItemStack var0, ItemStack var1) {
       if (var0 == var1) {
          return true;
       } else {
@@ -322,7 +322,7 @@ public final class class_6098 {
       }
    }
 
-   public static boolean method_27984(class_6098 var0, class_6098 var1) {
+   public static boolean method_27984(ItemStack var0, ItemStack var1) {
       if (var0 == var1) {
          return true;
       } else {
@@ -330,11 +330,11 @@ public final class class_6098 {
       }
    }
 
-   public boolean method_27991(class_6098 var1) {
+   public boolean method_27991(ItemStack var1) {
       return !var1.method_28022() && this.method_27960() == var1.method_27960();
    }
 
-   public boolean method_28036(class_6098 var1) {
+   public boolean method_28036(ItemStack var1) {
       return !this.method_27959() ? this.method_27991(var1) : !var1.method_28022() && this.method_27960() == var1.method_27960();
    }
 
@@ -448,7 +448,7 @@ public final class class_6098 {
       return this.method_27960().method_11249(this);
    }
 
-   public class_6098 method_28032(ITextComponent var1) {
+   public ItemStack method_28032(ITextComponent var1) {
       class_5734 var4 = this.method_27978("display");
       if (var1 == null) {
          var4.method_25959("Name");

@@ -31,9 +31,9 @@ public class class_131 extends class_4785<class_131> {
       class_4502.method_20922(this.field_324).method_45385(var1, class_9539.method_43981(var2.field_14263), (float)(var3 + 38), (float)(var4 + 24), 7105644);
       class_1543.method_6994(var1, this.field_326, class_4502.method_20917(this.field_324), var3, var4, var5, var6);
       class_3570.method_16603(var2.field_14260, () -> {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_2089.method_9780(var1, var3, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
-         class_2089.method_9780(var1, var3, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         AbstractGui.method_9780(var1, var3, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
+         AbstractGui.method_9780(var1, var3, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
       });
    }
 }

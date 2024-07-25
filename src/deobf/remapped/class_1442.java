@@ -53,11 +53,11 @@ public class class_1442 extends class_2733 {
             var7.field_36492 = var2;
             return (class_8599)var7;
          } else {
-            class_3111.method_14317("Not a EnderCrystalModel model: " + var1);
+            Config.method_14317("Not a EnderCrystalModel model: " + var1);
             return null;
          }
       } else {
-         class_3111.method_14317("Not an instance of RenderEnderCrystal: " + var6);
+         Config.method_14317("Not an instance of RenderEnderCrystal: " + var6);
          return null;
       }
    }

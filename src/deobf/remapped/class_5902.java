@@ -8,11 +8,11 @@ import net.minecraft.util.text.ITextComponent$class_40;
 
 public class class_5902 {
    private final int field_29959;
-   private final class_4666 field_29958;
+   private final GameType field_29958;
    private final GameProfile field_29957;
    public ITextComponent field_29961;
 
-   public class_5902(GameProfile var1, int var2, class_4666 var3, ITextComponent var4) {
+   public class_5902(GameProfile var1, int var2, GameType var3, ITextComponent var4) {
       this.field_29957 = var1;
       this.field_29959 = var2;
       this.field_29958 = var3;
@@ -27,7 +27,7 @@ public class class_5902 {
       return this.field_29959;
    }
 
-   public class_4666 method_27003() {
+   public GameType method_27003() {
       return this.field_29958;
    }
 

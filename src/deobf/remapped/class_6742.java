@@ -25,10 +25,10 @@ public class class_6742 implements class_2995 {
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
       Camera var11 = this.field_34796.gameRenderer.method_35949();
-      class_3542.method_16438();
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16354();
+      RenderSystem.method_16438();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16354();
       class_1331 var12 = new class_1331(var11.method_41627().field_7336, 0.0, var11.method_41627().field_7334);
       this.field_34795.forEach((var1x, var2x) -> {
          for (int var5x = 0; var5x < var2x.size(); var5x++) {
@@ -42,8 +42,8 @@ public class class_6742 implements class_2995 {
             }
          }
       });
-      class_3542.method_16428();
-      class_3542.method_16432();
-      class_3542.method_16489();
+      RenderSystem.enableDepthTest();
+      RenderSystem.method_16432();
+      RenderSystem.method_16489();
    }
 }

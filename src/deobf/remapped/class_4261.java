@@ -218,22 +218,22 @@ public class class_4261 implements class_2072, AutoCloseable {
    }
 
    public void method_19843() {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       class_5564.method_25269(0);
       field_20639 = -1;
       field_20645 = null;
 
       for (int var3 = 0; var3 < this.field_20643.size(); var3++) {
          if (this.field_20650.get(this.field_20642.get(var3)) != null) {
-            class_1920.method_8899(33984 + var3);
-            class_1920.method_8848();
-            class_1920.method_8791(0);
+            GlStateManager.method_8899(33984 + var3);
+            GlStateManager.method_8848();
+            GlStateManager.method_8791(0);
          }
       }
    }
 
    public void method_19852() {
-      class_3542.method_16431(class_3542::method_16429);
+      RenderSystem.method_16431(RenderSystem::method_16429);
       this.field_20648 = false;
       field_20645 = this;
       this.field_20636.method_1769();
@@ -246,11 +246,11 @@ public class class_4261 implements class_2072, AutoCloseable {
          String var4 = this.field_20642.get(var3);
          IntSupplier var5 = this.field_20650.get(var4);
          if (var5 != null) {
-            class_3542.method_16492(33984 + var3);
-            class_3542.method_16432();
+            RenderSystem.method_16492(33984 + var3);
+            RenderSystem.method_16432();
             int var6 = var5.getAsInt();
             if (var6 != -1) {
-               class_3542.method_16446(var6);
+               RenderSystem.method_16446(var6);
                class_3972.method_18331(this.field_20643.get(var3), var3);
             }
          }
@@ -268,18 +268,18 @@ public class class_4261 implements class_2072, AutoCloseable {
 
    @Nullable
    public class_3972 method_19846(String var1) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       return this.field_20653.get(var1);
    }
 
    public class_7049 method_19853(String var1) {
-      class_3542.method_16431(class_3542::method_16429);
+      RenderSystem.method_16431(RenderSystem::method_16429);
       class_3972 var4 = this.method_19846(var1);
       return (class_7049)(var4 != null ? var4 : field_20654);
    }
 
    private void method_19851() {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       IntArrayList var3 = new IntArrayList();
 
       for (int var4 = 0; var4 < this.field_20642.size(); var4++) {

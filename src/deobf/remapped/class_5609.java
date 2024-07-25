@@ -48,7 +48,7 @@ public class class_5609 {
       for (int var6 = 0; var6 < var4.length; var6++) {
          String var7 = var4[var6];
          String var8 = class_8251.method_37819(var7, var2, var3);
-         int var9 = class_3111.method_14361(var8, Integer.MIN_VALUE);
+         int var9 = Config.method_14361(var8, Integer.MIN_VALUE);
          if (var9 != Integer.MIN_VALUE) {
             var5.put(var9, var7);
          } else {
@@ -80,10 +80,10 @@ public class class_5609 {
    }
 
    public static void method_25465(String var0) {
-      class_3111.method_14317("CustomLoadingScreen: " + var0);
+      Config.method_14317("CustomLoadingScreen: " + var0);
    }
 
    public static void method_25461(String var0) {
-      class_3111.method_14277("CustomLoadingScreen: " + var0);
+      Config.method_14277("CustomLoadingScreen: " + var0);
    }
 }

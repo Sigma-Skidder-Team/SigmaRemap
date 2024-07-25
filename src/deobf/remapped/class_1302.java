@@ -21,17 +21,17 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public class_6209 method_11233(class_6098 var1) {
+   public class_6209 method_11233(ItemStack var1) {
       return class_6209.field_31736;
    }
 
    @Override
-   public int method_11230(class_6098 var1) {
+   public int method_11230(ItemStack var1) {
       return 72000;
    }
 
    @Override
-   public void method_11206(class_6098 var1, World var2, class_5834 var3, int var4) {
+   public void method_11206(ItemStack var1, World var2, class_5834 var3, int var4) {
       if (var3 instanceof class_704) {
          class_704 var7 = (class_704)var3;
          int var8 = this.method_11230(var1) - var4;
@@ -50,7 +50,7 @@ public class class_1302 extends class_2451 implements class_1538 {
                      var2.method_7509(var10);
                      var2.method_29540((class_704)null, var10, class_463.field_2050, class_562.field_3335, 1.0F, 1.0F);
                      if (!var7.field_3876.field_4944) {
-                        var7.field_3853.method_32419(var1);
+                        var7.inventory.method_32419(var1);
                      }
                   }
                }
@@ -93,28 +93,28 @@ public class class_1302 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       if (var6.method_28026() < var6.method_27957() - 1) {
          if (class_2931.method_13415(var6) > 0 && !var2.method_37363()) {
-            return class_954.<class_6098>method_4202(var6);
+            return class_954.<ItemStack>method_4202(var6);
          } else {
             var2.method_26462(var3);
-            return class_954.<class_6098>method_4206(var6);
+            return class_954.<ItemStack>method_4206(var6);
          }
       } else {
-         return class_954.<class_6098>method_4202(var6);
+         return class_954.<ItemStack>method_4202(var6);
       }
    }
 
    @Override
-   public boolean method_11246(class_6098 var1, class_5834 var2, class_5834 var3) {
+   public boolean method_11246(ItemStack var1, class_5834 var2, class_5834 var3) {
       var1.method_28003(1, var3, var0 -> var0.method_26448(class_6943.field_35707));
       return true;
    }
 
    @Override
-   public boolean method_11209(class_6098 var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
       if ((double)var3.method_8341(var2, var4) != 0.0) {
          var1.method_28003(2, var5, var0 -> var0.method_26448(class_6943.field_35707));
       }

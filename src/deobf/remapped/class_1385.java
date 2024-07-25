@@ -128,16 +128,16 @@ public class class_1385 {
                   String var10 = var1.getProperty(var7);
                   if (var10 != null) {
                      var10 = var10.trim();
-                     int var11 = class_3111.method_14361(var9, -1);
+                     int var11 = Config.method_14361(var9, -1);
                      if (var11 >= 0 && var11 <= 46) {
-                        int var12 = class_3111.method_14361(var10, -1);
+                        int var12 = Config.method_14361(var10, -1);
                         if (var12 >= 0 && var12 < this.field_7542.length) {
                            var4.put(var11, var12);
                         } else {
-                           class_3111.method_14317("Invalid CTM tile index: " + var10);
+                           Config.method_14317("Invalid CTM tile index: " + var10);
                         }
                      } else {
-                        class_3111.method_14317("Invalid CTM index: " + var9);
+                        Config.method_14317("Invalid CTM index: " + var9);
                      }
                   }
                }
@@ -163,7 +163,7 @@ public class class_1385 {
 
    private String[] method_6413(String var1) {
       if (var1 != null) {
-         String[] var4 = class_3111.method_14302(var1, " ");
+         String[] var4 = Config.method_14302(var1, " ");
 
          for (int var5 = 0; var5 < var4.length; var5++) {
             String var6 = var4[var5];
@@ -206,15 +206,15 @@ public class class_1385 {
          return null;
       } else {
          ArrayList var4 = new ArrayList();
-         String[] var5 = class_3111.method_14302(var1, " ,");
+         String[] var5 = Config.method_14302(var1, " ,");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
             if (var7.contains("-")) {
-               String[] var8 = class_3111.method_14302(var7, "-");
+               String[] var8 = Config.method_14302(var7, "-");
                if (var8.length == 2) {
-                  int var9 = class_3111.method_14361(var8[0], -1);
-                  int var10 = class_3111.method_14361(var8[1], -1);
+                  int var9 = Config.method_14361(var8[0], -1);
+                  int var10 = Config.method_14361(var8[1], -1);
                   if (var9 >= 0 && var10 >= 0) {
                      if (var9 <= var10) {
                         for (int var11 = var9; var11 <= var10; var11++) {
@@ -223,7 +223,7 @@ public class class_1385 {
                         continue;
                      }
 
-                     class_3111.method_14317("Invalid interval: " + var7 + ", when parsing: " + var1);
+                     Config.method_14317("Invalid interval: " + var7 + ", when parsing: " + var1);
                      continue;
                   }
                }
@@ -261,7 +261,7 @@ public class class_1385 {
          var0 = var0.trim();
          if (!var0.equals("opposite")) {
             if (!var0.equals("all")) {
-               class_3111.method_14317("Unknown symmetry: " + var0);
+               Config.method_14317("Unknown symmetry: " + var0);
                return 1;
             } else {
                return 6;
@@ -278,7 +278,7 @@ public class class_1385 {
       if (var0 == null) {
          return 63;
       } else {
-         String[] var3 = class_3111.method_14302(var0, " ,");
+         String[] var3 = Config.method_14302(var0, " ,");
          int var4 = 0;
 
          for (int var5 = 0; var5 < var3.length; var5++) {
@@ -308,7 +308,7 @@ public class class_1385 {
       } else if (var0.equals("sides")) {
          return 60;
       } else if (!var0.equals("all")) {
-         class_3111.method_14317("Unknown face: " + var0);
+         Config.method_14317("Unknown face: " + var0);
          return 128;
       } else {
          return 63;
@@ -322,7 +322,7 @@ public class class_1385 {
             if (!var0.equals("tile")) {
                if (!var0.equals("material")) {
                   if (!var0.equals("state")) {
-                     class_3111.method_14317("Unknown connect: " + var0);
+                     Config.method_14317("Unknown connect: " + var0);
                      return 128;
                   } else {
                      return 4;
@@ -383,7 +383,7 @@ public class class_1385 {
          } else if (var0.equals("overlay_repeat")) {
             return 14;
          } else if (!var0.equals("overlay_ctm")) {
-            class_3111.method_14317("Unknown method: " + var0);
+            Config.method_14317("Unknown method: " + var0);
             return 0;
          } else {
             return 15;
@@ -395,10 +395,10 @@ public class class_1385 {
 
    public boolean method_6404(String var1) {
       if (this.field_7563 == null || this.field_7563.length() <= 0) {
-         class_3111.method_14317("No name found: " + var1);
+         Config.method_14317("No name found: " + var1);
          return false;
       } else if (this.field_7541 == null) {
-         class_3111.method_14317("No base path found: " + var1);
+         Config.method_14317("No base path found: " + var1);
          return false;
       } else {
          if (this.field_7515 == null) {
@@ -410,13 +410,13 @@ public class class_1385 {
          }
 
          if (this.field_7515 == null && this.field_7498 == null) {
-            class_3111.method_14317("No matchBlocks or matchTiles specified: " + var1);
+            Config.method_14317("No matchBlocks or matchTiles specified: " + var1);
             return false;
          } else if (this.field_7559 != null) {
-            class_3111.method_14317("Metadata is not supported: " + class_3111.method_14287(this.field_7559));
+            Config.method_14317("Metadata is not supported: " + Config.method_14287(this.field_7559));
             return false;
          } else if (this.field_7551 == 0) {
-            class_3111.method_14317("No method: " + var1);
+            Config.method_14317("No method: " + var1);
             return false;
          } else if (this.field_7542 != null && this.field_7542.length > 0) {
             if (this.field_7509 == 0) {
@@ -424,16 +424,16 @@ public class class_1385 {
             }
 
             if (this.field_7509 == 128) {
-               class_3111.method_14317("Invalid connect in: " + var1);
+               Config.method_14317("Invalid connect in: " + var1);
                return false;
             } else if (this.field_7533 > 0) {
-               class_3111.method_14317("Render pass not supported: " + this.field_7533);
+               Config.method_14317("Render pass not supported: " + this.field_7533);
                return false;
             } else if ((this.field_7530 & 128) != 0) {
-               class_3111.method_14317("Invalid faces in: " + var1);
+               Config.method_14317("Invalid faces in: " + var1);
                return false;
             } else if ((this.field_7516 & 128) != 0) {
-               class_3111.method_14317("Invalid symmetry in: " + var1);
+               Config.method_14317("Invalid symmetry in: " + var1);
                return false;
             } else {
                switch (this.field_7551) {
@@ -468,12 +468,12 @@ public class class_1385 {
                   case 15:
                      return this.method_6397(var1);
                   default:
-                     class_3111.method_14317("Unknown method: " + var1);
+                     Config.method_14317("Unknown method: " + var1);
                      return false;
                }
             }
          } else {
-            class_3111.method_14317("No tiles specified: " + var1);
+            Config.method_14317("No tiles specified: " + var1);
             return false;
          }
       }
@@ -525,7 +525,7 @@ public class class_1385 {
    }
 
    private static class_5155 method_6373(String var0) {
-      class_8359 var3 = class_3111.method_14295();
+      class_8359 var3 = Config.method_14295();
       class_5155 var4 = var3.method_38509(var0);
       return var4 == null ? var3.method_38509("block/" + var0) : var4;
    }
@@ -538,7 +538,7 @@ public class class_1385 {
       if (this.field_7542.length >= 47) {
          return true;
       } else {
-         class_3111.method_14317("Invalid tiles, must be at least 47: " + var1);
+         Config.method_14317("Invalid tiles, must be at least 47: " + var1);
          return false;
       }
    }
@@ -551,7 +551,7 @@ public class class_1385 {
       if (this.field_7542.length >= 5) {
          return true;
       } else {
-         class_3111.method_14317("Invalid tiles, must be at least 5: " + var1);
+         Config.method_14317("Invalid tiles, must be at least 5: " + var1);
          return false;
       }
    }
@@ -565,11 +565,11 @@ public class class_1385 {
          if (this.field_7502 != null && this.field_7502 != class_6727.field_34745) {
             return true;
          } else {
-            class_3111.method_14317("Invalid overlay layer: " + this.field_7502);
+            Config.method_14317("Invalid overlay layer: " + this.field_7502);
             return false;
          }
       } else {
-         class_3111.method_14317("Invalid tiles, must be at least 17: " + var1);
+         Config.method_14317("Invalid tiles, must be at least 17: " + var1);
          return false;
       }
    }
@@ -579,7 +579,7 @@ public class class_1385 {
          if (this.field_7502 != null && this.field_7502 != class_6727.field_34745) {
             return true;
          } else {
-            class_3111.method_14317("Invalid overlay layer: " + this.field_7502);
+            Config.method_14317("Invalid overlay layer: " + this.field_7502);
             return false;
          }
       } else {
@@ -592,7 +592,7 @@ public class class_1385 {
          if (this.field_7502 != null && this.field_7502 != class_6727.field_34745) {
             return true;
          } else {
-            class_3111.method_14317("Invalid overlay layer: " + this.field_7502);
+            Config.method_14317("Invalid overlay layer: " + this.field_7502);
             return false;
          }
       } else {
@@ -605,7 +605,7 @@ public class class_1385 {
          if (this.field_7502 != null && this.field_7502 != class_6727.field_34745) {
             return true;
          } else {
-            class_3111.method_14317("Invalid overlay layer: " + this.field_7502);
+            Config.method_14317("Invalid overlay layer: " + this.field_7502);
             return false;
          }
       } else {
@@ -618,7 +618,7 @@ public class class_1385 {
          if (this.field_7502 != null && this.field_7502 != class_6727.field_34745) {
             return true;
          } else {
-            class_3111.method_14317("Invalid overlay layer: " + this.field_7502);
+            Config.method_14317("Invalid overlay layer: " + this.field_7502);
             return false;
          }
       } else {
@@ -634,7 +634,7 @@ public class class_1385 {
       if (this.field_7542.length == 4) {
          return true;
       } else {
-         class_3111.method_14317("Invalid tiles, must be exactly 4: " + var1);
+         Config.method_14317("Invalid tiles, must be exactly 4: " + var1);
          return false;
       }
    }
@@ -644,11 +644,11 @@ public class class_1385 {
          if (this.field_7542.length == 4) {
             return true;
          } else {
-            class_3111.method_14317("Invalid tiles, must be exactly 4: " + var1);
+            Config.method_14317("Invalid tiles, must be exactly 4: " + var1);
             return false;
          }
       } else {
-         class_3111.method_14317("No tiles defined for vertical: " + var1);
+         Config.method_14317("No tiles defined for vertical: " + var1);
          return false;
       }
    }
@@ -658,11 +658,11 @@ public class class_1385 {
          if (this.field_7542.length == 7) {
             return true;
          } else {
-            class_3111.method_14317("Invalid tiles, must be exactly 7: " + var1);
+            Config.method_14317("Invalid tiles, must be exactly 7: " + var1);
             return false;
          }
       } else {
-         class_3111.method_14317("No tiles defined for horizontal+vertical: " + var1);
+         Config.method_14317("No tiles defined for horizontal+vertical: " + var1);
          return false;
       }
    }
@@ -672,11 +672,11 @@ public class class_1385 {
          if (this.field_7542.length == 7) {
             return true;
          } else {
-            class_3111.method_14317("Invalid tiles, must be exactly 7: " + var1);
+            Config.method_14317("Invalid tiles, must be exactly 7: " + var1);
             return false;
          }
       } else {
-         class_3111.method_14317("No tiles defined for vertical+horizontal: " + var1);
+         Config.method_14317("No tiles defined for vertical+horizontal: " + var1);
          return false;
       }
    }
@@ -685,14 +685,14 @@ public class class_1385 {
       if (this.field_7542 != null && this.field_7542.length > 0) {
          if (this.field_7522 != null) {
             if (this.field_7522.length > this.field_7542.length) {
-               class_3111.method_14317("More weights defined than tiles, trimming weights: " + var1);
+               Config.method_14317("More weights defined than tiles, trimming weights: " + var1);
                int[] var4 = new int[this.field_7542.length];
                System.arraycopy(this.field_7522, 0, var4, 0, var4.length);
                this.field_7522 = var4;
             }
 
             if (this.field_7522.length < this.field_7542.length) {
-               class_3111.method_14317("Less weights defined than tiles, expanding weights: " + var1);
+               Config.method_14317("Less weights defined than tiles, expanding weights: " + var1);
                int[] var7 = new int[this.field_7542.length];
                System.arraycopy(this.field_7522, 0, var7, 0, this.field_7522.length);
                int var5 = class_1750.method_7797(this.field_7522);
@@ -714,7 +714,7 @@ public class class_1385 {
 
             this.field_7547 = var8;
             if (this.field_7547 <= 0) {
-               class_3111.method_14317("Invalid sum of all weights: " + var8);
+               Config.method_14317("Invalid sum of all weights: " + var8);
                this.field_7547 = 1;
             }
          }
@@ -722,11 +722,11 @@ public class class_1385 {
          if (this.field_7538 >= 0 && this.field_7538 <= 9) {
             return true;
          } else {
-            class_3111.method_14317("Invalid randomLoops: " + this.field_7538);
+            Config.method_14317("Invalid randomLoops: " + this.field_7538);
             return false;
          }
       } else {
-         class_3111.method_14317("Tiles not defined: " + var1);
+         Config.method_14317("Tiles not defined: " + var1);
          return false;
       }
    }
@@ -738,19 +738,19 @@ public class class_1385 {
                if (this.field_7542.length == this.field_7520 * this.field_7506) {
                   return true;
                } else {
-                  class_3111.method_14317("Number of tiles does not equal width x height: " + var1);
+                  Config.method_14317("Number of tiles does not equal width x height: " + var1);
                   return false;
                }
             } else {
-               class_3111.method_14317("Invalid height: " + var1);
+               Config.method_14317("Invalid height: " + var1);
                return false;
             }
          } else {
-            class_3111.method_14317("Invalid width: " + var1);
+            Config.method_14317("Invalid width: " + var1);
             return false;
          }
       } else {
-         class_3111.method_14317("Tiles not defined: " + var1);
+         Config.method_14317("Tiles not defined: " + var1);
          return false;
       }
    }
@@ -760,11 +760,11 @@ public class class_1385 {
          if (this.field_7542.length == 1) {
             return true;
          } else {
-            class_3111.method_14317("Number of tiles should be 1 for method: fixed.");
+            Config.method_14317("Number of tiles should be 1 for method: fixed.");
             return false;
          }
       } else {
-         class_3111.method_14317("Tiles not defined: " + var1);
+         Config.method_14317("Tiles not defined: " + var1);
          return false;
       }
    }
@@ -777,7 +777,7 @@ public class class_1385 {
       if (this.field_7542.length == 1) {
          return true;
       } else {
-         class_3111.method_14317("Invalid tiles, must be exactly 1: " + var1);
+         Config.method_14317("Invalid tiles, must be exactly 1: " + var1);
          return false;
       }
    }
@@ -810,7 +810,7 @@ public class class_1385 {
                Identifier var7 = var6.method_23644();
                class_5155 var8 = var2.method_38528(var7);
                if (var8 == null || var8 instanceof class_2008) {
-                  class_3111.method_14317("Missing CTM sprite: " + var7 + ", properties: " + this.field_7541);
+                  Config.method_14317("Missing CTM sprite: " + var7 + ", properties: " + this.field_7541);
                }
 
                var1[var5] = var8;
@@ -854,9 +854,9 @@ public class class_1385 {
                var6.add(class_9049.field_46340);
             } else {
                Identifier var13 = new Identifier(var10, var12);
-               boolean var14 = class_3111.method_14362(var13);
+               boolean var14 = Config.method_14362(var13);
                if (!var14) {
-                  class_3111.method_14317("File not found: " + var12);
+                  Config.method_14317("File not found: " + var12);
                }
 
                String var15 = "textures/";
@@ -894,9 +894,9 @@ public class class_1385 {
          + ", basePath: "
          + this.field_7541
          + ", matchBlocks: "
-         + class_3111.method_14289(this.field_7515)
+         + Config.method_14289(this.field_7515)
          + ", matchTiles: "
-         + class_3111.method_14289(this.field_7498);
+         + Config.method_14289(this.field_7498);
    }
 
    public boolean method_6383(class_6325 var1) {

@@ -56,7 +56,7 @@ public class class_5125 implements class_8591 {
 
    private String method_23513(String var1) {
       ArrayDeque var4 = new ArrayDeque();
-      String[] var5 = class_3111.method_14302(var1, "/");
+      String[] var5 = Config.method_14302(var1, "/");
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];

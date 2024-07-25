@@ -5,7 +5,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_7797 extends class_2089 {
+public class class_7797 extends AbstractGui {
    private static String[] field_39496;
    private final MinecraftClient field_39488;
    private final class_9044 field_39492;
@@ -13,7 +13,7 @@ public class class_7797 extends class_2089 {
    private final int field_39486;
    private final class_3139 field_39487;
    private final class_7750 field_39484;
-   private final class_6098 field_39493;
+   private final ItemStack field_39493;
    private final ITextComponent field_39490;
    private final class_4604 field_39495;
    private final Map<class_3139, class_4604> field_39498 = Maps.newLinkedHashMap();
@@ -51,7 +51,7 @@ public class class_7797 extends class_2089 {
       this.field_39483.method_2286(var1, this, var2, var3, var4, this.field_39486);
    }
 
-   public void method_35365(int var1, int var2, class_8765 var3) {
+   public void method_35365(int var1, int var2, ItemRenderer var3) {
       this.field_39483.method_2287(var1, var2, this.field_39486, var3, this.field_39493);
    }
 
@@ -62,21 +62,21 @@ public class class_7797 extends class_2089 {
          this.field_39494 = true;
       }
 
-      class_3542.method_16438();
-      class_3542.method_16428();
-      class_3542.method_16413(0.0F, 0.0F, 950.0F);
-      class_3542.method_16405(false, false, false, false);
+      RenderSystem.method_16438();
+      RenderSystem.enableDepthTest();
+      RenderSystem.method_16413(0.0F, 0.0F, 950.0F);
+      RenderSystem.method_16405(false, false, false, false);
       method_9774(var1, 4680, 2260, -4680, -2260, -16777216);
-      class_3542.method_16405(true, true, true, true);
-      class_3542.method_16413(0.0F, 0.0F, -950.0F);
-      class_3542.method_16457(518);
+      RenderSystem.method_16405(true, true, true, true);
+      RenderSystem.method_16413(0.0F, 0.0F, -950.0F);
+      RenderSystem.method_16457(518);
       method_9774(var1, 234, 113, 0, 0, -16777216);
-      class_3542.method_16457(515);
+      RenderSystem.method_16457(515);
       Identifier var4 = this.field_39484.method_35164();
       if (var4 == null) {
-         this.field_39488.method_8577().method_35674(TextureManager.field_40364);
+         this.field_39488.getTextureManager().bindTexture(TextureManager.field_40364);
       } else {
-         this.field_39488.method_8577().method_35674(var4);
+         this.field_39488.getTextureManager().bindTexture(var4);
       }
 
       int var5 = class_9299.method_42847(this.field_39481);
@@ -93,19 +93,19 @@ public class class_7797 extends class_2089 {
       this.field_39495.method_21342(var1, var5, var6, true);
       this.field_39495.method_21342(var1, var5, var6, false);
       this.field_39495.method_21345(var1, var5, var6);
-      class_3542.method_16457(518);
-      class_3542.method_16413(0.0F, 0.0F, -950.0F);
-      class_3542.method_16405(false, false, false, false);
+      RenderSystem.method_16457(518);
+      RenderSystem.method_16413(0.0F, 0.0F, -950.0F);
+      RenderSystem.method_16405(false, false, false, false);
       method_9774(var1, 4680, 2260, -4680, -2260, -16777216);
-      class_3542.method_16405(true, true, true, true);
-      class_3542.method_16413(0.0F, 0.0F, 950.0F);
-      class_3542.method_16457(515);
-      class_3542.method_16489();
+      RenderSystem.method_16405(true, true, true, true);
+      RenderSystem.method_16413(0.0F, 0.0F, 950.0F);
+      RenderSystem.method_16457(515);
+      RenderSystem.method_16489();
    }
 
    public void method_35363(class_7966 var1, int var2, int var3, int var4, int var5) {
-      class_3542.method_16438();
-      class_3542.method_16413(0.0F, 0.0F, 200.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16413(0.0F, 0.0F, 200.0F);
       method_9774(var1, 0, 0, 234, 113, class_9299.method_42848(this.field_39491 * 255.0F) << 24);
       boolean var8 = false;
       int var9 = class_9299.method_42847(this.field_39481);
@@ -120,7 +120,7 @@ public class class_7797 extends class_2089 {
          }
       }
 
-      class_3542.method_16489();
+      RenderSystem.method_16489();
       if (!var8) {
          this.field_39491 = class_9299.method_42828(this.field_39491 - 0.04F, 0.0F, 1.0F);
       } else {

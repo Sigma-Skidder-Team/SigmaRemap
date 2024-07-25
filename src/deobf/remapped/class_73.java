@@ -179,18 +179,18 @@ public class class_73 {
       float var10 = (float)(var4 & 0xFF) / 255.0F;
       class_8042 var11 = class_8042.method_36499();
       class_9633 var12 = var11.method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-      class_3542.method_16480(var8, var9, var10, var14);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.color4f(var8, var9, var10, var14);
       var12.method_44471(7, class_7985.field_40915);
       var12.method_35761((double)var0, (double)var3, 0.0).method_35735();
       var12.method_35761((double)var2, (double)var3, 0.0).method_35735();
       var12.method_35761((double)var2, (double)var1, 0.0).method_35735();
       var12.method_35761((double)var0, (double)var1, 0.0).method_35735();
       var11.method_36500();
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_129(float var0, float var1, float var2, float var3, class_4230 var4) {
@@ -206,13 +206,13 @@ public class class_73 {
          var3 = (float)var8;
       }
 
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
       var4.method_19717(true);
       var4.method_19713((int)var0 - (int)var2, (int)var1 - (int)var3);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_109(float var0, float var1, float var2, float var3, int var4) {
@@ -243,11 +243,11 @@ public class class_73 {
       float var13 = (float)(var5 >> 16 & 0xFF) / 255.0F;
       float var14 = (float)(var5 >> 8 & 0xFF) / 255.0F;
       float var15 = (float)(var5 & 0xFF) / 255.0F;
-      class_3542.method_16354();
-      class_3542.method_16488();
-      class_3542.method_16458();
-      class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-      class_3542.method_16486(7425);
+      RenderSystem.method_16354();
+      RenderSystem.enableBlend();
+      RenderSystem.method_16458();
+      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.method_16486(7425);
       class_8042 var16 = class_8042.method_36499();
       class_9633 var17 = var16.method_36501();
       var17.method_44471(7, class_7985.field_40903);
@@ -256,10 +256,10 @@ public class class_73 {
       var17.method_35761((double)var0, (double)var3, 0.0).method_35742(var13, var14, var15, var12).method_35735();
       var17.method_35761((double)var2, (double)var3, 0.0).method_35742(var13, var14, var15, var12).method_35735();
       var16.method_36500();
-      class_3542.method_16486(7424);
-      class_3542.method_16448();
-      class_3542.method_16374();
-      class_3542.method_16432();
+      RenderSystem.method_16486(7424);
+      RenderSystem.method_16448();
+      RenderSystem.enableAlphaTest();
+      RenderSystem.method_16432();
    }
 
    public static void method_82(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
@@ -279,11 +279,11 @@ public class class_73 {
       float var23 = (float)(var7 >> 16 & 0xFF) / 255.0F;
       float var24 = (float)(var7 >> 8 & 0xFF) / 255.0F;
       float var25 = (float)(var7 & 0xFF) / 255.0F;
-      class_3542.method_16354();
-      class_3542.method_16488();
-      class_3542.method_16458();
-      class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-      class_3542.method_16486(7425);
+      RenderSystem.method_16354();
+      RenderSystem.enableBlend();
+      RenderSystem.method_16458();
+      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.method_16486(7425);
       class_8042 var26 = class_8042.method_36499();
       class_9633 var27 = var26.method_36501();
       var27.method_44471(7, class_7985.field_40903);
@@ -292,14 +292,14 @@ public class class_73 {
       var27.method_35761((double)var0, (double)var3, 0.0).method_35742(var23, var24, var25, var22).method_35735();
       var27.method_35761((double)var2, (double)var3, 0.0).method_35742(var19, var20, var21, var18).method_35735();
       var26.method_36500();
-      class_3542.method_16486(7424);
-      class_3542.method_16448();
-      class_3542.method_16374();
-      class_3542.method_16432();
+      RenderSystem.method_16486(7424);
+      RenderSystem.method_16448();
+      RenderSystem.enableAlphaTest();
+      RenderSystem.method_16432();
    }
 
    public static void method_146(float var0, float var1, float var2, float var3, int var4, float var5) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       GL11.glLineWidth(var5);
       float var8 = (float)(var4 >> 24 & 0xFF) / 255.0F;
@@ -308,22 +308,22 @@ public class class_73 {
       float var11 = (float)(var4 & 0xFF) / 255.0F;
       class_8042 var12 = class_8042.method_36499();
       class_9633 var13 = var12.method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16424(770, 771, 1, 0);
-      class_3542.method_16480(var9, var10, var11, var8);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.color4f(var9, var10, var11, var8);
       GL11.glEnable(2848);
       var13.method_44471(1, class_7985.field_40903);
       var13.method_35761((double)var0, (double)var1, 0.0);
       var13.method_35761((double)var2, (double)var3, 0.0);
       var12.method_36500();
       GL11.glDisable(2848);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_142(float var0, float var1, float var2, float var3, float var4, float var5, int var6) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var9 = (float)(var6 >> 24 & 0xFF) / 255.0F;
       float var10 = (float)(var6 >> 16 & 0xFF) / 255.0F;
@@ -331,28 +331,28 @@ public class class_73 {
       float var12 = (float)(var6 & 0xFF) / 255.0F;
       class_8042 var13 = class_8042.method_36499();
       class_9633 var14 = var13.method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16424(770, 771, 1, 0);
-      class_3542.method_16480(var10, var11, var12, var9);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.color4f(var10, var11, var12, var9);
       GL11.glBegin(6);
       GL11.glVertex2f(var0, var1);
       GL11.glVertex2f(var4, var5);
       GL11.glVertex2f(var2, var3);
       GL11.glVertex2f(var0, var1);
       GL11.glEnd();
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_152(float var0, float var1, float var2, int var3, int var4) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       class_8042 var7 = class_8042.method_36499();
       class_9633 var8 = var7.method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16424(770, 771, 1, 0);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16424(770, 771, 1, 0);
       GL11.glColor4fv(class_314.method_1412(var3));
       GL11.glEnable(2881);
       GL11.glBegin(4);
@@ -375,8 +375,8 @@ public class class_73 {
       GL11.glVertex2f(var0 - var2 / 2.0F, var1);
       GL11.glEnd();
       GL11.glDisable(2881);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_124(float var0, float var1, float var2, int var3) {
@@ -388,7 +388,7 @@ public class class_73 {
    }
 
    public static void method_121(float var0, float var1, float var2, int var3) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 0.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 0.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var6 = (float)(var3 >> 24 & 0xFF) / 255.0F;
       float var7 = (float)(var3 >> 16 & 0xFF) / 255.0F;
@@ -396,9 +396,9 @@ public class class_73 {
       float var9 = (float)(var3 & 0xFF) / 255.0F;
       class_8042 var10 = class_8042.method_36499();
       class_9633 var11 = var10.method_36501();
-      class_3542.method_16354();
-      class_3542.method_16424(770, 771, 1, 0);
-      class_3542.method_16480(var7, var8, var9, var6);
+      RenderSystem.method_16354();
+      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.color4f(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
       GL11.glPointSize(var2 * GUIManager.field_34898);
@@ -407,8 +407,8 @@ public class class_73 {
       GL11.glEnd();
       GL11.glDisable(2832);
       GL11.glDisable(3042);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_87(class_3384 var0, float var1, float var2, String var3, int var4) {
@@ -422,7 +422,7 @@ public class class_73 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public static void method_89(class_3384 var0, float var1, float var2, String var3, int var4, class_6206 var5, class_6206 var6, boolean var7) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;
       int var11 = 0;
@@ -481,7 +481,7 @@ public class class_73 {
          }
       }
 
-      class_3542.method_16488();
+      RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       if (var7) {
          var0.method_18545((float)Math.round(var1 + (float)var10), (float)(Math.round(var2 + (float)var11) + 2), var3, new class_8709(0.0F, 0.0F, 0.0F, 0.35F));
@@ -491,7 +491,7 @@ public class class_73 {
          var0.method_18545((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new class_8709(var13, var14, var15, var12));
       }
 
-      class_3542.method_16448();
+      RenderSystem.method_16448();
       GL11.glPopMatrix();
    }
 
@@ -506,7 +506,7 @@ public class class_73 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    public static void method_92(class_3786 var0, float var1, float var2, String var3, int var4, class_6206 var5, class_6206 var6, boolean var7) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       int var10 = 0;
       int var11 = 0;
@@ -530,11 +530,11 @@ public class class_73 {
       float var13 = (float)(var4 >> 16 & 0xFF) / 255.0F;
       float var14 = (float)(var4 >> 8 & 0xFF) / 255.0F;
       float var15 = (float)(var4 & 0xFF) / 255.0F;
-      class_3542.method_16488();
+      RenderSystem.enableBlend();
       GL11.glBlendFunc(770, 771);
       class_9162.method_42217();
       var0.method_18545((float)Math.round(var1 + (float)var10), (float)Math.round(var2 + (float)var11), var3, new class_8709(var13, var14, var15, var12));
-      class_3542.method_16448();
+      RenderSystem.method_16448();
    }
 
    public static void method_134(float var0, float var1, float var2, float var3, float var4, int var5) {
@@ -542,7 +542,7 @@ public class class_73 {
    }
 
    public static void method_122(float var0, float var1, float var2, float var3, float var4, float var5, int var6) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var9 = 0.0F;
       if (var2 > var3) {
@@ -557,10 +557,10 @@ public class class_73 {
       float var13 = (float)(var6 & 0xFF) / 255.0F;
       class_8042 var14 = class_8042.method_36499();
       class_9633 var15 = var14.method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16424(770, 771, 1, 0);
-      class_3542.method_16480(var11, var12, var13, var10);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.color4f(var11, var12, var13, var10);
       if (var10 > 0.5F) {
          GL11.glEnable(2848);
          GL11.glLineWidth(2.0F);
@@ -585,12 +585,12 @@ public class class_73 {
       }
 
       GL11.glEnd();
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_105(float var0, float var1, float[] var2, float[] var3, int var4) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       float var7 = (float)(var4 >> 24 & 0xFF) / 255.0F;
       float var8 = (float)(var4 >> 16 & 0xFF) / 255.0F;
@@ -598,10 +598,10 @@ public class class_73 {
       float var10 = (float)(var4 & 0xFF) / 255.0F;
       class_8042 var11 = class_8042.method_36499();
       class_9633 var12 = var11.method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16424(770, 771, 1, 0);
-      class_3542.method_16480(var8, var9, var10, var7);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.color4f(var8, var9, var10, var7);
       GL11.glBegin(6);
 
       for (int var13 = var2.length - 1; var13 >= 0; var13--) {
@@ -609,8 +609,8 @@ public class class_73 {
       }
 
       GL11.glEnd();
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_153(float var0, float var1, float var2, float var3, class_8343 var4, int var5) {
@@ -634,7 +634,7 @@ public class class_73 {
       float var0, float var1, float var2, float var3, class_8343 var4, int var5, float var6, float var7, float var8, float var9, boolean var10
    ) {
       if (var4 != null) {
-         class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+         RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
          GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
          var0 = (float)Math.round(var0);
          var2 = (float)Math.round(var2);
@@ -644,10 +644,10 @@ public class class_73 {
          float var14 = (float)(var5 >> 16 & 0xFF) / 255.0F;
          float var15 = (float)(var5 >> 8 & 0xFF) / 255.0F;
          float var16 = (float)(var5 & 0xFF) / 255.0F;
-         class_3542.method_16488();
-         class_3542.method_16354();
-         class_3542.method_16424(770, 771, 1, 0);
-         class_3542.method_16480(var14, var15, var16, var13);
+         RenderSystem.enableBlend();
+         RenderSystem.method_16354();
+         RenderSystem.method_16424(770, 771, 1, 0);
+         RenderSystem.color4f(var14, var15, var16, var13);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
          var4.method_38419();
@@ -675,8 +675,8 @@ public class class_73 {
          GL11.glEnd();
          GL11.glDisable(3553);
          GL11.glDisable(3042);
-         class_3542.method_16432();
-         class_3542.method_16448();
+         RenderSystem.method_16432();
+         RenderSystem.method_16448();
       }
    }
 
@@ -684,7 +684,7 @@ public class class_73 {
       float var0, float var1, float var2, float var3, ByteBuffer var4, int var5, float var6, float var7, float var8, float var9, boolean var10, boolean var11
    ) {
       if (var4 != null) {
-         class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+         RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
          GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
          var0 = (float)Math.round(var0);
          var2 = (float)Math.round(var2);
@@ -694,10 +694,10 @@ public class class_73 {
          float var15 = (float)(var5 >> 16 & 0xFF) / 255.0F;
          float var16 = (float)(var5 >> 8 & 0xFF) / 255.0F;
          float var17 = (float)(var5 & 0xFF) / 255.0F;
-         class_3542.method_16488();
-         class_3542.method_16354();
-         class_3542.method_16424(770, 771, 1, 0);
-         class_3542.method_16480(var15, var16, var17, var14);
+         RenderSystem.enableBlend();
+         RenderSystem.method_16354();
+         RenderSystem.method_16424(770, 771, 1, 0);
+         RenderSystem.color4f(var15, var16, var17, var14);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
          GL11.glPixelStorei(3312, 0);
@@ -725,8 +725,8 @@ public class class_73 {
          GL11.glEnd();
          GL11.glDisable(3553);
          GL11.glDisable(3042);
-         class_3542.method_16432();
-         class_3542.method_16448();
+         RenderSystem.method_16432();
+         RenderSystem.method_16448();
       }
    }
 
@@ -748,7 +748,7 @@ public class class_73 {
    }
 
    public static void method_137(float var0, float var1, float var2, float var3, int var4, float var5, float var6, float var7, float var8) {
-      class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
       GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
       var0 = (float)Math.round(var0);
       var2 = (float)Math.round(var2);
@@ -758,10 +758,10 @@ public class class_73 {
       float var12 = (float)(var4 >> 16 & 0xFF) / 255.0F;
       float var13 = (float)(var4 >> 8 & 0xFF) / 255.0F;
       float var14 = (float)(var4 & 0xFF) / 255.0F;
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16424(770, 771, 1, 0);
-      class_3542.method_16480(var12, var13, var14, var11);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.color4f(var12, var13, var14, var11);
       GL11.glEnable(3042);
       GL11.glEnable(3553);
       GL11.glPixelStorei(3312, 0);
@@ -787,8 +787,8 @@ public class class_73 {
       GL11.glEnd();
       GL11.glDisable(3553);
       GL11.glDisable(3042);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public static void method_119(float var0, float var1, float var2, int var3) {
@@ -1250,17 +1250,17 @@ public class class_73 {
       field_109 = false;
    }
 
-   public static void method_126(class_6098 var0, int var1, int var2, int var3, int var4) {
+   public static void method_126(ItemStack var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
-         TextureManager var10000 = field_108.method_8577();
-         field_108.method_8577();
-         var10000.method_35674(TextureManager.field_40364);
+         TextureManager var10000 = field_108.getTextureManager();
+         field_108.getTextureManager();
+         var10000.bindTexture(TextureManager.field_40364);
          GL11.glPushMatrix();
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
-         class_8765 var7 = field_108.method_8511();
+         ItemRenderer var7 = field_108.method_8511();
          if (var0.field_31206 == 0) {
-            var0 = new class_6098(var0.method_27960());
+            var0 = new ItemStack(var0.method_27960());
          }
 
          class_2451 var8 = var0.method_27960();
@@ -1268,39 +1268,39 @@ public class class_73 {
          boolean var10 = false;
          class_2083.method_9716();
          GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
-         class_3542.method_16481();
-         class_3542.method_16487();
-         class_3542.method_16488();
+         RenderSystem.method_16481();
+         RenderSystem.method_16487();
+         RenderSystem.enableBlend();
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glDepthFunc(519);
          var7.method_40264(var0, 0, 0);
          GL11.glDepthFunc(515);
-         class_3542.method_16489();
+         RenderSystem.method_16489();
          GL11.glAlphaFunc(519, 0.0F);
-         class_3542.method_16420(33986, 240.0F, 240.0F);
-         class_3542.method_16491();
+         RenderSystem.method_16420(33986, 240.0F, 240.0F);
+         RenderSystem.method_16491();
          class_9162.method_42212();
-         var10000 = field_108.method_8577();
-         field_108.method_8577();
-         var10000.method_35674(TextureManager.field_40364);
+         var10000 = field_108.getTextureManager();
+         field_108.getTextureManager();
+         var10000.bindTexture(TextureManager.field_40364);
          class_2083.method_9717();
       }
    }
 
-   public static void method_125(class_6098 var0, int var1, int var2, float var3) {
+   public static void method_125(ItemStack var0, int var1, int var2, float var3) {
       GL11.glPushMatrix();
-      class_3542.method_16463(5888);
-      class_3542.method_16476();
+      RenderSystem.method_16463(5888);
+      RenderSystem.method_16476();
       field_108.method_8511().field_44875 -= 1101.0F;
-      class_3542.method_16356(1.0 / field_108.window.method_43189(), 1.0 / field_108.window.method_43189(), 1.0);
-      class_3542.method_16413((float)var1, (float)var2, 0.0F);
-      class_3542.method_16403(var3 / 16.0F, var3 / 16.0F, 1.0F);
+      RenderSystem.method_16356(1.0 / field_108.window.method_43189(), 1.0 / field_108.window.method_43189(), 1.0);
+      RenderSystem.method_16413((float)var1, (float)var2, 0.0F);
+      RenderSystem.method_16403(var3 / 16.0F, var3 / 16.0F, 1.0F);
       field_108.method_8511().method_40264(var0, 0, 0);
       field_108.method_8511().field_44875 += 1101.0F;
       class_9162.method_42212();
-      TextureManager var6 = field_108.method_8577();
-      field_108.method_8577();
-      var6.method_35674(TextureManager.field_40364);
+      TextureManager var6 = field_108.getTextureManager();
+      field_108.getTextureManager();
+      var6.bindTexture(TextureManager.field_40364);
       GL11.glPopMatrix();
    }
 

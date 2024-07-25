@@ -22,7 +22,7 @@ public class class_4047 extends Screen {
    private static final class_7107 field_19667 = class_7107.method_32662(field_19658[8], Style.EMPTY.setFormatting(TextFormatting.BLACK));
    private static final class_7107 field_19679 = class_7107.method_32662(field_19658[8], Style.EMPTY.setFormatting(TextFormatting.GRAY));
    private final class_704 field_19681;
-   private final class_6098 field_19670;
+   private final ItemStack field_19670;
    private boolean field_19673;
    private boolean field_19676;
    private int field_19678;
@@ -52,8 +52,8 @@ public class class_4047 extends Screen {
    private ITextComponent field_19665 = StringTextComponent.EMPTY;
    private final ITextComponent field_19672;
 
-   public class_4047(class_704 var1, class_6098 var2, class_2584 var3) {
-      super(class_7542.field_38486);
+   public class_4047(class_704 var1, ItemStack var2, class_2584 var3) {
+      super(NarratorChatListener.field_38486);
       this.field_19681 = var1;
       this.field_19670 = var2;
       this.field_19669 = var3;
@@ -189,7 +189,7 @@ public class class_4047 extends Screen {
             this.field_19670.method_27954("title", class_473.method_2261(this.field_19680.trim()));
          }
 
-         int var5 = this.field_19669 != class_2584.field_12791 ? 40 : this.field_19681.field_3853.field_36404;
+         int var5 = this.field_19669 != class_2584.field_12791 ? 40 : this.field_19681.inventory.field_36404;
          this.field_943.method_8614().method_4813(new class_703(this.field_19670, var1, var5));
       }
    }
@@ -364,8 +364,8 @@ public class class_4047 extends Screen {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
       this.method_41180((class_5888)null);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(class_7680.field_39030);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(class_7680.field_39030);
       int var7 = (this.field_941 - 192) / 2;
       byte var8 = 2;
       this.method_9781(var1, var7, 2, 0, 0, 192, 192);
@@ -402,7 +402,7 @@ public class class_4047 extends Screen {
          if (var3) {
             this.field_948.method_45385(var1, "_", (float)var2.field_3149, (float)var2.field_3150, 0);
          } else {
-            class_2089.method_9774(var1, var2.field_3149, var2.field_3150 - 1, var2.field_3149 + 1, var2.field_3150 + 9, -16777216);
+            AbstractGui.method_9774(var1, var2.field_3149, var2.field_3150 - 1, var2.field_3149 + 1, var2.field_3150 + 9, -16777216);
          }
       }
    }
@@ -410,10 +410,10 @@ public class class_4047 extends Screen {
    private void method_18647(class_8697[] var1) {
       class_8042 var4 = class_8042.method_36499();
       class_9633 var5 = var4.method_36501();
-      class_3542.method_16480(0.0F, 0.0F, 255.0F, 255.0F);
-      class_3542.method_16354();
-      class_3542.method_16466();
-      class_3542.method_16407(class_2603.field_12871);
+      RenderSystem.color4f(0.0F, 0.0F, 255.0F, 255.0F);
+      RenderSystem.method_16354();
+      RenderSystem.method_16466();
+      RenderSystem.method_16407(class_2603.field_12871);
       var5.method_44471(7, class_7985.field_40915);
 
       for (class_8697 var9 : var1) {
@@ -428,8 +428,8 @@ public class class_4047 extends Screen {
       }
 
       var4.method_36500();
-      class_3542.method_16409();
-      class_3542.method_16432();
+      RenderSystem.method_16409();
+      RenderSystem.method_16432();
    }
 
    private class_511 method_18658(class_511 var1) {

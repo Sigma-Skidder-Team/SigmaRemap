@@ -27,7 +27,7 @@ public class class_65 {
 
    public void method_49(MinecraftClient var1, int var2, int var3) {
       this.field_81 = var1;
-      this.field_77 = var1.field_9632.method_27334();
+      this.field_77 = var1.thePlayer.method_27334();
 
       for (int var6 = 0; var6 < this.field_79.size(); var6++) {
          this.field_79.get(var6).method_9668(var2 + 11 + 25 * (var6 % 5), var3 + 31 + 25 * (var6 / 5));

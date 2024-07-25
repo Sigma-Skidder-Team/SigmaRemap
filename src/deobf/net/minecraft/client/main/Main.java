@@ -29,7 +29,7 @@ import remapped.class_2557;
 import remapped.class_2586;
 import remapped.class_2945;
 import remapped.RunArgs;
-import remapped.class_3542;
+import remapped.RenderSystem;
 import remapped.class_3934;
 import remapped.class_4141;
 import remapped.class_447;
@@ -138,10 +138,10 @@ public class Main {
       MinecraftClient var57;
       try {
          Thread.currentThread().setName("Render thread");
-         class_3542.method_16370();
-         class_3542.method_16456();
+         RenderSystem.method_16370();
+         RenderSystem.method_16456();
          var57 = new MinecraftClient(var55);
-         class_3542.method_16421();
+         RenderSystem.method_16421();
       } catch (class_6815 var70) {
          field_1.warn("Failed to create window: ", var70);
          return;
@@ -164,7 +164,7 @@ public class Main {
          var58 = null;
 
          try {
-            class_3542.method_16390(false);
+            RenderSystem.method_16390(false);
             var57.run();
          } catch (Throwable var69) {
             field_1.error("Unhandled game exception", var69);

@@ -46,7 +46,7 @@ public class class_6284 {
    public class_9491[] method_28680(String var1) {
       if (var1 != null) {
          ArrayList var4 = new ArrayList();
-         String[] var5 = class_3111.method_14302(var1, " ");
+         String[] var5 = Config.method_14302(var1, " ");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
@@ -84,7 +84,7 @@ public class class_6284 {
          if (var1.length() <= 0) {
             return null;
          } else {
-            String[] var4 = class_3111.method_14302(var1, ":");
+            String[] var4 = Config.method_14302(var1, ":");
             String var5 = "minecraft";
             byte var6 = 0;
             if (var4.length > 1 && this.method_28643(var4)) {
@@ -171,7 +171,7 @@ public class class_6284 {
          for (int var8 = 0; var8 < var2.length; var8++) {
             String var9 = var2[var8];
             if (var9.length() > 0) {
-               String[] var10 = class_3111.method_14302(var9, "=");
+               String[] var10 = Config.method_14302(var9, "=");
                if (var10.length != 2) {
                   this.method_28663("Invalid block property: " + var9);
                   return null;
@@ -191,7 +191,7 @@ public class class_6284 {
                   var7.put(var13, var14);
                }
 
-               String[] var15 = class_3111.method_14302(var12, ",");
+               String[] var15 = Config.method_14302(var12, ",");
 
                for (int var16 = 0; var16 < var15.length; var16++) {
                   String var17 = var15[var16];
@@ -318,7 +318,7 @@ public class class_6284 {
             var1 = var1.substring(1);
          }
 
-         String[] var5 = class_3111.method_14302(var1, " ");
+         String[] var5 = Config.method_14302(var1, " ");
          Object var6 = new ArrayList();
 
          for (int var7 = 0; var7 < var5.length; var7++) {
@@ -375,7 +375,7 @@ public class class_6284 {
    public int method_28676(String var1, int var2) {
       if (var1 != null) {
          var1 = var1.trim();
-         int var5 = class_3111.method_14361(var1, -1);
+         int var5 = Config.method_14361(var1, -1);
          if (var5 >= 0) {
             return var5;
          } else {
@@ -392,22 +392,22 @@ public class class_6284 {
          return null;
       } else {
          ArrayList var4 = new ArrayList();
-         String[] var5 = class_3111.method_14302(var1, " ,");
+         String[] var5 = Config.method_14302(var1, " ,");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
             if (!var7.contains("-")) {
-               int var14 = class_3111.method_14361(var7, -1);
+               int var14 = Config.method_14361(var7, -1);
                if (var14 >= 0) {
                   var4.add(var14);
                } else {
                   this.method_28663("Invalid number: " + var7 + ", when parsing: " + var1);
                }
             } else {
-               String[] var8 = class_3111.method_14302(var7, "-");
+               String[] var8 = Config.method_14302(var7, "-");
                if (var8.length == 2) {
-                  int var9 = class_3111.method_14361(var8[0], -1);
-                  int var10 = class_3111.method_14361(var8[1], -1);
+                  int var9 = Config.method_14361(var8[0], -1);
+                  int var10 = Config.method_14361(var8[1], -1);
                   if (var9 >= 0 && var10 >= 0 && var9 <= var10) {
                      for (int var11 = var9; var11 <= var10; var11++) {
                         var4.add(var11);
@@ -436,7 +436,7 @@ public class class_6284 {
          return var2;
       } else {
          EnumSet var5 = EnumSet.<Direction>allOf(Direction.class);
-         String[] var6 = class_3111.method_14302(var1, " ,");
+         String[] var6 = Config.method_14302(var1, " ,");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
@@ -480,7 +480,7 @@ public class class_6284 {
       } else if (var1.equals("east")) {
          return Direction.field_804;
       } else if (!var1.equals("west")) {
-         class_3111.method_14317("Unknown face: " + var1);
+         Config.method_14317("Unknown face: " + var1);
          return null;
       } else {
          return Direction.field_809;
@@ -488,11 +488,11 @@ public class class_6284 {
    }
 
    public void method_28682(String var1) {
-      class_3111.method_14277("" + this.field_32119 + ": " + var1);
+      Config.method_14277("" + this.field_32119 + ": " + var1);
    }
 
    public void method_28663(String var1) {
-      class_3111.method_14317("" + this.field_32119 + ": " + var1);
+      Config.method_14317("" + this.field_32119 + ": " + var1);
    }
 
    public class_8750 method_28653(String var1) {
@@ -500,7 +500,7 @@ public class class_6284 {
          return null;
       } else {
          class_8750 var4 = new class_8750();
-         String[] var5 = class_3111.method_14302(var1, " ,");
+         String[] var5 = Config.method_14302(var1, " ,");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
@@ -519,7 +519,7 @@ public class class_6284 {
    private class_2279 method_28673(String var1) {
       if (var1 != null) {
          if (var1.indexOf(45) < 0) {
-            int var7 = class_3111.method_14361(var1, -1);
+            int var7 = Config.method_14361(var1, -1);
             if (var7 >= 0) {
                return new class_2279(var7, var7);
             } else {
@@ -527,10 +527,10 @@ public class class_6284 {
                return null;
             }
          } else {
-            String[] var4 = class_3111.method_14302(var1, "-");
+            String[] var4 = Config.method_14302(var1, "-");
             if (var4.length == 2) {
-               int var5 = class_3111.method_14361(var4[0], -1);
-               int var6 = class_3111.method_14361(var4[1], -1);
+               int var5 = Config.method_14361(var4[0], -1);
+               int var6 = Config.method_14361(var4[1], -1);
                if (var5 >= 0 && var6 >= 0) {
                   return new class_2279(var5, var6);
                } else {
@@ -653,7 +653,7 @@ public class class_6284 {
          return null;
       } else {
          var1 = var1.toLowerCase().trim();
-         String[] var8 = class_3111.method_14302(var1, " ");
+         String[] var8 = Config.method_14302(var1, " ");
          Object[] var9 = (Object[])Array.newInstance(var2.getClass().getComponentType(), var8.length);
 
          for (int var10 = 0; var10 < var8.length; var10++) {
@@ -695,7 +695,7 @@ public class class_6284 {
          return null;
       } else {
          ArrayList var4 = new ArrayList();
-         String[] var5 = class_3111.method_14302(var1, " ");
+         String[] var5 = Config.method_14302(var1, " ");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
@@ -748,7 +748,7 @@ public class class_6284 {
    public int[] method_28681(String var1) {
       var1 = var1.trim();
       TreeSet var4 = new TreeSet();
-      String[] var5 = class_3111.method_14302(var1, " ");
+      String[] var5 = Config.method_14302(var1, " ");
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
@@ -767,13 +767,13 @@ public class class_6284 {
       }
 
       Integer[] var12 = var4.<Integer>toArray(new Integer[var4.size()]);
-      return class_3111.method_14267(var12);
+      return Config.method_14267(var12);
    }
 
    public int[] method_28669(String var1) {
       var1 = var1.trim();
       TreeSet var4 = new TreeSet();
-      String[] var5 = class_3111.method_14302(var1, " ");
+      String[] var5 = Config.method_14302(var1, " ");
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
@@ -792,6 +792,6 @@ public class class_6284 {
       }
 
       Integer[] var12 = var4.<Integer>toArray(new Integer[var4.size()]);
-      return class_3111.method_14267(var12);
+      return Config.method_14267(var12);
    }
 }

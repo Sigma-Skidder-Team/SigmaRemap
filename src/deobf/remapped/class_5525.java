@@ -67,7 +67,7 @@ public class class_5525 {
    public static final String field_28149 = "minecraft:item/";
    public static final Identifier field_28139 = new Identifier("optifine/ctm/default/empty");
    public static final Identifier field_28154 = new Identifier("optifine/ctm/default/empty.png");
-   private static IntBuffer field_28165 = class_3111.method_14260(256);
+   private static IntBuffer field_28165 = Config.method_14260(256);
    private static int field_28146 = -1;
 
    public static void method_25070() {
@@ -103,7 +103,7 @@ public class class_5525 {
    public static class_5155 method_25092(class_8359 var0, String var1) {
       class_5155 var4 = var0.method_38522(var1);
       if (var4 == null || var4 instanceof class_2008) {
-         class_3111.method_14317("Sprite not found: " + var1);
+         Config.method_14317("Sprite not found: " + var1);
       }
 
       return var4;
@@ -157,11 +157,11 @@ public class class_5525 {
    }
 
    public static class_8143 method_25065(Identifier var0) {
-      class_8143 var3 = class_3111.method_14266().method_35679(var0);
+      class_8143 var3 = Config.method_14266().method_35679(var0);
       if (var3 == null) {
-         if (class_3111.method_14362(var0)) {
+         if (Config.method_14362(var0)) {
             class_1809 var4 = new class_1809(var0);
-            class_3111.method_14266().method_35682(var0, var4);
+            Config.method_14266().method_35682(var0, var4);
             return var4;
          } else {
             return null;
@@ -173,7 +173,7 @@ public class class_5525 {
 
    public static void method_25089(class_7832 var0) {
       if (method_25083() != null) {
-         class_3111.method_14277("*** Reloading custom textures ***");
+         Config.method_14277("*** Reloading custom textures ***");
          class_6167.method_28269();
          class_4454.method_20648();
          method_25070();
@@ -188,25 +188,25 @@ public class class_5525 {
          class_9763.method_45062();
          class_6588.method_30303();
          class_3458.method_15908();
-         class_3111.method_14275();
+         Config.method_14275();
          class_9582.method_44262();
          class_877.method_3778();
          class_1322.method_6046();
          class_7416.method_33786();
          class_5609.method_25463();
          class_1303.method_5951();
-         class_3111.method_14266().method_80();
-         class_3111.method_14277("Disable Forge light pipeline");
+         Config.method_14266().method_80();
+         Config.method_14277("Disable Forge light pipeline");
          class_8835.method_40640(false);
       }
    }
 
    public static class_8359 method_25083() {
-      return class_3111.method_14295();
+      return Config.method_14295();
    }
 
    public static void method_25088() {
-      class_7832 var2 = class_3111.method_14450();
+      class_7832 var2 = Config.method_14450();
       if (var2 instanceof class_550) {
          class_550 var3 = (class_550)var2;
          class_5379 var4 = new class_5379();
@@ -219,7 +219,7 @@ public class class_5525 {
    public static void method_25071() {
       class_4192 var2 = new class_4192();
       Identifier var3 = new Identifier("optifine/tickable_textures");
-      class_3111.method_14266().method_35682(var3, var2);
+      Config.method_14266().method_35682(var3, var2);
    }
 
    public static void method_25066(class_6560 var0) {
@@ -295,14 +295,14 @@ public class class_5525 {
    public static void method_25084() {
       if (GL.getCapabilities().GL_EXT_texture_filter_anisotropic) {
          float var2 = GL11.glGetFloat(34047);
-         float var3 = (float)class_3111.method_14412();
+         float var3 = (float) Config.method_14412();
          var3 = Math.min(var3, var2);
          GL11.glTexParameterf(3553, 34046, var3);
       }
    }
 
    public static void method_25077(int var0) {
-      class_1920.method_8791(var0);
+      GlStateManager.method_8791(var0);
    }
 
    public static boolean method_25097(int var0) {
@@ -411,9 +411,9 @@ public class class_5525 {
       for (int var4 = 0; var4 < var3.length; var4++) {
          class_5797 var5 = var3[var4];
          if (var5 != null) {
-            class_3111.method_14277("" + var4 + ": " + var5.method_26228() * var5.method_26253());
+            Config.method_14277("" + var4 + ": " + var5.method_26228() * var5.method_26253());
          } else {
-            class_3111.method_14277("" + var4 + ": " + var5);
+            Config.method_14277("" + var4 + ": " + var5);
          }
       }
    }
@@ -448,10 +448,10 @@ public class class_5525 {
 
          try {
             ImageIO.write(var16, "png", var20);
-            class_3111.method_14277("Exported: " + var20);
+            Config.method_14277("Exported: " + var20);
          } catch (Exception var18) {
-            class_3111.method_14317("Error writing: " + var20);
-            class_3111.method_14317("" + var18.getClass().getName() + ": " + var18.getMessage());
+            Config.method_14317("Error writing: " + var20);
+            Config.method_14317("" + var18.getClass().getName() + ": " + var18.getMessage());
          }
       }
    }
@@ -466,9 +466,9 @@ public class class_5525 {
 
    private static int method_25080() {
       for (int var2 = 65536; var2 > 0; var2 >>= 1) {
-         class_1920.method_8886(32868, 0, 6408, var2, var2, 0, 6408, 5121, (IntBuffer)null);
+         GlStateManager.method_8886(32868, 0, 6408, var2, var2, 0, 6408, 5121, (IntBuffer)null);
          int var3 = GL11.glGetError();
-         int var4 = class_1920.method_8911(32868, 0, 4096);
+         int var4 = GlStateManager.method_8911(32868, 0, 4096);
          if (var4 != 0) {
             return var2;
          }
@@ -502,9 +502,9 @@ public class class_5525 {
    }
 
    public static void method_25072() {
-      class_1920.method_8763(3314, 0);
-      class_1920.method_8763(3316, 0);
-      class_1920.method_8763(3315, 0);
-      class_1920.method_8763(3317, 4);
+      GlStateManager.method_8763(3314, 0);
+      GlStateManager.method_8763(3316, 0);
+      GlStateManager.method_8763(3315, 0);
+      GlStateManager.method_8763(3317, 4);
    }
 }

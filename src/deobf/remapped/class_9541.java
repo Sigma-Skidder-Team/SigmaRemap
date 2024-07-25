@@ -16,7 +16,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class class_9541 {
    private static final IFormattableTextComponent field_48544 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
-   public static List<class_2250> method_43993(class_6098 var0) {
+   public static List<class_2250> method_43993(ItemStack var0) {
       return method_43991(var0.method_27990());
    }
 
@@ -34,7 +34,7 @@ public class class_9541 {
       return var3;
    }
 
-   public static List<class_2250> method_43995(class_6098 var0) {
+   public static List<class_2250> method_43995(ItemStack var0) {
       return method_43998(var0.method_27990());
    }
 
@@ -58,7 +58,7 @@ public class class_9541 {
       }
    }
 
-   public static int method_43987(class_6098 var0) {
+   public static int method_43987(ItemStack var0) {
       class_5734 var3 = var0.method_27990();
       if (var3 != null && var3.method_25939("CustomPotionColor", 99)) {
          return var3.method_25947("CustomPotionColor");
@@ -82,7 +82,7 @@ public class class_9541 {
          for (class_2250 var9 : var0) {
             if (var9.method_10336()) {
                int var10 = var9.method_10339().method_6544();
-               if (class_3111.method_14438()) {
+               if (Config.method_14438()) {
                   var10 = class_9300.method_42888(var9.method_10339(), var10);
                }
 
@@ -103,11 +103,11 @@ public class class_9541 {
             return 0;
          }
       } else {
-         return !class_3111.method_14438() ? 3694022 : class_9300.method_42888((class_1425)null, var3);
+         return !Config.method_14438() ? 3694022 : class_9300.method_42888((class_1425)null, var3);
       }
    }
 
-   public static class_6004 method_43990(class_6098 var0) {
+   public static class_6004 method_43990(ItemStack var0) {
       return method_43989(var0.method_27990());
    }
 
@@ -115,7 +115,7 @@ public class class_9541 {
       return var0 != null ? class_6004.method_27403(var0.method_25965("Potion")) : class_3697.field_18134;
    }
 
-   public static class_6098 method_43999(class_6098 var0, class_6004 var1) {
+   public static ItemStack method_43999(ItemStack var0, class_6004 var1) {
       Identifier var4 = class_8669.field_44365.method_39797(var1);
       if (var1 != class_3697.field_18134) {
          var0.method_27994().method_25941("Potion", var4.toString());
@@ -126,7 +126,7 @@ public class class_9541 {
       return var0;
    }
 
-   public static class_6098 method_43992(class_6098 var0, Collection<class_2250> var1) {
+   public static ItemStack method_43992(ItemStack var0, Collection<class_2250> var1) {
       if (var1.isEmpty()) {
          return var0;
       } else {
@@ -142,7 +142,7 @@ public class class_9541 {
       }
    }
 
-   public static void method_43988(class_6098 var0, List<ITextComponent> var1, float var2) {
+   public static void method_43988(ItemStack var0, List<ITextComponent> var1, float var2) {
       List var5 = method_43993(var0);
       ArrayList var6 = Lists.newArrayList();
       if (!var5.isEmpty()) {
@@ -192,7 +192,7 @@ public class class_9541 {
                   var1.add(
                      new TranslationTextComponent(
                            "attribute.modifier.take." + var22.method_43121().method_43115(),
-                           class_6098.field_31202.format(var18),
+                           ItemStack.field_31202.format(var18),
                            new TranslationTextComponent(((class_225)var21.getFirst()).method_952())
                         )
                         .mergeStyle(TextFormatting.RED)
@@ -202,7 +202,7 @@ public class class_9541 {
                var1.add(
                   new TranslationTextComponent(
                         "attribute.modifier.plus." + var22.method_43121().method_43115(),
-                        class_6098.field_31202.format(var18),
+                        ItemStack.field_31202.format(var18),
                         new TranslationTextComponent(((class_225)var21.getFirst()).method_952())
                      )
                      .mergeStyle(TextFormatting.BLUE)

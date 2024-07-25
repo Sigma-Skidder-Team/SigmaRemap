@@ -153,11 +153,11 @@ public enum class_4487 {
                   }
             }
          } else {
-            class_3111.method_14317("Invalid index2, parameter: " + this + ", index: " + var2);
+            Config.method_14317("Invalid index2, parameter: " + this + ", index: " + var2);
             return 0.0F;
          }
       } else {
-         class_3111.method_14317("Invalid index1, parameter: " + this + ", index: " + var1);
+         Config.method_14317("Invalid index1, parameter: " + this + ", index: " + var1);
          return 0.0F;
       }
    }

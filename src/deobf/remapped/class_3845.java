@@ -217,7 +217,7 @@ public class class_3845 extends class_5467 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return var1.method_27960() == class_4783.field_23563.method_10803();
    }
 

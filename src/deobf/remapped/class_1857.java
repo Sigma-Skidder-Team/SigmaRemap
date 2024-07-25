@@ -24,14 +24,14 @@ public class class_1857 {
    }
 
    public void method_8226() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
       new class_3347(null);
    }
 
    @EventListen
    public void method_8230(class_4996 var1) {
       if (class_3347.method_15349() == class_412.field_1747.method_2055()) {
-         if (this.field_9415.field_9632.method_26613() <= 1) {
+         if (this.field_9415.thePlayer.method_26613() <= 1) {
             var1.method_29715(true);
          }
       }
@@ -63,17 +63,17 @@ public class class_1857 {
    @EventListen
    @class_5355
    public void method_8232(class_3278 var1) {
-      if (this.field_9415.field_9632 != null
-         && this.field_9415.field_9632.method_37102() == class_7653.field_38888
+      if (this.field_9415.thePlayer != null
+         && this.field_9415.thePlayer.method_37102() == class_7653.field_38888
          && (class_3347.method_15349() < class_412.field_1751.method_2055() || class_314.method_1387())) {
-         this.field_9415.field_9632.method_37356(class_7653.field_38885);
+         this.field_9415.thePlayer.method_37356(class_7653.field_38885);
       }
    }
 
    @EventListen
    @class_5355
    public void method_8224(class_5243 var1) {
-      if (this.field_9415.field_9601 != null && this.field_9415.field_9632 != null) {
+      if (this.field_9415.field_9601 != null && this.field_9415.thePlayer != null) {
          class_6414 var4 = this.field_9415.field_9601.method_28262(var1.method_23989()).method_8360();
          if (class_3347.method_15349() == class_412.field_1747.method_2055() && var4 instanceof class_402) {
             class_4190 var5 = class_3370.method_15522(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
@@ -81,12 +81,12 @@ public class class_1857 {
          }
 
          if (class_3347.method_15349() == class_412.field_1747.method_2055()) {
-            if (this.field_9415.field_9632.field_41712.field_19939 - this.field_9415.field_9632.field_41712.field_19937 == 1.5) {
-               this.field_9415.field_9632.field_41712 = this.field_9415.field_9632.field_41712.method_18928(0.0, 0.29999995F, 0.0);
+            if (this.field_9415.thePlayer.field_41712.field_19939 - this.field_9415.thePlayer.field_41712.field_19937 == 1.5) {
+               this.field_9415.thePlayer.field_41712 = this.field_9415.thePlayer.field_41712.method_18928(0.0, 0.29999995F, 0.0);
             }
 
-            if (this.field_9415.field_9632.field_41710 == 1.27F) {
-               this.field_9415.field_9632.field_41710 = 1.38F;
+            if (this.field_9415.thePlayer.field_41710 == 1.27F) {
+               this.field_9415.thePlayer.field_41710 = 1.38F;
             }
          }
       }
@@ -109,7 +109,7 @@ public class class_1857 {
                boolean var8 = false;
 
                while (var7.hasNext()) {
-                  class_6098 var9 = (class_6098)var7.next();
+                  ItemStack var9 = (ItemStack)var7.next();
                   if (var9.method_27960() instanceof class_2235) {
                      var8 = true;
                   }
@@ -134,13 +134,13 @@ public class class_1857 {
             for (int var12 = -5; var12 < 5; var12++) {
                class_2654 var13 = this.field_9415
                   .field_9601
-                  .method_29554(this.field_9415.field_9632.field_41742 + var11, this.field_9415.field_9632.field_41714 + var12);
+                  .method_29554(this.field_9415.thePlayer.field_41742 + var11, this.field_9415.thePlayer.field_41714 + var12);
                if (var13 instanceof class_8526) {
-                  int var10001 = this.field_9415.field_9632.field_41742 + var11;
-                  int var14 = this.field_9415.field_9601.method_745().field_27356.method_27420(var10001, this.field_9415.field_9632.field_41714 + var12);
+                  int var10001 = this.field_9415.thePlayer.field_41742 + var11;
+                  int var14 = this.field_9415.field_9601.method_745().field_27356.method_27420(var10001, this.field_9415.thePlayer.field_41714 + var12);
                   class_2654 var15 = new class_2654(
                      this.field_9415.field_9601,
-                     new class_2034(this.field_9415.field_9632.field_41742 + var11, this.field_9415.field_9632.field_41714 + var12),
+                     new class_2034(this.field_9415.thePlayer.field_41742 + var11, this.field_9415.thePlayer.field_41714 + var12),
                      var13.method_27356()
                   );
                   this.field_9415.field_9601.method_745().field_27356.method_27423(var14, var15);
@@ -172,7 +172,7 @@ public class class_1857 {
    @EventListen
    @class_5355
    public void method_8221(PacketEvent var1) {
-      if (!SigmaMainClass.getInstance().getModuleManager().method_847(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
+      if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
          )
        {
          if (!field_9416.isEmpty()) {
@@ -185,10 +185,10 @@ public class class_1857 {
             if (var6.getFirst() == class_6943.field_35701
                && var6.getSecond() != null
                && (
-                  SigmaMainClass.getInstance().getModuleManager().method_847(OldHittingModule.class).method_42015()
+                  SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OldHittingModule.class).method_42015()
                      || class_3347.method_15349() == class_412.field_1747.method_2055()
                )) {
-               if (!(((class_6098)var6.getSecond()).method_27960() instanceof class_8440)) {
+               if (!(((ItemStack)var6.getSecond()).method_27960() instanceof class_8440)) {
                   Entity var7 = this.field_9415.field_9601.method_29534(var4.method_41364());
                   if (field_9416.contains(var7)) {
                      field_9416.remove(var7);
@@ -211,7 +211,7 @@ public class class_1857 {
             if (var1.method_557() instanceof class_2972 && class_314.method_1384()) {
                var1.method_29715(true);
             } else if (!(var1.method_557() instanceof class_8329)) {
-               if (var1.method_557() instanceof class_8849 && this.field_9415.field_9632 != null) {
+               if (var1.method_557() instanceof class_8849 && this.field_9415.thePlayer != null) {
                   class_8849 var10 = (class_8849)var1.method_557();
                } else if (!(var1.method_557() instanceof class_3767)) {
                   if (var1.method_557() instanceof class_9889) {
@@ -255,55 +255,55 @@ public class class_1857 {
    @class_5355
    public void method_8223(class_7767 var1) {
       if (class_3347.method_15349() < class_412.field_1751.method_2055() || class_314.method_1387()) {
-         if (this.field_9415.field_9632.method_37285()) {
+         if (this.field_9415.thePlayer.method_37285()) {
             this.field_9418 = true;
-            double var4 = this.field_9415.field_9632.method_37309();
+            double var4 = this.field_9415.thePlayer.method_37309();
             float var6 = class_7194.method_32937();
             float var7 = 0.02F;
-            float var8 = (float)class_2931.method_13417(this.field_9415.field_9632);
+            float var8 = (float)class_2931.method_13417(this.field_9415.thePlayer);
             if (var8 > 3.0F) {
                var8 = 3.0F;
             }
 
-            if (!this.field_9415.field_9632.field_41726) {
+            if (!this.field_9415.thePlayer.field_41726) {
                var8 *= 0.5F;
             }
 
             if (var8 > 0.0F) {
                var6 += (0.54600006F - var6) * var8 / 3.0F;
-               var7 += (this.field_9415.field_9632.method_26423() - var7) * var8 / 3.0F;
+               var7 += (this.field_9415.thePlayer.method_26423() - var7) * var8 / 3.0F;
             }
 
             if (!this.field_9415.gameOptions.keySprint.isKeyDown()) {
-               if (this.field_9415.field_9632.field_29676 == 0.0F && this.field_9415.field_9632.field_29673 == 0.0F) {
-                  this.field_9415.field_9632.method_37140(false);
+               if (this.field_9415.thePlayer.field_29676 == 0.0F && this.field_9415.thePlayer.field_29673 == 0.0F) {
+                  this.field_9415.thePlayer.method_37140(false);
                }
             } else {
-               this.field_9415.field_9632.method_37140(true);
+               this.field_9415.thePlayer.method_37140(true);
             }
 
-            var7 *= !this.field_9415.field_9632.method_37321() ? 1.0F : (!this.field_9415.field_9632.field_41726 ? 1.3F : 1.5F);
+            var7 *= !this.field_9415.thePlayer.method_37321() ? 1.0F : (!this.field_9415.thePlayer.field_41726 ? 1.3F : 1.5F);
             class_7194.method_32939(
-               this.field_9415.field_9632.field_29676, this.field_9415.field_9632.field_29651, this.field_9415.field_9632.field_29673, var7
+               this.field_9415.thePlayer.field_29676, this.field_9415.thePlayer.field_29651, this.field_9415.thePlayer.field_29673, var7
             );
             class_7194.method_32942(class_7194.field_36984, class_7194.field_36992, class_7194.field_36985);
             class_7194.field_36984 *= (double)var6;
             class_7194.field_36992 *= 0.8F;
             class_7194.field_36985 *= (double)var6;
-            if (!this.field_9415.field_9632.method_37078()) {
+            if (!this.field_9415.thePlayer.method_37078()) {
                class_7194.field_36992 -= 0.02;
             }
 
-            if (this.field_9415.field_9632.field_41744
+            if (this.field_9415.thePlayer.field_41744
                && this.field_9415
-                  .field_9632
+                  .thePlayer
                   .method_37159(
-                     class_7194.field_36984, class_7194.field_36992 + 0.6F - this.field_9415.field_9632.method_37309() + var4, class_7194.field_36985
+                     class_7194.field_36984, class_7194.field_36992 + 0.6F - this.field_9415.thePlayer.method_37309() + var4, class_7194.field_36985
                   )) {
                class_7194.field_36992 = 0.3F;
             }
 
-            if (this.field_9415.field_9632.field_29654) {
+            if (this.field_9415.thePlayer.field_29654) {
                class_7194.method_32941();
             }
 
@@ -311,14 +311,14 @@ public class class_1857 {
             var1.method_35235(class_7194.field_36992);
             var1.method_35229(class_7194.field_36985);
          } else {
-            class_7194.field_36992 = this.field_9415.field_9632.method_37098().field_7333;
+            class_7194.field_36992 = this.field_9415.thePlayer.method_37098().field_7333;
             if (this.field_9418 && class_7194.method_32943()) {
                class_7194.field_36992 = 0.2F;
                class_314.method_1408(class_7194.field_36992);
             }
 
-            class_7194.field_36984 = this.field_9415.field_9632.method_37098().field_7336;
-            class_7194.field_36985 = this.field_9415.field_9632.method_37098().field_7334;
+            class_7194.field_36984 = this.field_9415.thePlayer.method_37098().field_7336;
+            class_7194.field_36985 = this.field_9415.thePlayer.method_37098().field_7334;
             this.field_9418 = false;
          }
       }
@@ -348,9 +348,9 @@ public class class_1857 {
    @EventListen
    @class_5355
    public void method_8233(class_5278 var1) {
-      if (var1.method_24098() == this.field_9415.field_9632 || var1.method_24098() == FreeCamModule.field_48917 || var1.method_24098() == BlinkModule.field_27898) {
+      if (var1.method_24098() == this.field_9415.thePlayer || var1.method_24098() == FreeCamModule.field_48917 || var1.method_24098() == BlinkModule.field_27898) {
          if (var1.method_24094() != 1.0F) {
-            if (class_1393.field_7595 - this.field_9415.field_9632.field_29618 == 0.0F) {
+            if (class_1393.field_7595 - this.field_9415.thePlayer.field_29618 == 0.0F) {
                if (this.field_9422) {
                   var1.method_24096(class_9299.method_42837(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29605));
                   var1.method_24090(class_9299.method_42837(var1.method_24094(), class_1393.field_7593, var1.method_24098().field_29618));

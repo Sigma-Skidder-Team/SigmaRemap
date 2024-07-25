@@ -4,7 +4,7 @@ public class class_1594 extends class_5348 {
    private final boolean field_8310;
 
    public class_1594(boolean var1) {
-      super("shade_model", () -> class_3542.method_16486(!var1 ? 7424 : 7425), () -> class_3542.method_16486(7424));
+      super("shade_model", () -> RenderSystem.method_16486(!var1 ? 7424 : 7425), () -> RenderSystem.method_16486(7424));
       this.field_8310 = var1;
    }
 

@@ -33,7 +33,7 @@ public class class_4763 {
    public ByteBuffer field_23059 = BufferUtils.createByteBuffer(this.field_23057 * 16 * this.field_23057 * 16 * 3);
 
    public void method_21976() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
       int var3 = -7687425;
 
       for (int var4 = 0; var4 < 16; var4++) {
@@ -126,8 +126,8 @@ public class class_4763 {
          if (this.field_23065 != null) {
             boolean var4 = false;
             if (!var4) {
-               if (this.field_23056.field_9632.field_41697 % 140 == 0) {
-                  class_4985 var5 = class_3058.method_13961(this.field_23056.field_9601.method_22556(this.field_23056.field_9632.method_37075()).method_27352());
+               if (this.field_23056.thePlayer.field_41697 % 140 == 0) {
+                  class_4985 var5 = class_3058.method_13961(this.field_23056.field_9601.method_22556(this.field_23056.thePlayer.method_37075()).method_27352());
                   Iterator var6 = this.field_23061.entrySet().iterator();
 
                   while (var6.hasNext()) {

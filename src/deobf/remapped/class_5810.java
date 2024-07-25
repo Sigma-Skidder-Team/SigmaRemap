@@ -55,13 +55,13 @@ public enum class_5810 {
    }
 
    public void method_26308() {
-      class_3542.method_16431(class_3542::method_16366);
-      class_1920.method_8763(3333, this.method_26306());
+      RenderSystem.method_16431(RenderSystem::method_16366);
+      GlStateManager.method_8763(3333, this.method_26306());
    }
 
    public void method_26314() {
-      class_3542.method_16431(class_3542::method_16440);
-      class_1920.method_8763(3317, this.method_26306());
+      RenderSystem.method_16431(RenderSystem::method_16440);
+      GlStateManager.method_8763(3317, this.method_26306());
    }
 
    public int method_26312() {

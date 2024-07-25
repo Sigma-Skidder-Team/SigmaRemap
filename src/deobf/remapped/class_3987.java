@@ -20,7 +20,7 @@ public class class_3987 extends class_9873 {
          class_7860.field_40062.method_39234(var1, 2, this.field_19384);
          return var1;
       } else {
-         class_3111.method_14317("Field not found: RenderEnderCrystal.modelEnderCrystal");
+         Config.method_14317("Field not found: RenderEnderCrystal.modelEnderCrystal");
          return null;
       }
    }

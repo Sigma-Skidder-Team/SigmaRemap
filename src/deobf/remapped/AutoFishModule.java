@@ -9,8 +9,8 @@ public class AutoFishModule extends Module {
    public void method_5738(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_3740 || var1.method_557() instanceof class_8283) {
-            if (mc.field_9632.method_26446() != null) {
-               if (mc.field_9632.method_26446().method_27960() instanceof class_8411) {
+            if (client.thePlayer.method_26446() != null) {
+               if (client.thePlayer.method_26446().method_27960() instanceof class_8411) {
                   if (!(var1.method_557() instanceof class_3740)) {
                      if (var1.method_557() instanceof class_8283 && !((class_8283)var1.method_557()).field_42460.equals("entity.bobber.splash")) {
                         return;
@@ -19,8 +19,8 @@ public class AutoFishModule extends Module {
                      return;
                   }
 
-                  mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
-                  mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_1022(class_2584.field_12791));
                   SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoFish", "We catched something!", NotificationIcons.field_11004));
                }
             }

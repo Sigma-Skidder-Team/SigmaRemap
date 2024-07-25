@@ -41,12 +41,12 @@ public class class_6594 extends class_4785<class_6594> {
    private void method_30367(class_7966 var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 12 && var5 >= var3 && var5 <= var3 + 14 && var5 < this.field_34027.field_940 - 15 && var5 > 32;
       class_4908.method_22488(this.field_34027).method_8577().method_35674(class_4908.method_22476());
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16438();
-      class_3542.method_16403(0.5F, 0.5F, 0.5F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16403(0.5F, 0.5F, 0.5F);
       float var9 = !var8 ? 0.0F : 28.0F;
-      class_2089.method_9778(var1, var2 * 2, var3 * 2, 0.0F, var9, 23, 28, 23, 56);
-      class_3542.method_16489();
+      AbstractGui.method_9778(var1, var2 * 2, var3 * 2, 0.0F, var9, 23, 28, 23, 56);
+      RenderSystem.method_16489();
       if (var8) {
          class_4908.method_22471(this.field_34027, class_4908.method_22470());
       }
@@ -55,12 +55,12 @@ public class class_6594 extends class_4785<class_6594> {
    private void method_30366(class_7966 var1, int var2, int var3, int var4, int var5) {
       boolean var8 = var4 >= var2 && var4 <= var2 + 8 && var5 >= var3 && var5 <= var3 + 8 && var5 < this.field_34027.field_940 - 15 && var5 > 32;
       class_4908.method_22489(this.field_34027).method_8577().method_35674(class_4908.method_22477());
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16438();
-      class_3542.method_16403(0.5F, 0.5F, 0.5F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16403(0.5F, 0.5F, 0.5F);
       float var9 = !var8 ? 0.0F : 15.0F;
-      class_2089.method_9778(var1, var2 * 2, var3 * 2, 0.0F, var9, 15, 15, 15, 30);
-      class_3542.method_16489();
+      AbstractGui.method_9778(var1, var2 * 2, var3 * 2, 0.0F, var9, 15, 15, 15, 30);
+      RenderSystem.method_16489();
       if (var8) {
          class_4908.method_22471(this.field_34027, class_4908.method_22484());
       }

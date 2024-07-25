@@ -5,7 +5,7 @@ public class class_4699 extends class_2451 {
       super(var1);
    }
 
-   public static void method_21671(class_6098 var0, class_1425 var1, int var2) {
+   public static void method_21671(ItemStack var0, class_1425 var1, int var2) {
       class_5734 var5 = var0.method_27994();
       class_3416 var6 = var5.method_25927("Effects", 9);
       class_5734 var7 = new class_5734();
@@ -16,8 +16,8 @@ public class class_4699 extends class_2451 {
    }
 
    @Override
-   public class_6098 method_11242(class_6098 var1, World var2, class_5834 var3) {
-      class_6098 var6 = super.method_11242(var1, var2, var3);
+   public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
+      ItemStack var6 = super.method_11242(var1, var2, var3);
       class_5734 var7 = var1.method_27990();
       if (var7 != null && var7.method_25939("Effects", 9)) {
          class_3416 var8 = var7.method_25927("Effects", 10);
@@ -36,6 +36,6 @@ public class class_4699 extends class_2451 {
          }
       }
 
-      return var3 instanceof class_704 && ((class_704)var3).field_3876.field_4944 ? var6 : new class_6098(class_4897.field_24454);
+      return var3 instanceof class_704 && ((class_704)var3).field_3876.field_4944 ? var6 : new ItemStack(class_4897.field_24454);
    }
 }

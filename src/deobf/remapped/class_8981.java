@@ -25,11 +25,11 @@ public class class_8981 extends class_4382 {
    }
 
    @Override
-   public boolean method_20430(class_6098 var1) {
+   public boolean method_20430(ItemStack var1) {
       return !var1.method_27959() ? super.method_20430(var1) : true;
    }
 
-   public static boolean method_41175(class_6098 var0, int var1, Random var2) {
+   public static boolean method_41175(ItemStack var0, int var1, Random var2) {
       return var0.method_27960() instanceof class_8228 && var2.nextFloat() < 0.6F ? false : var2.nextInt(var1 + 1) > 0;
    }
 }

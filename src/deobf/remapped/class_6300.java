@@ -30,7 +30,7 @@ public class class_6300<T extends class_5886 & class_2354> extends class_2344<T>
    public void method_28755(T var1, float var2, float var3, float var4) {
       this.field_11698 = class_5455.field_27806;
       this.field_11702 = class_5455.field_27806;
-      class_6098 var7 = var1.method_26617(class_2584.field_12791);
+      ItemStack var7 = var1.method_26617(class_2584.field_12791);
       if (var7.method_27960() == class_4897.field_25206 && var1.method_26892()) {
          if (var1.method_26432() != class_1736.field_8943) {
             this.field_11702 = class_5455.field_27803;
@@ -44,7 +44,7 @@ public class class_6300<T extends class_5886 & class_2354> extends class_2344<T>
 
    public void method_28754(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.method_10738((T)var1, var2, var3, var4, var5, var6);
-      class_6098 var9 = var1.method_26446();
+      ItemStack var9 = var1.method_26446();
       if (var1.method_26892() && (var9.method_28022() || var9.method_27960() != class_4897.field_25206)) {
          float var10 = class_9299.method_42818(this.field_33202 * (float) Math.PI);
          float var11 = class_9299.method_42818((1.0F - (1.0F - this.field_33202) * (1.0F - this.field_33202)) * (float) Math.PI);

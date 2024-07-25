@@ -73,9 +73,9 @@ public class class_8138 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
       class_2451 var6 = this.method_37035();
-      return var6 != null ? new class_6098(var6) : class_6098.field_31203;
+      return var6 != null ? new ItemStack(var6) : ItemStack.EMPTY;
    }
 
    @Override

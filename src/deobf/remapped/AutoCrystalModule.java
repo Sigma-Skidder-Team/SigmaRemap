@@ -54,13 +54,13 @@ public class AutoCrystalModule extends PremiumModule {
 
          this.field_48550 = (Entity)var4.get(0);
          if ((float)this.field_48557 >= 20.0F / this.getFloatValueByName("CPS")) {
-            class_3577 var5 = mc.field_9601
+            class_3577 var5 = client.field_9601
                .<Entity>method_25869(
                   Entity.class, this.field_48550.field_41712.method_18928(2.0, 4.0, 2.0).method_18928(-2.0, -3.0, -2.0), var0 -> var0 instanceof class_3577
                )
                .stream()
                .<class_3577>map(var0 -> (class_3577)var0)
-               .filter(var0 -> var0.method_37175(mc.field_9632) < 6.0F)
+               .filter(var0 -> var0.method_37175(client.thePlayer) < 6.0F)
                .filter(var1x -> (double)var1x.method_37175(this.field_48550) < 3.6)
                .min(Comparator.comparing(var1x -> method_44033(var1x.method_37302(), var1x.method_37309(), var1x.method_37156(), this.field_48550)))
                .orElse(null);
@@ -110,18 +110,18 @@ public class AutoCrystalModule extends PremiumModule {
       GL11.glDisable(2929);
 
       for (class_1331 var6 : this.field_48551) {
-         double var7 = (double)var6.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61();
-         double var9 = (double)var6.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60();
-         double var11 = (double)var6.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62();
+         double var7 = (double)var6.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+         double var9 = (double)var6.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
+         double var11 = (double)var6.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
          class_8194 var13 = new class_8194(var7, var9 + 1.0, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
          class_73.method_83(var13, var4);
       }
 
       var4 = class_314.method_1444(9000000, 1.0F);
       if (this.field_48550 != null) {
-         double var14 = this.field_48550.method_37302() - mc.gameRenderer.method_35949().method_41627().method_61();
-         double var19 = this.field_48550.method_37309() - mc.gameRenderer.method_35949().method_41627().method_60() + 0.5;
-         double var20 = this.field_48550.method_37156() - mc.gameRenderer.method_35949().method_41627().method_62();
+         double var14 = this.field_48550.method_37302() - client.gameRenderer.method_35949().method_41627().method_61();
+         double var19 = this.field_48550.method_37309() - client.gameRenderer.method_35949().method_41627().method_60() + 0.5;
+         double var20 = this.field_48550.method_37156() - client.gameRenderer.method_35949().method_41627().method_62();
          float var16 = 0.3F;
          class_8194 var17 = new class_8194(var14 - (double)var16, var19 + 0.9, var20 - (double)var16, var14 + (double)var16, var19 + 1.0, var20 + (double)var16);
          class_73.method_83(var17, var4);
@@ -133,9 +133,9 @@ public class AutoCrystalModule extends PremiumModule {
 
    public static class_1331 method_44011() {
       return new class_1331(
-         Math.floor(mc.field_9632.method_37302()),
-         Math.floor(mc.field_9632.method_37309()),
-         Math.floor(mc.field_9632.method_37156())
+         Math.floor(client.thePlayer.method_37302()),
+         Math.floor(client.thePlayer.method_37309()),
+         Math.floor(client.thePlayer.method_37156())
       );
    }
 
@@ -149,12 +149,12 @@ public class AutoCrystalModule extends PremiumModule {
       class_1331 var4 = var1.method_6104(0, 1, 0);
       class_1331 var5 = var1.method_6104(0, 2, 0);
       return (
-            mc.field_9601.method_28262(var1).method_8360() == class_4783.field_23433
-               || mc.field_9601.method_28262(var1).method_8360() == class_4783.field_23881
+            client.field_9601.method_28262(var1).method_8360() == class_4783.field_23433
+               || client.field_9601.method_28262(var1).method_8360() == class_4783.field_23881
          )
-         && mc.field_9601.method_28262(var4).method_8360() == class_4783.field_23184
-         && mc.field_9601.method_28262(var5).method_8360() == class_4783.field_23184
-         && mc.field_9601.<Entity>method_25868(Entity.class, new class_4092(var4)).isEmpty();
+         && client.field_9601.method_28262(var4).method_8360() == class_4783.field_23184
+         && client.field_9601.method_28262(var5).method_8360() == class_4783.field_23184
+         && client.field_9601.<Entity>method_25868(Entity.class, new class_4092(var4)).isEmpty();
    }
 
    public List<class_1331> method_44015(class_1331 var1, float var2, int var3, boolean var4, boolean var5, int var6) {
@@ -190,7 +190,7 @@ public class AutoCrystalModule extends PremiumModule {
          var18 = (double)method_44023(
             (class_5834)var6,
             method_44028(var17),
-            new class_2730(mc.field_9601, null, null, null, var0, var2, var4, 6.0F, false, class_7298.field_37309)
+            new class_2730(client.field_9601, null, null, null, var0, var2, var4, 6.0F, false, class_7298.field_37309)
          );
       }
 
@@ -198,7 +198,7 @@ public class AutoCrystalModule extends PremiumModule {
    }
 
    private static float method_44028(float var0) {
-      int var3 = mc.field_9601.method_43370().method_2097();
+      int var3 = client.field_9601.method_43370().method_2097();
       return var0 * (var3 != 0 ? (var3 != 2 ? (var3 != 1 ? 1.5F : 0.5F) : 1.0F) : 0.0F);
    }
 
@@ -212,7 +212,7 @@ public class AutoCrystalModule extends PremiumModule {
          int var7 = class_2931.method_13427(var5.method_37262(), var6);
          float var8 = class_9299.method_42828((float)var7, 0.0F, 20.0F);
          var1 *= 1.0F - var8 / 25.0F;
-         if (var0.method_26480(class_1425.method_6538(11))) {
+         if (var0.isPotionActive(class_1425.method_6538(11))) {
             var1 -= var1 / 4.0F;
          }
 
@@ -222,8 +222,8 @@ public class AutoCrystalModule extends PremiumModule {
 
    private static void method_44027() {
       if (field_48558) {
-         field_48553 = mc.field_9632.field_41701;
-         field_48549 = mc.field_9632.field_41755;
+         field_48553 = client.thePlayer.field_41701;
+         field_48549 = client.thePlayer.field_41755;
          field_48558 = false;
       }
    }
@@ -241,12 +241,12 @@ public class AutoCrystalModule extends PremiumModule {
 
       while (var5.hasNext()) {
          Entity var6 = (Entity)var5.next();
-         if (var6 != mc.field_9632) {
+         if (var6 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var6)) {
                if (var6 instanceof class_5834) {
                   if (((class_5834)var6).method_26551() != 0.0F) {
-                     if (!(mc.field_9632.method_37175(var6) > var1)) {
-                        if (mc.field_9632.method_26608((class_5834)var6)) {
+                     if (!(client.thePlayer.method_37175(var6) > var1)) {
+                        if (client.thePlayer.method_26608((class_5834)var6)) {
                            if (!(var6 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var6 instanceof class_704) {
                                  var5.remove();
@@ -256,12 +256,12 @@ public class AutoCrystalModule extends PremiumModule {
                                  var5.remove();
                               } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var6 instanceof class_704)) {
                                  var5.remove();
-                              } else if (mc.field_9632.method_37243() != null && mc.field_9632.method_37243().equals(var6)) {
+                              } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var6)) {
                                  var5.remove();
                               } else if (!var6.method_37367()) {
                                  if (var6 instanceof class_704
                                     && class_5876.method_26760((class_704)var6)
-                                    && SigmaMainClass.getInstance().getModuleManager().method_847(TeamsModule.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
                                     var5.remove();
                                  }
                               } else {
@@ -296,8 +296,8 @@ public class AutoCrystalModule extends PremiumModule {
 
    public int method_44018() {
       for (int var3 = 36; var3 < 45; var3++) {
-         if (mc.field_9632.field_3869.method_18878(var3).method_35884()) {
-            class_6098 var4 = mc.field_9632.field_3869.method_18878(var3).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var3).method_35884()) {
+            ItemStack var4 = client.thePlayer.field_3869.method_18878(var3).method_35898();
             if (var4.method_27960() == class_4897.field_24665) {
                return var3 - 36;
             }
@@ -305,15 +305,15 @@ public class AutoCrystalModule extends PremiumModule {
       }
 
       for (int var5 = 9; var5 < 36; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-            class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+            ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (var6.method_27960() == class_4897.field_24665) {
                if (class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-                  mc.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                  client.method_8614().method_4813(new class_8559(class_2105.field_10551));
                }
 
                class_2740.method_12312(var5, 8);
-               mc.method_8614().method_4813(new class_1194(-1));
+               client.method_8614().method_4813(new class_1194(-1));
                return 5;
             }
          }

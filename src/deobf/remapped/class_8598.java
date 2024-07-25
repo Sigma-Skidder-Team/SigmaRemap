@@ -8,8 +8,8 @@ public class class_8598 {
    private static final Logger field_44027 = LogManager.getLogger();
    public class_6331 field_44037;
    public class_9359 field_44036;
-   private class_4666 field_44033 = class_4666.field_22762;
-   private class_4666 field_44030 = class_4666.field_22762;
+   private GameType field_44033 = GameType.field_22762;
+   private GameType field_44030 = GameType.field_22762;
    private boolean field_44040;
    private int field_44032;
    private class_1331 field_44038 = class_1331.field_7306;
@@ -23,11 +23,11 @@ public class class_8598 {
       this.field_44037 = var1;
    }
 
-   public void method_39526(class_4666 var1) {
+   public void method_39526(GameType var1) {
       this.method_39516(var1, var1 == this.field_44033 ? this.field_44030 : this.field_44033);
    }
 
-   public void method_39516(class_4666 var1, class_4666 var2) {
+   public void method_39516(GameType var1, GameType var2) {
       this.field_44030 = var2;
       this.field_44033 = var1;
       var1.method_21584(this.field_44036.field_3876);
@@ -36,11 +36,11 @@ public class class_8598 {
       this.field_44037.method_28928();
    }
 
-   public class_4666 method_39517() {
+   public GameType method_39517() {
       return this.field_44033;
    }
 
-   public class_4666 method_39524() {
+   public GameType method_39524() {
       return this.field_44030;
    }
 
@@ -52,8 +52,8 @@ public class class_8598 {
       return this.field_44033.method_21587();
    }
 
-   public void method_39521(class_4666 var1) {
-      if (this.field_44033 == class_4666.field_22762) {
+   public void method_39521(GameType var1) {
+      if (this.field_44033 == GameType.field_22762) {
          this.field_44033 = var1;
       }
 
@@ -230,8 +230,8 @@ public class class_8598 {
             }
 
             if (!this.method_39519()) {
-               class_6098 var8 = this.field_44036.method_26446();
-               class_6098 var9 = var8.method_27973();
+               ItemStack var8 = this.field_44036.method_26446();
+               ItemStack var9 = var8.method_27973();
                boolean var10 = this.field_44036.method_3232(var4);
                var8.method_27987(this.field_44037, var4, var1, this.field_44036);
                if (var7 && var10) {
@@ -248,13 +248,13 @@ public class class_8598 {
       }
    }
 
-   public class_6910 method_39520(class_9359 var1, World var2, class_6098 var3, class_2584 var4) {
-      if (this.field_44033 != class_4666.field_22756) {
+   public class_6910 method_39520(class_9359 var1, World var2, ItemStack var3, class_2584 var4) {
+      if (this.field_44033 != GameType.SPECTATOR) {
          if (!var1.method_3173().method_32954(var3.method_27960())) {
             int var7 = var3.method_27997();
             int var8 = var3.method_28026();
             class_954 var9 = var3.method_28006(var2, var1, var4);
-            class_6098 var10 = (class_6098)var9.method_4203();
+            ItemStack var10 = (ItemStack)var9.method_4203();
             if (var10 == var3 && var10.method_27997() == var7 && var10.method_28004() <= 0 && var10.method_28026() == var8) {
                return var9.method_4204();
             } else if (var9.method_4204() == class_6910.field_35517 && var10.method_28004() > 0 && !var1.method_26554()) {
@@ -269,7 +269,7 @@ public class class_8598 {
                }
 
                if (var10.method_28022()) {
-                  var1.method_26615(var4, class_6098.field_31203);
+                  var1.method_26615(var4, ItemStack.EMPTY);
                }
 
                if (!var1.method_26554()) {
@@ -286,10 +286,10 @@ public class class_8598 {
       }
    }
 
-   public class_6910 method_39528(class_9359 var1, World var2, class_6098 var3, class_2584 var4, class_9529 var5) {
+   public class_6910 method_39528(class_9359 var1, World var2, ItemStack var3, class_2584 var4, class_9529 var5) {
       class_1331 var8 = var5.method_43955();
       class_2522 var9 = var2.method_28262(var8);
-      if (this.field_44033 == class_4666.field_22756) {
+      if (this.field_44033 == GameType.SPECTATOR) {
          class_4259 var16 = var9.method_8317(var2, var8);
          if (var16 == null) {
             return class_6910.field_35521;
@@ -300,7 +300,7 @@ public class class_8598 {
       } else {
          boolean var10 = !var1.method_26446().method_28022() || !var1.method_26568().method_28022();
          boolean var11 = var1.method_3236() && var10;
-         class_6098 var12 = var3.method_27973();
+         ItemStack var12 = var3.method_27973();
          if (!var11) {
             class_6910 var13 = var9.method_8322(var2, var1, var4, var5);
             if (var13.method_31662()) {

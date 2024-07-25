@@ -20,7 +20,7 @@ public class class_5161 {
       int var5 = class_9299.method_42847(var1.method_37302()) >> 4;
       int var6 = class_9299.method_42847(var1.method_37309()) >> 4;
       int var7 = class_9299.method_42847(var1.method_37156()) >> 4;
-      var6 = class_3111.method_14263(var6, 0, 15);
+      var6 = Config.method_14263(var6, 0, 15);
       class_2654 var8 = var0.method_29554(var5, var7);
       int var9 = var5 - var2;
       int var10 = var5 + var2;

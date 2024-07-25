@@ -44,7 +44,7 @@ public class class_877 {
          String var4 = "optifine/gui/background" + var3;
          String var5 = var4 + "/panorama_0.png";
          Identifier var6 = new Identifier(var5);
-         if (class_3111.method_14362(var6)) {
+         if (Config.method_14362(var6)) {
             var2.add(var4);
          }
       }
@@ -60,17 +60,17 @@ public class class_877 {
          if (var4 == 0) {
             var5 = "optifine/gui";
          } else {
-            class_3111.method_14277("CustomPanorama: " + var5);
+            Config.method_14277("CustomPanorama: " + var5);
          }
 
          Identifier var6 = new Identifier(var5 + "/background.properties");
 
          try {
-            InputStream var7 = class_3111.method_14374(var6);
+            InputStream var7 = Config.method_14374(var6);
             if (var7 != null) {
                class_8407 var8 = new class_8407();
                var8.load(var7);
-               class_3111.method_14277("CustomPanorama: " + var6.method_21456());
+               Config.method_14277("CustomPanorama: " + var6.method_21456());
                var3[var4] = var8;
                var7.close();
             }
@@ -92,7 +92,7 @@ public class class_877 {
 
          if (var5 != null) {
             String var6 = var5.getProperty("weight", (String)null);
-            var3[var4] = class_3111.method_14361(var6, 1);
+            var3[var4] = Config.method_14361(var6, 1);
          } else {
             var3[var4] = 1;
          }

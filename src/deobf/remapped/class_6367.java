@@ -16,7 +16,7 @@ public class class_6367 extends class_4569 {
       return new class_6367(var0, var1.method_43921(), var2);
    }
 
-   public boolean method_29145(class_6098 var1, class_2792 var2) {
+   public boolean method_29145(ItemStack var1, class_2792 var2) {
       return this.field_32545.method_24266(var1) ? this.field_32546.method_41071(var2) : false;
    }
 

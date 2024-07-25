@@ -44,7 +44,7 @@ public class class_8347 extends class_7157 {
       boolean var9 = false;
 
       for (int var10 = 0; var10 < var1.method_31505(); var10++) {
-         class_6098 var11 = var1.method_31498(var10);
+         ItemStack var11 = var1.method_31498(var10);
          if (!var11.method_28022()) {
             if (!field_42754.test(var11)) {
                if (!field_42752.test(var11)) {
@@ -89,14 +89,14 @@ public class class_8347 extends class_7157 {
       return var5 && var6;
    }
 
-   public class_6098 method_38436(class_6946 var1) {
-      class_6098 var4 = new class_6098(class_4897.field_24554);
+   public ItemStack method_38436(class_6946 var1) {
+      ItemStack var4 = new ItemStack(class_4897.field_24554);
       class_5734 var5 = var4.method_27978("Explosion");
       class_3917 var6 = class_3917.field_19023;
       ArrayList var7 = Lists.newArrayList();
 
       for (int var8 = 0; var8 < var1.method_31505(); var8++) {
-         class_6098 var9 = var1.method_31498(var8);
+         ItemStack var9 = var1.method_31498(var8);
          if (!var9.method_28022()) {
             if (!field_42754.test(var9)) {
                if (!field_42752.test(var9)) {
@@ -127,8 +127,8 @@ public class class_8347 extends class_7157 {
    }
 
    @Override
-   public class_6098 method_41044() {
-      return new class_6098(class_4897.field_24554);
+   public ItemStack method_41044() {
+      return new ItemStack(class_4897.field_24554);
    }
 
    @Override

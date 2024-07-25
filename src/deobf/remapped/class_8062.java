@@ -9,12 +9,12 @@ public class class_8062<T extends class_5834, M extends class_6521<T>> extends c
    }
 
    public void method_36566(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      class_6098 var13 = var4.method_26520(class_6943.field_35708);
+      ItemStack var13 = var4.method_26520(class_6943.field_35708);
       if (this.method_36568(var13, (T)var4)) {
          Identifier var14;
          if (!(var4 instanceof class_9716)) {
             var14 = this.method_36567(var13, (T)var4);
-            if (class_3111.method_14390()) {
+            if (Config.method_14390()) {
                var14 = class_3290.method_15089(var13, var14);
             }
          } else {
@@ -25,7 +25,7 @@ public class class_8062<T extends class_5834, M extends class_6521<T>> extends c
                var14 = var15.method_44891();
             } else {
                var14 = this.method_36567(var13, (T)var4);
-               if (class_3111.method_14390()) {
+               if (Config.method_14390()) {
                   var14 = class_3290.method_15089(var13, var14);
                }
             }
@@ -35,17 +35,17 @@ public class class_8062<T extends class_5834, M extends class_6521<T>> extends c
          var1.method_36065(0.0, 0.0, 0.125);
          this.method_19347().method_29701(this.field_41262);
          this.field_41262.method_35240((T)var4, var5, var6, var8, var9, var10);
-         class_7907 var16 = class_8765.method_40282(var2, RenderLayer.method_16749(var14), false, var13.method_27977());
+         class_7907 var16 = ItemRenderer.method_40282(var2, RenderLayer.method_16749(var14), false, var13.method_27977());
          this.field_41262.method_45499(var1, var16, var3, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
          var1.method_36064();
       }
    }
 
-   public boolean method_36568(class_6098 var1, T var2) {
+   public boolean method_36568(ItemStack var1, T var2) {
       return var1.method_27960() == class_4897.field_24503;
    }
 
-   public Identifier method_36567(class_6098 var1, T var2) {
+   public Identifier method_36567(ItemStack var1, T var2) {
       return field_41263;
    }
 }

@@ -5,12 +5,12 @@ import org.lwjgl.opengl.GL11;
 public class class_7257 extends class_446 {
    private static String[] field_37177;
    public boolean field_37175;
-   private class_6098 field_37178;
+   private ItemStack field_37178;
    private MinecraftClient field_37176 = MinecraftClient.getInstance();
 
    public class_7257(class_7038 var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var6, false);
-      this.field_37178 = new class_6098(class_2451.method_11220(var7));
+      this.field_37178 = new ItemStack(class_2451.method_11220(var7));
    }
 
    @Override

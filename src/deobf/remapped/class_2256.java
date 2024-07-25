@@ -58,10 +58,10 @@ public class class_2256 extends class_3599 {
 
    @Override
    public void method_16793() {
-      class_6098 var3 = this.field_11227.method_26520(class_6943.field_35707);
+      ItemStack var3 = this.field_11227.method_26520(class_6943.field_35707);
       if (!var3.method_28022()) {
          this.field_11227.method_37310(var3);
-         this.field_11227.method_37349(class_6943.field_35707, class_6098.field_31203);
+         this.field_11227.method_37349(class_6943.field_35707, ItemStack.EMPTY);
          int var4 = !this.field_11227.method_2468()
             ? class_496.method_2463(this.field_11227).nextInt(150) + 10
             : class_496.method_2453(this.field_11227).nextInt(50) + 10;

@@ -37,18 +37,18 @@ public class class_4770 extends class_446 {
       if (this.field_23119 != null) {
          GL11.glEnable(2929);
          class_2083.method_9718();
-         class_3542.method_16491();
-         class_3542.method_16438();
-         class_3542.method_16413((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 - this.field_36257 / 4), -200.0F);
+         RenderSystem.method_16491();
+         RenderSystem.method_16438();
+         RenderSystem.method_16413((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 - this.field_36257 / 4), -200.0F);
          GL11.glColor3f(1.0F, 1.0F, 1.0F);
-         class_3542.method_16410(180.0F, 1.0F, 0.0F, 0.0F);
-         class_3542.method_16410(180.0F, 0.0F, 0.0F, 1.0F);
+         RenderSystem.method_16410(180.0F, 1.0F, 0.0F, 0.0F);
+         RenderSystem.method_16410(180.0F, 0.0F, 0.0F, 1.0F);
          float var4 = (float)(this.field_23121.window.method_43163() - this.method_32129() - this.field_23121.window.method_43163() / 2);
          float var5 = (float)(this.field_23121.window.method_43166() - this.method_32189() - this.field_23121.window.method_43166() / 2);
          float var6 = (float)Math.atan((double)(var4 / (float)(this.field_23121.window.method_43163() / 2))) * 20.0F;
          float var7 = (float)Math.atan((double)(var5 / (float)(this.field_23121.window.method_43166() / 2))) * 20.0F;
-         class_3542.method_16410(-var6, 1.0F, 0.0F, 0.0F);
-         class_3542.method_16410(-var7, 0.0F, 1.0F, 0.0F);
+         RenderSystem.method_16410(-var6, 1.0F, 0.0F, 0.0F);
+         RenderSystem.method_16410(-var7, 0.0F, 1.0F, 0.0F);
          UUID var8 = UUID.fromString(this.field_23119.method_33322().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.field_23119.method_33322());
          if (field_23116 == null) {
             class_784 var9 = new class_784(class_423.field_1789, false, false);
@@ -60,7 +60,7 @@ public class class_4770 extends class_446 {
          GameProfile var20 = new GameProfile(var8, this.field_23119.method_33321());
          if (this.field_23115 == null || !this.field_23115.method_19839().getString().equals(this.field_23119.method_33321())) {
             this.field_23115 = new class_9298(field_23116, new GameProfile(var8, this.field_23119.method_33321()));
-            this.field_23115.field_49385 = new class_753(new class_5902(var20, 0, class_4666.field_22761, this.field_23115.method_19839()));
+            this.field_23115.field_49385 = new class_753(new class_5902(var20, 0, GameType.field_22761, this.field_23115.method_19839()));
          }
 
          this.field_23115.method_37377(var8);
@@ -74,11 +74,11 @@ public class class_4770 extends class_446 {
          new class_6670(this.field_23121.method_8587());
          class_3758 var15 = MinecraftClient.getInstance().method_8589().method_13796();
          new class_7966();
-         class_3542.method_16438();
+         RenderSystem.method_16438();
          this.field_23121.method_8587().method_28136(false);
          class_2083.method_9717();
-         class_3542.method_16389();
-         class_3542.method_16428();
+         RenderSystem.method_16389();
+         RenderSystem.enableDepthTest();
          GL11.glLightModelfv(2899, new float[]{0.7F, 0.7F, 0.7F, 1.0F});
          if (this.field_23121.method_8587().camera == null) {
             this.field_23121.method_8587().camera = new Camera();
@@ -87,13 +87,13 @@ public class class_4770 extends class_446 {
          this.field_23115.field_29643 = var10 * 0.5F;
          class_3431.method_15860(0, 390, 160, 0.0F, 0.0F, this.field_23115);
          this.field_23121.method_8587().method_28136(true);
-         class_3542.method_16489();
-         class_3542.method_16489();
+         RenderSystem.method_16489();
+         RenderSystem.method_16489();
          class_2083.method_9719();
-         class_3542.method_16443();
-         class_3542.method_16492(33985);
-         class_3542.method_16354();
-         class_3542.method_16492(33984);
+         RenderSystem.method_16443();
+         RenderSystem.method_16492(33985);
+         RenderSystem.method_16354();
+         RenderSystem.method_16492(33984);
          GL11.glDisable(2929);
          if (this.field_23119.method_33345() != null) {
             Object var17 = null;

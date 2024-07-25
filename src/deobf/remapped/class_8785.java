@@ -65,7 +65,7 @@ public class class_8785 extends class_2733 {
             class_6900 var7 = (class_6900)var1;
             return (class_8599)var7.method_31597((class_2255)var6);
          } else {
-            class_3111.method_14317("Not a BedModel: " + var1);
+            Config.method_14317("Not a BedModel: " + var1);
             return null;
          }
       } else {

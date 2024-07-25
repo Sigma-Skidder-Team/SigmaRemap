@@ -43,7 +43,7 @@ public class class_5319 {
       this.field_27127 = var8;
    }
 
-   public boolean method_24266(class_6098 var1) {
+   public boolean method_24266(ItemStack var1) {
       if (this == field_27132) {
          return true;
       } else if (this.field_27126 != null && !this.field_27126.method_10609(var1.method_27960())) {

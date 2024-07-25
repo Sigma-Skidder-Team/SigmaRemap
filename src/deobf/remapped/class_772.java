@@ -71,31 +71,31 @@ public class class_772 extends class_1094 {
       int var10 = var8 + 48 + 2;
       byte var11 = 0;
       if (field_4176) {
-         this.field_943.method_8577().method_35674(field_4177);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16438();
-         class_3542.method_16403(0.4F, 0.4F, 0.4F);
-         class_2089.method_9778(var1, (int)((double)(var9 + 2 - var11) * 2.5), (int)((double)var10 * 2.5), 0.0F, 0.0F, 40, 40, 40, 40);
-         class_3542.method_16489();
+         this.field_943.getTextureManager().bindTexture(field_4177);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.method_16438();
+         RenderSystem.method_16403(0.4F, 0.4F, 0.4F);
+         AbstractGui.method_9778(var1, (int)((double)(var9 + 2 - var11) * 2.5), (int)((double)var10 * 2.5), 0.0F, 0.0F, 40, 40, 40, 40);
+         RenderSystem.method_16489();
          var11 += 14;
       }
 
       if (var6 != 0) {
-         this.field_943.method_8577().method_35674(field_4181);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_2089.method_9778(var1, var9 - var11, var10 - 6, 0.0F, 0.0F, 15, 25, 31, 25);
+         this.field_943.getTextureManager().bindTexture(field_4181);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         AbstractGui.method_9778(var1, var9 - var11, var10 - 6, 0.0F, 0.0F, 15, 25, 31, 25);
          var11 += 16;
       }
 
       if (field_4178) {
-         this.field_943.method_8577().method_35674(field_4180);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_943.getTextureManager().bindTexture(field_4180);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          byte var12 = 0;
          if ((Util.getMeasuringTimeMs() / 800L & 1L) == 1L) {
             var12 = 8;
          }
 
-         class_2089.method_9778(var1, var9 + 4 - var11, var10 + 4, 0.0F, (float)var12, 8, 8, 8, 16);
+         AbstractGui.method_9778(var1, var9 + 4 - var11, var10 + 4, 0.0F, (float)var12, 8, 8, 8, 16);
       }
    }
 

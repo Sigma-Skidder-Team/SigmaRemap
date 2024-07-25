@@ -26,19 +26,19 @@ public class EntityDesyncCommand extends Command {
                      throw new class_2900("No entity to remount");
                   }
 
-                  field_18219.field_9632.method_37353(this.field_40286);
+                  field_18219.thePlayer.method_37353(this.field_40286);
                   this.field_40286.field_41727 = true;
                   var3.method_3731("Remounted entity " + this.field_40286.method_37387().method_30464().getUnformattedComponentText());
                   this.field_40286 = null;
                } else {
-                  Entity var6 = field_18219.field_9632.method_37243();
+                  Entity var6 = field_18219.thePlayer.method_37243();
                   if (var6 == null) {
                      throw new class_2900("You must be riding an entity to use this command");
                   }
 
-                  this.field_40286 = field_18219.field_9632.method_37243();
+                  this.field_40286 = field_18219.thePlayer.method_37243();
                   this.field_40286.field_41727 = true;
-                  field_18219.field_9632.method_37390();
+                  field_18219.thePlayer.method_37390();
                   var3.method_3731("Dismounted entity " + this.field_40286.method_37387().method_30464().getUnformattedComponentText());
                }
             }

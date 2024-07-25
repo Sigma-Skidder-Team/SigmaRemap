@@ -30,7 +30,7 @@ public class InvManagerModule extends PremiumModule {
 
    @Override
    public void onEnable() {
-      this.field_26630 = mc.field_9623 instanceof class_3431;
+      this.field_26630 = client.field_9623 instanceof class_3431;
       this.field_26637 = false;
    }
 
@@ -42,22 +42,22 @@ public class InvManagerModule extends PremiumModule {
 
       if (this.method_42015() && !AutoArmorModule.field_9392) {
          String var4 = this.getStringValueByName("Mode");
-         if (!this.getStringValueByName("Mode").equals("OpenInv") || mc.field_9623 instanceof class_3431) {
+         if (!this.getStringValueByName("Mode").equals("OpenInv") || client.field_9623 instanceof class_3431) {
             long var5 = (long)(this.getFloatValueByName("Delay") * 20.0F);
-            if (mc.field_9623 instanceof class_3431) {
+            if (client.field_9623 instanceof class_3431) {
                this.field_26630 = false;
             }
 
             if (this.field_26637 && (long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5) {
                this.field_26637 = !this.field_26637;
                this.method_23712(this.field_26630);
-               class_2740.method_12356(mc.field_9632.field_3869.field_19925, 45, 0, class_6269.field_32027, mc.field_9632, true);
+               class_2740.method_12356(client.thePlayer.field_3869.field_19925, 45, 0, class_6269.field_32027, client.thePlayer, true);
                this.field_26629.method_14773();
             } else {
-               if (mc.field_9623 == null || mc.field_9623 instanceof class_3431 || mc.field_9623 instanceof class_5766) {
+               if (client.field_9623 == null || client.field_9623 instanceof class_3431 || client.field_9623 instanceof class_5766) {
                   if (this.field_26629.method_14772() > var5 && field_26632 >= 36) {
-                     if (mc.field_9632.field_3869.method_18878(field_26632).method_35884()) {
-                        if (!method_23720(mc.field_9632.field_3869.method_18878(field_26632).method_35898())) {
+                     if (client.thePlayer.field_3869.method_18878(field_26632).method_35884()) {
+                        if (!method_23720(client.thePlayer.field_3869.method_18878(field_26632).method_35898())) {
                            this.method_23713(field_26632, var4.equals("FakeInv"));
                         }
                      } else {
@@ -84,8 +84,8 @@ public class InvManagerModule extends PremiumModule {
 
                   if ((long) SigmaMainClass.getInstance().method_3310().method_25303() >= var5 && this.getBooleanValueByName("Cleaner")) {
                      for (int var8 = 9; var8 < 45; var8++) {
-                        if (mc.field_9632.field_3869.method_18878(var8).method_35884()) {
-                           class_6098 var9 = mc.field_9632.field_3869.method_18878(var8).method_35898();
+                        if (client.thePlayer.field_3869.method_18878(var8).method_35884()) {
+                           ItemStack var9 = client.thePlayer.field_3869.method_18878(var8).method_35898();
                            if (this.method_23715(var9, var8)) {
                               this.method_23712(var4.equals("FakeInv"));
                               class_2740.method_12365(var8);
@@ -99,22 +99,22 @@ public class InvManagerModule extends PremiumModule {
                   }
                }
 
-               if (!this.field_26630 && !(mc.field_9623 instanceof class_3431) && this.field_26629.method_14772() > 0L && !this.field_26637) {
+               if (!this.field_26630 && !(client.field_9623 instanceof class_3431) && this.field_26629.method_14772() > 0L && !this.field_26637) {
                   this.field_26630 = true;
-                  mc.method_8614().method_4813(new class_1194(-1));
+                  client.method_8614().method_4813(new class_1194(-1));
                }
             }
          }
       }
    }
 
-   public static boolean method_23720(class_6098 var0) {
+   public static boolean method_23720(ItemStack var0) {
       float var3 = method_23718(var0);
-      Module var4 = SigmaMainClass.getInstance().getModuleManager().method_847(InvManagerModule.class);
+      Module var4 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(InvManagerModule.class);
 
       for (int var5 = 9; var5 < 45; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-            class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+            ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (method_23718(var6) > var3 && (var6.method_27960() instanceof class_2235 || !var4.getBooleanValueByName("Sword"))) {
                return false;
             }
@@ -126,8 +126,8 @@ public class InvManagerModule extends PremiumModule {
 
    public void method_23713(int var1, boolean var2) {
       for (int var5 = 9; var5 < 45; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-            class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+            ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (method_23720(var6) && method_23718(var6) > 0.0F && (var6.method_27960() instanceof class_2235 || !this.getBooleanValueByName("Sword"))) {
                this.method_23712(var2);
                class_2740.method_12312(var5, var1 - 36);
@@ -138,7 +138,7 @@ public class InvManagerModule extends PremiumModule {
       }
    }
 
-   public static float method_23718(class_6098 var0) {
+   public static float method_23718(ItemStack var0) {
       float var3 = 0.0F;
       class_2451 var4 = var0.method_27960();
       if (var4 instanceof class_3077) {
@@ -154,7 +154,7 @@ public class InvManagerModule extends PremiumModule {
       return var3 + (float)class_2931.method_13423(class_3668.field_17864, var0) * 1.25F + (float)class_2931.method_13423(class_3668.field_17868, var0) * 0.01F;
    }
 
-   public boolean method_23715(class_6098 var1, int var2) {
+   public boolean method_23715(ItemStack var1, int var2) {
       class_2451 var5 = var1.method_27960();
       if (var1.method_28008().getString().toLowerCase().contains("(right click)")
          || var1.method_28008().getString().toLowerCase().contains("(clique direito)")
@@ -162,24 +162,24 @@ public class InvManagerModule extends PremiumModule {
          return false;
       } else if (var1.method_28008().getString().toLowerCase().contains("§k||")) {
          return false;
-      } else if (var2 == field_26632 && method_23720(mc.field_9632.field_3869.method_18878(var2).method_35898())) {
+      } else if (var2 == field_26632 && method_23720(client.thePlayer.field_3869.method_18878(var2).method_35898())) {
          return false;
       } else if (var5 instanceof class_8440 && this.getBooleanValueByName("Auto Shield")) {
          return false;
       } else if (this.getStringValueByName("Tools").equals("Throw")
          || (
                var2 != field_26635 && !this.getStringValueByName("Tools").equals("Keep")
-                  || !method_23722(mc.field_9632.field_3869.method_18878(var2).method_35898())
+                  || !method_23722(client.thePlayer.field_3869.method_18878(var2).method_35898())
                   || field_26635 < 0
             )
             && (
                var2 != field_26631 && !this.getStringValueByName("Tools").equals("Keep")
-                  || !method_23711(mc.field_9632.field_3869.method_18878(var2).method_35898())
+                  || !method_23711(client.thePlayer.field_3869.method_18878(var2).method_35898())
                   || field_26631 < 0
             )
             && (
                var2 != field_26634 && !this.getStringValueByName("Tools").equals("Keep")
-                  || !method_23719(mc.field_9632.field_3869.method_18878(var2).method_35898())
+                  || !method_23719(client.thePlayer.field_3869.method_18878(var2).method_35898())
                   || field_26634 < 0
             )) {
          if (var5 instanceof class_8228) {
@@ -188,8 +188,8 @@ public class InvManagerModule extends PremiumModule {
             }
 
             for (class_6943 var9 : class_6943.values()) {
-               if (mc.field_9632.field_3869.method_18878(8 - var9.method_31767()).method_35884()) {
-                  class_6098 var10 = mc.field_9632.field_3869.method_18878(8 - var9.method_31767()).method_35898();
+               if (client.thePlayer.field_3869.method_18878(8 - var9.method_31767()).method_35884()) {
+                  ItemStack var10 = client.thePlayer.field_3869.method_18878(8 - var9.method_31767()).method_35898();
                   if (!class_2740.method_12364(var10)) {
                   }
                }
@@ -199,9 +199,9 @@ public class InvManagerModule extends PremiumModule {
          if (var5 instanceof class_6201
             && (this.method_23721() > (int)this.getFloatValueByName("Block Cap") || BlockFlyModule.field_18195.contains(((class_6201)var5).method_28392()))) {
             return true;
-         } else if (var5 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().method_847(AutoMLGModule.class).method_42015()) {
+         } else if (var5 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).method_42015()) {
             return method_23723(class_4897.field_24999) > 1;
-         } else if (var5 == class_4897.field_24548 && SigmaMainClass.getInstance().getModuleManager().method_847(AutoMLGModule.class).method_42015()) {
+         } else if (var5 == class_4897.field_24548 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).method_42015()) {
             return method_23723(class_4897.field_24548) > 1;
          } else if (var5 instanceof class_5518 && class_2740.method_12360(var1)) {
             return true;
@@ -257,8 +257,8 @@ public class InvManagerModule extends PremiumModule {
       int var3 = 0;
 
       for (int var4 = 0; var4 < 45; var4++) {
-         if (mc.field_9632.field_3869.method_18878(var4).method_35884()) {
-            class_6098 var5 = mc.field_9632.field_3869.method_18878(var4).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var4).method_35884()) {
+            ItemStack var5 = client.thePlayer.field_3869.method_18878(var4).method_35898();
             class_2451 var6 = var5.method_27960();
             if (var5.method_27960() instanceof class_6201 && !BlockFlyModule.field_18195.contains(((class_6201)var6).method_28392())) {
                var3 += var5.field_31206;
@@ -273,8 +273,8 @@ public class InvManagerModule extends PremiumModule {
       int var3 = 0;
 
       for (int var4 = 0; var4 < 45; var4++) {
-         if (mc.field_9632.field_3869.method_18878(var4).method_35884()) {
-            class_6098 var5 = mc.field_9632.field_3869.method_18878(var4).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var4).method_35884()) {
+            ItemStack var5 = client.thePlayer.field_3869.method_18878(var4).method_35898();
             if (var5.method_27960() == var0) {
                var3 += var5.field_31206;
             }
@@ -286,11 +286,11 @@ public class InvManagerModule extends PremiumModule {
 
    private void method_23716(int var1, boolean var2) {
       for (int var5 = 9; var5 < 45; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-            class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+            ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (method_23722(var6) && field_26635 != var5 && !method_23720(var6)) {
-               if (mc.field_9632.field_3869.method_18878(field_26635).method_35884()) {
-                  if (!method_23722(mc.field_9632.field_3869.method_18878(field_26635).method_35898())) {
+               if (client.thePlayer.field_3869.method_18878(field_26635).method_35884()) {
+                  if (!method_23722(client.thePlayer.field_3869.method_18878(field_26635).method_35898())) {
                      this.method_23712(var2);
                      class_2740.method_12312(var5, field_26635 - 36);
                      this.field_26629.method_14773();
@@ -313,11 +313,11 @@ public class InvManagerModule extends PremiumModule {
 
    private void method_23724(int var1, boolean var2) {
       for (int var5 = 9; var5 < 45; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-            class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+            ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (method_23719(var6) && field_26634 != var5 && !method_23720(var6)) {
-               if (mc.field_9632.field_3869.method_18878(field_26634).method_35884()) {
-                  if (!method_23719(mc.field_9632.field_3869.method_18878(field_26634).method_35898())) {
+               if (client.thePlayer.field_3869.method_18878(field_26634).method_35884()) {
+                  if (!method_23719(client.thePlayer.field_3869.method_18878(field_26634).method_35898())) {
                      this.method_23712(var2);
                      class_2740.method_12312(var5, field_26634 - 36);
                      this.field_26629.method_14773();
@@ -340,11 +340,11 @@ public class InvManagerModule extends PremiumModule {
 
    private void method_23714(int var1, boolean var2) {
       for (int var5 = 9; var5 < 45; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-            class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+            ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (method_23711(var6) && field_26631 != var5 && !method_23720(var6)) {
-               if (mc.field_9632.field_3869.method_18878(field_26631).method_35884()) {
-                  if (!method_23711(mc.field_9632.field_3869.method_18878(field_26631).method_35898())) {
+               if (client.thePlayer.field_3869.method_18878(field_26631).method_35884()) {
+                  if (!method_23711(client.thePlayer.field_3869.method_18878(field_26631).method_35898())) {
                      this.method_23712(var2);
                      class_2740.method_12312(var5, field_26631 - 36);
                      this.field_26629.method_14773();
@@ -366,13 +366,13 @@ public class InvManagerModule extends PremiumModule {
    }
 
    private void method_23717(boolean var1) {
-      if (!mc.field_9632.field_3869.method_18878(45).method_35884()) {
+      if (!client.thePlayer.field_3869.method_18878(45).method_35884()) {
          for (int var4 = 9; var4 < 45; var4++) {
-            class_6098 var5 = mc.field_9632.field_3869.method_18878(var4).method_35898();
+            ItemStack var5 = client.thePlayer.field_3869.method_18878(var4).method_35898();
             if (var5.method_27960() instanceof class_8440) {
                this.method_23712(var1);
                this.field_26629.method_14773();
-               class_2740.method_12356(mc.field_9632.field_3869.field_19925, var4, 0, class_6269.field_32027, mc.field_9632, true);
+               class_2740.method_12356(client.thePlayer.field_3869.field_19925, var4, 0, class_6269.field_32027, client.thePlayer, true);
                this.field_26637 = true;
                return;
             }
@@ -380,14 +380,14 @@ public class InvManagerModule extends PremiumModule {
       }
    }
 
-   public static boolean method_23722(class_6098 var0) {
+   public static boolean method_23722(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       if (var3 instanceof class_670) {
          float var4 = method_23710(var0);
 
          for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-               class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+            if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+               ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
                if (method_23710(var6) > var4 && var6.method_27960() instanceof class_670) {
                   return false;
                }
@@ -400,14 +400,14 @@ public class InvManagerModule extends PremiumModule {
       }
    }
 
-   public static boolean method_23719(class_6098 var0) {
+   public static boolean method_23719(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       if (var3 instanceof class_9406) {
          float var4 = method_23710(var0);
 
          for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-               class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+            if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+               ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
                if (method_23710(var6) > var4 && var6.method_27960() instanceof class_9406) {
                   return false;
                }
@@ -420,14 +420,14 @@ public class InvManagerModule extends PremiumModule {
       }
    }
 
-   public static boolean method_23711(class_6098 var0) {
+   public static boolean method_23711(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       if (var3 instanceof class_7938) {
          float var4 = method_23710(var0);
 
          for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-               class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+            if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+               ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
                if (method_23710(var6) > var4 && var6.method_27960() instanceof class_7938 && !method_23720(var0)) {
                   return false;
                }
@@ -440,7 +440,7 @@ public class InvManagerModule extends PremiumModule {
       }
    }
 
-   public static float method_23710(class_6098 var0) {
+   public static float method_23710(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       if (var3 instanceof class_3077) {
          String var4 = var3.method_11219().getString().toLowerCase();
@@ -477,8 +477,8 @@ public class InvManagerModule extends PremiumModule {
    }
 
    private void method_23712(boolean var1) {
-      if (var1 && this.field_26630 && !(mc.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-         mc.method_8614().method_4813(new class_8559(class_2105.field_10551));
+      if (var1 && this.field_26630 && !(client.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
+         client.method_8614().method_4813(new class_8559(class_2105.field_10551));
          this.field_26630 = false;
       }
    }

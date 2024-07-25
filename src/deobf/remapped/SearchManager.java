@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class SearchManager implements class_6491 {
    private static String[] field_4276;
-   public static final class_8358<class_6098> field_4279 = new class_8358<class_6098>();
-   public static final class_8358<class_6098> field_4275 = new class_8358<class_6098>();
+   public static final class_8358<ItemStack> field_4279 = new class_8358<ItemStack>();
+   public static final class_8358<ItemStack> field_4275 = new class_8358<ItemStack>();
    public static final class_8358<class_7735> field_4278 = new class_8358<class_7735>();
    private final Map<class_8358<?>, class_1272<?>> field_4277 = Maps.newHashMap();
 

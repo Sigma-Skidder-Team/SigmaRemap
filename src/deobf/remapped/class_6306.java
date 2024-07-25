@@ -138,9 +138,9 @@ public class class_6306 {
    }
 
    public static boolean method_28766(int var0, int var1, int var2, boolean var3) {
-      class_4092 var6 = field_32228.field_9632.method_37243() != null
-         ? field_32228.field_9632.method_37243().method_37241()
-         : field_32228.field_9632.method_37241();
+      class_4092 var6 = field_32228.thePlayer.method_37243() != null
+         ? field_32228.thePlayer.method_37243().method_37241()
+         : field_32228.thePlayer.method_37241();
       class_4092 var7 = new class_4092(
          (double)((float)var0 + 0.5F) - var6.method_18910() / 2.0,
          (double)var1,
@@ -149,7 +149,7 @@ public class class_6306 {
          (double)var1 + var6.method_18901(),
          (double)((float)var2 + 0.5F) + var6.method_18921() / 2.0
       );
-      return field_32228.field_9601.method_6680(field_32228.field_9632, var7).count() == 0L;
+      return field_32228.field_9601.method_6680(field_32228.thePlayer, var7).count() == 0L;
    }
 
    public class_4967 method_28769(class_4714 var1) {

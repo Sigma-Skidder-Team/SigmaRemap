@@ -4,17 +4,17 @@ import java.util.Random;
 
 public class class_1957 extends class_7067<class_91> {
    private static String[] field_9969;
-   private final class_8765 field_9971;
+   private final ItemRenderer field_9971;
    private final Random field_9970 = new Random();
 
-   public class_1957(EntityRenderDispatcher var1, class_8765 var2) {
+   public class_1957(EntityRenderDispatcher var1, ItemRenderer var2) {
       super(var1);
       this.field_9971 = var2;
       this.field_36492 = 0.15F;
       this.field_36494 = 0.75F;
    }
 
-   private int method_9054(class_6098 var1) {
+   private int method_9054(ItemStack var1) {
       byte var4 = 1;
       if (var1.method_27997() <= 48) {
          if (var1.method_27997() <= 32) {
@@ -37,7 +37,7 @@ public class class_1957 extends class_7067<class_91> {
 
    public void method_9056(class_91 var1, float var2, float var3, class_7966 var4, class_2565 var5, int var6) {
       var4.method_36063();
-      class_6098 var9 = var1.method_264();
+      ItemStack var9 = var1.method_264();
       int var10 = !var9.method_28022() ? class_2451.method_11244(var9.method_27960()) + var9.method_28026() : 187;
       this.field_9970.setSeed((long)var10);
       class_7373 var11 = this.field_9971.method_40278(var9, var1.field_41768, (class_5834)null);

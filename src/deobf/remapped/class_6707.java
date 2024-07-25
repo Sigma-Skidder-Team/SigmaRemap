@@ -188,6 +188,6 @@ public class class_6707 extends Screen {
    }
 
    private Identifier method_30760(class_5522 var1) {
-      return this.field_34638.computeIfAbsent(var1.method_25023(), var2 -> this.method_30758(this.field_943.method_8577(), var1));
+      return this.field_34638.computeIfAbsent(var1.method_25023(), var2 -> this.method_30758(this.field_943.getTextureManager(), var1));
    }
 }

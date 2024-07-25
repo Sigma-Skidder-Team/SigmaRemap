@@ -101,17 +101,17 @@ public class class_340 extends class_2208<class_4034> {
 
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_1282);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_1282);
       int var7 = (this.field_941 - this.field_10981) / 2;
       int var8 = (this.field_940 - this.field_10973) / 2;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);
       this.field_945.field_44875 = 100.0F;
-      this.field_945.method_40274(new class_6098(class_4897.field_25231), var7 + 20, var8 + 109);
-      this.field_945.method_40274(new class_6098(class_4897.field_24997), var7 + 41, var8 + 109);
-      this.field_945.method_40274(new class_6098(class_4897.field_24481), var7 + 41 + 22, var8 + 109);
-      this.field_945.method_40274(new class_6098(class_4897.field_25108), var7 + 42 + 44, var8 + 109);
-      this.field_945.method_40274(new class_6098(class_4897.field_25021), var7 + 42 + 66, var8 + 109);
+      this.field_945.method_40274(new ItemStack(class_4897.field_25231), var7 + 20, var8 + 109);
+      this.field_945.method_40274(new ItemStack(class_4897.field_24997), var7 + 41, var8 + 109);
+      this.field_945.method_40274(new ItemStack(class_4897.field_24481), var7 + 41 + 22, var8 + 109);
+      this.field_945.method_40274(new ItemStack(class_4897.field_25108), var7 + 42 + 44, var8 + 109);
+      this.field_945.method_40274(new ItemStack(class_4897.field_25021), var7 + 42 + 66, var8 + 109);
       this.field_945.field_44875 = 0.0F;
    }
 

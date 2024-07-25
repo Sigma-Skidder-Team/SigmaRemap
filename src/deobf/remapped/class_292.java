@@ -3,7 +3,7 @@ package remapped;
 import javax.annotation.Nullable;
 
 public abstract class class_292 extends class_1080 implements class_6867, class_4259 {
-   private class_2831<class_6098> field_1062 = class_2831.<class_6098>method_12872(36, class_6098.field_31203);
+   private class_2831<ItemStack> field_1062 = class_2831.<ItemStack>method_12872(36, ItemStack.EMPTY);
    private boolean field_1061 = true;
    private Identifier field_1063;
    private long field_1064;
@@ -32,7 +32,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
 
    @Override
    public boolean method_31495() {
-      for (class_6098 var4 : this.field_1062) {
+      for (ItemStack var4 : this.field_1062) {
          if (!var4.method_28022()) {
             return false;
          }
@@ -42,31 +42,31 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    }
 
    @Override
-   public class_6098 method_31498(int var1) {
+   public ItemStack method_31498(int var1) {
       this.method_1298((class_704)null);
       return this.field_1062.get(var1);
    }
 
    @Override
-   public class_6098 method_31497(int var1, int var2) {
+   public ItemStack method_31497(int var1, int var2) {
       this.method_1298((class_704)null);
       return class_3037.method_13881(this.field_1062, var1, var2);
    }
 
    @Override
-   public class_6098 method_31507(int var1) {
+   public ItemStack method_31507(int var1) {
       this.method_1298((class_704)null);
-      class_6098 var4 = this.field_1062.get(var1);
+      ItemStack var4 = this.field_1062.get(var1);
       if (!var4.method_28022()) {
-         this.field_1062.set(var1, class_6098.field_31203);
+         this.field_1062.set(var1, ItemStack.EMPTY);
          return var4;
       } else {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       }
    }
 
    @Override
-   public void method_31503(int var1, class_6098 var2) {
+   public void method_31503(int var1, ItemStack var2) {
       this.method_1298((class_704)null);
       this.field_1062.set(var1, var2);
       if (!var2.method_28022() && var2.method_27997() > this.method_31506()) {
@@ -75,7 +75,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       if (var1 >= 0 && var1 < this.method_31505()) {
          this.method_31503(var1, var2);
          return true;
@@ -125,7 +125,7 @@ public abstract class class_292 extends class_1080 implements class_6867, class_
    @Override
    public void method_37314(class_5734 var1) {
       super.method_37314(var1);
-      this.field_1062 = class_2831.<class_6098>method_12872(this.method_31505(), class_6098.field_31203);
+      this.field_1062 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!var1.method_25939("LootTable", 8)) {
          class_3037.method_13882(var1, this.field_1062);
       } else {

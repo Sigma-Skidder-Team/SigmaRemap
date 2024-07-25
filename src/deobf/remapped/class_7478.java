@@ -17,7 +17,7 @@ public class class_7478 implements class_4904 {
       List var5 = class_8669.field_44445.method_39801().filter(class_4382::method_20436).collect(Collectors.toList());
       class_4382 var6 = (class_4382)var5.get(var2.nextInt(var5.size()));
       int var7 = class_9299.method_42824(var2, var6.method_20425(), var6.method_20417());
-      class_6098 var8 = class_7597.method_34502(new class_9693(var6, var7));
+      ItemStack var8 = class_7597.method_34502(new class_9693(var6, var7));
       int var9 = 2 + var2.nextInt(5 + var7 * 10) + 3 * var7;
       if (var6.method_20429()) {
          var9 *= 2;
@@ -27,6 +27,6 @@ public class class_7478 implements class_4904 {
          var9 = 64;
       }
 
-      return new class_8014(new class_6098(class_4897.field_24997, var9), new class_6098(class_4897.field_24551), var8, 12, this.field_38162, 0.2F);
+      return new class_8014(new ItemStack(class_4897.field_24997, var9), new ItemStack(class_4897.field_24551), var8, 12, this.field_38162, 0.2F);
    }
 }

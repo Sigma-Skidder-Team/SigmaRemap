@@ -6,42 +6,42 @@ public abstract class class_5348 {
    public final String field_27283;
    private final Runnable field_27307;
    private final Runnable field_27285;
-   public static final class_4298 field_27320 = new class_4298("no_transparency", () -> class_3542.method_16448(), () -> {
+   public static final class_4298 field_27320 = new class_4298("no_transparency", () -> RenderSystem.method_16448(), () -> {
    });
    public static final class_4298 field_27292 = new class_4298("additive_transparency", () -> {
-      class_3542.method_16488();
-      class_3542.method_16398(class_5033.field_26047, class_8535.field_43691);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16398(class_5033.field_26047, class_8535.field_43691);
    }, () -> {
-      class_3542.method_16448();
-      class_3542.method_16437();
+      RenderSystem.method_16448();
+      RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27288 = new class_4298("lightning_transparency", () -> {
-      class_3542.method_16488();
-      class_3542.method_16398(class_5033.field_26042, class_8535.field_43691);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43691);
    }, () -> {
-      class_3542.method_16448();
-      class_3542.method_16437();
+      RenderSystem.method_16448();
+      RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27325 = new class_4298("glint_transparency", () -> {
-      class_3542.method_16488();
-      class_3542.method_16425(class_5033.field_26035, class_8535.field_43691, class_5033.field_26048, class_8535.field_43691);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16425(class_5033.field_26035, class_8535.field_43691, class_5033.field_26048, class_8535.field_43691);
    }, () -> {
-      class_3542.method_16448();
-      class_3542.method_16437();
+      RenderSystem.method_16448();
+      RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27326 = new class_4298("crumbling_transparency", () -> {
-      class_3542.method_16488();
-      class_3542.method_16425(class_5033.field_26038, class_8535.field_43692, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16425(class_5033.field_26038, class_8535.field_43692, class_5033.field_26047, class_8535.field_43699);
    }, () -> {
-      class_3542.method_16448();
-      class_3542.method_16437();
+      RenderSystem.method_16448();
+      RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27308 = new class_4298("translucent_transparency", () -> {
-      class_3542.method_16488();
-      class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43697);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43697);
    }, () -> {
-      class_3542.method_16448();
-      class_3542.method_16437();
+      RenderSystem.method_16448();
+      RenderSystem.defaultBlendFunc();
    });
    public static final class_7017 field_27304 = new class_7017(0.0F);
    public static final class_7017 field_27310 = new class_7017(0.003921569F);
@@ -55,16 +55,16 @@ public abstract class class_5348 {
    public static final class_4696 field_27290 = new class_4696("default_texturing", () -> {
    }, () -> {
    });
-   public static final class_4696 field_27281 = new class_4696("outline_texturing", () -> class_3542.method_16472(), () -> class_3542.method_16485());
+   public static final class_4696 field_27281 = new class_4696("outline_texturing", () -> RenderSystem.method_16472(), () -> RenderSystem.method_16485());
    public static final class_4696 field_27301 = new class_4696("glint_texturing", () -> method_24423(8.0F), () -> {
-      class_3542.method_16463(5890);
-      class_3542.method_16489();
-      class_3542.method_16463(5888);
+      RenderSystem.method_16463(5890);
+      RenderSystem.method_16489();
+      RenderSystem.method_16463(5888);
    });
    public static final class_4696 field_27314 = new class_4696("entity_glint_texturing", () -> method_24423(0.16F), () -> {
-      class_3542.method_16463(5890);
-      class_3542.method_16489();
-      class_3542.method_16463(5888);
+      RenderSystem.method_16463(5890);
+      RenderSystem.method_16489();
+      RenderSystem.method_16463(5888);
    });
    public static final class_8384 field_27280 = new class_8384(true);
    public static final class_8384 field_27282 = new class_8384(false);
@@ -84,29 +84,29 @@ public abstract class class_5348 {
    }, () -> {
    });
    public static final class_9603 field_27318 = new class_9603("polygon_offset_layering", () -> {
-      class_3542.method_16475(-1.0F, -10.0F);
-      class_3542.method_16464();
+      RenderSystem.method_16475(-1.0F, -10.0F);
+      RenderSystem.method_16464();
    }, () -> {
-      class_3542.method_16475(0.0F, 0.0F);
-      class_3542.method_16382();
+      RenderSystem.method_16475(0.0F, 0.0F);
+      RenderSystem.method_16382();
    });
    public static final class_9603 field_27293 = new class_9603("view_offset_z_layering", () -> {
-      class_3542.method_16438();
-      class_3542.method_16403(0.99975586F, 0.99975586F, 0.99975586F);
-   }, class_3542::method_16489);
+      RenderSystem.method_16438();
+      RenderSystem.method_16403(0.99975586F, 0.99975586F, 0.99975586F);
+   }, RenderSystem::method_16489);
    public static final class_4781 field_27306 = new class_4781("no_fog", () -> {
    }, () -> {
    });
    public static final class_4781 field_27305 = new class_4781("fog", () -> {
       class_6377.method_29161();
-      class_3542.method_16353();
-   }, () -> class_3542.method_16367());
+      RenderSystem.method_16353();
+   }, () -> RenderSystem.method_16367());
    public static final class_4781 field_27284 = new class_4781("black_fog", () -> {
-      class_3542.method_16434(2918, 0.0F, 0.0F, 0.0F, 1.0F);
-      class_3542.method_16353();
+      RenderSystem.method_16434(2918, 0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.method_16353();
    }, () -> {
       class_6377.method_29161();
-      class_3542.method_16367();
+      RenderSystem.method_16367();
    });
    public static final class_6160 field_27298 = new class_6160("main_target", () -> {
    }, () -> {
@@ -202,16 +202,16 @@ public abstract class class_5348 {
    }
 
    private static void method_24423(float var0) {
-      class_3542.method_16463(5890);
-      class_3542.method_16438();
-      class_3542.method_16476();
+      RenderSystem.method_16463(5890);
+      RenderSystem.method_16438();
+      RenderSystem.method_16476();
       long var3 = Util.getMeasuringTimeMs() * 8L;
       float var5 = (float)(var3 % 110000L) / 110000.0F;
       float var6 = (float)(var3 % 30000L) / 30000.0F;
-      class_3542.method_16413(-var5, var6, 0.0F);
-      class_3542.method_16410(10.0F, 0.0F, 0.0F, 1.0F);
-      class_3542.method_16403(var0, var0, var0);
-      class_3542.method_16463(5888);
+      RenderSystem.method_16413(-var5, var6, 0.0F);
+      RenderSystem.method_16410(10.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.method_16403(var0, var0, var0);
+      RenderSystem.method_16463(5888);
    }
 
    public String method_24421() {

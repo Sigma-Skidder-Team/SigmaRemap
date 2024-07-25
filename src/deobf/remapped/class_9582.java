@@ -26,7 +26,7 @@ public class class_9582 {
    private static final Random field_48743 = new Random();
 
    public static class_7373 method_44261(class_7373 var0, class_2522 var1) {
-      if (class_3111.method_14410()) {
+      if (Config.method_14410()) {
          List var4 = var0.method_33580(var1, (Direction)null, field_48743);
          if (var4 != field_48740) {
             if (var4 != field_48745) {
@@ -85,7 +85,7 @@ public class class_9582 {
       field_48731 = method_44263(field_48729);
       field_48744 = method_44263(field_48732);
       if (var2.size() > 0) {
-         class_3111.method_14277("Enable face culling: " + class_3111.method_14289(var2.toArray()));
+         Config.method_14277("Enable face culling: " + Config.method_14289(var2.toArray()));
       }
    }
 
@@ -94,14 +94,14 @@ public class class_9582 {
    }
 
    public static class_7373 method_44264(String var0, List var1) {
-      class_7458 var4 = class_3111.method_14346();
+      class_7458 var4 = Config.method_14346();
       if (var4 == null) {
          return null;
       } else {
          Identifier var5 = new Identifier("blockstates/" + var0 + "_leaves.json");
-         if (class_3111.method_14247(var5)) {
+         if (Config.method_14247(var5)) {
             Identifier var6 = new Identifier("models/block/" + var0 + "_leaves.json");
-            if (!class_3111.method_14247(var6)) {
+            if (!Config.method_14247(var6)) {
                return null;
             } else {
                class_454 var7 = new class_454(var0 + "_leaves", "normal");
@@ -140,7 +140,7 @@ public class class_9582 {
       if (var0 == null) {
          return null;
       } else if (var0.method_33580((class_2522)null, (Direction)null, field_48743).size() > 0) {
-         class_3111.method_14317(
+         Config.method_14317(
             "SmartLeaves: Model is not cube, general quads: " + var0.method_33580((class_2522)null, (Direction)null, field_48743).size() + ", model: " + var0
          );
          return var0;
@@ -151,7 +151,7 @@ public class class_9582 {
             Direction var5 = var3[var4];
             List var6 = var0.method_33580((class_2522)null, var5, field_48743);
             if (var6.size() != 1) {
-               class_3111.method_14317("SmartLeaves: Model is not cube, side: " + var5 + ", quads: " + var6.size() + ", model: " + var0);
+               Config.method_14317("SmartLeaves: Model is not cube, side: " + var5 + ", quads: " + var6.size() + ", model: " + var0);
                return var0;
             }
          }

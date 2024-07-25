@@ -176,8 +176,8 @@ public class class_9558 {
                   }
                }
 
-               for (class_4666 var11 : class_4666.values()) {
-                  if (var11 != class_4666.field_22762 && var11.method_21588().toLowerCase(Locale.ROOT).startsWith(var5x)) {
+               for (GameType var11 : GameType.values()) {
+                  if (var11 != GameType.field_22762 && var11.method_21588().toLowerCase(Locale.ROOT).startsWith(var5x)) {
                      if (var7) {
                         var1.suggest('!' + var11.method_21588());
                      }
@@ -197,12 +197,12 @@ public class class_9558 {
                throw field_48625.createWithContext(var0.method_22749(), "gamemode");
             } else {
                String var5 = var0.method_22749().readUnquotedString();
-               class_4666 var6 = class_4666.method_21595(var5, class_4666.field_22762);
-               if (var6 != class_4666.field_22762) {
+               GameType var6 = GameType.method_21595(var5, GameType.field_22762);
+               if (var6 != GameType.field_22762) {
                   var0.method_22768(false);
                   var0.method_22758(var2 -> {
                      if (var2 instanceof class_9359) {
-                        class_4666 var5x = ((class_9359)var2).field_47807.method_39517();
+                        GameType var5x = ((class_9359)var2).field_47807.method_39517();
                         return !var4 ? var5x == var6 : var5x != var6;
                      } else {
                         return false;
@@ -289,7 +289,7 @@ public class class_9558 {
             var0.method_22758(var2 -> {
                class_5734 var5 = var2.method_37258(new class_5734());
                if (var2 instanceof class_9359) {
-                  class_6098 var6 = ((class_9359)var2).field_3853.method_32403();
+                  ItemStack var6 = ((class_9359)var2).inventory.method_32403();
                   if (!var6.method_28022()) {
                      var5.method_25946("SelectedItem", var6.method_27998(new class_5734()));
                   }

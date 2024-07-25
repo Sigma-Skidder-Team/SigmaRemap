@@ -20,11 +20,11 @@ public class Auto32KModule extends Module {
    public void onEnable() {
       this.field_44720 = null;
 
-      for (class_1331 var4 : class_7494.method_34085(class_7494.method_34110(mc.field_9647.method_42146()))) {
-         if (!(class_7494.method_34108(mc.field_9632, var4) < 2.0F)
-            && class_7494.method_34116(mc.field_9632, var4)
-            && (double)var4.method_12165() >= mc.field_9632.method_37309() - 2.0
-            && (double)var4.method_12165() <= mc.field_9632.method_37309() - 1.0
+      for (class_1331 var4 : class_7494.method_34085(class_7494.method_34110(client.playerController.method_42146()))) {
+         if (!(class_7494.method_34108(client.thePlayer, var4) < 2.0F)
+            && class_7494.method_34116(client.thePlayer, var4)
+            && (double)var4.method_12165() >= client.thePlayer.method_37309() - 2.0
+            && (double)var4.method_12165() <= client.thePlayer.method_37309() - 1.0
             && this.method_40074(var4)) {
             this.field_44720 = var4;
             break;
@@ -95,9 +95,9 @@ public class Auto32KModule extends Module {
    }
 
    public boolean method_40074(class_1331 var1) {
-      class_2522 var4 = mc.field_9601.method_28262(var1);
-      class_2522 var5 = mc.field_9601.method_28262(var1.method_6081());
-      class_2522 var6 = mc.field_9601.method_28262(var1.method_6082(2));
+      class_2522 var4 = client.field_9601.method_28262(var1);
+      class_2522 var5 = client.field_9601.method_28262(var1.method_6081());
+      class_2522 var6 = client.field_9601.method_28262(var1.method_6082(2));
       return var4.method_8302() && var5.method_8345() && var6.method_8345();
    }
 
@@ -111,9 +111,9 @@ public class Auto32KModule extends Module {
          if (this.field_44720 != null) {
             GL11.glAlphaFunc(516, 0.0F);
             class_1331 var4 = this.field_44720;
-            double var5 = (double)var4.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61();
-            double var7 = (double)var4.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60();
-            double var9 = (double)var4.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62();
+            double var5 = (double)var4.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+            double var7 = (double)var4.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
+            double var9 = (double)var4.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
             class_73.method_83(
                new class_8194(var5, var7 + 1.625, var9, var5 + 1.0, var7 + 3.0, var9 + 1.0), class_314.method_1444(class_1255.field_6922.field_6917, 0.3F)
             );
@@ -204,24 +204,24 @@ public class Auto32KModule extends Module {
                         float var5 = class_7494.method_34097(this.field_44720.method_6081(), Direction.field_817)[1];
                         var1.method_6441(var4);
                         var1.method_6448(var5);
-                        int var6 = mc.field_9632.field_3853.field_36404;
-                        mc.field_9632.field_3853.field_36404 = this.field_44718;
+                        int var6 = client.thePlayer.inventory.field_36404;
+                        client.thePlayer.inventory.field_36404 = this.field_44718;
                         class_1343 var7 = class_7494.method_34098(Direction.field_817, this.field_44720);
                         class_9529 var8 = new class_9529(var7, Direction.field_817, this.field_44720, false);
-                        class_6910 var9 = mc.field_9647.method_42147(mc.field_9632, mc.field_9601, class_2584.field_12791, var8);
-                        mc.field_9632.method_26597(class_2584.field_12791);
+                        class_6910 var9 = client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var8);
+                        client.thePlayer.method_26597(class_2584.field_12791);
                         if (var9 == class_6910.field_35520) {
                            this.field_44724++;
-                           mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20098));
-                           mc.field_9632.field_30533.field_45289 = true;
-                           mc.field_9632.field_3853.field_36404 = this.field_44721;
+                           client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20098));
+                           client.thePlayer.field_30533.field_45289 = true;
+                           client.thePlayer.inventory.field_36404 = this.field_44721;
                            class_1343 var10 = class_7494.method_34098(Direction.field_817, this.field_44720.method_6081());
                            class_9529 var11 = new class_9529(var10, Direction.field_817, this.field_44720.method_6081(), false);
-                           mc.field_9647.method_42147(mc.field_9632, mc.field_9601, class_2584.field_12791, var11);
-                           mc.field_9632.method_26597(class_2584.field_12791);
-                           mc.field_9632.field_30533.field_45289 = false;
-                           mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20097));
-                           mc.field_9647.method_42147(mc.field_9632, mc.field_9601, class_2584.field_12791, var11);
+                           client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var11);
+                           client.thePlayer.method_26597(class_2584.field_12791);
+                           client.thePlayer.field_30533.field_45289 = false;
+                           client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20097));
+                           client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var11);
                         }
                      }
                   } else {
@@ -253,15 +253,15 @@ public class Auto32KModule extends Module {
          if (var1.method_557() instanceof class_5491) {
             class_5491 var4 = (class_5491)var1.method_557();
             int var5 = var4.method_24956();
-            class_6098 var6 = var4.method_24953();
+            ItemStack var6 = var4.method_24953();
             int var7 = var4.method_24952();
             if (this.field_44717 == var7 && var5 == 0 && var6.method_27960() != class_4897.field_25302 && !this.field_44719) {
                var1.method_29715(true);
-               mc.method_8614().method_4813(new class_5955(var7, var5, 1, class_6269.field_32019, var6, this.field_44723++));
+               client.method_8614().method_4813(new class_5955(var7, var5, 1, class_6269.field_32019, var6, this.field_44723++));
                int var8 = -1;
 
                for (int var9 = 44; var9 > 9; var9--) {
-                  class_6098 var10 = mc.field_9632.field_3869.method_18878(var9).method_35898();
+                  ItemStack var10 = client.thePlayer.field_3869.method_18878(var9).method_35898();
                   if (var10.method_28022()) {
                      var8 = var9;
                      break;
@@ -269,9 +269,9 @@ public class Auto32KModule extends Module {
                }
 
                if (var8 != -1) {
-                  mc.field_9632.field_3869.method_18878(var8).method_35896(var6);
+                  client.thePlayer.field_3869.method_18878(var8).method_35896(var6);
                   if (var8 >= 36) {
-                     mc.field_9632.field_3853.field_36404 = var8 % 9;
+                     client.thePlayer.inventory.field_36404 = var8 % 9;
                   }
                }
 
@@ -280,7 +280,7 @@ public class Auto32KModule extends Module {
          }
 
          if (var1.method_557() instanceof class_5257) {
-            this.method_41991(false);
+            this.setEnabled2(false);
          }
       }
    }

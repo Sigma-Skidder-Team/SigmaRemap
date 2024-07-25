@@ -277,11 +277,11 @@ public class class_8248 extends ByteBuf {
       }
    }
 
-   public class_8248 method_37764(class_6098 var1) {
+   public class_8248 method_37764(ItemStack var1) {
       return this.method_37765(var1, true);
    }
 
-   public class_8248 method_37765(class_6098 var1, boolean var2) {
+   public class_8248 method_37765(ItemStack var1, boolean var2) {
       if (!var1.method_28022()) {
          this.writeBoolean(true);
          class_2451 var5 = var1.method_27960();
@@ -304,11 +304,11 @@ public class class_8248 extends ByteBuf {
       return this;
    }
 
-   public class_6098 method_37755() {
+   public ItemStack method_37755() {
       if (this.readBoolean()) {
          int var3 = this.method_37778();
          byte var4 = this.readByte();
-         class_6098 var5 = new class_6098(class_2451.method_11220(var3), var4);
+         ItemStack var5 = new ItemStack(class_2451.method_11220(var3), var4);
          if (!class_7860.field_40052.method_3596()) {
             var5.method_27965(this.method_37775());
          } else {
@@ -317,7 +317,7 @@ public class class_8248 extends ByteBuf {
 
          return var5;
       } else {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       }
    }
 

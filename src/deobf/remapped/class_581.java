@@ -22,7 +22,7 @@ public class class_581 extends class_6749 {
       super(class_6629.field_34290, var2, var1);
    }
 
-   public void method_2748(class_6098 var1) {
+   public void method_2748(ItemStack var1) {
       if (var1.method_27960() != class_4897.field_25013) {
          if (var1.method_27960() == class_4897.field_25024) {
             this.field_3394 = class_3697.field_18134;
@@ -47,7 +47,7 @@ public class class_581 extends class_6749 {
       }
    }
 
-   public static int method_2749(class_6098 var0) {
+   public static int method_2749(ItemStack var0) {
       class_5734 var3 = var0.method_27990();
       return var3 != null && var3.method_25939("CustomPotionColor", 99) ? var3.method_25947("CustomPotionColor") : -1;
    }
@@ -169,11 +169,11 @@ public class class_581 extends class_6749 {
    }
 
    @Override
-   public class_6098 method_30925() {
+   public ItemStack method_30925() {
       if (this.field_3395.isEmpty() && this.field_3394 == class_3697.field_18134) {
-         return new class_6098(class_4897.field_25024);
+         return new ItemStack(class_4897.field_25024);
       } else {
-         class_6098 var3 = new class_6098(class_4897.field_25013);
+         ItemStack var3 = new ItemStack(class_4897.field_25013);
          class_9541.method_43999(var3, this.field_3394);
          class_9541.method_43992(var3, this.field_3395);
          if (this.field_3392) {

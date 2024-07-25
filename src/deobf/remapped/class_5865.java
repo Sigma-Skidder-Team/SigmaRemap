@@ -9,7 +9,7 @@ public class class_5865<T extends class_5834> extends class_6741<T, class_4845<T
 
    @Override
    public void method_30885(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      class_6098 var13 = var4.method_26446();
+      ItemStack var13 = var4.method_26446();
       var1.method_36063();
       if (var13.method_27960() == class_4897.field_25157) {
          this.method_19347().method_39733().method_7057(var1);

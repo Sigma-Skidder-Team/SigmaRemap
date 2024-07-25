@@ -37,8 +37,8 @@ public class class_6340 extends class_7621 {
 
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
-      int var7 = this.field_32368.window.method_43165();
-      int var8 = this.field_32368.window.method_43177();
+      int var7 = this.field_32368.window.getScaledWidth();
+      int var8 = this.field_32368.window.getScaledHeight();
       long var9 = Util.getMeasuringTimeMs();
       if (this.field_32378 && (this.field_32373.method_19968() || this.field_32368.field_9623 != null) && this.field_32366 == -1L) {
          this.field_32366 = var9;
@@ -47,8 +47,8 @@ public class class_6340 extends class_7621 {
       float var11 = this.field_32364 > -1L ? (float)(var9 - this.field_32364) / 200.0F : -1.0F;
       float var12 = this.field_32366 > -1L ? (float)(var9 - this.field_32366) / 100.0F : -1.0F;
       float var13 = 1.0F;
-      int var14 = (this.field_32368.window.method_43165() - 256) / 2;
-      int var15 = (this.field_32368.window.method_43177() - 256) / 2;
+      int var14 = (this.field_32368.window.getScaledWidth() - 256) / 2;
+      int var15 = (this.field_32368.window.getScaledHeight() - 256) / 2;
       float var16 = this.field_32373.method_19969();
       this.field_32377 = this.field_32377 * 0.95F + var16 * 0.050000012F;
       GL11.glPushMatrix();
@@ -77,7 +77,7 @@ public class class_6340 extends class_7621 {
          if (this.field_32368.field_9623 != null) {
             this.field_32368
                .field_9623
-               .method_1164(this.field_32368, this.field_32368.method_8552().method_43165(), this.field_32368.method_8552().method_43177());
+               .method_1164(this.field_32368, this.field_32368.getMainWindow().getScaledWidth(), this.field_32368.getMainWindow().getScaledHeight());
          }
       }
    }

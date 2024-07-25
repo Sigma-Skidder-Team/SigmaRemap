@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import net.minecraft.util.text.TextFormatting;
 
-public class class_3888 extends class_2089 {
+public class DebugOverlayGui extends AbstractGui {
    private static final Map<class_3801, String> field_18927 = Util.<EnumMap<class_3801, String>>method_44659(
       new EnumMap<class_3801, String>(class_3801.class), var0 -> {
          var0.put(class_3801.field_18598, "SW");
@@ -45,7 +45,7 @@ public class class_3888 extends class_2089 {
    private long field_18924 = 0L;
    private long field_18919 = 0L;
 
-   public class_3888(MinecraftClient var1) {
+   public DebugOverlayGui(MinecraftClient var1) {
       this.field_18930 = var1;
       this.field_18918 = var1.textRenderer;
    }
@@ -57,15 +57,15 @@ public class class_3888 extends class_2089 {
 
    public void method_17982(class_7966 var1) {
       this.field_18930.method_8562().method_16056("debug");
-      class_3542.method_16438();
-      Entity var4 = this.field_18930.method_8516();
+      RenderSystem.method_16438();
+      Entity var4 = this.field_18930.getRenderViewEntity();
       this.field_18928 = var4.method_37201(20.0, 0.0F, false);
       this.field_18929 = var4.method_37201(20.0, 0.0F, true);
       this.method_17993(var1);
       this.method_17989(var1);
-      class_3542.method_16489();
+      RenderSystem.method_16489();
       if (this.field_18930.gameOptions.field_45549) {
-         int var5 = this.field_18930.method_8552().method_43165();
+         int var5 = this.field_18930.getMainWindow().getScaledWidth();
          this.method_17984(var1, this.field_18930.method_8592(), 0, var5 / 2, true);
          class_7762 var6 = this.field_18930.method_8515();
          if (var6 != null) {
@@ -129,7 +129,7 @@ public class class_3888 extends class_2089 {
          if (!Strings.isNullOrEmpty(var8)) {
             byte var9 = 9;
             int var10 = this.field_18918.method_45395(var8);
-            int var11 = this.field_18930.method_8552().method_43165() - 2 - var10;
+            int var11 = this.field_18930.getMainWindow().getScaledWidth() - 2 - var10;
             int var12 = 2 + var9 * var7;
             var6[var7] = new class_2513(var11 - 1, var12 - 1, var11 + var10 + 1, var12 + var9 - 1);
             var5[var7] = new class_9460(var11, var12);
@@ -143,39 +143,39 @@ public class class_3888 extends class_2089 {
    public List<String> method_17996() {
       if (this.field_18930.field_9584 != this.field_18923) {
          StringBuffer var3 = new StringBuffer(this.field_18930.field_9584);
-         int var4 = class_3111.method_14273();
+         int var4 = Config.method_14273();
          int var5 = this.field_18930.field_9584.indexOf("T: ");
          if (var5 >= 0) {
             var3.insert(var5, "(" + var4 + " chunk updates) ");
          }
 
-         int var6 = class_3111.method_14304();
+         int var6 = Config.method_14304();
          int var7 = this.field_18930.field_9584.indexOf(" fps ");
          if (var7 >= 0) {
             var3.insert(var7, "/" + var6);
          }
 
-         if (class_3111.method_14337()) {
+         if (Config.method_14337()) {
             var3.append(" sf");
          }
 
-         if (class_3111.method_14238()) {
+         if (Config.method_14238()) {
             var3.append(" fr");
          }
 
-         if (class_3111.method_14423()) {
+         if (Config.method_14423()) {
             var3.append(" af");
          }
 
-         if (class_3111.method_14248()) {
+         if (Config.method_14248()) {
             var3.append(" aa");
          }
 
-         if (class_3111.method_14351()) {
+         if (Config.method_14351()) {
             var3.append(" reg");
          }
 
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             var3.append(" sh");
          }
 
@@ -185,7 +185,7 @@ public class class_3888 extends class_2089 {
 
       List var9 = this.method_17985();
       StringBuilder var10 = new StringBuilder();
-      class_8359 var11 = class_3111.method_14295();
+      class_8359 var11 = Config.method_14295();
       var10.append(", A: ");
       if (class_153.method_611()) {
          var10.append(var11.method_38511() + class_4454.method_20647());
@@ -216,10 +216,10 @@ public class class_3888 extends class_2089 {
       if (var3 != null) {
          var7 = String.format("Integrated server @ %.0f ms ticks, %.0f tx, %.0f rx", var3.method_1733(), var5, var6);
       } else {
-         var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field_18930.field_9632.method_27309(), var5, var6);
+         var7 = String.format("\"%s\" server, %.0f tx, %.0f rx", this.field_18930.thePlayer.method_27309(), var5, var6);
       }
 
-      class_1331 var8 = this.field_18930.method_8516().method_37075();
+      class_1331 var8 = this.field_18930.getRenderViewEntity().method_37075();
       String var9 = class_7665.method_34674().getName();
       if (!this.field_18930.method_8520()) {
          var9 = class_412.method_2051(class_3347.method_15349()).method_2045();
@@ -240,7 +240,7 @@ public class class_3888 extends class_2089 {
             }
          );
       } else {
-         Entity var10 = this.field_18930.method_8516();
+         Entity var10 = this.field_18930.getRenderViewEntity();
          Direction var11 = var10.method_37365();
          String var12;
          switch (var11) {
@@ -297,9 +297,9 @@ public class class_3888 extends class_2089 {
             String.format(
                Locale.ROOT,
                "XYZ: %.3f / %.5f / %.3f",
-               this.field_18930.method_8516().method_37302(),
-               this.field_18930.method_8516().method_37309(),
-               this.field_18930.method_8516().method_37156()
+               this.field_18930.getRenderViewEntity().method_37302(),
+               this.field_18930.getRenderViewEntity().method_37309(),
+               this.field_18930.getRenderViewEntity().method_37156()
             )
          );
          var16.add(String.format("Block: %d %d %d", var8.method_12173(), var8.method_12165(), var8.method_12185()));
@@ -435,7 +435,7 @@ public class class_3888 extends class_2089 {
          }
 
          var16.add(
-            this.field_18930.method_8590().method_16332() + String.format(" (Mood %d%%)", Math.round(this.field_18930.field_9632.method_27306() * 100.0F))
+            this.field_18930.method_8590().method_16332() + String.format(" (Mood %d%%)", Math.round(this.field_18930.thePlayer.method_27306() * 100.0F))
          );
          return var16;
       }
@@ -502,8 +502,8 @@ public class class_3888 extends class_2089 {
             "",
             String.format(
                "Display: %dx%d (%s)",
-               MinecraftClient.getInstance().method_8552().method_43178(),
-               MinecraftClient.getInstance().method_8552().method_43198(),
+               MinecraftClient.getInstance().getMainWindow().method_43178(),
+               MinecraftClient.getInstance().getMainWindow().method_43198(),
                class_6765.method_31017()
             ),
             class_6765.method_31016(),
@@ -611,10 +611,10 @@ public class class_3888 extends class_2089 {
 
    private void method_17984(class_7966 var1, class_9703 var2, int var3, int var4, boolean var5) {
       if (!var5) {
-         int var8 = (int)(512.0 / this.field_18930.method_8552().method_43189());
+         int var8 = (int)(512.0 / this.field_18930.getMainWindow().method_43189());
          var3 = Math.max(var3, var8);
-         var4 = this.field_18930.method_8552().method_43165() - var3;
-         class_3542.method_16491();
+         var4 = this.field_18930.getMainWindow().getScaledWidth() - var3;
+         RenderSystem.method_16491();
          int var9 = var2.method_44834();
          int var10 = var2.method_44832();
          long[] var11 = var2.method_44838();
@@ -633,12 +633,12 @@ public class class_3888 extends class_2089 {
             var16 += (long)var21;
          }
 
-         int var32 = this.field_18930.method_8552().method_43177();
+         int var32 = this.field_18930.getMainWindow().getScaledHeight();
          method_9774(var1, var3, var32 - 60, var3 + var14, var32, -1873784752);
          class_9633 var33 = class_8042.method_36499().method_36501();
-         class_3542.method_16488();
-         class_3542.method_16354();
-         class_3542.method_16437();
+         RenderSystem.enableBlend();
+         RenderSystem.method_16354();
+         RenderSystem.defaultBlendFunc();
          var33.method_44471(7, class_7985.field_40903);
 
          for (class_8107 var22 = class_1221.method_5406().method_5410(); var15 != var10; var15 = var2.method_44835(var15 + 1)) {
@@ -658,8 +658,8 @@ public class class_3888 extends class_2089 {
 
          var33.method_44487();
          class_138.method_554(var33);
-         class_3542.method_16432();
-         class_3542.method_16448();
+         RenderSystem.method_16432();
+         RenderSystem.method_16448();
          if (!var5) {
             method_9774(var1, var3 + 1, var32 - 60 + 1, var3 + 14, var32 - 60 + 10, -1873784752);
             this.field_18918.method_45385(var1, "20 TPS", (float)(var3 + 2), (float)(var32 - 60 + 2), 14737632);
@@ -686,7 +686,7 @@ public class class_3888 extends class_2089 {
          this.field_18918.method_45390(var1, var34, (float)(var3 + 2), (float)(var32 - 60 - 9), 14737632);
          this.field_18918.method_45390(var1, var35, (float)(var3 + var14 / 2 - this.field_18918.method_45395(var35) / 2), (float)(var32 - 60 - 9), 14737632);
          this.field_18918.method_45390(var1, var36, (float)(var3 + var14 - this.field_18918.method_45395(var36)), (float)(var32 - 60 - 9), 14737632);
-         class_3542.method_16428();
+         RenderSystem.enableDepthTest();
       }
    }
 

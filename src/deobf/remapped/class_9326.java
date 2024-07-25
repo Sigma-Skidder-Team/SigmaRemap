@@ -228,7 +228,7 @@ public class class_9326 implements class_2231 {
    }
 
    public void method_43044(class_9733 var1) {
-      if (var1 != null && (!(var1 instanceof class_5820) || class_3111.method_14429())) {
+      if (var1 != null && (!(var1 instanceof class_5820) || Config.method_14429())) {
          this.field_47625.add(var1);
       }
    }
@@ -313,20 +313,20 @@ public class class_9326 implements class_2231 {
    public void method_43046(class_7966 var1, class_3758 var2, class_5778 var3, Camera var4, float var5, class_2359 var6) {
       var3.method_26126();
       Runnable var9 = () -> {
-         class_3542.method_16374();
-         class_3542.method_16433();
-         class_3542.method_16428();
-         class_3542.method_16353();
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16433();
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16353();
          if (class_7860.field_40161.method_45472()) {
-            class_3542.method_16492(33986);
-            class_3542.method_16432();
-            class_3542.method_16492(33984);
+            RenderSystem.method_16492(33986);
+            RenderSystem.method_16432();
+            RenderSystem.method_16492(33984);
          }
       };
       class_4774 var10 = var4.method_41626();
       boolean var11 = var10.method_22007(class_6503.field_33094);
-      class_3542.method_16438();
-      class_3542.method_16358(var1.method_36058().method_28620());
+      RenderSystem.method_16438();
+      RenderSystem.method_16358(var1.method_36058().method_28620());
       Object var12 = field_47626;
       if (class_7860.field_40161.method_45472()) {
          var12 = this.field_47619.keySet();
@@ -337,7 +337,7 @@ public class class_9326 implements class_2231 {
             var9.run();
             Iterable var15 = this.field_47619.get(var14);
             if (var15 != null) {
-               class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+               RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                class_8042 var16 = class_8042.method_36499();
                class_9633 var17 = var16.method_36501();
                var14.method_32845(var17, this.field_47623);
@@ -363,14 +363,14 @@ public class class_9326 implements class_2231 {
          }
       }
 
-      class_3542.method_16489();
-      class_3542.method_16387(true);
-      class_3542.method_16457(515);
-      class_3542.method_16448();
-      class_3542.method_16433();
+      RenderSystem.method_16489();
+      RenderSystem.method_16387(true);
+      RenderSystem.method_16457(515);
+      RenderSystem.method_16448();
+      RenderSystem.method_16433();
       var3.method_26122();
-      class_3542.method_16367();
-      class_3542.method_16428();
+      RenderSystem.method_16367();
+      RenderSystem.enableDepthTest();
    }
 
    public void method_43041(class_174 var1) {

@@ -2,15 +2,14 @@ package remapped;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ModuleManager {
    private Map<Class<? extends Module>, Module> moduleMap = new LinkedHashMap<Class<? extends Module>, Module>();
-   private class_986 field_638;
-   private class_123 field_639;
+   private ConfigManager configManager;
+   private JelloTouch jelloTouch;
    private List<Module> moduleList;
 
    private void initList() {
@@ -22,7 +21,7 @@ public class ModuleManager {
    }
 
    private void method_841(Class<? extends Module> var1) {
-      SigmaMainClass.getInstance().getEventManager().unsubscribe(var1);
+      SigmaMainClass.getInstance().getEventManager().method_7911(var1);
       this.moduleMap.remove(var1);
    }
 
@@ -30,7 +29,7 @@ public class ModuleManager {
       this.moduleList.sort(new class_5309(this));
 
       for (Module var4 : this.moduleList) {
-         SigmaMainClass.getInstance().getEventManager().subscribe(var4);
+         SigmaMainClass.getInstance().getEventManager().method_7908(var4);
          this.moduleMap.put(var4.getClass(), var4);
       }
 
@@ -207,20 +206,20 @@ public class ModuleManager {
 
       for (Module var18 : this.moduleMap.values()) {
          if (var18.method_42015()) {
-            SigmaMainClass.getInstance().getEventManager().method_7917(var18);
+            SigmaMainClass.getInstance().getEventManager().subscribe(var18);
             if (var18 instanceof SecondModule) {
                SecondModule var20 = (SecondModule)var18;
                if (var20.field_17664 != null) {
-                  SigmaMainClass.getInstance().getEventManager().method_7917(var20.field_17664);
+                  SigmaMainClass.getInstance().getEventManager().subscribe(var20.field_17664);
                }
             }
          } else {
-            SigmaMainClass.getInstance().getEventManager().method_7915(var18);
+            SigmaMainClass.getInstance().getEventManager().unsubscribe(var18);
             if (var18 instanceof SecondModule) {
                SecondModule var19 = (SecondModule)var18;
 
                for (Module var11 : var19.field_17661) {
-                  SigmaMainClass.getInstance().getEventManager().method_7915(var11);
+                  SigmaMainClass.getInstance().getEventManager().unsubscribe(var11);
                }
             }
          }
@@ -276,28 +275,28 @@ public class ModuleManager {
          var4 = "Classic";
       }
 
-      this.field_638 = new class_986();
-      this.field_639 = new class_123();
+      this.configManager = new ConfigManager();
+      this.jelloTouch = new JelloTouch();
 
       try {
-         this.field_638.method_4304(var4);
-         this.field_639.method_376(var1);
+         this.configManager.method_4304(var4);
+         this.jelloTouch.method_376(var1);
       } catch (IOException var6) {
          SigmaMainClass.getInstance().method_3326().method_12864("Could not load profiles!");
          var6.printStackTrace();
          throw new RuntimeException("sorry m8");
       }
 
-      this.field_639.method_378();
+      this.jelloTouch.method_378();
    }
 
    public void method_849(JSONObjectImpl var1) {
-      var1.method_5820("profile", this.field_638.method_4301().field_8677);
-      this.field_638.method_4301().field_8678 = this.method_839(new JSONObjectImpl());
+      var1.method_5820("profile", this.configManager.method_4301().field_8677);
+      this.configManager.method_4301().field_8678 = this.method_839(new JSONObjectImpl());
 
       try {
-         this.field_638.method_4306();
-         this.field_639.method_369(var1);
+         this.configManager.method_4306();
+         this.jelloTouch.method_369(var1);
       } catch (IOException var5) {
          var5.printStackTrace();
          SigmaMainClass.getInstance().method_3326().method_12862("Unable to save mod profiles...");
@@ -305,14 +304,14 @@ public class ModuleManager {
    }
 
    public int method_840() {
-      Setting var3 = this.method_847(JesusModule.class).method_41996().get("Mode");
+      Setting var3 = this.getModuleByClass(JesusModule.class).method_41996().get("Mode");
       String var4 = (String)var3.field_25890;
       var3.method_23037("Dolphin");
       var3.field_25890 = var4;
       return 0;
    }
 
-   public Module method_847(Class<? extends Module> var1) {
+   public Module getModuleByClass(Class<? extends Module> var1) {
       return this.moduleMap.get(var1);
    }
 
@@ -358,11 +357,11 @@ public class ModuleManager {
       return var3;
    }
 
-   public class_986 method_848() {
-      return this.field_638;
+   public ConfigManager getConfigManager() {
+      return this.configManager;
    }
 
-   public class_123 method_835() {
-      return this.field_639;
+   public JelloTouch getJelloTouch() {
+      return this.jelloTouch;
    }
 }

@@ -19,8 +19,8 @@ public class class_9882 extends class_8377<class_9882> {
    public final class_423 field_50123 = this.<class_423>method_38602(
       "difficulty", method_38607(class_423::method_2100, class_423::method_2095), class_423::method_2098, class_423.field_1784
    );
-   public final class_4666 field_50117 = this.<class_4666>method_38602(
-      "gamemode", method_38607(class_4666::method_21590, class_4666::method_21586), class_4666::method_21588, class_4666.field_22764
+   public final GameType field_50117 = this.<GameType>method_38602(
+      "gamemode", method_38607(GameType::method_21590, GameType::method_21586), GameType::method_21588, GameType.field_22764
    );
    public final String field_50129 = this.method_38611("level-name", "world");
    public final int field_50092 = this.method_38600("server-port", 25565);

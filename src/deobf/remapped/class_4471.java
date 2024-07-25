@@ -22,8 +22,8 @@ public class class_4471 extends PremiumModule {
    }
 
    public List<Entity> method_20752() {
-      ArrayList var3 = Lists.newArrayList(mc.field_9601.method_736());
-      var3.remove(mc.field_9632);
+      ArrayList var3 = Lists.newArrayList(client.field_9601.method_736());
+      var3.remove(client.thePlayer);
       Iterator var4 = var3.iterator();
 
       while (var4.hasNext()) {

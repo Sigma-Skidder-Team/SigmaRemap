@@ -17,11 +17,11 @@ public class class_644 implements class_1504 {
    private final int field_3604;
    private final int field_3607;
    private final class_2831<class_8137> field_3606;
-   private final class_6098 field_3603;
+   private final ItemStack field_3603;
    private final Identifier field_3605;
    private final String field_3602;
 
-   public class_644(Identifier var1, String var2, int var3, int var4, class_2831<class_8137> var5, class_6098 var6) {
+   public class_644(Identifier var1, String var2, int var3, int var4, class_2831<class_8137> var5, ItemStack var6) {
       this.field_3605 = var1;
       this.field_3602 = var2;
       this.field_3604 = var3;
@@ -46,7 +46,7 @@ public class class_644 implements class_1504 {
    }
 
    @Override
-   public class_6098 method_41044() {
+   public ItemStack method_41044() {
       return this.field_3603;
    }
 
@@ -99,7 +99,7 @@ public class class_644 implements class_1504 {
       return true;
    }
 
-   public class_6098 method_2946(class_6946 var1) {
+   public ItemStack method_2946(class_6946 var1) {
       return this.method_41044().method_27973();
    }
 
@@ -235,12 +235,12 @@ public class class_644 implements class_1504 {
       return var3;
    }
 
-   public static class_6098 method_2961(JsonObject var0) {
+   public static ItemStack method_2961(JsonObject var0) {
       String var3 = class_6539.method_29796(var0, "item");
       class_2451 var4 = class_8669.field_44382.method_39794(new Identifier(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
       if (!var0.has("data")) {
          int var5 = class_6539.method_29768(var0, "count", 1);
-         return new class_6098(var4, var5);
+         return new ItemStack(var4, var5);
       } else {
          throw new JsonParseException("Disallowed data tag found");
       }

@@ -34,7 +34,7 @@ public class class_7450 {
       this.field_37966 = var8;
       int var12 = var7 * var8 * 4;
       if (var2.length % var12 != 0) {
-         class_3111.method_14317("Invalid animated texture length: " + var2.length + ", frameWidth: " + var7 + ", frameHeight: " + var8);
+         Config.method_14317("Invalid animated texture length: " + var2.length + ", frameWidth: " + var7 + ", frameHeight: " + var8);
       }
 
       this.field_37955 = var2;
@@ -46,20 +46,20 @@ public class class_7450 {
       }
 
       String var22 = (String)var9.get("duration");
-      int var15 = Math.max(class_3111.method_14361(var22, 1), 1);
+      int var15 = Math.max(Config.method_14361(var22, 1), 1);
       this.field_37969 = new class_9165[var13];
 
       for (int var16 = 0; var16 < this.field_37969.length; var16++) {
          String var17 = (String)var9.get("tile." + var16);
-         int var18 = class_3111.method_14361(var17, var16);
+         int var18 = Config.method_14361(var17, var16);
          String var19 = (String)var9.get("duration." + var16);
-         int var20 = Math.max(class_3111.method_14361(var19, var15), 1);
+         int var20 = Math.max(Config.method_14361(var19, var15), 1);
          class_9165 var21 = new class_9165(var18, var20);
          this.field_37969[var16] = var21;
       }
 
-      this.field_37968 = class_3111.method_14257(var9.getProperty("interpolate"), false);
-      this.field_37959 = class_3111.method_14361(var9.getProperty("skip"), 0);
+      this.field_37968 = Config.method_14257(var9.getProperty("interpolate"), false);
+      this.field_37959 = Config.method_14361(var9.getProperty("skip"), 0);
       if (this.field_37968) {
          this.field_37963 = class_1423.method_6528(var12);
       }
@@ -133,7 +133,7 @@ public class class_7450 {
                if (var5 + var9 <= this.field_37967.limit()) {
                   if (!this.field_37968 || var4.field_46911 <= 0) {
                      ((Buffer)this.field_37967).position(var5);
-                     class_1920.method_8791(this.field_37958);
+                     GlStateManager.method_8791(this.field_37958);
                      class_5525.method_25072();
                      GL11.glTexSubImage2D(3553, 0, this.field_37962, this.field_37956, this.field_37964, this.field_37966, 6408, 5121, this.field_37967);
                   } else if (this.field_37959 <= 1 || var4.field_46911 % this.field_37959 == 0) {
@@ -164,7 +164,7 @@ public class class_7450 {
             }
 
             ((Buffer)this.field_37963).flip();
-            class_1920.method_8791(this.field_37958);
+            GlStateManager.method_8791(this.field_37958);
             class_5525.method_25072();
             GL11.glTexSubImage2D(3553, 0, this.field_37962, this.field_37956, this.field_37964, this.field_37966, 6408, 5121, this.field_37963);
          }

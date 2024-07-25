@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_3348 extends class_6749 {
    private static final class_7821<Byte> field_16515 = class_8073.<Byte>method_36641(class_3348.class, class_2734.field_13361);
    private static final class_7821<Boolean> field_16516 = class_8073.<Boolean>method_36641(class_3348.class, class_2734.field_13347);
-   private class_6098 field_16520 = new class_6098(class_4897.field_25086);
+   private ItemStack field_16520 = new ItemStack(class_4897.field_25086);
    private boolean field_16518;
    public int field_16517;
 
@@ -13,7 +13,7 @@ public class class_3348 extends class_6749 {
       super(var1, var2);
    }
 
-   public class_3348(World var1, class_5834 var2, class_6098 var3) {
+   public class_3348(World var1, class_5834 var2, ItemStack var3) {
       super(class_6629.field_34284, var2, var1);
       this.field_16520 = var3.method_27973();
       this.field_41735.method_36633(field_16515, (byte)class_2931.method_13431(var3));
@@ -75,7 +75,7 @@ public class class_3348 extends class_6749 {
    }
 
    @Override
-   public class_6098 method_30925() {
+   public ItemStack method_30925() {
       return this.field_16520.method_27973();
    }
 
@@ -152,7 +152,7 @@ public class class_3348 extends class_6749 {
    public void method_37314(class_5734 var1) {
       super.method_37314(var1);
       if (var1.method_25939("Trident", 10)) {
-         this.field_16520 = class_6098.method_28015(var1.method_25937("Trident"));
+         this.field_16520 = ItemStack.method_28015(var1.method_25937("Trident"));
       }
 
       this.field_16518 = var1.method_25933("DealtDamage");

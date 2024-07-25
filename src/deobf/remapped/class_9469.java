@@ -316,25 +316,25 @@ public class class_9469 {
                   1,
                   new class_4904[]{
                      new class_9231(class_4897.field_24917, 15, 16, 2),
-                     new class_8762(new class_6098(class_4897.field_25042), 7, 1, 12, 1, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24576), 4, 1, 12, 1, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24701), 5, 1, 12, 1, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24708), 9, 1, 12, 1, 0.2F)
+                     new class_8762(new ItemStack(class_4897.field_25042), 7, 1, 12, 1, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24576), 4, 1, 12, 1, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24701), 5, 1, 12, 1, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24708), 9, 1, 12, 1, 0.2F)
                   },
                   2,
                   new class_4904[]{
                      new class_9231(class_4897.field_25021, 4, 12, 10),
-                     new class_8762(new class_6098(class_4897.field_24737), 36, 1, 12, 5, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24925), 1, 1, 12, 5, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24382), 3, 1, 12, 5, 0.2F)
+                     new class_8762(new ItemStack(class_4897.field_24737), 36, 1, 12, 5, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24925), 1, 1, 12, 5, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24382), 3, 1, 12, 5, 0.2F)
                   },
                   3,
                   new class_4904[]{
                      new class_9231(class_4897.field_24938, 1, 12, 20),
                      new class_9231(class_4897.field_24481, 1, 12, 20),
-                     new class_8762(new class_6098(class_4897.field_24841), 1, 1, 12, 10, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_25068), 4, 1, 12, 10, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24840), 5, 1, 12, 10, 0.2F)
+                     new class_8762(new ItemStack(class_4897.field_24841), 1, 1, 12, 10, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_25068), 4, 1, 12, 10, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24840), 5, 1, 12, 10, 0.2F)
                   },
                   4,
                   new class_4904[]{new class_7096(class_4897.field_25051, 14, 3, 15, 0.2F), new class_7096(class_4897.field_24588, 8, 3, 15, 0.2F)},
@@ -350,12 +350,12 @@ public class class_9469 {
                   1,
                   new class_4904[]{
                      new class_9231(class_4897.field_24917, 15, 16, 2),
-                     new class_8762(new class_6098(class_4897.field_24420), 3, 1, 12, 1, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24420), 3, 1, 12, 1, 0.2F),
                      new class_7096(class_4897.field_25277, 2, 3, 1)
                   },
                   2,
                   new class_4904[]{
-                     new class_9231(class_4897.field_25021, 4, 12, 10), new class_8762(new class_6098(class_4897.field_24737), 36, 1, 12, 5, 0.2F)
+                     new class_9231(class_4897.field_25021, 4, 12, 10), new class_8762(new ItemStack(class_4897.field_24737), 36, 1, 12, 5, 0.2F)
                   },
                   3,
                   new class_4904[]{new class_9231(class_4897.field_24720, 24, 12, 20)},
@@ -373,14 +373,14 @@ public class class_9469 {
                   1,
                   new class_4904[]{
                      new class_9231(class_4897.field_24917, 15, 16, 2),
-                     new class_8762(new class_6098(class_4897.field_24571), 1, 1, 12, 1, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24689), 1, 1, 12, 1, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_25119), 1, 1, 12, 1, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24711), 1, 1, 12, 1, 0.2F)
+                     new class_8762(new ItemStack(class_4897.field_24571), 1, 1, 12, 1, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24689), 1, 1, 12, 1, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_25119), 1, 1, 12, 1, 0.2F),
+                     new class_8762(new ItemStack(class_4897.field_24711), 1, 1, 12, 1, 0.2F)
                   },
                   2,
                   new class_4904[]{
-                     new class_9231(class_4897.field_25021, 4, 12, 10), new class_8762(new class_6098(class_4897.field_24737), 36, 1, 12, 5, 0.2F)
+                     new class_9231(class_4897.field_25021, 4, 12, 10), new class_8762(new ItemStack(class_4897.field_24737), 36, 1, 12, 5, 0.2F)
                   },
                   3,
                   new class_4904[]{
@@ -388,7 +388,7 @@ public class class_9469 {
                      new class_7096(class_4897.field_24420, 1, 3, 10, 0.2F),
                      new class_7096(class_4897.field_24346, 2, 3, 10, 0.2F),
                      new class_7096(class_4897.field_25011, 3, 3, 10, 0.2F),
-                     new class_8762(new class_6098(class_4897.field_24968), 4, 1, 3, 10, 0.2F)
+                     new class_8762(new ItemStack(class_4897.field_24968), 4, 1, 3, 10, 0.2F)
                   },
                   4,
                   new class_4904[]{
@@ -447,7 +447,7 @@ public class class_9469 {
                   new class_4904[]{new class_9231(class_4897.field_24631, 4, 12, 30), new class_5995(class_4897.field_25035, 6, 12, 15)},
                   5,
                   new class_4904[]{
-                     new class_8762(new class_6098(class_4897.field_24836), 6, 1, 12, 30, 0.2F), new class_5995(class_4897.field_24600, 5, 12, 30)
+                     new class_8762(new ItemStack(class_4897.field_24836), 6, 1, 12, 30, 0.2F), new class_5995(class_4897.field_24600, 5, 12, 30)
                   }
                )
             )

@@ -55,16 +55,16 @@ public class class_2973 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      class_3542.method_16438();
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16354();
+      RenderSystem.method_16438();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16354();
       this.method_13605();
       this.method_13595(var3, var5, var7);
-      class_3542.method_16432();
-      class_3542.method_16448();
-      class_3542.method_16489();
-      if (!this.field_14620.field_9632.method_37221()) {
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
+      RenderSystem.method_16489();
+      if (!this.field_14620.thePlayer.method_37221()) {
          this.method_13608();
       }
    }
@@ -104,15 +104,15 @@ public class class_2973 implements class_2995 {
 
    private static void method_13610(class_1331 var0) {
       float var3 = 0.05F;
-      class_3542.method_16488();
-      class_3542.method_16437();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
       class_3372.method_15560(var0, 0.05F, 0.2F, 0.2F, 1.0F, 0.3F);
    }
 
    private void method_13603(class_1331 var1, List<String> var2) {
       float var5 = 0.05F;
-      class_3542.method_16488();
-      class_3542.method_16437();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
       class_3372.method_15560(var1, 0.05F, 0.2F, 0.2F, 1.0F, 0.3F);
       method_13606("" + var2, var1, 0, -256);
       method_13606("Ghost POI", var1, 1, -65536);
@@ -249,7 +249,7 @@ public class class_2973 implements class_2995 {
    }
 
    private boolean method_13612(class_6388 var1) {
-      class_5989 var4 = this.field_14620.field_9632;
+      class_5989 var4 = this.field_14620.thePlayer;
       class_1331 var5 = new class_1331(var4.method_37302(), var1.field_32616.method_60(), var4.method_37156());
       class_1331 var6 = new class_1331(var1.field_32616);
       return var5.method_12171(var6, 30.0);
@@ -288,6 +288,6 @@ public class class_2973 implements class_2995 {
    }
 
    private void method_13608() {
-      class_3372.method_15558(this.field_14620.method_8516(), 8).ifPresent(var1 -> this.field_14619 = var1.method_37328());
+      class_3372.method_15558(this.field_14620.getRenderViewEntity(), 8).ifPresent(var1 -> this.field_14619 = var1.method_37328());
    }
 }

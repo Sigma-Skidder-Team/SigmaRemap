@@ -36,8 +36,8 @@ public abstract class class_5834 extends Entity {
    private final class_6711 field_29603;
    private final class_3435 field_29649 = new class_3435(this);
    private final Map<class_1425, class_2250> field_29642 = Maps.newHashMap();
-   private final class_2831<class_6098> field_29632 = class_2831.<class_6098>method_12872(2, class_6098.field_31203);
-   private final class_2831<class_6098> field_29613 = class_2831.<class_6098>method_12872(4, class_6098.field_31203);
+   private final class_2831<ItemStack> field_29632 = class_2831.<ItemStack>method_12872(2, ItemStack.EMPTY);
+   private final class_2831<ItemStack> field_29613 = class_2831.<ItemStack>method_12872(4, ItemStack.EMPTY);
    public boolean field_29599;
    public class_2584 field_29616;
    public int field_29666;
@@ -92,7 +92,7 @@ public abstract class class_5834 extends Entity {
    private float field_29655;
    public int field_29600;
    private float field_29622;
-   public class_6098 field_29668 = class_6098.field_31203;
+   public ItemStack field_29668 = ItemStack.EMPTY;
    public int field_29656;
    public int field_29661;
    private class_1331 field_29664;
@@ -377,7 +377,7 @@ public abstract class class_5834 extends Entity {
 
             var4.method_45011(new class_9343(field_29641, "Soul speed boost", (double)(0.03F * (1.0F + (float)var3 * 0.35F)), class_9342.field_47679));
             if (this.method_26594().nextFloat() < 0.04F) {
-               class_6098 var5 = this.method_26520(class_6943.field_35700);
+               ItemStack var5 = this.method_26520(class_6943.field_35700);
                var5.method_28003(1, this, var0 -> var0.method_26448(class_6943.field_35700));
             }
          }
@@ -503,7 +503,7 @@ public abstract class class_5834 extends Entity {
       this.field_29658 = var1;
    }
 
-   public void method_26620(class_6098 var1) {
+   public void method_26620(ItemStack var1) {
       if (!var1.method_28022()) {
          class_8461 var4 = class_463.field_2719;
          class_2451 var5 = var1.method_27960();
@@ -664,7 +664,7 @@ public abstract class class_5834 extends Entity {
          Collection var3 = this.field_29642.values();
          this.field_41735.method_36633(field_29626, method_26486(var3));
          this.field_41735.method_36633(field_29640, class_9541.method_43997(var3));
-         this.method_37333(this.method_26480(Effects.field_19740));
+         this.method_37333(this.isPotionActive(Effects.field_19740));
       } else {
          this.method_26517();
          this.method_37333(false);
@@ -687,7 +687,7 @@ public abstract class class_5834 extends Entity {
       }
 
       if (var1 != null) {
-         class_6098 var9 = this.method_26520(class_6943.field_35704);
+         ItemStack var9 = this.method_26520(class_6943.field_35704);
          class_2451 var7 = var9.method_27960();
          class_6629 var8 = var1.method_37387();
          if (var8 == class_6629.field_34241 && var7 == class_4897.field_24880
@@ -747,7 +747,7 @@ public abstract class class_5834 extends Entity {
       return this.field_29642;
    }
 
-   public boolean method_26480(class_1425 var1) {
+   public boolean isPotionActive(class_1425 var1) {
       return this.field_29642.containsKey(var1);
    }
 
@@ -866,7 +866,7 @@ public abstract class class_5834 extends Entity {
       } else if (!this.field_41768.field_33055) {
          if (this.method_26450()) {
             return false;
-         } else if (var1.method_28360() && this.method_26480(Effects.field_19745)) {
+         } else if (var1.method_28360() && this.isPotionActive(Effects.field_19745)) {
             return false;
          } else {
             if (this.method_26507() && !this.field_41768.field_33055) {
@@ -1038,10 +1038,10 @@ public abstract class class_5834 extends Entity {
       if (var1.method_28346()) {
          return false;
       } else {
-         class_6098 var4 = null;
+         ItemStack var4 = null;
 
          for (class_2584 var8 : class_2584.values()) {
-            class_6098 var9 = this.method_26617(var8);
+            ItemStack var9 = this.method_26617(var8);
             if (var9.method_27960() == class_4897.field_24472) {
                var4 = var9.method_27973();
                var9.method_27970(1);
@@ -1109,7 +1109,7 @@ public abstract class class_5834 extends Entity {
       return false;
    }
 
-   private void method_26464(class_6098 var1) {
+   private void method_26464(ItemStack var1) {
       if (!var1.method_28022()) {
          if (!this.method_37378()) {
             this.field_41768
@@ -1172,7 +1172,7 @@ public abstract class class_5834 extends Entity {
 
             if (!var4) {
                class_91 var7 = new class_91(
-                  this.field_41768, this.method_37302(), this.method_37309(), this.method_37156(), new class_6098(class_4897.field_24893)
+                  this.field_41768, this.method_37302(), this.method_37309(), this.method_37156(), new ItemStack(class_4897.field_24893)
                );
                this.field_41768.method_7509(var7);
             }
@@ -1272,11 +1272,11 @@ public abstract class class_5834 extends Entity {
       return var1 <= 4 ? class_463.field_2448 : class_463.field_1953;
    }
 
-   public class_8461 method_26566(class_6098 var1) {
+   public class_8461 method_26566(ItemStack var1) {
       return var1.method_28011();
    }
 
-   public class_8461 method_26484(class_6098 var1) {
+   public class_8461 method_26484(ItemStack var1) {
       return var1.method_27979();
    }
 
@@ -1395,7 +1395,7 @@ public abstract class class_5834 extends Entity {
 
    public float method_26477(class_6199 var1, float var2) {
       if (!var1.method_28348()) {
-         if (this.method_26480(Effects.field_19727) && var1 != class_6199.field_31685) {
+         if (this.isPotionActive(Effects.field_19727) && var1 != class_6199.field_31685) {
             int var5 = (this.method_26553(Effects.field_19727).method_10333() + 1) * 5;
             int var6 = 25 - var5;
             float var7 = var2 * (float)var6;
@@ -1487,7 +1487,7 @@ public abstract class class_5834 extends Entity {
 
    private int method_26473() {
       if (!class_1493.method_6892(this)) {
-         return !this.method_26480(Effects.field_19748) ? 6 : 6 + (1 + this.method_26553(Effects.field_19748).method_10333()) * 2;
+         return !this.isPotionActive(Effects.field_19748) ? 6 : 6 + (1 + this.method_26553(Effects.field_19748).method_10333()) * 2;
       } else {
          return 6 - (1 + class_1493.method_6888(this));
       }
@@ -1654,7 +1654,7 @@ public abstract class class_5834 extends Entity {
    }
 
    private void method_26514() {
-      class_6098 var3 = this.method_26520(class_6943.field_35701);
+      ItemStack var3 = this.method_26520(class_6943.field_35701);
       this.method_37349(class_6943.field_35701, this.method_26520(class_6943.field_35707));
       this.method_37349(class_6943.field_35707, var3);
    }
@@ -1700,11 +1700,11 @@ public abstract class class_5834 extends Entity {
       return class_2780.field_13574;
    }
 
-   public class_6098 method_26446() {
+   public ItemStack method_26446() {
       return this.method_26520(class_6943.field_35707);
    }
 
-   public class_6098 method_26568() {
+   public ItemStack method_26568() {
       return this.method_26520(class_6943.field_35701);
    }
 
@@ -1716,7 +1716,7 @@ public abstract class class_5834 extends Entity {
       return var1.test(this.method_26446().method_27960()) || var1.test(this.method_26568().method_27960());
    }
 
-   public class_6098 method_26617(class_2584 var1) {
+   public ItemStack method_26617(class_2584 var1) {
       if (var1 != class_2584.field_12791) {
          if (var1 != class_2584.field_12794) {
             throw new IllegalArgumentException("Invalid hand " + var1);
@@ -1728,7 +1728,7 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public void method_26615(class_2584 var1, class_6098 var2) {
+   public void method_26615(class_2584 var1, ItemStack var2) {
       if (var1 != class_2584.field_12791) {
          if (var1 != class_2584.field_12794) {
             throw new IllegalArgumentException("Invalid hand " + var1);
@@ -1745,19 +1745,19 @@ public abstract class class_5834 extends Entity {
    }
 
    @Override
-   public abstract Iterable<class_6098> method_37262();
+   public abstract Iterable<ItemStack> method_37262();
 
-   public abstract class_6098 method_26520(class_6943 var1);
+   public abstract ItemStack method_26520(class_6943 var1);
 
    @Override
-   public abstract void method_37349(class_6943 var1, class_6098 var2);
+   public abstract void method_37349(class_6943 var1, ItemStack var2);
 
    public float method_26540() {
       Iterable var3 = this.method_37262();
       int var4 = 0;
       int var5 = 0;
 
-      for (class_6098 var7 : var3) {
+      for (ItemStack var7 : var3) {
          if (!var7.method_28022()) {
             var5++;
          }
@@ -1824,7 +1824,7 @@ public abstract class class_5834 extends Entity {
 
    public void method_26595() {
       float var3 = this.method_26538();
-      if (this.method_26480(Effects.field_19730)) {
+      if (this.isPotionActive(Effects.field_19730)) {
          var3 += 0.1F * (float)(this.method_26553(Effects.field_19730).method_10333() + 1);
       }
 
@@ -1867,7 +1867,7 @@ public abstract class class_5834 extends Entity {
       if (this.method_26530() || this.method_37069()) {
          double var4 = 0.08;
          boolean var6 = this.method_37098().field_7333 <= 0.0;
-         if (var6 && this.method_26480(Effects.field_19750)) {
+         if (var6 && this.isPotionActive(Effects.field_19750)) {
             var4 = 0.01;
             this.field_41706 = 0.0F;
          }
@@ -1891,7 +1891,7 @@ public abstract class class_5834 extends Entity {
                var39 += (this.method_26423() - var39) * var14 / 3.0F;
             }
 
-            if (this.method_26480(Effects.field_19724)) {
+            if (this.isPotionActive(Effects.field_19724)) {
                var38 = 0.96F;
             }
 
@@ -1934,7 +1934,7 @@ public abstract class class_5834 extends Entity {
             float var12 = !this.field_41726 ? 0.91F : var9 * 0.91F;
             class_1343 var13 = this.method_26588(var1, var9);
             double var29 = var13.field_7333;
-            if (!this.method_26480(Effects.LevitationEffect)) {
+            if (!this.isPotionActive(Effects.LevitationEffect)) {
                if (this.field_41768.field_33055 && !this.field_41768.method_22559(var8)) {
                   if (!(this.method_37309() > 0.0)) {
                      var29 = 0.0;
@@ -2112,7 +2112,7 @@ public abstract class class_5834 extends Entity {
          }
 
          if (!this.field_41760) {
-            boolean var13 = this.method_26480(Effects.field_19722);
+            boolean var13 = this.isPotionActive(Effects.field_19722);
             if (this.method_37385(6) != var13) {
                this.method_37220(6, var13);
             }
@@ -2213,11 +2213,11 @@ public abstract class class_5834 extends Entity {
    }
 
    @Nullable
-   private Map<class_6943, class_6098> method_26435() {
+   private Map<class_6943, ItemStack> method_26435() {
       EnumMap var3 = null;
 
       for (class_6943 var7 : class_6943.values()) {
-         class_6098 var8;
+         ItemStack var8;
          switch (var7.method_31772()) {
             case field_37218:
                var8 = this.method_26578(var7);
@@ -2229,8 +2229,8 @@ public abstract class class_5834 extends Entity {
                continue;
          }
 
-         class_6098 var9 = this.method_26520(var7);
-         if (!class_6098.method_27982(var9, var8)) {
+         ItemStack var9 = this.method_26520(var7);
+         if (!ItemStack.method_27982(var9, var8)) {
             if (var3 == null) {
                var3 = Maps.newEnumMap(class_6943.class);
             }
@@ -2249,13 +2249,13 @@ public abstract class class_5834 extends Entity {
       return var3;
    }
 
-   private void method_26559(Map<class_6943, class_6098> var1) {
-      class_6098 var4 = (class_6098)var1.get(class_6943.field_35707);
-      class_6098 var5 = (class_6098)var1.get(class_6943.field_35701);
+   private void method_26559(Map<class_6943, ItemStack> var1) {
+      ItemStack var4 = (ItemStack)var1.get(class_6943.field_35707);
+      ItemStack var5 = (ItemStack)var1.get(class_6943.field_35701);
       if (var4 != null
          && var5 != null
-         && class_6098.method_27982(var4, this.method_26578(class_6943.field_35701))
-         && class_6098.method_27982(var5, this.method_26578(class_6943.field_35707))) {
+         && ItemStack.method_27982(var4, this.method_26578(class_6943.field_35701))
+         && ItemStack.method_27982(var5, this.method_26578(class_6943.field_35707))) {
          ((class_6331)this.field_41768).method_28945().method_10200(this, new class_295(this, (byte)55));
          var1.remove(class_6943.field_35707);
          var1.remove(class_6943.field_35701);
@@ -2264,10 +2264,10 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   private void method_26543(Map<class_6943, class_6098> var1) {
+   private void method_26543(Map<class_6943, ItemStack> var1) {
       ArrayList var4 = Lists.newArrayListWithCapacity(var1.size());
       var1.forEach((var2, var3) -> {
-         class_6098 var6 = var3.method_27973();
+         ItemStack var6 = var3.method_27973();
          var4.add(Pair.of(var2, var6));
          switch (var2.method_31772()) {
             case field_37218:
@@ -2280,19 +2280,19 @@ public abstract class class_5834 extends Entity {
       ((class_6331)this.field_41768).method_28945().method_10200(this, new class_9014(this.method_37145(), var4));
    }
 
-   private class_6098 method_26545(class_6943 var1) {
+   private ItemStack method_26545(class_6943 var1) {
       return this.field_29613.get(var1.method_31767());
    }
 
-   private void method_26481(class_6943 var1, class_6098 var2) {
+   private void method_26481(class_6943 var1, ItemStack var2) {
       this.field_29613.set(var1.method_31767(), var2);
    }
 
-   private class_6098 method_26578(class_6943 var1) {
+   private ItemStack method_26578(class_6943 var1) {
       return this.field_29632.get(var1.method_31767());
    }
 
-   private void method_26453(class_6943 var1, class_6098 var2) {
+   private void method_26453(class_6943 var1, ItemStack var2) {
       this.field_29632.set(var1.method_31767(), var2);
    }
 
@@ -2437,8 +2437,8 @@ public abstract class class_5834 extends Entity {
 
    private void method_26571() {
       boolean var3 = this.method_37385(7);
-      if (var3 && !this.field_41726 && !this.method_37070() && !this.method_26480(Effects.LevitationEffect)) {
-         class_6098 var4 = this.method_26520(class_6943.field_35708);
+      if (var3 && !this.field_41726 && !this.method_37070() && !this.isPotionActive(Effects.LevitationEffect)) {
+         ItemStack var4 = this.method_26520(class_6943.field_35708);
          if (var4.method_27960() == class_4897.field_24503 && class_3286.method_15061(var4)) {
             var3 = true;
             if (!this.field_41768.field_33055 && (this.field_29661 + 1) % 20 == 0) {
@@ -2674,7 +2674,7 @@ public abstract class class_5834 extends Entity {
 
    private void method_26430() {
       if (this.method_26554()) {
-         if (!class_6098.method_27984(this.method_26617(this.method_26500()), this.field_29668)) {
+         if (!ItemStack.method_27984(this.method_26617(this.method_26500()), this.field_29668)) {
             this.method_26529();
          } else {
             this.field_29668 = this.method_26617(this.method_26500());
@@ -2719,7 +2719,7 @@ public abstract class class_5834 extends Entity {
    }
 
    public void method_26462(class_2584 var1) {
-      class_6098 var4 = this.method_26617(var1);
+      ItemStack var4 = this.method_26617(var1);
       if (!var4.method_28022() && !this.method_26554()) {
          this.field_29668 = var4;
          this.field_29656 = var4.method_28004();
@@ -2741,7 +2741,7 @@ public abstract class class_5834 extends Entity {
                   this.field_29656 = this.field_29668.method_28004();
                }
             } else if (!this.method_26554() && !this.field_29668.method_28022()) {
-               this.field_29668 = class_6098.field_31203;
+               this.field_29668 = ItemStack.EMPTY;
                this.field_29656 = 0;
             }
          }
@@ -2758,7 +2758,7 @@ public abstract class class_5834 extends Entity {
       this.field_29611 = this.field_29605;
    }
 
-   public void method_26515(class_6098 var1, int var2) {
+   public void method_26515(ItemStack var1, int var2) {
       if (!var1.method_28022() && this.method_26554()) {
          if (var1.method_27952() == class_6209.field_31739) {
             this.method_37155(this.method_26566(var1), 0.5F, this.field_41768.field_33033.nextFloat() * 0.1F + 0.9F);
@@ -2775,7 +2775,7 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   private void method_26519(class_6098 var1, int var2) {
+   private void method_26519(ItemStack var1, int var2) {
       for (int var5 = 0; var5 < var2; var5++) {
          class_1343 var6 = new class_1343(((double)this.field_41717.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0);
          var6 = var6.method_6212(-this.field_41755 * (float) (Math.PI / 180.0));
@@ -2803,7 +2803,7 @@ public abstract class class_5834 extends Entity {
       if (this.field_29668.equals(this.method_26617(var3))) {
          if (!this.field_29668.method_28022() && this.method_26554()) {
             this.method_26515(this.field_29668, 16);
-            class_6098 var4 = this.field_29668.method_27971(this.field_41768, this);
+            ItemStack var4 = this.field_29668.method_27971(this.field_41768, this);
             if (var4 != this.field_29668) {
                this.method_26615(var3, var4);
             }
@@ -2815,7 +2815,7 @@ public abstract class class_5834 extends Entity {
       }
    }
 
-   public class_6098 method_26576() {
+   public ItemStack method_26576() {
       return this.field_29668;
    }
 
@@ -2843,7 +2843,7 @@ public abstract class class_5834 extends Entity {
          this.method_26438(1, false);
       }
 
-      this.field_29668 = class_6098.field_31203;
+      this.field_29668 = ItemStack.EMPTY;
       this.field_29656 = 0;
    }
 
@@ -2930,7 +2930,7 @@ public abstract class class_5834 extends Entity {
    public void method_26424(class_1331 var1, boolean var2) {
    }
 
-   public boolean method_26612(class_6098 var1) {
+   public boolean method_26612(ItemStack var1) {
       return false;
    }
 
@@ -3043,11 +3043,11 @@ public abstract class class_5834 extends Entity {
       return super.method_37279(var1, var2);
    }
 
-   public class_6098 method_26475(class_6098 var1) {
-      return class_6098.field_31203;
+   public ItemStack method_26475(ItemStack var1) {
+      return ItemStack.EMPTY;
    }
 
-   public class_6098 method_26426(World var1, class_6098 var2) {
+   public ItemStack method_26426(World var1, ItemStack var2) {
       if (var2.method_28013()) {
          var1.method_29528(
             (class_704)null,
@@ -3068,7 +3068,7 @@ public abstract class class_5834 extends Entity {
       return var2;
    }
 
-   private void method_26497(class_6098 var1, World var2, class_5834 var3) {
+   private void method_26497(ItemStack var1, World var2, class_5834 var3) {
       class_2451 var6 = var1.method_27960();
       if (var6.method_11247()) {
          for (Pair var8 : var6.method_11227().method_38408()) {

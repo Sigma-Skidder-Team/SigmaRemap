@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import java.util.Collections;
 import java.util.List;
 
-public class class_9205 extends class_2089 implements IRenderable, class_5888 {
+public class class_9205 extends AbstractGui implements IRenderable, class_5888 {
    private static final Identifier field_47096 = new Identifier("textures/gui/recipe_book.png");
    private final List<class_2285> field_47099 = Lists.newArrayList();
    private boolean field_47098;
@@ -19,11 +19,11 @@ public class class_9205 extends class_2089 implements IRenderable, class_5888 {
    public void method_42465(MinecraftClient var1, class_7735 var2, int var3, int var4, int var5, int var6, float var7) {
       this.field_47100 = var1;
       this.field_47093 = var2;
-      if (var1.field_9632.field_3874 instanceof class_8383) {
+      if (var1.thePlayer.field_3874 instanceof class_8383) {
          this.field_47091 = true;
       }
 
-      boolean var10 = var1.field_9632.method_27334().method_5079((class_3954<?>)var1.field_9632.field_3874);
+      boolean var10 = var1.thePlayer.method_27334().method_5079((class_3954<?>)var1.thePlayer.field_3874);
       List var11 = var2.method_35011(true);
       List var12 = !var10 ? var2.method_35011(false) : Collections.emptyList();
       int var13 = var11.size();
@@ -107,11 +107,11 @@ public class class_9205 extends class_2089 implements IRenderable, class_5888 {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       if (this.field_47098) {
          this.field_47092 += var4;
-         class_3542.method_16488();
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         this.field_47100.method_8577().method_35674(field_47096);
-         class_3542.method_16438();
-         class_3542.method_16413(0.0F, 0.0F, 170.0F);
+         RenderSystem.enableBlend();
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_47100.getTextureManager().bindTexture(field_47096);
+         RenderSystem.method_16438();
+         RenderSystem.method_16413(0.0F, 0.0F, 170.0F);
          int var7 = this.field_47099.size() > 16 ? 5 : 4;
          int var8 = Math.min(this.field_47099.size(), var7);
          int var9 = class_9299.method_42816((float)this.field_47099.size() / (float)var7);
@@ -120,13 +120,13 @@ public class class_9205 extends class_2089 implements IRenderable, class_5888 {
          byte var12 = 82;
          short var13 = 208;
          this.method_42469(var1, var8, var9, 24, 4, 82, 208);
-         class_3542.method_16448();
+         RenderSystem.method_16448();
 
          for (class_2285 var15 : this.field_47099) {
             var15.method_6767(var1, var2, var3, var4);
          }
 
-         class_3542.method_16489();
+         RenderSystem.method_16489();
       }
    }
 

@@ -26,7 +26,7 @@ public class class_6726 extends class_6414 {
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       if (var2.field_33055) {
-         class_6098 var9 = var4.method_26617(var5);
+         ItemStack var9 = var4.method_26617(var5);
          if (this.method_30861(var2, var3, var1, var4).method_31662()) {
             return class_6910.field_35520;
          }

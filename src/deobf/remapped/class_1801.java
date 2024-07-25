@@ -86,7 +86,7 @@ public class class_1801<T extends class_1173 & class_2354 & class_3832> extends 
                if (this.field_9176 != class_4021.field_19510) {
                   if (this.field_9176 == class_4021.field_19514 && var4) {
                      this.field_9179.method_10805(var3, 1.0F);
-                     class_6098 var9 = this.field_9179.method_26617(class_8462.method_38934(this.field_9179, class_4897.field_25030));
+                     ItemStack var9 = this.field_9179.method_26617(class_8462.method_38934(this.field_9179, class_4897.field_25030));
                      class_4380.method_20412(var9, false);
                      this.field_9176 = class_4021.field_19513;
                   }
@@ -102,7 +102,7 @@ public class class_1801<T extends class_1173 & class_2354 & class_3832> extends 
                }
 
                int var11 = this.field_9179.method_26613();
-               class_6098 var10 = this.field_9179.method_26576();
+               ItemStack var10 = this.field_9179.method_26576();
                if (var11 >= class_4380.method_20403(var10)) {
                   this.field_9179.method_26474();
                   this.field_9176 = class_4021.field_19510;

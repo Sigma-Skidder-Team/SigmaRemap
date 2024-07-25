@@ -24,13 +24,13 @@ public class class_3458 {
       String var5 = "en_us";
       String var6 = ".lang";
       var3.add(var4 + var5 + var6);
-      if (!class_3111.method_14310().field_45437.equals(var5)) {
-         var3.add(var4 + class_3111.method_14310().field_45437 + var6);
+      if (!Config.method_14310().field_45437.equals(var5)) {
+         var3.add(var4 + Config.method_14310().field_45437 + var6);
       }
 
       String[] var7 = var3.<String>toArray(new String[var3.size()]);
-      method_15910(class_3111.method_14415(), var7, var2);
-      class_8169[] var8 = class_3111.method_14347();
+      method_15910(Config.method_14415(), var7, var2);
+      class_8169[] var8 = Config.method_14347();
 
       for (int var9 = 0; var9 < var8.length; var9++) {
          class_8169 var10 = var8[var9];

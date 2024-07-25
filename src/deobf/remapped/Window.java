@@ -54,7 +54,7 @@ public final class Window implements AutoCloseable {
    private boolean field_47728;
 
    public Window(WindowEventHandler var1, class_7962 var2, class_9706 var3, String var4, String var5) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       this.field_47734 = var2;
       this.method_43191();
       this.method_43182("Pre startup");
@@ -76,8 +76,8 @@ public final class Window implements AutoCloseable {
       this.field_47730 = this.field_47724 = var3.field_49356 <= 0 ? 1 : var3.field_49356;
       GLFW.glfwDefaultWindowHints();
       GUIManager.method_30993();
-      if (class_3111.method_14248()) {
-         GLFW.glfwWindowHint(135181, class_3111.method_14447());
+      if (Config.method_14248()) {
+         GLFW.glfwWindowHint(135181, Config.method_14447());
       }
 
       GLFW.glfwWindowHint(139265, 196609);
@@ -123,7 +123,7 @@ public final class Window implements AutoCloseable {
    }
 
    public int method_43197() {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       return class_3776.method_17493(this);
    }
 
@@ -132,7 +132,7 @@ public final class Window implements AutoCloseable {
    }
 
    public static void method_43167(BiConsumer<Integer, String> var0) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       MemoryStack var3 = MemoryStack.stackPush();
       Throwable var4 = null;
 
@@ -163,7 +163,7 @@ public final class Window implements AutoCloseable {
    }
 
    public void method_43183(InputStream var1, InputStream var2) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
 
       try {
          MemoryStack var5 = MemoryStack.stackPush();
@@ -227,7 +227,7 @@ public final class Window implements AutoCloseable {
 
    @Nullable
    private ByteBuffer method_43180(InputStream var1, IntBuffer var2, IntBuffer var3, IntBuffer var4) throws IOException {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       ByteBuffer var7 = null;
 
       ByteBuffer var8;
@@ -252,12 +252,12 @@ public final class Window implements AutoCloseable {
    }
 
    private void method_43191() {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       GLFW.glfwSetErrorCallback(Window::method_43196);
    }
 
    private static void method_43196(int var0, long var1) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       String var5 = "GLFW error " + var0 + ": " + MemoryUtil.memUTF8(var1);
       TinyFileDialogs.tinyfd_messageBox(
          "Minecraft", var5 + ".\n\nPlease make sure you have up-to-date drivers (see aka.ms/mcdriver for instructions).", "ok", "error", false
@@ -266,7 +266,7 @@ public final class Window implements AutoCloseable {
    }
 
    public void method_43190(int var1, long var2) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       String var6 = MemoryUtil.memUTF8(var2);
       field_47718.error("########## GL ERROR ##########");
       field_47718.error("@ {}", this.field_47727);
@@ -283,14 +283,14 @@ public final class Window implements AutoCloseable {
    }
 
    public void method_43162(boolean var1) {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       this.field_47732 = var1;
       GLFW.glfwSwapInterval(!var1 ? 0 : 1);
    }
 
    @Override
    public void close() {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       this.field_47728 = true;
       Callbacks.glfwFreeCallbacks(this.field_47716);
       this.field_47714.close();
@@ -318,7 +318,7 @@ public final class Window implements AutoCloseable {
    }
 
    private void method_43195() {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       int[] var3 = new int[1];
       int[] var4 = new int[1];
       GLFW.glfwGetFramebufferSize(this.field_47716, var3, var4);
@@ -353,7 +353,7 @@ public final class Window implements AutoCloseable {
    }
 
    public void method_43154() {
-      class_3542.method_16415(this.field_47716);
+      RenderSystem.method_16415(this.field_47716);
       if (this.field_47735 != this.field_47726) {
          this.field_47726 = this.field_47735;
          this.method_43157(this.field_47732);
@@ -381,7 +381,7 @@ public final class Window implements AutoCloseable {
    }
 
    private void method_43188() {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       boolean var3 = GLFW.glfwGetWindowMonitor(this.field_47716) != 0L;
       if (!this.field_47735) {
          this.field_47722 = this.field_47739;
@@ -419,7 +419,7 @@ public final class Window implements AutoCloseable {
    }
 
    private void method_43157(boolean var1) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
 
       try {
          this.method_43188();
@@ -481,11 +481,11 @@ public final class Window implements AutoCloseable {
       return this.field_47724;
    }
 
-   public int method_43165() {
+   public int getScaledWidth() {
       return this.field_47715;
    }
 
-   public int method_43177() {
+   public int getScaledHeight() {
       return this.field_47737;
    }
 

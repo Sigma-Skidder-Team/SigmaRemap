@@ -12,7 +12,7 @@ public class SimsESP extends Module {
    public void method_32570(class_3368 var1) {
       if (this.method_42015()) {
          for (Entity var5 : class_7494.method_34088(class_314.method_1435())) {
-            if (var5 != mc.field_9632 && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
+            if (var5 != client.thePlayer && !SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                method_32571(
                   var5.field_41754 + (var5.method_37302() - var5.field_41754) * (double) MinecraftClient.getInstance().theTimer.field_32600,
                   var5.field_41713
@@ -82,9 +82,9 @@ public class SimsESP extends Module {
       GL11.glDepthMask(false);
       GL11.glPushMatrix();
       GL11.glTranslated(
-         var0 - mc.gameRenderer.method_35949().method_41627().method_61(),
-         var2 - mc.gameRenderer.method_35949().method_41627().method_60(),
-         var4 - mc.gameRenderer.method_35949().method_41627().method_62()
+         var0 - client.gameRenderer.method_35949().method_41627().method_61(),
+         var2 - client.gameRenderer.method_35949().method_41627().method_60(),
+         var4 - client.gameRenderer.method_35949().method_41627().method_62()
       );
       GL11.glRotated((double)(var6.field_41697 % 180 * 2), 0.0, -1.0, 0.0);
       float var9 = (float)(var6.field_41697 % 100 - 50);

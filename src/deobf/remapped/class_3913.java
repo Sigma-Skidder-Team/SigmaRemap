@@ -41,7 +41,7 @@ public class class_3913 extends class_2255<class_8398> {
          var3.method_36065(0.0, 0.33333334F, 0.046666667F);
          var3.method_36062(0.010416667F, -0.010416667F, 0.010416667F);
          int var15 = var1.method_38681().method_41791();
-         if (class_3111.method_14438()) {
+         if (Config.method_14438()) {
             var15 = class_9300.method_42925(var15);
          }
 
@@ -80,9 +80,9 @@ public class class_3913 extends class_2255<class_8398> {
 
    private static boolean method_18119(class_8398 var0) {
       if (!class_6588.field_33945) {
-         if (!class_3111.field_15481) {
+         if (!Config.field_15481) {
             class_1331 var3 = var0.method_17399();
-            Entity var4 = MinecraftClient.getInstance().method_8516();
+            Entity var4 = MinecraftClient.getInstance().getRenderViewEntity();
             double var5 = var4.method_37273((double)var3.method_12173(), (double)var3.method_12165(), (double)var3.method_12185());
             if (var5 > field_19010) {
                return false;
@@ -97,8 +97,8 @@ public class class_3913 extends class_2255<class_8398> {
 
    public static void method_18117() {
       MinecraftClient var2 = MinecraftClient.getInstance();
-      double var3 = class_3111.method_14261(var2.gameOptions.field_45543, 1.0, 120.0);
-      double var5 = Math.max(1.5 * (double)var2.method_8552().method_43163() / var3, 16.0);
+      double var3 = Config.method_14261(var2.gameOptions.field_45543, 1.0, 120.0);
+      double var5 = Math.max(1.5 * (double)var2.getMainWindow().method_43163() / var3, 16.0);
       field_19010 = var5 * var5;
    }
 }

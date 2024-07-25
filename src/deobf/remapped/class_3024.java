@@ -93,7 +93,7 @@ public class class_3024 extends class_5467 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return field_14826.test(var1);
    }
 

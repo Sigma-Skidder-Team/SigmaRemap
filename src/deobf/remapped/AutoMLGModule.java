@@ -32,7 +32,7 @@ public class AutoMLGModule extends PremiumModule {
    @EventListen
    private void method_16782(class_7767 var1) {
       if (this.method_42015()) {
-         if (field_17597 > 0 && !mc.field_9632.field_41726) {
+         if (field_17597 > 0 && !client.thePlayer.field_41726) {
             class_8865.method_40777(var1, 0.0);
          }
       }
@@ -41,7 +41,7 @@ public class AutoMLGModule extends PremiumModule {
    @EventListen
    @class_7664
    private void method_16779(class_1393 var1) {
-      if (this.method_42015() && mc.field_9647.method_42133()) {
+      if (this.method_42015() && client.playerController.method_42133()) {
          if (var1.method_6449() && field_17597 >= 0) {
             field_17597++;
             float[] var4 = class_7211.method_33006(
@@ -52,24 +52,24 @@ public class AutoMLGModule extends PremiumModule {
          }
 
          if (field_17597 == (!this.getBooleanValueByName("Cubecraft") ? 3 : 5)) {
-            if (mc.field_9632.field_3853.field_36404 != this.field_17598) {
-               this.field_17600 = mc.field_9632.field_3853.field_36404;
-               mc.field_9632.field_3853.field_36404 = this.field_17598;
-               mc.field_9647.method_42129();
+            if (client.thePlayer.inventory.field_36404 != this.field_17598) {
+               this.field_17600 = client.thePlayer.inventory.field_36404;
+               client.thePlayer.inventory.field_36404 = this.field_17598;
+               client.playerController.method_42129();
             }
 
-            mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
-            mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
+            client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+            client.method_8614().method_4813(new class_1022(class_2584.field_12791));
             field_17597 = -1;
             this.field_17596 = null;
-            mc.field_9632.field_3853.field_36404 = this.field_17600;
+            client.thePlayer.inventory.field_36404 = this.field_17600;
          }
 
          int var7 = this.method_16778();
-         if (!SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()
+         if (!SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()
             && var7 != -1
-            && !mc.field_9632.field_41726
-            && mc.field_9632.field_41706 > 3.0F) {
+            && !client.thePlayer.field_41726
+            && client.thePlayer.field_41706 > 3.0F) {
             class_1331 var5 = this.method_16780();
             if (var5 != null) {
                if (var1.method_6449() && field_17597 == -1) {
@@ -78,10 +78,10 @@ public class AutoMLGModule extends PremiumModule {
                   );
                   var1.method_6441(var6[0]);
                   var1.method_6448(var6[1]);
-                  if (var7 != mc.field_9632.field_3853.field_36404) {
-                     this.field_17600 = mc.field_9632.field_3853.field_36404;
-                     mc.field_9632.field_3853.field_36404 = var7;
-                     mc.field_9647.method_42129();
+                  if (var7 != client.thePlayer.inventory.field_36404) {
+                     this.field_17600 = client.thePlayer.inventory.field_36404;
+                     client.thePlayer.inventory.field_36404 = var7;
+                     client.playerController.method_42129();
                   }
 
                   this.field_17598 = var7;
@@ -91,8 +91,8 @@ public class AutoMLGModule extends PremiumModule {
                }
 
                if (this.field_17596 != null) {
-                  mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
-                  mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_1022(class_2584.field_12791));
                }
             }
          }
@@ -101,8 +101,8 @@ public class AutoMLGModule extends PremiumModule {
 
    public int method_16778() {
       for (int var3 = 36; var3 < 45; var3++) {
-         if (mc.field_9632.field_3869.method_18878(var3).method_35884()) {
-            class_6098 var4 = mc.field_9632.field_3869.method_18878(var3).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var3).method_35884()) {
+            ItemStack var4 = client.thePlayer.field_3869.method_18878(var3).method_35898();
             if (var4.method_27960() == class_4897.field_24999) {
                return var3 - 36;
             }
@@ -111,15 +111,15 @@ public class AutoMLGModule extends PremiumModule {
 
       if (SigmaMainClass.getInstance().method_3310().method_25303() > 1) {
          for (int var5 = 9; var5 < 36; var5++) {
-            if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-               class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+            if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+               ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
                if (var6.method_27960() == class_4897.field_24999) {
                   if (class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-                     mc.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                     client.method_8614().method_4813(new class_8559(class_2105.field_10551));
                   }
 
                   class_2740.method_12312(var5, 6);
-                  mc.method_8614().method_4813(new class_1194(-1));
+                  client.method_8614().method_4813(new class_1194(-1));
                   return 6;
                }
             }
@@ -132,11 +132,11 @@ public class AutoMLGModule extends PremiumModule {
    }
 
    private class_1331 method_16780() {
-      double var3 = mc.field_9632.method_37098().field_7336;
-      double var5 = mc.field_9632.method_37098().field_7333;
-      double var7 = mc.field_9632.method_37098().field_7334;
-      class_4092 var9 = mc.field_9632.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
-      Stream var10 = mc.field_9601.method_6680(mc.field_9632, var9);
+      double var3 = client.thePlayer.method_37098().field_7336;
+      double var5 = client.thePlayer.method_37098().field_7333;
+      double var7 = client.thePlayer.method_37098().field_7334;
+      class_4092 var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
+      Stream var10 = client.field_9601.method_6680(client.thePlayer, var9);
       Iterator var11 = var10.iterator();
       class_1331 var12 = null;
 
@@ -145,12 +145,12 @@ public class AutoMLGModule extends PremiumModule {
          class_4092 var14 = var13.method_19483();
          class_1331 var15 = new class_1331(var14.method_18926());
          if (class_7494.method_34090(var15)
-            && (double)(var15.method_12165() + 1) < mc.field_9632.method_37309()
+            && (double)(var15.method_12165() + 1) < client.thePlayer.method_37309()
             && (
                var12 == null
-                  || mc.field_9632
+                  || client.thePlayer
                         .method_37273((double)var12.method_12173() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7)
-                     > mc.field_9632
+                     > client.thePlayer
                         .method_37273((double)var15.method_12173() + 0.5 - var3, (double)(var15.method_12165() + 1), (double)var15.method_12185() + 0.5 - var7)
             )) {
             var12 = var15;
@@ -160,9 +160,9 @@ public class AutoMLGModule extends PremiumModule {
       if (var12 != null) {
          return var12;
       } else {
-         var5 = mc.field_9632.method_37098().field_7333 - 1.0;
-         var9 = mc.field_9632.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
-         var10 = mc.field_9601.method_6680(mc.field_9632, var9);
+         var5 = client.thePlayer.method_37098().field_7333 - 1.0;
+         var9 = client.thePlayer.field_41712.method_18928(var3, 0.0, var7).method_18918(0.0, var5, 0.0);
+         var10 = client.field_9601.method_6680(client.thePlayer, var9);
          var11 = var10.iterator();
 
          while (var11.hasNext()) {
@@ -170,14 +170,14 @@ public class AutoMLGModule extends PremiumModule {
             class_4092 var21 = var20.method_19483();
             class_1331 var22 = new class_1331(var21.method_18926());
             if (class_7494.method_34090(var22)
-               && (double)(var22.method_12165() + 1) < mc.field_9632.method_37309()
+               && (double)(var22.method_12165() + 1) < client.thePlayer.method_37309()
                && (
                   var12 == null
-                     || mc.field_9632
+                     || client.thePlayer
                            .method_37273(
                               (double)var12.method_12173() + 0.5 - var3, (double)(var12.method_12165() + 1), (double)var12.method_12185() + 0.5 - var7
                            )
-                        > mc.field_9632
+                        > client.thePlayer
                            .method_37273(
                               (double)var22.method_12173() + 0.5 - var3, (double)(var22.method_12165() + 1), (double)var22.method_12185() + 0.5 - var7
                            )

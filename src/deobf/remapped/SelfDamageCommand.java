@@ -21,22 +21,22 @@ public class SelfDamageCommand extends Command {
             field_18219.method_8614()
                .method_4813(
                   new class_9515(
-                     field_18219.field_9632.method_37302(), field_18219.field_9632.method_37309() + 0.06, field_18219.field_9632.method_37156(), false
+                     field_18219.thePlayer.method_37302(), field_18219.thePlayer.method_37309() + 0.06, field_18219.thePlayer.method_37156(), false
                   )
                );
             field_18219.method_8614()
                .method_4813(
-                  new class_9515(field_18219.field_9632.method_37302(), field_18219.field_9632.method_37309(), field_18219.field_9632.method_37156(), false)
+                  new class_9515(field_18219.thePlayer.method_37302(), field_18219.thePlayer.method_37309(), field_18219.thePlayer.method_37156(), false)
                );
          }
 
          field_18219.method_8614()
             .method_4813(
-               new class_9515(field_18219.field_9632.method_37302(), field_18219.field_9632.method_37309(), field_18219.field_9632.method_37156(), false)
+               new class_9515(field_18219.thePlayer.method_37302(), field_18219.thePlayer.method_37309(), field_18219.thePlayer.method_37156(), false)
             );
          field_18219.method_8614()
             .method_4813(
-               new class_9515(field_18219.field_9632.method_37302(), field_18219.field_9632.method_37309() + 0.02, field_18219.field_9632.method_37156(), false)
+               new class_9515(field_18219.thePlayer.method_37302(), field_18219.thePlayer.method_37309() + 0.02, field_18219.thePlayer.method_37156(), false)
             );
          var3.method_3731("Sent damage packets");
       }

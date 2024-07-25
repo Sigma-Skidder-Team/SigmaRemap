@@ -15,27 +15,27 @@ public class class_7995 implements AutoCloseable {
 
    public class_7995(class_2868 var1) {
       this.field_40964 = var1;
-      class_3542.method_16355(var1x -> this.field_40969 = var1x);
+      RenderSystem.method_16355(var1x -> this.field_40969 = var1x);
    }
 
    public void method_36280() {
-      class_1920.method_8760(34962, this.field_40969);
+      GlStateManager.method_8760(34962, this.field_40969);
    }
 
    public void method_36285(class_9633 var1) {
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          this.method_36286(var1);
       } else {
-         class_3542.method_16474(() -> this.method_36286(var1));
+         RenderSystem.method_16474(() -> this.method_36286(var1));
       }
    }
 
    public CompletableFuture<Void> method_36278(class_9633 var1) {
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          this.method_36286(var1);
          return CompletableFuture.<Void>completedFuture((Void)null);
       } else {
-         return CompletableFuture.runAsync(() -> this.method_36286(var1), var0 -> class_3542.method_16474(var0::run));
+         return CompletableFuture.runAsync(() -> this.method_36286(var1), var0 -> RenderSystem.method_16474(var0::run));
       }
    }
 
@@ -52,7 +52,7 @@ public class class_7995 implements AutoCloseable {
             ByteBuffer var6 = (ByteBuffer)var4.getSecond();
             this.field_40968 = var6.remaining() / this.field_40964.method_13168();
             this.method_36280();
-            class_3542.method_16417(34962, var6, 35044);
+            RenderSystem.method_16417(34962, var6, 35044);
             method_36279();
          }
       } else {
@@ -62,20 +62,20 @@ public class class_7995 implements AutoCloseable {
    }
 
    public void method_36283(class_8107 var1, int var2) {
-      class_3542.method_16438();
-      class_3542.method_16476();
-      class_3542.method_16358(var1);
+      RenderSystem.method_16438();
+      RenderSystem.method_16476();
+      RenderSystem.method_16358(var1);
       if (this.field_40967 > 0) {
          var2 = this.field_40967;
       }
 
       if (this.field_40966 == null) {
-         class_3542.method_16400(var2, 0, this.field_40968);
+         RenderSystem.method_16400(var2, 0, this.field_40968);
       } else {
          this.field_40966.method_27819(var2, this.field_40963);
       }
 
-      class_3542.method_16489();
+      RenderSystem.method_16489();
    }
 
    public void method_36282(int var1) {
@@ -84,20 +84,20 @@ public class class_7995 implements AutoCloseable {
       }
 
       if (this.field_40966 == null) {
-         class_3542.method_16400(var1, 0, this.field_40968);
+         RenderSystem.method_16400(var1, 0, this.field_40968);
       } else {
          this.field_40966.method_27819(var1, this.field_40963);
       }
    }
 
    public static void method_36279() {
-      class_1920.method_8760(34962, 0);
+      GlStateManager.method_8760(34962, 0);
    }
 
    @Override
    public void close() {
       if (this.field_40969 >= 0) {
-         class_3542.method_16462(this.field_40969);
+         RenderSystem.method_16462(this.field_40969);
          this.field_40969 = -1;
       }
    }

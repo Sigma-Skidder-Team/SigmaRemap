@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public class class_1459 implements class_6867 {
    private static String[] field_7858;
    private final class_233 field_7862;
-   private final class_2831<class_6098> field_7863 = class_2831.<class_6098>method_12872(3, class_6098.field_31203);
+   private final class_2831<ItemStack> field_7863 = class_2831.<ItemStack>method_12872(3, ItemStack.EMPTY);
    private class_8014 field_7859;
    private int field_7861;
    private int field_7860;
@@ -21,7 +21,7 @@ public class class_1459 implements class_6867 {
 
    @Override
    public boolean method_31495() {
-      for (class_6098 var4 : this.field_7863) {
+      for (ItemStack var4 : this.field_7863) {
          if (!var4.method_28022()) {
             return false;
          }
@@ -31,17 +31,17 @@ public class class_1459 implements class_6867 {
    }
 
    @Override
-   public class_6098 method_31498(int var1) {
+   public ItemStack method_31498(int var1) {
       return this.field_7863.get(var1);
    }
 
    @Override
-   public class_6098 method_31497(int var1, int var2) {
-      class_6098 var5 = this.field_7863.get(var1);
+   public ItemStack method_31497(int var1, int var2) {
+      ItemStack var5 = this.field_7863.get(var1);
       if (var1 == 2 && !var5.method_28022()) {
          return class_3037.method_13881(this.field_7863, var1, var5.method_27997());
       } else {
-         class_6098 var6 = class_3037.method_13881(this.field_7863, var1, var2);
+         ItemStack var6 = class_3037.method_13881(this.field_7863, var1, var2);
          if (!var6.method_28022() && this.method_6756(var1)) {
             this.method_6758();
          }
@@ -55,12 +55,12 @@ public class class_1459 implements class_6867 {
    }
 
    @Override
-   public class_6098 method_31507(int var1) {
+   public ItemStack method_31507(int var1) {
       return class_3037.method_13880(this.field_7863, var1);
    }
 
    @Override
-   public void method_31503(int var1, class_6098 var2) {
+   public void method_31503(int var1, ItemStack var2) {
       this.field_7863.set(var1, var2);
       if (!var2.method_28022() && var2.method_27997() > this.method_31506()) {
          var2.method_28017(this.method_31506());
@@ -83,14 +83,14 @@ public class class_1459 implements class_6867 {
 
    public void method_6758() {
       this.field_7859 = null;
-      class_6098 var3;
-      class_6098 var4;
+      ItemStack var3;
+      ItemStack var4;
       if (!this.field_7863.get(0).method_28022()) {
          var3 = this.field_7863.get(0);
          var4 = this.field_7863.get(1);
       } else {
          var3 = this.field_7863.get(1);
-         var4 = class_6098.field_31203;
+         var4 = ItemStack.EMPTY;
       }
 
       if (!var3.method_28022()) {
@@ -107,14 +107,14 @@ public class class_1459 implements class_6867 {
                this.method_31503(2, var6.method_36371());
                this.field_7860 = var6.method_36363();
             } else {
-               this.method_31503(2, class_6098.field_31203);
+               this.method_31503(2, ItemStack.EMPTY);
                this.field_7860 = 0;
             }
          }
 
          this.field_7862.method_979(this.method_31498(2));
       } else {
-         this.method_31503(2, class_6098.field_31203);
+         this.method_31503(2, ItemStack.EMPTY);
          this.field_7860 = 0;
       }
    }

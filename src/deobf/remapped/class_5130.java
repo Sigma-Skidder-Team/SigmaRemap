@@ -18,7 +18,7 @@ public class class_5130 extends class_4569 {
       return new class_5130(class_8938.field_45798, var0, var1.method_43921(), var2);
    }
 
-   public boolean method_23530(class_6414 var1, class_6098 var2, int var3) {
+   public boolean method_23530(class_6414 var1, ItemStack var2, int var3) {
       if (this.field_26464 != null && var1 != this.field_26464) {
          return false;
       } else {

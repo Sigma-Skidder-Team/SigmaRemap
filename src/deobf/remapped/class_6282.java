@@ -13,7 +13,7 @@ public class class_6282 {
    private final class_7279[] field_32112;
    private final Predicate<class_2792> field_32114;
    private final class_2913[] field_32107;
-   private final BiFunction<class_6098, class_2792, class_6098> field_32110;
+   private final BiFunction<ItemStack, class_2792, ItemStack> field_32110;
    private final class_3254 field_32111;
    private final class_7986 field_32108;
 
@@ -27,7 +27,7 @@ public class class_6282 {
       this.field_32108 = var5;
    }
 
-   private void method_28632(Consumer<class_6098> var1, class_2792 var2) {
+   private void method_28632(Consumer<ItemStack> var1, class_2792 var2) {
       Random var5 = var2.method_12693();
       ArrayList var6 = Lists.newArrayList();
       MutableInt var7 = new MutableInt();
@@ -60,7 +60,7 @@ public class class_6282 {
       }
    }
 
-   public void method_28635(Consumer<class_6098> var1, class_2792 var2) {
+   public void method_28635(Consumer<ItemStack> var1, class_2792 var2) {
       if (this.field_32114.test(var2)) {
          Consumer var5 = class_2913.method_13320(this.field_32110, var1, var2);
          Random var6 = var2.method_12693();

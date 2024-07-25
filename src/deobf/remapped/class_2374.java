@@ -38,10 +38,10 @@ public class class_2374 implements class_7912 {
 
    @Override
    public void method_35795(class_7966 var1, float var2, int var3) {
-      MinecraftClient.getInstance().method_8577().method_35674(this.field_11876);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, (float)var3 / 255.0F);
-      class_2089.method_9780(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
-      class_2089.method_9780(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
+      MinecraftClient.getInstance().getTextureManager().bindTexture(this.field_11876);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, (float)var3 / 255.0F);
+      AbstractGui.method_9780(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
+      AbstractGui.method_9780(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
    }
 
    @Override

@@ -20,11 +20,11 @@ public class class_1573 {
       }
    }
 
-   public static void method_7101(World var0, class_1331 var1, class_2831<class_6098> var2) {
+   public static void method_7101(World var0, class_1331 var1, class_2831<ItemStack> var2) {
       var2.forEach(var2x -> method_7100(var0, (double)var1.method_12173(), (double)var1.method_12165(), (double)var1.method_12185(), var2x));
    }
 
-   public static void method_7100(World var0, double var1, double var3, double var5, class_6098 var7) {
+   public static void method_7100(World var0, double var1, double var3, double var5, ItemStack var7) {
       double var10 = (double)class_6629.field_34208.method_30459();
       double var12 = 1.0 - var10;
       double var14 = var10 / 2.0;

@@ -190,20 +190,20 @@ public class SigmaMainClass {
       GL11.glScaled(var3, var3, var3);
       GL11.glScaled((double) GUIManager.field_34898, (double) GUIManager.field_34898, (double) GUIManager.field_34898);
       GL11.glDisable(2912);
-      class_3542.method_16491();
-      class_3542.method_16413(0.0F, 0.0F, 1000.0F);
-      class_3542.method_16442(519, 0.0F);
-      class_3542.method_16488();
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16491();
+      RenderSystem.method_16413(0.0F, 0.0F, 1000.0F);
+      RenderSystem.method_16442(519, 0.0F);
+      RenderSystem.enableBlend();
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glDisable(2896);
-      class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
       NotificationIcons.field_11030.method_38419();
       getInstance().getEventManager().call(new class_7285());
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16361();
-      class_3542.method_16491();
-      class_3542.method_16488();
-      class_3542.method_16442(518, 0.1F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16361();
+      RenderSystem.method_16491();
+      RenderSystem.enableBlend();
+      RenderSystem.method_16442(518, 0.1F);
       GL11.glPopMatrix();
    }
 
@@ -227,32 +227,32 @@ public class SigmaMainClass {
          double var5 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
          GL11.glScaled(var5, var5, 1.0);
          GL11.glScaled((double) GUIManager.field_34898, (double) GUIManager.field_34898, 1.0);
-         class_3542.method_16491();
-         class_3542.method_16438();
-         class_3542.method_16413(0.0F, 0.0F, 1000.0F);
+         RenderSystem.method_16491();
+         RenderSystem.method_16438();
+         RenderSystem.method_16413(0.0F, 0.0F, 1000.0F);
          this.guiManager.method_30983();
-         class_3542.method_16489();
-         class_3542.method_16428();
-         class_3542.method_16374();
+         RenderSystem.method_16489();
+         RenderSystem.enableDepthTest();
+         RenderSystem.enableAlphaTest();
          GL11.glAlphaFunc(518, 0.1F);
-         TextureManager var10000 = field_3950.method_8577();
-         field_3950.method_8577();
-         var10000.method_35674(TextureManager.field_40364);
+         TextureManager var10000 = field_3950.getTextureManager();
+         field_3950.getTextureManager();
+         var10000.bindTexture(TextureManager.field_40364);
       }
    }
 
    public void method_3316() {
-      if (field_3950 != null && field_3950.field_9601 != null && field_3950.field_9632 != null && !field_3951) {
+      if (field_3950 != null && field_3950.field_9601 != null && field_3950.thePlayer != null && !field_3951) {
          GL11.glTranslatef(0.0F, 0.0F, 0.0F);
-         class_3542.method_16491();
-         class_3542.method_16387(false);
+         RenderSystem.method_16491();
+         RenderSystem.method_16387(false);
          GL11.glDisable(2896);
          this.eventManager.call(new class_3368());
-         class_3542.method_16428();
-         class_3542.method_16387(true);
-         TextureManager var10000 = field_3950.method_8577();
-         field_3950.method_8577();
-         var10000.method_35674(TextureManager.field_40364);
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16387(true);
+         TextureManager var10000 = field_3950.getTextureManager();
+         field_3950.getTextureManager();
+         var10000.bindTexture(TextureManager.field_40364);
       }
    }
 

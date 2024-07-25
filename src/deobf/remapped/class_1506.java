@@ -22,7 +22,7 @@ public class class_1506 extends class_4171<class_8031, class_8216<class_8031>> {
             float var21 = ((float)(var4.field_41697 % 25) + var7) / 25.0F;
             float[] var22 = class_8031.method_36477(class_9077.method_41789(var19));
             float[] var23 = class_8031.method_36477(class_9077.method_41789(var20));
-            if (class_3111.method_14438()) {
+            if (Config.method_14438()) {
                var22 = class_9300.method_42890(class_9077.method_41789(var19), var22);
                var23 = class_9300.method_42890(class_9077.method_41789(var20), var23);
             }
@@ -32,7 +32,7 @@ public class class_1506 extends class_4171<class_8031, class_8216<class_8031>> {
             var16 = var22[2] * (1.0F - var21) + var23[2] * var21;
          } else {
             float[] var13 = class_8031.method_36477(var4.method_36474());
-            if (class_3111.method_14438()) {
+            if (Config.method_14438()) {
                var13 = class_9300.method_42890(var4.method_36474(), var13);
             }
 

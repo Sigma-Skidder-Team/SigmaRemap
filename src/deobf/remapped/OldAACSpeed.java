@@ -25,7 +25,7 @@ public class OldAACSpeed extends Module {
    @EventListen
    public void method_33889(class_7767 var1) {
       if (this.method_42015()) {
-         if (!mc.field_9632.field_41726) {
+         if (!client.thePlayer.field_41726) {
             if (class_314.method_1434() && AACAntiKB.field_39147 >= 7) {
                this.field_37948++;
                if (this.field_37948 == 1) {
@@ -38,7 +38,7 @@ public class OldAACSpeed extends Module {
                   }
                }
 
-               if (mc.field_9632.field_41744) {
+               if (client.thePlayer.field_41744) {
                   this.field_37949 = class_8865.method_40775();
                }
 
@@ -46,10 +46,10 @@ public class OldAACSpeed extends Module {
             }
          } else if (this.getBooleanValueByName("Auto Jump") && class_314.method_1434()) {
             this.field_37948 = 0;
-            mc.field_9632.method_26595();
-            var1.method_35232(mc.field_9632.method_37098().field_7336);
-            var1.method_35235(mc.field_9632.method_37098().field_7333);
-            var1.method_35229(mc.field_9632.method_37098().field_7334);
+            client.thePlayer.method_26595();
+            var1.method_35232(client.thePlayer.method_37098().field_7336);
+            var1.method_35235(client.thePlayer.method_37098().field_7333);
+            var1.method_35229(client.thePlayer.method_37098().field_7334);
          } else if (var1.method_35236() != 0.4 + (double)class_8865.method_40769() * 0.1) {
             this.field_37951 = 0;
          } else {

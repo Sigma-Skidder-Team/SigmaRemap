@@ -5,7 +5,7 @@ public class class_353 extends class_4734 {
    public class_1331 field_1379;
    public boolean field_1381 = true;
 
-   public class_353(class_704 var1, class_2584 var2, class_6098 var3, class_9529 var4) {
+   public class_353(class_704 var1, class_2584 var2, ItemStack var3, class_9529 var4) {
       this(var1.field_41768, var1, var2, var3, var4);
    }
 
@@ -13,7 +13,7 @@ public class class_353 extends class_4734 {
       this(var1.method_21862(), var1.method_21868(), var1.method_21860(), var1.method_21867(), var1.method_21864());
    }
 
-   public class_353(World var1, class_704 var2, class_2584 var3, class_6098 var4, class_9529 var5) {
+   public class_353(World var1, class_704 var2, class_2584 var3, ItemStack var4, class_9529 var5) {
       super(var1, var2, var3, var4, var5);
       this.field_1379 = var5.method_43955().method_6098(var5.method_43956());
       this.field_1381 = var1.method_28262(var5.method_43955()).method_8374(this);

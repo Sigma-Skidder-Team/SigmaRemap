@@ -42,7 +42,7 @@ public class class_2547 extends class_7429 implements class_2354 {
 
    @Override
    public class_8733 method_26864(class_1556 var1, class_9589 var2, class_2417 var3, class_8733 var4, class_5734 var5) {
-      this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25206));
+      this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25206));
       return super.method_26864(var1, var2, var3, var4, var5);
    }
 
@@ -154,7 +154,7 @@ public class class_2547 extends class_7429 implements class_2354 {
 
    @Override
    public void method_10805(class_5834 var1, float var2) {
-      class_6098 var5 = this.method_26475(this.method_26617(class_8462.method_38934(this, class_4897.field_25206)));
+      ItemStack var5 = this.method_26475(this.method_26617(class_8462.method_38934(this, class_4897.field_25206)));
       class_6749 var6 = class_8462.method_38930(this, var5, var2);
       double var7 = var1.method_37302() - this.method_37302();
       double var9 = var1.method_37080(0.3333333333333333) - var6.method_37309();

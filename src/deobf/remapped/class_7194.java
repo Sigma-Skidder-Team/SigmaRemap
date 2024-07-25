@@ -34,8 +34,8 @@ public class class_7194 {
          var0 *= var6;
          var1 *= var6;
          var2 *= var6;
-         float var7 = class_9299.method_42818(field_36996.field_9632.field_41701 * (float) (Math.PI / 180.0));
-         float var8 = class_9299.method_42840(field_36996.field_9632.field_41701 * (float) (Math.PI / 180.0));
+         float var7 = class_9299.method_42818(field_36996.thePlayer.field_41701 * (float) (Math.PI / 180.0));
+         float var8 = class_9299.method_42840(field_36996.thePlayer.field_41701 * (float) (Math.PI / 180.0));
          field_36984 += (double)(var0 * var8 - var2 * var7);
          field_36992 += (double)var1;
          field_36985 += (double)(var2 * var8 + var0 * var7);
@@ -43,22 +43,22 @@ public class class_7194 {
    }
 
    public static void method_32938(float var0, float var1, float var2) {
-      if ((field_36996.field_9632.method_26530() || field_36996.field_9632.method_37069()) && field_36996.field_9632.method_37285()) {
-         double var5 = field_36996.field_9632.method_37309();
+      if ((field_36996.thePlayer.method_26530() || field_36996.thePlayer.method_37069()) && field_36996.thePlayer.method_37285()) {
+         double var5 = field_36996.thePlayer.method_37309();
          float var7 = method_32937();
          float var8 = 0.02F;
-         float var9 = (float)class_2931.method_13417(field_36996.field_9632);
+         float var9 = (float)class_2931.method_13417(field_36996.thePlayer);
          if (var9 > 3.0F) {
             var9 = 3.0F;
          }
 
-         if (!field_36996.field_9632.field_41726) {
+         if (!field_36996.thePlayer.field_41726) {
             var9 *= 0.5F;
          }
 
          if (var9 > 0.0F) {
             var7 += (0.54600006F - var7) * var9 / 3.0F;
-            var8 += (field_36996.field_9632.method_26423() - var8) * var9 / 3.0F;
+            var8 += (field_36996.thePlayer.method_26423() - var8) * var9 / 3.0F;
          }
 
          method_32939(var0, var1, var2, var8);
@@ -66,12 +66,12 @@ public class class_7194 {
          field_36984 *= (double)var7;
          field_36992 *= 0.8F;
          field_36985 *= (double)var7;
-         if (!field_36996.field_9632.method_37078()) {
+         if (!field_36996.thePlayer.method_37078()) {
             field_36992 -= 0.02;
          }
 
-         if (field_36996.field_9632.field_41744
-            && field_36996.field_9632.method_37159(field_36984, field_36992 + 0.6F - field_36996.field_9632.method_37309() + var5, field_36985)) {
+         if (field_36996.thePlayer.field_41744
+            && field_36996.thePlayer.method_37159(field_36984, field_36992 + 0.6F - field_36996.thePlayer.method_37309() + var5, field_36985)) {
             field_36992 = 0.3F;
          }
       }
@@ -115,6 +115,6 @@ public class class_7194 {
    }
 
    public static boolean method_32943() {
-      return method_32945(field_36996.field_9632.method_37241().method_18928(0.0, -0.4F, 0.0).method_18900(0.001, 0.001, 0.001), class_5371.field_27439);
+      return method_32945(field_36996.thePlayer.method_37241().method_18928(0.0, -0.4F, 0.0).method_18900(0.001, 0.001, 0.001), class_5371.field_27439);
    }
 }

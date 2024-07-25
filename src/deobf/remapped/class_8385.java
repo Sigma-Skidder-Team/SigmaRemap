@@ -7,13 +7,13 @@ public class class_8385 extends class_5348 {
    public class_8385(String var1, int var2) {
       super("depth_test", () -> {
          if (var2 != 519) {
-            class_3542.method_16428();
-            class_3542.method_16457(var2);
+            RenderSystem.enableDepthTest();
+            RenderSystem.method_16457(var2);
          }
       }, () -> {
          if (var2 != 519) {
-            class_3542.method_16491();
-            class_3542.method_16457(515);
+            RenderSystem.method_16491();
+            RenderSystem.method_16457(515);
          }
       });
       this.field_42900 = var1;

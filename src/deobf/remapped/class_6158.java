@@ -26,7 +26,7 @@ public class class_6158 extends class_2733 {
                   return null;
                } else {
                   String var8 = var2.substring(var6.length());
-                  int var9 = class_3111.method_14361(var8, -1);
+                  int var9 = Config.method_14361(var8, -1);
                   var9--;
                   return var9 >= 0 && var9 < var7.length ? var7[var9] : null;
                }

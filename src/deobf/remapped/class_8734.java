@@ -35,8 +35,8 @@ public class class_8734 {
          if (var6 != null) {
             this.field_44744
                .method_8614()
-               .method_4813(new class_3398(var6.method_25524(), class_2584.field_12791, var6.method_33993(), this.field_44744.field_9632.method_37252()));
-            this.field_44744.method_8614().method_4813(new class_3398(var6.method_25524(), class_2584.field_12791, this.field_44744.field_9632.method_37252()));
+               .method_4813(new class_3398(var6.method_25524(), class_2584.field_12791, var6.method_33993(), this.field_44744.thePlayer.method_37252()));
+            this.field_44744.method_8614().method_4813(new class_3398(var6.method_25524(), class_2584.field_12791, this.field_44744.thePlayer.method_37252()));
          }
       }
 
@@ -51,7 +51,7 @@ public class class_8734 {
 
    public boolean method_40097() {
       return !this.field_44747.getStringValueByName("Autoblock Mode").equals("None")
-         && this.field_44744.field_9632.method_26446().method_27960() instanceof class_2235
+         && this.field_44744.thePlayer.method_26446().method_27960() instanceof class_2235
          && !this.method_40094();
    }
 
@@ -82,9 +82,9 @@ public class class_8734 {
          var4++;
       }
 
-      if (this.field_44744.field_9632.method_3163() > 1.26F && this.field_44747.getBooleanValueByName("Cooldown")) {
+      if (this.field_44744.thePlayer.method_3163() > 1.26F && this.field_44747.getBooleanValueByName("Cooldown")) {
          int var11 = !var5 ? 1 : 2;
-         float var12 = this.field_44744.field_9632.method_3163() - (float)this.field_44744.field_9632.field_29620 - (float)var11;
+         float var12 = this.field_44744.thePlayer.method_3163() - (float)this.field_44744.thePlayer.field_29620 - (float)var11;
          return var12 <= 0.0F && var12 > -1.0F;
       } else if (var4 != 2) {
          if (var4 < 2) {
@@ -138,7 +138,7 @@ public class class_8734 {
       }
 
       Iterator var24 = var4.iterator();
-      SecondModule var25 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(DisablerModule.class);
+      SecondModule var25 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
       float var7 = 150.0F;
       if (var25.method_42015() && var25.getStringValueByName("Type").equalsIgnoreCase("PingSpoof")) {
          var7 += var25.method_16864().getFloatValueByName("Lag");
@@ -147,7 +147,7 @@ public class class_8734 {
       while (var24.hasNext()) {
          class_3357 var8 = (class_3357)var24.next();
          Entity var9 = var8.method_15377();
-         if (var9 == this.field_44744.field_9632 || var9 == BlinkModule.field_27898) {
+         if (var9 == this.field_44744.thePlayer || var9 == BlinkModule.field_27898) {
             var24.remove();
          } else if (SigmaMainClass.getInstance().method_3307().method_14460(var9)) {
             var24.remove();
@@ -155,7 +155,7 @@ public class class_8734 {
             var24.remove();
          } else if (((class_5834)var9).method_26551() == 0.0F) {
             var24.remove();
-         } else if (!this.field_44744.field_9632.method_26608((class_5834)var9)) {
+         } else if (!this.field_44744.thePlayer.method_26608((class_5834)var9)) {
             var24.remove();
          } else if (var9 instanceof class_9399) {
             var24.remove();
@@ -169,15 +169,15 @@ public class class_8734 {
             var24.remove();
          } else if (!this.field_44747.getBooleanValueByName("Monsters") && var9 instanceof class_1173) {
             var24.remove();
-         } else if (this.field_44744.field_9632.method_37243() != null && this.field_44744.field_9632.method_37243().equals(var9)) {
+         } else if (this.field_44744.thePlayer.method_37243() != null && this.field_44744.thePlayer.method_37243().equals(var9)) {
             var24.remove();
          } else if (var9.method_37367()) {
             var24.remove();
          } else if (!(var9 instanceof class_704)
             || !class_5876.method_26760((class_704)var9)
-            || !SigmaMainClass.getInstance().getModuleManager().method_847(TeamsModule.class).method_42015()) {
+            || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
             class_1343 var10 = class_314.method_1429(var9);
-            if (!(this.field_44744.field_9632.method_37175(var9) < 40.0F)) {
+            if (!(this.field_44744.thePlayer.method_37175(var9) < 40.0F)) {
                if (this.field_44743.containsKey(var9)) {
                   this.field_44743.remove(var9);
                }
@@ -214,7 +214,7 @@ public class class_8734 {
                            var31.field_7333,
                            var31.field_7334 - var19,
                            var31.field_7336 + var19,
-                           var31.field_7333 + this.field_44744.field_9632.field_41712.method_18901(),
+                           var31.field_7333 + this.field_44744.thePlayer.field_41712.method_18901(),
                            var31.field_7334 + var19
                         );
                         double var22 = class_314.method_1420(var21);

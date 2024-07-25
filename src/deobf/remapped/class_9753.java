@@ -42,9 +42,9 @@ public class class_9753 extends class_4785<class_9753> {
          this.field_49555, var1, class_1980.method_9109(this.field_49555) + class_1980.method_9111(this.field_49555) - 22, var4 + 2, var5, var6
       );
       class_3570.method_16603(var2.method_33748(), () -> {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_2089.method_9780(var1, class_1980.method_9109(this.field_49555) + 2 + 2, var4 + 1, 8, 8, 8.0F, 8.0F, 8, 8, 64, 64);
-         class_2089.method_9780(var1, class_1980.method_9109(this.field_49555) + 2 + 2, var4 + 1, 8, 8, 40.0F, 8.0F, 8, 8, 64, 64);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         AbstractGui.method_9780(var1, class_1980.method_9109(this.field_49555) + 2 + 2, var4 + 1, 8, 8, 8.0F, 8.0F, 8, 8, 64, 64);
+         AbstractGui.method_9780(var1, class_1980.method_9109(this.field_49555) + 2 + 2, var4 + 1, 8, 8, 40.0F, 8.0F, 8, 8, 64, 64);
       });
    }
 }

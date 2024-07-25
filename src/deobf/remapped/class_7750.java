@@ -13,7 +13,7 @@ import net.minecraft.util.text.ITextComponent$class_40;
 public class class_7750 {
    private final ITextComponent field_39298;
    private final ITextComponent field_39290;
-   private final class_6098 field_39297;
+   private final ItemStack field_39297;
    private final Identifier field_39291;
    private final class_3361 field_39300;
    private final boolean field_39292;
@@ -22,7 +22,7 @@ public class class_7750 {
    private float field_39299;
    private float field_39295;
 
-   public class_7750(class_6098 var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8) {
+   public class_7750(ItemStack var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8) {
       this.field_39298 = var2;
       this.field_39290 = var3;
       this.field_39297 = var1;
@@ -46,7 +46,7 @@ public class class_7750 {
       return this.field_39290;
    }
 
-   public class_6098 method_35151() {
+   public ItemStack method_35151() {
       return this.field_39297;
    }
 
@@ -83,7 +83,7 @@ public class class_7750 {
       IFormattableTextComponent var3 = ITextComponent$class_40.func_240641_a_(var0.get("title"));
       IFormattableTextComponent var4 = ITextComponent$class_40.func_240641_a_(var0.get("description"));
       if (var3 != null && var4 != null) {
-         class_6098 var5 = method_35152(class_6539.method_29783(var0, "icon"));
+         ItemStack var5 = method_35152(class_6539.method_29783(var0, "icon"));
          Identifier var6 = !var0.has("background") ? null : new Identifier(class_6539.method_29796(var0, "background"));
          class_3361 var7 = !var0.has("frame") ? class_3361.field_16556 : class_3361.method_15387(class_6539.method_29796(var0, "frame"));
          boolean var8 = class_6539.method_29772(var0, "show_toast", true);
@@ -95,7 +95,7 @@ public class class_7750 {
       }
    }
 
-   private static class_6098 method_35152(JsonObject var0) {
+   private static ItemStack method_35152(JsonObject var0) {
       if (!var0.has("item")) {
          throw new JsonSyntaxException("Unsupported icon type, currently only items are supported (add 'item' key)");
       } else {
@@ -103,7 +103,7 @@ public class class_7750 {
          if (var0.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
          } else {
-            class_6098 var4 = new class_6098(var3);
+            ItemStack var4 = new ItemStack(var3);
             if (var0.has("nbt")) {
                try {
                   class_5734 var5 = class_2392.method_10916(class_6539.method_29795(var0.get("nbt"), "nbt"));
@@ -148,7 +148,7 @@ public class class_7750 {
    public static class_7750 method_35165(class_8248 var0) {
       ITextComponent var3 = var0.method_37776();
       ITextComponent var4 = var0.method_37776();
-      class_6098 var5 = var0.method_37755();
+      ItemStack var5 = var0.method_37755();
       class_3361 var6 = var0.<class_3361>method_37787(class_3361.class);
       int var7 = var0.readInt();
       Object var8 = null;

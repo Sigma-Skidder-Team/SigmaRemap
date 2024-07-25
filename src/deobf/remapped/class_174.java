@@ -65,9 +65,9 @@ public class class_174 extends World {
       }
 
       class_7860.method_35568(class_7860.field_40005, this);
-      if (this.field_578.field_9647 != null && this.field_578.field_9647.getClass() == class_9153.class) {
-         this.field_578.field_9647 = new class_4717(this.field_578, this.field_576);
-         class_1322.method_6041((class_4717)this.field_578.field_9647);
+      if (this.field_578.playerController != null && this.field_578.playerController.getClass() == class_9153.class) {
+         this.field_578.playerController = new class_4717(this.field_578, this.field_576);
+         class_1322.method_6041((class_4717)this.field_578.playerController);
       }
    }
 
@@ -325,8 +325,8 @@ public class class_174 extends World {
       byte var6 = 32;
       Random var7 = new Random();
       boolean var8 = false;
-      if (this.field_578.field_9647.method_42158() == class_4666.field_22761) {
-         for (class_6098 var10 : this.field_578.field_9632.method_37294()) {
+      if (this.field_578.playerController.getCurrentGameType() == GameType.field_22761) {
+         for (ItemStack var10 : this.field_578.thePlayer.method_37294()) {
             if (var10.method_27960() == class_4783.field_23207.method_10803()) {
                var8 = true;
                break;
@@ -456,7 +456,7 @@ public class class_174 extends World {
    @Override
    public class_6544 method_29548(class_159 var1) {
       class_6544 var4 = super.method_29548(var1);
-      var4.method_29851("Server brand", () -> this.field_578.field_9632.method_27309());
+      var4.method_29851("Server brand", () -> this.field_578.thePlayer.method_27309());
       var4.method_29851("Server type", () -> this.field_578.method_8515() != null ? "Integrated singleplayer server" : "Non-integrated multiplayer server");
       return var4;
    }
@@ -474,7 +474,7 @@ public class class_174 extends World {
          var10 = class_7860.method_35585(var14, class_7860.field_39894);
       }
 
-      if (var1 == this.field_578.field_9632) {
+      if (var1 == this.field_578.thePlayer) {
          this.method_29527(var2, var4, var6, var8, var9, var10, var11, false);
       }
    }
@@ -492,7 +492,7 @@ public class class_174 extends World {
          var5 = class_7860.method_35585(var9, class_7860.field_39894);
       }
 
-      if (var1 == this.field_578.field_9632) {
+      if (var1 == this.field_578.thePlayer) {
          this.field_578.method_8590().method_16345(new class_569(var3, var4, var2));
       }
    }
@@ -555,10 +555,10 @@ public class class_174 extends World {
    }
 
    private boolean method_729() {
-      if (!(this.field_578.field_9647 instanceof class_4717)) {
+      if (!(this.field_578.playerController instanceof class_4717)) {
          return false;
       } else {
-         class_4717 var3 = (class_4717)this.field_578.field_9647;
+         class_4717 var3 = (class_4717)this.field_578.playerController;
          return var3.method_21813();
       }
    }
@@ -569,15 +569,15 @@ public class class_174 extends World {
 
    public void method_748(Entity var1) {
       class_8192.method_37536(var1, this);
-      if (class_3111.method_14326()) {
-         class_8421.method_38758(var1, class_3111.method_14387());
+      if (Config.method_14326()) {
+         class_8421.method_38758(var1, Config.method_14387());
       }
    }
 
    public void method_739(Entity var1) {
       class_8192.method_37534(var1, this);
-      if (class_3111.method_14326()) {
-         class_8421.method_38775(var1, class_3111.method_14387());
+      if (Config.method_14326()) {
+         class_8421.method_38775(var1, Config.method_14387());
       }
    }
 
@@ -786,7 +786,7 @@ public class class_174 extends World {
    @Override
    public float method_25265(Direction var1, boolean var2) {
       boolean var5 = this.method_738().method_34245();
-      boolean var6 = class_3111.method_14424();
+      boolean var6 = Config.method_14424();
       if (!var2) {
          return var5 ? 0.9F : 1.0F;
       } else {
@@ -797,14 +797,14 @@ public class class_174 extends World {
                return var5 ? 0.9F : 1.0F;
             case field_818:
             case field_800:
-               if (class_3111.method_14424()) {
+               if (Config.method_14424()) {
                   return class_6588.field_33844;
                }
 
                return 0.8F;
             case field_809:
             case field_804:
-               if (class_3111.method_14424()) {
+               if (Config.method_14424()) {
                   return class_6588.field_33689;
                }
 

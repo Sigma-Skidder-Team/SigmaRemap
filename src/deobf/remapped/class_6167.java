@@ -14,7 +14,7 @@ public class class_6167 {
 
    public static void method_28270() {
       method_28269();
-      if (class_3111.method_14414()) {
+      if (Config.method_14414()) {
          field_31554 = method_28274();
       }
    }
@@ -34,7 +34,7 @@ public class class_6167 {
 
             try {
                Identifier var11 = new Identifier(var9);
-               InputStream var12 = class_3111.method_14374(var11);
+               InputStream var12 = Config.method_14374(var11);
                if (var12 == null) {
                   if (++var10 > 10) {
                      break;
@@ -44,7 +44,7 @@ public class class_6167 {
                class_8407 var13 = new class_8407();
                var13.load(var12);
                var12.close();
-               class_3111.method_14277("CustomSky properties: " + var9);
+               Config.method_14277("CustomSky properties: " + var9);
                String var14 = var8 + ".png";
                class_2524 var15 = new class_2524(var13, var14);
                if (var15.method_11493(var9)) {
@@ -52,7 +52,7 @@ public class class_6167 {
                   Identifier var17 = new Identifier(var16);
                   class_8143 var18 = class_5525.method_25065(var17);
                   if (var18 == null) {
-                     class_3111.method_14280("CustomSky: Texture not found: " + var17);
+                     Config.method_14280("CustomSky: Texture not found: " + var17);
                   } else {
                      var15.field_12508 = var18.method_37055();
                      var7.add(var15);

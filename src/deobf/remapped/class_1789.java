@@ -62,7 +62,7 @@ public class class_1789 extends class_4232 {
    }
 
    public void method_7965() {
-      boolean var3 = class_3111.method_14424();
+      boolean var3 = Config.method_14424();
 
       for (class_7114 var5 : this.field_20540) {
          if (var5 instanceof class_5932) {
@@ -122,7 +122,7 @@ public class class_1789 extends class_4232 {
                      }
 
                      if (var14) {
-                        class_3111.method_14277("Opening via system class!");
+                        Config.method_14277("Opening via system class!");
                         Util.getOperatingSystem().method_37581("file://" + class_6588.field_33909.getAbsolutePath());
                      }
                      break;
@@ -132,8 +132,8 @@ public class class_1789 extends class_4232 {
                      this.field_943.method_8609(this.field_9150);
                      break;
                   case 203:
-                     class_708 var7 = new class_708(this, class_3111.method_14310());
-                     class_3111.method_14327().method_8609(var7);
+                     class_708 var7 = new class_708(this, Config.method_14310());
+                     Config.method_14327().method_8609(var7);
                   case 204:
                   case 205:
                   case 206:

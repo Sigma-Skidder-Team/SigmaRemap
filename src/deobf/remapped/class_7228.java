@@ -43,7 +43,7 @@ public class class_7228 extends class_3599 {
       }
    }
 
-   public boolean method_33088(class_6098 var1) {
+   public boolean method_33088(ItemStack var1) {
       return this.field_37100.test(var1);
    }
 

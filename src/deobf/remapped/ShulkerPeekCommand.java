@@ -10,7 +10,7 @@ public class ShulkerPeekCommand extends Command {
    @Override
    public void run(String var1, class_5273[] var2, class_860 var3) throws CommandException {
       if (var2.length == 0) {
-         class_6098 var6 = field_18219.field_9632.field_3853.method_32403();
+         ItemStack var6 = field_18219.thePlayer.inventory.method_32403();
          if (var6.method_27960() instanceof class_6201 && ((class_6201)var6.method_27960()).method_28392() instanceof class_4314) {
             method_30370(var6);
             var3.method_3731("Now peeking shulker");
@@ -22,13 +22,13 @@ public class ShulkerPeekCommand extends Command {
       }
    }
 
-   public static void method_30370(class_6098 var0) {
+   public static void method_30370(ItemStack var0) {
       class_5734 var3 = new class_5734();
       if (var0.method_27990() != null) {
          var3 = var0.method_27990().method_25944();
       }
 
-      class_2831 var4 = class_2831.<class_6098>method_12872(27, new class_6098(class_4897.field_25302));
+      class_2831 var4 = class_2831.<ItemStack>method_12872(27, new ItemStack(class_4897.field_25302));
       if (var3 != null && var3.method_25938("BlockEntityTag")) {
          class_5734 var5 = var3.method_25937("BlockEntityTag");
          method_30371(var5);
@@ -37,10 +37,10 @@ public class ShulkerPeekCommand extends Command {
          }
       }
 
-      class_4657 var6 = new class_4657(var4.<class_6098>toArray(new class_6098[0]));
+      class_4657 var6 = new class_4657(var4.<ItemStack>toArray(new ItemStack[0]));
       CommandManager.method_22657(
          () -> field_18219.method_8609(
-               new class_8097(new class_5104(-1, field_18219.field_9632.field_3853, var6), field_18219.field_9632.field_3853, var0.method_28008())
+               new class_8097(new class_5104(-1, field_18219.thePlayer.inventory, var6), field_18219.thePlayer.inventory, var0.method_28008())
             )
       );
    }

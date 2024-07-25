@@ -100,7 +100,7 @@ public class class_2716 extends class_1147 {
             return class_1296.field_7130;
          }
       } else {
-         class_6098 var4 = var0.method_41044();
+         ItemStack var4 = var0.method_41044();
          class_8230 var5 = var4.method_27960().method_11226();
          if (var5 != class_8230.field_42278) {
             if (var5 != class_8230.field_42270 && var5 != class_8230.field_42275) {

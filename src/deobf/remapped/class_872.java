@@ -73,10 +73,10 @@ public class class_872 extends class_6843 {
          var1 = class_8251.method_37822(var1, "]");
          var1 = var1.trim();
          if (var1.length() > 0) {
-            String[] var5 = class_3111.method_14302(var1, " ");
+            String[] var5 = Config.method_14302(var1, " ");
             if (var5.length > 0) {
                if (!Arrays.<String>asList(var5).contains(var0)) {
-                  var5 = (String[])class_3111.method_14442(var5, var0, 0);
+                  var5 = (String[]) Config.method_14442(var5, var0, 0);
                }
 
                return var5;

@@ -13,7 +13,7 @@ public class class_1967 extends class_741 {
       Validate.isInstanceOf(class_764.class, var2);
    }
 
-   public static void method_9064(class_6098 var0, List<ITextComponent> var1) {
+   public static void method_9064(ItemStack var0, List<ITextComponent> var1) {
       class_5734 var4 = var0.method_28021("BlockEntityTag");
       if (var4 != null && var4.method_25938("Patterns")) {
          class_3416 var5 = var4.method_25927("Patterns", 10);
@@ -36,7 +36,7 @@ public class class_1967 extends class_741 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       method_9064(var1, var3);
    }
 }

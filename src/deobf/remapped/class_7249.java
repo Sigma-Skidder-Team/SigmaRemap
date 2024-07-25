@@ -37,28 +37,28 @@ public class class_7249 extends class_4088 {
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_18874(class_704 var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
-         class_6098 var7 = var6.method_35898();
+         ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
          if (var2 >= 9) {
             if (!this.method_18892(var7, 0, 9, false)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
          } else if (!this.method_18892(var7, 9, 45, true)) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
          if (!var7.method_28022()) {
             var6.method_35887();
          } else {
-            var6.method_35896(class_6098.field_31203);
+            var6.method_35896(ItemStack.EMPTY);
          }
 
          if (var7.method_27997() == var5.method_27997()) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
          var6.method_35892(var1, var7);

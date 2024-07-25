@@ -39,7 +39,7 @@ public class class_795 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       class_8406 var5 = this.field_4274.field_48020.apply(var2);
       if (var5 != null) {
          this.field_4270.forEach(var2x -> var2x.method_41267(var1::method_27994, var5));

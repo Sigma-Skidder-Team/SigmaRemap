@@ -23,7 +23,7 @@ public class class_4857 extends class_2733 {
                return null;
             } else {
                String var8 = var2.substring(var7.length());
-               int var9 = class_3111.method_14361(var8, -1);
+               int var9 = Config.method_14361(var8, -1);
                return class_4992.method_22956(var6, var9);
             }
          } else {

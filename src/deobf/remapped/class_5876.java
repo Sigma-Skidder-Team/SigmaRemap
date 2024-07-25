@@ -4,7 +4,7 @@ public class class_5876 {
    private static String[] field_29832;
 
    public static boolean method_26760(class_704 var0) {
-      return method_26762(MinecraftClient.getInstance().field_9632) == method_26762(var0);
+      return method_26762(MinecraftClient.getInstance().thePlayer) == method_26762(var0);
    }
 
    public static int method_26762(class_704 var0) {

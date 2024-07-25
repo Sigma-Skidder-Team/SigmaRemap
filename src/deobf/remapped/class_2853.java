@@ -9,7 +9,7 @@ public class class_2853 extends class_8497 {
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      class_6098 var9 = var4.method_26617(var5);
+      ItemStack var9 = var4.method_26617(var5);
       if (var9.method_27960() != class_4897.field_24853) {
          return super.method_10777(var1, var2, var3, var4, var5, var6);
       } else {
@@ -23,7 +23,7 @@ public class class_2853 extends class_8497 {
                (double)var3.method_12173() + 0.5 + (double)var11.method_1041() * 0.65,
                (double)var3.method_12165() + 0.1,
                (double)var3.method_12185() + 0.5 + (double)var11.method_1034() * 0.65,
-               new class_6098(class_4897.field_24480, 4)
+               new ItemStack(class_4897.field_24480, 4)
             );
             var12.method_37214(
                0.05 * (double)var11.method_1041() + var2.field_33033.nextDouble() * 0.02,

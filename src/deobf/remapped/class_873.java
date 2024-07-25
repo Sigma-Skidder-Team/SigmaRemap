@@ -9,7 +9,7 @@ public class class_873 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return false;
    }
 
@@ -19,7 +19,7 @@ public class class_873 extends class_7934 {
    }
 
    @Override
-   public class_6098 method_35892(class_704 var1, class_6098 var2) {
+   public ItemStack method_35892(class_704 var1, ItemStack var2) {
       return this.field_4515.method_13209(var1, var2);
    }
 }

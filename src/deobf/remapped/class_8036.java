@@ -11,13 +11,13 @@ public class class_8036 extends class_2451 implements class_1538 {
       super(var1);
    }
 
-   public static boolean method_36487(class_6098 var0) {
+   public static boolean method_36487(ItemStack var0) {
       class_5734 var3 = var0.method_27990();
       return var3 != null && (var3.method_25938("LodestoneDimension") || var3.method_25938("LodestonePos"));
    }
 
    @Override
-   public boolean method_11252(class_6098 var1) {
+   public boolean method_11252(ItemStack var1) {
       return method_36487(var1) || super.method_11252(var1);
    }
 
@@ -26,7 +26,7 @@ public class class_8036 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public void method_11214(class_6098 var1, World var2, Entity var3, int var4, boolean var5) {
+   public void method_11214(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.field_33055 && method_36487(var1)) {
          class_5734 var8 = var1.method_27994();
          if (var8.method_25938("LodestoneTracked") && !var8.method_25933("LodestoneTracked")) {
@@ -52,10 +52,10 @@ public class class_8036 extends class_2451 implements class_1538 {
       } else {
          var5.method_43359((class_704)null, var4, class_463.field_2193, class_562.field_3335, 1.0F, 1.0F);
          class_704 var6 = var1.method_21868();
-         class_6098 var7 = var1.method_21867();
+         ItemStack var7 = var1.method_21867();
          boolean var8 = !var6.field_3876.field_4944 && var7.method_27997() == 1;
          if (!var8) {
-            class_6098 var9 = new class_6098(class_4897.field_24830, 1);
+            ItemStack var9 = new ItemStack(class_4897.field_24830, 1);
             class_5734 var10 = !var7.method_28002() ? new class_5734() : var7.method_27990().method_25944();
             var9.method_27965(var10);
             if (!var6.field_3876.field_4944) {
@@ -63,7 +63,7 @@ public class class_8036 extends class_2451 implements class_1538 {
             }
 
             this.method_36486(var5.method_29545(), var4, var10);
-            if (!var6.field_3853.method_32414(var9)) {
+            if (!var6.inventory.method_32414(var9)) {
                var6.method_3153(var9, false);
             }
          } else {
@@ -84,7 +84,7 @@ public class class_8036 extends class_2451 implements class_1538 {
    }
 
    @Override
-   public String method_11217(class_6098 var1) {
+   public String method_11217(ItemStack var1) {
       return !method_36487(var1) ? super.method_11217(var1) : "item.minecraft.lodestone_compass";
    }
 }

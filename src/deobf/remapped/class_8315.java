@@ -10,14 +10,14 @@ public class class_8315 extends class_5348 {
       super("line_width", () -> {
          if (!Objects.equals(var1, OptionalDouble.of(1.0))) {
             if (!var1.isPresent()) {
-               class_3542.method_16484(Math.max(2.5F, (float) MinecraftClient.getInstance().method_8552().method_43178() / 1920.0F * 2.5F));
+               RenderSystem.method_16484(Math.max(2.5F, (float) MinecraftClient.getInstance().getMainWindow().method_43178() / 1920.0F * 2.5F));
             } else {
-               class_3542.method_16484((float)var1.getAsDouble());
+               RenderSystem.method_16484((float)var1.getAsDouble());
             }
          }
       }, () -> {
          if (!Objects.equals(var1, OptionalDouble.of(1.0))) {
-            class_3542.method_16484(1.0F);
+            RenderSystem.method_16484(1.0F);
          }
       });
       this.field_42576 = var1;

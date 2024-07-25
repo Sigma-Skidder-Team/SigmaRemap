@@ -29,7 +29,7 @@ public class class_993 extends class_1859 {
       int var11 = var5 - var10 - 10;
       int var12 = var6 - var9 - 10;
       this.method_32148(this.field_5052 = new class_6409(this, "zoom", var11, var12, var10, var9));
-      this.field_5050 = MinecraftClient.getInstance().field_9601.method_22556(MinecraftClient.getInstance().field_9632.method_37075()).method_27352();
+      this.field_5050 = MinecraftClient.getInstance().field_9601.method_22556(MinecraftClient.getInstance().thePlayer.method_37075()).method_27352();
       this.method_32105(false);
    }
 
@@ -117,9 +117,9 @@ public class class_993 extends class_1859 {
       float var10 = (float)var6 / ((float)this.field_5048 * 2.0F);
       double var11 = ((double)this.field_5057 - Math.floor((double)this.field_5057)) * (double)var10;
       double var13 = ((double)this.field_5061 - Math.floor((double)this.field_5061)) * (double)var10;
-      TextureManager var10000 = var4.method_8577();
-      var4.method_8577();
-      var10000.method_35674(TextureManager.field_40364);
+      TextureManager var10000 = var4.getTextureManager();
+      var4.getTextureManager();
+      var10000.bindTexture(TextureManager.field_40364);
       class_73.method_150(this.field_36270, this.field_36261, this.field_36270 + this.field_36278, this.field_36261 + this.field_36257, true);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 + this.field_36257 / 2), 0.0F);

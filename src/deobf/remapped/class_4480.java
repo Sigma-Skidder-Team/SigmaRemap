@@ -17,17 +17,17 @@ public class class_4480 {
    }
 
    public class_5155 method_20800(class_8525 var1) {
-      return this.method_20799(new class_6098(var1));
+      return this.method_20799(new ItemStack(var1));
    }
 
-   public class_5155 method_20799(class_6098 var1) {
+   public class_5155 method_20799(ItemStack var1) {
       class_7373 var4 = this.method_20806(var1);
       return var4 == this.field_21845.method_33942() && var1.method_27960() instanceof class_6201
          ? this.field_21845.method_33946().method_43938(((class_6201)var1.method_27960()).method_28392().method_29260())
          : var4.method_33587();
    }
 
-   public class_7373 method_20806(class_6098 var1) {
+   public class_7373 method_20806(ItemStack var1) {
       class_7373 var4 = this.method_20805(var1.method_27960());
       return var4 != null ? var4 : this.field_21845.method_33942();
    }

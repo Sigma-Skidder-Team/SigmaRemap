@@ -16,7 +16,7 @@ public class class_8767 extends class_4232 {
    @Override
    public void method_1163() {
       this.field_20540.clear();
-      class_5819 var3 = new class_5819(this.field_943.method_8552());
+      class_5819 var3 = new class_5819(this.field_943.getMainWindow());
       class_1013[] var4 = new class_1013[]{
          class_1013.field_5312,
          class_1013.field_5196,
@@ -56,7 +56,7 @@ public class class_8767 extends class_4232 {
          if (var4.field_36675) {
             if (var4.field_30159 == 200) {
                this.field_943.gameOptions.method_40873();
-               this.field_943.method_8552().method_43160();
+               this.field_943.getMainWindow().method_43160();
                this.field_943.method_8609(this.field_44887);
             }
 
@@ -73,7 +73,7 @@ public class class_8767 extends class_4232 {
    @Override
    public void method_1162() {
       this.field_943.gameOptions.method_40873();
-      this.field_943.method_8552().method_43160();
+      this.field_943.getMainWindow().method_43160();
       super.method_1162();
    }
 

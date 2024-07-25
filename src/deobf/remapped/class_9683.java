@@ -18,7 +18,7 @@ public class class_9683 extends class_4569 {
       return new class_9683(var0, var1, var2, class_7781.field_39439);
    }
 
-   public boolean method_44773(class_6098 var1, int var2) {
+   public boolean method_44773(ItemStack var1, int var2) {
       if (this.field_49291.method_24266(var1)) {
          return this.field_49293.method_35307(var1.method_27957() - var2) ? this.field_49292.method_35307(var1.method_28026() - var2) : false;
       } else {

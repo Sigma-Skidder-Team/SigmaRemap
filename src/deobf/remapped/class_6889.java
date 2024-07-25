@@ -21,7 +21,7 @@ public class class_6889 extends class_3429 {
    }
 
    private class_5079 method_31573() {
-      class_6098 var3 = this.method_15853();
+      ItemStack var3 = this.method_15853();
       return (class_5079)(!var3.method_28022() ? new class_8661(class_3090.field_15351, var3) : class_3090.field_15370);
    }
 

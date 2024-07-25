@@ -44,7 +44,7 @@ public class class_1001 {
                if (var8 != null) {
                   String var9 = !var2 ? var8.method_31403() : var8.method_31382();
                   String var10 = var0.method_38983(var7);
-                  if (!class_3111.equals(var9, var10)) {
+                  if (!Config.equals(var9, var10)) {
                      return false;
                   }
                }

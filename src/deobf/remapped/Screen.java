@@ -28,7 +28,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
    public final ITextComponent field_947;
    public final List<class_5888> field_942 = Lists.newArrayList();
    public MinecraftClient field_943;
-   public class_8765 field_945;
+   public ItemRenderer field_945;
    public int field_941;
    public int field_940;
    public final List<class_7114> field_950 = Lists.newArrayList();
@@ -90,12 +90,12 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
       return (T)var1;
    }
 
-   public void method_1177(class_7966 var1, class_6098 var2, int var3, int var4) {
+   public void method_1177(class_7966 var1, ItemStack var2, int var3, int var4) {
       this.method_1160(var1, this.method_1179(var2), var3, var4);
    }
 
-   public List<ITextComponent> method_1179(class_6098 var1) {
-      return var1.method_28012(this.field_943.field_9632, !this.field_943.gameOptions.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
+   public List<ITextComponent> method_1179(ItemStack var1) {
+      return var1.method_28012(this.field_943.thePlayer, !this.field_943.gameOptions.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
    }
 
    public void method_1176(class_7966 var1, ITextComponent var2, int var3, int var4) {
@@ -147,16 +147,16 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
          method_9773(var17, var16, var21 + var7 + 2, var22 - 3 + 1, var21 + var7 + 3, var22 + var23 + 3 - 1, 400, 1347420415, 1344798847);
          method_9773(var17, var16, var21 - 3, var22 - 3, var21 + var7 + 3, var22 - 3 + 1, 400, 1347420415, 1347420415);
          method_9773(var17, var16, var21 - 3, var22 + var23 + 2, var21 + var7 + 3, var22 + var23 + 3, 400, 1344798847, 1344798847);
-         class_3542.method_16428();
-         class_3542.method_16354();
-         class_3542.method_16488();
-         class_3542.method_16437();
-         class_3542.method_16486(7425);
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16354();
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
+         RenderSystem.method_16486(7425);
          var16.method_44487();
          class_138.method_554(var16);
-         class_3542.method_16486(7424);
-         class_3542.method_16448();
-         class_3542.method_16432();
+         RenderSystem.method_16486(7424);
+         RenderSystem.method_16448();
+         RenderSystem.method_16432();
          class_3758 var18 = class_2565.method_11648(class_8042.method_36499().method_36501());
          var1.method_36065(0.0, 0.0, 400.0);
 
@@ -265,7 +265,7 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
          this.field_943.field_9614.method_13991().method_18697(var1);
       }
 
-      this.field_943.field_9632.method_27307(var1);
+      this.field_943.thePlayer.method_27307(var1);
    }
 
    public void method_1164(MinecraftClient var1, int var2, int var3) {
@@ -310,8 +310,8 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
    public void method_1170(int var1) {
       class_8042 var4 = class_8042.method_36499();
       class_9633 var5 = var4.method_36501();
-      this.field_943.method_8577().method_35674(field_10505);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10505);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var6 = 32.0F;
       var5.method_44471(7, class_7985.field_40905);
       var5.method_35761(0.0, (double)this.field_940, 0.0)
@@ -346,20 +346,20 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
 
    public static boolean method_1185() {
       return !MinecraftClient.IS_SYSTEM_MAC
-         ? class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 341)
-            || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 345)
-         : class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 343)
-            || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 347);
+         ? class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 341)
+            || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 345)
+         : class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 343)
+            || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 347);
    }
 
    public static boolean method_1190() {
-      return class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 340)
-         || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 344);
+      return class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 340)
+         || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 344);
    }
 
    public static boolean method_1169() {
-      return class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 342)
-         || class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 346);
+      return class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 342)
+         || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 346);
    }
 
    public static boolean method_1166(int var0) {

@@ -89,10 +89,10 @@ public class class_9355 extends class_2811 implements class_3449 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_25037) {
          return super.method_26857(var1, var2);
-      } else if (!this.method_26480(Effects.field_19737)) {
+      } else if (!this.isPotionActive(Effects.field_19737)) {
          return class_6910.field_35518;
       } else {
          if (!var1.field_3876.field_4944) {
@@ -153,7 +153,7 @@ public class class_9355 extends class_2811 implements class_3449 {
       class_7666 var4 = this.<class_7666>method_26898(class_6629.field_34276, false);
 
       for (class_6943 var8 : class_6943.values()) {
-         class_6098 var9 = this.method_26520(var8);
+         ItemStack var9 = this.method_26520(var8);
          if (!var9.method_28022()) {
             if (!class_2931.method_13421(var9)) {
                double var10 = (double)this.method_26913(var8);
@@ -185,7 +185,7 @@ public class class_9355 extends class_2811 implements class_3449 {
          }
       }
 
-      var4.method_26558(new class_2250(Effects.field_19732, 200, 0));
+      var4.method_26558(new class_2250(Effects.NAUSEA, 200, 0));
       if (!this.method_37378()) {
          var1.method_43365((class_704)null, 1027, this.method_37075(), 0);
       }
@@ -244,8 +244,8 @@ public class class_9355 extends class_2811 implements class_3449 {
    }
 
    @Override
-   public class_6098 method_12796() {
-      return class_6098.field_31203;
+   public ItemStack method_12796() {
+      return ItemStack.EMPTY;
    }
 
    public void method_43206(class_5734 var1) {

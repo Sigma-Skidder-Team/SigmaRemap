@@ -14,10 +14,10 @@ public class class_3401 extends class_7114 {
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       MinecraftClient var7 = MinecraftClient.getInstance();
-      this.method_15715(var1, var7.method_8577());
+      this.method_15715(var1, var7.getTextureManager());
       class_531.method_2587(this.field_16749, this.field_16747.field_945, this.field_36670 + 5, this.field_36674 + 5);
       if (this.field_16748) {
-         this.method_15714(var1, var7.method_8577());
+         this.method_15714(var1, var7.getTextureManager());
       }
    }
 
@@ -32,7 +32,7 @@ public class class_3401 extends class_7114 {
    }
 
    private void method_15715(class_7966 var1, TextureManager var2) {
-      var2.method_35674(class_5603.method_25422());
+      var2.bindTexture(class_5603.method_25422());
       var1.method_36063();
       var1.method_36065((double)this.field_36670, (double)this.field_36674, 0.0);
       method_9778(var1, 0, 0, 0.0F, 75.0F, 25, 25, 128, 128);
@@ -40,7 +40,7 @@ public class class_3401 extends class_7114 {
    }
 
    private void method_15714(class_7966 var1, TextureManager var2) {
-      var2.method_35674(class_5603.method_25422());
+      var2.bindTexture(class_5603.method_25422());
       var1.method_36063();
       var1.method_36065((double)this.field_36670, (double)this.field_36674, 0.0);
       method_9778(var1, 0, 0, 25.0F, 75.0F, 25, 25, 128, 128);

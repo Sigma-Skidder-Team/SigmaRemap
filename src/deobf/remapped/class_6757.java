@@ -27,7 +27,7 @@ public class class_6757 extends class_2269 {
       this.field_34866 = var3;
       this.field_34865 = MinecraftClient.getInstance();
       this.field_34868 = new Identifier("servers/" + Hashing.sha1().hashUnencodedChars(var3.field_12675) + "/icon");
-      this.field_34867 = (class_7884)this.field_34865.method_8577().method_35679(this.field_34868);
+      this.field_34867 = (class_7884)this.field_34865.getTextureManager().method_35679(this.field_34868);
    }
 
    @Override
@@ -112,9 +112,9 @@ public class class_6757 extends class_2269 {
          var20 = this.field_34866.field_12664;
       }
 
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_34865.method_8577().method_35674(class_2089.field_10507);
-      class_2089.method_9778(var1, var4 + var5 - 15, var3, (float)(var17 * 10), (float)(176 + var18 * 8), 10, 8, 256, 256);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_34865.getTextureManager().bindTexture(AbstractGui.GUI_ICONS_LOCATION);
+      AbstractGui.method_9778(var1, var4 + var5 - 15, var3, (float)(var17 * 10), (float)(176 + var18 * 8), 10, 8, 256, 256);
       String var21 = this.field_34866.method_11622();
       if (!Objects.equals(var21, this.field_34869)) {
          if (!this.method_30969(var21)) {
@@ -140,32 +140,32 @@ public class class_6757 extends class_2269 {
       }
 
       if (this.field_34865.gameOptions.field_45570 || var9) {
-         this.field_34865.method_8577().method_35674(class_4116.method_19126());
-         class_2089.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_34865.getTextureManager().bindTexture(class_4116.method_19126());
+         AbstractGui.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var24 = var7 - var4;
          int var25 = var8 - var3;
          if (this.method_30967()) {
             if (var24 < 32 && var24 > 16) {
-               class_2089.method_9778(var1, var4, var3, 0.0F, 32.0F, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 0.0F, 32.0F, 32, 32, 256, 256);
             } else {
-               class_2089.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 256, 256);
             }
          }
 
          if (var2 > 0) {
             if (var24 < 16 && var25 < 16) {
-               class_2089.method_9778(var1, var4, var3, 96.0F, 32.0F, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 96.0F, 32.0F, 32, 32, 256, 256);
             } else {
-               class_2089.method_9778(var1, var4, var3, 96.0F, 0.0F, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 96.0F, 0.0F, 32, 32, 256, 256);
             }
          }
 
          if (var2 < this.field_34870.method_19242().method_14671() - 1) {
             if (var24 < 16 && var25 > 16) {
-               class_2089.method_9778(var1, var4, var3, 64.0F, 32.0F, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 64.0F, 32.0F, 32, 32, 256, 256);
             } else {
-               class_2089.method_9778(var1, var4, var3, 64.0F, 0.0F, 32, 32, 256, 256);
+               AbstractGui.method_9778(var1, var4, var3, 64.0F, 0.0F, 32, 32, 256, 256);
             }
          }
       }
@@ -176,10 +176,10 @@ public class class_6757 extends class_2269 {
    }
 
    public void method_30968(class_7966 var1, int var2, int var3, Identifier var4) {
-      this.field_34865.method_8577().method_35674(var4);
-      class_3542.method_16488();
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 32, 32, 32, 32);
-      class_3542.method_16448();
+      this.field_34865.getTextureManager().bindTexture(var4);
+      RenderSystem.enableBlend();
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 32, 32, 32, 32);
+      RenderSystem.method_16448();
    }
 
    private boolean method_30967() {
@@ -188,7 +188,7 @@ public class class_6757 extends class_2269 {
 
    private boolean method_30969(String var1) {
       if (var1 == null) {
-         this.field_34865.method_8577().method_35678(this.field_34868);
+         this.field_34865.getTextureManager().method_35678(this.field_34868);
          if (this.field_34867 != null && this.field_34867.method_35651() != null) {
             this.field_34867.method_35651().close();
          }
@@ -206,7 +206,7 @@ public class class_6757 extends class_2269 {
                this.field_34867.method_35650();
             }
 
-            this.field_34865.method_8577().method_35682(this.field_34868, this.field_34867);
+            this.field_34865.getTextureManager().method_35682(this.field_34868, this.field_34867);
          } catch (Throwable var5) {
             class_4116.method_19120().error("Invalid icon for server {} ({})", this.field_34866.field_12670, this.field_34866.field_12675, var5);
             return false;

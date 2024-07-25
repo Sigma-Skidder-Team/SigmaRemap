@@ -42,7 +42,7 @@ public class class_6875 extends class_2733 {
             class_7860.method_35561(var6, class_7860.field_39871, var1);
             return (class_8599)var6;
          } else {
-            class_3111.method_14317("Field not found: TileEntitySignRenderer.model");
+            Config.method_14317("Field not found: TileEntitySignRenderer.model");
             return null;
          }
       } else {

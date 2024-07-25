@@ -182,7 +182,7 @@ public class class_7038 implements class_6482 {
    }
 
    public final void method_32182(float var1) {
-      class_1920.method_8741();
+      GlStateManager.enableAlphaTest();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslatef((float)this.method_32132(), (float)this.method_32173(), 0.0F);
 

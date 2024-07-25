@@ -198,7 +198,7 @@ public class class_765 extends class_4232 {
 
    private void method_3450() {
       this.field_943.method_32777();
-      Window var3 = this.field_943.method_8552();
+      Window var3 = this.field_943.getMainWindow();
       int var4 = class_2148.method_10029(this.field_4135);
       int var5 = class_2148.method_10030(this.field_4135);
       int var6 = this.field_4135.field_36670 + (var4 - var5);
@@ -244,18 +244,18 @@ public class class_765 extends class_4232 {
          }
 
          if (var1.field_30159 == 231) {
-            if (class_3111.method_14248() || class_3111.method_14252()) {
-               class_3111.method_14428(class_3458.method_15912("of.message.shaders.aa1"), class_3458.method_15912("of.message.shaders.aa2"));
+            if (Config.method_14248() || Config.method_14252()) {
+               Config.method_14428(class_3458.method_15912("of.message.shaders.aa1"), class_3458.method_15912("of.message.shaders.aa2"));
                return;
             }
 
-            if (class_3111.method_14423()) {
-               class_3111.method_14428(class_3458.method_15912("of.message.shaders.af1"), class_3458.method_15912("of.message.shaders.af2"));
+            if (Config.method_14423()) {
+               Config.method_14428(class_3458.method_15912("of.message.shaders.af1"), class_3458.method_15912("of.message.shaders.af2"));
                return;
             }
 
-            if (class_3111.method_14355()) {
-               class_3111.method_14428(class_3458.method_15912("of.message.shaders.gf1"), class_3458.method_15912("of.message.shaders.gf2"));
+            if (Config.method_14355()) {
+               Config.method_14428(class_3458.method_15912("of.message.shaders.gf1"), class_3458.method_15912("of.message.shaders.gf2"));
                return;
             }
 
@@ -276,7 +276,7 @@ public class class_765 extends class_4232 {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
       method_9788(var1, this.field_943.textRenderer, this.field_947, this.field_941 / 2, 15, 16777215);
-      String var7 = class_3111.method_14314();
+      String var7 = Config.method_14314();
       String var8 = "HD_U";
       if (var8.equals("HD")) {
          var7 = "OptiFine HD G5";

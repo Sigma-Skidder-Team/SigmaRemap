@@ -63,7 +63,7 @@ public class class_6670 extends class_6353<class_9716, class_3169<class_9716>> {
    }
 
    private static class_5455 method_30605(class_9716 var0, class_2584 var1) {
-      class_6098 var4 = var0.method_26617(var1);
+      ItemStack var4 = var0.method_26617(var1);
       if (var4.method_28022()) {
          return class_5455.field_27806;
       } else {

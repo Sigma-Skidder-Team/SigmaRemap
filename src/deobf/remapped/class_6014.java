@@ -27,7 +27,7 @@ public class class_6014 {
          var3.connect();
          if (var3.getResponseCode() / 100 != 2) {
             if (var3.getErrorStream() != null) {
-               class_3111.method_14250(var3.getErrorStream());
+               Config.method_14250(var3.getErrorStream());
             }
 
             throw new IOException("HTTP response: " + var3.getResponseCode());
@@ -106,14 +106,14 @@ public class class_6014 {
    public static synchronized String method_27454() {
       if (field_30636 == null) {
          try {
-            boolean var2 = class_3111.method_14257(System.getProperty("player.models.local"), false);
+            boolean var2 = Config.method_14257(System.getProperty("player.models.local"), false);
             if (var2) {
                File var3 = MinecraftClient.getInstance().runDirectory;
                File var4 = new File(var3, "playermodels");
                field_30636 = var4.toURI().toURL().toExternalForm();
             }
          } catch (Exception var5) {
-            class_3111.method_14317("" + var5.getClass().getName() + ": " + var5.getMessage());
+            Config.method_14317("" + var5.getClass().getName() + ": " + var5.getMessage());
          }
 
          if (field_30636 == null) {

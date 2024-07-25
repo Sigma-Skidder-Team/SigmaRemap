@@ -17,11 +17,11 @@ public class class_7524 extends class_7157 {
       ArrayList var5 = Lists.newArrayList();
 
       for (int var6 = 0; var6 < var1.method_31505(); var6++) {
-         class_6098 var7 = var1.method_31498(var6);
+         ItemStack var7 = var1.method_31498(var6);
          if (!var7.method_28022()) {
             var5.add(var7);
             if (var5.size() > 1) {
-               class_6098 var8 = (class_6098)var5.get(0);
+               ItemStack var8 = (ItemStack)var5.get(0);
                if (var7.method_27960() != var8.method_27960() || var8.method_27997() != 1 || var7.method_27997() != 1 || !var8.method_27960().method_11210()) {
                   return false;
                }
@@ -32,25 +32,25 @@ public class class_7524 extends class_7157 {
       return var5.size() == 2;
    }
 
-   public class_6098 method_34279(class_6946 var1) {
+   public ItemStack method_34279(class_6946 var1) {
       ArrayList var4 = Lists.newArrayList();
 
       for (int var5 = 0; var5 < var1.method_31505(); var5++) {
-         class_6098 var6 = var1.method_31498(var5);
+         ItemStack var6 = var1.method_31498(var5);
          if (!var6.method_28022()) {
             var4.add(var6);
             if (var4.size() > 1) {
-               class_6098 var7 = (class_6098)var4.get(0);
+               ItemStack var7 = (ItemStack)var4.get(0);
                if (var6.method_27960() != var7.method_27960() || var7.method_27997() != 1 || var6.method_27997() != 1 || !var7.method_27960().method_11210()) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             }
          }
       }
 
       if (var4.size() == 2) {
-         class_6098 var16 = (class_6098)var4.get(0);
-         class_6098 var17 = (class_6098)var4.get(1);
+         ItemStack var16 = (ItemStack)var4.get(0);
+         ItemStack var17 = (ItemStack)var4.get(1);
          if (var16.method_27960() == var17.method_27960() && var16.method_27997() == 1 && var17.method_27997() == 1 && var16.method_27960().method_11210()) {
             class_2451 var18 = var16.method_27960();
             int var8 = var18.method_11234() - var16.method_28026();
@@ -61,7 +61,7 @@ public class class_7524 extends class_7157 {
                var11 = 0;
             }
 
-            class_6098 var12 = new class_6098(var16.method_27960());
+            ItemStack var12 = new ItemStack(var16.method_27960());
             var12.method_27999(var11);
             HashMap var13 = Maps.newHashMap();
             Map var14 = class_2931.method_13402(var16);
@@ -80,7 +80,7 @@ public class class_7524 extends class_7157 {
          }
       }
 
-      return class_6098.field_31203;
+      return ItemStack.EMPTY;
    }
 
    @Override

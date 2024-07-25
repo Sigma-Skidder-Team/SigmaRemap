@@ -24,8 +24,8 @@ public class class_7841 extends class_6749 {
    }
 
    @Override
-   public class_6098 method_30925() {
-      return new class_6098(class_4897.field_25049);
+   public ItemStack method_30925() {
+      return new ItemStack(class_4897.field_25049);
    }
 
    @Override

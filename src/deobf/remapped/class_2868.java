@@ -88,7 +88,7 @@ public class class_2868 {
    }
 
    public void method_13179(long var1) {
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          int var5 = this.method_13168();
          ImmutableList var6 = this.method_13174();
 
@@ -96,12 +96,12 @@ public class class_2868 {
             ((class_3884)var6.get(var7)).method_17956(var1 + (long)this.field_14052.getInt(var7), var5);
          }
       } else {
-         class_3542.method_16474(() -> this.method_13179(var1));
+         RenderSystem.method_16474(() -> this.method_13179(var1));
       }
    }
 
    public void method_13173() {
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          UnmodifiableIterator var3 = this.method_13174().iterator();
 
          while (var3.hasNext()) {
@@ -109,7 +109,7 @@ public class class_2868 {
             var4.method_17957();
          }
       } else {
-         class_3542.method_16474(this::method_13173);
+         RenderSystem.method_16474(this::method_13173);
       }
    }
 

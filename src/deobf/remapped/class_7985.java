@@ -45,7 +45,7 @@ public class class_7985 {
    );
 
    public static void method_36237() {
-      if (!class_3111.method_14424()) {
+      if (!Config.method_14424()) {
          field_40918 = field_40898;
       } else {
          field_40918 = field_40917;

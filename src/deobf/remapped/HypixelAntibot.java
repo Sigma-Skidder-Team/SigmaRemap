@@ -16,9 +16,9 @@ public class HypixelAntibot extends class_5676 {
          String var5 = var1.method_45508() != null ? var1.method_45508().getString() : null;
          String var6 = var1.method_45509().getString();
          if (var1.method_37109() && !var4.startsWith("§c") && var4.endsWith("§r") && (var5 == null || var5.equals(var6))) {
-            double var7 = Math.abs(var1.method_37302() - field_28769.field_9632.method_37302());
-            double var9 = Math.abs(var1.method_37309() - field_28769.field_9632.method_37309());
-            double var11 = Math.abs(var1.method_37156() - field_28769.field_9632.method_37156());
+            double var7 = Math.abs(var1.method_37302() - field_28769.thePlayer.method_37302());
+            double var9 = Math.abs(var1.method_37309() - field_28769.thePlayer.method_37309());
+            double var11 = Math.abs(var1.method_37156() - field_28769.thePlayer.method_37156());
             double var13 = Math.sqrt(var7 * var7 + var11 * var11);
             if (var9 < 13.0 && var9 > 10.0 && var13 < 3.0) {
                return true;

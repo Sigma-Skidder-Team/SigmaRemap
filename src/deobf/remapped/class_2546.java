@@ -30,7 +30,7 @@ public class class_2546 extends class_9331<class_7333> {
    private final Map<Identifier, class_2307<class_2451>> field_12616 = Maps.newTreeMap();
 
    public class_2546(class_704 var1) {
-      super(new class_7333(var1), var1.field_3853, StringTextComponent.EMPTY);
+      super(new class_7333(var1), var1.inventory, StringTextComponent.EMPTY);
       var1.field_3874 = this.field_10956;
       this.field_951 = true;
       this.field_10973 = 136;
@@ -39,12 +39,12 @@ public class class_2546 extends class_9331<class_7333> {
 
    @Override
    public void method_5312() {
-      if (this.field_943.field_9647.method_42140()) {
+      if (this.field_943.playerController.method_42140()) {
          if (this.field_12608 != null) {
             this.field_12608.method_8279();
          }
       } else {
-         this.field_943.method_8609(new class_3431(this.field_943.field_9632));
+         this.field_943.method_8609(new class_3431(this.field_943.thePlayer));
       }
    }
 
@@ -58,40 +58,40 @@ public class class_2546 extends class_9331<class_7333> {
       boolean var7 = var4 == class_6269.field_32019;
       var4 = var2 == -999 && var4 == class_6269.field_32027 ? class_6269.field_32024 : var4;
       if (var1 == null && field_12605 != class_8230.field_42263.method_37688() && var4 != class_6269.field_32022) {
-         class_7051 var16 = this.field_943.field_9632.field_3853;
+         class_7051 var16 = this.field_943.thePlayer.inventory;
          if (!var16.method_32424().method_28022() && this.field_12604) {
             if (var3 == 0) {
-               this.field_943.field_9632.method_3153(var16.method_32424(), true);
-               this.field_943.field_9647.method_42157(var16.method_32424());
-               var16.method_32408(class_6098.field_31203);
+               this.field_943.thePlayer.method_3153(var16.method_32424(), true);
+               this.field_943.playerController.method_42157(var16.method_32424());
+               var16.method_32408(ItemStack.EMPTY);
             }
 
             if (var3 == 1) {
-               class_6098 var21 = var16.method_32424().method_27953(1);
-               this.field_943.field_9632.method_3153(var21, true);
-               this.field_943.field_9647.method_42157(var21);
+               ItemStack var21 = var16.method_32424().method_27953(1);
+               this.field_943.thePlayer.method_3153(var21, true);
+               this.field_943.playerController.method_42157(var21);
             }
          }
       } else {
-         if (var1 != null && !var1.method_35895(this.field_943.field_9632)) {
+         if (var1 != null && !var1.method_35895(this.field_943.thePlayer)) {
             return;
          }
 
          if (var1 == this.field_12611 && var7) {
-            for (int var15 = 0; var15 < this.field_943.field_9632.field_3869.method_18868().size(); var15++) {
-               this.field_943.field_9647.method_42148(class_6098.field_31203, var15);
+            for (int var15 = 0; var15 < this.field_943.thePlayer.field_3869.method_18868().size(); var15++) {
+               this.field_943.playerController.method_42148(ItemStack.EMPTY, var15);
             }
          } else if (field_12605 != class_8230.field_42263.method_37688()) {
             if (var4 != class_6269.field_32022 && var1.field_40591 == field_12610) {
-               class_7051 var13 = this.field_943.field_9632.field_3853;
-               class_6098 var18 = var13.method_32424();
-               class_6098 var22 = var1.method_35898();
+               class_7051 var13 = this.field_943.thePlayer.inventory;
+               ItemStack var18 = var13.method_32424();
+               ItemStack var22 = var1.method_35898();
                if (var4 == class_6269.field_32026) {
                   if (!var22.method_28022()) {
-                     class_6098 var25 = var22.method_27973();
+                     ItemStack var25 = var22.method_27973();
                      var25.method_28017(var25.method_28016());
-                     this.field_943.field_9632.field_3853.method_31503(var3, var25);
-                     this.field_943.field_9632.field_3869.method_18877();
+                     this.field_943.thePlayer.inventory.method_31503(var3, var25);
+                     this.field_943.thePlayer.field_3869.method_18877();
                   }
 
                   return;
@@ -99,7 +99,7 @@ public class class_2546 extends class_9331<class_7333> {
 
                if (var4 == class_6269.field_32025) {
                   if (var13.method_32424().method_28022() && var1.method_35884()) {
-                     class_6098 var24 = var1.method_35898().method_27973();
+                     ItemStack var24 = var1.method_35898().method_27973();
                      var24.method_28017(var24.method_28016());
                      var13.method_32408(var24);
                   }
@@ -109,16 +109,16 @@ public class class_2546 extends class_9331<class_7333> {
 
                if (var4 == class_6269.field_32024) {
                   if (!var22.method_28022()) {
-                     class_6098 var23 = var22.method_27973();
+                     ItemStack var23 = var22.method_27973();
                      var23.method_28017(var3 != 0 ? var23.method_28016() : 1);
-                     this.field_943.field_9632.method_3153(var23, true);
-                     this.field_943.field_9647.method_42157(var23);
+                     this.field_943.thePlayer.method_3153(var23, true);
+                     this.field_943.playerController.method_42157(var23);
                   }
 
                   return;
                }
 
-               if (!var18.method_28022() && !var22.method_28022() && var18.method_27991(var22) && class_6098.method_27956(var18, var22)) {
+               if (!var18.method_28022() && !var22.method_28022() && var18.method_27991(var22) && ItemStack.method_27956(var18, var22)) {
                   if (var3 != 0) {
                      var18.method_27970(1);
                   } else if (!var7) {
@@ -137,55 +137,55 @@ public class class_2546 extends class_9331<class_7333> {
                } else if (var3 != 0) {
                   var13.method_32424().method_27970(1);
                } else {
-                  var13.method_32408(class_6098.field_31203);
+                  var13.method_32408(ItemStack.EMPTY);
                }
             } else if (this.field_10956 != null) {
-               class_6098 var8 = var1 != null ? this.field_10956.method_18878(var1.field_40588).method_35898() : class_6098.field_31203;
-               this.field_10956.method_18865(var1 != null ? var1.field_40588 : var2, var3, var4, this.field_943.field_9632);
+               ItemStack var8 = var1 != null ? this.field_10956.method_18878(var1.field_40588).method_35898() : ItemStack.EMPTY;
+               this.field_10956.method_18865(var1 != null ? var1.field_40588 : var2, var3, var4, this.field_943.thePlayer);
                if (class_4088.method_18860(var3) != 2) {
                   if (var1 != null) {
-                     class_6098 var9 = this.field_10956.method_18878(var1.field_40588).method_35898();
-                     this.field_943.field_9647.method_42148(var9, var1.field_40588 - this.field_10956.field_19926.size() + 9 + 36);
+                     ItemStack var9 = this.field_10956.method_18878(var1.field_40588).method_35898();
+                     this.field_943.playerController.method_42148(var9, var1.field_40588 - this.field_10956.field_19926.size() + 9 + 36);
                      int var10 = 45 + var3;
                      if (var4 != class_6269.field_32026) {
                         if (var4 == class_6269.field_32024 && !var8.method_28022()) {
-                           class_6098 var11 = var8.method_27973();
+                           ItemStack var11 = var8.method_27973();
                            var11.method_28017(var3 != 0 ? var11.method_28016() : 1);
-                           this.field_943.field_9632.method_3153(var11, true);
-                           this.field_943.field_9647.method_42157(var11);
+                           this.field_943.thePlayer.method_3153(var11, true);
+                           this.field_943.playerController.method_42157(var11);
                         }
                      } else {
-                        this.field_943.field_9647.method_42148(var8, var10 - this.field_10956.field_19926.size() + 9 + 36);
+                        this.field_943.playerController.method_42148(var8, var10 - this.field_10956.field_19926.size() + 9 + 36);
                      }
 
-                     this.field_943.field_9632.field_3869.method_18877();
+                     this.field_943.thePlayer.field_3869.method_18877();
                   }
                } else {
                   for (int var17 = 0; var17 < 9; var17++) {
-                     this.field_943.field_9647.method_42148(this.field_10956.method_18878(45 + var17).method_35898(), 36 + var17);
+                     this.field_943.playerController.method_42148(this.field_10956.method_18878(45 + var17).method_35898(), 36 + var17);
                   }
                }
             }
          } else if (var1 != this.field_12611) {
             if (var4 == class_6269.field_32024 && var1 != null && var1.method_35884()) {
-               class_6098 var14 = var1.method_35899(var3 != 0 ? var1.method_35898().method_28016() : 1);
-               class_6098 var20 = var1.method_35898();
-               this.field_943.field_9632.method_3153(var14, true);
-               this.field_943.field_9647.method_42157(var14);
-               this.field_943.field_9647.method_42148(var20, class_6239.method_28501((class_6239)var1).field_40588);
-            } else if (var4 == class_6269.field_32024 && !this.field_943.field_9632.field_3853.method_32424().method_28022()) {
-               this.field_943.field_9632.method_3153(this.field_943.field_9632.field_3853.method_32424(), true);
-               this.field_943.field_9647.method_42157(this.field_943.field_9632.field_3853.method_32424());
-               this.field_943.field_9632.field_3853.method_32408(class_6098.field_31203);
+               ItemStack var14 = var1.method_35899(var3 != 0 ? var1.method_35898().method_28016() : 1);
+               ItemStack var20 = var1.method_35898();
+               this.field_943.thePlayer.method_3153(var14, true);
+               this.field_943.playerController.method_42157(var14);
+               this.field_943.playerController.method_42148(var20, class_6239.method_28501((class_6239)var1).field_40588);
+            } else if (var4 == class_6269.field_32024 && !this.field_943.thePlayer.inventory.method_32424().method_28022()) {
+               this.field_943.thePlayer.method_3153(this.field_943.thePlayer.inventory.method_32424(), true);
+               this.field_943.playerController.method_42157(this.field_943.thePlayer.inventory.method_32424());
+               this.field_943.thePlayer.inventory.method_32408(ItemStack.EMPTY);
             } else {
                this.field_943
-                  .field_9632
+                  .thePlayer
                   .field_3869
-                  .method_18865(var1 != null ? class_6239.method_28501((class_6239)var1).field_40588 : var2, var3, var4, this.field_943.field_9632);
-               this.field_943.field_9632.field_3869.method_18877();
+                  .method_18865(var1 != null ? class_6239.method_28501((class_6239)var1).field_40588 : var2, var3, var4, this.field_943.thePlayer);
+               this.field_943.thePlayer.field_3869.method_18877();
             }
          } else {
-            this.field_943.field_9632.field_3853.method_32408(class_6098.field_31203);
+            this.field_943.thePlayer.inventory.method_32408(ItemStack.EMPTY);
          }
       }
    }
@@ -205,8 +205,8 @@ public class class_2546 extends class_9331<class_7333> {
 
    @Override
    public void method_1163() {
-      if (!this.field_943.field_9647.method_42140()) {
-         this.field_943.method_8609(new class_3431(this.field_943.field_9632));
+      if (!this.field_943.playerController.method_42140()) {
+         this.field_943.method_8609(new class_3431(this.field_943.thePlayer));
       } else {
          super.method_1163();
          this.field_943.field_9600.method_38887(true);
@@ -219,9 +219,9 @@ public class class_2546 extends class_9331<class_7333> {
          int var3 = field_12605;
          field_12605 = -1;
          this.method_11585(class_8230.field_42279[var3]);
-         this.field_943.field_9632.field_3869.method_18880(this.field_12615);
+         this.field_943.thePlayer.field_3869.method_18880(this.field_12615);
          this.field_12615 = new class_6487(this.field_943);
-         this.field_943.field_9632.field_3869.method_18888(this.field_12615);
+         this.field_943.thePlayer.field_3869.method_18888(this.field_12615);
       }
    }
 
@@ -238,8 +238,8 @@ public class class_2546 extends class_9331<class_7333> {
    @Override
    public void method_1162() {
       super.method_1162();
-      if (this.field_943.field_9632 != null && this.field_943.field_9632.field_3853 != null) {
-         this.field_943.field_9632.field_3869.method_18880(this.field_12615);
+      if (this.field_943.thePlayer != null && this.field_943.thePlayer.inventory != null) {
+         this.field_943.thePlayer.field_3869.method_18880(this.field_12615);
       }
 
       this.field_943.field_9600.method_38887(false);
@@ -312,10 +312,10 @@ public class class_2546 extends class_9331<class_7333> {
       if (!var3.isEmpty()) {
          class_1272 var4;
          if (!var3.startsWith("#")) {
-            var4 = this.field_943.<class_6098>method_8532(SearchManager.field_4279);
+            var4 = this.field_943.<ItemStack>method_8532(SearchManager.field_4279);
          } else {
             var3 = var3.substring(1);
-            var4 = this.field_943.<class_6098>method_8532(SearchManager.field_4275);
+            var4 = this.field_943.<ItemStack>method_8532(SearchManager.field_4275);
             this.method_11587(var3);
          }
 
@@ -351,7 +351,7 @@ public class class_2546 extends class_9331<class_7333> {
    public void method_10221(class_7966 var1, int var2, int var3) {
       class_8230 var6 = class_8230.field_42279[field_12605];
       if (var6.method_37694()) {
-         class_3542.method_16448();
+         RenderSystem.method_16448();
          this.field_948.method_45378(var1, var6.method_37699(), 8.0F, 6.0F, 4210752);
       }
    }
@@ -418,9 +418,9 @@ public class class_2546 extends class_9331<class_7333> {
             } else {
                for (int var8 = 0; var8 < 9; var8++) {
                   if (var8 != var6) {
-                     this.field_10956.field_37486.add(class_6098.field_31203);
+                     this.field_10956.field_37486.add(ItemStack.EMPTY);
                   } else {
-                     class_6098 var9 = new class_6098(class_4897.field_24622);
+                     ItemStack var9 = new ItemStack(class_4897.field_24622);
                      var9.method_27978("CustomCreativeLock");
                      ITextComponent var10 = this.field_943.gameOptions.hotbarKeys[var6].method_27061();
                      ITextComponent var11 = this.field_943.gameOptions.field_45562.method_27061();
@@ -439,7 +439,7 @@ public class class_2546 extends class_9331<class_7333> {
             this.field_12612 = null;
          }
       } else {
-         class_3683 var12 = this.field_943.field_9632.field_3869;
+         class_3683 var12 = this.field_943.thePlayer.field_3869;
          if (this.field_12612 == null) {
             this.field_12612 = ImmutableList.copyOf(this.field_10956.field_19926);
          }
@@ -564,16 +564,16 @@ public class class_2546 extends class_9331<class_7333> {
          this.method_1176(var1, field_12614, var2, var3);
       }
 
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.method_10214(var1, var2, var3);
    }
 
    @Override
-   public void method_1177(class_7966 var1, class_6098 var2, int var3, int var4) {
+   public void method_1177(class_7966 var1, ItemStack var2, int var3, int var4) {
       if (field_12605 != class_8230.field_42264.method_37688()) {
          super.method_1177(var1, var2, var3, var4);
       } else {
-         List var7 = var2.method_28012(this.field_943.field_9632, !this.field_943.gameOptions.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
+         List var7 = var2.method_28012(this.field_943.thePlayer, !this.field_943.gameOptions.field_45482 ? class_2575.field_12746 : class_2575.field_12747);
          ArrayList var8 = Lists.newArrayList(var7);
          class_2451 var9 = var2.method_27960();
          class_8230 var10 = var9.method_11226();
@@ -606,24 +606,24 @@ public class class_2546 extends class_9331<class_7333> {
 
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       class_8230 var7 = class_8230.field_42279[field_12605];
 
       for (class_8230 var11 : class_8230.field_42279) {
-         this.field_943.method_8577().method_35674(field_12617);
+         this.field_943.getTextureManager().bindTexture(field_12617);
          if (var11.method_37688() != field_12605) {
             this.method_11594(var1, var11);
          }
       }
 
-      this.field_943.method_8577().method_35674(new Identifier("textures/gui/container/creative_inventory/tab_" + var7.method_37703()));
+      this.field_943.getTextureManager().bindTexture(new Identifier("textures/gui/container/creative_inventory/tab_" + var7.method_37703()));
       this.method_9781(var1, this.field_10984, this.field_10962, 0, 0, this.field_10981, this.field_10973);
       this.field_12608.method_6767(var1, var3, var4, var2);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       int var12 = this.field_10984 + 175;
       int var13 = this.field_10962 + 18;
       int var14 = var13 + 112;
-      this.field_943.method_8577().method_35674(field_12617);
+      this.field_943.getTextureManager().bindTexture(field_12617);
       if (var7.method_37689()) {
          this.method_9781(var1, var12, var13 + (int)((float)(var14 - var13 - 17) * this.field_12609), 232 + (!this.method_11584() ? 12 : 0), 0, 12, 15);
       }
@@ -636,7 +636,7 @@ public class class_2546 extends class_9331<class_7333> {
             20,
             (float)(this.field_10984 + 88 - var3),
             (float)(this.field_10962 + 45 - 30 - var4),
-            this.field_943.field_9632
+            this.field_943.thePlayer
          );
       }
    }
@@ -720,8 +720,8 @@ public class class_2546 extends class_9331<class_7333> {
       this.field_945.field_44875 = 100.0F;
       var10 += 6;
       var11 = var11 + 8 + (!var6 ? -1 : 1);
-      class_3542.method_16381();
-      class_6098 var13 = var2.method_37692();
+      RenderSystem.method_16381();
+      ItemStack var13 = var2.method_37692();
       this.field_945.method_40274(var13, var10, var11);
       this.field_945.method_40281(this.field_948, var13, var10, var11);
       this.field_945.field_44875 = 0.0F;
@@ -732,13 +732,13 @@ public class class_2546 extends class_9331<class_7333> {
    }
 
    public static void method_11590(MinecraftClient var0, int var1, boolean var2, boolean var3) {
-      class_5989 var6 = var0.field_9632;
+      class_5989 var6 = var0.thePlayer;
       class_3459 var7 = var0.method_8598();
       class_2024 var8 = var7.method_15915(var1);
       if (!var2) {
          if (var3) {
             for (int var9 = 0; var9 < class_7051.method_32422(); var9++) {
-               var8.set(var9, var6.field_3853.method_31498(var9).method_27973());
+               var8.set(var9, var6.inventory.method_31498(var9).method_27973());
             }
 
             ITextComponent var11 = var0.gameOptions.hotbarKeys[var1].method_27061();
@@ -748,9 +748,9 @@ public class class_2546 extends class_9331<class_7333> {
          }
       } else {
          for (int var12 = 0; var12 < class_7051.method_32422(); var12++) {
-            class_6098 var13 = ((class_6098)var8.get(var12)).method_27973();
-            var6.field_3853.method_31503(var12, var13);
-            var0.field_9647.method_42148(var13, 36 + var12);
+            ItemStack var13 = ((ItemStack)var8.get(var12)).method_27973();
+            var6.inventory.method_31503(var12, var13);
+            var0.playerController.method_42148(var13, 36 + var12);
          }
 
          var6.field_3869.method_18877();

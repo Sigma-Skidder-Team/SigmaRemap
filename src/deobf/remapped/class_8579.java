@@ -36,7 +36,7 @@ public class class_8579 extends class_2451 {
       }
    }
 
-   public static boolean method_39459(class_6098 var0, World var1, class_1331 var2) {
+   public static boolean method_39459(ItemStack var0, World var1, class_1331 var2) {
       class_2522 var5 = var1.method_28262(var2);
       if (var5.method_8360() instanceof class_3978) {
          class_3978 var6 = (class_3978)var5.method_8360();
@@ -56,7 +56,7 @@ public class class_8579 extends class_2451 {
       return false;
    }
 
-   public static boolean method_39460(class_6098 var0, World var1, class_1331 var2, Direction var3) {
+   public static boolean method_39460(ItemStack var0, World var1, class_1331 var2, Direction var3) {
       if (var1.method_28262(var2).method_8350(class_4783.field_23900) && var1.method_28258(var2).method_21996() == 8) {
          if (!(var1 instanceof class_6331)) {
             return true;

@@ -16,7 +16,7 @@ public class PingSpoofDisabler extends Module {
    @EventListen
    public void method_12682(class_717 var1) {
       if (!this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(DisablerModule.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
@@ -28,15 +28,15 @@ public class PingSpoofDisabler extends Module {
    @EventListen
    public void method_12683(class_5596 var1) {
       if (!this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(DisablerModule.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }
 
       this.field_13711++;
-      if (mc.field_9632 != null && mc.method_8530() != null) {
-         if (mc.field_9632.field_41697 <= 1) {
+      if (client.thePlayer != null && client.method_8530() != null) {
+         if (client.thePlayer.field_41697 <= 1) {
             this.field_13712.clear();
          }
 
@@ -46,8 +46,8 @@ public class PingSpoofDisabler extends Module {
             for (int var5 = 0; var5 < var7; var5++) {
                class_5840 var6 = this.field_13712.get(var5);
                if (var6.method_26634()) {
-                  mc.method_8614().method_9091();
-                  class_5121.method_23491(var6.method_26633(), mc.method_8614().method_9091().field_26435);
+                  client.method_8614().method_9091();
+                  class_5121.method_23491(var6.method_26633(), client.method_8614().method_9091().field_26435);
                   this.field_13712.remove(var5);
                   var7--;
                   var5--;
@@ -69,13 +69,13 @@ public class PingSpoofDisabler extends Module {
    @EventListen
    public void method_12684(PacketEvent var1) {
       if (!this.method_42015()) {
-         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(DisablerModule.class);
+         SecondModule var4 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(DisablerModule.class);
          if (!var4.method_42015() || !var4.getStringValueByName("Type").equalsIgnoreCase("TP") || !var4.method_16864().getBooleanValueByName("Ping spoof")) {
             return;
          }
       }
 
-      if (mc.method_8530() != null) {
+      if (client.method_8530() != null) {
          Packet var7 = var1.method_557();
          if (!(var7 instanceof class_7573)) {
             if (!(var7 instanceof class_8913)) {

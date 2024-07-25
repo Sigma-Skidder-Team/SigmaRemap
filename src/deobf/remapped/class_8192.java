@@ -53,7 +53,7 @@ public class class_8192 {
    private static void method_37531(class_7819 var0, boolean var1) {
       Object var4 = var0.method_41207();
       if (var4 == null) {
-         var4 = class_3111.method_14327().field_9632;
+         var4 = Config.method_14327().thePlayer;
       }
 
       if (var4 instanceof class_9716) {
@@ -61,14 +61,14 @@ public class class_8192 {
          UUID var6 = var0.method_37328();
          if (!var1) {
             class_8073 var7 = var0.method_37372();
-            if (var5.field_49383 != null && class_3111.equals(var5.field_49383.method_37328(), var6)) {
+            if (var5.field_49383 != null && Config.equals(var5.field_49383.method_37328(), var6)) {
                class_8073 var8 = var5.field_49383.method_37372();
                var7.field_41301 = var8.field_41301;
                var7.field_41296 = var8.field_41296;
                var5.field_49383 = null;
             }
 
-            if (var5.field_49395 != null && class_3111.equals(var5.field_49395.method_37328(), var6)) {
+            if (var5.field_49395 != null && Config.equals(var5.field_49395.method_37328(), var6)) {
                class_8073 var10 = var5.field_49395.method_37372();
                var7.field_41301 = var10.field_41301;
                var7.field_41296 = var10.field_41296;
@@ -76,12 +76,12 @@ public class class_8192 {
             }
          } else {
             class_5734 var9 = var5.method_3160();
-            if (var9 != null && var9.method_25938("UUID") && class_3111.equals(var9.method_25926("UUID"), var6)) {
+            if (var9 != null && var9.method_25938("UUID") && Config.equals(var9.method_25926("UUID"), var6)) {
                var5.field_49383 = var0;
             }
 
             class_5734 var11 = var5.method_3171();
-            if (var11 != null && var11.method_25938("UUID") && class_3111.equals(var11.method_25926("UUID"), var6)) {
+            if (var11 != null && var11.method_25938("UUID") && Config.equals(var11.method_25926("UUID"), var6)) {
                var5.field_49395 = var0;
             }
          }
@@ -188,7 +188,7 @@ public class class_8192 {
       try {
          String var4 = var0.method_21456();
          method_37526(var1.method_21456() + ", properties: " + var4);
-         InputStream var5 = class_3111.method_14374(var0);
+         InputStream var5 = Config.method_14374(var0);
          if (var5 == null) {
             method_37529("Properties not found: " + var4);
             return null;
@@ -216,11 +216,11 @@ public class class_8192 {
          String var7 = class_8251.method_37822(var6, ".png");
          String var8 = var7 + ".properties";
          Identifier var9 = new Identifier(var5, var8);
-         if (!class_3111.method_14362(var9)) {
+         if (!Config.method_14362(var9)) {
             String var10 = method_37537(var7);
             if (var10 != null) {
                Identifier var11 = new Identifier(var5, var10 + ".properties");
-               return !class_3111.method_14362(var11) ? null : var11;
+               return !Config.method_14362(var11) ? null : var11;
             } else {
                return null;
             }
@@ -294,7 +294,7 @@ public class class_8192 {
          for (int var6 = 1; var6 < var4.size() + 10; var6++) {
             int var7 = var6 + 1;
             Identifier var8 = method_37539(var5, var7);
-            if (class_3111.method_14362(var8)) {
+            if (Config.method_14362(var8)) {
                var4.add(var8);
             }
          }
@@ -314,13 +314,13 @@ public class class_8192 {
    public static void method_37528() {
       field_41923.clear();
       field_41919 = false;
-      if (class_3111.method_14394()) {
+      if (Config.method_14394()) {
          method_37533();
       }
    }
 
    private static void method_37533() {
-      field_41922 = class_3111.method_14387();
+      field_41922 = Config.method_14387();
       field_41918 = class_3569.field_17468;
       String[] var2 = new String[]{"optifine/random/", "optifine/mob/"};
       String[] var3 = new String[]{".png", ".properties"};
@@ -336,7 +336,7 @@ public class class_8192 {
          if (!var5.contains(var8)) {
             var5.add(var8);
             Identifier var9 = new Identifier(var8);
-            if (class_3111.method_14362(var9)) {
+            if (Config.method_14362(var9)) {
                class_3207 var10 = field_41923.get(var8);
                if (var10 == null) {
                   var10 = method_37523(var9, false);
@@ -356,10 +356,10 @@ public class class_8192 {
    }
 
    public static void method_37526(String var0) {
-      class_3111.method_14277("RandomEntities: " + var0);
+      Config.method_14277("RandomEntities: " + var0);
    }
 
    public static void method_37529(String var0) {
-      class_3111.method_14317("RandomEntities: " + var0);
+      Config.method_14317("RandomEntities: " + var0);
    }
 }

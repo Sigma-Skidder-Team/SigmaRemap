@@ -92,16 +92,16 @@ public class BlockFlyModule extends SecondModule {
       try {
          for (int var3 = 36; var3 < 45; var3++) {
             int var4 = var3 - 36;
-            if (mc.field_9632.field_3869.method_18878(var3).method_35884()
-               && method_17216(mc.field_9632.field_3869.method_18878(var3).method_35898().method_27960())
-               && mc.field_9632.field_3869.method_18878(var3).method_35898().field_31206 != 0) {
-               if (mc.field_9632.field_3853.field_36404 == var4) {
+            if (client.thePlayer.field_3869.method_18878(var3).method_35884()
+               && method_17216(client.thePlayer.field_3869.method_18878(var3).method_35898().method_27960())
+               && client.thePlayer.field_3869.method_18878(var3).method_35898().field_31206 != 0) {
+               if (client.thePlayer.inventory.field_36404 == var4) {
                   return;
                }
 
-               mc.field_9632.field_3853.field_36404 = var4;
+               client.thePlayer.inventory.field_36404 = var4;
                if (this.getStringValueByName("ItemSpoof").equals("LiteSpoof") && (this.field_18196 < 0 || this.field_18196 != var4)) {
-                  mc.method_8614().method_9091().method_23485(new class_7371(var4));
+                  client.method_8614().method_9091().method_23485(new class_7371(var4));
                   this.field_18196 = var4;
                }
                break;
@@ -115,8 +115,8 @@ public class BlockFlyModule extends SecondModule {
       int var3 = 0;
 
       for (int var4 = 0; var4 < 45; var4++) {
-         if (mc.field_9632.field_3869.method_18878(var4).method_35884()) {
-            class_6098 var5 = mc.field_9632.field_3869.method_18878(var4).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var4).method_35884()) {
+            ItemStack var5 = client.thePlayer.field_3869.method_18878(var4).method_35898();
             class_2451 var6 = var5.method_27960();
             if (method_17216(var6)) {
                var3 += var5.field_31206;
@@ -129,15 +129,15 @@ public class BlockFlyModule extends SecondModule {
 
    public void method_17215() {
       String var3 = this.getStringValueByName("Picking mode");
-      if ((!var3.equals("OpenInv") || mc.field_9623 instanceof class_3431) && this.method_17219() != 0) {
+      if ((!var3.equals("OpenInv") || client.field_9623 instanceof class_3431) && this.method_17219() != 0) {
          int var4 = 43;
          if (!this.getBooleanValueByName("Intelligent Block Picker")) {
             if (!this.method_17217()) {
                int var5 = -1;
 
                for (int var6 = 9; var6 < 36; var6++) {
-                  if (mc.field_9632.field_3869.method_18878(var6).method_35884()) {
-                     class_2451 var7 = mc.field_9632.field_3869.method_18878(var6).method_35898().method_27960();
+                  if (client.thePlayer.field_3869.method_18878(var6).method_35884()) {
+                     class_2451 var7 = client.thePlayer.field_3869.method_18878(var6).method_35898().method_27960();
                      if (method_17216(var7)) {
                         var5 = var6;
                         break;
@@ -146,20 +146,20 @@ public class BlockFlyModule extends SecondModule {
                }
 
                for (int var9 = 36; var9 < 45; var9++) {
-                  if (!mc.field_9632.field_3869.method_18878(var9).method_35884()) {
+                  if (!client.thePlayer.field_3869.method_18878(var9).method_35884()) {
                      var4 = var9;
                      break;
                   }
                }
 
                if (var5 >= 0) {
-                  if (!(mc.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
-                     mc.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                  if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
+                     client.method_8614().method_4813(new class_8559(class_2105.field_10551));
                   }
 
                   this.method_17221(var5, var4 - 36);
-                  if (!(mc.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
-                     mc.method_8614().method_4813(new class_1194(-1));
+                  if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
+                     client.method_8614().method_4813(new class_1194(-1));
                   }
                }
             }
@@ -167,19 +167,19 @@ public class BlockFlyModule extends SecondModule {
             int var8 = this.method_17214();
             if (!this.method_17217()) {
                for (int var11 = 36; var11 < 45; var11++) {
-                  if (!mc.field_9632.field_3869.method_18878(var11).method_35884()) {
+                  if (!client.thePlayer.field_3869.method_18878(var11).method_35884()) {
                      var4 = var11;
                      break;
                   }
                }
             } else {
                for (int var10 = 36; var10 < 45; var10++) {
-                  if (mc.field_9632.field_3869.method_18878(var10).method_35884()) {
-                     class_2451 var12 = mc.field_9632.field_3869.method_18878(var10).method_35898().method_27960();
+                  if (client.thePlayer.field_3869.method_18878(var10).method_35884()) {
+                     class_2451 var12 = client.thePlayer.field_3869.method_18878(var10).method_35898().method_27960();
                      if (method_17216(var12)) {
                         var4 = var10;
-                        if (mc.field_9632.field_3869.method_18878(var10).method_35898().field_31206
-                           == mc.field_9632.field_3869.method_18878(var8).method_35898().field_31206) {
+                        if (client.thePlayer.field_3869.method_18878(var10).method_35898().field_31206
+                           == client.thePlayer.field_3869.method_18878(var8).method_35898().field_31206) {
                            var4 = -1;
                         }
                         break;
@@ -188,16 +188,16 @@ public class BlockFlyModule extends SecondModule {
                }
             }
 
-            if (var4 >= 0 && mc.field_9632.field_3869.method_18878(var4).field_40588 != var8) {
-               if (!(mc.field_9623 instanceof class_3431) && var3.equals("FakeInv") && class_3347.method_15349() <= class_412.field_1752.method_2055()
+            if (var4 >= 0 && client.thePlayer.field_3869.method_18878(var4).field_40588 != var8) {
+               if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv") && class_3347.method_15349() <= class_412.field_1752.method_2055()
                   )
                 {
-                  mc.method_8614().method_4813(new class_8559(class_2105.field_10551));
+                  client.method_8614().method_4813(new class_8559(class_2105.field_10551));
                }
 
                this.method_17221(var8, var4 - 36);
-               if (!(mc.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
-                  mc.method_8614().method_4813(new class_1194(-1));
+               if (!(client.field_9623 instanceof class_3431) && var3.equals("FakeInv")) {
+                  client.method_8614().method_4813(new class_1194(-1));
                }
             }
          }
@@ -209,9 +209,9 @@ public class BlockFlyModule extends SecondModule {
       int var4 = 0;
       if (this.method_17219() != 0) {
          for (int var5 = 9; var5 < 45; var5++) {
-            if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-               class_2451 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898().method_27960();
-               class_6098 var7 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+            if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+               class_2451 var6 = client.thePlayer.field_3869.method_18878(var5).method_35898().method_27960();
+               ItemStack var7 = client.thePlayer.field_3869.method_18878(var5).method_35898();
                if (method_17216(var6) && var7.field_31206 > var4) {
                   var4 = var7.field_31206;
                   var3 = var5;
@@ -227,8 +227,8 @@ public class BlockFlyModule extends SecondModule {
 
    public boolean method_17217() {
       for (int var3 = 36; var3 < 45; var3++) {
-         if (mc.field_9632.field_3869.method_18878(var3).method_35884()) {
-            class_2451 var4 = mc.field_9632.field_3869.method_18878(var3).method_35898().method_27960();
+         if (client.thePlayer.field_3869.method_18878(var3).method_35884()) {
+            class_2451 var4 = client.thePlayer.field_3869.method_18878(var3).method_35898().method_27960();
             if (method_17216(var4)) {
                return true;
             }
@@ -243,7 +243,7 @@ public class BlockFlyModule extends SecondModule {
          if (this.method_17219() == 0) {
             return false;
          }
-      } else if (!method_17216(mc.field_9632.method_26617(var1).method_27960())) {
+      } else if (!method_17216(client.thePlayer.method_26617(var1).method_27960())) {
          return false;
       }
 
@@ -251,15 +251,15 @@ public class BlockFlyModule extends SecondModule {
    }
 
    public void method_17221(int var1, int var2) {
-      mc.field_9647.method_42134(mc.field_9632.field_3869.field_19925, var1, var2, class_6269.field_32026, mc.field_9632);
+      client.playerController.method_42134(client.thePlayer.field_3869.field_19925, var1, var2, class_6269.field_32026, client.thePlayer);
    }
 
    public void method_17220(class_7767 var1) {
-      if (mc.theTimer.timerSpeed == 0.8038576F) {
-         mc.theTimer.timerSpeed = 1.0F;
+      if (client.theTimer.timerSpeed == 0.8038576F) {
+         client.theTimer.timerSpeed = 1.0F;
       }
 
-      if (this.method_17219() != 0 && (!mc.field_9632.field_41774 || this.getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
+      if (this.method_17219() != 0 && (!client.thePlayer.field_41774 || this.getStringValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
          if (!class_314.method_1434() || this.getBooleanValueByName("Tower while moving")) {
             String var4 = this.getStringValueByName("Tower Mode");
             switch (var4) {
@@ -268,21 +268,21 @@ public class BlockFlyModule extends SecondModule {
                      if (class_8865.method_40769() == 0) {
                         if (var1.method_35236() > 0.247 && var1.method_35236() < 0.249) {
                            var1.method_35235(
-                              (double)((int)(mc.field_9632.method_37309() + var1.method_35236())) - mc.field_9632.method_37309()
+                              (double)((int)(client.thePlayer.method_37309() + var1.method_35236())) - client.thePlayer.method_37309()
                            );
                         }
                      } else {
-                        double var6 = (double)((int)(mc.field_9632.method_37309() + var1.method_35236()));
-                        if (var6 != (double)((int) mc.field_9632.method_37309())
-                           && mc.field_9632.method_37309() + var1.method_35236() - var6 < 0.15) {
-                           var1.method_35235(var6 - mc.field_9632.method_37309());
+                        double var6 = (double)((int)(client.thePlayer.method_37309() + var1.method_35236()));
+                        if (var6 != (double)((int) client.thePlayer.method_37309())
+                           && client.thePlayer.method_37309() + var1.method_35236() - var6 < 0.15) {
+                           var1.method_35235(var6 - client.thePlayer.method_37309());
                         }
                      }
                   }
 
-                  if (mc.field_9632.method_37309() == (double)((int) mc.field_9632.method_37309())
-                     && class_314.method_1413(mc.field_9632, 0.001F)) {
-                     if (mc.gameOptions.keyJump.pressed) {
+                  if (client.thePlayer.method_37309() == (double)((int) client.thePlayer.method_37309())
+                     && class_314.method_1413(client.thePlayer, 0.001F)) {
+                     if (client.gameOptions.keyJump.pressed) {
                         if (!class_314.method_1434()) {
                            class_8865.method_40776(0.0);
                            class_8865.method_40777(var1, 0.0);
@@ -296,42 +296,42 @@ public class BlockFlyModule extends SecondModule {
                   break;
                case "AAC":
                   if (var1.method_35236() > 0.247 && var1.method_35236() < 0.249) {
-                     var1.method_35235((double)((int)(mc.field_9632.method_37309() + var1.method_35236())) - mc.field_9632.method_37309());
-                     if (mc.gameOptions.keyJump.pressed && !class_314.method_1434()) {
+                     var1.method_35235((double)((int)(client.thePlayer.method_37309() + var1.method_35236())) - client.thePlayer.method_37309());
+                     if (client.gameOptions.keyJump.pressed && !class_314.method_1434()) {
                         class_8865.method_40776(0.0);
                         class_8865.method_40777(var1, 0.0);
                      }
-                  } else if (mc.field_9632.method_37309() == (double)((int) mc.field_9632.method_37309())
-                     && class_314.method_1413(mc.field_9632, 0.001F)) {
+                  } else if (client.thePlayer.method_37309() == (double)((int) client.thePlayer.method_37309())
+                     && class_314.method_1413(client.thePlayer, 0.001F)) {
                      var1.method_35235(-1.0E-10);
                   }
                   break;
                case "Vanilla":
-                  if (mc.gameOptions.keyJump.pressed
-                     && class_314.method_1413(mc.field_9632, 0.001F)
-                     && mc.field_9601.method_6680(mc.field_9632, mc.field_9632.field_41712.method_18918(0.0, 1.0, 0.0)).count()
+                  if (client.gameOptions.keyJump.pressed
+                     && class_314.method_1413(client.thePlayer, 0.001F)
+                     && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0, 0.0)).count()
                         == 0L) {
-                     mc.field_9632
-                        .method_37256(mc.field_9632.method_37302(), mc.field_9632.method_37309() + 1.0, mc.field_9632.method_37156());
+                     client.thePlayer
+                        .method_37256(client.thePlayer.method_37302(), client.thePlayer.method_37309() + 1.0, client.thePlayer.method_37156());
                      var1.method_35235(0.0);
                      class_8865.method_40777(var1, 0.0);
-                     mc.theTimer.timerSpeed = 0.8038576F;
+                     client.theTimer.timerSpeed = 0.8038576F;
                   }
             }
          }
       } else if (!this.getStringValueByName("Tower Mode").equals("AAC")
-         || !class_314.method_1413(mc.field_9632, 0.001F)
-         || !mc.gameOptions.keyJump.pressed) {
+         || !class_314.method_1413(client.thePlayer, 0.001F)
+         || !client.gameOptions.keyJump.pressed) {
          if (!this.getStringValueByName("Tower Mode").equals("NCP")
             && !this.getStringValueByName("Tower Mode").equals("Vanilla")
-            && class_314.method_1413(mc.field_9632, 0.001F)
-            && mc.gameOptions.keyJump.pressed) {
-            mc.field_9632.field_29600 = 20;
+            && class_314.method_1413(client.thePlayer, 0.001F)
+            && client.gameOptions.keyJump.pressed) {
+            client.thePlayer.field_29600 = 20;
             var1.method_35235(class_8865.method_40786());
          }
       } else if (!class_314.method_1434() || this.getBooleanValueByName("Tower while moving")) {
-         mc.field_9632.field_29600 = 0;
-         mc.field_9632.method_26595();
+         client.thePlayer.field_29600 = 0;
+         client.thePlayer.method_26595();
          class_8865.method_40777(var1, class_8865.method_40775());
          class_8865.method_40776(class_8865.method_40775());
       }
@@ -368,14 +368,14 @@ public class BlockFlyModule extends SecondModule {
          if (this.getBooleanValueByName("Show Block Amount")) {
             if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30645) {
                this.method_17222(
-                  mc.window.method_43166() / 2,
-                  mc.window.method_43163() / 2 + 15 - (int)(10.0F * this.field_18194.method_11123()),
+                  client.window.method_43166() / 2,
+                  client.window.method_43163() / 2 + 15 - (int)(10.0F * this.field_18194.method_11123()),
                   this.field_18194.method_11123()
                );
             } else {
                this.method_17223(
-                  mc.window.method_43166() / 2,
-                  mc.window.method_43163() - 138 - (int)(25.0F * class_3483.method_15985(this.field_18194.method_11123(), 0.0F, 1.0F, 1.0F)),
+                  client.window.method_43166() / 2,
+                  client.window.method_43163() - 138 - (int)(25.0F * class_3483.method_15985(this.field_18194.method_11123(), 0.0F, 1.0F, 1.0F)),
                   this.field_18194.method_11123()
                );
             }

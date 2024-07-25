@@ -5,15 +5,15 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class class_3092 implements class_211 {
-   private final class_6098 field_15394;
+   private final ItemStack field_15394;
 
-   private class_3092(class_6098 var1) {
+   private class_3092(ItemStack var1) {
       this.field_15394 = var1;
    }
 
    @Override
-   public Collection<class_6098> method_894() {
-      return Collections.<class_6098>singleton(this.field_15394);
+   public Collection<ItemStack> method_894() {
+      return Collections.<ItemStack>singleton(this.field_15394);
    }
 
    @Override

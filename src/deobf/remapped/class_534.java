@@ -8,17 +8,17 @@ public class class_534 {
    private static String[] field_3243;
    public final Int2IntMap field_3242 = new Int2IntOpenHashMap();
 
-   public void method_2606(class_6098 var1) {
+   public void method_2606(ItemStack var1) {
       if (!var1.method_27995() && !var1.method_28020() && !var1.method_28018()) {
          this.method_2598(var1);
       }
    }
 
-   public void method_2598(class_6098 var1) {
+   public void method_2598(ItemStack var1) {
       this.method_2603(var1, 64);
    }
 
-   public void method_2603(class_6098 var1, int var2) {
+   public void method_2603(ItemStack var1, int var2) {
       if (!var1.method_28022()) {
          int var5 = method_2599(var1);
          int var6 = Math.min(var2, var1.method_27997());
@@ -26,7 +26,7 @@ public class class_534 {
       }
    }
 
-   public static int method_2599(class_6098 var0) {
+   public static int method_2599(ItemStack var0) {
       return class_8669.field_44382.method_14041(var0.method_27960());
    }
 
@@ -64,8 +64,8 @@ public class class_534 {
       return new class_4927(this, var1).method_22581(var2, var3);
    }
 
-   public static class_6098 method_2604(int var0) {
-      return var0 != 0 ? new class_6098(class_2451.method_11220(var0)) : class_6098.field_31203;
+   public static ItemStack method_2604(int var0) {
+      return var0 != 0 ? new ItemStack(class_2451.method_11220(var0)) : ItemStack.EMPTY;
    }
 
    public void method_2602() {

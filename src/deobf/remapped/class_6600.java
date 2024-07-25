@@ -33,21 +33,21 @@ public class class_6600 extends class_2875 {
    }
 
    @Override
-   public class_6098 method_13209(class_704 var1, class_6098 var2) {
+   public ItemStack method_13209(class_704 var1, ItemStack var2) {
       if (!var1.field_3876.field_4944) {
          var1.method_3220(-this.field_34038.method_43085());
       }
 
-      this.field_14085.method_31503(0, class_6098.field_31203);
+      this.field_14085.method_31503(0, ItemStack.EMPTY);
       if (this.field_34035 <= 0) {
-         this.field_14085.method_31503(1, class_6098.field_31203);
+         this.field_14085.method_31503(1, ItemStack.EMPTY);
       } else {
-         class_6098 var5 = this.field_14085.method_31498(1);
+         ItemStack var5 = this.field_14085.method_31498(1);
          if (!var5.method_28022() && var5.method_27997() > this.field_34035) {
             var5.method_27970(this.field_34035);
             this.field_14085.method_31503(1, var5);
          } else {
-            this.field_14085.method_31503(1, class_6098.field_31203);
+            this.field_14085.method_31503(1, ItemStack.EMPTY);
          }
       }
 
@@ -72,17 +72,17 @@ public class class_6600 extends class_2875 {
 
    @Override
    public void method_13213() {
-      class_6098 var3 = this.field_14085.method_31498(0);
+      ItemStack var3 = this.field_14085.method_31498(0);
       this.field_34038.method_43087(1);
       int var4 = 0;
       int var5 = 0;
       byte var6 = 0;
       if (var3.method_28022()) {
-         this.field_14087.method_31503(0, class_6098.field_31203);
+         this.field_14087.method_31503(0, ItemStack.EMPTY);
          this.field_34038.method_43087(0);
       } else {
-         class_6098 var7 = var3.method_27973();
-         class_6098 var8 = this.field_14085.method_31498(1);
+         ItemStack var7 = var3.method_27973();
+         ItemStack var8 = this.field_14085.method_31498(1);
          Map var9 = class_2931.method_13402(var7);
          var5 = var5 + var3.method_27969() + (var8.method_28022() ? 0 : var8.method_27969());
          this.field_34035 = 0;
@@ -91,7 +91,7 @@ public class class_6600 extends class_2875 {
             if (var7.method_27959() && var7.method_27960().method_11223(var3, var8)) {
                int var24 = Math.min(var7.method_28026(), var7.method_27957() / 4);
                if (var24 <= 0) {
-                  this.field_14087.method_31503(0, class_6098.field_31203);
+                  this.field_14087.method_31503(0, ItemStack.EMPTY);
                   this.field_34038.method_43087(0);
                   return;
                }
@@ -107,7 +107,7 @@ public class class_6600 extends class_2875 {
                this.field_34035 = var26;
             } else {
                if (!var10 && (var7.method_27960() != var8.method_27960() || !var7.method_27959())) {
-                  this.field_14087.method_31503(0, class_6098.field_31203);
+                  this.field_14087.method_31503(0, ItemStack.EMPTY);
                   this.field_34038.method_43087(0);
                   return;
                }
@@ -186,7 +186,7 @@ public class class_6600 extends class_2875 {
                }
 
                if (var27 && !var25) {
-                  this.field_14087.method_31503(0, class_6098.field_31203);
+                  this.field_14087.method_31503(0, ItemStack.EMPTY);
                   this.field_34038.method_43087(0);
                   return;
                }
@@ -207,7 +207,7 @@ public class class_6600 extends class_2875 {
 
          this.field_34038.method_43087(var5 + var4);
          if (var4 <= 0) {
-            var7 = class_6098.field_31203;
+            var7 = ItemStack.EMPTY;
          }
 
          if (var6 == var4 && var6 > 0 && this.field_34038.method_43085() >= 40) {
@@ -215,7 +215,7 @@ public class class_6600 extends class_2875 {
          }
 
          if (this.field_34038.method_43085() >= 40 && !this.field_14088.field_3876.field_4944) {
-            var7 = class_6098.field_31203;
+            var7 = ItemStack.EMPTY;
          }
 
          if (!var7.method_28022()) {
@@ -244,7 +244,7 @@ public class class_6600 extends class_2875 {
    public void method_30384(String var1) {
       this.field_34039 = var1;
       if (this.method_18878(2).method_35884()) {
-         class_6098 var4 = this.method_18878(2).method_35898();
+         ItemStack var4 = this.method_18878(2).method_35898();
          if (!StringUtils.isBlank(var1)) {
             var4.method_28032(new StringTextComponent(this.field_34039));
          } else {

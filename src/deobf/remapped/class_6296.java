@@ -26,7 +26,7 @@ public class class_6296 extends class_7067<class_3942> {
          method_28735(var13, var11, var12, var6, 0.0F, 1, 0, 0);
          var4.method_36064();
          int var14 = var9.method_26432() != class_1736.field_8943 ? -1 : 1;
-         class_6098 var15 = var9.method_26446();
+         ItemStack var15 = var9.method_26446();
          if (var15.method_27960() != class_4897.field_24505) {
             var14 = -var14;
          }
@@ -42,8 +42,8 @@ public class class_6296 extends class_7067<class_3942> {
          double var29;
          double var31;
          float var36;
-         if ((this.field_36493.gameOptions == null || this.field_36493.gameOptions.method_40867().method_42383())
-            && var9 == MinecraftClient.getInstance().field_9632) {
+         if ((this.field_36493.gameOptions == null || this.field_36493.gameOptions.getPointOfView().method_42383())
+            && var9 == MinecraftClient.getInstance().thePlayer) {
             double var33 = this.field_36493.gameOptions.field_45543;
             var33 /= 100.0;
             class_1343 var35 = new class_1343((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);

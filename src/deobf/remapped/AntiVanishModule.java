@@ -16,7 +16,7 @@ public class AntiVanishModule extends Module {
    @EventListen
    private void method_38841(class_1393 var1) {
       if (this.method_42015()) {
-         if (var1.method_6449() && mc.method_8530() != null) {
+         if (var1.method_6449() && client.method_8530() != null) {
             if (!this.field_43195.isEmpty()) {
                if (this.field_43197 > 3200) {
                   this.field_43195.clear();
@@ -30,7 +30,7 @@ public class AntiVanishModule extends Module {
             if (this.field_43195 != null) {
                try {
                   for (UUID var5 : this.field_43195) {
-                     class_753 var6 = mc.method_8614().method_4800(var5);
+                     class_753 var6 = client.method_8614().method_4800(var5);
                      ITextComponent var7 = var6 == null ? null : var6.method_3410();
                      if (var6 != null && this.field_43195.contains(var5)) {
                         if (var7 == null) {
@@ -59,11 +59,11 @@ public class AntiVanishModule extends Module {
    @EventListen
    private void method_38842(PacketEvent var1) {
       if (this.method_42015()) {
-         if (mc.method_8614() != null && var1.method_557() instanceof class_7867) {
+         if (client.method_8614() != null && var1.method_557() instanceof class_7867) {
             class_7867 var4 = (class_7867)var1.method_557();
             if (var4.method_35608() == class_2236.field_11141) {
                for (class_5902 var6 : var4.method_35609()) {
-                  class_753 var7 = mc.method_8614().method_4800(var6.method_27005().getId());
+                  class_753 var7 = client.method_8614().method_4800(var6.method_27005().getId());
                   if (var7 == null && !this.method_38840(var6.method_27005().getId())) {
                      System.out.println(var6.method_27005().getId());
                      SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Vanished Warning", "A player is vanished ! ", 5500));

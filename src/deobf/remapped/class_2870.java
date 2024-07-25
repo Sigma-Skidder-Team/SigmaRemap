@@ -10,7 +10,7 @@ public class class_2870 {
    private static final Random field_14066 = new Random(0L);
 
    public static class_7373 method_13190(String var0, int var1) {
-      class_5155 var4 = class_3111.method_14295().method_38522(var0);
+      class_5155 var4 = Config.method_14295().method_38522(var0);
       return method_13191(var4, var1);
    }
 
@@ -67,7 +67,7 @@ public class class_2870 {
    }
 
    public static class_7373 method_13187(String var0, String var1, String var2) {
-      class_8359 var5 = class_3111.method_14295();
+      class_8359 var5 = Config.method_14295();
       class_5155 var6 = var5.method_38522(var1);
       class_5155 var7 = var5.method_38522(var2);
       return method_13188(var0, var6, var7);
@@ -75,7 +75,7 @@ public class class_2870 {
 
    public static class_7373 method_13188(String var0, class_5155 var1, class_5155 var2) {
       if (var1 != null && var2 != null) {
-         class_7458 var5 = class_3111.method_14346();
+         class_7458 var5 = Config.method_14346();
          if (var5 == null) {
             return null;
          } else {

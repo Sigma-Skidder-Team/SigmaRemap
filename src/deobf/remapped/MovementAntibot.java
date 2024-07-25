@@ -22,16 +22,16 @@ public class MovementAntibot extends class_5676 {
 
    @EventListen
    private void method_7143(class_5596 var1) {
-      if (field_28769.field_9632.field_41697 < 10) {
+      if (field_28769.thePlayer.field_41697 < 10) {
          this.field_8305.clear();
       }
 
       for (class_704 var5 : class_314.method_1435()) {
-         if (var5 != field_28769.field_9632) {
+         if (var5 != field_28769.thePlayer) {
             if (var5 == null
                || !class_314.method_1413(var5, 0.01F)
                || var5.method_37109()
-               || !(var5.method_37175(field_28769.field_9632) > 5.0F)
+               || !(var5.method_37175(field_28769.thePlayer) > 5.0F)
                   && (var5.method_37302() != var5.field_41754 || var5.method_37156() != var5.field_41724 || var5.method_37309() != var5.field_41713)) {
                if (this.field_8305.getOrDefault(var5, 0) < this.field_8303) {
                   this.field_8305.put(var5, 0);
@@ -45,8 +45,8 @@ public class MovementAntibot extends class_5676 {
 
    @EventListen
    private void method_7140(PacketEvent var1) {
-      if (field_28769.field_9632 != null && this.field_8305 != null) {
-         if (field_28769.field_9632.field_41697 < 10) {
+      if (field_28769.thePlayer != null && this.field_8305 != null) {
+         if (field_28769.thePlayer.field_41697 < 10) {
             this.field_8305.clear();
          }
 

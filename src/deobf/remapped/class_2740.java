@@ -14,7 +14,7 @@ public class class_2740 {
    private static final MinecraftClient field_13375 = MinecraftClient.getInstance();
 
    public static boolean method_12342(int var0) {
-      class_6098 var3 = field_13375.field_9632.field_3869.method_18878(var0).method_35898();
+      ItemStack var3 = field_13375.thePlayer.field_3869.method_18878(var0).method_35898();
       return var3 == null || var3.method_27960() instanceof class_221;
    }
 
@@ -23,7 +23,7 @@ public class class_2740 {
       int var3 = -1;
 
       for (int var4 = 44; var4 >= 9; var4--) {
-         class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+         ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
          if (!method_12342(var4) && var5.method_28013()) {
             float var6 = var5.method_27960().method_11227().method_38407() * (float)var5.field_31206;
             if (var6 > var2) {
@@ -41,7 +41,7 @@ public class class_2740 {
       int var4 = -1;
 
       for (int var5 = 44; var5 >= 9; var5--) {
-         class_6098 var6 = field_13375.field_9632.field_3869.method_18878(var5).method_35898();
+         ItemStack var6 = field_13375.thePlayer.field_3869.method_18878(var5).method_35898();
          if (!method_12342(var5) && var0.isInstance(var6.method_27960())) {
             int var7 = var6.field_31206;
             if (var7 > var3) {
@@ -59,7 +59,7 @@ public class class_2740 {
       int var4 = -1;
 
       for (int var5 = 44; var5 >= 9; var5--) {
-         class_6098 var6 = field_13375.field_9632.field_3869.method_18878(var5).method_35898();
+         ItemStack var6 = field_13375.thePlayer.field_3869.method_18878(var5).method_35898();
          if (!method_12342(var5) && var6.method_27960() == var0) {
             int var7 = var6.field_31206;
             if (var7 > var3) {
@@ -77,7 +77,7 @@ public class class_2740 {
       int var4 = -1;
 
       for (int var5 = 44; var5 >= 9; var5--) {
-         class_6098 var6 = field_13375.field_9632.field_3869.method_18878(var5).method_35898();
+         ItemStack var6 = field_13375.thePlayer.field_3869.method_18878(var5).method_35898();
          if (!method_12342(var5)) {
             for (class_2451 var10 : var0) {
                if (var6.method_27960() == var10) {
@@ -100,7 +100,7 @@ public class class_2740 {
       List var6 = Arrays.<int[]>asList(var1);
 
       for (int var7 = 44; var7 >= 9; var7--) {
-         class_6098 var8 = field_13375.field_9632.field_3869.method_18878(var7).method_35898();
+         ItemStack var8 = field_13375.thePlayer.field_3869.method_18878(var7).method_35898();
          if (!method_12342(var7) && var0.isInstance(var8.method_27960()) && !var6.contains(class_2451.method_11244(var8.method_27960()))) {
             int var9 = var8.field_31206;
             if (var9 > var4) {
@@ -118,7 +118,7 @@ public class class_2740 {
       int var4 = -1;
 
       for (int var5 = 44; var5 >= 9; var5--) {
-         class_6098 var6 = field_13375.field_9632.field_3869.method_18878(var5).method_35898();
+         ItemStack var6 = field_13375.thePlayer.field_3869.method_18878(var5).method_35898();
          if (!method_12342(var5) && class_2451.method_11244(var6.method_27960()) == var0) {
             int var7 = var6.field_31206;
             if (var7 > var3) {
@@ -132,14 +132,14 @@ public class class_2740 {
    }
 
    public static void method_12350(int var0, int var1, boolean var2) {
-      field_13375.field_9647
+      field_13375.playerController
          .method_42134(
-            field_13375.field_9632.field_3869.field_19925, var0, var1, !var2 ? class_6269.field_32024 : class_6269.field_32019, field_13375.field_9632
+            field_13375.thePlayer.field_3869.field_19925, var0, var1, !var2 ? class_6269.field_32024 : class_6269.field_32019, field_13375.thePlayer
          );
    }
 
    public static void method_12328(int var0) {
-      field_13375.field_9647.method_42134(field_13375.field_9632.field_3869.field_19925, var0, 1, class_6269.field_32026, field_13375.field_9632);
+      field_13375.playerController.method_42134(field_13375.thePlayer.field_3869.field_19925, var0, 1, class_6269.field_32026, field_13375.thePlayer);
    }
 
    public static boolean method_12320(class_8228 var0, byte var1) {
@@ -167,7 +167,7 @@ public class class_2740 {
       float var3 = -1.0F;
 
       for (int var4 = 9; var4 <= 44; var4++) {
-         class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+         ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
          if (!method_12342(var4) && var5.method_27960() instanceof class_2235) {
             float var6 = ((class_2235)var5.method_27960()).method_10287()
                + (float)class_2931.method_13423(class_3668.field_17864, var5)
@@ -202,7 +202,7 @@ public class class_2740 {
       float var4 = 1.0F;
 
       for (int var5 = 44; var5 >= 9; var5--) {
-         class_6098 var6 = field_13375.field_9632.field_3869.method_18878(var5).method_35898();
+         ItemStack var6 = field_13375.thePlayer.field_3869.method_18878(var5).method_35898();
          if (var6 != null) {
             float var7 = 0.0F;
             if (var0 == null) {
@@ -229,7 +229,7 @@ public class class_2740 {
       int var3 = 0;
 
       for (int var4 = 44; var4 >= 9; var4--) {
-         class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+         ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
          if (!method_12342(var4) && var0.isInstance(var5.method_27960())) {
             var3 += var5.field_31206;
          }
@@ -242,7 +242,7 @@ public class class_2740 {
       int var3 = 64;
 
       for (int var4 = 44; var4 >= 9; var4--) {
-         class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+         ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
          if (!method_12342(var4) && var0.isInstance(var5.method_27960()) && var5.field_31206 < var3) {
             var3 = var5.field_31206;
          }
@@ -255,7 +255,7 @@ public class class_2740 {
       HashSet var3 = new HashSet();
 
       for (int var4 = 44; var4 >= 9; var4--) {
-         class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+         ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
          if (!method_12342(var4) && var0.isInstance(var5.method_27960())) {
             var3.add(var4);
          }
@@ -269,7 +269,7 @@ public class class_2740 {
       float var3 = -1.0F;
 
       for (int var4 = 44; var4 >= 9; var4--) {
-         class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+         ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
          if (!method_12342(var4) && var5.method_27960() instanceof class_2100) {
             float var6 = (float)class_2931.method_13423(class_3668.field_17850, var5);
             if (var6 > var3) {
@@ -287,7 +287,7 @@ public class class_2740 {
       int var4 = -1;
 
       for (int var5 = 0; var5 < 9; var5++) {
-         class_6098 var6 = field_13375.field_9632.field_3853.method_31498(var5);
+         ItemStack var6 = field_13375.thePlayer.inventory.method_31498(var5);
          if (var6 != null && var0.isInstance(var6.method_27960())) {
             int var7 = var6.field_31206;
             if (var7 > var3) {
@@ -305,7 +305,7 @@ public class class_2740 {
       int var4 = -1;
 
       for (int var5 = 0; var5 < 9; var5++) {
-         class_6098 var6 = field_13375.field_9632.field_3853.method_31498(var5);
+         ItemStack var6 = field_13375.thePlayer.inventory.method_31498(var5);
          if (var6 != null) {
             for (class_2451 var10 : var0) {
                if (var6.method_27960() == var10) {
@@ -328,7 +328,7 @@ public class class_2740 {
       List var6 = Arrays.<int[]>asList(var1);
 
       for (int var7 = 0; var7 < 9; var7++) {
-         class_6098 var8 = field_13375.field_9632.field_3853.method_31498(var7);
+         ItemStack var8 = field_13375.thePlayer.inventory.method_31498(var7);
          if (var8 != null && var0.isInstance(var8.method_27960()) && !var6.contains(class_2451.method_11244(var8.method_27960()))) {
             int var9 = var8.field_31206;
             if (var9 > var4) {
@@ -346,7 +346,7 @@ public class class_2740 {
       int var4 = -1;
 
       for (int var5 = 0; var5 < 9; var5++) {
-         class_6098 var6 = field_13375.field_9632.field_3853.method_31498(var5);
+         ItemStack var6 = field_13375.thePlayer.inventory.method_31498(var5);
          if (var6 != null && class_2451.method_11244(var6.method_27960()) == var0) {
             int var7 = var6.field_31206;
             if (var7 > var3) {
@@ -361,7 +361,7 @@ public class class_2740 {
 
    public static int method_12347() {
       for (int var2 = 0; var2 < 9; var2++) {
-         class_6098 var3 = field_13375.field_9632.field_3853.method_31498(var2);
+         ItemStack var3 = field_13375.thePlayer.inventory.method_31498(var2);
          if (var3 == null) {
             return var2;
          }
@@ -371,10 +371,10 @@ public class class_2740 {
    }
 
    public static boolean method_12361(int var0) {
-      return method_12362(field_13375.field_9632.field_3869.method_18878(var0).method_35898());
+      return method_12362(field_13375.thePlayer.field_3869.method_18878(var0).method_35898());
    }
 
-   public static boolean method_12362(class_6098 var0) {
+   public static boolean method_12362(ItemStack var0) {
       if (var0.method_27960() instanceof class_8228) {
          class_8228 var3 = (class_8228)var0.method_27960();
          int var4 = method_12323(var0);
@@ -397,10 +397,10 @@ public class class_2740 {
    }
 
    public static int method_12322(int var0) {
-      if (field_13375.field_9632.field_3869.method_18878(var0).method_35898() != null) {
-         if (field_13375.field_9632.field_3869.method_18878(var0).method_35898().method_27960() instanceof class_8228) {
-            class_8228 var3 = (class_8228)field_13375.field_9632.field_3869.method_18878(var0).method_35898().method_27960();
-            return var3.field_42244 + class_2931.method_13423(class_4382.method_20431(0), field_13375.field_9632.field_3869.method_18878(var0).method_35898());
+      if (field_13375.thePlayer.field_3869.method_18878(var0).method_35898() != null) {
+         if (field_13375.thePlayer.field_3869.method_18878(var0).method_35898().method_27960() instanceof class_8228) {
+            class_8228 var3 = (class_8228)field_13375.thePlayer.field_3869.method_18878(var0).method_35898().method_27960();
+            return var3.field_42244 + class_2931.method_13423(class_4382.method_20431(0), field_13375.thePlayer.field_3869.method_18878(var0).method_35898());
          } else {
             return 0;
          }
@@ -409,7 +409,7 @@ public class class_2740 {
       }
    }
 
-   public static int method_12323(class_6098 var0) {
+   public static int method_12323(ItemStack var0) {
       if (var0 != null) {
          return var0.method_27960() instanceof class_8228
             ? ((class_8228)var0.method_27960()).field_42244 + class_2931.method_13423(class_3668.field_17859, var0)
@@ -423,7 +423,7 @@ public class class_2740 {
       int var3 = 0;
 
       for (byte var4 = 5; var4 <= 8; var4++) {
-         var3 += method_12323(var0.field_3853.method_31498(var4));
+         var3 += method_12323(var0.inventory.method_31498(var4));
       }
 
       return var3;
@@ -436,7 +436,7 @@ public class class_2740 {
       return var5 * (1.0F - Math.min(20.0F, Math.max(var3 / 5.0F, var3 - var5 / (var4 / 4.0F + 2.0F))) / 25.0F);
    }
 
-   public static float method_12343(class_6098 var0) {
+   public static float method_12343(ItemStack var0) {
       return var0 != null && var0.method_27960() instanceof class_2235
          ? ((class_2235)var0.method_27960()).method_10287()
             + (float)class_2931.method_13423(class_3668.field_17864, var0)
@@ -444,7 +444,7 @@ public class class_2740 {
          : 1.0F;
    }
 
-   public static float method_12325(class_6098 var0) {
+   public static float method_12325(ItemStack var0) {
       if (var0 != null) {
          class_2451 var3 = var0.method_27960();
          if (!(var3 instanceof class_2235)) {
@@ -499,8 +499,8 @@ public class class_2740 {
       HashMap var2 = new HashMap();
 
       for (int var3 = 0; var3 < 9; var3++) {
-         class_6098 var4 = field_13375.field_9632.field_3853.method_31498(var3);
-         var2.put(var3, method_12325(var4) * (float)(field_13375.field_9632.field_3853.field_36404 != var3 ? 1 : 2));
+         ItemStack var4 = field_13375.thePlayer.inventory.method_31498(var3);
+         var2.put(var3, method_12325(var4) * (float)(field_13375.thePlayer.inventory.field_36404 != var3 ? 1 : 2));
       }
 
       return var2;
@@ -523,11 +523,11 @@ public class class_2740 {
 
    public static int method_12363(int var0) {
       int var3 = method_12359();
-      method_12355(field_13375.field_9632.field_3869.field_19925, var0, var3, class_6269.field_32026, field_13375.field_9632);
+      method_12355(field_13375.thePlayer.field_3869.field_19925, var0, var3, class_6269.field_32026, field_13375.thePlayer);
       return var3;
    }
 
-   public static List<class_2250> method_12313(class_6098 var0) {
+   public static List<class_2250> method_12313(ItemStack var0) {
       if (var0 != null) {
          return var0.method_27960() instanceof class_5518 ? class_9541.method_43993(var0) : null;
       } else {
@@ -535,11 +535,11 @@ public class class_2740 {
       }
    }
 
-   public static boolean method_12351(class_6098 var0) {
+   public static boolean method_12351(ItemStack var0) {
       return var0 != null ? var0.method_27960() instanceof class_6947 : false;
    }
 
-   public static float method_12330(class_6098 var0) {
+   public static float method_12330(ItemStack var0) {
       List var3 = method_12313(var0);
       if (var3 != null) {
          float var4 = 0.0F;
@@ -564,7 +564,7 @@ public class class_2740 {
       }
    }
 
-   public static float method_12326(class_6098 var0) {
+   public static float method_12326(ItemStack var0) {
       List var3 = method_12313(var0);
       if (var3 != null) {
          float var4 = 0.0F;
@@ -585,11 +585,11 @@ public class class_2740 {
       }
    }
 
-   public static HashMap<Integer, class_6098> method_12327() {
+   public static HashMap<Integer, ItemStack> method_12327() {
       HashMap var2 = new HashMap();
 
       for (int var3 = 44; var3 >= 9; var3--) {
-         class_6098 var4 = field_13375.field_9632.field_3869.method_18878(var3).method_35898();
+         ItemStack var4 = field_13375.thePlayer.field_3869.method_18878(var3).method_35898();
          if (!method_12342(var3) && var4.method_27960() instanceof class_5518) {
             var2.put(var3, var4);
          }
@@ -598,11 +598,11 @@ public class class_2740 {
       return var2;
    }
 
-   public static HashMap<Integer, class_6098> method_12357() {
+   public static HashMap<Integer, ItemStack> method_12357() {
       HashMap var2 = new HashMap();
 
       for (int var3 = 44; var3 >= 9; var3--) {
-         class_6098 var4 = field_13375.field_9632.field_3869.method_18878(var3).method_35898();
+         ItemStack var4 = field_13375.thePlayer.field_3869.method_18878(var3).method_35898();
          var2.put(var3, var4);
       }
 
@@ -623,17 +623,17 @@ public class class_2740 {
       return var0 > 35;
    }
 
-   public static class_6098 method_12311(int var0) {
-      return field_13375.field_9632.field_3869.method_18878(var0).method_35898();
+   public static ItemStack method_12311(int var0) {
+      return field_13375.thePlayer.field_3869.method_18878(var0).method_35898();
    }
 
-   public static boolean method_12354(class_6098 var0) {
+   public static boolean method_12354(ItemStack var0) {
       if (var0 != null) {
          if (var0.method_28013()) {
             float var3 = var0.method_27960().method_11227().method_38407() * (float)var0.field_31206;
             int var4 = method_12358();
             if (var4 != -1) {
-               class_6098 var5 = method_12311(var4);
+               ItemStack var5 = method_12311(var4);
                float var6 = var5.method_27960().method_11227().method_38407() * (float)var5.field_31206;
                return var3 > var6;
             } else {
@@ -647,12 +647,12 @@ public class class_2740 {
       }
    }
 
-   public static boolean method_12331(class_6098 var0) {
+   public static boolean method_12331(ItemStack var0) {
       if (var0 != null) {
          if (var0.method_27960() instanceof class_603) {
             int var3 = method_12316(class_603.class);
             if (var3 != -1) {
-               class_6098 var4 = method_12311(var3);
+               ItemStack var4 = method_12311(var3);
                int var5 = var4.field_31206;
                int var6 = var0.field_31206;
                return var6 > var5;
@@ -667,18 +667,18 @@ public class class_2740 {
       }
    }
 
-   public static class_6098 method_12355(int var0, int var1, int var2, class_6269 var3, class_704 var4) {
+   public static ItemStack method_12355(int var0, int var1, int var2, class_6269 var3, class_704 var4) {
       return method_12356(var0, var1, var2, var3, var4, false);
    }
 
-   public static class_6098 method_12356(int var0, int var1, int var2, class_6269 var3, class_704 var4, boolean var5) {
-      class_6098 var8 = null;
+   public static ItemStack method_12356(int var0, int var1, int var2, class_6269 var3, class_704 var4, boolean var5) {
+      ItemStack var8 = null;
       if (var1 >= 0) {
          var8 = var4.field_3874.method_18878(var1).method_35898().method_27973();
       }
 
-      short var9 = var4.field_3874.method_18884(field_13375.field_9632.field_3853);
-      class_6098 var10 = var4.field_3874.method_18865(var1, var2, var3, var4);
+      short var9 = var4.field_3874.method_18884(field_13375.thePlayer.inventory);
+      ItemStack var10 = var4.field_3874.method_18865(var1, var2, var3, var4);
       if (var8 == null || class_3347.method_15348().method_2055() > class_412.field_1740.method_2055() && !var5 || var3 == class_6269.field_32026) {
          var8 = var10;
       }
@@ -688,16 +688,16 @@ public class class_2740 {
    }
 
    public static void method_12365(int var0) {
-      field_13375.field_9647.method_42134(field_13375.field_9632.field_3869.field_19925, var0, 1, class_6269.field_32024, field_13375.field_9632);
+      field_13375.playerController.method_42134(field_13375.thePlayer.field_3869.field_19925, var0, 1, class_6269.field_32024, field_13375.thePlayer);
    }
 
-   public static boolean method_12364(class_6098 var0) {
+   public static boolean method_12364(ItemStack var0) {
       if (var0 != null && var0.method_27960() instanceof class_8228) {
          float var3 = (float)method_12323(var0);
 
          for (int var4 = 5; var4 < 45; var4++) {
-            if (field_13375.field_9632.field_3869.method_18878(var4).method_35884()) {
-               class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+            if (field_13375.thePlayer.field_3869.method_18878(var4).method_35884()) {
+               ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
                class_2451 var6 = var5.method_27960();
                if (var6 instanceof class_8228) {
                   class_8228 var7 = (class_8228)var6;
@@ -715,10 +715,10 @@ public class class_2740 {
    }
 
    public static void method_12312(int var0, int var1) {
-      field_13375.field_9647.method_42134(field_13375.field_9632.field_3869.field_19925, var0, var1, class_6269.field_32026, field_13375.field_9632);
+      field_13375.playerController.method_42134(field_13375.thePlayer.field_3869.field_19925, var0, var1, class_6269.field_32026, field_13375.thePlayer);
    }
 
-   public static boolean method_12360(class_6098 var0) {
+   public static boolean method_12360(ItemStack var0) {
       if (var0 != null && var0.method_27960() instanceof class_5518) {
          for (class_2250 var4 : method_12313(var0)) {
             if (var4.method_10339() == Effects.field_19718
@@ -734,7 +734,7 @@ public class class_2740 {
    }
 
    public static boolean method_12366() {
-      for (class_7934 var3 : field_13375.field_9632.field_3869.field_19926) {
+      for (class_7934 var3 : field_13375.thePlayer.field_3869.field_19926) {
          if (!var3.method_35884() && var3.field_40588 > 8 && var3.field_40588 < 45) {
             return false;
          }
@@ -743,11 +743,11 @@ public class class_2740 {
       return true;
    }
 
-   public static boolean method_12369(class_6098 var0) {
+   public static boolean method_12369(ItemStack var0) {
       return var0 != null && !var0.method_27960().equals(class_4897.field_25302);
    }
 
-   public static List<class_6098> method_12340(class_704 var0) {
+   public static List<ItemStack> method_12340(class_704 var0) {
       ArrayList var3 = new ArrayList();
 
       for (class_7934 var5 : var0.field_3869.field_19926) {
@@ -763,7 +763,7 @@ public class class_2740 {
       int var3 = 0;
 
       for (int var4 = 44; var4 >= 9; var4--) {
-         class_6098 var5 = field_13375.field_9632.field_3869.method_18878(var4).method_35898();
+         ItemStack var5 = field_13375.thePlayer.field_3869.method_18878(var4).method_35898();
          if (!method_12342(var4) && var5.method_27960() == var0) {
             var3 += var5.field_31206;
          }

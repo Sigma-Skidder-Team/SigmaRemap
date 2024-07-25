@@ -26,7 +26,7 @@ public class class_9668 extends class_5467 implements class_6250 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return false;
    }
 

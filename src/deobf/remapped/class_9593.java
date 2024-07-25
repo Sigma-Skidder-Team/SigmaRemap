@@ -79,7 +79,7 @@ public class class_9593 {
             }
          }
 
-         MinecraftClient.getInstance().execute(() -> class_3542.method_16474(() -> ImmutableList.of(Type.SKIN, Type.CAPE).forEach(var3xx -> {
+         MinecraftClient.getInstance().execute(() -> RenderSystem.method_16474(() -> ImmutableList.of(Type.SKIN, Type.CAPE).forEach(var3xx -> {
                   if (var6x.containsKey(var3xx)) {
                      this.method_44312((MinecraftProfileTexture)var6x.get(var3xx), var3xx, var2);
                   }

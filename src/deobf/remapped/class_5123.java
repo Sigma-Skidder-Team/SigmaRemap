@@ -31,7 +31,7 @@ public class class_5123 {
       boolean var5 = false;
 
       for (Identifier var9 : this.field_26443) {
-         for (class_6098 var11 : var1.field_47801.method_1722().method_4604(var9).method_7862(var4)) {
+         for (ItemStack var11 : var1.field_47801.method_1722().method_4604(var9).method_7862(var4)) {
             if (!var1.method_3245(var11)) {
                class_91 var12 = var1.method_3153(var11, false);
                if (var12 != null) {

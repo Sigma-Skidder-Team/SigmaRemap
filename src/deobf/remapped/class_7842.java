@@ -66,20 +66,20 @@ public class class_7842 {
                }
 
                if (var23.method_42015()) {
-                  SigmaMainClass.getInstance().getEventManager().method_7917(var23);
+                  SigmaMainClass.getInstance().getEventManager().subscribe(var23);
                   if (var23 instanceof SecondModule) {
                      SecondModule var27 = (SecondModule)var23;
                      if (var27.field_17664 != null) {
-                        SigmaMainClass.getInstance().getEventManager().method_7917(var27.field_17664);
+                        SigmaMainClass.getInstance().getEventManager().subscribe(var27.field_17664);
                      }
                   }
                } else {
-                  SigmaMainClass.getInstance().getEventManager().method_7915(var23);
+                  SigmaMainClass.getInstance().getEventManager().unsubscribe(var23);
                   if (var23 instanceof SecondModule) {
                      SecondModule var26 = (SecondModule)var23;
 
                      for (Module var36 : var26.field_17661) {
-                        SigmaMainClass.getInstance().getEventManager().method_7915(var36);
+                        SigmaMainClass.getInstance().getEventManager().unsubscribe(var36);
                      }
                   }
                }

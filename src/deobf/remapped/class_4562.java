@@ -39,17 +39,17 @@ public class class_4562 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      class_3542.method_16438();
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16354();
+      RenderSystem.method_16438();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16354();
       this.method_21179();
       this.method_21171();
       this.method_21180();
-      class_3542.method_16432();
-      class_3542.method_16448();
-      class_3542.method_16489();
-      if (!this.field_22226.field_9632.method_37221()) {
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
+      RenderSystem.method_16489();
+      if (!this.field_22226.thePlayer.method_37221()) {
          this.method_21170();
       }
    }
@@ -140,8 +140,8 @@ public class class_4562 implements class_2995 {
    }
 
    private static void method_21182(class_1331 var0, float var1, float var2, float var3, float var4, float var5) {
-      class_3542.method_16488();
-      class_3542.method_16437();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
       class_3372.method_15560(var0, var1, var2, var3, var4, var5);
    }
 
@@ -250,7 +250,7 @@ public class class_4562 implements class_2995 {
    }
 
    private boolean method_21174(class_1236 var1) {
-      class_5989 var4 = this.field_22226.field_9632;
+      class_5989 var4 = this.field_22226.thePlayer;
       class_1331 var5 = new class_1331(var4.method_37302(), var1.field_6819.method_60(), var4.method_37156());
       class_1331 var6 = new class_1331(var1.field_6819);
       return var5.method_12171(var6, 30.0);
@@ -273,6 +273,6 @@ public class class_4562 implements class_2995 {
    }
 
    private void method_21170() {
-      class_3372.method_15558(this.field_22226.method_8516(), 8).ifPresent(var1 -> this.field_22224 = var1.method_37328());
+      class_3372.method_15558(this.field_22226.getRenderViewEntity(), 8).ifPresent(var1 -> this.field_22224 = var1.method_37328());
    }
 }

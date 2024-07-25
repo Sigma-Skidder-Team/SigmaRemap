@@ -9,7 +9,7 @@ public class class_5266 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return var1.method_27960() == class_4897.field_25262;
    }
 }

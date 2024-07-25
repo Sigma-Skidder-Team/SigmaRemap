@@ -10,7 +10,7 @@ public class StepModule extends SecondModule {
    @Override
    public void onDisable() {
       super.onDisable();
-      mc.field_9632.field_41733 = 0.6F;
+      client.thePlayer.field_41733 = 0.6F;
    }
 
    @EventListen
@@ -30,19 +30,19 @@ public class StepModule extends SecondModule {
    }
 
    public class_1380 method_19450(class_8544 var1) {
-      double var4 = mc.field_9632.method_37302() + var1.method_39325().field_7336;
-      double var6 = mc.field_9632.method_37156() + var1.method_39325().field_7334;
+      double var4 = client.thePlayer.method_37302() + var1.method_39325().field_7336;
+      double var6 = client.thePlayer.method_37156() + var1.method_39325().field_7334;
       double var8 = 0.41;
       double var10 = var1.method_39326() - var1.method_39323();
       class_4092 var12 = new class_4092(
          var4 - var8,
-         mc.field_9632.field_41712.field_19937,
+         client.thePlayer.field_41712.field_19937,
          var6 - var8,
          var4 + var8,
-         mc.field_9632.field_41712.field_19937 + var10,
+         client.thePlayer.field_41712.field_19937 + var10,
          var6 + var8
       );
-      Object[] var13 = mc.field_9601.method_6680(mc.field_9632, var12).toArray();
+      Object[] var13 = client.field_9601.method_6680(client.thePlayer, var12).toArray();
       int var14 = var13.length;
       class_2522 var15 = null;
       class_1331 var16 = null;
@@ -53,7 +53,7 @@ public class StepModule extends SecondModule {
          class_1331 var21 = new class_1331(
             var20.method_19491(class_9249.field_47215), var20.method_19491(class_9249.field_47216), var20.method_19491(class_9249.field_47219)
          );
-         class_2522 var22 = mc.field_9601.method_28262(var21);
+         class_2522 var22 = client.field_9601.method_28262(var21);
          if (var15 == null || var20.method_19483().field_19939 > var17) {
             var15 = var22;
             var16 = var21;
@@ -61,11 +61,11 @@ public class StepModule extends SecondModule {
          }
       }
 
-      if (!mc.field_9632.method_37285() && !mc.field_9632.method_37370()) {
+      if (!client.thePlayer.method_37285() && !client.thePlayer.method_37370()) {
          if (var15 != null) {
-            if (!mc.field_9632.field_41726) {
+            if (!client.thePlayer.field_41726) {
                if (var15.method_8360() instanceof class_6344) {
-                  class_4190 var24 = var15.method_8334(mc.field_9601, var16);
+                  class_4190 var24 = var15.method_8334(client.field_9601, var16);
                   if (var24.method_19483().field_19939 == 1.0) {
                      return class_1380.field_7487;
                   }
@@ -84,7 +84,7 @@ public class StepModule extends SecondModule {
                      return class_1380.field_7484;
                   }
                } else {
-                  class_4190 var23 = var15.method_8334(mc.field_9601, var16);
+                  class_4190 var23 = var15.method_8334(client.field_9601, var16);
                   if (var23.method_19483().field_19939 == 1.0) {
                      return class_1380.field_7485;
                   }

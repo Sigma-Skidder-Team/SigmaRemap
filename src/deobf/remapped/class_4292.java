@@ -13,7 +13,7 @@ public class class_4292 {
    public MinecraftClient client = MinecraftClient.getInstance();
 
    public class_4292() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
    }
 
    @EventListen

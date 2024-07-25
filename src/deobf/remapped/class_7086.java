@@ -14,8 +14,8 @@ public class class_7086 extends class_2830 implements class_3978 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return new class_6098(class_4897.field_25205);
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return new ItemStack(class_4897.field_25205);
    }
 
    @Override
@@ -66,7 +66,7 @@ public class class_7086 extends class_2830 implements class_3978 {
          return super.method_10777(var1, var2, var3, var4, var5, var6);
       } else {
          int var11 = 1 + var2.field_33033.nextInt(2);
-         method_29267(var2, var3, new class_6098(class_4897.field_25205, var11 + (!var10 ? 0 : 1)));
+         method_29267(var2, var3, new ItemStack(class_4897.field_25205, var11 + (!var10 ? 0 : 1)));
          var2.method_43359((class_704)null, var3, class_463.field_2156, class_562.field_3322, 1.0F, 0.8F + var2.field_33033.nextFloat() * 0.4F);
          var2.method_7513(var3, var1.method_10308(field_36577, Integer.valueOf(1)), 2);
          return class_6910.method_31659(var2.field_33055);

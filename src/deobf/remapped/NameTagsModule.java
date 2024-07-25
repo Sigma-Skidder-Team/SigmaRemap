@@ -40,7 +40,7 @@ public class NameTagsModule extends Module {
 
             while (var4.hasNext()) {
                Entry var5 = (Entry)var4.next();
-               if (!(mc.field_9601.method_28262((class_1331)var5.getKey()).method_8360() instanceof class_3744)) {
+               if (!(client.field_9601.method_28262((class_1331)var5.getKey()).method_8360() instanceof class_3744)) {
                   var4.remove();
                }
 
@@ -51,7 +51,7 @@ public class NameTagsModule extends Module {
          this.field_6696.clear();
 
          for (Entity var7 : class_7494.method_34088(class_314.method_1435())) {
-            if (var7 != mc.field_9632
+            if (var7 != client.thePlayer
                && var7 != FreeCamModule.field_48917
                && var7 != BlinkModule.field_27898
                && !var7.method_37109()
@@ -67,7 +67,7 @@ public class NameTagsModule extends Module {
       if (this.method_42015()) {
          if (var1.method_10047() instanceof class_8585) {
             class_8585 var4 = (class_8585)var1.method_10047();
-            if (mc.field_9601.method_28262(var4.method_39484().method_43955()).method_8360() instanceof class_3744) {
+            if (client.field_9601.method_28262(var4.method_39484().method_43955()).method_8360() instanceof class_3744) {
                this.field_6694 = var4.method_39484().method_43955();
             }
          }
@@ -79,10 +79,10 @@ public class NameTagsModule extends Module {
                return;
             }
 
-            if (mc.field_9623 instanceof class_309) {
-               class_309 var6 = (class_309) mc.field_9623;
+            if (client.field_9623 instanceof class_309) {
+               class_309 var6 = (class_309) client.field_9623;
                var5.field_7295 = var6.method_20393().method_18878(0).method_35898();
-               var5.field_7288 = new class_6098(var6.method_20393().method_18878(1).method_35898().method_27960());
+               var5.field_7288 = new ItemStack(var6.method_20393().method_18878(1).method_35898().method_27960());
                var5.field_7288.field_31206 = var6.method_20393().method_18878(1).method_35898().field_31206;
                var5.field_7291 = var6.method_20393().method_18878(2).method_35898();
             }
@@ -110,13 +110,13 @@ public class NameTagsModule extends Module {
             }
 
             if (var6.method_24956() == 0) {
-               var5.field_7295 = new class_6098(var6.method_24953().method_27960());
+               var5.field_7295 = new ItemStack(var6.method_24953().method_27960());
                var5.field_7295.field_31206 = var6.method_24953().field_31206;
             } else if (var6.method_24956() == 1) {
-               var5.field_7288 = new class_6098(var6.method_24953().method_27960());
+               var5.field_7288 = new ItemStack(var6.method_24953().method_27960());
                var5.field_7288.field_31206 = var6.method_24953().field_31206;
             } else if (var6.method_24956() == 2) {
-               var5.field_7291 = new class_6098(var6.method_24953().method_27960());
+               var5.field_7291 = new ItemStack(var6.method_24953().method_27960());
                var5.field_7291.field_31206 = var6.method_24953().field_31206;
             }
          }
@@ -158,7 +158,7 @@ public class NameTagsModule extends Module {
    @EventListen
    public void method_5293(class_3368 var1) {
       if (this.method_42015()) {
-         class_3542.method_16420(33986, 240.0F, 240.0F);
+         RenderSystem.method_16420(33986, 240.0F, 240.0F);
          boolean var4 = this.method_42007("Magnify");
 
          for (Entity var6 : this.field_6696) {
@@ -188,8 +188,8 @@ public class NameTagsModule extends Module {
          }
 
          if (this.method_42007("Mob Owners")) {
-            for (Entity var12 : mc.field_9601.method_736()) {
-               if (var12 == mc.field_9632 && (var12 instanceof class_8990 || var12 instanceof class_3551)) {
+            for (Entity var12 : client.field_9601.method_736()) {
+               if (var12 == client.thePlayer && (var12 instanceof class_8990 || var12 instanceof class_3551)) {
                   UUID var14 = !(var12 instanceof class_8990) ? ((class_3551)var12).method_19081() : ((class_8990)var12).method_41211();
                   if (var14 != null) {
                      if (!this.field_6695.containsKey(var14)) {
@@ -230,11 +230,11 @@ public class NameTagsModule extends Module {
          }
 
          GL11.glDisable(2896);
-         class_3542.method_16420(33986, 240.0F, 240.0F);
+         RenderSystem.method_16420(33986, 240.0F, 240.0F);
          class_9162.method_42212();
-         TextureManager var10000 = mc.method_8577();
-         mc.method_8577();
-         var10000.method_35674(TextureManager.field_40364);
+         TextureManager var10000 = client.getTextureManager();
+         client.getTextureManager();
+         var10000.bindTexture(TextureManager.field_40364);
       }
    }
 
@@ -258,9 +258,9 @@ public class NameTagsModule extends Module {
          var7 = var2.field_7295.field_31206 + " " + var2.field_7295.method_28008();
       }
 
-      float var8 = (float)((double)var1.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61() + 0.5);
-      float var9 = (float)((double)var1.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60() + 1.0);
-      float var10 = (float)((double)var1.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62() + 0.5);
+      float var8 = (float)((double)var1.method_12173() - client.gameRenderer.method_35949().method_41627().method_61() + 0.5);
+      float var9 = (float)((double)var1.method_12165() - client.gameRenderer.method_35949().method_41627().method_60() + 1.0);
+      float var10 = (float)((double)var1.method_12185() - client.gameRenderer.method_35949().method_41627().method_62() + 0.5);
       GL11.glBlendFunc(770, 771);
       GL11.glEnable(3042);
       GL11.glEnable(2848);
@@ -274,13 +274,13 @@ public class NameTagsModule extends Module {
       GL11.glPushMatrix();
       GL11.glAlphaFunc(519, 0.0F);
       GL11.glTranslated((double)var8, (double)(var9 + 0.6F - 0.33333334F * (1.0F - var3)), (double)var10);
-      GL11.glRotatef(mc.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-      GL11.glRotatef(mc.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+      GL11.glRotatef(client.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+      GL11.glRotatef(client.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
       GL11.glPushMatrix();
       float var14 = 0.008F;
       GL11.glScalef(-var14 * var3, -var14 * var3, -var14 * var3);
       int var15 = 0;
-      class_6098 var16 = var2.method_6050();
+      ItemStack var16 = var2.method_6050();
       if (var16 != null) {
          var15 = Math.max(class_5320.field_27152.method_18547(var16.method_28008().getString()), 50);
       } else {
@@ -300,7 +300,7 @@ public class NameTagsModule extends Module {
          );
       }
 
-      class_6098 var20 = var2.method_6050();
+      ItemStack var20 = var2.method_6050();
       if (var20 != null) {
          class_73.method_126(var20, var13, var13 + 27, 45, 45);
          class_73.method_87(class_5320.field_27152, (float)(var13 + 51), 40.0F, var20.method_28008().getString(), class_1255.field_6918.field_6917);
@@ -324,14 +324,14 @@ public class NameTagsModule extends Module {
    public void method_5289(double var1, double var3, double var5, Entity var7, float var8, String var9) {
       class_3384 var12 = class_5320.field_27141;
       String var13 = var9 == null ? var7.method_45509().getString().replaceAll("§.", "") : var9;
-      if (SigmaMainClass.getInstance().getModuleManager().method_847(NameProtectModule.class).method_42015() && var13.equals(mc.method_8502().method_5366())) {
-         var13 = SigmaMainClass.getInstance().getModuleManager().method_847(NameProtectModule.class).getStringValueByName("Username");
+      if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).method_42015() && var13.equals(client.method_8502().method_5366())) {
+         var13 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).getStringValueByName("Username");
       }
 
       if (var13.length() != 0) {
-         float var14 = (float)(var1 - mc.gameRenderer.method_35949().method_41627().method_61());
-         float var15 = (float)(var3 - mc.gameRenderer.method_35949().method_41627().method_60());
-         float var16 = (float)(var5 - mc.gameRenderer.method_35949().method_41627().method_62());
+         float var14 = (float)(var1 - client.gameRenderer.method_35949().method_41627().method_61());
+         float var15 = (float)(var3 - client.gameRenderer.method_35949().method_41627().method_60());
+         float var16 = (float)(var5 - client.gameRenderer.method_35949().method_41627().method_62());
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(3042);
          GL11.glEnable(2848);
@@ -343,8 +343,8 @@ public class NameTagsModule extends Module {
          GL11.glPushMatrix();
          GL11.glAlphaFunc(519, 0.0F);
          GL11.glTranslated((double)var14, (double)(var15 + 0.6F - 0.33333334F * (1.0F - var8)), (double)var16);
-         GL11.glRotatef(mc.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
-         GL11.glRotatef(mc.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
+         GL11.glRotatef(client.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+         GL11.glRotatef(client.gameRenderer.method_35949().method_41638(), 1.0F, 0.0F, 0.0F);
          GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
          int var19 = this.field_6702;
          if (!SigmaMainClass.getInstance().method_3307().method_14460(var7)) {

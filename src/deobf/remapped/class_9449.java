@@ -40,39 +40,39 @@ public class class_9449 extends class_4088 {
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_18874(class_704 var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
-         class_6098 var7 = var6.method_35898();
+         ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
          if ((var2 < 0 || var2 > 2) && var2 != 3 && var2 != 4) {
             if (!class_4804.method_22135(var5)) {
                if (!this.field_48224.method_35889(var7)) {
                   if (class_8120.method_36947(var5) && var5.method_27997() == 1) {
                      if (!this.method_18892(var7, 0, 3, false)) {
-                        return class_6098.field_31203;
+                        return ItemStack.EMPTY;
                      }
                   } else if (var2 >= 5 && var2 < 32) {
                      if (!this.method_18892(var7, 32, 41, false)) {
-                        return class_6098.field_31203;
+                        return ItemStack.EMPTY;
                      }
                   } else if (var2 >= 32 && var2 < 41) {
                      if (!this.method_18892(var7, 5, 32, false)) {
-                        return class_6098.field_31203;
+                        return ItemStack.EMPTY;
                      }
                   } else if (!this.method_18892(var7, 5, 41, false)) {
-                     return class_6098.field_31203;
+                     return ItemStack.EMPTY;
                   }
                } else if (!this.method_18892(var7, 3, 4, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (this.method_18892(var7, 4, 5, false) || this.field_48224.method_35889(var7) && !this.method_18892(var7, 3, 4, false)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method_18892(var7, 5, 41, true)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
 
             var6.method_35888(var7, var5);
@@ -81,11 +81,11 @@ public class class_9449 extends class_4088 {
          if (!var7.method_28022()) {
             var6.method_35887();
          } else {
-            var6.method_35896(class_6098.field_31203);
+            var6.method_35896(ItemStack.EMPTY);
          }
 
          if (var7.method_27997() == var5.method_27997()) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
          var6.method_35892(var1, var7);

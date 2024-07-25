@@ -74,10 +74,10 @@ public class class_9183 extends class_7651 {
          }
 
          if (class_7039.method_32303(this.field_46988, var1) && var1.field_39020) {
-            class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-            class_3542.method_16488();
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.enableBlend();
             class_7039.method_32344(this.field_46988).method_8577().method_35674(class_7039.method_32225());
-            class_3542.method_16398(class_5033.field_26042, class_8535.field_43697);
+            RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
             ITextComponent var23;
             ITextComponent var24;
             if (!var1.field_39005) {
@@ -104,15 +104,15 @@ public class class_9183 extends class_7651 {
             }
 
             int var18 = !var17 ? 1 : 2;
-            class_2089.method_9778(var2, var15, var16, 0.0F, (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
-            class_2089.method_9778(var2, var15 + var13 / 2, var16, (float)(200 - var13 / 2), (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
-            class_2089.method_9778(var2, var15, var16 + 8, 0.0F, (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
-            class_2089.method_9778(var2, var15 + var13 / 2, var16 + 8, (float)(200 - var13 / 2), (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
-            class_3542.method_16448();
+            AbstractGui.method_9778(var2, var15, var16, 0.0F, (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
+            AbstractGui.method_9778(var2, var15 + var13 / 2, var16, (float)(200 - var13 / 2), (float)(46 + var18 * 20), var13 / 2, 8, 256, 256);
+            AbstractGui.method_9778(var2, var15, var16 + 8, 0.0F, (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
+            AbstractGui.method_9778(var2, var15 + var13 / 2, var16 + 8, (float)(200 - var13 / 2), (float)(46 + var18 * 20 + 12), var13 / 2, 8, 256, 256);
+            RenderSystem.method_16448();
             int var19 = var4 + 11 + 5;
             int var20 = !var17 ? 16777215 : 16777120;
             class_7039.method_32239(this.field_46988).method_45378(var2, var23, (float)(var3 + 2), (float)(var19 + 1), 15553363);
-            class_2089.method_9788(var2, class_7039.method_32324(this.field_46988), var24, var15 + var13 / 2, var19 + 1, var20);
+            AbstractGui.method_9788(var2, class_7039.method_32324(this.field_46988), var24, var15 + var13 / 2, var19 + 1, var20);
          } else {
             if (var1.field_39015 != class_8840.field_45209) {
                class_7039.method_32300(this.field_46988).method_45385(var2, var1.method_34769(), (float)(var3 + 2), (float)(var4 + 12), 7105644);
@@ -129,18 +129,18 @@ public class class_9183 extends class_7651 {
 
          class_7039.method_32306(this.field_46988).method_45385(var2, var1.method_34772(), (float)(var3 + 2), (float)(var4 + 1), 16777215);
          class_3570.method_16603(var1.field_39014, () -> {
-            class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-            class_2089.method_9780(var2, var3 - 36, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
-            class_2089.method_9780(var2, var3 - 36, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+            AbstractGui.method_9780(var2, var3 - 36, var4, 32, 32, 8.0F, 8.0F, 8, 8, 64, 64);
+            AbstractGui.method_9780(var2, var3 - 36, var4, 32, 32, 40.0F, 8.0F, 8, 8, 64, 64);
          });
       } else {
          class_7039.method_32287(this.field_46988).method_8577().method_35674(class_7039.method_32246());
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16374();
-         class_2089.method_9778(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.enableAlphaTest();
+         AbstractGui.method_9778(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
          float var21 = 0.5F + (1.0F + class_9299.method_42818((float)class_7039.method_32235(this.field_46988) * 0.25F)) * 0.25F;
          int var22 = 0xFF000000 | (int)(127.0F * var21) << 16 | (int)(255.0F * var21) << 8 | (int)(127.0F * var21);
-         class_2089.method_9788(var2, class_7039.method_32228(this.field_46988), class_7039.method_32341(), var3 + 10 + 40 + 75, var4 + 12, var22);
+         AbstractGui.method_9788(var2, class_7039.method_32228(this.field_46988), class_7039.method_32341(), var3 + 10 + 40 + 75, var4 + 12, var22);
       }
    }
 }

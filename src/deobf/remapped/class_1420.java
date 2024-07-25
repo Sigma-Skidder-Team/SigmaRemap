@@ -76,7 +76,7 @@ public class class_1420 implements class_7203 {
    }
 
    @Override
-   public class_4666 method_25709() {
+   public GameType method_25709() {
       return this.field_7692.method_25709();
    }
 
@@ -125,7 +125,7 @@ public class class_1420 implements class_7203 {
    }
 
    @Override
-   public void method_25711(class_4666 var1) {
+   public void method_25711(GameType var1) {
    }
 
    @Override

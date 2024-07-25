@@ -72,7 +72,7 @@ public class class_5661 extends class_6967 {
                double var8 = 0.08;
                ((class_6331)var3)
                   .method_28957(
-                     new class_8661(class_3090.field_15351, new class_6098(class_4897.field_24962)),
+                     new class_8661(class_3090.field_15351, new ItemStack(class_4897.field_24962)),
                      (double)var5.method_12173() + 0.5,
                      (double)var5.method_12165() + 0.7,
                      (double)var5.method_12185() + 0.5,

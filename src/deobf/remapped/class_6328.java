@@ -44,8 +44,8 @@ public class class_6328 {
          while (var8 > 0) {
             int var9 = Math.min(var1.method_14834().method_11245(), var8);
             var8 -= var9;
-            class_6098 var10 = var1.method_14833(var9, false);
-            boolean var11 = var7.field_3853.method_32414(var10);
+            ItemStack var10 = var1.method_14833(var9, false);
+            boolean var11 = var7.inventory.method_32414(var10);
             if (var11 && var10.method_28022()) {
                var10.method_28017(1);
                class_91 var13 = var7.method_3153(var10, false);

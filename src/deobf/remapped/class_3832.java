@@ -5,7 +5,7 @@ import javax.annotation.Nullable;
 public interface class_3832 extends class_2354 {
    void method_17810(boolean var1);
 
-   void method_17812(class_5834 var1, class_6098 var2, class_5783 var3, float var4);
+   void method_17812(class_5834 var1, ItemStack var2, class_5783 var3, float var4);
 
    @Nullable
    class_5834 method_17809();
@@ -14,7 +14,7 @@ public interface class_3832 extends class_2354 {
 
    default void method_17815(class_5834 var1, float var2) {
       class_2584 var5 = class_8462.method_38934(var1, class_4897.field_25030);
-      class_6098 var6 = var1.method_26617(var5);
+      ItemStack var6 = var1.method_26617(var5);
       if (var1.method_26443(class_4897.field_25030)) {
          class_4380.method_20402(var1.field_41768, var1, var5, var6, var2, (float)(14 - var1.field_41768.method_43370().method_2097() * 4));
       }

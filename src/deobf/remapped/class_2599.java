@@ -94,11 +94,11 @@ public class class_2599 extends class_6993 implements class_3832 {
       this.field_12846.method_21553().forEach(this::method_37310);
    }
 
-   public class_6098 method_11793(class_6098 var1) {
+   public ItemStack method_11793(ItemStack var1) {
       return this.field_12846.method_21542(var1);
    }
 
-   public boolean method_11800(class_6098 var1) {
+   public boolean method_11800(ItemStack var1) {
       return this.field_12846.method_21541(var1);
    }
 
@@ -161,14 +161,14 @@ public class class_2599 extends class_6993 implements class_3832 {
    @Override
    public void method_26870(class_9589 var1) {
       if (this.method_31995()) {
-         this.method_11798(class_6943.field_35704, new class_6098(class_4897.field_24338));
-         this.method_11798(class_6943.field_35708, new class_6098(class_4897.field_24849));
-         this.method_11798(class_6943.field_35698, new class_6098(class_4897.field_25088));
-         this.method_11798(class_6943.field_35700, new class_6098(class_4897.field_25132));
+         this.method_11798(class_6943.field_35704, new ItemStack(class_4897.field_24338));
+         this.method_11798(class_6943.field_35708, new ItemStack(class_4897.field_24849));
+         this.method_11798(class_6943.field_35698, new ItemStack(class_4897.field_25088));
+         this.method_11798(class_6943.field_35700, new ItemStack(class_4897.field_25132));
       }
    }
 
-   private void method_11798(class_6943 var1, class_6098 var2) {
+   private void method_11798(class_6943 var1, ItemStack var2) {
       if (this.field_41768.field_33033.nextFloat() < 0.1F) {
          this.method_37349(var1, var2);
       }
@@ -261,8 +261,8 @@ public class class_2599 extends class_6993 implements class_3832 {
       super.method_31992(var1);
    }
 
-   private class_6098 method_11789() {
-      return !((double)this.field_41717.nextFloat() < 0.5) ? new class_6098(class_4897.field_25057) : new class_6098(class_4897.field_25030);
+   private ItemStack method_11789() {
+      return !((double)this.field_41717.nextFloat() < 0.5) ? new ItemStack(class_4897.field_25057) : new ItemStack(class_4897.field_25030);
    }
 
    private boolean method_11790() {
@@ -324,7 +324,7 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public void method_17812(class_5834 var1, class_6098 var2, class_5783 var3, float var4) {
+   public void method_17812(class_5834 var1, ItemStack var2, class_5783 var3, float var4) {
       this.method_17811(this, var1, var3, var4, 1.6F);
    }
 
@@ -333,11 +333,11 @@ public class class_2599 extends class_6993 implements class_3832 {
       return var1 == class_4897.field_25030;
    }
 
-   public void method_11797(class_6098 var1) {
+   public void method_11797(ItemStack var1) {
       this.method_26866(class_6943.field_35707, var1);
    }
 
-   public void method_11794(class_6098 var1) {
+   public void method_11794(ItemStack var1) {
       if (var1.method_27960() != class_134.field_388) {
          this.method_26866(class_6943.field_35701, var1);
       } else {
@@ -347,18 +347,18 @@ public class class_2599 extends class_6993 implements class_3832 {
    }
 
    @Override
-   public boolean method_26873(class_6098 var1) {
+   public boolean method_26873(ItemStack var1) {
       return this.field_41768.method_29537().method_1285(class_291.field_1047) && this.method_26930() && class_134.method_511(this, var1);
    }
 
-   public boolean method_11787(class_6098 var1) {
+   public boolean method_11787(ItemStack var1) {
       class_6943 var4 = class_5886.method_26896(var1);
-      class_6098 var5 = this.method_26520(var4);
+      ItemStack var5 = this.method_26520(var4);
       return this.method_26881(var1, var5);
    }
 
    @Override
-   public boolean method_26881(class_6098 var1, class_6098 var2) {
+   public boolean method_26881(ItemStack var1, ItemStack var2) {
       if (class_2931.method_13421(var2)) {
          return false;
       } else {

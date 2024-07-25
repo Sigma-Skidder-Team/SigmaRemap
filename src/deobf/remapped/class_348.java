@@ -39,18 +39,18 @@ public class class_348 {
          if (field_1368 == null || this.field_1367 != field_1368.method_1772()) {
             field_1368 = this;
             if (this.field_1367) {
-               class_3542.method_16448();
+               RenderSystem.method_16448();
                return;
             }
 
-            class_3542.method_16488();
+            RenderSystem.enableBlend();
          }
 
-         class_3542.method_16401(this.field_1366);
+         RenderSystem.method_16401(this.field_1366);
          if (!this.field_1362) {
-            class_3542.method_16397(this.field_1369, this.field_1363);
+            RenderSystem.method_16397(this.field_1369, this.field_1363);
          } else {
-            class_3542.method_16424(this.field_1369, this.field_1363, this.field_1364, this.field_1361);
+            RenderSystem.method_16424(this.field_1369, this.field_1363, this.field_1364, this.field_1361);
          }
       }
    }

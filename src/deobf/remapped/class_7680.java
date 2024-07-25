@@ -34,7 +34,7 @@ public class class_7680 extends Screen {
    }
 
    private class_7680(class_8668 var1, boolean var2) {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
       this.field_39029 = var1;
       this.field_39034 = var2;
    }
@@ -128,8 +128,8 @@ public class class_7680 extends Screen {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_39030);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_39030);
       int var7 = (this.field_941 - 192) / 2;
       byte var8 = 2;
       this.method_9781(var1, var7, 2, 0, 0, 192, 192);

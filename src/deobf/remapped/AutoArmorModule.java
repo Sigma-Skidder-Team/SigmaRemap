@@ -21,7 +21,7 @@ public class AutoArmorModule extends Module {
          this.field_9397.method_14776();
       }
 
-      this.field_9393 = mc.field_9623 instanceof class_3431;
+      this.field_9393 = client.field_9623 instanceof class_3431;
       field_9392 = false;
    }
 
@@ -38,7 +38,7 @@ public class AutoArmorModule extends Module {
             this.field_9397.method_14776();
          }
 
-         if (!this.getStringValueByName("Mode").equals("OpenInv") || mc.field_9623 instanceof class_3431) {
+         if (!this.getStringValueByName("Mode").equals("OpenInv") || client.field_9623 instanceof class_3431) {
             long var4 = (long)(this.getFloatValueByName("Delay") * 1000.0F);
             String var6 = this.getStringValueByName("Elytra");
             switch (var6) {
@@ -49,19 +49,19 @@ public class AutoArmorModule extends Module {
                   this.field_9396 = true;
                   break;
                case "On Use":
-                  if (!mc.field_9632.field_41726 && mc.field_9632.field_29600 == 0 && mc.field_9632.field_29654 && !this.field_9395) {
+                  if (!client.thePlayer.field_41726 && client.thePlayer.field_29600 == 0 && client.thePlayer.field_29654 && !this.field_9395) {
                      this.field_9396 = true;
-                  } else if (mc.field_9632.field_41726) {
+                  } else if (client.thePlayer.field_41726) {
                      this.field_9396 = false;
                   }
             }
 
-            this.field_9395 = mc.field_9632.field_29654;
-            if (mc.field_9623 instanceof class_3431) {
+            this.field_9395 = client.thePlayer.field_29654;
+            if (client.field_9623 instanceof class_3431) {
                this.field_9393 = false;
             }
 
-            if ((mc.field_9623 == null || mc.field_9623 instanceof class_3431 || mc.field_9623 instanceof class_5766)
+            if ((client.field_9623 == null || client.field_9623 instanceof class_3431 || client.field_9623 instanceof class_5766)
                && this.field_9397.method_14772() > var4
                && (float) SigmaMainClass.getInstance().method_3310().method_25303() > (float)var4 / 50.0F) {
                field_9392 = false;
@@ -69,7 +69,7 @@ public class AutoArmorModule extends Module {
             }
 
             for (class_6943 var9 : class_6943.values()) {
-               if (mc.field_9632.field_3869.method_18878(8 - var9.method_31767()).method_35884()) {
+               if (client.thePlayer.field_3869.method_18878(8 - var9.method_31767()).method_35884()) {
                   if (class_2740.method_12361(8 - var9.method_31767())) {
                      return;
                   }
@@ -78,9 +78,9 @@ public class AutoArmorModule extends Module {
                }
             }
 
-            if (!this.field_9393 && !(mc.field_9623 instanceof class_3431) && this.field_9397.method_14772() > 0L) {
+            if (!this.field_9393 && !(client.field_9623 instanceof class_3431) && this.field_9397.method_14772() > 0L) {
                this.field_9393 = true;
-               mc.method_8614().method_4813(new class_1194(-1));
+               client.method_8614().method_4813(new class_1194(-1));
             }
          }
       }
@@ -88,39 +88,39 @@ public class AutoArmorModule extends Module {
 
    private void method_8193(boolean var1) {
       for (class_6943 var7 : class_6943.values()) {
-         if (mc.field_9632.field_3869.method_18878(8 - var7.method_31767()).method_35884()) {
-            class_6098 var8 = mc.field_9632.field_3869.method_18878(8 - var7.method_31767()).method_35898();
+         if (client.thePlayer.field_3869.method_18878(8 - var7.method_31767()).method_35884()) {
+            ItemStack var8 = client.thePlayer.field_3869.method_18878(8 - var7.method_31767()).method_35898();
             if (class_2740.method_12364(var8) && (!this.field_9396 || var7 != class_6943.field_35708)) {
                continue;
             }
          }
 
          for (int var12 = 9; var12 < 45; var12++) {
-            if (mc.field_9632.field_3869.method_18878(var12).method_35884()) {
-               class_6098 var9 = mc.field_9632.field_3869.method_18878(var12).method_35898();
+            if (client.thePlayer.field_3869.method_18878(var12).method_35884()) {
+               ItemStack var9 = client.thePlayer.field_3869.method_18878(var12).method_35898();
                if (var9.method_27960() instanceof class_3286
                   && this.field_9396
-                  && !(mc.field_9632.field_3853.method_31498(36 + class_6943.field_35708.method_31767()).method_27960() instanceof class_3286)) {
+                  && !(client.thePlayer.inventory.method_31498(36 + class_6943.field_35708.method_31767()).method_27960() instanceof class_3286)) {
                   class_3286 var13 = (class_3286)var9.method_27960();
                   if (class_6943.field_35708 == var7
                      && (
-                        !SigmaMainClass.getInstance().getModuleManager().method_847(AutoArmorModule.class).method_42007("Fake Items")
+                        !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoArmorModule.class).method_42007("Fake Items")
                            || SigmaMainClass.getInstance().method_3319().method_30523(var12) >= 1500L
                      )) {
                      this.method_8196(var1);
-                     if (!(mc.field_9632.field_3853.method_31498(36 + var7.method_31767()).method_27960() instanceof class_221)) {
+                     if (!(client.thePlayer.inventory.method_31498(36 + var7.method_31767()).method_27960() instanceof class_221)) {
                         class_2740.method_12350(8 - var7.method_31767(), 0, true);
                      }
 
-                     class_2740.method_12356(mc.field_9632.field_3869.field_19925, var12, 0, class_6269.field_32019, mc.field_9632, true);
+                     class_2740.method_12356(client.thePlayer.field_3869.field_19925, var12, 0, class_6269.field_32019, client.thePlayer, true);
                      this.field_9397.method_14773();
                      field_9392 = true;
                      if (this.getStringValueByName("Elytra").equals("On Use")) {
-                        mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20093));
-                        mc.field_9632.method_37220(7, true);
+                        client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20093));
+                        client.thePlayer.method_37220(7, true);
                      }
 
-                     if (SigmaMainClass.getInstance().getModuleManager().method_847(AutoArmorModule.class).getFloatValueByName("Delay") > 0.0F) {
+                     if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoArmorModule.class).getFloatValueByName("Delay") > 0.0F) {
                         return;
                      }
                   }
@@ -130,11 +130,11 @@ public class AutoArmorModule extends Module {
                      && class_2740.method_12364(var9)
                      && class_2740.method_12323(var9) > 0
                      && (
-                        !SigmaMainClass.getInstance().getModuleManager().method_847(AutoArmorModule.class).method_42007("Fake Items")
+                        !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoArmorModule.class).method_42007("Fake Items")
                            || SigmaMainClass.getInstance().method_3319().method_30523(var12) >= 1500L
                      )) {
                      this.method_8196(var1);
-                     class_2451 var11 = mc.field_9632.field_3853.method_31498(36 + var10.method_37669().method_31767()).method_27960();
+                     class_2451 var11 = client.thePlayer.inventory.method_31498(36 + var10.method_37669().method_31767()).method_27960();
                      if (!(var11 instanceof class_3286)) {
                         if (!(var11 instanceof class_221)) {
                            class_2740.method_12365(8 - var10.method_37669().method_31767());
@@ -143,10 +143,10 @@ public class AutoArmorModule extends Module {
                         class_2740.method_12350(8 - var7.method_31767(), 0, true);
                      }
 
-                     class_2740.method_12356(mc.field_9632.field_3869.field_19925, var12, 0, class_6269.field_32019, mc.field_9632, true);
+                     class_2740.method_12356(client.thePlayer.field_3869.field_19925, var12, 0, class_6269.field_32019, client.thePlayer, true);
                      this.field_9397.method_14773();
                      field_9392 = true;
-                     if (SigmaMainClass.getInstance().getModuleManager().method_847(AutoArmorModule.class).getFloatValueByName("Delay") > 0.0F) {
+                     if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoArmorModule.class).getFloatValueByName("Delay") > 0.0F) {
                         return;
                      }
                   }
@@ -157,16 +157,16 @@ public class AutoArmorModule extends Module {
    }
 
    private void method_8196(boolean var1) {
-      if (var1 && this.field_9393 && !(mc.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-         mc.method_8614().method_4813(new class_8559(class_2105.field_10551));
+      if (var1 && this.field_9393 && !(client.field_9623 instanceof class_3431) && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
+         client.method_8614().method_4813(new class_8559(class_2105.field_10551));
          this.field_9393 = false;
       }
    }
 
    private boolean method_8195(class_6943 var1) {
       for (int var4 = 9; var4 < 45; var4++) {
-         if (mc.field_9632.field_3869.method_18878(var4).method_35884()) {
-            class_6098 var5 = mc.field_9632.field_3869.method_18878(var4).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var4).method_35884()) {
+            ItemStack var5 = client.thePlayer.field_3869.method_18878(var4).method_35898();
             class_2451 var6 = var5.method_27960();
             if (var6 instanceof class_8228) {
                class_8228 var7 = (class_8228)var6;

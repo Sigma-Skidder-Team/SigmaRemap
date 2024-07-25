@@ -29,7 +29,7 @@ public class class_1549 {
    private Identifier field_8203 = null;
    private String field_8199 = null;
    private class_4776 field_8194;
-   private WorldRenderer field_8196 = class_3111.method_14387();
+   private WorldRenderer field_8196 = Config.method_14387();
 
    public class_1549(class_9873 var1) {
       var1.accept(this);

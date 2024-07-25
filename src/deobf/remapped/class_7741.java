@@ -39,17 +39,17 @@ public class class_7741 extends class_4088 {
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_18874(class_704 var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
-         class_6098 var7 = var6.method_35898();
+         ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
          int var8 = this.field_39252.method_31505();
          if (var2 >= var8) {
             if (this.method_18878(1).method_35889(var7) && !this.method_18878(1).method_35884()) {
                if (!this.method_18892(var7, 1, 2, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method_18878(0).method_35889(var7)) {
                if (var8 <= 2 || !this.method_18892(var7, 2, var8, false)) {
@@ -57,29 +57,29 @@ public class class_7741 extends class_4088 {
                   int var10 = var9 + 9;
                   if (var2 >= var9 && var2 < var10) {
                      if (!this.method_18892(var7, var8, var9, false)) {
-                        return class_6098.field_31203;
+                        return ItemStack.EMPTY;
                      }
                   } else if (var2 >= var8 && var2 < var9) {
                      if (!this.method_18892(var7, var9, var10, false)) {
-                        return class_6098.field_31203;
+                        return ItemStack.EMPTY;
                      }
                   } else if (!this.method_18892(var7, var9, var9, false)) {
-                     return class_6098.field_31203;
+                     return ItemStack.EMPTY;
                   }
 
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method_18892(var7, 0, 1, false)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
          } else if (!this.method_18892(var7, var8, this.field_19926.size(), true)) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
          if (!var7.method_28022()) {
             var6.method_35887();
          } else {
-            var6.method_35896(class_6098.field_31203);
+            var6.method_35896(ItemStack.EMPTY);
          }
       }
 

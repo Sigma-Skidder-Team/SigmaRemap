@@ -146,7 +146,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public List<class_6098> method_10796(class_2522 var1, class_8480 var2) {
+   public List<ItemStack> method_10796(class_2522 var1, class_8480 var2) {
       Identifier var5 = this.method_10786();
       if (var5 != class_5931.field_30157) {
          class_2792 var6 = var2.method_39065(class_8712.field_44677, var1).method_39064(class_4933.field_25572);
@@ -154,7 +154,7 @@ public abstract class class_2353 {
          class_1758 var8 = var7.method_29522().method_1722().method_4604(var5);
          return var8.method_7862(var6);
       } else {
-         return Collections.<class_6098>emptyList();
+         return Collections.<ItemStack>emptyList();
       }
    }
 
@@ -244,7 +244,7 @@ public abstract class class_2353 {
    }
 
    @Deprecated
-   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, class_6098 var4) {
+   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, ItemStack var4) {
    }
 
    @Deprecated

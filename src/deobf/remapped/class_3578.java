@@ -110,18 +110,18 @@ public abstract class class_3578 extends class_1829 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24999 && this.method_37330()) {
          this.method_37155(class_463.field_2597, 1.0F, 1.0F);
          var5.method_27970(1);
-         class_6098 var6 = this.method_16633();
+         ItemStack var6 = this.method_16633();
          this.method_16630(var6);
          if (!this.field_41768.field_33055) {
             class_8807.field_45082.method_44414((class_9359)var1, var6);
          }
 
          if (!var5.method_28022()) {
-            if (!var1.field_3853.method_32414(var6)) {
+            if (!var1.inventory.method_32414(var6)) {
                var1.method_3153(var6, false);
             }
          } else {
@@ -135,13 +135,13 @@ public abstract class class_3578 extends class_1829 {
       }
    }
 
-   public void method_16630(class_6098 var1) {
+   public void method_16630(ItemStack var1) {
       if (this.method_45507()) {
          var1.method_28032(this.method_45508());
       }
    }
 
-   public abstract class_6098 method_16633();
+   public abstract ItemStack method_16633();
 
    public boolean method_16635() {
       return true;

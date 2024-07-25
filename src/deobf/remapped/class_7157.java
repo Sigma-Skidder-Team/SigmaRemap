@@ -18,7 +18,7 @@ public abstract class class_7157 implements class_1504 {
    }
 
    @Override
-   public class_6098 method_41044() {
-      return class_6098.field_31203;
+   public ItemStack method_41044() {
+      return ItemStack.EMPTY;
    }
 }

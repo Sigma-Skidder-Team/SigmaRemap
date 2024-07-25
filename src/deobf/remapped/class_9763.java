@@ -32,18 +32,18 @@ public class class_9763 {
             var2.putAll(field_49589);
             var3.putAll(field_49591);
             var4.putAll(field_49590);
-            if (class_3111.method_14409()) {
+            if (Config.method_14409()) {
                Identifier[] var5 = method_45063();
 
                for (int var6 = 0; var6 < var5.length; var6++) {
                   Identifier var7 = var5[var6];
-                  class_3111.method_14277("CustomEntityModel: " + var7.method_21456());
+                  Config.method_14277("CustomEntityModel: " + var7.method_21456());
                   class_8599 var8 = method_45061(var7);
                   if (var8 != null) {
                      class_222 var9 = var8.method_39530();
                      if (!(var8 instanceof class_7067)) {
                         if (!(var8 instanceof class_2255)) {
-                           class_3111.method_14317("Unknown renderer type: " + var8.getClass().getName());
+                           Config.method_14317("Unknown renderer type: " + var8.getClass().getName());
                         } else {
                            var3.put(var9.method_942().get(), (class_2255)var8);
                         }
@@ -56,10 +56,10 @@ public class class_9763 {
                }
             }
          } else {
-            class_3111.method_14317("Tile entity render map not found, custom entity models are DISABLED.");
+            Config.method_14317("Tile entity render map not found, custom entity models are DISABLED.");
          }
       } else {
-         class_3111.method_14317("Entity render map not found, custom entity models are DISABLED.");
+         Config.method_14317("Entity render map not found, custom entity models are DISABLED.");
       }
    }
 
@@ -89,7 +89,7 @@ public class class_9763 {
    private static Map<class_558, class_9873> method_45051() {
       Object var2 = (Map)class_7860.field_40215.method_7979();
       if (var2 == null) {
-         class_3111.method_14317("Field not found: TileEntitySkullRenderer.MODELS");
+         Config.method_14317("Field not found: TileEntitySkullRenderer.MODELS");
          var2 = new HashMap();
       }
 
@@ -110,7 +110,7 @@ public class class_9763 {
          String var7 = var5[var6];
          String var8 = var2 + var7 + var3;
          Identifier var9 = new Identifier(var8);
-         if (class_3111.method_14362(var9)) {
+         if (Config.method_14362(var9)) {
             var4.add(var9);
          }
       }
@@ -123,10 +123,10 @@ public class class_9763 {
          JsonObject var3 = class_4296.method_19954(var0);
          return method_45060(var3, var0.method_21456());
       } catch (IOException var4) {
-         class_3111.method_14348("" + var4.getClass().getName() + ": " + var4.getMessage());
+         Config.method_14348("" + var4.getClass().getName() + ": " + var4.getMessage());
          return null;
       } catch (JsonParseException var5) {
-         class_3111.method_14348("" + var5.getClass().getName() + ": " + var5.getMessage());
+         Config.method_14348("" + var5.getClass().getName() + ": " + var5.getMessage());
          return null;
       } catch (Exception var6) {
          var6.printStackTrace();
@@ -195,7 +195,7 @@ public class class_9763 {
       String var6 = var2.method_43911();
       class_1549 var7 = var0.method_12291(var1, var6);
       if (var7 == null) {
-         class_3111.method_14317("Model part not found: " + var6 + ", model: " + var1);
+         Config.method_14317("Model part not found: " + var6 + ", model: " + var1);
          return false;
       } else {
          if (!var2.method_43909()) {

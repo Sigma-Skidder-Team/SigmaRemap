@@ -158,7 +158,7 @@ public class class_2519 extends class_1173 {
 
    @Override
    public void method_26870(class_9589 var1) {
-      this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25277));
+      this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25277));
       this.method_26861(class_6943.field_35707, 0.0F);
    }
 }

@@ -42,7 +42,7 @@ public class class_4164 extends class_2733 {
          var6.field_36492 = var2;
          return (class_8599)var6;
       } else {
-         class_3111.method_14317("Field not found: RenderEvokerFangs.model");
+         Config.method_14317("Field not found: RenderEvokerFangs.model");
          return null;
       }
    }

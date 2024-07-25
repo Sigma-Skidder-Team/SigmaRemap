@@ -138,11 +138,11 @@ public class class_2174 {
       var5.method_36065(var16.field_7336, var16.field_7333, var16.field_7334);
 
       try {
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_2448.method_11201(var3, var6);
          }
 
-         if (!class_3111.method_14321()) {
+         if (!Config.method_14321()) {
             var9 = 0L;
          }
 
@@ -155,7 +155,7 @@ public class class_2174 {
             this.method_10112(var1, var2, var3, var4, var5, var6, var11, var7, var8, var9, var17, var15, var16);
          }
 
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_2448.method_11191(var6);
          }
 
@@ -499,8 +499,8 @@ public class class_2174 {
    }
 
    public static void method_10117() {
-      field_10836 = 1.0F - class_3111.method_14449() * 0.8F;
-      field_10834 = class_3111.method_14424() && class_6588.method_30317();
+      field_10836 = 1.0F - Config.method_14449() * 0.8F;
+      field_10834 = Config.method_14424() && class_6588.method_30317();
    }
 
    public static boolean method_10097() {
@@ -557,7 +557,7 @@ public class class_2174 {
          }
       }
 
-      if (class_3111.method_14395() && !var12.method_20689() && class_2986.method_13667(var1, var3, var4)) {
+      if (Config.method_14395() && !var12.method_20689() && class_2986.method_13667(var1, var3, var4)) {
          class_7373 var27 = class_2986.method_13668();
          class_2522 var28 = class_2986.method_13670();
          var5.method_36065(-var14.field_7336, -var14.field_7333, -var14.field_7334);

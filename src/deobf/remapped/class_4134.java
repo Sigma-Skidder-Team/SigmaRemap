@@ -67,7 +67,7 @@ public class class_4134 extends class_7637 implements class_3832 {
       class_3416 var4 = new class_3416();
 
       for (int var5 = 0; var5 < this.field_20123.method_31505(); var5++) {
-         class_6098 var6 = this.field_20123.method_31498(var5);
+         ItemStack var6 = this.field_20123.method_31498(var5);
          if (!var6.method_28022()) {
             var4.add(var6.method_27998(new class_5734()));
          }
@@ -95,7 +95,7 @@ public class class_4134 extends class_7637 implements class_3832 {
       class_3416 var4 = var1.method_25927("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         class_6098 var6 = class_6098.method_28015(var4.method_15764(var5));
+         ItemStack var6 = ItemStack.method_28015(var4.method_15764(var5));
          if (!var6.method_28022()) {
             this.field_20123.method_21542(var6);
          }
@@ -125,14 +125,14 @@ public class class_4134 extends class_7637 implements class_3832 {
 
    @Override
    public void method_26870(class_9589 var1) {
-      this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25030));
+      this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25030));
    }
 
    @Override
    public void method_26890(float var1) {
       super.method_26890(var1);
       if (this.field_41717.nextInt(300) == 0) {
-         class_6098 var4 = this.method_26446();
+         ItemStack var4 = this.method_26446();
          if (var4.method_27960() == class_4897.field_25030) {
             Map var5 = class_2931.method_13402(var4);
             var5.putIfAbsent(class_3668.field_17843, 1);
@@ -174,18 +174,18 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public void method_17812(class_5834 var1, class_6098 var2, class_5783 var3, float var4) {
+   public void method_17812(class_5834 var1, ItemStack var2, class_5783 var3, float var4) {
       this.method_17811(this, var1, var3, var4, 1.6F);
    }
 
    @Override
    public void method_26902(class_91 var1) {
-      class_6098 var4 = var1.method_264();
+      ItemStack var4 = var1.method_264();
       if (!(var4.method_27960() instanceof class_1967)) {
          class_2451 var5 = var4.method_27960();
          if (this.method_19207(var5)) {
             this.method_26562(var1);
-            class_6098 var6 = this.field_20123.method_21542(var4);
+            ItemStack var6 = this.field_20123.method_21542(var4);
             if (!var6.method_28022()) {
                var4.method_28017(var6.method_27997());
             } else {
@@ -202,7 +202,7 @@ public class class_4134 extends class_7637 implements class_3832 {
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       if (!super.method_37166(var1, var2)) {
          int var5 = var1 - 300;
          if (var5 >= 0 && var5 < this.field_20123.method_31505()) {
@@ -221,7 +221,7 @@ public class class_4134 extends class_7637 implements class_3832 {
       class_2452 var5 = this.method_18589();
       boolean var6 = this.field_41717.nextFloat() <= var5.method_11272();
       if (var6) {
-         class_6098 var7 = new class_6098(class_4897.field_25030);
+         ItemStack var7 = new ItemStack(class_4897.field_25030);
          HashMap var8 = Maps.newHashMap();
          if (var1 <= var5.method_11302(class_423.field_1789)) {
             if (var1 > var5.method_11302(class_423.field_1784)) {

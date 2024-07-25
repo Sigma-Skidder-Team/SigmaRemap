@@ -133,7 +133,7 @@ public class class_4356 extends class_446 {
       GL11.glScaled(1.0 + 0.1 * (double)var5, 1.0 + 0.1 * (double)var5, 0.0);
       GL11.glTranslatef((float)(-this.method_32132() - 44), (float)(-this.method_32173() - 44), 0.0F);
       if (this.field_21333 == null) {
-         MinecraftClient.getInstance().method_8577().method_35674(new Identifier("textures/misc/unknown_server.png"));
+         MinecraftClient.getInstance().getTextureManager().bindTexture(new Identifier("textures/misc/unknown_server.png"));
          class_73.method_137(
             (float)(this.field_36270 + 12), (float)(this.field_36261 + 12), 64.0F, 64.0F, class_1255.field_6918.field_6917, 0.0F, 0.0F, 64.0F, 64.0F
          );

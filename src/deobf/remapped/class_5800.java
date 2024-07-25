@@ -16,7 +16,7 @@ public class class_5800 extends class_8273<class_9853> {
       return new class_9853(var2, var6, var7);
    }
 
-   public void method_26281(class_9359 var1, class_6098 var2, int var3) {
+   public void method_26281(class_9359 var1, ItemStack var2, int var3) {
       this.method_38137(var1, var2x -> var2x.method_45373(var2, var3));
    }
 }

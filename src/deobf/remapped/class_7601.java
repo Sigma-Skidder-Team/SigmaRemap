@@ -46,7 +46,7 @@ public class class_7601 extends class_2733 {
             class_336 var7 = (class_336)var1;
             return (class_8599)var7.method_1541((class_2255)var6);
          } else {
-            class_3111.method_14317("Not a banner model: " + var1);
+            Config.method_14317("Not a banner model: " + var1);
             return null;
          }
       } else {

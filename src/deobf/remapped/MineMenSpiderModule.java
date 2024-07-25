@@ -18,17 +18,17 @@ public class MineMenSpiderModule extends Module {
    @EventListen
    private void method_24505(class_7767 var1) {
       double var4 = 1.0E-5;
-      boolean var6 = mc.field_9601
-            .method_6680(mc.field_9632, mc.field_9632.field_41712.method_18928(var4, 0.0, var4).method_18928(-var4, 0.0, -var4))
+      boolean var6 = client.field_9601
+            .method_6680(client.thePlayer, client.thePlayer.field_41712.method_18928(var4, 0.0, var4).method_18928(-var4, 0.0, -var4))
             .count()
          > 0L;
       if (var6) {
-         if (!mc.field_9632.field_41744) {
-            if (!mc.field_9632.field_41726) {
-               var1.method_35235(!mc.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
+         if (!client.thePlayer.field_41744) {
+            if (!client.thePlayer.field_41726) {
+               var1.method_35235(!client.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
             }
-         } else if (!this.getBooleanValueByName("AutoClimb") && !mc.gameOptions.keyJump.isKeyDown()) {
-            var1.method_35235(!mc.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
+         } else if (!this.getBooleanValueByName("AutoClimb") && !client.gameOptions.keyJump.isKeyDown()) {
+            var1.method_35235(!client.gameOptions.keySneak.isKeyDown() ? 0.0 : var1.method_35236());
          } else {
             var1.method_35235(0.6);
          }
@@ -36,42 +36,42 @@ public class MineMenSpiderModule extends Module {
          class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);
       }
 
-      if (class_314.method_1413(mc.field_9632, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
-         if (mc.gameOptions.keySneak.isKeyDown()
+      if (class_314.method_1413(client.thePlayer, 0.001F) && this.getBooleanValueByName("SneakVClip")) {
+         if (client.gameOptions.keySneak.isKeyDown()
             && !this.field_27443
-            && mc.field_9601.method_6680(mc.field_9632, mc.field_9632.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
-            mc.method_8614()
+            && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, -2.8, 0.0)).count() == 0L) {
+            client.method_8614()
                .method_4813(
                   new class_9515(
-                     mc.field_9632.method_37245().field_7336,
-                     mc.field_9632.method_37245().field_7333 - 1.0E-14,
-                     mc.field_9632.method_37245().field_7334,
+                     client.thePlayer.method_37245().field_7336,
+                     client.thePlayer.method_37245().field_7333 - 1.0E-14,
+                     client.thePlayer.method_37245().field_7334,
                      false
                   )
                );
-            mc.field_9632
+            client.thePlayer
                .method_37256(
-                  mc.field_9632.method_37245().field_7336,
-                  mc.field_9632.method_37245().field_7333 - 2.8,
-                  mc.field_9632.method_37245().field_7334
+                  client.thePlayer.method_37245().field_7336,
+                  client.thePlayer.method_37245().field_7333 - 2.8,
+                  client.thePlayer.method_37245().field_7334
                );
-            mc.gameOptions.keySneak.pressed = false;
-            mc.field_9632.field_41726 = false;
-            mc.theTimer.timerSpeed = 0.08F;
+            client.gameOptions.keySneak.pressed = false;
+            client.thePlayer.field_41726 = false;
+            client.theTimer.timerSpeed = 0.08F;
             var1.method_29715(true);
             this.field_27443 = true;
             var1.method_35235(1.0E-14);
          }
       } else {
          if (this.getBooleanValueByName("Ceiling")
-            && !mc.gameOptions.keySneak.isKeyDown()
-            && mc.field_9601.method_6680(mc.field_9632, mc.field_9632.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
+            && !client.gameOptions.keySneak.isKeyDown()
+            && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 0.01, 0.0)).count() > 0L) {
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.689 + (double)class_8865.method_40770() * 0.06);
          }
 
          if (this.field_27443) {
-            mc.theTimer.timerSpeed = 1.0F;
+            client.theTimer.timerSpeed = 1.0F;
             this.field_27443 = false;
             var1.method_35235(1.0E-14);
             class_8865.method_40777(var1, 0.28);
@@ -86,18 +86,18 @@ public class MineMenSpiderModule extends Module {
       if (this.method_42015() && var1.method_6449()) {
          class_9097 var4 = class_314.method_1462(1.0E-4);
          if (this.getBooleanValueByName("Ceiling")
-            && !mc.field_9632.field_41726
-            && mc.field_9601.method_6680(mc.field_9632, mc.field_9632.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
+            && !client.thePlayer.field_41726
+            && client.field_9601.method_6680(client.thePlayer, client.thePlayer.field_41712.method_18918(0.0, 1.0E-6, 0.0)).count() > 0L) {
             var1.method_6455(var1.method_6454() + 4.9E-7);
          }
 
          double var5 = 1.0E-5;
          if (var4 != null
-            && mc.field_9601
-                  .method_6680(mc.field_9632, mc.field_9632.field_41712.method_18928(var5, 0.0, var5).method_18928(-var5, 0.0, -var5))
+            && client.field_9601
+                  .method_6680(client.thePlayer, client.thePlayer.field_41712.method_18928(var5, 0.0, var5).method_18928(-var5, 0.0, -var5))
                   .count()
                > 0L) {
-            if (!class_314.method_1413(mc.field_9632, 1.0E-4F)) {
+            if (!class_314.method_1413(client.thePlayer, 1.0E-4F)) {
                var1.method_6451(true);
             }
 
@@ -119,10 +119,10 @@ public class MineMenSpiderModule extends Module {
 
    @EventListen
    private void method_24503(class_5243 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (var1.method_23988() != null
             && !var1.method_23988().method_19485()
-            && var1.method_23988().method_19483().field_19937 > mc.field_9632.field_41712.field_19937 + 1.0) {
+            && var1.method_23988().method_19483().field_19937 > client.thePlayer.field_41712.field_19937 + 1.0) {
             var1.method_29715(true);
          }
       }

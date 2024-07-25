@@ -13,7 +13,7 @@ public class class_153 {
    }
 
    public static void method_613() {
-      field_463 = class_3111.method_14310().field_45478;
+      field_463 = Config.method_14310().field_45478;
    }
 
    public static void method_609(class_5155 var0) {

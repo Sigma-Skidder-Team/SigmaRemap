@@ -38,14 +38,14 @@ public class class_5567 extends class_4785<class_5567> {
 
    private void method_25281(class_7966 var1, int var2, int var3, class_2451 var4) {
       this.method_25279(var1, var2 + 1, var3 + 1);
-      class_3542.method_16381();
-      this.field_28293.field_37637.field_945.method_40264(new class_6098(var4), var2 + 2, var3 + 2);
-      class_3542.method_16443();
+      RenderSystem.method_16381();
+      this.field_28293.field_37637.field_945.method_40264(new ItemStack(var4), var2 + 2, var3 + 2);
+      RenderSystem.method_16443();
    }
 
    private void method_25279(class_7966 var1, int var2, int var3) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_7367.method_33544(this.field_28293).method_8577().method_35674(class_2089.field_10506);
-      class_2089.method_9779(var1, var2, var3, this.field_28293.field_37637.method_9777(), 0.0F, 0.0F, 18, 18, 128, 128);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      class_7367.method_33544(this.field_28293).method_8577().method_35674(AbstractGui.field_10506);
+      AbstractGui.method_9779(var1, var2, var3, this.field_28293.field_37637.method_9777(), 0.0F, 0.0F, 18, 18, 128, 128);
    }
 }

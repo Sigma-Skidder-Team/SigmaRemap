@@ -5,7 +5,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public class class_557 extends class_3757 implements class_5507, class_3745 {
-   private final class_2831<class_6098> field_3312 = class_2831.<class_6098>method_12872(4, class_6098.field_31203);
+   private final class_2831<ItemStack> field_3312 = class_2831.<ItemStack>method_12872(4, ItemStack.EMPTY);
    private final int[] field_3311 = new int[4];
    private final int[] field_3310 = new int[4];
 
@@ -34,19 +34,19 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
 
    private void method_2671() {
       for (int var3 = 0; var3 < this.field_3312.size(); var3++) {
-         class_6098 var4 = this.field_3312.get(var3);
+         ItemStack var4 = this.field_3312.get(var3);
          if (!var4.method_28022()) {
             this.field_3311[var3]++;
             if (this.field_3311[var3] >= this.field_3310[var3]) {
                class_4657 var6 = new class_4657(var4);
-               class_6098 var7 = this.field_18364
+               ItemStack var7 = this.field_18364
                   .method_29549()
                   .<class_6867, class_5917>method_23138(class_1510.field_7996, var6, this.field_18364)
-                  .<class_6098>map(var1 -> var1.method_41042(var6))
+                  .<ItemStack>map(var1 -> var1.method_41042(var6))
                   .orElse(var4);
                class_1331 var8 = this.method_17399();
                class_1573.method_7100(this.field_18364, (double)var8.method_12173(), (double)var8.method_12165(), (double)var8.method_12185(), var7);
-               this.field_3312.set(var3, class_6098.field_31203);
+               this.field_3312.set(var3, ItemStack.EMPTY);
                this.method_2669();
             }
          }
@@ -88,7 +88,7 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
       }
    }
 
-   public class_2831<class_6098> method_2670() {
+   public class_2831<ItemStack> method_2670() {
       return this.field_3312;
    }
 
@@ -133,15 +133,15 @@ public class class_557 extends class_3757 implements class_5507, class_3745 {
       return this.method_2673(new class_5734());
    }
 
-   public Optional<class_5917> method_2672(class_6098 var1) {
-      return !this.field_3312.stream().noneMatch(class_6098::method_28022)
+   public Optional<class_5917> method_2672(ItemStack var1) {
+      return !this.field_3312.stream().noneMatch(ItemStack::method_28022)
          ? this.field_18364.method_29549().<class_6867, class_5917>method_23138(class_1510.field_7996, new class_4657(var1), this.field_18364)
          : Optional.<class_5917>empty();
    }
 
-   public boolean method_2675(class_6098 var1, int var2) {
+   public boolean method_2675(ItemStack var1, int var2) {
       for (int var5 = 0; var5 < this.field_3312.size(); var5++) {
-         class_6098 var6 = this.field_3312.get(var5);
+         ItemStack var6 = this.field_3312.get(var5);
          if (var6.method_28022()) {
             this.field_3310[var5] = var2;
             this.field_3311[var5] = 0;

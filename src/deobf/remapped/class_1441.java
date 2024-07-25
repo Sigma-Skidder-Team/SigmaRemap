@@ -18,7 +18,7 @@ public class class_1441 extends class_8273<class_1691> {
       return new class_1691(var2, var6, var7, var8);
    }
 
-   public void method_6617(class_9359 var1, class_6098 var2, class_3942 var3, Collection<class_6098> var4) {
+   public void method_6617(class_9359 var1, ItemStack var2, class_3942 var3, Collection<ItemStack> var4) {
       class_2792 var7 = class_865.method_3739(var1, (Entity)(var3.method_18226() == null ? var3 : var3.method_18226()));
       this.method_38137(var1, var3x -> var3x.method_7616(var2, var7, var4));
    }

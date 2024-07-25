@@ -74,7 +74,7 @@ public class class_3739 {
          return null;
       } else {
          var0 = var0.toLowerCase();
-         String[] var3 = class_3111.method_14302(var0, " ");
+         String[] var3 = Config.method_14302(var0, " ");
          class_9077[] var4 = new class_9077[var3.length];
 
          for (int var5 = 0; var5 < var3.length; var5++) {
@@ -223,7 +223,7 @@ public class class_3739 {
    }
 
    private static void method_17331(String var0) {
-      class_3111.method_14317("[CustomGuis] " + var0);
+      Config.method_14317("[CustomGuis] " + var0);
    }
 
    private boolean method_17332(class_1614 var1, class_1331 var2, class_4924 var3) {
@@ -334,7 +334,7 @@ public class class_3739 {
          class_7434 var6 = (class_7434)var5;
          if (this.field_18287 != null) {
             class_5469 var7 = this.method_17324(var6);
-            if (!class_3111.method_14254(var7, this.field_18287)) {
+            if (!Config.method_14254(var7, this.field_18287)) {
                return false;
             }
          }
@@ -355,7 +355,7 @@ public class class_3739 {
          class_4816 var6 = (class_4816)var5;
          if (this.field_18292 != null) {
             class_9077 var7 = var6.method_22192();
-            if (!class_3111.method_14254(var7, this.field_18292)) {
+            if (!Config.method_14254(var7, this.field_18292)) {
                return false;
             }
          }
@@ -411,7 +411,7 @@ public class class_3739 {
          class_4109 var5 = (class_4109)var1;
          if (this.field_18287 != null) {
             class_5469 var6 = this.method_17325(var5);
-            if (!class_3111.method_14254(var6, this.field_18287)) {
+            if (!Config.method_14254(var6, this.field_18287)) {
                return false;
             }
          }
@@ -419,7 +419,7 @@ public class class_3739 {
          if (this.field_18292 != null && var5 instanceof class_9310) {
             class_9310 var8 = (class_9310)var5;
             class_9077 var7 = var8.method_42989();
-            if (!class_3111.method_14254(var7, this.field_18292)) {
+            if (!Config.method_14254(var7, this.field_18292)) {
                return false;
             }
          }

@@ -43,7 +43,7 @@ public class class_3424<E extends class_5886 & class_3832, T extends class_5834>
             if (this.field_16858 != class_2151.field_10761) {
                if (this.field_16858 == class_2151.field_10758) {
                   ((class_2354)var1).method_10805(var2, 1.0F);
-                  class_6098 var5 = var1.method_26617(class_8462.method_38934(var1, class_4897.field_25030));
+                  ItemStack var5 = var1.method_26617(class_8462.method_38934(var1, class_4897.field_25030));
                   class_4380.method_20412(var5, false);
                   this.field_16858 = class_2151.field_10757;
                }
@@ -59,7 +59,7 @@ public class class_3424<E extends class_5886 & class_3832, T extends class_5834>
             }
 
             int var7 = var1.method_26613();
-            class_6098 var6 = var1.method_26576();
+            ItemStack var6 = var1.method_26576();
             if (var7 >= class_4380.method_20403(var6)) {
                var1.method_26474();
                this.field_16858 = class_2151.field_10761;

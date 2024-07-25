@@ -20,12 +20,12 @@ public class class_4077 {
 
          try {
             Identifier var7 = new Identifier(var0.method_21461(), var6);
-            InputStream var8 = class_3111.method_14375(class_3111.method_14450(), var7);
+            InputStream var8 = Config.method_14375(Config.method_14450(), var7);
             if (var8 == null) {
                return var4;
             }
 
-            class_3111.method_14280("Loading " + var6);
+            Config.method_14280("Loading " + var6);
             var4.load(var8);
             var8.close();
          } catch (FileNotFoundException var9) {
@@ -44,10 +44,10 @@ public class class_4077 {
          String var6 = "width.";
          if (var5.startsWith(var6)) {
             String var7 = var5.substring(var6.length());
-            int var8 = class_3111.method_14361(var7, -1);
+            int var8 = Config.method_14361(var7, -1);
             if (var8 >= 0) {
                String var9 = var0.getProperty(var5);
-               float var10 = class_3111.method_14445(var9, -1.0F);
+               float var10 = Config.method_14445(var9, -1.0F);
                if (var10 >= 0.0F) {
                   char var11 = (char)var8;
                   var3.put(var11, new Float(var10));
@@ -62,11 +62,11 @@ public class class_4077 {
    public static float method_18797(Properties var0, String var1, float var2) {
       String var5 = var0.getProperty(var1);
       if (var5 != null) {
-         float var6 = class_3111.method_14445(var5, Float.MIN_VALUE);
+         float var6 = Config.method_14445(var5, Float.MIN_VALUE);
          if (var6 != Float.MIN_VALUE) {
             return var6;
          } else {
-            class_3111.method_14317("Invalid value for " + var1 + ": " + var5);
+            Config.method_14317("Invalid value for " + var1 + ": " + var5);
             return var2;
          }
       } else {
@@ -81,7 +81,7 @@ public class class_4077 {
          if (var6.equals("true") || var6.equals("on")) {
             return true;
          } else if (!var6.equals("false") && !var6.equals("off")) {
-            class_3111.method_14317("Invalid value for " + var1 + ": " + var5);
+            Config.method_14317("Invalid value for " + var1 + ": " + var5);
             return var2;
          } else {
             return false;
@@ -92,9 +92,9 @@ public class class_4077 {
    }
 
    public static Identifier method_18801(Identifier var0) {
-      if (class_3111.method_14360()) {
+      if (Config.method_14360()) {
          if (var0 != null) {
-            if (class_3111.method_14272()) {
+            if (Config.method_14272()) {
                String var3 = var0.method_21456();
                String var4 = "textures/";
                String var5 = "optifine/";
@@ -102,7 +102,7 @@ public class class_4077 {
                   var3 = var3.substring(var4.length());
                   var3 = var5 + var3;
                   Identifier var6 = new Identifier(var0.method_21461(), var3);
-                  return !class_3111.method_14363(class_3111.method_14450(), var6) ? var0 : var6;
+                  return !Config.method_14363(Config.method_14450(), var6) ? var0 : var6;
                } else {
                   return var0;
                }
@@ -123,7 +123,7 @@ public class class_4077 {
       MinecraftClient var4 = MinecraftClient.getInstance();
       class_950 var5 = (class_950)class_7860.method_35557(var4, class_7860.field_39860);
       if (var5 != null) {
-         var5.method_4189().method_10277(var2, class_3111.method_14450(), class_8677.field_44535, class_8677.field_44535, var3, var4);
+         var5.method_4189().method_10277(var2, Config.method_14450(), class_8677.field_44535, class_8677.field_44535, var3, var4);
       }
    }
 }

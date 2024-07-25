@@ -21,15 +21,15 @@ public class OldHittingModule extends Module {
    private void method_9353(class_1393 var1) {
       if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
          if (var1.method_6449()) {
-            boolean var4 = mc.field_9632.method_26446() != null && mc.field_9632.method_26446().method_27960() instanceof class_2235;
-            boolean var5 = SigmaMainClass.getInstance().getModuleManager().method_847(KillauraModule.class).method_42003();
+            boolean var4 = client.thePlayer.method_26446() != null && client.thePlayer.method_26446().method_27960() instanceof class_2235;
+            boolean var5 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(KillauraModule.class).method_42003();
             boolean var6 = true;
-            if (!mc.field_9632.method_37252()
-               && mc.field_9587.method_33990() == class_1430.field_7717
-               && !SigmaMainClass.getInstance().getModuleManager().method_847(KillauraModule.class).method_42003()) {
-               class_9529 var7 = (class_9529) mc.field_9587;
+            if (!client.thePlayer.method_37252()
+               && client.field_9587.method_33990() == class_1430.field_7717
+               && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(KillauraModule.class).method_42003()) {
+               class_9529 var7 = (class_9529) client.field_9587;
                class_1331 var8 = var7.method_43955();
-               class_6414 var9 = mc.field_9601.method_28262(var8).method_8360();
+               class_6414 var9 = client.field_9601.method_28262(var8).method_8360();
                ArrayList var10 = new ArrayList<class_6414>(
                   Arrays.asList(
                      class_4783.field_23471,
@@ -61,13 +61,13 @@ public class OldHittingModule extends Module {
                }
             }
 
-            field_10220 = mc.gameOptions.keyUse.isKeyDown() && var4 && var6 && var6 || var5;
+            field_10220 = client.gameOptions.keyUse.isKeyDown() && var4 && var6 && var6 || var5;
             if (!field_10220) {
-               if (class_1857.field_9416.contains(mc.field_9632)) {
-                  class_1857.field_9416.remove(mc.field_9632);
+               if (class_1857.field_9416.contains(client.thePlayer)) {
+                  class_1857.field_9416.remove(client.thePlayer);
                }
-            } else if (!class_1857.field_9416.contains(mc.field_9632)) {
-               class_1857.field_9416.add(mc.field_9632);
+            } else if (!class_1857.field_9416.contains(client.thePlayer)) {
+               class_1857.field_9416.add(client.thePlayer);
             }
 
             if (field_10220 && !this.field_10221) {
@@ -87,17 +87,17 @@ public class OldHittingModule extends Module {
    @class_3932
    private void method_9364(PacketEvent var1) {
       if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
-         if (mc.field_9632 != null) {
+         if (client.thePlayer != null) {
             if (var1.method_557() instanceof class_9014) {
                class_9014 var4 = (class_9014)var1.method_557();
                Iterator var5 = var4.method_41363().iterator();
 
                while (var5.hasNext()) {
                   Pair var6 = (Pair)var5.next();
-                  if (var4.method_41364() == mc.field_9632.method_37145()
+                  if (var4.method_41364() == client.thePlayer.method_37145()
                      && var6.getFirst() == class_6943.field_35701
                      && var6.getSecond() != null
-                     && ((class_6098)var6.getSecond()).method_27960() == class_4897.field_24840) {
+                     && ((ItemStack)var6.getSecond()).method_27960() == class_4897.field_24840) {
                      var5.remove();
                   }
                }

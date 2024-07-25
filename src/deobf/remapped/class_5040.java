@@ -10,16 +10,16 @@ public class class_5040 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return this.field_26066.method_38634(var1) || method_23213(var1);
    }
 
    @Override
-   public int method_35890(class_6098 var1) {
+   public int method_35890(ItemStack var1) {
       return !method_23213(var1) ? super.method_35890(var1) : 1;
    }
 
-   public static boolean method_23213(class_6098 var0) {
+   public static boolean method_23213(ItemStack var0) {
       return var0.method_27960() == class_4897.field_24548;
    }
 }

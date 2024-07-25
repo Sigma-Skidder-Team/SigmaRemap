@@ -58,7 +58,7 @@ public class class_1056 {
                         var5.method_12154(var12);
                      }
                   } else {
-                     class_3111.method_14317("Item type is null, player: " + this.field_5799);
+                     Config.method_14317("Item type is null, player: " + this.field_5799);
                   }
                }
             }
@@ -75,7 +75,7 @@ public class class_1056 {
          byte[] var5 = class_2316.method_10645(var4, MinecraftClient.getInstance().method_8607());
          return class_5797.method_26230(new ByteArrayInputStream(var5));
       } catch (IOException var6) {
-         class_3111.method_14317("Error loading item texture " + var1 + ": " + var6.getClass().getName() + ": " + var6.getMessage());
+         Config.method_14317("Error loading item texture " + var1 + ": " + var6.getClass().getName() + ": " + var6.getMessage());
          return null;
       }
    }
@@ -90,7 +90,7 @@ public class class_1056 {
          JsonObject var8 = (JsonObject)var7.parse(var6);
          return class_8616.method_39598(var8);
       } catch (Exception var9) {
-         class_3111.method_14317("Error loading item model " + var1 + ": " + var9.getClass().getName() + ": " + var9.getMessage());
+         Config.method_14317("Error loading item model " + var1 + ": " + var9.getClass().getName() + ": " + var9.getMessage());
          return null;
       }
    }

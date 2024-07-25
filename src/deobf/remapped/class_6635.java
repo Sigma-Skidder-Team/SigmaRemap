@@ -45,19 +45,19 @@ public class class_6635 extends class_4785<class_6635> {
    public void method_21644(class_7966 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       class_2057 var13 = this.field_34352.method_14657();
       if (!var13.method_9602()) {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_2089.method_9774(var1, var4 - 1, var3 - 1, var4 + var5 - 9, var3 + var6 + 1, -8978432);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         AbstractGui.method_9774(var1, var4 - 1, var3 - 1, var4 + var5 - 9, var3 + var6 + 1, -8978432);
       }
 
-      this.field_34349.method_8577().method_35674(this.field_34352.method_14642());
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
+      this.field_34349.getTextureManager().bindTexture(this.field_34352.method_14642());
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 32, 32);
       class_7107 var14 = this.field_34348;
       class_416 var15 = this.field_34350;
       if (this.method_30498() && (this.field_34349.gameOptions.field_45570 || var9)) {
-         this.field_34349.method_8577().method_35674(class_895.method_3851());
-         class_2089.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_34349.getTextureManager().bindTexture(class_895.method_3851());
+         AbstractGui.method_9774(var1, var4, var3, var4 + 32, var3 + 32, -1601138544);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var16 = var7 - var4;
          int var17 = var8 - var3;
          if (!this.field_34352.method_14657().method_9602()) {
@@ -68,31 +68,31 @@ public class class_6635 extends class_4785<class_6635> {
          if (!this.field_34352.method_14650()) {
             if (this.field_34352.method_14643()) {
                if (var16 >= 16) {
-                  class_2089.method_9778(var1, var4, var3, 32.0F, 0.0F, 32, 32, 256, 256);
+                  AbstractGui.method_9778(var1, var4, var3, 32.0F, 0.0F, 32, 32, 256, 256);
                } else {
-                  class_2089.method_9778(var1, var4, var3, 32.0F, 32.0F, 32, 32, 256, 256);
+                  AbstractGui.method_9778(var1, var4, var3, 32.0F, 32.0F, 32, 32, 256, 256);
                }
             }
 
             if (this.field_34352.method_14648()) {
                if (var16 < 32 && var16 > 16 && var17 < 16) {
-                  class_2089.method_9778(var1, var4, var3, 96.0F, 32.0F, 32, 32, 256, 256);
+                  AbstractGui.method_9778(var1, var4, var3, 96.0F, 32.0F, 32, 32, 256, 256);
                } else {
-                  class_2089.method_9778(var1, var4, var3, 96.0F, 0.0F, 32, 32, 256, 256);
+                  AbstractGui.method_9778(var1, var4, var3, 96.0F, 0.0F, 32, 32, 256, 256);
                }
             }
 
             if (this.field_34352.method_14653()) {
                if (var16 < 32 && var16 > 16 && var17 > 16) {
-                  class_2089.method_9778(var1, var4, var3, 64.0F, 32.0F, 32, 32, 256, 256);
+                  AbstractGui.method_9778(var1, var4, var3, 64.0F, 32.0F, 32, 32, 256, 256);
                } else {
-                  class_2089.method_9778(var1, var4, var3, 64.0F, 0.0F, 32, 32, 256, 256);
+                  AbstractGui.method_9778(var1, var4, var3, 64.0F, 0.0F, 32, 32, 256, 256);
                }
             }
          } else if (var16 >= 32) {
-            class_2089.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 256, 256);
+            AbstractGui.method_9778(var1, var4, var3, 0.0F, 0.0F, 32, 32, 256, 256);
          } else {
-            class_2089.method_9778(var1, var4, var3, 0.0F, 32.0F, 32, 32, 256, 256);
+            AbstractGui.method_9778(var1, var4, var3, 0.0F, 32.0F, 32, 32, 256, 256);
          }
       }
 

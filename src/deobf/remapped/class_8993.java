@@ -22,8 +22,8 @@ public class class_8993 extends class_3064 implements class_4582 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return new class_6098(class_4783.field_23563);
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return new ItemStack(class_4783.field_23563);
    }
 
    @Nullable

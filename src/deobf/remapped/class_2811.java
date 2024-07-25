@@ -162,13 +162,13 @@ public class class_2811 extends class_1173 {
       if (this.method_37330()) {
          boolean var3 = this.method_12803() && this.method_26884();
          if (var3) {
-            class_6098 var4 = this.method_26520(class_6943.field_35704);
+            ItemStack var4 = this.method_26520(class_6943.field_35704);
             if (!var4.method_28022()) {
                if (var4.method_27959()) {
                   var4.method_27999(var4.method_28026() + this.field_41717.nextInt(2));
                   if (var4.method_28026() >= var4.method_27957()) {
                      this.method_26448(class_6943.field_35704);
-                     this.method_37349(class_6943.field_35704, class_6098.field_31203);
+                     this.method_37349(class_6943.field_35704, ItemStack.EMPTY);
                   }
                }
 
@@ -309,9 +309,9 @@ public class class_2811 extends class_1173 {
       if (this.field_41717.nextFloat() < (this.field_41768.method_43370() != class_423.field_1782 ? 0.01F : 0.05F)) {
          int var4 = this.field_41717.nextInt(3);
          if (var4 != 0) {
-            this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_24346));
+            this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24346));
          } else {
-            this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25277));
+            this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25277));
          }
       }
    }
@@ -363,7 +363,7 @@ public class class_2811 extends class_1173 {
    }
 
    @Override
-   public boolean method_26899(class_6098 var1) {
+   public boolean method_26899(ItemStack var1) {
       return var1.method_27960() == class_4897.field_24962 && this.method_26449() && this.method_37070() ? false : super.method_26899(var1);
    }
 
@@ -412,7 +412,7 @@ public class class_2811 extends class_1173 {
          int var15 = var13.get(ChronoField.DAY_OF_MONTH);
          int var16 = var13.get(ChronoField.MONTH_OF_YEAR);
          if (var16 == 10 && var15 == 31 && this.field_41717.nextFloat() < 0.25F) {
-            this.method_37349(class_6943.field_35704, new class_6098(!(this.field_41717.nextFloat() < 0.1F) ? class_4783.field_23281 : class_4783.field_23855));
+            this.method_37349(class_6943.field_35704, new ItemStack(!(this.field_41717.nextFloat() < 0.1F) ? class_4783.field_23281 : class_4783.field_23855));
             this.field_29918[class_6943.field_35704.method_31767()] = 0.0F;
          }
       }
@@ -459,7 +459,7 @@ public class class_2811 extends class_1173 {
       if (var6 instanceof class_9490) {
          class_9490 var7 = (class_9490)var6;
          if (var7.method_43837()) {
-            class_6098 var8 = this.method_12796();
+            ItemStack var8 = this.method_12796();
             if (!var8.method_28022()) {
                var7.method_43832();
                this.method_37310(var8);
@@ -468,7 +468,7 @@ public class class_2811 extends class_1173 {
       }
    }
 
-   public class_6098 method_12796() {
-      return new class_6098(class_4897.field_24349);
+   public ItemStack method_12796() {
+      return new ItemStack(class_4897.field_24349);
    }
 }

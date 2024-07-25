@@ -19,7 +19,7 @@ public class class_5286 {
    }
 
    public static boolean method_24125() {
-      return field_27031.field_9632.field_41726
-         && field_27031.field_9601.method_6680(field_27031.field_9632, field_27031.field_9632.method_37241().method_18918(0.0, 1.0, 0.0)).count() == 0L;
+      return field_27031.thePlayer.field_41726
+         && field_27031.field_9601.method_6680(field_27031.thePlayer, field_27031.thePlayer.method_37241().method_18918(0.0, 1.0, 0.0)).count() == 0L;
    }
 }

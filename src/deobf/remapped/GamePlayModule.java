@@ -53,7 +53,7 @@ public class GamePlayModule extends SecondModule {
    private void method_33595(class_5596 var1) {
       if (this.method_42015()) {
          if (this.field_37692 != null) {
-            if (mc.field_9623 instanceof class_5766) {
+            if (client.field_9623 instanceof class_5766) {
                this.method_33594(null);
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Auto Join", "Auto join was canceled.", 2500));
             } else if (this.field_37692.method_6909()) {
@@ -77,7 +77,7 @@ public class GamePlayModule extends SecondModule {
             String var4 = this.getStringValueByName("Type");
 
             try {
-               if (mc.field_9632.field_41697 <= 3) {
+               if (client.thePlayer.field_41697 <= 3) {
                   this.field_37690.clear();
                }
 

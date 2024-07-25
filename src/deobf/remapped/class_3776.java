@@ -38,14 +38,14 @@ public class class_3776 {
    });
 
    public static String method_17479() {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       return GLFW.glfwGetCurrentContext() != 0L
-         ? class_1920.method_8928(7937) + " GL version " + class_1920.method_8928(7938) + ", " + class_1920.method_8928(7936)
+         ? GlStateManager.method_8928(7937) + " GL version " + GlStateManager.method_8928(7938) + ", " + GlStateManager.method_8928(7936)
          : "NO CONTEXT";
    }
 
    public static int method_17493(Window var0) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       long var3 = GLFW.glfwGetWindowMonitor(var0.method_43181());
       if (var3 == 0L) {
          var3 = GLFW.glfwGetPrimaryMonitor();
@@ -56,12 +56,12 @@ public class class_3776 {
    }
 
    public static String method_17478() {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       return Version.getVersion();
    }
 
    public static LongSupplier method_17488() {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       Window.method_43167((var0, var1) -> {
          throw new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", var0, var1));
       });
@@ -76,13 +76,13 @@ public class class_3776 {
             field_18439.error("GLFW error collected during initialization: {}", var6);
          }
 
-         class_3542.method_16416(var3);
+         RenderSystem.method_16416(var3);
          return var4;
       }
    }
 
    public static void method_17489(GLFWErrorCallbackI var0) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       GLFWErrorCallback var3 = GLFW.glfwSetErrorCallback(var0);
       if (var3 != null) {
          var3.free();
@@ -94,22 +94,22 @@ public class class_3776 {
    }
 
    public static void method_17490() {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       if (GL.getCapabilities().GL_NV_fog_distance) {
-         if (class_3111.method_14324()) {
-            class_1920.method_8768(34138, 34139);
+         if (Config.method_14324()) {
+            GlStateManager.method_8768(34138, 34139);
          }
 
-         if (class_3111.method_14296()) {
-            class_1920.method_8768(34138, 34140);
+         if (Config.method_14296()) {
+            GlStateManager.method_8768(34138, 34140);
          }
       }
    }
 
    public static void method_17494(int var0, boolean var1) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       GLCapabilities var4 = GL.getCapabilities();
-      field_18438 = "Using framebuffer using " + class_1920.method_8902(var4);
+      field_18438 = "Using framebuffer using " + GlStateManager.method_8902(var4);
 
       try {
          Processor[] var5 = new SystemInfo().getHardware().getProcessors();
@@ -129,10 +129,10 @@ public class class_3776 {
    }
 
    public static void method_17480(int var0, boolean var1, boolean var2, boolean var3) {
-      class_3542.method_16431(class_3542::method_16366);
-      class_1920.method_8848();
-      class_1920.method_8867(false);
-      class_8042 var6 = class_3542.method_16373();
+      RenderSystem.method_16431(RenderSystem::method_16366);
+      GlStateManager.method_8848();
+      GlStateManager.method_8867(false);
+      class_8042 var6 = RenderSystem.method_16373();
       class_9633 var7 = var6.method_36501();
       GL11.glLineWidth(4.0F);
       var7.method_44471(1, class_7985.field_40903);
@@ -171,8 +171,8 @@ public class class_3776 {
 
       var6.method_36500();
       GL11.glLineWidth(1.0F);
-      class_1920.method_8867(true);
-      class_1920.method_8843();
+      GlStateManager.method_8867(true);
+      GlStateManager.method_8843();
    }
 
    public static String method_17491(int var0) {

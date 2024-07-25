@@ -36,7 +36,7 @@ public abstract class class_6843 {
    }
 
    public String method_31392() {
-      String var3 = class_3111.method_14305(this.field_35291);
+      String var3 = Config.method_14305(this.field_35291);
       var3 = class_8251.method_37832(var3, "//");
       return class_6588.method_30244("option." + this.method_31405() + ".comment", var3);
    }
@@ -104,7 +104,7 @@ public abstract class class_6843 {
       for (int var5 = 0; var5 < var1.length; var5++) {
          String var6 = var1[var5];
          if (!var4.contains(var6)) {
-            this.field_35288 = (String[])class_3111.method_14441(this.field_35288, var6);
+            this.field_35288 = (String[]) Config.method_14441(this.field_35288, var6);
          }
       }
    }
@@ -118,7 +118,7 @@ public abstract class class_6843 {
    }
 
    public boolean method_31396() {
-      return !class_3111.equals(this.field_35286, this.field_35284);
+      return !Config.equals(this.field_35286, this.field_35284);
    }
 
    public boolean method_31394() {
@@ -176,7 +176,7 @@ public abstract class class_6843 {
 
    public void method_31393(float var1) {
       if (this.field_35285.length > 1) {
-         var1 = class_3111.method_14262(var1, 0.0F, 1.0F);
+         var1 = Config.method_14262(var1, 0.0F, 1.0F);
          int var4 = Math.round(var1 * (float)(this.field_35285.length - 1));
          this.field_35286 = this.field_35285[var4];
       }
@@ -191,6 +191,6 @@ public abstract class class_6843 {
          + ", valueDefault: "
          + this.field_35284
          + ", paths: "
-         + class_3111.method_14289(this.field_35288);
+         + Config.method_14289(this.field_35288);
    }
 }

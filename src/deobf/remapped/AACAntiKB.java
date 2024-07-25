@@ -18,12 +18,12 @@ public class AACAntiKB extends Module {
 
    @EventListen
    private void method_34927(class_7767 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (this.method_34925()) {
-            if (field_39147 == 0 && !mc.field_9632.field_41726 && mc.field_9632.field_29645 > 0 && mc.field_9632.field_41706 < 2.0F) {
-               mc.field_9632.method_37186(0.0, -1.0, 0.0);
-               class_314.method_1408(mc.field_9632.method_37098().method_60());
-               mc.field_9632.field_41726 = true;
+            if (field_39147 == 0 && !client.thePlayer.field_41726 && client.thePlayer.field_29645 > 0 && client.thePlayer.field_41706 < 2.0F) {
+               client.thePlayer.method_37186(0.0, -1.0, 0.0);
+               class_314.method_1408(client.thePlayer.method_37098().method_60());
+               client.thePlayer.field_41726 = true;
                field_39147 = 20;
             }
          } else {
@@ -58,7 +58,7 @@ public class AACAntiKB extends Module {
 
    @EventListen
    private void method_34926(PacketEvent var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_4548) {
             if (this.method_34925()) {
@@ -67,7 +67,7 @@ public class AACAntiKB extends Module {
             }
 
             class_4548 var5 = (class_4548)var4;
-            if (var5.method_21093() == mc.field_9632.method_37145() && (var5.field_22171 != 0 || var5.field_22167 != 0)) {
+            if (var5.method_21093() == client.thePlayer.method_37145() && (var5.field_22171 != 0 || var5.field_22167 != 0)) {
                this.field_39148 = (float)(Math.sqrt((double)(var5.field_22171 * var5.field_22171 + var5.field_22167 * var5.field_22167)) / 1000.0);
                this.field_39149 = (float)(Math.atan2((double)(var5.field_22171 / 1000), (double)(var5.field_22167 / 1000)) * 180.0 / Math.PI) - 90.0F;
                field_39147 = 0;

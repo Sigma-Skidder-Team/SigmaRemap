@@ -6,7 +6,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7434 extends class_2358 {
    private static final Random field_37916 = new Random();
-   private class_2831<class_6098> field_37914 = class_2831.<class_6098>method_12872(9, class_6098.field_31203);
+   private class_2831<ItemStack> field_37914 = class_2831.<ItemStack>method_12872(9, ItemStack.EMPTY);
 
    public class_7434(class_133<?> var1) {
       super(var1);
@@ -35,7 +35,7 @@ public class class_7434 extends class_2358 {
       return var3;
    }
 
-   public int method_33832(class_6098 var1) {
+   public int method_33832(ItemStack var1) {
       for (int var4 = 0; var4 < this.field_37914.size(); var4++) {
          if (this.field_37914.get(var4).method_28022()) {
             this.method_31503(var4, var1);
@@ -54,7 +54,7 @@ public class class_7434 extends class_2358 {
    @Override
    public void method_17394(class_2522 var1, class_5734 var2) {
       super.method_17394(var1, var2);
-      this.field_37914 = class_2831.<class_6098>method_12872(this.method_31505(), class_6098.field_31203);
+      this.field_37914 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!this.method_10811(var2)) {
          class_3037.method_13882(var2, this.field_37914);
       }
@@ -71,12 +71,12 @@ public class class_7434 extends class_2358 {
    }
 
    @Override
-   public class_2831<class_6098> method_10814() {
+   public class_2831<ItemStack> method_10814() {
       return this.field_37914;
    }
 
    @Override
-   public void method_10813(class_2831<class_6098> var1) {
+   public void method_10813(class_2831<ItemStack> var1) {
       this.field_37914 = var1;
    }
 

@@ -30,7 +30,7 @@ public class class_2125 extends class_4569 {
       );
    }
 
-   public boolean method_9929(class_6098 var1) {
+   public boolean method_9929(ItemStack var1) {
       return this.field_10644.method_24266(var1);
    }
 

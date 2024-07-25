@@ -85,11 +85,11 @@ public abstract class class_8383 extends class_3954<class_6867> {
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_18874(class_704 var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
-         class_6098 var7 = var6.method_35898();
+         ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
          if (var2 != 2) {
             if (var2 != 1 && var2 != 0) {
@@ -97,23 +97,23 @@ public abstract class class_8383 extends class_3954<class_6867> {
                   if (!this.method_38634(var7)) {
                      if (var2 >= 3 && var2 < 30) {
                         if (!this.method_18892(var7, 30, 39, false)) {
-                           return class_6098.field_31203;
+                           return ItemStack.EMPTY;
                         }
                      } else if (var2 >= 30 && var2 < 39 && !this.method_18892(var7, 3, 30, false)) {
-                        return class_6098.field_31203;
+                        return ItemStack.EMPTY;
                      }
                   } else if (!this.method_18892(var7, 1, 2, false)) {
-                     return class_6098.field_31203;
+                     return ItemStack.EMPTY;
                   }
                } else if (!this.method_18892(var7, 0, 1, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method_18892(var7, 3, 39, false)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method_18892(var7, 3, 39, true)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
 
             var6.method_35888(var7, var5);
@@ -122,11 +122,11 @@ public abstract class class_8383 extends class_3954<class_6867> {
          if (!var7.method_28022()) {
             var6.method_35887();
          } else {
-            var6.method_35896(class_6098.field_31203);
+            var6.method_35896(ItemStack.EMPTY);
          }
 
          if (var7.method_27997() == var5.method_27997()) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
          var6.method_35892(var1, var7);
@@ -135,11 +135,11 @@ public abstract class class_8383 extends class_3954<class_6867> {
       return var5;
    }
 
-   public boolean method_38633(class_6098 var1) {
+   public boolean method_38633(ItemStack var1) {
       return this.field_42895.method_29549().method_23138(this.field_42897, new class_4657(var1), this.field_42895).isPresent();
    }
 
-   public boolean method_38634(class_6098 var1) {
+   public boolean method_38634(ItemStack var1) {
       return class_7933.method_35873(var1);
    }
 

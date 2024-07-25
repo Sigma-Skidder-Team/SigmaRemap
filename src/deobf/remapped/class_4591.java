@@ -17,7 +17,7 @@ public abstract class class_4591 extends Screen {
    private class_1027 field_22319;
 
    public class_4591() {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
    }
 
    @Override

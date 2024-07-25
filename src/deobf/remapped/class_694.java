@@ -65,7 +65,7 @@ public class class_694 extends class_2733 {
          var6.field_36492 = var2;
          return (class_8599)var6;
       } else {
-         class_3111.method_14317("Field not found: RenderMinecart.modelMinecart");
+         Config.method_14317("Field not found: RenderMinecart.modelMinecart");
          return null;
       }
    }

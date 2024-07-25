@@ -33,7 +33,7 @@ public class Effects {
    public static final class_1425 field_19749 = method_18712(6, "instant_health", new class_2181(class_7822.field_39674, 16262179));
    public static final class_1425 field_19723 = method_18712(7, "instant_damage", new class_2181(class_7822.field_39673, 4393481));
    public static final class_1425 field_19730 = method_18712(8, "jump_boost", new class_1425(class_7822.field_39674, 2293580));
-   public static final class_1425 field_19732 = method_18712(9, "nausea", new class_1425(class_7822.field_39673, 5578058));
+   public static final class_1425 NAUSEA = method_18712(9, "nausea", new class_1425(class_7822.field_39673, 5578058));
    public static final class_1425 field_19742 = method_18712(10, "regeneration", new class_1425(class_7822.field_39674, 13458603));
    public static final class_1425 field_19727 = method_18712(11, "resistance", new class_1425(class_7822.field_39674, 10044730));
    public static final class_1425 field_19745 = method_18712(12, "fire_resistance", new class_1425(class_7822.field_39674, 14981690));

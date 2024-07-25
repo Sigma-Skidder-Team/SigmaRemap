@@ -177,7 +177,7 @@ public class class_7689 extends class_6414 implements class_8660 {
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
       int var9 = var1.<Integer>method_10313(field_39050);
-      class_6098 var10 = var4.method_26617(var5);
+      ItemStack var10 = var4.method_26617(var5);
       if (var9 < 8 && field_39051.containsKey(var10.method_27960())) {
          if (var9 < 7 && !var2.field_33055) {
             class_2522 var11 = method_34844(var1, var2, var3, var10);
@@ -196,7 +196,7 @@ public class class_7689 extends class_6414 implements class_8660 {
       }
    }
 
-   public static class_2522 method_34840(class_2522 var0, class_6331 var1, class_6098 var2, class_1331 var3) {
+   public static class_2522 method_34840(class_2522 var0, class_6331 var1, ItemStack var2, class_1331 var3) {
       int var6 = var0.<Integer>method_10313(field_39050);
       if (var6 < 7 && field_39051.containsKey(var2.method_27960())) {
          class_2522 var7 = method_34844(var0, var1, var3, var2);
@@ -218,7 +218,7 @@ public class class_7689 extends class_6414 implements class_8660 {
             (double)var2.method_12173() + var6,
             (double)var2.method_12165() + var8,
             (double)var2.method_12185() + var10,
-            new class_6098(class_4897.field_24640)
+            new ItemStack(class_4897.field_24640)
          );
          var12.method_257();
          var1.method_7509(var12);
@@ -235,7 +235,7 @@ public class class_7689 extends class_6414 implements class_8660 {
       return var5;
    }
 
-   private static class_2522 method_34844(class_2522 var0, class_9379 var1, class_1331 var2, class_6098 var3) {
+   private static class_2522 method_34844(class_2522 var0, class_9379 var1, class_1331 var2, ItemStack var3) {
       int var6 = var0.<Integer>method_10313(field_39050);
       float var7 = field_39051.getFloat(var3.method_27960());
       if ((var6 != 0 || !(var7 > 0.0F)) && !(var1.method_43360().nextDouble() < (double)var7)) {
@@ -285,6 +285,6 @@ public class class_7689 extends class_6414 implements class_8660 {
       int var6 = var1.<Integer>method_10313(field_39050);
       return (class_372)(var6 != 8
          ? (class_372)(var6 >= 7 ? new class_4831() : new class_2129(var1, var2, var3))
-         : new class_1865(var1, var2, var3, new class_6098(class_4897.field_24640)));
+         : new class_1865(var1, var2, var3, new ItemStack(class_4897.field_24640)));
    }
 }

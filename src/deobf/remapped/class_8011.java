@@ -32,7 +32,7 @@ public class class_8011 extends class_3429 implements class_3713 {
    public void method_26165(class_9529 var1) {
       super.method_26165(var1);
       if (!this.field_41768.field_33055) {
-         class_6098 var4 = this.method_17246();
+         ItemStack var4 = this.method_17246();
          class_6004 var5 = class_9541.method_43990(var4);
          List var6 = class_9541.method_43993(var4);
          boolean var7 = var5 == class_3697.field_18108 && var6.isEmpty();
@@ -54,7 +54,7 @@ public class class_8011 extends class_3429 implements class_3713 {
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
       if (!this.field_41768.field_33055) {
-         class_6098 var4 = this.method_17246();
+         ItemStack var4 = this.method_17246();
          class_6004 var5 = class_9541.method_43990(var4);
          List var6 = class_9541.method_43993(var4);
          boolean var7 = var5 == class_3697.field_18108 && var6.isEmpty();
@@ -119,7 +119,7 @@ public class class_8011 extends class_3429 implements class_3713 {
       }
    }
 
-   private void method_36347(class_6098 var1, class_6004 var2) {
+   private void method_36347(ItemStack var1, class_6004 var2) {
       class_4478 var5 = new class_4478(this.field_41768, this.method_37302(), this.method_37309(), this.method_37156());
       Entity var6 = this.method_26166();
       if (var6 instanceof class_5834) {

@@ -18,11 +18,11 @@ public class class_7702 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       var2.method_3174(var6, var3);
       var2.method_3211(class_6234.field_31907.method_43790(this));
-      return class_954.<class_6098>method_4208(var6, var1.method_22567());
+      return class_954.<ItemStack>method_4208(var6, var1.method_22567());
    }
 
    public static boolean method_34884(class_5734 var0) {

@@ -112,7 +112,7 @@ public final class class_8462 {
       return var0.method_26446().method_27960() != var1 ? class_2584.field_12794 : class_2584.field_12791;
    }
 
-   public static class_6749 method_38930(class_5834 var0, class_6098 var1, float var2) {
+   public static class_6749 method_38930(class_5834 var0, ItemStack var1, float var2) {
       class_603 var5 = (class_603)(!(var1.method_27960() instanceof class_603) ? class_4897.field_25024 : var1.method_27960());
       class_6749 var6 = var5.method_2819(var0.field_41768, var1, var0);
       var6.method_30937(var0, var2);

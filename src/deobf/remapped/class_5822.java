@@ -2,13 +2,13 @@ package remapped;
 
 public abstract class class_5822 implements class_8932<class_6867> {
    public final class_8137 field_29533;
-   public final class_6098 field_29534;
+   public final ItemStack field_29534;
    private final class_1510<?> field_29537;
    private final class_2994<?> field_29535;
    public final Identifier field_29536;
    public final String field_29538;
 
-   public class_5822(class_1510<?> var1, class_2994<?> var2, Identifier var3, String var4, class_8137 var5, class_6098 var6) {
+   public class_5822(class_1510<?> var1, class_2994<?> var2, Identifier var3, String var4, class_8137 var5, ItemStack var6) {
       this.field_29537 = var1;
       this.field_29535 = var2;
       this.field_29536 = var3;
@@ -38,7 +38,7 @@ public abstract class class_5822 implements class_8932<class_6867> {
    }
 
    @Override
-   public class_6098 method_41044() {
+   public ItemStack method_41044() {
       return this.field_29534;
    }
 
@@ -55,7 +55,7 @@ public abstract class class_5822 implements class_8932<class_6867> {
    }
 
    @Override
-   public class_6098 method_41042(class_6867 var1) {
+   public ItemStack method_41042(class_6867 var1) {
       return this.field_29534.method_27973();
    }
 }

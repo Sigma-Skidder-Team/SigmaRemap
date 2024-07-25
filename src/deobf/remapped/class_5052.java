@@ -127,15 +127,15 @@ public class class_5052 {
    }
 
    public static void method_23268() {
-      field_26105 = MinecraftClient.getInstance().method_8577();
+      field_26105 = MinecraftClient.getInstance().getTextureManager();
       field_26111 = false;
       field_26110 = null;
       field_26108 = null;
-      if (class_3111.method_14328()) {
+      if (Config.method_14328()) {
          try {
             String var2 = "optifine/emissive.properties";
             Identifier var3 = new Identifier(var2);
-            InputStream var4 = class_3111.method_14374(var3);
+            InputStream var4 = Config.method_14374(var3);
             if (var4 == null) {
                return;
             }
@@ -171,7 +171,7 @@ public class class_5052 {
       if (var4 != null && !var1.method_21456().endsWith(var4)) {
          Identifier var5 = new Identifier(var1.method_21461(), var1.method_21456() + var4);
          Identifier var6 = var0.method_38503(var5);
-         if (class_3111.method_14362(var6)) {
+         if (Config.method_14362(var6)) {
             class_5155 var7 = var0.method_38515(var1);
             class_5155 var8 = var0.method_38515(var5);
             var8.field_26528 = true;
@@ -201,11 +201,11 @@ public class class_5052 {
    }
 
    private static void method_23272(String var0) {
-      class_3111.method_14277("EmissiveTextures: " + var0);
+      Config.method_14277("EmissiveTextures: " + var0);
    }
 
    private static void method_23284(String var0) {
-      class_3111.method_14317("EmissiveTextures: " + var0);
+      Config.method_14317("EmissiveTextures: " + var0);
    }
 
    public static boolean method_23285(Identifier var0) {
@@ -222,7 +222,7 @@ public class class_5052 {
                if (!var4.endsWith(field_26108)) {
                   String var5 = var4.substring(0, var4.length() - ".png".length()) + field_26108;
                   Identifier var6 = new Identifier(var0.method_21461(), var5);
-                  if (class_3111.method_14362(var6)) {
+                  if (Config.method_14362(var6)) {
                      var1.field_9205 = var6;
                   }
                } else {

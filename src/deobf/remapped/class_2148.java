@@ -17,9 +17,9 @@ public class class_2148 {
       float var7 = (float)(var2 >> 8 & 0xFF) / 255.0F;
       float var8 = (float)(var2 & 0xFF) / 255.0F;
       class_9633 var9 = class_8042.method_36499().method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16437();
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.defaultBlendFunc();
       var9.method_44471(7, class_7985.field_40903);
 
       for (int var10 = 0; var10 < var1.length; var10++) {
@@ -50,7 +50,7 @@ public class class_2148 {
 
       var9.method_44487();
       class_138.method_554(var9);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 }

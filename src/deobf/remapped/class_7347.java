@@ -14,7 +14,7 @@ public class class_7347 extends class_7157 {
       int var6 = 0;
 
       for (int var7 = 0; var7 < var1.method_31505(); var7++) {
-         class_6098 var8 = var1.method_31498(var7);
+         ItemStack var8 = var1.method_31498(var7);
          if (!var8.method_28022()) {
             if (!field_37568.test(var8)) {
                if (!field_37567.test(var8)) {
@@ -37,14 +37,14 @@ public class class_7347 extends class_7157 {
       return var5 && var6 >= 1;
    }
 
-   public class_6098 method_33487(class_6946 var1) {
-      class_6098 var4 = new class_6098(class_4897.field_24479, 3);
+   public ItemStack method_33487(class_6946 var1) {
+      ItemStack var4 = new ItemStack(class_4897.field_24479, 3);
       class_5734 var5 = var4.method_27978("Fireworks");
       class_3416 var6 = new class_3416();
       int var7 = 0;
 
       for (int var8 = 0; var8 < var1.method_31505(); var8++) {
-         class_6098 var9 = var1.method_31498(var8);
+         ItemStack var9 = var1.method_31498(var8);
          if (!var9.method_28022()) {
             if (!field_37567.test(var9)) {
                if (field_37569.test(var9)) {
@@ -73,8 +73,8 @@ public class class_7347 extends class_7157 {
    }
 
    @Override
-   public class_6098 method_41044() {
-      return new class_6098(class_4897.field_24479);
+   public ItemStack method_41044() {
+      return new ItemStack(class_4897.field_24479);
    }
 
    @Override

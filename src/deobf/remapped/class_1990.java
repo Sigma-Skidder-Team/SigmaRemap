@@ -50,7 +50,7 @@ public class class_1990 extends class_3266 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       if (!var1.field_33055) {
          this.method_9170(var1, var2, var3);
       }

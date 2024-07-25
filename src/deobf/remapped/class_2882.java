@@ -37,14 +37,14 @@ public class class_2882 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (var1.method_27960() == class_4897.field_25113) {
          class_1343 var5 = var2.<class_1343>method_12698(class_8712.field_44671);
          if (var5 != null) {
             class_6331 var6 = var2.method_12694();
             class_1331 var7 = var6.method_29000(this.field_14118, new class_1331(var5), this.field_14114, this.field_14117);
             if (var7 != null) {
-               class_6098 var8 = class_2143.method_10014(var6, var7.method_12173(), var7.method_12185(), this.field_14115, true, true);
+               ItemStack var8 = class_2143.method_10014(var6, var7.method_12173(), var7.method_12185(), this.field_14115, true, true);
                class_2143.method_10013(var6, var8);
                class_2134.method_9969(var8, var7, "+", this.field_14111);
                var8.method_28032(new TranslationTextComponent("filled_map." + this.field_14118.method_24556().toLowerCase(Locale.ROOT)));

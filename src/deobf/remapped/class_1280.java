@@ -31,7 +31,7 @@ public class class_1280<T extends class_2875> extends class_2208<T> implements c
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
       super.method_6767(var1, var2, var3, var4);
-      class_3542.method_16448();
+      RenderSystem.method_16448();
       this.method_5725(var1, var2, var3, var4);
       this.method_10214(var1, var2, var3);
    }
@@ -41,8 +41,8 @@ public class class_1280<T extends class_2875> extends class_2208<T> implements c
 
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(this.field_7041);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(this.field_7041);
       int var7 = (this.field_941 - this.field_10981) / 2;
       int var8 = (this.field_940 - this.field_10973) / 2;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);
@@ -54,7 +54,7 @@ public class class_1280<T extends class_2875> extends class_2208<T> implements c
    }
 
    @Override
-   public void method_347(class_4088 var1, class_2831<class_6098> var2) {
+   public void method_347(class_4088 var1, class_2831<ItemStack> var2) {
       this.method_348(var1, 0, var1.method_18878(0).method_35898());
    }
 
@@ -63,6 +63,6 @@ public class class_1280<T extends class_2875> extends class_2208<T> implements c
    }
 
    @Override
-   public void method_348(class_4088 var1, int var2, class_6098 var3) {
+   public void method_348(class_4088 var1, int var2, ItemStack var3) {
    }
 }

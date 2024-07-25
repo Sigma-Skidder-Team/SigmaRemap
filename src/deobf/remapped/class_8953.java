@@ -13,11 +13,11 @@ public class class_8953 implements class_211 {
    }
 
    @Override
-   public Collection<class_6098> method_894() {
+   public Collection<ItemStack> method_894() {
       ArrayList var3 = Lists.newArrayList();
 
       for (class_2451 var5 : this.field_45886.method_10608()) {
-         var3.add(new class_6098(var5));
+         var3.add(new ItemStack(var5));
       }
 
       return var3;

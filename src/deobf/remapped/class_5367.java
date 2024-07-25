@@ -19,16 +19,16 @@ public class class_5367 implements AutoCloseable {
          }
       }
 
-      class_3542.method_16492(33985);
+      RenderSystem.method_16492(33985);
       this.field_27382.method_37048();
-      class_3542.method_16463(5890);
-      class_3542.method_16476();
+      RenderSystem.method_16463(5890);
+      RenderSystem.method_16476();
       float var7 = 0.06666667F;
-      class_3542.method_16403(0.06666667F, 0.06666667F, 0.06666667F);
-      class_3542.method_16463(5888);
+      RenderSystem.method_16403(0.06666667F, 0.06666667F, 0.06666667F);
+      RenderSystem.method_16463(5888);
       this.field_27382.method_37048();
       var3.method_26259(0, 0, 0, 0, 0, var3.method_26228(), var3.method_26253(), false, true, false, false);
-      class_3542.method_16492(33984);
+      RenderSystem.method_16492(33984);
    }
 
    @Override
@@ -38,7 +38,7 @@ public class class_5367 implements AutoCloseable {
 
    public void method_24481() {
       if (!class_6588.method_30191()) {
-         class_3542.method_16459(this.field_27382::method_37055, 16);
+         RenderSystem.method_16459(this.field_27382::method_37055, 16);
       }
    }
 
@@ -60,7 +60,7 @@ public class class_5367 implements AutoCloseable {
 
    public void method_24482() {
       if (!class_6588.method_30191()) {
-         class_3542.method_16439();
+         RenderSystem.method_16439();
       }
    }
 }

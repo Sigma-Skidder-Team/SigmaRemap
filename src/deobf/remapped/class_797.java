@@ -21,7 +21,7 @@ public class class_797 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (var1.method_27960() == class_4897.field_24846 && !this.field_4280.isEmpty()) {
          Random var5 = var2.method_12693();
          int var6 = var5.nextInt(this.field_4280.size());

@@ -227,7 +227,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_25034 || !this.method_37330() || this.method_2024() || this.method_26507()) {
          return super.method_26857(var1, var2);
       } else if (!this.method_26449()) {
@@ -366,7 +366,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
          }
       }
 
-      if (var1.method_26480(Effects.field_19741)) {
+      if (var1.isPotionActive(Effects.field_19741)) {
          class_2250 var12 = var1.method_26553(Effects.field_19741);
          int var13 = var12.method_10333();
 
@@ -573,7 +573,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    private void method_34725() {
       if (this.method_34708() && this.method_34727() != 0) {
          for (int var3 = 0; var3 < this.method_2017().method_31505(); var3++) {
-            class_6098 var4 = this.method_2017().method_31498(var3);
+            ItemStack var4 = this.method_2017().method_31498(var3);
             if (!var4.method_28022()) {
                Integer var5 = field_38968.get(var4.method_27960());
                if (var5 != null) {
@@ -707,7 +707,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
    @Override
    public void method_26902(class_91 var1) {
-      class_6098 var4 = var1.method_264();
+      ItemStack var4 = var1.method_264();
       if (this.method_26873(var4)) {
          class_4657 var5 = this.method_2017();
          boolean var6 = var5.method_21541(var4);
@@ -717,7 +717,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
 
          this.method_26562(var1);
          this.method_26467(var1, var4.method_27997());
-         class_6098 var7 = var5.method_21542(var4);
+         ItemStack var7 = var5.method_21542(var4);
          if (!var7.method_28022()) {
             var4.method_28017(var7.method_27997());
          } else {
@@ -727,7 +727,7 @@ public class class_7666 extends class_405 implements class_5545, class_3449 {
    }
 
    @Override
-   public boolean method_26873(class_6098 var1) {
+   public boolean method_26873(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       return (field_38976.contains(var4) || this.method_15891().method_13910().method_20726().contains(var4)) && this.method_2017().method_21541(var1);
    }

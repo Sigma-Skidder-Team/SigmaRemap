@@ -35,7 +35,7 @@ public class class_6809 {
                      this.method_31254(var1, var9.x, var9.y, var9.x + var9.width, var9.y + var9.height, var11);
                   }
 
-                  class_2089.method_9774(var1, var9.x, var9.y, var9.x + var9.width, var9.y + var9.height, -536870912);
+                  AbstractGui.method_9774(var1, var9.x, var9.y, var9.x + var9.width, var9.y + var9.height, -536870912);
 
                   for (int var15 = 0; var15 < var10.length; var15++) {
                      String var12 = var10[var15];
@@ -58,9 +58,9 @@ public class class_6809 {
    }
 
    private void method_31254(class_7966 var1, int var2, int var3, int var4, int var5, int var6) {
-      class_2089.method_9774(var1, var2, var3 - 1, var4, var3, var6);
-      class_2089.method_9774(var1, var2, var5, var4, var5 + 1, var6);
-      class_2089.method_9774(var1, var2 - 1, var3, var2, var5, var6);
-      class_2089.method_9774(var1, var4, var3, var4 + 1, var5, var6);
+      AbstractGui.method_9774(var1, var2, var3 - 1, var4, var3, var6);
+      AbstractGui.method_9774(var1, var2, var5, var4, var5 + 1, var6);
+      AbstractGui.method_9774(var1, var2 - 1, var3, var2, var5, var6);
+      AbstractGui.method_9774(var1, var4, var3, var4 + 1, var5, var6);
    }
 }

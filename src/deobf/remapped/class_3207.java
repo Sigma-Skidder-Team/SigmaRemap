@@ -66,7 +66,7 @@ public class class_3207 {
 
    public boolean method_14745(String var1) {
       if (this.field_16009 == null && this.field_16006 == null) {
-         class_3111.method_14317("No skins specified: " + var1);
+         Config.method_14317("No skins specified: " + var1);
          return false;
       } else {
          if (this.field_16006 != null) {
@@ -81,8 +81,8 @@ public class class_3207 {
          if (this.field_16009 != null) {
             for (int var6 = 0; var6 < this.field_16009.length; var6++) {
                Identifier var7 = this.field_16009[var6];
-               if (!class_3111.method_14362(var7)) {
-                  class_3111.method_14317("Texture not found: " + var7.method_21456());
+               if (!Config.method_14362(var7)) {
+                  Config.method_14317("Texture not found: " + var7.method_21456());
                   return false;
                }
             }

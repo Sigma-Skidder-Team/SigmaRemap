@@ -4,10 +4,10 @@ public class class_667 implements class_8932<class_6867> {
    private static String[] field_3699;
    private final class_8137 field_3695;
    private final class_8137 field_3697;
-   private final class_6098 field_3698;
+   private final ItemStack field_3698;
    private final Identifier field_3696;
 
-   public class_667(Identifier var1, class_8137 var2, class_8137 var3, class_6098 var4) {
+   public class_667(Identifier var1, class_8137 var2, class_8137 var3, ItemStack var4) {
       this.field_3696 = var1;
       this.field_3695 = var2;
       this.field_3697 = var3;
@@ -20,8 +20,8 @@ public class class_667 implements class_8932<class_6867> {
    }
 
    @Override
-   public class_6098 method_41042(class_6867 var1) {
-      class_6098 var4 = this.field_3698.method_27973();
+   public ItemStack method_41042(class_6867 var1) {
+      ItemStack var4 = this.field_3698.method_27973();
       class_5734 var5 = var1.method_31498(0).method_27990();
       if (var5 != null) {
          var4.method_27965(var5.method_25944());
@@ -36,17 +36,17 @@ public class class_667 implements class_8932<class_6867> {
    }
 
    @Override
-   public class_6098 method_41044() {
+   public ItemStack method_41044() {
       return this.field_3698;
    }
 
-   public boolean method_3043(class_6098 var1) {
+   public boolean method_3043(ItemStack var1) {
       return this.field_3697.test(var1);
    }
 
    @Override
-   public class_6098 method_41049() {
-      return new class_6098(class_4783.field_23646);
+   public ItemStack method_41049() {
+      return new ItemStack(class_4783.field_23646);
    }
 
    @Override

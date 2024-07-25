@@ -81,7 +81,7 @@ public class class_4296 {
          if (var5 != null) {
             method_19952(var5, var0);
          } else {
-            class_3111.method_14317("BaseID not found: " + var4);
+            Config.method_14317("BaseID not found: " + var4);
          }
       }
    }
@@ -94,15 +94,15 @@ public class class_4296 {
          try {
             JsonObject var7 = method_19954(var6);
             if (var7 == null) {
-               class_3111.method_14317("Model not found: " + var6);
+               Config.method_14317("Model not found: " + var6);
                return;
             }
 
             method_19952(var7, var0);
          } catch (IOException var8) {
-            class_3111.method_14348("" + var8.getClass().getName() + ": " + var8.getMessage());
+            Config.method_14348("" + var8.getClass().getName() + ": " + var8.getMessage());
          } catch (JsonParseException var9) {
-            class_3111.method_14348("" + var9.getClass().getName() + ": " + var9.getMessage());
+            Config.method_14348("" + var9.getClass().getName() + ": " + var9.getMessage());
          } catch (Exception var10) {
             var10.printStackTrace();
          }
@@ -144,10 +144,10 @@ public class class_4296 {
             if (!var1.containsKey(var4)) {
                var1.put(var4, var0);
             } else {
-               class_3111.method_14317("Duplicate model ID: " + var4);
+               Config.method_14317("Duplicate model ID: " + var4);
             }
          } else {
-            class_3111.method_14317("Empty model ID: " + var4);
+            Config.method_14317("Empty model ID: " + var4);
          }
       }
    }
@@ -195,9 +195,9 @@ public class class_4296 {
    }
 
    public static JsonObject method_19954(Identifier var0) throws IOException, JsonParseException {
-      InputStream var3 = class_3111.method_14374(var0);
+      InputStream var3 = Config.method_14374(var0);
       if (var3 != null) {
-         String var4 = class_3111.method_14271(var3, "ASCII");
+         String var4 = Config.method_14271(var3, "ASCII");
          var3.close();
          JsonParser var5 = new JsonParser();
          return (JsonObject)var5.parse(var4);

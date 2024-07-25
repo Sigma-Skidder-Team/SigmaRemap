@@ -18,16 +18,16 @@ public class class_2951 implements class_6867 {
    }
 
    @Override
-   public class_6098 method_31498(int var1) {
-      return var1 != 0 ? class_6098.field_31203 : class_1788.method_7954(this.field_14422);
+   public ItemStack method_31498(int var1) {
+      return var1 != 0 ? ItemStack.EMPTY : class_1788.method_7954(this.field_14422);
    }
 
    @Override
-   public class_6098 method_31497(int var1, int var2) {
+   public ItemStack method_31497(int var1, int var2) {
       if (var1 != 0) {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       } else {
-         class_6098 var5 = class_1788.method_7954(this.field_14422).method_27953(var2);
+         ItemStack var5 = class_1788.method_7954(this.field_14422).method_27953(var2);
          if (class_1788.method_7954(this.field_14422).method_28022()) {
             class_1788.method_7962(this.field_14422);
          }
@@ -37,19 +37,19 @@ public class class_2951 implements class_6867 {
    }
 
    @Override
-   public class_6098 method_31507(int var1) {
+   public ItemStack method_31507(int var1) {
       if (var1 != 0) {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       } else {
-         class_6098 var4 = class_1788.method_7954(this.field_14422);
-         class_1788.method_7950(this.field_14422, class_6098.field_31203);
+         ItemStack var4 = class_1788.method_7954(this.field_14422);
+         class_1788.method_7950(this.field_14422, ItemStack.EMPTY);
          class_1788.method_7962(this.field_14422);
          return var4;
       }
    }
 
    @Override
-   public void method_31503(int var1, class_6098 var2) {
+   public void method_31503(int var1, ItemStack var2) {
    }
 
    @Override
@@ -81,7 +81,7 @@ public class class_2951 implements class_6867 {
    }
 
    @Override
-   public boolean method_31500(int var1, class_6098 var2) {
+   public boolean method_31500(int var1, ItemStack var2) {
       return false;
    }
 

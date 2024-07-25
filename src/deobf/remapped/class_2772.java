@@ -6,7 +6,7 @@ public final class class_2772 extends class_8230 {
    }
 
    @Override
-   public class_6098 method_37693() {
-      return new class_6098(class_4897.field_25057);
+   public ItemStack method_37693() {
+      return new ItemStack(class_4897.field_25057);
    }
 }

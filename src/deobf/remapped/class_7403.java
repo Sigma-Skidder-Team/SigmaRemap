@@ -26,7 +26,7 @@ public class class_7403 extends class_4382 {
    }
 
    @Override
-   public boolean method_20430(class_6098 var1) {
+   public boolean method_20430(ItemStack var1) {
       return !(var1.method_27960() instanceof class_8228) ? super.method_20430(var1) : true;
    }
 
@@ -40,7 +40,7 @@ public class class_7403 extends class_4382 {
          }
 
          if (var7 != null) {
-            ((class_6098)var7.getValue()).method_28003(2, var1, var1x -> var1x.method_26448((class_6943)var7.getKey()));
+            ((ItemStack)var7.getValue()).method_28003(2, var1, var1x -> var1x.method_26448((class_6943)var7.getKey()));
          }
       }
    }

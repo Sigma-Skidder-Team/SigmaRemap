@@ -16,11 +16,11 @@ public class class_1700 implements class_2274 {
 
    public void 錌圭훔곻瀧쿨() {
       this.field_8791++;
-      if (this.field_8787.method_40539() == class_4666.field_22764) {
+      if (this.field_8787.method_40539() == GameType.field_22764) {
          if (this.field_8791 == 1) {
-            class_5989 var3 = this.field_8787.method_40530().field_9632;
+            class_5989 var3 = this.field_8787.method_40530().thePlayer;
             if (var3 != null) {
-               if (var3.field_3853.method_32418(class_391.field_1605)) {
+               if (var3.inventory.method_32418(class_391.field_1605)) {
                   this.field_8787.method_40538(class_6240.field_31929);
                   return;
                }
@@ -48,7 +48,7 @@ public class class_1700 implements class_2274 {
       }
    }
 
-   public void 샱瀳筕筕渺䎰(class_6098 var1) {
+   public void 샱瀳筕筕渺䎰(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       if (class_391.field_1605.method_10609(var4)) {
          this.field_8787.method_40538(class_6240.field_31929);

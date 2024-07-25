@@ -41,7 +41,7 @@ public class class_2268 implements ArgumentType<class_6782> {
       }
    }
 
-   public static Predicate<class_6098> method_10469(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
+   public static Predicate<ItemStack> method_10469(CommandContext<class_9155> var0, String var1) throws CommandSyntaxException {
       return ((class_6782)var0.getArgument(var1, class_6782.class)).method_31094(var0);
    }
 

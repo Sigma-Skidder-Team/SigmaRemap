@@ -9,8 +9,8 @@ public class class_6329<T extends class_5834, M extends class_6521<T> & class_17
 
    public void method_28898(class_7966 var1, class_2565 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.method_26432() == class_1736.field_8943;
-      class_6098 var14 = !var13 ? var4.method_26446() : var4.method_26568();
-      class_6098 var15 = !var13 ? var4.method_26568() : var4.method_26446();
+      ItemStack var14 = !var13 ? var4.method_26446() : var4.method_26568();
+      ItemStack var15 = !var13 ? var4.method_26568() : var4.method_26446();
       if (!var14.method_28022() || !var15.method_28022()) {
          var1.method_36063();
          if (this.method_19347().field_33204) {
@@ -25,7 +25,7 @@ public class class_6329<T extends class_5834, M extends class_6521<T> & class_17
       }
    }
 
-   private void method_28897(class_5834 var1, class_6098 var2, class_5612 var3, class_1736 var4, class_7966 var5, class_2565 var6, int var7) {
+   private void method_28897(class_5834 var1, ItemStack var2, class_5612 var3, class_1736 var4, class_7966 var5, class_2565 var6, int var7) {
       if (!var2.method_28022()) {
          var5.method_36063();
          this.method_19347().method_7948(var4, var5);

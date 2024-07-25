@@ -150,29 +150,29 @@ public class class_3372 {
          double var17 = var15.method_41627().field_7336;
          double var19 = var15.method_41627().field_7333;
          double var21 = var15.method_41627().field_7334;
-         class_3542.method_16438();
-         class_3542.method_16413((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
-         class_3542.method_16465(0.0F, 1.0F, 0.0F);
-         class_3542.method_16358(new class_8107(var15.method_41644()));
-         class_3542.method_16403(var8, -var8, var8);
-         class_3542.method_16432();
+         RenderSystem.method_16438();
+         RenderSystem.method_16413((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
+         RenderSystem.method_16465(0.0F, 1.0F, 0.0F);
+         RenderSystem.method_16358(new class_8107(var15.method_41644()));
+         RenderSystem.method_16403(var8, -var8, var8);
+         RenderSystem.method_16432();
          if (!var11) {
-            class_3542.method_16428();
+            RenderSystem.enableDepthTest();
          } else {
-            class_3542.method_16491();
+            RenderSystem.method_16491();
          }
 
-         class_3542.method_16387(true);
-         class_3542.method_16403(-1.0F, 1.0F, 1.0F);
+         RenderSystem.method_16387(true);
+         RenderSystem.method_16403(-1.0F, 1.0F, 1.0F);
          float var23 = !var9 ? 0.0F : (float)(-var16.method_45395(var0)) / 2.0F;
          var23 -= var10 / var8;
-         class_3542.method_16374();
+         RenderSystem.enableAlphaTest();
          class_3758 var24 = class_2565.method_11648(class_8042.method_36499().method_36501());
          var16.method_45411(var0, var23, 0.0F, var7, false, class_1221.method_5406().method_5410(), var24, var11, 0, 15728880);
          var24.method_17415();
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16428();
-         class_3542.method_16489();
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16489();
       }
    }
 }

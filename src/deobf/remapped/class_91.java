@@ -7,7 +7,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_91 extends Entity {
-   private static final class_7821<class_6098> field_180 = class_8073.<class_6098>method_36641(class_91.class, class_2734.field_13357);
+   private static final class_7821<ItemStack> field_180 = class_8073.<ItemStack>method_36641(class_91.class, class_2734.field_13357);
    private int field_178;
    private int field_174;
    private int field_177 = 5;
@@ -27,7 +27,7 @@ public class class_91 extends Entity {
       this.method_37214(this.field_41717.nextDouble() * 0.2 - 0.1, 0.2, this.field_41717.nextDouble() * 0.2 - 0.1);
    }
 
-   public class_91(World var1, double var2, double var4, double var6, class_6098 var8) {
+   public class_91(World var1, double var2, double var4, double var6, ItemStack var8) {
       this(var1, var2, var4, var6);
       this.method_248(var8);
    }
@@ -47,7 +47,7 @@ public class class_91 extends Entity {
 
    @Override
    public void method_37329() {
-      this.method_37372().method_36634(field_180, class_6098.field_31203);
+      this.method_37372().method_36634(field_180, ItemStack.EMPTY);
    }
 
    @Override
@@ -159,13 +159,13 @@ public class class_91 extends Entity {
    }
 
    private boolean method_261() {
-      class_6098 var3 = this.method_264();
+      ItemStack var3 = this.method_264();
       return this.method_37330() && this.field_174 != 32767 && this.field_178 != -32768 && this.field_178 < 6000 && var3.method_27997() < var3.method_28016();
    }
 
    private void method_263(class_91 var1) {
-      class_6098 var4 = this.method_264();
-      class_6098 var5 = var1.method_264();
+      ItemStack var4 = this.method_264();
+      ItemStack var5 = var1.method_264();
       if (Objects.equals(this.method_266(), var1.method_266()) && method_249(var4, var5)) {
          if (var5.method_27997() >= var4.method_27997()) {
             method_268(var1, var5, this, var4);
@@ -175,7 +175,7 @@ public class class_91 extends Entity {
       }
    }
 
-   public static boolean method_249(class_6098 var0, class_6098 var1) {
+   public static boolean method_249(ItemStack var0, ItemStack var1) {
       if (var1.method_27960() != var0.method_27960()) {
          return false;
       } else if (var1.method_27997() + var0.method_27997() <= var1.method_28016()) {
@@ -185,20 +185,20 @@ public class class_91 extends Entity {
       }
    }
 
-   public static class_6098 method_247(class_6098 var0, class_6098 var1, int var2) {
+   public static ItemStack method_247(ItemStack var0, ItemStack var1, int var2) {
       int var5 = Math.min(Math.min(var0.method_28016(), var2) - var0.method_27997(), var1.method_27997());
-      class_6098 var6 = var0.method_27973();
+      ItemStack var6 = var0.method_27973();
       var6.method_28030(var5);
       var1.method_27970(var5);
       return var6;
    }
 
-   private static void method_256(class_91 var0, class_6098 var1, class_6098 var2) {
-      class_6098 var5 = method_247(var1, var2, 64);
+   private static void method_256(class_91 var0, ItemStack var1, ItemStack var2) {
+      ItemStack var5 = method_247(var1, var2, 64);
       var0.method_248(var5);
    }
 
-   private static void method_268(class_91 var0, class_6098 var1, class_91 var2, class_6098 var3) {
+   private static void method_268(class_91 var0, ItemStack var1, class_91 var2, ItemStack var3) {
       method_256(var0, var1, var3);
       var0.field_174 = Math.max(var0.field_174, var2.field_174);
       var0.field_178 = Math.min(var0.field_178, var2.field_178);
@@ -268,7 +268,7 @@ public class class_91 extends Entity {
       }
 
       class_5734 var4 = var1.method_25937("Item");
-      this.method_248(class_6098.method_28015(var4));
+      this.method_248(ItemStack.method_28015(var4));
       if (this.method_264().method_28022()) {
          this.method_37204();
       }
@@ -277,10 +277,10 @@ public class class_91 extends Entity {
    @Override
    public void method_37347(class_704 var1) {
       if (!this.field_41768.field_33055) {
-         class_6098 var4 = this.method_264();
+         ItemStack var4 = this.method_264();
          class_2451 var5 = var4.method_27960();
          int var6 = var4.method_27997();
-         if (this.field_174 == 0 && (this.field_179 == null || this.field_179.equals(var1.method_37328())) && var1.field_3853.method_32414(var4)) {
+         if (this.field_174 == 0 && (this.field_179 == null || this.field_179.equals(var1.method_37328())) && var1.inventory.method_32414(var4)) {
             var1.method_26467(this, var6);
             if (var4.method_28022()) {
                this.method_37204();
@@ -315,11 +315,11 @@ public class class_91 extends Entity {
       return var4;
    }
 
-   public class_6098 method_264() {
-      return this.method_37372().<class_6098>method_36640(field_180);
+   public ItemStack method_264() {
+      return this.method_37372().<ItemStack>method_36640(field_180);
    }
 
-   public void method_248(class_6098 var1) {
+   public void method_248(ItemStack var1) {
       this.method_37372().method_36633(field_180, var1);
    }
 

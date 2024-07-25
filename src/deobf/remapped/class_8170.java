@@ -63,7 +63,7 @@ public class class_8170 extends class_2811 {
    }
 
    @Override
-   public class_6098 method_12796() {
-      return class_6098.field_31203;
+   public ItemStack method_12796() {
+      return ItemStack.EMPTY;
    }
 }

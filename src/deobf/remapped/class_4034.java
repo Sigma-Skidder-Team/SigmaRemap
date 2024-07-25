@@ -39,7 +39,7 @@ public class class_4034 extends class_4088 {
    public void method_18876(class_704 var1) {
       super.method_18876(var1);
       if (!var1.field_41768.field_33055) {
-         class_6098 var4 = this.field_19587.method_35899(this.field_19587.method_35897());
+         ItemStack var4 = this.field_19587.method_35899(this.field_19587.method_35897());
          if (!var4.method_28022()) {
             var1.method_3153(var4, false);
          }
@@ -58,31 +58,31 @@ public class class_4034 extends class_4088 {
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_18874(class_704 var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
-         class_6098 var7 = var6.method_35898();
+         ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
          if (var2 != 0) {
             if (!this.field_19587.method_35884() && this.field_19587.method_35889(var7) && var7.method_27997() == 1) {
                if (!this.method_18892(var7, 0, 1, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 1 && var2 < 28) {
                if (!this.method_18892(var7, 28, 37, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 28 && var2 < 37) {
                if (!this.method_18892(var7, 1, 28, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method_18892(var7, 1, 37, false)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method_18892(var7, 1, 37, true)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
 
             var6.method_35888(var7, var5);
@@ -91,11 +91,11 @@ public class class_4034 extends class_4088 {
          if (!var7.method_28022()) {
             var6.method_35887();
          } else {
-            var6.method_35896(class_6098.field_31203);
+            var6.method_35896(ItemStack.EMPTY);
          }
 
          if (var7.method_27997() == var5.method_27997()) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
          var6.method_35892(var1, var7);

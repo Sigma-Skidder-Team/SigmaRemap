@@ -47,13 +47,13 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    public void method_26606() {
       boolean var3 = this.method_26884();
       if (var3) {
-         class_6098 var4 = this.method_26520(class_6943.field_35704);
+         ItemStack var4 = this.method_26520(class_6943.field_35704);
          if (!var4.method_28022()) {
             if (var4.method_27959()) {
                var4.method_27999(var4.method_28026() + this.field_41717.nextInt(2));
                if (var4.method_28026() >= var4.method_27957()) {
                   this.method_26448(class_6943.field_35704);
-                  this.method_37349(class_6943.field_35704, class_6098.field_31203);
+                  this.method_37349(class_6943.field_35704, ItemStack.EMPTY);
                }
             }
 
@@ -80,7 +80,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    @Override
    public void method_26870(class_9589 var1) {
       super.method_26870(var1);
-      this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25206));
+      this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25206));
    }
 
    @Nullable
@@ -96,7 +96,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
          int var9 = var8.get(ChronoField.DAY_OF_MONTH);
          int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
          if (var10 == 10 && var9 == 31 && this.field_41717.nextFloat() < 0.25F) {
-            this.method_37349(class_6943.field_35704, new class_6098(!(this.field_41717.nextFloat() < 0.1F) ? class_4783.field_23281 : class_4783.field_23855));
+            this.method_37349(class_6943.field_35704, new ItemStack(!(this.field_41717.nextFloat() < 0.1F) ? class_4783.field_23281 : class_4783.field_23855));
             this.field_29918[class_6943.field_35704.method_31767()] = 0.0F;
          }
       }
@@ -108,7 +108,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
       if (this.field_41768 != null && !this.field_41768.field_33055) {
          this.field_29916.method_3488(this.field_8311);
          this.field_29916.method_3488(this.field_8312);
-         class_6098 var3 = this.method_26617(class_8462.method_38934(this, class_4897.field_25206));
+         ItemStack var3 = this.method_26617(class_8462.method_38934(this, class_4897.field_25206));
          if (var3.method_27960() != class_4897.field_25206) {
             this.field_29916.method_3485(4, this.field_8311);
          } else {
@@ -125,7 +125,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
 
    @Override
    public void method_10805(class_5834 var1, float var2) {
-      class_6098 var5 = this.method_26475(this.method_26617(class_8462.method_38934(this, class_4897.field_25206)));
+      ItemStack var5 = this.method_26475(this.method_26617(class_8462.method_38934(this, class_4897.field_25206)));
       class_6749 var6 = this.method_7152(var5, var2);
       double var7 = var1.method_37302() - this.method_37302();
       double var9 = var1.method_37080(0.3333333333333333) - var6.method_37309();
@@ -136,7 +136,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
       this.field_41768.method_7509(var6);
    }
 
-   public class_6749 method_7152(class_6098 var1, float var2) {
+   public class_6749 method_7152(ItemStack var1, float var2) {
       return class_8462.method_38930(this, var1, var2);
    }
 
@@ -152,7 +152,7 @@ public abstract class class_1595 extends class_1173 implements class_2354 {
    }
 
    @Override
-   public void method_37349(class_6943 var1, class_6098 var2) {
+   public void method_37349(class_6943 var1, ItemStack var2) {
       super.method_37349(var1, var2);
       if (!this.field_41768.field_33055) {
          this.method_7153();

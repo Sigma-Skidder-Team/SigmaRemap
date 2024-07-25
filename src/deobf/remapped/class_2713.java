@@ -52,7 +52,7 @@ public class class_2713 extends class_1280<class_6600> {
    @Override
    public boolean method_26946(int var1, int var2, int var3) {
       if (var1 == 256) {
-         this.field_943.field_9632.method_3207();
+         this.field_943.thePlayer.method_3207();
       }
 
       return !this.field_13261.method_26946(var1, var2, var3) && !this.field_13261.method_8275() ? super.method_26946(var1, var2, var3) : true;
@@ -67,19 +67,19 @@ public class class_2713 extends class_1280<class_6600> {
          }
 
          this.field_10956.method_30384(var4);
-         this.field_943.field_9632.field_30532.method_4813(new class_5912(var4));
+         this.field_943.thePlayer.field_30532.method_4813(new class_5912(var4));
       }
    }
 
    @Override
    public void method_10221(class_7966 var1, int var2, int var3) {
-      class_3542.method_16448();
+      RenderSystem.method_16448();
       super.method_10221(var1, var2, var3);
       int var6 = this.field_10956.method_30385();
       if (var6 > 0) {
          int var7 = 8453920;
          Object var8;
-         if (var6 >= 40 && !this.field_943.field_9632.field_3876.field_4944) {
+         if (var6 >= 40 && !this.field_943.thePlayer.field_3876.field_4944) {
             var8 = field_13263;
             var7 = 16736352;
          } else if (this.field_10956.method_18878(2).method_35884()) {
@@ -106,7 +106,7 @@ public class class_2713 extends class_1280<class_6600> {
    }
 
    @Override
-   public void method_348(class_4088 var1, int var2, class_6098 var3) {
+   public void method_348(class_4088 var1, int var2, ItemStack var3) {
       if (var2 == 0) {
          this.field_13261.method_8281(!var3.method_28022() ? var3.method_28008().getString() : "");
          this.field_13261.method_8265(!var3.method_28022());

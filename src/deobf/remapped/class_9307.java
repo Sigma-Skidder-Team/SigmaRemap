@@ -22,16 +22,16 @@ public class class_9307 extends class_9521 {
       if (this.field_36673 && this.field_47533.field_10956.method_29312().size() > this.field_47535 + class_57.method_20(this.field_47533)) {
          if (var2 >= this.field_36670 + 20) {
             if (var2 < this.field_36670 + 50 && var2 > this.field_36670 + 30) {
-               class_6098 var7 = this.field_47533.field_10956.method_29312().get(this.field_47535 + class_57.method_20(this.field_47533)).method_36377();
+               ItemStack var7 = this.field_47533.field_10956.method_29312().get(this.field_47535 + class_57.method_20(this.field_47533)).method_36377();
                if (!var7.method_28022()) {
                   class_57.method_22(this.field_47533, var1, var7, var2, var3);
                }
             } else if (var2 > this.field_36670 + 65) {
-               class_6098 var6 = this.field_47533.field_10956.method_29312().get(this.field_47535 + class_57.method_20(this.field_47533)).method_36362();
+               ItemStack var6 = this.field_47533.field_10956.method_29312().get(this.field_47535 + class_57.method_20(this.field_47533)).method_36362();
                class_57.method_15(this.field_47533, var1, var6, var2, var3);
             }
          } else {
-            class_6098 var8 = this.field_47533.field_10956.method_29312().get(this.field_47535 + class_57.method_20(this.field_47533)).method_36372();
+            ItemStack var8 = this.field_47533.field_10956.method_29312().get(this.field_47535 + class_57.method_20(this.field_47533)).method_36372();
             class_57.method_23(this.field_47533, var1, var8, var2, var3);
          }
       }

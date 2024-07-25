@@ -27,11 +27,11 @@ public class class_7735 {
 
    private static boolean method_35008(List<class_8932<?>> var0) {
       int var3 = var0.size();
-      class_6098 var4 = ((class_8932)var0.get(0)).method_41044();
+      ItemStack var4 = ((class_8932)var0.get(0)).method_41044();
 
       for (int var5 = 1; var5 < var3; var5++) {
-         class_6098 var6 = ((class_8932)var0.get(var5)).method_41044();
-         if (!class_6098.method_28019(var4, var6) || !class_6098.method_27956(var4, var6)) {
+         ItemStack var6 = ((class_8932)var0.get(var5)).method_41044();
+         if (!ItemStack.method_28019(var4, var6) || !ItemStack.method_27956(var4, var6)) {
             return false;
          }
       }

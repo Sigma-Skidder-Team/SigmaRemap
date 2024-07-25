@@ -161,7 +161,7 @@ public class GameOptions {
    public MinecraftClient field_45495;
    private final File field_45579;
    public class_423 field_45494 = class_423.field_1789;
-   public boolean field_45567;
+   public boolean hideGUI;
    private class_9193 field_45440 = class_9193.field_47031;
    public boolean field_45470;
    public boolean field_45471;
@@ -182,8 +182,8 @@ public class GameOptions {
    public int field_45545 = 0;
    public boolean field_45418 = false;
    public boolean field_45432 = false;
-   public boolean field_45446 = class_3111.method_14411();
-   public boolean field_45406 = class_3111.method_14411();
+   public boolean field_45446 = Config.method_14411();
+   public boolean field_45406 = Config.method_14411();
    public boolean field_45538 = false;
    public boolean field_45478 = false;
    public double field_45438 = 1.0;
@@ -291,7 +291,7 @@ public class GameOptions {
       class_9835.method_45329(this.field_45395, new class_5916[]{this.field_45548});
       this.field_45537 = 8;
       this.method_40869();
-      class_3111.method_14436(this);
+      Config.method_14436(this);
    }
 
    public float method_40872(float var1) {
@@ -471,8 +471,8 @@ public class GameOptions {
                      this.field_45439 = (int)class_1013.field_5277.method_38573();
                   }
 
-                  if (this.field_45495.method_8552() != null) {
-                     this.field_45495.method_8552().method_43194(this.field_45439);
+                  if (this.field_45495.getMainWindow() != null) {
+                     this.field_45495.getMainWindow().method_43194(this.field_45439);
                   }
                }
 
@@ -769,8 +769,8 @@ public class GameOptions {
             var1.println("chatLineSpacing:" + this.field_45465);
             var1.println("textBackgroundOpacity:" + this.field_45563);
             var1.println("backgroundForChatOnly:" + this.field_45399);
-            if (this.field_45495.method_8552().method_43175().isPresent()) {
-               var1.println("fullscreenResolution:" + this.field_45495.method_8552().method_43175().get().method_25889());
+            if (this.field_45495.getMainWindow().method_43175().isPresent()) {
+               var1.println("fullscreenResolution:" + this.field_45495.getMainWindow().method_43175().get().method_25889());
             }
 
             var1.println("hideServerAddress:" + this.field_45513);
@@ -835,7 +835,7 @@ public class GameOptions {
    }
 
    public void method_40870() {
-      if (this.field_45495.field_9632 != null) {
+      if (this.field_45495.thePlayer != null) {
          int var1 = 0;
 
          for (class_7742 var3 : this.field_45503) {
@@ -843,7 +843,7 @@ public class GameOptions {
          }
 
          this.field_45495
-            .field_9632
+            .thePlayer
             .field_30532
             .method_4813(new class_8244(this.field_45437, this.field_45537, this.field_45443, this.field_45554, var1, this.field_45569));
       }
@@ -893,8 +893,8 @@ public class GameOptions {
 
       if (var1 == class_1013.field_5293) {
          int var4 = (int)var2;
-         if (var4 > 0 && class_3111.method_14424()) {
-            class_3111.method_14428(class_3458.method_15912("of.message.aa.shaders1"), class_3458.method_15912("of.message.aa.shaders2"));
+         if (var4 > 0 && Config.method_14424()) {
+            Config.method_14428(class_3458.method_15912("of.message.aa.shaders1"), class_3458.method_15912("of.message.aa.shaders2"));
             return;
          }
 
@@ -907,13 +907,13 @@ public class GameOptions {
             }
          }
 
-         this.field_45527 = class_3111.method_14263(this.field_45527, 0, 16);
+         this.field_45527 = Config.method_14263(this.field_45527, 0, 16);
       }
 
       if (var1 == class_1013.field_5310) {
          int var7 = (int)var2;
-         if (var7 > 1 && class_3111.method_14424()) {
-            class_3111.method_14428(class_3458.method_15912("of.message.af.shaders1"), class_3458.method_15912("of.message.af.shaders2"));
+         if (var7 > 1 && Config.method_14424()) {
+            Config.method_14428(class_3458.method_15912("of.message.af.shaders1"), class_3458.method_15912("of.message.af.shaders2"));
             return;
          }
 
@@ -923,13 +923,13 @@ public class GameOptions {
             this.field_45528 *= 2;
          }
 
-         this.field_45528 = class_3111.method_14263(this.field_45528, 1, 16);
+         this.field_45528 = Config.method_14263(this.field_45528, 1, 16);
          this.field_45495.reloadResourcesConcurrently();
       }
 
       if (var1 == class_1013.field_5297) {
          int var8 = (int)var2;
-         this.field_45545 = class_3111.method_14263(var8, 0, 3);
+         this.field_45545 = Config.method_14263(var8, 0, 3);
          this.method_40879();
       }
    }
@@ -957,7 +957,7 @@ public class GameOptions {
          switch (this.field_45497) {
             case 1:
                this.field_45497 = 2;
-               if (!class_3111.method_14408()) {
+               if (!Config.method_14408()) {
                   this.field_45497 = 3;
                }
                break;
@@ -985,7 +985,7 @@ public class GameOptions {
 
       if (var1 == class_1013.field_5308) {
          this.field_45446 = !this.field_45446;
-         class_3111.method_14430();
+         Config.method_14430();
       }
 
       if (var1 == class_1013.field_5245) {
@@ -1568,7 +1568,7 @@ public class GameOptions {
          }
       } else if (var1 == class_1013.field_5293) {
          String var10 = "";
-         if (this.field_45527 != class_3111.method_14447()) {
+         if (this.field_45527 != Config.method_14447()) {
             var10 = " (" + class_3458.method_15912("of.general.restart") + ")";
          }
 
@@ -1675,12 +1675,12 @@ public class GameOptions {
                String[] var4 = var3.split(":");
                if (var4[0].equals("ofRenderDistanceChunks") && var4.length >= 2) {
                   this.field_45537 = Integer.valueOf(var4[1]);
-                  this.field_45537 = class_3111.method_14263(this.field_45537, 2, 1024);
+                  this.field_45537 = Config.method_14263(this.field_45537, 2, 1024);
                }
 
                if (var4[0].equals("ofFogType") && var4.length >= 2) {
                   this.field_45497 = Integer.valueOf(var4[1]);
-                  this.field_45497 = class_3111.method_14263(this.field_45497, 1, 3);
+                  this.field_45497 = Config.method_14263(this.field_45497, 1, 3);
                }
 
                if (var4[0].equals("ofFogStart") && var4.length >= 2) {
@@ -1696,7 +1696,7 @@ public class GameOptions {
 
                if (var4[0].equals("ofMipmapType") && var4.length >= 2) {
                   this.field_45545 = Integer.valueOf(var4[1]);
-                  this.field_45545 = class_3111.method_14263(this.field_45545, 0, 3);
+                  this.field_45545 = Config.method_14263(this.field_45545, 0, 3);
                }
 
                if (var4[0].equals("ofOcclusionFancy") && var4.length >= 2) {
@@ -1713,18 +1713,18 @@ public class GameOptions {
 
                if (var4[0].equals("ofAoLevel") && var4.length >= 2) {
                   this.field_45438 = (double)Float.valueOf(var4[1]).floatValue();
-                  this.field_45438 = class_3111.method_14261(this.field_45438, 0.0, 1.0);
+                  this.field_45438 = Config.method_14261(this.field_45438, 0.0, 1.0);
                }
 
                if (var4[0].equals("ofClouds") && var4.length >= 2) {
                   this.field_45550 = Integer.valueOf(var4[1]);
-                  this.field_45550 = class_3111.method_14263(this.field_45550, 0, 3);
+                  this.field_45550 = Config.method_14263(this.field_45550, 0, 3);
                   this.method_40878();
                }
 
                if (var4[0].equals("ofCloudsHeight") && var4.length >= 2) {
                   this.field_45398 = (double)Float.valueOf(var4[1]).floatValue();
-                  this.field_45398 = class_3111.method_14261(this.field_45398, 0.0, 1.0);
+                  this.field_45398 = Config.method_14261(this.field_45398, 0.0, 1.0);
                }
 
                if (var4[0].equals("ofTrees") && var4.length >= 2) {
@@ -1734,22 +1734,22 @@ public class GameOptions {
 
                if (var4[0].equals("ofDroppedItems") && var4.length >= 2) {
                   this.field_45448 = Integer.valueOf(var4[1]);
-                  this.field_45448 = class_3111.method_14263(this.field_45448, 0, 2);
+                  this.field_45448 = Config.method_14263(this.field_45448, 0, 2);
                }
 
                if (var4[0].equals("ofRain") && var4.length >= 2) {
                   this.field_45394 = Integer.valueOf(var4[1]);
-                  this.field_45394 = class_3111.method_14263(this.field_45394, 0, 3);
+                  this.field_45394 = Config.method_14263(this.field_45394, 0, 3);
                }
 
                if (var4[0].equals("ofAnimatedWater") && var4.length >= 2) {
                   this.field_45520 = Integer.valueOf(var4[1]);
-                  this.field_45520 = class_3111.method_14263(this.field_45520, 0, 2);
+                  this.field_45520 = Config.method_14263(this.field_45520, 0, 2);
                }
 
                if (var4[0].equals("ofAnimatedLava") && var4.length >= 2) {
                   this.field_45389 = Integer.valueOf(var4[1]);
-                  this.field_45389 = class_3111.method_14263(this.field_45389, 0, 2);
+                  this.field_45389 = Config.method_14263(this.field_45389, 0, 2);
                }
 
                if (var4[0].equals("ofAnimatedFire") && var4.length >= 2) {
@@ -1822,17 +1822,17 @@ public class GameOptions {
 
                if (var4[0].equals("ofAutoSaveTicks") && var4.length >= 2) {
                   this.field_45476 = Integer.valueOf(var4[1]);
-                  this.field_45476 = class_3111.method_14263(this.field_45476, 40, 40000);
+                  this.field_45476 = Config.method_14263(this.field_45476, 40, 40000);
                }
 
                if (var4[0].equals("ofBetterGrass") && var4.length >= 2) {
                   this.field_45449 = Integer.valueOf(var4[1]);
-                  this.field_45449 = class_3111.method_14263(this.field_45449, 1, 3);
+                  this.field_45449 = Config.method_14263(this.field_45449, 1, 3);
                }
 
                if (var4[0].equals("ofConnectedTextures") && var4.length >= 2) {
                   this.field_45529 = Integer.valueOf(var4[1]);
-                  this.field_45529 = class_3111.method_14263(this.field_45529, 1, 3);
+                  this.field_45529 = Config.method_14263(this.field_45529, 1, 3);
                }
 
                if (var4[0].equals("ofWeather") && var4.length >= 2) {
@@ -1853,12 +1853,12 @@ public class GameOptions {
 
                if (var4[0].equals("ofVignette") && var4.length >= 2) {
                   this.field_45404 = Integer.valueOf(var4[1]);
-                  this.field_45404 = class_3111.method_14263(this.field_45404, 0, 2);
+                  this.field_45404 = Config.method_14263(this.field_45404, 0, 2);
                }
 
                if (var4[0].equals("ofChunkUpdates") && var4.length >= 2) {
                   this.field_45536 = Integer.valueOf(var4[1]);
-                  this.field_45536 = class_3111.method_14263(this.field_45536, 1, 5);
+                  this.field_45536 = Config.method_14263(this.field_45536, 1, 5);
                }
 
                if (var4[0].equals("ofChunkUpdatesDynamic") && var4.length >= 2) {
@@ -1867,17 +1867,17 @@ public class GameOptions {
 
                if (var4[0].equals("ofTime") && var4.length >= 2) {
                   this.field_45492 = Integer.valueOf(var4[1]);
-                  this.field_45492 = class_3111.method_14263(this.field_45492, 0, 2);
+                  this.field_45492 = Config.method_14263(this.field_45492, 0, 2);
                }
 
                if (var4[0].equals("ofAaLevel") && var4.length >= 2) {
                   this.field_45527 = Integer.valueOf(var4[1]);
-                  this.field_45527 = class_3111.method_14263(this.field_45527, 0, 16);
+                  this.field_45527 = Config.method_14263(this.field_45527, 0, 16);
                }
 
                if (var4[0].equals("ofAfLevel") && var4.length >= 2) {
                   this.field_45528 = Integer.valueOf(var4[1]);
-                  this.field_45528 = class_3111.method_14263(this.field_45528, 1, 16);
+                  this.field_45528 = Config.method_14263(this.field_45528, 1, 16);
                }
 
                if (var4[0].equals("ofProfiler") && var4.length >= 2) {
@@ -1951,7 +1951,7 @@ public class GameOptions {
 
                if (var4[0].equals("ofScreenshotSize") && var4.length >= 2) {
                   this.field_45487 = Integer.valueOf(var4[1]);
-                  this.field_45487 = class_3111.method_14263(this.field_45487, 1, 4);
+                  this.field_45487 = Config.method_14263(this.field_45487, 1, 4);
                }
 
                if (var4[0].equals("ofCustomEntityModels") && var4.length >= 2) {
@@ -1977,7 +1977,7 @@ public class GameOptions {
 
                if (var4[0].equals("ofTranslucentBlocks") && var4.length >= 2) {
                   this.field_45532 = Integer.valueOf(var4[1]);
-                  this.field_45532 = class_3111.method_14263(this.field_45532, 0, 2);
+                  this.field_45532 = Config.method_14263(this.field_45532, 0, 2);
                }
 
                if (var4[0].equals("ofChatBackground") && var4.length >= 2) {
@@ -1992,7 +1992,7 @@ public class GameOptions {
                   this.field_45548.method_27057(class_9732.method_44939(var4[1]));
                }
             } catch (Exception var5) {
-               class_3111.method_14277("Skipping bad option: " + var3);
+               Config.method_14277("Skipping bad option: " + var3);
                var5.printStackTrace();
             }
          }
@@ -2001,7 +2001,7 @@ public class GameOptions {
          class_5916.method_27067();
          var2.close();
       } catch (Exception var6) {
-         class_3111.method_14317("Failed to load options");
+         Config.method_14317("Failed to load options");
          var6.printStackTrace();
       }
    }
@@ -2082,7 +2082,7 @@ public class GameOptions {
          var1.println("key_" + this.field_45548.method_27055() + ":" + this.field_45548.method_27069());
          var1.close();
       } catch (Exception var2) {
-         class_3111.method_14317("Failed to save options");
+         Config.method_14317("Failed to save options");
          var2.printStackTrace();
       }
    }
@@ -2140,8 +2140,8 @@ public class GameOptions {
       this.field_45418 = false;
       this.field_45478 = false;
       this.field_45432 = false;
-      class_3111.method_14344();
-      this.field_45446 = class_3111.method_14411();
+      Config.method_14344();
+      this.field_45446 = Config.method_14411();
       this.field_45406 = false;
       this.field_45538 = false;
       this.field_45454 = false;
@@ -2214,8 +2214,8 @@ public class GameOptions {
    }
 
    public void method_40862() {
-      if (this.field_45495.method_8552() != null) {
-         this.field_45495.method_8552().method_43162(this.field_45502);
+      if (this.field_45495.getMainWindow() != null) {
+         this.field_45495.getMainWindow().method_43162(this.field_45502);
       }
    }
 
@@ -2329,7 +2329,7 @@ public class GameOptions {
       var1.method_29121(var2);
    }
 
-   public class_9193 method_40867() {
+   public class_9193 getPointOfView() {
       return this.field_45440;
    }
 

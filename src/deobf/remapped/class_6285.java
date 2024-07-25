@@ -7,7 +7,7 @@ import com.thizzer.jtouchbar.item.view.action.TouchBarViewAction;
 public class class_6285 implements TouchBarViewAction {
    private static String[] field_32124;
 
-   public class_6285(class_123 var1, class_3158 var2) {
+   public class_6285(JelloTouch var1, class_3158 var2) {
       this.field_32125 = var1;
       this.field_32123 = var2;
    }

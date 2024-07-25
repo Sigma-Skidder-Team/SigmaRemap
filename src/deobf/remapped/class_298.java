@@ -93,7 +93,7 @@ public class class_298 extends class_7637 {
    @Override
    public void method_26870(class_9589 var1) {
       if (this.method_18589() == null) {
-         this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_24420));
+         this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24420));
       }
    }
 
@@ -133,7 +133,7 @@ public class class_298 extends class_7637 {
 
    @Override
    public void method_18602(int var1, boolean var2) {
-      class_6098 var5 = new class_6098(class_4897.field_24420);
+      ItemStack var5 = new ItemStack(class_4897.field_24420);
       class_2452 var6 = this.method_18589();
       byte var7 = 1;
       if (var1 > var6.method_11302(class_423.field_1789)) {

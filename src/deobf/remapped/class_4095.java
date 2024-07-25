@@ -3,10 +3,10 @@ package remapped;
 public final class class_4095 implements class_7154 {
    @Override
    public void method_32845(class_9633 var1, TextureManager var2) {
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16387(true);
-      var2.method_35674(class_8359.field_42824);
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16387(true);
+      var2.bindTexture(class_8359.field_42824);
       var1.method_44471(7, class_7985.field_40902);
    }
 

@@ -62,7 +62,7 @@ public class class_9619 extends class_2733 {
             class_7860.method_35561(var6, class_7860.field_40072, var1);
             return (class_8599)var6;
          } else {
-            class_3111.method_14317("Field not found: TileEntityEnchantmentTableRenderer.modelBook");
+            Config.method_14317("Field not found: TileEntityEnchantmentTableRenderer.modelBook");
             return null;
          }
       } else {

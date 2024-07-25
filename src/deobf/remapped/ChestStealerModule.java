@@ -47,14 +47,14 @@ public class ChestStealerModule extends Module {
             }
 
             this.method_14638();
-            if (this.field_15892 != null && mc.field_9623 == null && this.field_15893.method_14772() > 1000L) {
+            if (this.field_15892 != null && client.field_9623 == null && this.field_15893.method_14772() > 1000L) {
                class_9529 var4 = (class_9529)class_7494.method_34100(this.field_15892.method_17399());
                if (var4.method_43955().method_12173() == this.field_15892.method_17399().method_12173()
                   && var4.method_43955().method_12165() == this.field_15892.method_17399().method_12165()
                   && var4.method_43955().method_12185() == this.field_15892.method_17399().method_12185()) {
                   this.field_15894 = true;
-                  mc.method_8614().method_4813(new class_8585(class_2584.field_12791, var4));
-                  mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                  client.method_8614().method_4813(new class_8585(class_2584.field_12791, var4));
+                  client.method_8614().method_4813(new class_3195(class_2584.field_12791));
                   this.field_15893.method_14773();
                }
             }
@@ -70,13 +70,13 @@ public class ChestStealerModule extends Module {
                if (!this.field_15894
                   && (
                      this.field_15892 == null
-                        || mc.field_9632.method_37273((double)var9, (double)var10, (double)var11)
-                           > mc.field_9632.method_37273((double)var9, (double)var10, (double)var11)
+                        || client.thePlayer.method_37273((double)var9, (double)var10, (double)var11)
+                           > client.thePlayer.method_37273((double)var9, (double)var10, (double)var11)
                   )
                   && !var8
-                  && Math.sqrt(mc.field_9632.method_37273((double)var9, (double)var10, (double)var11)) < 5.0
+                  && Math.sqrt(client.thePlayer.method_37273((double)var9, (double)var10, (double)var11)) < 5.0
                   && this.field_15893.method_14772() > 1000L
-                  && mc.field_9623 == null) {
+                  && client.field_9623 == null) {
                   class_9529 var12 = (class_9529)class_7494.method_34100(var7.method_17399());
                   if (var12.method_43955().method_12173() == var7.method_17399().method_12173()
                      && var12.method_43955().method_12165() == var7.method_17399().method_12165()
@@ -90,7 +90,7 @@ public class ChestStealerModule extends Module {
                }
             }
 
-            if (!var14 && mc.field_9623 == null && this.field_15892 != null) {
+            if (!var14 && client.field_9623 == null && this.field_15892 != null) {
                this.field_15896.put(this.field_15892, true);
                this.field_15892 = null;
             }
@@ -108,11 +108,11 @@ public class ChestStealerModule extends Module {
    @EventListen
    public void method_14635(class_3278 var1) {
       if (this.method_42015()) {
-         if (!(mc.field_9623 instanceof class_2141)) {
+         if (!(client.field_9623 instanceof class_2141)) {
             this.field_15894 = false;
             this.field_15895.method_14774();
             this.field_15895.method_14773();
-            if (mc.field_9623 == null && class_2740.method_12366()) {
+            if (client.field_9623 == null && class_2740.method_12366()) {
                this.field_15893.method_14773();
             }
          } else {
@@ -123,10 +123,10 @@ public class ChestStealerModule extends Module {
             if (!((float) SigmaMainClass.getInstance().method_3310().method_25303() < this.getFloatValueByName("Delay") * 20.0F)) {
                if (class_2740.method_12366()) {
                   if (this.getBooleanValueByName("Close")) {
-                     mc.field_9632.method_3207();
+                     client.thePlayer.method_3207();
                   }
                } else {
-                  class_2141 var4 = (class_2141) mc.field_9623;
+                  class_2141 var4 = (class_2141) client.field_9623;
                   if (!this.method_14637(var4)) {
                      if (this.field_15892 != null) {
                         this.field_15896.put(this.field_15892, true);
@@ -136,7 +136,7 @@ public class ChestStealerModule extends Module {
 
                      for (class_7934 var7 : var4.field_10956.field_19926) {
                         if (var7.method_35884() && var7.field_40588 < var4.field_10956.method_6777() * 9) {
-                           class_6098 var8 = var7.method_35898();
+                           ItemStack var8 = var7.method_35898();
                            if (!this.method_14636(var8)) {
                               if (!this.field_15894) {
                                  if ((float)this.field_15895.method_14772() < this.getFloatValueByName("First Item") * 1000.0F) {
@@ -147,10 +147,10 @@ public class ChestStealerModule extends Module {
                               }
 
                               if (!this.getBooleanValueByName("Fix ViaVersion")) {
-                                 class_2740.method_12355(var4.field_10956.field_19925, var7.field_40588, 0, class_6269.field_32019, mc.field_9632);
+                                 class_2740.method_12355(var4.field_10956.field_19925, var7.field_40588, 0, class_6269.field_32019, client.thePlayer);
                               } else {
                                  class_2740.method_12356(
-                                    var4.field_10956.field_19925, var7.field_40588, 0, class_6269.field_32019, mc.field_9632, true
+                                    var4.field_10956.field_19925, var7.field_40588, 0, class_6269.field_32019, client.thePlayer, true
                                  );
                               }
 
@@ -169,7 +169,7 @@ public class ChestStealerModule extends Module {
                         }
 
                         if (this.getBooleanValueByName("Close")) {
-                           mc.field_9632.method_3207();
+                           client.thePlayer.method_3207();
                         }
 
                         for (class_7099 var10 : this.field_15896.keySet()) {
@@ -260,7 +260,7 @@ public class ChestStealerModule extends Module {
       return false;
    }
 
-   private boolean method_14636(class_6098 var1) {
+   private boolean method_14636(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       if (!this.getBooleanValueByName("Ignore Junk")) {
          return false;
@@ -274,8 +274,8 @@ public class ChestStealerModule extends Module {
                if (var4 instanceof class_6201) {
                   return !BlockFlyModule.method_17216(var4);
                } else if (!(var4 instanceof class_603)
-                  && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().method_847(InvManagerModule.class).getBooleanValueByName("Archery"))) {
-                  if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().method_847(AutoMLGModule.class).method_42015()) {
+                  && (!(var4 instanceof class_2100) || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(InvManagerModule.class).getBooleanValueByName("Archery"))) {
+                  if (var4 == class_4897.field_24999 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(AutoMLGModule.class).method_42015()) {
                      return false;
                   } else {
                      ArrayList var5 = new ArrayList<class_2451>(
@@ -324,7 +324,7 @@ public class ChestStealerModule extends Module {
    }
 
    private void method_14638() {
-      List var3 = mc.field_9601.field_33053;
+      List var3 = client.field_9601.field_33053;
       var3.removeIf(var0 -> !(var0 instanceof class_7099));
 
       for (Object var5 : var3) {

@@ -9,7 +9,7 @@ public class class_3995 extends class_4314 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       super.method_29257(var1, var2, var3, var4, var5);
       class_5734 var8 = var5.method_27994();
       if (var8.method_25938("BlockEntityTag")) {
@@ -32,7 +32,7 @@ public class class_3995 extends class_4314 {
       }
    }
 
-   public void method_18419(class_9379 var1, class_1331 var2, class_2522 var3, class_6098 var4) {
+   public void method_18419(class_9379 var1, class_1331 var2, class_2522 var3, ItemStack var4) {
       class_3757 var7 = var1.method_28260(var2);
       if (var7 instanceof class_6838) {
          ((class_6838)var7).method_31352(var4.method_27973());
@@ -45,7 +45,7 @@ public class class_3995 extends class_4314 {
          class_3757 var5 = var1.method_28260(var2);
          if (var5 instanceof class_6838) {
             class_6838 var6 = (class_6838)var5;
-            class_6098 var7 = var6.method_31351();
+            ItemStack var7 = var6.method_31351();
             if (!var7.method_28022()) {
                var1.method_43364(1010, var2, 0);
                var6.method_24975();
@@ -53,7 +53,7 @@ public class class_3995 extends class_4314 {
                double var9 = (double)(var1.field_33033.nextFloat() * 0.7F) + 0.15F;
                double var11 = (double)(var1.field_33033.nextFloat() * 0.7F) + 0.060000002F + 0.6;
                double var13 = (double)(var1.field_33033.nextFloat() * 0.7F) + 0.15F;
-               class_6098 var15 = var7.method_27973();
+               ItemStack var15 = var7.method_27973();
                class_91 var16 = new class_91(
                   var1, (double)var2.method_12173() + var9, (double)var2.method_12165() + var11, (double)var2.method_12185() + var13, var15
                );

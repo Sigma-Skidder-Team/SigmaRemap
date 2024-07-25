@@ -84,7 +84,7 @@ public class class_7416<T extends class_4393> extends class_4171<T, class_2611<T
    }
 
    public static void method_33786() {
-      field_37852 = class_3111.method_14362(field_37853);
-      field_37854 = class_3111.method_14362(field_37849);
+      field_37852 = Config.method_14362(field_37853);
+      field_37854 = Config.method_14362(field_37849);
    }
 }

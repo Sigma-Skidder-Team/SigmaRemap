@@ -18,7 +18,7 @@ public class class_4655 {
       if (this.field_22711.method_21231(this.field_22710)) {
          this.method_21534();
          this.field_22711.method_21234();
-         SigmaMainClass.getInstance().getSoundManager().method_21206("pop");
+         SigmaMainClass.getInstance().getSoundManager().playSound("pop");
       }
 
       if (this.field_22711.method_21235() || this.method_21531()) {

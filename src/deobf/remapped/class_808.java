@@ -30,8 +30,8 @@ public class class_808 extends class_1188 {
             this.method_27121(class_708.method_3265(this.field_4310, this.field_36671));
          }
 
-         var2.method_8577().method_35674(field_36678);
-         class_1920.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+         var2.getTextureManager().bindTexture(field_36678);
+         GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
          int var7 = (!this.method_32703() ? 1 : 2) * 20;
          this.method_9781(var1, this.field_36670 + (int)(this.field_4311 * (float)(this.field_36671 - 8)), this.field_36674, 0, 46 + var7, 4, 20);
          this.method_9781(var1, this.field_36670 + (int)(this.field_4311 * (float)(this.field_36671 - 8)) + 4, this.field_36674, 196, 46 + var7, 4, 20);

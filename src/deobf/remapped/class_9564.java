@@ -13,8 +13,8 @@ public class class_9564 implements class_6406 {
 
    @Override
    public class_5068 method_29236(class_7966 var1, class_9184 var2, long var3) {
-      var2.method_42327().method_8577().method_35674(field_32696);
-      class_3542.method_16404(1.0F, 1.0F, 1.0F);
+      var2.method_42327().getTextureManager().bindTexture(field_32696);
+      RenderSystem.method_16404(1.0F, 1.0F, 1.0F);
       class_7750 var7 = this.field_48678.method_14511();
       var2.method_9781(var1, 0, 0, 0, 0, this.method_29239(), this.method_29238());
       if (var7 == null) {

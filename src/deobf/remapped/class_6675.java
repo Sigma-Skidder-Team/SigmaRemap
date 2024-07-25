@@ -8,7 +8,7 @@ public class class_6675 extends class_2451 {
    }
 
    @Override
-   public class_6910 method_11202(class_6098 var1, class_704 var2, class_5834 var3, class_2584 var4) {
+   public class_6910 method_11202(ItemStack var1, class_704 var2, class_5834 var3, class_2584 var4) {
       if (var1.method_28018() && !(var3 instanceof class_704)) {
          if (!var2.field_41768.field_33055 && var3.method_37330()) {
             var3.method_37303(var1.method_28008());

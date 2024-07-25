@@ -123,8 +123,8 @@ public class class_1166 extends class_3266 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return new class_6098(var3.method_10313(field_6616) != class_989.field_5035 ? class_4783.field_23649 : class_4783.field_23861);
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return new ItemStack(var3.method_10313(field_6616) != class_989.field_5035 ? class_4783.field_23649 : class_4783.field_23861);
    }
 
    @Override

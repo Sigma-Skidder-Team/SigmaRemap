@@ -16,7 +16,7 @@ public class class_501 extends Screen {
    private long field_3122 = -1L;
 
    public class_501(Screen var1, MinecraftClient var2, class_2560 var3) {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
       this.field_943 = var2;
       this.field_3116 = var1;
       class_8140 var6 = class_8140.method_37037(var3.field_12675);
@@ -26,7 +26,7 @@ public class class_501 extends Screen {
    }
 
    public class_501(Screen var1, MinecraftClient var2, String var3, int var4) {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
       this.field_943 = var2;
       this.field_3116 = var1;
       var2.method_8499();
@@ -78,7 +78,7 @@ public class class_501 extends Screen {
       long var7 = Util.getMeasuringTimeMs();
       if (var7 - this.field_3122 > 2000L) {
          this.field_3122 = var7;
-         class_7542.field_38482.method_34341(new TranslationTextComponent("narrator.joining").getString());
+         NarratorChatListener.INSTANCE.method_34341(new TranslationTextComponent("narrator.joining").getString());
       }
 
       method_9788(var1, this.field_948, this.field_3118, this.field_941 / 2, this.field_940 / 2 - 50, 16777215);

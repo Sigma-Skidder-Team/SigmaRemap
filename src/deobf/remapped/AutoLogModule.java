@@ -13,13 +13,13 @@ public class AutoLogModule extends Module {
 
    @EventListen
    public void method_6969(class_5596 var1) {
-      if (this.method_42015() && mc.field_9632.field_41697 > 10 && mc.method_8515() == null && mc.method_8530() != null) {
-         float var4 = mc.field_9632.method_26551() / mc.field_9632.method_26465() * 10.0F;
+      if (this.method_42015() && client.thePlayer.field_41697 > 10 && client.method_8515() == null && client.method_8530() != null) {
+         float var4 = client.thePlayer.method_26551() / client.thePlayer.method_26465() * 10.0F;
          if (var4 < this.getFloatValueByName("Min Health") || class_2740.method_12345(class_4897.field_24472) == 0) {
             boolean var5 = this.method_42007("One Time Use");
-            mc.field_9601.method_29519();
-            mc.method_8499();
-            mc.method_8609(
+            client.field_9601.method_29519();
+            client.method_8499();
+            client.method_8609(
                new class_7773(
                   new class_4145(new class_1876()),
                   new TranslationTextComponent("disconnect.lost"),

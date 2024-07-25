@@ -38,10 +38,10 @@ public class BindCommand extends Command {
                }
 
                if (var14 != -1) {
-                  SigmaMainClass.getInstance().getModuleManager().method_835().method_368(var14, (Module)var6);
+                  SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_368(var14, (Module)var6);
                   var3.method_3731("Key " + var2[1].method_24060() + " was set for module " + ((Module)var6).getName2());
                } else {
-                  SigmaMainClass.getInstance().getModuleManager().method_835().method_383(var6);
+                  SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_383(var6);
                   var3.method_3731("Keybind was reset for module " + ((Module)var6).getName2());
                }
             }
@@ -52,7 +52,7 @@ public class BindCommand extends Command {
             }
 
             String var7 = "key.keyboard.";
-            int var8 = SigmaMainClass.getInstance().getModuleManager().method_835().method_381((Module)var6);
+            int var8 = SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_381((Module)var6);
             String var9 = null;
 
             for (Entry var11 : class_3654.field_17801.entrySet()) {

@@ -18,7 +18,7 @@ public class class_7260<T extends class_9795> extends class_2255<T> {
    }
 
    public void method_33179(T var1, float var2, class_7966 var3, class_2565 var4, int var5, int var6) {
-      if (!class_3111.method_14424() || !class_293.method_1305(var1, var2, this.method_33180(), var3, var4, var5, var6)) {
+      if (!Config.method_14424() || !class_293.method_1305(var1, var2, this.method_33180(), var3, var4, var5, var6)) {
          field_37198.setSeed(31100L);
          double var9 = var1.method_17399().method_12179(this.field_11222.field_17463.method_41627(), true);
          int var11 = this.method_33182(var9);

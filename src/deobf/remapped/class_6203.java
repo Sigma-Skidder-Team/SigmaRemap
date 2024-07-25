@@ -17,15 +17,15 @@ public class class_6203 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       if (!var1.method_28022()) {
          Optional var5 = var2.method_12694()
             .method_29549()
             .<class_6867, class_3001>method_23138(class_1510.field_7995, new class_4657(var1), var2.method_12694());
          if (var5.isPresent()) {
-            class_6098 var6 = ((class_3001)var5.get()).method_41044();
+            ItemStack var6 = ((class_3001)var5.get()).method_41044();
             if (!var6.method_28022()) {
-               class_6098 var7 = var6.method_27973();
+               ItemStack var7 = var6.method_27973();
                var7.method_28017(var1.method_27997());
                return var7;
             }

@@ -64,8 +64,8 @@ public class class_57 extends class_2208<class_6415> {
 
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_48);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_48);
       int var7 = (this.field_941 - this.field_10981) / 2;
       int var8 = (this.field_940 - this.field_10973) / 2;
       method_9779(var1, var7, var8, this.method_9777(), 0.0F, 0.0F, this.field_10981, this.field_10973, 256, 512);
@@ -78,15 +78,15 @@ public class class_57 extends class_2208<class_6415> {
 
          class_8014 var11 = var9.get(var10);
          if (var11.method_36378()) {
-            this.field_943.method_8577().method_35674(field_48);
-            class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+            this.field_943.getTextureManager().bindTexture(field_48);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             method_9779(var1, this.field_10984 + 83 + 99, this.field_10962 + 35, this.method_9777(), 311.0F, 0.0F, 28, 21, 256, 512);
          }
       }
    }
 
    private void method_18(class_7966 var1, int var2, int var3, class_8014 var4) {
-      this.field_943.method_8577().method_35674(field_48);
+      this.field_943.getTextureManager().bindTexture(field_48);
       int var7 = this.field_10956.method_29315();
       int var8 = this.field_10956.method_29324();
       if (var7 < 5) {
@@ -133,18 +133,18 @@ public class class_57 extends class_2208<class_6415> {
          int var9 = (this.field_940 - this.field_10973) / 2;
          int var10 = var9 + 16 + 1;
          int var11 = var8 + 5 + 5;
-         class_3542.method_16438();
-         class_3542.method_16381();
-         this.field_943.method_8577().method_35674(field_48);
+         RenderSystem.method_16438();
+         RenderSystem.method_16381();
+         this.field_943.getTextureManager().bindTexture(field_48);
          this.method_21(var1, var8, var9, var7);
          int var12 = 0;
 
          for (class_8014 var14 : var7) {
             if (!this.method_24(var7.size()) || var12 >= this.field_50 && var12 < 7 + this.field_50) {
-               class_6098 var15 = var14.method_36365();
-               class_6098 var16 = var14.method_36372();
-               class_6098 var17 = var14.method_36377();
-               class_6098 var18 = var14.method_36362();
+               ItemStack var15 = var14.method_36365();
+               ItemStack var16 = var14.method_36372();
+               ItemStack var17 = var14.method_36377();
+               ItemStack var18 = var14.method_36362();
                this.field_945.field_44875 = 100.0F;
                int var19 = var10 + 2;
                this.method_17(var1, var16, var15, var11, var19);
@@ -182,16 +182,16 @@ public class class_57 extends class_2208<class_6415> {
             var25.field_36677 = var25.field_47535 < this.field_10956.method_29312().size();
          }
 
-         class_3542.method_16489();
-         class_3542.method_16428();
+         RenderSystem.method_16489();
+         RenderSystem.enableDepthTest();
       }
 
       this.method_10214(var1, var2, var3);
    }
 
    private void method_19(class_7966 var1, class_8014 var2, int var3, int var4) {
-      class_3542.method_16488();
-      this.field_943.method_8577().method_35674(field_48);
+      RenderSystem.enableBlend();
+      this.field_943.getTextureManager().bindTexture(field_48);
       if (!var2.method_36378()) {
          method_9779(var1, var3 + 5 + 35 + 20, var4 + 3, this.method_9777(), 15.0F, 171.0F, 10, 9, 256, 512);
       } else {
@@ -199,12 +199,12 @@ public class class_57 extends class_2208<class_6415> {
       }
    }
 
-   private void method_17(class_7966 var1, class_6098 var2, class_6098 var3, int var4, int var5) {
+   private void method_17(class_7966 var1, ItemStack var2, ItemStack var3, int var4, int var5) {
       this.field_945.method_40284(var2, var4, var5);
       if (var3.method_27997() != var2.method_27997()) {
          this.field_945.method_40265(this.field_948, var3, var4, var5, var3.method_27997() != 1 ? null : "1");
          this.field_945.method_40265(this.field_948, var2, var4 + 14, var5, var2.method_27997() != 1 ? null : "1");
-         this.field_943.method_8577().method_35674(field_48);
+         this.field_943.getTextureManager().bindTexture(field_48);
          this.method_9776(this.method_9777() + 300);
          method_9779(var1, var4 + 7, var5 + 12, this.method_9777(), 0.0F, 176.0F, 9, 2, 256, 512);
          this.method_9776(this.method_9777() - 300);

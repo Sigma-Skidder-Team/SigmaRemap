@@ -38,7 +38,7 @@ public class class_4374 {
       }
 
       if (var10) {
-         class_2089.method_9774(
+         AbstractGui.method_9774(
             var1,
             this.field_21470.method_39928(),
             this.field_21470.method_39924() - 1,
@@ -46,7 +46,7 @@ public class class_4374 {
             this.field_21470.method_39924(),
             class_1027.method_4537(this.field_21467)
          );
-         class_2089.method_9774(
+         AbstractGui.method_9774(
             var1,
             this.field_21470.method_39928(),
             this.field_21470.method_39924() + this.field_21470.method_39927(),
@@ -57,7 +57,7 @@ public class class_4374 {
          if (var8) {
             for (int var12 = 0; var12 < this.field_21470.method_39926(); var12++) {
                if (var12 % 2 == 0) {
-                  class_2089.method_9774(
+                  AbstractGui.method_9774(
                      var1,
                      this.field_21470.method_39928() + var12,
                      this.field_21470.method_39924() - 1,
@@ -72,7 +72,7 @@ public class class_4374 {
          if (var9) {
             for (int var15 = 0; var15 < this.field_21470.method_39926(); var15++) {
                if (var15 % 2 == 0) {
-                  class_2089.method_9774(
+                  AbstractGui.method_9774(
                      var1,
                      this.field_21470.method_39928() + var15,
                      this.field_21470.method_39924() + this.field_21470.method_39927(),
@@ -89,7 +89,7 @@ public class class_4374 {
 
       for (int var13 = 0; var13 < var6; var13++) {
          Suggestion var14 = this.field_21466.get(var13 + this.field_21468);
-         class_2089.method_9774(
+         AbstractGui.method_9774(
             var1,
             this.field_21470.method_39928(),
             this.field_21470.method_39924() + 12 * var13,
@@ -221,8 +221,8 @@ public class class_4374 {
       Suggestion var4 = this.field_21466.get(this.field_21469);
       class_1027.method_4536(this.field_21467)
          .method_8251(class_1027.method_4530(class_1027.method_4536(this.field_21467).method_8246(), var4.apply(this.field_21461)));
-      if (class_7542.field_38482.method_34346() && this.field_21465 != this.field_21469) {
-         class_7542.field_38482.method_34341(this.method_20376());
+      if (NarratorChatListener.INSTANCE.method_34346() && this.field_21465 != this.field_21469) {
+         NarratorChatListener.INSTANCE.method_34341(this.method_20376());
       }
    }
 

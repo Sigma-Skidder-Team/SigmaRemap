@@ -6,8 +6,8 @@ import java.util.List;
 
 public class class_1665 extends class_5920<class_7666> {
    private static String[] field_8623;
-   private class_6098 field_8625;
-   private final List<class_6098> field_8624 = Lists.newArrayList();
+   private ItemStack field_8625;
+   private final List<ItemStack> field_8624 = Lists.newArrayList();
    private int field_8627;
    private int field_8622;
    private int field_8626;
@@ -46,7 +46,7 @@ public class class_1665 extends class_5920<class_7666> {
       class_5834 var7 = this.method_7419(var2);
       this.method_7415(var7, var2);
       if (this.field_8624.isEmpty()) {
-         var2.method_37349(class_6943.field_35707, class_6098.field_31203);
+         var2.method_37349(class_6943.field_35707, ItemStack.EMPTY);
          this.field_8626 = Math.min(this.field_8626, 40);
       } else {
          this.method_7410(var2);
@@ -58,14 +58,14 @@ public class class_1665 extends class_5920<class_7666> {
    public void method_7414(class_6331 var1, class_7666 var2, long var3) {
       super.method_27081(var1, var2, var3);
       var2.method_26525().method_5127(class_6044.field_30861);
-      var2.method_37349(class_6943.field_35707, class_6098.field_31203);
+      var2.method_37349(class_6943.field_35707, ItemStack.EMPTY);
       this.field_8625 = null;
    }
 
    private void method_7415(class_5834 var1, class_7666 var2) {
       boolean var5 = false;
-      class_6098 var6 = var1.method_26446();
-      if (this.field_8625 == null || !class_6098.method_28019(this.field_8625, var6)) {
+      ItemStack var6 = var1.method_26446();
+      if (this.field_8625 == null || !ItemStack.method_28019(this.field_8625, var6)) {
          this.field_8625 = var6;
          var5 = true;
          this.field_8624.clear();
@@ -93,7 +93,7 @@ public class class_1665 extends class_5920<class_7666> {
    }
 
    private boolean method_7417(class_8014 var1) {
-      return class_6098.method_28019(this.field_8625, var1.method_36372()) || class_6098.method_28019(this.field_8625, var1.method_36377());
+      return ItemStack.method_28019(this.field_8625, var1.method_36372()) || ItemStack.method_28019(this.field_8625, var1.method_36377());
    }
 
    private class_5834 method_7419(class_7666 var1) {

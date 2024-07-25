@@ -14,7 +14,7 @@ public class class_5721 {
             if (!var1.equals("F")) {
                if (!var1.equals("4F")) {
                   if (!var1.equals("2F")) {
-                     class_3111.method_14317("NaturalTextures: Unknown type: " + var1);
+                     Config.method_14317("NaturalTextures: Unknown type: " + var1);
                   } else {
                      this.field_28906 = 2;
                      this.field_28904 = true;

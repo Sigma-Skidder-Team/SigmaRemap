@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.apache.commons.io.IOUtils;
 
-public class class_986 {
+public class ConfigManager {
    private List<class_1675> field_5025 = new ArrayList<class_1675>();
    private class_1675 field_5020;
    private class_1675 field_5023;

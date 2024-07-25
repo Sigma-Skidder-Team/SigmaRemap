@@ -186,16 +186,16 @@ public class class_6414 extends class_2353 implements class_8525 {
    public void method_29290(class_9379 var1, class_1331 var2, class_2522 var3) {
    }
 
-   public static List<class_6098> method_29288(class_2522 var0, class_6331 var1, class_1331 var2, class_3757 var3) {
+   public static List<ItemStack> method_29288(class_2522 var0, class_6331 var1, class_1331 var2, class_3757 var3) {
       class_8480 var6 = new class_8480(var1)
          .method_39068(var1.field_33033)
          .method_39065(class_8712.field_44671, class_1343.method_6216(var2))
-         .method_39065(class_8712.field_44670, class_6098.field_31203)
+         .method_39065(class_8712.field_44670, ItemStack.EMPTY)
          .method_39069(class_8712.field_44673, var3);
       return var0.method_8333(var6);
    }
 
-   public static List<class_6098> method_29289(class_2522 var0, class_6331 var1, class_1331 var2, class_3757 var3, Entity var4, class_6098 var5) {
+   public static List<ItemStack> method_29289(class_2522 var0, class_6331 var1, class_1331 var2, class_3757 var3, Entity var4, ItemStack var5) {
       class_8480 var8 = new class_8480(var1)
          .method_39068(var1.field_33033)
          .method_39065(class_8712.field_44671, class_1343.method_6216(var2))
@@ -208,25 +208,25 @@ public class class_6414 extends class_2353 implements class_8525 {
    public static void method_29294(class_2522 var0, World var1, class_1331 var2) {
       if (var1 instanceof class_6331) {
          method_29288(var0, (class_6331)var1, var2, (class_3757)null).forEach(var2x -> method_29267(var1, var2, var2x));
-         var0.method_8310((class_6331)var1, var2, class_6098.field_31203);
+         var0.method_8310((class_6331)var1, var2, ItemStack.EMPTY);
       }
    }
 
    public static void method_29296(class_2522 var0, class_9379 var1, class_1331 var2, class_3757 var3) {
       if (var1 instanceof class_6331) {
          method_29288(var0, (class_6331)var1, var2, var3).forEach(var2x -> method_29267((class_6331)var1, var2, var2x));
-         var0.method_8310((class_6331)var1, var2, class_6098.field_31203);
+         var0.method_8310((class_6331)var1, var2, ItemStack.EMPTY);
       }
    }
 
-   public static void method_29295(class_2522 var0, World var1, class_1331 var2, class_3757 var3, Entity var4, class_6098 var5) {
+   public static void method_29295(class_2522 var0, World var1, class_1331 var2, class_3757 var3, Entity var4, ItemStack var5) {
       if (var1 instanceof class_6331) {
          method_29289(var0, (class_6331)var1, var2, var3, var4, var5).forEach(var2x -> method_29267(var1, var2, var2x));
          var0.method_8310((class_6331)var1, var2, var5);
       }
    }
 
-   public static void method_29267(World var0, class_1331 var1, class_6098 var2) {
+   public static void method_29267(World var0, class_1331 var1, ItemStack var2) {
       if (!var0.field_33055 && !var2.method_28022() && var0.method_29537().method_1285(class_291.field_1058)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.field_33033.nextFloat() * 0.5F) + 0.25;
@@ -265,13 +265,13 @@ public class class_6414 extends class_2353 implements class_8525 {
       return this.method_29260();
    }
 
-   public void method_29298(World var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, class_6098 var6) {
+   public void method_29298(World var1, class_704 var2, class_1331 var3, class_2522 var4, class_3757 var5, ItemStack var6) {
       var2.method_3211(class_6234.field_31905.method_43790(this));
       var2.method_3170(0.005F);
       method_29295(var4, var1, var3, var5, var2, var6);
    }
 
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
    }
 
    public boolean method_29278() {
@@ -298,12 +298,12 @@ public class class_6414 extends class_2353 implements class_8525 {
       var2.method_37215(var2.method_37098().method_6210(1.0, 0.0, 1.0));
    }
 
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return new class_6098(this);
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return new ItemStack(this);
    }
 
-   public void method_29268(class_8230 var1, class_2831<class_6098> var2) {
-      var2.add(new class_6098(this));
+   public void method_29268(class_8230 var1, class_2831<ItemStack> var2) {
+      var2.add(new ItemStack(this));
    }
 
    public float method_29308() {
@@ -369,7 +369,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       return "Block{" + class_8669.field_44462.method_39797(this) + "}";
    }
 
-   public void method_29272(class_6098 var1, class_6163 var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_29272(ItemStack var1, class_6163 var2, List<ITextComponent> var3, class_4605 var4) {
    }
 
    @Override

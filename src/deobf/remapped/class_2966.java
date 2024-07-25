@@ -213,7 +213,7 @@ public enum class_2966 {
             float var14 = var1.length > 3 ? method_13561(var1, 3) : var13;
             return class_9454.method_43723(var11, var12, var13, var14);
          default:
-            class_3111.method_14317("Unknown function type: " + this);
+            Config.method_14317("Unknown function type: " + this);
             return 0.0F;
       }
    }
@@ -302,7 +302,7 @@ public enum class_2966 {
 
             return false;
          default:
-            class_3111.method_14317("Unknown function type: " + this);
+            Config.method_14317("Unknown function type: " + this);
             return false;
       }
    }
@@ -323,7 +323,7 @@ public enum class_2966 {
          case field_14577:
             return new float[]{method_13561(var1, 0), method_13561(var1, 1), method_13561(var1, 2), method_13561(var1, 3)};
          default:
-            class_3111.method_14317("Unknown function type: " + this);
+            Config.method_14317("Unknown function type: " + this);
             return null;
       }
    }

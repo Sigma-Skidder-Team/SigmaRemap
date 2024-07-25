@@ -10,7 +10,7 @@ public class class_2878 extends class_9446 {
    }
 
    @Override
-   public class_6098 method_43688(class_8743 var1, class_6098 var2) {
+   public ItemStack method_43688(class_8743 var1, ItemStack var2) {
       Direction var5 = var1.method_40141().<Direction>method_10313(class_6451.field_32900);
       class_6331 var6 = var1.method_40140();
       double var7 = var1.method_61() + (double)((float)var5.method_1041() * 1.125F);

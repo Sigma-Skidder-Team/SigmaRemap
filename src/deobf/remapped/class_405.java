@@ -100,7 +100,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public void method_979(class_6098 var1) {
+   public void method_979(ItemStack var1) {
       if (!this.field_41768.field_33055 && this.field_29913 > -this.method_26850() + 20) {
          this.field_29913 = -this.method_26850();
          this.method_37155(this.method_2018(!var1.method_28022()), this.method_26439(), this.method_26547());
@@ -177,7 +177,7 @@ public abstract class class_405 extends class_1899 implements class_5908, class_
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       if (!super.method_37166(var1, var2)) {
          int var5 = var1 - 300;
          if (var5 >= 0 && var5 < this.field_1685.method_31505()) {

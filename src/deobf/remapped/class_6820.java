@@ -19,7 +19,7 @@ public class class_6820 extends class_644 {
             class_8137.method_37019(class_4897.field_24622),
             class_8137.method_37019(class_4897.field_24622)
          ),
-         new class_6098(class_4897.field_25113)
+         new ItemStack(class_4897.field_25113)
       );
    }
 
@@ -28,10 +28,10 @@ public class class_6820 extends class_644 {
       if (!super.method_2959(var1, var2)) {
          return false;
       } else {
-         class_6098 var5 = class_6098.field_31203;
+         ItemStack var5 = ItemStack.EMPTY;
 
          for (int var6 = 0; var6 < var1.method_31505() && var5.method_28022(); var6++) {
-            class_6098 var7 = var1.method_31498(var6);
+            ItemStack var7 = var1.method_31498(var6);
             if (var7.method_27960() == class_4897.field_25262) {
                var5 = var7;
             }
@@ -63,11 +63,11 @@ public class class_6820 extends class_644 {
    }
 
    @Override
-   public class_6098 method_2946(class_6946 var1) {
-      class_6098 var4 = class_6098.field_31203;
+   public ItemStack method_2946(class_6946 var1) {
+      ItemStack var4 = ItemStack.EMPTY;
 
       for (int var5 = 0; var5 < var1.method_31505() && var4.method_28022(); var5++) {
-         class_6098 var6 = var1.method_31498(var5);
+         ItemStack var6 = var1.method_31498(var5);
          if (var6.method_27960() == class_4897.field_25262) {
             var4 = var6;
          }

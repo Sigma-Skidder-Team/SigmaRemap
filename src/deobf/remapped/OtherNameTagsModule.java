@@ -44,7 +44,7 @@ public class OtherNameTagsModule extends Module {
 
                   for (int var16 = 0; var16 < var14.size(); var16++) {
                      int var17 = var12 + var16 * var5;
-                     class_6098 var18 = (class_6098)var14.get(var16);
+                     ItemStack var18 = (ItemStack)var14.get(var16);
                      int var19 = var17 + 6;
                      class_3416 var20 = var18.method_27983();
                      int var21 = var13 - Math.max(0, var20.size() - 4) * 8 - 2;
@@ -96,7 +96,7 @@ public class OtherNameTagsModule extends Module {
       if (this.method_42015()) {
          this.field_15013.clear();
 
-         for (Entity var5 : mc.field_9601.method_736()) {
+         for (Entity var5 : client.field_9601.method_736()) {
             if (var5 instanceof class_704 && !(var5 instanceof class_5989)) {
                class_704 var6 = (class_704)var5;
                class_8328 var7 = class_9189.method_42353(var6);

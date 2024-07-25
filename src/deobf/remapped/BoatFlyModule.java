@@ -11,7 +11,7 @@ public class BoatFlyModule extends PremiumModule {
    @EventListen
    public void method_17260(class_5596 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.method_37243() != null) {
+         if (client.thePlayer.method_37243() != null) {
             float var4 = class_8865.method_40785();
             float var5 = this.getFloatValueByName("Speed");
             double var6 = Math.cos(Math.toRadians((double)var4)) * (double)var5;
@@ -21,9 +21,9 @@ public class BoatFlyModule extends PremiumModule {
                var8 = 0.0;
             }
 
-            Entity var10 = mc.field_9632.method_37243();
-            var10.field_41701 = mc.field_9632.field_41701;
-            var10.method_37214(var6, !mc.field_9632.field_29654 ? (!this.field_18223 ? 0.0 : (double)(-var5)) : (double)var5, var8);
+            Entity var10 = client.thePlayer.method_37243();
+            var10.field_41701 = client.thePlayer.field_41701;
+            var10.method_37214(var6, !client.thePlayer.field_29654 ? (!this.field_18223 ? 0.0 : (double)(-var5)) : (double)var5, var8);
          }
       }
    }
@@ -31,9 +31,9 @@ public class BoatFlyModule extends PremiumModule {
    @EventListen
    private void method_17262(class_6435 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.method_37243() != null) {
-            if (!mc.field_9632.method_37243().field_41726) {
-               if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (client.thePlayer.method_37243() != null) {
+            if (!client.thePlayer.method_37243().field_41726) {
+               if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = true;
                }
@@ -45,13 +45,13 @@ public class BoatFlyModule extends PremiumModule {
    @EventListen
    private void method_17261(class_307 var1) {
       if (this.method_42015()) {
-         if (this.field_18223 && var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (this.field_18223 && var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             this.field_18223 = false;
          }
 
-         if (mc.field_9632.method_37243() != null) {
-            if (!mc.field_9632.method_37243().field_41726) {
-               if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (client.thePlayer.method_37243() != null) {
+            if (!client.thePlayer.method_37243().field_41726) {
+               if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
                   var1.method_29715(true);
                   this.field_18223 = false;
                }
@@ -62,18 +62,18 @@ public class BoatFlyModule extends PremiumModule {
 
    @Override
    public void onEnable() {
-      if (!mc.gameOptions.keySneak.isKeyDown()) {
-         if (!mc.gameOptions.keySneak.isKeyDown()) {
+      if (!client.gameOptions.keySneak.isKeyDown()) {
+         if (!client.gameOptions.keySneak.isKeyDown()) {
             this.field_18223 = false;
          }
       } else {
-         mc.gameOptions.keySneak.pressed = false;
+         client.gameOptions.keySneak.pressed = false;
          this.field_18223 = true;
       }
    }
 
    @Override
    public void onDisable() {
-      mc.gameOptions.keySneak.pressed = this.field_18223;
+      client.gameOptions.keySneak.pressed = this.field_18223;
    }
 }

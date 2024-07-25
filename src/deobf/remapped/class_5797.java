@@ -150,25 +150,25 @@ public final class class_5797 implements AutoCloseable {
    }
 
    public static void method_26227(boolean var0) {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       if (!var0) {
-         class_1920.method_8879(3553, 10242, 10497);
-         class_1920.method_8879(3553, 10243, 10497);
+         GlStateManager.method_8879(3553, 10242, 10497);
+         GlStateManager.method_8879(3553, 10243, 10497);
       } else {
-         class_1920.method_8879(3553, 10242, 33071);
-         class_1920.method_8879(3553, 10243, 33071);
+         GlStateManager.method_8879(3553, 10242, 33071);
+         GlStateManager.method_8879(3553, 10243, 33071);
       }
    }
 
    public static void method_26234(boolean var0, boolean var1) {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       if (!var0) {
-         int var4 = class_3111.method_14392();
-         class_1920.method_8879(3553, 10241, !var1 ? 9728 : var4);
-         class_1920.method_8879(3553, 10240, 9728);
+         int var4 = Config.method_14392();
+         GlStateManager.method_8879(3553, 10241, !var1 ? 9728 : var4);
+         GlStateManager.method_8879(3553, 10240, 9728);
       } else {
-         class_1920.method_8879(3553, 10241, !var1 ? 9729 : 9987);
-         class_1920.method_8879(3553, 10240, 9729);
+         GlStateManager.method_8879(3553, 10241, !var1 ? 9729 : 9987);
+         GlStateManager.method_8879(3553, 10240, 9729);
       }
    }
 
@@ -279,38 +279,38 @@ public final class class_5797 implements AutoCloseable {
    }
 
    public void method_26259(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, boolean var9, boolean var10, boolean var11) {
-      if (class_3542.method_16440()) {
+      if (RenderSystem.method_16440()) {
          this.method_26247(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
       } else {
-         class_3542.method_16474(() -> this.method_26247(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11));
+         RenderSystem.method_16474(() -> this.method_26247(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11));
       }
    }
 
    private void method_26247(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, boolean var9, boolean var10, boolean var11) {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       this.method_26254();
       method_26234(var8, var10);
       method_26227(var9);
       if (var6 != this.method_26228()) {
-         class_1920.method_8763(3314, this.method_26228());
+         GlStateManager.method_8763(3314, this.method_26228());
       } else {
-         class_1920.method_8763(3314, 0);
+         GlStateManager.method_8763(3314, 0);
       }
 
-      class_1920.method_8763(3316, var4);
-      class_1920.method_8763(3315, var5);
+      GlStateManager.method_8763(3316, var4);
+      GlStateManager.method_8763(3315, var5);
       this.field_29284.method_26314();
-      class_1920.method_8776(3553, var1, var2, var3, var6, var7, this.field_29284.method_26312(), 5121, this.field_29281);
+      GlStateManager.method_8776(3553, var1, var2, var3, var6, var7, this.field_29284.method_26312(), 5121, this.field_29281);
       if (var11) {
          this.close();
       }
    }
 
    public void method_26229(int var1, boolean var2) {
-      class_3542.method_16431(class_3542::method_16366);
+      RenderSystem.method_16431(RenderSystem::method_16366);
       this.method_26254();
       this.field_29284.method_26308();
-      class_1920.method_8926(3553, var1, this.field_29284.method_26312(), 5121, this.field_29281);
+      GlStateManager.method_8926(3553, var1, this.field_29284.method_26312(), 5121, this.field_29281);
       if (var2 && this.field_29284.method_26305()) {
          for (int var5 = 0; var5 < this.method_26253(); var5++) {
             for (int var6 = 0; var6 < this.method_26228(); var6++) {

@@ -1,9 +1,9 @@
 package remapped;
 
 public class class_8014 {
-   private final class_6098 field_41051;
-   private final class_6098 field_41050;
-   private final class_6098 field_41052;
+   private final ItemStack field_41051;
+   private final ItemStack field_41050;
+   private final ItemStack field_41052;
    private int field_41048;
    private final int field_41047;
    private boolean field_41053 = true;
@@ -13,9 +13,9 @@ public class class_8014 {
    private int field_41049 = 1;
 
    public class_8014(class_5734 var1) {
-      this.field_41051 = class_6098.method_28015(var1.method_25937("buy"));
-      this.field_41050 = class_6098.method_28015(var1.method_25937("buyB"));
-      this.field_41052 = class_6098.method_28015(var1.method_25937("sell"));
+      this.field_41051 = ItemStack.method_28015(var1.method_25937("buy"));
+      this.field_41050 = ItemStack.method_28015(var1.method_25937("buyB"));
+      this.field_41052 = ItemStack.method_28015(var1.method_25937("sell"));
       this.field_41048 = var1.method_25947("uses");
       if (!var1.method_25939("maxUses", 99)) {
          this.field_41047 = 4;
@@ -39,19 +39,19 @@ public class class_8014 {
       this.field_41046 = var1.method_25947("demand");
    }
 
-   public class_8014(class_6098 var1, class_6098 var2, int var3, int var4, float var5) {
-      this(var1, class_6098.field_31203, var2, var3, var4, var5);
+   public class_8014(ItemStack var1, ItemStack var2, int var3, int var4, float var5) {
+      this(var1, ItemStack.EMPTY, var2, var3, var4, var5);
    }
 
-   public class_8014(class_6098 var1, class_6098 var2, class_6098 var3, int var4, int var5, float var6) {
+   public class_8014(ItemStack var1, ItemStack var2, ItemStack var3, int var4, int var5, float var6) {
       this(var1, var2, var3, 0, var4, var5, var6);
    }
 
-   public class_8014(class_6098 var1, class_6098 var2, class_6098 var3, int var4, int var5, int var6, float var7) {
+   public class_8014(ItemStack var1, ItemStack var2, ItemStack var3, int var4, int var5, int var6, float var7) {
       this(var1, var2, var3, var4, var5, var6, var7, 0);
    }
 
-   public class_8014(class_6098 var1, class_6098 var2, class_6098 var3, int var4, int var5, int var6, float var7, int var8) {
+   public class_8014(ItemStack var1, ItemStack var2, ItemStack var3, int var4, int var5, int var6, float var7, int var8) {
       this.field_41051 = var1;
       this.field_41050 = var2;
       this.field_41052 = var3;
@@ -62,23 +62,23 @@ public class class_8014 {
       this.field_41046 = var8;
    }
 
-   public class_6098 method_36365() {
+   public ItemStack method_36365() {
       return this.field_41051;
    }
 
-   public class_6098 method_36372() {
+   public ItemStack method_36372() {
       int var3 = this.field_41051.method_27997();
-      class_6098 var4 = this.field_41051.method_27973();
+      ItemStack var4 = this.field_41051.method_27973();
       int var5 = Math.max(0, class_9299.method_42848((float)(var3 * this.field_41046) * this.field_41044));
       var4.method_28017(class_9299.method_42829(var3 + var5 + this.field_41045, 1, this.field_41051.method_27960().method_11245()));
       return var4;
    }
 
-   public class_6098 method_36377() {
+   public ItemStack method_36377() {
       return this.field_41050;
    }
 
-   public class_6098 method_36362() {
+   public ItemStack method_36362() {
       return this.field_41052;
    }
 
@@ -86,7 +86,7 @@ public class class_8014 {
       this.field_41046 = this.field_41046 + this.field_41048 - (this.field_41047 - this.field_41048);
    }
 
-   public class_6098 method_36371() {
+   public ItemStack method_36371() {
       return this.field_41052.method_27973();
    }
 
@@ -165,28 +165,28 @@ public class class_8014 {
       return var3;
    }
 
-   public boolean method_36373(class_6098 var1, class_6098 var2) {
+   public boolean method_36373(ItemStack var1, ItemStack var2) {
       return this.method_36369(var1, this.method_36372())
          && var1.method_27997() >= this.method_36372().method_27997()
          && this.method_36369(var2, this.field_41050)
          && var2.method_27997() >= this.field_41050.method_27997();
    }
 
-   private boolean method_36369(class_6098 var1, class_6098 var2) {
+   private boolean method_36369(ItemStack var1, ItemStack var2) {
       if (var2.method_28022() && var1.method_28022()) {
          return true;
       } else {
-         class_6098 var5 = var1.method_27973();
+         ItemStack var5 = var1.method_27973();
          if (var5.method_27960().method_11210()) {
             var5.method_27999(var5.method_28026());
          }
 
-         return class_6098.method_28019(var5, var2)
+         return ItemStack.method_28019(var5, var2)
             && (!var2.method_28002() || var5.method_28002() && class_4338.method_20182(var2.method_27990(), var5.method_27990(), false));
       }
    }
 
-   public boolean method_36375(class_6098 var1, class_6098 var2) {
+   public boolean method_36375(ItemStack var1, ItemStack var2) {
       if (this.method_36373(var1, var2)) {
          var1.method_27970(this.method_36372().method_27997());
          if (!this.method_36377().method_28022()) {

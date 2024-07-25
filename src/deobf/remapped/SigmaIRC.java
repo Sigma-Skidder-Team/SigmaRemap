@@ -32,7 +32,7 @@ public class SigmaIRC {
    public class_6427 field_21936;
 
    public SigmaIRC(AccountManager var1) {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
       this.field_21931 = HttpClients.createDefault();
       this.field_21930 = var1;
       this.field_21936 = new class_6427(this);
@@ -53,7 +53,7 @@ public class SigmaIRC {
 
    @EventListen
    private void method_20858(class_5596 var1) {
-      if (this.field_21934.field_9632.field_41697 % 100 == 0) {
+      if (this.field_21934.thePlayer.field_41697 % 100 == 0) {
          this.method_20857();
          List var4 = this.field_21934.field_9601.method_25873();
          Iterator var5 = var4.iterator();

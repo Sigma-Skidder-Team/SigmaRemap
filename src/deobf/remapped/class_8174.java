@@ -46,12 +46,12 @@ public class class_8174 implements class_2274 {
 
    public void 錌圭훔곻瀧쿨() {
       this.field_41848++;
-      if (this.field_41851.method_40539() == class_4666.field_22764) {
+      if (this.field_41851.method_40539() == GameType.field_22764) {
          if (this.field_41848 == 1) {
-            class_5989 var3 = this.field_41851.method_40530().field_9632;
+            class_5989 var3 = this.field_41851.method_40530().thePlayer;
             if (var3 != null) {
                for (class_6414 var5 : field_41850) {
-                  if (var3.field_3853.method_32405(new class_6098(var5))) {
+                  if (var3.inventory.method_32405(new ItemStack(var5))) {
                      this.field_41851.method_40538(class_6240.field_31934);
                      return;
                   }
@@ -89,7 +89,7 @@ public class class_8174 implements class_2274 {
       }
    }
 
-   public void 샱瀳筕筕渺䎰(class_6098 var1) {
+   public void 샱瀳筕筕渺䎰(ItemStack var1) {
       for (class_6414 var5 : field_41850) {
          if (var1.method_27960() == var5.method_10803()) {
             this.field_41851.method_40538(class_6240.field_31934);

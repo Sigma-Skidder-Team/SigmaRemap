@@ -5,12 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_4381 extends class_2089 implements class_4440 {
+public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
    private final MinecraftClient field_21493;
    private final List<class_7064> field_21494 = Lists.newArrayList();
    private boolean field_21492;
 
-   public class_4381(MinecraftClient var1) {
+   public SubtitleOverlayGui(MinecraftClient var1) {
       this.field_21493 = var1;
    }
 
@@ -24,18 +24,18 @@ public class class_4381 extends class_2089 implements class_4440 {
       }
 
       if (this.field_21492 && !this.field_21494.isEmpty()) {
-         class_3542.method_16438();
-         class_3542.method_16488();
-         class_3542.method_16437();
+         RenderSystem.method_16438();
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
          class_1343 var4 = new class_1343(
-            this.field_21493.field_9632.method_37302(), this.field_21493.field_9632.method_37388(), this.field_21493.field_9632.method_37156()
+            this.field_21493.thePlayer.method_37302(), this.field_21493.thePlayer.method_37388(), this.field_21493.thePlayer.method_37156()
          );
          class_1343 var5 = new class_1343(0.0, 0.0, -1.0)
-            .method_6212(-this.field_21493.field_9632.field_41755 * (float) (Math.PI / 180.0))
-            .method_6192(-this.field_21493.field_9632.field_41701 * (float) (Math.PI / 180.0));
+            .method_6212(-this.field_21493.thePlayer.field_41755 * (float) (Math.PI / 180.0))
+            .method_6192(-this.field_21493.thePlayer.field_41701 * (float) (Math.PI / 180.0));
          class_1343 var6 = new class_1343(0.0, 1.0, 0.0)
-            .method_6212(-this.field_21493.field_9632.field_41755 * (float) (Math.PI / 180.0))
-            .method_6192(-this.field_21493.field_9632.field_41701 * (float) (Math.PI / 180.0));
+            .method_6212(-this.field_21493.thePlayer.field_41755 * (float) (Math.PI / 180.0))
+            .method_6192(-this.field_21493.thePlayer.field_41701 * (float) (Math.PI / 180.0));
          class_1343 var7 = var5.method_6196(var6);
          int var8 = 0;
          int var9 = 0;
@@ -72,15 +72,15 @@ public class class_4381 extends class_2089 implements class_4440 {
                class_9299.method_42841(255.0, 75.0, (double)((float)(Util.getMeasuringTimeMs() - var12.method_32539()) / 3000.0F))
             );
             int var27 = var26 << 16 | var26 << 8 | var26;
-            class_3542.method_16438();
-            class_3542.method_16413(
-               (float)this.field_21493.method_8552().method_43165() - (float)var21 * 1.0F - 2.0F,
-               (float)(this.field_21493.method_8552().method_43177() - 30) - (float)(var8 * (var22 + 1)) * 1.0F,
+            RenderSystem.method_16438();
+            RenderSystem.method_16413(
+               (float)this.field_21493.getMainWindow().getScaledWidth() - (float)var21 * 1.0F - 2.0F,
+               (float)(this.field_21493.getMainWindow().getScaledHeight() - 30) - (float)(var8 * (var22 + 1)) * 1.0F,
                0.0F
             );
-            class_3542.method_16403(1.0F, 1.0F, 1.0F);
+            RenderSystem.method_16403(1.0F, 1.0F, 1.0F);
             method_9774(var1, -var21 - 1, -var23 - 1, var21 + 1, var23 + 1, this.field_21493.gameOptions.method_40888(0.8F));
-            class_3542.method_16488();
+            RenderSystem.enableBlend();
             if (!var20) {
                if (!(var16 > 0.0)) {
                   if (var16 < 0.0) {
@@ -94,12 +94,12 @@ public class class_4381 extends class_2089 implements class_4440 {
             }
 
             this.field_21493.textRenderer.method_45378(var1, var14, (float)(-var25 / 2), (float)(-var23), var27 + -16777216);
-            class_3542.method_16489();
+            RenderSystem.method_16489();
             var8++;
          }
 
-         class_3542.method_16448();
-         class_3542.method_16489();
+         RenderSystem.method_16448();
+         RenderSystem.method_16489();
       }
    }
 

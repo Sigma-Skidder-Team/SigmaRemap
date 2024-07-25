@@ -8,8 +8,8 @@ public class class_7786 implements Packet<class_392> {
    private class_8760 field_39457;
    private class_5621<World> field_39456;
    private long field_39461;
-   private class_4666 field_39454;
-   private class_4666 field_39459;
+   private GameType field_39454;
+   private GameType field_39459;
    private boolean field_39458;
    private boolean field_39455;
    private boolean field_39460;
@@ -17,7 +17,7 @@ public class class_7786 implements Packet<class_392> {
    public class_7786() {
    }
 
-   public class_7786(class_8760 var1, class_5621<World> var2, long var3, class_4666 var5, class_4666 var6, boolean var7, boolean var8, boolean var9) {
+   public class_7786(class_8760 var1, class_5621<World> var2, long var3, GameType var5, GameType var6, boolean var7, boolean var8, boolean var9) {
       this.field_39457 = var1;
       this.field_39456 = var2;
       this.field_39461 = var3;
@@ -37,8 +37,8 @@ public class class_7786 implements Packet<class_392> {
       this.field_39457 = var1.<Supplier<class_8760>>method_37771(class_8760.field_44831).get();
       this.field_39456 = class_5621.<World>method_25497(class_8669.field_44372, var1.method_37768());
       this.field_39461 = var1.readLong();
-      this.field_39454 = class_4666.method_21590(var1.readUnsignedByte());
-      this.field_39459 = class_4666.method_21590(var1.readUnsignedByte());
+      this.field_39454 = GameType.method_21590(var1.readUnsignedByte());
+      this.field_39459 = GameType.method_21590(var1.readUnsignedByte());
       this.field_39458 = var1.readBoolean();
       this.field_39455 = var1.readBoolean();
       this.field_39460 = var1.readBoolean();
@@ -68,11 +68,11 @@ public class class_7786 implements Packet<class_392> {
       return this.field_39461;
    }
 
-   public class_4666 method_35334() {
+   public GameType method_35334() {
       return this.field_39454;
    }
 
-   public class_4666 method_35330() {
+   public GameType method_35330() {
       return this.field_39459;
    }
 

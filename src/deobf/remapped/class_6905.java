@@ -31,7 +31,7 @@ public class class_6905 extends class_4232 {
 
    @Override
    public void method_19728(class_7114 var1) {
-      class_3111.method_14327().method_8609(this.field_35500);
+      Config.method_14327().method_8609(this.field_35500);
    }
 
    @Override

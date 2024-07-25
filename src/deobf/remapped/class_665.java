@@ -30,11 +30,11 @@ public class class_665 extends class_4785<class_665> {
 
    private void method_3036(class_7966 var1, int var2, int var3, int var4, int var5, class_2496 var6) {
       class_3570.method_16600(var6.field_12412, var6.field_12416);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2 + 1, var3 + 1, 0.0F, 0.0F, 38, 38, 38, 38);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2 + 1, var3 + 1, 0.0F, 0.0F, 38, 38, 38, 38);
       class_1991.method_9220(this.field_3688).method_8577().method_35674(class_1991.method_9185());
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 40, 40, 40, 40);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 40, 40, 40, 40);
    }
 
    private void method_3037(class_7966 var1, int var2, int var3, int var4, int var5, String var6, String var7, String var8) {
@@ -60,23 +60,23 @@ public class class_665 extends class_4785<class_665> {
 
       if (!var14) {
          class_1991.method_9199(this.field_3688).method_8577().method_35674(class_1991.method_9194());
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16438();
-         class_3542.method_16403(1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.method_16438();
+         RenderSystem.method_16403(1.0F, 1.0F, 1.0F);
          float var15 = !var12 ? 0.0F : 15.0F;
-         class_2089.method_9778(var1, var2 + var11, var3, var15, 0.0F, 15, 15, 30, 15);
-         class_3542.method_16489();
+         AbstractGui.method_9778(var1, var2 + var11, var3, var15, 0.0F, 15, 15, 30, 15);
+         RenderSystem.method_16489();
       }
 
       if (!"".equals(var7)) {
          class_1991.method_9195(this.field_3688).method_8577().method_35674(class_1991.method_9216());
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16438();
-         class_3542.method_16403(1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.method_16438();
+         RenderSystem.method_16403(1.0F, 1.0F, 1.0F);
          int var17 = var2 + var11 + (!var14 ? 17 : 0);
          float var16 = !var13 ? 0.0F : 15.0F;
-         class_2089.method_9778(var1, var17, var3, var16, 0.0F, 15, 15, 30, 15);
-         class_3542.method_16489();
+         AbstractGui.method_9778(var1, var17, var3, var16, 0.0F, 15, 15, 30, 15);
+         RenderSystem.method_16489();
       }
 
       if (!var12) {

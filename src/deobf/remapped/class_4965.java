@@ -58,7 +58,7 @@ public class class_4965 extends class_337 {
          short var8 = 1200;
 
          for (class_9359 var10 : var5) {
-            if (!var10.method_26480(var4) || var10.method_26553(var4).method_10333() < 2 || var10.method_26553(var4).method_10347() < 1200) {
+            if (!var10.isPotionActive(var4) || var10.method_26553(var4).method_10333() < 2 || var10.method_26553(var4).method_10347() < 1200) {
                var10.field_47794.method_4156(new class_2161(class_2161.field_10788, !this.method_37378() ? 1.0F : 0.0F));
                var10.method_26558(new class_2250(var4, 6000, 2));
             }

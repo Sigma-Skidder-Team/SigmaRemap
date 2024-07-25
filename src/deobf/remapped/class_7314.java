@@ -32,7 +32,7 @@ public class class_7314 extends class_9733 {
    @Override
    public void method_44951(class_7907 var1, Camera var2, float var3) {
       class_3009 var6 = null;
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          var6 = class_6588.field_33770;
          class_6588.method_30181(this.field_37398);
       }
@@ -60,7 +60,7 @@ public class class_7314 extends class_9733 {
             this.field_37400.method_28120(this.field_37398, var3)
          );
       var20.method_17415();
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_6588.method_30261((Entity)null);
          class_6588.method_30236(var6);
       }

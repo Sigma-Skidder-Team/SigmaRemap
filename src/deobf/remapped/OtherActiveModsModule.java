@@ -37,7 +37,7 @@ public class OtherActiveModsModule extends Module {
 
    @EventListen
    private void method_19656(class_3278 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          String var4 = this.getStringValueByName("Animation");
          String var5 = this.getStringValueByName("Outline");
          this.method_19659();
@@ -68,7 +68,7 @@ public class OtherActiveModsModule extends Module {
                   var20 = (int)((float)var20 * var21);
                }
 
-               class_3542.method_16438();
+               RenderSystem.method_16438();
                if (var5.equalsIgnoreCase("Right")) {
                   GL11.glTranslated(-3.0, 0.0, 0.0);
                }
@@ -89,8 +89,8 @@ public class OtherActiveModsModule extends Module {
                   }
                }
 
-               class_3542.method_16473();
-               class_3542.method_16488();
+               RenderSystem.method_16473();
+               RenderSystem.enableBlend();
                if (var4.equalsIgnoreCase("Slide") || var4.equalsIgnoreCase("Both")) {
                   GL11.glTranslated((double)((float)var19 * class_9681.method_44756(var15.method_11123(), 0.0F, 1.0F, 1.0F)), 0.0, 0.0);
                }
@@ -110,9 +110,9 @@ public class OtherActiveModsModule extends Module {
                      new class_8709(160, 160, 160)
                   );
                class_73.method_141();
-               class_3542.method_16448();
+               RenderSystem.method_16448();
                var6 += var20;
-               class_3542.method_16489();
+               RenderSystem.method_16489();
                var11 = var19;
                var12 = (float)((double)var12 + 0.0196078431372549);
                if (var12 > 1.0F) {

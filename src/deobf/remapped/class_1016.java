@@ -13,10 +13,10 @@ public class class_1016 implements class_2995 {
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
       class_174 var11 = this.field_5330.field_9601;
-      class_3542.method_16438();
-      class_3542.method_16448();
-      class_3542.method_16354();
-      class_3542.method_16428();
+      RenderSystem.method_16438();
+      RenderSystem.method_16448();
+      RenderSystem.method_16354();
+      RenderSystem.enableDepthTest();
       class_1331 var12 = new class_1331(var3, 0.0, var7);
       class_8042 var13 = class_8042.method_36499();
       class_9633 var14 = var13.method_36501();
@@ -56,8 +56,8 @@ public class class_1016 implements class_2995 {
       }
 
       var13.method_36500();
-      class_3542.method_16432();
-      class_3542.method_16489();
+      RenderSystem.method_16432();
+      RenderSystem.method_16489();
    }
 
    // $VF: Unable to simplify switch on enum

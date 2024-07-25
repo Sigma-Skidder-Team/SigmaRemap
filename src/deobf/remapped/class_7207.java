@@ -7,19 +7,19 @@ public class class_7207 extends class_5348 {
    public class_7207(boolean var1, boolean var2) {
       super("write_mask_state", () -> {
          if (!var2) {
-            class_3542.method_16387(var2);
+            RenderSystem.method_16387(var2);
          }
 
          if (!var1) {
-            class_3542.method_16405(var1, var1, var1, var1);
+            RenderSystem.method_16405(var1, var1, var1, var1);
          }
       }, () -> {
          if (!var2) {
-            class_3542.method_16387(true);
+            RenderSystem.method_16387(true);
          }
 
          if (!var1) {
-            class_3542.method_16405(true, true, true, true);
+            RenderSystem.method_16405(true, true, true, true);
          }
       });
       this.field_37024 = var1;

@@ -3,7 +3,7 @@ package remapped;
 import java.util.OptionalInt;
 
 public class class_8612 extends class_5783 implements class_3713 {
-   private static final class_7821<class_6098> field_44174 = class_8073.<class_6098>method_36641(class_8612.class, class_2734.field_13357);
+   private static final class_7821<ItemStack> field_44174 = class_8073.<ItemStack>method_36641(class_8612.class, class_2734.field_13357);
    private static final class_7821<OptionalInt> field_44171 = class_8073.<OptionalInt>method_36641(class_8612.class, class_2734.field_13356);
    private static final class_7821<Boolean> field_44176 = class_8073.<Boolean>method_36641(class_8612.class, class_2734.field_13347);
    private int field_44170;
@@ -14,7 +14,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       super(var1, var2);
    }
 
-   public class_8612(World var1, double var2, double var4, double var6, class_6098 var8) {
+   public class_8612(World var1, double var2, double var4, double var6, ItemStack var8) {
       super(class_6629.field_34280, var1);
       this.field_44170 = 0;
       this.method_37256(var2, var4, var6);
@@ -28,30 +28,30 @@ public class class_8612 extends class_5783 implements class_3713 {
       this.field_44172 = 10 * var11 + this.field_41717.nextInt(6) + this.field_41717.nextInt(7);
    }
 
-   public class_8612(World var1, Entity var2, double var3, double var5, double var7, class_6098 var9) {
+   public class_8612(World var1, Entity var2, double var3, double var5, double var7, ItemStack var9) {
       this(var1, var3, var5, var7, var9);
       this.method_26159(var2);
    }
 
-   public class_8612(World var1, class_6098 var2, class_5834 var3) {
+   public class_8612(World var1, ItemStack var2, class_5834 var3) {
       this(var1, var3, var3.method_37302(), var3.method_37309(), var3.method_37156(), var2);
       this.field_41735.method_36633(field_44171, OptionalInt.of(var3.method_37145()));
       this.field_44173 = var3;
    }
 
-   public class_8612(World var1, class_6098 var2, double var3, double var5, double var7, boolean var9) {
+   public class_8612(World var1, ItemStack var2, double var3, double var5, double var7, boolean var9) {
       this(var1, var3, var5, var7, var2);
       this.field_41735.method_36633(field_44176, var9);
    }
 
-   public class_8612(World var1, class_6098 var2, Entity var3, double var4, double var6, double var8, boolean var10) {
+   public class_8612(World var1, ItemStack var2, Entity var3, double var4, double var6, double var8, boolean var10) {
       this(var1, var2, var4, var6, var8, var10);
       this.method_26159(var3);
    }
 
    @Override
    public void method_37329() {
-      this.field_41735.method_36634(field_44174, class_6098.field_31203);
+      this.field_41735.method_36634(field_44174, ItemStack.EMPTY);
       this.field_41735.method_36634(field_44171, OptionalInt.empty());
       this.field_41735.method_36634(field_44176, false);
    }
@@ -168,7 +168,7 @@ public class class_8612 extends class_5783 implements class_3713 {
    }
 
    private boolean method_39587() {
-      class_6098 var3 = this.field_41735.<class_6098>method_36640(field_44174);
+      ItemStack var3 = this.field_41735.<ItemStack>method_36640(field_44174);
       class_5734 var4 = !var3.method_28022() ? var3.method_28021("Fireworks") : null;
       class_3416 var5 = var4 == null ? null : var4.method_25927("Explosions", 10);
       return var5 != null && !var5.isEmpty();
@@ -176,7 +176,7 @@ public class class_8612 extends class_5783 implements class_3713 {
 
    private void method_39585() {
       float var3 = 0.0F;
-      class_6098 var4 = this.field_41735.<class_6098>method_36640(field_44174);
+      ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
       class_5734 var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
       class_3416 var6 = var5 == null ? null : var5.method_25927("Explosions", 10);
       if (var6 != null && !var6.isEmpty()) {
@@ -225,7 +225,7 @@ public class class_8612 extends class_5783 implements class_3713 {
    public void method_37336(byte var1) {
       if (var1 == 17 && this.field_41768.field_33055) {
          if (this.method_39587()) {
-            class_6098 var4 = this.field_41735.<class_6098>method_36640(field_44174);
+            ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
             class_5734 var5 = !var4.method_28022() ? var4.method_28021("Fireworks") : null;
             class_1343 var6 = this.method_37098();
             this.field_41768
@@ -254,7 +254,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       super.method_37376(var1);
       var1.method_25931("Life", this.field_44170);
       var1.method_25931("LifeTime", this.field_44172);
-      class_6098 var4 = this.field_41735.<class_6098>method_36640(field_44174);
+      ItemStack var4 = this.field_41735.<ItemStack>method_36640(field_44174);
       if (!var4.method_28022()) {
          var1.method_25946("FireworksItem", var4.method_27998(new class_5734()));
       }
@@ -267,7 +267,7 @@ public class class_8612 extends class_5783 implements class_3713 {
       super.method_37314(var1);
       this.field_44170 = var1.method_25947("Life");
       this.field_44172 = var1.method_25947("LifeTime");
-      class_6098 var4 = class_6098.method_28015(var1.method_25937("FireworksItem"));
+      ItemStack var4 = ItemStack.method_28015(var1.method_25937("FireworksItem"));
       if (!var4.method_28022()) {
          this.field_41735.method_36633(field_44174, var4);
       }
@@ -278,9 +278,9 @@ public class class_8612 extends class_5783 implements class_3713 {
    }
 
    @Override
-   public class_6098 method_17246() {
-      class_6098 var3 = this.field_41735.<class_6098>method_36640(field_44174);
-      return !var3.method_28022() ? var3 : new class_6098(class_4897.field_24479);
+   public ItemStack method_17246() {
+      ItemStack var3 = this.field_41735.<ItemStack>method_36640(field_44174);
+      return !var3.method_28022() ? var3 : new ItemStack(class_4897.field_24479);
    }
 
    @Override

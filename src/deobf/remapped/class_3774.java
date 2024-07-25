@@ -34,6 +34,6 @@ public class class_3774 extends class_1809 {
    }
 
    private static Executor method_17468(Executor var0) {
-      return var1 -> var0.execute(() -> class_3542.method_16474(var1::run));
+      return var1 -> var0.execute(() -> RenderSystem.method_16474(var1::run));
    }
 }

@@ -30,8 +30,8 @@ public class class_5572 extends class_446 {
 
    @Override
    public void method_32178(float var1) {
-      int var4 = MinecraftClient.getInstance().window.method_43165();
-      int var5 = MinecraftClient.getInstance().window.method_43177();
+      int var4 = MinecraftClient.getInstance().window.getScaledWidth();
+      int var5 = MinecraftClient.getInstance().window.getScaledHeight();
       int var6 = var4 / 2;
 
       boolean var7;

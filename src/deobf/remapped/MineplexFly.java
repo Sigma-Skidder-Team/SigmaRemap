@@ -32,11 +32,11 @@ public class MineplexFly extends PremiumModule {
       double var3 = class_8865.method_40775() * 0.5;
       class_8865.method_40776(var3);
       if (this.field_46846 != -1) {
-         mc.method_8614().method_4813(new class_7371(mc.field_9632.field_3853.field_36404));
-         this.field_46846 = mc.field_9632.field_3853.field_36404;
+         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
+         this.field_46846 = client.thePlayer.inventory.field_36404;
       }
 
-      mc.theTimer.timerSpeed = 1.0F;
+      client.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen
@@ -60,14 +60,14 @@ public class MineplexFly extends PremiumModule {
       return this.method_42015()
          && this.field_46846 != -1
          && this.field_46845 < (double)this.getFloatValueByName("Boost")
-         && (mc.field_9632.field_41726 || class_314.method_1413(mc.field_9632, 0.001F))
+         && (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F))
          && !this.field_46839;
    }
 
    @EventListen
    public void method_42170(class_7982 var1) {
-      if (this.method_42015() && this.field_46839 && mc.field_9632 != null) {
-         if (mc.field_9632.field_41726) {
+      if (this.method_42015() && this.field_46839 && client.thePlayer != null) {
+         if (client.thePlayer.field_41726) {
             var1.method_36186(true);
          }
       }
@@ -79,8 +79,8 @@ public class MineplexFly extends PremiumModule {
          if (this.field_46839) {
             class_8865.method_40777(var1, 0.01);
          } else {
-            float var4 = mc.field_9632.field_41701 + 90.0F;
-            if (!mc.field_9632.field_41726 && !class_314.method_1413(mc.field_9632, 0.001F)) {
+            float var4 = client.thePlayer.field_41701 + 90.0F;
+            if (!client.thePlayer.field_41726 && !class_314.method_1413(client.thePlayer, 0.001F)) {
                if (this.field_46840 != -1) {
                   if (this.field_46838 && !class_314.method_1434()) {
                      this.field_46838 = !this.field_46838;
@@ -103,7 +103,7 @@ public class MineplexFly extends PremiumModule {
                   }
 
                   var1.method_35235(this.field_46842);
-                  if (mc.field_9632.field_41744 || !class_314.method_1434()) {
+                  if (client.thePlayer.field_41744 || !class_314.method_1434()) {
                      this.field_46845 = 0.35;
                   }
 
@@ -129,22 +129,22 @@ public class MineplexFly extends PremiumModule {
                }
 
                class_1343 var6 = new class_1343(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05);
-               class_1331 var7 = new class_1331(mc.field_9632.method_37075()).method_6104(0, -1, 0);
+               class_1331 var7 = new class_1331(client.thePlayer.method_37075()).method_6104(0, -1, 0);
                class_9529 var8 = new class_9529(var6, Direction.field_817, var7, false);
                class_8585 var9 = new class_8585(class_2584.field_12791, var8);
-               mc.method_8614().method_4813(var9);
+               client.method_8614().method_4813(var9);
                if (!(this.field_46845 < (double)this.getFloatValueByName("Boost"))) {
                   class_8865.method_40777(var1, 0.0);
-                  mc.field_9632.method_26595();
+                  client.thePlayer.method_26595();
                   this.field_46842 = 0.4299999;
                   this.field_46843 = 0;
                   this.field_46838 = class_314.method_1434();
                   var1.method_35235(this.field_46842);
-                  this.field_46844 = mc.field_9632.method_37309();
+                  this.field_46844 = client.thePlayer.method_37309();
                   this.field_46840++;
                   this.field_46845 += 0.5;
                } else {
-                  mc.theTimer.timerSpeed = Math.min(1.0F, Math.max(0.1F, (float)(1.2 - this.field_46845 * 0.15)));
+                  client.theTimer.timerSpeed = Math.min(1.0F, Math.max(0.1F, (float)(1.2 - this.field_46845 * 0.15)));
                   if (this.field_46840 > 2) {
                      this.field_46845 += 0.05;
                   }
@@ -178,7 +178,7 @@ public class MineplexFly extends PremiumModule {
          if (var1.method_10047() instanceof class_7371
             && this.field_46846 != -1
             && this.field_46845 < (double)this.getFloatValueByName("Boost")
-            && (mc.field_9632.field_41726 || class_314.method_1413(mc.field_9632, 0.001F))
+            && (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.001F))
             && !this.field_46839) {
             var1.method_29715(true);
          }
@@ -186,15 +186,15 @@ public class MineplexFly extends PremiumModule {
    }
 
    private int method_42172() {
-      if (mc.field_9632.method_26446().method_28022()) {
-         this.field_46846 = mc.field_9632.field_3853.field_36404;
+      if (client.thePlayer.method_26446().method_28022()) {
+         this.field_46846 = client.thePlayer.inventory.field_36404;
          return this.field_46846;
       } else {
          for (int var3 = 36; var3 < 45; var3++) {
             int var4 = var3 - 36;
-            if (mc.field_9632.field_3869.method_18878(var3).method_35898().method_28022()) {
-               if (mc.field_9632.field_3853.field_36404 != var4 && this.field_46846 != var4) {
-                  mc.method_8614().method_4813(new class_7371(var4));
+            if (client.thePlayer.field_3869.method_18878(var3).method_35898().method_28022()) {
+               if (client.thePlayer.inventory.field_36404 != var4 && this.field_46846 != var4) {
+                  client.method_8614().method_4813(new class_7371(var4));
                   this.field_46846 = var4;
                }
 
@@ -202,11 +202,11 @@ public class MineplexFly extends PremiumModule {
             }
          }
 
-         class_2740.method_12356(mc.field_9632.field_3869.field_19925, 42, 0, class_6269.field_32019, mc.field_9632, true);
-         if (!mc.field_9632.field_3869.method_18878(42).method_35898().method_28022()) {
+         class_2740.method_12356(client.thePlayer.field_3869.field_19925, 42, 0, class_6269.field_32019, client.thePlayer, true);
+         if (!client.thePlayer.field_3869.method_18878(42).method_35898().method_28022()) {
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
-         } else if (mc.field_9632.field_3853.field_36404 != 6 && this.field_46846 != 6) {
-            mc.method_8614().method_4813(new class_7371(6));
+         } else if (client.thePlayer.inventory.field_36404 != 6 && this.field_46846 != 6) {
+            client.method_8614().method_4813(new class_7371(6));
             this.field_46846 = 6;
             return 6;
          }
@@ -217,13 +217,13 @@ public class MineplexFly extends PremiumModule {
 
    @EventListen
    public void method_42171(class_1711 var1) {
-      if (this.method_42015() && this.getBooleanValueByName("Fake") && !(this.field_46844 < 0.0) && !(mc.field_9632.method_37309() < this.field_46844)) {
-         mc.field_9632.field_41736.field_7333 = this.field_46844;
-         mc.field_9632.field_41713 = this.field_46844;
-         mc.field_9632.field_3864 = this.field_46844;
-         mc.field_9632.field_41698 = this.field_46844;
+      if (this.method_42015() && this.getBooleanValueByName("Fake") && !(this.field_46844 < 0.0) && !(client.thePlayer.method_37309() < this.field_46844)) {
+         client.thePlayer.field_41736.field_7333 = this.field_46844;
+         client.thePlayer.field_41713 = this.field_46844;
+         client.thePlayer.field_3864 = this.field_46844;
+         client.thePlayer.field_41698 = this.field_46844;
          if (class_8865.method_40772()) {
-            mc.field_9632.field_3859 = 0.099999994F;
+            client.thePlayer.field_3859 = 0.099999994F;
          }
       }
    }

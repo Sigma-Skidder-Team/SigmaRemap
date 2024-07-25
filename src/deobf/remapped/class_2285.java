@@ -28,7 +28,7 @@ public class class_2285 extends class_7114 implements class_2855<class_8137> {
 
    @Override
    public void method_12971(Iterator<class_8137> var1, int var2, int var3, int var4, int var5) {
-      class_6098[] var8 = ((class_8137)var1.next()).method_37020();
+      ItemStack[] var8 = ((class_8137)var1.next()).method_37020();
       if (var8.length != 0) {
          this.field_11417.add(new class_6061(this, 3 + var5 * 7, 3 + var4 * 7, var8));
       }
@@ -36,7 +36,7 @@ public class class_2285 extends class_7114 implements class_2855<class_8137> {
 
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       class_9205.method_42467(this.field_11415).method_8577().method_35674(class_9205.method_42470());
       short var7 = 152;
       if (!this.field_11413) {
@@ -51,19 +51,19 @@ public class class_2285 extends class_7114 implements class_2855<class_8137> {
       this.method_9781(var1, this.field_36670, this.field_36674, var7, var8, this.field_36671, this.field_36681);
 
       for (class_6061 var10 : this.field_11417) {
-         class_3542.method_16438();
+         RenderSystem.method_16438();
          float var11 = 0.42F;
          int var12 = (int)((float)(this.field_36670 + var10.field_31001) / 0.42F - 3.0F);
          int var13 = (int)((float)(this.field_36674 + var10.field_30998) / 0.42F - 3.0F);
-         class_3542.method_16403(0.42F, 0.42F, 1.0F);
+         RenderSystem.method_16403(0.42F, 0.42F, 1.0F);
          class_9205.method_42467(this.field_11415)
             .method_8511()
             .method_40274(
                var10.field_31002[class_9299.method_42848(class_9205.method_42473(this.field_11415) / 30.0F) % var10.field_31002.length], var12, var13
             );
-         class_3542.method_16489();
+         RenderSystem.method_16489();
       }
 
-      class_3542.method_16458();
+      RenderSystem.method_16458();
    }
 }

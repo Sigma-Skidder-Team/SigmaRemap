@@ -291,7 +291,7 @@ public class class_6416 {
       }
    }
 
-   public static RenderLayer method_29332(class_6098 var0, boolean var1) {
+   public static RenderLayer method_29332(ItemStack var0, boolean var1) {
       class_2451 var4 = var0.method_27960();
       if (!(var4 instanceof class_6201)) {
          return !var1 ? class_5276.method_24076() : class_5276.method_24072();

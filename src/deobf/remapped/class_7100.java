@@ -49,13 +49,13 @@ public class class_7100 implements class_7912 {
          float var7 = (float)(var6 >> 16 & 0xFF) / 255.0F;
          float var8 = (float)(var6 >> 8 & 0xFF) / 255.0F;
          float var9 = (float)(var6 & 0xFF) / 255.0F;
-         class_2089.method_9774(var1, 1, 1, 15, 15, class_9299.method_42796(var7 * var2, var8 * var2, var9 * var2) | var3 << 24);
+         AbstractGui.method_9774(var1, 1, 1, 15, 15, class_9299.method_42796(var7 * var2, var8 * var2, var9 * var2) | var3 << 24);
       }
 
-      MinecraftClient.getInstance().method_8577().method_35674(this.field_36623);
-      class_3542.method_16480(var2, var2, var2, (float)var3 / 255.0F);
-      class_2089.method_9780(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
-      class_2089.method_9780(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
+      MinecraftClient.getInstance().getTextureManager().bindTexture(this.field_36623);
+      RenderSystem.color4f(var2, var2, var2, (float)var3 / 255.0F);
+      AbstractGui.method_9780(var1, 2, 2, 12, 12, 8.0F, 8.0F, 8, 8, 64, 64);
+      AbstractGui.method_9780(var1, 2, 2, 12, 12, 40.0F, 8.0F, 8, 8, 64, 64);
    }
 
    @Override

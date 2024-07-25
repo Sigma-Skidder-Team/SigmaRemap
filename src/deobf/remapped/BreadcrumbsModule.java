@@ -18,7 +18,7 @@ public class BreadcrumbsModule extends Module {
       if (this.method_42015()) {
          if (var1.method_35234() != 0.0 || var1.method_35236() != 0.0 || var1.method_35231() != 0.0) {
             this.field_13172
-               .add(new class_1343(mc.field_9632.method_37302(), mc.field_9632.method_37309(), mc.field_9632.method_37156()));
+               .add(new class_1343(client.thePlayer.method_37302(), client.thePlayer.method_37309(), client.thePlayer.method_37156()));
          }
       }
    }
@@ -49,12 +49,12 @@ public class BreadcrumbsModule extends Module {
    public void method_12069(class_3368 var1) {
       if (this.method_42015()) {
          class_1343 var4 = new class_1343(
-            mc.field_9632.field_41754
-               - (mc.field_9632.field_41754 - mc.field_9632.method_37302()) * (double) mc.method_8554(),
-            mc.field_9632.field_41713
-               - (mc.field_9632.field_41713 - mc.field_9632.method_37309()) * (double) mc.method_8554(),
-            mc.field_9632.field_41724
-               - (mc.field_9632.field_41724 - mc.field_9632.method_37156()) * (double) mc.method_8554()
+            client.thePlayer.field_41754
+               - (client.thePlayer.field_41754 - client.thePlayer.method_37302()) * (double) client.method_8554(),
+            client.thePlayer.field_41713
+               - (client.thePlayer.field_41713 - client.thePlayer.method_37309()) * (double) client.method_8554(),
+            client.thePlayer.field_41724
+               - (client.thePlayer.field_41724 - client.thePlayer.method_37156()) * (double) client.method_8554()
          );
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(3042);

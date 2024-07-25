@@ -23,7 +23,7 @@ public class class_2714 extends class_4785<class_2714> {
 
    @Override
    public void method_21644(class_7966 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
-      class_2089.method_9771(var1, this.field_13265.field_20465.field_948, this.field_13266, var4 + 5, var3 + 2, 16777215);
+      AbstractGui.method_9771(var1, this.field_13265.field_20465.field_948, this.field_13266, var4 + 5, var3 + 2, 16777215);
    }
 
    @Override

@@ -2,7 +2,7 @@ package remapped;
 
 import java.util.function.Predicate;
 
-public class class_2293 implements Predicate<class_6098> {
+public class class_2293 implements Predicate<ItemStack> {
    private static String[] field_11459;
    private final class_2451 field_11458;
    private final class_5734 field_11460;
@@ -12,7 +12,7 @@ public class class_2293 implements Predicate<class_6098> {
       this.field_11460 = var2;
    }
 
-   public boolean test(class_6098 var1) {
+   public boolean test(ItemStack var1) {
       return var1.method_27960() == this.field_11458 && class_4338.method_20182(this.field_11460, var1.method_27990(), true);
    }
 }

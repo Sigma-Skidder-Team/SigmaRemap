@@ -26,8 +26,8 @@ public class class_269 implements class_4904 {
       if (!(var1 instanceof class_3449)) {
          return null;
       } else {
-         class_6098 var5 = new class_6098(this.field_966.get(((class_3449)var1).method_15891().method_13912()), this.field_963);
-         return new class_8014(var5, new class_6098(class_4897.field_24997), this.field_965, this.field_962, 0.05F);
+         ItemStack var5 = new ItemStack(this.field_966.get(((class_3449)var1).method_15891().method_13912()), this.field_963);
+         return new class_8014(var5, new ItemStack(class_4897.field_24997), this.field_965, this.field_962, 0.05F);
       }
    }
 }

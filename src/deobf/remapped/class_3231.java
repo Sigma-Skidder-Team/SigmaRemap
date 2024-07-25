@@ -125,14 +125,14 @@ public class class_3231 extends Screen implements class_2092 {
 
    private void method_14801(class_7966 var1, int var2, int var3, class_2451 var4) {
       this.method_14808(var1, var2 + 1, var3 + 1, 0, 0);
-      class_3542.method_16381();
+      RenderSystem.method_16381();
       this.field_945.method_40264(var4.method_11207(), var2 + 2, var3 + 2);
-      class_3542.method_16443();
+      RenderSystem.method_16443();
    }
 
    private void method_14808(class_7966 var1, int var2, int var3, int var4, int var5) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_10506);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10506);
       method_9779(var1, var2, var3, this.method_9777(), (float)var4, (float)var5, 18, 18, 128, 128);
    }
 }

@@ -19,16 +19,16 @@ public class VClipCommand extends Command {
                field_18219.method_8614()
                   .method_1894(
                      new class_509(
-                        field_18219.field_9632.method_37302(),
-                        field_18219.field_9632.method_37309() + var2[0].method_24062(),
-                        field_18219.field_9632.method_37156(),
-                        field_18219.field_9632.field_41701,
-                        field_18219.field_9632.field_41755,
+                        field_18219.thePlayer.method_37302(),
+                        field_18219.thePlayer.method_37309() + var2[0].method_24062(),
+                        field_18219.thePlayer.method_37156(),
+                        field_18219.thePlayer.field_41701,
+                        field_18219.thePlayer.field_41755,
                         Collections.<class_8089>emptySet(),
                         (int)(2.147483647E9 * Math.random())
                      )
                   );
-               var3.method_3731("VClip'd to position " + (field_18219.field_9632.method_37309() + var2[0].method_24062()));
+               var3.method_3731("VClip'd to position " + (field_18219.thePlayer.method_37309() + var2[0].method_24062()));
             }
          } else {
             throw new class_2900("Too many arguments");

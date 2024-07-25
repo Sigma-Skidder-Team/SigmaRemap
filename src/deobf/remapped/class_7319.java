@@ -154,7 +154,7 @@ public class class_7319 extends class_9521 implements IScreen {
       }
 
       MinecraftClient var19 = MinecraftClient.getInstance();
-      TextureManager var20 = var19.method_8577();
+      TextureManager var20 = var19.getTextureManager();
       if (!var13) {
          if (!var12) {
             if (var11 != null && var9 != -1L) {
@@ -162,39 +162,39 @@ public class class_7319 extends class_9521 implements IScreen {
             } else if (var8 != 1) {
                if (var8 != 2) {
                   if (var8 == 3) {
-                     var20.method_35674(field_37422);
+                     var20.bindTexture(field_37422);
                   }
                } else {
-                  var20.method_35674(field_37417);
+                  var20.bindTexture(field_37417);
                }
             } else {
-               var20.method_35674(field_37425);
+               var20.bindTexture(field_37425);
             }
          } else {
-            var20.method_35674(field_37418);
+            var20.bindTexture(field_37418);
          }
       } else {
          class_3570.method_16600(String.valueOf(var9), var11);
       }
 
       if (!var6) {
-         class_3542.method_16480(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
          float var21 = 0.85F + 0.15F * class_9299.method_42840((float)this.field_37426 * 0.2F);
-         class_3542.method_16480(var21, var21, var21, 1.0F);
+         RenderSystem.color4f(var21, var21, var21, 1.0F);
       }
 
       method_9778(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
-      var20.method_35674(field_37415);
+      var20.bindTexture(field_37415);
       boolean var22 = var18 && var14 != class_7426.field_37891;
       if (!var22) {
          if (!var6) {
-            class_3542.method_16480(0.56F, 0.56F, 0.56F, 1.0F);
+            RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
          } else {
-            class_3542.method_16480(0.8F, 0.8F, 0.8F, 1.0F);
+            RenderSystem.color4f(0.8F, 0.8F, 0.8F, 1.0F);
          }
       } else {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
       method_9778(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);

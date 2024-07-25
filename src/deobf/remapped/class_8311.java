@@ -46,7 +46,7 @@ public class class_8311 extends class_4382 {
    }
 
    @Override
-   public boolean method_20430(class_6098 var1) {
+   public boolean method_20430(ItemStack var1) {
       return !(var1.method_27960() instanceof class_7938) ? super.method_20430(var1) : true;
    }
 

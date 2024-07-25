@@ -82,45 +82,45 @@ public class class_3683 extends class_3954<class_6946> {
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_18874(class_704 var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
-         class_6098 var7 = var6.method_35898();
+         ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
          class_6943 var8 = class_5886.method_26896(var5);
          if (var2 != 0) {
             if (var2 >= 1 && var2 < 5) {
                if (!this.method_18892(var7, 9, 45, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 5 && var2 < 9) {
                if (!this.method_18892(var7, 9, 45, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (var8.method_31772() == class_7268.field_37219 && !this.field_19926.get(8 - var8.method_31767()).method_35884()) {
                int var9 = 8 - var8.method_31767();
                if (!this.method_18892(var7, var9, var9 + 1, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (var8 == class_6943.field_35701 && !this.field_19926.get(45).method_35884()) {
                if (!this.method_18892(var7, 45, 46, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 9 && var2 < 36) {
                if (!this.method_18892(var7, 36, 45, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (var2 >= 36 && var2 < 45) {
                if (!this.method_18892(var7, 9, 36, false)) {
-                  return class_6098.field_31203;
+                  return ItemStack.EMPTY;
                }
             } else if (!this.method_18892(var7, 9, 45, false)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method_18892(var7, 9, 45, true)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
 
             var6.method_35888(var7, var5);
@@ -129,14 +129,14 @@ public class class_3683 extends class_3954<class_6946> {
          if (!var7.method_28022()) {
             var6.method_35887();
          } else {
-            var6.method_35896(class_6098.field_31203);
+            var6.method_35896(ItemStack.EMPTY);
          }
 
          if (var7.method_27997() == var5.method_27997()) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
-         class_6098 var10 = var6.method_35892(var1, var7);
+         ItemStack var10 = var6.method_35892(var1, var7);
          if (var2 == 0) {
             var1.method_3153(var10, false);
          }
@@ -146,7 +146,7 @@ public class class_3683 extends class_3954<class_6946> {
    }
 
    @Override
-   public boolean method_18873(class_6098 var1, class_7934 var2) {
+   public boolean method_18873(ItemStack var1, class_7934 var2) {
       return var2.field_40591 != this.field_18056 && super.method_18873(var1, var2);
    }
 

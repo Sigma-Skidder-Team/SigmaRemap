@@ -27,11 +27,11 @@ public class class_4306 implements class_3608 {
             var1 = var5;
          }
 
-         int var6 = class_3111.method_14361(var1, Integer.MIN_VALUE);
+         int var6 = Config.method_14361(var1, Integer.MIN_VALUE);
          if (var6 != Integer.MIN_VALUE) {
             return new class_4570((float)var6);
          } else {
-            class_3111.method_14317("Unknown macro value: " + var1);
+            Config.method_14317("Unknown macro value: " + var1);
             return new class_4570(0.0F);
          }
       }

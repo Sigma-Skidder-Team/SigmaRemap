@@ -5,24 +5,24 @@ import java.util.Map;
 import java.util.UUID;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_4736 extends class_2089 {
+public class BossOverlayGui extends AbstractGui {
    private static final Identifier field_22950 = new Identifier("textures/gui/bars.png");
    private final MinecraftClient field_22948;
    private final Map<UUID, class_5607> field_22947 = Maps.newLinkedHashMap();
 
-   public class_4736(MinecraftClient var1) {
+   public BossOverlayGui(MinecraftClient var1) {
       this.field_22948 = var1;
    }
 
    public void method_21875(class_7966 var1) {
       if (!this.field_22947.isEmpty()) {
-         int var4 = this.field_22948.method_8552().method_43165();
+         int var4 = this.field_22948.getMainWindow().getScaledWidth();
          byte var5 = 12;
 
          for (class_5607 var7 : this.field_22947.values()) {
             int var8 = var4 / 2 - 91;
-            class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-            this.field_22948.method_8577().method_35674(field_22950);
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+            this.field_22948.getTextureManager().bindTexture(field_22950);
             this.method_21871(var1, var8, var5, var7);
             ITextComponent var9 = var7.method_43453();
             int var10 = this.field_22948.textRenderer.method_45379(var9);
@@ -30,7 +30,7 @@ public class class_4736 extends class_2089 {
             int var12 = var5 - 9;
             this.field_22948.textRenderer.method_45392(var1, var9, (float)var11, (float)var12, 16777215);
             var5 += 19;
-            if (var5 >= this.field_22948.method_8552().method_43177() / 3) {
+            if (var5 >= this.field_22948.getMainWindow().getScaledHeight() / 3) {
                break;
             }
          }

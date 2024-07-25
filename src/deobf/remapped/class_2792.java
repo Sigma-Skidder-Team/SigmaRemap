@@ -43,7 +43,7 @@ public class class_2792 {
       return this.field_13717.containsKey(var1);
    }
 
-   public void method_12697(Identifier var1, Consumer<class_6098> var2) {
+   public void method_12697(Identifier var1, Consumer<ItemStack> var2) {
       class_7006 var5 = this.field_13719.get(var1);
       if (var5 != null) {
          var5.method_32019(this, var2);

@@ -6,10 +6,10 @@ public class class_6823 extends class_7067<class_7451> {
    private static final class_454 field_35174 = new class_454("item_frame", "map=false");
    private static final class_454 field_35170 = new class_454("item_frame", "map=true");
    private final MinecraftClient field_35169 = MinecraftClient.getInstance();
-   private final class_8765 field_35172;
+   private final ItemRenderer field_35172;
    private static double field_35171 = 4096.0;
 
-   public class_6823(EntityRenderDispatcher var1, class_8765 var2) {
+   public class_6823(EntityRenderDispatcher var1, ItemRenderer var2) {
       super(var1);
       this.field_35172 = var2;
    }
@@ -46,7 +46,7 @@ public class class_6823 extends class_7067<class_7451> {
          var4.method_36064();
       }
 
-      class_6098 var19 = var1.method_33905();
+      ItemStack var19 = var1.method_33905();
       if (!var19.method_28022()) {
          boolean var20 = var19.method_27960() instanceof class_2143;
          if (!var13) {
@@ -104,8 +104,8 @@ public class class_6823 extends class_7067<class_7451> {
 
    private boolean method_31304(class_7451 var1) {
       if (!class_6588.field_33945) {
-         if (!class_3111.field_15481) {
-            Entity var4 = this.field_35169.method_8516();
+         if (!Config.field_15481) {
+            Entity var4 = this.field_35169.getRenderViewEntity();
             double var5 = var1.method_37273(var4.method_37302(), var4.method_37309(), var4.method_37156());
             if (var5 > field_35171) {
                return false;
@@ -120,8 +120,8 @@ public class class_6823 extends class_7067<class_7451> {
 
    public static void method_31303() {
       MinecraftClient var2 = MinecraftClient.getInstance();
-      double var3 = class_3111.method_14261(var2.gameOptions.field_45543, 1.0, 120.0);
-      double var5 = Math.max(6.0 * (double)var2.method_8552().method_43163() / var3, 16.0);
+      double var3 = Config.method_14261(var2.gameOptions.field_45543, 1.0, 120.0);
+      double var5 = Math.max(6.0 * (double)var2.getMainWindow().method_43163() / var3, 16.0);
       field_35171 = var5 * var5;
    }
 }

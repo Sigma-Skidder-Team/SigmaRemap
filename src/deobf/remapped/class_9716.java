@@ -36,13 +36,13 @@ public abstract class class_9716 extends class_704 {
    @Override
    public boolean method_37221() {
       class_753 var3 = MinecraftClient.getInstance().method_8614().method_4800(this.method_3247().getId());
-      return var3 != null && var3.method_3393() == class_4666.field_22756;
+      return var3 != null && var3.method_3393() == GameType.SPECTATOR;
    }
 
    @Override
    public boolean method_3186() {
       class_753 var3 = MinecraftClient.getInstance().method_8614().method_4800(this.method_3247().getId());
-      return var3 != null && var3.method_3393() == class_4666.field_22761;
+      return var3 != null && var3.method_3393() == GameType.field_22761;
    }
 
    public boolean method_44885() {
@@ -70,7 +70,7 @@ public abstract class class_9716 extends class_704 {
 
    @Nullable
    public Identifier method_44891() {
-      if (class_3111.method_14274()) {
+      if (Config.method_14274()) {
          if (this.field_49390 != 0L && System.currentTimeMillis() > this.field_49390) {
             class_3773.method_17459(this);
             this.field_49390 = 0L;
@@ -98,7 +98,7 @@ public abstract class class_9716 extends class_704 {
    }
 
    public static class_9211 method_44882(Identifier var0, String var1) {
-      TextureManager var4 = MinecraftClient.getInstance().method_8577();
+      TextureManager var4 = MinecraftClient.getInstance().getTextureManager();
       Object var5 = var4.method_35679(var0);
       if (var5 == null) {
          var5 = new class_9211(

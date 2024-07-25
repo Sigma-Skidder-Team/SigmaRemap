@@ -25,11 +25,11 @@ public abstract class class_4382 {
       this.field_21497 = var3;
    }
 
-   public Map<class_6943, class_6098> method_20420(class_5834 var1) {
+   public Map<class_6943, ItemStack> method_20420(class_5834 var1) {
       EnumMap var4 = Maps.newEnumMap(class_6943.class);
 
       for (class_6943 var8 : this.field_21497) {
-         class_6098 var9 = var1.method_26520(var8);
+         ItemStack var9 = var1.method_26520(var8);
          if (!var9.method_28022()) {
             var4.put(var8, var9);
          }
@@ -101,7 +101,7 @@ public abstract class class_4382 {
       return var4;
    }
 
-   public boolean method_20430(class_6098 var1) {
+   public boolean method_20430(ItemStack var1) {
       return this.field_21496.method_40057(var1.method_27960());
    }
 

@@ -160,12 +160,12 @@ public class class_1027 {
       if (!var6) {
          String var8 = var3.substring(0, var7);
          int var9 = method_4542(var8);
-         Collection var10 = this.field_5692.field_9632.field_30532.method_4797().method_40307();
+         Collection var10 = this.field_5692.thePlayer.field_30532.method_4797().method_40307();
          this.field_5688 = class_8773.method_40319(var10, new SuggestionsBuilder(var8, var9));
       } else {
-         CommandDispatcher var11 = this.field_5692.field_9632.field_30532.method_4811();
+         CommandDispatcher var11 = this.field_5692.thePlayer.field_30532.method_4811();
          if (this.field_5685 == null) {
-            this.field_5685 = var11.parse(var4, this.field_5692.field_9632.field_30532.method_4797());
+            this.field_5685 = var11.parse(var4, this.field_5692.thePlayer.field_30532.method_4797());
          }
 
          int var12 = !this.field_5702 ? 1 : var4.getCursor();
@@ -238,7 +238,7 @@ public class class_1027 {
    private void method_4546(TextFormatting var1) {
       CommandContextBuilder var4 = this.field_5685.getContext();
       SuggestionContext var5 = var4.findSuggestionContext(this.field_5698.method_8283());
-      Map var6 = this.field_5692.field_9632.field_30532.method_4811().getSmartUsage(var5.parent, this.field_5692.field_9632.field_30532.method_4797());
+      Map var6 = this.field_5692.thePlayer.field_30532.method_4811().getSmartUsage(var5.parent, this.field_5692.thePlayer.field_30532.method_4797());
       ArrayList var7 = Lists.newArrayList();
       int var8 = 0;
       Style var9 = Style.EMPTY.setFormatting(var1);
@@ -312,7 +312,7 @@ public class class_1027 {
 
          for (class_7107 var8 : this.field_5694) {
             int var9 = !this.field_5680 ? 72 + 12 * var6 : this.field_5699.field_940 - 14 - 13 - 12 * var6;
-            class_2089.method_9774(var1, this.field_5682 - 1, var9, this.field_5682 + this.field_5683 + 1, var9 + 12, this.field_5684);
+            AbstractGui.method_9774(var1, this.field_5682 - 1, var9, this.field_5682 + this.field_5683 + 1, var9 + 12, this.field_5684);
             this.field_5697.method_45402(var1, var8, (float)this.field_5682, (float)(var9 + 2), -1);
             var6++;
          }

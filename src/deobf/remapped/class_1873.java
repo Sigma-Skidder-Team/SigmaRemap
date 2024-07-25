@@ -274,11 +274,11 @@ public abstract class class_1873 extends class_2243<class_6414, class_2522> {
       this.method_8360().method_10784(this.method_8336(), var1, var2, var3);
    }
 
-   public void method_8310(class_6331 var1, class_1331 var2, class_6098 var3) {
+   public void method_8310(class_6331 var1, class_1331 var2, ItemStack var3) {
       this.method_8360().method_10765(this.method_8336(), var1, var2, var3);
    }
 
-   public List<class_6098> method_8333(class_8480 var1) {
+   public List<ItemStack> method_8333(class_8480 var1) {
       return this.method_8360().method_10796(this.method_8336(), var1);
    }
 

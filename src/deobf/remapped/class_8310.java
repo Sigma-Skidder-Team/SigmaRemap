@@ -81,9 +81,9 @@ public class class_8310 extends class_1859 {
       GL11.glLineWidth(1.0F);
       GL11.glColor4d(0.0, 0.0, 0.0, (double)(0.6F * var1));
       GL11.glAlphaFunc(519, 0.0F);
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
       GL11.glEnable(2848);
       GL11.glBegin(3);
       GL11.glVertex2f(0.0F, var6);
@@ -104,8 +104,8 @@ public class class_8310 extends class_1859 {
       GL11.glVertex2f(var6, 0.0F);
       GL11.glVertex2f((float)(this.field_42564.method_32132() - var5 + 5), (float)(this.field_42564.method_32173() - var5 + 5));
       GL11.glEnd();
-      class_3542.method_16448();
-      class_3542.method_16432();
+      RenderSystem.method_16448();
+      RenderSystem.method_16432();
       GL11.glPopMatrix();
       super.method_32178(var1);
    }

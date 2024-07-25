@@ -42,14 +42,14 @@ public class class_299 extends class_446 {
          if (this.field_1089.method_32098() && var3x == 257) {
             this.field_1089.method_32104(false);
             this.field_1089.method_32177(false);
-            if (SigmaMainClass.getInstance().getModuleManager().method_848().method_4299(this.field_1089.method_32165())) {
+            if (SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4299(this.field_1089.method_32165())) {
                return;
             }
 
             var7.field_8677 = this.field_1089.method_32165();
 
             try {
-               SigmaMainClass.getInstance().getModuleManager().method_848().method_4306();
+               SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4306();
             } catch (IOException var7x) {
             }
          }
@@ -76,14 +76,14 @@ public class class_299 extends class_446 {
          if (var2x != 1) {
             this.field_1084.method_11119(class_4043.field_19618);
             if (this.field_1084.method_11123() == 0.0F) {
-               SigmaMainClass.getInstance().getModuleManager().method_848().method_4300(this.field_1090);
-               SigmaMainClass.getInstance().getSoundManager().method_21206("switch");
+               SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4300(this.field_1090);
+               SigmaMainClass.getInstance().getSoundManager().playSound("switch");
                class_2099 var5x = (class_2099)this.method_32167().method_32167().method_32167();
                var5x.method_32102(() -> var5x.method_9847());
 
                for (Module var7x : SigmaMainClass.getInstance().getModuleManager().method_843().values()) {
                   if (var7x instanceof PremiumModule && !SigmaMainClass.getInstance().getAccountManager().method_23084()) {
-                     var7x.method_42018(false);
+                     var7x.setEnabled1(false);
                   }
                }
             }
@@ -101,7 +101,7 @@ public class class_299 extends class_446 {
          this.field_1090.field_8677 = this.field_1089.method_32165();
 
          try {
-            SigmaMainClass.getInstance().getModuleManager().method_848().method_4306();
+            SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4306();
          } catch (IOException var6) {
          }
       }
@@ -119,7 +119,7 @@ public class class_299 extends class_446 {
       if (this.field_1085.method_11123() == 1.0F && !this.field_1087) {
          this.field_1087 = true;
          class_2099 var4 = (class_2099)this.method_32167().method_32167().method_32167();
-         SigmaMainClass.getInstance().getModuleManager().method_848().method_4303(this.field_1090);
+         SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4303(this.field_1090);
          var4.method_32102(() -> var4.method_9847());
       }
 
@@ -154,7 +154,7 @@ public class class_299 extends class_446 {
       }
 
       this.field_1089.method_32188(Math.round(-var5 * (float)this.field_36278));
-      if (SigmaMainClass.getInstance().getModuleManager().method_848().method_4301() == this.field_1090) {
+      if (SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301() == this.field_1090) {
          class_73.method_99(
             (float)(this.method_32132() + this.method_32109() - 35) - var5 * (float)this.field_36278,
             (float)(this.method_32173() + 27),

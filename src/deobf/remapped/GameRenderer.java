@@ -39,7 +39,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    private float field_40643 = 1.0F;
    private float field_40608;
    private float field_40605;
-   private class_6098 field_40636;
+   private ItemStack field_40636;
    private int field_40634;
    private float field_40629;
    private float field_40637;
@@ -90,7 +90,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       this.field_40612 = var1;
       this.field_40604 = var2;
       this.field_40622 = var1.method_8574();
-      this.field_40638 = new class_8451(var1.method_8577());
+      this.field_40638 = new class_8451(var1.getTextureManager());
       this.field_40623 = new class_5778(this, var1);
       this.field_40624 = var3;
       this.field_40620 = null;
@@ -147,8 +147,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
 
          try {
-            this.field_40620 = new class_4067(this.field_40612.method_8577(), this.field_40604, this.field_40612.method_8584(), var1);
-            this.field_40620.method_18750(this.field_40612.method_8552().method_43178(), this.field_40612.method_8552().method_43198());
+            this.field_40620 = new class_4067(this.field_40612.getTextureManager(), this.field_40604, this.field_40612.method_8584(), var1);
+            this.field_40620.method_18750(this.field_40612.getMainWindow().method_43178(), this.field_40612.getMainWindow().method_43198());
             this.field_40610 = true;
          } catch (IOException var5) {
             field_40642.warn("Failed to load shader: {}", var1, var5);
@@ -172,15 +172,15 @@ public class GameRenderer implements class_6491, AutoCloseable {
       if (this.field_40626 != field_40631) {
          this.method_35934(field_40635[this.field_40626]);
       } else {
-         this.method_35951(this.field_40612.method_8516());
+         this.method_35951(this.field_40612.getRenderViewEntity());
       }
    }
 
    public void method_35958() {
       this.method_35937();
       this.field_40623.method_26130();
-      if (this.field_40612.method_8516() == null) {
-         this.field_40612.method_8550(this.field_40612.field_9632);
+      if (this.field_40612.getRenderViewEntity() == null) {
+         this.field_40612.method_8550(this.field_40612.thePlayer);
       }
 
       this.field_40648.method_41645();
@@ -221,17 +221,17 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    public void method_35938(float var1) {
-      Entity var4 = this.field_40612.method_8516();
+      Entity var4 = this.field_40612.getRenderViewEntity();
       if (var4 != null && this.field_40612.field_9601 != null) {
          this.field_40612.method_8562().method_16056("pick");
          this.field_40612.field_9662 = null;
-         double var5 = (double)this.field_40612.field_9647.method_42146();
+         double var5 = (double)this.field_40612.playerController.method_42146();
          this.field_40612.field_9587 = var4.method_37201(var5, var1, false);
          class_1343 var7 = var4.method_37335(var1);
          boolean var8 = false;
          byte var9 = 3;
          double var10 = var5;
-         if (!this.field_40612.field_9647.method_42143()) {
+         if (!this.field_40612.playerController.method_42143()) {
             if (var5 > 3.0) {
                var8 = true;
             }
@@ -274,8 +274,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
    private void method_35937() {
       float var3 = 1.0F;
-      if (this.field_40612.method_8516() instanceof class_9716) {
-         class_9716 var4 = (class_9716)this.field_40612.method_8516();
+      if (this.field_40612.getRenderViewEntity() instanceof class_9716) {
+         class_9716 var4 = (class_9716)this.field_40612.getRenderViewEntity();
          var3 = var4.method_44876();
       }
 
@@ -295,7 +295,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          double var6 = 70.0;
          if (var3) {
             var6 = this.field_40612.gameOptions.field_45543;
-            if (class_3111.method_14313()) {
+            if (Config.method_14313()) {
                var6 *= (double)class_9299.method_42795(var2, this.field_40641, this.field_40607);
             }
          }
@@ -306,20 +306,20 @@ public class GameRenderer implements class_6491, AutoCloseable {
          }
 
          if (!var8) {
-            if (class_3111.field_15481) {
-               class_3111.field_15481 = false;
-               this.field_40612.gameOptions.field_45499 = class_3111.field_15466;
+            if (Config.field_15481) {
+               Config.field_15481 = false;
+               this.field_40612.gameOptions.field_45499 = Config.field_15466;
                this.field_40612.worldRenderer.method_20018();
             }
          } else {
-            if (!class_3111.field_15481) {
-               class_3111.field_15481 = true;
-               class_3111.field_15466 = this.field_40612.gameOptions.field_45499;
+            if (!Config.field_15481) {
+               Config.field_15481 = true;
+               Config.field_15466 = this.field_40612.gameOptions.field_45499;
                this.field_40612.gameOptions.field_45499 = true;
                this.field_40612.worldRenderer.method_20018();
             }
 
-            if (class_3111.field_15481) {
+            if (Config.field_15481) {
                var6 /= 4.0;
             }
          }
@@ -341,8 +341,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_35952(class_7966 var1, float var2) {
-      if (this.field_40612.method_8516() instanceof class_5834) {
-         class_5834 var5 = (class_5834)this.field_40612.method_8516();
+      if (this.field_40612.getRenderViewEntity() instanceof class_5834) {
+         class_5834 var5 = (class_5834)this.field_40612.getRenderViewEntity();
          float var6 = (float)var5.field_29645 - var2;
          if (var5.method_26450()) {
             float var7 = Math.min((float)var5.field_29677 + var2, 20.0F);
@@ -363,8 +363,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_35935(class_7966 var1, float var2) {
-      if (this.field_40612.method_8516() instanceof class_704) {
-         class_704 var5 = (class_704)this.field_40612.method_8516();
+      if (this.field_40612.getRenderViewEntity() instanceof class_704) {
+         class_704 var5 = (class_704)this.field_40612.getRenderViewEntity();
          float var6 = var5.field_41695 - var5.field_41705;
          float var7 = -(var5.field_41695 + var6 * var2);
          float var8 = class_9299.method_42795(var2, var5.field_3857, var5.field_3859);
@@ -397,20 +397,20 @@ public class GameRenderer implements class_6491, AutoCloseable {
                this.method_35935(var1, var3);
             }
 
-            var10 = this.field_40612.method_8516() instanceof class_5834 && ((class_5834)this.field_40612.method_8516()).method_26507();
-            if (this.field_40612.gameOptions.method_40867().method_42383()
+            var10 = this.field_40612.getRenderViewEntity() instanceof class_5834 && ((class_5834)this.field_40612.getRenderViewEntity()).method_26507();
+            if (this.field_40612.gameOptions.getPointOfView().method_42383()
                && !var10
-               && !this.field_40612.gameOptions.field_45567
-               && this.field_40612.field_9647.method_42158() != class_4666.field_22756) {
+               && !this.field_40612.gameOptions.hideGUI
+               && this.field_40612.playerController.getCurrentGameType() != GameType.SPECTATOR) {
                this.field_40623.method_26126();
-               if (!class_3111.method_14424()) {
+               if (!Config.method_14424()) {
                   this.field_40622
                      .method_42243(
                         var3,
                         var1,
                         this.field_40624.method_13796(),
-                        this.field_40612.field_9632,
-                        this.field_40612.method_8587().method_28120(this.field_40612.field_9632, var3)
+                        this.field_40612.thePlayer,
+                        this.field_40612.method_8587().method_28120(this.field_40612.thePlayer, var3)
                      );
                } else {
                   class_293.method_1301(
@@ -418,8 +418,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
                      var3,
                      var1,
                      this.field_40624.method_13796(),
-                     this.field_40612.field_9632,
-                     this.field_40612.method_8587().method_28120(this.field_40612.field_9632, var3),
+                     this.field_40612.thePlayer,
+                     this.field_40612.method_8587().method_28120(this.field_40612.thePlayer, var3),
                      var6
                   );
                }
@@ -438,7 +438,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.field_40623.method_26122();
          class_9081 var11 = new class_9081();
          SigmaMainClass.getInstance().getEventManager().call(var11);
-         if (this.field_40612.gameOptions.method_40867().method_42383() && !var10 && !var11.method_29716()) {
+         if (this.field_40612.gameOptions.getPointOfView().method_42383() && !var10 && !var11.method_29716()) {
             class_450.method_2171(this.field_40612, var1);
             this.method_35952(var1, var3);
          }
@@ -450,16 +450,16 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    public void method_35947(class_8107 var1) {
-      class_3542.method_16463(5889);
-      class_3542.method_16476();
-      class_3542.method_16358(var1);
-      class_3542.method_16463(5888);
+      RenderSystem.method_16463(5889);
+      RenderSystem.method_16476();
+      RenderSystem.method_16358(var1);
+      RenderSystem.method_16463(5888);
    }
 
    public class_8107 method_35931(Camera var1, float var2, boolean var3) {
       class_7966 var6 = new class_7966();
       var6.method_36058().method_28620().method_36817();
-      if (class_3111.method_14424() && class_6588.method_30247()) {
+      if (Config.method_14424() && class_6588.method_30247()) {
          class_6588.method_30197(var6);
       }
 
@@ -478,7 +478,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          .method_36832(
             class_8107.method_36820(
                this.method_35940(var1, var2, var3),
-               (float)this.field_40612.method_8552().method_43178() / (float)this.field_40612.method_8552().method_43198(),
+               (float)this.field_40612.getMainWindow().method_43178() / (float)this.field_40612.getMainWindow().method_43198(),
                0.05F,
                this.field_40603
             )
@@ -506,15 +506,15 @@ public class GameRenderer implements class_6491, AutoCloseable {
       if (!this.field_40612.field_9589) {
          int var7 = (int)(
             this.field_40612.field_9625.method_39835()
-               * (double)this.field_40612.method_8552().method_43165()
-               / (double)this.field_40612.method_8552().method_43166()
+               * (double)this.field_40612.getMainWindow().getScaledWidth()
+               / (double)this.field_40612.getMainWindow().method_43166()
          );
          int var8 = (int)(
             this.field_40612.field_9625.method_39832()
-               * (double)this.field_40612.method_8552().method_43177()
-               / (double)this.field_40612.method_8552().method_43163()
+               * (double)this.field_40612.getMainWindow().getScaledHeight()
+               / (double)this.field_40612.getMainWindow().method_43163()
          );
-         if (var4 && this.field_40612.field_9601 != null && !class_3111.method_14350()) {
+         if (var4 && this.field_40612.field_9601 != null && !Config.method_14350()) {
             this.field_40612.method_8562().method_16056("level");
             SigmaMainClass.getInstance().getEventManager().call(new class_1711(var1, var2));
             this.method_35950(var1, var2, new class_7966());
@@ -527,31 +527,31 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
             this.field_40612.worldRenderer.method_20069();
             if (this.field_40620 != null && this.field_40610) {
-               class_3542.method_16448();
-               class_3542.method_16491();
-               class_3542.method_16458();
-               class_3542.method_16432();
-               class_3542.method_16463(5890);
-               class_3542.method_16438();
-               class_3542.method_16476();
+               RenderSystem.method_16448();
+               RenderSystem.method_16491();
+               RenderSystem.method_16458();
+               RenderSystem.method_16432();
+               RenderSystem.method_16463(5890);
+               RenderSystem.method_16438();
+               RenderSystem.method_16476();
                this.field_40620.method_18755(var1);
-               class_3542.method_16489();
-               class_3542.method_16432();
+               RenderSystem.method_16489();
+               RenderSystem.method_16432();
             }
 
             this.field_40612.method_8584().method_19717(true);
          } else {
-            class_3542.method_16392(0, 0, this.field_40612.method_8552().method_43178(), this.field_40612.method_8552().method_43198());
+            RenderSystem.method_16392(0, 0, this.field_40612.getMainWindow().method_43178(), this.field_40612.getMainWindow().method_43198());
          }
 
-         Window var9 = this.field_40612.method_8552();
-         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
-         class_3542.method_16463(5889);
-         class_3542.method_16476();
-         class_3542.method_16376(0.0, (double)var9.method_43178() / var9.method_43189(), (double)var9.method_43198() / var9.method_43189(), 0.0, 1000.0, 3000.0);
-         class_3542.method_16463(5888);
-         class_3542.method_16476();
-         class_3542.method_16413(0.0F, 0.0F, -2000.0F);
+         Window var9 = this.field_40612.getMainWindow();
+         RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
+         RenderSystem.method_16463(5889);
+         RenderSystem.method_16476();
+         RenderSystem.method_16376(0.0, (double)var9.method_43178() / var9.method_43189(), (double)var9.method_43198() / var9.method_43189(), 0.0, 1000.0, 3000.0);
+         RenderSystem.method_16463(5888);
+         RenderSystem.method_16476();
+         RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
          class_2083.method_9717();
          class_7966 var10 = new class_7966();
          if (this.field_40623.method_26135()) {
@@ -560,35 +560,35 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
          if (var4 && this.field_40612.field_9601 != null) {
             this.field_40612.method_8562().method_16050("gui");
-            if (this.field_40612.field_9632 != null) {
-               float var11 = class_9299.method_42795(var1, this.field_40612.field_9632.field_30505, this.field_40612.field_9632.field_30510);
-               if (var11 > 0.0F && this.field_40612.field_9632.method_26480(Effects.field_19732) && this.field_40612.gameOptions.field_45469 < 1.0F) {
+            if (this.field_40612.thePlayer != null) {
+               float var11 = class_9299.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal);
+               if (var11 > 0.0F && this.field_40612.thePlayer.isPotionActive(Effects.NAUSEA) && this.field_40612.gameOptions.field_45469 < 1.0F) {
                   this.method_35941(var11 * (1.0F - this.field_40612.gameOptions.field_45469));
                }
             }
 
-            if (!this.field_40612.gameOptions.field_45567 || this.field_40612.field_9623 != null) {
-               class_3542.method_16433();
-               this.method_35921(this.field_40612.method_8552().method_43165(), this.field_40612.method_8552().method_43177(), var1);
+            if (!this.field_40612.gameOptions.hideGUI || this.field_40612.field_9623 != null) {
+               RenderSystem.method_16433();
+               this.method_35921(this.field_40612.getMainWindow().getScaledWidth(), this.field_40612.getMainWindow().getScaledHeight(), var1);
                NotificationIcons.field_11030.method_38419();
-               this.field_40612.field_9614.method_13997(var10, var1);
+               this.field_40612.field_9614.renderIngameGui(var10, var1);
                if (this.field_40612.gameOptions.field_45385 && !this.field_40612.gameOptions.field_45470) {
-                  class_3111.method_14343(var10);
+                  Config.method_14343(var10);
                }
 
                if (this.field_40612.gameOptions.field_45470) {
-                  class_5099.method_23420(var10, (int)this.field_40612.method_8552().method_43189());
+                  class_5099.method_23420(var10, (int)this.field_40612.getMainWindow().method_43189());
                }
 
-               class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
+               RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
             }
 
             this.field_40612.method_8562().method_16054();
          }
 
-         class_3542.method_16438();
+         RenderSystem.method_16438();
          SigmaMainClass.getInstance().method_3311();
-         class_3542.method_16489();
+         RenderSystem.method_16489();
          if (this.field_40616 != (this.field_40612.field_9610 != null)) {
             if (this.field_40612.field_9610 != null) {
                class_2789.method_12674(this.field_40612);
@@ -638,11 +638,11 @@ public class GameRenderer implements class_6491, AutoCloseable {
                   () -> String.format(
                         Locale.ROOT,
                         "Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %f",
-                        this.field_40612.method_8552().method_43165(),
-                        this.field_40612.method_8552().method_43177(),
-                        this.field_40612.method_8552().method_43178(),
-                        this.field_40612.method_8552().method_43198(),
-                        this.field_40612.method_8552().method_43189()
+                        this.field_40612.getMainWindow().getScaledWidth(),
+                        this.field_40612.getMainWindow().getScaledHeight(),
+                        this.field_40612.getMainWindow().method_43178(),
+                        this.field_40612.getMainWindow().method_43198(),
+                        this.field_40612.getMainWindow().method_43189()
                      )
                );
                throw new class_3297(var17);
@@ -664,7 +664,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    private void method_35942() {
       if (this.field_40612.worldRenderer.method_20044() > 10 && this.field_40612.worldRenderer.method_20019() && !this.field_40612.method_8515().method_1612()) {
          class_5797 var3 = class_5523.method_25038(
-            this.field_40612.method_8552().method_43178(), this.field_40612.method_8552().method_43198(), this.field_40612.method_8584()
+            this.field_40612.getMainWindow().method_43178(), this.field_40612.getMainWindow().method_43198(), this.field_40612.method_8584()
          );
          Util.getIoWorkerExecutor().execute(() -> {
             int var4 = var3.method_26228();
@@ -695,15 +695,15 @@ public class GameRenderer implements class_6491, AutoCloseable {
       if (!this.field_40606) {
          return false;
       } else {
-         Entity var3 = this.field_40612.method_8516();
-         boolean var4 = var3 instanceof class_704 && !this.field_40612.gameOptions.field_45567;
+         Entity var3 = this.field_40612.getRenderViewEntity();
+         boolean var4 = var3 instanceof class_704 && !this.field_40612.gameOptions.hideGUI;
          if (var4 && !((class_704)var3).field_3876.field_4938) {
-            class_6098 var5 = ((class_5834)var3).method_26446();
+            ItemStack var5 = ((class_5834)var3).method_26446();
             class_7474 var6 = this.field_40612.field_9587;
             if (var6 != null && var6.method_33990() == class_1430.field_7717) {
                class_1331 var7 = ((class_9529)var6).method_43955();
                class_2522 var8 = this.field_40612.field_9601.method_28262(var7);
-               if (this.field_40612.field_9647.method_42158() != class_4666.field_22756) {
+               if (this.field_40612.playerController.getCurrentGameType() != GameType.SPECTATOR) {
                   class_9115 var9 = new class_9115(this.field_40612.field_9601, var7, false);
                   var4 = !var5.method_28022()
                      && (
@@ -722,17 +722,17 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
    public void method_35950(float var1, long var2, class_7966 var4) {
       this.field_40623.method_26128(var1);
-      if (this.field_40612.method_8516() == null) {
-         this.field_40612.method_8550(this.field_40612.field_9632);
+      if (this.field_40612.getRenderViewEntity() == null) {
+         this.field_40612.method_8550(this.field_40612.thePlayer);
       }
 
       this.method_35938(var1);
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_6588.method_30311(this.field_40612, this.field_40648, var1, var2);
       }
 
       this.field_40612.method_8562().method_16056("center");
-      boolean var7 = class_3111.method_14424();
+      boolean var7 = Config.method_14424();
       if (var7) {
          class_6588.method_30139(var1, var2);
       }
@@ -741,11 +741,11 @@ public class GameRenderer implements class_6491, AutoCloseable {
       this.field_40612.method_8562().method_16050("camera");
       Camera var9 = this.field_40648;
       this.field_40640 = (float)(this.field_40612.gameOptions.field_45537 * 16);
-      if (class_3111.method_14324()) {
+      if (Config.method_14324()) {
          this.field_40640 *= 0.95F;
       }
 
-      if (class_3111.method_14296()) {
+      if (Config.method_14296()) {
          this.field_40640 *= 0.83F;
       }
 
@@ -761,11 +761,11 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.method_35935(var10, var1);
       }
 
-      float var12 = class_9299.method_42795(var1, this.field_40612.field_9632.field_30505, this.field_40612.field_9632.field_30510)
+      float var12 = class_9299.method_42795(var1, this.field_40612.thePlayer.prevTimeInPortal, this.field_40612.thePlayer.timeInPortal)
          * this.field_40612.gameOptions.field_45469
          * this.field_40612.gameOptions.field_45469;
       if (var12 > 0.0F) {
-         int var13 = !this.field_40612.field_9632.method_26480(Effects.field_19732) ? 20 : 7;
+         int var13 = !this.field_40612.thePlayer.isPotionActive(Effects.NAUSEA) ? 20 : 7;
          float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
          var14 *= var14;
          class_2426 var15 = new class_2426(0.0F, class_9299.field_47448 / 2.0F, class_9299.field_47448 / 2.0F);
@@ -783,9 +783,9 @@ public class GameRenderer implements class_6491, AutoCloseable {
       this.method_35947(var18);
       var9.method_41643(
          this.field_40612.field_9601,
-         (Entity)(this.field_40612.method_8516() != null ? this.field_40612.method_8516() : this.field_40612.field_9632),
-         !this.field_40612.gameOptions.method_40867().method_42383(),
-         this.field_40612.gameOptions.method_40867().method_42384(),
+         (Entity)(this.field_40612.getRenderViewEntity() != null ? this.field_40612.getRenderViewEntity() : this.field_40612.thePlayer),
+         !this.field_40612.gameOptions.getPointOfView().method_42383(),
+         this.field_40612.gameOptions.getPointOfView().method_42384(),
          var1
       );
       if (class_7860.field_40044.method_3596()) {
@@ -806,17 +806,17 @@ public class GameRenderer implements class_6491, AutoCloseable {
       }
 
       this.field_40612.method_8562().method_16050("hand");
-      class_3542.method_16438();
-      class_3542.method_16358(var4.method_36058().method_28620());
+      RenderSystem.method_16438();
+      RenderSystem.method_16358(var4.method_36058().method_28620());
       SigmaMainClass.getInstance().method_3316();
-      class_3542.method_16489();
+      RenderSystem.method_16489();
       if (this.field_40627 && !class_6588.field_33945) {
          if (var7) {
             class_293.method_1310(this, var4, var9, var1);
             class_6588.method_30169();
          }
 
-         class_3542.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
+         RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
          if (!var7) {
             this.method_35923(var4, var9, var1);
          } else {
@@ -843,7 +843,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
    private void method_35927() {
       this.field_40628 = 0;
-      if (!class_3111.method_14401() || !class_3111.method_14411()) {
+      if (!Config.method_14401() || !Config.method_14411()) {
          this.field_40639 = 0L;
          this.field_40645 = 0;
       } else if (this.field_40612.method_8566()) {
@@ -853,7 +853,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             if (!var4 && !(this.field_40612.field_9623 instanceof class_881)) {
                if (this.field_40611 > 0) {
                   class_5099.field_26293.method_24314();
-                  class_3111.method_14399((long)this.field_40611);
+                  Config.method_14399((long)this.field_40611);
                   class_5099.field_26293.method_24313();
                   this.field_40628 = this.field_40611;
                }
@@ -893,7 +893,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
                }
             } else {
                if (this.field_40612.field_9623 instanceof class_881) {
-                  class_3111.method_14399(20L);
+                  Config.method_14399(20L);
                }
 
                this.field_40639 = 0L;
@@ -904,12 +904,12 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_35933() {
-      class_3111.method_14339();
+      Config.method_14339();
       class_6941.method_31755();
       if (!this.field_40618) {
          class_9696.method_44802();
-         if (class_3111.method_14334() == 64 && class_3111.method_14332() == 32) {
-            class_3111.method_14340(true);
+         if (Config.method_14334() == 64 && Config.method_14332() == 32) {
+            Config.method_14340(true);
          }
 
          this.field_40618 = true;
@@ -917,17 +917,17 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
       class_174 var3 = this.field_40612.field_9601;
       if (var3 != null) {
-         if (class_3111.method_14239() != null) {
+         if (Config.method_14239() != null) {
             String var4 = "HD_U".replace("HD_U", "HD Ultra").replace("L", "Light");
-            String var5 = var4 + " " + class_3111.method_14239();
+            String var5 = var4 + " " + Config.method_14239();
             StringTextComponent var6 = new StringTextComponent(class_6956.method_31803("of.message.newVersion", "§n" + var5 + "§r"));
             var6.setStyle(Style.EMPTY.setClickEvent(new ClickEvent(ClickEvent$class_47.OPEN_URL, "https://optifine.net/downloads")));
             this.field_40612.field_9614.method_13991().method_18676(var6);
-            class_3111.method_14388((String)null);
+            Config.method_14388((String)null);
          }
 
-         if (class_3111.method_14427()) {
-            class_3111.method_14340(false);
+         if (Config.method_14427()) {
+            Config.method_14340(false);
             StringTextComponent var7 = new StringTextComponent(class_6956.method_31803("of.message.java64Bit"));
             this.field_40612.field_9614.method_13991().method_18676(var7);
          }
@@ -939,7 +939,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
       if (this.field_40619 != var3) {
          class_8192.method_37524(this.field_40619, var3);
-         class_3111.method_14430();
+         Config.method_14430();
          this.field_40639 = 0L;
          this.field_40645 = 0;
          this.field_40619 = var3;
@@ -955,10 +955,10 @@ public class GameRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_35929() {
-      if (this.field_40612.field_9601 != null && class_3111.method_14294() && class_124.method_386("CheckGlErrorFrameFinish", 10000L)) {
-         int var3 = class_1920.method_8925();
+      if (this.field_40612.field_9601 != null && Config.method_14294() && class_124.method_386("CheckGlErrorFrameFinish", 10000L)) {
+         int var3 = GlStateManager.method_8925();
          if (var3 != 0 && class_6941.method_31754(var3)) {
-            String var4 = class_3111.method_14316(var3);
+            String var4 = Config.method_14316(var3);
             StringTextComponent var5 = new StringTextComponent(class_6956.method_31803("of.message.openglError", var3, var4));
             this.field_40612.field_9614.method_13991().method_18676(var5);
          }
@@ -1019,7 +1019,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
       return class_2310.field_11562;
    }
 
-   public void method_35946(class_6098 var1) {
+   public void method_35946(ItemStack var1) {
       this.field_40636 = var1;
       this.field_40634 = 40;
       this.field_40629 = this.field_40617.nextFloat() * 2.0F - 1.0F;
@@ -1036,11 +1036,11 @@ public class GameRenderer implements class_6491, AutoCloseable {
          float var11 = var10 * (float) Math.PI;
          float var12 = this.field_40629 * (float)(var1 / 4);
          float var13 = this.field_40637 * (float)(var2 / 4);
-         class_3542.method_16374();
-         class_3542.method_16438();
-         class_3542.method_16451();
-         class_3542.method_16428();
-         class_3542.method_16393();
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16438();
+         RenderSystem.method_16451();
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16393();
          class_7966 var14 = new class_7966();
          var14.method_36063();
          var14.method_36065(
@@ -1057,16 +1057,16 @@ public class GameRenderer implements class_6491, AutoCloseable {
          this.field_40612.method_8511().method_40269(this.field_40636, class_5612.field_28495, 15728880, class_5367.field_27381, var14, var16);
          var14.method_36064();
          var16.method_17415();
-         class_3542.method_16399();
-         class_3542.method_16489();
-         class_3542.method_16361();
-         class_3542.method_16491();
+         RenderSystem.method_16399();
+         RenderSystem.method_16489();
+         RenderSystem.method_16361();
+         RenderSystem.method_16491();
       }
    }
 
    private void method_35941(float var1) {
-      int var4 = this.field_40612.method_8552().method_43165();
-      int var5 = this.field_40612.method_8552().method_43177();
+      int var4 = this.field_40612.getMainWindow().getScaledWidth();
+      int var5 = this.field_40612.getMainWindow().getScaledHeight();
       double var6 = class_9299.method_42794((double)var1, 2.0, 1.0);
       float var8 = 0.2F * var1;
       float var9 = 0.4F * var1;
@@ -1075,12 +1075,12 @@ public class GameRenderer implements class_6491, AutoCloseable {
       double var13 = (double)var5 * var6;
       double var15 = ((double)var4 - var11) / 2.0;
       double var17 = ((double)var5 - var13) / 2.0;
-      class_3542.method_16491();
-      class_3542.method_16387(false);
-      class_3542.method_16488();
-      class_3542.method_16425(class_5033.field_26047, class_8535.field_43691, class_5033.field_26047, class_8535.field_43691);
-      class_3542.method_16480(var8, var9, var10, 1.0F);
-      this.field_40612.method_8577().method_35674(field_40614);
+      RenderSystem.method_16491();
+      RenderSystem.method_16387(false);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16425(class_5033.field_26047, class_8535.field_43691, class_5033.field_26047, class_8535.field_43691);
+      RenderSystem.color4f(var8, var9, var10, 1.0F);
+      this.field_40612.getTextureManager().bindTexture(field_40614);
       class_8042 var19 = class_8042.method_36499();
       class_9633 var20 = var19.method_36501();
       var20.method_44471(7, class_7985.field_40912);
@@ -1089,11 +1089,11 @@ public class GameRenderer implements class_6491, AutoCloseable {
       var20.method_35761(var15 + var11, var17, -90.0).method_35745(1.0F, 0.0F).method_35735();
       var20.method_35761(var15, var17, -90.0).method_35745(0.0F, 0.0F).method_35735();
       var19.method_36500();
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16437();
-      class_3542.method_16448();
-      class_3542.method_16387(true);
-      class_3542.method_16428();
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16448();
+      RenderSystem.method_16387(true);
+      RenderSystem.enableDepthTest();
    }
 
    public float method_35956(float var1) {

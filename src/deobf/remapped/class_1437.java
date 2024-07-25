@@ -36,8 +36,8 @@ public class class_1437 extends class_4785<class_1437> {
 
    @Override
    public void method_21644(class_7966 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
-      class_2089.method_9771(var1, this.field_7753.field_40420.field_948, this.field_7759, var4 + 2, var3 + 1, 16777215);
-      class_2089.method_9771(var1, this.field_7753.field_40420.field_948, this.field_7754, var4 + 2 + 10, var3 + 1 + 9, !this.field_7756 ? 6316128 : 9474192);
-      class_2089.method_9771(var1, this.field_7753.field_40420.field_948, this.field_7760, var4 + 2 + 10, var3 + 1 + 18, !this.field_7755 ? 6316128 : 9474192);
+      AbstractGui.method_9771(var1, this.field_7753.field_40420.field_948, this.field_7759, var4 + 2, var3 + 1, 16777215);
+      AbstractGui.method_9771(var1, this.field_7753.field_40420.field_948, this.field_7754, var4 + 2 + 10, var3 + 1 + 9, !this.field_7756 ? 6316128 : 9474192);
+      AbstractGui.method_9771(var1, this.field_7753.field_40420.field_948, this.field_7760, var4 + 2 + 10, var3 + 1 + 18, !this.field_7755 ? 6316128 : 9474192);
    }
 }

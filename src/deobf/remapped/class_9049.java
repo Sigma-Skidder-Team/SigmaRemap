@@ -498,10 +498,10 @@ public class class_9049 {
             }
          }
 
-         int var11 = class_3111.method_14242(var3, var5) & 2147483647;
+         int var11 = Config.method_14242(var3, var5) & 2147483647;
 
          for (int var12 = 0; var12 < var0.field_7538; var12++) {
-            var11 = class_3111.method_14419(var11);
+            var11 = Config.method_14419(var11);
          }
 
          int var13 = 0;
@@ -986,7 +986,7 @@ public class class_9049 {
 
       if (var17 == 0) {
          return var17;
-      } else if (!class_3111.method_14309()) {
+      } else if (!Config.method_14309()) {
          return var17;
       } else {
          switch (var5) {
@@ -1152,7 +1152,7 @@ public class class_9049 {
       } else {
          if (var0.field_7532 != null) {
             class_5155 var8 = method_41571(var1, var2, var3, var7, var4);
-            if (!class_3111.method_14352(var8, var0.field_7532)) {
+            if (!Config.method_14352(var8, var0.field_7532)) {
                return false;
             }
          }
@@ -1238,7 +1238,7 @@ public class class_9049 {
          if (var7 == null) {
             return null;
          } else {
-            if (class_3111.method_14331()) {
+            if (Config.method_14331()) {
                var7 = class_8316.method_38342(var0, var3, var2, var6, var7);
             }
 
@@ -1495,15 +1495,15 @@ public class class_9049 {
       field_46324 = (class_1385[][])null;
       field_46328 = null;
       field_46353 = (Map[][])null;
-      if (class_3111.method_14370()) {
-         class_8169[] var1 = class_3111.method_14347();
+      if (Config.method_14370()) {
+         class_8169[] var1 = Config.method_14347();
 
          for (int var2 = var1.length - 1; var2 >= 0; var2--) {
             class_8169 var3 = var1[var2];
             method_41534(var0, var3);
          }
 
-         method_41534(var0, class_3111.method_14415());
+         method_41534(var0, Config.method_14415());
          field_46349 = var0.method_38515(field_46323);
          field_46328 = new Map[var0.method_38525() + 1];
          field_46342 = new Map[var0.method_38525() + 1];
@@ -1526,13 +1526,13 @@ public class class_9049 {
 
       for (int var5 = 0; var5 < var2.length; var5++) {
          String var6 = var2[var5];
-         class_3111.method_14277("ConnectedTextures: " + var6);
+         Config.method_14277("ConnectedTextures: " + var6);
 
          try {
             Identifier var7 = new Identifier(var6);
             InputStream var8 = var1.method_37466(class_3168.field_15844, var7);
             if (var8 == null) {
-               class_3111.method_14317("ConnectedTextures file not found: " + var6);
+               Config.method_14317("ConnectedTextures file not found: " + var6);
             } else {
                class_8407 var9 = new class_8407();
                var9.load(var8);
@@ -1545,7 +1545,7 @@ public class class_9049 {
                }
             }
          } catch (FileNotFoundException var11) {
-            class_3111.method_14317("ConnectedTextures file not found: " + var6);
+            Config.method_14317("ConnectedTextures file not found: " + var6);
          } catch (Exception var12) {
             var12.printStackTrace();
          }
@@ -1554,7 +1554,7 @@ public class class_9049 {
       field_46348 = method_41539(var4);
       field_46324 = method_41539(var3);
       field_46352 = method_41535();
-      class_3111.method_14277("Multipass connected textures: " + field_46352);
+      Config.method_14277("Multipass connected textures: " + field_46352);
    }
 
    public static void method_41546(class_8359 var0) {
@@ -1566,7 +1566,7 @@ public class class_9049 {
    private static class_5155 method_41580(class_8359 var0, Identifier var1) {
       class_5155 var2 = var0.method_38528(var1);
       if (var2 == null || var2 instanceof class_2008) {
-         class_3111.method_14317("Missing CTM sprite: " + var1);
+         Config.method_14317("Missing CTM sprite: " + var1);
       }
 
       return var2;
@@ -1660,11 +1660,11 @@ public class class_9049 {
          for (int var2 = 0; var2 < var0.field_7512.length; var2++) {
             class_5155 var3 = var0.field_7512[var2];
             if (!(var3 instanceof class_5155)) {
-               class_3111.method_14317("TextureAtlasSprite is not TextureAtlasSprite: " + var3 + ", name: " + var3.method_23644());
+               Config.method_14317("TextureAtlasSprite is not TextureAtlasSprite: " + var3 + ", name: " + var3.method_23644());
             } else {
                int var4 = var3.method_23624();
                if (var4 < 0) {
-                  class_3111.method_14317("Invalid tile ID: " + var4 + ", icon: " + var3.method_23644());
+                  Config.method_14317("Invalid tile ID: " + var4 + ", icon: " + var3.method_23644());
                } else {
                   method_41584(var0, var1, var4);
                }
@@ -1678,7 +1678,7 @@ public class class_9049 {
          for (int var2 = 0; var2 < var0.field_7515.length; var2++) {
             int var3 = var0.field_7515[var2].method_43838();
             if (var3 < 0) {
-               class_3111.method_14317("Invalid block ID: " + var3);
+               Config.method_14317("Invalid block ID: " + var3);
             } else {
                method_41584(var0, var1, var3);
             }
@@ -1724,12 +1724,12 @@ public class class_9049 {
    private static void method_41581(List var0, String var1, String var2) {
       String var3 = "optifine/ctm/default/";
       Identifier var4 = new Identifier(var1);
-      class_8169 var5 = class_3111.method_14233(var4);
+      class_8169 var5 = Config.method_14233(var4);
       if (var5 != null) {
          if (var5.method_37470().equals("Programmer Art")) {
             String var6 = var3 + "programmer_art/";
             var0.add(var6 + var2);
-         } else if (var5 == class_3111.method_14415()) {
+         } else if (var5 == Config.method_14415()) {
             var0.add(var3 + var2);
          }
       }

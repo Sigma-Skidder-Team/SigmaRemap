@@ -31,7 +31,7 @@ import org.apache.logging.log4j.Logger;
 public abstract class Entity implements class_9875, class_5801 {
    public static final Logger field_41741 = LogManager.getLogger();
    private static final AtomicInteger field_41718 = new AtomicInteger();
-   private static final List<class_6098> field_41696 = Collections.<class_6098>emptyList();
+   private static final List<ItemStack> field_41696 = Collections.<ItemStack>emptyList();
    private static final class_4092 field_41769 = new class_4092(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
    private static double field_41756 = 1.0;
    private final class_6629<?> field_41719;
@@ -409,9 +409,9 @@ public abstract class Entity implements class_9875, class_5801 {
    }
 
    public void method_37226(class_7412 var1, class_1343 var2) {
-      if (MinecraftClient.getInstance().field_9632 != null
-         && MinecraftClient.getInstance().field_9632.method_37243() != null
-         && MinecraftClient.getInstance().field_9632.method_37243().method_37145() == this.method_37145()) {
+      if (MinecraftClient.getInstance().thePlayer != null
+         && MinecraftClient.getInstance().thePlayer.method_37243() != null
+         && MinecraftClient.getInstance().thePlayer.method_37243().method_37145() == this.method_37145()) {
          class_5088 var5 = new class_5088(var2.field_7336, var2.field_7333, var2.field_7334);
          SigmaMainClass.getInstance().getEventManager().call(var5);
          if (var5.method_29716()) {
@@ -1494,16 +1494,16 @@ public abstract class Entity implements class_9875, class_5801 {
 
    @Nullable
    public class_91 method_37313(class_8525 var1, int var2) {
-      return this.method_37311(new class_6098(var1), (float)var2);
+      return this.method_37311(new ItemStack(var1), (float)var2);
    }
 
    @Nullable
-   public class_91 method_37310(class_6098 var1) {
+   public class_91 method_37310(ItemStack var1) {
       return this.method_37311(var1, 0.0F);
    }
 
    @Nullable
-   public class_91 method_37311(class_6098 var1, float var2) {
+   public class_91 method_37311(ItemStack var1, float var2) {
       if (!var1.method_28022()) {
          if (!this.field_41768.field_33055) {
             class_91 var5 = new class_91(this.field_41768, this.method_37302(), this.method_37309() + (double)var2, this.method_37156(), var1);
@@ -1742,19 +1742,19 @@ public abstract class Entity implements class_9875, class_5801 {
    public void method_37082() {
    }
 
-   public Iterable<class_6098> method_37294() {
+   public Iterable<ItemStack> method_37294() {
       return field_41696;
    }
 
-   public Iterable<class_6098> method_37262() {
+   public Iterable<ItemStack> method_37262() {
       return field_41696;
    }
 
-   public Iterable<class_6098> method_37342() {
+   public Iterable<ItemStack> method_37342() {
       return Iterables.concat(this.method_37294(), this.method_37262());
    }
 
-   public void method_37349(class_6943 var1, class_6098 var2) {
+   public void method_37349(class_6943 var1, ItemStack var2) {
    }
 
    public boolean method_37264() {
@@ -2381,7 +2381,7 @@ public abstract class Entity implements class_9875, class_5801 {
       return new class_1343(0.0, (double)this.method_37277(), (double)(this.method_37086() * 0.4F));
    }
 
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       return false;
    }
 

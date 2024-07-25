@@ -176,10 +176,10 @@ public class class_2605 extends class_8374<class_1439> {
          int var8 = var4 - 12;
          int var9 = this.field_12881.field_948.method_45379(var2);
          this.method_9772(var1, var7 - 3, var8 - 3, var7 + var9 + 3, var8 + 8 + 3, -1073741824, -1073741824);
-         class_3542.method_16438();
-         class_3542.method_16413(0.0F, 0.0F, 400.0F);
+         RenderSystem.method_16438();
+         RenderSystem.method_16413(0.0F, 0.0F, 400.0F);
          this.field_12881.field_948.method_45392(var1, var2, (float)var7, (float)var8, -1);
-         class_3542.method_16489();
+         RenderSystem.method_16489();
       }
    }
 

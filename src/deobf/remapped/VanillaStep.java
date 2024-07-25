@@ -8,11 +8,11 @@ public class VanillaStep extends Module {
 
    @EventListen
    private void method_30574(class_7982 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (!var1.method_36184()) {
-            mc.field_9632.field_41733 = this.getFloatValueByName("Maximum heigh");
+            client.thePlayer.field_41733 = this.getFloatValueByName("Maximum heigh");
          } else {
-            mc.field_9632.field_41733 = 0.5F;
+            client.thePlayer.field_41733 = 0.5F;
          }
       }
    }

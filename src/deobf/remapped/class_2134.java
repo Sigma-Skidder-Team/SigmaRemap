@@ -137,21 +137,21 @@ public class class_2134 extends class_7186 {
       this.method_32923();
    }
 
-   public void method_9970(class_704 var1, class_6098 var2) {
+   public void method_9970(class_704 var1, ItemStack var2) {
       if (!this.field_10690.containsKey(var1)) {
          class_4986 var5 = new class_4986(this, var1);
          this.field_10690.put(var1, var5);
          this.field_10684.add(var5);
       }
 
-      if (!var1.field_3853.method_32405(var2)) {
+      if (!var1.inventory.method_32405(var2)) {
          this.field_10683.remove(var1.method_45509().getString());
       }
 
       for (int var9 = 0; var9 < this.field_10684.size(); var9++) {
          class_4986 var6 = this.field_10684.get(var9);
          String var7 = var6.field_25824.method_45509().getString();
-         if (!var6.field_25824.field_41751 && (var6.field_25824.field_3853.method_32405(var2) || var2.method_27966())) {
+         if (!var6.field_25824.field_41751 && (var6.field_25824.inventory.method_32405(var2) || var2.method_27966())) {
             if (!var2.method_27966() && var6.field_25824.field_41768.method_29545() == this.field_10685 && this.field_10681) {
                this.method_9972(
                   class_8086.field_41393,
@@ -212,7 +212,7 @@ public class class_2134 extends class_7186 {
       }
    }
 
-   public static void method_9969(class_6098 var0, class_1331 var1, String var2, class_8086 var3) {
+   public static void method_9969(ItemStack var0, class_1331 var1, String var2, class_8086 var3) {
       class_3416 var6;
       if (var0.method_28002() && var0.method_27990().method_25939("Decorations", 9)) {
          var6 = var0.method_27990().method_25927("Decorations", 10);
@@ -289,7 +289,7 @@ public class class_2134 extends class_7186 {
    }
 
    @Nullable
-   public Packet<?> method_9973(class_6098 var1, class_6163 var2, class_704 var3) {
+   public Packet<?> method_9973(ItemStack var1, class_6163 var2, class_704 var3) {
       class_4986 var6 = this.field_10690.get(var3);
       return var6 != null ? var6.method_22949(var1) : null;
    }

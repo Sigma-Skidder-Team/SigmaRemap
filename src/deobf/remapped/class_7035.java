@@ -12,9 +12,9 @@ public class class_7035 extends class_1694 {
    @Override
    public class_9530 method_7622(class_1455 var1) {
       MinecraftClient var4 = MinecraftClient.getInstance();
-      class_6098 var5 = !class_7051.method_32417(class_1857.field_9414)
-         ? class_6098.field_31203
-         : var4.field_9632.field_3853.field_36401.get(class_1857.field_9414);
+      ItemStack var5 = !class_7051.method_32417(class_1857.field_9414)
+         ? ItemStack.EMPTY
+         : var4.thePlayer.inventory.field_36401.get(class_1857.field_9414);
       class_2451 var6 = var5.method_27960();
       if (var6 != null) {
          class_9530 var7 = new class_9530(

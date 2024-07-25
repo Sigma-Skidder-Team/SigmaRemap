@@ -8,7 +8,7 @@ public abstract class class_2875 extends class_4088 {
 
    public abstract boolean method_13210(class_704 var1, boolean var2);
 
-   public abstract class_6098 method_13209(class_704 var1, class_6098 var2);
+   public abstract ItemStack method_13209(class_704 var1, ItemStack var2);
 
    public abstract boolean method_13212(class_2522 var1);
 
@@ -58,31 +58,31 @@ public abstract class class_2875 extends class_4088 {
          );
    }
 
-   public boolean method_13211(class_6098 var1) {
+   public boolean method_13211(ItemStack var1) {
       return false;
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
-      class_6098 var5 = class_6098.field_31203;
+   public ItemStack method_18874(class_704 var1, int var2) {
+      ItemStack var5 = ItemStack.EMPTY;
       class_7934 var6 = this.field_19926.get(var2);
       if (var6 != null && var6.method_35884()) {
-         class_6098 var7 = var6.method_35898();
+         ItemStack var7 = var6.method_35898();
          var5 = var7.method_27973();
          if (var2 != 2) {
             if (var2 != 0 && var2 != 1) {
                if (var2 >= 3 && var2 < 39) {
                   int var8 = !this.method_13211(var5) ? 0 : 1;
                   if (!this.method_18892(var7, var8, 2, false)) {
-                     return class_6098.field_31203;
+                     return ItemStack.EMPTY;
                   }
                }
             } else if (!this.method_18892(var7, 3, 39, false)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
          } else {
             if (!this.method_18892(var7, 3, 39, true)) {
-               return class_6098.field_31203;
+               return ItemStack.EMPTY;
             }
 
             var6.method_35888(var7, var5);
@@ -91,11 +91,11 @@ public abstract class class_2875 extends class_4088 {
          if (!var7.method_28022()) {
             var6.method_35887();
          } else {
-            var6.method_35896(class_6098.field_31203);
+            var6.method_35896(ItemStack.EMPTY);
          }
 
          if (var7.method_27997() == var5.method_27997()) {
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
          }
 
          var6.method_35892(var1, var7);

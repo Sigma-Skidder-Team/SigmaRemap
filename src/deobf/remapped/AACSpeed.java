@@ -20,7 +20,7 @@ public class AACSpeed extends Module {
    public void onEnable() {
       this.field_30964 = -1;
       this.field_30963 = 0;
-      this.field_30961 = mc.field_9632.method_37309();
+      this.field_30961 = client.thePlayer.method_37309();
       this.field_30965 = class_8865.method_40787()[0];
       this.field_30960 = 0;
    }
@@ -43,7 +43,7 @@ public class AACSpeed extends Module {
    public void method_27641(class_7767 var1) {
       if (this.method_42015()) {
          String var4 = this.getStringValueByName("Mode");
-         if (class_314.method_1413(mc.field_9632, 0.01F)) {
+         if (class_314.method_1413(client.thePlayer, 0.01F)) {
             if (this.field_30960 <= 1) {
                this.field_30960++;
             } else {
@@ -52,16 +52,16 @@ public class AACSpeed extends Module {
             }
 
             if (class_314.method_1434() && this.getBooleanValueByName("Auto Jump")) {
-               mc.field_9632.method_26595();
-               var1.method_35235(mc.field_9632.method_37098().field_7333);
+               client.thePlayer.method_26595();
+               var1.method_35235(client.thePlayer.method_37098().field_7333);
             }
          } else if (this.field_30964 >= 0) {
             this.field_30964++;
          }
 
-         if (mc.field_9632.field_29673 == 0.0F && mc.field_9632.field_29676 == 0.0F
-            || mc.field_9632.field_41744
-            || mc.field_9632.field_29673 <= 0.0F) {
+         if (client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F
+            || client.thePlayer.field_41744
+            || client.thePlayer.field_29673 <= 0.0F) {
             this.field_30963 = 0;
          }
 
@@ -73,20 +73,20 @@ public class AACSpeed extends Module {
                this.field_30959 = this.method_27644(this.field_30964, this.field_30963);
                this.field_30958 = this.method_27640(this.field_30964);
                var1.method_35235(this.field_30958);
-               mc.field_9632.method_37098().field_7333 = this.field_30958;
+               client.thePlayer.method_37098().field_7333 = this.field_30958;
                break;
             case "Fast2":
                this.field_30959 = this.method_27642(this.field_30964, this.field_30963);
                this.field_30958 = this.method_27643(this.field_30964);
                var1.method_35235(this.field_30958);
-               mc.field_9632.method_37098().field_7333 = this.field_30958;
+               client.thePlayer.method_37098().field_7333 = this.field_30958;
          }
 
          if (!class_314.method_1434()) {
             this.field_30959 = 0.0;
          }
 
-         if (mc.field_9632.field_41744) {
+         if (client.thePlayer.field_41744) {
             this.field_30959 = this.field_30959 * 0.9 < 0.27 ? 0.27 : this.field_30959 * 0.9;
          }
 
@@ -102,7 +102,7 @@ public class AACSpeed extends Module {
    public void method_27639(class_1711 var1) {
       if (this.method_42015()) {
          if (this.getBooleanValueByName("Fluid Fix")) {
-            if (!mc.field_9632.field_41744 && !mc.field_9632.field_41774) {
+            if (!client.thePlayer.field_41744 && !client.thePlayer.field_41774) {
                String var4 = this.getStringValueByName("Mode");
                float var5 = 13.0F;
                if (!var4.equals("Fast1")) {
@@ -115,12 +115,12 @@ public class AACSpeed extends Module {
 
                if (!((float)this.field_30964 > var5) && this.field_30964 >= 0) {
                   double var6 = Math.cos(Math.toRadians((double)((float)this.field_30964 / var5 * 180.0F - 90.0F)));
-                  mc.field_9632.field_41736.field_7333 = this.field_30961 + var6;
-                  mc.field_9632.field_3859 = 0.0F;
+                  client.thePlayer.field_41736.field_7333 = this.field_30961 + var6;
+                  client.thePlayer.field_3859 = 0.0F;
                }
             } else {
-               mc.field_9632.field_41736.field_7333 = mc.field_9632.method_37241().field_19937;
-               this.field_30961 = mc.field_9632.method_37309();
+               client.thePlayer.field_41736.field_7333 = client.thePlayer.method_37241().field_19937;
+               this.field_30961 = client.thePlayer.method_37309();
                this.field_30964 = -1;
             }
          }
@@ -156,8 +156,8 @@ public class AACSpeed extends Module {
    }
 
    private double method_27640(int var1) {
-      double var4 = mc.field_9632.method_37098().field_7333;
-      boolean var6 = class_314.method_1413(mc.field_9632, 0.37F);
+      double var4 = client.thePlayer.method_37098().field_7333;
+      boolean var6 = class_314.method_1413(client.thePlayer, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.05, -0.12, -0.192, -0.26, -0.33, !var6 ? -0.4 : -0.0, !var6 ? -0.47 : -0.13};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -167,7 +167,7 @@ public class AACSpeed extends Module {
    }
 
    private double method_27644(int var1, int var2) {
-      boolean var5 = class_314.method_1413(mc.field_9632, 0.37F);
+      boolean var5 = class_314.method_1413(client.thePlayer, 0.37F);
       double[] var6 = new double[]{0.497, 0.671, 0.719, 0.733, 0.738};
       double[] var7 = new double[]{0.303, 0.407, 0.436, 0.444, 0.447};
       double[] var8 = new double[]{0.0, 0.003, 0.004, 0.004, 0.004};
@@ -203,8 +203,8 @@ public class AACSpeed extends Module {
    }
 
    private double method_27643(int var1) {
-      double var4 = mc.field_9632.method_37098().field_7333;
-      boolean var6 = class_314.method_1413(mc.field_9632, 0.37F);
+      double var4 = client.thePlayer.method_37098().field_7333;
+      boolean var6 = class_314.method_1413(client.thePlayer, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.06, -0.14, -0.22, -0.29, 0.0, -0.082, -0.11, 0.0, -0.18};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -222,7 +222,7 @@ public class AACSpeed extends Module {
    }
 
    private double method_27642(int var1, int var2) {
-      boolean var5 = class_314.method_1413(mc.field_9632, 0.37F);
+      boolean var5 = class_314.method_1413(client.thePlayer, 0.37F);
       double[] var6 = new double[]{0.497, 0.709, 0.746, 0.753};
       double[] var7 = new double[]{0.303, 0.43, 0.4525, 0.456};
       double[] var8 = new double[]{0.0, 0.0036, 0.0041, 0.0042};
@@ -293,11 +293,11 @@ public class AACSpeed extends Module {
             var2.run();
          }
 
-         if (mc.field_9632.field_29673 <= 0.0F) {
+         if (client.thePlayer.field_29673 <= 0.0F) {
             var5 -= 0.06;
          }
 
-         if (mc.field_9632.field_41744) {
+         if (client.thePlayer.field_41744) {
             var5 -= 0.1;
             var2.run();
          }

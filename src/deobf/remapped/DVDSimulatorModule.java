@@ -19,16 +19,16 @@ public class DVDSimulatorModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_20136 = (float)((double)(mc.window.method_43166() - this.field_20140.field_36201) * Math.random());
-      this.field_20137 = (float)((double)(mc.window.method_43163() - this.field_20140.field_36203) * Math.random());
+      this.field_20136 = (float)((double)(client.window.method_43166() - this.field_20140.field_36201) * Math.random());
+      this.field_20137 = (float)((double)(client.window.method_43163() - this.field_20140.field_36203) * Math.random());
       this.method_19211();
    }
 
    @EventListen
    private void method_19210(class_3278 var1) throws IOException {
-      if (this.method_42015() && mc.field_9632 != null && mc.field_9601 != null) {
-         int var4 = mc.window.method_43163();
-         int var5 = mc.window.method_43166();
+      if (this.method_42015() && client.thePlayer != null && client.field_9601 != null) {
+         int var4 = client.window.method_43163();
+         int var5 = client.window.method_43166();
          byte var6 = 2;
          if (!(this.field_20137 <= (float)var6)) {
             if (this.field_20137 + (float)this.field_20140.field_36203 > (float)var4) {

@@ -105,11 +105,11 @@ public class class_5024 {
 
       float var12 = (var3 + var5) / 2.0F;
       float var13 = (var4 + var6) / 2.0F;
-      return class_3111.method_14295().method_38533((double)var12, (double)var13);
+      return Config.method_14295().method_38533((double)var12, (double)var13);
    }
 
    public void method_23158() {
-      if (!class_3111.method_14424()) {
+      if (!Config.method_14424()) {
          if (this.field_25993.length == class_7985.field_40899) {
             this.field_25993 = method_23154(this.field_25993);
          }

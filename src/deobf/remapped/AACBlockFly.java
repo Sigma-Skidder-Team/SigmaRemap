@@ -18,10 +18,10 @@ public class AACBlockFly extends Module {
 
    @Override
    public void onEnable() {
-      this.field_12311 = mc.field_9632.field_3853.field_36404;
-      this.field_12315 = mc.field_9632.field_41701;
-      this.field_12313 = mc.field_9632.field_41755;
-      this.field_12316 = (int) mc.field_9632.method_37309();
+      this.field_12311 = client.thePlayer.inventory.field_36404;
+      this.field_12315 = client.thePlayer.field_41701;
+      this.field_12313 = client.thePlayer.field_41755;
+      this.field_12316 = (int) client.thePlayer.method_37309();
       this.field_12312 = -1;
       ((BlockFlyModule)this.method_42017()).field_18196 = -1;
    }
@@ -29,22 +29,22 @@ public class AACBlockFly extends Module {
    @Override
    public void onDisable() {
       if (this.field_12311 != -1 && this.method_42017().getStringValueByName("ItemSpoof").equals("Switch")) {
-         mc.field_9632.field_3853.field_36404 = this.field_12311;
+         client.thePlayer.inventory.field_36404 = this.field_12311;
       }
 
       this.field_12311 = -1;
       if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
-         mc.method_8614().method_4813(new class_7371(mc.field_9632.field_3853.field_36404));
+         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
          ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
-      mc.theTimer.timerSpeed = 1.0F;
+      client.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen
    @class_7664
    public void method_11335(class_2157 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
             var1.method_29715(true);
          }
@@ -64,7 +64,7 @@ public class AACBlockFly extends Module {
    @EventListen
    public void method_11342(class_7982 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.field_41726 && SigmaMainClass.getInstance().getModuleManager().method_847(SafeWalkModule.class).method_42015()) {
+         if (client.thePlayer.field_41726 && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()) {
             var1.method_36186(true);
          }
       }
@@ -74,30 +74,30 @@ public class AACBlockFly extends Module {
    public void method_11337(class_7767 var1) {
       if (this.method_42015()) {
          if (this.method_42017().getBooleanValueByName("No Sprint")) {
-            mc.field_9632.method_37140(false);
+            client.thePlayer.method_37140(false);
          }
 
          if (!this.getBooleanValueByName("Haphe (AACAP)")) {
-            mc.gameOptions.keySprint.pressed = false;
-            mc.field_9632.method_37140(false);
+            client.gameOptions.keySprint.pressed = false;
+            client.thePlayer.method_37140(false);
          }
 
          ((BlockFlyModule)this.method_42017()).method_17220(var1);
          if (this.getBooleanValueByName("Haphe (AACAP)")) {
-            if (!mc.field_9632.field_41726 || mc.field_9632.field_29673 == 0.0F && mc.field_9632.field_29676 == 0.0F) {
+            if (!client.thePlayer.field_41726 || client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F) {
                if (this.field_12318 >= 0) {
                   this.field_12318++;
                }
             } else {
                this.field_12318 = 0;
-               mc.field_9632.method_26595();
+               client.thePlayer.method_26595();
                var1.method_35235(0.419998 + (double)class_8865.method_40769() * 0.1);
                if (this.field_12312 < 3) {
                   this.field_12312++;
                }
             }
 
-            if (mc.field_9632.field_29673 == 0.0F && mc.field_9632.field_29676 == 0.0F || mc.field_9632.field_41744) {
+            if (client.thePlayer.field_29673 == 0.0F && client.thePlayer.field_29676 == 0.0F || client.thePlayer.field_41744) {
                this.field_12312 = 0;
             }
 
@@ -111,8 +111,8 @@ public class AACBlockFly extends Module {
 
    @EventListen
    private void method_11341(class_8128 var1) {
-      if (this.method_42015() && mc.field_9601 != null && mc.field_9632 != null) {
-         if (this.getBooleanValueByName("Haphe (AACAP)") && class_8865.method_40772() && !mc.field_9632.method_37321()) {
+      if (this.method_42015() && client.field_9601 != null && client.thePlayer != null) {
+         if (this.getBooleanValueByName("Haphe (AACAP)") && class_8865.method_40772() && !client.thePlayer.method_37321()) {
             var1.field_41637 *= 1.14F;
          }
       }
@@ -120,18 +120,18 @@ public class AACBlockFly extends Module {
 
    private boolean method_11333() {
       class_9529 var3 = (class_9529)class_7494.method_34115(
-         mc.field_9632.field_30535, mc.field_9632.field_30524, class_7494.method_34074(), 0.0F
+         client.thePlayer.field_30535, client.thePlayer.field_30524, class_7494.method_34074(), 0.0F
       );
       boolean var4 = false;
       if (var3 != null && var3.method_33990() == class_1430.field_7717) {
          if (this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
             BlockFlyModule var10000 = (BlockFlyModule)this.method_42017();
-            if (!BlockFlyModule.method_17216(mc.field_9632.method_26617(class_2584.field_12791).method_27960())) {
+            if (!BlockFlyModule.method_17216(client.thePlayer.method_26617(class_2584.field_12791).method_27960())) {
                return false;
             }
          }
 
-         if (this.getBooleanValueByName("Haphe (AACAP)") && !mc.field_9632.field_29654 && !mc.field_9632.field_41726) {
+         if (this.getBooleanValueByName("Haphe (AACAP)") && !client.thePlayer.field_29654 && !client.thePlayer.field_41726) {
             if (var3.method_43956() == Direction.field_817) {
                return false;
             }
@@ -142,31 +142,31 @@ public class AACBlockFly extends Module {
          }
 
          if (var3.method_43956() == Direction.field_817
-            && (double)(var3.method_43955().method_12165() + 2) > mc.field_9632.method_37309()
+            && (double)(var3.method_43955().method_12165() + 2) > client.thePlayer.method_37309()
             && class_7494.method_34090(var3.method_43955())) {
             return false;
          }
 
-         if ((double)var3.method_43955().method_12165() == mc.field_9632.method_37309()) {
+         if ((double)var3.method_43955().method_12165() == client.thePlayer.method_37309()) {
             return false;
          }
 
          ((BlockFlyModule)this.method_42017()).method_17215();
-         int var5 = mc.field_9632.field_3853.field_36404;
+         int var5 = client.thePlayer.inventory.field_36404;
          if (!this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
             ((BlockFlyModule)this.method_42017()).method_17211();
          }
 
-         class_6910 var6 = mc.field_9647.method_42147(mc.field_9632, mc.field_9601, class_2584.field_12791, var3);
+         class_6910 var6 = client.playerController.method_42147(client.thePlayer, client.field_9601, class_2584.field_12791, var3);
          if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
-            mc.field_9632.field_3853.field_36404 = var5;
+            client.thePlayer.inventory.field_36404 = var5;
          }
 
          if (var6 == class_6910.field_35520) {
             if (!this.method_42017().getBooleanValueByName("NoSwing")) {
-               mc.field_9632.method_26597(class_2584.field_12791);
+               client.thePlayer.method_26597(class_2584.field_12791);
             } else {
-               mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
+               client.method_8614().method_4813(new class_3195(class_2584.field_12791));
             }
 
             if (var3.method_43956() == Direction.field_817) {
@@ -181,7 +181,7 @@ public class AACBlockFly extends Module {
    }
 
    public List<class_7606> method_11334(class_6414 var1, class_1331 var2) {
-      return class_7829.method_35452(var1, var2, (int) mc.field_9647.method_42146());
+      return class_7829.method_35452(var1, var2, (int) client.playerController.method_42146());
    }
 
    @EventListen
@@ -198,8 +198,8 @@ public class AACBlockFly extends Module {
    private void method_11336(class_1393 var1) {
       if (this.method_42015()) {
          if (!var1.method_6449()) {
-            if (class_8865.method_40772() && mc.field_9632.field_41726 && this.getBooleanValueByName("Haphe (AACAP)") && !mc.field_9632.field_29654) {
-               mc.field_9632.method_26595();
+            if (class_8865.method_40772() && client.thePlayer.field_41726 && this.getBooleanValueByName("Haphe (AACAP)") && !client.thePlayer.field_29654) {
+               client.thePlayer.method_26595();
             }
 
             if (!this.getBooleanValueByName("Haphe (AACAP)")) {
@@ -214,12 +214,12 @@ public class AACBlockFly extends Module {
                this.method_11333();
             }
          } else {
-            double var4 = mc.field_9632.method_37309();
-            if (!mc.field_9632.field_29654 && this.getBooleanValueByName("Haphe (AACAP)")) {
+            double var4 = client.thePlayer.method_37309();
+            if (!client.thePlayer.field_29654 && this.getBooleanValueByName("Haphe (AACAP)")) {
                var4 = (double)this.field_12316;
             }
 
-            class_1331 var6 = new class_1331(mc.field_9632.method_37302(), (double)Math.round(var4 - 1.0), mc.field_9632.method_37156());
+            class_1331 var6 = new class_1331(client.thePlayer.method_37302(), (double)Math.round(var4 - 1.0), client.thePlayer.method_37156());
             List var7 = this.method_11334(class_4783.field_23644, var6);
             if (!var7.isEmpty()) {
                class_7606 var8 = (class_7606)var7.get(var7.size() - 1);

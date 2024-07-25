@@ -19,8 +19,8 @@ public class class_203 extends class_8457 {
    }
 
    @Override
-   public void method_38897(Consumer<class_6098> var1, class_2792 var2) {
-      this.field_678.method_10608().forEach(var1x -> var1.accept(new class_6098(var1x)));
+   public void method_38897(Consumer<ItemStack> var1, class_2792 var2) {
+      this.field_678.method_10608().forEach(var1x -> var1.accept(new ItemStack(var1x)));
    }
 
    private boolean method_874(class_2792 var1, Consumer<class_2283> var2) {

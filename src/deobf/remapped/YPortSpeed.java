@@ -15,8 +15,8 @@ public class YPortSpeed extends Module {
 
    @EventListen
    public void method_12600(class_1393 var1) {
-      if (this.method_42015() && mc.field_9632 != null && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
-         if (mc.field_9632.field_41726 && var1.method_6449() && class_314.method_1387()) {
+      if (this.method_42015() && client.thePlayer != null && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         if (client.thePlayer.field_41726 && var1.method_6449() && class_314.method_1387()) {
             var1.method_6455(var1.method_6454() + 1.0E-14);
          }
       }
@@ -26,14 +26,14 @@ public class YPortSpeed extends Module {
    public void onEnable() {
       this.field_13515 = false;
       this.field_13516 = 0;
-      this.field_13511 = mc.field_9632 != null ? class_8865.method_40775() : 0.2873;
-      this.field_13513 = mc.field_9632.method_37309();
+      this.field_13511 = client.thePlayer != null ? class_8865.method_40775() : 0.2873;
+      this.field_13513 = client.thePlayer.method_37309();
    }
 
    @Override
    public void onDisable() {
       this.field_13515 = false;
-      if (mc.field_9632.method_37098().field_7333 > 0.33) {
+      if (client.thePlayer.method_37098().field_7333 > 0.33) {
          class_314.method_1408(-0.43 + (double)class_8865.method_40769() * 0.1);
          class_8865.method_40776(class_8865.method_40775());
       }
@@ -41,31 +41,31 @@ public class YPortSpeed extends Module {
 
    @EventListen
    public void method_12598(class_7767 var1) {
-      if (this.method_42015() && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
-         if (!mc.field_9632.field_29654) {
+      if (this.method_42015() && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         if (!client.thePlayer.field_29654) {
             String var4 = this.getStringValueByName("Mode");
             switch (var4) {
                case "NCP":
-                  if (class_8865.method_40772() && mc.field_9632.field_41726) {
-                     mc.field_9632.method_26595();
-                     var1.method_35235(mc.field_9632.method_37098().field_7333);
+                  if (class_8865.method_40772() && client.thePlayer.field_41726) {
+                     client.thePlayer.method_26595();
+                     var1.method_35235(client.thePlayer.method_37098().field_7333);
                      class_8865.method_40777(var1, 0.461);
                      this.field_13515 = true;
-                     mc.field_9632.field_41733 = 0.5F;
+                     client.thePlayer.field_41733 = 0.5F;
                   } else if (this.field_13515
-                     && class_314.method_1413(mc.field_9632, (float)(class_8865.method_40786() + (double)class_8865.method_40769() * 0.1 + 0.001F))) {
+                     && class_314.method_1413(client.thePlayer, (float)(class_8865.method_40786() + (double)class_8865.method_40769() * 0.1 + 0.001F))) {
                      this.field_13515 = !this.field_13515;
                      class_8865.method_40777(var1, 0.312);
                      var1.method_35235(-0.43 + (double)class_8865.method_40769() * 0.1);
                      class_314.method_1408(var1.method_35236());
-                     mc.field_9632.field_41733 = 0.0F;
+                     client.thePlayer.field_41733 = 0.0F;
                   } else if (this.field_13515) {
                      var1.method_35235(-0.1);
                      this.field_13515 = !this.field_13515;
                   }
                   break;
                case "OldNCP":
-                  if (mc.field_9632.field_41726 && class_314.method_1434()) {
+                  if (client.thePlayer.field_41726 && class_314.method_1434()) {
                      this.field_13516 = 2;
                   }
 
@@ -83,14 +83,14 @@ public class YPortSpeed extends Module {
                      double var6 = 0.66 * (this.field_13514 - class_8865.method_40775());
                      this.field_13511 = this.field_13514 - var6;
                   } else {
-                     if (mc.field_9601
+                     if (client.field_9601
                               .method_6680(
-                                 mc.field_9632,
-                                 mc.field_9632.field_41712.method_18918(0.0, mc.field_9632.method_37098().field_7333, 0.0)
+                                 client.thePlayer,
+                                 client.thePlayer.field_41712.method_18918(0.0, client.thePlayer.method_37098().field_7333, 0.0)
                               )
                               .count()
                            > 0L
-                        || mc.field_9632.field_41774) {
+                        || client.thePlayer.field_41774) {
                         this.field_13516 = 1;
                      }
 
@@ -99,7 +99,7 @@ public class YPortSpeed extends Module {
 
                   this.field_13511 = Math.max(this.field_13511, class_8865.method_40775());
                   class_8865.method_40777(var1, this.field_13511);
-                  mc.field_9632.field_41733 = 0.6F;
+                  client.thePlayer.field_41733 = 0.6F;
                   class_314.method_1408(var1.method_35236());
             }
          }
@@ -110,20 +110,20 @@ public class YPortSpeed extends Module {
    private void method_12602(class_4868 var1) {
       if (this.method_42015()
          && !this.getStringValueByName("Mode").equalsIgnoreCase("NCP")
-         && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
-         if (!mc.field_9632.method_37285() && !mc.field_9632.method_37370() && !mc.field_9632.method_26505()) {
-            if (!mc.gameOptions.keyJump.pressed
-               && !mc.field_9632.method_26505()
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         if (!client.thePlayer.method_37285() && !client.thePlayer.method_37370() && !client.thePlayer.method_26505()) {
+            if (!client.gameOptions.keyJump.pressed
+               && !client.thePlayer.method_26505()
                && !class_8865.method_40771()
-               && !mc.field_9632.method_37285()
-               && class_314.method_1413(mc.field_9632, 1.0F)
-               && !mc.field_9632.field_41726
+               && !client.thePlayer.method_37285()
+               && class_314.method_1413(client.thePlayer, 1.0F)
+               && !client.thePlayer.field_41726
                && this.field_13516 == 3) {
                class_314.method_1408(-0.3994);
             }
 
-            double var4 = mc.field_9632.method_37302() - mc.field_9632.field_41767;
-            double var6 = mc.field_9632.method_37156() - mc.field_9632.field_41725;
+            double var4 = client.thePlayer.method_37302() - client.thePlayer.field_41767;
+            double var6 = client.thePlayer.method_37156() - client.thePlayer.field_41725;
             this.field_13514 = Math.sqrt(var4 * var4 + var6 * var6);
          }
       }
@@ -132,21 +132,21 @@ public class YPortSpeed extends Module {
    @EventListen
    public void method_12599(class_1711 var1) {
       if (this.method_42015()
-         && class_314.method_1413(mc.field_9632, 0.43F)
-         && !((double) mc.field_9632.field_41706 > 0.09)
+         && class_314.method_1413(client.thePlayer, 0.43F)
+         && !((double) client.thePlayer.field_41706 > 0.09)
          && this.getBooleanValueByName("OnGround")
-         && !mc.gameOptions.keyJump.pressed
-         && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
-         if (mc.field_9632.field_41726 && class_314.method_1413(mc.field_9632, 0.001F)) {
-            this.field_13513 = mc.field_9632.method_37309();
+         && !client.gameOptions.keyJump.pressed
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+         if (client.thePlayer.field_41726 && class_314.method_1413(client.thePlayer, 0.001F)) {
+            this.field_13513 = client.thePlayer.method_37309();
          }
 
-         mc.field_9632.field_41736.field_7333 = this.field_13513;
-         mc.field_9632.field_41713 = this.field_13513;
-         mc.field_9632.field_3864 = this.field_13513;
-         mc.field_9632.field_41698 = this.field_13513;
+         client.thePlayer.field_41736.field_7333 = this.field_13513;
+         client.thePlayer.field_41713 = this.field_13513;
+         client.thePlayer.field_3864 = this.field_13513;
+         client.thePlayer.field_41698 = this.field_13513;
          if (class_8865.method_40772()) {
-            mc.field_9632.field_3859 = 0.099999994F;
+            client.thePlayer.field_3859 = 0.099999994F;
          }
       }
    }

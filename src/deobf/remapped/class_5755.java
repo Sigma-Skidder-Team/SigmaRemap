@@ -14,7 +14,7 @@ public class class_5755 extends class_4569 {
       return new class_5755(class_8938.field_45798, var0);
    }
 
-   public boolean method_26043(class_6098 var1) {
+   public boolean method_26043(ItemStack var1) {
       return this.field_29121.method_24266(var1);
    }
 

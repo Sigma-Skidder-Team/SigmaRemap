@@ -8,7 +8,7 @@ public class class_8146 extends class_2451 {
    }
 
    @Override
-   public boolean method_11209(class_6098 var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
       if (!var2.field_33055 && !var3.method_8360().method_29299(class_2351.field_11771)) {
          var1.method_28003(1, var5, var0 -> var0.method_26448(class_6943.field_35707));
       }
@@ -31,7 +31,7 @@ public class class_8146 extends class_2451 {
    }
 
    @Override
-   public float method_11235(class_6098 var1, class_2522 var2) {
+   public float method_11235(ItemStack var1, class_2522 var2) {
       if (!var2.method_8350(class_4783.field_23718) && !var2.method_8349(class_2351.field_11737)) {
          return !var2.method_8349(class_2351.field_11738) ? super.method_11235(var1, var2) : 5.0F;
       } else {

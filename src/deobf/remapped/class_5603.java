@@ -21,18 +21,18 @@ public class class_5603 extends Screen {
    private final List<class_3401> field_28423 = Lists.newArrayList();
 
    public class_5603() {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
       this.field_28418 = class_531.method_2581(this.method_25423());
    }
 
-   private class_4666 method_25423() {
-      class_4666 var3 = MinecraftClient.getInstance().field_9647.method_42158();
-      class_4666 var4 = MinecraftClient.getInstance().field_9647.method_42132();
-      if (var4 == class_4666.field_22762) {
-         if (var3 != class_4666.field_22761) {
-            var4 = class_4666.field_22761;
+   private GameType method_25423() {
+      GameType var3 = MinecraftClient.getInstance().playerController.getCurrentGameType();
+      GameType var4 = MinecraftClient.getInstance().playerController.method_42132();
+      if (var4 == GameType.field_22762) {
+         if (var3 != GameType.field_22761) {
+            var4 = GameType.field_22761;
          } else {
-            var4 = class_4666.field_22764;
+            var4 = GameType.field_22764;
          }
       }
 
@@ -42,7 +42,7 @@ public class class_5603 extends Screen {
    @Override
    public void method_1163() {
       super.method_1163();
-      this.field_28415 = !this.field_28418.isPresent() ? class_531.method_2581(this.field_943.field_9647.method_42158()) : this.field_28418;
+      this.field_28415 = !this.field_28418.isPresent() ? class_531.method_2581(this.field_943.playerController.getCurrentGameType()) : this.field_28418;
 
       for (int var3 = 0; var3 < class_531.field_3230.length; var3++) {
          class_531 var4 = class_531.field_3230[var3];
@@ -54,8 +54,8 @@ public class class_5603 extends Screen {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       if (!this.method_25425()) {
          var1.method_36063();
-         class_3542.method_16488();
-         this.field_943.method_8577().method_35674(field_28419);
+         RenderSystem.enableBlend();
+         this.field_943.getTextureManager().bindTexture(field_28419);
          int var7 = this.field_941 / 2 - 62;
          int var8 = this.field_940 / 2 - 30 - 27;
          method_9778(var1, var7, var8, 0.0F, 0.0F, 125, 75, 128, 128);
@@ -87,17 +87,17 @@ public class class_5603 extends Screen {
    }
 
    private static void method_25424(MinecraftClient var0, Optional<class_531> var1) {
-      if (var0.field_9647 != null && var0.field_9632 != null && var1.isPresent()) {
-         Optional var4 = class_531.method_2581(var0.field_9647.method_42158());
+      if (var0.playerController != null && var0.thePlayer != null && var1.isPresent()) {
+         Optional var4 = class_531.method_2581(var0.playerController.getCurrentGameType());
          class_531 var5 = (class_531)var1.get();
-         if (var4.isPresent() && var0.field_9632.method_37163(2) && var5 != var4.get()) {
-            var0.field_9632.method_27307(class_531.method_2586(var5));
+         if (var4.isPresent() && var0.thePlayer.method_37163(2) && var5 != var4.get()) {
+            var0.thePlayer.method_27307(class_531.method_2586(var5));
          }
       }
    }
 
    private boolean method_25425() {
-      if (class_9732.method_44934(this.field_943.method_8552().method_43181(), 292)) {
+      if (class_9732.method_44934(this.field_943.getMainWindow().method_43181(), 292)) {
          return false;
       } else {
          this.method_25426();

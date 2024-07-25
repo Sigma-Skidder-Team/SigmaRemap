@@ -40,16 +40,16 @@ public class class_3290 {
       field_16293 = (class_3580[][])null;
       field_16287 = (class_3580[][])null;
       field_16282 = true;
-      if (class_3111.method_14390()) {
+      if (Config.method_14390()) {
          method_15093("optifine/cit.properties");
-         class_8169[] var2 = class_3111.method_14347();
+         class_8169[] var2 = Config.method_14347();
 
          for (int var3 = var2.length - 1; var3 >= 0; var3--) {
             class_8169 var4 = var2[var3];
             method_15074(var4);
          }
 
-         method_15074(class_3111.method_14415());
+         method_15074(Config.method_14415());
          if (field_16293.length <= 0) {
             field_16293 = (class_3580[][])null;
          }
@@ -63,16 +63,16 @@ public class class_3290 {
    private static void method_15093(String var0) {
       try {
          Identifier var3 = new Identifier(var0);
-         InputStream var4 = class_3111.method_14374(var3);
+         InputStream var4 = Config.method_14374(var3);
          if (var4 == null) {
             return;
          }
 
-         class_3111.method_14277("CustomItems: Loading " + var0);
+         Config.method_14277("CustomItems: Loading " + var0);
          class_8407 var5 = new class_8407();
          var5.load(var4);
          var4.close();
-         field_16282 = class_3111.method_14257(var5.getProperty("useGlint"), true);
+         field_16282 = Config.method_14257(var5.getProperty("useGlint"), true);
       } catch (FileNotFoundException var6) {
          return;
       } catch (IOException var7) {
@@ -86,7 +86,7 @@ public class class_3290 {
       if (var4.size() > 0) {
          Set var5 = var4.keySet();
          String[] var6 = var5.<String>toArray(new String[var5.size()]);
-         var3 = (String[])class_3111.method_14357(var3, var6);
+         var3 = (String[]) Config.method_14357(var3, var6);
       }
 
       Arrays.sort(var3);
@@ -95,7 +95,7 @@ public class class_3290 {
 
       for (int var7 = 0; var7 < var3.length; var7++) {
          String var8 = var3[var7];
-         class_3111.method_14277("CustomItems: " + var8);
+         Config.method_14277("CustomItems: " + var8);
 
          try {
             class_3580 var9 = null;
@@ -107,7 +107,7 @@ public class class_3290 {
                Identifier var10 = new Identifier(var8);
                InputStream var11 = var0.method_37466(class_3168.field_15844, var10);
                if (var11 == null) {
-                  class_3111.method_14317("CustomItems file not found: " + var8);
+                  Config.method_14317("CustomItems file not found: " + var8);
                   continue;
                }
 
@@ -122,7 +122,7 @@ public class class_3290 {
                method_15079(var9, var16);
             }
          } catch (FileNotFoundException var13) {
-            class_3111.method_14317("CustomItems file not found: " + var8);
+            Config.method_14317("CustomItems file not found: " + var8);
          } catch (Exception var14) {
             var14.printStackTrace();
          }
@@ -172,7 +172,7 @@ public class class_3290 {
    public static void method_15101() {
       for (class_3580 var3 : method_15105()) {
          if (var3.field_17541 == 1) {
-            class_8359 var4 = class_3111.method_14295();
+            class_8359 var4 = Config.method_14295();
             var3.method_16676(var4, field_16286);
             var3.method_16664();
          }
@@ -243,7 +243,7 @@ public class class_3290 {
       } else {
          int[] var6 = (int[])method_15083().get(var0);
          if (var6 == null) {
-            class_3111.method_14317("Potion not found for image: " + var3);
+            Config.method_14317("Potion not found for image: " + var3);
             return null;
          } else {
             StringBuffer var7 = new StringBuffer();
@@ -387,7 +387,7 @@ public class class_3290 {
             if (var5 > 0) {
                method_15087(var0, var1, var5);
             } else {
-               class_3111.method_14317("Invalid item ID: " + var5);
+               Config.method_14317("Invalid item ID: " + var5);
             }
          }
       }
@@ -398,7 +398,7 @@ public class class_3290 {
          int var4 = method_15084() + 1;
 
          for (int var5 = 0; var5 < var4; var5++) {
-            if (class_3111.method_14253(var5, var0.field_17525)) {
+            if (Config.method_14253(var5, var0.field_17525)) {
                method_15087(var0, var1, var5);
             }
          }
@@ -432,7 +432,7 @@ public class class_3290 {
       var5.add(var0);
    }
 
-   public static class_7373 method_15078(class_6098 var0, class_7373 var1, Identifier var2, boolean var3) {
+   public static class_7373 method_15078(ItemStack var0, class_7373 var1, Identifier var2, boolean var3) {
       if (!var3 && var1.method_33583()) {
          return var1;
       } else if (field_16293 != null) {
@@ -448,7 +448,7 @@ public class class_3290 {
       }
    }
 
-   public static Identifier method_15106(class_6098 var0, class_6943 var1, String var2, Identifier var3) {
+   public static Identifier method_15106(ItemStack var0, class_6943 var1, String var2, Identifier var3) {
       if (field_16293 != null) {
          Identifier var6 = method_15097(var0, var1, var2);
          return var6 != null ? var6 : var3;
@@ -457,7 +457,7 @@ public class class_3290 {
       }
    }
 
-   private static Identifier method_15097(class_6098 var0, class_6943 var1, String var2) {
+   private static Identifier method_15097(ItemStack var0, class_6943 var1, String var2) {
       class_3580 var5 = method_15069(var0, 3);
       if (var5 != null) {
          if (var5.field_17514 != null) {
@@ -490,7 +490,7 @@ public class class_3290 {
       }
    }
 
-   public static Identifier method_15089(class_6098 var0, Identifier var1) {
+   public static Identifier method_15089(ItemStack var0, Identifier var1) {
       if (field_16293 != null) {
          class_3580 var4 = method_15069(var0, 4);
          if (var4 != null) {
@@ -503,7 +503,7 @@ public class class_3290 {
       }
    }
 
-   private static class_3580 method_15069(class_6098 var0, int var1) {
+   private static class_3580 method_15069(ItemStack var0, int var1) {
       if (field_16293 != null) {
          if (var0 == null) {
             return null;
@@ -529,7 +529,7 @@ public class class_3290 {
       }
    }
 
-   private static boolean method_15075(class_3580 var0, class_6098 var1, int[][] var2) {
+   private static boolean method_15075(class_3580 var0, ItemStack var1, int[][] var2) {
       class_2451 var5 = var1.method_27960();
       if (var0.field_17542 != null) {
          int var6 = method_15091(var1);
@@ -564,7 +564,7 @@ public class class_3290 {
 
             for (int var8 = 0; var8 < var10.length; var8++) {
                int var9 = var10[var8][0];
-               if (class_3111.method_14253(var9, var0.field_17525)) {
+               if (Config.method_14253(var9, var0.field_17525)) {
                   var11 = true;
                   break;
                }
@@ -620,12 +620,12 @@ public class class_3290 {
       }
    }
 
-   private static int method_15091(class_6098 var0) {
+   private static int method_15091(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       return !(var3 instanceof class_5518) ? var0.method_28026() : method_15081(var0);
    }
 
-   private static int method_15081(class_6098 var0) {
+   private static int method_15081(ItemStack var0) {
       class_5734 var3 = var0.method_27990();
       if (var3 != null) {
          String var4 = var3.method_25965("Potion");
@@ -685,7 +685,7 @@ public class class_3290 {
       }
    }
 
-   private static int[][] method_15094(class_6098 var0) {
+   private static int[][] method_15094(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       class_3416 var4;
       if (var3 != class_4897.field_24879) {
@@ -717,7 +717,7 @@ public class class_3290 {
       }
    }
 
-   public static boolean method_15102(class_8765 var0, class_6098 var1, class_7373 var2) {
+   public static boolean method_15102(ItemRenderer var0, ItemStack var1, class_7373 var2) {
       if (field_16287 == null) {
          return false;
       } else if (var1 == null) {
@@ -729,7 +729,7 @@ public class class_3290 {
          } else {
             HashSet var6 = null;
             boolean var7 = false;
-            TextureManager var8 = class_3111.method_14266();
+            TextureManager var8 = Config.method_14266();
 
             for (int var9 = 0; var9 < var5.length; var9++) {
                int var10 = var5[var9][0];
@@ -743,23 +743,23 @@ public class class_3290 {
                         }
 
                         if (var6.add(var10) && method_15075(var13, var1, var5) && var13.field_17524 != null) {
-                           var8.method_35674(var13.field_17524);
+                           var8.bindTexture(var13.field_17524);
                            float var14 = var13.method_16680(var8);
                            if (!var7) {
                               var7 = true;
-                              class_1920.method_8867(false);
-                              class_1920.method_8862(514);
-                              class_1920.method_8912();
-                              class_1920.method_8842(5890);
+                              GlStateManager.method_8867(false);
+                              GlStateManager.method_8862(514);
+                              GlStateManager.method_8912();
+                              GlStateManager.method_8842(5890);
                            }
 
                            class_1240.method_5531(var13.field_17548, 1.0F);
-                           class_1920.method_8757();
-                           class_1920.method_8854(var14, var14, var14);
+                           GlStateManager.method_8757();
+                           GlStateManager.method_8854(var14, var14, var14);
                            float var15 = var13.field_17539 * (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F / 8.0F;
-                           class_1920.method_8897(var15, 0.0F, 0.0F);
-                           class_1920.method_8824(var13.field_17517, 0.0F, 0.0F, 1.0F);
-                           class_1920.method_8761();
+                           GlStateManager.method_8897(var15, 0.0F, 0.0F);
+                           GlStateManager.method_8824(var13.field_17517, 0.0F, 0.0F, 1.0F);
+                           GlStateManager.method_8761();
                         }
                      }
                   }
@@ -767,15 +767,15 @@ public class class_3290 {
             }
 
             if (var7) {
-               class_1920.method_8741();
-               class_1920.method_8829();
-               class_1920.method_8787(770, 771);
-               class_1920.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
-               class_1920.method_8842(5888);
-               class_1920.method_8927();
-               class_1920.method_8862(515);
-               class_1920.method_8867(true);
-               var8.method_35674(class_8359.field_42824);
+               GlStateManager.enableAlphaTest();
+               GlStateManager.method_8829();
+               GlStateManager.method_8787(770, 771);
+               GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.method_8842(5888);
+               GlStateManager.method_8927();
+               GlStateManager.method_8862(515);
+               GlStateManager.method_8867(true);
+               var8.bindTexture(class_8359.field_42824);
             }
 
             return var7;
@@ -784,11 +784,11 @@ public class class_3290 {
    }
 
    public static boolean method_15098(
-      class_5834 var0, class_6098 var1, class_6521 var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9
+           class_5834 var0, ItemStack var1, class_6521 var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9
    ) {
       if (field_16287 == null) {
          return false;
-      } else if (class_3111.method_14424() && class_6588.field_33945) {
+      } else if (Config.method_14424() && class_6588.field_33945) {
          return false;
       } else if (var1 == null) {
          return false;
@@ -799,7 +799,7 @@ public class class_3290 {
          } else {
             HashSet var13 = null;
             boolean var14 = false;
-            TextureManager var15 = class_3111.method_14266();
+            TextureManager var15 = Config.method_14266();
 
             for (int var16 = 0; var16 < var12.length; var16++) {
                int var17 = var12[var16][0];
@@ -813,29 +813,29 @@ public class class_3290 {
                         }
 
                         if (var13.add(var17) && method_15075(var20, var1, var12) && var20.field_17524 != null) {
-                           var15.method_35674(var20.field_17524);
+                           var15.bindTexture(var20.field_17524);
                            float var21 = var20.method_16680(var15);
                            if (!var14) {
                               var14 = true;
-                              if (class_3111.method_14424()) {
+                              if (Config.method_14424()) {
                                  class_293.method_1302();
                               }
 
-                              class_1920.method_8829();
-                              class_1920.method_8862(514);
-                              class_1920.method_8867(false);
+                              GlStateManager.method_8829();
+                              GlStateManager.method_8862(514);
+                              GlStateManager.method_8867(false);
                            }
 
                            class_1240.method_5531(var20.field_17548, 1.0F);
-                           class_1920.method_8912();
-                           class_1920.method_8842(5890);
-                           class_1920.method_8865();
-                           class_1920.method_8824(var20.field_17517, 0.0F, 0.0F, 1.0F);
+                           GlStateManager.method_8912();
+                           GlStateManager.method_8842(5890);
+                           GlStateManager.method_8865();
+                           GlStateManager.method_8824(var20.field_17517, 0.0F, 0.0F, 1.0F);
                            float var22 = var21 / 8.0F;
-                           class_1920.method_8854(var22, var22 / 2.0F, var22);
+                           GlStateManager.method_8854(var22, var22 / 2.0F, var22);
                            float var23 = var20.field_17539 * (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F / 8.0F;
-                           class_1920.method_8897(0.0F, var23, 0.0F);
-                           class_1920.method_8842(5888);
+                           GlStateManager.method_8897(0.0F, var23, 0.0F);
+                           GlStateManager.method_8842(5888);
                         }
                      }
                   }
@@ -843,18 +843,18 @@ public class class_3290 {
             }
 
             if (var14) {
-               class_1920.method_8741();
-               class_1920.method_8829();
-               class_1920.method_8787(770, 771);
-               class_1920.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
-               class_1920.method_8842(5890);
-               class_1920.method_8865();
-               class_1920.method_8842(5888);
-               class_1920.method_8927();
-               class_1920.method_8867(true);
-               class_1920.method_8862(515);
-               class_1920.method_8775();
-               if (class_3111.method_14424()) {
+               GlStateManager.enableAlphaTest();
+               GlStateManager.method_8829();
+               GlStateManager.method_8787(770, 771);
+               GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.method_8842(5890);
+               GlStateManager.method_8865();
+               GlStateManager.method_8842(5888);
+               GlStateManager.method_8927();
+               GlStateManager.method_8867(true);
+               GlStateManager.method_8862(515);
+               GlStateManager.method_8775();
+               if (Config.method_14424()) {
                   class_293.method_1315();
                }
             }

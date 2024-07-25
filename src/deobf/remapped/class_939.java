@@ -39,7 +39,7 @@ public class class_939 extends class_6414 {
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      class_6098 var9 = var4.method_26617(var5);
+      ItemStack var9 = var4.method_26617(var5);
       if (!var9.method_28022()) {
          int var10 = var1.<Integer>method_10313(field_4787);
          class_2451 var11 = var9.method_27960();
@@ -49,7 +49,7 @@ public class class_939 extends class_6414 {
                   if (var11 == class_4897.field_25157 && class_9541.method_43990(var9) == class_3697.field_18108) {
                      if (var10 < 3 && !var2.field_33055) {
                         if (!var4.field_3876.field_4944) {
-                           class_6098 var17 = new class_6098(class_4897.field_24812);
+                           ItemStack var17 = new ItemStack(class_4897.field_24812);
                            var4.method_3209(class_6234.field_31841);
                            var4.method_26615(var5, var17);
                            if (var4 instanceof class_9359) {
@@ -75,7 +75,7 @@ public class class_939 extends class_6414 {
 
                      if (var10 > 0 && var11 instanceof class_1967) {
                         if (class_8837.method_40660(var9) > 0 && !var2.field_33055) {
-                           class_6098 var16 = var9.method_27973();
+                           ItemStack var16 = var9.method_27973();
                            var16.method_28017(1);
                            class_8837.method_40661(var16);
                            var4.method_3209(class_6234.field_31888);
@@ -85,7 +85,7 @@ public class class_939 extends class_6414 {
                            }
 
                            if (!var9.method_28022()) {
-                              if (var4.field_3853.method_32414(var16)) {
+                              if (var4.inventory.method_32414(var16)) {
                                  if (var4 instanceof class_9359) {
                                     ((class_9359)var4).method_43264(var4.field_3869);
                                  }
@@ -101,7 +101,7 @@ public class class_939 extends class_6414 {
                      } else if (var10 > 0 && var11 instanceof class_6201) {
                         class_6414 var15 = ((class_6201)var11).method_28392();
                         if (var15 instanceof class_3153 && !var2.method_22567()) {
-                           class_6098 var13 = new class_6098(class_4783.field_23761, 1);
+                           ItemStack var13 = new ItemStack(class_4783.field_23761, 1);
                            if (var9.method_28002()) {
                               var13.method_27965(var9.method_27990().method_25944());
                            }
@@ -120,11 +120,11 @@ public class class_939 extends class_6414 {
                } else {
                   if (var10 > 0 && !var2.field_33055) {
                      if (!var4.field_3876.field_4944) {
-                        class_6098 var12 = class_9541.method_43999(new class_6098(class_4897.field_25157), class_3697.field_18108);
+                        ItemStack var12 = class_9541.method_43999(new ItemStack(class_4897.field_25157), class_3697.field_18108);
                         var4.method_3209(class_6234.field_31841);
                         var9.method_27970(1);
                         if (!var9.method_28022()) {
-                           if (var4.field_3853.method_32414(var12)) {
+                           if (var4.inventory.method_32414(var12)) {
                               if (var4 instanceof class_9359) {
                                  ((class_9359)var4).method_43264(var4.field_3869);
                               }
@@ -147,11 +147,11 @@ public class class_939 extends class_6414 {
                   if (!var4.field_3876.field_4944) {
                      var9.method_27970(1);
                      if (!var9.method_28022()) {
-                        if (!var4.field_3853.method_32414(new class_6098(class_4897.field_24999))) {
-                           var4.method_3153(new class_6098(class_4897.field_24999), false);
+                        if (!var4.inventory.method_32414(new ItemStack(class_4897.field_24999))) {
+                           var4.method_3153(new ItemStack(class_4897.field_24999), false);
                         }
                      } else {
-                        var4.method_26615(var5, new class_6098(class_4897.field_24999));
+                        var4.method_26615(var5, new ItemStack(class_4897.field_24999));
                      }
                   }
 
@@ -165,7 +165,7 @@ public class class_939 extends class_6414 {
          } else {
             if (var10 < 3 && !var2.field_33055) {
                if (!var4.field_3876.field_4944) {
-                  var4.method_26615(var5, new class_6098(class_4897.field_24548));
+                  var4.method_26615(var5, new ItemStack(class_4897.field_24548));
                }
 
                var4.method_3209(class_6234.field_31900);

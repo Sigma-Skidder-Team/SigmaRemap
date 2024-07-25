@@ -22,7 +22,7 @@ public class EntityRenderDispatcher {
 
    public <E extends Entity> int method_28120(E var1, float var2) {
       int var5 = this.<Entity>method_28131(var1).method_32554(var1, var2);
-      if (class_3111.method_14326()) {
+      if (Config.method_14326()) {
          var5 = class_8421.method_38766(var1, var5);
       }
 
@@ -33,7 +33,7 @@ public class EntityRenderDispatcher {
       this.renderers.put(var1, var2);
    }
 
-   private void method_28138(class_8765 var1, class_550 var2) {
+   private void method_28138(ItemRenderer var1, class_550 var2) {
       this.method_28118(class_6629.field_34279, new class_3600(this));
       this.method_28118(class_6629.field_34289, new class_3927(this));
       this.method_28118(class_6629.field_34290, new class_4262(this));
@@ -143,7 +143,7 @@ public class EntityRenderDispatcher {
       this.method_28118(class_6629.field_34233, new class_737(this));
    }
 
-   public EntityRenderDispatcher(TextureManager var1, class_8765 var2, class_550 var3, TextRenderer var4, GameOptions var5) {
+   public EntityRenderDispatcher(TextureManager var1, ItemRenderer var2, class_550 var3, TextRenderer var4, GameOptions var5) {
       this.textureManager = var1;
       this.textRenderer = var4;
       this.gameOptions = var5;
@@ -335,7 +335,7 @@ public class EntityRenderDispatcher {
       float var13 = 0.0F;
       int var14 = 0;
       class_7907 var15 = var2.method_11645(class_5276.method_24083());
-      boolean var16 = class_3111.method_14405();
+      boolean var16 = Config.method_14405();
       if (var16) {
          var15.method_35736(class_6727.field_34745);
       }
@@ -365,7 +365,7 @@ public class EntityRenderDispatcher {
 
       if (var16) {
          var15.method_35736((RenderLayer)null);
-         class_1920.method_8797();
+         GlStateManager.method_8797();
       }
 
       var1.method_36064();
@@ -382,7 +382,7 @@ public class EntityRenderDispatcher {
    }
 
    private static void method_28137(class_7966 var0, class_2565 var1, Entity var2, float var3, float var4, class_4924 var5, float var6) {
-      if (!class_3111.method_14424() || !class_6588.field_33671) {
+      if (!Config.method_14424() || !class_6588.field_33671) {
          float var9 = var6;
          if (var2 instanceof class_5886) {
             class_5886 var25 = (class_5886)var2;

@@ -386,7 +386,7 @@ public class GUIManager {
       }
 
       if (SigmaMainClass.getInstance().getModuleManager() != null) {
-         SigmaMainClass.getInstance().getModuleManager().method_835().method_384(null);
+         SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_384(null);
       }
    }
 

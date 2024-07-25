@@ -86,7 +86,7 @@ public class class_8224 extends class_8374<class_9662> {
       super.method_36197(var1);
       if (var1 != null) {
          class_460 var4 = class_9662.method_44604(var1);
-         class_7542.field_38482
+         NarratorChatListener.INSTANCE
             .method_34341(
                new TranslationTextComponent(
                      "narrator.select",

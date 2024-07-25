@@ -104,13 +104,13 @@ public abstract class class_1173 extends class_4612 implements class_1869 {
    }
 
    @Override
-   public class_6098 method_26475(class_6098 var1) {
+   public ItemStack method_26475(ItemStack var1) {
       if (!(var1.method_27960() instanceof class_551)) {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       } else {
          Predicate var4 = ((class_551)var1.method_27960()).method_2653();
-         class_6098 var5 = class_551.method_2656(this, var4);
-         return !var5.method_28022() ? var5 : new class_6098(class_4897.field_25024);
+         ItemStack var5 = class_551.method_2656(this, var4);
+         return !var5.method_28022() ? var5 : new ItemStack(class_4897.field_25024);
       }
    }
 }

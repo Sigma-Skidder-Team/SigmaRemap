@@ -121,7 +121,7 @@ public class class_1453 extends Entity {
                      }
                   } else {
                      boolean var10 = var19.method_8374(
-                        new class_9519(this.field_41768, var18, Direction.field_802, class_6098.field_31203, Direction.field_817)
+                        new class_9519(this.field_41768, var18, Direction.field_802, ItemStack.EMPTY, Direction.field_817)
                      );
                      boolean var11 = class_305.method_1361(this.field_41768.method_28262(var18.method_6100())) && (!var5 || !var6);
                      boolean var12 = this.field_7822.method_8309(this.field_41768, var18) && !var11;

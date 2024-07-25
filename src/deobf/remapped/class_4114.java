@@ -21,7 +21,7 @@ public class class_4114 extends class_8374<class_7220> {
             .get(class_9675.method_44749(this.field_20043).method_43905().size() - this.method_41183().indexOf(var1) - 1);
          class_2451 var5 = var4.method_40255().method_8360().method_10803();
          if (var5 != class_4897.field_25302) {
-            class_7542.field_38482.method_34341(new TranslationTextComponent("narrator.select", var5.method_11249(new class_6098(var5))).getString());
+            NarratorChatListener.INSTANCE.method_34341(new TranslationTextComponent("narrator.select", var5.method_11249(new ItemStack(var5))).getString());
          }
       }
 

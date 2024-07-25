@@ -54,7 +54,7 @@ public class class_7263 extends class_6993 {
 
    @Override
    public void method_26870(class_9589 var1) {
-      this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_24373));
+      this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24373));
    }
 
    @Override
@@ -78,7 +78,7 @@ public class class_7263 extends class_6993 {
    }
 
    @Override
-   public boolean method_26873(class_6098 var1) {
+   public boolean method_26873(ItemStack var1) {
       return var1.method_27960() != class_4897.field_24373 ? false : super.method_26873(var1);
    }
 

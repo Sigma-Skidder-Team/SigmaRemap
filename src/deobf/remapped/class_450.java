@@ -7,8 +7,8 @@ public class class_450 {
    private static final Identifier field_1875 = new Identifier("textures/misc/underwater.png");
 
    public static void method_2171(MinecraftClient var0, class_7966 var1) {
-      class_3542.method_16458();
-      class_5989 var4 = var0.field_9632;
+      RenderSystem.method_16458();
+      class_5989 var4 = var0.thePlayer;
       if (!var4.field_41731) {
          if (class_7860.field_40092.method_3596() && class_7860.field_40137.method_3596()) {
             Pair var8 = method_2172(var4);
@@ -29,17 +29,17 @@ public class class_450 {
          }
       }
 
-      if (!var0.field_9632.method_37221()) {
-         if (var0.field_9632.method_37261(class_6503.field_33094) && !class_7860.field_40021.method_3592(var4, var1)) {
+      if (!var0.thePlayer.method_37221()) {
+         if (var0.thePlayer.method_37261(class_6503.field_33094) && !class_7860.field_40021.method_3592(var4, var1)) {
             method_2167(var0, var1);
          }
 
-         if (var0.field_9632.method_37264() && !class_7860.field_39929.method_3592(var4, var1)) {
+         if (var0.thePlayer.method_37264() && !class_7860.field_39929.method_3592(var4, var1)) {
             method_2169(var0, var1);
          }
       }
 
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
    }
 
    @Nullable
@@ -70,7 +70,7 @@ public class class_450 {
          class_153.method_609(var1);
       }
 
-      var0.method_8577().method_35674(var1.method_23608().method_38519());
+      var0.getTextureManager().bindTexture(var1.method_23608().method_38519());
       class_9633 var5 = class_8042.method_36499().method_36501();
       float var6 = 0.1F;
       float var7 = -1.0F;
@@ -93,24 +93,24 @@ public class class_450 {
    }
 
    private static void method_2167(MinecraftClient var0, class_7966 var1) {
-      class_3542.method_16432();
-      var0.method_8577().method_35674(field_1875);
+      RenderSystem.method_16432();
+      var0.getTextureManager().bindTexture(field_1875);
       if (class_153.method_611()) {
-         class_153.method_612(var0.method_8577().method_35679(field_1875).method_37055());
+         class_153.method_612(var0.getTextureManager().method_35679(field_1875).method_37055());
       }
 
       class_9633 var4 = class_8042.method_36499().method_36501();
-      float var5 = var0.field_9632.method_37193();
-      class_3542.method_16488();
-      class_3542.method_16437();
+      float var5 = var0.thePlayer.method_37193();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
       float var6 = 4.0F;
       float var7 = -1.0F;
       float var8 = 1.0F;
       float var9 = -1.0F;
       float var10 = 1.0F;
       float var11 = -0.5F;
-      float var12 = -var0.field_9632.field_41701 / 64.0F;
-      float var13 = var0.field_9632.field_41755 / 64.0F;
+      float var12 = -var0.thePlayer.field_41701 / 64.0F;
+      float var13 = var0.thePlayer.field_41755 / 64.0F;
       class_8107 var14 = var1.method_36058().method_28620();
       var4.method_44471(7, class_7985.field_40913);
       var4.method_35762(var14, -1.0F, -1.0F, -0.5F).method_35742(var5, var5, var5, 0.1F).method_35745(4.0F + var12, 4.0F + var13).method_35735();
@@ -119,22 +119,22 @@ public class class_450 {
       var4.method_35762(var14, -1.0F, 1.0F, -0.5F).method_35742(var5, var5, var5, 0.1F).method_35745(4.0F + var12, 0.0F + var13).method_35735();
       var4.method_44487();
       class_138.method_554(var4);
-      class_3542.method_16448();
+      RenderSystem.method_16448();
    }
 
    private static void method_2169(MinecraftClient var0, class_7966 var1) {
       class_9633 var4 = class_8042.method_36499().method_36501();
-      class_3542.method_16457(519);
-      class_3542.method_16387(false);
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16432();
+      RenderSystem.method_16457(519);
+      RenderSystem.method_16387(false);
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16432();
       class_5155 var5 = class_6560.field_33441.method_12947();
       if (class_153.method_611()) {
          class_153.method_609(var5);
       }
 
-      var0.method_8577().method_35674(var5.method_23608().method_38519());
+      var0.getTextureManager().bindTexture(var5.method_23608().method_38519());
       float var6 = var5.method_23630();
       float var7 = var5.method_23619();
       float var8 = (var6 + var7) / 2.0F;
@@ -170,8 +170,8 @@ public class class_450 {
          var1.method_36064();
       }
 
-      class_3542.method_16448();
-      class_3542.method_16387(true);
-      class_3542.method_16457(515);
+      RenderSystem.method_16448();
+      RenderSystem.method_16387(true);
+      RenderSystem.method_16457(515);
    }
 }

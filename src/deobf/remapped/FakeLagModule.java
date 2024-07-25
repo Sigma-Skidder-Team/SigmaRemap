@@ -27,7 +27,7 @@ public class FakeLagModule extends Module {
    @Override
    public void onDisable() {
       for (Packet var4 : this.field_13091) {
-         mc.method_8614().method_9091().method_23481(var4);
+         client.method_8614().method_9091().method_23481(var4);
       }
    }
 
@@ -42,7 +42,7 @@ public class FakeLagModule extends Module {
 
    @EventListen
    private void method_12006(class_2157 var1) {
-      if (this.method_42015() && mc.method_8614() != null) {
+      if (this.method_42015() && client.method_8614() != null) {
          if (!this.field_13092) {
             if ((float)this.field_13090.method_14772() > this.getFloatValueByName("Delay") * 1000.0F) {
                this.field_13092 = true;
@@ -76,7 +76,7 @@ public class FakeLagModule extends Module {
             this.field_13090.method_14773();
 
             for (Packet var5 : this.field_13091) {
-               mc.method_8614().method_9091().method_23481(var5);
+               client.method_8614().method_9091().method_23481(var5);
             }
 
             this.field_13091.clear();

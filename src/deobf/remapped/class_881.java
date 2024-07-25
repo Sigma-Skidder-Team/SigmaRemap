@@ -8,7 +8,7 @@ public class class_881 extends Screen {
    private class_1433 field_4539 = class_5609.method_25460();
 
    public class_881() {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
    }
 
    @Override

@@ -111,7 +111,7 @@ public class class_5973 extends class_3599 {
          .method_39065(class_8712.field_44676, this.field_30422)
          .method_39068(var3);
 
-      for (class_6098 var8 : var5.method_7862(var6.method_39064(class_4933.field_25575))) {
+      for (ItemStack var8 : var5.method_7862(var6.method_39064(class_4933.field_25575))) {
          this.field_30422
             .field_41768
             .method_7509(

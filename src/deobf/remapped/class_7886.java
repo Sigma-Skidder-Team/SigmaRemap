@@ -192,7 +192,7 @@ public class class_7886 extends class_4117 {
          }
 
          for (RenderLayer var33 : class_8845.method_40701(var4)) {
-            if (class_3111.method_14424()) {
+            if (Config.method_14424()) {
                class_2448.method_11186(var5.method_12956(var33));
             }
 

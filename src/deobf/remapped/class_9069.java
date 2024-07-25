@@ -15,7 +15,7 @@ public class class_9069 extends class_7157 {
       boolean var6 = false;
 
       for (int var7 = 0; var7 < var1.method_31505(); var7++) {
-         class_6098 var8 = var1.method_31498(var7);
+         ItemStack var8 = var1.method_31498(var7);
          if (!var8.method_28022()) {
             if (!(var8.method_27960() instanceof class_239)) {
                if (!field_46405.test(var8)) {
@@ -36,12 +36,12 @@ public class class_9069 extends class_7157 {
       return var6 && var5;
    }
 
-   public class_6098 method_41623(class_6946 var1) {
+   public ItemStack method_41623(class_6946 var1) {
       ArrayList var4 = Lists.newArrayList();
-      class_6098 var5 = null;
+      ItemStack var5 = null;
 
       for (int var6 = 0; var6 < var1.method_31505(); var6++) {
-         class_6098 var7 = var1.method_31498(var6);
+         ItemStack var7 = var1.method_31498(var6);
          class_2451 var8 = var7.method_27960();
          if (!(var8 instanceof class_239)) {
             if (field_46405.test(var7)) {
@@ -57,7 +57,7 @@ public class class_9069 extends class_7157 {
          var5.method_27978("Explosion").method_25968("FadeColors", var4);
          return var5;
       } else {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       }
    }
 

@@ -43,7 +43,7 @@ public enum class_6689 {
          case field_34559:
             return var1.field_8193;
          default:
-            class_3111.method_14317("GetFloat not supported for: " + this);
+            Config.method_14317("GetFloat not supported for: " + this);
             return 0.0F;
       }
    }
@@ -78,7 +78,7 @@ public enum class_6689 {
             var1.field_8193 = var2;
             return;
          default:
-            class_3111.method_14317("SetFloat not supported for: " + this);
+            Config.method_14317("SetFloat not supported for: " + this);
       }
    }
 

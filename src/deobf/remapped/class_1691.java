@@ -19,7 +19,7 @@ public class class_1691 extends class_4569 {
       return new class_1691(class_8938.field_45798, var0, class_8938.method_41064(var1), var2);
    }
 
-   public boolean method_7616(class_6098 var1, class_2792 var2, Collection<class_6098> var3) {
+   public boolean method_7616(ItemStack var1, class_2792 var2, Collection<ItemStack> var3) {
       if (this.field_8752.method_24266(var1)) {
          if (!this.field_8753.method_41071(var2)) {
             return false;
@@ -34,7 +34,7 @@ public class class_1691 extends class_4569 {
                   }
                }
 
-               for (class_6098 var9 : var3) {
+               for (ItemStack var9 : var3) {
                   if (this.field_8750.method_24266(var9)) {
                      var6 = true;
                      break;

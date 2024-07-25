@@ -2,14 +2,14 @@ package remapped;
 
 import net.minecraft.util.text.ITextComponent;
 
-public class class_8368 extends class_2089 implements class_3796 {
+public class SpectatorGui extends AbstractGui implements class_3796 {
    private static final Identifier field_42843 = new Identifier("textures/gui/widgets.png");
    public static final Identifier field_42845 = new Identifier("textures/gui/spectator_widgets.png");
    private final MinecraftClient field_42841;
    private long field_42842;
    private class_3421 field_42844;
 
-   public class_8368(MinecraftClient var1) {
+   public SpectatorGui(MinecraftClient var1) {
       this.field_42841 = var1;
    }
 
@@ -27,14 +27,14 @@ public class class_8368 extends class_2089 implements class_3796 {
       return class_9299.method_42828((float)var3 / 2000.0F, 0.0F, 1.0F);
    }
 
-   public void method_38558(class_7966 var1, float var2) {
+   public void func_238528_a_(class_7966 var1, float var2) {
       if (this.field_42844 != null) {
          float var5 = this.method_38562();
          if (!(var5 <= 0.0F)) {
-            int var6 = this.field_42841.method_8552().method_43165() / 2;
+            int var6 = this.field_42841.getMainWindow().getScaledWidth() / 2;
             int var7 = this.method_9777();
             this.method_9776(-90);
-            int var8 = class_9299.method_42848((float)this.field_42841.method_8552().method_43177() - 22.0F * var5);
+            int var8 = class_9299.method_42848((float)this.field_42841.getMainWindow().getScaledHeight() - 22.0F * var5);
             class_5017 var9 = this.field_42844.method_15811();
             this.method_38561(var1, var5, var6, var8, var9);
             this.method_9776(var7);
@@ -45,34 +45,34 @@ public class class_8368 extends class_2089 implements class_3796 {
    }
 
    public void method_38561(class_7966 var1, float var2, int var3, int var4, class_5017 var5) {
-      class_3542.method_16381();
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, var2);
-      this.field_42841.method_8577().method_35674(field_42843);
+      RenderSystem.method_16381();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, var2);
+      this.field_42841.getTextureManager().bindTexture(field_42843);
       this.method_9781(var1, var3 - 91, var4, 0, 0, 182, 22);
       if (var5.method_23095() >= 0) {
          this.method_9781(var1, var3 - 91 - 1 + var5.method_23095() * 20, var4 - 1, 0, 22, 24, 22);
       }
 
       for (int var8 = 0; var8 < 9; var8++) {
-         this.method_38565(var1, var8, this.field_42841.method_8552().method_43165() / 2 - 90 + var8 * 20 + 2, (float)(var4 + 3), var2, var5.method_23093(var8));
+         this.method_38565(var1, var8, this.field_42841.getMainWindow().getScaledWidth() / 2 - 90 + var8 * 20 + 2, (float)(var4 + 3), var2, var5.method_23093(var8));
       }
 
-      class_3542.method_16443();
-      class_3542.method_16448();
+      RenderSystem.method_16443();
+      RenderSystem.method_16448();
    }
 
    private void method_38565(class_7966 var1, int var2, int var3, float var4, float var5, class_7912 var6) {
-      this.field_42841.method_8577().method_35674(field_42845);
+      this.field_42841.getTextureManager().bindTexture(field_42845);
       if (var6 != class_3421.field_16839) {
          int var9 = (int)(var5 * 255.0F);
-         class_3542.method_16438();
-         class_3542.method_16413((float)var3, var4, 0.0F);
+         RenderSystem.method_16438();
+         RenderSystem.method_16413((float)var3, var4, 0.0F);
          float var10 = !var6.method_35793() ? 0.25F : 1.0F;
-         class_3542.method_16480(var10, var10, var10, var5);
+         RenderSystem.color4f(var10, var10, var10, var5);
          var6.method_35795(var1, var10, var9);
-         class_3542.method_16489();
+         RenderSystem.method_16489();
          if (var9 > 3 && var6.method_35793()) {
             ITextComponent var11 = this.field_42841.gameOptions.hotbarKeys[var2].method_27061();
             this.field_42841
@@ -88,14 +88,14 @@ public class class_8368 extends class_2089 implements class_3796 {
          class_7912 var5 = this.field_42844.method_15810();
          ITextComponent var6 = var5 != class_3421.field_16839 ? var5.method_35794() : this.field_42844.method_15805().method_20602();
          if (var6 != null) {
-            int var7 = (this.field_42841.method_8552().method_43165() - this.field_42841.textRenderer.method_45379(var6)) / 2;
-            int var8 = this.field_42841.method_8552().method_43177() - 35;
-            class_3542.method_16438();
-            class_3542.method_16488();
-            class_3542.method_16437();
+            int var7 = (this.field_42841.getMainWindow().getScaledWidth() - this.field_42841.textRenderer.method_45379(var6)) / 2;
+            int var8 = this.field_42841.getMainWindow().getScaledHeight() - 35;
+            RenderSystem.method_16438();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
             this.field_42841.textRenderer.method_45392(var1, var6, (float)var7, (float)var8, 16777215 + (var4 << 24));
-            class_3542.method_16448();
-            class_3542.method_16489();
+            RenderSystem.method_16448();
+            RenderSystem.method_16489();
          }
       }
    }

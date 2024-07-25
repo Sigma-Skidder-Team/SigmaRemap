@@ -8,7 +8,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_4816 extends class_2358 implements class_372, class_3745 {
    private static final int[] field_24077 = IntStream.range(0, 27).toArray();
-   private class_2831<class_6098> field_24083 = class_2831.<class_6098>method_12872(27, class_6098.field_31203);
+   private class_2831<ItemStack> field_24083 = class_2831.<ItemStack>method_12872(27, ItemStack.EMPTY);
    private int field_24080;
    private class_3639 field_24084 = class_3639.field_17758;
    private float field_24081;
@@ -222,7 +222,7 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    public void method_22198(class_5734 var1) {
-      this.field_24083 = class_2831.<class_6098>method_12872(this.method_31505(), class_6098.field_31203);
+      this.field_24083 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!this.method_10811(var1) && var1.method_25939("Items", 9)) {
          class_3037.method_13882(var1, this.field_24083);
       }
@@ -237,12 +237,12 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    @Override
-   public class_2831<class_6098> method_10814() {
+   public class_2831<ItemStack> method_10814() {
       return this.field_24083;
    }
 
    @Override
-   public void method_10813(class_2831<class_6098> var1) {
+   public void method_10813(class_2831<ItemStack> var1) {
       this.field_24083 = var1;
    }
 
@@ -252,12 +252,12 @@ public class class_4816 extends class_2358 implements class_372, class_3745 {
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1834(int var1, ItemStack var2, Direction var3) {
       return !(class_6414.method_29269(var2.method_27960()) instanceof class_3153);
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1833(int var1, ItemStack var2, Direction var3) {
       return true;
    }
 

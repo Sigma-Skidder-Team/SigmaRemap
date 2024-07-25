@@ -284,7 +284,7 @@ public class class_5080 implements Consumer<Consumer<class_3139>> {
                   .method_38238(Effects.field_19722)
                   .method_38238(Effects.field_19731)
                   .method_38238(Effects.field_19747)
-                  .method_38238(Effects.field_19732)
+                  .method_38238(Effects.NAUSEA)
                   .method_38238(Effects.field_19727)
                   .method_38238(Effects.field_19750)
                   .method_38238(Effects.field_19744)

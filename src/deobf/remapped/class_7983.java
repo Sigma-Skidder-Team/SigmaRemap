@@ -157,8 +157,8 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
       class_8042 var9 = class_8042.method_36499();
       class_9633 var10 = var9.method_36501();
       if (this.field_40879) {
-         this.field_40883.method_8577().method_35674(class_2089.field_10505);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         this.field_40883.getTextureManager().bindTexture(AbstractGui.field_10505);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
          var10.method_44471(7, class_7985.field_40905);
          var10.method_35761((double)this.field_40887, (double)this.field_40877, 0.0)
@@ -188,9 +188,9 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
 
       this.method_36211(var1, var16, var12, var2, var3, var4);
       if (this.field_40881) {
-         this.field_40883.method_8577().method_35674(class_2089.field_10505);
-         class_3542.method_16428();
-         class_3542.method_16457(519);
+         this.field_40883.getTextureManager().bindTexture(AbstractGui.field_10505);
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16457(519);
          float var13 = 32.0F;
          byte var14 = -100;
          var10.method_44471(7, class_7985.field_40905);
@@ -224,13 +224,13 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
             .method_35743(64, 64, 64, 255)
             .method_35735();
          var9.method_36500();
-         class_3542.method_16457(515);
-         class_3542.method_16491();
-         class_3542.method_16488();
-         class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
-         class_3542.method_16458();
-         class_3542.method_16486(7425);
-         class_3542.method_16354();
+         RenderSystem.method_16457(515);
+         RenderSystem.method_16491();
+         RenderSystem.enableBlend();
+         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
+         RenderSystem.method_16458();
+         RenderSystem.method_16486(7425);
+         RenderSystem.method_16354();
          byte var15 = 4;
          var10.method_44471(7, class_7985.field_40905);
          var10.method_35761((double)this.field_40887, (double)(this.field_40876 + 4), 0.0).method_35745(0.0F, 1.0F).method_35743(0, 0, 0, 0).method_35735();
@@ -246,7 +246,7 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
 
       int var17 = this.method_36209();
       if (var17 > 0) {
-         class_3542.method_16354();
+         RenderSystem.method_16354();
          int var18 = (int)((float)((this.field_40877 - this.field_40876) * (this.field_40877 - this.field_40876)) / (float)this.method_36205());
          var18 = class_9299.method_42829(var18, 32, this.field_40877 - this.field_40876 - 8);
          int var20 = (int)this.method_36228() * (this.field_40877 - this.field_40876 - var18) / var17 + this.field_40876;
@@ -271,10 +271,10 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
       }
 
       this.method_36220(var1, var2, var3);
-      class_3542.method_16432();
-      class_3542.method_16486(7424);
-      class_3542.method_16374();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16486(7424);
+      RenderSystem.enableAlphaTest();
+      RenderSystem.method_16448();
    }
 
    public void method_36189(E var1) {
@@ -460,23 +460,23 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
             if (this.field_40890 && this.method_36190(var12)) {
                int var19 = this.field_40887 + this.field_40891 / 2 - var18 / 2;
                int var20 = this.field_40887 + this.field_40891 / 2 + var18 / 2;
-               class_3542.method_16354();
+               RenderSystem.method_16354();
                float var21 = !this.method_36221() ? 0.5F : 1.0F;
-               class_3542.method_16480(var21, var21, var21, 1.0F);
+               RenderSystem.color4f(var21, var21, var21, 1.0F);
                var11.method_44471(7, class_7985.field_40915);
                var11.method_35761((double)var19, (double)(var15 + var16 + 2), 0.0).method_35735();
                var11.method_35761((double)var20, (double)(var15 + var16 + 2), 0.0).method_35735();
                var11.method_35761((double)var20, (double)(var15 - 2), 0.0).method_35735();
                var11.method_35761((double)var19, (double)(var15 - 2), 0.0).method_35735();
                var10.method_36500();
-               class_3542.method_16480(0.0F, 0.0F, 0.0F, 1.0F);
+               RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
                var11.method_44471(7, class_7985.field_40915);
                var11.method_35761((double)(var19 + 1), (double)(var15 + var16 + 1), 0.0).method_35735();
                var11.method_35761((double)(var20 - 1), (double)(var15 + var16 + 1), 0.0).method_35735();
                var11.method_35761((double)(var20 - 1), (double)(var15 - 1), 0.0).method_35735();
                var11.method_35761((double)(var19 + 1), (double)(var15 - 1), 0.0).method_35735();
                var10.method_36500();
-               class_3542.method_16432();
+               RenderSystem.method_16432();
             }
 
             int var22 = this.method_36229();

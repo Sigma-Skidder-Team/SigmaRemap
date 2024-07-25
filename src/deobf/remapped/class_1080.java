@@ -215,7 +215,7 @@ public abstract class class_1080 extends Entity {
    public void method_4743(class_6199 var1) {
       this.method_37204();
       if (this.field_41768.method_29537().method_1285(class_291.field_1024)) {
-         class_6098 var4 = new class_6098(class_4897.field_24547);
+         ItemStack var4 = new ItemStack(class_4897.field_24547);
          if (this.method_45507()) {
             var4.method_28032(this.method_45508());
          }

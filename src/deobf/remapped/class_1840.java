@@ -123,7 +123,7 @@ public class class_1840 extends Screen {
       switch (var1) {
          case field_25921:
             this.field_9321.method_32687(field_9340);
-            var4 = this.field_943.field_9632.field_30532.method_4803();
+            var4 = this.field_943.thePlayer.field_30532.method_4803();
             break;
          case field_25920:
             this.field_9338.method_32687(field_9331);
@@ -132,7 +132,7 @@ public class class_1840 extends Screen {
          case field_25922:
             this.field_9337.method_32687(field_9341);
             class_9186 var5 = this.field_943.method_8586();
-            var4 = this.field_943.field_9632.field_30532.method_4803().stream().filter(var5::method_42336).collect(Collectors.toSet());
+            var4 = this.field_943.thePlayer.field_30532.method_4803().stream().filter(var5::method_42336).collect(Collectors.toSet());
             break;
          default:
             var4 = ImmutableList.of();
@@ -141,12 +141,12 @@ public class class_1840 extends Screen {
       this.field_9342 = var1;
       this.field_9335.method_13681((Collection<UUID>)var4, this.field_9335.method_36228());
       if (!this.field_9324.method_8246().isEmpty() && this.field_9335.method_13678() && !this.field_9324.method_32691()) {
-         class_7542.field_38482.method_34341(field_9332.getString());
+         NarratorChatListener.INSTANCE.method_34341(field_9332.getString());
       } else if (var4.isEmpty()) {
          if (var1 == class_5011.field_25920) {
-            class_7542.field_38482.method_34341(field_9339.getString());
+            NarratorChatListener.INSTANCE.method_34341(field_9339.getString());
          } else if (var1 == class_5011.field_25922) {
-            class_7542.field_38482.method_34341(field_9333.getString());
+            NarratorChatListener.INSTANCE.method_34341(field_9333.getString());
          }
       }
    }
@@ -160,7 +160,7 @@ public class class_1840 extends Screen {
    public void method_1183(class_7966 var1) {
       int var4 = this.method_8127() + 3;
       super.method_1183(var1);
-      this.field_943.method_8577().method_35674(field_9330);
+      this.field_943.getTextureManager().bindTexture(field_9330);
       this.method_9781(var1, var4, 64, 1, 1, 236, 8);
       int var5 = this.method_8131();
 

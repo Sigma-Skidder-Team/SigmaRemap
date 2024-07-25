@@ -25,7 +25,7 @@ public class class_2681 extends Screen {
    });
 
    public class_2681(class_6730 var1) {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
       this.field_13149 = var1;
    }
 
@@ -36,7 +36,7 @@ public class class_2681 extends Screen {
 
    @Override
    public void method_1162() {
-      class_7542.field_38482.method_34341(new TranslationTextComponent("narrator.loading.done").getString());
+      NarratorChatListener.INSTANCE.method_34341(new TranslationTextComponent("narrator.loading.done").getString());
    }
 
    @Override
@@ -46,7 +46,7 @@ public class class_2681 extends Screen {
       long var8 = Util.getMeasuringTimeMs();
       if (var8 - this.field_13150 > 2000L) {
          this.field_13150 = var8;
-         class_7542.field_38482.method_34341(new TranslationTextComponent("narrator.loading", var7).getString());
+         NarratorChatListener.INSTANCE.method_34341(new TranslationTextComponent("narrator.loading", var7).getString());
       }
 
       int var10 = this.field_941 / 2;

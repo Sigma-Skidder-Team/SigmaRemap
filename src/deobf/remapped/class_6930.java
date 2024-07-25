@@ -4,7 +4,7 @@ public class class_6930 extends class_8085 {
    private static String[] field_35603;
 
    @Override
-   public class_6098 method_43688(class_8743 var1, class_6098 var2) {
+   public ItemStack method_43688(class_8743 var1, ItemStack var2) {
       this.method_36717(false);
       class_2451 var5 = var2.method_27960();
       if (var5 instanceof class_6201) {

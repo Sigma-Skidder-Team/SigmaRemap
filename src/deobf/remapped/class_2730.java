@@ -225,7 +225,7 @@ public class class_2730 {
                   class_8480 var12 = new class_8480((class_6331)this.field_13330)
                      .method_39068(this.field_13330.field_33033)
                      .method_39065(class_8712.field_44671, class_1343.method_6216(var7))
-                     .method_39065(class_8712.field_44670, class_6098.field_31203)
+                     .method_39065(class_8712.field_44670, ItemStack.EMPTY)
                      .method_39069(class_8712.field_44673, var11)
                      .method_39069(class_8712.field_44676, this.field_13323);
                   if (this.field_13334 == class_7298.field_37311) {
@@ -245,7 +245,7 @@ public class class_2730 {
 
          while (var14.hasNext()) {
             Pair var16 = (Pair)var14.next();
-            class_6414.method_29267(this.field_13330, (class_1331)var16.getSecond(), (class_6098)var16.getFirst());
+            class_6414.method_29267(this.field_13330, (class_1331)var16.getSecond(), (ItemStack)var16.getFirst());
          }
       }
 
@@ -260,14 +260,14 @@ public class class_2730 {
       }
    }
 
-   private static void method_12271(ObjectArrayList<Pair<class_6098, class_1331>> var0, class_6098 var1, class_1331 var2) {
+   private static void method_12271(ObjectArrayList<Pair<ItemStack, class_1331>> var0, ItemStack var1, class_1331 var2) {
       int var5 = var0.size();
 
       for (int var6 = 0; var6 < var5; var6++) {
          Pair var7 = (Pair)var0.get(var6);
-         class_6098 var8 = (class_6098)var7.getFirst();
+         ItemStack var8 = (ItemStack)var7.getFirst();
          if (class_91.method_249(var8, var1)) {
-            class_6098 var9 = class_91.method_247(var8, var1, 16);
+            ItemStack var9 = class_91.method_247(var8, var1, 16);
             var0.set(var6, Pair.of(var9, var7.getSecond()));
             if (var1.method_28022()) {
                return;

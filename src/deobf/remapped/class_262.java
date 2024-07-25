@@ -10,12 +10,12 @@ public class class_262 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      World var11 = this.field_921.field_9632.field_41768;
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16484(2.0F);
-      class_3542.method_16354();
-      class_3542.method_16387(false);
+      World var11 = this.field_921.thePlayer.field_41768;
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16484(2.0F);
+      RenderSystem.method_16354();
+      RenderSystem.method_16387(false);
       class_1331 var12 = new class_1331(var3, var5, var7);
 
       for (class_1331 var14 : class_1331.method_6076(var12.method_6104(-6, -6, -6), var12.method_6104(6, 6, 6))) {
@@ -104,8 +104,8 @@ public class class_262 implements class_2995 {
          }
       }
 
-      class_3542.method_16387(true);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16387(true);
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 }

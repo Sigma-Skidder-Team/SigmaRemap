@@ -12,8 +12,8 @@ public class class_777 extends Module {
    @EventListen
    private void method_3476(class_8706 var1) {
       if (this.method_42015()) {
-         if (mc.gameOptions.keySneak.isKeyDown() && var1.method_40004() == class_3237.field_16101) {
-            if (!(mc.field_9632.field_41755 < 0.0F)) {
+         if (client.gameOptions.keySneak.isKeyDown() && var1.method_40004() == class_3237.field_16101) {
+            if (!(client.thePlayer.field_41755 < 0.0F)) {
                this.method_3473(this.method_3477());
             } else {
                this.method_3473(this.method_3478());
@@ -39,11 +39,11 @@ public class class_777 extends Module {
             var7 = Integer.parseInt(var5);
          }
 
-         float var8 = (float)Math.toRadians((double)(mc.field_9632.field_41701 + 90.0F));
+         float var8 = (float)Math.toRadians((double)(client.thePlayer.field_41701 + 90.0F));
          double var9 = (double)(class_9299.method_42840(var8) * (float)var7);
          double var11 = (double)(class_9299.method_42818(var8) * (float)var7);
-         mc.field_9632
-            .method_37256(mc.field_9632.method_37302() + var9, mc.field_9632.method_37309(), mc.field_9632.method_37156() + var11);
+         client.thePlayer
+            .method_37256(client.thePlayer.method_37302() + var9, client.thePlayer.method_37309(), client.thePlayer.method_37156() + var11);
       }
    }
 
@@ -57,14 +57,14 @@ public class class_777 extends Module {
 
       for (int var5 = 0; var5 < 10; var5++) {
          class_1331 var6 = new class_1331(
-            mc.field_9632.method_37302(), mc.field_9632.method_37309() - (double)var5, mc.field_9632.method_37156()
+            client.thePlayer.method_37302(), client.thePlayer.method_37309() - (double)var5, client.thePlayer.method_37156()
          );
-         if (mc.field_9601.method_28262(var6).method_8302() && var3) {
+         if (client.field_9601.method_28262(var6).method_8302() && var3) {
             var4 = -var5;
             break;
          }
 
-         var3 = mc.field_9601.method_28262(var6).method_8302();
+         var3 = client.field_9601.method_28262(var6).method_8302();
       }
 
       return var4;
@@ -76,14 +76,14 @@ public class class_777 extends Module {
 
       for (int var5 = 10; var5 > 0; var5--) {
          class_1331 var6 = new class_1331(
-            mc.field_9632.method_37302(), mc.field_9632.method_37309() + (double)var5, mc.field_9632.method_37156()
+            client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var5, client.thePlayer.method_37156()
          );
-         if (mc.field_9601.method_28262(var6).method_8302() && var3 && !mc.field_9601.method_28262(var6.method_6100()).method_8302()) {
+         if (client.field_9601.method_28262(var6).method_8302() && var3 && !client.field_9601.method_28262(var6.method_6100()).method_8302()) {
             var4 = var5;
             break;
          }
 
-         var3 = mc.field_9601.method_28262(var6).method_8302();
+         var3 = client.field_9601.method_28262(var6).method_8302();
       }
 
       return var4;
@@ -93,14 +93,14 @@ public class class_777 extends Module {
       if (var1 == 0) {
          class_314.method_1443("§cCouldn't VClip");
       } else {
-         mc.method_8614()
+         client.method_8614()
             .method_4813(
                new class_9515(
-                  mc.field_9632.method_37302(), mc.field_9632.method_37309() + (double)var1, mc.field_9632.method_37156(), false
+                  client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var1, client.thePlayer.method_37156(), false
                )
             );
-         mc.field_9632
-            .method_37256(mc.field_9632.method_37302(), mc.field_9632.method_37309() + (double)var1, mc.field_9632.method_37156());
+         client.thePlayer
+            .method_37256(client.thePlayer.method_37302(), client.thePlayer.method_37309() + (double)var1, client.thePlayer.method_37156());
          SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, NotificationIcons.field_10993));
       }
    }

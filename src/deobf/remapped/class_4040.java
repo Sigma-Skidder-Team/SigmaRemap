@@ -7,7 +7,7 @@ public abstract class class_4040 extends class_4607 {
    public static final class_7821<Boolean> field_19606 = class_8073.<Boolean>method_36641(class_4040.class, class_2734.field_13347);
    private static final Predicate<class_91> field_19607 = var0 -> !var0.method_258()
          && var0.method_37330()
-         && class_6098.method_27982(var0.method_264(), class_2452.method_11292());
+         && ItemStack.method_27982(var0.method_264(), class_2452.method_11292());
    public class_2452 field_19610;
    private int field_19611;
    private boolean field_19608;
@@ -87,7 +87,7 @@ public abstract class class_4040 extends class_4607 {
          }
 
          if (this.method_21359() && var5 == null && ((class_6331)this.field_41768).method_28984(this.method_37075()) == null) {
-            class_6098 var6 = this.method_26520(class_6943.field_35704);
+            ItemStack var6 = this.method_26520(class_6943.field_35704);
             class_704 var7 = null;
             if (!(var4 instanceof class_704)) {
                if (var4 instanceof class_9408) {
@@ -101,7 +101,7 @@ public abstract class class_4040 extends class_4607 {
                var7 = (class_704)var4;
             }
 
-            if (!var6.method_28022() && class_6098.method_27982(var6, class_2452.method_11292()) && var7 != null) {
+            if (!var6.method_28022() && ItemStack.method_27982(var6, class_2452.method_11292()) && var7 != null) {
                class_2250 var11 = var7.method_26553(Effects.field_19721);
                int var12 = 1;
                if (var11 == null) {
@@ -188,11 +188,11 @@ public abstract class class_4040 extends class_4607 {
 
    @Override
    public void method_26902(class_91 var1) {
-      class_6098 var4 = var1.method_264();
+      ItemStack var4 = var1.method_264();
       boolean var5 = this.method_18600() && this.method_18589().method_11282(this.method_18592()) != null;
-      if (this.method_18600() && !var5 && class_6098.method_27982(var4, class_2452.method_11292())) {
+      if (this.method_18600() && !var5 && ItemStack.method_27982(var4, class_2452.method_11292())) {
          class_6943 var6 = class_6943.field_35704;
-         class_6098 var7 = this.method_26520(var6);
+         ItemStack var7 = this.method_26520(var6);
          double var8 = (double)this.method_26913(var6);
          if (!var7.method_28022() && (double)Math.max(this.field_41717.nextFloat() - 0.1F, 0.0F) < var8) {
             this.method_37310(var7);

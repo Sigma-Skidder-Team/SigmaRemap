@@ -84,7 +84,7 @@ public class class_7330 {
       method_33402();
       if (var0 != null && !(var0 instanceof class_185)) {
          if (class_7860.field_39861.method_3596() && MinecraftClient.getInstance().method_8498() == null) {
-            class_3111.method_14277("[Shaders] Delayed loading of block mappings after resources are loaded");
+            Config.method_14277("[Shaders] Delayed loading of block mappings after resources are loaded");
             field_37456 = true;
          } else {
             Object var3 = new ArrayList();
@@ -113,7 +113,7 @@ public class class_7330 {
 
          try {
             Identifier var6 = new Identifier(var5, "shaders/block.properties");
-            InputStream var7 = class_3111.method_14374(var6);
+            InputStream var7 = Config.method_14374(var6);
             method_33409(var7, var6.toString(), var0);
          } catch (IOException var8) {
          }
@@ -127,7 +127,7 @@ public class class_7330 {
             class_8407 var5 = new class_8407();
             var5.load(var0);
             var0.close();
-            class_3111.method_14277("[Shaders] Parsing block mappings: " + var1);
+            Config.method_14277("[Shaders] Parsing block mappings: " + var1);
             class_6284 var6 = new class_6284("Shaders");
 
             for (String var8 : var5.keySet()) {
@@ -141,26 +141,26 @@ public class class_7330 {
                } else {
                   String var10 = "block.";
                   if (!var8.startsWith(var10)) {
-                     class_3111.method_14317("[Shaders] Invalid block ID: " + var8);
+                     Config.method_14317("[Shaders] Invalid block ID: " + var8);
                   } else {
                      String var11 = class_8251.method_37832(var8, var10);
-                     int var12 = class_3111.method_14361(var11, -1);
+                     int var12 = Config.method_14361(var11, -1);
                      if (var12 < 0) {
-                        class_3111.method_14317("[Shaders] Invalid block ID: " + var8);
+                        Config.method_14317("[Shaders] Invalid block ID: " + var8);
                      } else {
                         class_9491[] var13 = var6.method_28680(var9);
                         if (var13 != null && var13.length >= 1) {
                            class_8951 var14 = new class_8951(var12, var13);
                            method_33400(var2, var14);
                         } else {
-                           class_3111.method_14317("[Shaders] Invalid block ID mapping: " + var8 + "=" + var9);
+                           Config.method_14317("[Shaders] Invalid block ID mapping: " + var8 + "=" + var9);
                         }
                      }
                   }
                }
             }
          } catch (IOException var15) {
-            class_3111.method_14317("[Shaders] Error reading: " + var1);
+            Config.method_14317("[Shaders] Error reading: " + var1);
          }
       }
    }
@@ -202,15 +202,15 @@ public class class_7330 {
    private static List<List<class_8951>> method_33410() {
       try {
          String var2 = "flattening_ids.txt";
-         class_3111.method_14277("Using legacy block aliases: " + var2);
+         Config.method_14277("Using legacy block aliases: " + var2);
          ArrayList var3 = new ArrayList();
          ArrayList var4 = new ArrayList();
          int var5 = 0;
-         InputStream var6 = class_3111.method_14300("/" + var2);
+         InputStream var6 = Config.method_14300("/" + var2);
          if (var6 == null) {
             return var3;
          } else {
-            String[] var7 = class_3111.method_14432(var6);
+            String[] var7 = Config.method_14432(var6);
 
             for (int var8 = 0; var8 < var7.length; var8++) {
                int var9 = var8 + 1;
@@ -219,13 +219,13 @@ public class class_7330 {
                   var4.add(var10);
                   if (!var10.startsWith("#")) {
                      if (var10.startsWith("alias")) {
-                        String[] var11 = class_3111.method_14302(var10, " ");
+                        String[] var11 = Config.method_14302(var10, " ");
                         String var12 = var11[1];
                         String var13 = var11[2];
                         String var14 = "{Name:'" + var13 + "'";
                         List var15 = var4.stream().filter(var1 -> var1.startsWith(var14)).collect(Collectors.toList());
                         if (var15.size() <= 0) {
-                           class_3111.method_14317("Block not processed: " + var10);
+                           Config.method_14317("Block not processed: " + var10);
                         } else {
                            for (String var17 : var15) {
                               String var18 = "{Name:'" + var12 + "'";
@@ -243,24 +243,24 @@ public class class_7330 {
                }
             }
 
-            class_3111.method_14277("Legacy block aliases: " + var5);
+            Config.method_14277("Legacy block aliases: " + var5);
             return var3;
          }
       } catch (IOException var20) {
-         class_3111.method_14317("Error loading legacy block aliases: " + var20.getClass().getName() + ": " + var20.getMessage());
+         Config.method_14317("Error loading legacy block aliases: " + var20.getClass().getName() + ": " + var20.getMessage());
          return new ArrayList<List<class_8951>>();
       }
    }
 
    private static void method_33394(String var0, int var1, List<List<class_8951>> var2) {
-      String[] var5 = class_3111.method_14302(var0, " ");
+      String[] var5 = Config.method_14302(var0, " ");
       if (var5.length != 4) {
-         class_3111.method_14317("Invalid flattening line: " + var0);
+         Config.method_14317("Invalid flattening line: " + var0);
       } else {
          String var6 = var5[0];
          String var7 = var5[1];
-         int var8 = class_3111.method_14361(var5[2], Integer.MIN_VALUE);
-         int var9 = class_3111.method_14361(var5[3], Integer.MIN_VALUE);
+         int var8 = Config.method_14361(var5[2], Integer.MIN_VALUE);
+         int var9 = Config.method_14361(var5[3], Integer.MIN_VALUE);
          if (var8 >= 0 && var9 >= 0) {
             try {
                JsonParser var10 = new JsonParser();
@@ -269,7 +269,7 @@ public class class_7330 {
                Identifier var13 = new Identifier(var12);
                class_6414 var14 = class_9451.method_43712(var13);
                if (var14 == null) {
-                  class_3111.method_14317("Invalid block name (" + var1 + "): " + var12);
+                  Config.method_14317("Invalid block name (" + var1 + "): " + var12);
                   return;
                }
 
@@ -283,11 +283,11 @@ public class class_7330 {
                      String var22 = ((JsonElement)var20.getValue()).getAsString();
                      class_5019 var23 = class_1385.method_6387(var21, var16);
                      if (var23 == null) {
-                        class_3111.method_14317("Invalid property (" + var1 + "): " + var21);
+                        Config.method_14317("Invalid property (" + var1 + "): " + var21);
                      } else {
                         Comparable var24 = class_6284.method_28670(var23, var22);
                         if (var24 == null) {
-                           class_3111.method_14317("Invalid property value (" + var1 + "): " + var22);
+                           Config.method_14317("Invalid property value (" + var1 + "): " + var22);
                         } else {
                            var17.put(var23, var24);
                         }
@@ -310,10 +310,10 @@ public class class_7330 {
                class_9491 var28 = method_33393(var15.method_8360(), var15.method_11477(), var17);
                method_33403((List<class_8951>)var27, var8, var9, var28);
             } catch (Exception var25) {
-               class_3111.method_14317("Error parsing: " + var0);
+               Config.method_14317("Error parsing: " + var0);
             }
          } else {
-            class_3111.method_14317("Invalid blockID or metadata (" + var1 + "): " + var8 + ":" + var9);
+            Config.method_14317("Invalid blockID or metadata (" + var1 + "): " + var8 + ":" + var9);
          }
       }
    }
@@ -370,7 +370,7 @@ public class class_7330 {
       }
 
       Integer[] var16 = var14.<Integer>toArray(new Integer[var14.size()]);
-      int[] var18 = class_3111.method_14267(var16);
+      int[] var18 = Config.method_14267(var16);
       return new class_9491(var1, var18);
    }
 
@@ -384,11 +384,11 @@ public class class_7330 {
                int var9 = var8.method_11473();
                class_8951 var10 = method_33395(var5, var9);
                if (var10 == null) {
-                  class_3111.method_14317("State has no alias: " + var8);
+                  Config.method_14317("State has no alias: " + var8);
                }
             }
          } else {
-            class_3111.method_14317("Block has no alias: " + var4);
+            Config.method_14317("Block has no alias: " + var4);
          }
       }
    }

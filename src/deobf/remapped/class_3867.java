@@ -42,14 +42,14 @@ public class class_3867 extends class_7067<class_2770> {
       }
 
       class_7907 var23 = var5.method_11645(field_18843);
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_6588.method_30278();
       }
 
-      class_3111.method_14387().field_20923 = true;
+      Config.method_14387().field_20923 = true;
       this.field_18839.method_45499(var4, var23, var6, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
-      class_3111.method_14387().field_20923 = false;
-      if (class_3111.method_14424()) {
+      Config.method_14387().field_20923 = false;
+      if (Config.method_14424()) {
          class_6588.method_30249();
       }
 

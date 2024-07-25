@@ -5,22 +5,22 @@ public final class class_4707 extends class_4696 {
 
    public class_4707(int var1) {
       super("portal_texturing", () -> {
-         class_3542.method_16463(5890);
-         class_3542.method_16438();
-         class_3542.method_16476();
-         class_3542.method_16413(0.5F, 0.5F, 0.0F);
-         class_3542.method_16403(0.5F, 0.5F, 1.0F);
-         class_3542.method_16413(17.0F / (float)var1, (2.0F + (float)var1 / 1.5F) * ((float)(Util.getMeasuringTimeMs() % 800000L) / 800000.0F), 0.0F);
-         class_3542.method_16410(((float)(var1 * var1) * 4321.0F + (float)var1 * 9.0F) * 2.0F, 0.0F, 0.0F, 1.0F);
-         class_3542.method_16403(4.5F - (float)var1 / 4.0F, 4.5F - (float)var1 / 4.0F, 1.0F);
-         class_3542.method_16408();
-         class_3542.method_16463(5888);
-         class_3542.method_16445();
+         RenderSystem.method_16463(5890);
+         RenderSystem.method_16438();
+         RenderSystem.method_16476();
+         RenderSystem.method_16413(0.5F, 0.5F, 0.0F);
+         RenderSystem.method_16403(0.5F, 0.5F, 1.0F);
+         RenderSystem.method_16413(17.0F / (float)var1, (2.0F + (float)var1 / 1.5F) * ((float)(Util.getMeasuringTimeMs() % 800000L) / 800000.0F), 0.0F);
+         RenderSystem.method_16410(((float)(var1 * var1) * 4321.0F + (float)var1 * 9.0F) * 2.0F, 0.0F, 0.0F, 1.0F);
+         RenderSystem.method_16403(4.5F - (float)var1 / 4.0F, 4.5F - (float)var1 / 4.0F, 1.0F);
+         RenderSystem.method_16408();
+         RenderSystem.method_16463(5888);
+         RenderSystem.method_16445();
       }, () -> {
-         class_3542.method_16463(5890);
-         class_3542.method_16489();
-         class_3542.method_16463(5888);
-         class_3542.method_16479();
+         RenderSystem.method_16463(5890);
+         RenderSystem.method_16489();
+         RenderSystem.method_16463(5888);
+         RenderSystem.method_16479();
       });
       this.field_22865 = var1;
    }

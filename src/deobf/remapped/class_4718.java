@@ -23,7 +23,7 @@ public class class_4718 extends class_7680 implements class_4378<class_6360> {
 
    @Override
    public void method_1156() {
-      this.field_943.field_9632.method_3207();
+      this.field_943.thePlayer.method_3207();
       super.method_1156();
    }
 
@@ -35,7 +35,7 @@ public class class_4718 extends class_7680 implements class_4378<class_6360> {
 
    @Override
    public void method_34807() {
-      if (!this.field_943.field_9632.method_3181()) {
+      if (!this.field_943.thePlayer.method_3181()) {
          super.method_34807();
       } else {
          this.<class_9521>method_1186(
@@ -68,7 +68,7 @@ public class class_4718 extends class_7680 implements class_4378<class_6360> {
    }
 
    private void method_21817(int var1) {
-      this.field_943.field_9647.method_42154(this.field_22892.field_19925, var1);
+      this.field_943.playerController.method_42154(this.field_22892.field_19925, var1);
    }
 
    @Override
@@ -77,7 +77,7 @@ public class class_4718 extends class_7680 implements class_4378<class_6360> {
    }
 
    private void method_21820() {
-      class_6098 var3 = this.field_22892.method_29135();
+      ItemStack var3 = this.field_22892.method_29135();
       this.method_34809(class_8668.method_39736(var3));
    }
 

@@ -3,29 +3,29 @@ package remapped;
 import java.util.List;
 
 public interface class_9168 {
-   default boolean method_42263(class_6098 var1) {
+   default boolean method_42263(ItemStack var1) {
       class_5734 var4 = var1.method_28021("display");
       return var4 != null && var4.method_25939("color", 99);
    }
 
-   default int method_42261(class_6098 var1) {
+   default int method_42261(ItemStack var1) {
       class_5734 var4 = var1.method_28021("display");
       return var4 != null && var4.method_25939("color", 99) ? var4.method_25947("color") : 10511680;
    }
 
-   default void method_42260(class_6098 var1) {
+   default void method_42260(ItemStack var1) {
       class_5734 var4 = var1.method_28021("display");
       if (var4 != null && var4.method_25938("color")) {
          var4.method_25959("color");
       }
    }
 
-   default void method_42262(class_6098 var1, int var2) {
+   default void method_42262(ItemStack var1, int var2) {
       var1.method_27978("display").method_25931("color", var2);
    }
 
-   static class_6098 method_42264(class_6098 var0, List<class_239> var1) {
-      class_6098 var4 = class_6098.field_31203;
+   static ItemStack method_42264(ItemStack var0, List<class_239> var1) {
+      ItemStack var4 = ItemStack.EMPTY;
       int[] var5 = new int[3];
       int var6 = 0;
       int var7 = 0;
@@ -74,7 +74,7 @@ public interface class_9168 {
          var8.method_42262(var4, var28);
          return var4;
       } else {
-         return class_6098.field_31203;
+         return ItemStack.EMPTY;
       }
    }
 }

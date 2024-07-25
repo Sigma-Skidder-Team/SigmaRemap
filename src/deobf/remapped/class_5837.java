@@ -12,11 +12,11 @@ public abstract class class_5837 implements class_2913 {
       this.field_29683 = class_5110.<class_2792>method_23432(var1);
    }
 
-   public final class_6098 apply(class_6098 var1, class_2792 var2) {
+   public final ItemStack apply(ItemStack var1, class_2792 var2) {
       return !this.field_29683.test(var2) ? var1 : this.method_26627(var1, var2);
    }
 
-   public abstract class_6098 method_26627(class_6098 var1, class_2792 var2);
+   public abstract ItemStack method_26627(ItemStack var1, class_2792 var2);
 
    @Override
    public void method_12680(class_4737 var1) {

@@ -73,7 +73,7 @@ public class class_7565 extends PremiumModule {
    }
 
    private void method_34397(int var1) {
-      if (mc.field_9623 == null || mc.field_9623 instanceof class_5766) {
+      if (client.field_9623 == null || client.field_9623 instanceof class_5766) {
          GL11.glPushMatrix();
          class_73.method_150(var1 - 20, this.field_38544 - 20, var1 + 200, this.field_38544 + 120, true);
          EntityRenderDispatcher var4 = MinecraftClient.getInstance().method_8587();
@@ -137,10 +137,10 @@ public class class_7565 extends PremiumModule {
          }
 
          GameProfile var8 = new GameProfile(var7, this.field_38555.method_45509().getString());
-         class_1806 var9 = new class_1806(this, mc.field_9601, var8);
-         class_3542.method_16438();
-         class_3542.method_16413((float)var1 + 50.0F, (float)this.field_38544 + 295.0F, 1000.0F);
-         class_3542.method_16403(1.0F, 1.0F, -1.0F);
+         class_1806 var9 = new class_1806(this, client.field_9601, var8);
+         RenderSystem.method_16438();
+         RenderSystem.method_16413((float)var1 + 50.0F, (float)this.field_38544 + 295.0F, 1000.0F);
+         RenderSystem.method_16403(1.0F, 1.0F, -1.0F);
          class_7966 var10 = new class_7966();
          var10.method_36065(0.0, 0.0, 1500.0);
          var10.method_36062((float)var6, (float)var6, (float)var6);
@@ -148,14 +148,14 @@ public class class_7565 extends PremiumModule {
          var10.method_36060(var11);
          var4.method_28136(false);
          class_3758 var12 = MinecraftClient.getInstance().method_8589().method_13796();
-         class_3542.method_16430(
+         RenderSystem.method_16430(
             () -> var5.method_26732(
                   var9, 100.0F, 0.0F, var10, var12, 15728880, Math.min(1.0F, this.field_38554.method_11123() * 4.0F), this.field_38552.method_11123()
                )
          );
          var12.method_17415();
          var4.method_28136(true);
-         class_3542.method_16489();
+         RenderSystem.method_16489();
          class_73.method_141();
          GL11.glPopMatrix();
       }
@@ -232,7 +232,7 @@ public class class_7565 extends PremiumModule {
       int var5 = 0;
 
       while (var4.hasNext()) {
-         class_6098 var6 = (class_6098)var4.next();
+         ItemStack var6 = (ItemStack)var4.next();
          class_73.method_125(var6, var1, this.field_38544 + this.field_38543 / 2 - var5 * 35, 1.0F);
          if (++var5 == 2) {
             var1 -= 35;

@@ -83,7 +83,7 @@ public class class_4929 implements class_3025 {
          int var4 = var1.hashCode();
          if (var4 == field_25503 && var1.equals("scheduledExecutables")) {
             class_5099.field_26313.method_24314();
-         } else if (var4 == field_25516 && var1.equals("tick") && class_3111.method_14272()) {
+         } else if (var4 == field_25516 && var1.equals("tick") && Config.method_14272()) {
             class_5099.field_26313.method_24313();
             class_5099.field_26306.method_24314();
          }

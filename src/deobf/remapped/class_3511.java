@@ -50,10 +50,10 @@ public class class_3511 {
             var0[var3] = new class_2921();
          }
       });
-      this.field_17226 = class_3111.method_14397();
+      this.field_17226 = Config.method_14397();
       this.field_17214 = !class_7860.field_40181.method_45472();
       this.field_17218 = false;
-      this.field_17212 = class_3111.method_14351();
+      this.field_17212 = Config.method_14351();
       this.field_17219 = new class_3511[6];
       this.field_17200 = false;
       this.field_17224 = new class_3511[Direction.field_803.length];

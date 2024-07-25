@@ -69,9 +69,9 @@ public class class_9093 extends Module {
          if (this.field_46580.method_27431() && this.field_46580.method_27432().size() > 0) {
             class_314.method_1443(this.field_46580.method_27432().size() + " blocks loaded from schematic");
             this.field_46570 = new class_1331(
-               mc.field_9632.method_37302() + this.field_46580.method_27435().method_19594() * 0.0,
-               mc.field_9632.method_37309() + this.field_46580.method_27435().method_19634() * 0.0,
-               mc.field_9632.method_37156() + this.field_46580.method_27435().method_19612() * 0.0
+               client.thePlayer.method_37302() + this.field_46580.method_27435().method_19594() * 0.0,
+               client.thePlayer.method_37309() + this.field_46580.method_27435().method_19634() * 0.0,
+               client.thePlayer.method_37156() + this.field_46580.method_27435().method_19612() * 0.0
             );
             this.method_41925();
          } else {
@@ -96,9 +96,9 @@ public class class_9093 extends Module {
                (double)this.field_46570.method_12185() + var5.method_1250().method_19612()
             );
             if (class_7494.method_34120(var6) == class_4783.field_23184) {
-               double var7 = (double)var6.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61();
-               double var9 = (double)var6.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60();
-               double var11 = (double)var6.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62();
+               double var7 = (double)var6.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+               double var9 = (double)var6.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
+               double var11 = (double)var6.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
                class_8194 var13 = new class_8194(var7, var9, var11, var7 + 1.0, var9 + 1.0, var11 + 1.0);
                class_73.method_83(var13, class_314.method_1444(class_1255.field_6922.field_6917, 0.02F));
                GL11.glEnable(2848);
@@ -109,9 +109,9 @@ public class class_9093 extends Module {
 
          for (class_7606 var15 : this.field_46576) {
             class_1331 var16 = var15.field_38725;
-            double var17 = (double)var16.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61();
-            double var18 = (double)var16.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60();
-            double var19 = (double)var16.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62();
+            double var17 = (double)var16.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+            double var18 = (double)var16.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
+            double var19 = (double)var16.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
             class_8194 var20 = new class_8194(var17, var18, var19, var17 + 1.0, var18 + 1.0, var19 + 1.0);
             class_73.method_83(var20, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
             class_73.method_131(var20, class_314.method_1444(class_1255.field_6925.field_6917, 0.2F));

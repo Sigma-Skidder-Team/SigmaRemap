@@ -26,7 +26,7 @@ public class HypixelGamePlay extends Module {
 
    @EventListen
    private void method_14880(PacketEvent var1) {
-      if (mc.field_9632 != null) {
+      if (client.thePlayer != null) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_5182) {
             class_5182 var5 = (class_5182)var4;
@@ -35,8 +35,8 @@ public class HypixelGamePlay extends Module {
                return;
             }
 
-            String var7 = mc.field_9632.method_45509().getString().toLowerCase();
-            if (SigmaMainClass.getInstance().getModuleManager().method_847(NameProtectModule.class).method_42015()) {
+            String var7 = client.thePlayer.method_45509().getString().toLowerCase();
+            if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).method_42015()) {
             }
 
             if (this.field_16172.method_42007("AutoL")) {
@@ -61,9 +61,9 @@ public class HypixelGamePlay extends Module {
                   || var6.toLowerCase().contains("was thrown off a cliff by " + var7 + ".")
                   || var6.toLowerCase().contains("was struck down by " + var7 + ".")
                   || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
-                  class_1097 var34 = mc.field_9601.method_29562();
+                  class_1097 var34 = client.field_9601.method_29562();
                   class_4399 var11 = null;
-                  class_3903 var12 = var34.method_4848(mc.field_9632.method_37206());
+                  class_3903 var12 = var34.method_4848(client.thePlayer.method_37206());
                   if (var12 != null) {
                      int var13 = var12.method_23381().getColorIndex();
                      if (var13 >= 0) {

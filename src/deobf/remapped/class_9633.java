@@ -239,11 +239,11 @@ public class class_9633 extends class_7690 implements class_5359 {
          this.field_49067 = (class_3884)var2.method_13174().get(0);
          this.field_49076 = 0;
          ((Buffer)this.field_49080).clear();
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_2448.method_11199(this);
          }
 
-         if (!class_3111.method_14405()) {
+         if (!Config.method_14405()) {
             if (this.field_49075 != null) {
                this.field_49089 = this.field_49075;
             }
@@ -329,7 +329,7 @@ public class class_9633 extends class_7690 implements class_5359 {
       if (this.field_49076 == 0) {
          this.field_49069++;
          this.method_44475();
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_2448.method_11198(this);
          }
       } else {
@@ -426,7 +426,7 @@ public class class_9633 extends class_7690 implements class_5359 {
       ByteBuffer var4 = this.field_49080.slice();
       var4.order(this.field_49080.order());
       ((Buffer)this.field_49080).clear();
-      if (class_7025.method_32049(var3) == 7 && class_3111.method_14236()) {
+      if (class_7025.method_32049(var3) == 7 && Config.method_14236()) {
          if (this.field_49061 == null) {
             this.field_49061 = class_1423.method_6528(this.field_49080.capacity() * 2);
          }
@@ -506,7 +506,7 @@ public class class_9633 extends class_7690 implements class_5359 {
 
    public void method_44485() {
       if (this.field_49075 != null) {
-         int var3 = class_3111.method_14295().method_38525();
+         int var3 = Config.method_14295().method_38525();
          if (this.field_49081.length <= var3) {
             this.field_49081 = new boolean[var3 + 1];
          }
@@ -729,7 +729,7 @@ public class class_9633 extends class_7690 implements class_5359 {
    }
 
    public void method_44480(ByteBuffer var1) {
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_2448.method_11196(this, var1);
       }
 
@@ -738,7 +738,7 @@ public class class_9633 extends class_7690 implements class_5359 {
       this.field_49080.put(var1);
       this.field_49069 = this.field_49069 + var1.limit() / this.field_49074.method_13168();
       this.field_49088 = this.field_49088 + var1.limit();
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_2448.method_11187(this);
       }
    }

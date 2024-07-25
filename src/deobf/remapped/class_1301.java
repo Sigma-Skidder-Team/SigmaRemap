@@ -31,7 +31,7 @@ public class class_1301 extends class_6414 {
          method_5943(var2, var3);
       }
 
-      class_6098 var9 = var4.method_26617(var5);
+      ItemStack var9 = var4.method_26617(var5);
       return var9.method_27960() instanceof class_6201 && new class_353(var4, var5, var9, var6).method_1785() ? class_6910.field_35521 : class_6910.field_35520;
    }
 
@@ -55,7 +55,7 @@ public class class_1301 extends class_6414 {
    }
 
    @Override
-   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, class_6098 var4) {
+   public void method_10765(class_2522 var1, class_6331 var2, class_1331 var3, ItemStack var4) {
       super.method_10765(var1, var2, var3, var4);
       if (class_2931.method_13423(class_3668.field_17870, var4) == 0) {
          int var7 = 1 + var2.field_33033.nextInt(5);

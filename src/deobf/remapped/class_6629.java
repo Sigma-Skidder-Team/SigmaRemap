@@ -429,7 +429,7 @@ public class class_6629<T extends Entity> {
    }
 
    @Nullable
-   public Entity method_30479(class_6331 var1, class_6098 var2, class_704 var3, class_1331 var4, class_2417 var5, boolean var6, boolean var7) {
+   public Entity method_30479(class_6331 var1, ItemStack var2, class_704 var3, class_1331 var4, class_2417 var5, boolean var6, boolean var7) {
       return this.method_30478(
          var1, var2 != null ? var2.method_27990() : null, var2 != null && var2.method_28018() ? var2.method_28008() : null, var3, var4, var5, var6, var7
       );

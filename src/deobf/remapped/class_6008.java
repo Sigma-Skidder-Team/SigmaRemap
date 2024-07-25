@@ -17,7 +17,7 @@ public class class_6008 {
                return this.field_30593;
             } else {
                double var13 = (double)var11 * 0.001;
-               var13 = class_3111.method_14261(var13, 0.0, 1.0);
+               var13 = Config.method_14261(var13, 0.0, 1.0);
                double var15 = var1 - this.field_30593.field_7336;
                double var17 = var3 - this.field_30593.field_7333;
                double var19 = var5 - this.field_30593.field_7334;

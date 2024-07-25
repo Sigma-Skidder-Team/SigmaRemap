@@ -30,11 +30,11 @@ public class NCPStep extends Module {
    private void method_44493(class_8544 var1) {
       if (this.method_42015() && !var1.method_29716()) {
          double var4 = var1.method_39326();
-         if (class_314.method_1413(mc.field_9632, 1.0E-4F) && !class_8865.method_40771()) {
+         if (class_314.method_1413(client.thePlayer, 1.0E-4F) && !class_8865.method_40771()) {
             if (var4 >= 0.625) {
-               double var6 = mc.field_9632.method_37302();
-               double var8 = mc.field_9632.method_37309();
-               double var10 = mc.field_9632.method_37156();
+               double var6 = client.thePlayer.method_37302();
+               double var8 = client.thePlayer.method_37309();
+               double var10 = client.thePlayer.method_37156();
                this.field_49103 = 1;
                if (!(var4 < 1.1)) {
                   if (!(var4 < 1.6)) {
@@ -76,7 +76,7 @@ public class NCPStep extends Module {
                   }
                }
 
-               mc.theTimer.timerSpeed = this.field_49101;
+               client.theTimer.timerSpeed = this.field_49101;
             }
          } else {
             var1.method_29715(true);
@@ -86,18 +86,18 @@ public class NCPStep extends Module {
 
    @EventListen
    private void method_44491(class_7982 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (this.field_49103 > 0) {
             this.field_49103--;
          }
 
          if (!var1.method_36184()) {
-            mc.field_9632.field_41733 = this.getFloatValueByName("Maximum heigh");
+            client.thePlayer.field_41733 = this.getFloatValueByName("Maximum heigh");
          } else {
-            mc.field_9632.field_41733 = 0.5F;
+            client.thePlayer.field_41733 = 0.5F;
             if (this.field_49101 != -1.0F) {
                this.field_49101 = -1.0F;
-               mc.theTimer.timerSpeed = 1.0F;
+               client.theTimer.timerSpeed = 1.0F;
             }
          }
       }
@@ -110,7 +110,7 @@ public class NCPStep extends Module {
          var1.method_29715(true);
          if (this.field_49103 == 0) {
             for (Packet var5 : this.field_49102) {
-               mc.method_8614().method_9091().method_23481(var5);
+               client.method_8614().method_9091().method_23481(var5);
             }
 
             this.field_49102.clear();

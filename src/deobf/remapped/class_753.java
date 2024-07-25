@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 public class class_753 {
    private final GameProfile field_4088;
    private final Map<Type, Identifier> field_4087 = Maps.newEnumMap(Type.class);
-   private class_4666 field_4083;
+   private GameType field_4083;
    private int field_4090;
    private boolean field_4091;
    private String field_4095;
@@ -34,11 +34,11 @@ public class class_753 {
    }
 
    @Nullable
-   public class_4666 method_3393() {
+   public GameType method_3393() {
       return this.field_4083;
    }
 
-   public void method_3395(class_4666 var1) {
+   public void method_3395(GameType var1) {
       this.field_4083 = var1;
    }
 

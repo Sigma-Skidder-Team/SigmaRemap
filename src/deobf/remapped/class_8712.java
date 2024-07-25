@@ -9,7 +9,7 @@ public class class_8712 {
    public static final class_9791<class_1343> field_44671 = method_40046("origin");
    public static final class_9791<class_2522> field_44677 = method_40046("block_state");
    public static final class_9791<class_3757> field_44673 = method_40046("block_entity");
-   public static final class_9791<class_6098> field_44670 = method_40046("tool");
+   public static final class_9791<ItemStack> field_44670 = method_40046("tool");
    public static final class_9791<Float> field_44672 = method_40046("explosion_radius");
 
    private static <T> class_9791<T> method_40046(String var0) {

@@ -26,7 +26,7 @@ public class class_1060 extends class_7067<class_5614> {
       float var16 = 0.25F;
       float var17 = 255.0F;
       float var18 = ((float)var1.field_28508 + var3) / 2.0F;
-      if (class_3111.method_14438()) {
+      if (Config.method_14438()) {
          var18 = class_9300.method_42880(var18);
       }
 
@@ -45,7 +45,7 @@ public class class_1060 extends class_7067<class_5614> {
       int var27 = var19;
       int var28 = 255;
       int var29 = var21;
-      if (class_3111.method_14438()) {
+      if (Config.method_14438()) {
          int var30 = class_9300.method_42918(var18);
          if (var30 >= 0) {
             var27 = var30 >> 16 & 0xFF;

@@ -13,7 +13,7 @@ public class class_8004 extends class_9521 {
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       class_7039.method_32288(this.field_41018).method_8577().method_35674(class_7039.method_32252());
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = !this.method_32703() ? 0.0F : 12.0F;
       method_9778(var1, this.field_36670, this.field_36674, 0.0F, var7, 12, 12, 12, 24);
       if (this.method_26937((double)var2, (double)var3)) {

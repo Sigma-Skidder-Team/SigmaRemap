@@ -22,7 +22,7 @@ public final class class_2078 {
    }
 
    public void method_9699() {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       this.field_10462.clear();
       Buffer var3 = GLFW.glfwGetVideoModes(this.field_10461);
       GLFWVidMode var4 = GLFW.glfwGetVideoMode(this.field_10461);
@@ -60,7 +60,7 @@ public final class class_2078 {
    }
 
    public class_5722 method_9696(Optional<class_5722> var1) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       if (var1.isPresent()) {
          class_5722 var4 = (class_5722)var1.get();
 
@@ -75,7 +75,7 @@ public final class class_2078 {
    }
 
    public int method_9704(class_5722 var1) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       return this.field_10462.indexOf(var1);
    }
 

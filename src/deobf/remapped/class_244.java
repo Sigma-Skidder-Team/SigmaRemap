@@ -46,7 +46,7 @@ public class class_244 {
    }
 
    public static String method_1065() {
-      String var2 = class_3111.field_15479;
+      String var2 = Config.field_15479;
       if (var2 != null) {
          var2 = var2.toLowerCase();
          if (!var2.startsWith("ati")) {
@@ -68,7 +68,7 @@ public class class_244 {
    }
 
    public static String method_1064() {
-      String var2 = class_3111.field_15458;
+      String var2 = Config.field_15458;
       if (var2 != null) {
          var2 = var2.toLowerCase();
          if (!var2.startsWith("amd")) {
@@ -119,7 +119,7 @@ public class class_244 {
 
    public static class_4789[] method_1069() {
       if (field_837 == null) {
-         String[] var2 = class_3111.method_14381();
+         String[] var2 = Config.method_14381();
          class_4789[] var3 = new class_4789[var2.length];
 
          for (int var4 = 0; var4 < var2.length; var4++) {
@@ -134,9 +134,9 @@ public class class_244 {
 
    public static String method_1062() {
       StringBuilder var2 = new StringBuilder();
-      method_1061(var2, "MC_VERSION", class_3111.method_14330());
-      method_1059(var2, "MC_GL_VERSION " + class_3111.method_14311().method_11608());
-      method_1059(var2, "MC_GLSL_VERSION " + class_3111.method_14269().method_11608());
+      method_1061(var2, "MC_VERSION", Config.method_14330());
+      method_1059(var2, "MC_GL_VERSION " + Config.method_14311().method_11608());
+      method_1059(var2, "MC_GLSL_VERSION " + Config.method_14269().method_11608());
       method_1059(var2, method_1063());
       method_1059(var2, method_1065());
       method_1059(var2, method_1064());

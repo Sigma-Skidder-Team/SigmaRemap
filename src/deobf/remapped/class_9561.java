@@ -125,7 +125,7 @@ public class class_9561 implements class_9538 {
          Matcher var5 = var8.matcher(this.field_48662);
          if (var5.matches()) {
             String var6 = var5.group(1);
-            int var7 = class_3111.method_14361(var6, -1);
+            int var7 = Config.method_14361(var6, -1);
             if (var7 >= 0) {
                return new class_9491[]{new class_9491(var7)};
             }
@@ -149,7 +149,7 @@ public class class_9561 implements class_9538 {
 
          String var3 = this.field_48668 + ".png";
          Identifier var4 = new Identifier(var3);
-         InputStream var5 = class_3111.method_14374(var4);
+         InputStream var5 = Config.method_14374(var4);
          if (var5 == null) {
             return;
          }
@@ -182,11 +182,11 @@ public class class_9561 implements class_9538 {
    }
 
    private static void method_44181(String var0) {
-      class_3111.method_14277("CustomColors: " + var0);
+      Config.method_14277("CustomColors: " + var0);
    }
 
    private static void method_44172(String var0) {
-      class_3111.method_14317("CustomColors: " + var0);
+      Config.method_14317("CustomColors: " + var0);
    }
 
    private static String method_44188(String var0, String var1, String var2) {
@@ -250,13 +250,13 @@ public class class_9561 implements class_9538 {
    }
 
    public int method_44168(int var1) {
-      var1 = class_3111.method_14263(var1, 0, this.field_48667.length - 1);
+      var1 = Config.method_14263(var1, 0, this.field_48667.length - 1);
       return this.field_48667[var1] & 16777215;
    }
 
    public int method_44169(int var1, int var2) {
-      var1 = class_3111.method_14263(var1, 0, this.field_48664 - 1);
-      var2 = class_3111.method_14263(var2, 0, this.field_48661 - 1);
+      var1 = Config.method_14263(var1, 0, this.field_48664 - 1);
+      var2 = Config.method_14263(var2, 0, this.field_48661 - 1);
       return this.field_48667[var2 * this.field_48664 + var1] & 16777215;
    }
 
@@ -336,7 +336,7 @@ public class class_9561 implements class_9538 {
       int var6 = var2.method_12165() - this.field_48651;
       if (this.field_48665 > 0) {
          int var7 = var2.method_12173() << 16 + var2.method_12185();
-         int var8 = class_3111.method_14419(var7);
+         int var8 = Config.method_14419(var7);
          int var9 = this.field_48665 * 2 + 1;
          int var10 = (var8 & 0xFF) % var9 - this.field_48665;
          var6 += var10;
@@ -379,7 +379,7 @@ public class class_9561 implements class_9538 {
          this.field_48646 = new class_9491[0];
       }
 
-      this.field_48646 = (class_9491[])class_3111.method_14441(this.field_48646, var1);
+      this.field_48646 = (class_9491[]) Config.method_14441(this.field_48646, var1);
    }
 
    public void method_44183(int var1, int var2) {
@@ -432,6 +432,6 @@ public class class_9561 implements class_9538 {
 
    @Override
    public String toString() {
-      return "" + this.field_48647 + "/" + this.field_48662 + ", blocks: " + class_3111.method_14289(this.field_48646) + ", source: " + this.field_48668;
+      return "" + this.field_48647 + "/" + this.field_48662 + ", blocks: " + Config.method_14289(this.field_48646) + ", source: " + this.field_48668;
    }
 }

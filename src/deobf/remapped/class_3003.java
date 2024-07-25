@@ -27,7 +27,7 @@ public class class_3003 extends class_2451 {
       if (!(var4 instanceof class_6331)) {
          return class_6910.field_35520;
       } else {
-         class_6098 var5 = var1.method_21867();
+         ItemStack var5 = var1.method_21867();
          class_1331 var6 = var1.method_21858();
          Direction var7 = var1.method_21857();
          class_2522 var8 = var4.method_28262(var6);
@@ -64,8 +64,8 @@ public class class_3003 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48749);
       if (var7.method_33990() == class_1430.field_7717) {
          if (var1 instanceof class_6331) {
@@ -80,21 +80,21 @@ public class class_3003 extends class_2451 {
                      }
 
                      var2.method_3211(class_6234.field_31907.method_43790(this));
-                     return class_954.<class_6098>method_4206(var6);
+                     return class_954.<ItemStack>method_4206(var6);
                   } else {
-                     return class_954.<class_6098>method_4207(var6);
+                     return class_954.<ItemStack>method_4207(var6);
                   }
                } else {
-                  return class_954.<class_6098>method_4202(var6);
+                  return class_954.<ItemStack>method_4202(var6);
                }
             } else {
-               return class_954.<class_6098>method_4207(var6);
+               return class_954.<ItemStack>method_4207(var6);
             }
          } else {
-            return class_954.<class_6098>method_4205(var6);
+            return class_954.<ItemStack>method_4205(var6);
          }
       } else {
-         return class_954.<class_6098>method_4207(var6);
+         return class_954.<ItemStack>method_4207(var6);
       }
    }
 
@@ -127,7 +127,7 @@ public class class_3003 extends class_2451 {
    }
 
    public Optional<class_5886> method_13714(
-      class_704 var1, class_5886 var2, class_6629<? extends class_5886> var3, class_6331 var4, class_1343 var5, class_6098 var6
+      class_704 var1, class_5886 var2, class_6629<? extends class_5886> var3, class_6331 var4, class_1343 var5, ItemStack var6
    ) {
       if (this.method_13717(var6.method_27990(), var3)) {
          Object var9;

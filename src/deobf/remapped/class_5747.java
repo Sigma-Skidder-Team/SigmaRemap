@@ -261,36 +261,36 @@ public class class_5747 extends class_1094 {
                if (var8 != 3) {
                   class_3570.method_16600(String.valueOf(this.field_29097.field_39017), this.field_29097.field_39003);
                } else {
-                  this.field_943.method_8577().method_35674(class_7319.field_37422);
+                  this.field_943.getTextureManager().bindTexture(class_7319.field_37422);
                }
             } else {
-               this.field_943.method_8577().method_35674(class_7319.field_37417);
+               this.field_943.getTextureManager().bindTexture(class_7319.field_37417);
             }
          } else {
-            this.field_943.method_8577().method_35674(class_7319.field_37425);
+            this.field_943.getTextureManager().bindTexture(class_7319.field_37425);
          }
       } else {
-         this.field_943.method_8577().method_35674(class_7319.field_37418);
+         this.field_943.getTextureManager().bindTexture(class_7319.field_37418);
       }
 
       if (var6) {
          if (var6) {
             float var15 = 0.9F + 0.1F * class_9299.method_42840((float)this.field_29092 * 0.2F);
-            class_3542.method_16480(var15, var15, var15, 1.0F);
+            RenderSystem.color4f(var15, var15, var15, 1.0F);
          }
       } else {
-         class_3542.method_16480(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       }
 
-      class_2089.method_9778(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
-      this.field_943.method_8577().method_35674(class_7319.field_37415);
+      AbstractGui.method_9778(var1, var2 + 3, var3 + 3, 0.0F, 0.0F, 74, 74, 74, 74);
+      this.field_943.getTextureManager().bindTexture(class_7319.field_37415);
       if (!var6) {
-         class_3542.method_16480(0.56F, 0.56F, 0.56F, 1.0F);
+         RenderSystem.color4f(0.56F, 0.56F, 0.56F, 1.0F);
       } else {
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       }
 
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 80, 80, 80, 80);
       method_9787(var1, this.field_948, var7, var2 + 40, var3 + 66, 16777215);
    }
 }

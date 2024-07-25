@@ -60,7 +60,7 @@ public class class_5809 extends class_3599 {
 
    private boolean method_26302(class_704 var1) {
       for (class_2584 var7 : class_2584.values()) {
-         class_6098 var8 = var1.method_26617(var7);
+         ItemStack var8 = var1.method_26617(var7);
          if (this.field_29320.method_41215() && var8.method_27960() == class_4897.field_24384) {
             return true;
          }

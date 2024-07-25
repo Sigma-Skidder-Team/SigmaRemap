@@ -9,7 +9,7 @@ public class class_7567 {
    private static final class_8494 field_38560 = new class_8494(Duration.ofSeconds(5L));
 
    public static void method_34410(String var0) {
-      class_7542 var3 = class_7542.field_38482;
+      NarratorChatListener var3 = NarratorChatListener.INSTANCE;
       var3.method_34347();
       var3.method_44914(ChatType.SYSTEM, new StringTextComponent(method_34406(var0)), Util.NIL_UUID);
    }

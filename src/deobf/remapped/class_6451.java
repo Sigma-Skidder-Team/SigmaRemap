@@ -45,7 +45,7 @@ public class class_6451 extends class_4314 {
       class_7434 var6 = var5.<class_7434>method_40143();
       int var7 = var6.method_33831();
       if (var7 >= 0) {
-         class_6098 var8 = var6.method_31498(var7);
+         ItemStack var8 = var6.method_31498(var7);
          class_6191 var9 = this.method_29409(var8);
          if (var9 != class_6191.field_31621) {
             var6.method_31503(var7, var9.method_28324(var5, var8));
@@ -55,7 +55,7 @@ public class class_6451 extends class_4314 {
       }
    }
 
-   public class_6191 method_29409(class_6098 var1) {
+   public class_6191 method_29409(ItemStack var1) {
       return field_32901.get(var1.method_27960());
    }
 
@@ -87,7 +87,7 @@ public class class_6451 extends class_4314 {
    }
 
    @Override
-   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, class_6098 var5) {
+   public void method_29257(World var1, class_1331 var2, class_2522 var3, class_5834 var4, ItemStack var5) {
       if (var5.method_28018()) {
          class_3757 var8 = var1.method_28260(var2);
          if (var8 instanceof class_7434) {

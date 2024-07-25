@@ -42,21 +42,21 @@ public class class_4393 extends class_2803 implements class_9897 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() == class_4897.field_24454 && !this.method_26449()) {
          boolean var11 = false;
-         class_6098 var12;
+         ItemStack var12;
          if (this.field_21516 == null) {
-            var12 = new class_6098(class_4897.field_24719);
+            var12 = new ItemStack(class_4897.field_24719);
          } else {
             var11 = true;
-            var12 = new class_6098(class_4897.field_24846);
+            var12 = new ItemStack(class_4897.field_24846);
             class_4699.method_21671(var12, this.field_21516, this.field_21515);
             this.field_21516 = null;
             this.field_21515 = 0;
          }
 
-         class_6098 var13 = class_4754.method_21942(var5, var1, var12, false);
+         ItemStack var13 = class_4754.method_21942(var5, var1, var12, false);
          var1.method_26615(var2, var13);
          class_8461 var9;
          if (!var11) {
@@ -154,7 +154,7 @@ public class class_4393 extends class_2803 implements class_9897 {
                      this.method_37302(),
                      this.method_37080(1.0),
                      this.method_37156(),
-                     new class_6098(class_2066.method_9650(this.method_20463()).method_8360())
+                     new ItemStack(class_2066.method_9650(this.method_20463()).method_8360())
                   )
                );
          }
@@ -189,7 +189,7 @@ public class class_4393 extends class_2803 implements class_9897 {
       }
    }
 
-   private Optional<Pair<class_1425, Integer>> method_20462(class_6098 var1) {
+   private Optional<Pair<class_1425, Integer>> method_20462(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       if (var4 instanceof class_6201) {
          class_6414 var5 = ((class_6201)var4).method_28392();

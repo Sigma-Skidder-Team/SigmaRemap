@@ -38,7 +38,7 @@ public class AccountManager {
    }
 
    public void initAndRunIRC() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
       this.field_25933 = new SigmaIRC(this);
    }
 

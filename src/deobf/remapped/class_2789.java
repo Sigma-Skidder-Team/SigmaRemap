@@ -31,13 +31,13 @@ public class class_2789 extends class_7621 {
    }
 
    public static void method_12674(MinecraftClient var0) {
-      var0.method_8577().method_35682(field_13703, new class_7289());
+      var0.getTextureManager().method_35682(field_13703, new class_7289());
    }
 
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
-      int var7 = this.field_13696.method_8552().method_43165();
-      int var8 = this.field_13696.method_8552().method_43177();
+      int var7 = this.field_13696.getMainWindow().getScaledWidth();
+      int var8 = this.field_13696.getMainWindow().getScaledHeight();
       long var9 = Util.getMeasuringTimeMs();
       if (this.field_13694 && (this.field_13700.method_19968() || this.field_13696.field_9623 != null) && this.field_13702 == -1L) {
          this.field_13702 = var9;
@@ -68,18 +68,18 @@ public class class_2789 extends class_7621 {
          var14 = 1.0F;
       }
 
-      int var28 = (int)((double)this.field_13696.method_8552().method_43165() * 0.5);
-      int var15 = (int)((double)this.field_13696.method_8552().method_43177() * 0.5);
-      double var16 = Math.min((double)this.field_13696.method_8552().method_43165() * 0.75, (double)this.field_13696.method_8552().method_43177()) * 0.25;
+      int var28 = (int)((double)this.field_13696.getMainWindow().getScaledWidth() * 0.5);
+      int var15 = (int)((double)this.field_13696.getMainWindow().getScaledHeight() * 0.5);
+      double var16 = Math.min((double)this.field_13696.getMainWindow().getScaledWidth() * 0.75, (double)this.field_13696.getMainWindow().getScaledHeight()) * 0.25;
       int var18 = (int)(var16 * 0.5);
       double var19 = var16 * 4.0;
       int var21 = (int)(var19 * 0.5);
-      this.field_13696.method_8577().method_35674(field_13703);
-      class_3542.method_16488();
-      class_3542.method_16401(32774);
-      class_3542.method_16397(770, 1);
-      class_3542.method_16442(516, 0.0F);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, var14);
+      this.field_13696.getTextureManager().bindTexture(field_13703);
+      RenderSystem.enableBlend();
+      RenderSystem.method_16401(32774);
+      RenderSystem.method_16397(770, 1);
+      RenderSystem.method_16442(516, 0.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, var14);
       boolean var22 = true;
       if (this.field_13706 != null) {
          this.field_13706.method_16280();
@@ -93,10 +93,10 @@ public class class_2789 extends class_7621 {
          method_9780(var1, var28, var15 - var18, var21, (int)var16, 0.0625F, 60.0F, 120, 60, 120, 120);
       }
 
-      class_3542.method_16437();
-      class_3542.method_16433();
-      class_3542.method_16448();
-      int var23 = (int)((double)this.field_13696.method_8552().method_43177() * 0.8325);
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16433();
+      RenderSystem.method_16448();
+      int var23 = (int)((double)this.field_13696.getMainWindow().getScaledHeight() * 0.8325);
       float var24 = this.field_13700.method_19969();
       this.field_13697 = class_9299.method_42828(this.field_13697 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
       class_7860.field_40010.method_3582();
@@ -121,7 +121,7 @@ public class class_2789 extends class_7621 {
          if (this.field_13696.field_9623 != null) {
             this.field_13696
                .field_9623
-               .method_1164(this.field_13696, this.field_13696.method_8552().method_43165(), this.field_13696.method_8552().method_43177());
+               .method_1164(this.field_13696, this.field_13696.getMainWindow().getScaledWidth(), this.field_13696.getMainWindow().getScaledHeight());
          }
       }
    }
@@ -162,16 +162,16 @@ public class class_2789 extends class_7621 {
       this.field_13699 = field_13698;
       this.field_13705 = 16777215;
       this.field_13701 = 16777215;
-      if (class_3111.method_14438()) {
+      if (Config.method_14438()) {
          try {
             String var3 = "optifine/color.properties";
             Identifier var4 = new Identifier(var3);
-            if (!class_3111.method_14362(var4)) {
+            if (!Config.method_14362(var4)) {
                return;
             }
 
-            InputStream var5 = class_3111.method_14374(var4);
-            class_3111.method_14277("Loading " + var3);
+            InputStream var5 = Config.method_14374(var4);
+            Config.method_14277("Loading " + var3);
             class_8407 var6 = new class_8407();
             var6.load(var5);
             var5.close();
@@ -181,7 +181,7 @@ public class class_2789 extends class_7621 {
             this.field_13701 = method_12675(var6, "screen.loading.progress", this.field_13701);
             this.field_13706 = class_4593.method_21291(var6.getProperty("screen.loading.blend"));
          } catch (Exception var7) {
-            class_3111.method_14317("" + var7.getClass().getName() + ": " + var7.getMessage());
+            Config.method_14317("" + var7.getClass().getName() + ": " + var7.getMessage());
          }
       }
    }
@@ -192,10 +192,10 @@ public class class_2789 extends class_7621 {
          var5 = var5.trim();
          int var6 = method_12678(var5, var2);
          if (var6 >= 0) {
-            class_3111.method_14277(var1 + " = " + var5);
+            Config.method_14277(var1 + " = " + var5);
             return var6;
          } else {
-            class_3111.method_14317("Invalid color: " + var1 + " = " + var5);
+            Config.method_14317("Invalid color: " + var1 + " = " + var5);
             return var6;
          }
       } else {

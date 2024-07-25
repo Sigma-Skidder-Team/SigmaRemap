@@ -35,7 +35,7 @@ public class AutoSoupModule extends Module {
          String var4 = this.getStringValueByName("Refill mode");
          if (!this.field_29808) {
             if (this.method_26734(class_4897.field_24719) == 0) {
-               if (var4.equals("OpenInv") && !(mc.field_9623 instanceof class_3431)) {
+               if (var4.equals("OpenInv") && !(client.field_9623 instanceof class_3431)) {
                   return;
                }
 
@@ -45,7 +45,7 @@ public class AutoSoupModule extends Module {
 
                return;
             }
-         } else if (var4.equals("OpenInv") && !(mc.field_9623 instanceof class_3431)) {
+         } else if (var4.equals("OpenInv") && !(client.field_9623 instanceof class_3431)) {
             this.field_29808 = false;
          } else if (this.method_26734(class_4897.field_25302) != 0) {
             this.method_26739();
@@ -73,9 +73,9 @@ public class AutoSoupModule extends Module {
    private void method_26736() {
       this.field_29808 = true;
       if (this.getStringValueByName("Refill mode").equals("FakeInv")
-         && !(mc.field_9623 instanceof class_3431)
+         && !(client.field_9623 instanceof class_3431)
          && class_3347.method_15349() <= class_412.field_1752.method_2055()) {
-         mc.method_8614().method_4813(new class_8559(class_2105.field_10551));
+         client.method_8614().method_4813(new class_8559(class_2105.field_10551));
          this.field_29810 = true;
       }
 
@@ -84,9 +84,9 @@ public class AutoSoupModule extends Module {
          if (var3 > 0) {
             int var4 = this.method_26735(var3);
             if (var4 > 0) {
-               class_2740.method_12356(mc.field_9632.field_3869.field_19925, var4, 0, class_6269.field_32027, mc.field_9632, true);
-               class_2740.method_12356(mc.field_9632.field_3869.field_19925, var4, 0, class_6269.field_32023, mc.field_9632, true);
-               class_2740.method_12356(mc.field_9632.field_3869.field_19925, var4, 0, class_6269.field_32027, mc.field_9632, true);
+               class_2740.method_12356(client.thePlayer.field_3869.field_19925, var4, 0, class_6269.field_32027, client.thePlayer, true);
+               class_2740.method_12356(client.thePlayer.field_3869.field_19925, var4, 0, class_6269.field_32023, client.thePlayer, true);
+               class_2740.method_12356(client.thePlayer.field_3869.field_19925, var4, 0, class_6269.field_32027, client.thePlayer, true);
                this.field_29804 = -5;
             }
          }
@@ -102,7 +102,7 @@ public class AutoSoupModule extends Module {
             boolean var4 = false;
             if (class_2740.method_12311(this.field_29807).method_27960() == class_4897.field_24719
                && Math.random() * 100.0 > (double)this.getFloatValueByName("Refill accuracy")) {
-               class_2740.method_12356(mc.field_9632.field_3869.field_19925, this.field_29807, 0, class_6269.field_32019, mc.field_9632, true);
+               class_2740.method_12356(client.thePlayer.field_3869.field_19925, this.field_29807, 0, class_6269.field_32019, client.thePlayer, true);
                this.field_29804 = 0;
                var4 = true;
             }
@@ -130,7 +130,7 @@ public class AutoSoupModule extends Module {
       int var3 = -1;
 
       for (int var4 = 36; var4 < 45; var4++) {
-         if (mc.field_9632.field_3869.method_18878(var4).method_35898().method_27960() == class_4897.field_24719
+         if (client.thePlayer.field_3869.method_18878(var4).method_35898().method_27960() == class_4897.field_24719
             && SigmaMainClass.getInstance().method_3319().method_30523(var4) > 100L) {
             var3 = var4 - 36;
             break;
@@ -141,43 +141,43 @@ public class AutoSoupModule extends Module {
       if (!this.getStringValueByName("Soup mode").equals("Instant")) {
          if (this.field_29806 >= 0) {
             if (var5) {
-               mc.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
+               client.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
             }
 
-            mc.field_9632.field_3853.field_36404 = this.field_29806;
-            mc.field_9647.method_42129();
+            client.thePlayer.inventory.field_36404 = this.field_29806;
+            client.playerController.method_42129();
             this.field_29805 = 0;
             this.field_29806 = -1;
          } else {
-            if (var3 < 0 || this.field_29805 <= 3 || mc.field_9632.method_26551() > this.getFloatValueByName("Health")) {
+            if (var3 < 0 || this.field_29805 <= 3 || client.thePlayer.method_26551() > this.getFloatValueByName("Health")) {
                return;
             }
 
-            this.field_29806 = mc.field_9632.field_3853.field_36404;
-            mc.field_9632.field_3853.field_36404 = var3;
-            mc.field_9647.method_42129();
-            mc.method_8614().method_4813(new class_1022(class_2584.field_12794));
-            mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
+            this.field_29806 = client.thePlayer.inventory.field_36404;
+            client.thePlayer.inventory.field_36404 = var3;
+            client.playerController.method_42129();
+            client.method_8614().method_4813(new class_1022(class_2584.field_12794));
+            client.method_8614().method_4813(new class_1022(class_2584.field_12791));
          }
       } else {
-         if (var3 < 0 || this.field_29805 <= 3 || mc.field_9632.method_26551() > this.getFloatValueByName("Health")) {
+         if (var3 < 0 || this.field_29805 <= 3 || client.thePlayer.method_26551() > this.getFloatValueByName("Health")) {
             return;
          }
 
-         mc.method_8614().method_4813(new class_7371(var3));
-         mc.method_8614().method_4813(new class_1022(class_2584.field_12794));
-         mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
+         client.method_8614().method_4813(new class_7371(var3));
+         client.method_8614().method_4813(new class_1022(class_2584.field_12794));
+         client.method_8614().method_4813(new class_1022(class_2584.field_12791));
          if (var5) {
-            mc.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
+            client.method_8614().method_4813(new class_1586(class_7500.field_38266, class_1331.field_7306, Direction.field_802));
          }
 
-         mc.method_8614().method_4813(new class_7371(mc.field_9632.field_3853.field_36404));
+         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
          this.field_29805 = 0;
       }
    }
 
    private int method_26735(int var1) {
-      class_6098 var4 = class_2740.method_12311(13);
+      ItemStack var4 = class_2740.method_12311(13);
       if (var4.method_27960() == class_4897.field_24454 && var4.method_27997() <= 64 - var1) {
          return 13;
       } else {
@@ -202,7 +202,7 @@ public class AutoSoupModule extends Module {
             var4 = class_2740.method_12311(13);
             if (var4.method_27960() == class_4897.field_25302) {
                for (int var13 = 36; var13 < 45; var13++) {
-                  if (mc.field_9632.field_3869.method_18878(var13).method_35898().method_27960() == class_4897.field_24454) {
+                  if (client.thePlayer.field_3869.method_18878(var13).method_35898().method_27960() == class_4897.field_24454) {
                      class_2740.method_12312(13, var13 - 36);
                      return 13;
                   }
@@ -213,7 +213,7 @@ public class AutoSoupModule extends Module {
                var4 = class_2740.method_12311(var14);
                if (var4.method_27960() == class_4897.field_25302) {
                   for (int var6 = 36; var6 < 45; var6++) {
-                     if (mc.field_9632.field_3869.method_18878(var6).method_35898().method_27960() == class_4897.field_24454) {
+                     if (client.thePlayer.field_3869.method_18878(var6).method_35898().method_27960() == class_4897.field_24454) {
                         class_2740.method_12312(var14, var6 - 36);
                         return -1;
                      }
@@ -222,7 +222,7 @@ public class AutoSoupModule extends Module {
             }
 
             for (int var15 = 36; var15 < 45; var15++) {
-               if (mc.field_9632.field_3869.method_18878(var15).method_35898().method_27960() == class_4897.field_24454) {
+               if (client.thePlayer.field_3869.method_18878(var15).method_35898().method_27960() == class_4897.field_24454) {
                   class_2740.method_12312(13, var15 - 36);
                   return -1;
                }
@@ -237,7 +237,7 @@ public class AutoSoupModule extends Module {
       int var4 = 0;
 
       for (int var5 = 36; var5 < 45; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35898().method_27960() == var1) {
+         if (client.thePlayer.field_3869.method_18878(var5).method_35898().method_27960() == var1) {
             var4++;
          }
       }
@@ -249,7 +249,7 @@ public class AutoSoupModule extends Module {
       int var4 = 0;
 
       for (int var5 = 9; var5 < 36; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35898().method_27960() == var1) {
+         if (client.thePlayer.field_3869.method_18878(var5).method_35898().method_27960() == var1) {
             var4++;
          }
       }

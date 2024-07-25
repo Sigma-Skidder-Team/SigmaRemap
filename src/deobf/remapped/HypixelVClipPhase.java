@@ -11,15 +11,15 @@ public class HypixelVClipPhase extends Module {
    @EventListen
    private void method_6457(class_4868 var1) {
       if (this.method_42015()) {
-         if ((int) mc.field_9632.method_37309() == this.field_7607 && !mc.field_9632.field_29654) {
+         if ((int) client.thePlayer.method_37309() == this.field_7607 && !client.thePlayer.field_29654) {
             class_314.method_1408(-2.0);
          }
 
-         if (mc.field_9632.method_37309() > (double)this.field_7607 && mc.field_9632.field_29654 && !mc.field_9632.method_37252()) {
+         if (client.thePlayer.method_37309() > (double)this.field_7607 && client.thePlayer.field_29654 && !client.thePlayer.method_37252()) {
             this.field_7607++;
          }
 
-         if (mc.field_9632.method_37309() % 1.0 == 0.0 && mc.field_9632.method_37252()) {
+         if (client.thePlayer.method_37309() % 1.0 == 0.0 && client.thePlayer.method_37252()) {
             this.field_7607--;
          }
       }
@@ -31,11 +31,11 @@ public class HypixelVClipPhase extends Module {
          if (var1.method_23988() != null && var1.method_23989().method_12165() == this.field_7607 - 1
             || var1.method_23989().method_12165() == this.field_7607
             || var1.method_23989().method_12165() == this.field_7607 + 1
-               && mc.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_6344
-            || mc.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_4423
-            || mc.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_3049
-            || mc.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_5177
-            || mc.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_4749) {
+               && client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_6344
+            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_4423
+            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_3049
+            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_5177
+            || client.field_9601.method_28262(var1.method_23989()).method_8360() instanceof class_4749) {
             var1.method_23986(null);
          }
       }
@@ -50,7 +50,7 @@ public class HypixelVClipPhase extends Module {
 
    @Override
    public void onEnable() {
-      this.field_7607 = (int) mc.field_9632.method_37309();
-      this.field_7608 = (double)this.field_7607 - mc.field_9632.method_37309();
+      this.field_7607 = (int) client.thePlayer.method_37309();
+      this.field_7608 = (double)this.field_7607 - client.thePlayer.method_37309();
    }
 }

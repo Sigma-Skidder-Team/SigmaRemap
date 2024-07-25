@@ -98,11 +98,11 @@ public class class_856 implements class_6491 {
                break;
             case field_38467:
                if (class_7860.field_39949.method_3596()) {
-                  class_6098 var15 = new class_6098(var1.method_8360());
+                  ItemStack var15 = new ItemStack(var1.method_8360());
                   class_9762 var16 = (class_9762)class_7860.method_35555(var15.method_27960(), class_7860.field_39949);
                   var16.method_45049(var15, class_5612.field_28494, var2, var3, var4, var5);
                } else {
-                  class_9762.field_49579.method_45049(new class_6098(var1.method_8360()), class_5612.field_28494, var2, var3, var4, var5);
+                  class_9762.field_49579.method_45049(new ItemStack(var1.method_8360()), class_5612.field_28494, var2, var3, var4, var5);
                }
          }
       }

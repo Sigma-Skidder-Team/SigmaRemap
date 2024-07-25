@@ -2,11 +2,11 @@ package remapped;
 
 public class class_7333 extends class_4088 {
    private static String[] field_37485;
-   public final class_2831<class_6098> field_37486 = class_2831.<class_6098>method_12874();
+   public final class_2831<ItemStack> field_37486 = class_2831.<ItemStack>method_12874();
 
    public class_7333(class_704 var1) {
       super((class_4165<?>)null, 0);
-      class_7051 var4 = var1.field_3853;
+      class_7051 var4 = var1.inventory;
 
       for (int var5 = 0; var5 < 5; var5++) {
          for (int var6 = 0; var6 < 9; var6++) {
@@ -39,7 +39,7 @@ public class class_7333 extends class_4088 {
             if (var8 >= 0 && var8 < this.field_37486.size()) {
                class_2546.method_11589().method_31503(var7 + var6 * 9, this.field_37486.get(var8));
             } else {
-               class_2546.method_11589().method_31503(var7 + var6 * 9, class_6098.field_31203);
+               class_2546.method_11589().method_31503(var7 + var6 * 9, ItemStack.EMPTY);
             }
          }
       }
@@ -50,19 +50,19 @@ public class class_7333 extends class_4088 {
    }
 
    @Override
-   public class_6098 method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(class_704 var1, int var2) {
       if (var2 >= this.field_19926.size() - 9 && var2 < this.field_19926.size()) {
          class_7934 var5 = this.field_19926.get(var2);
          if (var5 != null && var5.method_35884()) {
-            var5.method_35896(class_6098.field_31203);
+            var5.method_35896(ItemStack.EMPTY);
          }
       }
 
-      return class_6098.field_31203;
+      return ItemStack.EMPTY;
    }
 
    @Override
-   public boolean method_18873(class_6098 var1, class_7934 var2) {
+   public boolean method_18873(ItemStack var1, class_7934 var2) {
       return var2.field_40591 != class_2546.method_11589();
    }
 

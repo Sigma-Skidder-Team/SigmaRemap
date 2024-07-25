@@ -151,7 +151,7 @@ public class class_702 implements class_700 {
       if (!var7.method_8345()) {
          if (var2) {
             class_3757 var8 = !var7.method_8360().method_10802() ? null : this.method_28260(var1);
-            class_6414.method_29295(var7, this.field_3827, var1, var8, var3, class_6098.field_31203);
+            class_6414.method_29295(var7, this.field_3827, var1, var8, var3, ItemStack.EMPTY);
          }
 
          return this.method_7514(var1, class_4783.field_23184.method_29260(), 3, var4);

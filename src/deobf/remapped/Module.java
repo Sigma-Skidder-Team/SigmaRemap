@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class Module {
-   public static MinecraftClient mc = MinecraftClient.getInstance();
+   public static MinecraftClient client = MinecraftClient.getInstance();
    public String name;
    public String description;
-   public Category field_46696;
-   public boolean moduleEnabled;
-   public boolean field_46699;
+   public Category category;
+   public boolean enabled;
+   public boolean allowed;
    private boolean field_46698 = true;
    private static List<Class<? extends Module>> developmentModules = new ArrayList<Class<? extends Module>>();
    private Module field_46695 = null;
@@ -19,7 +19,7 @@ public abstract class Module {
    public Map<String, Setting> settingMap = new LinkedHashMap<String, Setting>();
 
    public Module(Category var1, String var2, String var3) {
-      this.field_46696 = var1;
+      this.category = var1;
       this.name = var2;
       this.description = var3;
    }
@@ -102,12 +102,12 @@ public abstract class Module {
    }
 
    public void method_42019() {
-      if (this.moduleEnabled) {
+      if (this.enabled) {
          this.onDisable();
       }
 
-      this.moduleEnabled = false;
-      this.field_46699 = true;
+      this.enabled = false;
+      this.allowed = true;
 
       for (Setting var4 : this.settingMap.values()) {
          var4.method_23041();
@@ -118,12 +118,12 @@ public abstract class Module {
       JSONArray var4 = JSONWriter.saveStringValue2ig(var1, "options");
 
       try {
-         this.moduleEnabled = var1.method_5826("enabled");
+         this.enabled = var1.method_5826("enabled");
       } catch (class_7584 var14) {
       }
 
       try {
-         this.field_46699 = var1.method_5826("allowed");
+         this.allowed = var1.method_5826("allowed");
       } catch (class_7584 var13) {
       }
 
@@ -152,7 +152,7 @@ public abstract class Module {
          }
       }
 
-      if (this.moduleEnabled && mc.field_9601 != null) {
+      if (this.enabled && client.field_9601 != null) {
          this.onEnable();
       }
 
@@ -161,8 +161,8 @@ public abstract class Module {
 
    public JSONObjectImpl loadFromJson(JSONObjectImpl var1) {
       var1.method_5820("name", this.getName());
-      var1.method_5823("enabled", this.moduleEnabled);
-      var1.method_5823("allowed", this.method_41994());
+      var1.method_5823("enabled", this.enabled);
+      var1.method_5823("allowed", this.getAllowed());
       JSONArray var4 = new JSONArray();
 
       for (Setting var6 : this.settingMap.values()) {
@@ -204,12 +204,12 @@ public abstract class Module {
    }
 
    public Category method_42004() {
-      if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && this.field_46696 == Category.ITEM) {
+      if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && this.category == Category.ITEM) {
          return Category.PLAYER;
       } else {
-         return SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && this.field_46696 == Category.EXPLOIT
+         return SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && this.category == Category.EXPLOIT
             ? Category.MISC
-            : this.field_46696;
+            : this.category;
       }
    }
 
@@ -218,66 +218,66 @@ public abstract class Module {
    }
 
    public Category method_41998() {
-      return this.field_46696;
+      return this.category;
    }
 
    public boolean method_42015() {
       if (SigmaMainClass.getInstance().method_3312() != class_6015.field_30642) {
-         return SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && !this.method_42013() ? false : this.moduleEnabled;
+         return SigmaMainClass.getInstance().method_3312() == class_6015.field_30644 && !this.method_42013() ? false : this.enabled;
       } else {
          return false;
       }
    }
 
    public void setEnabled(boolean var1) {
-      if (this.moduleEnabled != var1) {
-         if (!(this.moduleEnabled = var1)) {
-            SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      if (this.enabled != var1) {
+         if (!(this.enabled = var1)) {
+            SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
             this.onDisable();
          } else {
-            SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
+            SigmaMainClass.getInstance().getEventManager().subscribe(this);
             this.onEnable();
          }
       }
 
-      SigmaMainClass.getInstance().getModuleManager().method_835().method_370(this);
+      SigmaMainClass.getInstance().getModuleManager().getJelloTouch().initDragModule(this);
    }
 
-   public void method_42018(boolean var1) {
-      this.moduleEnabled = var1;
-      if (!this.moduleEnabled) {
-         SigmaMainClass.getInstance().getEventManager().subscribe(this);
-      } else {
+   public void setEnabled1(boolean var1) {
+      this.enabled = var1;
+      if (!this.enabled) {
          SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
+      } else {
+         SigmaMainClass.getInstance().getEventManager().subscribe(this);
       }
    }
 
-   public void method_41991(boolean var1) {
-      if (this.moduleEnabled != var1) {
-         if (!(this.moduleEnabled = var1)) {
-            SigmaMainClass.getInstance().getEventManager().subscribe(this);
+   public void setEnabled2(boolean var1) {
+      if (this.enabled != var1) {
+         if (!(this.enabled = var1)) {
+            SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
             if (!(this instanceof SecondModule)) {
                if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
-                  && SigmaMainClass.getInstance().getModuleManager().method_847(ActiveModsModule.class).getBooleanValueByName("Sound")) {
-                  SigmaMainClass.getInstance().getSoundManager().method_21206("deactivate");
+                  && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(ActiveModsModule.class).getBooleanValueByName("Sound")) {
+                  SigmaMainClass.getInstance().getSoundManager().playSound("deactivate");
                }
 
                if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
-                  && SigmaMainClass.getInstance().getModuleManager().method_847(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
+                  && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
                   MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.6F));
                }
             }
 
             this.onDisable();
          } else {
-            SigmaMainClass.getInstance().getEventManager().unsubscribe(this);
+            SigmaMainClass.getInstance().getEventManager().subscribe(this);
             if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30645
-               && SigmaMainClass.getInstance().getModuleManager().method_847(ActiveModsModule.class).getBooleanValueByName("Sound")) {
-               SigmaMainClass.getInstance().getSoundManager().method_21206("activate");
+               && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(ActiveModsModule.class).getBooleanValueByName("Sound")) {
+               SigmaMainClass.getInstance().getSoundManager().playSound("activate");
             }
 
             if (SigmaMainClass.getInstance().method_3312() == class_6015.field_30644
-               && SigmaMainClass.getInstance().getModuleManager().method_847(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
+               && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(OtherActiveModsModule.class).getBooleanValueByName("Sound")) {
                MinecraftClient.getInstance().method_8590().method_16345(class_4949.method_22675(class_463.field_2870, 0.7F));
             }
 
@@ -286,23 +286,23 @@ public abstract class Module {
          }
       }
 
-      SigmaMainClass.getInstance().getModuleManager().method_835().method_370(this);
+      SigmaMainClass.getInstance().getModuleManager().getJelloTouch().initDragModule(this);
    }
 
    public void method_41999() {
       if (this.method_42015()) {
-         this.method_41991(false);
+         this.setEnabled2(false);
       } else {
-         this.method_41991(true);
+         this.setEnabled2(true);
       }
    }
 
-   public boolean method_41994() {
-      return this.field_46699;
+   public boolean getAllowed() {
+      return this.allowed;
    }
 
-   public void method_41989(boolean var1) {
-      this.field_46699 = var1;
+   public void setAllowed(boolean var1) {
+      this.allowed = var1;
    }
 
    public void method_41995(Module var1) {

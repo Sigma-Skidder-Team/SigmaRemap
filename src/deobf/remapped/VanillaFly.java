@@ -16,12 +16,12 @@ public class VanillaFly extends Module {
 
    @Override
    public void onEnable() {
-      if (!mc.gameOptions.keySneak.isKeyDown()) {
-         if (!mc.gameOptions.keySneak.isKeyDown()) {
+      if (!client.gameOptions.keySneak.isKeyDown()) {
+         if (!client.gameOptions.keySneak.isKeyDown()) {
             this.field_3720 = false;
          }
       } else {
-         mc.gameOptions.keySneak.pressed = false;
+         client.gameOptions.keySneak.pressed = false;
          this.field_3720 = true;
       }
    }
@@ -32,14 +32,14 @@ public class VanillaFly extends Module {
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3);
       if (this.field_3720) {
-         mc.gameOptions.keySneak.pressed = true;
+         client.gameOptions.keySneak.pressed = true;
       }
    }
 
    @EventListen
    private void method_3072(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = true;
          }
@@ -49,7 +49,7 @@ public class VanillaFly extends Module {
    @EventListen
    private void method_3075(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = false;
          }
@@ -59,8 +59,8 @@ public class VanillaFly extends Module {
    @EventListen
    public void method_3074(class_1393 var1) {
       if (this.method_42015()) {
-         if (!mc.field_9632.field_41726 && this.getBooleanValueByName("Kick bypass")) {
-            if (this.field_3718 > 0 && this.field_3718 % 30 == 0 && !class_314.method_1413(mc.field_9632, 0.01F)) {
+         if (!client.thePlayer.field_41726 && this.getBooleanValueByName("Kick bypass")) {
+            if (this.field_3718 > 0 && this.field_3718 % 30 == 0 && !class_314.method_1413(client.thePlayer, 0.01F)) {
                if (class_3347.method_15349() != class_412.field_1747.method_2055()) {
                   var1.method_6455(var1.method_6454() - 0.04);
                } else {
@@ -72,26 +72,26 @@ public class VanillaFly extends Module {
                   double var6 = var1.method_6454();
                   ArrayList var8 = new ArrayList();
                   if (!(var6 - var4 > 9.0)) {
-                     mc.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
+                     client.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
                   } else {
                      while (var6 > var4 + 9.0) {
                         var6 -= 9.0;
                         var8.add(var6);
-                        mc.method_8614().method_4813(new class_9515(var1.method_6450(), var6, var1.method_6438(), true));
+                        client.method_8614().method_4813(new class_9515(var1.method_6450(), var6, var1.method_6438(), true));
                      }
 
                      for (Double var10 : var8) {
-                        mc.method_8614().method_4813(new class_9515(var1.method_6450(), var10, var1.method_6438(), true));
+                        client.method_8614().method_4813(new class_9515(var1.method_6450(), var10, var1.method_6438(), true));
                      }
 
-                     mc.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
+                     client.method_8614().method_4813(new class_9515(var1.method_6450(), var4, var1.method_6438(), true));
                      Collections.reverse(var8);
 
                      for (Double var12 : var8) {
-                        mc.method_8614().method_4813(new class_9515(var1.method_6450(), var12, var1.method_6438(), true));
+                        client.method_8614().method_4813(new class_9515(var1.method_6450(), var12, var1.method_6438(), true));
                      }
 
-                     mc.method_8614().method_4813(new class_9515(var1.method_6450(), var1.method_6454(), var1.method_6438(), true));
+                     client.method_8614().method_4813(new class_9515(var1.method_6450(), var1.method_6454(), var1.method_6438(), true));
                   }
 
                   this.field_3718 = 0;
@@ -104,18 +104,18 @@ public class VanillaFly extends Module {
    @EventListen
    public void method_3071(class_7767 var1) {
       if (this.method_42015()) {
-         if (!class_314.method_1413(mc.field_9632, 0.01F)) {
+         if (!class_314.method_1413(client.thePlayer, 0.01F)) {
             this.field_3718++;
          } else {
             this.field_3718 = 0;
          }
 
          double var4 = (double)this.getFloatValueByName("Speed");
-         double var6 = !mc.gameOptions.keyJump.pressed ? 0.0 : var4 / 2.0;
-         if (mc.gameOptions.keyJump.pressed && mc.gameOptions.keySneak.pressed) {
+         double var6 = !client.gameOptions.keyJump.pressed ? 0.0 : var4 / 2.0;
+         if (client.gameOptions.keyJump.pressed && client.gameOptions.keySneak.pressed) {
             var6 = 0.0;
          } else if (!this.field_3720) {
-            if (mc.gameOptions.keyJump.pressed) {
+            if (client.gameOptions.keyJump.pressed) {
                var6 = var4 / 2.0;
             }
          } else {
@@ -129,10 +129,10 @@ public class VanillaFly extends Module {
    }
 
    private double method_3073() {
-      if (!(mc.field_9632.method_37245().field_7333 < 1.0)) {
-         if (!mc.field_9632.field_41726) {
-            class_4092 var3 = mc.field_9632.field_41712.method_18928(0.0, -mc.field_9632.method_37245().field_7333, 0.0);
-            Iterator var4 = mc.field_9601.method_6680(mc.field_9632, var3).iterator();
+      if (!(client.thePlayer.method_37245().field_7333 < 1.0)) {
+         if (!client.thePlayer.field_41726) {
+            class_4092 var3 = client.thePlayer.field_41712.method_18928(0.0, -client.thePlayer.method_37245().field_7333, 0.0);
+            Iterator var4 = client.field_9601.method_6680(client.thePlayer, var3).iterator();
             double var5 = -1.0;
 
             while (var4.hasNext()) {
@@ -144,7 +144,7 @@ public class VanillaFly extends Module {
 
             return var5;
          } else {
-            return mc.field_9632.method_37309();
+            return client.thePlayer.method_37309();
          }
       } else {
          return -1.0;

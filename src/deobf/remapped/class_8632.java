@@ -10,7 +10,7 @@ public class class_8632 implements Comparator {
       class_3580 var5 = (class_3580)var1;
       class_3580 var6 = (class_3580)var2;
       if (var5.field_17553 == var6.field_17553) {
-         return class_3111.equals(var5.field_17545, var6.field_17545)
+         return Config.equals(var5.field_17545, var6.field_17545)
             ? var5.field_17529.compareTo(var6.field_17529)
             : var5.field_17545.compareTo(var6.field_17545);
       } else {

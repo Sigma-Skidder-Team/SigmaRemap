@@ -46,8 +46,8 @@ public class class_207 extends Screen {
    @Override
    public void method_1183(class_7966 var1) {
       super.method_1183(var1);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_693);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_693);
       int var4 = (this.field_941 - 248) / 2;
       int var5 = (this.field_940 - 166) / 2;
       this.method_9781(var1, var4, var5, 0, 0, 248, 166);

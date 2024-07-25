@@ -5,7 +5,7 @@ public class class_2986 {
    private static class_7373 field_14689 = null;
 
    public static void method_13669() {
-      field_14689 = class_3111.method_14327().method_8505().method_3716().method_43946(class_4783.field_23552.method_29260());
+      field_14689 = Config.method_14327().method_8505().method_3716().method_43946(class_4783.field_23552.method_29260());
    }
 
    public static class_7373 method_13668() {

@@ -15,7 +15,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    private static final int[] field_40585 = new int[]{0};
    private static final int[] field_40583 = new int[]{2, 1};
    private static final int[] field_40578 = new int[]{1};
-   public class_2831<class_6098> field_40579 = class_2831.<class_6098>method_12872(3, class_6098.field_31203);
+   public class_2831<ItemStack> field_40579 = class_2831.<ItemStack>method_12872(3, ItemStack.EMPTY);
    private int field_40584;
    private int field_40587;
    private int field_40582;
@@ -114,7 +114,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
          throw (IllegalStateException) Util.method_44658(
             new IllegalStateException(
                "A developer tried to explicitly make fire resistant item "
-                  + var5.method_11249((class_6098)null).getString()
+                  + var5.method_11249((ItemStack)null).getString()
                   + " a furnace fuel. That will not work!"
             )
          );
@@ -128,7 +128,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    @Override
    public void method_17394(class_2522 var1, class_5734 var2) {
       super.method_17394(var1, var2);
-      this.field_40579 = class_2831.<class_6098>method_12872(this.method_31505(), class_6098.field_31203);
+      this.field_40579 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       class_3037.method_13882(var2, this.field_40579);
       this.field_40584 = var2.method_25956("BurnTime");
       this.field_40582 = var2.method_25956("CookTime");
@@ -163,7 +163,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       }
 
       if (!this.field_18364.field_33055) {
-         class_6098 var5 = this.field_40579.get(1);
+         ItemStack var5 = this.field_40579.get(1);
          if (this.method_35865() || !var5.method_28022() && !this.field_40579.get(0).method_28022()) {
             class_8932 var6 = this.field_18364.method_29549().method_23138(this.field_40581, this, this.field_18364).orElse(null);
             if (!this.method_35865() && this.method_35867(var6)) {
@@ -176,7 +176,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
                      var5.method_27970(1);
                      if (var5.method_28022()) {
                         class_2451 var8 = var7.method_11241();
-                        this.field_40579.set(1, var8 != null ? new class_6098(var8) : class_6098.field_31203);
+                        this.field_40579.set(1, var8 != null ? new ItemStack(var8) : ItemStack.EMPTY);
                      }
                   }
                }
@@ -215,9 +215,9 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
 
    public boolean method_35867(class_8932<?> var1) {
       if (!this.field_40579.get(0).method_28022() && var1 != null) {
-         class_6098 var4 = var1.method_41044();
+         ItemStack var4 = var1.method_41044();
          if (!var4.method_28022()) {
-            class_6098 var5 = this.field_40579.get(2);
+            ItemStack var5 = this.field_40579.get(2);
             if (var5.method_28022()) {
                return true;
             } else if (var5.method_27991(var4)) {
@@ -235,9 +235,9 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
 
    private void method_35883(class_8932<?> var1) {
       if (var1 != null && this.method_35867(var1)) {
-         class_6098 var4 = this.field_40579.get(0);
-         class_6098 var5 = var1.method_41044();
-         class_6098 var6 = this.field_40579.get(2);
+         ItemStack var4 = this.field_40579.get(0);
+         ItemStack var5 = var1.method_41044();
+         ItemStack var6 = this.field_40579.get(2);
          if (!var6.method_28022()) {
             if (var6.method_27960() == var5.method_27960()) {
                var6.method_28030(1);
@@ -253,14 +253,14 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
          if (var4.method_27960() == class_4783.field_23172.method_10803()
             && !this.field_40579.get(1).method_28022()
             && this.field_40579.get(1).method_27960() == class_4897.field_24548) {
-            this.field_40579.set(1, new class_6098(class_4897.field_24999));
+            this.field_40579.set(1, new ItemStack(class_4897.field_24999));
          }
 
          var4.method_27970(1);
       }
    }
 
-   public int method_35874(class_6098 var1) {
+   public int method_35874(ItemStack var1) {
       if (!var1.method_28022()) {
          class_2451 var4 = var1.method_27960();
          return method_35878().getOrDefault(var4, 0);
@@ -273,7 +273,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
       return this.field_18364.method_29549().method_23138(this.field_40581, this, this.field_18364).<Integer>map(class_3151::method_14546).orElse(200);
    }
 
-   public static boolean method_35873(class_6098 var0) {
+   public static boolean method_35873(ItemStack var0) {
       return method_35878().containsKey(var0.method_27960());
    }
 
@@ -287,12 +287,12 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public boolean method_1834(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1834(int var1, ItemStack var2, Direction var3) {
       return this.method_31500(var1, var2);
    }
 
    @Override
-   public boolean method_1833(int var1, class_6098 var2, Direction var3) {
+   public boolean method_1833(int var1, ItemStack var2, Direction var3) {
       if (var3 == Direction.field_802 && var1 == 1) {
          class_2451 var6 = var2.method_27960();
          if (var6 != class_4897.field_24999 && var6 != class_4897.field_24548) {
@@ -310,7 +310,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
 
    @Override
    public boolean method_31495() {
-      for (class_6098 var4 : this.field_40579) {
+      for (ItemStack var4 : this.field_40579) {
          if (!var4.method_28022()) {
             return false;
          }
@@ -320,24 +320,24 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public class_6098 method_31498(int var1) {
+   public ItemStack method_31498(int var1) {
       return this.field_40579.get(var1);
    }
 
    @Override
-   public class_6098 method_31497(int var1, int var2) {
+   public ItemStack method_31497(int var1, int var2) {
       return class_3037.method_13881(this.field_40579, var1, var2);
    }
 
    @Override
-   public class_6098 method_31507(int var1) {
+   public ItemStack method_31507(int var1) {
       return class_3037.method_13880(this.field_40579, var1);
    }
 
    @Override
-   public void method_31503(int var1, class_6098 var2) {
-      class_6098 var5 = this.field_40579.get(var1);
-      boolean var6 = !var2.method_28022() && var2.method_27991(var5) && class_6098.method_27956(var2, var5);
+   public void method_31503(int var1, ItemStack var2) {
+      ItemStack var5 = this.field_40579.get(var1);
+      boolean var6 = !var2.method_28022() && var2.method_27991(var5) && ItemStack.method_27956(var2, var5);
       this.field_40579.set(var1, var2);
       if (var2.method_27997() > this.method_31506()) {
          var2.method_28017(this.method_31506());
@@ -361,12 +361,12 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
    }
 
    @Override
-   public boolean method_31500(int var1, class_6098 var2) {
+   public boolean method_31500(int var1, ItemStack var2) {
       if (var1 != 2) {
          if (var1 != 1) {
             return true;
          } else {
-            class_6098 var5 = this.field_40579.get(1);
+            ItemStack var5 = this.field_40579.get(1);
             return method_35873(var2) || var2.method_27960() == class_4897.field_24548 && var5.method_27960() != class_4897.field_24548;
          }
       } else {
@@ -434,7 +434,7 @@ public abstract class class_7933 extends class_8346 implements class_372, class_
 
    @Override
    public void method_18279(class_534 var1) {
-      for (class_6098 var5 : this.field_40579) {
+      for (ItemStack var5 : this.field_40579) {
          var1.method_2598(var5);
       }
    }

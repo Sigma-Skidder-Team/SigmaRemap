@@ -31,7 +31,7 @@ public class class_7696 extends Screen {
             20,
             !this.field_39073 ? new TranslationTextComponent("deathScreen.respawn") : new TranslationTextComponent("deathScreen.spectate"),
             var1 -> {
-               this.field_943.field_9632.method_3205();
+               this.field_943.thePlayer.method_3205();
                this.field_943.method_8609((Screen)null);
             }
          )
@@ -70,7 +70,7 @@ public class class_7696 extends Screen {
 
       this.field_39070 = new TranslationTextComponent("deathScreen.score")
          .appendString(": ")
-         .append(new StringTextComponent(Integer.toString(this.field_943.field_9632.method_3227())).mergeStyle(TextFormatting.YELLOW));
+         .append(new StringTextComponent(Integer.toString(this.field_943.thePlayer.method_3227())).mergeStyle(TextFormatting.YELLOW));
    }
 
    @Override
@@ -80,7 +80,7 @@ public class class_7696 extends Screen {
 
    private void method_34869(boolean var1) {
       if (!var1) {
-         this.field_943.field_9632.method_3205();
+         this.field_943.thePlayer.method_3205();
          this.field_943.method_8609((Screen)null);
       } else {
          this.method_34868();
@@ -99,10 +99,10 @@ public class class_7696 extends Screen {
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_9772(var1, 0, 0, this.field_941, this.field_940, 1615855616, -1602211792);
-      class_3542.method_16438();
-      class_3542.method_16403(2.0F, 2.0F, 2.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16403(2.0F, 2.0F, 2.0F);
       method_9788(var1, this.field_948, this.field_947, this.field_941 / 2 / 2, 30, 16777215);
-      class_3542.method_16489();
+      RenderSystem.method_16489();
       if (this.field_39074 != null) {
          method_9788(var1, this.field_948, this.field_39074, this.field_941 / 2, 85, 16777215);
       }

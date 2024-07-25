@@ -9,10 +9,10 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class class_7542 implements class_9720 {
+public class NarratorChatListener implements IChatListener {
    public static final ITextComponent field_38486 = StringTextComponent.EMPTY;
    private static final Logger field_38485 = LogManager.getLogger();
-   public static final class_7542 field_38482 = new class_7542();
+   public static final NarratorChatListener INSTANCE = new NarratorChatListener();
    private final Narrator field_38484 = Narrator.getNarrator();
 
    @Override

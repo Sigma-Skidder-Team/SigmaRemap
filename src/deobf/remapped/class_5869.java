@@ -23,7 +23,7 @@ public class class_5869<T extends Entity> extends class_6353<class_9716, class_3
       float var12 = var1.field_29618;
       float var13 = var1.field_41755;
       float var14 = class_5181.method_23766(var8, 0.15, 0.84, 0.34, 1.0);
-      float var15 = ((float) MinecraftClient.getInstance().field_9632.field_41697 + MinecraftClient.getInstance().method_8554()) * 3.0F + var14 * 160.0F;
+      float var15 = ((float) MinecraftClient.getInstance().thePlayer.field_41697 + MinecraftClient.getInstance().method_8554()) * 3.0F + var14 * 160.0F;
       var1.field_29618 = var15;
       var1.field_41755 = -10.0F;
       this.field_32479 = var7;

@@ -88,16 +88,16 @@ public class class_3340 extends class_5920<class_7666> {
    }
 
    private void method_15325(class_7666 var1, class_5834 var2) {
-      for (class_6098 var6 : this.method_15327(var1)) {
+      for (ItemStack var6 : this.method_15327(var1)) {
          class_1225.method_5439(var1, var6, var2.method_37245());
       }
    }
 
-   private List<class_6098> method_15327(class_7666 var1) {
+   private List<ItemStack> method_15327(class_7666 var1) {
       if (!var1.method_26449()) {
          class_4466 var4 = var1.method_15891().method_13910();
          if (!field_16484.containsKey(var4)) {
-            return ImmutableList.of(new class_6098(class_4897.field_24621));
+            return ImmutableList.of(new ItemStack(class_4897.field_24621));
          } else {
             class_1758 var5 = var1.field_41768.method_29522().method_1722().method_4604(field_16484.get(var4));
             class_8480 var6 = new class_8480((class_6331)var1.field_41768)
@@ -107,7 +107,7 @@ public class class_3340 extends class_5920<class_7666> {
             return var5.method_7862(var6.method_39064(class_4933.field_25575));
          }
       } else {
-         return ImmutableList.of(new class_6098(class_4897.field_25233));
+         return ImmutableList.of(new ItemStack(class_4897.field_25233));
       }
    }
 
@@ -120,7 +120,7 @@ public class class_3340 extends class_5920<class_7666> {
    }
 
    private boolean method_15334(class_704 var1) {
-      return var1.method_26480(Effects.field_19741);
+      return var1.isPotionActive(Effects.field_19741);
    }
 
    private boolean method_15336(class_7666 var1, class_704 var2) {

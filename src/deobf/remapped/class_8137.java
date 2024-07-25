@@ -13,17 +13,17 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public final class class_8137 implements Predicate<class_6098> {
+public final class class_8137 implements Predicate<ItemStack> {
    public static final class_8137 field_41675 = new class_8137(Stream.empty());
    private final class_211[] field_41674;
-   private class_6098[] field_41677;
+   private ItemStack[] field_41677;
    private IntList field_41678;
 
    private class_8137(Stream<? extends class_211> var1) {
       this.field_41674 = var1.<class_211>toArray(class_211[]::new);
    }
 
-   public class_6098[] method_37020() {
+   public ItemStack[] method_37020() {
       this.method_37025();
       return this.field_41677;
    }
@@ -31,13 +31,13 @@ public final class class_8137 implements Predicate<class_6098> {
    private void method_37025() {
       if (this.field_41677 == null) {
          this.field_41677 = Arrays.<class_211>stream(this.field_41674)
-            .<class_6098>flatMap(var0 -> var0.method_894().stream())
+            .<ItemStack>flatMap(var0 -> var0.method_894().stream())
             .distinct()
-            .<class_6098>toArray(class_6098[]::new);
+            .<ItemStack>toArray(ItemStack[]::new);
       }
    }
 
-   public boolean test(class_6098 var1) {
+   public boolean test(ItemStack var1) {
       if (var1 == null) {
          return false;
       } else {
@@ -45,7 +45,7 @@ public final class class_8137 implements Predicate<class_6098> {
          if (this.field_41677.length == 0) {
             return var1.method_28022();
          } else {
-            for (class_6098 var7 : this.field_41677) {
+            for (ItemStack var7 : this.field_41677) {
                if (var7.method_27960() == var1.method_27960()) {
                   return true;
                }
@@ -61,7 +61,7 @@ public final class class_8137 implements Predicate<class_6098> {
          this.method_37025();
          this.field_41678 = new IntArrayList(this.field_41677.length);
 
-         for (class_6098 var6 : this.field_41677) {
+         for (ItemStack var6 : this.field_41677) {
             this.field_41678.add(class_534.method_2599(var6));
          }
 
@@ -106,14 +106,14 @@ public final class class_8137 implements Predicate<class_6098> {
    }
 
    public static class_8137 method_37019(class_8525... var0) {
-      return method_37023(Arrays.<class_8525>stream(var0).<class_6098>map(class_6098::new));
+      return method_37023(Arrays.<class_8525>stream(var0).<ItemStack>map(ItemStack::new));
    }
 
-   public static class_8137 method_37029(class_6098... var0) {
-      return method_37023(Arrays.<class_6098>stream(var0));
+   public static class_8137 method_37029(ItemStack... var0) {
+      return method_37023(Arrays.<ItemStack>stream(var0));
    }
 
-   public static class_8137 method_37023(Stream<class_6098> var0) {
+   public static class_8137 method_37023(Stream<ItemStack> var0) {
       return method_37031(var0.filter(var0x -> !var0x.method_28022()).map(var0x -> new class_3092(var0x, null)));
    }
 
@@ -161,7 +161,7 @@ public final class class_8137 implements Predicate<class_6098> {
       } else {
          Identifier var3 = new Identifier(class_6539.method_29796(var0, "item"));
          class_2451 var4 = class_8669.field_44382.method_39794(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
-         return new class_3092(new class_6098(var4), null);
+         return new class_3092(new ItemStack(var4), null);
       }
    }
 }

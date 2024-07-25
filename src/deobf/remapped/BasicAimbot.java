@@ -12,8 +12,8 @@ public class BasicAimbot extends Module {
          Entity var4 = ((AimbotModule)this.method_42017()).method_10678(this.getFloatValueByName("Range"));
          if (var4 != null) {
             float[] var5 = class_7211.method_33013(var4);
-            mc.field_9632.field_41701 = var5[0];
-            mc.field_9632.field_41755 = var5[1];
+            client.thePlayer.field_41701 = var5[0];
+            client.thePlayer.field_41755 = var5[1];
          }
       }
    }

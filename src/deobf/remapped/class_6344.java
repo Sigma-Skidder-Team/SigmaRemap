@@ -58,7 +58,7 @@ public class class_6344 extends class_6414 implements class_2593 {
 
    @Override
    public boolean method_10781(class_2522 var1, class_353 var2) {
-      class_6098 var5 = var2.method_21867();
+      ItemStack var5 = var2.method_21867();
       class_6666 var6 = var1.<class_6666>method_10313(field_32395);
       if (var6 == class_6666.field_34469 || var5.method_27960() != this.method_10803()) {
          return false;

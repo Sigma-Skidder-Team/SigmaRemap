@@ -23,7 +23,7 @@ public class class_4540 extends class_6641 {
    @Override
    public String[] method_12292() {
       String[] var3 = super.method_12292();
-      return (String[])class_3111.method_14441(var3, "mole");
+      return (String[]) Config.method_14441(var3, "mole");
    }
 
    @Override

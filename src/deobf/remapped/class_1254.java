@@ -60,7 +60,7 @@ public class class_1254 extends class_5920<class_7666> {
 
    public void method_5646(class_6331 var1, class_7666 var2, long var3) {
       this.method_5650(var2);
-      var2.method_37349(class_6943.field_35707, new class_6098(class_4897.field_24640));
+      var2.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_24640));
       this.field_6907 = var3;
       this.field_6909 = 0;
    }
@@ -74,19 +74,19 @@ public class class_1254 extends class_5920<class_7666> {
    }
 
    public void method_5647(class_6331 var1, class_7666 var2, long var3) {
-      var2.method_37349(class_6943.field_35707, class_6098.field_31203);
+      var2.method_37349(class_6943.field_35707, ItemStack.EMPTY);
       this.field_6910 = (long)var2.field_41697;
    }
 
    public void method_5645(class_6331 var1, class_7666 var2, long var3) {
       class_1331 var7 = this.field_6908.get();
       if (var3 >= this.field_6907 && var7.method_12170(var2.method_37245(), 1.0)) {
-         class_6098 var8 = class_6098.field_31203;
+         ItemStack var8 = ItemStack.EMPTY;
          class_4657 var9 = var2.method_2017();
          int var10 = var9.method_31505();
 
          for (int var11 = 0; var11 < var10; var11++) {
-            class_6098 var12 = var9.method_31498(var11);
+            ItemStack var12 = var9.method_31498(var11);
             if (var12.method_27960() == class_4897.field_24640) {
                var8 = var12;
                break;

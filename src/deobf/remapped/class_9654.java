@@ -20,7 +20,7 @@ public class class_9654 {
 
    public static String[] method_44546(String[] var0, String[] var1) {
       LinkedHashSet var4 = new LinkedHashSet();
-      class_8169[] var5 = class_3111.method_14347();
+      class_8169[] var5 = Config.method_14347();
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          class_8169 var7 = var5[var6];
@@ -44,7 +44,7 @@ public class class_9654 {
          if (var0 instanceof class_2127) {
             class_8169 var6 = (class_8169)class_7860.method_35557(var0, class_7860.field_39842);
             if (var6 == null) {
-               class_3111.method_14317("LegacyResourcePackWrapper base resource pack not found: " + var0);
+               Config.method_14317("LegacyResourcePackWrapper base resource pack not found: " + var0);
                return new String[0];
             }
 
@@ -54,7 +54,7 @@ public class class_9654 {
          if (var0 instanceof class_3300) {
             class_8169 var8 = (class_8169)class_7860.method_35557(var0, class_7860.field_40046);
             if (var8 == null) {
-               class_3111.method_14317("LegacyResourcePackWrapperV4 base resource pack not found: " + var0);
+               Config.method_14317("LegacyResourcePackWrapperV4 base resource pack not found: " + var0);
                return new String[0];
             }
 
@@ -67,7 +67,7 @@ public class class_9654 {
             if (var7 != null) {
                if (!var7.isDirectory()) {
                   if (!var7.isFile()) {
-                     class_3111.method_14317("Unknown resource pack file: " + var7);
+                     Config.method_14317("Unknown resource pack file: " + var7);
                      return new String[0];
                   } else {
                      return method_44539(var7, var1, var2);
@@ -79,7 +79,7 @@ public class class_9654 {
                return new String[0];
             }
          } else {
-            class_3111.method_14317("Unknown resource pack type: " + var0);
+            Config.method_14317("Unknown resource pack type: " + var0);
             return new String[0];
          }
       } else {
@@ -99,7 +99,7 @@ public class class_9654 {
                   var4.add(var6);
                }
             } else {
-               class_3111.method_14317("Skipping non-lowercase path: " + var6);
+               Config.method_14317("Skipping non-lowercase path: " + var6);
             }
          }
 
@@ -136,7 +136,7 @@ public class class_9654 {
                      if (method_44535(var11)) {
                         var6.add(var11);
                      } else {
-                        class_3111.method_14317("Skipping non-lowercase path: " + var11);
+                        Config.method_14317("Skipping non-lowercase path: " + var11);
                      }
                   }
                }
@@ -162,7 +162,7 @@ public class class_9654 {
                var10 = var10.substring(var6.length());
                if (class_8251.method_37803(var10, var1) && class_8251.method_37815(var10, var2)) {
                   if (!method_44535(var10)) {
-                     class_3111.method_14317("Skipping non-lowercase path: " + var10);
+                     Config.method_14317("Skipping non-lowercase path: " + var10);
                   } else {
                      var5.add(var10);
                   }
@@ -186,20 +186,20 @@ public class class_9654 {
       Identifier var4 = new Identifier(var0);
 
       try {
-         InputStream var5 = class_3111.method_14374(var4);
+         InputStream var5 = Config.method_14374(var4);
          if (var5 == null) {
             return null;
          } else {
             class_8407 var6 = new class_8407();
             var6.load(var5);
             var5.close();
-            class_3111.method_14277("" + var1 + ": Loading " + var0);
+            Config.method_14277("" + var1 + ": Loading " + var0);
             return var6;
          }
       } catch (FileNotFoundException var7) {
          return null;
       } catch (IOException var8) {
-         class_3111.method_14317("" + var1 + ": Error reading " + var0);
+         Config.method_14317("" + var1 + ": Error reading " + var0);
          return null;
       }
    }

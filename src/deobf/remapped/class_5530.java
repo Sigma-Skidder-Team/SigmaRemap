@@ -43,7 +43,7 @@ public class class_5530 extends class_7807<class_5530> {
       this.field_28202 = var1.textRenderer.method_45391(new TranslationTextComponent("gui.socialInteractions.tooltip.hide", var4), 150);
       this.field_28201 = var1.textRenderer.method_45391(new TranslationTextComponent("gui.socialInteractions.tooltip.show", var4), 150);
       class_9186 var8 = var1.method_8586();
-      if (!var1.field_9632.method_3247().getId().equals(var3) && !var8.method_42336(var3)) {
+      if (!var1.thePlayer.method_3247().getId().equals(var3) && !var8.method_42336(var3)) {
          this.field_28204 = new class_3629(this, 0, 0, 20, 20, 0, 38, 20, class_1840.field_9330, 256, 256, var4x -> {
             var8.method_42338(var3);
             this.method_25112(true, new TranslationTextComponent("gui.socialInteractions.hidden_in_chat", var4));
@@ -78,22 +78,22 @@ public class class_5530 extends class_7807<class_5530> {
       ITextComponent var16 = this.method_25109();
       int var17;
       if (var16 != StringTextComponent.EMPTY) {
-         class_2089.method_9774(var1, var4, var3, var4 + var5, var3 + var6, field_28203);
+         AbstractGui.method_9774(var1, var4, var3, var4 + var5, var3 + var6, field_28203);
          var17 = var3 + (var6 - 18) / 2;
          this.field_28199.textRenderer.method_45378(var1, var16, (float)var15, (float)(var17 + 12), field_28184);
       } else {
-         class_2089.method_9774(var1, var4, var3, var4 + var5, var3 + var6, field_28193);
+         AbstractGui.method_9774(var1, var4, var3, var4 + var5, var3 + var6, field_28193);
          var17 = var3 + (var6 - 9) / 2;
       }
 
-      this.field_28199.method_8577().method_35674(this.field_28185.get());
-      class_2089.method_9780(var1, var13, var14, 24, 24, 8.0F, 8.0F, 8, 8, 64, 64);
-      class_3542.method_16488();
-      class_2089.method_9780(var1, var13, var14, 24, 24, 40.0F, 8.0F, 8, 8, 64, 64);
-      class_3542.method_16448();
+      this.field_28199.getTextureManager().bindTexture(this.field_28185.get());
+      AbstractGui.method_9780(var1, var13, var14, 24, 24, 8.0F, 8.0F, 8, 8, 64, 64);
+      RenderSystem.enableBlend();
+      AbstractGui.method_9780(var1, var13, var14, 24, 24, 40.0F, 8.0F, 8, 8, 64, 64);
+      RenderSystem.method_16448();
       this.field_28199.textRenderer.method_45385(var1, this.field_28191, (float)var15, (float)var17, field_28189);
       if (this.field_28195) {
-         class_2089.method_9774(var1, var13, var14, var13 + 24, var14 + 24, field_28187);
+         AbstractGui.method_9774(var1, var13, var14, var13 + 24, var14 + 24, field_28187);
       }
 
       if (this.field_28204 != null && this.field_28197 != null) {
@@ -131,7 +131,7 @@ public class class_5530 extends class_7807<class_5530> {
       this.field_28197.field_36677 = var1;
       this.field_28204.field_36677 = !var1;
       this.field_28199.field_9614.method_13991().method_18676(var2);
-      class_7542.field_38482.method_34341(var2.getString());
+      NarratorChatListener.INSTANCE.method_34341(var2.getString());
    }
 
    private IFormattableTextComponent method_25114(IFormattableTextComponent var1) {

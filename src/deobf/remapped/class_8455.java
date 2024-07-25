@@ -57,10 +57,10 @@ public class class_8455 {
                this.method_38881(var4 ? "debug.show_hitboxes.on" : "debug.show_hitboxes.off");
                return true;
             case 67:
-               if (this.field_43225.field_9632.method_3179()) {
+               if (this.field_43225.thePlayer.method_3179()) {
                   return false;
                } else {
-                  class_1092 var9 = this.field_43225.field_9632.field_30532;
+                  class_1092 var9 = this.field_43225.thePlayer.field_30532;
                   if (var9 == null) {
                      return false;
                   }
@@ -70,12 +70,12 @@ public class class_8455 {
                      String.format(
                         Locale.ROOT,
                         "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f",
-                        this.field_43225.field_9632.field_41768.method_29545().method_25499(),
-                        this.field_43225.field_9632.method_37302(),
-                        this.field_43225.field_9632.method_37309(),
-                        this.field_43225.field_9632.method_37156(),
-                        this.field_43225.field_9632.field_41701,
-                        this.field_43225.field_9632.field_41755
+                        this.field_43225.thePlayer.field_41768.method_29545().method_25499(),
+                        this.field_43225.thePlayer.method_37302(),
+                        this.field_43225.thePlayer.method_37309(),
+                        this.field_43225.thePlayer.method_37156(),
+                        this.field_43225.thePlayer.field_41701,
+                        this.field_43225.thePlayer.field_41755
                      )
                   );
                   return true;
@@ -108,31 +108,31 @@ public class class_8455 {
                this.field_43225.gameOptions.method_40873();
                return true;
             case 73:
-               if (!this.field_43225.field_9632.method_3179()) {
-                  this.method_38890(this.field_43225.field_9632.method_37163(2), !Screen.method_1190());
+               if (!this.field_43225.thePlayer.method_3179()) {
+                  this.method_38890(this.field_43225.thePlayer.method_37163(2), !Screen.method_1190());
                }
 
                return true;
             case 76:
-               MinecraftClient var6 = class_3111.method_14327();
+               MinecraftClient var6 = Config.method_14327();
                var6.worldRenderer.field_20956 = 1;
                StringTextComponent var7 = new StringTextComponent(class_6956.method_31803("of.message.loadingVisibleChunks"));
                var6.field_9614.method_13991().method_18684(var7, 201435902);
                return true;
             case 78:
-               if (!this.field_43225.field_9632.method_37163(2)) {
+               if (!this.field_43225.thePlayer.method_37163(2)) {
                   this.method_38881("debug.creative_spectator.error");
-               } else if (!this.field_43225.field_9632.method_37221()) {
-                  this.field_43225.field_9632.method_27307("/gamemode spectator");
+               } else if (!this.field_43225.thePlayer.method_37221()) {
+                  this.field_43225.thePlayer.method_27307("/gamemode spectator");
                } else {
-                  this.field_43225.field_9632.method_27307("/gamemode " + this.field_43225.field_9647.method_42132().method_21588());
+                  this.field_43225.thePlayer.method_27307("/gamemode " + this.field_43225.playerController.method_42132().method_21588());
                }
 
                return true;
             case 79:
-               if (class_3111.method_14424()) {
-                  class_708 var10 = new class_708((Screen)null, class_3111.method_14310());
-                  class_3111.method_14327().method_8609(var10);
+               if (Config.method_14424()) {
+                  class_708 var10 = new class_708((Screen)null, Config.method_14310());
+                  Config.method_14327().method_8609(var10);
                }
 
                return true;
@@ -143,7 +143,7 @@ public class class_8455 {
                return true;
             case 81:
                this.method_38881("debug.help.message");
-               class_4049 var8 = this.field_43225.field_9614.method_13991();
+               NewChatGui var8 = this.field_43225.field_9614.method_13991();
                var8.method_18676(new TranslationTextComponent("debug.reload_chunks.help"));
                var8.method_18676(new TranslationTextComponent("debug.show_hitboxes.help"));
                var8.method_18676(new TranslationTextComponent("debug.copy_location.help"));
@@ -160,7 +160,7 @@ public class class_8455 {
                var8.method_18676(new TranslationTextComponent("debug.gamemodes.help"));
                return true;
             case 82:
-               if (class_3111.method_14424()) {
+               if (Config.method_14424()) {
                   class_6588.method_30259();
                   class_6588.method_30295();
                }
@@ -171,7 +171,7 @@ public class class_8455 {
                this.field_43225.method_8524();
                return true;
             case 293:
-               if (!this.field_43225.field_9632.method_37163(2)) {
+               if (!this.field_43225.thePlayer.method_37163(2)) {
                   this.method_38881("debug.gamemodes.error");
                } else {
                   this.field_43225.method_8609(new class_5603());
@@ -192,15 +192,15 @@ public class class_8455 {
          switch (var5.method_33990()) {
             case field_7717:
                class_1331 var6 = ((class_9529)var5).method_43955();
-               class_2522 var7 = this.field_43225.field_9632.field_41768.method_28262(var6);
+               class_2522 var7 = this.field_43225.thePlayer.field_41768.method_28262(var6);
                if (var1) {
                   if (var2) {
-                     this.field_43225.field_9632.field_30532.method_4809().method_571(var6, var3 -> {
+                     this.field_43225.thePlayer.field_30532.method_4809().method_571(var6, var3 -> {
                         this.method_38880(var7, var6, var3);
                         this.method_38881("debug.inspect.server.block");
                      });
                   } else {
-                     class_3757 var11 = this.field_43225.field_9632.field_41768.method_28260(var6);
+                     class_3757 var11 = this.field_43225.thePlayer.field_41768.method_28260(var6);
                      class_5734 var12 = var11 != null ? var11.method_17396(new class_5734()) : null;
                      this.method_38880(var7, var6, var12);
                      this.method_38881("debug.inspect.client.block");
@@ -215,7 +215,7 @@ public class class_8455 {
                Identifier var9 = class_8669.field_44400.method_39797(var8.method_37387());
                if (var1) {
                   if (var2) {
-                     this.field_43225.field_9632.field_30532.method_4809().method_572(var8.method_37145(), var3 -> {
+                     this.field_43225.thePlayer.field_30532.method_4809().method_572(var8.method_37145(), var3 -> {
                         this.method_38885(var9, var8.method_37245(), var3);
                         this.method_38881("debug.inspect.server.entity");
                      });
@@ -265,7 +265,7 @@ public class class_8455 {
    }
 
    public void method_38889(long var1, int var3, int var4, int var5, int var6) {
-      if (var1 == this.field_43225.method_8552().method_43181()) {
+      if (var1 == this.field_43225.getMainWindow().method_43181()) {
          if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
             SigmaMainClass.getInstance().getGUIManager().method_30992(var3, var5);
             return;
@@ -291,15 +291,15 @@ public class class_8455 {
          }
 
          if (this.field_43229 <= 0L) {
-            if (class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 67)
-               && class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292)) {
+            if (class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 67)
+               && class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292)) {
                this.field_43227 = true;
                this.field_43229 = Util.getMeasuringTimeMs();
                this.field_43224 = Util.getMeasuringTimeMs();
                this.field_43230 = 0L;
             }
-         } else if (!class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 67)
-            || !class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292)) {
+         } else if (!class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 67)
+            || !class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292)) {
             this.field_43229 = -1L;
          }
 
@@ -311,8 +311,8 @@ public class class_8455 {
                }
             } else {
                if (this.field_43225.gameOptions.keyFullScreen.method_27062(var3, var4)) {
-                  this.field_43225.method_8552().method_43156();
-                  this.field_43225.gameOptions.field_45453 = this.field_43225.method_8552().method_43174();
+                  this.field_43225.getMainWindow().method_43156();
+                  this.field_43225.gameOptions.field_45453 = this.field_43225.getMainWindow().method_43174();
                   this.field_43225.gameOptions.method_40873();
                   return;
                }
@@ -323,8 +323,8 @@ public class class_8455 {
 
                   class_5523.method_25041(
                      this.field_43225.runDirectory,
-                     this.field_43225.method_8552().method_43178(),
-                     this.field_43225.method_8552().method_43198(),
+                     this.field_43225.getMainWindow().method_43178(),
+                     this.field_43225.getMainWindow().method_43198(),
                      this.field_43225.method_8584(),
                      var1x -> this.field_43225.execute(() -> this.field_43225.field_9614.method_13991().method_18676(var1x))
                   );
@@ -387,14 +387,14 @@ public class class_8455 {
                boolean var12 = false;
                if (this.field_43225.field_9623 == null) {
                   if (var3 == 256) {
-                     boolean var13 = class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292);
+                     boolean var13 = class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292);
                      this.field_43225.method_8597(var13);
                   }
 
-                  var12 = class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), 292) && this.method_38886(var3);
+                  var12 = class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292) && this.method_38886(var3);
                   this.field_43227 |= var12;
                   if (var3 == 290) {
-                     this.field_43225.gameOptions.field_45567 = !this.field_43225.gameOptions.field_45567;
+                     this.field_43225.gameOptions.hideGUI = !this.field_43225.gameOptions.hideGUI;
                   }
                }
 
@@ -436,7 +436,7 @@ public class class_8455 {
    }
 
    private void method_38884(long var1, int var3, int var4) {
-      if (var1 == this.field_43225.method_8552().method_43181()) {
+      if (var1 == this.field_43225.getMainWindow().method_43181()) {
          if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
             SigmaMainClass.getInstance().getGUIManager().method_30986(var3, var4);
             return;
@@ -487,15 +487,15 @@ public class class_8455 {
    }
 
    public String method_38883() {
-      return this.field_43226.method_6468(this.field_43225.method_8552().method_43181(), (var1, var2) -> {
+      return this.field_43226.method_6468(this.field_43225.getMainWindow().method_43181(), (var1, var2) -> {
          if (var1 != 65545) {
-            this.field_43225.method_8552().method_43190(var1, var2);
+            this.field_43225.getMainWindow().method_43190(var1, var2);
          }
       });
    }
 
    public void method_38891(String var1) {
-      this.field_43226.method_6470(this.field_43225.method_8552().method_43181(), var1);
+      this.field_43226.method_6470(this.field_43225.getMainWindow().method_43181(), var1);
    }
 
    public void method_38892() {

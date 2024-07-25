@@ -74,7 +74,7 @@ public class class_6662 {
       return var3;
    }
 
-   public int method_30590(class_6098 var1, int var2) {
+   public int method_30590(ItemStack var1, int var2) {
       class_1536 var5 = this.field_34450.method_14040(class_8669.field_44382.method_14041(var1.method_27960()));
       return var5 != null ? var5.method_6975(var1, var2) : -1;
    }

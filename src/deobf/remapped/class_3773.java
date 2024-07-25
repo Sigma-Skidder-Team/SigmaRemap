@@ -11,7 +11,7 @@ public class class_3773 {
       if (var3 != null && !var3.isEmpty() && !var3.contains("\u0000") && field_18431.matcher(var3).matches()) {
          String var4 = "http://s.optifine.net/capes/" + var3 + ".png";
          Identifier var5 = new Identifier("capeof/" + var3);
-         TextureManager var6 = MinecraftClient.getInstance().method_8577();
+         TextureManager var6 = MinecraftClient.getInstance().getTextureManager();
          class_8143 var7 = var6.method_35679(var5);
          if (var7 != null && var7 instanceof class_9211) {
             class_9211 var8 = (class_9211)var7;
@@ -58,7 +58,7 @@ public class class_3773 {
    public static void method_17459(class_9716 var0) {
       String var3 = var0.method_44878();
       Identifier var4 = new Identifier("capeof/" + var3);
-      TextureManager var5 = class_3111.method_14266();
+      TextureManager var5 = Config.method_14266();
       class_8143 var6 = var5.method_35679(var4);
       if (var6 instanceof class_1809) {
          class_1809 var7 = (class_1809)var6;

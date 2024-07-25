@@ -41,7 +41,7 @@ public class AutoPotionModule extends Module {
                var5[2] = 1;
             }
 
-            if (!mc.field_9632.field_41726) {
+            if (!client.thePlayer.field_41726) {
                this.field_13557 = 0;
             } else {
                this.field_13557++;
@@ -49,8 +49,8 @@ public class AutoPotionModule extends Module {
 
             if (this.field_13559 != 1) {
                if (this.field_13559 >= 2) {
-                  mc.field_9632.field_3853.field_36404 = this.field_13558;
-                  mc.field_9647.method_42129();
+                  client.thePlayer.inventory.field_36404 = this.field_13558;
+                  client.playerController.method_42129();
                   this.field_13559 = 0;
                }
 
@@ -62,8 +62,8 @@ public class AutoPotionModule extends Module {
                               this.method_12639(var1, var4, var5[var6]);
                            }
                         } else if (this.field_13560 > 18
-                           && !mc.field_9632.method_26480(class_1425.method_6538(var5[var6]))
-                           && mc.field_9632.method_26551() < this.getFloatValueByName("Health") * 2.0F) {
+                           && !client.thePlayer.isPotionActive(class_1425.method_6538(var5[var6]))
+                           && client.thePlayer.method_26551() < this.getFloatValueByName("Health") * 2.0F) {
                            this.method_12639(var1, var4, var5[var6]);
                         }
                      }
@@ -71,24 +71,24 @@ public class AutoPotionModule extends Module {
                }
             } else {
                this.field_13559++;
-               mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
+               client.method_8614().method_4813(new class_1022(class_2584.field_12791));
             }
          }
       }
    }
 
    public float[] method_12644() {
-      double var3 = mc.field_9632.method_37302() + mc.field_9632.method_37098().field_7336 * 26.0;
-      double var5 = mc.field_9632.field_41712.field_19937 - 3.6;
-      double var7 = mc.field_9632.method_37156() + mc.field_9632.method_37098().field_7334 * 26.0;
-      return !this.getBooleanValueByName("Predict") ? new float[]{mc.field_9632.field_41701, 90.0F} : class_7211.method_33006(var3, var7, var5);
+      double var3 = client.thePlayer.method_37302() + client.thePlayer.method_37098().field_7336 * 26.0;
+      double var5 = client.thePlayer.field_41712.field_19937 - 3.6;
+      double var7 = client.thePlayer.method_37156() + client.thePlayer.method_37098().field_7334 * 26.0;
+      return !this.getBooleanValueByName("Predict") ? new float[]{client.thePlayer.field_41701, 90.0F} : class_7211.method_33006(var3, var7, var5);
    }
 
    public int method_12640() {
       int var3 = 5;
 
       for (int var4 = 36; var4 < 45; var4++) {
-         if (!mc.field_9632.field_3869.method_18878(var4).method_35884()) {
+         if (!client.thePlayer.field_3869.method_18878(var4).method_35884()) {
             var3 = var4 - 36;
             break;
          }
@@ -104,8 +104,8 @@ public class AutoPotionModule extends Module {
       int var7 = 0;
 
       for (int var8 = 9; var8 < 45; var8++) {
-         if (mc.field_9632.field_3869.method_18878(var8).method_35884()) {
-            class_6098 var9 = mc.field_9632.field_3869.method_18878(var8).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var8).method_35884()) {
+            ItemStack var9 = client.thePlayer.field_3869.method_18878(var8).method_35898();
             if (var9.method_27960() instanceof class_5518) {
                List var10 = class_2740.method_12313(var9);
                int var11 = this.method_12643(var10);
@@ -133,8 +133,8 @@ public class AutoPotionModule extends Module {
          }
       }
 
-      return mc.field_9632.method_26480(class_1425.method_6538(var1))
-            && mc.field_9632.method_26553(class_1425.method_6538(var1)).method_10333() >= var4
+      return client.thePlayer.isPotionActive(class_1425.method_6538(var1))
+            && client.thePlayer.method_26553(class_1425.method_6538(var1)).method_10333() >= var4
          ? -1
          : var6;
    }
@@ -163,22 +163,22 @@ public class AutoPotionModule extends Module {
             }
          } else {
             this.field_13560 = 0;
-            int var7 = mc.field_9632.field_3853.field_36404;
-            boolean var8 = SigmaMainClass.getInstance().getModuleManager().method_847(CriticalsModule.class).method_42015()
-               && SigmaMainClass.getInstance().getModuleManager().method_847(CriticalsModule.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
+            int var7 = client.thePlayer.inventory.field_36404;
+            boolean var8 = SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015()
+               && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
             float[] var9 = this.method_12644();
-            mc.field_9632.field_3853.field_36404 = var6 - 36;
-            mc.field_9647.method_42129();
+            client.thePlayer.inventory.field_36404 = var6 - 36;
+            client.playerController.method_42129();
             if (!this.getBooleanValueByName("Instant")) {
                this.field_13559 = 1;
                var1.method_6441(var9[0]);
                var1.method_6448(var9[1]);
             } else {
-               mc.method_8614().method_4813(new class_3616(var9[0], var9[1], !var8 && mc.field_9632.field_41726));
-               mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
-               mc.method_8614().method_4813(new class_1022(class_2584.field_12794));
-               mc.field_9632.field_3853.field_36404 = var7;
-               mc.field_9647.method_42129();
+               client.method_8614().method_4813(new class_3616(var9[0], var9[1], !var8 && client.thePlayer.field_41726));
+               client.method_8614().method_4813(new class_1022(class_2584.field_12791));
+               client.method_8614().method_4813(new class_1022(class_2584.field_12794));
+               client.thePlayer.inventory.field_36404 = var7;
+               client.playerController.method_42129();
                KillauraModule.field_12551 = 1;
             }
 

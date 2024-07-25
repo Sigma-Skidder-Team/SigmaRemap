@@ -31,8 +31,8 @@ public class class_4879 extends class_446 {
    @Override
    public void method_32178(float var1) {
       this.method_32130();
-      int var4 = MinecraftClient.getInstance().window.method_43165();
-      int var5 = MinecraftClient.getInstance().window.method_43177();
+      int var4 = MinecraftClient.getInstance().window.getScaledWidth();
+      int var5 = MinecraftClient.getInstance().window.getScaledHeight();
       int var6 = (int)((float)var4 / 4.0F);
       boolean var7 = false;
       if (this.field_24271.size() < var6) {

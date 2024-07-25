@@ -4,7 +4,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class class_7099 extends class_2358 implements class_3848, class_3745 {
-   private class_2831<class_6098> field_36619 = class_2831.<class_6098>method_12872(27, class_6098.field_31203);
+   private class_2831<ItemStack> field_36619 = class_2831.<ItemStack>method_12872(27, ItemStack.EMPTY);
    public float field_36616;
    public float field_36618;
    public int field_36620;
@@ -31,7 +31,7 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
    @Override
    public void method_17394(class_2522 var1, class_5734 var2) {
       super.method_17394(var1, var2);
-      this.field_36619 = class_2831.<class_6098>method_12872(this.method_31505(), class_6098.field_31203);
+      this.field_36619 = class_2831.<ItemStack>method_12872(this.method_31505(), ItemStack.EMPTY);
       if (!this.method_10811(var2)) {
          class_3037.method_13882(var2, this.field_36619);
       }
@@ -173,12 +173,12 @@ public class class_7099 extends class_2358 implements class_3848, class_3745 {
    }
 
    @Override
-   public class_2831<class_6098> method_10814() {
+   public class_2831<ItemStack> method_10814() {
       return this.field_36619;
    }
 
    @Override
-   public void method_10813(class_2831<class_6098> var1) {
+   public void method_10813(class_2831<ItemStack> var1) {
       this.field_36619 = var1;
    }
 

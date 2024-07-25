@@ -13,7 +13,7 @@ public class SoundManager {
    );
    public static HashMap<String, class_9084> field_22254 = new HashMap<String, class_9084>();
 
-   public void method_21206(String var1) {
+   public void playSound(String var1) {
       if (!field_22256.contains(var1)) {
          SigmaMainClass.getInstance().method_3326().method_12862("Invalid audio file attempted to be played: " + var1);
       } else {

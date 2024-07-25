@@ -30,7 +30,7 @@ public class SearchModule extends Module {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();
-            this.method_43310(mc.field_9601.method_29542(var4.method_19867()).method_27352());
+            this.method_43310(client.field_9601.method_29542(var4.method_19867()).method_27352());
          }
 
          if (var1.method_557() instanceof class_4467) {
@@ -88,7 +88,7 @@ public class SearchModule extends Module {
          List var5 = (List)this.getSettingValueByName("Blocks");
 
          for (class_1331 var7 : this.method_43317(var1)) {
-            String var8 = class_8669.field_44462.method_39797(mc.field_9601.method_28262(var7).method_8360()).toString();
+            String var8 = class_8669.field_44462.method_39797(client.field_9601.method_28262(var7).method_8360()).toString();
             if (var5.contains(var8)) {
                var4.add(var7);
             }
@@ -97,11 +97,11 @@ public class SearchModule extends Module {
          if (this.getBooleanValueByName("Holes")) {
             label57:
             for (class_1331 var13 : this.method_43317(var1)) {
-               if (mc.field_9601.method_28262(var13).method_8360() == class_4783.field_23184) {
+               if (client.field_9601.method_28262(var13).method_8360() == class_4783.field_23184) {
                   for (Direction var11 : Direction.values()) {
                      if (var11 != Direction.field_817
-                        && mc.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23881
-                        && mc.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23433) {
+                        && client.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23881
+                        && client.field_9601.method_28262(var13.method_6105(var11.method_1037())).method_8360() != class_4783.field_23433) {
                         continue label57;
                      }
                   }
@@ -118,7 +118,7 @@ public class SearchModule extends Module {
    @EventListen
    public void method_43316(class_5596 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.field_41697 < 20) {
+         if (client.thePlayer.field_41697 < 20) {
             this.field_47903.clear();
          } else {
             int var4 = (int)this.getFloatValueByName("Chunk Range");
@@ -126,7 +126,7 @@ public class SearchModule extends Module {
 
             for (int var6 = -5; var6 < 5; var6++) {
                for (int var7 = -5; var7 < 5; var7++) {
-                  var5.add(new class_2034(mc.field_9632.field_41742 + var6, mc.field_9632.field_41714 + var7));
+                  var5.add(new class_2034(client.thePlayer.field_41742 + var6, client.thePlayer.field_41714 + var7));
                }
             }
 
@@ -134,7 +134,7 @@ public class SearchModule extends Module {
 
             while (var11.hasNext()) {
                class_2953 var12 = (class_2953)var11.next();
-               if (var12.method_13514(new class_2034(mc.field_9632.field_41742, mc.field_9632.field_41714)) > 7
+               if (var12.method_13514(new class_2034(client.thePlayer.field_41742, client.thePlayer.field_41714)) > 7
                   || this.field_47901.contains(var12.method_13513())) {
                   var11.remove();
                }
@@ -177,9 +177,9 @@ public class SearchModule extends Module {
 
       for (class_2953 var5 : this.field_47903) {
          for (class_1331 var7 : var5.field_14428) {
-            double var8 = (double)var7.method_12173() - mc.gameRenderer.method_35949().method_41627().method_61();
-            double var10 = (double)var7.method_12165() - mc.gameRenderer.method_35949().method_41627().method_60();
-            double var12 = (double)var7.method_12185() - mc.gameRenderer.method_35949().method_41627().method_62();
+            double var8 = (double)var7.method_12173() - client.gameRenderer.method_35949().method_41627().method_61();
+            double var10 = (double)var7.method_12165() - client.gameRenderer.method_35949().method_41627().method_60();
+            double var12 = (double)var7.method_12185() - client.gameRenderer.method_35949().method_41627().method_62();
             class_8194 var14 = new class_8194(var8, var10, var12, var8 + 1.0, var10 + 1.0, var12 + 1.0);
             class_73.method_83(var14, var3);
          }

@@ -150,7 +150,7 @@ public class class_2452 {
    }
 
    public void method_11258(class_704 var1) {
-      if (var1.method_26480(Effects.field_19721)) {
+      if (var1.isPotionActive(Effects.field_19721)) {
          this.field_12202 = this.field_12202 + var1.method_26553(Effects.field_19721).method_10333() + 1;
          this.field_12202 = class_9299.method_42829(this.field_12202, 0, this.method_11294());
       }
@@ -521,8 +521,8 @@ public class class_2452 {
       this.field_12189.method_28985().method_32923();
    }
 
-   public static class_6098 method_11292() {
-      class_6098 var2 = new class_6098(class_4897.field_24696);
+   public static ItemStack method_11292() {
+      ItemStack var2 = new ItemStack(class_4897.field_24696);
       class_5734 var3 = var2.method_27978("BlockEntityTag");
       class_3416 var4 = new class_1697()
          .method_7624(class_8427.field_43102, class_9077.field_46501)

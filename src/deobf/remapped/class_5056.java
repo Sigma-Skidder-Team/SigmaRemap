@@ -408,12 +408,12 @@ public class class_5056 implements class_7203, class_5684 {
    }
 
    @Override
-   public class_4666 method_25709() {
+   public GameType method_25709() {
       return this.field_26154.method_28720();
    }
 
    @Override
-   public void method_25711(class_4666 var1) {
+   public void method_25711(GameType var1) {
       this.field_26154 = this.field_26154.method_28711(var1);
    }
 

@@ -27,7 +27,7 @@ public class class_731 extends class_6414 {
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      class_6098 var9 = var4.method_26617(var5);
+      ItemStack var9 = var4.method_26617(var5);
       class_2451 var10 = var9.method_27960();
       class_6414 var11 = !(var10 instanceof class_6201)
          ? class_4783.field_23184
@@ -38,7 +38,7 @@ public class class_731 extends class_6414 {
          return class_6910.field_35518;
       } else {
          if (!var13) {
-            class_6098 var14 = new class_6098(this.field_3991);
+            ItemStack var14 = new ItemStack(this.field_3991);
             if (!var9.method_28022()) {
                if (!var4.method_3245(var14)) {
                   var4.method_3153(var14, false);
@@ -61,8 +61,8 @@ public class class_731 extends class_6414 {
    }
 
    @Override
-   public class_6098 method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
-      return this.field_3991 != class_4783.field_23184 ? new class_6098(this.field_3991) : super.method_29276(var1, var2, var3);
+   public ItemStack method_29276(class_6163 var1, class_1331 var2, class_2522 var3) {
+      return this.field_3991 != class_4783.field_23184 ? new ItemStack(this.field_3991) : super.method_29276(var1, var2, var3);
    }
 
    @Override

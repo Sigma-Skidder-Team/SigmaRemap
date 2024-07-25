@@ -46,7 +46,7 @@ public class class_8899 extends class_2451 {
    }
 
    @Override
-   public boolean method_11252(class_6098 var1) {
+   public boolean method_11252(ItemStack var1) {
       return true;
    }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class class_4088 {
-   private final class_2831<class_6098> field_19932 = class_2831.<class_6098>method_12874();
+   private final class_2831<ItemStack> field_19932 = class_2831.<ItemStack>method_12874();
    public final List<class_7934> field_19926 = Lists.newArrayList();
    private final List<class_9332> field_19931 = Lists.newArrayList();
    private final class_4165<?> field_19933;
@@ -57,7 +57,7 @@ public abstract class class_4088 {
    public class_7934 method_18885(class_7934 var1) {
       var1.field_40588 = this.field_19926.size();
       this.field_19926.add(var1);
-      this.field_19932.add(class_6098.field_31203);
+      this.field_19932.add(ItemStack.EMPTY);
       return var1;
    }
 
@@ -84,7 +84,7 @@ public abstract class class_4088 {
       this.field_19928.remove(var1);
    }
 
-   public class_2831<class_6098> method_18868() {
+   public class_2831<ItemStack> method_18868() {
       class_2831 var3 = class_2831.method_12874();
 
       for (int var4 = 0; var4 < this.field_19926.size(); var4++) {
@@ -96,10 +96,10 @@ public abstract class class_4088 {
 
    public void method_18877() {
       for (int var3 = 0; var3 < this.field_19926.size(); var3++) {
-         class_6098 var4 = this.field_19926.get(var3).method_35898();
-         class_6098 var5 = this.field_19932.get(var3);
-         if (!class_6098.method_27982(var5, var4)) {
-            class_6098 var6 = var4.method_27973();
+         ItemStack var4 = this.field_19926.get(var3).method_35898();
+         ItemStack var5 = this.field_19932.get(var3);
+         if (!ItemStack.method_27982(var5, var4)) {
+            ItemStack var6 = var4.method_27973();
             this.field_19932.set(var3, var6);
 
             for (class_117 var8 : this.field_19928) {
@@ -126,12 +126,12 @@ public abstract class class_4088 {
       return this.field_19926.get(var1);
    }
 
-   public class_6098 method_18874(class_704 var1, int var2) {
+   public ItemStack method_18874(class_704 var1, int var2) {
       class_7934 var5 = this.field_19926.get(var2);
-      return var5 == null ? class_6098.field_31203 : var5.method_35898();
+      return var5 == null ? ItemStack.EMPTY : var5.method_35898();
    }
 
-   public class_6098 method_18865(int var1, int var2, class_6269 var3, class_704 var4) {
+   public ItemStack method_18865(int var1, int var2, class_6269 var3, class_704 var4) {
       try {
          return this.method_18862(var1, var2, var3, var4);
       } catch (Exception var10) {
@@ -147,9 +147,9 @@ public abstract class class_4088 {
       }
    }
 
-   private class_6098 method_18862(int var1, int var2, class_6269 var3, class_704 var4) {
-      class_6098 var7 = class_6098.field_31203;
-      class_7051 var8 = var4.field_3853;
+   private ItemStack method_18862(int var1, int var2, class_6269 var3, class_704 var4) {
+      ItemStack var7 = ItemStack.EMPTY;
+      class_7051 var8 = var4.inventory;
       if (var3 != class_6269.field_32022) {
          if (this.field_19927 != 0) {
             this.method_18866();
@@ -157,13 +157,13 @@ public abstract class class_4088 {
             if (var1 != -999) {
                if (var3 != class_6269.field_32019) {
                   if (var1 < 0) {
-                     return class_6098.field_31203;
+                     return ItemStack.EMPTY;
                   }
 
                   class_7934 var24 = this.field_19926.get(var1);
                   if (var24 != null) {
-                     class_6098 var31 = var24.method_35898();
-                     class_6098 var36 = var8.method_32424();
+                     ItemStack var31 = var24.method_35898();
+                     ItemStack var36 = var8.method_32424();
                      if (!var31.method_28022()) {
                         var7 = var31.method_27973();
                      }
@@ -178,7 +178,7 @@ public abstract class class_4088 {
                                        var36.method_28030(var40);
                                        var31 = var24.method_35899(var40);
                                        if (var31.method_28022()) {
-                                          var24.method_35896(class_6098.field_31203);
+                                          var24.method_35896(ItemStack.EMPTY);
                                        }
 
                                        var24.method_35892(var4, var8.method_32424());
@@ -206,13 +206,13 @@ public abstract class class_4088 {
                               int var42 = var2 != 0 ? (var31.method_27997() + 1) / 2 : var31.method_27997();
                               var8.method_32408(var24.method_35899(var42));
                               if (var31.method_28022()) {
-                                 var24.method_35896(class_6098.field_31203);
+                                 var24.method_35896(ItemStack.EMPTY);
                               }
 
                               var24.method_35892(var4, var8.method_32424());
                            } else {
-                              var24.method_35896(class_6098.field_31203);
-                              var8.method_32408(class_6098.field_31203);
+                              var24.method_35896(ItemStack.EMPTY);
+                              var8.method_32408(ItemStack.EMPTY);
                            }
                         }
                      } else if (!var36.method_28022() && var24.method_35889(var36)) {
@@ -228,17 +228,17 @@ public abstract class class_4088 {
                   }
                } else {
                   if (var1 < 0) {
-                     return class_6098.field_31203;
+                     return ItemStack.EMPTY;
                   }
 
                   class_7934 var23 = this.field_19926.get(var1);
                   if (var23 == null || !var23.method_35895(var4)) {
-                     return class_6098.field_31203;
+                     return ItemStack.EMPTY;
                   }
 
-                  for (class_6098 var30 = this.method_18874(var4, var1);
-                     !var30.method_28022() && class_6098.method_28019(var23.method_35898(), var30);
-                     var30 = this.method_18874(var4, var1)
+                  for (ItemStack var30 = this.method_18874(var4, var1);
+                       !var30.method_28022() && ItemStack.method_28019(var23.method_35898(), var30);
+                       var30 = this.method_18874(var4, var1)
                   ) {
                      var7 = var30.method_27973();
                   }
@@ -246,7 +246,7 @@ public abstract class class_4088 {
             } else if (!var8.method_32424().method_28022()) {
                if (var2 == 0) {
                   var4.method_3153(var8.method_32424(), true);
-                  var8.method_32408(class_6098.field_31203);
+                  var8.method_32408(ItemStack.EMPTY);
                }
 
                if (var2 == 1) {
@@ -257,20 +257,20 @@ public abstract class class_4088 {
             if (var3 == class_6269.field_32025 && var4.field_3876.field_4944 && var8.method_32424().method_28022() && var1 >= 0) {
                class_7934 var21 = this.field_19926.get(var1);
                if (var21 != null && var21.method_35884()) {
-                  class_6098 var28 = var21.method_35898().method_27973();
+                  ItemStack var28 = var21.method_35898().method_27973();
                   var28.method_28017(var28.method_28016());
                   var8.method_32408(var28);
                }
             } else if (var3 == class_6269.field_32024 && var8.method_32424().method_28022() && var1 >= 0) {
                class_7934 var20 = this.field_19926.get(var1);
                if (var20 != null && var20.method_35884() && var20.method_35895(var4)) {
-                  class_6098 var27 = var20.method_35899(var2 != 0 ? var20.method_35898().method_27997() : 1);
+                  ItemStack var27 = var20.method_35899(var2 != 0 ? var20.method_35898().method_27997() : 1);
                   var20.method_35892(var4, var27);
                   var4.method_3153(var27, true);
                }
             } else if (var3 == class_6269.field_32023 && var1 >= 0) {
                class_7934 var19 = this.field_19926.get(var1);
-               class_6098 var26 = var8.method_32424();
+               ItemStack var26 = var8.method_32424();
                if (!var26.method_28022() && (var19 == null || !var19.method_35884() || !var19.method_35895(var4))) {
                   int var34 = var2 != 0 ? this.field_19926.size() - 1 : 0;
                   int var37 = var2 != 0 ? -1 : 1;
@@ -279,13 +279,13 @@ public abstract class class_4088 {
                      for (int var45 = var34; var45 >= 0 && var45 < this.field_19926.size() && var26.method_27997() < var26.method_28016(); var45 += var37) {
                         class_7934 var46 = this.field_19926.get(var45);
                         if (var46.method_35884() && method_18856(var46, var26, true) && var46.method_35895(var4) && this.method_18873(var26, var46)) {
-                           class_6098 var47 = var46.method_35898();
+                           ItemStack var47 = var46.method_35898();
                            if (var44 != 0 || var47.method_27997() != var47.method_28016()) {
                               int var48 = Math.min(var26.method_28016() - var26.method_27997(), var47.method_27997());
-                              class_6098 var18 = var46.method_35899(var48);
+                              ItemStack var18 = var46.method_35899(var48);
                               var26.method_28030(var48);
                               if (var18.method_28022()) {
-                                 var46.method_35896(class_6098.field_31203);
+                                 var46.method_35896(ItemStack.EMPTY);
                               }
 
                               var46.method_35892(var4, var18);
@@ -299,8 +299,8 @@ public abstract class class_4088 {
             }
          } else {
             class_7934 var22 = this.field_19926.get(var1);
-            class_6098 var29 = var8.method_31498(var2);
-            class_6098 var35 = var22.method_35898();
+            ItemStack var29 = var8.method_31498(var2);
+            ItemStack var35 = var22.method_35898();
             if (!var29.method_28022() || !var35.method_28022()) {
                if (!var29.method_28022()) {
                   if (!var35.method_28022()) {
@@ -322,7 +322,7 @@ public abstract class class_4088 {
                      int var39 = var22.method_35890(var29);
                      if (var29.method_27997() <= var39) {
                         var22.method_35896(var29);
-                        var8.method_31503(var2, class_6098.field_31203);
+                        var8.method_31503(var2, ItemStack.EMPTY);
                      } else {
                         var22.method_35896(var29.method_27953(var39));
                      }
@@ -330,7 +330,7 @@ public abstract class class_4088 {
                } else if (var22.method_35895(var4)) {
                   var8.method_31503(var2, var35);
                   var22.method_35885(var35.method_27997());
-                  var22.method_35896(class_6098.field_31203);
+                  var22.method_35896(ItemStack.EMPTY);
                   var22.method_35892(var4, var35);
                }
             }
@@ -347,17 +347,17 @@ public abstract class class_4088 {
                      this.method_18866();
                   } else {
                      if (!this.field_19934.isEmpty()) {
-                        class_6098 var10 = var8.method_32424().method_27973();
+                        ItemStack var10 = var8.method_32424().method_27973();
                         int var11 = var8.method_32424().method_27997();
 
                         for (class_7934 var13 : this.field_19934) {
-                           class_6098 var14 = var8.method_32424();
+                           ItemStack var14 = var8.method_32424();
                            if (var13 != null
                               && method_18856(var13, var14, true)
                               && var13.method_35889(var14)
                               && (this.field_19929 == 2 || var14.method_27997() >= this.field_19934.size())
                               && this.method_18857(var13)) {
-                              class_6098 var15 = var10.method_27973();
+                              ItemStack var15 = var10.method_27973();
                               int var16 = !var13.method_35884() ? 0 : var13.method_35898().method_27997();
                               method_18875(this.field_19934, this.field_19929, var15, var16);
                               int var17 = Math.min(var15.method_28016(), var13.method_35890(var15));
@@ -378,7 +378,7 @@ public abstract class class_4088 {
                   }
                } else {
                   class_7934 var25 = this.field_19926.get(var1);
-                  class_6098 var33 = var8.method_32424();
+                  ItemStack var33 = var8.method_32424();
                   if (var25 != null
                      && method_18856(var25, var33, true)
                      && var25.method_35889(var33)
@@ -404,19 +404,19 @@ public abstract class class_4088 {
       return var7;
    }
 
-   public static boolean method_18855(class_6098 var0, class_6098 var1) {
-      return var0.method_27960() == var1.method_27960() && class_6098.method_27956(var0, var1);
+   public static boolean method_18855(ItemStack var0, ItemStack var1) {
+      return var0.method_27960() == var1.method_27960() && ItemStack.method_27956(var0, var1);
    }
 
-   public boolean method_18873(class_6098 var1, class_7934 var2) {
+   public boolean method_18873(ItemStack var1, class_7934 var2) {
       return true;
    }
 
    public void method_18876(class_704 var1) {
-      class_7051 var4 = var1.field_3853;
+      class_7051 var4 = var1.inventory;
       if (!var4.method_32424().method_28022()) {
          var1.method_3153(var4.method_32424(), false);
-         var4.method_32408(class_6098.field_31203);
+         var4.method_32408(ItemStack.EMPTY);
       }
    }
 
@@ -427,7 +427,7 @@ public abstract class class_4088 {
          }
       } else {
          for (int var6 = 0; var6 < var3.method_31505(); var6++) {
-            var1.field_3853.method_32395(var2, var3.method_31507(var6));
+            var1.inventory.method_32395(var2, var3.method_31507(var6));
          }
       }
    }
@@ -436,13 +436,13 @@ public abstract class class_4088 {
       this.method_18877();
    }
 
-   public void method_18871(int var1, class_6098 var2) {
+   public void method_18871(int var1, ItemStack var2) {
       this.method_18878(var1).method_35896(var2);
    }
 
-   public void method_18854(List<class_6098> var1) {
+   public void method_18854(List<ItemStack> var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
-         this.method_18878(var4).method_35896((class_6098)var1.get(var4));
+         this.method_18878(var4).method_35896((ItemStack)var1.get(var4));
       }
    }
 
@@ -469,7 +469,7 @@ public abstract class class_4088 {
 
    public abstract boolean method_18861(class_704 var1);
 
-   public boolean method_18892(class_6098 var1, int var2, int var3, boolean var4) {
+   public boolean method_18892(ItemStack var1, int var2, int var3, boolean var4) {
       boolean var7 = false;
       int var8 = var2;
       if (var4) {
@@ -479,7 +479,7 @@ public abstract class class_4088 {
       if (var1.method_28005()) {
          while (!var1.method_28022() && (!var4 ? var8 < var3 : var8 >= var2)) {
             class_7934 var9 = this.field_19926.get(var8);
-            class_6098 var10 = var9.method_35898();
+            ItemStack var10 = var9.method_35898();
             if (!var10.method_28022() && method_18855(var1, var10)) {
                int var11 = var10.method_27997() + var1.method_27997();
                if (var11 > var1.method_28016()) {
@@ -514,7 +514,7 @@ public abstract class class_4088 {
 
          while (!var4 ? var8 < var3 : var8 >= var2) {
             class_7934 var13 = this.field_19926.get(var8);
-            class_6098 var14 = var13.method_35898();
+            ItemStack var14 = var13.method_35898();
             if (var14.method_28022() && var13.method_35889(var1)) {
                if (var1.method_27997() <= var13.method_35897()) {
                   var13.method_35896(var1.method_27953(var1.method_27997()));
@@ -563,14 +563,14 @@ public abstract class class_4088 {
       this.field_19934.clear();
    }
 
-   public static boolean method_18856(class_7934 var0, class_6098 var1, boolean var2) {
+   public static boolean method_18856(class_7934 var0, ItemStack var1, boolean var2) {
       boolean var5 = var0 == null || !var0.method_35884();
-      return !var5 && var1.method_27991(var0.method_35898()) && class_6098.method_27956(var0.method_35898(), var1)
+      return !var5 && var1.method_27991(var0.method_35898()) && ItemStack.method_27956(var0.method_35898(), var1)
          ? var0.method_35898().method_27997() + (!var2 ? var1.method_27997() : 0) <= var1.method_28016()
          : var5;
    }
 
-   public static void method_18875(Set<class_7934> var0, int var1, class_6098 var2, int var3) {
+   public static void method_18875(Set<class_7934> var0, int var1, ItemStack var2, int var3) {
       switch (var1) {
          case 0:
             var2.method_28017(class_9299.method_42848((float)var2.method_27997() / (float)var0.size()));
@@ -599,7 +599,7 @@ public abstract class class_4088 {
          float var4 = 0.0F;
 
          for (int var5 = 0; var5 < var0.method_31505(); var5++) {
-            class_6098 var6 = var0.method_31498(var5);
+            ItemStack var6 = var0.method_31498(var5);
             if (!var6.method_28022()) {
                var4 += (float)var6.method_27997() / (float)Math.min(var0.method_31506(), var6.method_28016());
                var3++;

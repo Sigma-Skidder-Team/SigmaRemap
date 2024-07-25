@@ -17,7 +17,7 @@ public class class_2345 implements class_8147 {
 
    public class_8143 method_10748() {
       if (this.field_11712 == null) {
-         TextureManager var3 = MinecraftClient.getInstance().method_8577();
+         TextureManager var3 = MinecraftClient.getInstance().getTextureManager();
          this.field_11712 = var3.method_35679(this.field_11714);
          if (this.field_11712 == null) {
             this.field_11712 = new class_1809(this.field_11714);

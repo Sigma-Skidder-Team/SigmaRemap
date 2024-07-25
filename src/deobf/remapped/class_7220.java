@@ -22,7 +22,7 @@ public class class_7220 extends class_4785<class_7220> {
          }
       }
 
-      class_6098 var16 = new class_6098(var15);
+      ItemStack var16 = new ItemStack(var15);
       this.method_33070(var1, var4, var3, var16);
       this.field_37067.field_20043.field_948.method_45378(var1, var15.method_11249(var16), (float)(var4 + 18 + 5), (float)(var3 + 3), 16777215);
       String var17;
@@ -52,19 +52,19 @@ public class class_7220 extends class_4785<class_7220> {
       }
    }
 
-   private void method_33070(class_7966 var1, int var2, int var3, class_6098 var4) {
+   private void method_33070(class_7966 var1, int var2, int var3, ItemStack var4) {
       this.method_33069(var1, var2 + 1, var3 + 1);
-      class_3542.method_16381();
+      RenderSystem.method_16381();
       if (!var4.method_28022()) {
          this.field_37067.field_20043.field_945.method_40264(var4, var2 + 2, var3 + 2);
       }
 
-      class_3542.method_16443();
+      RenderSystem.method_16443();
    }
 
    private void method_33069(class_7966 var1, int var2, int var3) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_4114.method_19103(this.field_37067).method_8577().method_35674(class_2089.field_10506);
-      class_2089.method_9779(var1, var2, var3, this.field_37067.field_20043.method_9777(), 0.0F, 0.0F, 18, 18, 128, 128);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      class_4114.method_19103(this.field_37067).method_8577().method_35674(AbstractGui.field_10506);
+      AbstractGui.method_9779(var1, var2, var3, this.field_37067.field_20043.method_9777(), 0.0F, 0.0F, 18, 18, 128, 128);
    }
 }

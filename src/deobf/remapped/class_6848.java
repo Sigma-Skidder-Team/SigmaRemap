@@ -50,7 +50,7 @@ public class class_6848 extends class_1340 {
 
    @Override
    public void method_6185(class_7966 var1) {
-      MinecraftClient.getInstance().method_8577().method_35674(this.field_35313.method_23608().method_38519());
+      MinecraftClient.getInstance().getTextureManager().bindTexture(this.field_35313.method_23608().method_38519());
       method_9782(var1, this.field_36670 + 2, this.field_36674 + 2, this.method_9777(), 18, 18, this.field_35313);
    }
 }

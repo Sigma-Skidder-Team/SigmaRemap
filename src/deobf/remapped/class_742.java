@@ -17,7 +17,7 @@ public class class_742 extends class_2451 {
       class_1331 var5 = var1.method_21858();
       class_2522 var6 = var4.method_28262(var5);
       if (var6.method_8349(class_2351.field_11745)) {
-         class_6098 var7 = var1.method_21867();
+         ItemStack var7 = var1.method_21867();
          if (!var4.field_33055) {
             class_3665 var8 = !(var6.method_8360() instanceof class_6788)
                ? class_3665.field_17829

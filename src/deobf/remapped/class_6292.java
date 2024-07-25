@@ -4,14 +4,14 @@ import com.mojang.serialization.Dynamic;
 
 public final class class_6292 {
    private final String field_32160;
-   private final class_4666 field_32158;
+   private final GameType field_32158;
    private final boolean field_32162;
    private final class_423 field_32163;
    private final boolean field_32156;
    private final class_291 field_32157;
    private final class_2805 field_32159;
 
-   public class_6292(String var1, class_4666 var2, boolean var3, class_423 var4, boolean var5, class_291 var6, class_2805 var7) {
+   public class_6292(String var1, GameType var2, boolean var3, class_423 var4, boolean var5, class_291 var6, class_2805 var7) {
       this.field_32160 = var1;
       this.field_32158 = var2;
       this.field_32162 = var3;
@@ -22,13 +22,13 @@ public final class class_6292 {
    }
 
    public static class_6292 method_28715(Dynamic<?> var0, class_2805 var1) {
-      class_4666 var4 = class_4666.method_21590(var0.get("GameType").asInt(0));
+      GameType var4 = GameType.method_21590(var0.get("GameType").asInt(0));
       return new class_6292(
          var0.get("LevelName").asString(""),
          var4,
          var0.get("hardcore").asBoolean(false),
          var0.get("Difficulty").asNumber().map(var0x -> class_423.method_2100(var0x.byteValue())).result().orElse(class_423.field_1789),
-         var0.get("allowCommands").asBoolean(var4 == class_4666.field_22761),
+         var0.get("allowCommands").asBoolean(var4 == GameType.field_22761),
          new class_291(var0.get("GameRules")),
          var1
       );
@@ -38,7 +38,7 @@ public final class class_6292 {
       return this.field_32160;
    }
 
-   public class_4666 method_28720() {
+   public GameType method_28720() {
       return this.field_32158;
    }
 
@@ -62,7 +62,7 @@ public final class class_6292 {
       return this.field_32159;
    }
 
-   public class_6292 method_28711(class_4666 var1) {
+   public class_6292 method_28711(GameType var1) {
       return new class_6292(this.field_32160, var1, this.field_32162, this.field_32163, this.field_32156, this.field_32157, this.field_32159);
    }
 

@@ -43,26 +43,26 @@ public class FreeCamModule extends Module {
             this.onEnable();
          }
 
-         mc.field_9632.field_30524 = mc.field_9632.field_41755;
-         class_4092 var4 = mc.field_9632.field_41712;
+         client.thePlayer.field_30524 = client.thePlayer.field_41755;
+         class_4092 var4 = client.thePlayer.field_41712;
          field_48917.method_37256((var4.field_19941 + var4.field_19940) / 2.0, var4.field_19937, (var4.field_19938 + var4.field_19942) / 2.0);
          double var5 = this.field_48912 + (this.field_48921 - this.field_48912) * (double)var1.field_8848;
          double var7 = this.field_48926 + (this.field_48927 - this.field_48926) * (double)var1.field_8848;
          double var9 = this.field_48916 + (this.field_48914 - this.field_48916) * (double)var1.field_8848;
-         mc.field_9632.field_41736.field_7336 = var5;
-         mc.field_9632.field_41754 = var5;
-         mc.field_9632.field_3868 = var5;
-         mc.field_9632.field_41767 = var5;
-         mc.field_9632.field_41736.field_7333 = var7;
-         mc.field_9632.field_41713 = var7;
-         mc.field_9632.field_3864 = var7;
-         mc.field_9632.field_41698 = var7;
-         mc.field_9632.field_41736.field_7334 = var9;
-         mc.field_9632.field_41724 = var9;
-         mc.field_9632.field_3858 = var9;
-         mc.field_9632.field_41725 = var9;
+         client.thePlayer.field_41736.field_7336 = var5;
+         client.thePlayer.field_41754 = var5;
+         client.thePlayer.field_3868 = var5;
+         client.thePlayer.field_41767 = var5;
+         client.thePlayer.field_41736.field_7333 = var7;
+         client.thePlayer.field_41713 = var7;
+         client.thePlayer.field_3864 = var7;
+         client.thePlayer.field_41698 = var7;
+         client.thePlayer.field_41736.field_7334 = var9;
+         client.thePlayer.field_41724 = var9;
+         client.thePlayer.field_3858 = var9;
+         client.thePlayer.field_41725 = var9;
          if (class_8865.method_40772()) {
-            mc.field_9632.field_3859 = 0.099999994F;
+            client.thePlayer.field_3859 = 0.099999994F;
          }
       }
    }
@@ -77,51 +77,51 @@ public class FreeCamModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_48921 = mc.field_9632.method_37302();
-      this.field_48927 = mc.field_9632.method_37309();
-      this.field_48914 = mc.field_9632.method_37156();
-      this.field_48915 = mc.field_9632.field_41701;
-      this.field_48920 = mc.field_9632.field_41755;
-      String var3 = mc.field_9632.method_45509().getString();
-      GameProfile var4 = new GameProfile(mc.field_9632.method_3247().getId(), var3);
-      field_48917 = new class_9745(mc.field_9601, var4);
-      field_48917.field_3853 = mc.field_9632.field_3853;
+      this.field_48921 = client.thePlayer.method_37302();
+      this.field_48927 = client.thePlayer.method_37309();
+      this.field_48914 = client.thePlayer.method_37156();
+      this.field_48915 = client.thePlayer.field_41701;
+      this.field_48920 = client.thePlayer.field_41755;
+      String var3 = client.thePlayer.method_45509().getString();
+      GameProfile var4 = new GameProfile(client.thePlayer.method_3247().getId(), var3);
+      field_48917 = new class_9745(client.field_9601, var4);
+      field_48917.inventory = client.thePlayer.inventory;
       field_48917.method_37249(this.field_48921, this.field_48927, this.field_48914, this.field_48915, this.field_48920);
       field_48917.field_41731 = true;
-      field_48917.field_41721 = mc.field_9632.field_41721;
+      field_48917.field_41721 = client.thePlayer.field_41721;
       field_48917.field_29618 = this.field_48915;
       field_48917.field_29657 = this.field_48915;
       field_48917.field_29605 = this.field_48915;
       field_48917.field_29611 = this.field_48915;
-      mc.field_9601.method_725(this.field_48925 = (int)(Math.random() * -10000.0), field_48917);
-      this.field_48929 = mc.gameOptions.keyForward.isKeyDown();
-      this.field_48924 = mc.gameOptions.keyBack.isKeyDown();
-      this.field_48913 = mc.gameOptions.keyLeft.isKeyDown();
-      this.field_48923 = mc.gameOptions.keyRight.isKeyDown();
+      client.field_9601.method_725(this.field_48925 = (int)(Math.random() * -10000.0), field_48917);
+      this.field_48929 = client.gameOptions.keyForward.isKeyDown();
+      this.field_48924 = client.gameOptions.keyBack.isKeyDown();
+      this.field_48913 = client.gameOptions.keyLeft.isKeyDown();
+      this.field_48923 = client.gameOptions.keyRight.isKeyDown();
       this.field_48922 = this.field_48929 != this.field_48924 ? (float)(!this.field_48929 ? -1 : 1) : 0.0F;
       this.field_48928 = this.field_48913 != this.field_48923 ? (float)(!this.field_48913 ? -1 : 1) : 0.0F;
-      this.field_48919 = mc.gameOptions.keyJump.isKeyDown();
-      this.field_48911 = mc.gameOptions.keySneak.isKeyDown();
-      mc.gameOptions.keyForward.pressed = false;
-      mc.gameOptions.keyBack.pressed = false;
-      mc.gameOptions.keyLeft.pressed = false;
-      mc.gameOptions.keyRight.pressed = false;
-      mc.gameOptions.keyJump.pressed = false;
-      mc.gameOptions.keySneak.pressed = false;
+      this.field_48919 = client.gameOptions.keyJump.isKeyDown();
+      this.field_48911 = client.gameOptions.keySneak.isKeyDown();
+      client.gameOptions.keyForward.pressed = false;
+      client.gameOptions.keyBack.pressed = false;
+      client.gameOptions.keyLeft.pressed = false;
+      client.gameOptions.keyRight.pressed = false;
+      client.gameOptions.keyJump.pressed = false;
+      client.gameOptions.keySneak.pressed = false;
    }
 
    @Override
    public void onDisable() {
-      mc.gameOptions.keyForward.pressed = this.field_48929;
-      mc.gameOptions.keyBack.pressed = this.field_48924;
-      mc.gameOptions.keyLeft.pressed = this.field_48913;
-      mc.gameOptions.keyRight.pressed = this.field_48923;
-      mc.gameOptions.keyJump.pressed = this.field_48919;
-      mc.gameOptions.keySneak.pressed = this.field_48911;
-      mc.field_9601.method_754(this.field_48925);
-      mc.field_9632.method_37298();
+      client.gameOptions.keyForward.pressed = this.field_48929;
+      client.gameOptions.keyBack.pressed = this.field_48924;
+      client.gameOptions.keyLeft.pressed = this.field_48913;
+      client.gameOptions.keyRight.pressed = this.field_48923;
+      client.gameOptions.keyJump.pressed = this.field_48919;
+      client.gameOptions.keySneak.pressed = this.field_48911;
+      client.field_9601.method_754(this.field_48925);
+      client.thePlayer.method_37298();
       if (field_48917 != null) {
-         mc.field_9632.field_41721 = field_48917.field_41721;
+         client.thePlayer.field_41721 = field_48917.field_41721;
       }
 
       field_48917 = null;
@@ -137,12 +137,12 @@ public class FreeCamModule extends Module {
    @EventListen
    private void method_44329(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() != mc.gameOptions.keySneak.field_30027.field_17800) {
-            if (var1.method_29384() != mc.gameOptions.keyJump.field_30027.field_17800) {
-               if (var1.method_29384() != mc.gameOptions.keyForward.field_30027.field_17800) {
-                  if (var1.method_29384() != mc.gameOptions.keyBack.field_30027.field_17800) {
-                     if (var1.method_29384() != mc.gameOptions.keyLeft.field_30027.field_17800) {
-                        if (var1.method_29384() == mc.gameOptions.keyRight.field_30027.field_17800) {
+         if (var1.method_29384() != client.gameOptions.keySneak.field_30027.field_17800) {
+            if (var1.method_29384() != client.gameOptions.keyJump.field_30027.field_17800) {
+               if (var1.method_29384() != client.gameOptions.keyForward.field_30027.field_17800) {
+                  if (var1.method_29384() != client.gameOptions.keyBack.field_30027.field_17800) {
+                     if (var1.method_29384() != client.gameOptions.keyLeft.field_30027.field_17800) {
+                        if (var1.method_29384() == client.gameOptions.keyRight.field_30027.field_17800) {
                            var1.method_29715(true);
                            this.field_48923 = true;
                         }
@@ -175,12 +175,12 @@ public class FreeCamModule extends Module {
    @EventListen
    private void method_44328(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() != mc.gameOptions.keySneak.field_30027.field_17800) {
-            if (var1.method_1364() != mc.gameOptions.keyJump.field_30027.field_17800) {
-               if (var1.method_1364() != mc.gameOptions.keyForward.field_30027.field_17800) {
-                  if (var1.method_1364() != mc.gameOptions.keyBack.field_30027.field_17800) {
-                     if (var1.method_1364() != mc.gameOptions.keyLeft.field_30027.field_17800) {
-                        if (var1.method_1364() == mc.gameOptions.keyRight.field_30027.field_17800) {
+         if (var1.method_1364() != client.gameOptions.keySneak.field_30027.field_17800) {
+            if (var1.method_1364() != client.gameOptions.keyJump.field_30027.field_17800) {
+               if (var1.method_1364() != client.gameOptions.keyForward.field_30027.field_17800) {
+                  if (var1.method_1364() != client.gameOptions.keyBack.field_30027.field_17800) {
+                     if (var1.method_1364() != client.gameOptions.keyLeft.field_30027.field_17800) {
+                        if (var1.method_1364() == client.gameOptions.keyRight.field_30027.field_17800) {
                            var1.method_29715(true);
                            this.field_48923 = false;
                         }
@@ -222,8 +222,8 @@ public class FreeCamModule extends Module {
       if (this.method_42015() && var1.method_6449()) {
          var1.method_6441(this.field_48915 % 360.0F);
          var1.method_6448(this.field_48920);
-         mc.field_9632.field_30535 = this.field_48915;
-         mc.field_9632.field_30524 = this.field_48920;
+         client.thePlayer.field_30535 = this.field_48915;
+         client.thePlayer.field_30524 = this.field_48920;
          float[] var4 = class_8865.method_40774(this.field_48922, this.field_48928);
          float var5 = var4[1];
          float var6 = var4[2];
@@ -249,19 +249,19 @@ public class FreeCamModule extends Module {
    @EventListen
    private void method_44326(PacketEvent var1) {
       if (this.method_42015()) {
-         if (mc.field_9632 != null) {
+         if (client.thePlayer != null) {
             if (var1.method_557() instanceof class_509) {
                class_509 var4 = (class_509)var1.method_557();
                this.field_48915 = var4.field_3143;
                this.field_48920 = var4.field_3140;
-               var4.field_3143 = mc.field_9632.field_41701;
-               var4.field_3140 = mc.field_9632.field_41755;
+               var4.field_3143 = client.thePlayer.field_41701;
+               var4.field_3140 = client.thePlayer.field_41755;
                double var5 = var4.field_3139;
                double var7 = var4.field_3144;
                double var9 = var4.field_3141;
                float var11 = class_704.field_3865.field_31199;
                float var12 = class_704.field_3865.field_31200;
-               mc.field_9632
+               client.thePlayer
                   .method_37094(
                      new class_4092(var5 - (double)var11, var7, var9 - (double)var11, var5 + (double)var11, var7 + (double)var12, var9 + (double)var11)
                   );
@@ -281,7 +281,7 @@ public class FreeCamModule extends Module {
 
          if (var1.method_10047() instanceof class_3398) {
             class_3398 var4 = (class_3398)var1.method_10047();
-            if (var4.method_15695(mc.field_9601) == null) {
+            if (var4.method_15695(client.field_9601) == null) {
                var1.method_29715(true);
             }
          }

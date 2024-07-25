@@ -10,8 +10,8 @@ public class BowFly extends Module {
 
    @Override
    public void onDisable() {
-      if (mc.theTimer.timerSpeed == 0.1F) {
-         mc.theTimer.timerSpeed = 1.0F;
+      if (client.theTimer.timerSpeed == 0.1F) {
+         client.theTimer.timerSpeed = 1.0F;
       }
    }
 
@@ -22,7 +22,7 @@ public class BowFly extends Module {
    @EventListen
    public void method_7737(class_4996 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206 && this.field_8926 >= 1) {
+         if (client.thePlayer.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206 && this.field_8926 >= 1) {
             var1.method_29715(true);
          }
       }
@@ -44,8 +44,8 @@ public class BowFly extends Module {
             double var13 = Math.sin(Math.toRadians((double)var10));
             var1.method_35232((double)var8 * var6 * var11 + (double)var9 * var6 * var13);
             var1.method_35229((double)var8 * var6 * var13 - (double)var9 * var6 * var11);
-            mc.field_9632.method_37098().field_7336 = var1.method_35234();
-            mc.field_9632.method_37098().field_7333 = var1.method_35236();
+            client.thePlayer.method_37098().field_7336 = var1.method_35234();
+            client.thePlayer.method_37098().field_7333 = var1.method_35236();
          } else {
             var1.method_35232(0.0);
             var1.method_35229(0.0);
@@ -62,53 +62,53 @@ public class BowFly extends Module {
 
          int var4 = this.method_7736();
          if (var4 >= 0 || var4 <= 8) {
-            if (mc.field_9632.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206) {
+            if (client.thePlayer.method_26617(class_2584.field_12791).method_27960() == class_4897.field_25206) {
                if (InvManagerModule.method_23723(class_4897.field_25024) == 0) {
                   if (this.field_8927.method_14772() > 5000L) {
                      SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("BowFly", "You have no arrows"));
                      this.field_8927.method_14773();
                   }
 
-                  if (mc.theTimer.timerSpeed == 0.1F) {
-                     mc.theTimer.timerSpeed = 1.0F;
+                  if (client.theTimer.timerSpeed == 0.1F) {
+                     client.theTimer.timerSpeed = 1.0F;
                   }
 
                   return;
                }
 
-               float var5 = mc.field_9632.field_41701;
+               float var5 = client.thePlayer.field_41701;
                float var6 = -90.0F;
-               if (mc.field_9632.field_29673 != 0.0F || mc.field_9632.field_29676 != 0.0F) {
+               if (client.thePlayer.field_29673 != 0.0F || client.thePlayer.field_29676 != 0.0F) {
                   var6 = -80.0F;
                }
 
-               if (mc.field_9632.field_29673 < 0.0F) {
+               if (client.thePlayer.field_29673 < 0.0F) {
                   var5 -= 180.0F;
                }
 
-               if (mc.field_9632.method_37098().field_7333 < -0.1) {
+               if (client.thePlayer.method_37098().field_7333 < -0.1) {
                   var6 = 90.0F;
                }
 
                var1.method_6448(var6);
                var1.method_6441(var5);
-               if (mc.field_9632.field_41726 && mc.field_9632.field_41774) {
-                  mc.field_9632.method_26595();
-               } else if (!(mc.field_9632.method_37098().field_7333 < 0.0)) {
-                  if (mc.theTimer.timerSpeed == 0.1F) {
-                     mc.theTimer.timerSpeed = 1.0F;
+               if (client.thePlayer.field_41726 && client.thePlayer.field_41774) {
+                  client.thePlayer.method_26595();
+               } else if (!(client.thePlayer.method_37098().field_7333 < 0.0)) {
+                  if (client.theTimer.timerSpeed == 0.1F) {
+                     client.theTimer.timerSpeed = 1.0F;
                   }
                } else {
-                  mc.theTimer.timerSpeed = 0.1F;
+                  client.theTimer.timerSpeed = 0.1F;
                }
 
                this.field_8926++;
                if (this.field_8926 < 4) {
                   if (this.field_8926 == 1) {
-                     mc.method_8614().method_4813(new class_1022(class_2584.field_12791));
+                     client.method_8614().method_4813(new class_1022(class_2584.field_12791));
                   }
                } else {
-                  mc.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
+                  client.method_8614().method_4813(new class_1586(class_7500.field_38259, class_1331.field_7306, Direction.field_802));
                   this.field_8926 = 0;
                }
             }
@@ -118,8 +118,8 @@ public class BowFly extends Module {
 
    private int method_7736() {
       for (int var3 = 36; var3 < 45; var3++) {
-         if (mc.field_9632.field_3869.method_18878(var3).method_35884()) {
-            class_6098 var4 = mc.field_9632.field_3869.method_18878(var3).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var3).method_35884()) {
+            ItemStack var4 = client.thePlayer.field_3869.method_18878(var3).method_35898();
             if (var4.method_27960() == class_4897.field_25206) {
                return var3 - 36;
             }
@@ -127,8 +127,8 @@ public class BowFly extends Module {
       }
 
       for (int var5 = 9; var5 < 36; var5++) {
-         if (mc.field_9632.field_3869.method_18878(var5).method_35884()) {
-            class_6098 var6 = mc.field_9632.field_3869.method_18878(var5).method_35898();
+         if (client.thePlayer.field_3869.method_18878(var5).method_35884()) {
+            ItemStack var6 = client.thePlayer.field_3869.method_18878(var5).method_35898();
             if (var6.method_27960() == class_4897.field_25206) {
                class_2740.method_12312(var5, 7);
                return 7;

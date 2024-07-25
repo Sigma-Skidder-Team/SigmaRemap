@@ -79,7 +79,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    private void method_43254(class_6331 var1) {
       class_1331 var4 = var1.method_28998();
-      if (var1.method_22572().method_40229() && var1.method_29522().method_1601().method_25709() != class_4666.field_22760) {
+      if (var1.method_22572().method_40229() && var1.method_29522().method_1601().method_25709() != GameType.field_22760) {
          int var5 = Math.max(0, this.field_47801.method_1720(var1));
          int var6 = class_9299.method_42847(var1.method_6673().method_9808((double)var4.method_12173(), (double)var4.method_12185()));
          if (var6 < var5) {
@@ -128,13 +128,13 @@ public class class_9359 extends class_704 implements class_117 {
          if (!this.method_37268().method_1621()) {
             this.field_47807
                .method_39516(
-                  class_4666.method_21590(var1.method_25947("playerGameType")),
+                  GameType.method_21590(var1.method_25947("playerGameType")),
                   !var1.method_25939("previousPlayerGameType", 3)
-                     ? class_4666.field_22762
-                     : class_4666.method_21590(var1.method_25947("previousPlayerGameType"))
+                     ? GameType.field_22762
+                     : GameType.method_21590(var1.method_25947("previousPlayerGameType"))
                );
          } else {
-            this.field_47807.method_39516(this.method_37268().method_1602(), class_4666.field_22762);
+            this.field_47807.method_39516(this.method_37268().method_1602(), GameType.field_22762);
          }
       }
 
@@ -224,7 +224,7 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_3175(class_6098 var1, int var2) {
+   public void method_3175(ItemStack var1, int var2) {
       super.method_3175(var1, var2);
       this.field_47772 = -1;
    }
@@ -310,8 +310,8 @@ public class class_9359 extends class_704 implements class_117 {
             super.method_37123();
          }
 
-         for (int var3 = 0; var3 < this.field_3853.method_31505(); var3++) {
-            class_6098 var7 = this.field_3853.method_31498(var3);
+         for (int var3 = 0; var3 < this.inventory.method_31505(); var3++) {
+            ItemStack var7 = this.inventory.method_31498(var3);
             if (var7.method_27960().method_11221()) {
                Packet var8 = ((class_6249)var7.method_27960()).method_28525(var7, this.field_41768, this);
                if (var8 != null) {
@@ -816,7 +816,7 @@ public class class_9359 extends class_704 implements class_117 {
          }
 
          this.method_43278();
-         class_4088 var4 = var1.method_11419(this.field_47806, this.field_3853, this);
+         class_4088 var4 = var1.method_11419(this.field_47806, this.inventory, this);
          if (var4 != null) {
             this.field_47794.method_4156(new class_5149(var4.field_19925, var4.method_18891(), var1.method_19839()));
             var4.method_18888(this);
@@ -847,12 +847,12 @@ public class class_9359 extends class_704 implements class_117 {
 
       this.method_43278();
       this.field_47794.method_4156(new class_6390(this.field_47806, var2.method_31505(), var1.method_37145()));
-      this.field_3874 = new class_7741(this.field_47806, this.field_3853, var2, var1);
+      this.field_3874 = new class_7741(this.field_47806, this.inventory, var2, var1);
       this.field_3874.method_18888(this);
    }
 
    @Override
-   public void method_3174(class_6098 var1, class_2584 var2) {
+   public void method_3174(ItemStack var1, class_2584 var2) {
       class_2451 var5 = var1.method_27960();
       if (var5 == class_4897.field_24698) {
          if (class_1138.method_4993(var1, this.method_37320(), this)) {
@@ -870,10 +870,10 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_348(class_4088 var1, int var2, class_6098 var3) {
+   public void method_348(class_4088 var1, int var2, ItemStack var3) {
       if (!(var1.method_18878(var2) instanceof class_8725)) {
          if (var1 == this.field_3869) {
-            class_8807.field_45062.method_38159(this, this.field_3853, var3);
+            class_8807.field_45062.method_38159(this, this.inventory, var3);
          }
 
          if (!this.field_47775) {
@@ -887,9 +887,9 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_347(class_4088 var1, class_2831<class_6098> var2) {
+   public void method_347(class_4088 var1, class_2831<ItemStack> var2) {
       this.field_47794.method_4156(new class_9860(var1.field_19925, var2));
-      this.field_47794.method_4156(new class_5491(-1, -1, this.field_3853.method_32424()));
+      this.field_47794.method_4156(new class_5491(-1, -1, this.inventory.method_32424()));
    }
 
    @Override
@@ -905,7 +905,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    public void method_43260() {
       if (!this.field_47775) {
-         this.field_47794.method_4156(new class_5491(-1, -1, this.field_3853.method_32424()));
+         this.field_47794.method_4156(new class_5491(-1, -1, this.inventory.method_32424()));
       }
    }
 
@@ -1012,14 +1012,14 @@ public class class_9359 extends class_704 implements class_117 {
    public void method_43273(class_9359 var1, boolean var2) {
       if (!var2) {
          if (this.field_41768.method_29537().method_1285(class_291.field_1051) || var1.method_37221()) {
-            this.field_3853.method_32421(var1.field_3853);
+            this.inventory.method_32421(var1.inventory);
             this.field_3840 = var1.field_3840;
             this.field_3862 = var1.field_3862;
             this.field_3842 = var1.field_3842;
             this.method_3215(var1.method_3227());
          }
       } else {
-         this.field_3853.method_32421(var1.field_3853);
+         this.inventory.method_32421(var1.inventory);
          this.method_26456(var1.method_26551());
          this.field_3867 = var1.field_3867;
          this.field_3840 = var1.field_3840;
@@ -1107,10 +1107,10 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public void method_3155(class_4666 var1) {
+   public void method_3155(GameType var1) {
       this.field_47807.method_39526(var1);
       this.field_47794.method_4156(new class_2161(class_2161.field_10791, (float)var1.method_21589()));
-      if (var1 != class_4666.field_22756) {
+      if (var1 != GameType.SPECTATOR) {
          this.method_43284(this);
       } else {
          this.method_3157();
@@ -1123,12 +1123,12 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public boolean method_37221() {
-      return this.field_47807.method_39517() == class_4666.field_22756;
+      return this.field_47807.method_39517() == GameType.SPECTATOR;
    }
 
    @Override
    public boolean method_3186() {
-      return this.field_47807.method_39517() == class_4666.field_22761;
+      return this.field_47807.method_39517() == GameType.field_22761;
    }
 
    @Override
@@ -1238,7 +1238,7 @@ public class class_9359 extends class_704 implements class_117 {
 
    @Override
    public void method_3158(Entity var1) {
-      if (this.field_47807.method_39517() != class_4666.field_22756) {
+      if (this.field_47807.method_39517() != GameType.SPECTATOR) {
          super.method_3158(var1);
       } else {
          this.method_43284(var1);
@@ -1374,11 +1374,11 @@ public class class_9359 extends class_704 implements class_117 {
    }
 
    @Override
-   public class_91 method_3154(class_6098 var1, boolean var2, boolean var3) {
+   public class_91 method_3154(ItemStack var1, boolean var2, boolean var3) {
       class_91 var6 = super.method_3154(var1, var2, var3);
       if (var6 != null) {
          this.field_41768.method_7509(var6);
-         class_6098 var7 = var6.method_264();
+         ItemStack var7 = var6.method_264();
          if (var3) {
             if (!var7.method_28022()) {
                this.method_3212(class_6234.field_31850.method_43790(var7.method_27960()), var1.method_27997());

@@ -15,27 +15,27 @@ public class EntitySpeedModule extends Module {
    @EventListen
    public void method_30357(class_5088 var1) {
       if (this.method_42015()) {
-         if (mc.gameOptions.keyJump.isKeyDown() && !mc.field_9632.method_37243().field_41726) {
+         if (client.gameOptions.keyJump.isKeyDown() && !client.thePlayer.method_37243().field_41726) {
          }
 
-         class_8859 var4 = mc.field_9632.field_30533;
+         class_8859 var4 = client.thePlayer.field_30533;
          float var5 = var4.field_45287;
          float var6 = var4.field_45282;
-         if (!mc.field_9632.method_37243().field_41744
-            && !mc.field_9632.method_37243().field_41726
-            && class_314.method_1413(mc.field_9632.method_37243(), 5.0F)
-            && !mc.field_9632.method_37243().method_37285()
-            && mc.field_9601.method_28262(mc.field_9632.method_37243().method_37075()).method_8360() != class_4783.field_23900) {
+         if (!client.thePlayer.method_37243().field_41744
+            && !client.thePlayer.method_37243().field_41726
+            && class_314.method_1413(client.thePlayer.method_37243(), 5.0F)
+            && !client.thePlayer.method_37243().method_37285()
+            && client.field_9601.method_28262(client.thePlayer.method_37243().method_37075()).method_8360() != class_4783.field_23900) {
             var1.method_23388(-2.0);
          }
 
-         if (mc.field_9632.method_37243().method_37285()) {
-            if (mc.field_9632.method_37243().field_41744) {
+         if (client.thePlayer.method_37243().method_37285()) {
+            if (client.thePlayer.method_37243().field_41744) {
                var1.method_23388(-1.0);
             } else {
-               double var13 = Math.floor(mc.field_9632.method_37243().method_37309())
+               double var13 = Math.floor(client.thePlayer.method_37243().method_37309())
                   + 0.7725465413369861
-                  - mc.field_9632.method_37243().method_37309();
+                  - client.thePlayer.method_37243().method_37309();
                var1.method_23388(var13 / 2.0);
             }
          }
@@ -49,17 +49,17 @@ public class EntitySpeedModule extends Module {
             double var10 = Math.sin(Math.toRadians((double)var7));
             this.field_34011 = 2.75F;
             float var12 = this.field_34011;
-            if (mc.field_9632.method_37243() instanceof class_3551) {
-               class_3551 var15 = (class_3551) mc.field_9632.method_37243();
-               if (var15.field_41726 && mc.gameOptions.keyJump.isKeyDown()) {
-                  mc.field_9632.field_30501 = 1.0F;
+            if (client.thePlayer.method_37243() instanceof class_3551) {
+               class_3551 var15 = (class_3551) client.thePlayer.method_37243();
+               if (var15.field_41726 && client.gameOptions.keyJump.isKeyDown()) {
+                  client.thePlayer.field_30501 = 1.0F;
                }
             }
 
             var1.method_23385(var8 * (double)var12);
             var1.method_23389(var10 * (double)var12);
-            if (this.field_34012 < 2 || !mc.field_9632.method_37243().field_41726) {
-               mc.field_9632.method_37243().field_41733 = 0.0F;
+            if (this.field_34012 < 2 || !client.thePlayer.method_37243().field_41726) {
+               client.thePlayer.method_37243().field_41733 = 0.0F;
             }
          }
       }
@@ -76,16 +76,16 @@ public class EntitySpeedModule extends Module {
    @EventListen
    public void method_30359(class_2157 var1) {
       if (var1.method_10047() instanceof class_4148
-         && mc.field_9632.method_37243() != null
+         && client.thePlayer.method_37243() != null
          && this.field_34012++ > 2
-         && mc.field_9632.method_37243().field_41726) {
-         mc.field_9632.method_37243().field_41733 = 1.0F;
+         && client.thePlayer.method_37243().field_41726) {
+         client.thePlayer.method_37243().field_41733 = 1.0F;
       }
    }
 
    @EventListen
    public void method_30360(class_7247 var1) {
-      mc.field_9632.method_37243().field_41733 = 0.0F;
+      client.thePlayer.method_37243().field_41733 = 0.0F;
       this.field_34012 = 0;
    }
 }

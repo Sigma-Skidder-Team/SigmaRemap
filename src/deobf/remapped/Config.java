@@ -31,7 +31,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL30;
 import org.lwjgl.opengl.GLCapabilities;
 
-public class class_3111 {
+public class Config {
    public static final String field_15484 = "OptiFine";
    public static final String field_15472 = "1.16.4";
    public static final String field_15459 = "HD_U";
@@ -70,7 +70,7 @@ public class class_3111 {
    private static long field_15457;
    private static long field_15474;
 
-   private class_3111() {
+   private Config() {
    }
 
    public static String method_14314() {
@@ -112,7 +112,7 @@ public class class_3111 {
    }
 
    public static void method_14249() {
-      if (!field_15471 && MinecraftClient.getInstance().method_8552() != null) {
+      if (!field_15471 && MinecraftClient.getInstance().getMainWindow() != null) {
          field_15471 = true;
          method_14398();
          method_14386();
@@ -171,7 +171,7 @@ public class class_3111 {
 
    public static InputStream method_14300(String var0) {
       InputStream var3 = class_8835.method_40637(var0);
-      return var3 == null ? class_3111.class.getResourceAsStream(var0) : var3;
+      return var3 == null ? Config.class.getResourceAsStream(var0) : var3;
    }
 
    public static boolean method_14408() {
@@ -806,7 +806,7 @@ public class class_3111 {
    }
 
    public static TextureManager method_14266() {
-      return field_15454.method_8577();
+      return field_15454.getTextureManager();
    }
 
    public static class_7832 method_14450() {
@@ -942,7 +942,7 @@ public class class_3111 {
       return !method_14282() ? false : !method_14424() || class_6588.method_30108();
    }
 
-   public static boolean method_14292() {
+   public static boolean isVignetteEnabled() {
       if (method_14424() && !class_6588.method_30245()) {
          return false;
       } else {
@@ -1099,7 +1099,7 @@ public class class_3111 {
    }
 
    public static void method_14312(String var0) {
-      int var3 = class_1920.method_8925();
+      int var3 = GlStateManager.method_8925();
       if (var3 != 0 && class_6941.method_31754(var3)) {
          String var4 = method_14316(var3);
          String var5 = String.format("OpenGL error: %s (%s), at: %s", var3, var4, var0);
@@ -1631,7 +1631,7 @@ public class class_3111 {
    }
 
    public static boolean method_14351() {
-      return field_15483.field_45538 && class_1920.field_9838;
+      return field_15483.field_45538 && GlStateManager.field_9838;
    }
 
    public static boolean method_14407() {
@@ -1704,7 +1704,7 @@ public class class_3111 {
    }
 
    public static boolean method_14276(int var0) {
-      return GLFW.glfwGetKey(field_15454.method_8552().method_43181(), var0) == 1;
+      return GLFW.glfwGetKey(field_15454.getMainWindow().method_43181(), var0) == 1;
    }
 
    public static boolean method_14416(Boolean var0) {

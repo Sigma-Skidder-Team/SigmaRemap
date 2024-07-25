@@ -152,7 +152,7 @@ public class class_7762 extends class_341 {
    }
 
    @Override
-   public boolean method_1625(class_4666 var1, boolean var2, int var3) {
+   public boolean method_1625(GameType var1, boolean var2, int var3) {
       try {
          this.method_1679().method_30822((InetAddress)null, var3);
          field_39350.info("Started serving on {}", var3);
@@ -161,8 +161,8 @@ public class class_7762 extends class_341 {
          this.field_39345.start();
          this.method_1600().method_39991(var1);
          this.method_1600().method_39946(var2);
-         int var6 = this.method_1685(this.field_39353.field_9632.method_3247());
-         this.field_39353.field_9632.method_27330(var6);
+         int var6 = this.method_1685(this.field_39353.thePlayer.method_3247());
+         this.field_39353.thePlayer.method_27330(var6);
 
          for (class_9359 var8 : this.method_1600().method_39951()) {
             this.method_1631().method_2233(var8);
@@ -213,7 +213,7 @@ public class class_7762 extends class_341 {
    }
 
    @Override
-   public void method_1716(class_4666 var1) {
+   public void method_1716(GameType var1) {
       super.method_1716(var1);
       this.method_1600().method_39991(var1);
    }
@@ -259,11 +259,11 @@ public class class_7762 extends class_341 {
    }
 
    private void method_35210(class_6331 var1) {
-      if (!class_3111.method_14434()) {
+      if (!Config.method_14434()) {
          this.method_35212(var1);
       }
 
-      if (!class_3111.method_14422()) {
+      if (!Config.method_14422()) {
          this.method_35213(var1);
       }
 
@@ -287,10 +287,10 @@ public class class_7762 extends class_341 {
    }
 
    private void method_35212(class_6331 var1) {
-      if (this.method_1602() == class_4666.field_22761) {
+      if (this.method_1602() == GameType.field_22761) {
          long var4 = var1.method_29584();
          long var6 = var4 % 24000L;
-         if (class_3111.method_14406()) {
+         if (Config.method_14406()) {
             if (var6 <= 1000L) {
                var1.method_28970(var4 - var6 + 1001L);
             }
@@ -300,7 +300,7 @@ public class class_7762 extends class_341 {
             }
          }
 
-         if (class_3111.method_14367()) {
+         if (Config.method_14367()) {
             if (var6 <= 14000L) {
                var1.method_28970(var4 - var6 + 14001L);
             }

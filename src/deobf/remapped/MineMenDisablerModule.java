@@ -17,12 +17,12 @@ public class MineMenDisablerModule extends Module {
    @EventListen
    public void method_35496(class_1393 var1) {
       if (var1.method_6449()) {
-         if (class_314.method_1413(mc.field_9632, 1.0E-5F)) {
+         if (class_314.method_1413(client.thePlayer, 1.0E-5F)) {
             this.field_39769 = true;
             var1.method_6455(var1.method_6454() - 5.0E-7);
             var1.method_6451(false);
          } else {
-            if (this.field_39769 && mc.field_9632.method_37098().field_7333 < 0.0) {
+            if (this.field_39769 && client.thePlayer.method_37098().field_7333 < 0.0) {
                this.field_39769 = false;
                var1.method_6451(true);
             }
@@ -33,8 +33,8 @@ public class MineMenDisablerModule extends Module {
    @EventListen
    public void method_35498(class_7767 var1) {
       if (this.field_39768) {
-         if (!mc.field_9632.field_41726) {
-            if (mc.field_9632.field_41706 > 1.0F) {
+         if (!client.thePlayer.field_41726) {
+            if (client.thePlayer.field_41706 > 1.0F) {
                this.field_39768 = false;
             }
          } else {
@@ -48,9 +48,9 @@ public class MineMenDisablerModule extends Module {
 
    @EventListen
    private void method_35497(PacketEvent var1) {
-      if (mc.field_9632 != null && var1.method_557() instanceof class_4548) {
+      if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
          class_4548 var5 = (class_4548)var1.method_557();
-         if (var5.method_21093() == mc.field_9632.method_37145() && var5.field_22168 < 0 && mc.field_9632.field_41726) {
+         if (var5.method_21093() == client.thePlayer.method_37145() && var5.field_22168 < 0 && client.thePlayer.field_41726) {
             var1.method_29715(true);
          }
       } else if (var1.method_557() instanceof class_509) {

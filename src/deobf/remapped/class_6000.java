@@ -14,7 +14,7 @@ public class class_6000 {
       this.field_30561 = var1;
    }
 
-   public boolean method_27391(class_6098 var1) {
+   public boolean method_27391(ItemStack var1) {
       return this != field_30559 ? this.method_27393(var1.method_27990()) : true;
    }
 
@@ -48,7 +48,7 @@ public class class_6000 {
    public static class_5734 method_27394(Entity var0) {
       class_5734 var3 = var0.method_37258(new class_5734());
       if (var0 instanceof class_704) {
-         class_6098 var4 = ((class_704)var0).field_3853.method_32403();
+         ItemStack var4 = ((class_704)var0).inventory.method_32403();
          if (!var4.method_28022()) {
             var3.method_25946("SelectedItem", var4.method_27998(new class_5734()));
          }

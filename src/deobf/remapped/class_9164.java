@@ -7,14 +7,14 @@ public class class_9164 {
    private static final RenderLayer field_46903 = RenderLayer.method_16732(new Identifier("textures/map/map_background.png"));
    private static final RenderLayer field_46896 = RenderLayer.method_16732(new Identifier("textures/map/map_background_checkerboard.png"));
    private final MinecraftClient field_46897;
-   private class_6098 field_46899 = class_6098.field_31203;
-   private class_6098 field_46898 = class_6098.field_31203;
+   private ItemStack field_46899 = ItemStack.EMPTY;
+   private ItemStack field_46898 = ItemStack.EMPTY;
    private float field_46907;
    private float field_46902;
    private float field_46900;
    private float field_46906;
    private final EntityRenderDispatcher field_46904;
-   private final class_8765 field_46901;
+   private final ItemRenderer field_46901;
 
    public class_9164(MinecraftClient var1) {
       this.field_46897 = var1;
@@ -22,7 +22,7 @@ public class class_9164 {
       this.field_46901 = var1.method_8511();
    }
 
-   public void method_42248(class_5834 var1, class_6098 var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, int var7) {
+   public void method_42248(class_5834 var1, ItemStack var2, class_5612 var3, boolean var4, class_7966 var5, class_2565 var6, int var7) {
       class_3290.method_15104(var4);
       if (!var2.method_28022()) {
          this.field_46901.method_40268(var1, var2, var3, var4, var5, var6, var1.field_41768, var7, class_5367.field_27381);
@@ -38,8 +38,8 @@ public class class_9164 {
    }
 
    private void method_42247(class_7966 var1, class_2565 var2, int var3, class_1736 var4) {
-      this.field_46897.method_8577().method_35674(this.field_46897.field_9632.method_44889());
-      class_6670 var7 = (class_6670)this.field_46904.<class_9716>method_28131(this.field_46897.field_9632);
+      this.field_46897.getTextureManager().bindTexture(this.field_46897.thePlayer.method_44889());
+      class_6670 var7 = (class_6670)this.field_46904.<class_9716>method_28131(this.field_46897.thePlayer);
       var1.method_36063();
       float var8 = var4 != class_1736.field_8943 ? -1.0F : 1.0F;
       var1.method_36060(class_2426.field_12074.method_11074(92.0F));
@@ -47,18 +47,18 @@ public class class_9164 {
       var1.method_36060(class_2426.field_12076.method_11074(var8 * -41.0F));
       var1.method_36065((double)(var8 * 0.3F), -1.1F, 0.45F);
       if (var4 != class_1736.field_8943) {
-         var7.method_30610(var1, var2, var3, this.field_46897.field_9632);
+         var7.method_30610(var1, var2, var3, this.field_46897.thePlayer);
       } else {
-         var7.method_30608(var1, var2, var3, this.field_46897.field_9632);
+         var7.method_30608(var1, var2, var3, this.field_46897.thePlayer);
       }
 
       var1.method_36064();
    }
 
-   private void method_42241(class_7966 var1, class_2565 var2, int var3, float var4, class_1736 var5, float var6, class_6098 var7) {
+   private void method_42241(class_7966 var1, class_2565 var2, int var3, float var4, class_1736 var5, float var6, ItemStack var7) {
       float var10 = var5 != class_1736.field_8943 ? -1.0F : 1.0F;
       var1.method_36065((double)(var10 * 0.125F), -0.125, 0.0);
-      if (!this.field_46897.field_9632.method_37109()) {
+      if (!this.field_46897.thePlayer.method_37109()) {
          var1.method_36063();
          var1.method_36060(class_2426.field_12076.method_11074(var10 * 10.0F));
          this.method_42245(var1, var2, var3, var4, var6, var5);
@@ -87,7 +87,7 @@ public class class_9164 {
       float var12 = this.method_42251(var4);
       var1.method_36065(0.0, (double)(0.04F + var5 * -1.2F + var12 * -0.5F), -0.72F);
       var1.method_36060(class_2426.field_12080.method_11074(var12 * -85.0F));
-      if (!this.field_46897.field_9632.method_37109()) {
+      if (!this.field_46897.thePlayer.method_37109()) {
          var1.method_36063();
          var1.method_36060(class_2426.field_12074.method_11074(90.0F));
          this.method_42247(var1, var2, var3, class_1736.field_8943);
@@ -101,7 +101,7 @@ public class class_9164 {
       this.method_42240(var1, var2, var3, this.field_46899);
    }
 
-   private void method_42240(class_7966 var1, class_2565 var2, int var3, class_6098 var4) {
+   private void method_42240(class_7966 var1, class_2565 var2, int var3, ItemStack var4) {
       var1.method_36060(class_2426.field_12074.method_11074(180.0F));
       var1.method_36060(class_2426.field_12076.method_11074(180.0F));
       var1.method_36062(0.38F, 0.38F, 0.38F);
@@ -132,8 +132,8 @@ public class class_9164 {
       float var16 = class_9299.method_42818(var11 * (float) Math.PI);
       var1.method_36060(class_2426.field_12074.method_11074(var10 * var16 * 70.0F));
       var1.method_36060(class_2426.field_12076.method_11074(var10 * var15 * -20.0F));
-      class_5989 var17 = this.field_46897.field_9632;
-      this.field_46897.method_8577().method_35674(var17.method_44889());
+      class_5989 var17 = this.field_46897.thePlayer;
+      this.field_46897.getTextureManager().bindTexture(var17.method_44889());
       var1.method_36065((double)(var10 * -1.0F), 3.6F, 3.5);
       var1.method_36060(class_2426.field_12076.method_11074(var10 * 120.0F));
       var1.method_36060(class_2426.field_12080.method_11074(200.0F));
@@ -147,8 +147,8 @@ public class class_9164 {
       }
    }
 
-   private void method_42249(class_7966 var1, float var2, class_1736 var3, class_6098 var4) {
-      float var7 = (float)this.field_46897.field_9632.method_26466() - var2 + 1.0F;
+   private void method_42249(class_7966 var1, float var2, class_1736 var3, ItemStack var4) {
+      float var7 = (float)this.field_46897.thePlayer.method_26466() - var2 + 1.0F;
       float var8 = var7 / (float)var4.method_28004();
       if (var8 < 0.8F) {
          float var9 = class_9299.method_42804(class_9299.method_42840(var7 / 4.0F * (float) Math.PI) * 0.1F);
@@ -185,8 +185,8 @@ public class class_9164 {
       boolean var11 = true;
       boolean var12 = true;
       if (!var4.method_26554()) {
-         class_6098 var13 = var4.method_26446();
-         class_6098 var14 = var4.method_26568();
+         ItemStack var13 = var4.method_26446();
+         ItemStack var14 = var4.method_26568();
          if (var13.method_27960() instanceof class_4380 && class_4380.method_20408(var13)) {
             var12 = !var11;
          }
@@ -196,7 +196,7 @@ public class class_9164 {
             var12 = !var11;
          }
       } else {
-         class_6098 var17 = var4.method_26576();
+         ItemStack var17 = var4.method_26576();
          if (var17.method_27960() instanceof class_551) {
             var11 = var4.method_26500() == class_2584.field_12791;
             var12 = !var11;
@@ -204,7 +204,7 @@ public class class_9164 {
 
          class_2584 var19 = var4.method_26500();
          if (var19 == class_2584.field_12791) {
-            class_6098 var15 = var4.method_26568();
+            ItemStack var15 = var4.method_26568();
             if (var15.method_27960() instanceof class_4380 && class_4380.method_20408(var15)) {
                var12 = false;
             }
@@ -239,9 +239,9 @@ public class class_9164 {
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_42244(
-      class_9716 var1, float var2, float var3, class_2584 var4, float var5, class_6098 var6, float var7, class_7966 var8, class_2565 var9, int var10
+           class_9716 var1, float var2, float var3, class_2584 var4, float var5, ItemStack var6, float var7, class_7966 var8, class_2565 var9, int var10
    ) {
-      if (!class_3111.method_14424() || !class_6588.method_30230(var4)) {
+      if (!Config.method_14424() || !class_6588.method_30230(var4)) {
          boolean var13 = var4 == class_2584.field_12791;
          class_1736 var14 = var13 ? var1.method_26432() : var1.method_26432().method_7745();
          var8.method_36063();
@@ -265,7 +265,7 @@ public class class_9164 {
                var8.method_36060(class_2426.field_12080.method_11074(-11.935F));
                var8.method_36060(class_2426.field_12074.method_11074((float)var30 * 65.3F));
                var8.method_36060(class_2426.field_12076.method_11074((float)var30 * -9.785F));
-               float var33 = (float)var6.method_28004() - ((float)this.field_46897.field_9632.method_26466() - var2 + 1.0F);
+               float var33 = (float)var6.method_28004() - ((float)this.field_46897.thePlayer.method_26466() - var2 + 1.0F);
                float var37 = var33 / (float)class_4380.method_20403(var6);
                if (var37 > 1.0F) {
                   var37 = 1.0F;
@@ -319,7 +319,7 @@ public class class_9164 {
                      var8.method_36060(class_2426.field_12080.method_11074(-13.935F));
                      var8.method_36060(class_2426.field_12074.method_11074((float)var29 * 35.3F));
                      var8.method_36060(class_2426.field_12076.method_11074((float)var29 * -9.785F));
-                     float var31 = (float)var6.method_28004() - ((float)this.field_46897.field_9632.method_26466() - var2 + 1.0F);
+                     float var31 = (float)var6.method_28004() - ((float)this.field_46897.thePlayer.method_26466() - var2 + 1.0F);
                      float var34 = var31 / 20.0F;
                      var34 = (var34 * var34 + var34 * 2.0F) / 3.0F;
                      if (var34 > 1.0F) {
@@ -343,7 +343,7 @@ public class class_9164 {
                      var8.method_36060(class_2426.field_12080.method_11074(-55.0F));
                      var8.method_36060(class_2426.field_12074.method_11074((float)var29 * 35.3F));
                      var8.method_36060(class_2426.field_12076.method_11074((float)var29 * -9.785F));
-                     float var38 = (float)var6.method_28004() - ((float)this.field_46897.field_9632.method_26466() - var2 + 1.0F);
+                     float var38 = (float)var6.method_28004() - ((float)this.field_46897.thePlayer.method_26466() - var2 + 1.0F);
                      float var21 = var38 / 10.0F;
                      if (var21 > 1.0F) {
                         var21 = 1.0F;
@@ -391,21 +391,21 @@ public class class_9164 {
    public void method_42246() {
       this.field_46902 = this.field_46907;
       this.field_46906 = this.field_46900;
-      class_5989 var3 = this.field_46897.field_9632;
-      class_6098 var4 = var3.method_26446();
-      class_6098 var5 = var3.method_26568();
-      if (class_6098.method_27982(this.field_46899, var4)) {
+      class_5989 var3 = this.field_46897.thePlayer;
+      ItemStack var4 = var3.method_26446();
+      ItemStack var5 = var3.method_26568();
+      if (ItemStack.method_27982(this.field_46899, var4)) {
          this.field_46899 = var4;
       }
 
-      if (class_6098.method_27982(this.field_46898, var5)) {
+      if (ItemStack.method_27982(this.field_46898, var5)) {
          this.field_46898 = var5;
       }
 
       if (!var3.method_27320()) {
          float var6 = var3.method_3203(1.0F);
          if (class_7860.field_40064.method_3596()) {
-            boolean var7 = class_7860.method_35566(class_7860.field_40064, this.field_46899, var4, var3.field_3853.field_36404);
+            boolean var7 = class_7860.method_35566(class_7860.field_40064, this.field_46899, var4, var3.inventory.field_36404);
             boolean var8 = class_7860.method_35566(class_7860.field_40064, this.field_46898, var5, -1);
             if (!var7 && !Objects.equals(this.field_46899, var4)) {
                this.field_46899 = var4;
@@ -425,14 +425,14 @@ public class class_9164 {
 
       if (this.field_46907 < 0.1F) {
          this.field_46899 = var4;
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_6588.method_30156(this.field_46899);
          }
       }
 
       if (this.field_46900 < 0.1F) {
          this.field_46898 = var5;
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_6588.method_30271(this.field_46898);
          }
       }

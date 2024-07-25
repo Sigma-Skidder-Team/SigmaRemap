@@ -61,7 +61,7 @@ public abstract class class_5521 extends class_4109 {
          class_3416 var4 = new class_3416();
 
          for (int var5 = 2; var5 < this.field_20021.method_31505(); var5++) {
-            class_6098 var6 = this.field_20021.method_31498(var5);
+            ItemStack var6 = this.field_20021.method_31498(var5);
             if (!var6.method_28022()) {
                class_5734 var7 = new class_5734();
                var7.method_25921("Slot", (byte)var5);
@@ -86,7 +86,7 @@ public abstract class class_5521 extends class_4109 {
             class_5734 var6 = var4.method_15764(var5);
             int var7 = var6.method_25950("Slot") & 255;
             if (var7 >= 2 && var7 < this.field_20021.method_31505()) {
-               this.field_20021.method_31503(var7, class_6098.method_28015(var6));
+               this.field_20021.method_31503(var7, ItemStack.method_28015(var6));
             }
          }
       }
@@ -95,7 +95,7 @@ public abstract class class_5521 extends class_4109 {
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       if (var1 == 499) {
          if (this.method_25017() && var2.method_28022()) {
             this.method_25016(false);
@@ -115,7 +115,7 @@ public abstract class class_5521 extends class_4109 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (!this.method_26449()) {
          if (this.method_19043() && var1.method_3236()) {
             this.method_19076(var1);

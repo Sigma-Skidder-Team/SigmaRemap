@@ -58,13 +58,13 @@ public class class_77 extends class_9521 {
    @Override
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       MinecraftClient var7 = MinecraftClient.getInstance();
-      var7.method_8577().method_35674(this.field_126);
+      var7.getTextureManager().bindTexture(this.field_126);
       int var8 = this.field_127;
       if (this.method_32703()) {
          var8 += this.field_128;
       }
 
-      class_3542.method_16428();
+      RenderSystem.enableDepthTest();
       method_9778(
          var1, this.field_36670, this.field_36674, (float)this.field_124, (float)var8, this.field_36671, this.field_36681, this.field_125, this.field_122
       );

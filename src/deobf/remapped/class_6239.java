@@ -13,17 +13,17 @@ public class class_6239 extends class_7934 {
    }
 
    @Override
-   public class_6098 method_35892(class_704 var1, class_6098 var2) {
+   public ItemStack method_35892(class_704 var1, ItemStack var2) {
       return this.field_31927.method_35892(var1, var2);
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return this.field_31927.method_35889(var1);
    }
 
    @Override
-   public class_6098 method_35898() {
+   public ItemStack method_35898() {
       return this.field_31927.method_35898();
    }
 
@@ -33,7 +33,7 @@ public class class_6239 extends class_7934 {
    }
 
    @Override
-   public void method_35896(class_6098 var1) {
+   public void method_35896(ItemStack var1) {
       this.field_31927.method_35896(var1);
    }
 
@@ -48,7 +48,7 @@ public class class_6239 extends class_7934 {
    }
 
    @Override
-   public int method_35890(class_6098 var1) {
+   public int method_35890(ItemStack var1) {
       return this.field_31927.method_35890(var1);
    }
 
@@ -59,7 +59,7 @@ public class class_6239 extends class_7934 {
    }
 
    @Override
-   public class_6098 method_35899(int var1) {
+   public ItemStack method_35899(int var1) {
       return this.field_31927.method_35899(var1);
    }
 

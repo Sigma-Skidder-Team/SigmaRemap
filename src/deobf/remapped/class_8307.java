@@ -8,8 +8,8 @@ public class class_8307 extends class_2451 {
    }
 
    @Override
-   public class_6098 method_11242(class_6098 var1, World var2, class_5834 var3) {
-      class_6098 var6 = super.method_11242(var1, var2, var3);
+   public ItemStack method_11242(ItemStack var1, World var2, class_5834 var3) {
+      ItemStack var6 = super.method_11242(var1, var2, var3);
       if (!var2.field_33055) {
          double var7 = var3.method_37302();
          double var9 = var3.method_37309();

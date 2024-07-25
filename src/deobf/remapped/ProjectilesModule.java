@@ -4,7 +4,7 @@ import java.util.List;
 import org.lwjgl.opengl.GL11;
 
 public class ProjectilesModule extends Module {
-   public EntityRenderDispatcher field_19184 = mc.method_8587();
+   public EntityRenderDispatcher field_19184 = client.method_8587();
    public class_1934 field_19188 = new class_1934(0.0F, 0.0F, 0.0F);
    public class_1934 field_19186 = new class_1934(0.0F, 0.0F, 0.0F);
    public class_1934 field_19187 = new class_1934(0.0F, 0.0F, 0.0F);
@@ -17,21 +17,21 @@ public class ProjectilesModule extends Module {
    @EventListen
    public void method_18289(class_3368 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.method_26446() != null) {
-            class_3336 var4 = class_3336.method_15299(mc.field_9632.method_26446().method_27960());
+         if (client.thePlayer.method_26446() != null) {
+            class_3336 var4 = class_3336.method_15299(client.thePlayer.method_26446().method_27960());
             if (var4 != null) {
-               float var5 = (float)Math.toRadians((double)(mc.field_9632.field_41701 - 25.0F));
-               float var6 = (float)Math.toRadians((double) mc.field_9632.field_41755);
+               float var5 = (float)Math.toRadians((double)(client.thePlayer.field_41701 - 25.0F));
+               float var6 = (float)Math.toRadians((double) client.thePlayer.field_41755);
                double var7 = 0.2F;
-               double var9 = mc.field_9632.field_41712.method_18906() / 2.0;
+               double var9 = client.thePlayer.field_41712.method_18906() / 2.0;
                double var11 = (double)class_9299.method_42840(var5) * var9;
                double var13 = (double)class_9299.method_42818(var5) * var9;
-               double var15 = mc.field_9632.field_41754
-                  + (mc.field_9632.method_37302() - mc.field_9632.field_41754) * (double) mc.theTimer.field_32600;
-               double var17 = mc.field_9632.field_41713
-                  + (mc.field_9632.method_37309() - mc.field_9632.field_41713) * (double) mc.theTimer.field_32600;
-               double var19 = mc.field_9632.field_41724
-                  + (mc.field_9632.method_37156() - mc.field_9632.field_41724) * (double) mc.theTimer.field_32600;
+               double var15 = client.thePlayer.field_41754
+                  + (client.thePlayer.method_37302() - client.thePlayer.field_41754) * (double) client.theTimer.field_32600;
+               double var17 = client.thePlayer.field_41713
+                  + (client.thePlayer.method_37309() - client.thePlayer.field_41713) * (double) client.theTimer.field_32600;
+               double var19 = client.thePlayer.field_41724
+                  + (client.thePlayer.method_37156() - client.thePlayer.field_41724) * (double) client.theTimer.field_32600;
                GL11.glPushMatrix();
                GL11.glEnable(2848);
                GL11.glBlendFunc(770, 771);
@@ -56,9 +56,9 @@ public class ProjectilesModule extends Module {
                   float var30 = (float)Math.min(1, var22);
                   GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.05F * var30);
                   GL11.glVertex3d(
-                     var23.method_32381() - mc.gameRenderer.method_35949().method_41627().method_61() - var24,
-                     var23.method_32375() - mc.gameRenderer.method_35949().method_41627().method_60() - var28,
-                     var23.method_32382() - mc.gameRenderer.method_35949().method_41627().method_62() - var26
+                     var23.method_32381() - client.gameRenderer.method_35949().method_41627().method_61() - var24,
+                     var23.method_32375() - client.gameRenderer.method_35949().method_41627().method_60() - var28,
+                     var23.method_32382() - client.gameRenderer.method_35949().method_41627().method_62() - var26
                   );
                }
 
@@ -75,9 +75,9 @@ public class ProjectilesModule extends Module {
                   float var48 = (float)Math.min(1, var38);
                   GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F * var48);
                   GL11.glVertex3d(
-                     var39.method_32381() - mc.gameRenderer.method_35949().method_41627().method_61() - var40,
-                     var39.method_32375() - mc.gameRenderer.method_35949().method_41627().method_60() - var46,
-                     var39.method_32382() - mc.gameRenderer.method_35949().method_41627().method_62() - var43
+                     var39.method_32381() - client.gameRenderer.method_35949().method_41627().method_61() - var40,
+                     var39.method_32375() - client.gameRenderer.method_35949().method_41627().method_60() - var46,
+                     var39.method_32382() - client.gameRenderer.method_35949().method_41627().method_62() - var43
                   );
                }
 
@@ -86,14 +86,14 @@ public class ProjectilesModule extends Module {
                if (var4.field_16463 == null) {
                   if (var4.field_16449 != null) {
                      double var31 = var4.field_16449.field_41754
-                        + (var4.field_16449.method_37302() - var4.field_16449.field_41754) * (double) mc.theTimer.field_32600
-                        - mc.gameRenderer.method_35949().method_41627().method_61();
+                        + (var4.field_16449.method_37302() - var4.field_16449.field_41754) * (double) client.theTimer.field_32600
+                        - client.gameRenderer.method_35949().method_41627().method_61();
                      double var41 = var4.field_16449.field_41713
-                        + (var4.field_16449.method_37309() - var4.field_16449.field_41713) * (double) mc.theTimer.field_32600
-                        - mc.gameRenderer.method_35949().method_41627().method_60();
+                        + (var4.field_16449.method_37309() - var4.field_16449.field_41713) * (double) client.theTimer.field_32600
+                        - client.gameRenderer.method_35949().method_41627().method_60();
                      double var44 = var4.field_16449.field_41724
-                        + (var4.field_16449.method_37156() - var4.field_16449.field_41724) * (double) mc.theTimer.field_32600
-                        - mc.gameRenderer.method_35949().method_41627().method_62();
+                        + (var4.field_16449.method_37156() - var4.field_16449.field_41724) * (double) client.theTimer.field_32600
+                        - client.gameRenderer.method_35949().method_41627().method_62();
                      double var47 = (double)(var4.field_16449.method_37086() / 2.0F + 0.2F);
                      double var35 = (double)(var4.field_16449.method_37074() + 0.1F);
                      class_8194 var37 = new class_8194(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
@@ -101,9 +101,9 @@ public class ProjectilesModule extends Module {
                      class_73.method_131(var37, class_314.method_1444(class_1255.field_6925.field_6917, 0.1F));
                   }
                } else {
-                  double var49 = var4.field_16461 - mc.gameRenderer.method_35949().method_41627().method_61();
-                  double var42 = var4.field_16457 - mc.gameRenderer.method_35949().method_41627().method_60();
-                  double var45 = var4.field_16443 - mc.gameRenderer.method_35949().method_41627().method_62();
+                  double var49 = var4.field_16461 - client.gameRenderer.method_35949().method_41627().method_61();
+                  double var42 = var4.field_16457 - client.gameRenderer.method_35949().method_41627().method_60();
+                  double var45 = var4.field_16443 - client.gameRenderer.method_35949().method_41627().method_62();
                   GL11.glPushMatrix();
                   GL11.glTranslated(var49, var42, var45);
                   class_1331 var33 = new class_1331(0, 0, 0).method_6098(((class_9529)var4.field_16463).method_43956());

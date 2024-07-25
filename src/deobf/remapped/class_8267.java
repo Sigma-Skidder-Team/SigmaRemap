@@ -13,12 +13,12 @@ public class class_8267 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return false;
    }
 
    @Override
-   public class_6098 method_35892(class_704 var1, class_6098 var2) {
+   public ItemStack method_35892(class_704 var1, ItemStack var2) {
       this.field_42414
          .method_42533(
             (var1x, var2x) -> {
@@ -35,8 +35,8 @@ public class class_8267 extends class_7934 {
                var1x.method_43364(1042, var2x, 0);
             }
          );
-      class_1039.method_4598(this.field_42415).method_31503(0, class_6098.field_31203);
-      class_1039.method_4598(this.field_42415).method_31503(1, class_6098.field_31203);
+      class_1039.method_4598(this.field_42415).method_31503(0, ItemStack.EMPTY);
+      class_1039.method_4598(this.field_42415).method_31503(1, ItemStack.EMPTY);
       return var2;
    }
 
@@ -52,7 +52,7 @@ public class class_8267 extends class_7934 {
       }
    }
 
-   private int method_38117(class_6098 var1) {
+   private int method_38117(ItemStack var1) {
       int var4 = 0;
       Map var5 = class_2931.method_13402(var1);
 

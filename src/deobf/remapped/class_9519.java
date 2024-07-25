@@ -4,7 +4,7 @@ public class class_9519 extends class_353 {
    private static String[] field_48461;
    private final Direction field_48460;
 
-   public class_9519(World var1, class_1331 var2, Direction var3, class_6098 var4, Direction var5) {
+   public class_9519(World var1, class_1331 var2, Direction var3, ItemStack var4, Direction var5) {
       super(var1, (class_704)null, class_2584.field_12791, var4, new class_9529(class_1343.method_6200(var2), var5, var2, false));
       this.field_48460 = var3;
    }

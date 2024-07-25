@@ -33,11 +33,11 @@ public class class_3551 extends class_4109 {
       }
    }
 
-   public class_6098 method_16523() {
+   public ItemStack method_16523() {
       return this.method_26520(class_6943.field_35708);
    }
 
-   private void method_16527(class_6098 var1) {
+   private void method_16527(ItemStack var1) {
       this.method_37349(class_6943.field_35708, var1);
       this.method_26861(class_6943.field_35708, 0.0F);
    }
@@ -47,7 +47,7 @@ public class class_3551 extends class_4109 {
       super.method_37314(var1);
       this.method_16525(var1.method_25947("Variant"));
       if (var1.method_25939("ArmorItem", 10)) {
-         class_6098 var4 = class_6098.method_28015(var1.method_25937("ArmorItem"));
+         ItemStack var4 = ItemStack.method_28015(var1.method_25937("ArmorItem"));
          if (!var4.method_28022() && this.method_19069(var4)) {
             this.field_20021.method_31503(1, var4);
          }
@@ -85,7 +85,7 @@ public class class_3551 extends class_4109 {
       }
    }
 
-   private void method_16522(class_6098 var1) {
+   private void method_16522(ItemStack var1) {
       this.method_16527(var1);
       if (!this.field_41768.field_33055) {
          this.method_26561(class_7331.field_37473).method_45003(field_17373);
@@ -100,9 +100,9 @@ public class class_3551 extends class_4109 {
 
    @Override
    public void method_36982(class_6867 var1) {
-      class_6098 var4 = this.method_16523();
+      ItemStack var4 = this.method_16523();
       super.method_36982(var1);
-      class_6098 var5 = this.method_16523();
+      ItemStack var5 = this.method_16523();
       if (this.field_41697 > 20 && this.method_19069(var5) && var4 != var5) {
          this.method_37155(class_463.field_2183, 0.5F, 1.0F);
       }
@@ -148,7 +148,7 @@ public class class_3551 extends class_4109 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (!this.method_26449()) {
          if (this.method_19043() && var1.method_3236()) {
             this.method_19076(var1);
@@ -244,7 +244,7 @@ public class class_3551 extends class_4109 {
    }
 
    @Override
-   public boolean method_19069(class_6098 var1) {
+   public boolean method_19069(ItemStack var1) {
       return var1.method_27960() instanceof class_2706;
    }
 

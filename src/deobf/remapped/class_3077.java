@@ -23,18 +23,18 @@ public class class_3077 extends class_9742 implements class_1538 {
    }
 
    @Override
-   public float method_11235(class_6098 var1, class_2522 var2) {
+   public float method_11235(ItemStack var1, class_2522 var2) {
       return !this.field_15136.contains(var2.method_8360()) ? 1.0F : this.field_15134;
    }
 
    @Override
-   public boolean method_11246(class_6098 var1, class_5834 var2, class_5834 var3) {
+   public boolean method_11246(ItemStack var1, class_5834 var2, class_5834 var3) {
       var1.method_28003(2, var3, var0 -> var0.method_26448(class_6943.field_35707));
       return true;
    }
 
    @Override
-   public boolean method_11209(class_6098 var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
+   public boolean method_11209(ItemStack var1, World var2, class_2522 var3, class_1331 var4, class_5834 var5) {
       if (!var2.field_33055 && var3.method_8341(var2, var4) != 0.0F) {
          var1.method_28003(1, var5, var0 -> var0.method_26448(class_6943.field_35707));
       }

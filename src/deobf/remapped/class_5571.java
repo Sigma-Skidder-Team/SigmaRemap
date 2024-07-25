@@ -12,7 +12,7 @@ public class class_5571 {
    private MinecraftClient field_28312 = MinecraftClient.getInstance();
 
    public void method_25292() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
    }
 
    @EventListen
@@ -21,7 +21,7 @@ public class class_5571 {
       this.field_28308++;
       this.field_28311++;
       this.field_28310++;
-      if (!this.field_28312.field_9632.field_41726) {
+      if (!this.field_28312.thePlayer.field_41726) {
          this.field_28308 = 0;
       }
 
@@ -34,7 +34,7 @@ public class class_5571 {
          this.field_28314 = true;
       }
 
-      if (this.field_28312.field_9632.field_41697 <= 1) {
+      if (this.field_28312.thePlayer.field_41697 <= 1) {
          this.field_28314 = false;
       }
    }

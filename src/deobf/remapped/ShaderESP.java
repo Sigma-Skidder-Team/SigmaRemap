@@ -8,13 +8,13 @@ public class ShaderESP extends Module {
    @EventListen
    public void method_2176(class_5596 var1) {
       if (this.method_42015()) {
-         for (Entity var5 : mc.field_9601.method_736()) {
+         for (Entity var5 : client.field_9601.method_736()) {
             if (!SigmaMainClass.getInstance().method_3331().method_20495(var5)) {
                boolean var6 = class_314.method_1426(var5) == class_9374.field_47922 && this.method_42017().method_42007("Show Players");
                boolean var7 = class_314.method_1426(var5) == class_9374.field_47924 && this.method_42017().method_42007("Show Mobs");
                boolean var8 = class_314.method_1426(var5) == class_9374.field_47923 && this.method_42017().method_42007("Show Passives");
                boolean var9 = !var5.method_37109() || this.method_42017().method_42007("Show Invisibles");
-               if ((var7 || var6 || var8) && var9 && var5 != mc.field_9632) {
+               if ((var7 || var6 || var8) && var9 && var5 != client.thePlayer) {
                   var5.method_37200(true);
                } else {
                   var5.method_37200(false);
@@ -26,7 +26,7 @@ public class ShaderESP extends Module {
 
    @Override
    public void onDisable() {
-      for (Entity var4 : mc.field_9601.method_736()) {
+      for (Entity var4 : client.field_9601.method_736()) {
          var4.method_37200(false);
       }
    }

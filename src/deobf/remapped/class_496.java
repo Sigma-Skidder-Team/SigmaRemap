@@ -36,7 +36,7 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public boolean method_26612(class_6098 var1) {
+   public boolean method_26612(ItemStack var1) {
       class_6943 var4 = class_5886.method_26896(var1);
       return !this.method_26520(var4).method_28022() ? false : var4 == class_6943.field_35707 && super.method_26612(var1);
    }
@@ -324,7 +324,7 @@ public class class_496 extends class_5467 {
          if (!this.field_41768.field_33055 && this.method_2461() > 80 && this.field_41717.nextInt(20) == 1) {
             if (this.method_2461() > 100 && this.method_2447(this.method_26520(class_6943.field_35707))) {
                if (!this.field_41768.field_33055) {
-                  this.method_37349(class_6943.field_35707, class_6098.field_31203);
+                  this.method_37349(class_6943.field_35707, ItemStack.EMPTY);
                }
 
                this.method_2442(false);
@@ -461,7 +461,7 @@ public class class_496 extends class_5467 {
    public void method_26902(class_91 var1) {
       if (this.method_26520(class_6943.field_35707).method_28022() && field_3087.test(var1)) {
          this.method_26562(var1);
-         class_6098 var4 = var1.method_264();
+         ItemStack var4 = var1.method_264();
          this.method_37349(class_6943.field_35707, var4);
          this.field_29923[class_6943.field_35707.method_31767()] = 2.0F;
          this.method_26467(var1, var4.method_27997());
@@ -538,7 +538,7 @@ public class class_496 extends class_5467 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (!this.method_2421()) {
          if (this.method_2450()) {
             this.method_2471(false);
@@ -561,12 +561,12 @@ public class class_496 extends class_5467 {
 
                   this.method_2432();
                   this.method_2456(true);
-                  class_6098 var6 = this.method_26520(class_6943.field_35707);
+                  ItemStack var6 = this.method_26520(class_6943.field_35707);
                   if (!var6.method_28022() && !var1.field_3876.field_4944) {
                      this.method_37310(var6);
                   }
 
-                  this.method_37349(class_6943.field_35707, new class_6098(var5.method_27960(), 1));
+                  this.method_37349(class_6943.field_35707, new ItemStack(var5.method_27960(), 1));
                   this.method_24867(var1, var5);
                }
             } else {
@@ -597,11 +597,11 @@ public class class_496 extends class_5467 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       return var1.method_27960() == class_4783.field_23886.method_10803();
    }
 
-   private boolean method_2447(class_6098 var1) {
+   private boolean method_2447(ItemStack var1) {
       return this.method_24866(var1) || var1.method_27960() == class_4783.field_23770.method_10803();
    }
 

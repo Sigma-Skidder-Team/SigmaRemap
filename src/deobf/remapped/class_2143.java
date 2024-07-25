@@ -14,19 +14,19 @@ public class class_2143 extends class_6249 {
       super(var1);
    }
 
-   public static class_6098 method_10014(World var0, int var1, int var2, byte var3, boolean var4, boolean var5) {
-      class_6098 var8 = new class_6098(class_4897.field_25262);
+   public static ItemStack method_10014(World var0, int var1, int var2, byte var3, boolean var4, boolean var5) {
+      ItemStack var8 = new ItemStack(class_4897.field_25262);
       method_10011(var8, var0, var1, var2, var3, var4, var5, var0.method_29545());
       return var8;
    }
 
    @Nullable
-   public static class_2134 method_10012(class_6098 var0, World var1) {
+   public static class_2134 method_10012(ItemStack var0, World var1) {
       return var1.method_29533(method_10015(method_10009(var0)));
    }
 
    @Nullable
-   public static class_2134 method_10005(class_6098 var0, World var1) {
+   public static class_2134 method_10005(ItemStack var0, World var1) {
       class_2134 var4 = method_10012(var0, var1);
       if (var4 == null && var1 instanceof class_6331) {
          var4 = method_10011(var0, var1, var1.method_43366().method_8654(), var1.method_43366().method_8655(), 3, false, false, var1.method_29545());
@@ -35,13 +35,13 @@ public class class_2143 extends class_6249 {
       return var4;
    }
 
-   public static int method_10009(class_6098 var0) {
+   public static int method_10009(ItemStack var0) {
       class_5734 var3 = var0.method_27990();
       return var3 != null && var3.method_25939("map", 99) ? var3.method_25947("map") : 0;
    }
 
    private static class_2134 method_10011(
-           class_6098 var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, class_5621<World> var7
+           ItemStack var0, World var1, int var2, int var3, int var4, boolean var5, boolean var6, class_5621<World> var7
    ) {
       int var10 = var1.method_29564();
       class_2134 var11 = new class_2134(method_10015(var10));
@@ -190,7 +190,7 @@ public class class_2143 extends class_6249 {
       return var0[var2 * var1 + var3 * var1 * 128 * var1].method_28868() >= 0.0F;
    }
 
-   public static void method_10013(class_6331 var0, class_6098 var1) {
+   public static void method_10013(class_6331 var0, ItemStack var1) {
       class_2134 var4 = method_10005(var1, var0);
       if (var4 != null && var0.method_29545() == var4.field_10685) {
          int var5 = 1 << var4.field_10678;
@@ -291,7 +291,7 @@ public class class_2143 extends class_6249 {
    }
 
    @Override
-   public void method_11214(class_6098 var1, World var2, Entity var3, int var4, boolean var5) {
+   public void method_11214(ItemStack var1, World var2, Entity var3, int var4, boolean var5) {
       if (!var2.field_33055) {
          class_2134 var8 = method_10005(var1, var2);
          if (var8 != null) {
@@ -309,12 +309,12 @@ public class class_2143 extends class_6249 {
 
    @Nullable
    @Override
-   public Packet<?> method_28525(class_6098 var1, World var2, class_704 var3) {
+   public Packet<?> method_28525(ItemStack var1, World var2, class_704 var3) {
       return method_10005(var1, var2).method_9973(var1, var2, var3);
    }
 
    @Override
-   public void method_11236(class_6098 var1, World var2, class_704 var3) {
+   public void method_11236(ItemStack var1, World var2, class_704 var3) {
       class_5734 var6 = var1.method_27990();
       if (var6 != null && var6.method_25939("map_scale_direction", 99)) {
          method_10008(var1, var2, var6.method_25947("map_scale_direction"));
@@ -325,7 +325,7 @@ public class class_2143 extends class_6249 {
       }
    }
 
-   public static void method_10008(class_6098 var0, World var1, int var2) {
+   public static void method_10008(ItemStack var0, World var1, int var2) {
       class_2134 var5 = method_10005(var0, var1);
       if (var5 != null) {
          method_10011(
@@ -341,7 +341,7 @@ public class class_2143 extends class_6249 {
       }
    }
 
-   public static void method_10006(World var0, class_6098 var1) {
+   public static void method_10006(World var0, ItemStack var1) {
       class_2134 var4 = method_10005(var1, var0);
       if (var4 != null) {
          class_2134 var5 = method_10011(var1, var0, 0, 0, var4.field_10678, var4.field_10681, var4.field_10688, var4.field_10685);
@@ -350,7 +350,7 @@ public class class_2143 extends class_6249 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       class_2134 var7 = var2 != null ? method_10005(var1, var2) : null;
       if (var7 != null && var7.field_10686) {
          var3.add(new TranslationTextComponent("filled_map.locked", method_10009(var1)).mergeStyle(TextFormatting.GRAY));
@@ -367,7 +367,7 @@ public class class_2143 extends class_6249 {
       }
    }
 
-   public static int method_10017(class_6098 var0) {
+   public static int method_10017(ItemStack var0) {
       class_5734 var3 = var0.method_28021("display");
       if (var3 != null && var3.method_25939("MapColor", 99)) {
          int var4 = var3.method_25947("MapColor");

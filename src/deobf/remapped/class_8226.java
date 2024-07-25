@@ -21,7 +21,7 @@ public class class_8226 extends class_2208<class_8372> {
    public float field_42232;
    public float field_42229;
    public float field_42228;
-   private class_6098 field_42236 = class_6098.field_31203;
+   private ItemStack field_42236 = ItemStack.EMPTY;
 
    public class_8226(class_8372 var1, class_7051 var2, ITextComponent var3) {
       super(var1, var2, var3);
@@ -41,8 +41,8 @@ public class class_8226 extends class_2208<class_8372> {
       for (int var10 = 0; var10 < 3; var10++) {
          double var11 = var1 - (double)(var8 + 60);
          double var13 = var3 - (double)(var9 + 14 + 19 * var10);
-         if (var11 >= 0.0 && var13 >= 0.0 && var11 < 108.0 && var13 < 19.0 && this.field_10956.method_18886(this.field_943.field_9632, var10)) {
-            this.field_943.field_9647.method_42154(this.field_10956.field_19925, var10);
+         if (var11 >= 0.0 && var13 >= 0.0 && var11 < 108.0 && var13 < 19.0 && this.field_10956.method_18886(this.field_943.thePlayer, var10)) {
+            this.field_943.playerController.method_42154(this.field_10956.field_19925, var10);
             return true;
          }
       }
@@ -53,19 +53,19 @@ public class class_8226 extends class_2208<class_8372> {
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
       class_2083.method_9716();
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_42231);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_42231);
       int var7 = (this.field_941 - this.field_10981) / 2;
       int var8 = (this.field_940 - this.field_10973) / 2;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10973);
-      class_3542.method_16463(5889);
-      class_3542.method_16438();
-      class_3542.method_16476();
-      int var9 = (int)this.field_943.method_8552().method_43189();
-      class_3542.method_16392((this.field_941 - 320) / 2 * var9, (this.field_940 - 240) / 2 * var9, 320 * var9, 240 * var9);
-      class_3542.method_16413(-0.34F, 0.23F, 0.0F);
-      class_3542.method_16358(class_8107.method_36820(90.0, 1.3333334F, 9.0F, 80.0F));
-      class_3542.method_16463(5888);
+      RenderSystem.method_16463(5889);
+      RenderSystem.method_16438();
+      RenderSystem.method_16476();
+      int var9 = (int)this.field_943.getMainWindow().method_43189();
+      RenderSystem.method_16392((this.field_941 - 320) / 2 * var9, (this.field_940 - 240) / 2 * var9, 320 * var9, 240 * var9);
+      RenderSystem.method_16413(-0.34F, 0.23F, 0.0F);
+      RenderSystem.method_16358(class_8107.method_36820(90.0, 1.3333334F, 9.0F, 80.0F));
+      RenderSystem.method_16463(5888);
       var1.method_36063();
       class_6279 var10 = var1.method_36058();
       var10.method_28620().method_36817();
@@ -100,19 +100,19 @@ public class class_8226 extends class_2208<class_8372> {
          var15 = 1.0F;
       }
 
-      class_3542.method_16381();
+      RenderSystem.method_16381();
       field_42233.method_37551(0.0F, var14, var15, var12);
       class_3758 var16 = class_2565.method_11648(class_8042.method_36499().method_36501());
       class_7907 var17 = var16.method_11645(field_42233.method_45498(field_42227));
       field_42233.method_45499(var1, var17, 15728880, class_5367.field_27381, 1.0F, 1.0F, 1.0F, 1.0F);
       var16.method_17415();
       var1.method_36064();
-      class_3542.method_16463(5889);
-      class_3542.method_16392(0, 0, this.field_943.method_8552().method_43178(), this.field_943.method_8552().method_43198());
-      class_3542.method_16489();
-      class_3542.method_16463(5888);
+      RenderSystem.method_16463(5889);
+      RenderSystem.method_16392(0, 0, this.field_943.getMainWindow().method_43178(), this.field_943.getMainWindow().method_43198());
+      RenderSystem.method_16489();
+      RenderSystem.method_16463(5888);
       class_2083.method_9717();
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       class_726.method_3294().method_3293((long)this.field_10956.method_38581());
       int var18 = this.field_10956.method_38582();
 
@@ -120,15 +120,15 @@ public class class_8226 extends class_2208<class_8372> {
          int var20 = var7 + 60;
          int var21 = var20 + 20;
          this.method_9776(0);
-         this.field_943.method_8577().method_35674(field_42231);
+         this.field_943.getTextureManager().bindTexture(field_42231);
          int var22 = this.field_10956.field_42870[var19];
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          if (var22 != 0) {
             String var23 = "" + var22;
             int var24 = 86 - this.field_948.method_45395(var23);
             ITextProperties var25 = class_726.method_3294().method_3295(this.field_948, var24);
             int var26 = 6839882;
-            if ((var18 < var19 + 1 || this.field_943.field_9632.field_3840 < var22) && !this.field_943.field_9632.field_3876.field_4944) {
+            if ((var18 < var19 + 1 || this.field_943.thePlayer.field_3840 < var22) && !this.field_943.thePlayer.field_3876.field_4944) {
                this.method_9781(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
                this.method_9781(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 239, 16, 16);
                this.field_948.method_45407(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
@@ -161,7 +161,7 @@ public class class_8226 extends class_2208<class_8372> {
       this.method_1183(var1);
       super.method_6767(var1, var2, var3, var4);
       this.method_10214(var1, var2, var3);
-      boolean var7 = this.field_943.field_9632.field_3876.field_4944;
+      boolean var7 = this.field_943.thePlayer.field_3876.field_4944;
       int var8 = this.field_10956.method_38582();
 
       for (int var9 = 0; var9 < 3; var9++) {
@@ -174,7 +174,7 @@ public class class_8226 extends class_2208<class_8372> {
             var14.add(new TranslationTextComponent("container.enchant.clue", var11.method_20423(var12)).mergeStyle(TextFormatting.WHITE));
             if (!var7) {
                var14.add(StringTextComponent.EMPTY);
-               if (this.field_943.field_9632.field_3840 >= var10) {
+               if (this.field_943.thePlayer.field_3840 >= var10) {
                   TranslationTextComponent var15;
                   if (var13 != 1) {
                      var15 = new TranslationTextComponent("container.enchant.lapis.many", var13);
@@ -205,8 +205,8 @@ public class class_8226 extends class_2208<class_8372> {
    }
 
    public void method_37660() {
-      class_6098 var3 = this.field_10956.method_18878(0).method_35898();
-      if (!class_6098.method_27982(var3, this.field_42236)) {
+      ItemStack var3 = this.field_10956.method_18878(0).method_35898();
+      if (!ItemStack.method_27982(var3, this.field_42236)) {
          this.field_42236 = var3;
 
          do {

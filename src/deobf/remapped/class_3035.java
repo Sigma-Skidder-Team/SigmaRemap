@@ -22,7 +22,7 @@ public class class_3035<T extends class_5834, M extends class_2344<T>, A extends
    }
 
    private void method_13872(class_7966 var1, class_2565 var2, T var3, class_6943 var4, int var5, A var6) {
-      class_6098 var9 = var3.method_26520(var4);
+      ItemStack var9 = var3.method_26520(var4);
       if (var9.method_27960() instanceof class_8228) {
          class_8228 var10 = (class_8228)var9.method_27960();
          if (var10.method_37669() == var4) {
@@ -80,7 +80,7 @@ public class class_3035<T extends class_5834, M extends class_2344<T>, A extends
    }
 
    private void method_13868(class_7966 var1, class_2565 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, Identifier var9) {
-      class_7907 var12 = class_8765.method_40282(var2, RenderLayer.method_16749(var9), false, var4);
+      class_7907 var12 = ItemRenderer.method_40282(var2, RenderLayer.method_16749(var9), false, var4);
       var5.method_45499(var1, var12, var3, class_5367.field_27381, var6, var7, var8, 1.0F);
    }
 
@@ -97,11 +97,11 @@ public class class_3035<T extends class_5834, M extends class_2344<T>, A extends
       return field_14900.computeIfAbsent(var6, Identifier::new);
    }
 
-   public A method_13867(T var1, class_6098 var2, class_6943 var3, A var4) {
+   public A method_13867(T var1, ItemStack var2, class_6943 var3, A var4) {
       return (A)(!class_7860.field_40132.method_3596() ? var4 : class_7860.field_40132.method_3582(var1, var2, var3, var4));
    }
 
-   public Identifier method_13874(Entity var1, class_6098 var2, class_6943 var3, String var4) {
+   public Identifier method_13874(Entity var1, ItemStack var2, class_6943 var3, String var4) {
       class_8228 var7 = (class_8228)var2.method_27960();
       String var8 = var7.method_37667().method_22186();
       String var9 = "minecraft";
@@ -124,7 +124,7 @@ public class class_3035<T extends class_5834, M extends class_2344<T>, A extends
          field_14900.put(var11, var12);
       }
 
-      if (class_3111.method_14390()) {
+      if (Config.method_14390()) {
          var12 = class_3290.method_15106(var2, var3, var4, var12);
       }
 

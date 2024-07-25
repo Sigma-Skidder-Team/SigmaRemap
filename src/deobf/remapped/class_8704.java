@@ -44,7 +44,7 @@ public abstract class class_8704 {
    private final class_7522 field_44627;
    public final int field_44634;
    private int field_44617;
-   private class_4666 field_44625;
+   private GameType field_44625;
    private boolean field_44633;
    private int field_44626;
 
@@ -120,7 +120,7 @@ public abstract class class_8704 {
       var15.method_4156(new class_6197(class_6197.field_31656, new class_8248(Unpooled.buffer()).method_37760(this.method_39974().method_1728())));
       var15.method_4156(new class_9275(var14.method_8661(), var14.method_8662()));
       var15.method_4156(new class_3727(var2.field_3876));
-      var15.method_4156(new class_4020(var2.field_3853.field_36404));
+      var15.method_4156(new class_4020(var2.inventory.field_36404));
       var15.method_4156(new class_6621(this.field_44631.method_1705().method_23141()));
       var15.method_4156(new class_5042(this.field_44631.method_1754()));
       this.method_39976(var2);
@@ -616,7 +616,7 @@ public abstract class class_8704 {
    public void method_39971(class_9359 var1) {
       var1.method_43264(var1.field_3869);
       var1.method_43236();
-      var1.field_47794.method_4156(new class_4020(var1.field_3853.field_36404));
+      var1.field_47794.method_4156(new class_4020(var1.inventory.field_36404));
    }
 
    public int method_39998() {
@@ -659,14 +659,14 @@ public abstract class class_8704 {
       return null;
    }
 
-   public void method_39991(class_4666 var1) {
+   public void method_39991(GameType var1) {
       this.field_44625 = var1;
    }
 
    private void method_39980(class_9359 var1, class_9359 var2, class_6331 var3) {
       if (var2 == null) {
          if (this.field_44625 != null) {
-            var1.field_47807.method_39516(this.field_44625, class_4666.field_22762);
+            var1.field_47807.method_39516(this.field_44625, GameType.field_22762);
          }
       } else {
          var1.field_47807.method_39516(var2.field_47807.method_39517(), var2.field_47807.method_39524());

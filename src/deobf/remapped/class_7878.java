@@ -37,10 +37,10 @@ public class class_7878 extends class_3599 {
 
    @Override
    public void method_16793() {
-      class_6098 var3 = this.field_40324.method_26520(class_6943.field_35707);
+      ItemStack var3 = this.field_40324.method_26520(class_6943.field_35707);
       if (!var3.method_28022()) {
          this.method_35635(var3);
-         this.field_40324.method_37349(class_6943.field_35707, class_6098.field_31203);
+         this.field_40324.method_37349(class_6943.field_35707, ItemStack.EMPTY);
          this.field_40325 = this.field_40324.field_41697 + class_449.method_2160(this.field_40324).nextInt(100);
       }
    }
@@ -50,18 +50,18 @@ public class class_7878 extends class_3599 {
       List var3 = this.field_40324
          .field_41768
          .<class_91>method_25869(class_91.class, this.field_40324.method_37241().method_18899(8.0, 8.0, 8.0), class_449.field_1874);
-      class_6098 var4 = this.field_40324.method_26520(class_6943.field_35707);
+      ItemStack var4 = this.field_40324.method_26520(class_6943.field_35707);
       if (var4.method_28022()) {
          if (!var3.isEmpty()) {
             this.field_40324.method_26927().method_5616((Entity)var3.get(0), 1.2F);
          }
       } else {
          this.method_35635(var4);
-         this.field_40324.method_37349(class_6943.field_35707, class_6098.field_31203);
+         this.field_40324.method_37349(class_6943.field_35707, ItemStack.EMPTY);
       }
    }
 
-   private void method_35635(class_6098 var1) {
+   private void method_35635(ItemStack var1) {
       if (!var1.method_28022()) {
          double var4 = this.field_40324.method_37388() - 0.3F;
          class_91 var6 = new class_91(this.field_40324.field_41768, this.field_40324.method_37302(), var4, this.field_40324.method_37156(), var1);

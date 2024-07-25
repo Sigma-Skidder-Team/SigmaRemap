@@ -49,7 +49,7 @@ public class class_2843 {
    }
 
    public class_7907 method_12944(class_2565 var1, Function<Identifier, RenderLayer> var2, boolean var3) {
-      return this.method_12947().method_23601(class_8765.method_40275(var1, this.method_12945(var2), true, var3));
+      return this.method_12947().method_23601(ItemRenderer.method_40275(var1, this.method_12945(var2), true, var3));
    }
 
    @Override

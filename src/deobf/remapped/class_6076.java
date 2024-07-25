@@ -6,23 +6,23 @@ import java.nio.IntBuffer;
 
 public class class_6076 {
    private RenderLayer field_31104 = null;
-   private int field_31093 = class_1920.method_8817();
+   private int field_31093 = GlStateManager.method_8817();
    private int field_31094 = 4096;
    private int field_31100 = 0;
    private int field_31101;
    private class_8161<class_5584> field_31096 = new class_8161<class_5584>();
    private class_5584 field_31095 = null;
-   private IntBuffer field_31102 = class_3111.method_14260(this.field_31094);
-   private IntBuffer field_31099 = class_3111.method_14260(this.field_31094);
+   private IntBuffer field_31102 = Config.method_14260(this.field_31094);
+   private IntBuffer field_31099 = Config.method_14260(this.field_31094);
    private final int field_31098 = class_7985.field_40918.method_13168();
    private int field_31103 = 7;
-   private boolean field_31097 = class_3111.method_14424();
+   private boolean field_31097 = Config.method_14424();
 
    public class_6076(RenderLayer var1) {
       this.field_31104 = var1;
       this.method_27823();
       long var4 = this.method_27827(this.field_31094);
-      class_1920.method_8802(class_1920.field_9822, var4, class_1920.field_9825);
+      GlStateManager.method_8802(GlStateManager.field_9822, var4, GlStateManager.field_9825);
       this.method_27832();
    }
 
@@ -48,7 +48,7 @@ public class class_6076 {
             this.method_27829(var2.method_25374());
             long var8 = this.method_27827(var2.method_25378());
             this.method_27823();
-            class_1920.method_8870(class_1920.field_9822, var8, var1);
+            GlStateManager.method_8870(GlStateManager.field_9822, var8, var1);
             this.method_27832();
             if (this.field_31100 > this.field_31101 * 11 / 10) {
                this.method_27820(1);
@@ -151,12 +151,12 @@ public class class_6076 {
       long var6 = this.method_27827(var1);
       long var8 = this.method_27827(var2);
       long var10 = this.method_27827(var3);
-      class_1920.method_8760(class_1920.field_9819, this.field_31093);
-      class_1920.method_8760(class_1920.field_9840, this.field_31093);
-      class_1920.method_8869(class_1920.field_9819, class_1920.field_9840, var6, var8, var10);
-      class_3111.method_14312("Copy VBO range");
-      class_1920.method_8760(class_1920.field_9819, 0);
-      class_1920.method_8760(class_1920.field_9840, 0);
+      GlStateManager.method_8760(GlStateManager.field_9819, this.field_31093);
+      GlStateManager.method_8760(GlStateManager.field_9840, this.field_31093);
+      GlStateManager.method_8869(GlStateManager.field_9819, GlStateManager.field_9840, var6, var8, var10);
+      Config.method_14312("Copy VBO range");
+      GlStateManager.method_8760(GlStateManager.field_9819, 0);
+      GlStateManager.method_8760(GlStateManager.field_9840, 0);
    }
 
    private void method_27828(int var1) {
@@ -168,26 +168,26 @@ public class class_6076 {
 
       long var5 = this.method_27827(this.field_31094);
       long var7 = this.method_27827(var4);
-      int var9 = class_1920.method_8817();
-      class_1920.method_8760(class_1920.field_9822, var9);
-      class_1920.method_8802(class_1920.field_9822, var7, class_1920.field_9825);
-      class_3111.method_14312("Expand VBO");
-      class_1920.method_8760(class_1920.field_9822, 0);
-      class_1920.method_8760(class_1920.field_9819, this.field_31093);
-      class_1920.method_8760(class_1920.field_9840, var9);
-      class_1920.method_8869(class_1920.field_9819, class_1920.field_9840, 0L, 0L, var5);
-      class_3111.method_14312("Copy VBO: " + var7);
-      class_1920.method_8760(class_1920.field_9819, 0);
-      class_1920.method_8760(class_1920.field_9840, 0);
-      class_1920.method_8825(this.field_31093);
-      this.field_31102 = class_3111.method_14260(var4);
-      this.field_31099 = class_3111.method_14260(var4);
+      int var9 = GlStateManager.method_8817();
+      GlStateManager.method_8760(GlStateManager.field_9822, var9);
+      GlStateManager.method_8802(GlStateManager.field_9822, var7, GlStateManager.field_9825);
+      Config.method_14312("Expand VBO");
+      GlStateManager.method_8760(GlStateManager.field_9822, 0);
+      GlStateManager.method_8760(GlStateManager.field_9819, this.field_31093);
+      GlStateManager.method_8760(GlStateManager.field_9840, var9);
+      GlStateManager.method_8869(GlStateManager.field_9819, GlStateManager.field_9840, 0L, 0L, var5);
+      Config.method_14312("Copy VBO: " + var7);
+      GlStateManager.method_8760(GlStateManager.field_9819, 0);
+      GlStateManager.method_8760(GlStateManager.field_9840, 0);
+      GlStateManager.method_8825(this.field_31093);
+      this.field_31102 = Config.method_14260(var4);
+      this.field_31099 = Config.method_14260(var4);
       this.field_31093 = var9;
       this.field_31094 = var4;
    }
 
    public void method_27823() {
-      class_1920.method_8760(class_1920.field_9822, this.field_31093);
+      GlStateManager.method_8760(GlStateManager.field_9822, this.field_31093);
    }
 
    public void method_27819(int var1, class_5584 var2) {
@@ -212,7 +212,7 @@ public class class_6076 {
 
       ((Buffer)this.field_31102).flip();
       ((Buffer)this.field_31099).flip();
-      class_1920.method_8847(this.field_31103, this.field_31102, this.field_31099);
+      GlStateManager.method_8847(this.field_31103, this.field_31102, this.field_31099);
       ((Buffer)this.field_31102).limit(this.field_31102.capacity());
       ((Buffer)this.field_31099).limit(this.field_31099.capacity());
       if (this.field_31100 > this.field_31101 * 11 / 10) {
@@ -221,12 +221,12 @@ public class class_6076 {
    }
 
    public void method_27832() {
-      class_1920.method_8760(class_1920.field_9822, 0);
+      GlStateManager.method_8760(GlStateManager.field_9822, 0);
    }
 
    public void method_27833() {
       if (this.field_31093 >= 0) {
-         class_1920.method_8825(this.field_31093);
+         GlStateManager.method_8825(this.field_31093);
          this.field_31093 = -1;
       }
    }

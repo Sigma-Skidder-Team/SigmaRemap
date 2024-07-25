@@ -82,7 +82,7 @@ public class class_6244 extends class_2577 {
             if (var8 != null) {
                var8 = var8.trim();
                String var9 = "G5";
-               int var10 = class_3111.method_14281(var9, var8);
+               int var10 = Config.method_14281(var9, var8);
                if (var10 < 0) {
                   String var11 = ("HD_U_" + var8).replace('_', ' ');
                   String var12 = class_6956.method_31803("of.message.shaders.nv1", var11);

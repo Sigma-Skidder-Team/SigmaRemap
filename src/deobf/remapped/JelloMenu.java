@@ -123,7 +123,7 @@ public class JelloMenu extends class_2596 {
       this.field_4007.method_32104(this.field_4007.method_32109() < this.method_32109() && this.field_4007.method_32137() < this.method_32137());
       super.method_32145(var1, var2);
       class_314.method_1399(Math.min(1.0F, field_4000.method_11123() * 4.0F));
-      this.field_4010.method_32104(SigmaMainClass.getInstance().getModuleManager().method_847(BrainFreezeModule.class).method_42015());
+      this.field_4010.method_32104(SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BrainFreezeModule.class).method_42015());
       if (this.field_4002 != null) {
          int var5 = var1 - this.field_4002.method_32155();
          int var6 = var2 - this.field_4002.method_32093();
@@ -204,7 +204,7 @@ public class JelloMenu extends class_2596 {
    @Override
    public void method_29509(int var1) {
       super.method_29509(var1);
-      int var4 = SigmaMainClass.getInstance().getModuleManager().method_835().method_380(ClassicClickGUI.class);
+      int var4 = SigmaMainClass.getInstance().getModuleManager().getJelloTouch().method_380(ClassicClickGUI.class);
       if (var1 == 256 || var1 == var4 && this.field_3999 == null && !this.method_32121()) {
          if (field_4001) {
             field_4008 = !field_4008;
@@ -245,8 +245,8 @@ public class JelloMenu extends class_2596 {
          var4 *= 1.0F + var8 * 0.2F;
       }
 
-      if (SigmaMainClass.getInstance().getModuleManager().method_848().method_4301() != null) {
-         String var12 = SigmaMainClass.getInstance().getModuleManager().method_848().method_4301().field_8677;
+      if (SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301() != null) {
+         String var12 = SigmaMainClass.getInstance().getModuleManager().getConfigManager().method_4301().field_8677;
          class_73.method_87(
             class_5320.field_27152,
             (float)(this.field_36278 - class_5320.field_27152.method_18547(var12) - 80),

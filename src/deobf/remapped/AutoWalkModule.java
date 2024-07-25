@@ -10,13 +10,13 @@ public class AutoWalkModule extends Module {
    @EventListen
    private void method_9058(class_5596 var1) {
       if (this.method_42015()) {
-         mc.gameOptions.keyForward.pressed = true;
+         client.gameOptions.keyForward.pressed = true;
       }
    }
 
    @Override
    public void onDisable() {
-      int var3 = GLFW.glfwGetKey(mc.window.method_43181(), mc.gameOptions.keyForward.field_30027.field_17800);
-      mc.gameOptions.keyForward.pressed = var3 == 1;
+      int var3 = GLFW.glfwGetKey(client.window.method_43181(), client.gameOptions.keyForward.field_30027.field_17800);
+      client.gameOptions.keyForward.pressed = var3 == 1;
    }
 }

@@ -44,13 +44,13 @@ public class MiniMapModule extends Module {
 
    @EventListen
    private void method_22829(class_5596 var1) {
-      if (this.method_42015() && mc.field_9632 != null && mc.field_9601 != null) {
+      if (this.method_42015() && client.thePlayer != null && client.field_9601 != null) {
          this.field_25741++;
-         if ((double)field_25738 < mc.field_9632.method_37309() && mc.field_9632.field_41726) {
+         if ((double)field_25738 < client.thePlayer.method_37309() && client.thePlayer.field_41726) {
             field_25738 += 0.5F;
          }
 
-         if ((double)field_25738 > mc.field_9632.method_37309() && mc.field_9632.field_41726) {
+         if ((double)field_25738 > client.thePlayer.method_37309() && client.thePlayer.field_41726) {
             field_25738 -= 0.5F;
          }
 
@@ -59,7 +59,7 @@ public class MiniMapModule extends Module {
 
             for (int var5 = -this.field_25729 / 2; var5 < this.field_25729 / 2; var5++) {
                for (int var6 = -this.field_25729 / 2; var6 < this.field_25729 / 2; var6++) {
-                  var4.add(mc.field_9601.method_29554(mc.field_9632.field_41742 + var5, mc.field_9632.field_41714 + var6));
+                  var4.add(client.field_9601.method_29554(client.thePlayer.field_41742 + var5, client.thePlayer.field_41714 + var6));
                }
             }
 
@@ -67,7 +67,7 @@ public class MiniMapModule extends Module {
 
             while (var11.hasNext()) {
                class_4601 var12 = (class_4601)var11.next();
-               int var7 = var12.field_22373.method_27352().method_9549(new class_2034(mc.field_9632.field_41742, mc.field_9632.field_41714));
+               int var7 = var12.field_22373.method_27352().method_9549(new class_2034(client.thePlayer.field_41742, client.thePlayer.field_41714));
                if (var7 > 7) {
                   var11.remove();
                }
@@ -97,10 +97,10 @@ public class MiniMapModule extends Module {
                var16.method_21318();
             }
 
-            this.field_25736 = (mc.field_9632.method_37302() - (double)(mc.field_9632.field_41742 * 16)) / 16.0;
-            this.field_25734 = (mc.field_9632.method_37156() - (double)(mc.field_9632.field_41714 * 16)) / 16.0;
+            this.field_25736 = (client.thePlayer.method_37302() - (double)(client.thePlayer.field_41742 * 16)) / 16.0;
+            this.field_25734 = (client.thePlayer.method_37156() - (double)(client.thePlayer.field_41714 * 16)) / 16.0;
             this.field_25730 = this.method_22831(this.field_25739);
-            this.field_25727 = mc.field_9632.method_37075();
+            this.field_25727 = client.thePlayer.method_37075();
             this.field_25741 = 0;
          }
       }
@@ -109,10 +109,10 @@ public class MiniMapModule extends Module {
    @EventListen
    @class_315
    private void method_22828(class_3278 var1) throws IOException {
-      if (this.method_42015() && mc.field_9632 != null && mc.field_9601 != null) {
+      if (this.method_42015() && client.thePlayer != null && client.field_9601 != null) {
          if (this.field_25730 != null) {
             if (!MinecraftClient.getInstance().gameOptions.field_45470) {
-               if (!MinecraftClient.getInstance().gameOptions.field_45567) {
+               if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                   ByteBuffer var4 = this.field_25730;
                   this.field_25732 = var1.method_14966();
                   if (var4 != null) {
@@ -125,7 +125,7 @@ public class MiniMapModule extends Module {
                      float var9 = (float)((double)(var8 * var7) * this.field_25734);
                      float var10 = (float)((double)(-var8 * var7) * this.field_25736);
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2), (float)(this.field_25732 + this.field_25733 / 2), 0.0F);
-                     GL11.glRotatef(90.0F - mc.field_9632.field_41701, 0.0F, 0.0F, 1.0F);
+                     GL11.glRotatef(90.0F - client.thePlayer.field_41701, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-this.field_25740 / 2), (float)(-this.field_25733 / 2), 0.0F);
                      float var11 = (float)this.field_25740 * var7;
                      float var12 = (float)this.field_25733 * var7;
@@ -153,7 +153,7 @@ public class MiniMapModule extends Module {
                      GL11.glPushMatrix();
                      int var15 = (int)class_8865.method_40787()[0];
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2 + 1), (float)(this.field_25732 + this.field_25733 / 2 + 3), 0.0F);
-                     GL11.glRotatef((float)(270 + var15) - mc.field_9632.field_41701, 0.0F, 0.0F, 1.0F);
+                     GL11.glRotatef((float)(270 + var15) - client.thePlayer.field_41701, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-(this.field_25731 + this.field_25740 / 2 + 1)), (float)(-(this.field_25732 + this.field_25733 / 2)), 0.0F);
                      class_73.method_87(
                         var6, (float)(this.field_25731 + this.field_25740 / 2 - 4), (float)(this.field_25732 + this.field_25733 / 2 - 8), var5, 1879048192
@@ -161,7 +161,7 @@ public class MiniMapModule extends Module {
                      GL11.glPopMatrix();
                      GL11.glPushMatrix();
                      GL11.glTranslatef((float)(this.field_25731 + this.field_25740 / 2 + 1), (float)(this.field_25732 + this.field_25733 / 2), 0.0F);
-                     GL11.glRotatef((float)(270 + var15) - mc.field_9632.field_41701, 0.0F, 0.0F, 1.0F);
+                     GL11.glRotatef((float)(270 + var15) - client.thePlayer.field_41701, 0.0F, 0.0F, 1.0F);
                      GL11.glTranslatef((float)(-(this.field_25731 + this.field_25740 / 2 + 1)), (float)(-(this.field_25732 + this.field_25733 / 2)), 0.0F);
                      class_73.method_87(
                         var6,
@@ -187,7 +187,7 @@ public class MiniMapModule extends Module {
 
       for (int var5 = -this.field_25729 / 2; var5 < this.field_25729 / 2; var5++) {
          for (int var6 = -this.field_25729 / 2; var6 < this.field_25729 / 2; var6++) {
-            var4.add(mc.field_9601.method_29554(mc.field_9632.field_41742 + var5, mc.field_9632.field_41714 + var6));
+            var4.add(client.field_9601.method_29554(client.thePlayer.field_41742 + var5, client.thePlayer.field_41714 + var6));
          }
       }
 

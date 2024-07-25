@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Deque;
 import javax.annotation.Nullable;
 
-public class class_9184 extends class_2089 {
+public class class_9184 extends AbstractGui {
    private static String[] field_46994;
    private final MinecraftClient field_46992;
    private final class_9623<?>[] field_46993 = new class_9623[5];
@@ -16,10 +16,10 @@ public class class_9184 extends class_2089 {
    }
 
    public void method_42331(class_7966 var1) {
-      if (!this.field_46992.gameOptions.field_45567) {
+      if (!this.field_46992.gameOptions.hideGUI) {
          for (int var4 = 0; var4 < this.field_46993.length; var4++) {
             class_9623 var5 = this.field_46993[var4];
-            if (var5 != null && var5.method_44422(this.field_46992.method_8552().method_43165(), var4, var1)) {
+            if (var5 != null && var5.method_44422(this.field_46992.getMainWindow().getScaledWidth(), var4, var1)) {
                this.field_46993[var4] = null;
             }
 

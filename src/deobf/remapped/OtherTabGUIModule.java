@@ -94,7 +94,7 @@ public class OtherTabGUIModule extends Module {
                      class_2990 var8 = (class_2990)var6;
                      Category var9 = this.categoryList.get(var7.field_14700);
                      Module var10 = SigmaMainClass.getInstance().getModuleManager().method_844(var9).get(var8.field_14700);
-                     var10.method_41991(!var10.method_42015());
+                     var10.setEnabled2(!var10.method_42015());
                   }
             }
          }
@@ -167,9 +167,9 @@ public class OtherTabGUIModule extends Module {
    @EventListen
    @class_5355
    private void method_1196(class_3278 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
-            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
+            if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                this.method_1208();
 
                for (class_3622 var5 : field_960) {

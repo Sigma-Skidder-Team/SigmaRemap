@@ -18,32 +18,32 @@ public class class_7934 {
       this.field_40590 = var4;
    }
 
-   public void method_35888(class_6098 var1, class_6098 var2) {
+   public void method_35888(ItemStack var1, ItemStack var2) {
       int var5 = var2.method_27997() - var1.method_27997();
       if (var5 > 0) {
          this.method_35894(var2, var5);
       }
    }
 
-   public void method_35894(class_6098 var1, int var2) {
+   public void method_35894(ItemStack var1, int var2) {
    }
 
    public void method_35885(int var1) {
    }
 
-   public void method_35893(class_6098 var1) {
+   public void method_35893(ItemStack var1) {
    }
 
-   public class_6098 method_35892(class_704 var1, class_6098 var2) {
+   public ItemStack method_35892(class_704 var1, ItemStack var2) {
       this.method_35887();
       return var2;
    }
 
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return true;
    }
 
-   public class_6098 method_35898() {
+   public ItemStack method_35898() {
       return this.field_40591.method_31498(this.field_40593);
    }
 
@@ -51,7 +51,7 @@ public class class_7934 {
       return !this.method_35898().method_28022();
    }
 
-   public void method_35896(class_6098 var1) {
+   public void method_35896(ItemStack var1) {
       this.field_40591.method_31503(this.field_40593, var1);
       this.method_35887();
    }
@@ -64,7 +64,7 @@ public class class_7934 {
       return this.field_40591.method_31506();
    }
 
-   public int method_35890(class_6098 var1) {
+   public int method_35890(ItemStack var1) {
       return this.method_35897();
    }
 
@@ -73,7 +73,7 @@ public class class_7934 {
       return null;
    }
 
-   public class_6098 method_35899(int var1) {
+   public ItemStack method_35899(int var1) {
       return this.field_40591.method_31497(this.field_40593, var1);
    }
 

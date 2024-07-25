@@ -10,17 +10,17 @@ public class class_7884 extends class_8143 {
 
    public class_7884(class_5797 var1) {
       this.field_40345 = var1;
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          class_4970.method_22840(this.method_37055(), this.field_40345.method_26228(), this.field_40345.method_26253());
          this.method_35650();
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_7977.method_36175(this);
          }
       } else {
-         class_3542.method_16474(() -> {
+         RenderSystem.method_16474(() -> {
             class_4970.method_22840(this.method_37055(), this.field_40345.method_26228(), this.field_40345.method_26253());
             this.method_35650();
-            if (class_3111.method_14424()) {
+            if (Config.method_14424()) {
                class_7977.method_36175(this);
             }
          });
@@ -28,10 +28,10 @@ public class class_7884 extends class_8143 {
    }
 
    public class_7884(int var1, int var2, boolean var3) {
-      class_3542.method_16431(class_3542::method_16363);
+      RenderSystem.method_16431(RenderSystem::method_16363);
       this.field_40345 = new class_5797(var1, var2, var3);
       class_4970.method_22840(this.method_37055(), this.field_40345.method_26228(), this.field_40345.method_26253());
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_7977.method_36175(this);
       }
    }

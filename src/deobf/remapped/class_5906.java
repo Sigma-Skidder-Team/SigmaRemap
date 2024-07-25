@@ -47,14 +47,14 @@ public class class_5906 extends class_6967 {
             int var4 = var3.<Integer>method_10313(class_7086.field_36577);
             var3.method_10308(class_7086.field_36577, Integer.valueOf(1));
             int var5 = 1 + this.field_29977.field_41768.field_33033.nextInt(2) + (var4 != 3 ? 0 : 1);
-            class_6098 var6 = this.field_29977.method_26520(class_6943.field_35707);
+            ItemStack var6 = this.field_29977.method_26520(class_6943.field_35707);
             if (var6.method_28022()) {
-               this.field_29977.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25205));
+               this.field_29977.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25205));
                var5--;
             }
 
             if (var5 > 0) {
-               class_6414.method_29267(this.field_29977.field_41768, this.field_35802, new class_6098(class_4897.field_25205, var5));
+               class_6414.method_29267(this.field_29977.field_41768, this.field_35802, new ItemStack(class_4897.field_25205, var5));
             }
 
             this.field_29977.method_37155(class_463.field_2156, 1.0F, 1.0F);

@@ -10,8 +10,8 @@ public class class_1992 implements Packet<class_392> {
    private int field_10122;
    private long field_10120;
    private boolean field_10117;
-   private class_4666 field_10115;
-   private class_4666 field_10109;
+   private GameType field_10115;
+   private GameType field_10109;
    private Set<class_5621<World>> field_10112;
    private class_7522 field_10119;
    private class_8760 field_10114;
@@ -28,8 +28,8 @@ public class class_1992 implements Packet<class_392> {
 
    public class_1992(
       int var1,
-      class_4666 var2,
-      class_4666 var3,
+      GameType var2,
+      GameType var3,
       long var4,
       boolean var6,
       Set<class_5621<World>> var7,
@@ -64,8 +64,8 @@ public class class_1992 implements Packet<class_392> {
    public void method_28775(class_8248 var1) throws IOException {
       this.field_10122 = var1.readInt();
       this.field_10117 = var1.readBoolean();
-      this.field_10115 = class_4666.method_21590(var1.readByte());
-      this.field_10109 = class_4666.method_21590(var1.readByte());
+      this.field_10115 = GameType.method_21590(var1.readByte());
+      this.field_10109 = GameType.method_21590(var1.readByte());
       int var4 = var1.method_37778();
       this.field_10112 = Sets.newHashSet();
 
@@ -125,11 +125,11 @@ public class class_1992 implements Packet<class_392> {
       return this.field_10117;
    }
 
-   public class_4666 method_9226() {
+   public GameType method_9226() {
       return this.field_10115;
    }
 
-   public class_4666 method_9238() {
+   public GameType method_9238() {
       return this.field_10109;
    }
 

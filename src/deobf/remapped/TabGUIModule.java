@@ -49,10 +49,10 @@ public class TabGUIModule extends Module {
    @EventListen
    @class_5355
    private void method_41399(class_1711 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (SigmaMainClass.getInstance().getGUIManager().method_30987()) {
             if (!MinecraftClient.getInstance().gameOptions.field_45470) {
-               if (!MinecraftClient.getInstance().gameOptions.field_45567) {
+               if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                   class_4746.method_21925(this.field_46182, this.field_46185, this.field_46158, this.field_46178);
                   if (this.field_46166) {
                      class_4746.method_21925(170, this.field_46185, this.field_46161, this.field_46160);
@@ -66,9 +66,9 @@ public class TabGUIModule extends Module {
    @EventListen
    @class_5355
    private void method_41401(class_3278 var1) {
-      if (this.method_42015() && mc.field_9632 != null && mc.field_9601 != null) {
+      if (this.method_42015() && client.thePlayer != null && client.field_9601 != null) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
-            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
+            if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                this.field_46178 = 5 * this.field_46159 + this.field_46163;
                float var4 = Math.abs((float)this.method_41397() - this.field_46175);
                boolean var5 = (float)this.method_41397() - this.field_46175 < 0.0F;
@@ -300,7 +300,7 @@ public class TabGUIModule extends Module {
 
    @EventListen
    private void method_41396(class_3368 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          this.method_41405();
          this.field_46165 = (float)Math.max(Math.round(6.0F - (float) MinecraftClient.method_8501() / 10.0F), 1);
       }
@@ -394,7 +394,7 @@ public class TabGUIModule extends Module {
       byte var3 = 3;
       if (!SigmaMainClass.getInstance().getGUIManager().method_30987()) {
          if (!MinecraftClient.getInstance().gameOptions.field_45470) {
-            if (!MinecraftClient.getInstance().gameOptions.field_45567) {
+            if (!MinecraftClient.getInstance().gameOptions.hideGUI) {
                for (int var4 = 0; var4 < 3; var4++) {
                   this.field_46174[var4] = this.method_41398(this.field_46182 + this.field_46158 / 3 * var4, this.field_46185, this.field_46174[var4]);
                   this.field_46173[var4] = this.method_41398(

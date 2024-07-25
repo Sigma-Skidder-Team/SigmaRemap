@@ -27,7 +27,7 @@ public class SlowHopSpeed extends Module {
          boolean var4 = this.getBooleanValueByName("AutoJump");
          double var5 = class_8865.method_40775();
          boolean var7 = class_314.method_1434();
-         if (!mc.field_9632.field_41726) {
+         if (!client.thePlayer.field_41726) {
             this.field_15607++;
             this.field_15606 = 0.36 - (double)this.field_15607 / 250.0;
             if (this.field_15606 < var5) {
@@ -37,8 +37,8 @@ public class SlowHopSpeed extends Module {
             class_8865.method_40777(var1, this.field_15606);
          } else {
             this.field_15607 = 0;
-            mc.field_9632.method_26595();
-            var1.method_35235(mc.field_9632.method_37098().field_7333);
+            client.thePlayer.method_26595();
+            var1.method_35235(client.thePlayer.method_37098().field_7333);
          }
       }
    }

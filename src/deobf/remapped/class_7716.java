@@ -6,15 +6,15 @@ public final class class_7716 extends class_4696 {
 
    public class_7716(float var1, float var2) {
       super("offset_texturing", () -> {
-         class_3542.method_16463(5890);
-         class_3542.method_16438();
-         class_3542.method_16476();
-         class_3542.method_16413(var1, var2, 0.0F);
-         class_3542.method_16463(5888);
+         RenderSystem.method_16463(5890);
+         RenderSystem.method_16438();
+         RenderSystem.method_16476();
+         RenderSystem.method_16413(var1, var2, 0.0F);
+         RenderSystem.method_16463(5888);
       }, () -> {
-         class_3542.method_16463(5890);
-         class_3542.method_16489();
-         class_3542.method_16463(5888);
+         RenderSystem.method_16463(5890);
+         RenderSystem.method_16489();
+         RenderSystem.method_16463(5888);
       });
       this.field_39131 = var1;
       this.field_39132 = var2;

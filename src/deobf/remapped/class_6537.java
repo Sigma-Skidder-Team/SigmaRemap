@@ -8,7 +8,7 @@ public class class_6537 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return class_1387.method_6428(var1);
    }
 

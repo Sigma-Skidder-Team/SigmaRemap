@@ -10,7 +10,7 @@ public class class_2742 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return this.field_13379.method_19069(var1);
    }
 

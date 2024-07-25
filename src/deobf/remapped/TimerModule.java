@@ -9,12 +9,12 @@ public class TimerModule extends Module {
    @EventListen
    private void method_31152(class_5596 var1) {
       if (this.method_42015()) {
-         mc.theTimer.timerSpeed = this.getFloatValueByName("Timer");
+         client.theTimer.timerSpeed = this.getFloatValueByName("Timer");
       }
    }
 
    @Override
    public void onDisable() {
-      mc.theTimer.timerSpeed = 1.0F;
+      client.theTimer.timerSpeed = 1.0F;
    }
 }

@@ -47,7 +47,7 @@ public class class_3321 {
    }
 
    public class_3321 method_15261(
-           class_6098 var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8
+           ItemStack var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8
    ) {
       return this.method_15262(new class_7750(var1, var2, var3, var4, var5, var6, var7, var8));
    }
@@ -55,7 +55,7 @@ public class class_3321 {
    public class_3321 method_15263(
            class_8525 var1, ITextComponent var2, ITextComponent var3, Identifier var4, class_3361 var5, boolean var6, boolean var7, boolean var8
    ) {
-      return this.method_15262(new class_7750(new class_6098(var1.method_10803()), var2, var3, var4, var5, var6, var7, var8));
+      return this.method_15262(new class_7750(new ItemStack(var1.method_10803()), var2, var3, var4, var5, var6, var7, var8));
    }
 
    public class_3321 method_15262(class_7750 var1) {

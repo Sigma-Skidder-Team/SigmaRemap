@@ -28,7 +28,7 @@ public class class_3779 extends class_5766 {
                return true;
             }
          } else {
-            if (class_3111.method_14424()) {
+            if (Config.method_14424()) {
                class_6588.method_30259();
                class_6588.method_30295();
             }

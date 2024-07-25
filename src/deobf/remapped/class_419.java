@@ -6,7 +6,7 @@ public class class_419 {
    private static String[] field_1775;
 
    public static class_6331 method_2086() {
-      MinecraftClient var2 = class_3111.method_14327();
+      MinecraftClient var2 = Config.method_14327();
       class_174 var3 = var2.field_9601;
       if (var3 == null) {
          return null;

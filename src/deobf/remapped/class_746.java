@@ -46,7 +46,7 @@ public class class_746 extends class_2733 {
             class_7860.method_35561(var6, class_7860.field_40249, var1);
             return (class_8599)var6;
          } else {
-            class_3111.method_14317("Field not found: TileEntityShulkerBoxRenderer.model");
+            Config.method_14317("Field not found: TileEntityShulkerBoxRenderer.model");
             return null;
          }
       } else {

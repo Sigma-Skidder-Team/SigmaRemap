@@ -15,7 +15,7 @@ public class class_6382 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       var1.method_27994().method_25925(this.field_32593);
       return var1;
    }

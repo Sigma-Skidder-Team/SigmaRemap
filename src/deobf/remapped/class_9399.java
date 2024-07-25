@@ -21,8 +21,8 @@ public class class_9399 extends class_5834 {
    public static final class_7821<class_1366> field_48046 = class_8073.<class_1366>method_36641(class_9399.class, class_2734.field_13363);
    public static final class_7821<class_1366> field_48045 = class_8073.<class_1366>method_36641(class_9399.class, class_2734.field_13363);
    private static final Predicate<Entity> field_48052 = var0 -> var0 instanceof class_1080 && ((class_1080)var0).method_4737() == class_3481.field_17066;
-   private final class_2831<class_6098> field_48058 = class_2831.<class_6098>method_12872(2, class_6098.field_31203);
-   private final class_2831<class_6098> field_48054 = class_2831.<class_6098>method_12872(4, class_6098.field_31203);
+   private final class_2831<ItemStack> field_48058 = class_2831.<ItemStack>method_12872(2, ItemStack.EMPTY);
+   private final class_2831<ItemStack> field_48054 = class_2831.<ItemStack>method_12872(4, ItemStack.EMPTY);
    private boolean field_48048;
    public long field_48050;
    private int field_48051;
@@ -74,33 +74,33 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public Iterable<class_6098> method_37294() {
+   public Iterable<ItemStack> method_37294() {
       return this.field_48058;
    }
 
    @Override
-   public Iterable<class_6098> method_37262() {
+   public Iterable<ItemStack> method_37262() {
       return this.field_48054;
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public class_6098 method_26520(class_6943 var1) {
+   public ItemStack method_26520(class_6943 var1) {
       switch (var1.method_31772()) {
          case field_37218:
             return this.field_48058.get(var1.method_31767());
          case field_37219:
             return this.field_48054.get(var1.method_31767());
          default:
-            return class_6098.field_31203;
+            return ItemStack.EMPTY;
       }
    }
 
    // $VF: Unable to simplify switch on enum
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    @Override
-   public void method_37349(class_6943 var1, class_6098 var2) {
+   public void method_37349(class_6943 var1, ItemStack var2) {
       switch (var1.method_31772()) {
          case field_37218:
             this.method_26620(var2);
@@ -113,7 +113,7 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public boolean method_37166(int var1, class_6098 var2) {
+   public boolean method_37166(int var1, ItemStack var2) {
       class_6943 var5;
       if (var1 != 98) {
          if (var1 != 99) {
@@ -150,7 +150,7 @@ public class class_9399 extends class_5834 {
    }
 
    @Override
-   public boolean method_26612(class_6098 var1) {
+   public boolean method_26612(ItemStack var1) {
       class_6943 var4 = class_5886.method_26896(var1);
       return this.method_26520(var4).method_28022() && !this.method_43504(var4);
    }
@@ -160,7 +160,7 @@ public class class_9399 extends class_5834 {
       super.method_37376(var1);
       class_3416 var4 = new class_3416();
 
-      for (class_6098 var6 : this.field_48054) {
+      for (ItemStack var6 : this.field_48054) {
          class_5734 var7 = new class_5734();
          if (!var6.method_28022()) {
             var6.method_27998(var7);
@@ -172,7 +172,7 @@ public class class_9399 extends class_5834 {
       var1.method_25946("ArmorItems", var4);
       class_3416 var9 = new class_3416();
 
-      for (class_6098 var11 : this.field_48058) {
+      for (ItemStack var11 : this.field_48058) {
          class_5734 var8 = new class_5734();
          if (!var11.method_28022()) {
             var11.method_27998(var8);
@@ -201,7 +201,7 @@ public class class_9399 extends class_5834 {
          class_3416 var4 = var1.method_25927("ArmorItems", 10);
 
          for (int var5 = 0; var5 < this.field_48054.size(); var5++) {
-            this.field_48054.set(var5, class_6098.method_28015(var4.method_15764(var5)));
+            this.field_48054.set(var5, ItemStack.method_28015(var4.method_15764(var5)));
          }
       }
 
@@ -209,7 +209,7 @@ public class class_9399 extends class_5834 {
          class_3416 var6 = var1.method_25927("HandItems", 10);
 
          for (int var8 = 0; var8 < this.field_48058.size(); var8++) {
-            this.field_48058.set(var8, class_6098.method_28015(var6.method_15764(var8)));
+            this.field_48058.set(var8, ItemStack.method_28015(var6.method_15764(var8)));
          }
       }
 
@@ -291,7 +291,7 @@ public class class_9399 extends class_5834 {
 
    @Override
    public class_6910 method_37227(class_704 var1, class_1343 var2, class_2584 var3) {
-      class_6098 var6 = var1.method_26617(var3);
+      ItemStack var6 = var1.method_26617(var3);
       if (this.method_43493() || var6.method_27960() == class_4897.field_24948) {
          return class_6910.field_35521;
       } else if (var1.method_37221()) {
@@ -348,14 +348,14 @@ public class class_9399 extends class_5834 {
       return (this.field_48051 & 1 << var1.method_31773()) != 0 || var1.method_31772() == class_7268.field_37218 && !this.method_43499();
    }
 
-   private boolean method_43492(class_704 var1, class_6943 var2, class_6098 var3, class_2584 var4) {
-      class_6098 var7 = this.method_26520(var2);
+   private boolean method_43492(class_704 var1, class_6943 var2, ItemStack var3, class_2584 var4) {
+      ItemStack var7 = this.method_26520(var2);
       if (!var7.method_28022() && (this.field_48051 & 1 << var2.method_31773() + 8) != 0) {
          return false;
       } else if (var7.method_28022() && (this.field_48051 & 1 << var2.method_31773() + 16) != 0) {
          return false;
       } else if (var1.field_3876.field_4944 && var7.method_28022() && !var3.method_28022()) {
-         class_6098 var9 = var3.method_27973();
+         ItemStack var9 = var3.method_27973();
          var9.method_28017(1);
          this.method_37349(var2, var9);
          return true;
@@ -364,7 +364,7 @@ public class class_9399 extends class_5834 {
          var1.method_26615(var4, var7);
          return true;
       } else if (var7.method_28022()) {
-         class_6098 var8 = var3.method_27973();
+         ItemStack var8 = var3.method_27973();
          var8.method_28017(1);
          this.method_37349(var2, var8);
          var3.method_27970(1);
@@ -480,7 +480,7 @@ public class class_9399 extends class_5834 {
    }
 
    private void method_43500(class_6199 var1) {
-      class_6414.method_29267(this.field_41768, this.method_37075(), new class_6098(class_4897.field_24960));
+      class_6414.method_29267(this.field_41768, this.method_37075(), new ItemStack(class_4897.field_24960));
       this.method_43513(var1);
    }
 
@@ -489,18 +489,18 @@ public class class_9399 extends class_5834 {
       this.method_26513(var1);
 
       for (int var4 = 0; var4 < this.field_48058.size(); var4++) {
-         class_6098 var5 = this.field_48058.get(var4);
+         ItemStack var5 = this.field_48058.get(var4);
          if (!var5.method_28022()) {
             class_6414.method_29267(this.field_41768, this.method_37075().method_6081(), var5);
-            this.field_48058.set(var4, class_6098.field_31203);
+            this.field_48058.set(var4, ItemStack.EMPTY);
          }
       }
 
       for (int var6 = 0; var6 < this.field_48054.size(); var6++) {
-         class_6098 var7 = this.field_48054.get(var6);
+         ItemStack var7 = this.field_48054.get(var6);
          if (!var7.method_28022()) {
             class_6414.method_29267(this.field_41768, this.method_37075().method_6081(), var7);
-            this.field_48054.set(var6, class_6098.field_31203);
+            this.field_48054.set(var6, ItemStack.EMPTY);
          }
       }
    }

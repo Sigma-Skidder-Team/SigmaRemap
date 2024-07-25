@@ -145,7 +145,7 @@ public class class_912 extends class_1173 implements class_6250 {
    }
 
    private boolean method_3905(class_704 var1) {
-      class_6098 var4 = var1.field_3853.field_36405.get(3);
+      ItemStack var4 = var1.inventory.field_36405.get(3);
       if (var4.method_27960() != class_4783.field_23281.method_10803()) {
          class_1343 var5 = var1.method_37307(1.0F).method_6213();
          class_1343 var6 = new class_1343(

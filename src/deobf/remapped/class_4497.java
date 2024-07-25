@@ -152,7 +152,7 @@ public class class_4497 extends class_341 implements class_8685 {
             var12.start();
          }
 
-         class_4897.field_25302.method_11239(class_8230.field_42264, class_2831.<class_6098>method_12874());
+         class_4897.field_25302.method_11239(class_8230.field_42264, class_2831.<ItemStack>method_12874());
          if (var4.field_50128) {
             class_7116.method_32712(this);
          }
@@ -334,7 +334,7 @@ public class class_4497 extends class_341 implements class_8685 {
    }
 
    @Override
-   public boolean method_1625(class_4666 var1, boolean var2, int var3) {
+   public boolean method_1625(GameType var1, boolean var2, int var3) {
       return false;
    }
 

@@ -35,7 +35,7 @@ public class class_9780 extends class_7651 {
       }
 
       for (ITextComponent var14 : class_7039.method_32263()) {
-         class_2089.method_9788(var1, class_7039.method_32233(this.field_49641), var14, this.field_49641.field_941 / 2, var9 + var10, var12);
+         AbstractGui.method_9788(var1, class_7039.method_32233(this.field_49641), var14, this.field_49641.field_941 / 2, var9 + var10, var12);
          var10 += 10;
       }
    }

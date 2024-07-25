@@ -399,21 +399,21 @@ public class class_2866 extends class_7875 {
    }
 
    private void method_13148(class_7966 var1, int var2, int var3, int var4, int var5) {
-      this.field_943.method_8577().method_35674(field_14040);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      this.field_943.getTextureManager().bindTexture(field_14040);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field_14018 = field_14033;
       }
    }
 
    private void method_13158(class_7966 var1, int var2, int var3, int var4, int var5, int var6) {
-      this.field_943.method_8577().method_35674(field_14047);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_14047);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       if (this.field_14020 % 20 >= 10) {
-         class_2089.method_9778(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method_9778(var1, var2, var3, 10.0F, 0.0F, 10, 28, 20, 28);
       } else {
-         class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
+         AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 20, 28);
       }
 
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
@@ -430,18 +430,18 @@ public class class_2866 extends class_7875 {
    }
 
    private void method_13146(class_7966 var1, int var2, int var3, int var4, int var5) {
-      this.field_943.method_8577().method_35674(field_14027);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      this.field_943.getTextureManager().bindTexture(field_14027);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field_14018 = field_14038;
       }
    }
 
    private void method_13140(class_7966 var1, int var2, int var3, int var4, int var5) {
-      this.field_943.method_8577().method_35674(field_14028);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_2089.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
+      this.field_943.getTextureManager().bindTexture(field_14028);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      AbstractGui.method_9778(var1, var2, var3, 0.0F, 0.0F, 10, 28, 10, 28);
       if (var4 >= var2 && var4 <= var2 + 9 && var5 >= var3 && var5 <= var3 + 27) {
          this.field_14018 = field_14025;
       }

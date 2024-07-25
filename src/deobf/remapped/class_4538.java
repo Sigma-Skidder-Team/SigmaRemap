@@ -10,7 +10,7 @@ public class class_4538 extends class_2285 {
 
    @Override
    public void method_10532(class_8932<?> var1) {
-      class_6098[] var4 = var1.method_41043().get(0).method_37020();
+      ItemStack[] var4 = var1.method_41043().get(0).method_37020();
       this.field_11417.add(new class_6061(this, 10, 10, var4));
    }
 }

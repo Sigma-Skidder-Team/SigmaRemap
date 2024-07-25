@@ -28,7 +28,7 @@ public class class_1719 {
    private static final Pattern field_8880 = Pattern.compile(".*\"text\":\"([^\"]+)\".*");
 
    public class_1719(String var1, String var2) {
-      String[] var5 = class_3111.method_14302(var1, ".");
+      String[] var5 = Config.method_14302(var1, ".");
       this.field_8875 = Arrays.<String>copyOfRange(var5, 0, var5.length - 1);
       this.field_8881 = var5[var5.length - 1];
       if (var2.startsWith("!")) {
@@ -131,7 +131,7 @@ public class class_1719 {
          if (var1.equals("count")) {
             return class_9413.method_43597(var4.size());
          } else {
-            int var5 = class_3111.method_14361(var1, -1);
+            int var5 = Config.method_14361(var1, -1);
             return var5 >= 0 && var5 < var4.size() ? var4.get(var5) : null;
          }
       }

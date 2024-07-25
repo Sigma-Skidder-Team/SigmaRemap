@@ -203,21 +203,21 @@ public class class_8356 {
 
       String var5 = var1.method_16509("Keep-Alive");
       if (var5 != null) {
-         String[] var6 = class_3111.method_14302(var5, ",;");
+         String[] var6 = Config.method_14302(var5, ",;");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
             String[] var9 = this.method_38476(var8, '=');
             if (var9.length >= 2) {
                if (var9[0].equals("timeout")) {
-                  int var10 = class_3111.method_14361(var9[1], -1);
+                  int var10 = Config.method_14361(var9[1], -1);
                   if (var10 > 0) {
                      this.field_42793 = (long)(var10 * 1000);
                   }
                }
 
                if (var9[0].equals("max")) {
-                  int var11 = class_3111.method_14361(var9[1], -1);
+                  int var11 = Config.method_14361(var9[1], -1);
                   if (var11 > 0) {
                      this.field_42786 = var11;
                   }

@@ -23,7 +23,7 @@ public class class_4690 {
             return field_22827;
          }
 
-         if (!var8.method_20690(var0) && class_3111.method_14331()) {
+         if (!var8.method_20690(var0) && Config.method_14331()) {
             var0 = class_8316.method_38342(var1, var2, var3, var4, var0);
          }
       }
@@ -60,14 +60,14 @@ public class class_4690 {
          return var7.method_20683(var0);
       } else {
          class_5024 var10 = var0;
-         if (class_3111.method_14370()) {
+         if (Config.method_14370()) {
             class_5024[] var11 = class_9049.method_41550(var1, var2, var3, var0, var7);
             if (var11.length != 1 || var11[0] != var0) {
                return var11;
             }
          }
 
-         if (class_3111.method_14404()) {
+         if (Config.method_14404()) {
             var0 = class_3475.method_15966(var3, var0);
             if (var0 != var10) {
                return var7.method_20683(var0);

@@ -48,7 +48,7 @@ public class class_7949 {
       }
 
       for (Throwable var9 : var3) {
-         class_3111.method_14317("" + var9.getClass().getName() + ": " + var9.getMessage());
+         Config.method_14317("" + var9.getClass().getName() + ": " + var9.getMessage());
       }
 
       return null;

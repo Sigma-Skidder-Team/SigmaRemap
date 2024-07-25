@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class class_1322 {
-   private static MinecraftClient field_7279 = class_3111.method_14327();
+   private static MinecraftClient field_7279 = Config.method_14327();
    private static class_4717 field_7283 = null;
    private static class_3739[][] field_7281 = (class_3739[][])null;
    public static boolean field_7282 = method_6036();
@@ -24,7 +24,7 @@ public class class_1322 {
                if (var4 == null) {
                   return var0;
                } else if (var3 instanceof class_2546) {
-                  return method_6039(class_1614.field_8385, field_7279.field_9632.method_37075(), var4, var0, var3);
+                  return method_6039(class_1614.field_8385, field_7279.thePlayer.method_37075(), var4, var0, var3);
                } else if (!(var3 instanceof class_3431)) {
                   class_1331 var5 = field_7283.method_21812();
                   if (var5 != null) {
@@ -82,7 +82,7 @@ public class class_1322 {
 
                   return var0;
                } else {
-                  return method_6039(class_1614.field_8382, field_7279.field_9632.method_37075(), var4, var0, var3);
+                  return method_6039(class_1614.field_8382, field_7279.thePlayer.method_37075(), var4, var0, var3);
                }
             } else {
                return var0;
@@ -129,9 +129,9 @@ public class class_1322 {
 
    public static void method_6046() {
       field_7281 = (class_3739[][])null;
-      if (class_3111.method_14373()) {
+      if (Config.method_14373()) {
          ArrayList var2 = new ArrayList();
-         class_8169[] var3 = class_3111.method_14347();
+         class_8169[] var3 = Config.method_14347();
 
          for (int var4 = var3.length - 1; var4 >= 0; var4--) {
             class_8169 var5 = var3[var4];
@@ -168,13 +168,13 @@ public class class_1322 {
 
       for (int var5 = 0; var5 < var4.length; var5++) {
          String var6 = var4[var5];
-         class_3111.method_14277("CustomGuis: " + var6);
+         Config.method_14277("CustomGuis: " + var6);
 
          try {
             Identifier var7 = new Identifier(var6);
             InputStream var8 = var0.method_37466(class_3168.field_15844, var7);
             if (var8 == null) {
-               class_3111.method_14317("CustomGuis file not found: " + var6);
+               Config.method_14317("CustomGuis file not found: " + var6);
             } else {
                class_8407 var9 = new class_8407();
                var9.load(var8);
@@ -185,7 +185,7 @@ public class class_1322 {
                }
             }
          } catch (FileNotFoundException var11) {
-            class_3111.method_14317("CustomGuis file not found: " + var6);
+            Config.method_14317("CustomGuis file not found: " + var6);
          } catch (Exception var12) {
             var12.printStackTrace();
          }
@@ -226,6 +226,6 @@ public class class_1322 {
    }
 
    private static void method_6045(String var0) {
-      class_3111.method_14317("[CustomGuis] " + var0);
+      Config.method_14317("[CustomGuis] " + var0);
    }
 }

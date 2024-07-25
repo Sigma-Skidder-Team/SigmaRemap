@@ -52,7 +52,7 @@ public class class_8616 {
 
    public static class_1347 method_39598(JsonObject var0) {
       String var3 = class_9235.method_42595(var0, "type");
-      if (!class_3111.equals(var3, "PlayerItem")) {
+      if (!Config.equals(var3, "PlayerItem")) {
          throw new JsonParseException("Unknown model type: " + var3);
       } else {
          int[] var4 = class_9235.method_42601(var0.get("textureSize"), 2);
@@ -71,7 +71,7 @@ public class class_8616 {
             if (var12 != null) {
                JsonObject var13 = (JsonObject)var8.get(var12);
                if (var13 == null) {
-                  class_3111.method_14317("BaseID not found: " + var12);
+                  Config.method_14317("BaseID not found: " + var12);
                   continue;
                }
 
@@ -85,7 +85,7 @@ public class class_8616 {
             String var17 = class_9235.method_42595(var11, "id");
             if (var17 != null) {
                if (var8.containsKey(var17)) {
-                  class_3111.method_14317("Duplicate model ID: " + var17);
+                  Config.method_14317("Duplicate model ID: " + var17);
                } else {
                   var8.put(var17, var11);
                }
@@ -128,7 +128,7 @@ public class class_8616 {
                      if (!var0.equals("leftLeg")) {
                         if (!var0.equals("rightLeg")) {
                            if (!var0.equals("cape")) {
-                              class_3111.method_14317("Unknown attachModel: " + var0);
+                              Config.method_14317("Unknown attachModel: " + var0);
                               return 0;
                            } else {
                               return 6;
@@ -158,7 +158,7 @@ public class class_8616 {
 
    public static class_3142 method_39602(JsonObject var0, Dimension var1) {
       String var4 = class_9235.method_42595(var0, "type");
-      if (class_3111.equals(var4, "ModelBox")) {
+      if (Config.equals(var4, "ModelBox")) {
          String var5 = class_9235.method_42595(var0, "attachTo");
          int var6 = method_39601(var5);
          class_4409 var7 = new class_4409(RenderLayer::method_16755);
@@ -167,7 +167,7 @@ public class class_8616 {
          class_1549 var8 = method_39597(var0, var7, (int[])null, (String)null);
          return new class_3142(var6, var8);
       } else {
-         class_3111.method_14317("Unknown model type: " + var4);
+         Config.method_14317("Unknown model type: " + var4);
          return null;
       }
    }
@@ -327,7 +327,7 @@ public class class_8616 {
             if (var40.method_7036() != null) {
                class_1549 var27 = var6.method_7042(var40.method_7036());
                if (var27 != null) {
-                  class_3111.method_14317("Duplicate model ID: " + var40.method_7036());
+                  Config.method_14317("Duplicate model ID: " + var40.method_7036());
                }
             }
 

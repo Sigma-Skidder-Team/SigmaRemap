@@ -35,9 +35,9 @@ public class SpeedModule extends SecondModule {
 
    @EventListen
    public void method_31654(PacketEvent var1) {
-      if (var1.method_557() instanceof class_509 && mc.field_9632 != null) {
+      if (var1.method_557() instanceof class_509 && client.thePlayer != null) {
          field_35509 = 0;
-         if (this.getBooleanValueByName("Lag back checker") && this.method_42015() && mc.field_9632.field_41697 > 2) {
+         if (this.getBooleanValueByName("Lag back checker") && this.method_42015() && client.thePlayer.field_41697 > 2) {
             SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Speed", "Disabled speed due to lagback."));
             this.method_41999();
          }

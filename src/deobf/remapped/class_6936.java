@@ -70,7 +70,7 @@ public class class_6936 extends class_8598 {
    }
 
    @Override
-   public class_6910 method_39520(class_9359 var1, World var2, class_6098 var3, class_2584 var4) {
+   public class_6910 method_39520(class_9359 var1, World var2, ItemStack var3, class_2584 var4) {
       if (!this.field_35655) {
          return super.method_39520(var1, var2, var3, var4);
       } else {
@@ -80,7 +80,7 @@ public class class_6936 extends class_8598 {
    }
 
    @Override
-   public class_6910 method_39528(class_9359 var1, World var2, class_6098 var3, class_2584 var4, class_9529 var5) {
+   public class_6910 method_39528(class_9359 var1, World var2, ItemStack var3, class_2584 var4, class_9529 var5) {
       if (!this.field_35655) {
          return super.method_39528(var1, var2, var3, var4, var5);
       } else {

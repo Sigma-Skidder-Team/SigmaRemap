@@ -41,7 +41,7 @@ public class class_778 extends class_2733 {
             var7.put(class_8469.field_43281, var1);
             return (class_8599)var6;
          } else {
-            class_3111.method_14317("Field not found: TileEntitySkullRenderer.MODELS");
+            Config.method_14317("Field not found: TileEntitySkullRenderer.MODELS");
             return null;
          }
       } else {

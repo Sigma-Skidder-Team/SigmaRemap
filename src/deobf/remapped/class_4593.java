@@ -72,10 +72,10 @@ public class class_4593 {
             if (var10 == null) {
                var2.put(var9, var8);
             } else {
-               if (!class_3111.equals(var10.method_31382(), var8.method_31382())) {
-                  class_3111.method_14317("Ambiguous shader option: " + var8.method_31405());
-                  class_3111.method_14317(" - in " + class_3111.method_14289(var10.method_31402()) + ": " + var10.method_31382());
-                  class_3111.method_14317(" - in " + class_3111.method_14289(var8.method_31402()) + ": " + var8.method_31382());
+               if (!Config.equals(var10.method_31382(), var8.method_31382())) {
+                  Config.method_14317("Ambiguous shader option: " + var8.method_31405());
+                  Config.method_14317(" - in " + Config.method_14289(var10.method_31402()) + ": " + var10.method_31382());
+                  Config.method_14317(" - in " + Config.method_14289(var8.method_31402()) + ": " + var8.method_31382());
                   var10.method_31386(false);
                }
 
@@ -108,10 +108,10 @@ public class class_4593 {
             return new String[0];
          } else {
             ByteArrayInputStream var6 = new ByteArrayInputStream(var5.getBytes());
-            return class_3111.method_14432(var6);
+            return Config.method_14432(var6);
          }
       } catch (IOException var7) {
-         class_3111.method_14277(var7.getClass().getName() + ": " + var7.getMessage());
+         Config.method_14277(var7.getClass().getName() + ": " + var7.getMessage());
          return new String[0];
       }
    }
@@ -238,7 +238,7 @@ public class class_4593 {
       HashSet var4 = new HashSet();
       String var5 = var0.getProperty("sliders");
       if (var5 != null) {
-         String[] var6 = class_3111.method_14302(var5, " ");
+         String[] var6 = Config.method_14302(var5, " ");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
@@ -246,7 +246,7 @@ public class class_4593 {
             if (var9 != null) {
                var4.add(var8);
             } else {
-               class_3111.method_14317("Invalid shader option: " + var8);
+               Config.method_14317("Invalid shader option: " + var8);
             }
          }
 
@@ -263,12 +263,12 @@ public class class_4593 {
          var2.add(var0);
          class_8471 var8 = new class_8471(var0);
          String var9 = var1.getProperty(var7);
-         String[] var10 = class_3111.method_14302(var9, " ");
+         String[] var10 = Config.method_14302(var9, " ");
 
          for (int var11 = 0; var11 < var10.length; var11++) {
             String var12 = var10[var11];
             if (!var12.startsWith(var6)) {
-               String[] var13 = class_3111.method_14302(var12, ":=");
+               String[] var13 = Config.method_14302(var12, ":=");
                if (var13.length != 1) {
                   if (var13.length == 2) {
                      String var14 = var13[0];
@@ -279,13 +279,13 @@ public class class_4593 {
                            var16.method_31400(true);
                            var8.method_38979(var14, var15);
                         } else {
-                           class_3111.method_14317("[Shaders] Invalid value: " + var12);
+                           Config.method_14317("[Shaders] Invalid value: " + var12);
                         }
                      } else {
-                        class_3111.method_14317("[Shaders] Invalid option: " + var12);
+                        Config.method_14317("[Shaders] Invalid option: " + var12);
                      }
                   } else {
-                     class_3111.method_14317("[Shaders] Invalid option value: " + var12);
+                     Config.method_14317("[Shaders] Invalid option value: " + var12);
                   }
                } else {
                   String var19 = var13[0];
@@ -302,7 +302,7 @@ public class class_4593 {
                         var8.method_38979(var19, String.valueOf(var21));
                         var17.method_31400(true);
                      } else {
-                        class_3111.method_14317("[Shaders] Invalid option: " + var19);
+                        Config.method_14317("[Shaders] Invalid option: " + var19);
                      }
                   } else {
                      String var23 = var19.substring(var22.length());
@@ -313,7 +313,7 @@ public class class_4593 {
                            var8.method_38985(var23);
                         }
                      } else {
-                        class_3111.method_14317("Invalid program: " + var23 + " in profile: " + var8.method_38982());
+                        Config.method_14317("Invalid program: " + var23 + " in profile: " + var8.method_38982());
                      }
                   }
                }
@@ -329,7 +329,7 @@ public class class_4593 {
 
          return var8;
       } else {
-         class_3111.method_14317("[Shaders] Profile already parsed: " + var0);
+         Config.method_14317("[Shaders] Profile already parsed: " + var0);
          return null;
       }
    }
@@ -347,7 +347,7 @@ public class class_4593 {
       } else {
          ArrayList var8 = new ArrayList();
          HashSet var9 = new HashSet();
-         String[] var10 = class_3111.method_14302(var7, " ");
+         String[] var10 = Config.method_14302(var7, " ");
 
          for (int var11 = 0; var11 < var10.length; var11++) {
             String var12 = var10[var11];
@@ -363,10 +363,10 @@ public class class_4593 {
                                  class_2838 var14 = new class_2838(var17);
                                  var8.add(var14);
                               } else {
-                                 class_3111.method_14317("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
+                                 Config.method_14317("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
                               }
                            } else {
-                              class_3111.method_14317("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
+                              Config.method_14317("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
                            }
                         } else {
                            class_6843 var13 = class_1001.method_4342(var12, var4);
@@ -374,7 +374,7 @@ public class class_4593 {
                               var13.method_31400(true);
                               var8.add(var13);
                            } else {
-                              class_3111.method_14317("[Shaders] Invalid option: " + var12 + ", key: " + var0);
+                              Config.method_14317("[Shaders] Invalid option: " + var12 + ", key: " + var0);
                               var8.add((class_6843)null);
                            }
                         }
@@ -386,10 +386,10 @@ public class class_4593 {
                      class_4058 var19 = new class_4058(var3, var4);
                      var8.add(var19);
                   } else {
-                     class_3111.method_14317("[Shaders] Option profile can not be used, no profiles defined: " + var12 + ", key: " + var0);
+                     Config.method_14317("[Shaders] Option profile can not be used, no profiles defined: " + var12 + ", key: " + var0);
                   }
                } else {
-                  class_3111.method_14317("[Shaders] Duplicate option: " + var12 + ", key: " + var0);
+                  Config.method_14317("[Shaders] Duplicate option: " + var12 + ", key: " + var0);
                }
             } else {
                var8.add((class_6843)null);
@@ -398,7 +398,7 @@ public class class_4593 {
 
          class_6843[] var15 = var8.<class_6843>toArray(new class_6843[var8.size()]);
          String var16 = var1.getProperty(var0 + ".columns");
-         int var20 = class_3111.method_14361(var16, 2);
+         int var20 = Config.method_14361(var16, 2);
          class_4842 var21 = new class_4842(var0, var15, var20);
          var2.put(var0, var21);
          return true;
@@ -554,7 +554,7 @@ public class class_4593 {
       ArrayList var8 = new ArrayList();
 
       for (String var10 : var0.keySet()) {
-         String[] var11 = class_3111.method_14302(var10, ".");
+         String[] var11 = Config.method_14302(var10, ".");
          if (var11.length == 3) {
             String var12 = var11[0];
             String var13 = var11[1];
@@ -620,7 +620,7 @@ public class class_4593 {
 
    public static void method_21285(Properties var0) {
       for (String var4 : var0.keySet()) {
-         String[] var5 = class_3111.method_14302(var4, ".");
+         String[] var5 = Config.method_14302(var4, ".");
          if (var5.length == 2) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -644,13 +644,13 @@ public class class_4593 {
       if (var0 == null) {
          return null;
       } else {
-         String[] var3 = class_3111.method_14302(var0, " ");
+         String[] var3 = Config.method_14302(var0, " ");
          if (var3.length != 1) {
             if (var3.length == 2) {
                String var8 = var3[0];
                String var5 = var3[1];
                Integer var6 = field_22326.get(var8);
-               float var7 = class_3111.method_14445(var5, -1.0F);
+               float var7 = Config.method_14445(var5, -1.0F);
                if (var6 != null && var7 >= 0.0F) {
                   return new class_2412(true, var6, var7);
                }
@@ -669,7 +669,7 @@ public class class_4593 {
 
    public static void method_21282(Properties var0) {
       for (String var4 : var0.keySet()) {
-         String[] var5 = class_3111.method_14302(var4, ".");
+         String[] var5 = Config.method_14302(var4, ".");
          if (var5.length == 2) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -693,7 +693,7 @@ public class class_4593 {
       if (var0 == null) {
          return null;
       } else {
-         String[] var3 = class_3111.method_14302(var0, " ");
+         String[] var3 = Config.method_14302(var0, " ");
          if (var3.length != 1) {
             if (var3.length == 2 || var3.length == 4) {
                String var12 = var3[0];
@@ -727,7 +727,7 @@ public class class_4593 {
 
    public static void method_21269(Properties var0) {
       for (String var4 : var0.keySet()) {
-         String[] var5 = class_3111.method_14302(var4, ".");
+         String[] var5 = Config.method_14302(var4, ".");
          if (var5.length == 2) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -748,8 +748,8 @@ public class class_4593 {
    }
 
    private static class_1400 method_21284(String var0) {
-      String[] var3 = class_3111.method_14302(var0, " ");
-      float var4 = class_3111.method_14445(var3[0], -1.0F);
+      String[] var3 = Config.method_14302(var0, " ");
+      float var4 = Config.method_14445(var3[0], -1.0F);
       float var5 = 0.0F;
       float var6 = 0.0F;
       if (var3.length > 1) {
@@ -758,11 +758,11 @@ public class class_4593 {
             return null;
          }
 
-         var5 = class_3111.method_14445(var3[1], -1.0F);
-         var6 = class_3111.method_14445(var3[2], -1.0F);
+         var5 = Config.method_14445(var3[1], -1.0F);
+         var6 = Config.method_14445(var3[2], -1.0F);
       }
 
-      if (class_3111.method_14353(var4, 0.0F, 1.0F) && class_3111.method_14353(var5, 0.0F, 1.0F) && class_3111.method_14353(var6, 0.0F, 1.0F)) {
+      if (Config.method_14353(var4, 0.0F, 1.0F) && Config.method_14353(var5, 0.0F, 1.0F) && Config.method_14353(var6, 0.0F, 1.0F)) {
          return new class_1400(var4, var5, var6);
       } else {
          class_1910.method_8673("Invalid render scale: " + var0);
@@ -772,7 +772,7 @@ public class class_4593 {
 
    public static void method_21273(Properties var0) {
       for (String var4 : var0.keySet()) {
-         String[] var5 = class_3111.method_14302(var4, ".");
+         String[] var5 = Config.method_14302(var4, ".");
          if (var5.length == 3) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -784,7 +784,7 @@ public class class_4593 {
                   int var11 = class_6588.method_30167(var8);
                   if (var11 >= 0 && var11 < var10.length) {
                      String var12 = var0.getProperty(var4).trim();
-                     Boolean var13 = class_3111.method_14256(var12, (Boolean)null);
+                     Boolean var13 = Config.method_14256(var12, (Boolean)null);
                      if (var13 != null) {
                         var10[var11] = var13;
                      } else {

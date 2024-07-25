@@ -52,9 +52,9 @@ public interface class_5684 {
 
    String method_25716();
 
-   class_4666 method_25709();
+   GameType method_25709();
 
-   void method_25711(class_4666 var1);
+   void method_25711(GameType var1);
 
    boolean method_25714();
 

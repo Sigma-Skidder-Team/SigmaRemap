@@ -11,7 +11,7 @@ public final class class_2945 extends Thread {
    @Override
    public void run() {
       try {
-         class_3542.method_16390(true);
+         RenderSystem.method_16390(true);
          this.field_14368.run();
       } catch (Throwable var4) {
          Main.method_5().error("Exception in client thread", var4);

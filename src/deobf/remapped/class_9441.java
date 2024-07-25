@@ -12,7 +12,7 @@ import java.util.List;
 
 public class class_9441 {
    public static InputStream method_43672(InputStream var0, String var1) throws IOException {
-      String var4 = class_3111.method_14271(var0, "ASCII");
+      String var4 = Config.method_14271(var0, "ASCII");
       String var5 = method_43671(var4);
       if (!var5.isEmpty()) {
          var4 = var5 + var4;

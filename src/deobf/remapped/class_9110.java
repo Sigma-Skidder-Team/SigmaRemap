@@ -19,7 +19,7 @@ public class class_9110<T extends class_4040> extends class_3599 {
       if (this.field_46652.method_18600()
          && !this.field_46652.method_18589().method_11259()
          && this.field_46652.method_21357()
-         && !class_6098.method_27982(this.field_46652.method_26520(class_6943.field_35704), class_2452.method_11292())) {
+         && !ItemStack.method_27982(this.field_46652.method_26520(class_6943.field_35704), class_2452.method_11292())) {
          class_4040 var4 = var3.method_11282(this.field_46652.method_18592());
          if (var4 == null || !var4.method_37330()) {
             List var5 = this.field_46652

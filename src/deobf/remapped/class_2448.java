@@ -252,7 +252,7 @@ public class class_2448 {
       if (var2 != 0) {
          int var7 = var3.method_13168();
          if (var7 != 64) {
-            class_1920.method_8812(var0, var1, var2);
+            GlStateManager.method_8812(var0, var1, var2);
          } else {
             ((Buffer)var4).position(36);
             GL20.glVertexAttribPointer(class_6588.field_33801, 2, 5126, false, var7, var4);
@@ -264,7 +264,7 @@ public class class_2448 {
             GL20.glEnableVertexAttribArray(class_6588.field_33801);
             GL20.glEnableVertexAttribArray(class_6588.field_33817);
             GL20.glEnableVertexAttribArray(class_6588.field_33899);
-            class_1920.method_8812(var0, var1, var2);
+            GlStateManager.method_8812(var0, var1, var2);
             GL20.glDisableVertexAttribArray(class_6588.field_33801);
             GL20.glDisableVertexAttribArray(class_6588.field_33817);
             GL20.glDisableVertexAttribArray(class_6588.field_33899);

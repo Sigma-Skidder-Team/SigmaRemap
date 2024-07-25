@@ -29,7 +29,7 @@ public class class_9574 extends class_2875 {
    }
 
    @Override
-   public class_6098 method_13209(class_704 var1, class_6098 var2) {
+   public ItemStack method_13209(class_704 var1, ItemStack var2) {
       var2.method_27964(var1.field_41768, var1, var2.method_27997());
       this.field_14087.method_41424(var1);
       this.method_44242(0);
@@ -39,7 +39,7 @@ public class class_9574 extends class_2875 {
    }
 
    private void method_44242(int var1) {
-      class_6098 var4 = this.field_14085.method_31498(var1);
+      ItemStack var4 = this.field_14085.method_31498(var1);
       var4.method_27970(1);
       this.field_14085.method_31503(var1, var4);
    }
@@ -49,21 +49,21 @@ public class class_9574 extends class_2875 {
       List var3 = this.field_48707.method_29549().<class_6867, class_667>method_23143(class_1510.field_7998, this.field_14085, this.field_48707);
       if (!var3.isEmpty()) {
          this.field_48705 = (class_667)var3.get(0);
-         class_6098 var4 = this.field_48705.method_41042(this.field_14085);
+         ItemStack var4 = this.field_48705.method_41042(this.field_14085);
          this.field_14087.method_41427(this.field_48705);
          this.field_14087.method_31503(0, var4);
       } else {
-         this.field_14087.method_31503(0, class_6098.field_31203);
+         this.field_14087.method_31503(0, ItemStack.EMPTY);
       }
    }
 
    @Override
-   public boolean method_13211(class_6098 var1) {
+   public boolean method_13211(ItemStack var1) {
       return this.field_48706.stream().anyMatch(var1x -> var1x.method_3043(var1));
    }
 
    @Override
-   public boolean method_18873(class_6098 var1, class_7934 var2) {
+   public boolean method_18873(ItemStack var1, class_7934 var2) {
       return var2.field_40591 != this.field_14087 && super.method_18873(var1, var2);
    }
 }

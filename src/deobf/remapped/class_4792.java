@@ -2,10 +2,10 @@ package remapped;
 
 public class class_4792 extends class_1859 {
    private static String[] field_23968;
-   public class_6098 field_23969;
+   public ItemStack field_23969;
    public boolean field_23967;
 
-   public class_4792(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_6098 var7) {
+   public class_4792(class_7038 var1, String var2, int var3, int var4, int var5, int var6, ItemStack var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field_23969 = var7;
    }

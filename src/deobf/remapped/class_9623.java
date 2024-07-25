@@ -36,12 +36,12 @@ public class class_9623<T extends class_6406> {
          this.field_49018 = var6;
       }
 
-      class_3542.method_16438();
-      class_3542.method_16413(
+      RenderSystem.method_16438();
+      RenderSystem.method_16413(
          (float)var1 - (float)this.field_49021.method_29239() * this.method_44420(var6), (float)(var2 * this.field_49021.method_29238()), (float)(800 + var2)
       );
       class_5068 var8 = this.field_49021.method_29236(var3, this.field_49020, var6 - this.field_49018);
-      class_3542.method_16489();
+      RenderSystem.method_16489();
       if (var8 != this.field_49023) {
          this.field_49022 = var6 - (long)((int)((1.0F - this.method_44420(var6)) * 600.0F));
          this.field_49023 = var8;

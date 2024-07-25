@@ -156,7 +156,7 @@ public class class_6964 {
          String var3 = this.field_35785.trim();
          var3 = class_8251.method_37832(var3, "vec4");
          var3 = class_8251.method_37830(var3, " ()");
-         String[] var4 = class_3111.method_14302(var3, ", ");
+         String[] var4 = Config.method_14302(var3, ", ");
          if (var4.length != 4) {
             return null;
          } else {
@@ -165,7 +165,7 @@ public class class_6964 {
             for (int var6 = 0; var6 < var4.length; var6++) {
                String var7 = var4[var6];
                var7 = class_8251.method_37823(var7, new String[]{"F", "f"});
-               float var8 = class_3111.method_14445(var7, Float.MAX_VALUE);
+               float var8 = Config.method_14445(var7, Float.MAX_VALUE);
                if (var8 == Float.MAX_VALUE) {
                   return null;
                }

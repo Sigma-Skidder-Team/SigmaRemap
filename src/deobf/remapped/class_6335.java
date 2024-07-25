@@ -40,7 +40,7 @@ public class class_6335 extends class_6843 {
          String var6 = var4.group(2);
          String var7 = var4.group(3);
          if (var6 != null && var6.length() > 0) {
-            boolean var8 = class_3111.equals(var5, "//");
+            boolean var8 = Config.equals(var5, "//");
             boolean var9 = !var8;
             var1 = class_8251.method_37832(var1, "/shaders/");
             return new class_6335(var6, var7, String.valueOf(var9), var1);

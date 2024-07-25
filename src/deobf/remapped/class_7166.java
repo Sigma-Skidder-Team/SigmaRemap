@@ -41,11 +41,11 @@ public class class_7166 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, class_9583.field_48747);
       if (var7.method_33990() == class_1430.field_7717 && var1.method_28262(var7.method_43955()).method_8350(class_4783.field_23491)) {
-         return class_954.<class_6098>method_4207(var6);
+         return class_954.<ItemStack>method_4207(var6);
       } else {
          var2.method_26462(var3);
          if (var1 instanceof class_6331) {
@@ -79,11 +79,11 @@ public class class_7166 extends class_2451 {
 
                var2.method_3211(class_6234.field_31907.method_43790(this));
                var2.method_26488(var3, true);
-               return class_954.<class_6098>method_4205(var6);
+               return class_954.<ItemStack>method_4205(var6);
             }
          }
 
-         return class_954.<class_6098>method_4206(var6);
+         return class_954.<ItemStack>method_4206(var6);
       }
    }
 }

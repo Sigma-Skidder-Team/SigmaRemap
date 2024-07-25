@@ -65,7 +65,7 @@ public class class_6459 extends class_4569 {
       return var4;
    }
 
-   public boolean method_29435(class_7051 var1, class_6098 var2, int var3, int var4, int var5) {
+   public boolean method_29435(class_7051 var1, ItemStack var2, int var3, int var4, int var5) {
       if (!this.field_32928.method_35307(var3)) {
          return false;
       } else if (!this.field_32926.method_35307(var4)) {
@@ -87,7 +87,7 @@ public class class_6459 extends class_4569 {
                   return true;
                }
 
-               class_6098 var12 = var1.method_31498(var11);
+               ItemStack var12 = var1.method_31498(var11);
                if (!var12.method_28022()) {
                   var9.removeIf(var1x -> var1x.method_24266(var12));
                }

@@ -54,7 +54,7 @@ public class class_460 implements Comparable<class_460> {
       }
    }
 
-   public class_4666 method_2211() {
+   public GameType method_2211() {
       return this.field_1916.method_28720();
    }
 

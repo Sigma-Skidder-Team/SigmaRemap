@@ -13,20 +13,20 @@ public class NCPSpeed extends Module {
    @Override
    public void onEnable() {
       this.field_7883 = 1;
-      double var3 = mc.field_9632.method_37098().field_7336;
-      double var5 = mc.field_9632.method_37098().field_7334;
+      double var3 = client.thePlayer.method_37098().field_7336;
+      double var5 = client.thePlayer.method_37098().field_7334;
       this.field_7882 = Math.sqrt(var3 * var3 + var5 * var5);
    }
 
    @EventListen
    public void method_6779(class_1393 var1) {
       if (this.method_42015()
-         && mc.field_9632 != null
+         && client.thePlayer != null
          && !JesusModule.method_32081()
-         && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
+         && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
          if (var1.method_6449() && SpeedModule.field_35509 > 1) {
-            double var4 = mc.field_9632.method_37302() - mc.field_9632.field_30525;
-            double var6 = mc.field_9632.method_37156() - mc.field_9632.field_30507;
+            double var4 = client.thePlayer.method_37302() - client.thePlayer.field_30525;
+            double var6 = client.thePlayer.method_37156() - client.thePlayer.field_30507;
             if (this.field_7881 != 0) {
                this.field_7882 = Math.sqrt(var4 * var4 + var6 * var6);
             } else {
@@ -38,13 +38,13 @@ public class NCPSpeed extends Module {
 
    @EventListen
    public void method_6782(class_7767 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
-         if (!JesusModule.method_32081() && !mc.field_9632.method_37285()) {
+      if (this.method_42015() && client.thePlayer != null) {
+         if (!JesusModule.method_32081() && !client.thePlayer.method_37285()) {
             if (this.field_7883 < 2) {
                this.field_7883++;
             }
 
-            if (!mc.field_9632.field_41726) {
+            if (!client.thePlayer.field_41726) {
                if (this.field_7881 >= 0) {
                   this.field_7881++;
                   double var4 = this.field_7882;
@@ -59,12 +59,12 @@ public class NCPSpeed extends Module {
                      var1.method_35235(var1.method_35236() - 0.01);
                   }
                }
-            } else if (this.field_7883 > 1 && (this.getBooleanValueByName("Auto Jump") && class_314.method_1434() || mc.gameOptions.keyJump.isKeyDown())) {
+            } else if (this.field_7883 > 1 && (this.getBooleanValueByName("Auto Jump") && class_314.method_1434() || client.gameOptions.keyJump.isKeyDown())) {
                this.field_7881 = 0;
-               mc.field_9632.method_26595();
-               var1.method_35232(mc.field_9632.method_37098().field_7336);
-               var1.method_35235(mc.field_9632.method_37098().field_7333);
-               var1.method_35229(mc.field_9632.method_37098().field_7334);
+               client.thePlayer.method_26595();
+               var1.method_35232(client.thePlayer.method_37098().field_7336);
+               var1.method_35235(client.thePlayer.method_37098().field_7333);
+               var1.method_35229(client.thePlayer.method_37098().field_7334);
             }
          } else {
             this.field_7881 = -1;
@@ -80,7 +80,7 @@ public class NCPSpeed extends Module {
             var1.method_29715(true);
          }
 
-         if (!mc.gameOptions.keyJump.isKeyDown() || !SigmaMainClass.getInstance().getModuleManager().method_847(BlockFlyModule.class).method_42015()) {
+         if (!client.gameOptions.keyJump.isKeyDown() || !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(BlockFlyModule.class).method_42015()) {
             double var4 = 0.56 + (double)class_8865.method_40770() * 0.1;
             var1.method_13313(0.407 + (double)class_8865.method_40769() * 0.1 + Math.random() * 1.0E-5);
             if (SpeedModule.field_35509 < 2) {

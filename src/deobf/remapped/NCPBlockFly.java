@@ -28,22 +28,22 @@ public class NCPBlockFly extends Module {
 
    @Override
    public void onEnable() {
-      this.field_30933 = mc.field_9632.field_3853.field_36404;
+      this.field_30933 = client.thePlayer.inventory.field_36404;
       this.field_30942 = this.field_30937 = 999.0F;
       ((BlockFlyModule)this.method_42017()).field_18196 = -1;
-      if (mc.gameOptions.keySneak.isKeyDown() && this.getBooleanValueByName("Downwards")) {
-         mc.gameOptions.keySneak.pressed = false;
+      if (client.gameOptions.keySneak.isKeyDown() && this.getBooleanValueByName("Downwards")) {
+         client.gameOptions.keySneak.pressed = false;
          this.field_30935 = true;
       }
 
-      if (!mc.gameOptions.keySneak.isKeyDown()) {
+      if (!client.gameOptions.keySneak.isKeyDown()) {
          this.field_30935 = false;
       }
 
       this.field_30931 = -1.0;
       this.field_30941 = false;
-      if (mc.field_9632.field_41726) {
-         this.field_30931 = mc.field_9632.method_37309();
+      if (client.thePlayer.field_41726) {
+         this.field_30931 = client.thePlayer.method_37309();
       }
 
       this.field_30939 = -1;
@@ -52,17 +52,17 @@ public class NCPBlockFly extends Module {
    @Override
    public void onDisable() {
       if (this.field_30933 != -1 && this.method_42017().getStringValueByName("ItemSpoof").equals("Switch")) {
-         mc.field_9632.field_3853.field_36404 = this.field_30933;
+         client.thePlayer.inventory.field_36404 = this.field_30933;
       }
 
       this.field_30933 = -1;
       if (((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
-         mc.method_8614().method_4813(new class_7371(mc.field_9632.field_3853.field_36404));
+         client.method_8614().method_4813(new class_7371(client.thePlayer.inventory.field_36404));
          ((BlockFlyModule)this.method_42017()).field_18196 = -1;
       }
 
       class_8865.method_40776(class_8865.method_40775() * 0.9);
-      mc.theTimer.timerSpeed = 1.0F;
+      client.theTimer.timerSpeed = 1.0F;
       if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && this.field_30939 == 0) {
          class_314.method_1408(-0.0789);
       }
@@ -71,19 +71,19 @@ public class NCPBlockFly extends Module {
    @EventListen
    public void method_27618(class_7982 var1) {
       if (this.method_42015()) {
-         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
-            if (mc.field_9601
+         if (this.getStringValueByName("Speed Mode").equals("Cubecraft") && !SigmaMainClass.getInstance().getModuleManager().getModuleByClass(FlyModule.class).method_42015()) {
+            if (client.field_9601
                      .method_6680(
-                        mc.field_9632,
-                        mc.field_9632.field_41712.method_18928(0.0, -1.5, 0.0).method_18900(0.05, 0.0, 0.05).method_18900(-0.05, 0.0, -0.05)
+                        client.thePlayer,
+                        client.thePlayer.field_41712.method_18928(0.0, -1.5, 0.0).method_18900(0.05, 0.0, 0.05).method_18900(-0.05, 0.0, -0.05)
                      )
                      .count()
                   == 0L
-               && mc.field_9632.field_41706 < 1.0F) {
+               && client.thePlayer.field_41706 < 1.0F) {
                var1.method_36186(true);
             }
-         } else if (mc.field_9632.field_41726
-            && SigmaMainClass.getInstance().getModuleManager().method_847(SafeWalkModule.class).method_42015()
+         } else if (client.thePlayer.field_41726
+            && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SafeWalkModule.class).method_42015()
             && (!this.field_30935 || !this.getBooleanValueByName("Downwards"))) {
             var1.method_36186(true);
          }
@@ -93,7 +93,7 @@ public class NCPBlockFly extends Module {
    @EventListen
    private void method_27627(class_6435 var1) {
       if (this.method_42015() && this.getBooleanValueByName("Downwards")) {
-         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_30935 = true;
          }
@@ -103,7 +103,7 @@ public class NCPBlockFly extends Module {
    @EventListen
    private void method_27626(class_307 var1) {
       if (this.method_42015() && this.getBooleanValueByName("Downwards")) {
-         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_30935 = false;
          }
@@ -120,30 +120,30 @@ public class NCPBlockFly extends Module {
                class_9529 var13 = new class_9529(
                   method_27625(this.field_30932.field_14163, this.field_30932.field_14162), this.field_30932.field_14162, this.field_30932.field_14163, false
                );
-               int var14 = mc.field_9632.field_3853.field_36404;
+               int var14 = client.thePlayer.inventory.field_36404;
                if (!this.method_42017().getStringValueByName("ItemSpoof").equals("None")) {
                   this.field_30936.method_17211();
                }
 
-               mc.field_9647.method_42147(mc.field_9632, mc.field_9601, this.field_30940, var13);
+               client.playerController.method_42147(client.thePlayer, client.field_9601, this.field_30940, var13);
                if (!this.method_42017().getBooleanValueByName("NoSwing")) {
-                  mc.field_9632.method_26597(this.field_30940);
+                  client.thePlayer.method_26597(this.field_30940);
                } else {
-                  mc.method_8614().method_4813(new class_3195(this.field_30940));
+                  client.method_8614().method_4813(new class_3195(this.field_30940));
                }
 
                if (this.method_42017().getStringValueByName("ItemSpoof").equals("Spoof") || this.method_42017().getStringValueByName("ItemSpoof").equals("LiteSpoof")) {
-                  mc.field_9632.field_3853.field_36404 = var14;
+                  client.thePlayer.inventory.field_36404 = var14;
                }
             }
          } else {
             this.field_30934++;
             var1.method_6444(true);
             this.field_30940 = class_2584.field_12791;
-            if (BlockFlyModule.method_17216(mc.field_9632.method_26617(class_2584.field_12794).method_27960())
+            if (BlockFlyModule.method_17216(client.thePlayer.method_26617(class_2584.field_12794).method_27960())
                && (
-                  mc.field_9632.method_26617(this.field_30940).method_28022()
-                     || !BlockFlyModule.method_17216(mc.field_9632.method_26617(this.field_30940).method_27960())
+                  client.thePlayer.method_26617(this.field_30940).method_28022()
+                     || !BlockFlyModule.method_17216(client.thePlayer.method_26617(this.field_30940).method_27960())
                )) {
                this.field_30940 = class_2584.field_12794;
             }
@@ -151,32 +151,32 @@ public class NCPBlockFly extends Module {
             double var4 = var1.method_6450();
             double var6 = var1.method_6438();
             double var8 = var1.method_6454();
-            if (!mc.field_9632.field_41744 && !mc.gameOptions.keyJump.pressed) {
+            if (!client.thePlayer.field_41744 && !client.gameOptions.keyJump.pressed) {
                double[] var10 = this.method_27620();
                var4 = var10[0];
                var6 = var10[1];
             }
 
-            if (mc.field_9632.method_37098().field_7333 < 0.0
-               && mc.field_9632.field_41706 > 1.0F
+            if (client.thePlayer.method_37098().field_7333 < 0.0
+               && client.thePlayer.field_41706 > 1.0F
                && class_7494.method_34079(0.0F, 90.0F, 3.0F).method_33990() == class_1430.field_7721) {
-               var8 += Math.min(mc.field_9632.method_37098().field_7333 * 2.0, 4.0);
+               var8 += Math.min(client.thePlayer.method_37098().field_7333 * 2.0, 4.0);
             } else if (this.field_30935 && this.getBooleanValueByName("Downwards")) {
                var8--;
             } else if ((this.getStringValueByName("Speed Mode").equals("Jump") || this.getStringValueByName("Speed Mode").equals("Cubecraft"))
-               && !mc.gameOptions.keyJump.isKeyDown()) {
+               && !client.gameOptions.keyJump.isKeyDown()) {
                var8 = this.field_30931;
             }
 
             if (!class_7494.method_34090(
                new class_1331(
-                  mc.field_9632.method_37245().method_61(),
-                  mc.field_9632.method_37245().method_60() - 1.0,
-                  mc.field_9632.method_37245().method_62()
+                  client.thePlayer.method_37245().method_61(),
+                  client.thePlayer.method_37245().method_60() - 1.0,
+                  client.thePlayer.method_37245().method_62()
                )
             )) {
-               var4 = mc.field_9632.method_37245().method_61();
-               var6 = mc.field_9632.method_37245().method_62();
+               var4 = client.thePlayer.method_37245().method_61();
+               var6 = client.thePlayer.method_37245().method_62();
             }
 
             class_1331 var15 = new class_1331(var4, var8 - 1.0, var6);
@@ -199,7 +199,7 @@ public class NCPBlockFly extends Module {
                this.field_30932 = null;
             }
 
-            if (mc.field_9632.field_41701 != var1.method_6442() && mc.field_9632.field_41755 != var1.method_6439()) {
+            if (client.thePlayer.field_41701 != var1.method_6442() && client.thePlayer.field_41755 != var1.method_6439()) {
                this.field_30934 = 0;
             }
          }
@@ -210,15 +210,15 @@ public class NCPBlockFly extends Module {
    @class_315
    public void method_27619(class_7767 var1) {
       if (this.method_42015() && this.field_30936.method_17219() != 0) {
-         if (mc.field_9632.field_41726 || class_314.method_1413(mc.field_9632, 0.01F)) {
-            this.field_30931 = mc.field_9632.method_37309();
+         if (client.thePlayer.field_41726 || class_314.method_1413(client.thePlayer, 0.01F)) {
+            this.field_30931 = client.thePlayer.method_37309();
          }
 
          if (this.method_42017().getBooleanValueByName("No Sprint")) {
-            mc.field_9632.method_37140(false);
+            client.thePlayer.method_37140(false);
          }
 
-         if (mc.field_9632.field_41726) {
+         if (client.thePlayer.field_41726) {
             this.field_30939 = 0;
          } else if (this.field_30939 >= 0) {
             this.field_30939++;
@@ -231,28 +231,28 @@ public class NCPBlockFly extends Module {
          String var4 = this.getStringValueByName("Speed Mode");
          switch (var4) {
             case "Jump":
-               if (mc.field_9632.field_41726 && class_314.method_1434() && !mc.field_9632.method_37252() && !this.field_30935) {
+               if (client.thePlayer.field_41726 && class_314.method_1434() && !client.thePlayer.method_37252() && !this.field_30935) {
                   this.field_30941 = false;
-                  mc.field_9632.method_26595();
-                  ((SpeedModule) SigmaMainClass.getInstance().getModuleManager().method_847(SpeedModule.class)).method_31653();
+                  client.thePlayer.method_26595();
+                  ((SpeedModule) SigmaMainClass.getInstance().getModuleManager().getModuleByClass(SpeedModule.class)).method_31653();
                   this.field_30941 = true;
-                  var1.method_35235(mc.field_9632.method_37098().field_7333);
-                  var1.method_35232(mc.field_9632.method_37098().field_7336);
-                  var1.method_35229(mc.field_9632.method_37098().field_7334);
+                  var1.method_35235(client.thePlayer.method_37098().field_7333);
+                  var1.method_35232(client.thePlayer.method_37098().field_7336);
+                  var1.method_35229(client.thePlayer.method_37098().field_7334);
                }
                break;
             case "AAC":
-               if (this.field_30934 == 0 && mc.field_9632.field_41726) {
+               if (this.field_30934 == 0 && client.thePlayer.field_41726) {
                   class_8865.method_40777(var1, class_8865.method_40775() * 0.82);
                }
                break;
             case "Cubecraft":
                double var6 = 0.2;
-               float var8 = this.method_27622(class_9299.method_42810(mc.field_9632.field_41701));
-               if (mc.gameOptions.keyJump.isKeyDown()) {
-                  mc.theTimer.timerSpeed = 1.0F;
-               } else if (mc.field_9632.field_41726) {
-                  if (class_314.method_1434() && !mc.field_9632.method_37252() && !this.field_30935) {
+               float var8 = this.method_27622(class_9299.method_42810(client.thePlayer.field_41701));
+               if (client.gameOptions.keyJump.isKeyDown()) {
+                  client.theTimer.timerSpeed = 1.0F;
+               } else if (client.thePlayer.field_41726) {
+                  if (class_314.method_1434() && !client.thePlayer.method_37252() && !this.field_30935) {
                      var1.method_35235(1.01);
                   }
                } else if (this.field_30939 == 1) {
@@ -260,22 +260,22 @@ public class NCPBlockFly extends Module {
                      this.field_30939 = -1;
                   } else {
                      var1.method_35235(0.122);
-                     mc.theTimer.timerSpeed = 0.7F;
+                     client.theTimer.timerSpeed = 0.7F;
                      var6 = 2.4;
                   }
                } else if (this.field_30939 == 2) {
                   if (var1.method_35236() > 0.05) {
                      this.field_30939 = -1;
                   } else {
-                     mc.theTimer.timerSpeed = 0.7F;
+                     client.theTimer.timerSpeed = 0.7F;
                      var6 = 0.28;
                   }
                } else if (this.field_30939 == 3) {
-                  mc.theTimer.timerSpeed = 0.3F;
+                  client.theTimer.timerSpeed = 0.3F;
                   var6 = 2.4;
                } else if (this.field_30939 == 4) {
                   var6 = 0.28;
-                  mc.theTimer.timerSpeed = 1.0F;
+                  client.theTimer.timerSpeed = 1.0F;
                } else if (this.field_30939 == 6) {
                   var1.method_35235(-1.023456987345906);
                }
@@ -284,14 +284,14 @@ public class NCPBlockFly extends Module {
                   var6 = 0.0;
                }
 
-               if (mc.field_9632.field_41706 < 1.0F) {
+               if (client.thePlayer.field_41706 < 1.0F) {
                   class_8865.method_40780(var1, var6, var8, var8, 360.0F);
                }
 
                class_314.method_1408(var1.method_35236());
                break;
             case "Slow":
-               if (mc.field_9632.field_41726) {
+               if (client.thePlayer.field_41726) {
                   var1.method_35232(var1.method_35234() * 0.75);
                   var1.method_35229(var1.method_35231() * 0.75);
                } else {
@@ -300,7 +300,7 @@ public class NCPBlockFly extends Module {
                }
                break;
             case "Sneak":
-               if (mc.field_9632.field_41726) {
+               if (client.thePlayer.field_41726) {
                   var1.method_35232(var1.method_35234() * 0.65);
                   var1.method_35229(var1.method_35231() * 0.65);
                } else {
@@ -316,7 +316,7 @@ public class NCPBlockFly extends Module {
    @EventListen
    @class_7664
    public void method_27624(class_2157 var1) {
-      if (this.method_42015() && mc.field_9632 != null) {
+      if (this.method_42015() && client.thePlayer != null) {
          if (var1.method_10047() instanceof class_7371 && ((BlockFlyModule)this.method_42017()).field_18196 >= 0) {
             var1.method_29715(true);
          }
@@ -336,15 +336,15 @@ public class NCPBlockFly extends Module {
    @EventListen
    public void method_27616(class_1711 var1) {
       if (this.method_42015() && this.getStringValueByName("Speed Mode").equals("Cubecraft") && this.field_30939 >= 0) {
-         if (!(mc.field_9632.field_41706 > 1.2F)) {
-            if (!(mc.field_9632.field_3864 < this.field_30931)) {
-               if (!mc.field_9632.field_29654) {
-                  mc.field_9632.field_41736.field_7333 = this.field_30931;
-                  mc.field_9632.field_41713 = this.field_30931;
-                  mc.field_9632.field_3864 = this.field_30931;
-                  mc.field_9632.field_41698 = this.field_30931;
+         if (!(client.thePlayer.field_41706 > 1.2F)) {
+            if (!(client.thePlayer.field_3864 < this.field_30931)) {
+               if (!client.thePlayer.field_29654) {
+                  client.thePlayer.field_41736.field_7333 = this.field_30931;
+                  client.thePlayer.field_41713 = this.field_30931;
+                  client.thePlayer.field_3864 = this.field_30931;
+                  client.thePlayer.field_41698 = this.field_30931;
                   if (class_8865.method_40772()) {
-                     mc.field_9632.field_3859 = 0.099999994F;
+                     client.thePlayer.field_3859 = 0.099999994F;
                   }
                }
             }
@@ -353,19 +353,19 @@ public class NCPBlockFly extends Module {
    }
 
    public double[] method_27620() {
-      double var3 = mc.field_9632.method_37302();
-      double var5 = mc.field_9632.method_37156();
-      double var7 = (double) mc.field_9632.field_30533.field_45287;
-      double var9 = (double) mc.field_9632.field_30533.field_45282;
-      float var11 = mc.field_9632.field_41701;
-      class_1331 var12 = new class_1331(var3, mc.field_9632.method_37309() - 1.0, var5);
+      double var3 = client.thePlayer.method_37302();
+      double var5 = client.thePlayer.method_37156();
+      double var7 = (double) client.thePlayer.field_30533.field_45287;
+      double var9 = (double) client.thePlayer.field_30533.field_45282;
+      float var11 = client.thePlayer.field_41701;
+      class_1331 var12 = new class_1331(var3, client.thePlayer.method_37309() - 1.0, var5);
       double var13 = var3;
       double var15 = var5;
       double var17 = 0.0;
 
       for (double var19 = (double)(this.getFloatValueByName("Extend") * 2.0F);
            class_7494.method_34090(var12);
-           var12 = new class_1331(var13, mc.field_9632.method_37309() - 1.0, var15)
+           var12 = new class_1331(var13, client.thePlayer.method_37309() - 1.0, var15)
       ) {
          if (++var17 > var19) {
             var17 = var19;
@@ -415,8 +415,8 @@ public class NCPBlockFly extends Module {
 
    public float method_27622(float var1) {
       float var4 = 0.0F;
-      float var5 = mc.field_9632.field_29676;
-      float var6 = mc.field_9632.field_29673;
+      float var5 = client.thePlayer.field_29676;
+      float var6 = client.thePlayer.field_29673;
       if (!(var5 > 0.0F)) {
          if (var5 < 0.0F) {
             if (!(var6 > 0.0F)) {

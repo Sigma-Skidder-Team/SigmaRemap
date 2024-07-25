@@ -33,7 +33,7 @@ public class class_545 extends class_6414 {
 
    @Override
    public class_6910 method_10777(class_2522 var1, World var2, class_1331 var3, class_704 var4, class_2584 var5, class_9529 var6) {
-      class_6098 var9 = var4.method_26617(var5);
+      ItemStack var9 = var4.method_26617(var5);
       if (var5 == class_2584.field_12791 && !method_2639(var9) && method_2639(var4.method_26617(class_2584.field_12794))) {
          return class_6910.field_35521;
       } else if (method_2639(var9) && method_2636(var1)) {
@@ -76,7 +76,7 @@ public class class_545 extends class_6414 {
       }
    }
 
-   private static boolean method_2639(class_6098 var0) {
+   private static boolean method_2639(ItemStack var0) {
       return var0.method_27960() == class_4897.field_24842;
    }
 

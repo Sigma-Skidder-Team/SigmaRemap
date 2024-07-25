@@ -10,7 +10,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class class_8002 extends class_2089 implements IRenderable, class_5888, class_5140, class_2855<class_8137> {
+public class class_8002 extends AbstractGui implements IRenderable, class_5888, class_5140, class_2855<class_8137> {
    public static final Identifier field_40990 = new Identifier("textures/gui/recipe_book.png");
    private static final ITextComponent field_41003 = new TranslationTextComponent("gui.recipebook.search_hint")
       .mergeStyle(TextFormatting.ITALIC)
@@ -39,9 +39,9 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
       this.field_41007 = var1;
       this.field_41009 = var2;
       this.field_41004 = var5;
-      var3.field_9632.field_3874 = var5;
-      this.field_40992 = var3.field_9632.method_27334();
-      this.field_40994 = var3.field_9632.field_3853.method_32399();
+      var3.thePlayer.field_3874 = var5;
+      this.field_40992 = var3.thePlayer.method_27334();
+      this.field_40994 = var3.thePlayer.inventory.method_32399();
       if (this.method_36314()) {
          this.method_36323(var4);
       }
@@ -54,7 +54,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
       int var4 = (this.field_41007 - 147) / 2 - this.field_40993;
       int var5 = (this.field_41009 - 166) / 2;
       this.field_40995.method_2602();
-      this.field_41006.field_9632.field_3853.method_32409(this.field_40995);
+      this.field_41006.thePlayer.inventory.method_32409(this.field_40995);
       this.field_41004.method_18269(this.field_40995);
       String var6 = this.field_41002 == null ? "" : this.field_41002.method_8246();
       this.field_41002 = new class_1863(this.field_41006.textRenderer, var4 + 25, var5 + 14, 80, 14, new TranslationTextComponent("itemGroup.search"));
@@ -183,9 +183,9 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
 
    public void method_36315() {
       if (this.method_36314()) {
-         if (this.field_40994 != this.field_41006.field_9632.field_3853.method_32399()) {
+         if (this.field_40994 != this.field_41006.thePlayer.inventory.method_32399()) {
             this.method_36306();
-            this.field_40994 = this.field_41006.field_9632.field_3853.method_32399();
+            this.field_40994 = this.field_41006.thePlayer.inventory.method_32399();
          }
 
          this.field_41002.method_8279();
@@ -194,7 +194,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
 
    private void method_36306() {
       this.field_40995.method_2602();
-      this.field_41006.field_9632.field_3853.method_32409(this.field_40995);
+      this.field_41006.thePlayer.inventory.method_32409(this.field_40995);
       this.field_41004.method_18269(this.field_40995);
       this.method_36305(false);
    }
@@ -202,10 +202,10 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
    @Override
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       if (this.method_36314()) {
-         class_3542.method_16438();
-         class_3542.method_16413(0.0F, 0.0F, 100.0F);
-         this.field_41006.method_8577().method_35674(field_40990);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.method_16438();
+         RenderSystem.method_16413(0.0F, 0.0F, 100.0F);
+         this.field_41006.getTextureManager().bindTexture(field_40990);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var7 = (this.field_41007 - 147) / 2 - this.field_40993;
          int var8 = (this.field_41009 - 166) / 2;
          this.method_9781(var1, var7, var8, 1, 1, 147, 166);
@@ -221,7 +221,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
 
          this.field_40991.method_6767(var1, var2, var3, var4);
          this.field_41005.method_45(var1, var7, var8, var2, var3, var4);
-         class_3542.method_16489();
+         RenderSystem.method_16489();
       }
    }
 
@@ -248,7 +248,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
    }
 
    private void method_36310(class_7966 var1, int var2, int var3, int var4, int var5) {
-      class_6098 var8 = null;
+      ItemStack var8 = null;
 
       for (int var9 = 0; var9 < this.field_41000.method_34492(); var9++) {
          class_3482 var10 = this.field_41000.method_34487(var9);
@@ -270,7 +270,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
 
    @Override
    public boolean method_26940(double var1, double var3, int var5) {
-      if (this.method_36314() && !this.field_41006.field_9632.method_37221()) {
+      if (this.method_36314() && !this.field_41006.thePlayer.method_37221()) {
          if (this.field_41005.method_53(var1, var3, var5, (this.field_41007 - 147) / 2 - this.field_40993, (this.field_41009 - 166) / 2, 147, 166)) {
             class_8932 var11 = this.field_41005.method_55();
             class_7735 var12 = this.field_41005.method_57();
@@ -280,7 +280,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
                }
 
                this.field_41000.method_34484();
-               this.field_41006.field_9647.method_42151(this.field_41006.field_9632.field_3874.field_19925, var11, Screen.method_1190());
+               this.field_41006.playerController.method_42151(this.field_41006.thePlayer.field_3874.field_19925, var11, Screen.method_1190());
                if (!this.method_36307()) {
                   this.method_36324(false);
                }
@@ -336,7 +336,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
    @Override
    public boolean method_26946(int var1, int var2, int var3) {
       this.field_41010 = false;
-      if (!this.method_36314() || this.field_41006.field_9632.method_37221()) {
+      if (!this.method_36314() || this.field_41006.thePlayer.method_37221()) {
          return false;
       } else if (var1 == 256 && !this.method_36307()) {
          this.method_36324(false);
@@ -364,7 +364,7 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
    @Override
    public boolean method_26938(char var1, int var2) {
       if (!this.field_41010) {
-         if (!this.method_36314() || this.field_41006.field_9632.method_37221()) {
+         if (!this.method_36314() || this.field_41006.thePlayer.method_37221()) {
             return false;
          } else if (!this.field_41002.method_26938(var1, var2)) {
             return class_5888.super.method_26938(var1, var2);
@@ -420,12 +420,12 @@ public class class_8002 extends class_2089 implements IRenderable, class_5888, c
    @Override
    public void method_23554(List<class_8932<?>> var1) {
       for (class_8932 var5 : var1) {
-         this.field_41006.field_9632.method_27326(var5);
+         this.field_41006.thePlayer.method_27326(var5);
       }
    }
 
    public void method_36302(class_8932<?> var1, List<class_7934> var2) {
-      class_6098 var5 = var1.method_41044();
+      ItemStack var5 = var1.method_41044();
       this.field_41000.method_34490(var1);
       this.field_41000.method_34491(class_8137.method_37029(var5), ((class_7934)var2.get(0)).field_40589, ((class_7934)var2.get(0)).field_40590);
       this.method_12972(

@@ -23,7 +23,7 @@ public class class_4213 extends class_8374<class_2714> {
       super.method_36197(var1);
       if (var1 != null) {
          class_9336.method_43107(this.field_20465, class_2714.method_12216(var1));
-         class_7542.field_38482
+         NarratorChatListener.INSTANCE
             .method_34341(
                new TranslationTextComponent("narrator.select", class_9336.method_43106(this.field_20465).method_39797(class_2714.method_12216(var1)))
                   .getString()

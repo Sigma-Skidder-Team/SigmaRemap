@@ -94,9 +94,9 @@ public class class_2262 {
    }
 
    private static void method_10394(int var0, int var1, int var2, int var3, int var4, long var5, long var7) {
-      if (!class_3111.method_14424() || var0 != 33352) {
+      if (!Config.method_14424() || var0 != 33352) {
          MinecraftClient var11 = MinecraftClient.getInstance();
-         if ((var11 == null || var11.method_8552() == null || !var11.method_8552().method_43168()) && class_6941.method_31754(var2)) {
+         if ((var11 == null || var11.getMainWindow() == null || !var11.getMainWindow().method_43168()) && class_6941.method_31754(var2)) {
             String var12 = method_10393(var0);
             String var13 = method_10396(var1);
             String var14 = method_10391(var3);
@@ -113,9 +113,9 @@ public class class_2262 {
                field_11250.error(var16, var17);
             }
 
-            if (class_3111.method_14294() && class_124.method_386("ShowGlErrorDebug", 10000L)) {
-               String var20 = class_3111.method_14316(var2);
-               if (var2 == 0 || class_3111.equals(var20, "Unknown")) {
+            if (Config.method_14294() && class_124.method_386("ShowGlErrorDebug", 10000L)) {
+               String var20 = Config.method_14316(var2);
+               if (var2 == 0 || Config.equals(var20, "Unknown")) {
                   var20 = var15;
                }
 
@@ -131,7 +131,7 @@ public class class_2262 {
    }
 
    public static void method_10390(int var0, boolean var1) {
-      class_3542.method_16431(class_3542::method_16395);
+      RenderSystem.method_16431(RenderSystem::method_16395);
       if (var0 > 0) {
          GLCapabilities var4 = GL.getCapabilities();
          if (!var4.GL_KHR_debug) {

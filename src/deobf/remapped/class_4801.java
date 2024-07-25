@@ -9,7 +9,7 @@ public class class_4801 {
    public boolean method_22121(class_4091 var1) {
       this.field_23992 = var1.method_18896(this.field_23989);
       if (this.field_23992 == null) {
-         class_3111.method_14317("Model variable not found: " + this.field_23989);
+         Config.method_14317("Model variable not found: " + this.field_23989);
          return false;
       } else {
          try {
@@ -17,8 +17,8 @@ public class class_4801 {
             this.field_23990 = var4.method_8091(this.field_23991);
             return true;
          } catch (class_425 var5) {
-            class_3111.method_14317("Error parsing expression: " + this.field_23991);
-            class_3111.method_14317(var5.getClass().getName() + ": " + var5.getMessage());
+            Config.method_14317("Error parsing expression: " + this.field_23991);
+            Config.method_14317(var5.getClass().getName() + ": " + var5.getMessage());
             return false;
          }
       }

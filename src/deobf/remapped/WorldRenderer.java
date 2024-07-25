@@ -155,7 +155,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.client = var1;
       this.field_20988 = var1.method_8587();
       this.field_20973 = var2;
-      this.textureManager = var1.method_8577();
+      this.textureManager = var1.getTextureManager();
 
       for (int var3 = 0; var3 < 32; var3++) {
          for (int var4 = 0; var4 < 32; var4++) {
@@ -183,7 +183,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       float var48 = this.client.field_9601.method_29578(var2);
       if (!(var48 <= 0.0F)) {
-         if (class_3111.method_14421()) {
+         if (Config.method_14421()) {
             return;
          }
 
@@ -194,22 +194,22 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          int var13 = class_9299.method_42847(var7);
          class_8042 var14 = class_8042.method_36499();
          class_9633 var15 = var14.method_36501();
-         class_3542.method_16374();
-         class_3542.method_16393();
-         class_3542.method_16465(0.0F, 1.0F, 0.0F);
-         class_3542.method_16488();
-         class_3542.method_16437();
-         class_3542.method_16433();
-         class_3542.method_16428();
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16393();
+         RenderSystem.method_16465(0.0F, 1.0F, 0.0F);
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
+         RenderSystem.method_16433();
+         RenderSystem.enableDepthTest();
          byte var16 = 5;
-         if (class_3111.method_14283()) {
+         if (Config.method_14283()) {
             var16 = 10;
          }
 
-         class_3542.method_16387(MinecraftClient.method_8497());
+         RenderSystem.method_16387(MinecraftClient.method_8497());
          byte var17 = -1;
          float var18 = (float)this.field_20997 + var2;
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          class_2921 var19 = new class_2921();
 
          for (int var20 = var13 - var16; var20 <= var13 + var16; var20++) {
@@ -247,7 +247,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                            }
 
                            var17 = 0;
-                           this.client.method_8577().method_35674(RAIN);
+                           this.client.getTextureManager().bindTexture(RAIN);
                            var15.method_44471(7, class_7985.field_40902);
                         }
 
@@ -286,7 +286,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                            }
 
                            var17 = 1;
-                           this.client.method_8577().method_35674(SNOW);
+                           this.client.getTextureManager().bindTexture(SNOW);
                            var15.method_44471(7, class_7985.field_40902);
                         }
 
@@ -333,21 +333,21 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             var14.method_36500();
          }
 
-         class_3542.method_16361();
-         class_3542.method_16448();
-         class_3542.method_16433();
-         class_3542.method_16458();
+         RenderSystem.method_16361();
+         RenderSystem.method_16448();
+         RenderSystem.method_16433();
+         RenderSystem.method_16458();
          var1.method_26122();
       }
    }
 
    public void method_20011(Camera var1) {
       float var2 = this.client.field_9601.method_29578(1.0F) / (MinecraftClient.method_8528() ? 1.0F : 2.0F);
-      if (!class_3111.method_14283()) {
+      if (!Config.method_14283()) {
          var2 /= 2.0F;
       }
 
-      if (!(var2 <= 0.0F) && class_3111.method_14356()) {
+      if (!(var2 <= 0.0F) && Config.method_14356()) {
          Random var3 = new Random((long)this.field_20997 * 312987231L);
          class_174 var4 = this.client.field_9601;
          class_1331 var5 = new class_1331(var1.method_41627());
@@ -413,10 +413,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    @Override
    public void method_29609(class_7832 var1) {
-      this.textureManager.method_35674(FORCEFIELD);
-      class_3542.method_16490(3553, 10242, 10497);
-      class_3542.method_16490(3553, 10243, 10497);
-      class_3542.method_16446(0);
+      this.textureManager.bindTexture(FORCEFIELD);
+      RenderSystem.method_16490(3553, 10242, 10497);
+      RenderSystem.method_16490(3553, 10243, 10497);
+      RenderSystem.method_16446(0);
       this.method_20026();
       if (MinecraftClient.method_8497()) {
          this.method_20048();
@@ -431,8 +431,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       Identifier var1 = new Identifier("shaders/post/entity_outline.json");
 
       try {
-         this.field_20926 = new class_4067(this.client.method_8577(), this.client.method_8498(), this.client.method_8584(), var1);
-         this.field_20926.method_18750(this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
+         this.field_20926 = new class_4067(this.client.getTextureManager(), this.client.method_8498(), this.client.method_8584(), var1);
+         this.field_20926.method_18750(this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
          this.field_21000 = this.field_20926.method_18758("final");
       } catch (IOException var3) {
          LOGGER.warn("Failed to load shader: {}", var1, var3);
@@ -450,8 +450,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       Identifier var1 = new Identifier("shaders/post/transparency.json");
 
       try {
-         class_4067 var2 = new class_4067(this.client.method_8577(), this.client.method_8498(), this.client.method_8584(), var1);
-         var2.method_18750(this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
+         class_4067 var2 = new class_4067(this.client.getTextureManager(), this.client.method_8498(), this.client.method_8584(), var1);
+         var2.method_18750(this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
          class_4230 var10 = var2.method_18758("translucent");
          class_4230 var11 = var2.method_18758("itemEntity");
          class_4230 var12 = var2.method_18758("particles");
@@ -507,16 +507,16 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    public void method_20069() {
       if (this.method_20036()) {
-         class_3542.method_16488();
-         class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
-         this.field_21000.method_19714(this.client.method_8552().method_43178(), this.client.method_8552().method_43198(), false);
-         class_3542.method_16448();
+         RenderSystem.enableBlend();
+         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
+         this.field_21000.method_19714(this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198(), false);
+         RenderSystem.method_16448();
       }
    }
 
    public boolean method_20036() {
-      return !class_3111.method_14424() && !class_3111.method_14248()
-         ? this.field_21000 != null && this.field_20926 != null && this.client.field_9632 != null
+      return !Config.method_14424() && !Config.method_14248()
+         ? this.field_21000 != null && this.field_20926 != null && this.client.thePlayer != null
          : false;
    }
 
@@ -636,7 +636,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       this.field_21013 = Integer.MIN_VALUE;
       this.field_20988.method_28140(var1);
       this.field_20970 = var1;
-      if (class_3111.method_14326()) {
+      if (Config.method_14326()) {
          class_8421.method_38768();
       }
 
@@ -683,9 +683,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          this.field_20985 = true;
          this.field_20986 = true;
-         class_6416.method_29328(class_3111.method_14371());
+         class_6416.method_29328(Config.method_14371());
          class_2174.method_10117();
-         if (class_3111.method_14326()) {
+         if (Config.method_14326()) {
             class_8421.method_38768();
          }
 
@@ -708,14 +708,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          this.field_20966 = new class_7626(this.field_20968, this.field_20970, this.client.gameOptions.field_45537, this);
          if (this.field_20970 != null) {
-            Entity var4 = this.client.method_8516();
+            Entity var4 = this.client.getRenderViewEntity();
             if (var4 != null) {
                this.field_20966.method_34566(var4.method_37302(), var4.method_37156());
             }
          }
       }
 
-      if (this.client.field_9632 == null) {
+      if (this.client.thePlayer == null) {
          this.field_21009 = true;
       }
    }
@@ -764,7 +764,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    public String method_20056() {
-      return "E: " + this.field_20937 + "/" + this.field_20970.method_741() + ", B: " + this.field_20979 + ", " + class_3111.method_14244();
+      return "E: " + this.field_20937 + "/" + this.field_20970.method_741() + ", B: " + this.field_20979 + ", " + Config.method_14244();
    }
 
    public void method_20016(Camera var1, class_2359 var2, boolean var3, int var4, boolean var5) {
@@ -774,23 +774,23 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       this.field_20970.method_29599().method_16056("camera");
-      double var7 = this.client.field_9632.method_37302() - this.field_20964;
-      double var9 = this.client.field_9632.method_37309() - this.field_21002;
-      double var11 = this.client.field_9632.method_37156() - this.field_20954;
-      if (this.field_20933 != this.client.field_9632.field_41742
-         || this.field_21007 != this.client.field_9632.field_41747
-         || this.field_21013 != this.client.field_9632.field_41714
+      double var7 = this.client.thePlayer.method_37302() - this.field_20964;
+      double var9 = this.client.thePlayer.method_37309() - this.field_21002;
+      double var11 = this.client.thePlayer.method_37156() - this.field_20954;
+      if (this.field_20933 != this.client.thePlayer.field_41742
+         || this.field_21007 != this.client.thePlayer.field_41747
+         || this.field_21013 != this.client.thePlayer.field_41714
          || var7 * var7 + var9 * var9 + var11 * var11 > 16.0) {
-         this.field_20964 = this.client.field_9632.method_37302();
-         this.field_21002 = this.client.field_9632.method_37309();
-         this.field_20954 = this.client.field_9632.method_37156();
-         this.field_20933 = this.client.field_9632.field_41742;
-         this.field_21007 = this.client.field_9632.field_41747;
-         this.field_21013 = this.client.field_9632.field_41714;
-         this.field_20966.method_34566(this.client.field_9632.method_37302(), this.client.field_9632.method_37156());
+         this.field_20964 = this.client.thePlayer.method_37302();
+         this.field_21002 = this.client.thePlayer.method_37309();
+         this.field_20954 = this.client.thePlayer.method_37156();
+         this.field_20933 = this.client.thePlayer.field_41742;
+         this.field_21007 = this.client.thePlayer.field_41747;
+         this.field_21013 = this.client.thePlayer.field_41714;
+         this.field_20966.method_34566(this.client.thePlayer.method_37302(), this.client.thePlayer.method_37156());
       }
 
-      if (class_3111.method_14326()) {
+      if (Config.method_14326()) {
          class_8421.method_38763(this);
       }
 
@@ -833,7 +833,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.field_20985 = true;
       }
 
-      if (!var3 && this.field_20985 && class_3111.method_14369() && !class_6588.field_33945) {
+      if (!var3 && this.field_20985 && Config.method_14369() && !class_6588.field_33945) {
          var21 = class_5161.method_23653(this.field_20970, var20, this.field_20922);
       }
 
@@ -956,7 +956,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          this.client.method_8562().method_16056("iteration");
-         boolean var50 = class_3111.method_14420();
+         boolean var50 = Config.method_14420();
 
          while (!var41.isEmpty()) {
             class_1261 var53 = (class_1261)var41.poll();
@@ -1080,7 +1080,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    public void method_20059(class_7966 var1, float var2, long var3, boolean var5, Camera var6, GameRenderer var7, class_5778 var8, class_8107 var9) {
-      class_3569.field_17468.method_16590(this.field_20970, this.client.method_8577(), this.client.textRenderer, var6, this.client.field_9587);
+      class_3569.field_17468.method_16590(this.field_20970, this.client.getTextureManager(), this.client.textRenderer, var6, this.client.field_9587);
       this.field_20988.method_28116(this.field_20970, var6, this.client.field_9662);
       class_3492 var10 = this.field_20970.method_29599();
       var10.method_16050("light_updates");
@@ -1108,15 +1108,15 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       var10.method_16050("clear");
-      if (class_3111.method_14424()) {
-         class_6588.method_30316(0, 0, this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
+      if (Config.method_14424()) {
+         class_6588.method_30316(0, 0, this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
       } else {
-         class_3542.method_16392(0, 0, this.client.method_8552().method_43178(), this.client.method_8552().method_43198());
+         RenderSystem.method_16392(0, 0, this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
       }
 
       class_6377.method_29157(var6, var2, this.client.field_9601, this.client.gameOptions.field_45537, var7.method_35956(var2));
-      class_3542.method_16402(16640, MinecraftClient.IS_SYSTEM_MAC);
-      boolean var21 = class_3111.method_14424();
+      RenderSystem.method_16402(16640, MinecraftClient.IS_SYSTEM_MAC);
+      boolean var21 = Config.method_14424();
       if (var21) {
          class_6588.method_30182();
       }
@@ -1125,11 +1125,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_6588.method_30194(var1, var6, var2);
       }
 
-      var20.field_11841 = class_3111.method_14424() && !class_6588.method_30227();
+      var20.field_11841 = Config.method_14424() && !class_6588.method_30227();
       float var22 = var7.method_35955();
       boolean var23 = this.client.field_9601.method_738().method_34252(class_9299.method_42847(var12), class_9299.method_42847(var14))
          || this.client.field_9614.method_13972().method_21877();
-      if ((class_3111.method_14391() || class_3111.method_14282() || class_3111.method_14417()) && !class_6588.field_33945) {
+      if ((Config.method_14391() || Config.method_14282() || Config.method_14417()) && !class_6588.field_33945) {
          class_6377.method_29160(var6, class_1026.field_5679, var22, var23, var2);
          var10.method_16050("sky");
          if (var21) {
@@ -1141,14 +1141,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_6588.method_30209();
          }
       } else {
-         class_1920.method_8775();
+         GlStateManager.method_8775();
       }
 
       var10.method_16050("fog");
       class_6377.method_29160(var6, class_1026.field_5676, Math.max(var22 - 16.0F, 32.0F), var23, var2);
       var10.method_16050("terrain_setup");
-      this.method_20090(var6, var20, this.client.field_9632.method_37221());
-      this.method_20016(var6, var20, var19, this.field_20959++, this.client.field_9632.method_37221());
+      this.method_20090(var6, var20, this.client.thePlayer.method_37221());
+      this.method_20016(var6, var20, var19, this.field_20959++, this.client.thePlayer.method_37221());
       var10.method_16050("updatechunks");
       byte var24 = 30;
       int var25 = this.client.gameOptions.field_45439;
@@ -1175,14 +1175,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.client.method_8562().method_16050("terrain");
       }
 
-      if (class_3111.method_14365() && class_6377.field_32581) {
-         class_1920.method_8856(false);
+      if (Config.method_14365() && class_6377.field_32581) {
+         GlStateManager.method_8856(false);
       }
 
       this.method_20045(class_3581.method_16751(), var1, var12, var14, var16);
-      this.client.method_8577().method_35679(class_8359.field_42824).method_37049(false, this.client.gameOptions.field_45577 > 0);
+      this.client.getTextureManager().method_35679(class_8359.field_42824).method_37049(false, this.client.gameOptions.field_45577 > 0);
       this.method_20045(class_3581.method_16756(), var1, var12, var14, var16);
-      this.client.method_8577().method_35679(class_8359.field_42824).method_37057();
+      this.client.getTextureManager().method_35679(class_8359.field_42824).method_37057();
       this.method_20045(class_3581.method_16771(), var1, var12, var14, var16);
       if (var21) {
          class_293.method_1324();
@@ -1222,7 +1222,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       boolean var38 = false;
       class_3758 var39 = this.field_20973.method_13796();
-      if (class_3111.method_14238()) {
+      if (Config.method_14238()) {
          class_6151.method_28223();
       }
 
@@ -1231,7 +1231,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_2654 var43 = var42.method_16174();
 
          for (Entity var45 : var43.method_11979()[var42.method_16189().method_12165() / 16]) {
-            if ((this.field_20988.method_28135(var45, var20, var12, var14, var16) || var45.method_37315(this.client.field_9632))
+            if ((this.field_20988.method_28135(var45, var20, var12, var14, var16) || var45.method_37315(this.client.thePlayer))
                && (
                   var45 != var6.method_41633()
                      || var6.method_41648()
@@ -1377,7 +1377,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       var39.method_17416(class_5276.method_24082());
       var39.method_17416(class_5276.method_24081());
       this.field_20973.method_13791().method_16961();
-      if (class_3111.method_14238()) {
+      if (Config.method_14238()) {
          class_6151.method_28222();
       }
 
@@ -1445,13 +1445,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_7860.field_39840.method_3582(this, var6, var64, var2, var1, var39);
       }
 
-      class_3542.method_16438();
-      class_3542.method_16358(var1.method_36058().method_28620());
-      boolean var70 = class_1920.method_8779();
-      class_1920.method_8804();
+      RenderSystem.method_16438();
+      RenderSystem.method_16358(var1.method_36058().method_28620());
+      boolean var70 = GlStateManager.method_8779();
+      GlStateManager.method_8804();
       this.client.field_9612.method_15550(var1, var39, var12, var14, var16);
-      class_1920.method_8840(var70);
-      class_3542.method_16489();
+      GlStateManager.method_8840(var70);
+      RenderSystem.method_16489();
       var39.method_17416(class_5276.method_24072());
       var39.method_17416(class_5276.method_24081());
       var39.method_17416(class_5276.method_24084());
@@ -1512,9 +1512,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
       }
 
-      class_1920.method_8856(true);
-      class_3542.method_16438();
-      class_3542.method_16358(var1.method_36058().method_28620());
+      GlStateManager.method_8856(true);
+      RenderSystem.method_16438();
+      RenderSystem.method_16358(var1.method_36058().method_28620());
       if (this.client.gameOptions.method_40860() != class_9655.field_49168) {
          if (this.field_20930 != null) {
             this.field_21006.method_19712(MinecraftClient.IS_SYSTEM_MAC);
@@ -1537,9 +1537,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.field_20930.method_18755(var2);
          this.client.method_8584().method_19717(false);
       } else {
-         class_3542.method_16387(false);
-         if (class_3111.method_14424()) {
-            class_1920.method_8867(class_6588.method_30318());
+         RenderSystem.method_16387(false);
+         if (Config.method_14424()) {
+            GlStateManager.method_8867(class_6588.method_30318());
          }
 
          var10.method_16050("weather");
@@ -1553,14 +1553,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          this.method_20079(var6);
-         class_3542.method_16387(true);
+         RenderSystem.method_16387(true);
       }
 
       this.method_20035(var6);
-      class_3542.method_16486(7424);
-      class_3542.method_16387(true);
-      class_3542.method_16448();
-      class_3542.method_16489();
+      RenderSystem.method_16486(7424);
+      RenderSystem.method_16387(true);
+      RenderSystem.method_16448();
+      RenderSystem.method_16489();
       class_6377.method_29162();
    }
 
@@ -1580,7 +1580,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    public void method_20045(class_3581 var1, class_7966 var2, double var3, double var5, double var7) {
       var1.method_24420();
-      boolean var9 = class_3111.method_14424();
+      boolean var9 = Config.method_14424();
       if (var1 == class_3581.method_16762() && !class_6588.field_33945) {
          this.client.method_8562().method_16056("translucent_sort");
          double var10 = var3 - this.field_20952;
@@ -1612,13 +1612,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       boolean var29 = class_153.method_611();
-      class_3542.method_16438();
-      class_3542.method_16476();
-      class_3542.method_16358(var2.method_36058().method_28620());
+      RenderSystem.method_16438();
+      RenderSystem.method_16476();
+      RenderSystem.method_16358(var2.method_36058().method_28620());
       this.client.method_8562().method_16051(() -> "render_" + var1);
       boolean var11 = var1 != class_3581.method_16762();
       ObjectListIterator var30 = this.field_20982.listIterator(var11 ? 0 : this.field_20982.size());
-      if (class_3111.method_14351()) {
+      if (Config.method_14351()) {
          int var31 = Integer.MIN_VALUE;
          int var33 = Integer.MIN_VALUE;
          class_6076 var34 = null;
@@ -1677,18 +1677,18 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_3511 var32 = var13.field_6947;
             if (!var32.method_16150().method_40698(var1)) {
                class_7995 var15 = var32.method_16180(var1);
-               class_1920.method_8757();
+               GlStateManager.method_8757();
                class_1331 var35 = var32.method_16189();
-               class_1920.method_8876((double)var35.method_12173() - var3, (double)var35.method_12165() - var5, (double)var35.method_12185() - var7);
+               GlStateManager.method_8876((double)var35.method_12173() - var3, (double)var35.method_12165() - var5, (double)var35.method_12185() - var7);
                var15.method_36280();
                class_7985.field_40918.method_13179(0L);
-               class_1920.method_8780();
+               GlStateManager.method_8780();
                if (var9) {
                   class_293.method_1299();
                }
 
                var15.method_36282(7);
-               class_1920.method_8761();
+               GlStateManager.method_8761();
                if (var29) {
                   BitSet var37 = var32.method_16150().method_40690(var1);
                   if (var37 != null) {
@@ -1699,10 +1699,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
       }
 
-      class_1920.method_8935();
-      class_3542.method_16489();
+      GlStateManager.method_8935();
+      RenderSystem.method_16489();
       class_7995.method_36279();
-      class_3542.method_16473();
+      RenderSystem.method_16473();
       class_7985.field_40918.method_13173();
       this.client.method_8562().method_16054();
       if (var9) {
@@ -1713,11 +1713,11 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_20057(int var1, int var2, int var3, double var4, double var6, double var8, class_6076 var10) {
-      class_1920.method_8757();
-      class_1920.method_8876((double)var1 - var4, (double)var2 - var6, (double)var3 - var8);
+      GlStateManager.method_8757();
+      GlStateManager.method_8876((double)var1 - var4, (double)var2 - var6, (double)var3 - var8);
       var10.method_27822();
-      class_1920.method_8780();
-      class_1920.method_8761();
+      GlStateManager.method_8780();
+      GlStateManager.method_8761();
    }
 
    private void method_20035(Camera var1) {
@@ -1727,21 +1727,21 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          double var4 = var1.method_41627().method_61();
          double var6 = var1.method_41627().method_60();
          double var8 = var1.method_41627().method_62();
-         class_3542.method_16387(true);
-         class_3542.method_16393();
-         class_3542.method_16488();
-         class_3542.method_16437();
-         class_3542.method_16354();
+         RenderSystem.method_16387(true);
+         RenderSystem.method_16393();
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
+         RenderSystem.method_16354();
 
-         for (ObjectListIterator var10 = this.field_20982.iterator(); var10.hasNext(); class_3542.method_16489()) {
+         for (ObjectListIterator var10 = this.field_20982.iterator(); var10.hasNext(); RenderSystem.method_16489()) {
             class_1261 var11 = (class_1261)var10.next();
             class_3511 var12 = var11.field_6947;
-            class_3542.method_16438();
+            RenderSystem.method_16438();
             class_1331 var13 = var12.method_16189();
-            class_3542.method_16483((double)var13.method_12173() - var4, (double)var13.method_12165() - var6, (double)var13.method_12185() - var8);
+            RenderSystem.method_16483((double)var13.method_12173() - var4, (double)var13.method_12165() - var6, (double)var13.method_12185() - var8);
             if (this.client.field_9569) {
                var3.method_44471(1, class_7985.field_40903);
-               class_3542.method_16484(10.0F);
+               RenderSystem.method_16484(10.0F);
                int var14 = class_1261.method_5674(var11) == 0 ? 0 : class_9299.method_42792((float)class_1261.method_5674(var11) / 50.0F, 0.9F, 0.9F);
                int var15 = var14 >> 16 & 0xFF;
                int var16 = var14 >> 8 & 0xFF;
@@ -1755,12 +1755,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                }
 
                var2.method_36500();
-               class_3542.method_16484(1.0F);
+               RenderSystem.method_16484(1.0F);
             }
 
             if (this.client.field_9605 && !var12.method_16150().method_40691()) {
                var3.method_44471(1, class_7985.field_40903);
-               class_3542.method_16484(10.0F);
+               RenderSystem.method_16484(10.0F);
                int var24 = 0;
 
                for (Direction var30 : DIRECTIONS) {
@@ -1779,7 +1779,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                }
 
                var2.method_36500();
-               class_3542.method_16484(1.0F);
+               RenderSystem.method_16484(1.0F);
                if (var24 > 0) {
                   var3.method_44471(7, class_7985.field_40903);
                   float var26 = 0.5F;
@@ -1813,25 +1813,25 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
          }
 
-         class_3542.method_16387(true);
-         class_3542.method_16448();
-         class_3542.method_16361();
-         class_3542.method_16432();
+         RenderSystem.method_16387(true);
+         RenderSystem.method_16448();
+         RenderSystem.method_16361();
+         RenderSystem.method_16432();
       }
 
       if (this.field_20946 != null) {
-         class_3542.method_16393();
-         class_3542.method_16354();
-         class_3542.method_16488();
-         class_3542.method_16437();
-         class_3542.method_16484(10.0F);
-         class_3542.method_16438();
-         class_3542.method_16413(
+         RenderSystem.method_16393();
+         RenderSystem.method_16354();
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
+         RenderSystem.method_16484(10.0F);
+         RenderSystem.method_16438();
+         RenderSystem.method_16413(
             (float)(this.field_21012.field_37664 - var1.method_41627().field_7336),
             (float)(this.field_21012.field_37663 - var1.method_41627().field_7333),
             (float)(this.field_21012.field_37665 - var1.method_41627().field_7334)
          );
-         class_3542.method_16387(true);
+         RenderSystem.method_16387(true);
          var3.method_44471(7, class_7985.field_40903);
          this.method_20086(var3, 0, 1, 2, 3, 0, 1, 1);
          this.method_20086(var3, 4, 5, 6, 7, 1, 0, 0);
@@ -1840,9 +1840,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.method_20086(var3, 0, 4, 7, 3, 0, 1, 0);
          this.method_20086(var3, 1, 5, 6, 2, 1, 0, 1);
          var2.method_36500();
-         class_3542.method_16387(false);
+         RenderSystem.method_16387(false);
          var3.method_44471(1, class_7985.field_40915);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.method_20006(var3, 0);
          this.method_20006(var3, 1);
          this.method_20006(var3, 1);
@@ -1868,12 +1868,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          this.method_20006(var3, 3);
          this.method_20006(var3, 7);
          var2.method_36500();
-         class_3542.method_16489();
-         class_3542.method_16387(true);
-         class_3542.method_16448();
-         class_3542.method_16361();
-         class_3542.method_16432();
-         class_3542.method_16484(1.0F);
+         RenderSystem.method_16489();
+         RenderSystem.method_16387(true);
+         RenderSystem.method_16448();
+         RenderSystem.method_16361();
+         RenderSystem.method_16432();
+         RenderSystem.method_16484(1.0F);
       }
    }
 
@@ -1923,7 +1923,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
       }
 
-      if (class_3111.method_14351() && this.field_20997 % 20 == 0) {
+      if (Config.method_14351() && this.field_20997 % 20 == 0) {
          this.field_20967.clear();
       }
    }
@@ -1938,12 +1938,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    }
 
    private void method_20087(class_7966 var1) {
-      if (class_3111.method_14391()) {
-         class_3542.method_16458();
-         class_3542.method_16488();
-         class_3542.method_16437();
-         class_3542.method_16387(false);
-         this.textureManager.method_35674(END_SKY);
+      if (Config.method_14391()) {
+         RenderSystem.method_16458();
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
+         RenderSystem.method_16387(false);
+         this.textureManager.bindTexture(END_SKY);
          class_8042 var2 = class_8042.method_36499();
          class_9633 var3 = var2.method_36501();
 
@@ -1974,9 +1974,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             int var6 = 40;
             int var7 = 40;
             int var8 = 40;
-            if (class_3111.method_14438()) {
+            if (Config.method_14438()) {
                class_1343 var9 = new class_1343((double)var6 / 255.0, (double)var7 / 255.0, (double)var8 / 255.0);
-               var9 = class_9300.method_42927(var9, this.field_20970, this.client.method_8516(), 0.0F);
+               var9 = class_9300.method_42927(var9, this.field_20970, this.client.getRenderViewEntity(), 0.0F);
                var6 = (int)(var9.field_7336 * 255.0);
                var7 = (int)(var9.field_7333 * 255.0);
                var8 = (int)(var9.field_7334 * 255.0);
@@ -1990,10 +1990,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             var1.method_36064();
          }
 
-         class_3542.method_16387(true);
-         class_3542.method_16432();
-         class_3542.method_16448();
-         class_3542.method_16374();
+         RenderSystem.method_16387(true);
+         RenderSystem.method_16432();
+         RenderSystem.method_16448();
+         RenderSystem.enableAlphaTest();
       }
    }
 
@@ -2009,8 +2009,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       if (this.client.field_9601.method_738().method_34244() == class_9571.field_48695) {
          this.method_20087(var1);
       } else if (this.client.field_9601.method_738().method_34244() == class_9571.field_48694) {
-         class_3542.method_16354();
-         boolean var20 = class_3111.method_14424();
+         RenderSystem.method_16354();
+         boolean var20 = Config.method_14424();
          if (var20) {
             class_6588.method_30299();
          }
@@ -2019,9 +2019,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          var4 = class_9300.method_42885(
             var4,
             this.client.field_9601,
-            this.client.method_8516().method_37302(),
-            this.client.method_8516().method_37309() + 1.0,
-            this.client.method_8516().method_37156()
+            this.client.getRenderViewEntity().method_37302(),
+            this.client.getRenderViewEntity().method_37309() + 1.0,
+            this.client.getRenderViewEntity().method_37156()
          );
          if (var20) {
             class_6588.method_30238(var4);
@@ -2032,18 +2032,18 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          float var7 = (float)var4.field_7334;
          class_6377.method_29161();
          class_9633 var8 = class_8042.method_36499().method_36501();
-         class_3542.method_16387(false);
-         class_3542.method_16353();
+         RenderSystem.method_16387(false);
+         RenderSystem.method_16353();
          if (var20) {
             class_6588.method_30159();
          }
 
-         class_3542.method_16404(var5, var6, var7);
+         RenderSystem.method_16404(var5, var6, var7);
          if (var20) {
             class_6588.method_30168(var1);
          }
 
-         if (class_3111.method_14391()) {
+         if (Config.method_14391()) {
             this.field_20955.method_36280();
             this.field_20943.method_13179(0L);
             this.field_20955.method_36283(var1.method_36058().method_28620(), 7);
@@ -2051,22 +2051,22 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.field_20943.method_13173();
          }
 
-         class_3542.method_16367();
+         RenderSystem.method_16367();
          if (var20) {
             class_6588.method_30180();
          }
 
-         class_3542.method_16458();
-         class_3542.method_16488();
-         class_3542.method_16437();
+         RenderSystem.method_16458();
+         RenderSystem.enableBlend();
+         RenderSystem.defaultBlendFunc();
          float[] var9 = this.field_20970.method_738().method_34248(this.field_20970.method_13578(var2), var2);
-         if (var9 != null && class_3111.method_14282()) {
-            class_3542.method_16354();
+         if (var9 != null && Config.method_14282()) {
+            RenderSystem.method_16354();
             if (var20) {
                class_6588.method_30299();
             }
 
-            class_3542.method_16486(7425);
+            RenderSystem.method_16486(7425);
             var1.method_36063();
             var1.method_36060(class_2426.field_12080.method_11074(90.0F));
             float var10 = class_9299.method_42818(this.field_20970.method_29553(var2)) < 0.0F ? 180.0F : 0.0F;
@@ -2090,18 +2090,18 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             var8.method_44487();
             class_138.method_554(var8);
             var1.method_36064();
-            class_3542.method_16486(7424);
+            RenderSystem.method_16486(7424);
          }
 
-         class_3542.method_16432();
+         RenderSystem.method_16432();
          if (var20) {
             class_6588.method_30248();
          }
 
-         class_3542.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
          var1.method_36063();
          float var22 = 1.0F - this.field_20970.method_29578(var2);
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, var22);
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, var22);
          var1.method_36060(class_2426.field_12074.method_11074(-90.0F));
          class_6167.method_28272(this.field_20970, this.textureManager, var1, var2);
          if (var20) {
@@ -2115,8 +2115,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          class_8107 var23 = var1.method_36058().method_28620();
          float var24 = 30.0F;
-         if (class_3111.method_14448()) {
-            this.textureManager.method_35674(SUN);
+         if (Config.method_14448()) {
+            this.textureManager.bindTexture(SUN);
             var8.method_44471(7, class_7985.field_40912);
             var8.method_35762(var23, -var24, 100.0F, -var24).method_35745(0.0F, 0.0F).method_35735();
             var8.method_35762(var23, var24, 100.0F, -var24).method_35745(1.0F, 0.0F).method_35735();
@@ -2127,8 +2127,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          var24 = 20.0F;
-         if (class_3111.method_14241()) {
-            this.textureManager.method_35674(MOON_PHASES);
+         if (Config.method_14241()) {
+            this.textureManager.bindTexture(MOON_PHASES);
             int var26 = this.field_20970.method_13575();
             int var28 = var26 % 4;
             int var30 = var26 / 4 % 2;
@@ -2145,14 +2145,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_138.method_554(var8);
          }
 
-         class_3542.method_16354();
+         RenderSystem.method_16354();
          if (var20) {
             class_6588.method_30299();
          }
 
          float var27 = this.field_20970.method_761(var2) * var22;
-         if (var27 > 0.0F && class_3111.method_14417() && !class_6167.method_28273(this.field_20970)) {
-            class_3542.method_16480(var27, var27, var27, var27);
+         if (var27 > 0.0F && Config.method_14417() && !class_6167.method_28273(this.field_20970)) {
+            RenderSystem.color4f(var27, var27, var27, var27);
             this.field_20962.method_36280();
             this.field_20943.method_13179(0L);
             this.field_20962.method_36283(var1.method_36058().method_28620(), 7);
@@ -2160,22 +2160,22 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.field_20943.method_13173();
          }
 
-         class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-         class_3542.method_16448();
-         class_3542.method_16374();
-         class_3542.method_16353();
+         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+         RenderSystem.method_16448();
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16353();
          if (var20) {
             class_6588.method_30159();
          }
 
          var1.method_36064();
-         class_3542.method_16354();
+         RenderSystem.method_16354();
          if (var20) {
             class_6588.method_30299();
          }
 
-         class_3542.method_16404(0.0F, 0.0F, 0.0F);
-         double var29 = this.client.field_9632.method_37335(var2).field_7333 - this.field_20970.method_749().method_3496();
+         RenderSystem.method_16404(0.0F, 0.0F, 0.0F);
+         double var29 = this.client.thePlayer.method_37335(var2).field_7333 - this.field_20970.method_749().method_3496();
          boolean var32 = false;
          if (var29 < 0.0) {
             var1.method_36063();
@@ -2190,19 +2190,19 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          if (this.field_20970.method_738().method_34249()) {
-            class_3542.method_16404(var5 * 0.2F + 0.04F, var6 * 0.2F + 0.04F, var7 * 0.6F + 0.1F);
+            RenderSystem.method_16404(var5 * 0.2F + 0.04F, var6 * 0.2F + 0.04F, var7 * 0.6F + 0.1F);
          } else {
-            class_3542.method_16404(var5, var6, var7);
+            RenderSystem.method_16404(var5, var6, var7);
          }
 
-         class_3542.method_16432();
-         class_3542.method_16387(true);
-         class_3542.method_16367();
+         RenderSystem.method_16432();
+         RenderSystem.method_16387(true);
+         RenderSystem.method_16367();
       }
    }
 
    public void method_20023(class_7966 var1, float var2, double var3, double var5, double var7) {
-      if (!class_3111.method_14396()) {
+      if (!Config.method_14396()) {
          if (class_7860.field_39862.method_3596()) {
             class_3597 var9 = (class_3597)class_7860.method_35555(this.field_20970.method_738(), class_7860.field_39862);
             if (var9 != null) {
@@ -2213,18 +2213,18 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          float var31 = this.field_20970.method_738().method_34243();
          if (!Float.isNaN(var31)) {
-            if (class_3111.method_14424()) {
+            if (Config.method_14424()) {
                class_6588.method_30170();
             }
 
-            class_3542.method_16393();
-            class_3542.method_16488();
-            class_3542.method_16374();
-            class_3542.method_16428();
-            class_3542.method_16433();
-            class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43697);
-            class_3542.method_16353();
-            class_3542.method_16387(true);
+            RenderSystem.method_16393();
+            RenderSystem.enableBlend();
+            RenderSystem.enableAlphaTest();
+            RenderSystem.enableDepthTest();
+            RenderSystem.method_16433();
+            RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43697);
+            RenderSystem.method_16353();
+            RenderSystem.method_16387(true);
             float var10 = 12.0F;
             float var11 = 4.0F;
             double var12 = 2.0E-4;
@@ -2268,7 +2268,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                this.field_20947.method_36285(var29);
             }
 
-            this.textureManager.method_35674(CLOUDS);
+            this.textureManager.bindTexture(CLOUDS);
             var1.method_36063();
             var1.method_36062(12.0F, 1.0F, 12.0F);
             var1.method_36065((double)(-var22), (double)var23, (double)(-var24));
@@ -2279,9 +2279,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
                for (int var30 = var35; var30 < 2; var30++) {
                   if (var30 == 0) {
-                     class_3542.method_16405(false, false, false, false);
+                     RenderSystem.method_16405(false, false, false, false);
                   } else {
-                     class_3542.method_16405(true, true, true, true);
+                     RenderSystem.method_16405(true, true, true, true);
                   }
 
                   this.field_20947.method_36283(var1.method_36058().method_28620(), 7);
@@ -2292,12 +2292,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
 
             var1.method_36064();
-            class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-            class_3542.method_16458();
-            class_3542.method_16361();
-            class_3542.method_16448();
-            class_3542.method_16367();
-            if (class_3111.method_14424()) {
+            RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+            RenderSystem.method_16458();
+            RenderSystem.method_16361();
+            RenderSystem.method_16448();
+            RenderSystem.method_16367();
+            if (Config.method_14424()) {
                class_6588.method_30198();
             }
          }
@@ -2326,7 +2326,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       float var27 = var18 * 0.8F;
       var1.method_44471(7, class_7985.field_40911);
       float var28 = (float)Math.floor(var4 / 4.0) * 4.0F;
-      if (class_3111.method_14443()) {
+      if (Config.method_14443()) {
          for (int var29 = -3; var29 <= 4; var29++) {
             for (int var30 = -3; var30 <= 4; var30++) {
                float var31 = (float)(var29 * 8);
@@ -2541,7 +2541,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       double var17 = 0.0;
-      int var8 = class_3111.method_14307();
+      int var8 = Config.method_14307();
       if (!this.field_20924.isEmpty()) {
          Iterator var9 = this.field_20924.iterator();
 
@@ -2580,7 +2580,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          || !(var1.method_41627().field_7336 > var3.method_9821() + var4)
          || !(var1.method_41627().field_7334 < var3.method_9816() - var4)
          || !(var1.method_41627().field_7334 > var3.method_9825() + var4)) {
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_6588.method_30315();
             class_6588.method_30236(class_6588.field_33784);
          }
@@ -2590,22 +2590,22 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          double var8 = var1.method_41627().field_7336;
          double var10 = var1.method_41627().field_7333;
          double var12 = var1.method_41627().field_7334;
-         class_3542.method_16488();
-         class_3542.method_16428();
-         class_3542.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
-         this.textureManager.method_35674(FORCEFIELD);
-         class_3542.method_16387(MinecraftClient.method_8497());
-         class_3542.method_16438();
+         RenderSystem.enableBlend();
+         RenderSystem.enableDepthTest();
+         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
+         this.textureManager.bindTexture(FORCEFIELD);
+         RenderSystem.method_16387(MinecraftClient.method_8497());
+         RenderSystem.method_16438();
          int var14 = var3.method_9839().method_18609();
          float var15 = (float)(var14 >> 16 & 0xFF) / 255.0F;
          float var16 = (float)(var14 >> 8 & 0xFF) / 255.0F;
          float var17 = (float)(var14 & 0xFF) / 255.0F;
-         class_3542.method_16480(var15, var16, var17, (float)var6);
-         class_3542.method_16475(-3.0F, -3.0F);
-         class_3542.method_16464();
-         class_3542.method_16433();
-         class_3542.method_16374();
-         class_3542.method_16393();
+         RenderSystem.color4f(var15, var16, var17, (float)var6);
+         RenderSystem.method_16475(-3.0F, -3.0F);
+         RenderSystem.method_16464();
+         RenderSystem.method_16433();
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16393();
          float var18 = (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F;
          float var19 = 0.0F;
          float var20 = 0.0F;
@@ -2673,16 +2673,16 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          var2.method_44487();
          class_138.method_554(var2);
-         class_3542.method_16361();
-         class_3542.method_16458();
-         class_3542.method_16475(0.0F, 0.0F);
-         class_3542.method_16382();
-         class_3542.method_16374();
-         class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-         class_3542.method_16448();
-         class_3542.method_16489();
-         class_3542.method_16387(true);
-         if (class_3111.method_14424()) {
+         RenderSystem.method_16361();
+         RenderSystem.method_16458();
+         RenderSystem.method_16475(0.0F, 0.0F);
+         RenderSystem.method_16382();
+         RenderSystem.enableAlphaTest();
+         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.method_16448();
+         RenderSystem.method_16489();
+         RenderSystem.method_16387(true);
+         if (Config.method_14424()) {
             class_6588.method_30118();
          }
       }
@@ -2970,41 +2970,41 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       Camera var16 = this.client.gameRenderer.method_35949();
       if (this.client != null && var16.method_41642() && this.client.field_9572 != null) {
          class_9761 var17 = this.method_20020(var3);
-         if (var1 == class_3090.field_15377 && !class_3111.method_14418()) {
+         if (var1 == class_3090.field_15377 && !Config.method_14418()) {
             return null;
-         } else if (var1 == class_3090.field_15339 && !class_3111.method_14418()) {
+         } else if (var1 == class_3090.field_15339 && !Config.method_14418()) {
             return null;
-         } else if (var1 == class_3090.field_15343 && !class_3111.method_14418()) {
+         } else if (var1 == class_3090.field_15343 && !Config.method_14418()) {
             return null;
-         } else if (var1 == class_3090.field_15350 && !class_3111.method_14268()) {
+         } else if (var1 == class_3090.field_15350 && !Config.method_14268()) {
             return null;
-         } else if (var1 == class_3090.field_15376 && !class_3111.method_14246()) {
+         } else if (var1 == class_3090.field_15376 && !Config.method_14246()) {
             return null;
-         } else if (var1 == class_3090.field_15319 && !class_3111.method_14246()) {
+         } else if (var1 == class_3090.field_15319 && !Config.method_14246()) {
             return null;
-         } else if (var1 == class_3090.field_15353 && !class_3111.method_14426()) {
+         } else if (var1 == class_3090.field_15353 && !Config.method_14426()) {
             return null;
-         } else if (var1 == class_3090.field_15364 && !class_3111.method_14426()) {
+         } else if (var1 == class_3090.field_15364 && !Config.method_14426()) {
             return null;
-         } else if (var1 == class_3090.field_15338 && !class_3111.method_14426()) {
+         } else if (var1 == class_3090.field_15338 && !Config.method_14426()) {
             return null;
-         } else if (var1 == class_3090.field_15324 && !class_3111.method_14426()) {
+         } else if (var1 == class_3090.field_15324 && !Config.method_14426()) {
             return null;
-         } else if (var1 == class_3090.field_15342 && !class_3111.method_14426()) {
+         } else if (var1 == class_3090.field_15342 && !Config.method_14426()) {
             return null;
-         } else if (var1 == class_3090.field_15356 && !class_3111.method_14433()) {
+         } else if (var1 == class_3090.field_15356 && !Config.method_14433()) {
             return null;
-         } else if (var1 == class_3090.field_15321 && !class_3111.method_14301()) {
+         } else if (var1 == class_3090.field_15321 && !Config.method_14301()) {
             return null;
-         } else if (var1 == class_3090.field_15365 && !class_3111.method_14301()) {
+         } else if (var1 == class_3090.field_15365 && !Config.method_14301()) {
             return null;
-         } else if (var1 == class_3090.field_15317 && !class_3111.method_14413()) {
+         } else if (var1 == class_3090.field_15317 && !Config.method_14413()) {
             return null;
-         } else if (var1 == class_3090.field_15358 && !class_3111.method_14338()) {
+         } else if (var1 == class_3090.field_15358 && !Config.method_14338()) {
             return null;
-         } else if (var1 == class_3090.field_15336 && !class_3111.method_14338()) {
+         } else if (var1 == class_3090.field_15336 && !Config.method_14338()) {
             return null;
-         } else if (var1 == class_3090.field_15366 && !class_3111.method_14429()) {
+         } else if (var1 == class_3090.field_15366 && !Config.method_14429()) {
             return null;
          } else {
             if (!var2) {
@@ -3317,7 +3317,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             for (int var18 = 0; var18 < 8; var18++) {
                this.method_20061(
-                  new class_8661(class_3090.field_15351, new class_6098(class_4897.field_25226)),
+                  new class_8661(class_3090.field_15351, new ItemStack(class_4897.field_25226)),
                   var17.field_7336,
                   var17.field_7333,
                   var17.field_7334,
@@ -3364,7 +3364,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
             for (int var58 = 0; var58 < 8; var58++) {
                this.method_20061(
-                  new class_8661(class_3090.field_15351, new class_6098(class_4897.field_24519)),
+                  new class_8661(class_3090.field_15351, new ItemStack(class_4897.field_24519)),
                   var22,
                   var24,
                   var26,
@@ -3627,10 +3627,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       try {
          this.client.gameOptions.field_45536 = 1000;
          this.client.gameOptions.field_45406 = false;
-         WorldRenderer var6 = class_3111.method_14387();
+         WorldRenderer var6 = Config.method_14387();
          int var7 = var6.method_20027();
          long var8 = System.currentTimeMillis();
-         class_3111.method_14277("Loading visible chunks");
+         Config.method_14277("Loading visible chunks");
          long var10 = System.currentTimeMillis() + 5000L;
          int var12 = 0;
          boolean var13 = false;
@@ -3663,13 +3663,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             }
 
             if (System.currentTimeMillis() > var10) {
-               class_3111.method_14280("Chunks loaded: " + var12);
+               Config.method_14280("Chunks loaded: " + var12);
                var10 = System.currentTimeMillis() + 5000L;
             }
          } while (var13);
 
-         class_3111.method_14280("Chunks loaded: " + var12);
-         class_3111.method_14280("Finished loading visible chunks");
+         Config.method_14280("Chunks loaded: " + var12);
+         Config.method_14280("Finished loading visible chunks");
          class_6705.field_34625 = 0;
       } finally {
          this.client.gameOptions.field_45536 = var4;
@@ -3704,7 +3704,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          int var6 = var3 << 20 | var4 << 4;
-         if (class_3111.method_14326() && var0 instanceof class_6163 && (!field_21005 || !var1.method_8321(var0, var2))) {
+         if (Config.method_14326() && var0 instanceof class_6163 && (!field_21005 || !var1.method_8321(var0, var2))) {
             var6 = class_8421.method_38765(var2, var6);
          }
 

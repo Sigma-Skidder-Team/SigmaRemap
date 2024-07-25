@@ -10,19 +10,19 @@ public class class_3997 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       class_9529 var7 = method_11238(var1, var2, this.field_19414 != class_8532.field_43673 ? class_9583.field_48747 : class_9583.field_48749);
       if (var7.method_33990() != class_1430.field_7721) {
          if (var7.method_33990() != class_1430.field_7717) {
-            return class_954.<class_6098>method_4207(var6);
+            return class_954.<ItemStack>method_4207(var6);
          } else {
             class_9529 var8 = var7;
             class_1331 var9 = var8.method_43955();
             Direction var10 = var8.method_43956();
             class_1331 var11 = var9.method_6098(var10);
             if (!var1.method_29538(var2, var9) || !var2.method_3208(var11, var10, var6)) {
-               return class_954.<class_6098>method_4202(var6);
+               return class_954.<ItemStack>method_4202(var6);
             } else if (this.field_19414 == class_8532.field_43673) {
                class_2522 var15 = var1.method_28262(var9);
                if (var15.method_8360() instanceof class_5978) {
@@ -30,21 +30,21 @@ public class class_3997 extends class_2451 {
                   if (var16 != class_8532.field_43673) {
                      var2.method_3211(class_6234.field_31907.method_43790(this));
                      var2.method_37155(!var16.method_10724(class_6503.field_33095) ? class_463.field_2142 : class_463.field_2434, 1.0F, 1.0F);
-                     class_6098 var14 = class_4754.method_21940(var6, var2, new class_6098(var16.method_10721()));
+                     ItemStack var14 = class_4754.method_21940(var6, var2, new ItemStack(var16.method_10721()));
                      if (!var1.field_33055) {
-                        class_8807.field_45082.method_44414((class_9359)var2, new class_6098(var16.method_10721()));
+                        class_8807.field_45082.method_44414((class_9359)var2, new ItemStack(var16.method_10721()));
                      }
 
-                     return class_954.<class_6098>method_4208(var14, var1.method_22567());
+                     return class_954.<ItemStack>method_4208(var14, var1.method_22567());
                   }
                }
 
-               return class_954.<class_6098>method_4202(var6);
+               return class_954.<ItemStack>method_4202(var6);
             } else {
                class_2522 var12 = var1.method_28262(var9);
                class_1331 var13 = var12.method_8360() instanceof class_4582 && this.field_19414 == class_8532.field_43674 ? var9 : var11;
                if (!this.method_18424(var2, var1, var13, var8)) {
-                  return class_954.<class_6098>method_4202(var6);
+                  return class_954.<ItemStack>method_4202(var6);
                } else {
                   this.method_18422(var1, var6, var13);
                   if (var2 instanceof class_9359) {
@@ -52,20 +52,20 @@ public class class_3997 extends class_2451 {
                   }
 
                   var2.method_3211(class_6234.field_31907.method_43790(this));
-                  return class_954.<class_6098>method_4208(this.method_18423(var6, var2), var1.method_22567());
+                  return class_954.<ItemStack>method_4208(this.method_18423(var6, var2), var1.method_22567());
                }
             }
          }
       } else {
-         return class_954.<class_6098>method_4207(var6);
+         return class_954.<ItemStack>method_4207(var6);
       }
    }
 
-   public class_6098 method_18423(class_6098 var1, class_704 var2) {
-      return var2.field_3876.field_4944 ? var1 : new class_6098(class_4897.field_24548);
+   public ItemStack method_18423(ItemStack var1, class_704 var2) {
+      return var2.field_3876.field_4944 ? var1 : new ItemStack(class_4897.field_24548);
    }
 
-   public void method_18422(World var1, class_6098 var2, class_1331 var3) {
+   public void method_18422(World var1, ItemStack var2, class_1331 var3) {
    }
 
    public boolean method_18424(class_704 var1, World var2, class_1331 var3, class_9529 var4) {

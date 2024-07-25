@@ -4,7 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 public class ShadowESP extends Module {
    public static class_4719 field_7448 = class_4719.field_22895;
-   public class_3758 field_7447 = class_2565.method_11647(mc.method_8589().field_14810, new class_9633(256));
+   public class_3758 field_7447 = class_2565.method_11647(client.method_8589().field_14810, new class_9633(256));
 
    public ShadowESP() {
       super(Category.RENDER, "Shadow", "Draws a line arround entities");
@@ -14,7 +14,7 @@ public class ShadowESP extends Module {
    @EventListen
    private void method_6348(class_3368 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632 != null && mc.field_9601 != null) {
+         if (client.thePlayer != null && client.field_9601 != null) {
             this.method_6345();
             class_73.method_107();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -23,8 +23,8 @@ public class ShadowESP extends Module {
             GL11.glLineWidth(1.0F);
             this.method_6343();
             this.method_6347(class_4719.field_22894);
-            class_3542.method_16442(518, 0.0F);
-            class_3542.method_16374();
+            RenderSystem.method_16442(518, 0.0F);
+            RenderSystem.enableAlphaTest();
             GL11.glColor4f(1.0F, 0.0F, 1.0F, 0.1F);
             GL11.glEnable(3042);
             GL11.glDisable(2896);
@@ -38,7 +38,7 @@ public class ShadowESP extends Module {
 
    private void method_6343() {
       int var3 = class_314.method_1444(class_1255.field_6918.field_6917, 0.8F);
-      mc.field_9601
+      client.field_9601
          .field_568
          .forEach(
             (var2, var3x) -> {
@@ -51,7 +51,7 @@ public class ShadowESP extends Module {
                   GL11.glTranslated(var6, var8, var10);
                   GL11.glTranslatef(0.0F, var3x.method_37074(), 0.0F);
                   GL11.glTranslatef(0.0F, 0.1F, 0.0F);
-                  GL11.glRotatef(mc.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
+                  GL11.glRotatef(client.gameRenderer.method_35949().method_41640(), 0.0F, -1.0F, 0.0F);
                   GL11.glScalef(-0.11F, -0.11F, -0.11F);
                   class_73.method_102(
                      -var3x.method_37086() * 22.0F,
@@ -79,7 +79,7 @@ public class ShadowESP extends Module {
       float var8 = (float)(var4 & 0xFF) / 255.0F;
       GL11.glEnable(2896);
       GL11.glLightModelfv(2899, new float[]{var6, var7, var8, var5});
-      class_3542.method_16389();
+      RenderSystem.method_16389();
       if (field_7448 == class_4719.field_22894) {
          GL11.glEnable(10754);
          GL11.glLineWidth(2.0F);
@@ -89,28 +89,28 @@ public class ShadowESP extends Module {
          GL11.glEnable(2896);
       }
 
-      for (Entity var10 : mc.field_9601.method_736()) {
+      for (Entity var10 : client.field_9601.method_736()) {
          if (this.method_6344(var10)) {
             GL11.glPushMatrix();
-            class_1343 var11 = mc.gameRenderer.method_35949().method_41627();
+            class_1343 var11 = client.gameRenderer.method_35949().method_41627();
             double var12 = var11.method_61();
             double var14 = var11.method_60();
             double var16 = var11.method_62();
             class_7966 var18 = new class_7966();
-            boolean var19 = mc.gameOptions.field_45568;
-            class_3542.method_16487();
-            class_3542.method_16480(0.0F, 0.0F, 1.0F, 0.5F);
-            class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-            class_3542.method_16488();
-            mc.gameOptions.field_45568 = false;
+            boolean var19 = client.gameOptions.field_45568;
+            RenderSystem.method_16487();
+            RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
+            RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+            RenderSystem.enableBlend();
+            client.gameOptions.field_45568 = false;
             int var20 = var10.method_37230();
             boolean var21 = var10.method_37385(0);
             var10.method_37178(0);
             var10.method_37220(0, false);
-            this.method_6350(var10, var12, var14, var16, mc.theTimer.field_32600, var18, this.field_7447);
+            this.method_6350(var10, var12, var14, var16, client.theTimer.field_32600, var18, this.field_7447);
             var10.method_37178(var20);
             var10.method_37220(0, var21);
-            mc.gameOptions.field_45568 = var19;
+            client.gameOptions.field_45568 = var19;
             GL11.glPopMatrix();
          }
       }
@@ -135,7 +135,7 @@ public class ShadowESP extends Module {
       double var15 = class_9299.method_42794((double)var8, var1.field_41713, var1.method_37309());
       double var17 = class_9299.method_42794((double)var8, var1.field_41724, var1.method_37156());
       float var19 = class_9299.method_42795(var8, var1.field_41711, var1.field_41701);
-      mc.worldRenderer.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
+      client.worldRenderer.field_20988.method_28115(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
    }
 
    @EventListen
@@ -182,7 +182,7 @@ public class ShadowESP extends Module {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      mc.gameRenderer.field_40623.method_26122();
+      client.gameRenderer.field_40623.method_26122();
    }
 
    private void method_6346() {
@@ -190,12 +190,12 @@ public class ShadowESP extends Module {
       GL11.glDisable(2896);
       GL11.glEnable(3553);
       GL11.glEnable(2903);
-      class_3542.method_16420(33986, 240.0F, 240.0F);
+      RenderSystem.method_16420(33986, 240.0F, 240.0F);
       class_9162.method_42212();
-      TextureManager var10000 = mc.method_8577();
-      mc.method_8577();
-      var10000.method_35674(TextureManager.field_40364);
-      mc.gameRenderer.field_40623.method_26126();
+      TextureManager var10000 = client.getTextureManager();
+      client.getTextureManager();
+      var10000.bindTexture(TextureManager.field_40364);
+      client.gameRenderer.field_40623.method_26126();
       GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
       field_7448 = class_4719.field_22895;
    }

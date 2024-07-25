@@ -3,7 +3,7 @@ package remapped;
 public interface class_6191 {
    class_6191 field_31621 = (var0, var1) -> var1;
 
-   class_6098 method_28324(class_8743 var1, class_6098 var2);
+   ItemStack method_28324(class_8743 var1, ItemStack var2);
 
    static void method_28323() {
       class_6451.method_29408(class_4897.field_25024, new class_6155());

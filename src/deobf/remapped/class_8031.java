@@ -169,7 +169,7 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       if (var5.method_27960() != class_4897.field_24853) {
          return super.method_26857(var1, var2);
       } else if (!this.field_41768.field_33055 && this.method_45584()) {
@@ -313,8 +313,8 @@ public class class_8031 extends class_5467 implements class_9897 {
       return this.field_41768
          .method_29549()
          .<class_6946, class_1504>method_23138(class_1510.field_7997, var7, this.field_41768)
-         .<class_6098>map(var1x -> var1x.method_41042(var7))
-         .<class_2451>map(class_6098::method_27960)
+         .<ItemStack>map(var1x -> var1x.method_41042(var7))
+         .<class_2451>map(ItemStack::method_27960)
          .filter(class_239.class::isInstance)
          .<class_239>map(class_239.class::cast)
          .<class_9077>map(class_239::method_1015)
@@ -323,8 +323,8 @@ public class class_8031 extends class_5467 implements class_9897 {
 
    private static class_6946 method_36476(class_9077 var0, class_9077 var1) {
       class_6946 var4 = new class_6946(new class_3783((class_4165)null, -1), 2, 1);
-      var4.method_31503(0, new class_6098(class_239.method_1016(var0)));
-      var4.method_31503(1, new class_6098(class_239.method_1016(var1)));
+      var4.method_31503(0, new ItemStack(class_239.method_1016(var0)));
+      var4.method_31503(1, new ItemStack(class_239.method_1016(var1)));
       return var4;
    }
 

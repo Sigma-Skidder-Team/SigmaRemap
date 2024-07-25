@@ -4,14 +4,14 @@ import java.io.IOException;
 
 public class class_703 implements Packet<class_1243> {
    private static String[] field_3838;
-   private class_6098 field_3836;
+   private ItemStack field_3836;
    private boolean field_3837;
    private int field_3839;
 
    public class_703() {
    }
 
-   public class_703(class_6098 var1, boolean var2, int var3) {
+   public class_703(ItemStack var1, boolean var2, int var3) {
       this.field_3836 = var1.method_27973();
       this.field_3837 = var2;
       this.field_3839 = var3;
@@ -35,7 +35,7 @@ public class class_703 implements Packet<class_1243> {
       var1.method_5561(this);
    }
 
-   public class_6098 method_3145() {
+   public ItemStack method_3145() {
       return this.field_3836;
    }
 

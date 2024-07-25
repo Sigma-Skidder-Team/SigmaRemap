@@ -79,7 +79,7 @@ public class class_708 extends class_4232 {
          class_2838 var8 = (class_2838)var0;
          return var4 + "...";
       } else {
-         TextRenderer var5 = class_3111.method_14327().textRenderer;
+         TextRenderer var5 = Config.method_14327().textRenderer;
          int var6 = var5.method_45395(": " + class_3458.method_15902()) + 5;
 
          while (var5.method_45395(var4) + var6 >= var1 && var4.length() > 0) {

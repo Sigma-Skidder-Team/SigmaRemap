@@ -11,7 +11,7 @@ public class class_3186 {
       this.field_15914 = var1;
    }
 
-   public boolean method_14663(class_6098 var1) {
+   public boolean method_14663(ItemStack var1) {
       return this.field_15914.isEmpty() || !var1.method_28022() && var1.method_28018() && this.field_15914.equals(var1.method_28008().getString());
    }
 

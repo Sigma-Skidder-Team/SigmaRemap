@@ -22,7 +22,7 @@ public class class_5328 implements class_7279 {
    }
 
    public boolean test(class_2792 var1) {
-      class_6098 var4 = var1.<class_6098>method_12698(class_8712.field_44670);
+      ItemStack var4 = var1.<ItemStack>method_12698(class_8712.field_44670);
       return var4 != null && this.field_27180.method_24266(var4);
    }
 

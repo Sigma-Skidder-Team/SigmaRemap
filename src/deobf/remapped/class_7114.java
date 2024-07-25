@@ -5,7 +5,7 @@ import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public abstract class class_7114 extends class_2089 implements IRenderable, class_5888 {
+public abstract class class_7114 extends AbstractGui implements IRenderable, class_5888 {
    public static final Identifier field_36678 = new Identifier("textures/gui/widgets.png");
    public int field_36671;
    public int field_36681;
@@ -75,7 +75,7 @@ public abstract class class_7114 extends class_2089 implements IRenderable, clas
       if (this.field_36675 && this.method_32703() && Util.getMeasuringTimeMs() > this.field_36676) {
          String var3 = this.method_32701().getString();
          if (!var3.isEmpty()) {
-            class_7542.field_38482.method_34341(var3);
+            NarratorChatListener.INSTANCE.method_34341(var3);
             this.field_36676 = Long.MAX_VALUE;
          }
       }
@@ -88,12 +88,12 @@ public abstract class class_7114 extends class_2089 implements IRenderable, clas
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       MinecraftClient var7 = MinecraftClient.getInstance();
       TextRenderer var8 = var7.textRenderer;
-      var7.method_8577().method_35674(field_36678);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, this.field_36680);
+      var7.getTextureManager().bindTexture(field_36678);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, this.field_36680);
       int var9 = this.method_32684(this.method_32703());
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16428();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.enableDepthTest();
       this.method_9781(var1, this.field_36670, this.field_36674, 0, 46 + var9 * 20, this.field_36671 / 2, this.field_36681);
       this.method_9781(
          var1, this.field_36670 + this.field_36671 / 2, this.field_36674, 200 - this.field_36671 / 2, 46 + var9 * 20, this.field_36671 / 2, this.field_36681

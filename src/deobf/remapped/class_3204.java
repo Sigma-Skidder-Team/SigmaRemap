@@ -51,7 +51,7 @@ public class class_3204 extends class_1595 {
 
    @Override
    public void method_26870(class_9589 var1) {
-      this.method_37349(class_6943.field_35707, new class_6098(class_4897.field_25247));
+      this.method_37349(class_6943.field_35707, new ItemStack(class_4897.field_25247));
    }
 
    @Override
@@ -86,7 +86,7 @@ public class class_3204 extends class_1595 {
    }
 
    @Override
-   public class_6749 method_7152(class_6098 var1, float var2) {
+   public class_6749 method_7152(ItemStack var1, float var2) {
       class_6749 var5 = super.method_7152(var1, var2);
       var5.method_37178(100);
       return var5;

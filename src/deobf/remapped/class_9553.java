@@ -58,7 +58,7 @@ public class class_9553 extends class_2733 {
             class_8182 var7 = (class_8182)var1;
             return (class_8599)var7.method_37500((class_2255)var6);
          } else {
-            class_3111.method_14317("Not a large chest model: " + var1);
+            Config.method_14317("Not a large chest model: " + var1);
             return null;
          }
       } else {

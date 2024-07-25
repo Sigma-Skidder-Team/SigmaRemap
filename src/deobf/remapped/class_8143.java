@@ -13,7 +13,7 @@ public abstract class class_8143 implements AutoCloseable {
    private boolean field_41692;
 
    public void method_37049(boolean var1, boolean var2) {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       if (!this.field_41687 || this.field_41689 != var1 || this.field_41690 != var2) {
          this.field_41687 = true;
          this.field_41689 = var1;
@@ -21,7 +21,7 @@ public abstract class class_8143 implements AutoCloseable {
          int var6;
          short var7;
          if (!var1) {
-            int var5 = class_3111.method_14392();
+            int var5 = Config.method_14392();
             var6 = !var2 ? 9728 : var5;
             var7 = 9728;
          } else {
@@ -29,14 +29,14 @@ public abstract class class_8143 implements AutoCloseable {
             var7 = 9729;
          }
 
-         class_1920.method_8791(this.method_37055());
-         class_1920.method_8879(3553, 10241, var6);
-         class_1920.method_8879(3553, 10240, var7);
+         GlStateManager.method_8791(this.method_37055());
+         GlStateManager.method_8879(3553, 10241, var6);
+         GlStateManager.method_8879(3553, 10240, var7);
       }
    }
 
    public int method_37055() {
-      class_3542.method_16431(class_3542::method_16440);
+      RenderSystem.method_16431(RenderSystem::method_16440);
       if (this.field_41691 == -1) {
          this.field_41691 = class_4970.method_22837();
       }
@@ -45,7 +45,7 @@ public abstract class class_8143 implements AutoCloseable {
    }
 
    public void method_37052() {
-      if (class_3542.method_16366()) {
+      if (RenderSystem.method_16366()) {
          if (this.field_41691 != -1) {
             class_7977.method_36141(this, this.field_41691);
             this.field_41687 = false;
@@ -53,7 +53,7 @@ public abstract class class_8143 implements AutoCloseable {
             this.field_41691 = -1;
          }
       } else {
-         class_3542.method_16474(() -> {
+         RenderSystem.method_16474(() -> {
             class_7977.method_36141(this, this.field_41691);
             this.field_41687 = false;
             if (this.field_41691 != -1) {
@@ -67,10 +67,10 @@ public abstract class class_8143 implements AutoCloseable {
    public abstract void method_37053(class_7832 var1) throws IOException;
 
    public void method_37048() {
-      if (class_3542.method_16440()) {
-         class_1920.method_8791(this.method_37055());
+      if (RenderSystem.method_16440()) {
+         GlStateManager.method_8791(this.method_37055());
       } else {
-         class_3542.method_16474(() -> class_1920.method_8791(this.method_37055()));
+         RenderSystem.method_16474(() -> GlStateManager.method_8791(this.method_37055()));
       }
    }
 

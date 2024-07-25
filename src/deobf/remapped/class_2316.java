@@ -108,7 +108,7 @@ public class class_2316 {
       } else {
          URL var4 = new URL(var0);
          InputStream var5 = var4.openStream();
-         return class_3111.method_14250(var5);
+         return Config.method_14250(var5);
       }
    }
 

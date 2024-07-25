@@ -57,7 +57,7 @@ public class class_8678 {
             var7.add(var11);
          }
       } else {
-         class_3111.method_14317("Mipmaps not possible (power of 2 dimensions needed), texture: " + var2 + ", dim: " + var0 + "x" + var1);
+         Config.method_14317("Mipmaps not possible (power of 2 dimensions needed), texture: " + var2 + ", dim: " + var0 + "x" + var1);
          return new Dimension[0];
       }
    }
@@ -150,7 +150,7 @@ public class class_8678 {
          for (int var5 = 0; var5 < var0.length; var5++) {
             Dimension var6 = var0[var5];
             int var7 = var6.width * var6.height;
-            IntBuffer var8 = class_3111.method_14260(var7);
+            IntBuffer var8 = Config.method_14260(var7);
             int[] var9 = var1[var5];
             ((Buffer)var8).clear();
             var8.put(var9);

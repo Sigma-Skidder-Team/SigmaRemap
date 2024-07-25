@@ -27,25 +27,25 @@ public class class_3570 {
    public static void method_16600(String var0, String var1) {
       if (var1 != null) {
          int var4 = method_16599(var0, var1);
-         class_3542.method_16446(var4);
+         RenderSystem.method_16446(var4);
       } else {
-         MinecraftClient.getInstance().method_8577().method_35674(field_17475);
+         MinecraftClient.getInstance().getTextureManager().bindTexture(field_17475);
       }
    }
 
    public static void method_16603(String var0, Runnable var1) {
-      class_3542.method_16444();
+      RenderSystem.method_16444();
 
       try {
          method_16597(var0);
          var1.run();
       } finally {
-         class_3542.method_16399();
+         RenderSystem.method_16399();
       }
    }
 
    private static void method_16598(UUID var0) {
-      MinecraftClient.getInstance().method_8577().method_35674(class_1512.method_6921(var0));
+      MinecraftClient.getInstance().getTextureManager().bindTexture(class_1512.method_6921(var0));
    }
 
    private static void method_16597(String var0) {
@@ -62,13 +62,13 @@ public class class_3570 {
                method_16598(var3);
             } else {
                int var5 = method_16599(var0, field_17472.get(var0));
-               class_3542.method_16446(var5);
+               RenderSystem.method_16446(var5);
             }
          } else {
             method_16598(var3);
          }
       } else {
-         class_3542.method_16446(class_1641.method_7354(field_17476.get(var0)));
+         RenderSystem.method_16446(class_1641.method_7354(field_17476.get(var0)));
       }
    }
 
@@ -80,10 +80,10 @@ public class class_3570 {
             return class_1641.method_7354(var4);
          }
 
-         class_3542.method_16362(class_1641.method_7354(var4));
+         RenderSystem.method_16362(class_1641.method_7354(var4));
          var5 = class_1641.method_7354(var4);
       } else {
-         var5 = class_1920.method_8807();
+         var5 = GlStateManager.method_8807();
       }
 
       IntBuffer var15 = null;
@@ -111,8 +111,8 @@ public class class_3570 {
          var14.printStackTrace();
       }
 
-      class_3542.method_16492(33984);
-      class_3542.method_16446(var5);
+      RenderSystem.method_16492(33984);
+      RenderSystem.method_16446(var5);
       class_4970.method_22836(var15, var6, var7);
       field_17476.put(var0, new class_1641(var1, var5));
       return var5;

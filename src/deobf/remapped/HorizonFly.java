@@ -10,19 +10,19 @@ public class HorizonFly extends Module {
 
    @Override
    public void onEnable() {
-      this.field_13555 = mc.field_9632.method_37309();
+      this.field_13555 = client.thePlayer.method_37309();
       this.field_13556 = 10;
-      mc.theTimer.timerSpeed = 0.6F;
+      client.theTimer.timerSpeed = 0.6F;
    }
 
    @Override
    public void onDisable() {
       class_8865.method_40776(0.0);
-      if (mc.field_9632.method_37098().field_7333 > 0.0) {
+      if (client.thePlayer.method_37098().field_7333 > 0.0) {
          class_314.method_1408(-0.0789);
       }
 
-      mc.theTimer.timerSpeed = 1.0F;
+      client.theTimer.timerSpeed = 1.0F;
    }
 
    @EventListen
@@ -77,8 +77,8 @@ public class HorizonFly extends Module {
             }
 
             this.field_13555 = var5.field_3144;
-            var5.field_3143 = mc.field_9632.field_41701;
-            var5.field_3140 = mc.field_9632.field_41755;
+            var5.field_3143 = client.thePlayer.field_41701;
+            var5.field_3140 = client.thePlayer.field_41755;
          }
       }
    }
@@ -100,10 +100,10 @@ public class HorizonFly extends Module {
    public void method_12635(class_1711 var1) {
       if (this.method_42015()) {
          double var4 = this.field_13555;
-         mc.field_9632.field_41736.field_7333 = var4;
-         mc.field_9632.field_41713 = var4;
-         mc.field_9632.field_3864 = var4;
-         mc.field_9632.field_41698 = var4;
+         client.thePlayer.field_41736.field_7333 = var4;
+         client.thePlayer.field_41713 = var4;
+         client.thePlayer.field_3864 = var4;
+         client.thePlayer.field_41698 = var4;
       }
    }
 }

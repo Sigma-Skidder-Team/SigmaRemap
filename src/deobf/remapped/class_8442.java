@@ -11,12 +11,12 @@ public class class_8442 extends class_4041 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       class_9541.method_43988(var1, var3, 0.25F);
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
       var1.method_29528(
          (class_704)null,
          var2.method_37302(),

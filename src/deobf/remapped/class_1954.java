@@ -84,12 +84,12 @@ public class class_1954 {
       class_1331 var7 = class_6561.method_29966(var5.method_6105(var6), class_9022.field_46145, var0.method_18840(), var5);
       var4.method_29594(var7, class_4783.field_23566.method_29260().method_8318(var0.method_18840()));
       class_2522 var8 = var4.method_28262(var7);
-      class_6098 var9 = method_9035(var0.method_18835(), var0.method_18838(), var1);
+      ItemStack var9 = method_9035(var0.method_18835(), var0.method_18838(), var1);
       class_2013.method_9334(var4, var7, var8, var9);
    }
 
-   private static class_6098 method_9035(String var0, boolean var1, String var2) {
-      class_6098 var5 = new class_6098(class_4897.field_24805);
+   private static ItemStack method_9035(String var0, boolean var1, String var2) {
+      ItemStack var5 = new ItemStack(class_4897.field_24805);
       class_3416 var6 = new class_3416();
       StringBuffer var7 = new StringBuffer();
       Arrays.<String>stream(var0.split("\\.")).forEach(var1x -> var7.append(var1x).append('\n'));

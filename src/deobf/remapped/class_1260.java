@@ -13,8 +13,8 @@ public class class_1260 extends class_8574 {
    }
 
    @Override
-   public class_6098 method_16633() {
-      return new class_6098(class_4897.field_25221);
+   public ItemStack method_16633() {
+      return new ItemStack(class_4897.field_25221);
    }
 
    @Override

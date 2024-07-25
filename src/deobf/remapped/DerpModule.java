@@ -20,9 +20,9 @@ public class DerpModule extends Module {
       if (this.method_42015() && var1.method_6449()) {
          if (this.getBooleanValueByName("Sneak")) {
             if (this.field_33189) {
-               mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20097));
+               client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20097));
             } else {
-               mc.method_8614().method_4813(new class_2317(mc.field_9632, class_4127.field_20098));
+               client.method_8614().method_4813(new class_2317(client.thePlayer, class_4127.field_20098));
             }
          }
 
@@ -31,7 +31,7 @@ public class DerpModule extends Module {
          if (this.getBooleanValueByName("Hit") && this.field_33188 > this.random.nextInt(5) + 3) {
             this.field_33188 = 0;
             class_2584 var4 = class_2584.values()[this.random.nextInt(1)];
-            mc.field_9632.method_26597(var4);
+            client.thePlayer.method_26597(var4);
          }
 
          String var6 = this.getStringValueByName("Rotation Mode");
@@ -54,6 +54,6 @@ public class DerpModule extends Module {
 
    @Override
    public void onEnable() {
-      this.field_33191 = (int) mc.field_9632.field_41701;
+      this.field_33191 = (int) client.thePlayer.field_41701;
    }
 }

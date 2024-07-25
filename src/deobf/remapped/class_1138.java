@@ -26,17 +26,17 @@ public class class_1138 extends class_2451 {
       }
    }
 
-   public static int method_4992(class_6098 var0) {
+   public static int method_4992(ItemStack var0) {
       return var0.method_27990().method_25947("generation");
    }
 
-   public static int method_4991(class_6098 var0) {
+   public static int method_4991(ItemStack var0) {
       class_5734 var3 = var0.method_27990();
       return var3 == null ? 0 : var3.method_25927("pages", 8).size();
    }
 
    @Override
-   public ITextComponent method_11249(class_6098 var1) {
+   public ITextComponent method_11249(ItemStack var1) {
       if (var1.method_28002()) {
          class_5734 var4 = var1.method_27990();
          String var5 = var4.method_25965("title");
@@ -49,7 +49,7 @@ public class class_1138 extends class_2451 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       if (var1.method_28002()) {
          class_5734 var7 = var1.method_27990();
          String var8 = var7.method_25965("author");
@@ -74,14 +74,14 @@ public class class_1138 extends class_2451 {
    }
 
    @Override
-   public class_954<class_6098> method_11231(World var1, class_704 var2, class_2584 var3) {
-      class_6098 var6 = var2.method_26617(var3);
+   public class_954<ItemStack> method_11231(World var1, class_704 var2, class_2584 var3) {
+      ItemStack var6 = var2.method_26617(var3);
       var2.method_3174(var6, var3);
       var2.method_3211(class_6234.field_31907.method_43790(this));
-      return class_954.<class_6098>method_4208(var6, var1.method_22567());
+      return class_954.<ItemStack>method_4208(var6, var1.method_22567());
    }
 
-   public static boolean method_4993(class_6098 var0, class_9155 var1, class_704 var2) {
+   public static boolean method_4993(ItemStack var0, class_9155 var1, class_704 var2) {
       class_5734 var5 = var0.method_27990();
       if (var5 != null && !var5.method_25933("resolved")) {
          var5.method_25934("resolved", true);
@@ -113,7 +113,7 @@ public class class_1138 extends class_2451 {
    }
 
    @Override
-   public boolean method_11252(class_6098 var1) {
+   public boolean method_11252(ItemStack var1) {
       return true;
    }
 }

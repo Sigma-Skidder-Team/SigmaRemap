@@ -18,17 +18,17 @@ public class class_9438 {
    }
 
    public boolean method_43661(class_4466 var1, int var2) {
-      return this.field_48182 != var1 ? false : this.field_48183 == null || class_3111.method_14253(var2, this.field_48183);
+      return this.field_48182 != var1 ? false : this.field_48183 == null || Config.method_14253(var2, this.field_48183);
    }
 
    private boolean method_43666(int var1) {
-      return this.field_48183 != null ? class_3111.method_14253(var1, this.field_48183) : false;
+      return this.field_48183 != null ? Config.method_14253(var1, this.field_48183) : false;
    }
 
    public boolean method_43665(int var1) {
       if (this.field_48183 != null) {
          if (!this.method_43666(var1)) {
-            this.field_48183 = class_3111.method_14342(this.field_48183, var1);
+            this.field_48183 = Config.method_14342(this.field_48183, var1);
             return true;
          } else {
             return false;
@@ -64,6 +64,6 @@ public class class_9438 {
 
    @Override
    public String toString() {
-      return this.field_48183 != null ? "" + this.field_48182 + ":" + class_3111.method_14287(this.field_48183) : "" + this.field_48182;
+      return this.field_48183 != null ? "" + this.field_48182 + ":" + Config.method_14287(this.field_48183) : "" + this.field_48182;
    }
 }

@@ -10,8 +10,8 @@ public class KillPotionCommand extends Command {
    @Override
    public void run(String var1, class_5273[] var2, class_860 var3) throws CommandException {
       if (var2.length <= 0) {
-         if (!field_18219.field_9647.method_42149()) {
-            class_6098 var6 = new class_6098(class_4897.field_25226);
+         if (!field_18219.playerController.method_42149()) {
+            ItemStack var6 = new ItemStack(class_4897.field_25226);
             class_5734 var7 = new class_5734();
             var7.method_25931("Amplifier", 125);
             var7.method_25931("Duration", 2000);

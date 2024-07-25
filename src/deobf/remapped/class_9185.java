@@ -44,7 +44,7 @@ public class class_9185 extends class_8131 {
          if (!var1.startsWith("Sentry")) {
             if (var1.startsWith("Elytra")) {
                class_7451 var8 = new class_7451(var3.method_7066(), var2, this.field_46996.method_30489(Direction.field_800));
-               var8.method_33906(new class_6098(class_4897.field_24503), false);
+               var8.method_33906(new ItemStack(class_4897.field_24503), false);
                var3.method_7509(var8);
             }
          } else {

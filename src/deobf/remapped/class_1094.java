@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public abstract class class_1094 extends Screen {
    public class_1094() {
-      super(class_7542.field_38486);
+      super(NarratorChatListener.field_38486);
    }
 
    public static int method_4819(int var0) {

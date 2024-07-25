@@ -123,7 +123,7 @@ public class class_3580 {
             if (!var1.equals("enchantment")) {
                if (!var1.equals("armor")) {
                   if (!var1.equals("elytra")) {
-                     class_3111.method_14317("Unknown method: " + var1);
+                     Config.method_14317("Unknown method: " + var1);
                      return 0;
                   } else {
                      return 4;
@@ -152,7 +152,7 @@ public class class_3580 {
       } else {
          var1 = var1.trim();
          TreeSet var5 = new TreeSet();
-         String[] var6 = class_3111.method_14302(var1, " ");
+         String[] var6 = Config.method_14302(var1, " ");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
@@ -162,10 +162,10 @@ public class class_3580 {
                if (var10 >= 0) {
                   var5.add(new Integer(var10));
                } else {
-                  class_3111.method_14317("Item ID not found: " + var8);
+                  Config.method_14317("Item ID not found: " + var8);
                }
             } else {
-               class_3111.method_14317("Item not found: " + var8);
+               Config.method_14317("Item not found: " + var8);
             }
          }
 
@@ -333,11 +333,11 @@ public class class_3580 {
    private int method_16673(String var1, int var2) {
       if (var1 != null) {
          var1 = var1.trim();
-         int var5 = class_3111.method_14361(var1, Integer.MIN_VALUE);
+         int var5 = Config.method_14361(var1, Integer.MIN_VALUE);
          if (var5 != Integer.MIN_VALUE) {
             return var5;
          } else {
-            class_3111.method_14317("Invalid integer: " + var1);
+            Config.method_14317("Invalid integer: " + var1);
             return var2;
          }
       } else {
@@ -348,11 +348,11 @@ public class class_3580 {
    private float method_16641(String var1, float var2) {
       if (var1 != null) {
          var1 = var1.trim();
-         float var5 = class_3111.method_14445(var1, Float.MIN_VALUE);
+         float var5 = Config.method_14445(var1, Float.MIN_VALUE);
          if (var5 != Float.MIN_VALUE) {
             return var5;
          } else {
-            class_3111.method_14317("Invalid float: " + var1);
+            Config.method_14317("Invalid float: " + var1);
             return var2;
          }
       } else {
@@ -362,7 +362,7 @@ public class class_3580 {
 
    private int[] method_16677(String var1, class_8630 var2) {
       if (var1 != null) {
-         String[] var5 = class_3111.method_14302(var1, " ");
+         String[] var5 = Config.method_14302(var1, " ");
          ArrayList var6 = new ArrayList();
 
          for (int var7 = 0; var7 < var5.length; var7++) {
@@ -371,12 +371,12 @@ public class class_3580 {
             if (var9 != Integer.MIN_VALUE) {
                var6.add(var9);
             } else {
-               class_3111.method_14317("Invalid value: " + var8);
+               Config.method_14317("Invalid value: " + var8);
             }
          }
 
          Integer[] var10 = var6.<Integer>toArray(new Integer[var6.size()]);
-         return class_3111.method_14267(var10);
+         return Config.method_14267(var10);
       } else {
          return null;
       }
@@ -386,14 +386,14 @@ public class class_3580 {
       if (var1 == null) {
          return null;
       } else {
-         String[] var4 = class_3111.method_14302(var1, " ");
+         String[] var4 = Config.method_14302(var1, " ");
          class_8750 var5 = new class_8750();
 
          for (int var6 = 0; var6 < var4.length; var6++) {
             String var7 = var4[var6];
             class_2279 var8 = this.method_16656(var7);
             if (var8 == null) {
-               class_3111.method_14317("Invalid range list: " + var1);
+               Config.method_14317("Invalid range list: " + var1);
                return null;
             }
 
@@ -411,17 +411,17 @@ public class class_3580 {
          var1 = var1.trim();
          int var4 = var1.length() - var1.replace("-", "").length();
          if (var4 > 1) {
-            class_3111.method_14317("Invalid range: " + var1);
+            Config.method_14317("Invalid range: " + var1);
             return null;
          } else {
-            String[] var5 = class_3111.method_14302(var1, "- ");
+            String[] var5 = Config.method_14302(var1, "- ");
             int[] var6 = new int[var5.length];
 
             for (int var7 = 0; var7 < var5.length; var7++) {
                String var8 = var5[var7];
-               int var9 = class_3111.method_14361(var8, -1);
+               int var9 = Config.method_14361(var8, -1);
                if (var9 < 0) {
-                  class_3111.method_14317("Invalid range: " + var1);
+                  Config.method_14317("Invalid range: " + var1);
                   return null;
                }
 
@@ -430,7 +430,7 @@ public class class_3580 {
 
             if (var6.length != 1) {
                if (var6.length != 2) {
-                  class_3111.method_14317("Invalid range: " + var1);
+                  Config.method_14317("Invalid range: " + var1);
                   return null;
                } else {
                   int var12 = Math.min(var6[0], var6[1]);
@@ -487,7 +487,7 @@ public class class_3580 {
          if (!var1.equals("any")) {
             if (!var1.equals("main")) {
                if (!var1.equals("off")) {
-                  class_3111.method_14317("Invalid hand: " + var1);
+                  Config.method_14317("Invalid hand: " + var1);
                   return 0;
                } else {
                   return 2;
@@ -505,10 +505,10 @@ public class class_3580 {
 
    public boolean method_16665(String var1) {
       if (this.field_17529 == null || this.field_17529.length() <= 0) {
-         class_3111.method_14317("No name found: " + var1);
+         Config.method_14317("No name found: " + var1);
          return false;
       } else if (this.field_17545 == null) {
-         class_3111.method_14317("No base path found: " + var1);
+         Config.method_14317("No base path found: " + var1);
          return false;
       } else if (this.field_17541 != 0) {
          if (this.field_17541 == 4 && this.field_17549 == null) {
@@ -521,22 +521,22 @@ public class class_3580 {
             }
 
             if (this.field_17549 == null) {
-               class_3111.method_14317("No items defined: " + var1);
+               Config.method_14317("No items defined: " + var1);
                return false;
             }
          }
 
          if (this.field_17547 == null && this.field_17536 == null && this.field_17519 == null && this.field_17516 == null) {
-            class_3111.method_14317("No texture or model specified: " + var1);
+            Config.method_14317("No texture or model specified: " + var1);
             return false;
          } else if (this.field_17541 == 2 && this.field_17525 == null) {
-            class_3111.method_14317("No enchantmentIDs specified: " + var1);
+            Config.method_14317("No enchantmentIDs specified: " + var1);
             return false;
          } else {
             return true;
          }
       } else {
-         class_3111.method_14317("No type defined: " + var1);
+         Config.method_14317("No type defined: " + var1);
          return false;
       }
    }
@@ -589,7 +589,7 @@ public class class_3580 {
                Identifier var7 = var6.method_23644();
                class_5155 var8 = var1.method_38528(var7);
                if (var8 == null || var8 instanceof class_2008) {
-                  class_3111.method_14317("Missing CIT sprite: " + var7 + ", properties: " + this.field_17545);
+                  Config.method_14317("Missing CIT sprite: " + var7 + ", properties: " + this.field_17545);
                }
 
                this.field_17544.put(var5, var8);
@@ -609,9 +609,9 @@ public class class_3580 {
 
          String var7 = var6 + ".png";
          Identifier var8 = new Identifier(var5, var7);
-         boolean var9 = class_3111.method_14362(var8);
+         boolean var9 = Config.method_14362(var8);
          if (!var9) {
-            class_3111.method_14317("File not found: " + var7);
+            Config.method_14317("File not found: " + var7);
          }
 
          return var8;
@@ -797,7 +797,7 @@ public class class_3580 {
          + ", type: "
          + this.field_17541
          + ", items: ["
-         + class_3111.method_14287(this.field_17549)
+         + Config.method_14287(this.field_17549)
          + "], textture: "
          + this.field_17547;
    }
@@ -807,10 +807,10 @@ public class class_3580 {
          if (this.field_17524 != null) {
             class_8143 var4 = var1.method_35679(this.field_17524);
             int var5 = var4.method_37055();
-            int var6 = class_1920.method_8841();
-            class_1920.method_8791(var5);
+            int var6 = GlStateManager.method_8841();
+            GlStateManager.method_8791(var5);
             this.field_17543 = GL11.glGetTexLevelParameteri(3553, 0, 4096);
-            class_1920.method_8791(var6);
+            GlStateManager.method_8791(var6);
          }
 
          if (this.field_17543 <= 0) {
@@ -826,10 +826,10 @@ public class class_3580 {
          if (this.field_17524 != null) {
             class_8143 var4 = var1.method_35679(this.field_17524);
             int var5 = var4.method_37055();
-            int var6 = class_1920.method_8841();
-            class_1920.method_8791(var5);
+            int var6 = GlStateManager.method_8841();
+            GlStateManager.method_8791(var5);
             this.field_17537 = GL11.glGetTexLevelParameteri(3553, 0, 4097);
-            class_1920.method_8791(var6);
+            GlStateManager.method_8791(var6);
          }
 
          if (this.field_17537 <= 0) {
@@ -879,14 +879,14 @@ public class class_3580 {
    }
 
    public void method_16664() {
-      class_7458 var3 = class_3111.method_14346();
+      class_7458 var3 = Config.method_14346();
       class_7373 var4 = var3.method_33942();
       if (this.field_17519 != null) {
          Identifier var5 = method_16670(this.field_17519);
          class_454 var6 = new class_454(var5, "inventory");
          this.field_17521 = var3.method_33943(var6);
          if (this.field_17521 == var4) {
-            class_3111.method_14317("Custom Items: Model not found " + var6.method_21456());
+            Config.method_14317("Custom Items: Model not found " + var6.method_21456());
             this.field_17521 = null;
          }
       }
@@ -907,7 +907,7 @@ public class class_3580 {
                   String var12 = "item/" + var8;
                   this.field_17552.put(var12, var11);
                } else {
-                  class_3111.method_14317("Custom Items: Model not found " + var10.method_21456());
+                  Config.method_14317("Custom Items: Model not found " + var10.method_21456());
                }
             }
          }

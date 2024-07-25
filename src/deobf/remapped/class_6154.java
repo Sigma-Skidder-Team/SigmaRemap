@@ -46,7 +46,7 @@ public class class_6154 {
    public void method_28245(boolean var1) {
       byte var4 = 0;
       int var5 = this.field_31530.length - 1;
-      this.field_31528 = class_3111.method_14263(this.field_31528, var4, var5);
+      this.field_31528 = Config.method_14263(this.field_31528, var4, var5);
       if (!var1) {
          this.field_31528--;
          if (this.field_31528 < var4) {
@@ -109,6 +109,6 @@ public class class_6154 {
 
    @Override
    public String toString() {
-      return "" + this.field_31524 + "=" + this.method_28238() + " [" + class_3111.method_14289(this.field_31530) + "], value: " + this.field_31528;
+      return "" + this.field_31524 + "=" + this.method_28238() + " [" + Config.method_14289(this.field_31530) + "], value: " + this.field_31528;
    }
 }

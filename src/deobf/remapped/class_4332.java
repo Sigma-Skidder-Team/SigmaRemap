@@ -15,7 +15,7 @@ public class class_4332 extends class_5837 {
    }
 
    @Override
-   public class_6098 method_26627(class_6098 var1, class_2792 var2) {
+   public ItemStack method_26627(ItemStack var1, class_2792 var2) {
       Float var5 = var2.<Float>method_12698(class_8712.field_44672);
       if (var5 != null) {
          Random var6 = var2.method_12693();

@@ -183,12 +183,12 @@ public class class_6107 extends Screen {
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       this.method_1183(var1);
       this.field_31239.method_6767(var1, var2, var3, var4);
-      class_3542.method_16438();
-      class_3542.method_16413(0.0F, 0.0F, 400.0F);
+      RenderSystem.method_16438();
+      RenderSystem.method_16413(0.0F, 0.0F, 400.0F);
       method_9788(var1, this.field_948, this.field_947, this.field_941 / 2, 8, 16777215);
       method_9771(var1, this.field_948, this.field_31242, 50, 30, 10526880);
       method_9771(var1, this.field_948, this.field_31245, 50, 70, 10526880);
-      class_3542.method_16489();
+      RenderSystem.method_16489();
       this.field_31236.method_6767(var1, var2, var3, var4);
       super.method_6767(var1, var2, var3, var4);
    }

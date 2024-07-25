@@ -9,7 +9,7 @@ public class class_4599 extends class_1859 {
       class_3540 var10;
       this.method_32148(var10 = new class_3540(this, "enable", 114, 9, 40, 18));
       var10.method_16323(var7.method_42015());
-      var10.method_8236(var2x -> var7.method_41991(var10.method_16328()));
+      var10.method_8236(var2x -> var7.setEnabled2(var10.method_16328()));
       if (var7.method_41996().size() > 0) {
          class_3534 var11;
          this.method_32148(var11 = new class_3534(this, "gear", 132, 32));

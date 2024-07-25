@@ -40,7 +40,7 @@ public class class_2202 implements class_233 {
    }
 
    @Override
-   public void method_979(class_6098 var1) {
+   public void method_979(ItemStack var1) {
    }
 
    @Override

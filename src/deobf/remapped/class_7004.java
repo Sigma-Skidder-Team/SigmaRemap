@@ -13,7 +13,7 @@ public class class_7004 extends class_2451 {
    }
 
    @Override
-   public void method_11218(class_6098 var1, World var2, List<ITextComponent> var3, class_4605 var4) {
+   public void method_11218(ItemStack var1, World var2, List<ITextComponent> var3, class_4605 var4) {
       class_5734 var7 = var1.method_28021("Explosion");
       if (var7 != null) {
          method_32017(var7, var3);

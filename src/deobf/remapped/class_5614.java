@@ -156,9 +156,9 @@ public class class_5614 extends Entity {
       if (!this.field_41768.field_33055 && this.field_28509 == 0 && var1.field_3851 == 0) {
          var1.field_3851 = 2;
          var1.method_26467(this, 1);
-         Entry var4 = class_2931.method_13413(class_3668.field_17872, var1, class_6098::method_27995);
+         Entry var4 = class_2931.method_13413(class_3668.field_17872, var1, ItemStack::method_27995);
          if (var4 != null) {
-            class_6098 var5 = (class_6098)var4.getValue();
+            ItemStack var5 = (ItemStack)var4.getValue();
             if (!var5.method_28022() && var5.method_27995()) {
                int var6 = Math.min(this.method_25474(this.field_28513), var5.method_28026());
                this.field_28513 = this.field_28513 - this.method_25475(var6);

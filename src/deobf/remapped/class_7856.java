@@ -16,9 +16,9 @@ public enum class_7856 {
       this.field_39815 = var4;
    }
 
-   public void method_35534(class_7966 var1, class_2089 var2, int var3, int var4) {
-      class_3542.method_16488();
+   public void method_35534(class_7966 var1, AbstractGui var2, int var3, int var4) {
+      RenderSystem.enableBlend();
       var2.method_9781(var1, var3, var4, 176 + this.field_39817 * 20, this.field_39815 * 20, 20, 20);
-      class_3542.method_16488();
+      RenderSystem.enableBlend();
    }
 }

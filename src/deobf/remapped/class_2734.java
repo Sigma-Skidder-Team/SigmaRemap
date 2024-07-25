@@ -15,7 +15,7 @@ public class class_2734 {
    public static final class_1720<String> field_13349 = new class_3941();
    public static final class_1720<ITextComponent> field_13355 = new class_8017();
    public static final class_1720<Optional<ITextComponent>> field_13359 = new class_9057();
-   public static final class_1720<class_6098> field_13357 = new class_6055();
+   public static final class_1720<ItemStack> field_13357 = new class_6055();
    public static final class_1720<Optional<class_2522>> field_13354 = new class_6866();
    public static final class_1720<Boolean> field_13347 = new class_8468();
    public static final class_1720<class_5079> field_13351 = new class_1341();

@@ -41,7 +41,7 @@ public class class_7280 implements AutoCloseable {
       this.field_37270.method_19723();
       float var4 = (float)this.field_37272.field_20533;
       float var5 = (float)this.field_37272.field_20535;
-      class_3542.method_16392(0, 0, (int)var4, (int)var5);
+      RenderSystem.method_16392(0, 0, (int)var4, (int)var5);
       this.field_37268.method_19847("DiffuseSampler", this.field_37270::method_19724);
 
       for (int var6 = 0; var6 < this.field_37273.size(); var6++) {
@@ -56,11 +56,11 @@ public class class_7280 implements AutoCloseable {
       this.field_37268.method_19853("OutSize").method_32386(var4, var5);
       this.field_37268.method_19853("Time").method_32385(var1);
       MinecraftClient var10 = MinecraftClient.getInstance();
-      this.field_37268.method_19853("ScreenSize").method_32386((float)var10.method_8552().method_43178(), (float)var10.method_8552().method_43198());
+      this.field_37268.method_19853("ScreenSize").method_32386((float)var10.getMainWindow().method_43178(), (float)var10.getMainWindow().method_43198());
       this.field_37268.method_19852();
       this.field_37272.method_19712(MinecraftClient.IS_SYSTEM_MAC);
       this.field_37272.method_19717(false);
-      class_3542.method_16457(519);
+      RenderSystem.method_16457(519);
       class_9633 var7 = class_8042.method_36499().method_36501();
       var7.method_44471(7, class_7985.field_40903);
       var7.method_35761(0.0, 0.0, 500.0).method_35743(255, 255, 255, 255).method_35735();
@@ -69,7 +69,7 @@ public class class_7280 implements AutoCloseable {
       var7.method_35761(0.0, (double)var5, 500.0).method_35743(255, 255, 255, 255).method_35735();
       var7.method_44487();
       class_138.method_554(var7);
-      class_3542.method_16457(515);
+      RenderSystem.method_16457(515);
       this.field_37268.method_19843();
       this.field_37272.method_19723();
       this.field_37270.method_19719();

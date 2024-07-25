@@ -54,7 +54,7 @@ public class class_1225 {
       var0.method_26525().method_5105(class_6044.field_30889, var6);
    }
 
-   public static void method_5439(class_5834 var0, class_6098 var1, class_1343 var2) {
+   public static void method_5439(class_5834 var0, ItemStack var1, class_1343 var2) {
       double var5 = var0.method_37388() - 0.3F;
       class_91 var7 = new class_91(var0.field_41768, var0.method_37302(), var5, var0.method_37156(), var1);
       float var8 = 0.3F;

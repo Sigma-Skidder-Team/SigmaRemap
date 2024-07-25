@@ -4,11 +4,11 @@ import java.util.UUID;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 
-public class class_874 implements class_9720 {
+public class NormalChatListener implements IChatListener {
    private static String[] field_4517;
    private final MinecraftClient field_4518;
 
-   public class_874(MinecraftClient var1) {
+   public NormalChatListener(MinecraftClient var1) {
       this.field_4518 = var1;
    }
 

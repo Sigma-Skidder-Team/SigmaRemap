@@ -15,7 +15,7 @@ public class class_7367 extends class_8374<class_5567> {
    public void method_33543(class_5567 var1) {
       super.method_36197(var1);
       if (var1 != null) {
-         class_7542.field_38482
+         NarratorChatListener.INSTANCE
             .method_34341(
                new TranslationTextComponent("narrator.select", ((class_382)class_6107.method_28065().get(this.method_41183().indexOf(var1))).method_1869())
                   .getString()

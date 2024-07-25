@@ -3,10 +3,10 @@ package remapped;
 import java.util.function.BiConsumer;
 import net.minecraft.util.text.ITextComponent;
 
-public abstract class class_2089 {
+public abstract class AbstractGui {
    public static final Identifier field_10505 = new Identifier("textures/gui/options_background.png");
    public static final Identifier field_10506 = new Identifier("textures/gui/container/stats_icons.png");
-   public static final Identifier field_10507 = new Identifier("textures/gui/icons.png");
+   public static final Identifier GUI_ICONS_LOCATION = new Identifier("textures/gui/icons.png");
    private int field_10504;
 
    public void method_9789(class_7966 var1, int var2, int var3, int var4, int var5) {
@@ -51,9 +51,9 @@ public abstract class class_2089 {
       float var10 = (float)(var5 >> 8 & 0xFF) / 255.0F;
       float var11 = (float)(var5 & 0xFF) / 255.0F;
       class_9633 var12 = class_8042.method_36499().method_36501();
-      class_3542.method_16488();
-      class_3542.method_16354();
-      class_3542.method_16437();
+      RenderSystem.enableBlend();
+      RenderSystem.method_16354();
+      RenderSystem.defaultBlendFunc();
       var12.method_44471(7, class_7985.field_40903);
       var12.method_35762(var0, (float)var1, (float)var4, 0.0F).method_35742(var9, var10, var11, var14).method_35735();
       var12.method_35762(var0, (float)var3, (float)var4, 0.0F).method_35742(var9, var10, var11, var14).method_35735();
@@ -61,25 +61,25 @@ public abstract class class_2089 {
       var12.method_35762(var0, (float)var1, (float)var2, 0.0F).method_35742(var9, var10, var11, var14).method_35735();
       var12.method_44487();
       class_138.method_554(var12);
-      class_3542.method_16432();
-      class_3542.method_16448();
+      RenderSystem.method_16432();
+      RenderSystem.method_16448();
    }
 
    public void method_9772(class_7966 var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-      class_3542.method_16354();
-      class_3542.method_16488();
-      class_3542.method_16458();
-      class_3542.method_16437();
-      class_3542.method_16486(7425);
+      RenderSystem.method_16354();
+      RenderSystem.enableBlend();
+      RenderSystem.method_16458();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16486(7425);
       class_8042 var10 = class_8042.method_36499();
       class_9633 var11 = var10.method_36501();
       var11.method_44471(7, class_7985.field_40903);
       method_9773(var1.method_36058().method_28620(), var11, var2, var3, var4, var5, this.field_10504, var6, var7);
       var10.method_36500();
-      class_3542.method_16486(7424);
-      class_3542.method_16448();
-      class_3542.method_16374();
-      class_3542.method_16432();
+      RenderSystem.method_16486(7424);
+      RenderSystem.method_16448();
+      RenderSystem.enableAlphaTest();
+      RenderSystem.method_16432();
    }
 
    public static void method_9773(class_8107 var0, class_9633 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
@@ -115,12 +115,12 @@ public abstract class class_2089 {
    }
 
    public void method_9784(int var1, int var2, BiConsumer<Integer, Integer> var3) {
-      class_3542.method_16425(class_5033.field_26048, class_8535.field_43697, class_5033.field_26042, class_8535.field_43697);
+      RenderSystem.method_16425(class_5033.field_26048, class_8535.field_43697, class_5033.field_26042, class_8535.field_43697);
       var3.accept(var1 + 1, var2);
       var3.accept(var1 - 1, var2);
       var3.accept(var1, var2 + 1);
       var3.accept(var1, var2 - 1);
-      class_3542.method_16398(class_5033.field_26042, class_8535.field_43697);
+      RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
       var3.accept(var1, var2);
    }
 
@@ -180,7 +180,7 @@ public abstract class class_2089 {
       var12.method_35762(var0, (float)var2, (float)var3, (float)var5).method_35745(var7, var8).method_35735();
       var12.method_35762(var0, (float)var1, (float)var3, (float)var5).method_35745(var6, var8).method_35735();
       var12.method_44487();
-      class_3542.method_16374();
+      RenderSystem.enableAlphaTest();
       class_138.method_554(var12);
    }
 

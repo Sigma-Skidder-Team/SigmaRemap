@@ -8,7 +8,7 @@ public class class_7064 {
    private long field_36454;
    private class_1343 field_36453;
 
-   public class_7064(class_4381 var1, ITextComponent var2, class_1343 var3) {
+   public class_7064(SubtitleOverlayGui var1, ITextComponent var2, class_1343 var3) {
       this.field_36452 = var1;
       this.field_36455 = var2;
       this.field_36453 = var3;

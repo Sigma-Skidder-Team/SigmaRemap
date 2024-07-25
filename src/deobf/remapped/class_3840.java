@@ -26,7 +26,7 @@ public abstract class class_3840 extends class_8002 {
 
    @Override
    public void method_36302(class_8932<?> var1, List<class_7934> var2) {
-      class_6098 var5 = var1.method_41044();
+      ItemStack var5 = var1.method_41044();
       this.field_41000.method_34490(var1);
       this.field_41000.method_34491(class_8137.method_37029(var5), ((class_7934)var2.get(2)).field_40589, ((class_7934)var2.get(2)).field_40590);
       class_2831 var6 = var1.method_41043();
@@ -64,11 +64,11 @@ public abstract class class_3840 extends class_8002 {
 
          int var8 = this.field_18748.field_40589 + var2;
          int var9 = this.field_18748.field_40590 + var3;
-         class_2089.method_9774(var1, var8, var9, var8 + 16, var9 + 16, 822018048);
-         this.field_41006.method_8511().method_40273(this.field_41006.field_9632, this.method_17832().method_11207(), var8, var9);
-         class_3542.method_16457(516);
-         class_2089.method_9774(var1, var8, var9, var8 + 16, var9 + 16, 822083583);
-         class_3542.method_16457(515);
+         AbstractGui.method_9774(var1, var8, var9, var8 + 16, var9 + 16, 822018048);
+         this.field_41006.method_8511().method_40273(this.field_41006.thePlayer, this.method_17832().method_11207(), var8, var9);
+         RenderSystem.method_16457(516);
+         AbstractGui.method_9774(var1, var8, var9, var8 + 16, var9 + 16, 822083583);
+         RenderSystem.method_16457(515);
       }
    }
 

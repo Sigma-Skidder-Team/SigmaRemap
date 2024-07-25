@@ -15,16 +15,16 @@ public class class_8193 extends Module {
    @Override
    public void onEnable() {
       this.field_41932 = 0;
-      if (!mc.gameOptions.keySneak.isKeyDown()) {
-         if (!mc.gameOptions.keySneak.isKeyDown()) {
+      if (!client.gameOptions.keySneak.isKeyDown()) {
+         if (!client.gameOptions.keySneak.isKeyDown()) {
             this.field_41931 = false;
          }
       } else {
-         mc.gameOptions.keySneak.pressed = false;
+         client.gameOptions.keySneak.pressed = false;
          this.field_41931 = true;
       }
 
-      if (mc.field_9632.field_41726) {
+      if (client.thePlayer.field_41726) {
          this.field_41934 = this.field_41933 = false;
       }
 
@@ -37,16 +37,16 @@ public class class_8193 extends Module {
    public void onDisable() {
       class_314.method_1408(-0.078);
       class_8865.method_40776(0.2);
-      mc.theTimer.timerSpeed = 1.0F;
+      client.theTimer.timerSpeed = 1.0F;
       if (this.field_41931) {
-         mc.gameOptions.keySneak.pressed = true;
+         client.gameOptions.keySneak.pressed = true;
       }
    }
 
    @EventListen
    private void method_37543(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_29384() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_41931 = true;
          }
@@ -56,7 +56,7 @@ public class class_8193 extends Module {
    @EventListen
    private void method_37545(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mc.gameOptions.keySneak.field_30027.field_17800) {
+         if (var1.method_1364() == client.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_41931 = false;
          }
@@ -67,7 +67,7 @@ public class class_8193 extends Module {
    @class_3932
    public void method_37542(class_7767 var1) {
       if (!this.method_42015()) {
-         if (mc.field_9632.field_41726) {
+         if (client.thePlayer.field_41726) {
             this.field_41934 = this.field_41933 = false;
          }
       } else if (class_314.method_1392()) {
@@ -83,11 +83,11 @@ public class class_8193 extends Module {
                   if (this.field_41932 != -4) {
                      if (this.field_41932 != -1) {
                         if (class_3347.method_15349() > class_412.field_1747.method_2055()) {
-                           if (mc.gameOptions.keyJump.isKeyDown() && !this.field_41931) {
+                           if (client.gameOptions.keyJump.isKeyDown() && !this.field_41931) {
                               var1.method_35235(0.0625);
                               class_8865.method_40777(var1, 0.0);
                               this.field_41932 = 1;
-                           } else if (this.field_41931 && !mc.gameOptions.keyJump.isKeyDown()) {
+                           } else if (this.field_41931 && !client.gameOptions.keyJump.isKeyDown()) {
                               var1.method_35235(-0.225);
                               class_8865.method_40777(var1, 0.0);
                               this.field_41932 = 1;
@@ -101,16 +101,16 @@ public class class_8193 extends Module {
 
                         this.field_41932--;
                      }
-                  } else if (mc.gameOptions.keyJump.isKeyDown() && !this.field_41931) {
+                  } else if (client.gameOptions.keyJump.isKeyDown() && !this.field_41931) {
                      var1.method_35235(0.0625);
                   }
                }
             } else if (class_3347.method_15349() != class_412.field_1747.method_2055()) {
-               if (!class_314.method_1413(mc.field_9632, 0.001F)) {
+               if (!class_314.method_1413(client.thePlayer, 0.001F)) {
                   var1.method_35235(0.0);
                   class_8865.method_40777(var1, 0.0);
-                  if (mc.field_9632.field_41706 > 4.0F) {
-                     mc.method_8614().method_4813(new class_4609(true));
+                  if (client.thePlayer.field_41706 > 4.0F) {
+                     client.method_8614().method_4813(new class_4609(true));
                      this.field_41933 = true;
                   }
                } else {
@@ -119,7 +119,7 @@ public class class_8193 extends Module {
                }
 
                this.field_41932 = 1;
-            } else if (!class_314.method_1413(mc.field_9632, 0.001F)) {
+            } else if (!class_314.method_1413(client.thePlayer, 0.001F)) {
                var1.method_35235(0.0);
                this.field_41932 = -2;
                SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Cubecraft Fly", "Please start on the ground."));
@@ -128,13 +128,13 @@ public class class_8193 extends Module {
                var1.method_35235(0.0);
                long var14 = class_314.method_1418() % 90L;
                double var15 = 0.016 + (double)var14 / 10000.0;
-               double var16 = mc.field_9632.method_37302();
-               double var10 = mc.field_9632.method_37309() + 0.022;
-               double var12 = mc.field_9632.method_37156();
-               mc.method_8614().method_4813(new class_9515(var16, var10, var12, false));
-               mc.method_8614().method_4813(new class_9515(var16, var10, var12 + 0.07, false));
-               mc.method_8614().method_4813(new class_9515(var16, var10, var12, false));
-               mc.method_8614().method_4813(new class_9515(var16, var10 + 3.0, var12, false));
+               double var16 = client.thePlayer.method_37302();
+               double var10 = client.thePlayer.method_37309() + 0.022;
+               double var12 = client.thePlayer.method_37156();
+               client.method_8614().method_4813(new class_9515(var16, var10, var12, false));
+               client.method_8614().method_4813(new class_9515(var16, var10, var12 + 0.07, false));
+               client.method_8614().method_4813(new class_9515(var16, var10, var12, false));
+               client.method_8614().method_4813(new class_9515(var16, var10 + 3.0, var12, false));
             }
 
             class_314.method_1408(var1.method_35236());
@@ -142,11 +142,11 @@ public class class_8193 extends Module {
       } else {
          class_8865.method_40777(var1, class_8865.method_40775());
          var1.method_35235(0.0);
-         if (mc.field_9632.field_41697 % 2 == 0) {
-            double var4 = mc.field_9632.method_37302();
-            double var6 = mc.field_9632.method_37309();
-            double var8 = mc.field_9632.method_37156();
-            mc.field_9632.method_37256(var4, var6 + 1.0E-10, var8);
+         if (client.thePlayer.field_41697 % 2 == 0) {
+            double var4 = client.thePlayer.method_37302();
+            double var6 = client.thePlayer.method_37309();
+            double var8 = client.thePlayer.method_37156();
+            client.thePlayer.method_37256(var4, var6 + 1.0E-10, var8);
          }
       }
    }
@@ -155,7 +155,7 @@ public class class_8193 extends Module {
    public void method_37544(class_1393 var1) {
       if (var1.method_6449() && class_314.method_1392()) {
          var1.method_6444(true);
-         if (class_3347.method_15349() == class_412.field_1747.method_2055() && this.field_41932 == 0 && class_314.method_1413(mc.field_9632, 0.001F)) {
+         if (class_3347.method_15349() == class_412.field_1747.method_2055() && this.field_41932 == 0 && class_314.method_1413(client.thePlayer, 0.001F)) {
             var1.method_29715(true);
          }
 
@@ -167,12 +167,12 @@ public class class_8193 extends Module {
 
    @EventListen
    public void method_37541(PacketEvent var1) {
-      if (mc.field_9601 != null && mc.method_8614() != null && class_314.method_1392()) {
+      if (client.field_9601 != null && client.method_8614() != null && class_314.method_1392()) {
          Packet var4 = var1.method_557();
          if (!(var4 instanceof class_509)) {
             if (var4 instanceof class_4548) {
                class_4548 var5 = (class_4548)var4;
-               if (var5.method_21093() == mc.field_9632.method_37145()) {
+               if (var5.method_21093() == client.thePlayer.method_37145()) {
                   this.field_41932 = -4;
                }
             }

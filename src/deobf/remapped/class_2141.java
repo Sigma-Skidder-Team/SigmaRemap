@@ -25,8 +25,8 @@ public class class_2141 extends class_2208<class_1465> implements class_4378<cla
 
    @Override
    public void method_10223(class_7966 var1, float var2, int var3, int var4) {
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      this.field_943.method_8577().method_35674(field_10729);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.field_943.getTextureManager().bindTexture(field_10729);
       int var7 = (this.field_941 - this.field_10981) / 2;
       int var8 = (this.field_940 - this.field_10973) / 2;
       this.method_9781(var1, var7, var8, 0, 0, this.field_10981, this.field_10727 * 18 + 17);

@@ -5,11 +5,11 @@ import java.util.function.Predicate;
 public class class_7018<T extends class_5886> extends class_3599 {
    private static String[] field_35968;
    private final T field_35971;
-   private final class_6098 field_35970;
+   private final ItemStack field_35970;
    private final Predicate<? super T> field_35969;
    private final class_8461 field_35972;
 
-   public class_7018(T var1, class_6098 var2, class_8461 var3, Predicate<? super T> var4) {
+   public class_7018(T var1, ItemStack var2, class_8461 var3, Predicate<? super T> var4) {
       this.field_35971 = (T)var1;
       this.field_35970 = var2;
       this.field_35972 = var3;
@@ -34,7 +34,7 @@ public class class_7018<T extends class_5886> extends class_3599 {
 
    @Override
    public void method_16793() {
-      this.field_35971.method_37349(class_6943.field_35707, class_6098.field_31203);
+      this.field_35971.method_37349(class_6943.field_35707, ItemStack.EMPTY);
       if (this.field_35972 != null) {
          this.field_35971.method_37155(this.field_35972, 1.0F, this.field_35971.method_26594().nextFloat() * 0.2F + 0.9F);
       }

@@ -200,7 +200,7 @@ public class class_6560 {
          class_3930 var8 = (class_3930)var6.getSecond();
          var7.method_38520(var8);
          var1.method_35682(var7.method_38519(), var7);
-         var1.method_35674(var7.method_38519());
+         var1.bindTexture(var7.method_38519());
          var7.method_38521(var8);
       }
 

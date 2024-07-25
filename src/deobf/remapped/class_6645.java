@@ -9,7 +9,7 @@ public class class_6645 {
    private HashMap<Integer, Date> field_34384 = new HashMap<Integer, Date>();
 
    public void method_30524() {
-      SigmaMainClass.getInstance().getEventManager().subscribe(this);
+      SigmaMainClass.getInstance().getEventManager().method_7908(this);
    }
 
    @EventListen

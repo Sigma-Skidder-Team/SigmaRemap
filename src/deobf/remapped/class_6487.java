@@ -9,12 +9,12 @@ public class class_6487 implements class_117 {
    }
 
    @Override
-   public void method_347(class_4088 var1, class_2831<class_6098> var2) {
+   public void method_347(class_4088 var1, class_2831<ItemStack> var2) {
    }
 
    @Override
-   public void method_348(class_4088 var1, int var2, class_6098 var3) {
-      this.field_33058.field_9647.method_42148(var3, var2);
+   public void method_348(class_4088 var1, int var2, ItemStack var3) {
+      this.field_33058.playerController.method_42148(var3, var2);
    }
 
    @Override

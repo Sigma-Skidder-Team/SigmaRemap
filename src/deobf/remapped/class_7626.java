@@ -33,7 +33,7 @@ public class class_7626 {
                var1.getClass();
                var10000[var8] = new class_3511(var1);
                this.field_38807[var8].method_16163(var5 * 16, var6 * 16, var7 * 16);
-               if (class_3111.method_14407() && class_3111.method_14351()) {
+               if (Config.method_14407() && Config.method_14351()) {
                   this.method_34562(this.field_38807[var8]);
                }
             }

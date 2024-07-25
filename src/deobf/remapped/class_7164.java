@@ -27,7 +27,7 @@ public abstract class class_7164<T extends class_5886, M extends class_6521<T>> 
    }
 
    private <E extends Entity> void method_32862(T var1, float var2, class_7966 var3, class_2565 var4, E var5) {
-      if (!class_3111.method_14424() || !class_6588.field_33945) {
+      if (!Config.method_14424() || !class_6588.field_33945) {
          var3.method_36063();
          class_1343 var8 = var5.method_37202(var2);
          double var9 = (double)(class_9299.method_42795(var2, var1.field_29605, var1.field_29611) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
@@ -53,13 +53,13 @@ public abstract class class_7164<T extends class_5886, M extends class_6521<T>> 
          int var34 = this.field_36493.<Entity>method_28131(var5).method_32546(var5, var32);
          int var35 = var1.field_41768.method_25266(class_2957.field_14437, var31);
          int var36 = var1.field_41768.method_25266(class_2957.field_14437, var32);
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_6588.method_30195();
          }
 
          method_32867(var26, var27, var22, var23, var24, var33, var34, var35, var36, 0.025F, 0.025F, var29, var30);
          method_32867(var26, var27, var22, var23, var24, var33, var34, var35, var36, 0.025F, 0.0F, var29, var30);
-         if (class_3111.method_14424()) {
+         if (Config.method_14424()) {
             class_6588.method_30104();
          }
 

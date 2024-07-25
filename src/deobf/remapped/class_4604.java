@@ -10,7 +10,7 @@ import net.minecraft.util.text.LanguageMap;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentUtils;
 
-public class class_4604 extends class_2089 {
+public class class_4604 extends AbstractGui {
    private static final Identifier field_22405 = new Identifier("textures/gui/advancements/widgets.png");
    private static final int[] field_22407 = new int[]{0, 10, -10, 25, -25};
    private final class_7797 field_22404;
@@ -125,7 +125,7 @@ public class class_4604 extends class_2089 {
             var7 = class_2139.field_10721;
          }
 
-         this.field_22406.method_8577().method_35674(field_22405);
+         this.field_22406.getTextureManager().bindTexture(field_22405);
          this.method_9781(
             var1, var2 + this.field_22402 + 3, var3 + this.field_22409, this.field_22398.method_35157().method_15382(), 128 + var7.method_9998() * 26, 26, 26
          );
@@ -181,9 +181,9 @@ public class class_4604 extends class_2089 {
       }
 
       int var18 = this.field_22403 - var14;
-      this.field_22406.method_8577().method_35674(field_22405);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16488();
+      this.field_22406.getTextureManager().bindTexture(field_22405);
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.enableBlend();
       int var19 = var3 + this.field_22409;
       int var20;
       if (!var9) {

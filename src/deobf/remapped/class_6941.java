@@ -18,7 +18,7 @@ public class class_6941 {
 
       if (System.currentTimeMillis() > field_35680 + 3000L) {
          if (field_35684 > 0) {
-            class_3111.method_14348("Suppressed " + field_35682 + " OpenGL errors");
+            Config.method_14348("Suppressed " + field_35682 + " OpenGL errors");
          }
 
          field_35685 = field_35682 > 10;

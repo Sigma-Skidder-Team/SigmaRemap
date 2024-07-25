@@ -16,12 +16,12 @@ public class LegitSpeed extends Module {
    @EventListen
    public void method_31490(class_7767 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.field_41726
-            && mc.field_9632.field_41774
-            && (mc.field_9632.field_29673 != 0.0F || mc.field_9632.field_29676 != 0.0F)
+         if (client.thePlayer.field_41726
+            && client.thePlayer.field_41774
+            && (client.thePlayer.field_29673 != 0.0F || client.thePlayer.field_29676 != 0.0F)
             && this.getBooleanValueByName("AutoJump")) {
-            mc.field_9632.method_26595();
-            var1.method_35235(mc.field_9632.method_37098().field_7333);
+            client.thePlayer.method_26595();
+            var1.method_35235(client.thePlayer.method_37098().field_7333);
          }
 
          double var4 = var1.method_35233().field_7333;
@@ -42,15 +42,15 @@ public class LegitSpeed extends Module {
          this.field_35374 = this.field_35374 * (double)this.field_35372;
          var1.method_35232((double)var8 * this.field_35374 * var11 + (double)var9 * this.field_35374 * var13 + (double)this.field_35375);
          var1.method_35229((double)var8 * this.field_35374 * var13 - (double)var9 * this.field_35374 * var11 + (double)this.field_35370);
-         mc.field_9632.method_37098().field_7336 = var1.method_35234();
-         mc.field_9632.method_37098().field_7333 = var1.method_35236();
+         client.thePlayer.method_37098().field_7336 = var1.method_35234();
+         client.thePlayer.method_37098().field_7333 = var1.method_35236();
          if (this.field_35375 != 0.0F || this.field_35370 != 0.0F) {
             this.field_35375 = (float)((double)this.field_35375 * 0.85);
             this.field_35370 = (float)((double)this.field_35370 * 0.85);
             this.field_35372 = Math.min(1.0F, this.field_35372 + 0.1F);
          }
 
-         if (mc.field_9632.field_41726 && !this.field_35371) {
+         if (client.thePlayer.field_41726 && !this.field_35371) {
             this.field_35375 = 0.0F;
             this.field_35370 = 0.0F;
             this.field_35372 = Math.min(1.0F, this.field_35372 + 0.33F);
@@ -63,9 +63,9 @@ public class LegitSpeed extends Module {
    @EventListen
    private void method_31489(PacketEvent var1) {
       if (this.method_42015()) {
-         if (mc.field_9632 != null && var1.method_557() instanceof class_4548) {
+         if (client.thePlayer != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();
-            if (var4.method_21093() == mc.field_9632.method_37145()) {
+            if (var4.method_21093() == client.thePlayer.method_37145()) {
                this.field_35375 = this.field_35375 + (float)var4.field_22171 / 8000.0F;
                this.field_35370 = this.field_35370 + (float)var4.field_22167 / 8000.0F;
                this.field_35371 = true;

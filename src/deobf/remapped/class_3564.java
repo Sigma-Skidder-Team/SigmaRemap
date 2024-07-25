@@ -11,7 +11,7 @@ public class class_3564 implements class_2994<class_644> {
       int var8 = var7[0].length();
       int var9 = var7.length;
       class_2831 var10 = class_644.method_2951(var7, var6, var8, var9);
-      class_6098 var11 = class_644.method_2961(class_6539.method_29783(var2, "result"));
+      ItemStack var11 = class_644.method_2961(class_6539.method_29783(var2, "result"));
       return new class_644(var1, var5, var8, var9, var10, var11);
    }
 
@@ -25,7 +25,7 @@ public class class_3564 implements class_2994<class_644> {
          var8.set(var9, class_8137.method_37026(var2));
       }
 
-      class_6098 var10 = var2.method_37755();
+      ItemStack var10 = var2.method_37755();
       return new class_644(var1, var7, var5, var6, var8, var10);
    }
 

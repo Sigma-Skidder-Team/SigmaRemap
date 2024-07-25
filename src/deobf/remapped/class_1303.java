@@ -31,7 +31,7 @@ public class class_1303 {
          method_5949(var3, var4, var2);
       }
 
-      if (class_3111.method_14424()) {
+      if (Config.method_14424()) {
          class_8407 var5 = class_7330.method_33405();
          if (var5 != null) {
             String var6 = "shaders/block.properties";
@@ -46,7 +46,7 @@ public class class_1303 {
    }
 
    private static void method_5949(String var0, Properties var1, List<RenderLayer> var2) {
-      class_3111.method_14277("CustomBlockLayers: " + var0);
+      Config.method_14277("CustomBlockLayers: " + var0);
       method_5947("solid", class_6727.field_34745, var1, var2);
       method_5947("cutout", class_6727.field_34743, var1, var2);
       method_5947("cutout_mipped", class_6727.field_34746, var1, var2);
@@ -69,7 +69,7 @@ public class class_1303 {
                   }
 
                   if (var3.get(var12) != null) {
-                     class_3111.method_14317("CustomBlockLayers: Block layer is already set, block: " + var12 + ", layer: " + var0);
+                     Config.method_14317("CustomBlockLayers: Block layer is already set, block: " + var12 + ", layer: " + var0);
                   }
 
                   var3.set(var12, var1);

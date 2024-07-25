@@ -83,6 +83,6 @@ public class class_6998 {
 
    @Override
    public String toString() {
-      return "[" + class_3111.method_14289(this.field_35922) + "]";
+      return "[" + Config.method_14289(this.field_35922) + "]";
    }
 }

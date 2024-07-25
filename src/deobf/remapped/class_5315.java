@@ -26,7 +26,7 @@ public class class_5315 extends class_6154 {
 
    @Override
    public boolean method_28241(String var1) {
-      if (class_3111.equals(var1, "none")) {
+      if (Config.equals(var1, "none")) {
          var1 = "off";
       }
 

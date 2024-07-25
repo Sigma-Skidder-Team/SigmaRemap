@@ -12,7 +12,7 @@ public class class_2682 extends class_4171<class_9408, class_8875<class_9408>> {
    ) {
       if (var4.method_41215() && !var4.method_37109()) {
          float[] var13 = var4.method_43584().method_41792();
-         if (class_3111.method_14438()) {
+         if (Config.method_14438()) {
             var13 = class_9300.method_42914(var4.method_43584(), var13);
          }
 

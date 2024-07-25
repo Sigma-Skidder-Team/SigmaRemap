@@ -107,15 +107,15 @@ public class class_8477 extends class_8574 {
    }
 
    @Override
-   public void method_16630(class_6098 var1) {
+   public void method_16630(ItemStack var1) {
       super.method_16630(var1);
       class_5734 var4 = var1.method_27994();
       var4.method_25931("BucketVariantTag", this.method_39018());
    }
 
    @Override
-   public class_6098 method_16633() {
-      return new class_6098(class_4897.field_25286);
+   public ItemStack method_16633() {
+      return new ItemStack(class_4897.field_25286);
    }
 
    @Override

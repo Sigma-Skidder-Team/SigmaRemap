@@ -276,7 +276,7 @@ public class class_9408 extends class_8990 implements class_6250 {
 
    @Override
    public class_6910 method_26857(class_704 var1, class_2584 var2) {
-      class_6098 var5 = var1.method_26617(var2);
+      ItemStack var5 = var1.method_26617(var2);
       class_2451 var6 = var5.method_27960();
       if (!this.field_41768.field_33055) {
          if (!this.method_41215()) {
@@ -362,7 +362,7 @@ public class class_9408 extends class_8990 implements class_6250 {
    }
 
    @Override
-   public boolean method_24866(class_6098 var1) {
+   public boolean method_24866(ItemStack var1) {
       class_2451 var4 = var1.method_27960();
       return var4.method_11247() && var4.method_11227().method_38402();
    }

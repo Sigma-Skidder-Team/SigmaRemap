@@ -55,7 +55,7 @@ public class InfiniteAuraModule extends Module {
                this.field_37778 = 0;
                this.field_37777.clear();
                this.field_37779 = this.field_37779 - (float)((int)this.field_37779);
-               Object var5 = mc.field_9632.method_37243() == null ? mc.field_9632 : mc.field_9632.method_37243();
+               Object var5 = client.thePlayer.method_37243() == null ? client.thePlayer : client.thePlayer.method_37243();
                this.field_37781 = new Thread(() -> {
                   try {
                      int var5x = 0;
@@ -71,7 +71,7 @@ public class InfiniteAuraModule extends Module {
                         ArrayList var11 = class_6306.method_28770(var10, var9);
                         this.field_37777.add(var11);
                         Collections.reverse(var11);
-                        this.method_33701(var11, SigmaMainClass.getInstance().getModuleManager().method_847(CriticalsModule.class).method_42015());
+                        this.method_33701(var11, SigmaMainClass.getInstance().getModuleManager().getModuleByClass(CriticalsModule.class).method_42015());
                         class_314.method_1431(var8, !this.getBooleanValueByName("No Swing"));
                         Collections.reverse(var11);
                         this.method_33701(var11, false);
@@ -92,30 +92,30 @@ public class InfiniteAuraModule extends Module {
    }
 
    public void method_33701(List<class_4714> var1, boolean var2) {
-      Entity var5 = mc.field_9632.method_37243();
+      Entity var5 = client.thePlayer.method_37243();
       class_4714 var6 = null;
 
       for (class_4714 var8 : var1) {
          var6 = var8;
          if (var5 == null) {
-            mc.method_8614().method_4813(new class_9515(var8.method_21803(), var8.method_21801(), var8.method_21799(), true));
+            client.method_8614().method_4813(new class_9515(var8.method_21803(), var8.method_21801(), var8.method_21799(), true));
          } else {
             var5.field_41736.field_7336 = var8.method_21803() + 0.5;
             var5.field_41736.field_7333 = var8.method_21801();
             var5.field_41736.field_7334 = var8.method_21799() + 0.5;
-            mc.method_8614().method_4813(new class_8125(false, false));
-            mc.method_8614().method_4813(new class_3616(mc.field_9632.field_41701, mc.field_9632.field_41755, false));
-            mc.method_8614().method_4813(new class_758(0.0F, 1.0F, false, false));
-            class_9149 var9 = new class_9149(mc.field_9601, var8.method_21803() + 0.5, var8.method_21801(), var8.method_21799() + 0.5);
+            client.method_8614().method_4813(new class_8125(false, false));
+            client.method_8614().method_4813(new class_3616(client.thePlayer.field_41701, client.thePlayer.field_41755, false));
+            client.method_8614().method_4813(new class_758(0.0F, 1.0F, false, false));
+            class_9149 var9 = new class_9149(client.field_9601, var8.method_21803() + 0.5, var8.method_21801(), var8.method_21799() + 0.5);
             var9.field_41701 = var5.field_41701;
             var9.field_41755 = var5.field_41755;
-            mc.method_8614().method_4813(new class_4148(var9));
+            client.method_8614().method_4813(new class_4148(var9));
          }
       }
 
       if (var2 && var6 != null) {
-         mc.method_8614().method_4813(new class_9515(var6.method_21803(), var6.method_21801() + 1.0E-14, var6.method_21799(), false));
-         mc.method_8614().method_4813(new class_9515(var6.method_21803(), var6.method_21801(), var6.method_21799(), false));
+         client.method_8614().method_4813(new class_9515(var6.method_21803(), var6.method_21801() + 1.0E-14, var6.method_21799(), false));
+         client.method_8614().method_4813(new class_9515(var6.method_21803(), var6.method_21801(), var6.method_21799(), false));
       }
    }
 
@@ -136,18 +136,18 @@ public class InfiniteAuraModule extends Module {
 
             for (class_4714 var7 : var5) {
                GL11.glVertex3d(
-                  var7.method_21803() - mc.gameRenderer.method_35949().method_41627().method_61(),
-                  var7.method_21801() - mc.gameRenderer.method_35949().method_41627().method_60(),
-                  var7.method_21799() - mc.gameRenderer.method_35949().method_41627().method_62()
+                  var7.method_21803() - client.gameRenderer.method_35949().method_41627().method_61(),
+                  var7.method_21801() - client.gameRenderer.method_35949().method_41627().method_60(),
+                  var7.method_21799() - client.gameRenderer.method_35949().method_41627().method_62()
                );
             }
 
             GL11.glEnd();
             GL11.glPushMatrix();
             GL11.glTranslated(
-               mc.gameRenderer.method_35949().method_41627().method_61(),
-               mc.gameRenderer.method_35949().method_41627().method_60(),
-               mc.gameRenderer.method_35949().method_41627().method_62()
+               client.gameRenderer.method_35949().method_41627().method_61(),
+               client.gameRenderer.method_35949().method_41627().method_60(),
+               client.gameRenderer.method_35949().method_41627().method_62()
             );
             GL11.glPopMatrix();
             GL11.glDisable(3042);
@@ -171,12 +171,12 @@ public class InfiniteAuraModule extends Module {
 
       while (var7.hasNext()) {
          Entity var8 = ((class_3357)var7.next()).method_15377();
-         if (var8 != mc.field_9632) {
+         if (var8 != client.thePlayer) {
             if (!SigmaMainClass.getInstance().method_3307().method_14460(var8)) {
                if (var8 instanceof class_5834) {
                   if (((class_5834)var8).method_26551() != 0.0F) {
-                     if (!(mc.field_9632.method_37175(var8) > var1)) {
-                        if (mc.field_9632.method_26608((class_5834)var8)) {
+                     if (!(client.thePlayer.method_37175(var8) > var1)) {
+                        if (client.thePlayer.method_26608((class_5834)var8)) {
                            if (!(var8 instanceof class_9399)) {
                               if (!this.getBooleanValueByName("Players") && var8 instanceof class_704) {
                                  var7.remove();
@@ -186,12 +186,12 @@ public class InfiniteAuraModule extends Module {
                                  var7.remove();
                               } else if (!this.getBooleanValueByName("Animals/Monsters") && !(var8 instanceof class_704)) {
                                  var7.remove();
-                              } else if (mc.field_9632.method_37243() != null && mc.field_9632.method_37243().equals(var8)) {
+                              } else if (client.thePlayer.method_37243() != null && client.thePlayer.method_37243().equals(var8)) {
                                  var7.remove();
                               } else if (!var8.method_37367()) {
                                  if (var8 instanceof class_704
                                     && class_5876.method_26760((class_704)var8)
-                                    && SigmaMainClass.getInstance().getModuleManager().method_847(TeamsModule.class).method_42015()) {
+                                    && SigmaMainClass.getInstance().getModuleManager().getModuleByClass(TeamsModule.class).method_42015()) {
                                     var7.remove();
                                  }
                               } else {
@@ -226,8 +226,8 @@ public class InfiniteAuraModule extends Module {
 
    public boolean method_33702() {
       return this.field_37780
-         && MinecraftClient.getInstance().field_9632.method_26446() != null
-         && MinecraftClient.getInstance().field_9632.method_26446().method_27960() instanceof class_2235;
+         && MinecraftClient.getInstance().thePlayer.method_26446() != null
+         && MinecraftClient.getInstance().thePlayer.method_26446().method_27960() instanceof class_2235;
    }
 
    @Override

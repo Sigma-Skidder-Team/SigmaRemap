@@ -145,8 +145,8 @@ public class class_7182 extends class_1094 {
    private void method_32914(class_7966 var1) {
       double var4 = Math.min((double)this.field_36942.field_9903 / (double)this.field_36942.field_9902, 1.0);
       this.field_36934 = String.format(Locale.ROOT, "%.1f", var4 * 100.0);
-      class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
-      class_3542.method_16354();
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      RenderSystem.method_16354();
       double var6 = (double)(this.field_941 / 2 - 100);
       double var8 = 0.5;
       class_8042 var10 = class_8042.method_36499();
@@ -161,7 +161,7 @@ public class class_7182 extends class_1094 {
       var11.method_35761(var6 + 200.0 * var4, 80.0, 0.0).method_35743(128, 128, 128, 255).method_35735();
       var11.method_35761(var6, 80.0, 0.0).method_35743(128, 128, 128, 255).method_35735();
       var10.method_36500();
-      class_3542.method_16432();
+      RenderSystem.method_16432();
       method_9787(var1, this.field_948, this.field_36934 + " %", this.field_941 / 2, 84, 16777215);
    }
 

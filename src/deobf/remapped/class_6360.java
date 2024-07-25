@@ -40,9 +40,9 @@ public class class_6360 extends class_4088 {
                   return false;
                }
 
-               class_6098 var7 = this.field_32524.method_31507(0);
+               ItemStack var7 = this.field_32524.method_31507(0);
                this.field_32524.method_17407();
-               if (!var1.field_3853.method_32414(var7)) {
+               if (!var1.inventory.method_32414(var7)) {
                   var1.method_3153(var7, false);
                }
 
@@ -64,7 +64,7 @@ public class class_6360 extends class_4088 {
       return this.field_32524.method_31502(var1);
    }
 
-   public class_6098 method_29135() {
+   public ItemStack method_29135() {
       return this.field_32524.method_31498(0);
    }
 

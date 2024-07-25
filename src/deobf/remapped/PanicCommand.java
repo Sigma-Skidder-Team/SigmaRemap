@@ -12,7 +12,7 @@ public class PanicCommand extends Command {
       if (var2.length > 0) {
          throw new class_2900("Too many arguments");
       } else {
-         class_986 var6 = SigmaMainClass.getInstance().getModuleManager().method_848();
+         ConfigManager var6 = SigmaMainClass.getInstance().getModuleManager().getConfigManager();
          if (var6.method_4299("Panic")) {
             int var7 = var6.method_4305().size();
 

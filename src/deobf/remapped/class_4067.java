@@ -160,17 +160,17 @@ public class class_4067 implements AutoCloseable {
                         IOUtils.closeQuietly(var23);
                      }
 
-                     var1.method_35674(var22);
+                     var1.bindTexture(var22);
                      class_8143 var24 = var1.method_35679(var22);
                      int var25 = class_6539.method_29767(var16, "width");
                      int var26 = class_6539.method_29767(var16, "height");
                      boolean var27 = class_6539.method_29771(var16, "bilinear");
                      if (var27) {
-                        class_3542.method_16490(3553, 10241, 9729);
-                        class_3542.method_16490(3553, 10240, 9729);
+                        RenderSystem.method_16490(3553, 10241, 9729);
+                        RenderSystem.method_16490(3553, 10240, 9729);
                      } else {
-                        class_3542.method_16490(3553, 10241, 9728);
-                        class_3542.method_16490(3553, 10240, 9728);
+                        RenderSystem.method_16490(3553, 10241, 9728);
+                        RenderSystem.method_16490(3553, 10240, 9728);
                      }
 
                      var11.method_33270(var40, var24::method_37055, var25, var26);

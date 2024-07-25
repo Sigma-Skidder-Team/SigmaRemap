@@ -23,10 +23,10 @@ public class class_7897 implements class_2995 {
 
    @Override
    public void method_13698(class_7966 var1, class_2565 var2, double var3, double var5, double var7) {
-      class_3542.method_16438();
-      class_3542.method_16488();
-      class_3542.method_16437();
-      class_3542.method_16354();
+      RenderSystem.method_16438();
+      RenderSystem.enableBlend();
+      RenderSystem.defaultBlendFunc();
+      RenderSystem.method_16354();
       class_8042 var11 = class_8042.method_36499();
       class_9633 var12 = var11.method_36501();
       var12.method_44471(5, class_7985.field_40903);
@@ -51,7 +51,7 @@ public class class_7897 implements class_2995 {
       }
 
       var11.method_36500();
-      class_3542.method_16432();
-      class_3542.method_16489();
+      RenderSystem.method_16432();
+      RenderSystem.method_16489();
    }
 }

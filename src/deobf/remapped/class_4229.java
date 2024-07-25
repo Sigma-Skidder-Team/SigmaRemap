@@ -12,8 +12,8 @@ public class class_4229 extends class_2255<class_557> {
       class_2831 var10 = var1.method_2670();
 
       for (int var11 = 0; var11 < var10.size(); var11++) {
-         class_6098 var12 = (class_6098)var10.get(var11);
-         if (var12 != class_6098.field_31203) {
+         ItemStack var12 = (ItemStack)var10.get(var11);
+         if (var12 != ItemStack.EMPTY) {
             var3.method_36063();
             var3.method_36065(0.5, 0.44921875, 0.5);
             Direction var13 = Direction.method_1040((var11 + var9.method_1031()) % 4);

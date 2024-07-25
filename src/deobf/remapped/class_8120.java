@@ -8,7 +8,7 @@ public class class_8120 extends class_7934 {
    }
 
    @Override
-   public boolean method_35889(class_6098 var1) {
+   public boolean method_35889(ItemStack var1) {
       return method_36947(var1);
    }
 
@@ -18,7 +18,7 @@ public class class_8120 extends class_7934 {
    }
 
    @Override
-   public class_6098 method_35892(class_704 var1, class_6098 var2) {
+   public ItemStack method_35892(class_704 var1, ItemStack var2) {
       class_6004 var5 = class_9541.method_43990(var2);
       if (var1 instanceof class_9359) {
          class_8807.field_45068.method_12763((class_9359)var1, var5);
@@ -28,7 +28,7 @@ public class class_8120 extends class_7934 {
       return var2;
    }
 
-   public static boolean method_36947(class_6098 var0) {
+   public static boolean method_36947(ItemStack var0) {
       class_2451 var3 = var0.method_27960();
       return var3 == class_4897.field_25157 || var3 == class_4897.field_25226 || var3 == class_4897.field_24444 || var3 == class_4897.field_24812;
    }
