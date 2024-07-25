@@ -316,7 +316,7 @@ public class class_9326 implements class_2231 {
          RenderSystem.enableAlphaTest();
          RenderSystem.method_16433();
          RenderSystem.enableDepthTest();
-         RenderSystem.method_16353();
+         RenderSystem.enableFog();
          if (class_7860.field_40161.method_45472()) {
             RenderSystem.method_16492(33986);
             RenderSystem.method_16432();
@@ -326,7 +326,7 @@ public class class_9326 implements class_2231 {
       class_4774 var10 = var4.method_41626();
       boolean var11 = var10.method_22007(class_6503.field_33094);
       RenderSystem.method_16438();
-      RenderSystem.method_16358(var1.method_36058().method_28620());
+      RenderSystem.multMatrix(var1.method_36058().method_28620());
       Object var12 = field_47626;
       if (class_7860.field_40161.method_45472()) {
          var12 = this.field_47619.keySet();
@@ -369,7 +369,7 @@ public class class_9326 implements class_2231 {
       RenderSystem.disableBlend();
       RenderSystem.method_16433();
       var3.method_26122();
-      RenderSystem.method_16367();
+      RenderSystem.disableFog();
       RenderSystem.enableDepthTest();
    }
 

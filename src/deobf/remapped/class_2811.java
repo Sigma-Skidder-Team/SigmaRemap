@@ -222,7 +222,7 @@ public class class_2811 extends MonsterEntity {
          if (var6 != null
             && this.world.method_43370() == class_423.field_1782
             && (double)this.field_41717.nextFloat() < this.method_26575(Attributes.field_37470)
-            && this.world.getGameRules().getBoolean(GameRules.field_1028)) {
+            && this.world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
             int var7 = MathHelper.floor(this.getPosX());
             int var8 = MathHelper.floor(this.method_37309());
             int var9 = MathHelper.floor(this.getPosZ());

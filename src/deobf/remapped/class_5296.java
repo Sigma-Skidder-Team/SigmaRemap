@@ -57,7 +57,7 @@ public class class_5296 extends class_3599 {
          if (!field_27052.test(this.field_27050.method_28262(var3))) {
             BlockPos var4 = var3.method_6100();
             if (this.field_27050.method_28262(var4).method_8350(class_4783.field_23259)) {
-               if (this.field_27050.getGameRules().getBoolean(GameRules.field_1047)) {
+               if (this.field_27050.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
                   this.field_27050.method_43364(2001, var4, class_6414.method_29285(class_4783.field_23259.method_29260()));
                   this.field_27050.method_7513(var4, class_4783.field_23592.method_29260(), 2);
                }
@@ -65,7 +65,7 @@ public class class_5296 extends class_3599 {
                this.field_27053.method_26897();
             }
          } else {
-            if (this.field_27050.getGameRules().getBoolean(GameRules.field_1047)) {
+            if (this.field_27050.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
                this.field_27050.method_7510(var3, false);
             }
 

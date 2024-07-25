@@ -30,9 +30,9 @@ public class class_6340 extends class_7621 {
    }
 
    public static void method_29017() {
-      field_32372 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/sigma/logo.png");
-      field_32369 = NotificationIcons.method_10231("com/mentalfrostbyte/gui/resources/loading/back.png");
-      field_32371 = NotificationIcons.method_10229("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25F, 25);
+      field_32372 = NotificationIcons.loadTexture("com/mentalfrostbyte/gui/resources/sigma/logo.png");
+      field_32369 = NotificationIcons.loadTexture("com/mentalfrostbyte/gui/resources/loading/back.png");
+      field_32371 = NotificationIcons.processImage("com/mentalfrostbyte/gui/resources/loading/back.png", 0.25F, 25);
    }
 
    @Override
@@ -54,10 +54,10 @@ public class class_6340 extends class_7621 {
       GL11.glPushMatrix();
       float var17 = 1111.0F;
       if (this.field_32368.window.method_43166() != 0) {
-         var17 = (float)(this.field_32368.window.method_43178() / this.field_32368.window.method_43166());
+         var17 = (float)(this.field_32368.window.getFramebufferWidth() / this.field_32368.window.method_43166());
       }
 
-      float var18 = (float)this.field_32368.window.method_43164(this.field_32368.gameOptions.field_45484, this.field_32368.method_8578()) * var17;
+      float var18 = (float)this.field_32368.window.calcGuiScale(this.field_32368.gameOptions.field_45484, this.field_32368.method_8578()) * var17;
       GL11.glScalef(1.0F / var18, 1.0F / var18, 0.0F);
       method_29014(var13, this.field_32377);
       GL11.glPopMatrix();

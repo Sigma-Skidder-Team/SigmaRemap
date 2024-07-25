@@ -70,7 +70,7 @@ public class class_1653 extends class_6414 {
       if (!var1.field_33055
          && var1.field_33033.nextFloat() < var4 - 0.5F
          && var3 instanceof LivingEntity
-         && (var3 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field_1047))
+         && (var3 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.MOB_GRIEFING))
          && var3.method_37086() * var3.method_37086() * var3.method_37074() > 0.512F) {
          method_7376(var1.method_28262(var2), var1, var2);
       }

@@ -131,7 +131,7 @@ public class class_2262 {
    }
 
    public static void method_10390(int var0, boolean var1) {
-      RenderSystem.method_16431(RenderSystem::method_16395);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       if (var0 > 0) {
          GLCapabilities var4 = GL.getCapabilities();
          if (!var4.GL_KHR_debug) {

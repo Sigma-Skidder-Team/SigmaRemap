@@ -76,9 +76,9 @@ public class class_2789 extends class_7621 {
       int var21 = (int)(var19 * 0.5);
       this.field_13696.getTextureManager().bindTexture(field_13703);
       RenderSystem.enableBlend();
-      RenderSystem.method_16401(32774);
-      RenderSystem.method_16397(770, 1);
-      RenderSystem.method_16442(516, 0.0F);
+      RenderSystem.blendEquation(32774);
+      RenderSystem.blendFunc(770, 1);
+      RenderSystem.alphaFunc(516, 0.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, var14);
       boolean var22 = true;
       if (this.field_13706 != null) {

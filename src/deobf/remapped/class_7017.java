@@ -9,7 +9,7 @@ public class class_7017 extends class_5348 {
             RenderSystem.method_16458();
          } else {
             RenderSystem.enableAlphaTest();
-            RenderSystem.method_16442(516, var1);
+            RenderSystem.alphaFunc(516, var1);
          }
       }, () -> {
          RenderSystem.method_16458();

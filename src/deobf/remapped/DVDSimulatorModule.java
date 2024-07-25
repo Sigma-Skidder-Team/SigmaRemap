@@ -57,7 +57,7 @@ public class DVDSimulatorModule extends Module {
             this.field_20137,
             (float)this.field_20140.field_36201,
             (float)this.field_20140.field_36203,
-            NotificationIcons.field_11016,
+            NotificationIcons.dvd,
             class_314.method_1444(this.field_20134, 0.8F)
          );
       }

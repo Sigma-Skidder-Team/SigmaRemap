@@ -101,7 +101,7 @@ public class class_777 extends Module {
             );
          client.thePlayer
             .method_37256(client.thePlayer.getPosX(), client.thePlayer.method_37309() + (double)var1, client.thePlayer.getPosZ());
-         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, NotificationIcons.field_10993));
+         SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Successfuly VCliped", var1 + " Blocks", 2000, NotificationIcons.directionicon));
       }
    }
 }

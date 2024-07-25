@@ -27,7 +27,7 @@ public class class_1581 extends class_446 {
             (float)this.field_36261,
             (float)this.field_36278,
             (float)this.field_36257,
-            NotificationIcons.field_11056,
+            NotificationIcons.loadingindicator,
             class_314.method_1444(class_1255.field_6929.field_6917, this.field_8280 * var1)
          );
          GL11.glPopMatrix();

@@ -418,7 +418,7 @@ public class AltManagerMenu extends class_2596 {
       float var5 = var4 - this.field_10602;
       float var6 = (float)(var3 - this.field_10607);
       class_73.method_96(
-         (float)this.field_10607, this.field_10602, (float)(this.method_32109() * 2), (float)(this.method_32137() + 114), NotificationIcons.field_11005
+         (float)this.field_10607, this.field_10602, (float)(this.method_32109() * 2), (float)(this.method_32137() + 114), NotificationIcons.panorama5
       );
       float var7 = 0.5F;
       if (var4 != this.field_10602) {

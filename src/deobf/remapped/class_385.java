@@ -41,7 +41,7 @@ public class class_385 {
          (float)this.field_1569 - var6 / 2.0F,
          var6,
          var6,
-         NotificationIcons.field_11006,
+         NotificationIcons.musicparticle,
          class_314.method_1444(var5, var4 * 0.9F)
       );
       GL11.glPopMatrix();

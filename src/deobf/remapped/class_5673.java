@@ -123,9 +123,9 @@ public class class_5673 extends class_446 {
             var1
          );
          if (this.field_28756 == null && this.field_28752 == null) {
-            class_73.method_99(var5, var6, var7, var8, NotificationIcons.field_11009, class_314.method_1444(class_1255.field_6918.field_6917, var1 * (1.0F - var4)));
+            class_73.method_99(var5, var6, var7, var8, NotificationIcons.musicartwork, class_314.method_1444(class_1255.field_6918.field_6917, var1 * (1.0F - var4)));
             if (this.field_28753 != null) {
-               class_73.method_99(var5, var6, var7, var8, NotificationIcons.field_11009, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1));
+               class_73.method_99(var5, var6, var7, var8, NotificationIcons.musicartwork, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1));
             }
          } else {
             if (this.field_28756 == null) {
@@ -171,7 +171,7 @@ public class class_5673 extends class_446 {
             (float)(this.method_32173() + this.method_32109() / 2) - (float)(var9 / 2) * var10,
             (float)var9 * var10,
             (float)var9 * var10,
-            NotificationIcons.field_11028,
+            NotificationIcons.playicon,
             class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1)
          );
          class_3384 var11 = class_5320.field_27145;

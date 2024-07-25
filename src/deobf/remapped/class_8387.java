@@ -35,7 +35,7 @@ public class class_8387 extends class_7430 {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, this.field_36680);
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
-      RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
+      RenderSystem.blendFunc(SourceFactor.SRC_ALPHA, DestFactor.field_43697);
       method_9778(var1, this.field_36670, this.field_36674, !this.method_32691() ? 0.0F : 20.0F, !this.field_42907 ? 0.0F : 20.0F, 20, this.field_36681, 64, 64);
       this.method_32706(var1, var7, var2, var3);
       if (this.field_42905) {

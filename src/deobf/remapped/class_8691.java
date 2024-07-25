@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class class_8691 {
    public ArrayList<class_7309> field_44583 = new ArrayList<class_7309>();
-   public File field_44579 = new File(SigmaMainClass.getInstance().method_3334() + "/alts.json");
+   public File field_44579 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/alts.json");
    private String field_44581;
    private class_5190 field_44580 = new class_5190();
 
@@ -109,7 +109,7 @@ public class class_8691 {
       var7.method_5820("alts", var3);
 
       try {
-         class_357.method_1791(var7, new File(SigmaMainClass.getInstance().method_3334() + "/alts.json"));
+         class_357.method_1791(var7, new File(SigmaMainClass.getInstance().getSigmaFolder() + "/alts.json"));
       } catch (IOException | class_7584 var6) {
          SigmaMainClass.getInstance().method_3326().method_12864(var6.getMessage());
       }

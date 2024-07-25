@@ -73,7 +73,7 @@ public class class_1044 extends class_8388 {
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
       if (!this.world.field_33055) {
-         class_7298 var4 = !this.world.getGameRules().getBoolean(GameRules.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
+         class_7298 var4 = !this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) ? class_7298.field_37310 : class_7298.field_37311;
          this.world.method_29574(this, this.getPosX(), this.method_37309(), this.getPosZ(), 1.0F, false, var4);
          this.method_37204();
       }

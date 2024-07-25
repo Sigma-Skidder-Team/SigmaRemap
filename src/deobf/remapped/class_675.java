@@ -32,7 +32,7 @@ public class class_675 extends class_9513 {
       this.field_48435.method_24876();
       this.field_48441.method_24876();
       Random var4 = this.field_48435.method_26594();
-      if (this.field_48439.getGameRules().getBoolean(GameRules.field_1033)) {
+      if (this.field_48439.getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
          this.field_48439
             .method_7509(
                new class_5614(

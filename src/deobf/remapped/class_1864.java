@@ -6,8 +6,8 @@ public final class class_1864 implements class_7154 {
       RenderSystem.method_16387(true);
       var2.bindTexture(class_8359.field_42805);
       RenderSystem.enableBlend();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43697);
-      RenderSystem.method_16442(516, 0.003921569F);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43697);
+      RenderSystem.alphaFunc(516, 0.003921569F);
       var1.method_44471(7, class_7985.field_40902);
    }
 

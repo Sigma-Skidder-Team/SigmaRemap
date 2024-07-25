@@ -33,12 +33,12 @@ public class class_5523 {
 
    private static void method_25040(File var0, String var1, int var2, int var3, class_4230 var4, Consumer<ITextComponent> var5) {
       MinecraftClient var8 = Config.method_14327();
-      Window var9 = var8.getMainWindow();
+      MainWindow var9 = var8.getMainWindow();
       GameOptions var10 = Config.method_14310();
-      int var11 = var9.method_43178();
-      int var12 = var9.method_43198();
+      int var11 = var9.getFramebufferWidth();
+      int var12 = var9.getFramebufferHeight();
       int var13 = var10.field_45484;
-      int var14 = var9.method_43164(var8.gameOptions.field_45484, var8.gameOptions.field_45463);
+      int var14 = var9.calcGuiScale(var8.gameOptions.field_45484, var8.gameOptions.field_45463);
       int var15 = Config.method_14389();
       boolean var16 = class_3776.method_17487() && var15 > 1;
       if (var16) {

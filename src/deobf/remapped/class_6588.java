@@ -3023,8 +3023,8 @@ public class class_6588 {
    }
 
    private static void method_30140() {
-      field_33676 = field_33837.getMainWindow().method_43178();
-      field_33969 = field_33837.getMainWindow().method_43198();
+      field_33676 = field_33837.getMainWindow().getFramebufferWidth();
+      field_33969 = field_33837.getMainWindow().getFramebufferHeight();
       field_33803 = Math.round((float)field_33676 * field_33825);
       field_33764 = Math.round((float)field_33969 * field_33825);
       method_30290();
@@ -3209,7 +3209,7 @@ public class class_6588 {
          }
       }
 
-      if (field_33837.getMainWindow().method_43178() != field_33676 || field_33837.getMainWindow().method_43198() != field_33969) {
+      if (field_33837.getMainWindow().getFramebufferWidth() != field_33676 || field_33837.getMainWindow().getFramebufferHeight() != field_33969) {
          method_30140();
       }
 
@@ -3414,8 +3414,8 @@ public class class_6588 {
          GL11.glViewport(0, 0, field_33803, field_33764);
          EXTFramebufferObject.glBindFramebufferEXT(36160, field_33619);
          field_33890 = true;
-         GlStateManager.method_8903();
-         GlStateManager.method_8745();
+         GlStateManager.enableCull();
+         GlStateManager.enableDepthTest();
          method_30190(field_33745);
          method_30236(field_33587);
          method_30273("beginRenderPass");
@@ -3576,7 +3576,7 @@ public class class_6588 {
       if (field_33651) {
          GL32.glOrtho((double)(-field_33935), (double)field_33935, (double)(-field_33935), (double)field_33935, 0.05F, 256.0);
       } else {
-         GlStateManager.method_8838(class_8107.method_36820((double)field_33857, (float)field_33976 / (float)field_33907, 0.05F, 256.0F));
+         GlStateManager.multMatrix(class_8107.method_36820((double)field_33857, (float)field_33976 / (float)field_33907, 0.05F, 256.0F));
       }
 
       var0.method_36065(0.0, 0.0, -100.0);
@@ -3791,7 +3791,7 @@ public class class_6588 {
          GlStateManager.method_8843();
          GlStateManager.method_8801();
          GlStateManager.method_8775();
-         GlStateManager.method_8745();
+         GlStateManager.enableDepthTest();
          GlStateManager.method_8862(519);
          GlStateManager.method_8867(false);
          GlStateManager.method_8912();
@@ -3913,7 +3913,7 @@ public class class_6588 {
       field_33890 = false;
       field_33837.method_8584().method_19717(true);
       GlStateManager.method_8747(class_6024.field_30769, class_6024.field_30770, 3553, field_33837.method_8584().method_19724(), 0);
-      GL32.glViewport(0, 0, field_33837.getMainWindow().method_43178(), field_33837.getMainWindow().method_43198());
+      GL32.glViewport(0, 0, field_33837.getMainWindow().getFramebufferWidth(), field_33837.getMainWindow().getFramebufferHeight());
       GlStateManager.method_8867(true);
       GL32.glClearColor(field_33699, field_33959, field_33888, 1.0F);
       GL32.glClear(16640);
@@ -3921,7 +3921,7 @@ public class class_6588 {
       GlStateManager.method_8843();
       GlStateManager.method_8801();
       GlStateManager.method_8775();
-      GlStateManager.method_8745();
+      GlStateManager.enableDepthTest();
       GlStateManager.method_8862(519);
       GlStateManager.method_8867(false);
       method_30273("pre-final");
@@ -3980,7 +3980,7 @@ public class class_6588 {
       }
 
       GlStateManager.method_8757();
-      GlStateManager.method_8838(var0.method_36058().method_28620());
+      GlStateManager.multMatrix(var0.method_36058().method_28620());
       var1.method_44471(7, class_7985.field_40915);
       var1.method_35761(var7, var13, var9).method_35735();
       var1.method_35761(var7, var11, var9).method_35735();
@@ -4109,8 +4109,8 @@ public class class_6588 {
       if (field_33804 && field_33822.method_13759() != field_33936.method_13759()) {
          method_30236(field_33822);
          GlStateManager.enableAlphaTest();
-         GlStateManager.method_8785(516, 0.0F);
-         GlStateManager.method_8787(770, 771);
+         GlStateManager.alphaFunc(516, 0.0F);
+         GlStateManager.blendFunc(770, 771);
       }
    }
 
@@ -4226,9 +4226,9 @@ public class class_6588 {
 
    public static void method_30101() {
       if (!field_33945) {
-         GlStateManager.method_8745();
+         GlStateManager.enableDepthTest();
          GlStateManager.method_8829();
-         GlStateManager.method_8787(770, 771);
+         GlStateManager.blendFunc(770, 771);
          GlStateManager.enableAlphaTest();
          method_30236(field_33645);
       }
@@ -4312,7 +4312,7 @@ public class class_6588 {
       GL32.glPopMatrix();
       GL32.glMatrixMode(5888);
       GL32.glPopMatrix();
-      GlStateManager.method_8787(770, 771);
+      GlStateManager.blendFunc(770, 771);
       method_30273("endHand");
    }
 
@@ -4407,8 +4407,8 @@ public class class_6588 {
       method_30211(field_33894, 0);
    }
 
-   public static void method_30219(class_5084 var0) {
-      method_30218(var0.field_26253);
+   public static void method_30219(FogMode var0) {
+      method_30218(var0.param);
    }
 
    public static void method_30131(float var0) {

@@ -154,7 +154,7 @@ public class class_993 extends class_1859 {
             (float)(this.field_36261 + Math.round(var20 * var21 / 16.0F) + this.field_36257 / 2 - 42),
             32.0F,
             46.0F,
-            NotificationIcons.field_10991,
+            NotificationIcons.waypoint,
             var16.field_21075
          );
       }

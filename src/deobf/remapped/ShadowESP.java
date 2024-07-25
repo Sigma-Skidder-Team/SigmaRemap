@@ -23,7 +23,7 @@ public class ShadowESP extends Module {
             GL11.glLineWidth(1.0F);
             this.method_6343();
             this.method_6347(class_4719.field_22894);
-            RenderSystem.method_16442(518, 0.0F);
+            RenderSystem.alphaFunc(518, 0.0F);
             RenderSystem.enableAlphaTest();
             GL11.glColor4f(1.0F, 0.0F, 1.0F, 0.1F);
             GL11.glEnable(3042);
@@ -58,11 +58,11 @@ public class ShadowESP extends Module {
                      -var3x.method_37074() * 5.5F,
                      var3x.method_37086() * 44.0F,
                      var3x.method_37074() * 21.0F,
-                     NotificationIcons.field_11045,
+                     NotificationIcons.altshadow,
                      var3,
                      false
                   );
-                  NotificationIcons.field_11044.method_38419();
+                  NotificationIcons.shouticon.method_38419();
                   GL11.glPopMatrix();
                }
             }
@@ -100,7 +100,7 @@ public class ShadowESP extends Module {
             boolean var19 = client.gameOptions.field_45568;
             RenderSystem.method_16487();
             RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
-            RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+            RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
             RenderSystem.enableBlend();
             client.gameOptions.field_45568 = false;
             int var20 = var10.method_37230();

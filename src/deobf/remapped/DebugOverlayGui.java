@@ -502,8 +502,8 @@ public class DebugOverlayGui extends AbstractGui {
             "",
             String.format(
                "Display: %dx%d (%s)",
-               MinecraftClient.getInstance().getMainWindow().method_43178(),
-               MinecraftClient.getInstance().getMainWindow().method_43198(),
+               MinecraftClient.getInstance().getMainWindow().getFramebufferWidth(),
+               MinecraftClient.getInstance().getMainWindow().getFramebufferHeight(),
                class_6765.method_31017()
             ),
             class_6765.method_31016(),
@@ -614,7 +614,7 @@ public class DebugOverlayGui extends AbstractGui {
          int var8 = (int)(512.0 / this.field_18930.getMainWindow().method_43189());
          var3 = Math.max(var3, var8);
          var4 = this.field_18930.getMainWindow().getScaledWidth() - var3;
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          int var9 = var2.method_44834();
          int var10 = var2.method_44832();
          long[] var11 = var2.method_44838();

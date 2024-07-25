@@ -2612,7 +2612,7 @@ public abstract class Entity implements class_9875, class_5801 {
 
    @Override
    public boolean method_26287() {
-      return this.world.getGameRules().getBoolean(GameRules.field_1057);
+      return this.world.getGameRules().getBoolean(GameRules.SEND_COMMAND_FEEDBACK);
    }
 
    @Override

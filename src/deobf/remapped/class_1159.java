@@ -7,22 +7,22 @@ public class class_1159 implements Comparator {
 
    @Override
    public int compare(Object var1, Object var2) {
-      class_5722 var5 = (class_5722)var1;
-      class_5722 var6 = (class_5722)var2;
-      if (var5.method_25883() == var6.method_25883()) {
-         if (var5.method_25885() == var6.method_25885()) {
+      VideoMode var5 = (VideoMode)var1;
+      VideoMode var6 = (VideoMode)var2;
+      if (var5.getWidth() == var6.getWidth()) {
+         if (var5.getHeight() == var6.getHeight()) {
             int var7 = var5.method_25886() + var5.method_25884() + var5.method_25890();
             int var8 = var6.method_25886() + var6.method_25884() + var6.method_25890();
             if (var7 == var8) {
-               return var5.method_25887() == var6.method_25887() ? 0 : var5.method_25887() - var6.method_25887();
+               return var5.getRefreshRate() == var6.getRefreshRate() ? 0 : var5.getRefreshRate() - var6.getRefreshRate();
             } else {
                return var7 - var8;
             }
          } else {
-            return var5.method_25885() - var6.method_25885();
+            return var5.getHeight() - var6.getHeight();
          }
       } else {
-         return var5.method_25883() - var6.method_25883();
+         return var5.getWidth() - var6.getWidth();
       }
    }
 }

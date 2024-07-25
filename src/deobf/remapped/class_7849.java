@@ -107,7 +107,7 @@ public class class_7849 {
       var2 = (int)((float)var2 * GUIManager.field_34898);
       var3 = (int)((float)var3 * GUIManager.field_34898);
       var4 = (int)((float)var4 * GUIManager.field_34898);
-      var1 = MinecraftClient.getInstance().window.method_43198() - var1 - var3;
+      var1 = MinecraftClient.getInstance().window.getFramebufferHeight() - var1 - var3;
       if (var4 <= 0) {
          var4 = 1;
       }

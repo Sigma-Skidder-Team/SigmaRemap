@@ -445,7 +445,7 @@ public abstract class MobEntity extends LivingEntity {
    public void livingTick() {
       super.livingTick();
       this.world.method_29599().startSection("looting");
-      boolean var3 = this.world.getGameRules().getBoolean(GameRules.field_1047);
+      boolean var3 = this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING);
       if (class_7860.field_40243.method_3596()) {
          var3 = class_7860.method_35566(class_7860.field_40243, this.world, this);
       }

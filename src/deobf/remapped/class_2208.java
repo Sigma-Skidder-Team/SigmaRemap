@@ -66,10 +66,10 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
       int var8 = this.field_10962;
       this.method_10223(var1, var4, var2, var3);
       RenderSystem.method_16443();
-      RenderSystem.method_16491();
+      RenderSystem.disableDepthTest();
       super.method_6767(var1, var2, var3, var4);
       RenderSystem.method_16438();
-      RenderSystem.method_16413((float)var7, (float)var8, 0.0F);
+      RenderSystem.translatef((float)var7, (float)var8, 0.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.method_16381();
       this.field_10954 = null;
@@ -86,7 +86,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
 
          if (this.method_10218(var12, (double)var2, (double)var3) && var12.method_35886()) {
             this.field_10954 = var12;
-            RenderSystem.method_16491();
+            RenderSystem.disableDepthTest();
             int var13 = var12.field_40589;
             int var14 = var12.field_40590;
             RenderSystem.method_16405(true, true, true, false);
@@ -142,7 +142,7 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
    }
 
    private void method_10216(ItemStack var1, int var2, int var3, String var4) {
-      RenderSystem.method_16413(0.0F, 0.0F, 32.0F);
+      RenderSystem.translatef(0.0F, 0.0F, 32.0F);
       this.method_9776(200);
       this.field_945.field_44875 = 200.0F;
       this.field_945.method_40274(var1, var2, var3);
@@ -305,8 +305,8 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
                         } else {
                            boolean var16 = var15 != -999
                               && (
-                                 class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 340)
-                                    || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 344)
+                                 class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 340)
+                                    || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 344)
                               );
                            class_6269 var17 = class_6269.field_32027;
                            if (!var16) {
@@ -486,8 +486,8 @@ public abstract class class_2208<T extends class_4088> extends Screen implements
             if (!this.field_943.gameOptions.keyPickItem.method_27070(var5)) {
                boolean var13 = var12 != -999
                   && (
-                     class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 340)
-                        || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 344)
+                     class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 340)
+                        || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 344)
                   );
                if (var13) {
                   this.field_10968 = var8 != null && var8.method_35884() ? var8.method_35898().method_27973() : ItemStack.EMPTY;

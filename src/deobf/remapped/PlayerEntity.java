@@ -409,7 +409,7 @@ public abstract class PlayerEntity extends LivingEntity {
          this.field_3877--;
       }
 
-      if (this.world.method_43370() == class_423.field_1790 && this.world.getGameRules().getBoolean(GameRules.field_1049)) {
+      if (this.world.method_43370() == class_423.field_1790 && this.world.getGameRules().getBoolean(GameRules.NATURAL_REGENERATION)) {
          if (this.method_26551() < this.method_26465() && this.field_41697 % 20 == 0) {
             this.heal(1.0F);
          }
@@ -531,7 +531,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public void method_26522() {
       super.method_26522();
-      if (!this.world.getGameRules().getBoolean(GameRules.field_1051)) {
+      if (!this.world.getGameRules().getBoolean(GameRules.KEEP_INVENTORY)) {
          this.method_3156();
          this.inventory.method_32411();
       }
@@ -1650,7 +1650,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public int method_26427(PlayerEntity var1) {
-      if (!this.world.getGameRules().getBoolean(GameRules.field_1051) && !this.method_37221()) {
+      if (!this.world.getGameRules().getBoolean(GameRules.KEEP_INVENTORY) && !this.method_37221()) {
          int var4 = this.field_3840 * 7;
          return var4 <= 100 ? var4 : 100;
       } else {

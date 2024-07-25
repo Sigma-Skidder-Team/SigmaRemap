@@ -332,7 +332,7 @@ public class class_9155 implements class_8773 {
    private void method_42190(ITextComponent var1) {
       IFormattableTextComponent var4 = new TranslationTextComponent("chat.type.admin", this.method_42189(), var1)
          .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC});
-      if (this.field_46856.method_1683().getBoolean(GameRules.field_1057)) {
+      if (this.field_46856.method_1683().getBoolean(GameRules.SEND_COMMAND_FEEDBACK)) {
          for (class_9359 var6 : this.field_46856.method_1600().method_39951()) {
             if (var6 != this.field_46849 && this.field_46856.method_1600().method_39962(var6.method_3247())) {
                var6.method_26286(var4, Util.NIL_UUID);
@@ -340,7 +340,7 @@ public class class_9155 implements class_8773 {
          }
       }
 
-      if (this.field_46849 != this.field_46856 && this.field_46856.method_1683().getBoolean(GameRules.field_1056)) {
+      if (this.field_46849 != this.field_46856 && this.field_46856.method_1683().getBoolean(GameRules.LOG_ADMIN_COMMANDS)) {
          this.field_46856.method_26286(var4, Util.NIL_UUID);
       }
    }

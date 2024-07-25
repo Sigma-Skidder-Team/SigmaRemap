@@ -201,7 +201,7 @@ public class class_4745 extends class_4314 {
 
    @Override
    public void method_29265(World var1, BlockPos var2, class_2522 var3, PlayerEntity var4) {
-      if (!var1.field_33055 && var4.method_3186() && var1.getGameRules().getBoolean(GameRules.field_1058)) {
+      if (!var1.field_33055 && var4.method_3186() && var1.getGameRules().getBoolean(GameRules.DO_TILE_DROPS)) {
          class_3757 var7 = var1.method_28260(var2);
          if (var7 instanceof class_5354) {
             class_5354 var8 = (class_5354)var7;

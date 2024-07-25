@@ -56,7 +56,7 @@ public class class_8671 {
             }
          }
 
-         if (var1 == this.field_44499.getMainWindow().method_43181()) {
+         if (var1 == this.field_44499.getMainWindow().getHandle()) {
             boolean var16 = var4 == 1;
             if (MinecraftClient.IS_SYSTEM_MAC && var3 == 0) {
                if (!var16) {
@@ -146,7 +146,7 @@ public class class_8671 {
          class_1523 var9 = new class_1523(var5);
          SigmaMainClass.getInstance().getEventManager().call(var9);
          if (!var9.method_29716()) {
-            if (var1 == MinecraftClient.getInstance().getMainWindow().method_43181()) {
+            if (var1 == MinecraftClient.getInstance().getMainWindow().getHandle()) {
                double var10 = (!this.field_44499.gameOptions.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.gameOptions.field_45578;
                if (this.field_44499.field_9610 == null) {
                   if (this.field_44499.field_9623 == null) {
@@ -213,7 +213,7 @@ public class class_8671 {
    }
 
    private void method_39839(long var1, double var3, double var5) {
-      if (var1 == MinecraftClient.getInstance().getMainWindow().method_43181()) {
+      if (var1 == MinecraftClient.getInstance().getMainWindow().getHandle()) {
          if (this.field_44489) {
             this.field_44482 = var3;
             this.field_44493 = var5;
@@ -322,7 +322,7 @@ public class class_8671 {
          this.field_44496 = true;
          this.field_44482 = (double)(this.field_44499.getMainWindow().method_43166() / 2);
          this.field_44493 = (double)(this.field_44499.getMainWindow().method_43163() / 2);
-         class_9732.method_44937(this.field_44499.getMainWindow().method_43181(), 212995, this.field_44482, this.field_44493);
+         class_9732.method_44937(this.field_44499.getMainWindow().getHandle(), 212995, this.field_44482, this.field_44493);
          this.field_44499.method_8609((Screen)null);
          this.field_44499.field_9582 = 10000;
          this.field_44489 = true;
@@ -334,7 +334,7 @@ public class class_8671 {
          this.field_44496 = false;
          this.field_44482 = (double)(this.field_44499.getMainWindow().method_43166() / 2);
          this.field_44493 = (double)(this.field_44499.getMainWindow().method_43163() / 2);
-         class_9732.method_44937(this.field_44499.getMainWindow().method_43181(), 212993, this.field_44482, this.field_44493);
+         class_9732.method_44937(this.field_44499.getMainWindow().getHandle(), 212993, this.field_44482, this.field_44493);
       }
    }
 

@@ -66,7 +66,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    private final TextureManager textureManager;
    private final DataFixer dataFixer;
    private final WindowProvider windowProvider;
-   public final Window window;
+   public final MainWindow window;
    public final RenderTickCounter theTimer = new RenderTickCounter(20.0F, 0L);
    private final Snooper field_9606 = new Snooper("client", this, Util.getMeasuringTimeMs());
    private final class_3017 field_9576;
@@ -218,7 +218,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       Util.nanoTimeSupplier = RenderSystem.method_16454();
       this.windowProvider = new WindowProvider(this);
       this.window = this.windowProvider.method_43609(var6, this.gameOptions.field_45422, this.method_8504());
-      this.method_32778(true);
+      this.setGameFocused(true);
 
       try {
          InputStream var7 = this.method_8606().method_25060().䴂쬫ಽ䩉㐖쬫(class_3168.field_15844, new Identifier("icons/icon_16x16.png"));
@@ -228,13 +228,13 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
          LOGGER.error("Couldn't set icon", var9);
       }
 
-      this.window.method_43194(this.gameOptions.field_45439);
+      this.window.setFramerateLimit(this.gameOptions.field_45439);
       this.field_9625 = new class_8671(this);
-      this.field_9625.method_39837(this.window.method_43181());
+      this.field_9625.method_39837(this.window.getHandle());
       this.field_9600 = new class_8455(this);
-      this.field_9600.method_38893(this.window.method_43181());
+      this.field_9600.method_38893(this.window.getHandle());
       RenderSystem.method_16478(this.gameOptions.field_45542, false);
-      this.field_9596 = new class_4230(this.window.method_43178(), this.window.method_43198(), true, IS_SYSTEM_MAC);
+      this.field_9596 = new class_4230(this.window.getFramebufferWidth(), this.window.getFramebufferHeight(), true, IS_SYSTEM_MAC);
       this.field_9596.method_19709(0.0F, 0.0F, 0.0F, 0.0F);
       this.field_9656 = new class_9483(class_3168.field_15844);
       this.field_9653.method_29122();
@@ -257,7 +257,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9656.method_2649(new class_3205());
       this.field_9656.method_2649(new class_451());
       this.window.method_43182("Startup");
-      RenderSystem.method_16406(0, 0, this.window.method_43178(), this.window.method_43198());
+      RenderSystem.method_16406(0, 0, this.window.getFramebufferWidth(), this.window.getFramebufferHeight());
       this.window.method_43182("Post startup");
       this.field_9624 = class_4468.method_20751();
       this.field_9640 = class_6662.method_30588(this.field_9624);
@@ -289,15 +289,15 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9614 = new IngameGUI(this);
       this.field_9612 = new class_3372(this);
       RenderSystem.method_16416(this::method_8547);
-      if (this.gameOptions.field_45453 && !this.window.method_43174()) {
-         this.window.method_43156();
-         this.gameOptions.field_45453 = this.window.method_43174();
+      if (this.gameOptions.field_45453 && !this.window.isFullscreen()) {
+         this.window.toggleFullscreen();
+         this.gameOptions.field_45453 = this.window.isFullscreen();
       }
 
       this.window.method_43162(this.gameOptions.field_45502);
       this.window.method_43176(this.gameOptions.field_45409);
       this.window.method_43172();
-      this.method_32777();
+      this.updateWindowSize();
       if (var4 != null) {
          this.method_8609(new class_501(new class_1876(), this, var4, var5));
       } else {
@@ -321,7 +321,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    public void method_8545() {
-      this.window.method_43185(this.method_8504());
+      this.window.setWindowTitle(this.method_8504());
    }
 
    private String method_8504() {
@@ -756,7 +756,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       class_6377.method_29162();
       this.field_9592.startSection("display");
       RenderSystem.method_16432();
-      RenderSystem.method_16361();
+      RenderSystem.enableCull();
       this.field_9592.endSection();
       if (!this.field_9589) {
          this.field_9592.method_16050("gameRenderer");
@@ -776,10 +776,10 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.field_9596.method_19723();
       RenderSystem.method_16489();
       RenderSystem.method_16438();
-      this.field_9596.method_19713(this.window.method_43178(), this.window.method_43198());
+      this.field_9596.method_19713(this.window.getFramebufferWidth(), this.window.getFramebufferHeight());
       RenderSystem.method_16489();
       this.field_9592.method_16050("updateDisplay");
-      this.window.method_43154();
+      this.window.flipFrame();
       int var10 = this.method_8507();
       if ((double)var10 < class_1013.field_5277.method_38573()) {
          RenderSystem.method_16422(var10);
@@ -866,29 +866,29 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    @Override
-   public void method_32777() {
-      int var1 = this.window.method_43164(this.gameOptions.field_45484, this.method_8578());
-      this.window.method_43169((double)var1);
+   public void updateWindowSize() {
+      int var1 = this.window.calcGuiScale(this.gameOptions.field_45484, this.method_8578());
+      this.window.setGuiScale((double)var1);
       if (this.field_9623 != null) {
          this.field_9623.method_1191(this, this.window.getScaledWidth(), this.window.getScaledHeight());
          SigmaMainClass.getInstance().getGUIManager().method_30991();
       }
 
       class_4230 var2 = this.method_8584();
-      var2.method_19708(this.window.method_43178(), this.window.method_43198(), IS_SYSTEM_MAC);
-      this.gameRenderer.method_35943(this.window.method_43178(), this.window.method_43198());
+      var2.method_19708(this.window.getFramebufferWidth(), this.window.getFramebufferHeight(), IS_SYSTEM_MAC);
+      this.gameRenderer.method_35943(this.window.getFramebufferWidth(), this.window.getFramebufferHeight());
       this.field_9625.method_39833();
    }
 
    @Override
-   public void method_32779() {
+   public void ignoreFirstMove() {
       this.field_9625.method_39840();
    }
 
    private int method_8507() {
       return this.theWorld == null && (this.field_9623 != null || this.field_9610 != null)
-         ? Math.min(120, Math.max(this.window.method_43186(), 60))
-         : this.window.method_43186();
+         ? Math.min(120, Math.max(this.window.getLimitFramerate(), 60))
+         : this.window.getLimitFramerate();
    }
 
    public void method_8593() {
@@ -943,17 +943,17 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       RenderSystem.method_16402(256, IS_SYSTEM_MAC);
       RenderSystem.method_16463(5889);
       RenderSystem.method_16476();
-      RenderSystem.method_16376(0.0, (double)this.window.method_43178(), (double)this.window.method_43198(), 0.0, 1000.0, 3000.0);
+      RenderSystem.method_16376(0.0, (double)this.window.getFramebufferWidth(), (double)this.window.getFramebufferHeight(), 0.0, 1000.0, 3000.0);
       RenderSystem.method_16463(5888);
       RenderSystem.method_16476();
-      RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
+      RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
       RenderSystem.method_16484(1.0F);
       RenderSystem.method_16354();
       class_8042 var5 = class_8042.method_36499();
       class_9633 var6 = var5.method_36501();
       short var7 = 160;
-      int var8 = this.window.method_43178() - 160 - 10;
-      int var9 = this.window.method_43198() - 320;
+      int var8 = this.window.getFramebufferWidth() - 160 - 10;
+      int var9 = this.window.getFramebufferHeight() - 320;
       RenderSystem.enableBlend();
       var6.method_44471(7, class_7985.field_40903);
       var6.method_35761((double)((float)var8 - 176.0F), (double)((float)var9 - 96.0F - 16.0F), 0.0).method_35743(200, 0, 0, 0).method_35735();
@@ -1043,7 +1043,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
 
    public void method_8512() {
       if (this.field_9619) {
-         SigmaMainClass.getInstance().method_3324();
+         SigmaMainClass.getInstance().shutdownSigma();
       }
 
       this.field_9619 = false;
@@ -2033,7 +2033,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       var1.method_15252("fps", field_9626);
       var1.method_15252("vsync_enabled", this.gameOptions.field_45502);
       var1.method_15252("display_frequency", this.window.method_43197());
-      var1.method_15252("display_type", this.window.method_43174() ? "fullscreen" : "windowed");
+      var1.method_15252("display_type", this.window.isFullscreen() ? "fullscreen" : "windowed");
       var1.method_15252("run_time", (Util.getMeasuringTimeMs() - var1.method_15251()) / 60L * 1000L);
       var1.method_15252("current_action", this.method_8602());
       var1.method_15252("language", this.gameOptions.field_45437 == null ? "en_us" : this.gameOptions.field_45437);
@@ -2332,7 +2332,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    }
 
    @Override
-   public void method_32778(boolean var1) {
+   public void setGameFocused(boolean var1) {
       this.field_9630 = var1;
    }
 
@@ -2361,7 +2361,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       return false;
    }
 
-   public Window getMainWindow() {
+   public MainWindow getMainWindow() {
       return this.window;
    }
 

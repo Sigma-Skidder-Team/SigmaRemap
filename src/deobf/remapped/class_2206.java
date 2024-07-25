@@ -317,10 +317,10 @@ public class class_2206 extends class_3232 {
       this.field_10940 = var3;
       class_1906 var7 = this.field_10944.method_43366();
       boolean var8 = this.field_10944.method_29581();
-      boolean var9 = this.field_10944.getGameRules().getBoolean(GameRules.field_1028);
+      boolean var9 = this.field_10944.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING);
       if (!var8) {
          this.field_10944.method_29599().startSection("pollingChunks");
-         int var10 = this.field_10944.getGameRules().method_1295(GameRules.field_1040);
+         int var10 = this.field_10944.getGameRules().method_1295(GameRules.RANDOM_TICK_SPEED);
          boolean var11 = var7.method_8658() % 400L == 0L;
          this.field_10944.method_29599().startSection("naturalSpawnCount");
          int var12 = this.field_10943.method_42677();

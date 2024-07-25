@@ -65,7 +65,7 @@ public class ExitScreenMenu extends class_2596 {
       this.method_32105(false);
       field_32965 = System.nanoTime();
       if (field_32961 == null) {
-         field_32961 = NotificationIcons.method_10229("com/mentalfrostbyte/gui/resources/" + NotificationIcons.method_10230(), 0.075F, 8);
+         field_32961 = NotificationIcons.processImage("com/mentalfrostbyte/gui/resources/" + NotificationIcons.getPanorama(), 0.075F, 8);
       }
 
       this.field_32960.method_11119(class_4043.field_19618);
@@ -176,14 +176,14 @@ public class ExitScreenMenu extends class_2596 {
             (float)this.field_32971,
             (float)(this.method_32109() * 2 + var17),
             (float)(this.method_32137() + 114),
-            NotificationIcons.field_11039
+            NotificationIcons.background
          );
          class_73.method_96(
             (float)this.field_32974 - (float)var18 * var12,
             (float)this.field_32971,
             (float)(this.method_32109() * 2 + var18),
             (float)(this.method_32137() + 114),
-            NotificationIcons.field_10998
+            NotificationIcons.middle
          );
 
          for (class_7038 var21 : this.field_32962) {
@@ -197,13 +197,13 @@ public class ExitScreenMenu extends class_2596 {
             (float)this.field_32971,
             (float)(this.method_32109() * 2 + var19),
             (float)(this.method_32137() + 114),
-            NotificationIcons.field_11033
+            NotificationIcons.foreground
          );
-         class_8343 var26 = NotificationIcons.field_11032;
+         class_8343 var26 = NotificationIcons.logo_large;
          int var28 = var26.method_38415();
          int var22 = var26.method_38421();
          if (GUIManager.field_34898 > 1.0F) {
-            var26 = NotificationIcons.field_11058;
+            var26 = NotificationIcons.logo_large2x;
          }
 
          class_73.method_102(

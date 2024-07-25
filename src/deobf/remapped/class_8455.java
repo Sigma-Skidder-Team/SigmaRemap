@@ -265,7 +265,7 @@ public class class_8455 {
    }
 
    public void method_38889(long var1, int var3, int var4, int var5, int var6) {
-      if (var1 == this.field_43225.getMainWindow().method_43181()) {
+      if (var1 == this.field_43225.getMainWindow().getHandle()) {
          if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
             SigmaMainClass.getInstance().getGUIManager().method_30992(var3, var5);
             return;
@@ -291,15 +291,15 @@ public class class_8455 {
          }
 
          if (this.field_43229 <= 0L) {
-            if (class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 67)
-               && class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292)) {
+            if (class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 67)
+               && class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 292)) {
                this.field_43227 = true;
                this.field_43229 = Util.getMeasuringTimeMs();
                this.field_43224 = Util.getMeasuringTimeMs();
                this.field_43230 = 0L;
             }
-         } else if (!class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 67)
-            || !class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292)) {
+         } else if (!class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 67)
+            || !class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 292)) {
             this.field_43229 = -1L;
          }
 
@@ -311,8 +311,8 @@ public class class_8455 {
                }
             } else {
                if (this.field_43225.gameOptions.keyFullScreen.method_27062(var3, var4)) {
-                  this.field_43225.getMainWindow().method_43156();
-                  this.field_43225.gameOptions.field_45453 = this.field_43225.getMainWindow().method_43174();
+                  this.field_43225.getMainWindow().toggleFullscreen();
+                  this.field_43225.gameOptions.field_45453 = this.field_43225.getMainWindow().isFullscreen();
                   this.field_43225.gameOptions.method_40873();
                   return;
                }
@@ -323,8 +323,8 @@ public class class_8455 {
 
                   class_5523.method_25041(
                      this.field_43225.runDirectory,
-                     this.field_43225.getMainWindow().method_43178(),
-                     this.field_43225.getMainWindow().method_43198(),
+                     this.field_43225.getMainWindow().getFramebufferWidth(),
+                     this.field_43225.getMainWindow().getFramebufferHeight(),
                      this.field_43225.method_8584(),
                      var1x -> this.field_43225.execute(() -> this.field_43225.field_9614.method_13991().method_18676(var1x))
                   );
@@ -387,11 +387,11 @@ public class class_8455 {
                boolean var12 = false;
                if (this.field_43225.field_9623 == null) {
                   if (var3 == 256) {
-                     boolean var13 = class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292);
+                     boolean var13 = class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 292);
                      this.field_43225.method_8597(var13);
                   }
 
-                  var12 = class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 292) && this.method_38886(var3);
+                  var12 = class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 292) && this.method_38886(var3);
                   this.field_43227 |= var12;
                   if (var3 == 290) {
                      this.field_43225.gameOptions.hideGUI = !this.field_43225.gameOptions.hideGUI;
@@ -436,7 +436,7 @@ public class class_8455 {
    }
 
    private void method_38884(long var1, int var3, int var4) {
-      if (var1 == this.field_43225.getMainWindow().method_43181()) {
+      if (var1 == this.field_43225.getMainWindow().getHandle()) {
          if (SigmaMainClass.getInstance().getGUIManager().method_31001() != null) {
             SigmaMainClass.getInstance().getGUIManager().method_30986(var3, var4);
             return;
@@ -487,7 +487,7 @@ public class class_8455 {
    }
 
    public String method_38883() {
-      return this.field_43226.method_6468(this.field_43225.getMainWindow().method_43181(), (var1, var2) -> {
+      return this.field_43226.method_6468(this.field_43225.getMainWindow().getHandle(), (var1, var2) -> {
          if (var1 != 65545) {
             this.field_43225.getMainWindow().method_43190(var1, var2);
          }
@@ -495,7 +495,7 @@ public class class_8455 {
    }
 
    public void method_38891(String var1) {
-      this.field_43226.method_6470(this.field_43225.getMainWindow().method_43181(), var1);
+      this.field_43226.method_6470(this.field_43225.getMainWindow().getHandle(), var1);
    }
 
    public void method_38892() {

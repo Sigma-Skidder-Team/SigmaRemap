@@ -13,7 +13,7 @@ public class class_6766 extends class_3599 {
    @Override
    public boolean method_16795() {
       if (this.field_34923.method_3913() != null) {
-         return this.field_34923.world.getGameRules().getBoolean(GameRules.field_1047) ? this.field_34923.method_26594().nextInt(2000) == 0 : false;
+         return this.field_34923.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) ? this.field_34923.method_26594().nextInt(2000) == 0 : false;
       } else {
          return false;
       }

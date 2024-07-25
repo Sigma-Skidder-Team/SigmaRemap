@@ -25,7 +25,7 @@ public class class_4678 implements class_6406 {
 
       if (!this.field_22800.isEmpty()) {
          var2.method_42327().getTextureManager().bindTexture(field_32696);
-         RenderSystem.method_16404(1.0F, 1.0F, 1.0F);
+         RenderSystem.color3f(1.0F, 1.0F, 1.0F);
          var2.method_9781(var1, 0, 0, 0, 32, this.method_29239(), this.method_29238());
          var2.method_42327().textRenderer.method_45378(var1, field_22802, 30.0F, 7.0F, -11534256);
          var2.method_42327().textRenderer.method_45378(var1, field_22803, 30.0F, 18.0F, -16777216);

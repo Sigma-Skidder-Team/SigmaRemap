@@ -225,9 +225,9 @@ public abstract class class_7983<E extends class_4686<E>> extends FocusableGui i
             .method_35735();
          var9.method_36500();
          RenderSystem.method_16457(515);
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          RenderSystem.enableBlend();
-         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
+         RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ZERO, DestFactor.field_43691);
          RenderSystem.method_16458();
          RenderSystem.method_16486(7425);
          RenderSystem.method_16354();

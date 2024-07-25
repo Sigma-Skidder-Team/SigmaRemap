@@ -82,7 +82,7 @@ public class InvMoveModule extends Module {
                if (var7.field_30027.field_17800 > 0
                   && client.gameOptions.keySneak.field_30027.field_17800 != var7.field_30027.field_17800
                   && var7.field_30027.field_17800 > 4) {
-                  int var8 = GLFW.glfwGetKey(client.window.method_43181(), var7.field_30027.field_17800);
+                  int var8 = GLFW.glfwGetKey(client.window.getHandle(), var7.field_30027.field_17800);
                   var7.pressed = var8 == 1;
                }
             }

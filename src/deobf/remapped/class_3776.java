@@ -38,15 +38,15 @@ public class class_3776 {
    });
 
    public static String method_17479() {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       return GLFW.glfwGetCurrentContext() != 0L
          ? GlStateManager.method_8928(7937) + " GL version " + GlStateManager.method_8928(7938) + ", " + GlStateManager.method_8928(7936)
          : "NO CONTEXT";
    }
 
-   public static int method_17493(Window var0) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
-      long var3 = GLFW.glfwGetWindowMonitor(var0.method_43181());
+   public static int method_17493(MainWindow var0) {
+      RenderSystem.assertThread(RenderSystem::method_16366);
+      long var3 = GLFW.glfwGetWindowMonitor(var0.getHandle());
       if (var3 == 0L) {
          var3 = GLFW.glfwGetPrimaryMonitor();
       }
@@ -56,13 +56,13 @@ public class class_3776 {
    }
 
    public static String method_17478() {
-      RenderSystem.method_16431(RenderSystem::method_16395);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       return Version.getVersion();
    }
 
    public static LongSupplier method_17488() {
-      RenderSystem.method_16431(RenderSystem::method_16395);
-      Window.method_43167((var0, var1) -> {
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
+      MainWindow.method_43167((var0, var1) -> {
          throw new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", var0, var1));
       });
       ArrayList var2 = Lists.newArrayList();
@@ -82,32 +82,32 @@ public class class_3776 {
    }
 
    public static void method_17489(GLFWErrorCallbackI var0) {
-      RenderSystem.method_16431(RenderSystem::method_16395);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       GLFWErrorCallback var3 = GLFW.glfwSetErrorCallback(var0);
       if (var3 != null) {
          var3.free();
       }
    }
 
-   public static boolean method_17492(Window var0) {
-      return GLFW.glfwWindowShouldClose(var0.method_43181());
+   public static boolean method_17492(MainWindow var0) {
+      return GLFW.glfwWindowShouldClose(var0.getHandle());
    }
 
    public static void method_17490() {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       if (GL.getCapabilities().GL_NV_fog_distance) {
          if (Config.method_14324()) {
-            GlStateManager.method_8768(34138, 34139);
+            GlStateManager.fogi(34138, 34139);
          }
 
          if (Config.method_14296()) {
-            GlStateManager.method_8768(34138, 34140);
+            GlStateManager.fogi(34138, 34140);
          }
       }
    }
 
    public static void method_17494(int var0, boolean var1) {
-      RenderSystem.method_16431(RenderSystem::method_16395);
+      RenderSystem.assertThread(RenderSystem::isInInitPhase);
       GLCapabilities var4 = GL.getCapabilities();
       field_18438 = "Using framebuffer using " + GlStateManager.method_8902(var4);
 
@@ -129,7 +129,7 @@ public class class_3776 {
    }
 
    public static void method_17480(int var0, boolean var1, boolean var2, boolean var3) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       GlStateManager.method_8848();
       GlStateManager.method_8867(false);
       class_8042 var6 = RenderSystem.method_16373();

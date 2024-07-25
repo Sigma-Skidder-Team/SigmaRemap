@@ -13,7 +13,7 @@ public abstract class class_8143 implements AutoCloseable {
    private boolean field_41692;
 
    public void method_37049(boolean var1, boolean var2) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       if (!this.field_41687 || this.field_41689 != var1 || this.field_41690 != var2) {
          this.field_41687 = true;
          this.field_41689 = var1;
@@ -36,7 +36,7 @@ public abstract class class_8143 implements AutoCloseable {
    }
 
    public int method_37055() {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       if (this.field_41691 == -1) {
          this.field_41691 = class_4970.method_22837();
       }

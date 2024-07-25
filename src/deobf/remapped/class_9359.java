@@ -381,7 +381,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
    @Override
    public void method_26452(DamageSource var1) {
-      boolean var4 = this.world.getGameRules().getBoolean(GameRules.field_1060);
+      boolean var4 = this.world.getGameRules().getBoolean(GameRules.SHOW_DEATH_MESSAGES);
       if (!var4) {
          this.field_47794.method_4156(new class_7214(this.method_26476(), class_2820.field_13845));
       } else {
@@ -1011,7 +1011,7 @@ public class class_9359 extends PlayerEntity implements class_117 {
 
    public void method_43273(class_9359 var1, boolean var2) {
       if (!var2) {
-         if (this.world.getGameRules().getBoolean(GameRules.field_1051) || var1.method_37221()) {
+         if (this.world.getGameRules().getBoolean(GameRules.KEEP_INVENTORY) || var1.method_37221()) {
             this.inventory.method_32421(var1.inventory);
             this.field_3840 = var1.field_3840;
             this.field_3862 = var1.field_3862;

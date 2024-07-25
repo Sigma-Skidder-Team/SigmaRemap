@@ -113,8 +113,8 @@ public class class_4356 extends class_446 {
          if (this.field_21335 != null) {
             this.method_20216();
             this.method_20217();
-            NotificationIcons.field_11044.method_38419();
-            NotificationIcons.field_11044.method_38419();
+            NotificationIcons.shouticon.method_38419();
+            NotificationIcons.shouticon.method_38419();
             super.method_32178(var1);
          }
       }
@@ -144,8 +144,8 @@ public class class_4356 extends class_446 {
       }
 
       GL11.glPopMatrix();
-      NotificationIcons.field_11044.method_38419();
-      NotificationIcons.field_11044.method_38419();
+      NotificationIcons.shouticon.method_38419();
+      NotificationIcons.shouticon.method_38419();
    }
 
    public void method_20217() {

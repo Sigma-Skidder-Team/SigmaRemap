@@ -12,7 +12,7 @@ public class class_4244 extends Module {
          if (client.thePlayer.field_29666 != 1) {
             if (client.thePlayer.field_29666 == 0) {
                client.gameOptions.keyForward.pressed = class_9732.method_44934(
-                  MinecraftClient.getInstance().window.method_43181(), client.gameOptions.keyForward.field_30027.field_17800
+                  MinecraftClient.getInstance().window.getHandle(), client.gameOptions.keyForward.field_30027.field_17800
                );
             }
          } else {

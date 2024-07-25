@@ -151,15 +151,15 @@ public class class_3372 {
          double var19 = var15.method_41627().field_7333;
          double var21 = var15.method_41627().field_7334;
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
+         RenderSystem.translatef((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
          RenderSystem.method_16465(0.0F, 1.0F, 0.0F);
-         RenderSystem.method_16358(new class_8107(var15.method_41644()));
+         RenderSystem.multMatrix(new class_8107(var15.method_41644()));
          RenderSystem.method_16403(var8, -var8, var8);
          RenderSystem.method_16432();
          if (!var11) {
             RenderSystem.enableDepthTest();
          } else {
-            RenderSystem.method_16491();
+            RenderSystem.disableDepthTest();
          }
 
          RenderSystem.method_16387(true);

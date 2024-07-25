@@ -21,8 +21,8 @@ public abstract class class_2596 extends class_7038 {
    @Override
    public void method_29509(int var1) {
       if (var1 == MinecraftClient.getInstance().gameOptions.keyFullScreen.field_30027.field_17800) {
-         MinecraftClient.getInstance().window.method_43156();
-         MinecraftClient.getInstance().gameOptions.field_45453 = MinecraftClient.getInstance().window.method_43174();
+         MinecraftClient.getInstance().window.toggleFullscreen();
+         MinecraftClient.getInstance().gameOptions.field_45453 = MinecraftClient.getInstance().window.isFullscreen();
       }
 
       super.method_29509(var1);

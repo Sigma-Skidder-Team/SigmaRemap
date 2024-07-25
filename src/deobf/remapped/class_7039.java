@@ -942,7 +942,7 @@ public class class_7039 extends class_1094 {
       String var4 = "LOCAL!";
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.method_16438();
-      RenderSystem.method_16413((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
+      RenderSystem.translatef((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.method_16403(1.5F, 1.5F, 1.5F);
       this.field_948.method_45385(var1, "LOCAL!", 0.0F, 0.0F, 8388479);
@@ -953,7 +953,7 @@ public class class_7039 extends class_1094 {
       String var4 = "STAGE!";
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.method_16438();
-      RenderSystem.method_16413((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
+      RenderSystem.translatef((float)(this.field_941 / 2 - 25), 20.0F, 0.0F);
       RenderSystem.method_16410(-20.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.method_16403(1.5F, 1.5F, 1.5F);
       this.field_948.method_45385(var1, "STAGE!", 0.0F, 0.0F, -256);

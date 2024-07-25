@@ -225,7 +225,7 @@ public class class_6331 extends World implements class_700 {
 
       if (this.field_32344 && this.field_32340.stream().noneMatch(var0 -> !var0.method_37221() && !var0.method_3195())) {
          this.field_32344 = false;
-         if (this.getGameRules().getBoolean(GameRules.field_1037)) {
+         if (this.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)) {
             long var11 = this.field_33035.method_8666() + 24000L;
             this.method_28970(var11 - var11 % 24000L);
          }
@@ -325,7 +325,7 @@ public class class_6331 extends World implements class_700 {
          long var3 = this.field_33035.method_8658() + 1L;
          this.field_32345.method_32979(var3);
          this.field_32345.method_32969().run(this.field_32343, var3);
-         if (this.field_33035.method_8653().getBoolean(GameRules.field_1037)) {
+         if (this.field_33035.method_8653().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)) {
             this.method_28970(this.field_33035.method_8666() + 1L);
          }
       }
@@ -356,7 +356,7 @@ public class class_6331 extends World implements class_700 {
          BlockPos var10 = this.method_28993(this.method_29596(var7, 0, var8, 15));
          if (this.method_29569(var10)) {
             class_9589 var11 = this.method_43368(var10);
-            boolean var12 = this.getGameRules().getBoolean(GameRules.field_1028) && this.field_33033.nextDouble() < (double)var11.method_44283() * 0.01;
+            boolean var12 = this.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING) && this.field_33033.nextDouble() < (double)var11.method_44283() * 0.01;
             if (var12) {
                class_5948 var13 = EntityType.field_34261.method_30484(this);
                var13.method_27190(true);

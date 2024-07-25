@@ -16,8 +16,8 @@ public class class_3829 extends class_2596 {
    @Override
    public void method_32178(float var1) {
       super.method_32178(var1);
-      int var4 = NotificationIcons.field_11023.method_38415();
-      int var5 = NotificationIcons.field_11023.method_38421();
+      int var4 = NotificationIcons.mentalfrostbyte.method_38415();
+      int var5 = NotificationIcons.mentalfrostbyte.method_38421();
       var4 = Math.min(var4, (int)((float) MinecraftClient.getInstance().window.method_43163() / 1.65F));
       var5 = Math.min(var5, (int)((float) MinecraftClient.getInstance().window.method_43163() / 1.65F));
       this.method_17806();
@@ -46,7 +46,7 @@ public class class_3829 extends class_2596 {
          ),
          (float)var4 - (float)var4 * (this.field_18710 - 1.0F) * this.field_18710,
          (float)var5 - (float)var5 * (this.field_18710 - 1.0F) * this.field_18710,
-         NotificationIcons.field_11023,
+         NotificationIcons.mentalfrostbyte,
          class_314.method_1444(class_1255.field_6918.field_6917, Math.min(1.0F, this.field_18710))
       );
       if (!((double)this.field_18710 < 0.986)) {
@@ -76,7 +76,7 @@ public class class_3829 extends class_2596 {
       float var5 = var4 - (float)this.field_18707;
       float var6 = (float)(var3 - this.field_18706);
       class_73.method_96(
-         (float)this.field_18706, (float)this.field_18707, (float)(this.method_32109() * 2), (float)(this.method_32137() + 114), NotificationIcons.field_11005
+         (float)this.field_18706, (float)this.field_18707, (float)(this.method_32109() * 2), (float)(this.method_32137() + 114), NotificationIcons.panorama5
       );
       float var7 = 0.5F;
       if (var4 != (float)this.field_18707) {

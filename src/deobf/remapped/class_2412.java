@@ -63,7 +63,7 @@ public class class_2412 {
    public void method_10971() {
       if (this.field_11995) {
          GlStateManager.enableAlphaTest();
-         GlStateManager.method_8785(this.field_11998, this.field_11996);
+         GlStateManager.alphaFunc(this.field_11998, this.field_11996);
       } else {
          GlStateManager.method_8801();
       }

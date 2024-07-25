@@ -55,7 +55,7 @@ public class class_7636 implements Runnable {
             class_6544 var19 = var18.method_639("Thread Dump");
             var19.method_29850("Threads", var11);
             class_6544 var20 = var18.method_639("Performance stats");
-            var20.method_29851("Random tick rate", () -> this.field_38848.method_1601().method_8653().<class_1997>method_1287(GameRules.field_1040).toString());
+            var20.method_29851("Random tick rate", () -> this.field_38848.method_1601().method_8653().<IntegerValue>method_1287(GameRules.RANDOM_TICK_SPEED).toString());
             var20.method_29851(
                "Level stats",
                () -> Streams.stream(this.field_38848.method_1719())

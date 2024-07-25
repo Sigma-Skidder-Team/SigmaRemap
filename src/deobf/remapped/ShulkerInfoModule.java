@@ -166,10 +166,10 @@ public class ShulkerInfoModule extends Module {
                this.method_31549(var13, var14, var7, var6.method_28008().getString(), true);
                GL11.glPopMatrix();
                RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-               RenderSystem.method_16361();
-               RenderSystem.method_16491();
+               RenderSystem.enableCull();
+               RenderSystem.disableDepthTest();
                RenderSystem.enableBlend();
-               RenderSystem.method_16442(518, 0.1F);
+               RenderSystem.alphaFunc(518, 0.1F);
             } else {
                this.field_35424 = -1;
                this.field_35423 = 0.0;
@@ -225,7 +225,7 @@ public class ShulkerInfoModule extends Module {
                (float)(var16 + 7),
                (float)(40 + var19),
                40.0F,
-               NotificationIcons.field_11045,
+               NotificationIcons.altshadow,
                class_314.method_1444(class_1255.field_6918.field_6917, 0.7F),
                false
             );

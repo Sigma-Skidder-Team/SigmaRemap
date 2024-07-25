@@ -26,7 +26,7 @@ public class class_8448 implements class_2995 {
    private void method_38855(BlockPos var1, class_7351 var2) {
       RenderSystem.method_16438();
       RenderSystem.enableBlend();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
       RenderSystem.color4f(0.0F, 1.0F, 0.0F, 0.75F);
       RenderSystem.method_16354();
       class_3372.method_15560(var1, 0.02F, var2.method_33495(), var2.method_33493(), var2.method_33494(), var2.method_33492());

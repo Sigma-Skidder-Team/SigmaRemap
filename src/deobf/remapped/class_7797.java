@@ -64,11 +64,11 @@ public class class_7797 extends AbstractGui {
 
       RenderSystem.method_16438();
       RenderSystem.enableDepthTest();
-      RenderSystem.method_16413(0.0F, 0.0F, 950.0F);
+      RenderSystem.translatef(0.0F, 0.0F, 950.0F);
       RenderSystem.method_16405(false, false, false, false);
       method_9774(var1, 4680, 2260, -4680, -2260, -16777216);
       RenderSystem.method_16405(true, true, true, true);
-      RenderSystem.method_16413(0.0F, 0.0F, -950.0F);
+      RenderSystem.translatef(0.0F, 0.0F, -950.0F);
       RenderSystem.method_16457(518);
       method_9774(var1, 234, 113, 0, 0, -16777216);
       RenderSystem.method_16457(515);
@@ -94,18 +94,18 @@ public class class_7797 extends AbstractGui {
       this.field_39495.method_21342(var1, var5, var6, false);
       this.field_39495.method_21345(var1, var5, var6);
       RenderSystem.method_16457(518);
-      RenderSystem.method_16413(0.0F, 0.0F, -950.0F);
+      RenderSystem.translatef(0.0F, 0.0F, -950.0F);
       RenderSystem.method_16405(false, false, false, false);
       method_9774(var1, 4680, 2260, -4680, -2260, -16777216);
       RenderSystem.method_16405(true, true, true, true);
-      RenderSystem.method_16413(0.0F, 0.0F, 950.0F);
+      RenderSystem.translatef(0.0F, 0.0F, 950.0F);
       RenderSystem.method_16457(515);
       RenderSystem.method_16489();
    }
 
    public void method_35363(class_7966 var1, int var2, int var3, int var4, int var5) {
       RenderSystem.method_16438();
-      RenderSystem.method_16413(0.0F, 0.0F, 200.0F);
+      RenderSystem.translatef(0.0F, 0.0F, 200.0F);
       method_9774(var1, 0, 0, 234, 113, MathHelper.floor(this.field_39491 * 255.0F) << 24);
       boolean var8 = false;
       int var9 = MathHelper.floor(this.field_39481);

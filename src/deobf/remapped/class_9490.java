@@ -193,7 +193,7 @@ public class class_9490 extends MonsterEntity implements class_7187 {
 
    private void method_43831() {
       if (!this.world.field_33055) {
-         class_7298 var3 = !this.world.getGameRules().getBoolean(GameRules.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
+         class_7298 var3 = !this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) ? class_7298.field_37310 : class_7298.field_37311;
          float var4 = !this.method_32928() ? 1.0F : 2.0F;
          this.field_29659 = true;
          this.world.method_29573(this, this.getPosX(), this.method_37309(), this.getPosZ(), (float)this.field_48357 * var4, var3);

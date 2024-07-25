@@ -56,7 +56,7 @@ public class class_8767 extends class_4232 {
          if (var4.field_36675) {
             if (var4.field_30159 == 200) {
                this.field_943.gameOptions.method_40873();
-               this.field_943.getMainWindow().method_43160();
+               this.field_943.getMainWindow().update();
                this.field_943.method_8609(this.field_44887);
             }
 
@@ -73,7 +73,7 @@ public class class_8767 extends class_4232 {
    @Override
    public void method_1162() {
       this.field_943.gameOptions.method_40873();
-      this.field_943.getMainWindow().method_43160();
+      this.field_943.getMainWindow().update();
       super.method_1162();
    }
 

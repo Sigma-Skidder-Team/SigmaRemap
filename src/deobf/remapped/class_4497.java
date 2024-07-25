@@ -131,7 +131,7 @@ public class class_4497 extends class_341 implements class_8685 {
          String var11 = String.format(Locale.ROOT, "%.3fs", (double)var9 / 1.0E9);
          field_21994.info("Done ({})! For help, type \"help\"", var11);
          if (var4.field_50107 != null) {
-            this.method_1683().<class_5850>method_1287(GameRules.field_1053).method_26684(var4.field_50107, this);
+            this.method_1683().<BooleanValue>method_1287(GameRules.field_1053).method_26684(var4.field_50107, this);
          }
 
          if (var4.field_50090) {

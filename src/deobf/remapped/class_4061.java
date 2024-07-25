@@ -68,7 +68,7 @@ public class class_4061 extends class_2208<class_3973> {
             this.method_18732(var2, var9 + 71, var10 + 17, 0.45F);
             this.field_943.getTextureManager().bindTexture(field_19781);
             RenderSystem.method_16438();
-            RenderSystem.method_16413(0.0F, 0.0F, 1.0F);
+            RenderSystem.translatef(0.0F, 0.0F, 1.0F);
             this.method_9781(var1, var9 + 66, var10 + 12, 0, this.field_10973, 66, 66);
             RenderSystem.method_16489();
          }
@@ -77,7 +77,7 @@ public class class_4061 extends class_2208<class_3973> {
          this.method_18732(var2, var9 + 86, var10 + 16, 0.34F);
          this.field_943.getTextureManager().bindTexture(field_19781);
          RenderSystem.method_16438();
-         RenderSystem.method_16413(0.0F, 0.0F, 1.0F);
+         RenderSystem.translatef(0.0F, 0.0F, 1.0F);
          this.method_9781(var1, var9 + 67, var10 + 13 + 16, this.field_10981, 132, 50, 66);
          this.method_18732(var2, var9 + 70, var10 + 32, 0.34F);
          RenderSystem.method_16489();
@@ -87,7 +87,7 @@ public class class_4061 extends class_2208<class_3973> {
    private void method_18732(class_2134 var1, int var2, int var3, float var4) {
       if (var1 != null) {
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)var2, (float)var3, 1.0F);
+         RenderSystem.translatef((float)var2, (float)var3, 1.0F);
          RenderSystem.method_16403(var4, var4, 1.0F);
          class_3758 var7 = class_2565.method_11648(class_8042.method_36499().method_36501());
          this.field_943.gameRenderer.method_35928().method_38860(new class_7966(), var7, var1, true, 15728880);

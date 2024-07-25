@@ -59,7 +59,7 @@ public class class_2048 extends AbstractMinecartEntity {
       double var4 = method_37266(this.method_37098());
       if (!var1.method_28360() && !var1.method_28367() && !(var4 >= 0.01F)) {
          super.method_4743(var1);
-         if (!var1.method_28367() && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+         if (!var1.method_28367() && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
             this.method_37312(class_4783.field_23252);
          }
       } else if (this.field_10361 < 0) {

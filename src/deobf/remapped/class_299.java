@@ -160,7 +160,7 @@ public class class_299 extends class_446 {
             (float)(this.method_32173() + 27),
             17.0F,
             13.0F,
-            NotificationIcons.field_11008,
+            NotificationIcons.altactive,
             class_314.method_1444(class_1255.field_6918.field_6917, (1.0F - this.field_1084.method_11123()) * var1)
          );
       }

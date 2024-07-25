@@ -85,7 +85,7 @@ public class ClientWorld extends World {
 
    private void method_722() {
       this.method_735(this.field_33035.method_8658() + 1L);
-      if (this.field_33035.method_8653().getBoolean(GameRules.field_1037)) {
+      if (this.field_33035.method_8653().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)) {
          this.method_719(this.field_33035.method_8666() + 1L);
       }
    }
@@ -96,10 +96,10 @@ public class ClientWorld extends World {
 
    public void method_719(long var1) {
       if (var1 >= 0L) {
-         this.getGameRules().<class_5850>method_1287(GameRules.field_1037).method_26684(true, (class_341)null);
+         this.getGameRules().<BooleanValue>method_1287(GameRules.DO_DAYLIGHT_CYCLE).method_26684(true, (class_341)null);
       } else {
          var1 = -var1;
-         this.getGameRules().<class_5850>method_1287(GameRules.field_1037).method_26684(false, (class_341)null);
+         this.getGameRules().<BooleanValue>method_1287(GameRules.DO_DAYLIGHT_CYCLE).method_26684(false, (class_341)null);
       }
 
       this.field_572.method_3498(var1);

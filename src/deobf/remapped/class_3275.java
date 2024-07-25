@@ -6,7 +6,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class class_3275<T extends class_9152<T>> {
+public class class_3275<T extends RuleValue<T>> {
    private static String[] field_16215;
    private final Supplier<ArgumentType<?>> field_16212;
    private final Function<class_3275<T>, T> field_16214;
@@ -28,7 +28,7 @@ public class class_3275<T extends class_9152<T>> {
       return this.field_16214.apply(this);
    }
 
-   public void method_14955(class_2237 var1, class_7505<T> var2) {
+   public void method_14955(class_2237 var1, RuleKey<T> var2) {
       this.field_16211.method_19136(var1, var2, this);
    }
 }

@@ -10,7 +10,7 @@ public class class_7845 implements class_2237 {
    }
 
    @Override
-   public <T extends class_9152<T>> void method_10289(class_7505<T> var1, class_3275<T> var2) {
-      this.field_39761.add(String.format("%s=%s\n", var1.method_34215(), this.field_39763.method_1287(var1).toString()));
+   public <T extends RuleValue<T>> void method_10289(RuleKey<T> var1, class_3275<T> var2) {
+      this.field_39761.add(String.format("%s=%s\n", var1.getName(), this.field_39763.method_1287(var1).toString()));
    }
 }

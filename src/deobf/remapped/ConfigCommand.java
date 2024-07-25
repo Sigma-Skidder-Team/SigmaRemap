@@ -87,12 +87,12 @@ public class ConfigCommand extends Command {
 
    public void method_8239(String var1) {
       JSONObjectImpl var4 = SigmaMainClass.getInstance().getModuleManager().method_839(new JSONObjectImpl());
-      File var5 = new File(SigmaMainClass.getInstance().method_3334() + "/configs/");
+      File var5 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/configs/");
       if (!var5.exists()) {
          var5.mkdirs();
       }
 
-      File var6 = new File(SigmaMainClass.getInstance().method_3334() + "/configs/" + var1 + ".config");
+      File var6 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/configs/" + var1 + ".config");
       if (!var6.exists()) {
          try {
             var6.createNewFile();

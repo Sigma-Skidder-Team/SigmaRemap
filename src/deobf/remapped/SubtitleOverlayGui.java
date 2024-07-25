@@ -73,7 +73,7 @@ public class SubtitleOverlayGui extends AbstractGui implements class_4440 {
             );
             int var27 = var26 << 16 | var26 << 8 | var26;
             RenderSystem.method_16438();
-            RenderSystem.method_16413(
+            RenderSystem.translatef(
                (float)this.field_21493.getMainWindow().getScaledWidth() - (float)var21 * 1.0F - 2.0F,
                (float)(this.field_21493.getMainWindow().getScaledHeight() - 30) - (float)(var8 * (var22 + 1)) * 1.0F,
                0.0F

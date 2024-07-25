@@ -7,28 +7,28 @@ public class class_9563 extends class_122 {
    public class_9563(
       class_7038 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, class_590 var9, String var10, class_3384 var11
    ) {
-      super(var1, var2, var3, var4, var5, var6, NotificationIcons.field_10986, var9, var10, var11);
+      super(var1, var2, var3, var4, var5, var6, NotificationIcons.altskin, var9, var10, var11);
       this.field_48677 = var7;
       this.field_48676 = var8;
       this.method_44212();
    }
 
    public class_9563(class_7038 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, class_590 var9, String var10) {
-      super(var1, var2, var3, var4, var5, var6, NotificationIcons.field_10986, var9, var10);
+      super(var1, var2, var3, var4, var5, var6, NotificationIcons.altskin, var9, var10);
       this.field_48677 = var7;
       this.field_48676 = var8;
       this.method_44212();
    }
 
    public class_9563(class_7038 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, class_590 var9) {
-      super(var1, var2, var3, var4, var5, var6, NotificationIcons.field_10986, var9);
+      super(var1, var2, var3, var4, var5, var6, NotificationIcons.altskin, var9);
       this.field_48677 = var7;
       this.field_48676 = var8;
       this.method_44212();
    }
 
    public class_9563(class_7038 var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8) {
-      super(var1, var2, var3, var4, var5, var6, NotificationIcons.field_10986);
+      super(var1, var2, var3, var4, var5, var6, NotificationIcons.altskin);
       this.field_48677 = var7;
       this.field_48676 = var8;
       this.method_44212();

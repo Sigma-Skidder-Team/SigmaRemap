@@ -8,9 +8,9 @@ public final class class_4707 extends class_4696 {
          RenderSystem.method_16463(5890);
          RenderSystem.method_16438();
          RenderSystem.method_16476();
-         RenderSystem.method_16413(0.5F, 0.5F, 0.0F);
+         RenderSystem.translatef(0.5F, 0.5F, 0.0F);
          RenderSystem.method_16403(0.5F, 0.5F, 1.0F);
-         RenderSystem.method_16413(17.0F / (float)var1, (2.0F + (float)var1 / 1.5F) * ((float)(Util.getMeasuringTimeMs() % 800000L) / 800000.0F), 0.0F);
+         RenderSystem.translatef(17.0F / (float)var1, (2.0F + (float)var1 / 1.5F) * ((float)(Util.getMeasuringTimeMs() % 800000L) / 800000.0F), 0.0F);
          RenderSystem.method_16410(((float)(var1 * var1) * 4321.0F + (float)var1 * 9.0F) * 2.0F, 0.0F, 0.0F, 1.0F);
          RenderSystem.method_16403(4.5F - (float)var1 / 4.0F, 4.5F - (float)var1 / 4.0F, 1.0F);
          RenderSystem.method_16408();

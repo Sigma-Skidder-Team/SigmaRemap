@@ -10,35 +10,35 @@ public abstract class class_5348 {
    });
    public static final class_4298 field_27292 = new class_4298("additive_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method_16398(class_5033.field_26047, class_8535.field_43691);
+      RenderSystem.blendFunc(SourceFactor.ONE, DestFactor.field_43691);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27288 = new class_4298("lightning_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43691);
+      RenderSystem.blendFunc(SourceFactor.SRC_ALPHA, DestFactor.field_43691);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27325 = new class_4298("glint_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method_16425(class_5033.field_26035, class_8535.field_43691, class_5033.field_26048, class_8535.field_43691);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_COLOR, DestFactor.field_43691, SourceFactor.ZERO, DestFactor.field_43691);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27326 = new class_4298("crumbling_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method_16425(class_5033.field_26038, class_8535.field_43692, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.blendFuncSeparate(SourceFactor.DST_COLOR, DestFactor.field_43692, SourceFactor.ONE, DestFactor.field_43699);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final class_4298 field_27308 = new class_4298("translucent_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43697);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43697);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
@@ -85,7 +85,7 @@ public abstract class class_5348 {
    });
    public static final class_9603 field_27318 = new class_9603("polygon_offset_layering", () -> {
       RenderSystem.method_16475(-1.0F, -10.0F);
-      RenderSystem.method_16464();
+      RenderSystem.enablePolygonOffset();
    }, () -> {
       RenderSystem.method_16475(0.0F, 0.0F);
       RenderSystem.method_16382();
@@ -99,14 +99,14 @@ public abstract class class_5348 {
    });
    public static final class_4781 field_27305 = new class_4781("fog", () -> {
       class_6377.method_29161();
-      RenderSystem.method_16353();
-   }, () -> RenderSystem.method_16367());
+      RenderSystem.enableFog();
+   }, () -> RenderSystem.disableFog());
    public static final class_4781 field_27284 = new class_4781("black_fog", () -> {
-      RenderSystem.method_16434(2918, 0.0F, 0.0F, 0.0F, 1.0F);
-      RenderSystem.method_16353();
+      RenderSystem.fog(2918, 0.0F, 0.0F, 0.0F, 1.0F);
+      RenderSystem.enableFog();
    }, () -> {
       class_6377.method_29161();
-      RenderSystem.method_16367();
+      RenderSystem.disableFog();
    });
    public static final class_6160 field_27298 = new class_6160("main_target", () -> {
    }, () -> {
@@ -208,7 +208,7 @@ public abstract class class_5348 {
       long var3 = Util.getMeasuringTimeMs() * 8L;
       float var5 = (float)(var3 % 110000L) / 110000.0F;
       float var6 = (float)(var3 % 30000L) / 30000.0F;
-      RenderSystem.method_16413(-var5, var6, 0.0F);
+      RenderSystem.translatef(-var5, var6, 0.0F);
       RenderSystem.method_16410(10.0F, 0.0F, 0.0F, 1.0F);
       RenderSystem.method_16403(var0, var0, var0);
       RenderSystem.method_16463(5888);

@@ -21,7 +21,7 @@ public class class_4492 extends class_5920<class_7666> {
    }
 
    public boolean method_20880(class_6331 var1, class_7666 var2) {
-      if (!var1.getGameRules().getBoolean(GameRules.field_1047)) {
+      if (!var1.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
          return false;
       } else if (var2.method_15891().method_13910() != class_4466.field_21783) {
          return false;

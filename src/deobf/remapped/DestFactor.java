@@ -1,6 +1,6 @@
 package remapped;
 
-public enum class_8535 {
+public enum DestFactor {
    field_43694(32771),
    field_43687(32769),
    field_43695(772),
@@ -16,9 +16,9 @@ public enum class_8535 {
    field_43692(768),
    field_43699(0);
 
-   public final int field_43689;
+   public final int param;
 
-   private class_8535(int var3) {
-      this.field_43689 = var3;
+   private DestFactor(int var3) {
+      this.param = var3;
    }
 }

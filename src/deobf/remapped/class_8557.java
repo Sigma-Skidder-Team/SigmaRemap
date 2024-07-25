@@ -134,7 +134,7 @@ public class class_8557 extends class_2830 implements class_3978 {
 
    @Override
    public void method_10784(class_2522 var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof RavagerEntity && var2.getGameRules().getBoolean(GameRules.field_1047)) {
+      if (var4 instanceof RavagerEntity && var2.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
          var2.method_7511(var3, true, var4);
       }
 

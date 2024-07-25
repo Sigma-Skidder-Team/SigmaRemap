@@ -195,7 +195,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_8042 var14 = class_8042.method_36499();
          class_9633 var15 = var14.method_36501();
          RenderSystem.enableAlphaTest();
-         RenderSystem.method_16393();
+         RenderSystem.disableCull();
          RenderSystem.method_16465(0.0F, 1.0F, 0.0F);
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
@@ -333,7 +333,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             var14.method_36500();
          }
 
-         RenderSystem.method_16361();
+         RenderSystem.enableCull();
          RenderSystem.disableBlend();
          RenderSystem.method_16433();
          RenderSystem.method_16458();
@@ -432,7 +432,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       try {
          this.field_20926 = new class_4067(this.client.getTextureManager(), this.client.method_8498(), this.client.method_8584(), var1);
-         this.field_20926.method_18750(this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
+         this.field_20926.method_18750(this.client.getMainWindow().getFramebufferWidth(), this.client.getMainWindow().getFramebufferHeight());
          this.field_21000 = this.field_20926.method_18758("final");
       } catch (IOException var3) {
          LOGGER.warn("Failed to load shader: {}", var1, var3);
@@ -451,7 +451,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       try {
          class_4067 var2 = new class_4067(this.client.getTextureManager(), this.client.method_8498(), this.client.method_8584(), var1);
-         var2.method_18750(this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
+         var2.method_18750(this.client.getMainWindow().getFramebufferWidth(), this.client.getMainWindow().getFramebufferHeight());
          class_4230 var10 = var2.method_18758("translucent");
          class_4230 var11 = var2.method_18758("itemEntity");
          class_4230 var12 = var2.method_18758("particles");
@@ -508,8 +508,8 @@ public class WorldRenderer implements class_6491, AutoCloseable {
    public void method_20069() {
       if (this.method_20036()) {
          RenderSystem.enableBlend();
-         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26048, class_8535.field_43691);
-         this.field_21000.method_19714(this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198(), false);
+         RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ZERO, DestFactor.field_43691);
+         this.field_21000.method_19714(this.client.getMainWindow().getFramebufferWidth(), this.client.getMainWindow().getFramebufferHeight(), false);
          RenderSystem.disableBlend();
       }
    }
@@ -1109,9 +1109,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       var10.method_16050("clear");
       if (Config.method_14424()) {
-         class_6588.method_30316(0, 0, this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
+         class_6588.method_30316(0, 0, this.client.getMainWindow().getFramebufferWidth(), this.client.getMainWindow().getFramebufferHeight());
       } else {
-         RenderSystem.method_16392(0, 0, this.client.getMainWindow().method_43178(), this.client.getMainWindow().method_43198());
+         RenderSystem.method_16392(0, 0, this.client.getMainWindow().getFramebufferWidth(), this.client.getMainWindow().getFramebufferHeight());
       }
 
       class_6377.method_29157(var6, var2, this.client.theWorld, this.client.gameOptions.field_45537, var7.method_35956(var2));
@@ -1446,9 +1446,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       }
 
       RenderSystem.method_16438();
-      RenderSystem.method_16358(var1.method_36058().method_28620());
+      RenderSystem.multMatrix(var1.method_36058().method_28620());
       boolean var70 = GlStateManager.method_8779();
-      GlStateManager.method_8804();
+      GlStateManager.disableFog();
       this.client.field_9612.method_15550(var1, var39, var12, var14, var16);
       GlStateManager.method_8840(var70);
       RenderSystem.method_16489();
@@ -1514,7 +1514,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
       GlStateManager.method_8856(true);
       RenderSystem.method_16438();
-      RenderSystem.method_16358(var1.method_36058().method_28620());
+      RenderSystem.multMatrix(var1.method_36058().method_28620());
       if (this.client.gameOptions.method_40860() != class_9655.field_49168) {
          if (this.field_20930 != null) {
             this.field_21006.method_19712(MinecraftClient.IS_SYSTEM_MAC);
@@ -1614,7 +1614,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
       boolean var29 = class_153.method_611();
       RenderSystem.method_16438();
       RenderSystem.method_16476();
-      RenderSystem.method_16358(var2.method_36058().method_28620());
+      RenderSystem.multMatrix(var2.method_36058().method_28620());
       this.client.getProfiler().method_16051(() -> "render_" + var1);
       boolean var11 = var1 != class_3581.method_16762();
       ObjectListIterator var30 = this.field_20982.listIterator(var11 ? 0 : this.field_20982.size());
@@ -1679,7 +1679,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                class_7995 var15 = var32.method_16180(var1);
                GlStateManager.method_8757();
                BlockPos var35 = var32.method_16189();
-               GlStateManager.method_8876((double)var35.getX() - var3, (double)var35.getY() - var5, (double)var35.getZ() - var7);
+               GlStateManager.translated((double)var35.getX() - var3, (double)var35.getY() - var5, (double)var35.getZ() - var7);
                var15.method_36280();
                class_7985.field_40918.method_13179(0L);
                GlStateManager.method_8780();
@@ -1714,7 +1714,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
    private void method_20057(int var1, int var2, int var3, double var4, double var6, double var8, class_6076 var10) {
       GlStateManager.method_8757();
-      GlStateManager.method_8876((double)var1 - var4, (double)var2 - var6, (double)var3 - var8);
+      GlStateManager.translated((double)var1 - var4, (double)var2 - var6, (double)var3 - var8);
       var10.method_27822();
       GlStateManager.method_8780();
       GlStateManager.method_8761();
@@ -1728,7 +1728,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          double var6 = var1.method_41627().method_60();
          double var8 = var1.method_41627().method_62();
          RenderSystem.method_16387(true);
-         RenderSystem.method_16393();
+         RenderSystem.disableCull();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
          RenderSystem.method_16354();
@@ -1738,7 +1738,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_3511 var12 = var11.field_6947;
             RenderSystem.method_16438();
             BlockPos var13 = var12.method_16189();
-            RenderSystem.method_16483((double)var13.getX() - var4, (double)var13.getY() - var6, (double)var13.getZ() - var8);
+            RenderSystem.translated((double)var13.getX() - var4, (double)var13.getY() - var6, (double)var13.getZ() - var8);
             if (this.client.field_9569) {
                var3.method_44471(1, class_7985.field_40903);
                RenderSystem.method_16484(10.0F);
@@ -1815,18 +1815,18 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          RenderSystem.method_16387(true);
          RenderSystem.disableBlend();
-         RenderSystem.method_16361();
+         RenderSystem.enableCull();
          RenderSystem.method_16432();
       }
 
       if (this.field_20946 != null) {
-         RenderSystem.method_16393();
+         RenderSystem.disableCull();
          RenderSystem.method_16354();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
          RenderSystem.method_16484(10.0F);
          RenderSystem.method_16438();
-         RenderSystem.method_16413(
+         RenderSystem.translatef(
             (float)(this.field_21012.field_37664 - var1.method_41627().field_7336),
             (float)(this.field_21012.field_37663 - var1.method_41627().field_7333),
             (float)(this.field_21012.field_37665 - var1.method_41627().field_7334)
@@ -1871,7 +1871,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          RenderSystem.method_16489();
          RenderSystem.method_16387(true);
          RenderSystem.disableBlend();
-         RenderSystem.method_16361();
+         RenderSystem.enableCull();
          RenderSystem.method_16432();
          RenderSystem.method_16484(1.0F);
       }
@@ -2033,12 +2033,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          class_6377.method_29161();
          class_9633 var8 = class_8042.method_36499().method_36501();
          RenderSystem.method_16387(false);
-         RenderSystem.method_16353();
+         RenderSystem.enableFog();
          if (var20) {
             class_6588.method_30159();
          }
 
-         RenderSystem.method_16404(var5, var6, var7);
+         RenderSystem.color3f(var5, var6, var7);
          if (var20) {
             class_6588.method_30168(var1);
          }
@@ -2051,7 +2051,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             this.field_20943.method_13173();
          }
 
-         RenderSystem.method_16367();
+         RenderSystem.disableFog();
          if (var20) {
             class_6588.method_30180();
          }
@@ -2098,7 +2098,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_6588.method_30248();
          }
 
-         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43691, SourceFactor.ONE, DestFactor.field_43699);
          var1.method_36063();
          float var22 = 1.0F - this.field_20970.method_29578(var2);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, var22);
@@ -2163,7 +2163,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.disableBlend();
          RenderSystem.enableAlphaTest();
-         RenderSystem.method_16353();
+         RenderSystem.enableFog();
          if (var20) {
             class_6588.method_30159();
          }
@@ -2174,7 +2174,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             class_6588.method_30299();
          }
 
-         RenderSystem.method_16404(0.0F, 0.0F, 0.0F);
+         RenderSystem.color3f(0.0F, 0.0F, 0.0F);
          double var29 = this.client.thePlayer.method_37335(var2).field_7333 - this.field_20970.method_749().method_3496();
          boolean var32 = false;
          if (var29 < 0.0) {
@@ -2190,14 +2190,14 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          }
 
          if (this.field_20970.method_738().method_34249()) {
-            RenderSystem.method_16404(var5 * 0.2F + 0.04F, var6 * 0.2F + 0.04F, var7 * 0.6F + 0.1F);
+            RenderSystem.color3f(var5 * 0.2F + 0.04F, var6 * 0.2F + 0.04F, var7 * 0.6F + 0.1F);
          } else {
-            RenderSystem.method_16404(var5, var6, var7);
+            RenderSystem.color3f(var5, var6, var7);
          }
 
          RenderSystem.method_16432();
          RenderSystem.method_16387(true);
-         RenderSystem.method_16367();
+         RenderSystem.disableFog();
       }
    }
 
@@ -2217,13 +2217,13 @@ public class WorldRenderer implements class_6491, AutoCloseable {
                class_6588.method_30170();
             }
 
-            RenderSystem.method_16393();
+            RenderSystem.disableCull();
             RenderSystem.enableBlend();
             RenderSystem.enableAlphaTest();
             RenderSystem.enableDepthTest();
             RenderSystem.method_16433();
-            RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43697);
-            RenderSystem.method_16353();
+            RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43697);
+            RenderSystem.enableFog();
             RenderSystem.method_16387(true);
             float var10 = 12.0F;
             float var11 = 4.0F;
@@ -2294,9 +2294,9 @@ public class WorldRenderer implements class_6491, AutoCloseable {
             var1.method_36064();
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.method_16458();
-            RenderSystem.method_16361();
+            RenderSystem.enableCull();
             RenderSystem.disableBlend();
-            RenderSystem.method_16367();
+            RenderSystem.disableFog();
             if (Config.method_14424()) {
                class_6588.method_30198();
             }
@@ -2592,7 +2592,7 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          double var12 = var1.method_41627().field_7334;
          RenderSystem.enableBlend();
          RenderSystem.enableDepthTest();
-         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43691, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43691, SourceFactor.ONE, DestFactor.field_43699);
          this.textureManager.bindTexture(FORCEFIELD);
          RenderSystem.method_16387(MinecraftClient.method_8497());
          RenderSystem.method_16438();
@@ -2602,10 +2602,10 @@ public class WorldRenderer implements class_6491, AutoCloseable {
          float var17 = (float)(var14 & 0xFF) / 255.0F;
          RenderSystem.color4f(var15, var16, var17, (float)var6);
          RenderSystem.method_16475(-3.0F, -3.0F);
-         RenderSystem.method_16464();
+         RenderSystem.enablePolygonOffset();
          RenderSystem.method_16433();
          RenderSystem.enableAlphaTest();
-         RenderSystem.method_16393();
+         RenderSystem.disableCull();
          float var18 = (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F;
          float var19 = 0.0F;
          float var20 = 0.0F;
@@ -2673,12 +2673,12 @@ public class WorldRenderer implements class_6491, AutoCloseable {
 
          var2.method_44487();
          class_138.method_554(var2);
-         RenderSystem.method_16361();
+         RenderSystem.enableCull();
          RenderSystem.method_16458();
          RenderSystem.method_16475(0.0F, 0.0F);
          RenderSystem.method_16382();
          RenderSystem.enableAlphaTest();
-         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
          RenderSystem.disableBlend();
          RenderSystem.method_16489();
          RenderSystem.method_16387(true);

@@ -28,7 +28,7 @@ public class Notification {
    }
 
    public Notification(String var1, String var2, int var3) {
-      this(var1, var2, var3, NotificationIcons.field_11050);
+      this(var1, var2, var3, NotificationIcons.infoicon);
    }
 
    public Notification(String var1, String var2) {

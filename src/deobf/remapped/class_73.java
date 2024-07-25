@@ -99,7 +99,7 @@ public class class_73 {
          GL11.glGetIntegerv(3088, var17);
          field_105.push(var17);
          int var18 = var17.get(0);
-         int var9 = MinecraftClient.getInstance().window.method_43198() - var17.get(1) - var17.get(3);
+         int var9 = MinecraftClient.getInstance().window.getFramebufferHeight() - var17.get(1) - var17.get(3);
          int var10 = var18 + var17.get(2);
          int var11 = var9 + var17.get(3);
          if (var0 < var18) {
@@ -127,7 +127,7 @@ public class class_73 {
          }
       }
 
-      int var19 = MinecraftClient.getInstance().window.method_43198() - var3;
+      int var19 = MinecraftClient.getInstance().window.getFramebufferHeight() - var3;
       int var20 = var2 - var0;
       int var21 = var3 - var1;
       GL11.glEnable(3089);
@@ -181,7 +181,7 @@ public class class_73 {
       class_9633 var12 = var11.method_36501();
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
       RenderSystem.color4f(var8, var9, var10, var14);
       var12.method_44471(7, class_7985.field_40915);
       var12.method_35761((double)var0, (double)var3, 0.0).method_35735();
@@ -208,7 +208,7 @@ public class class_73 {
 
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
       var4.method_19717(true);
       var4.method_19713((int)var0 - (int)var2, (int)var1 - (int)var3);
       RenderSystem.method_16432();
@@ -246,7 +246,7 @@ public class class_73 {
       RenderSystem.method_16354();
       RenderSystem.enableBlend();
       RenderSystem.method_16458();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
       RenderSystem.method_16486(7425);
       class_8042 var16 = class_8042.method_36499();
       class_9633 var17 = var16.method_36501();
@@ -282,7 +282,7 @@ public class class_73 {
       RenderSystem.method_16354();
       RenderSystem.enableBlend();
       RenderSystem.method_16458();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
       RenderSystem.method_16486(7425);
       class_8042 var26 = class_8042.method_36499();
       class_9633 var27 = var26.method_36501();
@@ -310,7 +310,7 @@ public class class_73 {
       class_9633 var13 = var12.method_36501();
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var9, var10, var11, var8);
       GL11.glEnable(2848);
       var13.method_44471(1, class_7985.field_40903);
@@ -333,7 +333,7 @@ public class class_73 {
       class_9633 var14 = var13.method_36501();
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var10, var11, var12, var9);
       GL11.glBegin(6);
       GL11.glVertex2f(var0, var1);
@@ -352,7 +352,7 @@ public class class_73 {
       class_9633 var8 = var7.method_36501();
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       GL11.glColor4fv(class_314.method_1412(var3));
       GL11.glEnable(2881);
       GL11.glBegin(4);
@@ -397,7 +397,7 @@ public class class_73 {
       class_8042 var10 = class_8042.method_36499();
       class_9633 var11 = var10.method_36501();
       RenderSystem.method_16354();
-      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
@@ -559,7 +559,7 @@ public class class_73 {
       class_9633 var15 = var14.method_36501();
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var11, var12, var13, var10);
       if (var10 > 0.5F) {
          GL11.glEnable(2848);
@@ -600,7 +600,7 @@ public class class_73 {
       class_9633 var12 = var11.method_36501();
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var8, var9, var10, var7);
       GL11.glBegin(6);
 
@@ -646,7 +646,7 @@ public class class_73 {
          float var16 = (float)(var5 & 0xFF) / 255.0F;
          RenderSystem.enableBlend();
          RenderSystem.method_16354();
-         RenderSystem.method_16424(770, 771, 1, 0);
+         RenderSystem.blendFuncSeparate(770, 771, 1, 0);
          RenderSystem.color4f(var14, var15, var16, var13);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
@@ -696,7 +696,7 @@ public class class_73 {
          float var17 = (float)(var5 & 0xFF) / 255.0F;
          RenderSystem.enableBlend();
          RenderSystem.method_16354();
-         RenderSystem.method_16424(770, 771, 1, 0);
+         RenderSystem.blendFuncSeparate(770, 771, 1, 0);
          RenderSystem.color4f(var15, var16, var17, var14);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
@@ -760,7 +760,7 @@ public class class_73 {
       float var14 = (float)(var4 & 0xFF) / 255.0F;
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16424(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var12, var13, var14, var11);
       GL11.glEnable(3042);
       GL11.glEnable(3553);
@@ -974,22 +974,22 @@ public class class_73 {
    public static void method_128(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
       int var8 = class_314.method_1444(class_1255.field_6918.field_6917, var5);
-      method_99(var0 - var4, var1 - var4, var4, var4, NotificationIcons.field_11057, var8);
-      method_99(var0 + var2, var1 - var4, var4, var4, NotificationIcons.field_11051, var8);
-      method_99(var0 - var4, var1 + var3, var4, var4, NotificationIcons.field_11013, var8);
-      method_99(var0 + var2, var1 + var3, var4, var4, NotificationIcons.field_11038, var8);
-      method_102(var0 - var4, var1, var4, var3, NotificationIcons.field_11010, var8, false);
-      method_102(var0 + var2, var1, var4, var3, NotificationIcons.field_11018, var8, false);
-      method_102(var0, var1 - var4, var2, var4, NotificationIcons.field_10997, var8, false);
-      method_102(var0, var1 + var3, var2, var4, NotificationIcons.field_10992, var8, false);
+      method_99(var0 - var4, var1 - var4, var4, var4, NotificationIcons.shadow_corner, var8);
+      method_99(var0 + var2, var1 - var4, var4, var4, NotificationIcons.shadow_corner_2, var8);
+      method_99(var0 - var4, var1 + var3, var4, var4, NotificationIcons.shadow_corner_3, var8);
+      method_99(var0 + var2, var1 + var3, var4, var4, NotificationIcons.shadow_corner_4, var8);
+      method_102(var0 - var4, var1, var4, var3, NotificationIcons.shadow_left, var8, false);
+      method_102(var0 + var2, var1, var4, var3, NotificationIcons.shadow_right, var8, false);
+      method_102(var0, var1 - var4, var2, var4, NotificationIcons.shadow_top, var8, false);
+      method_102(var0, var1 + var3, var2, var4, NotificationIcons.shadow_bottom, var8, false);
    }
 
    public static void method_147(float var0, float var1, float var2, float var3, float var4, float var5) {
       int var8 = class_314.method_1444(class_1255.field_6918.field_6917, var5);
-      method_102(var0, var1, var4, var3, NotificationIcons.field_11018, var8, false);
-      method_102(var0 + var2 - var4, var1, var4, var3, NotificationIcons.field_11010, var8, false);
-      method_102(var0, var1, var2, var4, NotificationIcons.field_10992, var8, false);
-      method_102(var0, var1 + var3 - var4, var2, var4, NotificationIcons.field_10997, var8, false);
+      method_102(var0, var1, var4, var3, NotificationIcons.shadow_right, var8, false);
+      method_102(var0 + var2 - var4, var1, var4, var3, NotificationIcons.shadow_left, var8, false);
+      method_102(var0, var1, var2, var4, NotificationIcons.shadow_bottom, var8, false);
+      method_102(var0, var1 + var3 - var4, var2, var4, NotificationIcons.shadow_top, var8, false);
    }
 
    public static void method_115(int var0, int var1, int var2, int var3, int var4) {
@@ -1001,29 +1001,29 @@ public class class_73 {
       byte var10 = 10;
       int var11 = var9 - var10;
       method_94((float)(var0 + var10), (float)(var1 + var10), (float)(var0 + var2 - var10), (float)(var1 + var3 - var10), var4);
-      method_99((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, NotificationIcons.floating_corner, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var9 / 2), (float)(var1 + var9 / 2), 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var11), (float)(var1 - var11), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 + var2 - var11), (float)(var1 - var11), (float)var9, (float)var9, NotificationIcons.floating_corner, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var9 / 2), (float)(var1 + var3 + var9 / 2), 0.0F);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var9 / 2), (float)(-var1 - var3 - var9 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var11), (float)(var1 + var10 + var3), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 + var2 - var11), (float)(var1 + var10 + var3), (float)var9, (float)var9, NotificationIcons.floating_corner, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 - var9 / 2), (float)(var1 + var3 + var9 / 2), 0.0F);
       GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var3 - var9 / 2), 0.0F);
-      method_99((float)(var0 + var10), (float)(var1 + var10 + var3), (float)var9, (float)var9, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 + var10), (float)(var1 + var10 + var3), (float)var9, (float)var9, NotificationIcons.floating_corner, var4);
       GL11.glPopMatrix();
       method_149(var5 - var9, var6 + var10, var5 - var11 + var9, var6 - var10 + var3);
 
       for (byte var12 = 0; var12 < var3; var12 += var9) {
-         method_99((float)(var0 - var11), (float)(var1 + var10 + var12), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var11), (float)(var1 + var10 + var12), (float)var9, (float)var9, NotificationIcons.floating_border, var4);
       }
 
       method_141();
@@ -1034,7 +1034,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         method_99((float)(var0 - var11), (float)(var1 - var10 - var13), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var11), (float)(var1 - var10 - var13), (float)var9, (float)var9, NotificationIcons.floating_border, var4);
          GL11.glPopMatrix();
       }
 
@@ -1046,7 +1046,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         method_99((float)(var0 - var2 + var10), (float)(var1 - var10 - var14), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var2 + var10), (float)(var1 - var10 - var14), (float)var9, (float)var9, NotificationIcons.floating_border, var4);
          GL11.glPopMatrix();
       }
 
@@ -1058,7 +1058,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var9 / 2), (float)(var1 + var9 / 2), 0.0F);
          GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var9 / 2), (float)(-var1 - var9 / 2), 0.0F);
-         method_99((float)(var0 - var3 + var10), (float)(var1 + var10 + var15), (float)var9, (float)var9, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var3 + var10), (float)(var1 + var10 + var15), (float)var9, (float)var9, NotificationIcons.floating_border, var4);
          GL11.glPopMatrix();
       }
 
@@ -1070,29 +1070,29 @@ public class class_73 {
       byte var8 = 10;
       int var9 = var7 - var8;
       method_94((float)(var0 + var8), (float)(var1 + var8), (float)(var0 + var2 - var8), (float)(var1 + var3 - var8), var4);
-      method_99((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, NotificationIcons.floating_corner, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var7 / 2), (float)(var1 + var7 / 2), 0.0F);
       GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var9), (float)(var1 - var9), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 + var2 - var9), (float)(var1 - var9), (float)var7, (float)var7, NotificationIcons.floating_corner, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var7 / 2), (float)(var1 + var3 + var7 / 2), 0.0F);
       GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var2 - var7 / 2), (float)(-var1 - var3 - var7 / 2), 0.0F);
-      method_99((float)(var0 + var2 - var9), (float)(var1 + var8 + var3), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 + var2 - var9), (float)(var1 + var8 + var3), (float)var7, (float)var7, NotificationIcons.floating_corner, var4);
       GL11.glPopMatrix();
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 - var7 / 2), (float)(var1 + var3 + var7 / 2), 0.0F);
       GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var3 - var7 / 2), 0.0F);
-      method_99((float)(var0 + var8), (float)(var1 + var8 + var3), (float)var7, (float)var7, NotificationIcons.field_10996, var4);
+      method_99((float)(var0 + var8), (float)(var1 + var8 + var3), (float)var7, (float)var7, NotificationIcons.floating_corner, var4);
       GL11.glPopMatrix();
       method_150(var0 - var7, var1 + var8, var0 - var9 + var7, var1 - var8 + var3, true);
 
       for (byte var10 = 0; var10 < var3; var10 += var7) {
-         method_99((float)(var0 - var9), (float)(var1 + var8 + var10) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var9), (float)(var1 + var8 + var10) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.floating_border, var4);
       }
 
       method_141();
@@ -1103,7 +1103,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         method_99((float)(var0 - var9), (float)(var1 - var8 - var11) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var9), (float)(var1 - var8 - var11) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.floating_border, var4);
          GL11.glPopMatrix();
       }
 
@@ -1115,7 +1115,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         method_99((float)(var0 - var2 + var8), (float)(var1 - var8 - var12) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var2 + var8), (float)(var1 - var8 - var12) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.floating_border, var4);
          GL11.glPopMatrix();
       }
 
@@ -1127,7 +1127,7 @@ public class class_73 {
          GL11.glTranslatef((float)(var0 + var7 / 2), (float)(var1 + var7 / 2), 0.0F);
          GL11.glRotatef(270.0F, 0.0F, 0.0F, 1.0F);
          GL11.glTranslatef((float)(-var0 - var7 / 2), (float)(-var1 - var7 / 2), 0.0F);
-         method_99((float)(var0 - var3 + var8), (float)(var1 + var8 + var13) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.field_11034, var4);
+         method_99((float)(var0 - var3 + var8), (float)(var1 + var8 + var13) - 0.4F, (float)var7, (float)var7 + 0.4F, NotificationIcons.floating_border, var4);
          GL11.glPopMatrix();
       }
 
@@ -1147,7 +1147,7 @@ public class class_73 {
       int var3 = EXTFramebufferObject.glGenRenderbuffersEXT();
       EXTFramebufferObject.glBindRenderbufferEXT(36161, var3);
       EXTFramebufferObject.glRenderbufferStorageEXT(
-         36161, 34041, MinecraftClient.getInstance().window.method_43178(), MinecraftClient.getInstance().window.method_43198()
+         36161, 34041, MinecraftClient.getInstance().window.getFramebufferWidth(), MinecraftClient.getInstance().window.getFramebufferHeight()
       );
       EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, var3);
       EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, var3);
@@ -1278,7 +1278,7 @@ public class class_73 {
          RenderSystem.method_16489();
          GL11.glAlphaFunc(519, 0.0F);
          RenderSystem.method_16420(33986, 240.0F, 240.0F);
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          class_9162.method_42212();
          var10000 = field_108.getTextureManager();
          field_108.getTextureManager();
@@ -1292,8 +1292,8 @@ public class class_73 {
       RenderSystem.method_16463(5888);
       RenderSystem.method_16476();
       field_108.method_8511().field_44875 -= 1101.0F;
-      RenderSystem.method_16356(1.0 / field_108.window.method_43189(), 1.0 / field_108.window.method_43189(), 1.0);
-      RenderSystem.method_16413((float)var1, (float)var2, 0.0F);
+      RenderSystem.scaled(1.0 / field_108.window.method_43189(), 1.0 / field_108.window.method_43189(), 1.0);
+      RenderSystem.translatef((float)var1, (float)var2, 0.0F);
       RenderSystem.method_16403(var3 / 16.0F, var3 / 16.0F, 1.0F);
       field_108.method_8511().method_40264(var0, 0, 0);
       field_108.method_8511().field_44875 += 1101.0F;
@@ -1309,7 +1309,7 @@ public class class_73 {
       var1 = (int)((float)var1 * GUIManager.field_34898);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
-      GL11.glReadPixels(var0, MinecraftClient.getInstance().window.method_43198() - var1, 1, 1, 6407, 5120, var5);
+      GL11.glReadPixels(var0, MinecraftClient.getInstance().window.getFramebufferHeight() - var1, 1, 1, 6407, 5120, var5);
       return new Color(var5.get(0) * 2, var5.get(1) * 2, var5.get(2) * 2, 1);
    }
 

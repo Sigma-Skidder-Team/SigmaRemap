@@ -83,7 +83,7 @@ public class class_8310 extends class_1859 {
       GL11.glAlphaFunc(519, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.method_16354();
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
       GL11.glEnable(2848);
       GL11.glBegin(3);
       GL11.glVertex2f(0.0F, var6);

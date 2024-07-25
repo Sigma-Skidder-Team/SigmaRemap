@@ -120,23 +120,23 @@ public class class_3116 {
    }
 
    public void method_14470() {
-      SigmaMainClass.getInstance().method_3304().method_5821("friends", this.field_15502);
+      SigmaMainClass.getInstance().getJSONObjectImpl().method_5821("friends", this.field_15502);
    }
 
    public void method_14462() {
-      SigmaMainClass.getInstance().method_3304().method_5821("enemies", this.field_15503);
+      SigmaMainClass.getInstance().getJSONObjectImpl().method_5821("enemies", this.field_15503);
    }
 
    private void method_14463() {
-      if (SigmaMainClass.getInstance().method_3304().method_5850("friends")) {
-         JSONArray var3 = SigmaMainClass.getInstance().method_3304().method_5849("friends");
+      if (SigmaMainClass.getInstance().getJSONObjectImpl().method_5850("friends")) {
+         JSONArray var3 = SigmaMainClass.getInstance().getJSONObjectImpl().method_5849("friends");
          if (var3 != null) {
             var3.forEach(var1 -> this.field_15502.add((String)var1));
          }
       }
 
-      if (SigmaMainClass.getInstance().method_3304().method_5850("enemies")) {
-         JSONArray var4 = SigmaMainClass.getInstance().method_3304().method_5849("enemies");
+      if (SigmaMainClass.getInstance().getJSONObjectImpl().method_5850("enemies")) {
+         JSONArray var4 = SigmaMainClass.getInstance().getJSONObjectImpl().method_5849("enemies");
          if (var4 != null) {
             var4.forEach(var1 -> this.field_15503.add((String)var1));
          }

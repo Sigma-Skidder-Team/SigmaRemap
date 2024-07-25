@@ -188,7 +188,7 @@ public abstract class class_8990 extends class_5467 {
 
    @Override
    public void method_26452(DamageSource var1) {
-      if (!this.world.field_33055 && this.world.getGameRules().getBoolean(GameRules.field_1060) && this.method_41207() instanceof class_9359) {
+      if (!this.world.field_33055 && this.world.getGameRules().getBoolean(GameRules.SHOW_DEATH_MESSAGES) && this.method_41207() instanceof class_9359) {
          this.method_41207().method_26286(this.method_26476().method_15870(), Util.NIL_UUID);
       }
 

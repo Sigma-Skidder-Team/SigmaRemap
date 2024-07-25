@@ -67,9 +67,9 @@ public class class_2069 extends class_7114 {
       if (var10) {
          float var11 = 1.0F + 0.1F * (float)Math.sin((double)(this.field_10439 / 15.0F * (float) Math.PI));
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)(this.field_36670 + 8), (float)(this.field_36674 + 12), 0.0F);
+         RenderSystem.translatef((float)(this.field_36670 + 8), (float)(this.field_36674 + 12), 0.0F);
          RenderSystem.method_16403(var11, var11, 1.0F);
-         RenderSystem.method_16413((float)(-(this.field_36670 + 8)), (float)(-(this.field_36674 + 12)), 0.0F);
+         RenderSystem.translatef((float)(-(this.field_36670 + 8)), (float)(-(this.field_36674 + 12)), 0.0F);
          this.field_10439 -= var4;
       }
 

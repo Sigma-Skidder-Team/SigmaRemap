@@ -32,7 +32,7 @@ public class class_6598 extends class_6414 {
    @Override
    public void method_10765(class_2522 var1, class_6331 var2, BlockPos var3, ItemStack var4) {
       super.method_10765(var1, var2, var3, var4);
-      if (var2.getGameRules().getBoolean(GameRules.field_1058) && class_2931.method_13423(class_3668.field_17870, var4) == 0) {
+      if (var2.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) && class_2931.method_13423(class_3668.field_17870, var4) == 0) {
          this.method_30379(var2, var3);
       }
    }

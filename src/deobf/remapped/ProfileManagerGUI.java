@@ -103,7 +103,7 @@ public class ProfileManagerGUI extends class_1859 {
             (float)(this.field_36261 + this.field_36257),
             (float)this.field_36278,
             50.0F,
-            NotificationIcons.field_10992,
+            NotificationIcons.shadow_bottom,
             class_314.method_1444(class_1255.field_6918.field_6917, this.field_16351.method_11123() * var1 * 0.3F)
          );
          class_73.method_151(this);

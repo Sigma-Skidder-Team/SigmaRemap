@@ -7,11 +7,11 @@ public final class WindowProvider implements AutoCloseable {
 
    public WindowProvider(MinecraftClient var1) {
       this.field_48143 = var1;
-      this.field_48145 = new class_7962(class_2078::new);
+      this.field_48145 = new class_7962(Monitor::new);
    }
 
-   public Window method_43609(class_9706 var1, String var2, String var3) {
-      return new Window(this.field_48143, this.field_48145, var1, var2, var3);
+   public MainWindow method_43609(class_9706 var1, String var2, String var3) {
+      return new MainWindow(this.field_48143, this.field_48145, var1, var2, var3);
    }
 
    @Override

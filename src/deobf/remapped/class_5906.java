@@ -41,7 +41,7 @@ public class class_5906 extends class_6967 {
    }
 
    public void method_27013() {
-      if (this.field_29977.field_41768.method_29537().method_1285(GameRules.field_1047)) {
+      if (this.field_29977.field_41768.method_29537().method_1285(GameRules.MOB_GRIEFING)) {
          class_2522 var3 = this.field_29977.field_41768.method_28262(this.field_35802);
          if (var3.method_8350(class_4783.field_23637)) {
             int var4 = var3.<Integer>method_10313(class_7086.field_36577);

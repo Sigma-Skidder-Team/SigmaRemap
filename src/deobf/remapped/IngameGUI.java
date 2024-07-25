@@ -155,7 +155,7 @@ public class IngameGUI extends AbstractGui {
 
       if (this.mc.thePlayer.method_3202() > 0) {
          this.mc.getProfiler().startSection("sleep");
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          RenderSystem.method_16458();
          float var14 = (float)this.mc.thePlayer.method_3202();
          float var9 = var14 / 100.0F;
@@ -191,7 +191,7 @@ public class IngameGUI extends AbstractGui {
 
             if (var18 > 8) {
                RenderSystem.method_16438();
-               RenderSystem.method_16413((float)(this.scaledWidth / 2), (float)(this.scaledHeight - 68), 0.0F);
+               RenderSystem.translatef((float)(this.scaledWidth / 2), (float)(this.scaledHeight - 68), 0.0F);
                RenderSystem.enableBlend();
                RenderSystem.defaultBlendFunc();
                int var22 = 16777215;
@@ -226,7 +226,7 @@ public class IngameGUI extends AbstractGui {
             var19 = MathHelper.clamp(var19, 0, 255);
             if (var19 > 8) {
                RenderSystem.method_16438();
-               RenderSystem.method_16413((float)(this.scaledWidth / 2), (float)(this.scaledHeight / 2), 0.0F);
+               RenderSystem.translatef((float)(this.scaledWidth / 2), (float)(this.scaledHeight / 2), 0.0F);
                RenderSystem.enableBlend();
                RenderSystem.defaultBlendFunc();
                RenderSystem.method_16438();
@@ -280,7 +280,7 @@ public class IngameGUI extends AbstractGui {
          RenderSystem.defaultBlendFunc();
          RenderSystem.method_16458();
          RenderSystem.method_16438();
-         RenderSystem.method_16413(0.0F, (float)(this.scaledHeight - 48), 0.0F);
+         RenderSystem.translatef(0.0F, (float)(this.scaledHeight - 48), 0.0F);
          this.mc.getProfiler().startSection("chat");
          this.persistantChatGUI.method_18678(matrixStack, this.ticks);
          this.mc.getProfiler().endSection();
@@ -313,7 +313,7 @@ public class IngameGUI extends AbstractGui {
          && (this.mc.playerController.getCurrentGameType() != GameType.SPECTATOR || this.method_14001(this.mc.field_9587))) {
          if (var4.field_45470 && !var4.hideGUI && !this.mc.thePlayer.method_3179() && !var4.field_45500) {
             RenderSystem.method_16438();
-            RenderSystem.method_16413((float)(this.scaledWidth / 2), (float)(this.scaledHeight / 2), (float)this.method_9777());
+            RenderSystem.translatef((float)(this.scaledWidth / 2), (float)(this.scaledHeight / 2), (float)this.method_9777());
             Camera var11 = this.mc.gameRenderer.method_35949();
             RenderSystem.method_16410(var11.method_41638(), -1.0F, 0.0F, 0.0F);
             RenderSystem.method_16410(var11.method_41640(), 0.0F, 1.0F, 0.0F);
@@ -321,7 +321,7 @@ public class IngameGUI extends AbstractGui {
             RenderSystem.method_16412(10);
             RenderSystem.method_16489();
          } else {
-            RenderSystem.method_16425(class_5033.field_26037, class_8535.field_43686, class_5033.field_26047, class_8535.field_43699);
+            RenderSystem.blendFuncSeparate(SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field_43686, SourceFactor.ONE, DestFactor.field_43699);
             byte var5 = 15;
             this.method_9781(var1, (this.scaledWidth - 15) / 2, (this.scaledHeight - 15) / 2, 0, 0, 15, 15);
             if (this.mc.gameOptions.field_45555 == class_8846.field_45243) {
@@ -917,7 +917,7 @@ public class IngameGUI extends AbstractGui {
    }
 
    private void renderPumpkinOverlay() {
-      RenderSystem.method_16491();
+      RenderSystem.disableDepthTest();
       RenderSystem.method_16387(false);
       RenderSystem.defaultBlendFunc();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -956,9 +956,9 @@ public class IngameGUI extends AbstractGui {
             var5 = 1.0F - (float)((double)var5 / var8);
          }
 
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          RenderSystem.method_16387(false);
-         RenderSystem.method_16425(class_5033.field_26048, class_8535.field_43686, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.blendFuncSeparate(SourceFactor.ZERO, DestFactor.field_43686, SourceFactor.ONE, DestFactor.field_43699);
          if (!(var5 > 0.0F)) {
             RenderSystem.color4f(this.prevVignetteBrightness, this.prevVignetteBrightness, this.prevVignetteBrightness, 1.0F);
          } else {
@@ -980,7 +980,7 @@ public class IngameGUI extends AbstractGui {
          RenderSystem.defaultBlendFunc();
       } else {
          RenderSystem.enableDepthTest();
-         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
       }
    }
 
@@ -992,7 +992,7 @@ public class IngameGUI extends AbstractGui {
       }
 
       RenderSystem.method_16458();
-      RenderSystem.method_16491();
+      RenderSystem.disableDepthTest();
       RenderSystem.method_16387(false);
       RenderSystem.defaultBlendFunc();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, var1);
@@ -1022,9 +1022,9 @@ public class IngameGUI extends AbstractGui {
          if (var8 > 0.0F) {
             RenderSystem.method_16438();
             float var9 = 1.0F + var8 / 5.0F;
-            RenderSystem.method_16413((float)(var1 + 8), (float)(var2 + 12), 0.0F);
+            RenderSystem.translatef((float)(var1 + 8), (float)(var2 + 12), 0.0F);
             RenderSystem.method_16403(1.0F / var9, (var9 + 1.0F) / 2.0F, 1.0F);
-            RenderSystem.method_16413((float)(-(var1 + 8)), (float)(-(var2 + 12)), 0.0F);
+            RenderSystem.translatef((float)(-(var1 + 8)), (float)(-(var2 + 12)), 0.0F);
          }
 
          this.itemRenderer.method_40273(var4, var5, var1, var2);

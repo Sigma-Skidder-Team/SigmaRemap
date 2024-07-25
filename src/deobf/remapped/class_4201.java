@@ -49,7 +49,7 @@ public class class_4201 implements class_6406 {
       }
 
       var2.method_42327().getTextureManager().bindTexture(field_32696);
-      RenderSystem.method_16404(1.0F, 1.0F, 1.0F);
+      RenderSystem.color3f(1.0F, 1.0F, 1.0F);
       int var7 = this.method_29239();
       byte var8 = 12;
       if (var7 == 160 && this.field_20427.size() <= 1) {

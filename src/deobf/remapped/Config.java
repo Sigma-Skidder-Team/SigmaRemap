@@ -1704,7 +1704,7 @@ public class Config {
    }
 
    public static boolean method_14276(int var0) {
-      return GLFW.glfwGetKey(field_15454.getMainWindow().method_43181(), var0) == 1;
+      return GLFW.glfwGetKey(field_15454.getMainWindow().getHandle(), var0) == 1;
    }
 
    public static boolean method_14416(Boolean var0) {

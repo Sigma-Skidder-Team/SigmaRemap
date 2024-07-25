@@ -41,7 +41,7 @@ public class class_5986 extends class_7114 {
    public void method_32686(class_7966 var1, int var2, int var3, float var4) {
       MinecraftClient var7 = MinecraftClient.getInstance();
       var7.getTextureManager().bindTexture(this.field_30492);
-      RenderSystem.method_16491();
+      RenderSystem.disableDepthTest();
       int var8 = this.field_30493;
       int var9 = this.field_30494;
       if (this.field_30498) {

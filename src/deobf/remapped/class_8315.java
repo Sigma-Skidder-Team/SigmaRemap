@@ -10,7 +10,7 @@ public class class_8315 extends class_5348 {
       super("line_width", () -> {
          if (!Objects.equals(var1, OptionalDouble.of(1.0))) {
             if (!var1.isPresent()) {
-               RenderSystem.method_16484(Math.max(2.5F, (float) MinecraftClient.getInstance().getMainWindow().method_43178() / 1920.0F * 2.5F));
+               RenderSystem.method_16484(Math.max(2.5F, (float) MinecraftClient.getInstance().getMainWindow().getFramebufferWidth() / 1920.0F * 2.5F));
             } else {
                RenderSystem.method_16484((float)var1.getAsDouble());
             }

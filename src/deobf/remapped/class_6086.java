@@ -46,7 +46,7 @@ public class class_6086 extends class_1859 {
          (float)(this.field_36261 + 20),
          20.0F,
          20.0F,
-         NotificationIcons.field_11036,
+         NotificationIcons.search,
          class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
       );
       ArrayList var5 = this.method_27867();

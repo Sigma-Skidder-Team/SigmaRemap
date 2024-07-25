@@ -757,7 +757,7 @@ public class class_3290 {
                            GlStateManager.method_8757();
                            GlStateManager.method_8854(var14, var14, var14);
                            float var15 = var13.field_17539 * (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F / 8.0F;
-                           GlStateManager.method_8897(var15, 0.0F, 0.0F);
+                           GlStateManager.translatef(var15, 0.0F, 0.0F);
                            GlStateManager.method_8824(var13.field_17517, 0.0F, 0.0F, 1.0F);
                            GlStateManager.method_8761();
                         }
@@ -769,8 +769,8 @@ public class class_3290 {
             if (var7) {
                GlStateManager.enableAlphaTest();
                GlStateManager.method_8829();
-               GlStateManager.method_8787(770, 771);
-               GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.blendFunc(770, 771);
+               GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                GlStateManager.method_8842(5888);
                GlStateManager.method_8927();
                GlStateManager.method_8862(515);
@@ -834,7 +834,7 @@ public class class_3290 {
                            float var22 = var21 / 8.0F;
                            GlStateManager.method_8854(var22, var22 / 2.0F, var22);
                            float var23 = var20.field_17539 * (float)(Util.getMeasuringTimeMs() % 3000L) / 3000.0F / 8.0F;
-                           GlStateManager.method_8897(0.0F, var23, 0.0F);
+                           GlStateManager.translatef(0.0F, var23, 0.0F);
                            GlStateManager.method_8842(5888);
                         }
                      }
@@ -845,8 +845,8 @@ public class class_3290 {
             if (var14) {
                GlStateManager.enableAlphaTest();
                GlStateManager.method_8829();
-               GlStateManager.method_8787(770, 771);
-               GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.blendFunc(770, 771);
+               GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                GlStateManager.method_8842(5890);
                GlStateManager.method_8865();
                GlStateManager.method_8842(5888);

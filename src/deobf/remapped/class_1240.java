@@ -63,55 +63,55 @@ public class class_1240 {
          case 0:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(770, 771);
-            GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.blendFunc(770, 771);
+            GlStateManager.color4f(1.0F, 1.0F, 1.0F, var1);
             break;
          case 1:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(770, 1);
-            GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.blendFunc(770, 1);
+            GlStateManager.color4f(1.0F, 1.0F, 1.0F, var1);
             break;
          case 2:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(775, 0);
-            GlStateManager.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.blendFunc(775, 0);
+            GlStateManager.color4f(var1, var1, var1, 1.0F);
             break;
          case 3:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(774, 771);
-            GlStateManager.method_8789(var1, var1, var1, var1);
+            GlStateManager.blendFunc(774, 771);
+            GlStateManager.color4f(var1, var1, var1, var1);
             break;
          case 4:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(1, 1);
-            GlStateManager.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.blendFunc(1, 1);
+            GlStateManager.color4f(var1, var1, var1, 1.0F);
             break;
          case 5:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(0, 769);
-            GlStateManager.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.blendFunc(0, 769);
+            GlStateManager.color4f(var1, var1, var1, 1.0F);
             break;
          case 6:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(1, 769);
-            GlStateManager.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.blendFunc(1, 769);
+            GlStateManager.color4f(var1, var1, var1, 1.0F);
             break;
          case 7:
             GlStateManager.method_8801();
             GlStateManager.method_8829();
-            GlStateManager.method_8787(774, 768);
-            GlStateManager.method_8789(var1, var1, var1, 1.0F);
+            GlStateManager.blendFunc(774, 768);
+            GlStateManager.color4f(var1, var1, var1, 1.0F);
             break;
          case 8:
             GlStateManager.enableAlphaTest();
             GlStateManager.method_8775();
-            GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var1);
+            GlStateManager.color4f(1.0F, 1.0F, 1.0F, var1);
       }
 
       GlStateManager.method_8843();
@@ -120,7 +120,7 @@ public class class_1240 {
    public static void method_5533(float var0) {
       GlStateManager.method_8801();
       GlStateManager.method_8829();
-      GlStateManager.method_8787(770, 1);
-      GlStateManager.method_8789(1.0F, 1.0F, 1.0F, var0);
+      GlStateManager.blendFunc(770, 1);
+      GlStateManager.color4f(1.0F, 1.0F, 1.0F, var0);
    }
 }

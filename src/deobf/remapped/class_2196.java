@@ -14,7 +14,7 @@ public class class_2196 extends class_9521 {
       class_1500 var7,
       class_3547 var8,
       ITextComponent var9,
-      class_5850 var10,
+      BooleanValue var10,
       String var11
    ) {
       super(var2, var3, var4, var5, var6, var7);

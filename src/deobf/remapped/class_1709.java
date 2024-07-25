@@ -30,7 +30,7 @@ public class class_1709 extends class_3259 {
                class_1013.field_5306.method_22127(this.field_16164);
                this.field_16164.method_40873();
                var1.method_32687(class_1013.field_5306.method_22128(this.field_16164));
-               this.field_943.method_32777();
+               this.field_943.updateWindowSize();
             }
          )
       );

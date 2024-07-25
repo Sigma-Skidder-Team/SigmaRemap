@@ -9,7 +9,7 @@ public class class_8270 implements class_1517 {
 
    @Override
    public int method_6937(class_6331 var1, boolean var2, boolean var3) {
-      if (var3 && var1.getGameRules().getBoolean(GameRules.field_1028)) {
+      if (var3 && var1.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
          this.field_42422--;
          if (this.field_42422 <= 0) {
             this.field_42422 = 1200;

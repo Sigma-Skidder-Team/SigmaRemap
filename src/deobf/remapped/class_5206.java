@@ -33,14 +33,14 @@ public class class_5206 extends class_5986 {
       if (this.field_26754 > 0.0F) {
          float var7 = 1.0F + 0.1F * (float)Math.sin((double)(this.field_26754 / 15.0F * (float) Math.PI));
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)(this.field_36670 + 8), (float)(this.field_36674 + 12), 0.0F);
+         RenderSystem.translatef((float)(this.field_36670 + 8), (float)(this.field_36674 + 12), 0.0F);
          RenderSystem.method_16403(1.0F, var7, 1.0F);
-         RenderSystem.method_16413((float)(-(this.field_36670 + 8)), (float)(-(this.field_36674 + 12)), 0.0F);
+         RenderSystem.translatef((float)(-(this.field_36670 + 8)), (float)(-(this.field_36674 + 12)), 0.0F);
       }
 
       MinecraftClient var11 = MinecraftClient.getInstance();
       var11.getTextureManager().bindTexture(this.field_30492);
-      RenderSystem.method_16491();
+      RenderSystem.disableDepthTest();
       int var8 = this.field_30493;
       int var9 = this.field_30494;
       if (this.field_30498) {

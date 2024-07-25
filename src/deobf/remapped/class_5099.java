@@ -73,15 +73,15 @@ public class class_5099 {
          GlStateManager.method_8793(256);
          GlStateManager.method_8842(5889);
          GlStateManager.method_8757();
-         int var6 = field_26314.getMainWindow().method_43178();
-         int var7 = field_26314.getMainWindow().method_43198();
+         int var6 = field_26314.getMainWindow().getFramebufferWidth();
+         int var7 = field_26314.getMainWindow().getFramebufferHeight();
          GlStateManager.method_8819();
          GlStateManager.method_8865();
          GlStateManager.method_8781(0.0, (double)var6, (double)var7, 0.0, 1000.0, 3000.0);
          GlStateManager.method_8842(5888);
          GlStateManager.method_8757();
          GlStateManager.method_8865();
-         GlStateManager.method_8897(0.0F, 0.0F, -2000.0F);
+         GlStateManager.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glLineWidth(1.0F);
          GlStateManager.method_8848();
          class_8042 var8 = class_8042.method_36499();

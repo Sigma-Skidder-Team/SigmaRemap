@@ -14,7 +14,7 @@ public class class_5340 extends class_292 {
    @Override
    public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+      if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
          this.method_37312(class_4783.field_23471);
       }
    }

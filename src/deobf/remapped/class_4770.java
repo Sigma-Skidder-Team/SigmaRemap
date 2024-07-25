@@ -37,9 +37,9 @@ public class class_4770 extends class_446 {
       if (this.field_23119 != null) {
          GL11.glEnable(2929);
          class_2083.method_9718();
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 - this.field_36257 / 4), -200.0F);
+         RenderSystem.translatef((float)(this.field_36270 + this.field_36278 / 2), (float)(this.field_36261 - this.field_36257 / 4), -200.0F);
          GL11.glColor3f(1.0F, 1.0F, 1.0F);
          RenderSystem.method_16410(180.0F, 1.0F, 0.0F, 0.0F);
          RenderSystem.method_16410(180.0F, 0.0F, 0.0F, 1.0F);

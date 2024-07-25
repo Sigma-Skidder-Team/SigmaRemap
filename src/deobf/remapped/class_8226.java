@@ -63,8 +63,8 @@ public class class_8226 extends class_2208<class_8372> {
       RenderSystem.method_16476();
       int var9 = (int)this.field_943.getMainWindow().method_43189();
       RenderSystem.method_16392((this.field_941 - 320) / 2 * var9, (this.field_940 - 240) / 2 * var9, 320 * var9, 240 * var9);
-      RenderSystem.method_16413(-0.34F, 0.23F, 0.0F);
-      RenderSystem.method_16358(class_8107.method_36820(90.0, 1.3333334F, 9.0F, 80.0F));
+      RenderSystem.translatef(-0.34F, 0.23F, 0.0F);
+      RenderSystem.multMatrix(class_8107.method_36820(90.0, 1.3333334F, 9.0F, 80.0F));
       RenderSystem.method_16463(5888);
       var1.method_36063();
       class_6279 var10 = var1.method_36058();
@@ -108,7 +108,7 @@ public class class_8226 extends class_2208<class_8372> {
       var16.method_17415();
       var1.method_36064();
       RenderSystem.method_16463(5889);
-      RenderSystem.method_16392(0, 0, this.field_943.getMainWindow().method_43178(), this.field_943.getMainWindow().method_43198());
+      RenderSystem.method_16392(0, 0, this.field_943.getMainWindow().getFramebufferWidth(), this.field_943.getMainWindow().getFramebufferHeight());
       RenderSystem.method_16489();
       RenderSystem.method_16463(5888);
       class_2083.method_9717();

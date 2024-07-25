@@ -139,7 +139,7 @@ public class class_7565 extends PremiumModule {
          GameProfile var8 = new GameProfile(var7, this.field_38555.method_45509().getString());
          class_1806 var9 = new class_1806(this, client.theWorld, var8);
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)var1 + 50.0F, (float)this.field_38544 + 295.0F, 1000.0F);
+         RenderSystem.translatef((float)var1 + 50.0F, (float)this.field_38544 + 295.0F, 1000.0F);
          RenderSystem.method_16403(1.0F, 1.0F, -1.0F);
          class_7966 var10 = new class_7966();
          var10.method_36065(0.0, 0.0, 1500.0);

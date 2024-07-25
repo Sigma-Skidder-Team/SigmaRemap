@@ -18,7 +18,7 @@ public class class_7714 implements class_2237 {
    }
 
    @Override
-   public void method_10290(class_7505<class_5850> var1, class_3275<class_5850> var2) {
+   public void method_10290(RuleKey<BooleanValue> var1, class_3275<BooleanValue> var2) {
       this.method_34903(var1, (var1x, var2x, var3, var4) -> {
          class_3547 var10002 = this.field_39127.field_27601;
          this.field_39127.field_27601.getClass();
@@ -27,7 +27,7 @@ public class class_7714 implements class_2237 {
    }
 
    @Override
-   public void method_10291(class_7505<class_1997> var1, class_3275<class_1997> var2) {
+   public void method_10291(RuleKey<IntegerValue> var1, class_3275<IntegerValue> var2) {
       this.method_34903(var1, (var1x, var2x, var3, var4) -> {
          class_3547 var10002 = this.field_39127.field_27601;
          this.field_39127.field_27601.getClass();
@@ -35,13 +35,13 @@ public class class_7714 implements class_2237 {
       });
    }
 
-   private <T extends class_9152<T>> void method_34903(class_7505<T> var1, class_403<T> var2) {
-      TranslationTextComponent var5 = new TranslationTextComponent(var1.method_34214());
-      IFormattableTextComponent var6 = new StringTextComponent(var1.method_34215()).mergeStyle(TextFormatting.YELLOW);
-      class_9152 var7 = this.field_39123.<class_9152>method_1287(var1);
+   private <T extends RuleValue<T>> void method_34903(RuleKey<T> var1, class_403<T> var2) {
+      TranslationTextComponent var5 = new TranslationTextComponent(var1.getLocaleString());
+      IFormattableTextComponent var6 = new StringTextComponent(var1.getName()).mergeStyle(TextFormatting.YELLOW);
+      RuleValue var7 = this.field_39123.<RuleValue>method_1287(var1);
       String var8 = var7.method_42124();
       IFormattableTextComponent var9 = new TranslationTextComponent("editGamerule.default", new StringTextComponent(var8)).mergeStyle(TextFormatting.GRAY);
-      String var10 = var1.method_34214() + ".description";
+      String var10 = var1.getLocaleString() + ".description";
       ImmutableList var11;
       String var12;
       if (!class_6956.method_31804(var10)) {
@@ -55,6 +55,6 @@ public class class_7714 implements class_2237 {
          var12 = var14.getString() + "\n" + var9.getString();
       }
 
-      this.field_39125.computeIfAbsent(var1.method_34213(), var0 -> Maps.newHashMap()).put(var1, var2.method_2004(var5, var11, var12, (T)var7));
+      this.field_39125.computeIfAbsent(var1.getCategory(), var0 -> Maps.newHashMap()).put(var1, var2.method_2004(var5, var11, var12, (T)var7));
    }
 }

@@ -25,7 +25,7 @@ public class class_9395 extends class_1859 {
          (float)this.field_36261,
          (float)(this.field_36278 * 3),
          (float)this.field_36257,
-         NotificationIcons.field_11055,
+         NotificationIcons.musicrepeat,
          class_314.method_1444(class_1255.field_6918.field_6917, 0.35F)
       );
       class_73.method_141();

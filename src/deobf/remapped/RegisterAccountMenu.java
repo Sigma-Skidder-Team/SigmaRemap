@@ -67,7 +67,7 @@ public class RegisterAccountMenu extends class_1859 {
       super.method_32190();
       super.method_32130();
       byte var4 = 28;
-      class_73.method_97((float)(this.field_36270 + var4), (float)(this.field_36261 + var4 + 10), 160.0F, 160.0F, NotificationIcons.field_11049, var1);
+      class_73.method_97((float)(this.field_36270 + var4), (float)(this.field_36261 + var4 + 10), 160.0F, 160.0F, NotificationIcons.sigmamental, var1);
       short var5 = 305;
       short var6 = 316;
       class_8646 var7 = SigmaMainClass.getInstance().getAccountManager().method_23083();

@@ -16,9 +16,9 @@ public class SigmaMainClass {
    public static String clientProd = "Sigma Production";
    public static final boolean field_3956 = false;
    private static SigmaMainClass instance;
-   private static MinecraftClient field_3950 = MinecraftClient.getInstance();
+   private static MinecraftClient client = MinecraftClient.getInstance();
    private final File sigmaFolder = new File("sigma5");
-   private JSONObjectImpl field_3974;
+   private JSONObjectImpl jsonObject;
    private boolean field_3962 = true;
    private class_2827 field_3953;
    private class_201 field_3961;
@@ -29,7 +29,7 @@ public class SigmaMainClass {
    private class_3116 field_3958;
    private class_4400 field_3952;
    private class_1857 field_3963;
-   private class_2026 field_3969;
+   private MusicManager musicManager;
    private class_5571 field_3954;
    private class_8691 field_3981;
    private class_4746 field_3967;
@@ -68,7 +68,7 @@ public class SigmaMainClass {
             this.sigmaFolder.mkdirs();
          }
 
-         this.field_3974 = class_357.method_1789(new File(this.sigmaFolder + "/config.json"));
+         this.jsonObject = class_357.method_1789(new File(this.sigmaFolder + "/config.json"));
       } catch (IOException var8) {
          var8.printStackTrace();
       }
@@ -93,8 +93,8 @@ public class SigmaMainClass {
       this.field_3954.method_25292();
       this.field_3960 = new class_6645();
       this.field_3960.method_30524();
-      this.field_3969 = new class_2026();
-      this.field_3969.method_9478();
+      this.musicManager = new MusicManager();
+      this.musicManager.init();
       this.soundManager = new SoundManager();
       this.soundManager.method_21204();
       this.notificationManager = new class_6080();
@@ -107,9 +107,7 @@ public class SigmaMainClass {
       this.field_3967.method_21923();
       this.field_3979 = new class_5937();
       this.field_3979.method_27158();
-      GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Sigma 5.0");
-      long var6 = System.currentTimeMillis();
-      this.method_3321();
+      GLFW.glfwSetWindowTitle(client.window.getHandle(), "Sigma 5.0");
       this.field_3953.method_12863("Initialized.");
    }
 
@@ -143,22 +141,20 @@ public class SigmaMainClass {
       }, "RPC-Callback-Handler").start();
    }
 
-   public void method_3321() {
-   }
 
-   public void method_3324() {
+   public void shutdownSigma() {
       this.field_3953.method_12863("Shutting down...");
 
       try {
          if (this.guiManager != null) {
-            this.guiManager.method_31013(this.field_3974);
+            this.guiManager.method_31013(this.jsonObject);
          }
 
          if (this.moduleManager != null) {
-            this.moduleManager.method_849(this.field_3974);
+            this.moduleManager.method_849(this.jsonObject);
          }
 
-         class_4975 var3 = new class_4975(this.field_3974);
+         class_4975 var3 = new class_4975(this.jsonObject);
          if (this.eventManager != null) {
             this.eventManager.call(var3);
          }
@@ -174,7 +170,7 @@ public class SigmaMainClass {
 
    public void method_3318() {
       try {
-         class_357.method_1791(this.field_3974, new File(this.sigmaFolder + "/config.json"));
+         class_357.method_1791(this.jsonObject, new File(this.sigmaFolder + "/config.json"));
       } catch (IOException var4) {
          var4.printStackTrace();
       }
@@ -186,24 +182,24 @@ public class SigmaMainClass {
 
    public void method_3333() {
       GL11.glPushMatrix();
-      double var3 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
+      double var3 = client.window.method_43189() / (double)((float)Math.pow(client.window.method_43189(), 2.0));
       GL11.glScaled(var3, var3, var3);
       GL11.glScaled((double) GUIManager.field_34898, (double) GUIManager.field_34898, (double) GUIManager.field_34898);
       GL11.glDisable(2912);
-      RenderSystem.method_16491();
-      RenderSystem.method_16413(0.0F, 0.0F, 1000.0F);
-      RenderSystem.method_16442(519, 0.0F);
+      RenderSystem.disableDepthTest();
+      RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
+      RenderSystem.alphaFunc(519, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       GL11.glDisable(2896);
-      RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
-      NotificationIcons.field_11030.method_38419();
+      RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
+      NotificationIcons.gingerbread.method_38419();
       getInstance().getEventManager().call(new class_7285());
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.method_16361();
-      RenderSystem.method_16491();
+      RenderSystem.enableCull();
+      RenderSystem.disableDepthTest();
       RenderSystem.enableBlend();
-      RenderSystem.method_16442(518, 0.1F);
+      RenderSystem.alphaFunc(518, 0.1F);
       GL11.glPopMatrix();
    }
 
@@ -224,34 +220,34 @@ public class SigmaMainClass {
       }
 
       if (getInstance().method_3312() != class_6015.field_30642) {
-         double var5 = field_3950.window.method_43189() / (double)((float)Math.pow(field_3950.window.method_43189(), 2.0));
+         double var5 = client.window.method_43189() / (double)((float)Math.pow(client.window.method_43189(), 2.0));
          GL11.glScaled(var5, var5, 1.0);
          GL11.glScaled((double) GUIManager.field_34898, (double) GUIManager.field_34898, 1.0);
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          RenderSystem.method_16438();
-         RenderSystem.method_16413(0.0F, 0.0F, 1000.0F);
+         RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
          this.guiManager.method_30983();
          RenderSystem.method_16489();
          RenderSystem.enableDepthTest();
          RenderSystem.enableAlphaTest();
          GL11.glAlphaFunc(518, 0.1F);
-         TextureManager var10000 = field_3950.getTextureManager();
-         field_3950.getTextureManager();
+         TextureManager var10000 = client.getTextureManager();
+         client.getTextureManager();
          var10000.bindTexture(TextureManager.field_40364);
       }
    }
 
    public void method_3316() {
-      if (field_3950 != null && field_3950.theWorld != null && field_3950.thePlayer != null && !field_3951) {
+      if (client != null && client.theWorld != null && client.thePlayer != null && !field_3951) {
          GL11.glTranslatef(0.0F, 0.0F, 0.0F);
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          RenderSystem.method_16387(false);
          GL11.glDisable(2896);
          this.eventManager.call(new class_3368());
          RenderSystem.enableDepthTest();
          RenderSystem.method_16387(true);
-         TextureManager var10000 = field_3950.getTextureManager();
-         field_3950.getTextureManager();
+         TextureManager var10000 = client.getTextureManager();
+         client.getTextureManager();
          var10000.bindTexture(TextureManager.field_40364);
       }
    }
@@ -312,8 +308,8 @@ public class SigmaMainClass {
       return this.field_3981;
    }
 
-   public class_2026 method_3300() {
-      return this.field_3969;
+   public MusicManager method_3300() {
+      return this.musicManager;
    }
 
    public class_4763 method_3309() {
@@ -340,15 +336,15 @@ public class SigmaMainClass {
       return this.field_3979;
    }
 
-   public JSONObjectImpl method_3304() {
-      return this.field_3974;
+   public JSONObjectImpl getJSONObjectImpl() {
+      return this.jsonObject;
    }
 
-   public void method_3314() {
-      this.field_3974 = new JSONObjectImpl();
+   public void createJSONObjectImpl() {
+      this.jsonObject = new JSONObjectImpl();
    }
 
-   public File method_3334() {
+   public File getSigmaFolder() {
       return this.sigmaFolder;
    }
 
@@ -356,23 +352,23 @@ public class SigmaMainClass {
       return this.field_3983;
    }
 
-   public void method_3327(class_6015 var1) {
+   public void updateClient(class_6015 var1) {
       this.field_3983 = var1;
       if (var1 != class_6015.field_30644) {
          if (var1 == class_6015.field_30645) {
             this.initDRPC();
-            GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Jello for Sigma 5.0");
+            GLFW.glfwSetWindowTitle(client.window.getHandle(), "Jello for Sigma 5.0");
          }
       } else {
          class_3054.method_13951();
          getInstance().getGUIManager().method_31006();
-         GLFW.glfwSetWindowTitle(field_3950.window.method_43181(), "Classic Sigma 5.0");
+         GLFW.glfwSetWindowTitle(client.window.getHandle(), "Classic Sigma 5.0");
       }
 
       if (this.moduleManager == null && class_1235.field_6812 != null) {
          this.moduleManager = new ModuleManager();
          this.moduleManager.registerAllModules(this.field_3983);
-         this.moduleManager.method_842(this.field_3974);
+         this.moduleManager.method_842(this.jsonObject);
          this.moduleManager.method_846();
       }
 

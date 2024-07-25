@@ -48,7 +48,7 @@ public class JelloMenu extends class_2596 {
       this.method_32148(this.field_4007 = new MusicPlayer(this, "musicPlayer"));
       this.field_4007.method_1533(true);
       class_122 var9;
-      this.method_32148(var9 = new class_122(this, "more", this.method_32109() - 69, this.method_32137() - 55, 55, 41, NotificationIcons.field_11042));
+      this.method_32148(var9 = new class_122(this, "more", this.method_32109() - 69, this.method_32137() - 55, 55, 41, NotificationIcons.options));
       var9.method_32139().method_2772(class_314.method_1444(class_1255.field_6918.field_6917, 0.3F));
       var9.method_32105(false);
       this.field_4007.method_32104(field_4005);

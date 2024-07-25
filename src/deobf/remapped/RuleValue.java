@@ -2,10 +2,10 @@ package remapped;
 
 import com.mojang.brigadier.context.CommandContext;
 
-public abstract class class_9152<T extends class_9152<T>> {
+public abstract class RuleValue<T extends RuleValue<T>> {
    public final class_3275<T> field_46823;
 
-   public class_9152(class_3275<T> var1) {
+   public RuleValue(class_3275<T> var1) {
       this.field_46823 = var1;
    }
 

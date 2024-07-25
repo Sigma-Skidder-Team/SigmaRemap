@@ -55,12 +55,12 @@ public enum class_5810 {
    }
 
    public void method_26308() {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       GlStateManager.method_8763(3333, this.method_26306());
    }
 
    public void method_26314() {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       GlStateManager.method_8763(3317, this.method_26306());
    }
 

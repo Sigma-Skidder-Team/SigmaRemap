@@ -227,7 +227,7 @@ public class class_6414 extends class_2353 implements class_8525 {
    }
 
    public static void method_29267(World var0, BlockPos var1, ItemStack var2) {
-      if (!var0.field_33055 && !var2.method_28022() && var0.getGameRules().getBoolean(GameRules.field_1058)) {
+      if (!var0.field_33055 && !var2.method_28022() && var0.getGameRules().getBoolean(GameRules.DO_TILE_DROPS)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.field_33033.nextFloat() * 0.5F) + 0.25;
          double var8 = (double)(var0.field_33033.nextFloat() * 0.5F) + 0.25;
@@ -239,7 +239,7 @@ public class class_6414 extends class_2353 implements class_8525 {
    }
 
    public void method_29304(class_6331 var1, BlockPos var2, int var3) {
-      if (var1.getGameRules().getBoolean(GameRules.field_1058)) {
+      if (var1.getGameRules().getBoolean(GameRules.DO_TILE_DROPS)) {
          while (var3 > 0) {
             int var6 = class_5614.method_25476(var3);
             var3 -= var6;

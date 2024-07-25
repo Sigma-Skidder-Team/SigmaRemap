@@ -52,7 +52,7 @@ public class class_765 extends class_4232 {
          return false;
       } else {
          if (this.field_4145.field_45484 != var8) {
-            this.field_943.method_32777();
+            this.field_943.updateWindowSize();
          }
 
          if (this.field_4138.method_23758()) {
@@ -197,13 +197,13 @@ public class class_765 extends class_4232 {
    }
 
    private void method_3450() {
-      this.field_943.method_32777();
-      Window var3 = this.field_943.getMainWindow();
+      this.field_943.updateWindowSize();
+      MainWindow var3 = this.field_943.getMainWindow();
       int var4 = class_2148.method_10029(this.field_4135);
       int var5 = class_2148.method_10030(this.field_4135);
       int var6 = this.field_4135.field_36670 + (var4 - var5);
       int var7 = this.field_4135.field_36674 + var5 / 2;
-      GLFW.glfwSetCursorPos(var3.method_43181(), (double)var6 * var3.method_43189(), (double)var7 * var3.method_43189());
+      GLFW.glfwSetCursorPos(var3.getHandle(), (double)var6 * var3.method_43189(), (double)var7 * var3.method_43189());
    }
 
    private void method_3451(class_5932 var1, int var2) {

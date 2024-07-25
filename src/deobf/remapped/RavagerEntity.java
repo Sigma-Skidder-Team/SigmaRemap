@@ -108,7 +108,7 @@ public class RavagerEntity extends AbstractRaiderEntity {
             this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.0);
          }
 
-         if (this.collidedHorizontally && this.world.getGameRules().getBoolean(GameRules.field_1047)) {
+         if (this.collidedHorizontally && this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
             boolean flag = false;
             Box var8 = this.getBoundingBox().grow(0.2);
 

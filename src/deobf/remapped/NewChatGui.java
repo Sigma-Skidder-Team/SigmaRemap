@@ -47,8 +47,8 @@ public class NewChatGui extends AbstractGui {
             double var9 = this.method_18689();
             int var11 = MathHelper.ceil((double)this.method_18700() / var9);
             RenderSystem.method_16438();
-            RenderSystem.method_16413(2.0F, 8.0F, 0.0F);
-            RenderSystem.method_16356(var9, var9, 1.0);
+            RenderSystem.translatef(2.0F, 8.0F, 0.0F);
+            RenderSystem.scaled(var9, var9, 1.0);
             double var12 = this.field_19686.gameOptions.field_45402 * 0.9F + 0.1F;
             double var14 = this.field_19686.gameOptions.field_45563;
             double var16 = 9.0 * (this.field_19686.gameOptions.field_45465 + 1.0);
@@ -115,7 +115,7 @@ public class NewChatGui extends AbstractGui {
 
             if (var8) {
                byte var34 = 9;
-               RenderSystem.method_16413(-3.0F, 0.0F, 0.0F);
+               RenderSystem.translatef(-3.0F, 0.0F, 0.0F);
                int var36 = var7 * var34 + var7;
                int var37 = var20 * var34 + var20;
                int var31 = this.field_19689 * var37 / var7;
@@ -287,8 +287,8 @@ public class NewChatGui extends AbstractGui {
 
    public int method_18700() {
       int var3 = method_18686(this.field_19686.gameOptions.field_45388);
-      Window var4 = MinecraftClient.getInstance().getMainWindow();
-      int var5 = (int)((double)(var4.method_43178() - 3) / var4.method_43189());
+      MainWindow var4 = MinecraftClient.getInstance().getMainWindow();
+      int var5 = (int)((double)(var4.getFramebufferWidth() - 3) / var4.method_43189());
       return MathHelper.clamp(var3, 0, var5);
    }
 

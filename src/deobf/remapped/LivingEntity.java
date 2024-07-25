@@ -1161,7 +1161,7 @@ public abstract class LivingEntity extends Entity {
       if (!this.world.field_33055) {
          boolean var4 = false;
          if (var1 instanceof class_4653) {
-            if (this.world.getGameRules().getBoolean(GameRules.field_1047)) {
+            if (this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
                BlockPos var5 = this.method_37075();
                class_2522 var6 = class_4783.field_23401.method_29260();
                if (this.world.method_28262(var5).method_8345() && var6.method_8309(this.world, var5)) {
@@ -1190,7 +1190,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       boolean var6 = this.field_29665 > 0;
-      if (this.method_26534() && this.world.getGameRules().getBoolean(GameRules.field_1033)) {
+      if (this.method_26534() && this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
          this.method_26483(var1, var6);
          this.method_26614(var1, var5, var6);
       }
@@ -1204,7 +1204,7 @@ public abstract class LivingEntity extends Entity {
 
    public void method_26604() {
       if (!this.world.field_33055
-         && (this.method_26586() || this.field_29665 > 0 && this.method_26482() && this.world.getGameRules().getBoolean(GameRules.field_1033))) {
+         && (this.method_26586() || this.field_29665 > 0 && this.method_26482() && this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT))) {
          int var3 = this.method_26427(this.field_29634);
 
          while (var3 > 0) {

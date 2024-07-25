@@ -279,10 +279,10 @@ public class ItemRenderer implements class_6491 {
       RenderSystem.enableAlphaTest();
       RenderSystem.method_16433();
       RenderSystem.enableBlend();
-      RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
+      RenderSystem.blendFunc(SourceFactor.SRC_ALPHA, DestFactor.field_43697);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.method_16413((float)var2, (float)var3, 100.0F + this.field_44875);
-      RenderSystem.method_16413(8.0F, 8.0F, 0.0F);
+      RenderSystem.translatef((float)var2, (float)var3, 100.0F + this.field_44875);
+      RenderSystem.translatef(8.0F, 8.0F, 0.0F);
       RenderSystem.method_16403(1.0F, -1.0F, 1.0F);
       RenderSystem.method_16403(16.0F, 16.0F, 16.0F);
       class_7966 var7 = new class_7966();
@@ -365,7 +365,7 @@ public class ItemRenderer implements class_6491 {
          }
 
          if (class_8835.method_40635(var2)) {
-            RenderSystem.method_16491();
+            RenderSystem.disableDepthTest();
             RenderSystem.method_16354();
             RenderSystem.method_16458();
             RenderSystem.disableBlend();
@@ -398,7 +398,7 @@ public class ItemRenderer implements class_6491 {
          ClientPlayerEntity var20 = MinecraftClient.getInstance().thePlayer;
          float var22 = var20 != null ? var20.method_3173().method_32960(var2.method_27960(), MinecraftClient.getInstance().method_8554()) : 0.0F;
          if (var22 > 0.0F) {
-            RenderSystem.method_16491();
+            RenderSystem.disableDepthTest();
             RenderSystem.method_16354();
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();

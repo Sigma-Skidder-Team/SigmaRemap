@@ -112,7 +112,7 @@ public class class_556 extends class_1859 {
          (float)this.field_36261 + (float)((this.field_36278 - 47) / 2) * (!this.field_3305 ? 1.0F : -1.58F),
          18.0F,
          47.0F,
-         NotificationIcons.field_11022,
+         NotificationIcons.altselect,
          var6
       );
       GL11.glPopMatrix();

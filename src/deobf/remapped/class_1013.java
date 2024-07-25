@@ -122,7 +122,7 @@ public abstract class class_1013 {
          }
 
          var0.method_40862();
-         MinecraftClient.getInstance().getMainWindow().method_43194(var0.field_45439);
+         MinecraftClient.getInstance().getMainWindow().setFramerateLimit(var0.field_45439);
       },
       (var0, var1) -> {
          if (!var0.field_45502) {
@@ -164,7 +164,7 @@ public abstract class class_1013 {
    );
    public static final class_4802 field_5299 = new class_4802("options.rawMouseInput", var0 -> var0.field_45409, (var0, var1) -> {
       var0.field_45409 = var1;
-      Window var4 = MinecraftClient.getInstance().getMainWindow();
+      MainWindow var4 = MinecraftClient.getInstance().getMainWindow();
       if (var4 != null) {
          var4.method_43176(var1);
       }
@@ -255,7 +255,7 @@ public abstract class class_1013 {
    public static final class_4001 field_5251 = new class_4001(
       "options.guiScale",
       (var0, var1) -> var0.field_45484 = MathHelper.normalizeAngle(
-            var0.field_45484 + var1, MinecraftClient.getInstance().getMainWindow().method_43164(0, MinecraftClient.getInstance().method_8578()) + 1
+            var0.field_45484 + var1, MinecraftClient.getInstance().getMainWindow().calcGuiScale(0, MinecraftClient.getInstance().method_8578()) + 1
          ),
       (var0, var1) -> var0.field_45484 != 0 ? var1.method_4485(var0.field_45484) : var1.method_4492(new TranslationTextComponent("options.guiScale.auto"))
    );
@@ -348,9 +348,9 @@ public abstract class class_1013 {
    public static final class_4802 field_5246 = new class_4802("options.fullscreen", var0 -> var0.field_45453, (var0, var1) -> {
       var0.field_45453 = var1;
       MinecraftClient var4 = MinecraftClient.getInstance();
-      if (var4.getMainWindow() != null && var4.getMainWindow().method_43174() != var0.field_45453) {
-         var4.getMainWindow().method_43156();
-         var0.field_45453 = var4.getMainWindow().method_43174();
+      if (var4.getMainWindow() != null && var4.getMainWindow().isFullscreen() != var0.field_45453) {
+         var4.getMainWindow().toggleFullscreen();
+         var0.field_45453 = var4.getMainWindow().isFullscreen();
       }
    });
    public static final class_4802 field_5272 = new class_4802("options.viewBobbing", var0 -> var0.field_45512, (var0, var1) -> var0.field_45512 = var1);

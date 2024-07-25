@@ -21,7 +21,7 @@ public class class_5702 extends class_2596 {
    public class_5702() {
       super("Credits");
       this.method_32105(false);
-      this.field_28857 = NotificationIcons.method_10229("com/mentalfrostbyte/gui/resources/" + NotificationIcons.method_10230(), 0.075F, 8);
+      this.field_28857 = NotificationIcons.processImage("com/mentalfrostbyte/gui/resources/" + NotificationIcons.getPanorama(), 0.075F, 8);
       this.method_32148(
          this.field_28863 = new class_943(
             this,
@@ -105,7 +105,7 @@ public class class_5702 extends class_2596 {
 
    @Override
    public void method_32178(float var1) {
-      NotificationIcons.field_11026.method_38419();
+      NotificationIcons.cancelicon.method_38419();
       this.field_28865 = Math.max(0.0F, Math.min(this.field_28865 + 0.075F, 1.0F));
       if (this.field_28864) {
          this.field_28858.method_11119(class_4043.field_19620);
@@ -157,7 +157,7 @@ public class class_5702 extends class_2596 {
             class_314.method_1444(class_1255.field_6929.field_6917, 0.45F * this.field_28858.method_11123())
          );
          class_73.method_97(
-            (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), NotificationIcons.field_11049, this.field_28858.method_11123()
+            (float)(var11 + 20), (float)(var12 + 40), (float)(var8 + 30), (float)(var8 + 30), NotificationIcons.sigmamental, this.field_28858.method_11123()
          );
          short var13 = 165;
          byte var14 = 54;

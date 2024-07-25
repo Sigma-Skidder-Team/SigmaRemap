@@ -198,7 +198,7 @@ public class class_7309 {
          }
       }
 
-      return this.field_37382 != null ? this.field_37382 : NotificationIcons.field_10986;
+      return this.field_37382 != null ? this.field_37382 : NotificationIcons.altskin;
    }
 
    @Override

@@ -472,7 +472,7 @@ public class GameOptions {
                   }
 
                   if (this.field_45495.getMainWindow() != null) {
-                     this.field_45495.getMainWindow().method_43194(this.field_45439);
+                     this.field_45495.getMainWindow().setFramerateLimit(this.field_45439);
                   }
                }
 
@@ -769,8 +769,8 @@ public class GameOptions {
             var1.println("chatLineSpacing:" + this.field_45465);
             var1.println("textBackgroundOpacity:" + this.field_45563);
             var1.println("backgroundForChatOnly:" + this.field_45399);
-            if (this.field_45495.getMainWindow().method_43175().isPresent()) {
-               var1.println("fullscreenResolution:" + this.field_45495.getMainWindow().method_43175().get().method_25889());
+            if (this.field_45495.getMainWindow().getVideoMode().isPresent()) {
+               var1.println("fullscreenResolution:" + this.field_45495.getMainWindow().getVideoMode().get().method_25889());
             }
 
             var1.println("hideServerAddress:" + this.field_45513);

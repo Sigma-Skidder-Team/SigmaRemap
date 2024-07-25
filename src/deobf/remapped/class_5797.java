@@ -150,7 +150,7 @@ public final class class_5797 implements AutoCloseable {
    }
 
    public static void method_26227(boolean var0) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       if (!var0) {
          GlStateManager.method_8879(3553, 10242, 10497);
          GlStateManager.method_8879(3553, 10243, 10497);
@@ -161,7 +161,7 @@ public final class class_5797 implements AutoCloseable {
    }
 
    public static void method_26234(boolean var0, boolean var1) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       if (!var0) {
          int var4 = Config.method_14392();
          GlStateManager.method_8879(3553, 10241, !var1 ? 9728 : var4);
@@ -287,7 +287,7 @@ public final class class_5797 implements AutoCloseable {
    }
 
    private void method_26247(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, boolean var9, boolean var10, boolean var11) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       this.method_26254();
       method_26234(var8, var10);
       method_26227(var9);
@@ -307,7 +307,7 @@ public final class class_5797 implements AutoCloseable {
    }
 
    public void method_26229(int var1, boolean var2) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       this.method_26254();
       this.field_29284.method_26308();
       GlStateManager.method_8926(3553, var1, this.field_29284.method_26312(), 5121, this.field_29281);

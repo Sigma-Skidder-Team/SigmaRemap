@@ -120,7 +120,7 @@ public class class_8151 extends class_4314 {
 
          if (!var1.field_33055) {
             if (var5.method_28021("BlockEntityTag") == null) {
-               var10.method_36935(var1.getGameRules().getBoolean(GameRules.field_1057));
+               var10.method_36935(var1.getGameRules().getBoolean(GameRules.SEND_COMMAND_FEEDBACK));
                var9.method_33932(this == class_4783.field_23601);
             }
 

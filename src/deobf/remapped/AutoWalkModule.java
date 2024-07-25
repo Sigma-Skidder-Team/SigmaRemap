@@ -16,7 +16,7 @@ public class AutoWalkModule extends Module {
 
    @Override
    public void onDisable() {
-      int var3 = GLFW.glfwGetKey(client.window.method_43181(), client.gameOptions.keyForward.field_30027.field_17800);
+      int var3 = GLFW.glfwGetKey(client.window.getHandle(), client.gameOptions.keyForward.field_30027.field_17800);
       client.gameOptions.keyForward.pressed = var3 == 1;
    }
 }

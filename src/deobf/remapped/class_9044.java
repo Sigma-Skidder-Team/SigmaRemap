@@ -106,11 +106,11 @@ public class class_9044 extends Screen implements class_4361 {
       class_7797 var8 = this.field_46294;
       if (var8 != null) {
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)(var4 + 9), (float)(var5 + 18), 0.0F);
+         RenderSystem.translatef((float)(var4 + 9), (float)(var5 + 18), 0.0F);
          var8.method_35364(var1);
          RenderSystem.method_16489();
          RenderSystem.method_16457(515);
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
       } else {
          method_9774(var1, var4 + 9, var5 + 18, var4 + 9 + 234, var5 + 18 + 113, -16777216);
          int var9 = var4 + 9 + 117;
@@ -149,9 +149,9 @@ public class class_9044 extends Screen implements class_4361 {
       if (this.field_46294 != null) {
          RenderSystem.method_16438();
          RenderSystem.enableDepthTest();
-         RenderSystem.method_16413((float)(var4 + 9), (float)(var5 + 18), 400.0F);
+         RenderSystem.translatef((float)(var4 + 9), (float)(var5 + 18), 400.0F);
          this.field_46294.method_35363(var1, var2 - var4 - 9, var3 - var5 - 18, var4, var5);
-         RenderSystem.method_16491();
+         RenderSystem.disableDepthTest();
          RenderSystem.method_16489();
       }
 

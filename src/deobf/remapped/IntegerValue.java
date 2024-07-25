@@ -4,19 +4,19 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import java.util.function.BiConsumer;
 
-public class class_1997 extends class_9152<class_1997> {
+public class IntegerValue extends RuleValue<IntegerValue> {
    private int field_10146;
 
-   private static class_3275<class_1997> method_9279(int var0, BiConsumer<class_341, class_1997> var1) {
-      return new class_3275<class_1997>(IntegerArgumentType::integer, var1x -> new class_1997(var1x, var0), var1, class_2237::method_10291, null);
+   private static class_3275<IntegerValue> method_9279(int var0, BiConsumer<class_341, IntegerValue> var1) {
+      return new class_3275<IntegerValue>(IntegerArgumentType::integer, var1x -> new IntegerValue(var1x, var0), var1, class_2237::method_10291, null);
    }
 
-   private static class_3275<class_1997> method_9278(int var0) {
+   private static class_3275<IntegerValue> method_9278(int var0) {
       return method_9279(var0, (var0x, var1) -> {
       });
    }
 
-   public class_1997(class_3275<class_1997> var1, int var2) {
+   public IntegerValue(class_3275<IntegerValue> var1, int var2) {
       super(var1);
       this.field_10146 = var2;
    }
@@ -66,15 +66,15 @@ public class class_1997 extends class_9152<class_1997> {
       return this.field_10146;
    }
 
-   public class_1997 method_9271() {
+   public IntegerValue method_9271() {
       return this;
    }
 
-   public class_1997 method_9274() {
-      return new class_1997(this.field_46823, this.field_10146);
+   public IntegerValue method_9274() {
+      return new IntegerValue(this.field_46823, this.field_10146);
    }
 
-   public void method_9277(class_1997 var1, class_341 var2) {
+   public void method_9277(IntegerValue var1, class_341 var2) {
       this.field_10146 = var1.field_10146;
       this.method_42125(var2);
    }

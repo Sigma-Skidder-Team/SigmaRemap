@@ -244,7 +244,7 @@ public class class_3845 extends class_5467 {
    @Override
    public void method_8637() {
       super.method_8637();
-      if (!this.method_26449() && this.world.getGameRules().getBoolean(GameRules.field_1033)) {
+      if (!this.method_26449() && this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
          this.method_37313(class_4897.field_24631, 1);
       }
    }

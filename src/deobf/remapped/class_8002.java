@@ -203,7 +203,7 @@ public class class_8002 extends AbstractGui implements IRenderable, class_5888, 
    public void method_6767(class_7966 var1, int var2, int var3, float var4) {
       if (this.method_36314()) {
          RenderSystem.method_16438();
-         RenderSystem.method_16413(0.0F, 0.0F, 100.0F);
+         RenderSystem.translatef(0.0F, 0.0F, 100.0F);
          this.field_41006.getTextureManager().bindTexture(field_40990);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var7 = (this.field_41007 - 147) / 2 - this.field_40993;

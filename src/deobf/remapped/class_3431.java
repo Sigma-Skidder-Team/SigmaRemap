@@ -86,7 +86,7 @@ public class class_3431 extends class_9331<class_3683> implements class_474 {
       float var8 = (float)Math.atan((double)(var3 / 40.0F));
       float var9 = (float)Math.atan((double)(var4 / 40.0F));
       RenderSystem.method_16438();
-      RenderSystem.method_16413((float)var0, (float)var1, 1050.0F);
+      RenderSystem.translatef((float)var0, (float)var1, 1050.0F);
       RenderSystem.method_16403(1.0F, 1.0F, -1.0F);
       class_7966 var10 = new class_7966();
       var10.method_36065(0.0, 0.0, 1000.0);

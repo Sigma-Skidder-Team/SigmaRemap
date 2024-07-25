@@ -7,7 +7,7 @@ public class class_919 extends class_3533 {
    private static String[] field_4725;
    private final class_9521 field_4726;
 
-   public class_919(ITextComponent var1, List<class_7107> var2, String var3, class_5850 var4, class_5850 var5) {
+   public class_919(ITextComponent var1, List<class_7107> var2, String var3, BooleanValue var4, BooleanValue var5) {
       super(var1, var3, var2);
       this.field_4724 = var1;
       this.field_4726 = new class_2196(this, 10, 5, 44, 20, class_1402.method_6479(var5.method_26681()), var1x -> {

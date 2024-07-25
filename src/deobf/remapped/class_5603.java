@@ -97,7 +97,7 @@ public class class_5603 extends Screen {
    }
 
    private boolean method_25425() {
-      if (class_9732.method_44934(this.field_943.getMainWindow().method_43181(), 292)) {
+      if (class_9732.method_44934(this.field_943.getMainWindow().getHandle(), 292)) {
          return false;
       } else {
          this.method_25426();

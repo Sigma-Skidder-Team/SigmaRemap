@@ -166,7 +166,7 @@ public class class_293 {
          class_1343 var12 = var1.method_41627();
          var11.method_10820(var12.field_7336, var12.field_7333, var12.field_7334);
          GlStateManager.method_8932(7425);
-         GlStateManager.method_8745();
+         GlStateManager.enableDepthTest();
          GlStateManager.method_8862(515);
          GlStateManager.method_8867(true);
          GlStateManager.method_8895(true, true, true, true);
@@ -195,7 +195,7 @@ public class class_293 {
          class_6588.method_30273("shadow terrain cutout");
          var8.getTextureManager().method_35679(class_8359.field_42824).method_37057();
          GlStateManager.method_8932(7424);
-         GlStateManager.method_8785(516, 0.1F);
+         GlStateManager.alphaFunc(516, 0.1F);
          GlStateManager.method_8842(5888);
          GlStateManager.method_8761();
          GlStateManager.method_8757();
@@ -274,9 +274,9 @@ public class class_293 {
          GlStateManager.method_8867(true);
          GlStateManager.method_8775();
          GlStateManager.method_8918();
-         GlStateManager.method_8903();
-         GlStateManager.method_8816(770, 771, 1, 0);
-         GlStateManager.method_8785(516, 0.1F);
+         GlStateManager.enableCull();
+         GlStateManager.blendFuncSeparate(770, 771, 1, 0);
+         GlStateManager.alphaFunc(516, 0.1F);
          if (class_6588.field_33846 >= 2) {
             GlStateManager.method_8899(33989);
             class_6588.method_30273("pre copy shadow depth");
@@ -302,7 +302,7 @@ public class class_293 {
          GlStateManager.method_8855();
          GlStateManager.method_8932(7424);
          GlStateManager.method_8867(true);
-         GlStateManager.method_8903();
+         GlStateManager.enableCull();
          GlStateManager.method_8775();
          GL30.glFlush();
          class_6588.method_30273("shadow flush");
@@ -389,7 +389,7 @@ public class class_293 {
       }
 
       if (class_6588.method_30222(var0)) {
-         GlStateManager.method_8765();
+         GlStateManager.disableCull();
       }
 
       if (class_3776.method_17486()) {
@@ -407,7 +407,7 @@ public class class_293 {
       }
 
       if (class_6588.method_30222(var0)) {
-         GlStateManager.method_8903();
+         GlStateManager.enableCull();
       }
    }
 

@@ -58,7 +58,7 @@ public class class_223 extends class_608 implements class_9897, class_2354 {
             this.attackEntityFrom(DamageSource.field_31665, 1.0F);
          }
 
-         if (!this.world.getGameRules().getBoolean(GameRules.field_1047)) {
+         if (!this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
             return;
          }
 

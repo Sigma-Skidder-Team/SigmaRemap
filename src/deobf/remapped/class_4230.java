@@ -15,7 +15,7 @@ public class class_4230 {
    public int field_20529;
 
    public class_4230(int var1, int var2, boolean var3, boolean var4) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       this.field_20530 = var3;
       this.field_20527 = -1;
       this.field_20525 = -1;
@@ -37,8 +37,8 @@ public class class_4230 {
    }
 
    private void method_19721(int var1, int var2, boolean var3) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
-      GlStateManager.method_8745();
+      RenderSystem.assertThread(RenderSystem::method_16440);
+      GlStateManager.enableDepthTest();
       if (this.field_20527 >= 0) {
          this.method_19722();
       }
@@ -48,7 +48,7 @@ public class class_4230 {
    }
 
    public void method_19722() {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       this.method_19719();
       this.method_19723();
       if (this.field_20532 > -1) {
@@ -69,7 +69,7 @@ public class class_4230 {
    }
 
    public void method_19710(class_4230 var1) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       if (!GlStateManager.method_8795()) {
          GlStateManager.method_8893(class_6024.field_30769, this.field_20527);
          int var4 = GlStateManager.method_8748();
@@ -90,7 +90,7 @@ public class class_4230 {
    }
 
    public void method_19716(int var1, int var2, boolean var3) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       this.field_20526 = var1;
       this.field_20534 = var2;
       this.field_20533 = var1;
@@ -123,7 +123,7 @@ public class class_4230 {
    }
 
    public void method_19725(int var1) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       this.field_20529 = var1;
       GlStateManager.method_8791(this.field_20525);
       GlStateManager.method_8879(3553, 10241, var1);
@@ -134,7 +134,7 @@ public class class_4230 {
    }
 
    public void method_19718() {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       int var3 = GlStateManager.method_8916(class_6024.field_30769);
       if (var3 != class_6024.field_30761) {
          if (var3 != class_6024.field_30767) {
@@ -158,12 +158,12 @@ public class class_4230 {
    }
 
    public void method_19715() {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       GlStateManager.method_8791(this.field_20525);
    }
 
    public void method_19719() {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       GlStateManager.method_8791(0);
    }
 
@@ -176,7 +176,7 @@ public class class_4230 {
    }
 
    private void method_19711(boolean var1) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       GlStateManager.method_8893(class_6024.field_30769, this.field_20527);
       if (var1) {
          GlStateManager.method_8930(0, 0, this.field_20526, this.field_20534);
@@ -203,8 +203,8 @@ public class class_4230 {
    }
 
    public void method_19714(int var1, int var2, boolean var3) {
-      RenderSystem.method_16431(RenderSystem::method_16363);
-      if (RenderSystem.method_16395()) {
+      RenderSystem.assertThread(RenderSystem::method_16363);
+      if (RenderSystem.isInInitPhase()) {
          this.method_19707(var1, var2, var3);
       } else {
          RenderSystem.method_16474(() -> this.method_19707(var1, var2, var3));
@@ -212,16 +212,16 @@ public class class_4230 {
    }
 
    private void method_19707(int var1, int var2, boolean var3) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       GlStateManager.method_8895(true, true, true, false);
-      GlStateManager.method_8786();
+      GlStateManager.disableDepthTest();
       GlStateManager.method_8867(false);
       GlStateManager.method_8842(5889);
       GlStateManager.method_8865();
       GlStateManager.method_8781(0.0, (double)var1, (double)var2, 0.0, 1000.0, 3000.0);
       GlStateManager.method_8842(5888);
       GlStateManager.method_8865();
-      GlStateManager.method_8897(0.0F, 0.0F, -2000.0F);
+      GlStateManager.translatef(0.0F, 0.0F, -2000.0F);
       GlStateManager.method_8930(0, 0, var1, var2);
       GlStateManager.method_8843();
       GlStateManager.method_8912();
@@ -231,7 +231,7 @@ public class class_4230 {
          GlStateManager.method_8819();
       }
 
-      GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+      GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.method_19715();
       float var6 = (float)var1;
       float var7 = (float)var2;
@@ -251,7 +251,7 @@ public class class_4230 {
    }
 
    public void method_19712(boolean var1) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       this.method_19717(true);
       GlStateManager.method_8880(this.field_20528[0], this.field_20528[1], this.field_20528[2], this.field_20528[3]);
       short var4 = 16384;

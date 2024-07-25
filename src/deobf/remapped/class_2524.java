@@ -233,7 +233,7 @@ public class class_2524 {
          GlStateManager.method_8791(this.field_12508);
          class_1240.method_5531(this.field_12502, var12);
          GlStateManager.method_8757();
-         GlStateManager.method_8838(var2.method_36058().method_28620());
+         GlStateManager.multMatrix(var2.method_36058().method_28620());
          if (this.field_12513) {
             float var13 = 0.0F;
             if (this.field_12519 != (float)Math.round(this.field_12519)) {

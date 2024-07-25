@@ -24,7 +24,7 @@ public class RearViewModule extends PremiumModule {
    public void method_43924(class_5596 var1) {
       if (this.method_42015()) {
          if (field_48470 != null
-            && (field_48470.field_20526 != client.window.method_43178() || field_48470.field_20534 != client.window.method_43198())) {
+            && (field_48470.field_20526 != client.window.getFramebufferWidth() || field_48470.field_20534 != client.window.getFramebufferHeight())) {
             this.onEnable();
          }
 
@@ -105,8 +105,8 @@ public class RearViewModule extends PremiumModule {
                   field_48470,
                   var5,
                   var6,
-                  (double)(client.window.method_43178() - var7 - var5),
-                  (double)(client.window.method_43198() + var8)
+                  (double)(client.window.getFramebufferWidth() - var7 - var5),
+                  (double)(client.window.getFramebufferHeight() + var8)
                );
                RenderSystem.method_16489();
                RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
@@ -114,15 +114,15 @@ public class RearViewModule extends PremiumModule {
                RenderSystem.method_16476();
                RenderSystem.method_16376(
                   0.0,
-                  (double) client.window.method_43178() / client.window.method_43189(),
-                  (double) client.window.method_43198() / client.window.method_43189(),
+                  (double) client.window.getFramebufferWidth() / client.window.method_43189(),
+                  (double) client.window.getFramebufferHeight() / client.window.method_43189(),
                   0.0,
                   1000.0,
                   3000.0
                );
                RenderSystem.method_16463(5888);
                RenderSystem.method_16476();
-               RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
+               RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
                GL11.glScaled(
                   1.0 / client.window.method_43189() * (double) GUIManager.field_34898,
                   1.0 / client.window.method_43189() * (double) GUIManager.field_34898,
@@ -136,16 +136,16 @@ public class RearViewModule extends PremiumModule {
    }
 
    public void method_43927(class_4230 var1, int var2, int var3, double var4, double var6) {
-      var6 = var6 - (double) client.window.method_43198() + (double)var3;
+      var6 = var6 - (double) client.window.getFramebufferHeight() + (double)var3;
       RenderSystem.method_16405(true, true, true, false);
-      RenderSystem.method_16491();
+      RenderSystem.disableDepthTest();
       RenderSystem.method_16387(false);
       RenderSystem.method_16463(5889);
       RenderSystem.method_16476();
       RenderSystem.method_16376(0.0, (double)var2 + var4, (double)var3, 0.0, 1000.0, 3000.0);
       RenderSystem.method_16463(5888);
       RenderSystem.method_16476();
-      RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
+      RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
       RenderSystem.method_16392(0, 0, var2 + (int)var4, var3 - (int)var6);
       RenderSystem.method_16432();
       RenderSystem.method_16487();
@@ -214,7 +214,7 @@ public class RearViewModule extends PremiumModule {
    @Override
    public void onEnable() {
       class_73.method_95(client.method_8584());
-      field_48470 = new class_4230(client.window.method_43178(), client.window.method_43198(), true, MinecraftClient.IS_SYSTEM_MAC);
+      field_48470 = new class_4230(client.window.getFramebufferWidth(), client.window.getFramebufferHeight(), true, MinecraftClient.IS_SYSTEM_MAC);
       field_48470.method_19709(1.0F, 1.0F, 1.0F, 1.0F);
    }
 

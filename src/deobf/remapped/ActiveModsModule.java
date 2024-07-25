@@ -65,7 +65,7 @@ public class ActiveModsModule extends Module {
    private void method_38820(class_4459 var1) {
       if (this.method_42015() && client.thePlayer != null) {
          if (!var1.method_20668()) {
-            GlStateManager.method_8897(0.0F, (float)(-this.field_43170), 0.0F);
+            GlStateManager.translatef(0.0F, (float)(-this.field_43170), 0.0F);
          } else {
             class_1097 var4 = client.theWorld.method_29562();
             class_4399 var5 = null;
@@ -95,7 +95,7 @@ public class ActiveModsModule extends Module {
                this.field_43170 = 0;
             } else {
                this.field_43170 = (var15 - var13) / 2;
-               GlStateManager.method_8897(0.0F, (float)this.field_43170, 0.0F);
+               GlStateManager.translatef(0.0F, (float)this.field_43170, 0.0F);
             }
          }
       }
@@ -159,7 +159,7 @@ public class ActiveModsModule extends Module {
                   (float)(var7 - 20),
                   (float)var8.method_18547(var22) * 3.0F,
                   (float)(var8.method_15654() + var21 + 40),
-                  NotificationIcons.field_11045,
+                  NotificationIcons.altshadow,
                   class_314.method_1444(class_1255.field_6918.field_6917, 0.36F * var15 * var19)
                );
                class_73.method_87(

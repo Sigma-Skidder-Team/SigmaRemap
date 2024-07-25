@@ -37,7 +37,7 @@ public class class_9623<T extends class_6406> {
       }
 
       RenderSystem.method_16438();
-      RenderSystem.method_16413(
+      RenderSystem.translatef(
          (float)var1 - (float)this.field_49021.method_29239() * this.method_44420(var6), (float)(var2 * this.field_49021.method_29238()), (float)(800 + var2)
       );
       class_5068 var8 = this.field_49021.method_29236(var3, this.field_49020, var6 - this.field_49018);

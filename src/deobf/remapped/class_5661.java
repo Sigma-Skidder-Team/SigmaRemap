@@ -17,7 +17,7 @@ public class class_5661 extends class_6967 {
 
    @Override
    public boolean method_16795() {
-      if (this.field_28700.world.getGameRules().getBoolean(GameRules.field_1047)) {
+      if (this.field_28700.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
          if (this.field_35805 <= 0) {
             if (!this.method_25621()) {
                this.field_35805 = this.method_31862(this.field_35801);

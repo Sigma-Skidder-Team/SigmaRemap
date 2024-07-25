@@ -252,7 +252,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
 
          if (this.field_22699 > 0) {
             this.field_22699--;
-            if (this.field_22699 == 0 && this.world.getGameRules().getBoolean(GameRules.field_1047)) {
+            if (this.field_22699 == 0 && this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
                int var21 = MathHelper.floor(this.method_37309());
                int var24 = MathHelper.floor(this.getPosX());
                int var28 = MathHelper.floor(this.getPosZ());
@@ -287,7 +287,7 @@ public class class_4653 extends MonsterEntity implements class_7187, class_2354 
       } else {
          int var22 = this.method_21507() - 1;
          if (var22 <= 0) {
-            class_7298 var25 = !this.world.getGameRules().getBoolean(GameRules.field_1047) ? class_7298.field_37310 : class_7298.field_37311;
+            class_7298 var25 = !this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) ? class_7298.field_37310 : class_7298.field_37311;
             this.world.method_29574(this, this.getPosX(), this.method_37388(), this.getPosZ(), 7.0F, false, var25);
             if (!this.method_37378()) {
                this.world.method_29589(1023, this.method_37075(), 0);

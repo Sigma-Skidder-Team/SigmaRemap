@@ -135,7 +135,7 @@ public class class_5940 extends class_2612 {
          (float)(this.field_36257 - 46),
          22.0F,
          26.0F,
-         NotificationIcons.field_11060,
+         NotificationIcons.trashca,
          class_314.method_1444(!this.field_30297 ? class_1255.field_6929.field_6917 : class_1255.field_6928.field_6917, this.field_30293.method_11123() * 0.5F),
          false
       );

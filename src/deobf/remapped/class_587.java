@@ -70,7 +70,7 @@ public class class_587 extends class_4232 {
                this.field_943.gameOptions.method_40896(false);
             }
 
-            this.field_943.method_32777();
+            this.field_943.updateWindowSize();
          }
       }
    }

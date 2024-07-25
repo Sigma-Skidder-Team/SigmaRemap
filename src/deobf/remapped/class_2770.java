@@ -417,7 +417,7 @@ public class class_2770 extends MobEntity implements class_1869 {
                class_2522 var16 = this.world.method_28262(var15);
                class_6414 var17 = var16.method_8360();
                if (!var16.method_8345() && var16.method_8362() != class_5371.field_27434) {
-                  if (this.world.getGameRules().getBoolean(GameRules.field_1047) && !class_2351.field_11754.method_10609(var17)) {
+                  if (this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) && !class_2351.field_11754.method_10609(var17)) {
                      var11 = this.world.method_7508(var15, false) || var11;
                   } else {
                      var10 = true;
@@ -518,7 +518,7 @@ public class class_2770 extends MobEntity implements class_1869 {
             );
       }
 
-      boolean var6 = this.world.getGameRules().getBoolean(GameRules.field_1033);
+      boolean var6 = this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT);
       short var7 = 500;
       if (this.field_13524 != null && !this.field_13524.method_12777()) {
          var7 = 12000;

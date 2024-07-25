@@ -20,7 +20,7 @@ public class class_8111 {
    }
 
    public void method_36838(boolean var1) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       if (var1 != this.field_41543) {
          this.field_41543 = var1;
          if (!var1) {

@@ -29,8 +29,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.lwjgl.opengl.GL11;
 
-public class class_2026 {
-   private static MinecraftClient field_10270 = MinecraftClient.getInstance();
+public class MusicManager {
+   private static MinecraftClient client = MinecraftClient.getInstance();
    private boolean field_10295 = false;
    private Channel field_10298;
    private int field_10285 = 50;
@@ -59,11 +59,11 @@ public class class_2026 {
    private boolean field_10296 = false;
    private double field_10286 = 0.0;
 
-   public void method_9478() {
+   public void init() {
       SigmaMainClass.getInstance().getEventManager().subscribe2(this);
       this.method_9507();
-      if (!this.method_9468()) {
-         this.method_9477();
+      if (!this.youtubeDownloaderExists()) {
+         this.update();
       }
 
       this.field_10272 = false;
@@ -74,12 +74,12 @@ public class class_2026 {
       var3.method_5818("volume", this.field_10285);
       var3.method_5823("spectrum", this.field_10279);
       var3.method_5818("repeat", this.field_10282.field_33115);
-      SigmaMainClass.getInstance().method_3304().method_5820("music", var3);
+      SigmaMainClass.getInstance().getJSONObjectImpl().method_5820("music", var3);
    }
 
    private void method_9507() {
-      if (SigmaMainClass.getInstance().method_3304().method_5850("music")) {
-         JSONObjectImpl var3 = SigmaMainClass.getInstance().method_3304().method_5848("music");
+      if (SigmaMainClass.getInstance().getJSONObjectImpl().method_5850("music")) {
+         JSONObjectImpl var3 = SigmaMainClass.getInstance().getJSONObjectImpl().method_5848("music");
          if (var3 != null) {
             if (var3.method_5850("volume")) {
                this.field_10285 = Math.max(0, Math.min(100, var3.method_5813("volume")));
@@ -139,15 +139,15 @@ public class class_2026 {
          if (this.field_10271 != null) {
             if (this.field_10293.size() != 0) {
                float var3 = 114.0F;
-               float var4 = (float)Math.ceil((double)((float)field_10270.window.method_43166() / var3));
+               float var4 = (float)Math.ceil((double)((float) client.window.method_43166() / var3));
 
                for (int var5 = 0; (float)var5 < var3; var5++) {
                   float var6 = 1.0F - (float)(var5 + 1) / var3;
-                  float var7 = (float)field_10270.window.method_43163() / 1080.0F;
+                  float var7 = (float) client.window.method_43163() / 1080.0F;
                   float var8 = ((float)(Math.sqrt(this.field_10293.get(var5)) / 12.0) - 5.0F) * var7;
                   class_73.method_103(
                      (float)var5 * var4,
-                     (float)field_10270.window.method_43163() - var8,
+                     (float) client.window.method_43163() - var8,
                      var4,
                      var8,
                      class_314.method_1444(class_1255.field_6920.field_6917, 0.2F * var6)
@@ -157,15 +157,15 @@ public class class_2026 {
                class_73.method_107();
 
                for (int var13 = 0; (float)var13 < var3; var13++) {
-                  float var14 = (float)field_10270.window.method_43163() / 1080.0F;
+                  float var14 = (float) client.window.method_43163() / 1080.0F;
                   float var15 = ((float)(Math.sqrt(this.field_10293.get(var13)) / 12.0) - 5.0F) * var14;
-                  class_73.method_103((float)var13 * var4, (float)field_10270.window.method_43163() - var15, var4, var15, class_1255.field_6918.field_6917);
+                  class_73.method_103((float)var13 * var4, (float) client.window.method_43163() - var15, var4, var15, class_1255.field_6918.field_6917);
                }
 
                class_73.method_85(class_3118.field_15505);
                if (this.field_10271 != null && this.field_10292 != null) {
                   class_73.method_97(
-                     0.0F, 0.0F, (float)field_10270.window.method_43166(), (float)field_10270.window.method_43163(), this.field_10292, 0.4F
+                     0.0F, 0.0F, (float) client.window.method_43166(), (float) client.window.method_43163(), this.field_10292, 0.4F
                   );
                }
 
@@ -179,11 +179,11 @@ public class class_2026 {
 
                float var18 = 1.0F + (float)Math.round((float)(var9 / (double)(var16 - 1000)) * 0.14F * 75.0F) / 75.0F;
                GL11.glPushMatrix();
-               GL11.glTranslated(60.0, (double)(field_10270.window.method_43163() - 55), 0.0);
+               GL11.glTranslated(60.0, (double)(client.window.method_43163() - 55), 0.0);
                GL11.glScalef(var18, var18, 0.0F);
-               GL11.glTranslated(-60.0, (double)(-(field_10270.window.method_43163() - 55)), 0.0);
-               class_73.method_96(10.0F, (float)(field_10270.window.method_43163() - 110), 100.0F, 100.0F, this.field_10271);
-               class_73.method_128(10.0F, (float)(field_10270.window.method_43163() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
+               GL11.glTranslated(-60.0, (double)(-(client.window.method_43163() - 55)), 0.0);
+               class_73.method_96(10.0F, (float)(client.window.method_43163() - 110), 100.0F, 100.0F, this.field_10271);
+               class_73.method_128(10.0F, (float)(client.window.method_43163() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
                GL11.glPopMatrix();
                String[] var11 = this.field_10291.split(" - ");
                byte var12 = 30;
@@ -191,14 +191,14 @@ public class class_2026 {
                   class_73.method_87(
                      class_5320.field_27146,
                      130.0F,
-                     (float)(field_10270.window.method_43163() - 70),
+                     (float)(client.window.method_43163() - 70),
                      var11[0],
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.5F)
                   );
                   class_73.method_87(
                      class_5320.field_27139,
                      130.0F,
-                     (float)(field_10270.window.method_43163() - 70),
+                     (float)(client.window.method_43163() - 70),
                      var11[0],
                      class_314.method_1444(class_1255.field_6918.field_6917, 0.7F)
                   );
@@ -206,28 +206,28 @@ public class class_2026 {
                   class_73.method_87(
                      class_5320.field_27149,
                      130.0F,
-                     (float)(field_10270.window.method_43163() - 81),
+                     (float)(client.window.method_43163() - 81),
                      var11[0],
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.4F)
                   );
                   class_73.method_87(
                      class_5320.field_27146,
                      130.0F,
-                     (float)(field_10270.window.method_43163() - 56),
+                     (float)(client.window.method_43163() - 56),
                      var11[1],
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.5F)
                   );
                   class_73.method_87(
                      class_5320.field_27139,
                      130.0F,
-                     (float)(field_10270.window.method_43163() - 56),
+                     (float)(client.window.method_43163() - 56),
                      var11[1],
                      class_314.method_1444(class_1255.field_6918.field_6917, 0.7F)
                   );
                   class_73.method_87(
                      class_5320.field_27161,
                      130.0F,
-                     (float)(field_10270.window.method_43163() - 81),
+                     (float)(client.window.method_43163() - 81),
                      var11[0],
                      class_314.method_1444(class_1255.field_6918.field_6917, 0.6F)
                   );
@@ -245,7 +245,7 @@ public class class_2026 {
       }
 
       try {
-         if (this.field_10290 && this.field_10274 != null && this.field_10273 != null && this.field_10275 == null && !field_10270.method_8564()) {
+         if (this.field_10290 && this.field_10274 != null && this.field_10273 != null && this.field_10275 == null && !client.method_8564()) {
             if (this.field_10292 != null) {
                this.field_10292.method_38413();
             }
@@ -410,7 +410,7 @@ public class class_2026 {
                   } catch (IOException var24) {
                      if (var24.getMessage() != null && var24.getMessage().contains("403")) {
                         System.out.println("installing");
-                        this.method_9504();
+                        this.updateDependencies();
                      }
                   } catch (LineUnavailableException var25) {
                      var25.printStackTrace();
@@ -612,15 +612,6 @@ public class class_2026 {
          class_5171 var7 = class_9685.method_44781(var6);
          String var8 = var7.method_23699();
          return new URL(var8);
-      } catch (class_4231 var9) {
-         if (var9.getMessage() != null
-            && var9.getMessage().contains("ERROR: This video contains content from")
-            && var9.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-            SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("Now Playing", "Not available in your region."));
-         } else {
-            var9.printStackTrace();
-            this.method_9504();
-         }
       } catch (MalformedURLException var10) {
          class_314.method_1443("URL E " + var10.toString());
          var10.printStackTrace();
@@ -665,28 +656,28 @@ public class class_2026 {
       this.field_10296 = true;
    }
 
-   public boolean method_9468() {
-      File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/music/youtube-dl");
+   public boolean youtubeDownloaderExists() {
+      File var3 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/music/youtube-dl");
       if (Util.getOperatingSystem() == OperatingSystem.WINDOWS) {
-         var3 = new File(SigmaMainClass.getInstance().method_3334() + "/music/youtube-dl.exe");
+         var3 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/music/youtube-dl.exe");
       }
 
       return var3.exists();
    }
 
-   public void method_9477() {
+   public void update() {
       SigmaMainClass.getInstance().method_3326().method_12865("Updating dependencies threaded");
-      new Thread(() -> this.method_9504()).start();
+      new Thread(() -> this.updateDependencies()).start();
    }
 
-   public void method_9504() {
+   public void updateDependencies() {
       if (!this.field_10272) {
-         File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/music/");
+         File var3 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/music/");
          var3.mkdirs();
          SigmaMainClass.getInstance().method_3326().method_12865("Updating dependencies");
          if (Util.getOperatingSystem() == OperatingSystem.WINDOWS) {
             try {
-               File var4 = new File(SigmaMainClass.getInstance().method_3334() + "/music/youtube-dl.exe");
+               File var4 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/music/youtube-dl.exe");
                CloseableHttpClient var5 = HttpClients.createDefault();
                CloseableHttpResponse var6 = var5.execute(new HttpGet("https://youtube-dl.org/downloads/latest/youtube-dl.exe"));
                Throwable var7 = null;
@@ -719,7 +710,7 @@ public class class_2026 {
             }
          } else {
             try {
-               File var100 = new File(SigmaMainClass.getInstance().method_3334() + "/music/youtube-dl");
+               File var100 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/music/youtube-dl");
                CloseableHttpClient var101 = HttpClients.createDefault();
                CloseableHttpResponse var102 = var101.execute(new HttpGet("http://youtube-dl.org/downloads/latest/youtube-dl"));
                Throwable var103 = null;
@@ -758,7 +749,7 @@ public class class_2026 {
    }
 
    public String method_9491() {
-      String var3 = SigmaMainClass.getInstance().method_3334().getAbsolutePath() + "/music/youtube-dl";
+      String var3 = SigmaMainClass.getInstance().getSigmaFolder().getAbsolutePath() + "/music/youtube-dl";
       if (Util.getOperatingSystem() != OperatingSystem.WINDOWS) {
          File var4 = new File(var3);
          var4.setExecutable(true);

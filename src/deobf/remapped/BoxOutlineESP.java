@@ -20,7 +20,7 @@ public class BoxOutlineESP extends Module {
             this.method_18558(false);
             class_73.method_85(class_3118.field_15504);
             GL11.glLineWidth(3.0F);
-            RenderSystem.method_16442(518, 0.0F);
+            RenderSystem.alphaFunc(518, 0.0F);
             RenderSystem.enableAlphaTest();
             this.method_18561();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.1F);
@@ -58,11 +58,11 @@ public class BoxOutlineESP extends Module {
                         -var2.method_37074() * 5.5F,
                         var2.method_37086() * 44.0F,
                         var2.method_37074() * 21.0F,
-                        NotificationIcons.field_11045,
+                        NotificationIcons.altshadow,
                         this.field_19585,
                         false
                      );
-                     NotificationIcons.field_11044.method_38419();
+                     NotificationIcons.shouticon.method_38419();
                      GL11.glPopMatrix();
                   }
                }

@@ -348,7 +348,7 @@ public class class_2599 extends class_6993 implements class_3832 {
 
    @Override
    public boolean method_26873(ItemStack var1) {
-      return this.world.getGameRules().getBoolean(GameRules.field_1047) && this.method_26930() && class_134.method_511(this, var1);
+      return this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) && this.method_26930() && class_134.method_511(this, var1);
    }
 
    public boolean method_11787(ItemStack var1) {

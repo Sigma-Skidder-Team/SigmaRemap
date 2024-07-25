@@ -35,7 +35,7 @@ public class class_3549 implements class_1517 {
             this.field_17365.method_32976(this.field_17367);
             if (this.field_17367 <= 0) {
                this.field_17367 = 24000;
-               if (var1.getGameRules().getBoolean(GameRules.field_1028)) {
+               if (var1.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
                   int var6 = this.field_17368;
                   this.field_17368 = MathHelper.clamp(this.field_17368 + 25, 25, 75);
                   this.field_17365.method_32970(this.field_17368);

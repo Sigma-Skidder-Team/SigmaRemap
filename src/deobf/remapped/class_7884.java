@@ -28,7 +28,7 @@ public class class_7884 extends class_8143 {
    }
 
    public class_7884(int var1, int var2, boolean var3) {
-      RenderSystem.method_16431(RenderSystem::method_16363);
+      RenderSystem.assertThread(RenderSystem::method_16363);
       this.field_40345 = new class_5797(var1, var2, var3);
       class_4970.method_22840(this.method_37055(), this.field_40345.method_26228(), this.field_40345.method_26253());
       if (Config.method_14424()) {

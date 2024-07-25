@@ -19,7 +19,7 @@ public class class_9053 extends class_2550 {
    public void method_26160(class_7474 var1) {
       super.method_26160(var1);
       if (!this.world.field_33055) {
-         boolean var4 = this.world.getGameRules().getBoolean(GameRules.field_1047);
+         boolean var4 = this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING);
          this.world
             .method_29574(
                (Entity)null,

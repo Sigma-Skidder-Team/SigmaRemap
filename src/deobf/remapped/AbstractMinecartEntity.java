@@ -214,7 +214,7 @@ public abstract class AbstractMinecartEntity extends Entity {
 
    public void method_4743(DamageSource var1) {
       this.method_37204();
-      if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+      if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
          ItemStack var4 = new ItemStack(class_4897.field_24547);
          if (this.method_45507()) {
             var4.method_28032(this.method_45508());

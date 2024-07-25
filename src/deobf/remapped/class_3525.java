@@ -110,7 +110,7 @@ public class class_3525 {
    public void method_16280() {
       if (this.field_17274) {
          GlStateManager.method_8829();
-         GlStateManager.method_8816(this.field_17272, this.field_17273, this.field_17269, this.field_17271);
+         GlStateManager.blendFuncSeparate(this.field_17272, this.field_17273, this.field_17269, this.field_17271);
       } else {
          GlStateManager.method_8775();
       }

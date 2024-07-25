@@ -68,7 +68,7 @@ public class SpectatorGui extends AbstractGui implements class_3796 {
       if (var6 != class_3421.field_16839) {
          int var9 = (int)(var5 * 255.0F);
          RenderSystem.method_16438();
-         RenderSystem.method_16413((float)var3, var4, 0.0F);
+         RenderSystem.translatef((float)var3, var4, 0.0F);
          float var10 = !var6.method_35793() ? 0.25F : 1.0F;
          RenderSystem.color4f(var10, var10, var10, var5);
          var6.method_35795(var1, var10, var9);

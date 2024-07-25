@@ -16,7 +16,7 @@ public class NoteblockPlayerModule extends PremiumModule {
 
    public NoteblockPlayerModule() {
       super("NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs", Category.MISC);
-      File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/nbs");
+      File var3 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/nbs");
       if (var3.exists()) {
          this.field_41251 = new ArrayList<String>(Arrays.asList(var3.list()));
 
@@ -260,14 +260,14 @@ public class NoteblockPlayerModule extends PremiumModule {
          if (this.field_41251.isEmpty()) {
             class_314.method_1443("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
             class_314.method_1443("§cPlaying the only integrated demo song!");
-            this.field_41249 = class_4713.method_21790(NotificationIcons.method_10226("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
+            this.field_41249 = class_4713.method_21790(NotificationIcons.processBitmap("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
             if (this.field_41249 == null) {
                class_314.method_1443("§cError loading included song, wtf!");
                this.setEnabled2(false);
                return;
             }
          } else {
-            File var3 = new File(SigmaMainClass.getInstance().method_3334() + "/nbs/" + this.getStringValueByName("Song"));
+            File var3 = new File(SigmaMainClass.getInstance().getSigmaFolder() + "/nbs/" + this.getStringValueByName("Song"));
             this.field_41249 = class_4713.method_21789(var3);
             if (this.field_41249 == null) {
                class_314.method_1443("§cError loading song! Make sure song is saved as <= V3 format");

@@ -98,8 +98,8 @@ public class class_3004 extends class_446 {
 
          this.field_14744 = true;
          this.field_14752 = class_6324.method_28822(var6, this.field_36258, (float)this.method_32155(), var1, this.field_14754);
-         if (!class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 340)
-            && !class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 344)) {
+         if (!class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 340)
+            && !class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 344)) {
             this.field_14756 = this.field_14752;
          }
 
@@ -137,7 +137,7 @@ public class class_3004 extends class_446 {
             case 67:
                if (this.method_13722() && this.field_14756 != this.field_14746) {
                   GLFW.glfwSetClipboardString(
-                     MinecraftClient.getInstance().window.method_43181(),
+                     MinecraftClient.getInstance().window.getHandle(),
                      this.field_36275.substring(Math.min(this.field_14756, this.field_14746), Math.max(this.field_14756, this.field_14746))
                   );
                }
@@ -147,7 +147,7 @@ public class class_3004 extends class_446 {
                   String var12 = "";
 
                   try {
-                     var12 = GLFW.glfwGetClipboardString(MinecraftClient.getInstance().window.method_43181());
+                     var12 = GLFW.glfwGetClipboardString(MinecraftClient.getInstance().window.getHandle());
                      if (var12 == null) {
                         var12 = "";
                      }
@@ -176,7 +176,7 @@ public class class_3004 extends class_446 {
             case 88:
                if (this.method_13722() && this.field_14756 != this.field_14746) {
                   GLFW.glfwSetClipboardString(
-                     MinecraftClient.getInstance().window.method_43181(),
+                     MinecraftClient.getInstance().window.getHandle(),
                      this.field_36275.substring(Math.min(this.field_14756, this.field_14746), Math.max(this.field_14756, this.field_14746))
                   );
                   this.field_36275 = class_6324.method_28831(this.field_36275, "", this.field_14756, this.field_14746);
@@ -246,8 +246,8 @@ public class class_3004 extends class_446 {
                   }
                }
 
-               if (!class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 340)
-                  && !class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 344)) {
+               if (!class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 340)
+                  && !class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 344)) {
                   this.field_14756 = this.field_14752;
                }
                break;
@@ -273,22 +273,22 @@ public class class_3004 extends class_446 {
                   }
                }
 
-               if (!class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 340)
-                  && !class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 344)) {
+               if (!class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 340)
+                  && !class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 344)) {
                   this.field_14756 = this.field_14752;
                }
                break;
             case 268:
                this.field_14752 = 0;
-               if (!class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 340)
-                  && !class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 344)) {
+               if (!class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 340)
+                  && !class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 344)) {
                   this.field_14756 = this.field_14752;
                }
                break;
             case 269:
                this.field_14752 = this.field_36275.length();
-               if (!class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 340)
-                  && !class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 344)) {
+               if (!class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 340)
+                  && !class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 344)) {
                   this.field_14756 = this.field_14752;
                }
          }
@@ -296,9 +296,9 @@ public class class_3004 extends class_446 {
    }
 
    public boolean method_13722() {
-      return class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 341)
-         || class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 345)
-         || class_9732.method_44934(MinecraftClient.getInstance().window.method_43181(), 343);
+      return class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 341)
+         || class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 345)
+         || class_9732.method_44934(MinecraftClient.getInstance().window.getHandle(), 343);
    }
 
    @Override

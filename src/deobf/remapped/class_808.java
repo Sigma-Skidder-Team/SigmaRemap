@@ -31,7 +31,7 @@ public class class_808 extends class_1188 {
          }
 
          var2.getTextureManager().bindTexture(field_36678);
-         GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+         GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var7 = (!this.method_32703() ? 1 : 2) * 20;
          this.method_9781(var1, this.field_36670 + (int)(this.field_4311 * (float)(this.field_36671 - 8)), this.field_36674, 0, 46 + var7, 4, 20);
          this.method_9781(var1, this.field_36670 + (int)(this.field_4311 * (float)(this.field_36671 - 8)) + 4, this.field_36674, 196, 46 + var7, 4, 20);

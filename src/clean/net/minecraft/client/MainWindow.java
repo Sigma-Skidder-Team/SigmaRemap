@@ -602,7 +602,7 @@ public final class MainWindow implements AutoCloseable
 
     public static class GlException extends UndeclaredException
     {
-        private GlException(String messageIn)
+        public GlException(String messageIn)
         {
             super(messageIn);
         }

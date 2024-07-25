@@ -40,7 +40,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            NotificationIcons.field_11012,
+            NotificationIcons.singleplayerBut,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -52,7 +52,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            NotificationIcons.field_11015,
+            NotificationIcons.multiplayerBut,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -64,7 +64,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            NotificationIcons.field_10999,
+            NotificationIcons.shop,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -76,7 +76,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            NotificationIcons.field_11029,
+            NotificationIcons.optionsBut,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -88,7 +88,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
             this.method_7599(),
             128,
             128,
-            NotificationIcons.field_10990,
+            NotificationIcons.alt,
             new class_590(class_1255.field_6918.field_6917, class_1255.field_6929.field_6917)
          )
       );
@@ -181,11 +181,11 @@ public class AnotherSigmaMainMenu extends class_7038 {
    @Override
    public void method_32178(float var1) {
       this.method_32190();
-      class_8343 var4 = NotificationIcons.field_11032;
+      class_8343 var4 = NotificationIcons.logo_large;
       int var5 = var4.method_38415();
       int var6 = var4.method_38421();
       if (GUIManager.field_34898 > 1.0F) {
-         var4 = NotificationIcons.field_11058;
+         var4 = NotificationIcons.logo_large2x;
       }
 
       class_73.method_99(
@@ -193,7 +193,7 @@ public class AnotherSigmaMainMenu extends class_7038 {
          (float)(this.method_32137() / 2 - var6),
          (float)var5,
          (float)var6,
-         NotificationIcons.field_11032,
+         NotificationIcons.logo_large,
          class_314.method_1444(class_1255.field_6918.field_6917, var1)
       );
       super.method_32178(var1);

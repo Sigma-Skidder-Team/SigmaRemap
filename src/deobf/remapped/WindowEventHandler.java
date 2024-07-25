@@ -1,9 +1,9 @@
 package remapped;
 
 public interface WindowEventHandler {
-   void method_32778(boolean var1);
+   void setGameFocused(boolean var1);
 
-   void method_32777();
+   void updateWindowSize();
 
-   void method_32779();
+   void ignoreFirstMove();
 }

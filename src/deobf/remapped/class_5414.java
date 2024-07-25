@@ -26,14 +26,14 @@ public class class_5414 extends class_4855<class_3268> {
                this.method_36202(
                   new class_2154(
                      var10003,
-                     new TranslationTextComponent(((class_8094)var1x.getKey()).method_36744())
+                     new TranslationTextComponent(((GameRulesCategory)var1x.getKey()).method_36744())
                         .mergeStyle(new TextFormatting[]{TextFormatting.BOLD, TextFormatting.YELLOW})
                   )
                );
                ((Map)var1x.getValue())
                   .entrySet()
                   .stream()
-                  .sorted(Entry.comparingByKey(Comparator.comparing(class_7505::method_34215)))
+                  .sorted(Entry.comparingByKey(Comparator.comparing(RuleKey::getName)))
                   .forEach(var1xx -> this.method_36202((class_4686)var1xx.getValue()));
             }
          );

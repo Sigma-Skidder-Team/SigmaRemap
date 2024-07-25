@@ -77,7 +77,7 @@ public class class_5490 extends class_4641 {
 
    @Override
    public void method_21475(Entity var1) {
-      if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+      if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
          this.method_37155(SoundEvents.field_2198, 1.0F, 1.0F);
          if (var1 instanceof PlayerEntity) {
             PlayerEntity var4 = (PlayerEntity)var1;

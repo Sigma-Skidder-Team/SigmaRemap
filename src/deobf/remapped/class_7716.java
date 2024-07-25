@@ -9,7 +9,7 @@ public final class class_7716 extends class_4696 {
          RenderSystem.method_16463(5890);
          RenderSystem.method_16438();
          RenderSystem.method_16476();
-         RenderSystem.method_16413(var1, var2, 0.0F);
+         RenderSystem.translatef(var1, var2, 0.0F);
          RenderSystem.method_16463(5888);
       }, () -> {
          RenderSystem.method_16463(5890);

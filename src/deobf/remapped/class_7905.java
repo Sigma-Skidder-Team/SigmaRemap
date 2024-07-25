@@ -18,7 +18,7 @@ public class class_7905 extends class_8285 {
       if (this.field_42465.getAttackTarget() == null) {
          if (this.field_42465.method_26927().method_5591()) {
             Random var3 = this.field_42465.method_26594();
-            if (this.field_42465.world.getGameRules().getBoolean(GameRules.field_1047) && var3.nextInt(10) == 0) {
+            if (this.field_42465.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) && var3.nextInt(10) == 0) {
                this.field_40421 = Direction.method_1039(var3);
                BlockPos var4 = new BlockPos(this.field_42465.getPosX(), this.field_42465.method_37309() + 0.5, this.field_42465.getPosZ())
                   .method_6098(this.field_40421);

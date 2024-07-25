@@ -30,7 +30,7 @@ public class class_744 {
    private static void method_3380(class_9155 var0, class_9359 var1, GameType var2) {
       TranslationTextComponent var5 = new TranslationTextComponent("gameMode." + var2.getName());
       if (var0.method_42200() != var1) {
-         if (var0.method_42198().getGameRules().getBoolean(GameRules.field_1057)) {
+         if (var0.method_42198().getGameRules().getBoolean(GameRules.SEND_COMMAND_FEEDBACK)) {
             var1.method_26286(new TranslationTextComponent("gameMode.changed", var5), Util.NIL_UUID);
          }
 

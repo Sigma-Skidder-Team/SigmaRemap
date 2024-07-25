@@ -1191,7 +1191,7 @@ public class class_948 implements class_1243 {
                this.field_4880 = this.field_4877.method_1600().method_39984(this.field_4880, false);
                if (this.field_4877.method_1634()) {
                   this.field_4880.method_3155(GameType.SPECTATOR);
-                  this.field_4880.method_43235().getGameRules().<class_5850>method_1287(GameRules.field_1059).method_26684(false, this.field_4877);
+                  this.field_4880.method_43235().getGameRules().<BooleanValue>method_1287(GameRules.field_1059).method_26684(false, this.field_4877);
                }
             }
             break;

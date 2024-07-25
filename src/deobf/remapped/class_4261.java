@@ -218,7 +218,7 @@ public class class_4261 implements class_2072, AutoCloseable {
    }
 
    public void method_19843() {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       class_5564.method_25269(0);
       field_20639 = -1;
       field_20645 = null;
@@ -233,7 +233,7 @@ public class class_4261 implements class_2072, AutoCloseable {
    }
 
    public void method_19852() {
-      RenderSystem.method_16431(RenderSystem::method_16429);
+      RenderSystem.assertThread(RenderSystem::isOnGameThread);
       this.field_20648 = false;
       field_20645 = this;
       this.field_20636.method_1769();
@@ -268,18 +268,18 @@ public class class_4261 implements class_2072, AutoCloseable {
 
    @Nullable
    public class_3972 method_19846(String var1) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       return this.field_20653.get(var1);
    }
 
    public class_7049 method_19853(String var1) {
-      RenderSystem.method_16431(RenderSystem::method_16429);
+      RenderSystem.assertThread(RenderSystem::isOnGameThread);
       class_3972 var4 = this.method_19846(var1);
       return (class_7049)(var4 != null ? var4 : field_20654);
    }
 
    private void method_19851() {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       IntArrayList var3 = new IntArrayList();
 
       for (int var4 = 0; var4 < this.field_20642.size(); var4++) {

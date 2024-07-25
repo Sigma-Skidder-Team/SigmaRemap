@@ -76,11 +76,11 @@ public class class_1433 {
 
    public void method_6579(int var1, int var2) {
       GlStateManager.method_8912();
-      GlStateManager.method_8804();
+      GlStateManager.disableFog();
       class_8042 var5 = class_8042.method_36499();
       class_9633 var6 = var5.method_36501();
       Config.method_14266().bindTexture(this.field_7736);
-      GlStateManager.method_8789(1.0F, 1.0F, 1.0F, 1.0F);
+      GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = (float)(16 * this.field_7735);
       float var8 = (float)var1 / var7;
       float var9 = (float)var2 / var7;

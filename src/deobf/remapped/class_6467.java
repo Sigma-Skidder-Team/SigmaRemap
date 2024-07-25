@@ -54,7 +54,7 @@ public class class_6467 extends Module {
             boolean var18 = client.gameOptions.field_45568;
             RenderSystem.method_16487();
             RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
-            RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+            RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
             RenderSystem.enableBlend();
             client.gameOptions.field_45568 = false;
             this.method_29448(var9, var11, var13, var15, client.theTimer.field_32600, var17, this.field_32955);

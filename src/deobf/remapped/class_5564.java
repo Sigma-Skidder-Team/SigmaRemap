@@ -8,19 +8,19 @@ public class class_5564 {
    private static final Logger field_28286 = LogManager.getLogger();
 
    public static void method_25269(int var0) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       GlStateManager.method_8808(var0);
    }
 
    public static void method_25272(class_2072 var0) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       var0.method_9673().method_17227();
       var0.method_9674().method_17227();
       GlStateManager.method_8853(var0.method_9672());
    }
 
    public static int method_25273() throws IOException {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       int var2 = GlStateManager.method_8933();
       if (var2 > 0) {
          return var2;
@@ -30,7 +30,7 @@ public class class_5564 {
    }
 
    public static void method_25270(class_2072 var0) throws IOException {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       var0.method_9673().method_17228(var0);
       var0.method_9674().method_17228(var0);
       GlStateManager.method_8759(var0.method_9672());

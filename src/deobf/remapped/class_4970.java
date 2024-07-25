@@ -20,7 +20,7 @@ public class class_4970 {
    private static final Logger field_25744 = LogManager.getLogger();
 
    public static int method_22837() {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       if (!class_7665.field_38958) {
          return GlStateManager.method_8807();
       } else {
@@ -33,7 +33,7 @@ public class class_4970 {
    }
 
    public static void method_22838(int var0) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       GlStateManager.method_8904(var0);
    }
 
@@ -50,7 +50,7 @@ public class class_4970 {
    }
 
    public static void method_22843(class_2757 var0, int var1, int var2, int var3, int var4) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       method_22839(var1);
       if (var2 >= 0) {
          GlStateManager.method_8879(3553, 33085, var2);
@@ -65,7 +65,7 @@ public class class_4970 {
    }
 
    private static void method_22839(int var0) {
-      RenderSystem.method_16431(RenderSystem::method_16440);
+      RenderSystem.assertThread(RenderSystem::method_16440);
       GlStateManager.method_8791(var0);
    }
 
@@ -93,7 +93,7 @@ public class class_4970 {
    }
 
    public static String method_22845(InputStream var0) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       ByteBuffer var3 = null;
 
       try {
@@ -112,7 +112,7 @@ public class class_4970 {
    }
 
    public static void method_22836(IntBuffer var0, int var1, int var2) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       GL11.glPixelStorei(3312, 0);
       GL11.glPixelStorei(3313, 0);
       GL11.glPixelStorei(3314, 0);

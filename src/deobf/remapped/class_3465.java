@@ -29,7 +29,7 @@ public class class_3465 extends class_6414 {
 
    @Override
    public void method_10783(class_2522 var1, class_6331 var2, BlockPos var3, Random var4) {
-      if (var2.method_22572().method_40233() && var2.getGameRules().getBoolean(GameRules.field_1028) && var4.nextInt(2000) < var2.method_43370().method_2097()
+      if (var2.method_22572().method_40233() && var2.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING) && var4.nextInt(2000) < var2.method_43370().method_2097()
          )
        {
          while (var2.method_28262(var3).method_8350(this)) {

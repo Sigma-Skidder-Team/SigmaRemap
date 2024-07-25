@@ -112,7 +112,7 @@ public class BoatEntity extends Entity {
          this.method_37138();
          boolean var5 = var1.method_28372() instanceof PlayerEntity && ((PlayerEntity)var1.method_28372()).playerAbilities.isCreativeMode;
          if (var5 || this.method_42109() > 40.0F) {
-            if (!var5 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+            if (!var5 && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                this.method_37312(this.method_42090());
             }
 
@@ -758,7 +758,7 @@ public class BoatEntity extends Entity {
                this.method_37270(this.field_41706, 1.0F);
                if (!this.world.field_33055 && !this.field_41751) {
                   this.method_37204();
-                  if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+                  if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                      for (int var8 = 0; var8 < 3; var8++) {
                         this.method_37312(this.method_42112().method_17827());
                      }

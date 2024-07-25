@@ -50,7 +50,7 @@ public abstract class class_8722 extends class_3798 {
 
    @Override
    public void method_10706(World var1, BlockPos var2, class_4774 var3, Random var4) {
-      if (var1.getGameRules().getBoolean(GameRules.field_1035)) {
+      if (var1.getGameRules().getBoolean(GameRules.DO_FIRE_TICK)) {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
             for (int var8 = 0; var8 < 3; var8++) {

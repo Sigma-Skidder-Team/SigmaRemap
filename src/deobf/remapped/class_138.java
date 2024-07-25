@@ -23,7 +23,7 @@ public class class_138 {
    }
 
    private static void method_553(ByteBuffer var0, int var1, class_2868 var2, int var3) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       ((Buffer)var0).clear();
       if (var3 > 0) {
          var2.method_13179(MemoryUtil.memAddress(var0));

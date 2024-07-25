@@ -12,7 +12,7 @@ public class class_8385 extends class_5348 {
          }
       }, () -> {
          if (var2 != 519) {
-            RenderSystem.method_16491();
+            RenderSystem.disableDepthTest();
             RenderSystem.method_16457(515);
          }
       });

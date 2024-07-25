@@ -346,20 +346,20 @@ public abstract class Screen extends FocusableGui implements IScreen, IRenderabl
 
    public static boolean method_1185() {
       return !MinecraftClient.IS_SYSTEM_MAC
-         ? class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 341)
-            || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 345)
-         : class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 343)
-            || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 347);
+         ? class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 341)
+            || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 345)
+         : class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 343)
+            || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 347);
    }
 
    public static boolean method_1190() {
-      return class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 340)
-         || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 344);
+      return class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 340)
+         || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 344);
    }
 
    public static boolean method_1169() {
-      return class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 342)
-         || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().method_43181(), 346);
+      return class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 342)
+         || class_9732.method_44934(MinecraftClient.getInstance().getMainWindow().getHandle(), 346);
    }
 
    public static boolean method_1166(int var0) {

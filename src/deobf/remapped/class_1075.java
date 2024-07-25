@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 public class class_1075 extends class_3533 {
    private final class_1863 field_5871;
 
-   public class_1075(ITextComponent var1, List<class_7107> var2, String var3, class_1997 var4, class_1997 var5) {
+   public class_1075(ITextComponent var1, List<class_7107> var2, String var3, IntegerValue var4, IntegerValue var5) {
       super(var1, var3, var2);
       this.field_5872 = var1;
       this.field_5871 = new class_1863(var1.field_943.field_9668, 10, 5, 42, 20, var2.deepCopy().appendString("\n").appendString(var4).appendString("\n"));

@@ -17,13 +17,13 @@ public class class_3710 {
    }
 
    public void method_17228(class_2072 var1) {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       this.field_18202++;
       GlStateManager.method_8739(var1.method_9672(), this.field_18199);
    }
 
    public void method_17227() {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       this.field_18202--;
       if (this.field_18202 <= 0) {
          GlStateManager.method_8766(this.field_18199);
@@ -36,7 +36,7 @@ public class class_3710 {
    }
 
    public static class_3710 method_17225(class_7667 var0, String var1, InputStream var2, String var3) throws IOException {
-      RenderSystem.method_16431(RenderSystem::method_16366);
+      RenderSystem.assertThread(RenderSystem::method_16366);
       String var6 = class_4970.method_22845(var2);
       if (var6 != null) {
          int var7 = GlStateManager.method_8931(class_7667.method_34736(var0));

@@ -18,7 +18,7 @@ public class class_1973 {
       RenderSystem.method_16463(5889);
       RenderSystem.method_16438();
       RenderSystem.method_16476();
-      RenderSystem.method_16358(class_8107.method_36820(85.0, (float)var1.getMainWindow().method_43178() / (float)var1.getMainWindow().method_43198(), 0.05F, 10.0F));
+      RenderSystem.multMatrix(class_8107.method_36820(85.0, (float)var1.getMainWindow().getFramebufferWidth() / (float)var1.getMainWindow().getFramebufferHeight(), 0.05F, 10.0F));
       RenderSystem.method_16463(5888);
       RenderSystem.method_16438();
       RenderSystem.method_16476();
@@ -26,7 +26,7 @@ public class class_1973 {
       RenderSystem.method_16410(180.0F, 1.0F, 0.0F, 0.0F);
       RenderSystem.enableBlend();
       RenderSystem.method_16458();
-      RenderSystem.method_16393();
+      RenderSystem.disableCull();
       RenderSystem.method_16387(false);
       RenderSystem.defaultBlendFunc();
       byte var9 = 2;
@@ -36,7 +36,7 @@ public class class_1973 {
          float var11 = ((float)(var10 % 2) / 2.0F - 0.5F) / 256.0F;
          float var12 = ((float)(var10 / 2) / 2.0F - 0.5F) / 256.0F;
          float var13 = 0.0F;
-         RenderSystem.method_16413(var11, var12, 0.0F);
+         RenderSystem.translatef(var11, var12, 0.0F);
          RenderSystem.method_16410(var2, 1.0F, 0.0F, 0.0F);
          RenderSystem.method_16410(var3, 0.0F, 1.0F, 0.0F);
 
@@ -99,7 +99,7 @@ public class class_1973 {
       RenderSystem.method_16463(5888);
       RenderSystem.method_16489();
       RenderSystem.method_16387(true);
-      RenderSystem.method_16361();
+      RenderSystem.enableCull();
       RenderSystem.enableDepthTest();
    }
 

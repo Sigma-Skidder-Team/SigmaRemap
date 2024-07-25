@@ -56,7 +56,7 @@ public class class_5778 implements AutoCloseable {
          RenderSystem.method_16476();
          float var3 = 0.00390625F;
          RenderSystem.method_16403(0.00390625F, 0.00390625F, 0.00390625F);
-         RenderSystem.method_16413(8.0F, 8.0F, 8.0F);
+         RenderSystem.translatef(8.0F, 8.0F, 8.0F);
          RenderSystem.method_16463(5888);
          this.field_29184.getTextureManager().bindTexture(this.field_29192);
          RenderSystem.method_16490(3553, 10241, 9729);

@@ -19,7 +19,7 @@ public class class_4989 extends class_446 {
          );
          super.method_32178(var1 * (1.0F - var4));
          class_73.method_99(
-            0.0F, 0.0F, 20.0F, (float)this.field_36257, NotificationIcons.field_11018, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1)
+            0.0F, 0.0F, 20.0F, (float)this.field_36257, NotificationIcons.shadow_right, class_314.method_1444(class_1255.field_6918.field_6917, var4 * var1)
          );
       }
    }

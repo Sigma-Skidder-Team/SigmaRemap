@@ -452,7 +452,7 @@ public class class_496 extends class_5467 {
          }
       }
 
-      if (!this.world.method_22567() && this.field_41717.nextInt(700) == 0 && this.world.getGameRules().getBoolean(GameRules.field_1033)) {
+      if (!this.world.method_22567() && this.field_41717.nextInt(700) == 0 && this.world.getGameRules().getBoolean(GameRules.DO_MOB_LOOT)) {
          this.method_37312(class_4897.field_24592);
       }
    }

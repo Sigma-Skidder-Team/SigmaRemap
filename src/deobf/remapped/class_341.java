@@ -707,7 +707,7 @@ public abstract class class_341 extends ReentrantThreadExecutor<class_9320> impl
             this.field_1295.startSection("timeSync");
             this.field_1322
                .method_39958(
-                  new class_8508(var5.method_29546(), var5.method_29584(), var5.getGameRules().getBoolean(GameRules.field_1037)), var5.method_29545()
+                  new class_8508(var5.method_29546(), var5.method_29584(), var5.getGameRules().getBoolean(GameRules.DO_DAYLIGHT_CYCLE)), var5.method_29545()
                );
             this.field_1295.endSection();
          }

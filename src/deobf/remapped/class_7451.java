@@ -173,7 +173,7 @@ public class class_7451 extends class_4641 {
       if (!this.field_37976) {
          ItemStack var5 = this.method_33905();
          this.method_33912(ItemStack.EMPTY);
-         if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+         if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
             if (var1 instanceof PlayerEntity) {
                PlayerEntity var6 = (PlayerEntity)var1;
                if (var6.playerAbilities.isCreativeMode) {

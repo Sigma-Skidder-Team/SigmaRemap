@@ -178,7 +178,7 @@ public class class_3129 extends Screen {
       this.field_15540 += var4;
       float var10 = -this.field_15540 * this.field_15533;
       RenderSystem.method_16438();
-      RenderSystem.method_16413(0.0F, var10, 0.0F);
+      RenderSystem.translatef(0.0F, var10, 0.0F);
       this.field_943.getTextureManager().bindTexture(field_15538);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableAlphaTest();
@@ -197,7 +197,7 @@ public class class_3129 extends Screen {
          if (var12 == this.field_15535.size() - 1) {
             float var13 = (float)var11 + var10 - (float)(this.field_940 / 2 - 6);
             if (var13 < 0.0F) {
-               RenderSystem.method_16413(0.0F, -var13, 0.0F);
+               RenderSystem.translatef(0.0F, -var13, 0.0F);
             }
          }
 
@@ -217,7 +217,7 @@ public class class_3129 extends Screen {
       RenderSystem.method_16489();
       this.field_943.getTextureManager().bindTexture(field_15542);
       RenderSystem.enableBlend();
-      RenderSystem.method_16398(class_5033.field_26048, class_8535.field_43686);
+      RenderSystem.blendFunc(SourceFactor.ZERO, DestFactor.field_43686);
       int var16 = this.field_941;
       int var18 = this.field_940;
       class_8042 var14 = class_8042.method_36499();

@@ -54,7 +54,7 @@ public class class_4746 {
             field_22994.method_18750(field_22998.field_9596.field_20526, field_22998.field_9596.field_20534);
          }
 
-         RenderSystem.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
+         RenderSystem.blendFuncSeparate(SourceFactor.SRC_ALPHA, DestFactor.field_43697, SourceFactor.ONE, DestFactor.field_43699);
          RenderSystem.enableBlend();
          GL11.glDisable(2929);
          GL11.glDisable(3008);
@@ -66,15 +66,15 @@ public class class_4746 {
          RenderSystem.method_16476();
          RenderSystem.method_16376(
             0.0,
-            (double)field_22998.window.method_43178() / field_22998.window.method_43189(),
-            (double)field_22998.window.method_43198() / field_22998.window.method_43189(),
+            (double)field_22998.window.getFramebufferWidth() / field_22998.window.method_43189(),
+            (double)field_22998.window.getFramebufferHeight() / field_22998.window.method_43189(),
             0.0,
             1000.0,
             3000.0
          );
          RenderSystem.method_16463(5888);
          RenderSystem.method_16476();
-         RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
+         RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
@@ -106,15 +106,15 @@ public class class_4746 {
          RenderSystem.method_16476();
          RenderSystem.method_16376(
             0.0,
-            (double)field_22998.window.method_43178() / field_22998.window.method_43189(),
-            (double)field_22998.window.method_43198() / field_22998.window.method_43189(),
+            (double)field_22998.window.getFramebufferWidth() / field_22998.window.method_43189(),
+            (double)field_22998.window.getFramebufferHeight() / field_22998.window.method_43189(),
             0.0,
             1000.0,
             3000.0
          );
          RenderSystem.method_16463(5888);
          RenderSystem.method_16476();
-         RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
+         RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,
             1.0 / field_22998.window.method_43189() * (double) GUIManager.field_34898,

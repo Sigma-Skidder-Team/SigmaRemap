@@ -83,7 +83,7 @@ public class class_9142 extends class_122 implements class_6375 {
             (float)var11.method_18548(var13) / 3.0F,
             (float)(var11.method_18547(var13) * 2),
             (float)var11.method_18548(var13) * 3.0F,
-            NotificationIcons.field_11045,
+            NotificationIcons.altshadow,
             var12 * 0.6F
          );
          class_73.method_87(

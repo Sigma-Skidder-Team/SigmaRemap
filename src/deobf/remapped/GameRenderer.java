@@ -148,7 +148,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
          try {
             this.field_40620 = new class_4067(this.field_40612.getTextureManager(), this.field_40604, this.field_40612.method_8584(), var1);
-            this.field_40620.method_18750(this.field_40612.getMainWindow().method_43178(), this.field_40612.getMainWindow().method_43198());
+            this.field_40620.method_18750(this.field_40612.getMainWindow().getFramebufferWidth(), this.field_40612.getMainWindow().getFramebufferHeight());
             this.field_40610 = true;
          } catch (IOException var5) {
             field_40642.warn("Failed to load shader: {}", var1, var5);
@@ -452,7 +452,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    public void method_35947(class_8107 var1) {
       RenderSystem.method_16463(5889);
       RenderSystem.method_16476();
-      RenderSystem.method_16358(var1);
+      RenderSystem.multMatrix(var1);
       RenderSystem.method_16463(5888);
    }
 
@@ -478,7 +478,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          .method_36832(
             class_8107.method_36820(
                this.method_35940(var1, var2, var3),
-               (float)this.field_40612.getMainWindow().method_43178() / (float)this.field_40612.getMainWindow().method_43198(),
+               (float)this.field_40612.getMainWindow().getFramebufferWidth() / (float)this.field_40612.getMainWindow().getFramebufferHeight(),
                0.05F,
                this.field_40603
             )
@@ -528,7 +528,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             this.field_40612.worldRenderer.method_20069();
             if (this.field_40620 != null && this.field_40610) {
                RenderSystem.disableBlend();
-               RenderSystem.method_16491();
+               RenderSystem.disableDepthTest();
                RenderSystem.method_16458();
                RenderSystem.method_16432();
                RenderSystem.method_16463(5890);
@@ -541,17 +541,17 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
             this.field_40612.method_8584().method_19717(true);
          } else {
-            RenderSystem.method_16392(0, 0, this.field_40612.getMainWindow().method_43178(), this.field_40612.getMainWindow().method_43198());
+            RenderSystem.method_16392(0, 0, this.field_40612.getMainWindow().getFramebufferWidth(), this.field_40612.getMainWindow().getFramebufferHeight());
          }
 
-         Window var9 = this.field_40612.getMainWindow();
+         MainWindow var9 = this.field_40612.getMainWindow();
          RenderSystem.method_16402(256, MinecraftClient.IS_SYSTEM_MAC);
          RenderSystem.method_16463(5889);
          RenderSystem.method_16476();
-         RenderSystem.method_16376(0.0, (double)var9.method_43178() / var9.method_43189(), (double)var9.method_43198() / var9.method_43189(), 0.0, 1000.0, 3000.0);
+         RenderSystem.method_16376(0.0, (double)var9.getFramebufferWidth() / var9.method_43189(), (double)var9.getFramebufferHeight() / var9.method_43189(), 0.0, 1000.0, 3000.0);
          RenderSystem.method_16463(5888);
          RenderSystem.method_16476();
-         RenderSystem.method_16413(0.0F, 0.0F, -2000.0F);
+         RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          class_2083.method_9717();
          class_7966 var10 = new class_7966();
          if (this.field_40623.method_26135()) {
@@ -570,7 +570,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
             if (!this.field_40612.gameOptions.hideGUI || this.field_40612.field_9623 != null) {
                RenderSystem.method_16433();
                this.method_35921(this.field_40612.getMainWindow().getScaledWidth(), this.field_40612.getMainWindow().getScaledHeight(), var1);
-               NotificationIcons.field_11030.method_38419();
+               NotificationIcons.gingerbread.method_38419();
                this.field_40612.field_9614.renderIngameGui(var10, var1);
                if (this.field_40612.gameOptions.field_45385 && !this.field_40612.gameOptions.field_45470) {
                   Config.method_14343(var10);
@@ -640,8 +640,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
                         "Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %f",
                         this.field_40612.getMainWindow().getScaledWidth(),
                         this.field_40612.getMainWindow().getScaledHeight(),
-                        this.field_40612.getMainWindow().method_43178(),
-                        this.field_40612.getMainWindow().method_43198(),
+                        this.field_40612.getMainWindow().getFramebufferWidth(),
+                        this.field_40612.getMainWindow().getFramebufferHeight(),
                         this.field_40612.getMainWindow().method_43189()
                      )
                );
@@ -664,7 +664,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
    private void method_35942() {
       if (this.field_40612.worldRenderer.method_20044() > 10 && this.field_40612.worldRenderer.method_20019() && !this.field_40612.method_8515().method_1612()) {
          class_5797 var3 = class_5523.method_25038(
-            this.field_40612.getMainWindow().method_43178(), this.field_40612.getMainWindow().method_43198(), this.field_40612.method_8584()
+            this.field_40612.getMainWindow().getFramebufferWidth(), this.field_40612.getMainWindow().getFramebufferHeight(), this.field_40612.method_8584()
          );
          Util.getIoWorkerExecutor().execute(() -> {
             int var4 = var3.method_26228();
@@ -807,7 +807,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
       this.field_40612.getProfiler().method_16050("hand");
       RenderSystem.method_16438();
-      RenderSystem.method_16358(var4.method_36058().method_28620());
+      RenderSystem.multMatrix(var4.method_36058().method_28620());
       SigmaMainClass.getInstance().method_3316();
       RenderSystem.method_16489();
       if (this.field_40627 && !class_6588.field_33945) {
@@ -1040,7 +1040,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
          RenderSystem.method_16438();
          RenderSystem.method_16451();
          RenderSystem.enableDepthTest();
-         RenderSystem.method_16393();
+         RenderSystem.disableCull();
          class_7966 var14 = new class_7966();
          var14.method_36063();
          var14.method_36065(
@@ -1059,8 +1059,8 @@ public class GameRenderer implements class_6491, AutoCloseable {
          var16.method_17415();
          RenderSystem.method_16399();
          RenderSystem.method_16489();
-         RenderSystem.method_16361();
-         RenderSystem.method_16491();
+         RenderSystem.enableCull();
+         RenderSystem.disableDepthTest();
       }
    }
 
@@ -1075,10 +1075,10 @@ public class GameRenderer implements class_6491, AutoCloseable {
       double var13 = (double)var5 * var6;
       double var15 = ((double)var4 - var11) / 2.0;
       double var17 = ((double)var5 - var13) / 2.0;
-      RenderSystem.method_16491();
+      RenderSystem.disableDepthTest();
       RenderSystem.method_16387(false);
       RenderSystem.enableBlend();
-      RenderSystem.method_16425(class_5033.field_26047, class_8535.field_43691, class_5033.field_26047, class_8535.field_43691);
+      RenderSystem.blendFuncSeparate(SourceFactor.ONE, DestFactor.field_43691, SourceFactor.ONE, DestFactor.field_43691);
       RenderSystem.color4f(var8, var9, var10, 1.0F);
       this.field_40612.getTextureManager().bindTexture(field_40614);
       class_8042 var19 = class_8042.method_36499();

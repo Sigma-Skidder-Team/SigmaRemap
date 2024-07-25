@@ -133,7 +133,7 @@ public class class_3407 extends class_4178 {
             (float)(this.method_32173() + 60),
             (float)this.method_32109(),
             18.0F,
-            NotificationIcons.field_10992,
+            NotificationIcons.shadow_bottom,
             class_314.method_1444(class_1255.field_6918.field_6917, var1 * this.field_16773 * 0.5F)
          );
       }

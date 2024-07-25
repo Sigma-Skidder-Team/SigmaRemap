@@ -25,7 +25,7 @@ public class class_7400 extends class_1859 {
    public void method_32178(float var1) {
       this.field_37775 = SigmaMainClass.getInstance().getAccountManager().method_23081();
       String var4 = "Log in";
-      class_8343 var5 = NotificationIcons.field_11054;
+      class_8343 var5 = NotificationIcons.account;
       if (this.field_37775 != null) {
          var4 = this.field_37775.field_19615;
       }

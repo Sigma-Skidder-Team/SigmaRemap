@@ -64,7 +64,7 @@ public class class_7995 implements AutoCloseable {
    public void method_36283(class_8107 var1, int var2) {
       RenderSystem.method_16438();
       RenderSystem.method_16476();
-      RenderSystem.method_16358(var1);
+      RenderSystem.multMatrix(var1);
       if (this.field_40967 > 0) {
          var2 = this.field_40967;
       }

@@ -108,7 +108,7 @@ public class class_9715 extends class_292 implements class_4511 {
    @Override
    public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+      if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
          this.method_37312(class_4783.field_23698);
       }
    }

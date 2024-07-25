@@ -19,7 +19,7 @@ public abstract class class_292 extends AbstractMinecartEntity implements class_
    @Override
    public void method_4743(DamageSource var1) {
       super.method_4743(var1);
-      if (this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+      if (this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
          class_1573.method_7105(this.world, this, this);
          if (!this.world.field_33055) {
             Entity var4 = var1.method_28353();

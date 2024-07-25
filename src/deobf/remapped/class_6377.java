@@ -196,8 +196,8 @@ public class class_6377 {
    }
 
    public static void method_29162() {
-      RenderSystem.method_16460(0.0F);
-      RenderSystem.method_16365(class_5084.field_26251);
+      RenderSystem.fogDensity(0.0F);
+      RenderSystem.fogMode(FogMode.field_26251);
    }
 
    public static void method_29159(Camera var0, class_1026 var1, float var2, boolean var3) {
@@ -251,9 +251,9 @@ public class class_6377 {
                var11 = 1.0F;
             }
 
-            RenderSystem.method_16419(var10);
-            RenderSystem.method_16470(var11);
-            RenderSystem.method_16365(class_5084.field_26248);
+            RenderSystem.fogStart(var10);
+            RenderSystem.fogEnd(var11);
+            RenderSystem.fogMode(FogMode.field_26248);
             RenderSystem.method_16396();
             if (class_7860.field_39952.method_3596()) {
                class_7860.method_35547(class_7860.field_39952, var1, var0, var4, var11);
@@ -270,16 +270,16 @@ public class class_6377 {
                }
             }
 
-            RenderSystem.method_16460(var14);
-            RenderSystem.method_16365(class_5084.field_26251);
+            RenderSystem.fogDensity(var14);
+            RenderSystem.fogMode(FogMode.field_26251);
          }
       } else {
-         GlStateManager.method_8784(var9);
+         GlStateManager.fogDensity(var9);
       }
    }
 
    public static void method_29161() {
-      RenderSystem.method_16434(2918, field_32578, field_32585, field_32584, 1.0F);
+      RenderSystem.fog(2918, field_32578, field_32585, field_32584, 1.0F);
       if (Config.method_14424()) {
          class_6588.method_30291(field_32578, field_32585, field_32584);
       }

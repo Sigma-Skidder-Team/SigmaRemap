@@ -115,12 +115,12 @@ public abstract class AbstractGui {
    }
 
    public void method_9784(int var1, int var2, BiConsumer<Integer, Integer> var3) {
-      RenderSystem.method_16425(class_5033.field_26048, class_8535.field_43697, class_5033.field_26042, class_8535.field_43697);
+      RenderSystem.blendFuncSeparate(SourceFactor.ZERO, DestFactor.field_43697, SourceFactor.SRC_ALPHA, DestFactor.field_43697);
       var3.accept(var1 + 1, var2);
       var3.accept(var1 - 1, var2);
       var3.accept(var1, var2 + 1);
       var3.accept(var1, var2 - 1);
-      RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
+      RenderSystem.blendFunc(SourceFactor.SRC_ALPHA, DestFactor.field_43697);
       var3.accept(var1, var2);
    }
 

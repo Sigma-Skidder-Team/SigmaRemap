@@ -17,7 +17,7 @@ public class class_3096 extends class_3558 {
       if (this.field_15406.method_17809() == null) {
          if (!this.field_15406.method_33825()) {
             if (this.field_15406.field_41697 >= this.field_17437) {
-               if (this.field_15406.field_41768.method_29537().method_1285(GameRules.field_1047)) {
+               if (this.field_15406.field_41768.method_29537().method_1285(GameRules.MOB_GRIEFING)) {
                   List var3 = this.field_15406
                      .field_41768
                      .<class_8031>method_25863(

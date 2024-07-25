@@ -41,13 +41,13 @@ public class GUIManager {
       field_34907 = GLFW.glfwCreateStandardCursor(221185);
       field_34905 = GLFW.glfwCreateStandardCursor(221188);
       field_34903 = GLFW.glfwCreateStandardCursor(221186);
-      GLFW.glfwSetCursor(MinecraftClient.getInstance().window.method_43181(), field_34907);
-      field_34898 = (float)(MinecraftClient.getInstance().window.method_43198() / MinecraftClient.getInstance().window.method_43163());
+      GLFW.glfwSetCursor(MinecraftClient.getInstance().window.getHandle(), field_34907);
+      field_34898 = (float)(MinecraftClient.getInstance().window.getFramebufferHeight() / MinecraftClient.getInstance().window.method_43163());
    }
 
    public void method_31006() {
       field_34895.clear();
-      field_34895.put(class_1876.class, MainMenu.class);
+      field_34895.put(Screen.class, MainMenu.class);
       field_34895.put(ClassicClickGUI.class, ClassicMenu.class);
    }
 
@@ -189,7 +189,7 @@ public class GUIManager {
    }
 
    public void method_30983() {
-      NotificationIcons.field_11030.method_38419();
+      NotificationIcons.gingerbread.method_38419();
       if (MinecraftClient.getInstance().theWorld != null) {
          GL11.glDisable(2896);
          int var3 = 0;
@@ -213,7 +213,7 @@ public class GUIManager {
             class_73.method_87(class_3054.field_15002, 72.0F, 1.0F, "5.0.0", class_314.method_1444(var8, Math.min(1.0F, var7 * 1.4F)));
          } else {
             GL11.glAlphaFunc(519, 0.0F);
-            class_73.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? NotificationIcons.field_10995 : NotificationIcons.field_11024);
+            class_73.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? NotificationIcons.watermark : NotificationIcons.watermark2x);
          }
 
          SigmaMainClass.getInstance().getEventManager().call(new class_3278());
@@ -284,7 +284,7 @@ public class GUIManager {
       MinecraftClient.getInstance();
       if (MinecraftClient.IS_SYSTEM_MAC) {
          try {
-            JSONObjectImpl var2 = class_357.method_1789(new File(SigmaMainClass.getInstance().method_3334() + "/config.json"));
+            JSONObjectImpl var2 = class_357.method_1789(new File(SigmaMainClass.getInstance().getSigmaFolder() + "/config.json"));
             if (var2.method_5850("hidpicocoa")) {
                field_34914 = var2.method_5826("hidpicocoa");
             }
@@ -301,7 +301,7 @@ public class GUIManager {
          JSONObjectImpl var4 = null;
 
          try {
-            var4 = SigmaMainClass.getInstance().method_3304().method_5848(this.field_34904.method_32176());
+            var4 = SigmaMainClass.getInstance().getJSONObjectImpl().method_5848(this.field_34904.method_32176());
          } catch (Exception var9) {
             var4 = new JSONObjectImpl();
          } finally {
@@ -344,7 +344,7 @@ public class GUIManager {
 
    public void method_30991() {
       if (this.field_34904 != null) {
-         this.method_31013(SigmaMainClass.getInstance().method_3304());
+         this.method_31013(SigmaMainClass.getInstance().getJSONObjectImpl());
 
          try {
             this.field_34904 = (class_2596)this.field_34904.getClass().newInstance();
@@ -352,13 +352,13 @@ public class GUIManager {
             var4.printStackTrace();
          }
 
-         this.method_30994(SigmaMainClass.getInstance().method_3304());
+         this.method_30994(SigmaMainClass.getInstance().getJSONObjectImpl());
       }
 
       if (MinecraftClient.getInstance().window.method_43166() != 0 && MinecraftClient.getInstance().window.method_43163() != 0) {
          field_34898 = (float)Math.max(
-            MinecraftClient.getInstance().window.method_43178() / MinecraftClient.getInstance().window.method_43166(),
-            MinecraftClient.getInstance().window.method_43198() / MinecraftClient.getInstance().window.method_43163()
+            MinecraftClient.getInstance().window.getFramebufferWidth() / MinecraftClient.getInstance().window.method_43166(),
+            MinecraftClient.getInstance().window.getFramebufferHeight() / MinecraftClient.getInstance().window.method_43163()
          );
       }
 
@@ -375,12 +375,12 @@ public class GUIManager {
 
    public void method_30990(class_2596 var1) {
       if (this.field_34904 != null) {
-         this.method_31013(SigmaMainClass.getInstance().method_3304());
+         this.method_31013(SigmaMainClass.getInstance().getJSONObjectImpl());
       }
 
       this.field_34904 = var1;
       this.field_34900 = field_34907;
-      this.method_30994(SigmaMainClass.getInstance().method_3304());
+      this.method_30994(SigmaMainClass.getInstance().getJSONObjectImpl());
       if (this.field_34904 != null) {
          this.field_34904.method_32145(this.field_34894[0], this.field_34894[1]);
       }

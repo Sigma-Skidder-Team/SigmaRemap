@@ -11,7 +11,7 @@ import net.minecraft.util.text.event.ClickEvent$class_47;
 import org.apache.commons.lang3.StringUtils;
 
 public class HypixelGamePlay extends Module {
-   private GamePlayModule field_16172;
+   private GamePlayModule parentModule;
 
    public HypixelGamePlay() {
       super(Category.MISC, "Hypixel", "Gameplay for Hypixel");
@@ -21,7 +21,7 @@ public class HypixelGamePlay extends Module {
 
    @Override
    public void method_42012() {
-      this.field_16172 = (GamePlayModule)this.getModule();
+      this.parentModule = (GamePlayModule)this.getModule();
    }
 
    @EventListen
@@ -39,7 +39,7 @@ public class HypixelGamePlay extends Module {
             if (SigmaMainClass.getInstance().getModuleManager().getModuleByClass(NameProtectModule.class).method_42015()) {
             }
 
-            if (this.field_16172.method_42007("AutoL")) {
+            if (this.parentModule.getStringValueByName("AutoL") != null) {
                String[] var8 = new String[]{"MULTI ", "PENTA ", "QUADRA ", "TRIPLE ", "DOUBLE ", ""};
                boolean var9 = false;
 
@@ -52,7 +52,7 @@ public class HypixelGamePlay extends Module {
                if (var9) {
                   String[] var33 = var6.split(" ");
                   if (var33.length > 3) {
-                     this.field_16172.method_33596(var33[3]);
+                     this.parentModule.method_33596(var33[3]);
                   }
                }
 
@@ -95,7 +95,7 @@ public class HypixelGamePlay extends Module {
                   }
 
                   if (var15 > 2) {
-                     this.field_16172.method_33596(var6);
+                     this.parentModule.method_33596(var6);
                   }
                }
             }
@@ -110,18 +110,18 @@ public class HypixelGamePlay extends Module {
             }
 
             if (var6.contains("Want to play again? Click here! ") || var6.contains("coins! (Win)")) {
-               if (this.field_16172.method_42007("Auto Join")) {
+               if (this.parentModule.method_42007("Auto Join")) {
                   for (ITextComponent var32 : var5.method_23768().getSiblings()) {
                      ClickEvent var36 = var32.getStyle().getClickEvent();
                      if (var36 != null && var36.getAction() == ClickEvent$class_47.RUN_COMMAND) {
-                        class_1508 var37 = new class_1508(var36.getValue(), (long)this.field_16172.getFloatValueByName("Auto Join delay") * 1000L);
-                        this.field_16172.method_33594(var37);
+                        class_1508 var37 = new class_1508(var36.getValue(), (long)this.parentModule.getFloatValueByName("Auto Join delay") * 1000L);
+                        this.parentModule.method_33594(var37);
                      }
                   }
                }
 
-               if (this.field_16172.method_42007("AutoGG")) {
-                  this.field_16172.method_33593();
+               if (this.parentModule.method_42007("AutoGG")) {
+                  this.parentModule.method_33593();
                }
             }
          } else if (var4 instanceof class_8077 && this.method_42007("Hide infos")) {

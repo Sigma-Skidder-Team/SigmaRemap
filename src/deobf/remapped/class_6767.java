@@ -1,7 +1,7 @@
 package remapped;
 
 public class class_6767 implements class_5987 {
-   public class_6767(class_2026 var1) {
+   public class_6767(MusicManager var1) {
       this.field_34924 = var1;
    }
 

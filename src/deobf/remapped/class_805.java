@@ -14,7 +14,7 @@ public class class_805 extends class_6967 {
    @Override
    public boolean method_16795() {
       if (this.field_35805 <= 0) {
-         if (!this.field_4300.world.getGameRules().getBoolean(GameRules.field_1047)) {
+         if (!this.field_4300.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING)) {
             return false;
          }
 

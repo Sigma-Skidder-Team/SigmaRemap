@@ -10,159 +10,159 @@ import javax.imageio.ImageIO;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class NotificationIcons {
-   public static class_8343 field_11015;
-   public static class_8343 field_11029;
-   public static class_8343 field_11012;
-   public static class_8343 field_10999;
-   public static class_8343 field_10990;
-   public static class_8343 field_11032;
-   public static class_8343 field_11058;
-   public static class_8343 field_11025;
-   public static class_8343 field_11047;
-   public static class_8343[] field_11059 = new class_8343[1];
-   public static class_8343 field_11014;
-   public static class_8343 field_11060;
-   public static class_8343 field_10995;
-   public static class_8343 field_11024;
-   public static class_8343 field_11010;
-   public static class_8343 field_11018;
-   public static class_8343 field_10997;
-   public static class_8343 field_10992;
-   public static class_8343 field_11057;
-   public static class_8343 field_11051;
-   public static class_8343 field_11013;
-   public static class_8343 field_11038;
-   public static class_8343 field_11005;
-   public static class_8343 field_11037;
-   public static class_8343 field_11000;
-   public static class_8343 field_11046;
-   public static class_8343 field_11040;
-   public static class_8343 field_11041;
-   public static class_8343 field_11009;
-   public static class_8343 field_11006;
-   public static class_8343 field_11055;
-   public static class_8343 field_11028;
-   public static class_8343 field_11050;
-   public static class_8343 field_11044;
-   public static class_8343 field_11017;
-   public static class_8343 field_10993;
-   public static class_8343 field_11026;
-   public static class_8343 field_11004;
-   public static class_8343 field_11030;
-   public static class_8343 field_11034;
-   public static class_8343 field_10996;
-   public static class_8343 field_11019;
-   public static class_8343 field_11022;
-   public static class_8343 field_11008;
-   public static class_8343 field_11052;
-   public static class_8343 field_11045;
-   public static class_8343 field_11027;
-   public static class_8343 field_10986;
-   public static class_8343 field_11056;
-   public static class_8343 field_11023;
-   public static class_8343 field_11049;
-   public static class_8343 field_11021;
-   public static class_8343 field_11001;
-   public static class_8343 field_11053;
-   public static class_8343 field_10989;
-   public static class_8343 field_11007;
-   public static class_8343 field_11054;
-   public static class_8343 field_10991;
-   public static class_8343 field_11048;
-   public static class_8343 field_11035;
-   public static class_8343 field_11003;
-   public static class_8343 field_11036;
-   public static class_8343 field_11042;
-   public static class_8343 field_11016;
-   public static class_8343 field_11011;
-   public static class_8343 field_11033;
-   public static class_8343 field_11039;
-   public static class_8343 field_10998;
-   public static class_8343 field_11031;
-   public static class_8343 field_10994;
-   public static class_8343 field_11043;
+   public static class_8343 multiplayerBut;
+   public static class_8343 optionsBut;
+   public static class_8343 singleplayerBut;
+   public static class_8343 shop;
+   public static class_8343 alt;
+   public static class_8343 logo_large;
+   public static class_8343 logo_large2x;
+   public static class_8343 verticalscrollbartop;
+   public static class_8343 verticalscrollbarbottom;
+   public static class_8343[] panorama5A = new class_8343[1];
+   public static class_8343 check;
+   public static class_8343 trashca;
+   public static class_8343 watermark;
+   public static class_8343 watermark2x;
+   public static class_8343 shadow_left;
+   public static class_8343 shadow_right;
+   public static class_8343 shadow_top;
+   public static class_8343 shadow_bottom;
+   public static class_8343 shadow_corner;
+   public static class_8343 shadow_corner_2;
+   public static class_8343 shadow_corner_3;
+   public static class_8343 shadow_corner_4;
+   public static class_8343 panorama5;
+   public static class_8343 musicplay;
+   public static class_8343 musicpause;
+   public static class_8343 musicforwards;
+   public static class_8343 musicbackwards;
+   public static class_8343 musicbg;
+   public static class_8343 musicartwork;
+   public static class_8343 musicparticle;
+   public static class_8343 musicrepeat;
+   public static class_8343 playicon;
+   public static class_8343 infoicon;
+   public static class_8343 shouticon;
+   public static class_8343 alerticon;
+   public static class_8343 directionicon;
+   public static class_8343 cancelicon;
+   public static class_8343 doneicon;
+   public static class_8343 gingerbread;
+   public static class_8343 floating_border;
+   public static class_8343 floating_corner;
+   public static class_8343 altcercle;
+   public static class_8343 altselect;
+   public static class_8343 altactive;
+   public static class_8343 alterrors;
+   public static class_8343 altshadow;
+   public static class_8343 altimg;
+   public static class_8343 altskin;
+   public static class_8343 loadingindicator;
+   public static class_8343 mentalfrostbyte;
+   public static class_8343 sigmamental;
+   public static class_8343 tomymental;
+   public static class_8343 andro;
+   public static class_8343 lp;
+   public static class_8343 cx;
+   public static class_8343 cody;
+   public static class_8343 account;
+   public static class_8343 waypoint;
+   public static class_8343 noaddons;
+   public static class_8343 jello;
+   public static class_8343 sigma;
+   public static class_8343 search;
+   public static class_8343 options;
+   public static class_8343 dvd;
+   public static class_8343 gem;
+   public static class_8343 foreground;
+   public static class_8343 background;
+   public static class_8343 middle;
+   public static class_8343 youtube;
+   public static class_8343 guilded;
+   public static class_8343 reddit;
    private static byte[] field_10987 = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
    private static byte[] field_11002 = new byte[]{89, -73, -35, -84, 17, -87, -79, -44};
-   public static final String field_11020 = "com/mentalfrostbyte/gui/resources/";
+   public static final String resourcePath = "com/mentalfrostbyte/gui/resources/";
 
    public static void initList() {
-      field_11015 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/multiplayer.png");
-      field_11029 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/options.png");
-      field_11012 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/singleplayer.png");
-      field_10999 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/shop.png");
-      field_10990 = method_10231("com/mentalfrostbyte/gui/resources/jello/icons/alt.png");
-      field_11059[0] = method_10231("com/mentalfrostbyte/gui/resources/" + method_10230());
-      field_11032 = method_10231("com/mentalfrostbyte/gui/resources/jello/logo_large.png");
-      field_11058 = method_10231("com/mentalfrostbyte/gui/resources/jello/logo_large@2x.png");
-      field_11010 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_left.png");
-      field_11018 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_right.png");
-      field_10997 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_top.png");
-      field_10992 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_bottom.png");
-      field_11057 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_corner.png");
-      field_11051 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_corner_2.png");
-      field_11013 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_corner_3.png");
-      field_11038 = method_10231("com/mentalfrostbyte/gui/resources/jello/shadow_corner_4.png");
-      field_10996 = method_10231("com/mentalfrostbyte/gui/resources/jello/floating_corner.png");
-      field_11034 = method_10231("com/mentalfrostbyte/gui/resources/jello/floating_border.png");
-      field_11025 = method_10231("com/mentalfrostbyte/gui/resources/component/verticalscrollbartop.png");
-      field_11047 = method_10231("com/mentalfrostbyte/gui/resources/component/verticalscrollbarbottom.png");
-      field_11014 = method_10231("com/mentalfrostbyte/gui/resources/component/check.png");
-      field_10991 = method_10231("com/mentalfrostbyte/gui/resources/component/waypoint.png");
-      field_11060 = method_10231("com/mentalfrostbyte/gui/resources/component/trashcan.png");
-      field_11011 = method_10231("com/mentalfrostbyte/gui/resources/sigma/gem.png");
-      field_10995 = method_10231("com/mentalfrostbyte/gui/resources/sigma/jello_watermark.png");
-      field_11024 = method_10231("com/mentalfrostbyte/gui/resources/sigma/jello_watermark@2x.png");
-      field_11037 = method_10231("com/mentalfrostbyte/gui/resources/music/play.png");
-      field_11000 = method_10231("com/mentalfrostbyte/gui/resources/music/pause.png");
-      field_11046 = method_10231("com/mentalfrostbyte/gui/resources/music/forwards.png");
-      field_11040 = method_10231("com/mentalfrostbyte/gui/resources/music/backwards.png");
-      field_11041 = method_10231("com/mentalfrostbyte/gui/resources/music/bg.png");
-      field_11009 = method_10231("com/mentalfrostbyte/gui/resources/music/artwork.png");
-      field_11006 = method_10231("com/mentalfrostbyte/gui/resources/music/particle.png");
-      field_11055 = method_10231("com/mentalfrostbyte/gui/resources/music/repeat.png");
-      field_11028 = method_10231("com/mentalfrostbyte/gui/resources/notifications/play-icon.png");
-      field_11050 = method_10231("com/mentalfrostbyte/gui/resources/notifications/info-icon.png");
-      field_11044 = method_10231("com/mentalfrostbyte/gui/resources/notifications/shout-icon.png");
-      field_11017 = method_10231("com/mentalfrostbyte/gui/resources/notifications/alert-icon.png");
-      field_10993 = method_10231("com/mentalfrostbyte/gui/resources/notifications/direction-icon.png");
-      field_11026 = method_10231("com/mentalfrostbyte/gui/resources/notifications/cancel-icon.png");
-      field_11004 = method_10231("com/mentalfrostbyte/gui/resources/notifications/done-icon.png");
-      field_11030 = method_10231("com/mentalfrostbyte/gui/resources/notifications/gingerbread-icon.png");
-      field_11019 = method_10231("com/mentalfrostbyte/gui/resources/alt/cercle.png");
-      field_11022 = method_10231("com/mentalfrostbyte/gui/resources/alt/select.png");
-      field_11008 = method_10231("com/mentalfrostbyte/gui/resources/alt/active.png");
-      field_11052 = method_10231("com/mentalfrostbyte/gui/resources/alt/errors.png");
-      field_11045 = method_10231("com/mentalfrostbyte/gui/resources/alt/shadow.png");
-      field_11027 = method_10231("com/mentalfrostbyte/gui/resources/alt/img.png");
-      field_10986 = method_10231("com/mentalfrostbyte/gui/resources/alt/skin.png");
-      field_11048 = method_10231("com/mentalfrostbyte/gui/resources/loading/noaddons.png");
-      field_11035 = method_10231("com/mentalfrostbyte/gui/resources/loading/jello.png");
-      field_11003 = method_10231("com/mentalfrostbyte/gui/resources/loading/sigma.png");
-      field_11056 = method_10231("com/mentalfrostbyte/gui/resources/jello/loading_indicator.png");
-      field_11036 = method_10231("com/mentalfrostbyte/gui/resources/jello/search.png");
-      field_11042 = method_10231("com/mentalfrostbyte/gui/resources/jello/options.png");
-      field_11023 = method_10231("com/mentalfrostbyte/gui/resources/mentalfrostbyte/mentalfrostbyte.png");
-      field_11049 = method_10231("com/mentalfrostbyte/gui/resources/mentalfrostbyte/sigma.png");
-      field_11021 = method_10231("com/mentalfrostbyte/gui/resources/mentalfrostbyte/tomy.png");
-      field_11001 = method_10231("com/mentalfrostbyte/gui/resources/sigma/andro.png");
-      field_11053 = method_10231("com/mentalfrostbyte/gui/resources/sigma/lp.png");
-      field_10989 = method_10231("com/mentalfrostbyte/gui/resources/user/cx.png");
-      field_11007 = method_10231("com/mentalfrostbyte/gui/resources/user/cody.png");
-      field_11054 = method_10231("com/mentalfrostbyte/gui/resources/jello/account.png");
-      field_11033 = method_10231("com/mentalfrostbyte/gui/resources/background/foreground.png");
-      field_11039 = method_10231("com/mentalfrostbyte/gui/resources/background/background.png");
-      field_10998 = method_10231("com/mentalfrostbyte/gui/resources/background/middle.png");
-      field_11031 = method_10231("com/mentalfrostbyte/gui/resources/loading/youtube.png");
-      field_10994 = method_10231("com/mentalfrostbyte/gui/resources/loading/guilded.png");
-      field_11043 = method_10231("com/mentalfrostbyte/gui/resources/loading/reddit.png");
-      field_11016 = method_10231("com/mentalfrostbyte/gui/resources/jello/dvd.png");
-      field_11005 = method_10233("com/mentalfrostbyte/gui/resources/" + method_10230(), 0.25F, 30);
+      multiplayerBut = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/multiplayer.png");
+      optionsBut = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/options.png");
+      singleplayerBut = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/singleplayer.png");
+      shop = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/shop.png");
+      alt = loadTexture("com/mentalfrostbyte/gui/resources/jello/icons/alt.png");
+      panorama5A[0] = loadTexture("com/mentalfrostbyte/gui/resources/" + getPanorama());
+      logo_large = loadTexture("com/mentalfrostbyte/gui/resources/jello/logo_large.png");
+      logo_large2x = loadTexture("com/mentalfrostbyte/gui/resources/jello/logo_large@2x.png");
+      shadow_left = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_left.png");
+      shadow_right = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_right.png");
+      shadow_top = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_top.png");
+      shadow_bottom = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_bottom.png");
+      shadow_corner = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_corner.png");
+      shadow_corner_2 = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_corner_2.png");
+      shadow_corner_3 = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_corner_3.png");
+      shadow_corner_4 = loadTexture("com/mentalfrostbyte/gui/resources/jello/shadow_corner_4.png");
+      floating_corner = loadTexture("com/mentalfrostbyte/gui/resources/jello/floating_corner.png");
+      floating_border = loadTexture("com/mentalfrostbyte/gui/resources/jello/floating_border.png");
+      verticalscrollbartop = loadTexture("com/mentalfrostbyte/gui/resources/component/verticalscrollbartop.png");
+      verticalscrollbarbottom = loadTexture("com/mentalfrostbyte/gui/resources/component/verticalscrollbarbottom.png");
+      check = loadTexture("com/mentalfrostbyte/gui/resources/component/check.png");
+      waypoint = loadTexture("com/mentalfrostbyte/gui/resources/component/waypoint.png");
+      trashca = loadTexture("com/mentalfrostbyte/gui/resources/component/trashcan.png");
+      gem = loadTexture("com/mentalfrostbyte/gui/resources/sigma/gem.png");
+      watermark = loadTexture("com/mentalfrostbyte/gui/resources/sigma/jello_watermark.png");
+      watermark2x = loadTexture("com/mentalfrostbyte/gui/resources/sigma/jello_watermark@2x.png");
+      musicplay = loadTexture("com/mentalfrostbyte/gui/resources/music/play.png");
+      musicpause = loadTexture("com/mentalfrostbyte/gui/resources/music/pause.png");
+      musicforwards = loadTexture("com/mentalfrostbyte/gui/resources/music/forwards.png");
+      musicbackwards = loadTexture("com/mentalfrostbyte/gui/resources/music/backwards.png");
+      musicbg = loadTexture("com/mentalfrostbyte/gui/resources/music/bg.png");
+      musicartwork = loadTexture("com/mentalfrostbyte/gui/resources/music/artwork.png");
+      musicparticle = loadTexture("com/mentalfrostbyte/gui/resources/music/particle.png");
+      musicrepeat = loadTexture("com/mentalfrostbyte/gui/resources/music/repeat.png");
+      playicon = loadTexture("com/mentalfrostbyte/gui/resources/notifications/play-icon.png");
+      infoicon = loadTexture("com/mentalfrostbyte/gui/resources/notifications/info-icon.png");
+      shouticon = loadTexture("com/mentalfrostbyte/gui/resources/notifications/shout-icon.png");
+      alerticon = loadTexture("com/mentalfrostbyte/gui/resources/notifications/alert-icon.png");
+      directionicon = loadTexture("com/mentalfrostbyte/gui/resources/notifications/direction-icon.png");
+      cancelicon = loadTexture("com/mentalfrostbyte/gui/resources/notifications/cancel-icon.png");
+      doneicon = loadTexture("com/mentalfrostbyte/gui/resources/notifications/done-icon.png");
+      gingerbread = loadTexture("com/mentalfrostbyte/gui/resources/notifications/gingerbread-icon.png");
+      altcercle = loadTexture("com/mentalfrostbyte/gui/resources/alt/cercle.png");
+      altselect = loadTexture("com/mentalfrostbyte/gui/resources/alt/select.png");
+      altactive = loadTexture("com/mentalfrostbyte/gui/resources/alt/active.png");
+      alterrors = loadTexture("com/mentalfrostbyte/gui/resources/alt/errors.png");
+      altshadow = loadTexture("com/mentalfrostbyte/gui/resources/alt/shadow.png");
+      altimg = loadTexture("com/mentalfrostbyte/gui/resources/alt/img.png");
+      altskin = loadTexture("com/mentalfrostbyte/gui/resources/alt/skin.png");
+      noaddons = loadTexture("com/mentalfrostbyte/gui/resources/loading/noaddons.png");
+      jello = loadTexture("com/mentalfrostbyte/gui/resources/loading/jello.png");
+      sigma = loadTexture("com/mentalfrostbyte/gui/resources/loading/sigma.png");
+      loadingindicator = loadTexture("com/mentalfrostbyte/gui/resources/jello/loading_indicator.png");
+      search = loadTexture("com/mentalfrostbyte/gui/resources/jello/search.png");
+      options = loadTexture("com/mentalfrostbyte/gui/resources/jello/options.png");
+      mentalfrostbyte = loadTexture("com/mentalfrostbyte/gui/resources/mentalfrostbyte/mentalfrostbyte.png");
+      sigmamental = loadTexture("com/mentalfrostbyte/gui/resources/mentalfrostbyte/sigma.png");
+      tomymental = loadTexture("com/mentalfrostbyte/gui/resources/mentalfrostbyte/tomy.png");
+      andro = loadTexture("com/mentalfrostbyte/gui/resources/sigma/andro.png");
+      lp = loadTexture("com/mentalfrostbyte/gui/resources/sigma/lp.png");
+      cx = loadTexture("com/mentalfrostbyte/gui/resources/user/cx.png");
+      cody = loadTexture("com/mentalfrostbyte/gui/resources/user/cody.png");
+      account = loadTexture("com/mentalfrostbyte/gui/resources/jello/account.png");
+      foreground = loadTexture("com/mentalfrostbyte/gui/resources/background/foreground.png");
+      background = loadTexture("com/mentalfrostbyte/gui/resources/background/background.png");
+      middle = loadTexture("com/mentalfrostbyte/gui/resources/background/middle.png");
+      youtube = loadTexture("com/mentalfrostbyte/gui/resources/loading/youtube.png");
+      guilded = loadTexture("com/mentalfrostbyte/gui/resources/loading/guilded.png");
+      reddit = loadTexture("com/mentalfrostbyte/gui/resources/loading/reddit.png");
+      dvd = loadTexture("com/mentalfrostbyte/gui/resources/jello/dvd.png");
+      panorama5 = processImage1("com/mentalfrostbyte/gui/resources/" + getPanorama(), 0.25F, 30);
    }
 
-   public static class_8343 method_10231(String var0) {
+   public static class_8343 loadTexture(String var0) {
       try {
          String var3 = var0.substring(var0.lastIndexOf(".") + 1).toUpperCase();
-         return method_10232(var0, var3);
+         return processTexture(var0, var3);
       } catch (Exception var4) {
          var4.printStackTrace();
          SigmaMainClass.getInstance()
@@ -176,11 +176,11 @@ public class NotificationIcons {
       }
    }
 
-   public static class_8343 method_10232(String var0, String var1) {
+   public static class_8343 processTexture(String var0, String var1) {
       try {
-         return class_2487.method_11386(var1, method_10226(var0));
+         return class_2487.method_11386(var1, processBitmap(var0));
       } catch (IOException var24) {
-         try (InputStream var5 = method_10226(var0)) {
+         try (InputStream var5 = processBitmap(var0)) {
             byte[] var7 = new byte[8];
             var5.read(var7);
             StringBuilder var8 = new StringBuilder();
@@ -196,7 +196,7 @@ public class NotificationIcons {
       }
    }
 
-   public static InputStream method_10226(String var0) {
+   public static InputStream processBitmap(String var0) {
       try {
          String var3 = DigestUtils.sha1Hex(var0) + ".bmp";
          if (SigmaMainClass.getInstance().getClass().getClassLoader().getResource(var3) != null) {
@@ -231,9 +231,9 @@ public class NotificationIcons {
       }
    }
 
-   public static class_8343 method_10233(String var0, float var1, int var2) {
+   public static class_8343 processImage1(String var0, float var1, int var2) {
       try {
-         BufferedImage var5 = ImageIO.read(method_10226(var0));
+         BufferedImage var5 = ImageIO.read(processBitmap(var0));
          BufferedImage var6 = new BufferedImage((int)(var1 * (float)var5.getWidth(null)), (int)(var1 * (float)var5.getHeight(null)), 2);
          Graphics2D var7 = (Graphics2D)var6.getGraphics();
          var7.scale((double)var1, (double)var1);
@@ -249,9 +249,9 @@ public class NotificationIcons {
       }
    }
 
-   public static class_8343 method_10229(String var0, float var1, int var2) {
+   public static class_8343 processImage(String var0, float var1, int var2) {
       try {
-         BufferedImage var5 = ImageIO.read(method_10226(var0));
+         BufferedImage var5 = ImageIO.read(processBitmap(var0));
          BufferedImage var6 = new BufferedImage((int)(var1 * (float)var5.getWidth(null)), (int)(var1 * (float)var5.getHeight(null)), 2);
          Graphics2D var7 = (Graphics2D)var6.getGraphics();
          var7.scale((double)var1, (double)var1);
@@ -267,7 +267,7 @@ public class NotificationIcons {
       }
    }
 
-   public static String method_10230() {
+   public static String getPanorama() {
       return "background/panorama5.png";
    }
 }

@@ -123,7 +123,7 @@ public class AutoMinerModule extends Module {
 
             if (!var14 && client.thePlayer.onGround && !SigmaMainClass.getInstance().method_3301().method_27149() && this.field_25750 == null) {
                List var15 = this.method_22863();
-               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoMiner", "Computing...", NotificationIcons.field_10993));
+               SigmaMainClass.getInstance().getNotificationManager().pushNotification(new Notification("AutoMiner", "Computing...", NotificationIcons.directionicon));
                this.field_25750 = new Thread(
                   () -> {
                      boolean var4x = false;
@@ -149,7 +149,7 @@ public class AutoMinerModule extends Module {
                                     new Notification(
                                        "AutoMiner",
                                        "Solved in " + var13x.size() + " steps! (" + this.field_25755.field_49718 + ":" + var11x + ")",
-                                       NotificationIcons.field_10993
+                                       NotificationIcons.directionicon
                                     )
                                  );
                               var4x = true;
@@ -164,7 +164,7 @@ public class AutoMinerModule extends Module {
                         if (!var4x) {
                            SigmaMainClass.getInstance()
                               .getNotificationManager()
-                              .pushNotification(new Notification("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", NotificationIcons.field_10993));
+                              .pushNotification(new Notification("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", NotificationIcons.directionicon));
                            Thread.sleep(1000L);
                         }
                      } catch (InterruptedException var14x) {
@@ -184,7 +184,7 @@ public class AutoMinerModule extends Module {
 
                SigmaMainClass.getInstance()
                   .getNotificationManager()
-                  .pushNotification(new Notification("AutoMiner", "Computing... (" + this.field_25755.field_49718 + ")", NotificationIcons.field_10993));
+                  .pushNotification(new Notification("AutoMiner", "Computing... (" + this.field_25755.field_49718 + ")", NotificationIcons.directionicon));
             }
          }
       }

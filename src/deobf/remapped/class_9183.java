@@ -77,7 +77,7 @@ public class class_9183 extends class_7651 {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.enableBlend();
             class_7039.method_32344(this.field_46988).method_8577().method_35674(class_7039.method_32225());
-            RenderSystem.method_16398(class_5033.field_26042, class_8535.field_43697);
+            RenderSystem.blendFunc(SourceFactor.SRC_ALPHA, DestFactor.field_43697);
             ITextComponent var23;
             ITextComponent var24;
             if (!var1.field_39005) {

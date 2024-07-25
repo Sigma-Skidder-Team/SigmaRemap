@@ -28,7 +28,7 @@ public class CompassModule extends Module {
                -40.0F,
                (float)(var4 * var5 * 2) * 1.5F,
                (float)(220 + var6),
-               NotificationIcons.field_11045,
+               NotificationIcons.altshadow,
                class_314.method_1444(class_1255.field_6918.field_6917, 0.25F)
             );
             int var12 = 0;

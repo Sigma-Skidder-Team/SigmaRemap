@@ -216,7 +216,7 @@ public class class_6577 extends Screen {
          class_6292 var5;
          if (var3.method_13290()) {
             GameRules var4 = new GameRules();
-            var4.<class_5850>method_1287(GameRules.field_1037).method_26684(false, (class_341)null);
+            var4.<BooleanValue>method_1287(GameRules.DO_DAYLIGHT_CYCLE).method_26684(false, (class_341)null);
             var5 = new class_6292(
                this.field_33552.method_8246().trim(), GameType.SPECTATOR, false, class_423.field_1790, true, var4, class_2805.field_13766
             );

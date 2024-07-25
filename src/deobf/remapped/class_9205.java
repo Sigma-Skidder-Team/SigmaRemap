@@ -111,7 +111,7 @@ public class class_9205 extends AbstractGui implements IRenderable, class_5888 {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.field_47100.getTextureManager().bindTexture(field_47096);
          RenderSystem.method_16438();
-         RenderSystem.method_16413(0.0F, 0.0F, 170.0F);
+         RenderSystem.translatef(0.0F, 0.0F, 170.0F);
          int var7 = this.field_47099.size() > 16 ? 5 : 4;
          int var8 = Math.min(this.field_47099.size(), var7);
          int var9 = MathHelper.ceil((float)this.field_47099.size() / (float)var7);

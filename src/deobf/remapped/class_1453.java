@@ -104,7 +104,7 @@ public class class_1453 extends Entity {
             if (!this.onGround && !var6) {
                if (!this.world.field_33055
                   && (this.field_7827 > 100 && (var18.getY() < 1 || var18.getY() > 256) || this.field_7827 > 600)) {
-                  if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+                  if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                      this.method_37312(var3);
                   }
 
@@ -132,7 +132,7 @@ public class class_1453 extends Entity {
                         }
 
                         if (!this.world.method_7513(var18, this.field_7822, 3)) {
-                           if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+                           if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                               this.method_37312(var3);
                            }
                         } else {
@@ -157,7 +157,7 @@ public class class_1453 extends Entity {
                               }
                            }
                         }
-                     } else if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.field_1024)) {
+                     } else if (this.field_7818 && this.world.getGameRules().getBoolean(GameRules.DO_ENTITY_DROPS)) {
                         this.method_37312(var3);
                      }
                   }

@@ -177,7 +177,7 @@ public class class_8474 extends class_4314 implements class_2593 {
    public void method_10758(World var1, class_2522 var2, class_9529 var3, class_5783 var4) {
       if (!var1.field_33055 && var4.method_37264()) {
          Entity var7 = var4.method_26166();
-         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field_1047);
+         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.MOB_GRIEFING);
          if (var8 && !var2.<Boolean>method_10313(field_43423) && !var2.<Boolean>method_10313(field_43421)) {
             BlockPos var9 = var3.method_43955();
             var1.method_7513(var9, var2.method_10308(class_6023.field_30732, Boolean.valueOf(true)), 11);
