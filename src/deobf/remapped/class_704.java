@@ -943,7 +943,7 @@ public abstract class class_704 extends class_5834 {
    @Override
    public class_1343 method_37295(class_1343 var1, class_7412 var2) {
       class_7982 var5 = new class_7982(true);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var5);
+      SigmaMainClass.getInstance().getEventManager().call(var5);
       if (var5.method_36185() == class_9528.field_48495
          || !this.field_3876.field_4942 && (var2 == class_7412.field_37839 || var2 == class_7412.field_37842) && this.method_3178() && this.method_3217()) {
          double var6 = var1.field_7336;
@@ -992,7 +992,7 @@ public abstract class class_704 extends class_5834 {
       }
 
       class_7982 var12 = new class_7982(false);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var12);
+      SigmaMainClass.getInstance().getEventManager().call(var12);
       return var1;
    }
 

@@ -83,7 +83,7 @@ public class NCPBlockFly extends Module {
                var1.method_36186(true);
             }
          } else if (mc.field_9632.field_41726
-            && SigmaMainClass.getInstance().getModuleManager().method_847(class_1396.class).method_42015()
+            && SigmaMainClass.getInstance().getModuleManager().method_847(SafeWalkModule.class).method_42015()
             && (!this.field_30935 || !this.getBooleanValueByName("Downwards"))) {
             var1.method_36186(true);
          }

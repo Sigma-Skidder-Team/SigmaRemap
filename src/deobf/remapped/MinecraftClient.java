@@ -1091,7 +1091,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_8610() {
       class_8706 var1 = new class_8706(class_3237.field_16098);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var1);
+      SigmaMainClass.getInstance().getEventManager().call(var1);
       if (!var1.method_29716()) {
          if (this.field_9582 <= 0) {
             if (this.field_9587 == null) {
@@ -1103,7 +1103,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                class_3645 var2 = null;
                if (this.field_9587.method_33990() == class_1430.field_7718) {
                   var2 = new class_3645(((class_5631)this.field_9587).method_25524(), true);
-                  SigmaMainClass.getInstance().getEventManager().method_7914(var2);
+                  SigmaMainClass.getInstance().getEventManager().call(var2);
                   if (var2.method_29716()) {
                      return;
                   }
@@ -1119,7 +1119,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
                      this.field_9647.method_42138(this.field_9632, ((class_5631)this.field_9587).method_25524());
                      if (var2 != null) {
                         var2.method_16974();
-                        SigmaMainClass.getInstance().getEventManager().method_7914(var2);
+                        SigmaMainClass.getInstance().getEventManager().call(var2);
                      }
                      break;
                   case field_7717:
@@ -1149,7 +1149,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_8565() {
       class_8706 var1 = new class_8706(class_3237.field_16101);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var1);
+      SigmaMainClass.getInstance().getEventManager().call(var1);
       if (!var1.method_29716()) {
          if (!this.field_9647.method_42156()) {
             this.field_9570 = 4;
@@ -1441,7 +1441,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       if (this.field_9632.method_26554()) {
          if (!this.gameOptions.keyUse.isKeyDown()) {
             class_4996 var6 = new class_4996();
-            SigmaMainClass.getInstance().getEventManager().method_7914(var6);
+            SigmaMainClass.getInstance().getEventManager().call(var6);
             if (!var6.method_29716()) {
                this.field_9647.method_42139(this.field_9632);
             }
@@ -1706,7 +1706,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
       this.method_8600(var2);
       this.field_9601 = var1;
       this.method_8594(var1);
-      SigmaMainClass.getInstance().getEventManager().method_7914(new class_717());
+      SigmaMainClass.getInstance().getEventManager().call(new class_717());
       if (!this.field_9672) {
          YggdrasilAuthenticationService var3 = new YggdrasilAuthenticationService(this.field_9660);
          MinecraftSessionService var4 = var3.createMinecraftSessionService();
@@ -1825,7 +1825,7 @@ public class MinecraftClient extends ReentrantThreadExecutor<Runnable> implement
    // Please report this to the Vineflower issue tracker, at https://github.com/Vineflower/vineflower/issues with a copy of the class file (if you have the rights to distribute it!)
    private void method_8543() {
       class_8706 var1 = new class_8706(class_3237.field_16097);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var1);
+      SigmaMainClass.getInstance().getEventManager().call(var1);
       if (!var1.method_29716()) {
          if (this.field_9587 != null && this.field_9587.method_33990() != class_1430.field_7721) {
             boolean var2 = this.field_9632.field_3876.field_4944;

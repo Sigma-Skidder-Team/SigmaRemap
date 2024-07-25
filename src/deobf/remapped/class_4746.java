@@ -27,7 +27,7 @@ public class class_4746 {
    }
 
    @EventListen
-   public void method_21921(class_139 var1) {
+   public void method_21921(PacketEvent var1) {
       if (var1.method_557() instanceof class_5257) {
          class_314.method_1430();
       }

@@ -21,7 +21,7 @@ public class class_9451 {
 
    public static boolean method_43714(class_2522 var0, class_6163 var1, class_1331 var2, Direction var3, class_4460 var4) {
       class_3310 var7 = new class_3310(var0);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var7);
+      SigmaMainClass.getInstance().getEventManager().call(var7);
       if (!var7.method_15184()) {
          if (!var7.method_29716()) {
             class_1331 var8 = var2.method_6098(var3);

@@ -52,7 +52,7 @@ public class AACBlockFly extends Module {
    }
 
    @EventListen
-   public void method_11338(class_139 var1) {
+   public void method_11338(PacketEvent var1) {
       if (this.method_42015()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {
@@ -64,7 +64,7 @@ public class AACBlockFly extends Module {
    @EventListen
    public void method_11342(class_7982 var1) {
       if (this.method_42015()) {
-         if (mc.field_9632.field_41726 && SigmaMainClass.getInstance().getModuleManager().method_847(class_1396.class).method_42015()) {
+         if (mc.field_9632.field_41726 && SigmaMainClass.getInstance().getModuleManager().method_847(SafeWalkModule.class).method_42015()) {
             var1.method_36186(true);
          }
       }

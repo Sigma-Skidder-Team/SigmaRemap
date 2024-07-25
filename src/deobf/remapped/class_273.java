@@ -31,7 +31,7 @@ public class class_273 extends class_2612 implements class_1768 {
             class_7688 var45 = new class_7688(var1, var2.getName() + "checkbox", var1.method_32109() - 24 - var5, var4 + 6, 24, 24);
             this.field_976.put(var37, var2);
             var45.method_34833((Boolean)var2.method_23031(), false);
-            var2.method_23029(var1x -> {
+            var2.setModeClass(var1x -> {
                if (var45.method_34834() != (Boolean)var1x.method_23031()) {
                   var45.method_34833((Boolean)var1x.method_23031(), false);
                }
@@ -54,7 +54,7 @@ public class class_273 extends class_2612 implements class_1768 {
             var47.method_6827(class_1479.method_6825(var44.method_12385(), var44.method_12387(), (Float)var44.method_23031()), false);
             var47.method_6818(-1.0F);
             int var13 = var44.method_12386();
-            var44.method_23029(
+            var44.setModeClass(
                var3x -> {
                   if (class_1479.method_6820(var47.method_6822(), var44.method_12385(), var44.method_12387(), var44.method_12382(), var13)
                      != (Float)var3x.method_23031()) {
@@ -99,7 +99,7 @@ public class class_273 extends class_2612 implements class_1768 {
             );
             var35.method_32144(class_5320.field_27139);
             var35.method_13721(var1x -> var2.method_23037(var1x.method_32165()));
-            var2.method_23029(var2x -> {
+            var2.setModeClass(var2x -> {
                if (var35.method_32165() != ((HippieModeValue)var2).method_23031()) {
                   var35.method_32186(((HippieModeValue)var2).method_23031());
                }
@@ -121,7 +121,7 @@ public class class_273 extends class_2612 implements class_1768 {
                ((ModeSetting)var2).method_12858()
             );
             this.field_976.put(var34, var2);
-            var2.method_23029(var2x -> {
+            var2.setModeClass(var2x -> {
                if (var42.method_15427() != ((ModeSetting)var2).method_12858()) {
                   var42.method_15426(((ModeSetting)var2).method_12858());
                }
@@ -165,7 +165,7 @@ public class class_273 extends class_2612 implements class_1768 {
                (Integer)var2.method_23031()
             );
             this.field_976.put(var32, var2);
-            var2.method_23029(var1x -> {
+            var2.setModeClass(var1x -> {
                if (var40.method_44209() != (Integer)var1x.method_23031()) {
                   var40.method_44211((Integer)var1x.method_23031(), false);
                }
@@ -206,7 +206,7 @@ public class class_273 extends class_2612 implements class_1768 {
                var1, var2.getName() + "color", var1.method_32109() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.method_23031(), var30.method_4268()
             );
             this.field_976.put(var38, var2);
-            var2.method_23029(var3x -> {
+            var2.setModeClass(var3x -> {
                var46.method_2919((Integer)var2.method_23031());
                var46.method_2924(var30.method_4268());
             });
@@ -237,7 +237,7 @@ public class class_273 extends class_2612 implements class_1768 {
                var10.field_40552
             );
             this.field_976.put(var11, var2);
-            var2.method_23029(var2x -> {
+            var2.setModeClass(var2x -> {
                class_7928 var5x = (class_7928)var2.method_23031();
                var12.method_38326(var5x.field_40551, var5x.field_40553, var5x.field_40550, var5x.field_40552);
             });

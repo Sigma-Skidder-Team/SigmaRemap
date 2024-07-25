@@ -80,7 +80,7 @@ public class class_9740 extends Module {
    }
 
    @EventListen
-   public void method_44978(class_139 var1) {
+   public void method_44978(PacketEvent var1) {
       if (this.method_42015() && this.field_49494 > 1) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_8163) {

@@ -57,7 +57,7 @@ public class AACAntiKB extends Module {
    }
 
    @EventListen
-   private void method_34926(class_139 var1) {
+   private void method_34926(PacketEvent var1) {
       if (this.method_42015() && mc.field_9632 != null) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_4548) {

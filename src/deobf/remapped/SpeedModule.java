@@ -34,7 +34,7 @@ public class SpeedModule extends SecondModule {
    }
 
    @EventListen
-   public void method_31654(class_139 var1) {
+   public void method_31654(PacketEvent var1) {
       if (var1.method_557() instanceof class_509 && mc.field_9632 != null) {
          field_35509 = 0;
          if (this.getBooleanValueByName("Lag back checker") && this.method_42015() && mc.field_9632.field_41697 > 2) {

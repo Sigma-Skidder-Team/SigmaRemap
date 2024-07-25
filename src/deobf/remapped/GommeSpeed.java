@@ -27,7 +27,7 @@ public class GommeSpeed extends Module {
    }
 
    @EventListen
-   public void method_31147(class_139 var1) {
+   public void method_31147(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {
             this.field_35037 = 0;

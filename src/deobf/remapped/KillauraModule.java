@@ -45,10 +45,10 @@ public class KillauraModule extends Module {
       this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
       this.addSetting(
-         new FloatSetting<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method_23029(var1 -> this.field_12561.method_40098())
+         new FloatSetting<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).setModeClass(var1 -> this.field_12561.method_40098())
       );
       this.addSetting(
-         new FloatSetting<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method_23029(var1 -> this.field_12561.method_40098())
+         new FloatSetting<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).setModeClass(var1 -> this.field_12561.method_40098())
       );
       this.addSetting(new FloatSetting<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
       this.addSetting(new FloatSetting<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
@@ -185,7 +185,7 @@ public class KillauraModule extends Module {
             if (this.field_12560 != null && !this.field_12560.isEmpty()) {
                this.field_12546++;
                float var4 = this.getFloatValueByName("Hit box expand");
-               SecondModule var5 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class);
+               SecondModule var5 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(CriticalsModule.class);
                if (var5.method_42015() && var5.getStringValueByName("Type").equalsIgnoreCase("Minis")) {
                   this.method_11542(var1, var5.method_16864().getStringValueByName("Mode"), var5.method_16864().getBooleanValueByName("Avoid Fall Damage"));
                }
@@ -277,7 +277,7 @@ public class KillauraModule extends Module {
    }
 
    @EventListen
-   public void method_11537(class_139 var1) {
+   public void method_11537(PacketEvent var1) {
       Packet var4 = var1.method_557();
       if (!(var4 instanceof class_527)) {
          if (var4 instanceof class_295) {
@@ -408,7 +408,7 @@ public class KillauraModule extends Module {
    public void method_11542(class_1393 var1, String var2, boolean var3) {
       double var6 = !var2.equals("Hypixel") ? 0.0 : 1.0E-14;
       boolean var8 = true;
-      if (this.field_12553 == 0 && this.field_12545 >= 1 && class_4181.field_20352 > 1) {
+      if (this.field_12553 == 0 && this.field_12545 >= 1 && StepModule.field_20352 > 1) {
          if (this.field_12561.method_40089(this.field_12546)) {
             this.field_12553 = 1;
             var8 = var3;

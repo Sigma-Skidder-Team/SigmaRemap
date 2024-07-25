@@ -113,7 +113,7 @@ public class SigmaIRC {
    }
 
    @EventListen
-   private void method_20855(class_139 var1) {
+   private void method_20855(PacketEvent var1) {
       if (var1.method_557() instanceof class_1490) {
          class_1490 var4 = (class_1490)var1.method_557();
          SigmaMainClass.method_3306().method_12863("Connecting...");

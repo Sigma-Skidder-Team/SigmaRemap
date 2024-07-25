@@ -47,7 +47,7 @@ public class MineMenDisablerModule extends Module {
    }
 
    @EventListen
-   private void method_35497(class_139 var1) {
+   private void method_35497(PacketEvent var1) {
       if (mc.field_9632 != null && var1.method_557() instanceof class_4548) {
          class_4548 var5 = (class_4548)var1.method_557();
          if (var5.method_21093() == mc.field_9632.method_37145() && var5.field_22168 < 0 && mc.field_9632.field_41726) {

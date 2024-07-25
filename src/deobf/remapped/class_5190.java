@@ -11,7 +11,7 @@ public class class_5190 {
    public MinecraftClient field_26705 = MinecraftClient.getInstance();
 
    @EventListen
-   private void method_23849(class_139 var1) {
+   private void method_23849(PacketEvent var1) {
       if (this.field_26705.method_8530() != null) {
          if (var1.method_557() instanceof class_5182) {
             class_5182 var4 = (class_5182)var1.method_557();

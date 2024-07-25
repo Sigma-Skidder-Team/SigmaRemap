@@ -139,7 +139,7 @@ public class class_9782 {
 
    @EventListen
    @class_3932
-   public void method_45155(class_139 var1) {
+   public void method_45155(PacketEvent var1) {
       if (this.field_49646 == 1) {
          if (var1.method_557() instanceof class_509) {
             this.field_49646 = 2;

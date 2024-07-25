@@ -6,7 +6,7 @@ public class AutoFishModule extends Module {
    }
 
    @EventListen
-   public void method_5738(class_139 var1) {
+   public void method_5738(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_3740 || var1.method_557() instanceof class_8283) {
             if (mc.field_9632.method_26446() != null) {

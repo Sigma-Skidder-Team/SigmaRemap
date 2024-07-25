@@ -123,7 +123,7 @@ public class class_6414 extends class_2353 implements class_8525 {
       class_1331 var6 = var2.method_6098(var3);
       class_2522 var7 = var1.method_28262(var6);
       class_3310 var8 = new class_3310(var0);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var8);
+      SigmaMainClass.getInstance().getEventManager().call(var8);
       if (!var8.method_29716()) {
          if (!var8.method_15184()) {
             if (!var0.method_8347(var7, var3)) {

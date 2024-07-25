@@ -30,7 +30,7 @@ public abstract class Setting<T> {
       this.field_25890 = this.field_25891;
    }
 
-   public final Setting method_23029(class_9712 var1) {
+   public final Setting setModeClass(class_9712 var1) {
       this.field_25887.add(var1);
       return this;
    }

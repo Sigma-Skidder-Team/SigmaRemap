@@ -87,7 +87,7 @@ public class HypixelFly extends Module {
    @EventListen
    @class_3932
    @class_5355
-   public void method_17884(class_139 var1) {
+   public void method_17884(PacketEvent var1) {
       if (mc.method_8614() != null && class_314.method_1387()) {
          Packet var4 = var1.method_557();
          if (this.method_42015()) {

@@ -19,7 +19,7 @@ public class StaffRepealerModule extends Module {
    }
 
    @EventListen
-   private void method_16498(class_139 var1) {
+   private void method_16498(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_527) {
             class_527 var4 = (class_527)var1.method_557();

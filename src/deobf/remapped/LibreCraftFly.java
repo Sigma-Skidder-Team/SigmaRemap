@@ -94,7 +94,7 @@ public class LibreCraftFly extends Module {
    }
 
    @EventListen
-   public void method_25013(class_139 var1) {
+   public void method_25013(PacketEvent var1) {
       if (this.method_42015()) {
          Packet var4 = var1.method_557();
          if (mc.field_9632 != null && var4 instanceof class_509) {

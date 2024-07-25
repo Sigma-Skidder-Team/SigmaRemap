@@ -32,7 +32,7 @@ public class GommeAntiKB extends Module {
    }
 
    @EventListen
-   private void method_19786(class_139 var1) {
+   private void method_19786(PacketEvent var1) {
       if (var1.method_557() instanceof class_4548) {
          class_4548 var4 = (class_4548)var1.method_557();
          if (var4.method_21093() == mc.field_9632.method_37145()) {

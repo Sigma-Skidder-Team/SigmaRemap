@@ -7,7 +7,7 @@ public class class_9357 extends Module {
    public class_9357() {
       super(Category.WORLD, "Weather", "Removes rain and changes the world's time");
       this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
-      this.addSetting(new FloatSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method_23029(var1 -> {
+      this.addSetting(new FloatSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).setModeClass(var1 -> {
          if (this.getBooleanValueByName("Custom time") && this.method_42015()) {
             mc.field_9601.method_719(-((long)this.getFloatValueByName("Time")));
          }
@@ -56,7 +56,7 @@ public class class_9357 extends Module {
    }
 
    @EventListen
-   private void method_43219(class_139 var1) {
+   private void method_43219(PacketEvent var1) {
       if (this.method_42015()) {
          if (!(var1.method_557() instanceof class_8508)) {
             if (var1.method_557() instanceof class_2161) {

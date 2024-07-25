@@ -160,7 +160,7 @@ public class SigmaMainClass {
 
          class_4975 var3 = new class_4975(this.field_3974);
          if (this.eventManager != null) {
-            this.eventManager.method_7914(var3);
+            this.eventManager.call(var3);
          }
 
          class_357.method_1791(var3.method_22870(), new File(this.field_3975 + "/config.json"));
@@ -198,7 +198,7 @@ public class SigmaMainClass {
       GL11.glDisable(2896);
       class_3542.method_16425(class_5033.field_26042, class_8535.field_43697, class_5033.field_26047, class_8535.field_43699);
       NotificationIcons.field_11030.method_38419();
-      getInstance().getEventManager().method_7914(new class_7285());
+      getInstance().getEventManager().call(new class_7285());
       class_3542.method_16480(1.0F, 1.0F, 1.0F, 1.0F);
       class_3542.method_16361();
       class_3542.method_16491();
@@ -247,7 +247,7 @@ public class SigmaMainClass {
          class_3542.method_16491();
          class_3542.method_16387(false);
          GL11.glDisable(2896);
-         this.eventManager.method_7914(new class_3368());
+         this.eventManager.call(new class_3368());
          class_3542.method_16428();
          class_3542.method_16387(true);
          TextureManager var10000 = field_3950.method_8577();

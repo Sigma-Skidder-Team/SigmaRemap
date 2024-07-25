@@ -171,7 +171,7 @@ public class class_1857 {
 
    @EventListen
    @class_5355
-   public void method_8221(class_139 var1) {
+   public void method_8221(PacketEvent var1) {
       if (!SigmaMainClass.getInstance().getModuleManager().method_847(OldHittingModule.class).method_42015() && class_3347.method_15349() != class_412.field_1747.method_2055()
          )
        {

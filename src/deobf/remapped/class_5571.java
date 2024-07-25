@@ -47,7 +47,7 @@ public class class_5571 {
    }
 
    @EventListen
-   private void method_25297(class_139 var1) {
+   private void method_25297(PacketEvent var1) {
       if (var1.method_557() instanceof class_7573) {
          long var4 = System.currentTimeMillis() - this.field_28313;
          this.field_28307 = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float)var4));

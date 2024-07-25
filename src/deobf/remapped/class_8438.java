@@ -21,7 +21,7 @@ public class class_8438 extends Module {
       this.addSetting(new ModeSetting("Size", "The font size", 0, "Normal", "Small", "Tiny"));
       this.addSetting(new BooleanSetting("Animations", "Scale in animation", true));
       this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
-      this.method_41996().get("Size").method_23029(var1 -> this.method_38821());
+      this.method_41996().get("Size").setModeClass(var1 -> this.method_38821());
       this.method_42011(false);
    }
 

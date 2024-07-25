@@ -24,7 +24,7 @@ public class AutoMinerModule extends Module {
    }
 
    @EventListen
-   public void method_22860(class_139 var1) {
+   public void method_22860(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();

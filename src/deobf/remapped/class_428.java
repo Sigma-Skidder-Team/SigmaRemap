@@ -6,7 +6,7 @@ public class class_428 extends Module {
    }
 
    @EventListen
-   private void method_2116(class_139 var1) {
+   private void method_2116(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_2492) {
             var1.method_29715(true);

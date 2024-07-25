@@ -26,7 +26,7 @@ public class class_5329 extends class_2612 {
             byte var22 = 18;
             class_3540 var26 = new class_3540(var1, var2.getName() + "checkbox", var3 + 135, var4 + 4, 40, 18);
             var26.method_16324((Boolean)var2.method_23031(), false);
-            var2.method_23029(var1x -> {
+            var2.setModeClass(var1x -> {
                if (var26.method_16328() != (Boolean)var1x.method_23031()) {
                   var26.method_16324((Boolean)var1x.method_23031(), false);
                }
@@ -44,7 +44,7 @@ public class class_5329 extends class_2612 {
             var8.method_32186(var2.getName() + ": " + Float.toString((Float)var2.method_23031()));
             var13.method_1989(class_1479.method_6825(var25.method_12385(), var25.method_12387(), (Float)var25.method_23031()), false);
             int var14 = var25.method_12386();
-            var25.method_23029(
+            var25.setModeClass(
                var5x -> {
                   if (class_397.method_1993(var13.method_1987(), var25.method_12385(), var25.method_12387(), var25.method_12382(), var14)
                      != (Float)var5x.method_23031()) {
@@ -87,7 +87,7 @@ public class class_5329 extends class_2612 {
             );
             var24.method_32144(class_5320.field_27139);
             var24.method_13721(var1x -> var2.method_23037(var1x.method_32165()));
-            var2.method_23029(var2x -> {
+            var2.setModeClass(var2x -> {
                if (var24.method_32165() != ((HippieModeValue)var2).method_23031()) {
                   var24.method_32186(((HippieModeValue)var2).method_23031());
                }
@@ -100,7 +100,7 @@ public class class_5329 extends class_2612 {
             class_2003 var23 = new class_2003(
                var1, var2.getName() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).method_12860(), ((ModeSetting)var2).method_12858()
             );
-            var2.method_23029(var2x -> {
+            var2.setModeClass(var2x -> {
                if (var23.method_9311() != ((ModeSetting)var2).method_12858()) {
                   var23.method_9309(((ModeSetting)var2).method_12858());
                }
@@ -122,7 +122,7 @@ public class class_5329 extends class_2612 {
                ((SomeWeirdIntegerSetting)var2).method_32991(),
                (Integer)var2.method_23031()
             );
-            var2.method_23029(var1x -> {
+            var2.setModeClass(var1x -> {
                if (var12.method_44209() != (Integer)var1x.method_23031()) {
                   var12.method_44211((Integer)var1x.method_23031(), false);
                }

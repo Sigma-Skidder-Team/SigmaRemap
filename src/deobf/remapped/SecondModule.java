@@ -21,7 +21,7 @@ public class SecondModule extends Module {
       }
 
       this.addSetting(this.field_17659 = new ModeSetting("Type", var2 + " mode", 0, this.field_17660.<String>toArray(new String[0])));
-      this.field_17659.method_23029(var1x -> this.method_16866());
+      this.field_17659.setModeClass(var1x -> this.method_16866());
       this.method_16866();
    }
 

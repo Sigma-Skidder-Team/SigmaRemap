@@ -118,8 +118,8 @@ public class class_5121 extends SimpleChannelInboundHandler<Packet<?>> {
 
    public void channelRead0(ChannelHandlerContext var1, Packet<?> var2) throws Exception {
       if (this.field_26419.isOpen()) {
-         class_139 var5 = new class_139(var2);
-         SigmaMainClass.getInstance().getEventManager().method_7914(var5);
+         PacketEvent var5 = new PacketEvent(var2);
+         SigmaMainClass.getInstance().getEventManager().call(var5);
          if (var5.method_29716()) {
             return;
          }
@@ -148,7 +148,7 @@ public class class_5121 extends SimpleChannelInboundHandler<Packet<?>> {
 
    public void method_23486(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
       class_2157 var5 = new class_2157(var1);
-      SigmaMainClass.getInstance().getEventManager().method_7914(var5);
+      SigmaMainClass.getInstance().getEventManager().call(var5);
       var1 = var5.method_10047();
       if (!var5.method_29716()) {
          if (!this.method_23493()) {

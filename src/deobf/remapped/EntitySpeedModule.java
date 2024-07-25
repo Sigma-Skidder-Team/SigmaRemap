@@ -66,7 +66,7 @@ public class EntitySpeedModule extends Module {
    }
 
    @EventListen
-   public void method_30358(class_139 var1) {
+   public void method_30358(PacketEvent var1) {
       if (this.method_42015()) {
          if (!(var1.method_557() instanceof class_3931)) {
          }

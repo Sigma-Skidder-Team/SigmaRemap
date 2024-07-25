@@ -3,7 +3,7 @@ package remapped;
 public class class_6394 {
    private static String[] field_32648;
 
-   public static void method_29195(class_139 var0, class_6590 var1) {
+   public static void method_29195(PacketEvent var0, class_6590 var1) {
       if (var0.method_557() instanceof class_4267) {
          class_4267 var4 = (class_4267)var0.method_557();
          var1.method_30346(var4.method_19867(), var4.method_19868());

@@ -216,7 +216,7 @@ public class class_6763 {
             class_73.method_96((float)var3, (float)var4, 170.0F, 104.0F, !(field_34898 > 1.0F) ? NotificationIcons.field_10995 : NotificationIcons.field_11024);
          }
 
-         SigmaMainClass.getInstance().getEventManager().method_7914(new class_3278());
+         SigmaMainClass.getInstance().getEventManager().call(new class_3278());
       }
 
       if (this.field_34904 != null && MinecraftClient.getInstance().field_9610 == null) {

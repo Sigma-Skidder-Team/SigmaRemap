@@ -85,7 +85,7 @@ public class OldHittingModule extends Module {
    @EventListen
    @class_7664
    @class_3932
-   private void method_9364(class_139 var1) {
+   private void method_9364(PacketEvent var1) {
       if (this.method_42015() || class_3347.method_15348() == class_412.field_1747) {
          if (mc.field_9632 != null) {
             if (var1.method_557() instanceof class_9014) {

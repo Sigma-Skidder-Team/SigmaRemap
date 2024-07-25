@@ -91,7 +91,7 @@ public class NameTagsModule extends Module {
    }
 
    @EventListen
-   private void method_5298(class_139 var1) {
+   private void method_5298(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_5149) {
             class_5149 var4 = (class_5149)var1.method_557();

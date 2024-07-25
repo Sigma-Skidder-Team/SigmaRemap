@@ -140,10 +140,10 @@ public class class_4221 extends Module {
                if (var6 == null) {
                   var6 = var4.method_41996().get("Mode");
                   if (var6 != null) {
-                     var6.method_23029(var1 -> this.method_19661());
+                     var6.setModeClass(var1 -> this.method_19661());
                   }
                } else {
-                  var6.method_23029(var1 -> this.method_19661());
+                  var6.setModeClass(var1 -> this.method_19661());
                }
             }
          }

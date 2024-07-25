@@ -6,7 +6,7 @@ public class NoViewResetModule extends Module {
    }
 
    @EventListen
-   private void method_6686(class_139 var1) {
+   private void method_6686(PacketEvent var1) {
       if (this.method_42015()) {
          if (mc.field_9632 != null) {
             if (mc.field_9632.field_41697 >= 10) {

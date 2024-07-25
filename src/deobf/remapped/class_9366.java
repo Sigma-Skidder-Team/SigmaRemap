@@ -20,13 +20,13 @@ public class class_9366 extends Module {
       this.addSetting(new ColorSetting("Color", "The rendered block color", class_1255.field_6920.field_6917, true));
       MultiSetting var5;
       this.addSetting(var5 = new MultiSetting("Blocks", "Blocks to render", true));
-      var5.method_23029(var1 -> this.field_47903.clear());
-      var3.method_23029(var1 -> this.field_47903.clear());
-      var4.method_23029(var1 -> this.field_47903.clear());
+      var5.setModeClass(var1 -> this.field_47903.clear());
+      var3.setModeClass(var1 -> this.field_47903.clear());
+      var4.setModeClass(var1 -> this.field_47903.clear());
    }
 
    @EventListen
-   public void method_43312(class_139 var1) {
+   public void method_43312(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_4267) {
             class_4267 var4 = (class_4267)var1.method_557();

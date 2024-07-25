@@ -15,8 +15,8 @@ public class class_3674 {
    }
 
    public double[] method_17048() {
-      double var3 = class_9824.method_45283().field_9632.method_37245().field_7336 - this.field_17916;
-      double var5 = class_9824.method_45281().field_9632.method_37245().field_7334 - this.field_17918;
+      double var3 = TargetStrafeModule.method_45283().field_9632.method_37245().field_7336 - this.field_17916;
+      double var5 = TargetStrafeModule.method_45281().field_9632.method_37245().field_7334 - this.field_17918;
       double var7 = this.field_17916 + this.field_17915 * var3 / Math.sqrt(var3 * var3 + var5 * var5);
       double var9 = this.field_17918 + this.field_17915 * var5 / Math.sqrt(var3 * var3 + var5 * var5);
       return new double[]{var7, this.field_17919, var9};

@@ -38,7 +38,7 @@ public class class_8671 {
             if (var4 != 1 && var4 != 2) {
                if (var4 == 0) {
                   class_307 var15 = new class_307(var3);
-                  SigmaMainClass.getInstance().getEventManager().method_7914(var15);
+                  SigmaMainClass.getInstance().getEventManager().call(var15);
                   if (var15.method_29716()) {
                      return;
                   }
@@ -49,7 +49,7 @@ public class class_8671 {
                }
 
                class_6435 var8 = new class_6435(var3, var4 == 2, null);
-               SigmaMainClass.getInstance().getEventManager().method_7914(var8);
+               SigmaMainClass.getInstance().getEventManager().call(var8);
                if (var8.method_29716()) {
                   return;
                }
@@ -144,7 +144,7 @@ public class class_8671 {
    private void method_39841(long var1, double var3, double var5) {
       if (SigmaMainClass.getInstance().method_3299().method_31001() == null) {
          class_1523 var9 = new class_1523(var5);
-         SigmaMainClass.getInstance().getEventManager().method_7914(var9);
+         SigmaMainClass.getInstance().getEventManager().call(var9);
          if (!var9.method_29716()) {
             if (var1 == MinecraftClient.getInstance().method_8552().method_43181()) {
                double var10 = (!this.field_44499.gameOptions.field_45521 ? var5 : Math.signum(var5)) * this.field_44499.gameOptions.field_45578;

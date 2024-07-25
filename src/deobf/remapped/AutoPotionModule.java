@@ -164,8 +164,8 @@ public class AutoPotionModule extends Module {
          } else {
             this.field_13560 = 0;
             int var7 = mc.field_9632.field_3853.field_36404;
-            boolean var8 = SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class).method_42015()
-               && SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
+            boolean var8 = SigmaMainClass.getInstance().getModuleManager().method_847(CriticalsModule.class).method_42015()
+               && SigmaMainClass.getInstance().getModuleManager().method_847(CriticalsModule.class).getStringValueByName("Type").equalsIgnoreCase("NoGround");
             float[] var9 = this.method_12644();
             mc.field_9632.field_3853.field_36404 = var6 - 36;
             mc.field_9647.method_42129();

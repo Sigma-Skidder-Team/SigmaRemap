@@ -27,7 +27,7 @@ public class class_4182 {
       }
 
       this.field_20353 = var4;
-      this.field_20359 = var1.getClass().getSuperclass() == class_2738.class.getSuperclass();
+      this.field_20359 = var1.getClass().getSuperclass() == NCPPhase.class.getSuperclass();
    }
 
    public Object method_19459() {

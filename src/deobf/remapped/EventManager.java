@@ -129,7 +129,7 @@ public class EventManager {
                            var15.put(var11, var16 = new ArrayList());
                         }
 
-                        var16.add(var13);
+                        //var16.add(var13);
                         var15.put(var11, var16);
                         this.moduleList.put(var5, var15);
                      } else {
@@ -159,7 +159,7 @@ public class EventManager {
       }
    }
 
-   public void method_7914(literalNothingClass var1) {
+   public void call(literalNothingClass var1) {
       if (var1 != null) {
          class_4182[] var4 = this.field_9081.get(var1.getClass());
          if (var4 != null) {

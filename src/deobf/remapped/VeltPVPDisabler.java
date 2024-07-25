@@ -26,7 +26,7 @@ public class VeltPVPDisabler extends Module {
    }
 
    @EventListen
-   public void method_7847(class_139 var1) {
+   public void method_7847(PacketEvent var1) {
       if (!this.method_42015()) {
          ;
       }

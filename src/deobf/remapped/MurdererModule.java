@@ -16,7 +16,7 @@ public class MurdererModule extends Module {
    }
 
    @EventListen
-   private void method_8421(class_139 var1) throws IOException {
+   private void method_8421(PacketEvent var1) throws IOException {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_9014) {
             class_9014 var4 = (class_9014)var1.method_557();

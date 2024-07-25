@@ -22,7 +22,7 @@ public class class_9137 extends Module {
    }
 
    @EventListen
-   public void method_42048(class_139 var1) {
+   public void method_42048(PacketEvent var1) {
       if (mc.field_9601 != null) {
          if (!(var1.method_557() instanceof class_3985)) {
             if (!(var1.method_557() instanceof class_6589)) {

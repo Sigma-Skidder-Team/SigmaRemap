@@ -13,7 +13,7 @@ public class class_6645 {
    }
 
    @EventListen
-   private void method_30525(class_139 var1) {
+   private void method_30525(PacketEvent var1) {
       if (var1.method_557() instanceof class_5491) {
          class_5491 var4 = (class_5491)var1.method_557();
          if (var4.method_24952() != 0) {

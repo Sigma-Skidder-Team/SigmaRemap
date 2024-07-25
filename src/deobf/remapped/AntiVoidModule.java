@@ -77,7 +77,7 @@ public class AntiVoidModule extends Module {
    }
 
    @EventListen
-   private void method_33098(class_139 var1) {
+   private void method_33098(PacketEvent var1) {
       if (this.method_42015() && this.field_37110 != 0) {
          if (var1.method_557() instanceof class_509) {
             this.field_37110 = 0;

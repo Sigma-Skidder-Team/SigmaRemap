@@ -265,14 +265,14 @@ public class class_3062 extends class_2089 {
          class_4399 var28 = var21 == null ? var17.method_4833(1) : var21;
          if (var28 != null) {
             class_4459 var31 = new class_4459(true);
-            SigmaMainClass.getInstance().getEventManager().method_7914(var31);
+            SigmaMainClass.getInstance().getEventManager().call(var31);
             if (var31.method_29716()) {
                return;
             }
 
             this.method_13977(var1, var28);
             class_4459 var13 = new class_4459(false);
-            SigmaMainClass.getInstance().getEventManager().method_7914(var13);
+            SigmaMainClass.getInstance().getEventManager().call(var13);
          }
 
          class_3542.method_16488();

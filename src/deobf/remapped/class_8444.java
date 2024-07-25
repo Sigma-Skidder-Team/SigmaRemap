@@ -57,7 +57,7 @@ public class class_8444 extends Module {
    }
 
    @EventListen
-   private void method_38842(class_139 var1) {
+   private void method_38842(PacketEvent var1) {
       if (this.method_42015()) {
          if (mc.method_8614() != null && var1.method_557() instanceof class_7867) {
             class_7867 var4 = (class_7867)var1.method_557();

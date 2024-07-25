@@ -85,7 +85,7 @@ public class PacketDumperModule extends Module {
    }
 
    @EventListen
-   private void method_44431(class_139 var1) {
+   private void method_44431(PacketEvent var1) {
       if (this.method_42015()) {
          this.method_44432(var1.method_557(), false);
       }

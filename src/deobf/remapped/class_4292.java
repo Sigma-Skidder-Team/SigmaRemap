@@ -52,7 +52,7 @@ public class class_4292 {
 
    @EventListen
    @class_3932
-   public void method_19935(class_139 var1) {
+   public void method_19935(PacketEvent var1) {
       if (!class_314.method_1445() && class_314.method_1392()) {
          Packet var4 = var1.method_557();
          if (!(var4 instanceof class_7573) && var4 instanceof class_8913) {

@@ -40,7 +40,7 @@ public class HypixelSpeed extends Module {
    @class_7664
    public void method_11348(class_1393 var1) {
       if (mc.field_9632.field_41726) {
-         if (!SigmaMainClass.getInstance().getModuleManager().method_847(class_9801.class).method_42003()
+         if (!SigmaMainClass.getInstance().getModuleManager().method_847(CriticalsModule.class).method_42003()
             || KillauraModule.field_12558 == null && KillauraModule.field_12556 == null
             || this.field_12321 != class_8988.field_46026) {
             this.field_12319 = 0.0;
@@ -73,7 +73,7 @@ public class HypixelSpeed extends Module {
                mc.field_9616.field_32603 = 1.0F;
             }
 
-            if (this.field_12323 >= 0 && class_4181.field_20352 >= 2) {
+            if (this.field_12323 >= 0 && StepModule.field_20352 >= 2) {
                if ((var1.method_35236() > 0.0 || this.getBooleanValueByName("AutoJump") && class_314.method_1434()) && !class_314.method_1437(mc.field_9632)) {
                   mc.field_9632.method_26595();
                   var1.method_35235(class_8865.method_40786());
@@ -173,7 +173,7 @@ public class HypixelSpeed extends Module {
    }
 
    @EventListen
-   public void method_11343(class_139 var1) {
+   public void method_11343(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_509) {
             this.field_12323 = -2;
@@ -192,7 +192,7 @@ public class HypixelSpeed extends Module {
       if (!mc.field_9632.field_41726
          && !class_314.method_1413(mc.field_9632, 1.0E-4F)
          && class_314.method_1413(mc.field_9632, (float)(class_8865.method_40786() + 1.0E-5 + 0.0625))
-         && class_4181.field_20352 >= 2
+         && StepModule.field_20352 >= 2
          && !(this.field_12324 < 0.0)
          && this.field_12321 == class_8988.field_46026
          && !(mc.field_9632.method_37309() < this.field_12324)) {

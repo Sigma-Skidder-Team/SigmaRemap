@@ -7,7 +7,7 @@ public class PacketEssentialsModule extends Module {
    }
 
    @EventListen
-   private void method_24957(class_139 var1) {
+   private void method_24957(PacketEvent var1) {
       if (this.method_42015()) {
          if (!(var1.method_557() instanceof class_6589)) {
             if (!(var1.method_557() instanceof class_4228)) {

@@ -42,7 +42,7 @@ public class NCPLongjump extends Module {
             class_1331 var4 = new class_1331(
                mc.field_9632.method_37302(), mc.field_9632.method_37309() - 0.4, mc.field_9632.method_37156()
             );
-            if (class_4181.field_20352 > 1) {
+            if (StepModule.field_20352 > 1) {
                if (this.method_42017().getBooleanValueByName("BorderJump") && !class_7494.method_34090(var4) && this.field_3397 > 0 && class_314.method_1434()) {
                   mc.field_9632.method_26595();
                   var1.method_35232(mc.field_9632.method_37098().field_7336);

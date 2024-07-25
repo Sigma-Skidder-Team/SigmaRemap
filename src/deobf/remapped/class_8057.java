@@ -187,7 +187,7 @@ public class class_8057 extends PremiumModule {
    }
 
    @EventListen
-   private void method_36546(class_139 var1) {
+   private void method_36546(PacketEvent var1) {
       if (this.method_42015()) {
          if (this.field_41248 != null) {
             if (var1.method_557() instanceof class_3740) {

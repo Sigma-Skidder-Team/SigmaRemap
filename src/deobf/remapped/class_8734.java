@@ -138,7 +138,7 @@ public class class_8734 {
       }
 
       Iterator var24 = var4.iterator();
-      SecondModule var25 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(class_4557.class);
+      SecondModule var25 = (SecondModule) SigmaMainClass.getInstance().getModuleManager().method_847(DisablerModule.class);
       float var7 = 150.0F;
       if (var25.method_42015() && var25.getStringValueByName("Type").equalsIgnoreCase("PingSpoof")) {
          var7 += var25.method_16864().getFloatValueByName("Lag");

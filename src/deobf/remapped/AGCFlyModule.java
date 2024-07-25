@@ -100,7 +100,7 @@ public class AGCFlyModule extends Module {
    }
 
    @EventListen
-   public void method_4928(class_139 var1) {
+   public void method_4928(PacketEvent var1) {
       if (this.method_42015()) {
          Packet var4 = var1.method_557();
          if (var4 instanceof class_509) {

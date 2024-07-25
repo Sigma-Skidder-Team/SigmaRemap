@@ -310,7 +310,7 @@ public class class_5937 {
                var1.method_6441(var15[0]);
                var1.method_6448(var15[1]);
                class_6435 var12 = new class_6435(0, false, this.field_30285);
-               SigmaMainClass.getInstance().getEventManager().method_7914(var12);
+               SigmaMainClass.getInstance().getEventManager().call(var12);
             }
 
             if (var6.field_44477 != class_4748.field_23009) {

@@ -32,15 +32,15 @@ public class TestModule extends Module {
       this.addSetting(new SomeWeirdMultiFloatSetting("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
       this.addSetting(
          new BooleanSetting("Test Checkbox", "A test checkbox", true)
-            .method_23029(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed checkbox: " + var0.method_23031()))
+            .setModeClass(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed checkbox: " + var0.method_23031()))
       );
       this.addSetting(
          new FloatSetting<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
-            .method_23029(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed slider: " + var0.method_23031()))
+            .setModeClass(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed slider: " + var0.method_23031()))
       );
       this.addSetting(
          new SomeWeirdIntegerSetting("Test Type", "A test type button", 0, "hello", "goodbye")
-            .method_23029(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed type: " + var0.method_23031()))
+            .setModeClass(var0 -> SigmaMainClass.getInstance().method_3326().method_12863("Changed type: " + var0.method_23031()))
       );
       this.addSetting(
          new class_7131(
@@ -219,7 +219,7 @@ public class TestModule extends Module {
    }
 
    @EventListen
-   public void method_7659(class_139 var1) {
+   public void method_7659(PacketEvent var1) {
       Packet var4 = var1.method_557();
       if (this.method_42015()) {
          if (!(var4 instanceof class_527)) {

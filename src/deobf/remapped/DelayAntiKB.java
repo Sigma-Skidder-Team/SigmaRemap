@@ -15,7 +15,7 @@ public class DelayAntiKB extends Module {
    }
 
    @EventListen
-   private void method_28731(class_139 var1) {
+   private void method_28731(PacketEvent var1) {
       if (this.method_42015()) {
          if (var1.method_557() instanceof class_1897) {
             class_1897 var4 = (class_1897)var1.method_557();

@@ -77,7 +77,7 @@ public class ElytraFlyModule extends Module {
    }
 
    @EventListen
-   private void method_45346(class_139 var1) {
+   private void method_45346(PacketEvent var1) {
       if (this.method_42015()) {
          if (mc.field_9632 != null && var1.method_557() instanceof class_4548) {
             class_4548 var4 = (class_4548)var1.method_557();

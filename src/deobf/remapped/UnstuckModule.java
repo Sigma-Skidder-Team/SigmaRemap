@@ -56,7 +56,7 @@ public class UnstuckModule extends Module {
    }
 
    @EventListen
-   public void method_8071(class_139 var1) {
+   public void method_8071(PacketEvent var1) {
       if (this.method_42015()) {
          if (mc.field_9632 != null) {
             if (var1.method_557() instanceof class_509 && !class_314.method_1413(mc.field_9632, 0.3F) && mc.field_9632.field_41697 > 10) {

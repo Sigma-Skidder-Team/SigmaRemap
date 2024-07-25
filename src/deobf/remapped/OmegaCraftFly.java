@@ -105,7 +105,7 @@ public class OmegaCraftFly extends Module {
    }
 
    @EventListen
-   public void method_34004(class_139 var1) {
+   public void method_34004(PacketEvent var1) {
       if (var1.method_557() instanceof class_509) {
          class_509 var4 = (class_509)var1.method_557();
          double var5 = this.field_38169[0];

@@ -126,7 +126,7 @@ public class MineplexLongjump extends Module {
    }
 
    @EventListen
-   public void method_20635(class_139 var1) {
+   public void method_20635(PacketEvent var1) {
       if (this.method_42015() && mc.field_9632 != null) {
          if (var1.method_557() instanceof class_509) {
             this.field_21695 = -1;

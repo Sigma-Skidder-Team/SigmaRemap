@@ -413,7 +413,7 @@ public abstract class Entity implements class_9875, class_5801 {
          && MinecraftClient.getInstance().field_9632.method_37243() != null
          && MinecraftClient.getInstance().field_9632.method_37243().method_37145() == this.method_37145()) {
          class_5088 var5 = new class_5088(var2.field_7336, var2.field_7333, var2.field_7334);
-         SigmaMainClass.getInstance().getEventManager().method_7914(var5);
+         SigmaMainClass.getInstance().getEventManager().call(var5);
          if (var5.method_29716()) {
             return;
          }
@@ -644,7 +644,7 @@ public abstract class Entity implements class_9875, class_5801 {
          boolean var20 = false;
          if (var18 != 0.0) {
             class_8544 var21 = new class_8544(var18, var10);
-            SigmaMainClass.getInstance().getEventManager().method_7914(var21);
+            SigmaMainClass.getInstance().getEventManager().call(var21);
             var20 = var21.method_29716();
          }
 
