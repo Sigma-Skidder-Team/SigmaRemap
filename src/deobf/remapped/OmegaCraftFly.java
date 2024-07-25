@@ -1,12 +1,12 @@
 package remapped;
 
-public class class_7480 extends Module {
+public class OmegaCraftFly extends Module {
    private int field_38166;
    private int field_38168;
    private double field_38165;
    private double[] field_38169 = new double[]{0.0, 0.25, 0.5, 0.75, 1.0};
 
-   public class_7480() {
+   public OmegaCraftFly() {
       super(Category.MOVEMENT, "OmegaCraft", "A fly for OmegaCraft anticheat");
    }
 

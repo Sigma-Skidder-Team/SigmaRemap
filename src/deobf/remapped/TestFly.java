@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_1191 extends Module {
+public class TestFly extends Module {
    private int field_6675;
    private int field_6681;
    private double field_6680;
@@ -10,7 +10,7 @@ public class class_1191 extends Module {
    private double field_6679;
    private double field_6677;
 
-   public class_1191() {
+   public TestFly() {
       super(Category.MOVEMENT, "Test", "A fly for OmegaCraft");
    }
 

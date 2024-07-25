@@ -1,12 +1,12 @@
 package remapped;
 
-public class class_3404 extends Module {
+public class HawkFly extends Module {
    private int field_16754;
    private double field_16753;
    private double field_16751;
    private double field_16755;
 
-   public class_3404() {
+   public HawkFly() {
       super(Category.MOVEMENT, "Hawk", "A fly for Hawk anticheat");
    }
 

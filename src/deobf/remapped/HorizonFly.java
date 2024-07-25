@@ -1,10 +1,10 @@
 package remapped;
 
-public class HorizonFlyModule extends Module {
+public class HorizonFly extends Module {
    private int field_13556;
    private double field_13555;
 
-   public HorizonFlyModule() {
+   public HorizonFly() {
       super(Category.MOVEMENT, "Horizon", "A fly for Horizon anticheat");
    }
 

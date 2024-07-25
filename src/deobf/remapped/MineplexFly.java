@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_9154 extends PremiumModule {
+public class MineplexFly extends PremiumModule {
    private int field_46840;
    private int field_46843;
    private int field_46846;
@@ -10,7 +10,7 @@ public class class_9154 extends PremiumModule {
    private boolean field_46838;
    private boolean field_46839;
 
-   public class_9154() {
+   public MineplexFly() {
       super("Mineplex", "Mineplex fly/longjump", Category.MOVEMENT);
       this.addSetting(new FloatSetting<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
       this.addSetting(new BooleanSetting("Fake", "Simulate a real fly", false));

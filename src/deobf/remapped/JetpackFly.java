@@ -1,7 +1,7 @@
 package remapped;
 
-public class JetpackFlyModule extends Module {
-   public JetpackFlyModule() {
+public class JetpackFly extends Module {
+   public JetpackFly() {
       super(Category.MOVEMENT, "Jetpack", "A jetpack type fly");
    }
 

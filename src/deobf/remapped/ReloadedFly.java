@@ -1,11 +1,11 @@
 package remapped;
 
-public class ReloadedFlyModule extends Module {
+public class ReloadedFly extends Module {
    private int field_28770;
    private double field_28771;
    private boolean field_28772;
 
-   public ReloadedFlyModule() {
+   public ReloadedFly() {
       super(Category.MOVEMENT, "Reloaded", "A fly for AnticheatReloaded");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 8.0F, 0.1F));
       this.addSetting(new BooleanSetting("Offset", "Offset while flying", false));

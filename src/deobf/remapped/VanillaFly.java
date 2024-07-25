@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-public class class_669 extends Module {
+public class VanillaFly extends Module {
    private boolean field_3720;
    private int field_3718;
 
-   public class_669() {
+   public VanillaFly() {
       super(Category.MOVEMENT, "Vanilla", "Regular vanilla fly");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
       this.addSetting(new BooleanSetting("Kick bypass", "Bypass vanilla kick for flying", true));

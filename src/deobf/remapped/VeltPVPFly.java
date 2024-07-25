@@ -1,13 +1,13 @@
 package remapped;
 
-public class VeltPVPFlyModule extends Module {
+public class VeltPVPFly extends Module {
    private int field_17458;
    private int field_17461;
    private double field_17460;
    private double field_17459;
    private boolean field_17456;
 
-   public VeltPVPFlyModule() {
+   public VeltPVPFly() {
       super(Category.MOVEMENT, "VeltPvP", "A fly for VeltPvP");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 5.0F, 0.1F));
    }

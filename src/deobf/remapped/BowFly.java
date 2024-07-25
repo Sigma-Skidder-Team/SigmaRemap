@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_1731 extends Module {
+public class BowFly extends Module {
    private int field_8926;
    private Timer field_8927 = new Timer();
 
-   public class_1731() {
+   public BowFly() {
       super(Category.MOVEMENT, "Bow", "Fly for Bow");
    }
 

@@ -1,11 +1,11 @@
 package remapped;
 
-public class class_2850 extends Module {
+public class SpartanFly extends Module {
    private double field_13966;
    private boolean field_13969;
    private boolean field_13967;
 
-   public class_2850() {
+   public SpartanFly() {
       super(Category.MOVEMENT, "Spartan", "A fly for Spartan anticheat");
       this.addSetting(new BooleanSetting("Ground Spoof", "Send on ground packets", true));
       this.addSetting(new BooleanSetting("Fake Block", "Send on fake blockplacing packet", true));

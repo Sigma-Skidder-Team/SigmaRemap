@@ -1,13 +1,13 @@
 package remapped;
 
-public class class_7657 extends Module {
+public class ViperMCFly extends Module {
    private int field_38901;
    private int field_38899;
    private double field_38902;
    private double field_38903;
    private boolean field_38904;
 
-   public class_7657() {
+   public ViperMCFly() {
       super(Category.MOVEMENT, "ViperMC", "A fly for ViperMC");
       this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 6.0F, 0.1F));
    }

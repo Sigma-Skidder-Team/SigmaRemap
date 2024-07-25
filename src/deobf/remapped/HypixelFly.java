@@ -3,7 +3,7 @@ package remapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class class_3854 extends Module {
+public class HypixelFly extends Module {
    private short field_18796;
    private double field_18795;
    private float field_18794;
@@ -12,7 +12,7 @@ public class class_3854 extends Module {
    private Timer field_18799;
    private List<Short> field_18793 = new ArrayList<Short>();
 
-   public class_3854() {
+   public HypixelFly() {
       super(Category.MOVEMENT, "Hypixel", "Fly for Hypixel");
       this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method_12861("Fast"));
       this.addSetting(new FloatSetting<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));

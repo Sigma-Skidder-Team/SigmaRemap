@@ -1,10 +1,10 @@
 package remapped;
 
-public class class_2894 extends Module {
+public class NCPFly extends Module {
    private int field_14150;
    private double field_14151;
 
-   public class_2894() {
+   public NCPFly() {
       super(Category.MOVEMENT, "NCPSpigot", "A fly for NoCheatPlus");
    }
 
