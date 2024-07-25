@@ -14,10 +14,10 @@ public class AGCFlyModule extends Module {
    @Override
    public void onEnable() {
       this.field_6382 = 0;
-      if (!mcInstance.gameOptions.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
          this.field_6385 = false;
       } else {
-         mcInstance.gameOptions.field_45560.field_30024 = false;
+         mcInstance.gameOptions.keySneak.pressed = false;
          this.field_6385 = true;
       }
 
@@ -27,7 +27,7 @@ public class AGCFlyModule extends Module {
    @EventListen
    private void method_4929(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_6385 = true;
          }
@@ -37,7 +37,7 @@ public class AGCFlyModule extends Module {
    @EventListen
    private void method_4930(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_6385 = false;
          }
@@ -93,8 +93,8 @@ public class AGCFlyModule extends Module {
             var1.method_6451(true);
             var1.method_6444(true);
             this.field_6384 = !this.field_6385
-               ? (!mcInstance.gameOptions.field_45450.method_27060() ? 1 : 3)
-               : (!mcInstance.gameOptions.field_45450.method_27060() ? 2 : 1);
+               ? (!mcInstance.gameOptions.keyJump.isKeyDown() ? 1 : 3)
+               : (!mcInstance.gameOptions.keyJump.isKeyDown() ? 2 : 1);
          }
       }
    }

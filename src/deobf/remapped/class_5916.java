@@ -25,34 +25,34 @@ public class class_5916 implements Comparable<class_5916> {
    private final class_3654 field_30029;
    private final String field_30020;
    public class_3654 field_30027;
-   public boolean field_30024;
-   private int field_30028;
+   public boolean pressed;
+   private int pressedTime;
 
    public static void method_27059(class_3654 var0) {
       class_5916 var3 = field_30019.get(var0);
       if (var3 != null) {
-         var3.field_30028++;
+         var3.pressedTime++;
       }
    }
 
    public static void method_27072(class_3654 var0, boolean var1) {
       class_5916 var4 = field_30019.get(var0);
       if (var4 != null) {
-         var4.method_27056(var1);
+         var4.setPressed(var1);
       }
    }
 
    public static void method_27065() {
       for (class_5916 var3 : field_30026.values()) {
          if (var3.field_30027.method_16990() == class_8863.field_45319 && var3.field_30027.method_16988() != class_9732.field_49455.method_16988()) {
-            var3.method_27056(class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), var3.field_30027.method_16988()));
+            var3.setPressed(class_9732.method_44934(MinecraftClient.getInstance().method_8552().method_43181(), var3.field_30027.method_16988()));
          }
       }
    }
 
    public static void method_27064() {
       for (class_5916 var3 : field_30026.values()) {
-         var3.method_27063();
+         var3.unpress();
       }
    }
 
@@ -78,26 +78,26 @@ public class class_5916 implements Comparable<class_5916> {
       field_30023.add(var4);
    }
 
-   public boolean method_27060() {
-      return this.field_30024;
+   public boolean isKeyDown() {
+      return this.pressed;
    }
 
    public String method_27054() {
       return this.field_30020;
    }
 
-   public boolean method_27074() {
-      if (this.field_30028 != 0) {
-         this.field_30028--;
+   public boolean isPressed() {
+      if (this.pressedTime != 0) {
+         this.pressedTime--;
          return true;
       } else {
          return false;
       }
    }
 
-   private void method_27063() {
-      this.field_30028 = 0;
-      this.method_27056(false);
+   private void unpress() {
+      this.pressedTime = 0;
+      this.setPressed(false);
    }
 
    public String method_27055() {
@@ -153,7 +153,7 @@ public class class_5916 implements Comparable<class_5916> {
       return this.field_30027.method_16985();
    }
 
-   public void method_27056(boolean var1) {
-      this.field_30024 = var1;
+   public void setPressed(boolean var1) {
+      this.pressed = var1;
    }
 }

@@ -27,7 +27,7 @@ public class AutoToolsModule extends Module {
 
    @EventListen
    private void method_29645(class_5596 var1) {
-      if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.gameOptions.field_45530.method_27060()) {
+      if (this.method_42015() && mcInstance.field_9632 != null && mcInstance.gameOptions.keyAttack.isKeyDown()) {
          this.method_29647(null);
       }
    }

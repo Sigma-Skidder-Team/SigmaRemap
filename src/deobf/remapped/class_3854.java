@@ -232,7 +232,7 @@ public class class_3854 extends Module {
             }
          }
 
-         if (mcInstance.gameOptions.field_45450.field_30024) {
+         if (mcInstance.gameOptions.keyJump.pressed) {
             var1.method_35235(0.25);
          }
       }

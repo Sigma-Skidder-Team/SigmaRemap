@@ -16,12 +16,12 @@ public class class_669 extends Module {
 
    @Override
    public void onEnable() {
-      if (!mcInstance.gameOptions.field_45560.method_27060()) {
-         if (!mcInstance.gameOptions.field_45560.method_27060()) {
+      if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
+         if (!mcInstance.gameOptions.keySneak.isKeyDown()) {
             this.field_3720 = false;
          }
       } else {
-         mcInstance.gameOptions.field_45560.field_30024 = false;
+         mcInstance.gameOptions.keySneak.pressed = false;
          this.field_3720 = true;
       }
    }
@@ -32,14 +32,14 @@ public class class_669 extends Module {
       double var3 = class_8865.method_40775();
       class_8865.method_40776(var3);
       if (this.field_3720) {
-         mcInstance.gameOptions.field_45560.field_30024 = true;
+         mcInstance.gameOptions.keySneak.pressed = true;
       }
    }
 
    @EventListen
    private void method_3072(class_6435 var1) {
       if (this.method_42015()) {
-         if (var1.method_29384() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+         if (var1.method_29384() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = true;
          }
@@ -49,7 +49,7 @@ public class class_669 extends Module {
    @EventListen
    private void method_3075(class_307 var1) {
       if (this.method_42015()) {
-         if (var1.method_1364() == mcInstance.gameOptions.field_45560.field_30027.field_17800) {
+         if (var1.method_1364() == mcInstance.gameOptions.keySneak.field_30027.field_17800) {
             var1.method_29715(true);
             this.field_3720 = false;
          }
@@ -111,11 +111,11 @@ public class class_669 extends Module {
          }
 
          double var4 = (double)this.getFloatValueByName("Speed");
-         double var6 = !mcInstance.gameOptions.field_45450.field_30024 ? 0.0 : var4 / 2.0;
-         if (mcInstance.gameOptions.field_45450.field_30024 && mcInstance.gameOptions.field_45560.field_30024) {
+         double var6 = !mcInstance.gameOptions.keyJump.pressed ? 0.0 : var4 / 2.0;
+         if (mcInstance.gameOptions.keyJump.pressed && mcInstance.gameOptions.keySneak.pressed) {
             var6 = 0.0;
          } else if (!this.field_3720) {
-            if (mcInstance.gameOptions.field_45450.field_30024) {
+            if (mcInstance.gameOptions.keyJump.pressed) {
                var6 = var4 / 2.0;
             }
          } else {

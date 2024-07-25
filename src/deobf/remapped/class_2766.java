@@ -112,7 +112,7 @@ public class class_2766 extends Module {
          && !this.getStringValueByName("Mode").equalsIgnoreCase("NCP")
          && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (!mcInstance.field_9632.method_37285() && !mcInstance.field_9632.method_37370() && !mcInstance.field_9632.method_26505()) {
-            if (!mcInstance.gameOptions.field_45450.field_30024
+            if (!mcInstance.gameOptions.keyJump.pressed
                && !mcInstance.field_9632.method_26505()
                && !class_8865.method_40771()
                && !mcInstance.field_9632.method_37285()
@@ -135,7 +135,7 @@ public class class_2766 extends Module {
          && class_314.method_1413(mcInstance.field_9632, 0.43F)
          && !((double) mcInstance.field_9632.field_41706 > 0.09)
          && this.getBooleanValueByName("OnGround")
-         && !mcInstance.gameOptions.field_45450.field_30024
+         && !mcInstance.gameOptions.keyJump.pressed
          && !SigmaMainClass.getInstance().getModuleManager().method_847(FlyModule.class).method_42015()) {
          if (mcInstance.field_9632.field_41726 && class_314.method_1413(mcInstance.field_9632, 0.001F)) {
             this.field_13513 = mcInstance.field_9632.method_37309();

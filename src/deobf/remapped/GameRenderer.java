@@ -302,7 +302,7 @@ public class GameRenderer implements class_6491, AutoCloseable {
 
          boolean var8 = false;
          if (this.field_40612.field_9623 == null) {
-            var8 = this.field_40612.gameOptions.field_45548.method_27060();
+            var8 = this.field_40612.gameOptions.field_45548.isKeyDown();
          }
 
          if (!var8) {

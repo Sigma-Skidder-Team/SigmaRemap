@@ -31,14 +31,14 @@ public class class_207 extends Screen {
          this.field_948,
          new TranslationTextComponent(
             "demo.help.movementShort",
-            var4.field_45416.method_27061(),
-            var4.field_45504.method_27061(),
-            var4.field_45434.method_27061(),
-            var4.field_45411.method_27061()
+            var4.keyForward.method_27061(),
+            var4.keyLeft.method_27061(),
+            var4.keyBack.method_27061(),
+            var4.keyRight.method_27061()
          ),
          new TranslationTextComponent("demo.help.movementMouse"),
-         new TranslationTextComponent("demo.help.jump", var4.field_45450.method_27061()),
-         new TranslationTextComponent("demo.help.inventory", var4.field_45575.method_27061())
+         new TranslationTextComponent("demo.help.jump", var4.keyJump.method_27061()),
+         new TranslationTextComponent("demo.help.inventory", var4.keyInventory.method_27061())
       );
       this.field_694 = class_416.method_2075(this.field_948, new TranslationTextComponent("demo.help.fullWrapped"), 218);
    }

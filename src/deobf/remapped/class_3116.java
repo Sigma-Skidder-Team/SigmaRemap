@@ -16,7 +16,7 @@ public class class_3116 {
 
    @EventListen
    private void method_14474(class_6435 var1) {
-      if (var1.method_29384() == this.field_15500.gameOptions.field_45541.field_30027.field_17800
+      if (var1.method_29384() == this.field_15500.gameOptions.keyPickItem.field_30027.field_17800
          && this.field_15500.field_9662 != null
          && this.field_15500.field_9662.method_45509() != null) {
          CommandManager var4 = SigmaMainClass.getInstance().getCommandManager();

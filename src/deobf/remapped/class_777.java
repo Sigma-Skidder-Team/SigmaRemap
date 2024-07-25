@@ -12,7 +12,7 @@ public class class_777 extends Module {
    @EventListen
    private void method_3476(class_8706 var1) {
       if (this.method_42015()) {
-         if (mcInstance.gameOptions.field_45560.method_27060() && var1.method_40004() == class_3237.field_16101) {
+         if (mcInstance.gameOptions.keySneak.isKeyDown() && var1.method_40004() == class_3237.field_16101) {
             if (!(mcInstance.field_9632.field_41755 < 0.0F)) {
                this.method_3473(this.method_3477());
             } else {

@@ -68,8 +68,8 @@ public class ShulkerInfoModule extends Module {
                      class_314.method_1444(class_1255.field_6929.field_6917, 0.3F)
                   );
                   GL11.glDisable(3042);
-                  if (mcInstance.gameOptions.field_45559.method_27060()) {
-                     mcInstance.gameOptions.field_45559.field_30024 = false;
+                  if (mcInstance.gameOptions.keyUse.isKeyDown()) {
+                     mcInstance.gameOptions.keyUse.pressed = false;
                      ShulkerPeekCommand.method_30370(var6.method_264());
                   }
                }

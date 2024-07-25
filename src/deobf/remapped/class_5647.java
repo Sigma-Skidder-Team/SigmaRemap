@@ -28,7 +28,7 @@ public class class_5647 extends Module {
             var4 = 1.15F + (float)class_8865.method_40770() * 0.04F;
          }
 
-         if (mcInstance.gameOptions.field_45434.field_30024) {
+         if (mcInstance.gameOptions.keyBack.pressed) {
             var4 /= 1.3F;
          }
 

@@ -61,7 +61,7 @@ public class OldHittingModule extends Module {
                }
             }
 
-            field_10220 = mcInstance.gameOptions.field_45559.method_27060() && var4 && var6 && var6 || var5;
+            field_10220 = mcInstance.gameOptions.keyUse.isKeyDown() && var4 && var6 && var6 || var5;
             if (!field_10220) {
                if (class_1857.field_9416.contains(mcInstance.field_9632)) {
                   class_1857.field_9416.remove(mcInstance.field_9632);
