@@ -119,7 +119,7 @@ public class class_5329 extends class_2612 {
                var4 + 6,
                123,
                27,
-               ((class_7209)var2).method_32991(),
+               ((SomeWeirdIntegerSetting)var2).method_32991(),
                (Integer)var2.method_23031()
             );
             var2.method_23029(var1x -> {

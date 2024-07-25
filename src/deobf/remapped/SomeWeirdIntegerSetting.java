@@ -1,9 +1,9 @@
 package remapped;
 
-public class class_7209 extends Setting<Integer> {
+public class SomeWeirdIntegerSetting extends Setting<Integer> {
    private String[] field_37032;
 
-   public class_7209(String var1, String var2, Integer var3, String... var4) {
+   public SomeWeirdIntegerSetting(String var1, String var2, Integer var3, String... var4) {
       super(var1, var2, class_5195.field_26720, var3);
       this.field_37032 = var4;
    }

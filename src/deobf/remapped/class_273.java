@@ -161,7 +161,7 @@ public class class_273 extends class_2612 implements class_1768 {
                var4 + 6,
                123,
                27,
-               ((class_7209)var2).method_32991(),
+               ((SomeWeirdIntegerSetting)var2).method_32991(),
                (Integer)var2.method_23031()
             );
             this.field_976.put(var32, var2);

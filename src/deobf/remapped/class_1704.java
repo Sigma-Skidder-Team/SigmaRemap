@@ -39,7 +39,7 @@ public class class_1704 extends Module {
             .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed slider: " + var0.method_23031()))
       );
       this.addSetting(
-         new class_7209("Test Type", "A test type button", 0, "hello", "goodbye")
+         new SomeWeirdIntegerSetting("Test Type", "A test type button", 0, "hello", "goodbye")
             .method_23029(var0 -> SigmaMainClass.method_3328().method_3326().method_12863("Changed type: " + var0.method_23031()))
       );
       this.addSetting(
