@@ -11,13 +11,13 @@ public class class_2776 extends Module {
 
    public class_2776() {
       super(class_5664.field_28712, "AutoPotion", "Automatically throws potion to regen or speed up");
-      this.method_42010(new class_2748<Float>("Health", "Maximum health before healing.", 6.0F, Float.class, 0.5F, 10.0F, 0.5F));
-      this.method_42010(new class_8563("Predict", "Predicts where to pot when moving.", true));
-      this.method_42010(new class_8563("Instant", "Instant potting (more packets).", false));
-      this.method_42010(new class_8563("Speed", "Uses Speed pots.", true));
-      this.method_42010(new class_8563("Regen", "Uses Regen pots.", true));
-      this.method_42010(new class_8563("Custom potion", "Allow the use of custom potions", false));
-      this.method_42010(new class_8563("In fight", "Allows using autopot with killaura", true));
+      this.addSetting(new FloatSetting<Float>("Health", "Maximum health before healing.", 6.0F, Float.class, 0.5F, 10.0F, 0.5F));
+      this.addSetting(new BooleanSetting("Predict", "Predicts where to pot when moving.", true));
+      this.addSetting(new BooleanSetting("Instant", "Instant potting (more packets).", false));
+      this.addSetting(new BooleanSetting("Speed", "Uses Speed pots.", true));
+      this.addSetting(new BooleanSetting("Regen", "Uses Regen pots.", true));
+      this.addSetting(new BooleanSetting("Custom potion", "Allow the use of custom potions", false));
+      this.addSetting(new BooleanSetting("In fight", "Allows using autopot with killaura", true));
    }
 
    @Override

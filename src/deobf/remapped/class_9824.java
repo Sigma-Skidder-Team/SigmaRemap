@@ -6,11 +6,11 @@ public class class_9824 extends Module {
 
    public class_9824() {
       super(class_5664.field_28716, "TargetStrafe", "Allows you to strafe arround targets with speed");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Ninja", "Random"));
-      this.method_42010(new class_2748<Float>("Radius", "Radius of the circle", 2.0F, Float.class, 1.0F, 6.0F, 0.01F));
-      this.method_42010(new class_8563("Only speed", "Use target strafe only when speed is enabled", true));
-      this.method_42010(
-         new class_2826("AntiVoid", "The way you will avoid the void", 0, "Smart", "Halt", "Command", "None").method_23029(var1 -> this.field_49776 = false)
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Ninja", "Random"));
+      this.addSetting(new FloatSetting<Float>("Radius", "Radius of the circle", 2.0F, Float.class, 1.0F, 6.0F, 0.01F));
+      this.addSetting(new BooleanSetting("Only speed", "Use target strafe only when speed is enabled", true));
+      this.addSetting(
+         new ModeSetting("AntiVoid", "The way you will avoid the void", 0, "Smart", "Halt", "Command", "None").method_23029(var1 -> this.field_49776 = false)
       );
    }
 

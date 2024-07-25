@@ -2,9 +2,9 @@ package remapped;
 
 public class class_5412 extends class_1859 {
    private static String[] field_27597;
-   public final class_5004 field_27596;
+   public final Setting field_27596;
 
-   public class_5412(class_7038 var1, String var2, int var3, int var4, int var5, int var6, class_5004 var7) {
+   public class_5412(class_7038 var1, String var2, int var3, int var4, int var5, int var6, Setting var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field_27596 = var7;
    }

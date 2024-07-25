@@ -7,9 +7,9 @@ public class class_5677 extends Module {
 
    public class_5677() {
       super(class_5664.field_28716, "Reloaded", "A fly for AnticheatReloaded");
-      this.method_42010(new class_2748<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 8.0F, 0.1F));
-      this.method_42010(new class_8563("Offset", "Offset while flying", false));
-      this.method_42010(new class_8563("NoFall", "Avoid getting fall damage when flying down", true));
+      this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.3F, 8.0F, 0.1F));
+      this.addSetting(new BooleanSetting("Offset", "Offset while flying", false));
+      this.addSetting(new BooleanSetting("NoFall", "Avoid getting fall damage when flying down", true));
    }
 
    @Override

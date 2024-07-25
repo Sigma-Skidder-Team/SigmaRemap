@@ -3,7 +3,7 @@ package remapped;
 public class class_8191 extends Module {
    public class_8191() {
       super(class_5664.field_28716, "Vanilla", "Vanilla speed");
-      this.method_42010(new class_2748<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
+      this.addSetting(new FloatSetting<Float>("Speed", "Speed value", 4.0F, Float.class, 1.0F, 10.0F, 0.1F));
    }
 
    @class_9148

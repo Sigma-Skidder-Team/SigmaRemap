@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 public class class_2167 extends Module {
    public class_2167() {
       super(class_5664.field_28711, "Jargon", "Sends a randomly contructed message in chat");
-      this.method_42010(new class_2826("Jargon", "A test type button", 0, "Excuse", "Techincal", "Audio"));
+      this.addSetting(new ModeSetting("Jargon", "A test type button", 0, "Excuse", "Techincal", "Audio"));
    }
 
    @Override

@@ -18,9 +18,9 @@ public class class_8438 extends Module {
 
    public class_8438() {
       super(class_5664.field_28708, "ActiveMods", "Renders active mods");
-      this.method_42010(new class_2826("Size", "The font size", 0, "Normal", "Small", "Tiny"));
-      this.method_42010(new class_8563("Animations", "Scale in animation", true));
-      this.method_42010(new class_8563("Sound", "Toggle sound", true));
+      this.addSetting(new ModeSetting("Size", "The font size", 0, "Normal", "Small", "Tiny"));
+      this.addSetting(new BooleanSetting("Animations", "Scale in animation", true));
+      this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
       this.method_41996().get("Size").method_23029(var1 -> this.method_38821());
       this.method_42011(false);
    }

@@ -10,8 +10,8 @@ public class class_4304 extends Module {
 
    public class_4304() {
       super(class_5664.field_28709, "Skeleton", "Skeleton ESP.");
-      this.method_42010(new class_976("Color", "The Skeleton color", class_1255.field_6918.field_6917));
-      this.method_42010(new class_8563("CSGO", "Add a CSGO look.", true));
+      this.addSetting(new ColorSetting("Color", "The Skeleton color", class_1255.field_6918.field_6917));
+      this.addSetting(new BooleanSetting("CSGO", "Add a CSGO look.", true));
    }
 
    @class_9148

@@ -13,7 +13,7 @@ public class class_9468 extends Module {
 
    public class_9468() {
       super(class_5664.field_28709, "2D Esp", "You know what it is");
-      this.method_42010(new class_8563("Show Health", "Shows a health bar", true));
+      this.addSetting(new BooleanSetting("Show Health", "Shows a health bar", true));
    }
 
    @class_9148

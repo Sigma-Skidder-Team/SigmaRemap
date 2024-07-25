@@ -5,7 +5,7 @@ public class class_9704 extends Module {
 
    public class_9704() {
       super(class_5664.field_28716, "NoSlow", "Stops slowdown when using an item");
-      this.method_42010(new class_2826("Mode", "NoSlow mode", 0, "Vanilla", "NCP"));
+      this.addSetting(new ModeSetting("Mode", "NoSlow mode", 0, "Vanilla", "NCP"));
    }
 
    @class_9148

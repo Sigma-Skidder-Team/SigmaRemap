@@ -5,9 +5,9 @@ public class class_5372 extends Module {
 
    public class_5372() {
       super(class_5664.field_28716, "Minemen", "Minemen spider");
-      this.method_42010(new class_8563("AutoClimb", "Automatically climbs for you", true));
-      this.method_42010(new class_8563("Ceiling", "Allows you to fly under ceiling", true));
-      this.method_42010(new class_8563("SneakVClip", "Allows you to phase through ground", true));
+      this.addSetting(new BooleanSetting("AutoClimb", "Automatically climbs for you", true));
+      this.addSetting(new BooleanSetting("Ceiling", "Allows you to fly under ceiling", true));
+      this.addSetting(new BooleanSetting("SneakVClip", "Allows you to phase through ground", true));
    }
 
    @Override

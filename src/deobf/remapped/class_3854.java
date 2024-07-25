@@ -14,11 +14,11 @@ public class class_3854 extends Module {
 
    public class_3854() {
       super(class_5664.field_28716, "Hypixel", "Fly for Hypixel");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method_12861("Fast"));
-      this.method_42010(new class_2748<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));
-      this.method_42010(new class_8563("No Collision", "Prevents block collison.", true));
-      this.method_42010(new class_2748<Float>("Timer Boost", "Boost strength", 2.5F, Float.class, 1.0F, 3.0F, 0.1F));
-      this.method_42010(new class_2748<Float>("Timer Duration", "Boost duration", 0.3F, Float.class, 0.1F, 1.0F, 0.01F));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Funcraft").method_12861("Fast"));
+      this.addSetting(new FloatSetting<Float>("Speed", "Fast and Funcraft speed", 1.0F, Float.class, 0.0F, 1.0F, 0.1F));
+      this.addSetting(new BooleanSetting("No Collision", "Prevents block collison.", true));
+      this.addSetting(new FloatSetting<Float>("Timer Boost", "Boost strength", 2.5F, Float.class, 1.0F, 3.0F, 0.1F));
+      this.addSetting(new FloatSetting<Float>("Timer Duration", "Boost duration", 0.3F, Float.class, 0.1F, 1.0F, 0.01F));
    }
 
    @Override

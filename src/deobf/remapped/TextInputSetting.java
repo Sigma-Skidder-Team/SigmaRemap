@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_8246 extends class_5004<String> {
-   public class_8246(String var1, String var2, String var3) {
+public class TextInputSetting extends Setting<String> {
+   public TextInputSetting(String var1, String var2, String var3) {
       super(var1, var2, class_5195.field_26723, var3);
    }
 

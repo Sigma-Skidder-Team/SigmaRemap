@@ -14,18 +14,18 @@ public class class_5174 extends class_367 {
 
    public class_5174() {
       super("InvManager", "Drops all useless items from your inventory", class_5664.field_28712);
-      this.method_42010(new class_2826("Mode", "The way it will move items in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
-      this.method_42010(new class_2748<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.01F, 1.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("Block Cap", "Maximum blocks.", 150.0F, Float.class, 0.0F, 256.0F, 10.0F));
-      this.method_42010(new class_2826("Clean Type", "Clean type", 0, "Skywars", "All"));
-      this.method_42010(new class_8563("Fake Items", "Bypass for fake items (AAC).", false));
-      this.method_42010(new class_8563("Cleaner", "Cleans your inventory.", true));
-      this.method_42010(new class_8563("Sword", "Keeps only sword as weapon.", true));
-      this.method_42010(new class_2826("Tools", "How tools are handled.", 0, "Keep", "Organize", "Throw"));
-      this.method_42010(new class_8563("Archery", "Cleans bows and arrows.", true));
-      this.method_42010(new class_8563("Food", "Cleans food. Keeps Golden Apples.", false));
-      this.method_42010(new class_8563("Heads", "Cleans Heads.", false));
-      this.method_42010(new class_8563("Auto Shield", "Automatically equip shields for 1.9+.", false));
+      this.addSetting(new ModeSetting("Mode", "The way it will move items in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
+      this.addSetting(new FloatSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.01F, 1.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Block Cap", "Maximum blocks.", 150.0F, Float.class, 0.0F, 256.0F, 10.0F));
+      this.addSetting(new ModeSetting("Clean Type", "Clean type", 0, "Skywars", "All"));
+      this.addSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
+      this.addSetting(new BooleanSetting("Cleaner", "Cleans your inventory.", true));
+      this.addSetting(new BooleanSetting("Sword", "Keeps only sword as weapon.", true));
+      this.addSetting(new ModeSetting("Tools", "How tools are handled.", 0, "Keep", "Organize", "Throw"));
+      this.addSetting(new BooleanSetting("Archery", "Cleans bows and arrows.", true));
+      this.addSetting(new BooleanSetting("Food", "Cleans food. Keeps Golden Apples.", false));
+      this.addSetting(new BooleanSetting("Heads", "Cleans Heads.", false));
+      this.addSetting(new BooleanSetting("Auto Shield", "Automatically equip shields for 1.9+.", false));
    }
 
    @Override

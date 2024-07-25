@@ -7,9 +7,9 @@ public class class_8318 extends Module {
 
    public class_8318() {
       super(class_5664.field_28716, "Cubecraft", "Speed for Cubecraft");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Hop", "YPort"));
-      this.method_42010(new class_2748<Float>("Speed", "Speed value", 0.75F, Float.class, 0.1F, 1.0F, 0.01F));
-      this.method_42010(new class_8563("AutoJump", "Automatically jumps for you.", false));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hop", "YPort"));
+      this.addSetting(new FloatSetting<Float>("Speed", "Speed value", 0.75F, Float.class, 0.1F, 1.0F, 0.01F));
+      this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", false));
    }
 
    @Override

@@ -16,7 +16,7 @@ public class class_8083 extends Module {
 
    public class_8083() {
       super(class_5664.field_28716, "Smooth", "Places block underneath");
-      this.method_42010(new class_2826("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
+      this.addSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
    }
 
    @Override

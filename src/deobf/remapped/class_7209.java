@@ -1,6 +1,6 @@
 package remapped;
 
-public class class_7209 extends class_5004<Integer> {
+public class class_7209 extends Setting<Integer> {
    private String[] field_37032;
 
    public class_7209(String var1, String var2, Integer var3, String... var4) {

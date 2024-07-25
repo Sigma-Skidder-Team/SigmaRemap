@@ -10,14 +10,14 @@ public class class_2941 extends Module {
 
    public class_2941() {
       super(class_5664.field_28714, "BowAimbot", "Automatically aims at players while using a bow");
-      this.method_42010(new class_2826("Sort mode", "Sort mode", 0, "Angle", "Range"));
-      this.method_42010(new class_2748<Float>("Range", "Range value", 70.0F, Float.class, 10.0F, 100.0F, 1.0F));
-      this.method_42010(new class_8563("Silent", "Server-sided rotations.", false));
-      this.method_42010(new class_8563("Teams", "Target team", true));
-      this.method_42010(new class_8563("Players", "Target players", true));
-      this.method_42010(new class_8563("Animals/Monsters", "Target animals and monsters", false));
-      this.method_42010(new class_8563("Anti-Bot", "Doesn't target bots", true));
-      this.method_42010(new class_8563("Invisible", "Target invisible entites", true));
+      this.addSetting(new ModeSetting("Sort mode", "Sort mode", 0, "Angle", "Range"));
+      this.addSetting(new FloatSetting<Float>("Range", "Range value", 70.0F, Float.class, 10.0F, 100.0F, 1.0F));
+      this.addSetting(new BooleanSetting("Silent", "Server-sided rotations.", false));
+      this.addSetting(new BooleanSetting("Teams", "Target team", true));
+      this.addSetting(new BooleanSetting("Players", "Target players", true));
+      this.addSetting(new BooleanSetting("Animals/Monsters", "Target animals and monsters", false));
+      this.addSetting(new BooleanSetting("Anti-Bot", "Doesn't target bots", true));
+      this.addSetting(new BooleanSetting("Invisible", "Target invisible entites", true));
    }
 
    @Override

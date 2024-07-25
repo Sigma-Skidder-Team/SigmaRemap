@@ -12,14 +12,14 @@ public class class_3709 extends class_3620 {
 
    public class_3709() {
       super(class_5664.field_28716, "BlockFly", "Allows you to automatically bridge", new class_6049(), new class_2461(), new class_8083(), new class_6205());
-      this.method_42010(new class_2826("ItemSpoof", "Item spoofing mode", 2, "None", "Switch", "Spoof", "LiteSpoof"));
-      this.method_42010(new class_2826("Tower Mode", "Tower mode", 1, "None", "NCP", "AAC", "Vanilla"));
-      this.method_42010(new class_2826("Picking mode", "The way it will move blocks in your inventory.", 0, "Basic", "FakeInv", "OpenInv"));
-      this.method_42010(new class_8563("Tower while moving", "Allows you to tower while moving.", false));
-      this.method_42010(new class_8563("Show Block Amount", "Shows the amount of blocks in your inventory.", true));
-      this.method_42010(new class_8563("NoSwing", "Removes the swing animation.", true));
-      this.method_42010(new class_8563("Intelligent Block Picker", "Always get the biggest blocks stack.", true));
-      this.method_42010(new class_8563("No Sprint", "Disable sprint.", false));
+      this.addSetting(new ModeSetting("ItemSpoof", "Item spoofing mode", 2, "None", "Switch", "Spoof", "LiteSpoof"));
+      this.addSetting(new ModeSetting("Tower Mode", "Tower mode", 1, "None", "NCP", "AAC", "Vanilla"));
+      this.addSetting(new ModeSetting("Picking mode", "The way it will move blocks in your inventory.", 0, "Basic", "FakeInv", "OpenInv"));
+      this.addSetting(new BooleanSetting("Tower while moving", "Allows you to tower while moving.", false));
+      this.addSetting(new BooleanSetting("Show Block Amount", "Shows the amount of blocks in your inventory.", true));
+      this.addSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", true));
+      this.addSetting(new BooleanSetting("Intelligent Block Picker", "Always get the biggest blocks stack.", true));
+      this.addSetting(new BooleanSetting("No Sprint", "Disable sprint.", false));
       field_18195 = Arrays.<class_6414>asList(
          class_4783.field_23184,
          class_4783.field_23900,

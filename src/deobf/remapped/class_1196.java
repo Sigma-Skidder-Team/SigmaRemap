@@ -22,9 +22,9 @@ public class class_1196 extends Module {
 
    public class_1196() {
       super(class_5664.field_28709, "NameTags", "Render better name tags");
-      this.method_42010(new class_8563("Magnify", "Scales nametags to keep them readable", true));
-      this.method_42010(new class_8563("Furnaces", "Shows furnaces info once open", true));
-      this.method_42010(new class_8563("Mob Owners", "Shows mob owners", true));
+      this.addSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
+      this.addSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
+      this.addSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
       this.method_42011(false);
       field_6701 = this;
    }

@@ -35,7 +35,7 @@ public class class_9093 extends Module {
 
          String[] var5 = new String[this.field_46568.size()];
          var5 = this.field_46568.<String>toArray(var5);
-         this.method_42010(new class_2826("Shematics", "shematics", 0, var5));
+         this.addSetting(new ModeSetting("Shematics", "shematics", 0, var5));
       }
    }
 

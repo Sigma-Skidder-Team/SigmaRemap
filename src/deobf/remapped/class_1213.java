@@ -3,9 +3,9 @@ package remapped;
 public class class_1213 extends class_3620 {
    public class_1213() {
       super(class_5664.field_28716, "LongJump", "Makes you jump far away", new class_583(), new class_8857(), new class_4452(), new class_4211());
-      this.method_42010(new class_8563("Auto Disable", "Disable Longjump when landing", true));
-      this.method_42010(new class_8563("BorderJump", "Jumps when you are close to a border", true));
-      this.method_42010(new class_8563("Auto Jump", "Automatically jumps when you can", true));
+      this.addSetting(new BooleanSetting("Auto Disable", "Disable Longjump when landing", true));
+      this.addSetting(new BooleanSetting("BorderJump", "Jumps when you are close to a border", true));
+      this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps when you can", true));
    }
 
    public double method_5380(int var1) {

@@ -9,7 +9,7 @@ public class class_3620 extends Module {
    public Module[] field_17661;
    public Module field_17664;
    private List<String> field_17660 = new ArrayList<String>();
-   public class_2826 field_17659;
+   public ModeSetting field_17659;
    private final List<class_713> field_17662 = new ArrayList<class_713>();
 
    public class_3620(class_5664 var1, String var2, String var3, Module... var4) {
@@ -22,7 +22,7 @@ public class class_3620 extends Module {
          var10.method_41995(this);
       }
 
-      this.method_42010(this.field_17659 = new class_2826("Type", var2 + " mode", 0, this.field_17660.<String>toArray(new String[0])));
+      this.addSetting(this.field_17659 = new ModeSetting("Type", var2 + " mode", 0, this.field_17660.<String>toArray(new String[0])));
       this.field_17659.method_23029(var1x -> this.method_16866());
       this.method_16866();
    }
@@ -96,7 +96,7 @@ public class class_3620 extends Module {
                   } catch (class_7584 var17) {
                   }
 
-                  for (class_5004 var14 : var8.field_46697.values()) {
+                  for (Setting var14 : var8.settingMap.values()) {
                      if (var14.method_23032().equals(var12)) {
                         try {
                            var14.method_23042(var11);
@@ -128,7 +128,7 @@ public class class_3620 extends Module {
       for (Module var8 : this.field_17661) {
          class_1336 var9 = new class_1336();
 
-         for (class_5004 var11 : var8.field_46697.values()) {
+         for (Setting var11 : var8.settingMap.values()) {
             var9.method_6159(var11.method_23035(new class_1293()));
          }
 

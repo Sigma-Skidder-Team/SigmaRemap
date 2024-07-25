@@ -3,7 +3,7 @@ package remapped;
 public class class_5981 extends Module {
    public class_5981() {
       super(class_5664.field_28714, "AntiBot", "Avoid the client to focus bots.");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Advanced", "Hypixel").method_23029(var1 -> this.method_27290()));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Advanced", "Hypixel").method_23029(var1 -> this.method_27290()));
    }
 
    @Override

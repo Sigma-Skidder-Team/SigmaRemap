@@ -5,7 +5,7 @@ public class class_1931 extends class_367 {
 
    public class_1931() {
       super("ServerCrasher", "Crashes a server", class_5664.field_28718);
-      this.method_42010(new class_2826("Mode", "Crasher mode", 0, "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze"));
+      this.addSetting(new ModeSetting("Mode", "Crasher mode", 0, "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze"));
    }
 
    @Override

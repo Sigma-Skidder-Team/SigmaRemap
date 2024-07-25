@@ -3,8 +3,8 @@ package remapped;
 public class class_5377 extends Module {
    public class_5377() {
       super(class_5664.field_28716, "FastLadder", "Allows you to climp ladders faster");
-      this.method_42010(new class_2748<Float>("Motion", "Climbing motion", 0.35F, Float.class, 0.2F, 1.0F, 0.05F));
-      this.method_42010(new class_2826("Down mode", "The way you will go down on ladders", 0, "None", "OnSneak", "Always"));
+      this.addSetting(new FloatSetting<Float>("Motion", "Climbing motion", 0.35F, Float.class, 0.2F, 1.0F, 0.05F));
+      this.addSetting(new ModeSetting("Down mode", "The way you will go down on ladders", 0, "None", "OnSneak", "Always"));
    }
 
    @class_9148

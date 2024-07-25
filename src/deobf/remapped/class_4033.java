@@ -7,7 +7,7 @@ public class class_4033 extends Module {
 
    public class_4033() {
       super(class_5664.field_28709, "Box Outline", "Draws a line arround players");
-      this.method_42010(new class_976("Color", "The tracers color", class_1255.field_6918.field_6917));
+      this.addSetting(new ColorSetting("Color", "The tracers color", class_1255.field_6918.field_6917));
    }
 
    @class_9148

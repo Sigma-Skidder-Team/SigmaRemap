@@ -15,9 +15,9 @@ public class class_6205 extends Module {
 
    public class_6205() {
       super(class_5664.field_28716, "Hypixel", "Places block underneath");
-      this.method_42010(new class_2826("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
-      this.method_42010(new class_8563("KeepRotations", "Keeps your rotations.", true));
-      this.method_42010(new class_8563("Downwards", "Allows you to go down when sneaking.", true));
+      this.addSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
+      this.addSetting(new BooleanSetting("KeepRotations", "Keeps your rotations.", true));
+      this.addSetting(new BooleanSetting("Downwards", "Allows you to go down when sneaking.", true));
    }
 
    @Override

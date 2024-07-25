@@ -3,8 +3,8 @@ package remapped;
 public class class_4342 extends Module {
    public class_4342() {
       super(class_5664.field_28710, "FastEat", "Allows you to eat faster");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Hypixel").method_12861("Hypixel"));
-      this.method_42010(new class_2748<Float>("Speed", "Eating speed.", 0.55F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel").method_12861("Hypixel"));
+      this.addSetting(new FloatSetting<Float>("Speed", "Eating speed.", 0.55F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
    @class_9148

@@ -8,9 +8,9 @@ public class class_5761 extends Module {
 
    public class_5761() {
       super(class_5664.field_28716, "Mineplex", "Speed for Mineplex");
-      this.method_42010(new class_8563("AutoJump", "Automatically jumps for you.", true));
-      this.method_42010(new class_8563("OnGround", "OnGround Speed.", true));
-      this.method_42010(new class_2748<Float>("OnGround Speed", "OnGround value.", 0.8F, Float.class, 0.3F, 1.5F, 0.01F));
+      this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
+      this.addSetting(new BooleanSetting("OnGround", "OnGround Speed.", true));
+      this.addSetting(new FloatSetting<Float>("OnGround Speed", "OnGround value.", 0.8F, Float.class, 0.3F, 1.5F, 0.01F));
    }
 
    @Override

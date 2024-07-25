@@ -11,9 +11,9 @@ public class class_7232 extends Module {
 
    public class_7232() {
       super(class_5664.field_28710, "AntiVoid", "Avoids you from falling in the void");
-      this.method_42010(new class_8563("Void", "Catch only above void", true));
-      this.method_42010(new class_2748<Float>("Fall Distance", "Fall distance before catching you", 8.0F, Float.class, 2.0F, 15.0F, 0.5F));
-      this.method_42010(new class_2826("Mode", "AntiVoid method", 0, "Hypixel", "Motion", "Cubecraft", "Legit"));
+      this.addSetting(new BooleanSetting("Void", "Catch only above void", true));
+      this.addSetting(new FloatSetting<Float>("Fall Distance", "Fall distance before catching you", 8.0F, Float.class, 2.0F, 15.0F, 0.5F));
+      this.addSetting(new ModeSetting("Mode", "AntiVoid method", 0, "Hypixel", "Motion", "Cubecraft", "Legit"));
    }
 
    @Override

@@ -9,10 +9,10 @@ public class class_1853 extends Module {
 
    public class_1853() {
       super(class_5664.field_28712, "AutoArmor", "Automaticly equips your armor");
-      this.method_42010(new class_8563("Fake Items", "Bypass for fake items (AAC).", false));
-      this.method_42010(new class_2748<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.0F, 1.0F, 0.01F));
-      this.method_42010(new class_2826("Mode", "The way it will move armor in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
-      this.method_42010(new class_2826("Elytra", "Elytra Equip Mode", 0, "Ignore", "Equip", "On Use"));
+      this.addSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
+      this.addSetting(new FloatSetting<Float>("Delay", "Inventory clicks delay", 0.3F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new ModeSetting("Mode", "The way it will move armor in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
+      this.addSetting(new ModeSetting("Elytra", "Elytra Equip Mode", 0, "Ignore", "Equip", "On Use"));
    }
 
    @Override

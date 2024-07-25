@@ -9,7 +9,7 @@ public class class_3568 extends Module {
 
    public class_3568() {
       super(class_5664.field_28716, "VeltPvP", "A fly for VeltPvP");
-      this.method_42010(new class_2748<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 5.0F, 0.1F));
+      this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.2F, 5.0F, 0.1F));
    }
 
    @Override

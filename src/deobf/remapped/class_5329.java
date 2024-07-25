@@ -15,7 +15,7 @@ public class class_5329 extends class_2612 {
       this.method_24301();
    }
 
-   private int method_24303(class_7038 var1, class_5004 var2, int var3, int var4, int var5) {
+   private int method_24303(class_7038 var1, Setting var2, int var3, int var4, int var5) {
       class_1552 var8 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, 0, 0, class_1552.field_8208, var2.method_23032(), this.field_27184);
       class_5412 var9 = new class_5412(var1, var2.method_23032() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
       var1.method_32148(var8);
@@ -38,7 +38,7 @@ public class class_5329 extends class_2612 {
          case field_26718:
             short var17 = 240;
             byte var21 = 4;
-            class_2748 var25 = (class_2748)var2;
+            FloatSetting var25 = (FloatSetting)var2;
             class_397 var13 = new class_397(var1, var2.method_23032() + "slider", var3, var4 + 31, 240, 4);
             var13.method_32186(Float.toString((Float)var2.method_23031()));
             var8.method_32186(var2.method_23032() + ": " + Float.toString((Float)var2.method_23031()));
@@ -88,8 +88,8 @@ public class class_5329 extends class_2612 {
             var24.method_32144(class_5320.field_27139);
             var24.method_13721(var1x -> var2.method_23037(var1x.method_32165()));
             var2.method_23029(var2x -> {
-               if (var24.method_32165() != ((class_8246)var2).method_23031()) {
-                  var24.method_32186(((class_8246)var2).method_23031());
+               if (var24.method_32165() != ((TextInputSetting)var2).method_23031()) {
+                  var24.method_32186(((TextInputSetting)var2).method_23031());
                }
             });
             var4 += var20 + var5;
@@ -98,14 +98,14 @@ public class class_5329 extends class_2612 {
             byte var15 = 80;
             byte var19 = 20;
             class_2003 var23 = new class_2003(
-               var1, var2.method_23032() + "btn", var3, var4 + 27, 80, 20, ((class_2826)var2).method_12860(), ((class_2826)var2).method_12858()
+               var1, var2.method_23032() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).method_12860(), ((ModeSetting)var2).method_12858()
             );
             var2.method_23029(var2x -> {
-               if (var23.method_9311() != ((class_2826)var2).method_12858()) {
-                  var23.method_9309(((class_2826)var2).method_12858());
+               if (var23.method_9311() != ((ModeSetting)var2).method_12858()) {
+                  var23.method_9309(((ModeSetting)var2).method_12858());
                }
             });
-            var23.method_8236(var1x -> ((class_2826)var2).method_12859(((class_2003)var1x).method_9311()));
+            var23.method_8236(var1x -> ((ModeSetting)var2).method_12859(((class_2003)var1x).method_9311()));
             var1.method_32148(var23);
             var4 += 65;
             break;
@@ -148,7 +148,7 @@ public class class_5329 extends class_2612 {
       byte var5 = 30;
       int var6 = 35;
 
-      for (class_5004 var8 : this.field_27182.method_41996().values()) {
+      for (Setting var8 : this.field_27182.method_41996().values()) {
          if (var8.method_23030() != class_5195.field_26721 && var8.method_23030() != class_5195.field_26727) {
             var6 = this.method_24303(this, var8, 30, var6, 20);
          }
@@ -162,7 +162,7 @@ public class class_5329 extends class_2612 {
             class_7038 var13 = new class_7038(this, var11.method_41992() + "SubView", 0, var6, this.field_36278, this.field_36257 - var6);
             var13.method_32135((var0, var1) -> var0.method_32142(var1.method_32109()));
 
-            for (class_5004 var15 : var11.method_41996().values()) {
+            for (Setting var15 : var11.method_41996().values()) {
                var12 = this.method_24303(var13, var15, 30, var12, 20);
             }
 

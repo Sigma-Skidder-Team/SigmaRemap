@@ -8,7 +8,7 @@ public class class_9661 extends Module {
 
    public class_9661() {
       super(class_5664.field_28716, "Spider", "Step for Spider");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "NCP", "AAC", "Gomme"));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "NCP", "AAC", "Gomme"));
    }
 
    @Override

@@ -1,12 +1,12 @@
 package remapped;
 
-public class class_2748<T extends Number> extends class_5004<Float> {
+public class FloatSetting<T extends Number> extends Setting<Float> {
    private Class<? extends T> field_13452;
    private float field_13449;
    private float field_13453;
    private float field_13451;
 
-   public class_2748(String var1, String var2, float var3, Class<? extends T> var4, float var5, float var6, float var7) {
+   public FloatSetting(String var1, String var2, float var3, Class<? extends T> var4, float var5, float var6, float var7) {
       super(var1, var2, class_5195.field_26718, var3);
       this.field_13452 = var4;
       this.field_13449 = var5;

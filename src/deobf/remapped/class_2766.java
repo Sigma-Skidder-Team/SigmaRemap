@@ -9,8 +9,8 @@ public class class_2766 extends Module {
 
    public class_2766() {
       super(class_5664.field_28716, "YPort", "YPort speed");
-      this.method_42010(new class_2826("Mode", "YPort mode", 0, "NCP", "OldNCP"));
-      this.method_42010(new class_8563("OnGround", "See yourself on ground", true));
+      this.addSetting(new ModeSetting("Mode", "YPort mode", 0, "NCP", "OldNCP"));
+      this.addSetting(new BooleanSetting("OnGround", "See yourself on ground", true));
    }
 
    @class_9148

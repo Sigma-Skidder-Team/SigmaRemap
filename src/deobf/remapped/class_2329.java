@@ -6,9 +6,9 @@ import java.util.List;
 public class class_2329 extends class_3620 {
    public class_2329() {
       super(class_5664.field_28714, "Aimbot", "Automatically aim at players", new class_1631(), new class_5641(), new class_5263());
-      this.method_42010(new class_8563("Players", "Aim at players", true));
-      this.method_42010(new class_8563("Animals/Monsters", "Aim at animals and monsters", false));
-      this.method_42010(new class_8563("Invisible", "Aim at invisible entites", true));
+      this.addSetting(new BooleanSetting("Players", "Aim at players", true));
+      this.addSetting(new BooleanSetting("Animals/Monsters", "Aim at animals and monsters", false));
+      this.addSetting(new BooleanSetting("Invisible", "Aim at invisible entites", true));
    }
 
    public Entity method_10678(float var1) {

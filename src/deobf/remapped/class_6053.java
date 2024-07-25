@@ -11,9 +11,9 @@ public class class_6053 extends Module {
 
    public class_6053() {
       super(class_5664.field_28716, "AAC", "Speed for AAC");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Fast1", "Fast2").method_12861("Fast2"));
-      this.method_42010(new class_8563("Fluid Fix", "Makes your jump fluid.", true));
-      this.method_42010(new class_8563("Auto Jump", "Automatically jumps for you.", true));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Fast1", "Fast2").method_12861("Fast2"));
+      this.addSetting(new BooleanSetting("Fluid Fix", "Makes your jump fluid.", true));
+      this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
    }
 
    @Override

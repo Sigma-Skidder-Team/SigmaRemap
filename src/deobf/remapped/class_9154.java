@@ -12,8 +12,8 @@ public class class_9154 extends class_367 {
 
    public class_9154() {
       super("Mineplex", "Mineplex fly/longjump", class_5664.field_28716);
-      this.method_42010(new class_2748<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
-      this.method_42010(new class_8563("Fake", "Simulate a real fly", false));
+      this.addSetting(new FloatSetting<Float>("Boost", "Boost value", 4.0F, Float.class, 1.0F, 8.0F, 0.01F));
+      this.addSetting(new BooleanSetting("Fake", "Simulate a real fly", false));
    }
 
    @Override

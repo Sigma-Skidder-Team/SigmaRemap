@@ -11,8 +11,8 @@ public class class_1886 extends Module {
 
    public class_1886() {
       super(class_5664.field_28711, "Murderer", "Detects murderer in murder mystery minigame on hypixel");
-      this.method_42010(new class_8563("GUI", "Shows a GUI with info on the murderer", true));
-      this.method_42010(new class_8563("Chat Message", "Sends a message with the murderer's name", true));
+      this.addSetting(new BooleanSetting("GUI", "Shows a GUI with info on the murderer", true));
+      this.addSetting(new BooleanSetting("Chat Message", "Sends a message with the murderer's name", true));
    }
 
    @class_9148

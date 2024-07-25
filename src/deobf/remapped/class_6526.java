@@ -5,11 +5,11 @@ public class class_6526 extends Module {
 
    public class_6526() {
       super(class_5664.field_28717, "TP", "Disabler working on some anticheats.");
-      this.method_42010(new class_2748<Float>("Delay", "Tp delay.", 20.0F, Float.class, 5.0F, 40.0F, 1.0F));
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic1", "Basic2", "MinInfinity", "MaxInfinity", "MinValue", "MaxValue"));
-      this.method_42010(new class_8563("OnGround", "Send on ground packets.", false));
-      this.method_42010(new class_8563("More Packets", "Send more packets.", false));
-      this.method_42010(new class_8563("Ping spoof", "Spoof your ping.", false));
+      this.addSetting(new FloatSetting<Float>("Delay", "Tp delay.", 20.0F, Float.class, 5.0F, 40.0F, 1.0F));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic1", "Basic2", "MinInfinity", "MaxInfinity", "MinValue", "MaxValue"));
+      this.addSetting(new BooleanSetting("OnGround", "Send on ground packets.", false));
+      this.addSetting(new BooleanSetting("More Packets", "Send more packets.", false));
+      this.addSetting(new BooleanSetting("Ping spoof", "Spoof your ping.", false));
    }
 
    @Override

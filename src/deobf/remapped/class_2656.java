@@ -9,11 +9,11 @@ public class class_2656 extends Module {
 
    public class_2656() {
       super(class_5664.field_28718, "FakeLag", "Other players will see you lagging !");
-      this.method_42010(new class_2748<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
-      this.method_42010(new class_8563("Combat", "Delay combat packets", true));
-      this.method_42010(new class_8563("Blocks", "Delay blocks packets", true));
-      this.method_42010(new class_8563("Ping", "Delay ping packets", true));
+      this.addSetting(new FloatSetting<Float>("Lag duration", "The lags duration", 0.3F, Float.class, 0.1F, 2.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Delay", "The lags cooldown", 0.4F, Float.class, 0.1F, 2.0F, 0.01F));
+      this.addSetting(new BooleanSetting("Combat", "Delay combat packets", true));
+      this.addSetting(new BooleanSetting("Blocks", "Delay blocks packets", true));
+      this.addSetting(new BooleanSetting("Ping", "Delay ping packets", true));
       this.field_13090.method_14776();
    }
 

@@ -9,8 +9,8 @@ public class class_4820 extends Module {
 
    public class_4820() {
       super(class_5664.field_28718, "CakeEater", "Automatically eats cake");
-      this.method_42010(new class_8563("No Swing", "Removes the swing animation.", true));
-      this.method_42010(new class_8563("Mineplex", "Mineplex mode.", true));
+      this.addSetting(new BooleanSetting("No Swing", "Removes the swing animation.", true));
+      this.addSetting(new BooleanSetting("Mineplex", "Mineplex mode.", true));
    }
 
    @Override

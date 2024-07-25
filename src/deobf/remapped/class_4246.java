@@ -6,8 +6,8 @@ public class class_4246 extends Module {
 
    public class_4246() {
       super(class_5664.field_28714, "Gomme", "AntiKB for GommeHD");
-      this.method_42010(new class_2748<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Delay", "Boost delay", 0.5F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Boost", "Boost strengh", 0.1F, Float.class, 0.05F, 0.25F, 0.01F));
    }
 
    @class_9148

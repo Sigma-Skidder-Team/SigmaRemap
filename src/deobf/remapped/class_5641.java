@@ -6,7 +6,7 @@ public class class_5641 extends Module {
 
    public class_5641() {
       super(class_5664.field_28714, "Smooth", "Automatically aims at players");
-      this.method_42010(new class_2748<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
    }
 
    @class_9148

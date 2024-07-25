@@ -9,8 +9,8 @@ public class class_2791 extends Module {
 
    public class_2791() {
       super(class_5664.field_28717, "PingSpoof", "Makes you lagggy.");
-      this.method_42010(new class_2748<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
-      this.method_42010(new class_8563("Inv Bypass", "Avoid inventory glitchs on some servers", false));
+      this.addSetting(new FloatSetting<Float>("Lag", "Your ping (ms)", 1000.0F, Float.class, 50.0F, 2000.0F, 10.0F));
+      this.addSetting(new BooleanSetting("Inv Bypass", "Avoid inventory glitchs on some servers", false));
    }
 
    @class_9148

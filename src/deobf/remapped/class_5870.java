@@ -10,12 +10,12 @@ public class class_5870 extends Module {
 
    public class_5870() {
       super(class_5664.field_28712, "AutoSoup", "Automatically eats soup when low life");
-      this.method_42010(new class_2748<Float>("Health", "Minimum health before eating soup", 13.0F, Float.class, 1.0F, 19.0F, 1.0F));
-      this.method_42010(new class_2748<Float>("Refill delay", "Refill delay", 4.0F, Float.class, 0.0F, 8.0F, 1.0F));
-      this.method_42010(new class_2748<Float>("Refill accuracy", "Refill accuracy", 100.0F, Float.class, 30.0F, 100.0F, 1.0F));
-      this.method_42010(new class_2826("Refill mode", "Refill mode", 0, "Basic", "FakeInv", "OpenInv"));
-      this.method_42010(new class_2826("Soup mode", "Soup Mode", 0, "Instant", "Legit"));
-      this.method_42010(new class_2826("Bowls", "Bowls managing", 0, "Drop", "Stack"));
+      this.addSetting(new FloatSetting<Float>("Health", "Minimum health before eating soup", 13.0F, Float.class, 1.0F, 19.0F, 1.0F));
+      this.addSetting(new FloatSetting<Float>("Refill delay", "Refill delay", 4.0F, Float.class, 0.0F, 8.0F, 1.0F));
+      this.addSetting(new FloatSetting<Float>("Refill accuracy", "Refill accuracy", 100.0F, Float.class, 30.0F, 100.0F, 1.0F));
+      this.addSetting(new ModeSetting("Refill mode", "Refill mode", 0, "Basic", "FakeInv", "OpenInv"));
+      this.addSetting(new ModeSetting("Soup mode", "Soup Mode", 0, "Instant", "Legit"));
+      this.addSetting(new ModeSetting("Bowls", "Bowls managing", 0, "Drop", "Stack"));
    }
 
    @Override

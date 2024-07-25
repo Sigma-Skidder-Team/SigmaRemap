@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class class_2826 extends class_5004<String> {
+public class ModeSetting extends Setting<String> {
    private List<String> field_13860 = new ArrayList<String>();
    private List<String> field_13859 = new ArrayList<String>();
 
-   public class_2826(String var1, String var2, int var3, String... var4) {
+   public ModeSetting(String var1, String var2, int var3, String... var4) {
       super(var1, var2, class_5195.field_26722, var4[var3]);
       this.field_13860 = Arrays.<String>asList(var4);
    }
 
-   public class_2826(String var1, String var2, String var3, String... var4) {
+   public ModeSetting(String var1, String var2, String var3, String... var4) {
       super(var1, var2, class_5195.field_26722, var3);
       this.field_13860 = Arrays.<String>asList(var4);
    }
 
-   public class_2826 method_12861(String... var1) {
+   public ModeSetting method_12861(String... var1) {
       this.field_13859.addAll(Arrays.asList(var1));
       return this;
    }

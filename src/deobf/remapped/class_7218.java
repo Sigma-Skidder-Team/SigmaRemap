@@ -6,7 +6,7 @@ public class class_7218 extends Module {
 
    public class_7218() {
       super(class_5664.field_28710, "AutoSprint", "Sprints for you");
-      this.method_42010(new class_8563("Keep Sprint", "Keep Sprinting after hitting a player", true));
+      this.addSetting(new BooleanSetting("Keep Sprint", "Keep Sprinting after hitting a player", true));
    }
 
    @class_9148

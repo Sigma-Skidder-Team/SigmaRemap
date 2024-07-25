@@ -6,8 +6,8 @@ public class class_8683 extends Module {
 
    public class_8683() {
       super(class_5664.field_28714, "Packet", "Packet criticals");
-      this.method_42010(new class_2748<Integer>("HurtTime", "The hurtTime to crit at", 15.0F, Integer.class, 0.0F, 20.0F, 1.0F));
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Hypixel"));
+      this.addSetting(new FloatSetting<Integer>("HurtTime", "The hurtTime to crit at", 15.0F, Integer.class, 0.0F, 20.0F, 1.0F));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel"));
    }
 
    @class_9148

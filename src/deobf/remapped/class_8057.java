@@ -30,7 +30,7 @@ public class class_8057 extends class_367 {
          String[] var5 = new String[this.field_41251.size()];
          var5 = this.field_41251.<String>toArray(var5);
          if (var5.length > 0) {
-            this.method_42010(new class_2826("Song", "songs", 0, var5));
+            this.addSetting(new ModeSetting("Song", "songs", 0, var5));
          }
       }
    }

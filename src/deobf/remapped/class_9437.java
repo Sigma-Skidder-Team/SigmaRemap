@@ -10,11 +10,11 @@ public class class_9437 extends Module {
 
    public class_9437() {
       super(class_5664.field_28718, "Nuker", "Destroys blocks around you");
-      this.method_42010(new class_2748<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
-      this.method_42010(new class_2826("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
-      this.method_42010(new class_8563("NoSwing", "Removes the swing animation.", false));
-      this.method_42010(new class_4589("Blocks", "Blocks to destroy", true));
-      this.method_42010(new class_976("Color", "The rendered block color", class_1255.field_6920.field_6917, true));
+      this.addSetting(new FloatSetting<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
+      this.addSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
+      this.addSetting(new MultiSetting("Blocks", "Blocks to destroy", true));
+      this.addSetting(new ColorSetting("Color", "The rendered block color", class_1255.field_6920.field_6917, true));
    }
 
    @class_9148

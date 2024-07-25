@@ -7,7 +7,7 @@ public class class_5787 extends Module {
 
    public class_5787() {
       super(class_5664.field_28710, "InvMove", "Move freely in the inventory");
-      this.method_42010(new class_8563("AACP", "Bypass for AACP", true));
+      this.addSetting(new BooleanSetting("AACP", "Bypass for AACP", true));
       this.field_29226 = false;
    }
 

@@ -3,8 +3,8 @@ package remapped;
 public class class_6805 extends Module {
    public class_6805() {
       super(class_5664.field_28714, "Minis", "Minis criticals");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Hypixel", "Cubecraft"));
-      this.method_42010(new class_8563("Avoid Fall Damage", "Avoid fall damages", false));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel", "Cubecraft"));
+      this.addSetting(new BooleanSetting("Avoid Fall Damage", "Avoid fall damages", false));
    }
 
    @class_9148

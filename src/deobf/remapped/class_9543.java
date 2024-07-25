@@ -22,12 +22,12 @@ public class class_9543 extends class_367 {
 
    public class_9543() {
       super("AutoCrystal", "Automatically detonates crystals", class_5664.field_28718);
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Single", "Switch"));
-      this.method_42010(new class_2748<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));
-      this.method_42010(new class_8563("Players", "Hit players", true));
-      this.method_42010(new class_8563("Animals/Monsters", "Hit animals and monsters", false));
-      this.method_42010(new class_8563("Invisible", "Hit invisible entites", true));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch"));
+      this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));
+      this.addSetting(new BooleanSetting("Players", "Hit players", true));
+      this.addSetting(new BooleanSetting("Animals/Monsters", "Hit animals and monsters", false));
+      this.addSetting(new BooleanSetting("Invisible", "Hit invisible entites", true));
    }
 
    @Override

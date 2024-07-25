@@ -5,7 +5,7 @@ public class class_3721 extends class_367 {
 
    public class_3721() {
       super("BoatFly", "Fly with a boat", class_5664.field_28716);
-      this.method_42010(new class_2748<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
    }
 
    @class_9148

@@ -8,7 +8,7 @@ public class class_1370 extends Module {
 
    public class_1370() {
       super(class_5664.field_28709, "Shadow", "Draws a line arround entities");
-      this.method_42010(new class_976("Color", "The tracers color", class_1255.field_6918.field_6917));
+      this.addSetting(new ColorSetting("Color", "The tracers color", class_1255.field_6918.field_6917));
    }
 
    @class_9148

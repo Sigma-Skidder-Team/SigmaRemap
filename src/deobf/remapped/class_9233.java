@@ -8,9 +8,9 @@ public class class_9233 extends Module {
 
    public class_9233() {
       super(class_5664.field_28716, "Mineplex", "Highjump for Mineplex");
-      this.method_42010(new class_2748<Float>("Motion", "Highjump motion", 1.1F, Float.class, 0.42F, 5.0F, 0.05F));
-      this.method_42010(new class_8563("Disable", "Disable on landing.", true));
-      this.method_42010(new class_8563("Fake fly", "Am i flying ?", false));
+      this.addSetting(new FloatSetting<Float>("Motion", "Highjump motion", 1.1F, Float.class, 0.42F, 5.0F, 0.05F));
+      this.addSetting(new BooleanSetting("Disable", "Disable on landing.", true));
+      this.addSetting(new BooleanSetting("Fake fly", "Am i flying ?", false));
    }
 
    @Override

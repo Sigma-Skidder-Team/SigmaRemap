@@ -13,9 +13,9 @@ public class class_4221 extends Module {
 
    public class_4221() {
       super(class_5664.field_28709, "ActiveMods", "Shows active mods");
-      this.method_42010(new class_2826("Outline", "Outline", 0, "All", "Left", "Right", "None"));
-      this.method_42010(new class_2826("Animation", "Animation", 0, "Smooth", "Slide", "Both", "None"));
-      this.method_42010(new class_8563("Sound", "Toggle sound", true));
+      this.addSetting(new ModeSetting("Outline", "Outline", 0, "All", "Left", "Right", "None"));
+      this.addSetting(new ModeSetting("Animation", "Animation", 0, "Smooth", "Slide", "Both", "None"));
+      this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
    }
 
    @Override
@@ -136,7 +136,7 @@ public class class_4221 extends Module {
                class_2440 var5 = new class_2440(200, 200, !var4.method_42015() ? class_4043.field_19620 : class_4043.field_19618);
                var5.method_11122(!var4.method_42015() ? 1.0F : 0.0F);
                this.field_20487.put(var4, var5);
-               class_5004 var6 = var4.method_41996().get("Type");
+               Setting var6 = var4.method_41996().get("Type");
                if (var6 == null) {
                   var6 = var4.method_41996().get("Mode");
                   if (var6 != null) {

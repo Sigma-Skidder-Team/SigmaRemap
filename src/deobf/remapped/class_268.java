@@ -107,11 +107,11 @@ public class class_268 extends Module {
       class_2990 var6 = (class_2990)field_960.get(2);
       class_5664 var7 = this.field_958.get(var4.field_14700);
       Module var8 = SigmaMainClass.method_3328().method_3298().method_844(var7).get(var5.field_14700);
-      class_5004 var9 = this.method_1206(var8).get(var6.field_14700);
-      if (!(var9 instanceof class_2826)) {
-         if (!(var9 instanceof class_8563)) {
-            if (var9 instanceof class_2748) {
-               class_2748 var10 = (class_2748)var9;
+      Setting var9 = this.method_1206(var8).get(var6.field_14700);
+      if (!(var9 instanceof ModeSetting)) {
+         if (!(var9 instanceof BooleanSetting)) {
+            if (var9 instanceof FloatSetting) {
+               FloatSetting var10 = (FloatSetting)var9;
                Object var11 = var10.method_23031();
                if (var11 instanceof Float) {
                   Float var12 = (Float)var10.method_23031();
@@ -126,11 +126,11 @@ public class class_268 extends Module {
                }
             }
          } else {
-            class_8563 var13 = (class_8563)var9;
+            BooleanSetting var13 = (BooleanSetting)var9;
             var13.method_23037(Boolean.valueOf(!var13.method_39398()));
          }
       } else {
-         class_2826 var14 = (class_2826)var9;
+         ModeSetting var14 = (ModeSetting)var9;
          int var15 = var14.method_12858();
          if (!var1) {
             var15--;
@@ -219,7 +219,7 @@ public class class_268 extends Module {
          Module var10 = SigmaMainClass.method_3328().method_3298().method_844(var9).get(var6.field_14700);
          String var11 = var10.method_42001();
          if (var4 == 3) {
-            class_5004 var12 = this.method_1206(var10).get(var7.field_14700);
+            Setting var12 = this.method_1206(var10).get(var7.field_14700);
             var11 = var12.method_23033();
          }
 
@@ -327,15 +327,15 @@ public class class_268 extends Module {
    public List<String> method_1207(Module var1) {
       ArrayList var4 = new ArrayList();
 
-      for (class_5004 var6 : this.method_1206(var1)) {
+      for (Setting var6 : this.method_1206(var1)) {
          var4.add(var6.method_23032() + " " + var6.method_23031());
       }
 
       return var4;
    }
 
-   public List<class_5004> method_1206(Module var1) {
-      ArrayList var4 = new ArrayList<class_5004>(var1.method_41996().values());
+   public List<Setting> method_1206(Module var1) {
+      ArrayList var4 = new ArrayList<Setting>(var1.method_41996().values());
       if (var1 instanceof class_3620) {
          class_3620 var5 = (class_3620)var1;
          var5.method_16866();
@@ -347,7 +347,7 @@ public class class_268 extends Module {
       Iterator var7 = var4.iterator();
 
       while (var7.hasNext()) {
-         class_5004 var6 = (class_5004)var7.next();
+         Setting var6 = (Setting)var7.next();
          if (var6.method_23032().equals("Keybind")) {
             var7.remove();
          }

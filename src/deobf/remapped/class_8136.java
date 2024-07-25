@@ -5,8 +5,8 @@ public class class_8136 extends Module {
 
    public class_8136() {
       super(class_5664.field_28716, "Jump", "Jump spider");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Spartan"));
-      this.method_42010(new class_8563("AutoJump", "Automatically jumps for you", true));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Spartan"));
+      this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you", true));
    }
 
    @Override

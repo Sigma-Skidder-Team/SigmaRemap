@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class class_4589 extends class_5004<List<String>> {
+public class MultiSetting extends Setting<List<String>> {
    private boolean field_22310;
 
-   public class_4589(String var1, String var2, boolean var3, String... var4) {
+   public MultiSetting(String var1, String var2, boolean var3, String... var4) {
       super(var1, var2, class_5195.field_26719, Arrays.<String>asList(var4));
       this.method_21250(var3);
    }

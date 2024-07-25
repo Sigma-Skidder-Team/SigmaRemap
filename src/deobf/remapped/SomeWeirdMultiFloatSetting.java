@@ -1,7 +1,7 @@
 package remapped;
 
-public class class_426 extends class_5004<class_7928> {
-   public class_426(String var1, String var2, float var3, float var4, float var5, float var6) {
+public class SomeWeirdMultiFloatSetting extends Setting<class_7928> {
+   public SomeWeirdMultiFloatSetting(String var1, String var2, float var3, float var4, float var5, float var6) {
       super(var1, var2, class_5195.field_26721, new class_7928(var3, var4, var5, var6));
    }
 

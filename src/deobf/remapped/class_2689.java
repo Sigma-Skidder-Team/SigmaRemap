@@ -9,8 +9,8 @@ public class class_2689 extends Module {
 
    public class_2689() {
       super(class_5664.field_28709, "Breadcrumbs", "Shows your taken path");
-      this.method_42010(new class_8563("Fade Out", "Makes distant breadcrumbs fade out", true));
-      this.method_42010(new class_976("Color", "The crumbs color", class_1255.field_6918.field_6917));
+      this.addSetting(new BooleanSetting("Fade Out", "Makes distant breadcrumbs fade out", true));
+      this.addSetting(new ColorSetting("Color", "The crumbs color", class_1255.field_6918.field_6917));
    }
 
    @class_9148

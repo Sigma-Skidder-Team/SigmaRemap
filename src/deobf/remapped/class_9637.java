@@ -9,8 +9,8 @@ public class class_9637 extends Module {
 
    public class_9637() {
       super(class_5664.field_28716, "NCP", "Step for NCP");
-      this.method_42010(new class_2748<Float>("Maximum heigh", "Maximum heigh", 2.0F, Float.class, 1.0F, 2.5F, 0.5F));
-      this.method_42010(new class_2748<Float>("Timer", "Timer speed", 0.1F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Maximum heigh", "Maximum heigh", 2.0F, Float.class, 1.0F, 2.5F, 0.5F));
+      this.addSetting(new FloatSetting<Float>("Timer", "Timer speed", 0.1F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
    @Override

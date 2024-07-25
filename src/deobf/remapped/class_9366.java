@@ -13,13 +13,13 @@ public class class_9366 extends Module {
 
    public class_9366() {
       super(class_5664.field_28709, "Search", "Searches blocks through the world");
-      class_2748 var3;
-      this.method_42010(var3 = new class_2748<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
-      class_8563 var4;
-      this.method_42010(var4 = new class_8563("Holes", "Shows 1x1 explosion protection holes", false));
-      this.method_42010(new class_976("Color", "The rendered block color", class_1255.field_6920.field_6917, true));
-      class_4589 var5;
-      this.method_42010(var5 = new class_4589("Blocks", "Blocks to render", true));
+      FloatSetting var3;
+      this.addSetting(var3 = new FloatSetting<Float>("Chunk Range", "Range at which search scans blocks", 5.0F, Float.class, 1.0F, 12.0F, 1.0F));
+      BooleanSetting var4;
+      this.addSetting(var4 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
+      this.addSetting(new ColorSetting("Color", "The rendered block color", class_1255.field_6920.field_6917, true));
+      MultiSetting var5;
+      this.addSetting(var5 = new MultiSetting("Blocks", "Blocks to render", true));
       var5.method_23029(var1 -> this.field_47903.clear());
       var3.method_23029(var1 -> this.field_47903.clear());
       var4.method_23029(var1 -> this.field_47903.clear());

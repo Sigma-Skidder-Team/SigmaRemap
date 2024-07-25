@@ -7,8 +7,8 @@ public class class_2850 extends Module {
 
    public class_2850() {
       super(class_5664.field_28716, "Spartan", "A fly for Spartan anticheat");
-      this.method_42010(new class_8563("Ground Spoof", "Send on ground packets", true));
-      this.method_42010(new class_8563("Fake Block", "Send on fake blockplacing packet", true));
+      this.addSetting(new BooleanSetting("Ground Spoof", "Send on ground packets", true));
+      this.addSetting(new BooleanSetting("Fake Block", "Send on fake blockplacing packet", true));
    }
 
    @Override

@@ -246,14 +246,14 @@ public class class_191 {
       long var3 = (long)this.method_840();
 
       for (Module var6 : this.field_637.values()) {
-         for (class_5004 var8 : var6.method_41996().values()) {
+         for (Setting var8 : var6.method_41996().values()) {
             if (var8.method_23043()) {
                var3++;
             }
 
             if (var6 instanceof class_3620) {
                for (Module var12 : ((class_3620)var6).field_17661) {
-                  for (class_5004 var14 : var12.method_41996().values()) {
+                  for (Setting var14 : var12.method_41996().values()) {
                      if (var14.method_23043()) {
                         var3++;
                      }
@@ -305,7 +305,7 @@ public class class_191 {
    }
 
    public int method_840() {
-      class_5004 var3 = this.method_847(class_7033.class).method_41996().get("Mode");
+      Setting var3 = this.method_847(class_7033.class).method_41996().get("Mode");
       String var4 = (String)var3.field_25890;
       var3.method_23037("Dolphin");
       var3.field_25890 = (T)var4;

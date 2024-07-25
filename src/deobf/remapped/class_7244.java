@@ -3,9 +3,9 @@ package remapped;
 public class class_7244 extends Module {
    public class_7244() {
       super(class_5664.field_28714, "Basic", "Places block underneath");
-      this.method_42010(new class_8563("Explosions", "Cancels Explosions knockback", true));
-      this.method_42010(new class_2748<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new BooleanSetting("Explosions", "Cancels Explosions knockback", true));
+      this.addSetting(new FloatSetting<Float>("H-Multiplier", "Horizontal velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("V-Multiplier", "Vertical velocity multiplier", 0.0F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 
    @class_9148

@@ -6,9 +6,9 @@ public class class_4211 extends Module {
 
    public class_4211() {
       super(class_5664.field_28716, "Redesky", "Longjump for Redesky.");
-      this.method_42010(new class_2748<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
-      this.method_42010(new class_8563("NoFall", "Avoid taking fall damage", true));
+      this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Heigh", "Longjump heigh", 1.0F, Float.class, 0.1F, 1.0F, 0.01F));
+      this.addSetting(new BooleanSetting("NoFall", "Avoid taking fall damage", true));
    }
 
    @Override

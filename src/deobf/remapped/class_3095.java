@@ -8,8 +8,8 @@ public class class_3095 extends Module {
 
    public class_3095() {
       super(class_5664.field_28710, "NoFall", "Avoid you from getting fall damages");
-      this.method_42010(
-         new class_2826("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
+      this.addSetting(
+         new ModeSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
             .method_12861("Hypixel", "Hypixel2")
       );
    }

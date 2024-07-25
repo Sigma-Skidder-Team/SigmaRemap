@@ -7,7 +7,7 @@ public class class_3134 extends Module {
 
    public class_3134() {
       super(class_5664.field_28716, "SlowHop", "SlowHop speed");
-      this.method_42010(new class_8563("AutoJump", "Automatically jumps for you.", true));
+      this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
    }
 
    @Override

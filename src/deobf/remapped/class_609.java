@@ -8,7 +8,7 @@ public class class_609 extends class_367 {
 
    public class_609() {
       super("Hypixel", "Hypixel bypass", class_5664.field_28710);
-      this.method_42010(new class_8563("Fire resistance potions", "Automatically drink fire pots", true));
+      this.addSetting(new BooleanSetting("Fire resistance potions", "Automatically drink fire pots", true));
       this.field_3479 = -1;
       this.field_3481 = -1;
    }

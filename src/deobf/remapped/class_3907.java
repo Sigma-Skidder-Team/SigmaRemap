@@ -5,7 +5,7 @@ public class class_3907 extends Module {
 
    public class_3907() {
       super(class_5664.field_28714, "AAC 4", "Criticals for aac 4.*");
-      this.method_42010(new class_8563("KillAura", "Criticals only if KillAura is enabled", false));
+      this.addSetting(new BooleanSetting("KillAura", "Criticals only if KillAura is enabled", false));
    }
 
    @Override

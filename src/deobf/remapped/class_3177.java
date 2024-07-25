@@ -15,12 +15,12 @@ public class class_3177 extends Module {
 
    public class_3177() {
       super(class_5664.field_28712, "ChestStealer", "Steals items from chest");
-      this.method_42010(new class_8563("Aura", "Automatically open chests near you.", false));
-      this.method_42010(new class_8563("Ignore Junk", "Ignores useless items.", true));
-      this.method_42010(new class_8563("Fix ViaVersion", "Fixes ViaVersion delay.", true));
-      this.method_42010(new class_8563("Close", "Automatically closes the chest when done", true));
-      this.method_42010(new class_2748<Float>("Delay", "Click delay", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("First Item", "Tick delay before grabbing first item", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new BooleanSetting("Aura", "Automatically open chests near you.", false));
+      this.addSetting(new BooleanSetting("Ignore Junk", "Ignores useless items.", true));
+      this.addSetting(new BooleanSetting("Fix ViaVersion", "Fixes ViaVersion delay.", true));
+      this.addSetting(new BooleanSetting("Close", "Automatically closes the chest when done", true));
+      this.addSetting(new FloatSetting<Float>("Delay", "Click delay", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("First Item", "Tick delay before grabbing first item", 0.2F, Float.class, 0.0F, 1.0F, 0.01F));
       this.field_15896 = new ConcurrentHashMap<class_7099, Boolean>();
    }
 

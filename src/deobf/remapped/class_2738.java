@@ -7,7 +7,7 @@ public class class_2738 extends class_367 {
 
    public class_2738() {
       super("NCP", "Phase for NCP anticheat", class_5664.field_28716);
-      this.method_42010(new class_8563("Hypixel", "Hypixel bypass", true));
+      this.addSetting(new BooleanSetting("Hypixel", "Hypixel bypass", true));
    }
 
    @Override

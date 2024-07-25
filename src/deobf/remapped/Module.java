@@ -19,7 +19,7 @@ public abstract class Module {
    private Module field_46695 = null;
    private int field_46691 = 0;
    private Set<String> field_46694 = new HashSet<String>();
-   public Map<String, class_5004> field_46697 = new LinkedHashMap<String, class_5004>();
+   public Map<String, Setting> settingMap = new LinkedHashMap<String, Setting>();
 
    public Module(class_5664 var1, String var2, String var3) {
       this.field_46696 = var1;
@@ -27,16 +27,16 @@ public abstract class Module {
       this.field_46701 = var3;
    }
 
-   public void method_42010(class_5004 var1) {
-      if (!this.field_46697.containsKey(var1.method_23032())) {
-         this.field_46697.put(var1.method_23032(), var1);
+   public void addSetting(Setting var1) {
+      if (!this.settingMap.containsKey(var1.method_23032())) {
+         this.settingMap.put(var1.method_23032(), var1);
       } else {
          throw new IllegalArgumentException("Attempted to add an option with the same name");
       }
    }
 
    public Object method_41997(String var1) {
-      return this.field_46697.get(var1).method_23031();
+      return this.settingMap.get(var1).method_23031();
    }
 
    public boolean method_42007(String var1) {
@@ -48,8 +48,8 @@ public abstract class Module {
    }
 
    public float[] method_42024(String var1) {
-      class_5004 var4 = (class_5004)this.method_41997(var1);
-      return !(var4 instanceof class_426) ? null : ((class_426)var4).method_2111();
+      Setting var4 = (Setting)this.method_41997(var1);
+      return !(var4 instanceof SomeWeirdMultiFloatSetting) ? null : ((SomeWeirdMultiFloatSetting)var4).method_2111();
    }
 
    public int method_41993(String var1) {
@@ -76,32 +76,32 @@ public abstract class Module {
       }
    }
 
-   public List<class_5004> method_41988(String var1) {
+   public List<Setting> method_41988(String var1) {
       try {
-         return ((class_4978)this.field_46697.get(var1)).method_9875();
+         return ((class_4978)this.settingMap.get(var1)).method_9875();
       } catch (Exception var5) {
          return null;
       }
    }
 
    public void method_42022(String var1, Object var2) {
-      this.field_46697.get(var1).method_23037(var2);
+      this.settingMap.get(var1).method_23037(var2);
    }
 
    public void method_41986(String var1, boolean var2) {
-      this.field_46697.get(var1).method_23037(var2);
+      this.settingMap.get(var1).method_23037(var2);
    }
 
    public void method_42008(String var1, int var2) {
-      this.field_46697.get(var1).method_23037(var2);
+      this.settingMap.get(var1).method_23037(var2);
    }
 
    public void method_42005(String var1, boolean var2) {
-      this.field_46697.get(var1).method_23037(var2);
+      this.settingMap.get(var1).method_23037(var2);
    }
 
    public void method_42009(String var1, String var2) {
-      this.field_46697.get(var1).method_23037(var2);
+      this.settingMap.get(var1).method_23037(var2);
    }
 
    public void method_42019() {
@@ -112,7 +112,7 @@ public abstract class Module {
       this.field_46700 = false;
       this.field_46699 = true;
 
-      for (class_5004 var4 : this.field_46697.values()) {
+      for (Setting var4 : this.settingMap.values()) {
          var4.method_23041();
       }
    }
@@ -140,7 +140,7 @@ public abstract class Module {
             } catch (class_7584 var12) {
             }
 
-            for (class_5004 var9 : this.field_46697.values()) {
+            for (Setting var9 : this.settingMap.values()) {
                if (var9.method_23032().equals(var7)) {
                   try {
                      var9.method_23042(var6);
@@ -168,7 +168,7 @@ public abstract class Module {
       var1.method_5823("allowed", this.method_41994());
       class_1336 var4 = new class_1336();
 
-      for (class_5004 var6 : this.field_46697.values()) {
+      for (Setting var6 : this.settingMap.values()) {
          var4.method_6159(var6.method_23035(new class_1293()));
       }
 
@@ -190,8 +190,8 @@ public abstract class Module {
       return this.method_42015();
    }
 
-   public Map<String, class_5004> method_41996() {
-      return this.field_46697;
+   public Map<String, Setting> method_41996() {
+      return this.settingMap;
    }
 
    public String method_41987() {

@@ -3,7 +3,7 @@ package remapped;
 public class class_2739 extends Module {
    public class_2739() {
       super(class_5664.field_28714, "InteractRange", "Allows you to interact farer away");
-      this.method_42010(new class_2748<Float>("Range", "Range value", 4.0F, Float.class, 3.0F, 8.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 3.0F, 8.0F, 0.01F));
    }
 
    @class_9148

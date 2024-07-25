@@ -9,7 +9,7 @@ public class class_273 extends class_2612 implements class_1768 {
    private boolean field_983;
    private boolean field_984;
    public int field_982 = 200;
-   private HashMap<class_1552, class_5004> field_976 = new HashMap<class_1552, class_5004>();
+   private HashMap<class_1552, Setting> field_976 = new HashMap<class_1552, Setting>();
    public HashMap<Module, class_7038> field_978 = new HashMap<Module, class_7038>();
    public class_2440 field_979 = new class_2440(114, 114);
    private String field_981 = "";
@@ -22,7 +22,7 @@ public class class_273 extends class_2612 implements class_1768 {
       this.method_1240();
    }
 
-   private int method_1241(class_7038 var1, class_5004 var2, int var3, int var4, int var5) {
+   private int method_1241(class_7038 var1, Setting var2, int var3, int var4, int var5) {
       switch (var2.method_23030()) {
          case field_26724:
             byte var21 = 24;
@@ -47,7 +47,7 @@ public class class_273 extends class_2612 implements class_1768 {
             byte var28 = 24;
             class_1552 var36 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.method_23032());
             this.field_976.put(var36, var2);
-            class_2748 var44 = (class_2748)var2;
+            FloatSetting var44 = (FloatSetting)var2;
             class_1479 var47 = new class_1479(var1, var2.method_23032() + "slider", var1.method_32109() - 126 - var5, var4 + 6, 126, 24);
             var47.method_6824().method_32144(class_5320.field_27138);
             var47.method_32186(Float.toString((Float)var2.method_23031()));
@@ -100,8 +100,8 @@ public class class_273 extends class_2612 implements class_1768 {
             var35.method_32144(class_5320.field_27139);
             var35.method_13721(var1x -> var2.method_23037(var1x.method_32165()));
             var2.method_23029(var2x -> {
-               if (var35.method_32165() != ((class_8246)var2).method_23031()) {
-                  var35.method_32186(((class_8246)var2).method_23031());
+               if (var35.method_32165() != ((TextInputSetting)var2).method_23031()) {
+                  var35.method_32186(((TextInputSetting)var2).method_23031());
                }
             });
             var4 += var27 + var5;
@@ -117,18 +117,18 @@ public class class_273 extends class_2612 implements class_1768 {
                var4 + 6 - 1,
                123,
                27,
-               ((class_2826)var2).method_12860(),
-               ((class_2826)var2).method_12858()
+               ((ModeSetting)var2).method_12860(),
+               ((ModeSetting)var2).method_12858()
             );
             this.field_976.put(var34, var2);
             var2.method_23029(var2x -> {
-               if (var42.method_15427() != ((class_2826)var2).method_12858()) {
-                  var42.method_15426(((class_2826)var2).method_12858());
+               if (var42.method_15427() != ((ModeSetting)var2).method_12858()) {
+                  var42.method_15426(((ModeSetting)var2).method_12858());
                }
             });
             var42.method_8236(var2x -> {
-               ((class_2826)var2).method_12859(((class_3366)var2x).method_15427());
-               var42.method_15426(((class_2826)var2).method_12858());
+               ((ModeSetting)var2).method_12859(((class_3366)var2x).method_15427());
+               var42.method_15426(((ModeSetting)var2).method_12858());
             });
             var42.method_32135((var2x, var3x) -> var2x.method_32175(var1.method_32109() - 123 - var5));
             var1.method_32148(var34);
@@ -141,7 +141,7 @@ public class class_273 extends class_2612 implements class_1768 {
             class_7038 var17 = new class_7038(var1, var2.method_23032() + "view", var3, var4, var1.method_32109(), 0);
             int var25 = 0;
 
-            for (class_5004 var41 : ((class_7131)var2).method_9875()) {
+            for (Setting var41 : ((class_7131)var2).method_9875()) {
                var25 = this.method_1241(var17, var41, 0, var25, var5);
             }
 
@@ -187,8 +187,8 @@ public class class_273 extends class_2612 implements class_1768 {
                var4 + 5,
                175,
                200,
-               ((class_4589)var2).method_21251(),
-               ((class_4589)var2).method_23031().<String>toArray(new String[0])
+               ((MultiSetting)var2).method_21251(),
+               ((MultiSetting)var2).method_23031().<String>toArray(new String[0])
             );
             this.field_976.put(var31, var2);
             var39.method_8236(var2x -> var2.method_23037(var39.method_7719()));
@@ -200,7 +200,7 @@ public class class_273 extends class_2612 implements class_1768 {
          case field_26727:
             short var14 = 160;
             byte var22 = 114;
-            class_976 var30 = (class_976)var2;
+            ColorSetting var30 = (ColorSetting)var2;
             class_1552 var38 = new class_1552(var1, var2.method_23032() + "lbl", var3, var4, this.field_982, 24, class_1552.field_8208, var2.method_23032());
             class_628 var46 = new class_628(
                var1, var2.method_23032() + "color", var1.method_32109() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.method_23031(), var30.method_4268()
@@ -242,7 +242,7 @@ public class class_273 extends class_2612 implements class_1768 {
                var12.method_38326(var5x.field_40551, var5x.field_40553, var5x.field_40550, var5x.field_40552);
             });
             var12.method_8236(
-               var2x -> ((class_426)var2).method_2109(var12.method_38325()[0], var12.method_38325()[1], var12.method_38325()[2], var12.method_38325()[3])
+               var2x -> ((SomeWeirdMultiFloatSetting)var2).method_2109(var12.method_38325()[0], var12.method_38325()[1], var12.method_38325()[2], var12.method_38325()[3])
             );
             var1.method_32148(var11);
             var1.method_32148(var12);
@@ -256,7 +256,7 @@ public class class_273 extends class_2612 implements class_1768 {
       byte var3 = 20;
       int var4 = 20;
 
-      for (class_5004 var6 : this.field_977.method_41996().values()) {
+      for (Setting var6 : this.field_977.method_41996().values()) {
          var4 = this.method_1241(this, var6, 20, var4, 20);
       }
 
@@ -269,7 +269,7 @@ public class class_273 extends class_2612 implements class_1768 {
             class_7038 var12 = new class_7038(this, var10.method_41992() + "SubView", 0, var17, this.field_36278, this.field_36257 - var4);
             var12.method_32135((var0, var1) -> var0.method_32142(var1.method_32109()));
 
-            for (class_5004 var14 : var10.method_41996().values()) {
+            for (Setting var14 : var10.method_41996().values()) {
                var11 = this.method_1241(var12, var14, 20, var11, 20);
             }
 
@@ -306,7 +306,7 @@ public class class_273 extends class_2612 implements class_1768 {
 
       for (Entry var6 : this.field_976.entrySet()) {
          class_1552 var7 = (class_1552)var6.getKey();
-         class_5004 var8 = (class_5004)var6.getValue();
+         Setting var8 = (Setting)var6.getValue();
          if (var7.method_32183() && var7.method_32147()) {
             var4 = true;
             this.field_981 = var8.method_23033();

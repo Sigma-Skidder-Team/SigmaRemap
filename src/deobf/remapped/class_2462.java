@@ -9,10 +9,10 @@ public class class_2462 extends Module {
 
    public class_2462() {
       super(class_5664.field_28716, "Hypixel", "Speed for Hypixel");
-      this.method_42010(new class_8563("AutoJump", "Automatically jumps for you.", true));
-      this.method_42010(new class_8563("Timer", "Use timer", true));
-      this.method_42010(new class_8563("GroundSpeed", "Move faster on ground", true));
-      this.method_42010(new class_8563("BorderJump", "Automatically jumps off edges with speed", true));
+      this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
+      this.addSetting(new BooleanSetting("Timer", "Use timer", true));
+      this.addSetting(new BooleanSetting("GroundSpeed", "Move faster on ground", true));
+      this.addSetting(new BooleanSetting("BorderJump", "Automatically jumps off edges with speed", true));
    }
 
    @Override

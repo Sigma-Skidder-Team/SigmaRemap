@@ -24,7 +24,7 @@ public class class_6908 extends class_3620 {
          new class_6799(),
          new class_7318()
       );
-      this.method_42010(new class_8563("Lag back checker", "Disable speed when you get lag back", true));
+      this.addSetting(new BooleanSetting("Lag back checker", "Disable speed when you get lag back", true));
       field_35509 = 0;
    }
 

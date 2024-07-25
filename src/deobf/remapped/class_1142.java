@@ -3,10 +3,10 @@ package remapped;
 public class class_1142 extends Module {
    public class_1142() {
       super(class_5664.field_28709, "Streaming", "Useful module when recording or streaming");
-      this.method_42010(new class_8563("Hide skins", "Spoof all players skin", true));
-      this.method_42010(new class_8563("Hide server name", "Spoof server name", false));
-      this.method_42010(new class_8246("Server name", "The server name that you need to hide", "servernamehere"));
-      this.method_42010(new class_8563("Hide date", "Hide date on scoreboard", false));
+      this.addSetting(new BooleanSetting("Hide skins", "Spoof all players skin", true));
+      this.addSetting(new BooleanSetting("Hide server name", "Spoof server name", false));
+      this.addSetting(new TextInputSetting("Server name", "The server name that you need to hide", "servernamehere"));
+      this.addSetting(new BooleanSetting("Hide date", "Hide date on scoreboard", false));
    }
 
    @class_9148

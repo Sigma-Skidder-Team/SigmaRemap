@@ -10,8 +10,8 @@ public class class_669 extends Module {
 
    public class_669() {
       super(class_5664.field_28716, "Vanilla", "Regular vanilla fly");
-      this.method_42010(new class_2748<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
-      this.method_42010(new class_8563("Kick bypass", "Bypass vanilla kick for flying", true));
+      this.addSetting(new FloatSetting<Float>("Speed", "Fly speed", 4.0F, Float.class, 0.28F, 10.0F, 0.01F));
+      this.addSetting(new BooleanSetting("Kick bypass", "Bypass vanilla kick for flying", true));
    }
 
    @Override

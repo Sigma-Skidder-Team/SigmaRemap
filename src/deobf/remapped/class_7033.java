@@ -10,8 +10,8 @@ public class class_7033 extends Module {
 
    public class_7033() {
       super(class_5664.field_28716, "Jesus", "Where's the scientific proof?");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Basic", "Dolphin").method_12861("Dolphin"));
-      this.method_42010(new class_8563("Swim up", "Automatically swim up", true));
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Dolphin").method_12861("Dolphin"));
+      this.addSetting(new BooleanSetting("Swim up", "Automatically swim up", true));
    }
 
    @Override

@@ -5,7 +5,7 @@ public class class_914 extends Module {
 
    public class_914() {
       super(class_5664.field_28709, "Fullbright", "Makes you see in the dark");
-      this.method_42010(new class_2826("Type", "Fullbright type", 0, "Normal"));
+      this.addSetting(new ModeSetting("Type", "Fullbright type", 0, "Normal"));
    }
 
    @Override

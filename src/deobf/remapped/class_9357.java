@@ -6,13 +6,13 @@ public class class_9357 extends Module {
 
    public class_9357() {
       super(class_5664.field_28718, "Weather", "Removes rain and changes the world's time");
-      this.method_42010(new class_8563("Custom time", "Set the world time", true));
-      this.method_42010(new class_2748<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method_23029(var1 -> {
+      this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
+      this.addSetting(new FloatSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method_23029(var1 -> {
          if (this.method_42007("Custom time") && this.method_42015()) {
             mcInstance.field_9601.method_719(-((long)this.method_42002("Time")));
          }
       }));
-      this.method_42010(new class_8563("Disable rain", "Disable rain", true));
+      this.addSetting(new BooleanSetting("Disable rain", "Disable rain", true));
    }
 
    @Override

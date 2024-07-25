@@ -9,8 +9,8 @@ public class class_6865 extends Module {
 
    public class_6865() {
       super(class_5664.field_28716, "Legit", "Legit Sprint jumping.");
-      this.method_42010(new class_8563("Sprint", "Sprints when walking", true));
-      this.method_42010(new class_8563("AutoJump", "Automatically jumps for you.", true));
+      this.addSetting(new BooleanSetting("Sprint", "Sprints when walking", true));
+      this.addSetting(new BooleanSetting("AutoJump", "Automatically jumps for you.", true));
    }
 
    @class_9148

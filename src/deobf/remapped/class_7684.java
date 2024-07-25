@@ -7,9 +7,9 @@ public class class_7684 extends Module {
 
    public class_7684() {
       super(class_5664.field_28708, "Info HUD", "Shows a bunch of usefull stuff");
-      this.method_42010(new class_2826("Cords", "Coordinate display type", 1, "None", "Normal", "Precise"));
-      this.method_42010(new class_8563("Show Player", "Renders a miniature version of your character", true));
-      this.method_42010(new class_8563("Show Armor", "Shows your armor's status", true));
+      this.addSetting(new ModeSetting("Cords", "Coordinate display type", 1, "None", "Normal", "Precise"));
+      this.addSetting(new BooleanSetting("Show Player", "Renders a miniature version of your character", true));
+      this.addSetting(new BooleanSetting("Show Armor", "Shows your armor's status", true));
       this.method_42011(false);
    }
 

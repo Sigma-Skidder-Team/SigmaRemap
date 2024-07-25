@@ -11,7 +11,7 @@ public class class_2016 extends Module {
 
    public class_2016() {
       super(class_5664.field_28710, "OldHitting", "Reverts to 1.7/1.8 hitting");
-      this.method_42010(new class_2826("Animation", "Animation mode", 0, "Vanilla", "Tap", "Tap2", "Slide", "Slide2", "Scale", "Leaked", "Ninja", "Down"));
+      this.addSetting(new ModeSetting("Animation", "Animation mode", 0, "Vanilla", "Tap", "Tap2", "Slide", "Slide2", "Scale", "Leaked", "Ninja", "Down"));
       this.method_42011(true);
    }
 

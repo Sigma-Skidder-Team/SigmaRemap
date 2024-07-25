@@ -9,7 +9,7 @@ public class class_8193 extends Module {
 
    public class_8193() {
       super(class_5664.field_28716, "Cubecraft", "Fly for Cubecraft");
-      this.method_42010(new class_8563("Damage", "Allows you to go infinitly up", false));
+      this.addSetting(new BooleanSetting("Damage", "Allows you to go infinitly up", false));
    }
 
    @Override

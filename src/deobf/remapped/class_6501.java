@@ -5,7 +5,7 @@ public class class_6501 extends Module {
 
    public class_6501() {
       super(class_5664.field_28712, "AutoTools", "Picks the best tool when breaking blocks");
-      this.method_42010(new class_2826("Inv Mode", "The way it will move tools in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
+      this.addSetting(new ModeSetting("Inv Mode", "The way it will move tools in your inventory", 0, "Basic", "OpenInv", "FakeInv"));
    }
 
    @class_9148

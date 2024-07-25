@@ -7,7 +7,7 @@ public class class_1467 extends Module {
 
    public class_1467() {
       super(class_5664.field_28716, "NCP", "Speed for NCP");
-      this.method_42010(new class_8563("Auto Jump", "Automatically jumps for you.", true));
+      this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
    }
 
    @Override

@@ -6,7 +6,7 @@ public class class_8857 extends Module {
 
    public class_8857() {
       super(class_5664.field_28716, "Cubecraft", "Longjump for Cubecraft.");
-      this.method_42010(new class_2748<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
    }
 
    @Override

@@ -7,7 +7,7 @@ public class class_1903 extends Module {
 
    public class_1903() {
       super(class_5664.field_28716, "Hypixel", "Highjump for Hypixel");
-      this.method_42010(new class_2748<Float>("Motion", "Highjump motion", 0.75F, Float.class, 0.42F, 5.0F, 0.05F));
+      this.addSetting(new FloatSetting<Float>("Motion", "Highjump motion", 0.75F, Float.class, 0.42F, 5.0F, 0.05F));
    }
 
    @Override

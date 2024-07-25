@@ -15,8 +15,8 @@ public class class_3262 extends Module {
 
    public class_3262() {
       super(class_5664.field_28711, "Hypixel", "Gameplay for Hypixel");
-      this.method_42010(new class_8563("FriendAccept", "Automatically accept friend requests", false));
-      this.method_42010(new class_8563("Hide infos", "Hide scoreboard server informations & date when ingame", false));
+      this.addSetting(new BooleanSetting("FriendAccept", "Automatically accept friend requests", false));
+      this.addSetting(new BooleanSetting("Hide infos", "Hide scoreboard server informations & date when ingame", false));
    }
 
    @Override

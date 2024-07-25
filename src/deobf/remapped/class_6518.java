@@ -10,9 +10,9 @@ public class class_6518 extends Module {
 
    public class_6518() {
       super(class_5664.field_28710, "Derp", "Spazzes around");
-      this.method_42010(new class_2826("Rotation Mode", "Rotation Mode", 0, "Random", "Spin", "None"));
-      this.method_42010(new class_8563("Hit", "Randomly hit", true));
-      this.method_42010(new class_8563("Sneak", "Randomly sneak", true));
+      this.addSetting(new ModeSetting("Rotation Mode", "Rotation Mode", 0, "Random", "Spin", "None"));
+      this.addSetting(new BooleanSetting("Hit", "Randomly hit", true));
+      this.addSetting(new BooleanSetting("Sneak", "Randomly sneak", true));
    }
 
    @class_9148

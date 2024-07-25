@@ -15,10 +15,10 @@ public class class_6049 extends Module {
 
    public class_6049() {
       super(class_5664.field_28716, "NCP", "Places block underneath");
-      this.method_42010(new class_2826("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Slow", "Sneak"));
-      this.method_42010(new class_8563("KeepRotations", "Keeps your rotations.", true));
-      this.method_42010(new class_2748<Float>("Extend", "Extend value", 0.0F, Float.class, 0.0F, 6.0F, 0.1F));
-      this.method_42010(new class_8563("Downwards", "Allows you to go down when sneaking.", true));
+      this.addSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Slow", "Sneak"));
+      this.addSetting(new BooleanSetting("KeepRotations", "Keeps your rotations.", true));
+      this.addSetting(new FloatSetting<Float>("Extend", "Extend value", 0.0F, Float.class, 0.0F, 6.0F, 0.1F));
+      this.addSetting(new BooleanSetting("Downwards", "Allows you to go down when sneaking.", true));
    }
 
    @Override

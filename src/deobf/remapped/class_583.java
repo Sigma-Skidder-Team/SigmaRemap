@@ -8,10 +8,10 @@ public class class_583 extends Module {
 
    public class_583() {
       super(class_5664.field_28716, "NCP", "Longjump for NoCheatPlus.");
-      this.method_42010(new class_2748<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
-      this.method_42010(new class_2826("Glide Mode", "The way you will glide", 1, "None", "Basic", "High"));
-      this.method_42010(new class_2826("Speed Mode", "The way you will speed", 0, "Basic", "Funcraft", "Hypixel"));
+      this.addSetting(new FloatSetting<Float>("Boost", "Longjump boost", 3.0F, Float.class, 1.0F, 5.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Duration", "Speed duration", 10.0F, Float.class, 7.0F, 200.0F, 1.0F));
+      this.addSetting(new ModeSetting("Glide Mode", "The way you will glide", 1, "None", "Basic", "High"));
+      this.addSetting(new ModeSetting("Speed Mode", "The way you will speed", 0, "Basic", "Funcraft", "Hypixel"));
    }
 
    @Override

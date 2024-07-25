@@ -12,7 +12,7 @@ public class class_9844 extends Module {
 
    public class_9844() {
       super(class_5664.field_28716, "ElytraFly", "Better elytra flying");
-      this.method_42010(new class_8563("NCP", "Bypass NCP", true));
+      this.addSetting(new BooleanSetting("NCP", "Bypass NCP", true));
    }
 
    @class_9148

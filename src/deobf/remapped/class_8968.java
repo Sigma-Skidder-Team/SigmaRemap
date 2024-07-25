@@ -5,9 +5,9 @@ import org.lwjgl.opengl.GL11;
 public class class_8968 extends class_3620 {
    public class_8968() {
       super(class_5664.field_28716, "ClickTP", "TP's you when you click", new class_6371(), new class_2420());
-      this.method_42010(new class_8563("Sneak", "Allows teleport only when sneaking", true));
-      this.method_42010(new class_8563("Auto Disable", "Disable ClickTP after teleporting", true));
-      this.method_42010(new class_2748<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));
+      this.addSetting(new BooleanSetting("Sneak", "Allows teleport only when sneaking", true));
+      this.addSetting(new BooleanSetting("Auto Disable", "Disable ClickTP after teleporting", true));
+      this.addSetting(new FloatSetting<Float>("Maximum range", "Maximum range of the teleport", 100.0F, Float.class, 10.0F, 300.0F, 1.0F));
    }
 
    @class_9148

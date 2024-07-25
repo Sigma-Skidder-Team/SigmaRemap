@@ -13,7 +13,7 @@ public class class_2461 extends Module {
 
    public class_2461() {
       super(class_5664.field_28716, "AAC", "Places block underneath if it is in hand");
-      this.method_42010(new class_8563("Haphe (AACAP)", "Never let's you touch the ground.", false));
+      this.addSetting(new BooleanSetting("Haphe (AACAP)", "Never let's you touch the ground.", false));
    }
 
    @Override

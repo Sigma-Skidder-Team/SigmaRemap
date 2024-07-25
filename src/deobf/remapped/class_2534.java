@@ -37,35 +37,35 @@ public class class_2534 extends Module {
 
    public class_2534() {
       super(class_5664.field_28714, "KillAura", "Automatically attacks entities");
-      this.method_42010(new class_2826("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
-      this.method_42010(new class_2826("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
-      this.method_42010(new class_2826("Sort Mode", "Sort Mode", 0, "Range", "Health", "Angle", "Armor", "Prev Range"));
-      this.method_42010(new class_2826("Attack Mode", "Attacks after or before sending the movement", 0, "Pre", "Post"));
-      this.method_42010(new class_2826("Rotation Mode", "The way you will look at entities", 0, "NCP", "AAC", "Smooth", "LockView", "Test", "Test2", "None"));
-      this.method_42010(new class_2748<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
-      this.method_42010(
-         new class_2748<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method_23029(var1 -> this.field_12561.method_40098())
+      this.addSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch", "Multi", "Multi2"));
+      this.addSetting(new ModeSetting("Autoblock Mode", "Autoblock Mode", 0, "None", "NCP", "Basic1", "Basic2", "Vanilla"));
+      this.addSetting(new ModeSetting("Sort Mode", "Sort Mode", 0, "Range", "Health", "Angle", "Armor", "Prev Range"));
+      this.addSetting(new ModeSetting("Attack Mode", "Attacks after or before sending the movement", 0, "Pre", "Post"));
+      this.addSetting(new ModeSetting("Rotation Mode", "The way you will look at entities", 0, "NCP", "AAC", "Smooth", "LockView", "Test", "Test2", "None"));
+      this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Block Range", "Block Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.2F));
+      this.addSetting(
+         new FloatSetting<Float>("Min CPS", "Min CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method_23029(var1 -> this.field_12561.method_40098())
       );
-      this.method_42010(
-         new class_2748<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method_23029(var1 -> this.field_12561.method_40098())
+      this.addSetting(
+         new FloatSetting<Float>("Max CPS", "Max CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F).method_23029(var1 -> this.field_12561.method_40098())
       );
-      this.method_42010(new class_2748<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
-      this.method_42010(new class_2748<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
-      this.method_42010(new class_8563("Interact autoblock", "Send interact packet when blocking", true));
-      this.method_42010(new class_8563("Players", "Hit players", true));
-      this.method_42010(new class_8563("Animals", "Hit animals", false));
-      this.method_42010(new class_8563("Monsters", "Hit monsters", false));
-      this.method_42010(new class_8563("Invisible", "Hit invisible entites", true));
-      this.method_42010(new class_8563("Raytrace", "Helps the aura become more legit", true));
-      this.method_42010(new class_8563("Cooldown", "Use attack cooldown (1.9+)", false));
-      this.method_42010(new class_8563("No swing", "Hit without swinging", false));
-      this.method_42010(new class_8563("Disable on death", "Disable on death", true));
-      this.method_42010(new class_8563("Through walls", "Target entities through walls", true));
-      this.method_42010(new class_8563("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
-      this.method_42010(new class_8563("Silent", "Silent rotations", true));
-      this.method_42010(new class_8563("ESP", "ESP on targets", true));
-      this.method_42010(new class_976("ESP Color", "The render color", class_1255.field_6918.field_6917));
+      this.addSetting(new FloatSetting<Float>("Hit box expand", "Hit Box expand", 0.05F, Float.class, 0.0F, 1.0F, 0.01F));
+      this.addSetting(new FloatSetting<Float>("Hit Chance", "Hit Chance", 100.0F, Float.class, 25.0F, 100.0F, 1.0F));
+      this.addSetting(new BooleanSetting("Interact autoblock", "Send interact packet when blocking", true));
+      this.addSetting(new BooleanSetting("Players", "Hit players", true));
+      this.addSetting(new BooleanSetting("Animals", "Hit animals", false));
+      this.addSetting(new BooleanSetting("Monsters", "Hit monsters", false));
+      this.addSetting(new BooleanSetting("Invisible", "Hit invisible entites", true));
+      this.addSetting(new BooleanSetting("Raytrace", "Helps the aura become more legit", true));
+      this.addSetting(new BooleanSetting("Cooldown", "Use attack cooldown (1.9+)", false));
+      this.addSetting(new BooleanSetting("No swing", "Hit without swinging", false));
+      this.addSetting(new BooleanSetting("Disable on death", "Disable on death", true));
+      this.addSetting(new BooleanSetting("Through walls", "Target entities through walls", true));
+      this.addSetting(new BooleanSetting("Smart Reach", "Allows you to get more reach (depends on your ping)", true));
+      this.addSetting(new BooleanSetting("Silent", "Silent rotations", true));
+      this.addSetting(new BooleanSetting("ESP", "ESP on targets", true));
+      this.addSetting(new ColorSetting("ESP Color", "The render color", class_1255.field_6918.field_6917));
    }
 
    @Override

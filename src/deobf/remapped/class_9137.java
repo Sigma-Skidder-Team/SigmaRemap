@@ -12,7 +12,7 @@ public class class_9137 extends Module {
 
    public class_9137() {
       super(class_5664.field_28709, "Waypoints", "Renders waypoints you added in Jello maps");
-      this.method_42010(new class_8563("Unspawn Positions", "Adds a waypoint when a player unspawns", false));
+      this.addSetting(new BooleanSetting("Unspawn Positions", "Adds a waypoint when a player unspawns", false));
       this.method_42011(false);
    }
 

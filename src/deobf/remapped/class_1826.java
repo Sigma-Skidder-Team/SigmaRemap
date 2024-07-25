@@ -6,7 +6,7 @@ public class class_1826 extends Module {
 
    public class_1826() {
       super(class_5664.field_28711, "Unstuck", "Toggle this when an anticheat freeze you mid-air");
-      this.method_42010(new class_2748<Float>("Flags", "Maximum flag before trying to unstuck", 5.0F, Float.class, 2.0F, 20.0F, 1.0F));
+      this.addSetting(new FloatSetting<Float>("Flags", "Maximum flag before trying to unstuck", 5.0F, Float.class, 2.0F, 20.0F, 1.0F));
    }
 
    @Override

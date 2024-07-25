@@ -5,7 +5,7 @@ public class class_9760 extends Module {
 
    public class_9760() {
       super(class_5664.field_28714, "Spartan", "AntiKB for spartan antichet");
-      this.method_42010(new class_2748<Float>("Ticks", "Ticks delay", 1.0F, Float.class, 1.0F, 6.0F, 1.0F));
+      this.addSetting(new FloatSetting<Float>("Ticks", "Ticks delay", 1.0F, Float.class, 1.0F, 6.0F, 1.0F));
    }
 
    @class_9148

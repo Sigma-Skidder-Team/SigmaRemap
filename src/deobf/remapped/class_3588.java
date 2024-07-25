@@ -11,7 +11,7 @@ public class class_3588 extends class_367 {
 
    public class_3588() {
       super("AutoMLG", "Automatically places water when falling", class_5664.field_28712);
-      this.method_42010(new class_8563("Cubecraft", "Cubecraft bypass", true));
+      this.addSetting(new BooleanSetting("Cubecraft", "Cubecraft bypass", true));
       field_17597 = -1;
    }
 

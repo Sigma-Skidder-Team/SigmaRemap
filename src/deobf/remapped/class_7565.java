@@ -23,10 +23,10 @@ public class class_7565 extends class_367 {
 
    public class_7565() {
       super("TargetHUD", "Shows target info with killaura", class_5664.field_28708);
-      this.method_42010(new class_2826("Background", "Background", 0, "Blur", "Color", "None"));
-      this.method_42010(new class_2826("Position", "HUD Position", 0, "Center", "Bottom"));
-      this.method_42010(new class_2826("HealthBar", "Healthbar color", 0, "Health", "White"));
-      this.method_42010(new class_8563("Armor", "Draw target's armor", false));
+      this.addSetting(new ModeSetting("Background", "Background", 0, "Blur", "Color", "None"));
+      this.addSetting(new ModeSetting("Position", "HUD Position", 0, "Center", "Bottom"));
+      this.addSetting(new ModeSetting("HealthBar", "Healthbar color", 0, "Health", "White"));
+      this.addSetting(new BooleanSetting("Armor", "Draw target's armor", false));
       this.method_42011(false);
       this.field_38554 = new class_2440(800, 200, class_4043.field_19618);
       this.field_38552 = new class_2440(1500, 200, class_4043.field_19618);

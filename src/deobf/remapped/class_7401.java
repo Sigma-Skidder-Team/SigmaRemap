@@ -15,14 +15,14 @@ public class class_7401 extends Module {
 
    public class_7401() {
       super(class_5664.field_28714, "InfiniteAura", "Basically infinite aura");
-      this.method_42010(new class_2748<Float>("Range", "Range value", 4.0F, Float.class, 8.0F, 120.0F, 1.0F));
-      this.method_42010(new class_2748<Float>("CPS", "CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F));
-      this.method_42010(new class_2748<Float>("Targets", "Number of targets", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
-      this.method_42010(new class_8563("Players", "Hit players", true));
-      this.method_42010(new class_8563("Animals/Monsters", "Hit animals and monsters", false));
-      this.method_42010(new class_8563("Anti-Bot", "Doesn't hit bots", true));
-      this.method_42010(new class_8563("Invisible", "Hit invisible entites", true));
-      this.method_42010(new class_8563("No Swing", "Doesn't swing", false));
+      this.addSetting(new FloatSetting<Float>("Range", "Range value", 4.0F, Float.class, 8.0F, 120.0F, 1.0F));
+      this.addSetting(new FloatSetting<Float>("CPS", "CPS value", 8.0F, Float.class, 1.0F, 20.0F, 1.0F));
+      this.addSetting(new FloatSetting<Float>("Targets", "Number of targets", 4.0F, Float.class, 1.0F, 10.0F, 1.0F));
+      this.addSetting(new BooleanSetting("Players", "Hit players", true));
+      this.addSetting(new BooleanSetting("Animals/Monsters", "Hit animals and monsters", false));
+      this.addSetting(new BooleanSetting("Anti-Bot", "Doesn't hit bots", true));
+      this.addSetting(new BooleanSetting("Invisible", "Hit invisible entites", true));
+      this.addSetting(new BooleanSetting("No Swing", "Doesn't swing", false));
       this.field_37777 = new ArrayList<List<class_4714>>();
    }
 

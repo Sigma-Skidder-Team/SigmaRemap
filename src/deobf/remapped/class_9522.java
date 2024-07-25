@@ -14,9 +14,9 @@ public class class_9522 extends class_367 {
    public class_9522() {
       super("RearView", "See behind you", class_5664.field_28708);
       this.field_48469 = new class_2440(230, 200, class_4043.field_19618);
-      this.method_42010(new class_8563("Show in GUI", "Makes the Rear View visible in guis", false));
-      this.method_42010(new class_8563("Smart Visibility", "Only pops up when a player is behind you", false));
-      this.method_42010(new class_2748<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
+      this.addSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
+      this.addSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
+      this.addSetting(new FloatSetting<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
       this.method_42011(false);
    }
 

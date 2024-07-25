@@ -3,7 +3,7 @@ package remapped;
 public class class_579 extends Module {
    public class_579() {
       super(class_5664.field_28718, "FastPlace", "Allows you to place blocks faster");
-      this.method_42010(new class_8563("Reduce Delay", "Makes block placement faster, but not too much!", true));
+      this.addSetting(new BooleanSetting("Reduce Delay", "Makes block placement faster, but not too much!", true));
    }
 
    @class_9148

@@ -1,13 +1,13 @@
 package remapped;
 
-public class class_8563 extends class_5004<Boolean> {
+public class BooleanSetting extends Setting<Boolean> {
    public boolean field_43797 = false;
 
-   public class_8563(String var1, String var2, boolean var3) {
+   public BooleanSetting(String var1, String var2, boolean var3) {
       super(var1, var2, class_5195.field_26724, var3);
    }
 
-   public class_8563 method_39397() {
+   public BooleanSetting method_39397() {
       this.field_43797 = true;
       return this;
    }

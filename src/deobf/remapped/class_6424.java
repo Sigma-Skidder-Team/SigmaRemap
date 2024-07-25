@@ -5,7 +5,7 @@ import java.util.List;
 public class class_6424 extends class_3620 {
    public class_6424() {
       super(class_5664.field_28712, "AutoGapple", "Automatically eat golden apples", new class_9740(), new class_609());
-      this.method_42010(new class_2748<Float>("Health", "Maximum health before eating gapple.", 7.0F, Float.class, 0.5F, 10.0F, 0.5F));
+      this.addSetting(new FloatSetting<Float>("Health", "Maximum health before eating gapple.", 7.0F, Float.class, 0.5F, 10.0F, 0.5F));
    }
 
    public int method_29349(boolean var1) {

@@ -8,8 +8,8 @@ public class class_7496 extends Module {
 
    public class_7496() {
       super(class_5664.field_28714, "NoGround", "NoGround criticals");
-      this.method_42010(new class_2826("Offset", "The way you will fake no ground", 0, "Vanilla", "OldHypixel"));
-      this.method_42010(new class_8563("Avoid Fall Damage", "Avoid fall damages.", true));
+      this.addSetting(new ModeSetting("Offset", "The way you will fake no ground", 0, "Vanilla", "OldHypixel"));
+      this.addSetting(new BooleanSetting("Avoid Fall Damage", "Avoid fall damages.", true));
    }
 
    @Override

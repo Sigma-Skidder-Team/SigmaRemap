@@ -8,7 +8,7 @@ public class class_7448 extends Module {
 
    public class_7448() {
       super(class_5664.field_28716, "OldAAC", "Speed for old version of AAC");
-      this.method_42010(new class_8563("Auto Jump", "Automatically jumps for you.", true));
+      this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
    }
 
    @Override
